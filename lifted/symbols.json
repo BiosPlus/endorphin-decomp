@@ -20705,6 +20705,13 @@
     "summary": "Byte-swaps each 16-bit element of an array in place (count \u003c= 0 is a no-op).",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00528D60": {
+    "name": "ExceptionWithMessageDerived::ExceptionWithMessageDerived",
+    "class": "ExceptionWithMessageDerived",
+    "signature": "void* fn_00528D60(void* self, const void* msg, uint32_t arg2)",
+    "summary": "Derived exception constructor: runs the ExceptionWithMessage base ctor with msg, installs the derived vtable at +0x00, and stores the second argument at +0x28.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052A020": {
     "name": "sub_0052A020",
     "class": "Unknown",

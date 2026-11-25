@@ -1103,3 +1103,20 @@ extern float __thiscall fn_00524AE0(void* self) {
 }
 } // namespace lift_00524AE0
 } // namespace lift_00524AE0
+
+// [0x00528D60]
+namespace lift_00528D60 {
+// @name ExceptionWithMessageDerived::ExceptionWithMessageDerived
+// @class ExceptionWithMessageDerived
+// @summary Derived exception constructor: runs the ExceptionWithMessage base ctor with msg, installs the derived vtable at +0x00, and stores the second argument at +0x28.
+// @field ExceptionWithMessageDerived +0x28 uint32_t field_0x28
+
+extern void* ext_00403560(void* self, const void* msg);
+
+void* fn_00528D60(void* self, const void* msg, uint32_t arg2) {
+    ext_00403560(self, msg);
+    *reinterpret_cast<uint32_t*>(static_cast<char*>(self) + 0x00) = 0x009534CCu;
+    *reinterpret_cast<uint32_t*>(static_cast<char*>(self) + 0x28) = arg2;
+    return self;
+}
+} // namespace lift_00528D60
