@@ -1,0 +1,52 @@
+{
+  "va": "0x005DF6B0",
+  "size": 105,
+  "orig_symbol": "sub_005DF6B0",
+  "src_path": "src/leaf/decompiled_5D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5D0000.cpp",
+  "name": "RbTree::find",
+  "class": "RbTree",
+  "signature": "uint32_t __thiscall sub_005DF6B0(uint32_t self, uint32_t out_iter, uint32_t key_ptr)",
+  "summary": "Finds a node matching the given 32-bit signed key in an MSVC-style red-black tree, returning an iterator pair (tree, node) or (tree, head) if not found.",
+  "fields": [
+    {
+      "class": "RbTree",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "head"
+    },
+    {
+      "class": "RbTreeNode",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "left"
+    },
+    {
+      "class": "RbTreeNode",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "parent"
+    },
+    {
+      "class": "RbTreeNode",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "right"
+    },
+    {
+      "class": "RbTreeNode",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "key"
+    },
+    {
+      "class": "RbTreeNode",
+      "offset": "+0x15",
+      "type": "uint8_t",
+      "name": "is_nil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:07:15Z"
+}

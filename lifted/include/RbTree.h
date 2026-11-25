@@ -8,7 +8,7 @@
 // Recovered field layout for RbTree:
 namespace lifted_layout {
 struct RbTree_Fields {
-    // +0x4   uint32_t                 head  (evidence: 0x005FF000)
+    // +0x4   uint32_t                 head  (evidence: 0x005DF6B0, 0x005FF000)
     // +0x8   uint32_t                 count  (evidence: 0x005FF000)
 };
 } // namespace lifted_layout

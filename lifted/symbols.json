@@ -33508,6 +33508,13 @@
     "summary": "Recursively erases and frees all non-nil nodes in a red-black tree subtree",
     "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
   },
+  "0x005DF6B0": {
+    "name": "RbTree::find",
+    "class": "RbTree",
+    "signature": "uint32_t __thiscall sub_005DF6B0(uint32_t self, uint32_t out_iter, uint32_t key_ptr)",
+    "summary": "Finds a node matching the given 32-bit signed key in an MSVC-style red-black tree, returning an iterator pair (tree, node) or (tree, head) if not found.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005DF720": {
     "name": "Unknown::forEachAdvanceInvoke_005DF720",
     "class": "Unknown",

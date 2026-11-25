@@ -479,3 +479,51 @@ extern void* __fastcall fn_005DC650(void* self) {
     return self;
 }
 } // namespace lift_005DC650
+
+// [0x005DF6B0]
+namespace lift_005DF6B0 {
+uint32_t mem_r32(uint32_t addr);
+uint8_t mem_r8(uint32_t addr);
+void mem_w32(uint32_t addr, uint32_t val);
+
+// @name RbTree::find
+// @class RbTree
+// @summary Finds a node matching the given 32-bit signed key in an MSVC-style red-black tree, returning an iterator pair (tree, node) or (tree, head) if not found.
+// @field RbTree +0x04 uint32_t head
+// @field RbTreeNode +0x00 uint32_t left
+// @field RbTreeNode +0x04 uint32_t parent
+// @field RbTreeNode +0x08 uint32_t right
+// @field RbTreeNode +0x0C int32_t key
+// @field RbTreeNode +0x15 uint8_t is_nil
+
+uint32_t __thiscall sub_005DF6B0(uint32_t self, uint32_t out_iter, uint32_t key_ptr) {
+    uint32_t head = mem_r32(self + 0x4);
+    uint32_t node = mem_r32(head + 0x4);
+    uint32_t best = head;
+
+    if (mem_r8(node + 0x15) == 0) {
+        int32_t target_key = static_cast<int32_t>(mem_r32(key_ptr));
+        do {
+            if (static_cast<int32_t>(mem_r32(node + 0xC)) < target_key) {
+                node = mem_r32(node + 0x8);
+            } else {
+                best = node;
+                node = mem_r32(node + 0x0);
+            }
+        } while (mem_r8(node + 0x15) == 0);
+    }
+
+    uint32_t cur_head = mem_r32(self + 0x4);
+    uint32_t result_node = cur_head;
+    if (best != cur_head) {
+        int32_t target_key = static_cast<int32_t>(mem_r32(key_ptr));
+        if (target_key >= static_cast<int32_t>(mem_r32(best + 0xC))) {
+            result_node = best;
+        }
+    }
+
+    mem_w32(out_iter + 0x0, self);
+    mem_w32(out_iter + 0x4, result_node);
+    return out_iter;
+}
+} // namespace lift_005DF6B0
