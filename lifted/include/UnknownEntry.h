@@ -10,5 +10,6 @@ namespace lifted_layout {
 struct UnknownEntry_Fields {
     // +0x8   int32_t                  id  (evidence: 0x007DD130)
     // +0x10  uint32_t                 flags  (evidence: 0x007DD130)
+    // +0x1C  DWORD                    field_0x1c  (evidence: 0x007CCA00)
 };
 } // namespace lifted_layout

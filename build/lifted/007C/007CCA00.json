@@ -1,0 +1,40 @@
+{
+  "va": "0x007CCA00",
+  "size": 25,
+  "orig_symbol": "sub_007CCA00",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "UnknownObj::LookupEntryDword",
+  "class": "UnknownObj",
+  "signature": "static inline void* lift_addr(DWORD addr)",
+  "summary": "Returns a DWORD from a 40-byte table entry selected by the low byte of self-\u003e+0x00 (via self-\u003e+0x0C-\u003e+0x20 table).",
+  "fields": [
+    {
+      "class": "UnknownObj",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "UnknownObj",
+      "offset": "+0xC",
+      "type": "DWORD",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "UnknownInner",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "field_0x20"
+    },
+    {
+      "class": "UnknownEntry",
+      "offset": "+0x1C",
+      "type": "DWORD",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:28:10Z"
+}

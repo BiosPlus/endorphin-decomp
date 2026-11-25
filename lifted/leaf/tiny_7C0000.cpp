@@ -1422,3 +1422,31 @@ void* GetElement24Ptr(void* self, int32_t a, int32_t b) {
     return arr + static_cast<uint32_t>(index * 24u);
 }
 } // namespace lift_007C89F0
+
+// [0x007CCA00] sub_007CCA00 (25 bytes)
+namespace lift_007CCA00 {
+// @name UnknownObj::LookupEntryDword
+// @class UnknownObj
+// @summary Returns a DWORD from a 40-byte table entry selected by the low byte of self->+0x00 (via self->+0x0C->+0x20 table).
+// @field UnknownObj +0x00 DWORD field_0x00
+// @field UnknownObj +0x0C DWORD field_0x0c
+// @field UnknownInner +0x20 DWORD field_0x20
+// @field UnknownEntry +0x1C DWORD field_0x1c
+
+// Pointers are kept as 32-bit DWORD addresses (the target is 32-bit x86),
+// so layout is correct regardless of host pointer width.
+static inline void* lift_addr(DWORD addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+DWORD fn_007CCA00(void* self) {
+    // eax = self->+0x00 ; ecx = self->+0x0C ; edx = ecx->+0x20
+    DWORD key = lift_field<DWORD>(self, 0x00);
+    DWORD inner = lift_field<DWORD>(self, 0x0C);
+    DWORD table = lift_field<DWORD>(lift_addr(inner), 0x20);
+
+    // eax = (key & 0xff) * 5 ; entry stride is 8*eax = 40 bytes
+    DWORD index = (key & 0xFFu) * 5u;
+    return lift_field<DWORD>(lift_addr(table), static_cast<ptrdiff_t>(8u * index + 0x1Cu));
+}
+} // namespace lift_007CCA00

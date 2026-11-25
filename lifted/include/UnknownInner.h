@@ -10,6 +10,7 @@ namespace lifted_layout {
 struct UnknownInner_Fields {
     // +0x18  uint32_t                 value0  (evidence: 0x004689B0)
     // +0x1C  uint32_t                 value1  (evidence: 0x004689B0)
-    // +0x20  CriticalSectionLock      lock  (evidence: 0x004689B0)
+    // +0x20  DWORD                    field_0x20  (evidence: 0x007CCA00) // CONFLICT: multiple definitions at +0x20
+    // +0x20  CriticalSectionLock      lock  (evidence: 0x004689B0) // CONFLICT: multiple definitions at +0x20
 };
 } // namespace lifted_layout

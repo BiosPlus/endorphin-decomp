@@ -67902,6 +67902,13 @@
     "summary": "Returns the 32-bit value stored at offset 0x0C of the object passed as the first argument.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007CCA00": {
+    "name": "UnknownObj::LookupEntryDword",
+    "class": "UnknownObj",
+    "signature": "static inline void* lift_addr(DWORD addr)",
+    "summary": "Returns a DWORD from a 40-byte table entry selected by the low byte of self-\u003e+0x00 (via self-\u003e+0x0C-\u003e+0x20 table).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007CCA20": {
     "name": "DispatchObject::dispatchThroughTable",
     "class": "DispatchObject",
