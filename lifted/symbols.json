@@ -4943,6 +4943,13 @@
     "summary": "Sends WM_USER+0x6F (0x46F) with arg1 as wParam and arg2 as lParam to the window handle at this-\u003efield_0x58-\u003efield_0x20; returns 0.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x00448B70": {
+    "name": "Properties::PropInPlaceSpinbuttonEdit::vfunc_2_off_54",
+    "class": "Properties::PropInPlaceSpinbuttonEdit",
+    "signature": "void __thiscall fn_00448B70(void* self, uint32_t /*arg0*/)",
+    "summary": "Clears dirty flags and updates the spinbutton edit control text and cached value if the active property matches.",
+    "lifted_path": "lifted/Properties/PropInPlaceSpinbuttonEdit.cpp"
+  },
   "0x00448F00": {
     "name": "Properties::PropInPlaceSpinbuttonEdit::vfunc_1",
     "class": "Properties::PropInPlaceSpinbuttonEdit",

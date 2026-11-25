@@ -10,7 +10,14 @@
 // Recovered field layout for Properties::PropInPlaceSpinbuttonEdit:
 namespace lifted_layout {
 struct Properties_PropInPlaceSpinbuttonEdit_Fields {
+    // +0x20  uint32_t                 m_hWnd  (evidence: 0x00448B70)
     // +0x5C  uint32_t                 field_0x5c  (evidence: 0x00448920)
     // +0x7C  uint32_t                 field_0x7c  (evidence: 0x00448920)
+    // +0xC8  void*                    field_0xc8  (evidence: 0x00448B70)
+    // +0xCC  void*                    field_0xcc  (evidence: 0x00448B70)
+    // +0xE0  uint8_t                  field_0xe0  (evidence: 0x00448B70)
+    // +0xE4  uint8_t[8]               field_0xe4  (evidence: 0x00448B70)
+    // +0xEC  uint32_t                 field_0xec  (evidence: 0x00448B70)
+    // +0xF0  uint8_t                  field_0xf0  (evidence: 0x00448B70)
 };
 } // namespace lifted_layout

@@ -1,0 +1,58 @@
+{
+  "va": "0x00448B70",
+  "size": 113,
+  "orig_symbol": "Properties::PropInPlaceSpinbuttonEdit::vfunc_2_off_54",
+  "src_path": "src/Properties/PropInPlaceSpinbuttonEdit.cpp",
+  "lifted_path": "lifted/Properties/PropInPlaceSpinbuttonEdit.cpp",
+  "name": "Properties::PropInPlaceSpinbuttonEdit::vfunc_2_off_54",
+  "class": "Properties::PropInPlaceSpinbuttonEdit",
+  "signature": "void __thiscall fn_00448B70(void* self, uint32_t /*arg0*/)",
+  "summary": "Clears dirty flags and updates the spinbutton edit control text and cached value if the active property matches.",
+  "fields": [
+    {
+      "class": "Properties::PropInPlaceSpinbuttonEdit",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "m_hWnd"
+    },
+    {
+      "class": "Properties::PropInPlaceSpinbuttonEdit",
+      "offset": "+0xC8",
+      "type": "void*",
+      "name": "field_0xc8"
+    },
+    {
+      "class": "Properties::PropInPlaceSpinbuttonEdit",
+      "offset": "+0xCC",
+      "type": "void*",
+      "name": "field_0xcc"
+    },
+    {
+      "class": "Properties::PropInPlaceSpinbuttonEdit",
+      "offset": "+0xE0",
+      "type": "uint8_t",
+      "name": "field_0xe0"
+    },
+    {
+      "class": "Properties::PropInPlaceSpinbuttonEdit",
+      "offset": "+0xE4",
+      "type": "uint8_t[8]",
+      "name": "field_0xe4"
+    },
+    {
+      "class": "Properties::PropInPlaceSpinbuttonEdit",
+      "offset": "+0xEC",
+      "type": "uint32_t",
+      "name": "field_0xec"
+    },
+    {
+      "class": "Properties::PropInPlaceSpinbuttonEdit",
+      "offset": "+0xF0",
+      "type": "uint8_t",
+      "name": "field_0xf0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:35:57Z"
+}
