@@ -38127,6 +38127,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
     "lifted_path": "lifted/leaf/tiny_620000.cpp"
   },
+  "0x00624DC0": {
+    "name": "TreeConstIterator::operator++",
+    "class": "TreeConstIterator",
+    "signature": "static inline void* node_ptr(uint32_t addr)",
+    "summary": "Debug-checked MSVC std::_Tree const iterator increment: advances to the in-order successor node.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00624E50": {
     "name": "Unknown::initWithArgs",
     "class": "Unknown",

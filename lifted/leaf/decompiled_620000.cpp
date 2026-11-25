@@ -2608,3 +2608,69 @@ void fn_0062B6F0(void* self) {
     }
 }
 } // namespace lift_0062B6F0
+
+// [0x00624DC0] sub_00624DC0 (108 bytes)
+namespace lift_00624DC0 {
+// IAT slot 0x00925134: MSVCR80!_invalid_parameter_noinfo (called on debug-iterator misuse).
+extern void (*mem_00925134)();
+
+// Node addresses are stored as 32-bit values to match the original layout.
+static inline void* node_ptr(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+// @name TreeConstIterator::operator++
+// @class TreeConstIterator
+// @summary Debug-checked MSVC std::_Tree const iterator increment: advances to the in-order successor node.
+// @field TreeConstIterator +0x00 uint32_t container
+// @field TreeConstIterator +0x04 uint32_t node
+// @field TreeNode +0x00 uint32_t left
+// @field TreeNode +0x04 uint32_t parent
+// @field TreeNode +0x08 uint32_t right
+// @field TreeNode +0x19 uint8_t isnil
+void fn_00624DC0(void* self) {
+    if (lift_field<uint32_t>(self, 0) == 0) {
+        mem_00925134();
+    }
+
+    uint32_t node = lift_field<uint32_t>(self, 4);
+    if (lift_field<uint8_t>(node_ptr(node), 0x19) != 0) {
+        // Incrementing the head/end sentinel is invalid.
+        mem_00925134();
+        return;
+    }
+
+    uint32_t right = lift_field<uint32_t>(node_ptr(node), 0x08);
+    if (lift_field<uint8_t>(node_ptr(right), 0x19) == 0) {
+        // Successor is the leftmost node of the right subtree.
+        uint32_t cur = right;
+        for (;;) {
+            uint32_t left = lift_field<uint32_t>(node_ptr(cur), 0x00);
+            if (lift_field<uint8_t>(node_ptr(left), 0x19) != 0) {
+                break;
+            }
+            cur = left;
+        }
+        lift_field<uint32_t>(self, 4) = cur;
+        return;
+    }
+
+    // No right subtree: climb until we come from a left child.
+    uint32_t par = lift_field<uint32_t>(node_ptr(node), 0x04);
+    if (lift_field<uint8_t>(node_ptr(par), 0x19) == 0) {
+        for (;;) {
+            uint32_t curPtr = lift_field<uint32_t>(self, 4);
+            if (curPtr != lift_field<uint32_t>(node_ptr(par), 0x08)) {
+                break;
+            }
+            lift_field<uint32_t>(self, 4) = par;
+            uint32_t gp = lift_field<uint32_t>(node_ptr(par), 0x04);
+            par = gp;
+            if (lift_field<uint8_t>(node_ptr(gp), 0x19) != 0) {
+                break;
+            }
+        }
+    }
+    lift_field<uint32_t>(self, 4) = par;
+}
+} // namespace lift_00624DC0
