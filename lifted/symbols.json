@@ -2240,6 +2240,12 @@
     "summary": "Walks +0x08 pointers until the next node has a non-zero byte at +0x59, returning the preceding node.",
     "lifted_path": "lifted/leaf/tiny_420000.cpp"
   },
+  "0x00427480": {
+    "name": "CopyTemplateRecordToRange",
+    "signature": "inline StringAssignFn string_assign_fn()",
+    "summary": "Fills each 0x24-byte record in [first, last) from a template record: copies the leading dword, and (unless the record is the template itself) copies three chars and assigns the trailing std::string.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x004275C0": {
     "name": "sub_00421AB0",
     "class": "Unknown",

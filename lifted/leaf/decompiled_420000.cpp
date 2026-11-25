@@ -835,3 +835,56 @@ DWORD fn_00422C00(void* self, DWORD arg1, DWORD arg2) {
     return 0;
 }
 } // namespace lift_00422C00
+
+// [0x00427480] sub_00427480 (82 bytes)
+namespace lift_00427480 {
+// Known callee 0x006A643C: thunk_MFC80_ord_3401 (IAT jump thunk forwarding to MFC80!ord_3401.)
+extern void ext_006A643C();
+// IAT slot called directly: MSVCP80 std::string::operator=(const std::string&)
+extern int mem_00924FDC;
+// .rdata constant 0x0062864A (present in the binary, not read by this function)
+extern int mem_00925688;
+
+namespace {
+
+// Record stride observed in the loop (0x24 bytes).
+constexpr std::size_t kRecordSize = 0x24;
+
+// MSVC thiscall signature of std::string::operator=(const std::string&).
+// __thiscall expands to nothing on non-MSVC builds.
+using StringAssignFn = void*(__thiscall*)(void* self, const void* rhs);
+
+inline StringAssignFn string_assign_fn() {
+    return reinterpret_cast<StringAssignFn>(
+        static_cast<std::uintptr_t>(static_cast<std::uint32_t>(mem_00924FDC)));
+}
+
+}  // namespace
+
+// @name CopyTemplateRecordToRange
+// @summary Fills each 0x24-byte record in [first, last) from a template record: copies the leading dword, and (unless the record is the template itself) copies three chars and assigns the trailing std::string.
+// @field Record +0x00 std::uint32_t field_0x00
+// @field Record +0x04 std::uint8_t field_0x04
+// @field Record +0x05 std::uint8_t field_0x05
+// @field Record +0x06 std::uint8_t field_0x06
+// @field Record +0x08 std::string field_0x08
+void fn_00427480(std::uint8_t* first, std::uint8_t* last, const std::uint8_t* tmpl) {
+    if (first == last) {
+        return;
+    }
+
+    const StringAssignFn assign = string_assign_fn();
+
+    for (std::uint8_t* rec = first; rec != last; rec += kRecordSize) {
+        // Leading dword is always copied from the template.
+        std::memcpy(rec, tmpl, sizeof(std::uint32_t));
+
+        if (rec != tmpl) {
+            rec[4] = tmpl[4];
+            rec[5] = tmpl[5];
+            rec[6] = tmpl[6];
+            assign(rec + 8, tmpl + 8);
+        }
+    }
+}
+} // namespace lift_00427480
