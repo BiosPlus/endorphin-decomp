@@ -8,7 +8,7 @@
 // Recovered field layout for Vec2:
 namespace lifted_layout {
 struct Vec2_Fields {
-    // +0x0   float                    x  (evidence: 0x00495AB0, 0x00497720, 0x0049B170)
-    // +0x4   float                    y  (evidence: 0x00495AB0, 0x00497720, 0x0049B170)
+    // +0x0   float                    x  (evidence: 0x00495AB0, 0x00497720, 0x0049B170, 0x0067C4D0)
+    // +0x4   float                    y  (evidence: 0x00495AB0, 0x00497720, 0x0049B170, 0x0067C4D0)
 };
 } // namespace lifted_layout
