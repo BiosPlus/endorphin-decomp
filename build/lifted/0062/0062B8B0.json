@@ -1,0 +1,27 @@
+{
+  "va": "0x0062B8B0",
+  "size": 64,
+  "orig_symbol": "sub_0062B8B0",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "CopyStringPairRange",
+  "signature": "extern \"C\" char* __cdecl fn_0062B8B0(char* first, char* last, char* dest)",
+  "summary": "Copy-assigns each 0x38-byte record in [first, last) to consecutive records starting at dest (both std::string members per record); returns one past the last destination record.",
+  "fields": [
+    {
+      "class": "StringPairRecord",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "StringPairRecord",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:04:35Z"
+}

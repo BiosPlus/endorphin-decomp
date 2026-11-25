@@ -24,6 +24,7 @@ extern void __fastcall fn_00629DF0(void* self) {
 }
 } // namespace lift_00629DF0
 #include <cstring>
+#include <cstddef>
 
 // [0x006271D0] sub_006271D0 (25 bytes)
 namespace lift_006271D0 {
@@ -658,3 +659,26 @@ void fn_00622C00(uint8_t* dst, const uint8_t* end, const uint8_t* src) {
     } while (dst != end);
 }
 } // namespace lift_00622C00
+
+// [0x0062B8B0] sub_0062B8B0 (64 bytes)
+namespace lift_0062B8B0 {
+// @name CopyStringPairRange
+// @summary Copy-assigns each 0x38-byte record in [first, last) to consecutive records starting at dest (both std::string members per record); returns one past the last destination record.
+// @field StringPairRecord +0x00 std::string field_0x00
+// @field StringPairRecord +0x1C std::string field_0x1C
+extern char* __cdecl fn_0062B8B0(char* first, char* last, char* dest) {
+    constexpr std::ptrdiff_t kRecordSize = 0x38;
+    constexpr std::ptrdiff_t kSecondStringOffset = 0x1C;
+
+    char* src = first;
+    char* out = dest;
+    while (src != last) {
+        lift_field<std::string>(out, 0) = lift_field<std::string>(src, 0);
+        lift_field<std::string>(out, kSecondStringOffset) =
+            lift_field<std::string>(src, kSecondStringOffset);
+        src += kRecordSize;
+        out += kRecordSize;
+    }
+    return out;
+}
+} // namespace lift_0062B8B0
