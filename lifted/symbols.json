@@ -33248,6 +33248,13 @@
     "summary": "Reads the float at +0x38 of the VideoPlaneData object referenced by self's first pointer; if that pointer is null, constructs an exception and throws.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D2C80": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, getYScale\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0\u003e",
+    "signature": "void fn_005D2C80(void* self)",
+    "summary": "Reads the Y-scale float from the VideoPlaneData object behind the holder pointer; if the object is non-null, reports its value via a default-message exception, then always throws DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D3000": {
     "name": "ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0\u003e",
@@ -67778,6 +67785,12 @@
     "signature": "extern \"C\" void* __fastcall fn_0078D830(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0078D850 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
+  "0x0078FED0": {
+    "name": "sub_0078FED0",
+    "signature": "void __stdcall sub_0078FED0( uint32_t base_offset, const uint32_t* src_offsets, uint32_t divisor, const double* src_values, const double* scale_values, double* out_values, uint32_t* out_indices)",
+    "summary": "Computes 16 normalized index offsets and optionally scales 16 double values into output arrays",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
   "0x00790D40": {
     "name": "Object::setFieldsFromArg",

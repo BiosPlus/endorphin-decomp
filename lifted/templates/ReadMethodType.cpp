@@ -47104,3 +47104,34 @@ void fn_005D6A00(void** self_ref)
     ext_006A6DD2(exc_storage, mem_009DEC1C);
 }
 } // namespace lift_005D6A00
+
+// [0x005D2C80] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0>::vfunc_5 (48 bytes)
+namespace lift_005D2C80 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Pushed as a single float argument in the original call site.
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void fn_006A6DD2(void);
+// RTTI type descriptor for the thrown exception (VA 0x009DEC1C).
+extern const uint32_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, getYScale>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0>
+// @summary Reads the Y-scale float from the VideoPlaneData object behind the holder pointer; if the object is non-null, reports its value via a default-message exception, then always throws DerivedException.
+// @field NMData::VideoPlaneData +0x38 float field_0x38
+void fn_005D2C80(void* self) {
+    // self points at a slot holding the target object pointer.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0x38);
+        ext_0046C4E0(value);
+    }
+    // Build the DerivedException on this frame and throw it.
+    uint8_t exc_buf[64] = {};
+    ext_0046C3C0(exc_buf);
+    (void)&mem_009DEC1C;
+    fn_006A6DD2();
+}
+} // namespace lift_005D2C80
