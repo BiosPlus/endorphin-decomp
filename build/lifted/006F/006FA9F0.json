@@ -1,0 +1,33 @@
+{
+  "va": "0x006FA9F0",
+  "size": 80,
+  "orig_symbol": "sub_006FA9F0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "sub_006FA9F0",
+  "signature": "uint8_t __thiscall sub_006FA9F0(void* self, uint32_t arg0, uint32_t arg1)",
+  "summary": "Checks flag at +0x34, delegates to +0x38-\u003evtable[0x74](arg0), then calls this-\u003evtable[0x40](0, 0, this, -1, arg0, arg1, 0)",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x34",
+      "type": "uint8_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x38",
+      "type": "uint32_t",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:57:09Z"
+}

@@ -1791,3 +1791,39 @@ bool __thiscall sub_006F9080(void* self, int32_t row, uint32_t* outValue, int32_
     return true;
 }
 } // namespace lift_006F9080
+
+// [0x006FA9F0]
+namespace lift_006FA9F0 {
+// @name sub_006FA9F0
+// @summary Checks flag at +0x34, delegates to +0x38->vtable[0x74](arg0), then calls this->vtable[0x40](0, 0, this, -1, arg0, arg1, 0)
+// @field unknown +0x00 uint32_t vtable
+// @field unknown +0x34 uint8_t field_0x34
+// @field unknown +0x38 uint32_t field_0x38
+
+
+uint8_t __thiscall sub_006FA9F0(void* self, uint32_t arg0, uint32_t arg1) {
+    const auto* base = static_cast<const uint8_t*>(self);
+    if ((base[0x34] & 0x1) == 0) {
+        return 0;
+    }
+
+    uintptr_t obj = *reinterpret_cast<const uint32_t*>(base + 0x38);
+    uintptr_t obj_vtable = *reinterpret_cast<const uint32_t*>(obj);
+    using vfn_74_t = uint8_t(__thiscall*)(uintptr_t, uint32_t);
+    auto vfn_74 = reinterpret_cast<vfn_74_t>(
+        static_cast<uintptr_t>(*reinterpret_cast<const uint32_t*>(obj_vtable + 0x74)));
+    if (vfn_74(obj, arg0) == 0) {
+        return 0;
+    }
+
+    uintptr_t self_vtable = *reinterpret_cast<const uint32_t*>(base);
+    using vfn_40_t = uint8_t(__thiscall*)(void*, uint32_t, uint32_t, void*, int32_t, uint32_t, uint32_t, uint32_t);
+    auto vfn_40 = reinterpret_cast<vfn_40_t>(
+        static_cast<uintptr_t>(*reinterpret_cast<const uint32_t*>(self_vtable + 0x40)));
+    if (vfn_40(self, 0, 0, self, -1, arg0, arg1, 0) == 0) {
+        return 0;
+    }
+
+    return 1;
+}
+} // namespace lift_006FA9F0
