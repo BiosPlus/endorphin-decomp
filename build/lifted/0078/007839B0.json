@@ -1,0 +1,34 @@
+{
+  "va": "0x007839B0",
+  "size": 64,
+  "orig_symbol": "sub_007839B0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "ReleaseEntriesAndResetChain",
+  "class": "Unknown",
+  "signature": "int fn_007839B0(void* self)",
+  "summary": "Passes each pointer in the +0x10 array (count at +0x00) to the MFC thunk, releases the buffer, then resets the chain at +0x18 if present.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "int",
+      "name": "count"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void**",
+      "name": "entries"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "chain"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:08:27Z"
+}

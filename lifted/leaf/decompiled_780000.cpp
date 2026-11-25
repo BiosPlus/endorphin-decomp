@@ -983,3 +983,37 @@ void fn_00780090(uint8_t* self, uint32_t value, const char* src) {
     std::memcpy(self + 4, src, count);
 }
 } // namespace lift_00780090
+
+// [0x007839B0] sub_007839B0 (64 bytes)
+namespace lift_007839B0 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764; takes one argument, caller cleans up).
+// Known callee 0x006D2250: Buffer::release (frees the buffer at +0x10 if non-null and zeroes +0x00, +0x04, +0x10).
+// Known callee 0x00783800: ResetNodeChain (zeroes the +0x08/+0x0C words of the owner and of every node in its +0x00 chain).
+extern void ext_006A5C5C(void* arg);
+extern void ext_006D2250(void* self);
+extern void ext_00783800(void* self);
+
+// @name ReleaseEntriesAndResetChain
+// @class Unknown
+// @summary Passes each pointer in the +0x10 array (count at +0x00) to the MFC thunk, releases the buffer, then resets the chain at +0x18 if present.
+// @field Unknown +0x00 int count
+// @field Unknown +0x10 void** entries
+// @field Unknown +0x18 void* chain
+int fn_007839B0(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    int count = *reinterpret_cast<int*>(base + 0x00);
+    if (count > 0) {
+        for (int i = 0; i < count; ++i) {
+            void** entries = *reinterpret_cast<void***>(base + 0x10);
+            ext_006A5C5C(entries[i]);
+            count = *reinterpret_cast<int*>(base + 0x00);
+        }
+    }
+    ext_006D2250(self);
+    void* chain = *reinterpret_cast<void**>(base + 0x18);
+    if (chain != nullptr) {
+        ext_00783800(chain);
+    }
+    return 0;
+}
+} // namespace lift_007839B0

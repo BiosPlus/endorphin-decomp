@@ -54477,6 +54477,13 @@
     "summary": "Runs the 0x006D2130 initializer with count 0x10 and element size 4, then points +0x14 at the inline buffer at +0x10 and clears +0x18.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x007839B0": {
+    "name": "ReleaseEntriesAndResetChain",
+    "class": "Unknown",
+    "signature": "int fn_007839B0(void* self)",
+    "summary": "Passes each pointer in the +0x10 array (count at +0x00) to the MFC thunk, releases the buffer, then resets the chain at +0x18 if present.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00784430": {
     "name": "initGlobals_B60918",
     "signature": "void fn_00784430(void)",
