@@ -1080,3 +1080,56 @@ void* fn_00625950(uint32_t a0, uint32_t a1, uint32_t a2,
     return rec;
 }
 } // namespace lift_00625950
+
+// [0x006296D0] sub_006296D0 (72 bytes)
+namespace lift_006296D0 {
+// Known callee 0x005FF240: sub_005FF240 (Initializes object fields to zero, stores argument at +0x28, and sets vtable to 0x0096F154)
+extern uint32_t ext_005FF240(void* self, uint32_t arg0);
+
+// @name Unknown::InitFloatFieldsAndVtable
+// @class Unknown
+// @summary Calls base initializer with arg0, sets vtable, zeroes/ones float fields at +0x30..+0x50, and stores arg2 at +0x54; returns self.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x30 float field_0x30
+// @field Unknown +0x34 float field_0x34
+// @field Unknown +0x38 float field_0x38
+// @field Unknown +0x3C float field_0x3C
+// @field Unknown +0x40 float field_0x40
+// @field Unknown +0x44 float field_0x44
+// @field Unknown +0x48 float field_0x48
+// @field Unknown +0x4C float field_0x4C
+// @field Unknown +0x50 float field_0x50
+// @field Unknown +0x54 uint32_t field_0x54
+void* fn_006296D0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    (void)arg1;
+    (void)arg3;
+
+    ext_005FF240(self, arg0);
+
+    uint8_t* p = static_cast<uint8_t*>(self);
+
+    const uint32_t vtable = 0x0097834Cu;
+    const float zero = 0.0f;
+    const float one = 1.0f;
+
+    std::memcpy(p + 0x00, &vtable, sizeof(uint32_t));
+
+    std::memcpy(p + 0x38, &zero, sizeof(float));
+    std::memcpy(p + 0x34, &zero, sizeof(float));
+    std::memcpy(p + 0x30, &zero, sizeof(float));
+    std::memcpy(p + 0x44, &zero, sizeof(float));
+    std::memcpy(p + 0x40, &zero, sizeof(float));
+    std::memcpy(p + 0x3C, &zero, sizeof(float));
+    std::memcpy(p + 0x50, &zero, sizeof(float));
+    std::memcpy(p + 0x4C, &zero, sizeof(float));
+    std::memcpy(p + 0x48, &zero, sizeof(float));
+
+    std::memcpy(p + 0x30, &one, sizeof(float));
+    std::memcpy(p + 0x40, &one, sizeof(float));
+    std::memcpy(p + 0x50, &one, sizeof(float));
+
+    std::memcpy(p + 0x54, &arg2, sizeof(uint32_t));
+
+    return self;
+}
+} // namespace lift_006296D0
