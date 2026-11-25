@@ -924,3 +924,13 @@ void* fn_0085D560(uint32_t size) {
     return mem_00924214(0 /* LMEM_FIXED */, static_cast<size_t>(size));
 }
 } // namespace lift_0085D560
+
+// [0x0085DA40] sub_0085DA40 (32 bytes)
+namespace lift_0085DA40 {
+// @name EmptyStub_0085DA40
+// @summary No-op: returns immediately (ret); remaining 31 bytes are lea-esp padding.
+void fn_0085DA40(void) {
+    // Original asm is a bare `ret`; no ext_/mem_ references to keep.
+    return;
+}
+} // namespace lift_0085DA40

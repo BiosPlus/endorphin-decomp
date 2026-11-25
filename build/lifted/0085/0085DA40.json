@@ -1,0 +1,13 @@
+{
+  "va": "0x0085DA40",
+  "size": 32,
+  "orig_symbol": "sub_0085DA40",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "EmptyStub_0085DA40",
+  "signature": "void fn_0085DA40(void)",
+  "summary": "No-op: returns immediately (ret); remaining 31 bytes are lea-esp padding.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:45:39Z"
+}

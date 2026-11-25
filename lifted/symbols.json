@@ -69865,6 +69865,12 @@
     "summary": "Rotates a 32-bit unsigned integer at ptr right by 1 bit, count times.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085DA40": {
+    "name": "EmptyStub_0085DA40",
+    "signature": "void fn_0085DA40(void)",
+    "summary": "No-op: returns immediately (ret); remaining 31 bytes are lea-esp padding.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085DA60": {
     "name": "checkRangeAllZeroStride20",
     "signature": "int fn_0085DA60(void* self)",
