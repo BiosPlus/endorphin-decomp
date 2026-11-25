@@ -1,0 +1,21 @@
+{
+  "va": "0x0056B850",
+  "size": 106,
+  "orig_symbol": "sub_0056B850",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "getDisplayNameOrPrefixed",
+  "signature": "void* __stdcall fn_0056B850(void* out_str, void* obj)",
+  "summary": "Returns obj's alternate string if it differs from vfunc_0x24(), otherwise concatenates vfunc_0x24() with global string 0x00B3A9F4.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T05:06:14Z"
+}

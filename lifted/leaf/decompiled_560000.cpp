@@ -570,3 +570,47 @@ void fn_005679D0(void* self) {
     }
 }
 } // namespace lift_005679D0
+
+// [0x0056B850]
+namespace lift_0056B850 {
+// @name getDisplayNameOrPrefixed
+// @summary Returns obj's alternate string if it differs from vfunc_0x24(), otherwise concatenates vfunc_0x24() with global string 0x00B3A9F4.
+// @field Unknown +0x00 void** vtable
+
+
+extern void* ext_00584BD0(void* self);
+
+extern uint32_t mem_00924FB0; // std::operator!=(const std::string&, const std::string&)
+extern uint32_t mem_00924FD0; // std::operator+(std::string*, const std::string&, const std::string&)
+extern uint32_t mem_00924FE0; // std::string::string(const std::string&)
+extern uint8_t  mem_00B3A9F4[];
+
+using vfunc_0x24_t = void* (__thiscall*)(void* self);
+using str_neq_t    = bool (__cdecl*)(const void* a, const void* b);
+using str_copy_t   = void* (__thiscall*)(void* self, const void* other);
+using str_concat_t = void* (__cdecl*)(void* out, const void* a, const void* b);
+
+void* __stdcall fn_0056B850(void* out_str, void* obj) {
+    void** vtable = *reinterpret_cast<void***>(obj);
+    auto vfunc_0x24 = reinterpret_cast<vfunc_0x24_t>(vtable[0x24 / 4]);
+
+    void* base_str = vfunc_0x24(obj);
+    void* alt_str  = ext_00584BD0(obj);
+
+    auto str_neq = reinterpret_cast<str_neq_t>(static_cast<uintptr_t>(mem_00924FB0));
+    if (str_neq(alt_str, base_str)) {
+        void* copy_src = ext_00584BD0(obj);
+        auto str_copy = reinterpret_cast<str_copy_t>(static_cast<uintptr_t>(mem_00924FE0));
+        str_copy(out_str, copy_src);
+        return out_str;
+    }
+
+    void** vtable2 = *reinterpret_cast<void***>(obj);
+    auto vfunc_0x24_2 = reinterpret_cast<vfunc_0x24_t>(vtable2[0x24 / 4]);
+    void* base_str2 = vfunc_0x24_2(obj);
+
+    auto str_concat = reinterpret_cast<str_concat_t>(static_cast<uintptr_t>(mem_00924FD0));
+    str_concat(out_str, base_str2, mem_00B3A9F4);
+    return out_str;
+}
+} // namespace lift_0056B850

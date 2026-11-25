@@ -26917,6 +26917,12 @@
     "summary": "Returns 1 if field_0x1E0 is zero and the pointer range [0x28, 0x2C) is empty or null, else 0.",
     "lifted_path": "lifted/ASFData/Bone.cpp"
   },
+  "0x0056B850": {
+    "name": "getDisplayNameOrPrefixed",
+    "signature": "void* __stdcall fn_0056B850(void* out_str, void* obj)",
+    "summary": "Returns obj's alternate string if it differs from vfunc_0x24(), otherwise concatenates vfunc_0x24() with global string 0x00B3A9F4.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x0056B8C0": {
     "name": "Acclaim2CharacterIO::vfunc_48",
     "class": "Acclaim2CharacterIO",
