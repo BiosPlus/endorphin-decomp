@@ -1,0 +1,13 @@
+{
+  "va": "0x006F7850",
+  "size": 80,
+  "orig_symbol": "sub_006F7850",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "findTableEntry_006F7850",
+  "signature": "bool sub_006F7850(uint32_t target, int32_t* outRow, int32_t* outCol)",
+  "summary": "Searches a 12-row lookup table via ext_006F7700/ext_006F7710 for a matching 32-bit value and outputs its row and column indices.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:55:54Z"
+}

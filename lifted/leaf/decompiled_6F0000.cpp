@@ -1704,3 +1704,27 @@ extern void fn_006FA830(void* ecx) {
     }
 }
 } // namespace lift_006FA830
+
+// [0x006F7850]
+namespace lift_006F7850 {
+// @name findTableEntry_006F7850
+// @summary Searches a 12-row lookup table via ext_006F7700/ext_006F7710 for a matching 32-bit value and outputs its row and column indices.
+
+
+extern uint32_t ext_006F7700(uint32_t index);
+extern uint32_t ext_006F7710(uint32_t row, uint32_t col);
+
+bool sub_006F7850(uint32_t target, int32_t* outRow, int32_t* outCol) {
+    for (int32_t row = 0; row < 12; ++row) {
+        int32_t count = static_cast<int32_t>(ext_006F7700(static_cast<uint32_t>(row)));
+        for (int32_t col = 0; col < count; ++col) {
+            if (ext_006F7710(static_cast<uint32_t>(row), static_cast<uint32_t>(col)) == target) {
+                *outRow = row;
+                *outCol = col;
+                return true;
+            }
+        }
+    }
+    return false;
+}
+} // namespace lift_006F7850

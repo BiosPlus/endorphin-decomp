@@ -48788,6 +48788,12 @@
     "summary": "If HasFlag29OfFirstOfRange(count) is set, returns GetScaledOrRawValue(element at count-1, 5); otherwise returns 0.0f.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006CCAF0": {
+    "name": "getItemScaledValue4IfFlagged",
+    "signature": "float __fastcall fn_006CCAF0(void* self, int edx_unused, int32_t index)",
+    "summary": "Returns scaled value at index 4 of the item at index if its flags pass check, otherwise 0.0f.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006CD310": {
     "name": "sub_006CD310",
     "signature": "extern \"C\" void __fastcall fn_006CD310(void* self, int edx_unused, int32_t value)",
@@ -51377,6 +51383,12 @@
     "signature": "uint32_t sub_006F7700(uint32_t index)",
     "summary": "Reads a 32-bit value from the lookup table at 0x00994764 by index.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
+  },
+  "0x006F7850": {
+    "name": "findTableEntry_006F7850",
+    "signature": "bool sub_006F7850(uint32_t target, int32_t* outRow, int32_t* outCol)",
+    "summary": "Searches a 12-row lookup table via ext_006F7700/ext_006F7710 for a matching 32-bit value and outputs its row and column indices.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
   "0x006F7900": {
     "name": "sub_006F7900",
