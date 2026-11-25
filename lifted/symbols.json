@@ -28077,6 +28077,12 @@
     "summary": "Calls ext_0046F7D0(arg1, 0) and returns its first argument unchanged.",
     "lifted_path": "lifted/classes/HelperGraphic.cpp"
   },
+  "0x005F5240": {
+    "name": "FindStringTableIndex",
+    "signature": "UINT __stdcall fn_005F5240(const void* name)",
+    "summary": "Linear search over a 6-entry, 28-byte-stride table at mem_00B46F80 comparing each entry against the argument with std::string operator==; returns the matching index, or 0 if none match.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005F5280": {
     "name": "sub_005F5280",
     "class": "Unknown",

@@ -143,3 +143,38 @@ void* fn_005F3A30(void* self, void* arg) {
     return self;
 }
 } // namespace lift_005F3A30
+
+// [0x005F5240]
+namespace lift_005F5240 {
+// @name FindStringTableIndex
+// @summary Linear search over a 6-entry, 28-byte-stride table at mem_00B46F80 comparing each entry against the argument with std::string operator==; returns the matching index, or 0 if none match.
+// @field table entries are 0x1C bytes apart from mem_00B46F80 up to (exclusive) mem_00B46F80+0xA8
+
+// Table of 0x1C-byte records (6 entries) starting at 0x00B46F80 and ending at 0x00B47028.
+extern uint8_t mem_00B46F80[];
+// Pointer slot at 0x00924FC4 holding the std::string equality routine (MSVCP80).
+extern uint32_t mem_00924FC4;
+// The MSVCP80 std::operator==(const basic_string&, const basic_string&) implementation.
+extern bool ext_basic_string_equal(const void* lhs, const void* rhs);
+
+using StringEqFn = bool (*)(const void*, const void*);
+
+UINT __stdcall fn_005F5240(const void* name) {
+    StringEqFn eq = reinterpret_cast<StringEqFn>(static_cast<uintptr_t>(mem_00924FC4));
+    if (eq == nullptr) {
+        eq = &ext_basic_string_equal;
+    }
+
+    constexpr uintptr_t kStride = 0x1C;
+    constexpr uintptr_t kTableEnd = 0xA8; // 0x00B47028 - 0x00B46F80
+
+    UINT index = 0;
+    for (uintptr_t off = 0; off < kTableEnd; off += kStride, ++index) {
+        const void* entry = mem_00B46F80 + off;
+        if (eq(name, entry)) {
+            return index;
+        }
+    }
+    return 0;
+}
+} // namespace lift_005F5240
