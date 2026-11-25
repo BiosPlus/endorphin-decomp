@@ -1345,3 +1345,19 @@ void* fn_0052F7D0(void) {
     return obj;
 }
 } // namespace lift_0052F7D0
+
+// [0x00527AC0] sub_00527AC0 (33 bytes)
+namespace lift_00527AC0 {
+// Known callee 0x00527690: Unknown::dispatchToElements_00527690 (walks pointer array at this+0x18..0x1C, calls virtual slot 2 on each element).
+extern void ext_00527690(void* self, void* arg1, void* arg2);
+// Known callee 0x00678D70: BaseEventDispatcher::vfunc_1 (thiscall, takes one stack int argument; called here with 1).
+extern void ext_00678D70(void* self, int flag);
+
+// @name Unknown::forwardDispatchThenVfunc1
+// @class Unknown
+// @summary Forwards two stack arguments to dispatchToElements_00527690, then calls BaseEventDispatcher::vfunc_1 with flag 1.
+void __thiscall fn_00527AC0(void* self, void* arg1, void* arg2) {
+    ext_00527690(self, arg1, arg2);
+    ext_00678D70(self, 1);
+}
+} // namespace lift_00527AC0

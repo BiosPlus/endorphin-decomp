@@ -20854,6 +20854,13 @@
     "summary": "Walks a pointer array embedded at this+0x18..this+0x1C and calls virtual slot 2 (offset 0x08) on each element, passing the two stack arguments.",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00527AC0": {
+    "name": "Unknown::forwardDispatchThenVfunc1",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00527AC0(void* self, void* arg1, void* arg2)",
+    "summary": "Forwards two stack arguments to dispatchToElements_00527690, then calls BaseEventDispatcher::vfunc_1 with flag 1.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00527AF0": {
     "name": "vectorBackPtr",
     "signature": "uint32_t __thiscall sub_00527AF0(void* self)",

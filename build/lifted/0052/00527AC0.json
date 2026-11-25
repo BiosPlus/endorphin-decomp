@@ -1,0 +1,14 @@
+{
+  "va": "0x00527AC0",
+  "size": 33,
+  "orig_symbol": "sub_00527AC0",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "Unknown::forwardDispatchThenVfunc1",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00527AC0(void* self, void* arg1, void* arg2)",
+  "summary": "Forwards two stack arguments to dispatchToElements_00527690, then calls BaseEventDispatcher::vfunc_1 with flag 1.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:01:05Z"
+}
