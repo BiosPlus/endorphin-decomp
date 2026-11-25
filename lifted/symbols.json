@@ -24991,6 +24991,13 @@
     "summary": "Calls virtual slot 0xA8 on self, then recursively visits each pointer in the child array delimited by self+0x80 (begin) and self+0x84 (end).",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x00586660": {
+    "name": "Unknown::CallVirtual8COnSelfAndElements",
+    "class": "Unknown",
+    "signature": "void call_vslot_8c(void* obj)",
+    "summary": "Invokes the virtual slot 0x8c on self, then on every pointer element in the range [self+0x80, self+0x84).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x005877A0": {
     "name": "IdentityNode::vfunc_1_off_C",
     "class": "IdentityNode",

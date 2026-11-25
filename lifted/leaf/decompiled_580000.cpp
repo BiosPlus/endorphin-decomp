@@ -1085,3 +1085,54 @@ void* fn_0058D7A0() {
 }
 } // namespace lift_004CAE30
 } // namespace lift_0058D7A0
+
+// [0x00586660] sub_00586660 (94 bytes)
+namespace lift_00586660 {
+// Import slot holding _invalid_parameter_noinfo (called on failed bounds checks).
+extern void (*mem_00925134)(void);
+
+namespace {
+
+// Calls the virtual method at vtable byte offset 0x8c (slot 35 on the 32-bit target).
+void call_vslot_8c(void* obj) {
+    void* vtbl = lift_field<void*>(obj, 0);
+    auto fn = lift_field<void (*)(void*)>(vtbl, 0x8c);
+    fn(obj);
+}
+
+} // namespace
+
+// @name Unknown::CallVirtual8COnSelfAndElements
+// @class Unknown
+// @summary Invokes the virtual slot 0x8c on self, then on every pointer element in the range [self+0x80, self+0x84).
+// @field Unknown +0x80 uint8_t* elementsBegin
+// @field Unknown +0x84 uint8_t* elementsEnd
+void fn_00586660(void* self) {
+    constexpr ptrdiff_t kElemStride = 4; // 32-bit pointer elements
+
+    call_vslot_8c(self);
+
+    uint8_t* cur = lift_field<uint8_t*>(self, 0x80);
+    uint8_t* end = lift_field<uint8_t*>(self, 0x84);
+
+    if (cur > end) {
+        mem_00925134();
+    }
+    end = lift_field<uint8_t*>(self, 0x84);
+    if (lift_field<uint8_t*>(self, 0x80) > end) {
+        mem_00925134();
+    }
+
+    while (cur != end) {
+        if (cur >= end) {
+            mem_00925134();
+        }
+        void* elem = lift_field<void*>(cur, 0);
+        call_vslot_8c(elem);
+        if (cur >= end) {
+            mem_00925134();
+        }
+        cur += kElemStride;
+    }
+}
+} // namespace lift_00586660

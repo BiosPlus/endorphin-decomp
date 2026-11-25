@@ -1,0 +1,28 @@
+{
+  "va": "0x00586660",
+  "size": 94,
+  "orig_symbol": "sub_00586660",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "Unknown::CallVirtual8COnSelfAndElements",
+  "class": "Unknown",
+  "signature": "void call_vslot_8c(void* obj)",
+  "summary": "Invokes the virtual slot 0x8c on self, then on every pointer element in the range [self+0x80, self+0x84).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "uint8_t*",
+      "name": "elementsBegin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "uint8_t*",
+      "name": "elementsEnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:22:40Z"
+}
