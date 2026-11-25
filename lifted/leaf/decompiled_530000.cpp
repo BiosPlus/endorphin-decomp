@@ -1509,3 +1509,26 @@ void* fn_00537B10(void* self, void* owner) {
     return self;
 }
 } // namespace lift_00537B10
+
+// [0x0053C4C0]
+namespace lift_0053C4C0 {
+// Known callee 0x0053B240: Unknown::initAnimationDerived_0053B240 (Base-initializes self, installs three 32-bit vtable pointers, zeroes +0x1C/+0x20/+0x34/+0x38, then calls Animation::vfunc_29 to reset state; returns self.)
+extern void* ext_0053B240(void* self);
+
+// @name initDerivedAnimation_0053C4C0
+// @summary Runs the base init on self, then installs two vtable pointers and zeroes three float fields.
+// @field Unknown +0x00 uint32_t vtable_ptr
+// @field Unknown +0x14 uint32_t vtable_ptr_2
+// @field Unknown +0x3c float field_0x3c
+// @field Unknown +0x40 float field_0x40
+// @field Unknown +0x44 float field_0x44
+void* fn_0053C4C0(void* self) {
+    ext_0053B240(self);
+    lift_field<uint32_t>(self, 0x00) = 0x955aec;
+    lift_field<uint32_t>(self, 0x14) = 0x955ae4;
+    lift_field<float>(self, 0x44) = 0.0f;
+    lift_field<float>(self, 0x40) = 0.0f;
+    lift_field<float>(self, 0x3c) = 0.0f;
+    return self;
+}
+} // namespace lift_0053C4C0
