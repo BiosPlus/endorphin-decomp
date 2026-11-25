@@ -15,8 +15,12 @@ struct _ClassName__Fields {
     // +0x0   u32                      field_0x00  (evidence: 0x0067A670) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 field_0x00  (evidence: 0x00492590) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x00661920) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint8_t                  flag0  (evidence: 0x004B0F50) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable  (evidence: 0x0063D970, 0x0063DAB0, 0x0063DDF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x00518030) // CONFLICT: multiple definitions at +0x0
+    // +0x1   uint8_t                  flag1  (evidence: 0x004B0F50)
+    // +0x2   uint8_t                  flag2  (evidence: 0x004B0F50)
+    // +0x3   uint8_t                  flag3  (evidence: 0x004B0F50)
     // +0x4   float                    field_0x04  (evidence: 0x005539D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t                  field_0x04  (evidence: 0x00553F70, 0x00672410, 0x00675DB0) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              field_0x04  (evidence: 0x0067A670) // CONFLICT: multiple definitions at +0x4
@@ -41,6 +45,7 @@ struct _ClassName__Fields {
     // +0x20  DWORD                    field_0x20  (evidence: 0x00641FD0) // CONFLICT: multiple definitions at +0x20
     // +0x20  HWND                     field_0x20  (evidence: 0x00422C00) // CONFLICT: multiple definitions at +0x20
     // +0x20  float                    field_0x20  (evidence: 0x00533FE0) // CONFLICT: multiple definitions at +0x20
+    // +0x20  uint32_t                 field_0x20  (evidence: 0x004B0F50) // CONFLICT: multiple definitions at +0x20
     // +0x24  float                    field_0x24  (evidence: 0x00533FE0, 0x0054E3D0) // CONFLICT: multiple definitions at +0x24
     // +0x24  u32                      field_0x24  (evidence: 0x0067A670) // CONFLICT: multiple definitions at +0x24
     // +0x28  u32                      field_0x28  (evidence: 0x0067A670)

@@ -939,3 +939,31 @@ void fn_004B6CF0(void* self) {
     (void)mem_00A384A4;
 }
 } // namespace lift_004B6CF0
+
+// [0x004B0F50] sub_004B0F50 (37 bytes)
+namespace lift_004B0F50 {
+// Import slot at 0x00924FE8 holds the MSVCP80 std::basic_string<char> default-ctor address (0x006290D8).
+extern int mem_00924FE8;
+
+// @name StringFlagsInit
+// @class <ClassName> (optional)
+// @summary Sets four byte flags (1,1,1,0), default-constructs the string at +0x04 via the import slot, zeroes the dword at +0x20; returns this.
+// @field <ClassName> +0x00 uint8_t flag0
+// @field <ClassName> +0x01 uint8_t flag1
+// @field <ClassName> +0x02 uint8_t flag2
+// @field <ClassName> +0x03 uint8_t flag3
+// @field <ClassName> +0x20 uint32_t field_0x20
+void* fn_004B0F50(void* self) {
+    lift_field<uint8_t>(self, 0x00) = 1;
+    lift_field<uint8_t>(self, 0x01) = 1;
+    lift_field<uint8_t>(self, 0x02) = 1;
+    lift_field<uint8_t>(self, 0x03) = 0;
+
+    using StringCtor = void (*)(void*);
+    auto ctor = reinterpret_cast<StringCtor>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FE8)));
+    ctor(static_cast<uint8_t*>(self) + 0x04);
+
+    lift_field<uint32_t>(self, 0x20) = 0;
+    return self;
+}
+} // namespace lift_004B0F50

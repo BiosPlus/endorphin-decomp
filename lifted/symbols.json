@@ -12512,6 +12512,13 @@
     "summary": "Setter storing float argument into field at offset +0x2C.",
     "lifted_path": "lifted/leaf/tiny_4B0000.cpp"
   },
+  "0x004B0F50": {
+    "name": "StringFlagsInit",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void* fn_004B0F50(void* self)",
+    "summary": "Sets four byte flags (1,1,1,0), default-constructs the string at +0x04 via the import slot, zeroes the dword at +0x20; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B10A0": {
     "name": "ObjectVec3_callWithScalar",
     "class": "Unknown",

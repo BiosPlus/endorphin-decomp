@@ -1,0 +1,46 @@
+{
+  "va": "0x004B0F50",
+  "size": 37,
+  "orig_symbol": "sub_004B0F50",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "StringFlagsInit",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "void* fn_004B0F50(void* self)",
+  "summary": "Sets four byte flags (1,1,1,0), default-constructs the string at +0x04 via the import slot, zeroes the dword at +0x20; returns this.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x0",
+      "type": "uint8_t",
+      "name": "flag0"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x1",
+      "type": "uint8_t",
+      "name": "flag1"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x2",
+      "type": "uint8_t",
+      "name": "flag2"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x3",
+      "type": "uint8_t",
+      "name": "flag3"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:21:27Z"
+}
