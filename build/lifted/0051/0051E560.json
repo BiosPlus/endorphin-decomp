@@ -1,0 +1,34 @@
+{
+  "va": "0x0051E560",
+  "size": 76,
+  "orig_symbol": "sub_0051E560",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "sub_0051E560",
+  "class": "Unknown",
+  "signature": "void fn_0051E560(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00505DC0 (Unknown::DestroyElementsAndReset_00505DC0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "m_begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "m_end"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "m_capacity"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:31:51Z"
+}

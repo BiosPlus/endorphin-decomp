@@ -1133,3 +1133,27 @@ void* fn_006296D0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint3
     return self;
 }
 } // namespace lift_006296D0
+
+// [0x0062BF30] sub_0062BF30 (73 bytes)
+namespace lift_0062BF30 {
+// @name sub_0062BF30
+// @summary Auto-lifted identical-shape clone of 0x00510830 (CopyRangeBackwardAndComputeDestBegin).
+namespace lift_00510830 {
+// Known callee 0x004C72D0: CopyRangeBackward_004C72D0 (Copies [first,last) of 0x20-byte elements backward so they end at d_last; returns the new begin of the destination range (d_last - count), or d_last when the range is empty.)
+extern uint8_t* __cdecl ext_0062B930(uint8_t* first, uint8_t* last, uint8_t* d_last);
+
+// @name CopyRangeBackwardAndComputeDestBegin
+// @summary Calls ext_004C72D0 to copy [first,last) backward ending at d_last, then returns d_last minus the byte span of [first,last) rounded down to a multiple of 0x20.
+void* fn_0062BF30(uint8_t* first, uint8_t* last, uint8_t* d_last) {
+    (void)ext_0062B930(first, last, d_last);
+
+    // Byte span of the source range, truncated to 32-bit like the original code.
+    int32_t span = static_cast<int32_t>(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(last)) -
+                                        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(first)));
+    span = (span >> 4) * 32;  // arithmetic shift, then back to 0x20-element granularity
+
+    uint32_t dst = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(d_last)) - static_cast<uint32_t>(span);
+    return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(dst));
+}
+} // namespace lift_00510830
+} // namespace lift_0062BF30

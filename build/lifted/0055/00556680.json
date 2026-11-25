@@ -1,0 +1,13 @@
+{
+  "va": "0x00556680",
+  "size": 73,
+  "orig_symbol": "sub_00556680",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "sub_00556680",
+  "signature": "void* fn_00556680(uint8_t* first, uint8_t* last, uint8_t* d_last)",
+  "summary": "Auto-lifted identical-shape clone of 0x00510830 (CopyRangeBackwardAndComputeDestBegin).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:31:51Z"
+}

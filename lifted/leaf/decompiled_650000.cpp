@@ -467,3 +467,34 @@ void* fn_00510830(uint8_t* first, uint8_t* last, uint8_t* d_last) {
     return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(dst));
 }
 } // namespace lift_00510830
+
+// [0x0051E560] sub_0051E560 (76 bytes)
+namespace lift_0051E560 {
+// @name sub_0051E560
+// @summary Auto-lifted identical-shape clone of 0x00505DC0 (Unknown::DestroyElementsAndReset_00505DC0).
+namespace lift_00505DC0 {
+extern void ext_006A5C5C(void* ptr);
+
+// @name Unknown::DestroyElementsAndReset_00505DC0
+// @class Unknown
+// @summary Destroys each 0x28-byte element in the vector at this+0x4..this+0x8 via its vtable slot 0 (deleting flag 0), frees the storage, and clears begin/end/capacity.
+// @field Unknown +0x04 void* m_begin
+// @field Unknown +0x08 void* m_end
+// @field Unknown +0x0C void* m_capacity
+void fn_0051E560(void* self) {
+    void* begin = lift_field<void*>(self, 0x4);
+    if (begin != nullptr) {
+        void* end = lift_field<void*>(self, 0x8);
+        for (uint8_t* p = static_cast<uint8_t*>(begin); p != static_cast<uint8_t*>(end); p += 0x168) {
+            void** vtbl = *reinterpret_cast<void***>(p);
+            auto dtor = reinterpret_cast<void (*)(void*, int)>(vtbl[0]);
+            dtor(p, 0);
+        }
+        ext_006A5C5C(begin);
+    }
+    lift_field<void*>(self, 0x4) = nullptr;
+    lift_field<void*>(self, 0x8) = nullptr;
+    lift_field<void*>(self, 0xC) = nullptr;
+}
+} // namespace lift_00505DC0
+} // namespace lift_0051E560

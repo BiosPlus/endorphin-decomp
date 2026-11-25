@@ -1,0 +1,52 @@
+{
+  "va": "0x0059B120",
+  "size": 73,
+  "orig_symbol": "sub_0059B120",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "sub_0059B120",
+  "class": "Unknown",
+  "signature": "inline uint8_t* at(uint32_t addr)",
+  "summary": "Auto-lifted identical-shape clone of 0x004A73F0 (Unknown::FindNodeByStringKey).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownHolder",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownNode",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "UnknownNode",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "UnknownNode",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "UnknownNode",
+      "offset": "+0xAD",
+      "type": "uint8_t",
+      "name": "field_0xAD"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:31:51Z"
+}

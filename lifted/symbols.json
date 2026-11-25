@@ -17184,6 +17184,13 @@
     "summary": "Returns (end - begin) / 12 for the 12-byte element range at +0x4/+0x8, or 0 if begin is null.",
     "lifted_path": "lifted/leaf/tiny_510000.cpp"
   },
+  "0x0051E560": {
+    "name": "sub_0051E560",
+    "class": "Unknown",
+    "signature": "void fn_0051E560(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00505DC0 (Unknown::DestroyElementsAndReset_00505DC0).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x0051E730": {
     "name": "sub_0051E730",
     "signature": "extern \"C\" void fn_0051E730(void)",
@@ -20679,6 +20686,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00481DE0 (fillStructArrayAndGetEnd).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00556680": {
+    "name": "sub_00556680",
+    "signature": "void* fn_00556680(uint8_t* first, uint8_t* last, uint8_t* d_last)",
+    "summary": "Auto-lifted identical-shape clone of 0x00510830 (CopyRangeBackwardAndComputeDestBegin).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00556AB0": {
     "name": "sub_00556AB0",
     "signature": "DWORD* __thiscall fn_00556AB0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -21082,6 +21095,12 @@
     "name": "descriptiveName: fillVec4Array",
     "signature": "void fillVec4Array(float* dst, uint32_t count, const float* src)",
     "summary": "Copies a 4-float vector from src into `count` consecutive 16-byte slots starting at dst; no writes if dst is null.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
+  "0x0055F620": {
+    "name": "sub_0055F620",
+    "signature": "void* fn_0055F620(uint8_t* first, uint8_t* last, uint8_t* d_last)",
+    "summary": "Auto-lifted identical-shape clone of 0x00510830 (CopyRangeBackwardAndComputeDestBegin).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
   "0x0055F670": {
@@ -22946,6 +22965,13 @@
     "name": "GetNestedDwordAt38C",
     "signature": "uint32_t __thiscall fn_00599E70(void* self)",
     "summary": "Follows self-\u003e+0x26C -\u003e P; returns 0 if P-\u003e+0x20 is zero. Otherwise walks P-\u003e+0x1C -\u003e Q -\u003e R (Q-\u003e+0x00), and returns R-\u003e+0x28 -\u003e S's dword at +0x38C.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
+  "0x0059B120": {
+    "name": "sub_0059B120",
+    "class": "Unknown",
+    "signature": "inline uint8_t* at(uint32_t addr)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A73F0 (Unknown::FindNodeByStringKey).",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
   "0x0059B290": {
@@ -32574,6 +32600,12 @@
     "signature": "static inline void* as_ptr(uint32_t v)",
     "summary": "Sums (B - A) vector deltas over an element array (A via objA-\u003evfunc_5(elem), B via objB-\u003evfunc_5(\u0026elem-\u003efield_0x08)), and if the sum's magnitude is \u003e 0 stores sub_0067B7F0's returned float[3] into self+0x30.",
     "lifted_path": "lifted/Sensors/HorizontalAxisSensor.cpp"
+  },
+  "0x0062BF30": {
+    "name": "sub_0062BF30",
+    "signature": "void* fn_0062BF30(uint8_t* first, uint8_t* last, uint8_t* d_last)",
+    "summary": "Auto-lifted identical-shape clone of 0x00510830 (CopyRangeBackwardAndComputeDestBegin).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x0062C0A0": {
     "name": "sub_0062C0A0",
