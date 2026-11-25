@@ -8,7 +8,8 @@
 // Recovered field layout for MultimediaTimer:
 namespace lifted_layout {
 struct MultimediaTimer_Fields {
-    // +0x4   uint32_t                 timerId  (evidence: 0x0067B530)
+    // +0x4   DWORD                    field_0x04  (evidence: 0x0067B5C0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 timerId  (evidence: 0x0067B530) // CONFLICT: multiple definitions at +0x4
     // +0x8   uint32_t                 delayMs  (evidence: 0x0067B530)
     // +0xC   uint8_t                  field_0x0C  (evidence: 0x0067B530)
     // +0x18  uint8_t                  lock  (evidence: 0x0067B530)

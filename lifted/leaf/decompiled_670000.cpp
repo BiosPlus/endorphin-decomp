@@ -1807,3 +1807,29 @@ void __thiscall sub_0067B530(void* self) {
     ext_0065C650(lock);
 }
 } // namespace lift_0067B530
+
+// [0x0067B5C0] sub_0067B5C0 (34 bytes)
+namespace lift_0067B5C0 {
+// Known callee 0x0067B530: MultimediaTimer::start (Acquires lock, configures timer resolution, and starts a periodic multimedia timer.)
+extern void ext_0067B530(void* self);
+// Import slot for KERNEL32!Sleep (rdata u32 0x006283FE)
+extern DWORD mem_00924248;
+
+// @name MultimediaTimer::startAndWait
+// @class MultimediaTimer
+// @summary Starts the multimedia timer, then sleeps 50 ms at a time while the field at +0x04 remains nonzero.
+// @field MultimediaTimer +0x04 DWORD field_0x04
+void fn_0067B5C0(void* self) {
+    ext_0067B530(self);
+
+    auto* flag = reinterpret_cast<DWORD*>(reinterpret_cast<uint8_t*>(self) + 0x04);
+    if (*flag == 0) {
+        return;
+    }
+
+    auto sleep = reinterpret_cast<void (*)(DWORD)>(static_cast<uintptr_t>(mem_00924248));
+    do {
+        sleep(50);
+    } while (*flag != 0);
+}
+} // namespace lift_0067B5C0
