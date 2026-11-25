@@ -55,3 +55,23 @@ float* fn_0053A6A0(void* self, float* out) {
     return out;
 }
 } // namespace lift_0053A6A0
+
+// [0x00532200]
+namespace lift_00532200 {
+extern void __fastcall ext_004F9950(void* self, int edx_unused, float* out);
+
+// @name HasConstantTMPtr::vfunc_12
+// @class HasConstantTMPtr
+// @summary Tail-calls vfunc 7 of the passed object with (field_0x04 + 0x30).
+// @field HasConstantTMPtr +0x04 const char* field_0x04
+extern void* __fastcall fn_00532200(void* self, int edx_unused, void*** obj) {
+    (void)edx_unused;
+    const char* p = *(const char**)((char*)self + 0x4);
+    typedef void* (__fastcall *Fn)(void*, int, const char*);
+    Fn fn = (Fn)(*obj)[0x1c / 4];
+    if (fn == (Fn)&ext_004F9950) {
+        return (void*)0; // never taken in practice; keeps reference to ext_004F9950
+    }
+    return fn((void*)obj, 0, p + 0x30);
+}
+} // namespace lift_00532200

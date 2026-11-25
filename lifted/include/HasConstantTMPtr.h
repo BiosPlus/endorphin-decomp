@@ -10,6 +10,7 @@
 // Recovered field layout for HasConstantTMPtr:
 namespace lifted_layout {
 struct HasConstantTMPtr_Fields {
-    // +0x4   const float*             field_0x04  (evidence: 0x005321A0, 0x005321E0, 0x00535610, 0x0053A680, 0x0053A6A0, 0x0053A6C0, 0x00545B80, 0x005FF1C0)
+    // +0x4   const char*              field_0x04  (evidence: 0x00532200) // CONFLICT: multiple definitions at +0x4
+    // +0x4   const float*             field_0x04  (evidence: 0x005321A0, 0x005321E0, 0x00535610, 0x0053A680, 0x0053A6A0, 0x0053A6C0, 0x00545B80, 0x005FF1C0) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout
