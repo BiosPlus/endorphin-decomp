@@ -31698,6 +31698,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006080D0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00609670": {
+    "name": "StringPairKey::operator\u003c",
+    "class": "StringPairKey",
+    "signature": "uint32_t __fastcall sub_00609670(uint32_t this_ptr, uint32_t /*edx*/, uint32_t other_ptr)",
+    "summary": "Lexicographically compares two std::string fields at +0x04 and +0x20.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x00609730": {
     "name": "sub_00609730",
     "class": "Unknown",
@@ -32153,6 +32160,12 @@
     "name": "sub_00610CB0",
     "signature": "extern \"C\" void __thiscall fn_00610CB0(uint32_t ecx)",
     "summary": "Gets float at index 0 from this+0x20 and passes it to ext_00678130 on (ext_00594000() + 0x2e0)",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x006110A0": {
+    "name": "mapIndexToOffset",
+    "signature": "uint32_t __stdcall sub_006110A0(uint32_t index)",
+    "summary": "Maps an unsigned index (0..3) to a slot index (0, 1, 1, 2) or 4 if out of range.",
     "lifted_path": "lifted/leaf/decompiled_610000.cpp"
   },
   "0x00611160": {
