@@ -1,0 +1,13 @@
+{
+  "va": "0x004D0B20",
+  "size": 63,
+  "orig_symbol": "sub_004D0B20",
+  "src_path": "src/leaf/decompiled_4D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4D0000.cpp",
+  "name": "FindNameTableIndex",
+  "signature": "int FindNameTableIndex(const void* name)",
+  "summary": "Scans a 3-entry, 28-byte-stride std::string table at 0xAE5C10 and returns the index of the entry equal to the argument, or 4 if none match.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:02:04Z"
+}

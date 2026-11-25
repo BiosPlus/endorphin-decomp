@@ -174,3 +174,34 @@ extern void __thiscall fn_004D3DE0(void* self, uint8_t flag) {
     }
 }
 } // namespace lift_004D3DE0
+
+// [0x004D0B20]
+namespace lift_004D0B20 {
+// @name FindNameTableIndex
+// @summary Scans a 3-entry, 28-byte-stride std::string table at 0xAE5C10 and returns the index of the entry equal to the argument, or 4 if none match.
+
+// Address of the MSVC string equality routine (loaded from .rdata 0x924FC4).
+extern const std::uint32_t mem_00924FC4;
+// Table of std::string-sized entries (28 bytes each) at 0x00AE5C10..0x00AE5C64.
+extern const std::uint8_t mem_00AE5C10[];
+
+namespace {
+using StringEqualFn = bool (*)(const void* lhs, const void* rhs);
+}
+
+int FindNameTableIndex(const void* name) {
+    const auto eq = reinterpret_cast<StringEqualFn>(
+        static_cast<std::uintptr_t>(mem_00924FC4));
+    constexpr std::ptrdiff_t kEntryStride = 0x1C;
+    constexpr std::ptrdiff_t kTableSize = 0x54; // 0xAE5C64 - 0xAE5C10
+
+    int index = 0;
+    for (std::ptrdiff_t off = 0; off < kTableSize; off += kEntryStride, ++index) {
+        const void* entry = mem_00AE5C10 + off;
+        if (eq(name, entry)) {
+            return index;
+        }
+    }
+    return 4;
+}
+} // namespace lift_004D0B20

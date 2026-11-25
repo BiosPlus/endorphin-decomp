@@ -12804,6 +12804,12 @@
     "summary": "Returns 0xAE5C68 + 28 * self-\u003efield_0x190 (address of a 28-byte entry in a global table).",
     "lifted_path": "lifted/leaf/tiny_4D0000.cpp"
   },
+  "0x004D0B20": {
+    "name": "FindNameTableIndex",
+    "signature": "int FindNameTableIndex(const void* name)",
+    "summary": "Scans a 3-entry, 28-byte-stride std::string table at 0xAE5C10 and returns the index of the entry equal to the argument, or 4 if none match.",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
+  },
   "0x004D0B60": {
     "name": "GetTableEntry28Address",
     "class": "(none)",
