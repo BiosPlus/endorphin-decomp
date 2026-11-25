@@ -1672,3 +1672,23 @@ void* fn_00487FF0() {
     return &mem_00AD9E04;
 }
 } // namespace lift_00487FF0
+
+// [0x00488170] sub_00488170 (87 bytes)
+namespace lift_00488170 {
+// Callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self; stores the stack argument into self's first DWORD).
+void ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AD9E28;  // init guard; bit 0 set once initialization has begun
+extern DWORD mem_00AD9E24;  // static object storage; first DWORD holds its vtable/type pointer
+
+// @name getGuardedStaticObject_00488170
+// @summary One-time guarded initializer for the static object at mem_00AD9E24; runs ext_0067A670 on it with argument 0, stores vtable 0x0093D424 into its first DWORD, and returns its address.
+// (No @class/@field: the function takes no self and only touches global storage.)
+void* fn_00488170() {
+    if ((mem_00AD9E28 & 1u) == 0) {
+        mem_00AD9E28 |= 1u;
+        ext_0067A670(&mem_00AD9E24, 0);
+        mem_00AD9E24 = 0x0093D424u;
+    }
+    return &mem_00AD9E24;
+}
+} // namespace lift_00488170
