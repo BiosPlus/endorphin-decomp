@@ -1204,3 +1204,22 @@ int32_t fn_0048CBD0(int32_t arg1, int32_t arg2, int32_t arg3) {
     return static_cast<int32_t>(static_cast<uint32_t>(arg3) + scaled);
 }
 } // namespace lift_0048CBD0
+
+// [0x00489A80] sub_00489A80 (86 bytes)
+namespace lift_00489A80 {
+// Known callee 0x00489080: CopyFloat5Range (Copies a range of 20-byte (5 x float) records from [first, last) to out; returns the output end pointer.)
+extern void* ext_00489080(const void* first, const void* last, void* out);
+
+// @name CopyFloat5RangeAndAdvance
+// @summary Copies a [first, last) range of 20-byte records to out and returns out advanced by the record count.
+void* fn_00489A80(const void* first, const void* last, void* out) {
+    ext_00489080(first, last, out);
+
+    // Record count = byte span / 20 (truncating toward zero, as signed division).
+    const std::ptrdiff_t byteSpan =
+        reinterpret_cast<const char*>(last) - reinterpret_cast<const char*>(first);
+    const std::ptrdiff_t recordCount = byteSpan / 20;
+
+    return static_cast<char*>(out) + recordCount * 20;
+}
+} // namespace lift_00489A80
