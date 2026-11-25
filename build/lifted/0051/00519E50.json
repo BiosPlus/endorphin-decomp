@@ -1,0 +1,46 @@
+{
+  "va": "0x00519E50",
+  "size": 79,
+  "orig_symbol": "sub_00519E50",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "Unknown::CopyRangeBackward5f_00519E50",
+  "class": "Unknown",
+  "signature": "void* fn_00519E50(void* first, void* last, void* destEnd)",
+  "summary": "Copies a range of 20-byte (5-float) elements backward into a destination ending at destEnd; returns the destination begin.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:46:43Z"
+}

@@ -17352,6 +17352,13 @@
     "summary": "Copies a 5-float source block into every 20-byte element in [begin, end).",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00519E50": {
+    "name": "Unknown::CopyRangeBackward5f_00519E50",
+    "class": "Unknown",
+    "signature": "void* fn_00519E50(void* first, void* last, void* destEnd)",
+    "summary": "Copies a range of 20-byte (5-float) elements backward into a destination ending at destEnd; returns the destination begin.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00519EA0": {
     "name": "NMData::Channel::vfunc_0",
     "class": "NMData::Channel",

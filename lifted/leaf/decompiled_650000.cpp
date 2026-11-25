@@ -768,3 +768,29 @@ bool fn_00515B20(void* self) {
     return true;
 }
 } // namespace lift_00515B20
+
+// [0x00519E50] sub_00519E50 (79 bytes)
+namespace lift_00519E50 {
+// @name Unknown::CopyRangeBackward5f_00519E50
+// @class Unknown
+// @summary Copies a range of 20-byte (5-float) elements backward into a destination ending at destEnd; returns the destination begin.
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x0c float field_0x0c
+// @field Unknown +0x10 float field_0x10
+void* fn_00519E50(void* first, void* last, void* destEnd) {
+    constexpr uintptr_t kStride = 5 * sizeof(float);
+
+    const uintptr_t begin = reinterpret_cast<uintptr_t>(first);
+    uint8_t* src = static_cast<uint8_t*>(last);
+    uint8_t* dst = static_cast<uint8_t*>(destEnd);
+
+    while (reinterpret_cast<uintptr_t>(src) != begin) {
+        src -= kStride;
+        dst -= kStride;
+        std::memmove(dst, src, kStride);
+    }
+    return dst;
+}
+} // namespace lift_00519E50
