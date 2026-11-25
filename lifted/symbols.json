@@ -7115,6 +7115,12 @@
     "summary": "Stores the float at *value into every 4-byte slot in [first, last); no-op if first == last.",
     "lifted_path": "lifted/leaf/tiny_470000.cpp"
   },
+  "0x00477B70": {
+    "name": "HeapBuildFloats",
+    "signature": "void fn_00477B70(float* first, float* last)",
+    "summary": "Builds a heap over a float array in [first, last) by sifting down each parent node from n/2 to 1 via ext_00477210.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00477D90": {
     "name": "make_heap_dword",
     "signature": "void fn_00477D90(uint32_t* first, uint32_t* last)",

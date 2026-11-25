@@ -101,3 +101,23 @@ void fn_00477D90(uint32_t* first, uint32_t* last) {
     }
 }
 } // namespace lift_00477D90
+
+// [0x00477B70] sub_00477B70 (62 bytes)
+namespace lift_00477B70 {
+// Known callee 0x00477210: sub_00477210 (102 bytes), called as (arr, index, count, value).
+extern void ext_00477210(float* arr, int32_t index, int32_t count, float value);
+
+// @name HeapBuildFloats
+// @summary Builds a heap over a float array in [first, last) by sifting down each parent node from n/2 to 1 via ext_00477210.
+void fn_00477B70(float* first, float* last) {
+    int32_t diffBytes = (int32_t)((char*)last - (char*)first);
+    int32_t count = diffBytes >> 2;
+    int32_t half = count / 2;
+
+    while (half > 0) {
+        float value = first[half - 1];
+        half--;
+        ext_00477210(first, half, count, value);
+    }
+}
+} // namespace lift_00477B70
