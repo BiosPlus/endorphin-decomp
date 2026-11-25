@@ -9746,6 +9746,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00490490": {
+    "name": "ensureGuardedStaticDword_00490490",
+    "signature": "DWORD* fn_00490490()",
+    "summary": "One-time guarded initializer for the static DWORD at mem_00ADAB74; returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00491840": {
     "name": "sub_00491840",
     "signature": "uint32_t fn_00491840(uint32_t begin, uint32_t end, uint32_t value)",

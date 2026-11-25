@@ -784,3 +784,23 @@ extern uint32_t fn_00494070(uint32_t mask, uint32_t obj) {
     return 0;
 }
 } // namespace lift_00494070
+
+// [0x00490490] sub_00490490 (87 bytes)
+namespace lift_00490490 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00ADAB78;
+extern DWORD mem_00ADAB74;
+
+// @name ensureGuardedStaticDword_00490490
+// @summary One-time guarded initializer for the static DWORD at mem_00ADAB74; returns its address.
+DWORD* fn_00490490() {
+    // Bit 0 of mem_00ADAB78 is the "initialized" guard.
+    if ((mem_00ADAB78 & 1u) == 0) {
+        mem_00ADAB78 |= 1u;
+        ext_0067A670(&mem_00ADAB74, 0u);
+        mem_00ADAB74 = 0x0093E7FCu;
+    }
+    return &mem_00ADAB74;
+}
+} // namespace lift_00490490
