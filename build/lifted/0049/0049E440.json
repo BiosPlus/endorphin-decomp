@@ -1,0 +1,27 @@
+{
+  "va": "0x0049E440",
+  "size": 87,
+  "orig_symbol": "sub_0049E440",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "initObjectWithStaticBase_0049E440",
+  "signature": "void* fn_0049E440(void* self, DWORD arg2)",
+  "summary": "Zeroes the object's first DWORD, caches a global DWORD and the address returned by the static initializer into it, stores arg2 into the first DWORD, and returns the object pointer.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:31:26Z"
+}

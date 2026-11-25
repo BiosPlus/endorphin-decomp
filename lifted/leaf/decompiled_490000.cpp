@@ -1084,3 +1084,25 @@ void* fn_0049D390(void* dst, uint32_t value) {
     return dst;
 }
 } // namespace lift_0049D390
+
+// [0x0049E440] sub_0049E440 (87 bytes)
+namespace lift_0049E440 {
+// Known callee 0x0049DA40: initStaticObjectOnce_0049DA40 (One-time guarded initializer for the static object at 0x00ADD824; sets its vtable-style first DWORD to 0x0093FF4C and returns its address.)
+extern void* ext_0049DA40();
+extern DWORD mem_00B599BC;
+
+// @name initObjectWithStaticBase_0049E440
+// @summary Zeroes the object's first DWORD, caches a global DWORD and the address returned by the static initializer into it, stores arg2 into the first DWORD, and returns the object pointer.
+// @field <unknown> +0x00 DWORD field_0x00
+// @field <unknown> +0x04 DWORD field_0x04
+void* fn_0049E440(void* self, DWORD arg2) {
+    lift_field<DWORD>(self, 0x00) = 0;
+    lift_field<DWORD>(self, 0x04) = mem_00B599BC;
+
+    void* staticObj = ext_0049DA40();
+
+    lift_field<DWORD>(self, 0x04) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(staticObj));
+    lift_field<DWORD>(self, 0x00) = arg2;
+    return self;
+}
+} // namespace lift_0049E440

@@ -11109,6 +11109,12 @@
     "summary": "Calls sub_0049CFF0 to obtain a 32-bit result and stores it into this+0x04.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x0049E440": {
+    "name": "initObjectWithStaticBase_0049E440",
+    "signature": "void* fn_0049E440(void* self, DWORD arg2)",
+    "summary": "Zeroes the object's first DWORD, caches a global DWORD and the address returned by the static initializer into it, stores arg2 into the first DWORD, and returns the object pointer.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049E4A0": {
     "name": "storeValueAndStaticObject_0049E4A0",
     "signature": "void sub_0049E4A0(DWORD* out, DWORD value)",
