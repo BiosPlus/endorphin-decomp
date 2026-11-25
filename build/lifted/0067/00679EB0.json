@@ -1,0 +1,21 @@
+{
+  "va": "0x00679EB0",
+  "size": 88,
+  "orig_symbol": "sub_00679EB0",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "lowerBoundByStringField10",
+  "signature": "uint32_t* sub_00679EB0(uint32_t* first, uint32_t* last, uint32_t key)",
+  "summary": "Binary searches a pointer range [first, last) for the first element whose std::string at +0x10 is not less than key.",
+  "fields": [
+    {
+      "class": "Element",
+      "offset": "+0x10",
+      "type": "std::string",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:17:56Z"
+}

@@ -873,3 +873,36 @@ void fn_00672590(void* self) {
     ext_00628FF0(self);
 }
 } // namespace lift_00672590
+
+// [0x00679EB0]
+namespace lift_00679EB0 {
+// @name lowerBoundByStringField10
+// @summary Binary searches a pointer range [first, last) for the first element whose std::string at +0x10 is not less than key.
+// @field Element +0x10 std::string field_0x10
+
+
+extern uint32_t mem_00924EF4;
+
+uint32_t* sub_00679EB0(uint32_t* first, uint32_t* last, uint32_t key) {
+    int32_t count = static_cast<int32_t>(last - first);
+    if (count <= 0) {
+        return first;
+    }
+
+    using StringLessFn = bool (*)(uint32_t, uint32_t);
+    auto string_less = reinterpret_cast<StringLessFn>(static_cast<uintptr_t>(mem_00924EF4));
+
+    while (count > 0) {
+        int32_t half = count / 2;
+        uint32_t elem_str = first[half] + 0x10;
+        if (string_less(elem_str, key)) {
+            first += half + 1;
+            count -= half + 1;
+        } else {
+            count = half;
+        }
+    }
+
+    return first;
+}
+} // namespace lift_00679EB0
