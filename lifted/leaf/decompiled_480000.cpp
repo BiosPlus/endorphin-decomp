@@ -2234,3 +2234,35 @@ bool fn_004898A0(void* self, uint32_t count) {
     return true;
 }
 } // namespace lift_004898A0
+
+// [0x0048BBA0]
+namespace lift_0048BBA0 {
+extern void* ext_00487C00(void* self, const void* key);
+extern void (*mem_00925134)(void);
+extern uint8_t (*mem_00924EF4)(const void* lhs, const void* rhs);
+
+struct TreeMapIterator {
+    void* tree;
+    void* node;
+};
+
+// @name TreeMap::find
+// @class TreeMap
+// @summary Finds a node by std::string key in an MSVC-style std::map, returning an iterator {tree, node} or {tree, header} if not found.
+// @field TreeMap +0x04 void* header
+TreeMapIterator* __thiscall fn_0048BBA0(void* self, TreeMapIterator* out, const void* key) {
+    void* node = ext_00487C00(self, key);
+    if (!self) {
+        mem_00925134();
+    }
+    void* header = *(void**)((char*)self + 0x4);
+    if (node == header || mem_00924EF4(key, (const char*)node + 0xc) != 0) {
+        out->tree = self;
+        out->node = header;
+    } else {
+        out->tree = self;
+        out->node = node;
+    }
+    return out;
+}
+} // namespace lift_0048BBA0
