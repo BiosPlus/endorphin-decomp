@@ -10,6 +10,6 @@
 // Recovered field layout for AdvXMLParser::Comment:
 namespace lifted_layout {
 struct AdvXMLParser_Comment_Fields {
-    // +0x24  std::string              m_text  (evidence: 0x00640D00)
+    // +0x24  std::string              m_text  (evidence: 0x00640D00, 0x00640DE0)
 };
 } // namespace lifted_layout

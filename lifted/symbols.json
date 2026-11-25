@@ -35619,6 +35619,13 @@
     "summary": "Serializes an XML comment node (\"\u003c!--\" + text + \"--\u003e\") to the output context.",
     "lifted_path": "lifted/AdvXMLParser/Comment.cpp"
   },
+  "0x00640DE0": {
+    "name": "AdvXMLParser::CData::vfunc_5",
+    "class": "AdvXMLParser::CData",
+    "signature": "extern void __thiscall fn_00640DE0(void* self, void* ctx)",
+    "summary": "Auto-lifted identical-shape clone of 0x00640D00 (AdvXMLParser::Comment::Generate).",
+    "lifted_path": "lifted/AdvXMLParser/CData.cpp"
+  },
   "0x00641760": {
     "name": "TreeNode::EraseSubtree",
     "class": "TreeNode",

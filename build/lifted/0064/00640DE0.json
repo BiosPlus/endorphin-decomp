@@ -1,0 +1,28 @@
+{
+  "va": "0x00640DE0",
+  "size": 87,
+  "orig_symbol": "AdvXMLParser::CData::vfunc_5",
+  "src_path": "src/AdvXMLParser/CData.cpp",
+  "lifted_path": "lifted/AdvXMLParser/CData.cpp",
+  "name": "AdvXMLParser::CData::vfunc_5",
+  "class": "AdvXMLParser::CData",
+  "signature": "extern void __thiscall fn_00640DE0(void* self, void* ctx)",
+  "summary": "Auto-lifted identical-shape clone of 0x00640D00 (AdvXMLParser::Comment::Generate).",
+  "fields": [
+    {
+      "class": "AdvXMLParser::CData",
+      "offset": "+0x24",
+      "type": "std::string",
+      "name": "m_text"
+    },
+    {
+      "class": "AdvXMLParser::Comment",
+      "offset": "+0x24",
+      "type": "std::string",
+      "name": "m_text"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T02:14:08Z"
+}

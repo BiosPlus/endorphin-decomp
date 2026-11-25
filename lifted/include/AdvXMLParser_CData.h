@@ -11,5 +11,6 @@
 namespace lifted_layout {
 struct AdvXMLParser_CData_Fields {
     // +0x20  DWORD                    field_0x20  (evidence: 0x0063E670)
+    // +0x24  std::string              m_text  (evidence: 0x00640DE0)
 };
 } // namespace lifted_layout
