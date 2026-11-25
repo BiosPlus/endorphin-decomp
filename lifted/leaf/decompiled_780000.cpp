@@ -1119,3 +1119,35 @@ int32_t __thiscall fn_0078D510(void* self, int32_t group, int32_t sub, int32_t k
     return -1;
 }
 } // namespace lift_0078D510
+
+// [0x00783470]
+namespace lift_00783470 {
+// @name StreamReader::readUInt32
+// @class StreamReader
+// @summary Reads a 32-bit unsigned integer from an open stream, optionally byte-swapping it.
+// @field StreamReader +0x04 void* field_0x04
+
+extern size_t __cdecl MSVCR80_fread(void* ptr, size_t size, size_t count, void* stream);
+// mem_009252AC -> MSVCR80.dll!fread
+
+uint32_t __thiscall sub_00783470(void* self, uint32_t* outVal, uint8_t swapEndian) {
+    uint8_t* streamWrapper = *reinterpret_cast<uint8_t**>(reinterpret_cast<uint8_t*>(self) + 0x4);
+    if (streamWrapper[0x4] == 0) {
+        return 0;
+    }
+
+    void* fp = *reinterpret_cast<void**>(streamWrapper);
+    MSVCR80_fread(outVal, 4, 1, fp);
+
+    if (swapEndian != 0) {
+        uint32_t val = *outVal;
+        val = ((val & 0x000000FFu) << 24) |
+              ((val & 0x0000FF00u) << 8)  |
+              ((val & 0x00FF0000u) >> 8)  |
+              ((val & 0xFF000000u) >> 24);
+        *outVal = val;
+    }
+
+    return *outVal;
+}
+} // namespace lift_00783470
