@@ -422,3 +422,27 @@ uint32_t __cdecl fn_00575280(uint32_t first, uint32_t last, uint32_t dst) {
 }
 } // namespace lift_00520B90
 } // namespace lift_00575280
+
+// [0x00575DF0]
+namespace lift_00575DF0 {
+// @name descriptiveName: VectorLike20::ElementAt
+// @summary Bounds-checked address of element idx in an array of 20-byte elements; begin at +0x4, end at +0x8. Calls _invalid_parameter_noinfo when empty or out of range.
+
+// MSVCR80!_invalid_parameter_noinfo (indirect call through IAT slot 0x925134)
+extern void ext_invalid_parameter_noinfo();
+
+// Thiscall-style: self in ECX, idx on stack; returns begin + idx * 20.
+uint32_t fn_00575DF0(uint32_t self, uint32_t idx) {
+    const uint32_t begin = *reinterpret_cast<const uint32_t*>(self + 0x4);
+    if (begin == 0) {
+        ext_invalid_parameter_noinfo();
+    }
+    const uint32_t end = *reinterpret_cast<const uint32_t*>(self + 0x8);
+    const uint32_t count = static_cast<uint32_t>(
+        static_cast<int32_t>(end - begin) / 20);
+    if (idx >= count) {
+        ext_invalid_parameter_noinfo();
+    }
+    return begin + idx * 20u;
+}
+} // namespace lift_00575DF0

@@ -20469,6 +20469,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00574CF0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00575DF0": {
+    "name": "descriptiveName: VectorLike20::ElementAt",
+    "class": "descriptiveName: VectorLike20",
+    "signature": "uint32_t fn_00575DF0(uint32_t self, uint32_t idx)",
+    "summary": "Bounds-checked address of element idx in an array of 20-byte elements; begin at +0x4, end at +0x8. Calls _invalid_parameter_noinfo when empty or out of range.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x005760E0": {
     "name": "sub_005760E0",
     "class": "Unknown",

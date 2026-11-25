@@ -1,0 +1,14 @@
+{
+  "va": "0x00575DF0",
+  "size": 61,
+  "orig_symbol": "sub_00575DF0",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "descriptiveName: VectorLike20::ElementAt",
+  "class": "descriptiveName: VectorLike20",
+  "signature": "uint32_t fn_00575DF0(uint32_t self, uint32_t idx)",
+  "summary": "Bounds-checked address of element idx in an array of 20-byte elements; begin at +0x4, end at +0x8. Calls _invalid_parameter_noinfo when empty or out of range.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:57:33Z"
+}
