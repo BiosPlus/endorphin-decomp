@@ -1,0 +1,13 @@
+{
+  "va": "0x005B8480",
+  "size": 87,
+  "orig_symbol": "sub_005B8480",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "getOrInitStaticObject_005B8480",
+  "signature": "void* fn_005B8480()",
+  "summary": "Lazily initializes the static object at mem_00B43CDC once (guarded by bit 0 of mem_00B43CE0) and returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:10:14Z"
+}

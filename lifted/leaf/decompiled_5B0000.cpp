@@ -791,3 +791,22 @@ void* fn_005B8420() {
 }
 } // namespace lift_005B8420
 } // namespace lift_005B8420
+
+// [0x005B8480] sub_005B8480 (87 bytes)
+namespace lift_005B8480 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self, one stack arg; stores the arg into the first DWORD of self and returns it)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00B43CE0;
+extern DWORD mem_00B43CDC;
+
+// @name getOrInitStaticObject_005B8480
+// @summary Lazily initializes the static object at mem_00B43CDC once (guarded by bit 0 of mem_00B43CE0) and returns its address.
+void* fn_005B8480() {
+    if ((mem_00B43CE0 & 1) == 0) {
+        mem_00B43CE0 |= 1;
+        ext_0067A670(&mem_00B43CDC, 0);
+        mem_00B43CDC = 0x96129c;
+    }
+    return &mem_00B43CDC;
+}
+} // namespace lift_005B8480
