@@ -68892,6 +68892,12 @@
     "summary": "If flag 0x04 at +0x14 is set, follow the pointer at +0x00; if bit 0 of the flag byte at +0x14 is clear, set it and return the dword at +0x00, otherwise return 0.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x008596E0": {
+    "name": "sub_008596E0",
+    "signature": "uint32_t fn_008596E0(uint32_t size)",
+    "summary": "Auto-lifted identical-shape clone of 0x0079AF40 (AllocGlobalMemory).",
+    "lifted_path": "lifted/leaf/tiny_850000.cpp"
+  },
   "0x00859740": {
     "name": "MemsetReturnDst",
     "signature": "void* fn_00859740(void* dst, uint8_t value, uint32_t count)",

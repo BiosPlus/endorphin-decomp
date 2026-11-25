@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 extern "C" void ext_00868180(void);
 #include <cstdint>
+#include <cstring>
 
 // [0x0085DA80] sub_0085DA80 (16 bytes)
 // @name sub_0085DA80
@@ -225,3 +226,24 @@ void fn_00852427(void* esi) {
     target();
 }
 } // namespace lift_00852427
+
+// [0x008596E0] sub_008596E0 (16 bytes)
+namespace lift_008596E0 {
+// @name sub_008596E0
+// @summary Auto-lifted identical-shape clone of 0x0079AF40 (AllocGlobalMemory).
+namespace lift_0079AF40 {
+// IAT slot for KERNEL32!GlobalAlloc. The slot holds the resolved function address at runtime.
+extern uint32_t mem_00924214;
+
+// @name AllocGlobalMemory
+// @summary Calls KERNEL32!GlobalAlloc(uFlags=0, dwBytes=size) through the IAT slot and returns the HGLOBAL. Cdecl caller cleans up the argument.
+
+// GlobalAlloc is stdcall; the IAT slot is called indirectly.
+using GlobalAllocFn = HGLOBAL(__stdcall*)(UINT uFlags, SIZE_T dwBytes);
+
+uint32_t fn_008596E0(uint32_t size) {
+    auto global_alloc = reinterpret_cast<GlobalAllocFn>(static_cast<uintptr_t>(mem_00924214));
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(global_alloc(0, size)));
+}
+} // namespace lift_0079AF40
+} // namespace lift_008596E0
