@@ -1,0 +1,28 @@
+{
+  "va": "0x005D3410",
+  "size": 48,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cVideoPlaneData,getYOffset\u003e::vfunc_5",
+  "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, 0\u003e",
+  "signature": "void fn_005D3410(void* self)",
+  "summary": "Reads the VideoPlaneData pointer held in the ValuePtr argument; if non-null, reports its float at +0x40 via the default-message helper, then always throws a DerivedException.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "NMData::VideoPlaneData",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "field_0x40"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:09:41Z"
+}

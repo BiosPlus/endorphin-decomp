@@ -47340,3 +47340,37 @@ void fn_005B2270(void* self) {
     ext_006A6DD2(exceptionObject, throwInfo);
 }
 } // namespace lift_005B2270
+
+// [0x005D3410] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, 0>::vfunc_5 (48 bytes)
+namespace lift_005D3410 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// The original pushes a float argument before this call; it is modelled as a float parameter here.
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Original is thiscall (this in ecx); modelled as taking the object pointer explicitly.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Original pushes (throwInfo, objectPtr); modelled as (object, throwInfo).
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+// Throw-info/RTTI descriptor referenced as immediate 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData,getYOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, 0>
+// @summary Reads the VideoPlaneData pointer held in the ValuePtr argument; if non-null, reports its float at +0x40 via the default-message helper, then always throws a DerivedException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::VideoPlaneData +0x40 float field_0x40
+void fn_005D3410(void* self) {
+    // self -> holder; *self is the wrapped object pointer.
+    void* object = *static_cast<void**>(self);
+    if (object != nullptr) {
+        float value = *reinterpret_cast<const float*>(static_cast<const unsigned char*>(object) + 0x40);
+        ext_0046C4E0(value);
+    }
+
+    // Construct the exception object in a local buffer and throw it.
+    alignas(8) unsigned char exception[16] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D3410
