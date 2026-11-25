@@ -65281,6 +65281,13 @@
     "summary": "If the enable flag at +0x58 is nonzero and the argument is \u003c= the limit at +0x5C (signed), store the argument at +0x60.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007AEEE0": {
+    "name": "descriptiveName: IsNonZeroAt58",
+    "class": "Unknown",
+    "signature": "uint32_t sub_007AEEE0(const void* self)",
+    "summary": "Returns 1 if the dword at this+0x58 is nonzero, otherwise 0.",
+    "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
+  },
   "0x007AEEF0": {
     "name": "IsUnlimitedOrFieldAtLeastLimit",
     "class": "(none)",

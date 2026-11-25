@@ -426,3 +426,17 @@ void fn_007AF620(uint32_t a1, uint32_t a2, uint32_t a3) {
     }
 }
 } // namespace lift_007AF620
+
+// [0x007AEEE0]
+namespace lift_007AEEE0 {
+// @name descriptiveName: IsNonZeroAt58
+// @class Unknown
+// @summary Returns 1 if the dword at this+0x58 is nonzero, otherwise 0.
+// @field Unknown +0x58 uint32_t field_0x58
+
+uint32_t sub_007AEEE0(const void* self) {
+    const uint32_t value = *reinterpret_cast<const uint32_t*>(
+        static_cast<const uint8_t*>(self) + 0x58);
+    return value != 0 ? 1u : 0u;
+}
+} // namespace lift_007AEEE0
