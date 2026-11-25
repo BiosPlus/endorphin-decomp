@@ -20675,6 +20675,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00540130 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005404B0": {
+    "name": "CopyFloat14",
+    "signature": "void* fn_005404B0(void* self, const void* src)",
+    "summary": "Copies a 14-float (56-byte) block from src into self and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00540510": {
     "name": "ApplyFillCullStateIfEnabled",
     "signature": "void __thiscall fn_00540510(void* self, DWORD arg)",

@@ -887,3 +887,13 @@ void fn_0054FCB0(void* self) {
     }
 }
 } // namespace lift_0054FCB0
+
+// [0x005404B0]
+namespace lift_005404B0 {
+// @name CopyFloat14
+// @summary Copies a 14-float (56-byte) block from src into self and returns self.
+void* fn_005404B0(void* self, const void* src) {
+    std::memcpy(self, src, 14 * sizeof(float));
+    return self;
+}
+} // namespace lift_005404B0
