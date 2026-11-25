@@ -374,3 +374,32 @@ void* fn_005C3970(void* self) {
     return &mem_00AE558C;
 }
 } // namespace lift_005C3970
+
+// [0x005C39F0] sub_005C39F0 (62 bytes)
+namespace lift_005C39F0 {
+// Known callee 0x005B6C80: sub_005B6C80 (40 bytes, tail-called with ecx = this->+0x164 and the original stack argument).
+extern void* ext_005B6C80(void* self, uint32_t arg);
+extern uint32_t mem_00AE5598; // init flags; bit 0 = constants initialized
+extern float mem_00AE558C;    // cached 0.0f
+extern float mem_00AE5590;    // cached 0.0f
+extern float mem_00AE5594;    // cached 0.0f
+
+// @name Owner::ForwardToSubobjectOrGetZeroFloats
+// @class Owner
+// @summary If the subobject at +0x164 is set, forward the call to it; otherwise lazily initialize three static zero floats once and return the address of the first.
+// @field Owner +0x164 uint32_t subobject
+void* fn_005C39F0(void* self, uint32_t arg) {
+    const uint32_t subobject = lift_field<uint32_t>(self, 0x164);
+    if (subobject != 0) {
+        return ext_005B6C80(reinterpret_cast<void*>(static_cast<uintptr_t>(subobject)), arg);
+    }
+
+    if ((mem_00AE5598 & 1u) == 0) {
+        mem_00AE558C = 0.0f;
+        mem_00AE5590 = 0.0f;
+        mem_00AE5594 = 0.0f;
+        mem_00AE5598 |= 1u;
+    }
+    return &mem_00AE558C;
+}
+} // namespace lift_005C39F0

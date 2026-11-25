@@ -24481,6 +24481,13 @@
     "summary": "If this+0x164 is non-null, forwards to ext_005B6BF0 with that pointer as self; otherwise lazily zeroes a static 4-float block (guarded by bit 0 of mem_00AE5598) and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
+  "0x005C39F0": {
+    "name": "Owner::ForwardToSubobjectOrGetZeroFloats",
+    "class": "Owner",
+    "signature": "void* fn_005C39F0(void* self, uint32_t arg)",
+    "summary": "If the subobject at +0x164 is set, forward the call to it; otherwise lazily initialize three static zero floats once and return the address of the first.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005C3AB0": {
     "name": "NMData::CollisionModelData::vfunc_36",
     "class": "NMData::CollisionModelData",
