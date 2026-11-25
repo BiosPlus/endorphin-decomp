@@ -2135,3 +2135,33 @@ void fn_005C8C60(void** arg) {
     ext_006A6DD2(exceptionObject, mem_009DEC1C);
 }
 } // namespace lift_005C8C60
+
+// [0x004B9BC0] ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_5 (47 bytes)
+namespace lift_004B9BC0 {
+// Known callee 0x004B72D0: sub_004B72D0 (Auto-lifted identical-shape clone of 0x005C3FB0 (sub_005CF3E0).)
+extern void ext_004B72D0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>
+// @summary Throws an exception if the first dword of the object is non-zero; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 uint32_t field_0x00
+void fn_004B9BC0(void* self) {
+    const uint32_t value = lift_field<uint32_t>(self, 0x00);
+    if (value != 0) {
+        // Original: result of sub_004B72D0 is pushed as the argument to sub_0046C4E0,
+        // which throws an ExceptionWithMessage.
+        ext_004B72D0();
+        ext_0046C4E0();
+        return;
+    }
+    // Original: construct DerivedException in place, then _CxxThrowException.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B9BC0
