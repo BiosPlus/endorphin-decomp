@@ -52125,3 +52125,37 @@ void fn_004708A0(void* self) {
     ext_006A6DD2();
 }
 } // namespace lift_004708A0
+
+// [0x00695740] ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0>::vfunc_5 (55 bytes)
+namespace lift_00695740 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Disassembly passes one float argument on the stack.
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Thiscall: `this` is passed in ECX (modeled here as the first parameter).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Stack arguments: exception object pointer, then ThrowInfo pointer (0x009DEC1C).
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// @name ExprParser::ReadMethodType<DoubleWithProperties, float, getValue, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0>
+// @summary Reads the DoubleWithProperties pointer from self, converts its double value to float and forwards it to the helper; if the pointer is null or the helper returns, throws a DerivedException.
+// @field ExprParser::ReadMethodType<DoubleWithProperties, float, getValue, 0> +0x00 DoubleWithProperties* field_0x00
+// @field DoubleWithProperties +0x00 double field_0x00
+void fn_00695740(void* self) {
+    // Load the DoubleWithProperties* stored at self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+
+    if (obj != nullptr) {
+        // fld qword ptr [obj] then narrowed to float.
+        double value = *reinterpret_cast<double*>(obj);
+        ext_0046C4E0(static_cast<float>(value));
+    }
+
+    // Fallthrough (or null path): build the exception in a local frame and throw it.
+    alignas(8) unsigned char exception_storage[0x28] = {};
+    ext_0046C3C0(exception_storage);
+    ext_006A6DD2(exception_storage, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+}
+} // namespace lift_00695740

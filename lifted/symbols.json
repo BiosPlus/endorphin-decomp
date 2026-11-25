@@ -50385,6 +50385,13 @@
     "summary": "Rounds a dereferenced double-to-float value to integer via half-away-from-zero, or throws if null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00695740": {
+    "name": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, getValue, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e",
+    "signature": "void fn_00695740(void* self)",
+    "summary": "Reads the DoubleWithProperties pointer from self, converts its double value to float and forwards it to the helper; if the pointer is null or the helper returns, throws a DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00695990": {
     "name": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026DoubleWithProperties::getValue, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026DoubleWithProperties::getValue, 0\u003e",

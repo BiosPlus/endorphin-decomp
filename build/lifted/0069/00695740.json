@@ -1,0 +1,22 @@
+{
+  "va": "0x00695740",
+  "size": 55,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, getValue, 0\u003e::vfunc_5",
+  "class": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e",
+  "signature": "void fn_00695740(void* self)",
+  "summary": "Reads the DoubleWithProperties pointer from self, converts its double value to float and forwards it to the helper; if the pointer is null or the helper returns, throws a DerivedException.",
+  "fields": [
+    {
+      "class": "DoubleWithProperties",
+      "offset": "+0x0",
+      "type": "double",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:58:05Z"
+}
