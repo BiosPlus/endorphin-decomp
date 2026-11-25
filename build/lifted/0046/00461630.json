@@ -1,0 +1,22 @@
+{
+  "va": "0x00461630",
+  "size": 22,
+  "orig_symbol": "ExportUnavailableDialog::vfunc_63",
+  "src_path": "src/classes/ExportUnavailableDialog.cpp",
+  "lifted_path": "lifted/classes/ExportUnavailableDialog.cpp",
+  "name": "ExportUnavailableDialog::vfunc_63",
+  "class": "ExportUnavailableDialog",
+  "signature": "void fn_00461630(void* self, void* arg)",
+  "summary": "Forwards its argument plus flag 1 and the address of the dialog sub-object at +0x11C to MFC80 ord 1794.",
+  "fields": [
+    {
+      "class": "ExportUnavailableDialog",
+      "offset": "+0x11C",
+      "type": "uint8_t",
+      "name": "field_0x11c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-25T11:22:54Z"
+}

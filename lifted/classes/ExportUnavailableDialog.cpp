@@ -48,3 +48,26 @@ void* fn_00419770(void* self) {
 } // namespace lift_00449A00
 } // namespace lift_00464670
 } // namespace lift_00419770
+
+// [0x00461630] ExportUnavailableDialog::vfunc_63 (22 bytes)
+namespace lift_00461630 {
+// Known callee 0x006A5F44: thunk_MFC80_ord_1794 (IAT jump thunk forwarding to MFC80!ord_1794.)
+extern void ext_006A5F44(void* a, int b, void* c);
+
+// Data referenced by the containing module near this function; not touched by these instructions.
+extern int mem_00ACB004;
+extern int mem_00A2ECDC;
+extern int mem_00A2ECE0;
+
+// @name ExportUnavailableDialog::vfunc_63
+// @class ExportUnavailableDialog
+// @summary Forwards its argument plus flag 1 and the address of the dialog sub-object at +0x11C to MFC80 ord 1794.
+// @field ExportUnavailableDialog +0x11c uint8_t field_0x11c
+void fn_00461630(void* self, void* arg) {
+    // Global-reference markers only: taking an address performs no memory access.
+    (void)&mem_00ACB004;
+    (void)&mem_00A2ECDC;
+    (void)&mem_00A2ECE0;
+    ext_006A5F44(arg, 1, &lift_field<uint8_t>(self, 0x11c));
+}
+} // namespace lift_00461630

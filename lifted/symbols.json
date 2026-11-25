@@ -6216,6 +6216,13 @@
     "summary": "Destructor: restores vtables, destroys member subobjects at +0x11c and +0x114, and calls base destructor.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x00461630": {
+    "name": "ExportUnavailableDialog::vfunc_63",
+    "class": "ExportUnavailableDialog",
+    "signature": "void fn_00461630(void* self, void* arg)",
+    "summary": "Forwards its argument plus flag 1 and the address of the dialog sub-object at +0x11C to MFC80 ord 1794.",
+    "lifted_path": "lifted/classes/ExportUnavailableDialog.cpp"
+  },
   "0x00461650": {
     "name": "sub_00461650",
     "signature": "extern \"C\" void* __cdecl fn_00461650(void)",
