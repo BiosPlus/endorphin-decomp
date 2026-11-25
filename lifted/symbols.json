@@ -4998,10 +4998,24 @@
     "summary": "Clears the flag at +0x78, forwards three arguments to the child object at +0x68 when +0x64 is nonzero, then calls ReleaseCapture.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044C070": {
+    "name": "sub_0044C070",
+    "class": "Unknown",
+    "signature": "void fn_0044C070(void* self, DWORD arg1, DWORD arg2, DWORD arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044BFB0 (Unknown::releaseCaptureAfterForward_0044BFB0).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044C0D0": {
     "name": "sub_0044C0D0",
     "signature": "extern \"C\" void __thiscall fn_0044C0D0(void* self)",
     "summary": "Releases/invokes vtable+0x8 on field_0x64 if non-null, then tail-calls MFC80 ord_1903",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044C130": {
+    "name": "sub_0044C130",
+    "class": "Unknown",
+    "signature": "void fn_0044C130(void* self, DWORD arg1, DWORD arg2, DWORD arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044BFB0 (Unknown::releaseCaptureAfterForward_0044BFB0).",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
   "0x0044C230": {

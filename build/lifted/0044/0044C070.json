@@ -1,0 +1,34 @@
+{
+  "va": "0x0044C070",
+  "size": 42,
+  "orig_symbol": "sub_0044C070",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "sub_0044C070",
+  "class": "Unknown",
+  "signature": "void fn_0044C070(void* self, DWORD arg1, DWORD arg2, DWORD arg3)",
+  "summary": "Auto-lifted identical-shape clone of 0x0044BFB0 (Unknown::releaseCaptureAfterForward_0044BFB0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "DWORD",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "void*",
+      "name": "childObject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "BYTE",
+      "name": "field_0x78"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T14:28:11Z"
+}
