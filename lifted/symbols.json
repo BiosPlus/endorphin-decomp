@@ -63424,6 +63424,12 @@
     "summary": "Unidentified; bytes are data/padding (00 05 05... then 0x90 NOPs), not real code. No-op.",
     "lifted_path": "lifted/leaf/decompiled_730000.cpp"
   },
+  "0x00743440": {
+    "name": "findFirstMatchingItem",
+    "signature": "int fn_00743440(void* arg1, void* list)",
+    "summary": "Reads a count at list+0x00 and an item-pointer array at list+0x10; calls ext_006BA780(item, arg1) on each item in order and returns the index of the first nonzero result, or -1 if none (or count \u003c= 0).",
+    "lifted_path": "lifted/leaf/decompiled_740000.cpp"
+  },
   "0x00743AB0": {
     "name": "sub_00743AB0",
     "signature": "extern \"C\" void* __fastcall fn_00743AB0(void* self, int edx_unused, unsigned int flags)",

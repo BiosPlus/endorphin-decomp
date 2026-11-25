@@ -172,3 +172,29 @@ uint8_t fn_00747570(uint32_t /*stack_arg0*/, void* self) {
     return 1;
 }
 } // namespace lift_00747570
+
+// [0x00743440] sub_00743440 (64 bytes)
+namespace lift_00743440 {
+// Known callee 0x006BA780: Unknown::InitAndReturnSelf (per notes, calls sub_006B9910 on the object).
+// Call site passes one item pointer in ecx and arg1 as a single stack argument; returns a byte flag (tested with al).
+extern unsigned char ext_006BA780(void* ecx, void* arg);
+
+// @name findFirstMatchingItem
+// @summary Reads a count at list+0x00 and an item-pointer array at list+0x10; calls ext_006BA780(item, arg1) on each item in order and returns the index of the first nonzero result, or -1 if none (or count <= 0).
+// @field Unknown +0x00 int32_t field_0x00
+// @field Unknown +0x10 void** field_0x10
+int fn_00743440(void* arg1, void* list) {
+    auto* base = static_cast<unsigned char*>(list);
+    const int32_t count = *reinterpret_cast<int32_t*>(base + 0x00);
+    if (count <= 0) {
+        return -1;
+    }
+    void** items = *reinterpret_cast<void***>(base + 0x10);
+    for (int32_t i = 0; i < count; ++i) {
+        if (ext_006BA780(items[i], arg1) != 0) {
+            return i;
+        }
+    }
+    return -1;
+}
+} // namespace lift_00743440

@@ -1,0 +1,27 @@
+{
+  "va": "0x00743440",
+  "size": 64,
+  "orig_symbol": "sub_00743440",
+  "src_path": "src/leaf/decompiled_740000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_740000.cpp",
+  "name": "findFirstMatchingItem",
+  "signature": "int fn_00743440(void* arg1, void* list)",
+  "summary": "Reads a count at list+0x00 and an item-pointer array at list+0x10; calls ext_006BA780(item, arg1) on each item in order and returns the index of the first nonzero result, or -1 if none (or count \u003c= 0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void**",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:41:23Z"
+}
