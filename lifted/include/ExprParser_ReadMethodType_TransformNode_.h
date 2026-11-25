@@ -8,6 +8,6 @@
 // Recovered field layout for ExprParser::ReadMethodType<TransformNode>:
 namespace lifted_layout {
 struct ExprParser_ReadMethodType_TransformNode__Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x004C0800, 0x0058FA60, 0x0059F920, 0x00639730, 0x00695740)
+    // +0x0   void*                    field_0x00  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x004C0800, 0x0058FA60, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740)
 };
 } // namespace lifted_layout

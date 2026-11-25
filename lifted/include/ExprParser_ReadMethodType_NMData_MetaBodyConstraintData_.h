@@ -8,6 +8,6 @@
 // Recovered field layout for ExprParser::ReadMethodType<NMData::MetaBodyConstraintData>:
 namespace lifted_layout {
 struct ExprParser_ReadMethodType_NMData_MetaBodyConstraintData__Fields {
-    // +0x0   DWORD                    field_0x00  (evidence: 0x004CBBD0, 0x0059F920)
+    // +0x0   DWORD                    field_0x00  (evidence: 0x004CBBD0, 0x0059F920, 0x005FCC10)
 };
 } // namespace lifted_layout

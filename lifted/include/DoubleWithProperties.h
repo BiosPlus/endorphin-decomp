@@ -8,6 +8,6 @@
 // Recovered field layout for DoubleWithProperties:
 namespace lifted_layout {
 struct DoubleWithProperties_Fields {
-    // +0x0   double                   field_0x00  (evidence: 0x00488E30, 0x004B21D0, 0x0059F920, 0x00695740)
+    // +0x0   double                   field_0x00  (evidence: 0x00488E30, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00695740)
 };
 } // namespace lifted_layout

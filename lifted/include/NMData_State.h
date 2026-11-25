@@ -10,8 +10,8 @@
 // Recovered field layout for NMData::State:
 namespace lifted_layout {
 struct NMData_State_Fields {
-    // +0x8   subobject                field_0x08  (evidence: 0x0046CE90, 0x00488E30, 0x0049D4B0, 0x004A2930, 0x004B21D0, 0x004C0800, 0x0059F920, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0x8
-    // +0x8   void*                    field_0x8  (evidence: 0x0046CE90, 0x00488E30, 0x0049D530, 0x004A2930, 0x004B21D0, 0x004B7D80, 0x004C0800, 0x00512A00, 0x0059F920, 0x00604D80, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0x8
+    // +0x8   subobject                field_0x08  (evidence: 0x0046CE90, 0x00488E30, 0x0049D4B0, 0x004A2930, 0x004B21D0, 0x004C0800, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    field_0x8  (evidence: 0x0046CE90, 0x00488E30, 0x0049D530, 0x004A2930, 0x004B21D0, 0x004B7D80, 0x004C0800, 0x00512A00, 0x0059F920, 0x005FCC10, 0x00604D80, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0x8
     // +0x1C  void*                    adjusted_base  (evidence: 0x004A9B50, 0x006744A0)
     // +0x54  BYTE                     field_0x54  (evidence: 0x0049DF50)
     // +0xD0  void*                    list_sentinel  (evidence: 0x0049FCF0)
