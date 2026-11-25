@@ -917,3 +917,33 @@ uint32_t __thiscall sub_00476530(uint32_t self, uint32_t arg0, uint32_t arg1) {
     return self;
 }
 } // namespace lift_00476530
+
+// [0x00477190]
+namespace lift_00477190 {
+// @name adjustHeap
+// @summary Sifts a hole down in a binary heap and then pushes a value up using a predicate functor.
+
+extern bool __thiscall ext_00476860(void* pred, uint32_t lhs, uint32_t rhs);
+extern void __cdecl ext_00476CA0(uint32_t* arr, int32_t holeIndex, int32_t topIndex, uint32_t val, uint32_t pred);
+
+extern void __cdecl sub_00477190(uint32_t* arr, int32_t holeIndex, int32_t bottom, uint32_t val, uint32_t pred) {
+    int32_t topIndex = holeIndex;
+    int32_t secondChild = 2 * holeIndex + 2;
+
+    while (secondChild < bottom) {
+        if (ext_00476860(&pred, arr[secondChild], arr[secondChild - 1])) {
+            secondChild -= 1;
+        }
+        arr[holeIndex] = arr[secondChild];
+        holeIndex = secondChild;
+        secondChild = 2 * secondChild + 2;
+    }
+
+    if (secondChild == bottom) {
+        arr[holeIndex] = arr[bottom - 1];
+        holeIndex = bottom - 1;
+    }
+
+    ext_00476CA0(arr, holeIndex, topIndex, val, pred);
+}
+} // namespace lift_00477190
