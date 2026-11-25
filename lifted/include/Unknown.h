@@ -343,6 +343,7 @@ struct Unknown_Fields {
     // +0xC   u32                      flags  (evidence: 0x007CAF70, 0x007CCC30) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 index  (evidence: 0x00810C30) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    inner  (evidence: 0x007155B0, 0x0071C430) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void* field_0x0c (table pointer passed as self to the pair-flag lookup)  (evidence: 0x007C8C50) // CONFLICT: multiple definitions at +0xC
     // +0xC   float                    m03  (evidence: 0x00480010, 0x004890D0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    m_capacity  (evidence: 0x00503BC0, 0x00505DC0, 0x0050C4D0, 0x00518030, 0x0051E560) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    member  (evidence: 0x006D8E70) // CONFLICT: multiple definitions at +0xC
@@ -552,6 +553,7 @@ struct Unknown_Fields {
     // +0x20  DWORD                    hwnd  (evidence: 0x00441C10, 0x0044BF00) // CONFLICT: multiple definitions at +0x20
     // +0x20  HWND                     hwnd  (evidence: 0x004030F0, 0x00404770, 0x00406030, 0x0040BE90, 0x00414880, 0x0041FF10, 0x0045BED0, 0x00460540, 0x006A92F0, 0x006AC2E0, 0x006B0E30, 0x006B16F0, 0x006B1790, 0x006B2F70, 0x006B53D0, 0x006B8B70, 0x006BA780) // CONFLICT: multiple definitions at +0x20
     // +0x20  void*                    hwnd  (evidence: 0x00454AD0) // CONFLICT: multiple definitions at +0x20
+    // +0x20  int32_t field_0x20 (pair index id)  (evidence: 0x007C8C50) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint8_t                  initialized  (evidence: 0x006F9E90, 0x006FC200) // CONFLICT: multiple definitions at +0x20
     // +0x20  float                    m20  (evidence: 0x00480010, 0x004890D0) // CONFLICT: multiple definitions at +0x20
     // +0x20  HWND                     ownerHwnd  (evidence: 0x004586A0, 0x00458DF0) // CONFLICT: multiple definitions at +0x20

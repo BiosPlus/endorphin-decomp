@@ -1759,3 +1759,21 @@ void fn_007CAF70(void* self, float a, float x, float y) {
     return;
 }
 } // namespace lift_007CAF70
+
+// [0x007C8C50] sub_007C8C50 (28 bytes)
+namespace lift_007C8C50 {
+// Callee 0x007DD160 (Unknown::pairFlagIsClear_007DD160): tests the packed pair flag.
+extern bool ext_007DD160(void* self, int32_t a, int32_t b);
+
+// @name Unknown::pairFlagIsClearForObjects_007C8C50
+// @class Unknown
+// @summary Returns whether the pair flag between the +0x20 ids of two objects is clear, using the first object's +0x0c table.
+// @field Unknown +0x0c void* field_0x0c (table pointer passed as self to the pair-flag lookup)
+// @field Unknown +0x20 int32_t field_0x20 (pair index id)
+bool fn_007C8C50(void* first, void* second) {
+    void* table = lift_field<void*>(first, 0x0c);
+    const int32_t idA = lift_field<int32_t>(first, 0x20);
+    const int32_t idB = lift_field<int32_t>(second, 0x20);
+    return ext_007DD160(table, idA, idB);
+}
+} // namespace lift_007C8C50

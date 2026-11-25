@@ -1,0 +1,28 @@
+{
+  "va": "0x007C8C50",
+  "size": 28,
+  "orig_symbol": "sub_007C8C50",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "Unknown::pairFlagIsClearForObjects_007C8C50",
+  "class": "Unknown",
+  "signature": "bool fn_007C8C50(void* first, void* second)",
+  "summary": "Returns whether the pair flag between the +0x20 ids of two objects is clear, using the first object's +0x0c table.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void* field_0x0c (table pointer passed as self to the pair-flag",
+      "name": "lookup)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "int32_t field_0x20 (pair index",
+      "name": "id)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:04:51Z"
+}

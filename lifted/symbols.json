@@ -68950,6 +68950,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x007D5BB0 (setField20_007D5BB0).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C8C50": {
+    "name": "Unknown::pairFlagIsClearForObjects_007C8C50",
+    "class": "Unknown",
+    "signature": "bool fn_007C8C50(void* first, void* second)",
+    "summary": "Returns whether the pair flag between the +0x20 ids of two objects is clear, using the first object's +0x0c table.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C8C70": {
     "name": "descriptiveName_007C8C70",
     "signature": "uint32_t* descriptiveName_007C8C70(uint32_t /*arg0_unused*/, uint32_t* p)",
