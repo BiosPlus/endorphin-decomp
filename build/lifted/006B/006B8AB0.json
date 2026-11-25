@@ -1,0 +1,28 @@
+{
+  "va": "0x006B8AB0",
+  "size": 90,
+  "orig_symbol": "NMCAutoCompleteList::vfunc_66",
+  "src_path": "src/classes/NMCAutoCompleteList.cpp",
+  "lifted_path": "lifted/classes/NMCAutoCompleteList.cpp",
+  "name": "NMCAutoCompleteList::PreTranslateMessage",
+  "class": "NMCAutoCompleteList",
+  "signature": "uint32_t __thiscall fn_006B8AB0(void* self, uint32_t pMsg)",
+  "summary": "Forwards non-navigation WM_KEYDOWN messages to a buddy window's HWND after peeking them.",
+  "fields": [
+    {
+      "class": "NMCAutoCompleteList",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "m_hWnd"
+    },
+    {
+      "class": "NMCAutoCompleteList",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:25:03Z"
+}
