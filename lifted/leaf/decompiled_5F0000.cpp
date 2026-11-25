@@ -196,3 +196,24 @@ uint32_t __thiscall fn_005F5BA0(void* self, const void* name) {
     return ext_005F5470(self, index);
 }
 } // namespace lift_005F5BA0
+
+// [0x005FF240]
+namespace lift_005FF240 {
+template<typename T> void mem_write(uintptr_t addr, T val);
+
+// @name sub_005FF240
+// @summary Initializes object fields to zero, stores argument at +0x28, and sets vtable to 0x0096F154
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0c uint32_t field_0x0c
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x28 uint32_t field_0x28
+uint32_t __thiscall sub_005FF240(uintptr_t this_ptr, uint32_t arg0) {
+    mem_write<uint32_t>(this_ptr + 0x08, 0);
+    mem_write<uint32_t>(this_ptr + 0x0c, 0);
+    mem_write<uint32_t>(this_ptr + 0x10, 0);
+    mem_write<uint32_t>(this_ptr + 0x28, arg0);
+    mem_write<uint32_t>(this_ptr + 0x00, 0x0096F154u);
+    return static_cast<uint32_t>(this_ptr);
+}
+} // namespace lift_005FF240
