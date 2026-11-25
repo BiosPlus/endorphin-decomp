@@ -1,0 +1,13 @@
+{
+  "va": "0x00406290",
+  "size": 43,
+  "orig_symbol": "sub_00406290",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "copyStringRange_00406290",
+  "signature": "extern \"C\" uint32_t fn_00406290(uint32_t first, uint32_t last, uint32_t dest)",
+  "summary": "Forwards (first, last, dest) to the std::string range-copy helper and returns its result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:17:19Z"
+}
