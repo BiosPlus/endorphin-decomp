@@ -44,3 +44,17 @@ int32_t __thiscall fn_0066EE20(void* /*self*/, void* arg1, void* arg2, uint32_t 
     return ext_004769F0(&arg3, &lhsValue, &rhsValue, 0x0098B7C0u);
 }
 } // namespace lift_0066EE20
+
+// [0x0066AE10]
+namespace lift_0066AE10 {
+extern void ext_006720C0(void* self, int32_t value, int32_t zero);
+
+// @name ExprParser::IntType::vfunc_0
+// @class ExprParser::IntType
+// @summary Forwards the int32 value read from *src into ext_006720C0 on self with a zero second argument, then returns self.
+void* fn_0066AE10(void* self, const int32_t* src) {
+    const int32_t value = *src;
+    ext_006720C0(self, value, 0);
+    return self;
+}
+} // namespace lift_0066AE10

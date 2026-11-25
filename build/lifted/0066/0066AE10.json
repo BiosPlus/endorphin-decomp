@@ -1,0 +1,14 @@
+{
+  "va": "0x0066AE10",
+  "size": 35,
+  "orig_symbol": "ExprParser::IntType::vfunc_0",
+  "src_path": "src/ExprParser/IntType.cpp",
+  "lifted_path": "lifted/ExprParser/IntType.cpp",
+  "name": "ExprParser::IntType::vfunc_0",
+  "class": "ExprParser::IntType",
+  "signature": "void* fn_0066AE10(void* self, const int32_t* src)",
+  "summary": "Forwards the int32 value read from *src into ext_006720C0 on self with a zero second argument, then returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:52:15Z"
+}

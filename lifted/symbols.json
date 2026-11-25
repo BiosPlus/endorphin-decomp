@@ -43927,6 +43927,13 @@
     "summary": "Rounds the stored float half away from zero (x \u003c 0 ? x - 0.5 : x + 0.5) and passes it to 0x006A6DE0.",
     "lifted_path": "lifted/ExprParser/RealType.cpp"
   },
+  "0x0066AE10": {
+    "name": "ExprParser::IntType::vfunc_0",
+    "class": "ExprParser::IntType",
+    "signature": "void* fn_0066AE10(void* self, const int32_t* src)",
+    "summary": "Forwards the int32 value read from *src into ext_006720C0 on self with a zero second argument, then returns self.",
+    "lifted_path": "lifted/ExprParser/IntType.cpp"
+  },
   "0x0066AE40": {
     "name": "ExprParser::IntType::vfunc_1",
     "class": "ExprParser::IntType",
