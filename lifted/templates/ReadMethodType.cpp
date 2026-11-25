@@ -57300,3 +57300,1601 @@ void* fn_004A3FA0(void* self, uint32_t unused_arg) {
     return self;
 }
 } // namespace lift_004A3FA0
+
+// [0x004A4850] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_004A4850 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_00496F30(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_004A4850(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_00496F30(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_004A4850
+
+// [0x004A4B30] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_004A4B30 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_00496F40(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_004A4B30(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_00496F40(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_004A4B30
+
+// [0x004AA370] ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_004AA370 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_004A9A60(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_004AA370(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_004A9A60(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_004AA370
+
+// [0x004AAC60] ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_004AAC60 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_004A9A50(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_004AAC60(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_004A9A50(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_004AAC60
+
+// [0x004CAA70] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_004CAA70 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_004CA2F0(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_004CAA70(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_004CA2F0(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_004CAA70
+
+// [0x004D56F0] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_004D56F0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_004D39B0(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_004D56F0(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_004D39B0(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_004D56F0
+
+// [0x004D5A00] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_004D5A00 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_004D39C0(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_004D5A00(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_004D39C0(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_004D5A00
+
+// [0x004D7C20] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_004D7C20 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_004D3C10(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_004D7C20(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_004D3C10(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_004D7C20
+
+// [0x004D7FE0] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_004D7FE0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_004D39F0(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_004D7FE0(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_004D39F0(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_004D7FE0
+
+// [0x004D83D0] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_004D83D0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_004D3A00(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_004D83D0(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_004D3A00(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_004D83D0
+
+// [0x004E03E0] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_004E03E0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_004DDE60(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_004E03E0(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_004DDE60(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_004E03E0
+
+// [0x004E06B0] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_004E06B0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_004DDE50(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_004E06B0(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_004DDE50(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_004E06B0
+
+// [0x004E0C70] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_004E0C70 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_004DE320(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_004E0C70(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_004DE320(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_004E0C70
+
+// [0x004EE760] ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>::vfunc_0 (79 bytes)
+namespace lift_004EE760 {
+// @name ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_004EDE20(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_004EE760(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_004EDE20(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_004EE760
+
+// [0x00585610] ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_00585610 {
+// @name ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_00584C00(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_00585610(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_00584C00(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_00585610
+
+// [0x005B7510] ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>::vfunc_0 (79 bytes)
+namespace lift_005B7510 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_005B64D0(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_005B7510(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_005B64D0(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_005B7510
+
+// [0x005C62D0] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_005C62D0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_005B6490(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_005C62D0(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_005B6490(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_005C62D0
+
+// [0x005C6630] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_005C6630 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_005B6470(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_005C6630(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_005B6470(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_005C6630
+
+// [0x005C6AB0] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_005C6AB0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_005B6480(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_005C6AB0(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_005B6480(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_005C6AB0
+
+// [0x005CB3E0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>::vfunc_0 (79 bytes)
+namespace lift_005CB3E0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_005C3650(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_005CB3E0(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_005C3650(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_005CB3E0
+
+// [0x005CB9B0] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_005CB9B0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_005C3640(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_005CB9B0(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_005C3640(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_005CB9B0
+
+// [0x005D5B00] ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_005D5B00 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_005CF940(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_005D5B00(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_005CF940(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_005D5B00
+
+// [0x005D5D60] ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_005D5D60 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_005CFE50(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_005D5D60(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_005CFE50(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_005D5D60
+
+// [0x005D6120] ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_005D6120 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_005CF950(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_005D6120(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_005CF950(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_005D6120
+
+// [0x005F8ED0] ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_005F8ED0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_005F51B0(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_005F8ED0(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_005F51B0(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_005F8ED0
+
+// [0x00616880] ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_00616880 {
+// @name ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_00610A80(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_00616880(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_00610A80(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_00616880
+
+// [0x006169D0] ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_006169D0 {
+// @name ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_00610A90(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_006169D0(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_00610A90(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_006169D0
+
+// [0x0061CD70] ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_0061CD70 {
+// @name ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_00610AA0(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_0061CD70(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_00610AA0(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_0061CD70
+
+// [0x006430B0] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_006430B0 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_00641FF0(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_006430B0(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_00641FF0(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_006430B0
+
+// [0x006433F0] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_006433F0 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_00642000(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_006433F0(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_00642000(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_006433F0
+
+// [0x00643680] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_00643680 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_00642010(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_00643680(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_00642010(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_00643680
+
+// [0x00643910] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_00643910 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_0048FAF0(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_00643910(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_0048FAF0(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_00643910
+
+// [0x00643A50] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_00643A50 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_00641FD0(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_00643A50(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_00641FD0(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_00643A50
+
+// [0x00643D30] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_00643D30 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049C690 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0).
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_00641FE0(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_00643D30(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_00641FE0(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
+} // namespace lift_00643D30
