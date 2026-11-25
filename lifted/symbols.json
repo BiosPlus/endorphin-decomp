@@ -39590,6 +39590,12 @@
     "summary": "Resolves a helper object from self, then tail-dispatches vtable slot 6 on its sub-object at +0x04 with the helper as argument.",
     "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp"
   },
+  "0x00670D80": {
+    "name": "destroyPointerRange",
+    "signature": "void __stdcall fn_00670D80(uint8_t* container1, uint32_t* first, uint8_t* container2, uint32_t* last)",
+    "summary": "Iterates over a checked vector range [first, last) and passes each 32-bit element to ext_006A5C5C.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00670EC0": {
     "name": "Unknown::InitSubobjectAndZeroFields",
     "class": "Unknown",
@@ -41359,6 +41365,12 @@
     "summary": "Returns mem_00B5AE98[index] where index is the single stack argument (__cdecl).",
     "lifted_path": "lifted/leaf/tiny_690000.cpp"
   },
+  "0x00692010": {
+    "name": "lowerBound32",
+    "signature": "uint32_t* sub_00692010(uint32_t* first, uint32_t* last, const uint32_t* val_ptr, bool (*comp)(uint32_t, uint32_t))",
+    "summary": "Binary search (lower_bound) over a range of 32-bit elements using a predicate",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00692210": {
     "name": "sub_00692210",
     "signature": "extern \"C\" int __thiscall fn_00692210(void* self)",
@@ -41564,6 +41576,13 @@
     "name": "cstrCompareStep2",
     "signature": "int cstrCompareStep2(const char* const* self, const char* other)",
     "summary": "Case-sensitive string compare (strcmp-style, unsigned bytes) that steps two bytes per iteration; returns -1/0/1. Takes the string pointer from *self and the other string as its one argument.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
+  "0x006988A0": {
+    "name": "String::findFirstNotOf",
+    "class": "String",
+    "signature": "int32_t __thiscall sub_006988A0(void* self, const char* chars, int32_t startIndex)",
+    "summary": "Find index of first character not in the given C-string starting at startIndex, or -1 if none.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
   "0x006989B0": {

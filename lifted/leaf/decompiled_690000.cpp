@@ -683,3 +683,59 @@ bool fn_00696B70(void* stream, void* str) {
     }
 }
 } // namespace lift_00696B70
+
+// [0x006988A0]
+namespace lift_006988A0 {
+// @name String::findFirstNotOf
+// @class String
+// @summary Find index of first character not in the given C-string starting at startIndex, or -1 if none.
+// @field String +0x00 const char* data
+// @field String +0x04 int32_t length
+
+
+int32_t __thiscall sub_006988A0(void* self, const char* chars, int32_t startIndex) {
+    const char* data = *reinterpret_cast<const char* const*>(static_cast<const uint8_t*>(self) + 0x00);
+    int32_t length = *reinterpret_cast<const int32_t*>(static_cast<const uint8_t*>(self) + 0x04);
+
+    int32_t charsLen = 0;
+    while (chars[charsLen] != '\0') {
+        ++charsLen;
+    }
+
+    for (int32_t i = startIndex; i < length; ++i) {
+        char ch = data[i];
+        bool found = false;
+        for (int32_t j = 0; j < charsLen; ++j) {
+            if (ch == chars[j]) {
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+} // namespace lift_006988A0
+
+// [0x00692010]
+namespace lift_00692010 {
+// @name lowerBound32
+// @summary Binary search (lower_bound) over a range of 32-bit elements using a predicate
+uint32_t* sub_00692010(uint32_t* first, uint32_t* last, const uint32_t* val_ptr, bool (*comp)(uint32_t, uint32_t)) {
+    int32_t count = static_cast<int32_t>(last - first);
+    while (count > 0) {
+        int32_t half = count / 2;
+        uint32_t* mid = first + half;
+        if (comp(*mid, *val_ptr)) {
+            first = mid + 1;
+            count -= half + 1;
+        } else {
+            count = half;
+        }
+    }
+    return first;
+}
+} // namespace lift_00692010

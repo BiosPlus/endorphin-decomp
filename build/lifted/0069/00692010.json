@@ -1,0 +1,13 @@
+{
+  "va": "0x00692010",
+  "size": 87,
+  "orig_symbol": "sub_00692010",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "lowerBound32",
+  "signature": "uint32_t* sub_00692010(uint32_t* first, uint32_t* last, const uint32_t* val_ptr, bool (*comp)(uint32_t, uint32_t))",
+  "summary": "Binary search (lower_bound) over a range of 32-bit elements using a predicate",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:14:30Z"
+}
