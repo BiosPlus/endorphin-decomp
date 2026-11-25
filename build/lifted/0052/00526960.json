@@ -1,0 +1,46 @@
+{
+  "va": "0x00526960",
+  "size": 102,
+  "orig_symbol": "sub_00526960",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "Unknown::clearStringVectorRangePair",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00526960(uint8_t* self)",
+  "summary": "Clears the range [+0x04, +0x08) of this and the range [+0x14, +0x18) of the sub-object at this+0x10, each via ext_005013F0, after validating begin \u003c= end; sets the flag byte at +0x40 to 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "range1_begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "range1_end"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "range2_begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "range2_end"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "uint8_t",
+      "name": "flag"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:45:28Z"
+}

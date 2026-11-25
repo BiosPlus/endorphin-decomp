@@ -20399,6 +20399,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00526960": {
+    "name": "Unknown::clearStringVectorRangePair",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00526960(uint8_t* self)",
+    "summary": "Clears the range [+0x04, +0x08) of this and the range [+0x14, +0x18) of the sub-object at this+0x10, each via ext_005013F0, after validating begin \u003c= end; sets the flag byte at +0x40 to 0.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00526C60": {
     "name": "NMData::NetworkConnectorData::vfunc_28",
     "class": "NMData::NetworkConnectorData",

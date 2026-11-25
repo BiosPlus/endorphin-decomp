@@ -1003,3 +1003,47 @@ void fn_00527D60(void* self, void** out, void* range, void** pos) {
     out[1] = pos;
 }
 } // namespace lift_00527D60
+
+// [0x00526960] sub_00526960 (102 bytes)
+namespace lift_00526960 {
+// Known callee 0x005013F0: sub_005013F0 (Auto-lifted identical-shape clone of 0x0057E9E0 (Unknown::eraseStringVectorRange).)
+extern void __thiscall ext_005013F0(void* self, void* out_iter, void* first_container, uint32_t first_ptr, void* last_container, uint32_t last_ptr);
+extern uint32_t mem_00925134;
+
+// @name Unknown::clearStringVectorRangePair
+// @class Unknown
+// @summary Clears the range [+0x04, +0x08) of this and the range [+0x14, +0x18) of the sub-object at this+0x10, each via ext_005013F0, after validating begin <= end; sets the flag byte at +0x40 to 0.
+// @field Unknown +0x04 uint32_t range1_begin
+// @field Unknown +0x08 uint32_t range1_end
+// @field Unknown +0x14 uint32_t range2_begin
+// @field Unknown +0x18 uint32_t range2_end
+// @field Unknown +0x40 uint8_t flag
+void __thiscall fn_00526960(uint8_t* self) {
+    using InvalidParamFn = void(__cdecl*)();
+    InvalidParamFn invalid_param = reinterpret_cast<InvalidParamFn>(static_cast<uintptr_t>(mem_00925134));
+
+    uint32_t end_a = *reinterpret_cast<uint32_t*>(self + 0x08);
+    *(self + 0x40) = 0;
+    if (*reinterpret_cast<uint32_t*>(self + 0x04) > end_a) {
+        invalid_param();
+    }
+    uint32_t begin_a = *reinterpret_cast<uint32_t*>(self + 0x04);
+    if (begin_a > end_a) {
+        invalid_param();
+    }
+    uint32_t iter_a[2] = {};
+    ext_005013F0(self, iter_a, self, begin_a, self, end_a);
+
+    uint8_t* sub = self + 0x10;
+    uint32_t end_b = *reinterpret_cast<uint32_t*>(self + 0x18);
+    if (*reinterpret_cast<uint32_t*>(sub + 0x04) > end_b) {
+        invalid_param();
+    }
+    uint32_t begin_b = *reinterpret_cast<uint32_t*>(sub + 0x04);
+    if (begin_b > end_b) {
+        invalid_param();
+    }
+    uint32_t iter_b[2] = {};
+    ext_005013F0(sub, iter_b, sub, begin_b, sub, end_b);
+}
+} // namespace lift_00526960
