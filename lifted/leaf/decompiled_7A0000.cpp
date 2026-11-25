@@ -888,3 +888,30 @@ extern void* fn_007ABE70(void) {
 }
 } // namespace lift_00706DD0
 } // namespace lift_007ABE70
+
+// [0x007ABC20]
+namespace lift_007ABC20 {
+// @name sub_007ABC20
+// @summary Constructor that initializes base, a 20-byte member at +0x04, an inline pointer at +0x18, and sets vtable mem_009983CC.
+// @field unknown +0x00 uint32_t vtable
+// @field unknown +0x04 uint8_t[20] field_0x04
+// @field unknown +0x14 uint8_t[4] field_0x14
+// @field unknown +0x18 uint32_t field_0x18
+
+
+extern uint32_t mem_009983CC;
+extern void* ext_007ABBE0(void* self);
+extern uint32_t ext_006D2130(uint32_t self, int32_t arg1, uint32_t arg2);
+
+void* __thiscall sub_007ABC20(void* self) {
+    uint8_t* p = static_cast<uint8_t*>(self);
+    ext_007ABBE0(self);
+    uint8_t* member = p + 0x04;
+    ext_006D2130(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(member)), 0x10, 0x4);
+    *reinterpret_cast<uint32_t*>(member + 0x14) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(member + 0x10));
+    *reinterpret_cast<uint32_t*>(p) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_009983CC));
+    return self;
+}
+} // namespace lift_007ABC20
