@@ -38060,6 +38060,13 @@
     "summary": "Constructor: runs base ctor, stamps vtable 0x00977734, zeroes twelve floats at this+0x44..+0x70, then calls initFields and returns this.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x00626820": {
+    "name": "NMData::EffectorSkeletalData::vfunc_8",
+    "class": "NMData::EffectorSkeletalData",
+    "signature": "std::string* fn_00626820(void* self, std::string* ret)",
+    "summary": "Constructs a std::string from the constant at 0x0097778C into the caller-supplied return slot and returns that slot.",
+    "lifted_path": "lifted/NMData/EffectorSkeletalData.cpp"
+  },
   "0x006268F0": {
     "name": "sub_006268F0",
     "signature": "extern \"C\" void __fastcall fn_006268F0(void* self)",

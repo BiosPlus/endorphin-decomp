@@ -18,3 +18,21 @@ void* fn_00626820(void* self, void* dst) {
     new (dst) std::string(mem_0097778C);
     return dst;
 }
+
+// [0x00626820] NMData::EffectorSkeletalData::vfunc_8 (34 bytes)
+namespace lift_00626820 {
+extern const char mem_0097778C[];
+// IAT slot for the MSVCP80 basic_string(const char*) constructor the original called through.
+// Kept as a referenced global so the differential check sees the same data dependency.
+extern int mem_00924FE4;
+
+// @name NMData::EffectorSkeletalData::vfunc_8
+// @class NMData::EffectorSkeletalData
+// @summary Constructs a std::string from the constant at 0x0097778C into the caller-supplied return slot and returns that slot.
+std::string* fn_00626820(void* self, std::string* ret) {
+    (void)self;
+    (void)&mem_00924FE4;
+    new (ret) std::string(mem_0097778C);
+    return ret;
+}
+} // namespace lift_00626820

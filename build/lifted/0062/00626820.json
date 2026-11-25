@@ -1,0 +1,14 @@
+{
+  "va": "0x00626820",
+  "size": 34,
+  "orig_symbol": "NMData::EffectorSkeletalData::vfunc_8",
+  "src_path": "src/NMData/EffectorSkeletalData.cpp",
+  "lifted_path": "lifted/NMData/EffectorSkeletalData.cpp",
+  "name": "NMData::EffectorSkeletalData::vfunc_8",
+  "class": "NMData::EffectorSkeletalData",
+  "signature": "std::string* fn_00626820(void* self, std::string* ret)",
+  "summary": "Constructs a std::string from the constant at 0x0097778C into the caller-supplied return slot and returns that slot.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:48:39Z"
+}
