@@ -947,3 +947,26 @@ bool fillValuesFromBucketCursor_007DCC20(BucketMap* map, BucketCursor* cur, OutB
     }
 }
 } // namespace lift_007DCC20
+
+// [0x007D6260]
+namespace lift_007D6260 {
+// @name sub_007D6260_freeBuffer
+// @summary Frees an allocated buffer via a callback at +0x1c/+0x10 and clears pointer and size fields.
+// @field Buffer +0x00 void* data
+// @field Buffer +0x04 uint32_t size
+// @field Buffer +0x1c void* allocator
+
+
+void __cdecl sub_007D6260(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    void* data = lift_field<void*>(base, 0x00);
+    if (data != nullptr) {
+        uint8_t* allocator = lift_field<uint8_t*>(base, 0x1c);
+        using FreeFn = void(__cdecl*)(void*);
+        FreeFn free_fn = lift_field<FreeFn>(allocator, 0x10);
+        free_fn(data);
+        lift_field<uint32_t>(base, 0x00) = 0;
+        lift_field<uint32_t>(base, 0x04) = 0;
+    }
+}
+} // namespace lift_007D6260
