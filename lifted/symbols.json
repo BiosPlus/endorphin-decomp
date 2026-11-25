@@ -24877,6 +24877,12 @@
     "summary": "Copies each 0x3C-byte record in [first, last) to dest (two bytes plus two std::string members), returns dest past the last copied record.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057BC70": {
+    "name": "GetOnceInitString_0057BC70",
+    "signature": "void* fn_0057BC70()",
+    "summary": "Returns the global string at 0x00B3D6F8, initializing it once on first call (sets bit 0 of 0x00B3D714, calls ext_0066AD10, then registers teardown via ext_006A6C87).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057BCD0": {
     "name": "GetOnceInitString_0057BCD0",
     "signature": "void* fn_0057BCD0()",
