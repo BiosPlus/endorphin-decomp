@@ -1,0 +1,13 @@
+{
+  "va": "0x0051A6D0",
+  "size": 93,
+  "orig_symbol": "sub_0051A6D0",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "CopyRangeBackward5f_0051A6D0",
+  "signature": "extern \"C\" void* fn_0051A6D0(void* first, void* last, void* destEnd)",
+  "summary": "Copies a range of 20-byte (5-float) elements backward into a destination ending at destEnd and returns the destination begin.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:18:27Z"
+}

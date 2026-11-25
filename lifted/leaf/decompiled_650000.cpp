@@ -1390,3 +1390,16 @@ void* fn_0051AA00() {
 }
 } // namespace lift_004CAE30
 } // namespace lift_0051AA00
+
+// [0x0051A6D0]
+namespace lift_0051A6D0 {
+extern void* ext_00519E50(void* first, void* last, void* destEnd);
+
+// @name CopyRangeBackward5f_0051A6D0
+// @summary Copies a range of 20-byte (5-float) elements backward into a destination ending at destEnd and returns the destination begin.
+extern void* fn_0051A6D0(void* first, void* last, void* destEnd) {
+    ext_00519E50(first, last, destEnd);
+    ptrdiff_t count = (static_cast<const char*>(last) - static_cast<const char*>(first)) / 20;
+    return static_cast<char*>(destEnd) - count * 20;
+}
+} // namespace lift_0051A6D0
