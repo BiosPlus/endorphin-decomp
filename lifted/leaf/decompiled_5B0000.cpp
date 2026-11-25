@@ -549,3 +549,22 @@ void* fn_005B8180() {
     return &mem_00B43C9C;
 }
 } // namespace lift_005B8180
+
+// [0x005B3E30]
+namespace lift_005B3E30 {
+// @name getSingleton_005B3E30
+// @summary Lazily initializes and returns the singleton object at 0x00B4356C.
+
+extern DWORD mem_00B4356C;
+extern DWORD mem_00B43570;
+extern void (__thiscall *ext_0067A670)(void* self);
+
+void* fn_005B3E30() {
+    if ((mem_00B43570 & 1) == 0) {
+        mem_00B43570 |= 1;
+        ext_0067A670(&mem_00B4356C);
+        mem_00B4356C = 0x00960694;
+    }
+    return &mem_00B4356C;
+}
+} // namespace lift_005B3E30
