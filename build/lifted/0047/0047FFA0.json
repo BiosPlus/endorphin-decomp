@@ -1,0 +1,13 @@
+{
+  "va": "0x0047FFA0",
+  "size": 76,
+  "orig_symbol": "sub_0047FFA0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "Vector4Subtract_0047FFA0",
+  "signature": "void fn_0047FFA0(const float* a, float* out, const float* b)",
+  "summary": "Component-wise float subtraction of two 4-float vectors: out[i] = a[i] - b[i] for i in 0..3.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:37:57Z"
+}

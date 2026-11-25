@@ -340,3 +340,18 @@ uint32_t fn_004788A0(uint32_t begin, uint32_t end, uint32_t value) {
 }
 } // namespace lift_0054F290
 } // namespace lift_004788A0
+
+// [0x0047FFA0] sub_0047FFA0 (76 bytes)
+namespace lift_0047FFA0 {
+// @name Vector4Subtract_0047FFA0
+// @summary Component-wise float subtraction of two 4-float vectors: out[i] = a[i] - b[i] for i in 0..3.
+// Not a member: `a` arrives in ECX (thiscall-style) but the class is unknown, so no @class or @field lines.
+void fn_0047FFA0(const float* a, float* out, const float* b) {
+    // Read each pair before writing, so out may alias a or b.
+    for (int i = 0; i < 4; ++i) {
+        const float av = a[i];
+        const float bv = b[i];
+        out[i] = av - bv;
+    }
+}
+} // namespace lift_0047FFA0
