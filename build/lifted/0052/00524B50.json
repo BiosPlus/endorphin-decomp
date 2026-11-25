@@ -1,0 +1,27 @@
+{
+  "va": "0x00524B50",
+  "size": 99,
+  "orig_symbol": "sub_00524B50",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "set_field_0x08_double_value",
+  "signature": "void __thiscall sub_00524B50(void* self, float value)",
+  "summary": "Sets a double value in a nested vector at index field_0x08 from a float argument.",
+  "fields": [
+    {
+      "class": "this",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "this",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:59:04Z"
+}

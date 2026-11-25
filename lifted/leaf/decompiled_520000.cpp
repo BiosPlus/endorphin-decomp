@@ -1216,3 +1216,51 @@ void treeIteratorIncrement(void* self) {
     }
 }
 } // namespace lift_0052A1C0
+
+// [0x00524B50]
+namespace lift_00524B50 {
+extern uint32_t mem_00925134;
+
+// @name set_field_0x08_double_value
+// @summary Sets a double value in a nested vector at index field_0x08 from a float argument.
+// @field this +0x04 uint32_t field_0x04
+// @field this +0x08 uint32_t field_0x08
+
+void __thiscall sub_00524B50(void* self, float value) {
+    uint8_t* edi = reinterpret_cast<uint8_t*>(self);
+    uint8_t* esi = *reinterpret_cast<uint8_t**>(edi + 0x4);
+    if (!esi) {
+        return;
+    }
+
+    using InvalidParamFn = void(__cdecl*)();
+    InvalidParamFn invalid_param = reinterpret_cast<InvalidParamFn>(mem_00925134);
+
+    uint8_t* vec_first = *reinterpret_cast<uint8_t**>(esi + 0x24);
+    if (!vec_first) {
+        invalid_param();
+    } else {
+        int32_t diff = static_cast<int32_t>(*reinterpret_cast<uint8_t**>(esi + 0x28) - vec_first);
+        if (diff / 104 == 0) {
+            invalid_param();
+        }
+    }
+
+    uint8_t* elem0 = *reinterpret_cast<uint8_t**>(esi + 0x24);
+    uint8_t* inner_vec = elem0 + 0x4;
+    uint8_t* inner_first = *reinterpret_cast<uint8_t**>(inner_vec + 0x4);
+    uint32_t idx = *reinterpret_cast<uint32_t*>(edi + 0x8);
+
+    if (!inner_first) {
+        invalid_param();
+    } else {
+        int32_t count = static_cast<int32_t>(*reinterpret_cast<uint8_t**>(inner_vec + 0x8) - inner_first) >> 3;
+        if (idx >= static_cast<uint32_t>(count)) {
+            invalid_param();
+        }
+    }
+
+    double* data = *reinterpret_cast<double**>(inner_vec + 0x4);
+    data[idx] = static_cast<double>(value);
+}
+} // namespace lift_00524B50
