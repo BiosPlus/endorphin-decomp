@@ -57113,6 +57113,13 @@
     "summary": "Empty function (returns immediately).",
     "lifted_path": "lifted/leaf/tiny_730000.cpp"
   },
+  "0x00736C90": {
+    "name": "Unknown::FindInEmbeddedSortedArray",
+    "class": "Unknown",
+    "signature": "uint32_t fn_00736C90(void* self, uint32_t key)",
+    "summary": "Forwards a key lookup to the SortedArray embedded at this+0xB8 and returns its result (no out-index).",
+    "lifted_path": "lifted/leaf/decompiled_730000.cpp"
+  },
   "0x00736FE0": {
     "name": "sub_00736FE0",
     "signature": "void fn_00736FE0()",

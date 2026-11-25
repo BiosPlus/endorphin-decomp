@@ -1,0 +1,22 @@
+{
+  "va": "0x00736C90",
+  "size": 32,
+  "orig_symbol": "sub_00736C90",
+  "src_path": "src/leaf/decompiled_730000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_730000.cpp",
+  "name": "Unknown::FindInEmbeddedSortedArray",
+  "class": "Unknown",
+  "signature": "uint32_t fn_00736C90(void* self, uint32_t key)",
+  "summary": "Forwards a key lookup to the SortedArray embedded at this+0xB8 and returns its result (no out-index).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xB8",
+      "type": "SortedArray",
+      "name": "field_0xB8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:55:31Z"
+}
