@@ -1344,3 +1344,41 @@ uint32_t __cdecl fn_00859F60(uint32_t data, uint32_t size) {
     return obj;
 }
 } // namespace lift_00859F60
+
+// [0x0085C1C0]
+namespace lift_0085C1C0 {
+// @name computeTreeEncodedSize_0085C1C0
+// @summary Recursively computes encoded size for a node tree using field_0x00 flags, child (+0x20), and sibling (+0x1C)
+// @field Node +0x00 uint32_t field_0x00
+// @field Node +0x1C uint32_t field_0x1C
+// @field Node +0x20 uint32_t field_0x20
+
+
+extern uint32_t mem_r32(uint32_t);
+extern uint32_t ext_0085C130(uint32_t);
+extern uint32_t ext_0085C170(uint32_t);
+extern uint32_t ext_0086D210(uint32_t);
+
+uint32_t sub_0085C1C0(uint32_t arg0) {
+    uint32_t edi = arg0;
+    uint32_t eax = mem_r32(edi);
+    uint32_t esi;
+
+    if (((eax >> 24) & 0x20u) != 0u) {
+        uint32_t edx = mem_r32(edi + 0x20u);
+        uint32_t ebx = eax & 0x0FFFFFFFu;
+        esi = sub_0085C1C0(edx);
+        esi += ext_0085C130(esi);
+        esi += ext_0085C170(ebx);
+    } else {
+        esi = ext_0086D210(edi);
+    }
+
+    uint32_t next = mem_r32(edi + 0x1Cu);
+    if (next != 0u) {
+        esi += sub_0085C1C0(next);
+    }
+
+    return esi;
+}
+} // namespace lift_0085C1C0
