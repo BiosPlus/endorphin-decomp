@@ -1,0 +1,28 @@
+{
+  "va": "0x00544CE0",
+  "size": 66,
+  "orig_symbol": "SnapTranslateTool::vfunc_16",
+  "src_path": "src/classes/SnapTranslateTool.cpp",
+  "lifted_path": "lifted/classes/SnapTranslateTool.cpp",
+  "name": "SnapTranslateTool::vfunc_16",
+  "class": "SnapTranslateTool",
+  "signature": "uint32_t fn_00544CE0(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Delegates to subobject at +0x164 via ext_00543530; if non-negative, forwards to vtable slot 16 of subobject at +0x9C, else returns 1.",
+  "fields": [
+    {
+      "class": "SnapTranslateTool",
+      "offset": "+0x9C",
+      "type": "void*",
+      "name": "field_0x9C"
+    },
+    {
+      "class": "SnapTranslateTool",
+      "offset": "+0x164",
+      "type": "uint8_t",
+      "name": "field_0x164"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:15:35Z"
+}

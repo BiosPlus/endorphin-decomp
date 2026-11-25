@@ -19313,6 +19313,13 @@
     "summary": "Delegates to subobject at +0x164 via ext_00543530; if non-negative, forwards to vtable slot 16 of subobject at +0x9C, else returns 1.",
     "lifted_path": "lifted/classes/SnapTranslateTool.cpp"
   },
+  "0x00544D30": {
+    "name": "SnapTranslateTool::vfunc_17",
+    "class": "SnapTranslateTool",
+    "signature": "uint32_t __thiscall fn_00544D30(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Dispatches vfunc_17 to subobject at +0x164, falling back to +0x9C if it returns 0, and returns 1.",
+    "lifted_path": "lifted/classes/SnapTranslateTool.cpp"
+  },
   "0x00544D80": {
     "name": "SnapTranslateTool::vfunc_26",
     "class": "SnapTranslateTool",
