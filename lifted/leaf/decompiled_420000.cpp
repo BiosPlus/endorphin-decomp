@@ -1030,3 +1030,26 @@ void fn_00422B60(void* self, DWORD /*unusedEdx*/, DWORD /*unusedArg0*/, DWORD /*
     ext_006A5EA8(self);
 }
 } // namespace lift_00422B60
+
+// [0x00427210]
+namespace lift_00427210 {
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00ACD9D8[];
+
+// @name findMatchingString
+// @summary Searches a 54-entry string table for a match against a std::string and returns the matching C-string pointer or 0.
+
+uint32_t __stdcall sub_00427210(uint32_t str_ptr) {
+    using c_str_fn = uint32_t(__thiscall*)(uint32_t);
+    auto get_c_str = reinterpret_cast<c_str_fn>(mem_00924FF0);
+
+    for (int32_t i = 0; i < 0x36; ++i) {
+        const char* target = reinterpret_cast<const char*>(get_c_str(str_ptr));
+        const char* entry = reinterpret_cast<const char*>(mem_00ACD9D8[i]);
+        if (std::strcmp(entry, target) == 0) {
+            return mem_00ACD9D8[i];
+        }
+    }
+    return 0;
+}
+} // namespace lift_00427210
