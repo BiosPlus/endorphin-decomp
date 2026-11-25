@@ -1,0 +1,22 @@
+{
+  "va": "0x005451E0",
+  "size": 22,
+  "orig_symbol": "PoseTool::vfunc_32",
+  "src_path": "src/classes/PoseTool.cpp",
+  "lifted_path": "lifted/classes/PoseTool.cpp",
+  "name": "PoseTool::vfunc_32",
+  "class": "PoseTool",
+  "signature": "uint32_t __thiscall fn_005451E0(void* self)",
+  "summary": "Calls CameraTool::vfunc_32 on self, then tail-calls vtable slot 26 (+0x68) of the object at this+0xA0 with this = that object and returns its result.",
+  "fields": [
+    {
+      "class": "PoseTool",
+      "offset": "+0xA0",
+      "type": "void*",
+      "name": "field_0xA0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:29:07Z"
+}

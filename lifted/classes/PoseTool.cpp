@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/classes/PoseTool.cpp
 #include "lift_compat.h"
+#include <cstdint>
 
 // [0x00545120] PoseTool::vfunc_23 (29 bytes)
 namespace lift_00545120 {
@@ -242,3 +243,22 @@ int fn_00545320(void* self, uint32_t arg0, uint32_t arg1) {
     return 1;
 }
 } // namespace lift_00545320
+
+// [0x005451E0] PoseTool::vfunc_32 (22 bytes)
+namespace lift_005451E0 {
+// Known callee 0x00543470: CameraTool::vfunc_32 (Fetches a 64-byte block via two virtual calls, copies it into this+0x04, then duplicates it into this+0x44.)
+extern void ext_00543470(void* self);
+
+// @name PoseTool::vfunc_32
+// @class PoseTool
+// @summary Calls CameraTool::vfunc_32 on self, then tail-calls vtable slot 26 (+0x68) of the object at this+0xA0 with this = that object and returns its result.
+// @field PoseTool +0xA0 void* field_0xA0
+uint32_t __thiscall fn_005451E0(void* self) {
+    ext_00543470(self);
+
+    void* obj = *reinterpret_cast<void**>(static_cast<uint8_t*>(self) + 0xA0);
+    void** objVtbl = *reinterpret_cast<void***>(obj);
+    using VFuncRet = uint32_t(__thiscall*)(void*);
+    return reinterpret_cast<VFuncRet>(objVtbl[0x68 / sizeof(void*)])(obj);
+}
+} // namespace lift_005451E0

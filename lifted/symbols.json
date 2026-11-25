@@ -19733,6 +19733,13 @@
     "summary": "Invokes vtable slots +0xA4 and +0xA8 on field_0x88, then tail-calls PoseTool::vfunc_32 (+0x80).",
     "lifted_path": "lifted/classes/PoseTool.cpp"
   },
+  "0x005451E0": {
+    "name": "PoseTool::vfunc_32",
+    "class": "PoseTool",
+    "signature": "uint32_t __thiscall fn_005451E0(void* self)",
+    "summary": "Calls CameraTool::vfunc_32 on self, then tail-calls vtable slot 26 (+0x68) of the object at this+0xA0 with this = that object and returns its result.",
+    "lifted_path": "lifted/classes/PoseTool.cpp"
+  },
   "0x00545320": {
     "name": "PoseTool::vfunc_18",
     "class": "PoseTool",
