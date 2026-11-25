@@ -80,3 +80,32 @@ int32_t __stdcall fn_0074F680(int32_t a, int32_t c, int32_t b) {
     return quotient + remainder * c;
 }
 } // namespace lift_0074F680
+
+// [0x0074F7A0] sub_0074F7A0 (70 bytes)
+namespace lift_0074F7A0 {
+// @name Compare3Int32Keys
+// @summary Three-key ordering compare of two 12-byte records: keys at +0x00, +0x08, +0x04 (in that priority); returns 0 if all equal, else 1 or -1.
+// @field Record +0x00 int32_t field_0x00
+// @field Record +0x04 int32_t field_0x04
+// @field Record +0x08 int32_t field_0x08
+int fn_0074F7A0(const void* a, const void* b) {
+    const int32_t a0 = lift_field<int32_t>(a, 0x00);
+    const int32_t b0 = lift_field<int32_t>(b, 0x00);
+    if (a0 != b0) {
+        return (a0 >= b0) ? 1 : -1;
+    }
+
+    const int32_t a8 = lift_field<int32_t>(a, 0x08);
+    const int32_t b8 = lift_field<int32_t>(b, 0x08);
+    if (a8 != b8) {
+        return (a8 >= b8) ? 1 : -1;
+    }
+
+    const int32_t a4 = lift_field<int32_t>(a, 0x04);
+    const int32_t b4 = lift_field<int32_t>(b, 0x04);
+    if (a4 == b4) {
+        return 0;
+    }
+    return (a4 >= b4) ? 1 : -1;
+}
+} // namespace lift_0074F7A0

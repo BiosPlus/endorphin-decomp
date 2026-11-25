@@ -8,11 +8,14 @@
 // Recovered field layout for Record:
 namespace lifted_layout {
 struct Record_Fields {
-    // +0x0   uint16_t                 tag  (evidence: 0x00864F30, 0x0086EFD0)
+    // +0x0   int32_t                  field_0x00  (evidence: 0x0074F7A0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint16_t                 tag  (evidence: 0x00864F30, 0x0086EFD0) // CONFLICT: multiple definitions at +0x0
     // +0x2   uint16_t                 field_0x02  (evidence: 0x00864F30, 0x0086EFD0)
+    // +0x4   int32_t                  field_0x04  (evidence: 0x0074F7A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              field_0x04  (evidence: 0x00508BC0, 0x00509C10) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint16_t                 field_0x04  (evidence: 0x00864F30, 0x0086EFD0) // CONFLICT: multiple definitions at +0x4
     // +0x6   uint16_t                 field_0x06  (evidence: 0x00864F30, 0x0086EFD0)
+    // +0x8   int32_t                  field_0x08  (evidence: 0x0074F7A0)
     // +0x20  float                    field_0x20  (evidence: 0x00508BC0, 0x00509C10)
 };
 } // namespace lifted_layout

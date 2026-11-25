@@ -54958,6 +54958,12 @@
     "summary": "Returns (a / b) + (a % b) * c using signed 32-bit division; stdcall, 3 args (a, c, b).",
     "lifted_path": "lifted/leaf/decompiled_740000.cpp"
   },
+  "0x0074F7A0": {
+    "name": "Compare3Int32Keys",
+    "signature": "int fn_0074F7A0(const void* a, const void* b)",
+    "summary": "Three-key ordering compare of two 12-byte records: keys at +0x00, +0x08, +0x04 (in that priority); returns 0 if all equal, else 1 or -1.",
+    "lifted_path": "lifted/leaf/decompiled_740000.cpp"
+  },
   "0x0074F820": {
     "name": "sub_0074F820",
     "class": "Unknown",
