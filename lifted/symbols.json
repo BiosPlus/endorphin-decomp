@@ -28561,6 +28561,13 @@
     "summary": "Fetches the file-name string via the bound getter (vtable slot 8) and returns it parsed as a float (atof); throws a fixed-message exception when no object is bound.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005B3720": {
+    "name": "ExprParser::ReadMethodType\u003cGeometry\u003e::vfunc_2 (Geometry::getFileName as float)",
+    "class": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, 0\u003e",
+    "signature": "int32_t fn_005B3720(void* holder)",
+    "summary": "Reads Geometry::getFileName(), parses it with atof, rounds half away from zero and returns the integer result.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005B37A0": {
     "name": "ExprParser::ReadMethodType\u003cGeometry\u003e::vfunc_3 (Geometry::getFileName string-to-bool check)",
     "class": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, 0\u003e",

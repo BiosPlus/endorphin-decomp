@@ -61220,3 +61220,59 @@ float fn_0066F9F0(void* self) {
     return ext_006A6DE0(adjusted);
 }
 } // namespace lift_0066F9F0
+
+// [0x005B3720] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>::vfunc_2 (119 bytes)
+namespace lift_005B3720 {
+// Known callee 0x006A6DE0 (sub_006A6DE0, 171B): consumes the rounded value (x87 st0 in the
+// original) and yields the integer result that this function returns. Signature assumed.
+extern int32_t ext_006A6DE0(double rounded);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall, ecx = object storage).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException).
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+// IAT slot for MSVCP80 std::string::c_str (thiscall); the slot value is the function pointer.
+extern void* mem_00924FF0;
+// IAT slot for MSVCR80 atof (cdecl); the slot value is the function pointer.
+extern void* mem_009251F0;
+// .rdata double 0.5 (rounding bias).
+extern double mem_00993828;
+// .rdata ThrowInfo for the exception thrown on a null holder (its address is pushed).
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<Geometry>::vfunc_2 (Geometry::getFileName as float)
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>
+// @summary Reads Geometry::getFileName(), parses it with atof, rounds half away from zero and returns the integer result.
+// @field ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0> +0x0C void* geometry
+int32_t fn_005B3720(void* holder) {
+    // holder points at the slot that holds the ReadMethodType object.
+    void* self = *static_cast<void**>(holder);
+    if (self == nullptr) {
+        alignas(8) unsigned char exception_storage[0x28];
+        ext_0046C3C0(exception_storage);
+        ext_006A6DD2(exception_storage, mem_009DEC1C);
+        std::abort(); // _CxxThrowException does not return.
+    }
+
+    // geometry = self->+0x0C; call its vfunc slot 8 (getFileName) via vtable.
+    void* geometry = lift_field<void*>(self, 0x0C);
+    using GetFileNameFn = const std::string* (__thiscall*)(void* this_ptr);
+    void** vtable = *static_cast<void***>(geometry);
+    auto get_file_name = reinterpret_cast<GetFileNameFn>(vtable[8]);
+    const std::string* name = get_file_name(geometry);
+
+    // c_str and atof are reached through their IAT slots, as in the original.
+    using CStrFn = const char* (__thiscall*)(const std::string* this_ptr);
+    using AtofFn = double (*)(const char* text);
+    auto c_str_fn = reinterpret_cast<CStrFn>(mem_00924FF0);
+    auto atof_fn = reinterpret_cast<AtofFn>(mem_009251F0);
+    const char* text = c_str_fn(name);
+
+    // Original stores atof's result as a single-precision float.
+    const float parsed = static_cast<float>(atof_fn(text));
+    const double value = static_cast<double>(parsed);
+
+    // Round half away from zero (negative or NaN values take the subtract path).
+    const double rounded = !(value >= 0.0) ? value - mem_00993828 : value + mem_00993828;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_005B3720
