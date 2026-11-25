@@ -8,6 +8,6 @@
 // Recovered field layout for struct_0040F270:
 namespace lifted_layout {
 struct struct_0040F270_Fields {
-    // +0x2C  uint32_t                 field_0x2c  (evidence: 0x0040A910, 0x0040F270)
+    // +0x2C  uint32_t                 field_0x2c  (evidence: 0x0040A910, 0x0040BE90, 0x0040F270)
 };
 } // namespace lifted_layout

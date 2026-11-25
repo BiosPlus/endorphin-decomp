@@ -734,10 +734,10 @@
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
   "0x0040BE90": {
-    "name": "Unknown::initSubobjectsValues_0040BE90",
-    "class": "Unknown",
-    "signature": "void fn_0040BE90(void* self)",
-    "summary": "Applies the value at mem_0093A0C8 via setValueAndRedraw and mem_0093A0CC via sub_004102D0 to two embedded subobjects at this+0x360 and this+0x3C4.",
+    "name": "sub_00407830",
+    "class": "unknown",
+    "signature": "void fn_00407830(void* self)",
+    "summary": "Passes the field at self+0x20 to USER32!GetDC, then forwards the returned HDC to MFC80 ord_2367.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
   "0x0040BEE0": {

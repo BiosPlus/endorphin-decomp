@@ -8,7 +8,7 @@
 // Recovered field layout for CArray:
 namespace lifted_layout {
 struct CArray_Fields {
-    // +0x23C uint32_t*                field_0x23C  (evidence: 0x0040C010)
-    // +0x240 uint32_t*                field_0x240  (evidence: 0x0040C010)
+    // +0x23C uint32_t*                field_0x23C  (evidence: 0x0040BE90, 0x0040C010)
+    // +0x240 uint32_t*                field_0x240  (evidence: 0x0040BE90, 0x0040C010)
 };
 } // namespace lifted_layout
