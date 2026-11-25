@@ -959,3 +959,41 @@ float __fastcall fn_006CCAB0(void* self, int edx_unused, int32_t count) {
     return ext_006C9DC0(element, 0, 5);
 }
 } // namespace lift_006CCAB0
+
+// [0x006C0580] sub_006C0580 (74 bytes)
+namespace lift_006C0580 {
+// @name Unknown::CopyBlock1E8ToOut_006C0580
+// @class Unknown
+// @summary Copies five dwords from self+0x1E8..0x1F8 and self+0x1FC into out, sets out+0x18 to double 1.0, returns out.
+// @field Unknown +0x1E8 uint32_t field_0x1E8
+// @field Unknown +0x1EC uint32_t field_0x1EC
+// @field Unknown +0x1F0 uint32_t field_0x1F0
+// @field Unknown +0x1F4 uint32_t field_0x1F4
+// @field Unknown +0x1F8 uint32_t field_0x1F8
+// @field Unknown +0x1FC uint32_t field_0x1FC
+void* fn_006C0580(void* self, void* out) {
+    auto* src = static_cast<uint8_t*>(self);
+    auto* dst = static_cast<uint8_t*>(out);
+
+    uint32_t v;
+    std::memcpy(&v, src + 0x1E8, sizeof(v));
+    std::memcpy(dst + 0x00, &v, sizeof(v));
+    std::memcpy(&v, src + 0x1EC, sizeof(v));
+    std::memcpy(dst + 0x04, &v, sizeof(v));
+    std::memcpy(&v, src + 0x1F0, sizeof(v));
+    std::memcpy(dst + 0x08, &v, sizeof(v));
+    std::memcpy(&v, src + 0x1F4, sizeof(v));
+    std::memcpy(dst + 0x0C, &v, sizeof(v));
+    std::memcpy(&v, src + 0x1F8, sizeof(v));
+    std::memcpy(dst + 0x10, &v, sizeof(v));
+    std::memcpy(&v, src + 0x1FC, sizeof(v));
+    std::memcpy(dst + 0x14, &v, sizeof(v));
+
+    const uint32_t zero = 0x00000000u;
+    const uint32_t one_hi = 0x3FF00000u; // high dword of IEEE-754 double 1.0
+    std::memcpy(dst + 0x18, &zero, sizeof(zero));
+    std::memcpy(dst + 0x1C, &one_hi, sizeof(one_hi));
+
+    return out;
+}
+} // namespace lift_006C0580

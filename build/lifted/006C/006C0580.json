@@ -1,0 +1,52 @@
+{
+  "va": "0x006C0580",
+  "size": 74,
+  "orig_symbol": "sub_006C0580",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::CopyBlock1E8ToOut_006C0580",
+  "class": "Unknown",
+  "signature": "void* fn_006C0580(void* self, void* out)",
+  "summary": "Copies five dwords from self+0x1E8..0x1F8 and self+0x1FC into out, sets out+0x18 to double 1.0, returns out.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1E8",
+      "type": "uint32_t",
+      "name": "field_0x1E8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1EC",
+      "type": "uint32_t",
+      "name": "field_0x1EC"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1F0",
+      "type": "uint32_t",
+      "name": "field_0x1F0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1F4",
+      "type": "uint32_t",
+      "name": "field_0x1F4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1F8",
+      "type": "uint32_t",
+      "name": "field_0x1F8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1FC",
+      "type": "uint32_t",
+      "name": "field_0x1FC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:34:00Z"
+}

@@ -857,11 +857,17 @@ struct Unknown_Fields {
     // +0x1E4 int32_t                  field_0x1E4  (evidence: 0x007BF4A0)
     // +0x1E8 uint32_t field_0x1E8 (on the object pointed to by +0x0C)  (evidence: 0x006D8FD0) // CONFLICT: multiple definitions at +0x1E8
     // +0x1E8 double                   field_0x1E8  (evidence: 0x006D9010, 0x007155A0, 0x0071B6D0, 0x0071B6E0, 0x0071B770, 0x0071B860, 0x0071B8F0, 0x0071BFC0, 0x0071C020, 0x0071C080, 0x0071C100, 0x0071C3D0, 0x0071C4A0, 0x0071C900, 0x0071C9D0, 0x0071CA00, 0x0071DEA0) // CONFLICT: multiple definitions at +0x1E8
+    // +0x1E8 uint32_t                 field_0x1E8  (evidence: 0x006C0580) // CONFLICT: multiple definitions at +0x1E8
     // +0x1E8 void*                    field_0x1e8  (evidence: 0x005B0E60, 0x005B6C20) // CONFLICT: multiple definitions at +0x1E8
     // +0x1EC uint32_t field_0x1EC (on the object pointed to by +0x0C)  (evidence: 0x006D8FD0) // CONFLICT: multiple definitions at +0x1EC
     // +0x1EC int32_t                  field_0x1EC  (evidence: 0x004D3DE0) // CONFLICT: multiple definitions at +0x1EC
+    // +0x1EC uint32_t                 field_0x1EC  (evidence: 0x006C0580) // CONFLICT: multiple definitions at +0x1EC
+    // +0x1F0 uint32_t                 field_0x1F0  (evidence: 0x006C0580)
     // +0x1F2 uint8_t                  field_0x1F2  (evidence: 0x005CFE10)
-    // +0x1F4 uint8_t                  field_0x1F4  (evidence: 0x005B0E60, 0x005B6C50)
+    // +0x1F4 uint32_t                 field_0x1F4  (evidence: 0x006C0580) // CONFLICT: multiple definitions at +0x1F4
+    // +0x1F4 uint8_t                  field_0x1F4  (evidence: 0x005B0E60, 0x005B6C50) // CONFLICT: multiple definitions at +0x1F4
+    // +0x1F8 uint32_t                 field_0x1F8  (evidence: 0x006C0580)
+    // +0x1FC uint32_t                 field_0x1FC  (evidence: 0x006C0580)
     // +0x200 DWORD                    field_0x200  (evidence: 0x0070AC00, 0x0070AD00) // CONFLICT: multiple definitions at +0x200
     // +0x200 uint32_t                 invertedFlag  (evidence: 0x004A5810) // CONFLICT: multiple definitions at +0x200
     // +0x204 void*                    cachedSubobject  (evidence: 0x004A5810) // CONFLICT: multiple definitions at +0x204
