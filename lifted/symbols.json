@@ -23725,6 +23725,12 @@
     "summary": "Calls ext_00553340 to produce a vec3 from (x, y, z), then divides it by self-\u003efield_0x20 and writes the result to out.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x005550A0": {
+    "name": "GetOnceInitString_005550A0",
+    "signature": "void* fn_005550A0()",
+    "summary": "Runs one-time initialization of global string buffer mem_00B3858C (guard bit 0 of mem_00B385A8) and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00555420": {
     "name": "LowerBound32ByFirstDword_00555420",
     "class": "Element",

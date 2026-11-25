@@ -1,0 +1,13 @@
+{
+  "va": "0x005550A0",
+  "size": 95,
+  "orig_symbol": "sub_005550A0",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "GetOnceInitString_005550A0",
+  "signature": "void* fn_005550A0()",
+  "summary": "Runs one-time initialization of global string buffer mem_00B3858C (guard bit 0 of mem_00B385A8) and returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:31:25Z"
+}

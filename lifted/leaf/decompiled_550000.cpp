@@ -1408,3 +1408,26 @@ void* fn_00554140(unsigned int count) {
     return ext_006A5C62(count * 60u);
 }
 } // namespace lift_00554140
+
+// [0x005550A0]
+namespace lift_005550A0 {
+// @name GetOnceInitString_005550A0
+// @summary Runs one-time initialization of global string buffer mem_00B3858C (guard bit 0 of mem_00B385A8) and returns its address.
+
+extern uint32_t mem_00B385A8;
+extern uint8_t mem_00B3858C[];
+
+void* ext_0066AD10(void* out_str, uint8_t flag);
+void ext_006A6C87(uint32_t arg);
+
+void* fn_005550A0() {
+    if ((mem_00B385A8 & 1u) == 0) {
+        mem_00B385A8 |= 1u;
+        // The original pushes the constant 0x00A85204 as the second argument;
+        // the callee's declared parameter is uint8_t, so only the low byte is kept.
+        ext_0066AD10(mem_00B3858C, static_cast<uint8_t>(0x00A85204u));
+        ext_006A6C87(0x0091BD80u);
+    }
+    return mem_00B3858C;
+}
+} // namespace lift_005550A0
