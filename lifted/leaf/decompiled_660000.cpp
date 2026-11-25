@@ -734,3 +734,39 @@ void* fn_00662A50(void* out) {
     return out;
 }
 } // namespace lift_00662A50
+
+// [0x006629F0] sub_006629F0 (86 bytes)
+namespace lift_006629F0 {
+// IAT slot for SHLWAPI!PathRelativePathToA (stdcall, 5 args).
+extern uintptr_t mem_00925558;
+// IAT slot for MSVCP80 std::basic_string<char>::basic_string(const char*) (thiscall).
+extern uintptr_t mem_00924FE4;
+
+// @name Unknown::relativePathOrFallback_006629F0
+// @summary Computes the path of `to` relative to the directory `from` and assigns it to the std::string at `out`; if no relative path can be produced, assigns `to` unchanged. Returns `out`.
+//
+// Notes:
+// - Stack args (cdecl, caller cleans up): arg0 = out (hidden std::string*, also returned in eax),
+//   arg1 = from (directory, FILE_ATTRIBUTE_DIRECTORY = 0x10), arg2 = to (file, FILE_ATTRIBUTE_NORMAL = 0x80).
+// - The original also stores a zero dword in its frame before the call; it is never read, so it is omitted.
+void* fn_006629F0(void* out, const char* from, const char* to) {
+    // char path[MAX_PATH]; receives the relative path on success.
+    char path[260];
+
+    // PathRelativePathToA(path, from, FILE_ATTRIBUTE_DIRECTORY, to, FILE_ATTRIBUTE_NORMAL)
+    using RelativePathFn = int(__stdcall*)(char* pszPath, const char* pszFrom, uint32_t dwAttrFrom,
+                                           const char* pszTo, uint32_t dwAttrTo);
+    RelativePathFn relativePath = reinterpret_cast<RelativePathFn>(mem_00925558);
+    int ok = relativePath(path, from, 0x10u, to, 0x80u);
+
+    // Success -> use computed relative path; failure -> use the original `to` string.
+    const char* source = ok ? path : to;
+
+    // std::string::basic_string(source) constructed in place at `out` (this in ecx).
+    using StringCtorFn = void(__thiscall*)(void* self, const char* s);
+    StringCtorFn construct = reinterpret_cast<StringCtorFn>(mem_00924FE4);
+    construct(out, source);
+
+    return out;
+}
+} // namespace lift_006629F0

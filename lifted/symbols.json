@@ -38040,6 +38040,13 @@
     "summary": "IAT jump thunk forwarding to MSVCR80!remove.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x006629F0": {
+    "name": "Unknown::relativePathOrFallback_006629F0",
+    "class": "Unknown",
+    "signature": "void* fn_006629F0(void* out, const char* from, const char* to)",
+    "summary": "Computes the path of `to` relative to the directory `from` and assigns it to the std::string at `out`; if no relative path can be produced, assigns `to` unchanged. Returns `out`.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00662A50": {
     "name": "Temp::getTempPathString_00662A50",
     "class": "Temp",

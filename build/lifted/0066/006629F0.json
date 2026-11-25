@@ -1,0 +1,14 @@
+{
+  "va": "0x006629F0",
+  "size": 86,
+  "orig_symbol": "sub_006629F0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "Unknown::relativePathOrFallback_006629F0",
+  "class": "Unknown",
+  "signature": "void* fn_006629F0(void* out, const char* from, const char* to)",
+  "summary": "Computes the path of `to` relative to the directory `from` and assigns it to the std::string at `out`; if no relative path can be produced, assigns `to` unchanged. Returns `out`.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:12:26Z"
+}
