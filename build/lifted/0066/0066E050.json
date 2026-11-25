@@ -1,0 +1,28 @@
+{
+  "va": "0x0066E050",
+  "size": 105,
+  "orig_symbol": "sub_0066E050",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "StringPool::freeNode",
+  "class": "StringPool",
+  "signature": "void sub_0066E050(void* self, void* node)",
+  "summary": "Destroys a string node and prepends it to the thread-safe free list.",
+  "fields": [
+    {
+      "class": "StringPool",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "freeListHead"
+    },
+    {
+      "class": "StringPool",
+      "offset": "+0x14",
+      "type": "CriticalSectionLock",
+      "name": "lock"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:08:00Z"
+}
