@@ -66903,6 +66903,12 @@
     "summary": "Decodes `count` 16-bit log-scale codes from the buffer at self+0x0C into floats written to `out`.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BC4F0": {
+    "name": "classifyPackedFields",
+    "signature": "int32_t __cdecl sub_007BC4F0(uint32_t obj)",
+    "summary": "Classifies three 16-bit fields at +0x28, +0x36, and +0x2a into a status code",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BD310": {
     "name": "initField40And4E",
     "signature": "uint32_t sub_007BD310(uint32_t a1)",

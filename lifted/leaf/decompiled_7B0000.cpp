@@ -1367,3 +1367,37 @@ void sub_007B7A30(const char* str, uint32_t max_len) {
     }
 }
 } // namespace lift_007B7A30
+
+// [0x007BC4F0]
+namespace lift_007BC4F0 {
+// @name classifyPackedFields
+// @summary Classifies three 16-bit fields at +0x28, +0x36, and +0x2a into a status code
+// @field obj +0x28 uint16_t field_0x28
+// @field obj +0x2a uint16_t field_0x2a
+// @field obj +0x36 uint16_t field_0x36
+
+
+uint16_t mem_read16(uint32_t addr);
+
+int32_t __cdecl sub_007BC4F0(uint32_t obj) {
+    uint32_t f28 = mem_read16(obj + 0x28);
+    uint32_t f36 = mem_read16(obj + 0x36);
+    uint32_t f2a = mem_read16(obj + 0x2a);
+
+    int32_t key = static_cast<int32_t>((((f28 << 3) | f36) << 3) | f2a);
+
+    switch (key) {
+        case 0x209:
+        case 0x20c:
+            return 3;
+        case 0x409:
+        case 0x40a:
+        case 0x40c:
+            return 1;
+        case 0x80b:
+            return 0;
+        default:
+            return -1;
+    }
+}
+} // namespace lift_007BC4F0
