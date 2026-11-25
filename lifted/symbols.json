@@ -17051,6 +17051,13 @@
     "summary": "Returns the pointer stored at index self-\u003e+0x34 of the global table's buffer (begin at +0x14, end at +0x18); returns 0 if the global is null. Stdcall, 1 arg, ret 4.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00517310": {
+    "name": "Unknown::CallVirtual68OnRange_00517310",
+    "class": "Unknown",
+    "signature": "void fn_00517310(void* self)",
+    "summary": "Walks the pointer range stored at self+0x14..self+0x18 and invokes virtual slot 26 (vtable +0x68) on each element object.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00517360": {
     "name": "Unknown::CallVirtual6CForEachPtr_00517360",
     "class": "Unknown",

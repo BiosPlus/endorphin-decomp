@@ -1,0 +1,28 @@
+{
+  "va": "0x00517310",
+  "size": 76,
+  "orig_symbol": "sub_00517310",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "Unknown::CallVirtual68OnRange_00517310",
+  "class": "Unknown",
+  "signature": "void fn_00517310(void* self)",
+  "summary": "Walks the pointer range stored at self+0x14..self+0x18 and invokes virtual slot 26 (vtable +0x68) on each element object.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void**",
+      "name": "range_begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "void**",
+      "name": "range_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:38:58Z"
+}

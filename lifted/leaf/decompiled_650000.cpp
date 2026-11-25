@@ -684,3 +684,38 @@ void fn_00517360(void* self) {
     }
 }
 } // namespace lift_00517360
+
+// [0x00517310] sub_00517310 (76 bytes)
+namespace lift_00517310 {
+extern int mem_00925134;
+
+// @name Unknown::CallVirtual68OnRange_00517310
+// @class Unknown
+// @summary Walks the pointer range stored at self+0x14..self+0x18 and invokes virtual slot 26 (vtable +0x68) on each element object.
+// @field Unknown +0x14 void** range_begin
+// @field Unknown +0x18 void** range_end
+//
+// The original is an MSVC debug-iterator loop. Its invalid-parameter guards
+// (calls through the MSVCR80 _invalid_parameter_noinfo pointer) are
+// assertion-only and are omitted here. The `cmp esi, esi` check is always
+// equal and therefore a no-op.
+void fn_00517310(void* self) {
+    using VirtualVoidFn = void(__thiscall*)(void*);
+
+    void** it = lift_field<void**>(self, 0x14);
+    for (;;) {
+        void** end = lift_field<void**>(self, 0x18);
+        if (it == end) {
+            break;
+        }
+
+        void* obj = *it;
+        void** vtable = *reinterpret_cast<void***>(obj);
+        auto fn = reinterpret_cast<VirtualVoidFn>(
+            *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtable) + 0x68));
+        fn(obj);
+
+        ++it;
+    }
+}
+} // namespace lift_00517310

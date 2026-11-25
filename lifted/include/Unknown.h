@@ -358,6 +358,7 @@ struct Unknown_Fields {
     // +0x14  void*                    inner  (evidence: 0x004689B0) // CONFLICT: multiple definitions at +0x14
     // +0x14  std::string field_0x14 (returned address when the +0x4C string equals the literal)  (evidence: 0x00584BD0) // CONFLICT: multiple definitions at +0x14
     // +0x14  void*                    ownedObjectB  (evidence: 0x007892B0) // CONFLICT: multiple definitions at +0x14
+    // +0x14  void**                   range_begin  (evidence: 0x00517310) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t field_0x14 (on subobject returned by ext_0071E680, i.e. self+0x40)  (evidence: 0x00711D40) // CONFLICT: multiple definitions at +0x14
     // +0x14  void* field_0x14 (pointer to holder whose +0x04 is the lookup table)  (evidence: 0x0080D220) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint16_t                 wordArg  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0x14
@@ -380,6 +381,7 @@ struct Unknown_Fields {
     // +0x18  void**                   field_0x18  (evidence: 0x00517360) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t                 field_0x18[256]  (evidence: 0x00789940) // CONFLICT: multiple definitions at +0x18
     // +0x18  int32_t                  flag  (evidence: 0x007D4720) // CONFLICT: multiple definitions at +0x18
+    // +0x18  void**                   range_end  (evidence: 0x00517310) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t                 value  (evidence: 0x00790DC0) // CONFLICT: multiple definitions at +0x18
     // +0x19  uint8_t                  field_0x19  (evidence: 0x00538530, 0x00538550, 0x0053F6A0, 0x00553980, 0x00553A10)
     // +0x1A  uint8_t                  field_0x1A  (evidence: 0x00553A10) // CONFLICT: multiple definitions at +0x1A
