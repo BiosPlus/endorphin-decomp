@@ -1,0 +1,21 @@
+{
+  "va": "0x0040BEE0",
+  "size": 20,
+  "orig_symbol": "sub_0040BEE0",
+  "src_path": "src/leaf/tiny_400000.cpp",
+  "lifted_path": "lifted/leaf/tiny_400000.cpp",
+  "name": "SendMessageWithField20",
+  "signature": "uint32_t SendMessageWithField20(uint8_t* self)",
+  "summary": "Sends message 0x18B (wParam=0, lParam=0) to the window handle stored at this+0x20 and returns the result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:18:10Z"
+}

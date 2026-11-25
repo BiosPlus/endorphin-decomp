@@ -838,6 +838,12 @@
     "summary": "Passes the field at self+0x20 to USER32!GetDC, then forwards the returned HDC to MFC80 ord_2367.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x0040BEE0": {
+    "name": "SendMessageWithField20",
+    "signature": "uint32_t SendMessageWithField20(uint8_t* self)",
+    "summary": "Sends message 0x18B (wParam=0, lParam=0) to the window handle stored at this+0x20 and returns the result.",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x0040C010": {
     "name": "CArray::GetAt",
     "class": "CArray",

@@ -509,3 +509,21 @@ void fn_00401970(void* self) {
     }
 }
 } // namespace lift_00401970
+
+// [0x0040BEE0]
+namespace lift_0040BEE0 {
+// @name SendMessageWithField20
+// @summary Sends message 0x18B (wParam=0, lParam=0) to the window handle stored at this+0x20 and returns the result.
+// @field Unknown +0x20 uint32_t hwnd
+
+// Import slot for USER32!SendMessageA (stdcall call through [0x00925694]).
+extern uint32_t mem_00925694;
+
+typedef uint32_t (*SendMessageAFn)(uint32_t hWnd, uint32_t Msg, uint32_t wParam, uint32_t lParam);
+
+uint32_t SendMessageWithField20(uint8_t* self) {
+    uint32_t hwnd = *reinterpret_cast<uint32_t*>(self + 0x20);
+    SendMessageAFn send = reinterpret_cast<SendMessageAFn>(static_cast<uintptr_t>(mem_00925694));
+    return send(hwnd, 0x18B, 0, 0);
+}
+} // namespace lift_0040BEE0
