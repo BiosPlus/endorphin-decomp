@@ -2181,3 +2181,33 @@ int32_t __thiscall fn_00434760(void* self, void* arg1) {
     return fn(arg1, result);
 }
 } // namespace lift_00434760
+
+// [0x00430C00]
+namespace lift_00430C00 {
+// @name checkConditionAndNotify
+// @summary Checks a nested object's vtable+0x11c predicate and field+0x60 == 0, then tail-calls arg0's vtable[0] with the boolean result.
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern uint8_t __cdecl ext_00430370(void);
+extern int32_t __cdecl ext_00465B30(void);
+extern uint32_t __thiscall ext_00468660(uint32_t this_ptr);
+
+extern uint32_t __thiscall fn_00430C00(uint32_t this_ptr, uint32_t arg0) {
+    (void)this_ptr;
+    uint32_t obj = ext_00468660(static_cast<uint32_t>(ext_00465B30()));
+    uint32_t vtable = mem_read32(obj);
+    using Vfn11c = uint8_t(__thiscall*)(uint32_t);
+    auto fn11c = reinterpret_cast<Vfn11c>(static_cast<uintptr_t>(mem_read32(vtable + 0x11c)));
+
+    uint32_t result = 0;
+    if (fn11c(obj) == 0 && ext_00430370() != 0) {
+        result = 1;
+    }
+
+    uint32_t arg0_vtable = mem_read32(arg0);
+    using Vfn0 = uint32_t(__thiscall*)(uint32_t, uint32_t);
+    auto fn0 = reinterpret_cast<Vfn0>(static_cast<uintptr_t>(mem_read32(arg0_vtable)));
+    return fn0(arg0, result);
+}
+} // namespace lift_00430C00
