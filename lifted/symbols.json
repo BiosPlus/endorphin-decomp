@@ -45355,6 +45355,13 @@
     "summary": "Lazily initializes a function-local static real-valued object (from 0.0f) and returns its address; the stack argument is unused.",
     "lifted_path": "lifted/ExprParser/RealType.cpp"
   },
+  "0x0066CF10": {
+    "name": "ExprParser::IntType::vfunc_18",
+    "class": "ExprParser::IntType",
+    "signature": "inline uint8_t* va_ptr(uintptr_t va)",
+    "summary": "Returns the address of the function-local static instance at 0x00B59658, constructing it and registering its atexit destructor on first call.",
+    "lifted_path": "lifted/ExprParser/IntType.cpp"
+  },
   "0x0066CF70": {
     "name": "ExprParser::BoolType::vfunc_18",
     "class": "ExprParser::BoolType",

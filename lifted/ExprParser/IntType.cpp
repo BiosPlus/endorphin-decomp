@@ -58,3 +58,34 @@ void* fn_0066AE10(void* self, const int32_t* src) {
     return self;
 }
 } // namespace lift_0066AE10
+
+// [0x0066CF10]
+namespace lift_0066CF10 {
+// @name ExprParser::IntType::vfunc_18
+// @class ExprParser::IntType
+// @summary Returns the address of the function-local static instance at 0x00B59658, constructing it and registering its atexit destructor on first call.
+
+// Callees (original asm: call 0x6720C0 / call 0x6A6C87).
+extern void __thiscall ext_006720C0(void* self, uint32_t arg0);
+extern int __cdecl ext_006A6C87(uint32_t dtor);
+
+namespace {
+// Raw image address -> pointer. Used for the static object and its init-guard byte.
+inline uint8_t* va_ptr(uintptr_t va) {
+    return reinterpret_cast<uint8_t*>(va);
+}
+}  // namespace
+
+// Original prologue/epilogue installs an MSVC SEH frame via fs:[0] (state -1,
+// handler 0x8B33FE) around the one-time init. That is compiler/runtime plumbing with
+// no portable equivalent; it is omitted here. Behavior of the guarded init is kept.
+void* __thiscall ExprParser_IntType_vfunc_18(void* /*this*/, uint32_t /*arg0 (popped by ret 4)*/) {
+    uint8_t* guard = va_ptr(0x00B59660);  // mem_00B59660: one-time-init flag byte
+    if ((*guard & 1u) == 0) {
+        *guard |= 1u;
+        ext_006720C0(va_ptr(0x00B59658), 0);
+        ext_006A6C87(0x00921750);
+    }
+    return va_ptr(0x00B59658);
+}
+} // namespace lift_0066CF10
