@@ -1,0 +1,27 @@
+{
+  "va": "0x006C9DF0",
+  "size": 112,
+  "orig_symbol": "sub_006C9DF0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "sub_006C9DF0",
+  "signature": "extern \"C\" void __thiscall fn_006C9DF0(void* self, int32_t index, float value)",
+  "summary": "Sets a float or scaled 16-bit integer parameter by index, clamping indices 2 and 3.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "float[2]",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint16_t[]",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T05:08:33Z"
+}
