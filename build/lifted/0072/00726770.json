@@ -1,0 +1,21 @@
+{
+  "va": "0x00726770",
+  "size": 96,
+  "orig_symbol": "sub_00726770",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "selectAndClearSubobjectField",
+  "signature": "extern \"C\" bool __thiscall fn_00726770(void* self, uint32_t key)",
+  "summary": "Looks up a key in the subobject at +0x250, sets its index, and clears offset +0x1C of its indexed entry.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x250",
+      "type": "void*",
+      "name": "field_0x250"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:46:58Z"
+}

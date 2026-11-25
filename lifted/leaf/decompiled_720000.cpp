@@ -626,3 +626,37 @@ extern void __fastcall fn_00728570(void* self) {
     }
 }
 } // namespace lift_00728570
+
+// [0x00726770]
+namespace lift_00726770 {
+extern void __stdcall ext_00732CB0(int32_t a1);
+extern uint32_t __thiscall ext_00789C80(void* self, uint32_t key, int32_t* outIndex);
+extern void __fastcall ext_00789BA0(void* self, int edx_unused, int32_t value);
+extern uint32_t __thiscall ext_0078CBE0(void* self);
+
+// @name selectAndClearSubobjectField
+// @summary Looks up a key in the subobject at +0x250, sets its index, and clears offset +0x1C of its indexed entry.
+// @field Unknown +0x250 void* field_0x250
+extern bool __thiscall fn_00726770(void* self, uint32_t key) {
+    ext_00732CB0(static_cast<int32_t>(key));
+
+    void* container = *reinterpret_cast<void**>(static_cast<uint8_t*>(self) + 0x250);
+    int32_t outIndex = static_cast<int32_t>(key);
+    void* item = reinterpret_cast<void*>(static_cast<uintptr_t>(
+        ext_00789C80(container, key, &outIndex)));
+    if (!item) {
+        return false;
+    }
+
+    ext_00789BA0(*reinterpret_cast<void**>(static_cast<uint8_t*>(self) + 0x250), 0, outIndex);
+
+    uint32_t entryAddr = ext_0078CBE0(item);
+    if (!entryAddr) {
+        return false;
+    }
+
+    uint8_t* entry = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(ext_0078CBE0(item)));
+    *reinterpret_cast<uint32_t*>(entry + 0x1C) = 0;
+    return true;
+}
+} // namespace lift_00726770
