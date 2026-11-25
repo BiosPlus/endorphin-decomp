@@ -38,7 +38,7 @@ struct ExprParser_ValuePtrType_Fields {
     // +0x0   const char*              value  (evidence: 0x00497900) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    value  (evidence: 0x0046CE90, 0x0046E570, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    valuePtr  (evidence: 0x0046CE90, 0x0046E570, 0x00488E30, 0x004A2930, 0x004B1FF0, 0x004B21D0, 0x004B8920, 0x00508EE0, 0x0059F920, 0x005FCC10, 0x00639730, 0x0066F700, 0x0068DE60, 0x00695740) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    value_ptr  (evidence: 0x00494DE0, 0x005161E0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    value_ptr  (evidence: 0x00494DE0, 0x00515E80, 0x005161E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x005B7BC0, 0x0064F0C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtbl  (evidence: 0x005B7BC0, 0x005F3600, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x0
     // +0x4   void* field_0x04 (sub-object used as this for the slot-25 dispatch)  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x0059EF40) // CONFLICT: multiple definitions at +0x4

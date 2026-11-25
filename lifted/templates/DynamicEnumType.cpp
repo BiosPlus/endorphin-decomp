@@ -2420,3 +2420,29 @@ void* __stdcall fn_005C8A80(void* dst, void* const* holder) {
 }
 } // namespace lift_0049B5F0
 } // namespace lift_005C8A80
+
+// [0x00515E80] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_1 (45 bytes)
+namespace lift_00515E80 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* __thiscall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// @name ExprParser::DynamicEnumType::vfunc_1
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>
+// @summary Reads the int32 value behind the wrapper's pointer at +0x0C and returns it as a double (x87 st0); throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* value_ptr
+// @field <pointee of value_ptr> +0x0C int32_t field_0x0c
+__stdcall double fn_00515E80(void* self) {
+    void* inner = lift_field<void*>(self, 0x00);
+    if (inner != nullptr) {
+        return static_cast<double>(lift_field<int32_t>(inner, 0x0C));
+    }
+
+    // Null pointer path: build a DerivedException in a local 0x28-byte buffer and throw it.
+    alignas(8) uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1CU)));
+    return 0.0; // not reached: _CxxThrowException does not return
+}
+} // namespace lift_00515E80
