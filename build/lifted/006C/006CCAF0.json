@@ -1,0 +1,13 @@
+{
+  "va": "0x006CCAF0",
+  "size": 64,
+  "orig_symbol": "sub_006CCAF0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "getItemScaledValue4IfFlagged",
+  "signature": "float __fastcall fn_006CCAF0(void* self, int edx_unused, int32_t index)",
+  "summary": "Returns scaled value at index 4 of the item at index if its flags pass check, otherwise 0.0f.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:55:53Z"
+}

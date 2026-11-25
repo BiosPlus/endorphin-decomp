@@ -1832,3 +1832,20 @@ float __fastcall fn_006CC850(void* self, int32_t /*edx*/, int32_t index) {
     return 0.33333334f;
 }
 } // namespace lift_006CC850
+
+// [0x006CCAF0]
+namespace lift_006CCAF0 {
+extern bool __fastcall ext_006CC990(void* self, int edx_unused, int32_t index);
+extern void* __fastcall ext_006CA060(void* self, int edx_unused, int32_t index);
+extern float __fastcall ext_006C9DC0(void* self, int edx_unused, int32_t idx);
+
+// @name getItemScaledValue4IfFlagged
+// @summary Returns scaled value at index 4 of the item at index if its flags pass check, otherwise 0.0f.
+float __fastcall fn_006CCAF0(void* self, int edx_unused, int32_t index) {
+    if (!ext_006CC990(self, 0, index)) {
+        return 0.0f;
+    }
+    void* item = ext_006CA060(self, 0, index);
+    return ext_006C9DC0(item, 0, 4);
+}
+} // namespace lift_006CCAF0
