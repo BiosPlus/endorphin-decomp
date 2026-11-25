@@ -16925,6 +16925,13 @@
     "summary": "Stdcall (ret 8): throws if the dword at holder is zero; otherwise calls ext_0046C500(out, 0) and returns out.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00505290": {
+    "name": "ConstructFromRecordWithString_00505290",
+    "class": "UnknownRecord",
+    "signature": "void* fn_00505290(void* self, const void* src)",
+    "summary": "Initializes a record's vtable, copies two dwords and copy-constructs a std::string from the source record.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x005052F0": {
     "name": "Unknown::Dtor_005052F0",
     "class": "Unknown",

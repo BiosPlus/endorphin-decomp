@@ -1,0 +1,40 @@
+{
+  "va": "0x00505290",
+  "size": 92,
+  "orig_symbol": "sub_00505290",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "ConstructFromRecordWithString_00505290",
+  "class": "UnknownRecord",
+  "signature": "void* fn_00505290(void* self, const void* src)",
+  "summary": "Initializes a record's vtable, copies two dwords and copy-constructs a std::string from the source record.",
+  "fields": [
+    {
+      "class": "UnknownRecord",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "UnknownRecord",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownRecord",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "UnknownRecord",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:26:32Z"
+}

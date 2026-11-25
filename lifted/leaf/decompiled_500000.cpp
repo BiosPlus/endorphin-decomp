@@ -1240,3 +1240,23 @@ void** fn_00500340(void** first, void** last, const void* value) {
     return begin;
 }
 } // namespace lift_00500340
+
+// [0x00505290]
+namespace lift_00505290 {
+// @name ConstructFromRecordWithString_00505290
+// @class UnknownRecord
+// @summary Initializes a record's vtable, copies two dwords and copy-constructs a std::string from the source record.
+// @field UnknownRecord +0x00 uint32_t vtable
+// @field UnknownRecord +0x04 uint32_t field_0x04
+// @field UnknownRecord +0x08 uint32_t field_0x08
+// @field UnknownRecord +0x0C std::string field_0x0C
+void* fn_00505290(void* self, const void* src) {
+    lift_field<uint32_t>(self, 0x00) = 0x0094F484u;
+    lift_field<uint32_t>(self, 0x04) = lift_field<const uint32_t>(src, 0x04);
+    lift_field<uint32_t>(self, 0x08) = lift_field<const uint32_t>(src, 0x08);
+    const auto* srcStr = reinterpret_cast<const std::string*>(
+        reinterpret_cast<const uint8_t*>(src) + 0x0C);
+    new (reinterpret_cast<uint8_t*>(self) + 0x0C) std::string(*srcStr);
+    return self;
+}
+} // namespace lift_00505290
