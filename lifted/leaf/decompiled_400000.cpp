@@ -877,11 +877,11 @@ extern DWORD mem_0093A0CC;
 void fn_0040BE90(void* self) {
     auto* base = reinterpret_cast<uint8_t*>(self);
 
-    void* sub360 = base + 0x360;
+    uint8_t* sub360 = base + 0x360;
     ext_00410310(sub360, mem_0093A0C8);
     ext_004102D0(sub360, mem_0093A0CC);
 
-    void* sub3C4 = base + 0x3C4;
+    uint8_t* sub3C4 = base + 0x3C4;
     ext_00410310(sub3C4, mem_0093A0C8);
     ext_004102D0(sub3C4, mem_0093A0CC);
 }
