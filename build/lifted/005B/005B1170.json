@@ -1,0 +1,14 @@
+{
+  "va": "0x005B1170",
+  "size": 12,
+  "orig_symbol": "Geometry::CylinderType::vfunc_1",
+  "src_path": "src/Geometry/CylinderType.cpp",
+  "lifted_path": "lifted/Geometry/CylinderType.cpp",
+  "name": "Geometry::CylinderType::vfunc_1",
+  "class": "Geometry::CylinderType",
+  "signature": "void fn_005B1170(void* self)",
+  "summary": "Forwards its single stack argument as the `this` pointer to ext_00647C50 (callee-cleans 4 bytes).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:20:41Z"
+}

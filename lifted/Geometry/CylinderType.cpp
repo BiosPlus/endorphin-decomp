@@ -133,3 +133,16 @@ uint32_t __stdcall fn_005B1050(uint32_t first, uint32_t second) {
     return ext_00648490(first, second);
 }
 } // namespace lift_005B1050
+
+// [0x005B1170] Geometry::CylinderType::vfunc_1 (12 bytes)
+namespace lift_005B1170 {
+// Known callee 0x00647C50: sub_00647C50 (Auto-lifted identical-shape clone of 0x00647BF0 (Unknown::ForwardFloat68ToSubobjectA4).)
+extern void ext_00647C50(void* self);
+
+// @name Geometry::CylinderType::vfunc_1
+// @class Geometry::CylinderType
+// @summary Forwards its single stack argument as the `this` pointer to ext_00647C50 (callee-cleans 4 bytes).
+void fn_005B1170(void* self) {
+    ext_00647C50(self);
+}
+} // namespace lift_005B1170
