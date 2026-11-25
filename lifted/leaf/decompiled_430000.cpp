@@ -2253,3 +2253,34 @@ void fn_00430CE0(void* self, void* arg) {
     slot1(arg, childFlag);
 }
 } // namespace lift_00430CE0
+
+// [0x0043E640] sub_0043E640 (71 bytes)
+namespace lift_0043E640 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(uintptr_t arg);
+// IAT slot 0x009242F4 (MFC80!ord_578), called indirectly with `this`-style ECX argument.
+extern uintptr_t mem_009242F4;
+
+// @name sub_0043E640 (descriptiveName: ReleaseElementsAndReset)
+// @summary Calls MFC80!ord_578 on each 4-byte element in [begin, end), frees the
+//          buffer at begin through ext_006A5C5C, then zeroes begin/end/capacity.
+// @field <ClassName> +0x04 DWORD field_0x04 (begin pointer; read and written)
+// @field <ClassName> +0x08 DWORD field_0x08 (end pointer; read)
+// @field <ClassName> +0x0C DWORD field_0x0C (capacity; written to 0)
+using ThisCallFn = void(__thiscall*)(uintptr_t);
+
+void fn_0043E640(void* self) {
+    uint32_t begin = lift_field<uint32_t>(self, 0x4);
+    if (begin != 0) {
+        uint32_t end = lift_field<uint32_t>(self, 0x8);
+        auto release = reinterpret_cast<ThisCallFn>(mem_009242F4);
+        for (uint32_t elem = begin; elem != end; elem += 4) {
+            release(elem);
+        }
+        ext_006A5C5C(begin);
+    }
+    lift_field<uint32_t>(self, 0x4) = 0;
+    lift_field<uint32_t>(self, 0x8) = 0;
+    lift_field<uint32_t>(self, 0xC) = 0;
+}
+} // namespace lift_0043E640

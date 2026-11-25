@@ -1,0 +1,33 @@
+{
+  "va": "0x0043E640",
+  "size": 71,
+  "orig_symbol": "sub_0043E640",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "sub_0043E640 (descriptiveName: ReleaseElementsAndReset)",
+  "signature": "void fn_0043E640(void* self)",
+  "summary": "Calls MFC80!ord_578 on each 4-byte element in [begin, end), frees the",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x4",
+      "type": "DWORD field_0x04 (begin pointer; read and",
+      "name": "written)"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x8",
+      "type": "DWORD field_0x08 (end pointer;",
+      "name": "read)"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0xC",
+      "type": "DWORD field_0x0C (capacity; written to",
+      "name": "0)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:26:14Z"
+}
