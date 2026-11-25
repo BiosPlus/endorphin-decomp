@@ -1,0 +1,14 @@
+{
+  "va": "0x0041CBF0",
+  "size": 59,
+  "orig_symbol": "Properties::AutoCompleteSupplier::vfunc_1",
+  "src_path": "src/Properties/AutoCompleteSupplier.cpp",
+  "lifted_path": "lifted/Properties/AutoCompleteSupplier.cpp",
+  "name": "Properties::AutoCompleteSupplier::vfunc_1",
+  "class": "Properties::AutoCompleteSupplier",
+  "signature": "uint32_t __thiscall fn_0041CBF0(uint32_t /*this_ptr*/, uint32_t out_str)",
+  "summary": "Returns a string from the last element of the global vector via its vfunc_0, or constructs an empty/default std::string if empty.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:09:56Z"
+}

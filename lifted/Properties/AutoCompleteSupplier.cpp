@@ -25,3 +25,27 @@ uint32_t __thiscall fn_0041CC30(uint32_t self, uint32_t out_str) {
     return out_str;
 }
 } // namespace lift_0041CC30
+
+// [0x0041CBF0]
+namespace lift_0041CBF0 {
+extern uint32_t ext_00660280();
+extern uint32_t mem_00924FE4;
+extern uint8_t mem_00928B5D;
+
+// @name Properties::AutoCompleteSupplier::vfunc_1
+// @class Properties::AutoCompleteSupplier
+// @summary Returns a string from the last element of the global vector via its vfunc_0, or constructs an empty/default std::string if empty.
+uint32_t __thiscall fn_0041CBF0(uint32_t /*this_ptr*/, uint32_t out_str) {
+    uint32_t elem = ext_00660280();
+    if (elem != 0) {
+        uint32_t* vtable = *reinterpret_cast<uint32_t**>(elem);
+        using VFunc0 = void(__thiscall*)(uint32_t, uint32_t);
+        reinterpret_cast<VFunc0>(vtable[0])(elem, out_str);
+        return out_str;
+    }
+
+    using StringCtor = void(__thiscall*)(uint32_t, const char*);
+    reinterpret_cast<StringCtor>(mem_00924FE4)(out_str, reinterpret_cast<const char*>(&mem_00928B5D));
+    return out_str;
+}
+} // namespace lift_0041CBF0
