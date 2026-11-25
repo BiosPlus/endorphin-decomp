@@ -1,0 +1,21 @@
+{
+  "va": "0x00430870",
+  "size": 38,
+  "orig_symbol": "sub_00430870",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "updateObjectFlag5State",
+  "signature": "int32_t __stdcall fn_00430870(void* obj)",
+  "summary": "Queries bit flag 5 on the global sub-object and passes it to the object's vtable slot +0x4.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:31:07Z"
+}
