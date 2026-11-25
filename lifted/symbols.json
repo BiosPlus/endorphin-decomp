@@ -56724,6 +56724,13 @@
     "summary": "Stores x into +0x10, then sets +0x18 to sqrt(x*x + y*y) where y is read from +0x14.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CB010": {
+    "name": "ScaleHalfAndSetHypotenuse",
+    "class": "Unknown",
+    "signature": "void fn_007CB010(void* self, float x)",
+    "summary": "Stores half of the float argument at +0x14 and sqrt(half^2 + f+0x10^2) at +0x18.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CB5F0": {
     "name": "sub_007CB5F0",
     "class": "ObjectField",

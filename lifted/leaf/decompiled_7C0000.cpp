@@ -820,3 +820,22 @@ void fn_007C9AA0(void* self, float x, float y, float z, int32_t flag) {
     lift_field<float>(self, base + 8) = z;
 }
 } // namespace lift_007C9AA0
+
+// [0x007CB010] sub_007CB010 (63 bytes)
+namespace lift_007CB010 {
+extern const double mem_00993828; // .rdata double 0.5
+
+// @name ScaleHalfAndSetHypotenuse
+// @class Unknown
+// @summary Stores half of the float argument at +0x14 and sqrt(half^2 + f+0x10^2) at +0x18.
+// @field Unknown +0x10 float field_0x10
+// @field Unknown +0x14 float field_0x14
+// @field Unknown +0x18 float field_0x18
+void fn_007CB010(void* self, float x) {
+    const float half = static_cast<float>(static_cast<double>(x) * mem_00993828);
+    lift_field<float>(self, 0x14) = half;
+    const float p10 = lift_field<float>(self, 0x10);
+    const float sum = half * half + p10 * p10;
+    lift_field<float>(self, 0x18) = std::sqrt(sum);
+}
+} // namespace lift_007CB010

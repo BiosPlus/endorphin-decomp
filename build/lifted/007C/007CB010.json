@@ -1,0 +1,34 @@
+{
+  "va": "0x007CB010",
+  "size": 63,
+  "orig_symbol": "sub_007CB010",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "ScaleHalfAndSetHypotenuse",
+  "class": "Unknown",
+  "signature": "void fn_007CB010(void* self, float x)",
+  "summary": "Stores half of the float argument at +0x14 and sqrt(half^2 + f+0x10^2) at +0x18.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:03:51Z"
+}
