@@ -17,3 +17,38 @@ void fn_00546760(void* self) {
     ext_005528A0(sub);
 }
 } // namespace lift_00546760
+
+// [0x00546780] RotateTool::vfunc_28 (92 bytes)
+namespace lift_00546780 {
+// Known callee 0x00552860: UnknownClass::SetIndexInRange (Accepts an index if it lies within [vfunc_2(), vfunc_3()]; stores 0.3f and the index on success, else stores -1 as the index.)
+extern void ext_00552860(void* self);
+
+// @name RotateTool::vfunc_28
+// @class RotateTool
+// @summary If mode == 5, clear flags 0xE4/0xE5 and dispatch vtable slot 0x80; otherwise forward to SetIndexInRange on sub-object 0xB8 (flag set) or 0x98 (flag clear), then dispatch vtable slot 0x80 when the flag is clear.
+// @field RotateTool +0x98 unknown field_0x98
+// @field RotateTool +0xB8 unknown field_0xB8
+// @field RotateTool +0xE4 uint8_t field_0xE4
+// @field RotateTool +0xE5 uint8_t field_0xE5
+void fn_00546780(void* self, int32_t /*arg1*/, int32_t mode) {
+    auto* bytes = static_cast<uint8_t*>(self);
+    void** vtbl = *reinterpret_cast<void***>(self);
+    using VoidThisFn = void (*)(void*);
+    auto slot80 = reinterpret_cast<VoidThisFn>(vtbl[0x80 / sizeof(void*)]);
+
+    if (mode == 5) {
+        bytes[0xE4] = 0;
+        bytes[0xE5] = 0;
+        slot80(self);
+        return;
+    }
+
+    if (bytes[0xE4] != 0) {
+        ext_00552860(bytes + 0xB8);
+        return;
+    }
+
+    ext_00552860(bytes + 0x98);
+    slot80(self);
+}
+} // namespace lift_00546780

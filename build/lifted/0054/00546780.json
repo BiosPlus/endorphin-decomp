@@ -1,0 +1,40 @@
+{
+  "va": "0x00546780",
+  "size": 92,
+  "orig_symbol": "RotateTool::vfunc_28",
+  "src_path": "src/classes/RotateTool.cpp",
+  "lifted_path": "lifted/classes/RotateTool.cpp",
+  "name": "RotateTool::vfunc_28",
+  "class": "RotateTool",
+  "signature": "void fn_00546780(void* self, int32_t /*arg1*/, int32_t mode)",
+  "summary": "If mode == 5, clear flags 0xE4/0xE5 and dispatch vtable slot 0x80; otherwise forward to SetIndexInRange on sub-object 0xB8 (flag set) or 0x98 (flag clear), then dispatch vtable slot 0x80 when the flag is clear.",
+  "fields": [
+    {
+      "class": "RotateTool",
+      "offset": "+0x98",
+      "type": "unknown",
+      "name": "field_0x98"
+    },
+    {
+      "class": "RotateTool",
+      "offset": "+0xB8",
+      "type": "unknown",
+      "name": "field_0xB8"
+    },
+    {
+      "class": "RotateTool",
+      "offset": "+0xE4",
+      "type": "uint8_t",
+      "name": "field_0xE4"
+    },
+    {
+      "class": "RotateTool",
+      "offset": "+0xE5",
+      "type": "uint8_t",
+      "name": "field_0xE5"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:38:10Z"
+}

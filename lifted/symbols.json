@@ -22335,6 +22335,13 @@
     "summary": "Resets the sub-object selected by the byte flag at +0xE4 (offset +0xB8 if set, else +0x98).",
     "lifted_path": "lifted/classes/RotateTool.cpp"
   },
+  "0x00546780": {
+    "name": "RotateTool::vfunc_28",
+    "class": "RotateTool",
+    "signature": "void fn_00546780(void* self, int32_t /*arg1*/, int32_t mode)",
+    "summary": "If mode == 5, clear flags 0xE4/0xE5 and dispatch vtable slot 0x80; otherwise forward to SetIndexInRange on sub-object 0xB8 (flag set) or 0x98 (flag clear), then dispatch vtable slot 0x80 when the flag is clear.",
+    "lifted_path": "lifted/classes/RotateTool.cpp"
+  },
   "0x00546860": {
     "name": "RotateTool::vfunc_7",
     "class": "RotateTool",
@@ -28012,6 +28019,12 @@
     "name": "getSingleton_005B82A0",
     "signature": "void* fn_005B82A0()",
     "summary": "Lazily initializes and returns the singleton object at 0x00B43CB4.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
+  "0x005B8300": {
+    "name": "getSingleton_005B8300",
+    "signature": "void* fn_005B8300()",
+    "summary": "Lazily initializes and returns a singleton object at 0x00B43CBC.",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
   "0x005B85A0": {
