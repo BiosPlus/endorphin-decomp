@@ -8,9 +8,9 @@
 // Recovered field layout for Src:
 namespace lifted_layout {
 struct Src_Fields {
-    // +0x4   int32_t                  field_0x04  (evidence: 0x00441A90)
-    // +0xC   int32_t                  field_0x0C  (evidence: 0x00441A90)
-    // +0x18  uint32_t                 field_0x18  (evidence: 0x00441A90)
-    // +0x1C  uint32_t                 field_0x1C  (evidence: 0x00441A90)
+    // +0x4   int32_t                  field_0x04  (evidence: 0x00441A90, 0x00441C10)
+    // +0xC   int32_t                  field_0x0C  (evidence: 0x00441A90, 0x00441C10)
+    // +0x18  uint32_t                 field_0x18  (evidence: 0x00441A90, 0x00441C10)
+    // +0x1C  uint32_t                 field_0x1C  (evidence: 0x00441A90, 0x00441C10)
 };
 } // namespace lifted_layout

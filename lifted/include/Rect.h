@@ -8,9 +8,9 @@
 // Recovered field layout for Rect:
 namespace lifted_layout {
 struct Rect_Fields {
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x00441A60)
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00441A60)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x00441A60)
-    // +0xC   uint32_t                 field_0x0c  (evidence: 0x00441A60)
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x00441A60, 0x00441C10)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00441A60, 0x00441C10)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00441A60, 0x00441C10)
+    // +0xC   uint32_t                 field_0x0c  (evidence: 0x00441A60, 0x00441C10)
 };
 } // namespace lifted_layout

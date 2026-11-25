@@ -10,7 +10,7 @@
 // Recovered field layout for ProcessorWarningDialog:
 namespace lifted_layout {
 struct ProcessorWarningDialog_Fields {
-    // +0x0   void*                    vfptr  (evidence: 0x00447DD0)
-    // +0x74  uint8_t                  field_0x74  (evidence: 0x00447DD0)
+    // +0x0   void*                    vfptr  (evidence: 0x00441C10, 0x00447DD0)
+    // +0x74  uint8_t                  field_0x74  (evidence: 0x00441C10, 0x00447DD0)
 };
 } // namespace lifted_layout

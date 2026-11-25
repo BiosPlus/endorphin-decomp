@@ -4214,10 +4214,10 @@
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
   "0x00441C10": {
-    "name": "Unknown::updateBoundsAndCall_00441C10",
-    "class": "Unknown",
-    "signature": "void __thiscall fn_00441C10(Unknown* self, uint32_t arg)",
-    "summary": "Optionally computes a bounds rect from arg, and if its first component is less than the third, forwards two derived values through the MFC80 thunk; then always runs sub_00441A60 and forwards another derived value through the thunk.",
+    "name": "sub_004409D0",
+    "class": "\u003cunknown\u003e",
+    "signature": "uint32_t fn_004409D0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00497090 (NMData::Transition::vfunc_37).",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
   "0x00441D20": {

@@ -4,11 +4,521 @@
   "orig_symbol": "sub_00441C10",
   "src_path": "src/leaf/decompiled_440000.cpp",
   "lifted_path": "lifted/leaf/decompiled_440000.cpp",
-  "name": "Unknown::updateBoundsAndCall_00441C10",
-  "class": "Unknown",
-  "signature": "void __thiscall fn_00441C10(Unknown* self, uint32_t arg)",
-  "summary": "Optionally computes a bounds rect from arg, and if its first component is less than the third, forwards two derived values through the MFC80 thunk; then always runs sub_00441A60 and forwards another derived value through the thunk.",
+  "name": "sub_004409D0",
+  "class": "\u003cunknown\u003e",
+  "signature": "uint32_t fn_004409D0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00497090 (NMData::Transition::vfunc_37).",
   "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x74",
+      "type": "DWORD",
+      "name": "field_0x74"
+    },
+    {
+      "class": "CBase",
+      "offset": "+0x2D0",
+      "type": "void*",
+      "name": "field_0x2D0"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "void*",
+      "name": "child"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x69",
+      "type": "uint8_t",
+      "name": "field_0x69"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* vtable (written with",
+      "name": "mem_009326EC)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x90",
+      "type": "double",
+      "name": "field_0x90"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "void*",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x98",
+      "type": "double",
+      "name": "field_0x98"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "void*",
+      "name": "subobject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void* field_0x0c (address taken only; no type information",
+      "name": "recovered)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "std::string field_0x28 (compared against \"\" via MSVCP80",
+      "name": "operator!=)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "void",
+      "name": "field_0x74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "void",
+      "name": "field_0x78"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "void*",
+      "name": "field_0x64"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x64",
+      "type": "void*",
+      "name": "field_0x64"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x64",
+      "type": "void*",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "void* field_58 (embedded object's vptr; slot 0 is",
+      "name": "called)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD",
+      "type": "uint8_t",
+      "name": "field_0x0d"
+    },
+    {
+      "class": "CWndDerived",
+      "offset": "+0x168",
+      "type": "UINT",
+      "name": "field_0x168"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x1C4",
+      "type": "std::string",
+      "name": "field_0x1c4"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x1E0",
+      "type": "std::string",
+      "name": "field_0x1e0"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "uint8_t",
+      "name": "field_0xAC"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x9C0",
+      "type": "uint8_t",
+      "name": "field_0x9C0"
+    },
+    {
+      "class": "Rect",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Rect",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Rect",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Rect",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "double",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "double",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x89",
+      "type": "uint8_t",
+      "name": "field_0x89"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8D",
+      "type": "uint8_t",
+      "name": "field_0x8d"
+    },
+    {
+      "class": "Src",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Src",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Src",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Src",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "self",
+      "offset": "+0x68",
+      "type": "void*",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "void*",
+      "name": "field_0x68"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x68",
+      "type": "void*",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "void* field_0x64 (child object pointer; type",
+      "name": "unknown)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x458",
+      "type": "std::string",
+      "name": "field_0x458"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x7C",
+      "type": "HWND",
+      "name": "hwnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x26C",
+      "type": "uint32_t",
+      "name": "field_0x26C"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x64",
+      "type": "void*",
+      "name": "childObject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "hwnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "DWORD",
+      "name": "handler"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x7C",
+      "type": "uint32_t",
+      "name": "field_0x7C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF4",
+      "type": "uint8_t",
+      "name": "field_0xf4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x148",
+      "type": "uint8_t",
+      "name": "field_0x148"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x15C",
+      "type": "uint8_t[] embedded_subobject (address only; not dereferenced at this",
+      "name": "level)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "void*",
+      "name": "imageListAddMaskedProc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x61C",
+      "type": "HWND",
+      "name": "hwnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5B8",
+      "type": "HWND",
+      "name": "field_0x5B8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "void*",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC8",
+      "type": "DWORD",
+      "name": "selectionBuffer"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xCC",
+      "type": "DWORD",
+      "name": "field_0xcc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xEC",
+      "type": "DWORD",
+      "name": "field_0xec"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "uint8_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "ProcessorWarningDialog",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vfptr"
+    },
+    {
+      "class": "ProcessorWarningDialog",
+      "offset": "+0x74",
+      "type": "uint8_t",
+      "name": "field_0x74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "uint8_t",
+      "name": "field_0x78"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x768",
+      "type": "HWND",
+      "name": "field_0x768"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "std::string",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "uint8_t",
+      "name": "field_0x78[]"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA9",
+      "type": "uint8_t",
+      "name": "flag"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC80",
+      "type": "uint8_t",
+      "name": "field_0xC80"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "void*",
+      "name": "field_0x74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC8",
+      "type": "BYTE",
+      "name": "flag"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD0",
+      "type": "unknown field_0xd0 (embedded sub-object; its address is passed as this to the",
+      "name": "callee)"
+    },
     {
       "class": "Unknown",
       "offset": "+0xA1",
@@ -30,5 +540,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T04:03:08Z"
+  "lifted_at": "2026-11-25T04:03:14Z"
 }
