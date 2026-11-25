@@ -1,0 +1,14 @@
+{
+  "va": "0x00809540",
+  "size": 64,
+  "orig_symbol": "sub_00809540",
+  "src_path": "src/leaf/decompiled_800000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_800000.cpp",
+  "name": "CallGlobalSlotsOnce",
+  "class": "(none)",
+  "signature": "int32_t fn_00809540(int32_t a1)",
+  "summary": "On first call (flag set), runs the slot-0x10 hook once and clears the flag; then forwards the argument through the slot-0x18 dispatcher and returns its result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:10:31Z"
+}

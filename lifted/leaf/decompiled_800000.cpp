@@ -489,3 +489,24 @@ void* fn_0080EBB0(void* dst, const void* src, size_t n) {
 }
 } // namespace lift_0080B590
 } // namespace lift_0080EBB0
+
+// [0x00809540] sub_00809540 (64 bytes)
+namespace lift_00809540 {
+// Known callee 0x00857440: sub_00857440 (dispatchViaGlobalSlot18)
+extern int32_t ext_00857440(int32_t a1, int32_t a2, int32_t a3);
+// Known callee 0x00857490: sub_00857490 (CallGlobalObjectSlot10IfSet)
+extern void ext_00857490(uint32_t arg);
+// Global one-shot flag at 0x00AB2D44 (initialized to 1)
+extern uint32_t mem_00AB2D44;
+
+// @name CallGlobalSlotsOnce
+// @summary On first call (flag set), runs the slot-0x10 hook once and clears the flag; then forwards the argument through the slot-0x18 dispatcher and returns its result.
+// @class (none)
+int32_t fn_00809540(int32_t a1) {
+    if (mem_00AB2D44 != 0) {
+        mem_00AB2D44 = 0;
+        ext_00857490(0x00B61FC0u);
+    }
+    return ext_00857440(a1, 0x10, static_cast<int32_t>(0x00B61FC0u));
+}
+} // namespace lift_00809540
