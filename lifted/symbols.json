@@ -61636,6 +61636,13 @@
     "summary": "Resets the vtable to CxSmallSort and, if the field at +0x20 is set, calls slot 3 of the object at +0x28 with it as argument.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007DD040": {
+    "name": "NotifyAndResetPair",
+    "class": "Owner",
+    "signature": "void fn_007DD040(void* self)",
+    "summary": "Forwards two stored values to the object at this-\u003efield_0x08-\u003efield_0xb0, calls the external helper with this-\u003efield_0x2c, then invokes this's vtable slot 0 with 0 and finally notifies the same object with this.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007DD130": {
     "name": "UnknownClass_isIndexedEntryFlagSet",
     "signature": "bool fn_007DD130(void* self, int32_t index)",

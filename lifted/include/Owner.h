@@ -8,8 +8,13 @@
 // Recovered field layout for Owner:
 namespace lifted_layout {
 struct Owner_Fields {
+    // +0x0   void*                    vtable  (evidence: 0x007DD040)
     // +0x4   void*                    subobject  (evidence: 0x0058A9E0)
+    // +0x8   void*                    field_0x08  (evidence: 0x007DD040)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x007DD040)
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x007DD040)
     // +0x20  void*                    field_0x20  (evidence: 0x007CC970)
+    // +0x2C  uint32_t                 field_0x2c  (evidence: 0x007DD040)
     // +0x88  void*                    field_0x88  (evidence: 0x00456C70)
     // +0xB0  void*                    field_0xb0  (evidence: 0x007CC970)
     // +0x164 uint32_t                 subobject  (evidence: 0x005C39F0)

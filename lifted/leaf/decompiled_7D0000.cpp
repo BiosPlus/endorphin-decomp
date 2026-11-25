@@ -1012,3 +1012,50 @@ uint32_t sub_007D6660(int32_t eax, uint32_t esi) {
     return addr;
 }
 } // namespace lift_007D6660
+
+// [0x007DD040] sub_007DD040 (81 bytes)
+namespace lift_007DD040 {
+// Known callee 0x007DCBB0 (97 bytes): one stack argument, caller-cleaned.
+extern void ext_007DCBB0(uint32_t arg);
+
+// @name NotifyAndResetPair
+// @class Owner
+// @summary Forwards two stored values to the object at this->field_0x08->field_0xb0, calls the external helper with this->field_0x2c, then invokes this's vtable slot 0 with 0 and finally notifies the same object with this.
+// @field Owner +0x00 void* vtable
+// @field Owner +0x08 void* field_0x08
+// @field Owner +0x10 uint32_t field_0x10
+// @field Owner +0x14 uint32_t field_0x14
+// @field Owner +0x2c uint32_t field_0x2c
+void fn_007DD040(void* self) {
+    using Fn32 = void (*)(void* obj, uint32_t arg);
+    using FnPtr = void (*)(void* obj, void* arg);
+
+    // Object at this+0x08, and its sub-object at +0xb0 (the call target object).
+    void* inner = lift_field<void*>(self, 0x08);
+    void* target = lift_field<void*>(inner, 0xb0);
+
+    // target->fn(this+0x14)
+    auto fnA = lift_field<Fn32>(target, 0x0c);
+    fnA(target, lift_field<uint32_t>(self, 0x14));
+
+    // Re-fetch the chain (same as above) and call target->fn(this+0x10).
+    inner = lift_field<void*>(self, 0x08);
+    target = lift_field<void*>(inner, 0xb0);
+    auto fnB = lift_field<Fn32>(target, 0x0c);
+    fnB(target, lift_field<uint32_t>(self, 0x10));
+
+    // External helper with this+0x2c as its single argument.
+    ext_007DCBB0(lift_field<uint32_t>(self, 0x2c));
+
+    // this->vtable[0](this, 0)
+    void* vtbl = lift_field<void*>(self, 0x00);
+    auto vslot0 = lift_field<void (*)(void* obj, uint32_t arg)>(vtbl, 0x00);
+    vslot0(self, 0u);
+
+    // Final notification: (this+0x08)->+0xb0 ->fn(obj, this).
+    inner = lift_field<void*>(self, 0x08);
+    target = lift_field<void*>(inner, 0xb0);
+    auto fnC = lift_field<FnPtr>(target, 0x0c);
+    fnC(target, self);
+}
+} // namespace lift_007DD040

@@ -1,0 +1,46 @@
+{
+  "va": "0x007DD040",
+  "size": 81,
+  "orig_symbol": "sub_007DD040",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "NotifyAndResetPair",
+  "class": "Owner",
+  "signature": "void fn_007DD040(void* self)",
+  "summary": "Forwards two stored values to the object at this-\u003efield_0x08-\u003efield_0xb0, calls the external helper with this-\u003efield_0x2c, then invokes this's vtable slot 0 with 0 and finally notifies the same object with this.",
+  "fields": [
+    {
+      "class": "Owner",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Owner",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Owner",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Owner",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Owner",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:00:58Z"
+}
