@@ -1526,6 +1526,13 @@
     "summary": "Converts a NUL-terminated wide string to the ANSI code page (CP_ACP) into dst, including the terminator; returns dst.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x004155E0": {
+    "name": "Unknown::DestructFieldWindowObject",
+    "class": "Unknown",
+    "signature": "void fn_004155E0(void* self)",
+    "summary": "Installs the base vtable, notifies the field window, destroys the critical section and string member, then re-sets the vtable and notifies again.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00415810": {
     "name": "sub_00415810",
     "signature": "extern \"C\" void fn_00415810(void)",

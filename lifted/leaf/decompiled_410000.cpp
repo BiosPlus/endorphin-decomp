@@ -1851,3 +1851,29 @@ void fn_00415430(void* self) {
         parentHwnd, 0x4E, static_cast<WPARAM>(ctrlId), reinterpret_cast<LPARAM>(&nm));
 }
 } // namespace lift_00415430
+
+// [0x004155E0] sub_004155E0 (103 bytes)
+namespace lift_004155E0 {
+// Known callee 0x00458E10: SendMessageToFieldWindow (Sends the global message id to the window handle stored in self+0x1c, passing self as lParam and 0 as wParam; returns the LRESULT.)
+extern int32_t ext_00458E10(void* self);
+// Known callee 0x00458FE0: Unknown::SetVtableAndSendIfWindow (Sets the vtable to mem_0093785C; if the window handle at +0x1c is non-null, tail-calls SendMessageToFieldWindow, otherwise returns.)
+extern int32_t ext_00458FE0(void* self);
+// Import via mem_009242E4 (KERNEL32!DeleteCriticalSection).
+extern void ext_DeleteCriticalSection(void* cs);
+// Import via mem_00924EF0 (MSVCP80 std::basic_string<unsigned short> destructor).
+extern void ext_basic_string_u16_dtor(void* str);
+
+// @name Unknown::DestructFieldWindowObject
+// @class Unknown
+// @summary Installs the base vtable, notifies the field window, destroys the critical section and string member, then re-sets the vtable and notifies again.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x2c CRITICAL_SECTION field_0x2c
+// @field Unknown +0x48 std::basic_string<unsigned short> field_0x48
+void fn_004155E0(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x0092C744u;
+    ext_00458E10(self);
+    ext_DeleteCriticalSection(&lift_field<uint8_t>(self, 0x2C));
+    ext_basic_string_u16_dtor(&lift_field<uint8_t>(self, 0x48));
+    ext_00458FE0(self);
+}
+} // namespace lift_004155E0

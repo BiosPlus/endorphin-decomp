@@ -1,0 +1,34 @@
+{
+  "va": "0x004155E0",
+  "size": 103,
+  "orig_symbol": "sub_004155E0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::DestructFieldWindowObject",
+  "class": "Unknown",
+  "signature": "void fn_004155E0(void* self)",
+  "summary": "Installs the base vtable, notifies the field window, destroys the critical section and string member, then re-sets the vtable and notifies again.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "CRITICAL_SECTION",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "std::basic_string\u003cunsigned short\u003e",
+      "name": "field_0x48"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:46:58Z"
+}
