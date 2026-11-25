@@ -1,0 +1,13 @@
+{
+  "va": "0x004F92B0",
+  "size": 87,
+  "orig_symbol": "sub_004F92B0",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "getStaticSingleton_004F92B0",
+  "signature": "void* fn_004F92B0()",
+  "summary": "Lazily initializes a static object at 0x00AE9F34 guarded by 0x00AE9F38 and returns its address.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:35:24Z"
+}

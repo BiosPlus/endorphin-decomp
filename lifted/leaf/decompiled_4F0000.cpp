@@ -139,3 +139,53 @@ void* fn_004F9250() {
     return &mem_00AE9F2C;
 }
 } // namespace lift_004F9250
+
+// [0x004F92B0]
+namespace lift_004F92B0 {
+extern DWORD mem_00AE9F38;
+extern DWORD mem_00AE9F34;
+void __thiscall ext_0067A670(void* self);
+
+// @name getStaticSingleton_004F92B0
+// @summary Lazily initializes a static object at 0x00AE9F34 guarded by 0x00AE9F38 and returns its address.
+void* fn_004F92B0() {
+    if ((mem_00AE9F38 & 1u) == 0u) {
+        mem_00AE9F38 |= 1u;
+        ext_0067A670(&mem_00AE9F34);
+        mem_00AE9F34 = 0x0094D39Cu;
+    }
+    return &mem_00AE9F34;
+}
+} // namespace lift_004F92B0
+
+// [0x004F9510]
+namespace lift_004F9510 {
+// @name InitPairWithZeroCall
+// @summary Calls ext_004F91F0(0) and stores arg2 and the result into a 2-dword output struct, returning out.
+
+extern uint32_t ext_004F91F0(uint32_t arg);
+
+void* fn_004F9510(void* out, uint32_t val) {
+    uint32_t res = ext_004F91F0(0);
+    uint32_t* p = static_cast<uint32_t*>(out);
+    p[0] = val;
+    p[1] = res;
+    return out;
+}
+} // namespace lift_004F9510
+
+// [0x004F9530]
+namespace lift_004F9530 {
+// @name initPairWithLazyStatic
+// @summary Initializes a 2-DWORD struct with a given value and the lazy static object pointer, returning the struct pointer.
+
+extern void* ext_004F9250();
+
+extern void* fn_004F9530(void* outPair, DWORD value) {
+    void* lazyObj = ext_004F9250();
+    DWORD* fields = static_cast<DWORD*>(outPair);
+    fields[0] = value;
+    fields[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(lazyObj));
+    return outPair;
+}
+} // namespace lift_004F9530
