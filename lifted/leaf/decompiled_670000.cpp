@@ -84,6 +84,7 @@ void fn_0067F8F0(void* self) {
 }
 } // namespace lift_0067F8F0
 #include <cstddef>
+#include <algorithm>
 
 // [0x0067EC70] sub_0067EC70 (34 bytes)
 namespace lift_0067EC70 {
@@ -1754,3 +1755,55 @@ void fn_00673C20(void* self) {
     lift_field<void*>(self, 0x04) = p;
 }
 } // namespace lift_00673C20
+
+// [0x0067B530]
+namespace lift_0067B530 {
+extern void __thiscall ext_0065C640(void* self);
+extern void __thiscall ext_0065C650(void* self);
+
+extern uint32_t mem_00925730;
+extern uint32_t mem_0092572C;
+extern uint32_t mem_00925728;
+
+// @name MultimediaTimer::start
+// @class MultimediaTimer
+// @summary Acquires lock, configures timer resolution, and starts a periodic multimedia timer.
+// @field MultimediaTimer +0x04 uint32_t timerId
+// @field MultimediaTimer +0x08 uint32_t delayMs
+// @field MultimediaTimer +0x0C uint8_t field_0x0C
+// @field MultimediaTimer +0x18 uint8_t lock
+void __thiscall sub_0067B530(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    void* lock = base + 0x18;
+
+    ext_0065C640(lock);
+
+    struct TimeCaps {
+        uint32_t wPeriodMin;
+        uint32_t wPeriodMax;
+    } caps{};
+
+    using TimeGetDevCapsFn = uint32_t(__stdcall*)(TimeCaps*, uint32_t);
+    using TimeBeginPeriodFn = uint32_t(__stdcall*)(uint32_t);
+    using TimeSetEventFn = uint32_t(__stdcall*)(uint32_t, uint32_t, uintptr_t, uintptr_t, uint32_t);
+
+    reinterpret_cast<TimeGetDevCapsFn>(static_cast<uintptr_t>(mem_00925730))(&caps, 8);
+
+    uint32_t resolution = (std::min)(caps.wPeriodMin, caps.wPeriodMax);
+    reinterpret_cast<TimeBeginPeriodFn>(static_cast<uintptr_t>(mem_0092572C))(resolution);
+
+    uint32_t delay = *reinterpret_cast<uint32_t*>(base + 0x08);
+    *reinterpret_cast<uint8_t*>(base + 0x0C) = 0;
+
+    uint32_t timer_id = reinterpret_cast<TimeSetEventFn>(static_cast<uintptr_t>(mem_00925728))(
+        delay,
+        resolution,
+        static_cast<uintptr_t>(0x0067B4A0u),
+        reinterpret_cast<uintptr_t>(self),
+        1u);
+
+    *reinterpret_cast<uint32_t*>(base + 0x04) = timer_id;
+
+    ext_0065C650(lock);
+}
+} // namespace lift_0067B530

@@ -1,0 +1,40 @@
+{
+  "va": "0x0067B530",
+  "size": 100,
+  "orig_symbol": "sub_0067B530",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "MultimediaTimer::start",
+  "class": "MultimediaTimer",
+  "signature": "void __thiscall sub_0067B530(void* self)",
+  "summary": "Acquires lock, configures timer resolution, and starts a periodic multimedia timer.",
+  "fields": [
+    {
+      "class": "MultimediaTimer",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "timerId"
+    },
+    {
+      "class": "MultimediaTimer",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "delayMs"
+    },
+    {
+      "class": "MultimediaTimer",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "MultimediaTimer",
+      "offset": "+0x18",
+      "type": "uint8_t",
+      "name": "lock"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:59:19Z"
+}
