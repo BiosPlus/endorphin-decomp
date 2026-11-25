@@ -979,3 +979,48 @@ uint32_t sub_0080B060(uint32_t arg0) {
     }
 }
 } // namespace lift_0080B060
+
+// [0x008039C0]
+namespace lift_008039C0 {
+// @name Heap_push
+// @class Heap
+// @summary Appends a value to a 1-based binary heap and sifts it up with a comparator; returns 0 when full.
+// @field Heap +0x00 uint32_t* data
+// @field Heap +0x04 int32_t capacity
+// @field Heap +0x08 int32_t size
+// @field Heap +0x0C int (__cdecl*)(uint32_t, uint32_t) less
+
+using HeapLess = int(__cdecl*)(uint32_t, uint32_t);
+
+static inline void heap_swap(uint32_t& a, uint32_t& b) {
+    uint32_t t = a;
+    a = b;
+    b = t;
+}
+
+int Heap_push(void* self, uint32_t value) {
+    uint32_t* data = lift_field<uint32_t*>(self, 0x00);
+    int32_t capacity = lift_field<int32_t>(self, 0x04);
+    int32_t& size = lift_field<int32_t>(self, 0x08);
+    HeapLess less = lift_field<HeapLess>(self, 0x0C);
+
+    if (size >= capacity) {
+        return 0;
+    }
+
+    int32_t i = size + 1;
+    size = i;
+    data[i] = value;
+
+    int32_t parent = i >> 1;
+    while (parent != 0) {
+        if (less(data[i], data[parent]) == 0) {
+            break;
+        }
+        heap_swap(data[i], data[parent]);
+        i = parent;
+        parent = i >> 1;
+    }
+    return 1;
+}
+} // namespace lift_008039C0
