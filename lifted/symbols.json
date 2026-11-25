@@ -22579,6 +22579,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0061EA10 (HingeSecondaryConstraint::AllocAndConstruct).",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x0052F540": {
+    "name": "fn_0052F540 (bitFlagForIndex)",
+    "signature": "uint32_t fn_0052F540(uint32_t index)",
+    "summary": "Maps an index in 0..15 to a single-bit flag value; returns 0x2000 for indices above 15.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052F5F0": {
     "name": "Primitives::Animation::vfunc_19",
     "class": "Primitives::Animation",

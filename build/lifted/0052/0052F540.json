@@ -1,0 +1,13 @@
+{
+  "va": "0x0052F540",
+  "size": 106,
+  "orig_symbol": "sub_0052F540",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "fn_0052F540 (bitFlagForIndex)",
+  "signature": "uint32_t fn_0052F540(uint32_t index)",
+  "summary": "Maps an index in 0..15 to a single-bit flag value; returns 0x2000 for indices above 15.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T05:03:27Z"
+}

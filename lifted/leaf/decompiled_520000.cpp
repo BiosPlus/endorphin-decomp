@@ -1652,3 +1652,32 @@ TreeMapIter* fn_0052EBA0(void* self, TreeMapIter* out_iter, const void* key) {
     return out_iter;
 }
 } // namespace lift_0052EBA0
+
+// [0x0052F540] sub_0052F540 (106 bytes)
+namespace lift_0052F540 {
+// @name fn_0052F540 (bitFlagForIndex)
+// @summary Maps an index in 0..15 to a single-bit flag value; returns 0x2000 for indices above 15.
+// (no class / no @field: the function touches no object memory)
+uint32_t fn_0052F540(uint32_t index) {
+    if (index > 0x0F) {
+        return 0x2000u;
+    }
+    switch (index) {
+        case 0:  return 0x0001u;
+        case 1:  return 0x0002u;
+        case 2:  return 0x4000u;
+        case 3:  return 0x0004u;
+        case 4:  return 0x0008u;
+        case 5:  return 0x0010u;
+        case 6:  return 0x0020u;
+        case 7:  return 0x0040u;
+        case 8:  return 0x0080u;
+        case 9:  return 0x0100u;
+        case 10: return 0x0200u;
+        case 11: return 0x0400u;
+        case 12: return 0x0800u;
+        case 13: return 0x1000u;
+        default: return 0x2000u;  // cases 14 and 15: jump-table bytes not verified
+    }
+}
+} // namespace lift_0052F540
