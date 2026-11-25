@@ -394,7 +394,7 @@ struct Unknown_Fields {
     // +0x24  uint16_t                 field_0x24  (evidence: 0x007C2E50, 0x007C70F0) // CONFLICT: multiple definitions at +0x24
     // +0x24  uint32_t                 field_0x24  (evidence: 0x00538D10, 0x00572680, 0x0057BBE0, 0x0057FD10, 0x00790E20) // CONFLICT: multiple definitions at +0x24
     // +0x24  uint8_t                  field_0x24  (evidence: 0x004A5A50) // CONFLICT: multiple definitions at +0x24
-    // +0x24  void*                    field_0x24  (evidence: 0x0058A9A0, 0x0058AA20) // CONFLICT: multiple definitions at +0x24
+    // +0x24  void*                    field_0x24  (evidence: 0x0051A000, 0x0058A9A0, 0x0058AA20) // CONFLICT: multiple definitions at +0x24
     // +0x24  void*                    ptrMember  (evidence: 0x0041DDA0) // CONFLICT: multiple definitions at +0x24
     // +0x24  void*                    subobject  (evidence: 0x0051AE90, 0x0051AEF0) // CONFLICT: multiple definitions at +0x24
     // +0x28  int32_t                  count  (evidence: 0x007299C0) // CONFLICT: multiple definitions at +0x28

@@ -380,3 +380,40 @@ void fn_00519170(void* self) {
     ext_0050F990(self);
 }
 } // namespace lift_00519170
+
+// [0x0051A000] sub_0051A000 (71 bytes)
+namespace lift_0051A000 {
+// Global holding a pointer to a default object (used when this->+0x24 is null).
+extern void* mem_00AECC08;
+// Global object whose address is passed as the argument in the null-node path.
+extern uint8_t mem_00AECC04;
+
+// Virtual slot signatures, invoked through the object's vtable.
+typedef float (*VirtGetFloat_fn)(void* self, void* arg);  // vtable slot 1
+typedef void (*VirtApply_fn)(void* self, float a, float b);  // vtable slot 5
+
+// @name Unknown::ApplyFloatFromNodeOrDefault
+// @class Unknown
+// @summary Gets a float from a node's object (or a default global object) via vtable slot 1, then passes it with the input float to vtable slot 5 of self.
+// @field Unknown +0x24 void* field_0x24
+void fn_0051A000(void* self, float param) {
+    void* node = lift_field<void*>(self, 0x24);
+
+    void* obj;
+    void* arg;
+    if (node != nullptr) {
+        // node->+0x04 holds the object whose slot 1 is queried; the node itself is the argument.
+        obj = lift_field<void*>(node, 0x04);
+        arg = node;
+    } else {
+        obj = mem_00AECC08;
+        arg = &mem_00AECC04;
+    }
+
+    void** objVtbl = *static_cast<void***>(obj);
+    float value = reinterpret_cast<VirtGetFloat_fn>(objVtbl[1])(obj, arg);
+
+    void** selfVtbl = *static_cast<void***>(self);
+    reinterpret_cast<VirtApply_fn>(selfVtbl[5])(self, value, param);
+}
+} // namespace lift_0051A000

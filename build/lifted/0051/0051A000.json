@@ -1,0 +1,22 @@
+{
+  "va": "0x0051A000",
+  "size": 71,
+  "orig_symbol": "sub_0051A000",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "Unknown::ApplyFloatFromNodeOrDefault",
+  "class": "Unknown",
+  "signature": "void fn_0051A000(void* self, float param)",
+  "summary": "Gets a float from a node's object (or a default global object) via vtable slot 1, then passes it with the input float to vtable slot 5 of self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:27:02Z"
+}
