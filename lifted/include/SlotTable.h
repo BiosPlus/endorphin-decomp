@@ -8,7 +8,7 @@
 // Recovered field layout for SlotTable:
 namespace lifted_layout {
 struct SlotTable_Fields {
-    // +0xC   int32_t                  count  (evidence: 0x007C8C90)
-    // +0x10  uint8_t*                 entries  (evidence: 0x007C8C90)
+    // +0xC   int32_t                  count  (evidence: 0x007C8C90, 0x007CAF70)
+    // +0x10  uint8_t*                 entries  (evidence: 0x007C8C90, 0x007CAF70)
 };
 } // namespace lifted_layout

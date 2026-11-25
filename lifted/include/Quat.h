@@ -8,12 +8,12 @@
 // Recovered field layout for Quat:
 namespace lifted_layout {
 struct Quat_Fields {
-    // +0x0   float                    w  (evidence: 0x00575350, 0x007CD960) // CONFLICT: multiple definitions at +0x0
+    // +0x0   float                    w  (evidence: 0x00575350, 0x007CAF70, 0x007CD960) // CONFLICT: multiple definitions at +0x0
     // +0x0   double                   x  (evidence: 0x006E0940) // CONFLICT: multiple definitions at +0x0
-    // +0x4   float                    x  (evidence: 0x00575350, 0x007CD960)
+    // +0x4   float                    x  (evidence: 0x00575350, 0x007CAF70, 0x007CD960)
     // +0x8   double                   y  (evidence: 0x006E0940) // CONFLICT: multiple definitions at +0x8
-    // +0x8   float                    y  (evidence: 0x00575350, 0x007CD960) // CONFLICT: multiple definitions at +0x8
-    // +0xC   float                    z  (evidence: 0x00575350, 0x007CD960)
+    // +0x8   float                    y  (evidence: 0x00575350, 0x007CAF70, 0x007CD960) // CONFLICT: multiple definitions at +0x8
+    // +0xC   float                    z  (evidence: 0x00575350, 0x007CAF70, 0x007CD960)
     // +0x10  double                   z  (evidence: 0x006E0940)
     // +0x18  double                   w  (evidence: 0x006E0940)
 };

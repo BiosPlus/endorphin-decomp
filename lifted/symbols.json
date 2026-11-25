@@ -68940,10 +68940,10 @@
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
   "0x007CAF70": {
-    "name": "SceneNode::allocateAndStoreHalfLengthVector",
-    "class": "SceneNode",
-    "signature": "void fn_007CAF70(void* self, float a, float x, float y)",
-    "summary": "Requests a 0x20-byte block (count 0x10) through the allocator function stored at obj+0x08, where obj = self+0xB0; on success stores (a,x,y) and its half-length into it and returns it, else returns null.",
+    "name": "Unknown::setField44IfBit0Clear",
+    "class": "Unknown",
+    "signature": "void fn_007C97A0(void* self, uint32_t value)",
+    "summary": "Sets the 32-bit field at +0x44 if bit 0 of +0x9C is clear.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
   "0x007CAFC0": {

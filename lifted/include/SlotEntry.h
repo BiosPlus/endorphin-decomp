@@ -11,9 +11,9 @@ struct SlotEntry_Fields {
     // +0x0   uint16_t                 key16a  (evidence: 0x0085D9D0)
     // +0x2   uint16_t                 key16b  (evidence: 0x0085D9D0)
     // +0x4   uint16_t                 key16c  (evidence: 0x0085D9D0)
-    // +0x8   int32_t                  key  (evidence: 0x007C8C90) // CONFLICT: multiple definitions at +0x8
+    // +0x8   int32_t                  key  (evidence: 0x007C8C90, 0x007CAF70) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 key32  (evidence: 0x0085D9D0) // CONFLICT: multiple definitions at +0x8
     // +0xC   uint32_t                 inUse  (evidence: 0x0085D9D0) // CONFLICT: multiple definitions at +0xC
-    // +0xC   int32_t                  value  (evidence: 0x007C8C90) // CONFLICT: multiple definitions at +0xC
+    // +0xC   int32_t                  value  (evidence: 0x007C8C90, 0x007CAF70) // CONFLICT: multiple definitions at +0xC
 };
 } // namespace lifted_layout

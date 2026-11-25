@@ -8,7 +8,7 @@
 // Recovered field layout for TriangularPairLookup:
 namespace lifted_layout {
 struct TriangularPairLookup_Fields {
-    // +0x0   int32_t                  count  (evidence: 0x007CCF80)
-    // +0x8   uint32_t                 records  (evidence: 0x007CCF80)
+    // +0x0   int32_t                  count  (evidence: 0x007CAF70, 0x007CCF80)
+    // +0x8   uint32_t                 records  (evidence: 0x007CAF70, 0x007CCF80)
 };
 } // namespace lifted_layout

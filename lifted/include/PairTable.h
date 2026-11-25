@@ -8,7 +8,7 @@
 // Recovered field layout for PairTable:
 namespace lifted_layout {
 struct PairTable_Fields {
-    // +0x0   int32_t                  count  (evidence: 0x007CCF20)
-    // +0x8   uint8_t*                 records  (evidence: 0x007CCF20)
+    // +0x0   int32_t                  count  (evidence: 0x007CAF70, 0x007CCF20)
+    // +0x8   uint8_t*                 records  (evidence: 0x007CAF70, 0x007CCF20)
 };
 } // namespace lifted_layout

@@ -8,7 +8,7 @@
 // Recovered field layout for List:
 namespace lifted_layout {
 struct List_Fields {
-    // +0xC   uint32_t                 head  (evidence: 0x007C8490, 0x007CC930)
-    // +0x1C  int32_t                  count  (evidence: 0x007C8490, 0x007CC930)
+    // +0xC   uint32_t                 head  (evidence: 0x007C8490, 0x007CAF70, 0x007CC930)
+    // +0x1C  int32_t                  count  (evidence: 0x007C8490, 0x007CAF70, 0x007CC930)
 };
 } // namespace lifted_layout

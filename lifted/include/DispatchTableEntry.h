@@ -8,6 +8,6 @@
 // Recovered field layout for DispatchTableEntry:
 namespace lifted_layout {
 struct DispatchTableEntry_Fields {
-    // +0xC   uint32_t handler (entries are 40 bytes; index = typeWord & 0xff)  (evidence: 0x007C8490, 0x007CCA20)
+    // +0xC   uint32_t handler (entries are 40 bytes; index = typeWord & 0xff)  (evidence: 0x007C8490, 0x007CAF70, 0x007CCA20)
 };
 } // namespace lifted_layout

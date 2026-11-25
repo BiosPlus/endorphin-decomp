@@ -8,7 +8,7 @@
 // Recovered field layout for DispatchObject:
 namespace lifted_layout {
 struct DispatchObject_Fields {
-    // +0x0   uint32_t                 typeWord  (evidence: 0x007C8490, 0x007CCA20)
-    // +0xC   void*                    context  (evidence: 0x007C8490, 0x007CCA20)
+    // +0x0   uint32_t                 typeWord  (evidence: 0x007C8490, 0x007CAF70, 0x007CCA20)
+    // +0xC   void*                    context  (evidence: 0x007C8490, 0x007CAF70, 0x007CCA20)
 };
 } // namespace lifted_layout
