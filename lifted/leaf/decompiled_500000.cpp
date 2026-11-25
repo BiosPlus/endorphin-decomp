@@ -720,3 +720,19 @@ void fn_0050C4D0(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_0050C4D0
+
+// [0x005052F0]
+namespace lift_005052F0 {
+// Imported MSVCP80 std::basic_string<char> destructor (thunk at 0x00628FF0, reached via import slot 0x00924FF4).
+extern void __thiscall ext_00628FF0(void* self);
+// Known callee 0x0065F440: sub_0065F440 (Stores address of mem_0093BF24 into field at offset +0x0.)
+extern void __fastcall ext_0065F440(void* self);
+
+// @name Unknown::Dtor_005052F0
+// @summary Destroys the std::string member at this+0x0C, then runs the base teardown via ext_0065F440 (which stores the vptr at +0x0). The original MSVC SEH frame (fs:[0] push/pop) is dropped; only the sequential calls are kept.
+// @field Unknown +0x0C std::string field_0x0C
+extern void __thiscall fn_005052F0(void* self) {
+    ext_00628FF0(reinterpret_cast<uint8_t*>(self) + 0x0C);
+    ext_0065F440(self);
+}
+} // namespace lift_005052F0
