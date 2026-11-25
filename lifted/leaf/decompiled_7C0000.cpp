@@ -917,3 +917,20 @@ void sub_007C6810(std::uint32_t arg0, std::uint32_t arg1, std::uint32_t arg2) {
     } while (node != 0);
 }
 } // namespace lift_007C6810
+
+// [0x007C9E80]
+namespace lift_007C9E80 {
+// @name sub_007C9E80
+// @summary Stores a float parameter, sets a nonzero flag and absolute value for a second float, and clears a field.
+// @field struct +0x1c uint32_t field_0x1c
+// @field struct +0x50 uint32_t field_0x50
+// @field struct +0x54 float field_0x54
+// @field struct +0x58 float field_0x58
+void __cdecl sub_007C9E80(void* self, float val1, float val2) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<float*>(base + 0x54) = val1;
+    *reinterpret_cast<uint32_t*>(base + 0x50) = (val2 != 0.0f) ? 1u : 0u;
+    *reinterpret_cast<uint32_t*>(base + 0x1c) = 0u;
+    *reinterpret_cast<float*>(base + 0x58) = (val2 < 0.0f) ? -val2 : val2;
+}
+} // namespace lift_007C9E80
