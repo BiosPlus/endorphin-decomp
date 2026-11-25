@@ -325,3 +325,21 @@ uint32_t fn_00569470(uint32_t first, uint32_t last, uint32_t destEnd) {
     return destEnd - rounded;
 }
 } // namespace lift_00569470
+
+// [0x00566FF0] sub_00566FF0 (73 bytes)
+namespace lift_00566FF0 {
+extern void ext_00610AF0(void* self);
+// Known callee 0x00661980: setVtable_0093BFB4 (Stores the vtable address 0x0093BFB4 into the first dword of the object pointed to by ECX (this).)
+extern void ext_00661980(void* self);
+
+// @name Unknown::ConstructWithVtable_00566FF0
+// @class Unknown
+// @summary Runs the base initializer ext_00661980, stores vtable 0x00958C0C at offset 0, runs ext_00610AF0 on the object, and returns self.
+// @field Unknown +0x00 uint32_t vtable
+void* fn_00566FF0(void* self) {
+    ext_00661980(self);
+    *reinterpret_cast<uint32_t*>(self) = 0x00958C0Cu;
+    ext_00610AF0(self);
+    return self;
+}
+} // namespace lift_00566FF0

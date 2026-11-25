@@ -1,0 +1,22 @@
+{
+  "va": "0x00566FF0",
+  "size": 73,
+  "orig_symbol": "sub_00566FF0",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "Unknown::ConstructWithVtable_00566FF0",
+  "class": "Unknown",
+  "signature": "void* fn_00566FF0(void* self)",
+  "summary": "Runs the base initializer ext_00661980, stores vtable 0x00958C0C at offset 0, runs ext_00610AF0 on the object, and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:32:14Z"
+}

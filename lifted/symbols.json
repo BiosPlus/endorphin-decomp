@@ -21231,6 +21231,13 @@
     "summary": "Sets the 32-bit field at offset 0x00 of the object and returns this.",
     "lifted_path": "lifted/leaf/tiny_560000.cpp"
   },
+  "0x00566FF0": {
+    "name": "Unknown::ConstructWithVtable_00566FF0",
+    "class": "Unknown",
+    "signature": "void* fn_00566FF0(void* self)",
+    "summary": "Runs the base initializer ext_00661980, stores vtable 0x00958C0C at offset 0, runs ext_00610AF0 on the object, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x00567040": {
     "name": "Unknown::CopyFromSource_00567040",
     "class": "Unknown",
