@@ -17974,6 +17974,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType\u003cRuntimeEngine, int, getNumTicksToRun, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004E1980": {
+    "name": "getPlaybackEndTimeOrDuration",
+    "signature": "float __thiscall fn_004E1980(void* self)",
+    "summary": "Returns field_0x9d8 if flags at +0xb78 or +0xb74 are set, otherwise computes (count - 1) * ReciprocalOfSubobjectField138(self + 0x864).",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004E1B30": {
     "name": "sub_004E1B30",
     "signature": "DWORD ext_004E13E0();  // ConstructOnce_0046F580 DWORD* fn_004E1B30(DWORD* dst, DWORD value)",
@@ -46272,6 +46278,13 @@
     "summary": "Copies a range of 24-byte elements backward from [first, last) to [..., result).",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x006497C0": {
+    "name": "Mat3::mulVec3",
+    "class": "Mat3",
+    "signature": "float* __thiscall sub_006497C0(void* self, float* out, const float* in)",
+    "summary": "Multiplies a 3x3 row-major matrix by a 3D vector and stores the result.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00649840": {
     "name": "Unknown::ResetVtablesAndRelease",
     "class": "Unknown",
@@ -58402,6 +58415,12 @@
     "signature": "int32_t fn_006B4090(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00546860 (RotateTool::vfunc_7).",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
+  },
+  "0x006B40A0": {
+    "name": "time64ToSystemTime",
+    "signature": "uint8_t __thiscall sub_006B40A0(void* self, void* out_system_time)",
+    "summary": "Converts a 64-bit time_t value to a Windows SYSTEMTIME structure via _localtime64_s.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
   "0x006B4120": {
     "name": "GWCDateTimePropertyValue::vfunc_0",

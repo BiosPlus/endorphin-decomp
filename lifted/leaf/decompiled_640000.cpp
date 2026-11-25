@@ -2315,3 +2315,26 @@ extern uint32_t __thiscall sub_00641350(uint32_t self, uint32_t out_iter, uint32
     return out_iter;
 }
 } // namespace lift_00641350
+
+// [0x006497C0]
+namespace lift_006497C0 {
+// @name Mat3::mulVec3
+// @class Mat3
+// @summary Multiplies a 3x3 row-major matrix by a 3D vector and stores the result.
+// @field Mat3 +0x00 float[9] m
+float* __thiscall sub_006497C0(void* self, float* out, const float* in) {
+    float x = in[0];
+    float y = in[1];
+    float z = in[2];
+
+    const float* m = static_cast<const float*>(self);
+    float m0 = m[0], m1 = m[1], m2 = m[2];
+    float m3 = m[3], m4 = m[4], m5 = m[5];
+    float m6 = m[6], m7 = m[7], m8 = m[8];
+
+    out[0] = m0 * x + m1 * y + m2 * z;
+    out[1] = m3 * x + m4 * y + m5 * z;
+    out[2] = m6 * x + m7 * y + m8 * z;
+    return out;
+}
+} // namespace lift_006497C0

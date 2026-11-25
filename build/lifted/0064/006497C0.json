@@ -1,0 +1,22 @@
+{
+  "va": "0x006497C0",
+  "size": 116,
+  "orig_symbol": "sub_006497C0",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "Mat3::mulVec3",
+  "class": "Mat3",
+  "signature": "float* __thiscall sub_006497C0(void* self, float* out, const float* in)",
+  "summary": "Multiplies a 3x3 row-major matrix by a 3D vector and stores the result.",
+  "fields": [
+    {
+      "class": "Mat3",
+      "offset": "+0x0",
+      "type": "float[9]",
+      "name": "m"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:43:21Z"
+}
