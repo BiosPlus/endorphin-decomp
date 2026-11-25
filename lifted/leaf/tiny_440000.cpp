@@ -794,3 +794,22 @@ uint32_t fn_004474F0(void* self, uint32_t arg) {
     return reinterpret_cast<uint32_t(__thiscall*)(void*, uint32_t)>(target)(self, arg);
 }
 } // namespace lift_004474F0
+
+// [0x00447500] sub_00447500 (12 bytes)
+namespace lift_00447500 {
+// @name DispatchViaField08
+// @class Unknown
+// @summary Tail-dispatches to the function pointer stored at this+0x08 with the same arguments; returns 0 if that pointer is null.
+// @field Unknown +0x08 void* field_0x08
+
+// Asm: mov eax,[ecx+8]; test eax,eax; je done; jmp eax; done: ret 4
+// Thiscall: ecx = self, one stack argument (ret 4 pops it).
+DWORD __thiscall fn_00447500(void* self, DWORD arg) {
+    void* handler = lift_field<void*>(self, 0x08);
+    if (handler != nullptr) {
+        using Handler = DWORD(__thiscall*)(void*, DWORD);
+        return reinterpret_cast<Handler>(handler)(self, arg);
+    }
+    return 0;
+}
+} // namespace lift_00447500

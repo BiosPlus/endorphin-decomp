@@ -3993,6 +3993,13 @@
     "summary": "Forwards the call (this + stack arg) to the function pointer stored at this+0x04; returns 0 if it is null.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x00447500": {
+    "name": "DispatchViaField08",
+    "class": "Unknown",
+    "signature": "DWORD __thiscall fn_00447500(void* self, DWORD arg)",
+    "summary": "Tail-dispatches to the function pointer stored at this+0x08 with the same arguments; returns 0 if that pointer is null.",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x00447510": {
     "name": "sub_00447510",
     "signature": "void __thiscall sub_00447510(void* self, uint32_t arg1)",

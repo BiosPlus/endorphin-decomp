@@ -1,0 +1,22 @@
+{
+  "va": "0x00447500",
+  "size": 12,
+  "orig_symbol": "sub_00447500",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "DispatchViaField08",
+  "class": "Unknown",
+  "signature": "DWORD __thiscall fn_00447500(void* self, DWORD arg)",
+  "summary": "Tail-dispatches to the function pointer stored at this+0x08 with the same arguments; returns 0 if that pointer is null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:20:48Z"
+}
