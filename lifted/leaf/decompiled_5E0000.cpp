@@ -571,3 +571,31 @@ void* fn_005EAEE0() {
     return reinterpret_cast<void*>(&mem_00B45F10);
 }
 } // namespace lift_005EAEE0
+
+// [0x005EAF40] sub_005EAF40 (87 bytes)
+namespace lift_005EAF40 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self, one stack argument; calls ext_00672000 on self, stores the argument into the first DWORD of self, returns it).
+extern void ext_0067A670();
+extern DWORD mem_00B45F1C; // init-guard flags word (bit 0 = initialized/in-progress)
+extern DWORD mem_00B45F18; // static object storage
+
+// @name getOrInitStaticObject_005EAF40
+// @class unknown
+// @summary Lazily initializes a static object at mem_00B45F18 once (guarded by bit 0 of mem_00B45F1C) via ext_0067A670(obj, 0), then sets its vptr to 0x969094 and returns the object's address.
+// @field unknown +0x00 DWORD field_0x00
+void* fn_005EAF40() {
+    // Guard: only the first caller runs the initializer. The original SEH frame
+    // (fs:[0] push/pop) is a compiler-generated try/catch wrapper and is not
+    // needed for the logic.
+    if ((mem_00B45F1C & 1u) == 0) {
+        mem_00B45F1C |= 1u;
+
+        void* obj = reinterpret_cast<void*>(&mem_00B45F18);
+        using InitFn = void(__thiscall*)(void*, DWORD);
+        reinterpret_cast<InitFn>(reinterpret_cast<void*>(&ext_0067A670))(obj, 0u);
+
+        mem_00B45F18 = 0x969094u;
+    }
+    return reinterpret_cast<void*>(&mem_00B45F18);
+}
+} // namespace lift_005EAF40

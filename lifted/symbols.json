@@ -32071,6 +32071,13 @@
     "summary": "One-time lazy init of the static object at 0x00B45F10 (guard bit 0 of 0x00B45F14); sets its first DWORD to 0x00968EE4 and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005EAF40": {
+    "name": "getOrInitStaticObject_005EAF40",
+    "class": "unknown",
+    "signature": "extern \"C\" DWORD mem_00B45F1C; // init-guard flags word (bit 0 = initialized/in-progress) extern \"C\" DWORD mem_00B45F18; // static object storage void* fn_005EAF40()",
+    "summary": "Lazily initializes a static object at mem_00B45F18 once (guarded by bit 0 of mem_00B45F1C) via ext_0067A670(obj, 0), then sets its vptr to 0x969094 and returns the object's address.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005EB000": {
     "name": "getOrInitStaticObject_005EB000",
     "signature": "void* fn_005EB000(void)",
