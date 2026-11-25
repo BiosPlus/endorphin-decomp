@@ -50524,3 +50524,36 @@ extern float __thiscall fn_004F6190(void* self)
     ext_006A6DD2(static_cast<void*>(exc), static_cast<const void*>(mem_009DEC1C));
 }
 } // namespace lift_004F6190
+
+// [0x005B3BC0] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>::vfunc_5 (52 bytes)
+namespace lift_005B3BC0 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<Geometry>::vfunc_5
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>
+// @summary Reads the wrapped object pointer, calls its vtable slot 8 (getFileName-like accessor) and returns it; throws a default ExceptionWithMessage if the wrapped pointer is null (the vtable call result is passed to the throw builder).
+// @field ExprParser::ValuePtrType +0x00 void* m_ptr
+// @field field_0x0c +0x0c void* inner (object pointer at p+0x0c, vtable slot 8 is called)
+void fn_005B3BC0(void* self) {
+    using VFn = void* (__thiscall*)(void*);
+
+    void* p = *reinterpret_cast<void**>(self);
+    if (p != nullptr) {
+        void* inner = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(p) + 0x0c);
+        void** vtbl = *reinterpret_cast<void***>(inner);
+        VFn accessor = reinterpret_cast<VFn>(vtbl[8]);
+        void* name = accessor(inner);
+        (void)name;
+        ext_0046C4E0();
+        return;
+    }
+
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_005B3BC0

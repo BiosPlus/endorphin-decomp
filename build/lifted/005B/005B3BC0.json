@@ -1,0 +1,28 @@
+{
+  "va": "0x005B3BC0",
+  "size": 52,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cGeometry\u003e::vfunc_5",
+  "class": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, 0\u003e",
+  "signature": "void fn_005B3BC0(void* self)",
+  "summary": "Reads the wrapped object pointer, calls its vtable slot 8 (getFileName-like accessor) and returns it; throws a default ExceptionWithMessage if the wrapped pointer is null (the vtable call result is passed to the throw builder).",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "m_ptr"
+    },
+    {
+      "class": "field_0x0c",
+      "offset": "+0xC",
+      "type": "void* inner (object pointer at p+0x0c, vtable slot 8 is",
+      "name": "called)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:56:04Z"
+}

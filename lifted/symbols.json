@@ -30504,6 +30504,13 @@
     "summary": "Evaluates Geometry::getFileName on the dereferenced object's Geometry member and copy-constructs the result string, or throws on null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005B3BC0": {
+    "name": "ExprParser::ReadMethodType\u003cGeometry\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, 0\u003e",
+    "signature": "void fn_005B3BC0(void* self)",
+    "summary": "Reads the wrapped object pointer, calls its vtable slot 8 (getFileName-like accessor) and returns it; throws a default ExceptionWithMessage if the wrapped pointer is null (the vtable call result is passed to the throw builder).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005B3CB0": {
     "name": "getSingleton_005B3CB0",
     "signature": "void* fn_005B3CB0()",
