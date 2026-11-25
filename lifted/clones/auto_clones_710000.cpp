@@ -1146,3 +1146,38 @@ void fn_00710C90(void) {
     mem_00B5F274 = src[1];
 }
 } // namespace lift_00710C90
+
+// [0x00714BE0] sub_00714BE0 (74 bytes)
+namespace lift_00714BE0 {
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5FAC8;
+extern uint32_t mem_00B5FACC;
+extern uint32_t mem_00B5FAD0;
+extern uint32_t mem_00B5FAD4;
+extern uint32_t mem_00B5FAD8;
+extern uint32_t mem_00B5FADC;
+extern uint32_t mem_00B5FAE0;
+extern uint32_t mem_00B5FAE4;
+
+// @name CopyHugeConstantToGlobals_00714BE0
+// @summary Loads the 8-byte value pointed to by the stored _HUGE address and copies it into four consecutive 8-byte globals at 0x00B5FAC8, 0x00B5FAD0, 0x00B5FAD8 and 0x00B5FAE0.
+void fn_00714BE0(void) {
+    // mem_00925284 holds the 32-bit address of the _HUGE constant.
+    const uint32_t* src = reinterpret_cast<const uint32_t*>(
+        static_cast<uintptr_t>(mem_00925284));
+
+    // Each pair reads the low and high dwords of the same 8-byte value and
+    // stores them to the destination global's low and high dwords.
+    mem_00B5FAC8 = src[0];
+    mem_00B5FACC = src[1];
+
+    mem_00B5FAD0 = src[0];
+    mem_00B5FAD4 = src[1];
+
+    mem_00B5FAD8 = src[0];
+    mem_00B5FADC = src[1];
+
+    mem_00B5FAE0 = src[0];
+    mem_00B5FAE4 = src[1];
+}
+} // namespace lift_00714BE0

@@ -54382,6 +54382,12 @@
     "summary": "Initializes three 64-bit double globals from MSVCR80.dll!_HUGE.",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00714BE0": {
+    "name": "CopyHugeConstantToGlobals_00714BE0",
+    "signature": "void fn_00714BE0(void)",
+    "summary": "Loads the 8-byte value pointed to by the stored _HUGE address and copies it into four consecutive 8-byte globals at 0x00B5FAC8, 0x00B5FAD0, 0x00B5FAD8 and 0x00B5FAE0.",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00715130": {
     "name": "isKnownGlobalValue",
     "signature": "uint8_t __stdcall sub_00715130(uint32_t val)",
