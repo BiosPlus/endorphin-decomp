@@ -38424,6 +38424,12 @@
     "summary": "Copies a range of 0x24-byte elements containing a u32, a u8, and a std::string.",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00687420": {
+    "name": "copyBackwardStruct0x24",
+    "signature": "uint32_t __cdecl sub_00687420(uint32_t first, uint32_t last, uint32_t dest_end)",
+    "summary": "Copies a range of 0x24-byte structs backward, copying a u32, a u8, and assigning a std::string at +0x08.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00687510": {
     "name": "sub_00687510",
     "class": "Unknown",
@@ -44350,6 +44356,12 @@
     "signature": "extern \"C\" void __fastcall fn_006AECC0(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by +0x6C and forwards through mem_00924FD4.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x006AF840": {
+    "name": "hasAnyFlaggedItem",
+    "signature": "uint8_t __thiscall fn_006AF840(uint32_t self)",
+    "summary": "Checks whether any element in the array at +0x54/+0x58 satisfies sub_006AD090",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
   },
   "0x006AF890": {
     "name": "GWCCategoryItem::vfunc_6",
@@ -55003,6 +55015,13 @@
     "class": "Unknown",
     "signature": "char* fn_00783440(void* self, char* buf, int n)",
     "summary": "Reads a line into buf from the FILE* held by the holder object; returns buf, or NULL when the holder's flag byte is zero.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
+  "0x00783470": {
+    "name": "StreamReader::readUInt32",
+    "class": "StreamReader",
+    "signature": "uint32_t __thiscall sub_00783470(void* self, uint32_t* outVal, uint8_t swapEndian)",
+    "summary": "Reads a 32-bit unsigned integer from an open stream, optionally byte-swapping it.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
   "0x00783510": {
