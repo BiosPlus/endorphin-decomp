@@ -1,0 +1,22 @@
+{
+  "va": "0x0054C760",
+  "size": 15,
+  "orig_symbol": "sub_0054C760",
+  "src_path": "src/leaf/tiny_540000.cpp",
+  "lifted_path": "lifted/leaf/tiny_540000.cpp",
+  "name": "std::basic_string\u003cchar\u003e::~basic_string thunk (vtable-install + tail-dispatch to dtor)",
+  "class": "std::basic_string\u003cchar\u003e",
+  "signature": "void fn_0054C760(void* self)",
+  "summary": "Installs vtable 0x956DFC into *self, then forwards to the string destructor at self+8 through the import slot 0x924FF4.",
+  "fields": [
+    {
+      "class": "basic_string\u003cchar\u003e",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:25:58Z"
+}

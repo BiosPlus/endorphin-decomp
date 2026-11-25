@@ -381,3 +381,26 @@ void fn_005478F0(void* self) {
     target(next);
 }
 } // namespace lift_005478F0
+
+// [0x0054C760] sub_0054C760 (15 bytes)
+namespace lift_0054C760 {
+extern int mem_00956DFC; // guest vtable address; stored as the literal 0x00956DFC
+extern int mem_00924FF4; // guest import slot holding the ~basic_string thunk pointer
+
+// @name std::basic_string<char>::~basic_string thunk (vtable-install + tail-dispatch to dtor)
+// @class std::basic_string<char>
+// @summary Installs vtable 0x956DFC into *self, then forwards to the string destructor at self+8 through the import slot 0x924FF4.
+// @field basic_string<char> +0x00 uint32_t vptr
+void fn_0054C760(void* self) {
+    // mov dword ptr [ecx], 0x956dfc
+    lift_field<uint32_t>(self, 0) = 0x00956DFCu;
+
+    // add ecx, 8
+    void* next = static_cast<uint8_t*>(self) + 8;
+
+    // jmp dword ptr [0x924ff4] -> __thiscall tail dispatch (ecx = next, no stack args)
+    auto target = reinterpret_cast<void(__thiscall*)(void*)>(
+        static_cast<uintptr_t>(lift_field<uint32_t>(&mem_00924FF4, 0)));
+    target(next);
+}
+} // namespace lift_0054C760

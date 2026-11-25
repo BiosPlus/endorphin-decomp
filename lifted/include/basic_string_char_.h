@@ -8,6 +8,6 @@
 // Recovered field layout for basic_string<char>:
 namespace lifted_layout {
 struct basic_string_char__Fields {
-    // +0x0   uint32_t                 vptr  (evidence: 0x005478F0)
+    // +0x0   uint32_t                 vptr  (evidence: 0x005478F0, 0x0054C760)
 };
 } // namespace lifted_layout
