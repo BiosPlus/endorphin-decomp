@@ -1692,3 +1692,28 @@ void* fn_00488170() {
     return &mem_00AD9E24;
 }
 } // namespace lift_00488170
+
+// [0x00488110] sub_00488110 (87 bytes)
+namespace lift_00488110 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AD9E20;
+extern DWORD mem_00AD9E1C;
+
+// @name ensureStaticObjectInitialized_00488110
+// @summary One-time initializer for the static object at 0x00AD9E1C, guarded by bit 0 of 0x00AD9E20; returns the object's address.
+void* fn_00488110() {
+    // Guard bit 0 of mem_00AD9E20: construct the static object only on first use.
+    if ((mem_00AD9E20 & 1u) == 0) {
+        mem_00AD9E20 |= 1u;
+        // Base-initialization call on the object (ECX = &mem_00AD9E1C). The stack
+        // argument is the SEH try-state slot, written as 0 by the original code.
+        // The value stored into the object is overwritten below, so it does not
+        // affect the final state.
+        ext_0067A670(&mem_00AD9E1C, 0u);
+        // Install the object's vtable/identity pointer.
+        mem_00AD9E1C = 0x0093D34Cu;
+    }
+    return &mem_00AD9E1C;
+}
+} // namespace lift_00488110

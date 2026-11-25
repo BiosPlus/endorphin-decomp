@@ -9039,6 +9039,12 @@
     "summary": "One-time guarded initializer for the static object at 0x00AD9E14; returns its address.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00488110": {
+    "name": "ensureStaticObjectInitialized_00488110",
+    "signature": "void* fn_00488110()",
+    "summary": "One-time initializer for the static object at 0x00AD9E1C, guarded by bit 0 of 0x00AD9E20; returns the object's address.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00488170": {
     "name": "getGuardedStaticObject_00488170",
     "signature": "void* fn_00488170()",

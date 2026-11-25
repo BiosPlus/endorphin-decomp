@@ -1,0 +1,13 @@
+{
+  "va": "0x00488110",
+  "size": 87,
+  "orig_symbol": "sub_00488110",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "ensureStaticObjectInitialized_00488110",
+  "signature": "void* fn_00488110()",
+  "summary": "One-time initializer for the static object at 0x00AD9E1C, guarded by bit 0 of 0x00AD9E20; returns the object's address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:29:18Z"
+}
