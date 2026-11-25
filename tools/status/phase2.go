@@ -2,8 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
-	"html"
 	"io/fs"
 	"os"
 	"os/exec"
@@ -120,18 +118,6 @@ func (m LiftModelStats) sizeStats() (avg float64, median, largest uint32) {
 	return float64(m.LiftedBytes) / float64(len(sorted)), sorted[len(sorted)/2], sorted[len(sorted)-1]
 }
 
-// LiftEvent represents one timestamped Phase 2 lift for the velocity chart.
-type LiftEvent struct {
-	UnixSec    int64  `json:"t"`
-	TimeISO    string `json:"iso"`
-	VA         string `json:"va"`
-	Name       string `json:"name"`
-	OrigSymbol string `json:"orig"`
-	Size       uint32 `json:"b"`
-	Model      string `json:"m"`
-	Fields     int    `json:"f"`
-}
-
 // ClassFieldSummary summarizes recovered fields for a single class.
 type ClassFieldSummary struct {
 	Class        string
@@ -160,17 +146,20 @@ type Phase2Stats struct {
 	ScopeCore               LiftScopeStats
 	InScopeUnitsTotal       int
 	InitialRTTINamedFuncs   int
-	NewlyInferredNamedFuncs int
-	TotalNamedFuncs         int
+	NewlyNamedFromAnonFuncs int // previously unnamed (sub_/fn_) functions now given a name
+	RenamedRTTIFuncs        int // previously RTTI-named functions given a more specific lifted name
+	TotalNamedFuncs         int // always == InitialRTTINamedFuncs + NewlyNamedFromAnonFuncs
 	SymbolsCataloged        int
 	TotalFieldAnnotations   int
+	CoreFieldAnnotations    int
+	CoreNamedFuncs          int
 	UniqueFields            int
 	ClassesWithFields       int
 	GeneratedHeaders        int
 	Subsystems              []SubsystemStats
 	OtherSubsystem          SubsystemStats
 	Leaderboard             []LiftModelStats
-	Events                  []LiftEvent
+	Timeline                ChartSeries
 	ClassFields             []ClassFieldSummary
 	RecentLifts             []LiftSummaryRow
 }
@@ -487,6 +476,8 @@ func addToScopeStats(s *LiftScopeStats, size uint64, hasAsm, isLifted, isSkipped
 	}
 }
 
+// collectPhase2Stats computes all Phase 2 metrics in a single coherent pass over in-scope units
+// backed by src/, matching `liftwork status` so scope totals and leaderboards always reconcile.
 func collectPhase2Stats(units []decomp.UnitEntry, mfcClasses map[string]bool, opts Phase2Options) Phase2Stats {
 	srcIdx := scanSrcDirForStatus(opts.SrcDir)
 	lifted := readLiftEntriesDir(opts.LiftedLedgerDir)
@@ -494,15 +485,11 @@ func collectPhase2Stats(units []decomp.UnitEntry, mfcClasses map[string]bool, op
 
 	var gitLiftTS map[string]string
 	if opts.UseGitLog && len(lifted) > 0 {
-		needGit := false
 		for _, e := range lifted {
 			if e.Status == "lifted" && strings.TrimSpace(e.LiftedAt) == "" {
-				needGit = true
+				gitLiftTS = extractGitLiftTimestamps()
 				break
 			}
-		}
-		if needGit {
-			gitLiftTS = extractGitLiftTimestamps()
 		}
 	}
 
@@ -524,18 +511,22 @@ func collectPhase2Stats(units []decomp.UnitEntry, mfcClasses map[string]bool, op
 		}
 	}
 
-	unitByVA := make(map[string]decomp.UnitEntry, len(units))
-	inScopeSeen := make(map[string]bool, len(units))
+	modelMap := make(map[string]*LiftModelStats)
+	uniqueFieldKeys := make(map[string]bool)
+	type classAgg struct {
+		count  int
+		unique map[string]bool
+	}
+	classMap := make(map[string]*classAgg)
+	var events []TimelineEvent
 
 	for _, u := range units {
 		va := unitstore.NormVA(u.VA)
 		u.VA = va
-		unitByVA[va] = u
 		if oos, _ := isOutOfScope(u, mfcClasses); oos || !decomp.IsCompleted(u.Status) {
 			continue
 		}
 		stats.InScopeUnitsTotal++
-		inScopeSeen[va] = true
 
 		hasInitialName := !isPlaceholderSymbol(u.Symbol)
 		if hasInitialName {
@@ -556,8 +547,12 @@ func collectPhase2Stats(units []decomp.UnitEntry, mfcClasses map[string]bool, op
 			}
 		}
 		hasLiftedName := !isPlaceholderSymbol(liftedName)
-		if hasLiftedName && (!hasInitialName || liftedName != u.Symbol) {
-			stats.NewlyInferredNamedFuncs++
+		if hasLiftedName {
+			if !hasInitialName {
+				stats.NewlyNamedFromAnonFuncs++
+			} else if liftedName != u.Symbol {
+				stats.RenamedRTTIFuncs++
+			}
 		}
 		if hasInitialName || hasLiftedName {
 			stats.TotalNamedFuncs++
@@ -577,9 +572,11 @@ func collectPhase2Stats(units []decomp.UnitEntry, mfcClasses map[string]bool, op
 			addToScopeStats(&stats.Subsystems[subIdx].Stats, sz, sf.HasAsm, isLifted, isSkipped)
 			if hasInitialName || hasLiftedName {
 				stats.Subsystems[subIdx].NamedFuncs++
+				stats.CoreNamedFuncs++
 			}
 			if isLifted {
 				stats.Subsystems[subIdx].FieldCount += len(le.Fields)
+				stats.CoreFieldAnnotations += len(le.Fields)
 			}
 		} else {
 			addToScopeStats(&stats.OtherSubsystem.Stats, sz, sf.HasAsm, isLifted, isSkipped)
@@ -590,35 +587,12 @@ func collectPhase2Stats(units []decomp.UnitEntry, mfcClasses map[string]bool, op
 				stats.OtherSubsystem.FieldCount += len(le.Fields)
 			}
 		}
-	}
 
-	// Process lifted ledger entries for leaderboard, field recovery, timeline, and recent lifts.
-	modelMap := make(map[string]*LiftModelStats)
-	uniqueFieldKeys := make(map[string]bool)
-	type classAgg struct {
-		count  int
-		unique map[string]bool
-	}
-	classMap := make(map[string]*classAgg)
-
-	for va, le := range lifted {
-		if le.Status != "lifted" {
+		if !isLifted {
 			continue
 		}
-		u, hasUnit := unitByVA[va]
-		sz := le.Size
-		if sz == 0 && hasUnit {
-			sz = u.Size
-		}
-		// If lifted entry corresponds to a VA not counted in src/ above (e.g. direct test fixture),
-		// still include its naming/fields/model stats cleanly.
-		if hasUnit && !inScopeSeen[va] {
-			if !isPlaceholderSymbol(le.Name) {
-				stats.NewlyInferredNamedFuncs++
-				stats.TotalNamedFuncs++
-			}
-		}
 
+		// Record leaderboard, struct fields, timeline, and recent lifts for this in-scope src/-backed lift.
 		model := strings.TrimSpace(le.LiftedBy)
 		if model == "" {
 			model = "unknown"
@@ -629,12 +603,12 @@ func collectPhase2Stats(units []decomp.UnitEntry, mfcClasses map[string]bool, op
 			modelMap[model] = ms
 		}
 		ms.LiftedFuncs++
-		ms.LiftedBytes += uint64(sz)
+		ms.LiftedBytes += sz
 		ms.FieldsRecovered += len(le.Fields)
 		if !isPlaceholderSymbol(le.Name) {
 			ms.NamedFuncs++
 		}
-		ms.Sizes = append(ms.Sizes, sz)
+		ms.Sizes = append(ms.Sizes, u.Size)
 
 		stats.TotalFieldAnnotations += len(le.Fields)
 		for _, f := range le.Fields {
@@ -657,25 +631,17 @@ func collectPhase2Stats(units []decomp.UnitEntry, mfcClasses map[string]bool, op
 		if liftedAt == "" && gitLiftTS != nil {
 			liftedAt = gitLiftTS[va]
 		}
-		name := strings.TrimSpace(le.Name)
+		name := liftedName
 		if name == "" {
-			if se, ok := syms[va]; ok {
-				name = se.Name
-			}
-		}
-		if name == "" {
-			name = le.OrigSymbol
+			name = u.Symbol
 		}
 		if ts, ok := parseFlexibleTimestamp(liftedAt); ok {
-			stats.Events = append(stats.Events, LiftEvent{
-				UnixSec:    ts.Unix(),
-				TimeISO:    ts.Format(time.RFC3339),
-				VA:         va,
-				Name:       name,
-				OrigSymbol: le.OrigSymbol,
-				Size:       sz,
-				Model:      model,
-				Fields:     len(le.Fields),
+			events = append(events, TimelineEvent{
+				UnixSec: ts.Unix(),
+				Size:    u.Size,
+				Fields:  len(le.Fields),
+				Model:   model,
+				Label:   va + " (" + name + ")",
 			})
 		}
 
@@ -692,7 +658,7 @@ func collectPhase2Stats(units []decomp.UnitEntry, mfcClasses map[string]bool, op
 			Signature:  le.Signature,
 			Summary:    le.Summary,
 			LiftedPath: le.LiftedPath,
-			Size:       sz,
+			Size:       u.Size,
 			Fields:     len(le.Fields),
 			Model:      model,
 			LiftedAt:   liftedAt,
@@ -730,13 +696,6 @@ func collectPhase2Stats(units []decomp.UnitEntry, mfcClasses map[string]bool, op
 		return stats.Leaderboard[i].Model < stats.Leaderboard[j].Model
 	})
 
-	sort.Slice(stats.Events, func(i, j int) bool {
-		if stats.Events[i].UnixSec != stats.Events[j].UnixSec {
-			return stats.Events[i].UnixSec < stats.Events[j].UnixSec
-		}
-		return stats.Events[i].VA < stats.Events[j].VA
-	})
-
 	sort.Slice(stats.RecentLifts, func(i, j int) bool {
 		if stats.RecentLifts[i].LiftedAt != stats.RecentLifts[j].LiftedAt {
 			return stats.RecentLifts[i].LiftedAt > stats.RecentLifts[j].LiftedAt
@@ -744,400 +703,6 @@ func collectPhase2Stats(units []decomp.UnitEntry, mfcClasses map[string]bool, op
 		return stats.RecentLifts[i].VA < stats.RecentLifts[j].VA
 	})
 
+	stats.Timeline = buildChartSeries(events, stats.ScopeAll.RemainAsmBytes)
 	return stats
-}
-
-func renderPhase2CISummary(p2 Phase2Stats) string {
-	var sb strings.Builder
-	sb.WriteString("\n## Phase 2: Portable C++ Lifting & Struct Recovery\n\n")
-	sb.WriteString(fmt.Sprintf("- **Core Scope ASM Lifted:** `%d / %d` funcs (**%.2f%%**) | `%d / %d bytes` (**%.2f%%**)\n",
-		p2.ScopeCore.LiftedAsmFuncs, p2.ScopeCore.AsmFuncs, pct(uint64(p2.ScopeCore.LiftedAsmFuncs), uint64(p2.ScopeCore.AsmFuncs)),
-		p2.ScopeCore.LiftedAsmBytes, p2.ScopeCore.AsmBytes, pct(p2.ScopeCore.LiftedAsmBytes, p2.ScopeCore.AsmBytes)))
-	sb.WriteString(fmt.Sprintf("- **Full Binary ASM Lifted:** `%d / %d` funcs (**%.2f%%**) | `%d / %d bytes` (**%.2f%%**)\n",
-		p2.ScopeAll.LiftedAsmFuncs, p2.ScopeAll.AsmFuncs, pct(uint64(p2.ScopeAll.LiftedAsmFuncs), uint64(p2.ScopeAll.AsmFuncs)),
-		p2.ScopeAll.LiftedAsmBytes, p2.ScopeAll.AsmBytes, pct(p2.ScopeAll.LiftedAsmBytes, p2.ScopeAll.AsmBytes)))
-	sb.WriteString(fmt.Sprintf("- **Total Portable C++ Coverage:** `%d / %d` funcs (**%.2f%%**) | `%d / %d bytes` (**%.2f%%**) — `%d` pure-C++ baseline + `%d` lifted\n",
-		p2.ScopeAll.PortableCppFuncs, p2.ScopeAll.TotalFuncs, pct(uint64(p2.ScopeAll.PortableCppFuncs), uint64(p2.ScopeAll.TotalFuncs)),
-		p2.ScopeAll.PortableCppBytes, p2.ScopeAll.TotalBytes, pct(p2.ScopeAll.PortableCppBytes, p2.ScopeAll.TotalBytes),
-		p2.ScopeAll.AlreadyPureCppFuncs, p2.ScopeAll.LiftedAsmFuncs))
-	sb.WriteString(fmt.Sprintf("- **Named Functions:** `%d / %d` (**%.2f%%**) — `%d` RTTI/initial + `%d` newly inferred\n",
-		p2.TotalNamedFuncs, p2.InScopeUnitsTotal, pct(uint64(p2.TotalNamedFuncs), uint64(p2.InScopeUnitsTotal)),
-		p2.InitialRTTINamedFuncs, p2.NewlyInferredNamedFuncs))
-	sb.WriteString(fmt.Sprintf("- **Recovered Struct Fields:** `%d` annotations (`%d` unique across `%d` classes) | `%d` symbols in `lifted/symbols.json`\n\n",
-		p2.TotalFieldAnnotations, p2.UniqueFields, p2.ClassesWithFields, p2.SymbolsCataloged))
-
-	sb.WriteString("| Core Subsystem | Category | Pure C++ | Lifted / ASM | ASM Lift % | Portable C++ % | Fields |\n")
-	sb.WriteString("| :--- | :--- | ---: | ---: | ---: | ---: | ---: |\n")
-	for _, sub := range p2.Subsystems {
-		if sub.Stats.TotalFuncs == 0 {
-			continue
-		}
-		sb.WriteString(fmt.Sprintf("| **%s** | %s | %d | %d / %d | %.2f%% | %.2f%% | %d |\n",
-			sub.Name, sub.Category,
-			sub.Stats.AlreadyPureCppFuncs,
-			sub.Stats.LiftedAsmFuncs, sub.Stats.AsmFuncs,
-			pct(uint64(sub.Stats.LiftedAsmFuncs), uint64(sub.Stats.AsmFuncs)),
-			pct(uint64(sub.Stats.PortableCppFuncs), uint64(sub.Stats.TotalFuncs)),
-			sub.FieldCount))
-	}
-	sb.WriteString(fmt.Sprintf("| **Core Scope Total** | *All Core* | %d | %d / %d | %.2f%% | %.2f%% | %d |\n",
-		p2.ScopeCore.AlreadyPureCppFuncs,
-		p2.ScopeCore.LiftedAsmFuncs, p2.ScopeCore.AsmFuncs,
-		pct(uint64(p2.ScopeCore.LiftedAsmFuncs), uint64(p2.ScopeCore.AsmFuncs)),
-		pct(uint64(p2.ScopeCore.PortableCppFuncs), uint64(p2.ScopeCore.TotalFuncs)),
-		p2.TotalFieldAnnotations))
-
-	sb.WriteString("\n### Phase 2 Lift Leaderboard (by Model)\n\n")
-	sb.WriteString("| Model | Lifted Funcs | Lifted Bytes | Share | Recovered Fields |\n")
-	sb.WriteString("| :--- | ---: | ---: | ---: | ---: |\n")
-	if len(p2.Leaderboard) == 0 {
-		sb.WriteString("| *(no lifted functions yet)* | 0 | 0 | 0.00% | 0 |\n")
-	} else {
-		totalLifted := p2.ScopeAll.LiftedFuncs
-		if totalLifted == 0 {
-			for _, m := range p2.Leaderboard {
-				totalLifted += m.LiftedFuncs
-			}
-		}
-		for _, m := range p2.Leaderboard {
-			sb.WriteString(fmt.Sprintf("| `%s` | %d | %d | %.2f%% | %d |\n",
-				m.Model, m.LiftedFuncs, m.LiftedBytes, pct(uint64(m.LiftedFuncs), uint64(totalLifted)), m.FieldsRecovered))
-		}
-	}
-	return sb.String()
-}
-
-func renderPhase2ChartPanel(p2 Phase2Stats) string {
-	eventsJSON, err := json.Marshal(p2.Events)
-	if err != nil {
-		eventsJSON = []byte("[]")
-	}
-
-	var sb strings.Builder
-	sb.WriteString(`    <div class="panel">
-      <div class="chart-header">
-        <div>
-          <h2 style="margin:0;font-size:18px;">Phase 2 Lift Velocity &amp; Portable C++ Curve</h2>
-          <div style="color:var(--muted);font-size:13px;margin-top:2px;">Tracks lifted <code>__asm</code>/naked functions, bytes converted, and struct fields recovered over time</div>
-        </div>
-        <div class="chart-controls">
-          <div class="btn-group" id="p2-metric-group" role="group" aria-label="Phase 2 Metric">
-            <button type="button" class="chart-btn active" data-p2metric="funcs">Lifted Funcs</button>
-            <button type="button" class="chart-btn" data-p2metric="bytes">Lifted Bytes</button>
-            <button type="button" class="chart-btn" data-p2metric="fields">Struct Fields</button>
-          </div>
-        </div>
-      </div>
-`)
-
-	if len(p2.Events) == 0 {
-		sb.WriteString(`      <div class="zero-state">
-        <div class="zero-state-title">Ready for Phase 2 Lifting</div>
-        <p>No lifted functions recorded in <code>build/lifted/</code> yet. Run <code>go run ./tools/liftwork next</code> or <code>go run ./tools/lift</code> to begin converting <code>__asm</code>/naked stubs into portable C++ and recovering struct layouts.</p>
-      </div>
-    </div>
-`)
-		return sb.String()
-	}
-
-	sb.WriteString(`      <div class="chart-wrap">
-        <svg id="p2-velocity-svg" viewBox="0 0 1600 260" role="img" aria-label="Phase 2 lift velocity chart">
-          <defs>
-            <linearGradient id="p2AreaGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.34"/>
-              <stop offset="100%" stop-color="#58a6ff" stop-opacity="0.02"/>
-            </linearGradient>
-          </defs>
-          <g id="p2-chart-grid">
-            <line x1="56" y1="20" x2="1546" y2="20" stroke="#21262d" stroke-dasharray="3,3"/>
-            <line x1="56" y1="71.5" x2="1546" y2="71.5" stroke="#21262d" stroke-dasharray="3,3"/>
-            <line x1="56" y1="123" x2="1546" y2="123" stroke="#21262d" stroke-dasharray="3,3"/>
-            <line x1="56" y1="174.5" x2="1546" y2="174.5" stroke="#21262d" stroke-dasharray="3,3"/>
-            <line x1="56" y1="226" x2="1546" y2="226" stroke="#30363d"/>
-          </g>
-          <g id="p2-chart-bars"></g>
-          <polygon id="p2-chart-area" points="" fill="url(#p2AreaGrad)"/>
-          <polyline id="p2-chart-line" points="" fill="none" stroke="#58a6ff" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
-          <g id="p2-chart-dots"></g>
-          <g id="p2-chart-axes"></g>
-        </svg>
-      </div>
-      <div class="chart-legend">
-        <span><span class="legend-swatch" style="background:#58a6ff;"></span> Cumulative Phase 2 Progress</span>
-        <span><span class="legend-swatch" style="background:rgba(163,113,247,0.65);"></span> Interval Lifts</span>
-        <span id="p2-chart-note" style="margin-inline-start:auto;color:var(--muted);"></span>
-      </div>
-      <script>
-      (function() {
-        const P2_EVENTS = ` + string(eventsJSON) + `;
-        let p2Metric = 'funcs';
-        const svg = document.getElementById('p2-velocity-svg');
-        if (!svg || !P2_EVENTS.length) return;
-        const gridLines = document.querySelectorAll('#p2-chart-grid line');
-        const gBars = document.getElementById('p2-chart-bars');
-        const polyArea = document.getElementById('p2-chart-area');
-        const polyLine = document.getElementById('p2-chart-line');
-        const gDots = document.getElementById('p2-chart-dots');
-        const gAxes = document.getElementById('p2-chart-axes');
-        const note = document.getElementById('p2-chart-note');
-        const H = 260, PAD_L = 56, PAD_R = 54, PAD_T = 20, PAD_B = 34, PH = H - PAD_T - PAD_B;
-
-        function fmtTime(sec) {
-          const d = new Date(sec * 1000);
-          return String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0') + ' ' +
-                 String(d.getHours()).padStart(2,'0') + ':' + String(d.getMinutes()).padStart(2,'0');
-        }
-
-        function renderP2() {
-          const cw = Math.round(svg.clientWidth || 1600);
-          const W = Math.max(640, cw);
-          const PW = W - PAD_L - PAD_R;
-          svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
-          gridLines.forEach(line => line.setAttribute('x2', String(W - PAD_R)));
-
-          const bMap = new Map();
-          let cFuncs = 0, cBytes = 0, cFields = 0;
-          for (const ev of P2_EVENTS) {
-            cFuncs++;
-            cBytes += ev.b;
-            cFields += ev.f;
-            const k = Math.floor(ev.t / 300) * 300;
-            let b = bMap.get(k);
-            if (!b) {
-              b = { t: k, dFuncs: 0, dBytes: 0, dFields: 0, cFuncs: 0, cBytes: 0, cFields: 0 };
-              bMap.set(k, b);
-            }
-            b.dFuncs++;
-            b.dBytes += ev.b;
-            b.dFields += ev.f;
-            b.cFuncs = cFuncs;
-            b.cBytes = cBytes;
-            b.cFields = cFields;
-          }
-          const bks = Array.from(bMap.values()).sort((a,b) => a.t - b.t);
-          const valOf = (b) => p2Metric === 'bytes' ? b.cBytes : (p2Metric === 'fields' ? b.cFields : b.cFuncs);
-          const delOf = (b) => p2Metric === 'bytes' ? b.dBytes : (p2Metric === 'fields' ? b.dFields : b.dFuncs);
-          const maxY = Math.max(1, valOf(bks[bks.length - 1]));
-          let maxD = 1;
-          for (const b of bks) if (delOf(b) > maxD) maxD = delOf(b);
-
-          const n = bks.length;
-          const xAt = (i) => n === 1 ? PAD_L + PW / 2 : PAD_L + (i / (n - 1)) * PW;
-          const yAt = (v) => PAD_T + PH - (v / maxY) * PH;
-          const barW = Math.max(6, Math.min(28, (PW / Math.max(1, n)) * 0.56));
-          const pts = [], areaPts = [xAt(0).toFixed(1) + ',' + (PAD_T + PH).toFixed(1)];
-          let barsHTML = '', dotsHTML = '';
-          for (let i = 0; i < n; i++) {
-            const b = bks[i], x = xAt(i), y = yAt(valOf(b));
-            pts.push(x.toFixed(1) + ',' + y.toFixed(1));
-            areaPts.push(x.toFixed(1) + ',' + y.toFixed(1));
-            const d = delOf(b);
-            if (d > 0) {
-              const bh = (d / maxD) * (PH * 0.42);
-              barsHTML += '<rect x="' + (x - barW/2).toFixed(1) + '" y="' + (PAD_T + PH - bh).toFixed(1) + '" width="' + barW.toFixed(1) + '" height="' + bh.toFixed(1) + '" rx="2" fill="rgba(163,113,247,0.35)"/>';
-            }
-            dotsHTML += '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="3.5" fill="#58a6ff"/>';
-          }
-          areaPts.push(xAt(n - 1).toFixed(1) + ',' + (PAD_T + PH).toFixed(1));
-          gBars.innerHTML = barsHTML;
-          polyArea.setAttribute('points', areaPts.join(' '));
-          polyLine.setAttribute('points', pts.join(' '));
-          gDots.innerHTML = dotsHTML;
-
-          let axesHTML = '';
-          for (let s = 0; s <= 4; s++) {
-            const v = Math.round((maxY * (4 - s)) / 4);
-            const y = PAD_T + (PH * s) / 4 + 4;
-            axesHTML += '<text x="' + (PAD_L - 8) + '" y="' + y.toFixed(1) + '" fill="#8b949e" font-size="11" text-anchor="end">' + v.toLocaleString() + '</text>';
-          }
-          const ticks = Math.min(n, 6);
-          for (let t = 0; t < ticks; t++) {
-            const idx = ticks === 1 ? 0 : Math.round((t * (n - 1)) / (ticks - 1));
-            const anchor = t === 0 ? 'start' : (t === ticks - 1 ? 'end' : 'middle');
-            axesHTML += '<text x="' + xAt(idx).toFixed(1) + '" y="' + (H - 8) + '" fill="#8b949e" font-size="11" text-anchor="' + anchor + '">' + fmtTime(bks[idx].t) + '</text>';
-          }
-          gAxes.innerHTML = axesHTML;
-          note.textContent = P2_EVENTS.length.toLocaleString() + ' lifted functions logged across ' + n + ' active window(s)';
-        }
-
-        document.querySelectorAll('#p2-metric-group .chart-btn').forEach(btn => {
-          btn.addEventListener('click', () => {
-            document.querySelectorAll('#p2-metric-group .chart-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            p2Metric = btn.getAttribute('data-p2metric');
-            renderP2();
-          });
-        });
-        window.addEventListener('resize', () => requestAnimationFrame(renderP2));
-        renderP2();
-      })();
-      </script>
-    </div>
-`)
-	return sb.String()
-}
-
-func renderSubsystemTableRows(p2 Phase2Stats, coreOnly bool) string {
-	var sb strings.Builder
-	lastCat := ""
-	for _, sub := range p2.Subsystems {
-		if sub.Stats.TotalFuncs == 0 {
-			continue
-		}
-		if sub.Category != lastCat {
-			lastCat = sub.Category
-			sb.WriteString(fmt.Sprintf(`            <tr class="cat-row"><th scope="row" colspan="9">%s</th></tr>
-`, html.EscapeString(sub.Category)))
-		}
-		asmLiftPct := pct(uint64(sub.Stats.LiftedAsmFuncs), uint64(sub.Stats.AsmFuncs))
-		portablePct := pct(uint64(sub.Stats.PortableCppFuncs), uint64(sub.Stats.TotalFuncs))
-		sb.WriteString(fmt.Sprintf(`            <tr>
-              <th scope="row">%s</th>
-              <td class="num">%d</td>
-              <td class="num">%d</td>
-              <td class="num">%d / %d</td>
-              <td class="num">%d B</td>
-              <td class="num">%.2f%%</td>
-              <td class="num">%.2f%%</td>
-              <td class="num">%d</td>
-              <td class="num">%d</td>
-            </tr>
-`,
-			html.EscapeString(sub.Name),
-			sub.Stats.TotalFuncs,
-			sub.Stats.AlreadyPureCppFuncs,
-			sub.Stats.LiftedAsmFuncs, sub.Stats.AsmFuncs,
-			sub.Stats.RemainAsmBytes,
-			asmLiftPct,
-			portablePct,
-			sub.NamedFuncs,
-			sub.FieldCount,
-		))
-	}
-
-	sb.WriteString(fmt.Sprintf(`            <tr class="total-row">
-              <th scope="row">Core Scope Total</th>
-              <td class="num">%d</td>
-              <td class="num">%d</td>
-              <td class="num">%d / %d</td>
-              <td class="num">%d B</td>
-              <td class="num">%.2f%%</td>
-              <td class="num">%.2f%%</td>
-              <td class="num">%d</td>
-              <td class="num">%d</td>
-            </tr>
-`,
-		p2.ScopeCore.TotalFuncs,
-		p2.ScopeCore.AlreadyPureCppFuncs,
-		p2.ScopeCore.LiftedAsmFuncs, p2.ScopeCore.AsmFuncs,
-		p2.ScopeCore.RemainAsmBytes,
-		pct(uint64(p2.ScopeCore.LiftedAsmFuncs), uint64(p2.ScopeCore.AsmFuncs)),
-		pct(uint64(p2.ScopeCore.PortableCppFuncs), uint64(p2.ScopeCore.TotalFuncs)),
-		sumCoreNamed(p2),
-		sumCoreFields(p2),
-	))
-
-	if !coreOnly {
-		sb.WriteString(fmt.Sprintf(`            <tr>
-              <th scope="row">Other (Non-Core)</th>
-              <td class="num">%d</td>
-              <td class="num">%d</td>
-              <td class="num">%d / %d</td>
-              <td class="num">%d B</td>
-              <td class="num">%.2f%%</td>
-              <td class="num">%.2f%%</td>
-              <td class="num">%d</td>
-              <td class="num">%d</td>
-            </tr>
-            <tr class="total-row">
-              <th scope="row">All Tracked in <code>src/</code></th>
-              <td class="num">%d</td>
-              <td class="num">%d</td>
-              <td class="num">%d / %d</td>
-              <td class="num">%d B</td>
-              <td class="num">%.2f%%</td>
-              <td class="num">%.2f%%</td>
-              <td class="num">%d</td>
-              <td class="num">%d</td>
-            </tr>
-`,
-			p2.OtherSubsystem.Stats.TotalFuncs,
-			p2.OtherSubsystem.Stats.AlreadyPureCppFuncs,
-			p2.OtherSubsystem.Stats.LiftedAsmFuncs, p2.OtherSubsystem.Stats.AsmFuncs,
-			p2.OtherSubsystem.Stats.RemainAsmBytes,
-			pct(uint64(p2.OtherSubsystem.Stats.LiftedAsmFuncs), uint64(p2.OtherSubsystem.Stats.AsmFuncs)),
-			pct(uint64(p2.OtherSubsystem.Stats.PortableCppFuncs), uint64(p2.OtherSubsystem.Stats.TotalFuncs)),
-			p2.OtherSubsystem.NamedFuncs,
-			p2.OtherSubsystem.FieldCount,
-			p2.ScopeAll.TotalFuncs,
-			p2.ScopeAll.AlreadyPureCppFuncs,
-			p2.ScopeAll.LiftedAsmFuncs, p2.ScopeAll.AsmFuncs,
-			p2.ScopeAll.RemainAsmBytes,
-			pct(uint64(p2.ScopeAll.LiftedAsmFuncs), uint64(p2.ScopeAll.AsmFuncs)),
-			pct(uint64(p2.ScopeAll.PortableCppFuncs), uint64(p2.ScopeAll.TotalFuncs)),
-			p2.TotalNamedFuncs,
-			p2.TotalFieldAnnotations,
-		))
-	}
-	return sb.String()
-}
-
-func sumCoreNamed(p2 Phase2Stats) int {
-	n := 0
-	for _, s := range p2.Subsystems {
-		n += s.NamedFuncs
-	}
-	return n
-}
-
-func sumCoreFields(p2 Phase2Stats) int {
-	n := 0
-	for _, s := range p2.Subsystems {
-		n += s.FieldCount
-	}
-	return n
-}
-
-func renderPhase2LeaderboardRows(p2 Phase2Stats) string {
-	var sb strings.Builder
-	if len(p2.Leaderboard) == 0 {
-		sb.WriteString(`            <tr>
-              <th scope="row" style="color:var(--muted);font-style:italic;font-weight:400;">No lifted functions yet</th>
-              <td class="num">0</td>
-              <td class="num">0</td>
-              <td class="num">0.00%</td>
-              <td class="num">-</td>
-              <td class="num">-</td>
-              <td class="num">-</td>
-              <td class="num">0</td>
-            </tr>
-`)
-		return sb.String()
-	}
-	totalLifted := 0
-	for _, m := range p2.Leaderboard {
-		totalLifted += m.LiftedFuncs
-	}
-	for _, m := range p2.Leaderboard {
-		avg, med, largest := m.sizeStats()
-		sb.WriteString(fmt.Sprintf(`            <tr>
-              <th scope="row"><code class="model-badge">%s</code></th>
-              <td class="num">%d</td>
-              <td class="num">%d</td>
-              <td class="num">%.2f%%</td>
-              <td class="num">%.0f B</td>
-              <td class="num">%d B</td>
-              <td class="num">%d B</td>
-              <td class="num">%d</td>
-            </tr>
-`,
-			html.EscapeString(m.Model),
-			m.LiftedFuncs,
-			m.LiftedBytes,
-			pct(uint64(m.LiftedFuncs), uint64(totalLifted)),
-			avg, med, largest,
-			m.FieldsRecovered,
-		))
-	}
-	return sb.String()
 }
