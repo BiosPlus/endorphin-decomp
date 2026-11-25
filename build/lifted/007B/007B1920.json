@@ -1,0 +1,13 @@
+{
+  "va": "0x007B1920",
+  "size": 96,
+  "orig_symbol": "sub_007B1920",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "ParseFileModeFlags",
+  "signature": "int32_t fn_007B1920(const char* mode, uint32_t a2)",
+  "summary": "Parses a file mode string ('r', 'r+', 'w', or 'a') into open flags, reporting an error on invalid modes.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:51:05Z"
+}

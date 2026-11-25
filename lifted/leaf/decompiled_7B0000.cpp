@@ -1281,3 +1281,28 @@ extern void* fn_007B2210(void* arg) {
     return ext_006BA780(arg);
 }
 } // namespace lift_007B2210
+
+// [0x007B1920]
+namespace lift_007B1920 {
+// @name ParseFileModeFlags
+// @summary Parses a file mode string ('r', 'r+', 'w', or 'a') into open flags, reporting an error on invalid modes.
+
+
+extern void ext_0079B140(uint32_t a1, uint32_t a2, uint32_t a3);
+extern char mem_00AB15B8[];
+
+int32_t fn_007B1920(const char* mode, uint32_t a2) {
+    char c = mode[0];
+    if (c == 'a') {
+        return 0x102;
+    }
+    if (c == 'w') {
+        return 0x302;
+    }
+    if (c == 'r') {
+        return (mode[1] == '+') ? 2 : 0;
+    }
+    ext_0079B140(a2, (uint32_t)(uintptr_t)mem_00AB15B8, (uint32_t)(uintptr_t)mode);
+    return -1;
+}
+} // namespace lift_007B1920
