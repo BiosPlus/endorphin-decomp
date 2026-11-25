@@ -59247,6 +59247,13 @@
     "summary": "Looks up the record keyed by this+0x44; forwards this+0x00 and either the record's first dword or the key, plus arg3, to the optional hook. Always returns -1.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AF7A0": {
+    "name": "Unknown::DispatchRecordByKey16Wrapper",
+    "class": "Unknown (optional)",
+    "signature": "int32_t fn_007AF7A0(void* self)",
+    "summary": "Forwards its first argument and the constant 0x00AAFCCC to DispatchRecordByKey16 and returns that result (always -1).",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AF7E0": {
     "name": "Unknown::DispatchFirstDwordWithTag",
     "class": "Unknown",
