@@ -321,3 +321,24 @@ void __fastcall fn_0063EA80(void* self) {
     ext_0063E970(self);
 }
 } // namespace lift_0063EA80
+
+// [0x0063E9E0] sub_0063E9E0 (77 bytes)
+namespace lift_0063E9E0 {
+// Known callee 0x0063E0F0: sub_0063E0F0 (Auto-lifted identical-shape clone of 0x00519CE0 (std::basic_string<char>::~basic_string (vtable-stamping thunk)).)
+extern void ext_0063E0F0(void* self);
+extern int mem_00924FF4;
+
+// @name Unknown::DestroyStringThenCallback_0063E9E0
+// @class Unknown
+// @summary Destroys the std::string member at +0x24 via its imported destructor, then invokes sub_0063E0F0 on self.
+// @field Unknown +0x24 std::string field_0x24
+void fn_0063E9E0(void* self) {
+    // mem_00924FF4 holds the address of the std::string destructor (imported from MSVCP80).
+    using DtorFn = void (*)(void*);
+    const auto dtor = reinterpret_cast<DtorFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    auto* base = static_cast<uint8_t*>(self);
+    dtor(base + 0x24);
+    ext_0063E0F0(self);
+}
+} // namespace lift_0063E9E0

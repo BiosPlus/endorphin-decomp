@@ -34512,6 +34512,13 @@
     "summary": "Stores address of mem_0097CC34 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_630000.cpp"
   },
+  "0x0063E9E0": {
+    "name": "Unknown::DestroyStringThenCallback_0063E9E0",
+    "class": "Unknown",
+    "signature": "void fn_0063E9E0(void* self)",
+    "summary": "Destroys the std::string member at +0x24 via its imported destructor, then invokes sub_0063E0F0 on self.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063EA30": {
     "name": "AdvXMLParser::CharRef::vfunc_0",
     "class": "AdvXMLParser::CharRef",
