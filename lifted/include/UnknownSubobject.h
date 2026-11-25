@@ -8,6 +8,6 @@
 // Recovered field layout for UnknownSubobject:
 namespace lifted_layout {
 struct UnknownSubobject_Fields {
-    // +0x4   void*                    field_0x04  (evidence: 0x00609730)
+    // +0x4   void*                    field_0x04  (evidence: 0x005E09B0, 0x00609730)
 };
 } // namespace lifted_layout

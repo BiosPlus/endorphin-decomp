@@ -94,6 +94,7 @@ void* fn_005E29F0(void* self, void* arg1, uint32_t arg2) {
     ext_0058F6B0(self, arg1, arg2);
     return arg1;
 }
+#include <cstring>
 
 // [0x005E1060] NMData::FixedPathJointData::vfunc_15_off_4 (41 bytes)
 // @name NMData::FixedPathJointData::vfunc_15_off_4
@@ -206,3 +207,30 @@ uint32_t __thiscall fn_005EE360(void* self, uint32_t out, uint32_t code) {
     return out;
 }
 } // namespace lift_005EE360
+
+// [0x005E09B0] NMData::FixedPathJointData::vfunc_44 (20 bytes)
+namespace lift_005E09B0 {
+// @name NMData::FixedPathJointData::vfunc_44
+// @class NMData::FixedPathJointData
+// @summary Auto-lifted identical-shape clone of 0x00609730 (ThunkForwardToEmbeddedVfunc24).
+namespace lift_00609730 {
+// Callee 0x00602F20 (sub_00602F20, auto-lifted clone of 0x00602F00). The asm reaches it only
+// through the vtable slot at +0x24, so it is recorded here as the known dispatch target and not called directly.
+extern void ext_00602F20();
+
+// @name ThunkForwardToEmbeddedVfunc24
+// @summary Thunk: loads the subobject at self+0x0C, calls its secondary vtable slot at +0x24 with this adjusted to subobject+4, and returns that result.
+// @field UnknownClass +0x0C void* field_0x0C
+// @field UnknownSubobject +0x04 void* field_0x04
+void* fn_005E09B0(void* self) {
+    using VFn = void* (*)(void*);
+    [[maybe_unused]] void* const knownSlot24Target = reinterpret_cast<void*>(&ext_00602F20);  // address only, never called
+
+    void* inner = lift_field<void*>(self, 0x18C);                         // mov ecx, [self+0x0C]
+    void* vptr = lift_field<void*>(inner, 0x04);                         // mov eax, [inner+0x04]
+    VFn target = reinterpret_cast<VFn>(lift_field<void*>(vptr, 0xB0));   // mov edx, [vptr+0x24]
+    void* adjusted = static_cast<uint8_t*>(inner) + 0x04;                // add ecx, 4
+    return target(adjusted);                                             // jmp edx
+}
+} // namespace lift_00609730
+} // namespace lift_005E09B0

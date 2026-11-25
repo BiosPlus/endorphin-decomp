@@ -1,0 +1,28 @@
+{
+  "va": "0x005E09B0",
+  "size": 20,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_44",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_44",
+  "class": "NMData::FixedPathJointData",
+  "signature": "void* fn_005E09B0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00609730 (ThunkForwardToEmbeddedVfunc24).",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "UnknownSubobject",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:25:19Z"
+}

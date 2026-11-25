@@ -44,8 +44,10 @@ void* fn_00407850(void* self) {
 }
 } // namespace lift_00407850
 #include <exception>
+#include <cstddef>
+#include <stdexcept>
 
-// [0x0040F0B0] sub_0040F0B0 (25 bytes)
+#include <stdexcept>
 namespace lift_0040F0B0 {
 // Known callee 0x006A5C6E: thunk_MFC80_ord_572 (IAT jump thunk forwarding to MFC80!ord_572.)
 extern void ext_006A5C6E();
@@ -63,8 +65,10 @@ void* fn_0040F0B0(void* self) {
     return self;
 }
 } // namespace lift_0040F0B0
+#include <iostream>
+#include <streambuf>
 
-// [0x00401DE0] sub_00401DE0 (25 bytes)
+#include <streambuf>
 namespace lift_00401DE0 {
 // @name sub_00401DE0
 // @summary Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).
@@ -1371,3 +1375,91 @@ void fn_0040CAC0(uint8_t* self) {
     vfunc_168(self);
 }
 } // namespace lift_0040CAC0
+
+// [0x004065D0] sub_004065D0 (59 bytes)
+namespace lift_004065D0 {
+// @name sub_004065D0
+// @summary Auto-lifted identical-shape clone of 0x0051FEB0 (sub_0051FEB0).
+namespace lift_0051FEB0 {
+// @name sub_0051FEB0
+// @summary Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).
+namespace lift_0044C500 {
+// Known callee 0x0044C460: Vector::eraseRange (Validates an owner/range pair, moves [last,end) down to first, shrinks end, and writes {first_or_owner, first} to out.)
+extern void ext_00406510(void* ecx, uint32_t* out, uint32_t owner, uint32_t first,
+                         uint32_t owner_expected, uint32_t last);
+
+// IAT slot for MSVCR80!_invalid_parameter_noinfo, called through a pointer when a range check fails.
+extern void (*mem_00925134)(void);
+
+// @name Vector::clear
+// @class Vector
+// @summary Validates begin <= end, then calls Vector::eraseRange(begin, end) so the vector's end is reset to begin.
+// @field Vector +0x04 uint32_t field_0x04
+// @field Vector +0x08 uint32_t field_0x08
+void fn_004065D0(void* self) {
+    uint32_t self_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    uint32_t begin = lift_field<uint32_t>(self, 0x04);
+    uint32_t end = lift_field<uint32_t>(self, 0x08);
+
+    if (begin > end) {
+        mem_00925134();
+    }
+
+    begin = lift_field<uint32_t>(self, 0x04);
+    if (begin > lift_field<uint32_t>(self, 0x08)) {
+        mem_00925134();
+    }
+
+    uint32_t out[2] = {0, 0};
+    ext_00406510(self, out, self_addr, begin, self_addr, end);
+}
+} // namespace lift_0044C500
+} // namespace lift_0051FEB0
+} // namespace lift_004065D0
+
+// [0x0040B640] sub_0040B640 (108 bytes)
+namespace lift_0040B640 {
+// @name sub_0040B640
+// @summary Auto-lifted identical-shape clone of 0x0040B930 (sub_0040B930).
+namespace lift_0040B930 {
+// @name sub_0040B930
+// @summary Reads window text from control at +0x360 into std::string at +0x340
+// @field Unknown +0x340 uint8_t[0x20] field_0x340
+// @field Unknown +0x360 uint8_t[0x04] field_0x360
+
+extern void ext_006A5F4A(void* self, void* outStr);
+extern void (__thiscall *mem_009242FC)(void* self);
+extern const char* (__thiscall *mem_00924300)(void* self);
+extern void* (__thiscall *mem_00924FD4)(void* self, const char* s);
+extern void (__thiscall *mem_009242F4)(void* self);
+
+extern void __thiscall fn_0040B640(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uint8_t cstring_buf[16] = {};
+    mem_009242FC(cstring_buf);
+    ext_006A5F4A(base + 0xE8, cstring_buf);
+    const char* text = mem_00924300(cstring_buf);
+    mem_00924FD4(base + 0x298, text);
+    mem_009242F4(cstring_buf);
+}
+} // namespace lift_0040B930
+} // namespace lift_0040B640
+
+// [0x0040D9C0] sub_0040D9C0 (23 bytes)
+namespace lift_0040D9C0 {
+// @name sub_0040D9C0
+// @summary Auto-lifted identical-shape clone of 0x00415ED0 (InitWithDefaultMode).
+namespace lift_00415ED0 {
+// Known callee 0x00404BE0: InitWithMode (Initializes the object's vtable and state fields, applies mode via sub_00404720, and returns self.)
+extern void* ext_0040C050(void* self, uint32_t mode);
+
+// @name InitWithDefaultMode
+// @summary Calls InitWithMode(self, 0), then stores the constant 0x0092C764 into the first dword of self (vtable slot), and returns self.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0040D9C0(void* self) {
+    ext_0040C050(self, 0);
+    lift_field<uint32_t>(self, 0x24F) = 0x92B50C;
+    return self;
+}
+} // namespace lift_00415ED0
+} // namespace lift_0040D9C0

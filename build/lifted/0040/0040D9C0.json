@@ -1,0 +1,21 @@
+{
+  "va": "0x0040D9C0",
+  "size": 23,
+  "orig_symbol": "sub_0040D9C0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "sub_0040D9C0",
+  "signature": "void* fn_0040D9C0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00415ED0 (InitWithDefaultMode).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:25:19Z"
+}

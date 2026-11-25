@@ -573,6 +573,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x004065D0": {
+    "name": "sub_004065D0",
+    "class": "Vector",
+    "signature": "void fn_004065D0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0051FEB0 (sub_0051FEB0).",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00406610": {
     "name": "sub_00406610",
     "signature": "DWORD* __thiscall fn_00406610(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -768,6 +775,12 @@
     "summary": "Builds a std::string equal to \" \" + arg, writes it to the sret buffer, and returns that buffer pointer.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x0040B640": {
+    "name": "sub_0040B640",
+    "signature": "extern void __thiscall fn_0040B640(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0040B930 (sub_0040B930).",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040B6B0": {
     "name": "matchesAnyKnownString_0040B6B0",
     "signature": "extern \"C\" bool __stdcall sub_0040B6B0(const void* str)",
@@ -877,6 +890,12 @@
     "signature": "extern \"C\" const unsigned int* __cdecl fn_0040D9B0()",
     "summary": "Returns the address of the read-only .rdata u32 constant at mem_0092B4B4 (value 0x0040CDF0).",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
+  "0x0040D9C0": {
+    "name": "sub_0040D9C0",
+    "signature": "void* fn_0040D9C0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00415ED0 (InitWithDefaultMode).",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
   "0x0040D9E0": {
     "name": "sub_0040D9E0",
@@ -31548,6 +31567,13 @@
     "signature": "std::string* fn_005EF8A0(void* self, std::string* out)",
     "summary": "Returns a std::string (via hidden out-pointer) constructed from the C string at global mem_00A9EF9C; this is unused.",
     "lifted_path": "lifted/NMData/HingeData.cpp"
+  },
+  "0x005E09B0": {
+    "name": "NMData::FixedPathJointData::vfunc_44",
+    "class": "NMData::FixedPathJointData",
+    "signature": "void* fn_005E09B0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00609730 (ThunkForwardToEmbeddedVfunc24).",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
   "0x005E0AB0": {
     "name": "forwardToChildVfunc0",

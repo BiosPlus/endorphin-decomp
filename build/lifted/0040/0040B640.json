@@ -1,0 +1,27 @@
+{
+  "va": "0x0040B640",
+  "size": 108,
+  "orig_symbol": "sub_0040B640",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "sub_0040B640",
+  "signature": "extern void __thiscall fn_0040B640(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0040B930 (sub_0040B930).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x340",
+      "type": "uint8_t[0x20]",
+      "name": "field_0x340"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x360",
+      "type": "uint8_t[0x04]",
+      "name": "field_0x360"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:25:19Z"
+}

@@ -37,7 +37,7 @@ struct UnknownClass_Fields {
     // +0xC   int32_t                  count  (evidence: 0x007DD130) // CONFLICT: multiple definitions at +0xC
     // +0xC   float                    field_0x0C  (evidence: 0x00552860) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint8_t                  field_0x0C  (evidence: 0x00612410, 0x00612460, 0x0079EA60) // CONFLICT: multiple definitions at +0xC
-    // +0xC   void*                    field_0x0C  (evidence: 0x00609730) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void*                    field_0x0C  (evidence: 0x005E09B0, 0x00609730) // CONFLICT: multiple definitions at +0xC
     // +0xC   DWORD                    field_0x0c  (evidence: 0x00789590) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0x0c  (evidence: 0x00526C70, 0x0052F7D0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint8_t                  field_0x0c  (evidence: 0x006123C0) // CONFLICT: multiple definitions at +0xC
