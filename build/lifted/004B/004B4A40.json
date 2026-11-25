@@ -1,0 +1,13 @@
+{
+  "va": "0x004B4A40",
+  "size": 95,
+  "orig_symbol": "sub_004B4A40",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "InitOnceGlobalString_004B4A40",
+  "signature": "void* fn_004B4A40()",
+  "summary": "One-time guarded initializer for the global string at 0x00AE0D70; registers its teardown via ext_006A6C87 and returns the global's address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:26:09Z"
+}

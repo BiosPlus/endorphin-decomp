@@ -12853,6 +12853,12 @@
     "summary": "Lazily caches a value from ext_004B4710 in a global on first call, then forwards it with the self+8 subobject to ext_0055DA20 on the second stack argument; returns that second argument.",
     "lifted_path": "lifted/NMData/GraphEngineData.cpp"
   },
+  "0x004B4A40": {
+    "name": "InitOnceGlobalString_004B4A40",
+    "signature": "void* fn_004B4A40()",
+    "summary": "One-time guarded initializer for the global string at 0x00AE0D70; registers its teardown via ext_006A6C87 and returns the global's address.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B4BA0": {
     "name": "sub_004B4BA0",
     "signature": "DWORD ext_004B4770();  // ConstructOnce_0046F580 DWORD* fn_004B4BA0(DWORD* dst, DWORD value)",

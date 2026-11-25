@@ -832,3 +832,29 @@ void fn_004B6680(uintptr_t container, uintptr_t first, uintptr_t container2, uin
     }
 }
 } // namespace lift_004B6680
+
+// [0x004B4A40] sub_004B4A40 (95 bytes)
+namespace lift_004B4A40 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0066AD10(void* out_str, uint8_t flag);
+extern void ext_006A6C87(const void* dtor);
+extern int mem_00AE0D8C;
+extern int mem_00AE0D70;
+
+// @name InitOnceGlobalString_004B4A40
+// @summary One-time guarded initializer for the global string at 0x00AE0D70; registers its teardown via ext_006A6C87 and returns the global's address.
+//
+// The original wraps the init in an MSVC SEH frame (fs:[0]) so that the
+// guard flag is cleared/handled if initialization throws. That frame is
+// compiler/runtime plumbing and is not reproduced here.
+void* fn_004B4A40() {
+    // Guard bit 0 of mem_00AE0D8C: run initialization only once.
+    if ((mem_00AE0D8C & 1) == 0) {
+        mem_00AE0D8C |= 1;
+        ext_0066AD10(reinterpret_cast<void*>(&mem_00AE0D70),
+                     static_cast<uint8_t>(0xA37440u));
+        ext_006A6C87(reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009182D0u)));
+    }
+    return reinterpret_cast<void*>(&mem_00AE0D70);
+}
+} // namespace lift_004B4A40
