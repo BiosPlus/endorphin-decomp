@@ -665,3 +665,24 @@ void* fn_005EB1E0() {
     return &mem_00B45F50;
 }
 } // namespace lift_005EB1E0
+
+// [0x005EB120] sub_005EB120 (87 bytes)
+namespace lift_005EB120 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self; stores its stack argument into the first DWORD of self and returns it).
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00B45F44; // init guard flags; bit 0 = constructed/in-progress
+extern DWORD mem_00B45F40; // static object storage; first DWORD holds its vtable
+
+// @name getOrInitStaticObject_005EB120
+// @summary Thread-unsafe one-time initializer for the static object at 0xB45F40: on first call sets guard bit 0, runs ext_0067A670 on the object, writes vtable 0x00969904, and returns the object's address.
+void* fn_005EB120() {
+    // The original SEH frame setup (fs:[0] push/restore) has no portable equivalent and is omitted.
+    if ((mem_00B45F44 & 1u) == 0) {
+        mem_00B45F44 |= 1u;
+        // The stack argument is the saved previous SEH frame, which is overwritten by the vtable store below; pass 0.
+        ext_0067A670(&mem_00B45F40, 0);
+        mem_00B45F40 = 0x00969904u;
+    }
+    return &mem_00B45F40;
+}
+} // namespace lift_005EB120
