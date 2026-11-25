@@ -1,0 +1,13 @@
+{
+  "va": "0x00691FC0",
+  "size": 63,
+  "orig_symbol": "sub_00691FC0",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "CompareStringLess",
+  "signature": "extern \"C\" __cdecl BOOLEAN CompareStringLess(const UCHAR* s1, const UCHAR* s2)",
+  "summary": "Lexicographic unsigned-byte less-than compare of two NUL-terminated strings, two bytes per iteration; returns 1 if s1 \u003c s2, else 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:03:27Z"
+}

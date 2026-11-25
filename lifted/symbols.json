@@ -38161,6 +38161,12 @@
     "summary": "Reads the angle unit name string from a UnitsWithProperties pointer and copy-constructs it into dst, or throws on null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00691FC0": {
+    "name": "CompareStringLess",
+    "signature": "extern \"C\" __cdecl BOOLEAN CompareStringLess(const UCHAR* s1, const UCHAR* s2)",
+    "summary": "Lexicographic unsigned-byte less-than compare of two NUL-terminated strings, two bytes per iteration; returns 1 if s1 \u003c s2, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00692000": {
     "name": "lookupTableEntry00B5AE98",
     "signature": "extern \"C\" DWORD fn_00692000(DWORD index)",

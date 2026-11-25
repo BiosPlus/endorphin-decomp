@@ -395,3 +395,33 @@ uint32_t fn_00699360(void* self) {
     return 0x00B59400u;
 }
 } // namespace lift_00699360
+
+// [0x00691FC0]
+namespace lift_00691FC0 {
+// @name CompareStringLess
+// @summary Lexicographic unsigned-byte less-than compare of two NUL-terminated strings, two bytes per iteration; returns 1 if s1 < s2, else 0.
+
+// Argument order: cdecl, s1 at [esp+4], s2 at [esp+8].
+extern __cdecl BOOLEAN CompareStringLess(const UCHAR* s1, const UCHAR* s2) {
+    const UCHAR* a = s1;
+    const UCHAR* b = s2;
+    for (;;) {
+        UCHAR ca = a[0];
+        if (ca != b[0]) {
+            return ca < b[0] ? 1 : 0;
+        }
+        if (ca == 0) {
+            return 0;
+        }
+        UCHAR cb = a[1];
+        if (cb != b[1]) {
+            return cb < b[1] ? 1 : 0;
+        }
+        a += 2;
+        b += 2;
+        if (cb == 0) {
+            return 0;
+        }
+    }
+}
+} // namespace lift_00691FC0
