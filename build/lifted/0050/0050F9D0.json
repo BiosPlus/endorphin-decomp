@@ -1,0 +1,21 @@
+{
+  "va": "0x0050F9D0",
+  "size": 36,
+  "orig_symbol": "sub_0050F9D0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "sub_0050F9D0",
+  "signature": "BOOLEAN __thiscall sub_0050F9D0(void* self, DOUBLE a, DOUBLE b)",
+  "summary": "Compares two doubles (stack args a, b); returns b \u003e a when this-\u003efield_0x08 == 0, else b \u003c a (ordered compare, unordered -\u003e false).",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x8",
+      "type": "uint32_t field_0x08 (tested against",
+      "name": "zero)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:18:37Z"
+}

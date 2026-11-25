@@ -19465,6 +19465,12 @@
     "summary": "Stores arg0 at this+0xC, compares string at *arg0+0x3C with 0x950A80, and stores boolean result at this+0x8.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x0050F9D0": {
+    "name": "sub_0050F9D0",
+    "signature": "BOOLEAN __thiscall sub_0050F9D0(void* self, DOUBLE a, DOUBLE b)",
+    "summary": "Compares two doubles (stack args a, b); returns b \u003e a when this-\u003efield_0x08 == 0, else b \u003c a (ordered compare, unordered -\u003e false).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050FA00": {
     "name": "ReturnConstantByField8",
     "signature": "double fn_0050FA00(void* self)",

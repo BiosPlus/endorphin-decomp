@@ -2201,3 +2201,21 @@ void fn_0050C610(void* self) {
 }
 } // namespace lift_0044C500
 } // namespace lift_0050C610
+
+// [0x0050F9D0]
+namespace lift_0050F9D0 {
+// @name sub_0050F9D0
+// @summary Compares two doubles (stack args a, b); returns b > a when this->field_0x08 == 0, else b < a (ordered compare, unordered -> false).
+// @field <unknown> +0x08 uint32_t field_0x08 (tested against zero)
+
+// __thiscall(this in ecx), two double args, callee pops 0x10 bytes.
+BOOLEAN __thiscall sub_0050F9D0(void* self, DOUBLE a, DOUBLE b) {
+    const uint32_t flag = lift_field<uint32_t>(self, 0x08);
+    if (flag == 0) {
+        // fcomp: st0 = b vs a; return 1 only when C0 and C3 are both clear (b > a).
+        return b > a ? TRUE : FALSE;
+    }
+    // Non-zero flag: return 1 only when b < a (ordered).
+    return b < a ? TRUE : FALSE;
+}
+} // namespace lift_0050F9D0
