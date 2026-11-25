@@ -1,0 +1,22 @@
+{
+  "va": "0x0062E480",
+  "size": 47,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes\u003e::vfunc_1 (Sensors::CompoundSensorPlanes::getVertAxis)",
+  "class": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1\u003e",
+  "signature": "[[noreturn]] void fn_0062E480(void* self)",
+  "summary": "Unsupported-accessor stub: loads the wrapped pointer at +0x00 and always throws (never returns) an exception built from a fixed message.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadMethodType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:09:34Z"
+}

@@ -40771,6 +40771,13 @@
     "summary": "Evaluates Sensors::CompoundSensorPlanes::getVertAxis() on a dereferenced pointer or throws if null",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0062E480": {
+    "name": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes\u003e::vfunc_1 (Sensors::CompoundSensorPlanes::getVertAxis)",
+    "class": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1\u003e",
+    "signature": "[[noreturn]] void fn_0062E480(void* self)",
+    "summary": "Unsupported-accessor stub: loads the wrapped pointer at +0x00 and always throws (never returns) an exception built from a fixed message.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0062E4F0": {
     "name": "ExprParser::ReadMethodType\u003cCompoundSensorPlanes\u003e::vfunc_5 (CompoundSensorPlanes::getVertAxis)",
     "class": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1\u003e",

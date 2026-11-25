@@ -47135,3 +47135,21 @@ void fn_005D2C80(void* self) {
     fn_006A6DD2();
 }
 } // namespace lift_005D2C80
+
+// [0x0062E480] ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>::vfunc_1 (47 bytes)
+namespace lift_0062E480 {
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes>::vfunc_1 (Sensors::CompoundSensorPlanes::getVertAxis)
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary Unsupported-accessor stub: loads the wrapped pointer at +0x00 and always throws (never returns) an exception built from a fixed message.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// The original throws either via the ExceptionWithMessage default-message helper (when the wrapped pointer is non-null)
+// or via a DerivedException with a fixed message (when null). The exact message strings are not recoverable from the
+// disassembly alone, so generic messages are used here; the control flow (always throws) is preserved.
+[[noreturn]] void fn_0062E480(void* self) {
+    void* wrapped = lift_field<void*>(self, 0x00);
+    if (wrapped != nullptr) {
+        throw std::runtime_error("ReadMethodType<CompoundSensorPlanes>::getVertAxis: default exception");
+    }
+    throw std::runtime_error("ReadMethodType<CompoundSensorPlanes>::getVertAxis: derived exception");
+}
+} // namespace lift_0062E480
