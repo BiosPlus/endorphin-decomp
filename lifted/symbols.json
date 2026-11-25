@@ -69238,6 +69238,12 @@
     "summary": "Computes out[i] = m[i]*v0 + m[i+4]*v1 + m[i+8]*v2 for i in 0..2 (3-vector times 4-stride matrix).",
     "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
+  "0x007FC4E0": {
+    "name": "copyFloat16",
+    "signature": "void sub_007FC4E0(uint32_t ecx_dst, uint32_t eax_src)",
+    "summary": "Copies 16 32-bit floats (64 bytes, e.g. a 4x4 matrix) from eax to ecx.",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
   "0x00802D40": {
     "name": "sub_00802D40",
     "signature": "void __thiscall sub_00802D40(uintptr_t ecx)",

@@ -419,3 +419,17 @@ void fn_007F9CE0(int32_t count, float* dst, const float* src) {
     }
 }
 } // namespace lift_007F9CE0
+
+// [0x007FC4E0]
+namespace lift_007FC4E0 {
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+// @name copyFloat16
+// @summary Copies 16 32-bit floats (64 bytes, e.g. a 4x4 matrix) from eax to ecx.
+void sub_007FC4E0(uint32_t ecx_dst, uint32_t eax_src) {
+    for (uint32_t offset = 0; offset < 0x40; offset += 4) {
+        mem_write32(ecx_dst + offset, mem_read32(eax_src + offset));
+    }
+}
+} // namespace lift_007FC4E0
