@@ -57770,6 +57770,12 @@
     "summary": "Sets field at +0x04 to 1 if arg1 or any of fields +0x00, +0x1C, +0x50 are non-zero, else 0.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007C9E80": {
+    "name": "sub_007C9E80",
+    "signature": "void __cdecl sub_007C9E80(void* self, float val1, float val2)",
+    "summary": "Stores a float parameter, sets a nonzero flag and absolute value for a second float, and clears a field.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C9ED0": {
     "name": "ZeroFloatAndIntFields",
     "signature": "void fn_007C9ED0(void* self)",

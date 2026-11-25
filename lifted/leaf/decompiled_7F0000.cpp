@@ -165,3 +165,17 @@ int32_t sub_007F8500(const void* a, const void* b) {
     return 0;
 }
 } // namespace lift_007F8500
+
+// [0x007F4A60]
+namespace lift_007F4A60 {
+// @name addVec3Pair
+// @summary Adds two pairs of 3-element float vectors (at +0x00 and +0x10) from src into dst.
+void sub_007F4A60(float* dst, const float* src) {
+    for (int i = 0; i < 3; ++i) {
+        dst[i] += src[i];
+    }
+    for (int i = 4; i < 7; ++i) {
+        dst[i] += src[i];
+    }
+}
+} // namespace lift_007F4A60
