@@ -1,0 +1,51 @@
+{
+  "va": "0x0070AD00",
+  "size": 60,
+  "orig_symbol": "sub_0070AD00",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "CopyStateBlock340",
+  "signature": "void sub_0070AD00(std::uint8_t* self, std::uint32_t* out)",
+  "summary": "Copies six consecutive dwords from this+0x340..0x354 into the caller-supplied output block.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x340",
+      "type": "uint32_t",
+      "name": "field_0x340"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x344",
+      "type": "uint32_t",
+      "name": "field_0x344"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x348",
+      "type": "uint32_t",
+      "name": "field_0x348"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34C",
+      "type": "uint32_t",
+      "name": "field_0x34C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x350",
+      "type": "uint32_t",
+      "name": "field_0x350"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x354",
+      "type": "uint32_t",
+      "name": "field_0x354"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:55:09Z"
+}

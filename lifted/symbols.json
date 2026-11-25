@@ -50178,6 +50178,12 @@
     "summary": "Copies six dwords from this+0x2A0..this+0x2B4 into the caller-provided output buffer (hidden return pointer on stack); __thiscall, ret 4.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x0070AD00": {
+    "name": "CopyStateBlock340",
+    "signature": "void sub_0070AD00(std::uint8_t* self, std::uint32_t* out)",
+    "summary": "Copies six consecutive dwords from this+0x340..0x354 into the caller-supplied output block.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070AD40": {
     "name": "sub_0070AD40",
     "signature": "void fn_0070AD40(void* self, uint32_t a0, uint32_t a1)",

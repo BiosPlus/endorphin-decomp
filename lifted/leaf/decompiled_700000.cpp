@@ -1165,3 +1165,27 @@ void sub_0070AC80_impl(uint8_t* self, Lift6Dword* out)
     }
 }
 } // namespace lift_0070AC80
+
+// [0x0070AD00]
+namespace lift_0070AD00 {
+// @name CopyStateBlock340
+// @summary Copies six consecutive dwords from this+0x340..0x354 into the caller-supplied output block.
+// @field Unknown +0x340 uint32_t field_0x340
+// @field Unknown +0x344 uint32_t field_0x344
+// @field Unknown +0x348 uint32_t field_0x348
+// @field Unknown +0x34C uint32_t field_0x34C
+// @field Unknown +0x350 uint32_t field_0x350
+// @field Unknown +0x354 uint32_t field_0x354
+
+extern std::uint32_t* ext_out_ptr_arg;
+
+void sub_0070AD00(std::uint8_t* self, std::uint32_t* out) {
+    const std::uint32_t* src = reinterpret_cast<const std::uint32_t*>(self + 0x340);
+    out[0] = src[0];
+    out[1] = src[1];
+    out[2] = src[2];
+    out[3] = src[3];
+    out[4] = src[4];
+    out[5] = src[5];
+}
+} // namespace lift_0070AD00
