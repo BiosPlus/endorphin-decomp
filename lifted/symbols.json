@@ -38226,6 +38226,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00494940 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006821D0": {
+    "name": "Unknown::elementPtrChecked",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __thiscall fn_006821D0(void* self, uint32_t index)",
+    "summary": "Validates the element index against the element count derived from the (end - begin) range at +0x14/+0x18 (28-byte elements) and returns begin + index * 28; invalid parameter is raised when begin is null or the index is out of range.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00682990": {
     "name": "sub_00682990",
     "signature": "extern \"C\" void __fastcall fn_00682990(void* self)",

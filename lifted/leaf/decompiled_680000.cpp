@@ -712,3 +712,28 @@ uint32_t __cdecl sub_00687420(uint32_t first, uint32_t last, uint32_t dest_end) 
     return edi;
 }
 } // namespace lift_00687420
+
+// [0x006821D0] sub_006821D0 (69 bytes)
+namespace lift_006821D0 {
+// @name Unknown::elementPtrChecked
+// @class Unknown
+// @summary Validates the element index against the element count derived from the (end - begin) range at +0x14/+0x18 (28-byte elements) and returns begin + index * 28; invalid parameter is raised when begin is null or the index is out of range.
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+extern void* __thiscall fn_006821D0(void* self, uint32_t index) {
+    const uint32_t begin = lift_field<uint32_t>(self, 0x14);
+    if (begin == 0) {
+        std::abort(); // _invalid_parameter_noinfo
+    }
+
+    const uint32_t end = lift_field<uint32_t>(self, 0x18);
+    const int32_t count = static_cast<int32_t>(end - begin) / 28;
+
+    if (index >= static_cast<uint32_t>(count)) {
+        std::abort(); // _invalid_parameter_noinfo
+    }
+
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(begin) +
+                                   static_cast<uintptr_t>(index) * 28u);
+}
+} // namespace lift_006821D0
