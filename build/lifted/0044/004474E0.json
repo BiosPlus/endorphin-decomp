@@ -1,0 +1,22 @@
+{
+  "va": "0x004474E0",
+  "size": 11,
+  "orig_symbol": "sub_004474E0",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "DispatchToFirstWord",
+  "class": "UnrecoveredClass",
+  "signature": "void fn_004474E0(void* self, uint32_t arg)",
+  "summary": "Forwards a one-DWORD-argument thiscall to the function pointer stored in the first dword of this; no-op if that pointer is null.",
+  "fields": [
+    {
+      "class": "UnrecoveredClass",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vfptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:19:25Z"
+}

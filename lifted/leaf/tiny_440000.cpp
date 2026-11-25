@@ -744,3 +744,17 @@ uint32_t fn_0044CF80(void* self) {
     return field != 0 ? 1u : 0u;
 }
 } // namespace lift_0044CF80
+
+// [0x004474E0] sub_004474E0 (11 bytes)
+namespace lift_004474E0 {
+// @name DispatchToFirstWord
+// @class UnrecoveredClass
+// @summary Forwards a one-DWORD-argument thiscall to the function pointer stored in the first dword of this; no-op if that pointer is null.
+// @field UnrecoveredClass +0x00 void* vfptr
+void fn_004474E0(void* self, uint32_t arg) {
+    void* target = lift_field<void*>(self, 0);
+    if (target != nullptr) {
+        reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(target)(self, arg);
+    }
+}
+} // namespace lift_004474E0

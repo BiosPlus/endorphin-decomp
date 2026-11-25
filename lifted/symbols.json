@@ -3980,6 +3980,13 @@
     "summary": "Pure jump thunk forwarding to GetStringLiteral_004473D0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x004474E0": {
+    "name": "DispatchToFirstWord",
+    "class": "UnrecoveredClass",
+    "signature": "void fn_004474E0(void* self, uint32_t arg)",
+    "summary": "Forwards a one-DWORD-argument thiscall to the function pointer stored in the first dword of this; no-op if that pointer is null.",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x00447510": {
     "name": "sub_00447510",
     "signature": "void __thiscall sub_00447510(void* self, uint32_t arg1)",
