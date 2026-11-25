@@ -1680,3 +1680,32 @@ extern void* __fastcall fn_007831E0(void* ecx) {
     return self;
 }
 } // namespace lift_007831E0
+
+// [0x0078FED0]
+namespace lift_0078FED0 {
+// @name sub_0078FED0
+// @summary Computes 16 normalized index offsets and optionally scales 16 double values into output arrays
+
+
+void __stdcall sub_0078FED0(
+    uint32_t base_offset,
+    const uint32_t* src_offsets,
+    uint32_t divisor,
+    const double* src_values,
+    const double* scale_values,
+    double* out_values,
+    uint32_t* out_indices)
+{
+    for (int i = 0; i < 16; ++i) {
+        int32_t diff = static_cast<int32_t>(src_offsets[i] - base_offset);
+        uint32_t shifted = static_cast<uint32_t>(diff >> 3);
+        out_indices[i] = shifted / divisor;
+
+        double val = src_values[i];
+        if (scale_values != nullptr) {
+            val *= scale_values[i];
+        }
+        out_values[i] = val;
+    }
+}
+} // namespace lift_0078FED0

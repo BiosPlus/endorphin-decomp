@@ -1,0 +1,13 @@
+{
+  "va": "0x0078FED0",
+  "size": 104,
+  "orig_symbol": "sub_0078FED0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "sub_0078FED0",
+  "signature": "void __stdcall sub_0078FED0( uint32_t base_offset, const uint32_t* src_offsets, uint32_t divisor, const double* src_values, const double* scale_values, double* out_values, uint32_t* out_indices)",
+  "summary": "Computes 16 normalized index offsets and optionally scales 16 double values into output arrays",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:09:33Z"
+}
