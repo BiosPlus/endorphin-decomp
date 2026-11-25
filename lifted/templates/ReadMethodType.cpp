@@ -47281,3 +47281,30 @@ void fn_006707A0(void* self) {
     ext_006A6DD2(exceptionObject, throwInfo);
 }
 } // namespace lift_006707A0
+
+// [0x005D7040] ExprParser::ReadMethodType<NMData::VideoPlaneData, getXScale>::vfunc_5 (48 bytes)
+namespace lift_005D7040 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException. Caller passes one float argument.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable. Called with the exception storage as this.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exceptionObject, const void* throwInfo);
+// Throw info / RTTI data for the thrown DerivedException at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, getXScale>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, getXScale>
+// @summary Reads the float at +0x34 from the referenced VideoPlaneData (when non-null) and then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x34 float field_0x34
+void fn_005D7040(void* const* arg) {
+    void* obj = *arg;
+    if (obj != nullptr) {
+        float value = *reinterpret_cast<const float*>(static_cast<const unsigned char*>(obj) + 0x34);
+        ext_0046C4E0(value);
+    }
+    unsigned char exception[0x28];
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7040

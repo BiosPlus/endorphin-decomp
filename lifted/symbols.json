@@ -33577,6 +33577,13 @@
     "summary": "Reads the float at +0x34 of the VideoPlaneData referenced by *src, forwards it to ext_00672080 on self, and returns self; throws if *src is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D7040": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, getXScale\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, getXScale\u003e",
+    "signature": "void fn_005D7040(void* const* arg)",
+    "summary": "Reads the float at +0x34 from the referenced VideoPlaneData (when non-null) and then always throws a DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D73F0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0\u003e",
