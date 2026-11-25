@@ -658,3 +658,29 @@ void* fn_00518080(void* self) {
     return self;
 }
 } // namespace lift_00518080
+
+// [0x00517360] sub_00517360 (76 bytes)
+namespace lift_00517360 {
+// @name Unknown::CallVirtual6CForEachPtr_00517360
+// @class Unknown
+// @summary Walks the pointer array stored at self+0x14..+0x18 and invokes virtual slot 0x6C/4 (thiscall, no args) on each element.
+// @field Unknown +0x14 void** field_0x14
+// @field Unknown +0x18 void** field_0x18
+void fn_00517360(void* self) {
+    // Range-style loop over the element array. The original invalid-parameter
+    // checks (calls through the MSVCR80 handler) are bounds assertions only
+    // and are omitted here.
+    using VirtualVoidFn = void(__thiscall*)(void*);
+
+    void** it = lift_field<void**>(self, 0x14);
+    void** const end = lift_field<void**>(self, 0x18);
+
+    while (it != end) {
+        void* obj = *it;
+        void** vtable = *reinterpret_cast<void***>(obj);
+        auto fn = reinterpret_cast<VirtualVoidFn>(vtable[0x6C / 4]);
+        fn(obj);
+        ++it;
+    }
+}
+} // namespace lift_00517360

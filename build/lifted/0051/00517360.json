@@ -1,0 +1,28 @@
+{
+  "va": "0x00517360",
+  "size": 76,
+  "orig_symbol": "sub_00517360",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "Unknown::CallVirtual6CForEachPtr_00517360",
+  "class": "Unknown",
+  "signature": "void fn_00517360(void* self)",
+  "summary": "Walks the pointer array stored at self+0x14..+0x18 and invokes virtual slot 0x6C/4 (thiscall, no args) on each element.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void**",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "void**",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:38:57Z"
+}
