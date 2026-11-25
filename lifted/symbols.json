@@ -3993,6 +3993,13 @@
     "summary": "Tail-calls callback at this+0x0C if non-null, otherwise returns",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x00447520": {
+    "name": "TailCallFnPtrAt10IfNonNull",
+    "class": "(none; object type not recovered)",
+    "signature": "uint32_t fn_00447520(void* self)",
+    "summary": "Loads a function pointer from this+0x10; if non-null, tail-calls it with this as the argument, otherwise returns 0.",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x00447530": {
     "name": "sub_00447530",
     "class": "Unknown",

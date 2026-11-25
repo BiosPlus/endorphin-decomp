@@ -758,3 +758,20 @@ void fn_004474E0(void* self, uint32_t arg) {
     }
 }
 } // namespace lift_004474E0
+
+// [0x00447520] sub_00447520 (12 bytes)
+namespace lift_00447520 {
+// @name TailCallFnPtrAt10IfNonNull
+// @class (none; object type not recovered)
+// @summary Loads a function pointer from this+0x10; if non-null, tail-calls it with this as the argument, otherwise returns 0.
+// @field Unknown +0x10 void* field_0x10
+uint32_t fn_00447520(void* self) {
+    void* target = lift_field<void*>(self, 0x10);     // mov eax, [ecx + 0x10]
+    if (target == nullptr) {                          // test eax, eax; je ...
+        return 0;                                     // eax == 0 on the ret 8 path
+    }
+    using TargetFn = uint32_t (*)(void* thisPtr);
+    TargetFn fn = reinterpret_cast<TargetFn>(target);
+    return fn(self);                                  // jmp eax (tail call, ecx = self)
+}
+} // namespace lift_00447520

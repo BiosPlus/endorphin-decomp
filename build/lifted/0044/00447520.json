@@ -1,0 +1,22 @@
+{
+  "va": "0x00447520",
+  "size": 12,
+  "orig_symbol": "sub_00447520",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "TailCallFnPtrAt10IfNonNull",
+  "class": "(none; object type not recovered)",
+  "signature": "uint32_t fn_00447520(void* self)",
+  "summary": "Loads a function pointer from this+0x10; if non-null, tail-calls it with this as the argument, otherwise returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:20:44Z"
+}
