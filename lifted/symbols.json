@@ -2507,6 +2507,12 @@
     "summary": "If the object pointed to by the slot at *self is non-null, invoke its virtual slot 1 with argument 1.",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
   },
+  "0x00430EF0": {
+    "name": "FindStringInArray",
+    "signature": "void* fn_00430EF0(void* first, void* last, const void* value)",
+    "summary": "Linear search over an array of 28-byte std::string objects; returns the first element equal to value, or last if none match.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430F70": {
     "name": "stream_unlockRdbufIfPresent",
     "class": "Stream",

@@ -1,0 +1,13 @@
+{
+  "va": "0x00430EF0",
+  "size": 62,
+  "orig_symbol": "sub_00430EF0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "FindStringInArray",
+  "signature": "void* fn_00430EF0(void* first, void* last, const void* value)",
+  "summary": "Linear search over an array of 28-byte std::string objects; returns the first element equal to value, or last if none match.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:59:09Z"
+}

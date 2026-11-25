@@ -2088,3 +2088,34 @@ std::uint32_t BackwardStride4Walk(std::uint32_t begin, std::uint32_t end, std::u
     return result;
 }
 } // namespace lift_0043D7C0
+
+// [0x00430EF0] sub_00430EF0 (62 bytes)
+namespace lift_00430EF0 {
+// Comparator function pointer stored in .rdata (operator== for std::string, __cdecl).
+extern uint32_t mem_00924FC4;
+
+// @name FindStringInArray
+// @summary Linear search over an array of 28-byte std::string objects; returns the first element equal to value, or last if none match.
+void* fn_00430EF0(void* first, void* last, const void* value) {
+    typedef BOOL(__cdecl * StringEqualFn)(const void* lhs, const void* rhs);
+    const auto equal = reinterpret_cast<StringEqualFn>(static_cast<uintptr_t>(mem_00924FC4));
+
+    constexpr size_t kStride = 0x1C; // sizeof(std::string) in this build
+
+    uint8_t* it = static_cast<uint8_t*>(first);
+    uint8_t* const end = static_cast<uint8_t*>(last);
+
+    if (it == end) {
+        return it;
+    }
+
+    do {
+        if (equal(it, value)) {
+            break;
+        }
+        it += kStride;
+    } while (it != end);
+
+    return it;
+}
+} // namespace lift_00430EF0
