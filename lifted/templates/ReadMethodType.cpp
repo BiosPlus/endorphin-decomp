@@ -56428,31 +56428,6 @@ float fn_00505000(void* self) {
 }
 } // namespace lift_00505000
 
-// [0x00508E80]
-namespace lift_00508E80 {
-// @name ExprParser::ReadMethodType<NMData::Task, int, &NMData::Task::getID, 1>::vfunc_1
-// @class ExprParser::ReadMethodType<NMData::Task, int, &NMData::Task::getID, 1>
-// @summary Reads the int ID from the Task referenced by the value pointer and returns it as a double (x87 st0); throws if the task pointer is null.
-// @field ExprParser::ValuePtrType +0x00 NMData::Task* task
-// @field NMData::Task +0x14 int id
-
-extern void* ext_0046C3C0(void* self);
-extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
-extern const char mem_009DEC1C[];  // ThrowInfo for the fixed-message exception
-
-double fn_00508E80(void* self) {
-    auto* task = *reinterpret_cast<unsigned char* const*>(self);
-    if (task != nullptr) {
-        int id = *reinterpret_cast<const int*>(task + 0x14);
-        return static_cast<double>(id);
-    }
-
-    alignas(8) unsigned char exc[16];
-    ext_0046C3C0(exc);
-    ext_006A6DD2(exc, mem_009DEC1C);
-}
-} // namespace lift_00508E80
-
 // [0x005D2410] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_1 (45 bytes)
 namespace lift_005D2410 {
 // Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
@@ -56481,3 +56456,29 @@ extern int32_t fn_005D2410(void* self) {
     return 0; // not reached: _CxxThrowException does not return
 }
 } // namespace lift_005D2410
+
+// [0x00508E80]
+namespace lift_00508E80 {
+// @name ExprParser::ReadMethodType<NMData::Task, int, &NMData::Task::getID, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::Task, int, &NMData::Task::getID, 1>
+// @summary Reads the int ID from the Task referenced by the value pointer and returns it as a double (x87 st0); throws if the task pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::Task* task
+// @field NMData::Task +0x14 int id
+
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+extern const char mem_009DEC1C[];  // ThrowInfo for the fixed-message exception
+
+double fn_00508E80(void* self) {
+    auto* task = *reinterpret_cast<unsigned char* const*>(self);
+    if (task != nullptr) {
+        int id = *reinterpret_cast<const int*>(task + 0x14);
+        return static_cast<double>(id);
+    }
+
+    alignas(8) unsigned char exc[16];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+    return 0.0;  // not reached: ext_006A6DD2 always throws
+}
+} // namespace lift_00508E80
