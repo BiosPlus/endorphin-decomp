@@ -1,0 +1,40 @@
+{
+  "va": "0x006F99B0",
+  "size": 83,
+  "orig_symbol": "sub_006F99B0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::SetOrForwardValue",
+  "class": "Unknown",
+  "signature": "inline Fn vtableSlot(void* obj, size_t index)",
+  "summary": "Invokes vtable slot 0x38 on self, then either forwards *a1 through the object at self+0x08 (when self+0x54 is set) or stores *a1 into self+0x80, then invokes vtable slot 0x38 again with code 0x15.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "forwardTarget"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "void*",
+      "name": "forwardSource"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "uint32_t",
+      "name": "storedValue"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:05:55Z"
+}

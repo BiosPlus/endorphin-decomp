@@ -53147,6 +53147,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006F9830 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006F99B0": {
+    "name": "Unknown::SetOrForwardValue",
+    "class": "Unknown",
+    "signature": "inline Fn vtableSlot(void* obj, size_t index)",
+    "summary": "Invokes vtable slot 0x38 on self, then either forwards *a1 through the object at self+0x08 (when self+0x54 is set) or stores *a1 into self+0x80, then invokes vtable slot 0x38 again with code 0x15.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F9A80": {
     "name": "sub_006F9A80",
     "signature": "extern \"C\" void* __fastcall fn_006F9A80(void* self, int edx_unused, unsigned int flags)",

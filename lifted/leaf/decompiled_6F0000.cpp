@@ -1969,3 +1969,50 @@ bool fn_006F78A0(uint32_t target, uint32_t* out) {
     return false;
 }
 } // namespace lift_006F78A0
+
+// [0x006F99B0] sub_006F99B0 (83 bytes)
+namespace lift_006F99B0 {
+extern void* __fastcall fn_0071E680(void* self);
+
+// @name Unknown::SetOrForwardValue
+// @class Unknown
+// @summary Invokes vtable slot 0x38 on self, then either forwards *a1 through the object at self+0x08 (when self+0x54 is set) or stores *a1 into self+0x80, then invokes vtable slot 0x38 again with code 0x15.
+// @field Unknown +0x00 void** vtable
+// @field Unknown +0x08 void* forwardTarget
+// @field Unknown +0x54 void* forwardSource
+// @field Unknown +0x80 uint32_t storedValue
+
+using VMethod6 = void (*)(void* self, uintptr_t a, uintptr_t b, uintptr_t c, uintptr_t d, uintptr_t e, uintptr_t f);
+using VMethod1 = void (*)(void* self, uint32_t value);
+
+// Fetch the function pointer at vtable slot `index` (byte offset index * 4) for obj.
+template <typename Fn>
+inline Fn vtableSlot(void* obj, size_t index) {
+    void** vt = *static_cast<void***>(obj);
+    return reinterpret_cast<Fn>(vt[index]);
+}
+
+void fn_006F99B0(void* self, void* a1, [[maybe_unused]] void* a2, [[maybe_unused]] void* a3, [[maybe_unused]] void* a4) {
+    auto* src = static_cast<uint32_t*>(a1);
+
+    // First virtual dispatch (vtable +0x38) with arguments (0, 0x14, this, a1, &this->storedValue, 0).
+    vtableSlot<VMethod6>(self, 0x38 / 4)(self, 0, 0x14, reinterpret_cast<uintptr_t>(self),
+                                         reinterpret_cast<uintptr_t>(a1),
+                                         reinterpret_cast<uintptr_t>(&lift_field<uint32_t>(self, 0x80)), 0);
+
+    void* forwardSource = lift_field<void*>(self, 0x54);
+    if (forwardSource != nullptr) {
+        void* target = lift_field<void*>(self, 0x08);
+        void* sub = fn_0071E680(self);
+        // Function pointer is read from the returned object at +0x14.
+        auto fn = reinterpret_cast<VMethod1>(*reinterpret_cast<void**>(static_cast<uint8_t*>(sub) + 0x14));
+        fn(target, *src);
+    } else {
+        lift_field<uint32_t>(self, 0x80) = *src;
+    }
+
+    // Second virtual dispatch (vtable +0x38) with arguments (0, 0x15, this, a1, 0, 0).
+    vtableSlot<VMethod6>(self, 0x38 / 4)(self, 0, 0x15, reinterpret_cast<uintptr_t>(self),
+                                         reinterpret_cast<uintptr_t>(a1), 0, 0);
+}
+} // namespace lift_006F99B0
