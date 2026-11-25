@@ -1,0 +1,13 @@
+{
+  "va": "0x0078A1A0",
+  "size": 93,
+  "orig_symbol": "sub_0078A1A0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "ScanForClassAfterIndex",
+  "signature": "int fn_0078A1A0(const char* str, int start)",
+  "summary": "Scans a NUL-terminated string from start+1 and returns the index of the first char mapped to the stop class, or -1 on NUL or a fail-class char.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:19:46Z"
+}

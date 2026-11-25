@@ -1373,3 +1373,37 @@ void fn_0078BF70(void* self, const char* fmt, ...) {
 }
 } // namespace lift_0078BF70
 } // namespace lift_0078BF70
+
+// [0x0078A1A0] sub_0078A1A0 (93 bytes)
+namespace lift_0078A1A0 {
+extern const unsigned char mem_0078A20C[];
+
+// @name ScanForClassAfterIndex
+// @summary Scans a NUL-terminated string from start+1 and returns the index of the first char mapped to the stop class, or -1 on NUL or a fail-class char.
+// @field none (no struct field offsets accessed)
+int fn_0078A1A0(const char* str, int start) {
+    int i = start + 1;
+    for (;;) {
+        char c = str[i];
+        if (c == 0) {
+            return -1;
+        }
+        int v = static_cast<signed char>(c);
+        if (static_cast<unsigned>(v) > 0x40u) {
+            ++i;
+            continue;
+        }
+        // Class from the RDATA byte map at mem_0078A20C[v]. Class 0 -> fail
+        // (-1), class 1 -> success (return i), other classes -> skip. This
+        // mapping is inferred from the three observed jump targets; see report.
+        unsigned char cls = mem_0078A20C[v];
+        if (cls == 0) {
+            return -1;
+        }
+        if (cls == 1) {
+            return i;
+        }
+        ++i;
+    }
+}
+} // namespace lift_0078A1A0

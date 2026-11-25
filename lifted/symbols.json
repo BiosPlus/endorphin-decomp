@@ -63220,6 +63220,12 @@
     "summary": "Thiscall forwarder: calls the SortedArray find routine on the subobject at this+0x04 with the same key and optional out-index arguments.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x0078A1A0": {
+    "name": "ScanForClassAfterIndex",
+    "signature": "int fn_0078A1A0(const char* str, int start)",
+    "summary": "Scans a NUL-terminated string from start+1 and returns the index of the first char mapped to the stop class, or -1 on NUL or a fail-class char.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078AAC0": {
     "name": "dataTable_0078AAC0",
     "signature": "void fn_0078AAC0(void* self)",
