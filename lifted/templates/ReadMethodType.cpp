@@ -61165,3 +61165,58 @@ void fn_00514070(void** holder) {
     ext_006A6DE0(rounded);
 }
 } // namespace lift_00514070
+
+// [0x0066F9F0] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>::vfunc_2 (120 bytes)
+namespace lift_0066F9F0 {
+// Known callee 0x006A7250: thunk_MSVCR80__CIsqrt (IAT jump thunk forwarding to MSVCR80!_CIsqrt.)
+extern double ext_006A7250(double value);
+// Callee 0x006A6DE0 (171 bytes, unnamed): takes the value in st(0) and returns a float in st(0).
+extern float ext_006A6DE0(double value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, void* throwInfo);
+
+// Data VAs referenced by the instructions.
+extern double mem_00993828;   // .rdata double 0.5
+extern int mem_009DEC1C;      // .rdata u32 0x00000000 (throw info)
+
+// @name ExprParser::ReadMethodType<NM::Vector3, float, calcNorm>::vfunc_2
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>
+// @summary Computes the Euclidean length of the Vector3 reached through the value pointer, rounds it by +/-0.5 (sign-dependent) and passes it to ext_006A6DE0; throws if the value pointer is null.
+// @field ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1> +0x00 NM::Vector3* field_0x00
+// @field NM::Vector3 +0x00 float field_0x00
+// @field NM::Vector3 +0x04 float field_0x04
+// @field NM::Vector3 +0x08 float field_0x08
+float fn_0066F9F0(void* self) {
+    // self's first dword is a pointer to the Vector3 (or null).
+    auto* vec = *reinterpret_cast<uint8_t**>(self);
+
+    if (vec == nullptr) {
+        // Construct the exception object on the stack and throw it.
+        alignas(8) unsigned char excBuf[0x28];
+        ext_0046C3C0(excBuf);
+        ext_006A6DD2(excBuf, reinterpret_cast<void*>(&mem_009DEC1C));
+        return 0.0f; // not reached
+    }
+
+    float y = *reinterpret_cast<float*>(vec + 0x04);
+    float x = *reinterpret_cast<float*>(vec + 0x00);
+    float z = *reinterpret_cast<float*>(vec + 0x08);
+
+    // (x*x + y*y) + z*z, accumulated in extended precision on the x87 stack.
+    double sumSq = (static_cast<double>(x) * x + static_cast<double>(y) * y)
+                 + static_cast<double>(z) * z;
+    double len = ext_006A7250(sumSq);
+
+    // Stored to a float slot in the original, then reloaded.
+    float r = static_cast<float>(len);
+
+    // Offset by +0.5 for non-negative r, -0.5 otherwise (also for NaN).
+    double half = mem_00993828;
+    double adjusted = (r >= 0.0f) ? (static_cast<double>(r) + half)
+                                  : (static_cast<double>(r) - half);
+
+    return ext_006A6DE0(adjusted);
+}
+} // namespace lift_0066F9F0

@@ -46060,6 +46060,13 @@
     "summary": "Reads the Vector3 referenced by the ValuePtr at self and returns its Euclidean norm; throws if the pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0066F9F0": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, calcNorm\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::calcNorm(void) const, 1\u003e",
+    "signature": "extern \"C\" int mem_009DEC1C;      // .rdata u32 0x00000000 (throw info) float fn_0066F9F0(void* self)",
+    "summary": "Computes the Euclidean length of the Vector3 reached through the value pointer, rounds it by +/-0.5 (sign-dependent) and passes it to ext_006A6DE0; throws if the value pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0066FA70": {
     "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::calcNorm(void) const, 1\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::calcNorm(void) const, 1\u003e",
