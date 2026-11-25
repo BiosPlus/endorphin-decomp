@@ -16990,6 +16990,12 @@
     "summary": "Lazily initializes the global object at 0x00AE9F5C once and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
+  "0x004F94F0": {
+    "name": "storePairWithStaticSingleton",
+    "signature": "void fn_004F94F0(uint32_t* pair, uint32_t value)",
+    "summary": "Writes value to pair[0] and the address of the guarded static singleton (from ext_004F9190(0)) to pair[1].",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F9510": {
     "name": "InitPairWithZeroCall",
     "signature": "void* fn_004F9510(void* out, uint32_t val)",

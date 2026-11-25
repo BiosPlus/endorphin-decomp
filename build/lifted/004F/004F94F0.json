@@ -1,0 +1,27 @@
+{
+  "va": "0x004F94F0",
+  "size": 30,
+  "orig_symbol": "sub_004F94F0",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "storePairWithStaticSingleton",
+  "signature": "void fn_004F94F0(uint32_t* pair, uint32_t value)",
+  "summary": "Writes value to pair[0] and the address of the guarded static singleton (from ext_004F9190(0)) to pair[1].",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:09:47Z"
+}

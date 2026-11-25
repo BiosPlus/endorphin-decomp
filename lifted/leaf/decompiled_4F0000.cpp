@@ -583,3 +583,19 @@ void* fn_004FFBE0() {
     return &mem_00AEB2AC;
 }
 } // namespace lift_004FFBE0
+
+// [0x004F94F0] sub_004F94F0 (30 bytes)
+namespace lift_004F94F0 {
+// Known callee 0x004F9190: initAndGetStaticSingleton_004F9190 (Guarded one-time initializer: on first call sets guard bit 0 of mem_00AE9F20, runs the 0x0067A670 helper on the object at mem_00AE9F1C, writes its vtable-like value 0x94CE8C, and returns the object's address.)
+extern void* ext_004F9190(uint32_t flag);
+
+// @name storePairWithStaticSingleton
+// @summary Writes value to pair[0] and the address of the guarded static singleton (from ext_004F9190(0)) to pair[1].
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+void fn_004F94F0(uint32_t* pair, uint32_t value) {
+    const uint32_t singleton = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(ext_004F9190(0)));
+    pair[0] = value;
+    pair[1] = singleton;
+}
+} // namespace lift_004F94F0
