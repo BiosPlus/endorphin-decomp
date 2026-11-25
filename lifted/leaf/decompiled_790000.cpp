@@ -1109,3 +1109,23 @@ uint32_t fn_0079EAC0(uint32_t index) {
     return table[idx];
 }
 } // namespace lift_0079EAC0
+
+// [0x0079EB80]
+namespace lift_0079EB80 {
+// @name resolveGlobalTableFlag
+// @summary If the low byte of arg matches the sentinel byte, return the flag byte (merged into arg's upper bits); otherwise return 1 if the global table lookup is nonzero, else 0.
+
+extern uint8_t mem_009977EC;  // sentinel byte compared against low byte of arg
+extern uint8_t mem_00997749;  // flag byte returned on sentinel match
+
+extern uint32_t ext_0079EAC0(uint32_t index);  // getGlobalTableEntryOrZero
+
+uint32_t fn_0079EB80(uint32_t arg) {
+    if (static_cast<uint8_t>(arg) == mem_009977EC) {
+        // mov al, byte: only the low byte is replaced; upper 24 bits of arg are kept.
+        return (arg & 0xFFFFFF00u) | static_cast<uint32_t>(mem_00997749);
+    }
+    // neg/sbb/neg sequence: result is 1 if eax != 0, else 0.
+    return ext_0079EAC0(arg) != 0 ? 1u : 0u;
+}
+} // namespace lift_0079EB80

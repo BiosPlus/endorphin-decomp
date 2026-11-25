@@ -69298,6 +69298,12 @@
     "summary": "Returns the byte at offset 0x0C of the object whose pointer is stored in global mem_00B61148.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x0079EB80": {
+    "name": "resolveGlobalTableFlag",
+    "signature": "extern \"C\" uint32_t ext_0079EAC0(uint32_t index);  // getGlobalTableEntryOrZero uint32_t fn_0079EB80(uint32_t arg)",
+    "summary": "If the low byte of arg matches the sentinel byte, return the flag byte (merged into arg's upper bits); otherwise return 1 if the global table lookup is nonzero, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079EBD0": {
     "name": "sub_0079EBD0",
     "signature": "extern \"C\" int32_t __cdecl fn_0079EBD0(void)",
