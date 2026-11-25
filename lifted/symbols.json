@@ -38570,6 +38570,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0069A830 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0069B0C0": {
+    "name": "ConsumeStringPrefix",
+    "signature": "bool ConsumeStringPrefix(char **dst, const char *src)",
+    "summary": "If the string src is a prefix of *dst, advance *dst past it and return true; otherwise leave *dst unchanged and return false.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x0069B100": {
     "name": "isIdentifierChar",
     "signature": "int fn_0069B100(int8_t c)",

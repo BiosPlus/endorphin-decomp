@@ -425,3 +425,36 @@ extern __cdecl BOOLEAN CompareStringLess(const UCHAR* s1, const UCHAR* s2) {
     }
 }
 } // namespace lift_00691FC0
+
+// [0x0069B0C0]
+namespace lift_0069B0C0 {
+// @name ConsumeStringPrefix
+// @summary If the string src is a prefix of *dst, advance *dst past it and return true; otherwise leave *dst unchanged and return false.
+bool ConsumeStringPrefix(char **dst, const char *src)
+{
+    char *orig = *dst;
+
+    // Empty source always matches without touching *dst.
+    if (*src == 0) {
+        return true;
+    }
+
+    for (;;) {
+        char *p = *dst;
+        char d = *p;
+        if (d == 0 || d != *src) {
+            // Mismatch: if src is exhausted, it still counts as a match.
+            if (*src == 0) {
+                return true;
+            }
+            *dst = orig;
+            return false;
+        }
+        *dst = p + 1;
+        ++src;
+        if (*src == 0) {
+            return true;
+        }
+    }
+}
+} // namespace lift_0069B0C0

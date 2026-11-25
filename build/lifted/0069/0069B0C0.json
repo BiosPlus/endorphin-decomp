@@ -1,0 +1,13 @@
+{
+  "va": "0x0069B0C0",
+  "size": 64,
+  "orig_symbol": "sub_0069B0C0",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "ConsumeStringPrefix",
+  "signature": "bool ConsumeStringPrefix(char **dst, const char *src)",
+  "summary": "If the string src is a prefix of *dst, advance *dst past it and return true; otherwise leave *dst unchanged and return false.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:04:55Z"
+}
