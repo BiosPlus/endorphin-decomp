@@ -1929,3 +1929,19 @@ void fn_00444360(void* self, void** out) {
 }
 } // namespace lift_006A7FF0
 } // namespace lift_00444360
+
+// [0x00448280]
+namespace lift_00448280 {
+// @name Unknown::ctorSetVtable93333C
+// @class Unknown
+// @summary Calls base constructor ext_006B0C40 with arg0, stores vtable 0x0093333C at offset 0, and returns this.
+// @field Unknown +0x00 uint32_t vtable
+
+extern uint32_t ext_006B0C40(uint32_t self, uint32_t arg0);
+
+uint32_t __thiscall sub_00448280(uint32_t self, uint32_t arg0) {
+    ext_006B0C40(self, arg0);
+    lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(self)), 0) = 0x0093333Cu;
+    return self;
+}
+} // namespace lift_00448280
