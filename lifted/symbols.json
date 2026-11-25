@@ -25772,6 +25772,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType\u003cRuntimeEngine, int, getNumTicksToRun, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005861D0": {
+    "name": "Unknown::CountSubtreeNodes",
+    "class": "Unknown",
+    "signature": "uint32_t fn_005861D0(void* self)",
+    "summary": "Recursively counts this node plus all nodes reachable through the child-pointer array at self+0x80..0x84.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x00586240": {
     "name": "Node::traverseVirtualA4",
     "class": "Node",
@@ -63581,6 +63588,12 @@
     "class": "Unknown",
     "signature": "void fn_007299C0(void* self)",
     "summary": "For each of the count (+0x28) 32-byte entries starting at the array base (+0x38), writes the double 1.0 at entry offset +0x18.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
+  "0x00729A00": {
+    "name": "ResetMatchingEntryDoubles",
+    "signature": "void __stdcall fn_00729A00(uint32_t obj)",
+    "summary": "Resets the 4th 8-byte slot (index 3) of each 0x20-byte element in the first matching entry's sub-array to 1.0.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
   "0x0072B120": {

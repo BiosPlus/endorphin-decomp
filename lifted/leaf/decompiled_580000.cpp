@@ -1206,3 +1206,22 @@ void fn_00587110(void* self) {
     }
 }
 } // namespace lift_00587110
+
+// [0x005861D0] sub_005861D0 (103 bytes)
+namespace lift_005861D0 {
+// @name Unknown::CountSubtreeNodes
+// @class Unknown
+// @summary Recursively counts this node plus all nodes reachable through the child-pointer array at self+0x80..0x84.
+// @field Unknown +0x80 DWORD field_0x80
+// @field Unknown +0x84 DWORD field_0x84
+uint32_t fn_005861D0(void* self) {
+    uint32_t count = 1;
+    uint32_t cur = lift_field<uint32_t>(self, 0x80);
+    while (cur != lift_field<uint32_t>(self, 0x84)) {
+        const uintptr_t child_addr = static_cast<uintptr_t>(*reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(cur)));
+        count += fn_005861D0(reinterpret_cast<void*>(child_addr));
+        cur += 4;
+    }
+    return count;
+}
+} // namespace lift_005861D0
