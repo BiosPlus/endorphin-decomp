@@ -40633,6 +40633,12 @@
     "summary": "Copy-assigns one 36-byte record (u32, u8, string) from src into every slot of [dst, end).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00687E50": {
+    "name": "copyStringRecordRangeAdvance_00687E50",
+    "signature": "void* fn_00687E50(const void* first, const void* last, void* dest)",
+    "summary": "Copies the StringRecord range [first, last) to dest, then returns dest advanced by the record count times 0x2C (sizeof StringRecord).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x006886D0": {
     "name": "sub_006886D0",
     "signature": "uint32_t fn_006886D0(uint32_t begin, uint32_t end, uint32_t value)",

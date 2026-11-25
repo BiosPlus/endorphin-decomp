@@ -1001,3 +1001,26 @@ extern void* __cdecl fn_006873D0(void* first, void* last, void* dest_last) {
     return dst;
 }
 } // namespace lift_006873D0
+
+// [0x00687E50] sub_00687E50 (85 bytes)
+namespace lift_00687E50 {
+// Known callee 0x00687330: Unknown::CopyStringRecordRange_00687330 (copies each 0x2C-byte StringRecord in [first, last) to dest and returns the end of the written range; the caller's return value is discarded here).
+extern void* ext_00687330(const void* first, const void* last, void* dest);
+
+// @name copyStringRecordRangeAdvance_00687E50
+// @summary Copies the StringRecord range [first, last) to dest, then returns dest advanced by the record count times 0x2C (sizeof StringRecord).
+void* fn_00687E50(const void* first, const void* last, void* dest) {
+    // Copy the records; the callee's return value is not used by this function.
+    ext_00687330(first, last, dest);
+
+    // Record count = (last - first) / 0x2C, computed as a signed 32-bit division
+    // (matches the original magic-multiply sequence, which truncates toward zero).
+    const auto* f = static_cast<const uint8_t*>(first);
+    const auto* l = static_cast<const uint8_t*>(last);
+    const int32_t diff = static_cast<int32_t>(l - f);
+    const int32_t count = diff / 0x2C;
+
+    auto* out = static_cast<uint8_t*>(dest);
+    return out + static_cast<ptrdiff_t>(count) * 0x2C;
+}
+} // namespace lift_00687E50
