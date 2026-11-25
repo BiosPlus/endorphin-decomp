@@ -59432,6 +59432,13 @@
     "summary": "Scales the three 3-element rows (stride 0x20) of a double matrix by a 3-element double vector.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C83D0": {
+    "name": "Unknown::InitWithSubObjects",
+    "class": "Unknown",
+    "signature": "void* __fastcall fn_006C83D0(void* ecx)",
+    "summary": "Zeroes fields at +0x10..+0x1C, initializes sub-objects at +0x28 and +0xA8, calls sub_006C8490, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C8440": {
     "name": "sub_006C8440_dtor",
     "signature": "extern \"C\" void __thiscall fn_006C8440(void* self)",
@@ -60158,6 +60165,12 @@
     "class": "Unknown",
     "signature": "extern float __fastcall fn_006C9DC0(void* self, int edx_unused, int32_t idx)",
     "summary": "For idx \u003c 2 returns the float at this+0x14+4*idx; otherwise returns int16 at this+0x18+2*idx scaled by 0.00010001f.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
+  "0x006C9DF0": {
+    "name": "sub_006C9DF0",
+    "signature": "extern \"C\" void __thiscall fn_006C9DF0(void* self, int32_t index, float value)",
+    "summary": "Sets a float or scaled 16-bit integer parameter by index, clamping indices 2 and 3.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
   "0x006C9E60": {

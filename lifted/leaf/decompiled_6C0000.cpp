@@ -2072,3 +2072,60 @@ extern void __thiscall fn_006C3490(void* self, uint32_t index, uint32_t arg1, ui
     ext_006D80A0(value);
 }
 } // namespace lift_006C3490
+
+// [0x006C83D0]
+namespace lift_006C83D0 {
+// @name Unknown::InitWithSubObjects
+// @class Unknown
+// @summary Zeroes fields at +0x10..+0x1C, initializes sub-objects at +0x28 and +0xA8, calls sub_006C8490, and returns this.
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1c
+// @field Unknown +0x28 uint8_t field_0x28
+// @field Unknown +0xA8 uint8_t field_0xa8
+
+
+extern void* __fastcall ext_00714570(void* ecx);
+extern void __fastcall ext_006C8490(void* ecx);
+
+void* __fastcall fn_006C83D0(void* ecx) {
+    uint8_t* self = static_cast<uint8_t*>(ecx);
+    *reinterpret_cast<uint32_t*>(self + 0x10) = 0;
+    *reinterpret_cast<uint32_t*>(self + 0x14) = 0;
+    *reinterpret_cast<uint32_t*>(self + 0x18) = 0;
+    *reinterpret_cast<uint32_t*>(self + 0x1c) = 0;
+    ext_00714570(self + 0x28);
+    ext_00714570(self + 0xa8);
+    ext_006C8490(self);
+    return self;
+}
+} // namespace lift_006C83D0
+
+// [0x006C9DF0]
+namespace lift_006C9DF0 {
+// @name sub_006C9DF0
+// @summary Sets a float or scaled 16-bit integer parameter by index, clamping indices 2 and 3.
+// @field Unknown +0x14 float[2] field_0x14
+// @field Unknown +0x1C uint16_t[] field_0x1C
+
+
+extern void __thiscall fn_006C9DF0(void* self, int32_t index, float value) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    if (index < 2) {
+        *reinterpret_cast<float*>(base + 0x14 + 4 * index) = value;
+        return;
+    }
+
+    if (index == 2 || index == 3) {
+        if (value > 0.99f) {
+            value = 0.99f;
+        } else if (value < 0.00010001f) {
+            value = 0.00010001f;
+        }
+    }
+
+    int32_t scaled = static_cast<int32_t>(value * 9999.0f);
+    *reinterpret_cast<uint16_t*>(base + 0x18 + 2 * index) = static_cast<uint16_t>(scaled);
+}
+} // namespace lift_006C9DF0
