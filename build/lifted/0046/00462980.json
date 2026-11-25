@@ -1,0 +1,22 @@
+{
+  "va": "0x00462980",
+  "size": 83,
+  "orig_symbol": "sub_00462980",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "Unknown::confirmAndDispatchString",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00462980(void* self, const void* str, uint32_t mode)",
+  "summary": "When mode is nonzero, asks Yes/No unless mode==2; on accept, passes the string's c_str to ext_004474E0 and ext_00447500 using the object at this+0x00.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:04:32Z"
+}

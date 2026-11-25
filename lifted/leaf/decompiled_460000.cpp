@@ -1121,3 +1121,49 @@ void fn_0046FB20(void* self, const void* src_first, const void* src_second) {
     ext_msvcp80_string_copy_ctor(static_cast<unsigned char*>(self) + 0x1C, src_second);
 }
 } // namespace lift_0046FB20
+
+// [0x00462980] sub_00462980 (83 bytes)
+namespace lift_00462980 {
+// Known callee 0x004474E0: invokeCallbackOrReturn (Invokes a non-null callback pointer stored at offset 0 of this, or returns.)
+extern void __thiscall ext_004474E0(void* self, const char* arg1);
+// Known callee 0x00447500: invokeCallbackOrNull (Tail-calls the callback stored at this+0x8 with arg0 if non-null, otherwise returns 0.)
+extern uint32_t __thiscall ext_00447500(void* self, const char* arg0);
+
+// Imports and rdata referenced by the original code.
+// IAT 0x009255E0: USER32!MessageBoxA
+extern int __stdcall lift_MessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, UINT uType);
+// IAT 0x00924FF0: MSVCP80 std::basic_string<char>::c_str
+extern const char* __thiscall lift_string_c_str(const void* str);
+// .rdata 0x00938D28: caption string
+extern const char mem_00938D28[];
+// .rdata 0x00938DA0: prompt text string
+extern const char mem_00938DA0[];
+
+static constexpr UINT kMbYesNo = 0x00000004u;
+static constexpr int kIdYes = 6;
+static constexpr uint32_t kModeNone = 0u;
+static constexpr uint32_t kModeDirect = 2u;
+
+// @name Unknown::confirmAndDispatchString
+// @class Unknown
+// @summary When mode is nonzero, asks Yes/No unless mode==2; on accept, passes the string's c_str to ext_004474E0 and ext_00447500 using the object at this+0x00.
+// @field Unknown +0x00 void* field_0x00
+void __thiscall fn_00462980(void* self, const void* str, uint32_t mode) {
+    if (mode == kModeNone) {
+        return;
+    }
+
+    if (mode != kModeDirect) {
+        int answer = lift_MessageBoxA(nullptr, mem_00938DA0, mem_00938D28, kMbYesNo);
+        if (answer != kIdYes) {
+            return;
+        }
+    }
+
+    void* target = lift_field<void*>(self, 0);
+    ext_004474E0(target, lift_string_c_str(str));
+
+    target = lift_field<void*>(self, 0);
+    (void)ext_00447500(target, lift_string_c_str(str));
+}
+} // namespace lift_00462980

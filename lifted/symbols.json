@@ -6118,6 +6118,13 @@
     "summary": "Pure jump thunk forwarding to sub_00462820.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00462980": {
+    "name": "Unknown::confirmAndDispatchString",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00462980(void* self, const void* str, uint32_t mode)",
+    "summary": "When mode is nonzero, asks Yes/No unless mode==2; on accept, passes the string's c_str to ext_004474E0 and ext_00447500 using the object at this+0x00.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x004629E0": {
     "name": "Unknown::DispatchStringCallback",
     "class": "Unknown",
