@@ -45696,6 +45696,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B8970 (ExprParser::ReadMethodType\u003cNMData::EngineData\u003e::vfunc_1 (NMData::EngineData::getUnitMass)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0066F9A0": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, calcNorm, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, calcNorm, 1\u003e",
+    "signature": "float fn_0066F9A0(void* self)",
+    "summary": "Reads the Vector3 referenced by the ValuePtr at self and returns its Euclidean norm; throws if the pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0066FB50": {
     "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, calcNorm, 1\u003e::vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::calcNorm(void) const, 1\u003e",

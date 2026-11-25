@@ -58898,3 +58898,40 @@ extern void* __fastcall fn_00643D30(void* ecx_unused, void* edx_unused, void* ds
 }
 } // namespace lift_0049C690
 } // namespace lift_00643D30
+
+// [0x0066F9A0] ExprParser::ReadMethodType<NM::Vector3, float, calcNorm, 1>::vfunc_1 (79 bytes)
+namespace lift_0066F9A0 {
+// Known callee 0x006A7250: thunk_MSVCR80__CIsqrt (IAT jump thunk forwarding to MSVCR80!_CIsqrt.)
+// Lifted as std::sqrt below; the thunk is not called directly.
+extern void ext_006A7250();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs an exception with a fixed message)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NM::Vector3, float, calcNorm, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NM::Vector3, float, calcNorm, 1>
+// @summary Reads the Vector3 referenced by the ValuePtr at self and returns its Euclidean norm; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* m_value
+// @field NM::Vector3 +0x00 float x
+// @field NM::Vector3 +0x04 float y
+// @field NM::Vector3 +0x08 float z
+float fn_0066F9A0(void* self) {
+    void* v = *static_cast<void**>(self);
+    if (v == nullptr) {
+        // Null path: build DerivedException on the stack and throw it.
+        // (Original: lea ecx,[esp]; call DerivedException ctor; push ThrowInfo; lea ecx,[esp+4]; push ecx; call _CxxThrowException)
+        alignas(16) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2();
+        return 0.0f;
+    }
+    auto* bytes = static_cast<unsigned char*>(v);
+    float x = *reinterpret_cast<float*>(bytes + 0x00);
+    float y = *reinterpret_cast<float*>(bytes + 0x04);
+    float z = *reinterpret_cast<float*>(bytes + 0x08);
+    // Original accumulates in x87 extended precision: (x*x + y*y) + z*z, then sqrt, then rounds to float.
+    double sum = (static_cast<double>(x) * x + static_cast<double>(y) * y) + static_cast<double>(z) * z;
+    return static_cast<float>(std::sqrt(sum));
+}
+} // namespace lift_0066F9A0
