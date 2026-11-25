@@ -1765,3 +1765,29 @@ void sub_006F8700() {
     mem_00B5E264 = edx;
 }
 } // namespace lift_006F8700
+
+// [0x006F9080]
+namespace lift_006F9080 {
+// @name getTableEntryIfNonZero
+// @summary Looks up a 14-column table entry at +0x3DCC by (row, col) and writes it out if non-zero.
+// @field Self +0x3DCC uint32_t[44][14] field_0x3DCC
+
+bool __thiscall sub_006F9080(void* self, int32_t row, uint32_t* outValue, int32_t col) {
+    if (row < 0 || row >= 0x2c) {
+        return false;
+    }
+    if (col < 1 || col >= 0xf) {
+        return false;
+    }
+    int32_t index = row * 14 + (col - 1);
+    uint32_t value = *reinterpret_cast<const uint32_t*>(
+        reinterpret_cast<const uint8_t*>(self) + 0x3dcc + index * 4);
+    if (value == 0) {
+        return false;
+    }
+    if (outValue != nullptr) {
+        *outValue = value;
+    }
+    return true;
+}
+} // namespace lift_006F9080

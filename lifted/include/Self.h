@@ -62,5 +62,6 @@ struct Self_Fields {
     // +0x26C uint32_t                 field_0x26C  (evidence: 0x00599E70)
     // +0x5F8 uint32_t                 field_0x5F8  (evidence: 0x0059E060)
     // +0x61C uint32_t result (written with the return value of ext_00661A90)  (evidence: 0x0059DC60)
+    // +0x3DCC uint32_t[44][14]         field_0x3DCC  (evidence: 0x006F9080)
 };
 } // namespace lifted_layout
