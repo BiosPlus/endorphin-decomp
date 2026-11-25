@@ -1,0 +1,14 @@
+{
+  "va": "0x005CFCE0",
+  "size": 64,
+  "orig_symbol": "sub_005CFCE0",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "Unknown::FindEntryIndex",
+  "class": "Unknown",
+  "signature": "int __stdcall fn_005CFCE0(const void* key)",
+  "summary": "Scans the 2-entry string table and returns the index of the first entry equal to key, or 0 if none match.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:04:31Z"
+}

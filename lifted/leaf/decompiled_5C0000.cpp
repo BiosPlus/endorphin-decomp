@@ -431,3 +431,31 @@ uint32_t __stdcall fn_005CFD20(const void* key) {
     return 0;
 }
 } // namespace lift_005CFD20
+
+// [0x005CFCE0] sub_005CFCE0 (64 bytes)
+namespace lift_005CFCE0 {
+// Import slot at 0x924FC4: string equality comparator (cdecl, two pointers to std::string objects).
+using StringEqualFn = bool (__cdecl*)(const void* lhs, const void* rhs);
+extern StringEqualFn mem_00924FC4;
+
+// Start of a 2-entry table of 28-byte std::string-sized records at 0xB45854..0xB4588C.
+extern uint8_t mem_00B45854;
+
+// @name Unknown::FindEntryIndex
+// @summary Scans the 2-entry string table and returns the index of the first entry equal to key, or 0 if none match.
+int __stdcall fn_005CFCE0(const void* key) {
+    constexpr uintptr_t kEntryStride = 0x1C;
+    constexpr uintptr_t kEntryCount = 2;
+
+    const uintptr_t base = reinterpret_cast<uintptr_t>(&mem_00B45854);
+    const uintptr_t end = base + kEntryStride * kEntryCount;
+
+    int index = 0;
+    for (uintptr_t cursor = base; cursor < end; cursor += kEntryStride, ++index) {
+        if (mem_00924FC4(key, reinterpret_cast<const void*>(cursor))) {
+            return index;
+        }
+    }
+    return 0;
+}
+} // namespace lift_005CFCE0

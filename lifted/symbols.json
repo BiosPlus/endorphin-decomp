@@ -25717,6 +25717,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CE810 (Unknown::GetRecordByIndex).",
     "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
   },
+  "0x005CFCE0": {
+    "name": "Unknown::FindEntryIndex",
+    "class": "Unknown",
+    "signature": "int __stdcall fn_005CFCE0(const void* key)",
+    "summary": "Scans the 2-entry string table and returns the index of the first entry equal to key, or 0 if none match.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005CFD20": {
     "name": "FindStringTableIndex",
     "signature": "uint32_t __stdcall fn_005CFD20(const void* key)",
