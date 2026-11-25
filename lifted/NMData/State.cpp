@@ -201,3 +201,42 @@ void __thiscall fn_0049ABE0(void* self, void* arg1, void* arg2) {
     }
 }
 } // namespace lift_0049ABE0
+
+// [0x0049E860]
+namespace lift_0049E860 {
+extern uint32_t __thiscall ext_0049E2F0(void* self, uint32_t target_str);
+extern void* __thiscall ext_0041CF00(void* self, void* src);
+extern void __cdecl ext_00671F30(uint32_t* out);
+extern void* __thiscall ext_00414D30(void* self, float x0, float y0, float x1, float y1);
+extern int mem_00925134;
+
+// @name NMData::State::lookupValue
+// @class NMData::State
+// @summary Writes into `out` either a value from the override object at +0x11C (virtual slot 2), or the value found by name in the list at +0x10C, or a default.
+// @field NMData::State +0x10C void* nameList
+// @field NMData::State +0x11C void* overrideObj
+void* __thiscall fn_0049E860(void* self, void* out, void* unused) {
+    (void)unused;
+    (void)&ext_00414D30;
+    (void)&mem_00925134;
+    char* base = (char*)self;
+    void* override_obj = *(void**)(base + 0x11C);
+    if (override_obj) {
+        typedef void* (__thiscall *Fn)(void*, void*, void*);
+        void** vtbl = *(void***)override_obj;
+        ((Fn)vtbl[2])(override_obj, out, out);
+        return out;
+    }
+    uint32_t found = ext_0049E2F0(base + 0x10C, (uint32_t)(uintptr_t)out);
+    if (found) {
+        void* sub = (void*)(found + 4);
+        typedef uint32_t (__thiscall *GetFn)(void*);
+        void** vtbl = *(void***)sub;
+        uint32_t value = ((GetFn)vtbl[0])(sub);
+        ext_0041CF00(out, (void*)(uintptr_t)value);
+        return out;
+    }
+    ext_00671F30((uint32_t*)out);
+    return out;
+}
+} // namespace lift_0049E860

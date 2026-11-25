@@ -1,0 +1,28 @@
+{
+  "va": "0x0049E860",
+  "size": 112,
+  "orig_symbol": "NMData::State::vfunc_2_off_10",
+  "src_path": "src/NMData/State.cpp",
+  "lifted_path": "lifted/NMData/State.cpp",
+  "name": "NMData::State::lookupValue",
+  "class": "NMData::State",
+  "signature": "void* __thiscall fn_0049E860(void* self, void* out, void* unused)",
+  "summary": "Writes into `out` either a value from the override object at +0x11C (virtual slot 2), or the value found by name in the list at +0x10C, or a default.",
+  "fields": [
+    {
+      "class": "NMData::State",
+      "offset": "+0x10C",
+      "type": "void*",
+      "name": "nameList"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0x11C",
+      "type": "void*",
+      "name": "overrideObj"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@medium",
+  "lifted_at": "2026-11-25T13:25:08Z"
+}

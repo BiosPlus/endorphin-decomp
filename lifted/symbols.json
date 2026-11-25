@@ -11221,6 +11221,13 @@
     "summary": "Writes value to dst[0] and the address returned by initStaticObjectOnce_0049DB00() to dst[1].",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x0049E860": {
+    "name": "NMData::State::lookupValue",
+    "class": "NMData::State",
+    "signature": "void* __thiscall fn_0049E860(void* self, void* out, void* unused)",
+    "summary": "Writes into `out` either a value from the override object at +0x11C (virtual slot 2), or the value found by name in the list at +0x10C, or a default.",
+    "lifted_path": "lifted/NMData/State.cpp"
+  },
   "0x0049ED30": {
     "name": "sub_0049ED30",
     "signature": "extern \"C\" void __fastcall fn_0049ED30(void* self)",
