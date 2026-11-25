@@ -308,3 +308,20 @@ void fn_00565010(void* self) {
     }
 }
 } // namespace lift_00565010
+
+// [0x00569470] sub_00569470 (64 bytes)
+namespace lift_00569470 {
+// Known callee 0x00681250: swapBackwardElementTails16 (Walks two 16-byte-stride ranges backward from their end pointers, swapping the 12 bytes at offsets +4..+15 of each element pair; returns the adjusted destination end pointer.)
+extern uint32_t ext_00681250(uint32_t first, uint32_t last, uint32_t destEnd);
+
+// @name swapTailsAndAdjustDestEnd
+// @summary Swaps 16-byte element tails over [first,last) via ext_00681250, then returns destEnd minus the byte span of (last-first) rounded down to a multiple of 16.
+uint32_t fn_00569470(uint32_t first, uint32_t last, uint32_t destEnd) {
+    (void)ext_00681250(first, last, destEnd);
+
+    // Signed span, arithmetic shift right then left by 4 (floor to multiple of 16).
+    int32_t span = static_cast<int32_t>(last - first);
+    uint32_t rounded = static_cast<uint32_t>(span >> 4) << 4;
+    return destEnd - rounded;
+}
+} // namespace lift_00569470

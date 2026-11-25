@@ -1,0 +1,13 @@
+{
+  "va": "0x00569470",
+  "size": 64,
+  "orig_symbol": "sub_00569470",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "swapTailsAndAdjustDestEnd",
+  "signature": "uint32_t fn_00569470(uint32_t first, uint32_t last, uint32_t destEnd)",
+  "summary": "Swaps 16-byte element tails over [first,last) via ext_00681250, then returns destEnd minus the byte span of (last-first) rounded down to a multiple of 16.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:19:07Z"
+}
