@@ -621,3 +621,22 @@ void* fn_004B47D0() {
     return &mem_00AE0D58;
 }
 } // namespace lift_004B47D0
+
+// [0x004B7920]
+namespace lift_004B7920 {
+// @name initStaticObjectOnce_004B7920
+// @summary One-time guarded initializer for the static object at 0x00AE165C; on first call sets bit 0 of 0x00AE1660, runs the object's init helper, stores 0x009433F4 into its first DWORD, and returns its address.
+
+extern uint32_t mem_00AE1660;
+extern uint32_t mem_00AE165C;
+extern uint32_t ext_0067A670(void* self, uint32_t value);
+
+void* fn_004B7920(void) {
+    if ((mem_00AE1660 & 1u) == 0) {
+        mem_00AE1660 |= 1u;
+        ext_0067A670(&mem_00AE165C, 0u);
+        mem_00AE165C = 0x009433F4u;
+    }
+    return &mem_00AE165C;
+}
+} // namespace lift_004B7920

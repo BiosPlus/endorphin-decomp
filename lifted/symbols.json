@@ -12823,6 +12823,12 @@
     "summary": "If the pointer at +0x08 is non-null, invoke its virtual slot 1 with argument 1.",
     "lifted_path": "lifted/templates/auto_tiny.cpp"
   },
+  "0x004B7920": {
+    "name": "initStaticObjectOnce_004B7920",
+    "signature": "void* fn_004B7920(void)",
+    "summary": "One-time guarded initializer for the static object at 0x00AE165C; on first call sets bit 0 of 0x00AE1660, runs the object's init helper, stores 0x009433F4 into its first DWORD, and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B79B0": {
     "name": "parseFloatFromString",
     "signature": "float parseFloatFromString(std::string s)",
