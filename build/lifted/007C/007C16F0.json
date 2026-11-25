@@ -1,0 +1,13 @@
+{
+  "va": "0x007C16F0",
+  "size": 96,
+  "orig_symbol": "sub_007C16F0",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "scanSyncMarker0000FFFF",
+  "signature": "void __cdecl sub_007C16F0(uint32_t* statePtr, const uint8_t* data, uint32_t length)",
+  "summary": "Scans a byte buffer for the 4-byte sequence 00 00 FF FF, updating a state machine counter",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:52:32Z"
+}

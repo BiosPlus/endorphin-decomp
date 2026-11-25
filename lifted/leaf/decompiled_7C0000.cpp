@@ -1575,3 +1575,27 @@ void sub_007CA280(const float* a /* ecx */, const float* b /* edx */, float* out
     Vec3SelectComponentwise(a, b, out);
 }
 } // namespace lift_007CA280
+
+// [0x007C16F0]
+namespace lift_007C16F0 {
+// @name scanSyncMarker0000FFFF
+// @summary Scans a byte buffer for the 4-byte sequence 00 00 FF FF, updating a state machine counter
+void __cdecl sub_007C16F0(uint32_t* statePtr, const uint8_t* data, uint32_t length) {
+    uint32_t state = *statePtr;
+    for (uint32_t i = 0; i < length; ++i) {
+        if (state >= 4) {
+            break;
+        }
+        uint8_t b = data[i];
+        uint8_t expected = (state < 2) ? 0x00 : 0xFF;
+        if (b == expected) {
+            ++state;
+        } else if (b != 0) {
+            state = 0;
+        } else {
+            state = 4 - state;
+        }
+    }
+    *statePtr = state;
+}
+} // namespace lift_007C16F0
