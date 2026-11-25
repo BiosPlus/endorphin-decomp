@@ -976,3 +976,353 @@ void* fn_005FF300(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
     return obj;
 }
 } // namespace lift_005FF300
+
+// [0x005FF370] sub_005FF370 (112 bytes)
+namespace lift_005FF370 {
+// @name sub_005FF370
+// @summary Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).
+namespace lift_005FF290 {
+// @name Unknown::create_005FF290
+// @summary Allocates a 0x40-byte object, initializes it via ext_00627240 with four 32-bit arguments, and sets its vtable to 0x0096EB5C.
+// @field Unknown +0x00 uint32_t vtable
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_00627240(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+void* fn_005FF370(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x40);
+    if (!obj) {
+        return nullptr;
+    }
+    ext_00627240(obj, arg0, arg1, arg2, arg3);
+    *reinterpret_cast<uint32_t*>(obj) = 0x96EC3C;
+    return obj;
+}
+} // namespace lift_005FF290
+} // namespace lift_005FF370
+
+// [0x005FF3E0] sub_005FF3E0 (112 bytes)
+namespace lift_005FF3E0 {
+// @name sub_005FF3E0
+// @summary Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).
+namespace lift_005FF290 {
+// @name Unknown::create_005FF290
+// @summary Allocates a 0x40-byte object, initializes it via ext_00627240 with four 32-bit arguments, and sets its vtable to 0x0096EB5C.
+// @field Unknown +0x00 uint32_t vtable
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_00627240(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+void* fn_005FF3E0(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x40);
+    if (!obj) {
+        return nullptr;
+    }
+    ext_00627240(obj, arg0, arg1, arg2, arg3);
+    *reinterpret_cast<uint32_t*>(obj) = 0x96ECAC;
+    return obj;
+}
+} // namespace lift_005FF290
+} // namespace lift_005FF3E0
+
+// [0x005FF450] sub_005FF450 (112 bytes)
+namespace lift_005FF450 {
+// @name sub_005FF450
+// @summary Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).
+namespace lift_005FF290 {
+// @name Unknown::create_005FF290
+// @summary Allocates a 0x40-byte object, initializes it via ext_00627240 with four 32-bit arguments, and sets its vtable to 0x0096EB5C.
+// @field Unknown +0x00 uint32_t vtable
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_00627240(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+void* fn_005FF450(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x40);
+    if (!obj) {
+        return nullptr;
+    }
+    ext_00627240(obj, arg0, arg1, arg2, arg3);
+    *reinterpret_cast<uint32_t*>(obj) = 0x96ED1C;
+    return obj;
+}
+} // namespace lift_005FF290
+} // namespace lift_005FF450
+
+// [0x005FF4C0] sub_005FF4C0 (112 bytes)
+namespace lift_005FF4C0 {
+// @name sub_005FF4C0
+// @summary Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).
+namespace lift_005FF290 {
+// @name Unknown::create_005FF290
+// @summary Allocates a 0x40-byte object, initializes it via ext_00627240 with four 32-bit arguments, and sets its vtable to 0x0096EB5C.
+// @field Unknown +0x00 uint32_t vtable
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_00627240(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+void* fn_005FF4C0(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x40);
+    if (!obj) {
+        return nullptr;
+    }
+    ext_00627240(obj, arg0, arg1, arg2, arg3);
+    *reinterpret_cast<uint32_t*>(obj) = 0x96ED8C;
+    return obj;
+}
+} // namespace lift_005FF290
+} // namespace lift_005FF4C0
+
+// [0x005FF530] sub_005FF530 (112 bytes)
+namespace lift_005FF530 {
+// @name sub_005FF530
+// @summary Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).
+namespace lift_005FF290 {
+// @name Unknown::create_005FF290
+// @summary Allocates a 0x40-byte object, initializes it via ext_00627240 with four 32-bit arguments, and sets its vtable to 0x0096EB5C.
+// @field Unknown +0x00 uint32_t vtable
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_00629370(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+void* fn_005FF530(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x40);
+    if (!obj) {
+        return nullptr;
+    }
+    ext_00629370(obj, arg0, arg1, arg2, arg3);
+    *reinterpret_cast<uint32_t*>(obj) = 0x96EDFC;
+    return obj;
+}
+} // namespace lift_005FF290
+} // namespace lift_005FF530
+
+// [0x005FF5A0] sub_005FF5A0 (112 bytes)
+namespace lift_005FF5A0 {
+// @name sub_005FF5A0
+// @summary Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).
+namespace lift_005FF290 {
+// @name Unknown::create_005FF290
+// @summary Allocates a 0x40-byte object, initializes it via ext_00627240 with four 32-bit arguments, and sets its vtable to 0x0096EB5C.
+// @field Unknown +0x00 uint32_t vtable
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_00629370(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+void* fn_005FF5A0(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x40);
+    if (!obj) {
+        return nullptr;
+    }
+    ext_00629370(obj, arg0, arg1, arg2, arg3);
+    *reinterpret_cast<uint32_t*>(obj) = 0x96EE6C;
+    return obj;
+}
+} // namespace lift_005FF290
+} // namespace lift_005FF5A0
+
+// [0x005FF790] sub_005FF790 (115 bytes)
+namespace lift_005FF790 {
+// @name sub_005FF790
+// @summary Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).
+namespace lift_005FF290 {
+// @name Unknown::create_005FF290
+// @summary Allocates a 0x40-byte object, initializes it via ext_00627240 with four 32-bit arguments, and sets its vtable to 0x0096EB5C.
+// @field Unknown +0x00 uint32_t vtable
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_00629AA0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+void* fn_005FF790(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x80);
+    if (!obj) {
+        return nullptr;
+    }
+    ext_00629AA0(obj, arg0, arg1, arg2, arg3);
+    *reinterpret_cast<uint32_t*>(obj) = 0x96F074;
+    return obj;
+}
+} // namespace lift_005FF290
+} // namespace lift_005FF790
+
+// [0x005FF810] sub_005FF810 (115 bytes)
+namespace lift_005FF810 {
+// @name sub_005FF810
+// @summary Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).
+namespace lift_005FF290 {
+// @name Unknown::create_005FF290
+// @summary Allocates a 0x40-byte object, initializes it via ext_00627240 with four 32-bit arguments, and sets its vtable to 0x0096EB5C.
+// @field Unknown +0x00 uint32_t vtable
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_00629AA0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+void* fn_005FF810(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x80);
+    if (!obj) {
+        return nullptr;
+    }
+    ext_00629AA0(obj, arg0, arg1, arg2, arg3);
+    *reinterpret_cast<uint32_t*>(obj) = 0x96F0E4;
+    return obj;
+}
+} // namespace lift_005FF290
+} // namespace lift_005FF810
+
+// [0x005FF920] sub_005FF920 (112 bytes)
+namespace lift_005FF920 {
+// @name sub_005FF920
+// @summary Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).
+namespace lift_005FF290 {
+// @name Unknown::create_005FF290
+// @summary Allocates a 0x40-byte object, initializes it via ext_00627240 with four 32-bit arguments, and sets its vtable to 0x0096EB5C.
+// @field Unknown +0x00 uint32_t vtable
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_006271A0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+void* fn_005FF920(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x40);
+    if (!obj) {
+        return nullptr;
+    }
+    ext_006271A0(obj, arg0, arg1, arg2, arg3);
+    *reinterpret_cast<uint32_t*>(obj) = 0x96F1C4;
+    return obj;
+}
+} // namespace lift_005FF290
+} // namespace lift_005FF920
+
+// [0x005FF990] sub_005FF990 (112 bytes)
+namespace lift_005FF990 {
+// @name sub_005FF990
+// @summary Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).
+namespace lift_005FF290 {
+// @name Unknown::create_005FF290
+// @summary Allocates a 0x40-byte object, initializes it via ext_00627240 with four 32-bit arguments, and sets its vtable to 0x0096EB5C.
+// @field Unknown +0x00 uint32_t vtable
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_006271A0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+void* fn_005FF990(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x40);
+    if (!obj) {
+        return nullptr;
+    }
+    ext_006271A0(obj, arg0, arg1, arg2, arg3);
+    *reinterpret_cast<uint32_t*>(obj) = 0x96F234;
+    return obj;
+}
+} // namespace lift_005FF290
+} // namespace lift_005FF990
+
+// [0x005FFA00] sub_005FFA00 (112 bytes)
+namespace lift_005FFA00 {
+// @name sub_005FFA00
+// @summary Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).
+namespace lift_005FF290 {
+// @name Unknown::create_005FF290
+// @summary Allocates a 0x40-byte object, initializes it via ext_00627240 with four 32-bit arguments, and sets its vtable to 0x0096EB5C.
+// @field Unknown +0x00 uint32_t vtable
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_00627240(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+void* fn_005FFA00(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x40);
+    if (!obj) {
+        return nullptr;
+    }
+    ext_00627240(obj, arg0, arg1, arg2, arg3);
+    *reinterpret_cast<uint32_t*>(obj) = 0x96F2A4;
+    return obj;
+}
+} // namespace lift_005FF290
+} // namespace lift_005FFA00
+
+// [0x005FFA70] sub_005FFA70 (112 bytes)
+namespace lift_005FFA70 {
+// @name sub_005FFA70
+// @summary Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).
+namespace lift_005FF290 {
+// @name Unknown::create_005FF290
+// @summary Allocates a 0x40-byte object, initializes it via ext_00627240 with four 32-bit arguments, and sets its vtable to 0x0096EB5C.
+// @field Unknown +0x00 uint32_t vtable
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_00629370(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+void* fn_005FFA70(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x40);
+    if (!obj) {
+        return nullptr;
+    }
+    ext_00629370(obj, arg0, arg1, arg2, arg3);
+    *reinterpret_cast<uint32_t*>(obj) = 0x96F314;
+    return obj;
+}
+} // namespace lift_005FF290
+} // namespace lift_005FFA70
+
+// [0x005FFAE0] sub_005FFAE0 (115 bytes)
+namespace lift_005FFAE0 {
+// @name sub_005FFAE0
+// @summary Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).
+namespace lift_005FF290 {
+// @name Unknown::create_005FF290
+// @summary Allocates a 0x40-byte object, initializes it via ext_00627240 with four 32-bit arguments, and sets its vtable to 0x0096EB5C.
+// @field Unknown +0x00 uint32_t vtable
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_00629AA0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+void* fn_005FFAE0(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x80);
+    if (!obj) {
+        return nullptr;
+    }
+    ext_00629AA0(obj, arg0, arg1, arg2, arg3);
+    *reinterpret_cast<uint32_t*>(obj) = 0x96F384;
+    return obj;
+}
+} // namespace lift_005FF290
+} // namespace lift_005FFAE0
+
+// [0x005FFC40] sub_005FFC40 (112 bytes)
+namespace lift_005FFC40 {
+// @name sub_005FFC40
+// @summary Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).
+namespace lift_005FF290 {
+// @name Unknown::create_005FF290
+// @summary Allocates a 0x40-byte object, initializes it via ext_00627240 with four 32-bit arguments, and sets its vtable to 0x0096EB5C.
+// @field Unknown +0x00 uint32_t vtable
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_006271A0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+void* fn_005FFC40(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x40);
+    if (!obj) {
+        return nullptr;
+    }
+    ext_006271A0(obj, arg0, arg1, arg2, arg3);
+    *reinterpret_cast<uint32_t*>(obj) = 0x96F3FC;
+    return obj;
+}
+} // namespace lift_005FF290
+} // namespace lift_005FFC40

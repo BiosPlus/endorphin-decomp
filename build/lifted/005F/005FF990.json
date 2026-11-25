@@ -1,0 +1,21 @@
+{
+  "va": "0x005FF990",
+  "size": 112,
+  "orig_symbol": "sub_005FF990",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "sub_005FF990",
+  "signature": "void* fn_005FF990(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T05:05:39Z"
+}

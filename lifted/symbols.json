@@ -38214,6 +38214,90 @@
     "summary": "Allocates 0x40 bytes, runs base initializer, and sets vtable to 0x0096EBCC.",
     "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
+  "0x005FF370": {
+    "name": "sub_005FF370",
+    "signature": "void* fn_005FF370(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FF3E0": {
+    "name": "sub_005FF3E0",
+    "signature": "void* fn_005FF3E0(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FF450": {
+    "name": "sub_005FF450",
+    "signature": "void* fn_005FF450(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FF4C0": {
+    "name": "sub_005FF4C0",
+    "signature": "void* fn_005FF4C0(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FF530": {
+    "name": "sub_005FF530",
+    "signature": "void* fn_005FF530(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FF5A0": {
+    "name": "sub_005FF5A0",
+    "signature": "void* fn_005FF5A0(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FF790": {
+    "name": "sub_005FF790",
+    "signature": "void* fn_005FF790(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FF810": {
+    "name": "sub_005FF810",
+    "signature": "void* fn_005FF810(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FF920": {
+    "name": "sub_005FF920",
+    "signature": "void* fn_005FF920(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FF990": {
+    "name": "sub_005FF990",
+    "signature": "void* fn_005FF990(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FFA00": {
+    "name": "sub_005FFA00",
+    "signature": "void* fn_005FFA00(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FFA70": {
+    "name": "sub_005FFA70",
+    "signature": "void* fn_005FFA70(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FFAE0": {
+    "name": "sub_005FFAE0",
+    "signature": "void* fn_005FFAE0(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FFC40": {
+    "name": "sub_005FFC40",
+    "signature": "void* fn_005FFC40(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x00602EB0": {
     "name": "Effector::vfunc_25",
     "class": "Effector",
