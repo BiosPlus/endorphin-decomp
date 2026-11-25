@@ -1372,3 +1372,25 @@ void __thiscall fn_0054C640(void* self, void* target) {
     }
 }
 } // namespace lift_0054C640
+
+// [0x0054C890]
+namespace lift_0054C890 {
+extern void __fastcall ext_0065C660(void* self);
+extern uint32_t mem_00956E2C;
+extern void (__fastcall* mem_00924FF4)(void* self);
+
+// @name sub_0054C890_dtor
+// @summary Destructor that resets vtable, destroys three std::string fields, and calls base destructor.
+// @field Self +0x00 uint32_t vtable
+// @field Self +0x18 std::string field_0x18
+// @field Self +0x60 std::string field_0x60
+// @field Self +0x9c std::string field_0x9c
+extern void __fastcall fn_0054C890(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uintptr_t*>(base) = reinterpret_cast<uintptr_t>(&mem_00956E2C);
+    mem_00924FF4(base + 0x9c);
+    mem_00924FF4(base + 0x60);
+    mem_00924FF4(base + 0x18);
+    ext_0065C660(self);
+}
+} // namespace lift_0054C890

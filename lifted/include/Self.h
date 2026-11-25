@@ -14,7 +14,7 @@ struct Self_Fields {
     // +0x0   void*                    field_0x00  (evidence: 0x006E6D70, 0x006E7000, 0x006E8440, 0x006E86F0, 0x0072C0B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   std::string              name  (evidence: 0x004FDAA0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vftable_0x00  (evidence: 0x004615B0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 vtable  (evidence: 0x005947B0, 0x005963F0, 0x0059DDA0, 0x006B0CD0, 0x006BA780) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vtable  (evidence: 0x0054C890, 0x005947B0, 0x005963F0, 0x0059DDA0, 0x006B0CD0, 0x006BA780) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t*                vtable  (evidence: 0x00414260, 0x006F7970, 0x006FC200) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x006118E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtable  (evidence: 0x004142A0, 0x00611870, 0x006E7340) // CONFLICT: multiple definitions at +0x0
@@ -39,6 +39,7 @@ struct Self_Fields {
     // +0x10  uint32_t                 field_0x10  (evidence: 0x0041C540, 0x005314C0, 0x006D9170)
     // +0x14  void*                    field_0x14  (evidence: 0x0048F590, 0x006DE3F0, 0x007B1FA0, 0x007B89BC, 0x007BD640)
     // +0x17  uint8_t                  field_0x17  (evidence: 0x006D9170)
+    // +0x18  std::string              field_0x18  (evidence: 0x0054C890)
     // +0x1C  uint32_t                 field_0x1C  (evidence: 0x004FDAA0)
     // +0x20  uint32_t                 field_0x20  (evidence: 0x004FDAA0) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint8_t                  field_0x20  (evidence: 0x00610CB0) // CONFLICT: multiple definitions at +0x20
@@ -52,9 +53,11 @@ struct Self_Fields {
     // +0x48  uint32_t                 field_0x48  (evidence: 0x00687230, 0x006872C0)
     // +0x4C  uint8_t                  field_0x4c  (evidence: 0x006DE460)
     // +0x54  uint8_t                  field_0x54  (evidence: 0x00622B40, 0x00627510)
+    // +0x60  std::string              field_0x60  (evidence: 0x0054C890)
     // +0x64  uint32_t                 member_0x64_vtable  (evidence: 0x006B0CD0, 0x006BA780)
     // +0x74  void*                    vftable_0x74  (evidence: 0x004615B0)
     // +0x88  void*                    childObject  (evidence: 0x006B2F70, 0x006B8190, 0x006BA780)
+    // +0x9C  std::string              field_0x9c  (evidence: 0x0054C890)
     // +0xA8  DWORD                    field_0xA8  (evidence: 0x006B2F70, 0x006B8190, 0x006BA780)
     // +0xBC  int32_t                  field_0xBC  (evidence: 0x0053F960)
     // +0xC0  int32_t                  field_0xC0  (evidence: 0x0053F960)
