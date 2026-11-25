@@ -20765,10 +20765,10 @@
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x005457B0": {
-    "name": "Unknown::construct_005457B0",
-    "class": "Unknown",
-    "signature": "void fn_005457B0(void* self)",
-    "summary": "Sets the object's vtable word, constructs the embedded subobject at +0x9C, then runs the lifted initializer fn_00543320 on self.",
+    "name": "sub_005478B0",
+    "class": "VTableDispatch",
+    "signature": "float fn_005478B0(uint32_t ecx)",
+    "summary": "Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
   "0x00545840": {

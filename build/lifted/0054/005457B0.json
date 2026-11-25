@@ -4,11 +4,341 @@
   "orig_symbol": "sub_005457B0",
   "src_path": "src/leaf/decompiled_540000.cpp",
   "lifted_path": "lifted/leaf/decompiled_540000.cpp",
-  "name": "Unknown::construct_005457B0",
-  "class": "Unknown",
-  "signature": "void fn_005457B0(void* self)",
-  "summary": "Sets the object's vtable word, constructs the embedded subobject at +0x9C, then runs the lifted initializer fn_00543320 on self.",
+  "name": "sub_005478B0",
+  "class": "VTableDispatch",
+  "signature": "float fn_005478B0(uint32_t ecx)",
+  "summary": "Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).",
   "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "VTableDispatch",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable_ptr"
+    },
+    {
+      "class": "VTableDispatch",
+      "offset": "+0x90",
+      "type": "uint8_t",
+      "name": "flag_0x90"
+    },
+    {
+      "class": "VTableDispatch",
+      "offset": "+0x93",
+      "type": "uint8_t",
+      "name": "flag_0x93"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void* field_0x08 (child pointer table base; element i at +0x08 +",
+      "name": "60*i)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF8",
+      "type": "DWORD field_0xF8 (element",
+      "name": "index)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "ptr field_0x88 (pointer to child object; owner class not",
+      "name": "identified)"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xA0",
+      "type": "void*",
+      "name": "field_0xa0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA0",
+      "type": "void*",
+      "name": "field_0xA0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD0",
+      "type": "double",
+      "name": "field_0xD0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "QuadricRenderer",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vftable"
+    },
+    {
+      "class": "QuadricRenderer",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "quadric1"
+    },
+    {
+      "class": "QuadricRenderer",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "quadric2"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x90",
+      "type": "uint8_t",
+      "name": "field_0x90"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x93",
+      "type": "uint8_t",
+      "name": "field_0x93"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x92",
+      "type": "uint8_t",
+      "name": "field_0x92"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x95",
+      "type": "uint8_t",
+      "name": "field_0x95"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x91",
+      "type": "uint8_t",
+      "name": "field_0x91"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x94",
+      "type": "uint8_t",
+      "name": "field_0x94"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x68",
+      "type": "float",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x6C",
+      "type": "float",
+      "name": "field_0x6c"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x70",
+      "type": "float",
+      "name": "field_0x70"
+    },
+    {
+      "class": "Object",
+      "offset": "+0xA0",
+      "type": "uint32_t",
+      "name": "field_0xa0"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "field_0x48"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x4C",
+      "type": "float",
+      "name": "field_0x4C"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x58",
+      "type": "float",
+      "name": "field_0x58"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x5C",
+      "type": "float",
+      "name": "field_0x5C"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x24",
+      "type": "const char*",
+      "name": "field_0x24"
+    },
+    {
+      "class": "CUnknown",
+      "offset": "+0x90",
+      "type": "BYTE",
+      "name": "field_0x90"
+    },
+    {
+      "class": "CUnknown",
+      "offset": "+0x91",
+      "type": "BYTE",
+      "name": "field_0x91"
+    },
+    {
+      "class": "CUnknown",
+      "offset": "+0x92",
+      "type": "BYTE",
+      "name": "field_0x92"
+    },
+    {
+      "class": "CUnknown",
+      "offset": "+0x93",
+      "type": "BYTE",
+      "name": "field_0x93"
+    },
+    {
+      "class": "CUnknown",
+      "offset": "+0x94",
+      "type": "BYTE",
+      "name": "field_0x94"
+    },
+    {
+      "class": "CUnknown",
+      "offset": "+0x95",
+      "type": "BYTE",
+      "name": "field_0x95"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "rectLeft"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "rectTop"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "rectRight"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "rectBottom"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "BYTE",
+      "name": "enabled"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x9C",
+      "type": "unknown",
+      "name": "field_0x9C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x98",
+      "type": "Unknown",
+      "name": "field_0x98"
+    },
+    {
+      "class": "ResetSubobjectAndFinalize_00544BE0",
+      "offset": "+0x98",
+      "type": "uint8_t",
+      "name": "field_0x98"
+    },
     {
       "class": "Unknown",
       "offset": "+0x0",
@@ -24,5 +354,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T02:08:26Z"
+  "lifted_at": "2026-11-25T02:08:44Z"
 }

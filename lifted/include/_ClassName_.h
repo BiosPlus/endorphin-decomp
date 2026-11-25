@@ -20,7 +20,7 @@ struct _ClassName__Fields {
     // +0x4   int32_t                  field_0x04  (evidence: 0x00553F70, 0x00672410, 0x00675DB0) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              field_0x04  (evidence: 0x00676780) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00494050) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint8_t                  field_0x04  (evidence: 0x0054E3D0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint8_t                  field_0x04  (evidence: 0x005457B0, 0x0054E3D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x005D14A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   DWORD field_0x04 (begin pointer; read and written)  (evidence: 0x0043E640) // CONFLICT: multiple definitions at +0x4
     // +0x8   float                    field_0x08  (evidence: 0x00533FE0, 0x005539D0) // CONFLICT: multiple definitions at +0x8
@@ -31,20 +31,20 @@ struct _ClassName__Fields {
     // +0xC   float                    field_0x0C  (evidence: 0x00533FE0) // CONFLICT: multiple definitions at +0xC
     // +0x10  float                    field_0x10  (evidence: 0x00533FE0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint8_t                  field_0x10  (evidence: 0x00468A00) // CONFLICT: multiple definitions at +0x10
-    // +0x14  float                    field_0x14  (evidence: 0x00533FE0, 0x0054E3D0) // CONFLICT: multiple definitions at +0x14
+    // +0x14  float                    field_0x14  (evidence: 0x00533FE0, 0x005457B0, 0x0054E3D0) // CONFLICT: multiple definitions at +0x14
     // +0x14  void*                    field_0x14  (evidence: 0x00468A00) // CONFLICT: multiple definitions at +0x14
     // +0x18  float                    field_0x18  (evidence: 0x00533FE0)
     // +0x1C  float                    field_0x1C  (evidence: 0x00533FE0)
     // +0x20  DWORD                    field_0x20  (evidence: 0x00641FD0) // CONFLICT: multiple definitions at +0x20
     // +0x20  HWND                     field_0x20  (evidence: 0x00420070, 0x00422C00) // CONFLICT: multiple definitions at +0x20
     // +0x20  float                    field_0x20  (evidence: 0x00533FE0) // CONFLICT: multiple definitions at +0x20
-    // +0x24  float                    field_0x24  (evidence: 0x00533FE0, 0x0054E3D0) // CONFLICT: multiple definitions at +0x24
+    // +0x24  float                    field_0x24  (evidence: 0x00533FE0, 0x005457B0, 0x0054E3D0) // CONFLICT: multiple definitions at +0x24
     // +0x24  u32                      field_0x24  (evidence: 0x00676780) // CONFLICT: multiple definitions at +0x24
     // +0x28  u32                      field_0x28  (evidence: 0x00676780)
     // +0x2C  u32                      field_0x2c  (evidence: 0x00676780)
     // +0x30  double                   field_0x30  (evidence: 0x00518030) // CONFLICT: multiple definitions at +0x30
     // +0x30  u32                      field_0x30  (evidence: 0x00676780) // CONFLICT: multiple definitions at +0x30
-    // +0x34  float                    field_0x34  (evidence: 0x0054E3D0)
+    // +0x34  float                    field_0x34  (evidence: 0x005457B0, 0x0054E3D0)
     // +0x3C  DWORD                    field_0x3C  (evidence: 0x00518030) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  float                    field_0x3C  (evidence: 0x0063D970, 0x0063DAB0, 0x0063DDF0) // CONFLICT: multiple definitions at +0x3C
     // +0x40  DWORD                    field_0x40  (evidence: 0x00518030) // CONFLICT: multiple definitions at +0x40
@@ -59,13 +59,13 @@ struct _ClassName__Fields {
     // +0x44  void*                    field_0x44  (evidence: 0x0041D350, 0x004407B0, 0x00441020, 0x0044B6A0, 0x00548260) // CONFLICT: multiple definitions at +0x44
     // +0x45  uint8_t                  field_0x45  (evidence: 0x00648400)
     // +0x46  uint8_t                  field_0x46  (evidence: 0x00648400)
-    // +0x48  float                    field_0x48  (evidence: 0x0054E3D0)
-    // +0x4C  float                    field_0x4C  (evidence: 0x0054E3D0)
+    // +0x48  float                    field_0x48  (evidence: 0x005457B0, 0x0054E3D0)
+    // +0x4C  float                    field_0x4C  (evidence: 0x005457B0, 0x0054E3D0)
     // +0x58  int32_t                  enableFlag  (evidence: 0x007AEEC0) // CONFLICT: multiple definitions at +0x58
-    // +0x58  float                    field_0x58  (evidence: 0x0054E3D0) // CONFLICT: multiple definitions at +0x58
+    // +0x58  float                    field_0x58  (evidence: 0x005457B0, 0x0054E3D0) // CONFLICT: multiple definitions at +0x58
     // +0x58  int32_t                  field_0x58  (evidence: 0x007AEE50) // CONFLICT: multiple definitions at +0x58
     // +0x58  uint32_t                 field_0x58  (evidence: 0x00648400) // CONFLICT: multiple definitions at +0x58
-    // +0x5C  float                    field_0x5C  (evidence: 0x0054E3D0) // CONFLICT: multiple definitions at +0x5C
+    // +0x5C  float                    field_0x5C  (evidence: 0x005457B0, 0x0054E3D0) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  int32_t                  field_0x5C  (evidence: 0x007AEE50) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  int32_t                  maxLimit  (evidence: 0x007AEEC0) // CONFLICT: multiple definitions at +0x5C
     // +0x60  int32_t                  field_0x60  (evidence: 0x007AEE50) // CONFLICT: multiple definitions at +0x60
@@ -73,8 +73,8 @@ struct _ClassName__Fields {
     // +0x88  int32_t                  field_0x88  (evidence: 0x006829A0, 0x00688B50, 0x00689570, 0x0068BDF0)
     // +0x8C  uint8_t                  field_0x8C  (evidence: 0x00584AE0)
     // +0x8D  uint8_t                  field_0x8d  (evidence: 0x00420070, 0x00422C00)
-    // +0x90  uint8_t                  field_0x90  (evidence: 0x00543550)
-    // +0x93  uint8_t                  field_0x93  (evidence: 0x00543550)
+    // +0x90  uint8_t                  field_0x90  (evidence: 0x00543550, 0x005457B0)
+    // +0x93  uint8_t                  field_0x93  (evidence: 0x00543550, 0x005457B0)
     // +0x98  double                   field_0x98  (evidence: 0x00441090)
     // +0xE8  DWORD                    field_0xe8  (evidence: 0x00455D10)
     // +0xF4  int32_t                  field_0xF4  (evidence: 0x00594020, 0x0059DE20)
