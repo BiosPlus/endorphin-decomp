@@ -705,3 +705,32 @@ void* fn_0052FF10(void* self) {
     return &mem_00AEE268;
 }
 } // namespace lift_0052FF10
+
+// [0x00528100]
+namespace lift_00528100 {
+// @name InterpreterSub::InterpreterSub
+// @class InterpreterSub
+// @summary Constructor: initializes Interpreter base, sets primary and secondary vtables at +0x00 and +0x38, and zeroes three dwords at +0x40..+0x48; returns this.
+// @field InterpreterSub +0x00 uint32_t vftable_0x00
+// @field InterpreterSub +0x38 uint32_t vftable_0x38
+// @field InterpreterSub +0x40 uint32_t field_0x40
+// @field InterpreterSub +0x44 uint32_t field_0x44
+// @field InterpreterSub +0x48 uint32_t field_0x48
+
+
+extern void* ext_00506030(void* self);
+
+void* fn_00528100(void* self) {
+    ext_00506030(self);
+
+    uint8_t* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x38) = 0x0094f0dc;
+    *reinterpret_cast<uint32_t*>(base + 0x00) = 0x0094f654;
+    *reinterpret_cast<uint32_t*>(base + 0x38) = 0x0094f648;
+    *reinterpret_cast<uint32_t*>(base + 0x40) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x44) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x48) = 0;
+
+    return self;
+}
+} // namespace lift_00528100

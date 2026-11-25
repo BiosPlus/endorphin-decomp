@@ -2205,6 +2205,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00420070 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x004207F0": {
+    "name": "std::out_of_range::out_of_range",
+    "class": "std::out_of_range",
+    "signature": "void* __thiscall sub_004207F0(void* self, const void* other)",
+    "summary": "Copy constructor for a std::logic_error-derived exception with a std::string at +0x28.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x00421AB0": {
     "name": "sub_00421AB0",
     "signature": "extern \"C\" int* fn_00421AB0()",
@@ -18634,6 +18641,13 @@
     "name": "vectorBackPtr",
     "signature": "uint32_t __thiscall sub_00527AF0(void* self)",
     "summary": "Validates vector bounds and returns a pointer to the last 4-byte element.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
+  "0x00528100": {
+    "name": "InterpreterSub::InterpreterSub",
+    "class": "InterpreterSub",
+    "signature": "void* fn_00528100(void* self)",
+    "summary": "Constructor: initializes Interpreter base, sets primary and secondary vtables at +0x00 and +0x38, and zeroes three dwords at +0x40..+0x48; returns this.",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
   "0x00528540": {
@@ -60703,6 +60717,13 @@
     "class": "MemoryReader",
     "signature": "uint32_t __thiscall sub_007AED60(void* self, uint32_t* dst, uint8_t swapEndian)",
     "summary": "Reads a 32-bit unsigned integer from an in-memory buffer into dst",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
+  "0x007AEDA0": {
+    "name": "MemoryReader::readUInt16",
+    "class": "MemoryReader",
+    "signature": "uint16_t __thiscall sub_007AEDA0(void* self, uint16_t* dst, uint8_t swapEndian)",
+    "summary": "Reads a 16-bit unsigned integer from the memory reader into dst and returns it, or 0 on failure.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
   "0x007AEE00": {

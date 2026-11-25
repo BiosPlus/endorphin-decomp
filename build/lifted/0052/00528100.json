@@ -1,0 +1,46 @@
+{
+  "va": "0x00528100",
+  "size": 79,
+  "orig_symbol": "sub_00528100",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "InterpreterSub::InterpreterSub",
+  "class": "InterpreterSub",
+  "signature": "void* fn_00528100(void* self)",
+  "summary": "Constructor: initializes Interpreter base, sets primary and secondary vtables at +0x00 and +0x38, and zeroes three dwords at +0x40..+0x48; returns this.",
+  "fields": [
+    {
+      "class": "InterpreterSub",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable_0x00"
+    },
+    {
+      "class": "InterpreterSub",
+      "offset": "+0x38",
+      "type": "uint32_t",
+      "name": "vftable_0x38"
+    },
+    {
+      "class": "InterpreterSub",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "InterpreterSub",
+      "offset": "+0x44",
+      "type": "uint32_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "InterpreterSub",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:23:07Z"
+}
