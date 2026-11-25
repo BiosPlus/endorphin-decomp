@@ -5322,6 +5322,12 @@
     "summary": "Calls std::string::copy(dst, count, 0) on the string object and returns 0.",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
+  "0x00455260": {
+    "name": "StringAssignCStrN",
+    "signature": "DWORD __stdcall sub_00455260(void* self, const char* src, uint32_t count, DWORD unused)",
+    "summary": "Assigns the first `count` chars of `src` into the std::string at `self` via MSVCP80 basic_string::assign, then returns 0 (callee pops 16 bytes).",
+    "lifted_path": "lifted/leaf/tiny_450000.cpp"
+  },
   "0x00455280": {
     "name": "sub_00455280",
     "signature": "void fn_00455280(void* self)",

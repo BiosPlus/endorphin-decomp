@@ -1,0 +1,13 @@
+{
+  "va": "0x00455260",
+  "size": 25,
+  "orig_symbol": "sub_00455260",
+  "src_path": "src/leaf/tiny_450000.cpp",
+  "lifted_path": "lifted/leaf/tiny_450000.cpp",
+  "name": "StringAssignCStrN",
+  "signature": "DWORD __stdcall sub_00455260(void* self, const char* src, uint32_t count, DWORD unused)",
+  "summary": "Assigns the first `count` chars of `src` into the std::string at `self` via MSVCP80 basic_string::assign, then returns 0 (callee pops 16 bytes).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:26:00Z"
+}

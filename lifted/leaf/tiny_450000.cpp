@@ -401,3 +401,24 @@ UINT_PTR __thiscall fn_004586A0(void* self, UINT_PTR nIDEvent, UINT uElapse) {
     return setTimer(hwnd, nIDEvent, uElapse, nullptr);
 }
 } // namespace lift_004586A0
+
+// [0x00455260]
+namespace lift_00455260 {
+// @name StringAssignCStrN
+// @summary Assigns the first `count` chars of `src` into the std::string at `self` via MSVCP80 basic_string::assign, then returns 0 (callee pops 16 bytes).
+
+// Import: MSVCP80!?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
+// (__thiscall: `self` arrives in ECX, `src`/`count` on the stack).
+// The call goes through IAT slot mem_00924EB0, whose .rdata value is the import target.
+extern const uint32_t mem_00924EB0;
+extern void* ext_MSVCP80_basic_string_assign_cstr_n(void* self, const char* src, uint32_t count);
+
+// Original: mov eax,[esp+0xc]; mov ecx,[esp+8]; push eax; push ecx;
+//           mov ecx,[esp+0xc]; call [mem_00924EB0]; xor eax,eax; ret 0x10
+DWORD __stdcall sub_00455260(void* self, const char* src, uint32_t count, DWORD unused) {
+    (void)unused;
+    (void)mem_00924EB0; // IAT slot consumed by ext_MSVCP80_basic_string_assign_cstr_n
+    ext_MSVCP80_basic_string_assign_cstr_n(self, src, count);
+    return 0;
+}
+} // namespace lift_00455260
