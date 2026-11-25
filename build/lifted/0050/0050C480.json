@@ -1,0 +1,45 @@
+{
+  "va": "0x0050C480",
+  "size": 68,
+  "orig_symbol": "sub_0050C480",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "ctor_0050C480",
+  "signature": "void* fn_0050C480(void* self)",
+  "summary": "Constructs an object: runs the base-class constructor (ext_00661980), installs vtable 0x00950314, zeroes four dwords at +0x08..+0x14, and returns this. Original SEH frame setup/teardown omitted.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtablePtr"
+    },
+    {
+      "class": "self",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "self",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "self",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "self",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:19:04Z"
+}

@@ -500,3 +500,26 @@ uint32_t __cdecl sub_00508860(uint32_t first, uint32_t last, uint32_t target) {
     return cur;
 }
 } // namespace lift_00508860
+
+// [0x0050C480] sub_0050C480 (68 bytes)
+namespace lift_0050C480 {
+// Known callee 0x00661980: setVtable_0093BFB4 (Stores the vtable address 0x0093BFB4 into the first dword of the object pointed to by ECX (this).)
+extern void ext_00661980(void* self);
+
+// @name ctor_0050C480
+// @summary Constructs an object: runs the base-class constructor (ext_00661980), installs vtable 0x00950314, zeroes four dwords at +0x08..+0x14, and returns this. Original SEH frame setup/teardown omitted.
+// @field self +0x00 uint32_t vtablePtr
+// @field self +0x08 uint32_t field_0x08
+// @field self +0x0C uint32_t field_0x0C
+// @field self +0x10 uint32_t field_0x10
+// @field self +0x14 uint32_t field_0x14
+void* fn_0050C480(void* self) {
+    ext_00661980(self);
+    lift_field<uint32_t>(self, 0x00) = 0x00950314u;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x14) = 0;
+    return self;
+}
+} // namespace lift_0050C480

@@ -13,12 +13,16 @@ struct self_Fields {
     // +0x0   uint32_t field_0x00 (constant 0x00957534 stored here)  (evidence: 0x005528E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    ptr  (evidence: 0x00430EB0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* innerObject (pointer loaded from *self; passed as the new this)  (evidence: 0x00493E50, 0x00493E60, 0x00494050) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vtablePtr  (evidence: 0x0050C480) // CONFLICT: multiple definitions at +0x0
     // +0x4   int32_t                  field_0x04  (evidence: 0x0041CEE0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x00489880) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (pointer; the pointee's byte at +0x04 is set to 1 when non-null)  (evidence: 0x00528C70) // CONFLICT: multiple definitions at +0x4
-    // +0x8   DWORD                    field_0x08  (evidence: 0x004925B0)
-    // +0x10  uint8_t                  field_0x10  (evidence: 0x00468750, 0x0046F7D0)
-    // +0x14  uint32_t                 field_0x14  (evidence: 0x00468750, 0x0046F7D0) // CONFLICT: multiple definitions at +0x14
+    // +0x8   DWORD                    field_0x08  (evidence: 0x004925B0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x0050C480) // CONFLICT: multiple definitions at +0x8
+    // +0xC   uint32_t                 field_0x0C  (evidence: 0x0050C480)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x0050C480) // CONFLICT: multiple definitions at +0x10
+    // +0x10  uint8_t                  field_0x10  (evidence: 0x00468750, 0x0046F7D0) // CONFLICT: multiple definitions at +0x10
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x00468750, 0x0046F7D0, 0x0050C480) // CONFLICT: multiple definitions at +0x14
     // +0x14  unknown                  field_0x14  (evidence: 0x00584A10) // CONFLICT: multiple definitions at +0x14
     // +0x28  void*                    field_0x28  (evidence: 0x006294F0)
     // +0x30  float                    field_0x30  (evidence: 0x006294F0, 0x007C6130) // CONFLICT: multiple definitions at +0x30
