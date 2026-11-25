@@ -1,0 +1,22 @@
+{
+  "va": "0x00480E40",
+  "size": 91,
+  "orig_symbol": "ToolEngine::vfunc_9",
+  "src_path": "src/classes/ToolEngine.cpp",
+  "lifted_path": "lifted/classes/ToolEngine.cpp",
+  "name": "ToolEngine::vfunc_9",
+  "class": "ToolEngine",
+  "signature": "uint8_t __thiscall fn_00480E40(uint32_t self)",
+  "summary": "Checks if any item in the subobject's list satisfies sub_00584C00",
+  "fields": [
+    {
+      "class": "ToolEngine",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:30:06Z"
+}

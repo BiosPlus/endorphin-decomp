@@ -214,3 +214,52 @@ uint32_t __thiscall ToolEngine_vfunc_10(void* self) {
     return target_fn(elem_sub);
 }
 } // namespace lift_004812B0
+
+// [0x00480E40]
+namespace lift_00480E40 {
+// @name ToolEngine::vfunc_9
+// @class ToolEngine
+// @summary Checks if any item in the subobject's list satisfies sub_00584C00
+// @field ToolEngine +0x10 void* field_0x10
+
+
+extern uint8_t __thiscall ext_00584C00(uint32_t self);
+extern uint32_t mem_00925134;
+
+uint8_t __thiscall fn_00480E40(uint32_t self) {
+    uint32_t subobj = self + 0x10;
+    uint32_t vtable = *reinterpret_cast<uint32_t*>(subobj);
+    using GetListFn = uint32_t(__thiscall*)(uint32_t);
+    auto get_list = reinterpret_cast<GetListFn>(*reinterpret_cast<uint32_t*>(vtable + 0xC));
+    uint32_t list_ptr = get_list(subobj);
+
+    using InvalidParamFn = void(__cdecl*)();
+    auto invalid_param = reinterpret_cast<InvalidParamFn>(mem_00925134);
+
+    uint32_t it = *reinterpret_cast<uint32_t*>(list_ptr + 0x4);
+    if (it > *reinterpret_cast<uint32_t*>(list_ptr + 0x8)) {
+        invalid_param();
+    }
+
+    for (;;) {
+        uint32_t end = *reinterpret_cast<uint32_t*>(list_ptr + 0x8);
+        if (*reinterpret_cast<uint32_t*>(list_ptr + 0x4) > end) {
+            invalid_param();
+        }
+        if (it == end) {
+            return 0;
+        }
+        if (it >= *reinterpret_cast<uint32_t*>(list_ptr + 0x8)) {
+            invalid_param();
+        }
+        uint32_t item = *reinterpret_cast<uint32_t*>(it);
+        if (ext_00584C00(item) != 0) {
+            return 1;
+        }
+        if (it >= *reinterpret_cast<uint32_t*>(list_ptr + 0x8)) {
+            invalid_param();
+        }
+        it += 4;
+    }
+}
+} // namespace lift_00480E40
