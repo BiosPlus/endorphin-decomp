@@ -55731,6 +55731,12 @@
     "summary": "Getter returning int32_t field at offset +0x38.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006DFFF0": {
+    "name": "vec4d_length",
+    "signature": "double __cdecl sub_006DFFF0(uint32_t arg0)",
+    "summary": "Computes the Euclidean norm (magnitude) of a 4-element double-precision vector or quaternion.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006E0050": {
     "name": "Unknown::FillDoubleAndSixDwords",
     "class": "Unknown",
@@ -55793,6 +55799,12 @@
     "class": "Unknown",
     "signature": "extern \"C\" uint32_t __stdcall fn_006E5710(void* self, uint32_t value)",
     "summary": "Returns `value` if GetFlag40(self) is nonzero, otherwise 0 (branchless select via neg/sbb/and).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
+  "0x006E5750": {
+    "name": "sub_006E5750",
+    "signature": "void __thiscall sub_006E5750(uint32_t self, uint32_t flags)",
+    "summary": "Updates state flags/counters on field_0x98 and invokes registered callbacks before calling sub_006E5730",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
   "0x006E62A0": {
