@@ -56144,6 +56144,12 @@
     "summary": "Stores -_HUGE into three global doubles.",
     "lifted_path": "lifted/clones/auto_clones_770000.cpp"
   },
+  "0x007747F0": {
+    "name": "CopyHugeValueToGlobals_007747F0",
+    "signature": "void fn_007747F0()",
+    "summary": "Copies the 8-byte value pointed to by the _HUGE pointer into four consecutive 8-byte globals (0xB605E0..0xB605FC).",
+    "lifted_path": "lifted/clones/auto_clones_770000.cpp"
+  },
   "0x00774B10": {
     "name": "sub_00774B10",
     "signature": "extern \"C\" void* __fastcall fn_00774B10(void* self, int edx_unused, unsigned int flags)",
