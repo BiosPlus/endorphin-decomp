@@ -607,3 +607,23 @@ DWORD fn_007DB4C0(void* self, DWORD a1, float a2) {
     return ext_007DAE80(result, self, a1, a2);
 }
 } // namespace lift_007DB4C0
+
+// [0x007D9680] sub_007D9680 (59 bytes)
+namespace lift_007D9680 {
+extern void ext_007D5950(uint32_t kind, uint32_t arg4, uint32_t str, uint32_t arg3,
+                             uint32_t n, uint32_t limit, uint32_t sum);
+
+// @name advanceBounded
+// @summary Advances a 32-bit position by n, reporting via ext_007D5950 when the new position exceeds the stored limit.
+// @field Cursor +0x00 uint32_t field_0x00
+// @field Cursor +0x04 uint32_t field_0x04
+void fn_007D9680(void* cursor, uint32_t n, uint32_t arg3, uint32_t arg4) {
+    uint32_t pos = lift_field<uint32_t>(cursor, 0x00);
+    uint32_t limit = lift_field<uint32_t>(cursor, 0x04);
+    uint32_t sum = pos + n;
+    if (sum > limit) {
+        ext_007D5950(3, arg4, 0x0099E0D8u, arg3, n, limit, sum);
+    }
+    lift_field<uint32_t>(cursor, 0x00) = lift_field<uint32_t>(cursor, 0x00) + n;
+}
+} // namespace lift_007D9680

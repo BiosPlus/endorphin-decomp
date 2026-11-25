@@ -1,0 +1,27 @@
+{
+  "va": "0x007D9680",
+  "size": 59,
+  "orig_symbol": "sub_007D9680",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "advanceBounded",
+  "signature": "void fn_007D9680(void* cursor, uint32_t n, uint32_t arg3, uint32_t arg4)",
+  "summary": "Advances a 32-bit position by n, reporting via ext_007D5950 when the new position exceeds the stored limit.",
+  "fields": [
+    {
+      "class": "Cursor",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Cursor",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:53:17Z"
+}
