@@ -63131,6 +63131,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006F7280 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006F74E0": {
+    "name": "sub_006F74E0",
+    "signature": "void __thiscall sub_006F74E0(uint32_t self, uint32_t mode, uint32_t target)",
+    "summary": "Sets mode at +0x198 and validates/stores target object at +0x19c based on vtable+0x8 type check",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F7550": {
     "name": "sub_006F7550",
     "signature": "extern \"C\" int32_t __fastcall fn_006F7550(void* self)",
@@ -65035,6 +65041,12 @@
     "summary": "Setter storing int32_t argument into field at offset +0x18.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006FCD50": {
+    "name": "sub_006FCD50",
+    "signature": "uint32_t __thiscall sub_006FCD50(uint32_t self)",
+    "summary": "Initializes two zeroed 32-bit fields and two embedded 20-byte structs with self-referential pointers, returning this.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FCF10": {
     "name": "initWithArgAndSelfSubobject",
     "class": "Unknown",
@@ -65185,6 +65197,12 @@
     "signature": "extern \"C\" void* __fastcall fn_00700820(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00700840 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x00700840": {
+    "name": "sub_00700840_dtor",
+    "signature": "extern \"C\" void __fastcall fn_00700840(void* self)",
+    "summary": "Destructor that resets vtable, releases member at +0x0C, cleans up +0x10, and calls base destructor.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x007008B0": {
     "name": "get_field_0x1e8",

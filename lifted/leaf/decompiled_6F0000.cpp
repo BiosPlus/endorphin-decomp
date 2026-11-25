@@ -2288,3 +2288,66 @@ extern int32_t __cdecl fn_006FECE0(void* pathObj, char** outParts) {
     return count - 1;
 }
 } // namespace lift_006FECE0
+
+// [0x006FCD50]
+namespace lift_006FCD50 {
+// @name sub_006FCD50
+// @summary Initializes two zeroed 32-bit fields and two embedded 20-byte structs with self-referential pointers, returning this.
+// @field self +0x00 uint32_t field_0x00
+// @field self +0x04 uint32_t field_0x04
+// @field self +0x08 uint8_t[20] field_0x08
+// @field self +0x1C uint32_t field_0x1C
+// @field self +0x20 uint8_t[20] field_0x20
+// @field self +0x34 uint32_t field_0x34
+
+
+extern void mem_write32(uint32_t addr, uint32_t val);
+extern uint32_t __thiscall ext_006D2130(uint32_t self, int32_t arg1, uint32_t arg2);
+
+uint32_t __thiscall sub_006FCD50(uint32_t self) {
+    mem_write32(self + 0x00, 0);
+    mem_write32(self + 0x04, 0);
+
+    uint32_t first = self + 0x08;
+    ext_006D2130(first, 0x10, 0x4);
+    mem_write32(first + 0x14, first + 0x10);
+
+    uint32_t second = self + 0x20;
+    ext_006D2130(second, 0x10, 0x4);
+    mem_write32(second + 0x14, second + 0x10);
+
+    return self;
+}
+} // namespace lift_006FCD50
+
+// [0x006F74E0]
+namespace lift_006F74E0 {
+// @name sub_006F74E0
+// @summary Sets mode at +0x198 and validates/stores target object at +0x19c based on vtable+0x8 type check
+// @field unknown +0x198 uint32_t field_0x198
+// @field unknown +0x19c uint32_t field_0x19c
+
+void __thiscall sub_006F74E0(uint32_t self, uint32_t mode, uint32_t target) {
+    *(uint32_t*)(uintptr_t)(self + 0x198) = mode;
+    if (mode == 0) {
+        if (target != 0) {
+            uint32_t vtable = *(uint32_t*)(uintptr_t)target;
+            uint32_t type = ((uint32_t(__thiscall*)(uint32_t))(uintptr_t)(*(uint32_t*)(uintptr_t)(vtable + 0x8)))(target);
+            if (type == 6) {
+                *(uint32_t*)(uintptr_t)(self + 0x19c) = target;
+                return;
+            }
+        }
+    } else if (mode == 1) {
+        if (target != 0) {
+            uint32_t vtable = *(uint32_t*)(uintptr_t)target;
+            uint32_t type = ((uint32_t(__thiscall*)(uint32_t))(uintptr_t)(*(uint32_t*)(uintptr_t)(vtable + 0x8)))(target);
+            if (type == 8 && target != self) {
+                *(uint32_t*)(uintptr_t)(self + 0x19c) = target;
+                return;
+            }
+        }
+    }
+    *(uint32_t*)(uintptr_t)(self + 0x19c) = 0;
+}
+} // namespace lift_006F74E0
