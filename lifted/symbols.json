@@ -16954,6 +16954,12 @@
     "summary": "Lazily initializes a static object at 0x00AE9F34 guarded by 0x00AE9F38 and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
+  "0x004F9310": {
+    "name": "getStaticSingleton_004F9310",
+    "signature": "void* fn_004F9310()",
+    "summary": "Lazily initializes and returns the static singleton object at 0x00AE9F3C.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F9370": {
     "name": "getStaticObject_004F9370",
     "signature": "void* fn_004F9370()",

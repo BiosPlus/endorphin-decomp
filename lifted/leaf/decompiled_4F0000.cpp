@@ -245,3 +245,24 @@ void* __cdecl fn_004F9430() {
     return &mem_00AE9F54;
 }
 } // namespace lift_004F9430
+
+// [0x004F9310]
+namespace lift_004F9310 {
+// @name getStaticSingleton_004F9310
+// @summary Lazily initializes and returns the static singleton object at 0x00AE9F3C.
+
+
+extern uint32_t mem_00AE9F40;
+extern uint32_t mem_00AE9F3C;
+
+extern void __thiscall ext_0067A670(void* self);
+
+void* fn_004F9310() {
+    if ((mem_00AE9F40 & 1u) == 0) {
+        mem_00AE9F40 |= 1u;
+        ext_0067A670(&mem_00AE9F3C);
+        mem_00AE9F3C = 0x0094D54Cu;
+    }
+    return &mem_00AE9F3C;
+}
+} // namespace lift_004F9310
