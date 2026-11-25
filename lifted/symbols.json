@@ -61269,6 +61269,12 @@
     "summary": "Converts an ASCII lowercase letter (a-z) to uppercase; other values are returned unchanged. Result is in AL.",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x0085E720": {
+    "name": "BuildPrintable16Ring",
+    "signature": "void fn_0085E720(const char* src, int len)",
+    "summary": "Walks len bytes of src, storing each as a printable char (control bytes \u003c 0x20 become '.') into a 16-slot ring buffer that is NUL-terminated after each write.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085E9E0": {
     "name": "strcat",
     "signature": "char* fn_0085E9E0(char* dst, const char* src)",

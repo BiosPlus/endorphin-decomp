@@ -751,3 +751,26 @@ void sub_00859AF0(uint32_t* node) {
     ext_0086CD00(node);
 }
 } // namespace lift_00859AF0
+
+// [0x0085E720] sub_0085E720 (76 bytes)
+namespace lift_0085E720 {
+// @name BuildPrintable16Ring
+// @summary Walks len bytes of src, storing each as a printable char (control bytes < 0x20 become '.') into a 16-slot ring buffer that is NUL-terminated after each write.
+void fn_0085E720(const char* src, int len) {
+    char buf[17] = {};  // 16 ring slots plus the trailing NUL index (esi+1 <= 16)
+    int esi = 0;
+    for (int i = 0; i < len; ++i) {
+        const unsigned char c = static_cast<unsigned char>(src[i]);
+        buf[esi] = '.';
+        if (c >= 0x20) {
+            buf[esi] = static_cast<char>(c);
+        }
+        buf[esi + 1] = '\0';
+        ++esi;
+        if (esi > 15) {
+            esi = 0;
+        }
+    }
+    (void)buf;  // local result; original never publishes it
+}
+} // namespace lift_0085E720

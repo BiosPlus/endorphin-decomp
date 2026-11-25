@@ -1,0 +1,13 @@
+{
+  "va": "0x0085E720",
+  "size": 76,
+  "orig_symbol": "sub_0085E720",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "BuildPrintable16Ring",
+  "signature": "void fn_0085E720(const char* src, int len)",
+  "summary": "Walks len bytes of src, storing each as a printable char (control bytes \u003c 0x20 become '.') into a 16-slot ring buffer that is NUL-terminated after each write.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:40:22Z"
+}
