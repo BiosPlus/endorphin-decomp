@@ -67128,6 +67128,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_780000.cpp"
   },
+  "0x00780270": {
+    "name": "initGlobalArray_00B608A0",
+    "signature": "void* fn_00780270()",
+    "summary": "Initializes global array at 0x00B608A0 with 0xB1 (177) elements.",
+    "lifted_path": "lifted/clones/auto_clones_780000.cpp"
+  },
   "0x00780290": {
     "name": "sub_00780290",
     "signature": "extern void fn_00780290(void)",
