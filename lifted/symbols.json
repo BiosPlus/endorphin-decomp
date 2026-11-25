@@ -38338,6 +38338,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0040A910 (sub_00407830).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00687890": {
+    "name": "fillElementsFromSource",
+    "class": "UnknownElement44",
+    "signature": "void fn_00687890(void* first, void* end, const void* src)",
+    "summary": "Fills each 0x2C-byte element in [first, end) with a copy of *src: four dwords then a std::string at +0x10 assigned via operator=.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x006878E0": {
     "name": "fn_006878E0 (fill range with copies of one record)",
     "signature": "void fn_006878E0(void* dst, void* end, const void* src)",

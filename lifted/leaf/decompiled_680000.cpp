@@ -647,3 +647,35 @@ uint32_t fn_00681250(uint32_t first, uint32_t last, uint32_t destEnd) {
     return destEnd;
 }
 } // namespace lift_00681250
+
+// [0x00687890] sub_00687890 (67 bytes)
+namespace lift_00687890 {
+// IAT slot for std::string::operator= (MSVCP80); its .rdata value is 0x006291BE.
+extern const uint32_t mem_00924FDC;
+// Indirect call target through mem_00924FDC: thiscall std::string::operator=(const std::string& rhs).
+extern void ext_006291BE(void* self, const void* rhs);
+
+// @name fillElementsFromSource
+// @class UnknownElement44
+// @summary Fills each 0x2C-byte element in [first, end) with a copy of *src: four dwords then a std::string at +0x10 assigned via operator=.
+// @field UnknownElement44 +0x00 u32 field_0x00
+// @field UnknownElement44 +0x04 u32 field_0x04
+// @field UnknownElement44 +0x08 u32 field_0x08
+// @field UnknownElement44 +0x0C u32 field_0x0C
+// @field UnknownElement44 +0x10 std::string field_0x10
+void fn_00687890(void* first, void* end, const void* src) {
+    if (first == end) {
+        return;
+    }
+    uint8_t* dst = reinterpret_cast<uint8_t*>(first);
+    const uint8_t* const from = reinterpret_cast<const uint8_t*>(src);
+    do {
+        lift_field<uint32_t>(dst, 0x00) = lift_field<uint32_t>(from, 0x00);
+        lift_field<uint32_t>(dst, 0x04) = lift_field<uint32_t>(from, 0x04);
+        lift_field<uint32_t>(dst, 0x08) = lift_field<uint32_t>(from, 0x08);
+        lift_field<uint32_t>(dst, 0x0C) = lift_field<uint32_t>(from, 0x0C);
+        ext_006291BE(dst + 0x10, from + 0x10);
+        dst += 0x2C;
+    } while (dst != reinterpret_cast<uint8_t*>(end));
+}
+} // namespace lift_00687890

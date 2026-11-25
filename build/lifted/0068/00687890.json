@@ -1,0 +1,46 @@
+{
+  "va": "0x00687890",
+  "size": 67,
+  "orig_symbol": "sub_00687890",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "fillElementsFromSource",
+  "class": "UnknownElement44",
+  "signature": "void fn_00687890(void* first, void* end, const void* src)",
+  "summary": "Fills each 0x2C-byte element in [first, end) with a copy of *src: four dwords then a std::string at +0x10 assigned via operator=.",
+  "fields": [
+    {
+      "class": "UnknownElement44",
+      "offset": "+0x0",
+      "type": "u32",
+      "name": "field_0x00"
+    },
+    {
+      "class": "UnknownElement44",
+      "offset": "+0x4",
+      "type": "u32",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownElement44",
+      "offset": "+0x8",
+      "type": "u32",
+      "name": "field_0x08"
+    },
+    {
+      "class": "UnknownElement44",
+      "offset": "+0xC",
+      "type": "u32",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "UnknownElement44",
+      "offset": "+0x10",
+      "type": "std::string",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:17:44Z"
+}
