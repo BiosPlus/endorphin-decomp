@@ -65703,6 +65703,11 @@
     "summary": "Adds byte and dword values from ebx, ecx, and edx into memory and eax",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B7084": {
+    "name": "SwitchCaseIndexTable_007B7084",
+    "summary": "12-byte byte-index table for a switch jump table at 0x007B6xxx; this is data, not code. The disassembly above is the table bytes decoded as instructions.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B7970": {
     "name": "ProcessByteBufferUntilStop",
     "signature": "void __cdecl ProcessByteBufferUntilStop(uint32_t count, const uint8_t* data)",

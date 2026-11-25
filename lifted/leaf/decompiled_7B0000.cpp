@@ -1301,3 +1301,16 @@ uint32_t fn_007BBB40(void* self, uint32_t cursor, uint32_t remaining, uint32_t a
 }
 } // namespace lift_007BBB90
 } // namespace lift_007BBB40
+
+// [0x007B7084] SwitchCaseIndexTable_007B7084 (12 bytes)
+namespace lift_007B7084 {
+// @name SwitchCaseIndexTable_007B7084
+// @summary 12-byte byte-index table for a switch jump table at 0x007B6xxx; this is data, not code. The disassembly above is the table bytes decoded as instructions.
+// Indexed by the case value; the value selects an entry in the jump table at 0x007B7074 (mov cl, [eax+0x7B7084]; jmp [ecx*4+0x7B7074]).
+
+extern const BYTE SwitchCaseIndexTable_007B7084[12];
+
+const BYTE SwitchCaseIndexTable_007B7084[12] = {
+    0x00, 0x03, 0x00, 0x03, 0x03, 0x03, 0x01, 0x03, 0x02, 0x03, 0x01, 0x03,
+};
+} // namespace lift_007B7084
