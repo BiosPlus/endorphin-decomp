@@ -3991,6 +3991,12 @@
     "summary": "MSVC scalar deleting destructor: calls thunk_MFC80_ord_605 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0044ACE0": {
+    "name": "sub_0044ACE0",
+    "signature": "extern \"C\" void __thiscall fn_0044ACE0(uintptr_t self, uintptr_t arg1, uintptr_t arg2, uintptr_t arg3)",
+    "summary": "Dynamically casts the third argument and, if it matches this+0x148, forwards to sub_0044ABD0",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044AF30": {
     "name": "GetStringLiteral_0044AF30",
     "signature": "extern \"C\" const char* __cdecl fn_0044AF30()",
@@ -31594,6 +31600,13 @@
     "signature": "uint32_t __thiscall fn_00629B00(void* self)",
     "summary": "Calls vtable slot 16 (offset 0x40) on this with argument 1",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00629D00": {
+    "name": "UnknownClass::ctor_00629D00",
+    "class": "UnknownClass",
+    "signature": "uintptr_t fn_00629D00(void* self, uint32_t arg0)",
+    "summary": "Initializes base via ext_005FF240, zeroes floats at +0x34/+0x38, sets vtable to 0x0097852C, returns this.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x00629DF0": {
     "name": "ComputeFloatIntoField30",

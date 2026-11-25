@@ -742,3 +742,24 @@ void* fn_006294D0(void* self, uint32_t arg0) {
     return self;
 }
 } // namespace lift_006294D0
+
+// [0x00629D00] sub_00629D00 (33 bytes)
+namespace lift_00629D00 {
+// Known callee 0x005FF240: sub_005FF240 (LIFTED) - zeroes object fields, stores arg at +0x28, sets vtable 0x0096F154.
+extern uint32_t ext_005FF240(uintptr_t this_ptr, uint32_t arg0);
+
+// @name UnknownClass::ctor_00629D00
+// @class UnknownClass
+// @summary Initializes base via ext_005FF240, zeroes floats at +0x34/+0x38, sets vtable to 0x0097852C, returns this.
+// @field UnknownClass +0x00 uint32_t vtable
+// @field UnknownClass +0x34 float field_0x34
+// @field UnknownClass +0x38 float field_0x38
+uintptr_t fn_00629D00(void* self, uint32_t arg0) {
+    const uintptr_t this_ptr = reinterpret_cast<uintptr_t>(self);
+    ext_005FF240(this_ptr, arg0);
+    lift_field<float>(self, 0x34) = 0.0f;
+    lift_field<uint32_t>(self, 0x00) = 0x0097852Cu;
+    lift_field<float>(self, 0x38) = 0.0f;
+    return this_ptr;
+}
+} // namespace lift_00629D00

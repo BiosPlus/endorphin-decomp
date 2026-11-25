@@ -1,0 +1,34 @@
+{
+  "va": "0x00629D00",
+  "size": 33,
+  "orig_symbol": "sub_00629D00",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "UnknownClass::ctor_00629D00",
+  "class": "UnknownClass",
+  "signature": "uintptr_t fn_00629D00(void* self, uint32_t arg0)",
+  "summary": "Initializes base via ext_005FF240, zeroes floats at +0x34/+0x38, sets vtable to 0x0097852C, returns this.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:15:19Z"
+}
