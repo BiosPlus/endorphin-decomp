@@ -2316,3 +2316,56 @@ int fn_00449160(void* self) {
     return ext_MSVCR80_atoi(text);
 }
 } // namespace lift_00449160
+
+// [0x004490F0] sub_004490F0 (106 bytes)
+namespace lift_004490F0 {
+// @name sub_004490F0
+// @summary Auto-lifted identical-shape clone of 0x00449160 (Unknown::readIntFromStringMember).
+namespace lift_00449160 {
+// Known callee 0x006A5F4A: thunk_MFC80_ord_3761 (IAT jump thunk forwarding to MFC80!ord_3761.)
+extern void ext_006A5F4A(void* self, void* arg);
+
+// MFC80 / MSVCR80 imports reached through IAT slots. The mem_ symbols are the
+// .rdata import-ordinal markers at the call sites; the ext_ prototypes below
+// are the portable stand-ins for the imported routines.
+extern const uint32_t mem_009242FC; // MFC80!ord_310
+extern const uint32_t mem_00924300; // MFC80!ord_876
+extern const uint32_t mem_009251E4; // MSVCR80!atoi (string "B|b" in .rdata)
+extern const uint32_t mem_009242F4; // MFC80!ord_578
+
+extern void ext_MFC80_ord_310(void* cstr);           // CString ctor
+extern const char* ext_MFC80_ord_876(void* cstr);    // CString -> LPCSTR
+extern void ext_MFC80_ord_578(void* cstr);           // CString dtor
+extern int ext_MSVCR80_atoi(const char* s);
+
+namespace {
+
+// Stack-resident MFC CString used as a temporary; the destructor runs on
+// every exit path, matching the unwind cleanup of the original frame.
+struct TempCString {
+    alignas(8) unsigned char bytes[4];
+
+    TempCString() { ext_MFC80_ord_310(bytes); }
+    ~TempCString() { ext_MFC80_ord_578(bytes); }
+
+    TempCString(const TempCString&) = delete;
+    TempCString& operator=(const TempCString&) = delete;
+};
+
+} // namespace
+
+// @name Unknown::readIntFromStringMember
+// @class Unknown
+// @summary Passes a temporary CString into the sub-object at self+0xd0, then returns atoi() of its C-string contents.
+// @field Unknown +0xd0 unknown field_0xd0 (embedded sub-object; its address is passed as this to the callee)
+int fn_004490F0(void* self) {
+    TempCString tmp;
+
+    auto* member = reinterpret_cast<unsigned char*>(self) + 0x78;
+    ext_006A5F4A(member, tmp.bytes);
+
+    const char* text = ext_MFC80_ord_876(tmp.bytes);
+    return ext_MSVCR80_atoi(text);
+}
+} // namespace lift_00449160
+} // namespace lift_004490F0

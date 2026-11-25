@@ -953,7 +953,7 @@ struct Unknown_Fields {
     // +0xC8  DWORD                    selectionBuffer  (evidence: 0x00448420) // CONFLICT: multiple definitions at +0xC8
     // +0xCC  DWORD                    field_0xcc  (evidence: 0x00448420) // CONFLICT: multiple definitions at +0xCC
     // +0xCC  void*                    field_0xcc  (evidence: 0x0046FDA0, 0x0046FDC0, 0x0046FF50) // CONFLICT: multiple definitions at +0xCC
-    // +0xD0  unknown field_0xd0 (embedded sub-object; its address is passed as this to the callee)  (evidence: 0x00449160) // CONFLICT: multiple definitions at +0xD0
+    // +0xD0  unknown field_0xd0 (embedded sub-object; its address is passed as this to the callee)  (evidence: 0x004490F0, 0x00449160) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  void**                   entries  (evidence: 0x00708D70, 0x0070AD00, 0x0070BF00) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  double                   field_0xD0  (evidence: 0x005457B0, 0x005481C0) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  float                    field_0xD0  (evidence: 0x007D83B0) // CONFLICT: multiple definitions at +0xD0

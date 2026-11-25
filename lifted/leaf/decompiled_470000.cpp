@@ -700,3 +700,173 @@ void __thiscall sub_00477EC0(void* self, uint32_t arg0) {
     }
 }
 } // namespace lift_00477EC0
+
+// [0x00470120] sub_00470120 (108 bytes)
+namespace lift_00470120 {
+// @name sub_00470120
+// @summary Auto-lifted identical-shape clone of 0x005E0B20 (TreeIterator::increment).
+namespace lift_005E0B20 {
+// MSVCR80!_invalid_parameter_noinfo, loaded through IAT slot mem_00925134.
+extern void (*mem_00925134)(void);
+
+// @name TreeIterator::increment
+// @class TreeIterator
+// @summary Advances a binary-tree iterator to its in-order successor (red-black tree style, nil sentinel at node+0x51).
+// @field TreeIterator +0x00 void* field_0x00
+// @field TreeIterator +0x04 uint8_t* node
+void fn_00470120(void* self) {
+    // Node layout used here: +0x00 left, +0x04 parent, +0x08 right, +0x51 isNil (byte).
+    // Iterator layout: +0x00 owner (null-checked), +0x04 current node.
+    auto* it = static_cast<uint8_t*>(self);
+
+    auto load_ptr = [](const uint8_t* base, std::size_t off) -> uint8_t* {
+        uint8_t* p;
+        std::memcpy(&p, base + off, sizeof p);
+        return p;
+    };
+    auto store_ptr = [](uint8_t* base, std::size_t off, uint8_t* v) {
+        std::memcpy(base + off, &v, sizeof v);
+    };
+    auto is_nil = [](const uint8_t* n) -> bool {
+        return n[0x45] != 0;
+    };
+    auto invalid_parameter = []() {
+        if (mem_00925134) {
+            mem_00925134();
+        }
+    };
+
+    if (load_ptr(it, 0x00) == nullptr) {
+        invalid_parameter();
+    }
+
+    uint8_t* node = load_ptr(it, 0x04);
+    if (is_nil(node)) {
+        invalid_parameter();
+        return;
+    }
+
+    uint8_t* right = load_ptr(node, 0x08);
+    if (!is_nil(right)) {
+        // Successor is the leftmost node of the right subtree.
+        uint8_t* leftChild = load_ptr(right, 0x00);
+        if (is_nil(leftChild)) {
+            store_ptr(it, 0x04, right);
+            return;
+        }
+        uint8_t* cur = right;
+        do {
+            cur = leftChild;
+            leftChild = load_ptr(cur, 0x00);
+        } while (!is_nil(leftChild));
+        store_ptr(it, 0x04, cur);
+        return;
+    }
+
+    // No right subtree: climb while we are a right child; stop at a left-child link.
+    uint8_t* p = load_ptr(node, 0x04);
+    if (is_nil(p)) {
+        store_ptr(it, 0x04, p);
+        return;
+    }
+    for (;;) {
+        uint8_t* cur = load_ptr(it, 0x04);
+        if (load_ptr(p, 0x08) != cur) {
+            break;
+        }
+        store_ptr(it, 0x04, p);
+        uint8_t* grand = load_ptr(p, 0x04);
+        p = grand;
+        if (is_nil(grand)) {
+            break;
+        }
+    }
+    store_ptr(it, 0x04, p);
+}
+} // namespace lift_005E0B20
+} // namespace lift_00470120
+
+// [0x00474FF0] sub_00474FF0 (108 bytes)
+namespace lift_00474FF0 {
+// @name sub_00474FF0
+// @summary Auto-lifted identical-shape clone of 0x005E0B20 (TreeIterator::increment).
+namespace lift_005E0B20 {
+// MSVCR80!_invalid_parameter_noinfo, loaded through IAT slot mem_00925134.
+extern void (*mem_00925134)(void);
+
+// @name TreeIterator::increment
+// @class TreeIterator
+// @summary Advances a binary-tree iterator to its in-order successor (red-black tree style, nil sentinel at node+0x51).
+// @field TreeIterator +0x00 void* field_0x00
+// @field TreeIterator +0x04 uint8_t* node
+void fn_00474FF0(void* self) {
+    // Node layout used here: +0x00 left, +0x04 parent, +0x08 right, +0x51 isNil (byte).
+    // Iterator layout: +0x00 owner (null-checked), +0x04 current node.
+    auto* it = static_cast<uint8_t*>(self);
+
+    auto load_ptr = [](const uint8_t* base, std::size_t off) -> uint8_t* {
+        uint8_t* p;
+        std::memcpy(&p, base + off, sizeof p);
+        return p;
+    };
+    auto store_ptr = [](uint8_t* base, std::size_t off, uint8_t* v) {
+        std::memcpy(base + off, &v, sizeof v);
+    };
+    auto is_nil = [](const uint8_t* n) -> bool {
+        return n[0x11] != 0;
+    };
+    auto invalid_parameter = []() {
+        if (mem_00925134) {
+            mem_00925134();
+        }
+    };
+
+    if (load_ptr(it, 0x00) == nullptr) {
+        invalid_parameter();
+    }
+
+    uint8_t* node = load_ptr(it, 0x04);
+    if (is_nil(node)) {
+        invalid_parameter();
+        return;
+    }
+
+    uint8_t* right = load_ptr(node, 0x08);
+    if (!is_nil(right)) {
+        // Successor is the leftmost node of the right subtree.
+        uint8_t* leftChild = load_ptr(right, 0x00);
+        if (is_nil(leftChild)) {
+            store_ptr(it, 0x04, right);
+            return;
+        }
+        uint8_t* cur = right;
+        do {
+            cur = leftChild;
+            leftChild = load_ptr(cur, 0x00);
+        } while (!is_nil(leftChild));
+        store_ptr(it, 0x04, cur);
+        return;
+    }
+
+    // No right subtree: climb while we are a right child; stop at a left-child link.
+    uint8_t* p = load_ptr(node, 0x04);
+    if (is_nil(p)) {
+        store_ptr(it, 0x04, p);
+        return;
+    }
+    for (;;) {
+        uint8_t* cur = load_ptr(it, 0x04);
+        if (load_ptr(p, 0x08) != cur) {
+            break;
+        }
+        store_ptr(it, 0x04, p);
+        uint8_t* grand = load_ptr(p, 0x04);
+        p = grand;
+        if (is_nil(grand)) {
+            break;
+        }
+    }
+    store_ptr(it, 0x04, p);
+}
+} // namespace lift_005E0B20
+} // namespace lift_00474FF0

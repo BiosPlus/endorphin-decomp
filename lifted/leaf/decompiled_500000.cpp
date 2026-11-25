@@ -69,6 +69,7 @@ void __stdcall sub_0050EE70(uint32_t begin, uint32_t end) {
 }
 } // namespace lift_0050EE70
 #include <memory>
+#include <cstddef>
 
 // [0x00503CA0] sub_00503CA0 (37 bytes)
 namespace lift_00503CA0 {
@@ -2259,3 +2260,41 @@ void fn_0050BFF0(void* self, void** out, const void* begin, const void* first,
     out[1] = const_cast<void*>(first);
 }
 } // namespace lift_0050BFF0
+
+// [0x005067A0] sub_005067A0 (108 bytes)
+namespace lift_005067A0 {
+// @name sub_005067A0
+// @summary Auto-lifted identical-shape clone of 0x005230B0 (compactRecordRangeInto).
+namespace lift_005230B0 {
+// Known callee 0x00522840: copyRecordRangeAndGetEnd (Copies the 0x28-byte record range [begin, end) into dst via copyStringRecordRange, then returns dst advanced by the whole-record count of that range (in bytes).)
+extern void* ext_00506740(const void* begin, const void* end, void* dst);
+// IAT slot for MSVCR80!_invalid_parameter_noinfo
+extern void (*mem_00925134)(void);
+
+// @name compactRecordRangeInto
+// @summary Copies the record range [srcBegin, end) into dst, destroys the vacated tail records, shrinks the container end to the new end, and writes {expectedFirst, dst} to the out pair.
+// @field RecordRange +0x08 uint8_t* field_0x08
+void fn_005067A0(void* self, void** out, const void* first, void* dst,
+                 const void* expectedFirst, const void* srcBegin) {
+    if (first == nullptr || first != expectedFirst) {
+        mem_00925134();
+    }
+
+    if (dst != srcBegin) {
+        uint8_t* newEnd = static_cast<uint8_t*>(ext_00506740(srcBegin, lift_field<uint8_t*>(self, 0x08), dst));
+        uint8_t* end = lift_field<uint8_t*>(self, 0x08);
+        if (newEnd != end) {
+            for (uint8_t* rec = newEnd; rec != end; rec += 0x68) {
+                // Virtual slot 0 (deleting-destructor style call with flag 0).
+                void** vtbl = *reinterpret_cast<void***>(rec);
+                reinterpret_cast<void (*)(void*, int)>(vtbl[0])(rec, 0);
+            }
+        }
+        lift_field<uint8_t*>(self, 0x08) = newEnd;
+    }
+
+    out[0] = const_cast<void*>(expectedFirst);
+    out[1] = dst;
+}
+} // namespace lift_005230B0
+} // namespace lift_005067A0

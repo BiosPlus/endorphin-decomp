@@ -1,0 +1,28 @@
+{
+  "va": "0x00419F50",
+  "size": 108,
+  "orig_symbol": "sub_00419F50",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "sub_00419F50",
+  "class": "TreeIterator",
+  "signature": "void fn_00419F50(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x005E0B20 (TreeIterator::increment).",
+  "fields": [
+    {
+      "class": "TreeIterator",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "TreeIterator",
+      "offset": "+0x4",
+      "type": "uint8_t*",
+      "name": "node"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T03:58:34Z"
+}
