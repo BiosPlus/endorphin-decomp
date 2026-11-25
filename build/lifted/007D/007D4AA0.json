@@ -1,0 +1,34 @@
+{
+  "va": "0x007D4AA0",
+  "size": 64,
+  "orig_symbol": "sub_007D4AA0",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "Unknown::FindLinkPredecessor",
+  "class": "Unknown",
+  "signature": "static inline std::uint32_t lift_load32(std::uint32_t addr)",
+  "summary": "Searches a link structure rooted at the head node (+0x04 chain, then +0x08 chain with back-link checks) for the given key; returns the predecessor node, the matching child, or 0.",
+  "fields": [
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:10:44Z"
+}

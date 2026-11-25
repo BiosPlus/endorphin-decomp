@@ -780,3 +780,48 @@ uint32_t fn_007DCAC0(void* self, uint32_t key) {
     }
 }
 } // namespace lift_007DCAC0
+
+// [0x007D4AA0] sub_007D4AA0 (64 bytes)
+namespace lift_007D4AA0 {
+// @name Unknown::FindLinkPredecessor
+// @class Unknown
+// @summary Searches a link structure rooted at the head node (+0x04 chain, then +0x08 chain with back-link checks) for the given key; returns the predecessor node, the matching child, or 0.
+// @field TreeNode +0x00 uint32_t field_0x00
+// @field TreeNode +0x04 uint32_t field_0x04
+// @field TreeNode +0x08 uint32_t field_0x08
+
+// Guest-address load helper; keeps 32-bit address arithmetic explicit.
+static inline std::uint32_t lift_load32(std::uint32_t addr) {
+    return *reinterpret_cast<const std::uint32_t*>(static_cast<std::uintptr_t>(addr));
+}
+
+// Stack arguments in the original: key at [esp+4], head at [esp+8].
+std::uint32_t fn_007D4AA0(std::uint32_t key, std::uint32_t head) {
+    const std::uint32_t first = lift_load32(head + 0x04);
+
+    if (first != key) {
+        // Walk the +0x00 chain from 'first' until a node whose +0x00 link equals key.
+        std::uint32_t p = first;
+        while (lift_load32(p) != key) {
+            p = lift_load32(p);
+        }
+        return p;
+    }
+
+    // first == key: examine the +0x08 chain of head.
+    std::uint32_t cur = lift_load32(head + 0x08);
+    if (cur == key) {
+        return 0;
+    }
+
+    std::uint32_t prev = head;
+    while (lift_load32(cur + 0x04) == prev) {
+        prev = cur;
+        cur = lift_load32(cur + 0x08);
+        if (cur == key) {
+            return 0;
+        }
+    }
+    return cur;
+}
+} // namespace lift_007D4AA0

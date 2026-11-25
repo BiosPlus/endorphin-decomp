@@ -57470,6 +57470,13 @@
     "summary": "Rotates node x's left child up into x's place (right rotation); updates child/parent links.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007D4AA0": {
+    "name": "Unknown::FindLinkPredecessor",
+    "class": "Unknown",
+    "signature": "static inline std::uint32_t lift_load32(std::uint32_t addr)",
+    "summary": "Searches a link structure rooted at the head node (+0x04 chain, then +0x08 chain with back-link checks) for the given key; returns the predecessor node, the matching child, or 0.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007D4AE0": {
     "name": "setFlag30_007D4AE0",
     "signature": "void fn_007D4AE0(void* self)",
