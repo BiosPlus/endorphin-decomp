@@ -1,0 +1,46 @@
+{
+  "va": "0x00519C80",
+  "size": 42,
+  "orig_symbol": "sub_00519C80",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "Unknown::ctorFromCString_00519C80",
+  "class": "Unknown",
+  "signature": "void* fn_00519C80(void* self, const char* name)",
+  "summary": "Constructor: stores vtable 0x0095219C, constructs an embedded std::string at +0x04 from the given C string, zeroes +0x24/+0x28, sets +0x20 to 1, and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "int32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "int32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "int32_t",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:28:48Z"
+}

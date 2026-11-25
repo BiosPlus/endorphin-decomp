@@ -20248,6 +20248,13 @@
     "summary": "Compares a std::string argument against the two key strings in the table at mem_00AECC44 and returns the index of the first match (0 or 1), or 3 if neither matches.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00519C80": {
+    "name": "Unknown::ctorFromCString_00519C80",
+    "class": "Unknown",
+    "signature": "void* fn_00519C80(void* self, const char* name)",
+    "summary": "Constructor: stores vtable 0x0095219C, constructs an embedded std::string at +0x04 from the given C string, zeroes +0x24/+0x28, sets +0x20 to 1, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00519CE0": {
     "name": "SetVptrAndTailDtor_00519CE0",
     "signature": "void sub_00519CE0(void* ecx)",

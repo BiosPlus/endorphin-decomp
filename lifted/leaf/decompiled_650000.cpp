@@ -1496,3 +1496,26 @@ void fn_0051C730(void* self, const void* name) {
     lift_field<int32_t>(self, 0x60) = 0;
 }
 } // namespace lift_0051C730
+
+// [0x00519C80] sub_00519C80 (42 bytes)
+namespace lift_00519C80 {
+// MSVCP80 std::basic_string<char>::basic_string(const char*) reached through IAT slot mem_00924FE4.
+extern void ext_00924FE4(void* self, const char* s);
+
+// @name Unknown::ctorFromCString_00519C80
+// @class Unknown
+// @summary Constructor: stores vtable 0x0095219C, constructs an embedded std::string at +0x04 from the given C string, zeroes +0x24/+0x28, sets +0x20 to 1, and returns this.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x04 uint8_t field_0x04
+// @field Unknown +0x20 int32_t field_0x20
+// @field Unknown +0x24 int32_t field_0x24
+// @field Unknown +0x28 int32_t field_0x28
+void* fn_00519C80(void* self, const char* name) {
+    lift_field<uint32_t>(self, 0x00) = 0x0095219Cu;
+    ext_00924FE4(reinterpret_cast<uint8_t*>(self) + 0x04, name);
+    lift_field<int32_t>(self, 0x24) = 0;
+    lift_field<int32_t>(self, 0x28) = 0;
+    lift_field<int32_t>(self, 0x20) = 1;
+    return self;
+}
+} // namespace lift_00519C80
