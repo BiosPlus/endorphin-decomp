@@ -1,0 +1,28 @@
+{
+  "va": "0x004141D0",
+  "size": 70,
+  "orig_symbol": "sub_004141D0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::configureAndReadLink",
+  "class": "Unknown",
+  "signature": "extern \"C\" int mem_0093A0CC;  // .rdata dword 0x00FFFFFF (loaded and pushed as a value) extern \"C\" int mem_0093A0C4;  // .rdata \"bfu\" (dword loaded and pushed as a value) uint32_t fn_004141D0(void* self, void* arg1)",
+  "summary": "Calls ext_006A6010(arg1, 1), invokes vtable slots +0x38 and +0x34 on arg1 with two constants, then returns the dword at this+0x1B8 (or 0 when this+0x1B4 is null). Callee pops 12 bytes; the two trailing stack args are unused.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1B4",
+      "type": "uint8_t",
+      "name": "field_0x1b4[]"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1B8",
+      "type": "uint32_t",
+      "name": "field_0x1b8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:23:41Z"
+}

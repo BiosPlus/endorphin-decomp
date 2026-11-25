@@ -1181,3 +1181,40 @@ uint32_t fn_0041CCC0(void* self, int32_t index) {
     return begin + static_cast<uint32_t>(index) * kElementSize;
 }
 } // namespace lift_0041CCC0
+
+// [0x004141D0] sub_004141D0 (70 bytes)
+namespace lift_004141D0 {
+// Known callee 0x006A6010: thunk_MFC80_ord_5731 (IAT jump thunk forwarding to MFC80!ord_5731.)
+// Arity inferred from the call site: ecx = arg1 (thiscall receiver), one stack push of 1.
+extern void ext_006A6010(uint32_t arg0, int arg1);
+extern int mem_0093A0CC;  // .rdata dword 0x00FFFFFF (loaded and pushed as a value)
+extern int mem_0093A0C4;  // .rdata "bfu" (dword loaded and pushed as a value)
+
+// @name Unknown::configureAndReadLink
+// @class Unknown
+// @summary Calls ext_006A6010(arg1, 1), invokes vtable slots +0x38 and +0x34 on arg1 with two constants, then returns the dword at this+0x1B8 (or 0 when this+0x1B4 is null). Callee pops 12 bytes; the two trailing stack args are unused.
+// @field Unknown +0x1B4 uint8_t field_0x1b4[]
+// @field Unknown +0x1B8 uint32_t field_0x1b8
+uint32_t fn_004141D0(void* self, void* arg1) {
+    using ThisCall1 = void(__thiscall*)(void* self, uint32_t arg);
+
+    // push 1; ecx = arg1; call thunk_MFC80_ord_5731
+    ext_006A6010(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg1)), 1);
+
+    // push [0x0093A0CC]; ecx = arg1; call [vtbl(arg1) + 0x38]
+    void* vtbl = lift_field<void*>(arg1, 0);
+    auto slot38 = reinterpret_cast<ThisCall1>(lift_field<void*>(vtbl, 0x38));
+    slot38(arg1, static_cast<uint32_t>(mem_0093A0CC));
+
+    // push [0x0093A0C4]; ecx = arg1; call [vtbl(arg1) + 0x34]
+    auto slot34 = reinterpret_cast<ThisCall1>(lift_field<void*>(vtbl, 0x34));
+    slot34(arg1, static_cast<uint32_t>(mem_0093A0C4));
+
+    // lea eax, [self + 0x1B4]; test; if non-null return dword at [eax + 4]
+    uint8_t* sub = static_cast<uint8_t*>(self) + 0x1B4;
+    if (sub != nullptr) {
+        return lift_field<uint32_t>(sub, 4);
+    }
+    return 0;
+}
+} // namespace lift_004141D0

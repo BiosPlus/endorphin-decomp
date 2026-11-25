@@ -1138,6 +1138,13 @@
     "summary": "Destructor-style teardown: resets vptr to 0x92c230, deletes the CRITICAL_SECTION at +0x44, calls ext_006A5C5C(+0x3c), then tail-jumps to the MSVCP80 basic_streambuf dtor with the same this.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x004141D0": {
+    "name": "Unknown::configureAndReadLink",
+    "class": "Unknown",
+    "signature": "extern \"C\" int mem_0093A0CC;  // .rdata dword 0x00FFFFFF (loaded and pushed as a value) extern \"C\" int mem_0093A0C4;  // .rdata \"bfu\" (dword loaded and pushed as a value) uint32_t fn_004141D0(void* self, void* arg1)",
+    "summary": "Calls ext_006A6010(arg1, 1), invokes vtable slots +0x38 and +0x34 on arg1 with two constants, then returns the dword at this+0x1B8 (or 0 when this+0x1B4 is null). Callee pops 12 bytes; the two trailing stack args are unused.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00414220": {
     "name": "ConsoleWnd::vfunc_1",
     "class": "ConsoleWnd",
