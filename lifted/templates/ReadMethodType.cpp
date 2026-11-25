@@ -59101,3 +59101,49 @@ int fn_0066FA70(void* self) {
     return 1;
 }
 } // namespace lift_0066FA70
+
+// [0x0066F930] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>::vfunc_0 (106 bytes)
+namespace lift_0066F930 {
+// Known callee 0x006A7250: thunk_MSVCR80__CIsqrt (IAT jump thunk forwarding to MSVCR80!_CIsqrt.)
+// Replaced by std::sqrt below; the x87-stack thunk has no portable C++ equivalent.
+extern void ext_006A7250();
+// Known callee 0x00672080: sub_00672080 (18B, __thiscall taking one float on the stack)
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, void* throw_info);
+
+// @name ExprParser::ReadMethodType<NM::Vector3,float,calcNorm,1>::vfunc_0
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>
+// @summary Reads the Vector3 behind the value pointer, stores its Euclidean length into the result slot via ext_00672080, and returns the value object; throws if the Vector3 pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NM::Vector3 +0x00 float x
+// @field NM::Vector3 +0x04 float y
+// @field NM::Vector3 +0x08 float z
+void* fn_0066F930([[maybe_unused]] void* arg1, void* arg2) {
+    // arg2 -> object; its first dword is a pointer to the NM::Vector3 value.
+    void* vec = *reinterpret_cast<void**>(arg2);
+    if (vec == nullptr) {
+        // Null vector: construct an exception object and throw it.
+        // Exception object storage size is not recovered; buffer is a placeholder.
+        alignas(16) unsigned char exc[64] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return arg2;  // not reached
+    }
+
+    const float x = lift_field<float>(vec, 0x00);
+    const float y = lift_field<float>(vec, 0x04);
+    const float z = lift_field<float>(vec, 0x08);
+
+    // Original computes x*x + y*y + z*z on the x87 stack (extended precision) then sqrt.
+    const double sum = (static_cast<double>(y) * y + static_cast<double>(x) * x)
+                     + static_cast<double>(z) * z;
+    const float length = static_cast<float>(std::sqrt(sum));
+
+    // Store result via sub_00672080 (thiscall: this = arg2, one float arg).
+    ext_00672080(arg2, length);
+    return arg2;
+}
+} // namespace lift_0066F930
