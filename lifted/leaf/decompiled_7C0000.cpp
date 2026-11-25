@@ -1228,3 +1228,42 @@ int32_t fn_007C15A0(void* self) {
     return 0;
 }
 } // namespace lift_007C15A0
+
+// [0x007CC970] sub_007CC970 (80 bytes)
+namespace lift_007CC970 {
+// Known callee 0x007D58E0: sub_007D58E0 (105 bytes; diagnostic/report routine called with flags 0, the owner's +0xB0 context, and a message string.)
+extern void ext_007D58E0(uint32_t flags, void* ctx, const char* message);
+
+// Referenced rdata message at 0x0099DD3C (diagnostic text passed to ext_007D58E0).
+extern const char mem_0099DD3C[];
+
+// @name DispatchReleaseByType
+// @summary Reports if the node's high flag bits are set, then invokes the owner's type-indexed handler for this node and notifies the owner's child vtable slot +0x10.
+// @field Node +0x00 uint32_t field_0x00
+// @field Node +0x0C void* field_0x0c
+// @field Owner +0x20 void* field_0x20
+// @field Owner +0xB0 void* field_0xb0
+// @field OwnerChild +0x10 uint32_t field_0x10
+void fn_007CC970(void* self) {
+    using Handler = void (*)(void*);
+
+    const uint32_t flags = lift_field<uint32_t>(self, 0x00);
+    if ((flags & 0xFFFFFF00u) != 0) {
+        void* owner = lift_field<void*>(self, 0x0C);
+        void* ownerChild = lift_field<void*>(owner, 0xB0);
+        ext_007D58E0(0, ownerChild, mem_0099DD3C);
+    }
+
+    // Type index is the low byte; each dispatch entry is 40 bytes (5 * 8).
+    const uint32_t typeIndex = flags & 0xFFu;
+    void* owner = lift_field<void*>(self, 0x0C);
+    void* dispatchTable = lift_field<void*>(owner, 0x20);
+    const uint32_t handler = lift_field<uint32_t>(dispatchTable, static_cast<ptrdiff_t>(typeIndex) * 40);
+    reinterpret_cast<Handler>(static_cast<uintptr_t>(handler))(self);
+
+    owner = lift_field<void*>(self, 0x0C);
+    void* ownerChild = lift_field<void*>(owner, 0xB0);
+    const uint32_t notify = lift_field<uint32_t>(ownerChild, 0x10);
+    reinterpret_cast<Handler>(static_cast<uintptr_t>(notify))(self);
+}
+} // namespace lift_007CC970

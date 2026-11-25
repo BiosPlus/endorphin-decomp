@@ -52996,6 +52996,12 @@
     "summary": "If flag bit 0x2 at self+0x34 is set, forwards arg to the vtable slot 0x74 method of the subobject at self+0x38 and returns its bool result; otherwise returns false.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006FA9F0": {
+    "name": "sub_006FA9F0",
+    "signature": "uint8_t __thiscall sub_006FA9F0(void* self, uint32_t arg0, uint32_t arg1)",
+    "summary": "Checks flag at +0x34, delegates to +0x38-\u003evtable[0x74](arg0), then calls this-\u003evtable[0x40](0, 0, this, -1, arg0, arg1, 0)",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FAF10": {
     "name": "ForwardToSubobjectVfn30",
     "signature": "extern \"C\" BYTE __thiscall fn_006FAF10(void* self, DWORD a1, DWORD a2)",
@@ -60903,6 +60909,12 @@
     "name": "unlinkListNode",
     "signature": "void __cdecl sub_007CC930(uint32_t node)",
     "summary": "Unlinks a node from a circular doubly-linked list and decrements the list count.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
+  "0x007CC970": {
+    "name": "DispatchReleaseByType",
+    "signature": "void fn_007CC970(void* self)",
+    "summary": "Reports if the node's high flag bits are set, then invokes the owner's type-indexed handler for this node and notifies the owner's child vtable slot +0x10.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
   "0x007CC9C0": {
