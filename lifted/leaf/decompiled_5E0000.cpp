@@ -1290,3 +1290,25 @@ void fn_005ECAF0(DWORD* dst, DWORD value) {
 }
 } // namespace lift_005EC8D0
 } // namespace lift_005ECAF0
+
+// [0x005E46B0] sub_005E46B0 (95 bytes)
+namespace lift_005E46B0 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+// Second argument is passed as the raw 32-bit immediate 0x00A911C4 (listed signature shows uint8_t flag; kept full width).
+extern void* ext_0066AD10(void* out_str, uint32_t arg);
+// Known callee 0x006A6C87: sub_006A6C87 (18B). Called with 0x0091E480 (likely an atexit-style registration of a destructor).
+extern void ext_006A6C87(void* fn);
+extern uint8_t mem_00B45F0C;  // init guard byte; bit 0 = initialized
+extern int mem_00B45EF0;      // static storage object
+
+// @name GetOnceInitString_005E46B0
+// @summary One-time initializer for static object at 0x00B45EF0; returns its address.
+void* fn_005E46B0() {
+    if ((mem_00B45F0C & 1u) == 0) {
+        mem_00B45F0C |= 1u;
+        ext_0066AD10(&mem_00B45EF0, 0x00A911C4u);
+        ext_006A6C87(reinterpret_cast<void*>(static_cast<uintptr_t>(0x0091E480u)));
+    }
+    return &mem_00B45EF0;
+}
+} // namespace lift_005E46B0

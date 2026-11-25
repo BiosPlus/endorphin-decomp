@@ -32206,6 +32206,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005E46B0": {
+    "name": "GetOnceInitString_005E46B0",
+    "signature": "void* fn_005E46B0()",
+    "summary": "One-time initializer for static object at 0x00B45EF0; returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005E4850": {
     "name": "NMData::FixedPathJointData::vfunc_68",
     "class": "NMData::FixedPathJointData",
