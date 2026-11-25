@@ -1,0 +1,34 @@
+{
+  "va": "0x00575230",
+  "size": 77,
+  "orig_symbol": "sub_00575230",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "Unknown::CopyStringTripleRange",
+  "class": "Unknown",
+  "signature": "void* __cdecl fn_00575230(uint8_t* first, uint8_t* last, uint8_t* dest)",
+  "summary": "Copies a [first,last) range of 0x54-byte records into dest, assigning three std::string members per record; returns dest when empty, else one past the last written record.",
+  "fields": [
+    {
+      "class": "Element",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x38",
+      "type": "std::string",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:43:24Z"
+}

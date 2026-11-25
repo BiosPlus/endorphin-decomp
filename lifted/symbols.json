@@ -21970,6 +21970,13 @@
     "summary": "Writes the 2-byte tag \"V#\" followed by the 2-byte value 0x0001 (little-endian dword 1, low two bytes) to the given ostream.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x00575230": {
+    "name": "Unknown::CopyStringTripleRange",
+    "class": "Unknown",
+    "signature": "void* __cdecl fn_00575230(uint8_t* first, uint8_t* last, uint8_t* dest)",
+    "summary": "Copies a [first,last) range of 0x54-byte records into dest, assigning three std::string members per record; returns dest when empty, else one past the last written record.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00575280": {
     "name": "sub_00575280",
     "signature": "uint32_t __cdecl fn_00575280(uint32_t first, uint32_t last, uint32_t dst)",

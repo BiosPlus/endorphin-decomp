@@ -793,3 +793,37 @@ uint32_t fn_0057E810(uint32_t begin, uint32_t end, uint32_t value) {
 }
 } // namespace lift_0054F290
 } // namespace lift_0057E810
+
+// [0x00575230] sub_00575230 (77 bytes)
+namespace lift_00575230 {
+// std::string copy-assignment (MSVCP80), __thiscall: this = self, rhs by pointer.
+extern void* (__thiscall* mem_00924FDC)(void* self, const void* rhs);
+
+// @name Unknown::CopyStringTripleRange
+// @summary Copies a [first,last) range of 0x54-byte records into dest, assigning three std::string members per record; returns dest when empty, else one past the last written record.
+// @field Element +0x00 std::string field_0x00
+// @field Element +0x1C std::string field_0x1C
+// @field Element +0x38 std::string field_0x38
+void* __cdecl fn_00575230(uint8_t* first, uint8_t* last, uint8_t* dest) {
+    if (first == last) {
+        return dest;
+    }
+
+    constexpr size_t kStride = 0x54;
+    constexpr size_t kStrA = 0x00;
+    constexpr size_t kStrB = 0x1C;
+    constexpr size_t kStrC = 0x38;
+
+    uint8_t* src = first;
+    uint8_t* out = dest;
+    do {
+        mem_00924FDC(out + kStrA, src + kStrA);
+        mem_00924FDC(out + kStrB, src + kStrB);
+        mem_00924FDC(out + kStrC, src + kStrC);
+        src += kStride;
+        out += kStride;
+    } while (src != last);
+
+    return out;
+}
+} // namespace lift_00575230
