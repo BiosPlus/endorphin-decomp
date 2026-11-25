@@ -147,3 +147,21 @@ int fn_007F0BC0(void** a, void** b) {
     return 0;
 }
 } // namespace lift_007F0BC0
+
+// [0x007F8500]
+namespace lift_007F8500 {
+// @name compareFloatAt0x10
+// @summary qsort-style comparator for two structs by their float field at +0x10
+// @field Item +0x10 float field_0x10
+int32_t sub_007F8500(const void* a, const void* b) {
+    float va = *reinterpret_cast<const float*>(reinterpret_cast<const uint8_t*>(a) + 0x10);
+    float vb = *reinterpret_cast<const float*>(reinterpret_cast<const uint8_t*>(b) + 0x10);
+    if (va < vb) {
+        return -1;
+    }
+    if (va > vb) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_007F8500

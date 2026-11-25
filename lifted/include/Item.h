@@ -8,6 +8,7 @@
 // Recovered field layout for Item:
 namespace lifted_layout {
 struct Item_Fields {
+    // +0x10  float                    field_0x10  (evidence: 0x007F8500)
     // +0x218 uint32_t                 bucketIndex  (evidence: 0x007F0B00)
 };
 } // namespace lifted_layout
