@@ -23409,6 +23409,13 @@
     "summary": "Sums vfunc_17() across all elements in the RenderableList vector",
     "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
   },
+  "0x0054C0F0": {
+    "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_18",
+    "class": "ManagedDisplayList\u003cRenderableList\u003e",
+    "signature": "int vfunc_18(void* self, void* arg)",
+    "summary": "Calls vtable slot 18 on each entry in [field_0x18, field_0x1C); returns 1 on the first nonzero result, else 0.",
+    "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
+  },
   "0x0054C260": {
     "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_2",
     "class": "ManagedDisplayList\u003cRenderableList\u003e",
@@ -62059,6 +62066,12 @@
     "signature": "extern \"C\" void* __fastcall fn_00715430(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00715450 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00715450": {
+    "name": "sub_00715450",
+    "signature": "extern \"C\" void __fastcall fn_00715450(void* self)",
+    "summary": "Destructor that resets vtable, invokes virtual method +0x4(0) on field_0x10, and calls base destructor ext_0077FA20.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x00715520": {
     "name": "setFieldCAndReleaseField04",

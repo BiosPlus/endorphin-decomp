@@ -197,3 +197,28 @@ uint32_t __thiscall fn_0054C030(void* self) {
     return total;
 }
 } // namespace lift_0054C030
+
+// [0x0054C0F0]
+namespace lift_0054C0F0 {
+// @name ManagedDisplayList<RenderableList>::vfunc_18
+// @class ManagedDisplayList<RenderableList>
+// @summary Calls vtable slot 18 on each entry in [field_0x18, field_0x1C); returns 1 on the first nonzero result, else 0.
+// @field ManagedDisplayList<RenderableList> +0x18 void** field_0x18
+// @field ManagedDisplayList<RenderableList> +0x1C void** field_0x1C
+
+int vfunc_18(void* self, void* arg) {
+    auto* base = reinterpret_cast<unsigned char*>(self);
+    void** p = *reinterpret_cast<void***>(base + 0x18);   // field_0x18: range begin
+    void** end = *reinterpret_cast<void***>(base + 0x1C); // field_0x1C: range end
+
+    for (; p != end; ++p) {
+        void* obj = *p;
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        auto fn = reinterpret_cast<int (*)(void*, void*)>(vtbl[18]); // vtable +0x48
+        if (fn(obj, arg) != 0) {
+            return 1;
+        }
+    }
+    return 0;
+}
+} // namespace lift_0054C0F0
