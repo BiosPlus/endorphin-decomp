@@ -65881,6 +65881,12 @@
     "summary": "Calls ext_0079EBD0 to get a pointer-sized address and returns the int32 stored at it.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x0079EED0": {
+    "name": "FileSeekToOffset",
+    "signature": "void fn_0079EED0(int32_t offset)",
+    "summary": "Gets a stream handle from ext_0079EBE0 and calls CRT fseek(stream, offset, SEEK_SET), discarding the result.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079F2E0": {
     "name": "sub_0079F2E0 (descriptiveName: IsAnyKnownValue)",
     "signature": "BOOLEAN __stdcall fn_0079F2E0(DWORD value)",

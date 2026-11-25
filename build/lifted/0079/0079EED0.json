@@ -1,0 +1,13 @@
+{
+  "va": "0x0079EED0",
+  "size": 32,
+  "orig_symbol": "sub_0079EED0",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "FileSeekToOffset",
+  "signature": "void fn_0079EED0(int32_t offset)",
+  "summary": "Gets a stream handle from ext_0079EBE0 and calls CRT fseek(stream, offset, SEEK_SET), discarding the result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:43:32Z"
+}

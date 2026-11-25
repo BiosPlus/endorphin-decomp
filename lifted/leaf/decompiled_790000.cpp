@@ -986,3 +986,21 @@ extern int32_t __cdecl fn_0079EBE0(void) {
     return *reinterpret_cast<const int32_t*>(addr);
 }
 } // namespace lift_0079EBE0
+
+// [0x0079EED0] sub_0079EED0 (32 bytes)
+namespace lift_0079EED0 {
+// Known callee 0x0079EBE0: sub_0079EBE0 (Calls ext_0079EBD0 to get a pointer-sized address and returns the int32 stored at it.)
+extern int32_t __cdecl ext_0079EBE0(void);
+// Import slot for MSVCR80!fseek (IAT entry at 0x009252C4).
+extern uint32_t mem_009252C4;
+
+// @name FileSeekToOffset
+// @summary Gets a stream handle from ext_0079EBE0 and calls CRT fseek(stream, offset, SEEK_SET), discarding the result.
+void fn_0079EED0(int32_t offset) {
+    using fseek_fn = int(__cdecl*)(void*, long, int);
+
+    void* stream = reinterpret_cast<void*>(static_cast<intptr_t>(ext_0079EBE0()));
+    auto fseek_ptr = reinterpret_cast<fseek_fn>(static_cast<uintptr_t>(mem_009252C4));
+    fseek_ptr(stream, static_cast<long>(offset), SEEK_SET);
+}
+} // namespace lift_0079EED0
