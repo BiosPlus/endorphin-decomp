@@ -1595,3 +1595,26 @@ void* fn_0057BC70() {
     return &mem_00B3D6F8;
 }
 } // namespace lift_0057BC70
+
+// [0x0057BF20] sub_0057BF20 (95 bytes)
+namespace lift_0057BF20 {
+// @name LowerBound44_0057BF20
+// @summary std::lower_bound over 44-byte records, comparing each record's leading std::string (+0x00) against a key
+// @field Record44 +0x00 std::string field_0x00
+void* fn_0057BF20(void* first, void* last, const std::string& key) {
+    uint8_t* base = static_cast<uint8_t*>(first);
+    ptrdiff_t len = (static_cast<uint8_t*>(last) - base) / 44;
+
+    while (len > 0) {
+        ptrdiff_t half = len / 2;
+        uint8_t* mid = base + half * 44;
+        if (*reinterpret_cast<const std::string*>(mid) < key) {
+            base = mid + 44;
+            len = len - half - 1;
+        } else {
+            len = half;
+        }
+    }
+    return base;
+}
+} // namespace lift_0057BF20

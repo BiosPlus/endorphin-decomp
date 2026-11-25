@@ -24895,6 +24895,12 @@
     "summary": "Copies a range of 0x3C-byte records from [first, last) to dest and returns dest past the last copied record.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057BF20": {
+    "name": "LowerBound44_0057BF20",
+    "signature": "void* fn_0057BF20(void* first, void* last, const std::string\u0026 key)",
+    "summary": "std::lower_bound over 44-byte records, comparing each record's leading std::string (+0x00) against a key",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057C010": {
     "name": "sub_0057C010",
     "signature": "extern uint32_t fn_0057C010(uint32_t first, uint32_t last, uint32_t dest)",
