@@ -23342,6 +23342,13 @@
     "summary": "Returns the address of the member at +0x30 if its string equals the literal at mem_00928B5D, otherwise the address of the member at +0x14.",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x00584A80": {
+    "name": "ObjectNode::vfunc_13_off_4",
+    "class": "ObjectNode",
+    "signature": "static R lift_vcall(void* self, ptrdiff_t slotOffset, Args... args)",
+    "summary": "Queries a 16-dword block from a virtual getter, copies it into a second virtual-returned buffer, then notifies via vtable slot 1.",
+    "lifted_path": "lifted/classes/ObjectNode.cpp"
+  },
   "0x00584AE0": {
     "name": "descriptiveName_00584AE0",
     "class": "\u003cClassName\u003e (optional)",

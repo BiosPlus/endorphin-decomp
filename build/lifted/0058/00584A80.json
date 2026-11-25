@@ -1,0 +1,14 @@
+{
+  "va": "0x00584A80",
+  "size": 91,
+  "orig_symbol": "ObjectNode::vfunc_13_off_4",
+  "src_path": "src/classes/ObjectNode.cpp",
+  "lifted_path": "lifted/classes/ObjectNode.cpp",
+  "name": "ObjectNode::vfunc_13_off_4",
+  "class": "ObjectNode",
+  "signature": "static R lift_vcall(void* self, ptrdiff_t slotOffset, Args... args)",
+  "summary": "Queries a 16-dword block from a virtual getter, copies it into a second virtual-returned buffer, then notifies via vtable slot 1.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:23:16Z"
+}
