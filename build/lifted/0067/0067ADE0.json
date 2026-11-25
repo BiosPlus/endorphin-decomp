@@ -1,0 +1,22 @@
+{
+  "va": "0x0067ADE0",
+  "size": 22,
+  "orig_symbol": "sub_0067ADE0",
+  "src_path": "src/leaf/tiny_670000.cpp",
+  "lifted_path": "lifted/leaf/tiny_670000.cpp",
+  "name": "Unknown::isOwnedByCurrentThread",
+  "class": "Unknown",
+  "signature": "extern BOOLEAN __fastcall fn_0067ADE0(void* self)",
+  "summary": "Returns 1 if the current thread id equals the owner thread id stored at +0x14 of the object referenced by this-\u003e+0x0C, else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:22:16Z"
+}

@@ -45286,6 +45286,13 @@
     "summary": "Pops the return address into edi and returns, releasing 4 bytes of stack arguments.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x0067ADE0": {
+    "name": "Unknown::isOwnedByCurrentThread",
+    "class": "Unknown",
+    "signature": "extern BOOLEAN __fastcall fn_0067ADE0(void* self)",
+    "summary": "Returns 1 if the current thread id equals the owner thread id stored at +0x14 of the object referenced by this-\u003e+0x0C, else 0.",
+    "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
   "0x0067AE00": {
     "name": "ThreadController::setLowestPriorityIfMode2",
     "class": "ThreadController",

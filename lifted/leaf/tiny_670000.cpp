@@ -611,3 +611,21 @@ void fn_00679A40(void* self) {
     mem_0092427C(buf);
 }
 } // namespace lift_00679A40
+
+// [0x0067ADE0] sub_0067ADE0 (22 bytes)
+namespace lift_0067ADE0 {
+// IAT slot for KERNEL32!GetCurrentThreadId
+extern DWORD(__stdcall* mem_00924244)();
+
+namespace lift_0067ADE0 {
+// @name Unknown::isOwnedByCurrentThread
+// @class Unknown
+// @summary Returns 1 if the current thread id equals the owner thread id stored at +0x14 of the object referenced by this->+0x0C, else 0.
+// @field Unknown +0x0C void* field_0x0C
+extern BOOLEAN __fastcall fn_0067ADE0(void* self) {
+    void* inner = lift_field<void*>(self, 0x0C);
+    DWORD currentThreadId = mem_00924244();
+    return currentThreadId == lift_field<DWORD>(inner, 0x14) ? 1 : 0;
+}
+} // namespace lift_0067ADE0
+} // namespace lift_0067ADE0
