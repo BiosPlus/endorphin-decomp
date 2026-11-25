@@ -4693,6 +4693,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x00449160": {
+    "name": "Unknown::readIntFromStringMember",
+    "class": "Unknown",
+    "signature": "TempCString()",
+    "summary": "Passes a temporary CString into the sub-object at self+0xd0, then returns atoi() of its C-string contents.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00449810": {
     "name": "RangeDialog::vfunc_1",
     "class": "RangeDialog",

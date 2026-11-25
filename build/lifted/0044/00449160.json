@@ -1,0 +1,22 @@
+{
+  "va": "0x00449160",
+  "size": 109,
+  "orig_symbol": "sub_00449160",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::readIntFromStringMember",
+  "class": "Unknown",
+  "signature": "TempCString()",
+  "summary": "Passes a temporary CString into the sub-object at self+0xd0, then returns atoi() of its C-string contents.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xD0",
+      "type": "unknown field_0xd0 (embedded sub-object; its address is passed as this to the",
+      "name": "callee)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:57:50Z"
+}
