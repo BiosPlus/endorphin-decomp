@@ -962,3 +962,42 @@ void* fn_00687330(const void* first, const void* last, void* dest) {
     return out;
 }
 } // namespace lift_00687330
+
+// [0x006873D0] sub_006873D0 (78 bytes)
+namespace lift_006873D0 {
+// MSVCP80 std::basic_string<char>::operator=(const string&) (thiscall, one stack arg).
+// Reached in the original through the import slot mem_00924FDC.
+extern void* __thiscall ext_MSVCP80_string_assign(void* self, const void* rhs);
+
+// @name Unknown::CopyRecordRangeBackward_006873D0
+// @summary Copies records of 0x2C bytes from [first, last) backward into the range ending at dest_last, returning the new begin (dest_last if the range is empty).
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 std::string field_0x10
+extern void* __cdecl fn_006873D0(void* first, void* last, void* dest_last) {
+    constexpr ptrdiff_t kRecordSize = 0x2C;
+
+    auto* const begin = static_cast<unsigned char*>(first);
+    auto* src_end = static_cast<unsigned char*>(last);
+    auto* dst = static_cast<unsigned char*>(dest_last);
+
+    if (begin == src_end) {
+        return dest_last;
+    }
+
+    do {
+        src_end -= kRecordSize;
+        dst -= kRecordSize;
+
+        lift_field<uint32_t>(dst, 0x00) = lift_field<uint32_t>(src_end, 0x00);
+        lift_field<uint32_t>(dst, 0x04) = lift_field<uint32_t>(src_end, 0x04);
+        lift_field<uint32_t>(dst, 0x08) = lift_field<uint32_t>(src_end, 0x08);
+        lift_field<uint32_t>(dst, 0x0C) = lift_field<uint32_t>(src_end, 0x0C);
+        ext_MSVCP80_string_assign(dst + 0x10, src_end + 0x10);
+    } while (src_end != begin);
+
+    return dst;
+}
+} // namespace lift_006873D0
