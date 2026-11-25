@@ -486,3 +486,25 @@ void fn_004C1BD0(void* dst, uint32_t value) {
     lift_field<uint32_t>(dst, 0x04) = result;
 }
 } // namespace lift_004C1BD0
+
+// [0x004C1D20] sub_004C1D20 (87 bytes)
+namespace lift_004C1D20 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+extern int mem_00AE3060;
+extern int mem_00AE305C;
+
+// @name initStaticObjectOnce_004C1D20
+// @summary One-time initializer guarded by bit 0 of mem_00AE3060; sets mem_00AE305C to vtable 0x9448F4 and returns its address.
+void* fn_004C1D20() {
+    // The original wraps this in an SEH frame (fs:[0] push/restore); that is
+    // Win32-specific bookkeeping and is dropped in the portable version.
+    if ((mem_00AE3060 & 1) == 0) {
+        mem_00AE3060 |= 1;
+        // Original: thiscall with ECX = &mem_00AE305C and a zero stack argument.
+        ext_0067A670();
+        mem_00AE305C = 0x9448F4;
+    }
+    return &mem_00AE305C;
+}
+} // namespace lift_004C1D20

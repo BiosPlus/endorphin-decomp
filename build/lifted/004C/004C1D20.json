@@ -1,0 +1,13 @@
+{
+  "va": "0x004C1D20",
+  "size": 87,
+  "orig_symbol": "sub_004C1D20",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "initStaticObjectOnce_004C1D20",
+  "signature": "void* fn_004C1D20()",
+  "summary": "One-time initializer guarded by bit 0 of mem_00AE3060; sets mem_00AE305C to vtable 0x9448F4 and returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:32:40Z"
+}
