@@ -54,3 +54,23 @@ void fn_007E5240(float* a, const float* b, int32_t i) {
     a[s] = -b[d];
 }
 } // namespace lift_007E5240
+
+// [0x007E5280] sub_007E5280 (60 bytes)
+namespace lift_007E5280 {
+// @name CoefficientSwapNegate
+// @summary Zeroes out[n], then writes negated in[esi] to out[edx] and in[edx] to out[esi], where edx = (1 << (n & 31)) & 3 and esi = (1 << edx) & 3.
+// NOTE: the binary reads its second argument both as an index (into out) and as a base address for the reads from in[]; the reads are reproduced as-is.
+void fn_007E5280(float* out, uint32_t n) {
+    out[n] = 0.0f;
+
+    // x86 masks shift counts to 5 bits: shl edx, cl with cl = n.
+    const uint32_t edx = (1u << (n & 31u)) & 3u;
+    const uint32_t esi = (1u << (edx & 31u)) & 3u;
+
+    // Reads use the argument value as a base address ([ecx + 4*k]).
+    const float* in = reinterpret_cast<const float*>(static_cast<uintptr_t>(n));
+
+    out[edx] = -in[esi];
+    out[esi] = in[edx];
+}
+} // namespace lift_007E5280

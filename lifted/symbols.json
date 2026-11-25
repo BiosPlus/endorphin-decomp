@@ -56791,6 +56791,12 @@
     "summary": "Zeroes a[i], then writes a[d] = b[s] and a[s] = -b[d] where d = (1\u003c\u003ci)\u00263 and s = (1\u003c\u003cd)\u00263 (x86 shift counts masked to 5 bits).",
     "lifted_path": "lifted/leaf/decompiled_7E0000.cpp"
   },
+  "0x007E5280": {
+    "name": "CoefficientSwapNegate",
+    "signature": "void fn_007E5280(float* out, uint32_t n)",
+    "summary": "Zeroes out[n], then writes negated in[esi] to out[edx] and in[edx] to out[esi], where edx = (1 \u003c\u003c (n \u0026 31)) \u0026 3 and esi = (1 \u003c\u003c edx) \u0026 3.",
+    "lifted_path": "lifted/leaf/decompiled_7E0000.cpp"
+  },
   "0x007EC6E0": {
     "name": "reciprocalOrZero_007EC6E0",
     "signature": "float fn_007EC6E0(float x)",

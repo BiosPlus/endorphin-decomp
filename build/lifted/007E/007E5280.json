@@ -1,0 +1,13 @@
+{
+  "va": "0x007E5280",
+  "size": 60,
+  "orig_symbol": "sub_007E5280",
+  "src_path": "src/leaf/decompiled_7E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7E0000.cpp",
+  "name": "CoefficientSwapNegate",
+  "signature": "void fn_007E5280(float* out, uint32_t n)",
+  "summary": "Zeroes out[n], then writes negated in[esi] to out[edx] and in[edx] to out[esi], where edx = (1 \u003c\u003c (n \u0026 31)) \u0026 3 and esi = (1 \u003c\u003c edx) \u0026 3.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:56:32Z"
+}
