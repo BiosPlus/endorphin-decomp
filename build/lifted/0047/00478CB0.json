@@ -1,0 +1,13 @@
+{
+  "va": "0x00478CB0",
+  "size": 78,
+  "orig_symbol": "sub_00478CB0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "SortFloatHeap_00478CB0",
+  "signature": "void fn_00478CB0(float* first, float* last)",
+  "summary": "Heapsort tail loop over a float range [first, last): repeatedly swaps the front element to the end and re-sifts the shrinking heap via ext_00477210.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:45:11Z"
+}

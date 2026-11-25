@@ -376,3 +376,21 @@ void fn_004757F0(void* self) {
     reinterpret_cast<StdString*>(self)->~StdString();
 }
 } // namespace lift_004757F0
+
+// [0x00478CB0] sub_00478CB0 (78 bytes)
+namespace lift_00478CB0 {
+// Known callee 0x00477210: ext_00477210 (heap sift-down helper; called as (first, hole=0, len, value)).
+extern void ext_00477210(float* first, int32_t hole, int32_t len, float value);
+
+// @name SortFloatHeap_00478CB0
+// @summary Heapsort tail loop over a float range [first, last): repeatedly swaps the front element to the end and re-sifts the shrinking heap via ext_00477210.
+void fn_00478CB0(float* first, float* last) {
+    ptrdiff_t n = last - first;
+    while (n > 1) {
+        float value = first[n - 1];
+        first[n - 1] = first[0];
+        ext_00477210(first, 0, static_cast<int32_t>(n - 1), value);
+        --n;
+    }
+}
+} // namespace lift_00478CB0

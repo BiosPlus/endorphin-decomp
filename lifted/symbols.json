@@ -7737,6 +7737,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00478CB0": {
+    "name": "SortFloatHeap_00478CB0",
+    "signature": "void fn_00478CB0(float* first, float* last)",
+    "summary": "Heapsort tail loop over a float range [first, last): repeatedly swaps the front element to the end and re-sifts the shrinking heap via ext_00477210.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00478D00": {
     "name": "SortHeapRange",
     "signature": "void fn_00478D00(uint32_t* first, uint32_t* last)",
