@@ -1,0 +1,28 @@
+{
+  "va": "0x0041BBB0",
+  "size": 64,
+  "orig_symbol": "GridPropertyPage::vfunc_86",
+  "src_path": "src/classes/GridPropertyPage.cpp",
+  "lifted_path": "lifted/classes/GridPropertyPage.cpp",
+  "name": "GridPropertyPage::vfunc_86",
+  "class": "GridPropertyPage",
+  "signature": "extern \"C\" void ext_006A608E(void* self, int arg); // thiscall thunk -\u003e MFC80!ord_6236 extern \"C\" void* ext_0052EE00(void);               // jump thunk -\u003e sub_005379A0 extern \"C\" void ext_006A61E4(void* self);          // tail-jump thunk -\u003e MFC80!ord_4736 void fn_0041BBB0(void* self)",
+  "summary": "If the page's window handle is valid, refresh the page's child via a virtual call that passes whether the field at +0x1F0 is zero, then finish via MFC80.",
+  "fields": [
+    {
+      "class": "GridPropertyPage",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    },
+    {
+      "class": "GridPropertyPage",
+      "offset": "+0x1F0",
+      "type": "u32",
+      "name": "field_0x1F0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:04:33Z"
+}

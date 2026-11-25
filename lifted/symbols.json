@@ -1582,6 +1582,13 @@
     "summary": "Returns the address of the static .rdata constant mem_0092D8A8 (pointer to 0x0092D894).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0041BBB0": {
+    "name": "GridPropertyPage::vfunc_86",
+    "class": "GridPropertyPage",
+    "signature": "extern \"C\" void ext_006A608E(void* self, int arg); // thiscall thunk -\u003e MFC80!ord_6236 extern \"C\" void* ext_0052EE00(void);               // jump thunk -\u003e sub_005379A0 extern \"C\" void ext_006A61E4(void* self);          // tail-jump thunk -\u003e MFC80!ord_4736 void fn_0041BBB0(void* self)",
+    "summary": "If the page's window handle is valid, refresh the page's child via a virtual call that passes whether the field at +0x1F0 is zero, then finish via MFC80.",
+    "lifted_path": "lifted/classes/GridPropertyPage.cpp"
+  },
   "0x0041BFA0": {
     "name": "GetStringConstant_0041BFA0",
     "signature": "extern \"C\" const char* __cdecl fn_0041BFA0()",
