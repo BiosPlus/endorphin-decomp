@@ -1,0 +1,14 @@
+{
+  "va": "0x00622380",
+  "size": 34,
+  "orig_symbol": "NMData::SkeletalCalibrationVariables::vfunc_28",
+  "src_path": "src/NMData/SkeletalCalibrationVariables.cpp",
+  "lifted_path": "lifted/NMData/SkeletalCalibrationVariables.cpp",
+  "name": "NMData::SkeletalCalibrationVariables::vfunc_28",
+  "class": "NMData::SkeletalCalibrationVariables",
+  "signature": "void fn_00622380(std::string* out, void* unused)",
+  "summary": "Auto-lifted identical-shape clone of 0x006227B0 (NMData::HingeCalibrationVariables::vfunc_28).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T12:49:48Z"
+}

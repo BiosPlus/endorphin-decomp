@@ -37776,6 +37776,13 @@
     "summary": "Stores the single float argument into the object's field at +0x24.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00622380": {
+    "name": "NMData::SkeletalCalibrationVariables::vfunc_28",
+    "class": "NMData::SkeletalCalibrationVariables",
+    "signature": "void fn_00622380(std::string* out, void* unused)",
+    "summary": "Auto-lifted identical-shape clone of 0x006227B0 (NMData::HingeCalibrationVariables::vfunc_28).",
+    "lifted_path": "lifted/NMData/SkeletalCalibrationVariables.cpp"
+  },
   "0x00622750": {
     "name": "InitTaggedZeroFloatTriple",
     "signature": "void* InitTaggedZeroFloatTriple(void* self)",
