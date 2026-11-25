@@ -21250,6 +21250,12 @@
     "summary": "Returns 0 if field +0x04 is zero; otherwise returns (field +0x08 - field +0x04) / 160 using a 0x66666667 magic-multiply with sign fix-up.",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x005541A0": {
+    "name": "destroyStringPair",
+    "signature": "void __thiscall sub_005541A0(void* self)",
+    "summary": "Destroys two std::string members at offsets +0x20 and +0x04",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00554260": {
     "name": "Matrix3x3::transposeInPlace",
     "class": "Matrix3x3",
@@ -40630,6 +40636,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType\u003cRuntimeEngine, int, getNumTicksToRun, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00692B50": {
+    "name": "ctor_00944E74",
+    "signature": "void* fn_00692B50(void* self)",
+    "summary": "Constructor that initializes base vtable via ext_00661980, sets vtables 0x00944E74 and 0x00944E44, and zeroes fields at +0x0c, +0x10, +0x14.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00692D90": {
     "name": "sub_00692D90",
     "class": "NMData::RealChannel",
@@ -49295,6 +49307,12 @@
     "signature": "extern \"C\" int32_t __cdecl fn_006D98E0(void)",
     "summary": "Returns global int32 value from mem_00AA91C4.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
+  },
+  "0x006D98F0": {
+    "name": "getFrameRateForId",
+    "signature": "extern \"C\" double __cdecl fn_006D98F0(int32_t arg0)",
+    "summary": "Looks up a double value (defaulting to 30.0) in a 12-entry table at mem_00B5D910 by ID, falling back to ext_006D98D0 when arg0 is 0.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
   "0x006DADE0": {
     "name": "DivideQwordByConstant",
