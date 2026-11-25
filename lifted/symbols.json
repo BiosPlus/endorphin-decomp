@@ -56479,6 +56479,12 @@
     "summary": "Scans the global entry table in index order, calling getEntryValue for each index until the returned key equals the requested key; returns that entry's value, or 0 if no entry matches.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x0071FC70": {
+    "name": "EntryTable_findKeyByValue",
+    "signature": "extern \"C\" uint8_t __cdecl fn_0071FC70(uint32_t* outKey, uint32_t searchValue)",
+    "summary": "Scans the global EntryTable for an entry whose value equals searchValue; on match writes that entry's key to *outKey and returns 1, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071FCC0": {
     "name": "Unknown::AddDoubleArraysGated",
     "class": "Unknown",

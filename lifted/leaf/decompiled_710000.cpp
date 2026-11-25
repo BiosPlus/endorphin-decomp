@@ -1488,3 +1488,36 @@ extern bool fn_00711B50(void* self, double value) {
     return true;
 }
 } // namespace lift_00711B50
+
+// [0x0071FC70]
+namespace lift_0071FC70 {
+// @name EntryTable_findKeyByValue
+// @summary Scans the global EntryTable for an entry whose value equals searchValue; on match writes that entry's key to *outKey and returns 1, else 0.
+// @field EntryTable +0x04 int32_t field_0x04
+
+extern uint32_t mem_00B5FFC0;
+extern uint32_t __thiscall ext_00784750(uint32_t self, int32_t idx, uint32_t* outKey);
+
+extern uint8_t __cdecl fn_0071FC70(uint32_t* outKey, uint32_t searchValue) {
+    if (mem_00B5FFC0 == 0 || searchValue == 0) {
+        return 0;
+    }
+
+    for (int32_t i = 0;; ++i) {
+        const uint32_t self = mem_00B5FFC0;
+        void* table = reinterpret_cast<void*>(static_cast<uintptr_t>(self));
+        if (i >= lift_field<int32_t>(table, 0x04)) {
+            break;
+        }
+
+        uint32_t key = 0;
+        const uint32_t value = ext_00784750(self, i, &key);
+        if (value == searchValue) {
+            *outKey = key;
+            return 1;
+        }
+    }
+
+    return 0;
+}
+} // namespace lift_0071FC70

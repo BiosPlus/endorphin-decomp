@@ -1,0 +1,21 @@
+{
+  "va": "0x0071FC70",
+  "size": 80,
+  "orig_symbol": "sub_0071FC70",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "EntryTable_findKeyByValue",
+  "signature": "extern \"C\" uint8_t __cdecl fn_0071FC70(uint32_t* outKey, uint32_t searchValue)",
+  "summary": "Scans the global EntryTable for an entry whose value equals searchValue; on match writes that entry's key to *outKey and returns 1, else 0.",
+  "fields": [
+    {
+      "class": "EntryTable",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:51:59Z"
+}

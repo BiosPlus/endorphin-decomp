@@ -10,6 +10,6 @@ namespace lifted_layout {
 struct EntryTable_Fields {
     // +0x0   uint32_t*                entries  (evidence: 0x00784750)
     // +0x4   int32_t                  count  (evidence: 0x00784750) // CONFLICT: multiple definitions at +0x4
-    // +0x4   int32_t                  field_0x04  (evidence: 0x007155B0, 0x0071FC30) // CONFLICT: multiple definitions at +0x4
+    // +0x4   int32_t                  field_0x04  (evidence: 0x007155B0, 0x0071FC30, 0x0071FC70) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout
