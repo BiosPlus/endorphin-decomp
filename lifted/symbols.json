@@ -16948,6 +16948,24 @@
     "summary": "Lazily initializes a function-local static object once and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
+  "0x004F92B0": {
+    "name": "getStaticSingleton_004F92B0",
+    "signature": "void* fn_004F92B0()",
+    "summary": "Lazily initializes a static object at 0x00AE9F34 guarded by 0x00AE9F38 and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
+  "0x004F9510": {
+    "name": "InitPairWithZeroCall",
+    "signature": "void* fn_004F9510(void* out, uint32_t val)",
+    "summary": "Calls ext_004F91F0(0) and stores arg2 and the result into a 2-dword output struct, returning out.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
+  "0x004F9530": {
+    "name": "initPairWithLazyStatic",
+    "signature": "extern \"C\" void* fn_004F9530(void* outPair, DWORD value)",
+    "summary": "Initializes a 2-DWORD struct with a given value and the lazy static object pointer, returning the struct pointer.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F9800": {
     "name": "initVtableAndStoreTwoArgsAlt",
     "class": "Unknown",
@@ -35617,6 +35635,13 @@
     "signature": "DWORD ext_0061E720();  // ConstructOnce_0046F580 DWORD* fn_0061F070(DWORD* dst, DWORD value)",
     "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
     "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061F940": {
+    "name": "NMData::HingeConstraint::vfunc_15",
+    "class": "NMData::HingeConstraint",
+    "signature": "uint32_t __stdcall fn_0061F940(uint32_t self, uint32_t id)",
+    "summary": "Dispatches property/attribute IDs 0x247 and 0x27C to HingeConstraint helpers, delegating others to AnimatableTransform::vfunc_15.",
+    "lifted_path": "lifted/NMData/HingeConstraint.cpp"
   },
   "0x0061FE60": {
     "name": "NMData::GraphicData::vfunc_4_off_C",

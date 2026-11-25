@@ -1,0 +1,14 @@
+{
+  "va": "0x0061F940",
+  "size": 80,
+  "orig_symbol": "NMData::HingeConstraint::vfunc_15",
+  "src_path": "src/NMData/HingeConstraint.cpp",
+  "lifted_path": "lifted/NMData/HingeConstraint.cpp",
+  "name": "NMData::HingeConstraint::vfunc_15",
+  "class": "NMData::HingeConstraint",
+  "signature": "uint32_t __stdcall fn_0061F940(uint32_t self, uint32_t id)",
+  "summary": "Dispatches property/attribute IDs 0x247 and 0x27C to HingeConstraint helpers, delegating others to AnimatableTransform::vfunc_15.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:35:22Z"
+}

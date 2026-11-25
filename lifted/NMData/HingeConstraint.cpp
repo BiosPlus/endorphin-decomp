@@ -143,3 +143,27 @@ void __thiscall fn_006116E0(void* this_ptr, const float* angle) {
     }
 }
 } // namespace lift_006116E0
+
+// [0x0061F940]
+namespace lift_0061F940 {
+// @name NMData::HingeConstraint::vfunc_15
+// @class NMData::HingeConstraint
+// @summary Dispatches property/attribute IDs 0x247 and 0x27C to HingeConstraint helpers, delegating others to AnimatableTransform::vfunc_15.
+
+uint32_t __stdcall ext_005DF1F0(uint32_t self, uint32_t arg2);
+DWORD* ext_0061EF90(DWORD* dst, DWORD value);
+DWORD* ext_0061EFB0(DWORD* dst, DWORD value);
+
+uint32_t __stdcall fn_0061F940(uint32_t self, uint32_t id) {
+    if (id == 0x247) {
+        ext_0061EFB0(reinterpret_cast<DWORD*>(self), 0);
+        return self;
+    }
+    if (id == 0x27C) {
+        ext_0061EF90(reinterpret_cast<DWORD*>(self), 0);
+        return self;
+    }
+    ext_005DF1F0(self, id);
+    return self;
+}
+} // namespace lift_0061F940
