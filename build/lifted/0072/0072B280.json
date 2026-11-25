@@ -1,0 +1,13 @@
+{
+  "va": "0x0072B280",
+  "size": 25,
+  "orig_symbol": "sub_0072B280",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "ConstructEmbeddedBufferAndSetVtable",
+  "signature": "extern \"C\" void* __thiscall fn_0072B280(void* self, uint32_t arg1)",
+  "summary": "Runs fn_006D7880 on this with arg1, then writes the vtable pointer 0x00996810 at +0x00 and returns this.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:48:19Z"
+}

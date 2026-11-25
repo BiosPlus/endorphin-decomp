@@ -723,3 +723,40 @@ extern void fn_0072BF70(uint32_t self) {
     ext_006B9D70(self + 0x18);
 }
 } // namespace lift_0072BF70
+
+// [0x0072C0B0]
+namespace lift_0072C0B0 {
+extern void* ext_006A5C62(uint32_t size);
+extern void ext_00782D00(void* self, uint32_t arg);
+
+// @name sub_0072C0B0_ctor
+// @summary Initializes field_0x04 with arg0, allocates a 0x14-byte object via ext_006A5C62, initializes it with ext_00782D00, stores it at field_0x00, and returns self.
+// @field Self +0x00 void* field_0x00
+// @field Self +0x04 uint32_t field_0x04
+void* __thiscall fn_0072C0B0(void* self, uint32_t arg0) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(obj + 0x04) = arg0;
+
+    void* child = ext_006A5C62(0x14);
+    if (child != nullptr) {
+        ext_00782D00(child, 0x14);
+    }
+
+    *reinterpret_cast<void**>(obj + 0x00) = child;
+    return self;
+}
+} // namespace lift_0072C0B0
+
+// [0x0072B280]
+namespace lift_0072B280 {
+// @name ConstructEmbeddedBufferAndSetVtable
+// @summary Runs fn_006D7880 on this with arg1, then writes the vtable pointer 0x00996810 at +0x00 and returns this.
+
+extern void* __thiscall ext_006D7880(void* self, uint32_t arg1);
+
+extern void* __thiscall fn_0072B280(void* self, uint32_t arg1) {
+    ext_006D7880(self, arg1);
+    *reinterpret_cast<uint32_t*>(self) = 0x00996810u;
+    return self;
+}
+} // namespace lift_0072B280

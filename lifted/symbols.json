@@ -63691,6 +63691,12 @@
     "summary": "Releases the handle at +0x08 of the object referenced by *this, clears that slot, then releases the object itself.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
+  "0x0072B280": {
+    "name": "ConstructEmbeddedBufferAndSetVtable",
+    "signature": "extern \"C\" void* __thiscall fn_0072B280(void* self, uint32_t arg1)",
+    "summary": "Runs fn_006D7880 on this with arg1, then writes the vtable pointer 0x00996810 at +0x00 and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x0072B2A0": {
     "name": "sub_0072B2A0",
     "signature": "extern \"C\" void* __fastcall fn_0072B2A0(void* self, int edx_unused, unsigned int flags)",
@@ -64070,6 +64076,12 @@
     "signature": "extern \"C\" void* __fastcall fn_00754F80(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00754FA0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_750000.cpp"
+  },
+  "0x00754FA0": {
+    "name": "sub_00754FA0_dtor",
+    "signature": "extern \"C\" void __fastcall fn_00754FA0(void* self)",
+    "summary": "Destructor that sets vtable 0x996bf0 and destroys members at +0x60 and +0x8.",
+    "lifted_path": "lifted/leaf/decompiled_750000.cpp"
   },
   "0x00755000": {
     "name": "sub_00755000",
