@@ -4,6 +4,7 @@
 #include <string>
 #include <cstring>
 #include <cstdint>
+#include <cstddef>
 
 // [0x0066A760] sub_0066A760 (10 bytes)
 namespace lift_0066A760 {
@@ -816,3 +817,31 @@ void __stdcall sub_006659F0(uint32_t first_cont, uint32_t first_node, uint32_t l
     }
 }
 } // namespace lift_006659F0
+
+// [0x00660180] sub_00660180 (91 bytes)
+namespace lift_00660180 {
+// 32-byte element: opaque leading payload (0x1c bytes, a string-like header in the
+// original MSVC layout) followed by a 32-bit key at +0x1c.
+struct Elem {
+    uint8_t head[0x1c];
+    int32_t key;  // +0x1c
+};
+static_assert(sizeof(Elem) == 0x20, "Elem must be 32 bytes");
+
+// Sift-down helper: (first, index, count, value-by-value).
+extern void ext_0065FE50(Elem* first, ptrdiff_t index, ptrdiff_t count, Elem value);
+
+// @name makeHeapElements32
+// @summary Heapify a range of 32-byte elements: sift down each internal node from count/2-1 to 0, passing a copy of the node by value to ext_0065FE50.
+// @field Unknown +0x1c int32_t field_0x1c
+void fn_00660180(Elem* first, Elem* last) {
+    const ptrdiff_t count = last - first;
+    if (count / 2 <= 0) {
+        return;
+    }
+    for (ptrdiff_t i = count / 2 - 1; i >= 0; --i) {
+        Elem value = first[i];
+        ext_0065FE50(first, i, count, value);
+    }
+}
+} // namespace lift_00660180

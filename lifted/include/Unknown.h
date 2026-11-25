@@ -447,7 +447,7 @@ struct Unknown_Fields {
     // +0x1C  INT                      field_0x1c  (evidence: 0x007D8470, 0x007DB740) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  StringArray              field_0x1c  (evidence: 0x004AD970) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  float                    field_0x1c  (evidence: 0x00538CF0, 0x00549A10, 0x005B0E60, 0x005B1B60) // CONFLICT: multiple definitions at +0x1C
-    // +0x1C  int32_t                  field_0x1c  (evidence: 0x006E0090, 0x007D8470, 0x007DB760) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  int32_t                  field_0x1c  (evidence: 0x00660180, 0x006E0090, 0x007D8470, 0x007DB760) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  std::string              field_0x1c  (evidence: 0x0046FAD0, 0x00621090, 0x00622B40) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 field_0x1c  (evidence: 0x004586E0, 0x004AFE50, 0x00503CD0, 0x00508BC0, 0x0050C4D0, 0x005B51E0, 0x00678DE0, 0x006AD290, 0x0078CB80, 0x00790F40, 0x007C8490, 0x007C9E20, 0x0080F720) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint8_t                  field_0x1c  (evidence: 0x004773B0) // CONFLICT: multiple definitions at +0x1C

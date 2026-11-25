@@ -38536,6 +38536,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005F0D40 (NMData::MagnetJointData::vfunc_59).",
     "lifted_path": "lifted/classes/SymbolResolver.cpp"
   },
+  "0x00660180": {
+    "name": "makeHeapElements32",
+    "signature": "void fn_00660180(Elem* first, Elem* last)",
+    "summary": "Heapify a range of 32-byte elements: sift down each internal node from count/2-1 to 0, passing a copy of the node by value to ext_0065FE50.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x006601E0": {
     "name": "sub_006601E0_dtor",
     "signature": "void __thiscall sub_006601E0(void* self)",

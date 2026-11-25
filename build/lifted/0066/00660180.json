@@ -1,0 +1,21 @@
+{
+  "va": "0x00660180",
+  "size": 91,
+  "orig_symbol": "sub_00660180",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "makeHeapElements32",
+  "signature": "void fn_00660180(Elem* first, Elem* last)",
+  "summary": "Heapify a range of 32-byte elements: sift down each internal node from count/2-1 to 0, passing a copy of the node by value to ext_0065FE50.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "int32_t",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:25:07Z"
+}
