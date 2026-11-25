@@ -1,0 +1,39 @@
+{
+  "va": "0x007BD310",
+  "size": 39,
+  "orig_symbol": "sub_007BD310",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "initDescriptorFields",
+  "signature": "void __cdecl sub_007BD310(void* self)",
+  "summary": "Initializes descriptor fields at +0x40, +0x42, and sets +0x4e to 1 if +0x46 equals 0x804c else 3",
+  "fields": [
+    {
+      "class": "Struct",
+      "offset": "+0x40",
+      "type": "uint16_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Struct",
+      "offset": "+0x42",
+      "type": "uint16_t",
+      "name": "field_0x42"
+    },
+    {
+      "class": "Struct",
+      "offset": "+0x46",
+      "type": "uint16_t",
+      "name": "field_0x46"
+    },
+    {
+      "class": "Struct",
+      "offset": "+0x4E",
+      "type": "uint16_t",
+      "name": "field_0x4e"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T14:27:13Z"
+}

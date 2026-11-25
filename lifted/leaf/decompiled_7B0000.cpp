@@ -1397,3 +1397,19 @@ extern unsigned char sub_007B50EC(unsigned int idx) {
     return tbl[idx % 36];
 }
 } // namespace lift_007B50EC
+
+// [0x007BD310]
+namespace lift_007BD310 {
+// @name initDescriptorFields
+// @summary Initializes descriptor fields at +0x40, +0x42, and sets +0x4e to 1 if +0x46 equals 0x804c else 3
+// @field Struct +0x40 uint16_t field_0x40
+// @field Struct +0x42 uint16_t field_0x42
+// @field Struct +0x46 uint16_t field_0x46
+// @field Struct +0x4e uint16_t field_0x4e
+void __cdecl sub_007BD310(void* self) {
+    uint16_t val = lift_field<uint16_t>(self, 0x46);
+    lift_field<uint16_t>(self, 0x40) = 0x10;
+    lift_field<uint16_t>(self, 0x42) = 0x2;
+    lift_field<uint16_t>(self, 0x4e) = (val == 0x804c) ? 1 : 3;
+}
+} // namespace lift_007BD310

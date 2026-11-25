@@ -17,7 +17,11 @@ struct Struct_Fields {
     // +0x20  uint32_t                 field_0x20  (evidence: 0x007D8470)
     // +0x30  void*                    field_0x30  (evidence: 0x007A1940)
     // +0x34  void*                    field_0x34  (evidence: 0x007A1940)
-    // +0x40  void*                    field_0x40  (evidence: 0x007A1940)
+    // +0x40  uint16_t                 field_0x40  (evidence: 0x007BD310) // CONFLICT: multiple definitions at +0x40
+    // +0x40  void*                    field_0x40  (evidence: 0x007A1940) // CONFLICT: multiple definitions at +0x40
+    // +0x42  uint16_t                 field_0x42  (evidence: 0x007BD310)
     // +0x44  void*                    field_0x44  (evidence: 0x007A1940)
+    // +0x46  uint16_t                 field_0x46  (evidence: 0x007BD310)
+    // +0x4E  uint16_t                 field_0x4e  (evidence: 0x007BD310)
 };
 } // namespace lifted_layout
