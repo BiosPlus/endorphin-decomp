@@ -53033,6 +53033,13 @@
     "summary": "Compare this string's buffer with another C-string, treating null pointers as mem_00B5D2C0",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006BA780": {
+    "name": "String::compareWithGetterResultIsEqual",
+    "class": "String",
+    "signature": "int32_t sub_006BA780(const char* const* self, void* arg)",
+    "summary": "Calls the getter ext_006E7460 on the stack argument, compares this string with the result via String::compare, and returns 1 when the comparison is equal, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BA7C0": {
     "name": "String::equals",
     "class": "String",

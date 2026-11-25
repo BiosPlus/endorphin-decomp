@@ -1458,3 +1458,19 @@ int32_t sub_006BA7C0(const char* const* self, const char* other) {
     return ext_006BA660(self, other) == 0 ? 1 : 0;
 }
 } // namespace lift_006BA7C0
+
+// [0x006BA780]
+namespace lift_006BA780 {
+// @name String::compareWithGetterResultIsEqual
+// @class String
+// @summary Calls the getter ext_006E7460 on the stack argument, compares this string with the result via String::compare, and returns 1 when the comparison is equal, else 0.
+
+extern int32_t ext_006E7460(void* self);
+int32_t ext_006BA660(const char* const* self, const char* other);
+
+int32_t sub_006BA780(const char* const* self, void* arg) {
+    int32_t key = ext_006E7460(arg);
+    int32_t cmp = ext_006BA660(self, reinterpret_cast<const char*>(static_cast<intptr_t>(key)));
+    return cmp == 0 ? 1 : 0;
+}
+} // namespace lift_006BA780
