@@ -1225,3 +1225,13 @@ DWORD fn_007CC600(const void* self) {
     return lift_field<DWORD>(self, 0x28);
 }
 } // namespace lift_007CC600
+
+// [0x007CB970] sub_007CB970 (8 bytes)
+namespace lift_007CB970 {
+// @name readFloatAt10
+// @summary Returns the float stored at offset 0x10 of the object passed as the first argument.
+// @field self +0x10 float field_0x10
+float fn_007CB970(void* self) {
+    return lift_field<float>(self, 0x10);
+}
+} // namespace lift_007CB970

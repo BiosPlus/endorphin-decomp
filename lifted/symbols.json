@@ -66775,6 +66775,12 @@
     "summary": "Clamps a float to \u003e= 0.0f and stores it at offset +0x10",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CB970": {
+    "name": "readFloatAt10",
+    "signature": "float fn_007CB970(void* self)",
+    "summary": "Returns the float stored at offset 0x10 of the object passed as the first argument.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007CB980": {
     "name": "ObjectField::SetHalfOrZeroFloat14",
     "class": "ObjectField",

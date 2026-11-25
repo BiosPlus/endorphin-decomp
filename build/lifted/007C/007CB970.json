@@ -1,0 +1,21 @@
+{
+  "va": "0x007CB970",
+  "size": 8,
+  "orig_symbol": "sub_007CB970",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "readFloatAt10",
+  "signature": "float fn_007CB970(void* self)",
+  "summary": "Returns the float stored at offset 0x10 of the object passed as the first argument.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:14:44Z"
+}
