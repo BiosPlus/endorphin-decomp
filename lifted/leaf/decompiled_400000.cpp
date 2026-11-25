@@ -1489,3 +1489,16 @@ void* __thiscall fn_0040BF00(void* self) {
     return self;
 }
 } // namespace lift_0040BF00
+
+// [0x00407870]
+namespace lift_00407870 {
+// @name floorFloat
+// @summary Computes the floor of a single-precision float via MSVCR80 floor.
+
+
+extern double ext_006A6E92(double x);
+
+extern float fn_00407870(float x) {
+    return static_cast<float>(ext_006A6E92(static_cast<double>(x)));
+}
+} // namespace lift_00407870

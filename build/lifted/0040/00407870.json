@@ -1,0 +1,13 @@
+{
+  "va": "0x00407870",
+  "size": 27,
+  "orig_symbol": "sub_00407870",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "floorFloat",
+  "signature": "extern \"C\" float fn_00407870(float x)",
+  "summary": "Computes the floor of a single-precision float via MSVCR80 floor.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T11:28:27Z"
+}
