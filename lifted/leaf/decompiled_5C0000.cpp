@@ -1507,3 +1507,40 @@ assign:
     }
 }
 } // namespace lift_005C3EA0
+
+// [0x005C3FB0]
+namespace lift_005C3FB0 {
+// @name FindEntryIndexByStringAt17C
+// @summary Scans the 28-byte entries between mem_00B44C08 (begin) and mem_00B44C0C (end) for the first whose leading std::string equals this+0x17C; returns its index, or 0 when none matches or the array is empty.
+// @field +0x17C uint8_t[28] field_0x17C
+
+
+extern uintptr_t mem_00B44C08;  // vector-like begin pointer (global)
+extern uintptr_t mem_00B44C0C;  // vector-like end pointer (global)
+
+extern bool __cdecl ext_MSVCP80_string_equal(const void* lhs, const void* rhs);
+
+constexpr uint32_t kEntryStride = 0x1C;
+constexpr ptrdiff_t kKeyOffset = 0x17C;
+
+extern uint32_t __thiscall fn_005C3FB0(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+
+    uint8_t* begin = reinterpret_cast<uint8_t*>(mem_00B44C08);
+    if (begin == nullptr) {
+        return 0;
+    }
+
+    uint32_t span = static_cast<uint32_t>(mem_00B44C0C - mem_00B44C08);
+    uint32_t count = static_cast<uint32_t>(static_cast<int32_t>(span) / static_cast<int32_t>(kEntryStride));
+
+    for (uint32_t i = 0; i < count; ++i) {
+        uint8_t* entry = begin + static_cast<size_t>(i) * kEntryStride;
+        if (ext_MSVCP80_string_equal(entry, obj + kKeyOffset)) {
+            return i;
+        }
+    }
+
+    return 0;
+}
+} // namespace lift_005C3FB0

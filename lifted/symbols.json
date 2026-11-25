@@ -30047,6 +30047,12 @@
     "summary": "Stores the thiscall argument at this+0x198, then assigns the std::string at this+0x17c from the 28-byte table entry at index (arg) of the global record vector (mem_00B44C08..0C).",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
+  "0x005C3FB0": {
+    "name": "FindEntryIndexByStringAt17C",
+    "signature": "extern \"C\" uint32_t __thiscall fn_005C3FB0(void* self)",
+    "summary": "Scans the 28-byte entries between mem_00B44C08 (begin) and mem_00B44C0C (end) for the first whose leading std::string equals this+0x17C; returns its index, or 0 when none matches or the array is empty.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005C4020": {
     "name": "NMData::CollisionModelData::vfunc_33",
     "class": "NMData::CollisionModelData",
