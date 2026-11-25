@@ -31655,6 +31655,13 @@
     "summary": "Refreshes the 36-byte block at +0x30 from the owner's transform, optionally composes it with a second transform, then composes it with the block at +0x54.",
     "lifted_path": "lifted/Sensors/SensorRelativeOrientation.cpp"
   },
+  "0x00629370": {
+    "name": "Unknown::initFloatsAndVtable_00629370",
+    "class": "Unknown",
+    "signature": "uintptr_t fn_00629370(uintptr_t this_ptr, uint32_t arg0)",
+    "summary": "Base-initializes the object via ext_005FF240, sets vtable to 0x0097804C, zeroes three float fields, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x006294C0": {
     "name": "Sensors::SensorAbsoluteGeneralEulers::vfunc_14",
     "class": "Sensors::SensorAbsoluteGeneralEulers",

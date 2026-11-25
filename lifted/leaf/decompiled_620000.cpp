@@ -840,3 +840,31 @@ void* fn_0062E290(void* self) {
     return self;
 }
 } // namespace lift_0062E290
+
+// [0x00629370] sub_00629370 (36 bytes)
+namespace lift_00629370 {
+// Known callee 0x005FF240: sub_005FF240 (Initializes object fields to zero, stores argument at +0x28, and sets vtable to 0x0096F154)
+extern uint32_t ext_005FF240(uintptr_t this_ptr, uint32_t arg0);
+
+// @name Unknown::initFloatsAndVtable_00629370
+// @class Unknown
+// @summary Base-initializes the object via ext_005FF240, sets vtable to 0x0097804C, zeroes three float fields, and returns this.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x30 float field_0x30
+// @field Unknown +0x34 float field_0x34
+// @field Unknown +0x38 float field_0x38
+uintptr_t fn_00629370(uintptr_t this_ptr, uint32_t arg0) {
+    ext_005FF240(this_ptr, arg0);
+
+    auto* obj = reinterpret_cast<unsigned char*>(this_ptr);
+    const uint32_t vtable = 0x0097804Cu;
+    const float zero = 0.0f;
+
+    std::memcpy(obj + 0x00, &vtable, sizeof(vtable));
+    std::memcpy(obj + 0x38, &zero, sizeof(zero));
+    std::memcpy(obj + 0x34, &zero, sizeof(zero));
+    std::memcpy(obj + 0x30, &zero, sizeof(zero));
+
+    return this_ptr;
+}
+} // namespace lift_00629370
