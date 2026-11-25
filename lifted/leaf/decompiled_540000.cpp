@@ -948,3 +948,34 @@ void fn_0054A0E0(void* self) {
     ext_00552850(self);
 }
 } // namespace lift_0054A0E0
+
+// [0x00547E50] sub_00547E50 (41 bytes)
+namespace lift_00547E50 {
+// Known callee 0x005D9EF0: CObject::InitTimerFloor (If the flag at +0x1f1 is clear, forward a global value through a helper and a virtual call on the object at +0x04, then store the float constant 5.0 at +0x1f4.)
+extern void ext_005D9EF0(void* self);
+// Known callee 0x005404B0: CopyFloat14 (Copies a 14-float (56-byte) block from src into self and returns self.)
+extern void* ext_005404B0(void* self, const void* src);
+
+// @name Unknown::initOrCopyBlock
+// @class Unknown
+// @summary If the pointer at +0xa0 is set, forward to InitTimerFloor on it; otherwise copy the 56-byte block at +0x30 into +0x68 and tail-call the object's vtable slot 0x44.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x30 float block_0x30[14]
+// @field Unknown +0x68 float block_0x68[14]
+// @field Unknown +0xa0 void* field_0xa0
+void fn_00547E50(void* self) {
+    void* timer = lift_field<void*>(self, 0xa0);
+    if (timer != nullptr) {
+        ext_005D9EF0(timer);
+        return;
+    }
+
+    const void* src = reinterpret_cast<const uint8_t*>(self) + 0x30;
+    void* dst = reinterpret_cast<uint8_t*>(self) + 0x68;
+    ext_005404B0(dst, src);
+
+    void* vtbl = lift_field<void*>(self, 0);
+    void* slot = lift_field<void*>(vtbl, 0x44);
+    reinterpret_cast<void (*)(void*)>(slot)(self);
+}
+} // namespace lift_00547E50

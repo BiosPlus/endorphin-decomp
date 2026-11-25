@@ -1,0 +1,40 @@
+{
+  "va": "0x00547E50",
+  "size": 41,
+  "orig_symbol": "sub_00547E50",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Unknown::initOrCopyBlock",
+  "class": "Unknown",
+  "signature": "void fn_00547E50(void* self)",
+  "summary": "If the pointer at +0xa0 is set, forward to InitTimerFloor on it; otherwise copy the 56-byte block at +0x30 into +0x68 and tail-call the object's vtable slot 0x44.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "block_0x30[14]"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "float",
+      "name": "block_0x68[14]"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA0",
+      "type": "void*",
+      "name": "field_0xa0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:24:29Z"
+}

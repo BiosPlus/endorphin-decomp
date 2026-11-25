@@ -21450,6 +21450,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xA4 and tail-calls sub_005DC420.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00547E50": {
+    "name": "Unknown::initOrCopyBlock",
+    "class": "Unknown",
+    "signature": "void fn_00547E50(void* self)",
+    "summary": "If the pointer at +0xa0 is set, forward to InitTimerFloor on it; otherwise copy the 56-byte block at +0x30 into +0x68 and tail-call the object's vtable slot 0x44.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00547E80": {
     "name": "Object::copyVec3IfFlagClearAndNotify",
     "class": "Object",
