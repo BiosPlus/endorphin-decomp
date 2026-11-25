@@ -43941,6 +43941,13 @@
     "summary": "Reads the int32 at offset 0 of src and forwards it to ext_0046C500 on self; returns self.",
     "lifted_path": "lifted/ExprParser/IntType.cpp"
   },
+  "0x0066AE90": {
+    "name": "ExprParser::BoolType::vfunc_0",
+    "class": "ExprParser::BoolType",
+    "signature": "void* __stdcall fn_0066AE90(void* self, const uint8_t* src)",
+    "summary": "Reads one byte from the second argument and passes it to ext_006720A0 on self; returns self.",
+    "lifted_path": "lifted/ExprParser/BoolType.cpp"
+  },
   "0x0066AEF0": {
     "name": "ExprParser::BoolType::vfunc_2",
     "class": "ExprParser::BoolType",

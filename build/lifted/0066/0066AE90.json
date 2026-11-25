@@ -1,0 +1,14 @@
+{
+  "va": "0x0066AE90",
+  "size": 36,
+  "orig_symbol": "ExprParser::BoolType::vfunc_0",
+  "src_path": "src/ExprParser/BoolType.cpp",
+  "lifted_path": "lifted/ExprParser/BoolType.cpp",
+  "name": "ExprParser::BoolType::vfunc_0",
+  "class": "ExprParser::BoolType",
+  "signature": "void* __stdcall fn_0066AE90(void* self, const uint8_t* src)",
+  "summary": "Reads one byte from the second argument and passes it to ext_006720A0 on self; returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:52:09Z"
+}

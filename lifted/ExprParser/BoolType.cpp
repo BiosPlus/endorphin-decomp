@@ -343,3 +343,18 @@ void fn_005B65E0(void) {
 }
 } // namespace lift_0046C4E0
 } // namespace lift_005B65E0
+
+// [0x0066AE90] ExprParser::BoolType::vfunc_0 (36 bytes)
+namespace lift_0066AE90 {
+// Callee 0x006720A0 (thiscall: ecx = self, one stack argument, callee pops 4 bytes).
+extern void __thiscall ext_006720A0(void* self, uint8_t flag);
+
+// @name ExprParser::BoolType::vfunc_0
+// @class ExprParser::BoolType
+// @summary Reads one byte from the second argument and passes it to ext_006720A0 on self; returns self.
+void* __stdcall fn_0066AE90(void* self, const uint8_t* src) {
+    uint8_t flag = *src;
+    ext_006720A0(self, flag);
+    return self;
+}
+} // namespace lift_0066AE90
