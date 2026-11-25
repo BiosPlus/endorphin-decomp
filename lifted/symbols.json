@@ -28764,6 +28764,13 @@
     "summary": "If the pointer at +0x158 is non-null, tail-forwards to ext_00647F80 with the child pointer's +0xAC value as `this`; otherwise returns 0.",
     "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
   },
+  "0x005B6A80": {
+    "name": "Unknown::applyIdentityAndGetSubobject",
+    "class": "Unknown",
+    "signature": "void* fn_005B6A80(void* self)",
+    "summary": "If the pointer at +0x158 is set, forwards an identity 3x3 float matrix through the child at +0xAC and ext_00694880; always returns the address of the subobject at +0x1A0.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B6B60": {
     "name": "Unknown::forwardToSubobjectAt158",
     "class": "Unknown",

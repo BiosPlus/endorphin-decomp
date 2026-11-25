@@ -1,0 +1,28 @@
+{
+  "va": "0x005B6A80",
+  "size": 99,
+  "orig_symbol": "sub_005B6A80",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "Unknown::applyIdentityAndGetSubobject",
+  "class": "Unknown",
+  "signature": "void* fn_005B6A80(void* self)",
+  "summary": "If the pointer at +0x158 is set, forwards an identity 3x3 float matrix through the child at +0xAC and ext_00694880; always returns the address of the subobject at +0x1A0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "void*",
+      "name": "field_0x158"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1A0",
+      "type": "uint8_t field_0x1A0 (subobject; only its address is",
+      "name": "taken)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:41:34Z"
+}
