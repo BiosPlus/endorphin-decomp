@@ -1,0 +1,34 @@
+{
+  "va": "0x00454AD0",
+  "size": 76,
+  "orig_symbol": "sub_00454AD0",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "Unknown::NotifyWindowAndForward_00454AD0",
+  "class": "Unknown",
+  "signature": "void fn_00454AD0(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+  "summary": "If this+0x124 is zero, invokes the virtual method at vtbl[0x1a8] and sends WM_USER+5 (0x85) to the window at this+0x20; then, if this+0x128 is zero, forwards its three arguments to sub_00456210.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "hwnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x124",
+      "type": "uint32_t",
+      "name": "field_0x124"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x128",
+      "type": "uint8_t",
+      "name": "field_0x128"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:37:56Z"
+}

@@ -416,6 +416,7 @@ struct Unknown_Fields {
     // +0x20  HDC                      hdc  (evidence: 0x004275C0, 0x0042EA50) // CONFLICT: multiple definitions at +0x20
     // +0x20  DWORD                    hwnd  (evidence: 0x0044BF00) // CONFLICT: multiple definitions at +0x20
     // +0x20  HWND                     hwnd  (evidence: 0x00404770, 0x0040BE90, 0x00414880, 0x0041FF10, 0x006A92F0, 0x006B0E30, 0x006B2F70, 0x006B53D0, 0x006B8B70) // CONFLICT: multiple definitions at +0x20
+    // +0x20  void*                    hwnd  (evidence: 0x00454AD0) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint8_t                  initialized  (evidence: 0x006F9E90) // CONFLICT: multiple definitions at +0x20
     // +0x20  HWND                     ownerHwnd  (evidence: 0x004586A0, 0x00458DF0) // CONFLICT: multiple definitions at +0x20
     // +0x20  void* field_0x20 (dispatch table base, via sub-object)  (evidence: 0x007D5B30) // CONFLICT: multiple definitions at +0x20
@@ -751,8 +752,10 @@ struct Unknown_Fields {
     // +0x11C uint32_t                 field_0x11c  (evidence: 0x004313A0) // CONFLICT: multiple definitions at +0x11C
     // +0x11C void*                    field_0x11c  (evidence: 0x00434340) // CONFLICT: multiple definitions at +0x11C
     // +0x120 DWORD                    field_0x120  (evidence: 0x00454BE0, 0x004584C0, 0x006B2F70, 0x006B6270)
+    // +0x124 uint32_t                 field_0x124  (evidence: 0x00454AD0)
     // +0x128 BYTE                     field_0x128  (evidence: 0x00458290, 0x004582B0, 0x004584C0) // CONFLICT: multiple definitions at +0x128
     // +0x128 DWORD                    field_0x128  (evidence: 0x0043C900) // CONFLICT: multiple definitions at +0x128
+    // +0x128 uint8_t                  field_0x128  (evidence: 0x00454AD0) // CONFLICT: multiple definitions at +0x128
     // +0x12C BYTE                     field_0x12C  (evidence: 0x007C8490, 0x007C93A0) // CONFLICT: multiple definitions at +0x12C
     // +0x12C embedded_object          field_0x12C  (evidence: 0x004137F0, 0x00414880) // CONFLICT: multiple definitions at +0x12C
     // +0x12C float                    field_0x12C  (evidence: 0x007C8490, 0x007C9AA0) // CONFLICT: multiple definitions at +0x12C

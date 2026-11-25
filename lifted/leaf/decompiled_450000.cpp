@@ -853,3 +853,38 @@ void fn_00456C70(void* self, void* arg2) {
     }
 }
 } // namespace lift_00456C70
+
+// [0x00454AD0]
+namespace lift_00454AD0 {
+// Known callee 0x00456210: thiscall(self) with three stack arguments.
+extern void ext_00456210(void* self, uint32_t a1, uint32_t a2, uint32_t a3);
+// Import slot for USER32!SendMessageA (value stored at .rdata 0x00925694).
+extern int mem_00925694;
+
+// @name Unknown::NotifyWindowAndForward_00454AD0
+// @class Unknown
+// @summary If this+0x124 is zero, invokes the virtual method at vtbl[0x1a8] and sends WM_USER+5 (0x85) to the window at this+0x20; then, if this+0x128 is zero, forwards its three arguments to sub_00456210.
+// @field Unknown +0x20 void* hwnd
+// @field Unknown +0x124 uint32_t field_0x124
+// @field Unknown +0x128 uint8_t field_0x128
+void fn_00454AD0(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
+    using VirtNoArg = void (*)(void* obj);
+    using SendMessageFn = intptr_t (*)(void* hwnd, uint32_t msg, uintptr_t wParam, intptr_t lParam);
+
+    if (lift_field<uint32_t>(self, 0x124) == 0) {
+        // vtbl[0x1a8](self)
+        void* vtbl = lift_field<void*>(self, 0);
+        void* method = lift_field<void*>(vtbl, 0x1a8);
+        reinterpret_cast<VirtNoArg>(method)(self);
+
+        // SendMessageA(hwnd, 0x85, 0, 0)
+        void* hwnd = lift_field<void*>(self, 0x20);
+        auto send = reinterpret_cast<SendMessageFn>(static_cast<uintptr_t>(mem_00925694));
+        send(hwnd, 0x85u, 0u, 0);
+    }
+
+    if (lift_field<uint8_t>(self, 0x128) == 0) {
+        ext_00456210(self, a1, a2, a3);
+    }
+}
+} // namespace lift_00454AD0

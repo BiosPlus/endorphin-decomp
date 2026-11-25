@@ -4928,6 +4928,13 @@
     "summary": "Checks whether the given window is a child window of this window using USER32!IsChild.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x00454AD0": {
+    "name": "Unknown::NotifyWindowAndForward_00454AD0",
+    "class": "Unknown",
+    "signature": "void fn_00454AD0(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "If this+0x124 is zero, invokes the virtual method at vtbl[0x1a8] and sends WM_USER+5 (0x85) to the window at this+0x20; then, if this+0x128 is zero, forwards its three arguments to sub_00456210.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00454B60": {
     "name": "ConsoleWnd::vfunc_107",
     "class": "ConsoleWnd",
