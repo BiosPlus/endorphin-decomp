@@ -59970,6 +59970,13 @@
     "summary": "Clamps a float to [0,1] (NaN yields 1.0) and stores it at self+0x0C.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007C9D80": {
+    "name": "Unknown::InitStruct",
+    "class": "Unknown",
+    "signature": "void sub_007C9D80(void* obj)",
+    "summary": "Initializes struct fields to zero, sets +0x2C to FLT_MAX, and initializes float4 blocks at +0x30 and +0x40.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C9DD0": {
     "name": "addOffset0x30",
     "signature": "uint32_t sub_007C9DD0(uint32_t arg0)",
@@ -60512,6 +60519,12 @@
     "name": "setOwnedState",
     "signature": "void sub_007D6290(uint32_t arg0, uint32_t arg1)",
     "summary": "Updates state at +0x10 and invokes callback at +0x1c/+0x10 on pointer at +0x00 when transitioning from 1 with +0x14 == 0.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
+  "0x007D6660": {
+    "name": "incrementClampedBucket",
+    "signature": "uint32_t sub_007D6660(int32_t eax, uint32_t esi)",
+    "summary": "Rounds input up to a multiple of 4, divides by 4, clamps to [0, field_0x14 - 1], increments that uint32_t entry in field_0x10, and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
   "0x007D7190": {

@@ -1,0 +1,21 @@
+{
+  "va": "0x006F7970",
+  "size": 79,
+  "orig_symbol": "sub_006F7970",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "sub_006F7970",
+  "signature": "int32_t __thiscall sub_006F7970(void* self, uint32_t arg0, uint32_t arg1)",
+  "summary": "Dispatches vtable+0x8C with \u0026arg0 and three zero arguments.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "uint32_t*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:47:55Z"
+}

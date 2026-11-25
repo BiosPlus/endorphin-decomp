@@ -1471,3 +1471,19 @@ void fn_006BBA40(void) {
 }
 } // namespace lift_006BBA40
 } // namespace lift_006FFF20
+
+// [0x006F7970]
+namespace lift_006F7970 {
+// @name sub_006F7970
+// @summary Dispatches vtable+0x8C with &arg0 and three zero arguments.
+// @field Self +0x00 uint32_t* vtable
+
+
+int32_t __thiscall sub_006F7970(void* self, uint32_t arg0, uint32_t arg1) {
+    (void)arg1;
+    auto* vtable = *reinterpret_cast<uintptr_t* const*>(self);
+    using VCallFn = int32_t(__thiscall*)(void*, uint32_t*, uint32_t, uint32_t, uint32_t);
+    auto fn = reinterpret_cast<VCallFn>(vtable[0x8C / 4]);
+    return fn(self, &arg0, 0, 0, 0);
+}
+} // namespace lift_006F7970
