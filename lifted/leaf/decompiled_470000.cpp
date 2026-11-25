@@ -121,3 +121,43 @@ void fn_00477B70(float* first, float* last) {
     }
 }
 } // namespace lift_00477B70
+
+// [0x004788D0]
+namespace lift_004788D0 {
+// @name CopyBackwardElements8
+// @summary Copies an array of 8-byte elements [begin, end) so it ends at dstEnd, copying back-to-front; returns the new begin.
+
+// Memory base for the 32-bit guest address space.
+extern uint8_t* mem_;
+
+static inline uint32_t ReadU32(uint32_t addr) {
+    return lift_field<uint32_t>(mem_, static_cast<ptrdiff_t>(addr));
+}
+
+static inline void WriteU32(uint32_t addr, uint32_t value) {
+    lift_field<uint32_t>(mem_, static_cast<ptrdiff_t>(addr)) = value;
+}
+
+uint32_t CopyBackwardElements8(uint32_t begin, uint32_t end, uint32_t dstEnd) {
+    // (end - begin) >> 3 << 3, using arithmetic shift as in the original.
+    const int32_t diff = static_cast<int32_t>(end - begin);
+    const uint32_t size = static_cast<uint32_t>((diff >> 3) * 8);
+    const uint32_t result = dstEnd - size;
+
+    if (begin == end) {
+        return result;
+    }
+
+    const uint32_t delta = dstEnd - end;
+    uint32_t src = end;
+    do {
+        src -= 8;
+        const uint32_t lo = ReadU32(src);
+        const uint32_t hi = ReadU32(src + 4);
+        WriteU32(delta + src, lo);
+        WriteU32(delta + src + 4, hi);
+    } while (src != begin);
+
+    return result;
+}
+} // namespace lift_004788D0

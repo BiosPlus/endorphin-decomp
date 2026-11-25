@@ -1,0 +1,13 @@
+{
+  "va": "0x004788D0",
+  "size": 62,
+  "orig_symbol": "sub_004788D0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "CopyBackwardElements8",
+  "signature": "static inline uint32_t ReadU32(uint32_t addr)",
+  "summary": "Copies an array of 8-byte elements [begin, end) so it ends at dstEnd, copying back-to-front; returns the new begin.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:59:11Z"
+}
