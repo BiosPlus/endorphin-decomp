@@ -1,0 +1,28 @@
+{
+  "va": "0x005F51D0",
+  "size": 69,
+  "orig_symbol": "sub_005F51D0",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "Unknown::setField20cAndNotifySubobject",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __thiscall fn_005F51D0(void* self, uint32_t arg)",
+  "summary": "Stores the low byte of its argument at +0x20C; if the sub-object at +0x10 is non-null, calls its vtable slot 0x30 with (0x1000, arg, global mem_00B40640), then its vtable slot 0x2C with (0x1000, stored byte).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "subobject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20C",
+      "type": "uint8_t",
+      "name": "flag"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:22:17Z"
+}

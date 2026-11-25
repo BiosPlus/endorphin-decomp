@@ -217,3 +217,36 @@ uint32_t __thiscall sub_005FF240(uintptr_t this_ptr, uint32_t arg0) {
     return static_cast<uint32_t>(this_ptr);
 }
 } // namespace lift_005FF240
+
+// [0x005F51D0] sub_005F51D0 (69 bytes)
+namespace lift_005F51D0 {
+extern uint32_t mem_00B40640;
+
+// @name Unknown::setField20cAndNotifySubobject
+// @class Unknown
+// @summary Stores the low byte of its argument at +0x20C; if the sub-object at +0x10 is non-null, calls its vtable slot 0x30 with (0x1000, arg, global mem_00B40640), then its vtable slot 0x2C with (0x1000, stored byte).
+// @field Unknown +0x10 void* subobject
+// @field Unknown +0x20C uint8_t flag
+extern void __thiscall fn_005F51D0(void* self, uint32_t arg) {
+    using VFn4 = void (*)(void*, uint32_t, uint32_t, uint32_t);
+    using VFn3 = void (*)(void*, uint32_t, uint32_t);
+
+    lift_field<uint8_t>(self, 0x20C) = static_cast<uint8_t>(arg & 0xFFu);
+
+    void* sub = lift_field<void*>(self, 0x10);
+    if (sub == nullptr) {
+        return;
+    }
+
+    void* vt = lift_field<void*>(sub, 0);
+    VFn4 slot30 = reinterpret_cast<VFn4>(lift_field<void*>(vt, 0x30));
+    slot30(sub, 0x1000u, arg, mem_00B40640);
+
+    // Re-read the sub-object and its vtable: the first call may have changed them.
+    uint8_t stored = lift_field<uint8_t>(self, 0x20C);
+    sub = lift_field<void*>(self, 0x10);
+    vt = lift_field<void*>(sub, 0);
+    VFn3 slot2C = reinterpret_cast<VFn3>(lift_field<void*>(vt, 0x2C));
+    slot2C(sub, 0x1000u, static_cast<uint32_t>(stored));
+}
+} // namespace lift_005F51D0
