@@ -1,0 +1,34 @@
+{
+  "va": "0x007BFCF0",
+  "size": 77,
+  "orig_symbol": "sub_007BFCF0",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "Unknown::StoreWordOrForward_007BFCF0",
+  "class": "Unknown",
+  "signature": "int fn_007BFCF0(void* self, uint32_t a1, const void* a2)",
+  "summary": "If a1 == 0x13D, store the 16-bit word at a2 into *(self+0x1CC), set bit 31 of self+0x1C and bit 3 of self+0x0C, and return 1; otherwise forward (self, a1, a2) to the function pointer at (*(self+0x1CC))+0x20 and return its result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1CC",
+      "type": "void*",
+      "name": "field_0x1CC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:44:50Z"
+}

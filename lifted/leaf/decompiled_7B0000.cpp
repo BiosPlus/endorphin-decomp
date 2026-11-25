@@ -896,3 +896,35 @@ void fn_007BF2F0(void* self) {
     wr32(base + 0x1CC, 0);
 }
 } // namespace lift_007BF2F0
+
+// [0x007BFCF0] sub_007BFCF0 (77 bytes)
+namespace lift_007BFCF0 {
+// No external callees are referenced directly; the indirect call goes through
+// a function pointer stored in the object at self+0x1CC (+0x20), so no ext_/mem_
+// declarations are needed.
+
+// @name Unknown::StoreWordOrForward_007BFCF0
+// @class Unknown
+// @summary If a1 == 0x13D, store the 16-bit word at a2 into *(self+0x1CC), set bit 31 of self+0x1C and bit 3 of self+0x0C, and return 1; otherwise forward (self, a1, a2) to the function pointer at (*(self+0x1CC))+0x20 and return its result.
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x1CC void* field_0x1CC
+int fn_007BFCF0(void* self, uint32_t a1, const void* a2) {
+    void* target = lift_field<void*>(self, 0x1CC);
+
+    if (a1 != 0x13D) {
+        // Forward to target's function pointer at +0x20: callee(self, a1, a2).
+        using Handler = int (*)(void*, uint32_t, const void*);
+        auto handler = reinterpret_cast<Handler>(lift_field<void*>(target, 0x20));
+        return handler(self, a1, a2);
+    }
+
+    // Fast path: copy 16-bit word from a2 (zero-extended) into *target.
+    uint16_t word = lift_field<uint16_t>(a2, 0);
+    lift_field<uint32_t>(target, 0) = static_cast<uint32_t>(word);
+
+    lift_field<uint32_t>(self, 0x1C) |= 0x80000000u;
+    lift_field<uint32_t>(self, 0x0C) |= 0x8u;
+    return 1;
+}
+} // namespace lift_007BFCF0
