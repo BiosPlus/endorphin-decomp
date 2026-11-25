@@ -1012,3 +1012,18 @@ int* fn_0049CC60() {
     return &mem_00ADD80C;
 }
 } // namespace lift_0049CC60
+
+// [0x0049E4A0]
+namespace lift_0049E4A0 {
+// @name storeValueAndStaticObject_0049E4A0
+// @summary Calls the one-time guarded initializer for the static object at mem_00ADD82C, then writes the given value to out[0] and the object's address to out[1].
+
+// @callee ext_0049DAA0 -> ensureStaticObjectInitialized_0049DAA0 (DWORD fn_0049DAA0(); returns object address)
+extern DWORD ext_0049DAA0();
+
+void sub_0049E4A0(DWORD* out, DWORD value) {
+    DWORD obj = ext_0049DAA0();
+    out[0] = value;
+    out[1] = obj;
+}
+} // namespace lift_0049E4A0

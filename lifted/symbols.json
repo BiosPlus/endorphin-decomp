@@ -11097,6 +11097,12 @@
     "summary": "Calls sub_0049CFF0 to obtain a 32-bit result and stores it into this+0x04.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x0049E4A0": {
+    "name": "storeValueAndStaticObject_0049E4A0",
+    "signature": "void sub_0049E4A0(DWORD* out, DWORD value)",
+    "summary": "Calls the one-time guarded initializer for the static object at mem_00ADD82C, then writes the given value to out[0] and the object's address to out[1].",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049ED30": {
     "name": "sub_0049ED30",
     "signature": "extern \"C\" void __fastcall fn_0049ED30(void* self)",

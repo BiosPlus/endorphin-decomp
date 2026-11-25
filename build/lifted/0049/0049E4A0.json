@@ -1,0 +1,13 @@
+{
+  "va": "0x0049E4A0",
+  "size": 30,
+  "orig_symbol": "sub_0049E4A0",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "storeValueAndStaticObject_0049E4A0",
+  "signature": "void sub_0049E4A0(DWORD* out, DWORD value)",
+  "summary": "Calls the one-time guarded initializer for the static object at mem_00ADD82C, then writes the given value to out[0] and the object's address to out[1].",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:31:12Z"
+}
