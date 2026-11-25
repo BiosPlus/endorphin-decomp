@@ -1,0 +1,27 @@
+{
+  "va": "0x006B0CD0",
+  "size": 88,
+  "orig_symbol": "sub_006B0CD0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "sub_006B0CD0_dtor",
+  "signature": "extern \"C\" void __thiscall fn_006B0CD0(void* self)",
+  "summary": "Destructor that resets vtable, destroys member at +0x64 via MFC80_ord_1934, and calls base destructor MFC80_ord_620.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "member_0x64_vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:19:05Z"
+}
