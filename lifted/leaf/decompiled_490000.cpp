@@ -823,3 +823,27 @@ void* fn_004989F0() {
     return &mem_00ADD16C;
 }
 } // namespace lift_004989F0
+
+// [0x0049DAA0]
+namespace lift_0049DAA0 {
+// @name ensureStaticObjectInitialized_0049DAA0
+// @summary One-time guarded initializer for the static object at mem_00ADD82C; returns its address.
+
+// Callee: runs the object's constructor-like setup on the object passed as self.
+DWORD ext_0067A670(void* self, DWORD value);
+
+// Init guard bitfield (bit 0 = initialized/in-progress).
+extern DWORD mem_00ADD830;
+// Static object storage; first DWORD holds the object's state/vtable-like value.
+extern DWORD mem_00ADD82C;
+
+DWORD fn_0049DAA0() {
+    // Guard: run one-time initialization if bit 0 of the guard word is clear.
+    if ((mem_00ADD830 & 1u) == 0) {
+        mem_00ADD830 |= 1u;
+        ext_0067A670(&mem_00ADD82C, 0);
+        mem_00ADD82C = 0x009400FCu;
+    }
+    return static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00ADD82C));
+}
+} // namespace lift_0049DAA0

@@ -8643,6 +8643,13 @@
     "summary": "Copies a range of 16-byte (4-float) elements from [src_begin, src_end) to dst, returning the end destination pointer.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00480E40": {
+    "name": "ToolEngine::vfunc_9",
+    "class": "ToolEngine",
+    "signature": "uint8_t __thiscall fn_00480E40(uint32_t self)",
+    "summary": "Checks if any item in the subobject's list satisfies sub_00584C00",
+    "lifted_path": "lifted/classes/ToolEngine.cpp"
+  },
   "0x00480EA0": {
     "name": "ToolEngine::vfunc_49",
     "class": "ToolEngine",
@@ -10993,6 +11000,12 @@
     "signature": "void fn_0049DA30(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00499190 (ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_38).",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
+  "0x0049DAA0": {
+    "name": "ensureStaticObjectInitialized_0049DAA0",
+    "signature": "DWORD fn_0049DAA0()",
+    "summary": "One-time guarded initializer for the static object at mem_00ADD82C; returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
   "0x0049DB60": {
     "name": "ListFindByStringKey",
@@ -16808,6 +16821,13 @@
     "class": "Unknown",
     "signature": "void fn_004FDE90(void* self)",
     "summary": "Releases the object at +0x18 via its virtual slot 0 (deleting dtor, flag 1), then calls the base-reset helper on self.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
+  "0x004FDEF0": {
+    "name": "sub_004FDEF0_dtor",
+    "class": "sub_004FDEF0_Class",
+    "signature": "extern \"C\" void __fastcall fn_004FDEF0(void* self)",
+    "summary": "Destroys two std::string members at +0x34 and +0x18, then calls base destructor sub_00665810.",
     "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
   "0x004FDF50": {
