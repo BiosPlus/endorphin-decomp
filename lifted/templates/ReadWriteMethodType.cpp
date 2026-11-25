@@ -10116,3 +10116,28 @@ void fn_004D5BE0(void* self) {
     lift_field<uint32_t>(self, 0x04) = 0x00AE5D1CU;
 }
 } // namespace lift_004D5BE0
+
+// [0x004D6580] ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setFrictionEnabled(bool), 0}>::vfunc_40 (122 bytes)
+namespace lift_004D6580 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00AE5D40;
+extern int mem_00AE5D3C;
+
+// @name ReadWriteMethodType<RigEventData,bool>::vfunc_40 (isFrictionEnabled / setFrictionEnabled)
+// @class ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setFrictionEnabled(bool), 0}>
+// @summary Lazily constructs the shared static object at mem_00AE5D3C (guarded by bit 0 of mem_00AE5D40) and stores its address into the stack-passed object at +0x04; ECX is unused.
+// @field ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setFrictionEnabled(bool), 0}> +0x04 void* field_0x04
+void fn_004D6580(void* self) {
+    // The original SEH frame (fs:[0] push/pop, handler 0x88D15E) is compiler
+    // boilerplate for the function-local static init and is not carried over.
+    if ((mem_00AE5D40 & 1) == 0) {
+        mem_00AE5D40 |= 1;
+        // Construct the static object: ECX = &mem_00AE5D3C, one stack arg = 0.
+        ext_0067A670(reinterpret_cast<void*>(&mem_00AE5D3C), 0);
+        // Install the vtable pointer at offset 0 of the static object.
+        mem_00AE5D3C = 0x009491DC;
+    }
+    lift_field<DWORD>(self, 0x04) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AE5D3C));
+}
+} // namespace lift_004D6580

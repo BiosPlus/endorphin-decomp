@@ -1,0 +1,14 @@
+{
+  "va": "0x004D6580",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setFrictionEnabled(bool), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ReadWriteMethodType\u003cRigEventData,bool\u003e::vfunc_40 (isFrictionEnabled / setFrictionEnabled)",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setFrictionEnabled(bool), 0}\u003e",
+  "signature": "void fn_004D6580(void* self)",
+  "summary": "Lazily constructs the shared static object at mem_00AE5D3C (guarded by bit 0 of mem_00AE5D40) and stores its address into the stack-passed object at +0x04; ECX is unused.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:34:10Z"
+}
