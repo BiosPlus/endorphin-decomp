@@ -120,6 +120,7 @@ struct Unknown_Fields {
     // +0x0   uint32_t                 vtablePtr  (evidence: 0x00503BC0, 0x00503CA0, 0x00508BC0, 0x0050C4D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   u32                      vtable_0x953D74  (evidence: 0x0052F7D0, 0x0052FD90) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable_or_ptr  (evidence: 0x005457B0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vtable_primary  (evidence: 0x0052F770) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable_ptr  (evidence: 0x0053C4C0, 0x006AD290) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtbl  (evidence: 0x0048E270) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtbl  (evidence: 0x006FC1E0, 0x007D4B10, 0x007D8470) // CONFLICT: multiple definitions at +0x0
@@ -441,7 +442,7 @@ struct Unknown_Fields {
     // +0x14  uint32_t                 vtable1  (evidence: 0x0052FEB0) // CONFLICT: multiple definitions at +0x14
     // +0x14  u32                      vtable_0x953D6C  (evidence: 0x0052F7D0, 0x0052FD90) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t                 vtable_ptr_2  (evidence: 0x0053C4C0) // CONFLICT: multiple definitions at +0x14
-    // +0x14  uint32_t                 vtable_secondary  (evidence: 0x0053B240) // CONFLICT: multiple definitions at +0x14
+    // +0x14  uint32_t                 vtable_secondary  (evidence: 0x0052F770, 0x0053B240) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint16_t                 wordArg  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0x14
     // +0x15  BYTE                     field_0x15  (evidence: 0x006D9030) // CONFLICT: multiple definitions at +0x15
     // +0x15  uint8                    field_0x15  (evidence: 0x004C4390, 0x004CCC30, 0x004CF910) // CONFLICT: multiple definitions at +0x15

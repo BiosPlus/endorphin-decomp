@@ -1413,3 +1413,26 @@ void* fn_0052FEB0() {
     return self;
 }
 } // namespace lift_0052FEB0
+
+// [0x0052F770] sub_0052F770 (87 bytes)
+namespace lift_0052F770 {
+// Known callee 0x0053B240: Unknown::initAnimationDerived_0053B240 (Base-initializes self, installs three 32-bit vtable pointers (+0x00, +0x14, +0x18), zeroes +0x1C/+0x20/+0x34/+0x38, then calls Animation::vfunc_29 to reset state; returns self.)
+extern void* ext_0053B240(void* self);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762; used here as the 0x3C-byte allocator.)
+extern void* ext_006A5C62(uint32_t size);
+
+// @name Unknown::createAnimationDerived_0052F770
+// @summary Allocates a 0x3C-byte object, base-initializes it as an Animation-derived object, installs its two vtable pointers, and returns it (or null if allocation fails).
+// @field Unknown +0x00 uint32_t vtable_primary
+// @field Unknown +0x14 uint32_t vtable_secondary
+void* fn_0052F770() {
+    void* obj = ext_006A5C62(0x3C);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+    ext_0053B240(obj);
+    lift_field<uint32_t>(obj, 0x00) = 0x953A84u;
+    lift_field<uint32_t>(obj, 0x14) = 0x953A7Cu;
+    return obj;
+}
+} // namespace lift_0052F770

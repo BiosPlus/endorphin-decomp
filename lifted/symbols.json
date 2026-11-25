@@ -21220,6 +21220,13 @@
     "summary": "Forwards the float read from *value plus two zero words to sub_00538550 on the subobject at +0x3c.",
     "lifted_path": "lifted/Primitives/Marker.cpp"
   },
+  "0x0052F770": {
+    "name": "Unknown::createAnimationDerived_0052F770",
+    "class": "Unknown",
+    "signature": "void* fn_0052F770()",
+    "summary": "Allocates a 0x3C-byte object, base-initializes it as an Animation-derived object, installs its two vtable pointers, and returns it (or null if allocation fails).",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052F7D0": {
     "name": "sub_0052EFC0",
     "class": "DoubleVector",
