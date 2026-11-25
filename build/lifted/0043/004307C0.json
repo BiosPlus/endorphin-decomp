@@ -1,0 +1,22 @@
+{
+  "va": "0x004307C0",
+  "size": 77,
+  "orig_symbol": "sub_004307C0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::NotifyFlagsFromManager_004307C0",
+  "class": "Unknown",
+  "signature": "inline void* ptr_at(const void* base, ptrdiff_t off)",
+  "summary": "Queries a global manager flag, notifies the arg object with it, and if self+0x100 is set, notifies again with (nested==5).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x100",
+      "type": "void*",
+      "name": "field_0x100"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:40:34Z"
+}

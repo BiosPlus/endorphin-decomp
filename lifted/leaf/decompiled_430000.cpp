@@ -2382,3 +2382,48 @@ void fn_00430550(void* self, void* arg) {
     }
 }
 } // namespace lift_00430550
+
+// [0x004307C0] sub_004307C0 (77 bytes)
+namespace lift_004307C0 {
+// Known callee 0x00465B40: sub_00465B40 (auto-lifted clone of 0x00430360). Returns a manager object pointer.
+extern void* ext_00465B40(void);
+// Known callee 0x0044B5B0: GetNestedFieldOrZero (sub_0044B5B0). Called thiscall with the field value in ecx.
+extern uint32_t __thiscall ext_0044B5B0(void* self);
+
+namespace {
+
+// Read a 32-bit guest pointer stored at base+off and widen it to a host pointer.
+inline void* ptr_at(const void* base, ptrdiff_t off) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, off)));
+}
+
+}  // namespace
+
+// @name Unknown::NotifyFlagsFromManager_004307C0
+// @class Unknown
+// @summary Queries a global manager flag, notifies the arg object with it, and if self+0x100 is set, notifies again with (nested==5).
+// @field Unknown +0x100 void* field_0x100
+void fn_004307C0(void* self, void* arg) {
+    // Global manager, queried via vtable slot +0x10C (thiscall, no args).
+    void* mgr = ext_00465B40();
+    void* mgrVtable = ptr_at(mgr, 0);
+    auto query = reinterpret_cast<uint8_t (__thiscall*)(void*)>(ptr_at(mgrVtable, 0x10C));
+    uint8_t flag = query(mgr);
+
+    // Notify arg's object via its vtable slot +0x00, with arg as this.
+    void* argObj = ptr_at(arg, 0);
+    void* argObjVtable = ptr_at(argObj, 0);
+    auto notifyFlag = reinterpret_cast<void (__thiscall*)(void*, uint32_t)>(ptr_at(argObjVtable, 0));
+    notifyFlag(arg, static_cast<uint32_t>(flag));
+
+    // Conditional second notification if self+0x100 is non-null.
+    void* nested = ptr_at(self, 0x100);
+    if (nested != nullptr) {
+        uint32_t level = ext_0044B5B0(nested);
+        void* obj = ptr_at(arg, 0);
+        void* objVtable = ptr_at(obj, 0);
+        auto notifyLevel = reinterpret_cast<void (__thiscall*)(void*, uint32_t)>(ptr_at(objVtable, 4));
+        notifyLevel(arg, level == 5 ? 1u : 0u);
+    }
+}
+} // namespace lift_004307C0
