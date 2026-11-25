@@ -52783,6 +52783,13 @@
     "summary": "Sets the enabled flag at +0x34; when the object type is 0x64, releases or allocates the pointer at +0x40.",
     "lifted_path": "lifted/classes/GWCRGBPropertyValue.cpp"
   },
+  "0x006B3BB0": {
+    "name": "GWCRGBPropertyValue::vfunc_3",
+    "class": "GWCRGBPropertyValue",
+    "signature": "void GWCRGBPropertyValue_vfunc_3(void* self, void* arg)",
+    "summary": "Parses the property CString into three integers and stores their low bytes packed as 0x00AABBCC into *(this+0x40).",
+    "lifted_path": "lifted/classes/GWCRGBPropertyValue.cpp"
+  },
   "0x006B3C20": {
     "name": "GWCRGBPropertyValue::vfunc_0",
     "class": "GWCRGBPropertyValue",

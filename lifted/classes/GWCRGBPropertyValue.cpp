@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/classes/GWCRGBPropertyValue.cpp
 #include "lift_compat.h"
+#include <cstdio>
 
 // [0x006B3C40]
 namespace lift_006B3C40 {
@@ -95,3 +96,35 @@ void GWCRGBPropertyValue_vfunc_5(GWCRGBPropertyValue_vfunc5_view* self, uint32_t
     }
 }
 } // namespace lift_006B3AC0
+
+// [0x006B3BB0] GWCRGBPropertyValue::vfunc_3 (102 bytes)
+namespace lift_006B3BB0 {
+// MFC80 ord_876 (thiscall, this = &cstr): CString -> LPCSTR buffer.
+extern LPCSTR ext_MFC80_CString_GetBuffer(void* cstr);
+// MFC80 ord_578 (thiscall, this = &cstr): CString destructor.
+extern void ext_MFC80_CString_Destruct(void* cstr);
+// Format string at 0x009919D4 (parsed by sscanf; exact text not recovered yet).
+extern const char mem_009919D4[];
+
+// @name GWCRGBPropertyValue::vfunc_3
+// @class GWCRGBPropertyValue
+// @summary Parses the property CString into three integers and stores their low bytes packed as 0x00AABBCC into *(this+0x40).
+// @field GWCRGBPropertyValue +0x40 uint32_t* field_0x40
+void GWCRGBPropertyValue_vfunc_3(void* self, void* arg) {
+    int l0 = 0;
+    int l1 = 0;
+    int l2 = 0;
+
+    LPCSTR buf = ext_MFC80_CString_GetBuffer(&arg);
+    std::sscanf(buf, mem_009919D4, &l2, &l1, &l0);
+
+    uint32_t packed = (static_cast<uint32_t>(l0 & 0xFF) << 16)
+                    | (static_cast<uint32_t>(l1 & 0xFF) << 8)
+                    | static_cast<uint32_t>(l2 & 0xFF);
+
+    uint32_t* dst = lift_field<uint32_t*>(self, 0x40);
+    *dst = packed;
+
+    ext_MFC80_CString_Destruct(&arg);
+}
+} // namespace lift_006B3BB0

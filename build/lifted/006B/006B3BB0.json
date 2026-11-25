@@ -1,0 +1,22 @@
+{
+  "va": "0x006B3BB0",
+  "size": 102,
+  "orig_symbol": "GWCRGBPropertyValue::vfunc_3",
+  "src_path": "src/classes/GWCRGBPropertyValue.cpp",
+  "lifted_path": "lifted/classes/GWCRGBPropertyValue.cpp",
+  "name": "GWCRGBPropertyValue::vfunc_3",
+  "class": "GWCRGBPropertyValue",
+  "signature": "void GWCRGBPropertyValue_vfunc_3(void* self, void* arg)",
+  "summary": "Parses the property CString into three integers and stores their low bytes packed as 0x00AABBCC into *(this+0x40).",
+  "fields": [
+    {
+      "class": "GWCRGBPropertyValue",
+      "offset": "+0x40",
+      "type": "uint32_t*",
+      "name": "field_0x40"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:47:08Z"
+}
