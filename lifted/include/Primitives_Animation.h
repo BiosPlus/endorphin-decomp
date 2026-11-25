@@ -15,7 +15,7 @@ struct Primitives_Animation_Fields {
     // +0x8   uint32_t                 field_0x08  (evidence: 0x0053AD10) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_0x08  (evidence: 0x0053ADD0) // CONFLICT: multiple definitions at +0x8
     // +0x1C  uint32_t                 field_0x1C  (evidence: 0x0052F5F0, 0x0052FA20, 0x0053A8C0, 0x0053AD10, 0x0053AE20, 0x0053AE40, 0x0053E240) // CONFLICT: multiple definitions at +0x1C
-    // +0x1C  uint32_t                 flags  (evidence: 0x0053F410) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  uint32_t                 flags  (evidence: 0x0053A8E0, 0x0053F410) // CONFLICT: multiple definitions at +0x1C
     // +0x20  uint32_t                 field_0x20  (evidence: 0x0053AD10) // CONFLICT: multiple definitions at +0x20
     // +0x20  void*                    field_0x20  (evidence: 0x0053ADD0) // CONFLICT: multiple definitions at +0x20
     // +0x24  uint32_t                 field_0x24  (evidence: 0x0053AD10)

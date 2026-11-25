@@ -325,3 +325,24 @@ void fn_0053AE20(void* self, uint32_t mask, uint8_t flag) {
 }
 } // namespace lift_0053ACF0
 } // namespace lift_0053AE20
+
+// [0x0053A8E0]
+namespace lift_0053A8E0 {
+extern void __thiscall ext_0053A5E0(void* self, uint32_t arg);
+extern void __thiscall ext_0053AD70(void* self);
+
+// @name Primitives::Animation::queryFlagState
+// @class Primitives::Animation
+// @summary Returns flag-state predicate for mode 0/1/2 based on bits 0x8/0x18 of flags at +0x1C; 0 otherwise.
+// @field Primitives::Animation +0x1C uint32_t flags
+uint32_t __thiscall fn_0053A8E0(void* self, uint32_t mode) {
+    uint8_t lo = (uint8_t)lift_field<uint32_t>(self, 0x1C);
+    // Callees listed by metadata are not invoked by this asm; referenced only.
+    (void)&ext_0053A5E0;
+    (void)&ext_0053AD70;
+    if (mode == 0) return (lo & 0x8) != 0x8 ? 1u : 0u;
+    if (mode == 1) return (lo & 0x8) == 0x8 ? 1u : 0u;
+    if (mode == 2) return (lo & 0x18) == 0x18 ? 1u : 0u;
+    return 0;
+}
+} // namespace lift_0053A8E0

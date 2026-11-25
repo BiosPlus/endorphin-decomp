@@ -22037,6 +22037,13 @@
     "summary": "Returns true when every bit set in the argument is also set in the field at +0x1C.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0053A8E0": {
+    "name": "Primitives::Animation::queryFlagState",
+    "class": "Primitives::Animation",
+    "signature": "uint32_t __thiscall fn_0053A8E0(void* self, uint32_t mode)",
+    "summary": "Returns flag-state predicate for mode 0/1/2 based on bits 0x8/0x18 of flags at +0x1C; 0 otherwise.",
+    "lifted_path": "lifted/Primitives/Animation.cpp"
+  },
   "0x0053ACF0": {
     "name": "SetMaskBitsToMatchFlag",
     "class": "Unknown",

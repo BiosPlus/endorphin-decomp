@@ -1,0 +1,22 @@
+{
+  "va": "0x0053A8E0",
+  "size": 75,
+  "orig_symbol": "Primitives::Animation::vfunc_18",
+  "src_path": "src/Primitives/Animation.cpp",
+  "lifted_path": "lifted/Primitives/Animation.cpp",
+  "name": "Primitives::Animation::queryFlagState",
+  "class": "Primitives::Animation",
+  "signature": "uint32_t __thiscall fn_0053A8E0(void* self, uint32_t mode)",
+  "summary": "Returns flag-state predicate for mode 0/1/2 based on bits 0x8/0x18 of flags at +0x1C; 0 otherwise.",
+  "fields": [
+    {
+      "class": "Primitives::Animation",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "flags"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-25T13:11:55Z"
+}
