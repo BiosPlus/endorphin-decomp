@@ -21874,10 +21874,10 @@
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x00564600": {
-    "name": "OpenSceneFromName",
-    "class": "Unknown",
-    "signature": "inline void* lift_vslot(void* obj, ptrdiff_t slotOffset)",
-    "summary": "Notifies the sub-object at +0x27c, optionally notifies the object at +0x424, then opens the scene at +0x494 using the given name.",
+    "name": "DestroyRangeForward_005694F0",
+    "class": "(none)",
+    "signature": "void fn_005694F0(void* self, int edx_unused, int a1, int a2)",
+    "summary": "Forwards two stack arguments plus the incoming ECX value to ext_005693E0 (range destroy helper).",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
   "0x005649D0": {
