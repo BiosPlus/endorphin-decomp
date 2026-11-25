@@ -52707,6 +52707,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C210": {
+    "name": "ComputeAngleDegreesFromExtent",
+    "class": "Unknown",
+    "signature": "double fn_0071C210(void* self, double a1, double a2, double a3)",
+    "summary": "Returns atan(0.5 * scaled(a1 or a2) / a3) in degrees; a1 is scaled by 25.4 and by a double at this-\u003efield_0x0C-\u003efield_0xD28 unless field_0x0C-\u003efield_0x408 == 2, in which case a2 is scaled by 25.4 instead.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071C2E0": {
     "name": "sub_0071C2E0",
     "class": "Unknown",

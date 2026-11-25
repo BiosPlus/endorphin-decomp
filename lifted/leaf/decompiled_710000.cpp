@@ -1190,3 +1190,35 @@ DWORD fn_0071A580(DWORD index) {
     }
 }
 } // namespace lift_0071A580
+
+// [0x0071C210] sub_0071C210 (63 bytes)
+namespace lift_0071C210 {
+// @name ComputeAngleDegreesFromExtent
+// @class Unknown
+// @summary Returns atan(0.5 * scaled(a1 or a2) / a3) in degrees; a1 is scaled by 25.4 and by a double at this->field_0x0C->field_0xD28 unless field_0x0C->field_0x408 == 2, in which case a2 is scaled by 25.4 instead.
+// @field Unknown +0x0C void* field_0x0C
+// @field Unknown +0x0C->+0x408 int32_t field_0x408
+// @field Unknown +0x0C->+0xD28 double field_0xD28
+
+// Returns the angle in degrees (x87 ST0 in the original; returned as double here).
+double fn_0071C210(void* self, double a1, double a2, double a3) {
+    constexpr double kInchToMm = 25.4;
+    constexpr double kHalf = 0.5;
+    constexpr double kRadToDeg = 114.59155902616465;
+
+    auto* base = static_cast<unsigned char*>(self);
+    auto* sub = *reinterpret_cast<unsigned char**>(base + 0x0C);
+
+    double x;
+    if (*reinterpret_cast<int32_t*>(sub + 0x408) == 2) {
+        x = a2 * kInchToMm;
+    } else {
+        x = a1 * kInchToMm * *reinterpret_cast<double*>(sub + 0xD28);
+    }
+
+    x = x / a3;
+    x = x * kHalf;
+
+    return std::atan2(x, 1.0) * kRadToDeg;
+}
+} // namespace lift_0071C210
