@@ -1,0 +1,28 @@
+{
+  "va": "0x0054ECF0",
+  "size": 96,
+  "orig_symbol": "NMMatrixStackManager::vfunc_3",
+  "src_path": "src/classes/NMMatrixStackManager.cpp",
+  "lifted_path": "lifted/classes/NMMatrixStackManager.cpp",
+  "name": "NMMatrixStackManager::popMatrix",
+  "class": "NMMatrixStackManager",
+  "signature": "void __thiscall fn_0054ECF0(void* self)",
+  "summary": "Pops the top 4x4 matrix from the stack and loads the new top matrix via glLoadMatrixf",
+  "fields": [
+    {
+      "class": "NMMatrixStackManager",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "NMMatrixStackManager",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:36:51Z"
+}

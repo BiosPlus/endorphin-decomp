@@ -23395,6 +23395,13 @@
     "summary": "Validates the matrix window, copies the 16-float matrix at src into the window's top 64-byte block, then calls glLoadMatrixf(src).",
     "lifted_path": "lifted/classes/NMMatrixStackManager.cpp"
   },
+  "0x0054ECF0": {
+    "name": "NMMatrixStackManager::popMatrix",
+    "class": "NMMatrixStackManager",
+    "signature": "void __thiscall fn_0054ECF0(void* self)",
+    "summary": "Pops the top 4x4 matrix from the stack and loads the new top matrix via glLoadMatrixf",
+    "lifted_path": "lifted/classes/NMMatrixStackManager.cpp"
+  },
   "0x0054EE60": {
     "name": "NMMatrixStackManager::vfunc_0",
     "class": "NMMatrixStackManager",
@@ -24761,6 +24768,13 @@
     "class": "Unknown",
     "signature": "void* fn_005752C0(void* first, void* last, void* dest_last)",
     "summary": "Copy-backward over 0x54-byte records, each holding three std::string members (MSVC 2005 layout), into a destination range ending at arg3.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x00575350": {
+    "name": "Quat::setAxisAngle",
+    "class": "Quat",
+    "signature": "extern \"C\" void __thiscall fn_00575350(void* self, const float* axis, float angle)",
+    "summary": "Sets a quaternion (w, x, y, z) from an axis vector and rotation angle in radians.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
   "0x00575C60": {
@@ -37041,6 +37055,12 @@
     "name": "sub_006215A0",
     "signature": "uint32_t fn_006215A0(uint32_t begin, uint32_t end, uint32_t value)",
     "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x00621680": {
+    "name": "destroyStringPairRange",
+    "signature": "void __cdecl sub_00621680(uint8_t* begin, uint8_t* end)",
+    "summary": "Destroys a range of 0x48-byte elements, each containing two std::string members at +0x00 and +0x1C.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x00621720": {

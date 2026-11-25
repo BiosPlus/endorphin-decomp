@@ -69,3 +69,48 @@ void fn_0054EB50(void* self, const float* src) {
     ext_glLoadMatrixf(src);
 }
 } // namespace lift_0054EB50
+
+// [0x0054ECF0]
+namespace lift_0054ECF0 {
+// @name NMMatrixStackManager::popMatrix
+// @class NMMatrixStackManager
+// @summary Pops the top 4x4 matrix from the stack and loads the new top matrix via glLoadMatrixf
+// @field NMMatrixStackManager +0x08 uint32_t field_0x08
+// @field NMMatrixStackManager +0x0C uint32_t field_0x0C
+
+
+extern void* mem_00925134;
+extern void* mem_009254B4;
+
+void __thiscall fn_0054ECF0(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    uint32_t first = *reinterpret_cast<uint32_t*>(obj + 0x08);
+    if (first != 0) {
+        uint32_t last = *reinterpret_cast<uint32_t*>(obj + 0x0C);
+        int32_t count = static_cast<int32_t>(last - first) >> 6;
+        if (count != 0) {
+            last -= 0x40;
+            *reinterpret_cast<uint32_t*>(obj + 0x0C) = last;
+        }
+    }
+
+    uint32_t edi = *reinterpret_cast<uint32_t*>(obj + 0x0C);
+    auto invalid_param = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+    if (first > edi) {
+        invalid_param();
+    }
+
+    uint32_t top = edi - 0x40;
+    if (top > *reinterpret_cast<uint32_t*>(obj + 0x0C) ||
+        top < *reinterpret_cast<uint32_t*>(obj + 0x08)) {
+        invalid_param();
+    }
+
+    if (top >= *reinterpret_cast<uint32_t*>(obj + 0x0C)) {
+        invalid_param();
+    }
+
+    auto glLoadMatrixf = reinterpret_cast<void(__stdcall*)(const float*)>(mem_009254B4);
+    glLoadMatrixf(reinterpret_cast<const float*>(static_cast<uintptr_t>(top)));
+}
+} // namespace lift_0054ECF0
