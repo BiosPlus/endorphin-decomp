@@ -635,3 +635,47 @@ void* fn_004E1B50(void* first, void* last, void* dest) {
     return reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(dest) - static_cast<uintptr_t>(bytes));
 }
 } // namespace lift_004E1B50
+
+// [0x004E1980]
+namespace lift_004E1980 {
+extern void (*mem_00925134)();
+extern float __thiscall ext_00661A40(void* self);
+
+// @name getPlaybackEndTimeOrDuration
+// @summary Returns field_0x9d8 if flags at +0xb78 or +0xb74 are set, otherwise computes (count - 1) * ReciprocalOfSubobjectField138(self + 0x864).
+// @field Self +0x864 void* subobject_0x864
+// @field Self +0x86c uint32_t field_0x86c
+// @field Self +0x870 void* field_0x870
+// @field Self +0x9d8 float field_0x9d8
+// @field Self +0xb74 uint32_t field_0xb74
+// @field Self +0xb78 uint32_t field_0xb78
+float __thiscall fn_004E1980(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    if (*reinterpret_cast<uint32_t*>(base + 0xb78) != 0 ||
+        *reinterpret_cast<uint32_t*>(base + 0xb74) != 0) {
+        return *reinterpret_cast<float*>(base + 0x9d8);
+    }
+
+    uint8_t* sub = base + 0x864;
+    void (*invalid_param)() = mem_00925134;
+
+    if (*reinterpret_cast<uint32_t*>(base + 0x86c) == 0) {
+        invalid_param();
+    }
+
+    uint8_t* eax = *reinterpret_cast<uint8_t**>(sub + 0x8);
+    uint8_t* ecx_val = *reinterpret_cast<uint8_t**>(sub + 0xc);
+    if (ecx_val == *reinterpret_cast<uint8_t**>(eax + 0x4)) {
+        invalid_param();
+    }
+
+    uint8_t* edx = *reinterpret_cast<uint8_t**>(sub + 0xc);
+    int32_t count = *reinterpret_cast<int32_t*>(edx + 0x8);
+    if (count == 0) {
+        return 0.0f;
+    }
+
+    float recip = ext_00661A40(sub);
+    return static_cast<float>(recip * static_cast<double>(count - 1));
+}
+} // namespace lift_004E1980

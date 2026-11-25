@@ -1,0 +1,51 @@
+{
+  "va": "0x004E1980",
+  "size": 116,
+  "orig_symbol": "sub_004E1980",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "getPlaybackEndTimeOrDuration",
+  "signature": "float __thiscall fn_004E1980(void* self)",
+  "summary": "Returns field_0x9d8 if flags at +0xb78 or +0xb74 are set, otherwise computes (count - 1) * ReciprocalOfSubobjectField138(self + 0x864).",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x864",
+      "type": "void*",
+      "name": "subobject_0x864"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x86C",
+      "type": "uint32_t",
+      "name": "field_0x86c"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x870",
+      "type": "void*",
+      "name": "field_0x870"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x9D8",
+      "type": "float",
+      "name": "field_0x9d8"
+    },
+    {
+      "class": "Self",
+      "offset": "+0xB74",
+      "type": "uint32_t",
+      "name": "field_0xb74"
+    },
+    {
+      "class": "Self",
+      "offset": "+0xB78",
+      "type": "uint32_t",
+      "name": "field_0xb78"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:43:25Z"
+}

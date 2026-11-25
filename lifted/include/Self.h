@@ -98,6 +98,12 @@ struct Self_Fields {
     // +0x458 std::string              field_0x458  (evidence: 0x005947B0, 0x005963F0, 0x0059DDA0)
     // +0x5F8 uint32_t                 field_0x5F8  (evidence: 0x005947B0, 0x005963F0, 0x0059E060)
     // +0x61C uint32_t result (written with the return value of ext_00661A90)  (evidence: 0x005947B0, 0x005963F0, 0x0059DC60)
+    // +0x864 void*                    subobject_0x864  (evidence: 0x004E1980)
+    // +0x86C uint32_t                 field_0x86c  (evidence: 0x004E1980)
+    // +0x870 void*                    field_0x870  (evidence: 0x004E1980)
+    // +0x9D8 float                    field_0x9d8  (evidence: 0x004E1980)
+    // +0xB74 uint32_t                 field_0xb74  (evidence: 0x004E1980)
+    // +0xB78 uint32_t                 field_0xb78  (evidence: 0x004E1980)
     // +0x3DCC uint32_t[44][14]         field_0x3DCC  (evidence: 0x006F9080)
 };
 } // namespace lifted_layout
