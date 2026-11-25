@@ -809,3 +809,29 @@ float fn_00554D20(void* self, float value) {
     return scaled / lift_field<float>(self, 0x20);
 }
 } // namespace lift_00554D20
+
+// [0x0055E940] sub_0055E940 (67 bytes)
+namespace lift_0055E940 {
+// @name copyVec4Range
+// @summary Copies a range of 16-byte (4 x float) elements from [srcBegin, srcEnd) to dst; no-op for an empty range, and skips the store when dst is null.
+// @field none (free function; no class fields accessed)
+void copyVec4Range(const float* srcBegin, const float* srcEnd, float* dst) {
+    if (srcBegin == srcEnd) {
+        return;
+    }
+    const float* src = srcBegin;
+    float* out = dst;
+    do {
+        if (out != nullptr) {
+            out[0] = src[0];
+            out[1] = src[1];
+            out[2] = src[2];
+            out[3] = src[3];
+        }
+        src += 4;
+        if (out != nullptr) {
+            out += 4;
+        }
+    } while (src != srcEnd);
+}
+} // namespace lift_0055E940

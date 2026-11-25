@@ -1,0 +1,13 @@
+{
+  "va": "0x0055E940",
+  "size": 67,
+  "orig_symbol": "sub_0055E940",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "copyVec4Range",
+  "signature": "void copyVec4Range(const float* srcBegin, const float* srcEnd, float* dst)",
+  "summary": "Copies a range of 16-byte (4 x float) elements from [srcBegin, srcEnd) to dst; no-op for an empty range, and skips the store when dst is null.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:14:12Z"
+}
