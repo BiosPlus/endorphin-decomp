@@ -418,3 +418,44 @@ void* fn_0059B120(void* self, const void* key) {
 }
 } // namespace lift_004A73F0
 } // namespace lift_0059B120
+
+// [0x0059FF10]
+namespace lift_0059FF10 {
+// Import slot (IAT) holding MSVCR80!_invalid_parameter_noinfo.
+extern void (*mem_00925134)(void);
+
+// @name Unknown::GetElementAddress_0059FF10
+// @class Unknown
+// @summary Validates this->+0x08 / this->+0x0C linkage, then returns begin + 4*index for the 4-byte-element vector at (this->+0x0C)+0x2C, calling the invalid-parameter handler on bad state or out-of-range index.
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x0C void* field_0x0C
+uint8_t* __thiscall Unknown_GetElementAddress_0059FF10(void* self, uint32_t index) {
+    // this->+0x08 must be non-null.
+    void* a = lift_field<void*>(self, 0x08);
+    if (a == nullptr) {
+        mem_00925134();
+    }
+
+    // this->+0x0C must differ from a->+0x04.
+    void* b = lift_field<void*>(self, 0x0C);
+    if (b == lift_field<void*>(a, 0x04)) {
+        mem_00925134();
+    }
+
+    // Vector header lives at b+0x2C: begin at +0x04 (b+0x30), end at +0x08 (b+0x34).
+    uint8_t* header = static_cast<uint8_t*>(b) + 0x2C;
+    uint8_t* begin = lift_field<uint8_t*>(header, 0x04);
+
+    if (begin != nullptr) {
+        uint8_t* end = lift_field<uint8_t*>(header, 0x08);
+        int32_t diff = static_cast<int32_t>(reinterpret_cast<uintptr_t>(end) -
+                                            reinterpret_cast<uintptr_t>(begin));
+        uint32_t count = static_cast<uint32_t>(diff >> 2);
+        if (index >= count) {
+            mem_00925134();
+        }
+    }
+
+    return begin + 4 * static_cast<uintptr_t>(index);
+}
+} // namespace lift_0059FF10

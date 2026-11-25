@@ -23615,6 +23615,13 @@
     "summary": "Heapify a uint32 range [first, last): for each index from count/2 down to 1, call ext_0059F310 (sift-down) with that element as the value.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x0059FF10": {
+    "name": "Unknown::GetElementAddress_0059FF10",
+    "class": "Unknown",
+    "signature": "uint8_t* __thiscall Unknown_GetElementAddress_0059FF10(void* self, uint32_t index)",
+    "summary": "Validates this-\u003e+0x08 / this-\u003e+0x0C linkage, then returns begin + 4*index for the 4-byte-element vector at (this-\u003e+0x0C)+0x2C, calling the invalid-parameter handler on bad state or out-of-range index.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x0059FF60": {
     "name": "NMData::BackGroundData::vfunc_10_off_10",
     "class": "NMData::BackGroundData",
