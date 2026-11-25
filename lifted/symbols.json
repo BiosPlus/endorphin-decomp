@@ -58977,6 +58977,12 @@
     "summary": "out = a - b for 20-limb 16-bit-limb numbers: copies b into a temporary, two's-complement negates it, then adds it to a.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086F8F0": {
+    "name": "shiftRight1_20",
+    "signature": "void sub_0086F8F0(uint32_t* arr)",
+    "summary": "Right-shifts a 20-element 32-bit limb array (16-bit limbs) by 1 bit.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x008702F0": {
     "name": "NMData::State::vfunc_1_off_18",
     "class": "NMData::State",

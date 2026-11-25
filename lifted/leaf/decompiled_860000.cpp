@@ -560,3 +560,15 @@ uint32_t __cdecl fn_0086CFB0(uint32_t initial_state) {
     return obj;
 }
 } // namespace lift_0086CFB0
+
+// [0x0086F8F0]
+namespace lift_0086F8F0 {
+// @name shiftRight1_20
+// @summary Right-shifts a 20-element 32-bit limb array (16-bit limbs) by 1 bit.
+void sub_0086F8F0(uint32_t* arr) {
+    for (int16_t i = 0x13; i >= 0; --i) {
+        uint32_t carry = (i != 0) ? ((arr[i - 1] & 1u) << 16) : 0u;
+        arr[i] = (arr[i] | carry) >> 1;
+    }
+}
+} // namespace lift_0086F8F0
