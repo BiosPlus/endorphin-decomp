@@ -54930,6 +54930,13 @@
     "summary": "Returns the dot product of this and another 3-component double vector.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D2940": {
+    "name": "Vec3d::equalsEpsilon",
+    "class": "Vec3d",
+    "signature": "bool __thiscall fn_006D2940(const double* self, const double* other)",
+    "summary": "Checks whether two 3D double-precision vectors are component-wise equal within 1e-06.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D2A30": {
     "name": "sub_006D2A30",
     "signature": "extern \"C\" void* __fastcall fn_006D2A30(void* self)",
