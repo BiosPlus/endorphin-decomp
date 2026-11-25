@@ -32102,6 +32102,12 @@
     "summary": "One-time initializer for the static object at mem_00B45F38; returns its address.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005EB1E0": {
+    "name": "lazyInitStaticVtableObject_005EB1E0",
+    "signature": "void* fn_005EB1E0()",
+    "summary": "One-time lazy init of the static object at mem_00B45F50 (vtable 0x969C64); guarded by bit 0 of mem_00B45F54; returns the object's address.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005EB890": {
     "name": "NMData::FixedPathJointData::vfunc_10_off_C",
     "class": "NMData::FixedPathJointData",

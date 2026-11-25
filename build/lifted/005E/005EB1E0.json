@@ -1,0 +1,13 @@
+{
+  "va": "0x005EB1E0",
+  "size": 87,
+  "orig_symbol": "sub_005EB1E0",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "lazyInitStaticVtableObject_005EB1E0",
+  "signature": "void* fn_005EB1E0()",
+  "summary": "One-time lazy init of the static object at mem_00B45F50 (vtable 0x969C64); guarded by bit 0 of mem_00B45F54; returns the object's address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:11:57Z"
+}

@@ -645,3 +645,23 @@ void* fn_005EB0C0() {
 }
 } // namespace lift_005EB0C0
 } // namespace lift_005EB0C0
+
+// [0x005EB1E0] sub_005EB1E0 (87 bytes)
+namespace lift_005EB1E0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00B45F54;
+extern DWORD mem_00B45F50;
+
+// @name lazyInitStaticVtableObject_005EB1E0
+// @summary One-time lazy init of the static object at mem_00B45F50 (vtable 0x969C64); guarded by bit 0 of mem_00B45F54; returns the object's address.
+void* fn_005EB1E0() {
+    // Init guard: bit 0 of mem_00B45F54 marks the object as initialized.
+    if ((mem_00B45F54 & 1u) == 0) {
+        mem_00B45F54 |= 1u;
+        ext_0067A670(&mem_00B45F50, 0);
+        mem_00B45F50 = 0x969c64u;
+    }
+    return &mem_00B45F50;
+}
+} // namespace lift_005EB1E0
