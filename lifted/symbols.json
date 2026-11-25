@@ -18708,6 +18708,13 @@
     "summary": "Normalizes the flag word at +0x1C (clearing mutually-exclusive flag pairs), then applies mode-specific set/clear or forwards to ext_0053ACF0 for modes 4-7; mode 8 is a no-op.",
     "lifted_path": "lifted/Primitives/Animation.cpp"
   },
+  "0x0053B040": {
+    "name": "Unknown::SwapPendingObject",
+    "class": "Unknown",
+    "signature": "void fn_0053B040(void* self)",
+    "summary": "Allocates an 8-byte object (vtable 0x009553F4, tag -1), swaps it into this+0x38",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x0053B2B0": {
     "name": "Primitives::Animation::vfunc_12",
     "class": "Primitives::Animation",

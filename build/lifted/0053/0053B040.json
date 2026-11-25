@@ -1,0 +1,22 @@
+{
+  "va": "0x0053B040",
+  "size": 70,
+  "orig_symbol": "sub_0053B040",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::SwapPendingObject",
+  "class": "Unknown",
+  "signature": "void fn_0053B040(void* self)",
+  "summary": "Allocates an 8-byte object (vtable 0x009553F4, tag -1), swaps it into this+0x38",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:24:51Z"
+}

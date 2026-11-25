@@ -631,3 +631,45 @@ void fn_0053F9D0(void* self, RECT* out, LONG cx, LONG dy, LONG size) {
     out->bottom = top + size;
 }
 } // namespace lift_0053F9D0
+
+// [0x0053B040] sub_0053B040 (70 bytes)
+namespace lift_0053B040 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void ext_006A5C62();
+// .rdata constant 0x009553F4: its first slot holds 0x0053A730. The object's vtable
+// pointer is written as the address 0x009553F4 itself (see below).
+extern int mem_009553F4;
+
+// @name Unknown::SwapPendingObject
+// @class Unknown
+// @summary Allocates an 8-byte object (vtable 0x009553F4, tag -1), swaps it into this+0x38
+//          (destroying the previous occupant via its vtable slot 0), then tail-calls vtable slot 9 of the new object.
+// @field Unknown +0x38 void* field_0x38
+void fn_0053B040(void* self) {
+    using AllocFn = void* (*)(uint32_t);
+    using DtorFn = void (*)(void*, int);
+    using VFn9 = void (*)(void*);
+
+    // push 8; call alloc(8)
+    void* obj = reinterpret_cast<AllocFn>(&ext_006A5C62)(8);
+
+    void* esi = nullptr;
+    if (obj != nullptr) {
+        lift_field<uint32_t>(obj, 0) = 0x009553F4u; // vtable pointer
+        lift_field<uint32_t>(obj, 4) = 0xFFFFFFFFu;
+        esi = obj;
+    }
+
+    void* old = lift_field<void*>(self, 0x38);
+    if (esi != old && old != nullptr) {
+        void** vt = *reinterpret_cast<void***>(old);
+        reinterpret_cast<DtorFn>(vt[0])(old, 1);
+    }
+
+    lift_field<void*>(self, 0x38) = esi;
+
+    // tail jmp [vtbl + 0x24] on the new object
+    void** vt = *reinterpret_cast<void***>(esi);
+    reinterpret_cast<VFn9>(vt[9])(esi);
+}
+} // namespace lift_0053B040
