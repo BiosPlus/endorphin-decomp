@@ -53027,6 +53027,12 @@
     "summary": "Searches backwards through a 12-byte-strided array for an entry matching a two-dword key derived from arg0.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006FBCE0": {
+    "name": "cleanupInvalidEntries",
+    "signature": "extern \"C\" void __thiscall sub_006FBCE0(uint32_t self)",
+    "summary": "Iterates backwards over a 12-byte entry array and invokes ext_006FBC50 on matching non-null sub-entries.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FBD30": {
     "name": "Unknown::GetPayloadForSlotKey",
     "class": "Unknown",
