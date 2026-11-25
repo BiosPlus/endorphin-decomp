@@ -17485,6 +17485,13 @@
     "summary": "Reads the target pointer held in the argument and returns the isProjectRootEnabled flag byte at PoseToolOptions+0x09; throws via CxxThrowException if the target pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004EB260": {
+    "name": "ExprParser::ReadMethodType\u003cPoseToolOptions,isProjectRootEnabled\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0\u003e",
+    "signature": "void fn_004EB260(void* slot)",
+    "summary": "Reads the pointer held in *slot; if non-null, reports its +0x09 byte via ext_0046C4E0, then always throws a fixed DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004EB9B0": {
     "name": "initVtableAndFlags",
     "signature": "void fn_004EB9B0(void* self)",

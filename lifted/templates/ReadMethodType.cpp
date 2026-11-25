@@ -43064,3 +43064,36 @@ void fn_00674D50(void* self) {
     ext_006A6DD2(exception, reinterpret_cast<const void*>(static_cast<std::uintptr_t>(0x009DEC1Cu)));
 }
 } // namespace lift_00674D50
+
+// [0x004EB260] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0>::vfunc_5 (46 bytes)
+namespace lift_004EB260 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(uint8_t code);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+
+// Address of the RTTI/ThrowInfo descriptor pushed before the throw.
+inline constexpr uintptr_t kDerivedExceptionThrowInfo = 0x009DEC1Cu;
+
+// @name ExprParser::ReadMethodType<PoseToolOptions,isProjectRootEnabled>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0>
+// @summary Reads the pointer held in *slot; if non-null, reports its +0x09 byte via ext_0046C4E0, then always throws a fixed DerivedException.
+// @field PoseToolOptions +0x09 uint8_t field_0x09
+void fn_004EB260(void* slot) {
+    // Load the object pointer stored in the slot argument.
+    void* obj = *reinterpret_cast<void**>(slot);
+
+    if (obj != nullptr) {
+        uint8_t code = lift_field<uint8_t>(obj, 0x09);
+        ext_0046C4E0(code);
+    }
+
+    // Build the fixed-message exception in local storage and throw it.
+    // Storage size covers the 0x28-byte local frame of the original function.
+    alignas(8) unsigned char exception[0x28] = {};
+    void* excObj = ext_0046C3C0(exception);
+    ext_006A6DD2(excObj, reinterpret_cast<const void*>(kDerivedExceptionThrowInfo));
+}
+} // namespace lift_004EB260
