@@ -20,6 +20,7 @@ extern "C" void* __fastcall fn_007AD5C0(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+#include <cstdarg>
 
 // [0x007AEF70]
 namespace lift_007AEF70 {
@@ -1000,3 +1001,26 @@ uint32_t sub_007AECD0(void* self, void* dst, uint32_t size) {
     return ext_007AEC70(self, dst, size, 0);
 }
 } // namespace lift_007AECD0
+
+// [0x007AEF10]
+namespace lift_007AEF10 {
+// @name Stream::printf
+// @class Stream
+// @summary Formats a string and writes it via vtable+0x30 if field_0x58 is non-zero
+// @field Stream +0x58 uint32_t field_0x58
+void sub_007AEF10(uint8_t* obj, const char* fmt, ...) {
+    if (*reinterpret_cast<const uint32_t*>(obj + 0x58) == 0) {
+        return;
+    }
+    char buf[0x4000];
+    va_list ap;
+    va_start(ap, fmt);
+    std::vsnprintf(buf, sizeof(buf), fmt, ap);
+    va_end(ap);
+    uint32_t len = static_cast<uint32_t>(std::strlen(buf));
+    const uint8_t* vtable = *reinterpret_cast<const uint8_t* const*>(obj);
+    using WriteFn = void (*)(uint8_t*, const char*, uint32_t);
+    auto write_fn = *reinterpret_cast<const WriteFn*>(vtable + 0x30);
+    write_fn(obj, buf, len);
+}
+} // namespace lift_007AEF10

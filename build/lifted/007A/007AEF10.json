@@ -1,0 +1,22 @@
+{
+  "va": "0x007AEF10",
+  "size": 92,
+  "orig_symbol": "sub_007AEF10",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "Stream::printf",
+  "class": "Stream",
+  "signature": "void sub_007AEF10(uint8_t* obj, const char* fmt, ...)",
+  "summary": "Formats a string and writes it via vtable+0x30 if field_0x58 is non-zero",
+  "fields": [
+    {
+      "class": "Stream",
+      "offset": "+0x58",
+      "type": "uint32_t",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:17:02Z"
+}

@@ -14,5 +14,6 @@ struct Stream_Fields {
     // +0x10  uint32_t                 cursor  (evidence: 0x0085BF70)
     // +0x14  uint32_t                 flags  (evidence: 0x0085BF70)
     // +0x18  uint32_t                 ref_count  (evidence: 0x0085BF70)
+    // +0x58  uint32_t                 field_0x58  (evidence: 0x007AEF10)
 };
 } // namespace lifted_layout
