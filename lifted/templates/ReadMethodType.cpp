@@ -56807,3 +56807,37 @@ void* fn_005FCB40(void* unused, void* self) {
     return self;
 }
 } // namespace lift_005FCB40
+
+// [0x00670700] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, 0>::vfunc_3 (70 bytes)
+namespace lift_00670700 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall, constructs the exception object in place, returns it).
+extern void* __thiscall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (cdecl IAT thunk to MSVCR80!_CxxThrowException(obj, throwInfo)).
+extern void __cdecl ext_006A6DD2(void* exception_object, void* throw_info);
+// Double constant 1e-6 (.rdata at 0x00987B78).
+extern const double mem_00987B78;
+
+// @name ExprParser::ReadMethodType<NM::Vector3, float, getX, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, 0>
+// @summary Stdcall (one stack arg). Dereferences arg->value pointer (throws DerivedException if null), then returns 1 if *value >= 1e-6, else 0 (unordered/NaN returns 0).
+// @field ExprParser::ValuePtrType +0x00 float* value
+// @field NM::Vector3 +0x00 float x
+uint32_t __stdcall fn_00670700(void* self) {
+    // mov eax, [esp+4]; mov eax, [eax]  -> p = self->value
+    const float* p = *reinterpret_cast<const float* const*>(self);
+    if (p == nullptr) {
+        // sub esp,0x28; lea ecx,[esp]; call DerivedException ctor; throw.
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        // push 0x9dec1c (throw info); lea ecx,[esp+4]; push ecx; call _CxxThrowException
+        ext_006A6DD2(exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1C)));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+    // fld dword [p]; fcomp qword [1e-6]; fnstsw ax; test ah,1; jne -> C0 set (less or unordered) -> return 0
+    const double value = static_cast<double>(*p);
+    if (!(value >= mem_00987B78)) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_00670700

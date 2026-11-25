@@ -1,0 +1,28 @@
+{
+  "va": "0x00670700",
+  "size": 70,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, getX, 0\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",
+  "signature": "uint32_t __stdcall fn_00670700(void* self)",
+  "summary": "Stdcall (one stack arg). Dereferences arg-\u003evalue pointer (throws DerivedException if null), then returns 1 if *value \u003e= 1e-6, else 0 (unordered/NaN returns 0).",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "float*",
+      "name": "value"
+    },
+    {
+      "class": "NM::Vector3",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "x"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:04:56Z"
+}

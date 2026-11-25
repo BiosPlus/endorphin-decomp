@@ -45416,6 +45416,13 @@
     "summary": "Dereferences a Vector3 pointer, reads its X float, rounds to nearest int, or throws on null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00670700": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, getX, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",
+    "signature": "uint32_t __stdcall fn_00670700(void* self)",
+    "summary": "Stdcall (one stack arg). Dereferences arg-\u003evalue pointer (throws DerivedException if null), then returns 1 if *value \u003e= 1e-6, else 0 (unordered/NaN returns 0).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x006707A0": {
     "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, getX\u003e::vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",
