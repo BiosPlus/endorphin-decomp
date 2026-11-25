@@ -1,0 +1,13 @@
+{
+  "va": "0x004FF8E0",
+  "size": 87,
+  "orig_symbol": "sub_004FF8E0",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "getSingleton_004FF8E0",
+  "signature": "void* fn_004FF8E0()",
+  "summary": "Lazily initializes and returns the singleton object at 0x00AEB26C.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:36:30Z"
+}

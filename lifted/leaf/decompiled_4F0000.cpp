@@ -324,3 +324,23 @@ void* fn_004FF9A0() {
     return &mem_00AEB27C;
 }
 } // namespace lift_004FF9A0
+
+// [0x004FF8E0]
+namespace lift_004FF8E0 {
+// @name getSingleton_004FF8E0
+// @summary Lazily initializes and returns the singleton object at 0x00AEB26C.
+
+extern void* mem_00AEB270;
+extern void* mem_00AEB26C;
+extern void __thiscall ext_0067A670(void* self);
+
+void* fn_004FF8E0() {
+    auto* guard = reinterpret_cast<uint32_t*>(mem_00AEB270);
+    if ((*guard & 1) == 0) {
+        *guard |= 1;
+        ext_0067A670(mem_00AEB26C);
+        *reinterpret_cast<uint32_t*>(mem_00AEB26C) = 0x0094E1C4;
+    }
+    return mem_00AEB26C;
+}
+} // namespace lift_004FF8E0
