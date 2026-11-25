@@ -1,0 +1,28 @@
+{
+  "va": "0x00530C00",
+  "size": 50,
+  "orig_symbol": "sub_00530C00",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::forwardFlagsAndDispatch_00530C00",
+  "class": "Unknown",
+  "signature": "void fn_00530C00(void* self, DWORD flags, DWORD arg2, DWORD arg3)",
+  "summary": "Forwards a flags argument to a child object and to updateFlags_00530740, then invokes virtual slot 0x158 on the object at +0x10 with a zero argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "void*",
+      "name": "field_0x4C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:07:06Z"
+}

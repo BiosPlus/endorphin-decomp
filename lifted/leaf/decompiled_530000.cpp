@@ -1081,3 +1081,34 @@ void fn_00532770(void* self) {
     ext_00493D90(&lift_field<uint8_t>(self, 0x08));
 }
 } // namespace lift_00532770
+
+// [0x00530C00] sub_00530C00 (50 bytes)
+namespace lift_00530C00 {
+// Known callee 0x00530740: Unknown::updateFlags_00530740 (Sets/clears byte +0x86 from bits 0x1/0x2/0x10 of the argument, then forces it on if byte +0x84 is nonzero.)
+extern void ext_00530740(void* self, DWORD flags);
+// Known callee 0x005435A0: Object::dispatchVirtualSlot14AndClearFlags (Calls virtual slot 0x50 on this with two stack arguments, then clears the byte flags at +0x91 and +0x94.)
+extern void ext_005435A0(void* self, void* a1, DWORD a2);
+
+// @name Unknown::forwardFlagsAndDispatch_00530C00
+// @class Unknown
+// @summary Forwards a flags argument to a child object and to updateFlags_00530740, then invokes virtual slot 0x158 on the object at +0x10 with a zero argument.
+// @field Unknown +0x4C void* field_0x4C
+// @field Unknown +0x10 void* field_0x10
+void fn_00530C00(void* self, DWORD flags, DWORD arg2, DWORD arg3) {
+    (void)arg3;
+
+    // Child object at +0x4C receives the address of arg2 and the flags value.
+    void* child = lift_field<void*>(self, 0x4C);
+    DWORD local = arg2;
+    ext_005435A0(child, &local, flags);
+
+    // Update this object's flags.
+    ext_00530740(self, flags);
+
+    // Virtual call: slot at byte offset 0x158 of the vtable of the object at +0x10.
+    void* target = lift_field<void*>(self, 0x10);
+    void* vtbl = lift_field<void*>(target, 0);
+    auto slot = reinterpret_cast<void (*)(void*, DWORD)>(lift_field<void*>(vtbl, 0x158));
+    slot(target, 0);
+}
+} // namespace lift_00530C00
