@@ -509,3 +509,26 @@ char* sub_00664B50(const char* first, const char* last, char* dest) {
     return dest;
 }
 } // namespace lift_00664B50
+
+// [0x00662B20]
+namespace lift_00662B20 {
+// @name appendTrailingBackslash
+// @summary Ensures the std::string at arg2 ends with '\\' (appending one in place if needed), then returns a copy of it through the hidden return slot arg1.
+// @field none (object is only passed to std::string members; no direct field offsets accessed)
+
+// std::string members, reached through MSVCP80 thunks (IAT slots 0x924EAC, 0x92500C, 0x924EC0, 0x924FE0).
+extern size_t ext_string_size(void* str);                  // size() const
+extern char*  ext_string_index(void* str, size_t pos);     // operator[](size_t) -> char&
+extern void   ext_string_append_char(void* str, char ch);  // operator+=(char) -> basic_string&
+extern void   ext_string_copy_construct(void* dst, const void* src); // basic_string(const basic_string&)
+
+// Hidden return slot convention: ret receives the result; ret is also returned.
+void* fn_00662B20(void* ret, void* path) {
+    size_t last = ext_string_size(path) - 1;
+    if (*ext_string_index(path, last) != '\\') {
+        ext_string_append_char(path, '\\');
+    }
+    ext_string_copy_construct(ret, path);
+    return ret;
+}
+} // namespace lift_00662B20

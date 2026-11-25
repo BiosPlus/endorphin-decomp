@@ -1,0 +1,13 @@
+{
+  "va": "0x00662B20",
+  "size": 67,
+  "orig_symbol": "sub_00662B20",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "appendTrailingBackslash",
+  "signature": "extern size_t ext_string_size(void* str);                  // size() const extern char*  ext_string_index(void* str, size_t pos);     // operator[](size_t) -\u003e char\u0026 extern void   ext_string_append_char(void* str, char ch);  // operator+=(char) -\u003e basic_string\u0026 extern void   ext_string_copy_construct(void* dst, const void* src); // basic_string(const basic_string\u0026) void* fn_00662B20(void* ret, void* path)",
+  "summary": "Ensures the std::string at arg2 ends with '\\\\' (appending one in place if needed), then returns a copy of it through the hidden return slot arg1.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:17:42Z"
+}
