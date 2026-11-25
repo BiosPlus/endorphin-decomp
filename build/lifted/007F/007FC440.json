@@ -1,0 +1,13 @@
+{
+  "va": "0x007FC440",
+  "size": 80,
+  "orig_symbol": "sub_007FC440",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "transformPoint3ByMatrix",
+  "signature": "static inline float lift_load_f32(uint32_t addr)",
+  "summary": "Transforms a 3-float point by a 4x4 float matrix (translation in the last row of each column group), writing 3 floats to out",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:56:53Z"
+}

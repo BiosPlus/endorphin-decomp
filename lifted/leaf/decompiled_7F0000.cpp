@@ -280,3 +280,53 @@ void fn_007F67C0(void* self, int count) {
     lift_field<uint32_t>(self, 0x0c) = 0;      // tail
 }
 } // namespace lift_007F67C0
+
+// [0x007FC440]
+namespace lift_007FC440 {
+// @name transformPoint3ByMatrix
+// @summary Transforms a 3-float point by a 4x4 float matrix (translation in the last row of each column group), writing 3 floats to out
+// (free function, no @class/@field: all accesses are through raw pointer arguments)
+
+
+// eax = matrix pointer (16 floats), ecx = input point pointer (3 floats), edx = output pointer (3 floats)
+static inline float lift_load_f32(uint32_t addr) {
+    float f;
+    std::memcpy(&f, reinterpret_cast<const void*>(static_cast<uintptr_t>(addr)), sizeof(f));
+    return f;
+}
+
+static inline void lift_store_f32(uint32_t addr, float f) {
+    std::memcpy(reinterpret_cast<void*>(static_cast<uintptr_t>(addr)), &f, sizeof(f));
+}
+
+void sub_007FC440(uint32_t eax, uint32_t ecx, uint32_t edx) {
+    const uint32_t m = eax;
+    const uint32_t v = ecx;
+    const uint32_t out = edx;
+
+    const float v0 = lift_load_f32(v + 0x0);
+    const float v1 = lift_load_f32(v + 0x4);
+    const float v2 = lift_load_f32(v + 0x8);
+
+    // out.x = m[0x10]*v1 + m[0x00]*v0 + m[0x20]*v2 + m[0x30]
+    float x = lift_load_f32(m + 0x10) * v1;
+    x = x + lift_load_f32(m + 0x00) * v0;
+    x = x + lift_load_f32(m + 0x20) * v2;
+    x = x + lift_load_f32(m + 0x30);
+    lift_store_f32(out + 0x0, x);
+
+    // out.y = m[0x04]*v0 + m[0x14]*v1 + m[0x24]*v2 + m[0x34]
+    float y = lift_load_f32(m + 0x04) * v0;
+    y = y + lift_load_f32(m + 0x14) * v1;
+    y = y + lift_load_f32(m + 0x24) * v2;
+    y = y + lift_load_f32(m + 0x34);
+    lift_store_f32(out + 0x4, y);
+
+    // out.z = m[0x08]*v0 + m[0x18]*v1 + m[0x28]*v2 + m[0x38]
+    float z = lift_load_f32(m + 0x08) * v0;
+    z = z + lift_load_f32(m + 0x18) * v1;
+    z = z + lift_load_f32(m + 0x28) * v2;
+    z = z + lift_load_f32(m + 0x38);
+    lift_store_f32(out + 0x8, z);
+}
+} // namespace lift_007FC440

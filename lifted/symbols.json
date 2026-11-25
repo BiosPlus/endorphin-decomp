@@ -61716,6 +61716,12 @@
     "summary": "Returns the 3-component dot product of two float vectors (y and x terms summed first, then z).",
     "lifted_path": "lifted/leaf/tiny_7F0000.cpp"
   },
+  "0x007FC440": {
+    "name": "transformPoint3ByMatrix",
+    "signature": "static inline float lift_load_f32(uint32_t addr)",
+    "summary": "Transforms a 3-float point by a 4x4 float matrix (translation in the last row of each column group), writing 3 floats to out",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
   "0x007FC490": {
     "name": "Unknown::TransformVec3ByMatrix",
     "class": "Unknown",
