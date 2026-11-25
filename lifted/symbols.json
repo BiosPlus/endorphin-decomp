@@ -59543,6 +59543,12 @@
     "summary": "Steps through rows of ComputeRowByteCount bytes from cursor, calling the callback at +0x1a4 per row; returns 1 if all rows were consumed with the callback returning 0, else 0.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BC120": {
+    "name": "DecodeSignedLogScale16Array",
+    "signature": "void fn_007BC120(void* self, float* out, std::int32_t count)",
+    "summary": "Decodes `count` 16-bit log-scale codes from the buffer at self+0x0C into floats written to `out`.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BD310": {
     "name": "initField40And4E",
     "signature": "uint32_t sub_007BD310(uint32_t a1)",

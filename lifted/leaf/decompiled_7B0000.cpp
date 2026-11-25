@@ -1071,3 +1071,25 @@ double sub_007BAE40(std::uint32_t arg) {
     return negative ? -r : r;
 }
 } // namespace lift_007BAE40
+
+// [0x007BC120] sub_007BC120 (55 bytes)
+namespace lift_007BC120 {
+// Known callee 0x007BAE40: DecodeSignedLogScale16 (Decodes a 16-bit sign-magnitude code (bit 15 sign, bits 0-14 magnitude) to 2^((m+0.5)/256 - 64), negated when the sign bit is set; magnitude 0 returns mem_0092A278.)
+extern double __cdecl ext_007BAE40(std::uint32_t arg);
+
+// @name DecodeSignedLogScale16Array
+// @summary Decodes `count` 16-bit log-scale codes from the buffer at self+0x0C into floats written to `out`.
+// @field Object +0x0C const std::uint16_t* field_0x0C
+void fn_007BC120(void* self, float* out, std::int32_t count) {
+    const auto* base = reinterpret_cast<const std::uint8_t*>(self);
+    const auto codesAddr = *reinterpret_cast<const std::uint32_t*>(base + 0x0C);
+    const auto* codes = reinterpret_cast<const std::uint16_t*>(static_cast<std::uintptr_t>(codesAddr));
+
+    for (std::int32_t i = 0; i < count; ++i) {
+        // movsx: sign-extend the 16-bit code to 32 bits before passing it on.
+        const auto signExtended = static_cast<std::int32_t>(static_cast<std::int16_t>(codes[i]));
+        const double decoded = ext_007BAE40(static_cast<std::uint32_t>(signExtended));
+        out[i] = static_cast<float>(decoded);
+    }
+}
+} // namespace lift_007BC120

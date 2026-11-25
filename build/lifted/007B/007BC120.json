@@ -1,0 +1,21 @@
+{
+  "va": "0x007BC120",
+  "size": 55,
+  "orig_symbol": "sub_007BC120",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "DecodeSignedLogScale16Array",
+  "signature": "void fn_007BC120(void* self, float* out, std::int32_t count)",
+  "summary": "Decodes `count` 16-bit log-scale codes from the buffer at self+0x0C into floats written to `out`.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0xC",
+      "type": "const std::uint16_t*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:57:01Z"
+}
