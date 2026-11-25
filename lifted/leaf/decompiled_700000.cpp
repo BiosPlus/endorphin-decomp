@@ -2133,3 +2133,27 @@ void __thiscall fn_00709100(void* self, void* other, uint8_t flags) {
     }
 }
 } // namespace lift_00709100
+
+// [0x00701ED0]
+namespace lift_00701ED0 {
+// @name lookupAddressByIndex_00701ED0
+// @summary Returns one of 11 constant addresses selected by a stack argument (0..10); returns 0 for out-of-range indices.
+// (stdcall, one 32-bit argument; no member fields accessed)
+
+uint32_t lookupAddressByIndex_00701ED0(uint32_t index) {
+    switch (index) {
+        case 0:  return 0x00AAB920u;
+        case 1:  return 0x00AABBC0u;
+        case 2:  return 0x00AA8CA0u;
+        case 3:  return 0x00AA8CA8u;
+        case 4:  return 0x00AA8CA4u;
+        case 5:  return 0x00AABBB4u;
+        case 6:  return 0x00AABBA8u;
+        case 7:  return 0x00AABB9Cu;
+        case 8:  return 0x00AABB90u;
+        case 9:  return 0x00AABB8Cu;
+        case 10: return 0x00AABB84u;
+        default: return 0u;
+    }
+}
+} // namespace lift_00701ED0

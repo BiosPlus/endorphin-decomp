@@ -1,0 +1,13 @@
+{
+  "va": "0x00701ED0",
+  "size": 109,
+  "orig_symbol": "sub_00701ED0",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "lookupAddressByIndex_00701ED0",
+  "signature": "uint32_t lookupAddressByIndex_00701ED0(uint32_t index)",
+  "summary": "Returns one of 11 constant addresses selected by a stack argument (0..10); returns 0 for out-of-range indices.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:02:40Z"
+}

@@ -61012,6 +61012,12 @@
     "summary": "Maps an unsigned index (0..3) to a corresponding static data pointer, returning 0 if out of range.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00701ED0": {
+    "name": "lookupAddressByIndex_00701ED0",
+    "signature": "uint32_t lookupAddressByIndex_00701ED0(uint32_t index)",
+    "summary": "Returns one of 11 constant addresses selected by a stack argument (0..10); returns 0 for out-of-range indices.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00702110": {
     "name": "sub_00702110",
     "signature": "extern \"C\" void* __fastcall fn_00702110(void* self, int edx_unused, unsigned int flags)",
