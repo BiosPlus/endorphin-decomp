@@ -62800,6 +62800,12 @@
     "summary": "Word-wise subtract-with-borrow over a uint32 array; returns final borrow flag (0/1). Returns 0 when count == 0.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086AEB0": {
+    "name": "CompareDwordArraysReverse",
+    "signature": "int32_t fn_0086AEB0(const uint32_t* a, uint32_t arg2)",
+    "summary": "Compares two dword arrays from the last element backwards; returns 1 if a is greater, -1 if less, 0 if equal or count is zero. The second array base and the count are both taken from arg2 (the same stack slot is loaded as both count and base pointer in the original).",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086AF00": {
     "name": "AllDwordsZero",
     "signature": "extern \"C\" uint32_t __cdecl fn_0086AF00(const uint32_t* data, uint32_t count)",

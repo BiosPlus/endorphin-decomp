@@ -683,3 +683,28 @@ uint32_t sub_00869F90(uint32_t* dst, const uint32_t* src1, const uint32_t* src2,
     return prev;
 }
 } // namespace lift_00869F90
+
+// [0x0086AEB0] sub_0086AEB0 (80 bytes)
+namespace lift_0086AEB0 {
+// @name CompareDwordArraysReverse
+// @summary Compares two dword arrays from the last element backwards; returns 1 if a is greater, -1 if less, 0 if equal or count is zero. The second array base and the count are both taken from arg2 (the same stack slot is loaded as both count and base pointer in the original).
+int32_t fn_0086AEB0(const uint32_t* a, uint32_t arg2) {
+    const uint32_t count = arg2;
+    if (count == 0) {
+        return 0;
+    }
+
+    const uint32_t* b = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(arg2));
+    for (uint32_t i = count; i-- > 0;) {
+        const uint32_t x = a[i];
+        const uint32_t y = b[i];
+        if (x > y) {
+            return 1;
+        }
+        if (x < y) {
+            return -1;
+        }
+    }
+    return 0;
+}
+} // namespace lift_0086AEB0
