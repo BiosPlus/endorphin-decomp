@@ -8,6 +8,6 @@
 // Recovered field layout for ExprParser::ReadMethodType<EffectorSkeletal>:
 namespace lifted_layout {
 struct ExprParser_ReadMethodType_EffectorSkeletal__Fields {
-    // +0x0   void*                    m_pObject  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x00639730, 0x006399F0, 0x00695740)
+    // +0x0   void*                    m_pObject  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x00639730, 0x006399F0, 0x00695740)
 };
 } // namespace lifted_layout
