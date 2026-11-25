@@ -875,3 +875,22 @@ Unknown* fn_006D6CB0(Unknown* ecx) {
     return ext_006B9960(reinterpret_cast<Unknown*>(self + 0xB0));
 }
 } // namespace lift_006D6CB0
+
+// [0x006D23B0]
+namespace lift_006D23B0 {
+// @name Fill8DwordsReturnSelf
+// @summary Copies eight 32-bit stack arguments into the buffer at the hidden pointer and returns that pointer.
+uint32_t* Fill8DwordsReturnSelf(uint32_t* self,
+                                uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3,
+                                uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7) {
+    self[0] = a0;
+    self[1] = a1;
+    self[2] = a2;
+    self[3] = a3;
+    self[4] = a4;
+    self[5] = a5;
+    self[6] = a6;
+    self[7] = a7;
+    return self;
+}
+} // namespace lift_006D23B0
