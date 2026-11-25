@@ -3326,3 +3326,41 @@ void __thiscall fn_004360C0(void* self) {
     }
 }
 } // namespace lift_004360C0
+
+// [0x0043CE40]
+namespace lift_0043CE40 {
+// @name sub_0043CE40
+// @summary Scales a Y coordinate relative to the client rect height and a field at +0xF8
+// @field Class +0x20 uint32_t field_0x20
+// @field Class +0xF8 int32_t field_0xf8
+
+extern int32_t __cdecl ext_006A6DE0(double val);
+
+extern uint32_t mem_0092566C;
+extern double mem_00993828;
+
+int32_t __thiscall sub_0043CE40(void* self, int32_t arg0) {
+    struct Rect {
+        int32_t left;
+        int32_t top;
+        int32_t right;
+        int32_t bottom;
+    } rect;
+
+    using GetClientRectFn = int32_t(__stdcall*)(uint32_t, Rect*);
+    auto get_client_rect = reinterpret_cast<GetClientRectFn>(static_cast<uintptr_t>(mem_0092566C));
+    uint32_t hwnd = *reinterpret_cast<const uint32_t*>(reinterpret_cast<const uint8_t*>(self) + 0x20);
+    get_client_rect(hwnd, &rect);
+
+    int32_t h = *reinterpret_cast<const int32_t*>(reinterpret_cast<const uint8_t*>(self) + 0xF8);
+    int32_t y_top = h - rect.bottom + rect.top;
+
+    double d_h = static_cast<double>(h);
+    double d_y_top = static_cast<double>(y_top);
+    double d_arg0 = static_cast<double>(arg0);
+    double half = mem_00993828;
+
+    double scaled = (d_y_top / d_h) * (d_arg0 - half * d_h) + d_y_top * half;
+    return ext_006A6DE0(scaled);
+}
+} // namespace lift_0043CE40
