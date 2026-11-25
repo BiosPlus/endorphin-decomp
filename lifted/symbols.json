@@ -59593,6 +59593,13 @@
     "summary": "If a2 == 0x13D, copies the WORD at a1-\u003e+0x1CC into *a3 and returns 1; otherwise forwards (a1, a2, a3) to the function pointer at (a1-\u003e+0x1CC)+0x1C and returns its result.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007C15A0": {
+    "name": "ReleaseOwnedCallbackHandle",
+    "class": "Unknown",
+    "signature": "int32_t fn_007C15A0(void* self)",
+    "summary": "If the owner at +0x1C and callback at +0x24 are set, invoke callback(ctx, owner-\u003e+0x2C) when non-null, then callback(ctx, owner) and clear +0x1C; returns 0 on success, -2 if a required pointer is null.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C1F60": {
     "name": "writeU16BE",
     "signature": "void __cdecl sub_007C1F60(void* self, uint32_t value)",

@@ -1187,3 +1187,44 @@ void sub_007C9D80(void* obj) {
     ext_007C9C90(base + 0x40);
 }
 } // namespace lift_007C9D80
+
+// [0x007C15A0] sub_007C15A0 (80 bytes)
+namespace lift_007C15A0 {
+// @name ReleaseOwnedCallbackHandle
+// @class Unknown
+// @summary If the owner at +0x1C and callback at +0x24 are set, invoke callback(ctx, owner->+0x2C) when non-null, then callback(ctx, owner) and clear +0x1C; returns 0 on success, -2 if a required pointer is null.
+// @field Unknown +0x1C void* field_0x1C
+// @field Unknown +0x24 void (*)(void*, void*) field_0x24
+// @field Unknown +0x28 void* field_0x28
+// @field Unknown +0x2C void* field_0x2C (read through the pointer at +0x1C)
+namespace {
+using CallbackFn = void (*)(void*, void*);
+}
+
+int32_t fn_007C15A0(void* self) {
+    if (self == nullptr) {
+        return -2;
+    }
+    void* owner = lift_field<void*>(self, 0x1C);
+    if (owner == nullptr) {
+        return -2;
+    }
+    CallbackFn callback = lift_field<CallbackFn>(self, 0x24);
+    if (callback == nullptr) {
+        return -2;
+    }
+
+    void* inner = lift_field<void*>(owner, 0x2C);
+    if (inner != nullptr) {
+        callback(lift_field<void*>(self, 0x28), inner);
+    }
+
+    // Re-read fields: the first callback may have changed them.
+    owner = lift_field<void*>(self, 0x1C);
+    callback = lift_field<CallbackFn>(self, 0x24);
+    callback(lift_field<void*>(self, 0x28), owner);
+
+    lift_field<void*>(self, 0x1C) = nullptr;
+    return 0;
+}
+} // namespace lift_007C15A0

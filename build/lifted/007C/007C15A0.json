@@ -1,0 +1,40 @@
+{
+  "va": "0x007C15A0",
+  "size": 80,
+  "orig_symbol": "sub_007C15A0",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "ReleaseOwnedCallbackHandle",
+  "class": "Unknown",
+  "signature": "int32_t fn_007C15A0(void* self)",
+  "summary": "If the owner at +0x1C and callback at +0x24 are set, invoke callback(ctx, owner-\u003e+0x2C) when non-null, then callback(ctx, owner) and clear +0x1C; returns 0 on success, -2 if a required pointer is null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "void (*)(void*, void*)",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "void* field_0x2C (read through the pointer at",
+      "name": "+0x1C)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:56:04Z"
+}
