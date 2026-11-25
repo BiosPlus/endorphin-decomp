@@ -10274,3 +10274,30 @@ void __stdcall fn_004D6980(void** out) {
     lift_field<void*>(out, 4) = accessor;
 }
 } // namespace lift_004D6980
+
+// [0x004DE980] ExprParser::ReadWriteMethodType<NMData::AnimationEventData, int, {getCopyFromReferenceObjectDummy}, int, {copyFromReferenceObject}>::vfunc_40 (122 bytes)
+namespace lift_004DE980 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self; stores its single stack argument into the first DWORD of self and returns it).
+extern void ext_0067A670();
+// Guard word for the function-local static; bit 0 = "initialization started/done".
+extern uint32_t mem_00AE6420;
+// Static object whose first DWORD receives the vtable pointer below.
+extern uint32_t mem_00AE641C;
+
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData,int,...>::vfunc_40 (static-guarded link to shared object)
+// @class ExprParser::ReadWriteMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, int, {public: void __thiscall NMData::AnimationEventData::copyFromReferenceObject(int), 0}>
+// @summary Lazily initializes a shared static object (guarded by bit 0 of mem_00AE6420, one-time init via ext_0067A670, then vptr 0x0094ACDC), then stores its address into self+0x04.
+// @field Unknown +0x04 void* field_0x04
+void __stdcall fn_004DE980(void* self) {
+    if ((mem_00AE6420 & 1u) == 0u) {
+        mem_00AE6420 |= 1u;
+        // Original passes ECX = &mem_00AE641C and one stack word (the SEH
+        // frame link, which the callee's store is overwritten below); 0 here.
+        using InitFn = void(__thiscall*)(void* thisPtr, uint32_t value);
+        InitFn init = reinterpret_cast<InitFn>(&ext_0067A670);
+        init(static_cast<void*>(&mem_00AE641C), 0u);
+        mem_00AE641C = 0x0094ACDCu;
+    }
+    lift_field<void*>(self, 4) = static_cast<void*>(&mem_00AE641C);
+}
+} // namespace lift_004DE980
