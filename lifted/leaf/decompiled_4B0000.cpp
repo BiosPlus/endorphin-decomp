@@ -1215,3 +1215,53 @@ void fn_004B5180(void* self, uintptr_t* out, uintptr_t* v, uintptr_t it) {
     out[1] = it;
 }
 } // namespace lift_004B5180
+
+// [0x004BBB00] sub_004BBB00 (108 bytes)
+namespace lift_004BBB00 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* p);
+// .rdata slots: _invalid_parameter_noinfo, std::string dtor, memmove_s
+extern void* mem_00925134;
+extern void* mem_00924FF4;
+extern void* mem_009251EC;
+
+// @name eraseStringPtrAt
+// @class StringPtrVector
+// @summary Destroys the std::string* at iterator slot `it` (checked against owner end), erases it from the vector by shifting the tail down, and returns {owner, it} through `out`.
+// @field StringPtrVector +0x08 uint8_t* field_0x08
+// @field Owner +0x08 uint8_t* field_0x08
+void* fn_004BBB00(void* self, void* out, void* owner, void* it) {
+    uint8_t* vec = static_cast<uint8_t*>(self);
+    uint8_t* own = static_cast<uint8_t*>(owner);
+    uint8_t* slot = static_cast<uint8_t*>(it);
+
+    if (own == nullptr) {
+        reinterpret_cast<void (*)()>(mem_00925134)();  // _invalid_parameter_noinfo
+    }
+    uint8_t* ownerEnd = *reinterpret_cast<uint8_t**>(own + 0x8);
+    if (!(reinterpret_cast<uintptr_t>(slot) < reinterpret_cast<uintptr_t>(ownerEnd))) {
+        reinterpret_cast<void (*)()>(mem_00925134)();  // _invalid_parameter_noinfo
+    }
+
+    void* str = *reinterpret_cast<void**>(slot);
+    if (str != nullptr) {
+        reinterpret_cast<void (*)(void*)>(mem_00924FF4)(str);  // std::string::~string
+        ext_006A5C5C(str);                                     // operator delete
+    }
+
+    uint8_t* end = *reinterpret_cast<uint8_t**>(vec + 0x8);
+    uint8_t* src = slot + 0x4;
+    ptrdiff_t count = (static_cast<ptrdiff_t>(reinterpret_cast<uintptr_t>(end) - reinterpret_cast<uintptr_t>(src))) >> 2;
+    if (count > 0) {
+        size_t bytes = static_cast<size_t>(count) * 4;
+        reinterpret_cast<int (*)(void*, size_t, const void*, size_t)>(mem_009251EC)(slot, bytes, src, bytes);
+    }
+
+    *reinterpret_cast<uint8_t**>(vec + 0x8) = end - 4;
+
+    void** ret = static_cast<void**>(out);
+    ret[0] = owner;
+    ret[1] = it;
+    return out;
+}
+} // namespace lift_004BBB00

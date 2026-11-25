@@ -1,0 +1,28 @@
+{
+  "va": "0x004BBB00",
+  "size": 108,
+  "orig_symbol": "sub_004BBB00",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "eraseStringPtrAt",
+  "class": "StringPtrVector",
+  "signature": "void* fn_004BBB00(void* self, void* out, void* owner, void* it)",
+  "summary": "Destroys the std::string* at iterator slot `it` (checked against owner end), erases it from the vector by shifting the tail down, and returns {owner, it} through `out`.",
+  "fields": [
+    {
+      "class": "StringPtrVector",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Owner",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:57:54Z"
+}
