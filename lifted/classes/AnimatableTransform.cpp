@@ -108,3 +108,42 @@ uint32_t fn_00585170(void* self, void* arg0) {
     return ext_00493E40(arg0, r2);
 }
 } // namespace lift_00585170
+
+// [0x00593D00]
+namespace lift_00593D00 {
+// @name AnimatableTransform::vfunc_2_off_4
+// @class AnimatableTransform
+// @summary Thiscall with one stack arg: returns this->field_0xE0 unless virtual slot 7 returns true and sub_00661B10(it) is false, in which case returns DequeIndexAt(it, this->field_0xE4).
+// @field AnimatableTransform +0x00 uint32_t vtable
+// @field AnimatableTransform +0xE0 uint32_t field_0xE0
+// @field AnimatableTransform +0xE4 uint32_t field_0xE4
+namespace lift_00593D00 {
+extern uint8_t ext_00661B10(void* self);
+extern void* ext_0053E290(void* self, uint32_t index);
+
+static inline uint32_t ld32(uint32_t base, uint32_t off) {
+    uint32_t v;
+    std::memcpy(&v, reinterpret_cast<const unsigned char*>(static_cast<uintptr_t>(base + off)), 4);
+    return v;
+}
+
+uint32_t fn_00593D00(void* self, void* it) {
+    const uint32_t self_u = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+
+    // Virtual call: vtable = [self+0]; slot at vtable+0x1C (index 7)
+    const uint32_t vtable = ld32(self_u, 0x00);
+    const uint32_t slot7 = ld32(vtable, 0x1c);
+    auto vfn = reinterpret_cast<uint8_t (*)(void*)>(static_cast<uintptr_t>(slot7));
+    if (vfn(self) == 0) {
+        return ld32(self_u, 0xE0);
+    }
+
+    if (ext_00661B10(it) != 0) {
+        return ld32(self_u, 0xE0);
+    }
+
+    const uint32_t index = ld32(self_u, 0xE4);
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(ext_0053E290(it, index)));
+}
+} // namespace lift_00593D00
+} // namespace lift_00593D00

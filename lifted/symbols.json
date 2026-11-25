@@ -23165,6 +23165,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00401A70 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00593D00": {
+    "name": "AnimatableTransform::vfunc_2_off_4",
+    "class": "AnimatableTransform",
+    "signature": "static inline uint32_t ld32(uint32_t base, uint32_t off)",
+    "summary": "Thiscall with one stack arg: returns this-\u003efield_0xE0 unless virtual slot 7 returns true and sub_00661B10(it) is false, in which case returns DequeIndexAt(it, this-\u003efield_0xE4).",
+    "lifted_path": "lifted/classes/AnimatableTransform.cpp"
+  },
   "0x00593F10": {
     "name": "sub_00593F10",
     "signature": "extern \"C\" void fn_00593F10(void)",
