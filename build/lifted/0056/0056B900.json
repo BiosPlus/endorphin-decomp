@@ -1,0 +1,27 @@
+{
+  "va": "0x0056B900",
+  "size": 41,
+  "orig_symbol": "sub_0056B900",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "sub_0056B900_hasMoreThanOneElement",
+  "signature": "int fn_0056B900(void* self)",
+  "summary": "Returns 1 if the range [+0x28, +0x2c) is non-null and spans more than one 4-byte element, else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:27:29Z"
+}

@@ -25261,6 +25261,12 @@
     "summary": "Returns 1 when the float at +0x46C is \u003e= 2.0 (ordered) and the string at +0xAC equals the literal at 0x009590C0; otherwise 0.",
     "lifted_path": "lifted/classes/Acclaim2CharacterIO.cpp"
   },
+  "0x0056B900": {
+    "name": "sub_0056B900_hasMoreThanOneElement",
+    "signature": "int fn_0056B900(void* self)",
+    "summary": "Returns 1 if the range [+0x28, +0x2c) is non-null and spans more than one 4-byte element, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x0056D920": {
     "name": "NMCIO::vfunc_13",
     "class": "NMCIO",

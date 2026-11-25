@@ -359,3 +359,20 @@ bool fn_005649D0(void* self, const void* name) {
     return result == 0;
 }
 } // namespace lift_005649D0
+
+// [0x0056B900] sub_0056B900 (41 bytes)
+namespace lift_0056B900 {
+// @name sub_0056B900_hasMoreThanOneElement
+// @summary Returns 1 if the range [+0x28, +0x2c) is non-null and spans more than one 4-byte element, else 0.
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x2c uint32_t field_0x2c
+int fn_0056B900(void* self) {
+    const uint32_t begin = lift_field<uint32_t>(self, 0x28);
+    if (begin == 0) {
+        return 0;
+    }
+    const uint32_t end = lift_field<uint32_t>(self, 0x2c);
+    const int32_t count = static_cast<int32_t>(end - begin) >> 2;
+    return (1u < static_cast<uint32_t>(count)) ? 1 : 0;
+}
+} // namespace lift_0056B900
