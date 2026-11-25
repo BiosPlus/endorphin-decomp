@@ -1426,3 +1426,73 @@ extern void* __fastcall fn_006E72D0(void* self, void* /*edx*/, void* arg1) {
     return self;
 }
 } // namespace lift_006E72D0
+
+// [0x006E8470]
+namespace lift_006E8470 {
+// @name sub_006E8470_dtor
+// @summary Destroys subobjects at +0x90, +0x78, +0x28, and +0x00 in reverse construction order.
+// @field Class +0x28 void field_0x28
+// @field Class +0x78 void field_0x78
+// @field Class +0x90 void field_0x90
+
+
+extern void __fastcall ext_007641C0(void* self);
+extern void __fastcall ext_006D2160(void* self);
+extern void __cdecl ext_006D80A0(void);
+
+extern void __fastcall fn_006E8470(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    ext_007641C0(base + 0x90);
+    ext_006D2160(base + 0x78);
+    ext_006D80A0();
+    ext_006D80A0();
+}
+} // namespace lift_006E8470
+
+// [0x006E9C30]
+namespace lift_006E9C30 {
+extern int32_t __fastcall ext_006E7460(void* self);
+
+// @name getElementFieldAtIndex
+// @summary Retrieves an object pointer from an array at offset +0x1C by index and returns its int32_t field at +0x0.
+// @field unknown +0x1C void** field_0x1C
+extern int32_t __thiscall fn_006E9C30(void* self, int32_t index) {
+    void** arr = *reinterpret_cast<void***>(reinterpret_cast<uint8_t*>(self) + 0x1C);
+    void* elem = arr[index];
+    return ext_006E7460(elem);
+}
+} // namespace lift_006E9C30
+
+// [0x006E9610]
+namespace lift_006E9610 {
+// @name countItemsByType
+// @summary Counts items in array at +0x8c matching the given type, or returns total count if type is 0.
+// @field Unknown +0x7c int32_t field_0x7c
+// @field Unknown +0x8c uint32_t* field_0x8c
+
+extern int32_t __fastcall ext_00710300(void* self);
+
+extern int32_t __fastcall fn_006E9610(void* self, void* /*edx*/, int32_t type) {
+    if (type >= 3) {
+        return 0;
+    }
+
+    int32_t total = *reinterpret_cast<int32_t*>(reinterpret_cast<uint8_t*>(self) + 0x7c);
+    if (type == 0) {
+        return total;
+    }
+
+    int32_t count = 0;
+    if (total > 0) {
+        uint32_t* arr = *reinterpret_cast<uint32_t**>(reinterpret_cast<uint8_t*>(self) + 0x8c);
+        for (int32_t i = 0; i < total; ++i) {
+            void* entry = reinterpret_cast<void*>(static_cast<uintptr_t>(arr[i]));
+            void* item = *reinterpret_cast<void**>(entry);
+            if (ext_00710300(item) == type) {
+                ++count;
+            }
+        }
+    }
+    return count;
+}
+} // namespace lift_006E9610

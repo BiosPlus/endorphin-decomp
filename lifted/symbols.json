@@ -61586,6 +61586,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006E8050 (Unknown::GetVtableSlot80).",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E8470": {
+    "name": "sub_006E8470_dtor",
+    "signature": "extern \"C\" void __fastcall fn_006E8470(void* self)",
+    "summary": "Destroys subobjects at +0x90, +0x78, +0x28, and +0x00 in reverse construction order.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E85D0": {
     "name": "copyBlockFromPointerField",
     "signature": "void fn_006E85D0(void* self, void* dst)",
@@ -61712,6 +61718,12 @@
     "summary": "Getter returning int32_t field at offset +0x64.",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E9610": {
+    "name": "countItemsByType",
+    "signature": "extern \"C\" int32_t __fastcall fn_006E9610(void* self, void* /*edx*/, int32_t type)",
+    "summary": "Counts items in array at +0x8c matching the given type, or returns total count if type is 0.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E99C0": {
     "name": "ConstructObject_006E99C0",
     "class": "Unknown",
@@ -61742,6 +61754,12 @@
     "name": "sub_006E9B70",
     "signature": "extern \"C\" void __fastcall fn_006E9B70(void* self, void* a1)",
     "summary": "Looks up an item by key 0x00AA8D80 on the object from ext_006C9360(a1), invokes vtable+0x10 if found, and calls ext_00732CB0(a1).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
+  "0x006E9C30": {
+    "name": "getElementFieldAtIndex",
+    "signature": "extern \"C\" int32_t __thiscall fn_006E9C30(void* self, int32_t index)",
+    "summary": "Retrieves an object pointer from an array at offset +0x1C by index and returns its int32_t field at +0x0.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
   "0x006E9CB0": {

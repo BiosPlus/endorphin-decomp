@@ -1,0 +1,33 @@
+{
+  "va": "0x006E8470",
+  "size": 112,
+  "orig_symbol": "sub_006E8470",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "sub_006E8470_dtor",
+  "signature": "extern \"C\" void __fastcall fn_006E8470(void* self)",
+  "summary": "Destroys subobjects at +0x90, +0x78, +0x28, and +0x00 in reverse construction order.",
+  "fields": [
+    {
+      "class": "Class",
+      "offset": "+0x28",
+      "type": "void",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Class",
+      "offset": "+0x78",
+      "type": "void",
+      "name": "field_0x78"
+    },
+    {
+      "class": "Class",
+      "offset": "+0x90",
+      "type": "void",
+      "name": "field_0x90"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T05:09:51Z"
+}
