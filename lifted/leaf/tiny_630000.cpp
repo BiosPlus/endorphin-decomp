@@ -146,3 +146,27 @@ void* fn_006305A0(void* self) {
     return sub114;
 }
 } // namespace lift_006305A0
+
+// [0x0063E0F0] sub_0063E0F0 (15 bytes)
+namespace lift_0063E0F0 {
+extern int mem_0097CB4C;
+extern int mem_00924FF4;
+
+// Indirect import slot at 0x00924FF4 (holds 0x00628FF0, an import stub that
+// forwards to the MSVCP80 std::basic_string<char> destructor).
+extern void __fastcall ext_00924FF4(void* self);
+
+// @name ResetVtableAndDestroyStringAt4
+// @class Unknown
+// @summary Stores the vtable VA 0x0097CB4C into the object, then tail-calls the std::string destructor on the embedded string at +0x04.
+// @field Unknown +0x00 uint32_t field_0x00 (vtable VA 0x0097CB4C written by this function)
+// @field Unknown +0x04 std::string field_0x04 (destroyed via ext_00924FF4)
+void fn_0063E0F0(void* self) {
+    // mov dword ptr [ecx], 0x97cb4c
+    lift_field<uint32_t>(self, 0x00) = 0x0097CB4Cu;
+
+    // add ecx, 4 ; jmp [0x924ff4]  -> tail call with this = self + 4
+    (void)&mem_00924FF4;  // the indirect jump reads this slot
+    ext_00924FF4(static_cast<uint8_t*>(self) + 4);
+}
+} // namespace lift_0063E0F0

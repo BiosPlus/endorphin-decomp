@@ -39801,6 +39801,13 @@
     "summary": "Stamps vtable 0x0097CB4C at +0x00, copy-constructs a std::string from the second argument into this+0x04, stores the first argument at +0x20, and returns this.",
     "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
+  "0x0063E0F0": {
+    "name": "ResetVtableAndDestroyStringAt4",
+    "class": "Unknown",
+    "signature": "void fn_0063E0F0(void* self)",
+    "summary": "Stores the vtable VA 0x0097CB4C into the object, then tail-calls the std::string destructor on the embedded string at +0x04.",
+    "lifted_path": "lifted/leaf/tiny_630000.cpp"
+  },
   "0x0063E180": {
     "name": "AdvXMLParser::Text::vfunc_3",
     "class": "AdvXMLParser::Text",

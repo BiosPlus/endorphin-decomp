@@ -1,0 +1,28 @@
+{
+  "va": "0x0063E0F0",
+  "size": 15,
+  "orig_symbol": "sub_0063E0F0",
+  "src_path": "src/leaf/tiny_630000.cpp",
+  "lifted_path": "lifted/leaf/tiny_630000.cpp",
+  "name": "ResetVtableAndDestroyStringAt4",
+  "class": "Unknown",
+  "signature": "void fn_0063E0F0(void* self)",
+  "summary": "Stores the vtable VA 0x0097CB4C into the object, then tail-calls the std::string destructor on the embedded string at +0x04.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t field_0x00 (vtable VA 0x0097CB4C written by this",
+      "name": "function)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "std::string field_0x04 (destroyed via",
+      "name": "ext_00924FF4)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:26:27Z"
+}

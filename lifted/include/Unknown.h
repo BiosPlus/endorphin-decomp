@@ -54,6 +54,7 @@ struct Unknown_Fields {
     // +0x0   BYTE                     flag  (evidence: 0x006619D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t field_0x00 (bit 0 = suppress flag)  (evidence: 0x00640CD0, 0x00648A20) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t                  flags  (evidence: 0x00640940, 0x00640CB0, 0x00648A20) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t field_0x00 (vtable VA 0x0097CB4C written by this function)  (evidence: 0x0063E0F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (FILE* stream passed to fwrite)  (evidence: 0x00788E50) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 heldObject  (evidence: 0x00468630) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    heldPtr  (evidence: 0x00401DE0, 0x004030F0, 0x0040A910, 0x0040BE90, 0x004693D0, 0x004693F0, 0x00480750, 0x004A5BE0, 0x004AECE0, 0x004D2C70, 0x004DA800, 0x00594790, 0x005947B0, 0x005C4780, 0x005CEA30, 0x00648200, 0x00648510, 0x00648A20) // CONFLICT: multiple definitions at +0x0
@@ -148,6 +149,7 @@ struct Unknown_Fields {
     // +0x4   uint32_t                 entry_count  (evidence: 0x007F0B60) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066BB70) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066AF60) // CONFLICT: multiple definitions at +0x4
+    // +0x4   std::string field_0x04 (destroyed via ext_00924FF4)  (evidence: 0x0063E0F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              field_04  (evidence: 0x0057BB20) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_04  (evidence: 0x006B9950) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_04  (evidence: 0x005C3130, 0x005F5140) // CONFLICT: multiple definitions at +0x4
