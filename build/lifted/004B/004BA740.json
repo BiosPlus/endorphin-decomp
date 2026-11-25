@@ -1,0 +1,27 @@
+{
+  "va": "0x004BA740",
+  "size": 87,
+  "orig_symbol": "sub_004BA740",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "sub_004BA740",
+  "signature": "void* fn_004BA740(void* dst, uint32_t value)",
+  "summary": "Auto-lifted identical-shape clone of 0x0049D390 (initPairWithStaticHandle).",
+  "fields": [
+    {
+      "class": "Pair",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Pair",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T02:32:06Z"
+}
