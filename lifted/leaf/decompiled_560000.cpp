@@ -377,3 +377,47 @@ std::string* fn_005634D0(std::string* out, void* self) {
     return out;
 }
 } // namespace lift_005634D0
+
+// [0x00564600] sub_00564600 (81 bytes)
+namespace lift_00564600 {
+// Known callee 0x007C569A: thunk_XSIFtk-3.6.2.1_?Open@CSLScene@@QAEHPAD@Z (IAT jump thunk forwarding to XSIFtk-3.6.2.1!?Open@CSLScene@@QAEHPAD@Z.)
+extern void ext_007C569A();
+
+namespace {
+
+// Reads the vtable pointer stored at the start of `obj`, then the slot at byte offset `slotOffset`.
+inline void* lift_vslot(void* obj, ptrdiff_t slotOffset) {
+    void* vptr = lift_field<void*>(obj, 0);
+    return lift_field<void*>(vptr, slotOffset);
+}
+
+} // namespace
+
+// @name OpenSceneFromName
+// @class Unknown
+// @summary Notifies the sub-object at +0x27c, optionally notifies the object at +0x424, then opens the scene at +0x494 using the given name.
+// @field Unknown +0x27c void* field_0x27c (embedded polymorphic sub-object; its vptr is read at +0x27c)
+// @field Unknown +0x424 void* field_0x424 (optional object pointer; vtable slot +0x0C is called with 0xB39F84 when non-null)
+// @field Unknown +0x494 void* field_0x494 (CSLScene instance passed as `this` to Open)
+bool fn_00564600(void* self, const std::string& name) {
+    // Step 1: vcall slot +0x84 on the embedded sub-object at self+0x27c (return value discarded).
+    void* subObj = static_cast<uint8_t*>(self) + 0x27c;
+    using VoidThisFn = void (*)(void*);
+    reinterpret_cast<VoidThisFn>(lift_vslot(subObj, 0x84))(subObj);
+
+    // Step 2: if the pointer at self+0x424 is set, vcall slot +0x0C on it with argument 0xB39F84.
+    void* optObj = lift_field<void*>(self, 0x424);
+    if (optObj != nullptr) {
+        using ArgThisFn = void (*)(void*, uint32_t);
+        reinterpret_cast<ArgThisFn>(lift_vslot(optObj, 0x0C))(optObj, 0x00B39F84u);
+    }
+
+    // Step 3: pass the C string of `name` to CSLScene::Open on the object at self+0x494.
+    void* sceneObj = lift_field<void*>(self, 0x494);
+    using OpenFn = int (*)(void*, const char*);
+    int ret = reinterpret_cast<OpenFn>(reinterpret_cast<void*>(&ext_007C569A))(sceneObj, name.c_str());
+
+    // Original returns (ret == 0) as a bool via sete al.
+    return ret == 0;
+}
+} // namespace lift_00564600

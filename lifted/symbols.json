@@ -21873,6 +21873,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00563630 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00564600": {
+    "name": "OpenSceneFromName",
+    "class": "Unknown",
+    "signature": "inline void* lift_vslot(void* obj, ptrdiff_t slotOffset)",
+    "summary": "Notifies the sub-object at +0x27c, optionally notifies the object at +0x424, then opens the scene at +0x494 using the given name.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x005649D0": {
     "name": "Unknown::openSceneFromString",
     "class": "Unknown",

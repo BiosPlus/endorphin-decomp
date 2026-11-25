@@ -1,0 +1,34 @@
+{
+  "va": "0x00564600",
+  "size": 81,
+  "orig_symbol": "sub_00564600",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "OpenSceneFromName",
+  "class": "Unknown",
+  "signature": "inline void* lift_vslot(void* obj, ptrdiff_t slotOffset)",
+  "summary": "Notifies the sub-object at +0x27c, optionally notifies the object at +0x424, then opens the scene at +0x494 using the given name.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x27C",
+      "type": "void* field_0x27c (embedded polymorphic sub-object; its vptr is read at",
+      "name": "+0x27c)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x424",
+      "type": "void* field_0x424 (optional object pointer; vtable slot +0x0C is called with 0xB39F84 when",
+      "name": "non-null)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x494",
+      "type": "void* field_0x494 (CSLScene instance passed as `this` to",
+      "name": "Open)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:59:50Z"
+}

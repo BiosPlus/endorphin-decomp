@@ -1013,6 +1013,7 @@ struct Unknown_Fields {
     // +0x26C void*                    field_0x26c  (evidence: 0x0046FDA0, 0x0046FDC0) // CONFLICT: multiple definitions at +0x26C
     // +0x270 uint8                    field_0x270  (evidence: 0x00702620, 0x0070AD00, 0x0070BF00, 0x0070E390, 0x0070E3B0, 0x0070EC70) // CONFLICT: multiple definitions at +0x270
     // +0x270 uint8_t                  field_0x270  (evidence: 0x00702640, 0x0070AD00, 0x0070BF00, 0x0070E390, 0x0070E3B0, 0x0070EC70) // CONFLICT: multiple definitions at +0x270
+    // +0x27C void* field_0x27c (embedded polymorphic sub-object; its vptr is read at +0x27c)  (evidence: 0x00564600)
     // +0x288 int32_t                  field_0x288  (evidence: 0x0046FBE0) // CONFLICT: multiple definitions at +0x288
     // +0x288 uint32_t                 field_0x288  (evidence: 0x006C0610) // CONFLICT: multiple definitions at +0x288
     // +0x28C uint32_t                 field_0x28c  (evidence: 0x006C0610)
@@ -1062,9 +1063,11 @@ struct Unknown_Fields {
     // +0x3E0 uint32_t                 field_0x3e0  (evidence: 0x004800A0)
     // +0x408 int32_t                  field_0x408  (evidence: 0x007155B0, 0x0071C250)
     // +0x420 void*                    field_0x420  (evidence: 0x00553760)
+    // +0x424 void* field_0x424 (optional object pointer; vtable slot +0x0C is called with 0xB39F84 when non-null)  (evidence: 0x00564600)
     // +0x428 void*                    field_0x428  (evidence: 0x0040B860, 0x0040B880)
     // +0x458 std::string              field_0x458  (evidence: 0x0044CCF0)
     // +0x46C std::string              field_0x46c  (evidence: 0x005703C0)
+    // +0x494 void* field_0x494 (CSLScene instance passed as `this` to Open)  (evidence: 0x00564600) // CONFLICT: multiple definitions at +0x494
     // +0x494 void*                    field_0x494  (evidence: 0x005649D0) // CONFLICT: multiple definitions at +0x494
     // +0x494 void*                    scene  (evidence: 0x00564FE0) // CONFLICT: multiple definitions at +0x494
     // +0x4C4 uint32_t                 field_0x4C4  (evidence: 0x00408050, 0x0040BE90)
