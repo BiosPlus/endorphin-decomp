@@ -1,0 +1,13 @@
+{
+  "va": "0x007AF640",
+  "size": 19,
+  "orig_symbol": "sub_007AF640",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "sub_007AF640",
+  "signature": "int32_t fn_007AF640(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x007AF730 (ForwardDispatchRecordByKey16Const).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:57:41Z"
+}

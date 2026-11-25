@@ -59265,6 +59265,18 @@
     "summary": "If the global callback pointer is set, call it cdecl with (a1, a2, \u0026a3) and return.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007AF640": {
+    "name": "sub_007AF640",
+    "signature": "int32_t fn_007AF640(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AF730 (ForwardDispatchRecordByKey16Const).",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
+  "0x007AF6F0": {
+    "name": "sub_007AF6F0",
+    "signature": "int32_t fn_007AF6F0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AF730 (ForwardDispatchRecordByKey16Const).",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AF730": {
     "name": "ForwardDispatchRecordByKey16Const",
     "signature": "int32_t fn_007AF730(void* self)",
@@ -62039,6 +62051,12 @@
     "name": "ResetDwordTripleReturnFirst",
     "signature": "uint32_t fn_0080FAF0(uint32_t* self)",
     "summary": "Zeroes three dwords at +0x00, +0x04 and +0x08 of the target block and returns the previous value of +0x00.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
+  "0x0080FB10": {
+    "name": "sub_0080FB10",
+    "signature": "int32_t fn_0080FB10(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AF730 (ForwardDispatchRecordByKey16Const).",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
   "0x0080FB60": {

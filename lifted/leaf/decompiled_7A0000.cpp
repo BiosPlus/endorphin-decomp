@@ -787,3 +787,37 @@ int32_t fn_007AF7A0(void* self) {
     return ext_007AF750(self, 0x00AAFCCCu);
 }
 } // namespace lift_007AF7A0
+
+// [0x007AF640] sub_007AF640 (19 bytes)
+namespace lift_007AF640 {
+// @name sub_007AF640
+// @summary Auto-lifted identical-shape clone of 0x007AF730 (ForwardDispatchRecordByKey16Const).
+namespace lift_007AF730 {
+// Known callee 0x007AF750: Unknown::DispatchRecordByKey16 (Looks up the record keyed by this+0x44; forwards this+0x00 and either the record's first dword or the key, plus arg3, to the optional hook. Always returns -1.)
+// The call site pushes only two arguments (self, key constant); the third is not set here.
+extern int32_t ext_007AF660(void* self, uint32_t key);
+
+// @name ForwardDispatchRecordByKey16Const
+// @summary Forwards its first argument and the constant key 0x00AB10C4 to DispatchRecordByKey16 and returns that result.
+int32_t fn_007AF640(void* self) {
+    return ext_007AF660(self, 0x00AB10C4u);
+}
+} // namespace lift_007AF730
+} // namespace lift_007AF640
+
+// [0x007AF6F0] sub_007AF6F0 (19 bytes)
+namespace lift_007AF6F0 {
+// @name sub_007AF6F0
+// @summary Auto-lifted identical-shape clone of 0x007AF730 (ForwardDispatchRecordByKey16Const).
+namespace lift_007AF730 {
+// Known callee 0x007AF750: Unknown::DispatchRecordByKey16 (Looks up the record keyed by this+0x44; forwards this+0x00 and either the record's first dword or the key, plus arg3, to the optional hook. Always returns -1.)
+// The call site pushes only two arguments (self, key constant); the third is not set here.
+extern int32_t ext_007AF660(void* self, uint32_t key);
+
+// @name ForwardDispatchRecordByKey16Const
+// @summary Forwards its first argument and the constant key 0x00AB10C4 to DispatchRecordByKey16 and returns that result.
+int32_t fn_007AF6F0(void* self) {
+    return ext_007AF660(self, 0xAAFCCCu);
+}
+} // namespace lift_007AF730
+} // namespace lift_007AF6F0

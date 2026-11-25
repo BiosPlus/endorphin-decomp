@@ -1,8 +1,10 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_800000.cpp
 #include "lift_compat.h"
 #include <cstdint>
+#include <cstring>
+#include <cstdio>
 
-// [0x0080FC40]
+#include <cstdio>
 namespace lift_0080FC40 {
 extern uint32_t ext_008596E0(uint32_t size);
 
@@ -798,3 +800,20 @@ extern uint32_t __cdecl fn_0080FB60(void* self, uint32_t delta) {
     return 0u;
 }
 } // namespace lift_0080FB60
+
+// [0x0080FB10] sub_0080FB10 (16 bytes)
+namespace lift_0080FB10 {
+// @name sub_0080FB10
+// @summary Auto-lifted identical-shape clone of 0x007AF730 (ForwardDispatchRecordByKey16Const).
+namespace lift_007AF730 {
+// Known callee 0x007AF750: Unknown::DispatchRecordByKey16 (Looks up the record keyed by this+0x44; forwards this+0x00 and either the record's first dword or the key, plus arg3, to the optional hook. Always returns -1.)
+// The call site pushes only two arguments (self, key constant); the third is not set here.
+extern int32_t ext_0080FB20(void* self, uint32_t key);
+
+// @name ForwardDispatchRecordByKey16Const
+// @summary Forwards its first argument and the constant key 0x00AB10C4 to DispatchRecordByKey16 and returns that result.
+int32_t fn_0080FB10(void* self) {
+    return ext_0080FB20(self, 0x0u);
+}
+} // namespace lift_007AF730
+} // namespace lift_0080FB10
