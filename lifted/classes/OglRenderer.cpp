@@ -275,3 +275,38 @@ void __thiscall sub_005365A0(void* self) {
     ext_0065C650(lock);
 }
 } // namespace lift_005365A0
+
+// [0x005373F0] sub_005373F0 (63 bytes)
+namespace lift_005373F0 {
+// Known callee 0x00537380: Unknown::startTimerOrInitRecord (thiscall, one stack argument; defaults to 0x21 when passed 0.)
+extern void __thiscall ext_00537380(void* self, uint32_t arg);
+
+// Virtual method signature used for slots 0x1C4 and 0x1D4 on the vtable.
+using OglVirtualFn = void(__thiscall*)(void* self);
+
+// @name OglRenderer::vfunc_44
+// @class OglRenderer
+// @summary Sets the flag at +0x376 to the given byte; if it changed, runs the two virtual hooks (slots 0x1C4, 0x1D4) and then calls startTimerOrInitRecord with the value at +0x370.
+// @field OglRenderer +0x00 void* vtable
+// @field OglRenderer +0x370 uint32_t field_0x370
+// @field OglRenderer +0x376 uint8_t field_0x376
+void fn_005373F0(void* self, uint8_t flag) {
+    // Nothing to do when the flag already has the requested value.
+    if (lift_field<uint8_t>(self, 0x376) == flag) {
+        return;
+    }
+
+    // First virtual hook: vtable slot at byte offset 0x1C4.
+    void* vtbl = lift_field<void*>(self, 0x00);
+    reinterpret_cast<OglVirtualFn>(lift_field<void*>(vtbl, 0x1C4))(self);
+
+    // Second virtual hook: vtable slot at byte offset 0x1D4 (vtable reloaded from self).
+    vtbl = lift_field<void*>(self, 0x00);
+    reinterpret_cast<OglVirtualFn>(lift_field<void*>(vtbl, 0x1D4))(self);
+
+    // Latch the flag, then start the timer / init record with the value at +0x370.
+    uint32_t arg = lift_field<uint32_t>(self, 0x370);
+    lift_field<uint8_t>(self, 0x376) = flag;
+    ext_00537380(self, arg);
+}
+} // namespace lift_005373F0

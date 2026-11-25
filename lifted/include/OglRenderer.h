@@ -10,6 +10,7 @@
 // Recovered field layout for OglRenderer:
 namespace lifted_layout {
 struct OglRenderer_Fields {
+    // +0x0   void*                    vtable  (evidence: 0x005373F0)
     // +0x10  void*                    field_0x10  (evidence: 0x00536E80)
     // +0x1C  void*                    field_0x1C  (evidence: 0x00532F60)
     // +0x24  HDC                      field_0x24  (evidence: 0x00533090)
@@ -28,6 +29,8 @@ struct OglRenderer_Fields {
     // +0x27C void*                    field_0x27C  (evidence: 0x00535610, 0x00536CE0, 0x005449A0, 0x005449C0, 0x005449E0, 0x00544A70, 0x00544C50, 0x00545B80)
     // +0x288 uint8_t                  field_0x288  (evidence: 0x00535610, 0x00536CC0, 0x00545B80)
     // +0x2D4 uint32_t* field_0x18 (address only: this+0x18 is passed on, not dereferenced field_0x2D4  (evidence: 0x00532E60)
+    // +0x370 uint32_t                 field_0x370  (evidence: 0x005373F0)
+    // +0x376 uint8_t                  field_0x376  (evidence: 0x005373F0)
     // +0x378 uint8_t                  field_0x378  (evidence: 0x005331F0, 0x00535610, 0x00545B80)
     // +0x379 uint8_t                  field_0x379  (evidence: 0x00533340, 0x00533380, 0x005333C0, 0x00533400)
     // +0x37C float                    field_0x37c  (evidence: 0x00533340)

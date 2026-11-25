@@ -1,0 +1,34 @@
+{
+  "va": "0x005373F0",
+  "size": 63,
+  "orig_symbol": "OglRenderer::vfunc_44",
+  "src_path": "src/classes/OglRenderer.cpp",
+  "lifted_path": "lifted/classes/OglRenderer.cpp",
+  "name": "OglRenderer::vfunc_44",
+  "class": "OglRenderer",
+  "signature": "void fn_005373F0(void* self, uint8_t flag)",
+  "summary": "Sets the flag at +0x376 to the given byte; if it changed, runs the two virtual hooks (slots 0x1C4, 0x1D4) and then calls startTimerOrInitRecord with the value at +0x370.",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x370",
+      "type": "uint32_t",
+      "name": "field_0x370"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x376",
+      "type": "uint8_t",
+      "name": "field_0x376"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:03:01Z"
+}
