@@ -1,0 +1,13 @@
+{
+  "va": "0x0060CC60",
+  "size": 95,
+  "orig_symbol": "sub_0060CC60",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "GetOnceInitString_0060CC60",
+  "signature": "void* GetOnceInitString_0060CC60()",
+  "summary": "One-time initializer for global string mem_00B47F1C; returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:33:46Z"
+}

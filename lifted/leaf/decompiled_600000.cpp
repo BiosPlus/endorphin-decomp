@@ -944,3 +944,27 @@ void* fn_00609A10() {
     return mem_00B4789C;
 }
 } // namespace lift_00609A10
+
+// [0x0060CC60]
+namespace lift_0060CC60 {
+// @name GetOnceInitString_0060CC60
+// @summary One-time initializer for global string mem_00B47F1C; returns its address.
+
+extern uint32_t mem_00B47F38;
+extern char mem_00B47F1C[];
+extern void* ext_0066AD10(void* out_str, uint8_t flag);
+extern void ext_006A6C87(void* arg);
+
+void* GetOnceInitString_0060CC60() {
+    // Guard bit 0 of mem_00B47F38: already initialized -> skip to return.
+    if ((mem_00B47F38 & 1u) == 0u) {
+        mem_00B47F38 |= 1u;
+        // Original pushes 0xA94F1C as the second argument; the callee's
+        // declared parameter is uint8_t, so the value is truncated to match.
+        ext_0066AD10(mem_00B47F1C, static_cast<uint8_t>(0x00A94F1Cu));
+        // Registers a cleanup/teardown callback for the static.
+        ext_006A6C87(reinterpret_cast<void*>(static_cast<uintptr_t>(0x0091E900u)));
+    }
+    return mem_00B47F1C;
+}
+} // namespace lift_0060CC60

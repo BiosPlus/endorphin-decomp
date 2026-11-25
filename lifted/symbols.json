@@ -35011,6 +35011,12 @@
     "summary": "Copies the m_name and m_jointName string properties from a source EffectorBaseData into this object via the string-property helper.",
     "lifted_path": "lifted/NMData/EffectorBaseData.cpp"
   },
+  "0x0060CC60": {
+    "name": "GetOnceInitString_0060CC60",
+    "signature": "void* GetOnceInitString_0060CC60()",
+    "summary": "One-time initializer for global string mem_00B47F1C; returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060CD20": {
     "name": "NMData::EffectorData::vfunc_0",
     "class": "NMData::EffectorData",
