@@ -498,3 +498,31 @@ void* __thiscall sub_005851E0(void* self, uint32_t arg0) {
     return obj;
 }
 } // namespace lift_005851E0
+
+// [0x00584B10]
+namespace lift_00584B10 {
+extern uint32_t mem_r32(uint32_t addr);
+
+// @name findFirstMatchingAncestor
+// @summary Walks the +0x94 parent/next chain starting at this and returns the first node whose vtable+0x70 predicate returns true.
+// @field Node +0x00 uint32_t* vtable
+// @field Node +0x94 uint32_t next
+
+uint32_t __thiscall sub_00584B10(uint32_t self) {
+    auto vfn = reinterpret_cast<uint8_t(__thiscall*)(uint32_t)>(mem_r32(mem_r32(self) + 0x70));
+    if (vfn(self) != 0) {
+        return self;
+    }
+
+    uint32_t result = 0;
+    uint32_t cur = mem_r32(self + 0x94);
+    while (cur != 0 && result == 0) {
+        auto cur_vfn = reinterpret_cast<uint8_t(__thiscall*)(uint32_t)>(mem_r32(mem_r32(cur) + 0x70));
+        if (cur_vfn(cur) != 0) {
+            result = cur;
+        }
+        cur = mem_r32(cur + 0x94);
+    }
+    return result;
+}
+} // namespace lift_00584B10
