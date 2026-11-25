@@ -32359,6 +32359,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005DC6C0": {
+    "name": "ReleaseOwnedObjectAndReset",
+    "class": "Unknown",
+    "signature": "void fn_005DC6C0(void* self)",
+    "summary": "Releases the owned object at +0x44 (if any), destroys the std::string at +0x04, then re-initializes the object via sub_0065F440.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005DC930": {
     "name": "ClearOwnedObjectAt0x44",
     "signature": "void fn_005DC930(void* self)",

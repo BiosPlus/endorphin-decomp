@@ -359,3 +359,38 @@ void fn_005DC4F0(uint32_t* out, uint32_t value) {
 }
 } // namespace lift_005B4030
 } // namespace lift_005DC4F0
+
+// [0x005DC6C0] sub_005DC6C0 (107 bytes)
+namespace lift_005DC6C0 {
+// Known callee 0x005D9F30: ReleaseOwnedObjectScope (Calls ResetOwnedObject on self, then if self+0x04 is still non-null, invokes its vtable slot 0 with flag 1 (deleting destructor).)
+extern void ext_005D9F30(void* self);
+// Known callee 0x0065F440: sub_0065F440 (Stores address of mem_0093BF24 into field at offset +0x0.)
+extern void ext_0065F440(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764; called with one pointer argument, caller cleans up)
+extern void ext_006A5C5C(void* p);
+// .rdata pointer to the std::string destructor (MSVCP80), held as a 32-bit address
+extern uint32_t mem_00924FF4;
+
+// @name ReleaseOwnedObjectAndReset
+// @class Unknown
+// @summary Releases the owned object at +0x44 (if any), destroys the std::string at +0x04, then re-initializes the object via sub_0065F440.
+// @field Unknown +0x04 std::string field_0x04
+// @field Unknown +0x44 void* field_0x44
+void fn_005DC6C0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // The MSVC SEH frame (fs:[0] push/pop, state cookie) is not reproduced; it only guards the cleanup below.
+    void* owned = lift_field<void*>(base, 0x44);
+    if (owned != nullptr) {
+        ext_005D9F30(owned);
+        ext_006A5C5C(owned);
+    }
+
+    // Destroy the std::string member at this+0x04 via its MSVCP80 destructor (thiscall, this = &field_0x04).
+    using StrDtor = void (*)(void*);
+    auto strDtor = reinterpret_cast<StrDtor>(static_cast<uintptr_t>(mem_00924FF4));
+    strDtor(base + 0x04);
+
+    ext_0065F440(self);
+}
+} // namespace lift_005DC6C0
