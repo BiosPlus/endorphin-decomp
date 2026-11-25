@@ -50485,3 +50485,42 @@ void fn_004F5BA0(void* self) {
     ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
 }
 } // namespace lift_004F5BA0
+
+// [0x004F6190]
+namespace lift_004F6190 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties>::vfunc_5
+// @class ExprParser::ReadMethodType<MatrixWithProperties>
+// @summary Reads MatrixWithProperties::getPhi from the held object; throws if the held pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+
+// Callees (unlifted / lifted externs).
+extern float __thiscall ext_004F4DB0(void* self);          // MatrixWithProperties::getPhi (float in st0)
+extern void ext_0046C4E0(void);                            // default-message ExceptionWithMessage throw helper
+extern void* __thiscall ext_0046C3C0(void* self);          // DerivedException::DerivedException(self)
+extern void ext_006A6DD2(void* exc, const void* throwInfo) [[noreturn]]; // _CxxThrowException thunk
+
+// Throw info (rodata) passed to _CxxThrowException.
+extern uint8_t mem_009DEC1C[];
+
+extern float __thiscall fn_004F6190(void* self)
+{
+    // mov eax,[esp+4] ; mov ecx,[eax]  -> ecx = this->field_0x00
+    void* obj = *reinterpret_cast<void**>(self);
+
+    alignas(8) unsigned char exc[0x28];   // sub esp,0x28 : exception object frame
+
+    if (obj != nullptr) {
+        // call ext_004F4DB0 with ecx = obj; result float left in st0
+        (void)ext_004F4DB0(obj);
+        // push ecx ; fstp [esp] : the float result is stored in the arg slot,
+        // then passed to ext_0046C4E0 (per its lifted signature, no args are read here)
+        ext_0046C4E0();
+    }
+
+    // lea ecx,[esp] ; call ext_0046C3C0 : construct DerivedException in the frame
+    ext_0046C3C0(exc);
+
+    // push throwInfo ; lea ecx,[esp+4] ; push ecx ; call _CxxThrowException
+    ext_006A6DD2(static_cast<void*>(exc), static_cast<const void*>(mem_009DEC1C));
+}
+} // namespace lift_004F6190

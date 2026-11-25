@@ -18300,6 +18300,13 @@
     "summary": "Reads the wrapped object pointer; if null throws a default-message exception, otherwise invokes the helper and throws the default-message exception.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004F6190": {
+    "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties\u003e",
+    "signature": "extern \"C\" float __thiscall fn_004F6190(void* self)",
+    "summary": "Reads MatrixWithProperties::getPhi from the held object; throws if the held pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004F63B0": {
     "name": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getAlpha(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setAlpha(float)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getAlpha(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setAlpha(float)\u003e",
