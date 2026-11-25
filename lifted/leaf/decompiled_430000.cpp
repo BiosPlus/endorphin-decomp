@@ -2284,3 +2284,40 @@ void fn_0043E640(void* self) {
     lift_field<uint32_t>(self, 0xC) = 0;
 }
 } // namespace lift_0043E640
+
+// [0x0043CC60] sub_0043CC60 (71 bytes)
+namespace lift_0043CC60 {
+extern int mem_0092563C; // IAT slot holding GetSystemMetrics
+
+// @name sub_0043CC60
+// @class UnknownClass
+// @summary Computes a layout offset from two system metrics plus an argument and stores it into two fields; sets flag bits 0xC on a sub-object.
+// @field UnknownClass +0x88 uint32_t field_0x88
+// @field UnknownClass +0xA0 uint32_t field_0xA0
+// @field UnknownClass +0xC0 uint32_t field_0xC0
+// @field UnknownClass +0x108 uint32_t field_0x108
+// @field UnknownClass +0xD0 uint32_t field_0xD0 (on object referenced by +0x88)
+void __thiscall fn_0043CC60(void* self, uint32_t arg1) {
+    using GetSystemMetricsFn = int(__stdcall*)(int);
+    auto getSystemMetrics = reinterpret_cast<GetSystemMetricsFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_0092563C)));
+
+    auto* base = static_cast<uint8_t*>(self);
+
+    uint32_t edi = static_cast<uint32_t>(getSystemMetrics(0x2E));
+    edi += edi;
+    uint32_t eax = static_cast<uint32_t>(getSystemMetrics(6));
+    eax += edi;
+
+    uint32_t ecx = *reinterpret_cast<uint32_t*>(base + 0x108);
+    uint32_t edx = ecx + 2 * eax;
+    eax = arg1 + edx;
+
+    *reinterpret_cast<uint32_t*>(base + 0xA0) = eax;
+    *reinterpret_cast<uint32_t*>(base + 0xC0) = eax;
+
+    auto* sub = reinterpret_cast<uint8_t*>(
+        static_cast<uintptr_t>(*reinterpret_cast<uint32_t*>(base + 0x88)));
+    *reinterpret_cast<uint32_t*>(sub + 0xD0) |= 0xC;
+}
+} // namespace lift_0043CC60

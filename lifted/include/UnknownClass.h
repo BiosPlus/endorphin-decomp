@@ -72,15 +72,20 @@ struct UnknownClass_Fields {
     // +0x72  uint16_t                 field_0x72  (evidence: 0x00798840)
     // +0x7C  HWND                     field_0x7C  (evidence: 0x006B2F70, 0x006B87B0) // CONFLICT: multiple definitions at +0x7C
     // +0x7C  uint32_t                 field_0x7C  (evidence: 0x00448950) // CONFLICT: multiple definitions at +0x7C
-    // +0x88  void*                    subobject  (evidence: 0x00454C00)
+    // +0x88  uint32_t                 field_0x88  (evidence: 0x0043CC60) // CONFLICT: multiple definitions at +0x88
+    // +0x88  void*                    subobject  (evidence: 0x00454C00) // CONFLICT: multiple definitions at +0x88
     // +0x92  uint8_t                  field_0x92  (evidence: 0x005435F0)
     // +0x95  uint8_t                  field_0x95  (evidence: 0x005435F0)
+    // +0xA0  uint32_t                 field_0xA0  (evidence: 0x0043CC60)
     // +0xBC  void*                    field_0xBC  (evidence: 0x004970A0, 0x0049AD40, 0x00612460) // CONFLICT: multiple definitions at +0xBC
     // +0xBC  void**                   field_0xBC  (evidence: 0x00612410) // CONFLICT: multiple definitions at +0xBC
     // +0xBC  void**                   field_0xbc  (evidence: 0x006123C0) // CONFLICT: multiple definitions at +0xBC
+    // +0xC0  uint32_t                 field_0xC0  (evidence: 0x0043CC60)
+    // +0xD0  uint32_t field_0xD0 (on object referenced by +0x88)  (evidence: 0x0043CC60)
     // +0xD8  void*                    ownedObject  (evidence: 0x00466360)
     // +0xF0  uint32_t                 field_0xF0  (evidence: 0x0058AB60)
     // +0xF4  int32_t                  field_0xF4  (evidence: 0x00594040, 0x0059DE20)
+    // +0x108 uint32_t                 field_0x108  (evidence: 0x0043CC60)
     // +0x158 uint32_t                 field_0x158  (evidence: 0x006C3070)
     // +0x15C int32_t                  field_0x15c  (evidence: 0x004C1AC0, 0x004C4390)
     // +0x160 int32_t                  field_0x160  (evidence: 0x004C1AC0, 0x004C4390) // CONFLICT: multiple definitions at +0x160
