@@ -61776,6 +61776,13 @@
     "summary": "Matches a null-terminated string against the stream, restoring state on mismatch.",
     "lifted_path": "lifted/leaf/decompiled_870000.cpp"
   },
+  "0x00870F90": {
+    "name": "TextCursor::ReadDecimalUInt_00870F90",
+    "class": "TextCursor",
+    "signature": "uint8_t fn_00870F90(uint32_t out_addr)",
+    "summary": "Reads ASCII decimal digits from the text cursor into the uint32 at out_addr; returns 1 after stepping back one line at the first non-digit, or 0 (no write) if the first byte is not a digit.",
+    "lifted_path": "lifted/leaf/decompiled_870000.cpp"
+  },
   "0x00871090": {
     "name": "TextCursor::ReadCharOrStepBack_00871090",
     "class": "TextCursor",

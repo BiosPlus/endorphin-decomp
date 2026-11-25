@@ -1,0 +1,14 @@
+{
+  "va": "0x00870F90",
+  "size": 74,
+  "orig_symbol": "sub_00870F90",
+  "src_path": "src/leaf/decompiled_870000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_870000.cpp",
+  "name": "TextCursor::ReadDecimalUInt_00870F90",
+  "class": "TextCursor",
+  "signature": "uint8_t fn_00870F90(uint32_t out_addr)",
+  "summary": "Reads ASCII decimal digits from the text cursor into the uint32 at out_addr; returns 1 after stepping back one line at the first non-digit, or 0 (no write) if the first byte is not a digit.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:42:03Z"
+}

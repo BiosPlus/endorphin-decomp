@@ -257,3 +257,32 @@ bool __thiscall fn_00871090(void* self, uint8_t expected) {
     return false;
 }
 } // namespace lift_00871090
+
+// [0x00870F90] sub_00870F90 (74 bytes)
+namespace lift_00870F90 {
+// Known callee 0x00870E90: sub_00870E90 (advances the text cursor; returns the next byte in AL)
+extern uint8_t ext_00870E90();
+// Known callee 0x00870EF0: TextCursor::StepBackOneLine_00870EF0 (Steps a backward text cursor to the start of the previous line (LF or CRLF terminated), tracking a line counter; resets to buffer start and line state when the start is reached.)
+extern void ext_00870EF0();
+
+// @name TextCursor::ReadDecimalUInt_00870F90
+// @summary Reads ASCII decimal digits from the text cursor into the uint32 at out_addr; returns 1 after stepping back one line at the first non-digit, or 0 (no write) if the first byte is not a digit.
+uint8_t fn_00870F90(uint32_t out_addr) {
+    auto* out = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(out_addr));
+
+    uint8_t ch = ext_00870E90();
+    if (static_cast<uint8_t>(ch - '0') > 9) {
+        return 0;
+    }
+
+    *out = 0;
+    while (static_cast<uint8_t>(ch - '0') <= 9) {
+        uint32_t digit = static_cast<uint32_t>(ch - '0');
+        *out = *out * 10u + digit;
+        ch = ext_00870E90();
+    }
+
+    ext_00870EF0();
+    return 1;
+}
+} // namespace lift_00870F90
