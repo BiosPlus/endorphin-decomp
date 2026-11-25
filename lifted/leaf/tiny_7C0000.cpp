@@ -1389,3 +1389,19 @@ void* fn_007C8D80(size_t n) {
     return mem_0092522C(1, n);
 }
 } // namespace lift_007C8D80
+
+// [0x007CA2F0] sub_007CA2F0 (25 bytes)
+namespace lift_007CA2F0 {
+// @name Vec3::operator=(const Vec3&)
+// @class Vec3
+// @summary Copies three consecutive floats (x, y, z) from src into self and returns self (thiscall, ret 4).
+// @field Vec3 +0x00 float x
+// @field Vec3 +0x04 float y
+// @field Vec3 +0x08 float z
+void* fn_007CA2F0(void* self, const void* src) {
+    lift_field<float>(self, 0x0) = lift_field<const float>(src, 0x0);
+    lift_field<float>(self, 0x4) = lift_field<const float>(src, 0x4);
+    lift_field<float>(self, 0x8) = lift_field<const float>(src, 0x8);
+    return self;
+}
+} // namespace lift_007CA2F0
