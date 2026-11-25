@@ -10,7 +10,7 @@
 // Recovered field layout for ExprParser::StringType:
 namespace lifted_layout {
 struct ExprParser_StringType_Fields {
-    // +0x0   std::string*             field_0x00  (evidence: 0x006718C0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   std::string*             field_0x00  (evidence: 0x006718A0, 0x006718C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x0066B4A0) // CONFLICT: multiple definitions at +0x0
 };
 } // namespace lifted_layout

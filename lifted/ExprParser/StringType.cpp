@@ -166,3 +166,22 @@ void __thiscall fn_0066B4A0(void* self, void* arg1, void* arg2, void* arg3) {
     str_dtor(local_str);
 }
 } // namespace lift_0066B4A0
+
+// [0x006718A0]
+namespace lift_006718A0 {
+// @name ExprParser::StringType::vfunc_10
+// @class ExprParser::StringType
+// @summary Calls ext_00671840 on self, then assigns *src into the std::string referenced by self's first field.
+// @field ExprParser::StringType +0x00 std::string* field_0x00
+
+extern void __stdcall ext_00671840(void* self);
+// MSVCP80 std::string::operator= import slot, replaced by native std::string assignment below.
+extern int mem_00924FDC;
+
+extern void __stdcall fn_006718A0(void* self, const std::string* src) {
+    ext_00671840(self);
+    std::string* dst = lift_field<std::string*>(self, 0);
+    *dst = *src;
+    (void)&mem_00924FDC; // keep IAT slot referenced for differential testing
+}
+} // namespace lift_006718A0

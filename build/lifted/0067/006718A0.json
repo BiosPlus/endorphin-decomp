@@ -1,0 +1,22 @@
+{
+  "va": "0x006718A0",
+  "size": 28,
+  "orig_symbol": "ExprParser::StringType::vfunc_10",
+  "src_path": "src/ExprParser/StringType.cpp",
+  "lifted_path": "lifted/ExprParser/StringType.cpp",
+  "name": "ExprParser::StringType::vfunc_10",
+  "class": "ExprParser::StringType",
+  "signature": "extern \"C\" void __stdcall fn_006718A0(void* self, const std::string* src)",
+  "summary": "Calls ext_00671840 on self, then assigns *src into the std::string referenced by self's first field.",
+  "fields": [
+    {
+      "class": "ExprParser::StringType",
+      "offset": "+0x0",
+      "type": "std::string*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:39:21Z"
+}
