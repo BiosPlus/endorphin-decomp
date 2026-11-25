@@ -18279,6 +18279,13 @@
     "summary": "Reads the Z component from a MatrixWithProperties pointer into an output value, throwing an exception if null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004F5E40": {
+    "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, getZ\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getZ(void) const, 0\u003e",
+    "signature": "void fn_004F5E40(void* self)",
+    "summary": "Reads the wrapped object pointer; if null throws a default-message exception, otherwise invokes the helper and throws the default-message exception.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004F63B0": {
     "name": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getAlpha(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setAlpha(float)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getAlpha(void) const, float, \u0026public: void __thiscall MatrixWithProperties::setAlpha(float)\u003e",

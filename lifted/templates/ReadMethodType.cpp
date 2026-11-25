@@ -50383,3 +50383,36 @@ void* ExprParser_ReadMethodType_Sensor_vfunc_1(void* const* argPtr)
     return nullptr;
 }
 } // namespace lift_005FCB90
+
+// [0x004F5E40] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, 0>::vfunc_5 (50 bytes)
+namespace lift_004F5E40 {
+extern void ext_004F4DF0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, getZ>::vfunc_5
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, 0>
+// @summary Reads the wrapped object pointer; if null throws a default-message exception, otherwise invokes the helper and throws the default-message exception.
+// @field ExprParser::ValuePtrType +0x00 void* object
+void fn_004F5E40(void* self) {
+    // Load the wrapped object pointer stored at offset 0 of the ValuePtr.
+    void* obj = *reinterpret_cast<void**>(self);
+
+    if (obj != nullptr) {
+        // Non-null path: the helper's result is discarded and control
+        // transfers to the default-message throw helper. Neither call returns.
+        ext_004F4DF0();
+        ext_0046C4E0();
+        std::abort();
+    }
+
+    // Null path: construct a DerivedException and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+    std::abort();
+}
+} // namespace lift_004F5E40
