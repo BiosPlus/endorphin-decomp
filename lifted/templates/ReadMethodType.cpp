@@ -57132,3 +57132,40 @@ void* __stdcall fn_0046CA90(void* out, void** holder) {
     return out;
 }
 } // namespace lift_0046CA90
+
+// [0x005B36D0] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>::vfunc_1 (78 bytes)
+namespace lift_005B36D0 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exceptionObject, const void* throwInfo);
+
+// IAT slots: 0x00924FF0 = MSVCP80 std::string::c_str, 0x009251F0 = MSVCR80 atof.
+extern void* mem_00924FF0;
+extern void* mem_009251F0;
+
+// @name ExprParser::ReadMethodType<Geometry>::vfunc_1
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>
+// @summary Fetches the file-name string via the bound getter (vtable slot 8) and returns it parsed as a float (atof); throws a fixed-message exception when no object is bound.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x0c void* field_0x0c
+float fn_005B36D0(void* self) {
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj == nullptr) {
+        // Local exception storage (size not recovered; 16 bytes assumed).
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+    }
+
+    void* inner = lift_field<void*>(obj, 0x0c);
+    void** vtbl = *reinterpret_cast<void***>(inner);
+    using GetFileNameFn = const std::string& (__thiscall*)(void*);
+    const std::string& name = reinterpret_cast<GetFileNameFn>(vtbl[8])(inner);
+
+    using CStrFn = const char* (__thiscall*)(const void*);
+    using AtofFn = double (__cdecl*)(const char*);
+    const char* text = reinterpret_cast<CStrFn>(mem_00924FF0)(&name);
+    return static_cast<float>(reinterpret_cast<AtofFn>(mem_009251F0)(text));
+}
+} // namespace lift_005B36D0
