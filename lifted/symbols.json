@@ -36135,6 +36135,13 @@
     "summary": "Calls ext_0065A8C0 on field_0xa4 and forwards two arguments to ext_00647AE0 on this.",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x006483A0": {
+    "name": "Unknown::addVec3AndForward_006483A0",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_006483A0(void* self, uint32_t arg)",
+    "summary": "Zeroes a local float[3], lets sub_00647E20 fill it for self, adds the caller's 3-float vector into it, then passes it to sub_00647BC0 on self.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00648400": {
     "name": "resetStateBytesAndField58",
     "class": "\u003cClassName\u003e (optional)",

@@ -934,3 +934,22 @@ uint32_t fn_0064CA20(uint32_t begin, uint32_t end, uint32_t value) {
 }
 } // namespace lift_0054F290
 } // namespace lift_0064CA20
+
+// [0x006483A0] sub_006483A0 (85 bytes)
+namespace lift_006483A0 {
+extern void __thiscall ext_00647BC0(void* self, uint32_t arg);
+extern void __thiscall ext_00647E20(void* self, uint32_t arg);
+
+// @name Unknown::addVec3AndForward_006483A0
+// @class Unknown
+// @summary Zeroes a local float[3], lets sub_00647E20 fill it for self, adds the caller's 3-float vector into it, then passes it to sub_00647BC0 on self.
+void __thiscall fn_006483A0(void* self, uint32_t arg) {
+    float v[3] = {0.0f, 0.0f, 0.0f};
+    const float* p = reinterpret_cast<const float*>(static_cast<uintptr_t>(arg));
+    ext_00647E20(self, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(v)));
+    v[0] = p[0] + v[0];
+    v[1] = p[1] + v[1];
+    v[2] = p[2] + v[2];
+    ext_00647BC0(self, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(v)));
+}
+} // namespace lift_006483A0
