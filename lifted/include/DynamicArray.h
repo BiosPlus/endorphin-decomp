@@ -8,8 +8,10 @@
 // Recovered field layout for DynamicArray:
 namespace lifted_layout {
 struct DynamicArray_Fields {
-    // +0x0   int32_t                  count  (evidence: 0x006D2200)
+    // +0x0   int32_t                  count  (evidence: 0x006D2200, 0x00783940)
     // +0xC   int32_t                  elementSize  (evidence: 0x006D2200)
-    // +0x10  void*                    data  (evidence: 0x006D2200)
+    // +0x10  void*                    data  (evidence: 0x006D2200) // CONFLICT: multiple definitions at +0x10
+    // +0x10  uint32_t*                items  (evidence: 0x00783940) // CONFLICT: multiple definitions at +0x10
+    // +0x18  void*                    indexListHead  (evidence: 0x00783940)
 };
 } // namespace lifted_layout

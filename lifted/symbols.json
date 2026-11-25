@@ -70329,6 +70329,13 @@
     "summary": "Releases entries via sub_007839B0, resets the +0x18 chain if non-null, and calls sub_006D2160.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00783940": {
+    "name": "DynamicArray::removePairByValue",
+    "class": "DynamicArray",
+    "signature": "int32_t __thiscall sub_00783940(void* self, int32_t first, int32_t second)",
+    "summary": "Finds a pair matching (first, second), removes it, frees the node, and shifts index list.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x007839B0": {
     "name": "ReleaseEntriesAndResetChain",
     "class": "Unknown",

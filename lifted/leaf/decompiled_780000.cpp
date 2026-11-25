@@ -1757,3 +1757,43 @@ int32_t __thiscall sub_00780160(void* self, const char* name) {
     return -1;
 }
 } // namespace lift_00780160
+
+// [0x00783940]
+namespace lift_00783940 {
+// @name DynamicArray::removePairByValue
+// @class DynamicArray
+// @summary Finds a pair matching (first, second), removes it, frees the node, and shifts index list.
+// @field DynamicArray +0x00 int32_t count
+// @field DynamicArray +0x10 uint32_t* items
+// @field DynamicArray +0x18 void* indexListHead
+
+extern uint32_t mem_read32(uint32_t addr);
+extern void __thiscall ext_006D2200(void* self, int32_t index);
+extern void __cdecl ext_006A5C5C(void* ptr);
+extern void __thiscall ext_007837D0(void* self, int32_t removedIndex);
+
+int32_t __thiscall sub_00783940(void* self, int32_t first, int32_t second) {
+    uint32_t selfAddr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    int32_t count = static_cast<int32_t>(mem_read32(selfAddr));
+    if (count <= 0) {
+        return 1;
+    }
+
+    uint32_t itemsAddr = mem_read32(selfAddr + 0x10);
+    for (int32_t i = 0; i < count; ++i) {
+        uint32_t elemAddr = mem_read32(itemsAddr + static_cast<uint32_t>(i) * 4);
+        if (static_cast<int32_t>(mem_read32(elemAddr)) == first &&
+            static_cast<int32_t>(mem_read32(elemAddr + 0x04)) == second) {
+            ext_006D2200(self, i);
+            ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(elemAddr)));
+            uint32_t listAddr = mem_read32(selfAddr + 0x18);
+            if (listAddr != 0) {
+                ext_007837D0(reinterpret_cast<void*>(static_cast<uintptr_t>(listAddr)), i);
+            }
+            return 0;
+        }
+    }
+
+    return 1;
+}
+} // namespace lift_00783940
