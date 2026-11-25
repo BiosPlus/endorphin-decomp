@@ -56511,3 +56511,31 @@ const NM::Vector3& fn_005B9FA0(void* arg1, void** arg2) {
     ext_006A6DD2(exception, mem_009DEC1C);
 }
 } // namespace lift_005B9FA0
+
+// [0x005B95F0] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>::vfunc_4 (60 bytes)
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005B6B60(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005B95F0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005B6B60(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0

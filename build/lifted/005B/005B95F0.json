@@ -1,0 +1,14 @@
+{
+  "va": "0x005B95F0",
+  "size": 60,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ReadMethodType\u003cNMData::MetaBodyData,getLinearVelocity\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1\u003e",
+  "signature": "[[noreturn]] void fn_005B95F0(void* a, void** b)",
+  "summary": "Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T05:00:39Z"
+}
