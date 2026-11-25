@@ -55839,6 +55839,12 @@
     "summary": "Returns ecx when the first stack argument equals 2, otherwise 0; callee pops 8 bytes of arguments.",
     "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
   },
+  "0x007B2480": {
+    "name": "StrDup",
+    "signature": "char* fn_007B2480(const char* src)",
+    "summary": "Heap-duplicates a NUL-terminated string (strlen + 1 bytes via malloc) and returns the copy.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B2DF0": {
     "name": "ListFindFirstByKey",
     "class": "ListNode",

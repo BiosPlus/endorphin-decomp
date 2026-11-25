@@ -1,0 +1,13 @@
+{
+  "va": "0x007B2480",
+  "size": 64,
+  "orig_symbol": "sub_007B2480",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "StrDup",
+  "signature": "char* fn_007B2480(const char* src)",
+  "summary": "Heap-duplicates a NUL-terminated string (strlen + 1 bytes via malloc) and returns the copy.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:09:24Z"
+}

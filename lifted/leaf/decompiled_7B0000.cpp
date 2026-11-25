@@ -566,3 +566,20 @@ void __cdecl ProcessByteBufferUntilStop(uint32_t count, const uint8_t* data) {
     }
 }
 } // namespace lift_007B7970
+
+// [0x007B2480] sub_007B2480 (64 bytes)
+namespace lift_007B2480 {
+// Imported allocator: the call at 0x007B2496 goes through the IAT slot mem_00925208
+// (which holds 0x00627CA8, MSVCR80!malloc).
+extern void* (*mem_00925208)(size_t size);
+
+// @name StrDup
+// @summary Heap-duplicates a NUL-terminated string (strlen + 1 bytes via malloc) and returns the copy.
+// @field none (free function, no class layout accessed)
+char* fn_007B2480(const char* src) {
+    size_t len = std::strlen(src) + 1;   // includes terminating NUL
+    char* dst = static_cast<char*>(mem_00925208(len));
+    std::memcpy(dst, src, len);
+    return dst;
+}
+} // namespace lift_007B2480
