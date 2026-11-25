@@ -1,0 +1,22 @@
+{
+  "va": "0x00707960",
+  "size": 16,
+  "orig_symbol": "sub_00707960",
+  "src_path": "src/leaf/tiny_700000.cpp",
+  "lifted_path": "lifted/leaf/tiny_700000.cpp",
+  "name": "Object::GetArrayElementD0",
+  "class": "Object",
+  "signature": "uint32_t Object_GetArrayElementD0(uint8_t* self, uint32_t index)",
+  "summary": "Returns the uint32 element at index (stack arg) of the pointer array stored at this+0xD0.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0xD0",
+      "type": "uint32_t*",
+      "name": "elements"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:28:48Z"
+}

@@ -1327,3 +1327,16 @@ DWORD fn_00702790(void* self) {
     return lift_field<DWORD>(sub, 0x518);
 }
 } // namespace lift_00702790
+
+// [0x00707960]
+namespace lift_00707960 {
+// @name Object::GetArrayElementD0
+// @class Object
+// @summary Returns the uint32 element at index (stack arg) of the pointer array stored at this+0xD0.
+// @field Object +0xD0 uint32_t* elements
+
+uint32_t Object_GetArrayElementD0(uint8_t* self, uint32_t index) {
+    uint32_t* elements = *reinterpret_cast<uint32_t**>(self + 0xD0);
+    return elements[index];
+}
+} // namespace lift_00707960

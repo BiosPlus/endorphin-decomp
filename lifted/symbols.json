@@ -60044,6 +60044,13 @@
     "summary": "Passes self-\u003efield_0x5C to fn_006E7460, or the address of mem_00B5D268 when that field is zero.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00707960": {
+    "name": "Object::GetArrayElementD0",
+    "class": "Object",
+    "signature": "uint32_t Object_GetArrayElementD0(uint8_t* self, uint32_t index)",
+    "summary": "Returns the uint32 element at index (stack arg) of the pointer array stored at this+0xD0.",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x00707970": {
     "name": "sub_00707970",
     "class": "Unknown",
