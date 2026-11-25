@@ -1,0 +1,13 @@
+{
+  "va": "0x00430810",
+  "size": 38,
+  "orig_symbol": "sub_00430810",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "updateObjectFlagFromGlobalBit1",
+  "signature": "extern \"C\" int32_t __stdcall fn_00430810(void* obj)",
+  "summary": "Checks global bit flag 1 via ext_00465B30/ext_004694E0 and invokes vtable+0x4 on the given object with the boolean result.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:31:08Z"
+}
