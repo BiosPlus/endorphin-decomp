@@ -1,0 +1,14 @@
+{
+  "va": "0x00681BD0",
+  "size": 60,
+  "orig_symbol": "Properties::PropertyIteratorTypes::PropertySourceType::vfunc_1",
+  "src_path": "src/Properties/PropertyIteratorTypes/PropertySourceType.cpp",
+  "lifted_path": "lifted/Properties/PropertyIteratorTypes/PropertySourceType.cpp",
+  "name": "Properties::PropertyIteratorTypes::PropertySourceType::vfunc_1",
+  "class": "Properties::PropertyIteratorTypes::PropertySourceType",
+  "signature": "void* fn_00681BD0(void* a, void** b, uintptr_t c)",
+  "summary": "If *b holds an object, forward (a, c) to its vtable slot 13; otherwise call ext_0046F7D0(a). Returns a.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:54:37Z"
+}

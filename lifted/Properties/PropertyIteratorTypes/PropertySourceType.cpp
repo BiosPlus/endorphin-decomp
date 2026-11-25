@@ -23,3 +23,24 @@ uint32_t* fn_00681B50(uint32_t* out, void* const* src, uint32_t arg) {
     return out;
 }
 } // namespace lift_00681B50
+
+// [0x00681BD0] Properties::PropertyIteratorTypes::PropertySourceType::vfunc_1 (60 bytes)
+namespace lift_00681BD0 {
+// Known callee 0x0046F7D0: sub_00467320 (Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).)
+extern void ext_0046F7D0(void* a);
+
+// @name Properties::PropertyIteratorTypes::PropertySourceType::vfunc_1
+// @class Properties::PropertyIteratorTypes::PropertySourceType
+// @summary If *b holds an object, forward (a, c) to its vtable slot 13; otherwise call ext_0046F7D0(a). Returns a.
+void* fn_00681BD0(void* a, void** b, uintptr_t c) {
+    void* obj = *b;
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        using Slot13Fn = void (*)(void* self, void* arg1, uintptr_t arg2);
+        reinterpret_cast<Slot13Fn>(vtbl[13])(obj, a, c);
+    } else {
+        ext_0046F7D0(a);
+    }
+    return a;
+}
+} // namespace lift_00681BD0
