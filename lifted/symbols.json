@@ -12830,6 +12830,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00511930 (Properties::TerminalParentType\u003cDoubleWithProperties\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/TerminalParentType.cpp"
   },
+  "0x004B6680": {
+    "name": "DestroyOwnedRange",
+    "class": "Container",
+    "signature": "void fn_004B6680(uintptr_t container, uintptr_t first, uintptr_t container2, uintptr_t last)",
+    "summary": "Iterates [first, last) over a container of owned object pointers (debug-checked iterators), calling each non-null element's virtual slot 0x234 with flag 1 (scalar deleting destructor).",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B67C0": {
     "name": "ModeManager\u003cVMCSMode\u003e::vfunc_0",
     "class": "ModeManager\u003cVMCSMode\u003e",

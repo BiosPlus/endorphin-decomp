@@ -1,0 +1,22 @@
+{
+  "va": "0x004B6680",
+  "size": 94,
+  "orig_symbol": "sub_004B6680",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "DestroyOwnedRange",
+  "class": "Container",
+  "signature": "void fn_004B6680(uintptr_t container, uintptr_t first, uintptr_t container2, uintptr_t last)",
+  "summary": "Iterates [first, last) over a container of owned object pointers (debug-checked iterators), calling each non-null element's virtual slot 0x234 with flag 1 (scalar deleting destructor).",
+  "fields": [
+    {
+      "class": "Container",
+      "offset": "+0x8",
+      "type": "uintptr_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:21:15Z"
+}

@@ -786,3 +786,49 @@ void fn_004BA170(void* self) {
     ext_00665810(self);
 }
 } // namespace lift_004BA170
+
+// [0x004B6680] sub_004B6680 (94 bytes)
+namespace lift_004B6680 {
+// Import slot (IAT entry for MSVCR80!_invalid_parameter_noinfo).
+extern void (*mem_00925134)(void);
+
+// @name DestroyOwnedRange
+// @class Container
+// @summary Iterates [first, last) over a container of owned object pointers (debug-checked iterators), calling each non-null element's virtual slot 0x234 with flag 1 (scalar deleting destructor).
+// @field Container +0x08 uintptr_t field_0x08
+void fn_004B6680(uintptr_t container, uintptr_t first, uintptr_t container2, uintptr_t last) {
+    uintptr_t it = first;
+    for (;;) {
+        // Debug check: container must be valid and match the second container argument.
+        if (container == 0 || container != container2) {
+            mem_00925134();
+        }
+        if (it == last) {
+            return;
+        }
+        // Debug check: iterator must be valid and within the container's end pointer.
+        if (container == 0) {
+            mem_00925134();
+        }
+        if (it >= lift_field<uintptr_t>(reinterpret_cast<void*>(container), 0x08)) {
+            mem_00925134();
+        }
+        uintptr_t cur = it;
+        it += 4;
+        if (container == 0) {
+            mem_00925134();
+        }
+        if (cur >= lift_field<uintptr_t>(reinterpret_cast<void*>(container), 0x08)) {
+            mem_00925134();
+        }
+        uintptr_t obj = *reinterpret_cast<uintptr_t*>(cur);
+        if (obj == 0) {
+            continue;
+        }
+        // Virtual call: vtable slot at byte offset 0x234, invoked with flag 1.
+        uintptr_t vtable = *reinterpret_cast<uintptr_t*>(obj);
+        auto fn = *reinterpret_cast<void (**)(void*, int)>(vtable + 0x234);
+        fn(reinterpret_cast<void*>(obj), 1);
+    }
+}
+} // namespace lift_004B6680
