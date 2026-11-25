@@ -1,0 +1,13 @@
+{
+  "va": "0x006FAA40",
+  "size": 80,
+  "orig_symbol": "sub_006FAA40",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "sub_006FAA40",
+  "signature": "uint8_t __thiscall sub_006FAA40(uint32_t self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Checks flag bit 1 at +0x34, queries vtable+0x74 on field_0x38, and dispatches vtable+0x40 on this.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:57:17Z"
+}
