@@ -1,0 +1,22 @@
+{
+  "va": "0x00688E20",
+  "size": 109,
+  "orig_symbol": "sub_00688E20",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "Unknown::eraseStringPairRange_00688E20",
+  "class": "Unknown",
+  "signature": "PairResult* fn_00688E20(void* self, PairResult* out, char* begin, char* first, char* expectedBegin, char* last)",
+  "summary": "Erases records [first, last) from a 0x38-byte record array whose end pointer is at +0x08, then writes {begin, first} to the result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "char*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:03:46Z"
+}

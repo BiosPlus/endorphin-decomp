@@ -2161,3 +2161,44 @@ void* fn_00685890(void* self, void* other) {
     return self;
 }
 } // namespace lift_00685890
+
+// [0x00688E20] sub_00688E20 (109 bytes)
+namespace lift_00688E20 {
+// Known callee 0x0041DD40: destroyStringPairRange (Destroys a range [begin, end) of 0x38-byte elements, each containing two std::string fields at +0x00 and +0x1C.)
+extern void ext_0041DD40(char* begin, char* end);
+// Known callee 0x0062BA00: CopyStringPairRangeReturnEnd_0062BA00 (Copies a 0x38-byte record range via sub_0062B8B0, then returns dest advanced by the record count times 0x38.)
+extern char* ext_0062BA00(char* first, char* last, char* dest);
+// MSVCR80!_invalid_parameter_noinfo, reached through the IAT slot at 0x00925134.
+extern void ext_invalid_parameter_noinfo(void);
+
+// Two-pointer result written through the hidden return pointer.
+struct PairResult {
+    char* first;
+    char* second;
+};
+
+// @name Unknown::eraseStringPairRange_00688E20
+// @class Unknown
+// @summary Erases records [first, last) from a 0x38-byte record array whose end pointer is at +0x08, then writes {begin, first} to the result.
+// @field Unknown +0x08 char* field_0x08
+PairResult* fn_00688E20(void* self, PairResult* out, char* begin, char* first, char* expectedBegin, char* last) {
+    char** endSlot = reinterpret_cast<char**>(static_cast<char*>(self) + 0x08);
+
+    if (begin == nullptr || begin != expectedBegin) {
+        ext_invalid_parameter_noinfo();
+    }
+
+    if (first != last) {
+        char* oldEnd = *endSlot;
+        // Shift the tail [last, oldEnd) down onto first.
+        char* newEnd = ext_0062BA00(last, oldEnd, first);
+        // Destroy the vacated tail [newEnd, oldEnd).
+        ext_0041DD40(newEnd, oldEnd);
+        *endSlot = newEnd;
+    }
+
+    out->first = begin;
+    out->second = first;
+    return out;
+}
+} // namespace lift_00688E20
