@@ -12,8 +12,10 @@ struct GuiBaseElement_Fields {
     // +0x0   void* vptr (not accessed here; the function writes through its first argument, not `this`)  (evidence: 0x0049AF60, 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   float                    field_0x00  (evidence: 0x00499B70) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vptr  (evidence: 0x00499AB0, 0x004EB9E0, 0x004EBA00, 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0) // CONFLICT: multiple definitions at +0x0
-    // +0x4   float                    field_0x04  (evidence: 0x00499B70)
-    // +0x8   float                    field_0x08  (evidence: 0x00499B70)
+    // +0x4   float                    field_0x04  (evidence: 0x00499B70) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x004EBA60) // CONFLICT: multiple definitions at +0x4
+    // +0x8   float                    field_0x08  (evidence: 0x00499B70) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x004EBA60) // CONFLICT: multiple definitions at +0x8
     // +0xC   float                    field_0x0C  (evidence: 0x00499B70)
 };
 } // namespace lifted_layout

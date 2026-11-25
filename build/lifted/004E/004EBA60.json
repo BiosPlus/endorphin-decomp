@@ -1,0 +1,28 @@
+{
+  "va": "0x004EBA60",
+  "size": 65,
+  "orig_symbol": "GuiBaseElement::vfunc_15",
+  "src_path": "src/classes/GuiBaseElement.cpp",
+  "lifted_path": "lifted/classes/GuiBaseElement.cpp",
+  "name": "GuiBaseElement::vfunc_15",
+  "class": "GuiBaseElement",
+  "signature": "bool __stdcall sub_004EBA60(void* self, uint32_t unused_arg)",
+  "summary": "Validates the [begin, end) span stored at +0x4/+0x8 and erases that range from the element's vector; always returns false",
+  "fields": [
+    {
+      "class": "GuiBaseElement",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "GuiBaseElement",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:17:04Z"
+}

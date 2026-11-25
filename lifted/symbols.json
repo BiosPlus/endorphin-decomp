@@ -16350,6 +16350,13 @@
     "summary": "Builds a rect {x-c, y-c, x+c, y+c} around the point (x, y) and dispatches it to vtable slot 13 on self.",
     "lifted_path": "lifted/classes/GuiBaseElement.cpp"
   },
+  "0x004EBA60": {
+    "name": "GuiBaseElement::vfunc_15",
+    "class": "GuiBaseElement",
+    "signature": "bool __stdcall sub_004EBA60(void* self, uint32_t unused_arg)",
+    "summary": "Validates the [begin, end) span stored at +0x4/+0x8 and erases that range from the element's vector; always returns false",
+    "lifted_path": "lifted/classes/GuiBaseElement.cpp"
+  },
   "0x004EBE10": {
     "name": "NMData::TopLevelState::vfunc_1",
     "class": "NMData::TopLevelState",
@@ -64143,6 +64150,13 @@
     "signature": "int fn_007AEEF0(void* self)",
     "summary": "Returns 1 if field +0x58 is zero; otherwise returns 1 when field +0x60 \u003e= field +0x5c (unsigned), else 0.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
+  },
+  "0x007AEF10": {
+    "name": "Stream::printf",
+    "class": "Stream",
+    "signature": "void sub_007AEF10(uint8_t* obj, const char* fmt, ...)",
+    "summary": "Formats a string and writes it via vtable+0x30 if field_0x58 is non-zero",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
   "0x007AEF70": {
     "name": "sub_007AEF70",
