@@ -19297,6 +19297,13 @@
     "summary": "Allocates a 12-byte polymorphic object (vtable 0x955430), swaps it into self+0x38 (destroying the previous occupant via slot 0), then tail-calls the new object's slot 5.",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x0053B0E0": {
+    "name": "Unknown::ReplaceField38",
+    "class": "Unknown",
+    "signature": "uint32_t fn_0053B0E0(void* self)",
+    "summary": "Allocates a 12-byte object (vtable 0x009554A8, flag -1, zero), releases the previous object at this+0x38 via vtbl[0](1) if it differs, stores the new one, then tail-calls its vtbl[7] and returns that result.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x0053B1F0": {
     "name": "GetElementAddress",
     "signature": "inline void* guest_ptr(const void* base, ptrdiff_t off)",

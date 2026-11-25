@@ -935,3 +935,51 @@ uintptr_t fn_0053B090(void* self) {
     return slotFive(next);
 }
 } // namespace lift_0053B090
+
+// [0x0053B0E0] sub_0053B0E0 (77 bytes)
+namespace lift_0053B0E0 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Called cdecl with one size argument (12) and returns a raw allocation pointer (or 0).
+extern void* ext_006A5C62(uint32_t size);
+
+// Vtable address written into the freshly allocated 12-byte object (rdata constant at 0x009554A8).
+static constexpr uintptr_t kVtbl_009554A8 = 0x009554A8;
+
+// Vtable slot types (thiscall in the original; plain function pointers here).
+using DeleteFn = void (*)(void* self, int32_t flags);  // vtbl[0]: deleting destructor
+using VirtFn = uint32_t (*)(void* self);               // vtbl[7] (+0x1c): tail-called
+
+// Layout of the 12-byte object allocated below.
+struct Obj12 {
+    void* const* vtbl;  // +0x00
+    int32_t flag;       // +0x04 (set to -1)
+    uint32_t zero;      // +0x08 (set to 0)
+};
+
+// @name Unknown::ReplaceField38
+// @class Unknown
+// @summary Allocates a 12-byte object (vtable 0x009554A8, flag -1, zero), releases the previous object at this+0x38 via vtbl[0](1) if it differs, stores the new one, then tail-calls its vtbl[7] and returns that result.
+// @field Unknown +0x38 void* field_0x38
+uint32_t fn_0053B0E0(void* self) {
+    Obj12* fresh = nullptr;
+    void* raw = ext_006A5C62(12);
+    if (raw != nullptr) {
+        fresh = static_cast<Obj12*>(raw);
+        fresh->vtbl = reinterpret_cast<void* const*>(kVtbl_009554A8);
+        fresh->flag = -1;
+        fresh->zero = 0;
+    }
+
+    void*& slot = lift_field<void*>(self, 0x38);
+    void* old = slot;
+    if (old != static_cast<void*>(fresh) && old != nullptr) {
+        void* const* oldVtbl = *reinterpret_cast<void* const* const*>(old);
+        reinterpret_cast<DeleteFn>(oldVtbl[0])(old, 1);
+    }
+
+    slot = static_cast<void*>(fresh);
+
+    void* const* vtbl = *reinterpret_cast<void* const* const*>(fresh);
+    return reinterpret_cast<VirtFn>(vtbl[7])(static_cast<void*>(fresh));
+}
+} // namespace lift_0053B0E0

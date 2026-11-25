@@ -1,0 +1,22 @@
+{
+  "va": "0x0053B0E0",
+  "size": 77,
+  "orig_symbol": "sub_0053B0E0",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::ReplaceField38",
+  "class": "Unknown",
+  "signature": "uint32_t fn_0053B0E0(void* self)",
+  "summary": "Allocates a 12-byte object (vtable 0x009554A8, flag -1, zero), releases the previous object at this+0x38 via vtbl[0](1) if it differs, stores the new one, then tail-calls its vtbl[7] and returns that result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:42:32Z"
+}
