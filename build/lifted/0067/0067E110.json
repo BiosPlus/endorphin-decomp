@@ -1,0 +1,33 @@
+{
+  "va": "0x0067E110",
+  "size": 27,
+  "orig_symbol": "sub_0067E110",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "ExtractMat3x3FromRows",
+  "signature": "void* __thiscall fn_0067E110(const void* self, void* out)",
+  "summary": "Builds a row-major 3x3 float matrix at out from three 16-byte-strided rows of self and returns out.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x0",
+      "type": "float[3]",
+      "name": "row0"
+    },
+    {
+      "class": "self",
+      "offset": "+0x10",
+      "type": "float[3]",
+      "name": "row1"
+    },
+    {
+      "class": "self",
+      "offset": "+0x20",
+      "type": "float[3]",
+      "name": "row2"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:51:55Z"
+}

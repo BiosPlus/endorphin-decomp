@@ -45610,6 +45610,12 @@
     "summary": "Writes a 3x3 row-major 2D rotation matrix (cos/sin of the negated angle) into the object at this.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067E110": {
+    "name": "ExtractMat3x3FromRows",
+    "signature": "void* __thiscall fn_0067E110(const void* self, void* out)",
+    "summary": "Builds a row-major 3x3 float matrix at out from three 16-byte-strided rows of self and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067EC60": {
     "name": "initZeroDouble",
     "signature": "void* __thiscall sub_0067EC60(void* self)",

@@ -1672,3 +1672,26 @@ uint32_t fn_0067F960(void) {
     return *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(last));
 }
 } // namespace lift_0067F960
+
+// [0x0067E110]
+namespace lift_0067E110 {
+// @name ExtractMat3x3FromRows
+// @summary Builds a row-major 3x3 float matrix at out from three 16-byte-strided rows of self and returns out.
+// @field self +0x00 float[3] row0
+// @field self +0x10 float[3] row1
+// @field self +0x20 float[3] row2
+
+
+extern void* ext_0067B8D0(void* self, const float* r0, const float* r1, const float* r2);
+
+void* __thiscall fn_0067E110(const void* self, void* out) {
+    const uint8_t* base = static_cast<const uint8_t*>(self);
+    ext_0067B8D0(
+        out,
+        reinterpret_cast<const float*>(base + 0x00),
+        reinterpret_cast<const float*>(base + 0x10),
+        reinterpret_cast<const float*>(base + 0x20)
+    );
+    return out;
+}
+} // namespace lift_0067E110
