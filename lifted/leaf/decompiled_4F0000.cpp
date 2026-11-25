@@ -401,3 +401,18 @@ void fn_004F9590(DWORD* out, DWORD value) {
     out[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
 }
 } // namespace lift_004F9590
+
+// [0x004F9550] sub_004F9550 (30 bytes)
+namespace lift_004F9550 {
+// Known callee 0x004F92B0: getStaticSingleton_004F92B0 (Lazily initializes a static object at 0x00AE9F34 guarded by 0x00AE9F38 and returns its address.)
+extern void* ext_004F92B0();
+
+// @name storeValueAndStaticSingleton
+// @summary Stores the given value in out[0] and the address of the lazily-initialized static singleton in out[1].
+// Note: no class context; out is treated as a raw two-word record, so no @class or @field lines are emitted.
+void fn_004F9550(uint32_t* out, uint32_t value) {
+    void* singleton = ext_004F92B0();
+    out[0] = value;
+    out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(singleton));
+}
+} // namespace lift_004F9550

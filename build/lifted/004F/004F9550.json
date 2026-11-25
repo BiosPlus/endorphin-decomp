@@ -1,0 +1,13 @@
+{
+  "va": "0x004F9550",
+  "size": 30,
+  "orig_symbol": "sub_004F9550",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "storeValueAndStaticSingleton",
+  "signature": "void fn_004F9550(uint32_t* out, uint32_t value)",
+  "summary": "Stores the given value in out[0] and the address of the lazily-initialized static singleton in out[1].",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:07:10Z"
+}
