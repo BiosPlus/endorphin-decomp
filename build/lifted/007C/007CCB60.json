@@ -1,0 +1,28 @@
+{
+  "va": "0x007CCB60",
+  "size": 69,
+  "orig_symbol": "sub_007CCB60",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "Unknown::storeNonNegativeAndSetMagnitudeFlag",
+  "class": "Unknown",
+  "signature": "void fn_007CCB60(uint8_t* self, float value)",
+  "summary": "Stores max(value, 0) (NaN passes through) at self+0x10, then sets bit 1 of self+0x0C when |stored| \u003e epsilon and clears it otherwise.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:23:17Z"
+}

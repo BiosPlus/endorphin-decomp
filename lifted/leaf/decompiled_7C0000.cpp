@@ -1065,3 +1065,30 @@ void fn_007CCC80(void* self, float value) {
     std::memcpy(obj + 0x0C, &flags, sizeof flags);
 }
 } // namespace lift_007CCC80
+
+// [0x007CCB60] sub_007CCB60 (69 bytes)
+namespace lift_007CCB60 {
+extern int mem_0094CE80;
+
+// @name Unknown::storeNonNegativeAndSetMagnitudeFlag
+// @class Unknown
+// @summary Stores max(value, 0) (NaN passes through) at self+0x10, then sets bit 1 of self+0x0C when |stored| > epsilon and clears it otherwise.
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 float field_0x10
+void fn_007CCB60(uint8_t* self, float value) {
+    // x87 path: value < 0 -> 0.0; otherwise value (NaN passes through).
+    const float result = (value < 0.0f) ? 0.0f : value;
+    lift_field<float>(self, 0x10) = result;
+
+    // epsilon = float with bit pattern mem_0094CE80 (0x358637BD, ~9.5e-7).
+    const float epsilon = std::bit_cast<float>(static_cast<uint32_t>(mem_0094CE80));
+
+    // Unordered (NaN) compare falls through to "set" in the original, matching `!(<=)`.
+    uint32_t& flags = lift_field<uint32_t>(self, 0x0C);
+    if (std::fabs(result) <= epsilon) {
+        flags &= ~0x2u;
+    } else {
+        flags |= 0x2u;
+    }
+}
+} // namespace lift_007CCB60
