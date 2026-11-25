@@ -26830,6 +26830,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005C35E0": {
+    "name": "allocate_32byte_array",
+    "signature": "extern \"C\" void* fn_005C35E0(uint32_t count)",
+    "summary": "Allocates an array of 32-byte elements with overflow check, throwing bad_alloc on overflow.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005C3640": {
     "name": "VirtualSlot27Thunk",
     "class": "VTable",
@@ -62813,6 +62819,12 @@
     "name": "InitGlobalCriticalSectionAndSetReadyFlag",
     "signature": "void fn_0080AD90(void)",
     "summary": "Initializes the global critical section at 0x00B73C40 and sets the flag at 0x00B73C84 to 1.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
+  "0x0080B060": {
+    "name": "mapCodeToId",
+    "signature": "uint32_t sub_0080B060(uint32_t arg0)",
+    "summary": "Maps a 16-bit code (0x00..0x45) via an index table to an integer ID, returning 0x1f for out-of-range values",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
   "0x0080B530": {
