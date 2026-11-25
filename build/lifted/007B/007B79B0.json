@@ -1,0 +1,13 @@
+{
+  "va": "0x007B79B0",
+  "size": 64,
+  "orig_symbol": "sub_007B79B0",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "FillByteBufferUntilFlag",
+  "signature": "void fn_007B79B0(uint32_t count, uint8_t* buf)",
+  "summary": "Fills count bytes of buf with values from ext_007B7750, stopping early when mem_00B61218 is set and mem_00B61219 is clear.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:09:26Z"
+}

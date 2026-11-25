@@ -583,3 +583,23 @@ char* fn_007B2480(const char* src) {
     return dst;
 }
 } // namespace lift_007B2480
+
+// [0x007B79B0] sub_007B79B0 (64 bytes)
+namespace lift_007B79B0 {
+// Known callee 0x007B7750: ext_007B7750 (returns a byte from an external source)
+extern uint8_t ext_007B7750();
+// Global flags at 0x00B61218 / 0x00B61219
+extern uint8_t mem_00B61218;
+extern uint8_t mem_00B61219;
+
+// @name FillByteBufferUntilFlag
+// @summary Fills count bytes of buf with values from ext_007B7750, stopping early when mem_00B61218 is set and mem_00B61219 is clear.
+void fn_007B79B0(uint32_t count, uint8_t* buf) {
+    for (uint32_t i = 0; i < count; ++i) {
+        buf[i] = ext_007B7750();
+        if (mem_00B61218 != 0 && mem_00B61219 == 0) {
+            break;
+        }
+    }
+}
+} // namespace lift_007B79B0
