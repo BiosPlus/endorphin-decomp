@@ -417,6 +417,13 @@
     "summary": "Sets field_0x58 and invalidates the associated window if non-null.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x00404770": {
+    "name": "Unknown::SetControlFont",
+    "class": "Unknown",
+    "signature": "int32_t Unknown_SetControlFont(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Stores two pointer-sized args at this+0x60/+0x64, then sends WM_SETFONT (0x30) to the control handle at this+0x20 using the font from the first non-null argument.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00404C40": {
     "name": "GetConstant_006A5ED2",
     "signature": "extern \"C\" int* __cdecl fn_00404C40()",

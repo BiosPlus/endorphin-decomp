@@ -704,3 +704,42 @@ void fn_004028B0(void* self) {
 }
 } // namespace lift_00559B00
 } // namespace lift_004028B0
+
+// [0x00404770]
+namespace lift_00404770 {
+// @name Unknown::SetControlFont
+// @class Unknown
+// @summary Stores two pointer-sized args at this+0x60/+0x64, then sends WM_SETFONT (0x30) to the control handle at this+0x20 using the font from the first non-null argument.
+// @field Unknown +0x20 HWND hwnd
+// @field Unknown +0x60 uint32_t arg1_saved
+// @field Unknown +0x64 uint32_t arg2_saved
+
+// Guest-memory helpers (resolved by the host harness).
+extern uint32_t ext_ReadGuest32(uint32_t addr);
+extern int32_t ext_SendMessageA(uint32_t hwnd, uint32_t msg, uint32_t wparam, int32_t lparam);
+
+// Import-table slot for USER32!SendMessageA (value at this address is the IAT entry).
+extern const uint32_t mem_00925694;
+
+namespace {
+constexpr uint32_t kWmSetFont = 0x30;
+}
+
+// __thiscall-style: this in ecx, two stack args, callee cleans 8 bytes.
+int32_t Unknown_SetControlFont(void* self, uint32_t arg1, uint32_t arg2) {
+    lift_field<uint32_t>(self, 0x60) = arg1;
+    lift_field<uint32_t>(self, 0x64) = arg2;
+
+    const uint32_t hwnd = lift_field<uint32_t>(self, 0x20);
+
+    if (arg2 != 0) {
+        const uint32_t font = ext_ReadGuest32(arg2 + 0x4);
+        return ext_SendMessageA(hwnd, kWmSetFont, font, 1);
+    }
+    if (arg1 != 0) {
+        const uint32_t font = ext_ReadGuest32(arg1 + 0x4);
+        return ext_SendMessageA(hwnd, kWmSetFont, font, 1);
+    }
+    return 0;
+}
+} // namespace lift_00404770
