@@ -27585,6 +27585,12 @@
     "summary": "Writes the value argument to out-\u003e+0x00 and the lazily-initialized static singleton (from 0x005B3DD0) to out-\u003e+0x04.",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
+  "0x005B4130": {
+    "name": "storeValueAndSingleton_005B4130",
+    "signature": "void fn_005B4130(void* out, uint32_t value)",
+    "summary": "Writes a value to out+0x00 and the lazily-initialized singleton pointer to out+0x04.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B4150": {
     "name": "Geometry::SphereType::vfunc_18",
     "class": "Geometry::SphereType",

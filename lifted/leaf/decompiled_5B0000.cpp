@@ -751,3 +751,19 @@ void fn_005B4050(StoredPair* out, uint32_t value) {
     out->singleton = singleton;
 }
 } // namespace lift_005B4050
+
+// [0x005B4130] sub_005B4130 (30 bytes)
+namespace lift_005B4130 {
+// Known callee 0x005B3E30: getSingleton_005B3E30 (Lazily initializes and returns the singleton object at 0x00B4356C.)
+extern void* ext_005B3E30();
+
+// @name storeValueAndSingleton_005B4130
+// @summary Writes a value to out+0x00 and the lazily-initialized singleton pointer to out+0x04.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 void* field_0x04
+void fn_005B4130(void* out, uint32_t value) {
+    void* singleton = ext_005B3E30();
+    lift_field<uint32_t>(out, 0x00) = value;
+    lift_field<void*>(out, 0x04) = singleton;
+}
+} // namespace lift_005B4130
