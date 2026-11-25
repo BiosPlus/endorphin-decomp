@@ -1320,3 +1320,28 @@ void* fn_0052FD90(void) {
     return result;
 }
 } // namespace lift_0052FD90
+
+// [0x0052F7D0]
+namespace lift_0052F7D0 {
+// @name Unknown::createAnimationDerived_0052F7D0
+// @class Unknown
+// @summary Allocates a 0x3C-byte object, runs its base init, installs two vtable pointers, and returns it (or null if allocation fails).
+// @field Unknown +0x00 void* field_0x00 (vtable pointer, set to 0x953B0C)
+// @field Unknown +0x14 void* field_0x14 (secondary vtable pointer, set to 0x953B04)
+
+extern void* ext_0053B240(void* self);
+extern void* ext_006A5C62(unsigned int size);
+extern void* mem_00953B0C;
+extern void* mem_00953B04;
+
+void* fn_0052F7D0(void) {
+    void* obj = ext_006A5C62(0x3C);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+    ext_0053B240(obj);
+    *reinterpret_cast<void**>(static_cast<unsigned char*>(obj) + 0x00) = reinterpret_cast<void*>(0x953B0C);
+    *reinterpret_cast<void**>(static_cast<unsigned char*>(obj) + 0x14) = reinterpret_cast<void*>(0x953B04);
+    return obj;
+}
+} // namespace lift_0052F7D0

@@ -1,0 +1,28 @@
+{
+  "va": "0x0052F7D0",
+  "size": 87,
+  "orig_symbol": "sub_0052F7D0",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "Unknown::createAnimationDerived_0052F7D0",
+  "class": "Unknown",
+  "signature": "void* fn_0052F7D0(void)",
+  "summary": "Allocates a 0x3C-byte object, runs its base init, installs two vtable pointers, and returns it (or null if allocation fails).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (vtable pointer, set to",
+      "name": "0x953B0C)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void* field_0x14 (secondary vtable pointer, set to",
+      "name": "0x953B04)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:01:03Z"
+}
