@@ -35442,6 +35442,13 @@
     "summary": "Copies four stack float arguments into consecutive float fields at self+0x00..+0x0C (thiscall, callee pops 0x10 bytes).",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x0066A720": {
+    "name": "Unknown::AllocCountedBuffer",
+    "class": "Unknown",
+    "signature": "void fn_0066A720(void* self, DWORD count)",
+    "summary": "Allocates a count-byte buffer into this, sets length 0 and capacity count, and NUL-terminates both ends (count==0 clears the record).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x0066A760": {
     "name": "sub_0066A760",
     "signature": "void __thiscall fn_0066A760(void* self)",

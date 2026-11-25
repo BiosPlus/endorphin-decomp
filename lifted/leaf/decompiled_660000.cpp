@@ -462,3 +462,32 @@ void* sub_00662BF0(void* out) {
     return out;
 }
 } // namespace lift_00662BF0
+
+// [0x0066A720] sub_0066A720 (63 bytes)
+namespace lift_0066A720 {
+// Known callee 0x006A611E: thunk_MFC80_ord_265 (IAT jump thunk forwarding to MFC80!ord_265.)
+// Takes one stack argument (byte count) and returns the allocated pointer.
+extern void* ext_006A611E(DWORD size);
+
+// @name Unknown::AllocCountedBuffer
+// @class Unknown
+// @summary Allocates a count-byte buffer into this, sets length 0 and capacity count, and NUL-terminates both ends (count==0 clears the record).
+// @field Unknown +0x00 BYTE* field_0x00
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x08 DWORD field_0x08
+void fn_0066A720(void* self, DWORD count) {
+    if (count == 0) {
+        lift_field<BYTE*>(self, 0x00) = nullptr;
+        lift_field<DWORD>(self, 0x04) = 0;
+        lift_field<DWORD>(self, 0x08) = 0;
+        return;
+    }
+
+    BYTE* buf = static_cast<BYTE*>(ext_006A611E(count));
+    lift_field<BYTE*>(self, 0x00) = buf;
+    lift_field<DWORD>(self, 0x08) = count;
+    lift_field<DWORD>(self, 0x04) = 0;
+    buf[0] = 0;
+    buf[count - 1] = 0;
+}
+} // namespace lift_0066A720
