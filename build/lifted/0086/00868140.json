@@ -1,0 +1,13 @@
+{
+  "va": "0x00868140",
+  "size": 64,
+  "orig_symbol": "sub_00868140",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "strstr_impl",
+  "signature": "const char* __cdecl sub_00868140(const char* haystack, const char* needle)",
+  "summary": "Searches for the first occurrence of a null-terminated substring in a null-terminated string.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:11:44Z"
+}

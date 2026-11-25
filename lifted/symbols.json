@@ -58617,6 +58617,12 @@
     "summary": "Rotates the DWORD at *dst left by 1 bit, count times (count == 0 leaves it unchanged).",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085D890": {
+    "name": "rotateRight32",
+    "signature": "void __cdecl sub_0085D890(uint32_t* ptr, uint16_t count)",
+    "summary": "Rotates a 32-bit unsigned integer at ptr right by 1 bit, count times.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085DA40": {
     "name": "NoOpReturn_0085DA40",
     "signature": "void fn_0085DA40(void* self)",
@@ -58787,6 +58793,12 @@
     "summary": "Clamps a signed 32-bit integer in-place to the inclusive range [min_val, max_val].",
     "lifted_path": "lifted/leaf/tiny_860000.cpp"
   },
+  "0x00868140": {
+    "name": "strstr_impl",
+    "signature": "const char* __cdecl sub_00868140(const char* haystack, const char* needle)",
+    "summary": "Searches for the first occurrence of a null-terminated substring in a null-terminated string.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x008683E4": {
     "name": "sub_008683E4",
     "signature": "void fn_008683E4(void)",
@@ -58816,6 +58828,12 @@
     "name": "ZeroDwordRange",
     "signature": "void ZeroDwordRange(uint32_t* dst, uint32_t count)",
     "summary": "Zeroes `count` consecutive 32-bit words starting at `dst`; does nothing when count is 0.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
+  "0x00869F50": {
+    "name": "bitsetZeroAndSetBit",
+    "signature": "void __cdecl sub_00869F50(uint32_t* bitset, uint32_t bitIndex, uint32_t wordCount)",
+    "summary": "Zeroes a bitset array of uint32_t words and sets a single bit if within bounds.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
   "0x0086AF00": {

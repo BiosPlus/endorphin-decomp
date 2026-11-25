@@ -455,3 +455,49 @@ void fn_0086B180(void* self) {
     w[0] &= 0x3FFFFFFFu;
 }
 } // namespace lift_0086B180
+
+// [0x00868140]
+namespace lift_00868140 {
+// @name strstr_impl
+// @summary Searches for the first occurrence of a null-terminated substring in a null-terminated string.
+
+
+const char* __cdecl sub_00868140(const char* haystack, const char* needle) {
+    if (*needle == '\0') {
+        return haystack;
+    }
+    if (*haystack == '\0') {
+        return nullptr;
+    }
+
+    while (*haystack != '\0') {
+        const char* s1 = haystack;
+        const char* s2 = needle;
+        while (*s1 != '\0' && *s2 != '\0' && *s1 == *s2) {
+            ++s1;
+            ++s2;
+        }
+        if (*s2 == '\0') {
+            return haystack;
+        }
+        ++haystack;
+    }
+
+    return nullptr;
+}
+} // namespace lift_00868140
+
+// [0x00869F50]
+namespace lift_00869F50 {
+// @name bitsetZeroAndSetBit
+// @summary Zeroes a bitset array of uint32_t words and sets a single bit if within bounds.
+
+void __cdecl sub_00869F50(uint32_t* bitset, uint32_t bitIndex, uint32_t wordCount) {
+    for (uint32_t i = 0; i < wordCount; ++i) {
+        bitset[i] = 0;
+    }
+    if (bitIndex < (wordCount << 5)) {
+        bitset[bitIndex >> 5] = 1u << (bitIndex & 0x1Fu);
+    }
+}
+} // namespace lift_00869F50
