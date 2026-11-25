@@ -586,3 +586,31 @@ void fn_005190B0(uint32_t* first, uint32_t* last, uint32_t pred) {
 }
 } // namespace lift_00481C90
 } // namespace lift_005190B0
+
+// [0x00518030] sub_00518030 (74 bytes)
+namespace lift_00518030 {
+// Known callee 0x0050F970: InitZeroedStateWithVTable (Sets the vtable pointer to 0x00950A74 and zeroes the double, dword, and byte state fields.)
+extern void ext_0050F970(void* self);
+extern const double mem_0092C508;
+
+// @name InitVTableAndState_00518030
+// @class <ClassName> (optional)
+// @summary Runs the base state initializer, installs the 0x009520C4 vtable, zeroes three dword fields, sets a double field to 0.1, and returns self.
+// @field <ClassName> +0x00 void* vtable
+// @field <ClassName> +0x30 double field_0x30
+// @field <ClassName> +0x3C DWORD field_0x3C
+// @field <ClassName> +0x40 DWORD field_0x40
+// @field <ClassName> +0x44 DWORD field_0x44
+void* fn_00518030(void* self) {
+    ext_0050F970(self);
+
+    auto* base = static_cast<std::byte*>(self);
+    *reinterpret_cast<std::uint32_t*>(base + 0x00) = 0x009520C4u;
+    *reinterpret_cast<double*>(base + 0x30) = mem_0092C508;
+    *reinterpret_cast<std::uint32_t*>(base + 0x3C) = 0u;
+    *reinterpret_cast<std::uint32_t*>(base + 0x40) = 0u;
+    *reinterpret_cast<std::uint32_t*>(base + 0x44) = 0u;
+
+    return self;
+}
+} // namespace lift_00518030

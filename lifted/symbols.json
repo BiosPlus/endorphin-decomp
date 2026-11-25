@@ -16929,6 +16929,13 @@
     "summary": "Destructor tail-call: restores vtable mem_0094F084 and tail-calls base destructor sub_00503CD0.",
     "lifted_path": "lifted/leaf/tiny_510000.cpp"
   },
+  "0x00518030": {
+    "name": "InitVTableAndState_00518030",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void* fn_00518030(void* self)",
+    "summary": "Runs the base state initializer, installs the 0x009520C4 vtable, zeroes three dword fields, sets a double field to 0.1, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00518130": {
     "name": "SelectionMethodEgalitarianElitist::vfunc_0",
     "class": "SelectionMethodEgalitarianElitist",
