@@ -1058,3 +1058,23 @@ uint8_t fn_00862904(uint32_t index) {
     return kSwitchCaseIndexTable[index];
 }
 } // namespace lift_00862904
+
+// [0x0086A240]
+namespace lift_0086A240 {
+// @name shiftRightWords
+// @summary Right-shifts an array of 32-bit words by 0..31 bits and returns the bits shifted out.
+uint32_t sub_0086A240(uint32_t* dst, const uint32_t* src, uint32_t shift, uint32_t count) {
+    if (shift >= 32 || count == 0) {
+        return 0;
+    }
+
+    uint32_t carry = 0;
+    uint32_t inv_shift = 32 - shift;
+    for (uint32_t i = count; i > 0; --i) {
+        uint32_t val = src[i - 1];
+        dst[i - 1] = (val >> shift) | carry;
+        carry = (shift != 0) ? (val << inv_shift) : 0;
+    }
+    return carry;
+}
+} // namespace lift_0086A240

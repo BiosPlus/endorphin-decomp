@@ -1,0 +1,13 @@
+{
+  "va": "0x0086A240",
+  "size": 100,
+  "orig_symbol": "sub_0086A240",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "shiftRightWords",
+  "signature": "uint32_t sub_0086A240(uint32_t* dst, const uint32_t* src, uint32_t shift, uint32_t count)",
+  "summary": "Right-shifts an array of 32-bit words by 0..31 bits and returns the bits shifted out.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:01:09Z"
+}
