@@ -31840,6 +31840,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType\u003cNMData::QuatChannel\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005B9FA0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, NMData::MetaBodyData::getLinearAcceleration, 0\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, NMData::MetaBodyData::getLinearAcceleration, 0\u003e",
+    "signature": "void* ext_005B6BC0(void* self);                                  // forwards subobject at +0x1D0 [[noreturn]] void ext_0046C4E0(void* arg, void* forwarded);      // throws default ExceptionWithMessage void* ext_0046C3C0(void* self);                                  // constructs DerivedException in place [[noreturn]] void ext_006A6DD2(void* exception, const void* throwInfo); // _CxxThrowException thunk extern const char mem_009DEC1C[];                                // ThrowInfo for DerivedException const NM::Vector3\u0026 fn_005B9FA0(void* arg1, void** arg2)",
+    "summary": "Vtable slot 4 stub: if the pointed-to value is non-null, calls the forwarding helper and throws; otherwise throws a DerivedException. Never returns.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005B9FE0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getLinearAcceleration(void) const, 0}, 1\u003e::vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getLinearAcceleration(void) const, 0}, 1\u003e",

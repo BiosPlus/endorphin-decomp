@@ -56478,3 +56478,36 @@ void fn_0051B270(void* self, void* arg) {
     throw std::runtime_error("ExprParser::ReadMethodType<NMData::QuatChannel>::vfunc_4: getValue unavailable");
 }
 } // namespace lift_0051B270
+
+// [0x005B9FA0]
+namespace lift_005B9FA0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, NMData::MetaBodyData::getLinearAcceleration, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, NMData::MetaBodyData::getLinearAcceleration, 0>
+// @summary Vtable slot 4 stub: if the pointed-to value is non-null, calls the forwarding helper and throws; otherwise throws a DerivedException. Never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, NMData::MetaBodyData::getLinearAcceleration, 0> +0x00 void* field_0x00
+
+namespace NM {
+struct Vector3;
+}
+
+// External helpers (addresses in the original binary).
+void* ext_005B6BC0(void* self);                                  // forwards subobject at +0x1D0
+[[noreturn]] void ext_0046C4E0(void* arg, void* forwarded);      // throws default ExceptionWithMessage
+void* ext_0046C3C0(void* self);                                  // constructs DerivedException in place
+[[noreturn]] void ext_006A6DD2(void* exception, const void* throwInfo); // _CxxThrowException thunk
+extern const char mem_009DEC1C[];                                // ThrowInfo for DerivedException
+
+const NM::Vector3& fn_005B9FA0(void* arg1, void** arg2) {
+    // mov eax, [esp+0x34]; mov ecx, [eax]
+    void* self = *arg2;
+    if (self != nullptr) {
+        void* forwarded = ext_005B6BC0(self);
+        ext_0046C4E0(arg1, forwarded);
+    }
+
+    // Build DerivedException on the stack and throw it.
+    alignas(8) unsigned char exception[0x28];
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005B9FA0
