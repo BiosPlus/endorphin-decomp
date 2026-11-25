@@ -6616,3 +6616,20 @@ void* fn_00646220(void* self) {
 }
 } // namespace lift_006B0480
 } // namespace lift_00646220
+
+// [0x00545630] CameraTool::vfunc_27 (10 bytes)
+namespace lift_00545630 {
+// @name CameraTool::vfunc_27
+// @class CameraTool
+// @summary Forwards its argument to virtual slot 26 (vtable +0x68) on the same object and returns.
+// @field CameraTool +0x00 void* vtable
+void fn_00545630(void* self, uint32_t arg) {
+    // Load the vtable pointer from the object's first dword.
+    void* vtable = lift_field<void*>(self, 0);
+    // Slot at +0x68 is index 26 (4-byte entries).
+    void* slot = lift_field<void*>(vtable, 0x68);
+    // Tail-dispatch to the virtual method with the same object and forwarded argument.
+    using VMethod = void (*)(void*, uint32_t);
+    reinterpret_cast<VMethod>(slot)(self, arg);
+}
+} // namespace lift_00545630

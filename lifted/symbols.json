@@ -22112,6 +22112,13 @@
     "summary": "Forwards the call to the virtual method at vtable slot 14 (offset 0x38) of the object stored at this+0xA0, passing that object as `this`, and returns its result.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00545630": {
+    "name": "CameraTool::vfunc_27",
+    "class": "CameraTool",
+    "signature": "void fn_00545630(void* self, uint32_t arg)",
+    "summary": "Forwards its argument to virtual slot 26 (vtable +0x68) on the same object and returns.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00545650": {
     "name": "PoseTool::vfunc_8_off_98",
     "class": "PoseTool",

@@ -1,0 +1,22 @@
+{
+  "va": "0x00545630",
+  "size": 10,
+  "orig_symbol": "CameraTool::vfunc_27",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CameraTool::vfunc_27",
+  "class": "CameraTool",
+  "signature": "void fn_00545630(void* self, uint32_t arg)",
+  "summary": "Forwards its argument to virtual slot 26 (vtable +0x68) on the same object and returns.",
+  "fields": [
+    {
+      "class": "CameraTool",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:17:21Z"
+}
