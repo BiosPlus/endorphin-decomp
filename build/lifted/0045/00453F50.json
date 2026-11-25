@@ -1,0 +1,14 @@
+{
+  "va": "0x00453F50",
+  "size": 101,
+  "orig_symbol": "RigEditor::vfunc_66",
+  "src_path": "src/classes/RigEditor.cpp",
+  "lifted_path": "lifted/classes/RigEditor.cpp",
+  "name": "RigEditor::PreTranslateMessage",
+  "class": "RigEditor",
+  "signature": "extern \"C\" int __thiscall fn_00453F50(uint32_t self, uint32_t pMsg)",
+  "summary": "Handles WM_KEYDOWN (VK_RETURN and forwarding to global handler) and WM_LBUTTONDOWN before delegating to CDialog::PreTranslateMessage.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:01:06Z"
+}
