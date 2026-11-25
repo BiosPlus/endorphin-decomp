@@ -1429,3 +1429,64 @@ void* __thiscall sub_0040ABC0(void* this_ptr, void* out_str, uint32_t index) {
     return out_str;
 }
 } // namespace lift_0040ABC0
+
+// [0x004080C0]
+namespace lift_004080C0 {
+extern uint32_t mem_00925134;
+
+// @name destroyPointerVectorRange
+// @summary Iterates over a checked vector range of object pointers and invokes each non-null object's deleting destructor.
+void __stdcall sub_004080C0(uint32_t container1, uint32_t iterPtr, uint32_t container2, uint32_t endPtr)
+{
+    using InvalidParamFn = void(__cdecl*)();
+    using DeletingDtorFn = void(__thiscall*)(uint32_t, uint32_t);
+
+    auto invalidParam = reinterpret_cast<InvalidParamFn>(mem_00925134);
+
+    while (true)
+    {
+        if (container1 == 0 || container1 != container2)
+        {
+            invalidParam();
+        }
+
+        if (iterPtr == endPtr)
+        {
+            break;
+        }
+
+        if (container1 == 0)
+        {
+            invalidParam();
+        }
+
+        uint32_t curPtr = iterPtr;
+        uint32_t endBound = *reinterpret_cast<uint32_t*>(container1 + 0x8);
+        if (iterPtr >= endBound)
+        {
+            invalidParam();
+        }
+
+        iterPtr += 4;
+
+        if (container1 == 0)
+        {
+            invalidParam();
+        }
+
+        endBound = *reinterpret_cast<uint32_t*>(container1 + 0x8);
+        if (curPtr >= endBound)
+        {
+            invalidParam();
+        }
+
+        uint32_t obj = *reinterpret_cast<uint32_t*>(curPtr);
+        if (obj != 0)
+        {
+            uint32_t vtable = *reinterpret_cast<uint32_t*>(obj);
+            auto deletingDtor = reinterpret_cast<DeletingDtorFn>(*reinterpret_cast<uint32_t*>(vtable + 0x4));
+            deletingDtor(obj, 1);
+        }
+    }
+}
+} // namespace lift_004080C0

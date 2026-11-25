@@ -1,0 +1,13 @@
+{
+  "va": "0x004080C0",
+  "size": 91,
+  "orig_symbol": "sub_004080C0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "destroyPointerVectorRange",
+  "signature": "void __stdcall sub_004080C0(uint32_t container1, uint32_t iterPtr, uint32_t container2, uint32_t endPtr)",
+  "summary": "Iterates over a checked vector range of object pointers and invokes each non-null object's deleting destructor.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:26:04Z"
+}
