@@ -6119,6 +6119,13 @@
     "summary": "Thiscall with no stack args. If *(this+0x00) is non-null, loads the pointer at (that+0x10), then calls vtable slot 0 of that object with this = (that+0x10) and one int argument of 1.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00468630": {
+    "name": "Unknown::DecRefAndRequestStop",
+    "class": "Unknown",
+    "signature": "void fn_00468630(void* self)",
+    "summary": "Decrements a global counter; when it hits zero, clears a flag on the held object and, if a second flag is set, forwards to RequestStop.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00468660": {
     "name": "getNestedField_0x18_0xc",
     "signature": "uint32_t __thiscall sub_00468660(uint32_t this_ptr)",

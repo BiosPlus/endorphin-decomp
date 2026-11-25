@@ -958,3 +958,40 @@ void fn_0046F930(void* self) {
     }
 }
 } // namespace lift_0046F930
+
+// [0x00468630] sub_00468630 (37 bytes)
+namespace lift_00468630 {
+// Known callee 0x0046F930: Unknown::RequestStop (Marks stop-requested flags and signals the event at this+0x160 using index this+0x148 if active.)
+extern void ext_0046F930(void* self);
+extern int mem_00AD89B4;
+
+// @name Unknown::DecRefAndRequestStop
+// @class Unknown
+// @summary Decrements a global counter; when it hits zero, clears a flag on the held object and, if a second flag is set, forwards to RequestStop.
+// @field Unknown +0x00 uint32_t heldObject
+// @field Unknown +0x04 uint8_t requestStopEnabled
+void fn_00468630(void* self) {
+    // if (self->heldObject == 0) return;
+    if (lift_field<uint32_t>(self, 0x00) == 0) {
+        return;
+    }
+
+    // if (--mem_00AD89B4 != 0) return;
+    if (--mem_00AD89B4 != 0) {
+        return;
+    }
+
+    // obj = self->heldObject; obj->byte_0x153 = 0;
+    const uint32_t obj = lift_field<uint32_t>(self, 0x00);
+    void* objPtr = reinterpret_cast<void*>(static_cast<uintptr_t>(obj));
+    lift_field<uint8_t>(objPtr, 0x153) = 0;
+
+    // if (self->requestStopEnabled == 0) return;
+    if (lift_field<uint8_t>(self, 0x04) == 0) {
+        return;
+    }
+
+    // return RequestStop(self->heldObject);  (tail call)
+    ext_0046F930(objPtr);
+}
+} // namespace lift_00468630

@@ -1,0 +1,28 @@
+{
+  "va": "0x00468630",
+  "size": 37,
+  "orig_symbol": "sub_00468630",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "Unknown::DecRefAndRequestStop",
+  "class": "Unknown",
+  "signature": "void fn_00468630(void* self)",
+  "summary": "Decrements a global counter; when it hits zero, clears a flag on the held object and, if a second flag is set, forwards to RequestStop.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "heldObject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "requestStopEnabled"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:16:25Z"
+}
