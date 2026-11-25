@@ -1081,3 +1081,19 @@ extern void* __fastcall fn_004291F0(void* self, int edx_unused, const void* src)
 }
 } // namespace lift_006998D0
 } // namespace lift_004291F0
+
+// [0x004277B0]
+namespace lift_004277B0 {
+// @name allocateArray36
+// @summary Allocates an array of 36-byte elements with overflow check, throwing std::bad_alloc on overflow.
+
+
+extern void* ext_006A5C62(uint32_t size);
+
+extern void* fn_004277B0(uint32_t count) {
+    if (count > 0 && (0xFFFFFFFFu / count) < 0x24u) {
+        throw std::bad_alloc();
+    }
+    return ext_006A5C62(count * 36u);
+}
+} // namespace lift_004277B0

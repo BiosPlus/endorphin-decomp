@@ -1,0 +1,13 @@
+{
+  "va": "0x004277B0",
+  "size": 91,
+  "orig_symbol": "sub_004277B0",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "allocateArray36",
+  "signature": "extern \"C\" void* fn_004277B0(uint32_t count)",
+  "summary": "Allocates an array of 36-byte elements with overflow check, throwing std::bad_alloc on overflow.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:28:07Z"
+}
