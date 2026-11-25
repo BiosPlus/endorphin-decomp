@@ -1262,3 +1262,51 @@ uint8_t fn_006DE770(void* self, void* arg1, uint32_t arg2) {
     return 0;
 }
 } // namespace lift_006DE770
+
+// [0x006D2200]
+namespace lift_006D2200 {
+// @name DynamicArray::removeAt
+// @class DynamicArray
+// @summary Removes the element at the given index by shifting subsequent elements left and decrementing the count.
+// @field DynamicArray +0x00 int32_t count
+// @field DynamicArray +0x0C int32_t elementSize
+// @field DynamicArray +0x10 void* data
+
+
+void __thiscall sub_006D2200(void* self, int32_t index) {
+    auto* base = static_cast<uint8_t*>(self);
+    int32_t count = *reinterpret_cast<int32_t*>(base + 0x00);
+    int32_t nextIndex = index + 1;
+    if (nextIndex < count) {
+        int32_t elementSize = *reinterpret_cast<int32_t*>(base + 0x0C);
+        uint8_t* data = *reinterpret_cast<uint8_t**>(base + 0x10);
+        size_t bytesToMove = static_cast<size_t>((count - index - 1) * elementSize);
+        std::memmove(
+            data + index * elementSize,
+            data + nextIndex * elementSize,
+            bytesToMove);
+    }
+    *reinterpret_cast<int32_t*>(base + 0x00) = *reinterpret_cast<int32_t*>(base + 0x00) - 1;
+}
+} // namespace lift_006D2200
+
+// [0x006D9170]
+namespace lift_006D9170 {
+// @name sub_006D9170
+// @summary Sets field_0x10 to the given value, sets field_0x17 to 1, and updates flag 0x10 on field_0x0c + 0x1f0 depending on whether value is 1 or 2.
+// @field Self +0x0c void* field_0x0c
+// @field Self +0x10 uint32_t field_0x10
+// @field Self +0x17 uint8_t field_0x17
+
+extern void __thiscall ext_00711CF0(void* self, uint32_t mask, uint8_t flag);
+
+void __thiscall sub_006D9170(void* self, uint32_t value) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint8_t*>(base + 0x17) = 1;
+    *reinterpret_cast<uint32_t*>(base + 0x10) = value;
+
+    uint8_t* target = *reinterpret_cast<uint8_t**>(base + 0x0c) + 0x1f0;
+    uint8_t flag = (value == 1 || value == 2) ? 0 : 1;
+    ext_00711CF0(target, 0x10, flag);
+}
+} // namespace lift_006D9170
