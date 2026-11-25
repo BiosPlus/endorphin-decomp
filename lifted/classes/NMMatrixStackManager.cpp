@@ -34,3 +34,38 @@ void fn_0054EA30(void* self) {
     mem_009254B8(0x0BA6, reinterpret_cast<float*>(static_cast<uintptr_t>(start)));
 }
 } // namespace lift_0054EA30
+
+// [0x0054EB50] NMMatrixStackManager::vfunc_5 (83 bytes)
+namespace lift_0054EB50 {
+// MSVCR80 _invalid_parameter_noinfo (called through IAT slot mem_00925134 in the original).
+extern void ext_invalid_parameter_noinfo();
+// OPENGL32 glLoadMatrixf (tail-jumped through IAT slot mem_009254B4 in the original).
+extern void ext_glLoadMatrixf(const float* m);
+
+// @name NMMatrixStackManager::vfunc_5
+// @class NMMatrixStackManager
+// @summary Validates the matrix window, copies the 16-float matrix at src into the window's top 64-byte block, then calls glLoadMatrixf(src).
+// @field NMMatrixStackManager +0x08 uint32_t field_0x08
+// @field NMMatrixStackManager +0x0C uint32_t field_0x0C
+void fn_0054EB50(void* self, const float* src) {
+    const uint32_t lower = lift_field<uint32_t>(self, 0x08);
+    const uint32_t end   = lift_field<uint32_t>(self, 0x0C);
+
+    if (lower > end) {
+        ext_invalid_parameter_noinfo();
+    }
+
+    const uint32_t block = end - 0x40;
+    if (block > end || block < lower) {
+        ext_invalid_parameter_noinfo();
+    }
+    if (block >= end) {
+        ext_invalid_parameter_noinfo();
+    }
+
+    void* dst = reinterpret_cast<void*>(static_cast<uintptr_t>(block));
+    std::memcpy(dst, src, 16 * sizeof(float));
+
+    ext_glLoadMatrixf(src);
+}
+} // namespace lift_0054EB50
