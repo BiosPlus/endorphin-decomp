@@ -11,7 +11,7 @@
 namespace lifted_layout {
 struct ExprParser_ExtROType_Fields {
     // +0x0   void*                    field_0x00  (evidence: 0x0066AF40, 0x0066AF80, 0x0066AFA0, 0x0066AFC0, 0x0066AFE0, 0x0066B030, 0x0066B9E0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    inner  (evidence: 0x0066AF60, 0x0066BA70, 0x0066BB70) // CONFLICT: multiple definitions at +0x0
-    // +0x4   void*                    field_0x04  (evidence: 0x0066AFA0, 0x0066BA40, 0x0066BA90, 0x0066BAC0, 0x0066BAF0, 0x0066BB50)
+    // +0x0   void*                    inner  (evidence: 0x0066AF60, 0x0066BA70, 0x0066BB20, 0x0066BB70) // CONFLICT: multiple definitions at +0x0
+    // +0x4   void*                    field_0x04  (evidence: 0x0066AFA0, 0x0066BA40, 0x0066BA90, 0x0066BAC0, 0x0066BAF0, 0x0066BB20, 0x0066BB50)
 };
 } // namespace lifted_layout

@@ -44165,6 +44165,13 @@
     "summary": "Calls ext_0066BA00 on the wrapper object, then forwards (obj, arg2) to vtable slot 45 (+0xB4) of the object held at +0x04.",
     "lifted_path": "lifted/ExprParser/ExtROType.cpp"
   },
+  "0x0066BB20": {
+    "name": "ExprParser::ExtROType::vfunc_46",
+    "class": "ExprParser::ExtROType",
+    "signature": "uint32_t __stdcall fn_0066BB20(uint32_t* arg1, uint32_t arg2)",
+    "summary": "Resolves the value held in arg1, then forwards (arg1, arg2) through the subobject at +0x04 vtable slot 0xB8.",
+    "lifted_path": "lifted/ExprParser/ExtROType.cpp"
+  },
   "0x0066BB50": {
     "name": "ExprParser::ExtROType::vfunc_47",
     "class": "ExprParser::ExtROType",

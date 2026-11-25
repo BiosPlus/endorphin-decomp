@@ -312,3 +312,19 @@ void* fn_0066B000(void* self, void* /*arg2*/) {
     return self;
 }
 } // namespace lift_0066B000
+
+// [0x0066BB20]
+namespace lift_0066BB20 {
+extern void __stdcall ext_0066BA00(uint32_t* self);
+extern uint32_t __stdcall ext_0041CEB0(void* self, uint32_t arg1);
+
+// @name ExprParser::ExtROType::vfunc_46
+// @class ExprParser::ExtROType
+// @summary Resolves the value held in arg1, then forwards (arg1, arg2) through the subobject at +0x04 vtable slot 0xB8.
+// @field ExprParser::ExtROType +0x0 void* inner
+// @field ExprParser::ExtROType +0x4 void* field_0x04
+uint32_t __stdcall fn_0066BB20(uint32_t* arg1, uint32_t arg2) {
+    ext_0066BA00(arg1);
+    return ext_0041CEB0(arg1, arg2);
+}
+} // namespace lift_0066BB20
