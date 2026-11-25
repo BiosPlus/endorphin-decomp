@@ -1529,3 +1529,19 @@ void fn_0046F600(DWORD* out, DWORD value) {
     out[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
 }
 } // namespace lift_0046F600
+
+// [0x0046F620] sub_0046F620 (30 bytes)
+namespace lift_0046F620 {
+// Known callee 0x0046F400: ensureGlobalObjectInit_0046F400 (One-time initializer for the global object at 0xAD8354: guarded by bit 0 of 0xAD8358, calls ext_0067A670 once, then stores vtable 0x93AB8C; returns the object address.)
+extern void* ext_0046F400();
+
+// @name storePairWithGlobalObject_0046F620
+// @summary Stores the value argument into dst[0] and the address of the lazily-initialized global object (via ext_0046F400) into dst[1].
+// @field dst+0x00 DWORD value
+// @field dst+0x04 DWORD globalObjectAddr
+void fn_0046F620(DWORD* dst, DWORD value) {
+    void* obj = ext_0046F400();
+    dst[0] = value;
+    dst[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_0046F620
