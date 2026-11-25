@@ -35589,6 +35589,13 @@
     "summary": "Forwards this-\u003efield_0x64 through ext_007C9C50 and passes the result to ext_007C9E80 with (0.0f, 80.0f).",
     "lifted_path": "lifted/classes/RelationshipHinge.cpp"
   },
+  "0x00658B60": {
+    "name": "RelationshipHinge::vfunc_1",
+    "class": "RelationshipHinge",
+    "signature": "void fn_00658B60(void* self)",
+    "summary": "Reads field +0x64, offsets it by 0x160, and calls the helper with (ptr, 0.0f, 0.0f).",
+    "lifted_path": "lifted/classes/RelationshipHinge.cpp"
+  },
   "0x006595B0": {
     "name": "RelationshipRPROJoint::vfunc_49",
     "class": "RelationshipRPROJoint",

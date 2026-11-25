@@ -1,0 +1,22 @@
+{
+  "va": "0x00658B60",
+  "size": 34,
+  "orig_symbol": "RelationshipHinge::vfunc_1",
+  "src_path": "src/classes/RelationshipHinge.cpp",
+  "lifted_path": "lifted/classes/RelationshipHinge.cpp",
+  "name": "RelationshipHinge::vfunc_1",
+  "class": "RelationshipHinge",
+  "signature": "void fn_00658B60(void* self)",
+  "summary": "Reads field +0x64, offsets it by 0x160, and calls the helper with (ptr, 0.0f, 0.0f).",
+  "fields": [
+    {
+      "class": "RelationshipHinge",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:21:56Z"
+}

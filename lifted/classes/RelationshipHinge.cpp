@@ -73,3 +73,22 @@ void fn_00658B30(void* self) {
     ext_007C9E80(reinterpret_cast<void*>(static_cast<uintptr_t>(adjusted)), 0.0f, mem_00984790);
 }
 } // namespace lift_00658B30
+
+// [0x00658B60] RelationshipHinge::vfunc_1 (34 bytes)
+namespace lift_00658B60 {
+// Known callee 0x007C9C50: addOffset0x160 (Returns the first argument plus 0x160.)
+extern uint32_t ext_007C9C50(uint32_t arg0);
+// Known callee 0x007C9E80: sub_007C9E80 (Stores a float parameter, sets a nonzero flag and absolute value for a second float, and clears a field.)
+extern void ext_007C9E80(void* self, float val1, float val2);
+
+// @name RelationshipHinge::vfunc_1
+// @class RelationshipHinge
+// @summary Reads field +0x64, offsets it by 0x160, and calls the helper with (ptr, 0.0f, 0.0f).
+// @field RelationshipHinge +0x64 uint32_t field_0x64
+void fn_00658B60(void* self) {
+    const uint32_t field64 =
+        *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x64);
+    const uint32_t target = ext_007C9C50(field64);
+    ext_007C9E80(reinterpret_cast<void*>(static_cast<uintptr_t>(target)), 0.0f, 0.0f);
+}
+} // namespace lift_00658B60
