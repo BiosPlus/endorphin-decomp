@@ -1869,3 +1869,34 @@ double* __thiscall fn_0070BDB0(void* self, double* out) {
 }
 } // namespace lift_0070BBD0
 } // namespace lift_0070BDB0
+
+// [0x0070BF00]
+namespace lift_0070BF00 {
+// @name ClampedScaledFloatGetter
+// @summary Chains three getters, scales the float result by 1/128, and clamps it to [0, 1].
+
+extern uint32_t ext_006DC460(void* self);
+extern uint32_t ext_006C98F0(void* self);
+extern float fn_006C9F70(void* self);
+
+static const double mem_00995B48 = 0.0078125;
+static const double mem_0092A278 = 0.0;
+static const double mem_0092A270 = 1.0;
+
+extern float __fastcall fn_0070BF00(void* self) {
+    uint32_t a = ext_006DC460(self);
+    uint32_t b = ext_006C98F0(reinterpret_cast<void*>(static_cast<uintptr_t>(a)));
+    float f = fn_006C9F70(reinterpret_cast<void*>(static_cast<uintptr_t>(b)));
+
+    double x = static_cast<double>(f) * mem_00995B48;
+
+    // Clamp: NaN or x < 0 -> 0.0; x > 1 -> 1.0; otherwise x.
+    if (!(x >= mem_0092A278)) {
+        return static_cast<float>(mem_0092A278);
+    }
+    if (x <= mem_0092A270) {
+        return static_cast<float>(x);
+    }
+    return static_cast<float>(mem_0092A270);
+}
+} // namespace lift_0070BF00

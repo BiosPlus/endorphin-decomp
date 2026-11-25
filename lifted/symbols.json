@@ -53914,6 +53914,12 @@
     "summary": "Chains GetValueIfCountPositive -\u003e sub_006C98D0 and tail-returns the float getter sub_006C9F70 applied to the final value.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x0070BF00": {
+    "name": "ClampedScaledFloatGetter",
+    "signature": "extern \"C\" float __fastcall fn_0070BF00(void* self)",
+    "summary": "Chains three getters, scales the float result by 1/128, and clamps it to [0, 1].",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070BFD0": {
     "name": "Unknown::GetFloatViaChainedLookup",
     "class": "Unknown",
