@@ -1,0 +1,28 @@
+{
+  "va": "0x0041B2A0",
+  "size": 72,
+  "orig_symbol": "GettingStartedDialog::vfunc_86",
+  "src_path": "src/classes/GettingStartedDialog.cpp",
+  "lifted_path": "lifted/classes/GettingStartedDialog.cpp",
+  "name": "GettingStartedDialog::vfunc_86",
+  "class": "GettingStartedDialog",
+  "signature": "uint32_t fn_0041B2A0(void* self)",
+  "summary": "Queries child object at +0x120 (vtable slot 0x148) to set cached flag at +0x11C, reports it via ext_006A6328, then tail-dispatches vtable slot 0x68 on self.",
+  "fields": [
+    {
+      "class": "GettingStartedDialog",
+      "offset": "+0x11C",
+      "type": "uint8_t",
+      "name": "field_0x11C"
+    },
+    {
+      "class": "GettingStartedDialog",
+      "offset": "+0x120",
+      "type": "void*",
+      "name": "field_0x120"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:27:47Z"
+}

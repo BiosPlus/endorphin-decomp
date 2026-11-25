@@ -1536,6 +1536,13 @@
     "summary": "Returns the address of the global mem_0092D538; does not touch this.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0041B2A0": {
+    "name": "GettingStartedDialog::vfunc_86",
+    "class": "GettingStartedDialog",
+    "signature": "uint32_t fn_0041B2A0(void* self)",
+    "summary": "Queries child object at +0x120 (vtable slot 0x148) to set cached flag at +0x11C, reports it via ext_006A6328, then tail-dispatches vtable slot 0x68 on self.",
+    "lifted_path": "lifted/classes/GettingStartedDialog.cpp"
+  },
   "0x0041B2F0": {
     "name": "CameraTool::vfunc_23",
     "class": "CameraTool",
