@@ -19160,6 +19160,12 @@
     "summary": "Binary search for the first std::string in [first, last) that is not less than value, using operator\u003c.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x0051A6D0": {
+    "name": "CopyRangeBackward5f_0051A6D0",
+    "signature": "extern \"C\" void* fn_0051A6D0(void* first, void* last, void* destEnd)",
+    "summary": "Copies a range of 20-byte (5-float) elements backward into a destination ending at destEnd and returns the destination begin.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x0051A9A0": {
     "name": "sub_0051A9A0",
     "signature": "void* fn_0051A9A0()",
@@ -22511,6 +22517,13 @@
     "signature": "extern \"C\" void* __fastcall fn_00545CA0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00545A70 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00546570": {
+    "name": "Vec4::operator!=",
+    "class": "Vec4",
+    "signature": "bool __thiscall sub_00546570(const float* self, const float* other)",
+    "summary": "Compares two 4-float vectors for inequality",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
   "0x00546760": {
     "name": "RotateTool::vfunc_29",
@@ -36395,6 +36408,12 @@
     "signature": "int32_t fn_00620F60(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00404D50 (ElementCountFromRange).",
     "lifted_path": "lifted/leaf/tiny_620000.cpp"
+  },
+  "0x00620FE0": {
+    "name": "allocate_72byte_elements",
+    "signature": "void* fn_00620FE0(uint32_t count)",
+    "summary": "Allocates count * 72 bytes via MFC80 operator new, throwing std::bad_alloc on 32-bit overflow.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x00621040": {
     "name": "CopyRecordRange_00621040",

@@ -979,3 +979,22 @@ void fn_00547E50(void* self) {
     reinterpret_cast<void (*)(void*)>(slot)(self);
 }
 } // namespace lift_00547E50
+
+// [0x00546570]
+namespace lift_00546570 {
+// @name Vec4::operator!=
+// @class Vec4
+// @summary Compares two 4-float vectors for inequality
+// @field Vec4 +0x00 float field_0x00
+// @field Vec4 +0x04 float field_0x04
+// @field Vec4 +0x08 float field_0x08
+// @field Vec4 +0x0c float field_0x0c
+
+
+bool __thiscall sub_00546570(const float* self, const float* other) {
+    return !(self[0] == other[0] &&
+             self[1] == other[1] &&
+             self[2] == other[2] &&
+             self[3] == other[3]);
+}
+} // namespace lift_00546570
