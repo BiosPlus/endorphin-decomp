@@ -1139,3 +1139,51 @@ void __cdecl sub_007CCAB0(void* self) {
     lift_field<float>(self, 0x3C) = 0.0f;
 }
 } // namespace lift_007CCAB0
+
+// [0x007C9D80]
+namespace lift_007C9D80 {
+extern const uint32_t mem_0099D148;
+extern void ext_007C9C90(void* out);
+
+// @name Unknown::InitStruct
+// @class Unknown
+// @summary Initializes struct fields to zero, sets +0x2C to FLT_MAX, and initializes float4 blocks at +0x30 and +0x40.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 float field_0x10
+// @field Unknown +0x14 float field_0x14
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x20 float field_0x20
+// @field Unknown +0x24 float field_0x24
+// @field Unknown +0x28 float field_0x28
+// @field Unknown +0x2C uint32_t field_0x2C
+// @field Unknown +0x30 float[4] field_0x30
+// @field Unknown +0x40 float[4] field_0x40
+// @field Unknown +0x50 uint32_t field_0x50
+// @field Unknown +0x54 float field_0x54
+// @field Unknown +0x58 float field_0x58
+void sub_007C9D80(void* obj) {
+    auto* base = static_cast<uint8_t*>(obj);
+
+    *reinterpret_cast<float*>(base + 0x10) = 0.0f;
+    *reinterpret_cast<float*>(base + 0x54) = 0.0f;
+    *reinterpret_cast<uint32_t*>(base + 0x50) = 0;
+    *reinterpret_cast<float*>(base + 0x58) = 0.0f;
+    *reinterpret_cast<uint32_t*>(base + 0x1C) = 0;
+    *reinterpret_cast<float*>(base + 0x24) = 0.0f;
+    *reinterpret_cast<uint32_t*>(base + 0x00) = 0;
+    *reinterpret_cast<float*>(base + 0x14) = 0.0f;
+    *reinterpret_cast<uint32_t*>(base + 0x04) = 0;
+    *reinterpret_cast<float*>(base + 0x20) = 0.0f;
+    *reinterpret_cast<uint32_t*>(base + 0x08) = 0;
+    *reinterpret_cast<float*>(base + 0x28) = 0.0f;
+    *reinterpret_cast<uint32_t*>(base + 0x0C) = 0;
+
+    *reinterpret_cast<uint32_t*>(base + 0x2C) = mem_0099D148;
+
+    ext_007C9C90(base + 0x30);
+    ext_007C9C90(base + 0x40);
+}
+} // namespace lift_007C9D80

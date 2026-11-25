@@ -1,0 +1,112 @@
+{
+  "va": "0x007C9D80",
+  "size": 79,
+  "orig_symbol": "sub_007C9D80",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "Unknown::InitStruct",
+  "class": "Unknown",
+  "signature": "void sub_007C9D80(void* obj)",
+  "summary": "Initializes struct fields to zero, sets +0x2C to FLT_MAX, and initializes float4 blocks at +0x30 and +0x40.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "float",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "float[4]",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "float[4]",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "uint32_t",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "float",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "float",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:48:01Z"
+}
