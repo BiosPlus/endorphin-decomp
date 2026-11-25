@@ -37895,6 +37895,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00678280 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00678520": {
+    "name": "XMLConverter::XMLConverter",
+    "class": "XMLConverter",
+    "signature": "void* fn_00678520(void* self)",
+    "summary": "Constructor: installs XMLConverter primary vtable and default-constructs the std::string member at +0x04; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00678880": {
     "name": "sub_00678880",
     "signature": "extern \"C\" void __fastcall fn_00678880(void* self)",

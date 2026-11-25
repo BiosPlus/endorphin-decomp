@@ -567,3 +567,24 @@ void* fn_00676780(void* self) {
     return self;
 }
 } // namespace lift_00676780
+
+// [0x00678520] sub_00678520 (70 bytes)
+namespace lift_00678520 {
+// Known callee 0x006290D8: MSVCP80 std::basic_string<char>::basic_string() (default ctor, thiscall).
+extern void ext_006290D8(void* self);
+
+// @name XMLConverter::XMLConverter
+// @class XMLConverter
+// @summary Constructor: installs XMLConverter primary vtable and default-constructs the std::string member at +0x04; returns this.
+// @field XMLConverter +0x00 uint32_t vfptr
+// @field XMLConverter +0x04 std::string field_0x04
+void* fn_00678520(void* self) {
+    // Install primary vtable (0x0098C1F4).
+    lift_field<uint32_t>(self, 0x00) = 0x0098C1F4u;
+
+    // Default-construct std::string at this+0x04 (original: call [mem_00924FE8] thiscall).
+    ext_006290D8(static_cast<uint8_t*>(self) + 0x04);
+
+    return self;
+}
+} // namespace lift_00678520
