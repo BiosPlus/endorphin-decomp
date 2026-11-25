@@ -1,0 +1,13 @@
+{
+  "va": "0x005B84E0",
+  "size": 87,
+  "orig_symbol": "sub_005B84E0",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "getOrInitStaticObject_005B84E0",
+  "signature": "extern \"C\" int mem_00B43CE8;   // once-init guard flags (bit 0) extern \"C\" int mem_00B43CE4;   // static object storage (first DWORD = vtable pointer) void* fn_005B84E0()",
+  "summary": "Returns the global object at 0x00B43CE4, initializing it once (guard bit 0 of 0x00B43CE8) and setting its vtable to 0x00961374.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:10:18Z"
+}

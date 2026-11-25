@@ -810,3 +810,25 @@ void* fn_005B8480() {
     return &mem_00B43CDC;
 }
 } // namespace lift_005B8480
+
+// [0x005B84E0] sub_005B84E0 (87 bytes)
+namespace lift_005B84E0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self, one stack argument;
+// stores the argument into the first DWORD of self and returns it).
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00B43CE8;   // once-init guard flags (bit 0)
+extern int mem_00B43CE4;   // static object storage (first DWORD = vtable pointer)
+
+// @name getOrInitStaticObject_005B84E0
+// @summary Returns the global object at 0x00B43CE4, initializing it once (guard bit 0 of 0x00B43CE8) and setting its vtable to 0x00961374.
+void* fn_005B84E0() {
+    // The original wraps this in an SEH frame (fs:[0] registration, handler 0x008A3C5E);
+    // that is not expressible portably and is omitted here.
+    if ((mem_00B43CE8 & 1) == 0) {
+        mem_00B43CE8 |= 1;
+        ext_0067A670(&mem_00B43CE4, 0);
+        mem_00B43CE4 = 0x00961374;
+    }
+    return &mem_00B43CE4;
+}
+} // namespace lift_005B84E0
