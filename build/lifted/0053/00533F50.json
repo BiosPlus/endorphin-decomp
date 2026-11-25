@@ -1,0 +1,27 @@
+{
+  "va": "0x00533F50",
+  "size": 92,
+  "orig_symbol": "sub_00533F50",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "setActiveViewport",
+  "signature": "void __thiscall sub_00533F50(void* self, int32_t index)",
+  "summary": "Sets OpenGL viewport and scissor rect from the indexed entry and records active index",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x8",
+      "type": "uint8_t[]",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Self",
+      "offset": "+0xFC",
+      "type": "int32_t",
+      "name": "field_0xfc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:15:31Z"
+}

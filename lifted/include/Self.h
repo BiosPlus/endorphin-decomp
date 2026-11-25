@@ -25,6 +25,7 @@ struct Self_Fields {
     // +0x4   void*                    ownedObject  (evidence: 0x005D0670, 0x005D9F30) // CONFLICT: multiple definitions at +0x4
     // +0x8   int32_t                  field_0x08  (evidence: 0x00492550) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 field_0x08  (evidence: 0x0041C570) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint8_t[]                field_0x08  (evidence: 0x00533F50) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_0x08  (evidence: 0x0041C540) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    lock  (evidence: 0x0067A670, 0x0067AE20) // CONFLICT: multiple definitions at +0x8
     // +0xC   DWORD                    field_0x0C  (evidence: 0x007B1E20) // CONFLICT: multiple definitions at +0xC
@@ -56,6 +57,7 @@ struct Self_Fields {
     // +0xF0  uint32_t                 field_0xF0  (evidence: 0x00704DA0) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  uint32_t                 field_0xf0  (evidence: 0x00704EB0) // CONFLICT: multiple definitions at +0xF0
     // +0xF8  std::string              field_0xf8  (evidence: 0x00551A20)
+    // +0xFC  int32_t                  field_0xfc  (evidence: 0x00533F50)
     // +0x114 void*                    field_114  (evidence: 0x00630580)
     // +0x11C int32_t                  field_0x11c  (evidence: 0x004329A0)
     // +0x150 uint32_t                 field_0x150  (evidence: 0x00687230, 0x00687280)

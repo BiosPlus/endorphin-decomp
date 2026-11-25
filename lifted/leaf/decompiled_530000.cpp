@@ -1319,3 +1319,29 @@ void fn_00530610(void* self, void* arg) {
     ext_005432A0(container, arg);
 }
 } // namespace lift_00530610
+
+// [0x00533F50]
+namespace lift_00533F50 {
+extern uint32_t mem_00925400; // OPENGL32!glViewport
+extern uint32_t mem_009253FC; // OPENGL32!glScissor
+
+// @name setActiveViewport
+// @summary Sets OpenGL viewport and scissor rect from the indexed entry and records active index
+// @field Self +0x08 uint8_t[] field_0x08
+// @field Self +0xFC int32_t field_0xfc
+void __thiscall sub_00533F50(void* self, int32_t index) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    uint8_t* entry = base + index * 60 + 8;
+
+    int32_t x1 = *reinterpret_cast<int32_t*>(entry + 0x04);
+    int32_t y1 = *reinterpret_cast<int32_t*>(entry + 0x08);
+    int32_t x2 = *reinterpret_cast<int32_t*>(entry + 0x0c);
+    int32_t y2 = *reinterpret_cast<int32_t*>(entry + 0x10);
+
+    using GlRectFn = void(__stdcall*)(int32_t, int32_t, int32_t, int32_t);
+    reinterpret_cast<GlRectFn>(static_cast<uintptr_t>(mem_00925400))(x1, y1, x2 - x1, y2 - y1);
+    reinterpret_cast<GlRectFn>(static_cast<uintptr_t>(mem_009253FC))(x1, y1, x2 - x1, y2 - y1);
+
+    *reinterpret_cast<int32_t*>(base + 0xfc) = index;
+}
+} // namespace lift_00533F50
