@@ -39313,6 +39313,13 @@
     "summary": "Pure jump thunk forwarding to sub_0063E500.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0063E5B0": {
+    "name": "Unknown::Unknown(const std::string\u0026, const std::string\u0026)",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_0063E5B0(void* self, const void* arg0, const void* arg1)",
+    "summary": "Constructs base with global u32 and first string, stamps vtable 0x0097CBEC, and copy-constructs std::string at +0x24 from second string.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063E610": {
     "name": "Unknown::Unknown",
     "class": "Unknown",

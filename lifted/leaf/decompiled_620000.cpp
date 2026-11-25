@@ -2557,3 +2557,21 @@ extern void* __cdecl fn_00621130(void* first, void* last, void* dst_last) {
     return reinterpret_cast<void*>(dst_u - static_cast<std::uintptr_t>(static_cast<std::int64_t>(record_bytes)));
 }
 } // namespace lift_00621130
+
+// [0x00621680]
+namespace lift_00621680 {
+// @name destroyStringPairRange
+// @summary Destroys a range of 0x48-byte elements, each containing two std::string members at +0x00 and +0x1C.
+// @field Element +0x00 std::string field_0x00
+// @field Element +0x1C std::string field_0x1c
+
+
+extern void(__thiscall* mem_00924FF4)(void* self);
+
+void __cdecl sub_00621680(uint8_t* begin, uint8_t* end) {
+    for (uint8_t* cur = begin; cur != end; cur += 0x48) {
+        mem_00924FF4(cur + 0x1C);
+        mem_00924FF4(cur);
+    }
+}
+} // namespace lift_00621680
