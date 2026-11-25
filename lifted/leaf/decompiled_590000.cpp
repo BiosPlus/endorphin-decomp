@@ -1643,3 +1643,34 @@ extern void __thiscall fn_005969C0(uint32_t self, uint32_t range, uint32_t arg2)
     ext_00678D70(self, 1);
 }
 } // namespace lift_005969C0
+
+// [0x0059B170]
+namespace lift_0059B170 {
+// @name StdMapString::find
+// @class StdMapString
+// @summary Finds a node by string key in a std::map-like tree, returning an iterator (or end() if not found).
+// @field StdMapString +0x04 uint32_t head
+
+
+extern uint32_t ext_0059B120(uint32_t self, uint32_t key);
+extern void (*mem_00925134)();
+extern uint8_t (*mem_00924EF4)(uint32_t lhs, uint32_t rhs);
+
+uint32_t sub_0059B170(uint32_t self, uint32_t out_iter, uint32_t key) {
+    uint32_t node = ext_0059B120(self, key);
+    if (self == 0) {
+        mem_00925134();
+    }
+    uint32_t head = *reinterpret_cast<uint32_t*>(self + 0x04);
+    uint32_t result_node = head;
+    if (node != head) {
+        uint8_t less = mem_00924EF4(key, node + 0x0C);
+        if (less == 0) {
+            result_node = node;
+        }
+    }
+    *reinterpret_cast<uint32_t*>(out_iter) = self;
+    *reinterpret_cast<uint32_t*>(out_iter + 0x04) = result_node;
+    return out_iter;
+}
+} // namespace lift_0059B170

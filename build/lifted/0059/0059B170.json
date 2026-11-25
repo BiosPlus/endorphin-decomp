@@ -1,0 +1,22 @@
+{
+  "va": "0x0059B170",
+  "size": 105,
+  "orig_symbol": "sub_0059B170",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "StdMapString::find",
+  "class": "StdMapString",
+  "signature": "uint32_t sub_0059B170(uint32_t self, uint32_t out_iter, uint32_t key)",
+  "summary": "Finds a node by string key in a std::map-like tree, returning an iterator (or end() if not found).",
+  "fields": [
+    {
+      "class": "StdMapString",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "head"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:07:00Z"
+}
