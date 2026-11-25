@@ -177,3 +177,41 @@ void fn_004E7E40(DWORD* first, DWORD* last) {
     }
 }
 } // namespace lift_004E7E40
+
+// [0x004EF790] sub_004EF790 (67 bytes)
+namespace lift_004EF790 {
+// Slot holding the address of std::operator==(const basic_string&, const basic_string&).
+extern uintptr_t mem_00924FC4;
+
+struct MismatchResult {
+    const uint8_t* first1;
+    const uint8_t* first2;
+};
+
+using StringEqFn = bool (*)(const void* lhs, const void* rhs);
+
+// @name MismatchStringRanges
+// @summary std::mismatch over two ranges of 28-byte std::string elements; returns the first differing iterator pair.
+// No direct field offsets are accessed (element stride 0x1C is only an iterator step), so no @field lines.
+MismatchResult* fn_004EF790(MismatchResult* out, const uint8_t* first1, const uint8_t* last1, const uint8_t* first2) {
+    constexpr std::size_t kStringStride = 0x1C;
+    const auto eq = reinterpret_cast<StringEqFn>(mem_00924FC4);
+
+    const uint8_t* a = first1;
+    const uint8_t* b = first2;
+
+    if (a != last1) {
+        while (eq(a, b)) {
+            a += kStringStride;
+            b += kStringStride;
+            if (a == last1) {
+                break;
+            }
+        }
+    }
+
+    out->first1 = a;
+    out->first2 = b;
+    return out;
+}
+} // namespace lift_004EF790

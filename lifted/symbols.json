@@ -14632,6 +14632,12 @@
     "summary": "Forwards virtual slot 0 to the first source object in the proxy's vector (tail call); returns the vector begin value when the vector is empty, or 0 when it is unset.",
     "lifted_path": "lifted/Properties/TargetSelectionProxy.cpp"
   },
+  "0x004EF790": {
+    "name": "MismatchStringRanges",
+    "signature": "MismatchResult* fn_004EF790(MismatchResult* out, const uint8_t* first1, const uint8_t* last1, const uint8_t* first2)",
+    "summary": "std::mismatch over two ranges of 28-byte std::string elements; returns the first differing iterator pair.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004EF970": {
     "name": "AllocRecord18",
     "class": "\u003cClassName\u003e (optional)",
