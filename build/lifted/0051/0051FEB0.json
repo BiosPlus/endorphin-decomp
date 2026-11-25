@@ -1,0 +1,28 @@
+{
+  "va": "0x0051FEB0",
+  "size": 59,
+  "orig_symbol": "sub_0051FEB0",
+  "src_path": "src/leaf/decompiled_510000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_510000.cpp",
+  "name": "sub_0051FEB0",
+  "class": "Vector",
+  "signature": "void fn_0051FEB0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
+  "fields": [
+    {
+      "class": "Vector",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:20:17Z"
+}

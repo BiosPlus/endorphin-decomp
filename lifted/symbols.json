@@ -8337,6 +8337,13 @@
     "summary": "Zeroes every uint32_t in [self-\u003e+0x08, self-\u003e+0x0C) equal to value; calls the invalid-parameter handler if begin \u003e end.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00481C50": {
+    "name": "sub_00481C50",
+    "class": "Vector",
+    "signature": "void fn_00481C50(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00481C90": {
     "name": "SortHeapRange",
     "signature": "void fn_00481C90(uint32_t* first, uint32_t* last, uint32_t pred)",
@@ -9027,6 +9034,13 @@
     "name": "sub_0048CDB0",
     "signature": "DWORD* __thiscall fn_0048CDB0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
+  "0x0048D350": {
+    "name": "sub_0048D350",
+    "class": "Vector",
+    "signature": "void fn_0048D350(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
   "0x0048DA40": {
@@ -17415,6 +17429,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x005015E0": {
+    "name": "sub_005015E0",
+    "class": "Vector",
+    "signature": "void fn_005015E0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00501EC0": {
     "name": "EvolveEngine::vfunc_0_off_10",
     "class": "EvolveEngine",
@@ -17699,6 +17720,13 @@
     "name": "sub_00506900",
     "signature": "uint32_t fn_00506900(uint32_t begin, uint32_t end, uint32_t value)",
     "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x00506CD0": {
+    "name": "sub_00506CD0",
+    "class": "Vector",
+    "signature": "void fn_00506CD0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
   "0x00506D10": {
@@ -18139,6 +18167,13 @@
     "class": "NMData::RealChannel",
     "signature": "void* __thiscall fn_00508310(const void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0051C6D0 (NMData::RealChannel::vfunc_4).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x0050C610": {
+    "name": "sub_0050C610",
+    "class": "Vector",
+    "signature": "void fn_0050C610(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
   "0x0050C770": {
@@ -19264,6 +19299,13 @@
     "summary": "Forwards a stack argument to the sub-object at +0x158; if it yields a nonzero result, calls ext_006721F0, otherwise calls Character::vfunc_2. Returns the first argument.",
     "lifted_path": "lifted/StateMachine/State.cpp"
   },
+  "0x0051EC00": {
+    "name": "sub_0051EC00",
+    "class": "Vector",
+    "signature": "void fn_0051EC00(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x0051F540": {
     "name": "sub_0051F540",
     "signature": "extern uint32_t fn_0051F540(uint32_t first, uint32_t last, uint32_t dest)",
@@ -19294,6 +19336,13 @@
     "signature": "intptr_t fn_0051F9C0(void* self)",
     "summary": "Thunk: forwards to slot 1 of the secondary vtable of the sub-object at this+0x154 (this-adjusted by +8), returning its result.",
     "lifted_path": "lifted/StateMachine/State.cpp"
+  },
+  "0x0051FEB0": {
+    "name": "sub_0051FEB0",
+    "class": "Vector",
+    "signature": "void fn_0051FEB0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
   "0x00520420": {
     "name": "StateMachine::State::vfunc_0",
@@ -23902,6 +23951,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x00578080": {
+    "name": "sub_00578080",
+    "class": "Vector",
+    "signature": "void fn_00578080(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00579680": {
     "name": "sub_00579680",
     "signature": "extern void* fn_00579680(void* first, void* last, void* destEnd)",
@@ -24006,6 +24062,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057CF80": {
+    "name": "sub_0057CF80",
+    "class": "Vector",
+    "signature": "void fn_0057CF80(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057DDF0": {
     "name": "sub_0057DDF0",
     "signature": "extern char* __cdecl fn_0057DDF0(char* first, char* last, char* dest)",
@@ -24082,6 +24145,13 @@
     "name": "sub_0057E8E0",
     "signature": "uint32_t fn_0057E8E0(uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3)",
     "summary": "Auto-lifted identical-shape clone of 0x0051AF30 (ComputeStride20Address).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057E9A0": {
+    "name": "sub_0057E9A0",
+    "class": "Vector",
+    "signature": "void fn_0057E9A0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
   "0x0057E9E0": {
@@ -45781,11 +45851,32 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00688E90": {
+    "name": "sub_00688E90",
+    "class": "Vector",
+    "signature": "void fn_00688E90(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00688ED0": {
     "name": "sub_00688ED0",
     "signature": "extern \"C\" void fn_00688ED0(void)",
     "summary": "Pure jump thunk forwarding to sub_00688B50.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x00688EE0": {
+    "name": "sub_00688EE0",
+    "class": "Vector",
+    "signature": "void fn_00688EE0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x00688F20": {
+    "name": "sub_00688F20",
+    "class": "Vector",
+    "signature": "void fn_00688F20(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x00689570": {
     "name": "VTableDispatch::GetTableEntry28ViaSlot30",
@@ -46638,6 +46729,13 @@
     "name": "sub_0069A1C0",
     "signature": "DWORD* __thiscall fn_0069A1C0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
+  "0x0069A260": {
+    "name": "sub_0069A260",
+    "class": "Vector",
+    "signature": "void fn_0069A260(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
   "0x0069A820": {
@@ -67275,6 +67373,12 @@
     "class": "\u003cunknown\u003e",
     "signature": "uint16_t ReturnZeroWord()",
     "summary": "Returns zero in the low 16 bits of the result register (xor ax, ax; ret).",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
+  "0x007D48B0": {
+    "name": "sub_007D48B0",
+    "signature": "int32_t fn_007D48B0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D47A0 (Diff_0x14_minus_0x0C).",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
   "0x007D4920": {

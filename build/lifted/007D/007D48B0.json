@@ -1,0 +1,27 @@
+{
+  "va": "0x007D48B0",
+  "size": 11,
+  "orig_symbol": "sub_007D48B0",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "sub_007D48B0",
+  "signature": "int32_t fn_007D48B0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x007D47A0 (Diff_0x14_minus_0x0C).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "int32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:20:17Z"
+}

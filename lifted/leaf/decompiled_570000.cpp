@@ -1273,3 +1273,114 @@ DWORD* __cdecl fn_0057DFB0(const DWORD* first, const DWORD* last, DWORD* out) {
 }
 } // namespace lift_0057BDF0
 } // namespace lift_0057DFB0
+
+// [0x00578080] sub_00578080 (59 bytes)
+namespace lift_00578080 {
+// @name sub_00578080
+// @summary Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).
+namespace lift_0044C500 {
+// Known callee 0x0044C460: Vector::eraseRange (Validates an owner/range pair, moves [last,end) down to first, shrinks end, and writes {first_or_owner, first} to out.)
+extern void ext_00577B10(void* ecx, uint32_t* out, uint32_t owner, uint32_t first,
+                         uint32_t owner_expected, uint32_t last);
+
+// IAT slot for MSVCR80!_invalid_parameter_noinfo, called through a pointer when a range check fails.
+extern void (*mem_00925134)(void);
+
+// @name Vector::clear
+// @class Vector
+// @summary Validates begin <= end, then calls Vector::eraseRange(begin, end) so the vector's end is reset to begin.
+// @field Vector +0x04 uint32_t field_0x04
+// @field Vector +0x08 uint32_t field_0x08
+void fn_00578080(void* self) {
+    uint32_t self_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    uint32_t begin = lift_field<uint32_t>(self, 0x04);
+    uint32_t end = lift_field<uint32_t>(self, 0x08);
+
+    if (begin > end) {
+        mem_00925134();
+    }
+
+    begin = lift_field<uint32_t>(self, 0x04);
+    if (begin > lift_field<uint32_t>(self, 0x08)) {
+        mem_00925134();
+    }
+
+    uint32_t out[2] = {0, 0};
+    ext_00577B10(self, out, self_addr, begin, self_addr, end);
+}
+} // namespace lift_0044C500
+} // namespace lift_00578080
+
+// [0x0057CF80] sub_0057CF80 (59 bytes)
+namespace lift_0057CF80 {
+// @name sub_0057CF80
+// @summary Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).
+namespace lift_0044C500 {
+// Known callee 0x0044C460: Vector::eraseRange (Validates an owner/range pair, moves [last,end) down to first, shrinks end, and writes {first_or_owner, first} to out.)
+extern void ext_0057CEE0(void* ecx, uint32_t* out, uint32_t owner, uint32_t first,
+                         uint32_t owner_expected, uint32_t last);
+
+// IAT slot for MSVCR80!_invalid_parameter_noinfo, called through a pointer when a range check fails.
+extern void (*mem_00925134)(void);
+
+// @name Vector::clear
+// @class Vector
+// @summary Validates begin <= end, then calls Vector::eraseRange(begin, end) so the vector's end is reset to begin.
+// @field Vector +0x04 uint32_t field_0x04
+// @field Vector +0x08 uint32_t field_0x08
+void fn_0057CF80(void* self) {
+    uint32_t self_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    uint32_t begin = lift_field<uint32_t>(self, 0x04);
+    uint32_t end = lift_field<uint32_t>(self, 0x08);
+
+    if (begin > end) {
+        mem_00925134();
+    }
+
+    begin = lift_field<uint32_t>(self, 0x04);
+    if (begin > lift_field<uint32_t>(self, 0x08)) {
+        mem_00925134();
+    }
+
+    uint32_t out[2] = {0, 0};
+    ext_0057CEE0(self, out, self_addr, begin, self_addr, end);
+}
+} // namespace lift_0044C500
+} // namespace lift_0057CF80
+
+// [0x0057E9A0] sub_0057E9A0 (59 bytes)
+namespace lift_0057E9A0 {
+// @name sub_0057E9A0
+// @summary Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).
+namespace lift_0044C500 {
+// Known callee 0x0044C460: Vector::eraseRange (Validates an owner/range pair, moves [last,end) down to first, shrinks end, and writes {first_or_owner, first} to out.)
+extern void ext_0057E870(void* ecx, uint32_t* out, uint32_t owner, uint32_t first,
+                         uint32_t owner_expected, uint32_t last);
+
+// IAT slot for MSVCR80!_invalid_parameter_noinfo, called through a pointer when a range check fails.
+extern void (*mem_00925134)(void);
+
+// @name Vector::clear
+// @class Vector
+// @summary Validates begin <= end, then calls Vector::eraseRange(begin, end) so the vector's end is reset to begin.
+// @field Vector +0x04 uint32_t field_0x04
+// @field Vector +0x08 uint32_t field_0x08
+void fn_0057E9A0(void* self) {
+    uint32_t self_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    uint32_t begin = lift_field<uint32_t>(self, 0x04);
+    uint32_t end = lift_field<uint32_t>(self, 0x08);
+
+    if (begin > end) {
+        mem_00925134();
+    }
+
+    begin = lift_field<uint32_t>(self, 0x04);
+    if (begin > lift_field<uint32_t>(self, 0x08)) {
+        mem_00925134();
+    }
+
+    uint32_t out[2] = {0, 0};
+    ext_0057E870(self, out, self_addr, begin, self_addr, end);
+}
+} // namespace lift_0044C500
+} // namespace lift_0057E9A0
