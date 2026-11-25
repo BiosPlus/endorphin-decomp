@@ -59761,6 +59761,12 @@
     "summary": "Dispatches two virtual/table callbacks via *(arg1 + 0x1cc) at offsets +0xc and +0x10",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BFC90": {
+    "name": "WriteChunkedThenFinish",
+    "signature": "void fn_007BFC90(void* self, uint8_t* dst, int32_t total, int32_t extra)",
+    "summary": "Writes `total` bytes from `dst` in steps of the sink's chunk size via its write callback, then invokes its finish callback with the full range.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BFCF0": {
     "name": "Unknown::StoreWordOrForward_007BFCF0",
     "class": "Unknown",

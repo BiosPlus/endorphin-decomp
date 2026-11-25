@@ -207,6 +207,7 @@ struct Unknown_Fields {
     // +0x8   void* field_0x08 (child pointer table base; element i at +0x08 + 60*i)  (evidence: 0x00540D00) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 begin  (evidence: 0x00412E20) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    child  (evidence: 0x0041C710, 0x00441020, 0x0044B660, 0x0044B680, 0x0044B760, 0x0053A5E0, 0x005A2BD0, 0x00682DE0, 0x00687230) // CONFLICT: multiple definitions at +0x8
+    // +0x8   int32_t                  chunkSize  (evidence: 0x007BFC90) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 count  (evidence: 0x007D8470, 0x007D9610) // CONFLICT: multiple definitions at +0x8
     // +0x8   int32_t                  cursor  (evidence: 0x0077F4E0) // CONFLICT: multiple definitions at +0x8
     // +0x8   float field_0x08 (read via both pointer args: ecx and eax)  (evidence: 0x007FC2B0) // CONFLICT: multiple definitions at +0x8
@@ -310,6 +311,7 @@ struct Unknown_Fields {
     // +0xC   int32_t                  tag  (evidence: 0x007155B0, 0x00715710) // CONFLICT: multiple definitions at +0xC
     // +0xC   pointer                  vecHolder  (evidence: 0x0067AEB0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0C (sub-object that receives the value via vfunc_8)  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x005853E0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   WriteFn                  writeChunk  (evidence: 0x007BFC90) // CONFLICT: multiple definitions at +0xC
     // +0xC   DWORD field_0x0C (capacity pointer, zeroed)  (evidence: 0x00505D00, 0x0050C4D0) // CONFLICT: multiple definitions at +0xC
     // +0xD   uint8_t                  field_0x0d  (evidence: 0x004429C0)
     // +0x10  uint32_t field_0x10      (slot[1])  (evidence: 0x00553A30) // CONFLICT: multiple definitions at +0x10
@@ -397,6 +399,7 @@ struct Unknown_Fields {
     // +0x18  uint8_t                  field_0x18  (evidence: 0x00538530, 0x00538550, 0x0053F6A0, 0x00553980, 0x00553A10) // CONFLICT: multiple definitions at +0x18
     // +0x18  void**                   field_0x18  (evidence: 0x00517360) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t                 field_0x18[256]  (evidence: 0x00789940) // CONFLICT: multiple definitions at +0x18
+    // +0x18  FinishFn                 finish  (evidence: 0x007BFC90) // CONFLICT: multiple definitions at +0x18
     // +0x18  int32_t                  flag  (evidence: 0x007D4720) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t flags (of the stack argument `arg`; class not identified)  (evidence: 0x004561C0) // CONFLICT: multiple definitions at +0x18
     // +0x18  float                    m12  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x18
@@ -958,7 +961,7 @@ struct Unknown_Fields {
     // +0x1CC void* field_0x1cc (pointer to a handle-holder object; freed via GlobalFree)  (evidence: 0x007B89BC, 0x007BD340) // CONFLICT: multiple definitions at +0x1CC
     // +0x1CC void*                    field_0x1CC  (evidence: 0x007B89BC, 0x007BFCF0) // CONFLICT: multiple definitions at +0x1CC
     // +0x1CC uint32_t                 field_0x1cc  (evidence: 0x007B89BC, 0x007BE010) // CONFLICT: multiple definitions at +0x1CC
-    // +0x1CC void*                    field_0x1cc  (evidence: 0x007B89BC, 0x007BEDA0, 0x007BFD40) // CONFLICT: multiple definitions at +0x1CC
+    // +0x1CC void*                    field_0x1cc  (evidence: 0x007B89BC, 0x007BEDA0, 0x007BFC90, 0x007BFD40) // CONFLICT: multiple definitions at +0x1CC
     // +0x1D0 int32_t                  field_0x1D0  (evidence: 0x007B89BC, 0x007BF4A0) // CONFLICT: multiple definitions at +0x1D0
     // +0x1D0 void*                    field_1D0  (evidence: 0x005B0E60, 0x005B6BC0) // CONFLICT: multiple definitions at +0x1D0
     // +0x1D4 LONG field_0x1D4 (read through the pointer stored at +0xB4)  (evidence: 0x0053F9D0) // CONFLICT: multiple definitions at +0x1D4

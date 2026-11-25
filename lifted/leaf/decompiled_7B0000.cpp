@@ -1093,3 +1093,35 @@ void fn_007BC120(void* self, float* out, std::int32_t count) {
     }
 }
 } // namespace lift_007BC120
+
+// [0x007BFC90] sub_007BFC90 (81 bytes)
+namespace lift_007BFC90 {
+// @name WriteChunkedThenFinish
+// @summary Writes `total` bytes from `dst` in steps of the sink's chunk size via its write callback, then invokes its finish callback with the full range.
+// @field Unknown +0x1cc void* field_0x1cc
+// @field Unknown +0x08 int32_t chunkSize
+// @field Unknown +0x0c WriteFn writeChunk
+// @field Unknown +0x18 FinishFn finish
+
+using WriteFn = void (*)(void* self, uint8_t* data, int32_t size);
+using FinishFn = void (*)(void* self, uint8_t* data, int32_t total, int32_t extra);
+
+void fn_007BFC90(void* self, uint8_t* dst, int32_t total, int32_t extra) {
+    void* sink = lift_field<void*>(self, 0x1cc);
+    int32_t chunk = lift_field<int32_t>(sink, 0x08);
+    WriteFn writeChunk = lift_field<WriteFn>(sink, 0x0c);
+
+    uint8_t* cursor = dst;
+    int32_t remaining = total;
+    if (remaining > 0) {
+        do {
+            writeChunk(self, cursor, chunk);
+            remaining -= chunk;
+            cursor += chunk;
+        } while (remaining > 0);
+    }
+
+    FinishFn finish = lift_field<FinishFn>(sink, 0x18);
+    finish(self, dst, total, extra);
+}
+} // namespace lift_007BFC90
