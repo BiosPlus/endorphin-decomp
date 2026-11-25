@@ -1484,3 +1484,17 @@ void __cdecl copyVec3FromStride32Array(const void* base, UINT index, float* out)
     out[2] = *reinterpret_cast<const float*>(elem + 0x8);
 }
 } // namespace lift_007C9310
+
+// [0x007CA790] sub_007CA790 (35 bytes)
+namespace lift_007CA790 {
+// @name dotVec3
+// @summary Returns the 3-component dot product of two float[3] vectors, summed as (y*y' + x*x') + z*z'.
+float fn_007CA790(const float* self, const float* other) {
+    // Matches original x87 evaluation order: (a[1]*b[1] + a[0]*b[0]) + a[2]*b[2].
+    // Result is rounded to single precision (original stored via fstp dword).
+    float t = self[1] * other[1];
+    t += self[0] * other[0];
+    t += self[2] * other[2];
+    return t;
+}
+} // namespace lift_007CA790

@@ -69986,6 +69986,12 @@
     "summary": "Writes dst[i] = src[i] * s for i in 0..2 (3-float vector scale; dst and src are float[3] pointers, s is a float scalar).",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CA790": {
+    "name": "dotVec3",
+    "signature": "float fn_007CA790(const float* self, const float* other)",
+    "summary": "Returns the 3-component dot product of two float[3] vectors, summed as (y*y' + x*x') + z*z'.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CA7C0": {
     "name": "Matrix4x4::transformPoint",
     "class": "Matrix4x4",
