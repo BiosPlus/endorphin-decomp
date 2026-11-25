@@ -927,3 +927,39 @@ bool __thiscall fn_005703C0(void* self, void* stream) {
     return true;
 }
 } // namespace lift_005703C0
+
+// [0x0057BB90]
+namespace lift_0057BB90 {
+// @name copyBackwardStruct3C
+// @summary Copies a range of 0x3C-byte structs backward, assigning two embedded std::strings.
+// @field Struct3C +0x00 uint8_t field_0x00
+// @field Struct3C +0x01 uint8_t field_0x01
+// @field Struct3C +0x04 std::string field_0x04
+// @field Struct3C +0x20 std::string field_0x20
+
+
+extern uint32_t mem_00924FDC;
+
+uint32_t __cdecl sub_0057BB90(uint32_t first, uint32_t last, uint32_t d_last) {
+    if (first == last) {
+        return d_last;
+    }
+
+    uint32_t esi = last;
+    uint32_t edi = d_last;
+
+    using StringAssignFn = uint32_t(__thiscall*)(uint32_t, uint32_t);
+    auto string_assign = reinterpret_cast<StringAssignFn>(mem_00924FDC);
+
+    do {
+        esi -= 0x3C;
+        edi -= 0x3C;
+        *reinterpret_cast<uint8_t*>(edi) = *reinterpret_cast<uint8_t*>(esi);
+        *reinterpret_cast<uint8_t*>(edi + 1) = *reinterpret_cast<uint8_t*>(esi + 1);
+        string_assign(edi + 4, esi + 4);
+        string_assign(edi + 0x20, esi + 0x20);
+    } while (esi != first);
+
+    return edi;
+}
+} // namespace lift_0057BB90

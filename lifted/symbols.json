@@ -22257,6 +22257,12 @@
     "summary": "Default-constructs two std::string members (at +0x00 and +0x1C) and returns this.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057BB90": {
+    "name": "copyBackwardStruct3C",
+    "signature": "uint32_t __cdecl sub_0057BB90(uint32_t first, uint32_t last, uint32_t d_last)",
+    "summary": "Copies a range of 0x3C-byte structs backward, assigning two embedded std::strings.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057BBE0": {
     "name": "sub_00573A10",
     "class": "Unknown",
@@ -46554,6 +46560,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006B3AB0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B3C40": {
+    "name": "GWCRGBPropertyValue::vfunc_1",
+    "class": "GWCRGBPropertyValue",
+    "signature": "void __thiscall fn_006B3C40( void* self, void* dc, int32_t left, int32_t top, int32_t right, int32_t bottom, uint32_t arg6, uint32_t arg7)",
+    "summary": "Draws an RGB property value swatch if its type/state at +0x04 equals 0x64.",
+    "lifted_path": "lifted/classes/GWCRGBPropertyValue.cpp"
+  },
   "0x006B3C90": {
     "name": "sub_006B3C90",
     "signature": "__thiscall void* fn_006B3C90(void* self, DWORD arg1, DWORD arg2)",
@@ -49423,6 +49436,12 @@
     "summary": "Loads the pointer at self+0x14 and returns the uint32 stored at that object's +0x98 offset.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006DE460": {
+    "name": "sub_006DE460",
+    "signature": "extern \"C\" void __thiscall fn_006DE460(void* self)",
+    "summary": "Destroys subobject at +0x4c and base object via sub_006B9D70.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DE660": {
     "name": "getItemAt",
     "signature": "uint32_t __thiscall fn_006DE660(uint32_t self, int32_t index)",
@@ -49513,6 +49532,12 @@
     "class": "Vec4d",
     "signature": "void fn_006E00C0(void* out, const void* src, double scale)",
     "summary": "Writes out[i] = src[i] * scale for the four doubles of a Vec4d (scale passed by value).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
+  "0x006E0940": {
+    "name": "quatToYAxis",
+    "signature": "void __cdecl sub_006E0940(double* dst, const double* q)",
+    "summary": "Converts a quaternion (x, y, z, w) into the Y-axis basis vector of its rotation matrix",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
   "0x006E3660": {

@@ -1,0 +1,39 @@
+{
+  "va": "0x0057BB90",
+  "size": 79,
+  "orig_symbol": "sub_0057BB90",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "copyBackwardStruct3C",
+  "signature": "uint32_t __cdecl sub_0057BB90(uint32_t first, uint32_t last, uint32_t d_last)",
+  "summary": "Copies a range of 0x3C-byte structs backward, assigning two embedded std::strings.",
+  "fields": [
+    {
+      "class": "Struct3C",
+      "offset": "+0x0",
+      "type": "uint8_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Struct3C",
+      "offset": "+0x1",
+      "type": "uint8_t",
+      "name": "field_0x01"
+    },
+    {
+      "class": "Struct3C",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Struct3C",
+      "offset": "+0x20",
+      "type": "std::string",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:53:46Z"
+}
