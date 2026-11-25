@@ -53718,6 +53718,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x0 and tail-calls sub_0072B180.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x0072B1E0": {
+    "name": "Unknown::ReplaceSubobjectValue",
+    "class": "Unknown",
+    "signature": "void fn_0072B1E0(void* self, DWORD value)",
+    "summary": "Releases the old word at subobject+0x08 via MFC80 ord_764, stores the argument at subobject+0x04, runs sub_0072B180 on the subobject, and stores any non-null result (passed through MFC80 ord_762) back at subobject+0x08.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x0072B220": {
     "name": "Unknown::allocZeroedBlock12",
     "class": "Unknown",

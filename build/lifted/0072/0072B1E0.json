@@ -1,0 +1,34 @@
+{
+  "va": "0x0072B1E0",
+  "size": 64,
+  "orig_symbol": "sub_0072B1E0",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "Unknown::ReplaceSubobjectValue",
+  "class": "Unknown",
+  "signature": "void fn_0072B1E0(void* self, DWORD value)",
+  "summary": "Releases the old word at subobject+0x08 via MFC80 ord_764, stores the argument at subobject+0x04, runs sub_0072B180 on the subobject, and stores any non-null result (passed through MFC80 ord_762) back at subobject+0x08.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (pointer to subobject; dereferenced to reach",
+      "name": "+0x04/+0x08)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD field_0x04 (subobject field; receives stack",
+      "name": "argument)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void* field_0x08 (subobject field; old value released, then replaced with",
+      "name": "result)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:08:32Z"
+}

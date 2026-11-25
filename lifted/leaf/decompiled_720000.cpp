@@ -438,3 +438,32 @@ uint32_t fn_00725300(void* self, uint32_t a1) {
 
 } // namespace lift_00725300
 } // namespace lift_00725300
+
+// [0x0072B1E0] sub_0072B1E0 (64 bytes)
+namespace lift_0072B1E0 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* arg);
+// Known callee 0x0072B180: sub_0072D620 (MSVC scalar deleting destructor: calls sub_0072D640 and frees memory when (flags & 1) is set.)
+extern void* ext_0072B180(void* self);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void* ext_006A5C62(void* arg);
+
+// @name Unknown::ReplaceSubobjectValue
+// @class Unknown
+// @summary Releases the old word at subobject+0x08 via MFC80 ord_764, stores the argument at subobject+0x04, runs sub_0072B180 on the subobject, and stores any non-null result (passed through MFC80 ord_762) back at subobject+0x08.
+// @field Unknown +0x00 void* field_0x00 (pointer to subobject; dereferenced to reach +0x04/+0x08)
+// @field Unknown +0x04 DWORD field_0x04 (subobject field; receives stack argument)
+// @field Unknown +0x08 void* field_0x08 (subobject field; old value released, then replaced with result)
+void fn_0072B1E0(void* self, DWORD value) {
+    void* sub = lift_field<void*>(self, 0x00);
+    void* old = lift_field<void*>(sub, 0x08);
+    ext_006A5C5C(old);
+    lift_field<void*>(sub, 0x08) = nullptr;
+    lift_field<DWORD>(sub, 0x04) = value;
+    void* result = ext_0072B180(sub);
+    if (result != nullptr) {
+        result = ext_006A5C62(result);
+        lift_field<void*>(sub, 0x08) = result;
+    }
+}
+} // namespace lift_0072B1E0

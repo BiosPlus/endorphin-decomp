@@ -11,6 +11,7 @@ struct Unknown_Fields {
     // +0x0   void* field_0x00 (arg1: loaded to obtain the forwarding "this")  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   FILE* file               (inner+0x00)  (evidence: 0x007833F0, 0x00788E50) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t vtable          (vptr)  (evidence: 0x006BB7D0, 0x006E7F90, 0x006E7FB0, 0x006E7FC0, 0x006E7FD0, 0x006E7FE0, 0x006E7FF0, 0x006E8000, 0x006E8010, 0x006E8020, 0x006E8030, 0x006E8040, 0x006E86B0, 0x006E8810, 0x0072B1C0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void* field_0x00 (pointer to subobject; dereferenced to reach +0x04/+0x08)  (evidence: 0x0072B1E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* vtable vtable pointer (dereferenced to fetch slot 2 at +0x08)  (evidence: 0x004DDE10) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* vtable (dereferenced to locate slot +0x184)  (evidence: 0x00456280) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (vtable pointer, dereferenced to read slot +0x80)  (evidence: 0x006E7F90, 0x006E8050, 0x006E8060, 0x006E8070, 0x006E8080) // CONFLICT: multiple definitions at +0x0
@@ -103,6 +104,7 @@ struct Unknown_Fields {
     // +0x4   uint8_t openFlag         (inner+0x04)  (evidence: 0x007833F0, 0x00788E50) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (arg2: sub-object pointer read at +0x4)  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t field_0x04 (type code read from inner struct; compared against 2)  (evidence: 0x006B2F70, 0x006BB790) // CONFLICT: multiple definitions at +0x4
+    // +0x4   DWORD field_0x04 (subobject field; receives stack argument)  (evidence: 0x0072B1E0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (inner object of the context argument)  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x005853E0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (sub-object pointer read from the NM::Vector3 const & argument)  (evidence: 0x005B80A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 begin  (evidence: 0x0067F9D0) // CONFLICT: multiple definitions at +0x4
@@ -201,6 +203,7 @@ struct Unknown_Fields {
     // +0x8   uint32_t field_0x08 (end pointer)  (evidence: 0x005731D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void* field_0x08 (next link pointer)  (evidence: 0x0046FB80, 0x00476B80, 0x00486D40, 0x004928C0, 0x0052A1A0, 0x005AC820, 0x005E0AE0, 0x005E2C70, 0x00624CF0, 0x0065B120) // CONFLICT: multiple definitions at +0x8
     // +0x8   int32_t                  rectTop  (evidence: 0x00540DD0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void* field_0x08 (subobject field; old value released, then replaced with result)  (evidence: 0x0072B1E0) // CONFLICT: multiple definitions at +0x8
     // +0x8   float                    src_z  (evidence: 0x007CA310) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    str_obj  (evidence: 0x006408F0, 0x00648A20) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    stringPtr  (evidence: 0x00640940) // CONFLICT: multiple definitions at +0x8
