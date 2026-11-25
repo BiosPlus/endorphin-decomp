@@ -21234,6 +21234,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0xC and tail-calls sub_004026E0.",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x00557280": {
+    "name": "Unknown::ReleaseStringMembers_00557280",
+    "class": "Unknown",
+    "signature": "void fn_00557280(void* self)",
+    "summary": "Releases the StringArray at +0x28 and destroys the std::string at +0x0C of the object.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x005572D0": {
     "name": "sub_005572D0",
     "class": "(none)",

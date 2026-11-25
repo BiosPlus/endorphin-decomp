@@ -1069,3 +1069,29 @@ void* fn_0055F340(void* begin, void* end, const float* key) {
     return first;
 }
 } // namespace lift_0055F340
+
+// [0x00557280] sub_00557280 (78 bytes)
+namespace lift_00557280 {
+// Known callee 0x004026E0: StringArray::ReleaseElements (Destroys each 28-byte string element in the array, frees its buffer, and nulls the begin/end/capacity pointers.)
+extern void ext_004026E0(void* self);
+// Import slot 0x00924FF4: MSVCP80 std::basic_string<char>::~basic_string (thiscall, this in ECX).
+extern int mem_00924FF4;
+
+// @name Unknown::ReleaseStringMembers_00557280
+// @class Unknown
+// @summary Releases the StringArray at +0x28 and destroys the std::string at +0x0C of the object.
+// @field Unknown +0x0C std::string field_0x0c
+// @field Unknown +0x28 StringArray field_0x28
+void fn_00557280(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Destroy the array of strings embedded at +0x28.
+    ext_004026E0(base + 0x28);
+
+    // Destroy the std::string embedded at +0x0C via its imported destructor.
+    using DtorFn = void (*)(void*);
+    auto dtor = reinterpret_cast<DtorFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    dtor(base + 0x0C);
+}
+} // namespace lift_00557280
