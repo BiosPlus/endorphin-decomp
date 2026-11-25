@@ -8,6 +8,6 @@
 // Recovered field layout for field_0x78:
 namespace lifted_layout {
 struct field_0x78_Fields {
-    // +0x78  uint32_t field_0x78 (bits set/cleared by mask)  (evidence: 0x00711CF0)
+    // +0x78  uint32_t field_0x78 (bits set/cleared by mask)  (evidence: 0x00711CF0, 0x007155B0)
 };
 } // namespace lifted_layout
