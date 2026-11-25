@@ -20104,6 +20104,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00557A10": {
+    "name": "Unknown::ReleaseAndThrowNull",
+    "class": "Unknown (optional)",
+    "signature": "void fn_00557A10(void* self)",
+    "summary": "Releases the handle held by self via ext_00557920, then raises a C++ exception with null object and null ThrowInfo.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x005587E0": {
     "name": "sub_005587E0",
     "class": "Unknown",

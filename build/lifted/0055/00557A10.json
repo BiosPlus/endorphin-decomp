@@ -1,0 +1,14 @@
+{
+  "va": "0x00557A10",
+  "size": 17,
+  "orig_symbol": "sub_00557A10",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "Unknown::ReleaseAndThrowNull",
+  "class": "Unknown (optional)",
+  "signature": "void fn_00557A10(void* self)",
+  "summary": "Releases the handle held by self via ext_00557920, then raises a C++ exception with null object and null ThrowInfo.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:03:21Z"
+}
