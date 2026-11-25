@@ -956,3 +956,23 @@ void fn_007C8490(uint32_t a1, uint32_t a2, float a3, float a4, void* self) {
     ext_007C7330(obj, a1, a2, a3, a4);
 }
 } // namespace lift_007C8490
+
+// [0x007C9D30] sub_007C9D30 (69 bytes)
+namespace lift_007C9D30 {
+// @name Unknown::storeClampedUnitFloat
+// @class Unknown
+// @summary Clamps a float to [0,1] (NaN yields 1.0) and stores it at self+0x0C.
+// @field Unknown +0x0C float field_0x0C
+void fn_007C9D30(uint8_t* self, float value) {
+    // x87 path: value < 0 -> 0.0; value > 1 (or NaN) -> 1.0; otherwise value.
+    float result;
+    if (value < 0.0f) {
+        result = 0.0f;
+    } else if (value <= 1.0f) {
+        result = value;
+    } else {
+        result = 1.0f;
+    }
+    std::memcpy(self + 0x0C, &result, sizeof(float));
+}
+} // namespace lift_007C9D30

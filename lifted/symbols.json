@@ -57930,6 +57930,13 @@
     "summary": "Sets float field at offset +0x8 to the absolute value of the input float.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007C9D30": {
+    "name": "Unknown::storeClampedUnitFloat",
+    "class": "Unknown",
+    "signature": "void fn_007C9D30(uint8_t* self, float value)",
+    "summary": "Clamps a float to [0,1] (NaN yields 1.0) and stores it at self+0x0C.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C9DD0": {
     "name": "addOffset0x30",
     "signature": "uint32_t sub_007C9DD0(uint32_t arg0)",
