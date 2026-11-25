@@ -1101,3 +1101,24 @@ extern void __thiscall fn_00455EB0(uintptr_t self) {
     ext_006A679C(self);
 }
 } // namespace lift_00455EB0
+
+// [0x0045C1C0]
+namespace lift_0045C1C0 {
+extern uint32_t (__stdcall *mem_00925694)(uint32_t hWnd, uint32_t Msg, uint32_t wParam, uint32_t lParam);
+extern void (__thiscall *ext_006A6442)(void* self, uint32_t hItem, uint32_t nMask, uint32_t lpszItem, uint32_t nImage, uint32_t nSelectedImage, uint32_t nState, uint32_t nStateMask, uint32_t lParam);
+extern uint32_t (__thiscall *ext_0045BF30)(void* self, uint32_t hItem);
+
+// @name CTreeCtrl::clearAllItemStates
+// @class CTreeCtrl
+// @summary Clears selected and bold states on all items in the tree control.
+// @field CTreeCtrl +0x20 uint32_t m_hWnd
+void __thiscall fn_0045C1C0(void* self) {
+    uint32_t hWnd = *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x20);
+    uint32_t hItem = mem_00925694(hWnd, 0x110A, 0, 0);
+    while (hItem != 0) {
+        ext_006A6442(self, hItem, 8, 0, 0, 0, 0, 2, 0);
+        ext_006A6442(self, hItem, 8, 0, 0, 0, 0, 0x10, 0);
+        hItem = ext_0045BF30(self, hItem);
+    }
+}
+} // namespace lift_0045C1C0

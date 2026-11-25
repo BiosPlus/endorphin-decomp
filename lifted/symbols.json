@@ -3280,6 +3280,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00434380 (Unknown::notifyObjectWithQueryResult).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00434700": {
+    "name": "DispatchConditionCheck",
+    "signature": "uint32_t __thiscall fn_00434700(uint32_t self, uint32_t arg0)",
+    "summary": "Evaluates three conditions and tail-calls arg0's vtable[0] with the boolean result.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00434760": {
     "name": "CheckStateAndFieldThenNotify",
     "signature": "int32_t __thiscall fn_00434760(void* self, void* arg1)",
@@ -6143,6 +6149,13 @@
     "name": "WalkAndNotifyItems",
     "signature": "extern \"C\" void __thiscall fn_0045C090(void* self, uint32_t item)",
     "summary": "Iteratively calls MFC80_ord_2867 and sub_0045BF30 on a node chain until null.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
+  "0x0045C1C0": {
+    "name": "CTreeCtrl::clearAllItemStates",
+    "class": "CTreeCtrl",
+    "signature": "void __thiscall fn_0045C1C0(void* self)",
+    "summary": "Clears selected and bold states on all items in the tree control.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
   "0x0045C2C0": {

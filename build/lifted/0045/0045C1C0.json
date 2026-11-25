@@ -1,0 +1,22 @@
+{
+  "va": "0x0045C1C0",
+  "size": 93,
+  "orig_symbol": "sub_0045C1C0",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "CTreeCtrl::clearAllItemStates",
+  "class": "CTreeCtrl",
+  "signature": "void __thiscall fn_0045C1C0(void* self)",
+  "summary": "Clears selected and bold states on all items in the tree control.",
+  "fields": [
+    {
+      "class": "CTreeCtrl",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "m_hWnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:17:24Z"
+}

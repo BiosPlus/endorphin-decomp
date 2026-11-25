@@ -9,6 +9,7 @@
 // Recovered field layout for CTreeCtrl:
 namespace lifted_layout {
 struct CTreeCtrl_Fields {
-    // +0x20  HWND                     m_hWnd  (evidence: 0x0045C5F0)
+    // +0x20  HWND                     m_hWnd  (evidence: 0x0045C5F0) // CONFLICT: multiple definitions at +0x20
+    // +0x20  uint32_t                 m_hWnd  (evidence: 0x0045C1C0) // CONFLICT: multiple definitions at +0x20
 };
 } // namespace lifted_layout
