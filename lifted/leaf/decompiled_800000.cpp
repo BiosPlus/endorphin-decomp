@@ -951,3 +951,31 @@ uint32_t fn_0080FBC0(const char* str) {
     return record;
 }
 } // namespace lift_0080FBC0
+
+// [0x0080B060]
+namespace lift_0080B060 {
+uint8_t mem_read8(uint32_t addr);
+
+// @name mapCodeToId
+// @summary Maps a 16-bit code (0x00..0x45) via an index table to an integer ID, returning 0x1f for out-of-range values
+
+uint32_t sub_0080B060(uint32_t arg0) {
+    uint32_t val = arg0 & 0xFFFFu;
+    if (val > 0x45u) {
+        return 0x1Fu;
+    }
+    uint8_t idx = mem_read8(0x0080B0E0u + val);
+    switch (idx) {
+        case 0: return 0x00u;
+        case 1: return 0x07u;
+        case 2: return 0x0Cu;
+        case 3: return 0x18u;
+        case 4: return 0x01u;
+        case 5: return 0x17u;
+        case 6: return 0x0Eu;
+        case 7: return 0x0Bu;
+        case 8: return 0x1Bu;
+        default: return 0x1Fu;
+    }
+}
+} // namespace lift_0080B060
