@@ -54985,6 +54985,12 @@
     "summary": "Three-key ordering compare of two 12-byte records: keys at +0x00, +0x08, +0x04 (in that priority); returns 0 if all equal, else 1 or -1.",
     "lifted_path": "lifted/leaf/decompiled_740000.cpp"
   },
+  "0x0074F7F0": {
+    "name": "Compare3Int32KeysBsearch",
+    "signature": "void* fn_0074F7F0(const void* const* table_ref, const int32_t* count_ref, const void* key)",
+    "summary": "Binary-searches a table of 12-byte records (base pointer read from *table_ref, count from *count_ref) for key using ext_0074F7A0; returns the matching record or NULL.",
+    "lifted_path": "lifted/leaf/decompiled_740000.cpp"
+  },
   "0x0074F820": {
     "name": "sub_0074F820",
     "class": "Unknown",

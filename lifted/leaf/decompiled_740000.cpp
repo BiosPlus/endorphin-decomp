@@ -109,3 +109,23 @@ int fn_0074F7A0(const void* a, const void* b) {
     return (a4 >= b4) ? 1 : -1;
 }
 } // namespace lift_0074F7A0
+
+// [0x0074F7F0] sub_0074F7F0 (48 bytes)
+namespace lift_0074F7F0 {
+// Known callee 0x0074F7A0: Compare3Int32Keys (Three-key ordering compare of two 12-byte records: keys at +0x00, +0x08, +0x04 (in that priority); returns 0 if all equal, else 1 or -1.)
+extern int ext_0074F7A0(const void* a, const void* b);
+extern int mem_0092529C;
+
+// @name Compare3Int32KeysBsearch
+// @summary Binary-searches a table of 12-byte records (base pointer read from *table_ref, count from *count_ref) for key using ext_0074F7A0; returns the matching record or NULL.
+void* fn_0074F7F0(const void* const* table_ref, const int32_t* count_ref, const void* key) {
+    const int32_t count = *count_ref;
+    if (count <= 0) {
+        return nullptr;
+    }
+    return std::bsearch(key, *table_ref, static_cast<size_t>(count), 16,
+                        [](const void* a, const void* b) -> int {
+                            return ext_0074F7A0(a, b);
+                        });
+}
+} // namespace lift_0074F7F0
