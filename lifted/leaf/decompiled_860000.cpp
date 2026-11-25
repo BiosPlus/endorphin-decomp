@@ -949,3 +949,22 @@ uint32_t fn_0086D0A0(void* dst, uint32_t elemSize, uint32_t count, void* stream)
     return actualCount;
 }
 } // namespace lift_0086D0A0
+
+// [0x008665CC] sub_008665CC (20 bytes)
+namespace lift_008665CC {
+// @name DataBlock_008665CC
+// @summary 20-byte constant data block (misdecoded as code); no executable semantics recovered
+// Original bytes: 00 01 04 04 04 04 04 02 04 04 04 04 04 03 8D 64 24 00
+// Disassembly is a sequence of "add al, imm8" pairs followed by an "lea esp,[esp]" nop,
+// which is the signature of a data table, not a function body.
+static const uint8_t kDataBlock_008665CC[20] = {
+    0x00, 0x01, 0x04, 0x04, 0x04, 0x04, 0x04, 0x02,
+    0x04, 0x04, 0x04, 0x04, 0x04, 0x03, 0x8D, 0x64,
+    0x24, 0x00, 0x00, 0x00,
+};
+
+// Accessor for the 20-byte block; the only behavior the original bytes support.
+const uint8_t* fn_008665CC() {
+    return kDataBlock_008665CC;
+}
+} // namespace lift_008665CC

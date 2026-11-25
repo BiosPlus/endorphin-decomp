@@ -69441,6 +69441,12 @@
     "summary": "Applies a 12-round 64-bit block cipher transform using a 26-word key schedule.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x008665CC": {
+    "name": "DataBlock_008665CC",
+    "signature": "const uint8_t* fn_008665CC()",
+    "summary": "20-byte constant data block (misdecoded as code); no executable semantics recovered",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x008671C0": {
     "name": "GetEnvironmentVariableAllocA",
     "signature": "char* fn_008671C0(const char* name)",
