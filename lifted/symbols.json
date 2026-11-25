@@ -34477,6 +34477,13 @@
     "summary": "Pure jump thunk forwarding to sub_00629720.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00629850": {
+    "name": "Unknown::initFloatDefaults",
+    "class": "Unknown",
+    "signature": "void* fn_00629850(void* self, uint32_t arg0)",
+    "summary": "Runs base initializer with arg0, then sets vtable and seeds float fields at +0x34..+0x70 with 0.0/1.0.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00629A70": {
     "name": "Sensors::SensorTreeCentreOfMassX::vfunc_17",
     "class": "Sensors::SensorTreeCentreOfMassX",
@@ -42490,6 +42497,12 @@
     "signature": "extern \"C\" void __fastcall fn_00699040(void* self)",
     "summary": "Stores address of mem_0098FABC into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_690000.cpp"
+  },
+  "0x0069C1C0": {
+    "name": "sub_0069C1C0",
+    "signature": "void* __thiscall sub_0069C1C0(void* self)",
+    "summary": "Default constructor initializing two std::string members and five 32-bit zero fields",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
   "0x0069E7E0": {
     "name": "sub_0069E7E0",

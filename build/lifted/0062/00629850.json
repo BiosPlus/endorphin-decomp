@@ -1,0 +1,130 @@
+{
+  "va": "0x00629850",
+  "size": 91,
+  "orig_symbol": "sub_00629850",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "Unknown::initFloatDefaults",
+  "class": "Unknown",
+  "signature": "void* fn_00629850(void* self, uint32_t arg0)",
+  "summary": "Runs base initializer with arg0, then sets vtable and seeds float fields at +0x34..+0x70 with 0.0/1.0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "field_0x48"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "float",
+      "name": "field_0x4c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "float",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "float",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "float",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "float",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "float",
+      "name": "field_0x60"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "float",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "float",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x6C",
+      "type": "float",
+      "name": "field_0x6c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x70",
+      "type": "float",
+      "name": "field_0x70"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:24:44Z"
+}

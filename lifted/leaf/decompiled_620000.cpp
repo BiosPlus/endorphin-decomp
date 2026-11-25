@@ -1767,3 +1767,64 @@ void* fn_006226A0(uint32_t count) {
     return ext_006A5C62(static_cast<size_t>(count * 20u));
 }
 } // namespace lift_006226A0
+
+// [0x00629850] sub_00629850 (91 bytes)
+namespace lift_00629850 {
+// Known callee 0x005FF240: sub_005FF240 (Initializes object fields to zero, stores argument at +0x28, and sets vtable to 0x0096F154)
+extern uint32_t ext_005FF240(void* self, uint32_t arg0);
+extern int mem_00928EAC;
+extern int mem_009783FC;
+extern int mem_009783E4;
+
+// @name Unknown::initFloatDefaults
+// @class Unknown
+// @summary Runs base initializer with arg0, then sets vtable and seeds float fields at +0x34..+0x70 with 0.0/1.0.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x30 uint32_t field_0x30
+// @field Unknown +0x34 float field_0x34
+// @field Unknown +0x38 float field_0x38
+// @field Unknown +0x3c float field_0x3c
+// @field Unknown +0x40 float field_0x40
+// @field Unknown +0x44 float field_0x44
+// @field Unknown +0x48 float field_0x48
+// @field Unknown +0x4c float field_0x4c
+// @field Unknown +0x50 float field_0x50
+// @field Unknown +0x54 float field_0x54
+// @field Unknown +0x58 float field_0x58
+// @field Unknown +0x5c float field_0x5c
+// @field Unknown +0x60 float field_0x60
+// @field Unknown +0x64 float field_0x64
+// @field Unknown +0x68 float field_0x68
+// @field Unknown +0x6c float field_0x6c
+// @field Unknown +0x70 float field_0x70
+void* fn_00629850(void* self, uint32_t arg0) {
+    ext_005FF240(self, arg0);
+
+    // Original writes +0x30 twice (first to &mem_00928EAC, then overwritten); only final value kept.
+    // The vtable write also overwrites the vtable set by the callee.
+    auto* base = static_cast<uint8_t*>(self);
+    lift_field<void*>(base, 0x00) = &mem_009783FC;
+    lift_field<uint32_t>(base, 0x30) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_009783E4));
+
+    // Float seeds: 1.0 at +0x34, +0x48, +0x5c, +0x70; 0.0 elsewhere in the block.
+    lift_field<float>(base, 0x34) = 1.0f;
+    lift_field<float>(base, 0x38) = 0.0f;
+    lift_field<float>(base, 0x3c) = 0.0f;
+    lift_field<float>(base, 0x40) = 0.0f;
+    lift_field<float>(base, 0x44) = 0.0f;
+    lift_field<float>(base, 0x48) = 1.0f;
+    lift_field<float>(base, 0x4c) = 0.0f;
+    lift_field<float>(base, 0x50) = 0.0f;
+    lift_field<float>(base, 0x54) = 0.0f;
+    lift_field<float>(base, 0x58) = 0.0f;
+    lift_field<float>(base, 0x5c) = 1.0f;
+    lift_field<float>(base, 0x60) = 0.0f;
+    lift_field<float>(base, 0x64) = 0.0f;
+    lift_field<float>(base, 0x68) = 0.0f;
+    lift_field<float>(base, 0x6c) = 0.0f;
+    lift_field<float>(base, 0x70) = 1.0f;
+
+    return self;
+}
+} // namespace lift_00629850
