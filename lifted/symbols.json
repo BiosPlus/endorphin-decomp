@@ -53065,6 +53065,12 @@
     "summary": "Initializes three 64-bit global values from MSVCR80.dll!_HUGE.",
     "lifted_path": "lifted/clones/auto_clones_700000.cpp"
   },
+  "0x0070C970": {
+    "name": "CopyHugeValueToGlobals_0070C970",
+    "signature": "void fn_0070C970(void* self)",
+    "summary": "Loads the 64-bit value pointed to by the _HUGE pointer and stores it into four 8-byte globals.",
+    "lifted_path": "lifted/clones/auto_clones_700000.cpp"
+  },
   "0x0070CD10": {
     "name": "sub_0070CD10",
     "signature": "extern \"C\" void* __fastcall fn_0070CD10(void* self, int edx_unused, unsigned int flags)",

@@ -1,0 +1,13 @@
+{
+  "va": "0x0070C970",
+  "size": 74,
+  "orig_symbol": "sub_0070C970",
+  "src_path": "src/clones/auto_clones_700000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_700000.cpp",
+  "name": "CopyHugeValueToGlobals_0070C970",
+  "signature": "void fn_0070C970(void* self)",
+  "summary": "Loads the 64-bit value pointed to by the _HUGE pointer and stores it into four 8-byte globals.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:34:56Z"
+}
