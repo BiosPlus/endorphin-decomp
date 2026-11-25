@@ -31189,6 +31189,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType\u003cImageExporter, int, ImageExporter::getEndFrame, 0\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005B9580": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData\u003e::vfunc_1 (NMData::MetaBodyData::getLinearVelocity)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1\u003e",
+    "signature": "void fn_005B9580(void* self)",
+    "summary": "Always throws: if the object's first pointer field is non-null it throws an error (original forwards via 0x005B6B60 first); otherwise throws a fixed-message exception.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005B95C0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1\u003e",

@@ -48332,3 +48332,24 @@ void* ExprParser_ReadMethodType_vfunc1(void* self) {
     return nullptr;
 }
 } // namespace lift_004CC400
+
+// [0x005B9580] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>::vfunc_1 (49 bytes)
+namespace lift_005B9580 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData>::vfunc_1 (NMData::MetaBodyData::getLinearVelocity)
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Always throws: if the object's first pointer field is non-null it throws an error (original forwards via 0x005B6B60 first); otherwise throws a fixed-message exception.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+//
+// Both original paths end in _CxxThrowException, so this function never returns.
+// The non-null path's default-message exception is built from the result of
+// fn_005B6B60 (forwardToSubobjectAt158), which is not reproduced here; both paths
+// are expressed as a portable std::runtime_error. The fixed message string at
+// 0x009DEC1C is not recovered, so the message text below is a placeholder.
+void fn_005B9580(void* self) {
+    void* field_0x00 = *static_cast<void**>(self);
+    if (field_0x00 != nullptr) {
+        throw std::runtime_error("ExprParser: ReadMethodType<MetaBodyData>::getLinearVelocity (non-null field)");
+    }
+    throw std::runtime_error("ExprParser: ReadMethodType<MetaBodyData>::getLinearVelocity");
+}
+} // namespace lift_005B9580
