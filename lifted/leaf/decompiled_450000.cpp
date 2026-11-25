@@ -1059,3 +1059,25 @@ std::string* fn_0045BED0(void* self, std::string* out) {
     return out;
 }
 } // namespace lift_0045BED0
+
+// [0x0045D8D0]
+namespace lift_0045D8D0 {
+// @name indexToCode_0045D8D0
+// @summary Maps an index 0..8 to itself (identity table); any other value returns 10. Callee pops 4 bytes (__stdcall).
+// Note: jump-table entry for index 9 was not present in the provided disassembly; it is assumed to take the default path (returns 10).
+
+int __stdcall indexToCode_0045D8D0(UINT index) {
+    switch (index) {
+        case 0: return 0;
+        case 1: return 1;
+        case 2: return 2;
+        case 3: return 3;
+        case 4: return 4;
+        case 5: return 5;
+        case 6: return 6;
+        case 7: return 7;
+        case 8: return 8;
+        default: return 10;
+    }
+}
+} // namespace lift_0045D8D0

@@ -5999,6 +5999,12 @@
     "summary": "Calls ext_0043DCF0(-1), reads int at +0x4C of the returned object, and writes the 8-byte result {0, value + 9} into the return slot.",
     "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
   },
+  "0x0045D8D0": {
+    "name": "indexToCode_0045D8D0",
+    "signature": "int __stdcall indexToCode_0045D8D0(UINT index)",
+    "summary": "Maps an index 0..8 to itself (identity table); any other value returns 10. Callee pops 4 bytes (__stdcall).",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x0045DAC0": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_85",
     "class": "MultiTrackView::TriggeredEventView",
