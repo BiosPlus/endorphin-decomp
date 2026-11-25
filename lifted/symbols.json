@@ -58209,6 +58209,12 @@
     "summary": "Advances a 32-bit position by n, reporting via ext_007D5950 when the new position exceeds the stored limit.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007DA820": {
+    "name": "FindNonFlaggedLinkNode",
+    "signature": "extern \"C\" std::uint32_t fn_007DA820(std::uint32_t key, std::uint32_t node)",
+    "summary": "Walks a link structure via ext_007D4AA0 until a node whose +0x14 object lacks flag 0x2 at +0x1C4 is found.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007DA8D0": {
     "name": "ZeroThreeDwords",
     "class": "Unknown",
