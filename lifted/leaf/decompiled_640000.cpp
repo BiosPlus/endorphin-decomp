@@ -705,3 +705,34 @@ void fn_0064DF20(void* self, void* arg) {
 }
 } // namespace lift_0064DEE0
 } // namespace lift_0064DF20
+
+// [0x00649730]
+namespace lift_00649730 {
+// @name Unknown::CopyRange24
+// @class Unknown
+// @summary Copies a range of 24-byte (6-dword) records from [src_begin, src_end) to dst.
+// @field Unknown +0x00 u32 field_0x00
+// @field Unknown +0x04 u32 field_0x04
+// @field Unknown +0x08 u32 field_0x08
+// @field Unknown +0x0C u32 field_0x0C
+// @field Unknown +0x10 u32 field_0x10
+// @field Unknown +0x14 u32 field_0x14
+
+void CopyRange24(const uint32_t* src_begin, const uint32_t* src_end, uint32_t* dst) {
+    if (src_begin == src_end) {
+        return;
+    }
+    const uint8_t* src = reinterpret_cast<const uint8_t*>(src_begin);
+    const uint8_t* end = reinterpret_cast<const uint8_t*>(src_end);
+    uint8_t* out = reinterpret_cast<uint8_t*>(dst);
+    do {
+        for (int i = 0; i < 24; i += 4) {
+            uint32_t v;
+            std::memcpy(&v, src + i, sizeof(v));
+            std::memcpy(out + i, &v, sizeof(v));
+        }
+        src += 24;
+        out += 24;
+    } while (src != end);
+}
+} // namespace lift_00649730

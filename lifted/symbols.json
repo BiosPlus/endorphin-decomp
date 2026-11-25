@@ -33795,6 +33795,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00649620 (ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00649730": {
+    "name": "Unknown::CopyRange24",
+    "class": "Unknown",
+    "signature": "void CopyRange24(const uint32_t* src_begin, const uint32_t* src_end, uint32_t* dst)",
+    "summary": "Copies a range of 24-byte (6-dword) records from [src_begin, src_end) to dst.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00649B40": {
     "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisX(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisX(float), 0}\u003e",
