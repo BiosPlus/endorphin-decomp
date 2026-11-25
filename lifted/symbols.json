@@ -27984,6 +27984,18 @@
     "summary": "Evaluates the value argument through its owner's vtable slot 5, feeds the result to ext_005B71E0 to get a float, stores it via ext_00672080 on the target object, and returns the target object (eax).",
     "lifted_path": "lifted/templates/FunctionType.cpp"
   },
+  "0x005B8180": {
+    "name": "getStaticObject_005B8180",
+    "signature": "void* fn_005B8180()",
+    "summary": "Lazily initializes and returns the static object at 0x00B43C9C.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
+  "0x005B8240": {
+    "name": "getStaticSingleton_005B8240",
+    "signature": "void* fn_005B8240()",
+    "summary": "Lazily initializes and returns a pointer to the static singleton at 0x00B43CAC.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B8660": {
     "name": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getNearestGeomPoint\u003e::vfunc_16",
     "class": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getNearestGeomPoint\u003e",

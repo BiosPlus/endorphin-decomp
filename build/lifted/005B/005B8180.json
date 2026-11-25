@@ -1,0 +1,13 @@
+{
+  "va": "0x005B8180",
+  "size": 87,
+  "orig_symbol": "sub_005B8180",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "getStaticObject_005B8180",
+  "signature": "void* fn_005B8180()",
+  "summary": "Lazily initializes and returns the static object at 0x00B43C9C.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:37:35Z"
+}

@@ -510,3 +510,42 @@ void* fn_005B3DD0(void) {
     return &mem_00B43564;
 }
 } // namespace lift_005B3DD0
+
+// [0x005B8240]
+namespace lift_005B8240 {
+extern void ext_0067A670(void* self);
+extern uint32_t mem_00B43CB0;
+extern uint32_t mem_00B43CAC;
+
+// @name getStaticSingleton_005B8240
+// @summary Lazily initializes and returns a pointer to the static singleton at 0x00B43CAC.
+void* fn_005B8240() {
+    if ((mem_00B43CB0 & 1u) == 0u) {
+        mem_00B43CB0 |= 1u;
+        ext_0067A670(&mem_00B43CAC);
+        mem_00B43CAC = 0x00960D8Cu;
+    }
+    return &mem_00B43CAC;
+}
+} // namespace lift_005B8240
+
+// [0x005B8180]
+namespace lift_005B8180 {
+// @name getStaticObject_005B8180
+// @summary Lazily initializes and returns the static object at 0x00B43C9C.
+
+
+extern uint32_t mem_00B43CA0;
+extern uint32_t mem_00B43C9C;
+
+void ext_0067A670(void* self);
+
+void* fn_005B8180() {
+    if ((mem_00B43CA0 & 1u) == 0u) {
+        mem_00B43CA0 |= 1u;
+        ext_0067A670(&mem_00B43C9C);
+        mem_00B43C9C = 0x00960B04u;
+    }
+    return &mem_00B43C9C;
+}
+} // namespace lift_005B8180
