@@ -1,0 +1,22 @@
+{
+  "va": "0x0044CF80",
+  "size": 9,
+  "orig_symbol": "sub_0044CF80",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "fn_0044CF80 (dword at +0x74 nonzero test)",
+  "class": "\u003cClassName\u003e (unknown; not recovered)",
+  "signature": "uint32_t fn_0044CF80(void* self)",
+  "summary": "Returns 1 if the dword at this+0x74 is nonzero, else 0 (thiscall, this in ECX).",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x74",
+      "type": "DWORD",
+      "name": "field_0x74"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:15:59Z"
+}

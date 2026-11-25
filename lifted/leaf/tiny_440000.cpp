@@ -732,3 +732,15 @@ void fn_004442C0(void* self) {
     (void)eax;
 }
 } // namespace lift_004442C0
+
+// [0x0044CF80]
+namespace lift_0044CF80 {
+// @name fn_0044CF80 (dword at +0x74 nonzero test)
+// @class <ClassName> (unknown; not recovered)
+// @summary Returns 1 if the dword at this+0x74 is nonzero, else 0 (thiscall, this in ECX).
+// @field <ClassName> +0x74 DWORD field_0x74
+uint32_t fn_0044CF80(void* self) {
+    uint32_t field = lift_field<uint32_t>(self, 0x74);
+    return field != 0 ? 1u : 0u;
+}
+} // namespace lift_0044CF80

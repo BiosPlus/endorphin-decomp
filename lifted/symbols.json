@@ -4806,6 +4806,13 @@
     "summary": "Returns 1 if the stdcall argument is 2 or 3, otherwise 0. Callee pops 4 bytes.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x0044CF80": {
+    "name": "fn_0044CF80 (dword at +0x74 nonzero test)",
+    "class": "\u003cClassName\u003e (unknown; not recovered)",
+    "signature": "uint32_t fn_0044CF80(void* self)",
+    "summary": "Returns 1 if the dword at this+0x74 is nonzero, else 0 (thiscall, this in ECX).",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x0044CFB0": {
     "name": "RigEditorAddRenameDialog::vfunc_0",
     "class": "RigEditorAddRenameDialog",
