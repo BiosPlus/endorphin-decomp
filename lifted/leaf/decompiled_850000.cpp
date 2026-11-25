@@ -687,3 +687,39 @@ uint32_t fn_0085BF70(uint32_t arg0) {
     return esi;
 }
 } // namespace lift_0085BF70
+
+// [0x00859A50]
+namespace lift_00859A50 {
+uint8_t mem_read8(uint32_t addr);
+void mem_write8(uint32_t addr, uint8_t val);
+
+// @name strncat
+// @summary Appends at most count characters from src to null-terminated dst, always null-terminating, and returns dst.
+
+uint32_t sub_00859A50(uint32_t dst, uint32_t src, uint32_t count) {
+    if (count == 0) {
+        return dst;
+    }
+
+    uint32_t cur = dst;
+    while (mem_read8(cur) != 0) {
+        cur++;
+    }
+
+    while (true) {
+        uint8_t ch = mem_read8(src++);
+        mem_write8(cur, ch);
+        if (ch == 0) {
+            break;
+        }
+        cur++;
+        count--;
+        if (count == 0) {
+            break;
+        }
+    }
+
+    mem_write8(cur, 0);
+    return dst;
+}
+} // namespace lift_00859A50
