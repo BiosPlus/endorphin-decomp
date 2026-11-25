@@ -17,6 +17,7 @@ void* fn_005528E0(void* self) {
     return self;
 }
 } // namespace lift_005528E0
+#include <bit>
 
 // [0x00553960] sub_00553960 (27 bytes)
 namespace lift_00553960 {
@@ -391,3 +392,39 @@ void fillVec4Array(float* dst, uint32_t count, const float* src) {
     } while (count != 0);
 }
 } // namespace lift_0055F390
+
+// [0x00552860] sub_00552860 (61 bytes)
+namespace lift_00552860 {
+// Rodata constant 0x00940690: float 0.3 (u32 0x3E99999A)
+extern int mem_00940690;
+
+// @name UnknownClass::SetIndexInRange
+// @class UnknownClass
+// @summary Accepts an index if it lies within [vfunc_2(), vfunc_3()]; stores 0.3f and the index on success, else stores -1 as the index.
+// @field UnknownClass +0x0C float field_0x0C
+// @field UnknownClass +0x10 int32 field_0x10
+void fn_00552860(void* self, int32_t index) {
+    auto* base = static_cast<unsigned char*>(self);
+
+    // Virtual dispatch through the vtable: slot 2 (+0x08) = lower bound, slot 3 (+0x0C) = upper bound.
+    void** vtbl = *reinterpret_cast<void***>(self);
+    auto lowerFn = reinterpret_cast<int32_t (*)(void*)>(vtbl[2]);
+    auto upperFn = reinterpret_cast<int32_t (*)(void*)>(vtbl[3]);
+
+    const int32_t lower = lowerFn(self);
+    if (index < lower) {
+        *reinterpret_cast<int32_t*>(base + 0x10) = -1;
+        return;
+    }
+
+    const int32_t upper = upperFn(self);
+    if (index > upper) {
+        *reinterpret_cast<int32_t*>(base + 0x10) = -1;
+        return;
+    }
+
+    const float constant = std::bit_cast<float>(static_cast<uint32_t>(mem_00940690));
+    *reinterpret_cast<float*>(base + 0x0C) = constant;
+    *reinterpret_cast<int32_t*>(base + 0x10) = index;
+}
+} // namespace lift_00552860

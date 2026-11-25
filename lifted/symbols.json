@@ -19691,6 +19691,13 @@
     "summary": "Stores address of mem_00957534 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x00552860": {
+    "name": "UnknownClass::SetIndexInRange",
+    "class": "UnknownClass",
+    "signature": "void fn_00552860(void* self, int32_t index)",
+    "summary": "Accepts an index if it lies within [vfunc_2(), vfunc_3()]; stores 0.3f and the index on success, else stores -1 as the index.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x005528A0": {
     "name": "SubObject::resetScaleAndIndex",
     "class": "SubObject",
