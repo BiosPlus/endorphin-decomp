@@ -9,18 +9,22 @@
 namespace lifted_layout {
 struct Buffer_Fields {
     // +0x0   uint32_t                 count  (evidence: 0x007AA7F0, 0x007ABD00) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 data  (evidence: 0x0086CDB0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    data  (evidence: 0x006F0120, 0x006F01A0, 0x006F0220, 0x006F08E0, 0x006F1120, 0x006FA1E0, 0x006FC200) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 field_0x00  (evidence: 0x006D2250, 0x007D6260, 0x007DEC80, 0x00859E00) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x00859A90) // CONFLICT: multiple definitions at +0x0
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x006D2250, 0x006F0120, 0x006F01A0, 0x006F0220, 0x006F08E0, 0x006F1120, 0x006FA1E0, 0x006FC200, 0x007D6260, 0x007DEC80, 0x00859E00, 0x0086D110)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x006D2250, 0x006F0120, 0x006F01A0, 0x006F0220, 0x006F08E0, 0x006F1120, 0x006FA1E0, 0x006FC200, 0x007D6260, 0x007DEC80, 0x00859E00, 0x0086D110) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 size  (evidence: 0x0086CDB0) // CONFLICT: multiple definitions at +0x4
     // +0x8   uint32_t                 field_0x08  (evidence: 0x006F0120, 0x006F01A0, 0x006F0220, 0x006F08E0, 0x006F1120, 0x006FA1E0, 0x006FC200, 0x00859E00, 0x0086D110) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t*                 field_0x08  (evidence: 0x007C1F60, 0x007C8490) // CONFLICT: multiple definitions at +0x8
-    // +0xC   uint32_t                 field_0x0C  (evidence: 0x0086D110)
+    // +0xC   uint32_t                 capacity  (evidence: 0x0086CDB0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint32_t                 field_0x0C  (evidence: 0x0086D110) // CONFLICT: multiple definitions at +0xC
+    // +0x10  uint32_t                 extraSize  (evidence: 0x0086CDB0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 field_0x10  (evidence: 0x006D2250) // CONFLICT: multiple definitions at +0x10
     // +0x10  void**                   items  (evidence: 0x007AA7F0, 0x007ABD00) // CONFLICT: multiple definitions at +0x10
     // +0x14  uint32_t                 field_0x14  (evidence: 0x007C1F60, 0x007C8490) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint8_t                  field_0x14  (evidence: 0x00859E00) // CONFLICT: multiple definitions at +0x14
-    // +0x14  uint32_t                 flags  (evidence: 0x00859A90) // CONFLICT: multiple definitions at +0x14
+    // +0x14  uint32_t                 flags  (evidence: 0x00859A90, 0x0086CDB0) // CONFLICT: multiple definitions at +0x14
     // +0x18  uint32_t                 refCount  (evidence: 0x00859A90)
     // +0x1C  uint32_t                 field_0x1c  (evidence: 0x007D6260, 0x007DEC80)
 };

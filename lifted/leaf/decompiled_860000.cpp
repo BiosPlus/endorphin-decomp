@@ -934,3 +934,55 @@ int fn_008685C0(void* self) {
     return (regs[3] & 0x40000000u) != 0 ? 1 : 0;
 }
 } // namespace lift_008685C0
+
+// [0x0086CDB0]
+namespace lift_0086CDB0 {
+// @name ensureWritableBufferCopy
+// @summary Reallocates and copies a copy-on-write buffer if flag 0x2 is set, returning 0 on success or 0xC on allocation failure.
+// @field Buffer +0x00 uint32_t data
+// @field Buffer +0x04 uint32_t size
+// @field Buffer +0x0c uint32_t capacity
+// @field Buffer +0x10 uint32_t extraSize
+// @field Buffer +0x14 uint32_t flags
+
+extern uint8_t mem_u8(uint32_t addr);
+extern uint32_t& mem_u32(uint32_t addr);
+extern uint32_t ext_008596E0(uint32_t size);
+extern void* ext_00859780(void* dst, const void* src, size_t n);
+
+uint32_t fn_0086CDB0(uint32_t bufPtr) {
+    uint32_t buf = bufPtr;
+    if (mem_u8(buf + 0x14) & 0x4u) {
+        buf = mem_u32(buf);
+    }
+
+    if ((mem_u8(buf + 0x14) & 0x2u) == 0) {
+        return 0;
+    }
+
+    uint32_t size = mem_u32(buf + 0x4);
+    uint32_t extra = mem_u32(buf + 0x10);
+    uint32_t newCap = size + extra;
+
+    uint32_t newBuf = ext_008596E0(newCap);
+    if (newBuf == 0) {
+        return 0xC;
+    }
+
+    size = mem_u32(buf + 0x4);
+    extra = mem_u32(buf + 0x10);
+    uint32_t oldBuf = mem_u32(buf);
+    mem_u32(buf + 0xC) = extra + size;
+
+    ext_00859780(reinterpret_cast<void*>(static_cast<uintptr_t>(newBuf)),
+                 reinterpret_cast<const void*>(static_cast<uintptr_t>(oldBuf)),
+                 size);
+
+    uint32_t flags = mem_u32(buf + 0x14);
+    flags &= ~0x2u;
+    mem_u32(buf) = newBuf;
+    mem_u32(buf + 0x14) = flags;
+
+    return 0;
+}
+} // namespace lift_0086CDB0

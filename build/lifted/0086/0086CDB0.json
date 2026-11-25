@@ -1,0 +1,45 @@
+{
+  "va": "0x0086CDB0",
+  "size": 96,
+  "orig_symbol": "sub_0086CDB0",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "ensureWritableBufferCopy",
+  "signature": "uint32_t fn_0086CDB0(uint32_t bufPtr)",
+  "summary": "Reallocates and copies a copy-on-write buffer if flag 0x2 is set, returning 0 on success or 0xC on allocation failure.",
+  "fields": [
+    {
+      "class": "Buffer",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "data"
+    },
+    {
+      "class": "Buffer",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "size"
+    },
+    {
+      "class": "Buffer",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "capacity"
+    },
+    {
+      "class": "Buffer",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "extraSize"
+    },
+    {
+      "class": "Buffer",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "flags"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:55:28Z"
+}
