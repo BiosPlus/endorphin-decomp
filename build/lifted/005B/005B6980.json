@@ -1,0 +1,28 @@
+{
+  "va": "0x005B6980",
+  "size": 24,
+  "orig_symbol": "sub_005B6980",
+  "src_path": "src/leaf/tiny_5B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5B0000.cpp",
+  "name": "Unknown::forwardToField158Subobject",
+  "class": "Unknown",
+  "signature": "uint32_t fn_005B6980(void* self, uint32_t arg)",
+  "summary": "If this+0x158 is non-null, tail-forwards (same stack arg) to ext_00647F80 with this = (this+0x158)-\u003efield_0xac; otherwise returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "void*",
+      "name": "field_0x158"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "void*",
+      "name": "field_0xac"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:23:52Z"
+}

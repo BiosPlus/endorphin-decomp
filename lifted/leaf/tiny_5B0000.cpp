@@ -340,3 +340,22 @@ float fn_005B11E0(void* self, int32_t index) {
     return lift_field<float>(self, 0x10 + static_cast<ptrdiff_t>(index) * 4);
 }
 } // namespace lift_005B11E0
+
+// [0x005B6980] sub_005B6980 (24 bytes)
+namespace lift_005B6980 {
+extern uint32_t ext_00647F80(void* self, uint32_t arg);
+
+// @name Unknown::forwardToField158Subobject
+// @class Unknown
+// @summary If this+0x158 is non-null, tail-forwards (same stack arg) to ext_00647F80 with this = (this+0x158)->field_0xac; otherwise returns 0.
+// @field Unknown +0x158 void* field_0x158
+// @field Unknown +0xac void* field_0xac
+uint32_t fn_005B6980(void* self, uint32_t arg) {
+    void* sub = lift_field<void*>(self, 0x158);
+    if (sub == nullptr) {
+        return 0;
+    }
+    void* next = lift_field<void*>(sub, 0xac);
+    return ext_00647F80(next, arg);
+}
+} // namespace lift_005B6980

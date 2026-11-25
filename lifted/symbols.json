@@ -27843,6 +27843,13 @@
     "summary": "Calls sub_005B6930 and returns the float at offset +0x04 of the returned object.",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
+  "0x005B6980": {
+    "name": "Unknown::forwardToField158Subobject",
+    "class": "Unknown",
+    "signature": "uint32_t fn_005B6980(void* self, uint32_t arg)",
+    "summary": "If this+0x158 is non-null, tail-forwards (same stack arg) to ext_00647F80 with this = (this+0x158)-\u003efield_0xac; otherwise returns 0.",
+    "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
+  },
   "0x005B6A10": {
     "name": "Unknown::refreshChildWithIdentity",
     "class": "Unknown",
