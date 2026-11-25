@@ -446,3 +446,21 @@ extern DWORD fn_00415FF6() {
     return getSysColor(0x0F);
 }
 } // namespace lift_00415FF6
+
+// [0x00419940] sub_00419940 (20 bytes)
+namespace lift_00419940 {
+extern int mem_00924494;
+
+// @name ThisReturnForwardToMfcOrd297
+// @summary Forwards its single stack argument to MFC80 import ordinal 297 with `this` in ECX, then returns `this`.
+// @field self +0x00 void* self (not dereferenced; returned unchanged)
+using Ord297Fn = uint32_t(__thiscall*)(void* self, uint32_t arg);
+
+void* fn_00419940(void* self, uint32_t arg) {
+    // The IAT slot at mem_00924494 holds the unresolved import ordinal (0x80000129 = ord 297).
+    // The loader replaces it with the real MFC80 entry point before this runs.
+    Ord297Fn ord297 = reinterpret_cast<Ord297Fn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924494)));
+    ord297(self, arg);
+    return self;
+}
+} // namespace lift_00419940

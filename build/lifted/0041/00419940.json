@@ -1,0 +1,21 @@
+{
+  "va": "0x00419940",
+  "size": 20,
+  "orig_symbol": "sub_00419940",
+  "src_path": "src/leaf/tiny_410000.cpp",
+  "lifted_path": "lifted/leaf/tiny_410000.cpp",
+  "name": "ThisReturnForwardToMfcOrd297",
+  "signature": "void* fn_00419940(void* self, uint32_t arg)",
+  "summary": "Forwards its single stack argument to MFC80 import ordinal 297 with `this` in ECX, then returns `this`.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x0",
+      "type": "void* self (not dereferenced; returned",
+      "name": "unchanged)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:18:28Z"
+}

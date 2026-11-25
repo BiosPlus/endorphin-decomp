@@ -13,6 +13,7 @@ struct self_Fields {
     // +0x0   void*                    ptr  (evidence: 0x00430EB0) // CONFLICT: multiple definitions at +0x0
     // +0x0   float[3]                 row0  (evidence: 0x0067E110) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* innerObject (pointer loaded from *self; passed as the new this)  (evidence: 0x00493E50, 0x00493E60, 0x00494050) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void* self (not dereferenced; returned unchanged)  (evidence: 0x00419940) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtablePtr  (evidence: 0x00503BC0, 0x00508BC0, 0x0050C480, 0x0050C4D0) // CONFLICT: multiple definitions at +0x0
     // +0x4   int32_t                  field_0x04  (evidence: 0x0041CEE0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00870E40) // CONFLICT: multiple definitions at +0x4
