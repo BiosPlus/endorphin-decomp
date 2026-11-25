@@ -48813,6 +48813,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x54 and tail-calls sub_006C9A40.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D0490": {
+    "name": "Unknown::RemoveParallelEntry",
+    "class": "Unknown",
+    "signature": "void fn_006D0490(void* self, int32_t arg1, int32_t arg2)",
+    "summary": "Scans backward for an index where the two parallel int32 arrays match (arg1 in the +0x78 array, arg2 in the +0x90 array); on the first match, removes that index from both DynamicArrays at +0x68 and +0x80.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D1FB4": {
     "name": "sub_006D1FB4",
     "signature": "void sub_006D1FB4(uint32_t eax, uint32_t ecx, uint32_t esp)",

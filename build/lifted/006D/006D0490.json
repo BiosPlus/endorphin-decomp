@@ -1,0 +1,40 @@
+{
+  "va": "0x006D0490",
+  "size": 80,
+  "orig_symbol": "sub_006D0490",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::RemoveParallelEntry",
+  "class": "Unknown",
+  "signature": "void fn_006D0490(void* self, int32_t arg1, int32_t arg2)",
+  "summary": "Scans backward for an index where the two parallel int32 arrays match (arg1 in the +0x78 array, arg2 in the +0x90 array); on the first match, removes that index from both DynamicArrays at +0x68 and +0x80.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "int32_t",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "int32_t*",
+      "name": "field_0x78"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "void*",
+      "name": "field_0x80"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x90",
+      "type": "int32_t*",
+      "name": "field_0x90"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:54:06Z"
+}

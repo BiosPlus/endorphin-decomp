@@ -587,7 +587,7 @@ struct Unknown_Fields {
     // +0x50  uint32_t                 field_0x50  (evidence: 0x0053B1F0, 0x007911E0, 0x007C8490, 0x007C9D80, 0x007C9E20) // CONFLICT: multiple definitions at +0x50
     // +0x50  uint8_t                  field_0x50  (evidence: 0x005E4D90) // CONFLICT: multiple definitions at +0x50
     // +0x50  void                     field_0x50  (evidence: 0x0072DA80) // CONFLICT: multiple definitions at +0x50
-    // +0x50  void*                    field_0x50  (evidence: 0x004AEC60, 0x005E09B0, 0x00609730) // CONFLICT: multiple definitions at +0x50
+    // +0x50  void*                    field_0x50  (evidence: 0x004AEC60, 0x005E09B0, 0x00609730, 0x006E6800) // CONFLICT: multiple definitions at +0x50
     // +0x50  void*                    getter  (evidence: 0x007051F0, 0x0070BF00) // CONFLICT: multiple definitions at +0x50
     // +0x50  double                   limit  (evidence: 0x006E8750) // CONFLICT: multiple definitions at +0x50
     // +0x51  uint8_t                  field_0x51  (evidence: 0x005E4D90)
@@ -643,7 +643,7 @@ struct Unknown_Fields {
     // +0x65  BYTE                     field_0x65  (evidence: 0x006722B0, 0x00672490, 0x00673B80)
     // +0x68  double                   field_0x68  (evidence: 0x00766240) // CONFLICT: multiple definitions at +0x68
     // +0x68  float                    field_0x68  (evidence: 0x00647BF0, 0x00647C10, 0x00647C30, 0x00647C50, 0x00648A20) // CONFLICT: multiple definitions at +0x68
-    // +0x68  int32_t                  field_0x68  (evidence: 0x006E3A40, 0x006E7F90) // CONFLICT: multiple definitions at +0x68
+    // +0x68  int32_t                  field_0x68  (evidence: 0x006D0490, 0x006E3A40, 0x006E7F90) // CONFLICT: multiple definitions at +0x68
     // +0x68  uint8_t                  field_0x68  (evidence: 0x006E8790) // CONFLICT: multiple definitions at +0x68
     // +0x68  void*                    field_0x68  (evidence: 0x00441020, 0x0044B5B0, 0x0044B5C0, 0x0044B6A0, 0x0044B9D0, 0x0044BA30, 0x0044BBB0, 0x0044BBE0, 0x0044BC10) // CONFLICT: multiple definitions at +0x68
     // +0x68  int32_t                  storedArg  (evidence: 0x006B2F70, 0x006B7420) // CONFLICT: multiple definitions at +0x68
@@ -662,6 +662,7 @@ struct Unknown_Fields {
     // +0x78  DWORD                    field_0x78  (evidence: 0x00417630, 0x00422CE0, 0x004275C0, 0x00711D20, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x78
     // +0x78  double                   field_0x78  (evidence: 0x00766240) // CONFLICT: multiple definitions at +0x78
     // +0x78  float                    field_0x78  (evidence: 0x0062E290) // CONFLICT: multiple definitions at +0x78
+    // +0x78  int32_t*                 field_0x78  (evidence: 0x006D0490) // CONFLICT: multiple definitions at +0x78
     // +0x78  uint32_t                 field_0x78  (evidence: 0x007057E0) // CONFLICT: multiple definitions at +0x78
     // +0x78  void                     field_0x78  (evidence: 0x00449D00) // CONFLICT: multiple definitions at +0x78
     // +0x7C  DWORD                    field_0x7C  (evidence: 0x00540F60) // CONFLICT: multiple definitions at +0x7C
@@ -671,6 +672,7 @@ struct Unknown_Fields {
     // +0x80  float                    field_0x80  (evidence: 0x0062E290) // CONFLICT: multiple definitions at +0x80
     // +0x80  int32_t                  field_0x80  (evidence: 0x007C8490, 0x007CDB70) // CONFLICT: multiple definitions at +0x80
     // +0x80  uint32_t                 field_0x80  (evidence: 0x006B7DC0) // CONFLICT: multiple definitions at +0x80
+    // +0x80  void*                    field_0x80  (evidence: 0x006D0490) // CONFLICT: multiple definitions at +0x80
     // +0x84  DWORD                    cachedB  (evidence: 0x007051F0, 0x0070BF00) // CONFLICT: multiple definitions at +0x84
     // +0x84  uint32_t[19] field_0x84 (destination block, written by copy)  (evidence: 0x007D85E0) // CONFLICT: multiple definitions at +0x84
     // +0x84  float                    field_0x84  (evidence: 0x0062E290) // CONFLICT: multiple definitions at +0x84
@@ -692,6 +694,7 @@ struct Unknown_Fields {
     // +0x8D  uint8_t                  field_0x8D  (evidence: 0x00410370) // CONFLICT: multiple definitions at +0x8D
     // +0x8D  uint8_t                  field_0x8d  (evidence: 0x004408B0) // CONFLICT: multiple definitions at +0x8D
     // +0x90  double                   field_0x90  (evidence: 0x00441060) // CONFLICT: multiple definitions at +0x90
+    // +0x90  int32_t*                 field_0x90  (evidence: 0x006D0490) // CONFLICT: multiple definitions at +0x90
     // +0x90  void*                    field_0x90  (evidence: 0x006B0720) // CONFLICT: multiple definitions at +0x90
     // +0x90  HWND                     hwnd  (evidence: 0x006B2F70, 0x006B7420) // CONFLICT: multiple definitions at +0x90
     // +0x94  DWORD                    field_0x94  (evidence: 0x007C8490, 0x007C93A0) // CONFLICT: multiple definitions at +0x94

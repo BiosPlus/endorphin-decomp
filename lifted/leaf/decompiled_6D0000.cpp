@@ -1391,3 +1391,35 @@ extern void __thiscall fn_006DE460(void* self) {
     ext_006B9D70(base);
 }
 } // namespace lift_006DE460
+
+// [0x006D0490] sub_006D0490 (80 bytes)
+namespace lift_006D0490 {
+// Known callee 0x006D2200: DynamicArray::removeAt (Removes the element at the given index by shifting subsequent elements left and decrementing the count.)
+extern void ext_006D2200(void* self, int32_t index);
+
+// @name Unknown::RemoveParallelEntry
+// @class Unknown
+// @summary Scans backward for an index where the two parallel int32 arrays match (arg1 in the +0x78 array, arg2 in the +0x90 array); on the first match, removes that index from both DynamicArrays at +0x68 and +0x80.
+// @field Unknown +0x68 int32_t field_0x68
+// @field Unknown +0x78 int32_t* field_0x78
+// @field Unknown +0x80 void* field_0x80
+// @field Unknown +0x90 int32_t* field_0x90
+void fn_006D0490(void* self, int32_t arg1, int32_t arg2) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    const int32_t count = *reinterpret_cast<int32_t*>(base + 0x68);
+    int32_t* keysA = *reinterpret_cast<int32_t**>(base + 0x78);
+    int32_t* keysB = *reinterpret_cast<int32_t**>(base + 0x90);
+
+    for (int32_t index = count - 1; index >= 0; --index) {
+        if (arg2 != keysB[index]) {
+            continue;
+        }
+        if (arg1 != keysA[index]) {
+            continue;
+        }
+        ext_006D2200(base + 0x68, index);
+        ext_006D2200(base + 0x80, index);
+        return;
+    }
+}
+} // namespace lift_006D0490
