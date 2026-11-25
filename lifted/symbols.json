@@ -844,6 +844,13 @@
     "summary": "Sends message 0x18B (wParam=0, lParam=0) to the window handle stored at this+0x20 and returns the result.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x0040BF00": {
+    "name": "Unknown::callChildAndReturnSelf",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_0040BF00(void* self)",
+    "summary": "Calls ext_006A5EDE to obtain an object pointer, forwards its +4 sub-object pointer as `this` to ext_006A60D6, and returns the original self.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040C010": {
     "name": "CArray::GetAt",
     "class": "CArray",

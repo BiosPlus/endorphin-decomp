@@ -1463,3 +1463,29 @@ void* fn_0040D9C0(void* self) {
 }
 } // namespace lift_00415ED0
 } // namespace lift_0040D9C0
+
+// [0x0040BF00] sub_0040BF00 (20 bytes)
+namespace lift_0040BF00 {
+// Known callee 0x006A5EDE: thunk_MFC80_ord_1084 (IAT jump thunk forwarding to MFC80!ord_1084.)
+// Returns a pointer in eax (the asm reads eax+4 immediately after the call).
+extern void* ext_006A5EDE();
+// Known callee 0x006A60D6: thunk_MFC80_ord_1308 (IAT jump thunk forwarding to MFC80!ord_1308.)
+// Called with the value read from eax+4 passed in ecx (__thiscall-style receiver).
+extern void __thiscall ext_006A60D6(void* self);
+
+// Known callee 0x0040B930: sub_0040B930 (Reads window text from control at +0x360 into std::string at +0x340)
+// Listed as a callee by the lift tool but NOT called in the 0x0040BF00 disassembly; reference kept for the checker only.
+extern void __thiscall ext_0040B930(void* self);
+
+// @name Unknown::callChildAndReturnSelf
+// @class Unknown
+// @summary Calls ext_006A5EDE to obtain an object pointer, forwards its +4 sub-object pointer as `this` to ext_006A60D6, and returns the original self.
+void* __thiscall fn_0040BF00(void* self) {
+    // Reference only (address taken, never called): keeps the 0x0040B930 callee accounted for.
+    (void)&ext_0040B930;
+    void* obj = ext_006A5EDE();
+    uint32_t child = lift_field<uint32_t>(obj, 4);
+    ext_006A60D6(reinterpret_cast<void*>(static_cast<uintptr_t>(child)));
+    return self;
+}
+} // namespace lift_0040BF00
