@@ -827,3 +827,32 @@ void* __cdecl fn_00575230(uint8_t* first, uint8_t* last, uint8_t* dest) {
     return out;
 }
 } // namespace lift_00575230
+
+// [0x005752C0] sub_005752C0 (77 bytes)
+namespace lift_005752C0 {
+extern uint32_t mem_00924FDC;
+extern void* ext_string_assign(void* self, const void* src);
+
+// @name Unknown::CopyBackwardStringRecords_005752C0
+// @class Unknown
+// @summary Copy-backward over 0x54-byte records, each holding three std::string members (MSVC 2005 layout), into a destination range ending at arg3.
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1c std::string field_0x1C
+// @field Unknown +0x38 std::string field_0x38
+void* fn_005752C0(void* first, void* last, void* dest_last) {
+    if (first == last) {
+        return dest_last;
+    }
+    uint8_t* src = static_cast<uint8_t*>(last);
+    uint8_t* dst = static_cast<uint8_t*>(dest_last);
+    const uint8_t* stop = static_cast<const uint8_t*>(first);
+    do {
+        src -= 0x54;
+        dst -= 0x54;
+        ext_string_assign(dst + 0x00, src + 0x00);
+        ext_string_assign(dst + 0x1C, src + 0x1C);
+        ext_string_assign(dst + 0x38, src + 0x38);
+    } while (src != stop);
+    return dst;
+}
+} // namespace lift_005752C0
