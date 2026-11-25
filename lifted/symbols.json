@@ -61675,6 +61675,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006E8050 (Unknown::GetVtableSlot80).",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E8440": {
+    "name": "destroyAndFreePtr",
+    "signature": "extern \"C\" void __fastcall fn_006E8440(void* self)",
+    "summary": "Destroys and frees a heap-allocated object pointer stored at +0x00, then clears it to null.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E8470": {
     "name": "sub_006E8470_dtor",
     "signature": "extern \"C\" void __fastcall fn_006E8470(void* self)",

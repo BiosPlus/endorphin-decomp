@@ -1,0 +1,21 @@
+{
+  "va": "0x006E8440",
+  "size": 48,
+  "orig_symbol": "sub_006E8440",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "destroyAndFreePtr",
+  "signature": "extern \"C\" void __fastcall fn_006E8440(void* self)",
+  "summary": "Destroys and frees a heap-allocated object pointer stored at +0x00, then clears it to null.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:31:54Z"
+}

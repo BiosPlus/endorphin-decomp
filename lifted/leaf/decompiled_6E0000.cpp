@@ -1496,3 +1496,21 @@ extern int32_t __fastcall fn_006E9610(void* self, void* /*edx*/, int32_t type) {
     return count;
 }
 } // namespace lift_006E9610
+
+// [0x006E8440]
+namespace lift_006E8440 {
+extern void ext_006A5C5C(void* ptr);
+extern void __fastcall ext_006E8470(void* self);
+
+// @name destroyAndFreePtr
+// @summary Destroys and frees a heap-allocated object pointer stored at +0x00, then clears it to null.
+// @field Self +0x00 void* field_0x00
+extern void __fastcall fn_006E8440(void* self) {
+    void* ptr = *reinterpret_cast<void**>(self);
+    if (ptr != nullptr) {
+        ext_006E8470(ptr);
+        ext_006A5C5C(ptr);
+    }
+    *reinterpret_cast<void**>(self) = nullptr;
+}
+} // namespace lift_006E8440
