@@ -1,0 +1,22 @@
+{
+  "va": "0x00678170",
+  "size": 62,
+  "orig_symbol": "sub_00678170",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "ConvertAngleUnits",
+  "class": "\u003cunknown\u003e",
+  "signature": "float fn_00678170(void* self, float value)",
+  "summary": "Converts a float by a mode selected at self+0x0C: mode 1 multiplies by pi/180 (degrees to radians), mode 2 divides by 360 (degrees to turns), any other mode returns the input unchanged.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:01:04Z"
+}

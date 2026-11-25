@@ -36674,6 +36674,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x14 and tail-calls sub_004AEE60.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x00678170": {
+    "name": "ConvertAngleUnits",
+    "class": "\u003cunknown\u003e",
+    "signature": "float fn_00678170(void* self, float value)",
+    "summary": "Converts a float by a mode selected at self+0x0C: mode 1 multiplies by pi/180 (degrees to radians), mode 2 divides by 360 (degrees to turns), any other mode returns the input unchanged.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00678380": {
     "name": "XMLConverter::vfunc_0",
     "class": "XMLConverter",

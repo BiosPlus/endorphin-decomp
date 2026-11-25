@@ -430,3 +430,23 @@ void __thiscall fn_0067AE70(void* self, int32_t index) {
     WaitForSingleObject(handle, 0xFFFFFFFFu); // INFINITE
 }
 } // namespace lift_0067AE70
+
+// [0x00678170] sub_00678170 (62 bytes)
+namespace lift_00678170 {
+// @name ConvertAngleUnits
+// @class <unknown>
+// @summary Converts a float by a mode selected at self+0x0C: mode 1 multiplies by pi/180 (degrees to radians), mode 2 divides by 360 (degrees to turns), any other mode returns the input unchanged.
+// @field <unknown> +0x0C int32_t field_0x0C
+float fn_00678170(void* self, float value) {
+    const int32_t mode = lift_field<int32_t>(self, 0x0C);
+    if (mode == 1) {
+        // mem_0098C1D0 = 0.017453292519943295 (pi / 180)
+        return static_cast<float>(static_cast<double>(value) * 0.017453292519943295);
+    }
+    if (mode == 2) {
+        // mem_00993CC0 = 360.0
+        return static_cast<float>(static_cast<double>(value) / 360.0);
+    }
+    return value;
+}
+} // namespace lift_00678170
