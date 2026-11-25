@@ -5,9 +5,12 @@ extern "C" void __cdecl ext_006A5C5C(void* ptr);
 #include <cstdint>
 #include <cstring>
 #include <cstdio>
+#include <new>
+#include <string>
+#include <cstdlib>
 
-// [0x007AD5C0] sub_007AD5C0 (32 bytes)
-// @name sub_007AD5C0
+#include <string>
+#include <cstdlib>
 // @summary MSVC scalar deleting destructor: calls sub_007AD590 and frees memory when (flags & 1) is set.
 extern "C" void* __fastcall fn_007AD5C0(void* self, int edx_unused, unsigned int flags) {
     (void)edx_unused;
@@ -865,3 +868,23 @@ void fn_007AEE50(void* self, int32_t mode, int32_t value) {
     lift_field<int32_t>(self, 0x60) = (v <= limit) ? v : limit;
 }
 } // namespace lift_007AEE50
+
+// [0x007ABE70] sub_007ABE70 (87 bytes)
+namespace lift_007ABE70 {
+// @name sub_007ABE70
+// @summary Auto-lifted identical-shape clone of 0x00706DD0 (AllocAndInitUnknown_00706DD0).
+namespace lift_00706DD0 {
+extern void* ext_006A5C62(size_t size);
+extern void* ext_007ABC20(void* self);
+
+// @name AllocAndInitUnknown_00706DD0
+// @summary Allocates 0x4C bytes via MFC operator new and initializes the Unknown object if allocation succeeds.
+extern void* fn_007ABE70(void) {
+    void* obj = ext_006A5C62(0x1C);
+    if (obj != nullptr) {
+        return ext_007ABC20(obj);
+    }
+    return nullptr;
+}
+} // namespace lift_00706DD0
+} // namespace lift_007ABE70

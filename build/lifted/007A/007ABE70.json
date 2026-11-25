@@ -1,0 +1,13 @@
+{
+  "va": "0x007ABE70",
+  "size": 87,
+  "orig_symbol": "sub_007ABE70",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "sub_007ABE70",
+  "signature": "extern void* fn_007ABE70(void)",
+  "summary": "Auto-lifted identical-shape clone of 0x00706DD0 (AllocAndInitUnknown_00706DD0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T02:15:12Z"
+}

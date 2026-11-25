@@ -59889,6 +59889,12 @@
     "summary": "Walks the item array of the Buffer at this+0x04 from the last index down, calls ext_00772040 and ext_006A5C5C on each non-null item, then releases the Buffer.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007ABE70": {
+    "name": "sub_007ABE70",
+    "signature": "extern void* fn_007ABE70(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x00706DD0 (AllocAndInitUnknown_00706DD0).",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007ABEE0": {
     "name": "sub_007ABEE0",
     "signature": "void fn_007ABEE0(void)",
