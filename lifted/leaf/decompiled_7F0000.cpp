@@ -374,3 +374,34 @@ extern __cdecl INT fn_007F7190(FLOAT* out, FLOAT a, FLOAT b, FLOAT c, FLOAT d) {
     return 0;
 }
 } // namespace lift_007F7190
+
+// [0x007F6750] sub_007F6750 (99 bytes)
+namespace lift_007F6750 {
+// @name ScalarTripleProductOffsets
+// @summary Returns dot(d, cross(b - a, c - a)) for three 3-float points a, b, c and a 3-float vector d.
+
+// Computes the scalar triple product d . ((b - a) x (c - a)).
+// Inputs are 3-component float vectors (x, y, z at offsets 0, 4, 8).
+// Intermediates are kept in double to approximate the x87 extended-precision
+// accumulation of the original code; the result is rounded to float at return.
+float fn_007F6750(const float* a, const float* b, const float* c, const float* d) {
+    const double ux = static_cast<double>(b[0]) - a[0];
+    const double uy = static_cast<double>(b[1]) - a[1];
+    const double uz = static_cast<double>(b[2]) - a[2];
+
+    const double vx = static_cast<double>(c[0]) - a[0];
+    const double vy = static_cast<double>(c[1]) - a[1];
+    const double vz = static_cast<double>(c[2]) - a[2];
+
+    // cross(u, v)
+    const double cx = uy * vz - uz * vy;
+    const double cy = uz * vx - ux * vz;
+    const double cz = ux * vy - uy * vx;
+
+    const double result = static_cast<double>(d[0]) * cx
+                        + static_cast<double>(d[1]) * cy
+                        + static_cast<double>(d[2]) * cz;
+
+    return static_cast<float>(result);
+}
+} // namespace lift_007F6750

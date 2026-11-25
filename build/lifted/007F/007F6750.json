@@ -1,0 +1,13 @@
+{
+  "va": "0x007F6750",
+  "size": 99,
+  "orig_symbol": "sub_007F6750",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "ScalarTripleProductOffsets",
+  "signature": "float fn_007F6750(const float* a, const float* b, const float* c, const float* d)",
+  "summary": "Returns dot(d, cross(b - a, c - a)) for three 3-float points a, b, c and a 3-float vector d.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:41:19Z"
+}

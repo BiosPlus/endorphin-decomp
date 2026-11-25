@@ -55132,6 +55132,12 @@
     "summary": "Stores one byte into the byte array at this+0x1B8, indexed by the first stack argument.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D6B10": {
+    "name": "sub_006D6B10",
+    "signature": "void __thiscall sub_006D6B10(void* self, int32_t* out0, int32_t* out1, int32_t* out2)",
+    "summary": "Copies three int32 fields from +0x1c4/+0x1c8/+0x1cc to output pointers, or clamps to (5, 0, 0) when field_0x1c4 is in [1, 4].",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D6C00": {
     "name": "sub_006D6C00",
     "signature": "extern \"C\" void* __fastcall fn_006D6C00(void* self, int edx_unused, unsigned int flags)",
@@ -68165,6 +68171,12 @@
     "name": "CallLookupResultWithOutParam",
     "signature": "void fn_007F6690(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t* out)",
     "summary": "Stores arg0 through out-pointer arg3, looks up a handler from arg0, and if found calls it with (arg0, arg1, arg2, out); otherwise returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
+  "0x007F6750": {
+    "name": "ScalarTripleProductOffsets",
+    "signature": "float fn_007F6750(const float* a, const float* b, const float* c, const float* d)",
+    "summary": "Returns dot(d, cross(b - a, c - a)) for three 3-float points a, b, c and a 3-float vector d.",
     "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
   "0x007F67C0": {
