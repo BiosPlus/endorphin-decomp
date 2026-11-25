@@ -458,3 +458,24 @@ bool ConsumeStringPrefix(char **dst, const char *src)
     }
 }
 } // namespace lift_0069B0C0
+
+// [0x0069B5A0]
+namespace lift_0069B5A0 {
+// @name ConsumeKeywordPrefix
+// @summary If src is a prefix of *dst and the next char is not an identifier char, advance *dst past it and return true; otherwise leave *dst unchanged and return false.
+
+bool ext_0069B0C0(char **dst, const char *src);
+int ext_0069B100(int8_t c);
+
+bool fn_0069B5A0(char **dst, const char *src) {
+    char *p = *dst;
+    if (!ext_0069B0C0(&p, src)) {
+        return false;
+    }
+    if (ext_0069B100(static_cast<int8_t>(*p))) {
+        return false;
+    }
+    *dst = p;
+    return true;
+}
+} // namespace lift_0069B5A0

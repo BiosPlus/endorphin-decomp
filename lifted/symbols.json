@@ -38608,6 +38608,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006A2C20 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0069B5A0": {
+    "name": "ConsumeKeywordPrefix",
+    "signature": "bool fn_0069B5A0(char **dst, const char *src)",
+    "summary": "If src is a prefix of *dst and the next char is not an identifier char, advance *dst past it and return true; otherwise leave *dst unchanged and return false.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x0069B5E0": {
     "name": "ExprParser::SingleVariableContainer::vfunc_2",
     "class": "ExprParser::SingleVariableContainer",

@@ -1,0 +1,13 @@
+{
+  "va": "0x0069B5A0",
+  "size": 63,
+  "orig_symbol": "sub_0069B5A0",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "ConsumeKeywordPrefix",
+  "signature": "bool fn_0069B5A0(char **dst, const char *src)",
+  "summary": "If src is a prefix of *dst and the next char is not an identifier char, advance *dst past it and return true; otherwise leave *dst unchanged and return false.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:05:47Z"
+}
