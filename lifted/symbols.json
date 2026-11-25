@@ -15909,6 +15909,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
+  "0x004E13E0": {
+    "name": "sub_004E13E0",
+    "signature": "void* fn_004E13E0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004E1440": {
     "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0\u003e",
@@ -16326,6 +16332,12 @@
     "signature": "void* fn_004ECA70(void* self)",
     "summary": "Runtime type check: dynamic-casts self to the type at mem_00A398B0 (source type mem_00A2E2F8) and returns the result or NULL.",
     "lifted_path": "lifted/templates/Function2Type.cpp"
+  },
+  "0x004ECC40": {
+    "name": "sub_004ECC40",
+    "signature": "void* fn_004ECC40()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
   "0x004ECCA0": {
     "name": "ExprParser::ReadWriteMethodType\u003cSelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, int, {public: void __thiscall SelectionVariable::setNumRequiredObjects(int), 0}\u003e::vfunc_41",
@@ -17503,6 +17515,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00504B80 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Chromosome/auto_tiny.cpp"
   },
+  "0x00505850": {
+    "name": "sub_00505850",
+    "signature": "void* fn_00505850()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00505A10": {
     "name": "sub_00505A10",
     "signature": "DWORD ext_00505850();  // ConstructOnce_0046F580 DWORD* fn_00505A10(DWORD* dst, DWORD value)",
@@ -17760,6 +17778,48 @@
     "summary": "Forwards the Task's field at +0x14 to ext_0046C500 when the source task pointer is non-null; otherwise throws.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00509360": {
+    "name": "sub_00509360",
+    "signature": "void* fn_00509360()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x005093C0": {
+    "name": "sub_005093C0",
+    "signature": "void* fn_005093C0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x00509420": {
+    "name": "sub_00509420",
+    "signature": "void* fn_00509420()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x00509480": {
+    "name": "sub_00509480",
+    "signature": "void* fn_00509480()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x005094E0": {
+    "name": "sub_005094E0",
+    "signature": "void* fn_005094E0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x00509540": {
+    "name": "sub_00509540",
+    "signature": "void* fn_00509540()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x005095A0": {
+    "name": "sub_005095A0",
+    "signature": "void* fn_005095A0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00509600": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, int, {public: void __thiscall NMData::TaskManager::setAccumulationType(int), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, int, {public: void __thiscall NMData::TaskManager::setAccumulationType(int), 0}\u003e",
@@ -18011,6 +18071,36 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004BE680 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0050E7B0": {
+    "name": "sub_0050E7B0",
+    "signature": "void* fn_0050E7B0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x0050E810": {
+    "name": "sub_0050E810",
+    "signature": "void* fn_0050E810()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x0050E870": {
+    "name": "sub_0050E870",
+    "signature": "void* fn_0050E870()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x0050E8D0": {
+    "name": "sub_0050E8D0",
+    "signature": "void* fn_0050E8D0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x0050E930": {
+    "name": "sub_0050E930",
+    "signature": "void* fn_0050E930()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050E9F0": {
     "name": "sub_0050E9F0",
     "signature": "double sub_0050E9F0(void* self)",
@@ -18154,6 +18244,66 @@
     "signature": "uint32_t fn_00511930(uint32_t self, uint32_t src_ptr, uint32_t arg3)",
     "summary": "Reads the dword pointed to by the second argument, forwards it as the ecx value with self to 0x00695E20, and returns self (stdcall, ret 0xc).",
     "lifted_path": "lifted/templates/TerminalParentType.cpp"
+  },
+  "0x00511A80": {
+    "name": "sub_00511A80",
+    "signature": "void* fn_00511A80()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
+  "0x00511AE0": {
+    "name": "sub_00511AE0",
+    "signature": "void* fn_00511AE0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
+  "0x00511B40": {
+    "name": "sub_00511B40",
+    "signature": "void* fn_00511B40()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
+  "0x00511BA0": {
+    "name": "sub_00511BA0",
+    "signature": "void* fn_00511BA0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
+  "0x00511C00": {
+    "name": "sub_00511C00",
+    "signature": "void* fn_00511C00()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
+  "0x00511C60": {
+    "name": "sub_00511C60",
+    "signature": "void* fn_00511C60()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
+  "0x00511CC0": {
+    "name": "sub_00511CC0",
+    "signature": "void* fn_00511CC0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
+  "0x00511D20": {
+    "name": "sub_00511D20",
+    "signature": "void* fn_00511D20()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
+  "0x00511D80": {
+    "name": "sub_00511D80",
+    "signature": "void* fn_00511D80()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
+  "0x00511DE0": {
+    "name": "sub_00511DE0",
+    "signature": "void* fn_00511DE0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
   "0x00511F80": {
     "name": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e::vfunc_13",
@@ -18693,6 +18843,18 @@
     "summary": "Binary search for the first std::string in [first, last) that is not less than value, using operator\u003c.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x0051A9A0": {
+    "name": "sub_0051A9A0",
+    "signature": "void* fn_0051A9A0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
+  "0x0051AA00": {
+    "name": "sub_0051AA00",
+    "signature": "void* fn_0051AA00()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x0051AB80": {
     "name": "NMData::RealChannel::vfunc_7",
     "class": "NMData::RealChannel",
@@ -19201,6 +19363,18 @@
     "class": "NMData::VariableValue",
     "signature": "void* fn_00524610(void* self, uint32_t arg1, uint32_t arg2)",
     "summary": "Constructor: sets PropertySource-derived vtable 0x0094F484, stores two constructor args at +0x04/+0x08, and default-constructs a std::string at +0x0C.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
+  "0x00524750": {
+    "name": "sub_00524750",
+    "signature": "void* fn_00524750()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
+  "0x005247B0": {
+    "name": "sub_005247B0",
+    "signature": "void* fn_005247B0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
   "0x00524BC0": {
@@ -24613,6 +24787,48 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0058D560": {
+    "name": "sub_0058D560",
+    "signature": "void* fn_0058D560()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
+  "0x0058D5C0": {
+    "name": "sub_0058D5C0",
+    "signature": "void* fn_0058D5C0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
+  "0x0058D620": {
+    "name": "sub_0058D620",
+    "signature": "void* fn_0058D620()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
+  "0x0058D680": {
+    "name": "sub_0058D680",
+    "signature": "void* fn_0058D680()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
+  "0x0058D6E0": {
+    "name": "sub_0058D6E0",
+    "signature": "void* fn_0058D6E0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
+  "0x0058D740": {
+    "name": "sub_0058D740",
+    "signature": "void* fn_0058D740()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
+  "0x0058D7A0": {
+    "name": "sub_0058D7A0",
+    "signature": "void* fn_0058D7A0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x0058D850": {
     "name": "sub_0058D850",
     "signature": "DWORD ext_0058D560();  // ConstructOnce_0046F580 DWORD* fn_0058D850(DWORD* dst, DWORD value)",
@@ -25381,6 +25597,54 @@
     "summary": "Lazily constructs the function-local static object at 0x00B413C4 (guarded by bit 0 of 0x00B413C8) and writes its address into out+4.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005957F0": {
+    "name": "sub_005957F0",
+    "signature": "void* fn_005957F0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
+  "0x00595850": {
+    "name": "sub_00595850",
+    "signature": "void* fn_00595850()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
+  "0x005958B0": {
+    "name": "sub_005958B0",
+    "signature": "void* fn_005958B0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
+  "0x00595910": {
+    "name": "sub_00595910",
+    "signature": "void* fn_00595910()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
+  "0x00595970": {
+    "name": "sub_00595970",
+    "signature": "void* fn_00595970()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
+  "0x005959D0": {
+    "name": "sub_005959D0",
+    "signature": "void* fn_005959D0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
+  "0x00595A30": {
+    "name": "sub_00595A30",
+    "signature": "void* fn_00595A30()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
+  "0x00595A90": {
+    "name": "sub_00595A90",
+    "signature": "void* fn_00595A90()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00595C50": {
     "name": "sub_00595C50",
     "signature": "void* fn_00595C50()",
@@ -25767,6 +26031,30 @@
     "signature": "void fn_0059E9B0(void* arg)",
     "summary": "Forwards its argument to shared dispatcher sub_00671100 with selector 22 (dispatcher not yet lifted).",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
+  },
+  "0x0059E9C0": {
+    "name": "sub_0059E9C0",
+    "signature": "void* fn_0059E9C0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
+  "0x0059EA20": {
+    "name": "sub_0059EA20",
+    "signature": "void* fn_0059EA20()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
+  "0x0059EA80": {
+    "name": "sub_0059EA80",
+    "signature": "void* fn_0059EA80()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
+  "0x0059EAE0": {
+    "name": "sub_0059EAE0",
+    "signature": "void* fn_0059EAE0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
   "0x0059EB40": {
     "name": "ExprParser::ROWriteMethodType\u003cNMData::CharacterData\u003e::vfunc_16",
@@ -28461,6 +28749,96 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046CA90 (ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005C6E00": {
+    "name": "sub_005C6E00",
+    "signature": "void* fn_005C6E00()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005C6E60": {
+    "name": "sub_005C6E60",
+    "signature": "void* fn_005C6E60()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005C6EC0": {
+    "name": "sub_005C6EC0",
+    "signature": "void* fn_005C6EC0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005C6F20": {
+    "name": "sub_005C6F20",
+    "signature": "void* fn_005C6F20()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005C6F80": {
+    "name": "sub_005C6F80",
+    "signature": "void* fn_005C6F80()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005C6FE0": {
+    "name": "sub_005C6FE0",
+    "signature": "void* fn_005C6FE0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005C7040": {
+    "name": "sub_005C7040",
+    "signature": "void* fn_005C7040()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005C70A0": {
+    "name": "sub_005C70A0",
+    "signature": "void* fn_005C70A0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005C7100": {
+    "name": "sub_005C7100",
+    "signature": "void* fn_005C7100()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005C7160": {
+    "name": "sub_005C7160",
+    "signature": "void* fn_005C7160()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005C71C0": {
+    "name": "sub_005C71C0",
+    "signature": "void* fn_005C71C0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005C7220": {
+    "name": "sub_005C7220",
+    "signature": "void* fn_005C7220()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005C7280": {
+    "name": "sub_005C7280",
+    "signature": "void* fn_005C7280()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005C72E0": {
+    "name": "sub_005C72E0",
+    "signature": "void* fn_005C72E0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005C7340": {
+    "name": "sub_005C7340",
+    "signature": "void* fn_005C7340()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005C73A0": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, bool, {public: void __thiscall NMData::CollisionModelData::setCollidesWithAncestors(bool), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, bool, {public: void __thiscall NMData::CollisionModelData::setCollidesWithAncestors(bool), 0}\u003e",
@@ -28853,6 +29231,30 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005CBF80": {
+    "name": "sub_005CBF80",
+    "signature": "void* fn_005CBF80()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005CBFE0": {
+    "name": "sub_005CBFE0",
+    "signature": "void* fn_005CBFE0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005CC040": {
+    "name": "sub_005CC040",
+    "signature": "void* fn_005CC040()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005CC0A0": {
+    "name": "sub_005CC0A0",
+    "signature": "void* fn_005CC0A0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005CC1E0": {
     "name": "NMData::CollisionModelDataBase::vfunc_0",
     "class": "NMData::CollisionModelDataBase",
@@ -29104,6 +29506,12 @@
     "class": "NMData::DesiredPoseEventData",
     "signature": "extern void __thiscall fn_005CF3E0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0048DE30 (NMData::DesiredPoseEventData::vfunc_87).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005CF420": {
+    "name": "sub_005CF420",
+    "signature": "void* fn_005CF420()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
   "0x005CF480": {
@@ -31477,6 +31885,54 @@
     "summary": "Reads a float from inner object's vtable slot 1, stores it through *arg into ext_0064F900, then writes a (value, inner) pair to out (value is 0 when inner is null).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005F3730": {
+    "name": "sub_005F3730",
+    "signature": "void* fn_005F3730()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005F3790": {
+    "name": "sub_005F3790",
+    "signature": "void* fn_005F3790()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005F37F0": {
+    "name": "sub_005F37F0",
+    "signature": "void* fn_005F37F0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005F3850": {
+    "name": "sub_005F3850",
+    "signature": "void* fn_005F3850()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005F38B0": {
+    "name": "sub_005F38B0",
+    "signature": "void* fn_005F38B0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005F3910": {
+    "name": "sub_005F3910",
+    "signature": "void* fn_005F3910()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005F3970": {
+    "name": "sub_005F3970",
+    "signature": "void* fn_005F3970()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005F39D0": {
+    "name": "sub_005F39D0",
+    "signature": "void* fn_005F39D0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005F3A30": {
     "name": "recordRangeIfNonEmpty",
     "signature": "void* fn_005F3A30(void* self, void* arg)",
@@ -32088,6 +32544,42 @@
     "summary": "Reads the object pointer from the argument holder; if non-null, forwards to virtual slot 14 (0x38) on that object, otherwise raises a C++ exception.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005FD090": {
+    "name": "sub_005FD090",
+    "signature": "void* fn_005FD090()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FD0F0": {
+    "name": "sub_005FD0F0",
+    "signature": "void* fn_005FD0F0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FD150": {
+    "name": "sub_005FD150",
+    "signature": "void* fn_005FD150()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FD1B0": {
+    "name": "sub_005FD1B0",
+    "signature": "void* fn_005FD1B0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FD210": {
+    "name": "sub_005FD210",
+    "signature": "void* fn_005FD210()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FD270": {
+    "name": "sub_005FD270",
+    "signature": "void* fn_005FD270()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005FD330": {
     "name": "TreeNode_eraseSubtree",
     "signature": "void __thiscall fn_005FD330(uint32_t self, uint32_t node)",
@@ -32639,6 +33131,96 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594520 (ExprParser::WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x006053C0": {
+    "name": "sub_006053C0",
+    "signature": "void* fn_006053C0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00605420": {
+    "name": "sub_00605420",
+    "signature": "void* fn_00605420()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00605480": {
+    "name": "sub_00605480",
+    "signature": "void* fn_00605480()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x006054E0": {
+    "name": "sub_006054E0",
+    "signature": "void* fn_006054E0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00605540": {
+    "name": "sub_00605540",
+    "signature": "void* fn_00605540()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x006055A0": {
+    "name": "sub_006055A0",
+    "signature": "void* fn_006055A0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00605600": {
+    "name": "sub_00605600",
+    "signature": "void* fn_00605600()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00605660": {
+    "name": "sub_00605660",
+    "signature": "void* fn_00605660()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x006056C0": {
+    "name": "sub_006056C0",
+    "signature": "void* fn_006056C0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00605720": {
+    "name": "sub_00605720",
+    "signature": "void* fn_00605720()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00605780": {
+    "name": "sub_00605780",
+    "signature": "void* fn_00605780()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x006057E0": {
+    "name": "sub_006057E0",
+    "signature": "void* fn_006057E0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00605840": {
+    "name": "sub_00605840",
+    "signature": "void* fn_00605840()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x006058A0": {
+    "name": "sub_006058A0",
+    "signature": "void* fn_006058A0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00605900": {
+    "name": "sub_00605900",
+    "signature": "void* fn_00605900()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x00605960": {
     "name": "ExprParser::ReadWriteMethodType\u003cEffector, float, getForceBaseCap, setBaseForceCap\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cEffector, float, getForceBaseCap, setBaseForceCap\u003e",
@@ -33009,6 +33591,12 @@
     "signature": "void fn_0060A160(void* self)",
     "summary": "Lazily constructs a function-local static object (guarded by bit 0 of mem_00B478C8) and stores its address into this+0x04.",
     "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
+  "0x0060A1E0": {
+    "name": "sub_0060A1E0",
+    "signature": "void* fn_0060A1E0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
   "0x0060A340": {
     "name": "Sort3StringPairKeys",
@@ -35011,6 +35599,12 @@
     "summary": "Evaluates a SensorIsCollidingWith pointer and returns its boolean state as a std::string, or throws on null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006255F0": {
+    "name": "sub_006255F0",
+    "signature": "void* fn_006255F0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00625910": {
     "name": "sub_00625910",
     "signature": "void* fn_00625910()",
@@ -35170,6 +35764,36 @@
     "signature": "static inline void* vslot(void* obj, size_t byteOffset)",
     "summary": "Auto-lifted identical-shape clone of 0x00650DB0 (ExprParser::WriteMethodType\u003cSkeletalJoint, int, ...\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x00627790": {
+    "name": "sub_00627790",
+    "signature": "void* fn_00627790()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x006277F0": {
+    "name": "sub_006277F0",
+    "signature": "void* fn_006277F0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x00627850": {
+    "name": "sub_00627850",
+    "signature": "void* fn_00627850()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x006278B0": {
+    "name": "sub_006278B0",
+    "signature": "void* fn_006278B0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x00627910": {
+    "name": "sub_00627910",
+    "signature": "void* fn_00627910()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x00627A20": {
     "name": "ExprParser::WriteMethodType\u003cSensors::SensorAbsoluteOrientation, int, setReference\u003e::vfunc_40",
@@ -35435,6 +36059,18 @@
     "summary": "Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x0062A110": {
+    "name": "sub_0062A110",
+    "signature": "void* fn_0062A110()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x0062A170": {
+    "name": "sub_0062A170",
+    "signature": "void* fn_0062A170()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x0062A1D0": {
     "name": "ExprParser::WriteMethodType\u003cSensors::SensorRelativeTime, float, resetTime\u003e::vfunc_40",
     "class": "ExprParser::WriteMethodType\u003cSensors::SensorRelativeTime, float, \u0026public: void __thiscall Sensors::SensorRelativeTime::resetTime(float)\u003e",
@@ -35467,6 +36103,30 @@
     "name": "getAverageValue",
     "signature": "float __thiscall sub_0062A590(uint32_t self)",
     "summary": "Computes the vtable[0x44] float value divided by the 4-byte element count at +0x34..+0x38.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x0062A5D0": {
+    "name": "sub_0062A5D0",
+    "signature": "void* fn_0062A5D0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x0062A630": {
+    "name": "sub_0062A630",
+    "signature": "void* fn_0062A630()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x0062A690": {
+    "name": "sub_0062A690",
+    "signature": "void* fn_0062A690()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x0062A6F0": {
+    "name": "sub_0062A6F0",
+    "signature": "void* fn_0062A6F0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x0062A750": {
@@ -35722,6 +36382,18 @@
     "summary": "Auto-lifted identical-shape clone of 0x0062E4F0 (ExprParser::ReadMethodType\u003cCompoundSensorPlanes\u003e::vfunc_5 (CompoundSensorPlanes::getVertAxis)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0062EE00": {
+    "name": "sub_0062EE00",
+    "signature": "void* fn_0062EE00()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x0062EE60": {
+    "name": "sub_0062EE60",
+    "signature": "void* fn_0062EE60()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x0062EEC0": {
     "name": "Sensors::CompoundSensorFrontalPlane::vfunc_27",
     "class": "Sensors::CompoundSensorFrontalPlane",
@@ -35915,6 +36587,54 @@
     "signature": "void __thiscall fn_006329B0(void* self, void* arg1, void* arg2)",
     "summary": "Evaluates argument via ext_0046E780 into a temporary std::string, invokes virtual slot 15 on *arg1, and destroys the temporary string.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x00632A20": {
+    "name": "sub_00632A20",
+    "signature": "void* fn_00632A20()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
+  "0x00632A80": {
+    "name": "sub_00632A80",
+    "signature": "void* fn_00632A80()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
+  "0x00632AE0": {
+    "name": "sub_00632AE0",
+    "signature": "void* fn_00632AE0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
+  "0x00632B40": {
+    "name": "sub_00632B40",
+    "signature": "void* fn_00632B40()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
+  "0x00632BA0": {
+    "name": "sub_00632BA0",
+    "signature": "void* fn_00632BA0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
+  "0x00632C00": {
+    "name": "sub_00632C00",
+    "signature": "void* fn_00632C00()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
+  "0x00632C60": {
+    "name": "sub_00632C60",
+    "signature": "void* fn_00632C60()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
+  "0x00632CC0": {
+    "name": "sub_00632CC0",
+    "signature": "void* fn_00632CC0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
   "0x00632D20": {
     "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearStiffness(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setLinearStiffness(float)\u003e::vfunc_41",
@@ -36552,6 +37272,12 @@
     "signature": "void fn_0063CB90(void* out, void* const* selfRef, void* ctx)",
     "summary": "Stores a float produced by the child's vfunc_1 into the target's +0x60 slot and returns a (value, child) pair via out-param.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0063CC00": {
+    "name": "sub_0063CC00",
+    "signature": "void* fn_0063CC00()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
   "0x0063D950": {
     "name": "constructWithZeroedFloats",
@@ -38355,6 +39081,120 @@
     "signature": "void* fn_0064B0A0(void* self)",
     "summary": "RTTI type guard: dynamic-casts self to the ROWriteMethodType target type (mem_00A9BD54, source mem_00A2E2F8) and returns the result or NULL.",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
+  },
+  "0x0064B0C0": {
+    "name": "sub_0064B0C0",
+    "signature": "void* fn_0064B0C0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x0064B120": {
+    "name": "sub_0064B120",
+    "signature": "void* fn_0064B120()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x0064B180": {
+    "name": "sub_0064B180",
+    "signature": "void* fn_0064B180()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x0064B1E0": {
+    "name": "sub_0064B1E0",
+    "signature": "void* fn_0064B1E0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x0064B240": {
+    "name": "sub_0064B240",
+    "signature": "void* fn_0064B240()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x0064B2A0": {
+    "name": "sub_0064B2A0",
+    "signature": "void* fn_0064B2A0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x0064B300": {
+    "name": "sub_0064B300",
+    "signature": "void* fn_0064B300()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x0064B360": {
+    "name": "sub_0064B360",
+    "signature": "void* fn_0064B360()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x0064B3C0": {
+    "name": "sub_0064B3C0",
+    "signature": "void* fn_0064B3C0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x0064B420": {
+    "name": "sub_0064B420",
+    "signature": "void* fn_0064B420()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x0064B480": {
+    "name": "sub_0064B480",
+    "signature": "void* fn_0064B480()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x0064B4E0": {
+    "name": "sub_0064B4E0",
+    "signature": "void* fn_0064B4E0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x0064B540": {
+    "name": "sub_0064B540",
+    "signature": "void* fn_0064B540()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x0064B5A0": {
+    "name": "sub_0064B5A0",
+    "signature": "void* fn_0064B5A0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x0064B600": {
+    "name": "sub_0064B600",
+    "signature": "void* fn_0064B600()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x0064B660": {
+    "name": "sub_0064B660",
+    "signature": "void* fn_0064B660()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x0064B6C0": {
+    "name": "sub_0064B6C0",
+    "signature": "void* fn_0064B6C0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x0064B720": {
+    "name": "sub_0064B720",
+    "signature": "void* fn_0064B720()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x0064B780": {
+    "name": "sub_0064B780",
+    "signature": "void* fn_0064B780()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
   "0x0064B840": {
     "name": "copyRange0x18",
@@ -40816,6 +41656,180 @@
     "summary": "Forwards the object's first dword to ext_00493D90 and returns 0 (stdcall, one arg).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x0066E0C0": {
+    "name": "sub_0066E0C0",
+    "signature": "void* fn_0066E0C0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E120": {
+    "name": "sub_0066E120",
+    "signature": "void* fn_0066E120()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E180": {
+    "name": "sub_0066E180",
+    "signature": "void* fn_0066E180()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E1E0": {
+    "name": "sub_0066E1E0",
+    "signature": "void* fn_0066E1E0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E240": {
+    "name": "sub_0066E240",
+    "signature": "void* fn_0066E240()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E2A0": {
+    "name": "sub_0066E2A0",
+    "signature": "void* fn_0066E2A0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E300": {
+    "name": "sub_0066E300",
+    "signature": "void* fn_0066E300()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E360": {
+    "name": "sub_0066E360",
+    "signature": "void* fn_0066E360()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E3C0": {
+    "name": "sub_0066E3C0",
+    "signature": "void* fn_0066E3C0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E420": {
+    "name": "sub_0066E420",
+    "signature": "void* fn_0066E420()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E480": {
+    "name": "sub_0066E480",
+    "signature": "void* fn_0066E480()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E4E0": {
+    "name": "sub_0066E4E0",
+    "signature": "void* fn_0066E4E0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E540": {
+    "name": "sub_0066E540",
+    "signature": "void* fn_0066E540()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E5A0": {
+    "name": "sub_0066E5A0",
+    "signature": "void* fn_0066E5A0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E600": {
+    "name": "sub_0066E600",
+    "signature": "void* fn_0066E600()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E660": {
+    "name": "sub_0066E660",
+    "signature": "void* fn_0066E660()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E6C0": {
+    "name": "sub_0066E6C0",
+    "signature": "void* fn_0066E6C0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E720": {
+    "name": "sub_0066E720",
+    "signature": "void* fn_0066E720()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E780": {
+    "name": "sub_0066E780",
+    "signature": "void* fn_0066E780()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E7E0": {
+    "name": "sub_0066E7E0",
+    "signature": "void* fn_0066E7E0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E840": {
+    "name": "sub_0066E840",
+    "signature": "void* fn_0066E840()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E8A0": {
+    "name": "sub_0066E8A0",
+    "signature": "void* fn_0066E8A0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E900": {
+    "name": "sub_0066E900",
+    "signature": "void* fn_0066E900()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E960": {
+    "name": "sub_0066E960",
+    "signature": "void* fn_0066E960()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066E9C0": {
+    "name": "sub_0066E9C0",
+    "signature": "void* fn_0066E9C0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066EA20": {
+    "name": "sub_0066EA20",
+    "signature": "void* fn_0066EA20()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066EA80": {
+    "name": "sub_0066EA80",
+    "signature": "void* fn_0066EA80()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066EAE0": {
+    "name": "sub_0066EAE0",
+    "signature": "void* fn_0066EAE0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x0066EB40": {
+    "name": "sub_0066EB40",
+    "signature": "void* fn_0066EB40()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x0066EBA0": {
     "name": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)",
     "class": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, float, \u0026public: void __thiscall DoubleWithProperties::setValue(float)\u003e",
@@ -40996,6 +42010,24 @@
     "signature": "int fn_00670AE0(void* self, void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004B9400 (ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getUnitLength, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00670B30": {
+    "name": "sub_00670B30",
+    "signature": "void* fn_00670B30()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
+  "0x00670B90": {
+    "name": "sub_00670B90",
+    "signature": "void* fn_00670B90()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
+  "0x00670BF0": {
+    "name": "sub_00670BF0",
+    "signature": "void* fn_00670BF0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x00670C50": {
     "name": "lowerBoundByPairU32",
@@ -41340,6 +42372,12 @@
     "signature": "extern \"C\" uint32_t __thiscall fn_00674CE0(void* /*self*/, uint32_t* entry_ptr)",
     "summary": "Checks if ExpressionEntry::getExpression() matches either of two string literals, throwing if the entry pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00674EC0": {
+    "name": "sub_00674EC0",
+    "signature": "void* fn_00674EC0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x00674F20": {
     "name": "sub_00674F20",
@@ -41982,6 +43020,12 @@
     "summary": "Forwards arg2 to virtual slot 19 (+0x4C) of the object pointed to by arg1's first word, and returns its result.",
     "lifted_path": "lifted/Properties/auto_tiny.cpp"
   },
+  "0x00681C50": {
+    "name": "sub_00681C50",
+    "signature": "void* fn_00681C50()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00681FE0": {
     "name": "sub_00681FE0",
     "signature": "void* fn_00681FE0(void* self)",
@@ -42099,6 +43143,12 @@
     "signature": "extern \"C\" void __fastcall fn_006830F0(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by +0x4 and tail-calls sub_00682FD0.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
+  },
+  "0x00683190": {
+    "name": "sub_00683190",
+    "signature": "void* fn_00683190()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x006836F0": {
     "name": "sub_006836F0",
@@ -42238,6 +43288,30 @@
     "signature": "void* fn_00684DE0(void* out, void* unused_arg)",
     "summary": "Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType\u003cRuntimeEngine, int, getNumTicksToRun, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x006850E0": {
+    "name": "sub_006850E0",
+    "signature": "void* fn_006850E0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x00685140": {
+    "name": "sub_00685140",
+    "signature": "void* fn_00685140()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x006851A0": {
+    "name": "sub_006851A0",
+    "signature": "void* fn_006851A0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x00685200": {
+    "name": "sub_00685200",
+    "signature": "void* fn_00685200()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x006852C0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::ValuePtrData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0\u003e::vfunc_0",
@@ -42733,6 +43807,36 @@
     "signature": "uint32_t __thiscall fn_0068C230(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
     "summary": "Evaluates an argument as float, calls Randomizer::randN, and stores the result.",
     "lifted_path": "lifted/templates/FunctionType.cpp"
+  },
+  "0x0068C280": {
+    "name": "sub_0068C280",
+    "signature": "void* fn_0068C280()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x0068C2E0": {
+    "name": "sub_0068C2E0",
+    "signature": "void* fn_0068C2E0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x0068C340": {
+    "name": "sub_0068C340",
+    "signature": "void* fn_0068C340()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x0068C3A0": {
+    "name": "sub_0068C3A0",
+    "signature": "void* fn_0068C3A0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x0068C400": {
+    "name": "sub_0068C400",
+    "signature": "void* fn_0068C400()",
+    "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x0068C460": {
     "name": "ExprParser::ReadWriteMethodType\u003cRandomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, int, {public: void __thiscall Randomizer::setSeed(int), 0}\u003e::vfunc_41",

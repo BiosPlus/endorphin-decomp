@@ -1,0 +1,21 @@
+{
+  "va": "0x0066E1E0",
+  "size": 87,
+  "orig_symbol": "sub_0066E1E0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "sub_0066E1E0",
+  "signature": "void* fn_0066E1E0()",
+  "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T02:33:40Z"
+}
