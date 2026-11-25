@@ -1,0 +1,27 @@
+{
+  "va": "0x00430FA0",
+  "size": 28,
+  "orig_symbol": "sub_00430FA0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "CWndSub_KillTimerAndCleanup",
+  "signature": "void __thiscall fn_00430FA0(void* self)",
+  "summary": "Kills the timer at +0x160 for HWND at +0x20 and tail-calls MFC80_ord_4342",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x20",
+      "type": "uintptr_t",
+      "name": "m_hWnd"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x160",
+      "type": "uintptr_t",
+      "name": "m_nTimerID"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T11:31:00Z"
+}

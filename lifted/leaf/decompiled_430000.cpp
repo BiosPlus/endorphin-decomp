@@ -3293,3 +3293,24 @@ extern CheckedIterator* __thiscall fn_0043E5D0(
 }
 } // namespace lift_00660870
 } // namespace lift_0043E5D0
+
+// [0x00430FA0]
+namespace lift_00430FA0 {
+// @name CWndSub_KillTimerAndCleanup
+// @summary Kills the timer at +0x160 for HWND at +0x20 and tail-calls MFC80_ord_4342
+// @field Self +0x20 uintptr_t m_hWnd
+// @field Self +0x160 uintptr_t m_nTimerID
+
+
+extern void ext_006A64EA(void);
+extern uintptr_t mem_00925660;
+
+using KillTimerFn = int (__stdcall *)(uintptr_t hWnd, uintptr_t uIDEvent);
+
+void __thiscall fn_00430FA0(void* self) {
+    uintptr_t timer_id = lift_field<uint32_t>(self, 0x160);
+    uintptr_t hwnd = lift_field<uint32_t>(self, 0x20);
+    reinterpret_cast<KillTimerFn>(mem_00925660)(hwnd, timer_id);
+    reinterpret_cast<void(__thiscall *)(void*)>(&ext_006A64EA)(self);
+}
+} // namespace lift_00430FA0
