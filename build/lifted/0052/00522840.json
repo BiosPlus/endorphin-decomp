@@ -1,0 +1,13 @@
+{
+  "va": "0x00522840",
+  "size": 86,
+  "orig_symbol": "sub_00522840",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "copyRecordRangeAndGetEnd",
+  "signature": "void* fn_00522840(const void* begin, const void* end, void* dst)",
+  "summary": "Copies the 0x28-byte record range [begin, end) into dst via copyStringRecordRange, then returns dst advanced by the whole-record count of that range (in bytes).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:11:38Z"
+}

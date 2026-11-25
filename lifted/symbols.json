@@ -18168,6 +18168,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005D2470 (ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, getFrameOffset, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00522840": {
+    "name": "copyRecordRangeAndGetEnd",
+    "signature": "void* fn_00522840(const void* begin, const void* end, void* dst)",
+    "summary": "Copies the 0x28-byte record range [begin, end) into dst via copyStringRecordRange, then returns dst advanced by the whole-record count of that range (in bytes).",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00522FD0": {
     "name": "sub_00522FD0",
     "signature": "uint32_t fn_00522FD0(uint32_t begin, uint32_t end, uint32_t value)",

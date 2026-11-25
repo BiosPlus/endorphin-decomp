@@ -665,3 +665,21 @@ void fn_00528AE0(void* self) {
     lift_field<uint32_t>(self, 0x00) = 0x00953454u;
 }
 } // namespace lift_00528AE0
+
+// [0x00522840] sub_00522840 (86 bytes)
+namespace lift_00522840 {
+// Known callee 0x005224E0: copyStringRecordRange (Copies a range of 0x28-byte records into dst, assigning each record's +0x0C string.)
+extern void* ext_005224E0(const void* begin, const void* end, void* dst);
+
+// @name copyRecordRangeAndGetEnd
+// @summary Copies the 0x28-byte record range [begin, end) into dst via copyStringRecordRange, then returns dst advanced by the whole-record count of that range (in bytes).
+void* fn_00522840(const void* begin, const void* end, void* dst) {
+    ext_005224E0(begin, end, dst);
+
+    // Signed division of (end - begin) by the 40-byte record size (truncates toward zero).
+    const ptrdiff_t bytes = static_cast<const uint8_t*>(end) - static_cast<const uint8_t*>(begin);
+    const ptrdiff_t count = bytes / 40;
+
+    return static_cast<uint8_t*>(dst) + count * 40;
+}
+} // namespace lift_00522840
