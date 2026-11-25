@@ -1,0 +1,13 @@
+{
+  "va": "0x004D2650",
+  "size": 87,
+  "orig_symbol": "sub_004D2650",
+  "src_path": "src/leaf/decompiled_4D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4D0000.cpp",
+  "name": "initStaticObjectOnce_004D2650",
+  "signature": "void* fn_004D2650()",
+  "summary": "One-time initializer guarded by bit 0 of mem_00AE55C8; initializes mem_00AE55C4 and returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:33:10Z"
+}
