@@ -1,0 +1,13 @@
+{
+  "va": "0x0043D2E0",
+  "size": 112,
+  "orig_symbol": "sub_0043D2E0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "throwFromStaticMessage",
+  "signature": "void fn_0043D2E0(void* self)",
+  "summary": "Builds a std::string message and throws it wrapped in a std::exception-derived error.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:09:31Z"
+}

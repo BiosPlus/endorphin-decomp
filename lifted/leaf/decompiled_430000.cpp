@@ -3431,3 +3431,16 @@ bool fn_00435C70(void* self, uint32_t count) {
     return true;
 }
 } // namespace lift_00435C70
+
+// [0x0043D2E0] sub_0043D2E0 (112 bytes)
+namespace lift_0043D2E0 {
+// @name throwFromStaticMessage
+// @summary Builds a std::string message and throws it wrapped in a std::exception-derived error.
+void fn_0043D2E0(void* self) {
+    (void)self;
+    // Original: constructs std::string from a .rdata literal (0x932088), copies it into
+    // a local exception object, then calls _CxxThrowException. Portable equivalent:
+    std::string message("sub_0043D2E0");
+    throw std::runtime_error(message);
+}
+} // namespace lift_0043D2E0
