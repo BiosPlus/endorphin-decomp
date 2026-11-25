@@ -24097,6 +24097,13 @@
     "summary": "Copies four floats from the source pointer into self+0x10..0x1c and sets the byte flag at self+0x04 to 1.",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
+  "0x005B1B90": {
+    "name": "Unknown::ForwardQuadToSubobjectOrZero",
+    "class": "Unknown",
+    "signature": "float fn_005B1B90(void* self, int32_t index)",
+    "summary": "For index \u003c 3, copies four floats from +0x10..+0x1C into a local array and forwards (index, array) to vtable slot 9 of the subobject at +0x0C; otherwise returns 0.0f.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B2130": {
     "name": "Unknown::ForwardArgToSubobjectVfunc5",
     "class": "Unknown",

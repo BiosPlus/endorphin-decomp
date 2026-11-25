@@ -315,3 +315,38 @@ void* fn_005B1930(void* self) {
     return self;
 }
 } // namespace lift_005B1930
+
+// [0x005B1B90]
+namespace lift_005B1B90 {
+namespace lift_005B1B90 {
+// @name Unknown::ForwardQuadToSubobjectOrZero
+// @class Unknown
+// @summary For index < 3, copies four floats from +0x10..+0x1C into a local array and forwards (index, array) to vtable slot 9 of the subobject at +0x0C; otherwise returns 0.0f.
+// @field Unknown +0x0C void* field_0x0C
+// @field Unknown +0x10 float field_0x10
+// @field Unknown +0x14 float field_0x14
+// @field Unknown +0x18 float field_0x18
+// @field Unknown +0x1C float field_0x1C
+
+namespace {
+// Virtual slot 9 (offset 0x24): thiscall with stack args (index, float*), returns float.
+using Slot9Fn = float (*)(void* thisPtr, int32_t index, const float* values);
+}
+
+float fn_005B1B90(void* self, int32_t index) {
+    if (index >= 3) {
+        return 0.0f;
+    }
+    float values[4];
+    values[0] = lift_field<float>(self, 0x10);
+    values[1] = lift_field<float>(self, 0x14);
+    values[2] = lift_field<float>(self, 0x18);
+    values[3] = lift_field<float>(self, 0x1C);
+
+    void* child = lift_field<void*>(self, 0x0C);
+    void** vtable = *reinterpret_cast<void***>(child);
+    auto slot9 = reinterpret_cast<Slot9Fn>(vtable[9]);
+    return slot9(child, index, values);
+}
+} // namespace lift_005B1B90
+} // namespace lift_005B1B90

@@ -1,0 +1,46 @@
+{
+  "va": "0x005B1B90",
+  "size": 72,
+  "orig_symbol": "sub_005B1B90",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "Unknown::ForwardQuadToSubobjectOrZero",
+  "class": "Unknown",
+  "signature": "float fn_005B1B90(void* self, int32_t index)",
+  "summary": "For index \u003c 3, copies four floats from +0x10..+0x1C into a local array and forwards (index, array) to vtable slot 9 of the subobject at +0x0C; otherwise returns 0.0f.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:28:20Z"
+}
