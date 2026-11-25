@@ -60237,6 +60237,12 @@
     "summary": "Stores arg0 through out-pointer arg3, looks up a handler from arg0, and if found calls it with (arg0, arg1, arg2, out); otherwise returns 0.",
     "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
+  "0x007F67C0": {
+    "name": "FreeList_Init",
+    "signature": "void fn_007F67C0(void* self, int count)",
+    "summary": "Initialises a 16-byte-node free list of `count` nodes starting at self-\u003ebase.",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
   "0x007F6810": {
     "name": "allocFromFreeList",
     "signature": "void allocFromFreeList(uint8_t* self, uint32_t value)",

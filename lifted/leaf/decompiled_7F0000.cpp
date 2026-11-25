@@ -248,3 +248,35 @@ void fn_007F63D0(void* self) {
     }
 }
 } // namespace lift_007F63D0
+
+// [0x007F67C0] sub_007F67C0 (74 bytes)
+namespace lift_007F67C0 {
+// @name FreeList_Init
+// @summary Initialises a 16-byte-node free list of `count` nodes starting at self->base.
+// @field FreeList +0x00 uint32_t base
+// @field FreeList +0x04 uint32_t reserved
+// @field FreeList +0x08 uint32_t head
+// @field FreeList +0x0c uint32_t tail
+void fn_007F67C0(void* self, int count) {
+    // Guest addresses are 32-bit; treat them as integers and map to host pointers.
+    auto at = [](uint32_t addr) {
+        return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+    };
+
+    // Link node[i].next (at +0x08) -> node[i+1] for i in [0, count-2].
+    for (int i = 0; i < count - 1; ++i) {
+        uint32_t base = lift_field<uint32_t>(self, 0x00);
+        uint32_t node = base + static_cast<uint32_t>(i) * 0x10u;
+        lift_field<uint32_t>(at(node), 0x08) = node + 0x10u;
+    }
+
+    // Terminate the last node: next = 0 at base + count*16 - 8.
+    uint32_t base = lift_field<uint32_t>(self, 0x00);
+    uint32_t last = base + (static_cast<uint32_t>(count) << 4) - 0x08u;
+    lift_field<uint32_t>(at(last), 0x00) = 0;
+
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = base;   // head
+    lift_field<uint32_t>(self, 0x0c) = 0;      // tail
+}
+} // namespace lift_007F67C0
