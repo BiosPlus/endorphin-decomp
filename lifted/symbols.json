@@ -32489,6 +32489,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x38 and tail-calls sub_005E0130.",
     "lifted_path": "lifted/leaf/tiny_620000.cpp"
   },
+  "0x00624540": {
+    "name": "Unknown::InvokeVirtual18ForEach_00624540",
+    "class": "Unknown",
+    "signature": "static void invalid_param()",
+    "summary": "Iterates the 32-bit pointer range at self+0x1C..self+0x20 and calls virtual slot 18 (+0x48) on each element object.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00624590": {
     "name": "Unknown::CallVirtualOnRange_00624590",
     "class": "Unknown",

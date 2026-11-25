@@ -1334,3 +1334,55 @@ void fn_00624590(void* self) {
     }
 }
 } // namespace lift_00624590
+
+// [0x00624540] sub_00624540 (76 bytes)
+namespace lift_00624540 {
+// Runtime invalid-parameter handler pointer (MSVCR80 _invalid_parameter_noinfo in the original).
+extern void (*mem_00925134)();
+
+typedef void (__thiscall *VirtualSlot18Fn)(void*);
+
+static void invalid_param() {
+    mem_00925134();
+}
+
+template <typename T>
+static T* at(DWORD addr) {
+    return reinterpret_cast<T*>(static_cast<uintptr_t>(addr));
+}
+
+// @name Unknown::InvokeVirtual18ForEach_00624540
+// @class Unknown
+// @summary Iterates the 32-bit pointer range at self+0x1C..self+0x20 and calls virtual slot 18 (+0x48) on each element object.
+// @field Unknown +0x1C DWORD field_0x1C
+// @field Unknown +0x20 DWORD field_0x20
+void fn_00624540(void* self) {
+    DWORD cur = lift_field<DWORD>(self, 0x1C);
+    if (cur > lift_field<DWORD>(self, 0x20)) {
+        invalid_param();
+    }
+
+    for (;;) {
+        DWORD end = lift_field<DWORD>(self, 0x20);
+        if (lift_field<DWORD>(self, 0x1C) > end) {
+            invalid_param();
+        }
+        if (cur == end) {
+            break;
+        }
+        if (cur >= lift_field<DWORD>(self, 0x20)) {
+            invalid_param();
+        }
+
+        DWORD obj = *at<DWORD>(cur);
+        DWORD vtbl = *at<DWORD>(obj);
+        DWORD slot = *at<DWORD>(vtbl + 0x48);
+        reinterpret_cast<VirtualSlot18Fn>(static_cast<uintptr_t>(slot))(at<void>(obj));
+
+        if (cur >= lift_field<DWORD>(self, 0x20)) {
+            invalid_param();
+        }
+        cur += 4;
+    }
+}
+} // namespace lift_00624540
