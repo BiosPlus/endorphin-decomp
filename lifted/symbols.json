@@ -38142,6 +38142,13 @@
     "summary": "Returns the float at element `index` of the indexed float array at this+0x30 (thiscall, one stack arg, ret 4).",
     "lifted_path": "lifted/Sensors/auto_tiny.cpp"
   },
+  "0x0062B6F0": {
+    "name": "Node::notifyLinkedObjects",
+    "class": "Node",
+    "signature": "void fn_0062B6F0(void* self)",
+    "summary": "Calls virtual slot 0x78 on the object at +0x0C (passing \u0026this-\u003e+0x08) if set, then on the object at +0x04 (passing this) if set.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x0062B8B0": {
     "name": "CopyStringPairRange",
     "signature": "extern \"C\" char* __cdecl fn_0062B8B0(char* first, char* last, char* dest)",

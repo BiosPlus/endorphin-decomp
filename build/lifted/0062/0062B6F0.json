@@ -1,0 +1,34 @@
+{
+  "va": "0x0062B6F0",
+  "size": 98,
+  "orig_symbol": "sub_0062B6F0",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "Node::notifyLinkedObjects",
+  "class": "Node",
+  "signature": "void fn_0062B6F0(void* self)",
+  "summary": "Calls virtual slot 0x78 on the object at +0x0C (passing \u0026this-\u003e+0x08) if set, then on the object at +0x04 (passing this) if set.",
+  "fields": [
+    {
+      "class": "Node",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "linkA"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x8",
+      "type": "uint8_t field_0x08 (embedded subobject; only its address is",
+      "name": "taken)"
+    },
+    {
+      "class": "Node",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "linkB"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:39:26Z"
+}

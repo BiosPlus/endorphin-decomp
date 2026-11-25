@@ -2575,3 +2575,36 @@ void __cdecl sub_00621680(uint8_t* begin, uint8_t* end) {
     }
 }
 } // namespace lift_00621680
+
+// [0x0062B6F0] sub_0062B6F0 (98 bytes)
+namespace lift_0062B6F0 {
+// @name Node::notifyLinkedObjects
+// @class Node
+// @summary Calls virtual slot 0x78 on the object at +0x0C (passing &this->+0x08) if set, then on the object at +0x04 (passing this) if set.
+// @field Node +0x04 void* linkA
+// @field Node +0x08 uint8_t field_0x08 (embedded subobject; only its address is taken)
+// @field Node +0x0C void* linkB
+void fn_0062B6F0(void* self) {
+    // Virtual slot at byte offset 0x78 of an object's vtable, called as a
+    // member function with the object as `this` and one pointer argument.
+    using SlotFn = void (*)(void* obj, void* arg);
+    auto callSlot = [](void* obj, void* arg) {
+        void* vtable = *reinterpret_cast<void**>(obj);
+        SlotFn fn = reinterpret_cast<SlotFn>(lift_field<void*>(vtable, 0x78));
+        fn(obj, arg);
+    };
+
+    // Second link is optional; first link receives the address of the
+    // embedded subobject at +0x08.
+    void* linkB = lift_field<void*>(self, 0x0C);
+    if (linkB != nullptr) {
+        void* subobject = static_cast<uint8_t*>(self) + 0x08;
+        callSlot(linkB, subobject);
+    }
+
+    void* linkA = lift_field<void*>(self, 0x04);
+    if (linkA != nullptr) {
+        callSlot(linkA, self);
+    }
+}
+} // namespace lift_0062B6F0
