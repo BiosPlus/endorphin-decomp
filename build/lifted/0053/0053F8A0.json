@@ -1,0 +1,39 @@
+{
+  "va": "0x0053F8A0",
+  "size": 82,
+  "orig_symbol": "sub_0053F8A0",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "FindMinKeyPayload",
+  "signature": "int32_t fn_0053F8A0(int32_t count, const void* records)",
+  "summary": "Scans count variable-length records; among records whose sentinel at +0x10 equals 0xBAADF00D, returns the +0x14 payload of the one with the smallest +0x04 key (unsigned), or -1 if none qualify.",
+  "fields": [
+    {
+      "class": "SubRecord",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "SubRecord",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "SubRecord",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "SubRecord",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:02:28Z"
+}

@@ -983,3 +983,34 @@ uint32_t fn_0053B0E0(void* self) {
     return reinterpret_cast<VirtFn>(vtbl[7])(static_cast<void*>(fresh));
 }
 } // namespace lift_0053B0E0
+
+// [0x0053F8A0]
+namespace lift_0053F8A0 {
+// @name FindMinKeyPayload
+// @summary Scans count variable-length records; among records whose sentinel at +0x10 equals 0xBAADF00D, returns the +0x14 payload of the one with the smallest +0x04 key (unsigned), or -1 if none qualify.
+// @field SubRecord +0x00 uint32_t field_0x00
+// @field SubRecord +0x04 uint32_t field_0x04
+// @field SubRecord +0x10 uint32_t field_0x10
+// @field SubRecord +0x14 uint32_t field_0x14
+int32_t fn_0053F8A0(int32_t count, const void* records) {
+    uint32_t result = 0xFFFFFFFFu;
+    uint32_t bestKey = 0xFFFFFFFFu;
+    if (count <= 0) {
+        return -1;
+    }
+
+    const uint8_t* rec = static_cast<const uint8_t*>(records);
+    for (int32_t remaining = count; remaining != 0; --remaining) {
+        const uint32_t words = lift_field<uint32_t>(rec, 0x00);
+        const uint32_t key = lift_field<uint32_t>(rec, 0x04);
+        if (lift_field<uint32_t>(rec, 0x10) == 0xBAADF00Du && key < bestKey) {
+            bestKey = key;
+            result = lift_field<uint32_t>(rec, 0x14);
+        }
+        // Advance to the next record: 12 header/trailer bytes plus 4 bytes per word.
+        rec += static_cast<ptrdiff_t>(12u + 4u * words);
+    }
+
+    return static_cast<int32_t>(result);
+}
+} // namespace lift_0053F8A0

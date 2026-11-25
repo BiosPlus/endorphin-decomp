@@ -19962,6 +19962,12 @@
     "summary": "Epilogue tail: discards two saved stack slots and returns, removing a 4-byte argument from the caller's stack (stdcall-style cleanup).",
     "lifted_path": "lifted/leaf/tiny_530000.cpp"
   },
+  "0x0053F8A0": {
+    "name": "FindMinKeyPayload",
+    "signature": "int32_t fn_0053F8A0(int32_t count, const void* records)",
+    "summary": "Scans count variable-length records; among records whose sentinel at +0x10 equals 0xBAADF00D, returns the +0x14 payload of the one with the smallest +0x04 key (unsigned), or -1 if none qualify.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x0053F960": {
     "name": "RangeExceedsThreshold",
     "class": "Self",
