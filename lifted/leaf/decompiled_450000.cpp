@@ -1081,3 +1081,23 @@ int __stdcall indexToCode_0045D8D0(UINT index) {
     }
 }
 } // namespace lift_0045D8D0
+
+// [0x00455EB0]
+namespace lift_00455EB0 {
+// @name sub_00455EB0_dtor
+// @summary Destructor that resets vtables at +0x00 and +0xfc and invokes MFC base/member destructors
+// @field Obj +0x00 uint32_t vtable
+// @field Obj +0xfc uint32_t subobj_vtable
+
+extern void mem_w32(uintptr_t addr, uint32_t val);
+extern void __thiscall ext_006A5FF2(uintptr_t self);
+extern void __thiscall ext_006A679C(uintptr_t self);
+
+extern void __thiscall fn_00455EB0(uintptr_t self) {
+    mem_w32(self, 0x00936D5Cu);
+    uintptr_t subobj = self + 0xFCu;
+    mem_w32(subobj, 0x0092A23Cu);
+    ext_006A5FF2(subobj);
+    ext_006A679C(self);
+}
+} // namespace lift_00455EB0
