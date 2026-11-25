@@ -1610,3 +1610,17 @@ std::string* fn_005C3F40(std::string* out, uint32_t index) {
     return out;
 }
 } // namespace lift_005C3F40
+
+// [0x005C3AA0]
+namespace lift_005C3AA0 {
+// @name UnknownClass::GetCachedVec3Y
+// @class UnknownClass
+// @summary Returns the Y component (element 1) of the cached vec3 obtained from GetCachedVec3Ptr.
+
+float* ext_005C3A30(void* self);
+
+float fn_005C3AA0(void* self) {
+    float* v = ext_005C3A30(self);
+    return v[1];
+}
+} // namespace lift_005C3AA0

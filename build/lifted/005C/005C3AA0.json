@@ -1,0 +1,14 @@
+{
+  "va": "0x005C3AA0",
+  "size": 9,
+  "orig_symbol": "sub_005C3AA0",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "UnknownClass::GetCachedVec3Y",
+  "class": "UnknownClass",
+  "signature": "float fn_005C3AA0(void* self)",
+  "summary": "Returns the Y component (element 1) of the cached vec3 obtained from GetCachedVec3Ptr.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:11:23Z"
+}

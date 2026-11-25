@@ -31794,6 +31794,13 @@
     "summary": "Returns a pointer to a cached float[3] at this+0x170: refreshed from the object returned by ext_00648480(this+0x16C) when the flag at +0x168 is set and +0x16C is non-null, otherwise returns the callback result at this+0x04 plus 0x30.",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
+  "0x005C3AA0": {
+    "name": "UnknownClass::GetCachedVec3Y",
+    "class": "UnknownClass",
+    "signature": "float fn_005C3AA0(void* self)",
+    "summary": "Returns the Y component (element 1) of the cached vec3 obtained from GetCachedVec3Ptr.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005C3AB0": {
     "name": "NMData::CollisionModelData::vfunc_36",
     "class": "NMData::CollisionModelData",
