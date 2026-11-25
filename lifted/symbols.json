@@ -10966,10 +10966,10 @@
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
   "0x004B6FF0": {
-    "name": "ConfigStrings::ResetDefaults",
-    "class": "ConfigStrings",
-    "signature": "extern \"C\" void __thiscall fn_004B6FF0(void* self)",
-    "summary": "Resets four std::string members to defaults: +0x04 = \"default_default\", +0x20 and +0x3C = copies of global mem_00AE173C, +0x58 = \"Default\".",
+    "name": "sub_004B6C90",
+    "class": "Unknown",
+    "signature": "void* fn_004B6C90(void* self, void* dst, void* arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x00622380 (NMData::SkeletalCalibrationVariables::vfunc_28).",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
   "0x004B7030": {
