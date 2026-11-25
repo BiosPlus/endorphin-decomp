@@ -55,6 +55,8 @@ struct Self_Fields {
     // +0x60  std::string              field_0x60  (evidence: 0x0054C890)
     // +0x64  uint32_t                 member_0x64_vtable  (evidence: 0x006B0CD0, 0x006BA780)
     // +0x74  void*                    vftable_0x74  (evidence: 0x004615B0)
+    // +0x80  uint32_t                 field_0x80  (evidence: 0x007129A0)
+    // +0x84  uint32_t                 field_0x84  (evidence: 0x007129A0)
     // +0x88  void*                    childObject  (evidence: 0x006B8190, 0x006BA780)
     // +0x9C  std::string              field_0x9c  (evidence: 0x0054C890)
     // +0xA8  DWORD                    field_0xA8  (evidence: 0x006B8190, 0x006BA780)

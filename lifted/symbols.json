@@ -61353,6 +61353,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0078CBD0 (sub_0078CBD0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x007129A0": {
+    "name": "getFields84And80",
+    "signature": "void __thiscall sub_007129A0(void* self, uint32_t* out84, uint32_t* out80)",
+    "summary": "Reads 32-bit fields at +0x84 and +0x80 into two output pointers",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x00712A20": {
     "name": "sub_00712A20",
     "signature": "extern \"C\" int32_t __cdecl fn_00712A20(void)",

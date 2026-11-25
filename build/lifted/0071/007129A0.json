@@ -1,0 +1,27 @@
+{
+  "va": "0x007129A0",
+  "size": 27,
+  "orig_symbol": "sub_007129A0",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "getFields84And80",
+  "signature": "void __thiscall sub_007129A0(void* self, uint32_t* out84, uint32_t* out80)",
+  "summary": "Reads 32-bit fields at +0x84 and +0x80 into two output pointers",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x80",
+      "type": "uint32_t",
+      "name": "field_0x80"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x84",
+      "type": "uint32_t",
+      "name": "field_0x84"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T11:29:53Z"
+}

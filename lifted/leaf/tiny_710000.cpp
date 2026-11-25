@@ -2866,3 +2866,15 @@ DWORD fn_007101E0(void* self) {
     return target(sub);
 }
 } // namespace lift_007101E0
+
+// [0x007129A0]
+namespace lift_007129A0 {
+// @name getFields84And80
+// @summary Reads 32-bit fields at +0x84 and +0x80 into two output pointers
+// @field Self +0x80 uint32_t field_0x80
+// @field Self +0x84 uint32_t field_0x84
+void __thiscall sub_007129A0(void* self, uint32_t* out84, uint32_t* out80) {
+    *out84 = lift_field<uint32_t>(self, 0x84);
+    *out80 = lift_field<uint32_t>(self, 0x80);
+}
+} // namespace lift_007129A0
