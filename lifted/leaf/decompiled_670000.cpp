@@ -1943,3 +1943,21 @@ bool __thiscall fn_0067D9E0(const float* self, float tol) {
     return true;
 }
 } // namespace lift_0067D9E0
+
+// [0x0067C3D0]
+namespace lift_0067C3D0 {
+// @name Vec3::rotateX
+// @class Vec3
+// @summary Rotates a 3D vector around the X-axis by the given angle in radians.
+// @field Vec3 +0x04 float y
+// @field Vec3 +0x08 float z
+void __thiscall fn_0067C3D0(void* this_ptr, float angle) {
+    float c = std::cos(angle);
+    float s = std::sin(angle);
+    auto* base = static_cast<char*>(this_ptr);
+    float y = *reinterpret_cast<float*>(base + 0x4);
+    float z = *reinterpret_cast<float*>(base + 0x8);
+    *reinterpret_cast<float*>(base + 0x4) = y * c - z * s;
+    *reinterpret_cast<float*>(base + 0x8) = y * s + z * c;
+}
+} // namespace lift_0067C3D0

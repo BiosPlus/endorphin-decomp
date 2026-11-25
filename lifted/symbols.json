@@ -50634,6 +50634,13 @@
     "summary": "Builds a local 3x3 identity float matrix and passes it to two helper calls (with arg and self).",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067C3D0": {
+    "name": "Vec3::rotateX",
+    "class": "Vec3",
+    "signature": "void __thiscall fn_0067C3D0(void* this_ptr, float angle)",
+    "summary": "Rotates a 3D vector around the X-axis by the given angle in radians.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067C450": {
     "name": "Vec3::rotateY",
     "class": "Vec3",
@@ -58309,6 +58316,13 @@
     "class": "GWCRGBPropertyValue",
     "signature": "void GWCRGBPropertyValue_vfunc_5(GWCRGBPropertyValue_vfunc5_view* self, uint32_t arg1, uint8_t arg2)",
     "summary": "Sets the enabled flag at +0x34; when the object type is 0x64, releases or allocates the pointer at +0x40.",
+    "lifted_path": "lifted/classes/GWCRGBPropertyValue.cpp"
+  },
+  "0x006B3B30": {
+    "name": "GWCRGBPropertyValue::vfunc_2",
+    "class": "GWCRGBPropertyValue",
+    "signature": "void* __thiscall fn_006B3B30(void* self, void* out_str)",
+    "summary": "Formats the RGB property value into a CString using MFC80::Format",
     "lifted_path": "lifted/classes/GWCRGBPropertyValue.cpp"
   },
   "0x006B3BB0": {

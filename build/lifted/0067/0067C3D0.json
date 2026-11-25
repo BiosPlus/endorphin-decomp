@@ -1,0 +1,28 @@
+{
+  "va": "0x0067C3D0",
+  "size": 115,
+  "orig_symbol": "sub_0067C3D0",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "Vec3::rotateX",
+  "class": "Vec3",
+  "signature": "void __thiscall fn_0067C3D0(void* this_ptr, float angle)",
+  "summary": "Rotates a 3D vector around the X-axis by the given angle in radians.",
+  "fields": [
+    {
+      "class": "Vec3",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "y"
+    },
+    {
+      "class": "Vec3",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "z"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:41:56Z"
+}
