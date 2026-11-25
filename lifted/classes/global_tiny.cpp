@@ -6745,3 +6745,20 @@ void fn_004010D0(void* self) {
     mem_00925684(hwnd, 1);
 }
 } // namespace lift_004010D0
+
+// [0x00404660]
+namespace lift_00404660 {
+// @name CBaseTabCtrl::vfunc_84
+// @class CBaseTabCtrl
+// @summary Virtual slot 84: ignores its argument and tail-calls GetSysColor(COLOR_BTNFACE) (index 15).
+
+// IAT slot (0x00925680) holding the address of USER32!GetSysColor.
+extern void* mem_00925680;
+
+// Original: overwrite the stack argument with 0xF, then jmp through the IAT.
+// The caller's argument is discarded; the result is GetSysColor(15).
+DWORD CBaseTabCtrl_vfunc_84(void* /*this*/, int /*nIndex*/) {
+    auto pfnGetSysColor = reinterpret_cast<DWORD (*)(int)>(mem_00925680);
+    return pfnGetSysColor(0x0F);
+}
+} // namespace lift_00404660

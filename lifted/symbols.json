@@ -432,6 +432,13 @@
     "summary": "Destructor tail-call: restores vtable mem_0092979C and tail-calls base destructor thunk_MFC80_ord_748.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x00404660": {
+    "name": "CBaseTabCtrl::vfunc_84",
+    "class": "CBaseTabCtrl",
+    "signature": "DWORD CBaseTabCtrl_vfunc_84(void* /*this*/, int /*nIndex*/)",
+    "summary": "Virtual slot 84: ignores its argument and tail-calls GetSysColor(COLOR_BTNFACE) (index 15).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x004046C0": {
     "name": "CBaseTabCtrl::vfunc_1",
     "class": "CBaseTabCtrl",

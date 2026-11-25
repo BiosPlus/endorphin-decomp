@@ -1,0 +1,14 @@
+{
+  "va": "0x00404660",
+  "size": 14,
+  "orig_symbol": "CBaseTabCtrl::vfunc_84",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CBaseTabCtrl::vfunc_84",
+  "class": "CBaseTabCtrl",
+  "signature": "DWORD CBaseTabCtrl_vfunc_84(void* /*this*/, int /*nIndex*/)",
+  "summary": "Virtual slot 84: ignores its argument and tail-calls GetSysColor(COLOR_BTNFACE) (index 15).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:23:10Z"
+}
