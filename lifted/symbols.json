@@ -66556,6 +66556,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00792900 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x00796660": {
+    "name": "Unknown::refreshDeltaCursor_00796660",
+    "class": "Unknown",
+    "signature": "void fn_00796660(void* self)",
+    "summary": "Recomputes a cached cursor/index (+0x28) from the adjacent-delta count over the span at +0x264, stores the count in +0x26c, and does nothing if the cursor is already set.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x007966D0": {
     "name": "Unknown::updateCachedSpanEnd_007966D0",
     "class": "Unknown",

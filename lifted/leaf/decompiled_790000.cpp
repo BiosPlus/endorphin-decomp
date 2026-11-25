@@ -1035,3 +1035,59 @@ void fn_007966D0(void* self) {
     lift_field<uint32_t>(self, 0x2c) = r * stride + extra;
 }
 } // namespace lift_007966D0
+
+// [0x00796660] sub_00796660 (110 bytes)
+namespace lift_00796660 {
+// Known callee 0x00796740: CountAdjacentDeltasAboveThreshold (Counts how many adjacent double-pair deltas (p[i+1] - p[i]) over a span exceed a constant threshold; returns 0 when the index range is empty.)
+extern uint32_t ext_00796740(const double* base, uint32_t limit);
+
+// @name Unknown::refreshDeltaCursor_00796660
+// @class Unknown
+// @summary Recomputes a cached cursor/index (+0x28) from the adjacent-delta count over the span at +0x264, stores the count in +0x26c, and does nothing if the cursor is already set.
+// @field Unknown +0x08 uint32_t mode            (compared with 1 to pick the stride/limit formula)
+// @field Unknown +0x10 uint32_t count
+// @field Unknown +0x18 uint32_t stride
+// @field Unknown +0x28 uint32_t cursor          (0 = needs recompute; written on exit)
+// @field Unknown +0x48 uint32_t baseIndex
+// @field Unknown +0x264 const double* samples
+// @field Unknown +0x26c uint32_t deltaCount     (result of ext_00796740)
+void fn_00796660(void* self) {
+    auto* b = static_cast<uint8_t*>(self);
+
+    auto rd32 = [&](size_t off) {
+        uint32_t v;
+        std::memcpy(&v, b + off, sizeof v);
+        return v;
+    };
+    auto wr32 = [&](size_t off, uint32_t v) {
+        std::memcpy(b + off, &v, sizeof v);
+    };
+
+    // Cursor already computed: nothing to do.
+    if (rd32(0x28) != 0) {
+        return;
+    }
+
+    const uint32_t mode   = rd32(0x08);
+    const uint32_t count  = rd32(0x10);
+    const uint32_t stride = rd32(0x18);
+    const uint32_t first  = rd32(0x48);
+    const uintptr_t samplesAddr = rd32(0x264);
+    const auto* samples = reinterpret_cast<const double*>(samplesAddr);
+
+    uint32_t result;
+    uint32_t cursor;
+    if (mode == 1) {
+        // Limit is baseIndex + count; cursor covers one extra slot.
+        result = ext_00796740(samples, first + count);
+        wr32(0x26c, result);
+        cursor = (result - 1) * stride + stride + 1;
+    } else {
+        // Limit is baseIndex + 2*count - 1.
+        result = ext_00796740(samples, first + 2 * count - 1);
+        wr32(0x26c, result);
+        cursor = (result - 1) * stride + stride;
+    }
+    wr32(0x28, cursor);
+}
+} // namespace lift_00796660

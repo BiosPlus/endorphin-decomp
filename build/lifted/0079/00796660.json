@@ -1,0 +1,58 @@
+{
+  "va": "0x00796660",
+  "size": 110,
+  "orig_symbol": "sub_00796660",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "Unknown::refreshDeltaCursor_00796660",
+  "class": "Unknown",
+  "signature": "void fn_00796660(void* self)",
+  "summary": "Recomputes a cached cursor/index (+0x28) from the adjacent-delta count over the span at +0x264, stores the count in +0x26c, and does nothing if the cursor is already set.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t mode (compared with 1 to pick the stride/limit",
+      "name": "formula)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "count"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "stride"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "uint32_t cursor (0 = needs recompute; written on",
+      "name": "exit)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "baseIndex"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x264",
+      "type": "const double*",
+      "name": "samples"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x26C",
+      "type": "uint32_t deltaCount (result of",
+      "name": "ext_00796740)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:05:00Z"
+}
