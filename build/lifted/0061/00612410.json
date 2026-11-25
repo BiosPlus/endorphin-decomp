@@ -1,0 +1,34 @@
+{
+  "va": "0x00612410",
+  "size": 65,
+  "orig_symbol": "sub_00612410",
+  "src_path": "src/leaf/decompiled_610000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_610000.cpp",
+  "name": "UnknownClass::setElement2AndNotify",
+  "class": "UnknownClass",
+  "signature": "void __thiscall fn_00612410(uintptr_t self, float value)",
+  "summary": "Stores a float into element 2 of subobject +0x8, sets flag +0xC, and notifies subobject +0xBC and global +0x258.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x8",
+      "type": "uint8_t[]",
+      "name": "field_0x08"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0xBC",
+      "type": "void**",
+      "name": "field_0xBC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:13:11Z"
+}
