@@ -1783,3 +1783,18 @@ void* fn_0041D9E0(uint32_t count) {
     return ext_006A5C62(static_cast<size_t>(count) * 0x38u);
 }
 } // namespace lift_0041D9E0
+
+// [0x0041CE40] sub_0041CE40 (100 bytes)
+namespace lift_0041CE40 {
+// Known callee 0x006720E0: sub_006720E0 (43 bytes). Called with this=self and one
+// argument (pointer to a temporary std::string). Signature inferred from call site.
+extern void ext_006720E0(void* self, const std::string* arg);
+
+// @name forwardCStringToCallee
+// @summary Builds a temporary std::string from the C-string argument, forwards it with self to sub_006720E0, and returns self.
+void* fn_0041CE40(void* self, const char* text) {
+    std::string tmp(text);
+    ext_006720E0(self, &tmp);
+    return self;
+}
+} // namespace lift_0041CE40

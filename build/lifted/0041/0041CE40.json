@@ -1,0 +1,13 @@
+{
+  "va": "0x0041CE40",
+  "size": 100,
+  "orig_symbol": "sub_0041CE40",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "forwardCStringToCallee",
+  "signature": "void* fn_0041CE40(void* self, const char* text)",
+  "summary": "Builds a temporary std::string from the C-string argument, forwards it with self to sub_006720E0, and returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:41:38Z"
+}
