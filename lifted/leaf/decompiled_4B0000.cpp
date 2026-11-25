@@ -907,3 +907,35 @@ void* fn_004B6CC0(void* self) {
     return self;
 }
 } // namespace lift_004B6CC0
+
+// [0x004B6CF0] sub_004B6CF0 (33 bytes)
+namespace lift_004B6CF0 {
+extern int mem_00940694;
+extern int mem_00943350;
+extern int mem_00A3849C;
+extern int mem_00A384A0;
+extern int mem_00A384A4;
+
+// @name InitFloatDefaults_004B6CF0
+// @summary Stores constants 0.2f and 100.0f at this+0x1C/+0x20, then zeroes this+0x24..+0x30.
+// @field <unknown> +0x1c float field_0x1c
+// @field <unknown> +0x20 float field_0x20
+// @field <unknown> +0x24 float field_0x24
+// @field <unknown> +0x28 float field_0x28
+// @field <unknown> +0x2c float field_0x2c
+// @field <unknown> +0x30 float field_0x30
+void fn_004B6CF0(void* self) {
+    lift_field<float>(self, 0x1c) = std::bit_cast<float>(mem_00940694); // 0.2f
+    lift_field<float>(self, 0x20) = std::bit_cast<float>(mem_00943350); // 100.0f
+    lift_field<float>(self, 0x24) = 0.0f;
+    lift_field<float>(self, 0x28) = 0.0f;
+    lift_field<float>(self, 0x2c) = 0.0f;
+    lift_field<float>(self, 0x30) = 0.0f;
+
+    // Keep the .data refs listed for this VA in the original asm. The disassembled
+    // bytes never read them, so these are no-op uses that only preserve the symbol refs.
+    (void)mem_00A3849C;
+    (void)mem_00A384A0;
+    (void)mem_00A384A4;
+}
+} // namespace lift_004B6CF0

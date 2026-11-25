@@ -1,0 +1,51 @@
+{
+  "va": "0x004B6CF0",
+  "size": 33,
+  "orig_symbol": "sub_004B6CF0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "InitFloatDefaults_004B6CF0",
+  "signature": "void fn_004B6CF0(void* self)",
+  "summary": "Stores constants 0.2f and 100.0f at this+0x1C/+0x20, then zeroes this+0x24..+0x30.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x28",
+      "type": "float",
+      "name": "field_0x28"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x2C",
+      "type": "float",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-25T14:11:20Z"
+}

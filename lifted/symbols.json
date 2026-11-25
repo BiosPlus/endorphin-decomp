@@ -13062,6 +13062,12 @@
     "summary": "Default-constructs an embedded std::string at +0x00 and zeroes six floats at +0x1C..+0x30; returns this.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004B6CF0": {
+    "name": "InitFloatDefaults_004B6CF0",
+    "signature": "void fn_004B6CF0(void* self)",
+    "summary": "Stores constants 0.2f and 100.0f at this+0x1C/+0x20, then zeroes this+0x24..+0x30.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B7030": {
     "name": "sub_004B7030",
     "signature": "void sub_004B7030(float *out)",
