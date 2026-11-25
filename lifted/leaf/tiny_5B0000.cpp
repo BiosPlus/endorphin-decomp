@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 extern "C" int mem_0095F7EC;
 #include <cstdint>
+#include <string>
 
 // [0x005B1140] sub_005B1140 (7 bytes)
 // @name sub_005B1140
@@ -359,3 +360,22 @@ uint32_t fn_005B6980(void* self, uint32_t arg) {
     return ext_00647F80(next, arg);
 }
 } // namespace lift_005B6980
+
+// [0x005B18E0]
+namespace lift_005B18E0 {
+// @name AssignStringAndSetFlag
+// @class Unknown
+// @summary Copy-assigns the std::string argument into this+0x28 and sets the byte flag at this+0x04 to 1.
+// @field Unknown +0x04 uint8_t field_0x04
+// @field Unknown +0x28 std::string field_0x28
+
+// Original MSVCP80 std::string::operator= slot (mem_00924FDC) is replaced by a
+// direct assignment; the extern is kept only to record the original import.
+extern int mem_00924FDC;
+
+void __thiscall AssignStringAndSetFlag(void* self, const std::string& src) {
+    (void)mem_00924FDC; // original asm read the operator= slot here
+    lift_field<std::string>(self, 0x28) = src;
+    lift_field<uint8_t>(self, 0x04) = 1;
+}
+} // namespace lift_005B18E0

@@ -1,0 +1,28 @@
+{
+  "va": "0x005B18E0",
+  "size": 25,
+  "orig_symbol": "sub_005B18E0",
+  "src_path": "src/leaf/tiny_5B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5B0000.cpp",
+  "name": "AssignStringAndSetFlag",
+  "class": "Unknown",
+  "signature": "void __thiscall AssignStringAndSetFlag(void* self, const std::string\u0026 src)",
+  "summary": "Copy-assigns the std::string argument into this+0x28 and sets the byte flag at this+0x04 to 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "std::string",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:26:33Z"
+}

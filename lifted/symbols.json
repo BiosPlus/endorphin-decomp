@@ -27422,6 +27422,13 @@
     "summary": "Stores two stack-passed DWORDs into this+0x04 and this+0x08 (thiscall, ret 8).",
     "lifted_path": "lifted/Geometry/auto_tiny.cpp"
   },
+  "0x005B18E0": {
+    "name": "AssignStringAndSetFlag",
+    "class": "Unknown",
+    "signature": "void __thiscall AssignStringAndSetFlag(void* self, const std::string\u0026 src)",
+    "summary": "Copy-assigns the std::string argument into this+0x28 and sets the byte flag at this+0x04 to 1.",
+    "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
+  },
   "0x005B1900": {
     "name": "Geometry::SphereType::vfunc_9",
     "class": "Geometry::SphereType",
