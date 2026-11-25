@@ -4021,6 +4021,13 @@
     "summary": "Pure jump thunk forwarding to GetStringLiteral_004473D0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x004474D0": {
+    "name": "CBase::FreeModuleAtSelf20",
+    "class": "CBase",
+    "signature": "void fn_004474D0(void* self)",
+    "summary": "Calls FreeLibrary on the module handle stored at this+0x20 if it is non-null.",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x004474E0": {
     "name": "DispatchToFirstWord",
     "class": "UnrecoveredClass",

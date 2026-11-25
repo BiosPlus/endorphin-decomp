@@ -813,3 +813,19 @@ DWORD __thiscall fn_00447500(void* self, DWORD arg) {
     return 0;
 }
 } // namespace lift_00447500
+
+// [0x004474D0]
+namespace lift_004474D0 {
+extern BOOL(__stdcall* mem_009241DC)(HMODULE hLibModule);
+
+// @name CBase::FreeModuleAtSelf20
+// @class CBase
+// @summary Calls FreeLibrary on the module handle stored at this+0x20 if it is non-null.
+// @field CBase +0x20 HMODULE hModule
+void fn_004474D0(void* self) {
+    HMODULE hModule = lift_field<HMODULE>(self, 0x20);
+    if (hModule != nullptr) {
+        mem_009241DC(hModule);
+    }
+}
+} // namespace lift_004474D0

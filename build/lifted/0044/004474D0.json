@@ -1,0 +1,22 @@
+{
+  "va": "0x004474D0",
+  "size": 15,
+  "orig_symbol": "sub_004474D0",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "CBase::FreeModuleAtSelf20",
+  "class": "CBase",
+  "signature": "void fn_004474D0(void* self)",
+  "summary": "Calls FreeLibrary on the module handle stored at this+0x20 if it is non-null.",
+  "fields": [
+    {
+      "class": "CBase",
+      "offset": "+0x20",
+      "type": "HMODULE",
+      "name": "hModule"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:23:45Z"
+}
