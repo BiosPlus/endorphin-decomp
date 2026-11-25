@@ -504,3 +504,21 @@ int __fastcall fn_0041FEA0(void* self) {
     return static_cast<int>(result) + 1;
 }
 } // namespace lift_0041FEA0
+
+// [0x00412CA0] sub_00412CA0 (29 bytes)
+namespace lift_00412CA0 {
+// IAT slots for MFC80 thiscall imports (ord_876 and ord_1482).
+extern int mem_00924300;
+extern int mem_0092449C;
+// Thunks: invoke the thiscall import whose IAT slot is given, passing self (ecx) and optional stack arg.
+extern uint32_t ext_iat_call0(const void* slot, void* self);
+extern uint32_t ext_iat_call1(const void* slot, void* self, uint32_t arg);
+
+// @name IsMfcPairCallZero
+// @summary Calls MFC80 ord_876 on a2, feeds its result to MFC80 ord_1482 on a1, and returns 1 if that result is zero, else 0.
+extern int __cdecl fn_00412CA0(void* a1, void* a2) {
+    uint32_t r = ext_iat_call0(&mem_00924300, a2);
+    uint32_t s = ext_iat_call1(&mem_0092449C, a1, r);
+    return s == 0u ? 1 : 0;
+}
+} // namespace lift_00412CA0

@@ -1,0 +1,13 @@
+{
+  "va": "0x00412CA0",
+  "size": 29,
+  "orig_symbol": "sub_00412CA0",
+  "src_path": "src/leaf/tiny_410000.cpp",
+  "lifted_path": "lifted/leaf/tiny_410000.cpp",
+  "name": "IsMfcPairCallZero",
+  "signature": "extern \"C\" int __cdecl fn_00412CA0(void* a1, void* a2)",
+  "summary": "Calls MFC80 ord_876 on a2, feeds its result to MFC80 ord_1482 on a1, and returns 1 if that result is zero, else 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:39:12Z"
+}
