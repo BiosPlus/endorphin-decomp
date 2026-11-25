@@ -21728,6 +21728,13 @@
     "summary": "Scans a 4-byte-stride pointer range; entries whose std::string at +4 equals a fixed key are routed into this+0x5C (first hit, then moved to +0x16C via ext_00406FC0) or into this+0x16C (later hits).",
     "lifted_path": "lifted/classes/NMFileIO.cpp"
   },
+  "0x00558F80": {
+    "name": "Unknown::destroyRange_00558F80",
+    "class": "DestroyRangeElement",
+    "signature": "void fn_00558F80(uint32_t begin, uint32_t end)",
+    "summary": "Destroys each 0x1c-byte element in [begin, end): runs the string destructor over its",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00559620": {
     "name": "sub_00559620",
     "class": "(none)",

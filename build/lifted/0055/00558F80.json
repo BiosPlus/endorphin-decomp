@@ -1,0 +1,34 @@
+{
+  "va": "0x00558F80",
+  "size": 85,
+  "orig_symbol": "sub_00558F80",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "Unknown::destroyRange_00558F80",
+  "class": "DestroyRangeElement",
+  "signature": "void fn_00558F80(uint32_t begin, uint32_t end)",
+  "summary": "Destroys each 0x1c-byte element in [begin, end): runs the string destructor over its",
+  "fields": [
+    {
+      "class": "DestroyRangeElement",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "innerBegin"
+    },
+    {
+      "class": "DestroyRangeElement",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "innerEnd"
+    },
+    {
+      "class": "DestroyRangeElement",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "innerCap"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:08:59Z"
+}

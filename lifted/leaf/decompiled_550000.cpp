@@ -1148,3 +1148,46 @@ float* fn_00554E50(void* self, float* out, float x, float y, float z) {
     return out;
 }
 } // namespace lift_00554E50
+
+// [0x00558F80] sub_00558F80 (85 bytes)
+namespace lift_00558F80 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C();
+// Slot holding the MSVCP80 basic_string destructor target (0x00628FF0).
+extern uint32_t mem_00924FF4;
+
+// @name Unknown::destroyRange_00558F80
+// @class DestroyRangeElement
+// @summary Destroys each 0x1c-byte element in [begin, end): runs the string destructor over its
+//          inner 0x1c-byte item array, frees the array, and zeroes its begin/end/cap pointers.
+// @field DestroyRangeElement +0x10 uint32_t innerBegin
+// @field DestroyRangeElement +0x14 uint32_t innerEnd
+// @field DestroyRangeElement +0x18 uint32_t innerCap
+void fn_00558F80(uint32_t begin, uint32_t end) {
+    constexpr uint32_t kElemStride = 0x1c;
+
+    for (uint32_t elem = begin; elem != end; elem += kElemStride) {
+        uint32_t* vec = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(elem + 0x10));
+        uint32_t innerBegin = vec[0];
+
+        if (innerBegin != 0) {
+            uint32_t innerEnd = vec[1];
+
+            // Destroy every inner item (0x1c bytes each) via the string destructor.
+            for (uint32_t item = innerBegin; item != innerEnd; item += kElemStride) {
+                auto dtor = reinterpret_cast<void (*)(uint32_t)>(
+                    static_cast<uintptr_t>(mem_00924FF4));
+                dtor(item);
+            }
+
+            // Release the inner array.
+            auto release = reinterpret_cast<void (*)(uint32_t)>(&ext_006A5C5C);
+            release(innerBegin);
+        }
+
+        vec[0] = 0;
+        vec[1] = 0;
+        vec[2] = 0;
+    }
+}
+} // namespace lift_00558F80
