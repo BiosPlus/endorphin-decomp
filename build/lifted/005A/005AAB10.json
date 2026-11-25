@@ -1,0 +1,14 @@
+{
+  "va": "0x005AAB10",
+  "size": 94,
+  "orig_symbol": "NMData::TargetRigNode::vfunc_59",
+  "src_path": "src/NMData/TargetRigNode.cpp",
+  "lifted_path": "lifted/NMData/TargetRigNode.cpp",
+  "name": "NMData::TargetRigNode::vfunc_59",
+  "class": "NMData::TargetRigNode",
+  "signature": "void __stdcall fn_005AAB10(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x005AAAB0 (NMData::SourceRigNode::vfunc_59).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T13:19:56Z"
+}

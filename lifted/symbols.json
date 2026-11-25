@@ -27596,6 +27596,13 @@
     "summary": "Builds a temporary std::string from a fixed .rdata literal and copy-assigns it into the target object via AssignStringAndSetFlag; self is read from the first stack argument.",
     "lifted_path": "lifted/NMData/SourceRigNode.cpp"
   },
+  "0x005AAB10": {
+    "name": "NMData::TargetRigNode::vfunc_59",
+    "class": "NMData::TargetRigNode",
+    "signature": "void __stdcall fn_005AAB10(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005AAAB0 (NMData::SourceRigNode::vfunc_59).",
+    "lifted_path": "lifted/NMData/TargetRigNode.cpp"
+  },
   "0x005AAD10": {
     "name": "ObjectWithChild::SetValueFromStringKey",
     "class": "ObjectWithChild",
