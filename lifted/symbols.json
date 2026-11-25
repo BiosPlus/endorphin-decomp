@@ -21491,6 +21491,13 @@
     "summary": "Copies three floats from the pointer argument into this+0x18, this+0x1C and this+0x20 (callee-cleans 4 bytes).",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x0054A0E0": {
+    "name": "Unknown::dtor_0054A0E0",
+    "class": "Unknown",
+    "signature": "void fn_0054A0E0(void* self)",
+    "summary": "Destructor: installs vtable, deletes the GLU quadric at +0x18, tears down subobject at +0x1c, then calls sub_00552850.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x0054A3B0": {
     "name": "ToolGraphics::RotateHandleGraphic::vfunc_0",
     "class": "ToolGraphics::RotateHandleGraphic",

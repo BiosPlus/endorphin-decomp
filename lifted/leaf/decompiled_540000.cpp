@@ -923,3 +923,28 @@ void fn_005432A0(void* self, void* arg) {
     }
 }
 } // namespace lift_005432A0
+
+// [0x0054A0E0] sub_0054A0E0 (91 bytes)
+namespace lift_0054A0E0 {
+// Known callee 0x00532B40: Unknown::dtor_00532B40 (sets vtable to 0x009543E4 and unlinks peer at +0x08 if it points back to this at +0x04.)
+extern void ext_00532B40(void* self);
+// Known callee 0x00552850: sub_00552850 (stores address of mem_00957534 into field at offset +0x0.)
+extern void ext_00552850(void* self);
+// Known callee 0x0063E006: thunk_GLU32_gluDeleteQuadric (IAT jump thunk forwarding to GLU32!gluDeleteQuadric.)
+extern void ext_0063E006(void* quadric);
+
+// Vtable of this class.
+extern int mem_00956D34;
+
+// @name Unknown::dtor_0054A0E0
+// @class Unknown
+// @summary Destructor: installs vtable, deletes the GLU quadric at +0x18, tears down subobject at +0x1c, then calls sub_00552850.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x18 void* quadric
+void fn_0054A0E0(void* self) {
+    lift_field<const void*>(self, 0x00) = &mem_00956D34;
+    ext_0063E006(lift_field<void*>(self, 0x18));
+    ext_00532B40(static_cast<uint8_t*>(self) + 0x1c);
+    ext_00552850(self);
+}
+} // namespace lift_0054A0E0

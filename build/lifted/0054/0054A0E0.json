@@ -1,0 +1,28 @@
+{
+  "va": "0x0054A0E0",
+  "size": 91,
+  "orig_symbol": "sub_0054A0E0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Unknown::dtor_0054A0E0",
+  "class": "Unknown",
+  "signature": "void fn_0054A0E0(void* self)",
+  "summary": "Destructor: installs vtable, deletes the GLU quadric at +0x18, tears down subobject at +0x1c, then calls sub_00552850.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "quadric"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:23:19Z"
+}
