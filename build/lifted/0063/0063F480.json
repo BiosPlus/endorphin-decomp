@@ -1,0 +1,21 @@
+{
+  "va": "0x0063F480",
+  "size": 90,
+  "orig_symbol": "sub_0063F480",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "eraseAndDeleteElement",
+  "signature": "void __thiscall sub_0063F480(uint32_t self, uint32_t container, uint32_t iter)",
+  "summary": "Validates an iterator, deletes the pointed-to object, and shifts remaining elements left.",
+  "fields": [
+    {
+      "class": "this",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:26:17Z"
+}

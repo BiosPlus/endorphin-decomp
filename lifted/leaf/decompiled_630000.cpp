@@ -447,3 +447,46 @@ void* fn_0063F960(void* self, uint32_t arg0, const void* name) {
     return self;
 }
 } // namespace lift_0063F960
+
+// [0x0063F480]
+namespace lift_0063F480 {
+// @name eraseAndDeleteElement
+// @summary Validates an iterator, deletes the pointed-to object, and shifts remaining elements left.
+// @field this +0x2c uint32_t field_0x2c
+
+
+extern uint32_t mem_00925134; // MSVCR80!_invalid_parameter_noinfo
+extern uint32_t mem_009251EC; // MSVCR80!memmove_s
+
+void __thiscall sub_0063F480(uint32_t self, uint32_t container, uint32_t iter) {
+    using invalid_param_fn = void(__cdecl*)();
+    using memmove_s_fn = int(__cdecl*)(void*, uint32_t, const void*, uint32_t);
+    using dtor_fn = void(__thiscall*)(uint32_t, int32_t);
+
+    auto invalid_param = reinterpret_cast<invalid_param_fn>(mem_00925134);
+    if (container == 0) {
+        invalid_param();
+    }
+    if (iter >= *reinterpret_cast<uint32_t*>(container + 0x8)) {
+        invalid_param();
+    }
+
+    uint32_t obj = *reinterpret_cast<uint32_t*>(iter);
+    if (obj != 0) {
+        uint32_t vtable = *reinterpret_cast<uint32_t*>(obj);
+        auto dtor = reinterpret_cast<dtor_fn>(*reinterpret_cast<uint32_t*>(vtable));
+        dtor(obj, 1);
+    }
+
+    uint32_t end_ptr = *reinterpret_cast<uint32_t*>(self + 0x2c);
+    uint32_t next_ptr = iter + 4;
+    int32_t count = static_cast<int32_t>(end_ptr - next_ptr) >> 2;
+    if (count > 0) {
+        uint32_t bytes = static_cast<uint32_t>(count) * 4;
+        auto memmove_s_ptr = reinterpret_cast<memmove_s_fn>(mem_009251EC);
+        memmove_s_ptr(reinterpret_cast<void*>(iter), bytes, reinterpret_cast<const void*>(next_ptr), bytes);
+    }
+
+    *reinterpret_cast<uint32_t*>(self + 0x2c) -= 4;
+}
+} // namespace lift_0063F480
