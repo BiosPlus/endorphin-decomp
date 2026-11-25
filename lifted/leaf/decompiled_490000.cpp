@@ -488,3 +488,52 @@ void fn_0049DBA0(void* out, DWORD first, void* begin, DWORD /*unused arg3*/, voi
     lift_field<void*>(out, 0x04) = node;
 }
 } // namespace lift_0049DBA0
+
+// [0x0049DB60] sub_0049DB60 (62 bytes)
+namespace lift_0049DB60 {
+// Address of MSVCP80 operator==(const std::string&, const std::string&) (__cdecl).
+extern uint32_t mem_00924FC4;
+
+// @name ListFindByStringKey
+// @class ListNode
+// @summary Walks a singly linked node list from `first` until `last`, returning {head, match} where match is the first node whose string key equals `key`, or `last` if none.
+// @field ListNode +0x00 uint32_t next
+// @field ListNode +0x24 std::string key
+
+namespace {
+
+using StringEqualFn = bool (__cdecl*)(const void* lhs, const void* rhs);
+
+template <typename T>
+T load(uint32_t addr) {
+    return *reinterpret_cast<const T*>(static_cast<uintptr_t>(addr));
+}
+
+template <typename T>
+void store(uint32_t addr, T value) {
+    *reinterpret_cast<T*>(static_cast<uintptr_t>(addr)) = value;
+}
+
+}  // namespace
+
+// Out-parameter `out` receives two dwords: [0] = head, [1] = matching node (or last).
+// `unused` is the 4th stack argument; the original code never reads it.
+void fn_0049DB60(uint32_t out, uint32_t head, uint32_t first, uint32_t unused, uint32_t last, uint32_t key) {
+    (void)unused;
+
+    auto string_equal = reinterpret_cast<StringEqualFn>(static_cast<uintptr_t>(mem_00924FC4));
+
+    uint32_t node = first;
+    while (node != last) {
+        const uint32_t node_key = node + 0x24;
+        if (string_equal(reinterpret_cast<const void*>(static_cast<uintptr_t>(node_key)),
+                         reinterpret_cast<const void*>(static_cast<uintptr_t>(key)))) {
+            break;
+        }
+        node = load<uint32_t>(node);  // node->next
+    }
+
+    store<uint32_t>(out, head);
+    store<uint32_t>(out + 4, node);
+}
+} // namespace lift_0049DB60

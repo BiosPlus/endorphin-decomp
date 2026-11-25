@@ -1,0 +1,28 @@
+{
+  "va": "0x0049DB60",
+  "size": 62,
+  "orig_symbol": "sub_0049DB60",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "ListFindByStringKey",
+  "class": "ListNode",
+  "signature": "T load(uint32_t addr)",
+  "summary": "Walks a singly linked node list from `first` until `last`, returning {head, match} where match is the first node whose string key equals `key`, or `last` if none.",
+  "fields": [
+    {
+      "class": "ListNode",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "next"
+    },
+    {
+      "class": "ListNode",
+      "offset": "+0x24",
+      "type": "std::string",
+      "name": "key"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:59:43Z"
+}

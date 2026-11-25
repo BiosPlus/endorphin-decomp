@@ -9526,6 +9526,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00499190 (ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_38).",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x0049DB60": {
+    "name": "ListFindByStringKey",
+    "class": "ListNode",
+    "signature": "T load(uint32_t addr)",
+    "summary": "Walks a singly linked node list from `first` until `last`, returning {head, match} where match is the first node whose string key equals `key`, or `last` if none.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049DBA0": {
     "name": "ListFindFirstAccepting_0049DBA0",
     "signature": "void fn_0049DBA0(void* out, DWORD first, void* begin, DWORD /*unused arg3*/, void* end, DWORD key)",
