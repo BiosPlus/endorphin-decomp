@@ -34819,6 +34819,12 @@
     "summary": "IAT jump thunk forwarding to MSVCR80!remove.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00662BF0": {
+    "name": "GetCurrentDirectoryString",
+    "signature": "void* sub_00662BF0(void* out)",
+    "summary": "Fills a std::string with the process current directory (GetCurrentDirectoryA into a 260-byte buffer) and returns the output string pointer.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00662E50": {
     "name": "IsRelativePathString",
     "signature": "extern \"C\" int __cdecl fn_00662E50(const void* path_string)",

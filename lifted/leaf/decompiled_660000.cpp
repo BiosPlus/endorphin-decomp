@@ -440,3 +440,25 @@ uint8_t __thiscall sub_00661B10(void* self) {
     return static_cast<uint8_t>(val == target);
 }
 } // namespace lift_00661B10
+
+// [0x00662BF0]
+namespace lift_00662BF0 {
+// @name GetCurrentDirectoryString
+// @summary Fills a std::string with the process current directory (GetCurrentDirectoryA into a 260-byte buffer) and returns the output string pointer.
+
+    extern uint32_t mem_00924254; // IAT slot: KERNEL32!GetCurrentDirectoryA
+    extern uint32_t mem_00924FE4; // IAT slot: MSVCP80 basic_string(const char*) ctor
+    extern uint32_t ext_GetCurrentDirectoryA(uint32_t nBufferLength, char* lpBuffer);
+    extern void ext_basic_string_ctor_cstr(void* self, const char* s);
+
+// Lifted from: sub_00662BF0 (cdecl, one stack arg: output std::string*)
+void* sub_00662BF0(void* out) {
+    char buf[0x104 + 4];
+    buf[0x104] = 0;
+    // GetCurrentDirectoryA(0x104, buf)
+    ext_GetCurrentDirectoryA(0x104, buf);
+    // std::string(buf) constructed in place in *out
+    ext_basic_string_ctor_cstr(out, buf);
+    return out;
+}
+} // namespace lift_00662BF0
