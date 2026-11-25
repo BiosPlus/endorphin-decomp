@@ -1090,3 +1090,37 @@ extern uint32_t __cdecl fn_008522E0(uint8_t mem_ebp_m19, uint8_t mem_ebp_m1a,
     return ext_00852345(packed);
 }
 } // namespace lift_008522E0
+
+// [0x00852AD0]
+namespace lift_00852AD0 {
+// @name initTypedPayload16
+// @summary Validates a 1-byte type tag (1..3), writes it to dst[0], and copies or zeroes 16 bytes at dst+1.
+
+
+void mem_write_u8(uint32_t addr, uint8_t val);
+uint32_t mem_read_u32(uint32_t addr);
+void mem_write_u32(uint32_t addr, uint32_t val);
+
+extern int32_t sub_00852AD0(uint32_t dst, uint8_t type, uint32_t src) {
+    if (type != 1 && type != 2 && type != 3) {
+        return -4;
+    }
+
+    mem_write_u8(dst, type);
+    uint32_t payload = dst + 1;
+
+    if (src != 0) {
+        mem_write_u32(payload + 0x0, mem_read_u32(src + 0x0));
+        mem_write_u32(payload + 0x4, mem_read_u32(src + 0x4));
+        mem_write_u32(payload + 0x8, mem_read_u32(src + 0x8));
+        mem_write_u32(payload + 0xC, mem_read_u32(src + 0xC));
+    } else {
+        mem_write_u32(payload + 0x0, 0);
+        mem_write_u32(payload + 0x4, 0);
+        mem_write_u32(payload + 0x8, 0);
+        mem_write_u32(payload + 0xC, 0);
+    }
+
+    return 1;
+}
+} // namespace lift_00852AD0

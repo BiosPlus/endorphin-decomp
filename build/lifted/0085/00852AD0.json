@@ -1,0 +1,13 @@
+{
+  "va": "0x00852AD0",
+  "size": 96,
+  "orig_symbol": "sub_00852AD0",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "initTypedPayload16",
+  "signature": "extern \"C\" int32_t sub_00852AD0(uint32_t dst, uint8_t type, uint32_t src)",
+  "summary": "Validates a 1-byte type tag (1..3), writes it to dst[0], and copies or zeroes 16 bytes at dst+1.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:53:04Z"
+}
