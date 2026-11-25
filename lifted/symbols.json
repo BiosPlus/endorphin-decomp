@@ -14199,6 +14199,12 @@
     "summary": "Lazily constructs the shared static object on first use (guarded by mem_00AE44DC bit 0), then stores its address into the caller-supplied holder at +0x04.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x004CB580": {
+    "name": "initStaticObjectOnce_004CB580",
+    "signature": "DWORD fn_004CB580(void* self)",
+    "summary": "One-time initializer for the static object at mem_00AE44E0; guard bit 0 of mem_00AE44E4 marks it done, runs ext_0067A670 on the object with argument 0, then stores 0x946D3C into it; returns the object's address.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CB5E0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0\u003e",

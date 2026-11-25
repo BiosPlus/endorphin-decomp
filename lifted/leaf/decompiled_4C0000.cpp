@@ -508,3 +508,24 @@ void* fn_004C1D20() {
     return &mem_00AE305C;
 }
 } // namespace lift_004C1D20
+
+// [0x004CB580] sub_004CB580 (87 bytes)
+namespace lift_004CB580 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AE44E4;
+extern DWORD mem_00AE44E0;
+
+// @name initStaticObjectOnce_004CB580
+// @summary One-time initializer for the static object at mem_00AE44E0; guard bit 0 of mem_00AE44E4 marks it done, runs ext_0067A670 on the object with argument 0, then stores 0x946D3C into it; returns the object's address.
+DWORD fn_004CB580(void* self) {
+    // self is unused: the function operates on fixed globals only.
+    // The original SEH frame push/pop (fs:[0] bookkeeping) is not reproduced; it is exception-handling scaffolding, not program logic.
+    if ((mem_00AE44E4 & 1u) == 0u) {
+        mem_00AE44E4 |= 1u;
+        ext_0067A670(&mem_00AE44E0, 0u);
+        mem_00AE44E0 = 0x00946D3Cu;
+    }
+    return static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AE44E0));
+}
+} // namespace lift_004CB580

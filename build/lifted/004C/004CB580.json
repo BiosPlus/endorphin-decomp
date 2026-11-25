@@ -1,0 +1,13 @@
+{
+  "va": "0x004CB580",
+  "size": 87,
+  "orig_symbol": "sub_004CB580",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "initStaticObjectOnce_004CB580",
+  "signature": "DWORD fn_004CB580(void* self)",
+  "summary": "One-time initializer for the static object at mem_00AE44E0; guard bit 0 of mem_00AE44E4 marks it done, runs ext_0067A670 on the object with argument 0, then stores 0x946D3C into it; returns the object's address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:32:42Z"
+}
