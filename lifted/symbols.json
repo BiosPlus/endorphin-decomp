@@ -56841,6 +56841,13 @@
     "summary": "Reads the pointer-sized value at this+0x250; if non-zero, tail-forwards to fn_006BC380 with that value as self, otherwise returns 0.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
+  "0x007266C0": {
+    "name": "ForwardFindThenGetValue",
+    "class": "Object",
+    "signature": "int32_t fn_007266C0(void* self, uint32_t key)",
+    "summary": "Looks up key in the sorted array held at this+0x250; if found, returns the getter value of the match, otherwise 0.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x00728D30": {
     "name": "sub_00728D30",
     "signature": "extern \"C\" void* __fastcall fn_00728D30(void* self)",

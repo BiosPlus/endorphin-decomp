@@ -558,3 +558,24 @@ extern void __fastcall fn_00724E30(void* self, int edx_unused, uint8_t* out) {
     std::memcpy(out + 0xC, &v3, sizeof(v3));
 }
 } // namespace lift_00724E30
+
+// [0x007266C0] sub_007266C0 (48 bytes)
+namespace lift_007266C0 {
+// Known callee 0x00789C80: ForwardSortedArrayFindValue (Thiscall forwarder: calls the SortedArray find routine on the subobject at this+0x04 with the same key and optional out-index arguments.)
+extern uint32_t ext_00789C80(void* self, uint32_t key, int32_t* outIndex);
+// Known callee 0x006E7460: sub_006E7460 (Getter returning int32_t field at offset +0x0.)
+extern int32_t ext_006E7460(void* self);
+
+// @name ForwardFindThenGetValue
+// @class Object
+// @summary Looks up key in the sorted array held at this+0x250; if found, returns the getter value of the match, otherwise 0.
+// @field Object +0x250 void* field_0x250
+int32_t fn_007266C0(void* self, uint32_t key) {
+    void* sortedArray = lift_field<void*>(self, 0x250);
+    uint32_t found = ext_00789C80(sortedArray, key, nullptr);
+    if (found == 0) {
+        return 0;
+    }
+    return ext_006E7460(reinterpret_cast<void*>(static_cast<uintptr_t>(found)));
+}
+} // namespace lift_007266C0
