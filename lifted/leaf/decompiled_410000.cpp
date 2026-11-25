@@ -1713,3 +1713,21 @@ void* fn_0041D980() {
     return reinterpret_cast<void*>(&mem_00ACC524);
 }
 } // namespace lift_0041D980
+
+// [0x0041DD40]
+namespace lift_0041DD40 {
+// @name destroyStringPairRange
+// @summary Destroys a range [begin, end) of 0x38-byte elements, each containing two std::string fields at +0x00 and +0x1C.
+
+
+extern uint32_t mem_00924FF4;
+
+void sub_0041DD40(uint32_t begin, uint32_t end) {
+    uint32_t cur = begin;
+    while (cur != end) {
+        reinterpret_cast<void(__thiscall*)(uint32_t)>(mem_00924FF4)(cur + 0x1C);
+        reinterpret_cast<void(__thiscall*)(uint32_t)>(mem_00924FF4)(cur);
+        cur += 0x38;
+    }
+}
+} // namespace lift_0041DD40
