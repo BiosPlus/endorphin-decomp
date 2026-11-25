@@ -33844,6 +33844,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
     "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
+  "0x005FD2D0": {
+    "name": "GetOnceInitString_005FD2D0",
+    "signature": "void* fn_005FD2D0()",
+    "summary": "Lazily initializes the static string object at mem_00B47058 exactly once and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005FD330": {
     "name": "TreeNode_eraseSubtree",
     "signature": "void __thiscall fn_005FD330(uint32_t self, uint32_t node)",

@@ -876,3 +876,26 @@ void* fn_005FD270() {
 }
 } // namespace lift_004CAE30
 } // namespace lift_005FD270
+
+// [0x005FD2D0] sub_005FD2D0 (95 bytes)
+namespace lift_005FD2D0 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+// Called here as (out_str, arg) with a string-object pointer and a constant pointer argument.
+extern void* ext_0066AD10(void* out_str, const void* arg);
+// Callee 0x006A6C87 (18B), called once with a constant pointer argument during init.
+extern void ext_006A6C87(const void* arg);
+extern int mem_00B47074;
+extern int mem_00B47058;
+
+// @name GetOnceInitString_005FD2D0
+// @summary Lazily initializes the static string object at mem_00B47058 exactly once and returns its address.
+void* fn_005FD2D0() {
+    if ((mem_00B47074 & 1) == 0) {
+        mem_00B47074 |= 1;
+        void* out = reinterpret_cast<void*>(&mem_00B47058);
+        ext_0066AD10(out, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00A92EC0u)));
+        ext_006A6C87(reinterpret_cast<const void*>(static_cast<uintptr_t>(0x0091E6B0u)));
+    }
+    return reinterpret_cast<void*>(&mem_00B47058);
+}
+} // namespace lift_005FD2D0
