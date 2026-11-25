@@ -10,6 +10,6 @@
 // Recovered field layout for Interpolator::Const:
 namespace lifted_layout {
 struct Interpolator_Const_Fields {
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x00528570)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00528540, 0x00528570)
 };
 } // namespace lifted_layout

@@ -20246,6 +20246,13 @@
     "summary": "Takes field +0x18 (clearing it), calls 0x528310 on the object at +0x10 with (old +0x18, +0x20); then calls vtable slot 0 of the object at +0x24 with (+0x1c, +0x20) if non-null; then calls 0x527AC0 on the object at +0x14 with (+0x1c, 0) if non-null.",
     "lifted_path": "lifted/templates/AddElementCommand.cpp"
   },
+  "0x00528540": {
+    "name": "Interpolator::Const::vfunc_3",
+    "class": "Interpolator::Const",
+    "signature": "__stdcall float fn_00528540(uint32_t /*unused_arg0*/, void* table, uint32_t index, uint32_t /*unused_arg3*/)",
+    "summary": "Bounds-checked float read: validates the table pointer and index, then returns the float at index+4.",
+    "lifted_path": "lifted/Interpolator/Const.cpp"
+  },
   "0x00528570": {
     "name": "Interpolator::Const::vfunc_1",
     "class": "Interpolator::Const",
