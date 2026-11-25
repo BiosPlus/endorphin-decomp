@@ -24871,6 +24871,13 @@
     "summary": "Returns a pointer to the std::string at +0x4C if it differs from a fixed literal, else a pointer to the std::string at +0x14.",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x00584F50": {
+    "name": "NMData::RPROMagnetData::vfunc_59",
+    "class": "NMData::RPROMagnetData",
+    "signature": "extern \"C\" int mem_00A9F1E8; // .data slot holding a const char* (0x00986694) extern \"C\" int mem_00924FE4; // IAT slot: MSVCP80 basic_string(const char*, allocator) ctor std::string* fn_00584F50(std::string* out)",
+    "summary": "Constructs a std::string from the literal pointed to by mem_00A9F1E8 into the caller-supplied buffer and returns that buffer.",
+    "lifted_path": "lifted/NMData/RPROMagnetData.cpp"
+  },
   "0x00585000": {
     "name": "sub_00585000",
     "signature": "extern \"C\" void fn_00585000(void)",
