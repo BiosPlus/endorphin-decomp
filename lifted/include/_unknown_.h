@@ -9,7 +9,7 @@
 namespace lifted_layout {
 struct _unknown__Fields {
     // +0x0   void*                    delegate  (evidence: 0x00493E60, 0x00494050) // CONFLICT: multiple definitions at +0x0
-    // +0x0   DWORD                    field_0x00  (evidence: 0x0046F3A0, 0x0049E440, 0x00543300, 0x00782D00, 0x00784620, 0x00788E50) // CONFLICT: multiple definitions at +0x0
+    // +0x0   DWORD                    field_0x00  (evidence: 0x0046F3A0, 0x0049E440, 0x00543300, 0x005EAEE0, 0x00782D00, 0x00784620, 0x00788E50) // CONFLICT: multiple definitions at +0x0
     // +0x0   float                    field_0x00  (evidence: 0x00669E40) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 field_0x00  (evidence: 0x00406030, 0x0040BE90, 0x0040FDC0, 0x004584C0, 0x00481BB0, 0x004983A0, 0x004B7D80, 0x004C0800, 0x00505030, 0x00512A00, 0x00519CE0, 0x005478F0, 0x0054C760, 0x00604D80, 0x0063E0F0, 0x00661920, 0x006749C0, 0x00710F10, 0x007155B0, 0x007D59C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t                  field_0x00  (evidence: 0x00710F50, 0x007155B0) // CONFLICT: multiple definitions at +0x0

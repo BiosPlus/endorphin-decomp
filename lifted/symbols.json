@@ -32065,6 +32065,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005EAEE0": {
+    "name": "lazyInitStaticVtableObject_005EAEE0",
+    "signature": "void* fn_005EAEE0()",
+    "summary": "One-time lazy init of the static object at 0x00B45F10 (guard bit 0 of 0x00B45F14); sets its first DWORD to 0x00968EE4 and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005EB000": {
     "name": "getOrInitStaticObject_005EB000",
     "signature": "void* fn_005EB000(void)",
