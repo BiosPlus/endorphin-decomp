@@ -1,0 +1,13 @@
+{
+  "va": "0x0085BE20",
+  "size": 96,
+  "orig_symbol": "sub_0085BE20",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "ReadBigEndianBytes",
+  "signature": "extern \"C\" uint32_t fn_0085BE20(void* self, uint32_t count, uint32_t* out_val)",
+  "summary": "Reads up to `count` bytes in big-endian order into `*out_val` and returns the number of bytes consumed.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:53:55Z"
+}
