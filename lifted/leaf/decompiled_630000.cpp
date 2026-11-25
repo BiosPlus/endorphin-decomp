@@ -416,3 +416,34 @@ void* fn_0063F350(void* self, uint32_t arg0, const void* name) {
     return self;
 }
 } // namespace lift_0063F350
+
+// [0x0063F960] sub_0063F960 (82 bytes)
+namespace lift_0063F960 {
+// Known callee 0x0063F350: Unknown::derivedCtor_0063F350 (Base-constructs via ext_0063E0C0, installs the derived vtable at 0x0097CC44, zeroes the five fields at +0x28..+0x38, and returns this.)
+extern void* ext_0063F350(void* self, uint32_t arg0, const void* name);
+
+// @name Unknown::derivedCtorWrap_0063F960
+// @class Unknown
+// @summary Calls derivedCtor_0063F350 with the two stack args, installs the secondary vtable at 0x0097CCB0, zeroes the four fields at +0x40..+0x4C, and returns this.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x40 uint32_t field_0x40
+// @field Unknown +0x44 uint32_t field_0x44
+// @field Unknown +0x48 uint32_t field_0x48
+// @field Unknown +0x4c uint8_t field_0x4c
+void* fn_0063F960(void* self, uint32_t arg0, const void* name) {
+    // The original wraps the call in an SEH frame (fs:[0] push/pop); that is
+    // exception-handling plumbing with no portable equivalent and is omitted.
+    ext_0063F350(self, arg0, name);
+
+    // Vtable slot at +0x00 is a 32-bit pointer in the original layout.
+    constexpr uint32_t kSecondaryVtable = 0x0097CCB0u;
+    lift_field<uint32_t>(self, 0x00) = kSecondaryVtable;
+
+    lift_field<uint32_t>(self, 0x40) = 0;
+    lift_field<uint32_t>(self, 0x44) = 0;
+    lift_field<uint32_t>(self, 0x48) = 0;
+    lift_field<uint8_t>(self, 0x4c) = 0;
+
+    return self;
+}
+} // namespace lift_0063F960
