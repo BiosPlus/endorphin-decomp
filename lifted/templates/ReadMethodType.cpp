@@ -56366,3 +56366,42 @@ void* __stdcall fn_00692850(void* dst, void* const* holder) {
 }
 } // namespace lift_0049B5F0
 } // namespace lift_00692850
+
+// [0x004B1B30]
+namespace lift_004B1B30 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData, int, getColor, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, getColor, 0>
+// @summary Reads the wrapped GraphEntryData pointer and returns its int field at +0x20 as a float; throws if the pointer is null.
+// @field ExprParser::ReadMethodType<NMData::GraphEntryData, int, getColor, 0> +0x00 void* target
+// @field NMData::GraphEntryData +0x20 int field_0x20
+
+// Constructs the null-pointer exception object in the caller-provided buffer.
+extern void* ext_0046C3C0(void* self);
+// Thin IAT thunk to MSVCR80!_CxxThrowException(object, throwInfo).
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// Typeinfo/ThrowInfo descriptor for the thrown exception (0x009DEC1C).
+static const void* const kThrowInfo = reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu));
+
+// Stack-local buffer for the exception object (original frame is 0x28 bytes).
+struct ExcBuf {
+    alignas(8) uint8_t bytes[0x28];
+};
+
+extern float fn_004B1B30(void* self) {
+    // mov eax, [esp+4]; mov eax, [eax]
+    void* inner = *reinterpret_cast<void**>(self);
+
+    if (inner != nullptr) {
+        // fild dword ptr [eax+0x20]  -> int converted to float on the return stack
+        int32_t value = lift_field<int32_t>(inner, 0x20);
+        return static_cast<float>(value);
+    }
+
+    // Null path: construct exception on the local frame and throw.
+    ExcBuf exc{};
+    ext_0046C3C0(exc.bytes);
+    ext_006A6DD2(exc.bytes, kThrowInfo);
+    return 0.0f;
+}
+} // namespace lift_004B1B30

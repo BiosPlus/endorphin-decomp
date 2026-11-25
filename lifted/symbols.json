@@ -12319,6 +12319,13 @@
     "summary": "Initializes static type singleton if needed and stores its pointer at out + 0x4.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004B1B30": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, getColor, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, getColor, 0\u003e",
+    "signature": "extern \"C\" float fn_004B1B30(void* self)",
+    "summary": "Reads the wrapped GraphEntryData pointer and returns its int field at +0x20 as a float; throws if the pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B1D40": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData,bool,isActive,activate\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData,bool,isActive,activate\u003e",
