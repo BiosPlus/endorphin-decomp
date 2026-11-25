@@ -1,0 +1,14 @@
+{
+  "va": "0x00871090",
+  "size": 26,
+  "orig_symbol": "sub_00871090",
+  "src_path": "src/leaf/decompiled_870000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_870000.cpp",
+  "name": "TextCursor::ReadCharOrStepBack_00871090",
+  "class": "TextCursor",
+  "signature": "bool __thiscall fn_00871090(void* self, uint8_t expected)",
+  "summary": "Reads one character; returns true if it equals the expected byte, otherwise steps the cursor back one line and returns false.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:41:49Z"
+}

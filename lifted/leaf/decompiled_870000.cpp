@@ -237,3 +237,23 @@ uint8_t fn_008710B0(void* self) {
     return 1;
 }
 } // namespace lift_008710B0
+
+// [0x00871090] sub_00871090 (26 bytes)
+namespace lift_00871090 {
+// Known callee 0x00870E90: reads/advances one character from the text cursor (returns it in al).
+extern uint8_t __thiscall ext_00870E90(void* self);
+// Known callee 0x00870EF0: TextCursor::StepBackOneLine_00870EF0 (Steps a backward text cursor to the start of the previous line (LF or CRLF terminated), tracking a line counter; resets to buffer start and line state when the start is reached.)
+extern void __thiscall ext_00870EF0(void* self);
+
+// @name TextCursor::ReadCharOrStepBack_00871090
+// @class TextCursor
+// @summary Reads one character; returns true if it equals the expected byte, otherwise steps the cursor back one line and returns false.
+bool __thiscall fn_00871090(void* self, uint8_t expected) {
+    const uint8_t ch = ext_00870E90(self);
+    if (ch == expected) {
+        return true;
+    }
+    ext_00870EF0(self);
+    return false;
+}
+} // namespace lift_00871090
