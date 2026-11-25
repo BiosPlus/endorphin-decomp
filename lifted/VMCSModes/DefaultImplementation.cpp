@@ -85,3 +85,37 @@ extern bool __fastcall fn_004FA170(uint32_t self, int edx_unused) {
 }
 } // namespace lift_004FA170
 } // namespace lift_004FA170
+
+// [0x004FA1B0] VMCSModes::DefaultImplementation::vfunc_136 (58 bytes)
+namespace lift_004FA1B0 {
+extern void* ext_005B11F0(void* self);
+
+// @name VMCSModes::DefaultImplementation::vfunc_136
+// @class VMCSModes::DefaultImplementation
+// @summary Returns true when the container reached via this->field_0x08 -> ... -> vcall(+0x14) has a non-null begin pointer and a non-empty (end - begin) range.
+// @field VMCSModes::DefaultImplementation +0x08 void* field_0x08
+bool fn_004FA1B0(void* self) {
+    // owner = this->field_0x08
+    void* owner = lift_field<void*>(self, 0x08);
+    // a = owner->field_0x14
+    void* a = lift_field<void*>(owner, 0x14);
+    // b = a->field_0x34 (passed as 'this' to OglRenderer::vfunc_118)
+    void* b = lift_field<void*>(a, 0x34);
+    void* obj = ext_005B11F0(b);
+
+    // Virtual call through vtable slot 5 (offset 0x14 / 4) on obj.
+    using VSlotFn = void* (*)(void* self_ptr);
+    void** vtable = *reinterpret_cast<void***>(obj);
+    VSlotFn slot5 = reinterpret_cast<VSlotFn>(vtable[5]);
+    void* inner = slot5(obj);
+
+    // inner layout: +0x4 begin, +0x8 end (32-bit pointers, element size 4).
+    uint32_t begin = lift_field<uint32_t>(inner, 0x04);
+    if (begin == 0) {
+        return false;
+    }
+    uint32_t end = lift_field<uint32_t>(inner, 0x08);
+    int32_t count = static_cast<int32_t>(end - begin) >> 2;
+    return count != 0;
+}
+} // namespace lift_004FA1B0

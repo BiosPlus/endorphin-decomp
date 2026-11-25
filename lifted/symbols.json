@@ -14877,6 +14877,13 @@
     "summary": "Returns true if the vector at (object reached via this-\u003e+0x8 -\u003e +0x14 -\u003e +0x34)+0x3D0 is non-empty (end != begin, nonzero begin); false otherwise.",
     "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
   },
+  "0x004FA1B0": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_136",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "bool fn_004FA1B0(void* self)",
+    "summary": "Returns true when the container reached via this-\u003efield_0x08 -\u003e ... -\u003e vcall(+0x14) has a non-null begin pointer and a non-empty (end - begin) range.",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
   "0x004FD800": {
     "name": "StringBuffer::clear",
     "class": "StringBuffer",
