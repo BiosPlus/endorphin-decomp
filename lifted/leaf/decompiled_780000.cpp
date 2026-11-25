@@ -970,3 +970,16 @@ void fn_00783570(void* self, DWORD whence_arg, DWORD offset) {
     std::fseek(stream, static_cast<long>(static_cast<int32_t>(offset)), whence);
 }
 } // namespace lift_00783570
+
+// [0x00780090] sub_00780090 (64 bytes)
+namespace lift_00780090 {
+// @name SetValueAndCopyString
+// @summary Stores a 32-bit value at offset 0 and copies a NUL-terminated string (including terminator) to offset 4.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 char field_0x04
+void fn_00780090(uint8_t* self, uint32_t value, const char* src) {
+    *reinterpret_cast<uint32_t*>(self) = value;
+    size_t count = std::strlen(src) + 1;
+    std::memcpy(self + 4, src, count);
+}
+} // namespace lift_00780090

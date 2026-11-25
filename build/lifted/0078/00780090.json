@@ -1,0 +1,27 @@
+{
+  "va": "0x00780090",
+  "size": 64,
+  "orig_symbol": "sub_00780090",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "SetValueAndCopyString",
+  "signature": "void fn_00780090(uint8_t* self, uint32_t value, const char* src)",
+  "summary": "Stores a 32-bit value at offset 0 and copies a NUL-terminated string (including terminator) to offset 4.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "char",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:08:20Z"
+}
