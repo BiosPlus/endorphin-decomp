@@ -62924,6 +62924,12 @@
     "summary": "Copies 20 DWORDs from src to dst, walking indices 19 down to 0.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086F050": {
+    "name": "SplitDwordHalvesIntoSlots",
+    "signature": "void fn_0086F050(void* src, void* dst)",
+    "summary": "Zeroes the 20-DWORD destination, then for i = 4..0 writes the low 16 bits of src[i] to dst[2i+11] and the high 16 bits to dst[2i+10].",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086F0A0": {
     "name": "pack_u16_pairs_to_u32",
     "signature": "void sub_0086F0A0(const uint32_t* src, uint32_t* dst)",

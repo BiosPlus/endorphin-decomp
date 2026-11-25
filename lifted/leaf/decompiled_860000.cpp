@@ -794,3 +794,22 @@ uint32_t fn_0086AF80(uint32_t* dst, const uint32_t* a, const uint32_t* b, uint32
     return carry;
 }
 } // namespace lift_0086AF80
+
+// [0x0086F050]
+namespace lift_0086F050 {
+// @name SplitDwordHalvesIntoSlots
+// @summary Zeroes the 20-DWORD destination, then for i = 4..0 writes the low 16 bits of src[i] to dst[2i+11] and the high 16 bits to dst[2i+10].
+
+// ZeroDwordArray20 clone: zeroes the 20 DWORD entries (indices 0..19) of the array passed by pointer.
+extern void ext_0086F000(void* dst);
+
+void fn_0086F050(void* src, void* dst) {
+    ext_0086F000(dst);
+
+    for (int32_t i = 4; i >= 0; --i) {
+        uint32_t value = lift_field<uint32_t>(src, static_cast<size_t>(i) * 4u);
+        lift_field<uint32_t>(dst, static_cast<size_t>(2 * i + 11) * 4u) = value & 0xFFFFu;
+        lift_field<uint32_t>(dst, static_cast<size_t>(2 * i + 10) * 4u) = value >> 16;
+    }
+}
+} // namespace lift_0086F050

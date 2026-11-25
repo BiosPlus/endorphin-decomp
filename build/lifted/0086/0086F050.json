@@ -1,0 +1,13 @@
+{
+  "va": "0x0086F050",
+  "size": 80,
+  "orig_symbol": "sub_0086F050",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "SplitDwordHalvesIntoSlots",
+  "signature": "void fn_0086F050(void* src, void* dst)",
+  "summary": "Zeroes the 20-DWORD destination, then for i = 4..0 writes the low 16 bits of src[i] to dst[2i+11] and the high 16 bits to dst[2i+10].",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:58:38Z"
+}
