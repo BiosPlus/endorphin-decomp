@@ -1,0 +1,22 @@
+{
+  "va": "0x0044B390",
+  "size": 43,
+  "orig_symbol": "sub_0044B390",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::forwardFlagToCallback_0044B390",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_0044B390(void* self, void* arg)",
+  "summary": "If field_0x64 is non-null, calls its vfunc at vtable+0xC0 to get a flag, then calls the function pointer at arg-\u003e+4 with this=arg and that flag.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "void*",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:30:29Z"
+}

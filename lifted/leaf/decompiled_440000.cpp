@@ -2093,3 +2093,30 @@ void fn_0044C130(void* self, DWORD arg1, DWORD arg2, DWORD arg3) {
 }
 } // namespace lift_0044BFB0
 } // namespace lift_0044C130
+
+// [0x0044B390]
+namespace lift_0044B390 {
+// @name Unknown::forwardFlagToCallback_0044B390
+// @class Unknown
+// @summary If field_0x64 is non-null, calls its vfunc at vtable+0xC0 to get a flag, then calls the function pointer at arg->+4 with this=arg and that flag.
+// @field Unknown +0x64 void* field_0x64
+void __thiscall fn_0044B390(void* self, void* arg) {
+    void* child = lift_field<void*>(self, 0x64);
+    if (child == nullptr) {
+        return;
+    }
+
+    // Original reads [arg] before the virtual call.
+    void* target = *reinterpret_cast<void**>(arg);
+
+    void* vtbl = lift_field<void*>(child, 0);
+    void* slot = lift_field<void*>(vtbl, 0xC0);
+    auto virt = reinterpret_cast<uint8_t(__thiscall*)(void*)>(slot);
+    uint8_t flag = virt(child);
+
+    // Original reads [target+4] after the virtual call.
+    void* notifyFn = lift_field<void*>(target, 4);
+    auto notify = reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(notifyFn);
+    notify(arg, static_cast<uint32_t>(flag));
+}
+} // namespace lift_0044B390

@@ -782,7 +782,7 @@ struct Unknown_Fields {
     // +0x64  int32_t                  field_0x64  (evidence: 0x00441020, 0x0044B6A0, 0x006D0370, 0x006D5620) // CONFLICT: multiple definitions at +0x64
     // +0x64  uint32_t                 field_0x64  (evidence: 0x00441020, 0x00441C10, 0x0044B560, 0x0044B5C0, 0x00648A20, 0x0064DC80, 0x0064DEE0, 0x0064DF20, 0x006B6990) // CONFLICT: multiple definitions at +0x64
     // +0x64  uint8_t                  field_0x64  (evidence: 0x0043D170, 0x0043D200, 0x0043D230, 0x0043D260) // CONFLICT: multiple definitions at +0x64
-    // +0x64  void*                    field_0x64  (evidence: 0x0043D2C0, 0x00441C10, 0x0044B1F0, 0x0044B260, 0x0044B290, 0x0044B360, 0x0044B4E0, 0x0044B6B0, 0x00535690) // CONFLICT: multiple definitions at +0x64
+    // +0x64  void*                    field_0x64  (evidence: 0x0043D2C0, 0x00441C10, 0x0044B1F0, 0x0044B260, 0x0044B290, 0x0044B360, 0x0044B390, 0x0044B4E0, 0x0044B6B0, 0x00535690) // CONFLICT: multiple definitions at +0x64
     // +0x64  DWORD                    handler  (evidence: 0x00441C10, 0x0044BF00) // CONFLICT: multiple definitions at +0x64
     // +0x64  void* field_0x64 (child object pointer; type unknown)  (evidence: 0x00441C10, 0x0044B220) // CONFLICT: multiple definitions at +0x64
     // +0x65  BYTE                     field_0x65  (evidence: 0x006722B0, 0x00672490, 0x00673B80)

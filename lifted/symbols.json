@@ -4819,6 +4819,13 @@
     "summary": "Invokes two virtual methods on the object at offset 0x64 if non-null.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044B390": {
+    "name": "Unknown::forwardFlagToCallback_0044B390",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0044B390(void* self, void* arg)",
+    "summary": "If field_0x64 is non-null, calls its vfunc at vtable+0xC0 to get a flag, then calls the function pointer at arg-\u003e+4 with this=arg and that flag.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044B4E0": {
     "name": "sub_0044B4E0",
     "signature": "extern \"C\" void __thiscall fn_0044B4E0(uint8_t* self)",
