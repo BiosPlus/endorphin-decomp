@@ -69763,6 +69763,12 @@
     "summary": "Returns the 32-bit entry at index `idx` of the 4-byte array stored at +0x94 in the object.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C9310": {
+    "name": "copyVec3FromStride32Array",
+    "signature": "void __cdecl copyVec3FromStride32Array(const void* base, UINT index, float* out)",
+    "summary": "Copy the first three floats (Vec3) of element `index` from a 32-byte-stride array into out.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C9340": {
     "name": "copyVec3FromIndexedElement",
     "signature": "void fn_007C9340(const void* base, UINT idx, FLOAT* out)",

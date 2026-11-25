@@ -1472,3 +1472,15 @@ extern void sub_007C9D00(uint8_t* dst, float value)
     *reinterpret_cast<float*>(dst + 0x08) = result;
 }
 } // namespace lift_007C9D00
+
+// [0x007C9310]
+namespace lift_007C9310 {
+// @name copyVec3FromStride32Array
+// @summary Copy the first three floats (Vec3) of element `index` from a 32-byte-stride array into out.
+void __cdecl copyVec3FromStride32Array(const void* base, UINT index, float* out) {
+    const uint8_t* elem = reinterpret_cast<const uint8_t*>(base) + static_cast<size_t>(index) * 32u;
+    out[0] = *reinterpret_cast<const float*>(elem + 0x0);
+    out[1] = *reinterpret_cast<const float*>(elem + 0x4);
+    out[2] = *reinterpret_cast<const float*>(elem + 0x8);
+}
+} // namespace lift_007C9310
