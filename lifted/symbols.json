@@ -14400,6 +14400,13 @@
     "summary": "Copies two DWORD fields (+0x04, +0x08) of self into the out-pointer argument at [out+0], [out+4].",
     "lifted_path": "lifted/leaf/tiny_4E0000.cpp"
   },
+  "0x004EF460": {
+    "name": "Properties::TargetSelectionProxy::vfunc_0",
+    "class": "Properties::TargetSelectionProxy",
+    "signature": "uint32_t __thiscall Properties_TargetSelectionProxy_vfunc_0(void* self, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "Forwards virtual slot 0 to the first source object in the proxy's vector (tail call); returns the vector begin value when the vector is empty, or 0 when it is unset.",
+    "lifted_path": "lifted/Properties/TargetSelectionProxy.cpp"
+  },
   "0x004F0510": {
     "name": "Properties::TestControl::vfunc_8",
     "class": "Properties::TestControl",
