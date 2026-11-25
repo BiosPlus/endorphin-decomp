@@ -50176,3 +50176,24 @@ void fn_005FCBD0(void* self) {
     ext_006A6DD2(exception_object, reinterpret_cast<const void*>(0x009DEC1C));
 }
 } // namespace lift_005FCBD0
+
+// [0x00636470] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>::vfunc_1 (49 bytes)
+namespace lift_00636470 {
+// Callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage (builds a default-message exception and throws it).
+extern void ext_0046C4E0(void* arg);
+
+// @name ExprParser::ReadMethodType<EffectorSkeletal>::vfunc_1 (EffectorSkeletal::getDesiredTwistAndSwingAngle)
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>
+// @summary Reads the wrapped EffectorSkeletal pointer; if non-null, forwards the field at +0x90 to the default-message throw helper, otherwise throws a fixed-message exception. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field EffectorSkeletal +0x90 void* field_0x90
+void fn_00636470(void** holder) {
+    void* obj = *holder;
+    if (obj != nullptr) {
+        ext_0046C4E0(static_cast<char*>(obj) + 0x90);
+    }
+    // The original constructs a fixed-message exception (DerivedException at 0x0046C3C0) and throws it via
+    // MSVCR80 _CxxThrowException. Its message text is not recovered here, so a portable std::runtime_error is thrown.
+    throw std::runtime_error("ExprParser::ReadMethodType<EffectorSkeletal>::vfunc_1");
+}
+} // namespace lift_00636470

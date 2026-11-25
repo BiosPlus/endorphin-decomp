@@ -41995,6 +41995,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0062E430 (ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, getVertAxis, 1\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00636470": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal\u003e::vfunc_1 (EffectorSkeletal::getDesiredTwistAndSwingAngle)",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0\u003e",
+    "signature": "void fn_00636470(void** holder)",
+    "summary": "Reads the wrapped EffectorSkeletal pointer; if non-null, forwards the field at +0x90 to the default-message throw helper, otherwise throws a fixed-message exception. Never returns normally.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x006364F0": {
     "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0\u003e",
