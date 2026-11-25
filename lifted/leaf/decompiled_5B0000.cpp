@@ -686,3 +686,19 @@ void* fn_005B83C0() {
     return &mem_00B43CCC;
 }
 } // namespace lift_005B83C0
+
+// [0x005B4010] sub_005B4010 (30 bytes)
+namespace lift_005B4010 {
+// Known callee 0x005B3D10: getStaticSingleton_005B3D10 (Lazily initializes a static singleton at mem_00B43554 (guarded by mem_00B43558) and returns its pointer.)
+extern void* ext_005B3D10();
+
+// @name storeValueAndSingleton_005B4010
+// @summary Stores a value into out[0] and the static singleton pointer into out[1].
+// @field pair +0x00 uint32_t field_0x00 (written from the second argument)
+// @field pair +0x04 void* field_0x04 (written with the result of ext_005B3D10)
+void fn_005B4010(uint32_t* out, uint32_t value) {
+    void* singleton = ext_005B3D10();
+    out[0] = value;
+    out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(singleton));
+}
+} // namespace lift_005B4010

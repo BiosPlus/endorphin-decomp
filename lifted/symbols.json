@@ -27555,6 +27555,12 @@
     "summary": "Lazily initializes and returns the singleton object at 0x00B4356C.",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
+  "0x005B4010": {
+    "name": "storeValueAndSingleton_005B4010",
+    "signature": "void fn_005B4010(uint32_t* out, uint32_t value)",
+    "summary": "Stores a value into out[0] and the static singleton pointer into out[1].",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B4150": {
     "name": "Geometry::SphereType::vfunc_18",
     "class": "Geometry::SphereType",

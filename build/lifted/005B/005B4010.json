@@ -1,0 +1,27 @@
+{
+  "va": "0x005B4010",
+  "size": 30,
+  "orig_symbol": "sub_005B4010",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "storeValueAndSingleton_005B4010",
+  "signature": "void fn_005B4010(uint32_t* out, uint32_t value)",
+  "summary": "Stores a value into out[0] and the static singleton pointer into out[1].",
+  "fields": [
+    {
+      "class": "pair",
+      "offset": "+0x0",
+      "type": "uint32_t field_0x00 (written from the second",
+      "name": "argument)"
+    },
+    {
+      "class": "pair",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (written with the result of",
+      "name": "ext_005B3D10)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:07:41Z"
+}
