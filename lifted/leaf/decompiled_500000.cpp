@@ -400,3 +400,29 @@ void fillElementRange(void* begin, void* end, const void* src) {
     }
 }
 } // namespace lift_0050A6E0
+
+// [0x00508800] sub_00508800 (61 bytes)
+namespace lift_00508800 {
+extern int mem_00924FC0;
+extern uint32_t mem_00A40EF8[];
+
+// @name FindMatchingNameIndex
+// @summary Compares the string argument against a 3-entry name table; on match stores the index at self+0x0C and returns true.
+// @field Unknown +0x0C int32_t field_0x0C
+
+namespace {
+using NameEqFn = bool (*)(const void* str, const char* name);
+}
+
+extern bool fn_00508800(void* self, const void* str) {
+    auto eq = reinterpret_cast<NameEqFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FC0)));
+    for (int i = 0; i < 3; ++i) {
+        const char* name = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A40EF8[i]));
+        if (eq(str, name)) {
+            *reinterpret_cast<int32_t*>(static_cast<unsigned char*>(self) + 0x0C) = i;
+            return true;
+        }
+    }
+    return false;
+}
+} // namespace lift_00508800
