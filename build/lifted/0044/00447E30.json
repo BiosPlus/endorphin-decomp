@@ -1,0 +1,34 @@
+{
+  "va": "0x00447E30",
+  "size": 103,
+  "orig_symbol": "sub_00447E30",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::ConstructWithEmbedded74",
+  "class": "Unknown",
+  "signature": "void* fn_00447E30(void* self, uint32_t arg)",
+  "summary": "Constructor: runs the base-class constructor (ord_354, args 0x315 and arg), stores the primary vtable at +0x00, constructs the embedded subobject at +0x74 (ord_572), stores its vtable, sets the flag at +0xC8 to 1, and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "void*",
+      "name": "field_0x74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC8",
+      "type": "BYTE",
+      "name": "flag"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:47:06Z"
+}

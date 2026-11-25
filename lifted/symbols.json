@@ -4473,6 +4473,13 @@
     "summary": "Destructor body: resets vfptr to the ProcessorWarningDialog vtable (0x00932E8C), tears down the subobject at +0x74, then runs base teardown on this.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x00447E30": {
+    "name": "Unknown::ConstructWithEmbedded74",
+    "class": "Unknown",
+    "signature": "void* fn_00447E30(void* self, uint32_t arg)",
+    "summary": "Constructor: runs the base-class constructor (ord_354, args 0x315 and arg), stores the primary vtable at +0x00, constructs the embedded subobject at +0x74 (ord_572), stores its vtable, sets the flag at +0xC8 to 1, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00447EA0": {
     "name": "ProcessorWarningDialog::vfunc_1",
     "class": "ProcessorWarningDialog",

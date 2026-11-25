@@ -2229,3 +2229,41 @@ void fn_0044C500(void* self) {
     ext_0044C460(self, out, self_addr, begin, self_addr, end);
 }
 } // namespace lift_0044C500
+
+// [0x00447E30] sub_00447E30 (103 bytes)
+namespace lift_00447E30 {
+// Known callee 0x006A5C6E: thunk_MFC80_ord_572 (IAT jump thunk forwarding to MFC80!ord_572.)
+extern void ext_006A5C6E();
+// Known callee 0x006A5FC2: thunk_MFC80_ord_354 (IAT jump thunk forwarding to MFC80!ord_354.)
+extern void ext_006A5FC2();
+
+// @name Unknown::ConstructWithEmbedded74
+// @class Unknown
+// @summary Constructor: runs the base-class constructor (ord_354, args 0x315 and arg), stores the primary vtable at +0x00, constructs the embedded subobject at +0x74 (ord_572), stores its vtable, sets the flag at +0xC8 to 1, and returns this.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x74 void* field_0x74
+// @field Unknown +0xC8 BYTE flag
+void* fn_00447E30(void* self, uint32_t arg) {
+    auto* const esi = static_cast<uint8_t*>(self);
+
+    // Base-class constructor (thiscall, stack args: 0x315 and arg).
+    // The SEH frame setup/teardown of the original is not modelled here.
+    (void)arg;
+    ext_006A5FC2();
+
+    // Primary vtable pointer for the object at +0x00.
+    *reinterpret_cast<uint32_t*>(esi + 0x00) = 0x00932E8Cu;
+
+    // Embedded subobject at +0x74 is constructed (thiscall, ecx = this + 0x74).
+    uint8_t* const edi = esi + 0x74;
+    ext_006A5C6E();
+
+    // Vtable pointer of the embedded subobject.
+    *reinterpret_cast<uint32_t*>(edi + 0x00) = 0x009287E4u;
+
+    // Initialisation flag.
+    esi[0xC8] = 1;
+
+    return esi;
+}
+} // namespace lift_00447E30
