@@ -21298,6 +21298,13 @@
     "summary": "Resets the buffered TM pointer state: field_0x8 = 0, field_0x4 = -1.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0053A5D0": {
+    "name": "Primitives::Animation::vfunc_24",
+    "class": "Primitives::Animation",
+    "signature": "void fn_0053A5D0(void* self)",
+    "summary": "Allocates one OpenGL display list and stores its id at this+0x34.",
+    "lifted_path": "lifted/Primitives/auto_tiny.cpp"
+  },
   "0x0053A5E0": {
     "name": "Unknown::forwardArgToChildAndStoreResult",
     "class": "Unknown",

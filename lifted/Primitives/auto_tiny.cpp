@@ -296,3 +296,17 @@ extern void* __fastcall fn_0053D260(void* self, int edx_unused, unsigned int fla
     return self;
 }
 } // namespace lift_0053D260
+
+// [0x0053A5D0]
+namespace lift_0053A5D0 {
+// @name Primitives::Animation::vfunc_24
+// @class Primitives::Animation
+// @summary Allocates one OpenGL display list and stores its id at this+0x34.
+// @field Primitives::Animation +0x34 uint32_t field_0x34
+void fn_0053A5D0(void* self) {
+    // mem_009253EC: IAT slot holding OPENGL32!glGenLists (read at call time only).
+    auto mem_009253EC = reinterpret_cast<uint32_t(__stdcall**)(int32_t)>(0x009253EC);
+    auto ext_glGenLists = *mem_009253EC;
+    lift_field<uint32_t>(self, 0x34) = ext_glGenLists(1);
+}
+} // namespace lift_0053A5D0

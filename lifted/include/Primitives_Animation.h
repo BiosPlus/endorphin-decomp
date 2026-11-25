@@ -22,7 +22,7 @@ struct Primitives_Animation_Fields {
     // +0x28  uint32_t                 field_0x28  (evidence: 0x0052EFA0, 0x0052FA20, 0x0053AD10)
     // +0x2C  uint32_t                 field_0x2c  (evidence: 0x0052EFA0, 0x0052FA20, 0x0053AD10)
     // +0x30  uint32_t                 field_0x30  (evidence: 0x0053AD10)
-    // +0x34  uint32_t                 field_0x34  (evidence: 0x0052FA20)
+    // +0x34  uint32_t                 field_0x34  (evidence: 0x0052FA20, 0x0053A5D0)
     // +0x38  void*                    field_0x38  (evidence: 0x0053AD10)
     // +0x9C  uint32_t                 field_0x9C  (evidence: 0x0053E240) // CONFLICT: multiple definitions at +0x9C
     // +0x9C  void*                    field_0x9C  (evidence: 0x0053F410) // CONFLICT: multiple definitions at +0x9C
