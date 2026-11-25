@@ -1505,3 +1505,34 @@ void* __thiscall sub_00401D80(void* self, const void* other) {
     return self;
 }
 } // namespace lift_00401D80
+
+// [0x00401E60]
+namespace lift_00401E60 {
+extern void* __thiscall ext_00401E00(void* self, const void* other);
+
+// @name std::logic_error_subclass::logic_error_subclass(const logic_error_subclass&)
+// @class logic_error_subclass
+// @summary Copy constructor for a std::logic_error subclass, calling base copy constructor and setting vtable to 0x00928ED8.
+// @field logic_error_subclass +0x00 uint32_t vptr
+void* __thiscall sub_00401E60(void* self, const void* other) {
+    ext_00401E00(self, other);
+    *reinterpret_cast<uint32_t*>(self) = 0x00928ED8u;
+    return self;
+}
+} // namespace lift_00401E60
+
+// [0x004024E0]
+namespace lift_004024E0 {
+extern void* __thiscall ext_00401E00(void* self, const void* other);
+extern uint32_t mem_00928EE4;
+
+// @name LogicErrorDerived::LogicErrorDerived(const LogicErrorDerived&)
+// @class LogicErrorDerived
+// @summary Copy constructor for a std::logic_error subclass, calling base copy constructor and setting vtable.
+// @field LogicErrorDerived +0x00 uint32_t vptr
+void* __thiscall sub_004024E0(void* self, const void* other) {
+    ext_00401E00(self, other);
+    *reinterpret_cast<uint32_t*>(self) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00928EE4));
+    return self;
+}
+} // namespace lift_004024E0
