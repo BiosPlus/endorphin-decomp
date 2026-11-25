@@ -61,3 +61,23 @@ uint32_t ReshapeTool_vfunc_17(void* self) {
     return reinterpret_cast<U32ThisFn>(vtable_of(obj9c)[17])(sub9c);
 }
 } // namespace lift_00544A40
+
+// [0x00544AE0] ReshapeTool::vfunc_32 (29 bytes)
+namespace lift_00544AE0 {
+// Known callee 0x00543470: CameraTool::vfunc_32 (Fetches a 64-byte block via two virtual calls, copies it into this+0x04, then duplicates it into this+0x44.)
+extern void ext_00543470(void* self);
+
+// @name ReshapeTool::vfunc_32
+// @class ReshapeTool
+// @summary Calls CameraTool::vfunc_32 on this, then tail-dispatches through the function pointer at (*(this+0x9C))+0x80 with the address of this+0x9C as the implicit this argument.
+// @field ReshapeTool +0x9C void* field_0x9C
+void fn_00544AE0(void* self) {
+    using ThisCallFn = void (*)(void*);
+
+    ext_00543470(self);
+
+    void* subobject = lift_field<void*>(self, 0x9C);
+    ThisCallFn target = lift_field<ThisCallFn>(subobject, 0x80);
+    target(&lift_field<void*>(self, 0x9C));
+}
+} // namespace lift_00544AE0

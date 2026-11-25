@@ -19607,6 +19607,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00544AE0": {
+    "name": "ReshapeTool::vfunc_32",
+    "class": "ReshapeTool",
+    "signature": "void fn_00544AE0(void* self)",
+    "summary": "Calls CameraTool::vfunc_32 on this, then tail-dispatches through the function pointer at (*(this+0x9C))+0x80 with the address of this+0x9C as the implicit this argument.",
+    "lifted_path": "lifted/classes/ReshapeTool.cpp"
+  },
   "0x00544B00": {
     "name": "ReshapeTool::vfunc_19_off_98",
     "class": "ReshapeTool",

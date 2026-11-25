@@ -1,0 +1,22 @@
+{
+  "va": "0x00544AE0",
+  "size": 29,
+  "orig_symbol": "ReshapeTool::vfunc_32",
+  "src_path": "src/classes/ReshapeTool.cpp",
+  "lifted_path": "lifted/classes/ReshapeTool.cpp",
+  "name": "ReshapeTool::vfunc_32",
+  "class": "ReshapeTool",
+  "signature": "void fn_00544AE0(void* self)",
+  "summary": "Calls CameraTool::vfunc_32 on this, then tail-dispatches through the function pointer at (*(this+0x9C))+0x80 with the address of this+0x9C as the implicit this argument.",
+  "fields": [
+    {
+      "class": "ReshapeTool",
+      "offset": "+0x9C",
+      "type": "void*",
+      "name": "field_0x9C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:29:04Z"
+}
