@@ -1,0 +1,13 @@
+{
+  "va": "0x006788E0",
+  "size": 90,
+  "orig_symbol": "sub_006788E0",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "getStaticObject_00B59E70",
+  "signature": "void* __cdecl sub_006788E0()",
+  "summary": "Lazily initializes global object at 0x00B59E70 once, registers atexit cleanup, and returns it",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:24:22Z"
+}

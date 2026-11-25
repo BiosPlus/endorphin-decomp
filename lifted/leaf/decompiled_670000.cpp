@@ -906,3 +906,41 @@ uint32_t* sub_00679EB0(uint32_t* first, uint32_t* last, uint32_t key) {
     return first;
 }
 } // namespace lift_00679EB0
+
+// [0x006788E0]
+namespace lift_006788E0 {
+extern uint32_t mem_00B59E70;
+extern uint32_t mem_00B59E80;
+
+extern void __thiscall ext_00678890(void* self);
+extern void __cdecl ext_006A6C87(uint32_t func);
+
+// @name getStaticObject_00B59E70
+// @summary Lazily initializes global object at 0x00B59E70 once, registers atexit cleanup, and returns it
+void* __cdecl sub_006788E0() {
+    if ((mem_00B59E80 & 1u) == 0u) {
+        mem_00B59E80 |= 1u;
+        ext_00678890(&mem_00B59E70);
+        ext_006A6C87(0x00921A10u);
+    }
+    return &mem_00B59E70;
+}
+} // namespace lift_006788E0
+
+// [0x00672430]
+namespace lift_00672430 {
+extern void* ext_006A5C62(uint32_t size);
+
+// @name allocateElements80
+// @summary Allocates an array of count 80-byte elements, throwing std::bad_alloc on size overflow.
+extern void* fn_00672430(uint32_t count) {
+    if (count > 0) {
+        if (0xFFFFFFFFu / count < 0x50u) {
+            throw std::bad_alloc();
+        }
+    } else {
+        count = 0;
+    }
+    return ext_006A5C62(count * 0x50u);
+}
+} // namespace lift_00672430
