@@ -16985,6 +16985,12 @@
     "summary": "Iterates over 8-byte elements in the vector at +0x2C and invokes ext_0047B170 on each element with arg0.",
     "lifted_path": "lifted/NMData/RealChannel.cpp"
   },
+  "0x0051C5A0": {
+    "name": "InitBaseThenZeroTail_0051C5A0",
+    "signature": "void* fn_0051C5A0(void* self)",
+    "summary": "Runs base-class init on self, stamps the vtable word at +0x00, zeroes five DWORDs at +0x30..+0x40, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x0051C6D0": {
     "name": "NMData::RealChannel::vfunc_4",
     "class": "NMData::RealChannel",

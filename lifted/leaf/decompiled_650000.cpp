@@ -417,3 +417,33 @@ void fn_0051A000(void* self, float param) {
     reinterpret_cast<VirtApply_fn>(selfVtbl[5])(self, value, param);
 }
 } // namespace lift_0051A000
+
+// [0x0051C5A0] sub_0051C5A0 (71 bytes)
+namespace lift_0051C5A0 {
+// Known callee 0x00519C80: sub_005136C0 (Auto-lifted identical-shape clone of 0x00500310 (DwordPairInitFromCall_00500310).)
+extern void ext_00519C80();
+
+// @name InitBaseThenZeroTail_0051C5A0
+// @summary Runs base-class init on self, stamps the vtable word at +0x00, zeroes five DWORDs at +0x30..+0x40, and returns self.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x30 DWORD field_0x30
+// @field Unknown +0x34 DWORD field_0x34
+// @field Unknown +0x38 DWORD field_0x38
+// @field Unknown +0x3C DWORD field_0x3C
+// @field Unknown +0x40 DWORD field_0x40
+void* fn_0051C5A0(void* self) {
+    // Original runs the SEH frame setup/teardown and calls the base init with
+    // ecx = self (thiscall). A portable C++ build cannot pass ecx, so the base
+    // init is invoked through the stub; see notes on the callee.
+    ext_00519C80();
+
+    lift_field<DWORD>(self, 0x00) = 0x00952574u;
+    lift_field<DWORD>(self, 0x30) = 0u;
+    lift_field<DWORD>(self, 0x34) = 0u;
+    lift_field<DWORD>(self, 0x38) = 0u;
+    lift_field<DWORD>(self, 0x3C) = 0u;
+    lift_field<DWORD>(self, 0x40) = 0u;
+
+    return self;
+}
+} // namespace lift_0051C5A0
