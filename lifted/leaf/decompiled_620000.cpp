@@ -806,3 +806,37 @@ void* fn_00627240(void* self, uint32_t arg0) {
     return self;
 }
 } // namespace lift_00627240
+
+// [0x0062E290] sub_0062E290 (59 bytes)
+namespace lift_0062E290 {
+// Known callee 0x0062CD30: sub_0062CD30_ctor (Initializes object vtable to 0x009791a4 and zeroes two 3-dword blocks at +0x08 and +0x2c.)
+extern uint32_t ext_0062CD30(void* this_ptr);
+
+// @name Unknown::initZeroFloatsAndVtable9795A4
+// @class Unknown
+// @summary Runs base ctor 0x0062CD30, sets vtable to 0x009795a4, zeroes nine float fields, returns this.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x48 float field_0x48
+// @field Unknown +0x4c float field_0x4c
+// @field Unknown +0x50 float field_0x50
+// @field Unknown +0x78 float field_0x78
+// @field Unknown +0x7c float field_0x7c
+// @field Unknown +0x80 float field_0x80
+// @field Unknown +0x84 float field_0x84
+// @field Unknown +0x88 float field_0x88
+// @field Unknown +0x8c float field_0x8c
+void* fn_0062E290(void* self) {
+    ext_0062CD30(self);
+    lift_field<uint32_t>(self, 0x00) = 0x009795a4u;
+    lift_field<float>(self, 0x48) = 0.0f;
+    lift_field<float>(self, 0x4c) = 0.0f;
+    lift_field<float>(self, 0x50) = 0.0f;
+    lift_field<float>(self, 0x78) = 0.0f;
+    lift_field<float>(self, 0x7c) = 0.0f;
+    lift_field<float>(self, 0x80) = 0.0f;
+    lift_field<float>(self, 0x84) = 0.0f;
+    lift_field<float>(self, 0x88) = 0.0f;
+    lift_field<float>(self, 0x8c) = 0.0f;
+    return self;
+}
+} // namespace lift_0062E290

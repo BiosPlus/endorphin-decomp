@@ -32012,6 +32012,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0062CCF0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0062E290": {
+    "name": "Unknown::initZeroFloatsAndVtable9795A4",
+    "class": "Unknown",
+    "signature": "void* fn_0062E290(void* self)",
+    "summary": "Runs base ctor 0x0062CD30, sets vtable to 0x009795a4, zeroes nine float fields, returns this.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x0062E3C0": {
     "name": "ExprParser::FunctionType\u003cSensors::CompoundSensorPlanes,checkDistance\u003e::vfunc_16",
     "class": "ExprParser::FunctionType\u003cSensors::CompoundSensorPlanes,checkDistance\u003e",
