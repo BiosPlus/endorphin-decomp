@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 #include <new>
 #include <string>
+#include <cstdlib>
 
 // [0x00450A80] sub_00450A80 (8 bytes)
 namespace lift_00450A80 {
@@ -691,3 +692,38 @@ extern void __thiscall fn_0045BC30(void* self, DWORD lparam) {
     (void)send(hwnd(), 0x1114u, 0u, static_cast<LPARAM>(lparam));
 }
 } // namespace lift_0045BC30
+
+// [0x00458860] sub_00458860 (68 bytes)
+namespace lift_00458860 {
+// @name Unknown::setCurrentByIndex
+// @class Unknown
+// @summary Releases the current element via vtable slot 2, selects element `index` from the array at +0x04..+0x08, stores it as current at +0x10, and invokes its vtable slot 1.
+// @field Unknown +0x04 void** field_0x04
+// @field Unknown +0x08 void** field_0x08
+// @field Unknown +0x10 void* field_0x10
+void fn_00458860(void* self, uint32_t index) {
+    using VFn = void (*)(void*);
+
+    // Notify the current element (vtable slot 2) if one is set.
+    void*& current = lift_field<void*>(self, 0x10);
+    if (current != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(current);
+        reinterpret_cast<VFn>(vtbl[2])(current);
+    }
+
+    // Bounds check: array must exist and index must be < element count.
+    void**& begin = lift_field<void**>(self, 0x04);
+    void** end = lift_field<void**>(self, 0x08);
+    intptr_t byteSpan = reinterpret_cast<uint8_t*>(end) - reinterpret_cast<uint8_t*>(begin);
+    uint32_t count = static_cast<uint32_t>(byteSpan >> 2);
+    if (begin == nullptr || index >= count) {
+        std::abort(); // original calls _invalid_parameter_noinfo
+    }
+
+    // Select the element and activate it (vtable slot 1).
+    void* next = begin[index];
+    current = next;
+    void** nextVtbl = *reinterpret_cast<void***>(next);
+    reinterpret_cast<VFn>(nextVtbl[1])(next);
+}
+} // namespace lift_00458860

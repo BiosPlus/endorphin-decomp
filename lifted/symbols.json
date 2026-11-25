@@ -5160,6 +5160,13 @@
     "summary": "Loads the object at self+0x54 and forwards (arg1, pair) to ext_004586E0, where pair is the two stack dwords that follow arg1.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x00458860": {
+    "name": "Unknown::setCurrentByIndex",
+    "class": "Unknown",
+    "signature": "void fn_00458860(void* self, uint32_t index)",
+    "summary": "Releases the current element via vtable slot 2, selects element `index` from the array at +0x04..+0x08, stores it as current at +0x10, and invokes its vtable slot 1.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x004589E0": {
     "name": "sub_004589E0",
     "signature": "extern \"C\" void* __cdecl fn_004589E0(void)",
