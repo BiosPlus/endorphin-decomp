@@ -732,3 +732,39 @@ void ReadFiveDwordsMasked(uint32_t* out) {
     out[0] &= 0x3fffffffu;
 }
 } // namespace lift_0086F8A0
+
+// [0x0086D110]
+namespace lift_0086D110 {
+// @name Buffer::RebuildIfFlagged
+// @class Buffer
+// @summary If flag bit 0 at +0xC is set, allocates a zeroed block of +0x8 bytes, copies the old block into it, stores the new pointer at +0x4 and toggles the flag bit; returns 0, or -2 if allocation fails.
+// @field Buffer +0x04 uint32_t field_0x04
+// @field Buffer +0x08 uint32_t field_0x08
+// @field Buffer +0x0C uint32_t field_0x0C
+
+// GlobalAllocZeroFlags clone: allocates zeroed memory of `size` bytes, returns handle/pointer or 0.
+extern uint32_t ext_008596E0(uint32_t size);
+// copyMemoryDwordThenBytes: copies n bytes (dwords first, then remainder) and returns dst.
+extern void* ext_00859780(void* dst, const void* src, size_t n);
+
+int32_t Buffer_RebuildIfFlagged(void* self) {
+    if ((lift_field<uint32_t>(self, 0x0C) & 1u) == 0) {
+        return 0;
+    }
+
+    uint32_t newBlock = ext_008596E0(lift_field<uint32_t>(self, 0x08));
+    if (newBlock == 0) {
+        return -2;
+    }
+
+    ext_00859780(reinterpret_cast<void*>(static_cast<uintptr_t>(newBlock)),
+                 reinterpret_cast<const void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x04))),
+                 lift_field<uint32_t>(self, 0x08));
+
+    uint32_t flags = lift_field<uint32_t>(self, 0x0C);
+    flags ^= 1u;
+    lift_field<uint32_t>(self, 0x04) = newBlock;
+    lift_field<uint32_t>(self, 0x0C) = flags;
+    return 0;
+}
+} // namespace lift_0086D110

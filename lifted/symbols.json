@@ -62879,6 +62879,13 @@
     "summary": "Allocates and initializes a 16-byte synchronization/header object.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086D110": {
+    "name": "Buffer::RebuildIfFlagged",
+    "class": "Buffer",
+    "signature": "int32_t Buffer_RebuildIfFlagged(void* self)",
+    "summary": "If flag bit 0 at +0xC is set, allocates a zeroed block of +0x8 bytes, copies the old block into it, stores the new pointer at +0x4 and toggles the flag bit; returns 0, or -2 if allocation fails.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086D210": {
     "name": "computeEncodedSize_0086D210",
     "signature": "uint32_t sub_0086D210(uint32_t arg0)",
