@@ -1249,3 +1249,20 @@ uint32_t sub_007AF500(uint32_t arg0) {
     }
 }
 } // namespace lift_007AF500
+
+// [0x007AF5E0]
+namespace lift_007AF5E0 {
+// @name LookupEntryByKeyWithFallback
+// @summary Looks up a cached entry by (a1, a2) with key2 = 0; if not found, dispatches a fallback hook with a2 and returns the (null) result.
+
+extern uint32_t ext_007AF580(uint32_t self, uint32_t key1, uint32_t key2);
+extern void ext_0079B140(uint32_t a1, uint32_t a2, uint32_t a3);
+
+uint32_t fn_007AF5E0(uint32_t a1, uint32_t a2) {
+    uint32_t result = ext_007AF580(a1, a2, 0);
+    if (result == 0) {
+        ext_0079B140(0x00AB108Cu, 0x00AB10A0u, a2);
+    }
+    return result;
+}
+} // namespace lift_007AF5E0

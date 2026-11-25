@@ -71556,6 +71556,12 @@
     "summary": "Searches a pointer array at +0x214 (count at +0x218) for an entry matching key1 at +0x0 and optional key2 at +0x8, caching the result in mem_00B61C14.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AF5E0": {
+    "name": "LookupEntryByKeyWithFallback",
+    "signature": "uint32_t fn_007AF5E0(uint32_t a1, uint32_t a2)",
+    "summary": "Looks up a cached entry by (a1, a2) with key2 = 0; if not found, dispatches a fallback hook with a2 and returns the (null) result.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AF620": {
     "name": "ForwardToCallbackWithArgPtr",
     "class": "\u003cClassName\u003e (optional)",

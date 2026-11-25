@@ -1,0 +1,13 @@
+{
+  "va": "0x007AF5E0",
+  "size": 64,
+  "orig_symbol": "sub_007AF5E0",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "LookupEntryByKeyWithFallback",
+  "signature": "uint32_t fn_007AF5E0(uint32_t a1, uint32_t a2)",
+  "summary": "Looks up a cached entry by (a1, a2) with key2 = 0; if not found, dispatches a fallback hook with a2 and returns the (null) result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T05:01:09Z"
+}
