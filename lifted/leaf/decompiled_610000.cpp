@@ -2,8 +2,10 @@
 #include "lift_compat.h"
 #include <cstdint>
 #include <cstring>
+#include <new>
+#include <string>
 
-// [0x00611160] sub_00611160 (11 bytes)
+#include <string>
 namespace lift_00611160 {
 // Known callee 0x005B11E0: getFloatAt (Returns a float from a 32-bit float array at offset +0x10 indexed by the argument)
 extern float ext_005B11E0(uint32_t ecx, uint32_t index);
@@ -15,8 +17,10 @@ float fn_00611160(uint32_t ecx) {
     return ext_005B11E0(ecx + 0x8u, 3u);
 }
 } // namespace lift_00611160
+#include <cmath>
+#include <cstdlib>
 
-// [0x00610B20] sub_00610B20 (32 bytes)
+#include <cstdlib>
 namespace lift_00610B20 {
 // Known callee 0x00594000: sub_00594000 (cdecl, no args; returns global int32 mem_00B40D08).
 extern int32_t __cdecl ext_00594000();
@@ -594,3 +598,2073 @@ void fn_00612310(void* self, const uint8_t* src, uint32_t index) {
     base[slot + 0x04] = src[0x04];
 }
 } // namespace lift_00612310
+
+// [0x0061DC40] sub_0061DC40 (87 bytes)
+namespace lift_0061DC40 {
+// @name sub_0061DC40
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B490D8;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B490D4;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061DC40() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A93EEu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B490D8 & 1u) == 0) {
+        mem_00B490D8 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B490D4, frame[0]);
+        mem_00B490D4 = 0x972E34u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B490D4;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061DC40
+
+// [0x0061DCA0] sub_0061DCA0 (87 bytes)
+namespace lift_0061DCA0 {
+// @name sub_0061DCA0
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B490E0;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B490DC;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061DCA0() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A940Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B490E0 & 1u) == 0) {
+        mem_00B490E0 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B490DC, frame[0]);
+        mem_00B490DC = 0x972FE4u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B490DC;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061DCA0
+
+// [0x0061DD00] sub_0061DD00 (87 bytes)
+namespace lift_0061DD00 {
+// @name sub_0061DD00
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B490E8;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B490E4;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061DD00() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A942Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B490E8 & 1u) == 0) {
+        mem_00B490E8 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B490E4, frame[0]);
+        mem_00B490E4 = 0x973194u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B490E4;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061DD00
+
+// [0x0061DD60] sub_0061DD60 (87 bytes)
+namespace lift_0061DD60 {
+// @name sub_0061DD60
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B490F0;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B490EC;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061DD60() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A944Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B490F0 & 1u) == 0) {
+        mem_00B490F0 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B490EC, frame[0]);
+        mem_00B490EC = 0x973344u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B490EC;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061DD60
+
+// [0x0061DDC0] sub_0061DDC0 (87 bytes)
+namespace lift_0061DDC0 {
+// @name sub_0061DDC0
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B490F8;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B490F4;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061DDC0() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A946Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B490F8 & 1u) == 0) {
+        mem_00B490F8 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B490F4, frame[0]);
+        mem_00B490F4 = 0x9734F4u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B490F4;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061DDC0
+
+// [0x0061DE20] sub_0061DE20 (87 bytes)
+namespace lift_0061DE20 {
+// @name sub_0061DE20
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B49100;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B490FC;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061DE20() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A948Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B49100 & 1u) == 0) {
+        mem_00B49100 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B490FC, frame[0]);
+        mem_00B490FC = 0x9736A4u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B490FC;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061DE20
+
+// [0x0061DE80] sub_0061DE80 (87 bytes)
+namespace lift_0061DE80 {
+// @name sub_0061DE80
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B49108;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B49104;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061DE80() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A94AEu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B49108 & 1u) == 0) {
+        mem_00B49108 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B49104, frame[0]);
+        mem_00B49104 = 0x973854u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B49104;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061DE80
+
+// [0x0061DEE0] sub_0061DEE0 (87 bytes)
+namespace lift_0061DEE0 {
+// @name sub_0061DEE0
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B49110;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B4910C;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061DEE0() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A94CEu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B49110 & 1u) == 0) {
+        mem_00B49110 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B4910C, frame[0]);
+        mem_00B4910C = 0x973A04u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B4910C;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061DEE0
+
+// [0x0061DF40] sub_0061DF40 (87 bytes)
+namespace lift_0061DF40 {
+// @name sub_0061DF40
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B49118;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B49114;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061DF40() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A94EEu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B49118 & 1u) == 0) {
+        mem_00B49118 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B49114, frame[0]);
+        mem_00B49114 = 0x973BB4u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B49114;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061DF40
+
+// [0x0061DFA0] sub_0061DFA0 (87 bytes)
+namespace lift_0061DFA0 {
+// @name sub_0061DFA0
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B49120;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B4911C;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061DFA0() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A950Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B49120 & 1u) == 0) {
+        mem_00B49120 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B4911C, frame[0]);
+        mem_00B4911C = 0x973D64u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B4911C;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061DFA0
+
+// [0x0061E000] sub_0061E000 (87 bytes)
+namespace lift_0061E000 {
+// @name sub_0061E000
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B49128;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B49124;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061E000() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A952Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B49128 & 1u) == 0) {
+        mem_00B49128 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B49124, frame[0]);
+        mem_00B49124 = 0x973F14u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B49124;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061E000
+
+// [0x0061E060] sub_0061E060 (87 bytes)
+namespace lift_0061E060 {
+// @name sub_0061E060
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B49130;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B4912C;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061E060() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A954Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B49130 & 1u) == 0) {
+        mem_00B49130 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B4912C, frame[0]);
+        mem_00B4912C = 0x9740C4u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B4912C;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061E060
+
+// [0x0061E0C0] sub_0061E0C0 (87 bytes)
+namespace lift_0061E0C0 {
+// @name sub_0061E0C0
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B49138;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B49134;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061E0C0() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A956Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B49138 & 1u) == 0) {
+        mem_00B49138 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B49134, frame[0]);
+        mem_00B49134 = 0x974274u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B49134;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061E0C0
+
+// [0x0061E120] sub_0061E120 (87 bytes)
+namespace lift_0061E120 {
+// @name sub_0061E120
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B49140;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B4913C;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061E120() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A958Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B49140 & 1u) == 0) {
+        mem_00B49140 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B4913C, frame[0]);
+        mem_00B4913C = 0x974424u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B4913C;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061E120
+
+// [0x0061E180] sub_0061E180 (87 bytes)
+namespace lift_0061E180 {
+// @name sub_0061E180
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B49148;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B49144;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061E180() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A95AEu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B49148 & 1u) == 0) {
+        mem_00B49148 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B49144, frame[0]);
+        mem_00B49144 = 0x9745D4u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B49144;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061E180
+
+// [0x0061E1E0] sub_0061E1E0 (87 bytes)
+namespace lift_0061E1E0 {
+// @name sub_0061E1E0
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B49150;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B4914C;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061E1E0() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A95CEu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B49150 & 1u) == 0) {
+        mem_00B49150 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B4914C, frame[0]);
+        mem_00B4914C = 0x974784u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B4914C;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061E1E0
+
+// [0x0061E240] sub_0061E240 (87 bytes)
+namespace lift_0061E240 {
+// @name sub_0061E240
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B49158;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B49154;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061E240() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A95EEu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B49158 & 1u) == 0) {
+        mem_00B49158 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B49154, frame[0]);
+        mem_00B49154 = 0x974934u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B49154;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061E240
+
+// [0x0061E2A0] sub_0061E2A0 (87 bytes)
+namespace lift_0061E2A0 {
+// @name sub_0061E2A0
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B49160;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B4915C;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061E2A0() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A960Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B49160 & 1u) == 0) {
+        mem_00B49160 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B4915C, frame[0]);
+        mem_00B4915C = 0x974AE4u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B4915C;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061E2A0
+
+// [0x0061E300] sub_0061E300 (87 bytes)
+namespace lift_0061E300 {
+// @name sub_0061E300
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B49168;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B49164;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061E300() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A962Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B49168 & 1u) == 0) {
+        mem_00B49168 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B49164, frame[0]);
+        mem_00B49164 = 0x974C94u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B49164;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061E300
+
+// [0x0061E360] sub_0061E360 (87 bytes)
+namespace lift_0061E360 {
+// @name sub_0061E360
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B49170;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B4916C;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061E360() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A964Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B49170 & 1u) == 0) {
+        mem_00B49170 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B4916C, frame[0]);
+        mem_00B4916C = 0x974E44u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B4916C;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061E360
+
+// [0x0061E3C0] sub_0061E3C0 (87 bytes)
+namespace lift_0061E3C0 {
+// @name sub_0061E3C0
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B49178;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B49174;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061E3C0() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A966Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B49178 & 1u) == 0) {
+        mem_00B49178 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B49174, frame[0]);
+        mem_00B49174 = 0x974FF4u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B49174;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061E3C0
+
+// [0x0061E420] sub_0061E420 (87 bytes)
+namespace lift_0061E420 {
+// @name sub_0061E420
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B49180;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B4917C;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061E420() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A968Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B49180 & 1u) == 0) {
+        mem_00B49180 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B4917C, frame[0]);
+        mem_00B4917C = 0x9751A4u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B4917C;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061E420
+
+// [0x0061E480] sub_0061E480 (87 bytes)
+namespace lift_0061E480 {
+// @name sub_0061E480
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B49188;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B49184;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061E480() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A96AEu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B49188 & 1u) == 0) {
+        mem_00B49188 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B49184, frame[0]);
+        mem_00B49184 = 0x975354u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B49184;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061E480
+
+// [0x0061E4E0] sub_0061E4E0 (87 bytes)
+namespace lift_0061E4E0 {
+// @name sub_0061E4E0
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B49190;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B4918C;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061E4E0() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A96CEu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B49190 & 1u) == 0) {
+        mem_00B49190 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B4918C, frame[0]);
+        mem_00B4918C = 0x975504u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B4918C;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061E4E0
+
+// [0x0061E540] sub_0061E540 (87 bytes)
+namespace lift_0061E540 {
+// @name sub_0061E540
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B49198;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B49194;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061E540() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A96EEu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B49198 & 1u) == 0) {
+        mem_00B49198 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B49194, frame[0]);
+        mem_00B49194 = 0x9756B4u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B49194;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061E540
+
+// [0x0061E5A0] sub_0061E5A0 (87 bytes)
+namespace lift_0061E5A0 {
+// @name sub_0061E5A0
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B491A0;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B4919C;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061E5A0() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A970Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B491A0 & 1u) == 0) {
+        mem_00B491A0 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B4919C, frame[0]);
+        mem_00B4919C = 0x975864u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B4919C;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061E5A0
+
+// [0x0061E600] sub_0061E600 (87 bytes)
+namespace lift_0061E600 {
+// @name sub_0061E600
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B491A8;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B491A4;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061E600() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A972Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B491A8 & 1u) == 0) {
+        mem_00B491A8 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B491A4, frame[0]);
+        mem_00B491A4 = 0x975A14u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B491A4;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061E600
+
+// [0x0061E660] sub_0061E660 (87 bytes)
+namespace lift_0061E660 {
+// @name sub_0061E660
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B491B0;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B491AC;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061E660() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A974Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B491B0 & 1u) == 0) {
+        mem_00B491B0 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B491AC, frame[0]);
+        mem_00B491AC = 0x975BC4u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B491AC;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061E660
+
+// [0x0061E6C0] sub_0061E6C0 (87 bytes)
+namespace lift_0061E6C0 {
+// @name sub_0061E6C0
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B491B8;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B491B4;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061E6C0() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A976Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B491B8 & 1u) == 0) {
+        mem_00B491B8 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B491B4, frame[0]);
+        mem_00B491B4 = 0x975D74u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B491B4;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061E6C0
+
+// [0x0061E720] sub_0061E720 (87 bytes)
+namespace lift_0061E720 {
+// @name sub_0061E720
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B491C0;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B491BC;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0061E720() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A978Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B491C0 & 1u) == 0) {
+        mem_00B491C0 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B491BC, frame[0]);
+        mem_00B491BC = 0x975F24u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B491BC;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061E720
+
+// [0x0061ECD0] sub_0061ECD0 (30 bytes)
+namespace lift_0061ECD0 {
+// @name sub_0061ECD0
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061DC40();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061ECD0(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061DC40();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061ECD0
+
+// [0x0061ECF0] sub_0061ECF0 (30 bytes)
+namespace lift_0061ECF0 {
+// @name sub_0061ECF0
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061DCA0();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061ECF0(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061DCA0();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061ECF0
+
+// [0x0061ED10] sub_0061ED10 (30 bytes)
+namespace lift_0061ED10 {
+// @name sub_0061ED10
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061DD00();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061ED10(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061DD00();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061ED10
+
+// [0x0061ED30] sub_0061ED30 (30 bytes)
+namespace lift_0061ED30 {
+// @name sub_0061ED30
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061DD60();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061ED30(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061DD60();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061ED30
+
+// [0x0061ED50] sub_0061ED50 (30 bytes)
+namespace lift_0061ED50 {
+// @name sub_0061ED50
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061DDC0();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061ED50(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061DDC0();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061ED50
+
+// [0x0061ED70] sub_0061ED70 (30 bytes)
+namespace lift_0061ED70 {
+// @name sub_0061ED70
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061DE20();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061ED70(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061DE20();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061ED70
+
+// [0x0061ED90] sub_0061ED90 (30 bytes)
+namespace lift_0061ED90 {
+// @name sub_0061ED90
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061DE80();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061ED90(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061DE80();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061ED90
+
+// [0x0061EDB0] sub_0061EDB0 (30 bytes)
+namespace lift_0061EDB0 {
+// @name sub_0061EDB0
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061DEE0();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061EDB0(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061DEE0();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061EDB0
+
+// [0x0061EDD0] sub_0061EDD0 (30 bytes)
+namespace lift_0061EDD0 {
+// @name sub_0061EDD0
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061DF40();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061EDD0(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061DF40();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061EDD0
+
+// [0x0061EDF0] sub_0061EDF0 (30 bytes)
+namespace lift_0061EDF0 {
+// @name sub_0061EDF0
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061DFA0();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061EDF0(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061DFA0();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061EDF0
+
+// [0x0061EE10] sub_0061EE10 (30 bytes)
+namespace lift_0061EE10 {
+// @name sub_0061EE10
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061E000();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061EE10(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061E000();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061EE10
+
+// [0x0061EE30] sub_0061EE30 (30 bytes)
+namespace lift_0061EE30 {
+// @name sub_0061EE30
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061E060();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061EE30(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061E060();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061EE30
+
+// [0x0061EE50] sub_0061EE50 (30 bytes)
+namespace lift_0061EE50 {
+// @name sub_0061EE50
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061E0C0();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061EE50(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061E0C0();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061EE50
+
+// [0x0061EE70] sub_0061EE70 (30 bytes)
+namespace lift_0061EE70 {
+// @name sub_0061EE70
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061E120();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061EE70(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061E120();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061EE70
+
+// [0x0061EE90] sub_0061EE90 (30 bytes)
+namespace lift_0061EE90 {
+// @name sub_0061EE90
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061E180();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061EE90(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061E180();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061EE90
+
+// [0x0061EEB0] sub_0061EEB0 (30 bytes)
+namespace lift_0061EEB0 {
+// @name sub_0061EEB0
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061E1E0();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061EEB0(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061E1E0();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061EEB0
+
+// [0x0061EED0] sub_0061EED0 (30 bytes)
+namespace lift_0061EED0 {
+// @name sub_0061EED0
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061E240();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061EED0(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061E240();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061EED0
+
+// [0x0061EEF0] sub_0061EEF0 (30 bytes)
+namespace lift_0061EEF0 {
+// @name sub_0061EEF0
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061E2A0();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061EEF0(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061E2A0();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061EEF0
+
+// [0x0061EF10] sub_0061EF10 (30 bytes)
+namespace lift_0061EF10 {
+// @name sub_0061EF10
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061E300();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061EF10(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061E300();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061EF10
+
+// [0x0061EF30] sub_0061EF30 (30 bytes)
+namespace lift_0061EF30 {
+// @name sub_0061EF30
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061E360();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061EF30(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061E360();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061EF30
+
+// [0x0061EF50] sub_0061EF50 (30 bytes)
+namespace lift_0061EF50 {
+// @name sub_0061EF50
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061E3C0();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061EF50(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061E3C0();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061EF50
+
+// [0x0061EF70] sub_0061EF70 (30 bytes)
+namespace lift_0061EF70 {
+// @name sub_0061EF70
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061E420();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061EF70(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061E420();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061EF70
+
+// [0x0061EF90] sub_0061EF90 (30 bytes)
+namespace lift_0061EF90 {
+// @name sub_0061EF90
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061E480();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061EF90(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061E480();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061EF90
+
+// [0x0061EFB0] sub_0061EFB0 (30 bytes)
+namespace lift_0061EFB0 {
+// @name sub_0061EFB0
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061E4E0();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061EFB0(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061E4E0();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061EFB0
+
+// [0x0061EFD0] sub_0061EFD0 (30 bytes)
+namespace lift_0061EFD0 {
+// @name sub_0061EFD0
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061E540();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061EFD0(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061E540();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061EFD0
+
+// [0x0061EFF0] sub_0061EFF0 (30 bytes)
+namespace lift_0061EFF0 {
+// @name sub_0061EFF0
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061E5A0();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061EFF0(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061E5A0();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061EFF0
+
+// [0x0061F010] sub_0061F010 (30 bytes)
+namespace lift_0061F010 {
+// @name sub_0061F010
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061E600();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061F010(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061E600();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061F010
+
+// [0x0061F030] sub_0061F030 (30 bytes)
+namespace lift_0061F030 {
+// @name sub_0061F030
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061E660();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061F030(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061E660();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061F030
+
+// [0x0061F050] sub_0061F050 (30 bytes)
+namespace lift_0061F050 {
+// @name sub_0061F050
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061E6C0();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061F050(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061E6C0();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061F050
+
+// [0x0061F070] sub_0061F070 (30 bytes)
+namespace lift_0061F070 {
+// @name sub_0061F070
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0061E720();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0061F070(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0061E720();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061F070

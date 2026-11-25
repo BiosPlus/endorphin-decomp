@@ -35216,6 +35216,186 @@
     "summary": "Forwards (arg1, arg2) to ext_0061CF90 on the sub-object at this+0x164 when flag is zero, otherwise at this+0x224; returns arg1.",
     "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp"
   },
+  "0x0061DC40": {
+    "name": "sub_0061DC40",
+    "signature": "void* fn_0061DC40()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061DCA0": {
+    "name": "sub_0061DCA0",
+    "signature": "void* fn_0061DCA0()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061DD00": {
+    "name": "sub_0061DD00",
+    "signature": "void* fn_0061DD00()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061DD60": {
+    "name": "sub_0061DD60",
+    "signature": "void* fn_0061DD60()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061DDC0": {
+    "name": "sub_0061DDC0",
+    "signature": "void* fn_0061DDC0()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061DE20": {
+    "name": "sub_0061DE20",
+    "signature": "void* fn_0061DE20()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061DE80": {
+    "name": "sub_0061DE80",
+    "signature": "void* fn_0061DE80()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061DEE0": {
+    "name": "sub_0061DEE0",
+    "signature": "void* fn_0061DEE0()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061DF40": {
+    "name": "sub_0061DF40",
+    "signature": "void* fn_0061DF40()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061DFA0": {
+    "name": "sub_0061DFA0",
+    "signature": "void* fn_0061DFA0()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061E000": {
+    "name": "sub_0061E000",
+    "signature": "void* fn_0061E000()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061E060": {
+    "name": "sub_0061E060",
+    "signature": "void* fn_0061E060()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061E0C0": {
+    "name": "sub_0061E0C0",
+    "signature": "void* fn_0061E0C0()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061E120": {
+    "name": "sub_0061E120",
+    "signature": "void* fn_0061E120()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061E180": {
+    "name": "sub_0061E180",
+    "signature": "void* fn_0061E180()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061E1E0": {
+    "name": "sub_0061E1E0",
+    "signature": "void* fn_0061E1E0()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061E240": {
+    "name": "sub_0061E240",
+    "signature": "void* fn_0061E240()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061E2A0": {
+    "name": "sub_0061E2A0",
+    "signature": "void* fn_0061E2A0()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061E300": {
+    "name": "sub_0061E300",
+    "signature": "void* fn_0061E300()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061E360": {
+    "name": "sub_0061E360",
+    "signature": "void* fn_0061E360()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061E3C0": {
+    "name": "sub_0061E3C0",
+    "signature": "void* fn_0061E3C0()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061E420": {
+    "name": "sub_0061E420",
+    "signature": "void* fn_0061E420()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061E480": {
+    "name": "sub_0061E480",
+    "signature": "void* fn_0061E480()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061E4E0": {
+    "name": "sub_0061E4E0",
+    "signature": "void* fn_0061E4E0()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061E540": {
+    "name": "sub_0061E540",
+    "signature": "void* fn_0061E540()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061E5A0": {
+    "name": "sub_0061E5A0",
+    "signature": "void* fn_0061E5A0()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061E600": {
+    "name": "sub_0061E600",
+    "signature": "void* fn_0061E600()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061E660": {
+    "name": "sub_0061E660",
+    "signature": "void* fn_0061E660()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061E6C0": {
+    "name": "sub_0061E6C0",
+    "signature": "void* fn_0061E6C0()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061E720": {
+    "name": "sub_0061E720",
+    "signature": "void* fn_0061E720()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
   "0x0061E910": {
     "name": "NMData::HingeConstraint::vfunc_0",
     "class": "NMData::HingeConstraint",
@@ -35257,6 +35437,186 @@
     "signature": "extern \"C\" void* __fastcall fn_0061ECB0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0061D990 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x0061ECD0": {
+    "name": "sub_0061ECD0",
+    "signature": "DWORD ext_0061DC40();  // ConstructOnce_0046F580 DWORD* fn_0061ECD0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061ECF0": {
+    "name": "sub_0061ECF0",
+    "signature": "DWORD ext_0061DCA0();  // ConstructOnce_0046F580 DWORD* fn_0061ECF0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061ED10": {
+    "name": "sub_0061ED10",
+    "signature": "DWORD ext_0061DD00();  // ConstructOnce_0046F580 DWORD* fn_0061ED10(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061ED30": {
+    "name": "sub_0061ED30",
+    "signature": "DWORD ext_0061DD60();  // ConstructOnce_0046F580 DWORD* fn_0061ED30(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061ED50": {
+    "name": "sub_0061ED50",
+    "signature": "DWORD ext_0061DDC0();  // ConstructOnce_0046F580 DWORD* fn_0061ED50(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061ED70": {
+    "name": "sub_0061ED70",
+    "signature": "DWORD ext_0061DE20();  // ConstructOnce_0046F580 DWORD* fn_0061ED70(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061ED90": {
+    "name": "sub_0061ED90",
+    "signature": "DWORD ext_0061DE80();  // ConstructOnce_0046F580 DWORD* fn_0061ED90(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061EDB0": {
+    "name": "sub_0061EDB0",
+    "signature": "DWORD ext_0061DEE0();  // ConstructOnce_0046F580 DWORD* fn_0061EDB0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061EDD0": {
+    "name": "sub_0061EDD0",
+    "signature": "DWORD ext_0061DF40();  // ConstructOnce_0046F580 DWORD* fn_0061EDD0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061EDF0": {
+    "name": "sub_0061EDF0",
+    "signature": "DWORD ext_0061DFA0();  // ConstructOnce_0046F580 DWORD* fn_0061EDF0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061EE10": {
+    "name": "sub_0061EE10",
+    "signature": "DWORD ext_0061E000();  // ConstructOnce_0046F580 DWORD* fn_0061EE10(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061EE30": {
+    "name": "sub_0061EE30",
+    "signature": "DWORD ext_0061E060();  // ConstructOnce_0046F580 DWORD* fn_0061EE30(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061EE50": {
+    "name": "sub_0061EE50",
+    "signature": "DWORD ext_0061E0C0();  // ConstructOnce_0046F580 DWORD* fn_0061EE50(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061EE70": {
+    "name": "sub_0061EE70",
+    "signature": "DWORD ext_0061E120();  // ConstructOnce_0046F580 DWORD* fn_0061EE70(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061EE90": {
+    "name": "sub_0061EE90",
+    "signature": "DWORD ext_0061E180();  // ConstructOnce_0046F580 DWORD* fn_0061EE90(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061EEB0": {
+    "name": "sub_0061EEB0",
+    "signature": "DWORD ext_0061E1E0();  // ConstructOnce_0046F580 DWORD* fn_0061EEB0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061EED0": {
+    "name": "sub_0061EED0",
+    "signature": "DWORD ext_0061E240();  // ConstructOnce_0046F580 DWORD* fn_0061EED0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061EEF0": {
+    "name": "sub_0061EEF0",
+    "signature": "DWORD ext_0061E2A0();  // ConstructOnce_0046F580 DWORD* fn_0061EEF0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061EF10": {
+    "name": "sub_0061EF10",
+    "signature": "DWORD ext_0061E300();  // ConstructOnce_0046F580 DWORD* fn_0061EF10(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061EF30": {
+    "name": "sub_0061EF30",
+    "signature": "DWORD ext_0061E360();  // ConstructOnce_0046F580 DWORD* fn_0061EF30(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061EF50": {
+    "name": "sub_0061EF50",
+    "signature": "DWORD ext_0061E3C0();  // ConstructOnce_0046F580 DWORD* fn_0061EF50(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061EF70": {
+    "name": "sub_0061EF70",
+    "signature": "DWORD ext_0061E420();  // ConstructOnce_0046F580 DWORD* fn_0061EF70(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061EF90": {
+    "name": "sub_0061EF90",
+    "signature": "DWORD ext_0061E480();  // ConstructOnce_0046F580 DWORD* fn_0061EF90(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061EFB0": {
+    "name": "sub_0061EFB0",
+    "signature": "DWORD ext_0061E4E0();  // ConstructOnce_0046F580 DWORD* fn_0061EFB0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061EFD0": {
+    "name": "sub_0061EFD0",
+    "signature": "DWORD ext_0061E540();  // ConstructOnce_0046F580 DWORD* fn_0061EFD0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061EFF0": {
+    "name": "sub_0061EFF0",
+    "signature": "DWORD ext_0061E5A0();  // ConstructOnce_0046F580 DWORD* fn_0061EFF0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061F010": {
+    "name": "sub_0061F010",
+    "signature": "DWORD ext_0061E600();  // ConstructOnce_0046F580 DWORD* fn_0061F010(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061F030": {
+    "name": "sub_0061F030",
+    "signature": "DWORD ext_0061E660();  // ConstructOnce_0046F580 DWORD* fn_0061F030(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061F050": {
+    "name": "sub_0061F050",
+    "signature": "DWORD ext_0061E6C0();  // ConstructOnce_0046F580 DWORD* fn_0061F050(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x0061F070": {
+    "name": "sub_0061F070",
+    "signature": "DWORD ext_0061E720();  // ConstructOnce_0046F580 DWORD* fn_0061F070(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
   },
   "0x0061FE60": {
     "name": "NMData::GraphicData::vfunc_4_off_C",

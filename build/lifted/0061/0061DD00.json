@@ -1,0 +1,21 @@
+{
+  "va": "0x0061DD00",
+  "size": 87,
+  "orig_symbol": "sub_0061DD00",
+  "src_path": "src/leaf/decompiled_610000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_610000.cpp",
+  "name": "sub_0061DD00",
+  "signature": "void* fn_0061DD00()",
+  "summary": "Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T02:35:02Z"
+}
