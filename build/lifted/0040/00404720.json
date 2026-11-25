@@ -1,0 +1,27 @@
+{
+  "va": "0x00404720",
+  "size": 80,
+  "orig_symbol": "sub_00404720",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "sub_00404720",
+  "signature": "int32_t __thiscall fn_00404720(void* self, uint32_t mode)",
+  "summary": "Sets mode at +0x5c if \u003c= 2, toggles style 0x2000 via MFC80!ord_4115 and invalidates window if +0x20 is non-null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:48:29Z"
+}

@@ -976,3 +976,40 @@ void DestroyStringMembers_00401A10(void* this_ptr) {
     CallStringDtor(self);
 }
 } // namespace lift_00401A10
+
+// [0x00404720]
+namespace lift_00404720 {
+// @name sub_00404720
+// @summary Sets mode at +0x5c if <= 2, toggles style 0x2000 via MFC80!ord_4115 and invalidates window if +0x20 is non-null.
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x5c uint32_t field_0x5c
+
+
+extern void ext_006A5EA2(void* self, uint32_t dwRemove, uint32_t dwAdd, uint32_t nFlags);
+extern uint32_t mem_00925688;
+
+int32_t __thiscall fn_00404720(void* self, uint32_t mode) {
+    if (mode > 2) {
+        return 0;
+    }
+
+    auto* base = static_cast<uint8_t*>(self);
+    uint32_t hwnd = *reinterpret_cast<uint32_t*>(base + 0x20);
+    *reinterpret_cast<uint32_t*>(base + 0x5c) = mode;
+
+    if (hwnd != 0) {
+        if (mode == 0) {
+            ext_006A5EA2(self, 0, 0x2000, 0);
+        } else {
+            ext_006A5EA2(self, 0x2000, 0, 0);
+        }
+
+        hwnd = *reinterpret_cast<uint32_t*>(base + 0x20);
+        using InvalidateRectFn = int32_t (__stdcall*)(uint32_t, uint32_t, int32_t);
+        auto invalidate_rect = reinterpret_cast<InvalidateRectFn>(static_cast<uintptr_t>(mem_00925688));
+        invalidate_rect(hwnd, 0, 1);
+    }
+
+    return 1;
+}
+} // namespace lift_00404720
