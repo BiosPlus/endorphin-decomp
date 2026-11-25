@@ -1,0 +1,22 @@
+{
+  "va": "0x004B24C0",
+  "size": 58,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getYMin, 0\u003e::vfunc_5",
+  "class": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getYMin, 0\u003e",
+  "signature": "extern \"C\" float ext_00622310(void* self);            // NMData::SkeletalCalibrationVariables::vfunc_14 (thiscall, returns float) extern \"C\" void* ext_0046C3C0(void* self);            // DerivedException::DerivedException (constructs exception in place) extern \"C\" void ext_0046C4E0();                       // ExceptionWithMessage::throwDefaultMessage (noreturn) extern \"C\" void ext_006A6DD2(void* obj, const void* throwInfo); // thunk to MSVCR80!_CxxThrowException extern \"C\" const unsigned char mem_009DEC1C[];        // RTTI/ThrowInfo descriptor pushed before the throw void fn_004B24C0(void* self)",
+  "summary": "Reads the target pointer from the value-pointer base; if non-null, invokes the target's vfunc_14 and raises a default-message exception; otherwise raises a DerivedException.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:58:47Z"
+}

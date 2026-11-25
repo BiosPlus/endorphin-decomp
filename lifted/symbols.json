@@ -13684,6 +13684,13 @@
     "summary": "Returns 1 if the value reported by the wrapped object's vfunc_14 is \u003e= 1e-6 (NaN yields 0); throws if the wrapped object pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B24C0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getYMin, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getYMin, 0\u003e",
+    "signature": "extern \"C\" float ext_00622310(void* self);            // NMData::SkeletalCalibrationVariables::vfunc_14 (thiscall, returns float) extern \"C\" void* ext_0046C3C0(void* self);            // DerivedException::DerivedException (constructs exception in place) extern \"C\" void ext_0046C4E0();                       // ExceptionWithMessage::throwDefaultMessage (noreturn) extern \"C\" void ext_006A6DD2(void* obj, const void* throwInfo); // thunk to MSVCR80!_CxxThrowException extern \"C\" const unsigned char mem_009DEC1C[];        // RTTI/ThrowInfo descriptor pushed before the throw void fn_004B24C0(void* self)",
+    "summary": "Reads the target pointer from the value-pointer base; if non-null, invokes the target's vfunc_14 and raises a default-message exception; otherwise raises a DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B2710": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setYMax(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setYMax(float), 0}\u003e",

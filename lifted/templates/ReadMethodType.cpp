@@ -52299,3 +52299,31 @@ void fn_004B21D0(void* self) {
     ext_006A6DD2();
 }
 } // namespace lift_004B21D0
+
+// [0x004B24C0] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_004B24C0 {
+// Externals (call targets / data referenced by 0x004B24C0).
+extern float ext_00622310(void* self);            // NMData::SkeletalCalibrationVariables::vfunc_14 (thiscall, returns float)
+extern void* ext_0046C3C0(void* self);            // DerivedException::DerivedException (constructs exception in place)
+extern void ext_0046C4E0();                       // ExceptionWithMessage::throwDefaultMessage (noreturn)
+extern void ext_006A6DD2(void* obj, const void* throwInfo); // thunk to MSVCR80!_CxxThrowException
+extern const unsigned char mem_009DEC1C[];        // RTTI/ThrowInfo descriptor pushed before the throw
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, getYMin, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, getYMin, 0>
+// @summary Reads the target pointer from the value-pointer base; if non-null, invokes the target's vfunc_14 and raises a default-message exception; otherwise raises a DerivedException.
+// @field ExprParser::ValuePtrType +0x00 void* target
+void fn_004B24C0(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target != nullptr) {
+        // Original value is computed and then the default-message throw path is taken.
+        (void)ext_00622310(target);
+        ext_0046C4E0();
+    }
+
+    // Build DerivedException in a local buffer and throw it.
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004B24C0
