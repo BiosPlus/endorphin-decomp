@@ -615,3 +615,16 @@ uint8_t fn_007D5C50(void** pp) {
     return *static_cast<uint8_t*>(inner);
 }
 } // namespace lift_007D5C50
+
+// [0x007D47A0] sub_007D47A0 (11 bytes)
+namespace lift_007D47A0 {
+// @name Diff_0x14_minus_0x0C
+// @summary Returns (self->field_0x14 - self->field_0x0C) as a 32-bit signed value.
+// @field Unknown +0x0C int32_t field_0x0C
+// @field Unknown +0x14 int32_t field_0x14
+int32_t fn_007D47A0(void* self) {
+    int32_t a = lift_field<int32_t>(self, 0x14);
+    int32_t b = lift_field<int32_t>(self, 0x0C);
+    return static_cast<int32_t>(static_cast<uint32_t>(a) - static_cast<uint32_t>(b));
+}
+} // namespace lift_007D47A0

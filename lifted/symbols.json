@@ -67236,6 +67236,12 @@
     "summary": "If the element count at +0x0C is positive, decrement it and store the value into the slot at the new count inside the array whose base pointer is at +0x08.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D47A0": {
+    "name": "Diff_0x14_minus_0x0C",
+    "signature": "int32_t fn_007D47A0(void* self)",
+    "summary": "Returns (self-\u003efield_0x14 - self-\u003efield_0x0C) as a 32-bit signed value.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007D47D0": {
     "name": "initTypeTag2Record",
     "class": "\u003cunknown\u003e",
