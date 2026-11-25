@@ -1882,3 +1882,55 @@ extern void __fastcall fn_006D5A60(void* self) {
     ext_007641C0(obj + 0x4);
 }
 } // namespace lift_006D5A60
+
+// [0x006D8280]
+namespace lift_006D8280 {
+// @name getMappedEntry
+// @summary Validates a 2x2-typed sub-object and looks up an int32 entry by two-level index.
+// @field Self +0x1c4 int32_t field_0x1c4
+// @field Self +0x1d4 uint32_t field_0x1d4
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern uint32_t __fastcall ext_006FDF70(void* self, void* _edx, int32_t arg0);
+extern uint32_t __fastcall ext_006FC930(void* self);
+
+extern int32_t __fastcall fn_006D8280(void* self, void* _edx, int32_t arg0, int32_t arg1) {
+    uint32_t obj = ext_006FDF70(self, nullptr, 0);
+    if (obj == 0) {
+        return -1;
+    }
+
+    uint32_t inner = ext_006FC930(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+    if (inner == 0) {
+        return -1;
+    }
+
+    if (mem_read32(inner) != 2 || mem_read32(inner + 4) != 2) {
+        return -1;
+    }
+
+    uintptr_t self_addr = reinterpret_cast<uintptr_t>(self);
+    int32_t count = static_cast<int32_t>(mem_read32(self_addr + 0x1c4));
+    if (arg0 >= count) {
+        return -1;
+    }
+
+    uint32_t entries = mem_read32(self_addr + 0x1d4);
+    uint32_t entry_addr = entries + static_cast<uint32_t>(arg0) * 12u;
+    int32_t sub_count = static_cast<int32_t>(mem_read32(entry_addr + 4));
+    if (arg1 >= sub_count) {
+        return -1;
+    }
+
+    int32_t base_idx = static_cast<int32_t>(mem_read32(entry_addr));
+    int32_t idx = base_idx + arg1;
+    int32_t limit = static_cast<int32_t>(mem_read32(inner + 0x20));
+    if (idx >= limit) {
+        return -1;
+    }
+
+    uint32_t table = mem_read32(inner + 0x30);
+    return static_cast<int32_t>(mem_read32(table + static_cast<uint32_t>(idx) * 4u));
+}
+} // namespace lift_006D8280

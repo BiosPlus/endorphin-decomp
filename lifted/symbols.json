@@ -60831,6 +60831,12 @@
     "summary": "Looks up an entry in a 12-byte-stride table at this+0x1D4 (indexed by arg1, bounded by this+0x1C4); each entry holds a base index and a limit, and the result is this+0x1EC[base + arg2] if arg2 is below the limit, else -1. Thiscall, two stack args, returns int32 in eax.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D8280": {
+    "name": "getMappedEntry",
+    "signature": "extern \"C\" int32_t __fastcall fn_006D8280(void* self, void* _edx, int32_t arg0, int32_t arg1)",
+    "summary": "Validates a 2x2-typed sub-object and looks up an int32 entry by two-level index.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D8520": {
     "name": "GetFieldValueViaChain",
     "signature": "int32_t fn_006D8520(void* self)",
