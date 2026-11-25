@@ -2164,6 +2164,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0041CCA0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Properties/auto_tiny.cpp"
   },
+  "0x0041D980": {
+    "name": "GetStaticObject_0041D980",
+    "signature": "void* fn_0041D980()",
+    "summary": "Lazily constructs a function-local static at mem_00ACC524 on first call (guard bit 0 in mem_00ACC540), registers its teardown, and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041DD20": {
     "name": "Properties::PropertiesControl::vfunc_80",
     "class": "Properties::PropertiesControl",

@@ -1689,3 +1689,27 @@ void* fn_00415ED0(void* self) {
     return self;
 }
 } // namespace lift_00415ED0
+
+// [0x0041D980] sub_0041D980 (95 bytes)
+namespace lift_0041D980 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+// Called cdecl as (&mem_00ACC524, 0xA2F0CC); the second argument is passed through as a raw word.
+extern void* ext_0066AD10(void* out_str, uintptr_t arg);
+// Called cdecl with one word argument: the address 0x00914BB0 (registered as a teardown hook).
+extern void ext_006A6C87(uintptr_t fn);
+
+// Init-guard bitfield and the function-local static object.
+extern uint32_t mem_00ACC540;
+extern int mem_00ACC524;
+
+// @name GetStaticObject_0041D980
+// @summary Lazily constructs a function-local static at mem_00ACC524 on first call (guard bit 0 in mem_00ACC540), registers its teardown, and returns its address.
+void* fn_0041D980() {
+    if ((mem_00ACC540 & 1u) == 0) {
+        mem_00ACC540 |= 1u;
+        ext_0066AD10(reinterpret_cast<void*>(&mem_00ACC524), static_cast<uintptr_t>(0x00A2F0CCu));
+        ext_006A6C87(static_cast<uintptr_t>(0x00914BB0u));
+    }
+    return reinterpret_cast<void*>(&mem_00ACC524);
+}
+} // namespace lift_0041D980
