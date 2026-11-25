@@ -1,0 +1,58 @@
+{
+  "va": "0x00515B20",
+  "size": 79,
+  "orig_symbol": "sub_00515B20",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "Unknown::SelectIndexedValue_00515B20",
+  "class": "Unknown",
+  "signature": "bool fn_00515B20(void* self)",
+  "summary": "Reads the array element at this+0x0C (wrapped to 0 when out of range) from the array held via this-\u003efield_0x04-\u003efield_0xA0, stores it in this+0x10, and returns true; returns false when the chain is null/unavailable.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA0",
+      "type": "void*",
+      "name": "field_0xA0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "uint8_t",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:46:13Z"
+}

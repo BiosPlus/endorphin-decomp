@@ -17053,6 +17053,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00515820 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00515B20": {
+    "name": "Unknown::SelectIndexedValue_00515B20",
+    "class": "Unknown",
+    "signature": "bool fn_00515B20(void* self)",
+    "summary": "Reads the array element at this+0x0C (wrapped to 0 when out of range) from the array held via this-\u003efield_0x04-\u003efield_0xA0, stores it in this+0x10, and returns true; returns false when the chain is null/unavailable.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00515B90": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions\u003e::vfunc_41",
     "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const\u003e",

@@ -719,3 +719,52 @@ void fn_00517310(void* self) {
     }
 }
 } // namespace lift_00517310
+
+// [0x00515B20] sub_00515B20 (79 bytes)
+namespace lift_00515B20 {
+// Known callee 0x0050E360: ArrayView::elementPtr (returns pointer to element `index` of a pointer-range array)
+extern void* ext_0050E360(void* self, uint32_t index);
+
+// @name Unknown::SelectIndexedValue_00515B20
+// @class Unknown
+// @summary Reads the array element at this+0x0C (wrapped to 0 when out of range) from the array held via this->field_0x04->field_0xA0, stores it in this+0x10, and returns true; returns false when the chain is null/unavailable.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0xA0 void* field_0xA0
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 uint32_t field_0x24
+// @field Unknown +0x30 uint8_t field_0x30
+bool fn_00515B20(void* self) {
+    void* obj = lift_field<void*>(self, 0x04);
+    void* p = lift_field<void*>(obj, 0xA0);
+    if (p == nullptr) {
+        return false;
+    }
+    if (lift_field<uint8_t>(p, 0x30) == 0) {
+        return false;
+    }
+
+    // ArrayView of pointer-range at p+0x1C: begin at +0x04 (relative), end at +0x08 (relative).
+    uint32_t begin = lift_field<uint32_t>(p, 0x20);
+    if (begin == 0) {
+        return false;
+    }
+    uint32_t end = lift_field<uint32_t>(p, 0x24);
+    uint32_t count = static_cast<uint32_t>(static_cast<int32_t>(end - begin) >> 2);
+    if (count == 0) {
+        return false;
+    }
+
+    uint32_t index = lift_field<uint32_t>(self, 0x0C);
+    if (index >= count) {
+        index = 0;
+        lift_field<uint32_t>(self, 0x0C) = 0;
+    }
+
+    void* arrayView = static_cast<uint8_t*>(p) + 0x1C;
+    void* elem = ext_0050E360(arrayView, index);
+    lift_field<uint32_t>(self, 0x10) = *static_cast<uint32_t*>(elem);
+    return true;
+}
+} // namespace lift_00515B20
