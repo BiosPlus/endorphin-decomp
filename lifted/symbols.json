@@ -22815,6 +22815,13 @@
     "summary": "Writes the 8-byte value at *src into every 8-byte slot in [dst_begin, dst_end). Source pointer is not advanced.",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005AE480": {
+    "name": "ReleaseChainNodes",
+    "class": "ChainNode",
+    "signature": "static inline uint8_t* BytesOf(void* p)",
+    "summary": "Recursively releases a sibling chain: for each node, releases its child chain, destroys its string member, and invokes the cleanup thunk.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005B0E60": {
     "name": "getField0x04From005B6930",
     "class": "Unknown",

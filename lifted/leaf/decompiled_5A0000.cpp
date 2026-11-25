@@ -249,3 +249,39 @@ void* __thiscall fn_005ACEE0(void* self, uint32_t arg0, uint32_t arg1) {
     return self;
 }
 } // namespace lift_005ACEE0
+
+// [0x005AE480]
+namespace lift_005AE480 {
+// @name ReleaseChainNodes
+// @class ChainNode
+// @summary Recursively releases a sibling chain: for each node, releases its child chain, destroys its string member, and invokes the cleanup thunk.
+// @field ChainNode +0x00 ChainNode* next
+// @field ChainNode +0x08 ChainNode* child
+// @field ChainNode +0x0c std::string name
+// @field ChainNode +0x2d u8 done
+
+extern void ext_006A5C5C(void* node);   // IAT thunk -> MFC80!ord_764
+extern uint32_t mem_00924FF4;           // .rdata slot holding basic_string dtor pointer
+
+using StringDtorFn = void(__thiscall*)(void* self);
+
+static inline uint8_t* BytesOf(void* p) { return reinterpret_cast<uint8_t*>(p); }
+static inline uint8_t DoneFlag(void* node) { return *(BytesOf(node) + 0x2d); }
+static inline void* ChildOf(void* node) { return *reinterpret_cast<void**>(BytesOf(node) + 0x08); }
+static inline void* NextOf(void* node) { return *reinterpret_cast<void**>(node); }
+
+void ReleaseChainNodes(void* self, void* node) {
+    if (DoneFlag(node) != 0) {
+        return;
+    }
+    void* cur = node;
+    do {
+        ReleaseChainNodes(self, ChildOf(cur));
+        void* next = NextOf(cur);
+        auto dtor = reinterpret_cast<StringDtorFn>(mem_00924FF4);
+        dtor(BytesOf(cur) + 0x0c);
+        ext_006A5C5C(cur);
+        cur = next;
+    } while (DoneFlag(cur) == 0);
+}
+} // namespace lift_005AE480

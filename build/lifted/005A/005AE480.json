@@ -1,0 +1,40 @@
+{
+  "va": "0x005AE480",
+  "size": 62,
+  "orig_symbol": "sub_005AE480",
+  "src_path": "src/leaf/decompiled_5A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5A0000.cpp",
+  "name": "ReleaseChainNodes",
+  "class": "ChainNode",
+  "signature": "static inline uint8_t* BytesOf(void* p)",
+  "summary": "Recursively releases a sibling chain: for each node, releases its child chain, destroys its string member, and invokes the cleanup thunk.",
+  "fields": [
+    {
+      "class": "ChainNode",
+      "offset": "+0x0",
+      "type": "ChainNode*",
+      "name": "next"
+    },
+    {
+      "class": "ChainNode",
+      "offset": "+0x8",
+      "type": "ChainNode*",
+      "name": "child"
+    },
+    {
+      "class": "ChainNode",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "name"
+    },
+    {
+      "class": "ChainNode",
+      "offset": "+0x2D",
+      "type": "u8",
+      "name": "done"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:00:47Z"
+}
