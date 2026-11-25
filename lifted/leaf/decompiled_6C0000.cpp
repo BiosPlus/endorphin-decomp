@@ -20,6 +20,7 @@ bool fn_006CA060(void* self) {
 } // namespace lift_00707980
 } // namespace lift_006CA060
 #include <cstdlib>
+#include <cstdio>
 
 // [0x006C3450] sub_006C3450 (32 bytes)
 namespace lift_006C3450 {
@@ -1849,3 +1850,20 @@ float __fastcall fn_006CCAF0(void* self, int edx_unused, int32_t index) {
     return ext_006C9DC0(item, 0, 4);
 }
 } // namespace lift_006CCAF0
+
+// [0x006C1AF0] sub_006C1AF0 (18 bytes)
+namespace lift_006C1AF0 {
+// @name sub_006C1AF0
+// @summary Auto-lifted identical-shape clone of 0x0079DB50 (ThunkCallVirtualSlot4OverArray).
+namespace lift_0079DB50 {
+// Known callee 0x007857A0: callVirtualSlot4OverArray (Walks a uint32 array and calls virtual slot 4 on this for each element, alternating which return values are kept; returns the final flag (initially true).)
+extern uint8_t ext_00705790(void* self, const uint32_t* values);
+
+// @name ThunkCallVirtualSlot4OverArray
+// @class (none; free function)
+// @summary Forwards its two stack arguments to callVirtualSlot4OverArray (ext_007857A0) and returns that flag unchanged.
+uint8_t __stdcall fn_006C1AF0(void* self, const uint32_t* values) {
+    return ext_00705790(self, values);
+}
+} // namespace lift_0079DB50
+} // namespace lift_006C1AF0

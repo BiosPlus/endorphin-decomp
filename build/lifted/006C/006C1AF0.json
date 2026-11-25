@@ -1,0 +1,14 @@
+{
+  "va": "0x006C1AF0",
+  "size": 18,
+  "orig_symbol": "sub_006C1AF0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "sub_006C1AF0",
+  "class": "(none; free function)",
+  "signature": "uint8_t __stdcall fn_006C1AF0(void* self, const uint32_t* values)",
+  "summary": "Auto-lifted identical-shape clone of 0x0079DB50 (ThunkCallVirtualSlot4OverArray).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:56:25Z"
+}

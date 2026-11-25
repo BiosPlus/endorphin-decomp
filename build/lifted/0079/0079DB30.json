@@ -1,0 +1,14 @@
+{
+  "va": "0x0079DB30",
+  "size": 18,
+  "orig_symbol": "sub_0079DB30",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "sub_0079DB30",
+  "class": "(none; free function)",
+  "signature": "uint8_t __stdcall fn_0079DB30(void* self, const uint32_t* values)",
+  "summary": "Auto-lifted identical-shape clone of 0x0079DB50 (ThunkCallVirtualSlot4OverArray).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:56:25Z"
+}
