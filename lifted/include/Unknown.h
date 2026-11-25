@@ -86,7 +86,7 @@ struct Unknown_Fields {
     // +0x0   uint32_t field_0x00 (on subobject returned by ext_0071E680, i.e. self+0x40)  (evidence: 0x00711A20, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x0
     // +0x0   float                    src_x  (evidence: 0x007C8490, 0x007CA310) // CONFLICT: multiple definitions at +0x0
     // +0x0   std::string              str  (evidence: 0x004C4390, 0x004CF910) // CONFLICT: multiple definitions at +0x0
-    // +0x0   std::string              str0  (evidence: 0x00574D30) // CONFLICT: multiple definitions at +0x0
+    // +0x0   std::string              str0  (evidence: 0x00553F00, 0x00574D30) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t* field_0x00 (pointer to range-holder struct)  (evidence: 0x0067A670, 0x0067F8F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    subobject  (evidence: 0x006616C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    table  (evidence: 0x0077F4E0) // CONFLICT: multiple definitions at +0x0
@@ -473,7 +473,7 @@ struct Unknown_Fields {
     // +0x1C  HMODULE                  hModule  (evidence: 0x00401920) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  void*                    hwnd  (evidence: 0x00458DF0, 0x00458FE0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  float                    m13  (evidence: 0x00480010, 0x004890D0) // CONFLICT: multiple definitions at +0x1C
-    // +0x1C  std::string              str1  (evidence: 0x00574D30) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  std::string              str1  (evidence: 0x00553F00, 0x00574D30) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 table  (evidence: 0x007D4720) // CONFLICT: multiple definitions at +0x1C
     // +0x1E  BYTE                     field_0x1E  (evidence: 0x005555D0)
     // +0x20  BYTE field_0x20 (base of byte array indexed by first argument)  (evidence: 0x0071E660) // CONFLICT: multiple definitions at +0x20
@@ -604,7 +604,7 @@ struct Unknown_Fields {
     // +0x38  float                    m32  (evidence: 0x00480010, 0x004890D0) // CONFLICT: multiple definitions at +0x38
     // +0x38  void*                    ownedObject  (evidence: 0x0053B090) // CONFLICT: multiple definitions at +0x38
     // +0x38  uint8_t                  recordCopy[0x40]  (evidence: 0x004DE330) // CONFLICT: multiple definitions at +0x38
-    // +0x38  std::string              str2  (evidence: 0x00574D30) // CONFLICT: multiple definitions at +0x38
+    // +0x38  std::string              str2  (evidence: 0x00553F00, 0x00574D30) // CONFLICT: multiple definitions at +0x38
     // +0x39  uint8_t                  field_0x39  (evidence: 0x00553E80, 0x00622B40) // CONFLICT: multiple definitions at +0x39
     // +0x39  uint8_t                  flag  (evidence: 0x005A2BD0) // CONFLICT: multiple definitions at +0x39
     // +0x3C  void*                    cachedProc  (evidence: 0x006A7FF0) // CONFLICT: multiple definitions at +0x3C

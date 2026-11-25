@@ -1541,3 +1541,24 @@ void* fn_005541F0(void* self, const void* src) {
     return self;
 }
 } // namespace lift_005541F0
+
+// [0x00553F00] sub_00553F00 (101 bytes)
+namespace lift_00553F00 {
+// @name Unknown::copyConstructThreeStrings
+// @class Unknown
+// @summary Copy-constructs three std::string members at +0x00, +0x1C and +0x38 from the same offsets of a source object (thiscall, one stack arg, callee pops 4) and returns this.
+// @field Unknown +0x00 std::string str0
+// @field Unknown +0x1C std::string str1
+// @field Unknown +0x38 std::string str2
+void* fn_00553F00(void* self, const void* src) {
+    auto* dst = static_cast<uint8_t*>(self);
+    const auto* s = static_cast<const uint8_t*>(src);
+
+    // Offsets follow the MSVC 2005 std::string layout (0x1C bytes per string).
+    new (dst + 0x00) std::string(*reinterpret_cast<const std::string*>(s + 0x00));
+    new (dst + 0x1C) std::string(*reinterpret_cast<const std::string*>(s + 0x1C));
+    new (dst + 0x38) std::string(*reinterpret_cast<const std::string*>(s + 0x38));
+
+    return self;
+}
+} // namespace lift_00553F00

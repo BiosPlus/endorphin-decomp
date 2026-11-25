@@ -23937,6 +23937,13 @@
     "summary": "Allocates an array of 0x54-byte elements with overflow checking, throwing std::bad_alloc on overflow.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00553F00": {
+    "name": "Unknown::copyConstructThreeStrings",
+    "class": "Unknown",
+    "signature": "void* fn_00553F00(void* self, const void* src)",
+    "summary": "Copy-constructs three std::string members at +0x00, +0x1C and +0x38 from the same offsets of a source object (thiscall, one stack arg, callee pops 4) and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00553F70": {
     "name": "ScaledRangeDivide160",
     "class": "\u003cClassName\u003e (unknown; accessed fields are raw offsets)",
