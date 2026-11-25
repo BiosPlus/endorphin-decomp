@@ -1,0 +1,28 @@
+{
+  "va": "0x0045B450",
+  "size": 65,
+  "orig_symbol": "sub_0045B450",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "Unknown::forwardPositiveWindowValue_0045B450",
+  "class": "Unknown",
+  "signature": "void fn_0045B450(void* self)",
+  "summary": "Reads a float from the embedded window at +0xE0; if it is greater than zero, passes it to the object at +0x88 via vtable slot 0x80.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xE0",
+      "type": "BYTE",
+      "name": "field_0xe0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:06:34Z"
+}

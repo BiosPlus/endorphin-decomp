@@ -919,7 +919,7 @@ struct Unknown_Fields {
     // +0x88  int32_t                  field_0x88  (evidence: 0x00685890) // CONFLICT: multiple definitions at +0x88
     // +0x88  uint32_t                 field_0x88  (evidence: 0x0053DAA0) // CONFLICT: multiple definitions at +0x88
     // +0x88  uint8_t                  field_0x88  (evidence: 0x004407C0, 0x00441020) // CONFLICT: multiple definitions at +0x88
-    // +0x88  void*                    field_0x88  (evidence: 0x0045B4A0, 0x0045B4F0, 0x00545BE0, 0x00545C40) // CONFLICT: multiple definitions at +0x88
+    // +0x88  void*                    field_0x88  (evidence: 0x0045B450, 0x0045B4A0, 0x0045B4F0, 0x00545BE0, 0x00545C40) // CONFLICT: multiple definitions at +0x88
     // +0x88  void* field_0x88 (object pointer; vtable slot +0x90 is invoked with the float)  (evidence: 0x0045B580) // CONFLICT: multiple definitions at +0x88
     // +0x88  ptr field_0x88 (pointer to child object; owner class not identified)  (evidence: 0x005434C0, 0x005457B0) // CONFLICT: multiple definitions at +0x88
     // +0x88  void*                    nodeList  (evidence: 0x00456C20) // CONFLICT: multiple definitions at +0x88
@@ -1063,6 +1063,7 @@ struct Unknown_Fields {
     // +0xDC  uint8_t                  field_0xdc  (evidence: 0x006B2F70, 0x006B51D0, 0x006BA780) // CONFLICT: multiple definitions at +0xDC
     // +0xDC  void*                    field_0xdc  (evidence: 0x004030F0, 0x00403400, 0x00406030, 0x0040A910, 0x0040BE90, 0x004562C0) // CONFLICT: multiple definitions at +0xDC
     // +0xE0  uint32_t                 counter_0xe0  (evidence: 0x0053F990) // CONFLICT: multiple definitions at +0xE0
+    // +0xE0  BYTE                     field_0xe0  (evidence: 0x0045B450) // CONFLICT: multiple definitions at +0xE0
     // +0xE0  uint32_t                 field_0xe0  (evidence: 0x004561C0) // CONFLICT: multiple definitions at +0xE0
     // +0xE0  void*                    field_0xe0  (evidence: 0x004313D0, 0x00434380, 0x00434640, 0x00434680, 0x004346C0) // CONFLICT: multiple definitions at +0xE0
     // +0xE4  Unknown                  field_0xE4  (evidence: 0x0072B130) // CONFLICT: multiple definitions at +0xE4
