@@ -1,0 +1,45 @@
+{
+  "va": "0x0058A9A0",
+  "size": 62,
+  "orig_symbol": "sub_0058A9A0",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "SetFloatAndDispatch",
+  "signature": "extern \"C\" uint8_t mem_00A85D54;   // .data flag, compared as a byte (0 selects the +0x24 slot) extern \"C\" uint32_t mem_00B40640;  // global passed as the single argument to the +0x0c slot void fn_0058A9A0(void* self, float value)",
+  "summary": "Calls one of two callbacks on the sub-object at +0x04, stores a float at its +0x30, calls its +0x0c callback with a global, then stores the float again.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "void*",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:59:49Z"
+}

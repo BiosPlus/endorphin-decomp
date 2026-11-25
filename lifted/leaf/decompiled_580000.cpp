@@ -350,3 +350,41 @@ float fn_0058A920(uintptr_t self) {
 
 } // namespace lift_0058A920
 } // namespace lift_0058A920
+
+// [0x0058A9A0] sub_0058A9A0 (62 bytes)
+namespace lift_0058A9A0 {
+extern uint8_t mem_00A85D54;   // .data flag, compared as a byte (0 selects the +0x24 slot)
+extern uint32_t mem_00B40640;  // global passed as the single argument to the +0x0c slot
+
+// @name SetFloatAndDispatch
+// @summary Calls one of two callbacks on the sub-object at +0x04, stores a float at its +0x30, calls its +0x0c callback with a global, then stores the float again.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x0c void* field_0x0c
+// @field Unknown +0x24 void* field_0x24
+// @field Unknown +0x2c void* field_0x2c
+// @field Unknown +0x30 float field_0x30
+//
+// Note: the original uses __thiscall (this in ECX). The portable form passes
+// `self` explicitly as the first argument of each callback.
+void fn_0058A9A0(void* self, float value) {
+    using Callback0 = void (*)(void* self);
+    using Callback1 = void (*)(void* self, uintptr_t arg);
+
+    auto* base = static_cast<uint8_t*>(self);
+    void* esi = base + 4;                                   // address of the sub-object pointer
+    auto* obj = *reinterpret_cast<uint8_t**>(base + 4);     // object pointed to by +0x04
+
+    if (mem_00A85D54 == 0) {
+        auto fn = *reinterpret_cast<Callback0*>(obj + 0x24);
+        fn(esi);
+    } else {
+        auto fn = *reinterpret_cast<Callback0*>(obj + 0x2c);
+        fn(esi);
+    }
+    *reinterpret_cast<float*>(obj + 0x30) = value;
+
+    auto fn1 = *reinterpret_cast<Callback1*>(obj + 0x0c);
+    fn1(esi, static_cast<uintptr_t>(mem_00B40640));
+    *reinterpret_cast<float*>(obj + 0x30) = value;
+}
+} // namespace lift_0058A9A0

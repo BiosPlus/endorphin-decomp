@@ -20995,6 +20995,12 @@
     "summary": "Fetches an object from this+0x4, calls a vtable slot (0x30 if mem_00A85D54 is set, else 0x28) to get a matrix, calls Matrix4::getRow(3) on it, and returns the float at offset 0x8 of the returned pointer.",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x0058A9A0": {
+    "name": "SetFloatAndDispatch",
+    "signature": "extern \"C\" uint8_t mem_00A85D54;   // .data flag, compared as a byte (0 selects the +0x24 slot) extern \"C\" uint32_t mem_00B40640;  // global passed as the single argument to the +0x0c slot void fn_0058A9A0(void* self, float value)",
+    "summary": "Calls one of two callbacks on the sub-object at +0x04, stores a float at its +0x30, calls its +0x0c callback with a global, then stores the float again.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x0058AB30": {
     "name": "QueryFloatViaMemberCallback",
     "signature": "float fn_0058AB30(void* self)",
