@@ -2550,3 +2550,51 @@ TreeIter* __thiscall fn_00668D10(void* self, TreeIter* out, const void* key) {
     return out;
 }
 } // namespace lift_00668D10
+
+// [0x00660870]
+namespace lift_00660870 {
+// @name StringVector::erase
+// @class StringVector
+// @summary Erases a checked-iterator range [first, last) from a vector of 0x20-byte string elements, destroying trailing elements and returning the updated iterator.
+// @field StringVector +0x08 uint8_t* end_ptr
+
+extern void* ext_00672810(const void* first, const void* last, void* dest);
+extern void (*mem_00925134)();
+extern void (__thiscall *mem_00924FF4)(void* self);
+
+struct CheckedIterator {
+    void* container;
+    uint8_t* ptr;
+};
+
+struct StringVector {
+    uint8_t pad_00[0x08];
+    uint8_t* end_ptr;
+};
+
+extern CheckedIterator* __thiscall fn_00660870(
+    StringVector* self,
+    CheckedIterator* out_iter,
+    void* first_container,
+    uint8_t* first_ptr,
+    void* last_container,
+    uint8_t* last_ptr)
+{
+    if (!first_container || first_container != last_container) {
+        mem_00925134();
+    }
+
+    if (first_ptr != last_ptr) {
+        uint8_t* new_end = static_cast<uint8_t*>(ext_00672810(last_ptr, self->end_ptr, first_ptr));
+        uint8_t* old_end = self->end_ptr;
+        for (uint8_t* it = new_end; it != old_end; it += 0x20) {
+            mem_00924FF4(it);
+        }
+        self->end_ptr = new_end;
+    }
+
+    out_iter->container = last_container;
+    out_iter->ptr = last_ptr;
+    return out_iter;
+}
+} // namespace lift_00660870

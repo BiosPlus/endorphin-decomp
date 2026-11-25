@@ -1,0 +1,22 @@
+{
+  "va": "0x00660870",
+  "size": 106,
+  "orig_symbol": "sub_00660870",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "StringVector::erase",
+  "class": "StringVector",
+  "signature": "extern \"C\" CheckedIterator* __thiscall fn_00660870( StringVector* self, CheckedIterator* out_iter, void* first_container, uint8_t* first_ptr, void* last_container, uint8_t* last_ptr)",
+  "summary": "Erases a checked-iterator range [first, last) from a vector of 0x20-byte string elements, destroying trailing elements and returning the updated iterator.",
+  "fields": [
+    {
+      "class": "StringVector",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "end_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T05:03:56Z"
+}
