@@ -1,0 +1,28 @@
+{
+  "va": "0x0041CAB0",
+  "size": 68,
+  "orig_symbol": "sub_0041CAB0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::setFlagAndDispatch",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_0041CAB0(void* self, void* a, void* b)",
+  "summary": "Sets this+0x2c to 1, dereferences a and b (b optional, 0 if null) via getDerefField0x4, then calls vtable slot 3 of the object at this+0x4 with the two results.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "uint8_t",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:19:22Z"
+}

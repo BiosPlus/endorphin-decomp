@@ -1724,6 +1724,13 @@
     "summary": "Returns 0 for a null argument; otherwise forwards the argument to ext_006AD180 and returns its result.",
     "lifted_path": "lifted/Properties/GWCPropertiesControlDriver.cpp"
   },
+  "0x0041CAB0": {
+    "name": "Unknown::setFlagAndDispatch",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0041CAB0(void* self, void* a, void* b)",
+    "summary": "Sets this+0x2c to 1, dereferences a and b (b optional, 0 if null) via getDerefField0x4, then calls vtable slot 3 of the object at this+0x4 with the two results.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041CB00": {
     "name": "Unknown::DispatchDerefPair",
     "class": "Unknown",

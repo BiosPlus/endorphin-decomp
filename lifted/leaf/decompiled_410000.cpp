@@ -1074,3 +1074,33 @@ extern uint32_t __thiscall fn_0041CB00(void* self, uint32_t arg1, uint32_t arg2)
     return target(obj, y, x);
 }
 } // namespace lift_0041CB00
+
+// [0x0041CAB0] sub_0041CAB0 (68 bytes)
+namespace lift_0041CAB0 {
+// Known callee 0x006AD180: getDerefField0x4 (Reads a pointer at offset 0x4 and returns the dereferenced 32-bit value.)
+uint32_t __thiscall ext_006AD180(void* self);
+
+// @name Unknown::setFlagAndDispatch
+// @class Unknown
+// @summary Sets this+0x2c to 1, dereferences a and b (b optional, 0 if null) via getDerefField0x4, then calls vtable slot 3 of the object at this+0x4 with the two results.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x2c uint8_t field_0x2c
+void __thiscall fn_0041CAB0(void* self, void* a, void* b) {
+    auto* self_bytes = static_cast<uint8_t*>(self);
+    self_bytes[0x2c] = 1;
+
+    const uint32_t da = ext_006AD180(a);
+    uint32_t db = 0;
+    if (b != nullptr) {
+        db = ext_006AD180(b);
+    }
+
+    const uint32_t obj = *reinterpret_cast<uint32_t*>(self_bytes + 0x04);
+    const uint32_t vtbl = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(obj));
+    const uint32_t method = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(vtbl) + 0x0C);
+
+    using VirtualSlot3 = void(__thiscall*)(void* self, uint32_t first, uint32_t second);
+    auto fn = reinterpret_cast<VirtualSlot3>(static_cast<uintptr_t>(method));
+    fn(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), da, db);
+}
+} // namespace lift_0041CAB0
