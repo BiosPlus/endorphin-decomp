@@ -608,3 +608,22 @@ void* fn_005B82A0() {
     return &mem_00B43CB4;
 }
 } // namespace lift_005B82A0
+
+// [0x005B85A0] sub_005B85A0 (87 bytes)
+namespace lift_005B85A0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00B43CF8; // init guard flags (bit 0 = initialized/in progress)
+extern DWORD mem_00B43CF4; // static object storage; first DWORD holds the vtable-like value
+
+// @name getStaticSingleton_005B85A0
+// @summary Lazily initializes the global singleton at 0x00B43CF4 once (guarded by bit 0 of 0x00B43CF8) and returns its address.
+void* getStaticSingleton_005B85A0() {
+    if ((mem_00B43CF8 & 1u) == 0) {
+        mem_00B43CF8 |= 1u;
+        ext_0067A670(&mem_00B43CF4, 0);
+        mem_00B43CF4 = 0x009616D4u;
+    }
+    return &mem_00B43CF4;
+}
+} // namespace lift_005B85A0

@@ -1,0 +1,13 @@
+{
+  "va": "0x005B85A0",
+  "size": 87,
+  "orig_symbol": "sub_005B85A0",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "getStaticSingleton_005B85A0",
+  "signature": "extern \"C\" DWORD mem_00B43CF8; // init guard flags (bit 0 = initialized/in progress) extern \"C\" DWORD mem_00B43CF4; // static object storage; first DWORD holds the vtable-like value void* getStaticSingleton_005B85A0()",
+  "summary": "Lazily initializes the global singleton at 0x00B43CF4 once (guarded by bit 0 of 0x00B43CF8) and returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:38:06Z"
+}
