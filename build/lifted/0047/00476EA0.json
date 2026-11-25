@@ -1,0 +1,14 @@
+{
+  "va": "0x00476EA0",
+  "size": 28,
+  "orig_symbol": "SymbolPtrMap\u003cSearchableMap\u003cNMData::TriggeredEventData *, GetNameFromAttribute\u003cNMData::TriggeredEventData *\u003e\u003e\u003e::vfunc_1",
+  "src_path": "src/templates/auto_tiny.cpp",
+  "lifted_path": "lifted/templates/auto_tiny.cpp",
+  "name": "SymbolPtrMap\u003cSearchableMap\u003cNMData::TriggeredEventData *, GetNameFromAttribute\u003cNMData::TriggeredEventData *\u003e\u003e\u003e::vfunc_1",
+  "class": "SymbolPtrMap\u003cSearchableMap\u003cNMData::TriggeredEventData *, GetNameFromAttribute\u003cNMData::TriggeredEventData *\u003e\u003e\u003e",
+  "signature": "void* __thiscall fn_00476EA0(void* self, void* arg0)",
+  "summary": "Looks up an entry via the underlying map's vfunc_0 and dereferences the result if non-null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T11:31:22Z"
+}

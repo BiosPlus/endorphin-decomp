@@ -168,3 +168,23 @@ uint32_t fn_0052EF40(void* self) {
     return flag != 0 ? 1u : 0u;
 }
 } // namespace lift_0052EF40
+
+// [0x00476EA0]
+namespace lift_00476EA0 {
+// @name SymbolPtrMap<SearchableMap<NMData::TriggeredEventData *, GetNameFromAttribute<NMData::TriggeredEventData *>>>::vfunc_1
+// @class SymbolPtrMap<SearchableMap<NMData::TriggeredEventData *, GetNameFromAttribute<NMData::TriggeredEventData *>>>
+// @summary Looks up an entry via the underlying map's vfunc_0 and dereferences the result if non-null.
+// @field SymbolPtrMap<SearchableMap<NMData::TriggeredEventData *, GetNameFromAttribute<NMData::TriggeredEventData *>>> +0x04 void* field_0x04
+
+
+void* __thiscall fn_00476EA0(void* self, void* arg0) {
+    void* map = lift_field<void*>(self, 0x04);
+    void** vtable = *reinterpret_cast<void***>(map);
+    using VFunc0 = void** (__thiscall*)(void*, void*);
+    void** res = reinterpret_cast<VFunc0>(vtable[0])(map, arg0);
+    if (res != nullptr) {
+        return *res;
+    }
+    return nullptr;
+}
+} // namespace lift_00476EA0
