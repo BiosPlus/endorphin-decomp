@@ -61106,3 +61106,62 @@ int fn_0049D4B0(void** arg) {
     return ext_006A6DE0(static_cast<double>(value) + bias);
 }
 } // namespace lift_0049D4B0
+
+// [0x00514070] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>::vfunc_2 (117 bytes)
+namespace lift_00514070 {
+// Known callee 0x00682ED0: VirtualSlot9Thunk. Returns the code address of virtual slot 9
+// (vtable offset 0x24) for the object passed as self; the caller invokes that target with the same this.
+extern void* ext_00682ED0(void* self);
+// Known callee 0x006A6DE0: sub_006A6DE0 (171B). Consumes the rounded value left on the x87 stack (passed here as double).
+extern void ext_006A6DE0(double value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException. Constructs the exception object in place.
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException. Forwards to _CxxThrowException(object, throwInfo).
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// IAT slot: MSVCP80 std::string::c_str (const char* __thiscall (const string*)).
+extern void* mem_00924FF0;
+// IAT slot: MSVCR80 atof (double __cdecl (const char*)).
+extern void* mem_009251F0;
+// .rdata: 0.5 rounding constant.
+extern const double mem_00993828;
+// .rdata: ThrowInfo for DerivedException.
+extern const char mem_009DEC1C;
+
+typedef void* (__thiscall *VirtualSlot9Fn)(void* self);
+typedef const char* (__thiscall *CStrFn)(const void* self);
+typedef double (__cdecl *AtofFn)(const char* s);
+
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_2
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>
+// @summary Reads the descriptor's string value via virtual slot 9, parses it with atof, rounds half away from zero, and passes the result to sub_006A6DE0; throws DerivedException if the holder is null.
+// @field Chromosome::Descriptor +0x00 void* field_0x00
+// @field Chromosome::Descriptor +0x04 void* field_0x04 (embedded sub-object passed as this to the virtual slot-9 call)
+void fn_00514070(void** holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: construct the exception object, then throw it with its ThrowInfo.
+        alignas(16) unsigned char exc[64];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return;
+    }
+
+    void* self = static_cast<unsigned char*>(obj) + 0x4;
+    VirtualSlot9Fn target = reinterpret_cast<VirtualSlot9Fn>(ext_00682ED0(self));
+    const void* str = target(self);
+
+    CStrFn c_str = reinterpret_cast<CStrFn>(mem_00924FF0);
+    AtofFn atof_fn = reinterpret_cast<AtofFn>(mem_009251F0);
+    const double parsed = atof_fn(c_str(str));
+    const float f = static_cast<float>(parsed);
+
+    // fcom sets C0 on (f < 0) or unordered; !(f >= 0) matches that.
+    double rounded;
+    if (!(f >= 0.0f)) {
+        rounded = static_cast<double>(f) - mem_00993828;
+    } else {
+        rounded = static_cast<double>(f) + mem_00993828;
+    }
+    ext_006A6DE0(rounded);
+}
+} // namespace lift_00514070

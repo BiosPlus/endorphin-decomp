@@ -10,7 +10,8 @@
 // Recovered field layout for Chromosome::Descriptor:
 namespace lifted_layout {
 struct Chromosome_Descriptor_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x00512BA0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740)
+    // +0x0   void*                    field_0x00  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x00512BA0, 0x00514070, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740)
+    // +0x4   void* field_0x04 (embedded sub-object passed as this to the virtual slot-9 call)  (evidence: 0x00514070) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              value_subobject  (evidence: 0x0046CE90, 0x0046E570, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0x4
 };
