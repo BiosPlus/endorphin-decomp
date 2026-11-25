@@ -9003,6 +9003,12 @@
     "summary": "Function-local static initializer: on first call sets bit 0 of the guard byte at mem_00AD9E10, runs ext_0067A670 on the object at mem_00AD9E0C with argument 0, stores the vtable-like constant 0x0093D19C into it, and returns the object's address.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x004880B0": {
+    "name": "GetGuardedStaticInstance_004880B0",
+    "signature": "void* fn_004880B0()",
+    "summary": "One-time guarded initializer for the static object at 0x00AD9E14; returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00488260": {
     "name": "sub_00488260",
     "signature": "extern \"C\" void __fastcall fn_00488260(void* self)",

@@ -1,0 +1,13 @@
+{
+  "va": "0x004880B0",
+  "size": 87,
+  "orig_symbol": "sub_004880B0",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "GetGuardedStaticInstance_004880B0",
+  "signature": "void* fn_004880B0()",
+  "summary": "One-time guarded initializer for the static object at 0x00AD9E14; returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:28:50Z"
+}

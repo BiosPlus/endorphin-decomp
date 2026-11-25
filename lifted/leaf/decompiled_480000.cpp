@@ -1631,3 +1631,24 @@ void* fn_00488050() {
     return &mem_00AD9E0C;
 }
 } // namespace lift_00488050
+
+// [0x004880B0]
+namespace lift_004880B0 {
+// @name GetGuardedStaticInstance_004880B0
+// @summary One-time guarded initializer for the static object at 0x00AD9E14; returns its address.
+
+extern DWORD mem_00AD9E14;  // object storage; first DWORD holds its vtable/type pointer
+extern DWORD mem_00AD9E18;  // init guard; bit 0 set once initialization has begun
+
+// Stores the single stack argument into the first DWORD of self (thiscall, ECX = self).
+void __thiscall ext_0067A670(void* self, DWORD value);
+
+void* fn_004880B0() {
+    if ((mem_00AD9E18 & 1u) == 0) {
+        mem_00AD9E18 |= 1u;
+        ext_0067A670(&mem_00AD9E14, 0);
+        mem_00AD9E14 = 0x0093D274u;
+    }
+    return &mem_00AD9E14;
+}
+} // namespace lift_004880B0
