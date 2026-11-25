@@ -15973,6 +15973,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x00505DC0": {
+    "name": "Unknown::DestroyElementsAndReset_00505DC0",
+    "class": "Unknown",
+    "signature": "void fn_00505DC0(void* self)",
+    "summary": "Destroys each 0x28-byte element in the vector at this+0x4..this+0x8 via its vtable slot 0 (deleting flag 0), frees the storage, and clears begin/end/capacity.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00506160": {
     "name": "Chromosome::vfunc_0",
     "class": "Chromosome",

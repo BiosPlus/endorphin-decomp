@@ -156,6 +156,7 @@ struct Unknown_Fields {
     // +0x4   void* field_0x04 (sub-component object returned by vfunc_0; its class is not identified)  (evidence: 0x0066BDB0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    inner  (evidence: 0x007833F0, 0x00788E50) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    linked  (evidence: 0x006B2F70, 0x006BDAF0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    m_begin  (evidence: 0x00505DC0) // CONFLICT: multiple definitions at +0x4
     // +0x4   HMODULE                  module  (evidence: 0x0041FD20) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t*                 next  (evidence: 0x008103A0, 0x008103F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    obj_ptr  (evidence: 0x0058A960) // CONFLICT: multiple definitions at +0x4
@@ -221,6 +222,7 @@ struct Unknown_Fields {
     // +0x8   float                    floatArg  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    getterContext  (evidence: 0x007051F0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t field_0x08 (vector end, via holder)  (evidence: 0x0067AEB0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    m_end  (evidence: 0x00505DC0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    ownedObjectA  (evidence: 0x007892B0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    parent  (evidence: 0x005942D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    peer  (evidence: 0x00532B40, 0x0053F6A0) // CONFLICT: multiple definitions at +0x8
@@ -265,6 +267,7 @@ struct Unknown_Fields {
     // +0xC   DWORD                    flags  (evidence: 0x007CCC80) // CONFLICT: multiple definitions at +0xC
     // +0xC   u32                      flags  (evidence: 0x007CCC30) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 index  (evidence: 0x00810C30) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void*                    m_capacity  (evidence: 0x00505DC0) // CONFLICT: multiple definitions at +0xC
     // +0xC   std::string              name  (evidence: 0x005A2BD0) // CONFLICT: multiple definitions at +0xC
     // +0xC   HGLOBAL field_0x0c (inner handle of the holder object; freed via GlobalFree if non-null)  (evidence: 0x007BD340) // CONFLICT: multiple definitions at +0xC
     // +0xC   void field_0x0C (CString-style name object)  (evidence: 0x0041FD20) // CONFLICT: multiple definitions at +0xC
