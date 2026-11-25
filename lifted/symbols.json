@@ -47998,6 +47998,13 @@
     "summary": "Reads the object's angle unit name record by index, converts its string to float via atof, and returns it; throws if the source pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0068F0D0": {
+    "name": "ExprParser::ReadMethodType\u003cUnitsWithProperties, ...\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cUnitsWithProperties, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026UnitsWithProperties::getAngleUnitName, 0\u003e",
+    "signature": "extern \"C\" uint32_t fn_0068F0D0(void* arg)",
+    "summary": "Reads a value's string via ext_0068EE60(index) and returns 1 if it equals \"true\" or \"TRUE\" (else 0); throws DerivedException if the holder pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0068F1F0": {
     "name": "ExprParser::ReadMethodType_getAngleUnitName::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cUnitsWithProperties, std::string const \u0026, \u0026UnitsWithProperties::getAngleUnitName, 0\u003e",

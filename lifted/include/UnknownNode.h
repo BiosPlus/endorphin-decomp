@@ -10,10 +10,11 @@ namespace lifted_layout {
 struct UnknownNode_Fields {
     // +0x0   uint32_t                 field_0x00  (evidence: 0x004A73F0, 0x005947B0, 0x0059B120) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x005943D0, 0x00667030, 0x00673C20) // CONFLICT: multiple definitions at +0x0
-    // +0x4   void*                    field_0x04  (evidence: 0x005943D0, 0x00667030, 0x00673C20)
+    // +0x4   void*                    field_0x04  (evidence: 0x005943D0, 0x00667030, 0x00673C20, 0x0068F0D0)
     // +0x8   uint32_t                 field_0x08  (evidence: 0x004A73F0, 0x005947B0, 0x0059B120) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_0x08  (evidence: 0x005942F0, 0x005943D0, 0x00667030, 0x00673C20) // CONFLICT: multiple definitions at +0x8
-    // +0xC   uint8_t                  field_0x0C  (evidence: 0x004A73F0, 0x005947B0, 0x0059B120)
+    // +0xC   uint8_t                  field_0x0C  (evidence: 0x004A73F0, 0x005947B0, 0x0059B120) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint32_t                 field_0x0c  (evidence: 0x0068F0D0) // CONFLICT: multiple definitions at +0xC
     // +0x10  void*                    next  (evidence: 0x007B2E20, 0x007BD640)
     // +0x31  uint8_t                  field_0x31  (evidence: 0x005942F0)
     // +0x39  uint8_t                  flag  (evidence: 0x005943D0, 0x00667030, 0x00673C20)

@@ -59287,3 +59287,50 @@ int fn_005B37A0(void* const* self) {
     return 0;
 }
 } // namespace lift_005B37A0
+
+// [0x0068F0D0]
+namespace lift_0068F0D0 {
+// @name ExprParser::ReadMethodType<UnitsWithProperties, ...>::vfunc_3
+// @class ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &UnitsWithProperties::getAngleUnitName, 0>
+// @summary Reads a value's string via ext_0068EE60(index) and returns 1 if it equals "true" or "TRUE" (else 0); throws DerivedException if the holder pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field UnknownNode +0x04 void* field_0x04
+// @field UnknownNode +0x0c uint32_t field_0x0c
+
+// Externals (callees and referenced .rdata / IAT slots from the original asm).
+void* ext_0068EE60(uint32_t index);      // sub_0068EE60, auto-lifted clone of Unknown::GetRecordByIndex
+void* ext_0046C3C0(void* self);          // DerivedException::DerivedException(fixed message)
+void ext_006A6DD2(void);                 // thunk to MSVCR80!_CxxThrowException
+
+extern const char mem_0092F10C[];        // .rdata "true"
+extern const char mem_0093A810[];        // .rdata "TRUE"
+extern void* mem_009DEC1C;               // .rdata ThrowInfo (u32 0 placeholder)
+// IAT slot: MSVCP80 std::operator==(const basic_string<char>&, const char*)
+extern bool (*mem_00924FC0)(const void* str, const char* lit);
+
+extern uint32_t fn_0068F0D0(void* arg) {
+    // mov eax,[esp+4]; mov ecx,[eax]
+    void* holder = *reinterpret_cast<void**>(arg);
+    if (holder == nullptr) {
+        // Null path: construct DerivedException in a local buffer and throw.
+        alignas(8) uint8_t exc_buf[0x28];
+        ext_0046C3C0(exc_buf);
+        ext_006A6DD2();
+        return 0;
+    }
+
+    // mov edx,[ecx+4]; mov eax,[edx+0xc]; push eax; call ext_0068EE60
+    uint8_t* node = *reinterpret_cast<uint8_t**>(static_cast<uint8_t*>(holder) + 0x04);
+    uint32_t index = *reinterpret_cast<uint32_t*>(node + 0x0c);
+    void* str = ext_0068EE60(index);
+
+    // if (str == "true") return 1; if (str == "TRUE") return 1; return 0;
+    if (mem_00924FC0(str, mem_0092F10C)) {
+        return 1;
+    }
+    if (mem_00924FC0(str, mem_0093A810)) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_0068F0D0
