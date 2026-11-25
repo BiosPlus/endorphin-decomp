@@ -82,3 +82,35 @@ void sub_0077F6D0() {
     mem_00B60744 = huge[1];
 }
 } // namespace lift_0077F6D0
+
+// [0x0077F760] sub_0077F760 (74 bytes)
+namespace lift_0077F760 {
+extern uint32_t mem_00925284;  // holds address of _HUGE (MSVCR80.dll) double value
+extern uint32_t mem_00B60760;
+extern uint32_t mem_00B60764;
+extern uint32_t mem_00B60768;
+extern uint32_t mem_00B6076C;
+extern uint32_t mem_00B60770;
+extern uint32_t mem_00B60774;
+extern uint32_t mem_00B60778;
+extern uint32_t mem_00B6077C;
+
+// @name CopyHugeToGlobals_0077F760
+// @summary Copies the 8-byte _HUGE value into four consecutive 8-byte globals (b60760..b6077C).
+// @field none
+void fn_0077F760(void) {
+    const uint32_t* huge = reinterpret_cast<const uint32_t*>(
+        static_cast<uintptr_t>(mem_00925284));
+    const uint32_t lo = huge[0];
+    const uint32_t hi = huge[1];
+
+    mem_00B60760 = lo;
+    mem_00B60764 = hi;
+    mem_00B60768 = lo;
+    mem_00B6076C = hi;
+    mem_00B60770 = lo;
+    mem_00B60774 = hi;
+    mem_00B60778 = lo;
+    mem_00B6077C = hi;
+}
+} // namespace lift_0077F760

@@ -56208,6 +56208,12 @@
     "summary": "Stores -_HUGE (negated CRT HUGE_VAL) into three global doubles.",
     "lifted_path": "lifted/clones/auto_clones_770000.cpp"
   },
+  "0x0077F760": {
+    "name": "CopyHugeToGlobals_0077F760",
+    "signature": "void fn_0077F760(void)",
+    "summary": "Copies the 8-byte _HUGE value into four consecutive 8-byte globals (b60760..b6077C).",
+    "lifted_path": "lifted/clones/auto_clones_770000.cpp"
+  },
   "0x0077F9E0": {
     "name": "sub_0077F9E0",
     "signature": "uint32_t __thiscall sub_0077F9E0(uint32_t self, uint32_t arg1)",
