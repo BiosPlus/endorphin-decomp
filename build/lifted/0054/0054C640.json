@@ -1,0 +1,34 @@
+{
+  "va": "0x0054C640",
+  "size": 113,
+  "orig_symbol": "sub_0054C640",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Container::removePointer",
+  "class": "Container",
+  "signature": "void __thiscall fn_0054C640(void* self, void* target)",
+  "summary": "Finds a pointer in the vector at +0x14 and removes it via Vector::removePointerAt if present.",
+  "fields": [
+    {
+      "class": "Container",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Container",
+      "offset": "+0x18",
+      "type": "void**",
+      "name": "begin"
+    },
+    {
+      "class": "Container",
+      "offset": "+0x1C",
+      "type": "void**",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:36:53Z"
+}

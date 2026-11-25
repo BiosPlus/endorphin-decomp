@@ -1324,3 +1324,51 @@ extern void* fn_0054A860(void* self) {
     return self;
 }
 } // namespace lift_0054A860
+
+// [0x0054C640]
+namespace lift_0054C640 {
+extern void (__cdecl *mem_00925134)();
+extern void __thiscall ext_00527D60(void* self, void** out, void* range, void** pos);
+
+// @name Container::removePointer
+// @class Container
+// @summary Finds a pointer in the vector at +0x14 and removes it via Vector::removePointerAt if present.
+// @field Container +0x14 void* field_0x14
+// @field Container +0x18 void** begin
+// @field Container +0x1c void** end
+void __thiscall fn_0054C640(void* self, void* target) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    void* vec = base + 0x14;
+    void** end = *reinterpret_cast<void***>(base + 0x1c);
+    void** begin = *reinterpret_cast<void***>(base + 0x18);
+
+    if (begin > end) {
+        mem_00925134();
+    }
+
+    void** it = *reinterpret_cast<void***>(base + 0x18);
+    if (it > *reinterpret_cast<void***>(base + 0x1c)) {
+        mem_00925134();
+    }
+
+    while (it != end) {
+        if (*it == target) {
+            break;
+        }
+        ++it;
+    }
+
+    void** cur_end = *reinterpret_cast<void***>(base + 0x1c);
+    if (*reinterpret_cast<void***>(base + 0x18) > cur_end) {
+        mem_00925134();
+    }
+    if (!vec) {
+        mem_00925134();
+    }
+
+    if (it != cur_end) {
+        void* out[2];
+        ext_00527D60(vec, out, vec, it);
+    }
+}
+} // namespace lift_0054C640
