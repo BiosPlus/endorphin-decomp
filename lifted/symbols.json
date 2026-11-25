@@ -50204,9 +50204,10 @@
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x0070AD00": {
-    "name": "CopyStateBlock340",
-    "signature": "void sub_0070AD00(std::uint8_t* self, std::uint32_t* out)",
-    "summary": "Copies six consecutive dwords from this+0x340..0x354 into the caller-supplied output block.",
+    "name": "sub_0070A1D0",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __fastcall fn_0070A1D0(void* self, int edx_unused, unsigned int flags)",
+    "summary": "MSVC scalar deleting destructor: calls sub_0070A1F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x0070AD40": {
