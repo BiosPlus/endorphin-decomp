@@ -1,0 +1,51 @@
+{
+  "va": "0x006D0370",
+  "size": 96,
+  "orig_symbol": "sub_006D0370",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "sub_006D0370",
+  "signature": "extern \"C\" uint32_t __thiscall fn_006D0370(void* self, uint8_t flag)",
+  "summary": "Sets enabled state at +0x1C and, when enabling with positive count at +0x64, invokes callbacks in +0x78 with +0x90 args and calls sub_006D03D0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint8_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "uint8_t",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "int32_t",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "int32_t",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "void*",
+      "name": "field_0x78"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x90",
+      "type": "void*",
+      "name": "field_0x90"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:39:29Z"
+}

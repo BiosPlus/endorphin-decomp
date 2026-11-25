@@ -1492,3 +1492,46 @@ void fn_006DE5F0(void* self, void* item) {
     ext_006DE130(item, 0);
 }
 } // namespace lift_006DE5F0
+
+// [0x006D0370]
+namespace lift_006D0370 {
+// @name sub_006D0370
+// @summary Sets enabled state at +0x1C and, when enabling with positive count at +0x64, invokes callbacks in +0x78 with +0x90 args and calls sub_006D03D0.
+// @field Unknown +0x1C uint8_t field_0x1C
+// @field Unknown +0x54 uint8_t field_0x54
+// @field Unknown +0x64 int32_t field_0x64
+// @field Unknown +0x68 int32_t field_0x68
+// @field Unknown +0x78 void* field_0x78
+// @field Unknown +0x90 void* field_0x90
+
+
+extern void __fastcall ext_006D03D0(void* self);
+
+extern uint32_t __thiscall fn_006D0370(void* self, uint8_t flag) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    if (base[0x1C] == flag) {
+        return 0;
+    }
+
+    if (flag != 0) {
+        int32_t count64 = *reinterpret_cast<int32_t*>(base + 0x64);
+        if (count64 > 0) {
+            int32_t count68 = *reinterpret_cast<int32_t*>(base + 0x68);
+            if (count68 > 0) {
+                void* sub54 = base + 0x54;
+                for (int32_t i = 0; i < count68; ++i) {
+                    using CallbackFn = void(__cdecl*)(void*, void*, void*);
+                    void** args = *reinterpret_cast<void***>(base + 0x90);
+                    CallbackFn* funcs = *reinterpret_cast<CallbackFn**>(base + 0x78);
+                    funcs[i](self, sub54, args[i]);
+                    count68 = *reinterpret_cast<int32_t*>(base + 0x68);
+                }
+            }
+            ext_006D03D0(self);
+        }
+    }
+
+    base[0x1C] = flag;
+    return 0;
+}
+} // namespace lift_006D0370
