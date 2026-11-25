@@ -385,3 +385,27 @@ void fn_005AAD10(uint8_t* self, const void* key) {
     ext_005AA830(self, index);
 }
 } // namespace lift_005AAD10
+
+// [0x005ABBE0]
+namespace lift_005ABBE0 {
+// Known callee 0x005AAD10: ObjectWithChild::SetValueFromStringKey
+extern void ext_005AAD10(uint8_t* self, const void* key);
+
+// @name ObjectWithChild::ForwardValueFromStringKeyIfAllowed
+// @class ObjectWithChild
+// @summary Calls the child's virtual gate (slot 1) when a child is present; if there is no child or the gate returns true, forwards the key to SetValueFromStringKey.
+// @field ObjectWithChild +0x190 void* field_0x190
+void fn_005ABBE0(uint8_t* self, const void* key) {
+    uint8_t* child = lift_field<uint8_t*>(self, 0x190);
+    bool allow = true;
+    if (child != nullptr) {
+        void** vtable = *reinterpret_cast<void***>(child);
+        using GateFn = uint8_t(__thiscall*)(void* thisPtr);
+        auto gate = reinterpret_cast<GateFn>(vtable[1]);
+        allow = gate(child) != 0;
+    }
+    if (allow) {
+        ext_005AAD10(self, key);
+    }
+}
+} // namespace lift_005ABBE0

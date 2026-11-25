@@ -22974,6 +22974,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
     "lifted_path": "lifted/NMData/RigNode.cpp"
   },
+  "0x005ABBE0": {
+    "name": "ObjectWithChild::ForwardValueFromStringKeyIfAllowed",
+    "class": "ObjectWithChild",
+    "signature": "void fn_005ABBE0(uint8_t* self, const void* key)",
+    "summary": "Calls the child's virtual gate (slot 1) when a child is present; if there is no child or the gate returns true, forwards the key to SetValueFromStringKey.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005ABE20": {
     "name": "NMData::RigRoot::vfunc_17_off_C",
     "class": "NMData::RigRoot",

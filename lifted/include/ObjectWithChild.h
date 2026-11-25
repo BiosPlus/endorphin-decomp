@@ -9,6 +9,6 @@
 namespace lifted_layout {
 struct ObjectWithChild_Fields {
     // +0x154 int32_t                  field_0x154  (evidence: 0x005AA830)
-    // +0x190 void*                    field_0x190  (evidence: 0x005AA830)
+    // +0x190 void*                    field_0x190  (evidence: 0x005AA830, 0x005ABBE0)
 };
 } // namespace lifted_layout
