@@ -29,6 +29,7 @@ void fn_00480750(void* self) {
 } // namespace lift_00480750
 #include <cstdint>
 #include <cstring>
+#include <utility>
 
 // [0x0048CCA0] sub_0048CCA0 (27 bytes)
 namespace lift_0048CCA0 {
@@ -1259,3 +1260,23 @@ extern void __fastcall fn_0048B730(void* ecx) {
     }
 }
 } // namespace lift_0048B730
+
+// [0x004890D0] sub_004890D0 (87 bytes)
+namespace lift_004890D0 {
+// @name sortThreeStrings_004890D0
+// @summary Sorts three std::string references into ascending order in place (3-element bubble network).
+void fn_004890D0(std::string& a, std::string& b, std::string& c) {
+    // Pass 1: if (b < a) swap(b, a)
+    if (b < a) {
+        b.swap(a);
+    }
+    // Pass 2: if (c < b) swap(c, b)
+    if (c < b) {
+        c.swap(b);
+    }
+    // Pass 3: if (b < a) swap(b, a)
+    if (b < a) {
+        b.swap(a);
+    }
+}
+} // namespace lift_004890D0

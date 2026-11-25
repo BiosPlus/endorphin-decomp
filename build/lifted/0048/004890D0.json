@@ -1,0 +1,13 @@
+{
+  "va": "0x004890D0",
+  "size": 87,
+  "orig_symbol": "sub_004890D0",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "sortThreeStrings_004890D0",
+  "signature": "void fn_004890D0(std::string\u0026 a, std::string\u0026 b, std::string\u0026 c)",
+  "summary": "Sorts three std::string references into ascending order in place (3-element bubble network).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:13:14Z"
+}

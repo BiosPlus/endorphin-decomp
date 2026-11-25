@@ -8751,6 +8751,12 @@
     "summary": "Copies a range of 20-byte (5 x float) records from [first, last) to out; returns the output end pointer.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x004890D0": {
+    "name": "sortThreeStrings_004890D0",
+    "signature": "void fn_004890D0(std::string\u0026 a, std::string\u0026 b, std::string\u0026 c)",
+    "summary": "Sorts three std::string references into ascending order in place (3-element bubble network).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00489320": {
     "name": "validatedRangeOut",
     "class": "\u003cClassName\u003e (unknown; ecx-passed object)",
