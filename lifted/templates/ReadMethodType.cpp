@@ -59006,3 +59006,56 @@ void* __thiscall fn_0059F7C0(void* self, void* arg1, void** arg2) {
     return holder;
 }
 } // namespace lift_0059F7C0
+
+// [0x00604D80] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1>::vfunc_2 (105 bytes)
+namespace lift_00604D80 {
+// Known callee 0x006A6DE0: sub_006A6DE0 (171B, unnamed). Receives the adjusted float on the FPU stack
+// (x +/- 0.5) and leaves its result on the FPU stack; the wrapper returns that result.
+extern void ext_006A6DE0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+// .rdata double 0.5 used as the rounding bias.
+extern const double mem_00993828;
+// .rdata u32 0: RTTI/throw-info cell passed to _CxxThrowException.
+extern uint32_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<Effector>::vfunc_2 (Effector::getPoseRawDesiredDisplacement)
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1>
+// @summary Reads the Effector pointer held in self, calls its vfunc at vtable+0x38 for a float (returned by pointer), and returns that value rounded half away from zero.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_00604D80(void* self) {
+    void* inner = lift_field<void*>(self, 0);
+    if (inner == nullptr) {
+        // Original builds a DerivedException on the stack (ext_0046C3C0) and throws it
+        // through _CxxThrowException (ext_006A6DD2) with the throw-info cell mem_009DEC1C.
+        ext_0046C3C0();
+        (void)mem_009DEC1C;
+        ext_006A6DD2();
+        return 0.0f;
+    }
+
+    // Vtable slot at byte offset 0x38 (the original is `call [vtable+0x38]`, a thiscall with a hidden return buffer).
+    void* vtbl = *reinterpret_cast<void**>(inner);
+    void* slot = lift_field<void*>(vtbl, 0x38);
+    using GetFloatFn = float* (*)(void* self_, float* out);
+    auto get_fn = reinterpret_cast<GetFloatFn>(slot);
+
+    float buf = 0.0f;
+    float* result = get_fn(inner, &buf);
+    float v = *result;
+
+    // fcom against 0.0; C0 (less-than or unordered) selects the subtract path.
+    double adjusted;
+    if (!(v >= 0.0f)) {
+        adjusted = static_cast<double>(v) - mem_00993828;
+    } else {
+        adjusted = static_cast<double>(v) + mem_00993828;
+    }
+
+    // sub_006A6DE0 consumes the adjusted value on the FPU stack and leaves it there.
+    ext_006A6DE0();
+    return static_cast<float>(adjusted);
+}
+} // namespace lift_00604D80
