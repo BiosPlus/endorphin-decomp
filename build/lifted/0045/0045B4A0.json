@@ -1,0 +1,27 @@
+{
+  "va": "0x0045B4A0",
+  "size": 65,
+  "orig_symbol": "sub_0045B4A0",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "applyWindowTextFloat_0045B4A0",
+  "signature": "void fn_0045B4A0(void* self)",
+  "summary": "Parses the embedded window text at +0x134 as a float; if it is strictly positive, forwards it to the object at +0x88 through vtable slot 0x84.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x134",
+      "type": "uint8_t",
+      "name": "field_0x134"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:06:29Z"
+}

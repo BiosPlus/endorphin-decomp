@@ -1461,3 +1461,36 @@ uint32_t __thiscall fn_0045E690(uint32_t self, uint32_t key) {
     return guest_u32(iter.node, 0x10);
 }
 } // namespace lift_0045E690
+
+// [0x0045B4A0]
+namespace lift_0045B4A0 {
+// @name applyWindowTextFloat_0045B4A0
+// @summary Parses the embedded window text at +0x134 as a float; if it is strictly positive, forwards it to the object at +0x88 through vtable slot 0x84.
+// @field Unknown +0x88 void* field_0x88
+// @field Unknown +0x134 uint8_t field_0x134
+
+// Reads window text into a string and parses it with atof (__stdcall, one pointer arg).
+float ext_0045AEE0(void* wnd);
+
+void fn_0045B4A0(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    float value = ext_0045AEE0(base + 0x134);
+
+    // Only proceed when value > 0 (false for 0, negatives, and NaN).
+    if (!(value > 0.0f)) {
+        return;
+    }
+
+    void* target = *reinterpret_cast<void**>(base + 0x88);
+    if (target == nullptr) {
+        return;
+    }
+
+    // Vtable slot at offset 0x84 (slot index 0x84 / sizeof(void*)) invoked with a float argument.
+    void** vtable = *reinterpret_cast<void***>(target);
+    using SetFloatFn = void (*)(void* self_obj, float v);
+    SetFloatFn fn = reinterpret_cast<SetFloatFn>(vtable[0x84 / sizeof(void*)]);
+    fn(target, value);
+}
+} // namespace lift_0045B4A0

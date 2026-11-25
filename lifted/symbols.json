@@ -6480,6 +6480,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0045AD80 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0045B4A0": {
+    "name": "applyWindowTextFloat_0045B4A0",
+    "signature": "void fn_0045B4A0(void* self)",
+    "summary": "Parses the embedded window text at +0x134 as a float; if it is strictly positive, forwards it to the object at +0x88 through vtable slot 0x84.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x0045B4F0": {
     "name": "Unknown::queryCheckStateAndNotify",
     "class": "Unknown",
@@ -21319,6 +21325,13 @@
     "class": "TreeMap",
     "signature": "void* fn_0052A230(void* self, const void* key)",
     "summary": "Auto-lifted identical-shape clone of 0x004205B0 (TreeMap::lowerBound).",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
+  "0x0052EBA0": {
+    "name": "TreeMap::find",
+    "class": "TreeMap",
+    "signature": "TreeMapIter* fn_0052EBA0(void* self, TreeMapIter* out_iter, const void* key)",
+    "summary": "Finds a string-keyed entry in the tree map, returning an iterator pair {container, node} or {container, head} if not found.",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
   "0x0052EC10": {
