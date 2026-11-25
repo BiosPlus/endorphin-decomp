@@ -10498,6 +10498,12 @@
     "summary": "One-time guarded initializer for the static object at mem_00ADD174; sets init bit 0 in mem_00ADD178, runs ext_0067A670 on the object, stores its vtable-like pointer 0x0093F284, and returns the object address.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x00499130": {
+    "name": "initStaticPairOnce_00499130",
+    "signature": "void* fn_00499130(void* out, uint32_t value)",
+    "summary": "Fills a two-word result (value, static object pointer) into the caller buffer and returns that buffer.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00499190": {
     "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_38",
     "class": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e",

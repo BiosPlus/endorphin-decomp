@@ -1106,3 +1106,24 @@ void* fn_0049E440(void* self, DWORD arg2) {
     return self;
 }
 } // namespace lift_0049E440
+
+// [0x00499130] sub_00499130 (87 bytes)
+namespace lift_00499130 {
+// Known callee 0x00498F90: initStaticObjectOnce_00498F90 (One-time guarded initializer for the static object at mem_00ADD174; sets init bit 0 in mem_00ADD178, runs ext_0067A670 on the object, stores its vtable-like pointer 0x0093F284, and returns the object address.)
+extern void* ext_00498F90();
+extern uint32_t mem_00B599BC;
+
+// @name initStaticPairOnce_00499130
+// @summary Fills a two-word result (value, static object pointer) into the caller buffer and returns that buffer.
+// @field Result +0x00 uint32_t field_0x00
+// @field Result +0x04 void* field_0x04
+void* fn_00499130(void* out, uint32_t value) {
+    uint8_t* words = static_cast<uint8_t*>(out);
+    lift_field<uint32_t>(words, 0) = 0;
+    lift_field<uint32_t>(words, 4) = mem_00B599BC;
+    void* obj = ext_00498F90();
+    lift_field<void*>(words, 4) = obj;
+    lift_field<uint32_t>(words, 0) = value;
+    return out;
+}
+} // namespace lift_00499130

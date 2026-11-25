@@ -1,0 +1,27 @@
+{
+  "va": "0x00499130",
+  "size": 87,
+  "orig_symbol": "sub_00499130",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "initStaticPairOnce_00499130",
+  "signature": "void* fn_00499130(void* out, uint32_t value)",
+  "summary": "Fills a two-word result (value, static object pointer) into the caller buffer and returns that buffer.",
+  "fields": [
+    {
+      "class": "Result",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Result",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:31:28Z"
+}
