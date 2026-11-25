@@ -1,0 +1,13 @@
+{
+  "va": "0x00754FA0",
+  "size": 96,
+  "orig_symbol": "sub_00754FA0",
+  "src_path": "src/leaf/decompiled_750000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_750000.cpp",
+  "name": "sub_00754FA0_dtor",
+  "signature": "extern \"C\" void __fastcall fn_00754FA0(void* self)",
+  "summary": "Destructor that sets vtable 0x996bf0 and destroys members at +0x60 and +0x8.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:48:15Z"
+}

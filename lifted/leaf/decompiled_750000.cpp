@@ -46,3 +46,23 @@ void fn_00751368(void* self) {
     (void)kTable;
 }
 } // namespace lift_00751368
+
+// [0x00754FA0]
+namespace lift_00754FA0 {
+// @name sub_00754FA0_dtor
+// @summary Destructor that sets vtable 0x996bf0 and destroys members at +0x60 and +0x8.
+// @field +0x00 uintptr_t vftable
+// @field +0x08 uint8_t field_0x08
+// @field +0x60 uint8_t field_0x60
+
+
+extern void __fastcall ext_006B9D70(void* self);
+extern void __fastcall ext_007641C0(void* self);
+
+extern void __fastcall fn_00754FA0(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(obj) = 0x00996BF0u;
+    ext_006B9D70(obj + 0x60);
+    ext_007641C0(obj + 0x08);
+}
+} // namespace lift_00754FA0
