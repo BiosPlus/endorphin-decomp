@@ -1,0 +1,46 @@
+{
+  "va": "0x004689B0",
+  "size": 76,
+  "orig_symbol": "sub_004689B0",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "Unknown::SnapshotLockedPair_004689B0",
+  "class": "Unknown",
+  "signature": "void* fn_004689B0(void* self, void* out)",
+  "summary": "Copies two dwords from the inner state under its lock into out, or zeroes out when the flag at +0x10 is clear.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "flag"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "inner"
+    },
+    {
+      "class": "UnknownInner",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "value0"
+    },
+    {
+      "class": "UnknownInner",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "value1"
+    },
+    {
+      "class": "UnknownInner",
+      "offset": "+0x20",
+      "type": "CriticalSectionLock",
+      "name": "lock"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:38:08Z"
+}

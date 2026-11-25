@@ -6467,6 +6467,13 @@
     "summary": "If the byte at +0x10 is nonzero, tail-forward to the object at +0x14 via ext_0046FE70; otherwise return 0.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x004689B0": {
+    "name": "Unknown::SnapshotLockedPair_004689B0",
+    "class": "Unknown",
+    "signature": "void* fn_004689B0(void* self, void* out)",
+    "summary": "Copies two dwords from the inner state under its lock into out, or zeroes out when the flag at +0x10 is clear.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00468A00": {
     "name": "getNestedPairOrZero",
     "signature": "void fn_00468A00(void* self, void* out_ptr)",

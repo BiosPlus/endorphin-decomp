@@ -1017,3 +1017,39 @@ double fn_0046C490(const std::string* text) {
     return ext_006A6DE0(biased);
 }
 } // namespace lift_0046C490
+
+// [0x004689B0] sub_004689B0 (76 bytes)
+namespace lift_004689B0 {
+// Known callee 0x0065C640: CriticalSectionLock::enter (Enters the critical section referenced at offset 0x00 of the object.)
+extern void ext_0065C640(void* self);
+// Known callee 0x0065C650: CriticalSectionLock::leave (Releases the critical section pointed to by the first field)
+extern void ext_0065C650(void* self);
+
+// @name Unknown::SnapshotLockedPair_004689B0
+// @class Unknown
+// @summary Copies two dwords from the inner state under its lock into out, or zeroes out when the flag at +0x10 is clear.
+// @field Unknown +0x10 uint8_t flag
+// @field Unknown +0x14 void* inner
+// @field UnknownInner +0x18 uint32_t value0
+// @field UnknownInner +0x1c uint32_t value1
+// @field UnknownInner +0x20 CriticalSectionLock lock
+void* fn_004689B0(void* self, void* out) {
+    if (lift_field<uint8_t>(self, 0x10) == 0) {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<uint32_t>(out, 0x4) = 0;
+        return out;
+    }
+
+    void* inner = lift_field<void*>(self, 0x14);
+    void* lock = static_cast<uint8_t*>(inner) + 0x20;
+
+    ext_0065C640(lock);
+    uint32_t value0 = lift_field<uint32_t>(inner, 0x18);
+    uint32_t value1 = lift_field<uint32_t>(inner, 0x1c);
+    lift_field<uint32_t>(out, 0x0) = value0;
+    lift_field<uint32_t>(out, 0x4) = value1;
+    ext_0065C650(lock);
+
+    return out;
+}
+} // namespace lift_004689B0

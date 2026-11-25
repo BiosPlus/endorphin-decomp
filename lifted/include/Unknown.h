@@ -319,6 +319,7 @@ struct Unknown_Fields {
     // +0x10  uint8_t                  field_0x10  (evidence: 0x00468710, 0x00468730, 0x00468770, 0x0046F7D0, 0x006408C0, 0x00642660, 0x00648A20, 0x00688B50, 0x00689570, 0x0068BDF0, 0x0068BE70, 0x006B2590, 0x006B2F70, 0x006C1BB0, 0x006C9A90, 0x00784720, 0x00788E50) // CONFLICT: multiple definitions at +0x10
     // +0x10  void*                    field_0x10  (evidence: 0x00458860, 0x00468730, 0x0046F8F0, 0x005304A0, 0x005304E0, 0x00688B50, 0x00689570, 0x0068BDF0, 0x0068BEA0, 0x006C78B0, 0x007008C0, 0x00700910, 0x00700930, 0x00700950, 0x00715650, 0x00715670, 0x0071B900, 0x0071C390, 0x0071C4D0, 0x0071C4F0, 0x0071C510, 0x0071C540, 0x0071C550, 0x0071C590, 0x0071C5B0, 0x0071C730, 0x0071C8C0, 0x0071C950, 0x0071C980, 0x00725300, 0x007D8470, 0x007DB760) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 field_0x10[16]  (evidence: 0x005E4D90) // CONFLICT: multiple definitions at +0x10
+    // +0x10  uint8_t                  flag  (evidence: 0x004689B0) // CONFLICT: multiple definitions at +0x10
     // +0x10  DWORD                    flags  (evidence: 0x006C1BB0, 0x006C9CE0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 flags  (evidence: 0x006C1BB0, 0x006C9D60, 0x006C9DA0) // CONFLICT: multiple definitions at +0x10
     // +0x10  void*                    forwardTarget  (evidence: 0x004586E0) // CONFLICT: multiple definitions at +0x10
@@ -352,6 +353,7 @@ struct Unknown_Fields {
     // +0x14  uint8_t                  flag  (evidence: 0x006D8FD0) // CONFLICT: multiple definitions at +0x14
     // +0x14  BYTE                     flags14  (evidence: 0x008597B0, 0x00859E50) // CONFLICT: multiple definitions at +0x14
     // +0x14  float field_0x14 (float array base; indexed by idx)  (evidence: 0x006C9E70) // CONFLICT: multiple definitions at +0x14
+    // +0x14  void*                    inner  (evidence: 0x004689B0) // CONFLICT: multiple definitions at +0x14
     // +0x14  std::string field_0x14 (returned address when the +0x4C string equals the literal)  (evidence: 0x00584BD0) // CONFLICT: multiple definitions at +0x14
     // +0x14  void*                    ownedObjectB  (evidence: 0x007892B0) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t field_0x14 (on subobject returned by ext_0071E680, i.e. self+0x40)  (evidence: 0x00711D40) // CONFLICT: multiple definitions at +0x14
