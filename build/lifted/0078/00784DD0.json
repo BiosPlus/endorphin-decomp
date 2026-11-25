@@ -1,0 +1,14 @@
+{
+  "va": "0x00784DD0",
+  "size": 48,
+  "orig_symbol": "sub_00784DD0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "SortedArray::findOrDefault",
+  "class": "SortedArray",
+  "signature": "uint32_t fn_00784DD0(void* self, uint32_t key1, uint32_t key2, uint32_t fallback)",
+  "summary": "Looks up arg2, then arg3 in the sorted array at arg1; returns the first non-zero result, else arg4.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:55:31Z"
+}

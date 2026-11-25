@@ -1283,3 +1283,24 @@ extern uint32_t __thiscall fn_00782E70(void* self, uint32_t key, int32_t* outInd
 }
 } // namespace lift_007846D0
 } // namespace lift_00782E70
+
+// [0x00784DD0]
+namespace lift_00784DD0 {
+// @name SortedArray::findOrDefault
+// @class SortedArray
+// @summary Looks up arg2, then arg3 in the sorted array at arg1; returns the first non-zero result, else arg4.
+// Accesses no fields directly; the callee ext_00782E70 (SortedArray::findValue) does the lookups.
+
+extern uint32_t ext_00782E70(void* self, uint32_t key, int32_t* outIndex);
+
+uint32_t fn_00784DD0(void* self, uint32_t key1, uint32_t key2, uint32_t fallback) {
+    uint32_t result = ext_00782E70(self, key1, nullptr);
+    if (result != 0) {
+        result = ext_00782E70(reinterpret_cast<void*>(result), key2, nullptr);
+        if (result != 0) {
+            return result;
+        }
+    }
+    return fallback;
+}
+} // namespace lift_00784DD0

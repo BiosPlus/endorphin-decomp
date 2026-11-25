@@ -57831,6 +57831,13 @@
     "summary": "Calls sub_00784830 and tail-calls sub_00784840.",
     "lifted_path": "lifted/clones/auto_clones_780000.cpp"
   },
+  "0x00784DD0": {
+    "name": "SortedArray::findOrDefault",
+    "class": "SortedArray",
+    "signature": "uint32_t fn_00784DD0(void* self, uint32_t key1, uint32_t key2, uint32_t fallback)",
+    "summary": "Looks up arg2, then arg3 in the sorted array at arg1; returns the first non-zero result, else arg4.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00785410": {
     "name": "sub_00785410",
     "signature": "extern \"C\" void* __fastcall fn_00785410(void* self, int edx_unused, unsigned int flags)",
