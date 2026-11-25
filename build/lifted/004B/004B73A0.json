@@ -1,0 +1,13 @@
+{
+  "va": "0x004B73A0",
+  "size": 109,
+  "orig_symbol": "sub_004B73A0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "getStringAt",
+  "signature": "std::string* fn_004B73A0(std::string* out, uint32_t index)",
+  "summary": "Copy-constructs element `index` of the global string vector into the hidden return buffer `out`, or an empty string if index is out of range.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:59:17Z"
+}

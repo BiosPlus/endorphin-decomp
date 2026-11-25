@@ -1265,3 +1265,30 @@ void* fn_004BBB00(void* self, void* out, void* owner, void* it) {
     return out;
 }
 } // namespace lift_004BBB00
+
+// [0x004B73A0] sub_004B73A0 (109 bytes)
+namespace lift_004B73A0 {
+// Globals: begin/end pointers of a std::vector<std::string> (28-byte elements).
+extern uint8_t* mem_00AE1D18;
+extern uint8_t* mem_00AE1D1C;
+
+// @name getStringAt
+// @summary Copy-constructs element `index` of the global string vector into the hidden return buffer `out`, or an empty string if index is out of range.
+// Returns `out` (as the original did via eax).
+std::string* fn_004B73A0(std::string* out, uint32_t index) {
+    uint8_t* begin = mem_00AE1D18;
+    uint8_t* end   = mem_00AE1D1C;
+
+    if (begin != nullptr) {
+        // Element count = byte span / sizeof(std::string) as laid out by MSVC 2005 (28 bytes).
+        ptrdiff_t span  = end - begin;
+        int32_t   count = static_cast<int32_t>(span / 28);
+        if (index < static_cast<uint32_t>(count)) {
+            uint8_t* elem = begin + static_cast<size_t>(index) * 28;
+            return new (out) std::string(*reinterpret_cast<const std::string*>(elem));
+        }
+    }
+
+    return new (out) std::string();
+}
+} // namespace lift_004B73A0
