@@ -7473,6 +7473,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00419E20 (FolderDialog::vfunc_79).",
     "lifted_path": "lifted/Commands/BufferTransformsCommand.cpp"
   },
+  "0x00481700": {
+    "name": "CopyBackwardBlocks64",
+    "signature": "void* fn_00481700(void* first, void* last, void* d_last)",
+    "summary": "Copy-backward [first, last) in 64-byte (16-dword) blocks to a destination ending at d_last; returns d_last minus the 64-byte-rounded span length.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00481770": {
     "name": "fillStructArray64",
     "signature": "void sub_00481770(uint32_t dst, uint32_t count, uint32_t src)",

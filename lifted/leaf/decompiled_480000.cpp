@@ -688,3 +688,35 @@ void fn_0048C960(void* self) {
     ext_00519CE0(static_cast<uint8_t*>(self) + 0x04);
 }
 } // namespace lift_0048C960
+
+// [0x00481700] sub_00481700 (62 bytes)
+namespace lift_00481700 {
+// @name CopyBackwardBlocks64
+// @summary Copy-backward [first, last) in 64-byte (16-dword) blocks to a destination ending at d_last; returns d_last minus the 64-byte-rounded span length.
+void* fn_00481700(void* first, void* last, void* d_last) {
+    const intptr_t a = reinterpret_cast<intptr_t>(first);
+    const intptr_t b = reinterpret_cast<intptr_t>(last);
+    const intptr_t c = reinterpret_cast<intptr_t>(d_last);
+
+    // sar 6 / shl 6: round the signed span (b - a) down to a multiple of 64.
+    const intptr_t rounded = ((b - a) >> 6) * 64;
+    const intptr_t result = c - rounded;
+    if (a == b) {
+        return reinterpret_cast<void*>(result);
+    }
+
+    const intptr_t delta = c - b;
+    intptr_t cur = b;
+    do {
+        cur -= 64;
+        const uint8_t* src = reinterpret_cast<const uint8_t*>(cur);
+        uint8_t* dst = reinterpret_cast<uint8_t*>(cur + delta);
+        // Forward dword-by-dword copy (rep movsd, ecx = 16).
+        for (int i = 0; i < 16; ++i) {
+            std::memcpy(dst + i * 4, src + i * 4, 4);
+        }
+    } while (cur != a);
+
+    return reinterpret_cast<void*>(result);
+}
+} // namespace lift_00481700

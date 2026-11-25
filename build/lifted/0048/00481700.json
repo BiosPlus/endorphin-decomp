@@ -1,0 +1,13 @@
+{
+  "va": "0x00481700",
+  "size": 62,
+  "orig_symbol": "sub_00481700",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "CopyBackwardBlocks64",
+  "signature": "void* fn_00481700(void* first, void* last, void* d_last)",
+  "summary": "Copy-backward [first, last) in 64-byte (16-dword) blocks to a destination ending at d_last; returns d_last minus the 64-byte-rounded span length.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:59:19Z"
+}
