@@ -24230,6 +24230,13 @@
     "summary": "If this+0x164 is nonzero, forwards to ext_005B6B60; otherwise lazily zeroes a static float4 at mem_00AE558C on first call and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
+  "0x005C39B0": {
+    "name": "Unknown::getZeroVec4Ptr",
+    "class": "Unknown",
+    "signature": "void* fn_005C39B0(void* self)",
+    "summary": "If this+0x164 is non-null, forwards to ext_005B6BF0 with that pointer as self; otherwise lazily zeroes a static 4-float block (guarded by bit 0 of mem_00AE5598) and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005C3AB0": {
     "name": "NMData::CollisionModelData::vfunc_36",
     "class": "NMData::CollisionModelData",

@@ -280,3 +280,36 @@ float* fn_005C38F0(void* self) {
     return reinterpret_cast<float*>(&mem_00AE558C);
 }
 } // namespace lift_005C38F0
+
+// [0x005C39B0]
+namespace lift_005C39B0 {
+// @name Unknown::getZeroVec4Ptr
+// @class Unknown
+// @summary If this+0x164 is non-null, forwards to ext_005B6BF0 with that pointer as self; otherwise lazily zeroes a static 4-float block (guarded by bit 0 of mem_00AE5598) and returns its address.
+// @field Unknown +0x164 DWORD field_0x164
+
+extern void ext_005B6BF0(void* self);
+
+extern DWORD mem_00AE5598;
+extern float mem_00AE558C;
+extern float mem_00AE5590;
+extern float mem_00AE5594;
+
+void* fn_005C39B0(void* self) {
+    DWORD next = lift_field<DWORD>(self, 0x164);
+    if (next != 0) {
+        ext_005B6BF0(reinterpret_cast<void*>(static_cast<uintptr_t>(next)));
+        // The original tail-jumps; the return value in EAX comes from the callee,
+        // which is recovered as void, so it is not representable here.
+        return nullptr;
+    }
+
+    if ((mem_00AE5598 & 1u) == 0) {
+        mem_00AE5598 |= 1u;
+        mem_00AE558C = 0.0f;
+        mem_00AE5590 = 0.0f;
+        mem_00AE5594 = 0.0f;
+    }
+    return &mem_00AE558C;
+}
+} // namespace lift_005C39B0

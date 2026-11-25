@@ -1,0 +1,22 @@
+{
+  "va": "0x005C39B0",
+  "size": 60,
+  "orig_symbol": "sub_005C39B0",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "Unknown::getZeroVec4Ptr",
+  "class": "Unknown",
+  "signature": "void* fn_005C39B0(void* self)",
+  "summary": "If this+0x164 is non-null, forwards to ext_005B6BF0 with that pointer as self; otherwise lazily zeroes a static 4-float block (guarded by bit 0 of mem_00AE5598) and returns its address.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x164",
+      "type": "DWORD",
+      "name": "field_0x164"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:54:00Z"
+}
