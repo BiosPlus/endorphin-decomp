@@ -24408,6 +24408,13 @@
     "summary": "Returns 1 if the dword at this+0x1DC is \u003e= 1, otherwise 0.",
     "lifted_path": "lifted/ASFData/auto_tiny.cpp"
   },
+  "0x0056B8C0": {
+    "name": "Acclaim2CharacterIO::vfunc_48",
+    "class": "Acclaim2CharacterIO",
+    "signature": "int fn_0056B8C0(void* self)",
+    "summary": "Returns 1 when the float at +0x46C is \u003e= 2.0 (ordered) and the string at +0xAC equals the literal at 0x009590C0; otherwise 0.",
+    "lifted_path": "lifted/classes/Acclaim2CharacterIO.cpp"
+  },
   "0x0056DA30": {
     "name": "BVHIO::vfunc_3",
     "class": "BVHIO",
