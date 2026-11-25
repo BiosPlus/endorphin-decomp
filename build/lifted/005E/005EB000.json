@@ -1,0 +1,13 @@
+{
+  "va": "0x005EB000",
+  "size": 87,
+  "orig_symbol": "sub_005EB000",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "getOrInitStaticObject_005EB000",
+  "signature": "void* fn_005EB000(void)",
+  "summary": "One-time initializer for the static object at mem_00B45F28: sets guard bit 0 of mem_00B45F2C, runs the init callee on the object, writes the vtable pointer 0x009693F4, and returns the object's address. The original SEH frame (fs:[0] push/restore, handler 0x008A64DE) is not reproduced.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:11:18Z"
+}

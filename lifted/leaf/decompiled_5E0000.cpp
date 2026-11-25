@@ -530,3 +530,22 @@ void* fn_005EB060() {
     return reinterpret_cast<void*>(&mem_00B45F30);
 }
 } // namespace lift_005EB060
+
+// [0x005EB000] sub_005EB000 (87 bytes)
+namespace lift_005EB000 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00B45F2C;
+extern int mem_00B45F28;
+
+// @name getOrInitStaticObject_005EB000
+// @summary One-time initializer for the static object at mem_00B45F28: sets guard bit 0 of mem_00B45F2C, runs the init callee on the object, writes the vtable pointer 0x009693F4, and returns the object's address. The original SEH frame (fs:[0] push/restore, handler 0x008A64DE) is not reproduced.
+void* fn_005EB000(void) {
+    if ((mem_00B45F2C & 1) == 0) {
+        mem_00B45F2C |= 1;
+        ext_0067A670(&mem_00B45F28, 0);
+        mem_00B45F28 = 0x009693F4;
+    }
+    return &mem_00B45F28;
+}
+} // namespace lift_005EB000

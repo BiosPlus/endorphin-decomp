@@ -32065,6 +32065,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005EB000": {
+    "name": "getOrInitStaticObject_005EB000",
+    "signature": "void* fn_005EB000(void)",
+    "summary": "One-time initializer for the static object at mem_00B45F28: sets guard bit 0 of mem_00B45F2C, runs the init callee on the object, writes the vtable pointer 0x009693F4, and returns the object's address. The original SEH frame (fs:[0] push/restore, handler 0x008A64DE) is not reproduced.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005EB060": {
     "name": "getOrInitStaticObject_005EB060",
     "signature": "extern \"C\" DWORD mem_00B45F34; // init-guard flags (bit 0 = initialization started) extern \"C\" DWORD mem_00B45F30; // static object storage (first DWORD = vtable pointer) void* fn_005EB060()",
