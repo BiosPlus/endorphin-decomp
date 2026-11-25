@@ -1,0 +1,27 @@
+{
+  "va": "0x00660210",
+  "size": 66,
+  "orig_symbol": "sub_00660210",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "std_vector_28_back",
+  "signature": "uint32_t __fastcall sub_00660210(uint32_t ecx)",
+  "summary": "Returns a pointer to the last 28-byte element in a checked vector, validating bounds via _invalid_parameter_noinfo",
+  "fields": [
+    {
+      "class": "Vector28",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "first"
+    },
+    {
+      "class": "Vector28",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "last"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:18:58Z"
+}

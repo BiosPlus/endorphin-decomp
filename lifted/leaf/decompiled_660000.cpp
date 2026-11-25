@@ -532,3 +532,37 @@ void* fn_00662B20(void* ret, void* path) {
     return ret;
 }
 } // namespace lift_00662B20
+
+// [0x00660210]
+namespace lift_00660210 {
+// @name std_vector_28_back
+// @summary Returns a pointer to the last 28-byte element in a checked vector, validating bounds via _invalid_parameter_noinfo
+// @field Vector28 +0x04 uint32_t first
+// @field Vector28 +0x08 uint32_t last
+
+
+extern uint32_t mem_00925134;
+
+uint32_t __fastcall sub_00660210(uint32_t ecx) {
+    using invalid_param_fn = void (*)();
+    invalid_param_fn invalid_param = reinterpret_cast<invalid_param_fn>(static_cast<uintptr_t>(mem_00925134));
+
+    uint32_t first = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(ecx + 0x04));
+    uint32_t last = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(ecx + 0x08));
+
+    if (first > last) {
+        invalid_param();
+    }
+
+    uint32_t elem = last - 0x1c;
+    if (elem > last || elem < first) {
+        invalid_param();
+    }
+
+    if (elem >= last) {
+        invalid_param();
+    }
+
+    return elem;
+}
+} // namespace lift_00660210
