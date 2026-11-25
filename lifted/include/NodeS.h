@@ -8,7 +8,7 @@
 // Recovered field layout for NodeS:
 namespace lifted_layout {
 struct NodeS_Fields {
-    // +0x334 void*                    elemBegin  (evidence: 0x00599EA0)
-    // +0x338 void*                    elemEnd  (evidence: 0x00599EA0)
+    // +0x334 void*                    elemBegin  (evidence: 0x005963F0, 0x00599EA0)
+    // +0x338 void*                    elemEnd  (evidence: 0x005963F0, 0x00599EA0)
 };
 } // namespace lifted_layout

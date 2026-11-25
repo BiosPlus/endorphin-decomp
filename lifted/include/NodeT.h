@@ -8,6 +8,6 @@
 // Recovered field layout for NodeT:
 namespace lifted_layout {
 struct NodeT_Fields {
-    // +0x22C uint32_t                 value22C  (evidence: 0x00599EA0)
+    // +0x22C uint32_t                 value22C  (evidence: 0x005963F0, 0x00599EA0)
 };
 } // namespace lifted_layout

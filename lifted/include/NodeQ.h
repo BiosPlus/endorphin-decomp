@@ -8,6 +8,6 @@
 // Recovered field layout for NodeQ:
 namespace lifted_layout {
 struct NodeQ_Fields {
-    // +0x0   void*                    nodeR  (evidence: 0x00599EA0)
+    // +0x0   void*                    nodeR  (evidence: 0x005963F0, 0x00599EA0)
 };
 } // namespace lifted_layout

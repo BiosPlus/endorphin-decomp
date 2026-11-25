@@ -8,6 +8,6 @@
 // Recovered field layout for ChildObject:
 namespace lifted_layout {
 struct ChildObject_Fields {
-    // +0x26C uint32_t                 field_0x26C  (evidence: 0x005947B0, 0x0059E060)
+    // +0x26C uint32_t                 field_0x26C  (evidence: 0x005947B0, 0x005963F0, 0x0059E060)
 };
 } // namespace lifted_layout

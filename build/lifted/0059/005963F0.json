@@ -4,11 +4,299 @@
   "orig_symbol": "sub_005963F0",
   "src_path": "src/leaf/decompiled_590000.cpp",
   "lifted_path": "lifted/leaf/decompiled_590000.cpp",
-  "name": "Unknown::SumElementField5A0",
+  "name": "Unknown::releaseHeldObject (descriptive; owner class not identified)",
   "class": "Unknown",
-  "signature": "extern \"C\" uint32_t __fastcall fn_005963F0(void* self, int edx_unused)",
-  "summary": "Walks the pointer vector at this+0x238 (begin +0x23C, end +0x240) and returns the wrapping 32-bit sum of each element's dword at +0x5A0.",
+  "signature": "void fn_00594790(void* self)",
+  "summary": "Reads a pointer at +0x00 of self; if non-null, invokes ext_00675650 with it as the this-pointer, then passes it to ext_006A5C5C as a single cdecl argument.",
   "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "heldPtr"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x5F8",
+      "type": "uint32_t",
+      "name": "field_0x5F8"
+    },
+    {
+      "class": "ChildObject",
+      "offset": "+0x26C",
+      "type": "uint32_t",
+      "name": "field_0x26C"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x26C",
+      "type": "uint32_t",
+      "name": "field_0x26C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38C",
+      "type": "uint32_t",
+      "name": "field_0x38C"
+    },
+    {
+      "class": "AllocAndInitRecord",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "AllocAndInitRecord",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "AllocAndInitRecord",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "AllocAndInitRecord",
+      "offset": "+0x14",
+      "type": "uint8_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "AllocAndInitRecord",
+      "offset": "+0x15",
+      "type": "uint8_t",
+      "name": "field_0x15"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x158",
+      "type": "BYTE field_0x158 (address taken only, passed to ext_00661A90; not dereferenced",
+      "name": "here)"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x61C",
+      "type": "uint32_t result (written with the return value of",
+      "name": "ext_00661A90)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "end"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x160",
+      "type": "void*",
+      "name": "subobject"
+    },
+    {
+      "class": "TreeMap",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownHolder",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownNode",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "UnknownNode",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "UnknownNode",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "UnknownNode",
+      "offset": "+0xAD",
+      "type": "uint8_t",
+      "name": "field_0xAD"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x23C",
+      "type": "void*",
+      "name": "arrayBegin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x240",
+      "type": "void*",
+      "name": "arrayEnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "StringArray",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "child"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint8_t",
+      "name": "field_0x1c[16]"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x458",
+      "type": "std::string",
+      "name": "field_0x458"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x26C",
+      "type": "void*",
+      "name": "nodeP"
+    },
+    {
+      "class": "NodeP",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "nodeQ"
+    },
+    {
+      "class": "NodeP",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "NodeQ",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "nodeR"
+    },
+    {
+      "class": "NodeR",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "nodeS"
+    },
+    {
+      "class": "NodeS",
+      "offset": "+0x334",
+      "type": "void*",
+      "name": "elemBegin"
+    },
+    {
+      "class": "NodeS",
+      "offset": "+0x338",
+      "type": "void*",
+      "name": "elemEnd"
+    },
+    {
+      "class": "NodeT",
+      "offset": "+0x22C",
+      "type": "uint32_t",
+      "name": "value22C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2D0",
+      "type": "DWORD",
+      "name": "field_0x2D0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2D4",
+      "type": "DWORD",
+      "name": "field_0x2D4"
+    },
     {
       "class": "Unknown",
       "offset": "+0x23C",
@@ -30,5 +318,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T03:45:18Z"
+  "lifted_at": "2026-11-25T03:45:23Z"
 }

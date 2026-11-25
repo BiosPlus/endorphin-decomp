@@ -8,7 +8,7 @@
 // Recovered field layout for NodeP:
 namespace lifted_layout {
 struct NodeP_Fields {
-    // +0x1C  void*                    nodeQ  (evidence: 0x00599EA0)
-    // +0x20  uint32_t                 field_0x20  (evidence: 0x00599EA0)
+    // +0x1C  void*                    nodeQ  (evidence: 0x005963F0, 0x00599EA0)
+    // +0x20  uint32_t                 field_0x20  (evidence: 0x005963F0, 0x00599EA0)
 };
 } // namespace lifted_layout

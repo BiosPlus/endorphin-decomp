@@ -8,6 +8,6 @@
 // Recovered field layout for NodeR:
 namespace lifted_layout {
 struct NodeR_Fields {
-    // +0x28  void*                    nodeS  (evidence: 0x00599EA0)
+    // +0x28  void*                    nodeS  (evidence: 0x005963F0, 0x00599EA0)
 };
 } // namespace lifted_layout
