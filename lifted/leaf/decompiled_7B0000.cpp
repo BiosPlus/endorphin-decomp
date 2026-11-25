@@ -1636,3 +1636,43 @@ void __cdecl sub_007B3120(uint32_t* pTablePtr) {
     *pTablePtr = 0;
 }
 } // namespace lift_007B3120
+
+// [0x007BA200]
+namespace lift_007BA200 {
+uint16_t mem_read16(uint32_t addr);
+uint32_t mem_read32(uint32_t addr);
+void mem_write16(uint32_t addr, uint16_t val);
+void mem_write32(uint32_t addr, uint32_t val);
+
+// @name tiff_set_ifd_short_or_long
+// @summary Populates a TIFF IFD entry with a 16-bit or 32-bit value, applying byte-order mask/shift for 16-bit values.
+// @field arg0 +0x150 uint16_t byte_order
+// @field arg0 +0x15c uint32_t* shift_info
+// @field arg0 +0x160 uint32_t* mask_info
+// @field arg2 +0x00 uint16_t tag
+// @field arg2 +0x02 uint16_t type
+// @field arg2 +0x04 uint32_t count
+// @field arg2 +0x08 uint32_t value_or_offset
+void sub_007BA200(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    mem_write16(arg2 + 0x0, static_cast<uint16_t>(arg1));
+    mem_write32(arg2 + 0x4, 1);
+
+    if (arg3 > 0xffffu) {
+        mem_write32(arg2 + 0x8, arg3);
+        mem_write16(arg2 + 0x2, 4);
+        return;
+    }
+
+    mem_write16(arg2 + 0x2, 3);
+    uint32_t mask_ptr = mem_read32(arg0 + 0x160);
+    uint32_t val = mem_read32(mask_ptr + 0xc) & arg3;
+
+    if (mem_read16(arg0 + 0x150) == 0x4d4du) {
+        uint32_t shift_ptr = mem_read32(arg0 + 0x15c);
+        uint32_t shift = mem_read32(shift_ptr + 0xc);
+        val <<= (shift & 0x1fu);
+    }
+
+    mem_write32(arg2 + 0x8, val);
+}
+} // namespace lift_007BA200

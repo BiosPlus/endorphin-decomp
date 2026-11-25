@@ -12,5 +12,8 @@ struct arg0_Fields {
     // +0x4   uint32_t                 field_0x04  (evidence: 0x005C6130, 0x00607850, 0x0066D3B0, 0x0066D430) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (written with mem_00B599BC)  (evidence: 0x00671F30) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* sub (pointer to    sub-object)  (evidence: 0x00810370) // CONFLICT: multiple definitions at +0x4
+    // +0x150 uint16_t                 byte_order  (evidence: 0x007BA200)
+    // +0x15C uint32_t*                shift_info  (evidence: 0x007BA200)
+    // +0x160 uint32_t*                mask_info  (evidence: 0x007BA200)
 };
 } // namespace lifted_layout
