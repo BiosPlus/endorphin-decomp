@@ -682,3 +682,28 @@ extern char* __cdecl fn_0062B8B0(char* first, char* last, char* dest) {
     return out;
 }
 } // namespace lift_0062B8B0
+
+// [0x0062CD30]
+namespace lift_0062CD30 {
+// @name sub_0062CD30_ctor
+// @summary Initializes object vtable to 0x009791a4 and zeroes two 3-dword blocks at +0x08 and +0x2c.
+// @field Object +0x00 uint32_t vtable
+// @field Object +0x08 uint32_t field_0x08
+// @field Object +0x0c uint32_t field_0x0c
+// @field Object +0x10 uint32_t field_0x10
+// @field Object +0x2c uint32_t field_0x2c
+// @field Object +0x30 uint32_t field_0x30
+// @field Object +0x34 uint32_t field_0x34
+
+uint32_t __thiscall sub_0062CD30(uint32_t this_ptr) {
+    auto* self = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(this_ptr));
+    *reinterpret_cast<uint32_t*>(self + 0x08) = 0;
+    *reinterpret_cast<uint32_t*>(self + 0x0c) = 0;
+    *reinterpret_cast<uint32_t*>(self + 0x10) = 0;
+    *reinterpret_cast<uint32_t*>(self + 0x00) = 0x009791a4u;
+    *reinterpret_cast<uint32_t*>(self + 0x2c) = 0;
+    *reinterpret_cast<uint32_t*>(self + 0x30) = 0;
+    *reinterpret_cast<uint32_t*>(self + 0x34) = 0;
+    return this_ptr;
+}
+} // namespace lift_0062CD30
