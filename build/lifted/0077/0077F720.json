@@ -1,0 +1,13 @@
+{
+  "va": "0x0077F720",
+  "size": 36,
+  "orig_symbol": "sub_0077F720",
+  "src_path": "src/clones/auto_clones_770000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_770000.cpp",
+  "name": "initNegatedHugeGlobals_0077F720",
+  "signature": "void fn_0077F720(void)",
+  "summary": "Loads the double pointed to by global mem_00925284 and stores its negation into the three globals mem_00B60748, mem_00B60750 and mem_00B60758.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-25T14:22:03Z"
+}

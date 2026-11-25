@@ -102,3 +102,42 @@ void fn_007747F0() {
     mem_00B605FC = src[1];
 }
 } // namespace lift_007747F0
+
+// [0x0077F720] sub_0077F720 (36 bytes)
+namespace lift_0077F720 {
+// Global holding the address of a double constant (HUGE_VAL-style value in .rdata).
+extern uint32_t mem_00925284;
+// Destination globals (doubles).
+extern double mem_00B60748;
+extern double mem_00B60750;
+extern double mem_00B60758;
+// Other referenced globals from the original stub (type not recovered; not touched by this function).
+extern int mem_00B605B0;
+extern int mem_00B605B4;
+extern int mem_00B605B8;
+extern int mem_00B605BC;
+extern int mem_00B605C0;
+extern int mem_00B605C4;
+extern int mem_00B60730;
+extern int mem_00B60734;
+extern int mem_00B60738;
+extern int mem_00B6073C;
+extern int mem_00B60740;
+extern int mem_00B60744;
+
+// @name initNegatedHugeGlobals_0077F720
+// @summary Loads the double pointed to by global mem_00925284 and stores its negation into the three globals mem_00B60748, mem_00B60750 and mem_00B60758.
+// @field none
+void fn_0077F720(void) {
+    const double* src = reinterpret_cast<const double*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B60748 = -*src; // fld [eax]; fchs; fstp [0xB60748]
+    mem_00B60750 = -*src; // fld [eax]; fchs; fstp [0xB60750]
+    mem_00B60758 = -*src; // fld [eax]; fchs; fstp [0xB60758]
+
+    // Original stub referenced these globals; this function never reads or writes them.
+    // Only the address is taken so the reference is retained without any effect.
+    (void)&mem_00B605B0; (void)&mem_00B605B4; (void)&mem_00B605B8; (void)&mem_00B605BC;
+    (void)&mem_00B605C0; (void)&mem_00B605C4; (void)&mem_00B60730; (void)&mem_00B60734;
+    (void)&mem_00B60738; (void)&mem_00B6073C; (void)&mem_00B60740; (void)&mem_00B60744;
+}
+} // namespace lift_0077F720

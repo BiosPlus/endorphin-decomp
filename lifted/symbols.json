@@ -66548,6 +66548,12 @@
     "summary": "Maps an enum index (0-4) to a static string or descriptor address, defaulting to 0x00AABB78.",
     "lifted_path": "lifted/leaf/decompiled_770000.cpp"
   },
+  "0x0077F720": {
+    "name": "initNegatedHugeGlobals_0077F720",
+    "signature": "void fn_0077F720(void)",
+    "summary": "Loads the double pointed to by global mem_00925284 and stores its negation into the three globals mem_00B60748, mem_00B60750 and mem_00B60758.",
+    "lifted_path": "lifted/clones/auto_clones_770000.cpp"
+  },
   "0x0077F760": {
     "name": "CopyHugeToGlobals_0077F760",
     "signature": "void fn_0077F760(void)",
