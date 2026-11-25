@@ -1,0 +1,14 @@
+{
+  "va": "0x006A7A90",
+  "size": 36,
+  "orig_symbol": "sub_006A7A90",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "sub_006A7A90",
+  "class": "none",
+  "signature": "uint32_t sub_006A7A90()",
+  "summary": "Returns 4 if neither Escape (0x1B) nor Tab (0x09) is currently held down per GetKeyState, else 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:20:53Z"
+}

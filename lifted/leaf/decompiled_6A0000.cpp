@@ -628,3 +628,25 @@ void fn_006AD3C0(void* self) {
     dtor(base + 0x08);
 }
 } // namespace lift_006AD3C0
+
+// [0x006A7A90]
+namespace lift_006A7A90 {
+// @name sub_006A7A90
+// @summary Returns 4 if neither Escape (0x1B) nor Tab (0x09) is currently held down per GetKeyState, else 0.
+// @class none
+
+extern uint32_t mem_009255F4; // IAT slot holding GetKeyState (USER32)
+
+typedef int16_t(__stdcall *GetKeyState_fn)(int vkey);
+
+uint32_t sub_006A7A90() {
+    GetKeyState_fn getKeyState = reinterpret_cast<GetKeyState_fn>(static_cast<uintptr_t>(mem_009255F4));
+    if (getKeyState(0x1B) < 0) {
+        return 0;
+    }
+    if (getKeyState(0x09) < 0) {
+        return 0;
+    }
+    return 4;
+}
+} // namespace lift_006A7A90
