@@ -1,0 +1,34 @@
+{
+  "va": "0x0048CB80",
+  "size": 67,
+  "orig_symbol": "sub_0048CB80",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "UnknownElement::destroyRange",
+  "class": "UnknownElement",
+  "signature": "void fn_0048CB80(uint8_t* first, uint8_t* last)",
+  "summary": "Walks [first, last) in 0x68-byte elements; for each, releases the pointer at +0x34 via ext_006A5C5C when non-null, zeroes +0x34..+0x3C, then destroys the std::string at +0x04 via ext_00519CE0.",
+  "fields": [
+    {
+      "class": "UnknownElement",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "UnknownElement",
+      "offset": "+0x38",
+      "type": "uint32_t",
+      "name": "field_0x38"
+    },
+    {
+      "class": "UnknownElement",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:14:22Z"
+}

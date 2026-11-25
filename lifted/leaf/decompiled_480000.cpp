@@ -815,3 +815,36 @@ std::string* fn_00486880(std::string* out, double value) {
     return out;
 }
 } // namespace lift_00486880
+
+// [0x0048CB80] sub_0048CB80 (67 bytes)
+namespace lift_0048CB80 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* arg);
+// Known callee 0x00519CE0: std::basic_string<char>::~basic_string (vtable-stamping thunk)
+// Takes the object pointer in ecx (thiscall-style); modeled here as a single pointer argument.
+extern void ext_00519CE0(void* self);
+
+// @name UnknownElement::destroyRange
+// @summary Walks [first, last) in 0x68-byte elements; for each, releases the pointer at +0x34 via ext_006A5C5C when non-null, zeroes +0x34..+0x3C, then destroys the std::string at +0x04 via ext_00519CE0.
+// @field UnknownElement +0x34 uint32_t field_0x34
+// @field UnknownElement +0x38 uint32_t field_0x38
+// @field UnknownElement +0x3C uint32_t field_0x3C
+void fn_0048CB80(uint8_t* first, uint8_t* last) {
+    if (first == last) {
+        return;
+    }
+
+    for (uint8_t* elem = first; elem != last; elem += 0x68) {
+        uint32_t ptr = lift_field<uint32_t>(elem, 0x34);
+        if (ptr != 0) {
+            ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(ptr)));
+        }
+
+        lift_field<uint32_t>(elem, 0x34) = 0;
+        lift_field<uint32_t>(elem, 0x38) = 0;
+        lift_field<uint32_t>(elem, 0x3C) = 0;
+
+        ext_00519CE0(elem + 0x04);
+    }
+}
+} // namespace lift_0048CB80

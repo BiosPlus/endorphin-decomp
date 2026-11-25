@@ -8210,6 +8210,13 @@
     "summary": "If field +0x34 is non-null, pass it to MFC80 ord_764; then zero +0x34/+0x38/+0x3C and run the string destructor on the sub-object at +0x04.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x0048CB80": {
+    "name": "UnknownElement::destroyRange",
+    "class": "UnknownElement",
+    "signature": "void fn_0048CB80(uint8_t* first, uint8_t* last)",
+    "summary": "Walks [first, last) in 0x68-byte elements; for each, releases the pointer at +0x34 via ext_006A5C5C when non-null, zeroes +0x34..+0x3C, then destroys the std::string at +0x04 via ext_00519CE0.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048CC30": {
     "name": "sub_0048CC30",
     "signature": "__stdcall std::uint8_t* fn_0048CC30(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2)",
