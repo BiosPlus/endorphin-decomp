@@ -1250,3 +1250,58 @@ void fn_00495AB0(void* self) {
     fn_0065F440(self);
 }
 } // namespace lift_00495AB0
+
+// [0x00492BC0] sub_00492BC0 (108 bytes)
+namespace lift_00492BC0 {
+// MSVCR80 _invalid_parameter_noinfo. The original calls it through the IAT slot at mem_00925134.
+extern void ext_invalid_parameter_noinfo(void);
+
+// @name TreeIterator::operator++
+// @class TreeIterator
+// @summary Advances an MSVC std::_Tree iterator to its in-order successor, or to the header sentinel at end.
+// @field TreeIterator +0x00 void* container
+// @field TreeIterator +0x04 void* node
+// @field TreeNode +0x00 void* left
+// @field TreeNode +0x04 void* parent
+// @field TreeNode +0x08 void* right
+// @field TreeNode +0x21 uint8_t isnil
+void fn_00492BC0(void* self) {
+    if (lift_field<void*>(self, 0x00) == nullptr) {
+        ext_invalid_parameter_noinfo();
+    }
+
+    void* node = lift_field<void*>(self, 0x04);
+    if (lift_field<uint8_t>(node, 0x21) != 0) {
+        ext_invalid_parameter_noinfo();
+        return;
+    }
+
+    void* right = lift_field<void*>(node, 0x08);
+    if (lift_field<uint8_t>(right, 0x21) == 0) {
+        // Has a right subtree: move to its leftmost node.
+        void* cur = right;
+        void* left = lift_field<void*>(cur, 0x00);
+        while (lift_field<uint8_t>(left, 0x21) == 0) {
+            cur = left;
+            left = lift_field<void*>(cur, 0x00);
+        }
+        lift_field<void*>(self, 0x04) = cur;
+        return;
+    }
+
+    // No right subtree: climb until we arrive from a left child.
+    void* parent = lift_field<void*>(node, 0x04);
+    if (lift_field<uint8_t>(parent, 0x21) == 0) {
+        void* child = node;
+        do {
+            if (child != lift_field<void*>(parent, 0x08)) {
+                break;
+            }
+            lift_field<void*>(self, 0x04) = parent;
+            child = parent;
+            parent = lift_field<void*>(parent, 0x04);
+        } while (lift_field<uint8_t>(parent, 0x21) == 0);
+    }
+    lift_field<void*>(self, 0x04) = parent;
+}
+} // namespace lift_00492BC0

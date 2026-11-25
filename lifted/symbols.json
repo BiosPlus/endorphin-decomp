@@ -10347,6 +10347,13 @@
     "summary": "Validates that self-\u003e+0x0 is non-null, then returns the index at self-\u003e+0x4 after checking it is below the uint32 at (self-\u003e+0x0)-\u003e+0x8; calls the CRT invalid-parameter handler on either failure.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x00492BC0": {
+    "name": "TreeIterator::operator++",
+    "class": "TreeIterator",
+    "signature": "void fn_00492BC0(void* self)",
+    "summary": "Advances an MSVC std::_Tree iterator to its in-order successor, or to the header sentinel at end.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00492C60": {
     "name": "AllocRecordFromParts",
     "class": "Record",

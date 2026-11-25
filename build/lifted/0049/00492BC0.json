@@ -1,0 +1,52 @@
+{
+  "va": "0x00492BC0",
+  "size": 108,
+  "orig_symbol": "sub_00492BC0",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "TreeIterator::operator++",
+  "class": "TreeIterator",
+  "signature": "void fn_00492BC0(void* self)",
+  "summary": "Advances an MSVC std::_Tree iterator to its in-order successor, or to the header sentinel at end.",
+  "fields": [
+    {
+      "class": "TreeIterator",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "container"
+    },
+    {
+      "class": "TreeIterator",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "node"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "left"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "parent"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "right"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x21",
+      "type": "uint8_t",
+      "name": "isnil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:57:54Z"
+}
