@@ -1488,3 +1488,24 @@ void* fn_0041C820(void* self) {
     return self;
 }
 } // namespace lift_0041C820
+
+// [0x00410230]
+namespace lift_00410230 {
+// @name sub_00410230_dtor
+// @summary Destructor setting vtable, destroying member at +0x54, and calling base destructor
+// @field Unknown +0x00 uint32_t vftable
+// @field Unknown +0x54 uint32_t member_vftable
+
+
+void mem_write32(uint32_t addr, uint32_t val);
+void ext_006A5EFC(uint32_t self);
+void ext_006A5FF2(uint32_t self);
+
+void fn_00410230(uint32_t self) {
+    mem_write32(self, 0x0092BBCCu);
+    uint32_t member = self + 0x54u;
+    mem_write32(member, 0x0092A23Cu);
+    ext_006A5FF2(member);
+    ext_006A5EFC(self);
+}
+} // namespace lift_00410230

@@ -1,0 +1,27 @@
+{
+  "va": "0x00410230",
+  "size": 88,
+  "orig_symbol": "sub_00410230",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "sub_00410230_dtor",
+  "signature": "void fn_00410230(uint32_t self)",
+  "summary": "Destructor setting vtable, destroying member at +0x54, and calling base destructor",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "uint32_t",
+      "name": "member_vftable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:15:46Z"
+}
