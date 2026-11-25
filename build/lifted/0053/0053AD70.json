@@ -1,0 +1,27 @@
+{
+  "va": "0x0053AD70",
+  "size": 88,
+  "orig_symbol": "sub_0053AD70",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "sub_0053AD70",
+  "signature": "void __thiscall sub_0053AD70(void* self)",
+  "summary": "Updates bitflags at +0x1C based on whether the float at (+0x24)+0x14 is below 1.0 - 1e-5",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x24",
+      "type": "uintptr_t",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:16:37Z"
+}

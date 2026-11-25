@@ -1112,3 +1112,61 @@ void fn_00530C00(void* self, DWORD flags, DWORD arg2, DWORD arg3) {
     slot(target, 0);
 }
 } // namespace lift_00530C00
+
+// [0x0053AD70]
+namespace lift_0053AD70 {
+extern double mem_00A44840;
+
+// @name sub_0053AD70
+// @summary Updates bitflags at +0x1C based on whether the float at (+0x24)+0x14 is below 1.0 - 1e-5
+// @field unknown +0x1c uint32_t field_0x1c
+// @field unknown +0x24 uintptr_t field_0x24
+void __thiscall sub_0053AD70(void* self) {
+    uint32_t ptr = *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x24);
+    if (!ptr) {
+        return;
+    }
+
+    float val = *reinterpret_cast<float*>(static_cast<uintptr_t>(ptr) + 0x14);
+    double threshold = 1.0 - mem_00A44840;
+    uint32_t* flags = reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x1c);
+
+    if (static_cast<double>(val) < threshold) {
+        *flags |= 0x100000u;
+        *flags &= ~0x1u;
+    } else {
+        *flags &= ~0x100000u;
+        *flags |= 0x1u;
+    }
+}
+} // namespace lift_0053AD70
+
+// [0x00539660]
+namespace lift_00539660 {
+// @name QuadricRenderer::ctor
+// @class QuadricRenderer
+// @summary Initializes base object, sets vtable and float parameters, and creates/configures a GLU quadric.
+// @field QuadricRenderer +0x00 void* vtable
+// @field QuadricRenderer +0x14 void* quadric
+
+void __thiscall ext_00532B60(void* self);
+void __fastcall ext_00538D10(void* self, void* edx, float arg1, float arg2, float arg3, uint32_t arg4);
+void* __stdcall ext_0063E000(void);
+void __stdcall ext_0063E00C(void* quadric, uint32_t normals);
+void __stdcall ext_0063E012(void* quadric, uint32_t drawStyle);
+
+extern const float mem_00955260;
+extern const float mem_0093F8EC;
+extern const uint32_t mem_0095509C;
+
+void* __thiscall fn_00539660(void* self) {
+    ext_00532B60(self);
+    *(uint32_t*)self = (uint32_t)(uintptr_t)&mem_0095509C;
+    ext_00538D10(self, nullptr, 1.0f, mem_0093F8EC, mem_00955260, 0xC);
+    void* quadric = ext_0063E000();
+    *(void**)((uint8_t*)self + 0x14) = quadric;
+    ext_0063E012(quadric, 0x186AC);
+    ext_0063E00C(*(void**)((uint8_t*)self + 0x14), 0x186A0);
+    return self;
+}
+} // namespace lift_00539660

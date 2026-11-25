@@ -19724,6 +19724,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00537E70 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/UtilityGraphics/auto_tiny.cpp"
   },
+  "0x00539660": {
+    "name": "QuadricRenderer::ctor",
+    "class": "QuadricRenderer",
+    "signature": "void* __thiscall fn_00539660(void* self)",
+    "summary": "Initializes base object, sets vtable and float parameters, and creates/configures a GLU quadric.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x005396C0": {
     "name": "UtilityGraphics::FancyArrow::vfunc_0",
     "class": "UtilityGraphics::FancyArrow",
@@ -19887,6 +19894,12 @@
     "signature": "void fn_0053AD10(void* self)",
     "summary": "Resets animation state: clears counters, sets flag bits 0x2 and 0x1000 in +0x1C, sets +0x30 to INT_MAX, releases the object at +0x38 via its vtable slot 0 (deleting dtor, arg 1), then marks the DirtyOrCleanBase byte at +0x04 as dirty.",
     "lifted_path": "lifted/Primitives/Animation.cpp"
+  },
+  "0x0053AD70": {
+    "name": "sub_0053AD70",
+    "signature": "void __thiscall sub_0053AD70(void* self)",
+    "summary": "Updates bitflags at +0x1C based on whether the float at (+0x24)+0x14 is below 1.0 - 1e-5",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
   "0x0053ADD0": {
     "name": "Primitives::Animation::vfunc_23",
@@ -21243,6 +21256,13 @@
     "class": "QuadricRenderer",
     "signature": "extern \"C\" void __fastcall fn_005498E0(void* self)",
     "summary": "Destroys two GLU quadrics and delegates to base destructor.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
+  "0x00549980": {
+    "name": "GraphicQuadricObject::GraphicQuadricObject",
+    "class": "GraphicQuadricObject",
+    "signature": "void* fn_00549980(void* self)",
+    "summary": "Initializes a graphic object with vtable 0x956d14, unit scale/color floats, flag 4, and two GLU quadric objects.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
   "0x00549A10": {
