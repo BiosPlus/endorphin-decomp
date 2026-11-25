@@ -1,0 +1,13 @@
+{
+  "va": "0x00811080",
+  "size": 112,
+  "orig_symbol": "sub_00811080",
+  "src_path": "src/leaf/decompiled_810000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_810000.cpp",
+  "name": "StringEqualsIgnoreCaseN",
+  "signature": "int __cdecl fn_00811080(const char* s1, uint32_t max_len, const char* s2)",
+  "summary": "Case-insensitive ASCII string equality check up to max_len characters",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:34:23Z"
+}

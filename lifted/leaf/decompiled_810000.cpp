@@ -347,3 +347,35 @@ void fn_00810660(const char* str) {
                  reinterpret_cast<const uint8_t*>(str));
 }
 } // namespace lift_00810660
+
+// [0x00811080]
+namespace lift_00811080 {
+// @name StringEqualsIgnoreCaseN
+// @summary Case-insensitive ASCII string equality check up to max_len characters
+
+
+extern int ext_008110F0(int c);
+
+int __cdecl fn_00811080(const char* s1, uint32_t max_len, const char* s2) {
+    if (!s1 || !s2) {
+        return 0;
+    }
+
+    uint32_t i = 0;
+    while (*s1 != '\0' && *s2 != '\0' && i <= max_len) {
+        int c1 = ext_008110F0(static_cast<int>(*s1));
+        int c2 = ext_008110F0(static_cast<int>(*s2));
+        if (c1 != c2) {
+            break;
+        }
+        ++s1;
+        ++s2;
+        ++i;
+    }
+
+    if (i == max_len || (*s1 == '\0' && *s2 == '\0')) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_00811080
