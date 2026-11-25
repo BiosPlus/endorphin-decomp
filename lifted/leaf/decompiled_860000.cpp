@@ -514,3 +514,49 @@ void sub_0086F0A0(const uint32_t* src, uint32_t* dst) {
     }
 }
 } // namespace lift_0086F0A0
+
+// [0x0086D210]
+namespace lift_0086D210 {
+extern uint32_t mem_read32(uint32_t);
+extern uint32_t ext_0085C170(uint32_t);
+extern uint32_t ext_0085C130(uint32_t);
+
+// @name computeEncodedSize_0086D210
+// @summary Computes a size or offset from masked field_0x00 and signed field_0x0C via ext_0085C170 and ext_0085C130
+// @field Struct +0x00 uint32_t field_0x00
+// @field Struct +0x0C int32_t field_0x0C
+uint32_t sub_0086D210(uint32_t arg0) {
+    uint32_t val0 = mem_read32(arg0) & 0x0FFFFFFFu;
+    uint32_t acc = ext_0085C170(val0);
+    int32_t valC = static_cast<int32_t>(mem_read32(arg0 + 0x0Cu));
+    if (valC == -1) {
+        return acc + 3u;
+    }
+    acc += ext_0085C130(static_cast<uint32_t>(valC));
+    acc += mem_read32(arg0 + 0x0Cu);
+    return acc;
+}
+} // namespace lift_0086D210
+
+// [0x0086CFB0]
+namespace lift_0086CFB0 {
+extern uint32_t ext_008596E0(uint32_t size);
+extern void mem_write8(uint32_t addr, uint8_t val);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+// @name allocSyncObject
+// @summary Allocates and initializes a 16-byte synchronization/header object.
+uint32_t __cdecl fn_0086CFB0(uint32_t initial_state) {
+    uint32_t obj = ext_008596E0(0x10);
+    if (obj == 0) {
+        return 0;
+    }
+
+    mem_write8(obj + 0x0, 0xFE);
+    mem_write8(obj + 0x1, 0x01);
+    mem_write32(obj + 0x4, 0);
+    mem_write32(obj + 0x8, 0);
+    mem_write32(obj + 0xC, (initial_state == 0) ? 1u : 0u);
+    return obj;
+}
+} // namespace lift_0086CFB0

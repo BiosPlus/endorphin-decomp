@@ -58909,6 +58909,18 @@
     "summary": "Allocates a zero-initialised block of count*size bytes via LocalAlloc(LMEM_ZEROINIT, count*size).",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086CFB0": {
+    "name": "allocSyncObject",
+    "signature": "uint32_t __cdecl fn_0086CFB0(uint32_t initial_state)",
+    "summary": "Allocates and initializes a 16-byte synchronization/header object.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
+  "0x0086D210": {
+    "name": "computeEncodedSize_0086D210",
+    "signature": "uint32_t sub_0086D210(uint32_t arg0)",
+    "summary": "Computes a size or offset from masked field_0x00 and signed field_0x0C via ext_0085C170 and ext_0085C130",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086D600": {
     "name": "CopyQwordField1050To1048",
     "class": "(unknown owner)",

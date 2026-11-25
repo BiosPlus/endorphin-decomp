@@ -1,0 +1,27 @@
+{
+  "va": "0x0086D210",
+  "size": 64,
+  "orig_symbol": "sub_0086D210",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "computeEncodedSize_0086D210",
+  "signature": "uint32_t sub_0086D210(uint32_t arg0)",
+  "summary": "Computes a size or offset from masked field_0x00 and signed field_0x0C via ext_0085C170 and ext_0085C130",
+  "fields": [
+    {
+      "class": "Struct",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Struct",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:12:15Z"
+}
