@@ -1877,3 +1877,60 @@ void fn_004155E0(void* self) {
     ext_00458FE0(self);
 }
 } // namespace lift_004155E0
+
+// [0x0041A190] sub_0041A190 (105 bytes)
+namespace lift_0041A190 {
+// Guest-address helpers. Guest pointers are 32-bit VA values stored in the
+// original image; they are dereferenced through host pointers here.
+static inline uint32_t guest_u32(uint32_t addr, ptrdiff_t off) {
+    return lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(addr)), off);
+}
+
+static inline uint8_t guest_u8(uint32_t addr, ptrdiff_t off) {
+    return lift_field<uint8_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(addr)), off);
+}
+
+// Result pair written through the hidden return pointer (EAX on return).
+struct LowerBoundResult {
+    uint32_t tree;  // the owning container (this)
+    uint32_t node;  // found node, or the header node when not found
+};
+
+// @name Unknown::LowerBoundNode
+// @class Unknown
+// @summary Tree lower_bound on a 32-bit unsigned key: returns {this, node} for the first node whose key is not less than the argument, or {this, header} when none matches.
+// @field Unknown +0x04 uint32_t field_0x04
+// @field TreeNode +0x00 uint32_t left
+// @field TreeNode +0x04 uint32_t parent
+// @field TreeNode +0x08 uint32_t right
+// @field TreeNode +0x0C uint32_t key
+// @field TreeNode +0x15 uint8_t isnil
+LowerBoundResult* fn_0041A190(void* self, LowerBoundResult* out, uint32_t key_addr) {
+    const uint32_t head = lift_field<uint32_t>(self, 0x04);   // header node
+    uint32_t y = head;                                        // candidate (lower bound)
+    uint32_t x = guest_u32(head, 0x04);                       // root (header->_Parent)
+
+    const uint32_t key = guest_u32(key_addr, 0x00);
+
+    // Descend the tree; stop at the nil sentinel (isnil at +0x15).
+    while (guest_u8(x, 0x15) == 0) {
+        if (guest_u32(x, 0x0C) >= key) {
+            y = x;                       // node key not less than key: candidate
+            x = guest_u32(x, 0x00);      // go left
+        } else {
+            x = guest_u32(x, 0x08);      // go right
+        }
+    }
+
+    // No candidate, or key is strictly less than candidate: not found.
+    if (y == head || key < guest_u32(y, 0x0C)) {
+        out->tree = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+        out->node = head;
+    } else {
+        out->tree = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+        out->node = y;
+    }
+
+    return out;
+}
+} // namespace lift_0041A190

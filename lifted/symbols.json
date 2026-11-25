@@ -1812,6 +1812,13 @@
     "summary": "Copies a byte range backward into a destination buffer ending at destEnd using memmove_s.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041A190": {
+    "name": "Unknown::LowerBoundNode",
+    "class": "Unknown",
+    "signature": "static inline uint32_t guest_u32(uint32_t addr, ptrdiff_t off)",
+    "summary": "Tree lower_bound on a 32-bit unsigned key: returns {this, node} for the first node whose key is not less than the argument, or {this, header} when none matches.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041A4F0": {
     "name": "sub_0041A4F0",
     "class": "NMData::RealChannel",
