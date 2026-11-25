@@ -1,0 +1,21 @@
+{
+  "va": "0x006E9C30",
+  "size": 112,
+  "orig_symbol": "sub_006E9C30",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "getElementFieldAtIndex",
+  "signature": "extern \"C\" int32_t __thiscall fn_006E9C30(void* self, int32_t index)",
+  "summary": "Retrieves an object pointer from an array at offset +0x1C by index and returns its int32_t field at +0x0.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x1C",
+      "type": "void**",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T05:09:52Z"
+}
