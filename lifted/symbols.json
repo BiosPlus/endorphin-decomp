@@ -1793,6 +1793,13 @@
     "summary": "Dereferences an object wrapper, forwards virtual call at +0x10, and dynamic_casts the result.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041CB80": {
+    "name": "Unknown::DispatchSubobjectDynamicCast",
+    "class": "Unknown",
+    "signature": "static void* lift_ptr(uint32_t value)",
+    "summary": "Forwards to subobject at +0x10 of the object returned by ext_006AD180, then",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041CBD0": {
     "name": "Unknown::DelegateVfunc5ToField4",
     "class": "Unknown",

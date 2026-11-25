@@ -1252,3 +1252,47 @@ extern HMODULE fn_0041FD20(void* self) {
     return module;
 }
 } // namespace lift_0041FD20
+
+// [0x0041CB80] sub_0041CB80 (72 bytes)
+namespace lift_0041CB80 {
+extern uint32_t ext_006AD180(void* self);
+extern void ext_006616C0(void* self);
+extern void* ext_006A6E9E(void* pVoid, int32_t offset, const void* src, const void* dst, int32_t isReference);
+extern int32_t ext_00465B30(void);
+extern void ext_00469080(void* self);
+extern void ext_00469020(void* self);
+extern int mem_00A2EFEC;
+extern int mem_00A2E2D8;
+
+static void* lift_ptr(uint32_t value) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(value));
+}
+
+// @name Unknown::DispatchSubobjectDynamicCast
+// @class Unknown
+// @summary Forwards to subobject at +0x10 of the object returned by ext_006AD180, then
+//          dynamic-casts the returned pointer and, on success, calls the two helpers.
+// @field Unknown +0x04 void* field_0x04 (read indirectly via ext_006AD180, not directly here)
+void fn_0041CB80(void* self) {
+    const uint32_t inner = ext_006AD180(self);
+    ext_006616C0(lift_ptr(inner + 0x10));
+
+    // Assumes eax still holds `inner` after the void call above; the original reads eax
+    // as the dynamic-cast source. Flagged for verification.
+    void* casted = ext_006A6E9E(lift_ptr(inner), 0,
+                                reinterpret_cast<const void*>(&mem_00A2E2D8),
+                                reinterpret_cast<const void*>(&mem_00A2EFEC),
+                                0);
+    if (casted == nullptr) {
+        return;
+    }
+
+    // Original pushes eax before the first call to ext_00465B30, which is declared
+    // with no parameters; that stray push is not modelled here.
+    const int32_t first = ext_00465B30();
+    ext_00469080(lift_ptr(static_cast<uint32_t>(first)));
+
+    const int32_t second = ext_00465B30();
+    ext_00469020(lift_ptr(static_cast<uint32_t>(second)));
+}
+} // namespace lift_0041CB80
