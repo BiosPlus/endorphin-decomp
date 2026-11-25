@@ -1,0 +1,13 @@
+{
+  "va": "0x004D26F0",
+  "size": 30,
+  "orig_symbol": "sub_004D26F0",
+  "src_path": "src/leaf/decompiled_4D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4D0000.cpp",
+  "name": "storeValueAndStaticObjectAddr",
+  "signature": "void fn_004D26F0(uint32_t* dst, uint32_t value)",
+  "summary": "Stores a 32-bit value at dst[0] and the address of the one-time static object (from ext_004D2590) at dst[1].",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:34:07Z"
+}

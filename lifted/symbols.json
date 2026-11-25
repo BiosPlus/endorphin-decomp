@@ -14890,6 +14890,12 @@
     "summary": "One-time initializer guarded by bit 0 of mem_00AE55C8; initializes mem_00AE55C4 and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
   },
+  "0x004D26F0": {
+    "name": "storeValueAndStaticObjectAddr",
+    "signature": "void fn_004D26F0(uint32_t* dst, uint32_t value)",
+    "summary": "Stores a 32-bit value at dst[0] and the address of the one-time static object (from ext_004D2590) at dst[1].",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
+  },
   "0x004D2C70": {
     "name": "sub_004D2C70",
     "class": "Unknown",

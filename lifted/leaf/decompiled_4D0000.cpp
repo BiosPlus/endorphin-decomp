@@ -268,3 +268,17 @@ void* fn_004D2650() {
     return &mem_00AE55C4;
 }
 } // namespace lift_004D2650
+
+// [0x004D26F0] sub_004D26F0 (30 bytes)
+namespace lift_004D26F0 {
+// Known callee 0x004D2590: initStaticObjectOnce_004D2590 (One-time initializer for the static object at mem_00AE55B4; returns its address.)
+extern void* ext_004D2590();
+
+// @name storeValueAndStaticObjectAddr
+// @summary Stores a 32-bit value at dst[0] and the address of the one-time static object (from ext_004D2590) at dst[1].
+void fn_004D26F0(uint32_t* dst, uint32_t value) {
+    void* obj = ext_004D2590();
+    dst[0] = value;
+    dst[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_004D26F0
