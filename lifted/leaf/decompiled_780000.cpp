@@ -1198,3 +1198,26 @@ bool __thiscall fn_007856A0(void* self, const uint32_t* items, int32_t count) {
     return true;
 }
 } // namespace lift_007856A0
+
+// [0x007857A0] sub_007857A0 (80 bytes)
+namespace lift_007857A0 {
+// @name callVirtualSlot4OverArray
+// @summary Walks a uint32 array and calls virtual slot 4 on this for each element, alternating which return values are kept; returns the final flag (initially true).
+// @field Unknown +0x00 void** vtable
+using VirtualSlot4Fn = uint8_t (*)(void* self, uint32_t value);
+
+uint8_t fn_007857A0(void* self, const uint32_t* values, int32_t count) {
+    uint8_t flag = 1;
+    void** vtable = *reinterpret_cast<void***>(self);
+    for (int32_t i = 0; i < count; ++i) {
+        const uint32_t value = values[i];
+        auto slot4 = reinterpret_cast<VirtualSlot4Fn>(vtable[4]);
+        if (flag != 0) {
+            slot4(self, value);
+        } else {
+            flag = slot4(self, value);
+        }
+    }
+    return flag;
+}
+} // namespace lift_007857A0

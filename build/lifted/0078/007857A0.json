@@ -1,0 +1,21 @@
+{
+  "va": "0x007857A0",
+  "size": 80,
+  "orig_symbol": "sub_007857A0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "callVirtualSlot4OverArray",
+  "signature": "uint8_t fn_007857A0(void* self, const uint32_t* values, int32_t count)",
+  "summary": "Walks a uint32 array and calls virtual slot 4 on this for each element, alternating which return values are kept; returns the final flag (initially true).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:53:57Z"
+}
