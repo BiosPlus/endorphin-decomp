@@ -640,3 +640,31 @@ DWORD fn_007AEE00(void* self, const void* src, DWORD count) {
     return n;
 }
 } // namespace lift_007AEE00
+
+// [0x007AE020] sub_007AE020 (77 bytes)
+namespace lift_007AE020 {
+// @name Unknown::ReleaseSlotPointers_007AE020
+// @class Unknown
+// @summary For each of 7 slots whose flag byte is nonzero and whose pointer is non-null, clears the slot and calls virtual slot 1 (arg 0) on the object; then frees both slot and flag arrays.
+// @field Unknown +0x00 void** field_0x00
+// @field Unknown +0x04 uint8_t* field_0x04
+void fn_007AE020(void* self) {
+    void** slots = lift_field<void**>(self, 0x00);
+    if (slots == nullptr) {
+        return;
+    }
+    uint8_t* flags = lift_field<uint8_t*>(self, 0x04);
+
+    for (int i = 0; i < 7; ++i) {
+        void* obj = slots[i];
+        if (flags[i] != 0 && obj != nullptr) {
+            slots[i] = nullptr;
+            void** vtbl = *reinterpret_cast<void***>(obj);
+            reinterpret_cast<void (*)(void*, int)>(vtbl[1])(obj, 0);
+        }
+    }
+
+    std::free(slots);
+    std::free(flags);
+}
+} // namespace lift_007AE020

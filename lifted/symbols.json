@@ -58252,6 +58252,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006EA820 (sub_006EA820_initGlobalTriple).",
     "lifted_path": "lifted/clones/auto_clones_7A0000.cpp"
   },
+  "0x007AE020": {
+    "name": "Unknown::ReleaseSlotPointers_007AE020",
+    "class": "Unknown",
+    "signature": "void fn_007AE020(void* self)",
+    "summary": "For each of 7 slots whose flag byte is nonzero and whose pointer is non-null, clears the slot and calls virtual slot 1 (arg 0) on the object; then frees both slot and flag arrays.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AE070": {
     "name": "sub_007AE070",
     "signature": "void fn_007AE070(void)",
