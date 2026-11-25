@@ -8129,6 +8129,12 @@
     "summary": "Returns true if the range pointer at +0x04 is null, or the byte span [+0x04, +0x08) has fewer than one 4-byte element (signed (end - begin) \u003e\u003e 2 == 0).",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00480310": {
+    "name": "allocArray16ByteElements_00480310",
+    "signature": "void* fn_00480310(uint32_t count)",
+    "summary": "Allocates count*16 bytes via ext_006A5C62; throws if count*16 would overflow 32 bits.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x004803F0": {
     "name": "Matrix4x4::SetIdentity",
     "class": "Matrix4x4",

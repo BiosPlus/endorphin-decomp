@@ -1335,3 +1335,21 @@ void* fn_00486EA0(uint32_t count) {
     return alloc(static_cast<size_t>(count) * 0x68u);
 }
 } // namespace lift_00486EA0
+
+// [0x00480310] sub_00480310 (87 bytes)
+namespace lift_00480310 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Used as an allocator: takes a byte count (cdecl), returns a pointer.
+extern void* ext_006A5C62(uint32_t byteCount);
+
+// @name allocArray16ByteElements_00480310
+// @summary Allocates count*16 bytes via ext_006A5C62; throws if count*16 would overflow 32 bits.
+void* fn_00480310(uint32_t count) {
+    // Overflow guard: count * 16 must fit in 32 bits, i.e. count <= 0x0FFFFFFF.
+    // (Original computes 0xFFFFFFFF / count and compares against 0x10.)
+    if (count > 0x0FFFFFFFu) {
+        throw std::length_error("allocation size overflow");
+    }
+    return ext_006A5C62(count << 4);
+}
+} // namespace lift_00480310
