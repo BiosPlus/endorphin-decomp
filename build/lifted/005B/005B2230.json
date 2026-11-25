@@ -1,0 +1,22 @@
+{
+  "va": "0x005B2230",
+  "size": 48,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam0(void) const, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cGeometry, float, getParam0, 0\u003e::vfunc_5",
+  "class": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam0(void) const, 0\u003e",
+  "signature": "[[noreturn]] void fn_005B2230(void* self)",
+  "summary": "Reads Geometry::getParam0 via the holder's target pointer; always throws (float value if target is set, default exception otherwise).",
+  "fields": [
+    {
+      "class": "Geometry",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:09:39Z"
+}

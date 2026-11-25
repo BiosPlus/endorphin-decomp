@@ -47219,3 +47219,33 @@ void fn_004B8010(void* self) {
     ext_006A6DD2(exception_storage, mem_009DEC1C);
 }
 } // namespace lift_004B8010
+
+// [0x005B2230] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, 0>::vfunc_5 (48 bytes)
+namespace lift_005B2230 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller passes one float (the Geometry param0 value) in its outgoing argument slot.
+extern void ext_0046C4E0(float param0);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Caller passes (exception object pointer, throw-info pointer 0x009DEC1C).
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<Geometry, float, getParam0, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, 0>
+// @summary Reads Geometry::getParam0 via the holder's target pointer; always throws (float value if target is set, default exception otherwise).
+// @field ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, 0> +0x00 void* field_0x00
+// @field Geometry +0x10 float field_0x10
+[[noreturn]] void fn_005B2230(void* self) {
+    // self points at a holder whose first dword is the Geometry target pointer.
+    void* target = *static_cast<void**>(self);
+    if (target != nullptr) {
+        float param0 = *reinterpret_cast<float*>(static_cast<unsigned char*>(target) + 0x10);
+        ext_0046C4E0(param0);
+    }
+    void* exc = nullptr;
+    ext_0046C3C0(&exc);
+    ext_006A6DD2(&exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+    std::abort();
+}
+} // namespace lift_005B2230
