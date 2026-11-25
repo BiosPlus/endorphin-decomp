@@ -32279,6 +32279,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00404D50 (ElementCountFromRange).",
     "lifted_path": "lifted/leaf/tiny_620000.cpp"
   },
+  "0x00621090": {
+    "name": "Unknown::CopyRecordsBackward_00621090",
+    "class": "Unknown",
+    "signature": "void* fn_00621090(void* first, void* last, void* dst_last)",
+    "summary": "Backward-copies records [first, last) into the block ending at dst_last (0x48-byte records); returns the new begin.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x006210E0": {
     "name": "fillStruct0x48Range",
     "signature": "void __cdecl sub_006210E0(uint32_t begin, uint32_t end, uint32_t src)",

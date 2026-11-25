@@ -1189,3 +1189,40 @@ uint32_t fn_00622FE0(uint32_t begin, uint32_t end, uint32_t value) {
 }
 } // namespace lift_0054F290
 } // namespace lift_00622FE0
+
+// [0x00621090] sub_00621090 (76 bytes)
+namespace lift_00621090 {
+// MSVCP80 basic_string<char>::operator=(const basic_string&), reached through the IAT slot at mem_00924FDC.
+extern void* ext_string_assign(void* dst, const void* src);
+
+// @name Unknown::CopyRecordsBackward_00621090
+// @class Unknown
+// @summary Backward-copies records [first, last) into the block ending at dst_last (0x48-byte records); returns the new begin.
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1C std::string field_0x1c
+// @field Unknown +0x38 double field_0x38
+// @field Unknown +0x40 double field_0x40
+void* fn_00621090(void* first, void* last, void* dst_last) {
+    constexpr ptrdiff_t kRecordSize = 0x48;
+
+    uint8_t* const begin = static_cast<uint8_t*>(first);
+    uint8_t* src = static_cast<uint8_t*>(last);
+    uint8_t* dst = static_cast<uint8_t*>(dst_last);
+
+    if (begin == src) {
+        return dst;
+    }
+
+    do {
+        src -= kRecordSize;
+        dst -= kRecordSize;
+
+        ext_string_assign(dst, src);
+        ext_string_assign(dst + 0x1C, src + 0x1C);
+        lift_field<double>(dst, 0x38) = lift_field<double>(src, 0x38);
+        lift_field<double>(dst, 0x40) = lift_field<double>(src, 0x40);
+    } while (src != begin);
+
+    return dst;
+}
+} // namespace lift_00621090
