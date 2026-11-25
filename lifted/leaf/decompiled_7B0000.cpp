@@ -620,3 +620,18 @@ uint32_t fn_007B04C0(uint32_t* out, uint32_t size, uint32_t arg3) {
     return handle;
 }
 } // namespace lift_007B04C0
+
+// [0x007B79F0] sub_007B79F0 (64 bytes)
+namespace lift_007B79F0 {
+extern void ext_007B7720(int ch);
+
+// @name EmitStringBytes
+// @summary Passes each byte of a NUL-terminated string to ext_007B7720, then passes a terminating 0.
+void fn_007B79F0(const char* str) {
+    const size_t len = std::strlen(str);
+    for (size_t i = 0; i < len; ++i) {
+        ext_007B7720(static_cast<unsigned char>(str[i]));
+    }
+    ext_007B7720(0);
+}
+} // namespace lift_007B79F0

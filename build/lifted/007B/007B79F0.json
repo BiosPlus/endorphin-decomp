@@ -1,0 +1,13 @@
+{
+  "va": "0x007B79F0",
+  "size": 64,
+  "orig_symbol": "sub_007B79F0",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "EmitStringBytes",
+  "signature": "void fn_007B79F0(const char* str)",
+  "summary": "Passes each byte of a NUL-terminated string to ext_007B7720, then passes a terminating 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:09:43Z"
+}

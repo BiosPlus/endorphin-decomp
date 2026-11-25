@@ -55949,6 +55949,12 @@
     "summary": "Fills count bytes of buf with values from ext_007B7750, stopping early when mem_00B61218 is set and mem_00B61219 is clear.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B79F0": {
+    "name": "EmitStringBytes",
+    "signature": "void fn_007B79F0(const char* str)",
+    "summary": "Passes each byte of a NUL-terminated string to ext_007B7720, then passes a terminating 0.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B8A48": {
     "name": "dataTable_007B8A48",
     "class": "none",
