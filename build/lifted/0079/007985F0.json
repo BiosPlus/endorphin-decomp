@@ -1,0 +1,34 @@
+{
+  "va": "0x007985F0",
+  "size": 81,
+  "orig_symbol": "sub_007985F0",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "DispatchByBit10Mismatch",
+  "class": "Unknown",
+  "signature": "uint32_t fn_007985F0(void* self, uint32_t flag)",
+  "summary": "If field +0x08 == 1, forward the first field with tag 0x00AAFA10 and return 0; otherwise return 1 when bit 10 of +0x0C equals the flag, else forward the first field with a tag chosen from the flag and return 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:00:51Z"
+}

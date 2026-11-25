@@ -642,3 +642,38 @@ uint8_t __stdcall fn_0079DB30(void* self, const uint32_t* values) {
 }
 } // namespace lift_0079DB50
 } // namespace lift_0079DB30
+
+// [0x007985F0] sub_007985F0 (81 bytes)
+namespace lift_007985F0 {
+// Known callee 0x0079B140: DispatchThreeArgsToOptionalHook (If the global hook pointer mem_00AAFC2C is non-null, call it with (a1, a2, &a3); otherwise do nothing.)
+// Caller pushes exactly two arguments (a1, a2), so the stub is declared with those.
+extern void ext_0079B140(uint32_t a1, uint32_t a2);
+
+// Global string/tag constants referenced by this function.
+// Their contents are not recovered, so they are kept as raw addresses.
+static constexpr uint32_t kTagFlagSet   = 0x00AAFA10u; // pushed when field +0x08 == 1
+static constexpr uint32_t kTagFlagZero  = 0x00AAF9B8u; // selected when bit10 mismatch and flag == 0
+static constexpr uint32_t kTagFlagNonZero = 0x00AAF9E4u; // selected when bit10 mismatch and flag != 0
+
+// @name DispatchByBit10Mismatch
+// @class Unknown
+// @summary If field +0x08 == 1, forward the first field with tag 0x00AAFA10 and return 0; otherwise return 1 when bit 10 of +0x0C equals the flag, else forward the first field with a tag chosen from the flag and return 0.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+uint32_t fn_007985F0(void* self, uint32_t flag) {
+    if (lift_field<uint32_t>(self, 0x08) == 1u) {
+        ext_0079B140(lift_field<uint32_t>(self, 0x00), kTagFlagSet);
+        return 0u;
+    }
+
+    const uint32_t bit10 = (lift_field<uint32_t>(self, 0x0C) >> 10) & 1u;
+    if ((bit10 ^ flag) == 0u) {
+        return 1u;
+    }
+
+    const uint32_t tag = (flag != 0u) ? kTagFlagNonZero : kTagFlagZero;
+    ext_0079B140(lift_field<uint32_t>(self, 0x00), tag);
+    return 0u;
+}
+} // namespace lift_007985F0
