@@ -67137,6 +67137,12 @@
     "summary": "IAT jump thunk forwarding to MSVCR80!malloc.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x007C8D80": {
+    "name": "AllocZeroed",
+    "signature": "void* fn_007C8D80(size_t n)",
+    "summary": "Returns a zero-initialised block of n bytes via calloc(1, n); caller pops the argument.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C8DA0": {
     "name": "thunk_MSVCR80_free",
     "signature": "extern \"C\" void fn_007C8DA0(void)",

@@ -1378,3 +1378,14 @@ uint8_t fn_007C6F20(void* self) {
     return *p;
 }
 } // namespace lift_007C6F20
+
+// [0x007C8D80] sub_007C8D80 (17 bytes)
+namespace lift_007C8D80 {
+extern void* (__cdecl* mem_0092522C)(size_t num, size_t size);
+
+// @name AllocZeroed
+// @summary Returns a zero-initialised block of n bytes via calloc(1, n); caller pops the argument.
+void* fn_007C8D80(size_t n) {
+    return mem_0092522C(1, n);
+}
+} // namespace lift_007C8D80

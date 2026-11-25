@@ -1,0 +1,13 @@
+{
+  "va": "0x007C8D80",
+  "size": 17,
+  "orig_symbol": "sub_007C8D80",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "AllocZeroed",
+  "signature": "void* fn_007C8D80(size_t n)",
+  "summary": "Returns a zero-initialised block of n bytes via calloc(1, n); caller pops the argument.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:16:06Z"
+}
