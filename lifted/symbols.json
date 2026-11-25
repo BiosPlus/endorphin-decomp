@@ -40869,6 +40869,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x00648640": {
+    "name": "Unknown::ContainsDword",
+    "class": "Unknown",
+    "signature": "extern \"C\" bool __thiscall fn_00648640(void* self, DWORD value)",
+    "summary": "Linear search of a guest DWORD range [field_0x4c, field_0x50) for a value; returns true if found before the end.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00648800": {
     "name": "Unknown::fn_00648800 (range-erase helper; descriptive name pending class identification)",
     "class": "Unknown",

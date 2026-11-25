@@ -1964,3 +1964,37 @@ uint32_t fn_0064B7E0(uint32_t first, uint32_t last, uint32_t result) {
     return result - static_cast<uint32_t>(q) * 24u;
 }
 } // namespace lift_0064B7E0
+
+// [0x00648640] sub_00648640 (102 bytes)
+namespace lift_00648640 {
+extern int mem_00925134;
+extern uint32_t mem_read32(uint32_t addr);
+extern void __cdecl ext_invalid_parameter_noinfo(void);
+
+// @name Unknown::ContainsDword
+// @class Unknown
+// @summary Linear search of a guest DWORD range [field_0x4c, field_0x50) for a value; returns true if found before the end.
+// @field Unknown +0x4c DWORD field_0x4c
+// @field Unknown +0x50 DWORD field_0x50
+extern bool __thiscall fn_00648640(void* self, DWORD value) {
+    const uint32_t base = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    const uint32_t first = mem_read32(base + 0x4c);
+    const uint32_t last = mem_read32(base + 0x50);
+
+    // Range sanity checks (original: first <= last, invalid-parameter otherwise).
+    if (first > last) {
+        ext_invalid_parameter_noinfo();
+    }
+
+    uint32_t cur = first;
+    while (cur != last) {
+        if (mem_read32(cur) == value) {
+            break;
+        }
+        cur += 4;
+    }
+
+    // Original re-checks first <= last after the scan; the range is unchanged, so the result is identical.
+    return cur != last;
+}
+} // namespace lift_00648640
