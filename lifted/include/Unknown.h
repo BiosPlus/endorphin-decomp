@@ -309,6 +309,7 @@ struct Unknown_Fields {
     // +0x1A  uint8_t                  field_0x1A  (evidence: 0x00553A10) // CONFLICT: multiple definitions at +0x1A
     // +0x1A  uint8_t                  field_0x1a  (evidence: 0x00553980) // CONFLICT: multiple definitions at +0x1A
     // +0x1C  int16_t field_0x1C (int16 array; element idx at +0x18+2*idx for idx >= 2)  (evidence: 0x006C9DC0) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  void*                    criticalSection  (evidence: 0x006F9E90) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  float                    field_0x1C  (evidence: 0x004B10D0, 0x004B1100, 0x004B1130, 0x004B6CC0, 0x004B6CF0, 0x004B6FF0, 0x004CCC30, 0x005ACC50, 0x005ACEE0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  std::string              field_0x1C  (evidence: 0x00698200, 0x00699360, 0x0069B5A0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 field_0x1C  (evidence: 0x00503CA0, 0x00599E70, 0x00621B30, 0x006E0050) // CONFLICT: multiple definitions at +0x1C
@@ -340,6 +341,7 @@ struct Unknown_Fields {
     // +0x20  HDC                      hdc  (evidence: 0x004275C0, 0x0042EA50) // CONFLICT: multiple definitions at +0x20
     // +0x20  DWORD                    hwnd  (evidence: 0x0044BF00) // CONFLICT: multiple definitions at +0x20
     // +0x20  HWND                     hwnd  (evidence: 0x00404770, 0x00414880, 0x0041FF10, 0x006B2F70, 0x006B53D0) // CONFLICT: multiple definitions at +0x20
+    // +0x20  uint8_t                  initialized  (evidence: 0x006F9E90) // CONFLICT: multiple definitions at +0x20
     // +0x20  HWND                     ownerHwnd  (evidence: 0x004586A0, 0x00458DF0) // CONFLICT: multiple definitions at +0x20
     // +0x20  void* field_0x20 (dispatch table base, via sub-object)  (evidence: 0x007D5B30) // CONFLICT: multiple definitions at +0x20
     // +0x21  uint8_t                  field_0x21  (evidence: 0x00492CC0, 0x00503CA0)

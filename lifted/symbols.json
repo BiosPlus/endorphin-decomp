@@ -49985,6 +49985,13 @@
     "summary": "Stores four stack arguments into this object: two dwords at +0x00/+0x04 and +0x08, then a byte at +0x0C.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006F9E90": {
+    "name": "Unknown::EnsureCriticalSection",
+    "class": "Unknown",
+    "signature": "void fn_006F9E90(void* self)",
+    "summary": "Lazily allocates and initializes a 0x18-byte CRITICAL_SECTION once, then sets the init flag.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F9FD0": {
     "name": "initKPlugGlobals",
     "signature": "void fn_006F9FD0(void* self)",

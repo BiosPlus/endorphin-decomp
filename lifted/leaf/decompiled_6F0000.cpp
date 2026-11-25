@@ -1247,3 +1247,35 @@ uint8_t fn_006F8FB0(void* self, int32_t index, void* dst) {
     return 1;
 }
 } // namespace lift_006F8FB0
+
+// [0x006F9E90] sub_006F9E90 (64 bytes)
+namespace lift_006F9E90 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk to MFC80!ord_762).
+// Used as an allocator: cdecl, takes a byte count, returns a pointer or NULL.
+extern void* ext_006A5C62(size_t cb);
+
+// KERNEL32!InitializeCriticalSection, called via IAT slot mem_009241C0 (stdcall).
+extern void ext_InitializeCriticalSection(void* lpCriticalSection);
+
+// @name Unknown::EnsureCriticalSection
+// @class Unknown
+// @summary Lazily allocates and initializes a 0x18-byte CRITICAL_SECTION once, then sets the init flag.
+// @field Unknown +0x1C void* criticalSection
+// @field Unknown +0x20 uint8_t initialized
+void fn_006F9E90(void* self) {
+    if (lift_field<uint8_t>(self, 0x20) != 0) {
+        return;
+    }
+
+    void* cs = ext_006A5C62(0x18);
+    if (cs == nullptr) {
+        lift_field<void*>(self, 0x1C) = nullptr;
+        lift_field<uint8_t>(self, 0x20) = 1;
+        return;
+    }
+
+    ext_InitializeCriticalSection(cs);
+    lift_field<void*>(self, 0x1C) = cs;
+    lift_field<uint8_t>(self, 0x20) = 1;
+}
+} // namespace lift_006F9E90

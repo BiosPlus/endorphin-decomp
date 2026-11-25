@@ -1,0 +1,28 @@
+{
+  "va": "0x006F9E90",
+  "size": 64,
+  "orig_symbol": "sub_006F9E90",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::EnsureCriticalSection",
+  "class": "Unknown",
+  "signature": "void fn_006F9E90(void* self)",
+  "summary": "Lazily allocates and initializes a 0x18-byte CRITICAL_SECTION once, then sets the init flag.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "criticalSection"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint8_t",
+      "name": "initialized"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:07:11Z"
+}
