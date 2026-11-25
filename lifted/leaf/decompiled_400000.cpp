@@ -1627,3 +1627,28 @@ void* fn_00404BE0(void* self, uint32_t mode) {
     return self;
 }
 } // namespace lift_00404BE0
+
+// [0x004019B0] sub_004019B0 (95 bytes)
+namespace lift_004019B0 {
+// @name Unknown::CopyConstruct_004019B0
+// @class Unknown
+// @summary Copy-constructs a record from another: two std::string members at +0x00 and +0x20, and 32-bit ints at +0x1C and +0x3C.
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1C int32_t field_0x1C
+// @field Unknown +0x20 std::string field_0x20
+// @field Unknown +0x3C int32_t field_0x3C
+void* fn_004019B0(void* self, const void* other) {
+    // String members are constructed in place from the source, in original order.
+    new (static_cast<unsigned char*>(self) + 0x00)
+        std::string(*reinterpret_cast<const std::string*>(static_cast<const unsigned char*>(other) + 0x00));
+
+    lift_field<int32_t>(self, 0x1C) = lift_field<int32_t>(other, 0x1C);
+
+    new (static_cast<unsigned char*>(self) + 0x20)
+        std::string(*reinterpret_cast<const std::string*>(static_cast<const unsigned char*>(other) + 0x20));
+
+    lift_field<int32_t>(self, 0x3C) = lift_field<int32_t>(other, 0x3C);
+
+    return self;
+}
+} // namespace lift_004019B0

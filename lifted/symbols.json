@@ -100,6 +100,13 @@
     "summary": "Tail-calls a callback function pointer stored at offset 0x14 if non-null",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x004019B0": {
+    "name": "Unknown::CopyConstruct_004019B0",
+    "class": "Unknown",
+    "signature": "void* fn_004019B0(void* self, const void* other)",
+    "summary": "Copy-constructs a record from another: two std::string members at +0x00 and +0x20, and 32-bit ints at +0x1C and +0x3C.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00401A10": {
     "name": "DestroyStringMembers_00401A10",
     "signature": "inline void CallStringDtor(void* self)",
