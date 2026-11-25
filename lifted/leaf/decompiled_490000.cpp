@@ -971,3 +971,23 @@ void* fn_0049DB00() {
     return &mem_00ADD834;
 }
 } // namespace lift_0049DB00
+
+// [0x0049BE80] sub_0049BE80 (87 bytes)
+namespace lift_0049BE80 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+extern int mem_00ADD7F0;
+extern int mem_00ADD7EC;
+
+// @name initStaticObjectOnce_0049BE80
+// @summary One-time guarded initialization of the static object at 0x00ADD7EC (stores 0x0093FA3C into it); returns its address.
+void* fn_0049BE80() {
+    // Bit 0 of mem_00ADD7F0 guards one-time init. The fs:[0] SEH frame push/pop is compiler scaffolding and is not modeled.
+    if ((mem_00ADD7F0 & 1) == 0) {
+        mem_00ADD7F0 |= 1;
+        ext_0067A670();
+        mem_00ADD7EC = 0x0093FA3C;
+    }
+    return reinterpret_cast<void*>(&mem_00ADD7EC);
+}
+} // namespace lift_0049BE80

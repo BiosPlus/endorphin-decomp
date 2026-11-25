@@ -10818,6 +10818,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x8 and tail-calls NMData::ValuePtrData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0049BE80": {
+    "name": "initStaticObjectOnce_0049BE80",
+    "signature": "void* fn_0049BE80()",
+    "summary": "One-time guarded initialization of the static object at 0x00ADD7EC (stores 0x0093FA3C into it); returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049BEE0": {
     "name": "FindFirstMatchInList",
     "signature": "void* fn_0049BEE0(void* out, uint32_t value, void* head, uint32_t unused, void* sentinel, uint32_t arg)",
