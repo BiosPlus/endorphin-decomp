@@ -7910,6 +7910,12 @@
     "summary": "Zeroes every uint32_t in [self-\u003e+0x08, self-\u003e+0x0C) equal to value; calls the invalid-parameter handler if begin \u003e end.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00481C90": {
+    "name": "SortHeapRange",
+    "signature": "void fn_00481C90(uint32_t* first, uint32_t* last, uint32_t pred)",
+    "summary": "Heap-sorts a range of 4-byte elements in place (pop-heap loop); pred is forwarded to the sift-down helper.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00481DE0": {
     "name": "fillStructArrayAndGetEnd",
     "signature": "uint32_t __stdcall fn_00481DE0(uint32_t dst, uint32_t count, uint32_t src)",

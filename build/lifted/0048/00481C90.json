@@ -1,0 +1,13 @@
+{
+  "va": "0x00481C90",
+  "size": 74,
+  "orig_symbol": "sub_00481C90",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "SortHeapRange",
+  "signature": "void fn_00481C90(uint32_t* first, uint32_t* last, uint32_t pred)",
+  "summary": "Heap-sorts a range of 4-byte elements in place (pop-heap loop); pred is forwarded to the sift-down helper.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:32:55Z"
+}
