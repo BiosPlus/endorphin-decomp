@@ -1,0 +1,34 @@
+{
+  "va": "0x006B8390",
+  "size": 87,
+  "orig_symbol": "sub_006B8390",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "CColorStatic::CtlColor",
+  "class": "CColorStatic",
+  "signature": "extern \"C\" uint32_t __thiscall fn_006B8390(void* self, void* pDC, uint32_t nCtlColor)",
+  "summary": "Sets transparent background, text color, and recreates solid brush for CtlColor",
+  "fields": [
+    {
+      "class": "CColorStatic",
+      "offset": "+0x54",
+      "type": "uint32_t",
+      "name": "m_crBkColor"
+    },
+    {
+      "class": "CColorStatic",
+      "offset": "+0x58",
+      "type": "uint32_t",
+      "name": "m_crTextColor"
+    },
+    {
+      "class": "CColorStatic",
+      "offset": "+0x5C",
+      "type": "uint8_t[8]",
+      "name": "m_brBackground"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:14:56Z"
+}

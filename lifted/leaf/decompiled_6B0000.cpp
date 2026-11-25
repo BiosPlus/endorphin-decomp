@@ -1258,3 +1258,49 @@ int32_t __thiscall fn_006B16F0(void* self, uint32_t arg0, uint32_t arg1) {
     return 0;
 }
 } // namespace lift_006B16F0
+
+// [0x006B8390]
+namespace lift_006B8390 {
+// @name CColorStatic::CtlColor
+// @class CColorStatic
+// @summary Sets transparent background, text color, and recreates solid brush for CtlColor
+// @field CColorStatic +0x54 uint32_t m_crBkColor
+// @field CColorStatic +0x58 uint32_t m_crTextColor
+// @field CColorStatic +0x5c uint8_t[8] m_brBackground
+
+
+extern void __thiscall ext_006A5FF2(void* self);
+extern void __thiscall ext_006A5FFE(void* self, uint32_t hGdiObj);
+extern void __thiscall ext_006A6010(void* self, int32_t mode);
+extern uint32_t mem_0092407C;
+
+typedef uint32_t (__stdcall *CreateSolidBrush_fn)(uint32_t color);
+typedef void (__thiscall *SetTextColor_fn)(void* self, uint32_t color);
+
+extern uint32_t __thiscall fn_006B8390(void* self, void* pDC, uint32_t nCtlColor) {
+    (void)nCtlColor;
+    uint8_t* thisPtr = static_cast<uint8_t*>(self);
+
+    ext_006A6010(pDC, 1);
+
+    uint32_t textColor = *reinterpret_cast<uint32_t*>(thisPtr + 0x58);
+    uint32_t* vtable = *reinterpret_cast<uint32_t**>(pDC);
+    SetTextColor_fn setTextColor = reinterpret_cast<SetTextColor_fn>(vtable[0x38 / 4]);
+    setTextColor(pDC, textColor);
+
+    uint8_t* brush = thisPtr + 0x5c;
+    if (brush != nullptr && *reinterpret_cast<uint32_t*>(brush + 4) != 0) {
+        ext_006A5FF2(brush);
+    }
+
+    uint32_t bkColor = *reinterpret_cast<uint32_t*>(thisPtr + 0x54);
+    CreateSolidBrush_fn createSolidBrush = reinterpret_cast<CreateSolidBrush_fn>(mem_0092407C);
+    uint32_t hBrush = createSolidBrush(bkColor);
+    ext_006A5FFE(brush, hBrush);
+
+    if (brush == nullptr) {
+        return 0;
+    }
+    return *reinterpret_cast<uint32_t*>(brush + 4);
+}
+} // namespace lift_006B8390
