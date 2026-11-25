@@ -436,3 +436,46 @@ void fn_005DF720(void* slot1, void* slot2, void* slot3, void* end) {
     }
 }
 } // namespace lift_005DF720
+
+// [0x005DC650]
+namespace lift_005DC650 {
+// @name Unknown::ctor_005DC650
+// @class Unknown
+// @summary Constructor: sets the object vtable (0x968AD4), initializes the embedded std::string at +0x04 and the float/int fields at +0x20..+0x44 to their default values, and returns this.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x04 std::string name
+// @field Unknown +0x20 int32_t field_0x20
+// @field Unknown +0x24 int32_t field_0x24
+// @field Unknown +0x28 int32_t field_0x28
+// @field Unknown +0x2C float field_0x2C
+// @field Unknown +0x30 uint8_t field_0x30
+// @field Unknown +0x34 float field_0x34
+// @field Unknown +0x38 float field_0x38
+// @field Unknown +0x3C float field_0x3C
+// @field Unknown +0x40 float field_0x40
+// @field Unknown +0x44 int32_t field_0x44
+
+
+extern void __fastcall ext_00661980(void* self);
+extern void (__fastcall *mem_00924FE8)(void* self);
+
+extern void* __fastcall fn_005DC650(void* self) {
+    ext_00661980(self);
+
+    lift_field<uint32_t>(self, 0x00) = 0x968AD4;
+    mem_00924FE8(static_cast<uint8_t*>(self) + 0x04);
+
+    lift_field<int32_t>(self, 0x20) = 0;
+    lift_field<int32_t>(self, 0x24) = 0;
+    lift_field<float>(self, 0x2C) = 0.0f;
+    lift_field<int32_t>(self, 0x28) = 0;
+    lift_field<uint8_t>(self, 0x30) = 0;
+    lift_field<float>(self, 0x34) = 1.0f;
+    lift_field<float>(self, 0x38) = 1.0f;
+    lift_field<int32_t>(self, 0x44) = 0;
+    lift_field<float>(self, 0x3C) = 0.0f;
+    lift_field<float>(self, 0x40) = 0.0f;
+
+    return self;
+}
+} // namespace lift_005DC650

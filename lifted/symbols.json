@@ -32959,6 +32959,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005DC650": {
+    "name": "Unknown::ctor_005DC650",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __fastcall fn_005DC650(void* self)",
+    "summary": "Constructor: sets the object vtable (0x968AD4), initializes the embedded std::string at +0x04 and the float/int fields at +0x20..+0x44 to their default values, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005DC6C0": {
     "name": "ReleaseOwnedObjectAndReset",
     "class": "Unknown",
