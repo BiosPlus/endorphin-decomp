@@ -1926,3 +1926,38 @@ bool fn_00402480(void* self, uint32_t n) {
     return true;
 }
 } // namespace lift_00402480
+
+// [0x0040B640]
+namespace lift_0040B640 {
+// @name sub_0040B640
+// @summary Reads window text from child control at +0xe8 into std::string at +0x298
+// @field Class +0xe8 void* field_0xe8
+// @field Class +0x298 void* field_0x298
+
+
+extern void fn_006A5F4A(void);
+extern uint32_t mem_009242FC;
+extern uint32_t mem_00924300;
+extern uint32_t mem_00924FD4;
+extern uint32_t mem_009242F4;
+
+void __thiscall fn_0040B640(void* self) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    uint32_t cstr_storage = 0;
+
+    // MFC80!ord_310: CString::CString()
+    reinterpret_cast<void(__thiscall*)(void*)>(static_cast<uintptr_t>(mem_009242FC))(&cstr_storage);
+
+    // thunk_MFC80_ord_3761: CWnd::GetWindowTextA(CString&)
+    reinterpret_cast<void(__thiscall*)(void*, void*)>(&fn_006A5F4A)(base + 0xE8, &cstr_storage);
+
+    // MFC80!ord_876: CString::GetString() / operator const char*()
+    const char* text = reinterpret_cast<const char*(__thiscall*)(void*)>(static_cast<uintptr_t>(mem_00924300))(&cstr_storage);
+
+    // MSVCP80!std::string::operator=(const char*)
+    reinterpret_cast<void*(__thiscall*)(void*, const char*)>(static_cast<uintptr_t>(mem_00924FD4))(base + 0x298, text);
+
+    // MFC80!ord_578: CString::~CString()
+    reinterpret_cast<void(__thiscall*)(void*)>(static_cast<uintptr_t>(mem_009242F4))(&cstr_storage);
+}
+} // namespace lift_0040B640

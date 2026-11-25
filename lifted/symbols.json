@@ -911,6 +911,12 @@
     "summary": "Constructs an std::string into the caller's sret slot: copies the global string for mode 1 or 2, otherwise builds it from the rdata C string; returns the slot pointer.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x0040B640": {
+    "name": "sub_0040B640",
+    "signature": "void __thiscall fn_0040B640(void* self)",
+    "summary": "Reads window text from child control at +0xe8 into std::string at +0x298",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040B6B0": {
     "name": "matchesAnyKnownString_0040B6B0",
     "signature": "extern \"C\" bool __stdcall sub_0040B6B0(const void* str)",
@@ -47255,6 +47261,13 @@
     "name": "SortHeapTail_00660710",
     "signature": "void fn_00660710(std::uint8_t* last, std::uint8_t* first)",
     "summary": "Sort-heap style tail loop over 32-byte elements: repeatedly saves the element at the shrinking end and calls ext_0065FF50 to sift it into the heap rooted at first.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x00660870": {
+    "name": "StringVector::erase",
+    "class": "StringVector",
+    "signature": "extern \"C\" CheckedIterator* __thiscall fn_00660870( StringVector* self, CheckedIterator* out_iter, void* first_container, uint8_t* first_ptr, void* last_container, uint8_t* last_ptr)",
+    "summary": "Erases a checked-iterator range [first, last) from a vector of 0x20-byte string elements, destroying trailing elements and returning the updated iterator.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
   "0x006616B0": {

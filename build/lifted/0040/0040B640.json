@@ -1,0 +1,27 @@
+{
+  "va": "0x0040B640",
+  "size": 108,
+  "orig_symbol": "sub_0040B640",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "sub_0040B640",
+  "signature": "void __thiscall fn_0040B640(void* self)",
+  "summary": "Reads window text from child control at +0xe8 into std::string at +0x298",
+  "fields": [
+    {
+      "class": "Class",
+      "offset": "+0xE8",
+      "type": "void*",
+      "name": "field_0xe8"
+    },
+    {
+      "class": "Class",
+      "offset": "+0x298",
+      "type": "void*",
+      "name": "field_0x298"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T05:03:55Z"
+}
