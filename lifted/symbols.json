@@ -71922,6 +71922,12 @@
     "summary": "Returns 1 if all `count` DWORDs starting at `data` are zero (or count is zero), otherwise 0.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086AF30": {
+    "name": "copyDwords",
+    "signature": "extern \"C\" void __cdecl fn_0086AF30(uint32_t* dst, const uint32_t* src, uint32_t count)",
+    "summary": "Copies count 32-bit dwords from src to dst.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086AF50": {
     "name": "TrimTrailingZeroDwords",
     "signature": "extern \"C\" uint32_t __cdecl fn_0086AF50(const uint32_t* data, uint32_t count)",
