@@ -12292,6 +12292,12 @@
     "summary": "Reads the value pointer stored in the argument, throws if null, otherwise returns the GraphEntryData active flag byte at +0x01.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B1880": {
+    "name": "initStaticObjectOnce_004B1880",
+    "signature": "void* fn_004B1880(void)",
+    "summary": "One-time initializer for the static object at 0x00AE0CE8; guarded by flag bit 0 at 0x00AE0CEC, sets its vtable to 0x00942074, and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B1910": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData, std::string const \u0026, getExpression, std::string const \u0026, setExpression\u003e::vfunc_40",
     "class": "ExprParser::ReadWriteMethodType",

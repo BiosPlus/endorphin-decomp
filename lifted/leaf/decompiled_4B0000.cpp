@@ -538,3 +538,27 @@ DWORD* fn_004B4BE0(DWORD* dst, DWORD value) {
 }
 } // namespace lift_0046F6A0
 } // namespace lift_004B4BE0
+
+// [0x004B1880]
+namespace lift_004B1880 {
+// @name initStaticObjectOnce_004B1880
+// @summary One-time initializer for the static object at 0x00AE0CE8; guarded by flag bit 0 at 0x00AE0CEC, sets its vtable to 0x00942074, and returns its address.
+// @field
+// (no member accesses; the object at 0x00AE0CE8 is a global, not a class member)
+
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AE0CEC;
+extern DWORD mem_00AE0CE8;
+
+void* fn_004B1880(void) {
+    // The original wraps this in an MSVC SEH frame (fs:[0] push/restore) and
+    // sets a try-state slot; that is compiler/runtime plumbing with no portable
+    // equivalent, so it is omitted here. Only the guarded init logic is kept.
+    if ((mem_00AE0CEC & 1u) == 0) {
+        mem_00AE0CEC |= 1u;
+        ext_0067A670(&mem_00AE0CE8, 0);
+        mem_00AE0CE8 = 0x00942074u;
+    }
+    return &mem_00AE0CE8;
+}
+} // namespace lift_004B1880
