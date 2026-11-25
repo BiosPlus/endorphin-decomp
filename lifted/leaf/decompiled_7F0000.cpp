@@ -203,3 +203,48 @@ void Unknown_TransformVec3ByMatrix(const float* m, const float* v, float* out) {
     out[2] = m[2] * v0 + m[6] * v1 + m[10] * v2;
 }
 } // namespace lift_007FC490
+
+// [0x007F63D0] sub_007F63D0 (73 bytes)
+namespace lift_007F63D0 {
+// Known callee 0x007C8880: get_field_0xa8 (Reads and returns the 32-bit field at offset 0xA8 from the given object pointer.)
+extern uint32_t ext_007C8880(uint32_t obj);
+// Known callee 0x007C89F0: getGridElementPtr (Computes pointer to a 24-byte element in a 2D array at (col, row))
+extern uint32_t ext_007C89F0(uint32_t self, int32_t col, int32_t row);
+
+// @name Unknown::RefreshGridElementAndNotify_007F63D0
+// @class Unknown
+// @summary Looks up a grid element from (col,row) indices held by sub-objects, caches field 0xA8 of the grid owner into self+0x0C, and invokes the element's callback (first dword) with self if non-null.
+// @field Unknown +0x00 uint32_t field_0x00 (pointer to grid owner)
+// @field Unknown +0x04 uint32_t field_0x04 (pointer to index-holder object)
+// @field Unknown +0x0C uint32_t field_0x0C (cached result of ext_007C8880)
+// @field GridOwner +0x00 uint32_t field_0x00 (grid self pointer passed to ext_007C89F0 / ext_007C8880)
+// @field GridOwner +0x44 uint32_t field_0x44 (pointer to column index holder)
+// @field IndexHolder +0x44 uint32_t field_0x44 (pointer to row index holder)
+// @field IndexHolder +0x00 uint32_t field_0x00 (index value, low byte used)
+void fn_007F63D0(void* self) {
+    uint32_t grid_ptr = lift_field<uint32_t>(self, 0x00);
+    uint32_t idx_ptr  = lift_field<uint32_t>(self, 0x04);
+
+    void* grid = reinterpret_cast<void*>(static_cast<uintptr_t>(grid_ptr));
+    void* idx  = reinterpret_cast<void*>(static_cast<uintptr_t>(idx_ptr));
+
+    uint32_t col_ptr = lift_field<uint32_t>(grid, 0x44);
+    uint32_t row_ptr = lift_field<uint32_t>(idx, 0x44);
+
+    uint32_t grid_self = lift_field<uint32_t>(grid, 0x00);
+
+    int32_t col = static_cast<int32_t>(lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(col_ptr)), 0x00) & 0xFFu);
+    int32_t row = static_cast<int32_t>(lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(row_ptr)), 0x00) & 0xFFu);
+
+    uint32_t elem_addr = ext_007C89F0(grid_self, col, row);
+
+    lift_field<uint32_t>(self, 0x0C) = ext_007C8880(grid_self);
+
+    void* elem = reinterpret_cast<void*>(static_cast<uintptr_t>(elem_addr));
+    uint32_t callback = lift_field<uint32_t>(elem, 0x00);
+    if (callback != 0) {
+        using Callback = void (*)(void*);
+        reinterpret_cast<Callback>(static_cast<uintptr_t>(callback))(self);
+    }
+}
+} // namespace lift_007F63D0

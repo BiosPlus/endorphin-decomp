@@ -63,6 +63,7 @@ struct Unknown_Fields {
     // +0x0   double[] array (base pointer in ecx; element i at byte offset 8*i, dynamic index so no fixed offset)  (evidence: 0x006D2400) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD field_0x00 (first dword; compared for equality against other)  (evidence: 0x00414880, 0x0041A070) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 owner  (evidence: 0x0066BA00) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t field_0x00 (pointer to grid owner)  (evidence: 0x007F63D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD subtable_count (signed; read from the container pointed to by a group-table pointer)  (evidence: 0x0078D510) // CONFLICT: multiple definitions at +0x0
     // +0x0   FILE* field_0x00 (inner object: stream pointer)  (evidence: 0x00783570) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (vtable pointer)  (evidence: 0x0063DB50) // CONFLICT: multiple definitions at +0x0
@@ -163,6 +164,7 @@ struct Unknown_Fields {
     // +0x4   HMODULE                  module  (evidence: 0x0041FD20) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t*                 next  (evidence: 0x008103A0, 0x008103F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    obj_ptr  (evidence: 0x0058A960) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t field_0x04 (pointer to index-holder object)  (evidence: 0x007F63D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t field_0x04 (enable flag on inner object)  (evidence: 0x00783540, 0x00788E50) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (pointer to holder object)  (evidence: 0x00783440, 0x00788E50) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (pointer to inner object)  (evidence: 0x00783540, 0x00788E50, 0x00810460) // CONFLICT: multiple definitions at +0x4
@@ -251,6 +253,7 @@ struct Unknown_Fields {
     // +0xC   uint8_t*                 entriesCapacity  (evidence: 0x00688B50, 0x0068BDF0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 entry_value  (evidence: 0x006FC6E0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t field_0x0C (accessed on the subobject returned by ext_0071E680)  (evidence: 0x00711DC0, 0x0071F070) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint32_t field_0x0C (cached result of ext_007C8880)  (evidence: 0x007F63D0) // CONFLICT: multiple definitions at +0xC
     // +0xC   DWORD                    field_0x0C  (evidence: 0x005539F0, 0x006619D0, 0x006C1BB0, 0x006C9F00, 0x006FC950, 0x0071C8A0, 0x0071F070, 0x00783610, 0x0086B180, 0x0086B200) // CONFLICT: multiple definitions at +0xC
     // +0xC   INT                      field_0x0C  (evidence: 0x007D4780) // CONFLICT: multiple definitions at +0xC
     // +0xC   ProcPtr                  field_0x0C  (evidence: 0x007DCAA0) // CONFLICT: multiple definitions at +0xC

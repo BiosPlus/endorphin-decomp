@@ -1,0 +1,58 @@
+{
+  "va": "0x007F63D0",
+  "size": 73,
+  "orig_symbol": "sub_007F63D0",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "Unknown::RefreshGridElementAndNotify_007F63D0",
+  "class": "Unknown",
+  "signature": "void fn_007F63D0(void* self)",
+  "summary": "Looks up a grid element from (col,row) indices held by sub-objects, caches field 0xA8 of the grid owner into self+0x0C, and invokes the element's callback (first dword) with self if non-null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t field_0x00 (pointer to grid",
+      "name": "owner)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t field_0x04 (pointer to index-holder",
+      "name": "object)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t field_0x0C (cached result of",
+      "name": "ext_007C8880)"
+    },
+    {
+      "class": "GridOwner",
+      "offset": "+0x0",
+      "type": "uint32_t field_0x00 (grid self pointer passed to ext_007C89F0 /",
+      "name": "ext_007C8880)"
+    },
+    {
+      "class": "GridOwner",
+      "offset": "+0x44",
+      "type": "uint32_t field_0x44 (pointer to column index",
+      "name": "holder)"
+    },
+    {
+      "class": "IndexHolder",
+      "offset": "+0x44",
+      "type": "uint32_t field_0x44 (pointer to row index",
+      "name": "holder)"
+    },
+    {
+      "class": "IndexHolder",
+      "offset": "+0x0",
+      "type": "uint32_t field_0x00 (index value, low byte",
+      "name": "used)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:32:55Z"
+}

@@ -59548,6 +59548,13 @@
     "summary": "Adds two pairs of 3-element float vectors (at +0x00 and +0x10) from src into dst.",
     "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
+  "0x007F63D0": {
+    "name": "Unknown::RefreshGridElementAndNotify_007F63D0",
+    "class": "Unknown",
+    "signature": "void fn_007F63D0(void* self)",
+    "summary": "Looks up a grid element from (col,row) indices held by sub-objects, caches field 0xA8 of the grid owner into self+0x0C, and invokes the element's callback (first dword) with self if non-null.",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
   "0x007F6690": {
     "name": "CallLookupResultWithOutParam",
     "signature": "void fn_007F6690(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t* out)",
