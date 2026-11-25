@@ -40039,6 +40039,13 @@
     "summary": "Pure jump thunk forwarding to sub_0063E310.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0063E3C0": {
+    "name": "AdvXMLParser::Element::vfunc_3",
+    "class": "AdvXMLParser::Element",
+    "signature": "int fn_0063E3C0(void* self, int arg)",
+    "summary": "Returns 1 when arg == 1; otherwise tail-forwards arg to ext_004701E0 (AnimatableTransform::vfunc_13_off_C) and returns its result.",
+    "lifted_path": "lifted/AdvXMLParser/Element.cpp"
+  },
   "0x0063E4E0": {
     "name": "AdvXMLParser::Comment::vfunc_3",
     "class": "AdvXMLParser::Comment",
