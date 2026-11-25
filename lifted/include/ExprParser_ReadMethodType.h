@@ -14,6 +14,7 @@ struct ExprParser_ReadMethodType_Fields {
     // +0x0   uint32_t src_value (dword read through the source pointer argument; not a field of this object)  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    target  (evidence: 0x0059F920, 0x005B9AE0, 0x005FCC10) // CONFLICT: multiple definitions at +0x0
     // +0x4   void*                    accessor  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x0051D310, 0x0058C010, 0x005F5F50, 0x00633240, 0x00635740) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_0x04  (evidence: 0x0059F650) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    inner  (evidence: 0x004886F0, 0x004A2580, 0x004A2AD0, 0x004CB250, 0x004CCB90, 0x004CCBE0, 0x005B8680, 0x005B8750, 0x005B8820, 0x005B88F0, 0x005B89C0, 0x005F5CC0, 0x005F5DC0, 0x005F5E10, 0x005F5E60, 0x005F5EB0, 0x005F5F00, 0x005F8030, 0x006331A0, 0x00633240, 0x00633290, 0x00633330, 0x006362D0) // CONFLICT: multiple definitions at +0x4
     // +0x8   void*                    valueSubobject  (evidence: 0x0046CE90, 0x0046E570, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740)
 };

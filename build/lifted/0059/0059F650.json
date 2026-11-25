@@ -1,0 +1,22 @@
+{
+  "va": "0x0059F650",
+  "size": 107,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e",
+  "signature": "int fn_0059F650(void* arg)",
+  "summary": "Reads the object pointed to by arg, fetches its name string via a virtual call, and returns 1 if it matches either of two known literals, otherwise 0; throws if the object pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:20:29Z"
+}

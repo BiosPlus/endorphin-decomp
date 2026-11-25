@@ -59193,3 +59193,49 @@ bool __stdcall fn_0049D780(void* self) {
 }
 } // namespace lift_0049D780
 } // namespace lift_0049D780
+
+// [0x0059F650] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>::vfunc_3 (107 bytes)
+namespace lift_0059F650 {
+// Known callee 0x00682ED0: VirtualSlot9Thunk. Called with ecx = this+4; the returned
+// pointer is used as a const std::string& by the following operator== calls.
+extern void* ext_00682ED0(void* self);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (in-place constructor).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* obj, void* throwInfo);
+
+// Imported operator==(const std::string&, const char*) slot (value loaded from IAT).
+extern void* mem_00924FC0;
+// Throw-info descriptor for the thrown exception.
+extern char mem_009DEC1C;
+// Literal strings compared against the name.
+extern char mem_0092F10C;
+extern char mem_0093A810;
+
+using StrEqFn = bool(*)(const void* str, const char* lit);
+
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_3
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>
+// @summary Reads the object pointed to by arg, fetches its name string via a virtual call, and returns 1 if it matches either of two known literals, otherwise 0; throws if the object pointer is null.
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+int fn_0059F650(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        alignas(16) unsigned char exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    const void* str = ext_00682ED0(static_cast<unsigned char*>(obj) + 4);
+    auto eq = reinterpret_cast<StrEqFn>(mem_00924FC0);
+
+    if (eq(str, &mem_0092F10C)) {
+        return 1;
+    }
+    if (eq(str, &mem_0093A810)) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_0059F650
