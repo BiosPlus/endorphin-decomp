@@ -32393,6 +32393,13 @@
     "summary": "Recursively erases and frees all non-nil nodes in a red-black tree subtree",
     "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
   },
+  "0x005E0060": {
+    "name": "Unknown::InitEmptyList",
+    "class": "Unknown",
+    "signature": "void fn_005E0060(void* self)",
+    "summary": "Constructor body: sets vtable, allocates a sentinel list-head node via ext_0059F5C0 and zeroes the element count.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005E0160": {
     "name": "CalibrationManager::vfunc_0",
     "class": "CalibrationManager",

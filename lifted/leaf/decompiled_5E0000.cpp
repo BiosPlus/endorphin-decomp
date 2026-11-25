@@ -1345,3 +1345,33 @@ void* fn_005E0180(void* self) {
     return self;
 }
 } // namespace lift_005E0180
+
+// [0x005E0060] sub_005E0060 (104 bytes)
+namespace lift_005E0060 {
+extern void* ext_0059F5C0(void* self);
+extern const char mem_00968DF4[];
+
+// @name Unknown::InitEmptyList
+// @class Unknown
+// @summary Constructor body: sets vtable, allocates a sentinel list-head node via ext_0059F5C0 and zeroes the element count.
+// @field Unknown +0x00 const void* vtable
+// @field Unknown +0x08 void* head
+// @field Unknown +0x0C uint32_t size
+// @field ListNode +0x00 void* prev
+// @field ListNode +0x04 void* next
+// @field ListNode +0x08 void* field_08
+// @field ListNode +0x2D uint8_t isNil
+void fn_005E0060(void* self) {
+    lift_field<const void*>(self, 0x00) = &mem_00968DF4;
+
+    void* head = ext_0059F5C0(static_cast<uint8_t*>(self) + 0x04);
+    lift_field<void*>(self, 0x08) = head;
+
+    lift_field<uint8_t>(head, 0x2D) = 1;
+    lift_field<void*>(head, 0x04) = head;
+    lift_field<void*>(head, 0x00) = head;
+    lift_field<void*>(head, 0x08) = head;
+
+    lift_field<uint32_t>(self, 0x0C) = 0;
+}
+} // namespace lift_005E0060

@@ -16,11 +16,14 @@ struct ListNode_Fields {
     // +0x0   uint32_t                 next  (evidence: 0x0049DB60) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    next  (evidence: 0x0049BEE0, 0x0049DBA0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 obj  (evidence: 0x006FAD90) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    prev  (evidence: 0x005E0060) // CONFLICT: multiple definitions at +0x0
     // +0x4   uint8_t*                 field_0x04  (evidence: 0x007AF8F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 next  (evidence: 0x006FACA0, 0x006FAD90) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    next  (evidence: 0x005E0060) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 prev  (evidence: 0x007C8490, 0x007CC930) // CONFLICT: multiple definitions at +0x4
     // +0x8   void* payload (object; vptr at offset 0, predicate in vtable slot 10 at +0x28)  (evidence: 0x0049BEE0) // CONFLICT: multiple definitions at +0x8
     // +0x8   ListNode*                child  (evidence: 0x004F0FB0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    field_08  (evidence: 0x005E0060) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_0x08  (evidence: 0x007C8690) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 next  (evidence: 0x007C8490, 0x007CC930, 0x007F6830) // CONFLICT: multiple definitions at +0x8
     // +0xC   uint32_t                 list  (evidence: 0x007C8490, 0x007CC930) // CONFLICT: multiple definitions at +0xC
@@ -36,6 +39,7 @@ struct ListNode_Fields {
     // +0x24  std::string              key  (evidence: 0x0049DB60) // CONFLICT: multiple definitions at +0x24
     // +0x28  uint32_t                 field_0x28  (evidence: 0x004F0FB0)
     // +0x2C  void*                    extra  (evidence: 0x004F0FB0)
+    // +0x2D  uint8_t                  isNil  (evidence: 0x005E0060)
     // +0x39  uint8_t                  stopFlag  (evidence: 0x004F0FB0)
     // +0x6D  uint8_t                  skip_flag  (evidence: 0x0049FCF0)
 };
