@@ -1705,3 +1705,22 @@ void fn_004030F0(void* self) {
     store(0x474, 0);
 }
 } // namespace lift_004030F0
+
+// [0x00401E80] sub_00401E80 (97 bytes)
+namespace lift_00401E80 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762; takes a byte count, returns a pointer).
+extern void* ext_006A5C62(uint32_t size);
+
+// @name checkedArrayAllocate
+// @summary Allocates n elements of 28 bytes each; n == 0 requests a zero-byte block, and an n whose byte count would overflow throws bad_array_new_length.
+void* fn_00401E80(uint32_t n) {
+    if (n == 0) {
+        return ext_006A5C62(0);
+    }
+    // Overflow guard: 28 * n must fit in 32 bits, i.e. 0xFFFFFFFF / n >= 28.
+    if (0xFFFFFFFFu / n < 28u) {
+        throw std::bad_array_new_length();
+    }
+    return ext_006A5C62(28u * n);
+}
+} // namespace lift_00401E80

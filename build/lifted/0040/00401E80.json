@@ -1,0 +1,13 @@
+{
+  "va": "0x00401E80",
+  "size": 97,
+  "orig_symbol": "sub_00401E80",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "checkedArrayAllocate",
+  "signature": "void* fn_00401E80(uint32_t n)",
+  "summary": "Allocates n elements of 28 bytes each; n == 0 requests a zero-byte block, and an n whose byte count would overflow throws bad_array_new_length.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:38:23Z"
+}
