@@ -1,0 +1,13 @@
+{
+  "va": "0x007E80E0",
+  "size": 103,
+  "orig_symbol": "sub_007E80E0",
+  "src_path": "src/leaf/decompiled_7E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7E0000.cpp",
+  "name": "descriptiveName: CopyFloat16 (ecx = dst, arg0 = src; returns dst)",
+  "signature": "void fn_007E80E0(float* dst, const float* src)",
+  "summary": "Copies 16 consecutive 32-bit floats (64 bytes) from src to dst and returns dst.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:48:13Z"
+}

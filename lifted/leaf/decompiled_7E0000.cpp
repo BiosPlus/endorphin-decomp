@@ -112,3 +112,14 @@ void TransformVector3ByMatrixColumns(const void* self, const float* in, float* o
     out[2] = ((m18 * in1) + (m08 * in0)) + (m28 * in2);
 }
 } // namespace lift_007E4870
+
+// [0x007E80E0] sub_007E80E0 (103 bytes)
+namespace lift_007E80E0 {
+// @name descriptiveName: CopyFloat16 (ecx = dst, arg0 = src; returns dst)
+// @summary Copies 16 consecutive 32-bit floats (64 bytes) from src to dst and returns dst.
+void fn_007E80E0(float* dst, const float* src) {
+    for (int i = 0; i < 16; ++i) {
+        dst[i] = src[i];
+    }
+}
+} // namespace lift_007E80E0
