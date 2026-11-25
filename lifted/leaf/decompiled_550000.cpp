@@ -1431,3 +1431,42 @@ void* fn_005550A0() {
     return mem_00B3858C;
 }
 } // namespace lift_005550A0
+
+// [0x00555100] sub_00555100 (95 bytes)
+namespace lift_00555100 {
+// @name CopyFillRecords_00555100
+// @summary Copies the 0x1F-byte record at src into every 0x20-byte slot in [dst, end), stepping by 0x20 until end is reached.
+// @field Record +0x00 DWORD field_0x00
+// @field Record +0x04 FLOAT field_0x04
+// @field Record +0x08 FLOAT field_0x08
+// @field Record +0x0C FLOAT field_0x0C
+// @field Record +0x10 DWORD field_0x10
+// @field Record +0x14 DWORD field_0x14
+// @field Record +0x18 DWORD field_0x18
+// @field Record +0x1C BYTE field_0x1C
+// @field Record +0x1D BYTE field_0x1D
+// @field Record +0x1E BYTE field_0x1E
+void fn_00555100(void* dst, const void* end, const void* src) {
+    uint8_t* p = static_cast<uint8_t*>(dst);
+    const uint8_t* const last = static_cast<const uint8_t*>(end);
+    const uint8_t* const s = static_cast<const uint8_t*>(src);
+
+    if (p == last) {
+        return;
+    }
+
+    do {
+        lift_field<uint32_t>(p, 0x00) = lift_field<const uint32_t>(s, 0x00);
+        lift_field<float>(p, 0x04) = lift_field<const float>(s, 0x04);
+        lift_field<float>(p, 0x08) = lift_field<const float>(s, 0x08);
+        lift_field<float>(p, 0x0C) = lift_field<const float>(s, 0x0C);
+        lift_field<uint32_t>(p, 0x10) = lift_field<const uint32_t>(s, 0x10);
+        lift_field<uint32_t>(p, 0x14) = lift_field<const uint32_t>(s, 0x14);
+        lift_field<uint32_t>(p, 0x18) = lift_field<const uint32_t>(s, 0x18);
+        lift_field<uint8_t>(p, 0x1C) = lift_field<const uint8_t>(s, 0x1C);
+        lift_field<uint8_t>(p, 0x1D) = lift_field<const uint8_t>(s, 0x1D);
+        lift_field<uint8_t>(p, 0x1E) = lift_field<const uint8_t>(s, 0x1E);
+        p += 0x20;
+    } while (p != last);
+}
+} // namespace lift_00555100

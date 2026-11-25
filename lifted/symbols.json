@@ -23737,6 +23737,12 @@
     "summary": "Runs one-time initialization of global string buffer mem_00B3858C (guard bit 0 of mem_00B385A8) and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00555100": {
+    "name": "CopyFillRecords_00555100",
+    "signature": "void fn_00555100(void* dst, const void* end, const void* src)",
+    "summary": "Copies the 0x1F-byte record at src into every 0x20-byte slot in [dst, end), stepping by 0x20 until end is reached.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00555420": {
     "name": "LowerBound32ByFirstDword_00555420",
     "class": "Element",
