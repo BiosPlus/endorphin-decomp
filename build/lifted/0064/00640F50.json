@@ -1,0 +1,22 @@
+{
+  "va": "0x00640F50",
+  "size": 74,
+  "orig_symbol": "AdvXMLParser::Attribute::vfunc_5",
+  "src_path": "src/AdvXMLParser/Attribute.cpp",
+  "lifted_path": "lifted/AdvXMLParser/Attribute.cpp",
+  "name": "AdvXMLParser::Attribute::vfunc_5",
+  "class": "AdvXMLParser::Attribute",
+  "signature": "void __thiscall fn_00640F50(void* self, uint32_t arg)",
+  "summary": "Serializes an XML attribute as name=\"value\" into the output context string and recurses into child nodes.",
+  "fields": [
+    {
+      "class": "AdvXMLParser::Attribute",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "name"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:03:01Z"
+}
