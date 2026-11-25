@@ -1,0 +1,22 @@
+{
+  "va": "0x006BA320",
+  "size": 80,
+  "orig_symbol": "sub_006BA320",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "String::findFirstOf",
+  "class": "String",
+  "signature": "extern \"C\" int32_t __thiscall fn_006BA320(void* self, const char* control, uint32_t startPos)",
+  "summary": "Finds the index of the first character in the string (starting at startPos) that matches any character in control, or -1 if not found.",
+  "fields": [
+    {
+      "class": "String",
+      "offset": "+0x0",
+      "type": "const char*",
+      "name": "data"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:51:39Z"
+}

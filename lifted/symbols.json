@@ -47144,6 +47144,13 @@
     "summary": "Finds the last occurrence of a character in the string and returns its index, or -1 if not found.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006BA320": {
+    "name": "String::findFirstOf",
+    "class": "String",
+    "signature": "extern \"C\" int32_t __thiscall fn_006BA320(void* self, const char* control, uint32_t startPos)",
+    "summary": "Finds the index of the first character in the string (starting at startPos) that matches any character in control, or -1 if not found.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BAC00": {
     "name": "sub_006BAC00",
     "signature": "extern \"C\" void* __fastcall fn_006BAC00(void* self, int edx_unused, unsigned int flags)",
@@ -47173,6 +47180,12 @@
     "signature": "extern \"C\" void* __fastcall fn_006BB520(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006BB540 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
+  },
+  "0x006BB6E0": {
+    "name": "sub_006BB6E0",
+    "signature": "extern \"C\" void __fastcall fn_006BB6E0(void* self)",
+    "summary": "Destructor/cleanup calling sub_007641C0 on +0x28 and sub_006D2160 on +0x0C",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
   "0x006BB750": {
     "name": "StoreDwordThroughIndirectPtr",

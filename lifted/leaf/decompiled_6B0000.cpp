@@ -1113,3 +1113,48 @@ void fn_006B0DE0(void* self, DWORD arg) {
     reinterpret_cast<ThisCall1>(static_cast<uintptr_t>(slot))(wrapper, value);
 }
 } // namespace lift_006B0DE0
+
+// [0x006BA320]
+namespace lift_006BA320 {
+extern int32_t __fastcall ext_006B99C0(void* self);
+extern const char* (__cdecl* mem_0092527C)(const char* str, const char* control);
+
+// @name String::findFirstOf
+// @class String
+// @summary Finds the index of the first character in the string (starting at startPos) that matches any character in control, or -1 if not found.
+// @field String +0x00 const char* data
+extern int32_t __thiscall fn_006BA320(void* self, const char* control, uint32_t startPos) {
+    if (control == nullptr) {
+        return -1;
+    }
+
+    uint32_t len = static_cast<uint32_t>(ext_006B99C0(self));
+    uint32_t offset = (startPos <= len) ? startPos : static_cast<uint32_t>(ext_006B99C0(self));
+
+    const char* data = *reinterpret_cast<const char* const*>(self);
+    const char* found = mem_0092527C(data + offset, control);
+    if (found == nullptr) {
+        return -1;
+    }
+
+    return static_cast<int32_t>(found - data);
+}
+} // namespace lift_006BA320
+
+// [0x006BB6E0]
+namespace lift_006BB6E0 {
+// @name sub_006BB6E0
+// @summary Destructor/cleanup calling sub_007641C0 on +0x28 and sub_006D2160 on +0x0C
+// @field <unknown> +0x0C <unknown> field_0x0C
+// @field <unknown> +0x28 <unknown> field_0x28
+
+
+extern void __fastcall ext_007641C0(void* self);
+extern void __fastcall ext_006D2160(void* self);
+
+extern void __fastcall fn_006BB6E0(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    ext_007641C0(base + 0x28);
+    ext_006D2160(base + 0x0C);
+}
+} // namespace lift_006BB6E0
