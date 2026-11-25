@@ -2139,3 +2139,47 @@ void __thiscall sub_006406D0(void* self, uint32_t arg0) {
     }
 }
 } // namespace lift_006406D0
+
+// [0x00641F10]
+namespace lift_00641F10 {
+// @name collapseWhitespace
+// @summary Collapses contiguous runs of delimiter characters in a string into a single space.
+// @field std_string +0x14 uint32_t size
+
+
+extern uint32_t mem_00925068;
+extern uint32_t mem_00924EC4;
+extern uint32_t mem_00925060;
+extern uint32_t mem_0092505C;
+
+using FnFindFirst = uint32_t(__thiscall*)(void* self, uint32_t ptr, uint32_t off, uint32_t count);
+using FnReplace = void*(__thiscall*)(void* self, uint32_t off, uint32_t count, uint32_t n, uint8_t ch);
+
+void sub_00641F10(uint32_t str_ptr) {
+    uint32_t pos = 0;
+    uint32_t size = *(uint32_t*)(uintptr_t)(str_ptr + 0x14);
+    if (size == 0) {
+        return;
+    }
+
+    auto fn_find_first_of = (FnFindFirst)(uintptr_t)mem_00925068;
+    auto fn_find_first_not_of = (FnFindFirst)(uintptr_t)mem_00925060;
+    auto fn_replace = (FnReplace)(uintptr_t)mem_0092505C;
+    uint32_t npos = *(uint32_t*)(uintptr_t)mem_00924EC4;
+
+    while (pos < *(uint32_t*)(uintptr_t)(str_ptr + 0x14)) {
+        uint32_t first = fn_find_first_of((void*)(uintptr_t)str_ptr, 0x0097CDACu, pos, 4);
+        if (first == npos) {
+            break;
+        }
+        uint32_t next_non = fn_find_first_not_of((void*)(uintptr_t)str_ptr, 0x0097CDACu, first, 4);
+        if (next_non == npos) {
+            uint32_t cur_size = *(uint32_t*)(uintptr_t)(str_ptr + 0x14);
+            fn_replace((void*)(uintptr_t)str_ptr, first, cur_size - first, 1, 0x20);
+            break;
+        }
+        fn_replace((void*)(uintptr_t)str_ptr, first, next_non - first, 1, 0x20);
+        pos = first + 1;
+    }
+}
+} // namespace lift_00641F10

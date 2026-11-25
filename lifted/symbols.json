@@ -44721,6 +44721,12 @@
     "summary": "Recursively erases a binary-tree subtree: recurses into the right child, walks the left-child chain destroying each node's key string and calling ext_006A5C5C on it until a sentinel (isNil at +0x2d) is reached.",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x00641F10": {
+    "name": "collapseWhitespace",
+    "signature": "void sub_00641F10(uint32_t str_ptr)",
+    "summary": "Collapses contiguous runs of delimiter characters in a string into a single space.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00641FD0": {
     "name": "IsFlagBit0AtOffset20",
     "class": "\u003cClassName\u003e (optional)",
