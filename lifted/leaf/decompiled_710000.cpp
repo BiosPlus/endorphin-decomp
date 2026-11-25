@@ -1640,3 +1640,30 @@ bool __stdcall sub_00713390(const char* str, double* out) {
     return *endptr == '}';
 }
 } // namespace lift_00713390
+
+// [0x007135C0]
+namespace lift_007135C0 {
+// @name parseDoubleArray16
+// @summary Parses a brace-enclosed comma-separated list of 16 doubles into an output array.
+bool __stdcall sub_007135C0(const char* str, double* out) {
+    if (*str != '{') {
+        return false;
+    }
+
+    const char* cur = str;
+    char* endptr = nullptr;
+    for (int i = 0; i < 16; ++i) {
+        ++cur;
+        out[i] = std::strtod(cur, &endptr);
+        if (cur == endptr) {
+            return false;
+        }
+        if (*endptr != ',' && i < 15) {
+            return false;
+        }
+        cur = endptr;
+    }
+
+    return *endptr == '}';
+}
+} // namespace lift_007135C0
