@@ -66,11 +66,15 @@ struct Self_Fields {
     // +0x88  void*                    childObject  (evidence: 0x006B8190, 0x006BA780)
     // +0x9C  std::string              field_0x9c  (evidence: 0x0054C890)
     // +0xA8  DWORD                    field_0xA8  (evidence: 0x006B8190, 0x006BA780)
-    // +0xBC  int32_t                  field_0xBC  (evidence: 0x0053F960)
+    // +0xB4  float                    field_0xb4  (evidence: 0x00630510)
+    // +0xB8  float                    field_0xb8  (evidence: 0x00630510)
+    // +0xBC  int32_t                  field_0xBC  (evidence: 0x0053F960) // CONFLICT: multiple definitions at +0xBC
+    // +0xBC  float                    field_0xbc  (evidence: 0x00630510) // CONFLICT: multiple definitions at +0xBC
     // +0xC0  int32_t                  field_0xC0  (evidence: 0x0053F960)
     // +0xC4  int32_t                  field_0xC4  (evidence: 0x0053F960)
     // +0xC8  int32_t                  field_0xC8  (evidence: 0x0053F960)
     // +0xEC  uint32_t                 field_0xEC  (evidence: 0x005971D0)
+    // +0xF6  uint8_t                  field_0xf6  (evidence: 0x00630510)
     // +0xF8  std::string              field_0xf8  (evidence: 0x00551A20)
     // +0xFC  int32_t                  field_0xfc  (evidence: 0x00533F50)
     // +0x100 void*                    field_0x100  (evidence: 0x00430900)

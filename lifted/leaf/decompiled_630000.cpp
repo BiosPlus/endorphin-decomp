@@ -980,3 +980,25 @@ extern void* __fastcall fn_00630540(void* self) {
     return sub;
 }
 } // namespace lift_00630540
+
+// [0x00630510]
+namespace lift_00630510 {
+extern int32_t __cdecl ext_00594000(void);
+extern void __fastcall ext_00594070(void* self);
+
+// @name setPositionAndFlag
+// @summary Copies a 3-float vector into offsets +0xB4..+0xBC and sets byte flag +0xF6 to 1.
+// @field Self +0xB4 float field_0xb4
+// @field Self +0xB8 float field_0xb8
+// @field Self +0xBC float field_0xbc
+// @field Self +0xF6 uint8_t field_0xf6
+
+extern void __thiscall fn_00630510(void* self, const float* vec) {
+    (void)ext_00594000;
+    (void)ext_00594070;
+    lift_field<float>(self, 0xB4) = vec[0];
+    lift_field<float>(self, 0xB8) = vec[1];
+    lift_field<float>(self, 0xBC) = vec[2];
+    lift_field<uint8_t>(self, 0xF6) = 1;
+}
+} // namespace lift_00630510
