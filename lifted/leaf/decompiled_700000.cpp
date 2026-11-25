@@ -1900,3 +1900,23 @@ extern float __fastcall fn_0070BF00(void* self) {
     return static_cast<float>(mem_0092A270);
 }
 } // namespace lift_0070BF00
+
+// [0x00704B30] sub_00704B30 (85 bytes)
+namespace lift_00704B30 {
+// @name lookupStringAddrByIndex_00704B30
+// @summary Maps an index 0..7 to one of eight fixed data addresses; returns 0 for any other index.
+// (no @class: free function, no object fields accessed)
+DWORD fn_00704B30(DWORD index) {
+    switch (index) {
+    case 0: return 0x00AAB920;
+    case 1: return 0x00AABCF8;
+    case 2: return 0x00AABCE8;
+    case 3: return 0x00AABCD8;
+    case 4: return 0x00AABCC8;
+    case 5: return 0x00AABCB8;
+    case 6: return 0x00AABCA4;
+    case 7: return 0x00AABC90;
+    default: return 0;
+    }
+}
+} // namespace lift_00704B30

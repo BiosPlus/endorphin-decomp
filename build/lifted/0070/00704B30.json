@@ -1,0 +1,13 @@
+{
+  "va": "0x00704B30",
+  "size": 85,
+  "orig_symbol": "sub_00704B30",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "lookupStringAddrByIndex_00704B30",
+  "signature": "DWORD fn_00704B30(DWORD index)",
+  "summary": "Maps an index 0..7 to one of eight fixed data addresses; returns 0 for any other index.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:09:51Z"
+}
