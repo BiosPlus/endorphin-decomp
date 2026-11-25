@@ -1,0 +1,28 @@
+{
+  "va": "0x004587C0",
+  "size": 69,
+  "orig_symbol": "SpinButtonStates::ClickedUpState::vfunc_3",
+  "src_path": "src/SpinButtonStates/ClickedUpState.cpp",
+  "lifted_path": "lifted/SpinButtonStates/ClickedUpState.cpp",
+  "name": "SpinButtonStates::ClickedUpState::vfunc_3",
+  "class": "SpinButtonStates::ClickedUpState",
+  "signature": "void fn_004587C0(void* self, UINT which)",
+  "summary": "If arg==3, calls vtable slot 0 of the object at self+0x04 with ext_006A5EC0(self+0x08); if arg==2, kills timer 2 and starts timer 3 (50 ms) on self+0x08.",
+  "fields": [
+    {
+      "class": "SpinButtonStates::ClickedUpState",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "SpinButtonStates::ClickedUpState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:21:59Z"
+}

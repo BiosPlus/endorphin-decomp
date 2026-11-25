@@ -41,3 +41,45 @@ void fn_00458940(void* self) {
     ext_00458860(lift_field<void*>(self, 0x0C), 0);
 }
 } // namespace lift_00458940
+
+// [0x004587C0] SpinButtonStates::ClickedUpState::vfunc_3 (69 bytes)
+namespace lift_004587C0 {
+namespace lift_004587C0 {
+// Known callee 0x006A5EC0: thunk_MFC80_ord_2654 (IAT jump thunk forwarding to MFC80!ord_2654.)
+extern void* ext_006A5EC0(void* self);
+// Known callee 0x004586C0: KillOwnerTimerWithId (Kills the timer identified by the argument, owned by the window handle at self+0x20.)
+extern BOOL ext_004586C0(void* self, UINT_PTR timerId);
+// Known callee 0x004586A0: StartOwnerTimerWithId (Starts a Win32 timer (no callback) with the given id and interval on the owner window stored at self+0x20.)
+extern void ext_004586A0(void* self, UINT_PTR nIDEvent, UINT uElapse);
+
+// @name SpinButtonStates::ClickedUpState::vfunc_3
+// @class SpinButtonStates::ClickedUpState
+// @summary If arg==3, calls vtable slot 0 of the object at self+0x04 with ext_006A5EC0(self+0x08); if arg==2, kills timer 2 and starts timer 3 (50 ms) on self+0x08.
+// @field SpinButtonStates::ClickedUpState +0x04 void* field_0x04
+// @field SpinButtonStates::ClickedUpState +0x08 void* field_0x08
+
+namespace {
+// Thiscall-style virtual slot: first argument is the object (this), second is one value.
+using VSlotFn = void (*)(void* self, void* arg);
+} // namespace
+
+void fn_004587C0(void* self, UINT which) {
+    if (which == 3) {
+        // obj = self->field_0x04; vt = obj's vtable (read before the call).
+        void* obj = lift_field<void*>(self, 0x04);
+        void** vt = *reinterpret_cast<void***>(obj);
+        // r = ext_006A5EC0(self->field_0x08)
+        void* r = ext_006A5EC0(lift_field<void*>(self, 0x08));
+        // obj->vtbl[0](r)
+        reinterpret_cast<VSlotFn>(vt[0])(obj, r);
+        return;
+    }
+    if (which == 2) {
+        // KillOwnerTimerWithId(self->field_0x08, 2)
+        ext_004586C0(lift_field<void*>(self, 0x08), 2);
+        // StartOwnerTimerWithId(self->field_0x08, 3, 50)
+        ext_004586A0(lift_field<void*>(self, 0x08), 3, 50);
+    }
+}
+} // namespace lift_004587C0
+} // namespace lift_004587C0

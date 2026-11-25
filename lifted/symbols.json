@@ -5174,6 +5174,13 @@
     "summary": "Kills timers 2 and 3 on the owner object stored at self+0x08.",
     "lifted_path": "lifted/SpinButtonStates/ClickedDownState.cpp"
   },
+  "0x004587C0": {
+    "name": "SpinButtonStates::ClickedUpState::vfunc_3",
+    "class": "SpinButtonStates::ClickedUpState",
+    "signature": "void fn_004587C0(void* self, UINT which)",
+    "summary": "If arg==3, calls vtable slot 0 of the object at self+0x04 with ext_006A5EC0(self+0x08); if arg==2, kills timer 2 and starts timer 3 (50 ms) on self+0x08.",
+    "lifted_path": "lifted/SpinButtonStates/ClickedUpState.cpp"
+  },
   "0x00458810": {
     "name": "SpinButtonStates::DragSpinState::vfunc_1",
     "class": "SpinButtonStates::DragSpinState",
