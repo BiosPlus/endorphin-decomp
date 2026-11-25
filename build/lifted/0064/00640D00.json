@@ -1,0 +1,22 @@
+{
+  "va": "0x00640D00",
+  "size": 87,
+  "orig_symbol": "AdvXMLParser::Comment::vfunc_5",
+  "src_path": "src/AdvXMLParser/Comment.cpp",
+  "lifted_path": "lifted/AdvXMLParser/Comment.cpp",
+  "name": "AdvXMLParser::Comment::Generate",
+  "class": "AdvXMLParser::Comment",
+  "signature": "extern \"C\" void __thiscall fn_00640D00(void* self, void* ctx)",
+  "summary": "Serializes an XML comment node (\"\u003c!--\" + text + \"--\u003e\") to the output context.",
+  "fields": [
+    {
+      "class": "AdvXMLParser::Comment",
+      "offset": "+0x24",
+      "type": "std::string",
+      "name": "m_text"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:13:34Z"
+}
