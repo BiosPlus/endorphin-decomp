@@ -1,0 +1,13 @@
+{
+  "va": "0x00476F70",
+  "size": 95,
+  "orig_symbol": "sub_00476F70",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "InitStaticObjectOnce_00476F70",
+  "signature": "extern \"C\" int mem_00AD9098;   // once-init guard flag (bit 0) extern \"C\" int mem_00AD907C;   // static object storage extern \"C\" void ext_00916F10(); // teardown routine (address pushed as the argument to 0x006A6C87) void* fn_00476F70(void)",
+  "summary": "Runs one-time construction of a static object at mem_00AD907C (guarded by bit 0 of mem_00AD9098) and returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:24:57Z"
+}
