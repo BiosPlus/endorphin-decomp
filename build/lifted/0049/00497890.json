@@ -1,0 +1,13 @@
+{
+  "va": "0x00497890",
+  "size": 98,
+  "orig_symbol": "sub_00497890",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "StdStringCopyConstructThenDestroySrc",
+  "signature": "void* fn_00497890(void* dst, void* src)",
+  "summary": "Copy-constructs a std::string at dst from the by-value std::string argument src, destroys src, and returns dst.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:39:42Z"
+}

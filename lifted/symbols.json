@@ -10595,6 +10595,12 @@
     "summary": "Forwards out_str and flag to makeBoolString (0x0046C460) and returns out_str.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x00497890": {
+    "name": "StdStringCopyConstructThenDestroySrc",
+    "signature": "void* fn_00497890(void* dst, void* src)",
+    "summary": "Copy-constructs a std::string at dst from the by-value std::string argument src, destroys src, and returns dst.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00497900": {
     "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_0",
     "class": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e",

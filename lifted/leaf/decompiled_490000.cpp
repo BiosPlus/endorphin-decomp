@@ -1196,3 +1196,24 @@ void __thiscall fn_0049DFA0(uintptr_t self, uint32_t value) {
     }
 }
 } // namespace lift_0049DFA0
+
+// [0x00497890] sub_00497890 (98 bytes)
+namespace lift_00497890 {
+// Known callee 0x004276B0: StdStringCopyConstruct (copy-constructs a std::string at dst from src; returns dst)
+extern void* ext_004276B0(void* dst, const void* src);
+// IAT slot holding the address of MSVCP80 std::basic_string<char>::~basic_string (thiscall).
+extern int mem_00924FF4;
+
+// @name StdStringCopyConstructThenDestroySrc
+// @summary Copy-constructs a std::string at dst from the by-value std::string argument src, destroys src, and returns dst.
+void* fn_00497890(void* dst, void* src) {
+    ext_004276B0(dst, src);
+
+    using StringDtor = void (*)(void* self);
+    auto dtor = reinterpret_cast<StringDtor>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    dtor(src);
+
+    return dst;
+}
+} // namespace lift_00497890
