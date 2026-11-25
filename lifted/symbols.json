@@ -3989,6 +3989,13 @@
     "summary": "Applies horizontal zoom to the owner MultiTrackView based on drag delta and invalidates its window",
     "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/ZoomState.cpp"
   },
+  "0x00443440": {
+    "name": "MultiTrackView::MultiTrackViewStates::DragZoomState::vfunc_2",
+    "class": "MultiTrackView::MultiTrackViewStates::DragZoomState",
+    "signature": "BOOL fn_00443440(void* self)",
+    "summary": "Invalidates the window of the owner object, then releases mouse capture.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/DragZoomState.cpp"
+  },
   "0x00443500": {
     "name": "MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_12",
     "class": "MultiTrackView::MultiTrackViewStates::DragSelectState",
