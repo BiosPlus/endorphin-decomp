@@ -1134,6 +1134,7 @@ struct Unknown_Fields {
     // +0x744 DWORD                    field_0x744  (evidence: 0x007155B0, 0x00719BB0)
     // +0x748 DWORD                    field_0x748  (evidence: 0x007155B0, 0x00719BB0)
     // +0x74C DWORD                    field_0x74C  (evidence: 0x007155B0, 0x00719BB0)
+    // +0x768 HWND                     field_0x768  (evidence: 0x0044E100)
     // +0x7D4 uint32_t                 field_0x7d4  (evidence: 0x007AC510)
     // +0x81C void*                    field_0x81C  (evidence: 0x00704A20, 0x0070AD00, 0x0070BF00)
     // +0x9C0 uint8_t                  field_0x9C0  (evidence: 0x0044CE90)

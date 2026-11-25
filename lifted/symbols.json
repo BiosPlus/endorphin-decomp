@@ -5020,6 +5020,13 @@
     "summary": "Sends message 0x188 to the window at this+0x61C; if that fails (-1), returns 0, otherwise sends 0x188 again and then 0x199 with the second result as LPARAM, returning the last result.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044E100": {
+    "name": "Unknown::sendProbeMessages_0044E100",
+    "class": "Unknown",
+    "signature": "int fn_0044E100(void* self)",
+    "summary": "Sends messages 0x18B, 0x190, 0x187 to the window at +0x768; returns 1 only if the first two succeed and the third returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044F740": {
     "name": "fn_0044F740 (global object subsystem check)",
     "signature": "int32_t fn_0044F740(void)",

@@ -2076,3 +2076,22 @@ void* fn_0044C2D0(void* self) {
 }
 } // namespace lift_006B28A0
 } // namespace lift_0044C2D0
+
+// [0x0044E100] sub_0044E100 (87 bytes)
+namespace lift_0044E100 {
+// USER32!SendMessageA import slot (mem_00925694 holds the resolved address).
+extern LRESULT(__stdcall* ext_SendMessageA)(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+
+// @name Unknown::sendProbeMessages_0044E100
+// @class Unknown
+// @summary Sends messages 0x18B, 0x190, 0x187 to the window at +0x768; returns 1 only if the first two succeed and the third returns 0.
+// @field Unknown +0x768 HWND field_0x768
+int fn_0044E100(void* self) {
+    // Each call re-reads the HWND field, matching the original code (SendMessage may reenter).
+    if (ext_SendMessageA(lift_field<HWND>(self, 0x768), 0x18B, 0, 0) == 0)
+        return 0;
+    if (ext_SendMessageA(lift_field<HWND>(self, 0x768), 0x190, 0, 0) == 0)
+        return 0;
+    return ext_SendMessageA(lift_field<HWND>(self, 0x768), 0x187, 0, 0) == 0 ? 1 : 0;
+}
+} // namespace lift_0044E100
