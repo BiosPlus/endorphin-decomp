@@ -286,3 +286,37 @@ void* __stdcall fn_005C3180(void* self) {
     return self;
 }
 } // namespace lift_005C3180
+
+// [0x005C37E0]
+namespace lift_005C37E0 {
+extern void __fastcall ext_005B1B60(void* self, void* edx, const void* src);
+
+extern void __fastcall ext_00648470(void* self);
+extern void __fastcall ext_00648790(void* self);
+extern void ext_006A5C5C(void);
+
+// @name NMData::CollisionModelData::vfunc_5_off_C
+// @class NMData::CollisionModelData
+// @summary Forwards a vec4 to the sub-object at +0x150, then calls vfunc 0x34 on the object at +0x4 with (x,y,z,0).
+// @field NMData::CollisionModelData +0x04 void* field_0x04
+// @field NMData::CollisionModelData +0x150 void* field_0x150
+extern void __fastcall fn_005C37E0(void* self, void* edx, const float* src)
+{
+    (void)&ext_00648470; (void)&ext_00648790; (void)&ext_006A5C5C;
+    char* base = (char*)self;
+    void* sub = *(void**)(base + 0x150);
+    if (!sub) return;
+    ext_005B1B60(sub, edx, src);
+    float v[4];
+    v[0] = src[0];
+    v[1] = src[1];
+    v[2] = src[2];
+    v[3] = 0.0f;
+    void* obj = *(void**)(base + 0x4);
+    if (obj) {
+        void** vt = *(void***)obj;
+        typedef void (__thiscall *Fn)(void*, float*);
+        ((Fn)vt[0x34 / 4])(obj, v);
+    }
+}
+} // namespace lift_005C37E0

@@ -29859,6 +29859,13 @@
     "summary": "Forwards arg to the buffered-TM object at +0x150, then calls vtable slot 13 of the object at +0x4 with the buffered-TM's OglRenderer value.",
     "lifted_path": "lifted/NMData/CollisionModelData.cpp"
   },
+  "0x005C37E0": {
+    "name": "NMData::CollisionModelData::vfunc_5_off_C",
+    "class": "NMData::CollisionModelData",
+    "signature": "extern \"C\" void __fastcall fn_005C37E0(void* self, void* edx, const float* src)",
+    "summary": "Forwards a vec4 to the sub-object at +0x150, then calls vfunc 0x34 on the object at +0x4 with (x,y,z,0).",
+    "lifted_path": "lifted/NMData/CollisionModelData.cpp"
+  },
   "0x005C3840": {
     "name": "NMData::CollisionModelData::vfunc_6_off_C",
     "class": "NMData::CollisionModelData",
