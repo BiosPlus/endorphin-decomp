@@ -363,3 +363,25 @@ void storePairWithStaticObject(uint32_t* dst, uint32_t value) {
     dst[1] = staticPtr;
 }
 } // namespace lift_004C2230
+
+// [0x004CF910]
+namespace lift_004CF910 {
+// @name initStaticObjectOnce_004CF910
+// @summary One-time initializer for the global object at mem_00AE4B84; sets guard bit 0 of mem_00AE4B88, runs ext_0067A670 on the object, then stores vtable 0x9473D4 into it.
+// @field none
+
+DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AE4B84;
+extern DWORD mem_00AE4B88;
+
+DWORD initStaticObjectOnce_004CF910(void) {
+    // Guard: bit 0 of mem_00AE4B88 marks the object as initialized.
+    if ((mem_00AE4B88 & 1u) == 0u) {
+        mem_00AE4B88 |= 1u;
+        void* self = &mem_00AE4B84;
+        ext_0067A670(self, 0u);
+        mem_00AE4B84 = 0x009473D4u;
+    }
+    return static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AE4B84));
+}
+} // namespace lift_004CF910

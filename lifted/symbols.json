@@ -14553,6 +14553,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType\u003cRuntimeEngine, int, getNumTicksToRun, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004CF910": {
+    "name": "initStaticObjectOnce_004CF910",
+    "signature": "DWORD initStaticObjectOnce_004CF910(void)",
+    "summary": "One-time initializer for the global object at mem_00AE4B84; sets guard bit 0 of mem_00AE4B88, runs ext_0067A670 on the object, then stores vtable 0x9473D4 into it.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CFA50": {
     "name": "NMData::IncarnationEventData::vfunc_3_off_158",
     "class": "NMData::IncarnationEventData",
