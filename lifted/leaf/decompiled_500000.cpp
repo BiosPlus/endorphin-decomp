@@ -2119,3 +2119,30 @@ extern void fn_00506090(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_00506090
+
+// [0x00504B80]
+namespace lift_00504B80 {
+// Externals (resolved at link time from other lifted units).
+extern void __fastcall ext_00628FF0(void* self);  // std::basic_string<char> destructor (MSVCP80)
+extern void __fastcall ext_0065F440(void* self);  // stores mem_0093BF24 at +0x0 of its argument
+extern void __fastcall ext_0065C660(void* self);  // stores mem_00928E8C at +0x0 of its argument
+
+// @name Unknown::destroyStringAndDetach
+// @summary Destroys the std::string at +0x8, re-points +0x0 via ext_0065F440 (using this+4 when this is non-null), then re-points +0x0 via ext_0065C660.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x08 std::string field_0x08
+
+extern void __fastcall fn_00504B80(void* self) {
+    auto* base = reinterpret_cast<uint8_t*>(self);
+
+    // Destroy the embedded std::string at this+0x8.
+    ext_00628FF0(base + 0x8);
+
+    // Pass this+0x4 when this is non-null, otherwise null.
+    void* arg = (self != nullptr) ? static_cast<void*>(base + 0x4) : nullptr;
+    ext_0065F440(arg);
+
+    // Final call uses the original this pointer.
+    ext_0065C660(self);
+}
+} // namespace lift_00504B80

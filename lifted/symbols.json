@@ -18039,6 +18039,13 @@
     "summary": "Allocates count elements of size 40 bytes, throwing std::bad_alloc on integer overflow.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00504B80": {
+    "name": "Unknown::destroyStringAndDetach",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall ext_00628FF0(void* self);  // std::basic_string\u003cchar\u003e destructor (MSVCP80) extern \"C\" void __fastcall ext_0065F440(void* self);  // stores mem_0093BF24 at +0x0 of its argument extern \"C\" void __fastcall ext_0065C660(void* self);  // stores mem_00928E8C at +0x0 of its argument extern \"C\" void __fastcall fn_00504B80(void* self)",
+    "summary": "Destroys the std::string at +0x8, re-points +0x0 via ext_0065F440 (using this+4 when this is non-null), then re-points +0x0 via ext_0065C660.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00504C90": {
     "name": "GetStaticBoolString",
     "signature": "extern \"C\" uint32_t mem_00AEBB68;  // one-time-init guard word (bit 0) extern \"C\" char mem_00AEBB4C[];    // function-local static string storage void* fn_00504C90()",
