@@ -10,6 +10,6 @@
 // Recovered field layout for Geometry::CuboidType:
 namespace lifted_layout {
 struct Geometry_CuboidType_Fields {
-    // +0x0   void* vtable (no direct field access in this function)  (evidence: 0x005B1160)
+    // +0x0   void* vtable (no direct field access in this function)  (evidence: 0x005B1160, 0x0066BB90)
 };
 } // namespace lifted_layout

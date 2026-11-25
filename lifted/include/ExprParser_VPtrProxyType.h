@@ -10,6 +10,7 @@
 // Recovered field layout for ExprParser::VPtrProxyType:
 namespace lifted_layout {
 struct ExprParser_VPtrProxyType_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x0066BBA0, 0x0066BBC0, 0x0066BBE0, 0x0066BC00, 0x0066BC20, 0x0066BC40, 0x0066BC60, 0x0066BC80, 0x0066BCA0, 0x0066BCC0, 0x0066BCE0)
+    // +0x0   void*                    field_0x00  (evidence: 0x0066BBA0, 0x0066BBC0, 0x0066BBE0, 0x0066BC00, 0x0066BC20, 0x0066BC40, 0x0066BC60, 0x0066BC80, 0x0066BCA0, 0x0066BCC0, 0x0066BCE0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void* vtable (no direct field access in this function)  (evidence: 0x0066BB90) // CONFLICT: multiple definitions at +0x0
 };
 } // namespace lifted_layout

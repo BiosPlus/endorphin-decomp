@@ -43502,6 +43502,13 @@
     "summary": "Returns the field at +0x04 of the inner object at (*arg)+0x00, or 0 if arg is null.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0066BB90": {
+    "name": "ExprParser::VPtrProxyType::vfunc_37",
+    "class": "ExprParser::VPtrProxyType",
+    "signature": "void fn_0066BB90(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B1160 (Geometry::CuboidType::vfunc_1).",
+    "lifted_path": "lifted/ExprParser/VPtrProxyType.cpp"
+  },
   "0x0066BBA0": {
     "name": "ExprParser::VPtrProxyType::vfunc_7",
     "class": "ExprParser::VPtrProxyType",

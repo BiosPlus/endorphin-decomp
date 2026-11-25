@@ -12,6 +12,7 @@ void fn_0066BB90(void* self) {
     ext_00671FE0(self);
 }
 // Callee: sub_0041CF50 (thiscall-style: ecx = receiver, one stack argument, callee cleans).
+#include <cmath>
 
 // [0x0066BC40]
 // @name ExprParser::VPtrProxyType::vfunc_39
@@ -46,3 +47,27 @@ uint32_t fn_0066BCE0(void* self) {
     return target(obj, p);
 }
 } // namespace lift_0066BCE0
+
+// [0x0066BB90] ExprParser::VPtrProxyType::vfunc_37 (12 bytes)
+namespace lift_0066BB90 {
+extern void ext_00671FE0(void* self);
+
+// @name ExprParser::VPtrProxyType::vfunc_37
+// @class ExprParser::VPtrProxyType
+// @summary Auto-lifted identical-shape clone of 0x005B1160 (Geometry::CuboidType::vfunc_1).
+// @field ExprParser::VPtrProxyType +0x0 void* vtable (no direct field access in this function)
+namespace lift_005B1160 {
+// Known callee 0x00647C30: sub_00647C30 (Auto-lifted identical-shape clone of 0x00647BF0 (Unknown::ForwardFloat68ToSubobjectA4).)
+extern void ext_00671FE0(void* self);
+
+// @name Geometry::CuboidType::vfunc_1
+// @class Geometry::CuboidType
+// @summary Forwards its single stack argument as `this` to ext_00647C30 (ecx = [esp+4]), then returns, popping 4 bytes.
+// @field Geometry::CuboidType +0x00 void* vtable (no direct field access in this function)
+void fn_0066BB90(void* self) {
+    // mov ecx, [esp+4]; call 0x647C30; ret 4
+    // The stack argument is loaded into ecx and used as the `this` for the callee.
+    ext_00671FE0(self);
+}
+} // namespace lift_005B1160
+} // namespace lift_0066BB90

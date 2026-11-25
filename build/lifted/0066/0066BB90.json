@@ -1,0 +1,28 @@
+{
+  "va": "0x0066BB90",
+  "size": 12,
+  "orig_symbol": "ExprParser::VPtrProxyType::vfunc_37",
+  "src_path": "src/ExprParser/VPtrProxyType.cpp",
+  "lifted_path": "lifted/ExprParser/VPtrProxyType.cpp",
+  "name": "ExprParser::VPtrProxyType::vfunc_37",
+  "class": "ExprParser::VPtrProxyType",
+  "signature": "void fn_0066BB90(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x005B1160 (Geometry::CuboidType::vfunc_1).",
+  "fields": [
+    {
+      "class": "ExprParser::VPtrProxyType",
+      "offset": "+0x0",
+      "type": "void* vtable (no direct field access in this",
+      "name": "function)"
+    },
+    {
+      "class": "Geometry::CuboidType",
+      "offset": "+0x0",
+      "type": "void* vtable (no direct field access in this",
+      "name": "function)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:22:41Z"
+}
