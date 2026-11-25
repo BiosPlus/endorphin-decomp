@@ -26863,6 +26863,13 @@
     "summary": "Calls ext_005A3610 on every element of the pointer array [+0x23C, +0x240) in order, then raises self+0xF4 to at least 2.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x00597630": {
+    "name": "Unknown::findValueByKey",
+    "class": "Unknown",
+    "signature": "inline uint32_t slot_value(int slot)",
+    "summary": "Scans 8-byte {value, key} pairs in the range [this+0x2D0, this+0x2D4) and returns the value of the first pair whose key equals the argument, or 0 if none matches.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00597DA0": {
     "name": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1\u003e",

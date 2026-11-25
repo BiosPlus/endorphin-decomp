@@ -1,0 +1,28 @@
+{
+  "va": "0x00597630",
+  "size": 99,
+  "orig_symbol": "sub_00597630",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "Unknown::findValueByKey",
+  "class": "Unknown",
+  "signature": "inline uint32_t slot_value(int slot)",
+  "summary": "Scans 8-byte {value, key} pairs in the range [this+0x2D0, this+0x2D4) and returns the value of the first pair whose key equals the argument, or 0 if none matches.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x2D0",
+      "type": "DWORD",
+      "name": "field_0x2D0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2D4",
+      "type": "DWORD",
+      "name": "field_0x2D4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:41:43Z"
+}

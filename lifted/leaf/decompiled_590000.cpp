@@ -1248,3 +1248,53 @@ uint32_t fn_00599EA0(void* self) {
     return lift_field<uint32_t>(first, 0x22C);
 }
 } // namespace lift_00599EA0
+
+// [0x00597630] sub_00597630 (99 bytes)
+namespace lift_00597630 {
+extern int mem_00925134;
+
+namespace {
+
+using InvalidParamFn = void (*)();
+
+inline uint32_t slot_value(int slot) {
+    return static_cast<uint32_t>(slot);
+}
+
+inline uint32_t read_u32(uint32_t addr) {
+    return *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(addr));
+}
+
+// Debug-iterator compatibility failure: MSVCR80 _invalid_parameter_noinfo (noreturn in the CRT).
+[[noreturn]] inline void raise_invalid_parameter() {
+    reinterpret_cast<InvalidParamFn>(static_cast<uintptr_t>(slot_value(mem_00925134)))();
+    std::abort();
+}
+
+}  // namespace
+
+// @name Unknown::findValueByKey
+// @class Unknown
+// @summary Scans 8-byte {value, key} pairs in the range [this+0x2D0, this+0x2D4) and returns the value of the first pair whose key equals the argument, or 0 if none matches.
+// @field Unknown +0x2D0 DWORD field_0x2D0
+// @field Unknown +0x2D4 DWORD field_0x2D4
+uint32_t fn_00597630(void* self, uint32_t key) {
+    uint32_t cur = lift_field<uint32_t>(self, 0x2CC + 0x4);
+    const uint32_t last = lift_field<uint32_t>(self, 0x2CC + 0x8);
+
+    // Iterator validity check: the range begin must not be past its end.
+    if (cur > last) raise_invalid_parameter();
+
+    while (cur != last) {
+        // Each step must still lie inside the range.
+        if (!(cur < last)) raise_invalid_parameter();
+
+        if (read_u32(cur + 4) == key) {
+            return read_u32(cur);
+        }
+
+        cur += 8;
+    }
+    return 0;
+}
+} // namespace lift_00597630
