@@ -728,3 +728,34 @@ bool fn_007AE140(LPSTR buffer, DWORD nSize) {
     return false;
 }
 } // namespace lift_007AE140
+
+// [0x007AF750] sub_007AF750 (79 bytes)
+namespace lift_007AF750 {
+// Known callee 0x007AF8F0: ext_007AF8F0 (Looks up a 16-bit key in the node list first, then the static table; returns the match or null.)
+extern uint8_t* ext_007AF8F0(uint16_t key);
+// Known callee 0x0079B140: ext_0079B140 (If the global hook pointer mem_00AAFC2C is non-null, call it with (a1, a2, &a3); otherwise do nothing.)
+// The original pushes four dwords (a1, a2, a3, and the caller's arg3) before calling, so the fourth is passed through.
+extern void ext_0079B140(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4);
+
+// @name Unknown::DispatchRecordByKey16
+// @class Unknown
+// @summary Looks up the record keyed by this+0x44; forwards this+0x00 and either the record's first dword or the key, plus arg3, to the optional hook. Always returns -1.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x44 uint16_t field_0x44
+int32_t fn_007AF750(void* self, uint32_t arg2, uint32_t arg3) {
+    (void)arg2;
+
+    const uint16_t key = lift_field<uint16_t>(self, 0x44);
+    const uint32_t a1 = lift_field<uint32_t>(self, 0x00);
+    uint8_t* rec = ext_007AF8F0(key);
+
+    if (rec != nullptr) {
+        const uint32_t recValue = lift_field<uint32_t>(rec, 0);
+        ext_0079B140(a1, 0x00AB11B4u, recValue, arg3);
+    } else {
+        ext_0079B140(a1, 0x00AB117Cu, static_cast<uint32_t>(key), arg3);
+    }
+
+    return -1;
+}
+} // namespace lift_007AF750

@@ -59195,6 +59195,13 @@
     "summary": "If the global callback pointer is set, call it cdecl with (a1, a2, \u0026a3) and return.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007AF750": {
+    "name": "Unknown::DispatchRecordByKey16",
+    "class": "Unknown",
+    "signature": "int32_t fn_007AF750(void* self, uint32_t arg2, uint32_t arg3)",
+    "summary": "Looks up the record keyed by this+0x44; forwards this+0x00 and either the record's first dword or the key, plus arg3, to the optional hook. Always returns -1.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AF7E0": {
     "name": "Unknown::DispatchFirstDwordWithTag",
     "class": "Unknown",

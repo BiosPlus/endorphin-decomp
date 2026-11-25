@@ -1,0 +1,28 @@
+{
+  "va": "0x007AF750",
+  "size": 79,
+  "orig_symbol": "sub_007AF750",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "Unknown::DispatchRecordByKey16",
+  "class": "Unknown",
+  "signature": "int32_t fn_007AF750(void* self, uint32_t arg2, uint32_t arg3)",
+  "summary": "Looks up the record keyed by this+0x44; forwards this+0x00 and either the record's first dword or the key, plus arg3, to the optional hook. Always returns -1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "uint16_t",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:55:52Z"
+}
