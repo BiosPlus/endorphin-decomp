@@ -682,3 +682,30 @@ double fn_007BB100(int index) {
     return std::exp2(t);
 }
 } // namespace lift_007BB100
+
+// [0x007BE010]
+namespace lift_007BE010 {
+// @name Unknown::StoreRowByteCount
+// @class Unknown
+// @summary Computes the row byte count via one of two helpers chosen by flag bit 0x400 at +0x0c and stores it at +0x1cc; always returns 1.
+// @field Unknown +0x0c uint32_t field_0x0c
+// @field Unknown +0x1cc uint32_t field_0x1cc
+
+extern uint32_t ext_007AF200(const void* self);
+extern uint32_t ext_00798840(uint8_t* self);
+
+uint32_t fn_007BE010(uint8_t* self) {
+    uint32_t flags;
+    std::memcpy(&flags, self + 0x0c, sizeof(flags));
+
+    uint32_t rowBytes;
+    if ((flags & 0x00000400u) != 0) {
+        rowBytes = ext_007AF200(self);
+    } else {
+        rowBytes = ext_00798840(self);
+    }
+
+    std::memcpy(self + 0x1cc, &rowBytes, sizeof(rowBytes));
+    return 1;
+}
+} // namespace lift_007BE010
