@@ -782,3 +782,35 @@ void fn_00455B50(uint8_t* self)
     ext_004691D0(result);
 }
 } // namespace lift_00455B50
+
+// [0x00456C20] sub_00456C20 (75 bytes)
+namespace lift_00456C20 {
+// Known callee 0x00455C20: CSizingControlBar::vfunc_0 (Returns address of global mem_00936D1C.)
+extern void* ext_00455C20(void);
+// Known callee 0x006A63BE: thunk_MFC80_ord_3952 (IAT jump thunk forwarding to MFC80!ord_3952.)
+// Original calling convention: ecx = obj, one stack argument; returns BOOL in eax.
+extern int ext_006A63BE(void* ecx_obj, void* stack_arg);
+
+// @name NotifyNodeList_00456C20
+// @summary Walks a singly linked list at this+0x88; for each node, calls ext_006A63BE(obj, ext_00455C20()) and, if true, invokes virtual slot +0x17c on obj with arg.
+// @field Unknown +0x88 void* nodeList
+// (node layout: +0x00 next pointer, +0x08 object pointer; object vtable slot at +0x17c)
+// The original tail-jump to thunk_MFC80_ord_1185 (ext_006A60EE) is only reached when the list head is null
+// at a point the loop already guarantees non-null, so it is unreachable and omitted.
+void fn_00456C20(void* self, void* arg) {
+    void* node = *reinterpret_cast<void**>(static_cast<char*>(self) + 0x88);
+    while (node != nullptr) {
+        void* next = *reinterpret_cast<void**>(node);
+        void* obj = *reinterpret_cast<void**>(static_cast<char*>(node) + 0x08);
+        void* token = ext_00455C20();
+        int ok = ext_006A63BE(obj, token);
+        if (ok != 0) {
+            void** vtbl = *reinterpret_cast<void***>(obj);
+            void* slot = *reinterpret_cast<void**>(reinterpret_cast<char*>(vtbl) + 0x17c);
+            auto method = reinterpret_cast<void (*)(void*, void*)>(slot);
+            method(obj, arg);
+        }
+        node = next;
+    }
+}
+} // namespace lift_00456C20

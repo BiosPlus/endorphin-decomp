@@ -1,0 +1,21 @@
+{
+  "va": "0x00456C20",
+  "size": 75,
+  "orig_symbol": "sub_00456C20",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "NotifyNodeList_00456C20",
+  "signature": "void fn_00456C20(void* self, void* arg)",
+  "summary": "Walks a singly linked list at this+0x88; for each node, calls ext_006A63BE(obj, ext_00455C20()) and, if true, invokes virtual slot +0x17c on obj with arg.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "nodeList"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:36:09Z"
+}
