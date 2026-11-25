@@ -433,3 +433,17 @@ void sub_007FC4E0(uint32_t ecx_dst, uint32_t eax_src) {
     }
 }
 } // namespace lift_007FC4E0
+
+// [0x007F9D50]
+namespace lift_007F9D50 {
+// @name negateFloatArray
+// @summary Negates an array of floats in-place.
+
+
+void __cdecl sub_007F9D50(int32_t count, float* data) {
+    float* end = data + count;
+    for (float* p = data; p < end; ++p) {
+        *p = -(*p);
+    }
+}
+} // namespace lift_007F9D50

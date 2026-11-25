@@ -69242,6 +69242,12 @@
     "summary": "Copies `count` consecutive floats from src to dst in ascending order (cdecl, 3 args).",
     "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
+  "0x007F9D50": {
+    "name": "negateFloatArray",
+    "signature": "void __cdecl sub_007F9D50(int32_t count, float* data)",
+    "summary": "Negates an array of floats in-place.",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
   "0x007FC290": {
     "name": "copyVec3Float",
     "signature": "void copyVec3Float(const float* src, float* dst)",

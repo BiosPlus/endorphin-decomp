@@ -1,0 +1,13 @@
+{
+  "va": "0x007F9D50",
+  "size": 96,
+  "orig_symbol": "sub_007F9D50",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "negateFloatArray",
+  "signature": "void __cdecl sub_007F9D50(int32_t count, float* data)",
+  "summary": "Negates an array of floats in-place.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:52:50Z"
+}
