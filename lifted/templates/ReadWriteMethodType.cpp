@@ -10166,3 +10166,35 @@ void fn_004D5DC0([[maybe_unused]] void* self, void* out) {
     lift_field<DWORD>(out, 4) = 0x00AE5D24u;
 }
 } // namespace lift_004D5DC0
+
+// [0x004D6320]
+namespace lift_004D6320 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+// Static object storage at 0x00AE5D34 (first dword receives vtable 0x0094902C after init).
+extern uint32_t mem_00AE5D34;
+// One-shot initialization guard flag at 0x00AE5D38 (bit 0).
+extern uint32_t mem_00AE5D38;
+
+// @name ExprParser::ReadWriteMethodType<NMData::RigEventData,bool,isGravityEnabled,setGravityEnabled>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setGravityEnabled(bool), 0}>
+// @summary One-time initializes a static accessor object (guarded by bit 0 of 0x00AE5D38), then writes its address into the holder's +0x04 slot.
+// @field ValuePtrType +0x04 void* field_0x04
+void fn_004D6320(void* self) {
+    // Guarded one-time init: on first entry set the flag, run the callee on the
+    // static object, then install the object's vtable. The SEH frame setup/teardown
+    // from the original (fs:[0] bookkeeping) is MSVC EH plumbing and is not lifted.
+    if ((mem_00AE5D38 & 1u) == 0u) {
+        mem_00AE5D38 |= 1u;
+        using InitFn = void (*)(void* thisPtr, uint32_t value);
+        auto init = reinterpret_cast<InitFn>(&ext_0067A670);
+        init(&mem_00AE5D34, 0u);
+        mem_00AE5D34 = 0x0094902Cu;
+    }
+
+    // Publish the static object's address into self+0x04.
+    auto* holder = static_cast<uint8_t*>(self);
+    const auto addr = reinterpret_cast<std::uintptr_t>(&mem_00AE5D34);
+    *reinterpret_cast<uint32_t*>(holder + 0x04) = static_cast<uint32_t>(addr);
+}
+} // namespace lift_004D6320

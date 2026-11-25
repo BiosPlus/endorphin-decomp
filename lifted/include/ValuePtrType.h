@@ -21,7 +21,7 @@ struct ValuePtrType_Fields {
     // +0x0   void*                    value_ptr  (evidence: 0x0049D4B0) // CONFLICT: multiple definitions at +0x0
     // +0x4   void*                    field_04  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x00633240) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00494DE0, 0x004A2E70, 0x004CB250, 0x00515BD0, 0x00607C50) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    field_0x04  (evidence: 0x00494DE0, 0x004AA0C0, 0x004B8310, 0x004C1040, 0x004C5BD0, 0x004CB250, 0x004CB500, 0x005B7BC0, 0x0066EDE0, 0x0066EE20) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_0x04  (evidence: 0x00494DE0, 0x004AA0C0, 0x004B8310, 0x004C1040, 0x004C5BD0, 0x004CB250, 0x004CB500, 0x004D6320, 0x005B7BC0, 0x0066EDE0, 0x0066EE20) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    inner  (evidence: 0x00594550, 0x005B7BC0, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    ptr  (evidence: 0x004B86C0, 0x004CB250) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    target  (evidence: 0x005B7BC0, 0x0064F2F0) // CONFLICT: multiple definitions at +0x4
