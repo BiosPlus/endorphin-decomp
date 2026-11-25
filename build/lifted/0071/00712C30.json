@@ -4,10 +4,49 @@
   "orig_symbol": "sub_00712C30",
   "src_path": "src/clones/auto_clones_710000.cpp",
   "lifted_path": "lifted/clones/auto_clones_710000.cpp",
-  "name": "CopyHugeToGlobals_00712C30",
-  "signature": "void fn_00712C30(void)",
-  "summary": "Copies the 8-byte value pointed to by _HUGE into four consecutive 8-byte globals (dword pairs).",
+  "name": "sub_00713730",
+  "class": "Unknown",
+  "signature": "void fn_00713730(void)",
+  "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x398",
+      "type": "uint32_t",
+      "name": "field_0x398"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x39C",
+      "type": "uint32_t",
+      "name": "field_0x39c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3A0",
+      "type": "uint32_t",
+      "name": "field_0x3a0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3A4",
+      "type": "uint32_t",
+      "name": "field_0x3a4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3A8",
+      "type": "uint32_t",
+      "name": "field_0x3a8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3AC",
+      "type": "uint32_t",
+      "name": "field_0x3ac"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T01:34:54Z"
+  "lifted_at": "2026-11-25T01:35:00Z"
 }

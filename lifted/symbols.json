@@ -53735,9 +53735,10 @@
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00712C30": {
-    "name": "CopyHugeToGlobals_00712C30",
-    "signature": "void fn_00712C30(void)",
-    "summary": "Copies the 8-byte value pointed to by _HUGE into four consecutive 8-byte globals (dword pairs).",
+    "name": "sub_00713730",
+    "class": "Unknown",
+    "signature": "void fn_00713730(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00712F40": {
