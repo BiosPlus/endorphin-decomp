@@ -50723,3 +50723,36 @@ void fn_004A2930(void* self) {
     ext_006A6DD2(exc, &mem_009DEC1C);  // always throws
 }
 } // namespace lift_004A2930
+
+// [0x0049CB70] ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_0049CB70 {
+// Known callee 0x0049AA20: sub_0049AA20 (4B). Takes the object pointer in ecx and returns a bool in al.
+extern uint8_t ext_0049AA20(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Throw-info descriptor pushed at 0x0049CB98.
+static const void* const kThrowInfo_0049CB98 = reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1CU));
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads the wrapped object pointer; if present, queries isDeactivated and then throws; if absent, throws a fixed DerivedException. Never returns normally.
+// @field ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0049CB70(void* self) {
+    void* object = lift_field<void*>(self, 0x00);
+
+    if (object != nullptr) {
+        uint32_t deactivated = ext_0049AA20(object);
+        ext_0046C4E0(deactivated);
+    }
+
+    // Exception object lives in the 0x28-byte frame reserved at 0x0049CB76.
+    alignas(8) uint8_t exception_object[0x28] = {};
+    ext_0046C3C0(exception_object);
+    ext_006A6DD2(exception_object, kThrowInfo_0049CB98);
+}
+} // namespace lift_0049CB70

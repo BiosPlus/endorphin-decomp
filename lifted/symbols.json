@@ -11964,6 +11964,13 @@
     "summary": "Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0049CB70": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0\u003e",
+    "signature": "void fn_0049CB70(void* self)",
+    "summary": "Reads the wrapped object pointer; if present, queries isDeactivated and then throws; if absent, throws a fixed DerivedException. Never returns normally.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0049CC60": {
     "name": "ensureStaticObjectInitialized_0049CC60",
     "signature": "int* fn_0049CC60()",

@@ -1,0 +1,14 @@
+{
+  "va": "0x0049CB70",
+  "size": 55,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated, 0\u003e::vfunc_5",
+  "class": "ExprParser::ReadMethodType\u003cNMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0\u003e",
+  "signature": "void fn_0049CB70(void* self)",
+  "summary": "Reads the wrapped object pointer; if present, queries isDeactivated and then throws; if absent, throws a fixed DerivedException. Never returns normally.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:56:44Z"
+}
