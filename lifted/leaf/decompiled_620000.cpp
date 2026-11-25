@@ -25,8 +25,10 @@ extern void __fastcall fn_00629DF0(void* self) {
 } // namespace lift_00629DF0
 #include <cstring>
 #include <cstddef>
+#include <utility>
+#include <stdexcept>
 
-// [0x006271D0] sub_006271D0 (25 bytes)
+#include <stdexcept>
 namespace lift_006271D0 {
 extern void __thiscall ext_00647E00(void* self, uint32_t arg);
 
@@ -1666,3 +1668,46 @@ uintptr_t fn_0062C3F0(uintptr_t self, uint32_t arg0, uint32_t arg1, uint32_t arg
     return self;
 }
 } // namespace lift_0062C3F0
+
+// [0x00621740] sub_00621740 (89 bytes)
+namespace lift_00621740 {
+extern void __cdecl ext_00621680(int a1, int a2, void* self, int a4);
+
+// @name sub_00621740
+// @summary Auto-lifted identical-shape clone of 0x0048CCC0 (UnknownElementVector::erase).
+namespace lift_0048CCC0 {
+extern void (*mem_00925134)();
+extern void ext_00621680(uint8_t* first, uint8_t* last);
+extern int32_t ext_00621190(int32_t arg1, int32_t arg2, int32_t arg3);
+
+// @name UnknownElementVector::erase
+// @class UnknownElementVector
+// @summary Erases a checked iterator range [first, last) from a vector of 0x68-byte elements, shifting trailing elements and destroying the vacated tail.
+// @field UnknownElementVector +0x08 uint8_t* last
+uint32_t* __thiscall fn_00621740(
+    uint8_t* self,
+    uint32_t* out_iter,
+    uint32_t first_container,
+    uint32_t first_ptr,
+    uint32_t last_container,
+    uint32_t last_ptr) {
+  if (first_container == 0 || first_container != last_container) {
+    mem_00925134();
+  }
+  if (first_ptr != last_ptr) {
+    int32_t old_last = *reinterpret_cast<int32_t*>(self + 0x8);
+    int32_t new_last = ext_00621190(
+        static_cast<int32_t>(last_ptr),
+        old_last,
+        static_cast<int32_t>(first_ptr));
+    ext_00621680(
+        reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(new_last)),
+        reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(*reinterpret_cast<uint32_t*>(self + 0x8))));
+    *reinterpret_cast<int32_t*>(self + 0x8) = new_last;
+  }
+  out_iter[0] = first_container;
+  out_iter[1] = first_ptr;
+  return out_iter;
+}
+} // namespace lift_0048CCC0
+} // namespace lift_00621740

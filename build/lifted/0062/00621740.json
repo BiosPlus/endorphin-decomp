@@ -1,0 +1,22 @@
+{
+  "va": "0x00621740",
+  "size": 89,
+  "orig_symbol": "sub_00621740",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "sub_00621740",
+  "class": "UnknownElementVector",
+  "signature": "uint32_t* __thiscall fn_00621740( uint8_t* self, uint32_t* out_iter, uint32_t first_container, uint32_t first_ptr, uint32_t last_container, uint32_t last_ptr)",
+  "summary": "Auto-lifted identical-shape clone of 0x0048CCC0 (UnknownElementVector::erase).",
+  "fields": [
+    {
+      "class": "UnknownElementVector",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "last"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T02:21:20Z"
+}

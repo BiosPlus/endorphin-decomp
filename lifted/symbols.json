@@ -33703,6 +33703,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x00621740": {
+    "name": "sub_00621740",
+    "class": "UnknownElementVector",
+    "signature": "uint32_t* __thiscall fn_00621740( uint8_t* self, uint32_t* out_iter, uint32_t first_container, uint32_t first_ptr, uint32_t last_container, uint32_t last_ptr)",
+    "summary": "Auto-lifted identical-shape clone of 0x0048CCC0 (UnknownElementVector::erase).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x006217A0": {
     "name": "sub_006217A0",
     "signature": "DWORD* __thiscall fn_006217A0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",

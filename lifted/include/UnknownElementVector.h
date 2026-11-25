@@ -8,6 +8,6 @@
 // Recovered field layout for UnknownElementVector:
 namespace lifted_layout {
 struct UnknownElementVector_Fields {
-    // +0x8   uint8_t*                 last  (evidence: 0x0048CCC0)
+    // +0x8   uint8_t*                 last  (evidence: 0x0048CCC0, 0x00621740)
 };
 } // namespace lifted_layout
