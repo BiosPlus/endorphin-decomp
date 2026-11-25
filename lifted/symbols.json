@@ -68737,9 +68737,10 @@
     "lifted_path": "lifted/leaf/decompiled_7E0000.cpp"
   },
   "0x007E80E0": {
-    "name": "descriptiveName: CopyFloat16 (ecx = dst, arg0 = src; returns dst)",
-    "signature": "void fn_007E80E0(float* dst, const float* src)",
-    "summary": "Copies 16 consecutive 32-bit floats (64 bytes) from src to dst and returns dst.",
+    "name": "reciprocalOrZero_007EC6E0",
+    "class": "Vec3",
+    "signature": "float fn_007EC6E0(float x)",
+    "summary": "Returns 1/x for x with |x| \u003e FLT_MIN (0x00800000), otherwise 0.0f (also for NaN).",
     "lifted_path": "lifted/leaf/decompiled_7E0000.cpp"
   },
   "0x007EC6E0": {
