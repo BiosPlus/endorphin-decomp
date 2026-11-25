@@ -6401,6 +6401,13 @@
     "summary": "Stores address of mem_00937394 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
+  "0x004585B0": {
+    "name": "SpinButtonStates::DragSpinState::vfunc_8",
+    "class": "SpinButtonStates::DragSpinState",
+    "signature": "extern \"C\" void __thiscall fn_004585B0(void* self, void* arg1, uint32_t arg2)",
+    "summary": "Handles mouse drag movement on a spin button, stepping value up/down and resetting cursor position.",
+    "lifted_path": "lifted/SpinButtonStates/DragSpinState.cpp"
+  },
   "0x00458650": {
     "name": "ForwardField54ThenMfcThunk",
     "signature": "void fn_00458650(void* self, uint32_t firstArg, void* trailingArgs)",
@@ -8008,6 +8015,12 @@
     "signature": "extern \"C\" void __fastcall fn_0046C550(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls sub_0046C5E0.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x0046C560": {
+    "name": "sub_0046C560_ctor",
+    "signature": "void* fn_0046C560(void* self)",
+    "summary": "Constructor initializing vtables, subobject at +0x4, std::string at +0x28, and scalar fields.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
   "0x0046C5E0": {
     "name": "sub_0046C5E0",
@@ -52148,6 +52161,13 @@
     "summary": "Reads a 32-bit float from the byte vector at *offsetPtr and advances *offsetPtr by 4 bytes.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x00698B50": {
+    "name": "ByteVector::readVector3",
+    "class": "ByteVector",
+    "signature": "void __thiscall fn_00698B50(void* self, uint32_t* offsetPtr, float* outVec)",
+    "summary": "Reads three 32-bit floats from the byte vector at *offsetPtr into outVec, advancing *offsetPtr by 12 bytes.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00698B90": {
     "name": "CopyBytesRangeStdcallAdapter",
     "signature": "extern \"C\" uint8_t* __stdcall fn_00698B90(uint32_t /*arg0*/, const uint8_t* first, uint32_t /*arg2*/, const uint8_t* last, uint8_t* dst)",
@@ -70965,6 +70985,12 @@
     "signature": "void fn_0078D2C0()",
     "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
     "lifted_path": "lifted/clones/auto_clones_780000.cpp"
+  },
+  "0x0078D2D0": {
+    "name": "destroyTwoPointerBuffersArray",
+    "signature": "void __thiscall sub_0078D2D0(void* self)",
+    "summary": "Releases two pointer buffers on the object and runs vector destruction on 2 elements of size 0x18.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
   "0x0078D4E0": {
     "name": "UnknownClass::getEntryField10Ptr",

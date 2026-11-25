@@ -1,0 +1,13 @@
+{
+  "va": "0x0078D2D0",
+  "size": 96,
+  "orig_symbol": "sub_0078D2D0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "destroyTwoPointerBuffersArray",
+  "signature": "void __thiscall sub_0078D2D0(void* self)",
+  "summary": "Releases two pointer buffers on the object and runs vector destruction on 2 elements of size 0x18.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:36:27Z"
+}

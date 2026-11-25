@@ -2057,3 +2057,18 @@ extern void __thiscall fn_0078D6B0(void* self) {
     release_pointer_buffer(base + 0x18);
 }
 } // namespace lift_0078D6B0
+
+// [0x0078D2D0]
+namespace lift_0078D2D0 {
+// @name destroyTwoPointerBuffersArray
+// @summary Releases two pointer buffers on the object and runs vector destruction on 2 elements of size 0x18.
+
+
+extern void __thiscall ext_0078D6B0(void* self);
+extern void __stdcall ext_006A6D5C(void* ptr, uint32_t size, int32_t count, uint32_t dtor);
+
+void __thiscall sub_0078D2D0(void* self) {
+    ext_0078D6B0(self);
+    ext_006A6D5C(self, 0x18u, 2, 0x0074ADF0u);
+}
+} // namespace lift_0078D2D0
