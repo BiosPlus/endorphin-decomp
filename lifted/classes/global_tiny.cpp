@@ -6559,3 +6559,18 @@ uint32_t __thiscall fn_00627270(void* self) {
 } // namespace lift_00629B00
 } // namespace lift_00648ED0
 } // namespace lift_00627270
+
+// [0x006B0480] GWCCategoryWithButtonsItem::vfunc_11 (7 bytes)
+namespace lift_006B0480 {
+// @name GWCCategoryWithButtonsItem::vfunc_11
+// @class GWCCategoryWithButtonsItem
+// @summary Tail-dispatch thunk: loads this->vtable[+0x28] and returns that slot's code address (asm jmp target).
+// @field GWCCategoryWithButtonsItem +0x00 void* vtable
+void* fn_006B0480(void* self) {
+    // mov eax, [ecx]        ; eax = this->vtable
+    void* vtbl = lift_field<void*>(self, 0x00);
+    // mov eax, [eax+0x28]   ; eax = vtable[10]
+    // jmp eax               ; tail-jump to slot target (caller receives the target address)
+    return lift_field<void*>(vtbl, 0x28);
+}
+} // namespace lift_006B0480

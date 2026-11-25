@@ -1,0 +1,22 @@
+{
+  "va": "0x006B0480",
+  "size": 7,
+  "orig_symbol": "GWCCategoryWithButtonsItem::vfunc_11",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "GWCCategoryWithButtonsItem::vfunc_11",
+  "class": "GWCCategoryWithButtonsItem",
+  "signature": "void* fn_006B0480(void* self)",
+  "summary": "Tail-dispatch thunk: loads this-\u003evtable[+0x28] and returns that slot's code address (asm jmp target).",
+  "fields": [
+    {
+      "class": "GWCCategoryWithButtonsItem",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:12:33Z"
+}
