@@ -667,3 +667,20 @@ void fn_00641760(void* self, uint8_t* node) {
     } while (node[0x2d] == 0);
 }
 } // namespace lift_00641760
+
+// [0x0064DEE0] sub_0064DEE0 (62 bytes)
+namespace lift_0064DEE0 {
+void ext_00693F40(void* subobject, void* arg);
+void ext_007C5BD0(uint32_t value, void* out);
+
+// @name Unknown::AccumulateAndDispatchField64
+// @class Unknown
+// @summary Zeroes a local float, fills it via sub_00693F40 from arg, then calls sub_007C5BD0 with self+0x64 and the float's address.
+// @field Unknown +0x64 uint32_t field_0x64
+void fn_0064DEE0(void* self, void* arg) {
+    float accumulator = 0.0f;
+    ext_00693F40(&accumulator, arg);
+    uint32_t field = *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x64);
+    ext_007C5BD0(field, &accumulator);
+}
+} // namespace lift_0064DEE0

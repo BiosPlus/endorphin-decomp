@@ -1,0 +1,22 @@
+{
+  "va": "0x0064DEE0",
+  "size": 62,
+  "orig_symbol": "sub_0064DEE0",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "Unknown::AccumulateAndDispatchField64",
+  "class": "Unknown",
+  "signature": "void fn_0064DEE0(void* self, void* arg)",
+  "summary": "Zeroes a local float, fills it via sub_00693F40 from arg, then calls sub_007C5BD0 with self+0x64 and the float's address.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:01:31Z"
+}
