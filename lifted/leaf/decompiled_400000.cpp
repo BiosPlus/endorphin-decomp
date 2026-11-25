@@ -1785,3 +1785,19 @@ void* fn_00404C60(void* self, uint32_t arg) {
     return self;
 }
 } // namespace lift_00404C60
+
+// [0x00404F00]
+namespace lift_00404F00 {
+extern const char mem_00929F48[];
+extern int (__cdecl *mem_009251E0)(char* buffer, size_t count, const char* format, ...);
+extern void* (__thiscall *mem_00924FE4)(void* self, const char* s);
+
+// @name formatIntToString
+// @summary Formats an integer into a stack buffer via _snprintf and constructs a std::string.
+void* __cdecl sub_00404F00(void* out_str, int32_t value) {
+    char buf[34] = {};
+    mem_009251E0(buf, 0x1e, mem_00929F48, value);
+    mem_00924FE4(out_str, buf);
+    return out_str;
+}
+} // namespace lift_00404F00
