@@ -1,0 +1,28 @@
+{
+  "va": "0x006DE690",
+  "size": 78,
+  "orig_symbol": "sub_006DE690",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::FindIndexByName",
+  "class": "Unknown",
+  "signature": "extern \"C\" int32_t __fastcall fn_006DE690(void* self, void* /*edx*/, const char* name)",
+  "summary": "Searches items [0..count) by case-insensitive name using vtable+0x18 and ext_006DE3B0, returning index or -1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "int32_t",
+      "name": "count"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:53:16Z"
+}
