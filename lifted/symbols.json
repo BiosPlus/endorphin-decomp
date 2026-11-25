@@ -16337,6 +16337,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004DF840": {
+    "name": "ExprParser::ReadWriteMethodType\u003cAnimationEventData,int\u003e::vfunc_40 (getMotionStartFrameNumber / setMotionStartFrameNumber)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::AnimationEventData::setMotionStartFrameNumber(int), 0}\u003e",
+    "signature": "extern \"C\" DWORD mem_00AE6448;  // one-shot init guard (bit 0) extern \"C\" DWORD mem_00AE6444;  // static object; first DWORD receives vtable 0x0094A61C void fn_004DF840(void* self)",
+    "summary": "One-time init of the static object at mem_00AE6444 (vtable 0x0094A61C), then links self+0x04 to that object. SEH scope frame of the original is omitted.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004DF8C0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0\u003e::vfunc_4",
     "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0\u003e",

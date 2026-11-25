@@ -10325,3 +10325,27 @@ void fn_004DEAE0(void* holder) {
     lift_field<void*>(holder, 4) = &mem_00AE6424;
 }
 } // namespace lift_004DEAE0
+
+// [0x004DF840] ExprParser::ReadWriteMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::AnimationEventData::setMotionStartFrameNumber(int), 0}>::vfunc_40 (122 bytes)
+namespace lift_004DF840 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+// Called here with ECX = &mem_00AE6444 (static object); no meaningful stack argument is passed in the original asm.
+extern void ext_0067A670();
+extern DWORD mem_00AE6448;  // one-shot init guard (bit 0)
+extern DWORD mem_00AE6444;  // static object; first DWORD receives vtable 0x0094A61C
+
+// @name ExprParser::ReadWriteMethodType<AnimationEventData,int>::vfunc_40 (getMotionStartFrameNumber / setMotionStartFrameNumber)
+// @class ExprParser::ReadWriteMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::AnimationEventData::setMotionStartFrameNumber(int), 0}>
+// @summary One-time init of the static object at mem_00AE6444 (vtable 0x0094A61C), then links self+0x04 to that object. SEH scope frame of the original is omitted.
+// @field ExprParser::ReadWriteMethodType +0x04 DWORD linkedStaticObject
+void fn_004DF840(void* self) {
+    // Static-guarded initialization (first call only).
+    if ((mem_00AE6448 & 1u) == 0) {
+        mem_00AE6448 |= 1u;
+        ext_0067A670();
+        mem_00AE6444 = 0x0094A61Cu;
+    }
+    // Both paths: self->link = &mem_00AE6444.
+    lift_field<DWORD>(self, 0x04) = 0x00AE6444u;
+}
+} // namespace lift_004DF840
