@@ -500,3 +500,25 @@ void* fn_004FFA60() {
     return &mem_00AEB28C;
 }
 } // namespace lift_004FFA60
+
+// [0x004FFB20] sub_004FFB20 (87 bytes)
+namespace lift_004FFB20 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+extern DWORD mem_00AEB2A0;
+extern DWORD mem_00AEB29C;
+
+// @name getOrInitStaticSingleton_004FFB20
+// @summary Returns the address of the global singleton at 0x00AEB29C, initializing it once (guarded by bit 0 of 0x00AEB2A0).
+void* fn_004FFB20() {
+    // One-time initialization guard: bit 0 of the flag DWORD marks "initialized".
+    if ((mem_00AEB2A0 & 1u) == 0) {
+        mem_00AEB2A0 |= 1u;
+        // Object constructor step: 0x0067A670 writes 0 into the object's first DWORD.
+        ext_0067A670();
+        // Then the first DWORD is set to the vtable/tag value 0x0094E6D4.
+        mem_00AEB29C = 0x0094E6D4u;
+    }
+    return &mem_00AEB29C;
+}
+} // namespace lift_004FFB20

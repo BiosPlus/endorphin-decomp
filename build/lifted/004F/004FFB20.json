@@ -1,0 +1,13 @@
+{
+  "va": "0x004FFB20",
+  "size": 87,
+  "orig_symbol": "sub_004FFB20",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "getOrInitStaticSingleton_004FFB20",
+  "signature": "void* fn_004FFB20()",
+  "summary": "Returns the address of the global singleton at 0x00AEB29C, initializing it once (guarded by bit 0 of 0x00AEB2A0).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:08:58Z"
+}

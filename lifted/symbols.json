@@ -17443,6 +17443,12 @@
     "summary": "Lazily initializes the static singleton at 0x00AEB28C (guarded by bit 0 of 0x00AEB290) and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
+  "0x004FFB20": {
+    "name": "getOrInitStaticSingleton_004FFB20",
+    "signature": "void* fn_004FFB20()",
+    "summary": "Returns the address of the global singleton at 0x00AEB29C, initializing it once (guarded by bit 0 of 0x00AEB2A0).",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004FFF60": {
     "name": "sub_004FFF60",
     "signature": "extern \"C\" void __fastcall fn_004FFF60(void* self)",
