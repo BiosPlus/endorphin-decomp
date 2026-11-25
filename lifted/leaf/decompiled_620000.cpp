@@ -1002,3 +1002,22 @@ void __cdecl sub_006210E0(uint32_t begin, uint32_t end, uint32_t src) {
     } while (cur != end);
 }
 } // namespace lift_006210E0
+
+// [0x00624EA0]
+namespace lift_00624EA0 {
+// @name Unknown::initWithArgsStoreArg3
+// @class Unknown
+// @summary Forwards four stack args to Unknown::initWithArgs, stores arg2 at +0x38, installs vtable 0x0097742C, returns this.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x38 uint32_t field_0x38
+
+// Stack-argument callee (ret 0x10); ecx = this.
+extern void* ext_00624E50(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4);
+
+void* fn_00624EA0(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4) {
+    ext_00624E50(self, a1, a2, a3, a4);
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t>(self) + 0x38) = a3;
+    *reinterpret_cast<uint32_t*>(self) = 0x0097742Cu;
+    return self;
+}
+} // namespace lift_00624EA0

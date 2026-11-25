@@ -31436,6 +31436,13 @@
     "summary": "Writes the unsigned min of (a, b) to out[0] and the unsigned max to out[1].",
     "lifted_path": "lifted/leaf/tiny_620000.cpp"
   },
+  "0x00624EA0": {
+    "name": "Unknown::initWithArgsStoreArg3",
+    "class": "Unknown",
+    "signature": "void* fn_00624EA0(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4)",
+    "summary": "Forwards four stack args to Unknown::initWithArgs, stores arg2 at +0x38, installs vtable 0x0097742C, returns this.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00624EE0": {
     "name": "CompareDwordPairIsGreater",
     "signature": "int fn_00624EE0(const void* a, const void* b)",
