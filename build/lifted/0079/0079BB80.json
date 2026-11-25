@@ -4,10 +4,10 @@
   "orig_symbol": "sub_0079BB80",
   "src_path": "src/clones/auto_clones_790000.cpp",
   "lifted_path": "lifted/clones/auto_clones_790000.cpp",
-  "name": "copyHugeValueToGlobals_0079BB80",
-  "signature": "void sub_0079BB80()",
-  "summary": "Copies the 8-byte _HUGE value (pointed to by mem_00925284) into three consecutive 8-byte globals.",
+  "name": "sub_0079BBD0",
+  "signature": "void fn_0079BBD0(void)",
+  "summary": "Auto-lifted identical-shape clone of 0x007747B0 (initNegatedHugeGlobals).",
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T00:52:34Z"
+  "lifted_at": "2026-11-25T00:52:54Z"
 }
