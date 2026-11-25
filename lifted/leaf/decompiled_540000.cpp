@@ -739,3 +739,22 @@ void fn_00547080(const float* a, float* out, const float* b) {
     }
 }
 } // namespace lift_00547080
+
+// [0x00545A70]
+namespace lift_00545A70 {
+// @name Unknown::DestroyMemberThenBase_00545A70
+// @class Unknown
+// @summary Runs the member-subobject teardown at this+0x9C, then the base teardown on this (MSVC EH-guarded).
+// @field Unknown +0x9C unknown field_0x9C
+
+extern void __fastcall ext_005499E0(void* self);
+extern void __fastcall ext_00543320(void* self);
+
+extern void __fastcall fn_00545A70(void* self) {
+    // Original code installs an SEH frame (state -1 -> 0), calls the member
+    // teardown on this+0x9C, then the base teardown on this, and unlinks the frame.
+    // Frame setup/unlink is compiler EH bookkeeping and is not representable in portable C++.
+    ext_005499E0(static_cast<char*>(self) + 0x9C);
+    ext_00543320(self);
+}
+} // namespace lift_00545A70

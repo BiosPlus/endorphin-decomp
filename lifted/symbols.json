@@ -20440,6 +20440,13 @@
     "summary": "Returns 1 if the signed 32-bit value at this+0xAC is non-negative, else 0.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00545A70": {
+    "name": "Unknown::DestroyMemberThenBase_00545A70",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_00545A70(void* self)",
+    "summary": "Runs the member-subobject teardown at this+0x9C, then the base teardown on this (MSVC EH-guarded).",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00545B50": {
     "name": "ResizeTool::vfunc_26",
     "class": "ResizeTool",

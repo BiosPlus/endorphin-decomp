@@ -1,0 +1,22 @@
+{
+  "va": "0x00545A70",
+  "size": 79,
+  "orig_symbol": "sub_00545A70",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Unknown::DestroyMemberThenBase_00545A70",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __fastcall fn_00545A70(void* self)",
+  "summary": "Runs the member-subobject teardown at this+0x9C, then the base teardown on this (MSVC EH-guarded).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x9C",
+      "type": "unknown",
+      "name": "field_0x9C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:46:33Z"
+}
