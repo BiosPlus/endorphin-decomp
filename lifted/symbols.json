@@ -59419,6 +59419,12 @@
     "summary": "Sets fields at +0x18C and +0x194 to 0x007BADF0 and returns 1.",
     "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
   },
+  "0x007BADF0": {
+    "name": "DispatchFirstWordOfRecordByKey44",
+    "signature": "uint32_t fn_007BADF0(uint8_t* self)",
+    "summary": "Looks up the record keyed by the word at self+0x44, then forwards self's first dword, a constant 0x00AB19FC, and the record's first dword to ext_0079B140. Always returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BAE20": {
     "name": "copyDword",
     "signature": "void sub_007BAE20(uint32_t *src, uint32_t *dst)",

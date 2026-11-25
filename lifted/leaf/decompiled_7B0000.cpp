@@ -1012,3 +1012,31 @@ void sub_007B8D80(void** out) {
     *out = node;
 }
 } // namespace lift_007B8D80
+
+// [0x007BADF0] sub_007BADF0 (38 bytes)
+namespace lift_007BADF0 {
+// Known callee 0x0079B140: DispatchThreeArgsToOptionalHook (If the global hook pointer mem_00AAFC2C is non-null, call it with (a1, a2, &a3); otherwise do nothing.)
+extern void ext_0079B140(uint32_t a1, uint32_t a2, uint32_t a3);
+// Known callee 0x007AF8F0: FindRecordByKey16 (Looks up a 16-bit key in the node list first, then the static table; returns the match or null.)
+extern uint8_t* ext_007AF8F0(uint16_t key);
+
+// @name DispatchFirstWordOfRecordByKey44
+// @summary Looks up the record keyed by the word at self+0x44, then forwards self's first dword, a constant 0x00AB19FC, and the record's first dword to ext_0079B140. Always returns 0.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x44 uint16_t field_0x44
+uint32_t fn_007BADF0(uint8_t* self) {
+    uint16_t key;
+    std::memcpy(&key, self + 0x44, sizeof key);
+
+    uint8_t* record = ext_007AF8F0(key);
+
+    uint32_t recordFirst;
+    std::memcpy(&recordFirst, record, sizeof recordFirst);
+
+    uint32_t selfFirst;
+    std::memcpy(&selfFirst, self, sizeof selfFirst);
+
+    ext_0079B140(selfFirst, 0x00AB19FCu, recordFirst);
+    return 0;
+}
+} // namespace lift_007BADF0

@@ -1,0 +1,27 @@
+{
+  "va": "0x007BADF0",
+  "size": 38,
+  "orig_symbol": "sub_007BADF0",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "DispatchFirstWordOfRecordByKey44",
+  "signature": "uint32_t fn_007BADF0(uint8_t* self)",
+  "summary": "Looks up the record keyed by the word at self+0x44, then forwards self's first dword, a constant 0x00AB19FC, and the record's first dword to ext_0079B140. Always returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "uint16_t",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:55:43Z"
+}
