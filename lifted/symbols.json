@@ -5148,6 +5148,13 @@
     "summary": "Copies DWORDs from [first, last) to out via ext_0044C2A0 and returns out + count.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044C500": {
+    "name": "Vector::clear",
+    "class": "Vector",
+    "signature": "void fn_0044C500(void* self)",
+    "summary": "Validates begin \u003c= end, then calls Vector::eraseRange(begin, end) so the vector's end is reset to begin.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044C910": {
     "name": "sub_0044C910",
     "signature": "void fn_0044C910()",
