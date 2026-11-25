@@ -1,0 +1,14 @@
+{
+  "va": "0x00404670",
+  "size": 14,
+  "orig_symbol": "CBaseTabCtrl::vfunc_85",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CBaseTabCtrl::vfunc_85",
+  "class": "CBaseTabCtrl",
+  "signature": "DWORD fn_00404670(void* self)",
+  "summary": "Tail-calls GetSysColor(8 = COLOR_WINDOWTEXT) via the IAT; the incoming stack argument is overwritten and ignored.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:23:24Z"
+}

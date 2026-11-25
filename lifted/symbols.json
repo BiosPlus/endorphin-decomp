@@ -439,6 +439,13 @@
     "summary": "Virtual slot 84: ignores its argument and tail-calls GetSysColor(COLOR_BTNFACE) (index 15).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00404670": {
+    "name": "CBaseTabCtrl::vfunc_85",
+    "class": "CBaseTabCtrl",
+    "signature": "DWORD fn_00404670(void* self)",
+    "summary": "Tail-calls GetSysColor(8 = COLOR_WINDOWTEXT) via the IAT; the incoming stack argument is overwritten and ignored.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x004046C0": {
     "name": "CBaseTabCtrl::vfunc_1",
     "class": "CBaseTabCtrl",

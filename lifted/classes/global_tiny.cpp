@@ -6762,3 +6762,18 @@ DWORD CBaseTabCtrl_vfunc_84(void* /*this*/, int /*nIndex*/) {
     return pfnGetSysColor(0x0F);
 }
 } // namespace lift_00404660
+
+// [0x00404670] CBaseTabCtrl::vfunc_85 (14 bytes)
+namespace lift_00404670 {
+extern uint32_t mem_00925680; // IAT slot -> USER32!GetSysColor
+
+// @name CBaseTabCtrl::vfunc_85
+// @class CBaseTabCtrl
+// @summary Tail-calls GetSysColor(8 = COLOR_WINDOWTEXT) via the IAT; the incoming stack argument is overwritten and ignored.
+DWORD fn_00404670(void* self) {
+    (void)self;
+    using GetSysColorFn = DWORD (*)(int nIndex);
+    auto target = reinterpret_cast<GetSysColorFn>(static_cast<uintptr_t>(mem_00925680));
+    return target(8);
+}
+} // namespace lift_00404670
