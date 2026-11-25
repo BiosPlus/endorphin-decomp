@@ -915,3 +915,41 @@ void* __thiscall sub_007ABC20(void* self) {
     return self;
 }
 } // namespace lift_007ABC20
+
+// [0x007AEC70]
+namespace lift_007AEC70 {
+// @name MemoryReader::readBytes
+// @class MemoryReader
+// @summary Reads up to size bytes from an in-memory buffer into dst, advancing the read offset
+// @field MemoryReader +0x58 uint32_t field_0x58
+// @field MemoryReader +0x5c uint32_t field_0x5c
+// @field MemoryReader +0x60 uint32_t field_0x60
+
+
+uint32_t __thiscall sub_007AEC70(void* self, void* dst, uint32_t size, uint8_t failIfShort) {
+    if (!dst) {
+        return 0;
+    }
+
+    auto* base = static_cast<uint8_t*>(self);
+    uint32_t buf = *reinterpret_cast<const uint32_t*>(base + 0x58);
+    if (!buf) {
+        return 0;
+    }
+
+    uint32_t offset = *reinterpret_cast<const uint32_t*>(base + 0x60);
+    uint32_t total = *reinterpret_cast<const uint32_t*>(base + 0x5c);
+    uint32_t remaining = total - offset;
+
+    uint32_t toCopy = remaining;
+    if (size <= remaining) {
+        toCopy = size;
+    } else if (failIfShort != 0) {
+        return 0;
+    }
+
+    std::memcpy(dst, reinterpret_cast<const void*>(static_cast<uintptr_t>(buf + offset)), toCopy);
+    *reinterpret_cast<uint32_t*>(base + 0x60) = offset + toCopy;
+    return toCopy;
+}
+} // namespace lift_007AEC70

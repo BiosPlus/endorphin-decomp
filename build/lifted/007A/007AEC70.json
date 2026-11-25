@@ -1,0 +1,34 @@
+{
+  "va": "0x007AEC70",
+  "size": 88,
+  "orig_symbol": "sub_007AEC70",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "MemoryReader::readBytes",
+  "class": "MemoryReader",
+  "signature": "uint32_t __thiscall sub_007AEC70(void* self, void* dst, uint32_t size, uint8_t failIfShort)",
+  "summary": "Reads up to size bytes from an in-memory buffer into dst, advancing the read offset",
+  "fields": [
+    {
+      "class": "MemoryReader",
+      "offset": "+0x58",
+      "type": "uint32_t",
+      "name": "field_0x58"
+    },
+    {
+      "class": "MemoryReader",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "MemoryReader",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:19:39Z"
+}
