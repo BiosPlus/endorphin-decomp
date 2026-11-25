@@ -39,6 +39,7 @@ uint8_t descriptiveName_00553960(void* arg) {
     return 1;
 }
 } // namespace lift_00553960
+#include <cstdio>
 
 // [0x00554CE0] sub_00554CE0 (27 bytes)
 namespace lift_00554CE0 {
@@ -977,3 +978,23 @@ void fn_0055E230(float* first, float* last, float* dst_end) {
     } while (src != first);
 }
 } // namespace lift_0055E230
+
+// [0x005565C0] sub_005565C0 (73 bytes)
+namespace lift_005565C0 {
+// @name sub_005565C0
+// @summary Auto-lifted identical-shape clone of 0x00672810 (CopyRangeAndComputeDestEnd).
+namespace lift_00672810 {
+// Known callee 0x0041CDE0: CopyEntryRangeForward (Copies each 0x20-byte entry in [first,last) to dest by assigning its leading std::string and copying the DWORD at +0x1c; returns dest end, or dest itself when the range is empty.)
+extern void* ext_00555550(const void* first, const void* last, void* dest);
+
+// @name CopyRangeAndComputeDestEnd
+// @summary Copies the 0x20-byte entry range [first,last) to dest and returns dest advanced by the range size rounded down to a multiple of 0x20.
+void* fn_005565C0(const void* first, const void* last, void* dest) {
+    ext_00555550(first, last, dest);
+    const std::ptrdiff_t bytes =
+        reinterpret_cast<const char*>(last) - reinterpret_cast<const char*>(first);
+    const std::ptrdiff_t aligned = bytes & ~static_cast<std::ptrdiff_t>(0x1F);
+    return static_cast<char*>(dest) + aligned;
+}
+} // namespace lift_00672810
+} // namespace lift_005565C0

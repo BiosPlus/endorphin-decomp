@@ -428,3 +428,25 @@ void* fn_004A73F0(void* self, const void* key) {
     return at(holder);
 }
 } // namespace lift_004A73F0
+
+// [0x004ABF10] sub_004ABF10 (74 bytes)
+namespace lift_004ABF10 {
+// @name sub_004ABF10
+// @summary Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).
+namespace lift_00481C90 {
+extern void ext_004AB230(uint32_t* first, ptrdiff_t hole, ptrdiff_t count, uint32_t value, uint32_t pred);
+
+// @name SortHeapRange
+// @summary Heap-sorts a range of 4-byte elements in place (pop-heap loop); pred is forwarded to the sift-down helper.
+void fn_004ABF10(uint32_t* first, uint32_t* last, uint32_t pred) {
+    ptrdiff_t n = last - first;
+    while (n > 1) {
+        --last;
+        uint32_t value = *last;
+        *last = *first;
+        ext_004AB230(first, 0, last - first, value, pred);
+        n = last - first;
+    }
+}
+} // namespace lift_00481C90
+} // namespace lift_004ABF10

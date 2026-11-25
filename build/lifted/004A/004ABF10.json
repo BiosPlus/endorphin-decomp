@@ -1,0 +1,13 @@
+{
+  "va": "0x004ABF10",
+  "size": 74,
+  "orig_symbol": "sub_004ABF10",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "sub_004ABF10",
+  "signature": "void fn_004ABF10(uint32_t* first, uint32_t* last, uint32_t pred)",
+  "summary": "Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:33:12Z"
+}

@@ -498,3 +498,91 @@ void fn_0051E560(void* self) {
 }
 } // namespace lift_00505DC0
 } // namespace lift_0051E560
+
+// [0x00510880] sub_00510880 (74 bytes)
+namespace lift_00510880 {
+// @name sub_00510880
+// @summary Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).
+namespace lift_00481C90 {
+extern void ext_0050FD30(uint32_t* first, ptrdiff_t hole, ptrdiff_t count, uint32_t value, uint32_t pred);
+
+// @name SortHeapRange
+// @summary Heap-sorts a range of 4-byte elements in place (pop-heap loop); pred is forwarded to the sift-down helper.
+void fn_00510880(uint32_t* first, uint32_t* last, uint32_t pred) {
+    ptrdiff_t n = last - first;
+    while (n > 1) {
+        --last;
+        uint32_t value = *last;
+        *last = *first;
+        ext_0050FD30(first, 0, last - first, value, pred);
+        n = last - first;
+    }
+}
+} // namespace lift_00481C90
+} // namespace lift_00510880
+
+// [0x005108D0] sub_005108D0 (74 bytes)
+namespace lift_005108D0 {
+// @name sub_005108D0
+// @summary Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).
+namespace lift_00481C90 {
+extern void ext_0050FE00(uint32_t* first, ptrdiff_t hole, ptrdiff_t count, uint32_t value, uint32_t pred);
+
+// @name SortHeapRange
+// @summary Heap-sorts a range of 4-byte elements in place (pop-heap loop); pred is forwarded to the sift-down helper.
+void fn_005108D0(uint32_t* first, uint32_t* last, uint32_t pred) {
+    ptrdiff_t n = last - first;
+    while (n > 1) {
+        --last;
+        uint32_t value = *last;
+        *last = *first;
+        ext_0050FE00(first, 0, last - first, value, pred);
+        n = last - first;
+    }
+}
+} // namespace lift_00481C90
+} // namespace lift_005108D0
+
+// [0x00519060] sub_00519060 (74 bytes)
+namespace lift_00519060 {
+// @name sub_00519060
+// @summary Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).
+namespace lift_00481C90 {
+extern void ext_00518A00(uint32_t* first, ptrdiff_t hole, ptrdiff_t count, uint32_t value, uint32_t pred);
+
+// @name SortHeapRange
+// @summary Heap-sorts a range of 4-byte elements in place (pop-heap loop); pred is forwarded to the sift-down helper.
+void fn_00519060(uint32_t* first, uint32_t* last, uint32_t pred) {
+    ptrdiff_t n = last - first;
+    while (n > 1) {
+        --last;
+        uint32_t value = *last;
+        *last = *first;
+        ext_00518A00(first, 0, last - first, value, pred);
+        n = last - first;
+    }
+}
+} // namespace lift_00481C90
+} // namespace lift_00519060
+
+// [0x005190B0] sub_005190B0 (74 bytes)
+namespace lift_005190B0 {
+// @name sub_005190B0
+// @summary Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).
+namespace lift_00481C90 {
+extern void ext_00518A80(uint32_t* first, ptrdiff_t hole, ptrdiff_t count, uint32_t value, uint32_t pred);
+
+// @name SortHeapRange
+// @summary Heap-sorts a range of 4-byte elements in place (pop-heap loop); pred is forwarded to the sift-down helper.
+void fn_005190B0(uint32_t* first, uint32_t* last, uint32_t pred) {
+    ptrdiff_t n = last - first;
+    while (n > 1) {
+        --last;
+        uint32_t value = *last;
+        *last = *first;
+        ext_00518A80(first, 0, last - first, value, pred);
+        n = last - first;
+    }
+}
+} // namespace lift_00481C90
+} // namespace lift_005190B0

@@ -2321,3 +2321,25 @@ void __thiscall fn_0043CC60(void* self, uint32_t arg1) {
     *reinterpret_cast<uint32_t*>(sub + 0xD0) |= 0xC;
 }
 } // namespace lift_0043CC60
+
+// [0x0043BAF0] sub_0043BAF0 (74 bytes)
+namespace lift_0043BAF0 {
+// @name sub_0043BAF0
+// @summary Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).
+namespace lift_00481C90 {
+extern void ext_0043B650(uint32_t* first, ptrdiff_t hole, ptrdiff_t count, uint32_t value, uint32_t pred);
+
+// @name SortHeapRange
+// @summary Heap-sorts a range of 4-byte elements in place (pop-heap loop); pred is forwarded to the sift-down helper.
+void fn_0043BAF0(uint32_t* first, uint32_t* last, uint32_t pred) {
+    ptrdiff_t n = last - first;
+    while (n > 1) {
+        --last;
+        uint32_t value = *last;
+        *last = *first;
+        ext_0043B650(first, 0, last - first, value, pred);
+        n = last - first;
+    }
+}
+} // namespace lift_00481C90
+} // namespace lift_0043BAF0

@@ -3080,6 +3080,12 @@
     "summary": "Memmoves the dwords in [first, last) to d_first and returns d_first + count (count may be \u003c= 0, in which case nothing is copied).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043BAF0": {
+    "name": "sub_0043BAF0",
+    "signature": "void fn_0043BAF0(uint32_t* first, uint32_t* last, uint32_t pred)",
+    "summary": "Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043BEE0": {
     "name": "MultiTrackView::MarkerTrack::vfunc_0",
     "class": "MultiTrackView::MarkerTrack",
@@ -7551,6 +7557,12 @@
     "summary": "Fills `count` consecutive 12-byte slots at dst with the triple at src, then returns the pointer one past the last slot.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00478C60": {
+    "name": "sub_00478C60",
+    "signature": "void fn_00478C60(uint32_t* first, uint32_t* last, uint32_t pred)",
+    "summary": "Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00478D00": {
     "name": "SortHeapRange",
     "signature": "void fn_00478D00(uint32_t* first, uint32_t* last)",
@@ -10876,6 +10888,12 @@
     "signature": "void fn_004ABE70(void* self, uint8_t flag)",
     "summary": "Stores a flag byte at +0x5C, calls vtable slot 0x20 with that flag on every pointer in the list at +0x3D0..+0x3D4 (each element's subobject at +0xC), then dispatches to the object at (global + 0x258).",
     "lifted_path": "lifted/NMData/BehaviourData.cpp"
+  },
+  "0x004ABF10": {
+    "name": "sub_004ABF10",
+    "signature": "void fn_004ABF10(uint32_t* first, uint32_t* last, uint32_t pred)",
+    "summary": "Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
   "0x004AC240": {
     "name": "NMData::BehaviourData::vfunc_0_off_158",
@@ -14650,6 +14668,12 @@
     "summary": "Forwards to virtual slot 24 (vtable +0x60) with arguments (a, 3, b, 1) and returns its result.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004E7DF0": {
+    "name": "sub_004E7DF0",
+    "signature": "void fn_004E7DF0(uint32_t* first, uint32_t* last, uint32_t pred)",
+    "summary": "Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004E7E40": {
     "name": "sortHeapDWORD",
     "signature": "void fn_004E7E40(DWORD* first, DWORD* last)",
@@ -16502,6 +16526,18 @@
     "summary": "Calls ext_004C72D0 to copy [first,last) backward ending at d_last, then returns d_last minus the byte span of [first,last) rounded down to a multiple of 0x20.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00510880": {
+    "name": "sub_00510880",
+    "signature": "void fn_00510880(uint32_t* first, uint32_t* last, uint32_t pred)",
+    "summary": "Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
+  "0x005108D0": {
+    "name": "sub_005108D0",
+    "signature": "void fn_005108D0(uint32_t* first, uint32_t* last, uint32_t pred)",
+    "summary": "Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00510BB0": {
     "name": "SelectionMethodSteadyStateGrid::vfunc_0",
     "class": "SelectionMethodSteadyStateGrid",
@@ -16912,6 +16948,18 @@
     "signature": "void fn_005184D0(void* self, int32_t* value)",
     "summary": "Wraps a signed int into [0, b) style range using the modulus at +0x04: negative values get b added, values \u003e= b get b subtracted.",
     "lifted_path": "lifted/leaf/tiny_510000.cpp"
+  },
+  "0x00519060": {
+    "name": "sub_00519060",
+    "signature": "void fn_00519060(uint32_t* first, uint32_t* last, uint32_t pred)",
+    "summary": "Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
+  "0x005190B0": {
+    "name": "sub_005190B0",
+    "signature": "void fn_005190B0(uint32_t* first, uint32_t* last, uint32_t pred)",
+    "summary": "Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
   "0x00519170": {
     "name": "SelectionMethodSteadyStateGrid::ResetAndRelease",
@@ -20697,6 +20745,12 @@
     "class": "UnknownObject",
     "signature": "float fn_00554D20(void* self, float value)",
     "summary": "Scales a float angle via ext_00553170 (unit-mode conversion), then divides the result by the float at this+0x20.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
+  "0x005565C0": {
+    "name": "sub_005565C0",
+    "signature": "void* fn_005565C0(const void* first, const void* last, void* dest)",
+    "summary": "Auto-lifted identical-shape clone of 0x00672810 (CopyRangeAndComputeDestEnd).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
   "0x00556610": {
@@ -30266,6 +30320,12 @@
     "summary": "If field +0x14 is zero and the object at +0x08 is non-null, invoke its vtable slot 1 with argument 1.",
     "lifted_path": "lifted/templates/auto_tiny.cpp"
   },
+  "0x0060AF10": {
+    "name": "sub_0060AF10",
+    "signature": "void fn_0060AF10(uint32_t* first, uint32_t* last, uint32_t pred)",
+    "summary": "Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060B440": {
     "name": "NMData::DisabledCollisionPairList::vfunc_0",
     "class": "NMData::DisabledCollisionPairList",
@@ -38063,6 +38123,12 @@
     "name": "CopyRangeAndComputeDestEnd",
     "signature": "void* fn_00672810(const void* first, const void* last, void* dest)",
     "summary": "Copies the 0x20-byte entry range [first,last) to dest and returns dest advanced by the range size rounded down to a multiple of 0x20.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
+  "0x00672BD0": {
+    "name": "sub_00672BD0",
+    "signature": "void fn_00672BD0(uint32_t* first, uint32_t* last, uint32_t pred)",
+    "summary": "Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x00672D10": {

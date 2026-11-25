@@ -1,0 +1,13 @@
+{
+  "va": "0x005565C0",
+  "size": 73,
+  "orig_symbol": "sub_005565C0",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "sub_005565C0",
+  "signature": "void* fn_005565C0(const void* first, const void* last, void* dest)",
+  "summary": "Auto-lifted identical-shape clone of 0x00672810 (CopyRangeAndComputeDestEnd).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:33:12Z"
+}
