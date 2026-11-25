@@ -12022,6 +12022,13 @@
     "summary": "Reads the object held by the holder; throws if null, else returns true when the virtual string accessor at obj+8 equals one of two fixed literals.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0049D7F0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::State\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0\u003e",
+    "signature": "void fn_0049D7F0(void* self)",
+    "summary": "Reads the held object pointer; if non-null, forwards to a virtual slot-1 call and throws its message, otherwise throws a fixed-type exception.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0049DA30": {
     "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_37",
     "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",

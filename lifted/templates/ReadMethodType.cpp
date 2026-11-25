@@ -50281,3 +50281,35 @@ void fn_006399F0(void* self) {
     lift_cxx_throw(exception, mem_009DEC1C);
 }
 } // namespace lift_006399F0
+
+// [0x0049D7F0] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0>::vfunc_5 (50 bytes)
+namespace lift_0049D7F0 {
+// Known callee 0x0046A470: VirtualSlot1Thunk (loads the object's vtable and tail-calls slot 1 with the same this pointer; returns its result)
+extern void* ext_0046A470(void* self);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs an ExceptionWithMessage-derived exception with a fixed message and installs its vtable)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (builds a default-message ExceptionWithMessage and throws it)
+extern void ext_0046C4E0(void* arg);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+
+// Throw-info descriptor passed to _CxxThrowException (address 0x009DEC1C in the image).
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0>
+// @summary Reads the held object pointer; if non-null, forwards to a virtual slot-1 call and throws its message, otherwise throws a fixed-type exception.
+// @field ExprParser::ValuePtrType +0x00 void* heldObject
+// @field <held object> +0x08 void* field_0x08
+void fn_0049D7F0(void* self) {
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        void* msg = ext_0046A470(static_cast<unsigned char*>(obj) + 0x08);
+        ext_0046C4E0(msg);  // throws; does not return
+    }
+
+    unsigned char exception[0x10] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);  // throws; does not return
+}
+} // namespace lift_0049D7F0
