@@ -17026,6 +17026,12 @@
     "summary": "Writes a 32-bit value into out[0] and the lazily-created singleton pointer into out[1].",
     "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
+  "0x004F95F0": {
+    "name": "storeValueAndInitSingleton",
+    "signature": "void fn_004F95F0(DWORD* out, DWORD value)",
+    "summary": "Writes value into out[0] and the lazily-initialized singleton address (via ext_004F9490) into out[1].",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F9800": {
     "name": "initVtableAndStoreTwoArgsAlt",
     "class": "Unknown",

@@ -416,3 +416,19 @@ void fn_004F9550(uint32_t* out, uint32_t value) {
     out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(singleton));
 }
 } // namespace lift_004F9550
+
+// [0x004F95F0] sub_004F95F0 (30 bytes)
+namespace lift_004F95F0 {
+// Known callee 0x004F9490: getOrInitSingleton_004F9490 (Lazily initializes the global object at 0x00AE9F5C once and returns its address.)
+// The original code pushes a single 0 argument before the call, so the callee is declared with one DWORD parameter.
+extern void* ext_004F9490(DWORD arg);
+
+// @name storeValueAndInitSingleton
+// @summary Writes value into out[0] and the lazily-initialized singleton address (via ext_004F9490) into out[1].
+// Note: no class context; out is treated as a raw two-word record, so no @class or @field lines are emitted.
+void fn_004F95F0(DWORD* out, DWORD value) {
+    void* singleton = ext_004F9490(0);
+    out[0] = value;
+    out[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(singleton));
+}
+} // namespace lift_004F95F0
