@@ -47405,6 +47405,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006B0C60 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B0CD0": {
+    "name": "sub_006B0CD0_dtor",
+    "signature": "extern \"C\" void __thiscall fn_006B0CD0(void* self)",
+    "summary": "Destructor that resets vtable, destroys member at +0x64 via MFC80_ord_1934, and calls base destructor MFC80_ord_620.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B0DE0": {
     "name": "Unknown::CacheSelectionAndInvoke_006B0DE0",
     "class": "Unknown",
@@ -47842,6 +47848,12 @@
     "summary": "Pure jump thunk forwarding to sub_006B4C00.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x006B4C50": {
+    "name": "sub_006B4C50_dtor",
+    "signature": "extern \"C\" void __thiscall fn_006B4C50(void* self)",
+    "summary": "Destructor that resets vftables at +0x00 and +0x58 and destroys member and base subobjects",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B4D30": {
     "name": "sub_006B4D30",
     "signature": "extern \"C\" int32_t __thiscall fn_006B4D30(void* self, uint32_t /*unused_arg*/)",
@@ -48107,6 +48119,12 @@
     "signature": "extern \"C\" void fn_006B81D0(void)",
     "summary": "Pure jump thunk forwarding to sub_006B81C0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x006B8210": {
+    "name": "sub_006B8210_dtor",
+    "signature": "extern \"C\" void __thiscall fn_006B8210(uint8_t* self)",
+    "summary": "Destructor that resets vtables, destroys member at +0x5c via MFC80!ord_1934, and calls base destructor MFC80!ord_657.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
   "0x006B8270": {
     "name": "GWCListBox::vfunc_1",

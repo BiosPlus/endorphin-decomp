@@ -1304,3 +1304,63 @@ extern uint32_t __thiscall fn_006B8390(void* self, void* pDC, uint32_t nCtlColor
     return *reinterpret_cast<uint32_t*>(brush + 4);
 }
 } // namespace lift_006B8390
+
+// [0x006B8210]
+namespace lift_006B8210 {
+// @name sub_006B8210_dtor
+// @summary Destructor that resets vtables, destroys member at +0x5c via MFC80!ord_1934, and calls base destructor MFC80!ord_657.
+// @field Unknown +0x00 uint32_t vftable
+// @field Unknown +0x5c uint32_t member_vftable
+
+
+extern void __thiscall ext_006A5FF2(void* self);
+extern void __thiscall ext_006A64A2(void* self);
+
+extern void __thiscall fn_006B8210(uint8_t* self) {
+    *reinterpret_cast<uint32_t*>(self) = 0x00992AF4u;
+    uint8_t* member = self + 0x5C;
+    *reinterpret_cast<uint32_t*>(member) = 0x0092A23Cu;
+    ext_006A5FF2(member);
+    ext_006A64A2(self);
+}
+} // namespace lift_006B8210
+
+// [0x006B0CD0]
+namespace lift_006B0CD0 {
+// @name sub_006B0CD0_dtor
+// @summary Destructor that resets vtable, destroys member at +0x64 via MFC80_ord_1934, and calls base destructor MFC80_ord_620.
+// @field Self +0x00 uint32_t vtable
+// @field Self +0x64 uint32_t member_0x64_vtable
+
+
+extern void __thiscall ext_006A5FF2(void* self);
+extern void __thiscall ext_006A5F38(void* self);
+
+extern void __thiscall fn_006B0CD0(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x00) = 0x00991364u;
+    void* member_64 = base + 0x64;
+    *reinterpret_cast<uint32_t*>(member_64) = 0x0092A23Cu;
+    ext_006A5FF2(member_64);
+    ext_006A5F38(self);
+}
+} // namespace lift_006B0CD0
+
+// [0x006B4C50]
+namespace lift_006B4C50 {
+// @name sub_006B4C50_dtor
+// @summary Destructor that resets vftables at +0x00 and +0x58 and destroys member and base subobjects
+
+
+extern void __thiscall ext_006A5FF2(void* self);
+extern void __thiscall ext_006A641E(void* self);
+
+extern void __thiscall fn_006B4C50(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(obj + 0x00) = 0x00991C5Cu;
+    void* member = obj + 0x58;
+    *reinterpret_cast<uint32_t*>(member) = 0x0092A23Cu;
+    ext_006A5FF2(member);
+    ext_006A641E(obj);
+}
+} // namespace lift_006B4C50

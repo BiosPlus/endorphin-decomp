@@ -96,7 +96,7 @@ struct Unknown_Fields {
     // +0x0   DWORD                    vfptr  (evidence: 0x006B2F70, 0x006B95F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vfptr  (evidence: 0x0063F350) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vfptr  (evidence: 0x00401B60, 0x00406030, 0x0040A910, 0x0040BE90) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 vftable  (evidence: 0x00410230, 0x004890D0, 0x0048E2E0, 0x0063FFF0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vftable  (evidence: 0x00410230, 0x004890D0, 0x0048E2E0, 0x0063FFF0, 0x006B8210) // CONFLICT: multiple definitions at +0x0
     // +0x0   const void*              vptr  (evidence: 0x00518030, 0x00519CB0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vptr  (evidence: 0x005086E0, 0x00678280, 0x006E72A0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vptr  (evidence: 0x00406030, 0x0040A910, 0x0040BE90, 0x0040F0B0, 0x0041C750, 0x00420070, 0x0042FAC0, 0x0042FAE0, 0x0042FE70, 0x00430C50, 0x0043C9B0, 0x0043C9D0, 0x0046E780, 0x00493EA0, 0x00493EE0, 0x005760E0, 0x006118A0, 0x0063D970, 0x0063DDF0, 0x0063DE10, 0x006B2F70, 0x006B51D0, 0x0078BF70) // CONFLICT: multiple definitions at +0x0
@@ -655,6 +655,7 @@ struct Unknown_Fields {
     // +0x5C  DWORD                    field_0x5c  (evidence: 0x006B0DE0) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  uint32_t                 field_0x5c  (evidence: 0x00404720, 0x00406030, 0x004AFE50, 0x00647F00, 0x00647F30, 0x006481C0, 0x006481E0, 0x00648480, 0x00648A20, 0x007B89BC, 0x007BEDA0) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  void*                    field_0x5c  (evidence: 0x00448420, 0x007B89BC, 0x007BF2B0) // CONFLICT: multiple definitions at +0x5C
+    // +0x5C  uint32_t                 member_vftable  (evidence: 0x006B8210) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  uint32_t                 resultHi  (evidence: 0x006E8750) // CONFLICT: multiple definitions at +0x5C
     // +0x60  uint32_t                 arg1_saved  (evidence: 0x00404770, 0x00406030, 0x0040BE90) // CONFLICT: multiple definitions at +0x60
     // +0x60  DWORD                    chainValue  (evidence: 0x006E62A0, 0x006EFEA0) // CONFLICT: multiple definitions at +0x60
