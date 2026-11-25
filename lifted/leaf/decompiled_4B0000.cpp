@@ -261,3 +261,24 @@ extern void __thiscall fn_004B1130(void* self, float arg) {
     float c = lift_field<float>(self, 0x24);
     ext_004B0ED0(self, &a, b, c, arg);}
 } // namespace lift_004B1130
+
+// [0x004B6FF0] sub_004B6FF0 (61 bytes)
+namespace lift_004B6FF0 {
+extern const char mem_009433A0[];
+extern const char mem_0093C18C[];
+extern std::string mem_00AE173C;
+
+// @name ConfigStrings::ResetDefaults
+// @class ConfigStrings
+// @summary Resets four std::string members to defaults: +0x04 = "default_default", +0x20 and +0x3C = copies of global mem_00AE173C, +0x58 = "Default".
+// @field ConfigStrings +0x04 std::string name0
+// @field ConfigStrings +0x20 std::string name1
+// @field ConfigStrings +0x3C std::string name2
+// @field ConfigStrings +0x58 std::string name3
+extern void __thiscall fn_004B6FF0(void* self) {
+    lift_field<std::string>(self, 0x04) = mem_009433A0;
+    lift_field<std::string>(self, 0x20) = mem_00AE173C;
+    lift_field<std::string>(self, 0x3C) = mem_00AE173C;
+    lift_field<std::string>(self, 0x58) = mem_0093C18C;
+}
+} // namespace lift_004B6FF0

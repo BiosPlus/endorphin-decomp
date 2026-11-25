@@ -1,0 +1,40 @@
+{
+  "va": "0x004B6FF0",
+  "size": 61,
+  "orig_symbol": "sub_004B6FF0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "ConfigStrings::ResetDefaults",
+  "class": "ConfigStrings",
+  "signature": "extern \"C\" void __thiscall fn_004B6FF0(void* self)",
+  "summary": "Resets four std::string members to defaults: +0x04 = \"default_default\", +0x20 and +0x3C = copies of global mem_00AE173C, +0x58 = \"Default\".",
+  "fields": [
+    {
+      "class": "ConfigStrings",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "name0"
+    },
+    {
+      "class": "ConfigStrings",
+      "offset": "+0x20",
+      "type": "std::string",
+      "name": "name1"
+    },
+    {
+      "class": "ConfigStrings",
+      "offset": "+0x3C",
+      "type": "std::string",
+      "name": "name2"
+    },
+    {
+      "class": "ConfigStrings",
+      "offset": "+0x58",
+      "type": "std::string",
+      "name": "name3"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:56:21Z"
+}

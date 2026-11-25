@@ -10945,6 +10945,13 @@
     "summary": "Initializes float fields at +0x1C..+0x30: 0.2, 100.0, then zeros for +0x24..+0x30.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004B6FF0": {
+    "name": "ConfigStrings::ResetDefaults",
+    "class": "ConfigStrings",
+    "signature": "extern \"C\" void __thiscall fn_004B6FF0(void* self)",
+    "summary": "Resets four std::string members to defaults: +0x04 = \"default_default\", +0x20 and +0x3C = copies of global mem_00AE173C, +0x58 = \"Default\".",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B7030": {
     "name": "sub_004B7030",
     "signature": "void sub_004B7030(float *out)",
