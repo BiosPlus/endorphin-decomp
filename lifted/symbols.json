@@ -37980,6 +37980,12 @@
     "summary": "Fetches a 64-byte (16 x DWORD) block via ext_00480920 and copies it into the caller-supplied destination buffer.",
     "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp"
   },
+  "0x0062CC90": {
+    "name": "GetOnceInitString_0062CC90",
+    "signature": "void* fn_0062CC90()",
+    "summary": "Constructs a static string object from a literal on first call, registers its destructor, and returns it.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x0062CCF0": {
     "name": "sub_0062CCF0",
     "class": "ResourceHolder",

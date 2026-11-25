@@ -2461,3 +2461,31 @@ extern char* __cdecl fn_0062BA00(char* first, char* last, char* dest) {
     return dest + count * 56;
 }
 } // namespace lift_0062BA00
+
+// [0x0062CC90] sub_0062CC90 (95 bytes)
+namespace lift_0062CC90 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+// Called as cdecl with (destination object, source string literal); caller cleans the stack.
+extern void* ext_0066AD10(void* out_str, const void* src);
+// Known callee 0x006A6C87: sub_006A6C87 (CRT-style exit-registration of a destructor)
+extern int ext_006A6C87(void (*fn)(void));
+// Destructor registered with ext_006A6C87 for the static object at mem_00B522E4 (address 0x00920180)
+extern void ext_00920180(void);
+// One-time-init guard word; bit 0 set once the static has been constructed
+extern int mem_00B52300;
+// Static object storage (address 0x00B522E4)
+extern int mem_00B522E4;
+// String literal source (address 0x00A98938)
+extern char mem_00A98938[];
+
+// @name GetOnceInitString_0062CC90
+// @summary Constructs a static string object from a literal on first call, registers its destructor, and returns it.
+void* fn_0062CC90() {
+    if ((mem_00B52300 & 1) == 0) {
+        mem_00B52300 |= 1;
+        ext_0066AD10(&mem_00B522E4, mem_00A98938);
+        ext_006A6C87(ext_00920180);
+    }
+    return &mem_00B522E4;
+}
+} // namespace lift_0062CC90
