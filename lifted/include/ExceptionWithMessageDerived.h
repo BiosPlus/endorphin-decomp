@@ -8,6 +8,6 @@
 // Recovered field layout for ExceptionWithMessageDerived:
 namespace lifted_layout {
 struct ExceptionWithMessageDerived_Fields {
-    // +0x28  uint32_t                 field_0x28  (evidence: 0x00528D60)
+    // +0x28  uint32_t                 field_0x28  (evidence: 0x00528D60, 0x0052F7D0)
 };
 } // namespace lifted_layout

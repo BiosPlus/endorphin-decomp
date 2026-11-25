@@ -4,11 +4,419 @@
   "orig_symbol": "sub_0052F7D0",
   "src_path": "src/leaf/decompiled_520000.cpp",
   "lifted_path": "lifted/leaf/decompiled_520000.cpp",
-  "name": "Unknown::createAnimationDerived_0052F7D0",
-  "class": "Unknown",
-  "signature": "void* fn_0052F7D0(void)",
-  "summary": "Allocates a 0x3C-byte object, runs its base init, installs two vtable pointers, and returns it (or null if allocation fails).",
+  "name": "sub_0052EFC0",
+  "class": "DoubleVector",
+  "signature": "void* fn_0052EFC0()",
+  "summary": "Auto-lifted identical-shape clone of 0x0061EA10 (HingeSecondaryConstraint::AllocAndConstruct).",
   "fields": [
+    {
+      "class": "DoubleVector",
+      "offset": "+0x8",
+      "type": "double*",
+      "name": "begin"
+    },
+    {
+      "class": "DoubleVector",
+      "offset": "+0xC",
+      "type": "double*",
+      "name": "end"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "UnknownRecord",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownRecord",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "UnknownRecord",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Entry",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Entry",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Entry",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end"
+    },
+    {
+      "class": "TreeMap",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "StringArray",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x38",
+      "type": "uint32_t",
+      "name": "field_0x38"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x40",
+      "type": "uint8_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "child"
+    },
+    {
+      "class": "InterpreterSub",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable_0x00"
+    },
+    {
+      "class": "InterpreterSub",
+      "offset": "+0x38",
+      "type": "uint32_t",
+      "name": "vftable_0x38"
+    },
+    {
+      "class": "InterpreterSub",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "InterpreterSub",
+      "offset": "+0x44",
+      "type": "uint32_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "InterpreterSub",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "VariableValue",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "VariableValue",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "VariableValue",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "VariableValue",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint8_t",
+      "name": "field_0x1c[16]"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "end"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "range1_begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "range1_end"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "range2_begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "range2_end"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "uint8_t",
+      "name": "flag"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "ExceptionWithMessageDerived",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "RecordRange",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "TreeIterator",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (container/head pointer,",
+      "name": "null-checked)"
+    },
+    {
+      "class": "TreeIterator",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (current node pointer,",
+      "name": "updated)"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (child link, traversed to",
+      "name": "leftmost)"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (parent link, walked",
+      "name": "upward)"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "void* field_0x08 (right child",
+      "name": "link)"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x61",
+      "type": "uint8_t field_0x61 (end/nil sentinel flag; nonzero =",
+      "name": "nil)"
+    },
+    {
+      "class": "this",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "this",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint8_t* field_0x18 (begin of element-pointer",
+      "name": "array)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint8_t* field_0x1C (end of element-pointer array, re-read every",
+      "name": "iteration)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "u32",
+      "name": "vtable_0x953D74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "u32",
+      "name": "vtable_0x953D6C"
+    },
     {
       "class": "Unknown",
       "offset": "+0x0",
@@ -20,9 +428,27 @@
       "offset": "+0x14",
       "type": "void* field_0x14 (secondary vtable pointer, set to",
       "name": "0x953B04)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr_primary"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "vptr_secondary"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "uint8_t",
+      "name": "field_0x44"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T04:01:03Z"
+  "lifted_at": "2026-11-25T04:01:09Z"
 }

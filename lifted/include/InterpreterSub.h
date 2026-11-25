@@ -8,10 +8,10 @@
 // Recovered field layout for InterpreterSub:
 namespace lifted_layout {
 struct InterpreterSub_Fields {
-    // +0x0   uint32_t                 vftable_0x00  (evidence: 0x00528100)
-    // +0x38  uint32_t                 vftable_0x38  (evidence: 0x00528100)
-    // +0x40  uint32_t                 field_0x40  (evidence: 0x00528100)
-    // +0x44  uint32_t                 field_0x44  (evidence: 0x00528100)
-    // +0x48  uint32_t                 field_0x48  (evidence: 0x00528100)
+    // +0x0   uint32_t                 vftable_0x00  (evidence: 0x00528100, 0x0052F7D0)
+    // +0x38  uint32_t                 vftable_0x38  (evidence: 0x00528100, 0x0052F7D0)
+    // +0x40  uint32_t                 field_0x40  (evidence: 0x00528100, 0x0052F7D0)
+    // +0x44  uint32_t                 field_0x44  (evidence: 0x00528100, 0x0052F7D0)
+    // +0x48  uint32_t                 field_0x48  (evidence: 0x00528100, 0x0052F7D0)
 };
 } // namespace lifted_layout

@@ -8,7 +8,7 @@
 // Recovered field layout for DoubleVector:
 namespace lifted_layout {
 struct DoubleVector_Fields {
-    // +0x8   double*                  begin  (evidence: 0x005245D0)
-    // +0xC   double*                  end  (evidence: 0x005245D0)
+    // +0x8   double*                  begin  (evidence: 0x005245D0, 0x0052F7D0)
+    // +0xC   double*                  end  (evidence: 0x005245D0, 0x0052F7D0)
 };
 } // namespace lifted_layout

@@ -21215,10 +21215,10 @@
     "lifted_path": "lifted/Primitives/Marker.cpp"
   },
   "0x0052F7D0": {
-    "name": "Unknown::createAnimationDerived_0052F7D0",
-    "class": "Unknown",
-    "signature": "void* fn_0052F7D0(void)",
-    "summary": "Allocates a 0x3C-byte object, runs its base init, installs two vtable pointers, and returns it (or null if allocation fails).",
+    "name": "sub_0052EFC0",
+    "class": "DoubleVector",
+    "signature": "void* fn_0052EFC0()",
+    "summary": "Auto-lifted identical-shape clone of 0x0061EA10 (HingeSecondaryConstraint::AllocAndConstruct).",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
   "0x0052F830": {
