@@ -1,0 +1,28 @@
+{
+  "va": "0x00707F50",
+  "size": 73,
+  "orig_symbol": "sub_00707F50",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::ContainsUnorderedPair_00707F50",
+  "class": "Unknown",
+  "signature": "extern \"C\" bool __thiscall fn_00707F50(uint8_t* self, uint32_t a, uint32_t b)",
+  "summary": "Scans the 16-byte pair table at +0x9C (count at +0x8C) and returns true if any entry equals (a, b) or (b, a); otherwise false.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8C",
+      "type": "int32_t",
+      "name": "pairCount"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x9C",
+      "type": "void*",
+      "name": "pairTable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:32:44Z"
+}

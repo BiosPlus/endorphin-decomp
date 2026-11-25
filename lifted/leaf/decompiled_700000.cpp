@@ -1379,3 +1379,27 @@ uint32_t lookupStringAddressByIndex(uint32_t index) {
     }
 }
 } // namespace lift_00701E20
+
+// [0x00707F50] sub_00707F50 (73 bytes)
+namespace lift_00707F50 {
+// @name Unknown::ContainsUnorderedPair_00707F50
+// @class Unknown
+// @summary Scans the 16-byte pair table at +0x9C (count at +0x8C) and returns true if any entry equals (a, b) or (b, a); otherwise false.
+// @field Unknown +0x8C int32_t pairCount
+// @field Unknown +0x9C void* pairTable
+extern bool __thiscall fn_00707F50(uint8_t* self, uint32_t a, uint32_t b) {
+    const int32_t count = *reinterpret_cast<const int32_t*>(self + 0x8C);
+    if (count <= 0) {
+        return false;
+    }
+    const uint8_t* entry = *reinterpret_cast<const uint8_t* const*>(self + 0x9C);
+    for (int32_t i = 0; i < count; ++i, entry += 16) {
+        const uint32_t x = *reinterpret_cast<const uint32_t*>(entry);
+        const uint32_t y = *reinterpret_cast<const uint32_t*>(entry + 4);
+        if ((x == a && y == b) || (x == b && y == a)) {
+            return true;
+        }
+    }
+    return false;
+}
+} // namespace lift_00707F50

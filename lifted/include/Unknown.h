@@ -599,6 +599,7 @@ struct Unknown_Fields {
     // +0x8C  float                    field_0x8c  (evidence: 0x0062E290) // CONFLICT: multiple definitions at +0x8C
     // +0x8C  int32_t                  field_0x8c  (evidence: 0x007C8490, 0x007CDB70) // CONFLICT: multiple definitions at +0x8C
     // +0x8C  uint32_t                 field_0x8c  (evidence: 0x0053DAA0) // CONFLICT: multiple definitions at +0x8C
+    // +0x8C  int32_t                  pairCount  (evidence: 0x00707F50) // CONFLICT: multiple definitions at +0x8C
     // +0x8D  uint8_t                  field_0x8D  (evidence: 0x00410370) // CONFLICT: multiple definitions at +0x8D
     // +0x8D  uint8_t                  field_0x8d  (evidence: 0x004408B0) // CONFLICT: multiple definitions at +0x8D
     // +0x90  double                   field_0x90  (evidence: 0x00441060) // CONFLICT: multiple definitions at +0x90
@@ -614,6 +615,7 @@ struct Unknown_Fields {
     // +0x98  void*                    field_0x98  (evidence: 0x007C8490, 0x007C9370) // CONFLICT: multiple definitions at +0x98
     // +0x9C  std::string              field_0x9c  (evidence: 0x0053DAA0) // CONFLICT: multiple definitions at +0x9C
     // +0x9C  uint32_t                 field_0x9c  (evidence: 0x006DE3B0, 0x007C2E50, 0x007C9260) // CONFLICT: multiple definitions at +0x9C
+    // +0x9C  void*                    pairTable  (evidence: 0x00707F50) // CONFLICT: multiple definitions at +0x9C
     // +0xA0  double field_0xA0 (accessed through the pointer at +0x08)  (evidence: 0x006E7120, 0x006EFEA0) // CONFLICT: multiple definitions at +0xA0
     // +0xA0  std::string              field_0xA0  (evidence: 0x00465960) // CONFLICT: multiple definitions at +0xA0
     // +0xA0  void*                    field_0xA0  (evidence: 0x005481C0) // CONFLICT: multiple definitions at +0xA0

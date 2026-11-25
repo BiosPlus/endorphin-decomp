@@ -52332,6 +52332,13 @@
     "summary": "Forwards its single argument to ext_006FA920 and returns that result.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00707F50": {
+    "name": "Unknown::ContainsUnorderedPair_00707F50",
+    "class": "Unknown",
+    "signature": "extern \"C\" bool __thiscall fn_00707F50(uint8_t* self, uint32_t a, uint32_t b)",
+    "summary": "Scans the 16-byte pair table at +0x9C (count at +0x8C) and returns true if any entry equals (a, b) or (b, a); otherwise false.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00708C10": {
     "name": "findAndSelectItem",
     "signature": "uint32_t __thiscall sub_00708C10(void* self, uint32_t target)",
