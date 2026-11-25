@@ -4,11 +4,173 @@
   "orig_symbol": "sub_00518030",
   "src_path": "src/leaf/decompiled_650000.cpp",
   "lifted_path": "lifted/leaf/decompiled_650000.cpp",
-  "name": "InitVTableAndState_00518030",
-  "class": "\u003cClassName\u003e (optional)",
-  "signature": "void* fn_00518030(void* self)",
-  "summary": "Runs the base state initializer, installs the 0x009520C4 vtable, zeroes three dword fields, sets a double field to 0.1, and returns self.",
+  "name": "sub_005136C0",
+  "class": "Unknown (vtable 0x0095219C)",
+  "signature": "void* fn_005136C0(void* self, void* pair, DWORD b)",
+  "summary": "Auto-lifted identical-shape clone of 0x00500310 (DwordPairInitFromCall_00500310).",
   "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "const void*",
+      "name": "vptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "MSVCP80_basic_string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "std::uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "std::uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "std::uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "subobject"
+    },
+    {
+      "class": "Subobject",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "object"
+    },
+    {
+      "class": "GlobalIndexTable",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "GlobalIndexTable",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "end"
+    },
+    {
+      "class": "Arg",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "index"
+    },
+    {
+      "class": "SelectionMethodSteadyStateGrid",
+      "offset": "+0x0",
+      "type": "const void*",
+      "name": "vptr"
+    },
+    {
+      "class": "SelectionMethodSteadyStateGrid",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "SelectionMethodSteadyStateGrid",
+      "offset": "+0x38",
+      "type": "uint32_t",
+      "name": "field_0x38"
+    },
+    {
+      "class": "SelectionMethodSteadyStateGrid",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "SelectionMethodSteadyStateGrid",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    },
+    {
+      "class": "SelectionMethodSteadyStateGrid",
+      "offset": "+0x68",
+      "type": "uint32_t",
+      "name": "field_0x68"
+    },
+    {
+      "class": "SelectionMethodSteadyStateGrid",
+      "offset": "+0x6C",
+      "type": "uint32_t",
+      "name": "field_0x6c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "DWORD",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "DWORD",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "DWORD",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "DWORD",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "DWORD",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "m_begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "m_end"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "m_capacity"
+    },
     {
       "class": "\u003cClassName\u003e",
       "offset": "+0x0",
@@ -42,5 +204,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T01:33:36Z"
+  "lifted_at": "2026-11-25T01:33:42Z"
 }

@@ -10,12 +10,12 @@
 // Recovered field layout for SelectionMethodSteadyStateGrid:
 namespace lifted_layout {
 struct SelectionMethodSteadyStateGrid_Fields {
-    // +0x0   const void*              vptr  (evidence: 0x00519170)
-    // +0x34  uint32_t                 field_0x34  (evidence: 0x00519170)
-    // +0x38  uint32_t                 field_0x38  (evidence: 0x00519170)
-    // +0x3C  uint32_t                 field_0x3c  (evidence: 0x00519170)
-    // +0x64  uint32_t                 field_0x64  (evidence: 0x00519170)
-    // +0x68  uint32_t                 field_0x68  (evidence: 0x00519170)
-    // +0x6C  uint32_t                 field_0x6c  (evidence: 0x00519170)
+    // +0x0   const void*              vptr  (evidence: 0x00518030, 0x00519170)
+    // +0x34  uint32_t                 field_0x34  (evidence: 0x00518030, 0x00519170)
+    // +0x38  uint32_t                 field_0x38  (evidence: 0x00518030, 0x00519170)
+    // +0x3C  uint32_t                 field_0x3c  (evidence: 0x00518030, 0x00519170)
+    // +0x64  uint32_t                 field_0x64  (evidence: 0x00518030, 0x00519170)
+    // +0x68  uint32_t                 field_0x68  (evidence: 0x00518030, 0x00519170)
+    // +0x6C  uint32_t                 field_0x6c  (evidence: 0x00518030, 0x00519170)
 };
 } // namespace lifted_layout

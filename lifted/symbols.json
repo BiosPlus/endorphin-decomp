@@ -16930,10 +16930,10 @@
     "lifted_path": "lifted/leaf/tiny_510000.cpp"
   },
   "0x00518030": {
-    "name": "InitVTableAndState_00518030",
-    "class": "\u003cClassName\u003e (optional)",
-    "signature": "void* fn_00518030(void* self)",
-    "summary": "Runs the base state initializer, installs the 0x009520C4 vtable, zeroes three dword fields, sets a double field to 0.1, and returns self.",
+    "name": "sub_005136C0",
+    "class": "Unknown (vtable 0x0095219C)",
+    "signature": "void* fn_005136C0(void* self, void* pair, DWORD b)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500310 (DwordPairInitFromCall_00500310).",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
   "0x00518130": {

@@ -8,7 +8,7 @@
 // Recovered field layout for GlobalIndexTable:
 namespace lifted_layout {
 struct GlobalIndexTable_Fields {
-    // +0x14  uint32_t                 begin  (evidence: 0x00516EB0)
-    // +0x18  uint32_t                 end  (evidence: 0x00516EB0)
+    // +0x14  uint32_t                 begin  (evidence: 0x00516EB0, 0x00518030)
+    // +0x18  uint32_t                 end  (evidence: 0x00516EB0, 0x00518030)
 };
 } // namespace lifted_layout
