@@ -32493,6 +32493,13 @@
     "summary": "Dispatches property/attribute codes 0x2C4 and 0x2C5 to static-object helpers, delegating all other codes to AnimatableTransform::vfunc_15.",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
+  "0x005EE3B0": {
+    "name": "NMData::HingeData::vfunc_15",
+    "class": "NMData::HingeData",
+    "signature": "void* __stdcall fn_005EE3B0(void* self, uint32_t code)",
+    "summary": "Forwards code 0x22F to FixedPathJointData::vfunc_15; otherwise calls fillPairWithStaticObject, then returns self.",
+    "lifted_path": "lifted/NMData/HingeData.cpp"
+  },
   "0x005EF8A0": {
     "name": "NMData::HingeData::vfunc_59",
     "class": "NMData::HingeData",

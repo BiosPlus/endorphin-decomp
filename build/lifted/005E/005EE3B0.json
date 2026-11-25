@@ -1,0 +1,14 @@
+{
+  "va": "0x005EE3B0",
+  "size": 56,
+  "orig_symbol": "NMData::HingeData::vfunc_15",
+  "src_path": "src/NMData/HingeData.cpp",
+  "lifted_path": "lifted/NMData/HingeData.cpp",
+  "name": "NMData::HingeData::vfunc_15",
+  "class": "NMData::HingeData",
+  "signature": "void* __stdcall fn_005EE3B0(void* self, uint32_t code)",
+  "summary": "Forwards code 0x22F to FixedPathJointData::vfunc_15; otherwise calls fillPairWithStaticObject, then returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:18:11Z"
+}

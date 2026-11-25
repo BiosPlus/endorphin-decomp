@@ -63,3 +63,25 @@ std::uint8_t __fastcall NMData_HingeData_vfunc_55(void* ecx, std::uint32_t arg) 
             return 0;
     }
 }
+
+// [0x005EE3B0]
+namespace lift_005EE3B0 {
+// Known callee 0x005EE360: NMData::FixedPathJointData::vfunc_15
+extern uint32_t ext_005EE360(void* self, uint32_t code);
+// Known callee 0x005EC910: fillPairWithStaticObject
+extern void ext_005EC910(void* self, uint32_t value);
+
+// @name NMData::HingeData::vfunc_15
+// @class NMData::HingeData
+// @summary Forwards code 0x22F to FixedPathJointData::vfunc_15; otherwise calls fillPairWithStaticObject, then returns self.
+void* __stdcall fn_005EE3B0(void* self, uint32_t code) {
+    if (code == 0x22F) {
+        ext_005EE360(self, code);
+    } else {
+        // Original pushes the ecx register at entry as the second argument.
+        // That value is not defined by this function, so it is passed as 0 here.
+        ext_005EC910(self, 0);
+    }
+    return self;
+}
+} // namespace lift_005EE3B0
