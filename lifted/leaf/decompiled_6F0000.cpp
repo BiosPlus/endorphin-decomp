@@ -1827,3 +1827,80 @@ uint8_t __thiscall sub_006FA9F0(void* self, uint32_t arg0, uint32_t arg1) {
     return 1;
 }
 } // namespace lift_006FA9F0
+
+// [0x006FAA40]
+namespace lift_006FAA40 {
+extern uint8_t mem_read_u8(uint32_t addr);
+extern uint32_t mem_read_u32(uint32_t addr);
+
+// @name sub_006FAA40
+// @summary Checks flag bit 1 at +0x34, queries vtable+0x74 on field_0x38, and dispatches vtable+0x40 on this.
+// @field +0x00 uint32_t vtable
+// @field +0x34 uint8_t field_0x34
+// @field +0x38 uint32_t field_0x38
+uint8_t __thiscall sub_006FAA40(uint32_t self, uint32_t arg1, uint32_t arg2) {
+    if ((mem_read_u8(self + 0x34) & 0x2) == 0) {
+        return 0;
+    }
+
+    uint32_t obj = mem_read_u32(self + 0x38);
+    uint32_t obj_vtable = mem_read_u32(obj);
+    using fn_v74_t = uint8_t(__thiscall*)(uint32_t, uint32_t);
+    auto fn_v74 = reinterpret_cast<fn_v74_t>(static_cast<uintptr_t>(mem_read_u32(obj_vtable + 0x74)));
+    if (fn_v74(obj, arg1) == 0) {
+        return 0;
+    }
+
+    uint32_t self_vtable = mem_read_u32(self);
+    using fn_v40_t = uint8_t(__thiscall*)(uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t);
+    auto fn_v40 = reinterpret_cast<fn_v40_t>(static_cast<uintptr_t>(mem_read_u32(self_vtable + 0x40)));
+    if (fn_v40(self, 0, 1, self, 0xFFFFFFFFu, arg1, arg2, 0) == 0) {
+        return 0;
+    }
+
+    return 1;
+}
+} // namespace lift_006FAA40
+
+// [0x006FB550]
+namespace lift_006FB550 {
+// @name findLastByKeyPair
+// @summary Searches backwards through a 12-byte-strided array for an entry matching a two-dword key derived from arg0.
+// @field Array +0x00 uint32_t data_ptr
+// @field Array +0x04 int32_t start_index
+// @field Array +0x08 int32_t count
+// @field Target +0x04 uint32_t inner_ptr
+
+
+extern uint32_t mem_r32(uintptr_t addr);
+
+int32_t __thiscall sub_006FB550(uintptr_t this_ptr, uintptr_t arg0) {
+    int32_t count = mem_r32(this_ptr + 0x8);
+    int32_t start_index = mem_r32(this_ptr + 0x4);
+    int32_t idx = count + start_index - 1;
+    if (idx < start_index) {
+        return -1;
+    }
+
+    uintptr_t base = mem_r32(this_ptr);
+    uintptr_t elem = base + static_cast<uintptr_t>(idx) * 12u;
+
+    uint32_t key0 = 0;
+    uint32_t key1 = 0;
+    if (arg0 != 0) {
+        uintptr_t inner = mem_r32(arg0 + 0x4);
+        key1 = static_cast<uint32_t>(inner);
+        key0 = mem_r32(inner);
+    }
+
+    while (idx >= start_index) {
+        if (key0 == mem_r32(elem) && key1 == mem_r32(elem + 0x4)) {
+            return idx - start_index;
+        }
+        --idx;
+        elem -= 12u;
+    }
+
+    return -1;
+}
+} // namespace lift_006FB550

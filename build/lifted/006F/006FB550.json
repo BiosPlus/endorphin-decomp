@@ -1,0 +1,39 @@
+{
+  "va": "0x006FB550",
+  "size": 80,
+  "orig_symbol": "sub_006FB550",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "findLastByKeyPair",
+  "signature": "int32_t __thiscall sub_006FB550(uintptr_t this_ptr, uintptr_t arg0)",
+  "summary": "Searches backwards through a 12-byte-strided array for an entry matching a two-dword key derived from arg0.",
+  "fields": [
+    {
+      "class": "Array",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "data_ptr"
+    },
+    {
+      "class": "Array",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "start_index"
+    },
+    {
+      "class": "Array",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "Target",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "inner_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:57:18Z"
+}
