@@ -1,0 +1,82 @@
+{
+  "va": "0x0071E5F0",
+  "size": 110,
+  "orig_symbol": "sub_0071E5F0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::releaseBuffers_0071E5F0",
+  "class": "Unknown",
+  "signature": "void fn_0071E5F0(void* self)",
+  "summary": "Releases ten embedded Buffer sub-objects at +0x28..+0x100 and then the one at +0x08 via the thunk.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "Buffer",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "Buffer",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "Buffer",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "Buffer",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x70",
+      "type": "Buffer",
+      "name": "field_0x70"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "Buffer",
+      "name": "field_0x88"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA0",
+      "type": "Buffer",
+      "name": "field_0xA0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB8",
+      "type": "Buffer",
+      "name": "field_0xB8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD0",
+      "type": "Buffer",
+      "name": "field_0xD0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xE8",
+      "type": "Buffer",
+      "name": "field_0xE8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x100",
+      "type": "Buffer",
+      "name": "field_0x100"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:03:12Z"
+}

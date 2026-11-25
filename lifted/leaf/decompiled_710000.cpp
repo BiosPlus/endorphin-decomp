@@ -2024,3 +2024,42 @@ int32_t fn_007128A0(void* self, DWORD target) {
     return -1;
 }
 } // namespace lift_007128A0
+
+// [0x0071E5F0] sub_0071E5F0 (110 bytes)
+namespace lift_0071E5F0 {
+// Known callee 0x006D2250: Buffer::release (frees the buffer at +0x10 if non-null and resets fields at +0x00, +0x04, and +0x10 to zero).
+extern void ext_006D2250(void* self);
+// Known callee 0x0071F090: this-adjustor thunk (adjusts `this` by +0x8 and tail-calls Buffer::release).
+extern void ext_0071F090(void* self);
+
+// @name Unknown::releaseBuffers_0071E5F0
+// @class Unknown
+// @summary Releases ten embedded Buffer sub-objects at +0x28..+0x100 and then the one at +0x08 via the thunk.
+// @field Unknown +0x08 Buffer field_0x08
+// @field Unknown +0x28 Buffer field_0x28
+// @field Unknown +0x40 Buffer field_0x40
+// @field Unknown +0x58 Buffer field_0x58
+// @field Unknown +0x70 Buffer field_0x70
+// @field Unknown +0x88 Buffer field_0x88
+// @field Unknown +0xA0 Buffer field_0xA0
+// @field Unknown +0xB8 Buffer field_0xB8
+// @field Unknown +0xD0 Buffer field_0xD0
+// @field Unknown +0xE8 Buffer field_0xE8
+// @field Unknown +0x100 Buffer field_0x100
+void fn_0071E5F0(void* self) {
+    auto base = reinterpret_cast<uint8_t*>(self);
+
+    ext_006D2250(base + 0x28);
+    ext_006D2250(base + 0x40);
+    ext_006D2250(base + 0x58);
+    ext_006D2250(base + 0x70);
+    ext_006D2250(base + 0x88);
+    ext_006D2250(base + 0xA0);
+    ext_006D2250(base + 0xB8);
+    ext_006D2250(base + 0xD0);
+    ext_006D2250(base + 0xE8);
+    ext_006D2250(base + 0x100);
+
+    ext_0071F090(self);
+}
+} // namespace lift_0071E5F0

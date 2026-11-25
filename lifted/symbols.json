@@ -64362,6 +64362,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0071E510 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071E5F0": {
+    "name": "Unknown::releaseBuffers_0071E5F0",
+    "class": "Unknown",
+    "signature": "void fn_0071E5F0(void* self)",
+    "summary": "Releases ten embedded Buffer sub-objects at +0x28..+0x100 and then the one at +0x08 via the thunk.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071E660": {
     "name": "SetByteAtIndex20",
     "signature": "void fn_0071E660(void* self, DWORD index, BYTE value)",
