@@ -639,3 +639,29 @@ void* __thiscall sub_00526C70(void* self) {
     return self;
 }
 } // namespace lift_00526C70
+
+// [0x00528AE0] sub_00528AE0 (83 bytes)
+namespace lift_00528AE0 {
+// Indirect call through the child object's vtable slot 7 (offset +0x1c), passing the child as `this`.
+extern void ext_vcall_slot7_00528AE0(void* child);
+
+// @name Unknown::clearOwnedChild_00528AE0
+// @class Unknown
+// @summary Sets the object's vtable to the derived class, clears the child's back-pointer at +0x8, invokes the child's virtual slot 7, then restores the base vtable.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x04 void* child
+void fn_00528AE0(void* self) {
+    // Derived vtable (VA 0x00953474).
+    lift_field<uint32_t>(self, 0x00) = 0x00953474u;
+
+    void* child = lift_field<void*>(self, 0x04);
+    if (child != nullptr) {
+        // Child back-pointer cleared before the virtual call.
+        lift_field<uint32_t>(child, 0x08) = 0u;
+        ext_vcall_slot7_00528AE0(child);
+    }
+
+    // Base vtable (VA 0x00953454).
+    lift_field<uint32_t>(self, 0x00) = 0x00953454u;
+}
+} // namespace lift_00528AE0

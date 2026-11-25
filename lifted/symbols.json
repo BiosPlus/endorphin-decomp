@@ -18161,6 +18161,13 @@
     "summary": "Stores address of mem_00953454 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_520000.cpp"
   },
+  "0x00528AE0": {
+    "name": "Unknown::clearOwnedChild_00528AE0",
+    "class": "Unknown",
+    "signature": "void fn_00528AE0(void* self)",
+    "summary": "Sets the object's vtable to the derived class, clears the child's back-pointer at +0x8, invokes the child's virtual slot 7, then restores the base vtable.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00528B90": {
     "name": "Unknown::setPeerWithBackLink",
     "class": "Unknown",
