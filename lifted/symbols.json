@@ -50121,6 +50121,13 @@
     "summary": "Copies an 8-byte pair into self; field +4 is the source's pointer, field +0 is the value it points to (zeroed if source is null).",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006FBD30": {
+    "name": "Unknown::GetPayloadForSlotKey",
+    "class": "Unknown",
+    "signature": "DWORD fn_006FBD30(void* self, DWORD index)",
+    "summary": "Selects table entry (field_0x14 + index) of 12-byte records at field_0x10; if its record pointer is non-null and the record's first DWORD matches the entry's first DWORD, forwards the record's second DWORD to ext_006FBC50, otherwise forwards 0.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FC1C0": {
     "name": "sub_006FC1C0",
     "class": "\u003cClassName\u003e (optional)",

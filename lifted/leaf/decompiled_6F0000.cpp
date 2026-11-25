@@ -1279,3 +1279,30 @@ void fn_006F9E90(void* self) {
     lift_field<uint8_t>(self, 0x20) = 1;
 }
 } // namespace lift_006F9E90
+
+// [0x006FBD30] sub_006FBD30 (64 bytes)
+namespace lift_006FBD30 {
+// Callee 0x006FBC50 takes the receiver in ecx (thiscall) plus one stack argument.
+extern DWORD ext_006FBC50(void* self, DWORD arg);
+
+// @name Unknown::GetPayloadForSlotKey
+// @class Unknown
+// @summary Selects table entry (field_0x14 + index) of 12-byte records at field_0x10; if its record pointer is non-null and the record's first DWORD matches the entry's first DWORD, forwards the record's second DWORD to ext_006FBC50, otherwise forwards 0.
+// @field Unknown +0x10 DWORD field_0x10
+// @field Unknown +0x14 DWORD field_0x14
+DWORD fn_006FBD30(void* self, DWORD index) {
+    DWORD slot = lift_field<DWORD>(self, 0x14) + index;
+    DWORD table = lift_field<DWORD>(self, 0x10);
+    void* entry = reinterpret_cast<void*>(static_cast<uintptr_t>(table) + 12u * static_cast<uintptr_t>(slot));
+
+    DWORD entryKey = lift_field<DWORD>(entry, 0);
+    DWORD recAddr = lift_field<DWORD>(entry, 4);
+    if (recAddr != 0) {
+        void* rec = reinterpret_cast<void*>(static_cast<uintptr_t>(recAddr));
+        if (lift_field<DWORD>(rec, 0) == entryKey) {
+            return ext_006FBC50(self, lift_field<DWORD>(rec, 4));
+        }
+    }
+    return ext_006FBC50(self, 0);
+}
+} // namespace lift_006FBD30

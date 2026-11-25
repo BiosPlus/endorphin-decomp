@@ -1,0 +1,28 @@
+{
+  "va": "0x006FBD30",
+  "size": 64,
+  "orig_symbol": "sub_006FBD30",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::GetPayloadForSlotKey",
+  "class": "Unknown",
+  "signature": "DWORD fn_006FBD30(void* self, DWORD index)",
+  "summary": "Selects table entry (field_0x14 + index) of 12-byte records at field_0x10; if its record pointer is non-null and the record's first DWORD matches the entry's first DWORD, forwards the record's second DWORD to ext_006FBC50, otherwise forwards 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "DWORD",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "DWORD",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:07:12Z"
+}
