@@ -8450,6 +8450,13 @@
     "summary": "Sifts an element up in a binary heap using a predicate functor.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00476DF0": {
+    "name": "initStringSubobjects",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_00476DF0(void* self)",
+    "summary": "Initializes two embedded sub-objects (at +0x90 and +0x18) via sub_006A6D5C, using a literal at 0x00504A70 and the dtor pointer stored at mem_00924FF4.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00476EA0": {
     "name": "SymbolPtrMap::vfunc_1",
     "class": "SymbolPtrMap\u003cSearchableMap\u003cNMData::TriggeredEventData *, GetNameFromAttribute\u003cNMData::TriggeredEventData *\u003e\u003e\u003e",

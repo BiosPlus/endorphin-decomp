@@ -57,6 +57,7 @@ struct _unknown__Fields {
     // +0x14  uint32_t                 field_0x14  (evidence: 0x006FC200, 0x006FCF80, 0x00710F10, 0x007155B0) // CONFLICT: multiple definitions at +0x14
     // +0x18  float                    field_0x18  (evidence: 0x007D59C0) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t                 field_0x18  (evidence: 0x00710F10, 0x007155B0) // CONFLICT: multiple definitions at +0x18
+    // +0x18  uint8_t                  field_0x18  (evidence: 0x00476DF0) // CONFLICT: multiple definitions at +0x18
     // +0x1C  DWORD                    arg5Value  (evidence: 0x007D47D0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  float                    field_0x1C  (evidence: 0x007D59C0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 field_0x1C  (evidence: 0x00710F10, 0x007155B0) // CONFLICT: multiple definitions at +0x1C
@@ -103,6 +104,7 @@ struct _unknown__Fields {
     // +0x74  HWND                     field_0x74  (evidence: 0x006B67E0) // CONFLICT: multiple definitions at +0x74
     // +0x78  uint32_t                 field_0x78  (evidence: 0x0079ADA0, 0x0079DCE0)
     // +0x7C  uint32_t                 field_0x7c  (evidence: 0x0079ADA0, 0x0079DCE0)
+    // +0x90  uint8_t                  field_0x90  (evidence: 0x00476DF0)
     // +0x9C  void* vtable slot (called with two zero args)  (evidence: 0x00420070, 0x0042FD70)
     // +0xA0  void*                    field_0xA0  (evidence: 0x005480D0) // CONFLICT: multiple definitions at +0xA0
     // +0xA0  void*                    field_0xa0  (evidence: 0x005457B0, 0x00548240) // CONFLICT: multiple definitions at +0xA0

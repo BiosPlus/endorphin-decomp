@@ -588,3 +588,25 @@ int fn_00477F30(void* self) {
     return best;
 }
 } // namespace lift_00477F30
+
+// [0x00476DF0] sub_00476DF0 (102 bytes)
+namespace lift_00476DF0 {
+// Callee sub_006A6D5C takes four 32-bit arguments and cleans its own stack
+// (the caller does not adjust esp after either call).
+extern void __stdcall ext_006A6D5C(void* obj, uint32_t a, uint32_t b, uint32_t c);
+extern uint32_t mem_00924FF4;
+
+// @name initStringSubobjects
+// @class <unknown>
+// @summary Initializes two embedded sub-objects (at +0x90 and +0x18) via sub_006A6D5C, using a literal at 0x00504A70 and the dtor pointer stored at mem_00924FF4.
+// @field <unknown> +0x18 uint8_t field_0x18
+// @field <unknown> +0x90 uint8_t field_0x90
+void fn_00476DF0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    ext_006A6D5C(base + 0x90, 0x54u, 7u, 0x00504A70u);
+
+    const uint32_t dtor = mem_00924FF4;
+    ext_006A6D5C(base + 0x18, 0x1Cu, 4u, dtor);
+}
+} // namespace lift_00476DF0

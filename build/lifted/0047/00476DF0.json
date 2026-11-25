@@ -1,0 +1,28 @@
+{
+  "va": "0x00476DF0",
+  "size": 102,
+  "orig_symbol": "sub_00476DF0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "initStringSubobjects",
+  "class": "\u003cunknown\u003e",
+  "signature": "void fn_00476DF0(void* self)",
+  "summary": "Initializes two embedded sub-objects (at +0x90 and +0x18) via sub_006A6D5C, using a literal at 0x00504A70 and the dtor pointer stored at mem_00924FF4.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x18",
+      "type": "uint8_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x90",
+      "type": "uint8_t",
+      "name": "field_0x90"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:45:28Z"
+}
