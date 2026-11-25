@@ -2022,3 +2022,37 @@ void __thiscall fn_006DD240(void* self, void** pItem) {
     *pItem = nullptr;
 }
 } // namespace lift_006DD240
+
+// [0x006DD2B0]
+namespace lift_006DD2B0 {
+// @name Unknown::ClearAndDeleteItems
+// @class Unknown
+// @summary Removes and deletes all items in the DynamicArray at +0xD0 until it is empty.
+// @field Unknown +0xD0 uint32_t field_0xD0
+// @field Unknown +0xE0 void** field_0xE0
+
+
+extern void __thiscall ext_006DD240(void* self, void** pItem);
+extern void __thiscall ext_006D2200(void* self, int32_t index);
+
+void __thiscall fn_006DD2B0(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    void* arrayPtr = base + 0xD0;
+    if (*reinterpret_cast<uint32_t*>(arrayPtr) == 0) {
+        return;
+    }
+
+    do {
+        void** items = *reinterpret_cast<void***>(base + 0xE0);
+        void* item = items[0];
+        if (item != nullptr) {
+            ext_006DD240(self, &item);
+            if (item != nullptr) {
+                ext_006D2200(arrayPtr, 0);
+            }
+        } else {
+            ext_006D2200(arrayPtr, 0);
+        }
+    } while (*reinterpret_cast<uint32_t*>(arrayPtr) != 0);
+}
+} // namespace lift_006DD2B0

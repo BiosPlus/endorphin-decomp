@@ -1,0 +1,28 @@
+{
+  "va": "0x006DD2B0",
+  "size": 80,
+  "orig_symbol": "sub_006DD2B0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::ClearAndDeleteItems",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_006DD2B0(void* self)",
+  "summary": "Removes and deletes all items in the DynamicArray at +0xD0 until it is empty.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xD0",
+      "type": "uint32_t",
+      "name": "field_0xD0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xE0",
+      "type": "void**",
+      "name": "field_0xE0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:30:05Z"
+}

@@ -61104,6 +61104,13 @@
     "summary": "Finds an item pointer in the DynamicArray at +0xD0, unregisters it if it has a parent at +0x8, removes it from the array, frees it, and nulls the caller's pointer.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006DD2B0": {
+    "name": "Unknown::ClearAndDeleteItems",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_006DD2B0(void* self)",
+    "summary": "Removes and deletes all items in the DynamicArray at +0xD0 until it is empty.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DD930": {
     "name": "CopyDoubleFromPointerGlobal",
     "signature": "void sub_006DD930()",
