@@ -31938,6 +31938,12 @@
     "summary": "Copies three floats from the source pointer into self+0xB4..0xBC and sets the byte flag at self+0xF6 to 1.",
     "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
+  "0x00630540": {
+    "name": "initSubobjectPairAndGetFirst",
+    "signature": "void* fn_00630540(void* self)",
+    "summary": "Passes this+0x15c as the receiver and this+0x90 as the argument to sub_00693F40, then returns this+0x15c.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x00630560": {
     "name": "sub_00630560",
     "class": "UnknownClass",

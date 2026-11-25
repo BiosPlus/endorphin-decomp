@@ -179,3 +179,18 @@ void* fn_0063D950(void* self) {
     return self;
 }
 } // namespace lift_0063D950
+
+// [0x00630540] sub_00630540 (25 bytes)
+namespace lift_00630540 {
+// Known callee 0x00693F40: sub_00693F40 (148 bytes, thiscall-style: ecx = receiver, one stack argument)
+extern void ext_00693F40(void* self, void* arg);
+
+// @name initSubobjectPairAndGetFirst
+// @summary Passes this+0x15c as the receiver and this+0x90 as the argument to sub_00693F40, then returns this+0x15c.
+void* fn_00630540(void* self) {
+    uint8_t* const first = reinterpret_cast<uint8_t*>(self) + 0x15c;
+    uint8_t* const second = reinterpret_cast<uint8_t*>(self) + 0x90;
+    ext_00693F40(first, second);
+    return first;
+}
+} // namespace lift_00630540
