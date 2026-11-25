@@ -1,0 +1,14 @@
+{
+  "va": "0x0048C120",
+  "size": 35,
+  "orig_symbol": "NMData::PoseData::vfunc_6",
+  "src_path": "src/NMData/PoseData.cpp",
+  "lifted_path": "lifted/NMData/PoseData.cpp",
+  "name": "NMData::PoseData::vfunc_6",
+  "class": "NMData::PoseData",
+  "signature": "std::string* fn_0048C120(void* self, std::string* out)",
+  "summary": "Constructs a std::string in caller-provided storage from the global string literal pointer mem_00A9F1A4 and returns it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:50:38Z"
+}
