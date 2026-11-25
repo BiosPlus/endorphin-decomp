@@ -9,8 +9,8 @@
 namespace lifted_layout {
 struct TreeIterator_Fields {
     // +0x0   void*                    container  (evidence: 0x00492BC0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    field_0x00  (evidence: 0x005AC8C0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    field_0x00  (evidence: 0x005AC8C0, 0x00673C20) // CONFLICT: multiple definitions at +0x0
     // +0x4   TreeNode*                field_0x04  (evidence: 0x005AC8C0) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    node  (evidence: 0x00492BC0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    node  (evidence: 0x00492BC0, 0x00673C20) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout

@@ -45192,6 +45192,12 @@
     "summary": "Stores a DWORD argument at this+0x60 and sets the byte flag at this+0x65 to 1.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x00673C20": {
+    "name": "advanceTreeIterator",
+    "signature": "static inline bool isNilNode(const void* n)",
+    "summary": "Advances a red-black tree iterator to its in-order successor: goes to the leftmost node of the right subtree if one exists, otherwise climbs parents while the current node is a right child; reports an invalid parameter when the iterator is null or already at the end.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00673C90": {
     "name": "Unknown::CopyConstruct",
     "class": "Unknown",

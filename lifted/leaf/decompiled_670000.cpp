@@ -1695,3 +1695,62 @@ void* __thiscall fn_0067E110(const void* self, void* out) {
     return out;
 }
 } // namespace lift_0067E110
+
+// [0x00673C20] sub_00673C20 (108 bytes)
+namespace lift_00673C20 {
+// Import slot for the CRT invalid-parameter handler (MSVCR80 _invalid_parameter_noinfo).
+extern void ext_invalid_parameter_noinfo(void);
+
+// @name advanceTreeIterator
+// @summary Advances a red-black tree iterator to its in-order successor: goes to the leftmost node of the right subtree if one exists, otherwise climbs parents while the current node is a right child; reports an invalid parameter when the iterator is null or already at the end.
+// @field TreeIterator +0x00 void* field_0x00
+// @field TreeIterator +0x04 void* node
+// @field TreeNode +0x00 void* left
+// @field TreeNode +0x04 void* parent
+// @field TreeNode +0x08 void* right
+// @field TreeNode +0x2D uint8_t is_nil
+static inline bool isNilNode(const void* n) {
+    return lift_field<uint8_t>(n, 0x2D) != 0;
+}
+
+void fn_00673C20(void* self) {
+    if (lift_field<void*>(self, 0x00) == nullptr) {
+        ext_invalid_parameter_noinfo();
+    }
+
+    void* node = lift_field<void*>(self, 0x04);
+    if (isNilNode(node)) {
+        ext_invalid_parameter_noinfo();
+        return;
+    }
+
+    void* right = lift_field<void*>(node, 0x08);
+    if (!isNilNode(right)) {
+        // Successor is the leftmost node of the right subtree.
+        void* cur = right;
+        void* left = lift_field<void*>(cur, 0x00);
+        if (isNilNode(left)) {
+            lift_field<void*>(self, 0x04) = cur;
+            return;
+        }
+        cur = left;
+        for (;;) {
+            void* next = lift_field<void*>(cur, 0x00);
+            if (isNilNode(next)) {
+                break;
+            }
+            cur = next;
+        }
+        lift_field<void*>(self, 0x04) = cur;
+        return;
+    }
+
+    // No right subtree: climb while the current node is a right child.
+    void* p = lift_field<void*>(node, 0x04);
+    while (!isNilNode(p) && lift_field<void*>(self, 0x04) == lift_field<void*>(p, 0x08)) {
+        lift_field<void*>(self, 0x04) = p;
+        p = lift_field<void*>(p, 0x04);
+    }
+    lift_field<void*>(self, 0x04) = p;
+}
+} // namespace lift_00673C20
