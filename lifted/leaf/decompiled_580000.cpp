@@ -560,3 +560,39 @@ uint32_t fn_00581750(uint32_t begin, uint32_t end, uint32_t value) {
 }
 } // namespace lift_0054F290
 } // namespace lift_00581750
+
+// [0x00585120] sub_00585120 (78 bytes)
+namespace lift_00585120 {
+// Known callee 0x00554510: Unknown::getVec4At30_w1 (Writes a vec4 to the caller-supplied return buffer: xyz copied from self+0x30..0x38, w = 1.0f.)
+void ext_00554510(const void* self, float* out);
+
+// Global at 0x00B40640 (value passed as the third argument of the first lookup call).
+extern uint32_t mem_00B40640;
+
+// @name Unknown::LookupVec4AndBlend_00585120
+// @class Unknown
+// @summary Resolves a sub-object through a function pointer at +0x10 of self->+0x04, reads a vec4 from it, then forwards the vec4 and the float argument through the object at self+0x0C.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x0C void* field_0x0c
+void fn_00585120(void* self, uintptr_t arg1, float arg2) {
+    auto* base = static_cast<unsigned char*>(self);
+
+    // First object: self + 0x04. Its +0x10 slot holds the lookup function.
+    void* obj1 = lift_field<void*>(base, 0x04);
+    auto lookup = reinterpret_cast<uintptr_t (*)(void*, uintptr_t*, uint32_t, uint32_t, float*)>(
+        lift_field<uintptr_t>(obj1, 0x10));
+
+    uintptr_t slot = 0;
+    float vec[4] = {0.0f, 0.0f, 0.0f, 0.0f};
+    uintptr_t r = lookup(static_cast<unsigned char*>(obj1), &slot, 0u, mem_00B40640, vec);
+
+    // Fill vec from the object returned by the lookup.
+    ext_00554510(reinterpret_cast<const void*>(r), vec);
+
+    // Second object: self + 0x0C. Its +0x0C slot holds the forwarding function.
+    void* obj2 = lift_field<void*>(base, 0x0C);
+    auto forward = reinterpret_cast<void (*)(void*, uintptr_t, float*, float)>(
+        lift_field<uintptr_t>(obj2, 0x0C));
+    forward(obj2, arg1, vec, arg2);
+}
+} // namespace lift_00585120

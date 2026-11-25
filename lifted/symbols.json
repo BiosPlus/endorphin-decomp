@@ -22468,6 +22468,13 @@
     "summary": "Calls vtable slot 30 (+0x78) on the target object, passing the address of the second argument; no-op if target is null.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00585120": {
+    "name": "Unknown::LookupVec4AndBlend_00585120",
+    "class": "Unknown",
+    "signature": "void fn_00585120(void* self, uintptr_t arg1, float arg2)",
+    "summary": "Resolves a sub-object through a function pointer at +0x10 of self-\u003e+0x04, reads a vec4 from it, then forwards the vec4 and the float argument through the object at self+0x0C.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x00585170": {
     "name": "AnimatableTransform::vfunc_34",
     "class": "AnimatableTransform",

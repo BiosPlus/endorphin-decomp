@@ -1,0 +1,28 @@
+{
+  "va": "0x00585120",
+  "size": 78,
+  "orig_symbol": "sub_00585120",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "Unknown::LookupVec4AndBlend_00585120",
+  "class": "Unknown",
+  "signature": "void fn_00585120(void* self, uintptr_t arg1, float arg2)",
+  "summary": "Resolves a sub-object through a function pointer at +0x10 of self-\u003e+0x04, reads a vec4 from it, then forwards the vec4 and the float argument through the object at self+0x0C.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:46:47Z"
+}
