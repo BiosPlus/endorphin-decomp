@@ -880,3 +880,44 @@ void fn_0046FC10(void* self, float value) {
     lift_field<float>(inner, 0x1D0) = value;
 }
 } // namespace lift_0046FC10
+
+// [0x004629E0] sub_004629E0 (63 bytes)
+namespace lift_004629E0 {
+// Known callee 0x004474F0: invokeCallbackIfSet (Invokes a member callback at +0x04 if non-null, passing one argument)
+extern uint32_t ext_004474F0(void* ecx, const char* arg1);
+// Import slot for MSVCP80 std::string::c_str (IAT value)
+extern int mem_00924FF0;
+// Import slot for USER32!MessageBoxA (IAT value)
+extern int mem_009255E0;
+
+// @name Unknown::DispatchStringCallback
+// @class Unknown
+// @summary Mode 0 is a no-op; mode 2 dispatches directly; any other mode asks Yes/No first, then dispatches on Yes.
+// @field Unknown +0x00 void* field_0x00
+void fn_004629E0(void* self, void* str, uint32_t mode) {
+    using MessageBoxAFn = int(__stdcall*)(HWND, LPCSTR, LPCSTR, UINT);
+    using CStrFn        = const char*(__thiscall*)(void*);
+
+    if (mode == 0) {
+        return;
+    }
+
+    if (mode != 2) {
+        // Yes/No prompt (MB_YESNO = 4); caption/text are rdata strings at 0x00938D28 / 0x00938DD4.
+        auto messageBoxA = reinterpret_cast<MessageBoxAFn>(static_cast<uintptr_t>(mem_009255E0));
+        int  result = messageBoxA(nullptr,
+                                  reinterpret_cast<LPCSTR>(static_cast<uintptr_t>(0x00938D28u)),
+                                  reinterpret_cast<LPCSTR>(static_cast<uintptr_t>(0x00938DD4u)),
+                                  4u);
+        if (result != 6 /* IDYES */) {
+            return;
+        }
+    }
+
+    auto cStr = reinterpret_cast<CStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+    const char* text = cStr(str);
+
+    void* callbackOwner = *static_cast<void**>(self);
+    ext_004474F0(callbackOwner, text);
+}
+} // namespace lift_004629E0
