@@ -25354,6 +25354,13 @@
     "summary": "Walks the +0x94 parent/next chain starting at this and returns the first node whose vtable+0x70 predicate returns true.",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x00584B60": {
+    "name": "AnimatableTransform::vfunc_29",
+    "class": "AnimatableTransform",
+    "signature": "void fn_00584B60(void* self, std::string* out)",
+    "summary": "Forwards to the sub-object at +0x94 via vtable slot 29 when present, then sets *out from one of two stored strings depending on whether +0x30 equals a fixed literal.",
+    "lifted_path": "lifted/classes/AnimatableTransform.cpp"
+  },
   "0x00584BD0": {
     "name": "Unknown::getStrPtrOrFallback",
     "class": "Unknown",

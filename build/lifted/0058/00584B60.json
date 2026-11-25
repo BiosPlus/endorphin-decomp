@@ -1,0 +1,34 @@
+{
+  "va": "0x00584B60",
+  "size": 98,
+  "orig_symbol": "AnimatableTransform::vfunc_29",
+  "src_path": "src/classes/AnimatableTransform.cpp",
+  "lifted_path": "lifted/classes/AnimatableTransform.cpp",
+  "name": "AnimatableTransform::vfunc_29",
+  "class": "AnimatableTransform",
+  "signature": "void fn_00584B60(void* self, std::string* out)",
+  "summary": "Forwards to the sub-object at +0x94 via vtable slot 29 when present, then sets *out from one of two stored strings depending on whether +0x30 equals a fixed literal.",
+  "fields": [
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0x30",
+      "type": "std::string",
+      "name": "field_0x30"
+    },
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0x44",
+      "type": "std::string",
+      "name": "field_0x44"
+    },
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0x94",
+      "type": "void*",
+      "name": "subobject_0x94"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:39:26Z"
+}

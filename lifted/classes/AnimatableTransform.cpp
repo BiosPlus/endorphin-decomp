@@ -206,3 +206,32 @@ void fn_0058A670(void* self, uint32_t index, uint32_t arg2, uint32_t arg3) {
     }
 }
 } // namespace lift_0058A670
+
+// [0x00584B60] AnimatableTransform::vfunc_29 (98 bytes)
+namespace lift_00584B60 {
+extern const char mem_0092AB70[];
+extern const char mem_0092AB5D[];
+
+// @name AnimatableTransform::vfunc_29
+// @class AnimatableTransform
+// @summary Forwards to the sub-object at +0x94 via vtable slot 29 when present, then sets *out from one of two stored strings depending on whether +0x30 equals a fixed literal.
+// @field AnimatableTransform +0x30 std::string field_0x30
+// @field AnimatableTransform +0x44 std::string field_0x44
+// @field AnimatableTransform +0x94 void* subobject_0x94
+void fn_00584B60(void* self, std::string* out) {
+    void* sub = lift_field<void*>(self, 0x94);
+    if (sub != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        using Vfunc29 = void(__thiscall*)(void*, std::string*);
+        reinterpret_cast<Vfunc29>(vtbl[29])(sub, out);
+        *out = std::string(mem_0092AB70);
+    }
+
+    std::string& name = lift_field<std::string>(self, 0x30);
+    if (name == std::string(mem_0092AB5D)) {
+        *out = name;
+    } else {
+        *out = lift_field<std::string>(self, 0x44);
+    }
+}
+} // namespace lift_00584B60
