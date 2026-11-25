@@ -4,10 +4,115 @@
   "orig_symbol": "sub_007AA7F0",
   "src_path": "src/leaf/decompiled_7A0000.cpp",
   "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
-  "name": "sub_007AA7F0",
-  "signature": "bool sub_007AA7F0(uint32_t arg)",
-  "summary": "Returns true if the argument matches any of four global sentinel values; otherwise returns whether it equals the fourth global.",
+  "name": "sub_007AD5C0",
+  "class": "none",
+  "signature": "extern \"C\" void* __fastcall fn_007AD5C0(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_007AD590 and frees memory when (flags \u0026 1) is set.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "int32_t field_0xF0 (indexed array base; element stride 4, indices",
+      "name": "1..17)"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xF0",
+      "type": "uint32_t field_0xF0 (indexed array base, slots 0x00..0x11 at +0xF0..+0x128; index 0 never",
+      "name": "read)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x138",
+      "type": "uint8_t",
+      "name": "field_0x138"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x194",
+      "type": "DWORD",
+      "name": "field_0x194[18]"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14C",
+      "type": "int32_t field_0x14C (indexed array base; element stride 4, indices",
+      "name": "1..17)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x734",
+      "type": "uint32_t field_0x734 (base of 18-entry dword array; element i at +0x734 + 4*i, valid i =",
+      "name": "1..17)"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x78",
+      "type": "double",
+      "name": "scale"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x84",
+      "type": "BOOLEAN",
+      "name": "flag"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x58",
+      "type": "uint32_t",
+      "name": "field_0x58"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5C"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "field_0x60"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Buffer",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "count"
+    },
+    {
+      "class": "Buffer",
+      "offset": "+0x10",
+      "type": "void**",
+      "name": "items"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T00:52:33Z"
+  "lifted_at": "2026-11-25T00:52:57Z"
 }

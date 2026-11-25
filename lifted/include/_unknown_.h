@@ -85,7 +85,7 @@ struct _unknown__Fields {
     // +0xA0  void*                    field_0xA0  (evidence: 0x005480D0) // CONFLICT: multiple definitions at +0xA0
     // +0xA0  void*                    field_0xa0  (evidence: 0x00548240) // CONFLICT: multiple definitions at +0xA0
     // +0xE0  void* embedded-object vptr slot (called with this=second object)  (evidence: 0x0042FD70)
-    // +0xF0  uint32_t field_0xF0 (indexed array base, slots 0x00..0x11 at +0xF0..+0x128; index 0 never read)  (evidence: 0x007AA910, 0x007AC670)
+    // +0xF0  uint32_t field_0xF0 (indexed array base, slots 0x00..0x11 at +0xF0..+0x128; index 0 never read)  (evidence: 0x007AA7F0, 0x007AA910, 0x007AC670)
     // +0x130 DWORD                    field_0x130  (evidence: 0x0065D0C0)
     // +0x138 FLOAT                    field_0x138  (evidence: 0x0065D0A0)
     // +0x17C void*                    field_0x17c  (evidence: 0x005E28B0)

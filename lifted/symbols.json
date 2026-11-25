@@ -54190,9 +54190,10 @@
     "lifted_path": "lifted/clones/auto_clones_7A0000.cpp"
   },
   "0x007AA7F0": {
-    "name": "sub_007AA7F0",
-    "signature": "bool sub_007AA7F0(uint32_t arg)",
-    "summary": "Returns true if the argument matches any of four global sentinel values; otherwise returns whether it equals the fourth global.",
+    "name": "sub_007AD5C0",
+    "class": "none",
+    "signature": "extern \"C\" void* __fastcall fn_007AD5C0(void* self, int edx_unused, unsigned int flags)",
+    "summary": "MSVC scalar deleting destructor: calls sub_007AD590 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
   "0x007AA830": {
