@@ -266,3 +266,61 @@ void* fn_004F9310() {
     return &mem_00AE9F3C;
 }
 } // namespace lift_004F9310
+
+// [0x004FF940]
+namespace lift_004FF940 {
+// @name getStaticSingleton_004FF940
+// @summary Lazily initializes and returns the static singleton object at 0x00AEB274.
+
+
+extern uint32_t mem_00AEB278;
+extern uint32_t mem_00AEB274;
+
+extern void __thiscall ext_0067A670(void* self);
+
+void* fn_004FF940() {
+    if ((mem_00AEB278 & 1u) == 0) {
+        mem_00AEB278 |= 1u;
+        ext_0067A670(&mem_00AEB274);
+        mem_00AEB274 = 0x0094E29Cu;
+    }
+    return &mem_00AEB274;
+}
+} // namespace lift_004FF940
+
+// [0x004F9490]
+namespace lift_004F9490 {
+extern uint32_t mem_00AE9F60;
+extern uint32_t mem_00AE9F5C;
+extern uint32_t mem_0094DC0C;
+extern void ext_0067A670(void* self);
+
+// @name getOrInitSingleton_004F9490
+// @summary Lazily initializes the global object at 0x00AE9F5C once and returns its address.
+void* fn_004F9490() {
+    if ((static_cast<uint8_t>(mem_00AE9F60) & 1u) == 0u) {
+        mem_00AE9F60 |= 1u;
+        ext_0067A670(&mem_00AE9F5C);
+        mem_00AE9F5C = reinterpret_cast<uintptr_t>(&mem_0094DC0C);
+    }
+    return &mem_00AE9F5C;
+}
+} // namespace lift_004F9490
+
+// [0x004FF9A0]
+namespace lift_004FF9A0 {
+extern void ext_0067A670(void* self);
+extern DWORD mem_00AEB280;
+extern DWORD mem_00AEB27C;
+
+// @name getSingleton_004FF9A0
+// @summary Lazily initializes and returns the singleton object at 0x00AEB27C.
+void* fn_004FF9A0() {
+    if ((mem_00AEB280 & 1) == 0) {
+        mem_00AEB280 |= 1;
+        ext_0067A670(&mem_00AEB27C);
+        mem_00AEB27C = 0x0094E374;
+    }
+    return &mem_00AEB27C;
+}
+} // namespace lift_004FF9A0

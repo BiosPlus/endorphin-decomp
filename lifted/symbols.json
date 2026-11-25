@@ -16978,6 +16978,12 @@
     "summary": "Lazily initializes and returns the singleton object at 0x00AE9F54.",
     "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
+  "0x004F9490": {
+    "name": "getOrInitSingleton_004F9490",
+    "signature": "void* fn_004F9490()",
+    "summary": "Lazily initializes the global object at 0x00AE9F5C once and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F9510": {
     "name": "InitPairWithZeroCall",
     "signature": "void* fn_004F9510(void* out, uint32_t val)",
@@ -17364,6 +17370,18 @@
     "signature": "void* fn_004FF4A0(void* out, void* unused_arg)",
     "summary": "Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType\u003cRuntimeEngine, int, getNumTicksToRun, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004FF940": {
+    "name": "getStaticSingleton_004FF940",
+    "signature": "void* fn_004FF940()",
+    "summary": "Lazily initializes and returns the static singleton object at 0x00AEB274.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
+  "0x004FF9A0": {
+    "name": "getSingleton_004FF9A0",
+    "signature": "void* fn_004FF9A0()",
+    "summary": "Lazily initializes and returns the singleton object at 0x00AEB27C.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
   "0x004FFF60": {
     "name": "sub_004FFF60",
