@@ -632,3 +632,29 @@ void fn_00478410(void* self, void* range) {
     ext_00678D70(self, 1);
 }
 } // namespace lift_00478410
+
+// [0x00477120]
+namespace lift_00477120 {
+// @name sortThreeByComparator
+// @summary Sorts three 32-bit values in-place using a comparator functor passed by value.
+
+extern uint8_t __thiscall ext_00476860(void* self, uint32_t lhs, uint32_t rhs);
+
+void __cdecl sub_00477120(uint32_t* a, uint32_t* b, uint32_t* c, uint32_t cmp) {
+    if (ext_00476860(&cmp, *b, *a)) {
+        uint32_t tmp = *a;
+        *a = *b;
+        *b = tmp;
+    }
+    if (ext_00476860(&cmp, *c, *b)) {
+        uint32_t tmp = *b;
+        *b = *c;
+        *c = tmp;
+    }
+    if (ext_00476860(&cmp, *b, *a)) {
+        uint32_t tmp = *a;
+        *a = *b;
+        *b = tmp;
+    }
+}
+} // namespace lift_00477120

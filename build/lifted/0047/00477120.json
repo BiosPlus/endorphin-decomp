@@ -1,0 +1,13 @@
+{
+  "va": "0x00477120",
+  "size": 100,
+  "orig_symbol": "sub_00477120",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "sortThreeByComparator",
+  "signature": "void __cdecl sub_00477120(uint32_t* a, uint32_t* b, uint32_t* c, uint32_t cmp)",
+  "summary": "Sorts three 32-bit values in-place using a comparator functor passed by value.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:56:58Z"
+}
