@@ -653,3 +653,19 @@ void* fn_00670EC0(void* self) {
     return self;
 }
 } // namespace lift_00670EC0
+
+// [0x00672810] sub_00672810 (73 bytes)
+namespace lift_00672810 {
+// Known callee 0x0041CDE0: CopyEntryRangeForward (Copies each 0x20-byte entry in [first,last) to dest by assigning its leading std::string and copying the DWORD at +0x1c; returns dest end, or dest itself when the range is empty.)
+extern void* ext_0041CDE0(const void* first, const void* last, void* dest);
+
+// @name CopyRangeAndComputeDestEnd
+// @summary Copies the 0x20-byte entry range [first,last) to dest and returns dest advanced by the range size rounded down to a multiple of 0x20.
+void* fn_00672810(const void* first, const void* last, void* dest) {
+    ext_0041CDE0(first, last, dest);
+    const std::ptrdiff_t bytes =
+        reinterpret_cast<const char*>(last) - reinterpret_cast<const char*>(first);
+    const std::ptrdiff_t aligned = bytes & ~static_cast<std::ptrdiff_t>(0x1F);
+    return static_cast<char*>(dest) + aligned;
+}
+} // namespace lift_00672810

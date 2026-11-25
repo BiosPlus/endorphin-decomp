@@ -38046,6 +38046,12 @@
     "summary": "Pops the return address into edi and returns, releasing 4 bytes of stack arguments.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x00672810": {
+    "name": "CopyRangeAndComputeDestEnd",
+    "signature": "void* fn_00672810(const void* first, const void* last, void* dest)",
+    "summary": "Copies the 0x20-byte entry range [first,last) to dest and returns dest advanced by the range size rounded down to a multiple of 0x20.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00672D10": {
     "name": "sub_00672D10",
     "class": "StringArray",
