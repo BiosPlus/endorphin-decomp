@@ -832,3 +832,21 @@ void fn_006B8170(void* self) {
     ext_006B7D90(self);
 }
 } // namespace lift_006B8170
+
+// [0x006B67E0] sub_006B67E0 (30 bytes)
+namespace lift_006B67E0 {
+// IAT slot for USER32!SendMessageA (rdata value 0x0062861A).
+extern uint32_t mem_00925694;
+
+// @name SendWindowMessage_006B67E0
+// @summary Sends window message 0x46F (WM_USER-range) to the HWND stored at self+0x74 with two stack arguments as wParam/lParam; returns 0.
+// @field field_0x74 uint32_t (HWND stored in the object; exact owning class unknown)
+uint32_t fn_006B67E0(void* self, uint32_t wParam, uint32_t lParam) {
+    using SendMessageAFn = uint32_t(__stdcall*)(uint32_t hWnd, uint32_t msg, uint32_t wp, uint32_t lp);
+
+    const uint32_t hwnd = lift_field<uint32_t>(self, 0x74);
+    auto send_message = reinterpret_cast<SendMessageAFn>(static_cast<uintptr_t>(mem_00925694));
+    (void)send_message(hwnd, 0x46F, wParam, lParam);
+    return 0; // xor eax, eax
+}
+} // namespace lift_006B67E0

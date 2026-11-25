@@ -1,0 +1,13 @@
+{
+  "va": "0x006B67E0",
+  "size": 30,
+  "orig_symbol": "sub_006B67E0",
+  "src_path": "src/leaf/tiny_6B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6B0000.cpp",
+  "name": "SendWindowMessage_006B67E0",
+  "signature": "uint32_t fn_006B67E0(void* self, uint32_t wParam, uint32_t lParam)",
+  "summary": "Sends window message 0x46F (WM_USER-range) to the HWND stored at self+0x74 with two stack arguments as wParam/lParam; returns 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:39:58Z"
+}
