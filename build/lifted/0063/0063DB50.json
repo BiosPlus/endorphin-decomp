@@ -1,0 +1,46 @@
+{
+  "va": "0x0063DB50",
+  "size": 38,
+  "orig_symbol": "sub_0063DB50",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "Unknown::initFloatsAndVtable",
+  "class": "Unknown",
+  "signature": "uint32_t sub_0063DB50(uint32_t this_ptr)",
+  "summary": "Calls base ctor sub_0062CD30, sets vtable 0x00979364, zeroes +0x3C/+0x40/+0x44 and sets +0x48 to 0.2f.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t field_0x00 (vtable",
+      "name": "pointer)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "field_0x48"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:16:11Z"
+}

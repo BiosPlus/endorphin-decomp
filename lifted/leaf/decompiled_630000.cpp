@@ -269,3 +269,30 @@ void* __thiscall fn_0063DE10(void* self) {
     return self;                                      // mov eax, esi
 }
 } // namespace lift_0063DE10
+
+// [0x0063DB50]
+namespace lift_0063DB50 {
+// @name Unknown::initFloatsAndVtable
+// @class Unknown
+// @summary Calls base ctor sub_0062CD30, sets vtable 0x00979364, zeroes +0x3C/+0x40/+0x44 and sets +0x48 to 0.2f.
+// @field Unknown +0x00 uint32_t field_0x00 (vtable pointer)
+// @field Unknown +0x3C float field_0x3C
+// @field Unknown +0x40 float field_0x40
+// @field Unknown +0x44 float field_0x44
+// @field Unknown +0x48 float field_0x48
+
+extern uint32_t ext_0062CD30(uint32_t this_ptr);
+
+extern const float mem_00940694;
+
+uint32_t sub_0063DB50(uint32_t this_ptr) {
+    ext_0062CD30(this_ptr);
+    auto* self = reinterpret_cast<uint8_t*>(this_ptr);
+    *reinterpret_cast<uint32_t*>(self + 0x00) = 0x00979364u;
+    *reinterpret_cast<float*>(self + 0x3C) = 0.0f;
+    *reinterpret_cast<float*>(self + 0x40) = 0.0f;
+    *reinterpret_cast<float*>(self + 0x44) = 0.0f;
+    *reinterpret_cast<float*>(self + 0x48) = mem_00940694;
+    return this_ptr;
+}
+} // namespace lift_0063DB50
