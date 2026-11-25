@@ -595,3 +595,25 @@ void fn_0086FFF0(uint8_t* dst, const uint8_t* src) {
     dst[7] = static_cast<uint8_t>(w1);
 }
 } // namespace lift_0086FFF0
+
+// [0x00868690] sub_00868690 (80 bytes)
+namespace lift_00868690 {
+// @name _aullshr (unsigned 64-bit logical shift right)
+// @summary Shifts the unsigned 64-bit value (hi:lo) right by n bits (n >= 64 yields 0).
+// @field none (no struct field accesses)
+uint64_t fn_00868690(uint32_t lo, uint32_t hi, uint32_t n) {
+    if (n == 0) {
+        return (static_cast<uint64_t>(hi) << 32) | lo;
+    }
+    if (n >= 64) {
+        return 0;
+    }
+    if (n >= 32) {
+        // Whole low word is shifted out; result is hi >> (n - 32) in the low word.
+        return static_cast<uint64_t>(hi >> (n - 32));
+    }
+    uint32_t newLo = (lo >> n) | (hi << (32 - n));
+    uint32_t newHi = hi >> n;
+    return (static_cast<uint64_t>(newHi) << 32) | newLo;
+}
+} // namespace lift_00868690

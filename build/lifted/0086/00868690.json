@@ -1,0 +1,13 @@
+{
+  "va": "0x00868690",
+  "size": 80,
+  "orig_symbol": "sub_00868690",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "_aullshr (unsigned 64-bit logical shift right)",
+  "signature": "uint64_t fn_00868690(uint32_t lo, uint32_t hi, uint32_t n)",
+  "summary": "Shifts the unsigned 64-bit value (hi:lo) right by n bits (n \u003e= 64 yields 0).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:58:02Z"
+}
