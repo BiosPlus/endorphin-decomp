@@ -15162,6 +15162,13 @@
     "summary": "Sets the momentum scale factor on a TransitionEventData instance from an expression value, or throws if null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004D1CB0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, float, {public: void __thiscall NMData::TransitionEventData::setMomentumScaleFactor(float), 0}\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, float, {public: void __thiscall NMData::TransitionEventData::setMomentumScaleFactor(float), 0}\u003e",
+    "signature": "__stdcall void fn_004D1CB0(void* self)",
+    "summary": "Lazily constructs the shared static object once (guarded by a bit in mem_00AE55B0), then stores its address into self+0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004D1D30": {
     "name": "ExprParser::ReadMethodType\u003cNMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0\u003e",

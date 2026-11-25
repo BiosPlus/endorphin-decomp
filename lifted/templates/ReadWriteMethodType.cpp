@@ -9971,3 +9971,32 @@ void fn_004D1840(void* out) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE55A4));
 }
 } // namespace lift_004D1840
+
+// [0x004D1CB0] ExprParser::ReadWriteMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, float, {public: void __thiscall NMData::TransitionEventData::setMomentumScaleFactor(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_004D1CB0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack argument; calls ext_00672000 on self, then stores the stack argument into the first DWORD of self and returns it).
+// Declared with the logical signature; the lifted call site passes self and value explicitly.
+extern DWORD ext_0067A670(void* self, DWORD value);
+
+// Static object at 0x00AE55AC (vtable 0x00947F44) and its one-time-init guard flag at 0x00AE55B0.
+extern uint8_t mem_00AE55AC[16];
+extern uint32_t mem_00AE55B0;
+
+namespace lift_004D1CB0 {
+
+// @name ExprParser::ReadWriteMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, float, {public: void __thiscall NMData::TransitionEventData::setMomentumScaleFactor(float), 0}>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, float, {public: void __thiscall NMData::TransitionEventData::setMomentumScaleFactor(float), 0}>
+// @summary Lazily constructs the shared static object once (guarded by a bit in mem_00AE55B0), then stores its address into self+0x04.
+// @field ExprParser::ReadWriteMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, float, {public: void __thiscall NMData::TransitionEventData::setMomentumScaleFactor(float), 0}> +0x04 void* field_0x04
+// Note: the SEH frame setup/teardown (fs:[0] push/restore, trylevel -1, handler 0x0088CB7E) is compiler boilerplate and is omitted.
+__stdcall void fn_004D1CB0(void* self) {
+    if ((mem_00AE55B0 & 1u) == 0) {
+        mem_00AE55B0 |= 1u;
+        ext_0067A670(static_cast<void*>(mem_00AE55AC), 0);
+        *reinterpret_cast<uint32_t*>(mem_00AE55AC) = 0x00947F44u; // vtable pointer
+    }
+    lift_field<void*>(self, 0x04) = static_cast<void*>(mem_00AE55AC);
+}
+
+} // namespace lift_004D1CB0
+} // namespace lift_004D1CB0

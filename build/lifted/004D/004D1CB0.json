@@ -1,0 +1,14 @@
+{
+  "va": "0x004D1CB0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, float, {public: void __thiscall NMData::TransitionEventData::setMomentumScaleFactor(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, float, {public: void __thiscall NMData::TransitionEventData::setMomentumScaleFactor(float), 0}\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, float, {public: void __thiscall NMData::TransitionEventData::setMomentumScaleFactor(float), 0}\u003e",
+  "signature": "__stdcall void fn_004D1CB0(void* self)",
+  "summary": "Lazily constructs the shared static object once (guarded by a bit in mem_00AE55B0), then stores its address into self+0x04.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:28:54Z"
+}
