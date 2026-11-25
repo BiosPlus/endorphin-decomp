@@ -1934,3 +1934,43 @@ extern int32_t __fastcall fn_006D8280(void* self, void* _edx, int32_t arg0, int3
     return static_cast<int32_t>(mem_read32(table + static_cast<uint32_t>(idx) * 4u));
 }
 } // namespace lift_006D8280
+
+// [0x006DE3F0]
+namespace lift_006DE3F0 {
+// @name setRefCountedPtr
+// @summary Sets a reference-counted pointer at +0x14, releasing any previous object and deleting it when its refcount (+0xa0) reaches zero.
+// @field Self +0x14 void* field_0x14
+// @field Target +0xa0 uint32_t refCount
+
+
+extern void __thiscall fn_006DE460(void* self);
+extern void __cdecl fn_006A5C5C(void* ptr);
+
+extern void __thiscall fn_006DE3F0(void* self, void* obj) {
+    void* current = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x14);
+    if (obj != nullptr) {
+        if (current == obj) {
+            return;
+        }
+        if (current != nullptr) {
+            fn_006DE3F0(self, nullptr);
+        }
+        *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x14) = obj;
+        uint32_t* refCount = reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(obj) + 0xa0);
+        *refCount = *refCount + 1;
+        return;
+    }
+
+    uint32_t* refCount = reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(current) + 0xa0);
+    *refCount = *refCount - 1;
+
+    void* target = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x14);
+    if (*reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(target) + 0xa0) == 0) {
+        if (target != nullptr) {
+            fn_006DE460(target);
+            fn_006A5C5C(target);
+        }
+        *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x14) = nullptr;
+    }
+}
+} // namespace lift_006DE3F0

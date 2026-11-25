@@ -13,5 +13,6 @@ struct Target_Fields {
     // +0x0   uintptr_t*               vtable  (evidence: 0x00430490) // CONFLICT: multiple definitions at +0x0
     // +0x4   float                    field_0x04  (evidence: 0x007C8490, 0x007C9CD0, 0x007CAF70) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 inner_ptr  (evidence: 0x006FB550) // CONFLICT: multiple definitions at +0x4
+    // +0xA0  uint32_t                 refCount  (evidence: 0x006DE3F0)
 };
 } // namespace lifted_layout

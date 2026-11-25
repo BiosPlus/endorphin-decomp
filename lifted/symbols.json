@@ -61115,6 +61115,12 @@
     "summary": "Loads the pointer at self+0x14 and returns the uint32 stored at that object's +0x98 offset.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006DE3F0": {
+    "name": "setRefCountedPtr",
+    "signature": "extern \"C\" void __thiscall fn_006DE3F0(void* self, void* obj)",
+    "summary": "Sets a reference-counted pointer at +0x14, releasing any previous object and deleting it when its refcount (+0xa0) reaches zero.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DE460": {
     "name": "sub_006DE460",
     "signature": "extern \"C\" void __thiscall fn_006DE460(void* self)",
