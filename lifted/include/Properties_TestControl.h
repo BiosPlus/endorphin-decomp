@@ -10,6 +10,7 @@
 // Recovered field layout for Properties::TestControl:
 namespace lifted_layout {
 struct Properties_TestControl_Fields {
+    // +0x1C  std::string              field_0x1c  (evidence: 0x004F0530)
     // +0x40  DWORD                    field_0x40  (evidence: 0x004F0510)
 };
 } // namespace lifted_layout

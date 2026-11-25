@@ -1,0 +1,22 @@
+{
+  "va": "0x004F0530",
+  "size": 93,
+  "orig_symbol": "Properties::TestControl::vfunc_7",
+  "src_path": "src/Properties/TestControl.cpp",
+  "lifted_path": "lifted/Properties/TestControl.cpp",
+  "name": "Properties::TestControl::vfunc_7",
+  "class": "Properties::TestControl",
+  "signature": "void fn_004F0530(void* self, void* arg1)",
+  "summary": "Fetches a string via ext_0041CEB0 into a temporary std::string and assigns it to field_0x1c.",
+  "fields": [
+    {
+      "class": "Properties::TestControl",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:18:03Z"
+}
