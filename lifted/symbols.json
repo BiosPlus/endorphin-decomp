@@ -10965,6 +10965,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00499190 (ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_38).",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x0049CFF0": {
+    "name": "ensureStaticObjectInitialized_0049CFF0",
+    "signature": "void* fn_0049CFF0()",
+    "summary": "One-time initializer guarded by bit 0 of mem_00ADD818; initializes the static object at mem_00ADD814 and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049D410": {
     "name": "ExprParser::ReadMethodType\u003cNMData::State, std::string const \u0026, vcall{4, 8}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::State, std::string const \u0026, vcall{4, 8}, 0\u003e",
