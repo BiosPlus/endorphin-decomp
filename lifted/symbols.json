@@ -46392,6 +46392,13 @@
     "summary": "Checks if ExpressionEntry::getExpression() matches either of two string literals, throwing if the entry pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00674D50": {
+    "name": "ExprParser::ReadMethodType\u003cExpressionEntry, ...\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cExpressionEntry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ExpressionEntry::getExpression(void) const, 0\u003e",
+    "signature": "void fn_00674D50(void* self)",
+    "summary": "Virtual slot 5: if the held pointer is non-null, runs the default-message exception helper on (ptr+0x1c); then always throws a fixed DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00674EC0": {
     "name": "sub_00674EC0",
     "signature": "void* fn_00674EC0()",

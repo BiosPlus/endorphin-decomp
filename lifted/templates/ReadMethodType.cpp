@@ -43037,3 +43037,30 @@ void fn_0062E520(void* self) {
     ext_006A6DD2(exc, throwInfo);
 }
 } // namespace lift_0062E520
+
+// [0x00674D50] ExprParser::ReadMethodType<ExpressionEntry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ExpressionEntry::getExpression(void) const, 0>::vfunc_5 (45 bytes)
+namespace lift_00674D50 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (builds a default-message ExceptionWithMessage and throws it)
+extern void ext_0046C4E0(void* messageSource);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs an ExceptionWithMessage-derived exception with a fixed message and installs its vtable)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException)
+extern void ext_006A6DD2(void* exceptionObject, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<ExpressionEntry, ...>::vfunc_5
+// @class ExprParser::ReadMethodType<ExpressionEntry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ExpressionEntry::getExpression(void) const, 0>
+// @summary Virtual slot 5: if the held pointer is non-null, runs the default-message exception helper on (ptr+0x1c); then always throws a fixed DerivedException.
+// @field ValuePtrType +0x00 void* field_0x00
+void fn_00674D50(void* self) {
+    // Stack-resident exception object; the original frame reserves 0x28 bytes for it.
+    alignas(8) unsigned char exception[0x28];
+
+    void* held = *reinterpret_cast<void**>(self);
+    if (held != nullptr) {
+        ext_0046C4E0(reinterpret_cast<unsigned char*>(held) + 0x1c);
+    }
+
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, reinterpret_cast<const void*>(static_cast<std::uintptr_t>(0x009DEC1Cu)));
+}
+} // namespace lift_00674D50
