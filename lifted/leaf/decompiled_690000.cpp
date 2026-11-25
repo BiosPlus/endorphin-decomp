@@ -646,3 +646,40 @@ void* fn_0069A090(const void* first, const void* last, void* dest) {
 }
 } // namespace lift_00687E50
 } // namespace lift_0069A090
+
+// [0x00696B70] sub_00696B70 (86 bytes)
+namespace lift_00696B70 {
+extern int mem_009250E4;
+extern int mem_009250E8;
+extern int mem_009250EC;
+
+// MSVCP80 imports used by this function (called through IAT slots 0x9250E4, 0x9250E8, 0x9250EC).
+// basic_istream<char>::get() -- thiscall, returns int_type (low byte is the char, 0xFF is treated as EOF here).
+extern int __thiscall ext_MSVCP80_istream_get(void* self);
+// basic_istream<char>::putback(char) -- thiscall, returns istream&.
+extern void* __thiscall ext_MSVCP80_istream_putback(void* self, char c);
+// operator>>(basic_istream<char>&, basic_string<char>&) -- free function, returns istream&.
+extern void* __cdecl ext_MSVCP80_operator_extract_string(void* in, void* str);
+
+// @name readTokenSkippingBlanks
+// @summary Skips spaces and tabs on an istream; on EOF or newline returns false, otherwise puts the
+//          first non-blank char back, extracts a string token into `str`, and returns true.
+// (No class fields are accessed directly; `stream` and `str` are opaque MSVCP80 objects passed to imports.)
+bool fn_00696B70(void* stream, void* str) {
+    for (;;) {
+        const uint8_t b = static_cast<uint8_t>(ext_MSVCP80_istream_get(stream));
+        if (b == 0x20 || b == 0x09) {
+            continue;
+        }
+        if (b == 0xFF) {
+            return false;
+        }
+        ext_MSVCP80_istream_putback(stream, static_cast<char>(b));
+        if (b == 0x0A) {
+            return false;
+        }
+        ext_MSVCP80_operator_extract_string(stream, str);
+        return true;
+    }
+}
+} // namespace lift_00696B70

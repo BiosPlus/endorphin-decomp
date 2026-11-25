@@ -41404,6 +41404,12 @@
     "summary": "Reads chars from an istream until '\\n' or 0xFF is read; returns false if the stream fails first, true otherwise.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x00696B70": {
+    "name": "readTokenSkippingBlanks",
+    "signature": "bool fn_00696B70(void* stream, void* str)",
+    "summary": "Skips spaces and tabs on an istream; on EOF or newline returns false, otherwise puts the",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00696D90": {
     "name": "initStruct_00696D90",
     "signature": "uint32_t __thiscall sub_00696D90(uint32_t this_ptr)",
