@@ -47130,6 +47130,13 @@
     "summary": "Scales a float argument using a value from sub_00508680 and two double constants.",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x0068BF40": {
+    "name": "ExprParser::FunctionType\u003cRandomizer,int,int,Randomizer::randIntExcN\u003e::vfunc_48",
+    "class": "ExprParser::FunctionType\u003cRandomizer, int, int, {public: int __thiscall Randomizer::randIntExcN(int), 0}\u003e",
+    "signature": "DWORD __stdcall fn_0068BF40([[maybe_unused]] DWORD a, DWORD b, DWORD c)",
+    "summary": "Calls vtable slot 2 of the object at c+0x04 with (c, *b, 0), forwards the result through ext_0068BC00 on *b and ext_006720C0 on c; returns c.",
+    "lifted_path": "lifted/templates/FunctionType.cpp"
+  },
   "0x0068BF80": {
     "name": "ExprParser::Method0Type\u003cRandomizer, {public: void __thiscall Randomizer::applySeed(void), 0}\u003e::vfunc_0",
     "class": "ExprParser::Method0Type\u003cRandomizer, {public: void __thiscall Randomizer::applySeed(void), 0}\u003e",

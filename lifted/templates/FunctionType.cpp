@@ -338,3 +338,37 @@ uint32_t __thiscall fn_0068C230(uint32_t self, uint32_t arg1, uint32_t arg2, uin
 }
 } // namespace lift_0068C1E0
 } // namespace lift_0068C230
+
+// [0x0068BF40] ExprParser::FunctionType<Randomizer, int, int, {public: int __thiscall Randomizer::randIntExcN(int), 0}>::vfunc_48 (58 bytes)
+namespace lift_0068BF40 {
+// Known callee 0x0068BC00: DecrementAndForwardAt0x10 (If the count argument is nonzero, decrement it and forward the decremented count (by pointer) to ext_005111E0 on this+0x10; otherwise return 0.)
+extern DWORD __thiscall ext_0068BC00(void* self, DWORD count);
+// Known callee 0x006720C0: sub_006720C0 (18B), thiscall with one stack argument (return value unused).
+extern DWORD __thiscall ext_006720C0(void* self, DWORD value);
+
+// @name ExprParser::FunctionType<Randomizer,int,int,Randomizer::randIntExcN>::vfunc_48
+// @class ExprParser::FunctionType<Randomizer, int, int, {public: int __thiscall Randomizer::randIntExcN(int), 0}>
+// @summary Calls vtable slot 2 of the object at c+0x04 with (c, *b, 0), forwards the result through ext_0068BC00 on *b and ext_006720C0 on c; returns c.
+// @field UnknownArgC +0x04 DWORD field_0x04
+DWORD __stdcall fn_0068BF40([[maybe_unused]] DWORD a, DWORD b, DWORD c) {
+    // esi = *b: object pointer stored at the address held in b.
+    const DWORD obj_b = *reinterpret_cast<const DWORD*>(static_cast<uintptr_t>(b));
+
+    // ecx = *(c + 0x04); edx = vtable; method = vtable[+0x08] (slot 2).
+    const DWORD obj_c4 = *reinterpret_cast<const DWORD*>(static_cast<uintptr_t>(c) + 0x04);
+    const DWORD vtbl = *reinterpret_cast<const DWORD*>(static_cast<uintptr_t>(obj_c4));
+    const DWORD method = *reinterpret_cast<const DWORD*>(static_cast<uintptr_t>(vtbl) + 0x08);
+
+    using Method = DWORD(__thiscall*)(void* self, DWORD arg1, DWORD arg2, DWORD arg3);
+    const DWORD r1 = reinterpret_cast<Method>(static_cast<uintptr_t>(method))(
+        reinterpret_cast<void*>(static_cast<uintptr_t>(obj_c4)), c, obj_b, 0u);
+
+    // ecx = obj_b; push r1.
+    const DWORD r2 = ext_0068BC00(reinterpret_cast<void*>(static_cast<uintptr_t>(obj_b)), r1);
+
+    // ecx = c; push r2; result of this call is discarded, eax is reloaded with c.
+    (void)ext_006720C0(reinterpret_cast<void*>(static_cast<uintptr_t>(c)), r2);
+
+    return c;
+}
+} // namespace lift_0068BF40
