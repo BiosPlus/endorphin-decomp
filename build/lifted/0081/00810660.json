@@ -1,0 +1,13 @@
+{
+  "va": "0x00810660",
+  "size": 58,
+  "orig_symbol": "sub_00810660",
+  "src_path": "src/leaf/decompiled_810000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_810000.cpp",
+  "name": "StoreStringLengthAndHead",
+  "signature": "void fn_00810660(const char* str)",
+  "summary": "Records strlen(str) in mem_00AB6AB0; if length is 1 stores the single char in mem_00AB6AB8, otherwise clears mem_00AB6AB8 and copies str into the 3-byte buffer at mem_00AB6ABC.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:59:12Z"
+}

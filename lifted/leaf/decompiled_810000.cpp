@@ -321,3 +321,29 @@ uint32_t fn_008106A0(const uint8_t* src) {
 }
 } // namespace lift_008106A0
 } // namespace lift_008106A0
+
+// [0x00810660] sub_00810660 (58 bytes)
+namespace lift_00810660 {
+extern uint32_t __cdecl ext_0080F700(const char* str);
+extern void __cdecl ext_0080EB80(uint8_t* dst, size_t size, const uint8_t* src);
+
+extern uint32_t mem_00AB6AB0;
+extern uint8_t mem_00AB6AB8;
+extern uint32_t mem_00AB6ABC;
+
+// @name StoreStringLengthAndHead
+// @summary Records strlen(str) in mem_00AB6AB0; if length is 1 stores the single char in mem_00AB6AB8, otherwise clears mem_00AB6AB8 and copies str into the 3-byte buffer at mem_00AB6ABC.
+void fn_00810660(const char* str) {
+    const uint32_t len = ext_0080F700(str);
+    mem_00AB6AB0 = len;
+
+    if (len == 1) {
+        mem_00AB6AB8 = static_cast<uint8_t>(str[0]);
+        return;
+    }
+
+    mem_00AB6AB8 = 0;
+    ext_0080EB80(reinterpret_cast<uint8_t*>(&mem_00AB6ABC), 3,
+                 reinterpret_cast<const uint8_t*>(str));
+}
+} // namespace lift_00810660

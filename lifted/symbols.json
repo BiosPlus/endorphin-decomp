@@ -62213,6 +62213,12 @@
     "summary": "If arg2 != 0, set 0x400 in the dword at (*(self+0x04))+0x04; otherwise clear it.",
     "lifted_path": "lifted/leaf/decompiled_810000.cpp"
   },
+  "0x00810660": {
+    "name": "StoreStringLengthAndHead",
+    "signature": "void fn_00810660(const char* str)",
+    "summary": "Records strlen(str) in mem_00AB6AB0; if length is 1 stores the single char in mem_00AB6AB8, otherwise clears mem_00AB6AB8 and copies str into the 3-byte buffer at mem_00AB6ABC.",
+    "lifted_path": "lifted/leaf/decompiled_810000.cpp"
+  },
   "0x008106A0": {
     "name": "SetStringBufferAndStoreLength",
     "signature": "extern uint32_t mem_00AB6AB4; // result slot (.data, initial 0x00000001) extern uint32_t mem_00AB6AC0; // 4-byte string buffer (.data, initial 0x0000002C) uint32_t fn_008106A0(const uint8_t* src)",
