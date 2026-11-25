@@ -37524,6 +37524,13 @@
     "summary": "Dispatches on arg2 (0x33B, 0x33E, 0x356) to one of three helpers, otherwise forwards to AnimatableTransform::vfunc_15; always returns self.",
     "lifted_path": "lifted/NMData/SecondaryTwistAndSwingConstraint.cpp"
   },
+  "0x0061FDB0": {
+    "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_15",
+    "class": "NMData::PrimaryTwistAndSwingConstraint",
+    "signature": "void* fn_0061FDB0(void* self, DWORD arg2)",
+    "summary": "Dispatches arg2 (0x2A4, 0x342, 0x358) to one of three helpers, otherwise forwards to the secondary constraint's vfunc_15; always returns self.",
+    "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp"
+  },
   "0x0061FE60": {
     "name": "NMData::GraphicData::vfunc_4_off_C",
     "class": "NMData::GraphicData",

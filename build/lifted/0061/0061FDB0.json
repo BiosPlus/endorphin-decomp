@@ -1,0 +1,14 @@
+{
+  "va": "0x0061FDB0",
+  "size": 104,
+  "orig_symbol": "NMData::PrimaryTwistAndSwingConstraint::vfunc_15",
+  "src_path": "src/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_15",
+  "class": "NMData::PrimaryTwistAndSwingConstraint",
+  "signature": "void* fn_0061FDB0(void* self, DWORD arg2)",
+  "summary": "Dispatches arg2 (0x2A4, 0x342, 0x358) to one of three helpers, otherwise forwards to the secondary constraint's vfunc_15; always returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:50:05Z"
+}

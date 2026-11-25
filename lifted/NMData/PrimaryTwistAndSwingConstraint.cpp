@@ -210,3 +210,40 @@ void* fn_00611BF0(void* self, void* arg1, uint32_t id) {
     return arg1;
 }
 } // namespace lift_00611BF0
+
+// [0x0061FDB0] NMData::PrimaryTwistAndSwingConstraint::vfunc_15 (104 bytes)
+namespace lift_0061FDB0 {
+// Known callee 0x0061F030: sub_0061F030 (Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).)
+// Shape: (dst, value). Caller passes self as dst and the ecx register as value.
+extern void* ext_0061F030(void* dst, DWORD value);
+// Known callee 0x0061F050: sub_0061F050 (Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).)
+extern void* ext_0061F050(void* dst, DWORD value);
+// Known callee 0x0061F070: sub_0061F070 (Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).)
+extern void* ext_0061F070(void* dst, DWORD value);
+// Known callee 0x0061F990: NMData::SecondaryTwistAndSwingConstraint::vfunc_15
+// Dispatches on arg2 to one of three helpers, otherwise forwards to AnimatableTransform::vfunc_15; always returns self.
+extern void* ext_0061F990(void* self, DWORD arg2);
+
+// @name NMData::PrimaryTwistAndSwingConstraint::vfunc_15
+// @class NMData::PrimaryTwistAndSwingConstraint
+// @summary Dispatches arg2 (0x2A4, 0x342, 0x358) to one of three helpers, otherwise forwards to the secondary constraint's vfunc_15; always returns self.
+void* fn_0061FDB0(void* self, DWORD arg2) {
+    // The 0x0061F030/F050/F070 helpers are called with ecx as their second
+    // argument; ecx is not defined on this stdcall entry path, so pass 0.
+    switch (arg2) {
+    case 0x2A4u:
+        ext_0061F070(self, 0);
+        break;
+    case 0x342u:
+        ext_0061F050(self, 0);
+        break;
+    case 0x358u:
+        ext_0061F030(self, 0);
+        break;
+    default:
+        ext_0061F990(self, arg2);
+        break;
+    }
+    return self;
+}
+} // namespace lift_0061FDB0
