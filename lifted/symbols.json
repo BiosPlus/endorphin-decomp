@@ -10973,6 +10973,13 @@
     "summary": "If the holder's first word is non-zero, call ext_0046C500 with the holder and the flag from ext_006AD970 and return the holder; otherwise build a local object and throw.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x00494DE0": {
+    "name": "ExprParser::DynamicEnumType::vfunc_5",
+    "class": "ExprParser::DynamicEnumType\u003cRigManager, \u0026public: int __thiscall RigManager::getRigTypeIndex(void) const, \u0026public: void __thiscall RigManager::setRigTypeIndex(int), \u0026public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall RigManager::getRigTypeNameFromIndex(int) const\u003e",
+    "signature": "void fn_00494DE0(void* self)",
+    "summary": "Throws an exception: if the object's first pointer field is non-null, throws a message built from ext_006AD970(); otherwise constructs a DerivedException and throws it.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x00494FF0": {
     "name": "initWithOneAndArg",
     "signature": "uint32_t __stdcall sub_00494FF0(uint32_t arg1, uint32_t arg2)",
@@ -44499,6 +44506,13 @@
     "signature": "void* fn_00667F10(void* self, const void* key)",
     "summary": "Auto-lifted identical-shape clone of 0x0042E7B0 (SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/SearchableMap.cpp"
+  },
+  "0x00668D10": {
+    "name": "Tree::find",
+    "class": "Tree",
+    "signature": "TreeIter* __thiscall fn_00668D10(void* self, TreeIter* out, const void* key)",
+    "summary": "MSVC std::_Tree\u003cstd::string, ...\u003e::find: returns checked iterator to matching node or end()",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
   "0x00668D80": {
     "name": "SearchableMap\u003cNM::Vector4, GetNameFromAttribute\u003cNM::Vector4\u003e\u003e::vfunc_0",

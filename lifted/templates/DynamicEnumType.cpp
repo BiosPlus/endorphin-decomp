@@ -2083,3 +2083,30 @@ extern void fn_004D51B0(int* arg) {
     ext_006A6DD2(exc, mem_009DEC1C);
 }
 } // namespace lift_004D51B0
+
+// [0x00494DE0] ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>::vfunc_5 (47 bytes)
+namespace lift_00494DE0 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* arg);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+extern void* ext_006AD970(void);
+
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>
+// @summary Throws an exception: if the object's first pointer field is non-null, throws a message built from ext_006AD970(); otherwise constructs a DerivedException and throws it.
+// @field DynamicEnumType +0x00 void* firstPtr
+void fn_00494DE0(void* self) {
+    void* first = *reinterpret_cast<void**>(self);
+    if (first != nullptr) {
+        void* msg = ext_006AD970();
+        ext_0046C4E0(msg);
+        return;
+    }
+    alignas(8) unsigned char exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, nullptr);
+}
+} // namespace lift_00494DE0
