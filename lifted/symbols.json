@@ -39607,6 +39607,12 @@
     "summary": "Returns 0 if the pointer at +0x40 is null; otherwise calls vtable slot 4 on that object with argument 0 and returns its result.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0060BBA0": {
+    "name": "CopyCtor_0060BBA0",
+    "signature": "void* __thiscall sub_0060BBA0(void* self, const void* other)",
+    "summary": "Copy constructor calling base copy constructor 0x0060B990, setting vtable 0x0097215C, and copying fields at +0x44..+0x58.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060BBF0": {
     "name": "NMData::EffectorData::vfunc_8",
     "class": "NMData::EffectorData",
@@ -42287,6 +42293,12 @@
     "signature": "extern \"C\" void* __fastcall fn_00626E60(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006268F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x00626E80": {
+    "name": "CopyCtor_00626E80",
+    "signature": "void* __thiscall sub_00626E80(void* self, const void* other)",
+    "summary": "Copy constructor calling base copy constructor, setting vtable 0x00977734, and copying member at +0x44.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x006271A0": {
     "name": "Unknown::initWithArgVtableAndZeroFloats",
@@ -75310,6 +75322,12 @@
     "name": "addVec3Pair",
     "signature": "void sub_007F4A60(float* dst, const float* src)",
     "summary": "Adds two pairs of 3-element float vectors (at +0x00 and +0x10) from src into dst.",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
+  "0x007F4C50": {
+    "name": "copyTransposed2x3x4",
+    "signature": "void sub_007F4C50(uintptr_t dst_addr, uintptr_t src_base, uint32_t index)",
+    "summary": "Copies two 3x4 blocks of floats from a strided source buffer into a contiguous destination buffer.",
     "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
   "0x007F63D0": {

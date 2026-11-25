@@ -2760,3 +2760,24 @@ void* fn_00624640(void* self, const void* key) {
     return *reinterpret_cast<void* const*>(reinterpret_cast<const char*>(iter.node) + 0x28);
 }
 } // namespace lift_00624640
+
+// [0x00626E80]
+namespace lift_00626E80 {
+// @name CopyCtor_00626E80
+// @summary Copy constructor calling base copy constructor, setting vtable 0x00977734, and copying member at +0x44.
+// @field Class +0x00 uint32_t vtable
+// @field Class +0x44 uint8_t field_0x44
+
+
+extern void* __thiscall ext_0060B990(void* self, const void* other);
+extern void* __thiscall ext_006035D0(void* self, const void* other);
+
+void* __thiscall sub_00626E80(void* self, const void* other) {
+    ext_0060B990(self, other);
+    *reinterpret_cast<uint32_t*>(self) = 0x00977734u;
+    ext_006035D0(
+        reinterpret_cast<uint8_t*>(self) + 0x44,
+        reinterpret_cast<const uint8_t*>(other) + 0x44);
+    return self;
+}
+} // namespace lift_00626E80

@@ -1,0 +1,27 @@
+{
+  "va": "0x00626E80",
+  "size": 39,
+  "orig_symbol": "sub_00626E80",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "CopyCtor_00626E80",
+  "signature": "void* __thiscall sub_00626E80(void* self, const void* other)",
+  "summary": "Copy constructor calling base copy constructor, setting vtable 0x00977734, and copying member at +0x44.",
+  "fields": [
+    {
+      "class": "Class",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Class",
+      "offset": "+0x44",
+      "type": "uint8_t",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:43:56Z"
+}

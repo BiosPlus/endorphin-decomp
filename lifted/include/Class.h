@@ -11,7 +11,7 @@ struct Class_Fields {
     // +0x0   void*                    field_0x0  (evidence: 0x00661710) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x006618F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vptr  (evidence: 0x006991A0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 vtable  (evidence: 0x0060B990, 0x00783270) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vtable  (evidence: 0x0060B990, 0x00626E80, 0x00783270) // CONFLICT: multiple definitions at +0x0
     // +0x4   std::string              field_0x04  (evidence: 0x0060B990) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00783270) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x4  (evidence: 0x00661710) // CONFLICT: multiple definitions at +0x4
@@ -31,6 +31,7 @@ struct Class_Fields {
     // +0x2C  uint32_t*                field_0x2C  (evidence: 0x006406D0)
     // +0x3C  uint32_t                 field_0x3c  (evidence: 0x0060B990)
     // +0x40  uint32_t                 field_0x40  (evidence: 0x0060B990)
+    // +0x44  uint8_t                  field_0x44  (evidence: 0x00626E80)
     // +0x54  uint32_t*                field_0x54  (evidence: 0x00469570)
     // +0x58  uint32_t*                field_0x58  (evidence: 0x00469570)
     // +0x78  void                     field_0x78  (evidence: 0x006E8470)
