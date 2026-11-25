@@ -40801,6 +40801,12 @@
     "summary": "Initializes three 32-bit fields of the object in ecx: stores the constant 0x0098FAC4 at +0x00, clears +0x04 and +0x08.",
     "lifted_path": "lifted/leaf/tiny_690000.cpp"
   },
+  "0x006991A0": {
+    "name": "sub_006991A0_dtor",
+    "signature": "void __thiscall sub_006991A0(uint32_t ecx_this)",
+    "summary": "Destructor that sets vtable 0x98fac4, deletes member at +0x8 via vtable[0](1), and restores base vtable 0x98fabc",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x006991F0": {
     "name": "setOwnedObject_006991F0",
     "signature": "void __thiscall sub_006991F0(uint32_t self, uint32_t newPtr)",
@@ -40955,6 +40961,13 @@
     "signature": "extern \"C\" void* __fastcall fn_006A0340(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006A02B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Commands/auto_tiny.cpp"
+  },
+  "0x006A0460": {
+    "name": "Commands::ChangePropertyCommand::vfunc_1",
+    "class": "Commands::ChangePropertyCommand",
+    "signature": "void __thiscall fn_006A0460(void* this_ptr)",
+    "summary": "Executes the change property command by invoking vtable+0xA4 on the target object with pointers to field_0x10 and field_0x20.",
+    "lifted_path": "lifted/Commands/ChangePropertyCommand.cpp"
   },
   "0x006A04B0": {
     "name": "catchHandler_006A04B0",
