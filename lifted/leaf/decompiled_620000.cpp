@@ -1259,3 +1259,42 @@ uint8_t* CopyRecordRange_00621040(const uint8_t* first, const uint8_t* last, uin
     return out;
 }
 } // namespace lift_00621040
+
+// [0x006245E0]
+namespace lift_006245E0 {
+// IAT slot for MSVCR80!_invalid_parameter_noinfo (called on bounds violations).
+extern void (*mem_00925134)();
+
+struct Unknown;
+
+// @name Unknown::InvokeVirtual74OverRange_006245E0
+// @class Unknown
+// @summary Walks the pointer range at this+0x1C..this+0x20 and calls vtable slot 0x74 on each element.
+// @field Unknown +0x1C void** field_0x1C
+// @field Unknown +0x20 void** field_0x20
+void Unknown_InvokeVirtual74OverRange_006245E0(Unknown* self)
+{
+    auto* base = reinterpret_cast<unsigned char*>(self);
+    auto** cur = *reinterpret_cast<void***>(base + 0x1C);
+    auto** end = *reinterpret_cast<void***>(base + 0x20);
+
+    if (cur > end) {
+        mem_00925134();
+    }
+
+    while (cur != end) {
+        if (cur >= end) {
+            mem_00925134();
+        }
+        void* obj = *cur;
+        void** vtable = *reinterpret_cast<void***>(obj);
+        auto fn = reinterpret_cast<void (*)(void*)>(vtable[0x74 / sizeof(void*)]);
+        fn(obj);
+
+        if (cur >= *reinterpret_cast<void***>(base + 0x20)) {
+            mem_00925134();
+        }
+        ++cur;
+    }
+}
+} // namespace lift_006245E0
