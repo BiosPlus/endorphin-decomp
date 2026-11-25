@@ -4,11 +4,169 @@
   "orig_symbol": "sub_0063DDF0",
   "src_path": "src/leaf/decompiled_630000.cpp",
   "lifted_path": "lifted/leaf/decompiled_630000.cpp",
-  "name": "sub_0063DDF0_initVtableAndZeroFloats",
-  "class": "\u003cClass\u003e (unknown; vtable 0x009794b4 not yet mapped to a class)",
-  "signature": "void* fn_0063DDF0(void* self)",
-  "summary": "Runs base constructor ext_0062CD30, sets vtable to 0x009794b4, zeroes floats at +0x38/+0x3c/+0x40, returns this.",
+  "name": "Unknown::NotifyAndReturnSubobjectF8",
+  "class": "Unknown",
+  "signature": "void* fn_00630E60(void* self)",
+  "summary": "Calls ext_00630580 on self, passes its result to ext_00693F40 on the subobject at self+0xF8, and returns that subobject's address.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF8",
+      "type": "uint8_t field_0xF8 (subobject; address taken only, not",
+      "name": "loaded)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04[0x1C]"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB4",
+      "type": "float",
+      "name": "field_0xB4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB8",
+      "type": "float",
+      "name": "field_0xB8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xBC",
+      "type": "float",
+      "name": "field_0xBC"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF6",
+      "type": "uint8_t",
+      "name": "field_0xF6"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "field_0x40"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t field_0x00 (vtable pointer, set to",
+      "name": "0x009793d4)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "field_0x48"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "field_0x40"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3c"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T01:15:16Z"
+  "lifted_at": "2026-11-25T01:15:25Z"
 }

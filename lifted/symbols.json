@@ -32789,10 +32789,10 @@
     "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
   "0x0063DDF0": {
-    "name": "sub_0063DDF0_initVtableAndZeroFloats",
-    "class": "\u003cClass\u003e (unknown; vtable 0x009794b4 not yet mapped to a class)",
-    "signature": "void* fn_0063DDF0(void* self)",
-    "summary": "Runs base constructor ext_0062CD30, sets vtable to 0x009794b4, zeroes floats at +0x38/+0x3c/+0x40, returns this.",
+    "name": "Unknown::NotifyAndReturnSubobjectF8",
+    "class": "Unknown",
+    "signature": "void* fn_00630E60(void* self)",
+    "summary": "Calls ext_00630580 on self, passes its result to ext_00693F40 on the subobject at self+0xF8, and returns that subobject's address.",
     "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
   "0x0063DE10": {
