@@ -1197,3 +1197,44 @@ int32_t fn_004646B0(void) {
     return 0;
 }
 } // namespace lift_004646B0
+
+// [0x0046F980] sub_0046F980 (85 bytes)
+namespace lift_0046F980 {
+// Known callee 0x0065C640: CriticalSectionLock::enter (Enters the critical section referenced at offset 0x00 of the object.)
+extern void ext_0065C640(void* self);
+// Known callee 0x0065C650: CriticalSectionLock::leave (Releases the critical section pointed to by the first field)
+extern void ext_0065C650(void* self);
+// Known callee 0x0067ADE0: SubObject::IsCurrentThreadOwner (Returns 1 if the calling thread matches the owner thread id stored in the object at this+0x0C, else 0.)
+extern uint8_t ext_0067ADE0(void* self);
+// Known callee 0x0067AE70: HandleTable::waitOnHandle (Waits infinitely on the handle at the given index of the owner's handle array; negative indices return without waiting.)
+extern void ext_0067AE70(void* self, int32_t index);
+
+// @name fn_0046F980 (ReleaseLockAndWaitIfNotOwner)
+// @class (none)
+// @summary If the flag at +0x152 is set, clears the flag at +0x150 under the critical section at +0x154; then if the current thread owns the object at +0x128, clears +0x152, otherwise waits on the handle at +0x160 indexed by the int at +0x14C.
+// @field <unknown> +0x14C int32_t field_0x14C
+// @field <unknown> +0x150 uint8_t field_0x150
+// @field <unknown> +0x152 uint8_t field_0x152
+// @field <unknown> +0x154 CriticalSectionLock field_0x154
+// @field <unknown> +0x160 HandleTable field_0x160
+void fn_0046F980(void* self) {
+    if (lift_field<uint8_t>(self, 0x152) == 0) {
+        return;
+    }
+
+    void* cs = reinterpret_cast<uint8_t*>(self) + 0x154;
+    ext_0065C640(cs);
+    lift_field<uint8_t>(self, 0x150) = 0;
+    ext_0065C650(cs);
+
+    void* owner = reinterpret_cast<uint8_t*>(self) + 0x128;
+    if (ext_0067ADE0(owner) != 0) {
+        lift_field<uint8_t>(self, 0x152) = 0;
+        return;
+    }
+
+    int32_t index = lift_field<int32_t>(self, 0x14C);
+    void* handles = reinterpret_cast<uint8_t*>(self) + 0x160;
+    ext_0067AE70(handles, index);
+}
+} // namespace lift_0046F980

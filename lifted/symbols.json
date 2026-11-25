@@ -7314,6 +7314,13 @@
     "summary": "Marks stop-requested flags and signals the event at this+0x160 using index this+0x148 if active.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046F980": {
+    "name": "fn_0046F980 (ReleaseLockAndWaitIfNotOwner)",
+    "class": "(none)",
+    "signature": "void fn_0046F980(void* self)",
+    "summary": "If the flag at +0x152 is set, clears the flag at +0x150 under the critical section at +0x154; then if the current thread owns the object at +0x128, clears +0x152, otherwise waits on the handle at +0x160 indexed by the int at +0x14C.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046F9E0": {
     "name": "RuntimeEngine::vfunc_14_off_4",
     "class": "RuntimeEngine",
