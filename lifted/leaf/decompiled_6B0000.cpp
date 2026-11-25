@@ -1036,3 +1036,38 @@ void fn_006BBA40(void) {
     mem_00B5D324 = hi;
 }
 } // namespace lift_006BBA40
+
+// [0x006B0720]
+namespace lift_006B0720 {
+extern void* ext_006A7BF0(void* self);
+extern void ext_006A5FFE(void* self, void* hfont);
+extern void* mem_00924094;  // IAT slot: GDI32!GetObjectA
+extern void* mem_009240D4;  // IAT slot: GDI32!CreateFontIndirectA
+
+// @name Unknown::RefreshFontFromObject_006B0720
+// @class Unknown
+// @summary If the sub-object at +0x90 has no font yet, copy the LOGFONT of the GDI object behind +0x14, clear its underline flag, create a font and attach it to the sub-object.
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x90 void* field_0x90
+// @field Unknown +0x94 int32_t field_0x94
+void fn_006B0720(void* self) {
+    using GetObjectAFn = int(__stdcall*)(void*, int, void*);
+    using CreateFontIndirectAFn = void*(__stdcall*)(const void*);
+
+    void* sub = static_cast<uint8_t*>(self) + 0x90;
+    if (sub != nullptr && lift_field<int32_t>(sub, 4) != 0) {
+        return;
+    }
+
+    void* obj = lift_field<void*>(self, 0x14);
+    void* gdiObj = ext_006A7BF0(obj);
+    void* handle = lift_field<void*>(gdiObj, 4);
+
+    alignas(4) uint8_t logfont[0x3c] = {};
+    (*reinterpret_cast<GetObjectAFn*>(&mem_00924094))(handle, sizeof(logfont), logfont);
+    logfont[0x15] = 0;  // lfUnderline
+
+    void* hfont = (*reinterpret_cast<CreateFontIndirectAFn*>(&mem_009240D4))(logfont);
+    ext_006A5FFE(sub, hfont);
+}
+} // namespace lift_006B0720

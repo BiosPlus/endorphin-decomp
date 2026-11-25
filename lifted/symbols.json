@@ -45245,6 +45245,13 @@
     "summary": "Tail-call virtual dispatch to vtable slot 10 (+0x28) on this.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B0720": {
+    "name": "Unknown::RefreshFontFromObject_006B0720",
+    "class": "Unknown",
+    "signature": "void fn_006B0720(void* self)",
+    "summary": "If the sub-object at +0x90 has no font yet, copy the LOGFONT of the GDI object behind +0x14, clear its underline flag, create a font and attach it to the sub-object.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B0BF0": {
     "name": "GWCCategoryWithButtonsItem::vfunc_1",
     "class": "GWCCategoryWithButtonsItem",
