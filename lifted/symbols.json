@@ -49708,6 +49708,13 @@
     "summary": "Getter returning int32_t field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E7730": {
+    "name": "Unknown::destroyMembers",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_006E7730(void* self)",
+    "summary": "Destroys member subobjects at offsets +0x90 and +0x8",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E7F90": {
     "name": "sub_006E6340",
     "class": "Unknown",
@@ -59294,6 +59301,12 @@
     "name": "sub_007B8968_table",
     "signature": "const uint8_t* fn_007B8968(void* self)",
     "summary": "Static 4x16 byte table (data, not code): each row is one 0 followed by fifteen 1s.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
+  "0x007B89BC": {
+    "name": "Data_007B89BC_ByteTable",
+    "signature": "void fn_007B89BC(void* self)",
+    "summary": "80-byte constant table of small values (0-3) at 0x007B89BC; not executable code",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
   "0x007B8A48": {
