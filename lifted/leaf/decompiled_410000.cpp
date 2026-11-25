@@ -42,17 +42,6 @@ void __thiscall fn_0041A4F0(uint8_t* self) {
 #include <streambuf>
 
 #include <streambuf>
-namespace lift_0041FD10 {
-extern void fn_006A608E(void);
-
-// @name sub_0041FD10
-// @summary Forwards to MFC80!ord_6236 with a zero argument and cleans up 8 bytes of stack arguments
-void __stdcall fn_0041FD10(uint32_t arg0, uint32_t arg1) {
-    (void)arg0;
-    (void)arg1;
-    fn_006A608E();
-}
-} // namespace lift_0041FD10
 #include <stdexcept>
 #include <cstdint>
 
@@ -1753,3 +1742,17 @@ void fn_0041FD70(void* self, void** out) {
 }
 } // namespace lift_006A7FF0
 } // namespace lift_0041FD70
+
+// [0x0041FD10]
+namespace lift_0041FD10 {
+// @name sub_0041FD10
+// @summary Calls the MFC80 ord_6236 import with a zero argument; stdcall, pops 8 bytes of arguments on return.
+
+extern void ext_006A608E(DWORD arg0);
+
+extern void __stdcall fn_0041FD10(DWORD arg0, DWORD arg1) {
+    (void)arg0;
+    (void)arg1;
+    ext_006A608E(0);
+}
+} // namespace lift_0041FD10

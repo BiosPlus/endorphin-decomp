@@ -1994,6 +1994,12 @@
     "summary": "Returns the address of the global at 0x0092DFF4 (constant pointer accessor, ignores this)",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0041FD10": {
+    "name": "sub_0041FD10",
+    "signature": "extern \"C\" void __stdcall fn_0041FD10(DWORD arg0, DWORD arg1)",
+    "summary": "Calls the MFC80 ord_6236 import with a zero argument; stdcall, pops 8 bytes of arguments on return.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041FD70": {
     "name": "sub_0041FD70",
     "class": "Unknown",

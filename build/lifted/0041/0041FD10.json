@@ -1,0 +1,13 @@
+{
+  "va": "0x0041FD10",
+  "size": 10,
+  "orig_symbol": "sub_0041FD10",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "sub_0041FD10",
+  "signature": "extern \"C\" void __stdcall fn_0041FD10(DWORD arg0, DWORD arg1)",
+  "summary": "Calls the MFC80 ord_6236 import with a zero argument; stdcall, pops 8 bytes of arguments on return.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:17:38Z"
+}
