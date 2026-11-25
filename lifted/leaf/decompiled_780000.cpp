@@ -4,8 +4,10 @@
 #include <cstdlib>
 #include <cstdarg>
 #include <cstring>
+#include <bit>
+#include <cstdint>
 
-// [0x00780250]
+#include <cstdint>
 namespace lift_00780250 {
 // @name UnknownClass::destroyField04
 // @class UnknownClass
@@ -1426,3 +1428,124 @@ void* fn_00789810(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint8_t a4)
     return self;
 }
 } // namespace lift_00789810
+
+// [0x00782D30]
+namespace lift_00782D30 {
+// @name sub_00782D30_clear
+// @summary Frees an array of 8-byte entries and their owned pointers, then resets counts and flag.
+// @field Unknown +0x00 uint32_t* field_0x00
+// @field Unknown +0x04 int32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 uint8_t field_0x10
+
+
+void __thiscall sub_00782D30(void* this_ptr) {
+    uint8_t* self = static_cast<uint8_t*>(this_ptr);
+    uintptr_t* entries = *reinterpret_cast<uintptr_t**>(self + 0x00);
+    if (entries != nullptr) {
+        int32_t count = *reinterpret_cast<int32_t*>(self + 0x04);
+        for (int32_t i = 0; i < count; ++i) {
+            uintptr_t* current_entries = *reinterpret_cast<uintptr_t**>(self + 0x00);
+            std::free(reinterpret_cast<void*>(current_entries[i * 2]));
+            current_entries = *reinterpret_cast<uintptr_t**>(self + 0x00);
+            current_entries[i * 2] = 0;
+            count = *reinterpret_cast<int32_t*>(self + 0x04);
+        }
+        std::free(*reinterpret_cast<void**>(self + 0x00));
+        *reinterpret_cast<uintptr_t*>(self + 0x00) = 0;
+    }
+    *reinterpret_cast<uint32_t*>(self + 0x04) = 0;
+    *reinterpret_cast<uint32_t*>(self + 0x08) = 0;
+    *reinterpret_cast<uint8_t*>(self + 0x10) = 0;
+}
+} // namespace lift_00782D30
+
+// [0x00783880]
+namespace lift_00783880 {
+// @name DestroyEntriesAndBase
+// @summary Releases entries via sub_007839B0, resets the +0x18 chain if non-null, and calls sub_006D2160.
+// @field Unknown +0x18 void* field_0x18
+
+
+extern int ext_007839B0(void* self);
+extern void ext_00783820(void* self);
+extern void ext_006D2160(void);
+
+extern void fn_00783880(void* self) {
+    ext_007839B0(self);
+    void* field_18 = *reinterpret_cast<void**>(static_cast<uint8_t*>(self) + 0x18);
+    if (field_18 != nullptr) {
+        ext_00783820(field_18);
+    }
+    ext_006D2160();
+}
+} // namespace lift_00783880
+
+// [0x00783D00]
+namespace lift_00783D00 {
+extern uint32_t mem_00B6167C;
+
+// @name findLastSetBit
+// @class BitSet
+// @summary Finds the index of the highest set bit in a bitset and stores it in outIndex.
+// @field BitSet +0x00 uint32_t* data
+bool __thiscall sub_00783D00(void* self, uint32_t* outIndex) {
+    uint8_t* data = *reinterpret_cast<uint8_t**>(self);
+    int32_t idx = *reinterpret_cast<int32_t*>(data + 0x04) - 1;
+    if (idx < 0) {
+        return false;
+    }
+
+    uint32_t* words = reinterpret_cast<uint32_t*>(data + 0x0C);
+    while (words[idx] == 0) {
+        --idx;
+        if (idx < 0) {
+            return false;
+        }
+    }
+
+    uint32_t val = words[idx];
+    uint32_t bitIdx = static_cast<uint32_t>(std::bit_width(val) - 1);
+    uint32_t base = *reinterpret_cast<uint32_t*>(data);
+    *outIndex = ((base + static_cast<uint32_t>(idx)) << (mem_00B6167C & 0x1F)) + bitIdx;
+    return true;
+}
+} // namespace lift_00783D00
+
+// [0x0078C690]
+namespace lift_0078C690 {
+// @name sub_0078C690
+// @summary Reads a 32-bit integer from either a binary row/offset table (with optional byte-swap) or a string array via atoi.
+// @field UnknownClass +0x04 int32_t field_0x04
+// @field UnknownClass +0x14 uintptr_t field_0x14
+// @field UnknownClass +0x20 uintptr_t field_0x20
+// @field UnknownClass +0x28 int32_t field_0x28
+// @field UnknownClass +0x2C uintptr_t field_0x2C
+uint32_t __thiscall sub_0078C690(void* self, int32_t index, uint8_t swap_endian) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uintptr_t offset = *reinterpret_cast<uintptr_t*>(base + 0x20);
+    if (offset != 0) {
+        int32_t count = *reinterpret_cast<int32_t*>(base + 0x28);
+        if (index >= count) {
+            return 0;
+        }
+        uintptr_t* rows = *reinterpret_cast<uintptr_t**>(base + 0x2C);
+        uintptr_t row_ptr = rows[index];
+        uint32_t val = *reinterpret_cast<uint32_t*>(row_ptr + offset);
+        if (swap_endian == 0) {
+            return val;
+        }
+        return ((val & 0x000000FFu) << 24) |
+               ((val & 0x0000FF00u) << 8) |
+               ((val & 0x00FF0000u) >> 8) |
+               ((val & 0xFF000000u) >> 24);
+    }
+
+    int32_t str_count = *reinterpret_cast<int32_t*>(base + 0x04);
+    if (index >= str_count) {
+        return 0;
+    }
+    const char** strings = *reinterpret_cast<const char***>(base + 0x14);
+    return static_cast<uint32_t>(std::atoi(strings[index]));
+}
+} // namespace lift_0078C690
