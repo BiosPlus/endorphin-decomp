@@ -734,3 +734,24 @@ void* fn_00528100(void* self) {
     return self;
 }
 } // namespace lift_00528100
+
+// [0x00524610] sub_00524610 (91 bytes)
+namespace lift_00524610 {
+// @name NMData::VariableValue::VariableValue
+// @class NMData::VariableValue
+// @summary Constructor: sets PropertySource-derived vtable 0x0094F484, stores two constructor args at +0x04/+0x08, and default-constructs a std::string at +0x0C.
+// @field VariableValue +0x00 uint32_t vtable
+// @field VariableValue +0x04 uint32_t field_0x04
+// @field VariableValue +0x08 uint32_t field_0x08
+// @field VariableValue +0x0C std::string field_0x0C
+//
+// Note: the original first calls the base-vtable setter ext_00661980 (stores 0x0093BFB4).
+// That store is overwritten by 0x0094F484 below, so the call is omitted here.
+void* fn_00524610(void* self, uint32_t arg1, uint32_t arg2) {
+    lift_field<uint32_t>(self, 0x08) = arg2;
+    lift_field<uint32_t>(self, 0x00) = 0x0094F484u;
+    lift_field<uint32_t>(self, 0x04) = arg1;
+    new (static_cast<uint8_t*>(self) + 0x0C) std::string();
+    return self;
+}
+} // namespace lift_00524610

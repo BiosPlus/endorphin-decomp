@@ -1,0 +1,40 @@
+{
+  "va": "0x00524610",
+  "size": 91,
+  "orig_symbol": "sub_00524610",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "NMData::VariableValue::VariableValue",
+  "class": "NMData::VariableValue",
+  "signature": "void* fn_00524610(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Constructor: sets PropertySource-derived vtable 0x0094F484, stores two constructor args at +0x04/+0x08, and default-constructs a std::string at +0x0C.",
+  "fields": [
+    {
+      "class": "VariableValue",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "VariableValue",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "VariableValue",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "VariableValue",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:23:29Z"
+}

@@ -18503,6 +18503,13 @@
     "summary": "Bounds-checked subscript access on a std::vector\u003cdouble\u003e-like container",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00524610": {
+    "name": "NMData::VariableValue::VariableValue",
+    "class": "NMData::VariableValue",
+    "signature": "void* fn_00524610(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Constructor: sets PropertySource-derived vtable 0x0094F484, stores two constructor args at +0x04/+0x08, and default-constructs a std::string at +0x0C.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00524BC0": {
     "name": "Unknown::SetElementFloat_00524BC0",
     "class": "Unknown",
