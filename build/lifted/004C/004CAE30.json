@@ -1,0 +1,21 @@
+{
+  "va": "0x004CAE30",
+  "size": 87,
+  "orig_symbol": "sub_004CAE30",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "initStaticObjectOnce_004CAE30",
+  "signature": "void* fn_004CAE30()",
+  "summary": "One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:32:56Z"
+}
