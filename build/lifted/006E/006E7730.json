@@ -1,0 +1,28 @@
+{
+  "va": "0x006E7730",
+  "size": 80,
+  "orig_symbol": "sub_006E7730",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::destroyMembers",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __fastcall fn_006E7730(void* self)",
+  "summary": "Destroys member subobjects at offsets +0x90 and +0x8",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x90",
+      "type": "uint8_t",
+      "name": "field_0x90"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:54:17Z"
+}

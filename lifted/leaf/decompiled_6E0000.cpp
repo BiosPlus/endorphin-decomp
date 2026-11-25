@@ -1106,3 +1106,22 @@ extern void __fastcall fn_006E7340(void* self, void* /*edx*/, void* arg1) {
     }
 }
 } // namespace lift_006E7340
+
+// [0x006E7730]
+namespace lift_006E7730 {
+// @name Unknown::destroyMembers
+// @class Unknown
+// @summary Destroys member subobjects at offsets +0x90 and +0x8
+// @field Unknown +0x08 uint8_t field_0x08
+// @field Unknown +0x90 uint8_t field_0x90
+
+
+extern void __fastcall ext_007641C0(void* self);
+extern void __fastcall ext_006B9D70(void* self);
+
+extern void __fastcall fn_006E7730(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    ext_007641C0(base + 0x90);
+    ext_006B9D70(base + 0x8);
+}
+} // namespace lift_006E7730
