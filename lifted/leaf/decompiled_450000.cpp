@@ -1659,3 +1659,31 @@ void fn_0045B620(void* self) {
     method(target, value);
 }
 } // namespace lift_0045B620
+
+// [0x00453EB0]
+namespace lift_00453EB0 {
+// @name OnEditChangeText
+// @summary Reads window text from control at +0x278 into std::string at +0xb0 and calls sub_004535B0.
+// @field +0xb0 std::string field_0xb0
+// @field +0x278 CWnd field_0x278
+
+
+void ext_004535B0(void* self);
+void ext_006A5F4A(void* self, void* str);
+extern uintptr_t mem_009242FC;
+extern uintptr_t mem_00924300;
+extern uintptr_t mem_00924FD4;
+extern uintptr_t mem_009242F4;
+
+extern void fn_00453EB0(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    uint32_t local_str = 0;
+
+    reinterpret_cast<void(__thiscall*)(void*)>(mem_009242FC)(&local_str);
+    ext_006A5F4A(obj + 0x278, &local_str);
+    const char* text = reinterpret_cast<const char*(__thiscall*)(void*)>(mem_00924300)(&local_str);
+    reinterpret_cast<void*(__thiscall*)(void*, const char*)>(mem_00924FD4)(obj + 0xb0, text);
+    ext_004535B0(obj);
+    reinterpret_cast<void(__thiscall*)(void*)>(mem_009242F4)(&local_str);
+}
+} // namespace lift_00453EB0

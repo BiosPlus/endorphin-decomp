@@ -57753,6 +57753,12 @@
     "summary": "Sets the vtable, calls MFC80 ord_310 on subobjects at +0x08 and +0x0C, zeroes fields +0x18..+0x4C, and returns this.",
     "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
   },
+  "0x006AD3C0": {
+    "name": "DestructSub6AD3C0",
+    "signature": "void fn_006AD3C0(void* self)",
+    "summary": "Destructor that resets vtable, releases sub-object at +0x44, decrements refcount at +0x4, and destroys members at +0xC and +0x8.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006AD870": {
     "name": "GWCPropertyItem::vfunc_1",
     "class": "GWCPropertyItem",
