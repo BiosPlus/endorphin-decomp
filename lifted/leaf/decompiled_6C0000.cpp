@@ -1814,3 +1814,21 @@ void __thiscall sub_006C92D0(void* self, void* node) {
     }
 }
 } // namespace lift_006C92D0
+
+// [0x006CC850]
+namespace lift_006CC850 {
+extern bool __fastcall ext_006CC6F0(void* self, int32_t /*edx*/, int32_t index);
+extern void* __fastcall ext_006CA060(void* self, int32_t /*edx*/, int32_t index);
+extern float __fastcall ext_006C9DC0(void* self, int32_t /*edx*/, int32_t idx);
+
+// @name Unknown::GetSlot2OrDefaultThird
+// @class Unknown
+// @summary Returns GetScaledOrRawValue(2) on the item at index if valid, otherwise 1/3.
+float __fastcall fn_006CC850(void* self, int32_t /*edx*/, int32_t index) {
+    if (ext_006CC6F0(self, 0, index)) {
+        void* item = ext_006CA060(self, 0, index);
+        return ext_006C9DC0(item, 0, 2);
+    }
+    return 0.33333334f;
+}
+} // namespace lift_006CC850

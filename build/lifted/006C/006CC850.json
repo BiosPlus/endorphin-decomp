@@ -1,0 +1,14 @@
+{
+  "va": "0x006CC850",
+  "size": 64,
+  "orig_symbol": "sub_006CC850",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::GetSlot2OrDefaultThird",
+  "class": "Unknown",
+  "signature": "float __fastcall fn_006CC850(void* self, int32_t /*edx*/, int32_t index)",
+  "summary": "Returns GetScaledOrRawValue(2) on the item at index if valid, otherwise 1/3.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:55:32Z"
+}
