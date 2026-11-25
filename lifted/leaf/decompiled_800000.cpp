@@ -711,3 +711,28 @@ void* fn_0080D220(void* self, void* node, uint32_t key) {
     return nullptr;
 }
 } // namespace lift_0080D220
+
+// [0x00803F80] sub_00803F80 (72 bytes)
+namespace lift_00803F80 {
+// @name FindSlotByTrailingOnes
+// @summary Counts consecutive set bits from bit 0 of the u32 mask at +0x1bc and returns the address of the entry at that index in 24-byte records starting at self.
+// @field Unknown +0x1bc uint32_t field_0x1bc
+// @field Unknown +0x1c0 uint32_t field_0x1c0
+// @field Unknown +0x1c4 uint32_t field_0x1c4
+void* fn_00803F80(void* self) {
+    const uint32_t flags = lift_field<uint32_t>(self, 0x1BC);
+
+    lift_field<uint32_t>(self, 0x1C0) = 0;
+    lift_field<uint32_t>(self, 0x1C4) = 1;
+
+    if (flags & 1u) {
+        do {
+            lift_field<uint32_t>(self, 0x1C4) <<= 1;
+            lift_field<uint32_t>(self, 0x1C0) += 1;
+        } while (flags & lift_field<uint32_t>(self, 0x1C4));
+    }
+
+    const uint32_t index = lift_field<uint32_t>(self, 0x1C0);
+    return static_cast<uint8_t*>(self) + static_cast<size_t>(index) * 24u;
+}
+} // namespace lift_00803F80

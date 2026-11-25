@@ -59451,6 +59451,12 @@
     "summary": "Returns |a.x-b.x| + |a.y-b.y| + |a.z-b.z| for two float vectors at ecx and eax (Manhattan distance), rounding each step to float as the x87 code did.",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x00803F80": {
+    "name": "FindSlotByTrailingOnes",
+    "signature": "void* fn_00803F80(void* self)",
+    "summary": "Counts consecutive set bits from bit 0 of the u32 mask at +0x1bc and returns the address of the entry at that index in 24-byte records starting at self.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x00809540": {
     "name": "GlobalAllocZeroWrapper",
     "class": "Writer",
