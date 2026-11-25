@@ -58237,6 +58237,13 @@
     "summary": "Returns bit 1 of the DWORD at +0x04 of the object referenced by self-\u003efield_0x04.",
     "lifted_path": "lifted/leaf/tiny_810000.cpp"
   },
+  "0x00810270": {
+    "name": "Unknown::GetInnerFlagBit2",
+    "class": "Unknown",
+    "signature": "DWORD fn_00810270(void* self)",
+    "summary": "Follows self-\u003e+0x04 -\u003e+0x04 to a flags DWORD and returns its bit 2 (0 or 1).",
+    "lifted_path": "lifted/leaf/decompiled_810000.cpp"
+  },
   "0x008102B0": {
     "name": "Unknown::getFlagBit13ViaField4",
     "class": "Unknown",

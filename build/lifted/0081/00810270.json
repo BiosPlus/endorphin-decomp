@@ -1,0 +1,34 @@
+{
+  "va": "0x00810270",
+  "size": 64,
+  "orig_symbol": "sub_00810270",
+  "src_path": "src/leaf/decompiled_810000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_810000.cpp",
+  "name": "Unknown::GetInnerFlagBit2",
+  "class": "Unknown",
+  "signature": "DWORD fn_00810270(void* self)",
+  "summary": "Follows self-\u003e+0x04 -\u003e+0x04 to a flags DWORD and returns its bit 2 (0 or 1).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown_Inner",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown_Flags",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:10:31Z"
+}

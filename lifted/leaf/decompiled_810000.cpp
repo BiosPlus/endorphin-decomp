@@ -178,3 +178,18 @@ void fn_00810460(void* self, int enable) {
     }
 }
 } // namespace lift_00810460
+
+// [0x00810270] sub_00810270 (64 bytes)
+namespace lift_00810270 {
+// @name Unknown::GetInnerFlagBit2
+// @class Unknown
+// @summary Follows self->+0x04 ->+0x04 to a flags DWORD and returns its bit 2 (0 or 1).
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown_Inner +0x04 void* field_0x04
+// @field Unknown_Flags +0x04 DWORD field_0x04
+DWORD fn_00810270(void* self) {
+    void* inner = lift_field<void*>(self, 0x04);
+    DWORD flags = lift_field<DWORD>(lift_field<void*>(inner, 0x04), 0x04);
+    return (flags >> 2) & 1u;
+}
+} // namespace lift_00810270
