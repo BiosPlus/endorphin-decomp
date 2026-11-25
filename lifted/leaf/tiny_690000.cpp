@@ -108,3 +108,22 @@ void fn_0069B680(void* self) {
     last -= 8;
 }
 } // namespace lift_0069B680
+
+// [0x00696D90]
+namespace lift_00696D90 {
+// @name sub_00696D90
+// @summary Initializes struct fields at offsets 0x00..0x10 and returns self.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+void* __thiscall sub_00696D90(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x19;
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    lift_field<uint32_t>(self, 0x10) = 1;
+    return self;
+}
+} // namespace lift_00696D90

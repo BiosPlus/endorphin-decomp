@@ -1263,3 +1263,17 @@ void* __fastcall fn_005528E0(void* self) {
     return self;
 }
 } // namespace lift_005528E0
+
+// [0x00553960]
+namespace lift_00553960 {
+extern uint8_t __thiscall ext_00584C10(void* self);
+
+// @name checkNotPredicate00584C10
+// @summary Returns 1 if obj is non-null and ext_00584C10(obj) returns 0; otherwise returns 0.
+uint8_t __stdcall sub_00553960(void* obj) {
+    if (!obj) {
+        return 0;
+    }
+    return ext_00584C10(obj) == 0 ? 1 : 0;
+}
+} // namespace lift_00553960

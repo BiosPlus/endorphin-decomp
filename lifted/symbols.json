@@ -46972,6 +46972,12 @@
     "summary": "Reads characters from an istream into a std::string until '\\n', '\\r', or EOF (-1), returning true.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x00696D90": {
+    "name": "sub_00696D90",
+    "signature": "void* __thiscall sub_00696D90(void* self)",
+    "summary": "Initializes struct fields at offsets 0x00..0x10 and returns self.",
+    "lifted_path": "lifted/leaf/tiny_690000.cpp"
+  },
   "0x00696DB0": {
     "name": "init_00696DB0",
     "signature": "void __thiscall sub_00696DB0(void* self)",
