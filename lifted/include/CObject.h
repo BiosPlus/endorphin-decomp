@@ -8,8 +8,8 @@
 // Recovered field layout for CObject:
 namespace lifted_layout {
 struct CObject_Fields {
-    // +0x4   void*                    field_0x04  (evidence: 0x005D9EF0)
-    // +0x1F1 uint8_t                  field_0x1f1  (evidence: 0x005D9EF0)
-    // +0x1F4 float                    field_0x1f4  (evidence: 0x005D9EF0)
+    // +0x4   void*                    field_0x04  (evidence: 0x005D0670, 0x005D9EF0)
+    // +0x1F1 uint8_t                  field_0x1f1  (evidence: 0x005D0670, 0x005D9EF0)
+    // +0x1F4 float                    field_0x1f4  (evidence: 0x005D0670, 0x005D9EF0)
 };
 } // namespace lifted_layout

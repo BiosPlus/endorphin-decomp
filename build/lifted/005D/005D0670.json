@@ -4,10 +4,83 @@
   "orig_symbol": "sub_005D0670",
   "src_path": "src/leaf/decompiled_5D0000.cpp",
   "lifted_path": "lifted/leaf/decompiled_5D0000.cpp",
-  "name": "CallVirtualSlot1ForFloatAt0x268",
-  "signature": "extern \"C\" float __thiscall fn_005D0670(void* self)",
-  "summary": "Sets guard flag mem_00B3F200, calls vtable slot 1 of the object at this+0x268 (passing \u0026this+0x264), clears the flag, and returns the float result.",
+  "name": "sub_005D06D0",
+  "class": "Unknown",
+  "signature": "float fn_005D06D0(uint32_t ecx)",
+  "summary": "Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).",
   "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "left"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "right"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x15",
+      "type": "uint8_t",
+      "name": "isNil"
+    },
+    {
+      "class": "CObject",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "CObject",
+      "offset": "+0x1F1",
+      "type": "uint8_t",
+      "name": "field_0x1f1"
+    },
+    {
+      "class": "CObject",
+      "offset": "+0x1F4",
+      "type": "float",
+      "name": "field_0x1f4"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "ownedObject"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x44",
+      "type": "void*",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x204",
+      "type": "float",
+      "name": "field_0x204"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x210",
+      "type": "void* field_0x210 (address passed as ecx to ext_005B11E0; sub-object, not read",
+      "name": "directly)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x26C",
+      "type": "void*",
+      "name": "field_0x26C"
+    },
     {
       "class": "Object",
       "offset": "+0x264",
@@ -23,5 +96,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T02:11:39Z"
+  "lifted_at": "2026-11-25T02:11:45Z"
 }
