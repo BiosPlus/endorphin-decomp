@@ -71066,6 +71066,12 @@
     "summary": "Returns zero in the low 16 bits of the result register (xor ax, ax; ret).",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007DAD70": {
+    "name": "sub_007DAD70",
+    "signature": "uint32_t sub_007DAD70(void* arg0)",
+    "summary": "Tail-calls ext_007D5950 with a nested field at +0xc -\u003e +0xb0 and constant 0x0099e1e0",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007DADA0": {
     "name": "Unknown::forwardToInnerWithConstant",
     "class": "Unknown",
