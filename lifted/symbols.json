@@ -35535,6 +35535,13 @@
     "summary": "Destroys the std::string at offset +0x04, then stores the vtable pointer at +0x00 via ext_0063E970.",
     "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
+  "0x0063EAD0": {
+    "name": "AdvXMLParser::InvalidRefException::vfunc_0",
+    "class": "AdvXMLParser::InvalidRefException",
+    "signature": "void* fn_0063EAD0(void* self, unsigned int flags)",
+    "summary": "Scalar deleting destructor: runs the base-class destructor, then frees this if flags bit 0 is set; returns this.",
+    "lifted_path": "lifted/AdvXMLParser/InvalidRefException.cpp"
+  },
   "0x0063EB30": {
     "name": "AdvXMLParser::Exception::vfunc_0",
     "class": "AdvXMLParser::Exception",

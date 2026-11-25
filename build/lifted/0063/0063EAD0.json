@@ -1,0 +1,22 @@
+{
+  "va": "0x0063EAD0",
+  "size": 89,
+  "orig_symbol": "AdvXMLParser::InvalidRefException::vfunc_0",
+  "src_path": "src/AdvXMLParser/InvalidRefException.cpp",
+  "lifted_path": "lifted/AdvXMLParser/InvalidRefException.cpp",
+  "name": "AdvXMLParser::InvalidRefException::vfunc_0",
+  "class": "AdvXMLParser::InvalidRefException",
+  "signature": "void* fn_0063EAD0(void* self, unsigned int flags)",
+  "summary": "Scalar deleting destructor: runs the base-class destructor, then frees this if flags bit 0 is set; returns this.",
+  "fields": [
+    {
+      "class": "AdvXMLParser::InvalidRefException",
+      "offset": "+0x4",
+      "type": "std::string member (destroyed via MSVCP80 basic_string dtor, pointer at",
+      "name": "mem_00924FF4)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:16:45Z"
+}
