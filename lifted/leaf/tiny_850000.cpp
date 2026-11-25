@@ -247,3 +247,17 @@ uint32_t fn_008596E0(uint32_t size) {
 }
 } // namespace lift_0079AF40
 } // namespace lift_008596E0
+
+// [0x00859730]
+namespace lift_00859730 {
+// IAT slot for KERNEL32!LocalFree (0x00924210), read as a function pointer.
+extern const uint32_t mem_00924210;
+
+// @name LocalFreeWrapper
+// @summary Calls KERNEL32!LocalFree on the first stack argument and returns its result.
+uint32_t fn_00859730(void* hMem) {
+    using LocalFreeFn = void* (*)(void*);
+    auto localFree = reinterpret_cast<LocalFreeFn>(static_cast<uintptr_t>(mem_00924210));
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(localFree(hMem)));
+}
+} // namespace lift_00859730

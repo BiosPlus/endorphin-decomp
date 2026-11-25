@@ -1,0 +1,13 @@
+{
+  "va": "0x00859730",
+  "size": 16,
+  "orig_symbol": "sub_00859730",
+  "src_path": "src/leaf/tiny_850000.cpp",
+  "lifted_path": "lifted/leaf/tiny_850000.cpp",
+  "name": "LocalFreeWrapper",
+  "signature": "uint32_t fn_00859730(void* hMem)",
+  "summary": "Calls KERNEL32!LocalFree on the first stack argument and returns its result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:15:34Z"
+}

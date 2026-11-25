@@ -68898,6 +68898,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0079AF40 (AllocGlobalMemory).",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x00859730": {
+    "name": "LocalFreeWrapper",
+    "signature": "uint32_t fn_00859730(void* hMem)",
+    "summary": "Calls KERNEL32!LocalFree on the first stack argument and returns its result.",
+    "lifted_path": "lifted/leaf/tiny_850000.cpp"
+  },
   "0x00859740": {
     "name": "MemsetReturnDst",
     "signature": "void* fn_00859740(void* dst, uint8_t value, uint32_t count)",
