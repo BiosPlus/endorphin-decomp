@@ -67798,6 +67798,12 @@
     "summary": "Looks up a cached entry for key; if found and (for keys \u003c= 0xFFFF) its 16-bit id is set in the bitmap at +0x18, forwards to the handler at +0x220, otherwise returns 0.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x0079A16C": {
+    "name": "sub_0079A16C",
+    "signature": "uint8_t sub_0079A16C(uint32_t index)",
+    "summary": "Data table misidentified as function (jump/lookup table bytes)",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079A1C0": {
     "name": "SetAndCopyUint16Array",
     "signature": "extern \"C\" int32_t fn_0079A1C0(uint8_t* obj, const void* src_desc, int32_t* out_count)",
