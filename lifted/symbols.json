@@ -33896,6 +33896,13 @@
     "summary": "Bounds-checked setter for a double at offset +0x10 of a 24-byte element in the vector at +0x10..+0x14",
     "lifted_path": "lifted/classes/MagnetJoint.cpp"
   },
+  "0x00645DD0": {
+    "name": "MagnetJoint::vfunc_5",
+    "class": "MagnetJoint",
+    "signature": "void __thiscall fn_00645DD0(void* self, uint32_t index, double value)",
+    "summary": "Sets a double field at offset +0x08 of a 24-byte element in a vector at +0x10/+0x14 after bounds checking",
+    "lifted_path": "lifted/classes/MagnetJoint.cpp"
+  },
   "0x00645F40": {
     "name": "RelationshipHinge::vfunc_11",
     "class": "RelationshipHinge",

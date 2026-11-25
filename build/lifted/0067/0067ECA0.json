@@ -1,0 +1,27 @@
+{
+  "va": "0x0067ECA0",
+  "size": 66,
+  "orig_symbol": "sub_0067ECA0",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "parseHexPairFromString",
+  "signature": "void __thiscall sub_0067ECA0(void* self, const void* str)",
+  "summary": "Parses two 16-based unsigned longs from a string at offsets 0 and 9 into fields +0x04 and +0x00.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:18:59Z"
+}

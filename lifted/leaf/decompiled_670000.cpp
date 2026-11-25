@@ -480,3 +480,57 @@ void fn_00672E70(void* self) {
 }
 } // namespace lift_00569970
 } // namespace lift_00672E70
+
+// [0x0067ECA0]
+namespace lift_0067ECA0 {
+// @name parseHexPairFromString
+// @summary Parses two 16-based unsigned longs from a string at offsets 0 and 9 into fields +0x04 and +0x00.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+
+extern uint32_t (__thiscall *mem_00924FFC)(const void* str, uint32_t index);
+extern uint32_t (__cdecl *mem_0092530C)(const char* str, char** endptr, int base);
+
+void __thiscall sub_0067ECA0(void* self, const void* str) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    const char* s0 = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00924FFC(str, 0)));
+    *reinterpret_cast<uint32_t*>(obj + 0x4) = mem_0092530C(s0, nullptr, 16);
+
+    const char* s9 = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00924FFC(str, 9)));
+    *reinterpret_cast<uint32_t*>(obj + 0x0) = mem_0092530C(s9, nullptr, 16);
+}
+} // namespace lift_0067ECA0
+
+// [0x0067F910]
+namespace lift_0067F910 {
+// @name Vector8::back
+// @class Vector8
+// @summary Returns a pointer to the last 8-byte element of the vector with MSVC8 checked-iterator bounds validation.
+// @field Vector8 +0x04 uint32_t begin
+// @field Vector8 +0x08 uint32_t end
+
+
+extern uintptr_t mem_00925134;
+
+uint32_t __thiscall fn_0067F910(uintptr_t self) {
+    auto invalid_param = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+    uint32_t end = *reinterpret_cast<uint32_t*>(self + 0x8);
+    uint32_t begin = *reinterpret_cast<uint32_t*>(self + 0x4);
+    if (begin > end) {
+        invalid_param();
+    }
+
+    uint32_t elem = end - 8;
+    if (elem > *reinterpret_cast<uint32_t*>(self + 0x8) ||
+        elem < *reinterpret_cast<uint32_t*>(self + 0x4)) {
+        invalid_param();
+    }
+
+    uint32_t result = end - 8;
+    if (result >= *reinterpret_cast<uint32_t*>(self + 0x8)) {
+        invalid_param();
+    }
+
+    return result;
+}
+} // namespace lift_0067F910
