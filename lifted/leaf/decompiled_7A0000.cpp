@@ -407,3 +407,30 @@ void ByteSwapDwordArray(uint8_t* data, uint32_t count) {
     }
 }
 } // namespace lift_007AF040
+
+// [0x007AF200]
+namespace lift_007AF200 {
+// @name Unknown::ComputeRowByteCount
+// @class Unknown
+// @summary Returns byte count (bits rounded up to bytes) of a row from fields at +0x30/+0x40, optionally scaled by +0x4e when the mode at +0x72 equals 1; returns 0 if +0x34 or +0x30 is zero.
+// @field Unknown +0x30 uint32_t field_0x30
+// @field Unknown +0x34 uint32_t field_0x34
+// @field Unknown +0x40 uint16_t field_0x40
+// @field Unknown +0x4e uint16_t field_0x4e
+// @field Unknown +0x72 uint16_t field_0x72
+
+uint32_t fn_007AF200(const void* self) {
+    if (lift_field<uint32_t>(self, 0x34) == 0) {
+        return 0;
+    }
+    const uint32_t count = lift_field<uint32_t>(self, 0x30);
+    if (count == 0) {
+        return 0;
+    }
+    uint32_t bits = static_cast<uint32_t>(lift_field<uint16_t>(self, 0x40)) * count;
+    if (lift_field<uint16_t>(self, 0x72) == 1) {
+        bits *= static_cast<uint32_t>(lift_field<uint16_t>(self, 0x4e));
+    }
+    return (bits + 7) >> 3;
+}
+} // namespace lift_007AF200
