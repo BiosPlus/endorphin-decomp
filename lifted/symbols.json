@@ -52832,6 +52832,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0040A910 (sub_00407830).",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006B4FD0": {
+    "name": "Unknown::getEscapeNotHeldFlag",
+    "class": "Unknown",
+    "signature": "uint32_t sub_006B4FD0()",
+    "summary": "Calls GetKeyState(VK_ESCAPE) and returns 4 if the key is not down (high bit clear), else 0.",
+    "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
+  },
   "0x006B5120": {
     "name": "GWCPropInPlaceButton::vfunc_1",
     "class": "GWCPropInPlaceButton",

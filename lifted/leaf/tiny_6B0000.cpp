@@ -784,3 +784,27 @@ extern void __fastcall fn_006BC960(void* self) {
     ext_006E7460(static_cast<char*>(self) + 0x78);
 }
 } // namespace lift_006BC960
+
+// [0x006B4FD0]
+namespace lift_006B4FD0 {
+// @name Unknown::getEscapeNotHeldFlag
+// @summary Calls GetKeyState(VK_ESCAPE) and returns 4 if the key is not down (high bit clear), else 0.
+
+extern uint32_t mem_009255F4; // IAT slot for USER32!GetKeyState
+
+using GetKeyState_fn = short(__stdcall*)(int);
+
+uint32_t sub_006B4FD0() {
+    // push 0x1b (VK_ESCAPE)
+    // call [mem_009255F4]  -> GetKeyState
+    auto getKeyState = reinterpret_cast<GetKeyState_fn>(mem_009255F4);
+    uint16_t state = static_cast<uint16_t>(getKeyState(0x1b));
+
+    // movzx eax, ax; xor eax, -1; shr eax, 0xd; and eax, 4
+    uint32_t eax = static_cast<uint32_t>(state);
+    eax ^= 0xFFFFFFFFu;
+    eax >>= 0xd;
+    eax &= 0x4u;
+    return eax;
+}
+} // namespace lift_006B4FD0
