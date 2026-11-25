@@ -25610,6 +25610,13 @@
     "summary": "Invokes the virtual slot 0x8c on self, then on every pointer element in the range [self+0x80, self+0x84).",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x00587110": {
+    "name": "Unknown::teardownChildTree",
+    "class": "Unknown",
+    "signature": "void fn_00587110(void* self)",
+    "summary": "Notifies two embedded interface subobjects, then recursively tears down each child pointer in the range [+0x80, +0x84).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x005877A0": {
     "name": "IdentityNode::vfunc_1_off_C",
     "class": "IdentityNode",

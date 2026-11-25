@@ -1164,3 +1164,45 @@ void* fn_00585270() {
     return &mem_00B3EB64;
 }
 } // namespace lift_00585270
+
+// [0x00587110] sub_00587110 (99 bytes)
+namespace lift_00587110 {
+extern void ext_00587110(void* self);
+extern void (*mem_00925134)();
+
+// @name Unknown::teardownChildTree
+// @class Unknown
+// @summary Notifies two embedded interface subobjects, then recursively tears down each child pointer in the range [+0x80, +0x84).
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x80 void** field_0x80
+// @field Unknown +0x84 void** field_0x84
+void fn_00587110(void* self) {
+    uint8_t* edi = static_cast<uint8_t*>(self);
+
+    // Subobject at +0x04: if vtable slot 7 returns true, notify subobject at +0x08 via slot 14.
+    void* objA = lift_field<void*>(edi, 0x04);
+    void** vtA = *static_cast<void***>(objA);
+    if (reinterpret_cast<bool (*)(void*)>(vtA[7])(edi + 0x04)) {
+        void* objB = lift_field<void*>(edi, 0x08);
+        void** vtB = *static_cast<void***>(objB);
+        reinterpret_cast<void (*)(void*)>(vtB[14])(edi + 0x08);
+    }
+
+    // Range [+0x80, +0x84): begin must not exceed end.
+    void** begin = lift_field<void**>(edi, 0x80);
+    void** end = lift_field<void**>(edi, 0x84);
+    if (begin > end) {
+        mem_00925134();
+    }
+
+    void** cur = begin;
+    if (begin > end) {
+        mem_00925134();
+    }
+    while (cur != end) {
+        ext_00587110(*cur);
+        ++cur;
+    }
+}
+} // namespace lift_00587110

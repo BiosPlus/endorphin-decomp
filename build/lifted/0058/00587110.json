@@ -1,0 +1,40 @@
+{
+  "va": "0x00587110",
+  "size": 99,
+  "orig_symbol": "sub_00587110",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "Unknown::teardownChildTree",
+  "class": "Unknown",
+  "signature": "void fn_00587110(void* self)",
+  "summary": "Notifies two embedded interface subobjects, then recursively tears down each child pointer in the range [+0x80, +0x84).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "void**",
+      "name": "field_0x80"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "void**",
+      "name": "field_0x84"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:41:24Z"
+}
