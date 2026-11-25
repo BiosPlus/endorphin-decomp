@@ -1,0 +1,51 @@
+{
+  "va": "0x006C06A0",
+  "size": 74,
+  "orig_symbol": "sub_006C06A0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "CopyStateAndWriteUnitDouble_006C06A0",
+  "signature": "void fn_006C06A0(void* self, void* result)",
+  "summary": "Copies six dwords from self+0x328..0x33C into a 0x20-byte caller-provided result buffer (hidden sret pointer), then writes the double 1.0 at result+0x18.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x328",
+      "type": "uint32_t",
+      "name": "field_0x328"
+    },
+    {
+      "class": "self",
+      "offset": "+0x32C",
+      "type": "uint32_t",
+      "name": "field_0x32C"
+    },
+    {
+      "class": "self",
+      "offset": "+0x330",
+      "type": "uint32_t",
+      "name": "field_0x330"
+    },
+    {
+      "class": "self",
+      "offset": "+0x334",
+      "type": "uint32_t",
+      "name": "field_0x334"
+    },
+    {
+      "class": "self",
+      "offset": "+0x338",
+      "type": "uint32_t",
+      "name": "field_0x338"
+    },
+    {
+      "class": "self",
+      "offset": "+0x33C",
+      "type": "uint32_t",
+      "name": "field_0x33C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:34:05Z"
+}

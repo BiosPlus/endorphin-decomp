@@ -46511,6 +46511,12 @@
     "summary": "Copies six dwords from self+0x288..+0x29c into out[0..0x14], then writes 0 at out+0x18 and the double 1.0 at out+0x18 (high dword at out+0x1c).",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C06A0": {
+    "name": "CopyStateAndWriteUnitDouble_006C06A0",
+    "signature": "void fn_006C06A0(void* self, void* result)",
+    "summary": "Copies six dwords from self+0x328..0x33C into a 0x20-byte caller-provided result buffer (hidden sret pointer), then writes the double 1.0 at result+0x18.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C0730": {
     "name": "Unknown::CopyStateTo_006C0730",
     "class": "Unknown",

@@ -56,6 +56,12 @@ struct self_Fields {
     // +0x27C uint32_t                 field_0x27C  (evidence: 0x007151C0)
     // +0x280 uint32_t                 field_0x280  (evidence: 0x007151C0)
     // +0x284 uint32_t                 field_0x284  (evidence: 0x007151C0)
+    // +0x328 uint32_t                 field_0x328  (evidence: 0x006C06A0)
+    // +0x32C uint32_t                 field_0x32C  (evidence: 0x006C06A0)
+    // +0x330 uint32_t                 field_0x330  (evidence: 0x006C06A0)
+    // +0x334 uint32_t                 field_0x334  (evidence: 0x006C06A0)
+    // +0x338 uint32_t                 field_0x338  (evidence: 0x006C06A0)
+    // +0x33C uint32_t                 field_0x33C  (evidence: 0x006C06A0)
     // +0x9A0 int32_t                  field_0x9a0  (evidence: 0x004DE160)
     // +0x9D0 int32_t                  field_0x9d0  (evidence: 0x004DE440)
 };
