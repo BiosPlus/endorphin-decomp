@@ -38094,6 +38094,13 @@
     "summary": "Takes the positions of the first two child sensors, builds a cross-product frame from them and a reference offset, and stores the derived plane terms (doubles at +0x58..+0x70) plus the cached positions (+0x78, +0x84).",
     "lifted_path": "lifted/Sensors/CompoundSensorHorizontalPlane.cpp"
   },
+  "0x00630420": {
+    "name": "scaleVec3At0x144ByReciprocalOfQuery",
+    "class": "Unknown",
+    "signature": "void fn_00630420(void* self)",
+    "summary": "Copies a vec3 from +0x9c to +0x144, queries a scalar via vtable slot 19 of the object at +0x4, and divides the copied vec3 by that scalar.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x00630510": {
     "name": "Unknown::copyVec3ToFieldsAndSetFlag",
     "class": "Unknown",

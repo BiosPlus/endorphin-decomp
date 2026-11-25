@@ -938,3 +938,42 @@ void fn_0063E610(void* self, uint32_t arg0, const void* name, const void* extra)
     new (&lift_field<std::string>(self, 0x24)) std::string(*static_cast<const std::string*>(extra));
 }
 } // namespace lift_0063E610
+
+// [0x00630420] sub_00630420 (95 bytes)
+namespace lift_00630420 {
+// @name scaleVec3At0x144ByReciprocalOfQuery
+// @class Unknown
+// @summary Copies a vec3 from +0x9c to +0x144, queries a scalar via vtable slot 19 of the object at +0x4, and divides the copied vec3 by that scalar.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x9c float field_0x9c
+// @field Unknown +0xa0 float field_0xa0
+// @field Unknown +0xa4 float field_0xa4
+// @field Unknown +0x144 float field_0x144
+// @field Unknown +0x148 float field_0x148
+// @field Unknown +0x14c float field_0x14c
+void fn_00630420(void* self) {
+    using QueryFn = void(__thiscall*)(void* obj, float* out);
+
+    // Query the scalar from the sub-object at +0x4 via vtable slot 19 (offset 0x4c).
+    void* obj = lift_field<void*>(self, 0x04);
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    auto query = reinterpret_cast<QueryFn>(vtbl[19]);
+    float scale = 0.0f;
+    query(obj, &scale);
+
+    const float inv = 1.0f / scale;
+
+    // Copy source vec3 (+0x9c..+0xa4) into destination vec3 (+0x144..+0x14c).
+    float& dx = lift_field<float>(self, 0x144);
+    float& dy = lift_field<float>(self, 0x148);
+    float& dz = lift_field<float>(self, 0x14c);
+    dx = lift_field<float>(self, 0x9c);
+    dy = lift_field<float>(self, 0xa0);
+    dz = lift_field<float>(self, 0xa4);
+
+    // Scale destination by the reciprocal.
+    dx *= inv;
+    dy *= inv;
+    dz *= inv;
+}
+} // namespace lift_00630420
