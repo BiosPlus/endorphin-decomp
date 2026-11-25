@@ -33553,6 +33553,13 @@
     "summary": "Loads the vtable pointer from self and tail-dispatches to the virtual slot at byte offset 0x58 (index 22), passing self through.",
     "lifted_path": "lifted/leaf/tiny_5F0000.cpp"
   },
+  "0x005F35D0": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{92, {flat}}\u003e::vfunc_41",
+    "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{92, {flat}}\u003e",
+    "signature": "extern \"C\" void* __stdcall fn_005F35D0(void* self, void* arg)",
+    "summary": "Reads a float from arg's vtable slot 1 (+0x04), then forwards it with arg to the target's slot 23 (+0x5C) via ext_0064F8E0, returning that result.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x005F3600": {
     "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{96, {flat}}\u003e::vfunc_48",
     "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{96, {flat}}\u003e",

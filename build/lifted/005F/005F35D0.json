@@ -1,0 +1,22 @@
+{
+  "va": "0x005F35D0",
+  "size": 37,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{92, {flat}}\u003e::vfunc_41",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{92, {flat}}\u003e::vfunc_41",
+  "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{92, {flat}}\u003e",
+  "signature": "extern \"C\" void* __stdcall fn_005F35D0(void* self, void* arg)",
+  "summary": "Reads a float from arg's vtable slot 1 (+0x04), then forwards it with arg to the target's slot 23 (+0x5C) via ext_0064F8E0, returning that result.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:52:30Z"
+}

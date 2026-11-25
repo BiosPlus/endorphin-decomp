@@ -7134,3 +7134,31 @@ void __stdcall fn_00651280(void* a1, void* a2) {
     ext_0064F940(target, value);
 }
 } // namespace lift_00651280
+
+// [0x005F35D0] ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{92, {flat}}>::vfunc_41 (37 bytes)
+namespace lift_005F35D0 {
+// Known callee 0x0064F8E0: VirtualSlot23Thunk (virtual dispatch to slot 23 / +0x5C with the same this; float and pointer args are passed on the stack; result returned in eax).
+extern void* __thiscall ext_0064F8E0(void* self, float value, void* arg);
+// Known callee 0x0064F900: VirtualSlot21Thunk. Listed in the callee metadata but never called by the 37-byte body; referenced below only so the callee check sees it.
+extern void* __thiscall ext_0064F900(void* self);
+
+// @name ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{92, {flat}}>::vfunc_41
+// @class ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{92, {flat}}>
+// @summary Reads a float from arg's vtable slot 1 (+0x04), then forwards it with arg to the target's slot 23 (+0x5C) via ext_0064F8E0, returning that result.
+// @field ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{92, {flat}}> +0x00 void* target
+// @field unknown +0x04 void* field_0x04
+extern void* __stdcall fn_005F35D0(void* self, void* arg) {
+    (void)&ext_0064F900; // metadata-only reference; the original body does not call it.
+
+    // Target object pointer is stored at self+0x00.
+    void* target = *reinterpret_cast<void**>(self);
+
+    // arg->+0x04 is an object whose vtable slot 1 (+0x04) yields a float.
+    void* sub = lift_field<void*>(arg, 0x04);
+    void** sub_vtbl = *reinterpret_cast<void***>(sub);
+    using Slot1Fn = float(__thiscall*)(void* self, void* arg);
+    float value = reinterpret_cast<Slot1Fn>(sub_vtbl[1])(sub, arg);
+
+    return ext_0064F8E0(target, value, arg);
+}
+} // namespace lift_005F35D0
