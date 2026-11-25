@@ -47,3 +47,26 @@ void fn_005441C0(void* self, int32_t arg1, int32_t arg2) {
     fn(obj, arg1, arg2);
 }
 } // namespace lift_005441C0
+
+// [0x00544040] ForceApplicationTool::vfunc_23 (37 bytes)
+namespace lift_00544040 {
+// @name ForceApplicationTool::vfunc_23
+// @class ForceApplicationTool
+// @summary If the child at +0x88 is set, call its vslot 0x38 with arg 1, then tail-jump to this's vslot 0x68.
+// @field ForceApplicationTool +0x88 void* field_0x88
+// @field ForceApplicationTool +0x0 void** vtable
+
+// Original: if ([self+0x88] != 0) { [child]->vtbl[0x38](child, 1); }
+// then tail-jumps to self->vtbl[0x68] with ecx = self; the callee's result is returned in eax.
+uint32_t fn_00544040(void* self) {
+    void* child = lift_field<void*>(self, 0x88);
+    if (child != nullptr) {
+        void** child_vtbl = *reinterpret_cast<void***>(child);
+        using ChildFn = void (*)(void* self, int a1);
+        reinterpret_cast<ChildFn>(child_vtbl[0x38 / sizeof(void*)])(child, 1);
+    }
+    void** vtbl = *reinterpret_cast<void***>(self);
+    using TailFn = uint32_t (*)(void* self);
+    return reinterpret_cast<TailFn>(vtbl[0x68 / sizeof(void*)])(self);
+}
+} // namespace lift_00544040
