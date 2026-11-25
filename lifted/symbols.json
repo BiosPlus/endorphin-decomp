@@ -57739,6 +57739,13 @@
     "summary": "Pure jump thunk forwarding to sub_00784720.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x007846D0": {
+    "name": "SortedArray::findValue",
+    "class": "SortedArray",
+    "signature": "extern \"C\" uint32_t __thiscall fn_007846D0(void* self, uint32_t key, int32_t* outIndex)",
+    "summary": "Sorts the array if dirty, binary-searches for key; on hit writes element index (optional out) and returns element +0x04, on miss writes -1 (optional out) and returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00784720": {
     "name": "resetBufferState",
     "signature": "void fn_00784720(void* self)",

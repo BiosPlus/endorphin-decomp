@@ -1,0 +1,22 @@
+{
+  "va": "0x007846D0",
+  "size": 80,
+  "orig_symbol": "sub_007846D0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "SortedArray::findValue",
+  "class": "SortedArray",
+  "signature": "extern \"C\" uint32_t __thiscall fn_007846D0(void* self, uint32_t key, int32_t* outIndex)",
+  "summary": "Sorts the array if dirty, binary-searches for key; on hit writes element index (optional out) and returns element +0x04, on miss writes -1 (optional out) and returns 0.",
+  "fields": [
+    {
+      "class": "SortedArray",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:53:58Z"
+}

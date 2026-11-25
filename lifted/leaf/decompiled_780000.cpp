@@ -1221,3 +1221,32 @@ uint8_t fn_007857A0(void* self, const uint32_t* values, int32_t count) {
     return flag;
 }
 } // namespace lift_007857A0
+
+// [0x007846D0] sub_007846D0 (80 bytes)
+namespace lift_007846D0 {
+extern int32_t __thiscall ext_007847B0(void* self);
+extern void* __thiscall ext_007847E0(void* self, uint32_t key_val);
+
+// @name SortedArray::findValue
+// @class SortedArray
+// @summary Sorts the array if dirty, binary-searches for key; on hit writes element index (optional out) and returns element +0x04, on miss writes -1 (optional out) and returns 0.
+// @field SortedArray +0x00 void* field_0x00
+extern uint32_t __thiscall fn_007846D0(void* self, uint32_t key, int32_t* outIndex) {
+    (void)ext_007847B0(self);
+
+    void* hit = ext_007847E0(self, key);
+    if (hit != nullptr) {
+        if (outIndex != nullptr) {
+            const uintptr_t base = reinterpret_cast<uintptr_t>(*reinterpret_cast<void* const*>(self));
+            const uintptr_t diff = reinterpret_cast<uintptr_t>(hit) - base;
+            *outIndex = static_cast<int32_t>(static_cast<uint32_t>(diff >> 3));
+        }
+        return *reinterpret_cast<const uint32_t*>(static_cast<const uint8_t*>(hit) + 0x4);
+    }
+
+    if (outIndex != nullptr) {
+        *outIndex = -1;
+    }
+    return 0u;
+}
+} // namespace lift_007846D0
