@@ -1,0 +1,13 @@
+{
+  "va": "0x0057BCD0",
+  "size": 95,
+  "orig_symbol": "sub_0057BCD0",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "GetOnceInitString_0057BCD0",
+  "signature": "void* fn_0057BCD0()",
+  "summary": "Lazily initializes the static object at mem_00B3D718 on first call (guarded by bit 0 of mem_00B3D734) and returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:32:08Z"
+}

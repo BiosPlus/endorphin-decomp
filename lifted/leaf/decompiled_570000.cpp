@@ -1549,3 +1549,26 @@ extern char* __cdecl fn_0057DDF0(char* first, char* last, char* dest) {
 }
 } // namespace lift_0062BA00
 } // namespace lift_0057DDF0
+
+// [0x0057BCD0] sub_0057BCD0 (95 bytes)
+namespace lift_0057BCD0 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0066AD10(void* out_str, uintptr_t arg);
+// Unrecovered callee 0x006A6C87 (18B); single pointer argument, caller-cleaned.
+extern void ext_006A6C87(uintptr_t arg);
+// One-time-init guard word (bit 0 = initialized/initializing).
+extern int mem_00B3D734;
+// Static object storage returned to the caller.
+extern uint8_t mem_00B3D718[];
+
+// @name GetOnceInitString_0057BCD0
+// @summary Lazily initializes the static object at mem_00B3D718 on first call (guarded by bit 0 of mem_00B3D734) and returns its address.
+void* fn_0057BCD0() {
+    if ((mem_00B3D734 & 1) == 0) {
+        mem_00B3D734 |= 1;
+        ext_0066AD10(static_cast<void*>(mem_00B3D718), uintptr_t{0x00A8590C});
+        ext_006A6C87(uintptr_t{0x0091CD60});
+    }
+    return static_cast<void*>(mem_00B3D718);
+}
+} // namespace lift_0057BCD0
