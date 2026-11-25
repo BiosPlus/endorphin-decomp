@@ -49,8 +49,10 @@ void fn_0048CCA0(void* self, int edx_unused, int a1, int a2) {
 }
 } // namespace lift_005694F0
 } // namespace lift_0048CCA0
+#include <istream>
+#include <bit>
 
-// [0x004809B0]
+#include <bit>
 namespace lift_004809B0 {
 uint32_t mem_read32(uint32_t addr);
 uint8_t mem_read8(uint32_t addr);
@@ -1475,3 +1477,75 @@ uint32_t* __thiscall fn_0048CCC0(
   return out_iter;
 }
 } // namespace lift_0048CCC0
+
+// [0x00481C50] sub_00481C50 (59 bytes)
+namespace lift_00481C50 {
+// @name sub_00481C50
+// @summary Auto-lifted identical-shape clone of 0x005015E0 (Unknown::eraseRangeFromSelf).
+namespace lift_005015E0 {
+// Known callee 0x005013F0: sub_005013F0 (Auto-lifted identical-shape clone of 0x0057E9E0 (Unknown::eraseStringVectorRange).)
+// Thiscall: self in ecx, then five stack args (out_iter, first_container, first_ptr, last_container, last_ptr).
+extern void* ext_00596660(void* self, void* out_iter, void* first_container,
+                              void* first_ptr, void* last_container, void* last_ptr);
+
+// @name Unknown::eraseRangeFromSelf
+// @class Unknown
+// @summary Erases the element range bounded by self+0x04 .. self+0x08 by forwarding both bounds to 0x005013F0.
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+void fn_00481C50(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    auto load_u32 = [&](std::size_t off) {
+        std::uint32_t v;
+        std::memcpy(&v, base + off, sizeof v);
+        return v;
+    };
+
+    // The original asserts first <= last via _invalid_parameter_noinfo (diagnostic only; no
+    // observable effect on the erase), so it is omitted here.
+    const auto first = static_cast<std::uintptr_t>(load_u32(0x04));
+    const auto last = static_cast<std::uintptr_t>(load_u32(0x08));
+
+    // The out iterator is a caller-provided slot; this function never reads it.
+    alignas(8) unsigned char out_iter[16] = {};
+    ext_00596660(self, out_iter, self, reinterpret_cast<void*>(first),
+                 self, reinterpret_cast<void*>(last));
+}
+} // namespace lift_005015E0
+} // namespace lift_00481C50
+
+// [0x0048D350] sub_0048D350 (59 bytes)
+namespace lift_0048D350 {
+// @name sub_0048D350
+// @summary Auto-lifted identical-shape clone of 0x005015E0 (Unknown::eraseRangeFromSelf).
+namespace lift_005015E0 {
+// Known callee 0x005013F0: sub_005013F0 (Auto-lifted identical-shape clone of 0x0057E9E0 (Unknown::eraseStringVectorRange).)
+// Thiscall: self in ecx, then five stack args (out_iter, first_container, first_ptr, last_container, last_ptr).
+extern void* ext_0048CCC0(void* self, void* out_iter, void* first_container,
+                              void* first_ptr, void* last_container, void* last_ptr);
+
+// @name Unknown::eraseRangeFromSelf
+// @class Unknown
+// @summary Erases the element range bounded by self+0x04 .. self+0x08 by forwarding both bounds to 0x005013F0.
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+void fn_0048D350(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    auto load_u32 = [&](std::size_t off) {
+        std::uint32_t v;
+        std::memcpy(&v, base + off, sizeof v);
+        return v;
+    };
+
+    // The original asserts first <= last via _invalid_parameter_noinfo (diagnostic only; no
+    // observable effect on the erase), so it is omitted here.
+    const auto first = static_cast<std::uintptr_t>(load_u32(0x04));
+    const auto last = static_cast<std::uintptr_t>(load_u32(0x08));
+
+    // The out iterator is a caller-provided slot; this function never reads it.
+    alignas(8) unsigned char out_iter[16] = {};
+    ext_0048CCC0(self, out_iter, self, reinterpret_cast<void*>(first),
+                 self, reinterpret_cast<void*>(last));
+}
+} // namespace lift_005015E0
+} // namespace lift_0048D350
