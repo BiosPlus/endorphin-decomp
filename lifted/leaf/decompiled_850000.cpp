@@ -934,3 +934,30 @@ void fn_0085DA40(void) {
     return;
 }
 } // namespace lift_0085DA40
+
+// [0x0085A110]
+namespace lift_0085A110 {
+// @name adjustIndexOnRemove
+// @summary Invalidates or decrements a stored index when an element at a given index is removed.
+
+
+extern uint64_t ext_0085BBC0(uint64_t val, uint32_t shift);
+extern uint64_t ext_00868690(uint32_t lo, uint32_t hi, uint32_t n);
+
+void sub_0085A110(uint32_t removed_index, uint32_t* stored_index) {
+    (void)&ext_0085BBC0;
+    (void)&ext_00868690;
+    uint32_t val = *stored_index;
+    if (val == 0xFFFFFFFFu) {
+        return;
+    }
+    if (val < removed_index) {
+        return;
+    }
+    if (val == removed_index) {
+        *stored_index = 0xFFFFFFFFu;
+        return;
+    }
+    *stored_index = val - 1;
+}
+} // namespace lift_0085A110

@@ -71517,6 +71517,12 @@
     "summary": "Walks a singly linked node chain (next pointer at +0x1C) from head and returns the first node whose DWORD key at +0x00 equals the given key, or NULL if none match or head is NULL.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085A110": {
+    "name": "adjustIndexOnRemove",
+    "signature": "void sub_0085A110(uint32_t removed_index, uint32_t* stored_index)",
+    "summary": "Invalidates or decrements a stored index when an element at a given index is removed.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085A3E0": {
     "name": "AppendSentinelEntry",
     "class": "Unknown",

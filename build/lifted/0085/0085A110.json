@@ -1,0 +1,13 @@
+{
+  "va": "0x0085A110",
+  "size": 32,
+  "orig_symbol": "sub_0085A110",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "adjustIndexOnRemove",
+  "signature": "void sub_0085A110(uint32_t removed_index, uint32_t* stored_index)",
+  "summary": "Invalidates or decrements a stored index when an element at a given index is removed.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T14:11:58Z"
+}
