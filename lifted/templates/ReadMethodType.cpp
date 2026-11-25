@@ -52099,3 +52099,29 @@ float fn_0046C8F0(void* self) {
     return 0.0f;
 }
 } // namespace lift_0046C8F0
+
+// [0x004708A0] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_004708A0 {
+extern void ext_00407700();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, float, getTimeZoomFactor, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0>
+// @summary Reads the engine pointer from the value slot; if non-null, queries the time zoom factor, then raises an ExceptionWithMessage (always throws).
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004708A0(void* self) {
+    void** slot = static_cast<void**>(self);
+    void* engine = slot[0];
+    if (engine != nullptr) {
+        ext_00407700();
+        ext_0046C4E0();
+    }
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004708A0

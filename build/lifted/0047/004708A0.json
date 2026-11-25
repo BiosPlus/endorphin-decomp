@@ -1,0 +1,22 @@
+{
+  "va": "0x004708A0",
+  "size": 58,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, getTimeZoomFactor, 0\u003e::vfunc_5",
+  "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0\u003e",
+  "signature": "void fn_004708A0(void* self)",
+  "summary": "Reads the engine pointer from the value slot; if non-null, queries the time zoom factor, then raises an ExceptionWithMessage (always throws).",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:58:01Z"
+}

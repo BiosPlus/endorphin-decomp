@@ -8654,6 +8654,13 @@
     "summary": "Returns 1 if the value reported by the wrapped getTimeZoomFactor call is \u003e= 1e-6, else 0; throws if the wrapped object pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004708A0": {
+    "name": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, getTimeZoomFactor, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0\u003e",
+    "signature": "void fn_004708A0(void* self)",
+    "summary": "Reads the engine pointer from the value slot; if non-null, queries the time zoom factor, then raises an ExceptionWithMessage (always throws).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00470AF0": {
     "name": "ExprParser::ReadWriteMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, float, {public: void __thiscall RuntimeEngine::setSimulationFrameRate(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, float, {public: void __thiscall RuntimeEngine::setSimulationFrameRate(float), 0}\u003e",
