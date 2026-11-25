@@ -611,3 +611,23 @@ void fn_0053B4B0(void* self) {
     }
 }
 } // namespace lift_0053B4B0
+
+// [0x0053F9D0]
+namespace lift_0053F9D0 {
+// @name Unknown::ComputeCenteredRect
+// @class Unknown
+// @summary Writes a square RECT (left, top, right, bottom) of side `size` centered at x=cx, with top-based y offset derived from obj->field_0x1D4 - dy.
+// @field Unknown +0xB4 void* field_0xB4
+// @field Unknown +0x1D4 LONG field_0x1D4 (read through the pointer stored at +0xB4)
+void fn_0053F9D0(void* self, RECT* out, LONG cx, LONG dy, LONG size) {
+    void* obj = lift_field<void*>(self, 0xB4);
+    LONG base_y = lift_field<LONG>(obj, 0x1D4) - dy;
+    LONG half = size / 2;
+    LONG left = cx - half;
+    LONG top = base_y - half;
+    out->left = left;
+    out->top = top;
+    out->right = left + size;
+    out->bottom = top + size;
+}
+} // namespace lift_0053F9D0

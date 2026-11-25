@@ -510,7 +510,7 @@ struct Unknown_Fields {
     // +0xB0  uint32_t field_0xb0 (dword inside the object referenced by slot3)  (evidence: 0x007DAD70) // CONFLICT: multiple definitions at +0xB0
     // +0xB4  float                    field_0xB4  (evidence: 0x00630510) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  int32_t                  field_0xB4  (evidence: 0x00464780, 0x004647A0, 0x0046F7D0) // CONFLICT: multiple definitions at +0xB4
-    // +0xB4  void*                    field_0xB4  (evidence: 0x0053F6A0) // CONFLICT: multiple definitions at +0xB4
+    // +0xB4  void*                    field_0xB4  (evidence: 0x0053F6A0, 0x0053F9D0) // CONFLICT: multiple definitions at +0xB4
     // +0xB8  DWORD                    field_0xB8  (evidence: 0x00540F60) // CONFLICT: multiple definitions at +0xB8
     // +0xB8  float                    field_0xB8  (evidence: 0x00630510) // CONFLICT: multiple definitions at +0xB8
     // +0xB8  int32_t                  field_0xB8  (evidence: 0x006DC460) // CONFLICT: multiple definitions at +0xB8
@@ -664,7 +664,8 @@ struct Unknown_Fields {
     // +0x1CC void*                    field_0x1cc  (evidence: 0x007BEDA0, 0x007BFD40) // CONFLICT: multiple definitions at +0x1CC
     // +0x1D0 int32_t                  field_0x1D0  (evidence: 0x007BF4A0) // CONFLICT: multiple definitions at +0x1D0
     // +0x1D0 void*                    field_1D0  (evidence: 0x005B0E60, 0x005B6BC0) // CONFLICT: multiple definitions at +0x1D0
-    // +0x1D4 uint32_t                 field_0x1d4  (evidence: 0x006D8210)
+    // +0x1D4 LONG field_0x1D4 (read through the pointer stored at +0xB4)  (evidence: 0x0053F9D0) // CONFLICT: multiple definitions at +0x1D4
+    // +0x1D4 uint32_t                 field_0x1d4  (evidence: 0x006D8210) // CONFLICT: multiple definitions at +0x1D4
     // +0x1D8 uint8_t                  field_0x1D8  (evidence: 0x00468730, 0x0046F8F0, 0x005304A0, 0x006C78B0, 0x007008C0, 0x00700910, 0x00700930, 0x00700950, 0x00715650, 0x0071B900, 0x0071C390, 0x0071C4D0, 0x0071C4F0, 0x0071C510, 0x0071C540, 0x0071C550, 0x0071C590, 0x0071C5B0, 0x0071C730, 0x0071C8C0, 0x0071C950, 0x0071C980)
     // +0x1E0 int32_t                  field_0x1E0  (evidence: 0x007BF4A0) // CONFLICT: multiple definitions at +0x1E0
     // +0x1E0 int32_t                  field_0x1e0  (evidence: 0x0046FDA0, 0x0046FDC0) // CONFLICT: multiple definitions at +0x1E0

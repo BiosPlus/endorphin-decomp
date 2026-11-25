@@ -1,0 +1,28 @@
+{
+  "va": "0x0053F9D0",
+  "size": 63,
+  "orig_symbol": "sub_0053F9D0",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::ComputeCenteredRect",
+  "class": "Unknown",
+  "signature": "void fn_0053F9D0(void* self, RECT* out, LONG cx, LONG dy, LONG size)",
+  "summary": "Writes a square RECT (left, top, right, bottom) of side `size` centered at x=cx, with top-based y offset derived from obj-\u003efield_0x1D4 - dy.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xB4",
+      "type": "void*",
+      "name": "field_0xB4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1D4",
+      "type": "LONG field_0x1D4 (read through the pointer stored at",
+      "name": "+0xB4)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:02:08Z"
+}

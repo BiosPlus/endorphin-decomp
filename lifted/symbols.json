@@ -18750,6 +18750,13 @@
     "summary": "If the pairs at +0xD0/+0xD8 and +0xD4/+0xDC are equal and RangeExceedsThreshold reports no overflow, increment the counter at +0xE0; otherwise reset it to 0.",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x0053F9D0": {
+    "name": "Unknown::ComputeCenteredRect",
+    "class": "Unknown",
+    "signature": "void fn_0053F9D0(void* self, RECT* out, LONG cx, LONG dy, LONG size)",
+    "summary": "Writes a square RECT (left, top, right, bottom) of side `size` centered at x=cx, with top-based y offset derived from obj-\u003efield_0x1D4 - dy.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x00540100": {
     "name": "CameraTool::vfunc_24",
     "class": "CameraTool",
