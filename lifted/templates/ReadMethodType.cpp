@@ -56337,3 +56337,44 @@ const void* fn_004CBEA0(void* self, void* const* slot) {
     throw std::runtime_error("ExprParser: getAngularStrengthFromFSM is not supported");
 }
 } // namespace lift_004CBEA0
+
+// [0x00625150] ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith, bool, &public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1>::vfunc_5 (59 bytes)
+namespace lift_00625150 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Single byte argument pushed by the caller (object field +0x30).
+extern void ext_0046C4E0(uint8_t code);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Thiscall: ECX = address of exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Pushed args: exception object address, ThrowInfo address (0x009DEC1C).
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Virtual slot 17 (vtable offset 0x44) on the object; returns float (x87 st0, discarded here).
+using VirtualFloatFn = float (__thiscall*)(void* self);
+
+// @name ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith, bool, getBool, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith, bool, &public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1>
+// @summary Reads the object pointer held in *self; if non-null, invokes virtual slot 17 and throws via ext_0046C4E0 with field +0x30; otherwise throws a fixed-message exception.
+// @field ExprParser::ValuePtrType +0x30 uint8_t field_0x30
+void fn_00625150(void* self) {
+    void* obj = *static_cast<void**>(self);
+
+    if (obj != nullptr) {
+        void** vtbl = *static_cast<void***>(obj);
+        auto slot = reinterpret_cast<VirtualFloatFn>(vtbl[0x44 / sizeof(void*)]);
+        (void)slot(obj);
+
+        uint8_t code = lift_field<uint8_t>(obj, 0x30);
+        ext_0046C4E0(code);
+        // Callee throws; original binary has no return here and falls through to the null path.
+    }
+
+    // Exception object storage: frame reserves 0x28 bytes, object begins at [esp+4].
+    alignas(8) uint8_t exc_storage[0x24] = {};
+    ext_0046C3C0(exc_storage);
+
+    const void* throw_info = reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu));
+    ext_006A6DD2(exc_storage, throw_info);
+}
+} // namespace lift_00625150
