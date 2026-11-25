@@ -60549,6 +60549,12 @@
     "summary": "Pops the element at index count from a counted array: stores it to the first dword and decrements count.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D9630": {
+    "name": "SplitRangeEvenly_007D9630",
+    "signature": "void __stdcall SplitRangeEvenly_007D9630(Range* out, int32_t start, int32_t total, int32_t count)",
+    "summary": "Writes `count` consecutive 24-byte ranges starting at `start`, each `total / count` long (at least one range is always written).",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007D9680": {
     "name": "advanceBounded",
     "signature": "void fn_007D9680(void* cursor, uint32_t n, uint32_t arg3, uint32_t arg4)",

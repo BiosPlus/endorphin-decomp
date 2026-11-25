@@ -1,0 +1,33 @@
+{
+  "va": "0x007D9630",
+  "size": 78,
+  "orig_symbol": "sub_007D9630",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "SplitRangeEvenly_007D9630",
+  "signature": "void __stdcall SplitRangeEvenly_007D9630(Range* out, int32_t start, int32_t total, int32_t count)",
+  "summary": "Writes `count` consecutive 24-byte ranges starting at `start`, each `total / count` long (at least one range is always written).",
+  "fields": [
+    {
+      "class": "Range",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "begin"
+    },
+    {
+      "class": "Range",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "end"
+    },
+    {
+      "class": "Range",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "flags"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:46:12Z"
+}

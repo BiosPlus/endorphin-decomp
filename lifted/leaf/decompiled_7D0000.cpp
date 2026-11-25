@@ -948,3 +948,38 @@ int fn_007D4920(uint32_t sentinel, uint32_t node, uint32_t end) {
     return 0;
 }
 } // namespace lift_007D4920
+
+// [0x007D9630] sub_007D9630 (78 bytes)
+namespace lift_007D9630 {
+// @name SplitRangeEvenly_007D9630
+// @summary Writes `count` consecutive 24-byte ranges starting at `start`, each `total / count` long (at least one range is always written).
+// @field Range +0x00 int32_t begin
+// @field Range +0x04 int32_t end
+// @field Range +0x08 int32_t flags
+
+// Stride between Range entries is 0x18 (24 bytes); only offsets 0x00, 0x04 and
+// 0x08 are touched by the original code.
+struct Range {
+    int32_t begin; // +0x00
+    int32_t end;   // +0x04
+    int32_t flags; // +0x08 (always written as 0)
+    int32_t pad[3];
+};
+static_assert(sizeof(Range) == 0x18, "Range stride must be 0x18");
+
+// Original is __stdcall-style with `ret 0x10` (four 32-bit stack arguments, callee-cleaned).
+// The division by `count` traps on zero in the original; callers must pass count != 0.
+void __stdcall SplitRangeEvenly_007D9630(Range* out, int32_t start, int32_t total, int32_t count) {
+    const int32_t chunk = total / count;
+    const int32_t records = (count > 1) ? count : 1;
+
+    uint32_t begin = static_cast<uint32_t>(start);
+    for (int32_t k = 0; k < records; ++k) {
+        out[k].begin = static_cast<int32_t>(begin);
+        const uint32_t end = begin + static_cast<uint32_t>(chunk);
+        out[k].end = static_cast<int32_t>(end);
+        out[k].flags = 0;
+        begin = end;
+    }
+}
+} // namespace lift_007D9630
