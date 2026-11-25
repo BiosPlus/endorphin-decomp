@@ -1,0 +1,14 @@
+{
+  "va": "0x005969C0",
+  "size": 100,
+  "orig_symbol": "sub_005969C0",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "BaseEventDispatcher::dispatchRangeThenFinish",
+  "class": "BaseEventDispatcher",
+  "signature": "extern \"C\" void __thiscall fn_005969C0(uint32_t self, uint32_t range, uint32_t arg2)",
+  "summary": "Iterates the element range at arg1 (begin at +0x4, end at +0x8), forwarding each element and arg2 to dispatchToElements, then invokes the finishing virtual-slot helper with argument 1.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:01:19Z"
+}

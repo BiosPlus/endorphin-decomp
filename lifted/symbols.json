@@ -27578,6 +27578,13 @@
     "summary": "Erases a range [first, last) of 4-byte elements from a vector and returns the updated iterator.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x005969C0": {
+    "name": "BaseEventDispatcher::dispatchRangeThenFinish",
+    "class": "BaseEventDispatcher",
+    "signature": "extern \"C\" void __thiscall fn_005969C0(uint32_t self, uint32_t range, uint32_t arg2)",
+    "summary": "Iterates the element range at arg1 (begin at +0x4, end at +0x8), forwarding each element and arg2 to dispatchToElements, then invokes the finishing virtual-slot helper with argument 1.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00596A30": {
     "name": "CallForEachOffsetPlusBase",
     "signature": "void fn_00596A30(uint32_t* out, uint32_t /*stack slot +0x08, unused*/, const uint32_t* begin, uint32_t /*stack slot +0x10, unused*/, const uint32_t* end, OffsetCallback cb, uint32_t base)",

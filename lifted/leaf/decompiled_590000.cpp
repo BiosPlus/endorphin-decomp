@@ -1617,3 +1617,29 @@ void __cdecl fn_00598930(void) {
     ext_00596B20();
 }
 } // namespace lift_00598930
+
+// [0x005969C0]
+namespace lift_005969C0 {
+// @name BaseEventDispatcher::dispatchRangeThenFinish
+// @class BaseEventDispatcher
+// @summary Iterates the element range at arg1 (begin at +0x4, end at +0x8), forwarding each element and arg2 to dispatchToElements, then invokes the finishing virtual-slot helper with argument 1.
+
+extern void __thiscall ext_00527690(uint32_t self, uint32_t elem, uint32_t arg2);
+extern void __thiscall ext_00678D70(uint32_t self, uint32_t arg);
+
+extern void __thiscall fn_005969C0(uint32_t self, uint32_t range, uint32_t arg2) {
+    // Iterator-debug range checks from the original (_invalid_parameter_noinfo
+    // paths) are omitted; they only guard against malformed ranges.
+    uint32_t it = *reinterpret_cast<uint32_t*>(range + 0x4);
+    for (;;) {
+        uint32_t end = *reinterpret_cast<uint32_t*>(range + 0x8);
+        if (it == end) {
+            break;
+        }
+        uint32_t elem = *reinterpret_cast<uint32_t*>(it);
+        ext_00527690(self, elem, arg2);
+        it += 0x4;
+    }
+    ext_00678D70(self, 1);
+}
+} // namespace lift_005969C0
