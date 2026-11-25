@@ -1,0 +1,22 @@
+{
+  "va": "0x0064E3F0",
+  "size": 60,
+  "orig_symbol": "SkeletalJoint::vfunc_19",
+  "src_path": "src/classes/SkeletalJoint.cpp",
+  "lifted_path": "lifted/classes/SkeletalJoint.cpp",
+  "name": "SkeletalJoint::vfunc_19",
+  "class": "SkeletalJoint",
+  "signature": "void fn_0064E3F0(void* self, float* out)",
+  "summary": "Writes a float to *out: the value from ext_007C5910 of the object handle at +0x64 when its flags (ext_007C5900 result) have bits 0x700 set, otherwise the constant mem_009802E0 (0x7F7FFFFF, FLT_MAX).",
+  "fields": [
+    {
+      "class": "SkeletalJoint",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:54:14Z"
+}

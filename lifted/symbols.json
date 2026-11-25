@@ -33657,6 +33657,13 @@
     "summary": "Forwards this-\u003efield_0x64 and the float argument to ext_007C5A90 and returns its result.",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x0064E3F0": {
+    "name": "SkeletalJoint::vfunc_19",
+    "class": "SkeletalJoint",
+    "signature": "void fn_0064E3F0(void* self, float* out)",
+    "summary": "Writes a float to *out: the value from ext_007C5910 of the object handle at +0x64 when its flags (ext_007C5900 result) have bits 0x700 set, otherwise the constant mem_009802E0 (0x7F7FFFFF, FLT_MAX).",
+    "lifted_path": "lifted/classes/SkeletalJoint.cpp"
+  },
   "0x0064EA80": {
     "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const \u0026), 0}\u003e",
