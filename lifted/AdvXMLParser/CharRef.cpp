@@ -23,3 +23,19 @@ uint32_t fn_0063E270(void* self, uint32_t arg) {
 }
 } // namespace lift_0063E180
 } // namespace lift_0063E270
+
+// [0x0063E390] AdvXMLParser::CharRef::vfunc_1 (36 bytes)
+namespace lift_0063E390 {
+// MSVCP80 import slot [0x92506C]: std::basic_string<char>::basic_string(size_type count, char ch) (thiscall).
+extern void (__thiscall* mem_0092506C)(void* self, unsigned int count, char ch);
+
+// @name AdvXMLParser::CharRef::vfunc_1
+// @class AdvXMLParser::CharRef
+// @summary Constructs a one-character std::string from the CharRef's stored char (+0x24) into the caller's sret buffer and returns that buffer.
+// @field AdvXMLParser::CharRef +0x24 uint8_t field_0x24
+void* __thiscall fn_0063E390(void* self, void* out) {
+    uint8_t ch = lift_field<uint8_t>(self, 0x24);
+    mem_0092506C(out, 1u, static_cast<char>(ch));
+    return out;
+}
+} // namespace lift_0063E390
