@@ -1,0 +1,40 @@
+{
+  "va": "0x0051BEF0",
+  "size": 32,
+  "orig_symbol": "NMData::RealChannel::vfunc_16",
+  "src_path": "src/NMData/RealChannel.cpp",
+  "lifted_path": "lifted/NMData/RealChannel.cpp",
+  "name": "NMData::RealChannel::vfunc_16",
+  "class": "NMData::RealChannel",
+  "signature": "void NMData_RealChannel_vfunc_16(void* self)",
+  "summary": "Validates begin \u003c= end (calling _invalid_parameter_noinfo through the import slot otherwise), then stores \u0026this-\u003efield_0x2C at +0x3C and begin at +0x40.",
+  "fields": [
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "end"
+    },
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x3C",
+      "type": "void*",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:41:10Z"
+}

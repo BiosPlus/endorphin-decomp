@@ -140,3 +140,30 @@ void* __thiscall fn_0051C6D0(const void* self) {
 }
 } // namespace lift_0051CDE0
 } // namespace lift_0051C6D0
+
+// [0x0051BEF0]
+namespace lift_0051BEF0 {
+// @name NMData::RealChannel::vfunc_16
+// @class NMData::RealChannel
+// @summary Validates begin <= end (calling _invalid_parameter_noinfo through the import slot otherwise), then stores &this->field_0x2C at +0x3C and begin at +0x40.
+// @field NMData::RealChannel +0x30 uint32_t begin
+// @field NMData::RealChannel +0x34 uint32_t end
+// @field NMData::RealChannel +0x3C void* field_0x3C
+// @field NMData::RealChannel +0x40 uint32_t field_0x40
+
+// Import slot holding the address of MSVCR80!_invalid_parameter_noinfo.
+extern void* mem_00925134;
+
+void NMData_RealChannel_vfunc_16(void* self) {
+    uint32_t begin = lift_field<uint32_t>(self, 0x30);
+    uint32_t end   = lift_field<uint32_t>(self, 0x34);
+
+    if (begin > end) {
+        // call dword ptr [0x925134] ; MSVCR80!_invalid_parameter_noinfo
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    lift_field<void*>(self, 0x3C) = static_cast<uint8_t*>(self) + 0x2C;
+    lift_field<uint32_t>(self, 0x40) = begin;
+}
+} // namespace lift_0051BEF0
