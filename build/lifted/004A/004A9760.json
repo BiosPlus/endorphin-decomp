@@ -1,0 +1,13 @@
+{
+  "va": "0x004A9760",
+  "size": 67,
+  "orig_symbol": "sub_004A9760",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "NameTableFindIndex",
+  "signature": "int __stdcall fn_004A9760(const void* name)",
+  "summary": "Scans the 3-entry string table for a match with the argument; returns the matching index, or 1 if none matches.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:14:19Z"
+}

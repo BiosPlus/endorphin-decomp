@@ -293,3 +293,24 @@ void fn_004A0620(void* self) {
 }
 } // namespace lift_00569970
 } // namespace lift_004A0620
+
+// [0x004A9760]
+namespace lift_004A9760 {
+extern uintptr_t mem_00924FC4;  // holds address of MSVCP80 basic_string operator== (cdecl)
+extern uint8_t mem_00ADF238[];  // table of 3 std::string-sized entries, 0x1C bytes apart
+
+using StringEqualFn = bool(__cdecl*)(const void* lhs, const void* rhs);
+
+// @name NameTableFindIndex
+// @summary Scans the 3-entry string table for a match with the argument; returns the matching index, or 1 if none matches.
+int __stdcall fn_004A9760(const void* name) {
+    const auto equal = reinterpret_cast<StringEqualFn>(mem_00924FC4);
+    for (int index = 0; index < 3; ++index) {
+        const void* entry = mem_00ADF238 + static_cast<size_t>(index) * 0x1C;
+        if (equal(entry, name)) {
+            return index;
+        }
+    }
+    return 1;
+}
+} // namespace lift_004A9760
