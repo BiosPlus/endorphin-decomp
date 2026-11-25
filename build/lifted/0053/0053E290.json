@@ -1,0 +1,40 @@
+{
+  "va": "0x0053E290",
+  "size": 77,
+  "orig_symbol": "sub_0053E290",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::DequeIndexAt",
+  "class": "Unknown",
+  "signature": "extern \"C\" int mem_00925134;   // IAT slot holding _invalid_parameter_noinfo (MSVCR80) static inline uint32_t load32(uint32_t base, uint32_t off)",
+  "summary": "Thiscall indexed accessor: validates the block map and returns the element address at index (64-byte blocks); calls the CRT invalid-parameter handler on bad state or out-of-range index.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:42:29Z"
+}

@@ -838,3 +838,54 @@ void* fn_0053B1F0(void* self, uint32_t index) {
     return reinterpret_cast<void*>(static_cast<uintptr_t>(begin + 4u * index));
 }
 } // namespace lift_0053B1F0
+
+// [0x0053E290] sub_0053E290 (77 bytes)
+namespace lift_0053E290 {
+extern int mem_00925134;   // IAT slot holding _invalid_parameter_noinfo (MSVCR80)
+
+// @name Unknown::DequeIndexAt
+// @class Unknown
+// @summary Thiscall indexed accessor: validates the block map and returns the element address at index (64-byte blocks); calls the CRT invalid-parameter handler on bad state or out-of-range index.
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x0c void* field_0x0c
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+static inline uint32_t load32(uint32_t base, uint32_t off) {
+    uint32_t v;
+    std::memcpy(&v, reinterpret_cast<const unsigned char*>(static_cast<uintptr_t>(base + off)), 4);
+    return v;
+}
+
+void* fn_0053E290(void* self, uint32_t index) {
+    const uint32_t self_u = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    auto invalid_param = reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134));
+
+    // [self+8] must be non-null
+    if (load32(self_u, 0x08) == 0) {
+        invalid_param();
+    }
+    uint32_t a = load32(self_u, 0x08);
+    uint32_t ecx = load32(self_u, 0x0c);
+    if (ecx == load32(a, 0x04)) {
+        invalid_param();
+    }
+
+    // B = [self+0xc]; C = B + 0xc
+    uint32_t b = load32(self_u, 0x0c);
+    uint32_t count_ptr = load32(b, 0x10);
+    uint32_t c = b + 0x0c;
+    if (count_ptr == 0) {
+        invalid_param();
+    } else {
+        uint32_t span = load32(c, 0x08) - count_ptr;   // C+8 == B+0x14
+        int32_t blocks = static_cast<int32_t>(span) >> 6;
+        if (!(index < static_cast<uint32_t>(blocks))) {
+            invalid_param();
+        }
+    }
+
+    // element = block_base + index * 64; block_base = C+4 == B+0x10
+    uint32_t base = load32(c, 0x04);
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(base + (index << 6)));
+}
+} // namespace lift_0053E290

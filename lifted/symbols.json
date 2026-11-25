@@ -19688,6 +19688,13 @@
     "summary": "Forwards its three arguments to Cuboid::vfunc_25, stores the result of virtual slot +0x2C on arg1's +0x0C object into +0x9C, and sets flag bit 0x02000000 in +0x1C.",
     "lifted_path": "lifted/Primitives/Animation.cpp"
   },
+  "0x0053E290": {
+    "name": "Unknown::DequeIndexAt",
+    "class": "Unknown",
+    "signature": "extern \"C\" int mem_00925134;   // IAT slot holding _invalid_parameter_noinfo (MSVCR80) static inline uint32_t load32(uint32_t base, uint32_t off)",
+    "summary": "Thiscall indexed accessor: validates the block map and returns the element address at index (64-byte blocks); calls the CRT invalid-parameter handler on bad state or out-of-range index.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x0053E2E0": {
     "name": "Primitives::Mesh::vfunc_28",
     "class": "Primitives::Mesh",
