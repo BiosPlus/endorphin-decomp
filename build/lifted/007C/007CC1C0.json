@@ -1,0 +1,21 @@
+{
+  "va": "0x007CC1C0",
+  "size": 61,
+  "orig_symbol": "sub_007CC1C0",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "InitFloatsIfSubobjectReady",
+  "signature": "void* fn_007CC1C0(void* self, float x, float y)",
+  "summary": "Calls the function pointer at sub-object +0x08 with (0x18, 0x10); if it returns non-null, forwards (sub-object, self, x, y) to ext_007CC180, otherwise returns null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xB0",
+      "type": "void*",
+      "name": "field_0xB0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:58:32Z"
+}

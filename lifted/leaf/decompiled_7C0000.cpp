@@ -774,3 +774,30 @@ void* fn_007CB890(void* self, float a2, float a3) {
     return ext_007CB5F0(result, self, a2, a3);
 }
 } // namespace lift_007CB890
+
+// [0x007CC1C0] sub_007CC1C0 (61 bytes)
+namespace lift_007CC1C0 {
+// Known callee 0x007CC180: ObjectField::InitFloatsFromArgs (Runs the mode-5 setup helper on (self, a2), then forwards a3 to setNonNegativeFloat_0x10 and a4 to SetHalfOrZeroFloat14; returns self.)
+extern void* ext_007CC180(void* self, void* a2, float a3, float a4);
+
+// @name InitFloatsIfSubobjectReady
+// @summary Calls the function pointer at sub-object +0x08 with (0x18, 0x10); if it returns non-null, forwards (sub-object, self, x, y) to ext_007CC180, otherwise returns null.
+// @field Unknown +0xB0 void* field_0xB0
+void* fn_007CC1C0(void* self, float x, float y) {
+    using SubFn = void* (*)(int32_t, int32_t);
+
+    // eax = self->field_0xB0; ecx = eax->fn_at_0x08
+    void* sub = lift_field<void*>(self, 0xB0);
+    SubFn probe = lift_field<SubFn>(sub, 0x08);
+
+    // push 0x10; push 0x18; call ecx  (cdecl: arg1 = 0x18, arg2 = 0x10)
+    void* eax = reinterpret_cast<void*>(probe(0x18, 0x10));
+
+    if (eax == nullptr) {
+        return nullptr;
+    }
+
+    // Stack order: x -> a3 slot, y -> a4 slot; self and a2 are (eax, esi).
+    return ext_007CC180(eax, self, x, y);
+}
+} // namespace lift_007CC1C0

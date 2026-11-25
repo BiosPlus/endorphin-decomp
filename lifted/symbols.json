@@ -56302,6 +56302,12 @@
     "summary": "Runs the mode-5 setup helper on (self, a2), then forwards a3 to setNonNegativeFloat_0x10 and a4 to SetHalfOrZeroFloat14; returns self.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CC1C0": {
+    "name": "InitFloatsIfSubobjectReady",
+    "signature": "void* fn_007CC1C0(void* self, float x, float y)",
+    "summary": "Calls the function pointer at sub-object +0x08 with (0x18, 0x10); if it returns non-null, forwards (sub-object, self, x, y) to ext_007CC180, otherwise returns null.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CC5D0": {
     "name": "allocAndInit_007CC5D0",
     "signature": "uint32_t fn_007CC5D0(uint32_t arg0)",
