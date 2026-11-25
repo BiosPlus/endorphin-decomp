@@ -1,0 +1,22 @@
+{
+  "va": "0x006877B0",
+  "size": 99,
+  "orig_symbol": "sub_006877B0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "FlagOrByteStoreByKey",
+  "class": "Unknown",
+  "signature": "void fn_006877B0(void* arg1, void* self, uint32_t arg2, uint32_t arg3, uint8_t arg4)",
+  "summary": "Calls checkStringEqualsLiteral (its result is discarded); if arg2 is one of five magic keys stores the low byte of arg4 to *arg1, otherwise ORs arg3 into this+0x150.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x150",
+      "type": "uint32_t",
+      "name": "field_0x150"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:41:40Z"
+}

@@ -45800,6 +45800,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0040A910 (sub_00407830).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x006877B0": {
+    "name": "FlagOrByteStoreByKey",
+    "class": "Unknown",
+    "signature": "void fn_006877B0(void* arg1, void* self, uint32_t arg2, uint32_t arg3, uint8_t arg4)",
+    "summary": "Calls checkStringEqualsLiteral (its result is discarded); if arg2 is one of five magic keys stores the low byte of arg4 to *arg1, otherwise ORs arg3 into this+0x150.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00687890": {
     "name": "fillElementsFromSource",
     "class": "UnknownElement44",

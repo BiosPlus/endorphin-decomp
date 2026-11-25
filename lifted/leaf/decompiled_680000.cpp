@@ -1986,3 +1986,28 @@ void fn_006895A0(void* self) {
     lift_field<uint32_t>(self, 0x2C) = 0;
 }
 } // namespace lift_006895A0
+
+// [0x006877B0] sub_006877B0 (99 bytes)
+namespace lift_006877B0 {
+// Known callee 0x00427640: checkStringEqualsLiteral (Gets a string from the object via ext_004275C0, stores whether it equals the .rdata literal at 0x0092F10C into *out.)
+extern void ext_00427640(void* unused, void* self, bool* out);
+
+// @name FlagOrByteStoreByKey
+// @class Unknown
+// @summary Calls checkStringEqualsLiteral (its result is discarded); if arg2 is one of five magic keys stores the low byte of arg4 to *arg1, otherwise ORs arg3 into this+0x150.
+// @field Unknown +0x150 uint32_t field_0x150
+void fn_006877B0(void* arg1, void* self, uint32_t arg2, uint32_t arg3, uint8_t arg4) {
+    // The callee writes its bool into the caller's stack slot for arg2; that slot is
+    // never read back (the original compares the register copy of arg2), so a local suffices.
+    bool scratch = false;
+    ext_00427640(arg1, self, &scratch);
+
+    if (arg2 == 0x00B53A34u || arg2 == 0x00B53B30u || arg2 == 0x00B53AB0u ||
+        arg2 == 0x00B53A70u || arg2 == 0x00B53AF0u) {
+        *static_cast<uint8_t*>(arg1) = arg4;
+        return;
+    }
+
+    lift_field<uint32_t>(self, 0x150) |= arg3;
+}
+} // namespace lift_006877B0
