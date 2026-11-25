@@ -1226,12 +1226,13 @@ extern void fn_0065F440(void* self);   // ext_0065F440: stores &mem_0093BF24 at 
 extern void fn_006A5C5C(void* arg);    // ext_006A5C5C: IAT thunk to MFC80!ord_764 (takes one pointer argument)
 
 // @name destructorReleaseStringArray
+// @class Unknown
 // @summary Resets vtable, frees the pointer at +0x1C, releases the StringArray at +0x08, then runs base cleanup.
-// @field field_0x00 void* vtable
-// @field field_0x08 StringArray stringArray
-// @field field_0x1C void* ptr1C
-// @field field_0x20 uint32_t field20
-// @field field_0x24 uint32_t field24
+// @field Unknown +0x00 void* vptr
+// @field Unknown +0x08 StringArray stringArray
+// @field Unknown +0x1C void* ptr1C
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 uint32_t field_0x24
 void fn_00495AB0(void* self) {
     // Vtable pointer for this class (0x0093F0FC).
     lift_field<void*>(self, 0x00) = reinterpret_cast<void*>(static_cast<uintptr_t>(0x0093F0FCu));

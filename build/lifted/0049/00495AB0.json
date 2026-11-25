@@ -410,9 +410,39 @@
       "offset": "+0x130",
       "type": "uint32_t",
       "name": "field_0x130"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "StringArray",
+      "name": "stringArray"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "ptr1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T03:54:13Z"
+  "lifted_at": "2026-11-25T03:54:31Z"
 }
