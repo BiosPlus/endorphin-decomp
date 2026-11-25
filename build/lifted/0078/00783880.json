@@ -1,0 +1,21 @@
+{
+  "va": "0x00783880",
+  "size": 96,
+  "orig_symbol": "sub_00783880",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "DestroyEntriesAndBase",
+  "signature": "extern \"C\" void fn_00783880(void* self)",
+  "summary": "Releases entries via sub_007839B0, resets the +0x18 chain if non-null, and calls sub_006D2160.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:49:52Z"
+}
