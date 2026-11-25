@@ -83,3 +83,24 @@ void* fn_00533ED0(void* self, uint32_t flags) {
 }
 } // namespace lift_00533E90
 } // namespace lift_00533ED0
+
+// [0x0054C260] ManagedDisplayList<RenderableList>::vfunc_2 (76 bytes)
+namespace lift_0054C260 {
+// @name ManagedDisplayList<RenderableList>::vfunc_2
+// @class ManagedDisplayList<RenderableList>
+// @summary Walks the pointer range at this+0x18..this+0x1C and calls virtual slot 2 (no args) on each element.
+// @field ManagedDisplayList<RenderableList> +0x18 void** field_0x18
+// @field ManagedDisplayList<RenderableList> +0x1C void** field_0x1C
+void fn_0054C260(void* self) {
+    uint8_t* obj = reinterpret_cast<uint8_t*>(self);
+
+    void** cur = lift_field<void**>(obj, 0x18);
+    while (cur != lift_field<void**>(obj, 0x1C)) {
+        void* elem = *cur;
+        void** vtbl = *reinterpret_cast<void***>(elem);
+        using Slot2Fn = void(__thiscall*)(void*);
+        reinterpret_cast<Slot2Fn>(vtbl[2])(elem);
+        ++cur;
+    }
+}
+} // namespace lift_0054C260
