@@ -1694,3 +1694,42 @@ unsigned char* fn_007CAF30(unsigned char* out, uint32_t arg2, float a, float x, 
     return out;
 }
 } // namespace lift_007CAF30
+
+// [0x007CD960]
+namespace lift_007CD960 {
+// @name Quat::toMatrix4x3
+// @class Quat
+// @summary Builds a 4x3 matrix representation from a quaternion's four float components.
+// @field Quat +0x00 float w
+// @field Quat +0x04 float x
+// @field Quat +0x08 float y
+// @field Quat +0x0c float z
+
+
+float mem_read_f32(uint32_t addr);
+void mem_write_f32(uint32_t addr, float val);
+
+void sub_007CD960(uint32_t ecx, uint32_t eax) {
+    float q0 = mem_read_f32(ecx + 0x00);
+    float q1 = mem_read_f32(ecx + 0x04);
+    float q2 = mem_read_f32(ecx + 0x08);
+    float q3 = mem_read_f32(ecx + 0x0c);
+
+    mem_write_f32(eax + 0x00, -q1);
+    mem_write_f32(eax + 0x10, -q2);
+    mem_write_f32(eax + 0x20, -q3);
+
+    mem_write_f32(eax + 0x2c, q0);
+    mem_write_f32(eax + 0x18, q0);
+    mem_write_f32(eax + 0x04, q0);
+
+    mem_write_f32(eax + 0x28, -q1);
+    mem_write_f32(eax + 0x1c, q1);
+
+    mem_write_f32(eax + 0x0c, -q2);
+    mem_write_f32(eax + 0x24, q2);
+
+    mem_write_f32(eax + 0x14, -q3);
+    mem_write_f32(eax + 0x08, q3);
+}
+} // namespace lift_007CD960
