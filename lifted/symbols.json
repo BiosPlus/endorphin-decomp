@@ -6728,6 +6728,12 @@
     "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 1 (offset +0x4) with the same this pointer.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00468750": {
+    "name": "sub_00468750",
+    "signature": "uint8_t fn_00468750(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00468770 (ForwardIfFlagSet).",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00468770": {
     "name": "ForwardIfFlagSet",
     "signature": "uint8_t fn_00468770(void* self)",
@@ -55697,6 +55703,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x4C and tail-calls sub_006E7460.",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E6350": {
+    "name": "sub_006E6350",
+    "signature": "void* fn_006E6350(void* self, uint32_t arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x0071B010 (ForwardToSubobject10).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E63C0": {
     "name": "initHugeVec3",
     "signature": "void sub_006E63C0()",
@@ -55823,6 +55835,12 @@
     "name": "sub_006E7390",
     "signature": "void* fn_006E7390(void* self, uint32_t arg1)",
     "summary": "Auto-lifted identical-shape clone of 0x006D2390 (ForwardArgToCalleeReturnThis).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
+  "0x006E7430": {
+    "name": "sub_006E7430",
+    "signature": "void* fn_006E7430(void* self, uint32_t arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x0071B010 (ForwardToSubobject10).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
   "0x006E7460": {
@@ -61928,11 +61946,23 @@
     "summary": "Returns 1 if any of the six bytes at self[0..5] is nonzero, otherwise 0.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x00714910": {
+    "name": "sub_00714910",
+    "signature": "void* fn_00714910(void* self, uint32_t arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x0071B010 (ForwardToSubobject10).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00714920": {
     "name": "Unknown::CallArgWithSubObjectAddr",
     "class": "Unknown",
     "signature": "void* fn_00714920(void* self, void* arg)",
     "summary": "Calls 0x006D2390 with arg as this and (self + 0x08) as its stack argument, then returns arg.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
+  "0x00714940": {
+    "name": "sub_00714940",
+    "signature": "void* fn_00714940(void* self, uint32_t arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x0071B010 (ForwardToSubobject10).",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x00714950": {
@@ -62418,6 +62448,12 @@
     "summary": "Calls 0x006D2390 with arg as this and (self + 0x10) as its stack argument, then returns arg.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x0071B040": {
+    "name": "sub_0071B040",
+    "signature": "void* fn_0071B040(void* self, uint32_t arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x0071B010 (ForwardToSubobject10).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071B050": {
     "name": "sub_0071B050",
     "class": "Unknown",
@@ -62589,6 +62625,12 @@
     "class": "Unknown",
     "signature": "extern DWORD __fastcall fn_0071C2E0(void* self, int edx_unused, DWORD arg)",
     "summary": "Auto-lifted identical-shape clone of 0x0070EC30 (Unknown::ForwardSubObjectAt0x168).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
+  "0x0071C320": {
+    "name": "sub_0071C320",
+    "signature": "void* fn_0071C320(void* self, uint32_t arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x0071B010 (ForwardToSubobject10).",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x0071C330": {

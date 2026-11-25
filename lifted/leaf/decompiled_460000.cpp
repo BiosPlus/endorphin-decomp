@@ -1294,3 +1294,31 @@ uint8_t fn_00468770(void* self) {
     return 0;
 }
 } // namespace lift_00468770
+
+// [0x00468750] sub_00468750 (17 bytes)
+namespace lift_00468750 {
+// @name sub_00468750
+// @summary Auto-lifted identical-shape clone of 0x00468770 (ForwardIfFlagSet).
+namespace lift_00468770 {
+// Known callee 0x0046FE70: sub_0046FE70 (Auto-lifted identical-shape clone of 0x005355B0 (OglRenderer::vfunc_71).)
+extern uint8_t ext_0046FE50(void* self);
+// Known callee 0x0044B150: sub_0044B150 (Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).)
+extern void ext_0044B150();
+extern int mem_00ACDB40;
+
+// @name ForwardIfFlagSet
+// @summary If the byte at self+0x10 is nonzero, tail-forwards to ext_0046FE70 on the object at self+0x14; otherwise returns 0.
+// @field Unknown +0x10 uint8_t field_0x10
+// @field Unknown +0x14 void* field_0x14
+uint8_t fn_00468750(void* self) {
+    // Referenced only to keep the link-time dependency explicit; never called here.
+    (void)&ext_0044B150;
+    (void)&mem_00ACDB40;
+    if (lift_field<uint8_t>(self, 0x10) != 0) {
+        void* target = lift_field<void*>(self, 0x14);
+        return ext_0046FE50(target);
+    }
+    return 0;
+}
+} // namespace lift_00468770
+} // namespace lift_00468750

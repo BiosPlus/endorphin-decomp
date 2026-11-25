@@ -1959,3 +1959,83 @@ void* fn_0071B010(void* self, uint32_t arg1) {
     return ext_007873F0(reinterpret_cast<char*>(self) + 0x10, arg1);
 }
 } // namespace lift_0071B010
+
+// [0x00714910] sub_00714910 (16 bytes)
+namespace lift_00714910 {
+// @name sub_00714910
+// @summary Auto-lifted identical-shape clone of 0x0071B010 (ForwardToSubobject10).
+namespace lift_0071B010 {
+extern void* ext_007873F0(void* self, uint32_t arg1);
+extern uint32_t ext_006FB690(void* self, uint32_t a, uint32_t b);
+extern uint32_t ext_006FB6B0(void* self, uint32_t a, uint32_t b);
+
+// @name ForwardToSubobject10
+// @summary Calls sub_007873F0 on the embedded subobject at this+0x10 with one argument.
+void* fn_00714910(void* self, uint32_t arg1) {
+    // ext_006FB690 / ext_006FB6B0 are not called by this function's asm (only reached via 007873F0).
+    (void)&ext_006FB690;
+    (void)&ext_006FB6B0;
+    return ext_007873F0(reinterpret_cast<char*>(self) + 0x8, arg1);
+}
+} // namespace lift_0071B010
+} // namespace lift_00714910
+
+// [0x00714940] sub_00714940 (16 bytes)
+namespace lift_00714940 {
+// @name sub_00714940
+// @summary Auto-lifted identical-shape clone of 0x0071B010 (ForwardToSubobject10).
+namespace lift_0071B010 {
+extern void* ext_007873F0(void* self, uint32_t arg1);
+extern uint32_t ext_006FB690(void* self, uint32_t a, uint32_t b);
+extern uint32_t ext_006FB6B0(void* self, uint32_t a, uint32_t b);
+
+// @name ForwardToSubobject10
+// @summary Calls sub_007873F0 on the embedded subobject at this+0x10 with one argument.
+void* fn_00714940(void* self, uint32_t arg1) {
+    // ext_006FB690 / ext_006FB6B0 are not called by this function's asm (only reached via 007873F0).
+    (void)&ext_006FB690;
+    (void)&ext_006FB6B0;
+    return ext_007873F0(reinterpret_cast<char*>(self) + 0x28, arg1);
+}
+} // namespace lift_0071B010
+} // namespace lift_00714940
+
+// [0x0071B040] sub_0071B040 (16 bytes)
+namespace lift_0071B040 {
+// @name sub_0071B040
+// @summary Auto-lifted identical-shape clone of 0x0071B010 (ForwardToSubobject10).
+namespace lift_0071B010 {
+extern void* ext_007873F0(void* self, uint32_t arg1);
+extern uint32_t ext_006FB690(void* self, uint32_t a, uint32_t b);
+extern uint32_t ext_006FB6B0(void* self, uint32_t a, uint32_t b);
+
+// @name ForwardToSubobject10
+// @summary Calls sub_007873F0 on the embedded subobject at this+0x10 with one argument.
+void* fn_0071B040(void* self, uint32_t arg1) {
+    // ext_006FB690 / ext_006FB6B0 are not called by this function's asm (only reached via 007873F0).
+    (void)&ext_006FB690;
+    (void)&ext_006FB6B0;
+    return ext_007873F0(reinterpret_cast<char*>(self) + 0x30, arg1);
+}
+} // namespace lift_0071B010
+} // namespace lift_0071B040
+
+// [0x0071C320] sub_0071C320 (16 bytes)
+namespace lift_0071C320 {
+// @name sub_0071C320
+// @summary Auto-lifted identical-shape clone of 0x0071B010 (ForwardToSubobject10).
+namespace lift_0071B010 {
+extern void* ext_006B9EC0(void* self, uint32_t arg1);
+extern uint32_t ext_006FB690(void* self, uint32_t a, uint32_t b);
+extern uint32_t ext_006FB6B0(void* self, uint32_t a, uint32_t b);
+
+// @name ForwardToSubobject10
+// @summary Calls sub_007873F0 on the embedded subobject at this+0x10 with one argument.
+void* fn_0071C320(void* self, uint32_t arg1) {
+    // ext_006FB690 / ext_006FB6B0 are not called by this function's asm (only reached via 007873F0).
+    (void)&ext_006FB690;
+    (void)&ext_006FB6B0;
+    return ext_006B9EC0(reinterpret_cast<char*>(self) + 0x50, arg1);
+}
+} // namespace lift_0071B010
+} // namespace lift_0071C320

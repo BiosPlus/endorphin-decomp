@@ -1,0 +1,27 @@
+{
+  "va": "0x00468750",
+  "size": 17,
+  "orig_symbol": "sub_00468750",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "sub_00468750",
+  "signature": "uint8_t fn_00468750(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00468770 (ForwardIfFlagSet).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T11:17:22Z"
+}

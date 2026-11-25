@@ -23,6 +23,7 @@ void* fn_006E7390(void* self, uint32_t arg1) {
 } // namespace lift_006E7390
 #include <cstdlib>
 #include <cmath>
+#include <cstddef>
 
 // [0x006E67C0]
 namespace lift_006E67C0 {
@@ -1349,3 +1350,43 @@ extern void __fastcall fn_006E8440(void* self) {
     *reinterpret_cast<void**>(self) = nullptr;
 }
 } // namespace lift_006E8440
+
+// [0x006E6350] sub_006E6350 (16 bytes)
+namespace lift_006E6350 {
+// @name sub_006E6350
+// @summary Auto-lifted identical-shape clone of 0x0071B010 (ForwardToSubobject10).
+namespace lift_0071B010 {
+extern void* ext_006B9EC0(void* self, uint32_t arg1);
+extern uint32_t ext_006FB690(void* self, uint32_t a, uint32_t b);
+extern uint32_t ext_006FB6B0(void* self, uint32_t a, uint32_t b);
+
+// @name ForwardToSubobject10
+// @summary Calls sub_007873F0 on the embedded subobject at this+0x10 with one argument.
+void* fn_006E6350(void* self, uint32_t arg1) {
+    // ext_006FB690 / ext_006FB6B0 are not called by this function's asm (only reached via 007873F0).
+    (void)&ext_006FB690;
+    (void)&ext_006FB6B0;
+    return ext_006B9EC0(reinterpret_cast<char*>(self) + 0x4C, arg1);
+}
+} // namespace lift_0071B010
+} // namespace lift_006E6350
+
+// [0x006E7430] sub_006E7430 (16 bytes)
+namespace lift_006E7430 {
+// @name sub_006E7430
+// @summary Auto-lifted identical-shape clone of 0x0071B010 (ForwardToSubobject10).
+namespace lift_0071B010 {
+extern void* ext_006B9EC0(void* self, uint32_t arg1);
+extern uint32_t ext_006FB690(void* self, uint32_t a, uint32_t b);
+extern uint32_t ext_006FB6B0(void* self, uint32_t a, uint32_t b);
+
+// @name ForwardToSubobject10
+// @summary Calls sub_007873F0 on the embedded subobject at this+0x10 with one argument.
+void* fn_006E7430(void* self, uint32_t arg1) {
+    // ext_006FB690 / ext_006FB6B0 are not called by this function's asm (only reached via 007873F0).
+    (void)&ext_006FB690;
+    (void)&ext_006FB6B0;
+    return ext_006B9EC0(reinterpret_cast<char*>(self) + 0x8, arg1);
+}
+} // namespace lift_0071B010
+} // namespace lift_006E7430

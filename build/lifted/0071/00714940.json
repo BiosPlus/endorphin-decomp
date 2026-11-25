@@ -1,0 +1,13 @@
+{
+  "va": "0x00714940",
+  "size": 16,
+  "orig_symbol": "sub_00714940",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "sub_00714940",
+  "signature": "void* fn_00714940(void* self, uint32_t arg1)",
+  "summary": "Auto-lifted identical-shape clone of 0x0071B010 (ForwardToSubobject10).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T11:17:22Z"
+}
