@@ -9941,6 +9941,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005F0D40 (NMData::MagnetJointData::vfunc_59).",
     "lifted_path": "lifted/Commands/CreateTriggeredEventCommand.cpp"
   },
+  "0x0048E270": {
+    "name": "Unknown::InitWithArgsAndCaptureHigh",
+    "class": "Unknown",
+    "signature": "void* fn_0048E270(void* self, uint32_t a, uint32_t b)",
+    "summary": "Initializes self as a two-argument object: sets vtable 0x0093E5D0, stores both arguments, then copies the high dword of an 8-byte value from sub_0046FD70 into +0x18 and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048E2E0": {
     "name": "Unknown::InitWithVtblAndFields",
     "class": "Unknown",

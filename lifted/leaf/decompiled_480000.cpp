@@ -1927,3 +1927,32 @@ std::string* fn_00486F20(std::string* first, std::string* last) {
     return dst + 1;
 }
 } // namespace lift_00486F20
+
+// [0x0048E270] sub_0048E270 (102 bytes)
+namespace lift_0048E270 {
+// Known callee 0x006657F0: Unknown::InitVtblAndArg (Stores the vtable pointer (0x00987A04), a stack argument at +0x04, and zeroes +0x08/+0x0C; returns self.)
+extern void* ext_006657F0(void* self, uint32_t arg);
+// Known callee 0x0046FD70: sub_0046FD70 (Copies an 8-byte value from nested member pointers into the output buffer and returns the output pointer.)
+extern void* ext_0046FD70(uint32_t self, void* out_ptr);
+
+// @name Unknown::InitWithArgsAndCaptureHigh
+// @class Unknown
+// @summary Initializes self as a two-argument object: sets vtable 0x0093E5D0, stores both arguments, then copies the high dword of an 8-byte value from sub_0046FD70 into +0x18 and returns self.
+// @field Unknown +0x00 uint32_t vtbl
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+void* fn_0048E270(void* self, uint32_t a, uint32_t b) {
+    ext_006657F0(self, 1);
+
+    lift_field<uint32_t>(self, 0x00) = 0x0093E5D0u;
+    lift_field<uint32_t>(self, 0x10) = a;
+    lift_field<uint32_t>(self, 0x14) = b;
+
+    alignas(8) uint8_t out[8] = {};
+    void* result = ext_0046FD70(a, out);
+    lift_field<uint32_t>(self, 0x18) = lift_field<uint32_t>(result, 0x04);
+
+    return self;
+}
+} // namespace lift_0048E270

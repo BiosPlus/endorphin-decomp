@@ -1,0 +1,40 @@
+{
+  "va": "0x0048E270",
+  "size": 102,
+  "orig_symbol": "sub_0048E270",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "Unknown::InitWithArgsAndCaptureHigh",
+  "class": "Unknown",
+  "signature": "void* fn_0048E270(void* self, uint32_t a, uint32_t b)",
+  "summary": "Initializes self as a two-argument object: sets vtable 0x0093E5D0, stores both arguments, then copies the high dword of an 8-byte value from sub_0046FD70 into +0x18 and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtbl"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:45:48Z"
+}
