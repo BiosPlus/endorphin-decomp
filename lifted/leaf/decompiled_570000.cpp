@@ -1185,3 +1185,35 @@ void* fn_00575EF0(void* first, void* last, void* dest_last) {
     );
 }
 } // namespace lift_00575EF0
+
+// [0x0057E9E0]
+namespace lift_0057E9E0 {
+// @name Unknown::eraseStringVectorRange
+// @class Unknown
+// @summary Erases [first, last) from a 0x14-byte-record vector by shifting [last, end) over first, destroying the trailing elements, and returning the updated iterator.
+// @field Unknown +0x08 void* end
+
+void ext_00558F20(void* first, void* last);
+void* ext_0057E2C0(const void* first, const void* last, void* out);
+extern void (*mem_00925134)();
+
+struct VectorIterator {
+    void* container;
+    void* ptr;
+};
+
+VectorIterator* __thiscall fn_0057E9E0(void* self, VectorIterator* out_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr) {
+    if (!first_container || first_container != last_container) {
+        mem_00925134();
+    }
+    if (first_ptr != last_ptr) {
+        void* end_ptr = *(void**)((char*)self + 0x08);
+        void* new_end = ext_0057E2C0(last_ptr, end_ptr, first_ptr);
+        ext_00558F20(new_end, end_ptr);
+        *(void**)((char*)self + 0x08) = new_end;
+    }
+    out_iter->container = first_container;
+    out_iter->ptr = first_ptr;
+    return out_iter;
+}
+} // namespace lift_0057E9E0

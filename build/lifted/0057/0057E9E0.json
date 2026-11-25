@@ -1,0 +1,22 @@
+{
+  "va": "0x0057E9E0",
+  "size": 89,
+  "orig_symbol": "sub_0057E9E0",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "Unknown::eraseStringVectorRange",
+  "class": "Unknown",
+  "signature": "VectorIterator* __thiscall fn_0057E9E0(void* self, VectorIterator* out_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr)",
+  "summary": "Erases [first, last) from a 0x14-byte-record vector by shifting [last, end) over first, destroying the trailing elements, and returning the updated iterator.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:22:15Z"
+}

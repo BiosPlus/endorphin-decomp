@@ -223,7 +223,7 @@ struct Unknown_Fields {
     // +0x8   DWORD                    end  (evidence: 0x005991D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 end  (evidence: 0x0067F9D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t*                 end  (evidence: 0x0041CD10) // CONFLICT: multiple definitions at +0x8
-    // +0x8   void*                    end  (evidence: 0x0050B960, 0x0050C4D0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    end  (evidence: 0x0050B960, 0x0050C4D0, 0x0057E9E0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 endPtr  (evidence: 0x0041CCC0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t*                 entriesEnd  (evidence: 0x00688B50, 0x0068BDF0) // CONFLICT: multiple definitions at +0x8
     // +0x8   BOOLEAN                  field_0x08  (evidence: 0x0041FD20) // CONFLICT: multiple definitions at +0x8
