@@ -47308,3 +47308,35 @@ void fn_005D7040(void* const* arg) {
     ext_006A6DD2(exception, mem_009DEC1C);
 }
 } // namespace lift_005D7040
+
+// [0x005B2270] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam1(void) const, 0>::vfunc_5 (48 bytes)
+namespace lift_005B2270 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Original call passes one float argument on the stack.
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exceptionObject, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<Geometry, float, getParam1>::vfunc_5
+// @class ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam1(void) const, 0>
+// @summary Reads Geometry* from the value pointer; if non-null, forwards Geometry+0x14 to a default-message helper, then always throws a DerivedException. Never returns normally.
+// @field ExprParser::ReadMethodType<Geometry, float, getParam1, 0> +0x00 void* field_0x00
+// @field Geometry +0x14 float field_0x14
+void fn_005B2270(void* self) {
+    // Original: eax = *(void**)self; if (eax) { helper(*(float*)(eax + 0x14)); }
+    void* geometry = lift_field<void*>(self, 0);
+    if (geometry != nullptr) {
+        float value = lift_field<float>(geometry, 0x14);
+        ext_0046C4E0(value);
+    }
+
+    // Original: construct DerivedException in a 0x28-byte stack buffer, then throw it
+    // with ThrowInfo at 0x009DEC1C.
+    alignas(8) unsigned char exceptionObject[0x28];
+    ext_0046C3C0(exceptionObject);
+    const void* throwInfo = reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu));
+    ext_006A6DD2(exceptionObject, throwInfo);
+}
+} // namespace lift_005B2270
