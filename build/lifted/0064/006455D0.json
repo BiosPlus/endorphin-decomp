@@ -1,0 +1,13 @@
+{
+  "va": "0x006455D0",
+  "size": 93,
+  "orig_symbol": "sub_006455D0",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "std_allocate_array_12 (sub_006455D0)",
+  "signature": "void* fn_006455D0(uint32_t count)",
+  "summary": "Allocate storage for `count` 12-byte elements; throws std::length_error when 12*count would overflow the 32-bit size check (0xFFFFFFFF / count \u003c 24). count == 0 yields a zero-byte allocation.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:18:18Z"
+}

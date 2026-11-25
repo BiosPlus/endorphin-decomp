@@ -23,6 +23,7 @@ uint32_t fn_00648480(void* self) {
 } // namespace lift_00648480
 #include <cstdint>
 #include <cstring>
+#include <stdexcept>
 
 // [0x00647F00] sub_00647F00 (18 bytes)
 namespace lift_00647F00 {
@@ -1845,3 +1846,24 @@ void fn_00642600(void* self) {
     ext_006425E0(self);
 }
 } // namespace lift_00642600
+
+// [0x006455D0] sub_006455D0 (93 bytes)
+namespace lift_006455D0 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void ext_006A5C62();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+// IAT slot for MSVCR80!std::exception::exception(const char* const&) (unused in portable lift).
+extern int mem_00925130;
+
+// @name std_allocate_array_12 (sub_006455D0)
+// @summary Allocate storage for `count` 12-byte elements; throws std::length_error when 12*count would overflow the 32-bit size check (0xFFFFFFFF / count < 24). count == 0 yields a zero-byte allocation.
+// Note: the original calls thunks whose signature is void(void) in the IAT; their
+// behaviour (allocate / throw) is expressed here with standard C++ equivalents.
+void* fn_006455D0(uint32_t count) {
+    if (count != 0 && (0xFFFFFFFFu / count) < 24u) {
+        throw std::length_error("vector too long");
+    }
+    return ::operator new(static_cast<size_t>(count) * 12u);
+}
+} // namespace lift_006455D0

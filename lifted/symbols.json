@@ -39416,6 +39416,12 @@
     "summary": "Returns (end - begin) / 6 for a range stored at +4 (begin) and +8 (end); 0 if begin is null.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x006455D0": {
+    "name": "std_allocate_array_12 (sub_006455D0)",
+    "signature": "void* fn_006455D0(uint32_t count)",
+    "summary": "Allocate storage for `count` 12-byte elements; throws std::length_error when 12*count would overflow the 32-bit size check (0xFFFFFFFF / count \u003c 24). count == 0 yields a zero-byte allocation.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00645A80": {
     "name": "NullRelationship::vfunc_48",
     "class": "NullRelationship",
