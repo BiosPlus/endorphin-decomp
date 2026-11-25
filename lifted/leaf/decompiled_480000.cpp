@@ -28,6 +28,7 @@ void fn_00480750(void* self) {
 } // namespace lift_00594790
 } // namespace lift_00480750
 #include <cstdint>
+#include <cstring>
 
 // [0x0048CCA0] sub_0048CCA0 (27 bytes)
 namespace lift_0048CCA0 {
@@ -1154,3 +1155,33 @@ void fn_0048E310(void* self) {
     ext_00665810(self);
 }
 } // namespace lift_0048E310
+
+// [0x00480770] sub_00480770 (85 bytes)
+namespace lift_00480770 {
+// @name copyRecordRangeBackward_00480770
+// @summary Copies 16-byte (4-float) records in [first, last) backward so they end at dstEnd; returns new begin of the destination.
+// @field: none (operates on raw float records, no struct field offsets)
+float* fn_00480770(const float* first, const float* last, float* dstEnd) {
+    const char* srcFirst = reinterpret_cast<const char*>(first);
+    const char* srcLast  = reinterpret_cast<const char*>(last);
+    char*       dstLast  = reinterpret_cast<char*>(dstEnd);
+
+    // Whole 16-byte records in [first, last); remainder bytes are ignored.
+    const std::ptrdiff_t bytes = srcLast - srcFirst;
+    const std::ptrdiff_t count = bytes >> 4;
+    const std::ptrdiff_t span  = count << 4;
+
+    if (count > 0) {
+        for (std::ptrdiff_t j = 1; j <= count; ++j) {
+            const char* src = srcLast - 16 * j;
+            char*       dst = dstLast - 16 * j;
+            // Copy one record (4 floats) in ascending order within the record.
+            for (int f = 0; f < 4; ++f) {
+                std::memcpy(dst + 4 * f, src + 4 * f, sizeof(float));
+            }
+        }
+    }
+
+    return reinterpret_cast<float*>(dstLast - span);
+}
+} // namespace lift_00480770

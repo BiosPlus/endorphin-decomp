@@ -8190,6 +8190,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00480770": {
+    "name": "copyRecordRangeBackward_00480770",
+    "signature": "float* fn_00480770(const float* first, const float* last, float* dstEnd)",
+    "summary": "Copies 16-byte (4-float) records in [first, last) backward so they end at dstEnd; returns new begin of the destination.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x004809B0": {
     "name": "sub_004809B0",
     "signature": "uint32_t __thiscall sub_004809B0(uint32_t self)",

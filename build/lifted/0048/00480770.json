@@ -1,0 +1,13 @@
+{
+  "va": "0x00480770",
+  "size": 85,
+  "orig_symbol": "sub_00480770",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "copyRecordRangeBackward_00480770",
+  "signature": "float* fn_00480770(const float* first, const float* last, float* dstEnd)",
+  "summary": "Copies 16-byte (4-float) records in [first, last) backward so they end at dstEnd; returns new begin of the destination.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:08:37Z"
+}
