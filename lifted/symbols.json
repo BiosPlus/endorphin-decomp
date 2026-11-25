@@ -42018,6 +42018,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006601E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00660710": {
+    "name": "SortHeapTail_00660710",
+    "signature": "void fn_00660710(std::uint8_t* last, std::uint8_t* first)",
+    "summary": "Sort-heap style tail loop over 32-byte elements: repeatedly saves the element at the shrinking end and calls ext_0065FF50 to sift it into the heap rooted at first.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x006616B0": {
     "name": "forwardVtableSlot0x18",
     "signature": "int __thiscall sub_006616B0(void* thisPtr)",

@@ -2146,3 +2146,36 @@ void __thiscall sub_00663060(void* self) {
     dtor(base);
 }
 } // namespace lift_00663060
+
+// [0x00660710] sub_00660710 (95 bytes)
+namespace lift_00660710 {
+// Element type handled by the loop: 32 bytes (0x20), sized from the sar 5 index math.
+struct SortElem32 {
+    std::uint8_t bytes[0x20];
+};
+
+extern void ext_0065FF50(void* first, void* hole, void* hole2, SortElem32 value);
+
+// @name SortHeapTail_00660710
+// @summary Sort-heap style tail loop over 32-byte elements: repeatedly saves the element at the shrinking end and calls ext_0065FF50 to sift it into the heap rooted at first.
+// @field UnknownElem +0x1c int field_0x1c
+void fn_00660710(std::uint8_t* last, std::uint8_t* first) {
+    const std::ptrdiff_t n = (last - first) >> 5;
+    if (n <= 1) {
+        return;
+    }
+
+    for (std::ptrdiff_t k = 1;; ++k) {
+        std::uint8_t* hole = last - 0x20 * k;
+
+        SortElem32 value;
+        std::memcpy(value.bytes, hole, sizeof(value.bytes));
+
+        ext_0065FF50(first, hole, hole, value);
+
+        if (n - k <= 1) {
+            break;
+        }
+    }
+}
+} // namespace lift_00660710
