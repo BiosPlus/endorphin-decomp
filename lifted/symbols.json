@@ -55420,6 +55420,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x007155B0": {
+    "name": "storeThreeDoublesIntoSubobject",
+    "class": "unknown",
+    "signature": "void fn_007155B0(void* self, double a, double b, double c)",
+    "summary": "Stores three double arguments into the subobject at self+0x10 (offsets +0x270, +0x278, +0x280), then calls the empty stub ext_006D80A0 with a pointer to the first argument.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00715650": {
     "name": "sub_00715650",
     "class": "Unknown",

@@ -1,0 +1,40 @@
+{
+  "va": "0x007155B0",
+  "size": 80,
+  "orig_symbol": "sub_007155B0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "storeThreeDoublesIntoSubobject",
+  "class": "unknown",
+  "signature": "void fn_007155B0(void* self, double a, double b, double c)",
+  "summary": "Stores three double arguments into the subobject at self+0x10 (offsets +0x270, +0x278, +0x280), then calls the empty stub ext_006D80A0 with a pointer to the first argument.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x270",
+      "type": "double",
+      "name": "field_0x270"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x278",
+      "type": "double",
+      "name": "field_0x278"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x280",
+      "type": "double",
+      "name": "field_0x280"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:51:53Z"
+}

@@ -28,7 +28,7 @@ struct unknown_Fields {
     // +0x10  uint32_t                 field_0x10  (evidence: 0x004925D0, 0x007D6660) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint8_t                  field_0x10  (evidence: 0x00640930) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint8_t[]                field_0x10  (evidence: 0x0071B010, 0x0071F070) // CONFLICT: multiple definitions at +0x10
-    // +0x10  void*                    field_0x10  (evidence: 0x004584A0, 0x00458DF0, 0x0045BBE0) // CONFLICT: multiple definitions at +0x10
+    // +0x10  void*                    field_0x10  (evidence: 0x004584A0, 0x00458DF0, 0x0045BBE0, 0x007155B0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint8_t                  field_0x10[]  (evidence: 0x00688B50, 0x0068BDF0, 0x0068BF00) // CONFLICT: multiple definitions at +0x10
     // +0x14  float                    field_0x14  (evidence: 0x007C8490, 0x007CA8A0) // CONFLICT: multiple definitions at +0x14
     // +0x14  int32_t                  field_0x14  (evidence: 0x007D6660) // CONFLICT: multiple definitions at +0x14
@@ -73,6 +73,9 @@ struct unknown_Fields {
     // +0x1D0 float                    field_0x1D0  (evidence: 0x0046FC10)
     // +0x1E0 std::string              field_0x1e0  (evidence: 0x004499D0)
     // +0x26C void*                    field_0x26C  (evidence: 0x0046FC10)
+    // +0x270 double                   field_0x270  (evidence: 0x007155B0)
+    // +0x278 double                   field_0x278  (evidence: 0x007155B0)
+    // +0x280 double                   field_0x280  (evidence: 0x007155B0)
     // +0x15A8 uint8_t                  field_0x15A8  (evidence: 0x0071C3A0)
 };
 } // namespace lifted_layout

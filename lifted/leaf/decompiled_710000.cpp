@@ -1410,3 +1410,25 @@ extern double __thiscall fn_0071C250(void* self, double arg0, double arg1, doubl
     return (x / halfTan) * mem_00993828;
 }
 } // namespace lift_0071C250
+
+// [0x007155B0] sub_007155B0 (80 bytes)
+namespace lift_007155B0 {
+// Known callee 0x006D80A0: sub_006D80A0 (Empty function (returns immediately).)
+extern void ext_006D80A0();
+
+// @name storeThreeDoublesIntoSubobject
+// @class unknown
+// @summary Stores three double arguments into the subobject at self+0x10 (offsets +0x270, +0x278, +0x280), then calls the empty stub ext_006D80A0 with a pointer to the first argument.
+// @field unknown +0x10 void* field_0x10
+// @field unknown +0x270 double field_0x270
+// @field unknown +0x278 double field_0x278
+// @field unknown +0x280 double field_0x280
+void fn_007155B0(void* self, double a, double b, double c) {
+    unsigned char* sub = *reinterpret_cast<unsigned char**>(static_cast<unsigned char*>(self) + 0x10);
+    *reinterpret_cast<double*>(sub + 0x270) = a;
+    *reinterpret_cast<double*>(sub + 0x278) = b;
+    *reinterpret_cast<double*>(sub + 0x280) = c;
+    using StubFn = void(__thiscall*)(void*);
+    reinterpret_cast<StubFn>(&ext_006D80A0)(&a);
+}
+} // namespace lift_007155B0
