@@ -54757,6 +54757,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00723A30 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00789940": {
+    "name": "Unknown::BuildCrc32MsbTable",
+    "class": "Unknown",
+    "signature": "void fn_00789940(void* self)",
+    "summary": "Fills a 256-entry MSB-first CRC-32 table (polynomial 0x04C11DB7) starting at +0x18.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00789BA0": {
     "name": "sub_00789BA0",
     "signature": "extern \"C\" void __fastcall fn_00789BA0(void* self, int edx_unused, int32_t value)",

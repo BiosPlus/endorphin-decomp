@@ -313,6 +313,7 @@ struct Unknown_Fields {
     // +0x18  int32_t                  field_0x18  (evidence: 0x005ACC50, 0x005ACEE0, 0x006D8520, 0x006E0090, 0x0078CB90) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t                 field_0x18  (evidence: 0x004646A0, 0x00468660, 0x00468730, 0x0048E2E0, 0x004E7E90, 0x00503CA0, 0x00503CD0, 0x00621B30, 0x00678DE0, 0x006DEEA0, 0x006DEEB0, 0x006E0050, 0x006E72A0, 0x006FC7E0, 0x007126A0, 0x0074B080, 0x0078CB80, 0x007CD490, 0x007CD550) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint8_t                  field_0x18  (evidence: 0x00538530, 0x00538550, 0x0053F6A0, 0x00553980, 0x00553A10) // CONFLICT: multiple definitions at +0x18
+    // +0x18  uint32_t                 field_0x18[256]  (evidence: 0x00789940) // CONFLICT: multiple definitions at +0x18
     // +0x18  int32_t                  flag  (evidence: 0x007D4720) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t                 value  (evidence: 0x00790DC0) // CONFLICT: multiple definitions at +0x18
     // +0x19  uint8_t                  field_0x19  (evidence: 0x00538530, 0x00538550, 0x0053F6A0, 0x00553980, 0x00553A10)

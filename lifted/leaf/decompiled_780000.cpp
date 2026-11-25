@@ -1017,3 +1017,26 @@ int fn_007839B0(void* self) {
     return 0;
 }
 } // namespace lift_007839B0
+
+// [0x00789940] sub_00789940 (64 bytes)
+namespace lift_00789940 {
+// @name Unknown::BuildCrc32MsbTable
+// @class Unknown
+// @summary Fills a 256-entry MSB-first CRC-32 table (polynomial 0x04C11DB7) starting at +0x18.
+// @field Unknown +0x18 uint32_t field_0x18[256]
+void fn_00789940(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    uint32_t* table = reinterpret_cast<uint32_t*>(base + 0x18);
+    for (uint32_t i = 0; i < 256; ++i) {
+        uint32_t crc = i << 24;
+        for (int bit = 0; bit < 8; ++bit) {
+            if (crc & 0x80000000u) {
+                crc = (crc << 1) ^ 0x04C11DB7u;
+            } else {
+                crc <<= 1;
+            }
+        }
+        table[i] = crc;
+    }
+}
+} // namespace lift_00789940
