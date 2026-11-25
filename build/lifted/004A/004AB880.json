@@ -1,0 +1,13 @@
+{
+  "va": "0x004AB880",
+  "size": 87,
+  "orig_symbol": "sub_004AB880",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "ensureStaticObjectInitialized_004AB880",
+  "signature": "extern \"C\" DWORD mem_00ADFA04; // one-time-init guard flags (bit 0 = initialized/in progress) extern \"C\" DWORD mem_00ADFA00; // static object storage; first DWORD holds the object's vtable after init void* fn_004AB880()",
+  "summary": "One-time guarded initializer for the static object at 0x00ADFA00; returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:30:13Z"
+}

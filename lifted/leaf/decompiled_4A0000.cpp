@@ -678,3 +678,24 @@ DWORD* fn_004ABAC0(DWORD* dst, DWORD value) {
 }
 } // namespace lift_0046F6A0
 } // namespace lift_004ABAC0
+
+// [0x004AB880] sub_004AB880 (87 bytes)
+namespace lift_004AB880 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00ADFA04; // one-time-init guard flags (bit 0 = initialized/in progress)
+extern DWORD mem_00ADFA00; // static object storage; first DWORD holds the object's vtable after init
+
+// @name ensureStaticObjectInitialized_004AB880
+// @summary One-time guarded initializer for the static object at 0x00ADFA00; returns its address.
+// The original MSVC SEH frame (fs:[0] push/pop around the init call) is dropped; the guard bit is set before the
+// init call, matching the original ordering, so a throw from the callee still leaves the guard set.
+void* fn_004AB880() {
+    if ((mem_00ADFA04 & 1u) == 0) {
+        mem_00ADFA04 |= 1u;
+        ext_0067A670(&mem_00ADFA00, 0u);
+        mem_00ADFA00 = 0x009417D4u;
+    }
+    return &mem_00ADFA00;
+}
+} // namespace lift_004AB880

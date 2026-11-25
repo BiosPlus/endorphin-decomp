@@ -11918,6 +11918,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType\u003cRuntimeEngine, int, getNumTicksToRun, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x004AB880": {
+    "name": "ensureStaticObjectInitialized_004AB880",
+    "signature": "extern \"C\" DWORD mem_00ADFA04; // one-time-init guard flags (bit 0 = initialized/in progress) extern \"C\" DWORD mem_00ADFA00; // static object storage; first DWORD holds the object's vtable after init void* fn_004AB880()",
+    "summary": "One-time guarded initializer for the static object at 0x00ADFA00; returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004ABA70": {
     "name": "FindStringInRangeToPair",
     "signature": "void fn_004ABA70(StringFindResult* out, void* owner, void* first, void* unused, void* last, const void* value)",
