@@ -1230,3 +1230,88 @@ TreeMapLookupResult fn_004280C0(void* self, const void* key) {
     return TreeMapLookupResult{self, node};
 }
 } // namespace lift_004280C0
+
+// [0x004274E0]
+namespace lift_004274E0 {
+// @name copyBackward36
+// @summary Copies a range of 36-byte structs backward, assigning their embedded std::string fields.
+
+extern uint32_t mem_00924FDC;
+
+uint32_t sub_004274E0(uint32_t first, uint32_t last, uint32_t d_last) {
+    uint32_t ebx = last;
+    if (first == ebx) {
+        return d_last;
+    }
+
+    uint32_t ebp = d_last;
+    uint32_t edi = ebp + 0x5;
+    uint32_t esi = ebx + 0x5;
+
+    do {
+        uint32_t eax = *reinterpret_cast<uint32_t*>(ebx - 0x24);
+        esi -= 0x24;
+        edi -= 0x24;
+        ebx -= 0x24;
+        ebp -= 0x24;
+
+        uint32_t ecx = esi - 0x1;
+        uint32_t edx = edi - 0x1;
+        *reinterpret_cast<uint32_t*>(ebp) = eax;
+
+        if (edx != ecx) {
+            *reinterpret_cast<uint8_t*>(edi - 0x1) = *reinterpret_cast<uint8_t*>(esi - 0x1);
+            *reinterpret_cast<uint8_t*>(edi + 0x1) = *reinterpret_cast<uint8_t*>(esi + 0x1);
+            *reinterpret_cast<uint8_t*>(edi) = *reinterpret_cast<uint8_t*>(esi);
+            reinterpret_cast<uint32_t(__thiscall*)(uint32_t, uint32_t)>(mem_00924FDC)(
+                edi + 0x3, esi + 0x3);
+        }
+    } while (ebx != first);
+
+    return ebp;
+}
+} // namespace lift_004274E0
+
+// [0x00420680]
+namespace lift_00420680 {
+extern uint32_t mem_00925134;
+
+// @name TreeIterator::increment
+// @class TreeIterator
+// @summary Advances a red-black tree iterator to the next in-order node.
+// @field TreeIterator +0x00 uint32_t container
+// @field TreeIterator +0x04 uint32_t node
+
+void __thiscall sub_00420680(uint32_t self) {
+    auto invalid_param = reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134));
+    if (*reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(self)) == 0) {
+        invalid_param();
+    }
+
+    uint32_t node = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(self + 0x04));
+    if (*reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(node + 0x59)) != 0) {
+        invalid_param();
+        return;
+    }
+
+    uint32_t right = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(node + 0x08));
+    if (*reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(right + 0x59)) == 0) {
+        uint32_t left = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(right));
+        while (*reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(left + 0x59)) == 0) {
+            right = left;
+            left = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(right));
+        }
+        *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(self + 0x04)) = right;
+        return;
+    }
+
+    uint32_t parent = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(node + 0x04));
+    while (*reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(parent + 0x59)) == 0 &&
+           *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(self + 0x04)) ==
+               *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(parent + 0x08))) {
+        *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(self + 0x04)) = parent;
+        parent = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(parent + 0x04));
+    }
+    *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(self + 0x04)) = parent;
+}
+} // namespace lift_00420680

@@ -2492,6 +2492,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00420070 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x00420680": {
+    "name": "TreeIterator::increment",
+    "class": "TreeIterator",
+    "signature": "void __thiscall sub_00420680(uint32_t self)",
+    "summary": "Advances a red-black tree iterator to the next in-order node.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x004207F0": {
     "name": "std::out_of_range::out_of_range",
     "class": "std::out_of_range",
@@ -2674,6 +2681,12 @@
     "name": "CopyTemplateRecordToRange",
     "signature": "inline StringAssignFn string_assign_fn()",
     "summary": "Fills each 0x24-byte record in [first, last) from a template record: copies the leading dword, and (unless the record is the template itself) copies three chars and assigns the trailing std::string.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
+  "0x004274E0": {
+    "name": "copyBackward36",
+    "signature": "uint32_t sub_004274E0(uint32_t first, uint32_t last, uint32_t d_last)",
+    "summary": "Copies a range of 36-byte structs backward, assigning their embedded std::string fields.",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
   "0x004275C0": {
