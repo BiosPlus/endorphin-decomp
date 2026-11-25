@@ -17002,6 +17002,12 @@
     "summary": "Stores value in dst[0] and the lazily-initialized static singleton in dst[1]; returns dst.",
     "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
+  "0x004F9590": {
+    "name": "storePairWithStaticObject",
+    "signature": "void fn_004F9590(DWORD* out, DWORD value)",
+    "summary": "Writes value into out[0] and the lazily-initialized static object pointer into out[1].",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F95B0": {
     "name": "storeValueAndStaticObject",
     "signature": "void fn_004F95B0(uint32_t* out, uint32_t value)",

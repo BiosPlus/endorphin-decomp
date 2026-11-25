@@ -1,0 +1,13 @@
+{
+  "va": "0x004F9590",
+  "size": 30,
+  "orig_symbol": "sub_004F9590",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "storePairWithStaticObject",
+  "signature": "void fn_004F9590(DWORD* out, DWORD value)",
+  "summary": "Writes value into out[0] and the lazily-initialized static object pointer into out[1].",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:07:08Z"
+}

@@ -387,3 +387,17 @@ void* fn_004F9570(void** dst, void* value) {
     return dst;
 }
 } // namespace lift_004F9570
+
+// [0x004F9590] sub_004F9590 (30 bytes)
+namespace lift_004F9590 {
+// Known callee 0x004F9370: getStaticObject_004F9370 (Lazily initializes and returns the static object at 0x00AE9F44.)
+extern void* ext_004F9370();
+
+// @name storePairWithStaticObject
+// @summary Writes value into out[0] and the lazily-initialized static object pointer into out[1].
+void fn_004F9590(DWORD* out, DWORD value) {
+    void* obj = ext_004F9370();
+    out[0] = value;
+    out[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_004F9590
