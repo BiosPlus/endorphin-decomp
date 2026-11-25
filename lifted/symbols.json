@@ -8997,6 +8997,12 @@
     "summary": "One-time initializer for the global at 0x00AD9DFC: on first call sets guard bit 0 in 0x00AD9E00, runs ext_0067A670 on the object with arg 0, then stores 0x0093CFEC into it; returns the object's address on every call.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00487FF0": {
+    "name": "ensureStaticObjectInitialized_00487FF0",
+    "signature": "void* fn_00487FF0()",
+    "summary": "One-time guarded initializer for the static object at mem_00AD9E04; runs the constructor helper once, installs vtable 0x0093D0C4, and returns the object's address.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00488050": {
     "name": "initOnceAndGetStaticObject_00488050",
     "signature": "void* fn_00488050()",

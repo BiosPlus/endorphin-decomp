@@ -1,0 +1,21 @@
+{
+  "va": "0x00487FF0",
+  "size": 87,
+  "orig_symbol": "sub_00487FF0",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "ensureStaticObjectInitialized_00487FF0",
+  "signature": "void* fn_00487FF0()",
+  "summary": "One-time guarded initializer for the static object at mem_00AD9E04; runs the constructor helper once, installs vtable 0x0093D0C4, and returns the object's address.",
+  "fields": [
+    {
+      "class": "UnknownStaticObject",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:28:50Z"
+}
