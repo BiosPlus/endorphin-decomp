@@ -1278,3 +1278,31 @@ void fn_0070ACC0(void* self, DWORD a0, DWORD a1, DWORD a2, DWORD a3,
     *reinterpret_cast<DWORD*>(base + 0x354) = a5;
 }
 } // namespace lift_0070ACC0
+
+// [0x007094A0] sub_007094A0 (64 bytes)
+namespace lift_007094A0 {
+extern int mem_00B5EB78;
+
+// @name Unknown::FindTailAcceptedByGlobal
+// @class Unknown
+// @summary Walks the +0x08 link chain from the argument to its last node; returns that node if its virtual slot 5 accepts mem_00B5EB78, otherwise null.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x08 void* field_0x08
+void* fn_007094A0(void* head) {
+    void* node = head;
+    void* next = lift_field<void*>(node, 0x08);
+    while (next != nullptr) {
+        node = next;
+        next = lift_field<void*>(node, 0x08);
+    }
+    if (node == nullptr) {
+        return nullptr;
+    }
+    void* const* vtbl = lift_field<void* const*>(node, 0x00);
+    auto accept = reinterpret_cast<bool (*)(void*, int32_t)>(vtbl[5]);
+    if (accept(node, static_cast<int32_t>(mem_00B5EB78))) {
+        return node;
+    }
+    return nullptr;
+}
+} // namespace lift_007094A0

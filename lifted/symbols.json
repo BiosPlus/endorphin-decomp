@@ -51001,6 +51001,13 @@
     "summary": "Counts entries in a pointer array at +0xD0 (length +0xC0) for which CompareSubObjectWith0x40 returns nonzero.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x007094A0": {
+    "name": "Unknown::FindTailAcceptedByGlobal",
+    "class": "Unknown",
+    "signature": "void* fn_007094A0(void* head)",
+    "summary": "Walks the +0x08 link chain from the argument to its last node; returns that node if its virtual slot 5 accepts mem_00B5EB78, otherwise null.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00709C90": {
     "name": "ChainedNodeValueIfKeyMatches",
     "signature": "DWORD fn_00709C90(void* self)",
