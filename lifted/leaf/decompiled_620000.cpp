@@ -2284,3 +2284,22 @@ void fn_00629EE0(void* self) {
 }
 } // namespace lift_00629E80
 } // namespace lift_00629EE0
+
+// [0x00627450]
+namespace lift_00627450 {
+// @name copyMatrixFromTarget_0x60
+// @summary Copies 64 bytes (16 dwords) from an indirect sub-object's field into this+0x60
+// @field Self +0x28 void* field_0x28
+// @field Self +0x60 uint8_t[64] field_0x60
+
+
+extern uint32_t ext_00647F00(void* self);
+
+void fn_00627450(void* self) {
+    void* obj1 = lift_field<void*>(self, 0x28);
+    void* obj2 = lift_field<void*>(obj1, 0x158);
+    void* obj3 = lift_field<void*>(obj2, 0xac);
+    uint32_t src = ext_00647F00(obj3);
+    std::memcpy(static_cast<uint8_t*>(self) + 0x60, reinterpret_cast<const void*>(static_cast<uintptr_t>(src)), 0x10 * sizeof(uint32_t));
+}
+} // namespace lift_00627450

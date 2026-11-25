@@ -1,0 +1,27 @@
+{
+  "va": "0x00627450",
+  "size": 39,
+  "orig_symbol": "sub_00627450",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "copyMatrixFromTarget_0x60",
+  "signature": "void fn_00627450(void* self)",
+  "summary": "Copies 64 bytes (16 dwords) from an indirect sub-object's field into this+0x60",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x60",
+      "type": "uint8_t[64]",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T14:26:41Z"
+}
