@@ -726,3 +726,19 @@ uintptr_t __thiscall sub_00629E20(uintptr_t this_ptr, uint32_t arg0, uint32_t ar
     return this_ptr;
 }
 } // namespace lift_00629E20
+
+// [0x006294D0] sub_006294D0 (25 bytes)
+namespace lift_006294D0 {
+// Known callee 0x005FF240: sub_005FF240 (Initializes object fields to zero, stores argument at +0x28, and sets vtable to 0x0096F154)
+extern uint32_t ext_005FF240(void* this_ptr, uint32_t arg0);
+
+// @name UnknownClass::initWithArgAndSetVtable
+// @class UnknownClass
+// @summary Runs the base initializer with the argument, sets the vtable pointer to 0x00978154, and returns this.
+// @field UnknownClass +0x00 void* vtable
+void* fn_006294D0(void* self, uint32_t arg0) {
+    ext_005FF240(self, arg0);
+    lift_field<uint32_t>(self, 0x00) = 0x00978154u;
+    return self;
+}
+} // namespace lift_006294D0

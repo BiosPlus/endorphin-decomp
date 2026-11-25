@@ -31553,6 +31553,13 @@
     "summary": "Pure jump thunk forwarding to sub_00629460.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x006294D0": {
+    "name": "UnknownClass::initWithArgAndSetVtable",
+    "class": "UnknownClass",
+    "signature": "void* fn_006294D0(void* self, uint32_t arg0)",
+    "summary": "Runs the base initializer with the argument, sets the vtable pointer to 0x00978154, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x006294F0": {
     "name": "ReadSubobjectVirtualFloatInto0x30",
     "class": "self",
