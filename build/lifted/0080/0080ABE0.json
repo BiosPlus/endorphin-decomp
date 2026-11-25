@@ -1,0 +1,13 @@
+{
+  "va": "0x0080ABE0",
+  "size": 32,
+  "orig_symbol": "sub_0080ABE0",
+  "src_path": "src/leaf/decompiled_800000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_800000.cpp",
+  "name": "InitCriticalSection_0080ABE0",
+  "signature": "extern void (*mem_009241C0)(void* lpCriticalSection); // KERNEL32!InitializeCriticalSection (IAT slot) extern uint8_t mem_00B73C58[24];                      // global CRITICAL_SECTION extern uint32_t mem_00B73C80;                         // global init flag void fn_0080ABE0(void)",
+  "summary": "Calls KERNEL32!InitializeCriticalSection on the global CRITICAL_SECTION at mem_00B73C58, then sets the global flag mem_00B73C80 to 1.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:43:53Z"
+}
