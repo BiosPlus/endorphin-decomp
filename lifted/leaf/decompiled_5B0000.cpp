@@ -853,3 +853,24 @@ void* fn_005B8540() {
     return &mem_00B43CEC;
 }
 } // namespace lift_005B8540
+
+// [0x005B8600]
+namespace lift_005B8600 {
+// @name lazyInitStaticVtableObject_005B8600
+// @summary One-time guarded init of the global object at mem_00B43CFC (ctor ext_0067A670, then vtable 0x00961884); returns its address.
+
+extern DWORD ext_0067A670(void* self, DWORD value);  // thiscall: ECX = self, one stack arg
+extern DWORD mem_00B43D00;                           // init-guard flags (bit 0 = initialized/started)
+extern BYTE  mem_00B43CFC[];                         // global object storage (vtable at +0)
+
+void* lazyInitStaticVtableObject_005B8600() {
+    // The original wraps this in an SEH frame (fs:[0] push/restore, trylevel 0).
+    // That is exception-handling bookkeeping only and is not reproduced here.
+    if ((mem_00B43D00 & 1u) == 0) {
+        mem_00B43D00 |= 1u;
+        ext_0067A670(static_cast<void*>(mem_00B43CFC), 0);
+        lift_field<DWORD>(mem_00B43CFC, 0) = 0x00961884u;
+    }
+    return static_cast<void*>(mem_00B43CFC);
+}
+} // namespace lift_005B8600

@@ -28207,6 +28207,12 @@
     "summary": "Lazily initializes the global singleton at 0x00B43CF4 once (guarded by bit 0 of 0x00B43CF8) and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
+  "0x005B8600": {
+    "name": "lazyInitStaticVtableObject_005B8600",
+    "signature": "extern \"C\" DWORD ext_0067A670(void* self, DWORD value);  // thiscall: ECX = self, one stack arg extern \"C\" DWORD mem_00B43D00;                           // init-guard flags (bit 0 = initialized/started) extern \"C\" BYTE  mem_00B43CFC[];                         // global object storage (vtable at +0) void* lazyInitStaticVtableObject_005B8600()",
+    "summary": "One-time guarded init of the global object at mem_00B43CFC (ctor ext_0067A670, then vtable 0x00961884); returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B8660": {
     "name": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getNearestGeomPoint\u003e::vfunc_16",
     "class": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getNearestGeomPoint\u003e",

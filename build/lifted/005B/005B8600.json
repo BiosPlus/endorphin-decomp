@@ -1,0 +1,13 @@
+{
+  "va": "0x005B8600",
+  "size": 87,
+  "orig_symbol": "sub_005B8600",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "lazyInitStaticVtableObject_005B8600",
+  "signature": "extern \"C\" DWORD ext_0067A670(void* self, DWORD value);  // thiscall: ECX = self, one stack arg extern \"C\" DWORD mem_00B43D00;                           // init-guard flags (bit 0 = initialized/started) extern \"C\" BYTE  mem_00B43CFC[];                         // global object storage (vtable at +0) void* lazyInitStaticVtableObject_005B8600()",
+  "summary": "One-time guarded init of the global object at mem_00B43CFC (ctor ext_0067A670, then vtable 0x00961884); returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:10:40Z"
+}
