@@ -35912,6 +35912,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0060E7B0 (NMData::AxisDefineSensorData::vfunc_2).",
     "lifted_path": "lifted/NMData/EffectorBaseData.cpp"
   },
+  "0x0060C490": {
+    "name": "NMData::EffectorWithModesData::vfunc_19",
+    "class": "NMData::EffectorWithModesData",
+    "signature": "void fn_0060C490(void* self)",
+    "summary": "Runs the base EffectorData::vfunc_19, then resets the string at +0x60 to a literal and sets +0x5C=20, +0x7C=0.0f, +0x80=10.0f.",
+    "lifted_path": "lifted/NMData/EffectorWithModesData.cpp"
+  },
   "0x0060C510": {
     "name": "NMData::EffectorBaseData::vfunc_0",
     "class": "NMData::EffectorBaseData",
