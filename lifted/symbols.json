@@ -57010,6 +57010,13 @@
     "summary": "Returns mem_0092A278 for index 0; otherwise 2^((index + 0.5) * mem_00999AE8 - mem_00999AE0) as a double.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BBBE0": {
+    "name": "UnknownClass::processRows",
+    "class": "UnknownClass",
+    "signature": "uint32_t fn_007BBBE0(uint8_t* self, uint8_t* base, uint32_t remaining, uint32_t arg4)",
+    "summary": "Walks a byte range in steps of one row size, calling the row callback stored at self+0x1a4 for each row; returns 1 if the range is fully consumed, 0 if a callback reports failure.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BD310": {
     "name": "initField40And4E",
     "signature": "uint32_t sub_007BD310(uint32_t a1)",

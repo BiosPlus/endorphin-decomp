@@ -1,0 +1,22 @@
+{
+  "va": "0x007BBBE0",
+  "size": 70,
+  "orig_symbol": "sub_007BBBE0",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "UnknownClass::processRows",
+  "class": "UnknownClass",
+  "signature": "uint32_t fn_007BBBE0(uint8_t* self, uint8_t* base, uint32_t remaining, uint32_t arg4)",
+  "summary": "Walks a byte range in steps of one row size, calling the row callback stored at self+0x1a4 for each row; returns 1 if the range is fully consumed, 0 if a callback reports failure.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1A4",
+      "type": "void*",
+      "name": "field_0x1a4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:26:09Z"
+}

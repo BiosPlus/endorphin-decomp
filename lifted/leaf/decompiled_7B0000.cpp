@@ -734,3 +734,29 @@ uint32_t sub_007BF9C0(uint32_t self, uint32_t a2, uint32_t a3, uint32_t a4) {
     return 1;
 }
 } // namespace lift_007BF9C0
+
+// [0x007BBBE0]
+namespace lift_007BBBE0 {
+// @name UnknownClass::processRows
+// @class UnknownClass
+// @summary Walks a byte range in steps of one row size, calling the row callback stored at self+0x1a4 for each row; returns 1 if the range is fully consumed, 0 if a callback reports failure.
+// @field UnknownClass +0x1a4 void* field_0x1a4
+
+extern uint32_t ext_00798840(uint8_t* self);
+
+uint32_t fn_007BBBE0(uint8_t* self, uint8_t* base, uint32_t remaining, uint32_t arg4) {
+    using RowFn = uint32_t (*)(uint8_t*, uint8_t*, uint32_t, uint32_t);
+
+    const uint32_t rowSize = ext_00798840(self);
+    uint8_t* cur = base;
+    while (remaining != 0) {
+        RowFn cb = reinterpret_cast<RowFn>(*reinterpret_cast<void**>(self + 0x1a4));
+        if (cb(self, cur, rowSize, arg4) != 0) {
+            return 0;
+        }
+        cur += rowSize;
+        remaining -= rowSize;
+    }
+    return 1;
+}
+} // namespace lift_007BBBE0
