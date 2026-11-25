@@ -2045,3 +2045,34 @@ void fn_006F9AA0(void* self) {
     ext_006BAC20(self);
 }
 } // namespace lift_006F9AA0
+
+// [0x006FAEA0] sub_006FAEA0 (99 bytes)
+namespace lift_006FAEA0 {
+extern uint32_t ext_006FAEA0(void* child, uint32_t a2, uint32_t a3, uint32_t a4,
+                                 uint32_t a5, uint32_t a6, uint32_t a7, uint32_t a8);
+
+// Virtual slot at vtable+0x40 (index 16): thiscall, 7 stack args, callee cleans up.
+typedef uint32_t (__thiscall *VirtualSlot40)(void* self, uint32_t a2, uint32_t a3,
+                                             uint32_t a4, uint32_t a5, uint32_t a6,
+                                             uint32_t a7);
+
+// @name ForwardToChildThenDispatchVirtual40
+// @summary Returns 0 for null p; otherwise calls the same routine on p->child (result discarded), then returns the result of virtual slot 0x40 on p->obj with args a2..a8.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 void* field_0x04
+uint32_t fn_006FAEA0(void* p, uint32_t a2, uint32_t a3, uint32_t a4,
+                     uint32_t a5, uint32_t a6, uint32_t a7, uint32_t a8) {
+    if (p == nullptr) {
+        return 0;
+    }
+
+    void* child = lift_field<void*>(p, 0x04);
+    (void)ext_006FAEA0(child, a2, a3, a4, a5, a6, a7, a8);
+
+    void* obj = lift_field<void*>(p, 0x00);
+    void* vtbl = lift_field<void*>(obj, 0x00);
+    uintptr_t target = lift_field<uint32_t>(vtbl, 0x40);
+    auto slot = reinterpret_cast<VirtualSlot40>(target);
+    return slot(obj, a2, a3, a4, a5, a6, a7);
+}
+} // namespace lift_006FAEA0

@@ -59249,6 +59249,12 @@
     "summary": "Checks flag bit 1 at +0x34, queries vtable+0x74 on field_0x38, and dispatches vtable+0x40 on this.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006FAEA0": {
+    "name": "ForwardToChildThenDispatchVirtual40",
+    "signature": "uint32_t fn_006FAEA0(void* p, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7, uint32_t a8)",
+    "summary": "Returns 0 for null p; otherwise calls the same routine on p-\u003echild (result discarded), then returns the result of virtual slot 0x40 on p-\u003eobj with args a2..a8.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FAF10": {
     "name": "ForwardToSubobjectVfn30",
     "signature": "extern \"C\" BYTE __thiscall fn_006FAF10(void* self, DWORD a1, DWORD a2)",
