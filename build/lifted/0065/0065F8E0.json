@@ -1,0 +1,14 @@
+{
+  "va": "0x0065F8E0",
+  "size": 96,
+  "orig_symbol": "CalibrationManager::vfunc_9",
+  "src_path": "src/classes/CalibrationManager.cpp",
+  "lifted_path": "lifted/classes/CalibrationManager.cpp",
+  "name": "CalibrationManager::vfunc_9",
+  "class": "CalibrationManager",
+  "signature": "uint32_t __thiscall fn_0065F8E0(void* self)",
+  "summary": "Lazily initializes and returns a static std::string singleton",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:37:26Z"
+}

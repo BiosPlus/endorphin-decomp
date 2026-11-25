@@ -42097,6 +42097,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005F0D40 (NMData::MagnetJointData::vfunc_59).",
     "lifted_path": "lifted/classes/SymbolResolver.cpp"
   },
+  "0x0065F8E0": {
+    "name": "CalibrationManager::vfunc_9",
+    "class": "CalibrationManager",
+    "signature": "uint32_t __thiscall fn_0065F8E0(void* self)",
+    "summary": "Lazily initializes and returns a static std::string singleton",
+    "lifted_path": "lifted/classes/CalibrationManager.cpp"
+  },
   "0x00660180": {
     "name": "makeHeapElements32",
     "signature": "void fn_00660180(Elem* first, Elem* last)",
@@ -42473,6 +42480,13 @@
     "signature": "bool __fastcall sub_006658B0(uint32_t ecx, uint32_t /*edx*/)",
     "summary": "Returns true if the 32-bit field at offset +0x24 is non-zero.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
+  "0x00665990": {
+    "name": "StdList::erase",
+    "class": "StdList",
+    "signature": "extern \"C\" void* __thiscall fn_00665990(void* self, void* ret_iter, void* cont, void* node)",
+    "summary": "Removes a node from a doubly-linked list and returns an iterator to the next node.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
   "0x006659F0": {
     "name": "destroyListElements",
@@ -44474,6 +44488,13 @@
     "name": "sub_00678DE0",
     "signature": "void __thiscall fn_00503CD0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00503CD0 (fn_00503CD0).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
+  "0x00679990": {
+    "name": "PerfTimer::getElapsedMs",
+    "class": "PerfTimer",
+    "signature": "float __thiscall sub_00679990(void* self)",
+    "summary": "Returns elapsed time in milliseconds since start using QueryPerformanceCounter.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x006799F0": {
