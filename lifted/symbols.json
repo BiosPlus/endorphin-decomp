@@ -6151,6 +6151,12 @@
     "summary": "Sets field_0x4 of the object referenced by this-\u003efield_0x4 to 1.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00462A90": {
+    "name": "ClearPointee4",
+    "signature": "void fn_00462A90(void* self)",
+    "summary": "Loads the pointer stored at this+0x04 and zeroes the dword at +0x04 of the pointed-to object.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00462E50": {
     "name": "Dispatch::forwardStringIfInnerCountOne",
     "class": "Dispatch",

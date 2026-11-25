@@ -1,0 +1,27 @@
+{
+  "va": "0x00462A90",
+  "size": 11,
+  "orig_symbol": "sub_00462A90",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "ClearPointee4",
+  "signature": "void fn_00462A90(void* self)",
+  "summary": "Loads the pointer stored at this+0x04 and zeroes the dword at +0x04 of the pointed-to object.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "Target",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:19:19Z"
+}

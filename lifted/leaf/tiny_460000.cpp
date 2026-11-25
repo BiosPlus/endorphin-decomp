@@ -889,3 +889,18 @@ uint8_t fn_00462A60(void* self) {
     return lift_field<uint8_t>(inner, 0x1C);
 }
 } // namespace lift_00462A60
+
+// [0x00462A90] sub_00462A90 (11 bytes)
+namespace lift_00462A90 {
+// @name ClearPointee4
+// @summary Loads the pointer stored at this+0x04 and zeroes the dword at +0x04 of the pointed-to object.
+// @field Self +0x04 void* target
+// @field Target +0x04 uint32_t field_0x04
+void fn_00462A90(void* self) {
+    // mov eax, [ecx + 4]          ; eax = self->target
+    void* target = lift_field<void*>(self, 0x4);
+    // mov dword ptr [eax + 4], 0  ; target->field_0x04 = 0
+    lift_field<uint32_t>(target, 0x4) = 0;
+    // ret
+}
+} // namespace lift_00462A90
