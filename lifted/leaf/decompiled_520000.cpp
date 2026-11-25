@@ -903,3 +903,19 @@ void* fn_005273B0() {
     return reinterpret_cast<void*>(&mem_00AED2EC);
 }
 } // namespace lift_005273B0
+
+// [0x00522760]
+namespace lift_00522760 {
+// Known callee 0x00522530: sub_00522530_copyRangeBackward (Copies a backward range of 0x28-byte records (ending at last) into dst_end, returning the new begin of the destination.)
+extern uint8_t* ext_00522530(uint8_t* first, uint8_t* last, uint8_t* dst_end);
+
+// @name copyRangeBackwardAndRewindDst
+// @summary Copies the backward record range [first, last) into dst_end via ext_00522530, then returns dst_end rewound by the record-aligned byte size of the source range (count * 0x28, count = (last - first) / 0x28); the callee's return value is discarded.
+uint8_t* fn_00522760(uint8_t* first, uint8_t* last, uint8_t* dst_end) {
+    ext_00522530(first, last, dst_end);
+
+    const int32_t byteCount = static_cast<int32_t>(last - first);
+    const int32_t recordCount = byteCount / 0x28;
+    return dst_end - static_cast<ptrdiff_t>(recordCount) * 0x28;
+}
+} // namespace lift_00522760

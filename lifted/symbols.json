@@ -19987,6 +19987,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005D2470 (ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, getFrameOffset, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00522760": {
+    "name": "copyRangeBackwardAndRewindDst",
+    "signature": "uint8_t* fn_00522760(uint8_t* first, uint8_t* last, uint8_t* dst_end)",
+    "summary": "Copies the backward record range [first, last) into dst_end via ext_00522530, then returns dst_end rewound by the record-aligned byte size of the source range (count * 0x28, count = (last - first) / 0x28); the callee's return value is discarded.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00522840": {
     "name": "copyRecordRangeAndGetEnd",
     "signature": "void* fn_00522840(const void* begin, const void* end, void* dst)",

@@ -1,0 +1,13 @@
+{
+  "va": "0x00522760",
+  "size": 95,
+  "orig_symbol": "sub_00522760",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "copyRangeBackwardAndRewindDst",
+  "signature": "uint8_t* fn_00522760(uint8_t* first, uint8_t* last, uint8_t* dst_end)",
+  "summary": "Copies the backward record range [first, last) into dst_end via ext_00522530, then returns dst_end rewound by the record-aligned byte size of the source range (count * 0x28, count = (last - first) / 0x28); the callee's return value is discarded.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:30:50Z"
+}
