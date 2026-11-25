@@ -1383,3 +1383,39 @@ uint32_t fn_007CCF20(void* self, int32_t a, int32_t b) {
                                 static_cast<ptrdiff_t>(idx) * 0x58 + 0x4c);
 }
 } // namespace lift_007CCF20
+
+// [0x007CCF80] sub_007CCF80 (93 bytes)
+namespace lift_007CCF80 {
+// @name TriangularPairLookup
+// @summary Returns the 32-bit value at +0x50 of record idx (88-byte records) for an unordered pair (a, b) with 0 <= a,b <= count; returns 0 if either index exceeds count.
+// @field TriangularPairLookup +0x00 int32_t count
+// @field TriangularPairLookup +0x08 uint32_t records
+
+struct TriangularPairLookup {
+    int32_t  count;    // +0x00
+    uint32_t pad_04;   // +0x04 (not accessed)
+    uint32_t records;  // +0x08 address of 88-byte record array
+};
+
+static constexpr uint32_t kRecordSize = 0x58;
+static constexpr uint32_t kValueOffset = 0x50;
+
+uint32_t fn_007CCF80(const TriangularPairLookup* table, uint32_t a, uint32_t b) {
+    const uint32_t n = static_cast<uint32_t>(table->count);
+    if (a > n || b > n) {
+        return 0;
+    }
+
+    const uint32_t hi = (a > b) ? a : b;
+    const uint32_t lo = (a > b) ? b : a;
+
+    // Index into the triangular layout: n * lo + hi - lo * (lo + 1) / 2.
+    const uint32_t idx = n * lo + hi - (lo * (lo + 1)) / 2;
+
+    const uintptr_t base = static_cast<uintptr_t>(table->records);
+    const uint8_t* rec = reinterpret_cast<const uint8_t*>(base) + static_cast<size_t>(idx) * kRecordSize;
+    uint32_t value = 0;
+    std::memcpy(&value, rec + kValueOffset, sizeof(value));
+    return value;
+}
+} // namespace lift_007CCF80

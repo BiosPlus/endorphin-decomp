@@ -1,0 +1,27 @@
+{
+  "va": "0x007CCF80",
+  "size": 93,
+  "orig_symbol": "sub_007CCF80",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "TriangularPairLookup",
+  "signature": "uint32_t fn_007CCF80(const TriangularPairLookup* table, uint32_t a, uint32_t b)",
+  "summary": "Returns the 32-bit value at +0x50 of record idx (88-byte records) for an unordered pair (a, b) with 0 \u003c= a,b \u003c= count; returns 0 if either index exceeds count.",
+  "fields": [
+    {
+      "class": "TriangularPairLookup",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "TriangularPairLookup",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "records"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:19:30Z"
+}

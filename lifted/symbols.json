@@ -66230,6 +66230,12 @@
     "summary": "Looks up a 32-bit value for an unordered index pair (a, b) in a symmetric triangular table of 0x58-byte records; returns 0 if either index exceeds the count.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CCF80": {
+    "name": "TriangularPairLookup",
+    "signature": "uint32_t fn_007CCF80(const TriangularPairLookup* table, uint32_t a, uint32_t b)",
+    "summary": "Returns the 32-bit value at +0x50 of record idx (88-byte records) for an unordered pair (a, b) with 0 \u003c= a,b \u003c= count; returns 0 if either index exceeds count.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CD040": {
     "name": "Unknown::postIncrementField04",
     "class": "Unknown",
