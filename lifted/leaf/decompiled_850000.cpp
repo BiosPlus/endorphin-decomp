@@ -551,3 +551,18 @@ void fn_0085F700(void* self) {
     ext_0085F730();
 }
 } // namespace lift_0085F700
+
+// [0x0085D820] sub_0085D820 (59 bytes)
+namespace lift_0085D820 {
+extern const uint8_t mem_00ABB260[256];
+
+// @name applyTableKeystream
+// @summary XORs buf[4..count-1] with a 256-byte table keystream seeded by table[buf[2]].
+void fn_0085D820(uint8_t* buf, int32_t count) {
+    uint8_t idx = mem_00ABB260[buf[2]];
+    for (int32_t i = 4; i < count; ++i) {
+        buf[i] ^= mem_00ABB260[idx];
+        ++idx;
+    }
+}
+} // namespace lift_0085D820

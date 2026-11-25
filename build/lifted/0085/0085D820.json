@@ -1,0 +1,13 @@
+{
+  "va": "0x0085D820",
+  "size": 59,
+  "orig_symbol": "sub_0085D820",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "applyTableKeystream",
+  "signature": "void fn_0085D820(uint8_t* buf, int32_t count)",
+  "summary": "XORs buf[4..count-1] with a 256-byte table keystream seeded by table[buf[2]].",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:54:01Z"
+}

@@ -57222,6 +57222,12 @@
     "summary": "Allocates uBytes via LocalAlloc with uFlags = 0 and returns the handle.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085D820": {
+    "name": "applyTableKeystream",
+    "signature": "void fn_0085D820(uint8_t* buf, int32_t count)",
+    "summary": "XORs buf[4..count-1] with a 256-byte table keystream seeded by table[buf[2]].",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085D85B": {
     "name": "sub_0085D85B",
     "signature": "void fn_0085D85B(void)",
