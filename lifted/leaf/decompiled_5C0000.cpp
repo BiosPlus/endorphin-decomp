@@ -1584,3 +1584,29 @@ float* fn_005C3A30(void* self) {
     return reinterpret_cast<float*>(static_cast<uint8_t*>(r) + 0x30);
 }
 } // namespace lift_005C3A30
+
+// [0x005C3F40] sub_005C3F40 (109 bytes)
+namespace lift_005C3F40 {
+// Global string-table range: begin pointer and end pointer.
+extern uintptr_t mem_00B44C08;
+extern uintptr_t mem_00B44C0C;
+
+// @name GetStringTableEntryCopy
+// @summary Copy-constructs the string at index from the global string table into out; returns an empty string when the table is empty or index is out of range.
+std::string* fn_005C3F40(std::string* out, uint32_t index) {
+    const uintptr_t begin = mem_00B44C08;
+    if (begin != 0) {
+        const uintptr_t end = mem_00B44C0C;
+        // Element count = byte span / sizeof(std::string) (28 bytes on the target).
+        const int32_t span = static_cast<int32_t>(end - begin);
+        const uint32_t count = static_cast<uint32_t>(span / 28);
+        if (index < count) {
+            const auto* src = reinterpret_cast<const std::string*>(begin + static_cast<uintptr_t>(index) * 28u);
+            new (out) std::string(*src);
+            return out;
+        }
+    }
+    new (out) std::string();
+    return out;
+}
+} // namespace lift_005C3F40

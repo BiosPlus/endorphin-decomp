@@ -30735,6 +30735,12 @@
     "summary": "Stores the thiscall argument at this+0x198, then assigns the std::string at this+0x17c from the 28-byte table entry at index (arg) of the global record vector (mem_00B44C08..0C).",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
+  "0x005C3F40": {
+    "name": "GetStringTableEntryCopy",
+    "signature": "std::string* fn_005C3F40(std::string* out, uint32_t index)",
+    "summary": "Copy-constructs the string at index from the global string table into out; returns an empty string when the table is empty or index is out of range.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005C3FB0": {
     "name": "sub_005CF3E0",
     "class": "NMData::DesiredPoseEventData",
@@ -40922,6 +40928,13 @@
     "signature": "void fn_00640EE0(void* self, uint32_t arg)",
     "summary": "Invokes virtual slot 5 (offset 0x14) on each child node pointer held in the container's range at +0x28..+0x2C, passing the single argument through.",
     "lifted_path": "lifted/AdvXMLParser/NodeContainer.cpp"
+  },
+  "0x00640F50": {
+    "name": "AdvXMLParser::Attribute::vfunc_5",
+    "class": "AdvXMLParser::Attribute",
+    "signature": "void __thiscall fn_00640F50(void* self, uint32_t arg)",
+    "summary": "Serializes an XML attribute as name=\"value\" into the output context string and recurses into child nodes.",
+    "lifted_path": "lifted/AdvXMLParser/Attribute.cpp"
   },
   "0x00641760": {
     "name": "TreeNode::EraseSubtree",
