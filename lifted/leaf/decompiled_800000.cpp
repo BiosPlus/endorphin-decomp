@@ -861,3 +861,21 @@ BOOL fn_0080FB20(void* self, uint8_t value)
     return 1;
 }
 } // namespace lift_0080FB20
+
+// [0x0080FC10] sub_0080FC10 (48 bytes)
+namespace lift_0080FC10 {
+extern uint32_t ext_0080FC40(uint32_t size);
+extern void ext_0080EB80(uint8_t* dst, size_t size, const uint8_t* src);
+
+// @name AllocCopyString
+// @summary Allocates n+1 zeroed bytes, copies up to n bytes from src into it with zero padding and a forced NUL terminator; returns the buffer (0 on allocation failure).
+uint32_t fn_0080FC10(const uint8_t* src, uint32_t n) {
+    const uint32_t size = n + 1;
+    const uint32_t buffer = ext_0080FC40(size);
+    if (buffer != 0) {
+        ext_0080EB80(reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(buffer)),
+                     size, src);
+    }
+    return buffer;
+}
+} // namespace lift_0080FC10

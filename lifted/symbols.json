@@ -62091,6 +62091,12 @@
     "summary": "Returns the 32-bit value at +0x08 of the object pointer passed as the single stack argument.",
     "lifted_path": "lifted/leaf/tiny_800000.cpp"
   },
+  "0x0080FC10": {
+    "name": "AllocCopyString",
+    "signature": "uint32_t fn_0080FC10(const uint8_t* src, uint32_t n)",
+    "summary": "Allocates n+1 zeroed bytes, copies up to n bytes from src into it with zero padding and a forced NUL terminator; returns the buffer (0 on allocation failure).",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080FC40": {
     "name": "GlobalAllocZeroWrapper",
     "signature": "uint32_t fn_0080FC40(uint32_t size)",
