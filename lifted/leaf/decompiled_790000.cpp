@@ -1050,3 +1050,20 @@ void __thiscall sub_007911E0(void* self, uint32_t a1, uint32_t a2, uint32_t a3) 
     lift_field<uint32_t>(self, 0x2c) = 0;
 }
 } // namespace lift_007911E0
+
+// [0x0079ACF0]
+namespace lift_0079ACF0 {
+// @name readFileBytes
+// @summary Reads bytes from a file handle using ReadFile and returns the number of bytes read, or 0 on failure.
+
+
+extern uint32_t (__stdcall *mem_00924268)(void* hFile, void* lpBuffer, uint32_t nNumberOfBytesToRead, uint32_t* lpNumberOfBytesRead, void* lpOverlapped);
+
+uint32_t __cdecl sub_0079ACF0(void* hFile, void* lpBuffer, uint32_t nNumberOfBytesToRead) {
+    uint32_t bytesRead = nNumberOfBytesToRead;
+    if (mem_00924268(hFile, lpBuffer, nNumberOfBytesToRead, &bytesRead, nullptr) != 0) {
+        return bytesRead;
+    }
+    return 0;
+}
+} // namespace lift_0079ACF0
