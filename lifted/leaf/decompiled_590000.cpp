@@ -1183,3 +1183,27 @@ VectorIter* __thiscall sub_00596660(
     return out_iter;
 }
 } // namespace lift_00596660
+
+// [0x005947B0] sub_005947B0 (95 bytes)
+namespace lift_005947B0 {
+namespace lift_005947B0 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString)).
+// Takes (out_str, flag); the second pushed argument is a raw 32-bit constant (0x00A2F0CC).
+extern void* ext_0066AD10(void* out_str, uint32_t arg);
+// Known callee 0x006A6C87: sub_006A6C87 (one stack argument, the constant 0x0091D670; return value unused).
+extern void ext_006A6C87(uint32_t arg);
+extern int mem_00B41358;
+extern int mem_00B4133C;
+
+// @name GetOnceInitString_005947B0
+// @summary Returns the global string at 0x00B4133C, initializing it once on first call (sets bit 0 of 0x00B41358, calls ext_0066AD10, then registers teardown via ext_006A6C87).
+void* fn_005947B0() {
+    if ((mem_00B41358 & 1) == 0) {
+        mem_00B41358 |= 1;
+        ext_0066AD10(&mem_00B4133C, 0x00A2F0CCu);
+        ext_006A6C87(0x0091D670u);
+    }
+    return &mem_00B4133C;
+}
+} // namespace lift_005947B0
+} // namespace lift_005947B0
