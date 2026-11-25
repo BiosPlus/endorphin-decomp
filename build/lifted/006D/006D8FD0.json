@@ -1,0 +1,46 @@
+{
+  "va": "0x006D8FD0",
+  "size": 64,
+  "orig_symbol": "sub_006D8FD0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::SetRangeIfState1",
+  "class": "Unknown",
+  "signature": "int fn_006D8FD0(void* self, uint32_t a1, uint32_t a2)",
+  "summary": "If the state dword at +0x10 equals 1, store two dwords into the object at +0xC (offsets +0x1E8, +0x1EC) and set the flag byte at +0x14 to 1; otherwise return 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "pObj"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "state"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint8_t",
+      "name": "flag"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1E8",
+      "type": "uint32_t field_0x1E8 (on the object pointed to by",
+      "name": "+0x0C)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1EC",
+      "type": "uint32_t field_0x1EC (on the object pointed to by",
+      "name": "+0x0C)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:06:29Z"
+}

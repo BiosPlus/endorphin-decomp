@@ -1050,3 +1050,25 @@ int32_t fn_006D8940(void* self) {
     return 0;
 }
 } // namespace lift_006D8940
+
+// [0x006D8FD0] sub_006D8FD0 (64 bytes)
+namespace lift_006D8FD0 {
+// @name Unknown::SetRangeIfState1
+// @class Unknown
+// @summary If the state dword at +0x10 equals 1, store two dwords into the object at +0xC (offsets +0x1E8, +0x1EC) and set the flag byte at +0x14 to 1; otherwise return 0.
+// @field Unknown +0x0C void* pObj
+// @field Unknown +0x10 int32_t state
+// @field Unknown +0x14 uint8_t flag
+// @field Unknown +0x1E8 uint32_t field_0x1E8  (on the object pointed to by +0x0C)
+// @field Unknown +0x1EC uint32_t field_0x1EC  (on the object pointed to by +0x0C)
+int fn_006D8FD0(void* self, uint32_t a1, uint32_t a2) {
+    if (lift_field<int32_t>(self, 0x10) != 1) {
+        return 0;
+    }
+    void* obj = lift_field<void*>(self, 0x0C);
+    lift_field<uint32_t>(obj, 0x1E8) = a1;
+    lift_field<uint32_t>(obj, 0x1EC) = a2;
+    lift_field<uint8_t>(self, 0x14) = 1;
+    return 1;
+}
+} // namespace lift_006D8FD0
