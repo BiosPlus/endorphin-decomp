@@ -2165,3 +2165,28 @@ void fn_004B9BC0(void* self) {
     ext_006A6DD2();
 }
 } // namespace lift_004B9BC0
+
+// [0x004D4E50] ExprParser::DynamicEnumType<NMData::RigEventData, ...>::vfunc_5 (47 bytes)
+namespace lift_004D4E50 {
+// Known callee 0x004D3CE0: sub_004D3CE0 (7B, not yet lifted)
+extern void ext_004D3CE0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::DynamicEnumType<NMData::RigEventData>::vfunc_5
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>
+// @summary Validates the first-stack-argument object's leading pointer; if non-null, raises an error via the default-message exception path, otherwise throws a fixed-message DerivedException.
+// @field Unknown +0x00 void* field_0x00
+void fn_004D4E50(void* arg) {
+    if (*reinterpret_cast<void**>(arg) != nullptr) {
+        ext_004D3CE0();
+        ext_0046C4E0();
+    }
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004D4E50
