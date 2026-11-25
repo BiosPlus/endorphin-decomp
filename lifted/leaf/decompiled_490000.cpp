@@ -1490,3 +1490,33 @@ uint32_t fn_00490810(uint32_t first, uint32_t last, uint32_t dest) {
     return dest + static_cast<uint32_t>(count) * 8u;
 }
 } // namespace lift_00490810
+
+// [0x00493F80]
+namespace lift_00493F80 {
+// @name sub_00493F80
+// @summary If field_0x00 is non-null, constructs a std::string from 0x928b5d, calls vtable+0xa4 on field_0x00, and destroys the string.
+// @field unknown +0x00 void* field_0x00
+
+
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FF4;
+
+void __fastcall sub_00493F80(uint8_t* self) {
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        uint8_t str_buf[28];
+        using ctor_t = void(__thiscall*)(void*, const char*);
+        using dtor_t = void(__thiscall*)(void*);
+        using vfn_t = void(__thiscall*)(void*, void*);
+
+        reinterpret_cast<ctor_t>(static_cast<uintptr_t>(mem_00924FE4))(
+            str_buf, reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00928B5Du)));
+
+        void** vtable = *reinterpret_cast<void***>(obj);
+        vfn_t fn = reinterpret_cast<vfn_t>(vtable[0xA4 / 4]);
+        fn(obj, str_buf);
+
+        reinterpret_cast<dtor_t>(static_cast<uintptr_t>(mem_00924FF4))(str_buf);
+    }
+}
+} // namespace lift_00493F80

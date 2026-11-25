@@ -1,0 +1,21 @@
+{
+  "va": "0x00493F80",
+  "size": 106,
+  "orig_symbol": "sub_00493F80",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "sub_00493F80",
+  "signature": "void __fastcall sub_00493F80(uint8_t* self)",
+  "summary": "If field_0x00 is non-null, constructs a std::string from 0x928b5d, calls vtable+0xa4 on field_0x00, and destroys the string.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T05:06:00Z"
+}

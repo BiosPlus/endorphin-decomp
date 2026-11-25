@@ -11,7 +11,7 @@ struct unknown_Fields {
     // +0x0   DWORD                    field_0x00  (evidence: 0x005EAF40) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 field_0x00  (evidence: 0x0046F7D0, 0x0046FAC0, 0x004925D0, 0x00495AB0, 0x0049B170, 0x0066A760, 0x006E87B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t*                 field_0x00  (evidence: 0x006E8600) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    field_0x00  (evidence: 0x006E6DE0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    field_0x00  (evidence: 0x00493F80, 0x006E6DE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vftable  (evidence: 0x006B1830, 0x006B9950) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vftable  (evidence: 0x007ABCA0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vptr  (evidence: 0x0060D730) // CONFLICT: multiple definitions at +0x0
