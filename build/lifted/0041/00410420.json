@@ -1,0 +1,21 @@
+{
+  "va": "0x00410420",
+  "size": 36,
+  "orig_symbol": "sub_00410420",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "sub_00410420",
+  "signature": "uint32_t __fastcall sub_00410420(uint32_t self)",
+  "summary": "Returns 1 if neither the virtual predicate at +0x28 nor ext_00410390 returns true",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:28:55Z"
+}

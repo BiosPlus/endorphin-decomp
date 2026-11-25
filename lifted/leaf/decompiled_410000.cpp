@@ -1583,3 +1583,47 @@ uint8_t __fastcall sub_00410390(uint32_t self) {
     return 0;
 }
 } // namespace lift_00410390
+
+// [0x00410420]
+namespace lift_00410420 {
+extern uint32_t mem_read32(uint32_t addr);
+extern uint8_t __fastcall ext_00410390(uint32_t self);
+
+// @name sub_00410420
+// @summary Returns 1 if neither the virtual predicate at +0x28 nor ext_00410390 returns true
+// @field Unknown +0x00 uint32_t vtable
+uint32_t __fastcall sub_00410420(uint32_t self) {
+    uint32_t vtable = mem_read32(self);
+    uint32_t fn = mem_read32(vtable + 0x28);
+    if (reinterpret_cast<uint8_t(__fastcall*)(uint32_t)>(fn)(self) != 0) {
+        return 0;
+    }
+    if (ext_00410390(self) != 0) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_00410420
+
+// [0x004103F0]
+namespace lift_004103F0 {
+extern uint32_t mem_read32(uint32_t addr);
+extern uint8_t __fastcall ext_00410390(uint32_t self);
+
+// @name sub_004103F0
+// @summary Checks virtual predicate at +0x28 and ext_00410390, returning 1 if (!pred && !ext_00410390) or ext_00410390
+// @field unknown +0x00 uint32_t vtable
+uint32_t __fastcall sub_004103F0(uint32_t self) {
+    uint32_t vtable = mem_read32(self);
+    auto vfn_28 = reinterpret_cast<uint8_t(__fastcall*)(uint32_t)>(mem_read32(vtable + 0x28));
+    if (vfn_28(self) == 0) {
+        if (ext_00410390(self) == 0) {
+            return 1;
+        }
+    }
+    if (ext_00410390(self) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004103F0
