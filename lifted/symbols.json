@@ -58665,6 +58665,12 @@
     "summary": "Compares up to count bytes of two buffers and returns the signed difference of the first mismatching byte.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x0079B0E0": {
+    "name": "ReportWarningV",
+    "signature": "void fn_0079B0E0(const char* prefix, const char* fmt, std::va_list args)",
+    "summary": "Writes an optional \"prefix: \" tag, a va_list-formatted message, and \".\\n\" to stderr.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079B140": {
     "name": "DispatchThreeArgsToOptionalHook",
     "signature": "void fn_0079B140(uint32_t a1, uint32_t a2, uint32_t a3)",

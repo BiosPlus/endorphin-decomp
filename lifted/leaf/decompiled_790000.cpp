@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 #include <cstdio>
 #include <cstdint>
+#include <cstdarg>
 
 // [0x0079EBE0]
 namespace lift_0079EBE0 {
@@ -677,3 +678,16 @@ uint32_t fn_007985F0(void* self, uint32_t flag) {
     return 0u;
 }
 } // namespace lift_007985F0
+
+// [0x0079B0E0] sub_0079B0E0 (82 bytes)
+namespace lift_0079B0E0 {
+// @name ReportWarningV
+// @summary Writes an optional "prefix: " tag, a va_list-formatted message, and ".\n" to stderr.
+void fn_0079B0E0(const char* prefix, const char* fmt, std::va_list args) {
+    if (prefix != nullptr) {
+        std::fprintf(stderr, "%s: ", prefix);
+    }
+    std::vfprintf(stderr, fmt, args);
+    std::fprintf(stderr, ".\n");
+}
+} // namespace lift_0079B0E0
