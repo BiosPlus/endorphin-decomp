@@ -61860,6 +61860,13 @@
     "summary": "Reads backward past whitespace; if the first character read is non-whitespace, steps back one line and returns 0, otherwise skips the remaining whitespace, steps back one line and returns 1.",
     "lifted_path": "lifted/leaf/decompiled_870000.cpp"
   },
+  "0x008710F0": {
+    "name": "TextCursor::ConsumeEqualsOrRewind_008710F0",
+    "class": "TextCursor",
+    "signature": "bool fn_008710F0(void* self)",
+    "summary": "Skips blank lines backward, then consumes '=' if present (skipping blanks again) or restores the saved cursor fields and returns false.",
+    "lifted_path": "lifted/leaf/decompiled_870000.cpp"
+  },
   "0x00871860": {
     "name": "Unknown_CallVtableSlot0_IfNonNull",
     "class": "Unknown",

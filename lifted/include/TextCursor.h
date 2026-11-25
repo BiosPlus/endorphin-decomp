@@ -9,10 +9,11 @@
 namespace lifted_layout {
 struct TextCursor_Fields {
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00870EF0)
-    // +0x8   uint32_t                 cursor  (evidence: 0x00870EF0)
+    // +0x8   uint32_t                 cursor  (evidence: 0x00870EF0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x008710F0) // CONFLICT: multiple definitions at +0x8
     // +0xC   uint32_t                 field_0x0C  (evidence: 0x00870EF0)
-    // +0x10  uint32_t                 field_0x10  (evidence: 0x00870EF0)
-    // +0x14  uint32_t                 field_0x14  (evidence: 0x00870EF0)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x00870EF0, 0x008710F0)
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x00870EF0, 0x008710F0)
     // +0x18  uint32_t                 field_0x18  (evidence: 0x00870EF0)
 };
 } // namespace lifted_layout

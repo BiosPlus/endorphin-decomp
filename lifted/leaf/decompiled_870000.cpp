@@ -286,3 +286,35 @@ uint8_t fn_00870F90(uint32_t out_addr) {
     return 1;
 }
 } // namespace lift_00870F90
+
+// [0x008710F0]
+namespace lift_008710F0 {
+// @name TextCursor::ConsumeEqualsOrRewind_008710F0
+// @class TextCursor
+// @summary Skips blank lines backward, then consumes '=' if present (skipping blanks again) or restores the saved cursor fields and returns false.
+// @field TextCursor +0x08 uint32_t field_0x08
+// @field TextCursor +0x10 uint32_t field_0x10
+// @field TextCursor +0x14 uint32_t field_0x14
+
+bool ext_008710B0(void* self);
+bool ext_00871090(void* self, uint8_t expected);
+
+bool fn_008710F0(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uint32_t saved_14 = *reinterpret_cast<uint32_t*>(base + 0x14);
+    uint32_t saved_08 = *reinterpret_cast<uint32_t*>(base + 0x08);
+    uint32_t saved_10 = *reinterpret_cast<uint32_t*>(base + 0x10);
+
+    ext_008710B0(self);
+
+    if (ext_00871090(self, '=')) {
+        ext_008710B0(self);
+        return true;
+    }
+
+    *reinterpret_cast<uint32_t*>(base + 0x10) = saved_10;
+    *reinterpret_cast<uint32_t*>(base + 0x08) = saved_08;
+    *reinterpret_cast<uint32_t*>(base + 0x14) = saved_14;
+    return false;
+}
+} // namespace lift_008710F0
