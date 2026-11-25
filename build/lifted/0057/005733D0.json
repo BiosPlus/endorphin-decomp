@@ -1,0 +1,13 @@
+{
+  "va": "0x005733D0",
+  "size": 92,
+  "orig_symbol": "sub_005733D0",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "copyRangeBackward48",
+  "signature": "extern \"C\" uint32_t sub_005733D0(uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Copies a range of 48-byte elements backward via ext_005732A0 and returns the adjusted destination pointer.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:15:22Z"
+}

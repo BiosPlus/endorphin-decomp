@@ -1461,3 +1461,32 @@ uint32_t fn_00575E90(uint32_t first, uint32_t last, uint32_t dst, uint32_t /*unu
     return dst - scaled;
 }
 } // namespace lift_00575E90
+
+// [0x0057BEC0]
+namespace lift_0057BEC0 {
+// @name CopyRecordRangeWrapper_0057BEC0
+// @summary Copies a range of 0x3C-byte records from [first, last) to dest and returns dest past the last copied record.
+
+extern void* __cdecl ext_0057BC20(const void* first, const void* last, void* dest);
+
+void* __cdecl sub_0057BEC0(const void* first, const void* last, void* dest) {
+    ext_0057BC20(first, last, dest);
+    ptrdiff_t count = (static_cast<const uint8_t*>(last) - static_cast<const uint8_t*>(first)) / 0x3C;
+    return static_cast<uint8_t*>(dest) + count * 0x3C;
+}
+} // namespace lift_0057BEC0
+
+// [0x005733D0]
+namespace lift_005733D0 {
+// @name copyRangeBackward48
+// @summary Copies a range of 48-byte elements backward via ext_005732A0 and returns the adjusted destination pointer.
+
+extern void ext_005732A0(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6);
+
+extern uint32_t sub_005733D0(uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    ext_005732A0(arg1, arg2, arg3, arg3, 0, 0);
+    int32_t diff = static_cast<int32_t>(arg2 - arg1);
+    int32_t count = diff / 48;
+    return arg3 - static_cast<uint32_t>(count * 48);
+}
+} // namespace lift_005733D0

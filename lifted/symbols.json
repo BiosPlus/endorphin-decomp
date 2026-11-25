@@ -24099,6 +24099,12 @@
     "summary": "Returns the iterator's position; sentinel -2 (end) returns the position directly, otherwise asserts the position lies within the owning string's data range.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x005733D0": {
+    "name": "copyRangeBackward48",
+    "signature": "extern \"C\" uint32_t sub_005733D0(uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Copies a range of 48-byte elements backward via ext_005732A0 and returns the adjusted destination pointer.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x005738D0": {
     "name": "sub_005738D0",
     "signature": "uint32_t fn_005738D0(uint32_t begin, uint32_t end, uint32_t value)",
@@ -24360,6 +24366,12 @@
     "class": "Unknown",
     "signature": "void* __cdecl CopyRecordRange_0057BC20(const void* first, const void* last, void* dest)",
     "summary": "Copies each 0x3C-byte record in [first, last) to dest (two bytes plus two std::string members), returns dest past the last copied record.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057BEC0": {
+    "name": "CopyRecordRangeWrapper_0057BEC0",
+    "signature": "void* __cdecl sub_0057BEC0(const void* first, const void* last, void* dest)",
+    "summary": "Copies a range of 0x3C-byte records from [first, last) to dest and returns dest past the last copied record.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
   "0x0057C010": {
