@@ -1176,3 +1176,41 @@ TaggedArray* fn_007DCA30(uint32_t tag, int32_t count, void* allocator) {
     return arr;
 }
 } // namespace lift_007DCA30
+
+// [0x007DD160] sub_007DD160 (109 bytes)
+namespace lift_007DD160 {
+// @name Unknown::pairFlagIsClear_007DD160
+// @class Unknown
+// @summary Maps the unordered pair (a, b) to a triangular index into a packed nibble table and returns true when that flag bit is clear; returns false when a == b.
+// @field Unknown +0x0c int32_t field_0x0c (multiplier applied to the lower index of the pair)
+// @field Unknown +0x20 uint8_t* field_0x20 (packed 4-bit flag table base pointer)
+bool fn_007DD160(void* self, int32_t a, int32_t b) {
+    if (a == b) {
+        return false;
+    }
+
+    // Branchless min/max of (a, b) via sign mask of (b - a).
+    const uint32_t ua = static_cast<uint32_t>(a);
+    const uint32_t ub = static_cast<uint32_t>(b);
+    const uint32_t mask = static_cast<uint32_t>(static_cast<int32_t>(ub - ua) >> 31);
+    const uint32_t lo = ((~mask) & ua) | (mask & ub);
+    const uint32_t hi = (mask & ua) | ((~mask) & ub);
+
+    // Triangular offset: (lo + 1) * (lo + 2) / 2.
+    const uint32_t prod = (lo + 1u) * (lo + 2u);
+    const uint32_t tri = static_cast<uint32_t>(static_cast<int32_t>(prod) >> 1);
+
+    const uint32_t mult = static_cast<uint32_t>(lift_field<int32_t>(self, 0x0c));
+    const uint32_t n = hi - tri + mult * lo;
+
+    // Two nibbles per byte: even index -> low nibble, odd index -> high nibble.
+    const int32_t byteIndex = static_cast<int32_t>(n) >> 1;
+    const uint8_t* table = lift_field<uint8_t*>(self, 0x20);
+    const uint32_t packed = table[byteIndex];
+    const unsigned shift = (n & 1u) * 4u;
+
+    // Flag is bit 2 of the selected nibble; result is true when it is clear.
+    const uint32_t flag = (packed >> (shift + 2u)) & 1u;
+    return flag == 0u;
+}
+} // namespace lift_007DD160

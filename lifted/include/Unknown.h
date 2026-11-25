@@ -348,6 +348,7 @@ struct Unknown_Fields {
     // +0xC   void field_0x0C (CString-style name object)  (evidence: 0x0041FD20) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    owned_object  (evidence: 0x005B1870) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    pObj  (evidence: 0x006D8FD0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   int32_t field_0x0c (multiplier applied to the lower index of the pair)  (evidence: 0x007DD160) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t slot3 (vtable entry 3, read as a pointer)  (evidence: 0x007DAD70) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0C (sub-object pointer)  (evidence: 0x007D5B30) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0c (address taken only; no type information recovered)  (evidence: 0x00440770) // CONFLICT: multiple definitions at +0xC
@@ -550,6 +551,7 @@ struct Unknown_Fields {
     // +0x20  uint8_t                  initialized  (evidence: 0x006F9E90, 0x006FC200) // CONFLICT: multiple definitions at +0x20
     // +0x20  float                    m20  (evidence: 0x00480010, 0x004890D0) // CONFLICT: multiple definitions at +0x20
     // +0x20  HWND                     ownerHwnd  (evidence: 0x004586A0, 0x00458DF0) // CONFLICT: multiple definitions at +0x20
+    // +0x20  uint8_t* field_0x20 (packed 4-bit flag table base pointer)  (evidence: 0x007DD160) // CONFLICT: multiple definitions at +0x20
     // +0x20  std::string              str1  (evidence: 0x006098F0) // CONFLICT: multiple definitions at +0x20
     // +0x20  std::uint32_t            stride  (evidence: 0x00790EE0) // CONFLICT: multiple definitions at +0x20
     // +0x20  void* field_0x20 (dispatch table base, via sub-object)  (evidence: 0x007D5B30) // CONFLICT: multiple definitions at +0x20

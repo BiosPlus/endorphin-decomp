@@ -69833,6 +69833,13 @@
     "summary": "Returns bit 0 of the flags of the table entry at index when index is in range and the entry's stored id equals index; otherwise returns false.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007DD160": {
+    "name": "Unknown::pairFlagIsClear_007DD160",
+    "class": "Unknown",
+    "signature": "bool fn_007DD160(void* self, int32_t a, int32_t b)",
+    "summary": "Maps the unordered pair (a, b) to a triangular index into a packed nibble table and returns true when that flag bit is clear; returns false when a == b.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007DE020": {
     "name": "CxSmallSort::vfunc_0",
     "class": "CxSmallSort",
