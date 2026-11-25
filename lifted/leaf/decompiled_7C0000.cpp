@@ -862,3 +862,30 @@ void fn_007C93A0(void* self, DWORD flag, [[maybe_unused]] DWORD unused_arg) {
     }
 }
 } // namespace lift_007C93A0
+
+// [0x007CDB70]
+namespace lift_007CDB70 {
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+// @name alignFieldAndIncrementCounters
+// @summary Aligns field_0xac up to a 4-byte boundary and increments four 32-bit counters
+// @field Unknown +0x74 int32_t field_0x74
+// @field Unknown +0x80 int32_t field_0x80
+// @field Unknown +0x8c int32_t field_0x8c
+// @field Unknown +0xa8 int32_t field_0xa8
+// @field Unknown +0xac int32_t field_0xac
+void sub_007CDB70(uint32_t arg0) {
+    int32_t val = static_cast<int32_t>(mem_read32(arg0 + 0xac));
+    int32_t rem = val % 4;
+    if (rem != 0) {
+        val = val - rem + 4;
+    }
+    mem_write32(arg0 + 0xac, static_cast<uint32_t>(val));
+
+    mem_write32(arg0 + 0x80, mem_read32(arg0 + 0x80) + 1);
+    mem_write32(arg0 + 0x8c, mem_read32(arg0 + 0x8c) + 1);
+    mem_write32(arg0 + 0x74, mem_read32(arg0 + 0x74) + 1);
+    mem_write32(arg0 + 0xa8, mem_read32(arg0 + 0xa8) + 1);
+}
+} // namespace lift_007CDB70
