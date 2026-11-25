@@ -1618,3 +1618,37 @@ void* fn_0052F9C0(void* self) {
     return self;
 }
 } // namespace lift_0052F9C0
+
+// [0x0052EBA0]
+namespace lift_0052EBA0 {
+// @name TreeMap::find
+// @class TreeMap
+// @summary Finds a string-keyed entry in the tree map, returning an iterator pair {container, node} or {container, head} if not found.
+// @field TreeMap +0x04 void* head
+
+struct TreeMapIter {
+    void* container;
+    void* node;
+};
+
+extern void* ext_0052A230(void* self, const void* key);
+
+extern void (*mem_00925134)();
+extern bool (*mem_00924EF4)(const void* lhs, const void* rhs);
+
+TreeMapIter* fn_0052EBA0(void* self, TreeMapIter* out_iter, const void* key) {
+    void* node = ext_0052A230(self, key);
+    if (!self) {
+        mem_00925134();
+    }
+    void* head = *reinterpret_cast<void**>(static_cast<uint8_t*>(self) + 0x4);
+    if (node == head || mem_00924EF4(key, static_cast<const uint8_t*>(node) + 0xc)) {
+        out_iter->container = self;
+        out_iter->node = head;
+    } else {
+        out_iter->container = self;
+        out_iter->node = node;
+    }
+    return out_iter;
+}
+} // namespace lift_0052EBA0
