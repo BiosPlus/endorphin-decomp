@@ -8333,6 +8333,12 @@
     "summary": "Runs one-time construction of a static object at mem_00AD907C (guarded by bit 0 of mem_00AD9098) and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00476FD0": {
+    "name": "InitOnceGlobalString_00476FD0",
+    "signature": "extern \"C\" void ext_00916F00(); // teardown routine (address passed to 0x006A6C87) extern \"C\" uint8_t mem_00AD90B8;  // once-init guard flag (bit 0) extern \"C\" uint8_t mem_00AD909C[]; // static object storage (size not recovered) void* fn_00476FD0(void)",
+    "summary": "Runs one-time construction of the static object at mem_00AD909C (guarded by bit 0 of mem_00AD90B8), registers its teardown, and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x004772E0": {
     "name": "MoveBackward12",
     "signature": "std::uint8_t* fn_004772E0(std::uint8_t* first, std::uint8_t* last, std::uint8_t* dst_last)",
