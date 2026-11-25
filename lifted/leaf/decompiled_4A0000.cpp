@@ -860,3 +860,33 @@ void fn_004A6A90(void* self) {
     ext_00596660(self, out_iter, container, v->field_0x04, container, v->field_0x08);
 }
 } // namespace lift_004A6A90
+
+// [0x004AC060] sub_004AC060 (61 bytes)
+namespace lift_004AC060 {
+// Known callee 0x005F3E70: IsElementValidAndNotLess_005F3E70 (Looks up an element via sub_004AB940, validates it against the container bounds at a1+8, and returns 1 if *a5 is not less than the element's value, else 0.)
+extern int ext_005F3E70(uintptr_t a1, uintptr_t a2, uintptr_t a3,
+                            uintptr_t a4, uintptr_t a5, uintptr_t a6);
+// CRT _invalid_parameter_noinfo handler pointer (MSVCR80).
+extern uintptr_t mem_00925134;
+
+// @name Unknown::isRangeValidAndNotLess_004AC060
+// @class Unknown
+// @summary Reports invalid parameters if the two range fields are out of order, then forwards to IsElementValidAndNotLess_005F3E70 with the range bounds and the value pointer.
+// @field Unknown +0x04 uintptr_t field_0x04
+// @field Unknown +0x08 uintptr_t field_0x08
+int fn_004AC060(void* self, uintptr_t* a5) {
+    auto* fields = static_cast<uint8_t*>(self);
+    uintptr_t upper = lift_field<uintptr_t>(fields, 0x08);
+    if (lift_field<uintptr_t>(fields, 0x04) > upper) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+    uintptr_t lower = lift_field<uintptr_t>(fields, 0x04);
+    if (lower > lift_field<uintptr_t>(fields, 0x08)) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+    uintptr_t value = reinterpret_cast<uintptr_t>(a5);
+    return ext_005F3E70(reinterpret_cast<uintptr_t>(self), lower,
+                        reinterpret_cast<uintptr_t>(self), upper,
+                        value, value);
+}
+} // namespace lift_004AC060

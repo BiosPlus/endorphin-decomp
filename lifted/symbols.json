@@ -12755,6 +12755,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
+  "0x004AC060": {
+    "name": "Unknown::isRangeValidAndNotLess_004AC060",
+    "class": "Unknown",
+    "signature": "int fn_004AC060(void* self, uintptr_t* a5)",
+    "summary": "Reports invalid parameters if the two range fields are out of order, then forwards to IsElementValidAndNotLess_005F3E70 with the range bounds and the value pointer.",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004AC240": {
     "name": "NMData::BehaviourData::vfunc_0_off_158",
     "class": "NMData::BehaviourData",
