@@ -20930,6 +20930,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x2C and tail-calls sub_0050BE20.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00537EC0": {
+    "name": "fn_00537EC0 (forwards dword at +0x00 to ext_0063E006)",
+    "class": "\u003cunknown\u003e",
+    "signature": "extern \"C\" void __thiscall fn_00537EC0(void* self)",
+    "summary": "Loads the DWORD at offset 0 of `this` and forwards it to ext_0063E006 (GLU32 gluDeleteQuadric thunk).",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x00538530": {
     "name": "Unknown::InitWithVTableAndDefaults",
     "class": "Unknown",

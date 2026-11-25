@@ -1,0 +1,22 @@
+{
+  "va": "0x00537EC0",
+  "size": 9,
+  "orig_symbol": "sub_00537EC0",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "fn_00537EC0 (forwards dword at +0x00 to ext_0063E006)",
+  "class": "\u003cunknown\u003e",
+  "signature": "extern \"C\" void __thiscall fn_00537EC0(void* self)",
+  "summary": "Loads the DWORD at offset 0 of `this` and forwards it to ext_0063E006 (GLU32 gluDeleteQuadric thunk).",
+  "fields": [
+    {
+      "class": "\u003cClass\u003e",
+      "offset": "+0x0",
+      "type": "DWORD field_0x00 (dereferenced as the forwarded",
+      "name": "argument)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:16:01Z"
+}

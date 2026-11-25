@@ -1488,3 +1488,18 @@ void* fn_005301F0(void) {
 }
 } // namespace lift_0052FD90
 } // namespace lift_005301F0
+
+// [0x00537EC0]
+namespace lift_00537EC0 {
+// @name fn_00537EC0 (forwards dword at +0x00 to ext_0063E006)
+// @class <unknown>
+// @summary Loads the DWORD at offset 0 of `this` and forwards it to ext_0063E006 (GLU32 gluDeleteQuadric thunk).
+// @field <Class> +0x00 DWORD field_0x00 (dereferenced as the forwarded argument)
+
+extern void __cdecl ext_0063E006(DWORD arg);
+
+extern void __thiscall fn_00537EC0(void* self) {
+    DWORD eax = lift_field<DWORD>(self, 0x00);
+    ext_0063E006(eax);
+}
+} // namespace lift_00537EC0
