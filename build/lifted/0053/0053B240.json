@@ -1,0 +1,58 @@
+{
+  "va": "0x0053B240",
+  "size": 109,
+  "orig_symbol": "sub_0053B240",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::initAnimationDerived_0053B240",
+  "class": "Unknown",
+  "signature": "void* fn_0053B240(void* self)",
+  "summary": "Base-initializes self, installs three 32-bit vtable pointers (+0x00, +0x14, +0x18), zeroes +0x1C/+0x20/+0x34/+0x38, then calls Animation::vfunc_29 to reset state; returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "vtable_secondary"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "vtable_tertiary"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "uint32_t",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:59:10Z"
+}

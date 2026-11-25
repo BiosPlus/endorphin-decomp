@@ -1427,3 +1427,43 @@ void fn_00537A30(void* self) {
     lift_field<void*>(self, 0x10) = self;
 }
 } // namespace lift_00537A30
+
+// [0x0053B240] sub_0053B240 (109 bytes)
+namespace lift_0053B240 {
+// Known callee 0x00532B60: Unknown::initVtableAndFlags (thiscall on self, stores vtable at +0x00, flags at +0x04/+0x0C, zeroes dwords at +0x08/+0x10).
+extern void ext_00532B60(void* self);
+// Known callee 0x0053AD10: Primitives::Animation::vfunc_29 (thiscall on self, resets animation state).
+extern void ext_0053AD10(void* self);
+
+// @name Unknown::initAnimationDerived_0053B240
+// @class Unknown
+// @summary Base-initializes self, installs three 32-bit vtable pointers (+0x00, +0x14, +0x18), zeroes +0x1C/+0x20/+0x34/+0x38, then calls Animation::vfunc_29 to reset state; returns self.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x14 uint32_t vtable_secondary
+// @field Unknown +0x18 uint32_t vtable_tertiary
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x34 uint32_t field_0x34
+// @field Unknown +0x38 uint32_t field_0x38
+//
+// Vtable values are 32-bit image addresses (0x009554ec etc.) and are stored as uint32_t so
+// the layout is preserved independent of host pointer size. The original SEH frame
+// (fs:[0] push/pop and the cleanup-state byte) has no portable equivalent and is omitted.
+void* fn_0053B240(void* self) {
+    ext_00532B60(self);
+
+    lift_field<uint32_t>(self, 0x14) = 0x009553A8u;          // overwritten below (kept for fidelity)
+    lift_field<uint32_t>(self, 0x00) = 0x009554ECu;          // primary vtable
+    lift_field<uint32_t>(self, 0x14) = 0x009554E4u;          // secondary-base vtable
+    lift_field<uint32_t>(self, 0x18) = 0x009553B0u;          // tertiary-base vtable
+
+    uint32_t zero = 0;
+    lift_field<uint32_t>(self, 0x1C) = zero;
+    lift_field<uint32_t>(self, 0x20) = zero;
+    lift_field<uint32_t>(self, 0x34) = zero;
+    lift_field<uint32_t>(self, 0x38) = zero;
+
+    ext_0053AD10(self);
+    return self;
+}
+} // namespace lift_0053B240
