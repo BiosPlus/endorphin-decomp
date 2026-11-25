@@ -253,6 +253,7 @@ struct Unknown_Fields {
     // +0xC   void*                    field_0x0c  (evidence: 0x0058A9A0, 0x0058AA20, 0x005B2130, 0x005B7040, 0x0071C740, 0x0071C8D0, 0x0071C970) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0xC  (evidence: 0x004B7D80, 0x004C0800, 0x00512A00, 0x00604D80, 0x0068EFF0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0xc  (evidence: 0x007D4B20, 0x007D8470) // CONFLICT: multiple definitions at +0xC
+    // +0xC   u32                      flags  (evidence: 0x007CCC30) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 index  (evidence: 0x00810C30) // CONFLICT: multiple definitions at +0xC
     // +0xC   std::string              name  (evidence: 0x005A2BD0) // CONFLICT: multiple definitions at +0xC
     // +0xC   HGLOBAL field_0x0c (inner handle of the holder object; freed via GlobalFree if non-null)  (evidence: 0x007BD340) // CONFLICT: multiple definitions at +0xC
@@ -394,7 +395,7 @@ struct Unknown_Fields {
     // +0x28  int32_t                  count  (evidence: 0x007299C0) // CONFLICT: multiple definitions at +0x28
     // +0x28  DWORD                    field_0x28  (evidence: 0x005B34C0, 0x0078C230, 0x0078C3A0, 0x00798710) // CONFLICT: multiple definitions at +0x28
     // +0x28  double                   field_0x28  (evidence: 0x00503CA0, 0x00766240) // CONFLICT: multiple definitions at +0x28
-    // +0x28  float                    field_0x28  (evidence: 0x004B10A0, 0x004B10D0, 0x004B1100, 0x004B6CC0, 0x004B6CF0, 0x004B6FF0, 0x004CCC30, 0x00538FA0, 0x005ACC50, 0x005ACEE0, 0x00629E80) // CONFLICT: multiple definitions at +0x28
+    // +0x28  float                    field_0x28  (evidence: 0x004B10A0, 0x004B10D0, 0x004B1100, 0x004B6CC0, 0x004B6CF0, 0x004B6FF0, 0x004CCC30, 0x00538FA0, 0x005ACC50, 0x005ACEE0, 0x00629E80, 0x007CCC30) // CONFLICT: multiple definitions at +0x28
     // +0x28  int32_t                  field_0x28  (evidence: 0x006AD0E0) // CONFLICT: multiple definitions at +0x28
     // +0x28  std::string              field_0x28  (evidence: 0x005B18E0, 0x005B7040) // CONFLICT: multiple definitions at +0x28
     // +0x28  std::uint32_t            field_0x28  (evidence: 0x00519CB0) // CONFLICT: multiple definitions at +0x28

@@ -1001,3 +1001,35 @@ void fn_007CCBB0(void* self, float x) {
     }
 }
 } // namespace lift_007CCBB0
+
+// [0x007CCC30]
+namespace lift_007CCC30 {
+// @name clampNonNegativeStoreAndSetFlag10
+// @summary Clamps x to >= 0 (NaN passes through), stores it at +0x28, then sets flag 0x10 in +0x0C when |x| > ~1e-6 (or NaN), else clears it.
+// @field Unknown +0x0C u32 flags
+// @field Unknown +0x28 float field_0x28
+void fn_007CCC30(void* self, float x) {
+    static constexpr float kEpsilon = std::bit_cast<float>(std::uint32_t{0x358637BDu}); // .rdata mem_0094CE80
+
+    auto* base = static_cast<unsigned char*>(self);
+
+    // if (x < 0) x = 0; (NaN is kept, since !(x < 0) is true)
+    if (x < 0.0f) {
+        x = 0.0f;
+    }
+
+    // *(float*)(self + 0x28) = x;
+    std::memcpy(base + 0x28, &x, sizeof(float));
+
+    // Compare |x| against epsilon; unordered (NaN) counts as "greater".
+    float ax = std::fabs(x);
+    std::uint32_t flags;
+    std::memcpy(&flags, base + 0x0C, sizeof(flags));
+    if (!(ax <= kEpsilon)) {
+        flags |= 0x10u;
+    } else {
+        flags &= ~0x10u;
+    }
+    std::memcpy(base + 0x0C, &flags, sizeof(flags));
+}
+} // namespace lift_007CCC30

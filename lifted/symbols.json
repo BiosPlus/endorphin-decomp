@@ -58206,6 +58206,12 @@
     "summary": "Stores a float at +0x1c and sets or clears bit 0x8 at +0xc based on its magnitude.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CCC30": {
+    "name": "clampNonNegativeStoreAndSetFlag10",
+    "signature": "void fn_007CCC30(void* self, float x)",
+    "summary": "Clamps x to \u003e= 0 (NaN passes through), stores it at +0x28, then sets flag 0x10 in +0x0C when |x| \u003e ~1e-6 (or NaN), else clears it.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CCCD0": {
     "name": "Unknown::clampNonNegativeToFields20And2C",
     "class": "Unknown",
