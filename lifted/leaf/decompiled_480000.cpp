@@ -2197,3 +2197,40 @@ void* fn_0048E120(void* self, uint32_t arg0, uint32_t arg1) {
     return self;
 }
 } // namespace lift_0048E120
+
+// [0x004898A0] sub_004898A0 (75 bytes)
+namespace lift_004898A0 {
+// Known callee 0x00405FB0: throwPreparedStringError_00405FB0 (Builds a std::string from the literal at 0x00928F30 and throws it inside an std::exception-derived object.)
+extern void ext_00405FB0();
+// Known callee 0x006226A0: allocateElements20 (Allocates storage for `count` 20-byte elements; count 0 allocates 0 bytes, and a count whose byte size would overflow 32 bits throws std::length_error.)
+// The original caller pushes a zero second argument and cleans up 8 bytes (cdecl); the second parameter is passed through unchanged.
+extern void* ext_006226A0(uint32_t count, uint32_t pad);
+
+// @name Unknown::reserve20_004898A0
+// @class Unknown
+// @summary Resets the 3-pointer element range and, for a nonzero count, allocates storage for count 20-byte elements; returns true when allocated.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x0C void* field_0x0C
+bool fn_004898A0(void* self, uint32_t count) {
+    lift_field<void*>(self, 0x04) = nullptr;
+    lift_field<void*>(self, 0x08) = nullptr;
+    lift_field<void*>(self, 0x0C) = nullptr;
+
+    if (count == 0) {
+        return false;
+    }
+
+    if (count > 0x0CCCCCCCu) {
+        ext_00405FB0(); // throws
+    }
+
+    void* base = ext_006226A0(count, 0u);
+    uint8_t* end = reinterpret_cast<uint8_t*>(base) + static_cast<size_t>(count) * 20u;
+
+    lift_field<void*>(self, 0x04) = base;
+    lift_field<void*>(self, 0x08) = base;
+    lift_field<void*>(self, 0x0C) = end;
+    return true;
+}
+} // namespace lift_004898A0

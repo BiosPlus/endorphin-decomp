@@ -9922,6 +9922,13 @@
     "summary": "If self-\u003e+0x04 is non-null, tail-calls child's vtable slot 0x78/4 with child as this and self as the argument; otherwise returns self.",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x004898A0": {
+    "name": "Unknown::reserve20_004898A0",
+    "class": "Unknown",
+    "signature": "bool fn_004898A0(void* self, uint32_t count)",
+    "summary": "Resets the 3-pointer element range and, for a nonzero count, allocates storage for count 20-byte elements; returns true when allocated.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00489A80": {
     "name": "CopyFloat5RangeAndAdvance",
     "signature": "void* fn_00489A80(const void* first, const void* last, void* out)",
