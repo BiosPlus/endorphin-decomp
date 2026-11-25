@@ -758,3 +758,28 @@ uint32_t sub_00649770(uint32_t first, uint32_t last, uint32_t result) {
     return result;
 }
 } // namespace lift_00649770
+
+// [0x0064B840] sub_0064B840 (67 bytes)
+namespace lift_0064B840 {
+// @name copyRange0x18
+// @summary Copies 0x18-byte records from [first, last) to dst; if dst is null, only advances the source (no copy).
+void fn_0064B840(const void* first, const void* last, void* dst) {
+    if (first == last) {
+        return;
+    }
+    const uint8_t* src = static_cast<const uint8_t*>(first);
+    const uint8_t* end = static_cast<const uint8_t*>(last);
+    uint8_t* out = static_cast<uint8_t*>(dst);
+    if (out == nullptr) {
+        do {
+            src += 0x18;
+        } while (src != end);
+        return;
+    }
+    do {
+        std::memcpy(out, src, 0x18);
+        src += 0x18;
+        out += 0x18;
+    } while (src != end);
+}
+} // namespace lift_0064B840

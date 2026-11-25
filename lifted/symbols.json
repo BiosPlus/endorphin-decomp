@@ -34626,6 +34626,12 @@
     "summary": "RTTI type guard: dynamic-casts self to the ROWriteMethodType target type (mem_00A9BD54, source mem_00A2E2F8) and returns the result or NULL.",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x0064B840": {
+    "name": "copyRange0x18",
+    "signature": "void fn_0064B840(const void* first, const void* last, void* dst)",
+    "summary": "Copies 0x18-byte records from [first, last) to dst; if dst is null, only advances the source (no copy).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x0064CA50": {
     "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundAxis(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundAxis(float), 0}\u003e",
@@ -58539,6 +58545,12 @@
     "name": "sub_0080B530_forwardAllocZeroFlags",
     "signature": "extern \"C\" uint32_t fn_0080B530(uint32_t size)",
     "summary": "Forwards its single cdecl uint32_t argument unchanged to ext_008596E0 and returns that call's result.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
+  "0x0080B540": {
+    "name": "LocalBlockResizeThunk",
+    "signature": "uint32_t __cdecl fn_0080B540(uint32_t handle, uint32_t size)",
+    "summary": "Forwards handle and size arguments to LocalBlockResize.",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
   "0x0080B560": {
