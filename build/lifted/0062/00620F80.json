@@ -1,0 +1,40 @@
+{
+  "va": "0x00620F80",
+  "size": 95,
+  "orig_symbol": "sub_00620F80",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "Unknown::copyConstruct (descriptive; owner class not identified)",
+  "class": "Unknown",
+  "signature": "void* fn_00620F80(void* self, const void* src)",
+  "summary": "Copy-constructs a two-string record from src into self (SEH-guarded in the original), copies two doubles, and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "field_1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "double",
+      "name": "field_38"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "double",
+      "name": "field_40"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:33:59Z"
+}

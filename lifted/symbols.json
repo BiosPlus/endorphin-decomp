@@ -36916,6 +36916,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00404D50 (ElementCountFromRange).",
     "lifted_path": "lifted/leaf/tiny_620000.cpp"
   },
+  "0x00620F80": {
+    "name": "Unknown::copyConstruct (descriptive; owner class not identified)",
+    "class": "Unknown",
+    "signature": "void* fn_00620F80(void* self, const void* src)",
+    "summary": "Copy-constructs a two-string record from src into self (SEH-guarded in the original), copies two doubles, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00620FE0": {
     "name": "allocate_72byte_elements",
     "signature": "void* fn_00620FE0(uint32_t count)",

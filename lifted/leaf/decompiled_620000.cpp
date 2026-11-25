@@ -2514,3 +2514,24 @@ void* fn_006202F0() {
     return &mem_00B49E24;
 }
 } // namespace lift_006202F0
+
+// [0x00620F80] sub_00620F80 (95 bytes)
+namespace lift_00620F80 {
+// Imported MSVCP80 std::basic_string<char> copy constructor (IAT slot mem_00924FE0).
+extern void ext_MSVCP80_string_copy_ctor(void* dst, const void* src);
+
+// @name Unknown::copyConstruct (descriptive; owner class not identified)
+// @class Unknown
+// @summary Copy-constructs a two-string record from src into self (SEH-guarded in the original), copies two doubles, and returns self.
+// @field Unknown +0x00 std::string field_00
+// @field Unknown +0x1C std::string field_1C
+// @field Unknown +0x38 double field_38
+// @field Unknown +0x40 double field_40
+void* fn_00620F80(void* self, const void* src) {
+    ext_MSVCP80_string_copy_ctor(&lift_field<uint8_t>(self, 0x00), &lift_field<uint8_t>(src, 0x00));
+    ext_MSVCP80_string_copy_ctor(&lift_field<uint8_t>(self, 0x1C), &lift_field<uint8_t>(src, 0x1C));
+    lift_field<double>(self, 0x38) = lift_field<double>(src, 0x38);
+    lift_field<double>(self, 0x40) = lift_field<double>(src, 0x40);
+    return self;
+}
+} // namespace lift_00620F80
