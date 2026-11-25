@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_860000.cpp
 #include "lift_compat.h"
 #include <cstdint>
+#include <bit>
 
 // [0x0086086B] sub_0086086B (5 bytes)
 // @name sub_0086086B
@@ -1110,3 +1111,59 @@ uint32_t sub_00860800(uint32_t s) {
     return 0;
 }
 } // namespace lift_00860800
+
+// [0x008671C0]
+namespace lift_008671C0 {
+extern void* ext_0085D560(uint32_t uBytes);
+extern uintptr_t mem_00924224;
+
+// @name GetEnvironmentVariableAllocA
+// @summary Queries the length of an environment variable, allocates a buffer via LocalAlloc, and retrieves its value.
+char* fn_008671C0(const char* name) {
+    using GetEnvironmentVariableAFn = uint32_t(__stdcall*)(const char* lpName, char* lpBuffer, uint32_t nSize);
+    auto get_env_var = reinterpret_cast<GetEnvironmentVariableAFn>(mem_00924224);
+
+    char dummy = 0;
+    uint32_t len = get_env_var(name, &dummy, 0);
+    if (len == 0) {
+        return nullptr;
+    }
+
+    uint32_t size = len + 1;
+    char* buf = static_cast<char*>(ext_0085D560(size));
+    if (buf == nullptr) {
+        return nullptr;
+    }
+
+    if (get_env_var(name, buf, size) == 0) {
+        return nullptr;
+    }
+
+    return buf;
+}
+} // namespace lift_008671C0
+
+// [0x00865960]
+namespace lift_00865960 {
+// @name blockCipherEncrypt
+// @summary Applies a 12-round 64-bit block cipher transform using a 26-word key schedule.
+
+
+void __cdecl sub_00865960(uint32_t* state, const uint32_t* key) {
+    state[1] += key[0];
+    state[0] += key[1];
+
+    const uint32_t* k = key + 2;
+    for (int round = 12; round != 0; --round) {
+        uint32_t s1 = (state[0] >> 4) & 0x1fu;
+        uint32_t t1 = std::rotl(state[1] ^ state[0], static_cast<int>(s1)) - k[0];
+        state[1] = t1;
+
+        uint32_t s2 = (t1 >> 7) & 0x1fu;
+        uint32_t t0 = std::rotl(state[0] ^ t1, static_cast<int>(s2)) + k[1];
+        state[0] = t0;
+
+        k += 2;
+    }
+}
+} // namespace lift_00865960

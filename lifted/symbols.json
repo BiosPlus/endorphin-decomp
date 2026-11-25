@@ -76192,10 +76192,22 @@
     "summary": "Writes tag 0xCF into the first u16 of the record at the 5th stack argument, zeroes the next three u16 fields, clears mem_00AB98EC, and returns 0.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x00865960": {
+    "name": "blockCipherEncrypt",
+    "signature": "void __cdecl sub_00865960(uint32_t* state, const uint32_t* key)",
+    "summary": "Applies a 12-round 64-bit block cipher transform using a 26-word key schedule.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x008665CC": {
     "name": "DataBytes_008665CC",
     "signature": "void fn_008665CC(void* self)",
     "summary": "Non-executing 20-byte data block (byte-value table 0x00-0x04); no observable logic.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
+  "0x008671C0": {
+    "name": "GetEnvironmentVariableAllocA",
+    "signature": "char* fn_008671C0(const char* name)",
+    "summary": "Queries the length of an environment variable, allocates a buffer via LocalAlloc, and retrieves its value.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
   "0x00867360": {
