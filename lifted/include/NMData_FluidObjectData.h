@@ -10,6 +10,7 @@
 // Recovered field layout for NMData::FluidObjectData:
 namespace lifted_layout {
 struct NMData_FluidObjectData_Fields {
+    // +0x0   void**                   vptr  (evidence: 0x005C3270)
     // +0x17C std::string              field_0x17c  (evidence: 0x005C44A0)
     // +0x198 u32                      field_0x198  (evidence: 0x005C44A0)
 };

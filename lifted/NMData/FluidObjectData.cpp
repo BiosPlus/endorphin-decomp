@@ -73,3 +73,21 @@ extern "C" void fn_005C44A0(void* self) {
     lift_field<uint32_t>(self, 0x198) = 0;
     ext_005C3660(self);
 }
+
+// [0x005C3270] NMData::FluidObjectData::vfunc_62 (34 bytes)
+namespace lift_005C3270 {
+// Static std::string object at VA 0x00B44944 (copy source).
+extern const std::string mem_00B44944;
+// MSVCP80 import slot [0x924FE0]: address of std::basic_string copy constructor (thiscall).
+extern void (__thiscall* mem_00924FE0)(void* self, const std::string& rhs);
+
+// @name NMData::FluidObjectData::vfunc_62
+// @class NMData::FluidObjectData
+// @summary Copy-constructs a std::string from the static string at 0x00B44944 into the caller's sret buffer and returns that buffer.
+// @field NMData::FluidObjectData +0x00 void** vptr
+void* __thiscall fn_005C3270(void* self, void* out) {
+    (void)self;
+    mem_00924FE0(out, mem_00B44944);
+    return out;
+}
+} // namespace lift_005C3270

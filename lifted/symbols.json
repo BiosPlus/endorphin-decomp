@@ -29265,6 +29265,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).",
     "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
   },
+  "0x005C3270": {
+    "name": "NMData::FluidObjectData::vfunc_62",
+    "class": "NMData::FluidObjectData",
+    "signature": "void* __thiscall fn_005C3270(void* self, void* out)",
+    "summary": "Copy-constructs a std::string from the static string at 0x00B44944 into the caller's sret buffer and returns that buffer.",
+    "lifted_path": "lifted/NMData/FluidObjectData.cpp"
+  },
   "0x005C32B0": {
     "name": "NMData::FluidObjectData::vfunc_15",
     "class": "NMData::FluidObjectData",
