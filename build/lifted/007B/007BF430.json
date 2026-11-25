@@ -1,0 +1,40 @@
+{
+  "va": "0x007BF430",
+  "size": 107,
+  "orig_symbol": "sub_007BF430",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "DumpModeDecode::copyAndAdvance",
+  "class": "DumpModeDecode",
+  "signature": "uint32_t fn_007BF430(void* self, uint32_t dst, uint32_t count)",
+  "summary": "Copies n bytes from the stream cursor to dst and advances cursor/remaining; if fewer than n bytes remain, reports via hook and returns 0.",
+  "fields": [
+    {
+      "class": "DumpModeDecode",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x000"
+    },
+    {
+      "class": "DumpModeDecode",
+      "offset": "+0x164",
+      "type": "uint32_t",
+      "name": "field_0x164"
+    },
+    {
+      "class": "DumpModeDecode",
+      "offset": "+0x1E0",
+      "type": "uint32_t",
+      "name": "field_0x1E0"
+    },
+    {
+      "class": "DumpModeDecode",
+      "offset": "+0x1E4",
+      "type": "int32_t",
+      "name": "field_0x1E4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:54:08Z"
+}

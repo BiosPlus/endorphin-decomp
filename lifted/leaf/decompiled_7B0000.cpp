@@ -1401,3 +1401,41 @@ int32_t __cdecl sub_007BC4F0(uint32_t obj) {
     }
 }
 } // namespace lift_007BC4F0
+
+// [0x007BF430] sub_007BF430 (107 bytes)
+namespace lift_007BF430 {
+// Known callee 0x0079B140: DispatchThreeArgsToOptionalHook (cdecl, 3 args).
+extern void ext_0079B140(uint32_t a1, uint32_t a2, uint32_t a3);
+// Known callee 0x0079B010: CopyMemoryForward (cdecl, dst/src/count).
+extern void ext_0079B010(uint32_t dst, uint32_t src, uint32_t count);
+// Format string "DumpModeDecode: Not enough data for scanline %d" at guest VA 0x00AB2544.
+extern const char mem_00AB2544[];
+
+// @name DumpModeDecode::copyAndAdvance
+// @class DumpModeDecode
+// @summary Copies n bytes from the stream cursor to dst and advances cursor/remaining; if fewer than n bytes remain, reports via hook and returns 0.
+// @field DumpModeDecode +0x000 uint32_t field_0x000
+// @field DumpModeDecode +0x164 uint32_t field_0x164
+// @field DumpModeDecode +0x1E0 uint32_t field_0x1E0
+// @field DumpModeDecode +0x1E4 int32_t field_0x1E4
+uint32_t fn_007BF430(void* self, uint32_t dst, uint32_t count) {
+    // Guest VA of the format string (same value the original pushes).
+    constexpr uint32_t kFormatVA = 0x00AB2544u;
+
+    if (lift_field<int32_t>(self, 0x1E4) < static_cast<int32_t>(count)) {
+        ext_0079B140(lift_field<uint32_t>(self, 0x000),
+                     kFormatVA,
+                     lift_field<uint32_t>(self, 0x164));
+        return 0;
+    }
+
+    uint32_t cursor = lift_field<uint32_t>(self, 0x1E0);
+    if (cursor != dst) {
+        ext_0079B010(dst, cursor, count);
+    }
+
+    lift_field<uint32_t>(self, 0x1E0) = cursor + count;
+    lift_field<int32_t>(self, 0x1E4) = lift_field<int32_t>(self, 0x1E4) - static_cast<int32_t>(count);
+    return 1;
+}
+} // namespace lift_007BF430

@@ -67020,6 +67020,13 @@
     "summary": "If self-\u003e+0x1CC holds a handle-holder, free its inner handle (+0x5C if +0x40 is set, else +0x64) and the holder itself, then clear the slot.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BF430": {
+    "name": "DumpModeDecode::copyAndAdvance",
+    "class": "DumpModeDecode",
+    "signature": "uint32_t fn_007BF430(void* self, uint32_t dst, uint32_t count)",
+    "summary": "Copies n bytes from the stream cursor to dst and advances cursor/remaining; if fewer than n bytes remain, reports via hook and returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BF4A0": {
     "name": "Unknown::applyScaledDeltaToPair",
     "class": "Unknown",
