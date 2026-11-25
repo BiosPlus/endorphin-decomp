@@ -1,0 +1,21 @@
+{
+  "va": "0x004103F0",
+  "size": 47,
+  "orig_symbol": "sub_004103F0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "sub_004103F0",
+  "signature": "uint32_t __fastcall sub_004103F0(uint32_t self)",
+  "summary": "Checks virtual predicate at +0x28 and ext_00410390, returning 1 if (!pred \u0026\u0026 !ext_00410390) or ext_00410390",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:28:56Z"
+}
