@@ -28162,6 +28162,13 @@
     "summary": "Scalar deleting destructor: destroys the member string at +0x04, runs the GeometryType base destructor, and frees the object when bit 0 of deleteFlag is set.",
     "lifted_path": "lifted/Geometry/FileType.cpp"
   },
+  "0x005B3680": {
+    "name": "ExprParser::ReadMethodType\u003cGeometry\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, 0\u003e",
+    "signature": "void* fn_005B3680(void* unused_arg, void* self)",
+    "summary": "If self's inner pointer is set, call its vtable slot 8 (+0x20) and pass the result to sub_006720E0; otherwise construct and throw a DerivedException. Returns self.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005B3B70": {
     "name": "ExprParser::ReadMethodType\u003cGeometry, std::string const \u0026, \u0026Geometry::getFileName, 0\u003e::vfunc_4",
     "class": "ExprParser::ReadMethodType",

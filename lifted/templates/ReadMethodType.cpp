@@ -57018,3 +57018,43 @@ extern int __stdcall fn_0059F8D0(void** holder) {
     return value >= threshold ? 1 : 0;
 }
 } // namespace lift_0059F8D0
+
+// [0x005B3680] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>::vfunc_0 (76 bytes)
+namespace lift_005B3680 {
+// Known callee 0x006720E0: sub_006720E0 (43B, unnamed). Called with this=self and one value argument.
+extern void ext_006720E0(void* self, void* value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, void* throw_info);
+
+// @name ExprParser::ReadMethodType<Geometry>::vfunc_0
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>
+// @summary If self's inner pointer is set, call its vtable slot 8 (+0x20) and pass the result to sub_006720E0; otherwise construct and throw a DerivedException. Returns self.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field Unknown +0x0C void* field_0x0C
+void* fn_005B3680(void* unused_arg, void* self) {
+    (void)unused_arg;
+
+    // Inner object pointer stored at self+0x00.
+    void* inner = lift_field<void*>(self, 0x00);
+
+    if (inner != nullptr) {
+        // ecx = inner->field_0x0C; call through its vtable slot 8 (offset 0x20 on 32-bit).
+        void* sub = lift_field<void*>(inner, 0x0C);
+        void* vtbl = lift_field<void*>(sub, 0x00);
+        using ValueGetter = void* (*)(void*);
+        ValueGetter getter = reinterpret_cast<ValueGetter>(lift_field<void*>(vtbl, 0x20));
+        void* value = getter(sub);
+
+        ext_006720E0(self, value);
+        return self;
+    }
+
+    // Failure path: construct a DerivedException in a local buffer and throw it.
+    alignas(8) unsigned char exception_storage[64] = {};
+    ext_0046C3C0(exception_storage);
+    ext_006A6DD2(exception_storage, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+    return nullptr;
+}
+} // namespace lift_005B3680
