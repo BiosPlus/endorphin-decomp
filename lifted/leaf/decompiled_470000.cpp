@@ -173,3 +173,21 @@ std::string* fn_00476660(std::string* out, int value) {
     return out;
 }
 } // namespace lift_00476660
+
+// [0x00478D00] sub_00478D00 (67 bytes)
+namespace lift_00478D00 {
+extern void ext_00477280(uint32_t* first, ptrdiff_t hole, ptrdiff_t len, uint32_t value);
+
+// @name SortHeapRange
+// @summary Heap-sort tail loop over a uint32 range: repeatedly moves the max to the end and re-sifts the shrinking heap via ext_00477280.
+void fn_00478D00(uint32_t* first, uint32_t* last) {
+    ptrdiff_t n = last - first;
+    while (n > 1) {
+        --last;
+        uint32_t value = *last;
+        *last = *first;
+        ext_00477280(first, 0, n - 1, value);
+        n = last - first;
+    }
+}
+} // namespace lift_00478D00

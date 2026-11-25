@@ -1,0 +1,13 @@
+{
+  "va": "0x00478D00",
+  "size": 67,
+  "orig_symbol": "sub_00478D00",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "SortHeapRange",
+  "signature": "void fn_00478D00(uint32_t* first, uint32_t* last)",
+  "summary": "Heap-sort tail loop over a uint32 range: repeatedly moves the max to the end and re-sifts the shrinking heap via ext_00477280.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:14:14Z"
+}
