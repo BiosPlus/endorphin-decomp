@@ -22538,6 +22538,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x005478F0": {
+    "name": "std::basic_string\u003cchar\u003e::~basic_string (vtable-install + tail-dispatch to dtor)",
+    "class": "std::basic_string\u003cchar\u003e",
+    "signature": "void fn_005478F0(void* self)",
+    "summary": "Installs vtable 0x956C2C into *self, then forwards to the string destructor at self+8 through the import slot 0x924FF4.",
+    "lifted_path": "lifted/leaf/tiny_540000.cpp"
+  },
   "0x00547AB0": {
     "name": "Camera::vfunc_7",
     "class": "Camera",
