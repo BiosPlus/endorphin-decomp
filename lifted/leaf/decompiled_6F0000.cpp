@@ -1554,8 +1554,9 @@ int32_t fn_006FDFC0(void* self, DWORD ordinal, DWORD index) {
 namespace lift_006FC200 {
 // @name FindRecordMatchingKey
 // @summary Scans a 12-byte record array backwards from the last entry and returns true if a record's first two dwords match the key pair derived from the argument.
-// @field field_0x10 void* records (base pointer of 12-byte records)
-// @field field_0x14 int32_t count (number of records)
+// @class (none; object type not recovered)
+// @field Unknown +0x10 void* records
+// @field Unknown +0x14 int32_t count
 extern bool __fastcall fn_006FC200(void* self, int edx_unused, void* key) {
     (void)edx_unused;
 
