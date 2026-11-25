@@ -2075,10 +2075,10 @@
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
   "0x00420070": {
-    "name": "Unknown::destructor_00420070",
-    "class": "Unknown",
-    "signature": "void fn_00420070(void* self)",
-    "summary": "Destroys the std::string at +0x28, then chains to the DIBException base destructor.",
+    "name": "sub_0042EE50",
+    "class": "NMData::RealChannel",
+    "signature": "void __thiscall fn_0042EE50(uint8_t* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
   "0x00420190": {
