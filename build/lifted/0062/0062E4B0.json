@@ -1,0 +1,22 @@
+{
+  "va": "0x0062E4B0",
+  "size": 58,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "Sensors::CompoundSensorPlanes::getVertAxis (ReadMethodType vfunc_4)",
+  "class": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1\u003e",
+  "signature": "void fn_0062E4B0(void* arg1, void** arg2)",
+  "summary": "If the owner pointer (*arg2) is non-null, raises a default-message exception via ext_0046C4E0; then always throws a DerivedException. Never returns.",
+  "fields": [
+    {
+      "class": "Sensors::CompoundSensorPlanes",
+      "offset": "+0x78",
+      "type": "void* field_0x78 (address only, passed to",
+      "name": "ext_0046C4E0)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T05:00:01Z"
+}
