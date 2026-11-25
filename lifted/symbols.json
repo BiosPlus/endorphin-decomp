@@ -6350,6 +6350,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00449A00 (RegistrationDialog::initOnceAndGetCounter).",
     "lifted_path": "lifted/classes/CAboutDlg.cpp"
   },
+  "0x004646A0": {
+    "name": "IsKeyStateNegative_4",
+    "signature": "bool sub_004646A0()",
+    "summary": "Calls GetKeyState(4) through the IAT slot and returns true when the 16-bit result is negative (key down).",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00464760": {
     "name": "sub_00464760",
     "signature": "extern void* fn_00464760()",

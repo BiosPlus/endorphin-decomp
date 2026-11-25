@@ -918,3 +918,19 @@ void fn_00462A70(void* self) {
     lift_field<uint32_t>(obj, 0x04) = 2;
 }
 } // namespace lift_00462A70
+
+// [0x004646A0]
+namespace lift_004646A0 {
+// @name IsKeyStateNegative_4
+// @summary Calls GetKeyState(4) through the IAT slot and returns true when the 16-bit result is negative (key down).
+
+extern uint32_t mem_009255F4;  // .rdata IAT slot holding USER32!GetKeyState
+
+using GetKeyStateFn = short (*)(int);
+
+bool sub_004646A0() {
+    auto fn = reinterpret_cast<GetKeyStateFn>(static_cast<uintptr_t>(mem_009255F4));
+    short state = fn(4);
+    return static_cast<short>(state) < 0;
+}
+} // namespace lift_004646A0
