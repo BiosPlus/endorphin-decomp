@@ -140,9 +140,21 @@
       "offset": "+0x1C",
       "type": "int32_t",
       "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "str"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "bool",
+      "name": "flag"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T01:24:51Z"
+  "lifted_at": "2026-11-25T01:25:03Z"
 }
