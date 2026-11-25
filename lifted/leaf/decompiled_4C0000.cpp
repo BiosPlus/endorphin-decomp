@@ -646,3 +646,18 @@ void fn_004C6380(uint32_t* dst, uint32_t value) {
     dst[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
 }
 } // namespace lift_004C6380
+
+// [0x004CBBB0] sub_004CBBB0 (30 bytes)
+namespace lift_004CBBB0 {
+// Known callee 0x004CB580: initStaticObjectOnce_004CB580 (One-time initializer for the static object at mem_00AE44E0; guard bit 0 of mem_00AE44E4 marks it done, runs ext_0067A670 on the object with argument 0, then stores 0x946D3C into it; returns the object's address.)
+extern DWORD ext_004CB580(void* self);
+
+// @name initPairWithStaticObject
+// @summary Calls the one-time static object initializer, then writes the caller's value into dst[0] and the object's address into dst[1].
+void fn_004CBBB0(void* dst, DWORD value) {
+    // The initializer is called first; its result is stored after the value.
+    DWORD object = ext_004CB580(nullptr);
+    lift_field<DWORD>(dst, 0x00) = value;
+    lift_field<DWORD>(dst, 0x04) = object;
+}
+} // namespace lift_004CBBB0

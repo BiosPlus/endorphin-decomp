@@ -14264,6 +14264,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType\u003cRuntimeEngine, int, getNumTicksToRun, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004CBBB0": {
+    "name": "initPairWithStaticObject",
+    "signature": "void fn_004CBBB0(void* dst, DWORD value)",
+    "summary": "Calls the one-time static object initializer, then writes the caller's value into dst[0] and the object's address into dst[1].",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CBE20": {
     "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, 0\u003e",

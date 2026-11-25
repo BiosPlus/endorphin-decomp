@@ -1,0 +1,13 @@
+{
+  "va": "0x004CBBB0",
+  "size": 30,
+  "orig_symbol": "sub_004CBBB0",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "initPairWithStaticObject",
+  "signature": "void fn_004CBBB0(void* dst, DWORD value)",
+  "summary": "Calls the one-time static object initializer, then writes the caller's value into dst[0] and the object's address into dst[1].",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:34:07Z"
+}
