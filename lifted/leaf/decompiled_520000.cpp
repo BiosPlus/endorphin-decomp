@@ -1154,3 +1154,65 @@ void fn_005230B0(void* self, void** out, const void* first, void* dst,
     out[1] = dst;
 }
 } // namespace lift_005230B0
+
+// [0x0052A1C0]
+namespace lift_0052A1C0 {
+// @name treeIteratorIncrement
+// @class TreeIterator
+// @summary Advances a tree iterator to its in-order successor: leftmost node of the right subtree if present, otherwise the nearest ancestor whose left subtree contains the current node. Aborts on null iterator or end iterator.
+// @field TreeIterator +0x00 void* field_0x00 (container/head pointer, null-checked)
+// @field TreeIterator +0x04 void* field_0x04 (current node pointer, updated)
+// @field TreeNode +0x00 void* field_0x00 (child link, traversed to leftmost)
+// @field TreeNode +0x04 void* field_0x04 (parent link, walked upward)
+// @field TreeNode +0x08 void* field_0x08 (right child link)
+// @field TreeNode +0x61 uint8_t field_0x61 (end/nil sentinel flag; nonzero = nil)
+void treeIteratorIncrement(void* self) {
+    // Original calls the MSVCR80 invalid-parameter handler on bad input; portable form aborts.
+    if (lift_field<void*>(self, 0x0) == nullptr) {
+        std::abort();
+    }
+
+    void* cur = lift_field<void*>(self, 0x4);
+    if (lift_field<uint8_t>(cur, 0x61) != 0) {
+        std::abort();
+    }
+
+    void* right = lift_field<void*>(cur, 0x8);
+    if (lift_field<uint8_t>(right, 0x61) == 0) {
+        // Right subtree exists: step right, then descend to its leftmost node.
+        void* first = lift_field<void*>(right, 0x0);
+        if (lift_field<uint8_t>(first, 0x61) != 0) {
+            lift_field<void*>(self, 0x4) = right;
+            return;
+        }
+        void* node = first;
+        void* left = lift_field<void*>(node, 0x0);
+        while (lift_field<uint8_t>(left, 0x61) == 0) {
+            node = left;
+            left = lift_field<void*>(node, 0x0);
+        }
+        lift_field<void*>(self, 0x4) = node;
+        return;
+    }
+
+    // No right subtree: climb to the nearest ancestor reached from a left child.
+    void* parent = lift_field<void*>(cur, 0x4);
+    if (lift_field<uint8_t>(parent, 0x61) != 0) {
+        lift_field<void*>(self, 0x4) = parent;
+        return;
+    }
+    for (;;) {
+        void* c = lift_field<void*>(self, 0x4);
+        if (c != lift_field<void*>(parent, 0x8)) {
+            lift_field<void*>(self, 0x4) = parent;
+            return;
+        }
+        lift_field<void*>(self, 0x4) = parent;
+        parent = lift_field<void*>(parent, 0x4);
+        if (lift_field<uint8_t>(parent, 0x61) != 0) {
+            lift_field<void*>(self, 0x4) = parent;
+            return;
+        }
+    }
+}
+} // namespace lift_0052A1C0

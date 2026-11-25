@@ -1,0 +1,52 @@
+{
+  "va": "0x0052A1C0",
+  "size": 108,
+  "orig_symbol": "sub_0052A1C0",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "treeIteratorIncrement",
+  "class": "TreeIterator",
+  "signature": "void treeIteratorIncrement(void* self)",
+  "summary": "Advances a tree iterator to its in-order successor: leftmost node of the right subtree if present, otherwise the nearest ancestor whose left subtree contains the current node. Aborts on null iterator or end iterator.",
+  "fields": [
+    {
+      "class": "TreeIterator",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (container/head pointer,",
+      "name": "null-checked)"
+    },
+    {
+      "class": "TreeIterator",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (current node pointer,",
+      "name": "updated)"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (child link, traversed to",
+      "name": "leftmost)"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (parent link, walked",
+      "name": "upward)"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "void* field_0x08 (right child",
+      "name": "link)"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x61",
+      "type": "uint8_t field_0x61 (end/nil sentinel flag; nonzero =",
+      "name": "nil)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:58:00Z"
+}

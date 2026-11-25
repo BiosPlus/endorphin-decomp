@@ -20900,6 +20900,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005AC820 (Unknown::walkLinkUntilFlagSet_005AC820).",
     "lifted_path": "lifted/leaf/tiny_520000.cpp"
   },
+  "0x0052A1C0": {
+    "name": "treeIteratorIncrement",
+    "class": "TreeIterator",
+    "signature": "void treeIteratorIncrement(void* self)",
+    "summary": "Advances a tree iterator to its in-order successor: leftmost node of the right subtree if present, otherwise the nearest ancestor whose left subtree contains the current node. Aborts on null iterator or end iterator.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052A230": {
     "name": "sub_0052A230",
     "class": "TreeMap",
