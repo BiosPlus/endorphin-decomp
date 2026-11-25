@@ -809,3 +809,46 @@ extern void* fn_00672250(void* out, uint32_t arg) {
     return out;
 }
 } // namespace lift_00672250
+
+// [0x00670D80]
+namespace lift_00670D80 {
+extern uint32_t mem_00925134;
+extern void ext_006A5C5C(uint32_t);
+
+// @name destroyPointerRange
+// @summary Iterates over a checked vector range [first, last) and passes each 32-bit element to ext_006A5C5C.
+void __stdcall fn_00670D80(uint8_t* container1, uint32_t* first, uint8_t* container2, uint32_t* last) {
+    using InvalidParamFn = void (__cdecl*)(void);
+    InvalidParamFn invalid_param = reinterpret_cast<InvalidParamFn>(static_cast<uintptr_t>(mem_00925134));
+
+    while (true) {
+        if (container1 == nullptr || container1 != container2) {
+            invalid_param();
+        }
+        if (first == last) {
+            break;
+        }
+
+        uint32_t* cur = first;
+        if (container1 == nullptr) {
+            invalid_param();
+        }
+        uint32_t* end_ptr = *reinterpret_cast<uint32_t**>(container1 + 0x8);
+        if (reinterpret_cast<uintptr_t>(first) >= reinterpret_cast<uintptr_t>(end_ptr)) {
+            invalid_param();
+        }
+
+        first += 1;
+
+        if (container1 == nullptr) {
+            invalid_param();
+        }
+        end_ptr = *reinterpret_cast<uint32_t**>(container1 + 0x8);
+        if (reinterpret_cast<uintptr_t>(cur) >= reinterpret_cast<uintptr_t>(end_ptr)) {
+            invalid_param();
+        }
+
+        ext_006A5C5C(*cur);
+    }
+}
+} // namespace lift_00670D80

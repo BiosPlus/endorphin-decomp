@@ -1,0 +1,13 @@
+{
+  "va": "0x00670D80",
+  "size": 87,
+  "orig_symbol": "sub_00670D80",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "destroyPointerRange",
+  "signature": "void __stdcall fn_00670D80(uint8_t* container1, uint32_t* first, uint8_t* container2, uint32_t* last)",
+  "summary": "Iterates over a checked vector range [first, last) and passes each 32-bit element to ext_006A5C5C.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:14:31Z"
+}
