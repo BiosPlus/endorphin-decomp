@@ -1021,3 +1021,28 @@ void* fn_00624EA0(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4
     return self;
 }
 } // namespace lift_00624EA0
+
+// [0x00622D30] fillStridedFromSource (68 bytes)
+namespace lift_00622D30 {
+// @name fillStridedFromSource
+// @summary Copies one 20-byte record (5 dwords) from src into each of `count` consecutive 20-byte slots starting at dst; NULL dst skips the copy but still advances.
+// @field Record20 +0x00 uint32_t field_0x00
+// @field Record20 +0x04 uint32_t field_0x04
+// @field Record20 +0x08 uint32_t field_0x08
+// @field Record20 +0x0C uint32_t field_0x0C
+// @field Record20 +0x10 uint32_t field_0x10
+void fn_00622D30(void* dst, uint32_t count, const void* src) {
+    if (count == 0) {
+        return;
+    }
+    auto* out = static_cast<uint8_t*>(dst);
+    const auto* in = static_cast<const uint8_t*>(src);
+    do {
+        if (out != nullptr) {
+            std::memcpy(out, in, 5 * sizeof(uint32_t));
+        }
+        out += 0x14;
+        --count;
+    } while (count != 0);
+}
+} // namespace lift_00622D30

@@ -31459,6 +31459,12 @@
     "summary": "Copies one 20-byte element from src into every 20-byte slot from dst up to end (exclusive); no-op when dst == end.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x00622D30": {
+    "name": "fillStridedFromSource",
+    "signature": "void fn_00622D30(void* dst, uint32_t count, const void* src)",
+    "summary": "Copies one 20-byte record (5 dwords) from src into each of `count` consecutive 20-byte slots starting at dst; NULL dst skips the copy but still advances.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x006233B0": {
     "name": "sub_006233B0",
     "signature": "uint32_t fn_006233B0(uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3)",
