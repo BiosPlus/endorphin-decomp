@@ -1,0 +1,39 @@
+{
+  "va": "0x00783650",
+  "size": 25,
+  "orig_symbol": "sub_00783650",
+  "src_path": "src/leaf/tiny_780000.cpp",
+  "lifted_path": "lifted/leaf/tiny_780000.cpp",
+  "name": "sub_00783650",
+  "signature": "uint8_t fn_00783650(void* self)",
+  "summary": "Reads a flag bit (bit 4 of a dword) from a nested object if a byte flag at the inner object is set; returns 0 otherwise.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "inner"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "inner_first"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "inner_flag"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "inner_first_flags"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:28:01Z"
+}

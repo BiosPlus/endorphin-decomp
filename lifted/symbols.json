@@ -64565,6 +64565,12 @@
     "summary": "If the byte at child+0x04 is nonzero, call clearerr on the stream pointer stored at child+0x00.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00783650": {
+    "name": "sub_00783650",
+    "signature": "uint8_t fn_00783650(void* self)",
+    "summary": "Reads a flag bit (bit 4 of a dword) from a nested object if a byte flag at the inner object is set; returns 0 otherwise.",
+    "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
   "0x007836D0": {
     "name": "FileStream::setSize",
     "class": "FileStream",

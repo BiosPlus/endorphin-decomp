@@ -525,3 +525,25 @@ void fn_00783630(void* self) {
     clearerr_fn(reinterpret_cast<void*>(static_cast<uintptr_t>(stream)));
 }
 } // namespace lift_00783630
+
+// [0x00783650] sub_00783650 (25 bytes)
+namespace lift_00783650 {
+// @name sub_00783650
+// @summary Reads a flag bit (bit 4 of a dword) from a nested object if a byte flag at the inner object is set; returns 0 otherwise.
+// @field Unknown +0x04 void* inner
+// @field Unknown +0x00 void* inner_first
+// @field Unknown +0x04 uint8_t inner_flag
+// @field Unknown +0x0C uint32_t inner_first_flags
+uint8_t fn_00783650(void* self) {
+    // mov eax,[ecx+4]; mov cl,[eax+4]; test cl,cl; je -> return 0
+    auto* outer = reinterpret_cast<uint8_t*>(self);
+    uint8_t* inner = *reinterpret_cast<uint8_t**>(outer + 0x4);
+    if (inner[0x4] == 0) {
+        return 0;
+    }
+    // mov eax,[eax]; mov eax,[eax+0xc]; shr eax,4; and eax,1
+    uint8_t* first = *reinterpret_cast<uint8_t**>(inner + 0x0);
+    uint32_t flags = *reinterpret_cast<uint32_t*>(first + 0xC);
+    return static_cast<uint8_t>((flags >> 4) & 1u);
+}
+} // namespace lift_00783650
