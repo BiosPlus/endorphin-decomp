@@ -942,3 +942,31 @@ void* __thiscall sub_007847E0(void* self, uint32_t key_val) {
     return bsearch_fn(key, base, static_cast<size_t>(count), 8, ext_00784790);
 }
 } // namespace lift_007847E0
+
+// [0x00783570] sub_00783570 (63 bytes)
+namespace lift_00783570 {
+// @name Unknown::SeekStreamFromObject
+// @class Unknown
+// @summary Seeks the FILE* held by the object at self+0x04 when that object's flag byte is set; arg1 selects SEEK_SET/SEEK_CUR/SEEK_END (anything else -> SEEK_SET) and arg2 is the signed offset.
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x00 FILE* field_0x00 (inner object: stream pointer)
+// @field Unknown +0x04 BYTE field_0x04 (inner object: valid flag)
+void fn_00783570(void* self, DWORD whence_arg, DWORD offset) {
+    const DWORD obj_addr = lift_field<DWORD>(self, 0x04);
+    auto* obj = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(obj_addr));
+    if (obj == nullptr || lift_field<uint8_t>(obj, 0x04) == 0) {
+        return;
+    }
+
+    int whence = SEEK_SET;
+    if (whence_arg == 1) {
+        whence = SEEK_CUR;
+    } else if (whence_arg == 2) {
+        whence = SEEK_END;
+    }
+
+    const DWORD stream_addr = lift_field<DWORD>(obj, 0x00);
+    auto* stream = reinterpret_cast<FILE*>(static_cast<uintptr_t>(stream_addr));
+    std::fseek(stream, static_cast<long>(static_cast<int32_t>(offset)), whence);
+}
+} // namespace lift_00783570

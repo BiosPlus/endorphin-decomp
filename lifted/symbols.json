@@ -54070,6 +54070,13 @@
     "summary": "Writes count bytes from buf to the stream held by self's inner object, unless that object's flag byte at +0x04 is zero; returns fwrite's result or 0 when disabled.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00783570": {
+    "name": "Unknown::SeekStreamFromObject",
+    "class": "Unknown",
+    "signature": "void fn_00783570(void* self, DWORD whence_arg, DWORD offset)",
+    "summary": "Seeks the FILE* held by the object at self+0x04 when that object's flag byte is set; arg1 selects SEEK_SET/SEEK_CUR/SEEK_END (anything else -\u003e SEEK_SET) and arg2 is the signed offset.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x007835F0": {
     "name": "sub_007835F0",
     "signature": "uint8_t __fastcall sub_007835F0(uint32_t ecx)",
