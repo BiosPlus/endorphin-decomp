@@ -2119,3 +2119,38 @@ void* fn_00430EF0(void* first, void* last, const void* value) {
     return it;
 }
 } // namespace lift_00430EF0
+
+// [0x00434F90]
+namespace lift_00434F90 {
+// @name Unknown::CheckMaxCharsAndNotify
+// @class Unknown
+// @summary Returns true after notifying "Maximum number of characters reached" when the owner's sub-object at +0x26C has +0x20 == 100 and its vtable slot 0x11C returns nonzero; otherwise returns false.
+// @field Unknown +0x26C uint32_t field_0x26c
+// @field Unknown +0x20 int32_t field_0x20
+
+extern int32_t fn_00594000(void);
+extern void* fn_00465B40(void);
+extern void fn_006A5E60(const char* message, int32_t arg1, int32_t arg2);
+extern const char mem_0092FA04[];
+
+extern uint8_t fn_00434F90(void) {
+    uint8_t result = 0;
+
+    void* self = reinterpret_cast<void*>(static_cast<uintptr_t>(fn_00594000()));
+    uint32_t sub = lift_field<uint32_t>(self, 0x26C);
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(sub));
+
+    if (lift_field<int32_t>(obj, 0x20) == 100) {
+        void* other = fn_00465B40();
+        void* vtbl = *reinterpret_cast<void**>(other);
+        using VirtBoolFn = uint8_t (*)(void*);
+        VirtBoolFn slot = reinterpret_cast<VirtBoolFn>(lift_field<void*>(vtbl, 0x11C));
+        if (slot(other) != 0) {
+            fn_006A5E60(mem_0092FA04, 0, 0);
+            result = 1;
+        }
+    }
+
+    return result;
+}
+} // namespace lift_00434F90

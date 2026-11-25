@@ -2737,6 +2737,13 @@
     "summary": "Pure jump thunk forwarding to sub_00434E30.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00434F90": {
+    "name": "Unknown::CheckMaxCharsAndNotify",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint8_t fn_00434F90(void)",
+    "summary": "Returns true after notifying \"Maximum number of characters reached\" when the owner's sub-object at +0x26C has +0x20 == 100 and its vtable slot 0x11C returns nonzero; otherwise returns false.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00434FD0": {
     "name": "sub_00434FD0",
     "signature": "extern \"C\" void __fastcall fn_00434FD0(void* self)",
