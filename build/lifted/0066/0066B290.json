@@ -1,0 +1,22 @@
+{
+  "va": "0x0066B290",
+  "size": 71,
+  "orig_symbol": "ExprParser::StringType::vfunc_3",
+  "src_path": "src/ExprParser/StringType.cpp",
+  "lifted_path": "lifted/ExprParser/StringType.cpp",
+  "name": "ExprParser::StringType::vfunc_3",
+  "class": "ExprParser::StringType",
+  "signature": "bool fn_0066B290(void* self)",
+  "summary": "Returns true if the referenced std::string equals one of two fixed literals; false if the pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "std::string*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:04:37Z"
+}

@@ -44375,6 +44375,13 @@
     "summary": "Converts the held std::string to a float via atof; returns 0.0f when the string pointer is null.",
     "lifted_path": "lifted/ExprParser/StringType.cpp"
   },
+  "0x0066B290": {
+    "name": "ExprParser::StringType::vfunc_3",
+    "class": "ExprParser::StringType",
+    "signature": "bool fn_0066B290(void* self)",
+    "summary": "Returns true if the referenced std::string equals one of two fixed literals; false if the pointer is null.",
+    "lifted_path": "lifted/ExprParser/StringType.cpp"
+  },
   "0x0066B2E0": {
     "name": "ExprParser::StringType::vfunc_4",
     "class": "ExprParser::StringType",

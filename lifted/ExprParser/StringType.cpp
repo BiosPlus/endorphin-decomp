@@ -229,3 +229,31 @@ void* fn_0066B2E0(void* self, [[maybe_unused]] void* arg2) {
     return self;
 }
 } // namespace lift_0066B2E0
+
+// [0x0066B290] ExprParser::StringType::vfunc_3 (71 bytes)
+namespace lift_0066B290 {
+// @name ExprParser::StringType::vfunc_3
+// @class ExprParser::StringType
+// @summary Returns true if the referenced std::string equals one of two fixed literals; false if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 std::string* field_0x00
+bool fn_0066B290(void* self) {
+    // Original: `std::string* s = *(std::string**)self; if (!s) return false;`
+    // then compares *s against literal at 0x0092F10C and 0x0093A810 via
+    // MSVCP80 operator==(const std::string&, const char*) (address stored at 0x00924FC0).
+    using StrEqFn = bool(__cdecl*)(const std::string&, const char*);
+
+    auto* s = *reinterpret_cast<std::string**>(self);
+    if (s == nullptr) {
+        return false;
+    }
+
+    const auto str_eq = *reinterpret_cast<StrEqFn*>(0x00924FC0);
+    if (str_eq(*s, reinterpret_cast<const char*>(0x0092F10C))) {
+        return true;
+    }
+    if (str_eq(*s, reinterpret_cast<const char*>(0x0093A810))) {
+        return true;
+    }
+    return false;
+}
+} // namespace lift_0066B290
