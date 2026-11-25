@@ -746,3 +746,27 @@ DWORD sub_004AB8E0() {
     return (DWORD)(uintptr_t)&mem_00ADFA08;
 }
 } // namespace lift_004AB8E0
+
+// [0x004A5C00] sub_004A5C00 (95 bytes)
+namespace lift_004A5C00 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+// Second pushed argument is a 32-bit literal (0x00A36678), so it is declared as uint32_t.
+extern void* ext_0066AD10(void* out, uint32_t arg);
+// Callee 0x006A6C87 takes one pointer argument (0x00917E10, a teardown routine registered once).
+extern int ext_006A6C87(void* fn);
+extern void ext_00917E10(); // teardown routine (address passed to 0x006A6C87)
+extern uint8_t mem_00ADEBE0;  // once-init guard flag (bit 0)
+extern uint8_t mem_00ADEBC4[]; // static object storage (size not recovered)
+
+// @name InitOnceGlobalString_004A5C00
+// @summary Runs one-time construction of the static object at mem_00ADEBC4 (guarded by bit 0 of mem_00ADEBE0), registers its teardown, and returns its address.
+// @field none (free function, no class members accessed)
+void* fn_004A5C00(void) {
+    if ((mem_00ADEBE0 & 1u) == 0) {
+        mem_00ADEBE0 |= 1u;
+        ext_0066AD10(mem_00ADEBC4, 0x00A36678u);
+        ext_006A6C87(reinterpret_cast<void*>(&ext_00917E10));
+    }
+    return mem_00ADEBC4;
+}
+} // namespace lift_004A5C00
