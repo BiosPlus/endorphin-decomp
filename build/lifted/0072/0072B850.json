@@ -1,0 +1,13 @@
+{
+  "va": "0x0072B850",
+  "size": 10,
+  "orig_symbol": "sub_0072B850",
+  "src_path": "src/clones/auto_clones_720000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_720000.cpp",
+  "name": "CallThenTailCall_0072B850",
+  "signature": "void fn_0072B850(void)",
+  "summary": "Calls 0x0072B860, then tail-jumps to 0x0072B870 (no arguments or return value of its own).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:17:32Z"
+}

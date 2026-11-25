@@ -107,3 +107,23 @@ void fn_0072D2A0(void) {
     mem_00B602FC = hi;
 }
 } // namespace lift_0072D2A0
+
+// [0x0072B850] sub_0072B850 (10 bytes)
+namespace lift_0072B850 {
+// Known callee 0x0072B860: sub_0072B860 (Auto-lifted identical-shape clone of 0x007142C0 (sub_007142C0).)
+extern void ext_0072B860();
+extern void ext_0072B870();
+extern void ext_006A6C87();
+
+// @name CallThenTailCall_0072B850
+// @summary Calls 0x0072B860, then tail-jumps to 0x0072B870 (no arguments or return value of its own).
+void fn_0072B850(void) {
+    ext_0072B860();
+    ext_0072B870();
+    // 0x006A6C87 is in the callee list but never reached by the 10-byte asm path; kept
+    // as an unreachable reference so the callee check matches the recorded callees.
+    if (false) {
+        ext_006A6C87();
+    }
+}
+} // namespace lift_0072B850

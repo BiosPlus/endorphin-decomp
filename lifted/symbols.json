@@ -62987,6 +62987,12 @@
     "summary": "Loads global 0x00B600B8 into ECX and tail-calls sub_006B9D70.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x0072B850": {
+    "name": "CallThenTailCall_0072B850",
+    "signature": "void fn_0072B850(void)",
+    "summary": "Calls 0x0072B860, then tail-jumps to 0x0072B870 (no arguments or return value of its own).",
+    "lifted_path": "lifted/clones/auto_clones_720000.cpp"
+  },
   "0x0072B860": {
     "name": "sub_0072B860",
     "signature": "extern void fn_0072B860(void)",
