@@ -117,3 +117,36 @@ void sub_0079BB80() {
     mem_00B60FE4 = hi;
 }
 } // namespace lift_0079BB80
+
+// [0x0079BC10] sub_0079BC10 (74 bytes)
+namespace lift_0079BC10 {
+extern int mem_00925284;
+extern int mem_00B61000;
+extern int mem_00B61004;
+extern int mem_00B61008;
+extern int mem_00B6100C;
+extern int mem_00B61010;
+extern int mem_00B61014;
+extern int mem_00B61018;
+extern int mem_00B6101C;
+
+// @name CopyHugeToGlobals_0079BC10
+// @summary Copies the 8-byte value at the pointer stored in mem_00925284 (MSVCR80 _HUGE) into four consecutive 8-byte globals at 0xB61000..0xB6101C.
+void fn_0079BC10(void* self) {
+    (void)self;
+
+    // _HUGE is stored as a pointer in .rdata; dereference it to get the 8-byte source.
+    const uint32_t* src = reinterpret_cast<const uint32_t*>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925284)));
+
+    uint32_t lo = src[0];
+    uint32_t hi = src[1];
+
+    // Four identical 8-byte copies into the globals block.
+    int* dst = &mem_00B61000;
+    for (int i = 0; i < 4; ++i) {
+        dst[i * 2 + 0] = static_cast<int>(lo);
+        dst[i * 2 + 1] = static_cast<int>(hi);
+    }
+}
+} // namespace lift_0079BC10

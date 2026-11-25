@@ -57204,6 +57204,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007747B0 (initNegatedHugeGlobals).",
     "lifted_path": "lifted/clones/auto_clones_790000.cpp"
   },
+  "0x0079BC10": {
+    "name": "CopyHugeToGlobals_0079BC10",
+    "signature": "void fn_0079BC10(void* self)",
+    "summary": "Copies the 8-byte value at the pointer stored in mem_00925284 (MSVCR80 _HUGE) into four consecutive 8-byte globals at 0xB61000..0xB6101C.",
+    "lifted_path": "lifted/clones/auto_clones_790000.cpp"
+  },
   "0x0079C1B0": {
     "name": "codeSelectOrZero",
     "signature": "uint32_t fn_0079C1B0(uint32_t ecxValue, uint32_t selector, uint32_t unusedArg)",
