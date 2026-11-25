@@ -1273,3 +1273,18 @@ extern void __stdcall sub_006B8B10(uint32_t, uint32_t, uint32_t)
     ext_006A5EA8();
 }
 } // namespace lift_006B8B10
+
+// [0x006BC3F0]
+namespace lift_006BC3F0 {
+// @name ForwardCountItemsByType
+// @class Unknown
+// @summary Forwards a type filter to countItemsByType on the object pointed to by self+0x4.
+// @field Unknown +0x04 void* field_0x04
+
+extern int32_t __fastcall ext_006E9610(void* self, void* edx, int32_t type);
+
+extern int32_t __fastcall fn_006BC3F0(void* self, void* edx, int32_t type) {
+    void* inner = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x04);
+    return ext_006E9610(inner, edx, type);
+}
+} // namespace lift_006BC3F0

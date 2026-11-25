@@ -1,0 +1,22 @@
+{
+  "va": "0x006BC3F0",
+  "size": 16,
+  "orig_symbol": "sub_006BC3F0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "ForwardCountItemsByType",
+  "class": "Unknown",
+  "signature": "extern \"C\" int32_t __fastcall fn_006BC3F0(void* self, void* edx, int32_t type)",
+  "summary": "Forwards a type filter to countItemsByType on the object pointed to by self+0x4.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:27:21Z"
+}

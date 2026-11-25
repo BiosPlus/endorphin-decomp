@@ -53319,6 +53319,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x4 and tail-calls sub_006E9420.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006BC3F0": {
+    "name": "ForwardCountItemsByType",
+    "class": "Unknown",
+    "signature": "extern \"C\" int32_t __fastcall fn_006BC3F0(void* self, void* edx, int32_t type)",
+    "summary": "Forwards a type filter to countItemsByType on the object pointed to by self+0x4.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BC600": {
     "name": "sub_006BC600",
     "signature": "extern \"C\" int32_t __fastcall fn_006BC600(void* self)",
