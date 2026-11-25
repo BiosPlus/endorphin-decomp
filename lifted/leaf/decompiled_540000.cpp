@@ -724,3 +724,18 @@ uint32_t fn_0054F290(uint32_t begin, uint32_t end, uint32_t value) {
     return ext_0054F120(begin, end, value);
 }
 } // namespace lift_0054F290
+
+// [0x00547080] sub_00547080 (76 bytes)
+namespace lift_00547080 {
+// @name Vector4Add_00547080
+// @summary Component-wise float addition of two 4-float vectors: out[i] = a[i] + b[i] for i in 0..3.
+// Not a member: `a` arrives in ECX (thiscall-style) but the class is unknown, so no @class or @field lines.
+void fn_00547080(const float* a, float* out, const float* b) {
+    // Read each pair before writing, so out may alias a or b.
+    for (int i = 0; i < 4; ++i) {
+        const float av = a[i];
+        const float bv = b[i];
+        out[i] = av + bv;
+    }
+}
+} // namespace lift_00547080

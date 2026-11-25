@@ -20256,6 +20256,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005450C0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00547080": {
+    "name": "Vector4Add_00547080",
+    "signature": "void fn_00547080(const float* a, float* out, const float* b)",
+    "summary": "Component-wise float addition of two 4-float vectors: out[i] = a[i] + b[i] for i in 0..3.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x005470F0": {
     "name": "JointTool::vfunc_23",
     "class": "JointTool",
