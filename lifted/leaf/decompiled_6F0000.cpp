@@ -2168,3 +2168,73 @@ extern uint8_t __stdcall sub_006FAD90(uint32_t node, uint32_t arg2, uint32_t arg
     return fn(obj, arg2, arg3, arg4, arg5, arg6, arg7);
 }
 } // namespace lift_006FAD90
+
+// [0x006FD3A0]
+namespace lift_006FD3A0 {
+// @name sub_006FD3A0
+// @summary Constructor calling base constructor, zeroing +0x0C, initializing embedded array/buffer at +0x10, and setting vtable.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint8_t field_0x10[20]
+// @field Unknown +0x20 uint8_t field_0x20[4]
+// @field Unknown +0x24 uint32_t field_0x24
+
+
+extern uint32_t __thiscall ext_0077F9E0(uint32_t self, uint32_t arg1);
+extern uint32_t __thiscall ext_006D2130(uint32_t self, int32_t arg1, uint32_t arg2);
+
+uint32_t __thiscall sub_006FD3A0(uint32_t self, uint32_t arg1) {
+    ext_0077F9E0(self, arg1);
+    *reinterpret_cast<uint32_t*>(self + 0x0Cu) = 0;
+
+    uint32_t embedded = self + 0x10u;
+    ext_006D2130(embedded, 0x10, 4);
+
+    *reinterpret_cast<uint32_t*>(embedded + 0x14u) = embedded + 0x10u;
+    *reinterpret_cast<uint32_t*>(self) = 0x00995184u;
+
+    return self;
+}
+} // namespace lift_006FD3A0
+
+// [0x006FC250]
+namespace lift_006FC250 {
+// @name sub_006FC250
+// @summary Reverse-searches a 12-byte-element array for a matching (u32, u32) pair
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 int32_t field_0x14
+// @field Unknown +0x18 int32_t field_0x18
+
+
+extern uint32_t mem_read_u32(uint32_t addr);
+
+uint8_t __thiscall sub_006FC250(uint32_t self, uint32_t arg1) {
+    int32_t count = static_cast<int32_t>(mem_read_u32(self + 0x18));
+    int32_t start = static_cast<int32_t>(mem_read_u32(self + 0x14));
+    int32_t idx = count + start - 1;
+    if (idx < start) {
+        return 0;
+    }
+
+    uint32_t data = mem_read_u32(self + 0x10);
+    uint32_t elem = data + static_cast<uint32_t>(idx) * 12u;
+
+    while (idx >= start) {
+        uint32_t target_lo = 0;
+        uint32_t target_hi = 0;
+        if (arg1 != 0) {
+            target_hi = mem_read_u32(arg1 + 4);
+            target_lo = mem_read_u32(target_hi);
+        }
+
+        if (target_lo == mem_read_u32(elem) && target_hi == mem_read_u32(elem + 4)) {
+            return (idx - start) != -1 ? 1 : 0;
+        }
+
+        --idx;
+        elem -= 12u;
+    }
+
+    return 0;
+}
+} // namespace lift_006FC250

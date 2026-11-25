@@ -1,0 +1,45 @@
+{
+  "va": "0x006FD3A0",
+  "size": 96,
+  "orig_symbol": "sub_006FD3A0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "sub_006FD3A0",
+  "signature": "uint32_t __thiscall sub_006FD3A0(uint32_t self, uint32_t arg1)",
+  "summary": "Constructor calling base constructor, zeroing +0x0C, initializing embedded array/buffer at +0x10, and setting vtable.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10[20]"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint8_t",
+      "name": "field_0x20[4]"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:43:44Z"
+}
