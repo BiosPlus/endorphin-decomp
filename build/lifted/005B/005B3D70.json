@@ -1,0 +1,13 @@
+{
+  "va": "0x005B3D70",
+  "size": 87,
+  "orig_symbol": "sub_005B3D70",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "getStaticSingleton_005B3D70",
+  "signature": "void* fn_005B3D70()",
+  "summary": "Initializes and returns a pointer to the static singleton at 0x00B4355C.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:36:47Z"
+}
