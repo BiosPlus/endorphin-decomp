@@ -1,0 +1,14 @@
+{
+  "va": "0x005F0D40",
+  "size": 34,
+  "orig_symbol": "NMData::MagnetJointData::vfunc_59",
+  "src_path": "src/NMData/MagnetJointData.cpp",
+  "lifted_path": "lifted/NMData/MagnetJointData.cpp",
+  "name": "NMData::MagnetJointData::vfunc_59",
+  "class": "NMData::MagnetJointData",
+  "signature": "void* fn_005F0D40(void* dst)",
+  "summary": "Constructs a std::string from the literal at 0x0096AFE8 into the caller-supplied buffer and returns that buffer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:48:44Z"
+}

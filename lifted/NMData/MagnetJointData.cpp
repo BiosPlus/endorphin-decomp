@@ -47,3 +47,26 @@ extern void* __thiscall fn_005F0FA0(uint8_t* self_off_c) {
     return result;
 }
 } // namespace lift_005F0FA0
+
+// [0x005F0D40]
+namespace lift_005F0D40 {
+// C string literal at VA 0x0096AFE8.
+extern const char mem_0096AFE8[];
+// MSVCP80 import slot at VA 0x00924FE4: holds the address of
+// std::basic_string<char>::basic_string(const char*, const allocator&).
+extern void* mem_00924FE4;
+
+// Original (ret 4): constructs a std::string from the literal at 0x0096AFE8 in the
+// buffer whose pointer is the stack argument, then returns that pointer. The
+// original also pushes a saved-esi word and a zero word as extra stack words;
+// those are not modelled here (same convention as MagnetJointData::vfunc_8).
+// @name NMData::MagnetJointData::vfunc_59
+// @class NMData::MagnetJointData
+// @summary Constructs a std::string from the literal at 0x0096AFE8 into the caller-supplied buffer and returns that buffer.
+void* fn_005F0D40(void* dst) {
+    using StrCtorFn = void(__thiscall*)(void* self, const char* s, const void* alloc);
+    StrCtorFn ctor = *reinterpret_cast<StrCtorFn*>(&mem_00924FE4);
+    ctor(dst, mem_0096AFE8, nullptr);
+    return dst;
+}
+} // namespace lift_005F0D40
