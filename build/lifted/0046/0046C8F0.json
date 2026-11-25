@@ -1,0 +1,22 @@
+{
+  "va": "0x0046C8F0",
+  "size": 58,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter, float, ImageExporter::getFrameRate, 0\u003e::vfunc_5",
+  "class": "ImageExporter",
+  "signature": "float fn_0046C8F0(void* self)",
+  "summary": "Virtual getter for ImageExporter::getFrameRate; if the target pointer is non-null it queries the calibration value, then always raises a DerivedException.",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:57:55Z"
+}

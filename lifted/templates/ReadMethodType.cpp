@@ -52067,3 +52067,35 @@ void fn_00644770(void* self) {
 }
 } // namespace lift_004A3260
 } // namespace lift_00644770
+
+// [0x0046C8F0]
+namespace lift_0046C8F0 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, ImageExporter::getFrameRate, 0>::vfunc_5
+// @class ImageExporter
+// @summary Virtual getter for ImageExporter::getFrameRate; if the target pointer is non-null it queries the calibration value, then always raises a DerivedException.
+// @field ValuePtrType +0x00 void* field_0x00
+
+// NMData::SkeletalCalibrationVariables::vfunc_12 (thiscall, returns float in st0)
+float ext_0046C080(void* self);
+// ExceptionWithMessage::throwDefaultMessage (takes float value and object pointer)
+void ext_0046C4E0(float value, void* obj);
+// DerivedException::DerivedException (constructs exception in place)
+void* ext_0046C3C0(void* self);
+// thunk to MSVCR80!_CxxThrowException
+void ext_006A6DD2(void* exc, void* type_info);
+
+extern unsigned char mem_009DEC1C[];
+
+float fn_0046C8F0(void* self) {
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        float value = ext_0046C080(obj);
+        ext_0046C4E0(value, obj);
+    }
+
+    alignas(8) unsigned char exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+    return 0.0f;
+}
+} // namespace lift_0046C8F0

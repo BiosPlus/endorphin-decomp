@@ -7891,6 +7891,13 @@
     "summary": "Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0046C8F0": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter, float, ImageExporter::getFrameRate, 0\u003e::vfunc_5",
+    "class": "ImageExporter",
+    "signature": "float fn_0046C8F0(void* self)",
+    "summary": "Virtual getter for ImageExporter::getFrameRate; if the target pointer is non-null it queries the calibration value, then always raises a DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046CA90": {
     "name": "ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cImageExporter\u003e",
