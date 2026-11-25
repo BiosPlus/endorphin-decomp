@@ -1390,3 +1390,21 @@ void FillRecordsFromTemplate(void* dst, DWORD count, const void* src)
     } while (--count != 0);
 }
 } // namespace lift_005555D0
+
+// [0x00554140] sub_00554140 (95 bytes)
+namespace lift_00554140 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Called cdecl with one 4-byte argument (byte size); returns allocated pointer in eax.
+extern void* ext_006A5C62(unsigned int size);
+
+// @name AllocateElementsTimes60
+// @summary Allocates count * 60 bytes via MFC80 ord_762, throwing std::bad_alloc if count * 60 would overflow 32 bits; count 0 requests a zero-byte allocation.
+void* fn_00554140(unsigned int count) {
+    // Largest count for which count * 60 fits in 32 bits.
+    constexpr unsigned int kMaxCount = 0xFFFFFFFFu / 60u;
+    if (count > kMaxCount) {
+        throw std::bad_alloc();
+    }
+    return ext_006A5C62(count * 60u);
+}
+} // namespace lift_00554140

@@ -23673,6 +23673,12 @@
     "summary": "Destroys the std::string at +0x54, then delegates destruction of the three other string members to ext_00663060.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00554140": {
+    "name": "AllocateElementsTimes60",
+    "signature": "void* fn_00554140(unsigned int count)",
+    "summary": "Allocates count * 60 bytes via MFC80 ord_762, throwing std::bad_alloc if count * 60 would overflow 32 bits; count 0 requests a zero-byte allocation.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x005541A0": {
     "name": "destroyStringPair",
     "signature": "void __thiscall sub_005541A0(void* self)",

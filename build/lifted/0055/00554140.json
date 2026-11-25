@@ -1,0 +1,13 @@
+{
+  "va": "0x00554140",
+  "size": 95,
+  "orig_symbol": "sub_00554140",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "AllocateElementsTimes60",
+  "signature": "void* fn_00554140(unsigned int count)",
+  "summary": "Allocates count * 60 bytes via MFC80 ord_762, throwing std::bad_alloc if count * 60 would overflow 32 bits; count 0 requests a zero-byte allocation.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:31:24Z"
+}
