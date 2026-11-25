@@ -1,0 +1,33 @@
+{
+  "va": "0x0046C120",
+  "size": 92,
+  "orig_symbol": "sub_0046C120",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "initStringMemberObject",
+  "signature": "void fn_0046C120(void* self)",
+  "summary": "Sets two vtable-style pointers on the object, destroys the std::string member at +0x28 via an indirect call, then forwards the +0x4 subobject to ext_0065F440.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x28",
+      "type": "std::string",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:25:57Z"
+}

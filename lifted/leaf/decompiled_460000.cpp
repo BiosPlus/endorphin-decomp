@@ -1282,3 +1282,35 @@ void* __thiscall sub_004616F0(void* self, const void* arg1, const void* arg2, ui
     return self;
 }
 } // namespace lift_004616F0
+
+// [0x0046C120] sub_0046C120 (92 bytes)
+namespace lift_0046C120 {
+// Known callee 0x0065F440: sub_0065F440 (Stores address of mem_0093BF24 into field at offset +0x0.)
+extern void ext_0065F440(void* self);
+// Known callee 0x006A5E66 is not reached from this function's code path.
+// Indirect-call target stored at mem_00924FF4 (std::string destructor, MSVCP80).
+extern int mem_00924FF4;
+
+// @name initStringMemberObject
+// @summary Sets two vtable-style pointers on the object, destroys the std::string member at +0x28 via an indirect call, then forwards the +0x4 subobject to ext_0065F440.
+// @field Self +0x00 uint32_t field_0x00
+// @field Self +0x04 uint32_t field_0x04
+// @field Self +0x28 std::string field_0x28
+void fn_0046C120(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    // Store vtable-style pointers (0x93A7A4 at +0x0, 0x93A74C at +0x4).
+    const uint32_t vtbl0 = 0x0093A7A4u;
+    const uint32_t vtbl1 = 0x0093A74Cu;
+    std::memcpy(base + 0x00, &vtbl0, sizeof(vtbl0));
+    std::memcpy(base + 0x04, &vtbl1, sizeof(vtbl1));
+
+    // Destroy the std::string member at +0x28 via the indirect function pointer.
+    using StrDtor = void (*)(void*);
+    auto dtor = reinterpret_cast<StrDtor>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    dtor(base + 0x28);
+
+    // Forward the +0x4 subobject to the helper.
+    ext_0065F440(base + 0x04);
+}
+} // namespace lift_0046C120
