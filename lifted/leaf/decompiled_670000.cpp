@@ -734,3 +734,21 @@ void fn_0067BD80(void* self, DWORD arg) {
     ext_00694840(matrix, self);
 }
 } // namespace lift_0067BD80
+
+// [0x0067B450]
+namespace lift_0067B450 {
+extern void __fastcall ext_0067B410(void* self);
+extern void __fastcall ext_0065C620(void* self);
+
+// @name TimerHandle::~TimerHandle
+// @class TimerHandle
+// @summary Destroys TimerHandle by stopping the timer and destroying its critical section lock.
+// @field TimerHandle +0x00 uint32_t vtable
+// @field TimerHandle +0x18 CriticalSectionLock lock
+void __fastcall fn_0067B450(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(obj) = 0x0098C5ECu;
+    ext_0067B410(obj);
+    ext_0065C620(obj + 0x18);
+}
+} // namespace lift_0067B450

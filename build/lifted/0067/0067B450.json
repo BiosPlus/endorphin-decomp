@@ -1,0 +1,28 @@
+{
+  "va": "0x0067B450",
+  "size": 80,
+  "orig_symbol": "sub_0067B450",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "TimerHandle::~TimerHandle",
+  "class": "TimerHandle",
+  "signature": "void __fastcall fn_0067B450(void* self)",
+  "summary": "Destroys TimerHandle by stopping the timer and destroying its critical section lock.",
+  "fields": [
+    {
+      "class": "TimerHandle",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "TimerHandle",
+      "offset": "+0x18",
+      "type": "CriticalSectionLock",
+      "name": "lock"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:49:55Z"
+}

@@ -39503,6 +39503,13 @@
     "summary": "Kills the multimedia timer under the object's lock, ends the timer period, clears the timer id, and releases the lock.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067B450": {
+    "name": "TimerHandle::~TimerHandle",
+    "class": "TimerHandle",
+    "signature": "void __fastcall fn_0067B450(void* self)",
+    "summary": "Destroys TimerHandle by stopping the timer and destroying its critical section lock.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067B5A0": {
     "name": "Timer::vfunc_0",
     "class": "Timer",

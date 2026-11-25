@@ -8,8 +8,10 @@
 // Recovered field layout for TimerHandle:
 namespace lifted_layout {
 struct TimerHandle_Fields {
+    // +0x0   uint32_t                 vtable  (evidence: 0x0067B450)
     // +0x4   UINT                     field_0x04  (evidence: 0x0067B410)
     // +0x8   UINT                     field_0x08  (evidence: 0x0067B410)
-    // +0x18  CriticalSectionLock      field_0x18  (evidence: 0x0067B410)
+    // +0x18  CriticalSectionLock      field_0x18  (evidence: 0x0067B410) // CONFLICT: multiple definitions at +0x18
+    // +0x18  CriticalSectionLock      lock  (evidence: 0x0067B450) // CONFLICT: multiple definitions at +0x18
 };
 } // namespace lifted_layout
