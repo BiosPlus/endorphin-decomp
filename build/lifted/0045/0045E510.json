@@ -1,0 +1,52 @@
+{
+  "va": "0x0045E510",
+  "size": 94,
+  "orig_symbol": "sub_0045E510",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "Tree::EqualRange",
+  "class": "Tree",
+  "signature": "inline uint8_t* ptrAt(const uint8_t* base, std::size_t off)",
+  "summary": "Binary-search-tree equal_range on a dword key: writes {self, lower_bound, self, upper_bound} to the out pair.",
+  "fields": [
+    {
+      "class": "Tree",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "left"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "parent"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "right"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "key"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x15",
+      "type": "uint8_t",
+      "name": "isNil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:21:22Z"
+}

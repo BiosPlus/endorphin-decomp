@@ -1122,3 +1122,76 @@ void __thiscall fn_0045C1C0(void* self) {
     }
 }
 } // namespace lift_0045C1C0
+
+// [0x0045E510] sub_0045E510 (94 bytes)
+namespace lift_0045E510 {
+namespace {
+
+// 32-bit guest layout: pointers and dwords are 4 bytes at the given offset.
+inline uint8_t* ptrAt(const uint8_t* base, std::size_t off) {
+    uint32_t v;
+    std::memcpy(&v, base + off, sizeof v);
+    return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(v));
+}
+
+inline uint32_t u32At(const uint8_t* base, std::size_t off) {
+    uint32_t v;
+    std::memcpy(&v, base + off, sizeof v);
+    return v;
+}
+
+inline bool isNil(const uint8_t* node) {
+    return node[0x15] != 0;
+}
+
+inline void storePtr(uint8_t* base, std::size_t off, const void* p) {
+    uint32_t v = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+    std::memcpy(base + off, &v, sizeof v);
+}
+
+} // namespace
+
+// @name Tree::EqualRange
+// @class Tree
+// @summary Binary-search-tree equal_range on a dword key: writes {self, lower_bound, self, upper_bound} to the out pair.
+// @field Tree +0x04 void* head
+// @field TreeNode +0x00 void* left
+// @field TreeNode +0x04 void* parent
+// @field TreeNode +0x08 void* right
+// @field TreeNode +0x0C uint32_t key
+// @field TreeNode +0x15 uint8_t isNil
+void __thiscall fn_0045E510(void* self, void* out, const void* keyPtr) {
+    uint8_t* tree = static_cast<uint8_t*>(self);
+    uint8_t* outp = static_cast<uint8_t*>(out);
+    const uint32_t key = *static_cast<const uint32_t*>(keyPtr);
+
+    uint8_t* header = ptrAt(tree, 0x04);
+
+    // Upper bound: first node with key > given key.
+    uint8_t* upper = header;
+    for (uint8_t* node = ptrAt(header, 0x04); !isNil(node);) {
+        if (key < u32At(node, 0x0C)) {
+            upper = node;
+            node = ptrAt(node, 0x00);
+        } else {
+            node = ptrAt(node, 0x08);
+        }
+    }
+
+    // Lower bound: first node with key >= given key.
+    uint8_t* lower = header;
+    for (uint8_t* node = ptrAt(header, 0x04); !isNil(node);) {
+        if (u32At(node, 0x0C) >= key) {
+            lower = node;
+            node = ptrAt(node, 0x00);
+        } else {
+            node = ptrAt(node, 0x08);
+        }
+    }
+
+    storePtr(outp, 0x00, tree);
+    storePtr(outp, 0x04, lower);
+    storePtr(outp, 0x08, tree);
+    storePtr(outp, 0x0C, upper);
+}
+} // namespace lift_0045E510

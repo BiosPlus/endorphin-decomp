@@ -6243,6 +6243,13 @@
     "summary": "Pure jump thunk forwarding to sub_0045E4B0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0045E510": {
+    "name": "Tree::EqualRange",
+    "class": "Tree",
+    "signature": "inline uint8_t* ptrAt(const uint8_t* base, std::size_t off)",
+    "summary": "Binary-search-tree equal_range on a dword key: writes {self, lower_bound, self, upper_bound} to the out pair.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x0045E920": {
     "name": "sub_0045E920",
     "signature": "extern \"C\" void __fastcall fn_0045E920(void* self)",

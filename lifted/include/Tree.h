@@ -8,6 +8,6 @@
 // Recovered field layout for Tree:
 namespace lifted_layout {
 struct Tree_Fields {
-    // +0x4   void*                    head  (evidence: 0x00472730, 0x004757F0)
+    // +0x4   void*                    head  (evidence: 0x0045E510, 0x00472730, 0x004757F0)
 };
 } // namespace lifted_layout
