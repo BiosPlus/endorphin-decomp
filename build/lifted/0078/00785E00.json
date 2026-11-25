@@ -1,0 +1,63 @@
+{
+  "va": "0x00785E00",
+  "size": 112,
+  "orig_symbol": "sub_00785E00",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "initDefaultParameters",
+  "signature": "extern \"C\" void __thiscall sub_00785E00(void* self)",
+  "summary": "Initializes six 64-bit fields and two byte flags on the object, then tail-calls ext_007857F0.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x78",
+      "type": "uint64_t",
+      "name": "field_0x78"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x80",
+      "type": "uint64_t",
+      "name": "field_0x80"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x88",
+      "type": "uint64_t",
+      "name": "field_0x88"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x90",
+      "type": "uint64_t",
+      "name": "field_0x90"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x98",
+      "type": "uint64_t",
+      "name": "field_0x98"
+    },
+    {
+      "class": "Object",
+      "offset": "+0xA0",
+      "type": "uint64_t",
+      "name": "field_0xa0"
+    },
+    {
+      "class": "Object",
+      "offset": "+0xA8",
+      "type": "uint8_t",
+      "name": "field_0xa8"
+    },
+    {
+      "class": "Object",
+      "offset": "+0xA9",
+      "type": "uint8_t",
+      "name": "field_0xa9"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:29:56Z"
+}

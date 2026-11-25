@@ -83,13 +83,21 @@ struct Object_Fields {
     // +0x69  uint8_t                  field_0x69  (evidence: 0x00441C10, 0x00443700, 0x004444C0)
     // +0x6C  float                    field_0x6c  (evidence: 0x005457B0, 0x00547E80)
     // +0x70  float                    field_0x70  (evidence: 0x005457B0, 0x00547E80)
+    // +0x78  uint64_t                 field_0x78  (evidence: 0x00785E00)
     // +0x7C  uint32_t                 field_0x7c  (evidence: 0x007C2E50, 0x007C6FF0)
+    // +0x80  uint64_t                 field_0x80  (evidence: 0x00785E00)
+    // +0x88  uint64_t                 field_0x88  (evidence: 0x00785E00)
     // +0x8C  float                    field_0x8c  (evidence: 0x007C2E50, 0x007C8810)
+    // +0x90  uint64_t                 field_0x90  (evidence: 0x00785E00)
     // +0x91  uint8_t                  field_0x91  (evidence: 0x005435A0, 0x005457B0)
     // +0x94  uint8_t                  field_0x94  (evidence: 0x004564A0, 0x005435A0, 0x005457B0)
+    // +0x98  uint64_t                 field_0x98  (evidence: 0x00785E00)
     // +0xA0  uint32_t                 field_0xa0  (evidence: 0x005457B0, 0x00547E80) // CONFLICT: multiple definitions at +0xA0
+    // +0xA0  uint64_t                 field_0xa0  (evidence: 0x00785E00) // CONFLICT: multiple definitions at +0xA0
     // +0xA0  void*                    ptr_a0  (evidence: 0x005481E0) // CONFLICT: multiple definitions at +0xA0
-    // +0xA8  uint32_t                 field_0xa8  (evidence: 0x007C2E50, 0x007C8880)
+    // +0xA8  uint32_t                 field_0xa8  (evidence: 0x007C2E50, 0x007C8880) // CONFLICT: multiple definitions at +0xA8
+    // +0xA8  uint8_t                  field_0xa8  (evidence: 0x00785E00) // CONFLICT: multiple definitions at +0xA8
+    // +0xA9  uint8_t                  field_0xa9  (evidence: 0x00785E00)
     // +0xB0  float                    field_0xb0  (evidence: 0x007C62B0, 0x007C8490, 0x007CAF70)
     // +0xB4  float                    field_0xb4  (evidence: 0x007C62B0, 0x007C8490, 0x007CAF70)
     // +0xB8  float                    field_0xb8  (evidence: 0x007C62B0, 0x007C8490, 0x007CAF70)
