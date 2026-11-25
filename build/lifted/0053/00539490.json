@@ -1,0 +1,14 @@
+{
+  "va": "0x00539490",
+  "size": 91,
+  "orig_symbol": "sub_00539490",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::allocateElements12",
+  "class": "Unknown",
+  "signature": "void* fn_00539490(uint32_t count)",
+  "summary": "Allocates raw storage for count 12-byte elements; throws std::length_error if 12*count overflows 32 bits.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:23:35Z"
+}

@@ -22,6 +22,7 @@ void* fn_00530070() {
 }
 } // namespace lift_00530070
 #include <cstdint>
+#include <stdexcept>
 
 // [0x005300D0] sub_005300D0 (86 bytes)
 namespace lift_005300D0 {
@@ -1274,3 +1275,22 @@ CheckedFloat3Iter* __thiscall fn_00539AA0(
     return out_iter;
 }
 } // namespace lift_00539AA0
+
+// [0x00539490] sub_00539490 (91 bytes)
+namespace lift_00539490 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void* ext_006A5C62(uint32_t size);
+
+// @name Unknown::allocateElements12
+// @summary Allocates raw storage for count 12-byte elements; throws std::length_error if 12*count overflows 32 bits.
+void* fn_00539490(uint32_t count) {
+    uint32_t size = 0;
+    if (count != 0) {
+        if (count > 0xFFFFFFFFu / 12u) {
+            throw std::length_error("");
+        }
+        size = count * 12u;
+    }
+    return ext_006A5C62(size);
+}
+} // namespace lift_00539490

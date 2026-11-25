@@ -19928,6 +19928,13 @@
     "summary": "Stores two float arguments at +0x28/+0x2C and two dword arguments at +0x20/+0x24 of this (thiscall, ECX = this, callee pops 0x10 bytes).",
     "lifted_path": "lifted/leaf/tiny_530000.cpp"
   },
+  "0x00539490": {
+    "name": "Unknown::allocateElements12",
+    "class": "Unknown",
+    "signature": "void* fn_00539490(uint32_t count)",
+    "summary": "Allocates raw storage for count 12-byte elements; throws std::length_error if 12*count overflows 32 bits.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x005394F0": {
     "name": "UtilityGraphics::Locator::vfunc_0",
     "class": "UtilityGraphics::Locator",
