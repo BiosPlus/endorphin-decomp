@@ -1,0 +1,13 @@
+{
+  "va": "0x004CE590",
+  "size": 95,
+  "orig_symbol": "sub_004CE590",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "FindGlobalStringIndex",
+  "signature": "extern \"C\" int fn_004CE590(const void* key)",
+  "summary": "Compares a key string against two 7-entry global string tables; returns the matching index in the table (first table first) or 7 if no match.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:27:45Z"
+}

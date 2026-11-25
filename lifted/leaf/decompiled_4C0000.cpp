@@ -736,3 +736,40 @@ void* sub_004C1740() {
     return static_cast<void*>(mem_00AE3024);
 }
 } // namespace lift_004C1740
+
+// [0x004CE590] sub_004CE590 (95 bytes)
+namespace lift_004CE590 {
+// Indirect callee slot (IAT entry) holding std::operator==(const basic_string&, const basic_string&).
+extern int mem_00924FC4;
+// Two global tables of 7 std::string-sized entries (stride 0x1C each).
+extern const uint8_t mem_00AE51C8[];
+extern const uint8_t mem_00AE5290[];
+
+// @name FindGlobalStringIndex
+// @summary Compares a key string against two 7-entry global string tables; returns the matching index in the table (first table first) or 7 if no match.
+namespace {
+
+using StringEqualFn = bool (*)(const void* lhs, const void* rhs);
+
+constexpr int kTableCount = 7;
+constexpr int kEntryStride = 0x1C;
+constexpr int kNotFound = 7;
+
+}  // namespace
+
+extern int fn_004CE590(const void* key) {
+    const auto equal = reinterpret_cast<StringEqualFn>(static_cast<uintptr_t>(mem_00924FC4));
+
+    for (int i = 0; i < kTableCount; ++i) {
+        if (equal(key, mem_00AE51C8 + i * kEntryStride)) {
+            return i;
+        }
+    }
+    for (int i = 0; i < kTableCount; ++i) {
+        if (equal(key, mem_00AE5290 + i * kEntryStride)) {
+            return i;
+        }
+    }
+    return kNotFound;
+}
+} // namespace lift_004CE590

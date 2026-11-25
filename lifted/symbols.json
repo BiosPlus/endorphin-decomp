@@ -14733,6 +14733,12 @@
     "summary": "Setter storing float argument into field at offset +0x18C.",
     "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
   },
+  "0x004CE590": {
+    "name": "FindGlobalStringIndex",
+    "signature": "extern \"C\" int fn_004CE590(const void* key)",
+    "summary": "Compares a key string against two 7-entry global string tables; returns the matching index in the table (first table first) or 7 if no match.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CE710": {
     "name": "NMData::IncarnationEventData::vfunc_59",
     "class": "NMData::IncarnationEventData",
