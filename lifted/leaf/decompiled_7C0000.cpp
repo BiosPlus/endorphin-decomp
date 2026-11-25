@@ -1426,3 +1426,15 @@ void fn_007C5FA0(const void* self, void* out) {
 }
 } // namespace lift_007D8450
 } // namespace lift_007C5FA0
+
+// [0x007C5B70]
+namespace lift_007C5B70 {
+// @name copyVec3To160
+// @summary Copies three floats from src into dst at byte offsets 0x160, 0x164, 0x168.
+void copyVec3To160(unsigned char* dst, const float* src) {
+    float* out = reinterpret_cast<float*>(dst + 0x160);
+    out[0] = src[0];
+    out[1] = src[1];
+    out[2] = src[2];
+}
+} // namespace lift_007C5B70
