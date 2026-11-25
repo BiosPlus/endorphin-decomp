@@ -808,3 +808,35 @@ void fn_005086E0(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_005086E0
+
+// [0x00508790] sub_00508790 (83 bytes)
+namespace lift_00508790 {
+// Known callee 0x0065F440: sub_0065F440 (Stores address of mem_0093BF24 into field at offset +0x0.)
+extern void ext_0065F440(void* self);
+// Address of the MSVC basic_string<char> destructor, stored in .rdata.
+extern uint32_t mem_00924FF4;
+// Vtable for this class (value 0x0094F92C in the original image).
+extern uint32_t mem_0094F92C;
+
+// @name ClassName::~ClassName
+// @class ClassName
+// @summary Destructor: resets vtable, destroys the std::string member at +0x04, then runs base cleanup via ext_0065F440.
+// @field ClassName +0x00 void* field_0x00
+// @field ClassName +0x04 std::string field_0x04
+void fn_00508790(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Vtable pointer is set to this class's vtable.
+    *reinterpret_cast<uint32_t*>(base + 0x00) = mem_0094F92C;
+
+    // Destroy the string member at +0x04.
+    using StrDtor = void (*)(void*);
+    auto strDtor = reinterpret_cast<StrDtor>(static_cast<uintptr_t>(mem_00924FF4));
+    if (strDtor) {
+        strDtor(base + 0x04);
+    }
+
+    // Run the base-level cleanup on the same object.
+    ext_0065F440(self);
+}
+} // namespace lift_00508790

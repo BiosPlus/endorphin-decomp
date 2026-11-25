@@ -16553,6 +16553,13 @@
     "summary": "Constructor that initializes base vtable, sets vtable 0x0094F92C, default-constructs std::string at +0x04, and zeroes float at +0x20.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00508790": {
+    "name": "ClassName::~ClassName",
+    "class": "ClassName",
+    "signature": "void fn_00508790(void* self)",
+    "summary": "Destructor: resets vtable, destroys the std::string member at +0x04, then runs base cleanup via ext_0065F440.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00508800": {
     "name": "FindMatchingNameIndex",
     "signature": "extern \"C\" bool fn_00508800(void* self, const void* str)",
