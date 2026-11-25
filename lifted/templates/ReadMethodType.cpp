@@ -50197,3 +50197,26 @@ void fn_00636470(void** holder) {
     throw std::runtime_error("ExprParser::ReadMethodType<EffectorSkeletal>::vfunc_1");
 }
 } // namespace lift_00636470
+
+// [0x00636C30] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0>::vfunc_1 (49 bytes)
+namespace lift_00636C30 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes the message owner pointer; throws)
+extern void ext_0046C4E0(void* owner);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; constructs the exception object in place)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk to MSVCR80!_CxxThrowException (exception object, throw info)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+
+// @name ExprParser::ReadMethodType<EffectorSkeletal>::vfunc_1 (EffectorSkeletal::getDesiredTwistAndSwingVelocity)
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0>
+// @summary Reads the object pointer stored in *self; if non-null, reports it via ext_0046C4E0 (which throws), otherwise builds a DerivedException and throws it. Never returns normally.
+void fn_00636C30(void* self) {
+    void* owner = *static_cast<void**>(self);
+    if (owner != nullptr) {
+        ext_0046C4E0(static_cast<std::uint8_t*>(owner) + 0xB4);
+    }
+    alignas(16) std::uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(static_cast<std::uintptr_t>(0x009DEC1CU)));
+}
+} // namespace lift_00636C30
