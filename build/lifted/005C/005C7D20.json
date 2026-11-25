@@ -1,0 +1,13 @@
+{
+  "va": "0x005C7D20",
+  "size": 95,
+  "orig_symbol": "sub_005C7D20",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "GetOnceInitString_005C7D20",
+  "signature": "void* fn_005C7D20(void)",
+  "summary": "Lazily initializes the global string at 0x00B444F0 once and returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:32:49Z"
+}

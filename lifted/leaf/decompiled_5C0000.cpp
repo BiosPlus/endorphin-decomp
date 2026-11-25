@@ -1435,3 +1435,27 @@ int32_t __stdcall sub_005CFDB0(uint32_t arg1) {
     return 0;
 }
 } // namespace lift_005CFDB0
+
+// [0x005C7D20] sub_005C7D20 (95 bytes)
+namespace lift_005C7D20 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+// Called as (out_str = &mem_00B444F0, arg = &string literal at 0x00A8C778).
+extern void* ext_0066AD10(void* out_str, const void* arg);
+// Called once with the address 0x0091E050 (registered teardown callback).
+extern void ext_006A6C87(const void* fn);
+// One-time initialization guard byte (bit 0 = initialized/in-progress).
+extern uint8_t mem_00B4450C;
+// Storage for the once-initialized string object.
+extern char mem_00B444F0[];
+
+// @name GetOnceInitString_005C7D20
+// @summary Lazily initializes the global string at 0x00B444F0 once and returns its address.
+void* fn_005C7D20(void) {
+    if ((mem_00B4450C & 1u) == 0) {
+        mem_00B4450C = static_cast<uint8_t>(mem_00B4450C | 1u);
+        ext_0066AD10(static_cast<void*>(mem_00B444F0), reinterpret_cast<const void*>(0x00A8C778));
+        ext_006A6C87(reinterpret_cast<const void*>(0x0091E050));
+    }
+    return static_cast<void*>(mem_00B444F0);
+}
+} // namespace lift_005C7D20
