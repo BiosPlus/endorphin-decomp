@@ -47175,6 +47175,12 @@
     "summary": "Getter returning int32_t field at offset +0x9C.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006BB150": {
+    "name": "findItemByKey",
+    "signature": "uint32_t __thiscall sub_006BB150(uint32_t self, uint32_t arg0)",
+    "summary": "Searches an array of object pointers at +0xac (count at +0x9c) using ext_006E6E40 and returns the first matching pointer or 0.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BB520": {
     "name": "sub_006BB520",
     "signature": "extern \"C\" void* __fastcall fn_006BB520(void* self, int edx_unused, unsigned int flags)",
@@ -54457,6 +54463,13 @@
     "class": "Unknown",
     "signature": "bool fn_00711A90(void* self)",
     "summary": "Tests bit 0x08 of the flags word at this+0x78 by tail-forwarding to TestMaskedFieldAt0x78 and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
+  "0x00711B50": {
+    "name": "Unknown::SetDoubleIfChanged",
+    "class": "Unknown",
+    "signature": "extern \"C\" bool fn_00711B50(void* self, double value)",
+    "summary": "Writes a double into the subobject's +0x20 slot when it differs (ordered compare) from the argument, then calls virtual slot 15 on self; always returns true.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x00711BA0": {

@@ -1,0 +1,22 @@
+{
+  "va": "0x00711B50",
+  "size": 80,
+  "orig_symbol": "sub_00711B50",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::SetDoubleIfChanged",
+  "class": "Unknown",
+  "signature": "extern \"C\" bool fn_00711B50(void* self, double value)",
+  "summary": "Writes a double into the subobject's +0x20 slot when it differs (ordered compare) from the argument, then calls virtual slot 15 on self; always returns true.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "double",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:51:58Z"
+}

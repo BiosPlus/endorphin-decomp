@@ -1457,3 +1457,34 @@ void fn_0071FCC0(void* self, double* dst, const double* a, const double* b) {
     }
 }
 } // namespace lift_0071FCC0
+
+// [0x00711B50] sub_00711B50 (80 bytes)
+namespace lift_00711B50 {
+// Known callee 0x0071E680: sub_0071E680 (Returns pointer to subobject/field at offset +0x40.)
+extern void* ext_0071E680(void* self);
+
+// @name Unknown::SetDoubleIfChanged
+// @class Unknown
+// @summary Writes a double into the subobject's +0x20 slot when it differs (ordered compare) from the argument, then calls virtual slot 15 on self; always returns true.
+// @field Unknown +0x20 double field_0x20
+extern bool fn_00711B50(void* self, double value) {
+    // Signature of vtable slot 15 (called thiscall with six dword arguments).
+    using NotifyFn = void (*)(void* self, uint32_t a1, uint32_t a2, void* a3,
+                              uint32_t a4, uint32_t a5, uint32_t a6);
+
+    void* sub = ext_0071E680(self);
+    const double current = lift_field<double>(sub, 0x20);
+
+    // fcomp + test C3: skip the write when equal or unordered (NaN).
+    const bool ordered_unequal = (current < value) || (current > value);
+    if (ordered_unequal) {
+        void* sub2 = ext_0071E680(self);
+        lift_field<double>(sub2, 0x20) = value;
+
+        void** vtbl = *reinterpret_cast<void***>(self);
+        auto notify = reinterpret_cast<NotifyFn>(vtbl[15]);
+        notify(self, 0u, 0x1Fu, self, 0u, 0u, 0u);
+    }
+    return true;
+}
+} // namespace lift_00711B50
