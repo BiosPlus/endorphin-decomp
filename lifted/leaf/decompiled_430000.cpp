@@ -2211,3 +2211,45 @@ extern uint32_t __thiscall fn_00430C00(uint32_t this_ptr, uint32_t arg0) {
     return fn0(arg0, result);
 }
 } // namespace lift_00430C00
+
+// [0x00430CE0] sub_00430CE0 (69 bytes)
+namespace lift_00430CE0 {
+// Known callee 0x00430370: CheckFieldAt60IsZero (Calls sub_004658C0 to get an object pointer, returns 1 if its int32 at +0x60 is zero, else 0.)
+extern uint8_t ext_00430370(void* self);
+// Known callee 0x0044B680: sub_0044B680 (Auto-lifted identical-shape clone of 0x0041C710 (descriptiveName_0041C710 (delegateToChildVirtual19)).)
+extern uint8_t ext_0044B680(void* self);
+
+// @name Unknown::notifySlotsWithChildFlag
+// @class Unknown
+// @summary Computes a flag from the child at +0x100 and a predicate on self, then invokes vtable slots 0 and 1 of the object held in *arg with those flags.
+// @field Unknown +0x100 void* field_0x100
+
+namespace {
+using VirtualFlagFn = void (*)(void* self, uint32_t flag);
+}
+
+// Thiscall-style: self in ECX, one stack argument (arg), callee-cleans (ret 4).
+void fn_00430CE0(void* self, void* arg) {
+    uint32_t childFlag = 0;
+    void* child = lift_field<void*>(self, 0x100);
+    if (child != nullptr) {
+        childFlag = ext_0044B680(child);
+    }
+
+    // Object held by the slot that arg points to.
+    void** slot = static_cast<void**>(arg);
+    void* obj = *slot;
+    uint32_t predicate = ext_00430370(self);
+
+    // Slot 0 of obj's vtable, invoked with arg as "this".
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    VirtualFlagFn slot0 = reinterpret_cast<VirtualFlagFn>(vtbl[0]);
+    slot0(arg, predicate);
+
+    // Slot 1 of obj's vtable (re-read from the slot), invoked with arg as "this".
+    void* obj2 = *slot;
+    void** vtbl2 = *reinterpret_cast<void***>(obj2);
+    VirtualFlagFn slot1 = reinterpret_cast<VirtualFlagFn>(vtbl2[1]);
+    slot1(arg, childFlag);
+}
+} // namespace lift_00430CE0

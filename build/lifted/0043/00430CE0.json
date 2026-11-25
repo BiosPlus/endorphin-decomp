@@ -1,0 +1,22 @@
+{
+  "va": "0x00430CE0",
+  "size": 69,
+  "orig_symbol": "sub_00430CE0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::notifySlotsWithChildFlag",
+  "class": "Unknown",
+  "signature": "void fn_00430CE0(void* self, void* arg)",
+  "summary": "Computes a flag from the child at +0x100 and a predicate on self, then invokes vtable slots 0 and 1 of the object held in *arg with those flags.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x100",
+      "type": "void*",
+      "name": "field_0x100"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:22:03Z"
+}

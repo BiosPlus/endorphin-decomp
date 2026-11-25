@@ -2549,6 +2549,13 @@
     "summary": "Checks if field at +0x60 is zero via ext_00430370 and invokes vtable[0] on the given object with the result.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430CE0": {
+    "name": "Unknown::notifySlotsWithChildFlag",
+    "class": "Unknown",
+    "signature": "void fn_00430CE0(void* self, void* arg)",
+    "summary": "Computes a flag from the child at +0x100 and a predicate on self, then invokes vtable slots 0 and 1 of the object held in *arg with those flags.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430D40": {
     "name": "sub_00430D40",
     "signature": "extern \"C\" void fn_00430D40(void)",
