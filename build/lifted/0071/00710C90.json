@@ -1,0 +1,13 @@
+{
+  "va": "0x00710C90",
+  "size": 74,
+  "orig_symbol": "sub_00710C90",
+  "src_path": "src/clones/auto_clones_710000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_710000.cpp",
+  "name": "CopyHugeConstantTo_00B5F258",
+  "signature": "void fn_00710C90(void)",
+  "summary": "Copies the 8-byte value pointed to by mem_00925284 (MSVCRT _HUGE double) into four 8-byte globals at 0x00B5F258..0x00B5F274.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:34:51Z"
+}

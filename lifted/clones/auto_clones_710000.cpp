@@ -1112,3 +1112,37 @@ void fn_00710620(void* self) {
     }
 }
 } // namespace lift_00710620
+
+// [0x00710C90] sub_00710C90 (74 bytes)
+namespace lift_00710C90 {
+extern int mem_00925284;
+extern uint32_t mem_00B5F258;
+extern uint32_t mem_00B5F25C;
+extern uint32_t mem_00B5F260;
+extern uint32_t mem_00B5F264;
+extern uint32_t mem_00B5F268;
+extern uint32_t mem_00B5F26C;
+extern uint32_t mem_00B5F270;
+extern uint32_t mem_00B5F274;
+
+// @name CopyHugeConstantTo_00B5F258
+// @summary Copies the 8-byte value pointed to by mem_00925284 (MSVCRT _HUGE double) into four 8-byte globals at 0x00B5F258..0x00B5F274.
+void fn_00710C90(void) {
+    // Source is the 8-byte value at the address stored in mem_00925284.
+    // Each 8-byte pair is read afresh from the source, matching the original sequence.
+    const uint32_t* src = reinterpret_cast<const uint32_t*>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925284)));
+
+    mem_00B5F258 = src[0];
+    mem_00B5F25C = src[1];
+
+    mem_00B5F260 = src[0];
+    mem_00B5F264 = src[1];
+
+    mem_00B5F268 = src[0];
+    mem_00B5F26C = src[1];
+
+    mem_00B5F270 = src[0];
+    mem_00B5F274 = src[1];
+}
+} // namespace lift_00710C90

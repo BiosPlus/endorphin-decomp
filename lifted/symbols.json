@@ -53441,6 +53441,12 @@
     "summary": "Initializes three 64-bit global values (0x00B5F228..0x00B5F23C) from MSVCR80!_HUGE.",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00710C90": {
+    "name": "CopyHugeConstantTo_00B5F258",
+    "signature": "void fn_00710C90(void)",
+    "summary": "Copies the 8-byte value pointed to by mem_00925284 (MSVCRT _HUGE double) into four 8-byte globals at 0x00B5F258..0x00B5F274.",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00710F10": {
     "name": "ResetState",
     "class": "\u003cunknown\u003e",
