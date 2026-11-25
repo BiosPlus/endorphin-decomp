@@ -75140,6 +75140,12 @@
     "summary": "Stores the argument into global mem_00B62020 and returns the previous value.",
     "lifted_path": "lifted/leaf/tiny_800000.cpp"
   },
+  "0x0080AA80": {
+    "name": "LookupHandleEntry",
+    "signature": "extern \"C\" uint32_t fn_0080AA80(uint32_t handle, uint32_t* out_entry)",
+    "summary": "Validates a packed 32-bit handle against the 128-entry global table at 0x00B62030 under the global critical section and returns a pointer to the entry.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080AB80": {
     "name": "EnterGlobalCriticalSection",
     "signature": "void fn_0080AB80(void)",
@@ -75574,6 +75580,12 @@
     "name": "ChainWalkWhileFlagged",
     "signature": "void fn_00810C30(void* self)",
     "summary": "Reads an index from self+0x0c, then repeatedly calls the callback at self+0x04 with that index",
+    "lifted_path": "lifted/leaf/decompiled_810000.cpp"
+  },
+  "0x00811080": {
+    "name": "StringEqualsIgnoreCaseN",
+    "signature": "int __cdecl fn_00811080(const char* s1, uint32_t max_len, const char* s2)",
+    "summary": "Case-insensitive ASCII string equality check up to max_len characters",
     "lifted_path": "lifted/leaf/decompiled_810000.cpp"
   },
   "0x008110F0": {

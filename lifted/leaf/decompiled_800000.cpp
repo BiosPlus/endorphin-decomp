@@ -1024,3 +1024,34 @@ int Heap_push(void* self, uint32_t value) {
     return 1;
 }
 } // namespace lift_008039C0
+
+// [0x0080AA80]
+namespace lift_0080AA80 {
+extern void ext_0080ABA0(void);
+extern void ext_0080ABC0(void);
+extern uint8_t mem_u8(uint32_t addr);
+extern uint32_t mem_u32(uint32_t addr);
+
+// @name LookupHandleEntry
+// @summary Validates a packed 32-bit handle against the 128-entry global table at 0x00B62030 under the global critical section and returns a pointer to the entry.
+extern uint32_t fn_0080AA80(uint32_t handle, uint32_t* out_entry) {
+    uint32_t index = handle >> 16;
+    uint32_t tag = handle & 0xFFFFu;
+    if (index >= 0x80u) {
+        return 9u;
+    }
+
+    ext_0080ABA0();
+
+    uint32_t offset = index * 0x238u;
+    uint8_t active = mem_u8(0x00B62260u + offset);
+    if (active == 0 || mem_u32(0x00B6204Cu + offset) != tag) {
+        ext_0080ABC0();
+        return 9u;
+    }
+
+    *out_entry = 0x00B62030u + offset;
+    ext_0080ABC0();
+    return 0u;
+}
+} // namespace lift_0080AA80
