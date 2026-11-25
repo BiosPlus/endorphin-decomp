@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_600000.cpp
 #include "lift_compat.h"
+#include <new>
+#include <string>
 
-// [0x00609730] sub_00609730 (14 bytes)
+#include <string>
 namespace lift_00609730 {
 // @name sub_00609730
 // @summary Auto-lifted identical-shape clone of 0x004AEC60 (thunk_004AEC60).
@@ -59,3 +61,18 @@ uint32_t __thiscall sub_00602EC0(uint32_t this_ptr) {
     return this_ptr;
 }
 } // namespace lift_00602EC0
+
+// [0x0060B8D0] sub_0060B8D0 (62 bytes)
+namespace lift_0060B8D0 {
+// Format string at 0x009720E8 (.rdata), used as the snprintf format.
+extern const char mem_009720E8[];
+
+// @name StringFromFormattedInt
+// @summary Formats an int into a 50-byte buffer with snprintf and constructs a std::string in place from it; returns the string object.
+std::string* fn_0060B8D0(std::string* self, int value) {
+    char buf[50];
+    std::snprintf(buf, sizeof(buf), mem_009720E8, value);
+    new (self) std::string(buf);
+    return self;
+}
+} // namespace lift_0060B8D0

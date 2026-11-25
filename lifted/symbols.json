@@ -29126,6 +29126,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0060B2B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0060B8D0": {
+    "name": "StringFromFormattedInt",
+    "signature": "std::string* fn_0060B8D0(std::string* self, int value)",
+    "summary": "Formats an int into a 50-byte buffer with snprintf and constructs a std::string in place from it; returns the string object.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060BB80": {
     "name": "NMData::EffectorBaseData::vfunc_4",
     "class": "NMData::EffectorBaseData",
