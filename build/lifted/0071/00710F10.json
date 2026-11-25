@@ -1,0 +1,94 @@
+{
+  "va": "0x00710F10",
+  "size": 64,
+  "orig_symbol": "sub_00710F10",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "ResetState",
+  "class": "\u003cunknown\u003e",
+  "signature": "void fn_00710F10(void* self)",
+  "summary": "Zeroes the object's state fields, stores a constant at +0x04 and 0xFFFF at +0x30, and sets +0x24 to the bit pattern 0x40590000 (3.390625f).",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x30",
+      "type": "uint16_t",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:07:34Z"
+}

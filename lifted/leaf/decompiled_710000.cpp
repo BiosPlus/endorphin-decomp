@@ -1222,3 +1222,38 @@ double fn_0071C210(void* self, double a1, double a2, double a3) {
     return std::atan2(x, 1.0) * kRadToDeg;
 }
 } // namespace lift_0071C210
+
+// [0x00710F10] sub_00710F10 (64 bytes)
+namespace lift_00710F10 {
+// @name ResetState
+// @class <unknown>
+// @summary Zeroes the object's state fields, stores a constant at +0x04 and 0xFFFF at +0x30, and sets +0x24 to the bit pattern 0x40590000 (3.390625f).
+// @field <unknown> +0x00 uint32_t field_0x00
+// @field <unknown> +0x04 uint32_t field_0x04
+// @field <unknown> +0x08 uint32_t field_0x08
+// @field <unknown> +0x0C uint32_t field_0x0C
+// @field <unknown> +0x10 uint32_t field_0x10
+// @field <unknown> +0x14 uint32_t field_0x14
+// @field <unknown> +0x18 uint32_t field_0x18
+// @field <unknown> +0x1C uint32_t field_0x1C
+// @field <unknown> +0x20 uint32_t field_0x20
+// @field <unknown> +0x24 uint32_t field_0x24
+// @field <unknown> +0x28 uint32_t field_0x28
+// @field <unknown> +0x2C uint32_t field_0x2C
+// @field <unknown> +0x30 uint16_t field_0x30
+void fn_00710F10(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0;
+    lift_field<uint32_t>(self, 0x04) = 0x00B5D2C0u;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x14) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1C) = 0;
+    lift_field<uint32_t>(self, 0x20) = 0;
+    lift_field<uint32_t>(self, 0x24) = 0x40590000u; // float 3.390625f
+    lift_field<uint32_t>(self, 0x28) = 0;
+    lift_field<uint32_t>(self, 0x2C) = 0;
+    lift_field<uint16_t>(self, 0x30) = 0xFFFFu;
+}
+} // namespace lift_00710F10

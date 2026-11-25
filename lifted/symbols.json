@@ -51539,6 +51539,13 @@
     "summary": "Initializes three 64-bit global values (0x00B5F228..0x00B5F23C) from MSVCR80!_HUGE.",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00710F10": {
+    "name": "ResetState",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_00710F10(void* self)",
+    "summary": "Zeroes the object's state fields, stores a constant at +0x04 and 0xFFFF at +0x30, and sets +0x24 to the bit pattern 0x40590000 (3.390625f).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00710F50": {
     "name": "ReleaseOwnedBuffers",
     "class": "\u003cunknown\u003e",
