@@ -59059,3 +59059,45 @@ float fn_00604D80(void* self) {
     return static_cast<float>(adjusted);
 }
 } // namespace lift_00604D80
+
+// [0x0066FA70] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>::vfunc_3 (105 bytes)
+namespace lift_0066FA70 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+// Throw type info referenced by the original code at 0x009DEC1C (pushed as the second argument to _CxxThrowException).
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>
+// @summary Returns 1 if the Vector3 referenced by *self has length >= 1e-6, else 0; throws if the vector pointer is null.
+// @field NM::Vector3 +0x00 float x
+// @field NM::Vector3 +0x04 float y
+// @field NM::Vector3 +0x08 float z
+int fn_0066FA70(void* self) {
+    using ThrowFn = void (*)(void* obj, const void* tinfo);
+    using CtorFn = void* (*)(void* thisptr);
+
+    void* vec = *reinterpret_cast<void**>(self);
+    if (vec == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        reinterpret_cast<CtorFn>(ext_0046C3C0)(exc);
+        reinterpret_cast<ThrowFn>(ext_006A6DD2)(exc, reinterpret_cast<const void*>(&mem_009DEC1C));
+        return 0; // not reached
+    }
+
+    const float x = lift_field<float>(vec, 0x0);
+    const float y = lift_field<float>(vec, 0x4);
+    const float z = lift_field<float>(vec, 0x8);
+
+    const float sum = x * x + y * y + z * z;
+    const float len = static_cast<float>(std::sqrt(static_cast<double>(sum)));
+
+    // fcomp against 1e-6: C0 set (less-than or unordered/NaN) -> 0, else 1.
+    if (len < 1e-6 || std::isnan(len)) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_0066FA70
