@@ -161,3 +161,17 @@ uint32_t CopyBackwardElements8(uint32_t begin, uint32_t end, uint32_t dstEnd) {
     return result;
 }
 } // namespace lift_004788D0
+
+// [0x00476660] sub_00476660 (62 bytes)
+namespace lift_00476660 {
+// @name FormatIndexedString
+// @summary Formats an int with a fixed .rdata format into a 50-byte buffer and constructs a std::string in the caller-provided slot.
+// @class none
+// @field none
+std::string* fn_00476660(std::string* out, int value) {
+    char buf[50];
+    std::snprintf(buf, sizeof(buf), "%d", value);
+    new (out) std::string(buf);
+    return out;
+}
+} // namespace lift_00476660

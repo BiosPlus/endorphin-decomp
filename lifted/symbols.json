@@ -7087,6 +7087,13 @@
     "summary": "Constructs a std::string in caller-provided storage from a C string; if the pointer is null, constructs an empty string. Returns the storage pointer.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00476660": {
+    "name": "FormatIndexedString",
+    "class": "none",
+    "signature": "std::string* fn_00476660(std::string* out, int value)",
+    "summary": "Formats an int with a fixed .rdata format into a 50-byte buffer and constructs a std::string in the caller-provided slot.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x004769D0": {
     "name": "NMData::SceneData::vfunc_7",
     "class": "NMData::SceneData",
