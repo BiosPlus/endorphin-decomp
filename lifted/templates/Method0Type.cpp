@@ -1124,3 +1124,23 @@ void* fn_006930A0(void* /*this_unused*/, void* out) {
 }
 } // namespace lift_0048B1C0
 } // namespace lift_006930A0
+
+// [0x0060A090] ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}>::vfunc_4 (40 bytes)
+namespace lift_0060A090 {
+// AddCharacterDialog::vfunc_3 (ext_00493D90): __thiscall, 1 byte (ret). Receives *arg2 in ecx.
+extern void ext_00493D90(void* self);
+// IAT slot at 0x00924FE8: default constructor of std::basic_string<char> (MSVCP80).
+extern void* mem_00924FE8;
+
+// @name ExprParser::Method0Type<DisabledCollisionPairList>::vfunc_4
+// @class ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}>
+// @summary Calls ext_00493D90 with *src as this, default-constructs a std::string in-place at out, and returns out.
+void* __stdcall fn_0060A090(void* out, void** src) {
+    void* const self = *src;                 // mov ecx, [arg2]
+    ext_00493D90(self);                      // call AddCharacterDialog::vfunc_3
+
+    using DefaultCtor = void(__thiscall*)(void*);
+    reinterpret_cast<DefaultCtor>(mem_00924FE8)(out);  // call [0x924FE8] with ecx = out
+    return out;                              // eax = out
+}
+} // namespace lift_0060A090

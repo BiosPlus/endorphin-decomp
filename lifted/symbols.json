@@ -35699,6 +35699,13 @@
     "summary": "Forwards the pointer stored at the object's first field to ext_00493D90 and returns false.",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x0060A090": {
+    "name": "ExprParser::Method0Type\u003cDisabledCollisionPairList\u003e::vfunc_4",
+    "class": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}\u003e",
+    "signature": "void* __stdcall fn_0060A090(void* out, void** src)",
+    "summary": "Calls ext_00493D90 with *src as this, default-constructs a std::string in-place at out, and returns out.",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x0060A0D0": {
     "name": "ExprParser::Method0Type\u003cDisabledCollisionPairList, addSelectedCollisionModels\u003e::vfunc_40",
     "class": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}\u003e",

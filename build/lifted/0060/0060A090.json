@@ -1,0 +1,14 @@
+{
+  "va": "0x0060A090",
+  "size": 40,
+  "orig_symbol": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}\u003e::vfunc_4",
+  "src_path": "src/templates/Method0Type.cpp",
+  "lifted_path": "lifted/templates/Method0Type.cpp",
+  "name": "ExprParser::Method0Type\u003cDisabledCollisionPairList\u003e::vfunc_4",
+  "class": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}\u003e",
+  "signature": "void* __stdcall fn_0060A090(void* out, void** src)",
+  "summary": "Calls ext_00493D90 with *src as this, default-constructs a std::string in-place at out, and returns out.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:54:06Z"
+}
