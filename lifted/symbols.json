@@ -11085,6 +11085,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x0049FA70": {
+    "name": "NMData::State::vfunc_6",
+    "class": "NMData::State",
+    "signature": "void* fn_0049FA70(void* dst)",
+    "summary": "Constructs a std::string from the global C string pointed to by 0x00AA237C into the caller-supplied buffer and returns that buffer.",
+    "lifted_path": "lifted/NMData/State.cpp"
+  },
   "0x0049FAB0": {
     "name": "NMData::State::vfunc_17_off_8",
     "class": "NMData::State",

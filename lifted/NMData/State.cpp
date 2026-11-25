@@ -145,3 +145,26 @@ void __thiscall fn_0049FC80(void* self, void* arg1) {
 }
 } // namespace lift_005C0E00
 } // namespace lift_0049FC80
+
+// [0x0049FA70] NMData::State::vfunc_6 (35 bytes)
+namespace lift_0049FA70 {
+// .data slot at VA 0x00AA237C: holds a const char* pointing at the string literal 0x0098CE48.
+extern const char* mem_00AA237C;
+// MSVCP80 import slot at VA 0x00924FE4: holds the address of
+// std::basic_string<char>::basic_string(const char*, const allocator&).
+extern void* mem_00924FE4;
+
+// Original (ret 4): constructs a std::string from the pointer stored at 0x00AA237C into the
+// caller-supplied buffer (hidden return slot) and returns that buffer. The original also pushes
+// saved-esi/ecx words and a zero allocator word; the allocator is modelled as nullptr, as in
+// the sibling MagnetJointData::vfunc_59 lift. `this` (ecx) is unused.
+// @name NMData::State::vfunc_6
+// @class NMData::State
+// @summary Constructs a std::string from the global C string pointed to by 0x00AA237C into the caller-supplied buffer and returns that buffer.
+void* fn_0049FA70(void* dst) {
+    using StrCtorFn = void(__thiscall*)(void* self, const char* s, const void* alloc);
+    StrCtorFn ctor = *reinterpret_cast<StrCtorFn*>(&mem_00924FE4);
+    ctor(dst, mem_00AA237C, nullptr);
+    return dst;
+}
+} // namespace lift_0049FA70
