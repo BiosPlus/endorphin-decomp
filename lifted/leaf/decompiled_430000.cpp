@@ -3549,3 +3549,43 @@ void* fn_00430D30() {
 }
 } // namespace lift_00780270
 } // namespace lift_00430D30
+
+// [0x0043E5D0] sub_0043E5D0 (106 bytes)
+namespace lift_0043E5D0 {
+// Known callee 0x0043D370: std::_Uninitialized_copy (4-byte elements, MFC80 copy-ctor loop).
+extern void* __cdecl fn_0043D370(const uint8_t* first, const uint8_t* last, uint8_t* dest);
+
+// MSVCR80!_invalid_parameter_noinfo, loaded through IAT slot 0x925134.
+extern void (*mem_00925134)(void);
+// MFC80!ord_578 (element destructor, __thiscall with element pointer in ecx), IAT slot 0x9242F4.
+extern void (*mem_009242F4)(void* self);
+
+// @name uninitCopyTail_0043E5D0
+// @summary Copy-constructs [src, end) into dest, destroys the displaced tail past the new end, sets end to the copy end, and writes (first, dest) to *out.
+// @field Unknown +0x08 uint8_t* field_0x08
+void fn_0043E5D0(void* self, uint8_t** out, const uint8_t* first, uint8_t* dest,
+                 const uint8_t* expectedFirst, const uint8_t* src) {
+    // Guard: a non-null first must equal expectedFirst; otherwise CRT invalid-parameter (returns in release).
+    if (first != nullptr && first != expectedFirst) {
+        mem_00925134();
+    }
+
+    if (src != dest) {
+        uint8_t** endSlot = reinterpret_cast<uint8_t**>(reinterpret_cast<uint8_t*>(self) + 0x08);
+        uint8_t* oldEnd = *endSlot;
+
+        uint8_t* result = static_cast<uint8_t*>(
+            fn_0043D370(src, oldEnd, dest));
+
+        // Destroy elements in [result, oldEnd).
+        for (uint8_t* it = result; it != oldEnd; it += 4) {
+            mem_009242F4(it);
+        }
+
+        *endSlot = result;
+    }
+
+    out[0] = const_cast<uint8_t*>(first);
+    out[1] = dest;
+}
+} // namespace lift_0043E5D0

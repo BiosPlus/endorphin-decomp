@@ -1,0 +1,21 @@
+{
+  "va": "0x0043E5D0",
+  "size": 106,
+  "orig_symbol": "sub_0043E5D0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "uninitCopyTail_0043E5D0",
+  "signature": "void fn_0043E5D0(void* self, uint8_t** out, const uint8_t* first, uint8_t* dest, const uint8_t* expectedFirst, const uint8_t* src)",
+  "summary": "Copy-constructs [src, end) into dest, destroys the displaced tail past the new end, sets end to the copy end, and writes (first, dest) to *out.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T05:02:42Z"
+}

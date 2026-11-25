@@ -4094,6 +4094,12 @@
     "summary": "Calls MFC80!ord_578 on each 4-byte element in [begin, end)",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043E5D0": {
+    "name": "uninitCopyTail_0043E5D0",
+    "signature": "void fn_0043E5D0(void* self, uint8_t** out, const uint8_t* first, uint8_t* dest, const uint8_t* expectedFirst, const uint8_t* src)",
+    "summary": "Copy-constructs [src, end) into dest, destroys the displaced tail past the new end, sets end to the copy end, and writes (first, dest) to *out.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043E640": {
     "name": "sub_0043E640 (descriptiveName: ReleaseElementsAndReset)",
     "signature": "void fn_0043E640(void* self)",
