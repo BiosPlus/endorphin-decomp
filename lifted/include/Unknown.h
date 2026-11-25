@@ -605,6 +605,7 @@ struct Unknown_Fields {
     // +0x164 void*                    field_0x164  (evidence: 0x005C3030) // CONFLICT: multiple definitions at +0x164
     // +0x164 int                      field_164  (evidence: 0x005C38F0) // CONFLICT: multiple definitions at +0x164
     // +0x164 void*                    subObject  (evidence: 0x005C2FF0) // CONFLICT: multiple definitions at +0x164
+    // +0x164 uint32_t                 subobject164  (evidence: 0x005C3930) // CONFLICT: multiple definitions at +0x164
     // +0x168 uint32_t                 field_0x168  (evidence: 0x00486AD0) // CONFLICT: multiple definitions at +0x168
     // +0x168 void*                    field_0x168  (evidence: 0x00433990, 0x00486C90) // CONFLICT: multiple definitions at +0x168
     // +0x16C uint32_t                 field_0x16c  (evidence: 0x006A8800)

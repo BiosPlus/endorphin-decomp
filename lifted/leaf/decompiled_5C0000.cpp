@@ -313,3 +313,32 @@ void* fn_005C39B0(void* self) {
     return &mem_00AE558C;
 }
 } // namespace lift_005C39B0
+
+// [0x005C3930] sub_005C3930 (60 bytes)
+namespace lift_005C3930 {
+// Known callee 0x005B6B90: Unknown::forwardToSubobject158 (If the pointer at +0x158 is non-null, forwards this+0x1C4 to ext_005CE9D0 on that pointer.)
+extern void ext_005B6B90(void* self);
+extern uint32_t mem_00AE5598;
+extern float mem_00AE558C;
+extern float mem_00AE5590;
+extern float mem_00AE5594;
+
+// @name Unknown::forwardToSubobject158OrZeroVec3
+// @class Unknown
+// @summary If this+0x164 is non-null, forwards to that subobject via ext_005B6B90; otherwise lazily zeroes a three-float global block and returns its address.
+// @field Unknown +0x164 uint32_t subobject164
+float* fn_005C3930(void* self) {
+    const uint32_t subobject = lift_field<uint32_t>(self, 0x164);
+    if (subobject != 0) {
+        ext_005B6B90(reinterpret_cast<void*>(static_cast<uintptr_t>(subobject)));
+        return nullptr;
+    }
+    if ((mem_00AE5598 & 1u) == 0) {
+        mem_00AE5598 |= 1u;
+        mem_00AE558C = 0.0f;
+        mem_00AE5590 = 0.0f;
+        mem_00AE5594 = 0.0f;
+    }
+    return &mem_00AE558C;
+}
+} // namespace lift_005C3930

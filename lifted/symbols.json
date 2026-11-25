@@ -24230,6 +24230,13 @@
     "summary": "If this+0x164 is nonzero, forwards to ext_005B6B60; otherwise lazily zeroes a static float4 at mem_00AE558C on first call and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
+  "0x005C3930": {
+    "name": "Unknown::forwardToSubobject158OrZeroVec3",
+    "class": "Unknown",
+    "signature": "float* fn_005C3930(void* self)",
+    "summary": "If this+0x164 is non-null, forwards to that subobject via ext_005B6B90; otherwise lazily zeroes a three-float global block and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005C39B0": {
     "name": "Unknown::getZeroVec4Ptr",
     "class": "Unknown",
