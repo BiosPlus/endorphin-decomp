@@ -1306,3 +1306,31 @@ void* fn_007094A0(void* head) {
     return nullptr;
 }
 } // namespace lift_007094A0
+
+// [0x00708C10]
+namespace lift_00708C10 {
+// @name findAndSelectItem
+// @summary Searches an array of 32-bit items at +0xD0 (count at +0xC0) for a matching value and invokes vtable +0xE8 with its index.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0xC0 int32_t field_0xC0
+// @field Unknown +0xD0 uint32_t* field_0xD0
+uint32_t __thiscall sub_00708C10(void* self, uint32_t target) {
+    auto* base = static_cast<const uint8_t*>(self);
+    int32_t count = *reinterpret_cast<const int32_t*>(base + 0xC0);
+    if (count > 0) {
+        const uint32_t* items = *reinterpret_cast<const uint32_t* const*>(base + 0xD0);
+        for (int32_t i = 0; i < count; ++i) {
+            if (items[i] == target) {
+                if (i == -1) {
+                    return 1;
+                }
+                const uintptr_t* vtable = *reinterpret_cast<const uintptr_t* const*>(base);
+                using VFunc = uint32_t(__thiscall*)(void*, int32_t);
+                auto fn = reinterpret_cast<VFunc>(vtable[0xE8 / sizeof(uintptr_t)]);
+                return fn(self, i);
+            }
+        }
+    }
+    return 1;
+}
+} // namespace lift_00708C10
