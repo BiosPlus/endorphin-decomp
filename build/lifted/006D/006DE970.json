@@ -1,0 +1,22 @@
+{
+  "va": "0x006DE970",
+  "size": 96,
+  "orig_symbol": "sub_006DE970",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::FindChildById",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* __thiscall fn_006DE970(void* self, uint32_t id)",
+  "summary": "Recursively searches child nodes for one whose indirect uint32 at +0x14/+0x98 matches the given ID.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:41:09Z"
+}
