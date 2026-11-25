@@ -904,3 +904,17 @@ void fn_00462A90(void* self) {
     // ret
 }
 } // namespace lift_00462A90
+
+// [0x00462A70] sub_00462A70 (11 bytes)
+namespace lift_00462A70 {
+// @name SetLinkedObjectFlag
+// @summary Loads the pointer stored at self+0x04 and writes 2 to the dword at +0x04 of the pointed-to object.
+// @field Unknown +0x04 uint32_t field_0x04
+void fn_00462A70(void* self) {
+    // Pointers are 32-bit in endorphin.exe, so the stored value is kept as uint32_t
+    // and converted to a host pointer only for the dereference.
+    uint32_t target = lift_field<uint32_t>(self, 0x04);
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(target));
+    lift_field<uint32_t>(obj, 0x04) = 2;
+}
+} // namespace lift_00462A70

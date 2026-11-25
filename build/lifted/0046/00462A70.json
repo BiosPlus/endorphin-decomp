@@ -1,0 +1,21 @@
+{
+  "va": "0x00462A70",
+  "size": 11,
+  "orig_symbol": "sub_00462A70",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "SetLinkedObjectFlag",
+  "signature": "void fn_00462A70(void* self)",
+  "summary": "Loads the pointer stored at self+0x04 and writes 2 to the dword at +0x04 of the pointed-to object.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:19:25Z"
+}

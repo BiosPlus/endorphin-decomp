@@ -6152,6 +6152,12 @@
     "summary": "Returns the byte at +0x1C of the object pointed to by this+0x00.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00462A70": {
+    "name": "SetLinkedObjectFlag",
+    "signature": "void fn_00462A70(void* self)",
+    "summary": "Loads the pointer stored at self+0x04 and writes 2 to the dword at +0x04 of the pointed-to object.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00462A80": {
     "name": "sub_00462A80",
     "signature": "void __thiscall sub_00462A80(uint8_t* this_ptr)",
