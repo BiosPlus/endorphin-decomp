@@ -1,0 +1,13 @@
+{
+  "va": "0x008598E0",
+  "size": 80,
+  "orig_symbol": "sub_008598E0",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "strncpyZeroPad",
+  "signature": "static uint8_t* strncpyZeroPad(uint8_t* dst, const uint8_t* src, size_t n)",
+  "summary": "Copy up to n bytes of a NUL-terminated string from src to dst, zero-filling the remainder of the n-byte window; returns dst.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:56:54Z"
+}

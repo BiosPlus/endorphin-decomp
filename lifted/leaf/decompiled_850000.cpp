@@ -863,3 +863,32 @@ void fn_00853680(uint8_t* self) {
     state[6] = 0u; // +0x18
 }
 } // namespace lift_00853680
+
+// [0x008598E0]
+namespace lift_008598E0 {
+// @name strncpyZeroPad
+// @summary Copy up to n bytes of a NUL-terminated string from src to dst, zero-filling the remainder of the n-byte window; returns dst.
+static uint8_t* strncpyZeroPad(uint8_t* dst, const uint8_t* src, size_t n) {
+    if (n == 0) {
+        return dst;
+    }
+
+    uint8_t* out = dst;
+    for (;;) {
+        const uint8_t ch = *src++;
+        *out++ = ch;
+        --n;
+        if (ch == 0) {
+            // Source terminated: zero-fill the rest of the window.
+            while (n-- != 0) {
+                *out++ = 0;
+            }
+            break;
+        }
+        if (n == 0) {
+            break;
+        }
+    }
+    return dst;
+}
+} // namespace lift_008598E0
