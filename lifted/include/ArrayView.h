@@ -8,7 +8,7 @@
 // Recovered field layout for ArrayView:
 namespace lifted_layout {
 struct ArrayView_Fields {
-    // +0x4   void*                    field_0x04  (evidence: 0x0050E360)
-    // +0x8   void*                    field_0x08  (evidence: 0x0050E360)
+    // +0x4   void*                    field_0x04  (evidence: 0x00508BC0, 0x0050E360)
+    // +0x8   void*                    field_0x08  (evidence: 0x00508BC0, 0x0050E360)
 };
 } // namespace lifted_layout

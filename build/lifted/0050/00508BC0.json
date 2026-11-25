@@ -4,11 +4,179 @@
   "orig_symbol": "sub_00508BC0",
   "src_path": "src/leaf/decompiled_500000.cpp",
   "lifted_path": "lifted/leaf/decompiled_500000.cpp",
-  "name": "Container::selectIndex",
-  "class": "Container",
-  "signature": "static std::size_t element_count(const Container* self)",
-  "summary": "Clears +0x34, then stores element[index] of the array spanning +0x28..+0x2c into +0x34 if index is in range.",
+  "name": "sub_00508310",
+  "class": "NMData::RealChannel",
+  "signature": "void* __thiscall fn_00508310(const void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0051C6D0 (NMData::RealChannel::vfunc_4).",
   "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtablePtr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint8_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x21",
+      "type": "uint8_t",
+      "name": "field_0x21"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "double",
+      "name": "field_0x28"
+    },
+    {
+      "class": "ArrayView",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ArrayView",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "field_0x30",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "global_table_handle"
+    },
+    {
+      "class": "ElementArray",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ElementArray",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x4",
+      "type": "uint8_t[28] field_0x04 (std::string sub-object, assigned via",
+      "name": "ext_MSVCP80_string_assign)"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "name"
+    },
+    {
+      "class": "self",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtablePtr"
+    },
+    {
+      "class": "self",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "self",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "self",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "self",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
     {
       "class": "Container",
       "offset": "+0x28",
@@ -30,5 +198,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T01:24:32Z"
+  "lifted_at": "2026-11-25T01:24:38Z"
 }

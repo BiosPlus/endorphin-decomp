@@ -15985,10 +15985,10 @@
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
   "0x00508BC0": {
-    "name": "Container::selectIndex",
-    "class": "Container",
-    "signature": "static std::size_t element_count(const Container* self)",
-    "summary": "Clears +0x34, then stores element[index] of the array spanning +0x28..+0x2c into +0x34 if index is in range.",
+    "name": "sub_00508310",
+    "class": "NMData::RealChannel",
+    "signature": "void* __thiscall fn_00508310(const void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0051C6D0 (NMData::RealChannel::vfunc_4).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
   "0x00508C10": {
