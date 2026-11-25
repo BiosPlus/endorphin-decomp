@@ -9,7 +9,7 @@
 // Recovered field layout for Node:
 namespace lifted_layout {
 struct Node_Fields {
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x007CC970) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x007CC970, 0x0085C1C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x00401AF0, 0x00420590, 0x004275C0, 0x0046FBA0, 0x00486D60, 0x004928E0, 0x005014B0, 0x0052A070, 0x0055E8C0, 0x00594310, 0x0059DE00, 0x005AC840, 0x005E0B00, 0x005E2C70, 0x00624D10) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 flags  (evidence: 0x00859AF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   Node*                    next  (evidence: 0x007837A0, 0x00788E50) // CONFLICT: multiple definitions at +0x0
@@ -30,8 +30,10 @@ struct Node_Fields {
     // +0x14  uint32_t                 field_0x14  (evidence: 0x007C6810, 0x007C8490, 0x007DB6C0)
     // +0x15  uint8_t                  field_0x15  (evidence: 0x00401AF0, 0x00420590, 0x004275C0, 0x0046FBA0, 0x00486D60, 0x004928E0, 0x005014B0, 0x0052A070, 0x0055E8C0, 0x00594310, 0x0059DE00, 0x005AC840, 0x005E0B00, 0x005E2C70, 0x00624D10)
     // +0x1C  int32_t                  count  (evidence: 0x007DB6C0) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  uint32_t                 field_0x1C  (evidence: 0x0085C1C0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  void*                    field_0x1c  (evidence: 0x00859AF0) // CONFLICT: multiple definitions at +0x1C
-    // +0x20  void*                    field_0x20  (evidence: 0x00859AF0)
+    // +0x20  uint32_t                 field_0x20  (evidence: 0x0085C1C0) // CONFLICT: multiple definitions at +0x20
+    // +0x20  void*                    field_0x20  (evidence: 0x00859AF0) // CONFLICT: multiple definitions at +0x20
     // +0x59  uint8_t                  field_0x59  (evidence: 0x00427370, 0x004275C0)
     // +0x7C  void*                    field_0x7c  (evidence: 0x00586240)
     // +0x80  Node**                   children_begin  (evidence: 0x00586240)
