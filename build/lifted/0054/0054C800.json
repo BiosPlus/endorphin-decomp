@@ -1,0 +1,13 @@
+{
+  "va": "0x0054C800",
+  "size": 109,
+  "orig_symbol": "sub_0054C800",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "drawFormattedBitmapText",
+  "signature": "void fn_0054C800(const char* fmt, ...)",
+  "summary": "printf-style formatting into a 256-byte buffer, then draws it as a",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:00:15Z"
+}

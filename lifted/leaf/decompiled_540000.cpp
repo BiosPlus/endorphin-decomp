@@ -1233,3 +1233,40 @@ extern void __fastcall fn_0054E360(void* self) {
     ext_0065C660(self);
 }
 } // namespace lift_0054E360
+
+// [0x0054C800] sub_0054C800 (109 bytes)
+namespace lift_0054C800 {
+// OpenGL / CRT imports reached through IAT slots in the original (mem_009252B8,
+// mem_0092546C, mem_00925518, mem_00925514, mem_0092552C).
+extern void __cdecl ext_glPushAttrib(GLbitfield mask);
+extern void __cdecl ext_glListBase(GLuint base);
+extern void __cdecl ext_glCallLists(GLsizei n, GLenum type, const GLvoid* lists);
+extern void __cdecl ext_glPopAttrib(void);
+
+// Global display-list base for the bitmap font (data at 0x00AF657C).
+extern int mem_00AF657C;
+
+// @name drawFormattedBitmapText
+// @summary printf-style formatting into a 256-byte buffer, then draws it as a
+//          string of bitmap-font display lists (glCallLists) with attributes saved.
+void fn_0054C800(const char* fmt, ...) {
+    if (fmt == nullptr) {
+        return;
+    }
+
+    const GLbitfield kGlListBit = 0x00020000u;   // GL_LIST_BIT
+    const GLenum kGlUnsignedByte = 0x1401u;      // GL_UNSIGNED_BYTE
+    const int kGlyphOffset = 0x20;               // font lists start at ' '
+
+    char buf[256];
+    va_list args;
+    va_start(args, fmt);
+    std::vsnprintf(buf, sizeof buf, fmt, args);
+    va_end(args);
+
+    ext_glPushAttrib(kGlListBit);
+    ext_glListBase(static_cast<GLuint>(mem_00AF657C - kGlyphOffset));
+    ext_glCallLists(static_cast<GLsizei>(std::strlen(buf)), kGlUnsignedByte, buf);
+    ext_glPopAttrib();
+}
+} // namespace lift_0054C800
