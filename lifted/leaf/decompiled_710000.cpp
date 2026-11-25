@@ -1811,3 +1811,26 @@ uint32_t __fastcall sub_00714AE0(uintptr_t ecx) {
     return *reinterpret_cast<const uint32_t*>(ecx + 0xd8);
 }
 } // namespace lift_00714AE0
+
+// [0x00715450]
+namespace lift_00715450 {
+// @name sub_00715450
+// @summary Destructor that resets vtable, invokes virtual method +0x4(0) on field_0x10, and calls base destructor ext_0077FA20.
+// @field sub_00715450 +0x00 void* vtable
+// @field sub_00715450 +0x10 void* field_0x10
+
+
+extern uint8_t mem_009962E0;
+extern void __fastcall ext_0077FA20(void* self);
+
+extern void __fastcall fn_00715450(void* self) {
+    *reinterpret_cast<void**>(self) = &mem_009962E0;
+
+    void* obj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x10);
+    void** vtable = *reinterpret_cast<void***>(obj);
+    using VirtFn = void(__thiscall*)(void*, int);
+    reinterpret_cast<VirtFn>(vtable[1])(obj, 0);
+
+    ext_0077FA20(self);
+}
+} // namespace lift_00715450
