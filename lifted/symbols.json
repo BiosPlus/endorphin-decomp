@@ -57422,6 +57422,12 @@
     "summary": "Getter returning int32_t field at offset +0x8AEC.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006F7700": {
+    "name": "GetGlobalDwordTableEntry",
+    "signature": "DWORD fn_006F7700(DWORD index)",
+    "summary": "Returns the DWORD at index `index` of the global table at 0x00994764 (table[index]).",
+    "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
+  },
   "0x006F7850": {
     "name": "findTableEntry_006F7850",
     "signature": "bool sub_006F7850(uint32_t target, int32_t* outRow, int32_t* outCol)",

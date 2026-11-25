@@ -3007,3 +3007,15 @@ bool fn_006FA940(void* self) {
     return value != 0;
 }
 } // namespace lift_006FA940
+
+// [0x006F7700] sub_006F7700 (16 bytes)
+namespace lift_006F7700 {
+// @name GetGlobalDwordTableEntry
+// @summary Returns the DWORD at index `index` of the global table at 0x00994764 (table[index]).
+DWORD fn_006F7700(DWORD index) {
+    // mov eax,[esp+4]; mov eax,[eax*4+0x994764]; ret
+    // Absolute global table at 0x00994764, 4-byte entries, 32-bit wrapping index math.
+    const uintptr_t addr = static_cast<uintptr_t>(static_cast<uint32_t>(0x00994764u + index * 4u));
+    return *reinterpret_cast<const DWORD*>(addr);
+}
+} // namespace lift_006F7700

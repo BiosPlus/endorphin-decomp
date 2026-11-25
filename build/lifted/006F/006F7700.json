@@ -1,0 +1,13 @@
+{
+  "va": "0x006F7700",
+  "size": 16,
+  "orig_symbol": "sub_006F7700",
+  "src_path": "src/leaf/tiny_6F0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6F0000.cpp",
+  "name": "GetGlobalDwordTableEntry",
+  "signature": "DWORD fn_006F7700(DWORD index)",
+  "summary": "Returns the DWORD at index `index` of the global table at 0x00994764 (table[index]).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:27:20Z"
+}
