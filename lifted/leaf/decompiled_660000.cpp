@@ -604,3 +604,33 @@ std::string* fn_006648C0(std::string* out, double value, int32_t intArg) {
     return out;
 }
 } // namespace lift_006648C0
+
+// [0x006630C0] sub_006630C0 (75 bytes)
+namespace lift_006630C0 {
+// MSVCP80 std::string helpers (thiscall in the original binary, wrapped here).
+extern uint32_t ext_std_string_size(const void* str);
+extern const char* ext_std_string_at(const void* str, uint32_t index);
+
+extern int mem_00924EAC;
+extern int mem_00924FFC;
+extern int mem_00A9FB8C;
+
+// @name IsTailSignatureMatch_006630C0
+// @class (none)
+// @summary Returns true if the string is at least 20 chars long and its last 16 chars equal the 16-byte signature at mem_00A9FB8C.
+bool fn_006630C0(const void* str) {
+    const uint32_t size = ext_std_string_size(str);
+    if (size < 0x14) {
+        return false;
+    }
+
+    const uint8_t* signature = reinterpret_cast<const uint8_t*>(&mem_00A9FB8C);
+    for (uint32_t i = 0; i < 0x10; ++i) {
+        const char* ch = ext_std_string_at(str, size + i - 0x10);
+        if (static_cast<uint8_t>(*ch) != signature[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+} // namespace lift_006630C0
