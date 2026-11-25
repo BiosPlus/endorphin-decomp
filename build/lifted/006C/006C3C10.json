@@ -1,0 +1,13 @@
+{
+  "va": "0x006C3C10",
+  "size": 80,
+  "orig_symbol": "sub_006C3C10",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "vec3dCross",
+  "signature": "void sub_006C3C10(uint32_t out_ptr, uint32_t a_ptr, uint32_t b_ptr)",
+  "summary": "Computes the 3D cross product of two double-precision vectors: out = a x b.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:52:01Z"
+}

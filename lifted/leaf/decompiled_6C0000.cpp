@@ -1715,3 +1715,24 @@ uint32_t __fastcall sub_006C30A0(uint32_t self) {
     return 0;
 }
 } // namespace lift_006C30A0
+
+// [0x006C3C10]
+namespace lift_006C3C10 {
+// @name vec3dCross
+// @summary Computes the 3D cross product of two double-precision vectors: out = a x b.
+
+
+void sub_006C3C10(uint32_t out_ptr, uint32_t a_ptr, uint32_t b_ptr) {
+    double* out = reinterpret_cast<double*>(static_cast<uintptr_t>(out_ptr));
+    const double* a = reinterpret_cast<const double*>(static_cast<uintptr_t>(a_ptr));
+    const double* b = reinterpret_cast<const double*>(static_cast<uintptr_t>(b_ptr));
+
+    double x = a[1] * b[2] - a[2] * b[1];
+    double y = a[2] * b[0] - a[0] * b[2];
+    double z = a[0] * b[1] - a[1] * b[0];
+
+    out[0] = x;
+    out[1] = y;
+    out[2] = z;
+}
+} // namespace lift_006C3C10
