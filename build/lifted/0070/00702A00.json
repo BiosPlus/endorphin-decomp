@@ -1,0 +1,14 @@
+{
+  "va": "0x00702A00",
+  "size": 80,
+  "orig_symbol": "sub_00702A00",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::FillVec3FromAccessors",
+  "class": "Unknown",
+  "signature": "extern \"C\" double* __stdcall fn_00702A00(double* out)",
+  "summary": "Fills a 3-double output buffer with float values fetched via accessor chains off a singleton-like object.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:50:12Z"
+}

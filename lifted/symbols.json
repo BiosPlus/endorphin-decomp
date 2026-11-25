@@ -53342,6 +53342,13 @@
     "summary": "Follows this-\u003efield_0x268-\u003efield_0x168 and calls its vtable slot at +0x88 with an out-slot at +0x80 and three zero args; returns the dword written there.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00702A00": {
+    "name": "Unknown::FillVec3FromAccessors",
+    "class": "Unknown",
+    "signature": "extern \"C\" double* __stdcall fn_00702A00(double* out)",
+    "summary": "Fills a 3-double output buffer with float values fetched via accessor chains off a singleton-like object.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00702F60": {
     "name": "sub_00702F60",
     "class": "Unknown",

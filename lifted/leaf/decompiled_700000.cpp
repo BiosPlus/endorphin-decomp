@@ -1612,3 +1612,35 @@ void fn_00708CC0(void* self, uint32_t target) {
     }
 }
 } // namespace lift_00708CC0
+
+// [0x00702A00]
+namespace lift_00702A00 {
+// @name Unknown::FillVec3FromAccessors
+// @summary Fills a 3-double output buffer with float values fetched via accessor chains off a singleton-like object.
+// @class Unknown
+
+// ext_006DC460: returns the object used as the base for all accessors.
+int32_t Unknown_GetValueIfCountPositive(void* self);
+// ext_006C9620 / ext_006C9640 / ext_006C9660: accessors that return a sub-object pointer.
+void* sub_006C9620(void* self);
+void* sub_006C9640(void* self);
+void* sub_006C9660(void* self);
+// ext_006C9F70: float getter on a sub-object.
+float sub_006C9F70(void* self);
+
+// Stdcall-style: one stack argument (output buffer), returned in eax.
+extern double* __stdcall fn_00702A00(double* out) {
+    int32_t base = Unknown_GetValueIfCountPositive(nullptr);
+
+    void* a = sub_006C9620(reinterpret_cast<void*>(static_cast<intptr_t>(base)));
+    out[0] = static_cast<double>(sub_006C9F70(a));
+
+    void* b = sub_006C9640(reinterpret_cast<void*>(static_cast<intptr_t>(base)));
+    out[1] = static_cast<double>(sub_006C9F70(b));
+
+    void* c = sub_006C9660(reinterpret_cast<void*>(static_cast<intptr_t>(base)));
+    out[2] = static_cast<double>(sub_006C9F70(c));
+
+    return out;
+}
+} // namespace lift_00702A00
