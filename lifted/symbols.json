@@ -47710,6 +47710,12 @@
     "summary": "Returns field_0x158 if non-null and its vtable[0]() returns 2, else 0.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C30A0": {
+    "name": "sub_006C30A0",
+    "signature": "uint32_t __fastcall sub_006C30A0(uint32_t self)",
+    "summary": "Return field_0x158 if its virtual method 0 returns 4, 5, or 6, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C30F0": {
     "name": "sub_006C30F0",
     "signature": "uint32_t __fastcall sub_006C30F0(uint32_t this_ptr, uint32_t /*edx*/)",
@@ -53928,9 +53934,10 @@
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x0070BF00": {
-    "name": "ClampedScaledFloatGetter",
-    "signature": "extern \"C\" float __fastcall fn_0070BF00(void* self)",
-    "summary": "Chains three getters, scales the float result by 1/128, and clamps it to [0, 1].",
+    "name": "sub_0070A1D0",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __fastcall fn_0070A1D0(void* self, int edx_unused, unsigned int flags)",
+    "summary": "MSVC scalar deleting destructor: calls sub_0070A1F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x0070BFD0": {

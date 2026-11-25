@@ -4,10 +4,463 @@
   "orig_symbol": "sub_0070BF00",
   "src_path": "src/leaf/decompiled_700000.cpp",
   "lifted_path": "lifted/leaf/decompiled_700000.cpp",
-  "name": "ClampedScaledFloatGetter",
-  "signature": "extern \"C\" float __fastcall fn_0070BF00(void* self)",
-  "summary": "Chains three getters, scales the float result by 1/128, and clamps it to [0, 1].",
+  "name": "sub_0070A1D0",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* __fastcall fn_0070A1D0(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_0070A1F0 and frees memory when (flags \u0026 1) is set.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "\u003cembedded object\u003e",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "int32_t",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x268",
+      "type": "void*",
+      "name": "field_0x268"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x270",
+      "type": "uint8_t",
+      "name": "field_0x270"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x268",
+      "type": "ptr",
+      "name": "field_0x268"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x270",
+      "type": "uint8",
+      "name": "field_0x270"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "uint32_t",
+      "name": "field_0xF0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "int32_t",
+      "name": "field_0x5C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x188",
+      "type": "void*",
+      "name": "field_0x188"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD0",
+      "type": "void*",
+      "name": "field_0xD0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x148",
+      "type": "void*",
+      "name": "subObject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x208",
+      "type": "void*",
+      "name": "field_0x208"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "BYTE",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "uint32_t",
+      "name": "field_0x84"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xDC",
+      "type": "uint32_t",
+      "name": "field_0xdc"
+    },
+    {
+      "class": "LookupTable",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "entries"
+    },
+    {
+      "class": "LookupTable",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "index"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x118",
+      "type": "uint8_t",
+      "name": "field_0x118"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC0",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD0",
+      "type": "void**",
+      "name": "entries"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x81C",
+      "type": "void*",
+      "name": "field_0x81C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x268",
+      "type": "DWORD",
+      "name": "field_0x268"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x160",
+      "type": "DWORD",
+      "name": "field_0x160"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2A0",
+      "type": "uint32_t",
+      "name": "field_0x2A0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2A4",
+      "type": "uint32_t",
+      "name": "field_0x2A4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2A8",
+      "type": "uint32_t",
+      "name": "field_0x2A8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2AC",
+      "type": "uint32_t",
+      "name": "field_0x2AC"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2B0",
+      "type": "uint32_t",
+      "name": "field_0x2B0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2B4",
+      "type": "uint32_t",
+      "name": "field_0x2B4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x340",
+      "type": "uint32_t",
+      "name": "field_0x340"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x344",
+      "type": "uint32_t",
+      "name": "field_0x344"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x348",
+      "type": "uint32_t",
+      "name": "field_0x348"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34C",
+      "type": "uint32_t",
+      "name": "field_0x34C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x350",
+      "type": "uint32_t",
+      "name": "field_0x350"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x354",
+      "type": "uint32_t",
+      "name": "field_0x354"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x200",
+      "type": "DWORD",
+      "name": "field_0x200"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x204",
+      "type": "DWORD",
+      "name": "field_0x204"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x208",
+      "type": "DWORD",
+      "name": "field_0x208"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20C",
+      "type": "DWORD",
+      "name": "field_0x20C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x210",
+      "type": "DWORD",
+      "name": "field_0x210"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x214",
+      "type": "DWORD",
+      "name": "field_0x214"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x160",
+      "type": "uint32_t",
+      "name": "field_0x160"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x164",
+      "type": "uint32_t",
+      "name": "field_0x164"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x168",
+      "type": "uint32_t",
+      "name": "field_0x168"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x16C",
+      "type": "uint32_t",
+      "name": "field_0x16C"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x170",
+      "type": "uint32_t",
+      "name": "field_0x170"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x174",
+      "type": "uint32_t",
+      "name": "field_0x174"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x70",
+      "type": "uint8_t",
+      "name": "field_0x70"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x340",
+      "type": "DWORD",
+      "name": "field_0x340"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x344",
+      "type": "DWORD",
+      "name": "field_0x344"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x348",
+      "type": "DWORD",
+      "name": "field_0x348"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34C",
+      "type": "DWORD",
+      "name": "field_0x34C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x350",
+      "type": "DWORD",
+      "name": "field_0x350"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x354",
+      "type": "DWORD",
+      "name": "field_0x354"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC0",
+      "type": "int32_t",
+      "name": "field_0xC0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD0",
+      "type": "uint32_t*",
+      "name": "field_0xD0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "getterContext"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "void*",
+      "name": "getter"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "DWORD",
+      "name": "cachedA"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "DWORD",
+      "name": "cachedB"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8C",
+      "type": "int32_t",
+      "name": "pairCount"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x9C",
+      "type": "void*",
+      "name": "pairTable"
+    },
+    {
+      "class": "self",
+      "offset": "+0x328",
+      "type": "uint32_t",
+      "name": "field_0x328"
+    },
+    {
+      "class": "self",
+      "offset": "+0x32C",
+      "type": "uint32_t",
+      "name": "field_0x32C"
+    },
+    {
+      "class": "self",
+      "offset": "+0x330",
+      "type": "uint32_t",
+      "name": "field_0x330"
+    },
+    {
+      "class": "self",
+      "offset": "+0x334",
+      "type": "uint32_t",
+      "name": "field_0x334"
+    },
+    {
+      "class": "self",
+      "offset": "+0x338",
+      "type": "uint32_t",
+      "name": "field_0x338"
+    },
+    {
+      "class": "self",
+      "offset": "+0x33C",
+      "type": "uint32_t",
+      "name": "field_0x33C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA4",
+      "type": "int32_t",
+      "name": "elementCount"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB4",
+      "type": "void**",
+      "name": "elements"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T01:51:37Z"
+  "lifted_at": "2026-11-25T01:51:48Z"
 }

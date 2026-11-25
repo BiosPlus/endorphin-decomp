@@ -96,12 +96,12 @@ struct UnknownClass_Fields {
     // +0x158 uint32_t                 field_0x158  (evidence: 0x006C3070)
     // +0x15C int32_t                  field_0x15c  (evidence: 0x004C1AC0, 0x004C4390)
     // +0x160 int32_t                  field_0x160  (evidence: 0x004C1AC0, 0x004C4390) // CONFLICT: multiple definitions at +0x160
-    // +0x160 uint32_t                 field_0x160  (evidence: 0x0070AB80, 0x0070AD00) // CONFLICT: multiple definitions at +0x160
-    // +0x164 uint32_t                 field_0x164  (evidence: 0x0070AB80, 0x0070AD00)
-    // +0x168 uint32_t                 field_0x168  (evidence: 0x0070AB80, 0x0070AD00)
-    // +0x16C uint32_t                 field_0x16C  (evidence: 0x0070AB80, 0x0070AD00)
-    // +0x170 uint32_t                 field_0x170  (evidence: 0x0070AB80, 0x0070AD00)
-    // +0x174 uint32_t                 field_0x174  (evidence: 0x0070AB80, 0x0070AD00)
+    // +0x160 uint32_t                 field_0x160  (evidence: 0x0070AB80, 0x0070AD00, 0x0070BF00) // CONFLICT: multiple definitions at +0x160
+    // +0x164 uint32_t                 field_0x164  (evidence: 0x0070AB80, 0x0070AD00, 0x0070BF00)
+    // +0x168 uint32_t                 field_0x168  (evidence: 0x0070AB80, 0x0070AD00, 0x0070BF00)
+    // +0x16C uint32_t                 field_0x16C  (evidence: 0x0070AB80, 0x0070AD00, 0x0070BF00)
+    // +0x170 uint32_t                 field_0x170  (evidence: 0x0070AB80, 0x0070AD00, 0x0070BF00)
+    // +0x174 uint32_t                 field_0x174  (evidence: 0x0070AB80, 0x0070AD00, 0x0070BF00)
     // +0x17C uintptr_t                subobject  (evidence: 0x005E2790, 0x005E27E0, 0x005E2830, 0x005E2880, 0x005E28D0, 0x005E2920, 0x005E2970, 0x005E29C0)
     // +0x194 int32_t                  field_0x194  (evidence: 0x00565010)
     // +0x1A0 <uint32_t (*)(uint8_t*, uint32_t, uint32_t, uint32_t)> field_0x1A0  (evidence: 0x007BBB40)
