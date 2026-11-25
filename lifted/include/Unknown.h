@@ -1249,6 +1249,7 @@ struct Unknown_Fields {
     // +0x2D0 std::string              field_0x2d0  (evidence: 0x004030F0, 0x0040AB60) // CONFLICT: multiple definitions at +0x2D0
     // +0x2D4 DWORD                    field_0x2D4  (evidence: 0x00597630)
     // +0x2DC void*                    field_0x2dc  (evidence: 0x00594600)
+    // +0x2E4 void*                    field_0x2e4  (evidence: 0x00463950)
     // +0x2F8 DWORD field_0x2F8 (on sub-object at this+0x0C)  (evidence: 0x007155B0, 0x0071C0E0, 0x0071F070)
     // +0x2FC DWORD field_0x2FC (on sub-object at this+0x0C)  (evidence: 0x007155B0, 0x0071C0E0, 0x0071F070)
     // +0x308 std::string              field_0x308  (evidence: 0x004030F0, 0x0040AB60)

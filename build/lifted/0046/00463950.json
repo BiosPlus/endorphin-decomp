@@ -1,0 +1,22 @@
+{
+  "va": "0x00463950",
+  "size": 23,
+  "orig_symbol": "sub_00463950",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "sendMessage0x1009FromField2E4",
+  "class": "Unknown",
+  "signature": "static inline SendMessageAFn ext_SendMessageA_slot()",
+  "summary": "Sends window message 0x1009 (WM_USER+0x1009-style custom msg, wParam=0, lParam=0) to the HWND stored at this+0x2E4 via SendMessageA.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x2E4",
+      "type": "void*",
+      "name": "field_0x2e4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:23:41Z"
+}

@@ -972,3 +972,23 @@ bool fn_004694E0(void* self, uint32_t index) {
     return ext_004B08A0(child, index);
 }
 } // namespace lift_004694E0
+
+// [0x00463950]
+namespace lift_00463950 {
+// @name sendMessage0x1009FromField2E4
+// @class Unknown
+// @summary Sends window message 0x1009 (WM_USER+0x1009-style custom msg, wParam=0, lParam=0) to the HWND stored at this+0x2E4 via SendMessageA.
+// @field Unknown +0x2E4 void* field_0x2e4
+
+using SendMessageAFn = std::intptr_t(__stdcall*)(void* hwnd, std::uint32_t msg, std::uintptr_t wParam, std::intptr_t lParam);
+
+// ext_ SendMessageA: IAT slot at mem_00925694 (USER32!SendMessageA)
+static inline SendMessageAFn ext_SendMessageA_slot() {
+    return *reinterpret_cast<SendMessageAFn*>(static_cast<std::uintptr_t>(0x00925694u));
+}
+
+std::intptr_t sendMessage0x1009FromField2E4(std::uint8_t* self) {
+    void* hwnd = *reinterpret_cast<void**>(self + 0x2E4);
+    return ext_SendMessageA_slot()(hwnd, 0x1009u, 0u, 0);
+}
+} // namespace lift_00463950

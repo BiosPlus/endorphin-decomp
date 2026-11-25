@@ -6414,6 +6414,13 @@
     "summary": "Repeatedly deletes every selected item of the list-view control at this+0x2E4 (LVM_GETNEXTITEM/LVM_DELETEITEM loop).",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x00463950": {
+    "name": "sendMessage0x1009FromField2E4",
+    "class": "Unknown",
+    "signature": "static inline SendMessageAFn ext_SendMessageA_slot()",
+    "summary": "Sends window message 0x1009 (WM_USER+0x1009-style custom msg, wParam=0, lParam=0) to the HWND stored at this+0x2E4 via SendMessageA.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00463EE0": {
     "name": "VideoGeneratorDialog::vfunc_1",
     "class": "VideoGeneratorDialog",
