@@ -53383,6 +53383,13 @@
     "summary": "Fills a 3-double output buffer with float values fetched via accessor chains off a shared base object.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00702A50": {
+    "name": "Unknown::GetDoubleTripleFromComponents",
+    "class": "Unknown",
+    "signature": "extern \"C\" double* __thiscall fn_00702A50(void* self, double* out)",
+    "summary": "Resolves a child object via ext_006DC460, then writes the float results of three",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00702AA0": {
     "name": "FillDoubleTripleFromCounter",
     "signature": "extern \"C\" double* __thiscall fn_00702AA0(void* self, double* out)",

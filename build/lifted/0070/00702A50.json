@@ -1,0 +1,14 @@
+{
+  "va": "0x00702A50",
+  "size": 80,
+  "orig_symbol": "sub_00702A50",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::GetDoubleTripleFromComponents",
+  "class": "Unknown",
+  "signature": "extern \"C\" double* __thiscall fn_00702A50(void* self, double* out)",
+  "summary": "Resolves a child object via ext_006DC460, then writes the float results of three",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:50:35Z"
+}

@@ -1756,3 +1756,34 @@ double* fn_0070BC70(void* self, double* out) {
     return out;
 }
 } // namespace lift_0070BC70
+
+// [0x00702A50] sub_00702A50 (80 bytes)
+namespace lift_00702A50 {
+extern void* ext_006C9680(void* self);
+extern void* ext_006C96A0(void* self);
+extern void* ext_006C96C0(void* self);
+// Known callee 0x006C9F70: sub_006C9F70 (Getter returning float field at offset +0x14.)
+extern float ext_006C9F70(void* self);
+// Known callee 0x006DC460: Unknown::GetValueIfCountPositive (Returns *(this->field_0xC8) when this->field_0xB8 > 0, otherwise 0.)
+extern void* ext_006DC460(void* self);
+
+// @name Unknown::GetDoubleTripleFromComponents
+// @class Unknown
+// @summary Resolves a child object via ext_006DC460, then writes the float results of three
+//          getter chains (ext_006C9680/ext_006C9F70, ext_006C96A0/ext_006C9F70, ext_006C96C0/ext_006C9F70)
+//          into out[0..2] widened to double, and returns out.
+extern double* __thiscall fn_00702A50(void* self, double* out) {
+    void* child = ext_006DC460(self);
+
+    void* a = ext_006C9680(child);
+    out[0] = static_cast<double>(ext_006C9F70(a));
+
+    void* b = ext_006C96A0(child);
+    out[1] = static_cast<double>(ext_006C9F70(b));
+
+    void* c = ext_006C96C0(child);
+    out[2] = static_cast<double>(ext_006C9F70(c));
+
+    return out;
+}
+} // namespace lift_00702A50
