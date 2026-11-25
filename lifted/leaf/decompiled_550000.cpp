@@ -1352,3 +1352,41 @@ void fn_00553FF0(void* self) {
     ext_00663060(self);
 }
 } // namespace lift_00553FF0
+
+// [0x005555D0]
+namespace lift_005555D0 {
+// @name FillRecordsFromTemplate
+// @class Unknown
+// @summary Copies the 0x20-byte record at src into count consecutive 0x20-byte records starting at dst; a null dst skips only that element's copy.
+// @field Unknown +0x00 DWORD field_0x00
+// @field Unknown +0x04 FLOAT field_0x04
+// @field Unknown +0x08 FLOAT field_0x08
+// @field Unknown +0x0C FLOAT field_0x0C
+// @field Unknown +0x10 DWORD field_0x10
+// @field Unknown +0x14 DWORD field_0x14
+// @field Unknown +0x18 DWORD field_0x18
+// @field Unknown +0x1C WORD field_0x1C
+// @field Unknown +0x1E BYTE field_0x1E
+void FillRecordsFromTemplate(void* dst, DWORD count, const void* src)
+{
+    if (count == 0) {
+        return;
+    }
+
+    uint8_t* d = static_cast<uint8_t*>(dst);
+    do {
+        if (d != nullptr) {
+            lift_field<DWORD>(d, 0x00) = lift_field<DWORD>(src, 0x00);
+            lift_field<float>(d, 0x04) = lift_field<float>(src, 0x04);
+            lift_field<float>(d, 0x08) = lift_field<float>(src, 0x08);
+            lift_field<float>(d, 0x0C) = lift_field<float>(src, 0x0C);
+            lift_field<DWORD>(d, 0x10) = lift_field<DWORD>(src, 0x10);
+            lift_field<DWORD>(d, 0x14) = lift_field<DWORD>(src, 0x14);
+            lift_field<DWORD>(d, 0x18) = lift_field<DWORD>(src, 0x18);
+            lift_field<WORD>(d, 0x1C) = lift_field<WORD>(src, 0x1C);
+            lift_field<BYTE>(d, 0x1E) = lift_field<BYTE>(src, 0x1E);
+        }
+        d += 0x20;
+    } while (--count != 0);
+}
+} // namespace lift_005555D0
