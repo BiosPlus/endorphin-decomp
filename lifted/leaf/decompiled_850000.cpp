@@ -797,3 +797,41 @@ uint32_t __cdecl sub_008597E0(uint32_t dst, uint32_t src, uint32_t count) {
     return dst;
 }
 } // namespace lift_008597E0
+
+// [0x00859E00]
+namespace lift_00859E00 {
+extern uint8_t mem_read8(uint32_t addr);
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+// @name seekBuffer
+// @summary Seeks a buffer/stream position relative to current, end, or start, bounds-checked against size.
+// @field Buffer +0x00 uint32_t field_0x00
+// @field Buffer +0x04 uint32_t field_0x04
+// @field Buffer +0x08 uint32_t field_0x08
+// @field Buffer +0x14 uint8_t field_0x14
+
+uint32_t sub_00859E00(uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    uint32_t new_pos = 0xFFFFFFFFu;
+    uint32_t base = arg1;
+    if ((mem_read8(arg1 + 0x14u) & 0x4u) != 0u) {
+        base = mem_read32(arg1);
+    }
+
+    if (arg3 == 0u) {
+        new_pos = mem_read32(arg1 + 0x8u) + arg2;
+    } else if (arg3 == 1u) {
+        new_pos = mem_read32(base + 0x4u) - arg2;
+    } else if (arg3 == 2u) {
+        new_pos = arg2;
+    }
+
+    uint32_t limit = mem_read32(base + 0x4u);
+    if (new_pos > limit) {
+        return 0x1Du;
+    }
+
+    mem_write32(arg1 + 0x8u, new_pos);
+    return 0u;
+}
+} // namespace lift_00859E00
