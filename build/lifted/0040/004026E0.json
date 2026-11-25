@@ -1,0 +1,34 @@
+{
+  "va": "0x004026E0",
+  "size": 71,
+  "orig_symbol": "sub_004026E0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "StringArray::ReleaseElements",
+  "class": "StringArray",
+  "signature": "void fn_004026E0(void* self)",
+  "summary": "Destroys each 28-byte string element in the array, frees its buffer, and nulls the begin/end/capacity pointers.",
+  "fields": [
+    {
+      "class": "StringArray",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "begin"
+    },
+    {
+      "class": "StringArray",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "end"
+    },
+    {
+      "class": "StringArray",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "capacity"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:26:11Z"
+}

@@ -803,3 +803,39 @@ DWORD fn_004053C0(void* self) {
     return *reinterpret_cast<const DWORD*>(record);
 }
 } // namespace lift_004053C0
+
+// [0x004026E0] sub_004026E0 (71 bytes)
+namespace lift_004026E0 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// Takes one cdecl argument (the buffer pointer), pushed before the call in the original.
+extern void ext_006A5C5C(void* buffer);
+// Element destructor pointed to by mem_00924FF4 (0x00628FF0, MSVCP80 basic_string<char> dtor).
+extern void ext_00628FF0(void* self);
+extern int mem_00924FF4;
+
+// @name StringArray::ReleaseElements
+// @class StringArray
+// @summary Destroys each 28-byte string element in the array, frees its buffer, and nulls the begin/end/capacity pointers.
+// @field StringArray +0x04 void* begin
+// @field StringArray +0x08 void* end
+// @field StringArray +0x0C void* capacity
+void fn_004026E0(void* self) {
+    auto* obj = static_cast<unsigned char*>(self);
+    auto** begin_slot = reinterpret_cast<unsigned char**>(obj + 0x04);
+    auto** end_slot = reinterpret_cast<unsigned char**>(obj + 0x08);
+    auto** cap_slot = reinterpret_cast<unsigned char**>(obj + 0x0C);
+
+    unsigned char* begin = *begin_slot;
+    if (begin != nullptr) {
+        unsigned char* end = *end_slot;
+        for (unsigned char* p = begin; p != end; p += 0x1c) {
+            ext_00628FF0(p);
+        }
+        ext_006A5C5C(begin);
+    }
+
+    *begin_slot = nullptr;
+    *end_slot = nullptr;
+    *cap_slot = nullptr;
+}
+} // namespace lift_004026E0

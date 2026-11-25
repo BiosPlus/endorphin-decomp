@@ -339,6 +339,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00402180 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004026E0": {
+    "name": "StringArray::ReleaseElements",
+    "class": "StringArray",
+    "signature": "void fn_004026E0(void* self)",
+    "summary": "Destroys each 28-byte string element in the array, frees its buffer, and nulls the begin/end/capacity pointers.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x004028B0": {
     "name": "sub_004028B0",
     "signature": "void fn_004028B0(void* self)",
