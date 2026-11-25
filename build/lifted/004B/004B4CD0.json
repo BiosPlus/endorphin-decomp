@@ -1,0 +1,28 @@
+{
+  "va": "0x004B4CD0",
+  "size": 84,
+  "orig_symbol": "sub_004B4CD0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "Unknown::copyByte2ToByte1_004B4CD0",
+  "class": "Unknown",
+  "signature": "static void invalidParameter()",
+  "summary": "For each 32-bit pointer in the range [this+0x0C, this+0x10) (stepping by 4), copies byte +2 of the pointed-to object into byte +1 of that object; asserts the range is ordered.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:06:10Z"
+}

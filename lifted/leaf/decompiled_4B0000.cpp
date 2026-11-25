@@ -3,6 +3,7 @@
 #include <new>
 #include <string>
 #include <cstdint>
+#include <cstring>
 
 // [0x004B6C90] sub_004B6C90 (34 bytes)
 namespace lift_004B6C90 {
@@ -306,3 +307,62 @@ void fn_004BEB00(void* self) {
 }
 } // namespace lift_0050C4D0
 } // namespace lift_004BEB00
+
+// [0x004B4CD0] sub_004B4CD0 (84 bytes)
+namespace lift_004B4CD0 {
+// Import thunk slot holding MSVCR80!_invalid_parameter_noinfo (__cdecl, no args).
+// Called by the CRT iterator-debug checks when a range invariant is violated.
+extern uint32_t mem_00925134;
+
+// Calls the CRT invalid-parameter handler through its import slot.
+static void invalidParameter() {
+    const uint32_t handler = mem_00925134;
+    if (handler != 0) {
+        reinterpret_cast<void (*)()>(static_cast<uintptr_t>(handler))();
+    }
+}
+
+// Guest addresses are 32-bit virtual addresses; widen them to host pointers.
+static inline uint8_t* guestBytes(uint32_t addr) {
+    return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(addr));
+}
+
+// @name Unknown::copyByte2ToByte1_004B4CD0
+// @class Unknown
+// @summary For each 32-bit pointer in the range [this+0x0C, this+0x10) (stepping by 4), copies byte +2 of the pointed-to object into byte +1 of that object; asserts the range is ordered.
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+void fn_004B4CD0(void* self) {
+    // Range bounds: begin at +0x0C, end (exclusive) at +0x10.
+    const uint32_t begin = lift_field<uint32_t>(self, 0x0C);
+    const uint32_t end0 = lift_field<uint32_t>(self, 0x10);
+
+    // Iterator-debug precondition: begin must not exceed end.
+    if (begin > end0) {
+        invalidParameter();
+    }
+
+    uint32_t cur = begin;
+    for (;;) {
+        const uint32_t end = lift_field<uint32_t>(self, 0x10);
+        if (cur == end) {
+            break;
+        }
+
+        // Iterator-debug bounds check: cur must lie before end before dereferencing.
+        if (!(cur < end)) {
+            invalidParameter();
+        }
+
+        // Each slot holds a 32-bit pointer to an object.
+        uint32_t obj = 0;
+        std::memcpy(&obj, guestBytes(cur), sizeof(obj));
+
+        // obj[1] = obj[2]
+        const uint8_t src = guestBytes(obj)[2];
+        guestBytes(obj)[1] = src;
+
+        cur += 4;
+    }
+}
+} // namespace lift_004B4CD0
