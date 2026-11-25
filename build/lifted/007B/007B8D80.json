@@ -1,0 +1,21 @@
+{
+  "va": "0x007B8D80",
+  "size": 80,
+  "orig_symbol": "sub_007B8D80",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "ListAppendAlloc",
+  "signature": "void sub_007B8D80(void** out)",
+  "summary": "Allocates a 0x18-byte node, appends it to the list rooted at mem_00B61DB8 (next pointer at +0x14), and stores the node (or NULL on allocation failure) in *out.",
+  "fields": [
+    {
+      "class": "ListNode",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:55:37Z"
+}

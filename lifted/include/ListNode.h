@@ -23,7 +23,8 @@ struct ListNode_Fields {
     // +0x10  void*                    embeddedObjectVtable  (evidence: 0x0049DBA0) // CONFLICT: multiple definitions at +0x10
     // +0x10  void*                    embedded_obj  (evidence: 0x0049FCF0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 next  (evidence: 0x007B2DF0, 0x007B89BC, 0x007BD640) // CONFLICT: multiple definitions at +0x10
-    // +0x14  DWORD                    next  (evidence: 0x007B89BC, 0x007B8E30, 0x007BD640)
+    // +0x14  void*                    field_0x14  (evidence: 0x007B8D80) // CONFLICT: multiple definitions at +0x14
+    // +0x14  DWORD                    next  (evidence: 0x007B89BC, 0x007B8E30, 0x007BD640) // CONFLICT: multiple definitions at +0x14
     // +0x24  std::string              key  (evidence: 0x0049DB60)
     // +0x6D  uint8_t                  skip_flag  (evidence: 0x0049FCF0)
 };

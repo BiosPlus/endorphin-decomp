@@ -985,3 +985,30 @@ void fn_007B89BC(void* self) {
     // No code to execute: this address holds data, not a function body.
 }
 } // namespace lift_007B89BC
+
+// [0x007B8D80]
+namespace lift_007B8D80 {
+// @name ListAppendAlloc
+// @summary Allocates a 0x18-byte node, appends it to the list rooted at mem_00B61DB8 (next pointer at +0x14), and stores the node (or NULL on allocation failure) in *out.
+// @field ListNode +0x14 void* field_0x14
+
+extern void* mem_00B61DB8;
+extern void* (*ext_00925208)(std::size_t);
+
+void sub_007B8D80(void** out) {
+    unsigned char* head = static_cast<unsigned char*>(mem_00B61DB8);
+    unsigned char* node = static_cast<unsigned char*>(ext_00925208(0x18));
+    if (node != nullptr) {
+        if (head == nullptr) {
+            mem_00B61DB8 = node;
+        } else {
+            unsigned char* tail = head;
+            while (*reinterpret_cast<unsigned char**>(tail + 0x14) != nullptr) {
+                tail = *reinterpret_cast<unsigned char**>(tail + 0x14);
+            }
+            *reinterpret_cast<unsigned char**>(tail + 0x14) = node;
+        }
+    }
+    *out = node;
+}
+} // namespace lift_007B8D80
