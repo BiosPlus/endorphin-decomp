@@ -719,3 +719,58 @@ uint32_t __thiscall fn_0053AFA0(uint8_t* self) {
     return reinterpret_cast<Slot8Fn>(slot8)(esi);
 }
 } // namespace lift_0053AFA0
+
+// [0x0053AFF0] sub_0053AFF0 (71 bytes)
+namespace lift_0053AFF0 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Used as operator new(12): cdecl, one stack argument, returns the allocation in eax.
+extern void* ext_006A5C62(uint32_t size);
+// .rdata 0x0095546C holds the value 0x0053A730 (first vtable slot of the class whose
+// vtable lives at 0x0095546C). The vtable address itself is written as a literal below.
+extern int mem_0095546C;
+
+// @name SlotHolder::ReplaceChild
+// @class SlotHolder
+// @summary Allocates a 12-byte child object (vtable 0x0095546C, zeroed fields), swaps it into
+//          this+0x38 (releasing the previous occupant via its vtable slot 0 with delete flag 1),
+//          and tail-dispatches the new object's vtable slot 6.
+// @field SlotHolder +0x38 void* field_0x38
+void* fn_0053AFF0(void* self) {
+    constexpr uint32_t kChildVtable = 0x0095546Cu;
+
+    auto* holder = static_cast<uint8_t*>(self);
+
+    // push 0xC; call operator new(12)
+    void* allocated = ext_006A5C62(12u);
+
+    uint32_t newChild = 0; // esi
+    if (allocated != nullptr) {
+        auto* words = static_cast<uint32_t*>(allocated);
+        words[0] = kChildVtable; // [eax]   = vtable
+        words[2] = 0;            // [eax+8] = 0
+        words[1] = 0;            // [eax+4] = 0
+        newChild = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(allocated));
+    }
+
+    // ecx = this->child (old occupant)
+    uint32_t oldChild = *reinterpret_cast<uint32_t*>(holder + 0x38);
+
+    if (newChild != oldChild && oldChild != 0) {
+        auto* old = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(oldChild));
+        auto* oldVtbl = reinterpret_cast<uintptr_t*>(static_cast<uintptr_t>(old[0]));
+        // call [vtbl+0] with delete flag 1 (scalar deleting destructor)
+        using DtorFn = void (*)(void* thisPtr, int flags);
+        auto dtor = reinterpret_cast<DtorFn>(oldVtbl[0]);
+        dtor(reinterpret_cast<void*>(static_cast<uintptr_t>(oldChild)), 1);
+    }
+
+    *reinterpret_cast<uint32_t*>(holder + 0x38) = newChild;
+
+    // ecx = newChild; eax = [newChild]; jmp [eax+0x18]
+    auto* newObj = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(newChild));
+    auto* newVtbl = reinterpret_cast<uintptr_t*>(static_cast<uintptr_t>(newObj[0]));
+    using TailFn = void* (*)(void* thisPtr);
+    auto tail = reinterpret_cast<TailFn>(newVtbl[6]);
+    return tail(newObj);
+}
+} // namespace lift_0053AFF0

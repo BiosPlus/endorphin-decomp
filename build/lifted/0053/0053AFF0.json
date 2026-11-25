@@ -1,0 +1,22 @@
+{
+  "va": "0x0053AFF0",
+  "size": 71,
+  "orig_symbol": "sub_0053AFF0",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "SlotHolder::ReplaceChild",
+  "class": "SlotHolder",
+  "signature": "void* fn_0053AFF0(void* self)",
+  "summary": "Allocates a 12-byte child object (vtable 0x0095546C, zeroed fields), swaps it into",
+  "fields": [
+    {
+      "class": "SlotHolder",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:27:45Z"
+}

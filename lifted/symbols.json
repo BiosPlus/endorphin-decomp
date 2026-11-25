@@ -18781,6 +18781,13 @@
     "summary": "Allocates an 8-byte object (vtable 0x009553B8), swaps it into +0x38 (destroying the previous one), then returns its vtable slot 8 call result.",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x0053AFF0": {
+    "name": "SlotHolder::ReplaceChild",
+    "class": "SlotHolder",
+    "signature": "void* fn_0053AFF0(void* self)",
+    "summary": "Allocates a 12-byte child object (vtable 0x0095546C, zeroed fields), swaps it into",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x0053B040": {
     "name": "Unknown::SwapPendingObject",
     "class": "Unknown",
