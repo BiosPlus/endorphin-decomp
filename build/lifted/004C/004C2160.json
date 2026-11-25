@@ -1,0 +1,22 @@
+{
+  "va": "0x004C2160",
+  "size": 61,
+  "orig_symbol": "Properties::SequenceType\u003cstd::vector\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, std::allocator\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e\u003e, Properties::GetConstStringProxy, DeRefValue\u003e::vfunc_3",
+  "src_path": "src/templates/SequenceType.cpp",
+  "lifted_path": "lifted/templates/SequenceType.cpp",
+  "name": "Properties::SequenceType::vfunc_3",
+  "class": "Properties::SequenceType\u003cstd::vector\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, std::allocator\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e\u003e, Properties::GetConstStringProxy, DeRefValue\u003e",
+  "signature": "extern \"C\" void (*mem_00925134)(void);  // import slot: _invalid_parameter_noinfo (MSVCR80) void fn_004C2160(void* self)",
+  "summary": "Loads the inner range pointer from self, validates its cur/end fields (cur must not exceed end, else invalid-parameter handler), then continues at 0x004C21A0 (outside the decoded span).",
+  "fields": [
+    {
+      "class": "Properties::SequenceType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:56:57Z"
+}

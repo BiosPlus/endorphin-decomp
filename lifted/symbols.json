@@ -11676,6 +11676,13 @@
     "summary": "Dispatches property/event query on SeverEventData; handles 0x8c/0x117 via sub_004C1BF0 and sub_0055DA20, otherwise delegates to vfunc_14 base.",
     "lifted_path": "lifted/NMData/SeverEventData.cpp"
   },
+  "0x004C2160": {
+    "name": "Properties::SequenceType::vfunc_3",
+    "class": "Properties::SequenceType\u003cstd::vector\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, std::allocator\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e\u003e, Properties::GetConstStringProxy, DeRefValue\u003e",
+    "signature": "extern \"C\" void (*mem_00925134)(void);  // import slot: _invalid_parameter_noinfo (MSVCR80) void fn_004C2160(void* self)",
+    "summary": "Loads the inner range pointer from self, validates its cur/end fields (cur must not exceed end, else invalid-parameter handler), then continues at 0x004C21A0 (outside the decoded span).",
+    "lifted_path": "lifted/templates/SequenceType.cpp"
+  },
   "0x004C2300": {
     "name": "ValuePtrArrayObject::vfunc_0",
     "class": "ValuePtrArrayObject",
