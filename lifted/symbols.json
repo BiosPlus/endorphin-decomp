@@ -55468,6 +55468,13 @@
     "summary": "Reads a 32-bit unsigned integer from an open stream, optionally byte-swapping it.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x007834C0": {
+    "name": "Unknown::ReadU16",
+    "class": "Unknown",
+    "signature": "uint16_t __thiscall fn_007834C0(void* self, uint16_t* buf, uint8_t swap)",
+    "summary": "Reads one 16-bit value from the open stream (if valid), optionally byte-swapping it; returns 0 if the stream is not valid.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00783510": {
     "name": "StreamReader::readByte",
     "class": "StreamReader",

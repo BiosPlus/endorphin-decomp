@@ -1151,3 +1151,31 @@ uint32_t __thiscall sub_00783470(void* self, uint32_t* outVal, uint8_t swapEndia
     return *outVal;
 }
 } // namespace lift_00783470
+
+// [0x007834C0] sub_007834C0 (71 bytes)
+namespace lift_007834C0 {
+// MSVCR80 fread import (IAT slot 0x009252AC).
+extern size_t ext_fread(void* buf, size_t size, size_t count, void* stream);
+
+// @name Unknown::ReadU16
+// @class Unknown
+// @summary Reads one 16-bit value from the open stream (if valid), optionally byte-swapping it; returns 0 if the stream is not valid.
+// @field Unknown +0x04 void* field_04
+struct StreamRec {
+    uint32_t handle; // +0x00 FILE* handle
+    uint8_t  valid;  // +0x04 nonzero when stream is open
+};
+
+uint16_t __thiscall fn_007834C0(void* self, uint16_t* buf, uint8_t swap) {
+    auto* rec = *reinterpret_cast<StreamRec**>(reinterpret_cast<uint8_t*>(self) + 0x04);
+    if (rec->valid == 0) {
+        return 0;
+    }
+    ext_fread(buf, 1, 2, reinterpret_cast<void*>(static_cast<uintptr_t>(rec->handle)));
+    if (swap != 0) {
+        const uint16_t v = *buf;
+        *buf = static_cast<uint16_t>((v >> 8) | (v << 8));
+    }
+    return *buf;
+}
+} // namespace lift_007834C0
