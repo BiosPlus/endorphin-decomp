@@ -1,0 +1,22 @@
+{
+  "va": "0x006C84B0",
+  "size": 80,
+  "orig_symbol": "sub_006C84B0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::InitWithSubobject",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* __fastcall fn_006C84B0(void* self)",
+  "summary": "Initializes subobject at +0x8, initializes self via ext_006C8510, and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "field_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:52:07Z"
+}
