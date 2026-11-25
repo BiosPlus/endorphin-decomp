@@ -1,0 +1,13 @@
+{
+  "va": "0x006ACE90",
+  "size": 74,
+  "orig_symbol": "sub_006ACE90",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "BuildMetricInsetRect_006ACE90",
+  "signature": "RECT* __stdcall fn_006ACE90(const RECT* src, RECT* dst)",
+  "summary": "Copies src RECT into dst, moves top down 1 and right in 4, then sets left = right - GetSystemMetrics(71) and bottom = top + GetSystemMetrics(72); returns dst.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:33:43Z"
+}

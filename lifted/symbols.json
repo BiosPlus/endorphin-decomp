@@ -44955,6 +44955,12 @@
     "summary": "Copies a 16-byte record from arg into out, rebases field 0 by (node query + 1) and sets field 2 to node query + rebased field 0; returns out.",
     "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
   },
+  "0x006ACE90": {
+    "name": "BuildMetricInsetRect_006ACE90",
+    "signature": "RECT* __stdcall fn_006ACE90(const RECT* src, RECT* dst)",
+    "summary": "Copies src RECT into dst, moves top down 1 and right in 4, then sets left = right - GetSystemMetrics(71) and bottom = top + GetSystemMetrics(72); returns dst.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006ACEE0": {
     "name": "Unknown::setFlagAndForwardByte",
     "class": "Unknown",

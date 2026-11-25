@@ -468,3 +468,33 @@ void fn_006AAC90(void* self, DWORD arg) {
     ext_006AA920(self, static_cast<uint8_t*>(self) + 0x54);
 }
 } // namespace lift_006AAC90
+
+// [0x006ACE90] sub_006ACE90 (74 bytes)
+namespace lift_006ACE90 {
+extern int mem_0092563C;
+
+// @name BuildMetricInsetRect_006ACE90
+// @summary Copies src RECT into dst, moves top down 1 and right in 4, then sets left = right - GetSystemMetrics(71) and bottom = top + GetSystemMetrics(72); returns dst.
+// Free function (no class), so no @class or @field lines.
+RECT* __stdcall fn_006ACE90(const RECT* src, RECT* dst) {
+    using GetSystemMetricsFn = int(__stdcall*)(int);
+    auto getSystemMetrics = reinterpret_cast<GetSystemMetricsFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_0092563C)));
+
+    // Read all source fields first so the copy is alias-safe when src == dst.
+    const LONG srcLeft = src->left;
+    const LONG srcTop = src->top;
+    const LONG srcRight = src->right;
+    const LONG srcBottom = src->bottom;
+
+    dst->left = srcLeft;
+    dst->top = srcTop + 1;
+    dst->right = srcRight - 4;
+    dst->bottom = srcBottom;
+
+    dst->left = dst->right - static_cast<LONG>(getSystemMetrics(0x47));
+    dst->bottom = static_cast<LONG>(getSystemMetrics(0x48)) + dst->top;
+
+    return dst;
+}
+} // namespace lift_006ACE90
