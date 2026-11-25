@@ -645,3 +645,25 @@ void* fn_004FFD00(void* /*unused*/) {
     return obj;
 }
 } // namespace lift_004FFD00
+
+// [0x004FFCA0] sub_004FFCA0 (87 bytes)
+namespace lift_004FFCA0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+extern DWORD mem_00AEB2C0; // guard word; bit 0 = initialized/initializing
+extern DWORD mem_00AEB2BC; // static object storage; first DWORD is its vtable pointer
+
+// @name getOrInitStaticSingletonWithVtable_004FFCA0
+// @summary Returns the address of a static singleton, constructing it once (guarded by bit 0 of mem_00AEB2C0) and then writing its vtable pointer 0x0094EA34.
+// @field StaticObject_00AEB2BC +0x00 DWORD field_0x00
+void* fn_004FFCA0() {
+    // The fs:[0] SEH frame setup/teardown is compiler EH bookkeeping and is not
+    // needed for the portable form; only the guarded init and return remain.
+    if ((mem_00AEB2C0 & 1u) == 0) {
+        mem_00AEB2C0 |= 1u;
+        ext_0067A670();                 // construct/initialize object at &mem_00AEB2BC
+        mem_00AEB2BC = 0x0094EA34u;     // install vtable pointer
+    }
+    return &mem_00AEB2BC;
+}
+} // namespace lift_004FFCA0

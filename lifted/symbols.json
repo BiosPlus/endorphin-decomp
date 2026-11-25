@@ -17479,6 +17479,12 @@
     "summary": "Lazily initializes the static object at mem_00AEB2B4 (guard bit 0 in mem_00AEB2B8), then returns its address.",
     "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
+  "0x004FFCA0": {
+    "name": "getOrInitStaticSingletonWithVtable_004FFCA0",
+    "signature": "void* fn_004FFCA0()",
+    "summary": "Returns the address of a static singleton, constructing it once (guarded by bit 0 of mem_00AEB2C0) and then writing its vtable pointer 0x0094EA34.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004FFD00": {
     "name": "initStaticObjectWithVtable_004FFD00",
     "signature": "void* fn_004FFD00(void* /*unused*/)",

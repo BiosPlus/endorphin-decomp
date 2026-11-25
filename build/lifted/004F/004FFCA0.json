@@ -1,0 +1,21 @@
+{
+  "va": "0x004FFCA0",
+  "size": 87,
+  "orig_symbol": "sub_004FFCA0",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "getOrInitStaticSingletonWithVtable_004FFCA0",
+  "signature": "void* fn_004FFCA0()",
+  "summary": "Returns the address of a static singleton, constructing it once (guarded by bit 0 of mem_00AEB2C0) and then writing its vtable pointer 0x0094EA34.",
+  "fields": [
+    {
+      "class": "StaticObject_00AEB2BC",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:10:01Z"
+}
