@@ -16567,12 +16567,25 @@
     "summary": "Allocates a 0x18-byte record, fills it from five arguments (three dwords, a dword pair read through a pointer, and a byte flag), zeroes the trailing byte, and returns the record or null on allocation failure.",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
+  "0x004EFAC0": {
+    "name": "destroyCheckedPointerRange",
+    "signature": "void __stdcall sub_004EFAC0(uint32_t* vec1, uint32_t* first, uint32_t* vec2, uint32_t* last)",
+    "summary": "Destroys a checked iterator range of pointers by calling the virtual deleting destructor at +4",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004F0510": {
     "name": "Properties::TestControl::vfunc_8",
     "class": "Properties::TestControl",
     "signature": "DWORD fn_004F0510(const void* self)",
     "summary": "Returns the dword at +0x40 of the given object, or 0 if the object pointer is null.",
     "lifted_path": "lifted/Properties/auto_tiny.cpp"
+  },
+  "0x004F0530": {
+    "name": "Properties::TestControl::vfunc_7",
+    "class": "Properties::TestControl",
+    "signature": "void fn_004F0530(void* self, void* arg1)",
+    "summary": "Fetches a string via ext_0041CEB0 into a temporary std::string and assigns it to field_0x1c.",
+    "lifted_path": "lifted/Properties/TestControl.cpp"
   },
   "0x004F0B00": {
     "name": "Properties::TargetSelectionProxy::vfunc_0_off_4",
@@ -18218,6 +18231,12 @@
     "name": "fillElementRange",
     "signature": "void fillElementRange(void* begin, void* end, const void* src)",
     "summary": "Copies the string at +0x04 and float at +0x20 from the source element into every 0x24-byte element in [begin, end).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x0050A720": {
+    "name": "CopyBackwardElements24Wrapper",
+    "signature": "void* fn_0050A720(void* first, void* last, void* d_last)",
+    "summary": "Copies 0x24-byte elements backward from [first, last) to d_last and returns the new destination start.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
   "0x0050AA00": {
@@ -23262,6 +23281,12 @@
     "name": "allocate_160_bytes",
     "signature": "extern \"C\" void* fn_00553F90(uint32_t count)",
     "summary": "Allocates count * 160 bytes via MFC80 operator new, throwing std::bad_alloc on size_t overflow.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
+  "0x00553FF0": {
+    "name": "DestroyStringAt54AndMembers",
+    "signature": "void fn_00553FF0(void* self)",
+    "summary": "Destroys the std::string at +0x54, then delegates destruction of the three other string members to ext_00663060.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
   "0x005541A0": {

@@ -649,6 +649,7 @@ struct Unknown_Fields {
     // +0x54  void*                    forwardSource  (evidence: 0x006F99B0) // CONFLICT: multiple definitions at +0x54
     // +0x54  uint32_t                 limitHi  (evidence: 0x006E8750) // CONFLICT: multiple definitions at +0x54
     // +0x54  uint32_t                 member_vftable  (evidence: 0x00410230) // CONFLICT: multiple definitions at +0x54
+    // +0x54  std::string              stringAt54  (evidence: 0x00553FF0) // CONFLICT: multiple definitions at +0x54
     // +0x58  DWORD                    buffer  (evidence: 0x007AEE00) // CONFLICT: multiple definitions at +0x58
     // +0x58  void* field_58 (embedded object's vptr; slot 0 is called)  (evidence: 0x0044C230) // CONFLICT: multiple definitions at +0x58
     // +0x58  DWORD                    field_0x58  (evidence: 0x006B0DE0, 0x006B2F70, 0x006B95F0) // CONFLICT: multiple definitions at +0x58

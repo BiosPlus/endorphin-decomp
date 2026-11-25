@@ -1332,3 +1332,23 @@ extern void* fn_00553F90(uint32_t count) {
     return ext_006A5C62(count * 0xA0u);
 }
 } // namespace lift_00553F90
+
+// [0x00553FF0] sub_00553FF0 (77 bytes)
+namespace lift_00553FF0 {
+// Known callee 0x00663060: sub_00663060_dtor (Destroys three std::string members at offsets +0x38, +0x1c, and +0x00.)
+extern void ext_00663060(void* self);
+
+// @name DestroyStringAt54AndMembers
+// @summary Destroys the std::string at +0x54, then delegates destruction of the three other string members to ext_00663060.
+// @field Unknown +0x54 std::string stringAt54
+void fn_00553FF0(void* self) {
+    using StdString = std::string;
+
+    // Destroy the std::string at +0x54 (the original calls the MSVCP80 dtor through mem_00924FF4).
+    StdString& s54 = lift_field<StdString>(self, 0x54);
+    s54.~StdString();
+
+    // Destroy the remaining string members.
+    ext_00663060(self);
+}
+} // namespace lift_00553FF0

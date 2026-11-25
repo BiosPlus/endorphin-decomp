@@ -1,0 +1,21 @@
+{
+  "va": "0x00553FF0",
+  "size": 77,
+  "orig_symbol": "sub_00553FF0",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "DestroyStringAt54AndMembers",
+  "signature": "void fn_00553FF0(void* self)",
+  "summary": "Destroys the std::string at +0x54, then delegates destruction of the three other string members to ext_00663060.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "std::string",
+      "name": "stringAt54"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:18:06Z"
+}
