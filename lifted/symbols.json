@@ -20404,6 +20404,13 @@
     "summary": "Validates vector bounds and returns a pointer to the last 4-byte element.",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00527D60": {
+    "name": "Vector::removePointerAt",
+    "class": "Vector",
+    "signature": "void fn_00527D60(void* self, void** out, void* range, void** pos)",
+    "summary": "Validates a position inside a range, deletes the pointed-to object (virtual deleting dtor, flag 1), removes that slot by shifting the tail down one element, shrinks the vector end by one slot, and writes {range, position} to out.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00528100": {
     "name": "InterpreterSub::InterpreterSub",
     "class": "InterpreterSub",

@@ -957,3 +957,49 @@ void* __thiscall fn_00524540(void* self, uint32_t arg0, uint32_t arg1, const voi
     return self;
 }
 } // namespace lift_00524540
+
+// [0x00527D60] sub_00527D60 (99 bytes)
+namespace lift_00527D60 {
+// Import thunks used by this function.
+// ext_invalid_parameter_noinfo: MSVCR80!_invalid_parameter_noinfo (IAT slot mem_00925134).
+// ext_memmove_s: MSVCR80!memmove_s (IAT slot mem_009251EC).
+extern void ext_invalid_parameter_noinfo();
+extern int ext_memmove_s(void* dst, size_t dstSize, const void* src, size_t count);
+
+// @name Vector::removePointerAt
+// @class Vector
+// @summary Validates a position inside a range, deletes the pointed-to object (virtual deleting dtor, flag 1), removes that slot by shifting the tail down one element, shrinks the vector end by one slot, and writes {range, position} to out.
+// @field Vector +0x08 uint8_t* end
+void fn_00527D60(void* self, void** out, void* range, void** pos) {
+    if (range == nullptr) {
+        ext_invalid_parameter_noinfo();
+    }
+    if (!(reinterpret_cast<uint8_t*>(pos) < lift_field<uint8_t*>(range, 0x08))) {
+        ext_invalid_parameter_noinfo();
+    }
+
+    // Delete the object referenced by the slot (virtual deleting destructor, slot 0, flag 1).
+    void* obj = *pos;
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        auto deleter = reinterpret_cast<void(__thiscall*)(void*, int)>(vtbl[0]);
+        deleter(obj, 1);
+    }
+
+    // Shift the remaining slots after pos down by one pointer-sized element.
+    uint8_t* end = lift_field<uint8_t*>(self, 0x08);
+    uint8_t* next = reinterpret_cast<uint8_t*>(pos) + 4;
+    std::ptrdiff_t count = (end - next) >> 2;
+    if (count > 0) {
+        size_t bytes = static_cast<size_t>(count) * 4;
+        ext_memmove_s(pos, bytes, next, bytes);
+    }
+
+    // Shrink the vector by one slot.
+    lift_field<uint8_t*>(self, 0x08) -= 4;
+
+    // Report the range and position back to the caller.
+    out[0] = range;
+    out[1] = pos;
+}
+} // namespace lift_00527D60
