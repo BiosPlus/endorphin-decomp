@@ -1,0 +1,40 @@
+{
+  "va": "0x00537A30",
+  "size": 83,
+  "orig_symbol": "sub_00537A30",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::ctor_00537A30",
+  "class": "Unknown",
+  "signature": "void fn_00537A30(void* self)",
+  "summary": "Constructor: runs base init, writes vtable, clears +0x14, constructs embedded subobject at +0x18, and stores self at +0x10.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "selfRef"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "embedded"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:59:04Z"
+}

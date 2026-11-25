@@ -21922,6 +21922,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x18 and tail-calls sub_0054C640.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00537A30": {
+    "name": "Unknown::ctor_00537A30",
+    "class": "Unknown",
+    "signature": "void fn_00537A30(void* self)",
+    "summary": "Constructor: runs base init, writes vtable, clears +0x14, constructs embedded subobject at +0x18, and stores self at +0x10.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x00537A90": {
     "name": "CompoundRenderable::vfunc_16",
     "class": "CompoundRenderable",
@@ -47340,6 +47347,12 @@
     "summary": "Reads chars from an istream until '\\n' or 0xFF is read; returns false if the stream fails first, true otherwise.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x00696910": {
+    "name": "skipUntilCharOrEofSkippingComments",
+    "signature": "bool fn_00696910(void* stream, char delim)",
+    "summary": "Reads chars from an istream, skipping '#' comment lines, until delim or 0xFF is reached and put back; returns false on stream failure.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00696B70": {
     "name": "readTokenSkippingBlanks",
     "signature": "bool fn_00696B70(void* stream, void* str)",
@@ -65097,6 +65110,13 @@
     "signature": "void fn_00783100(void* self)",
     "summary": "Initializes four dwords of the global block at 0xB608C8 (two link pointers, a vtable pointer, and a zeroed tail word).",
     "lifted_path": "lifted/clones/auto_clones_780000.cpp"
+  },
+  "0x007831E0": {
+    "name": "Unknown_007831E0::Unknown_007831E0",
+    "class": "Unknown_007831E0",
+    "signature": "extern \"C\" void* __fastcall fn_007831E0(void* ecx)",
+    "summary": "Constructor that initializes an embedded subobject at +0x0C, sets the vtable to 0x00996E80, and allocates an 8-byte zero-initialized structure at +0x04.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
   "0x00783250": {
     "name": "sub_00783250",

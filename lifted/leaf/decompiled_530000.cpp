@@ -1395,3 +1395,35 @@ void* fn_00532BC0(void* self) {
     return self;
 }
 } // namespace lift_00532BC0
+
+// [0x00537A30] sub_00537A30 (83 bytes)
+namespace lift_00537A30 {
+// Known callee 0x00532B60: Unknown::initVtableAndFlags (Stores the vtable address at +0x00, sets flag bytes at +0x04 and +0x0C to 1, and zeroes the dwords at +0x08 and +0x10.)
+extern void ext_00532B60(void* self);
+// Known callee 0x0054C570: Unknown::ctor_0054C570 (Constructs the object, initializes base and embedded subobject, and invokes subobject virtual init.)
+extern void* ext_0054C570(void* self);
+
+// @name Unknown::ctor_00537A30
+// @class Unknown
+// @summary Constructor: runs base init, writes vtable, clears +0x14, constructs embedded subobject at +0x18, and stores self at +0x10.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x10 void* selfRef
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 void* embedded
+void fn_00537A30(void* self) {
+    // Base initialization (vtable/flags/dwords at +0x00..+0x10).
+    ext_00532B60(self);
+
+    // Vtable pointer for this class.
+    lift_field<void*>(self, 0x00) = reinterpret_cast<void*>(static_cast<uintptr_t>(0x00954F24));
+
+    lift_field<uint32_t>(self, 0x14) = 0;
+
+    // Construct the embedded subobject at self+0x18.
+    void* sub = reinterpret_cast<uint8_t*>(self) + 0x18;
+    ext_0054C570(sub);
+
+    // Final self-reference stored at +0x10.
+    lift_field<void*>(self, 0x10) = self;
+}
+} // namespace lift_00537A30
