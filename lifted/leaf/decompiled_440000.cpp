@@ -2010,3 +2010,28 @@ int fn_004489E0(void* self, uint32_t arg1, uint32_t arg2) {
     return 0;
 }
 } // namespace lift_004489E0
+
+// [0x0044BFB0] sub_0044BFB0 (42 bytes)
+namespace lift_0044BFB0 {
+// Known callee 0x00530C00: Unknown::forwardFlagsAndDispatch_00530C00 (Forwards a flags argument to a child object and to updateFlags_00530740, then invokes virtual slot 0x158 on the object at +0x10 with a zero argument.)
+extern void ext_00530C00(void* self, DWORD flags, DWORD arg2, DWORD arg3);
+// Import slot for USER32!ReleaseCapture (value stored in .rdata at 0x009256E0).
+extern uint32_t mem_009256E0;
+
+// @name Unknown::releaseCaptureAfterForward_0044BFB0
+// @class Unknown
+// @summary Clears the flag at +0x78, forwards three arguments to the child object at +0x68 when +0x64 is nonzero, then calls ReleaseCapture.
+// @field Unknown +0x64 DWORD field_0x64
+// @field Unknown +0x68 void* childObject
+// @field Unknown +0x78 BYTE field_0x78
+void fn_0044BFB0(void* self, DWORD arg1, DWORD arg2, DWORD arg3) {
+    const DWORD enabled = lift_field<DWORD>(self, 0x64);
+    lift_field<BYTE>(self, 0x78) = 0;
+    if (enabled != 0) {
+        void* child = lift_field<void*>(self, 0x68);
+        ext_00530C00(child, arg1, arg2, arg3);
+    }
+    using ReleaseCaptureFn = void(*)();
+    reinterpret_cast<ReleaseCaptureFn>(static_cast<uintptr_t>(mem_009256E0))();
+}
+} // namespace lift_0044BFB0

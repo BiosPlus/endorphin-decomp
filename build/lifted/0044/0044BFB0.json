@@ -1,0 +1,34 @@
+{
+  "va": "0x0044BFB0",
+  "size": 42,
+  "orig_symbol": "sub_0044BFB0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::releaseCaptureAfterForward_0044BFB0",
+  "class": "Unknown",
+  "signature": "void fn_0044BFB0(void* self, DWORD arg1, DWORD arg2, DWORD arg3)",
+  "summary": "Clears the flag at +0x78, forwards three arguments to the child object at +0x68 when +0x64 is nonzero, then calls ReleaseCapture.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "DWORD",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "void*",
+      "name": "childObject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "BYTE",
+      "name": "field_0x78"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:27:36Z"
+}
