@@ -62476,6 +62476,12 @@
     "summary": "Maps an orientation enum value (0..2) to its display string or nullptr.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x0071A610": {
+    "name": "GetIndexedStaticAddress",
+    "signature": "extern \"C\" void* __stdcall fn_0071A610(unsigned int a1)",
+    "summary": "Returns a fixed static address selected by index 0..10; returns 0 for any other index.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071A760": {
     "name": "getMediaModeString",
     "signature": "const char* __stdcall sub_0071A760(int32_t mode)",

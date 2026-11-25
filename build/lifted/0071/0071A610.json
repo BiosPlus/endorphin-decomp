@@ -1,0 +1,13 @@
+{
+  "va": "0x0071A610",
+  "size": 101,
+  "orig_symbol": "sub_0071A610",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "GetIndexedStaticAddress",
+  "signature": "extern \"C\" void* __stdcall fn_0071A610(unsigned int a1)",
+  "summary": "Returns a fixed static address selected by index 0..10; returns 0 for any other index.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:45:38Z"
+}

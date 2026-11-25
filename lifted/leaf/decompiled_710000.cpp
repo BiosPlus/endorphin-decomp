@@ -1846,3 +1846,25 @@ double __stdcall sub_0071B780(uint32_t num, uint32_t den, double value) {
     return value / ratio;
 }
 } // namespace lift_0071B780
+
+// [0x0071A610] sub_0071A610 (101 bytes)
+namespace lift_0071A610 {
+// @name GetIndexedStaticAddress
+// @summary Returns a fixed static address selected by index 0..10; returns 0 for any other index.
+extern void* __stdcall fn_0071A610(unsigned int a1) {
+    switch (a1) {
+    case 0:  return reinterpret_cast<void*>(static_cast<uintptr_t>(0x00AAC924u));
+    case 1:  return reinterpret_cast<void*>(static_cast<uintptr_t>(0x00AAC91Cu));
+    case 2:  return reinterpret_cast<void*>(static_cast<uintptr_t>(0x00AA91F0u));
+    case 3:  return reinterpret_cast<void*>(static_cast<uintptr_t>(0x00AAC914u));
+    case 4:  return reinterpret_cast<void*>(static_cast<uintptr_t>(0x00AAC910u));
+    case 5:  return reinterpret_cast<void*>(static_cast<uintptr_t>(0x00AAC908u));
+    case 6:  return reinterpret_cast<void*>(static_cast<uintptr_t>(0x00AAC900u));
+    case 7:  return reinterpret_cast<void*>(static_cast<uintptr_t>(0x00AAC8F8u));
+    case 8:  return reinterpret_cast<void*>(static_cast<uintptr_t>(0x00AAC8ECu));
+    case 9:  return reinterpret_cast<void*>(static_cast<uintptr_t>(0x00AAC8E4u));
+    case 10: return reinterpret_cast<void*>(static_cast<uintptr_t>(0x00AAC924u));
+    default: return nullptr;
+    }
+}
+} // namespace lift_0071A610
