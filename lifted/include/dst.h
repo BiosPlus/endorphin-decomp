@@ -8,7 +8,7 @@
 // Recovered field layout for dst:
 namespace lifted_layout {
 struct dst_Fields {
-    // +0x0   uint32_t                 value  (evidence: 0x0049E4C0)
-    // +0x4   void*                    staticObject  (evidence: 0x0049E4C0)
+    // +0x0   uint32_t                 value  (evidence: 0x00495AB0, 0x0049E4C0)
+    // +0x4   void*                    staticObject  (evidence: 0x00495AB0, 0x0049E4C0)
 };
 } // namespace lifted_layout

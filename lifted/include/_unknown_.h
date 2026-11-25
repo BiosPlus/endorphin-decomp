@@ -9,7 +9,7 @@
 namespace lifted_layout {
 struct _unknown__Fields {
     // +0x0   void*                    delegate  (evidence: 0x00493E60, 0x00494050) // CONFLICT: multiple definitions at +0x0
-    // +0x0   DWORD                    field_0x00  (evidence: 0x0046F3A0, 0x0049E440, 0x00543300, 0x005EAEE0, 0x00782D00, 0x00784620, 0x00788E50) // CONFLICT: multiple definitions at +0x0
+    // +0x0   DWORD                    field_0x00  (evidence: 0x0046F3A0, 0x00495AB0, 0x0049E440, 0x00543300, 0x005EAEE0, 0x00782D00, 0x00784620, 0x00788E50) // CONFLICT: multiple definitions at +0x0
     // +0x0   float                    field_0x00  (evidence: 0x00669E40) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 field_0x00  (evidence: 0x004030F0, 0x00406030, 0x0040BE90, 0x0040FDC0, 0x004584C0, 0x00481BB0, 0x004983A0, 0x004B7D80, 0x004C0800, 0x00505030, 0x00512A00, 0x00519CE0, 0x005478F0, 0x0054C760, 0x00604D80, 0x0063E0F0, 0x00661920, 0x006749C0, 0x00710F10, 0x007155B0, 0x007D59C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t                  field_0x00  (evidence: 0x00710F50, 0x007155B0) // CONFLICT: multiple definitions at +0x0
@@ -21,7 +21,7 @@ struct _unknown__Fields {
     // +0x0   void*                    vptr  (evidence: 0x00420070, 0x0042FD70, 0x00610A60) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable  (evidence: 0x006B2400, 0x006B2F70, 0x006BA780) // CONFLICT: multiple definitions at +0x0
     // +0x4   void* field_0x04 (child object; slot 1 invoked with arg 1)  (evidence: 0x006B0C60) // CONFLICT: multiple definitions at +0x4
-    // +0x4   DWORD                    field_0x04  (evidence: 0x0049E440, 0x00782D00, 0x00784620, 0x00788E50) // CONFLICT: multiple definitions at +0x4
+    // +0x4   DWORD                    field_0x04  (evidence: 0x00495AB0, 0x0049E440, 0x00782D00, 0x00784620, 0x00788E50) // CONFLICT: multiple definitions at +0x4
     // +0x4   float                    field_0x04  (evidence: 0x00669E40) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x004584C0, 0x00481D80, 0x0069B680, 0x00710F10, 0x007155B0, 0x007D59C0, 0x007D5BA0, 0x007D8470) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t*                field_0x04  (evidence: 0x006AD170) // CONFLICT: multiple definitions at +0x4
