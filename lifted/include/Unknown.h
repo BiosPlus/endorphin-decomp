@@ -341,6 +341,7 @@ struct Unknown_Fields {
     // +0xC   uint8_t                  result  (evidence: 0x0053A5E0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 srcField4  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    subObject  (evidence: 0x007155B0, 0x0071C3E0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint32_t                 subobjectValue  (evidence: 0x00712010) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  tag  (evidence: 0x007155B0, 0x00715710) // CONFLICT: multiple definitions at +0xC
     // +0xC   pointer                  vecHolder  (evidence: 0x0067A670, 0x0067AEB0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0C (sub-object that receives the value via vfunc_8)  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x005853E0) // CONFLICT: multiple definitions at +0xC
@@ -651,6 +652,7 @@ struct Unknown_Fields {
     // +0x40  uint8_t                  flag  (evidence: 0x00526960) // CONFLICT: multiple definitions at +0x40
     // +0x40  void*                    nextNode  (evidence: 0x006E62A0, 0x006EFEA0) // CONFLICT: multiple definitions at +0x40
     // +0x40  void*                    subObject  (evidence: 0x00711A40, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x40
+    // +0x40  void*                    subobject  (evidence: 0x00712010) // CONFLICT: multiple definitions at +0x40
     // +0x41  uint8_t                  field_0x41  (evidence: 0x006AD290)
     // +0x44  float                    field_0x44  (evidence: 0x0051CCC0, 0x0054E340, 0x0054E400, 0x00622B40, 0x006296D0, 0x00629850, 0x0063D950, 0x0063D970, 0x0063DB50, 0x0063DDF0, 0x0063E050, 0x007D8590) // CONFLICT: multiple definitions at +0x44
     // +0x44  std::uint32_t            field_0x44  (evidence: 0x007BEDE0) // CONFLICT: multiple definitions at +0x44

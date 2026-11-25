@@ -1,0 +1,28 @@
+{
+  "va": "0x00712010",
+  "size": 104,
+  "orig_symbol": "sub_00712010",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "getSwitchedGlobalValue",
+  "class": "Unknown",
+  "signature": "uint32_t fn_00712010(void* self)",
+  "summary": "Returns subobject+0x0C if nonzero; otherwise maps (ext_00711DB0(self) - 4) through a 12-entry jump table to one of six globals, defaulting to 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "void*",
+      "name": "subobject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "subobjectValue"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:49:58Z"
+}

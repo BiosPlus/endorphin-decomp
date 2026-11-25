@@ -1939,3 +1939,41 @@ void __thiscall sub_0071C750(uint32_t this_ptr, uint32_t src) {
     }
 }
 } // namespace lift_0071C750
+
+// [0x00712010] sub_00712010 (104 bytes)
+namespace lift_00712010 {
+// Known callee 0x0071E680: sub_0071E680 (Returns pointer to subobject/field at offset +0x40.)
+extern void* __fastcall ext_0071E680(void* self);
+// Known callee 0x00711DB0: getSubobjectField28 (Calls ext_0071E680 on self and returns the 32-bit field at offset +0x28 of the returned pointer.)
+extern uint32_t __fastcall ext_00711DB0(void* self);
+extern uint32_t mem_00AAC084;
+extern uint32_t mem_00AAC088;
+extern uint32_t mem_00AAC08C;
+extern uint32_t mem_00AAC090;
+extern uint32_t mem_00AAC0E0;
+extern uint32_t mem_00AAC0E4;
+
+// @name getSwitchedGlobalValue
+// @class Unknown
+// @summary Returns subobject+0x0C if nonzero; otherwise maps (ext_00711DB0(self) - 4) through a 12-entry jump table to one of six globals, defaulting to 0.
+// @field Unknown +0x40 void* subobject
+// @field Unknown +0x0C uint32_t subobjectValue
+uint32_t fn_00712010(void* self) {
+    void* sub = ext_0071E680(self);
+    uint32_t value = lift_field<uint32_t>(sub, 0x0C);
+    if (value != 0) {
+        return value;
+    }
+
+    uint32_t index = ext_00711DB0(self) - 4u;
+    switch (index) {
+        case 0:  return mem_00AAC084;
+        case 1:  return mem_00AAC088;
+        case 2:  return mem_00AAC08C;
+        case 3:  return mem_00AAC090;
+        case 4:  return mem_00AAC0E0;
+        case 5:  return mem_00AAC0E4;
+        default: return 0; // indices 6..11: jump-table targets not recovered; assumed to fall through to the zero return
+    }
+}
+} // namespace lift_00712010

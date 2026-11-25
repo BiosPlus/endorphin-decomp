@@ -61533,6 +61533,13 @@
     "summary": "Calls fn_0071E680(self) and returns the uint32_t at offset +0x4 of the returned subobject.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x00712010": {
+    "name": "getSwitchedGlobalValue",
+    "class": "Unknown",
+    "signature": "uint32_t fn_00712010(void* self)",
+    "summary": "Returns subobject+0x0C if nonzero; otherwise maps (ext_00711DB0(self) - 4) through a 12-entry jump table to one of six globals, defaulting to 0.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00712240": {
     "name": "getTableEntryBySubobjectField28",
     "signature": "extern \"C\" uint32_t __fastcall fn_00712240(void* self)",
