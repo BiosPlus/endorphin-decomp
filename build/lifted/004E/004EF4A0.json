@@ -1,0 +1,28 @@
+{
+  "va": "0x004EF4A0",
+  "size": 100,
+  "orig_symbol": "Properties::TargetSelectionProxy::vfunc_1",
+  "src_path": "src/Properties/TargetSelectionProxy.cpp",
+  "lifted_path": "lifted/Properties/TargetSelectionProxy.cpp",
+  "name": "Properties::TargetSelectionProxy::vfunc_1",
+  "class": "Properties::TargetSelectionProxy",
+  "signature": "void __thiscall fn_004EF4A0(uint32_t self, uint32_t arg0)",
+  "summary": "Iterates over a vector of child objects and invokes vfunc_1 on each with the given argument.",
+  "fields": [
+    {
+      "class": "Properties::TargetSelectionProxy",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Properties::TargetSelectionProxy",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:57:01Z"
+}
