@@ -21015,6 +21015,12 @@
     "summary": "Calls a gated getter on subobject, writes value into the returned object, then calls sub+0x0c with a global and writes value again.",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x0058AA20": {
+    "name": "sub_0058AA20",
+    "signature": "extern uint8_t mem_00A85D54;   // .data flag, compared as a byte (0 selects the +0x24 slot) extern uint32_t mem_00B40640;  // global passed as the single argument to the +0x0c slot void fn_0058AA20(void* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058A9A0 (SetFloatAndDispatch).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x0058AB30": {
     "name": "QueryFloatViaMemberCallback",
     "signature": "float fn_0058AB30(void* self)",

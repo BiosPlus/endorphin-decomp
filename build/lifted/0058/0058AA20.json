@@ -1,0 +1,45 @@
+{
+  "va": "0x0058AA20",
+  "size": 62,
+  "orig_symbol": "sub_0058AA20",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "sub_0058AA20",
+  "signature": "extern uint8_t mem_00A85D54;   // .data flag, compared as a byte (0 selects the +0x24 slot) extern uint32_t mem_00B40640;  // global passed as the single argument to the +0x0c slot void fn_0058AA20(void* self, float value)",
+  "summary": "Auto-lifted identical-shape clone of 0x0058A9A0 (SetFloatAndDispatch).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "void*",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:00:13Z"
+}
