@@ -430,6 +430,12 @@
     "summary": "Sets field_0x58 and invalidates the associated window if non-null.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x00404720": {
+    "name": "sub_00404720",
+    "signature": "int32_t __thiscall fn_00404720(void* self, uint32_t mode)",
+    "summary": "Sets mode at +0x5c if \u003c= 2, toggles style 0x2000 via MFC80!ord_4115 and invalidates window if +0x20 is non-null.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00404770": {
     "name": "Unknown::SetControlFont",
     "class": "Unknown",
@@ -2907,6 +2913,12 @@
     "class": "CBase",
     "signature": "void fn_00433FF0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x00434040": {
+    "name": "toggleSceneFlagAndInvalidate",
+    "signature": "extern \"C\" void __thiscall fn_00434040(uint32_t this_ptr)",
+    "summary": "Toggles a boolean state via virtual calls on the global sub-object and invalidates the view window.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
   "0x004342A0": {
@@ -61574,6 +61586,12 @@
     "name": "sub_0085E04B",
     "signature": "void fn_0085E04B(void)",
     "summary": "Five-byte no-op: `add eax, 0` (opcode 05 with imm32 0), which leaves the register value unchanged; no observable effect beyond flags.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
+  "0x008597E0": {
+    "name": "memmove_008597E0",
+    "signature": "uint32_t __cdecl sub_008597E0(uint32_t dst, uint32_t src, uint32_t count)",
+    "summary": "Copies count bytes from src to dst, handling overlapping regions, and returns dst.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
   "0x008599F0": {

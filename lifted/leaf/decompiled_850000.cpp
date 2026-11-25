@@ -774,3 +774,26 @@ void fn_0085E720(const char* src, int len) {
     (void)buf;  // local result; original never publishes it
 }
 } // namespace lift_0085E720
+
+// [0x008597E0]
+namespace lift_008597E0 {
+// @name memmove_008597E0
+// @summary Copies count bytes from src to dst, handling overlapping regions, and returns dst.
+uint32_t __cdecl sub_008597E0(uint32_t dst, uint32_t src, uint32_t count) {
+    uint8_t* d = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(dst));
+    const uint8_t* s = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(src));
+    if (count == 0) {
+        return dst;
+    }
+    if (src < dst && dst < src + count) {
+        for (uint32_t i = count; i > 0; --i) {
+            d[i - 1] = s[i - 1];
+        }
+    } else {
+        for (uint32_t i = 0; i < count; ++i) {
+            d[i] = s[i];
+        }
+    }
+    return dst;
+}
+} // namespace lift_008597E0
