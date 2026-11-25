@@ -691,3 +691,49 @@ void fn_0079B0E0(const char* prefix, const char* fmt, std::va_list args) {
     std::fprintf(stderr, ".\n");
 }
 } // namespace lift_0079B0E0
+
+// [0x00790F40] sub_00790F40 (85 bytes)
+namespace lift_00790F40 {
+// @name Unknown::computeSlotIndex_00790F40
+// @class Unknown
+// @summary Computes and caches a 32-bit index from count/stride fields (returns early if already cached at +0x2c).
+// @field Unknown +0x0c uint32_t field_0x0c
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x1c uint32_t field_0x1c
+// @field Unknown +0x24 uint32_t field_0x24
+// @field Unknown +0x2c uint32_t field_0x2c
+// @field Unknown +0x4c uint32_t field_0x4c
+void fn_00790F40(void* self) {
+    auto* p = static_cast<uint8_t*>(self);
+
+    auto rd = [p](size_t off) -> uint32_t {
+        uint32_t v;
+        std::memcpy(&v, p + off, sizeof(v));
+        return v;
+    };
+    auto wr = [p](size_t off, uint32_t v) {
+        std::memcpy(p + off, &v, sizeof(v));
+    };
+
+    // Already computed: nothing to do.
+    if (rd(0x2c) != 0) {
+        return;
+    }
+
+    const uint32_t count  = rd(0x0c);
+    const uint32_t stride = rd(0x24);
+    const uint32_t scaled = rd(0x1c) * stride; // unsigned 32-bit wrap, as in the original
+
+    uint32_t result;
+    if (count == 1) {
+        const uint32_t base = rd(0x14);
+        const uint32_t q    = (rd(0x4c) - base) / stride;
+        result = (q + base - 1u) * scaled + scaled;
+    } else {
+        const uint32_t q = (rd(0x4c) - rd(0x14)) / stride;
+        result = q * scaled + scaled + 1u;
+    }
+
+    wr(0x2c, result);
+}
+} // namespace lift_00790F40

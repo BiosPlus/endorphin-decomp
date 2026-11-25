@@ -58895,6 +58895,13 @@
     "summary": "Thiscall setter: sets +0x5C to 1, stores the stack argument at +0x24, and clears +0x2C; callee pops 4 bytes.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x00790F40": {
+    "name": "Unknown::computeSlotIndex_00790F40",
+    "class": "Unknown",
+    "signature": "void fn_00790F40(void* self)",
+    "summary": "Computes and caches a 32-bit index from count/stride fields (returns early if already cached at +0x2c).",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x007911E0": {
     "name": "sub_007911E0",
     "signature": "uint32_t __thiscall sub_007911E0(uint8_t* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
