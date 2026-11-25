@@ -75612,6 +75612,12 @@
     "summary": "36-byte read-only lookup table (not executable code): 22 index/value bytes followed by 9 0x90 padding bytes.",
     "lifted_path": "lifted/leaf/decompiled_810000.cpp"
   },
+  "0x008115A0": {
+    "name": "scanCharsByMask",
+    "signature": "extern \"C\" uint32_t sub_008115A0(uint32_t scanner, uint32_t dst_buf, uint32_t table, uint32_t flags, int32_t max_len)",
+    "summary": "Scans characters from a stream/scanner while matching or not matching a lookup table mask, optionally storing them into a buffer.",
+    "lifted_path": "lifted/leaf/decompiled_810000.cpp"
+  },
   "0x008522E0": {
     "name": "sub_008522E0",
     "signature": "extern \"C\" uint32_t __cdecl fn_008522E0(uint8_t mem_ebp_m19, uint8_t mem_ebp_m1a, uint8_t mem_ebp_m1b, uint8_t mem_ebp_m1c)",
@@ -75843,6 +75849,12 @@
     "name": "ClampedDecrementCounter",
     "signature": "void ClampedDecrementCounter(uint32_t n, uint32_t* counter)",
     "summary": "Decrements a 32-bit counter stored at *counter when it is strictly greater than n; sets it to -1 when it equals n; leaves it unchanged when it is below n or already -1.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
+  "0x0085A370": {
+    "name": "AllocEntry16",
+    "signature": "uint32_t __cdecl fn_0085A370(uint32_t obj)",
+    "summary": "Appends a new 16-byte entry to a LocalAlloc-backed array, initializing it and returning its index or -1 on failure.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
   "0x0085A3E0": {

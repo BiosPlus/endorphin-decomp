@@ -379,3 +379,50 @@ int __cdecl fn_00811080(const char* s1, uint32_t max_len, const char* s2) {
     return 0;
 }
 } // namespace lift_00811080
+
+// [0x008115A0]
+namespace lift_008115A0 {
+// @name scanCharsByMask
+// @summary Scans characters from a stream/scanner while matching or not matching a lookup table mask, optionally storing them into a buffer.
+// @field Scanner +0x04 void* field_0x04
+// @field Scanner +0x0c uint32_t field_0x0c
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write8(uint32_t addr, uint8_t val);
+
+extern uint32_t sub_008115A0(uint32_t scanner, uint32_t dst_buf, uint32_t table, uint32_t flags, int32_t max_len) {
+    uint32_t cur_ch = mem_read32(scanner + 0x0c);
+    int32_t i = 0;
+
+    while (true) {
+        if (max_len != 0 && i >= max_len) {
+            break;
+        }
+        if (cur_ch == static_cast<uint32_t>(-1)) {
+            break;
+        }
+
+        uint32_t is_zero = (mem_read32(table + 4 * cur_ch) == 0) ? 1u : 0u;
+        uint32_t invert = (flags >> 5) & 1u;
+        if ((is_zero ^ invert) != 0) {
+            break;
+        }
+
+        if (dst_buf != 0) {
+            mem_write8(dst_buf + static_cast<uint32_t>(i), static_cast<uint8_t>(cur_ch));
+        }
+
+        using next_fn_t = void (*)(uint32_t, uint32_t);
+        auto next_fn = reinterpret_cast<next_fn_t>(static_cast<uintptr_t>(mem_read32(scanner + 0x04)));
+        next_fn(scanner, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&cur_ch)));
+        ++i;
+    }
+
+    if (dst_buf != 0) {
+        mem_write8(dst_buf + static_cast<uint32_t>(i), 0);
+    }
+
+    return 1;
+}
+} // namespace lift_008115A0
