@@ -165,3 +165,32 @@ extern std::int32_t fn_007EFE60(const std::uint8_t* src, std::uint8_t* out, std:
     return 1;
 }
 } // namespace lift_007EFE60
+
+// [0x007E4770] sub_007E4770 (107 bytes)
+namespace lift_007E4770 {
+// Known callee 0x006A7250: thunk_MSVCR80__CIsqrt (IAT jump thunk forwarding to MSVCR80!_CIsqrt.)
+// Replaced below by std::sqrt; the declaration is kept for reference only.
+extern void ext_006A7250();
+
+// @name NM::Vector3::normalize
+// @class NM::Vector3
+// @summary Scales the 3-float vector at self to unit length in place; a zero-length vector is left unchanged.
+// @field NM::Vector3 +0x00 float x
+// @field NM::Vector3 +0x04 float y
+// @field NM::Vector3 +0x08 float z
+void fn_007E4770(void* self) {
+    float x = lift_field<float>(self, 0x00);
+    float y = lift_field<float>(self, 0x04);
+    float z = lift_field<float>(self, 0x08);
+
+    float len = std::sqrt(x * x + y * y + z * z);
+
+    // Original: skip scaling only when len == 0 (ordered equal); NaN falls through.
+    if (!(len == 0.0f)) {
+        float inv = 1.0f / len;
+        lift_field<float>(self, 0x00) = x * inv;
+        lift_field<float>(self, 0x04) = y * inv;
+        lift_field<float>(self, 0x08) = z * inv;
+    }
+}
+} // namespace lift_007E4770

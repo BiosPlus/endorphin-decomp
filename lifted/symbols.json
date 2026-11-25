@@ -69106,6 +69106,13 @@
     "summary": "Loads the dword pointed to by arg1, then calls the function pointer stored at arg2+0x0C with that dword as its single argument and returns the result.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007E4770": {
+    "name": "NM::Vector3::normalize",
+    "class": "NM::Vector3",
+    "signature": "void fn_007E4770(void* self)",
+    "summary": "Scales the 3-float vector at self to unit length in place; a zero-length vector is left unchanged.",
+    "lifted_path": "lifted/leaf/decompiled_7E0000.cpp"
+  },
   "0x007E4870": {
     "name": "TransformVector3ByMatrixColumns",
     "class": "Unknown",
