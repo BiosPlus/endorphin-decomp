@@ -114,3 +114,36 @@ void fn_0072B460(void) {
     mem_00B60164 = src[1];
 }
 } // namespace lift_0072B460
+
+// [0x0072D2A0] sub_0072D2A0 (74 bytes)
+namespace lift_0072D2A0 {
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B602E0;
+extern uint32_t mem_00B602E4;
+extern uint32_t mem_00B602E8;
+extern uint32_t mem_00B602EC;
+extern uint32_t mem_00B602F0;
+extern uint32_t mem_00B602F4;
+extern uint32_t mem_00B602F8;
+extern uint32_t mem_00B602FC;
+
+// @name CopyHugeValueToGlobals_0072D2A0
+// @summary Loads the 64-bit _HUGE value via the pointer stored at mem_00925284 and copies it into four 8-byte globals (mem_00B602E0..mem_00B602FC).
+void fn_0072D2A0(void) {
+    // mem_00925284 holds the address of the _HUGE value (a double-sized source).
+    const uint32_t* src = reinterpret_cast<const uint32_t*>(
+        static_cast<uintptr_t>(mem_00925284));
+
+    const uint32_t lo = src[0];
+    const uint32_t hi = src[1];
+
+    mem_00B602E0 = lo;
+    mem_00B602E4 = hi;
+    mem_00B602E8 = lo;
+    mem_00B602EC = hi;
+    mem_00B602F0 = lo;
+    mem_00B602F4 = hi;
+    mem_00B602F8 = lo;
+    mem_00B602FC = hi;
+}
+} // namespace lift_0072D2A0

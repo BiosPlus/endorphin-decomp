@@ -1,0 +1,13 @@
+{
+  "va": "0x0072D2A0",
+  "size": 74,
+  "orig_symbol": "sub_0072D2A0",
+  "src_path": "src/clones/auto_clones_720000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_720000.cpp",
+  "name": "CopyHugeValueToGlobals_0072D2A0",
+  "signature": "void fn_0072D2A0(void)",
+  "summary": "Loads the 64-bit _HUGE value via the pointer stored at mem_00925284 and copies it into four 8-byte globals (mem_00B602E0..mem_00B602FC).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:35:14Z"
+}
