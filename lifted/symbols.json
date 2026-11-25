@@ -15603,6 +15603,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004CC400": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, getAngularStrengthFromFSM, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType",
+    "signature": "void* ExprParser_ReadMethodType_vfunc1(void* self)",
+    "summary": "Always throws: reports a missing or unresolved value pointer via an exception; never returns a value.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004CC440": {
     "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, 0\u003e::vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, 0\u003e",

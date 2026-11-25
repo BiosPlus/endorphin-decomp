@@ -48307,3 +48307,28 @@ DWORD fn_004CC1B0(DWORD* arg) {
     ext_006A6DD2(exc, kThrowInfo_009DEC1C);
 }
 } // namespace lift_004CC1B0
+
+// [0x004CC400]
+namespace lift_004CC400 {
+extern void* ext_004CB400(void* self);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, getAngularStrengthFromFSM, 0>::vfunc_1
+// @class ExprParser::ReadMethodType
+// @summary Always throws: reports a missing or unresolved value pointer via an exception; never returns a value.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* ExprParser_ReadMethodType_vfunc1(void* self) {
+    void* value = *reinterpret_cast<void**>(self);
+    if (value != nullptr) {
+        ext_004CB400(value);
+        ext_0046C4E0();
+    }
+
+    alignas(8) unsigned char exception_storage[0x28] = {};
+    ext_0046C3C0(exception_storage);
+    ext_006A6DD2(exception_storage, reinterpret_cast<const void*>(0x009DEC1Cu));
+    return nullptr;
+}
+} // namespace lift_004CC400
