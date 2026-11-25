@@ -55210,10 +55210,9 @@
     "lifted_path": "lifted/leaf/decompiled_750000.cpp"
   },
   "0x00751368": {
-    "name": "DataBlob::Lookup00751368",
-    "class": "DataBlob",
+    "name": "DataTable_007511F4",
     "signature": "void fn_00751368(void* self)",
-    "summary": "Static 72-byte lookup table (mostly 0x04 entries, 0x90 padding); not executable code.",
+    "summary": "Static 49-byte lookup table (values 0x00-0x07 and filler 0x08) followed by 11 bytes of 0x90 padding; not executable code.",
     "lifted_path": "lifted/leaf/decompiled_750000.cpp"
   },
   "0x00754F80": {
