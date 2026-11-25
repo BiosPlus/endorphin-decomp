@@ -1425,3 +1425,28 @@ const unsigned char* sub_0078CA10() {
     return k_table_0078CA10;
 }
 } // namespace lift_0078CA10
+
+// [0x007833F0]
+namespace lift_007833F0 {
+// @name FileStreamRef_CloseFile
+// @class FileStreamRef
+// @summary If the FileStream behind this ref is marked open, clear its open flag and fclose its FILE*.
+// @field FileStreamRef +0x04 void* stream
+// @field FileStream +0x00 FILE* file
+// @field FileStream +0x04 uint8_t isOpen
+
+// IAT slot holding MSVCR80!fclose (.rdata 0x00925264), called indirectly.
+extern void* mem_00925264;
+
+void __thiscall FileStreamRef_CloseFile(void* self) {
+    void* stream = lift_field<void*>(self, 0x04);
+    uint8_t& isOpen = lift_field<uint8_t>(stream, 0x04);
+    if (isOpen == 0) {
+        return;
+    }
+    isOpen = 0;
+    stream = lift_field<void*>(self, 0x04);
+    FILE* file = lift_field<FILE*>(stream, 0x00);
+    reinterpret_cast<int (*)(FILE*)>(mem_00925264)(file);
+}
+} // namespace lift_007833F0

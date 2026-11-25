@@ -1,0 +1,34 @@
+{
+  "va": "0x007833F0",
+  "size": 32,
+  "orig_symbol": "sub_007833F0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "FileStreamRef_CloseFile",
+  "class": "FileStreamRef",
+  "signature": "void __thiscall FileStreamRef_CloseFile(void* self)",
+  "summary": "If the FileStream behind this ref is marked open, clear its open flag and fclose its FILE*.",
+  "fields": [
+    {
+      "class": "FileStreamRef",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "stream"
+    },
+    {
+      "class": "FileStream",
+      "offset": "+0x0",
+      "type": "FILE*",
+      "name": "file"
+    },
+    {
+      "class": "FileStream",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "isOpen"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:43:31Z"
+}
