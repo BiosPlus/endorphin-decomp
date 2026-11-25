@@ -17018,6 +17018,13 @@
     "summary": "Fetches a string via ext_0041CEB0 into a temporary std::string and assigns it to field_0x1c.",
     "lifted_path": "lifted/Properties/TestControl.cpp"
   },
+  "0x004F0A90": {
+    "name": "Unknown::ctor_004F0A90",
+    "class": "Unknown",
+    "signature": "void* fn_004F0A90(void* self, uint32_t arg)",
+    "summary": "Constructor: sets own vtable, constructs embedded subobject at +0x4 (its own vtable), stores stack arg at +0x8, zeroes +0x10..+0x28 slots, returns this.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F0B00": {
     "name": "Properties::TargetSelectionProxy::vfunc_0_off_4",
     "class": "Properties::TargetSelectionProxy",

@@ -788,3 +788,50 @@ void* fn_004FDD00() {
     return &mem_00AEB24C;
 }
 } // namespace lift_004FDD00
+
+// [0x004F0A90] sub_004F0A90 (102 bytes)
+namespace lift_004F0A90 {
+// Known callee 0x00661980: setVtable_0093BFB4 (Stores the vtable address 0x0093BFB4 into the first dword of the object pointed to by ECX (this).)
+extern void ext_00661980(void* self);
+
+// @name Unknown::ctor_004F0A90
+// @class Unknown
+// @summary Constructor: sets own vtable, constructs embedded subobject at +0x4 (its own vtable), stores stack arg at +0x8, zeroes +0x10..+0x28 slots, returns this.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x04 uint32_t subobjectVtable
+// @field Unknown +0x08 uint32_t arg
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 uint32_t field_0x24
+// @field Unknown +0x28 uint32_t field_0x28
+//
+// The original SEH frame push/pop (fs:[0] chain, -1 state) is omitted: it only
+// affects exception unwinding and has no effect on the observable result.
+// Stack-argument convention: the caller pushes one dword (ret 4).
+void* fn_004F0A90(void* self, uint32_t arg) {
+    uint8_t* const obj = static_cast<uint8_t*>(self);
+
+    // Provisional vtable for the base while the subobject is constructed.
+    lift_field<uint32_t>(obj, 0x00) = 0x009443BC;
+
+    // Subobject at this+4 (ECX = edi) stores its own vtable into its first dword.
+    ext_00661980(obj + 0x04);
+
+    lift_field<uint32_t>(obj, 0x08) = arg;
+
+    // Final vtables: base at +0, subobject at +4.
+    lift_field<uint32_t>(obj, 0x00) = 0x0094C14C;
+    lift_field<uint32_t>(obj, 0x04) = 0x0094C0F4;
+
+    lift_field<uint32_t>(obj, 0x10) = 0;
+    lift_field<uint32_t>(obj, 0x14) = 0;
+    lift_field<uint32_t>(obj, 0x18) = 0;
+    lift_field<uint32_t>(obj, 0x20) = 0;
+    lift_field<uint32_t>(obj, 0x24) = 0;
+    lift_field<uint32_t>(obj, 0x28) = 0;
+
+    return obj;
+}
+} // namespace lift_004F0A90
