@@ -266,3 +266,20 @@ uint32_t sub_008101C0(uint32_t arg0) {
     return (eax >> 4) & 1u;
 }
 } // namespace lift_008101C0
+
+// [0x00811190] sub_00811190 (32 bytes)
+namespace lift_00811190 {
+// @name sub_00811190
+// @summary Auto-lifted identical-shape clone of 0x0080B540 (LocalBlockResizeThunk).
+namespace lift_0080B540 {
+// @name LocalBlockResizeThunk
+// @summary Forwards handle and size arguments to LocalBlockResize.
+
+
+extern uint32_t __cdecl ext_0080FF10(uint32_t handle, uint32_t size);
+
+uint32_t __cdecl fn_00811190(uint32_t handle, uint32_t size) {
+    return ext_0080FF10(handle, size);
+}
+} // namespace lift_0080B540
+} // namespace lift_00811190

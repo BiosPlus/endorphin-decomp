@@ -58675,6 +58675,18 @@
     "summary": "Auto-lifted identical-shape clone of 0x0080B590 (Thunk::copyMemoryDwordThenBytesForward).",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x0080B5F0": {
+    "name": "sub_0080B5F0",
+    "signature": "uint32_t __cdecl fn_0080B5F0(uint32_t handle, uint32_t size)",
+    "summary": "Auto-lifted identical-shape clone of 0x0080B540 (LocalBlockResizeThunk).",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
+  "0x0080B610": {
+    "name": "sub_0080B610",
+    "signature": "uint32_t __cdecl fn_0080B610(uint32_t handle, uint32_t size)",
+    "summary": "Auto-lifted identical-shape clone of 0x0080B540 (LocalBlockResizeThunk).",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080B630": {
     "name": "sub_0080B630",
     "signature": "void* fn_0080B630(void* dst, const void* src, size_t n)",
@@ -58928,6 +58940,12 @@
     "name": "ToUpperAsciiLowercaseOnly",
     "signature": "int fn_008110F0(int c)",
     "summary": "Returns c - 0x20 if c is in ['a', 'z'] (signed compare), otherwise c unchanged.",
+    "lifted_path": "lifted/leaf/decompiled_810000.cpp"
+  },
+  "0x00811190": {
+    "name": "sub_00811190",
+    "signature": "uint32_t __cdecl fn_00811190(uint32_t handle, uint32_t size)",
+    "summary": "Auto-lifted identical-shape clone of 0x0080B540 (LocalBlockResizeThunk).",
     "lifted_path": "lifted/leaf/decompiled_810000.cpp"
   },
   "0x008113C4": {

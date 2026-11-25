@@ -1,0 +1,13 @@
+{
+  "va": "0x00811190",
+  "size": 32,
+  "orig_symbol": "sub_00811190",
+  "src_path": "src/leaf/decompiled_810000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_810000.cpp",
+  "name": "sub_00811190",
+  "signature": "uint32_t __cdecl fn_00811190(uint32_t handle, uint32_t size)",
+  "summary": "Auto-lifted identical-shape clone of 0x0080B540 (LocalBlockResizeThunk).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:18:37Z"
+}
