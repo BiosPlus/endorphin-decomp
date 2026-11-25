@@ -16715,6 +16715,12 @@
     "summary": "Calls ext_004FFD60 with the incoming this and second argument, then initialises the pair object (first argument) with that result and the second argument via initDwordPair; returns the pair object.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00500340": {
+    "name": "lowerBoundByVirtualKey",
+    "signature": "void** fn_00500340(void** first, void** last, const void* value)",
+    "summary": "Binary lower_bound over an array of object pointers; each element's virtual slot 9 yields a key compared against value via mem_00924EF4.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x005007C0": {
     "name": "DwordPairInitWrapper_005007C0",
     "signature": "void* fn_005007C0(void* self, void* pair, DWORD b)",

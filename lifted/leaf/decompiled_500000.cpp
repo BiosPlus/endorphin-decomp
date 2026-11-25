@@ -1206,3 +1206,37 @@ __attribute__((used)) void __thiscall fn_00503BC0(void* self, uint32_t* out, uin
     out[1] = esi;
 }
 } // namespace lift_00503BC0
+
+// [0x00500340] sub_00500340 (92 bytes)
+namespace lift_00500340 {
+// Comparator import (MSVCP80 string-style less-than); data slot holds the function pointer.
+extern bool (*mem_00924EF4)(const void* lhs, const void* rhs);
+
+// @name lowerBoundByVirtualKey
+// @summary Binary lower_bound over an array of object pointers; each element's virtual slot 9 yields a key compared against value via mem_00924EF4.
+void** fn_00500340(void** first, void** last, const void* value) {
+    using KeyFn = const void* (*)(void* self, const void* value);
+
+    void** begin = first;
+    std::ptrdiff_t count = last - first;
+
+    while (count > 0) {
+        std::ptrdiff_t half = count / 2;
+        void** mid = begin + half;
+        void* elem = *mid;
+
+        void* const* vtable = *reinterpret_cast<void* const* const*>(elem);
+        KeyFn key = reinterpret_cast<KeyFn>(vtable[9]);
+        const void* keyValue = key(elem, value);
+
+        if (mem_00924EF4(value, keyValue)) {
+            begin = mid + 1;
+            count -= half + 1;
+        } else {
+            count = half;
+        }
+    }
+
+    return begin;
+}
+} // namespace lift_00500340

@@ -1,0 +1,13 @@
+{
+  "va": "0x00500340",
+  "size": 92,
+  "orig_symbol": "sub_00500340",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "lowerBoundByVirtualKey",
+  "signature": "void** fn_00500340(void** first, void** last, const void* value)",
+  "summary": "Binary lower_bound over an array of object pointers; each element's virtual slot 9 yields a key compared against value via mem_00924EF4.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:26:28Z"
+}
