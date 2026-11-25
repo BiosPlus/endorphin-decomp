@@ -1397,3 +1397,19 @@ void fn_0057E9A0(void* self) {
 }
 } // namespace lift_005015E0
 } // namespace lift_0057E9A0
+
+// [0x005731F0]
+namespace lift_005731F0 {
+// @name allocateElements48
+// @summary Allocates an array of 48-byte elements with overflow check, throwing std::bad_alloc on overflow.
+
+
+extern void* ext_006A5C62(uint32_t size);
+
+void* fn_005731F0(uint32_t count) {
+    if (count > 0 && (0xFFFFFFFFu / count) < 0x30u) {
+        throw std::bad_alloc();
+    }
+    return ext_006A5C62(count * 0x30u);
+}
+} // namespace lift_005731F0
