@@ -1082,3 +1082,28 @@ bool __thiscall fn_00582A70(void* self, uint32_t /*unused*/) {
     return true;
 }
 } // namespace lift_00582A70
+
+// [0x00584A10] sub_00584A10 (34 bytes)
+namespace lift_00584A10 {
+// Import slot holding the target of `call dword ptr [0x924fc8]`
+// (MSVCP80 operator==(const std::string&, const char*) thunk at 0x006293B6).
+extern uint32_t mem_00924FC8;
+// C string literal at 0x00928B5D (contents not recovered).
+extern const char mem_00928B5D[];
+
+// @name getStringFieldOrFallback_00584A10
+// @class <unknown>
+// @summary Returns this+0x30 if the string there equals the literal at 0x928B5D, otherwise this+0x14.
+// @field <unknown> +0x14 uint8_t field_0x14
+// @field <unknown> +0x30 std::string field_0x30
+void* fn_00584A10(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    void* str30 = obj + 0x30;
+    auto op_eq = reinterpret_cast<bool (*)(const void*, const char*)>(
+        static_cast<uintptr_t>(mem_00924FC8));
+    if (op_eq(str30, mem_00928B5D)) {
+        return str30;
+    }
+    return obj + 0x14;
+}
+} // namespace lift_00584A10

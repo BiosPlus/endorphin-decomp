@@ -25672,6 +25672,13 @@
     "summary": "Refreshes the cached 0x880-0x890 values from +0x414/+0x420/+0x424, re-initializes the subobject at +0x42C, and dispatches a virtual call on subobject +0x46C.",
     "lifted_path": "lifted/classes/AcclaimIO.cpp"
   },
+  "0x00584A10": {
+    "name": "getStringFieldOrFallback_00584A10",
+    "class": "\u003cunknown\u003e",
+    "signature": "void* fn_00584A10(void* self)",
+    "summary": "Returns this+0x30 if the string there equals the literal at 0x928B5D, otherwise this+0x14.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x00584A80": {
     "name": "ObjectNode::vfunc_13_off_4",
     "class": "ObjectNode",
