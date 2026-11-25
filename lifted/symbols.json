@@ -14217,6 +14217,13 @@
     "summary": "Returns 1 if the EngineData float at +0x44 is \u003e= 1e-6 (false for NaN); throws if the EngineData pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B94A0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::EngineData\u003e::vfunc_5 (NMData::EngineData::getUnitLength)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0\u003e",
+    "signature": "void fn_004B94A0(void* self)",
+    "summary": "Reads the EngineData pointer from the ValuePtr wrapper; if non-null, forwards its float at +0x44 to the error helper, then throws a DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B99B0": {
     "name": "initStaticObjectOnce_004B99B0",
     "signature": "void* fn_004B99B0()",

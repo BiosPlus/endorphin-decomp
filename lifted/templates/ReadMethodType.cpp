@@ -47153,3 +47153,35 @@ namespace lift_0062E480 {
     throw std::runtime_error("ReadMethodType<CompoundSensorPlanes>::getVertAxis: derived exception");
 }
 } // namespace lift_0062E480
+
+// [0x004B94A0] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>::vfunc_5 (48 bytes)
+namespace lift_004B94A0 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it).
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs the exception object in place at the given address and installs its vtable; returns this).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(object, throwInfo)).
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+// Data 0x009DEC1C: MSVC ThrowInfo descriptor for the DerivedException type.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::EngineData>::vfunc_5 (NMData::EngineData::getUnitLength)
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the EngineData pointer from the ValuePtr wrapper; if non-null, forwards its float at +0x44 to the error helper, then throws a DerivedException.
+// @field NMData::EngineData +0x44 float field_0x44
+void fn_004B94A0(void* self) {
+    // The wrapper holds a pointer to the EngineData object at offset 0.
+    void* inner = *reinterpret_cast<void**>(self);
+    if (inner != nullptr) {
+        float value = lift_field<float>(inner, 0x44);
+        ext_0046C4E0(value);
+    }
+
+    // Construct the exception in a local buffer and throw it. The original does not
+    // reach the exception-object size in this function; 64 bytes is a conservative
+    // placeholder for the buffer and should be checked against DerivedException's size.
+    alignas(8) unsigned char exception_object[64] = {};
+    ext_0046C3C0(exception_object);
+    ext_006A6DD2(exception_object, mem_009DEC1C);
+}
+} // namespace lift_004B94A0

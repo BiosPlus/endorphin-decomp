@@ -1,0 +1,22 @@
+{
+  "va": "0x004B94A0",
+  "size": 48,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::EngineData\u003e::vfunc_5 (NMData::EngineData::getUnitLength)",
+  "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0\u003e",
+  "signature": "void fn_004B94A0(void* self)",
+  "summary": "Reads the EngineData pointer from the ValuePtr wrapper; if non-null, forwards its float at +0x44 to the error helper, then throws a DerivedException.",
+  "fields": [
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:09:37Z"
+}
