@@ -27544,6 +27544,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x00599E70": {
+    "name": "Unknown::getGrandparentField0x38C",
+    "class": "Unknown",
+    "signature": "DWORD sub_00599E70(void* self)",
+    "summary": "Returns DWORD at (*(*(*(self+0x26C))+0x1C)-\u003enext-\u003e+0x28)+0x38C, or 0 if self+0x26C-\u003e+0x20 is null.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x0059B070": {
     "name": "SearchableMap\u003cNM::Color *, GetNameFromAttribute\u003cNM::Color *\u003e\u003e::vfunc_0",
     "class": "SearchableMap\u003cNM::Color *, GetNameFromAttribute\u003cNM::Color *\u003e\u003e",
@@ -28582,6 +28589,12 @@
     "signature": "static inline uint8_t* BytesOf(void* p)",
     "summary": "Recursively releases a sibling chain: for each node, releases its child chain, destroys its string member, and invokes the cleanup thunk.",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
+  "0x005B0E60": {
+    "name": "getTypeName",
+    "signature": "void* __thiscall sub_005B0E60(void* self, void* out_str)",
+    "summary": "Constructs a std::string from a name lookup table indexed by field_0x08.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
   "0x005B0E90": {
     "name": "Geometry::MeshType::vfunc_6",

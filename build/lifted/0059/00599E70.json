@@ -1,0 +1,52 @@
+{
+  "va": "0x00599E70",
+  "size": 42,
+  "orig_symbol": "sub_00599E70",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "Unknown::getGrandparentField0x38C",
+  "class": "Unknown",
+  "signature": "DWORD sub_00599E70(void* self)",
+  "summary": "Returns DWORD at (*(*(*(self+0x26C))+0x1C)-\u003enext-\u003e+0x28)+0x38C, or 0 if self+0x26C-\u003e+0x20 is null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x26C",
+      "type": "void*",
+      "name": "field_0x26C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38C",
+      "type": "DWORD",
+      "name": "field_0x38C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:28:36Z"
+}

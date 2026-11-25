@@ -1401,3 +1401,35 @@ void* __thiscall fn_0059B290(void* self, const void* key) {
 }
 } // namespace lift_00472730
 } // namespace lift_0059B290
+
+// [0x00599E70]
+namespace lift_00599E70 {
+// @name Unknown::getGrandparentField0x38C
+// @class Unknown
+// @summary Returns DWORD at (*(*(*(self+0x26C))+0x1C)->next->+0x28)+0x38C, or 0 if self+0x26C->+0x20 is null.
+// @field Unknown +0x26C void* field_0x26C
+// @field Unknown +0x20 DWORD field_0x20
+// @field Unknown +0x1C void* field_0x1C
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x28 void* field_0x28
+// @field Unknown +0x38C DWORD field_0x38C
+
+// Import thunk slot for MSVCR80!_invalid_parameter_noinfo (rdata 0x925134).
+extern void (*mem_00925134)(void);
+
+DWORD sub_00599E70(void* self) {
+    void* p = lift_field<void*>(self, 0x26C);
+    if (lift_field<DWORD>(p, 0x20) == 0) {
+        return 0;
+    }
+
+    void* head = lift_field<void*>(p, 0x1C);
+    void* node = lift_field<void*>(head, 0x00);
+    if (node == head) {
+        mem_00925134();
+    }
+
+    void* q = lift_field<void*>(node, 0x28);
+    return lift_field<DWORD>(q, 0x38C);
+}
+} // namespace lift_00599E70
