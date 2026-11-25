@@ -879,3 +879,24 @@ uint32_t* __cdecl ReadBigEndianPairToDwords(uint32_t* dst, const uint8_t* src) {
     return dst + 1;
 }
 } // namespace lift_0086FF80
+
+// [0x00860E90]
+namespace lift_00860E90 {
+extern const char* mem_00AB9650;
+
+// @name bytesToHex
+// @summary Converts a byte buffer of given length into a null-terminated hex string.
+void __cdecl sub_00860E90(char* dst, const uint8_t* src, int32_t len) {
+    int32_t out_idx = 0;
+    if (len > 0) {
+        for (int32_t i = 0; i < len; ++i) {
+            uint8_t byte = src[i];
+            const char* hex_table = mem_00AB9650;
+            dst[out_idx] = hex_table[(byte >> 4) & 0xF];
+            dst[out_idx + 1] = hex_table[byte & 0xF];
+            out_idx += 2;
+        }
+    }
+    dst[out_idx] = '\0';
+}
+} // namespace lift_00860E90

@@ -1,0 +1,13 @@
+{
+  "va": "0x00860E90",
+  "size": 96,
+  "orig_symbol": "sub_00860E90",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "bytesToHex",
+  "signature": "void __cdecl sub_00860E90(char* dst, const uint8_t* src, int32_t len)",
+  "summary": "Converts a byte buffer of given length into a null-terminated hex string.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:54:25Z"
+}
