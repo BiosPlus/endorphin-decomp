@@ -1,0 +1,13 @@
+{
+  "va": "0x0046C0A0",
+  "size": 101,
+  "orig_symbol": "sub_0046C0A0",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "parseFloatFromString",
+  "signature": "extern \"C\" void fn_0046C0A0(void* /*unused*/, float* out_val)",
+  "summary": "Converts a string retrieved via sub_004275C0 to a float using atof.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:01:11Z"
+}

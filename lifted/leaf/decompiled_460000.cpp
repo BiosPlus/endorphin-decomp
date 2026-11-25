@@ -1726,3 +1726,18 @@ void fn_0046A4D0(void* it, void* last, void* guard, void* end, int32_t* counter)
     }
 }
 } // namespace lift_0046A4D0
+
+// [0x0046C0A0]
+namespace lift_0046C0A0 {
+// @name parseFloatFromString
+// @summary Converts a string retrieved via sub_004275C0 to a float using atof.
+
+
+extern std::string* ext_004275C0(void* self, std::string* out_str);
+
+extern void fn_0046C0A0(void* /*unused*/, float* out_val) {
+    std::string str;
+    std::string* s = ext_004275C0(out_val, &str);
+    *out_val = static_cast<float>(std::atof(s->c_str()));
+}
+} // namespace lift_0046C0A0
