@@ -1,0 +1,22 @@
+{
+  "va": "0x007856A0",
+  "size": 72,
+  "orig_symbol": "sub_007856A0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "Unknown::InvokeSlot4ForEachArg",
+  "class": "Unknown",
+  "signature": "bool __thiscall fn_007856A0(void* self, const uint32_t* items, int32_t count)",
+  "summary": "For each of count 32-bit items, calls this object's vtable slot +0x04 with the item as its single argument; always returns true.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:29:51Z"
+}

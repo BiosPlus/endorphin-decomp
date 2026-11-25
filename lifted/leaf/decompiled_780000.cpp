@@ -1179,3 +1179,22 @@ uint16_t __thiscall fn_007834C0(void* self, uint16_t* buf, uint8_t swap) {
     return *buf;
 }
 } // namespace lift_007834C0
+
+// [0x007856A0]
+namespace lift_007856A0 {
+// @name Unknown::InvokeSlot4ForEachArg
+// @class Unknown
+// @summary For each of count 32-bit items, calls this object's vtable slot +0x04 with the item as its single argument; always returns true.
+// @field Unknown +0x00 void* vtable
+
+typedef void(__thiscall* Slot4Fn)(void* self, uint32_t arg);
+
+bool __thiscall fn_007856A0(void* self, const uint32_t* items, int32_t count) {
+    for (int32_t i = 0; i < count; ++i) {
+        void** vtbl = *reinterpret_cast<void***>(self);
+        Slot4Fn slot4 = reinterpret_cast<Slot4Fn>(vtbl[1]);
+        slot4(self, items[i]);
+    }
+    return true;
+}
+} // namespace lift_007856A0
