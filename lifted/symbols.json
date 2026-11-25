@@ -7781,6 +7781,13 @@
     "summary": "Writes 1.0f/0.0f constants into the float block at ecx (diagonal-style init).",
     "lifted_path": "lifted/leaf/tiny_470000.cpp"
   },
+  "0x00480010": {
+    "name": "Unknown::AllComponentsPassTest_00480010",
+    "class": "Unknown",
+    "signature": "bool fn_00480010(const float* self)",
+    "summary": "Returns true only if ext_005631C0 accepts all 16 floats of a 4x4 float block (rows of 4 at 0x10 stride), using epsilon mem_0093C2D8; otherwise false.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00480060": {
     "name": "ToolEngine::vfunc_17",
     "class": "ToolEngine",

@@ -1,0 +1,112 @@
+{
+  "va": "0x00480010",
+  "size": 78,
+  "orig_symbol": "sub_00480010",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "Unknown::AllComponentsPassTest_00480010",
+  "class": "Unknown",
+  "signature": "bool fn_00480010(const float* self)",
+  "summary": "Returns true only if ext_005631C0 accepts all 16 floats of a 4x4 float block (rows of 4 at 0x10 stride), using epsilon mem_0093C2D8; otherwise false.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "m00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "m01"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "m02"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "m03"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "m10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "m11"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "m12"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "m13"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "m20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "m21"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "float",
+      "name": "m22"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "float",
+      "name": "m23"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "m30"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "m31"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "m32"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "m33"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:45:09Z"
+}

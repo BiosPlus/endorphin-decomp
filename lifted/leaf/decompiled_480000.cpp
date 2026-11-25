@@ -1089,3 +1089,43 @@ void* fn_0048E3D0(const void* first, const void* last, void* dest) {
     return result;
 }
 } // namespace lift_0048E3D0
+
+// [0x00480010] sub_00480010 (78 bytes)
+namespace lift_00480010 {
+extern bool ext_005631C0(double value, double epsilon);
+extern double mem_0093C2D8;
+
+// @name Unknown::AllComponentsPassTest_00480010
+// @class Unknown
+// @summary Returns true only if ext_005631C0 accepts all 16 floats of a 4x4 float block (rows of 4 at 0x10 stride), using epsilon mem_0093C2D8; otherwise false.
+// @field Unknown +0x00 float m00
+// @field Unknown +0x04 float m01
+// @field Unknown +0x08 float m02
+// @field Unknown +0x0C float m03
+// @field Unknown +0x10 float m10
+// @field Unknown +0x14 float m11
+// @field Unknown +0x18 float m12
+// @field Unknown +0x1C float m13
+// @field Unknown +0x20 float m20
+// @field Unknown +0x24 float m21
+// @field Unknown +0x28 float m22
+// @field Unknown +0x2C float m23
+// @field Unknown +0x30 float m30
+// @field Unknown +0x34 float m31
+// @field Unknown +0x38 float m32
+// @field Unknown +0x3C float m33
+bool fn_00480010(const float* self) {
+    const float* row = self;
+    for (int i = 0; i < 4; ++i) {
+        const float* elem = row;
+        for (int j = 0; j < 4; ++j) {
+            if (!ext_005631C0(static_cast<double>(*elem), mem_0093C2D8)) {
+                return false;
+            }
+            ++elem;
+        }
+        row += 4;
+    }
+    return true;
+}
+} // namespace lift_00480010
