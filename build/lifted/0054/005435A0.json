@@ -1,0 +1,33 @@
+{
+  "va": "0x005435A0",
+  "size": 40,
+  "orig_symbol": "sub_005435A0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "sub_005435A0",
+  "signature": "uint32_t __thiscall sub_005435A0(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Calls vtable+0x50(arg1, arg2) on this and clears byte fields at +0x91 and +0x94",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x91",
+      "type": "uint8_t",
+      "name": "field_0x91"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x94",
+      "type": "uint8_t",
+      "name": "field_0x94"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T14:28:44Z"
+}

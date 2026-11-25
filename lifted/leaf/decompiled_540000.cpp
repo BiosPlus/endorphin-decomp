@@ -1125,3 +1125,21 @@ void* __thiscall fn_00540F80(void* self) {
     return self;
 }
 } // namespace lift_00540F80
+
+// [0x005435A0]
+namespace lift_005435A0 {
+// @name sub_005435A0
+// @summary Calls vtable+0x50(arg1, arg2) on this and clears byte fields at +0x91 and +0x94
+// @field Unknown +0x00 void** vtable
+// @field Unknown +0x91 uint8_t field_0x91
+// @field Unknown +0x94 uint8_t field_0x94
+uint32_t __thiscall sub_005435A0(void* self, uint32_t arg1, uint32_t arg2) {
+    using VFunc = uint32_t(__thiscall*)(void*, uint32_t, uint32_t);
+    auto** vtable = *reinterpret_cast<void***>(self);
+    auto fn = reinterpret_cast<VFunc>(vtable[0x50 / sizeof(void*)]);
+    uint32_t res = fn(self, arg1, arg2);
+    lift_field<uint8_t>(self, 0x91) = 0;
+    lift_field<uint8_t>(self, 0x94) = 0;
+    return res;
+}
+} // namespace lift_005435A0
