@@ -1,0 +1,28 @@
+{
+  "va": "0x00458740",
+  "size": 70,
+  "orig_symbol": "SpinButtonStates::ClickedDownState::vfunc_3",
+  "src_path": "src/SpinButtonStates/ClickedDownState.cpp",
+  "lifted_path": "lifted/SpinButtonStates/ClickedDownState.cpp",
+  "name": "SpinButtonStates::ClickedDownState::vfunc_3",
+  "class": "SpinButtonStates::ClickedDownState",
+  "signature": "void fn_00458740(void* self, UINT arg)",
+  "summary": "Dispatches state arg 3 to the child object's vtable slot 1; for arg 2 restarts the owner's timer 3 with a 50 ms interval after killing timer 2.",
+  "fields": [
+    {
+      "class": "SpinButtonStates::ClickedDownState",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "SpinButtonStates::ClickedDownState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:23:45Z"
+}

@@ -10,8 +10,8 @@
 // Recovered field layout for SpinButtonStates::ClickedDownState:
 namespace lifted_layout {
 struct SpinButtonStates_ClickedDownState_Fields {
-    // +0x4   void*                    field_0x04  (evidence: 0x00458900)
-    // +0x8   void*                    field_0x08  (evidence: 0x00458790, 0x004587A0, 0x00458900)
+    // +0x4   void*                    field_0x04  (evidence: 0x00458740, 0x00458900)
+    // +0x8   void*                    field_0x08  (evidence: 0x00458740, 0x00458790, 0x004587A0, 0x00458900)
     // +0xC   void*                    field_0x0C  (evidence: 0x00458900)
 };
 } // namespace lifted_layout
