@@ -1,0 +1,22 @@
+{
+  "va": "0x0079DEC0",
+  "size": 64,
+  "orig_symbol": "sub_0079DEC0",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "Unknown::CheckSelectedSubobjectNonZero",
+  "class": "Unknown",
+  "signature": "uint8_t __fastcall fn_0079DEC0(void* self, int edx_unused, int selector)",
+  "summary": "Dispatches on a selector (stack arg): 0 checks *self, 1 checks *self+0x48, 2 checks *self+0x90; any other selector returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:09:32Z"
+}

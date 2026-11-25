@@ -454,3 +454,28 @@ DWORD fn_00798710(void* self) {
     return result;
 }
 } // namespace lift_00798710
+
+// [0x0079DEC0] sub_0079DEC0 (64 bytes)
+namespace lift_0079DEC0 {
+// Known callee 0x007148E0: HasAnyNonZeroByteInFirst6 (Returns 1 if any of the six bytes at self[0..5] is nonzero, otherwise 0.)
+extern uint8_t __fastcall ext_007148E0(void* self);
+
+// @name Unknown::CheckSelectedSubobjectNonZero
+// @class Unknown
+// @summary Dispatches on a selector (stack arg): 0 checks *self, 1 checks *self+0x48, 2 checks *self+0x90; any other selector returns 0.
+// @field Unknown +0x00 void* field_0x00
+uint8_t __fastcall fn_0079DEC0(void* self, int edx_unused, int selector) {
+    (void)edx_unused;
+    void* base = lift_field<void*>(self, 0);
+    switch (selector) {
+    case 0:
+        return ext_007148E0(base);
+    case 1:
+        return ext_007148E0(static_cast<uint8_t*>(base) + 0x48);
+    case 2:
+        return ext_007148E0(static_cast<uint8_t*>(base) + 0x90);
+    default:
+        return 0;
+    }
+}
+} // namespace lift_0079DEC0
