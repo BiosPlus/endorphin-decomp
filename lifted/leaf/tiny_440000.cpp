@@ -775,3 +775,22 @@ uint32_t fn_00447520(void* self) {
     return fn(self);                                  // jmp eax (tail call, ecx = self)
 }
 } // namespace lift_00447520
+
+// [0x004474F0]
+namespace lift_004474F0 {
+// @name TailCallFnPtrAtOffset4
+// @summary Forwards the call (this + stack arg) to the function pointer stored at this+0x04; returns 0 if it is null.
+// @field Unknown +0x04 void* field_0x04
+
+// Original asm: mov eax,[ecx+4]; test eax,eax; je -> ret 4; jmp eax.
+// The jmp is a tail call that passes this (ecx) and the caller's stack argument
+// through unchanged. Portably this is a forwarding call. When the pointer is null,
+// eax is 0 and the single stack argument is cleaned up by the ret 4.
+uint32_t fn_004474F0(void* self, uint32_t arg) {
+    void* target = lift_field<void*>(self, 0x4);
+    if (target == nullptr) {
+        return 0;
+    }
+    return reinterpret_cast<uint32_t(__thiscall*)(void*, uint32_t)>(target)(self, arg);
+}
+} // namespace lift_004474F0

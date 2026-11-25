@@ -3987,6 +3987,12 @@
     "summary": "Forwards a one-DWORD-argument thiscall to the function pointer stored in the first dword of this; no-op if that pointer is null.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x004474F0": {
+    "name": "TailCallFnPtrAtOffset4",
+    "signature": "uint32_t fn_004474F0(void* self, uint32_t arg)",
+    "summary": "Forwards the call (this + stack arg) to the function pointer stored at this+0x04; returns 0 if it is null.",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x00447510": {
     "name": "sub_00447510",
     "signature": "void __thiscall sub_00447510(void* self, uint32_t arg1)",

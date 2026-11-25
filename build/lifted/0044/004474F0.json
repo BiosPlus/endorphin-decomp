@@ -1,0 +1,21 @@
+{
+  "va": "0x004474F0",
+  "size": 12,
+  "orig_symbol": "sub_004474F0",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "TailCallFnPtrAtOffset4",
+  "signature": "uint32_t fn_004474F0(void* self, uint32_t arg)",
+  "summary": "Forwards the call (this + stack arg) to the function pointer stored at this+0x04; returns 0 if it is null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:20:45Z"
+}
