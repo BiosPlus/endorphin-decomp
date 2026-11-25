@@ -39425,6 +39425,13 @@
     "summary": "Converts a float by a mode selected at self+0x0C: mode 1 multiplies by pi/180 (degrees to radians), mode 2 divides by 360 (degrees to turns), any other mode returns the input unchanged.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x00678280": {
+    "name": "Unknown::~Unknown",
+    "class": "Unknown",
+    "signature": "void fn_00678280(void* self)",
+    "summary": "Destructor: sets the derived vtable, destroys the string member at +0x04, then runs the base-class reset via sub_0065C660.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00678380": {
     "name": "XMLConverter::vfunc_0",
     "class": "XMLConverter",

@@ -752,3 +752,23 @@ void __fastcall fn_0067B450(void* self) {
     ext_0065C620(obj + 0x18);
 }
 } // namespace lift_0067B450
+
+// [0x00678280] sub_00678280 (83 bytes)
+namespace lift_00678280 {
+// Known callee 0x0065C660: sub_0065C660 (Stores address of mem_00928E8C into field at offset +0x0.)
+extern void ext_0065C660(void* self);
+// Import slot at 0x00924FF4 (.rdata constant 0x00628FF0): destructor thunk for the std::string member.
+extern const uint32_t mem_00924FF4;
+extern void ext_00628FF0(void* self);
+
+// @name Unknown::~Unknown
+// @class Unknown
+// @summary Destructor: sets the derived vtable, destroys the string member at +0x04, then runs the base-class reset via sub_0065C660.
+// @field Unknown +0x00 uint32_t vptr
+// @field Unknown +0x04 uint8_t field_0x04
+void fn_00678280(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x0098C1F4u;
+    ext_00628FF0(static_cast<uint8_t*>(self) + 0x04);
+    ext_0065C660(self);
+}
+} // namespace lift_00678280
