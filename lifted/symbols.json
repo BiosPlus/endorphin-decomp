@@ -19428,6 +19428,12 @@
     "summary": "Gets a float from a node's object (or a default global object) via vtable slot 1, then passes it with the input float to vtable slot 5 of self.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x0051A210": {
+    "name": "GetOnceInitString_0051A210",
+    "signature": "extern uint32_t mem_00AEC728;   // once-init guard flag (bit 0) extern uint8_t mem_00AEC70C[];  // static object storage (size not recovered) void* fn_0051A210(void)",
+    "summary": "One-time guarded initializer for the global at 0x00AEC70C; on first call builds it via ext_0066AD10 and registers its teardown via ext_006A6C87; later calls only return its address.",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x0051A400": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::RealChannel, float, \u0026public: float __thiscall NMData::RealChannel::getValue(void) const, float, \u0026public: void __thiscall NMData::RealChannel::setKeyFrame(float)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::RealChannel, float, \u0026public: float __thiscall NMData::RealChannel::getValue(void) const, float, \u0026public: void __thiscall NMData::RealChannel::setKeyFrame(float)\u003e",
