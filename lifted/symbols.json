@@ -5314,6 +5314,12 @@
     "summary": "If field_0x64 is non-null, calls its vtable[0xC0] method and passes the boolean result to arg1-\u003evtable[0x4].",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044B4E0": {
+    "name": "sub_0044B4E0",
+    "signature": "extern \"C\" void __thiscall fn_0044B4E0(uint8_t* self)",
+    "summary": "Initializes a local MFC object with this, optionally notifies global 0x00ACDB40, and invokes vtable+0x154 on field_0x64 if non-null.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044B560": {
     "name": "Unknown::flushOptionalChildAndClear",
     "class": "Unknown",
@@ -76416,6 +76422,12 @@
     "name": "allocSyncObject",
     "signature": "uint32_t __cdecl fn_0086CFB0(uint32_t initial_state)",
     "summary": "Allocates and initializes a 16-byte synchronization/header object.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
+  "0x0086D0A0": {
+    "name": "memStreamRead",
+    "signature": "uint32_t fn_0086D0A0(void* dst, uint32_t elemSize, uint32_t count, void* stream)",
+    "summary": "Reads up to count elements of size elemSize from a memory stream into dst, clamping to available bytes and advancing stream position.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
   "0x0086D110": {

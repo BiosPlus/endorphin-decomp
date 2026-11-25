@@ -1244,3 +1244,37 @@ void sub_00869EC0(uint8_t* dst, int32_t dst_len, const uint32_t* src, uint32_t s
     }
 }
 } // namespace lift_00869EC0
+
+// [0x0086D0A0]
+namespace lift_0086D0A0 {
+extern void* ext_00859780(void* dst, const void* src, uint32_t n);
+
+// @name memStreamRead
+// @summary Reads up to count elements of size elemSize from a memory stream into dst, clamping to available bytes and advancing stream position.
+// @field MemStream +0x00 uint8_t* data (or MemStream* indirect descriptor when flags & 0x4)
+// @field MemStream +0x04 uint32_t size
+// @field MemStream +0x08 uint32_t pos
+// @field MemStream +0x14 uint8_t flags
+uint32_t fn_0086D0A0(void* dst, uint32_t elemSize, uint32_t count, void* stream) {
+    uint8_t* s = static_cast<uint8_t*>(stream);
+    uint8_t* bufDesc = s;
+    if ((s[0x14] & 0x4) != 0) {
+        bufDesc = *reinterpret_cast<uint8_t**>(s);
+    }
+
+    uint32_t pos = *reinterpret_cast<uint32_t*>(s + 0x08);
+    uint32_t remaining = *reinterpret_cast<uint32_t*>(bufDesc + 0x04) - pos;
+    uint32_t requestedBytes = elemSize * count;
+    uint32_t actualCount = count;
+    if (requestedBytes > remaining) {
+        actualCount = remaining / elemSize;
+    }
+
+    uint32_t bytesToCopy = actualCount * elemSize;
+    uint8_t* src = *reinterpret_cast<uint8_t**>(bufDesc) + pos;
+    ext_00859780(dst, src, bytesToCopy);
+    *reinterpret_cast<uint32_t*>(s + 0x08) = pos + bytesToCopy;
+
+    return actualCount;
+}
+} // namespace lift_0086D0A0
