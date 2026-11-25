@@ -10,6 +10,8 @@
 // Recovered field layout for SelectionTool:
 namespace lifted_layout {
 struct SelectionTool_Fields {
+    // +0x4   float[16]                field_0x04  (evidence: 0x0053F6C0)
     // +0x88  void*                    field_0x88  (evidence: 0x0053F660)
+    // +0x98  void*                    field_0x98  (evidence: 0x0053F6C0)
 };
 } // namespace lifted_layout

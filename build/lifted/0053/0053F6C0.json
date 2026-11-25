@@ -1,0 +1,28 @@
+{
+  "va": "0x0053F6C0",
+  "size": 113,
+  "orig_symbol": "SelectionTool::vfunc_31",
+  "src_path": "src/classes/SelectionTool.cpp",
+  "lifted_path": "lifted/classes/SelectionTool.cpp",
+  "name": "SelectionTool::vfunc_31",
+  "class": "SelectionTool",
+  "signature": "void fn_0053F6C0(void* self, uint32_t render_mode, uint32_t arg1)",
+  "summary": "Renders the selection tool's subobject at +0x98 with its transform matrix when not in GL_SELECT mode and sub_005434C0 returns 0",
+  "fields": [
+    {
+      "class": "SelectionTool",
+      "offset": "+0x4",
+      "type": "float[16]",
+      "name": "field_0x04"
+    },
+    {
+      "class": "SelectionTool",
+      "offset": "+0x98",
+      "type": "void*",
+      "name": "field_0x98"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:36:52Z"
+}

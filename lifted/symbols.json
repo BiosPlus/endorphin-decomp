@@ -25681,6 +25681,13 @@
     "summary": "Constructs the object, initializes base and embedded subobject, and invokes subobject virtual init.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x0054C640": {
+    "name": "Container::removePointer",
+    "class": "Container",
+    "signature": "void __thiscall fn_0054C640(void* self, void* target)",
+    "summary": "Finds a pointer in the vector at +0x14 and removes it via Vector::removePointerAt if present.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x0054C6C0": {
     "name": "RenderableList::vfunc_0",
     "class": "RenderableList",
