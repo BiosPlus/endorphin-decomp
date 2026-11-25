@@ -1600,3 +1600,24 @@ void __thiscall sub_006D66A0(void* self) {
     lift_field<uint8_t>(self, 0x100) = 0;
 }
 } // namespace lift_006D66A0
+
+// [0x006DE660]
+namespace lift_006DE660 {
+// @name getItemAt
+// @summary Bounds-checked element accessor using virtual count method at vtable +0x14
+// @field Object +0x00 void** vtable
+// @field Object +0x30 uint32_t* field_0x30
+uint32_t __thiscall sub_006DE660(void* self, int32_t index) {
+    if (index < 0) {
+        return 0;
+    }
+    using CountFn = int32_t (__thiscall*)(void*);
+    void** vtable = lift_field<void**>(self, 0x00);
+    int32_t count = reinterpret_cast<CountFn>(vtable[0x14 / sizeof(void*)])(self);
+    if (index >= count) {
+        return 0;
+    }
+    uint32_t* items = lift_field<uint32_t*>(self, 0x30);
+    return items[index];
+}
+} // namespace lift_006DE660
