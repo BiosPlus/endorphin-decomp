@@ -32747,6 +32747,13 @@
     "summary": "Runs the base constructor, installs vtable 0x009793d4, and zeroes three float fields at +0x40, +0x44, +0x48. Returns this.",
     "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
+  "0x0063D970": {
+    "name": "Class_InitVtableAndZeroFloats_0063D970",
+    "class": "UnknownClass",
+    "signature": "void* fn_0063D970(void* self)",
+    "summary": "Runs the base constructor (ext_0062CD30) on this, installs vtable 0x00979284, zeroes the floats at +0x3c, +0x40 and +0x44, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063DAB0": {
     "name": "sub_0063DAB0_init",
     "class": "\u003cClassName\u003e (unknown)",

@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_630000.cpp
 #include "lift_compat.h"
+#include <cstring>
 
 // [0x00630E60]
 namespace lift_00630E60 {
@@ -194,3 +195,32 @@ void* fn_00630540(void* self) {
     return first;
 }
 } // namespace lift_00630540
+
+// [0x0063D970] sub_0063D970 (29 bytes)
+namespace lift_0063D970 {
+// Known callee 0x0062CD30: sub_0062CD30_ctor (Initializes object vtable to 0x009791a4 and zeroes two 3-dword blocks at +0x08 and +0x2c.)
+extern std::uint32_t ext_0062CD30(void* self);
+
+// @name Class_InitVtableAndZeroFloats_0063D970
+// @class UnknownClass
+// @summary Runs the base constructor (ext_0062CD30) on this, installs vtable 0x00979284, zeroes the floats at +0x3c, +0x40 and +0x44, and returns this.
+// @field UnknownClass +0x00 void* vtable
+// @field UnknownClass +0x3c float field_0x3c
+// @field UnknownClass +0x40 float field_0x40
+// @field UnknownClass +0x44 float field_0x44
+void* fn_0063D970(void* self) {
+    ext_0062CD30(self);
+
+    auto* base = static_cast<unsigned char*>(self);
+
+    const std::uint32_t vtable = 0x00979284u;
+    std::memcpy(base + 0x00, &vtable, sizeof(vtable));
+
+    const float zero = 0.0f;
+    std::memcpy(base + 0x44, &zero, sizeof(zero));
+    std::memcpy(base + 0x40, &zero, sizeof(zero));
+    std::memcpy(base + 0x3c, &zero, sizeof(zero));
+
+    return self;
+}
+} // namespace lift_0063D970
