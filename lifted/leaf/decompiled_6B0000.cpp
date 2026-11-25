@@ -827,3 +827,31 @@ int32_t fn_006B7420(void* self, int32_t arg) {
     return 0;
 }
 } // namespace lift_006B7420
+
+// [0x006B87B0] sub_006B87B0 (60 bytes)
+namespace lift_006B87B0 {
+extern BOOL(__stdcall* mem_0092561C)(HWND hwnd);
+extern LRESULT(__stdcall* mem_00925694)(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
+extern void __thiscall ext_006A5E72(void* self, DWORD arg);
+
+// @name SubobjectWindowRedrawNotify
+// @summary If the window handle held in the embedded subobject at +0x5C is valid, send WM_SETREDRAW-style message (0x184) to the window at +0x7C, then forward to the subobject's handler.
+// @field UnknownClass +0x7C HWND field_0x7C
+void fn_006B87B0(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    auto* sub = base + 0x5C;
+
+    HWND subHwnd = nullptr;
+    if (sub != nullptr) {
+        subHwnd = *reinterpret_cast<HWND*>(sub + 0x20);
+    }
+
+    if (mem_0092561C(subHwnd) == FALSE) {
+        return;
+    }
+
+    HWND hwnd = *reinterpret_cast<HWND*>(base + 0x7C);
+    mem_00925694(hwnd, 0x184, 0, 0);
+    ext_006A5E72(sub, 0);
+}
+} // namespace lift_006B87B0

@@ -1,0 +1,21 @@
+{
+  "va": "0x006B87B0",
+  "size": 60,
+  "orig_symbol": "sub_006B87B0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "SubobjectWindowRedrawNotify",
+  "signature": "void fn_006B87B0(void* self)",
+  "summary": "If the window handle held in the embedded subobject at +0x5C is valid, send WM_SETREDRAW-style message (0x184) to the window at +0x7C, then forward to the subobject's handler.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x7C",
+      "type": "HWND",
+      "name": "field_0x7C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:55:20Z"
+}

@@ -43857,6 +43857,12 @@
     "summary": "If the argument is not the address of this+0x5C, forward the call to MFC80 ord_1903; otherwise do nothing.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006B87B0": {
+    "name": "SubobjectWindowRedrawNotify",
+    "signature": "void fn_006B87B0(void* self)",
+    "summary": "If the window handle held in the embedded subobject at +0x5C is valid, send WM_SETREDRAW-style message (0x184) to the window at +0x7C, then forward to the subobject's handler.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B8A90": {
     "name": "NMCAutoCompleteList::vfunc_1",
     "class": "NMCAutoCompleteList",
