@@ -374,3 +374,57 @@ void fn_004AEFF0(void* self) {
     lift_field<uint32_t>(self, 0x0C) = 0;
 }
 } // namespace lift_004AEFF0
+
+// [0x004A73F0] sub_004A73F0 (73 bytes)
+namespace lift_004A73F0 {
+extern int mem_00924EF4;
+
+// @name Unknown::FindNodeByStringKey
+// @class Unknown
+// @summary Walks a binary search tree (head sentinel at holder->field_0x04) comparing each node's string key at +0x0C against the argument; returns the last left-branch node visited (or the holder when the tree is empty).
+// @field Unknown +0x04 uint32_t field_0x04
+// @field UnknownHolder +0x04 uint32_t field_0x04
+// @field UnknownNode +0x00 uint32_t field_0x00
+// @field UnknownNode +0x08 uint32_t field_0x08
+// @field UnknownNode +0x0C uint8_t field_0x0C
+// @field UnknownNode +0xAD uint8_t field_0xAD
+
+namespace {
+
+// Pointer-sized address in the 32-bit image space.
+inline uint8_t* at(uint32_t addr) {
+    return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(addr));
+}
+
+// std::string equality routine, resolved through the import slot at 0x00924EF4.
+using StringEqFn = bool (*)(const void* lhs, const void* rhs);
+
+inline bool isSentinel(uint32_t node) {
+    return lift_field<uint8_t>(at(node), 0xAD) != 0;
+}
+
+}  // namespace
+
+void* fn_004A73F0(void* self, const void* key) {
+    uint32_t holder = lift_field<uint32_t>(self, 0x04);
+    uint32_t node = lift_field<uint32_t>(at(holder), 0x04);
+
+    if (isSentinel(node)) {
+        return at(holder);
+    }
+
+    auto eq = reinterpret_cast<StringEqFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924EF4)));
+
+    do {
+        if (eq(at(node) + 0x0C, key)) {
+            node = lift_field<uint32_t>(at(node), 0x08);
+        } else {
+            holder = node;
+            node = lift_field<uint32_t>(at(node), 0x00);
+        }
+    } while (!isSentinel(node));
+
+    return at(holder);
+}
+} // namespace lift_004A73F0
