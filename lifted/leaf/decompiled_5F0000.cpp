@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 #include <string>
 #include <new>
+#include <cstdint>
 
 // [0x005FEFD0] sub_005FEFD0 (45 bytes)
 namespace lift_005FEFD0 {
@@ -932,3 +933,46 @@ int fn_005F3E70(uintptr_t a1, uintptr_t a2, uintptr_t a3, uintptr_t a4, uintptr_
     return 1;
 }
 } // namespace lift_005F3E70
+
+// [0x005FF290]
+namespace lift_005FF290 {
+// @name Unknown::create_005FF290
+// @summary Allocates a 0x40-byte object, initializes it via ext_00627240 with four 32-bit arguments, and sets its vtable to 0x0096EB5C.
+// @field Unknown +0x00 uint32_t vtable
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_00627240(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+void* fn_005FF290(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x40);
+    if (!obj) {
+        return nullptr;
+    }
+    ext_00627240(obj, arg0, arg1, arg2, arg3);
+    *reinterpret_cast<uint32_t*>(obj) = 0x0096EB5C;
+    return obj;
+}
+} // namespace lift_005FF290
+
+// [0x005FF300]
+namespace lift_005FF300 {
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_00627240(void* self, uint32_t arg0);
+
+// @name allocAndInitObject_005FF300
+// @summary Allocates 0x40 bytes, runs base initializer, and sets vtable to 0x0096EBCC.
+// @field Unknown +0x00 uint32_t vtable
+void* fn_005FF300(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    (void)arg1;
+    (void)arg2;
+    (void)arg3;
+    void* obj = ext_006A5C62(0x40);
+    if (!obj) {
+        return nullptr;
+    }
+    ext_00627240(obj, arg0);
+    *reinterpret_cast<uint32_t*>(obj) = 0x0096EBCCu;
+    return obj;
+}
+} // namespace lift_005FF300

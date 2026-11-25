@@ -1,0 +1,22 @@
+{
+  "va": "0x005FF290",
+  "size": 112,
+  "orig_symbol": "sub_005FF290",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "Unknown::create_005FF290",
+  "class": "Unknown",
+  "signature": "void* fn_005FF290(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Allocates a 0x40-byte object, initializes it via ext_00627240 with four 32-bit arguments, and sets its vtable to 0x0096EB5C.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T05:05:25Z"
+}

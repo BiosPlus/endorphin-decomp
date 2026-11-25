@@ -38208,6 +38208,12 @@
     "summary": "Allocates a 0x40-byte object, initializes it via ext_00627240 with four 32-bit arguments, and sets its vtable to 0x0096EB5C.",
     "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
+  "0x005FF300": {
+    "name": "allocAndInitObject_005FF300",
+    "signature": "void* fn_005FF300(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Allocates 0x40 bytes, runs base initializer, and sets vtable to 0x0096EBCC.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x00602EB0": {
     "name": "Effector::vfunc_25",
     "class": "Effector",
