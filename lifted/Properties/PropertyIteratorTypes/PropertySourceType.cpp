@@ -44,3 +44,25 @@ void* fn_00681BD0(void* a, void** b, uintptr_t c) {
     return a;
 }
 } // namespace lift_00681BD0
+
+// [0x00681B90] Properties::PropertyIteratorTypes::PropertySourceType::vfunc_2 (60 bytes)
+namespace lift_00681B90 {
+// Known callee 0x0046F7D0: sub_00467320 (Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).)
+void ext_0046F7D0(void* arg0);
+
+// @name Properties::PropertyIteratorTypes::PropertySourceType::vfunc_2
+// @class Properties::PropertyIteratorTypes::PropertySourceType
+// @summary If the pointer stored at objRef is non-null, calls its vtable slot 14 with (self, arg3); otherwise calls ext_0046F7D0(self). Returns self.
+// (Stack-argument count is 3 dwords per the 'ret 0xc' epilogue. No fields of self are accessed, so no @field lines.)
+void* fn_00681B90(void* self, void** objRef, uint32_t arg3) {
+    void* obj = *objRef;
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        auto slot = reinterpret_cast<void (*)(void*, void*, uint32_t)>(vtbl[14]);
+        slot(obj, self, arg3);
+    } else {
+        ext_0046F7D0(self);
+    }
+    return self;
+}
+} // namespace lift_00681B90

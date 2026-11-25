@@ -36834,6 +36834,13 @@
     "summary": "Forwards to virtual slot 15 of the source object when *src is non-null; otherwise fills out via ext_00671F30. Returns out.",
     "lifted_path": "lifted/Properties/PropertyIteratorTypes/PropertySourceType.cpp"
   },
+  "0x00681B90": {
+    "name": "Properties::PropertyIteratorTypes::PropertySourceType::vfunc_2",
+    "class": "Properties::PropertyIteratorTypes::PropertySourceType",
+    "signature": "void* fn_00681B90(void* self, void** objRef, uint32_t arg3)",
+    "summary": "If the pointer stored at objRef is non-null, calls its vtable slot 14 with (self, arg3); otherwise calls ext_0046F7D0(self). Returns self.",
+    "lifted_path": "lifted/Properties/PropertyIteratorTypes/PropertySourceType.cpp"
+  },
   "0x00681BD0": {
     "name": "Properties::PropertyIteratorTypes::PropertySourceType::vfunc_1",
     "class": "Properties::PropertyIteratorTypes::PropertySourceType",

@@ -1,0 +1,14 @@
+{
+  "va": "0x00681B90",
+  "size": 60,
+  "orig_symbol": "Properties::PropertyIteratorTypes::PropertySourceType::vfunc_2",
+  "src_path": "src/Properties/PropertyIteratorTypes/PropertySourceType.cpp",
+  "lifted_path": "lifted/Properties/PropertyIteratorTypes/PropertySourceType.cpp",
+  "name": "Properties::PropertyIteratorTypes::PropertySourceType::vfunc_2",
+  "class": "Properties::PropertyIteratorTypes::PropertySourceType",
+  "signature": "void* fn_00681B90(void* self, void** objRef, uint32_t arg3)",
+  "summary": "If the pointer stored at objRef is non-null, calls its vtable slot 14 with (self, arg3); otherwise calls ext_0046F7D0(self). Returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:54:44Z"
+}
