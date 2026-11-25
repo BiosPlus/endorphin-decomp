@@ -17407,6 +17407,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType\u003cRuntimeEngine, int, getNumTicksToRun, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004ED640": {
+    "name": "Unknown::ctor_004ED640",
+    "class": "Unknown",
+    "signature": "static constexpr uint32_t kVtblA       = 0x009451B4; // stored at +0x00 (overwritten by base ctor's view) static constexpr uint32_t kVtblB       = 0x00945184; // stored at +0x04 static constexpr uint32_t kVtblC_first = 0x009443BC; // stored at +0x18 before string ctor static constexpr uint32_t kVtblC_final = 0x00945174; // stored at +0x18 after string ctor extern \"C\" void* __thiscall fn_004ED640(void* self)",
+    "summary": "Object constructor: runs base ctor ext_00692B50, installs three vtable pointers, constructs an embedded std::string at +0x1c, zeroes five trailing fields, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004ED7C0": {
     "name": "MetaBodyJointSelection::vfunc_0_off_4",
     "class": "MetaBodyJointSelection",
