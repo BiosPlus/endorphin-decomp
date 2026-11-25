@@ -13783,6 +13783,12 @@
     "summary": "If id != 0x94, forwards to SeverEventData::vfunc_14 and returns arg1; if id == 0x94, calls TransformInterface vfunc[3] on the global, post-processes the result, and returns the id as the object pointer.",
     "lifted_path": "lifted/NMData/ForceEventData.cpp"
   },
+  "0x004C6360": {
+    "name": "storeValueAndStaticObjectPtr",
+    "signature": "void fn_004C6360(uint32_t* dst, uint32_t value)",
+    "summary": "Calls initStaticObjectOnce_004C6010 and writes its result and a second argument into the first argument's buffer.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C6590": {
     "name": "NMData::ForceEventData::vfunc_3_off_158",
     "class": "NMData::ForceEventData",

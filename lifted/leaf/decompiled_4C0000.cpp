@@ -602,3 +602,18 @@ void storeStaticObjectPair_004CFDE0(DWORD* out, DWORD value) {
     out[1] = obj;
 }
 } // namespace lift_004CFDE0
+
+// [0x004C6360]
+namespace lift_004C6360 {
+// @name storeValueAndStaticObjectPtr
+// @summary Calls initStaticObjectOnce_004C6010 and writes its result and a second argument into the first argument's buffer.
+
+extern void* ext_004C6010(void);
+
+// dst[0] = value; dst[1] = (uint32_t)initStaticObjectOnce_004C6010();
+void fn_004C6360(uint32_t* dst, uint32_t value) {
+    void* obj = ext_004C6010();
+    dst[0] = value;
+    dst[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_004C6360
