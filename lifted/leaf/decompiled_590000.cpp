@@ -511,3 +511,27 @@ void fn_00594140(void* self) {
 }
 } // namespace lift_004757F0
 } // namespace lift_00594140
+
+// [0x00593D40] sub_00593D40 (78 bytes)
+namespace lift_00593D40 {
+// @name Unknown::SelectByKeyWithRecursion_00593D40
+// @summary Switch on the dword at *p: 1 returns a3, 2 returns a2, 3 recurses with the key forced to 2 (yielding a2), anything else returns a4. Stdcall, callee pops 0x10.
+// @field none (no struct field offsets accessed)
+extern uint32_t fn_00593D40(uint32_t* p, uint32_t a2, uint32_t a3, uint32_t a4) {
+    uint32_t key = *p;
+    switch (key) {
+    case 1:
+        return a3;
+    case 2:
+        return a2;
+    case 3: {
+        // Original code pushes a pointer to the key slot, stores 2 into it,
+        // and re-enters with the same remaining arguments.
+        uint32_t forced_key = 2;
+        return fn_00593D40(&forced_key, a2, a3, a4);
+    }
+    default:
+        return a4;
+    }
+}
+} // namespace lift_00593D40

@@ -1,0 +1,14 @@
+{
+  "va": "0x00593D40",
+  "size": 78,
+  "orig_symbol": "sub_00593D40",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "Unknown::SelectByKeyWithRecursion_00593D40",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint32_t fn_00593D40(uint32_t* p, uint32_t a2, uint32_t a3, uint32_t a4)",
+  "summary": "Switch on the dword at *p: 1 returns a3, 2 returns a2, 3 recurses with the key forced to 2 (yielding a2), anything else returns a4. Stdcall, callee pops 0x10.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:46:02Z"
+}
