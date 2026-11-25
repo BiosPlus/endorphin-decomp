@@ -1438,3 +1438,19 @@ void copyVec3To160(unsigned char* dst, const float* src) {
     out[2] = src[2];
 }
 } // namespace lift_007C5B70
+
+// [0x007C5C00] sub_007C5C00 (35 bytes)
+namespace lift_007C5C00 {
+// @name copyVec3To190
+// @class UnknownClass
+// @summary Copies three floats from src into self at byte offsets 0x190, 0x194, 0x198.
+// @field UnknownClass +0x190 float field_0x190
+// @field UnknownClass +0x194 float field_0x194
+// @field UnknownClass +0x198 float field_0x198
+void fn_007C5C00(unsigned char* self, const float* src) {
+    float* out = reinterpret_cast<float*>(self + 0x190);
+    out[0] = src[0];
+    out[1] = src[1];
+    out[2] = src[2];
+}
+} // namespace lift_007C5C00

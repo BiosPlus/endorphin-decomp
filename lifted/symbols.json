@@ -69280,6 +69280,13 @@
     "summary": "Copies three floats from src into dst at byte offsets 0x160, 0x164, 0x168.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007C5C00": {
+    "name": "copyVec3To190",
+    "class": "UnknownClass",
+    "signature": "void fn_007C5C00(unsigned char* self, const float* src)",
+    "summary": "Copies three floats from src into self at byte offsets 0x190, 0x194, 0x198.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C5C30": {
     "name": "setFields_0x1e4_0x1f4",
     "signature": "void sub_007C5C30(void* self, uint32_t val1, uint32_t val2)",
