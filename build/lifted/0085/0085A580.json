@@ -1,0 +1,28 @@
+{
+  "va": "0x0085A580",
+  "size": 80,
+  "orig_symbol": "sub_0085A580",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "BlockArray::GrowAndAppend",
+  "class": "BlockArray",
+  "signature": "int32_t fn_0085A580(void* self)",
+  "summary": "Grows the block array by one 100-byte element via LocalBlockResize, resets the new trailing block, and returns the old count (or -1 on allocation failure).",
+  "fields": [
+    {
+      "class": "BlockArray",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "BlockArray",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:58:11Z"
+}

@@ -62440,6 +62440,13 @@
     "summary": "Grows the 8-byte-entry block by one slot via LocalBlockResize, zero-fills the new entry and writes -1 into its second dword; returns the old count, or 0xFFFFFFFF if the resize fails.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085A580": {
+    "name": "BlockArray::GrowAndAppend",
+    "class": "BlockArray",
+    "signature": "int32_t fn_0085A580(void* self)",
+    "summary": "Grows the block array by one 100-byte element via LocalBlockResize, resets the new trailing block, and returns the old count (or -1 on allocation failure).",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085A5D0": {
     "name": "Block::ResetDefaults",
     "class": "Block",

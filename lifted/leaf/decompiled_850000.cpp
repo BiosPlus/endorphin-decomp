@@ -1029,3 +1029,38 @@ void fn_0085E420(void* dst, const void* src, size_t n) {
     }
 }
 } // namespace lift_0085E420
+
+// [0x0085A580] sub_0085A580 (80 bytes)
+namespace lift_0085A580 {
+// Known callee 0x008596F0: LocalBlockResize (Allocates, reallocates, or frees a LocalAlloc block depending on whether the handle and size arguments are zero.)
+extern uint32_t ext_008596F0(uint32_t handle, uint32_t size);
+// Known callee 0x0085A5D0: Block::ResetDefaults (Zeroes a 100-byte block, clears its flag byte, sets most dword fields to -1, and sets the dword at +0x2C to 1.)
+extern void ext_0085A5D0(void* block);
+
+// @name BlockArray::GrowAndAppend
+// @class BlockArray
+// @summary Grows the block array by one 100-byte element via LocalBlockResize, resets the new trailing block, and returns the old count (or -1 on allocation failure).
+// @field BlockArray +0x04 int32_t field_0x04
+// @field BlockArray +0x10 uint32_t field_0x10
+int32_t fn_0085A580(void* self) {
+    int32_t result = -1;
+
+    const int32_t count = lift_field<int32_t>(self, 0x04);
+    const uint32_t handle = lift_field<uint32_t>(self, 0x10);
+    const uint32_t newSize = static_cast<uint32_t>(count + 1) * 100u;
+
+    const uint32_t newHandle = ext_008596F0(handle, newSize);
+    if (newHandle != 0) {
+        result = count;
+        lift_field<uint32_t>(self, 0x10) = newHandle;
+
+        void* elem = reinterpret_cast<void*>(
+            static_cast<uintptr_t>(newHandle) + static_cast<uintptr_t>(count) * 100u);
+        ext_0085A5D0(elem);
+
+        lift_field<int32_t>(self, 0x04) = lift_field<int32_t>(self, 0x04) + 1;
+    }
+
+    return result;
+}
+} // namespace lift_0085A580
