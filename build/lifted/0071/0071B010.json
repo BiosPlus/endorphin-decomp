@@ -1,0 +1,13 @@
+{
+  "va": "0x0071B010",
+  "size": 16,
+  "orig_symbol": "sub_0071B010",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "ForwardToSubobject10",
+  "signature": "void* fn_0071B010(void* self, uint32_t arg1)",
+  "summary": "Calls sub_007873F0 on the embedded subobject at this+0x10 with one argument.",
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@low",
+  "lifted_at": "2026-11-25T11:16:21Z"
+}

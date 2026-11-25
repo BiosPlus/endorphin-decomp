@@ -62405,6 +62405,12 @@
     "summary": "Returns constant 0x7.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071B010": {
+    "name": "ForwardToSubobject10",
+    "signature": "void* fn_0071B010(void* self, uint32_t arg1)",
+    "summary": "Calls sub_007873F0 on the embedded subobject at this+0x10 with one argument.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071B020": {
     "name": "Unknown::CallArgWithSubObjectAddr0x10",
     "class": "Unknown",

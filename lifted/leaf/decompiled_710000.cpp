@@ -1943,3 +1943,19 @@ extern double __fastcall fn_00711BA0(void* self) {
     return lift_field<double>(sub, 0x18);
 }
 } // namespace lift_00711BA0
+
+// [0x0071B010]
+namespace lift_0071B010 {
+extern void* ext_007873F0(void* self, uint32_t arg1);
+extern uint32_t ext_006FB690(void* self, uint32_t a, uint32_t b);
+extern uint32_t ext_006FB6B0(void* self, uint32_t a, uint32_t b);
+
+// @name ForwardToSubobject10
+// @summary Calls sub_007873F0 on the embedded subobject at this+0x10 with one argument.
+void* fn_0071B010(void* self, uint32_t arg1) {
+    // ext_006FB690 / ext_006FB6B0 are not called by this function's asm (only reached via 007873F0).
+    (void)&ext_006FB690;
+    (void)&ext_006FB6B0;
+    return ext_007873F0(reinterpret_cast<char*>(self) + 0x10, arg1);
+}
+} // namespace lift_0071B010
