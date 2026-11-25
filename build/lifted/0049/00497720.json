@@ -1,0 +1,28 @@
+{
+  "va": "0x00497720",
+  "size": 91,
+  "orig_symbol": "sub_00497720",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "Vec2::midpoint",
+  "class": "Vec2",
+  "signature": "uint32_t __thiscall sub_00497720(uint32_t this_ptr, uint32_t out_ptr, uint32_t other_ptr)",
+  "summary": "Computes the midpoint between this 2D vector and another, writing to out and returning out.",
+  "fields": [
+    {
+      "class": "Vec2",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "x"
+    },
+    {
+      "class": "Vec2",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "y"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:30:12Z"
+}
