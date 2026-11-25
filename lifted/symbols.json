@@ -36603,6 +36603,13 @@
     "summary": "Pure jump thunk forwarding to AnimatableTransform::vfunc_29.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00611580": {
+    "name": "NMData::HingeConstraint::vfunc_69",
+    "class": "NMData::HingeConstraint",
+    "signature": "extern \"C\" int mem_00924FE4; // MSVCP80 basic_string(const char*) import slot (ctor thunk) std::string* fn_00611580(std::string* out, int which)",
+    "summary": "Constructs a std::string in caller-provided storage from one of two global C-string pointers (selected by flag) or a literal default; returns the storage pointer (__stdcall, ret 8).",
+    "lifted_path": "lifted/NMData/HingeConstraint.cpp"
+  },
   "0x006115F0": {
     "name": "NMData::HingeConstraint::vfunc_14",
     "class": "NMData::HingeConstraint",

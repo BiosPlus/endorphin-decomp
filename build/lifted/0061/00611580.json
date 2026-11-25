@@ -1,0 +1,14 @@
+{
+  "va": "0x00611580",
+  "size": 98,
+  "orig_symbol": "NMData::HingeConstraint::vfunc_69",
+  "src_path": "src/NMData/HingeConstraint.cpp",
+  "lifted_path": "lifted/NMData/HingeConstraint.cpp",
+  "name": "NMData::HingeConstraint::vfunc_69",
+  "class": "NMData::HingeConstraint",
+  "signature": "extern \"C\" int mem_00924FE4; // MSVCP80 basic_string(const char*) import slot (ctor thunk) std::string* fn_00611580(std::string* out, int which)",
+  "summary": "Constructs a std::string in caller-provided storage from one of two global C-string pointers (selected by flag) or a literal default; returns the storage pointer (__stdcall, ret 8).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:18:20Z"
+}

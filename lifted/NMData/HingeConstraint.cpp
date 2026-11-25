@@ -145,3 +145,29 @@ uint32_t __stdcall fn_0061F940(uint32_t self, uint32_t id) {
     return self;
 }
 } // namespace lift_0061F940
+
+// [0x00611580] NMData::HingeConstraint::vfunc_69 (98 bytes)
+namespace lift_00611580 {
+extern int mem_00A9F058;
+extern int mem_00A9F380;
+extern const char mem_00928B5D[];
+extern int mem_00924FE4; // MSVCP80 basic_string(const char*) import slot (ctor thunk)
+
+// @name NMData::HingeConstraint::vfunc_69
+// @class NMData::HingeConstraint
+// @summary Constructs a std::string in caller-provided storage from one of two global C-string pointers (selected by flag) or a literal default; returns the storage pointer (__stdcall, ret 8).
+// (no this-relative field accesses; first arg is the output string, not this)
+std::string* fn_00611580(std::string* out, int which) {
+    const char* s;
+    if (which == 0) {
+        s = *reinterpret_cast<const char* const*>(&mem_00A9F058);
+    } else if (which == 1) {
+        s = *reinterpret_cast<const char* const*>(&mem_00A9F380);
+    } else {
+        s = mem_00928B5D;
+    }
+    (void)&mem_00924FE4; // original calls the basic_string(const char*) ctor via this import slot
+    new (out) std::string(s);
+    return out;
+}
+} // namespace lift_00611580
