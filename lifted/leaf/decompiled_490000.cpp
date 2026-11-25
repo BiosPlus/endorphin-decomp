@@ -1376,3 +1376,22 @@ void* __thiscall fn_0049F0C0(void* self, uint32_t arg) {
     return static_cast<uint8_t*>(node) + 0x8;
 }
 } // namespace lift_0049F0C0
+
+// [0x0049D190] sub_0049D190 (33 bytes)
+namespace lift_0049D190 {
+// Known callee 0x0049B340: InitOnceGlobalString_0049B340 (One-time guarded initializer for the global string at 0x00ADD7C4; registers its teardown via ext_006A6C87 and returns the global's address.)
+// The original passes a single stack argument of 0 to this callee.
+extern void* ext_0049B340(uint32_t flag);
+// MSVCP80 IAT slot holding std::basic_string<char>::basic_string(const basic_string&).
+extern void* mem_00924FE0;
+
+// @name InitGlobalStringAndCopyConstruct
+// @summary Ensures the global string is initialized, then copy-constructs the std::string at the first argument from it and returns that argument.
+void* fn_0049D190(void* self) {
+    using BasicStringCopyCtor = void(__thiscall*)(void* this_ptr, const void* other);
+    const void* src = ext_0049B340(0);
+    auto copy_ctor = reinterpret_cast<BasicStringCopyCtor>(mem_00924FE0);
+    copy_ctor(self, src);
+    return self;
+}
+} // namespace lift_0049D190

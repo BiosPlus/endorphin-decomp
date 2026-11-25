@@ -11133,6 +11133,12 @@
     "summary": "One-time initializer guarded by bit 0 of mem_00ADD818; initializes the static object at mem_00ADD814 and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x0049D190": {
+    "name": "InitGlobalStringAndCopyConstruct",
+    "signature": "void* fn_0049D190(void* self)",
+    "summary": "Ensures the global string is initialized, then copy-constructs the std::string at the first argument from it and returns that argument.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049D390": {
     "name": "initPairWithStaticHandle",
     "signature": "void* fn_0049D390(void* dst, uint32_t value)",
