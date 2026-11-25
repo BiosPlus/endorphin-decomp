@@ -17743,6 +17743,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00404D50 (ElementCountFromRange).",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x00504AA0": {
+    "name": "allocateElements40",
+    "signature": "extern \"C\" void* fn_00504AA0(uint32_t count)",
+    "summary": "Allocates count elements of size 40 bytes, throwing std::bad_alloc on integer overflow.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00504D70": {
     "name": "ExprParser::ReadMethodType\u003cInterpreter\u003e::vfunc_2 (Interpreter::bogus)",
     "class": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e",

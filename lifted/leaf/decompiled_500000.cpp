@@ -1866,3 +1866,23 @@ void* fn_0050A720(void* first, void* last, void* d_last) {
         reinterpret_cast<uintptr_t>(d_last) - static_cast<uintptr_t>(count * 0x24));
 }
 } // namespace lift_0050A720
+
+// [0x00504AA0]
+namespace lift_00504AA0 {
+// @name allocateElements40
+// @summary Allocates count elements of size 40 bytes, throwing std::bad_alloc on integer overflow.
+
+
+extern void* fn_006A5C62(uint32_t size);
+
+extern void* fn_00504AA0(uint32_t count) {
+    if (count > 0) {
+        if (0xFFFFFFFFu / count < 0x28u) {
+            throw std::bad_alloc();
+        }
+    } else {
+        count = 0;
+    }
+    return fn_006A5C62(count * 0x28u);
+}
+} // namespace lift_00504AA0
