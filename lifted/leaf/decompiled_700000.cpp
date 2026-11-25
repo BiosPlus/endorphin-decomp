@@ -2157,3 +2157,28 @@ uint32_t lookupAddressByIndex_00701ED0(uint32_t index) {
     }
 }
 } // namespace lift_00701ED0
+
+// [0x00700840]
+namespace lift_00700840 {
+extern uint8_t mem_009952F8;
+    void ext_006B9D70(void);
+    void __fastcall ext_0077FA20(void* self);
+
+// @name sub_00700840_dtor
+// @summary Destructor that resets vtable, releases member at +0x0C, cleans up +0x10, and calls base destructor.
+// @field Unknown +0x00 void* vptr
+// @field Unknown +0x0C void* field_0x0C
+// @field Unknown +0x10 uint8_t field_0x10
+extern void __fastcall fn_00700840(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<void**>(base + 0x00) = &mem_009952F8;
+
+    void* obj = *reinterpret_cast<void**>(base + 0x0C);
+    uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(obj);
+    using VMethod1 = void(__thiscall*)(void*, uint32_t);
+    reinterpret_cast<VMethod1>(vtable[1])(obj, 0);
+
+    ext_006B9D70();
+    ext_0077FA20(self);
+}
+} // namespace lift_00700840

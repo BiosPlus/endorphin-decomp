@@ -1,0 +1,33 @@
+{
+  "va": "0x00700840",
+  "size": 112,
+  "orig_symbol": "sub_00700840",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "sub_00700840_dtor",
+  "signature": "extern \"C\" void __fastcall fn_00700840(void* self)",
+  "summary": "Destructor that resets vtable, releases member at +0x0C, cleans up +0x10, and calls base destructor.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T05:10:25Z"
+}
