@@ -881,3 +881,39 @@ void fn_00647D60(void* self, const float* a, const float* b) {
 }
 } // namespace lift_00647CE0
 } // namespace lift_00647D60
+
+// [0x00645EB0]
+namespace lift_00645EB0 {
+// @name Unknown::ResetHandleAndForwardSubobject
+// @class Unknown
+// @summary Writes three rdata pointers into the object, releases the handle at +0x10 if non-null, zeroes +0x10..+0x18, then tail-calls fn_0065F440 on the subobject at +0x8.
+// @field Unknown +0x00 u32 field_0x00
+// @field Unknown +0x04 u32 field_0x04
+// @field Unknown +0x08 u32 field_0x08
+// @field Unknown +0x10 u32 field_0x10
+// @field Unknown +0x14 u32 field_0x14
+// @field Unknown +0x18 u32 field_0x18
+
+extern void ext_006A5C5C(uint32_t handle);
+extern void __fastcall fn_0065F440(void* self);
+
+extern void __fastcall fn_00645EB0(void* self) {
+    auto* base = reinterpret_cast<uint8_t*>(self);
+    auto* sub = base + 0x08;
+
+    *reinterpret_cast<uint32_t*>(base + 0x00) = 0x0097D99Cu;
+    *reinterpret_cast<uint32_t*>(base + 0x04) = 0x0097D988u;
+    *reinterpret_cast<uint32_t*>(sub) = 0x0097D954u;
+
+    uint32_t handle = *reinterpret_cast<uint32_t*>(base + 0x10);
+    if (handle != 0) {
+        ext_006A5C5C(handle);
+    }
+
+    *reinterpret_cast<uint32_t*>(base + 0x10) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x14) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x18) = 0;
+
+    fn_0065F440(sub);
+}
+} // namespace lift_00645EB0
