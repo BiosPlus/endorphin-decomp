@@ -1868,3 +1868,30 @@ extern void* __stdcall fn_0071A610(unsigned int a1) {
     }
 }
 } // namespace lift_0071A610
+
+// [0x0071DDF0] sub_0071DDF0 (96 bytes)
+namespace lift_0071DDF0 {
+// @name sub_0071DDF0
+// @summary Auto-lifted identical-shape clone of 0x00715450 (sub_00715450).
+namespace lift_00715450 {
+// @name sub_00715450
+// @summary Destructor that resets vtable, invokes virtual method +0x4(0) on field_0x10, and calls base destructor ext_0077FA20.
+// @field sub_00715450 +0x00 void* vtable
+// @field sub_00715450 +0x10 void* field_0x10
+
+
+extern uint8_t mem_00996778;
+extern void __fastcall ext_0077FA20(void* self);
+
+extern void __fastcall fn_0071DDF0(void* self) {
+    *reinterpret_cast<void**>(self) = &mem_00996778;
+
+    void* obj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x10);
+    void** vtable = *reinterpret_cast<void***>(obj);
+    using VirtFn = void(__thiscall*)(void*, int);
+    reinterpret_cast<VirtFn>(vtable[1])(obj, 0);
+
+    ext_0077FA20(self);
+}
+} // namespace lift_00715450
+} // namespace lift_0071DDF0

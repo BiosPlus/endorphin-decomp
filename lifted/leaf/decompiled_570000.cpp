@@ -1713,3 +1713,38 @@ DWORD* __cdecl fn_0057BDF0(const DWORD* first, const DWORD* last, DWORD* out) {
     return reinterpret_cast<DWORD*>(reinterpret_cast<uintptr_t>(out) - rounded);
 }
 } // namespace lift_0057BDF0
+
+// [0x0057DFB0] sub_0057DFB0 (101 bytes)
+namespace lift_0057DFB0 {
+// @name sub_0057DFB0
+// @summary Auto-lifted identical-shape clone of 0x0057BDF0 (sub_0057BDF0).
+namespace lift_0057BDF0 {
+// @name sub_0057BDF0
+// @summary Range-copies [first, last) to out via ext_0057BBE0, then returns out minus the byte span rounded down to a multiple of 56.
+// Known callee 0x0057BBE0: sub_00573A10 (Auto-lifted identical-shape clone of 0x0044C4D0 DWORD_RangeCopy_thiscall).
+extern DWORD* ext_0057DC00(const DWORD* first, const DWORD* last, DWORD* out);
+
+DWORD* __cdecl fn_0057DFB0(const DWORD* first, const DWORD* last, DWORD* out) {
+    ext_0057DC00(first, last, out);
+
+    // Byte span = last - first, as signed 32-bit.
+    const DWORD span_u = static_cast<DWORD>(reinterpret_cast<uintptr_t>(last) -
+                                            reinterpret_cast<uintptr_t>(first));
+    const int32_t span = static_cast<int32_t>(span_u);
+
+    // Signed multiply-high by magic 0x92492493, then add span (compiler's /56 sequence).
+    const int64_t prod = static_cast<int64_t>(static_cast<int32_t>(0x92492493u)) *
+                         static_cast<int64_t>(span);
+    const int32_t hi = static_cast<int32_t>(prod >> 32);
+    const int32_t t = static_cast<int32_t>(static_cast<uint32_t>(hi) + span_u) >> 5;
+
+    // Round toward zero: q = span / 56 (signed).
+    const uint32_t q = static_cast<uint32_t>(t) + (static_cast<uint32_t>(t) >> 31);
+
+    // rounded = q * 56 (7 * q, then shifted left by 3).
+    const uint32_t rounded = q * 56u;
+
+    return reinterpret_cast<DWORD*>(reinterpret_cast<uintptr_t>(out) - rounded);
+}
+} // namespace lift_0057BDF0
+} // namespace lift_0057DFB0

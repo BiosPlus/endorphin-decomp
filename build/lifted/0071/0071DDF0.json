@@ -1,0 +1,27 @@
+{
+  "va": "0x0071DDF0",
+  "size": 96,
+  "orig_symbol": "sub_0071DDF0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "sub_0071DDF0",
+  "signature": "extern void __fastcall fn_0071DDF0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00715450 (sub_00715450).",
+  "fields": [
+    {
+      "class": "sub_00715450",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "sub_00715450",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T03:46:20Z"
+}

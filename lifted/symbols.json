@@ -25328,6 +25328,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051A6D0 (CopyRangeBackward5f_0051A6D0).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057DFB0": {
+    "name": "sub_0057DFB0",
+    "signature": "DWORD* __cdecl fn_0057DFB0(const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0057BDF0 (sub_0057BDF0).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057E110": {
     "name": "sub_0057E110",
     "signature": "void* fn_0057E110(void* first, void* last, void* dest_last)",
@@ -63168,6 +63174,12 @@
     "signature": "extern \"C\" void* __fastcall fn_0071DDD0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0071DDF0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071DDF0": {
+    "name": "sub_0071DDF0",
+    "signature": "extern void __fastcall fn_0071DDF0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00715450 (sub_00715450).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x0071DE50": {
     "name": "sub_0071DE50",
