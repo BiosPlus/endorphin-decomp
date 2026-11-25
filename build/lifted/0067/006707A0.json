@@ -1,0 +1,14 @@
+{
+  "va": "0x006707A0",
+  "size": 47,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, getX\u003e::vfunc_5",
+  "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",
+  "signature": "void fn_006707A0(void* self)",
+  "summary": "Reads the Vector3 value pointer at +0; if non-null, dereferences its float x component (value unused), then always constructs and throws a DerivedException.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:09:42Z"
+}

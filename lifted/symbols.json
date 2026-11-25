@@ -46851,6 +46851,13 @@
     "summary": "Returns true when the Vector3 X component read through the value pointer is \u003e= 1e-6 (NaN yields false); throws if the value pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006707A0": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, getX\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",
+    "signature": "void fn_006707A0(void* self)",
+    "summary": "Reads the Vector3 value pointer at +0; if non-null, dereferences its float x component (value unused), then always constructs and throws a DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00670930": {
     "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getY(void) const, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getY(void) const, 0\u003e",

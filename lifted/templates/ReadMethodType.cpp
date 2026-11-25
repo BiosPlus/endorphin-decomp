@@ -47249,3 +47249,35 @@ extern void ext_006A6DD2(void* exc, const void* throwInfo);
     std::abort();
 }
 } // namespace lift_005B2230
+
+// [0x006707A0] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, 0>::vfunc_5 (47 bytes)
+namespace lift_006707A0 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exceptionObject, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NM::Vector3, float, getX>::vfunc_5
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, 0>
+// @summary Reads the Vector3 value pointer at +0; if non-null, dereferences its float x component (value unused), then always constructs and throws a DerivedException.
+// @field ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, 0> +0x00 float* field_0x00
+void fn_006707A0(void* self) {
+    // Pointer to the Vector3 value at +0 (the x component is read at offset 0 of the pointee).
+    float* valuePtr = *reinterpret_cast<float**>(self);
+    if (valuePtr != nullptr) {
+        volatile float x = *valuePtr; // Original: fld dword ptr [eax]; fstp to stack arg
+        (void)x;
+        ext_0046C4E0();
+    }
+
+    // Exception object lives in a 0x28-byte frame slot, as in the original stack frame.
+    alignas(8) unsigned char exceptionObject[0x28] = {};
+    ext_0046C3C0(exceptionObject);
+
+    // ThrowInfo descriptor for the exception type (original push 0x009DEC1C).
+    const void* throwInfo = reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu));
+    ext_006A6DD2(exceptionObject, throwInfo);
+}
+} // namespace lift_006707A0
