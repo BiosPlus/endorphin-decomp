@@ -1,0 +1,13 @@
+{
+  "va": "0x004AB8E0",
+  "size": 87,
+  "orig_symbol": "sub_004AB8E0",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "ensureStaticObjectInitialized_004AB8E0",
+  "signature": "DWORD sub_004AB8E0()",
+  "summary": "Thread-safe-style one-time initializer for the static object at 0x00ADFA08: runs its constructor (ext_0067A670) once, sets its vtable to 0x00941984, and returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:30:28Z"
+}

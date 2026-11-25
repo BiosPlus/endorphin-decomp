@@ -699,3 +699,50 @@ void* fn_004AB880() {
     return &mem_00ADFA00;
 }
 } // namespace lift_004AB880
+
+// [0x004A59A0]
+namespace lift_004A59A0 {
+// @name allocate_u32_array
+// @summary Allocates an array of 4-byte elements, throwing std::bad_alloc on overflow.
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void ext_006A6DD2(void* exc, const void* throw_info);
+extern void* mem_00925130;
+extern const uint32_t mem_009CDF94;
+extern const uint32_t mem_00928EC0;
+
+void* fn_004A59A0(uint32_t count) {
+    if (count > 0 && (0xFFFFFFFFu / count) < 4u) {
+        struct {
+            uint32_t vftable;
+            uint32_t pad[2];
+        } exc{};
+        const char* msg = nullptr;
+        using ExcCtor = void(__thiscall*)(void*, const char* const*);
+        reinterpret_cast<ExcCtor>(mem_00925130)(&exc, &msg);
+        exc.vftable = mem_00928EC0;
+        ext_006A6DD2(&exc, &mem_009CDF94);
+    }
+    return ext_006A5C62(count * 4u);
+}
+} // namespace lift_004A59A0
+
+// [0x004AB8E0]
+namespace lift_004AB8E0 {
+// @name ensureStaticObjectInitialized_004AB8E0
+// @summary Thread-safe-style one-time initializer for the static object at 0x00ADFA08: runs its constructor (ext_0067A670) once, sets its vtable to 0x00941984, and returns its address.
+
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00ADFA08;
+extern DWORD mem_00ADFA0C;
+
+DWORD sub_004AB8E0() {
+    if ((mem_00ADFA0C & 1u) == 0) {
+        mem_00ADFA0C |= 1u;
+        ext_0067A670(&mem_00ADFA08, 0);
+        mem_00ADFA08 = 0x00941984u;
+    }
+    return (DWORD)(uintptr_t)&mem_00ADFA08;
+}
+} // namespace lift_004AB8E0
