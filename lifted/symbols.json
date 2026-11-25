@@ -56414,6 +56414,13 @@
     "summary": "Dereferences a pointer to a byte pointer and returns the zero-extended byte value.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D5C60": {
+    "name": "ExtentBounds::TryInitFromSub",
+    "class": "ExtentBounds",
+    "signature": "void fn_007D5C60(void* self)",
+    "summary": "Passes the sub-object at +0x6C to an imported resolver; if it returns non-null, re-initializes the extent on that result, otherwise does nothing.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007D5C80": {
     "name": "Unknown::invokeCallbackAtOffset6C",
     "class": "Unknown (no member access; pointer arithmetic only)",

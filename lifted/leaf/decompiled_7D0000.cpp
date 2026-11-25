@@ -720,3 +720,24 @@ void fn_007D59C0(void* self) {
     put_u32(0x34, 0);
 }
 } // namespace lift_007D59C0
+
+// [0x007D5C60] sub_007D5C60 (31 bytes)
+namespace lift_007D5C60 {
+// Imported indirect-call slot at 0x00AB28C4 (resolved at load time).
+extern void* (*mem_00AB28C4)(void* arg);
+
+// Tail-called extent reset (lifted as fn_007D59C0).
+extern void ext_007D59C0(void* self);
+
+// @name ExtentBounds::TryInitFromSub
+// @class ExtentBounds
+// @summary Passes the sub-object at +0x6C to an imported resolver; if it returns non-null, re-initializes the extent on that result, otherwise does nothing.
+// @field ExtentBounds +0x6C void* field_0x6C
+void fn_007D5C60(void* self) {
+    void* sub = static_cast<uint8_t*>(self) + 0x6C;
+    void* result = mem_00AB28C4(sub);
+    if (result != nullptr) {
+        ext_007D59C0(result);
+    }
+}
+} // namespace lift_007D5C60

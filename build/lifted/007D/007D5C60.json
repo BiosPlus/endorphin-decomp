@@ -1,0 +1,22 @@
+{
+  "va": "0x007D5C60",
+  "size": 31,
+  "orig_symbol": "sub_007D5C60",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "ExtentBounds::TryInitFromSub",
+  "class": "ExtentBounds",
+  "signature": "void fn_007D5C60(void* self)",
+  "summary": "Passes the sub-object at +0x6C to an imported resolver; if it returns non-null, re-initializes the extent on that result, otherwise does nothing.",
+  "fields": [
+    {
+      "class": "ExtentBounds",
+      "offset": "+0x6C",
+      "type": "void*",
+      "name": "field_0x6C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:56:17Z"
+}
