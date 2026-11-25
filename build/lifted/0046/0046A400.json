@@ -1,0 +1,14 @@
+{
+  "va": "0x0046A400",
+  "size": 111,
+  "orig_symbol": "EventDispatcher\u003cEngineEventListener, \u0026[thunk]: __thiscall EngineEventListener::`vcall'{4, {flat}}\u003e::vfunc_3",
+  "src_path": "src/templates/EventDispatcher.cpp",
+  "lifted_path": "lifted/templates/EventDispatcher.cpp",
+  "name": "EventDispatcher\u003cEngineEventListener, \u0026[thunk]: __thiscall EngineEventListener::`vcall'{4, {flat}}\u003e::vfunc_3",
+  "class": "EventDispatcher\u003cEngineEventListener, \u0026[thunk]: __thiscall EngineEventListener::`vcall'{4, {flat}}\u003e",
+  "signature": "void __thiscall fn_0046A400(uint8_t* self)",
+  "summary": "Validates two embedded [begin, end) ranges (begin \u003c= end, else invalid-parameter handler) and erases each range from its vector at +0x04 and +0x14.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:05:09Z"
+}

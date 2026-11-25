@@ -7621,6 +7621,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0046A020 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0046A400": {
+    "name": "EventDispatcher\u003cEngineEventListener, \u0026[thunk]: __thiscall EngineEventListener::`vcall'{4, {flat}}\u003e::vfunc_3",
+    "class": "EventDispatcher\u003cEngineEventListener, \u0026[thunk]: __thiscall EngineEventListener::`vcall'{4, {flat}}\u003e",
+    "signature": "void __thiscall fn_0046A400(uint8_t* self)",
+    "summary": "Validates two embedded [begin, end) ranges (begin \u003c= end, else invalid-parameter handler) and erases each range from its vector at +0x04 and +0x14.",
+    "lifted_path": "lifted/templates/EventDispatcher.cpp"
+  },
   "0x0046A470": {
     "name": "VirtualSlot1Thunk",
     "signature": "void fn_0046A470(void* self)",
