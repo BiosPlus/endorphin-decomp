@@ -968,3 +968,26 @@ void* GetOnceInitString_0060CC60() {
     return mem_00B47F1C;
 }
 } // namespace lift_0060CC60
+
+// [0x00605AC0] sub_00605AC0 (95 bytes)
+namespace lift_00605AC0 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+// Called as (void* out, <const char* literal>) to construct the global object at mem_00B47754.
+extern void* ext_0066AD10(void* out, const char* init);
+// Known callee 0x006A6C87: sub_006A6C87 (18B). Called with one argument (destructor address 0x91E6F0).
+extern void ext_006A6C87(const void* dtor);
+extern uint32_t mem_00B47770; // one-time-init guard flag (bit 0)
+extern uint32_t mem_00B47754; // global object storage
+
+// @name GetOnceInitString_00605AC0
+// @summary Lazily constructs the global string object at mem_00B47754 from literal 0x00A947AC on first call, registers its destructor (0x0091E6F0), and returns its address.
+void* fn_00605AC0() {
+    if ((mem_00B47770 & 1u) == 0) {
+        mem_00B47770 |= 1u;
+        ext_0066AD10(reinterpret_cast<void*>(&mem_00B47754),
+                     reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00A947ACu)));
+        ext_006A6C87(reinterpret_cast<const void*>(static_cast<uintptr_t>(0x0091E6F0u)));
+    }
+    return reinterpret_cast<void*>(&mem_00B47754);
+}
+} // namespace lift_00605AC0

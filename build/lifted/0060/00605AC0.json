@@ -1,0 +1,13 @@
+{
+  "va": "0x00605AC0",
+  "size": 95,
+  "orig_symbol": "sub_00605AC0",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "GetOnceInitString_00605AC0",
+  "signature": "extern \"C\" uint32_t mem_00B47770; // one-time-init guard flag (bit 0) extern \"C\" uint32_t mem_00B47754; // global object storage void* fn_00605AC0()",
+  "summary": "Lazily constructs the global string object at mem_00B47754 from literal 0x00A947AC on first call, registers its destructor (0x0091E6F0), and returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:33:50Z"
+}

@@ -34526,6 +34526,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x00605AC0": {
+    "name": "GetOnceInitString_00605AC0",
+    "signature": "extern \"C\" uint32_t mem_00B47770; // one-time-init guard flag (bit 0) extern \"C\" uint32_t mem_00B47754; // global object storage void* fn_00605AC0()",
+    "summary": "Lazily constructs the global string object at mem_00B47754 from literal 0x00A947AC on first call, registers its destructor (0x0091E6F0), and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x00605BA0": {
     "name": "ExprParser::ReadMethodType\u003cEffector\u003e::vfunc_0 (Effector::getForceBaseCap)",
     "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getForceBaseCap(void) const, 0\u003e",
