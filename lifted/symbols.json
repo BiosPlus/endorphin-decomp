@@ -7507,6 +7507,12 @@
     "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 2 (offset +0x8) with the same this pointer.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x0046A4D0": {
+    "name": "advanceIteratorCounted",
+    "signature": "void fn_0046A4D0(void* it, void* last, void* guard, void* end, int32_t* counter)",
+    "summary": "Advances an iterator with TreeIterator::increment until it equals `last`, incrementing `*counter` once per step; asserts the iterator is non-null and equal to `guard` before each step.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046A510": {
     "name": "std::_Tree::_Erase",
     "class": "std::_Tree",
