@@ -606,3 +606,37 @@ uint32_t fn_007AC510(void* self) {
     return lift_field<uint32_t>(self, 0x7D4);
 }
 } // namespace lift_007AC510
+
+// [0x007AEE00] sub_007AEE00 (77 bytes)
+namespace lift_007AEE00 {
+// @name Unknown::AppendClampedBytes_007AEE00
+// @class Unknown
+// @summary Copies min(count, remaining) bytes from src into the buffer at the write cursor and advances the cursor; returns bytes copied (0 if src or buffer is null).
+// @field Unknown +0x58 DWORD buffer
+// @field Unknown +0x5c DWORD capacity_end
+// @field Unknown +0x60 DWORD cursor
+DWORD fn_007AEE00(void* self, const void* src, DWORD count) {
+    auto* base = static_cast<unsigned char*>(self);
+
+    if (src == nullptr) {
+        return 0;
+    }
+
+    DWORD buffer = *reinterpret_cast<DWORD*>(base + 0x58);
+    if (buffer == 0) {
+        return 0;
+    }
+
+    DWORD capacity_end = *reinterpret_cast<DWORD*>(base + 0x5c);
+    DWORD cursor = *reinterpret_cast<DWORD*>(base + 0x60);
+    DWORD remaining = capacity_end - cursor;
+
+    DWORD n = (count > remaining) ? remaining : count;
+
+    void* dst = reinterpret_cast<void*>(static_cast<uintptr_t>(buffer) + cursor);
+    std::memcpy(dst, src, n);
+
+    *reinterpret_cast<DWORD*>(base + 0x60) = cursor + n;
+    return n;
+}
+} // namespace lift_007AEE00

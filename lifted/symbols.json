@@ -58330,6 +58330,13 @@
     "summary": "Zeroes three dword fields (+0x58, +0x5c, +0x60) of the object passed in ECX.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007AEE00": {
+    "name": "Unknown::AppendClampedBytes_007AEE00",
+    "class": "Unknown",
+    "signature": "DWORD fn_007AEE00(void* self, const void* src, DWORD count)",
+    "summary": "Copies min(count, remaining) bytes from src into the buffer at the write cursor and advances the cursor; returns bytes copied (0 if src or buffer is null).",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AEEB0": {
     "name": "Unknown::getField60IfField58",
     "class": "Unknown",

@@ -558,6 +558,7 @@ struct Unknown_Fields {
     // +0x54  void*                    field_0x54  (evidence: 0x004584C0, 0x00458650, 0x00458670, 0x00458840, 0x006A92F0, 0x006AAC90) // CONFLICT: multiple definitions at +0x54
     // +0x54  void**                   field_0x54  (evidence: 0x00469530) // CONFLICT: multiple definitions at +0x54
     // +0x54  uint32_t                 limitHi  (evidence: 0x006E8750) // CONFLICT: multiple definitions at +0x54
+    // +0x58  DWORD                    buffer  (evidence: 0x007AEE00) // CONFLICT: multiple definitions at +0x58
     // +0x58  void* field_58 (embedded object's vptr; slot 0 is called)  (evidence: 0x0044C230) // CONFLICT: multiple definitions at +0x58
     // +0x58  DWORD                    field_0x58  (evidence: 0x006B0DE0, 0x006B2F70, 0x006B95F0) // CONFLICT: multiple definitions at +0x58
     // +0x58  double                   field_0x58  (evidence: 0x004408B0, 0x00441020, 0x00441040, 0x0048FB10, 0x006E8780, 0x00766240) // CONFLICT: multiple definitions at +0x58
@@ -569,6 +570,7 @@ struct Unknown_Fields {
     // +0x58  DWORD                    field_58  (evidence: 0x007AEEB0) // CONFLICT: multiple definitions at +0x58
     // +0x58  uint32_t                 result  (evidence: 0x006E8750) // CONFLICT: multiple definitions at +0x58
     // +0x5C  AngleScaler              angleScaler  (evidence: 0x00570410) // CONFLICT: multiple definitions at +0x5C
+    // +0x5C  DWORD                    capacity_end  (evidence: 0x007AEE00) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  int32_t                  field_0x5C  (evidence: 0x00706EF0, 0x0070AD00, 0x0070E390, 0x0070E3B0, 0x0070EC70) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  std::uint32_t            field_0x5C  (evidence: 0x005DA110, 0x005DA150) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  uint32_t                 field_0x5C  (evidence: 0x00410290, 0x006B2F70, 0x006B8B20, 0x00790DC0, 0x00790E20) // CONFLICT: multiple definitions at +0x5C
@@ -578,6 +580,7 @@ struct Unknown_Fields {
     // +0x5C  uint32_t                 resultHi  (evidence: 0x006E8750) // CONFLICT: multiple definitions at +0x5C
     // +0x60  uint32_t                 arg1_saved  (evidence: 0x00404770, 0x0040BE90) // CONFLICT: multiple definitions at +0x60
     // +0x60  DWORD                    chainValue  (evidence: 0x006E62A0, 0x006EFEA0) // CONFLICT: multiple definitions at +0x60
+    // +0x60  DWORD                    cursor  (evidence: 0x007AEE00) // CONFLICT: multiple definitions at +0x60
     // +0x60  DWORD                    field_0x60  (evidence: 0x00410310, 0x006722B0, 0x00672490, 0x00673B80) // CONFLICT: multiple definitions at +0x60
     // +0x60  double                   field_0x60  (evidence: 0x006E86E0, 0x00766240) // CONFLICT: multiple definitions at +0x60
     // +0x60  int32_t                  field_0x60  (evidence: 0x00430260, 0x00430370, 0x00430380, 0x00430DA0) // CONFLICT: multiple definitions at +0x60

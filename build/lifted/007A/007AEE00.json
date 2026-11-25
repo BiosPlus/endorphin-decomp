@@ -1,0 +1,34 @@
+{
+  "va": "0x007AEE00",
+  "size": 77,
+  "orig_symbol": "sub_007AEE00",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "Unknown::AppendClampedBytes_007AEE00",
+  "class": "Unknown",
+  "signature": "DWORD fn_007AEE00(void* self, const void* src, DWORD count)",
+  "summary": "Copies min(count, remaining) bytes from src into the buffer at the write cursor and advances the cursor; returns bytes copied (0 if src or buffer is null).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "DWORD",
+      "name": "buffer"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "DWORD",
+      "name": "capacity_end"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "DWORD",
+      "name": "cursor"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:44:44Z"
+}
