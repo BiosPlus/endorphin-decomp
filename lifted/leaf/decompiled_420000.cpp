@@ -924,3 +924,45 @@ void __cdecl copyStringFromSource_004275E0(std::string* dst, void* src) {
     *dst = result;
 }
 } // namespace lift_004275E0
+
+// [0x0042F6F0]
+namespace lift_0042F6F0 {
+// @name KeyBinding::formatString
+// @class KeyBinding
+// @summary Formats a key binding (Ctrl+, Alt+, Shift+, and key name) into an output std::string.
+// @field KeyBinding +0x00 uint8_t ctrl
+// @field KeyBinding +0x01 uint8_t shift
+// @field KeyBinding +0x02 uint8_t alt
+// @field KeyBinding +0x04 std::string keyName
+
+extern uint32_t mem_00924EA8;
+extern uint32_t mem_00924ED0;
+extern uint32_t mem_00924FD8;
+extern const char mem_0092F880[];
+extern const char mem_0092F878[];
+extern const char mem_0092F870[];
+
+void __thiscall sub_0042F6F0(uint32_t self, uint32_t out_str) {
+    using ClearFn = void(__thiscall*)(uint32_t);
+    using AppendCStrFn = uint32_t(__thiscall*)(uint32_t, const char*);
+    using AppendStrFn = uint32_t(__thiscall*)(uint32_t, uint32_t);
+
+    auto fn_clear = reinterpret_cast<ClearFn>(mem_00924EA8);
+    auto fn_append_cstr = reinterpret_cast<AppendCStrFn>(mem_00924ED0);
+    auto fn_append_str = reinterpret_cast<AppendStrFn>(mem_00924FD8);
+
+    fn_clear(out_str);
+
+    if (*reinterpret_cast<const uint8_t*>(self + 0x0) != 0) {
+        fn_append_cstr(out_str, mem_0092F880);
+    }
+    if (*reinterpret_cast<const uint8_t*>(self + 0x2) != 0) {
+        fn_append_cstr(out_str, mem_0092F878);
+    }
+    if (*reinterpret_cast<const uint8_t*>(self + 0x1) != 0) {
+        fn_append_cstr(out_str, mem_0092F870);
+    }
+
+    fn_append_str(out_str, self + 0x4);
+}
+} // namespace lift_0042F6F0
