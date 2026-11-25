@@ -353,3 +353,25 @@ void __thiscall fn_00612460(void* self, float value) {
     }
 }
 } // namespace lift_00612460
+
+// [0x00610C60]
+namespace lift_00610C60 {
+extern uint32_t* __thiscall ext_005B11D0(uintptr_t self, uint32_t index);
+
+// @name UnknownClass::setElementFromVec4
+// @class UnknownClass
+// @summary Copies 4 floats from a source struct into indexed fields and an element pointer, then sets a dirty flag.
+// @field UnknownClass +0x04 uint8_t field_0x04
+// @field UnknownClass +0x08 float[] field_0x08
+// @field UnknownClass +0x10 float[] field_0x10
+// @field UnknownClass +0x18 float[] field_0x18
+// @field UnknownClass +0x20 UnknownClass field_0x20
+void __thiscall sub_00610C60(uintptr_t self, uintptr_t src, uint32_t index) {
+    uint32_t* dst = ext_005B11D0(self + 0x20, index);
+    *reinterpret_cast<float*>(dst) = *reinterpret_cast<const float*>(src + 0x8);
+    *reinterpret_cast<float*>(self + 4 * index + 0x8) = *reinterpret_cast<const float*>(src + 0xc);
+    *reinterpret_cast<float*>(self + 4 * index + 0x18) = *reinterpret_cast<const float*>(src + 0x14);
+    *reinterpret_cast<float*>(self + 4 * index + 0x10) = *reinterpret_cast<const float*>(src + 0x10);
+    *reinterpret_cast<uint8_t*>(self + 0x4) = 1;
+}
+} // namespace lift_00610C60
