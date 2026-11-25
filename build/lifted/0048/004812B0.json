@@ -1,0 +1,22 @@
+{
+  "va": "0x004812B0",
+  "size": 80,
+  "orig_symbol": "ToolEngine::vfunc_10",
+  "src_path": "src/classes/ToolEngine.cpp",
+  "lifted_path": "lifted/classes/ToolEngine.cpp",
+  "name": "ToolEngine::vfunc_10",
+  "class": "ToolEngine",
+  "signature": "uint32_t __thiscall ToolEngine_vfunc_10(void* self)",
+  "summary": "Dispatches vfunc_0 on the first element's +0x0C subobject if the +0x10 subobject's vector has exactly one element, otherwise returns 4.",
+  "fields": [
+    {
+      "class": "ToolEngine",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:48:49Z"
+}

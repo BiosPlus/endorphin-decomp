@@ -8102,6 +8102,13 @@
     "summary": "Calls vtable slot 11 of the subobject at +0x10 to get a range, bounds-checks its current element, and forwards that element to the delegate at +0x3B4.",
     "lifted_path": "lifted/classes/ToolEngine.cpp"
   },
+  "0x004812B0": {
+    "name": "ToolEngine::vfunc_10",
+    "class": "ToolEngine",
+    "signature": "uint32_t __thiscall ToolEngine_vfunc_10(void* self)",
+    "summary": "Dispatches vfunc_0 on the first element's +0x0C subobject if the +0x10 subobject's vector has exactly one element, otherwise returns 4.",
+    "lifted_path": "lifted/classes/ToolEngine.cpp"
+  },
   "0x004816E0": {
     "name": "Commands::BufferTransformsCommand::vfunc_1",
     "class": "Commands::BufferTransformsCommand",
@@ -17218,6 +17225,13 @@
     "signature": "void fn_00516B20(void* proxy, void* unused)",
     "summary": "Auto-lifted identical-shape clone of 0x0048B150 (ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, fire\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteOnlyMethod0Type.cpp"
+  },
+  "0x00516E10": {
+    "name": "EvolvedIndividual::vfunc_0_off_8",
+    "class": "EvolvedIndividual",
+    "signature": "void __thiscall fn_00516E10(void* self, void* item, uint32_t /*unused*/)",
+    "summary": "Sets the owner pointer on an added Interpreter and updates indices of all elements",
+    "lifted_path": "lifted/classes/EvolvedIndividual.cpp"
   },
   "0x00516E60": {
     "name": "EvolvedIndividual::vfunc_1_off_8",

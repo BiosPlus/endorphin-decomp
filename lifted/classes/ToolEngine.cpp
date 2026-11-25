@@ -167,3 +167,50 @@ extern void __thiscall fn_00480EA0(void* self) {
     ext_004A66D0(delegate, value);
 }
 } // namespace lift_00480EA0
+
+// [0x004812B0]
+namespace lift_004812B0 {
+// @name ToolEngine::vfunc_10
+// @class ToolEngine
+// @summary Dispatches vfunc_0 on the first element's +0x0C subobject if the +0x10 subobject's vector has exactly one element, otherwise returns 4.
+// @field ToolEngine +0x10 void* field_0x10
+
+
+extern uint32_t mem_00925134;
+
+uint32_t __thiscall ToolEngine_vfunc_10(void* self) {
+    uint8_t* sub = reinterpret_cast<uint8_t*>(self) + 0x10;
+    uint32_t* vtable = *reinterpret_cast<uint32_t**>(sub);
+    using GetVecFn = void* (__thiscall*)(void*);
+    auto get_vec = reinterpret_cast<GetVecFn>(vtable[3]);
+    uint8_t* vec = reinterpret_cast<uint8_t*>(get_vec(sub));
+
+    uint32_t* first = *reinterpret_cast<uint32_t**>(vec + 0x4);
+    if (!first) {
+        return 4;
+    }
+
+    uint32_t* last = *reinterpret_cast<uint32_t**>(vec + 0x8);
+    int32_t count = static_cast<int32_t>(reinterpret_cast<uintptr_t>(last) - reinterpret_cast<uintptr_t>(first)) >> 2;
+    if (count != 1) {
+        return 4;
+    }
+
+    using InvalidParamFn = void (__cdecl*)();
+    auto invalid_param = reinterpret_cast<InvalidParamFn>(mem_00925134);
+    if (first > last) {
+        invalid_param();
+    }
+    last = *reinterpret_cast<uint32_t**>(vec + 0x8);
+    if (first >= last) {
+        invalid_param();
+    }
+
+    uint8_t* elem = reinterpret_cast<uint8_t*>(*first);
+    uint8_t* elem_sub = elem + 0xC;
+    uint32_t* elem_vtable = *reinterpret_cast<uint32_t**>(elem_sub);
+    using TargetFn = uint32_t (__thiscall*)(void*);
+    auto target_fn = reinterpret_cast<TargetFn>(elem_vtable[0]);
+    return target_fn(elem_sub);
+}
+} // namespace lift_004812B0
