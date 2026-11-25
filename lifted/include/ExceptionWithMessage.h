@@ -8,6 +8,8 @@
 // Recovered field layout for ExceptionWithMessage:
 namespace lifted_layout {
 struct ExceptionWithMessage_Fields {
-    // +0x0   uint32_t                 vtable  (evidence: 0x0046C320)
+    // +0x0   uint32_t                 vftable  (evidence: 0x00401B60) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vtable  (evidence: 0x0046C320) // CONFLICT: multiple definitions at +0x0
+    // +0xC   std::string              field_0x0c  (evidence: 0x00401B60)
 };
 } // namespace lifted_layout

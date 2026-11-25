@@ -132,6 +132,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0xC and forwards through mem_00924FF0.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00401B60": {
+    "name": "ExceptionWithMessage::~ExceptionWithMessage",
+    "class": "ExceptionWithMessage",
+    "signature": "void __thiscall sub_00401B60(void* self)",
+    "summary": "Destroys a std::exception subclass by destroying its std::string member at +0xc and chaining to std::exception::~exception",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00401BB0": {
     "name": "DIBException::~DIBException",
     "class": "DIBException",
@@ -7562,6 +7569,12 @@
     "name": "StoreValueAndSingleton",
     "signature": "DWORD ext_0046F580();  // ConstructOnce_0046F580 DWORD* fn_0046F6A0(DWORD* dst, DWORD value)",
     "summary": "Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
+  "0x0046F7D0": {
+    "name": "initAndReturnObject",
+    "signature": "void* sub_0046F7D0(void* obj)",
+    "summary": "Initializes an object via ext_00661620 and returns it.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
   "0x0046F7F0": {

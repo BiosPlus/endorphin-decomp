@@ -1,0 +1,28 @@
+{
+  "va": "0x00401B60",
+  "size": 27,
+  "orig_symbol": "sub_00401B60",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "ExceptionWithMessage::~ExceptionWithMessage",
+  "class": "ExceptionWithMessage",
+  "signature": "void __thiscall sub_00401B60(void* self)",
+  "summary": "Destroys a std::exception subclass by destroying its std::string member at +0xc and chaining to std::exception::~exception",
+  "fields": [
+    {
+      "class": "ExceptionWithMessage",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable"
+    },
+    {
+      "class": "ExceptionWithMessage",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T11:28:37Z"
+}

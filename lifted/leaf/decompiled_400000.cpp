@@ -1502,3 +1502,21 @@ extern float fn_00407870(float x) {
     return static_cast<float>(ext_006A6E92(static_cast<double>(x)));
 }
 } // namespace lift_00407870
+
+// [0x00401B60]
+namespace lift_00401B60 {
+extern uint32_t mem_00928ECC;
+extern void (__thiscall *mem_00924FF4)(void* self);
+extern void (__thiscall *mem_009251C0)(void* self);
+
+// @name ExceptionWithMessage::~ExceptionWithMessage
+// @class ExceptionWithMessage
+// @summary Destroys a std::exception subclass by destroying its std::string member at +0xc and chaining to std::exception::~exception
+// @field ExceptionWithMessage +0x00 uint32_t vftable
+// @field ExceptionWithMessage +0x0c std::string field_0x0c
+void __thiscall sub_00401B60(void* self) {
+    *reinterpret_cast<uint32_t*>(self) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00928ECC));
+    mem_00924FF4(reinterpret_cast<uint8_t*>(self) + 0xc);
+    mem_009251C0(self);
+}
+} // namespace lift_00401B60
