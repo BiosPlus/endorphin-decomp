@@ -343,3 +343,30 @@ void __thiscall ext_005A2BD0(void* self, void* node) {
     }
 }
 } // namespace lift_005A2BD0
+
+// [0x005AAA00] sub_005AAA00 (64 bytes)
+namespace lift_005AAA00 {
+// Data table of 7 entries (stride 0x1C) at 0x00B42600..0x00B426C4.
+extern uint8_t mem_00B42600[0xC4];
+// Import slot holding the MSVCP80 std::string operator== (bool(const string&, const string&)).
+extern uint32_t mem_00924FC4;
+
+// @name FindStringInTable
+// @summary Scans a 7-entry std::string table for a key; returns matching index or 0.
+int __stdcall fn_005AAA00(const void* key) {
+    using EqFn = bool(__cdecl*)(const void*, const void*);
+    const auto eq = reinterpret_cast<EqFn>(static_cast<uintptr_t>(mem_00924FC4));
+
+    const uint8_t* entry = mem_00B42600;
+    const uint8_t* const end = mem_00B42600 + 0xC4;
+    int index = 0;
+    while (entry < end) {
+        if (eq(entry, key)) {
+            return index;
+        }
+        entry += 0x1C;
+        ++index;
+    }
+    return 0;
+}
+} // namespace lift_005AAA00

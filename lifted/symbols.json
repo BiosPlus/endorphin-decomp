@@ -22821,6 +22821,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004D0AF0 (Unknown::IndexedTableAddress).",
     "lifted_path": "lifted/leaf/tiny_5A0000.cpp"
   },
+  "0x005AAA00": {
+    "name": "FindStringInTable",
+    "signature": "int __stdcall fn_005AAA00(const void* key)",
+    "summary": "Scans a 7-entry std::string table for a key; returns matching index or 0.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005AAA40": {
     "name": "NMData::RigRoot::vfunc_22",
     "class": "NMData::RigRoot",
