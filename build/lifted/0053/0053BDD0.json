@@ -1,0 +1,22 @@
+{
+  "va": "0x0053BDD0",
+  "size": 53,
+  "orig_symbol": "Primitives::Marker::vfunc_28",
+  "src_path": "src/Primitives/Marker.cpp",
+  "lifted_path": "lifted/Primitives/Marker.cpp",
+  "name": "Primitives::Marker::vfunc_28",
+  "class": "Primitives::Marker",
+  "signature": "void fn_0053BDD0(void* self, DWORD arg)",
+  "summary": "Brackets a forwarded call to field_0x3c's vtable slot 22 with GL_LINE_BIT attribs and a 2.0 line width.",
+  "fields": [
+    {
+      "class": "Primitives::Marker",
+      "offset": "+0x3C",
+      "type": "void*",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:58:53Z"
+}

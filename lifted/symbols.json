@@ -22013,6 +22013,13 @@
     "summary": "Pushes GL matrix state, enables GL_NORMALIZE, applies glScaled using three floats fetched from the sub-object at +0x20, runs ext_00550FA0 on the +0x3C sub-object with the +0x86C field address, then restores GL state.",
     "lifted_path": "lifted/Primitives/File.cpp"
   },
+  "0x0053BDD0": {
+    "name": "Primitives::Marker::vfunc_28",
+    "class": "Primitives::Marker",
+    "signature": "void fn_0053BDD0(void* self, DWORD arg)",
+    "summary": "Brackets a forwarded call to field_0x3c's vtable slot 22 with GL_LINE_BIT attribs and a 2.0 line width.",
+    "lifted_path": "lifted/Primitives/Marker.cpp"
+  },
   "0x0053BE10": {
     "name": "Primitives::Hinge::vfunc_13",
     "class": "Primitives::Hinge",

@@ -91,3 +91,39 @@ void __thiscall fn_0053D320(void* self, void* arg0, uint8_t* arg1, uint32_t arg2
     ext_00538550(p + 0x3C, out_val, 0, 0);
 }
 } // namespace lift_0053D320
+
+// [0x0053BDD0] Primitives::Marker::vfunc_28 (53 bytes)
+namespace lift_0053BDD0 {
+extern int mem_0092546C;
+extern int mem_00955998;
+extern int mem_00925520;
+extern int mem_0092552C;
+
+using GlPushAttribFn = void(__stdcall*)(GLbitfield mask);
+using GlLineWidthFn  = void(__stdcall*)(GLfloat width);
+using GlPopAttribFn  = void(__stdcall*)(void);
+using VSlot22Fn      = void(__thiscall*)(void* self, DWORD arg);
+
+// @name Primitives::Marker::vfunc_28
+// @class Primitives::Marker
+// @summary Brackets a forwarded call to field_0x3c's vtable slot 22 with GL_LINE_BIT attribs and a 2.0 line width.
+// @field Primitives::Marker +0x3c void* field_0x3c
+void fn_0053BDD0(void* self, DWORD arg) {
+    constexpr GLbitfield GL_LINE_BIT = 0x00000004;
+
+    auto glPushAttrib = *reinterpret_cast<GlPushAttribFn*>(&mem_0092546C);
+    auto glLineWidth  = *reinterpret_cast<GlLineWidthFn*>(&mem_00925520);
+    auto glPopAttrib  = *reinterpret_cast<GlPopAttribFn*>(&mem_0092552C);
+    const GLfloat lineWidth = *reinterpret_cast<const GLfloat*>(&mem_00955998); // 2.0f
+
+    glPushAttrib(GL_LINE_BIT);
+    glLineWidth(lineWidth);
+
+    void* target = lift_field<void*>(self, 0x3c);            // field_0x3c
+    void** vtbl = *reinterpret_cast<void***>(target);
+    auto slot = reinterpret_cast<VSlot22Fn>(vtbl[0x58 / sizeof(void*)]);
+    slot(&lift_field<void*>(self, 0x3c), arg);               // ecx = &field_0x3c
+
+    glPopAttrib();
+}
+} // namespace lift_0053BDD0
