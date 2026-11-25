@@ -6080,6 +6080,13 @@
     "summary": "Pure jump thunk forwarding to sub_004589E0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00458A00": {
+    "name": "Unknown::teardownOwnedChild",
+    "class": "Unknown",
+    "signature": "void fn_00458A00(void* self)",
+    "summary": "Resets the vtable pointer, releases the child object at +0x54 if present, then runs the base teardown thunk on self.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00458A70": {
     "name": "SpinButtonView::vfunc_1",
     "class": "SpinButtonView",

@@ -1195,3 +1195,31 @@ void __thiscall fn_0045E510(void* self, void* out, const void* keyPtr) {
     storePtr(outp, 0x0C, upper);
 }
 } // namespace lift_0045E510
+
+// [0x00458A00] sub_00458A00 (99 bytes)
+namespace lift_00458A00 {
+// Known callee 0x0046AC30: sub_0046AC30 (pure jump thunk forwarding to sub_006246B0). Takes `this` in ecx.
+extern void ext_0046AC30(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764). Takes one stack argument.
+extern void ext_006A5C5C(void* arg);
+// Known callee 0x006A6808: thunk_MFC80_ord_739 (IAT jump thunk forwarding to MFC80!ord_739). Takes `this` in ecx.
+extern void ext_006A6808(void* self);
+
+// @name Unknown::teardownOwnedChild
+// @class Unknown
+// @summary Resets the vtable pointer, releases the child object at +0x54 if present, then runs the base teardown thunk on self.
+// @field Unknown +0x00 uint32_t vftable
+// @field Unknown +0x54 void* field_0x54
+void fn_00458A00(void* self) {
+    // Original code installs an SEH frame and restores it on exit; that bookkeeping is not reproduced here.
+    lift_field<uint32_t>(self, 0x00) = 0x0093764CU;
+
+    void* child = lift_field<void*>(self, 0x54);
+    if (child != nullptr) {
+        ext_0046AC30(child);
+        ext_006A5C5C(child);
+    }
+
+    ext_006A6808(self);
+}
+} // namespace lift_00458A00
