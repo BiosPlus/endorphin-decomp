@@ -1,0 +1,22 @@
+{
+  "va": "0x006409B0",
+  "size": 86,
+  "orig_symbol": "AdvXMLParser::CharRef::vfunc_5",
+  "src_path": "src/AdvXMLParser/CharRef.cpp",
+  "lifted_path": "lifted/AdvXMLParser/CharRef.cpp",
+  "name": "AdvXMLParser::CharRef::vfunc_5",
+  "class": "AdvXMLParser::CharRef",
+  "signature": "void fn_006409B0(void* self, void* ctx)",
+  "summary": "Appends a character-reference body to the string at ctx+0x8 (literal prefix, the decimal form of this+0x24, then ';'), clearing the flag at ctx+0x11 before each append. Returns nothing.",
+  "fields": [
+    {
+      "class": "AdvXMLParser::CharRef",
+      "offset": "+0x24",
+      "type": "uint8_t",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:11:51Z"
+}

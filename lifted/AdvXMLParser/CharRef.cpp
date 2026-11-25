@@ -39,3 +39,40 @@ void* fn_0063E390(void* self, void* out) {
     return out;
 }
 } // namespace lift_0063E390
+
+// [0x006409B0] AdvXMLParser::CharRef::vfunc_5 (86 bytes)
+namespace lift_006409B0 {
+// String literal in .rdata at 0x0097CD10 (prefix text appended first).
+extern const char mem_0097CD10[];
+
+// Callee 0x00640960 (74 bytes): formats the signed byte `value` in base `base`
+// into `buf` and returns a pointer to the resulting NUL-terminated text.
+extern const char* ext_00640960(int32_t value, void* buf, int32_t base);
+
+// MSVCP80 std::basic_string<char>::operator+=(const char*)  (IAT slot 0x00924ED0)
+extern void ext_std_string_append_cstr(void* str, const char* s);
+// MSVCP80 std::basic_string<char>::operator+=(char)        (IAT slot 0x00924EC0)
+extern void ext_std_string_append_char(void* str, char c);
+
+// @name AdvXMLParser::CharRef::vfunc_5
+// @class AdvXMLParser::CharRef
+// @summary Appends a character-reference body to the string at ctx+0x8 (literal prefix, the decimal form of this+0x24, then ';'), clearing the flag at ctx+0x11 before each append. Returns nothing.
+// @field AdvXMLParser::CharRef +0x24 uint8_t field_0x24
+void fn_006409B0(void* self, void* ctx) {
+    uint8_t* c = static_cast<uint8_t*>(ctx);
+    void* str = c + 0x08;
+
+    c[0x11] = 0;
+    ext_std_string_append_cstr(str, mem_0097CD10);
+
+    const int32_t value = static_cast<int8_t>(static_cast<uint8_t*>(self)[0x24]);
+    uint8_t buf[12];
+    const char* digits = ext_00640960(value, buf, 10);
+
+    c[0x11] = 0;
+    ext_std_string_append_cstr(str, digits);
+
+    c[0x11] = 0;
+    ext_std_string_append_char(str, ';');
+}
+} // namespace lift_006409B0
