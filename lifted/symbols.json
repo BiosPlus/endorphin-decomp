@@ -7579,6 +7579,12 @@
     "summary": "Stores a dword value and the address of the guarded static object into a two-slot output buffer.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046F6A0": {
+    "name": "StoreValueAndSingleton",
+    "signature": "DWORD ext_0046F580();  // ConstructOnce_0046F580 DWORD* fn_0046F6A0(DWORD* dst, DWORD value)",
+    "summary": "Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046F7D0": {
     "name": "sub_00467320",
     "class": "(none)",

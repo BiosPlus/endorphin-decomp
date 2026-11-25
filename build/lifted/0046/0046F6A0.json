@@ -1,0 +1,27 @@
+{
+  "va": "0x0046F6A0",
+  "size": 30,
+  "orig_symbol": "sub_0046F6A0",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "StoreValueAndSingleton",
+  "signature": "DWORD ext_0046F580();  // ConstructOnce_0046F580 DWORD* fn_0046F6A0(DWORD* dst, DWORD value)",
+  "summary": "Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.",
+  "fields": [
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x0",
+      "type": "DWORD field_0x00 (written from the value",
+      "name": "argument)"
+    },
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x4",
+      "type": "DWORD field_0x04 (written from ext_0046F580()",
+      "name": "result)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:28:43Z"
+}
