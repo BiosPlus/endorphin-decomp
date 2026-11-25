@@ -1101,3 +1101,23 @@ void __thiscall DestroyStringPair_0046FAD0(Unknown* self) {
     ext_std_string_dtor(base + 0x00);
 }
 } // namespace lift_0046FAD0
+
+// [0x0046FB20] sub_0046FB20 (82 bytes)
+namespace lift_0046FB20 {
+// Import slot for MSVCP80 std::basic_string<char> copy constructor (const string&).
+extern int mem_00924FE0;
+
+// Portable stand-in for the MSVCP80 std::string copy constructor. Layout of
+// std::string under MSVC 8.0 is 0x1C bytes; the copy is performed by the import.
+extern void ext_msvcp80_string_copy_ctor(void* self, const void* src);
+
+// @name ConstructStringPair
+// @class Unknown
+// @summary Copy-constructs two std::string members from the given string references (+0x00 and +0x1C).
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1C std::string field_0x1C
+void fn_0046FB20(void* self, const void* src_first, const void* src_second) {
+    ext_msvcp80_string_copy_ctor(self, src_first);
+    ext_msvcp80_string_copy_ctor(static_cast<unsigned char*>(self) + 0x1C, src_second);
+}
+} // namespace lift_0046FB20

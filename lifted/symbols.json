@@ -7282,6 +7282,13 @@
     "summary": "Destroys two std::string members, the one at +0x1C first and then the one at +0x00.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046FB20": {
+    "name": "ConstructStringPair",
+    "class": "Unknown",
+    "signature": "void fn_0046FB20(void* self, const void* src_first, const void* src_second)",
+    "summary": "Copy-constructs two std::string members from the given string references (+0x00 and +0x1C).",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046FB80": {
     "name": "sub_0046FB80",
     "class": "Unknown",
