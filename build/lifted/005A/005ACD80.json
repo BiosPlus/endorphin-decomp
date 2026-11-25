@@ -1,0 +1,22 @@
+{
+  "va": "0x005ACD80",
+  "size": 83,
+  "orig_symbol": "sub_005ACD80",
+  "src_path": "src/leaf/decompiled_5A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5A0000.cpp",
+  "name": "Unknown::ReleaseOptionalChildAndReset_005ACD80",
+  "class": "Unknown",
+  "signature": "void fn_005ACD80(void* self)",
+  "summary": "Deletes the polymorphic child at +0x1c if non-null (vtable slot 0 with delete flag 1), then calls ext_00665810(self).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:04:40Z"
+}

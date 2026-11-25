@@ -431,6 +431,7 @@ struct Unknown_Fields {
     // +0x1C  std::string              field_0x1c  (evidence: 0x0046FAD0, 0x00621090) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 field_0x1c  (evidence: 0x004586E0, 0x00503CD0, 0x00508BC0, 0x0050C4D0, 0x005B51E0, 0x00678DE0, 0x006AD290, 0x0078CB80, 0x007C8490, 0x007C9E20, 0x0080F720) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint8_t                  field_0x1c  (evidence: 0x004773B0) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  void*                    field_0x1c  (evidence: 0x005ACD80) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  bool                     flag  (evidence: 0x004C4390) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  HMODULE                  hModule  (evidence: 0x00401920) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  void*                    hwnd  (evidence: 0x00458DF0, 0x00458FE0) // CONFLICT: multiple definitions at +0x1C

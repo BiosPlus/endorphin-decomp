@@ -518,3 +518,27 @@ void* fn_005ACD30(void* self, uint32_t arg1, uint32_t arg2, const float* values)
     return self;
 }
 } // namespace lift_005ACD30
+
+// [0x005ACD80] sub_005ACD80 (83 bytes)
+namespace lift_005ACD80 {
+// Known callee 0x00665810: sub_00665810 (Stores address of mem_00987A04 into field at offset +0x0.)
+extern void __fastcall ext_00665810(void* self);
+
+// @name Unknown::ReleaseOptionalChildAndReset_005ACD80
+// @class Unknown
+// @summary Deletes the polymorphic child at +0x1c if non-null (vtable slot 0 with delete flag 1), then calls ext_00665810(self).
+// @field Unknown +0x1c void* field_0x1c
+
+void fn_005ACD80(void* self) {
+    using ScalarDeletingDtor = void(__thiscall*)(void* obj, int flags);
+
+    auto* base = static_cast<unsigned char*>(self);
+    void* child = *reinterpret_cast<void**>(base + 0x1c);
+    if (child != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(child);
+        auto dtor = reinterpret_cast<ScalarDeletingDtor>(vtbl[0]);
+        dtor(child, 1);
+    }
+    ext_00665810(self);
+}
+} // namespace lift_005ACD80

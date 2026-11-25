@@ -24775,6 +24775,13 @@
     "summary": "Initializes the object: calls base init (ext_006657F0), stores vtable 0x0095F5AC, two uint32 args at +0x14/+0x18, zeroes +0x10/+0x1C, and copies four floats from the input array to +0x20..+0x2C. Returns self.",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005ACD80": {
+    "name": "Unknown::ReleaseOptionalChildAndReset_005ACD80",
+    "class": "Unknown",
+    "signature": "void fn_005ACD80(void* self)",
+    "summary": "Deletes the polymorphic child at +0x1c if non-null (vtable slot 0 with delete flag 1), then calls ext_00665810(self).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005ACEE0": {
     "name": "Unknown::initWithArgsAndZeroFloats_005ACEE0",
     "class": "Unknown",
