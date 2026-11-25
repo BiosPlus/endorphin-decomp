@@ -17,6 +17,7 @@ void __stdcall fn_00766210(void* self, double scale) {
     }
 }
 } // namespace lift_00766210
+#include <cstdint>
 
 // [0x007648F0] sub_007648F0 (64 bytes)
 namespace lift_007648F0 {
@@ -130,3 +131,19 @@ void* fn_00764400() {
 }
 } // namespace lift_00771F60
 } // namespace lift_00764400
+
+// [0x00761710] sub_00761710 (16 bytes)
+namespace lift_00761710 {
+// @name sub_00761710
+// @summary Auto-lifted identical-shape clone of 0x007B2210 (Unknown::initAndReturnArg).
+namespace lift_007B2210 {
+// Known callee 0x006BA780: Unknown::InitAndReturnSelf (Zero-inits the object's fields, sets its vtable, and returns the same object pointer.)
+extern void* ext_00761230(void* self);
+
+// @name Unknown::initAndReturnArg
+// @summary Forwards its single stack argument to ext_006BA780 (Unknown::InitAndReturnSelf) and returns that callee's result (stdcall, 4 bytes of args).
+extern void* fn_00761710(void* arg) {
+    return ext_00761230(arg);
+}
+} // namespace lift_007B2210
+} // namespace lift_00761710

@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 #include <cstring>
 #include <cstddef>
+#include <cstdint>
 
 // [0x0077FAC0] sub_0077FAC0 (32 bytes)
 namespace lift_0077FAC0 {
@@ -360,3 +361,51 @@ void* fn_007721F0() {
 }
 } // namespace lift_00771F60
 } // namespace lift_007721F0
+
+// [0x00778D50] sub_00778D50 (16 bytes)
+namespace lift_00778D50 {
+// @name sub_00778D50
+// @summary Auto-lifted identical-shape clone of 0x007B2210 (Unknown::initAndReturnArg).
+namespace lift_007B2210 {
+// Known callee 0x006BA780: Unknown::InitAndReturnSelf (Zero-inits the object's fields, sets its vtable, and returns the same object pointer.)
+extern void* ext_00778930(void* self);
+
+// @name Unknown::initAndReturnArg
+// @summary Forwards its single stack argument to ext_006BA780 (Unknown::InitAndReturnSelf) and returns that callee's result (stdcall, 4 bytes of args).
+extern void* fn_00778D50(void* arg) {
+    return ext_00778930(arg);
+}
+} // namespace lift_007B2210
+} // namespace lift_00778D50
+
+// [0x0077CB00] sub_0077CB00 (16 bytes)
+namespace lift_0077CB00 {
+// @name sub_0077CB00
+// @summary Auto-lifted identical-shape clone of 0x007B2210 (Unknown::initAndReturnArg).
+namespace lift_007B2210 {
+// Known callee 0x006BA780: Unknown::InitAndReturnSelf (Zero-inits the object's fields, sets its vtable, and returns the same object pointer.)
+extern void* ext_0077CAE0(void* self);
+
+// @name Unknown::initAndReturnArg
+// @summary Forwards its single stack argument to ext_006BA780 (Unknown::InitAndReturnSelf) and returns that callee's result (stdcall, 4 bytes of args).
+extern void* fn_0077CB00(void* arg) {
+    return ext_0077CAE0(arg);
+}
+} // namespace lift_007B2210
+} // namespace lift_0077CB00
+
+// [0x0077F010] sub_0077F010 (16 bytes)
+namespace lift_0077F010 {
+// @name sub_0077F010
+// @summary Auto-lifted identical-shape clone of 0x007B2210 (Unknown::initAndReturnArg).
+namespace lift_007B2210 {
+// Known callee 0x006BA780: Unknown::InitAndReturnSelf (Zero-inits the object's fields, sets its vtable, and returns the same object pointer.)
+extern void* ext_00775990(void* self);
+
+// @name Unknown::initAndReturnArg
+// @summary Forwards its single stack argument to ext_006BA780 (Unknown::InitAndReturnSelf) and returns that callee's result (stdcall, 4 bytes of args).
+extern void* fn_0077F010(void* arg) {
+    return ext_00775990(arg);
+}
+} // namespace lift_007B2210
+} // namespace lift_0077F010

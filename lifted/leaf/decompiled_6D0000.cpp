@@ -1701,3 +1701,45 @@ double __cdecl sub_006DFFF0(uint32_t arg0) {
     return std::sqrt(x * x + y * y + z * z + w * w);
 }
 } // namespace lift_006DFFF0
+
+// [0x006D41A0] sub_006D41A0 (96 bytes)
+namespace lift_006D41A0 {
+// @name sub_006D41A0
+// @summary Auto-lifted identical-shape clone of 0x006D4140 (allocateAndConstruct_006D7AE0).
+namespace lift_006D4140 {
+extern void* ext_006A5C62(uint32_t size);
+extern void* __thiscall ext_00717CD0(void* self, void* arg);
+
+// @name allocateAndConstruct_006D7AE0
+// @summary Allocates 0x1d0 bytes and constructs an object via sub_006D7AE0, returning nullptr on allocation failure.
+
+void* __thiscall fn_006D41A0(void* self) {
+    void* obj = ext_006A5C62(0x1E0);
+    if (!obj) {
+        return nullptr;
+    }
+    return ext_00717CD0(obj, self);
+}
+} // namespace lift_006D4140
+} // namespace lift_006D41A0
+
+// [0x006D48D0] sub_006D48D0 (96 bytes)
+namespace lift_006D48D0 {
+// @name sub_006D48D0
+// @summary Auto-lifted identical-shape clone of 0x006D4140 (allocateAndConstruct_006D7AE0).
+namespace lift_006D4140 {
+extern void* ext_006A5C62(uint32_t size);
+extern void* __thiscall ext_006D5C50(void* self, void* arg);
+
+// @name allocateAndConstruct_006D7AE0
+// @summary Allocates 0x1d0 bytes and constructs an object via sub_006D7AE0, returning nullptr on allocation failure.
+
+void* __thiscall fn_006D48D0(void* self) {
+    void* obj = ext_006A5C62(0x280);
+    if (!obj) {
+        return nullptr;
+    }
+    return ext_006D5C50(obj, self);
+}
+} // namespace lift_006D4140
+} // namespace lift_006D48D0

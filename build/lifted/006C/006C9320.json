@@ -1,0 +1,13 @@
+{
+  "va": "0x006C9320",
+  "size": 16,
+  "orig_symbol": "sub_006C9320",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "sub_006C9320",
+  "signature": "extern void* fn_006C9320(void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x007B2210 (Unknown::initAndReturnArg).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T03:42:39Z"
+}

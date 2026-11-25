@@ -28805,6 +28805,13 @@
     "summary": "If the pointer at +0x158 is set, forwards an identity 3x3 float matrix through the child at +0xAC and ext_00694880; always returns the address of the subobject at +0x1A0.",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
+  "0x005B6AF0": {
+    "name": "sub_005B6AF0",
+    "class": "Unknown",
+    "signature": "void* fn_005B6AF0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B6A80 (Unknown::applyIdentityAndGetSubobject).",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B6B60": {
     "name": "Unknown::forwardToSubobjectAt158",
     "class": "Unknown",
@@ -54655,6 +54662,12 @@
     "summary": "Recursively removes child items whose flag 0x08 is set via vtable calls.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C9320": {
+    "name": "sub_006C9320",
+    "signature": "extern void* fn_006C9320(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x007B2210 (Unknown::initAndReturnArg).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C9330": {
     "name": "sub_006C9330",
     "signature": "extern \"C\" void fn_006C9330(void)",
@@ -55157,6 +55170,18 @@
     "name": "allocateAndConstruct_006D7AE0",
     "signature": "void* __thiscall fn_006D4140(void* self)",
     "summary": "Allocates 0x1d0 bytes and constructs an object via sub_006D7AE0, returning nullptr on allocation failure.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
+  "0x006D41A0": {
+    "name": "sub_006D41A0",
+    "signature": "void* __thiscall fn_006D41A0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006D4140 (allocateAndConstruct_006D7AE0).",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
+  "0x006D48D0": {
+    "name": "sub_006D48D0",
+    "signature": "void* __thiscall fn_006D48D0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006D4140 (allocateAndConstruct_006D7AE0).",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
   "0x006D55F0": {
@@ -62714,6 +62739,12 @@
     "summary": "Getter returning uint8_t field at offset +0xEA.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C630": {
+    "name": "sub_0071C630",
+    "signature": "extern void* fn_0071C630(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x007B2210 (Unknown::initAndReturnArg).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071C6E0": {
     "name": "sub_0071C6E0",
     "class": "Unknown",
@@ -63665,6 +63696,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00551A10 (NMCamera::Orthogonal::vfunc_5).",
     "lifted_path": "lifted/clones/auto_clones_750000.cpp"
   },
+  "0x00761710": {
+    "name": "sub_00761710",
+    "signature": "extern void* fn_00761710(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x007B2210 (Unknown::initAndReturnArg).",
+    "lifted_path": "lifted/leaf/decompiled_760000.cpp"
+  },
   "0x007641C0": {
     "name": "sub_007641C0",
     "signature": "extern \"C\" void __fastcall fn_007641C0(void* self)",
@@ -63793,6 +63830,24 @@
     "signature": "DWORD __thiscall fn_00774EC0(void* self, DWORD arg1, DWORD arg2)",
     "summary": "Auto-lifted identical-shape clone of 0x0072DC60 (Unknown::ForwardArgsToVirtualSlot8).",
     "lifted_path": "lifted/leaf/tiny_770000.cpp"
+  },
+  "0x00778D50": {
+    "name": "sub_00778D50",
+    "signature": "extern void* fn_00778D50(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x007B2210 (Unknown::initAndReturnArg).",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
+  "0x0077CB00": {
+    "name": "sub_0077CB00",
+    "signature": "extern void* fn_0077CB00(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x007B2210 (Unknown::initAndReturnArg).",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
+  "0x0077F010": {
+    "name": "sub_0077F010",
+    "signature": "extern void* fn_0077F010(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x007B2210 (Unknown::initAndReturnArg).",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
   },
   "0x0077F4E0": {
     "name": "Unknown::AdvanceCursorAndFindTaggedValue",

@@ -1,0 +1,13 @@
+{
+  "va": "0x006D41A0",
+  "size": 96,
+  "orig_symbol": "sub_006D41A0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "sub_006D41A0",
+  "signature": "void* __thiscall fn_006D41A0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x006D4140 (allocateAndConstruct_006D7AE0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T03:42:39Z"
+}

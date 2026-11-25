@@ -21,6 +21,7 @@ bool fn_006CA060(void* self) {
 } // namespace lift_006CA060
 #include <cstdlib>
 #include <cstdio>
+#include <cstddef>
 
 // [0x006C3450] sub_006C3450 (32 bytes)
 namespace lift_006C3450 {
@@ -1997,3 +1998,19 @@ extern uint32_t fn_006CA540(void* self, uint32_t value) {
     return ext_006D0370(self, 1);
 }
 } // namespace lift_006CA540
+
+// [0x006C9320] sub_006C9320 (16 bytes)
+namespace lift_006C9320 {
+// @name sub_006C9320
+// @summary Auto-lifted identical-shape clone of 0x007B2210 (Unknown::initAndReturnArg).
+namespace lift_007B2210 {
+// Known callee 0x006BA780: Unknown::InitAndReturnSelf (Zero-inits the object's fields, sets its vtable, and returns the same object pointer.)
+extern void* ext_006B9EC0(void* self);
+
+// @name Unknown::initAndReturnArg
+// @summary Forwards its single stack argument to ext_006BA780 (Unknown::InitAndReturnSelf) and returns that callee's result (stdcall, 4 bytes of args).
+extern void* fn_006C9320(void* arg) {
+    return ext_006B9EC0(arg);
+}
+} // namespace lift_007B2210
+} // namespace lift_006C9320

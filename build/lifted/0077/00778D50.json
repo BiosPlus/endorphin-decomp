@@ -1,0 +1,13 @@
+{
+  "va": "0x00778D50",
+  "size": 16,
+  "orig_symbol": "sub_00778D50",
+  "src_path": "src/leaf/decompiled_770000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_770000.cpp",
+  "name": "sub_00778D50",
+  "signature": "extern void* fn_00778D50(void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x007B2210 (Unknown::initAndReturnArg).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T03:42:39Z"
+}

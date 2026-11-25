@@ -4,8 +4,10 @@ extern "C" void __fastcall ext_00712F60(void* self);
 extern "C" void __cdecl ext_006A5C5C(void* ptr);
 #include <cstdint>
 #include <cstdlib>
+#include <cstddef>
+#include <cstring>
 
-// [0x00712F40] sub_00712F40 (32 bytes)
+#include <cstring>
 // @name sub_00712F40
 // @summary MSVC scalar deleting destructor: calls sub_00712F60 and frees memory when (flags & 1) is set.
 extern "C" void* __fastcall fn_00712F40(void* self, int edx_unused, unsigned int flags) {
@@ -1700,3 +1702,19 @@ void* fn_0071EFD0(void* self) {
     return self;
 }
 } // namespace lift_0071EFD0
+
+// [0x0071C630] sub_0071C630 (16 bytes)
+namespace lift_0071C630 {
+// @name sub_0071C630
+// @summary Auto-lifted identical-shape clone of 0x007B2210 (Unknown::initAndReturnArg).
+namespace lift_007B2210 {
+// Known callee 0x006BA780: Unknown::InitAndReturnSelf (Zero-inits the object's fields, sets its vtable, and returns the same object pointer.)
+extern void* ext_0071CE40(void* self);
+
+// @name Unknown::initAndReturnArg
+// @summary Forwards its single stack argument to ext_006BA780 (Unknown::InitAndReturnSelf) and returns that callee's result (stdcall, 4 bytes of args).
+extern void* fn_0071C630(void* arg) {
+    return ext_0071CE40(arg);
+}
+} // namespace lift_007B2210
+} // namespace lift_0071C630

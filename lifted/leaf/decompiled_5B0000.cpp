@@ -945,3 +945,45 @@ void* fn_005B6A10(void* self) {
     return esi + 0x194;
 }
 } // namespace lift_005B6A10
+
+// [0x005B6AF0] sub_005B6AF0 (99 bytes)
+namespace lift_005B6AF0 {
+// @name sub_005B6AF0
+// @summary Auto-lifted identical-shape clone of 0x005B6A80 (Unknown::applyIdentityAndGetSubobject).
+namespace lift_005B6A80 {
+// Known callee 0x00647F20: sub_00647F20 (Member forwarding thunk: loads subobject pointer at +0xA4 and tail-calls sub_0065A980.)
+// Takes the subobject at [child+0xAC] in the thiscall register and a pointer to a 3x3 float matrix on the stack.
+extern void ext_00647F20(void* self, float* matrix);
+// Known callee 0x00694880: sub_00694880 (51B). Matrix pointer in the thiscall register, destination on the stack.
+extern void ext_00694D80(float* matrix, void* dst);
+
+// @name Unknown::applyIdentityAndGetSubobject
+// @class Unknown
+// @summary If the pointer at +0x158 is set, forwards an identity 3x3 float matrix through the child at +0xAC and ext_00694880; always returns the address of the subobject at +0x1A0.
+// @field Unknown +0x158 void* field_0x158
+// @field Unknown +0x1A0 uint8_t field_0x1A0 (subobject; only its address is taken)
+void* fn_005B6AF0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    void* subobject = base + 0x1AC;
+
+    void* child = *reinterpret_cast<void**>(base + 0x158);
+    if (child == nullptr) {
+        return subobject;
+    }
+
+    // Identity matrix (row-major), built on the stack exactly as the original does.
+    alignas(4) float matrix[9] = {
+        1.0f, 0.0f, 0.0f,
+        0.0f, 1.0f, 0.0f,
+        0.0f, 0.0f, 1.0f,
+    };
+
+    // The child object's pointer at +0xAC is the receiver for the forwarding thunk.
+    void* receiver = *reinterpret_cast<void**>(static_cast<uint8_t*>(child) + 0xAC);
+    ext_00647F20(receiver, matrix);
+    ext_00694D80(matrix, subobject);
+
+    return subobject;
+}
+} // namespace lift_005B6A80
+} // namespace lift_005B6AF0
