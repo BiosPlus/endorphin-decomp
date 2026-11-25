@@ -1091,3 +1091,21 @@ void fn_00796660(void* self) {
     wr32(0x28, cursor);
 }
 } // namespace lift_00796660
+
+// [0x0079EAC0] sub_0079EAC0 (32 bytes)
+namespace lift_0079EAC0 {
+extern uint8_t mem_00B61150;   // global entry count (byte)
+extern uint32_t mem_00B6114C;  // global table base pointer (value used as address)
+
+// @name getGlobalTableEntryOrZero
+// @summary Returns the table entry at index (low byte of arg) from the global table, or 0 if the index is >= the global count.
+uint32_t fn_0079EAC0(uint32_t index) {
+    const uint8_t idx = static_cast<uint8_t>(index & 0xFFu);
+    if (idx >= mem_00B61150) {
+        return 0u;
+    }
+    const uintptr_t base = static_cast<uintptr_t>(mem_00B6114C);
+    const auto* table = reinterpret_cast<const uint32_t*>(base);
+    return table[idx];
+}
+} // namespace lift_0079EAC0

@@ -1,0 +1,13 @@
+{
+  "va": "0x0079EAC0",
+  "size": 32,
+  "orig_symbol": "sub_0079EAC0",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "getGlobalTableEntryOrZero",
+  "signature": "extern \"C\" uint8_t mem_00B61150;   // global entry count (byte) extern \"C\" uint32_t mem_00B6114C;  // global table base pointer (value used as address) uint32_t fn_0079EAC0(uint32_t index)",
+  "summary": "Returns the table entry at index (low byte of arg) from the global table, or 0 if the index is \u003e= the global count.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:11:26Z"
+}
