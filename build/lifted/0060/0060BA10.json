@@ -1,0 +1,34 @@
+{
+  "va": "0x0060BA10",
+  "size": 97,
+  "orig_symbol": "sub_0060BA10",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "ConstructStringsThenCallBase_0060BA10",
+  "class": "Unknown",
+  "signature": "void fn_0060BA10(void* self)",
+  "summary": "Constructs two std::string members (at +0x20 then +0x04), then calls ext_0065F440 on self, which overwrites the dword at +0x00. The original SEH frame setup and the vtable store at +0x00 are omitted because ext_0065F440 replaces that slot.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "std::string",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:38:14Z"
+}

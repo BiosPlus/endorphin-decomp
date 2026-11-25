@@ -35084,6 +35084,13 @@
     "summary": "Formats an int into a 50-byte buffer with snprintf and constructs a std::string in place from it; returns the string object.",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x0060BA10": {
+    "name": "ConstructStringsThenCallBase_0060BA10",
+    "class": "Unknown",
+    "signature": "void fn_0060BA10(void* self)",
+    "summary": "Constructs two std::string members (at +0x20 then +0x04), then calls ext_0065F440 on self, which overwrites the dword at +0x00. The original SEH frame setup and the vtable store at +0x00 are omitted because ext_0065F440 replaces that slot.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060BB80": {
     "name": "NMData::EffectorBaseData::vfunc_4",
     "class": "NMData::EffectorBaseData",

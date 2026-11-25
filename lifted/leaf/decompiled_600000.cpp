@@ -991,3 +991,22 @@ void* fn_00605AC0() {
     return reinterpret_cast<void*>(&mem_00B47754);
 }
 } // namespace lift_00605AC0
+
+// [0x0060BA10] sub_0060BA10 (97 bytes)
+namespace lift_0060BA10 {
+extern void __fastcall ext_0065F440(void* self);
+
+// @name ConstructStringsThenCallBase_0060BA10
+// @class Unknown
+// @summary Constructs two std::string members (at +0x20 then +0x04), then calls ext_0065F440 on self, which overwrites the dword at +0x00. The original SEH frame setup and the vtable store at +0x00 are omitted because ext_0065F440 replaces that slot.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 std::string field_0x04
+// @field Unknown +0x20 std::string field_0x20
+void fn_0060BA10(void* self) {
+    // Original order: string at +0x20 is initialised first, then string at +0x04.
+    new (static_cast<uint8_t*>(self) + 0x20) std::string();
+    new (static_cast<uint8_t*>(self) + 0x04) std::string();
+
+    ext_0065F440(self);
+}
+} // namespace lift_0060BA10
