@@ -1,0 +1,13 @@
+{
+  "va": "0x00458C80",
+  "size": 22,
+  "orig_symbol": "sub_00458C80",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "RethrowHresultWithOutOfMemoryHook",
+  "signature": "void fn_00458C80(DWORD hr)",
+  "summary": "If hr == E_OUTOFMEMORY (0x8007000E), runs ord_1187 and uses its result as the value; then forwards the value to ord_1191.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:21:49Z"
+}

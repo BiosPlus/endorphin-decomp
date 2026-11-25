@@ -1305,3 +1305,23 @@ void fn_0045E4C0(void* it, void* last, void* guard, void* end, int32_t* counter)
 }
 } // namespace lift_0046A4D0
 } // namespace lift_0045E4C0
+
+// [0x00458C80] sub_00458C80 (22 bytes)
+namespace lift_00458C80 {
+// Known callee 0x006A60F4: thunk_MFC80_ord_1187 (IAT jump thunk forwarding to MFC80!ord_1187.)
+// Returns a value in eax, which the caller forwards.
+extern DWORD ext_006A60F4();
+// Known callee 0x006A6304: thunk_MFC80_ord_1191 (IAT jump thunk forwarding to MFC80!ord_1191.)
+// Takes one stack argument (the value pushed from eax).
+extern void ext_006A6304(DWORD value);
+
+// @name RethrowHresultWithOutOfMemoryHook
+// @summary If hr == E_OUTOFMEMORY (0x8007000E), runs ord_1187 and uses its result as the value; then forwards the value to ord_1191.
+void fn_00458C80(DWORD hr) {
+    DWORD value = hr;
+    if (hr == 0x8007000Eu) {
+        value = ext_006A60F4();
+    }
+    ext_006A6304(value);
+}
+} // namespace lift_00458C80
