@@ -3444,3 +3444,39 @@ void fn_0043D2E0(void* self) {
     throw std::runtime_error(message);
 }
 } // namespace lift_0043D2E0
+
+// [0x0043CA30]
+namespace lift_0043CA30 {
+extern double mem_00993828;
+
+// @name sub_0043CA30
+// @summary Compute range differences, midpoints, and rate from double and int32 bounds
+// @field Unknown +0xe8 double field_0xe8
+// @field Unknown +0xf0 double field_0xf0
+// @field Unknown +0xfc int32_t field_0xfc
+// @field Unknown +0x100 double field_0x100
+// @field Unknown +0x108 double field_0x108
+// @field Unknown +0x110 double field_0x110
+// @field Unknown +0x118 double field_0x118
+// @field Unknown +0x120 double field_0x120
+// @field Unknown +0x1a4 int32_t field_0x1a4
+
+void __thiscall sub_0043CA30(void* self) {
+    uint8_t* p = static_cast<uint8_t*>(self);
+    int32_t v_1a4 = *reinterpret_cast<const int32_t*>(p + 0x1a4);
+    double v_f0 = *reinterpret_cast<const double*>(p + 0xf0);
+    double v_e8 = *reinterpret_cast<const double*>(p + 0xe8);
+    int32_t v_fc = *reinterpret_cast<const int32_t*>(p + 0xfc);
+
+    double diff_d = v_f0 - v_e8;
+    *reinterpret_cast<double*>(p + 0x100) = diff_d;
+
+    double diff_i = static_cast<double>(v_1a4 - v_fc);
+    *reinterpret_cast<double*>(p + 0x108) = diff_i;
+
+    double half = mem_00993828;
+    *reinterpret_cast<double*>(p + 0x110) = (v_f0 + v_e8) * half;
+    *reinterpret_cast<double*>(p + 0x118) = static_cast<double>(v_fc + v_1a4) * half;
+    *reinterpret_cast<double*>(p + 0x120) = diff_i / diff_d;
+}
+} // namespace lift_0043CA30

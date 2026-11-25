@@ -1,0 +1,69 @@
+{
+  "va": "0x0043CA30",
+  "size": 106,
+  "orig_symbol": "sub_0043CA30",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "sub_0043CA30",
+  "signature": "void __thiscall sub_0043CA30(void* self)",
+  "summary": "Compute range differences, midpoints, and rate from double and int32 bounds",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xE8",
+      "type": "double",
+      "name": "field_0xe8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "double",
+      "name": "field_0xf0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xFC",
+      "type": "int32_t",
+      "name": "field_0xfc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x100",
+      "type": "double",
+      "name": "field_0x100"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x108",
+      "type": "double",
+      "name": "field_0x108"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x110",
+      "type": "double",
+      "name": "field_0x110"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x118",
+      "type": "double",
+      "name": "field_0x118"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x120",
+      "type": "double",
+      "name": "field_0x120"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1A4",
+      "type": "int32_t",
+      "name": "field_0x1a4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:09:44Z"
+}
