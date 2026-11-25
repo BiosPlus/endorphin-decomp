@@ -1,0 +1,21 @@
+{
+  "va": "0x005230B0",
+  "size": 108,
+  "orig_symbol": "sub_005230B0",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "compactRecordRangeInto",
+  "signature": "void fn_005230B0(void* self, void** out, const void* first, void* dst, const void* expectedFirst, const void* srcBegin)",
+  "summary": "Copies the record range [srcBegin, end) into dst, destroys the vacated tail records, shrinks the container end to the new end, and writes {expectedFirst, dst} to the out pair.",
+  "fields": [
+    {
+      "class": "RecordRange",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:57:51Z"
+}

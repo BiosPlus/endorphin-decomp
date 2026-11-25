@@ -20488,6 +20488,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x005230B0": {
+    "name": "compactRecordRangeInto",
+    "signature": "void fn_005230B0(void* self, void** out, const void* first, void* dst, const void* expectedFirst, const void* srcBegin)",
+    "summary": "Copies the record range [srcBegin, end) into dst, destroys the vacated tail records, shrinks the container end to the new end, and writes {expectedFirst, dst} to the out pair.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x005231F0": {
     "name": "sub_005231F0",
     "signature": "DWORD* __thiscall fn_005231F0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
