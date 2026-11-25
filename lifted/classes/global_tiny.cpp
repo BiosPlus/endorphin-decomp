@@ -6777,3 +6777,37 @@ DWORD fn_00404670(void* self) {
     return target(8);
 }
 } // namespace lift_00404670
+
+// [0x005A9ED0]
+namespace lift_005A9ED0 {
+// @name CharacterReloader::vfunc_14
+// @class CharacterReloader
+// @summary Destroys the std::string passed in the first stack argument and returns true; callee pops 0x20 bytes.
+
+namespace {
+
+// Address of MSVCP80 std::basic_string<char>::~basic_string, loaded from the IAT slot at 0x00924FF4.
+using StringDtorFn = void(__thiscall*)(void* self);
+
+}  // namespace
+
+// Thunk-style entry: the std::string temporary lives in the first stack argument slot,
+// so its address is &a0 (what the original `lea ecx, [esp+4]` computed).
+bool __stdcall CharacterReloader_vfunc_14(void* a0, std::uint32_t a1, std::uint32_t a2,
+                                          std::uint32_t a3, std::uint32_t a4,
+                                          std::uint32_t a5, std::uint32_t a6,
+                                          std::uint32_t a7) {
+    (void)a1;
+    (void)a2;
+    (void)a3;
+    (void)a4;
+    (void)a5;
+    (void)a6;
+    (void)a7;
+
+    auto dtor = reinterpret_cast<StringDtorFn>(
+        *reinterpret_cast<std::uintptr_t*>(0x00924FF4));
+    dtor(a0 ? &a0 : nullptr);
+    return true;
+}
+} // namespace lift_005A9ED0

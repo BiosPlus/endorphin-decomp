@@ -1,0 +1,14 @@
+{
+  "va": "0x005A9ED0",
+  "size": 15,
+  "orig_symbol": "CharacterReloader::vfunc_14",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CharacterReloader::vfunc_14",
+  "class": "CharacterReloader",
+  "signature": "bool __stdcall CharacterReloader_vfunc_14(void* a0, std::uint32_t a1, std::uint32_t a2, std::uint32_t a3, std::uint32_t a4, std::uint32_t a5, std::uint32_t a6, std::uint32_t a7)",
+  "summary": "Destroys the std::string passed in the first stack argument and returns true; callee pops 0x20 bytes.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:26:04Z"
+}

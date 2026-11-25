@@ -26566,6 +26566,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005A9970 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005A9ED0": {
+    "name": "CharacterReloader::vfunc_14",
+    "class": "CharacterReloader",
+    "signature": "bool __stdcall CharacterReloader_vfunc_14(void* a0, std::uint32_t a1, std::uint32_t a2, std::uint32_t a3, std::uint32_t a4, std::uint32_t a5, std::uint32_t a6, std::uint32_t a7)",
+    "summary": "Destroys the std::string passed in the first stack argument and returns true; callee pops 0x20 bytes.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x005A9F50": {
     "name": "XMLConverterSubclass::XMLConverterSubclass",
     "class": "XMLConverterSubclass",
