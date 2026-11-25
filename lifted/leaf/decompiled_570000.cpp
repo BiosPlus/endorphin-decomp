@@ -856,3 +856,41 @@ void* fn_005752C0(void* first, void* last, void* dest_last) {
     return dst;
 }
 } // namespace lift_005752C0
+
+// [0x0057BC20]
+namespace lift_0057BC20 {
+// @name Unknown::CopyRecordRange_0057BC20
+// @class Unknown
+// @summary Copies each 0x3C-byte record in [first, last) to dest (two bytes plus two std::string members), returns dest past the last copied record.
+// @field Unknown +0x00 uint8_t field_0x00
+// @field Unknown +0x01 uint8_t field_0x01
+// @field Unknown +0x04 std::string field_0x04
+// @field Unknown +0x20 std::string field_0x20
+
+// MSVCP80 std::basic_string<char>::operator=(const basic_string&), imported via [0x924FDC].
+using StringAssignFn = void* (__thiscall*)(void* self, const void* src);
+extern StringAssignFn ext_MSVCP80_string_assign;
+
+static constexpr std::ptrdiff_t kRecordSize = 0x3C;
+
+void* __cdecl CopyRecordRange_0057BC20(const void* first, const void* last, void* dest) {
+    const uint8_t* src = static_cast<const uint8_t*>(first);
+    const uint8_t* end = static_cast<const uint8_t*>(last);
+    uint8_t* out = static_cast<uint8_t*>(dest);
+
+    if (src == end) {
+        return dest;
+    }
+
+    do {
+        lift_field<uint8_t>(out, 0x00) = lift_field<const uint8_t>(src, 0x00);
+        lift_field<uint8_t>(out, 0x01) = lift_field<const uint8_t>(src, 0x01);
+        ext_MSVCP80_string_assign(out + 0x04, src + 0x04);
+        ext_MSVCP80_string_assign(out + 0x20, src + 0x20);
+        src += kRecordSize;
+        out += kRecordSize;
+    } while (src != end);
+
+    return out;
+}
+} // namespace lift_0057BC20

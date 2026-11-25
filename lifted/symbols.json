@@ -22152,6 +22152,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057BC20": {
+    "name": "Unknown::CopyRecordRange_0057BC20",
+    "class": "Unknown",
+    "signature": "void* __cdecl CopyRecordRange_0057BC20(const void* first, const void* last, void* dest)",
+    "summary": "Copies each 0x3C-byte record in [first, last) to dest (two bytes plus two std::string members), returns dest past the last copied record.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057CA60": {
     "name": "sub_0057CA60",
     "signature": "uint32_t fn_0057CA60(uint32_t begin, uint32_t end, uint32_t value)",
