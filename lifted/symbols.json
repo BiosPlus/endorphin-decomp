@@ -11026,6 +11026,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00499190 (ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_38).",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x0049DA40": {
+    "name": "initStaticObjectOnce_0049DA40",
+    "signature": "void* fn_0049DA40()",
+    "summary": "One-time guarded initializer for the static object at 0x00ADD824; sets its vtable-style first DWORD to 0x0093FF4C and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049DAA0": {
     "name": "ensureStaticObjectInitialized_0049DAA0",
     "signature": "DWORD fn_0049DAA0()",

@@ -929,3 +929,23 @@ uint32_t __thiscall sub_00497720(uint32_t this_ptr, uint32_t out_ptr, uint32_t o
     return out_ptr;
 }
 } // namespace lift_00497720
+
+// [0x0049DA40] sub_0049DA40 (87 bytes)
+namespace lift_0049DA40 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00ADD828;
+extern int mem_00ADD824;
+
+// @name initStaticObjectOnce_0049DA40
+// @summary One-time guarded initializer for the static object at 0x00ADD824; sets its vtable-style first DWORD to 0x0093FF4C and returns its address.
+void* fn_0049DA40() {
+    // Bit 0 of the guard flag at 0x00ADD828 marks "initialized or in progress".
+    if ((mem_00ADD828 & 1) == 0) {
+        mem_00ADD828 |= 1;
+        ext_0067A670(&mem_00ADD824, 0);
+        mem_00ADD824 = 0x0093FF4C;
+    }
+    return &mem_00ADD824;
+}
+} // namespace lift_0049DA40
