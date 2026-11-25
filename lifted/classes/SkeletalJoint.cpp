@@ -23,3 +23,29 @@ void fn_0064E3F0(void* self, float* out) {
     }
 }
 } // namespace lift_0064E3F0
+
+// [0x0064E560] SkeletalJoint::vfunc_36 (67 bytes)
+namespace lift_0064E560 {
+// @name SkeletalJoint::vfunc_36
+// @class SkeletalJoint
+// @summary Scales a 3-float vector per-axis by fields +0x7C/+0x80/+0x84, adds offsets from +0x70/+0x74/+0x78, and writes the result to out (each step rounded to float).
+// @field SkeletalJoint +0x70 float field_0x70
+// @field SkeletalJoint +0x74 float field_0x74
+// @field SkeletalJoint +0x78 float field_0x78
+// @field SkeletalJoint +0x7C float field_0x7c
+// @field SkeletalJoint +0x80 float field_0x80
+// @field SkeletalJoint +0x84 float field_0x84
+void fn_0064E560(void* self, const float* in, float* out) {
+    const auto* s = static_cast<const unsigned char*>(self);
+
+    // Each product is stored to a float before the add, matching the
+    // original per-step float rounding.
+    const float sx = *reinterpret_cast<const float*>(s + 0x7C) * in[0];
+    const float sy = *reinterpret_cast<const float*>(s + 0x80) * in[1];
+    const float sz = *reinterpret_cast<const float*>(s + 0x84) * in[2];
+
+    out[0] = sx + *reinterpret_cast<const float*>(s + 0x70);
+    out[1] = sy + *reinterpret_cast<const float*>(s + 0x74);
+    out[2] = sz + *reinterpret_cast<const float*>(s + 0x78);
+}
+} // namespace lift_0064E560

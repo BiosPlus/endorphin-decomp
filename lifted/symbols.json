@@ -34713,6 +34713,13 @@
     "summary": "Writes a float to *out: the value from ext_007C5910 of the object handle at +0x64 when its flags (ext_007C5900 result) have bits 0x700 set, otherwise the constant mem_009802E0 (0x7F7FFFFF, FLT_MAX).",
     "lifted_path": "lifted/classes/SkeletalJoint.cpp"
   },
+  "0x0064E560": {
+    "name": "SkeletalJoint::vfunc_36",
+    "class": "SkeletalJoint",
+    "signature": "void fn_0064E560(void* self, const float* in, float* out)",
+    "summary": "Scales a 3-float vector per-axis by fields +0x7C/+0x80/+0x84, adds offsets from +0x70/+0x74/+0x78, and writes the result to out (each step rounded to float).",
+    "lifted_path": "lifted/classes/SkeletalJoint.cpp"
+  },
   "0x0064EA80": {
     "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const \u0026), 0}\u003e",

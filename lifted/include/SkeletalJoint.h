@@ -11,5 +11,11 @@
 namespace lifted_layout {
 struct SkeletalJoint_Fields {
     // +0x64  uint32_t                 field_0x64  (evidence: 0x0064E3F0)
+    // +0x70  float                    field_0x70  (evidence: 0x0064E560)
+    // +0x74  float                    field_0x74  (evidence: 0x0064E560)
+    // +0x78  float                    field_0x78  (evidence: 0x0064E560)
+    // +0x7C  float                    field_0x7c  (evidence: 0x0064E560)
+    // +0x80  float                    field_0x80  (evidence: 0x0064E560)
+    // +0x84  float                    field_0x84  (evidence: 0x0064E560)
 };
 } // namespace lifted_layout
