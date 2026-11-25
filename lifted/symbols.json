@@ -23207,6 +23207,12 @@
     "summary": "Returns 0 if field +0x04 is zero; otherwise returns (field +0x08 - field +0x04) / 160 using a 0x66666667 magic-multiply with sign fix-up.",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x00553F90": {
+    "name": "allocate_160_bytes",
+    "signature": "extern \"C\" void* fn_00553F90(uint32_t count)",
+    "summary": "Allocates count * 160 bytes via MFC80 operator new, throwing std::bad_alloc on size_t overflow.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x005541A0": {
     "name": "destroyStringPair",
     "signature": "void __thiscall sub_005541A0(void* self)",

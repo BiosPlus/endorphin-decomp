@@ -1,0 +1,13 @@
+{
+  "va": "0x0057BEC0",
+  "size": 92,
+  "orig_symbol": "sub_0057BEC0",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "CopyRecordRangeWrapper_0057BEC0",
+  "signature": "void* __cdecl sub_0057BEC0(const void* first, const void* last, void* dest)",
+  "summary": "Copies a range of 0x3C-byte records from [first, last) to dest and returns dest past the last copied record.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:15:21Z"
+}
