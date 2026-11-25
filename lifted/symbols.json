@@ -31588,6 +31588,13 @@
     "summary": "Fetches an int32 handle from ext_00594000, resolves it through ext_00594010, and stores the float result at this+0x30.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x00629E20": {
+    "name": "UnknownClass::constructWithVtable",
+    "class": "UnknownClass",
+    "signature": "uintptr_t __thiscall sub_00629E20(uintptr_t this_ptr, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Runs base initializer with the first stack argument, then installs the vtable at 0x009785C4 and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00629E40": {
     "name": "MetaBodySensor::vfunc_0",
     "class": "MetaBodySensor",

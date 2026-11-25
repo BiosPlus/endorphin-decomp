@@ -707,3 +707,22 @@ uint32_t __thiscall sub_0062CD30(uint32_t this_ptr) {
     return this_ptr;
 }
 } // namespace lift_0062CD30
+
+// [0x00629E20]
+namespace lift_00629E20 {
+// @name UnknownClass::constructWithVtable
+// @class UnknownClass
+// @summary Runs base initializer with the first stack argument, then installs the vtable at 0x009785C4 and returns this.
+// @field UnknownClass +0x00 uint32_t vtable
+
+uint32_t __thiscall ext_005FF240(uintptr_t this_ptr, uint32_t arg0);
+
+uintptr_t __thiscall sub_00629E20(uintptr_t this_ptr, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    (void)arg1;
+    (void)arg2;
+    (void)arg3;
+    ext_005FF240(this_ptr, arg0);
+    *reinterpret_cast<uint32_t*>(this_ptr) = 0x009785C4u;
+    return this_ptr;
+}
+} // namespace lift_00629E20

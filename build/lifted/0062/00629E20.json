@@ -1,0 +1,22 @@
+{
+  "va": "0x00629E20",
+  "size": 25,
+  "orig_symbol": "sub_00629E20",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "UnknownClass::constructWithVtable",
+  "class": "UnknownClass",
+  "signature": "uintptr_t __thiscall sub_00629E20(uintptr_t this_ptr, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Runs base initializer with the first stack argument, then installs the vtable at 0x009785C4 and returns this.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:15:14Z"
+}
