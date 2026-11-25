@@ -1061,10 +1061,12 @@ struct Unknown_Fields {
     // +0xC4  int32_t                  field_0xC4  (evidence: 0x006BCEE0) // CONFLICT: multiple definitions at +0xC4
     // +0xC4  EntryTable               field_0xc4  (evidence: 0x00763E40) // CONFLICT: multiple definitions at +0xC4
     // +0xC4  uint32_t                 field_0xc4  (evidence: 0x0051DDB0) // CONFLICT: multiple definitions at +0xC4
+    // +0xC4  uint32_t                 list_head_sentinel  (evidence: 0x0049F0C0) // CONFLICT: multiple definitions at +0xC4
     // +0xC8  int32_t*                 field_0xC8  (evidence: 0x006DC460) // CONFLICT: multiple definitions at +0xC8
     // +0xC8  uint32_t                 field_0xc8  (evidence: 0x00763E40) // CONFLICT: multiple definitions at +0xC8
     // +0xC8  void*                    field_0xc8  (evidence: 0x00455410) // CONFLICT: multiple definitions at +0xC8
     // +0xC8  BYTE                     flag  (evidence: 0x00441C10, 0x00447E30) // CONFLICT: multiple definitions at +0xC8
+    // +0xC8  void*                    list_end  (evidence: 0x0049F0C0) // CONFLICT: multiple definitions at +0xC8
     // +0xC8  DWORD                    selectionBuffer  (evidence: 0x00441C10, 0x00448420) // CONFLICT: multiple definitions at +0xC8
     // +0xCC  uint8_t                  field_0xCC  (evidence: 0x00447F20) // CONFLICT: multiple definitions at +0xCC
     // +0xCC  DWORD                    field_0xcc  (evidence: 0x00441C10, 0x00448420) // CONFLICT: multiple definitions at +0xCC

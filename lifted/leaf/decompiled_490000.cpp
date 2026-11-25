@@ -1623,3 +1623,53 @@ uint32_t __thiscall sub_0049ED70(uint32_t self, uint32_t key) {
     return match + 0x8;
 }
 } // namespace lift_0049ED70
+
+// [0x0049F0C0]
+namespace lift_0049F0C0 {
+extern void* ext_0049BEE0(void* out, uint32_t value, void* head, uint32_t unused, void* sentinel, uint32_t arg);
+extern uint32_t mem_00925134;
+
+// @name FindMatchingItemInList
+// @summary Searches a sentinel-terminated linked list at this+0xC4 for the first node matching arg and returns its embedded object (node+8), or nullptr.
+// @field Unknown +0xC4 uint32_t list_head_sentinel
+// @field Unknown +0xC8 void* list_end
+void* __thiscall fn_0049F0C0(void* self, uint32_t arg) {
+    uint32_t out[2] = {};
+    uint8_t* list_ptr = static_cast<uint8_t*>(self) + 0xC4;
+    void* sentinel = *reinterpret_cast<void**>(list_ptr + 0x4);
+    void* head = *reinterpret_cast<void**>(sentinel);
+
+    void** res = static_cast<void**>(
+        ext_0049BEE0(out, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(list_ptr)),
+                     head, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(list_ptr)),
+                     sentinel, arg));
+
+    uint32_t ret_val = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(res[0]));
+    void* node = res[1];
+
+    using InvalidParamFn = void(__cdecl*)();
+    auto invalid_param = reinterpret_cast<InvalidParamFn>(static_cast<uintptr_t>(mem_00925134));
+
+    if (static_cast<uint32_t>(reinterpret_cast<uintptr_t>(list_ptr)) != ret_val) {
+        invalid_param();
+    }
+
+    void* end_node = *reinterpret_cast<void**>(list_ptr + 0x4);
+    if (!list_ptr) {
+        invalid_param();
+    }
+
+    if (node == end_node) {
+        return nullptr;
+    }
+
+    if (!list_ptr) {
+        invalid_param();
+    }
+    if (node == *reinterpret_cast<void**>(list_ptr + 0x4)) {
+        invalid_param();
+    }
+
+    return static_cast<uint8_t*>(node) + 0x8;
+}
+} // namespace lift_0049F0C0
