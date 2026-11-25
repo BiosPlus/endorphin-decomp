@@ -2277,6 +2277,12 @@
     "summary": "Allocates storage for count 56-byte elements; throws std::length_error if count * 56 would overflow.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041DA50": {
+    "name": "getFirstVectorElementOrZero",
+    "signature": "extern \"C\" int32_t __cdecl fn_0041DA50(void)",
+    "summary": "Returns the first element of the vector returned by sub_00469170(sub_00465B30()), or 0 if sub_00660280() is 0 or the vector is empty.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041DD20": {
     "name": "Properties::PropertiesControl::vfunc_80",
     "class": "Properties::PropertiesControl",
@@ -19956,6 +19962,12 @@
     "summary": "Destructor tail-call: restores vtable mem_0094F084 and tail-calls base destructor sub_00503CD0.",
     "lifted_path": "lifted/leaf/tiny_510000.cpp"
   },
+  "0x00517FC0": {
+    "name": "parseDoubleFromString",
+    "signature": "extern \"C\" void fn_00517FC0(double* out)",
+    "summary": "Converts a string retrieved via ext_004275C0 to a double using atof and stores it at out.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00518030": {
     "name": "sub_005136C0",
     "class": "Unknown (vtable 0x0095219C)",
@@ -23068,6 +23080,12 @@
     "signature": "extern \"C\" void* __fastcall fn_0053F5D0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00532B90 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x0053F5F0": {
+    "name": "parseIntFromField",
+    "signature": "extern \"C\" void __cdecl fn_0053F5F0(int* outValue, void* obj)",
+    "summary": "Parses an integer from a string retrieved via ext_004275C0 and stores it in outValue.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
   "0x0053F660": {
     "name": "SelectionTool::vfunc_22",
