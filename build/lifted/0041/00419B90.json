@@ -1,0 +1,22 @@
+{
+  "va": "0x00419B90",
+  "size": 81,
+  "orig_symbol": "sub_00419B90",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "CSomething::ReleaseBuffer",
+  "class": "CSomething",
+  "signature": "void fn_00419B90(void* self, void* pMalloc)",
+  "summary": "Frees the buffer at +0x60 via an IMalloc (fetching SHGetMalloc if none given), then clears it.",
+  "fields": [
+    {
+      "class": "CSomething",
+      "offset": "+0x60",
+      "type": "void*",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:59:18Z"
+}

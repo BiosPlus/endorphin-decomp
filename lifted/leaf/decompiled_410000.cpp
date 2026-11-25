@@ -1356,3 +1356,46 @@ void* fn_0041CF00(void* self, void* src) {
     return dst;
 }
 } // namespace lift_0041CF00
+
+// [0x00419B90] sub_00419B90 (81 bytes)
+namespace lift_00419B90 {
+// Known callee 0x006A6304: thunk_MFC80_ord_1191 (IAT jump thunk forwarding to MFC80!ord_1191.)
+extern void ext_006A6304();
+// IAT slot holding SHELL32!SHGetMalloc
+extern int mem_00925540;
+
+// @name CSomething::ReleaseBuffer
+// @class CSomething
+// @summary Frees the buffer at +0x60 via an IMalloc (fetching SHGetMalloc if none given), then clears it.
+// @field CSomething +0x60 void* field_0x60
+void fn_00419B90(void* self, void* pMalloc) {
+    auto* obj = static_cast<unsigned char*>(self);
+    void** pField = reinterpret_cast<void**>(obj + 0x60);
+    if (*pField == nullptr) {
+        return;
+    }
+
+    bool acquired = false;
+    if (pMalloc == nullptr) {
+        acquired = true;
+        using GetMallocFn = HRESULT(__stdcall*)(void**);
+        auto getMalloc = reinterpret_cast<GetMallocFn>(static_cast<uintptr_t>(mem_00925540));
+        HRESULT hr = getMalloc(&pMalloc);
+        if (hr < 0) {
+            ext_006A6304();
+        }
+    }
+
+    // IMalloc vtable: [0]=QueryInterface, [2]=Release, [5]=Free
+    void** vtbl = *reinterpret_cast<void***>(pMalloc);
+    using FreeFn = void(__stdcall*)(void*, void*);
+    reinterpret_cast<FreeFn>(vtbl[5])(pMalloc, *pField);
+
+    if (acquired) {
+        using ReleaseFn = unsigned long(__stdcall*)(void*);
+        reinterpret_cast<ReleaseFn>(vtbl[2])(pMalloc);
+    }
+
+    *pField = nullptr;
+}
+} // namespace lift_00419B90
