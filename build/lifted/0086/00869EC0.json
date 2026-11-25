@@ -1,0 +1,13 @@
+{
+  "va": "0x00869EC0",
+  "size": 112,
+  "orig_symbol": "sub_00869EC0",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "uint32ArrayToBigEndianBytes",
+  "signature": "void sub_00869EC0(uint8_t* dst, int32_t dst_len, const uint32_t* src, uint32_t src_count)",
+  "summary": "Converts an array of uint32_t words (little-endian word order) into a big-endian byte buffer, zero-padding leading bytes.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:35:23Z"
+}
