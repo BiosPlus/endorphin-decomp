@@ -66790,6 +66790,12 @@
     "summary": "Passes each byte of a NUL-terminated string to ext_007B7720, then passes a terminating 0.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B7A30": {
+    "name": "writePaddedString",
+    "signature": "void sub_007B7A30(const char* str, uint32_t max_len)",
+    "summary": "Writes a null-terminated string via ext_007B7720 and pads with zero bytes up to max_len unless halted by status flags.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B8968": {
     "name": "sub_007B8968_table",
     "signature": "const uint8_t* fn_007B8968(void* self)",
@@ -66807,6 +66813,12 @@
     "name": "dataTable_007B8A48",
     "class": "none",
     "summary": "24-byte constant table of byte pairs (not executable code): nine {0x00,0x02} pairs followed by {0x01,0x02}, {0x01,0x01}, {0x01,0x02}.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
+  "0x007B8BB0": {
+    "name": "freeLinkedList_007B8BB0",
+    "signature": "void sub_007B8BB0()",
+    "summary": "Frees all nodes and their owned buffers in the linked list rooted at mem_00B61DB8.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
   "0x007B8D80": {
@@ -67032,6 +67044,12 @@
     "class": "Unknown",
     "signature": "int32_t fn_007C15A0(void* self)",
     "summary": "If the owner at +0x1C and callback at +0x24 are set, invoke callback(ctx, owner-\u003e+0x2C) when non-null, then callback(ctx, owner) and clear +0x1C; returns 0 on success, -2 if a required pointer is null.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
+  "0x007C16F0": {
+    "name": "scanSyncMarker0000FFFF",
+    "signature": "void __cdecl sub_007C16F0(uint32_t* statePtr, const uint8_t* data, uint32_t length)",
+    "summary": "Scans a byte buffer for the 4-byte sequence 00 00 FF FF, updating a state machine counter",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
   "0x007C1F60": {

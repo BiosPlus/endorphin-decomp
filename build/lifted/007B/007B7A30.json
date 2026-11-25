@@ -1,0 +1,13 @@
+{
+  "va": "0x007B7A30",
+  "size": 96,
+  "orig_symbol": "sub_007B7A30",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "writePaddedString",
+  "signature": "void sub_007B7A30(const char* str, uint32_t max_len)",
+  "summary": "Writes a null-terminated string via ext_007B7720 and pads with zero bytes up to max_len unless halted by status flags.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:52:30Z"
+}

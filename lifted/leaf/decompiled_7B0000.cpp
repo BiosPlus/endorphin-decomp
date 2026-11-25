@@ -13,6 +13,7 @@ extern const uint8_t mem_007B7084[12] = {
     0x01, 0x03, 0x02, 0x03, 0x01, 0x03,
 };
 } // namespace lift_007B7084
+#include <cstdlib>
 
 // [0x007B5224] sub_007B5224 (16 bytes)
 namespace lift_007B5224 {
@@ -1306,3 +1307,63 @@ int32_t fn_007B1920(const char* mode, uint32_t a2) {
     return -1;
 }
 } // namespace lift_007B1920
+
+// [0x007B8BB0]
+namespace lift_007B8BB0 {
+// @name freeLinkedList_007B8BB0
+// @summary Frees all nodes and their owned buffers in the linked list rooted at mem_00B61DB8.
+
+extern uintptr_t mem_00B61DB8;
+
+void sub_007B8BB0()
+{
+    uintptr_t node = mem_00B61DB8;
+    while (node != 0)
+    {
+        uintptr_t ptr8 = *reinterpret_cast<uintptr_t*>(node + 0x8);
+        if (ptr8 != 0)
+        {
+            std::free(reinterpret_cast<void*>(ptr8));
+        }
+
+        uintptr_t ptrC = *reinterpret_cast<uintptr_t*>(node + 0xC);
+        if (ptrC != 0)
+        {
+            std::free(reinterpret_cast<void*>(ptrC));
+        }
+
+        uintptr_t next = *reinterpret_cast<uintptr_t*>(node + 0x14);
+        std::free(reinterpret_cast<void*>(node));
+        node = next;
+    }
+    mem_00B61DB8 = 0;
+}
+} // namespace lift_007B8BB0
+
+// [0x007B7A30]
+namespace lift_007B7A30 {
+extern void ext_007B7720(uint32_t ch);
+extern uint8_t mem_00B61218;
+extern uint8_t mem_00B61219;
+
+// @name writePaddedString
+// @summary Writes a null-terminated string via ext_007B7720 and pads with zero bytes up to max_len unless halted by status flags.
+void sub_007B7A30(const char* str, uint32_t max_len) {
+    uint32_t len = 0;
+    while (str[len] != '\0') {
+        ++len;
+    }
+
+    for (uint32_t i = 0; i < len; ++i) {
+        ext_007B7720(static_cast<uint8_t>(str[i]));
+    }
+
+    while (len < max_len) {
+        ext_007B7720(0);
+        if (mem_00B61218 != 0 && mem_00B61219 == 0) {
+            break;
+        }
+        ++len;
+    }
+}
+} // namespace lift_007B7A30
