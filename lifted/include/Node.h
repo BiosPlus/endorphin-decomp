@@ -16,6 +16,7 @@ struct Node_Fields {
     // +0x8   uintptr_t                field_0x08  (evidence: 0x00427370, 0x004275C0) // CONFLICT: multiple definitions at +0x8
     // +0x8   Node*                    next  (evidence: 0x004A58E0) // CONFLICT: multiple definitions at +0x8
     // +0xC   uint32_t                 counter_0C  (evidence: 0x007837A0, 0x00788E50)
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x007C6810)
     // +0x15  uint8_t                  field_0x15  (evidence: 0x00401AF0, 0x00420590, 0x004275C0, 0x0046FBA0, 0x00486D60, 0x004928E0, 0x005014B0, 0x0052A070, 0x0055E8C0, 0x00594310, 0x0059DE00, 0x005AC840, 0x005E0B00, 0x005E2C70, 0x00624D10)
     // +0x59  uint8_t                  field_0x59  (evidence: 0x00427370, 0x004275C0)
     // +0x94  uint32_t                 next  (evidence: 0x00584B10)

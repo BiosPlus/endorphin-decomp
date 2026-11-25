@@ -889,3 +889,31 @@ void sub_007CDB70(uint32_t arg0) {
     mem_write32(arg0 + 0xa8, mem_read32(arg0 + 0xa8) + 1);
 }
 } // namespace lift_007CDB70
+
+// [0x007C6810]
+namespace lift_007C6810 {
+std::uint32_t mem_read32(std::uint32_t);
+std::uint32_t ext_007D4A70(std::uint32_t);
+std::uint32_t ext_007D4AA0(std::uint32_t, std::uint32_t);
+
+// @name Unknown::ForEachNode
+// @class Unknown
+// @summary Iterates over nodes in the link structure at +0x1D4, invoking a callback with each node's +0x14 value and a user argument.
+// @field Unknown +0x1d4 uint32_t field_0x1d4
+// @field Node +0x14 uint32_t field_0x14
+
+void sub_007C6810(std::uint32_t arg0, std::uint32_t arg1, std::uint32_t arg2) {
+    std::uint32_t list_head = arg0 + 0x1D4u;
+    std::uint32_t node = ext_007D4A70(list_head);
+    if (node == 0) {
+        return;
+    }
+    auto callback = reinterpret_cast<void (*)(std::uint32_t, std::uint32_t)>(arg1);
+    do {
+        std::uint32_t val = mem_read32(node + 0x14u);
+        std::uint32_t next = ext_007D4AA0(list_head, node);
+        callback(val, arg2);
+        node = next;
+    } while (node != 0);
+}
+} // namespace lift_007C6810
