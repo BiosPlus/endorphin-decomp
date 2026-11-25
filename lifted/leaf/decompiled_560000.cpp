@@ -541,3 +541,32 @@ void fn_00567210(void* self, void* node, void* arg2) {
     }
 }
 } // namespace lift_00567210
+
+// [0x005679D0] sub_005679D0 (95 bytes)
+namespace lift_005679D0 {
+// Known callee 0x00567210: Unknown::visitChildrenRecursive_00567210 (Recursively walks the dword child-pointer list at node+0x28..+0x2C, calling itself on each child with the same second argument.)
+extern void ext_00567210(void* self, void* node, void* arg2);
+extern int mem_00925134;
+
+// @name Unknown::visitChildren_005679D0
+// @class Unknown
+// @summary Calls visitChildrenRecursive_00567210 on every dword entry in the list bounded by this+0x18 (begin) and this+0x1C (end), passing a null second argument.
+// @field Unknown +0x18 DWORD field_0x18
+// @field Unknown +0x1C DWORD field_0x1C
+void fn_005679D0(void* self) {
+    // Pointers are stored as 32-bit dwords in the original image; keep them as DWORD values.
+    auto* base = static_cast<unsigned char*>(self);
+    DWORD cur = *reinterpret_cast<DWORD*>(base + 0x18);
+
+    for (;;) {
+        DWORD end = *reinterpret_cast<DWORD*>(base + 0x1C);
+        if (cur == end) {
+            break;
+        }
+        // Element is a dword node pointer; read it and recurse with a null second argument.
+        DWORD node = *reinterpret_cast<DWORD*>(static_cast<uintptr_t>(cur));
+        ext_00567210(self, reinterpret_cast<void*>(static_cast<uintptr_t>(node)), nullptr);
+        cur += 4;
+    }
+}
+} // namespace lift_005679D0
