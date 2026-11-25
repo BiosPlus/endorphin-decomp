@@ -2596,3 +2596,37 @@ int32_t fn_004347B0(void* self, void* out) {
     return reinterpret_cast<VTSlot0>(vtable[0])(out, result);
 }
 } // namespace lift_004347B0
+
+// [0x004306C0] sub_004306C0 (86 bytes)
+namespace lift_004306C0 {
+// Known callee 0x0044B5B0: GetNestedFieldOrZero (sub_0044B5B0)
+extern int __fastcall ext_0044B5B0(void* self);
+// Known callee 0x0044B5C0: ForwardToOwnedVirtualSlot4
+extern int __fastcall ext_0044B5C0(void* self);
+
+// Call virtual slot `slot` of the object `obj` with one int argument (thiscall-style).
+using VSlotFn = int (*)(void* self, int arg);
+static inline void call_vslot(void* obj, int slot, int arg) {
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    reinterpret_cast<VSlotFn>(vtbl[slot])(obj, arg);
+}
+
+// @name Unknown::conditionalVirtualDispatch_004306C0
+// @class Unknown
+// @summary Dispatches virtual slot 0 on arg with 1, then slot 1 on arg with 1 if this+0x100 gate yields 6 and ext_0044B5C0 returns 1, otherwise slot 1 with 0.
+// @field Unknown +0x100 void* field_0x100
+extern void __thiscall fn_004306C0(void* self, void* arg) {
+    call_vslot(arg, 0, 1);
+
+    void* child = lift_field<void*>(self, 0x100);
+    if (child == nullptr) {
+        return;
+    }
+
+    if (ext_0044B5B0(child) == 6 && ext_0044B5C0(child) == 1) {
+        call_vslot(arg, 1, 1);
+    } else {
+        call_vslot(arg, 1, 0);
+    }
+}
+} // namespace lift_004306C0
