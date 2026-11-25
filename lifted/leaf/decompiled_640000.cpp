@@ -2206,3 +2206,25 @@ void* __thiscall fn_00640740(void* self, uint32_t arg0) {
     return obj;
 }
 } // namespace lift_00640740
+
+// [0x006407C0]
+namespace lift_006407C0 {
+extern void* ext_006A5C62(uint32_t size);
+void* ext_0063F960(void* self, uint32_t arg0, const void* name);
+void ext_006406D0(void* self, uint32_t arg0);
+
+// @name Unknown::createAndRegister_006407C0
+// @class Unknown
+// @summary Allocates 0x64 bytes, constructs a derived object via ext_0063F960 with arg0 and &this->field_0x04, and registers it via ext_006406D0.
+// @field Unknown +0x04 uint8_t field_0x04
+void* __thiscall fn_006407C0(void* self, uint32_t arg0) {
+    void* mem = ext_006A5C62(0x64);
+    void* obj = nullptr;
+    if (mem != nullptr) {
+        const void* field04 = static_cast<const uint8_t*>(self) + 4;
+        obj = ext_0063F960(mem, arg0, field04);
+    }
+    ext_006406D0(self, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj)));
+    return obj;
+}
+} // namespace lift_006407C0
