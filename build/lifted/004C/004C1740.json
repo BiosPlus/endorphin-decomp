@@ -1,0 +1,13 @@
+{
+  "va": "0x004C1740",
+  "size": 95,
+  "orig_symbol": "sub_004C1740",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "InitOnceGlobalString_004C1740",
+  "signature": "void* sub_004C1740()",
+  "summary": "One-time guarded initializer for the global string at mem_00AE3024; on first call runs the string setup and registers a teardown, then returns the global's address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:27:14Z"
+}

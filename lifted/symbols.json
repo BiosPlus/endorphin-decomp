@@ -13712,6 +13712,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004ED6B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004C1740": {
+    "name": "InitOnceGlobalString_004C1740",
+    "signature": "void* sub_004C1740()",
+    "summary": "One-time guarded initializer for the global string at mem_00AE3024; on first call runs the string setup and registers a teardown, then returns the global's address.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C17A0": {
     "name": "ExprParser::ReadWriteMethodType\u003cTriggeredEventData,isEnabled\u003e::vfunc_40",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::TriggeredEventData, bool, {public: bool __thiscall NMData::TriggeredEventData::isEnabled(void) const, 0}, bool, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{272, {flat}}, 0}\u003e",
