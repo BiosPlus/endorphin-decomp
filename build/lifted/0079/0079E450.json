@@ -1,0 +1,13 @@
+{
+  "va": "0x0079E450",
+  "size": 48,
+  "orig_symbol": "sub_0079E450",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "IsFirstRecordNotType6",
+  "signature": "extern \"C\" uint32_t __fastcall fn_0079E450(void* self)",
+  "summary": "Loads the object pointer at *self, reads its +0xD8 field, then reads the dword of record 0 and returns 0 if it equals 6, otherwise 1.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:47:16Z"
+}

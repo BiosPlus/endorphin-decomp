@@ -837,3 +837,21 @@ BOOL fn_0079E480(void* self) {
     return value == 6 ? 1 : 0;
 }
 } // namespace lift_0079E480
+
+// [0x0079E450] sub_0079E450 (48 bytes)
+namespace lift_0079E450 {
+// Known callee 0x00714AE0: getField0xD8 (returns the 32-bit field at +0xD8 of the object in ecx).
+extern uint32_t __fastcall ext_00714AE0(uint32_t ecx);
+// Known callee 0x006C33C0: Unknown::loadRecordDwordByIndex (loads a dword from record[index] and writes it via out).
+extern void __thiscall ext_006C33C0(void* self, uint32_t index, uint32_t* out);
+
+// @name IsFirstRecordNotType6
+// @summary Loads the object pointer at *self, reads its +0xD8 field, then reads the dword of record 0 and returns 0 if it equals 6, otherwise 1.
+extern uint32_t __fastcall fn_0079E450(void* self) {
+    uint32_t obj = *reinterpret_cast<uint32_t*>(self);
+    uint32_t handle = ext_00714AE0(obj);
+    uint32_t recordValue = 0;
+    ext_006C33C0(reinterpret_cast<void*>(static_cast<uintptr_t>(handle)), 0u, &recordValue);
+    return (recordValue == 6u) ? 0u : 1u;
+}
+} // namespace lift_0079E450

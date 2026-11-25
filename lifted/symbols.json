@@ -65487,6 +65487,12 @@
     "summary": "Reads the 0xD8 field of the sub-object referenced by self+0x00, then stores it into the indexed record array via ext_006C3390.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x0079E450": {
+    "name": "IsFirstRecordNotType6",
+    "signature": "extern \"C\" uint32_t __fastcall fn_0079E450(void* self)",
+    "summary": "Loads the object pointer at *self, reads its +0xD8 field, then reads the dword of record 0 and returns 0 if it equals 6, otherwise 1.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079E480": {
     "name": "Unknown::isFirstRecordTagSix",
     "class": "Unknown",
