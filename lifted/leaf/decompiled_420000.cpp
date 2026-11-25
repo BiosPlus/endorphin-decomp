@@ -762,3 +762,19 @@ void fn_004291A0(void* self) {
 }
 } // namespace lift_004757F0
 } // namespace lift_004291A0
+
+// [0x00429100] sub_00429100 (78 bytes)
+namespace lift_00429100 {
+// Known callee 0x00428A60: Unknown::ClearStringEntries (Destroys each 0x24-byte entry's embedded std::string (at +0x08), frees the entry buffer, and nulls the three buffer pointers.)
+extern void ext_00428A60(void* self);
+
+// @name Unknown::DestroyStringAndEntries_00429100
+// @summary Destroys the std::string at self+0x14, then clears the string-entry buffer at self+0x04.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x14 std::string field_0x14
+void fn_00429100(void* self) {
+    using CStr = std::string;
+    lift_field<CStr>(self, 0x14).~CStr();
+    ext_00428A60(static_cast<uint8_t*>(self) + 0x04);
+}
+} // namespace lift_00429100

@@ -1,0 +1,28 @@
+{
+  "va": "0x00429100",
+  "size": 78,
+  "orig_symbol": "sub_00429100",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "Unknown::DestroyStringAndEntries_00429100",
+  "class": "Unknown",
+  "signature": "void fn_00429100(void* self)",
+  "summary": "Destroys the std::string at self+0x14, then clears the string-entry buffer at self+0x04.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "std::string",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:44:47Z"
+}
