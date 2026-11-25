@@ -1,0 +1,46 @@
+{
+  "va": "0x004774B0",
+  "size": 73,
+  "orig_symbol": "sub_004774B0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "Unknown::FindNodeByKey_004774B0",
+  "class": "Unknown",
+  "signature": "void* fn_004774B0(void* self, const void* key)",
+  "summary": "Walks a binary search tree rooted at header-\u003eparent comparing each node key with the given string; returns the header when empty or the last node reached by a left turn, and the header if no left turn occurred.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "header"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "left"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "right"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "key"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0xC1",
+      "type": "uint8_t",
+      "name": "is_nil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:31:14Z"
+}

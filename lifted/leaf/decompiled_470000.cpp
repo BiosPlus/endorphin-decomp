@@ -262,3 +262,42 @@ void* __thiscall fn_00472730(void* self, const void* key) {
     return result;
 }
 } // namespace lift_00472730
+
+// [0x004774B0] sub_004774B0 (73 bytes)
+namespace lift_004774B0 {
+extern uint32_t mem_00924EF4;
+
+using StringEqFn = bool(__cdecl*)(const void* lhs, const void* rhs);
+
+// @name Unknown::FindNodeByKey_004774B0
+// @class Unknown
+// @summary Walks a binary search tree rooted at header->parent comparing each node key with the given string; returns the header when empty or the last node reached by a left turn, and the header if no left turn occurred.
+// @field Unknown +0x04 void* header
+// @field TreeNode +0x00 void* left
+// @field TreeNode +0x08 void* right
+// @field TreeNode +0x0C std::string key
+// @field TreeNode +0xC1 uint8_t is_nil
+void* fn_004774B0(void* self, const void* key) {
+    void* header = lift_field<void*>(self, 0x4);
+    void* node = lift_field<void*>(header, 0x4);
+
+    if (lift_field<uint8_t>(node, 0xC1) != 0) {
+        return header;
+    }
+
+    auto stringEq = reinterpret_cast<StringEqFn>(
+        static_cast<uintptr_t>(mem_00924EF4));
+
+    void* result = header;
+    while (lift_field<uint8_t>(node, 0xC1) == 0) {
+        const void* nodeKey = static_cast<const void*>(static_cast<uint8_t*>(node) + 0xC);
+        if (stringEq(nodeKey, key)) {
+            node = lift_field<void*>(node, 0x8);
+        } else {
+            result = node;
+            node = lift_field<void*>(node, 0x0);
+        }
+    }
+    return result;
+}
+} // namespace lift_004774B0

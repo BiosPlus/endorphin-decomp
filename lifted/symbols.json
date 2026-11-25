@@ -7494,6 +7494,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004773D0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004774B0": {
+    "name": "Unknown::FindNodeByKey_004774B0",
+    "class": "Unknown",
+    "signature": "void* fn_004774B0(void* self, const void* key)",
+    "summary": "Walks a binary search tree rooted at header-\u003eparent comparing each node key with the given string; returns the header when empty or the last node reached by a left turn, and the header if no left turn occurred.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00477500": {
     "name": "fillFloatRange_00477500",
     "signature": "void fn_00477500(float* first, float* last, const float* value)",
