@@ -14491,6 +14491,13 @@
     "summary": "Forwards virtual slot 0 to the first source object in the proxy's vector (tail call); returns the vector begin value when the vector is empty, or 0 when it is unset.",
     "lifted_path": "lifted/Properties/TargetSelectionProxy.cpp"
   },
+  "0x004EF970": {
+    "name": "AllocRecord18",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void* fn_004EF970(DWORD a0, DWORD a1, DWORD a2, const DWORD* a3, BYTE a4)",
+    "summary": "Allocates a 0x18-byte record, fills it from five arguments (three dwords, a dword pair read through a pointer, and a byte flag), zeroes the trailing byte, and returns the record or null on allocation failure.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004F0510": {
     "name": "Properties::TestControl::vfunc_8",
     "class": "Properties::TestControl",

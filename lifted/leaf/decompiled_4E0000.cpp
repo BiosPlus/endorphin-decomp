@@ -128,3 +128,35 @@ extern INT __cdecl fn_004E9D70(void) {
     return ext_00469530(reinterpret_cast<void*>(static_cast<intptr_t>(self)), 5, 0);
 }
 } // namespace lift_004E9D70
+
+// [0x004EF970] sub_004EF970 (63 bytes)
+namespace lift_004EF970 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Used here as the allocator (operator new-style, cdecl, one size argument, result in eax).
+extern void* ext_006A5C62(size_t size);
+
+// @name AllocRecord18
+// @class <ClassName> (optional)
+// @summary Allocates a 0x18-byte record, fills it from five arguments (three dwords, a dword pair read through a pointer, and a byte flag), zeroes the trailing byte, and returns the record or null on allocation failure.
+// @field Record18 +0x00 DWORD field_0x00
+// @field Record18 +0x04 DWORD field_0x04
+// @field Record18 +0x08 DWORD field_0x08
+// @field Record18 +0x0C DWORD field_0x0C
+// @field Record18 +0x10 DWORD field_0x10
+// @field Record18 +0x14 BYTE field_0x14
+// @field Record18 +0x15 BYTE field_0x15
+void* fn_004EF970(DWORD a0, DWORD a1, DWORD a2, const DWORD* a3, BYTE a4) {
+    void* rec = ext_006A5C62(0x18);
+    if (rec == nullptr) {
+        return nullptr;
+    }
+    lift_field<DWORD>(rec, 0x00) = a0;
+    lift_field<DWORD>(rec, 0x04) = a1;
+    lift_field<DWORD>(rec, 0x08) = a2;
+    lift_field<DWORD>(rec, 0x0C) = a3[0];
+    lift_field<DWORD>(rec, 0x10) = a3[1];
+    lift_field<BYTE>(rec, 0x14) = a4;
+    lift_field<BYTE>(rec, 0x15) = 0;
+    return rec;
+}
+} // namespace lift_004EF970

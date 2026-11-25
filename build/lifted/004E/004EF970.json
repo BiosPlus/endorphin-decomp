@@ -1,0 +1,58 @@
+{
+  "va": "0x004EF970",
+  "size": 63,
+  "orig_symbol": "sub_004EF970",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "AllocRecord18",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "void* fn_004EF970(DWORD a0, DWORD a1, DWORD a2, const DWORD* a3, BYTE a4)",
+  "summary": "Allocates a 0x18-byte record, fills it from five arguments (three dwords, a dword pair read through a pointer, and a byte flag), zeroes the trailing byte, and returns the record or null on allocation failure.",
+  "fields": [
+    {
+      "class": "Record18",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Record18",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Record18",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Record18",
+      "offset": "+0xC",
+      "type": "DWORD",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Record18",
+      "offset": "+0x10",
+      "type": "DWORD",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Record18",
+      "offset": "+0x14",
+      "type": "BYTE",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Record18",
+      "offset": "+0x15",
+      "type": "BYTE",
+      "name": "field_0x15"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:02:08Z"
+}
