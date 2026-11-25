@@ -1,0 +1,22 @@
+{
+  "va": "0x0045BC30",
+  "size": 63,
+  "orig_symbol": "sub_0045BC30",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "Unknown::SendPairedMessagesAndNotify",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __thiscall fn_0045BC30(void* self, DWORD lparam)",
+  "summary": "Sends WM_USER-range message 0x110B (wParam 9) twice and then 0x1114 (wParam 0) to the window handle at this+0x20, all with the given lParam.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:02:11Z"
+}

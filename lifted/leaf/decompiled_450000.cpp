@@ -668,3 +668,26 @@ void __thiscall fn_004564A0(void* self, uint32_t arg0, uint32_t arg1, uint32_t a
     ext_006A5E5A(wrapper, 0, 0, arg1, arg2, 1);
 }
 } // namespace lift_004564A0
+
+// [0x0045BC30] sub_0045BC30 (63 bytes)
+namespace lift_0045BC30 {
+extern uint32_t mem_00925694;  // IAT slot holding USER32!SendMessageA
+
+using SendMessageAFn = LRESULT(__stdcall*)(HWND, UINT, WPARAM, LPARAM);
+
+// @name Unknown::SendPairedMessagesAndNotify
+// @class Unknown
+// @summary Sends WM_USER-range message 0x110B (wParam 9) twice and then 0x1114 (wParam 0) to the window handle at this+0x20, all with the given lParam.
+// @field Unknown +0x20 DWORD field_0x20
+extern void __thiscall fn_0045BC30(void* self, DWORD lparam) {
+    auto send = reinterpret_cast<SendMessageAFn>(static_cast<uintptr_t>(mem_00925694));
+    auto hwnd = [&]() {
+        DWORD h = *reinterpret_cast<DWORD*>(static_cast<char*>(self) + 0x20);
+        return reinterpret_cast<HWND>(static_cast<uintptr_t>(h));
+    };
+
+    (void)send(hwnd(), 0x110Bu, 9u, static_cast<LPARAM>(lparam));
+    (void)send(hwnd(), 0x110Bu, 9u, static_cast<LPARAM>(lparam));
+    (void)send(hwnd(), 0x1114u, 0u, static_cast<LPARAM>(lparam));
+}
+} // namespace lift_0045BC30

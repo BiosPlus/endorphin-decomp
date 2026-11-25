@@ -5265,6 +5265,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0045B6B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0045BC30": {
+    "name": "Unknown::SendPairedMessagesAndNotify",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __thiscall fn_0045BC30(void* self, DWORD lparam)",
+    "summary": "Sends WM_USER-range message 0x110B (wParam 9) twice and then 0x1114 (wParam 0) to the window handle at this+0x20, all with the given lParam.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x0045C090": {
     "name": "WalkAndNotifyItems",
     "signature": "extern \"C\" void __thiscall fn_0045C090(void* self, uint32_t item)",
