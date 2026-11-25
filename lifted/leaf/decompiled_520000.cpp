@@ -1681,3 +1681,29 @@ uint32_t fn_0052F540(uint32_t index) {
     }
 }
 } // namespace lift_0052F540
+
+// [0x0052FFD0]
+namespace lift_0052FFD0 {
+// @name createAnimationDerived_0052FFD0
+// @summary Allocates a 0x40-byte animation-derived object, initializes its base, sets vtable pointers at +0x00/+0x14, and zeroes +0x3C.
+// @field Unknown +0x00 uint32_t vftable_0x00
+// @field Unknown +0x14 uint32_t vftable_0x14
+// @field Unknown +0x3C uint32_t field_0x3C
+
+
+extern void* fn_006A5C62(uint32_t size);
+extern void* fn_0053B240(void* self);
+
+void* fn_0052FFD0(void) {
+    uint8_t* obj = static_cast<uint8_t*>(fn_006A5C62(0x40));
+    if (!obj) {
+        return nullptr;
+    }
+
+    fn_0053B240(obj);
+    *reinterpret_cast<uint32_t*>(obj + 0x00) = 0x00953F94u;
+    *reinterpret_cast<uint32_t*>(obj + 0x14) = 0x00953F8Cu;
+    *reinterpret_cast<uint32_t*>(obj + 0x3C) = 0u;
+    return obj;
+}
+} // namespace lift_0052FFD0

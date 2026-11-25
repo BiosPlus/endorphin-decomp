@@ -21345,6 +21345,13 @@
     "summary": "Walks the pointer array bounded by this+0x18 (begin) and this+0x1C (end) and calls vtable slot 3 (+0x0C) on each object with the argument.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x005171B0": {
+    "name": "EvolvedIndividual::vfunc_13_off_C",
+    "class": "EvolvedIndividual",
+    "signature": "uint32_t __thiscall fn_005171B0(uint32_t self, uint32_t out_ptr, uint32_t name_str)",
+    "summary": "Looks up a property/symbol by name, returning a descriptor pair if matched or an empty descriptor otherwise.",
+    "lifted_path": "lifted/classes/EvolvedIndividual.cpp"
+  },
   "0x00517230": {
     "name": "Unknown::InvokeSlot23OnChildren",
     "class": "Unknown",
@@ -22966,6 +22973,12 @@
     "signature": "void fn_0052FF70(void* self, unsigned int flags)",
     "summary": "Scalar deleting destructor: destroys the +0x3C sub-object and base, then frees self when flags bit 0 is set.",
     "lifted_path": "lifted/Primitives/Marker.cpp"
+  },
+  "0x0052FFD0": {
+    "name": "createAnimationDerived_0052FFD0",
+    "signature": "void* fn_0052FFD0(void)",
+    "summary": "Allocates a 0x40-byte animation-derived object, initializes its base, sets vtable pointers at +0x00/+0x14, and zeroes +0x3C.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
   "0x00530050": {
     "name": "Primitives::Sensor::vfunc_0",

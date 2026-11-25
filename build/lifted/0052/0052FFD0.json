@@ -1,0 +1,33 @@
+{
+  "va": "0x0052FFD0",
+  "size": 114,
+  "orig_symbol": "sub_0052FFD0",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "createAnimationDerived_0052FFD0",
+  "signature": "void* fn_0052FFD0(void)",
+  "summary": "Allocates a 0x40-byte animation-derived object, initializes its base, sets vtable pointers at +0x00/+0x14, and zeroes +0x3C.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "vftable_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:39:23Z"
+}
