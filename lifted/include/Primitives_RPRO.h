@@ -14,7 +14,7 @@ struct Primitives_RPRO_Fields {
     // +0x1C  uint32_t                 field_0x1c  (evidence: 0x0053DFD0)
     // +0x3C  float                    field_0x3c  (evidence: 0x0053C0C0, 0x0053C150, 0x0053DFD0)
     // +0x40  int32_t                  field_0x40  (evidence: 0x0053C150)
-    // +0x44  float                    field_0x44  (evidence: 0x0053C150)
+    // +0x44  float                    field_0x44  (evidence: 0x0053C150, 0x0053C1A0)
     // +0x48  float                    field_0x48  (evidence: 0x0053C150)
     // +0x4C  float                    field_0x4c  (evidence: 0x0053C150)
     // +0x50  float                    field_0x50  (evidence: 0x0053C150)
@@ -32,6 +32,6 @@ struct Primitives_RPRO_Fields {
     // +0x80  float                    field_0x80  (evidence: 0x0053C150)
     // +0xC4  uint8_t                  field_0xc4  (evidence: 0x0053DFD0)
     // +0xEC  uint8_t                  field_0xec  (evidence: 0x0053DFD0)
-    // +0x108 void*                    sub_object  (evidence: 0x0053DFD0)
+    // +0x108 void*                    sub_object  (evidence: 0x0053C1A0, 0x0053DFD0)
 };
 } // namespace lifted_layout

@@ -1,0 +1,28 @@
+{
+  "va": "0x0053C1A0",
+  "size": 74,
+  "orig_symbol": "Primitives::RPRO::vfunc_28",
+  "src_path": "src/Primitives/RPRO.cpp",
+  "lifted_path": "lifted/Primitives/RPRO.cpp",
+  "name": "Primitives::RPRO::vfunc_28",
+  "class": "Primitives::RPRO",
+  "signature": "void fn_0053C1A0(void* self)",
+  "summary": "Wraps a sub-object's draw call (vtable slot 0x58, arg 1) in a GL line-attrib/matrix push-pop, with the object's 4x4 matrix at +0x44 applied.",
+  "fields": [
+    {
+      "class": "Primitives::RPRO",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Primitives::RPRO",
+      "offset": "+0x108",
+      "type": "void*",
+      "name": "sub_object"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:05:22Z"
+}

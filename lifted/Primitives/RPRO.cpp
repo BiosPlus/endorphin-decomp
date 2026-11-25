@@ -151,3 +151,44 @@ void fn_0053DFD0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
     }
 }
 } // namespace lift_0053DFD0
+
+// [0x0053C1A0] Primitives::RPRO::vfunc_28 (74 bytes)
+namespace lift_0053C1A0 {
+// OpenGL import slots (IAT entries). Each holds the resolved function pointer.
+extern void* mem_0092546C; // glPushAttrib
+extern void* mem_00925520; // glLineWidth
+extern void* mem_00925414; // glPushMatrix
+extern void* mem_009253C8; // glMultMatrixf
+extern void* mem_00925404; // glPopMatrix
+extern void* mem_0092552C; // glPopAttrib
+
+// @name Primitives::RPRO::vfunc_28
+// @class Primitives::RPRO
+// @summary Wraps a sub-object's draw call (vtable slot 0x58, arg 1) in a GL line-attrib/matrix push-pop, with the object's 4x4 matrix at +0x44 applied.
+// @field Primitives::RPRO +0x44 float field_0x44
+// @field Primitives::RPRO +0x108 void* sub_object
+void fn_0053C1A0(void* self) {
+    using PFN_PushAttrib  = void (*)(GLbitfield);
+    using PFN_LineWidth   = void (*)(GLfloat);
+    using PFN_NoArg       = void (*)();
+    using PFN_MultMatrixf = void (*)(const GLfloat*);
+    using PFN_SubDraw     = void (*)(void* thisptr, int arg);
+
+    constexpr GLbitfield GL_LINE_BIT = 0x00000004;
+
+    reinterpret_cast<PFN_PushAttrib>(mem_0092546C)(GL_LINE_BIT);
+    reinterpret_cast<PFN_LineWidth>(mem_00925520)(1.0f);
+    reinterpret_cast<PFN_NoArg>(mem_00925414)();                       // glPushMatrix
+    reinterpret_cast<PFN_MultMatrixf>(mem_009253C8)(
+        &lift_field<GLfloat>(self, 0x44));                              // glMultMatrixf(self+0x44)
+
+    // Call vtable slot 0x58 of sub_object (thiscall: this = &self->sub_object, arg = 1).
+    void* sub_object = lift_field<void*>(self, 0x108);
+    void* vtbl       = lift_field<void*>(sub_object, 0);
+    auto  slot       = lift_field<PFN_SubDraw>(vtbl, 0x58);
+    slot(&lift_field<void*>(self, 0x108), 1);
+
+    reinterpret_cast<PFN_NoArg>(mem_00925404)();                       // glPopMatrix
+    reinterpret_cast<PFN_NoArg>(mem_0092552C)();                       // glPopAttrib
+}
+} // namespace lift_0053C1A0
