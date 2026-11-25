@@ -1,0 +1,13 @@
+{
+  "va": "0x00869330",
+  "size": 80,
+  "orig_symbol": "sub_00869330",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "memcmp_diff",
+  "signature": "int fn_00869330(const unsigned char* s1, const unsigned char* s2, unsigned int n)",
+  "summary": "Compares up to n bytes of two buffers; returns the unsigned byte difference at the first mismatch, or 0 if n is 0 or all bytes match.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:58:03Z"
+}

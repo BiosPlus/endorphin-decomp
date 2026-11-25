@@ -634,3 +634,20 @@ void fn_00860330(int32_t a, int32_t b, int32_t* out_divisor, int32_t* out_quotie
     *out_quotient = n / b;
 }
 } // namespace lift_00860330
+
+// [0x00869330] sub_00869330 (80 bytes)
+namespace lift_00869330 {
+// @name memcmp_diff
+// @summary Compares up to n bytes of two buffers; returns the unsigned byte difference at the first mismatch, or 0 if n is 0 or all bytes match.
+int fn_00869330(const unsigned char* s1, const unsigned char* s2, unsigned int n) {
+    if (n == 0) {
+        return 0;
+    }
+    for (unsigned int i = 0; i < n; ++i) {
+        if (s1[i] != s2[i]) {
+            return static_cast<int>(s1[i]) - static_cast<int>(s2[i]);
+        }
+    }
+    return 0;
+}
+} // namespace lift_00869330
