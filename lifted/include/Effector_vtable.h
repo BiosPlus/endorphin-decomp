@@ -8,6 +8,6 @@
 // Recovered field layout for Effector::vtable:
 namespace lifted_layout {
 struct Effector_vtable_Fields {
-    // +0x38  void*                    getPoseRawDesiredDisplacement  (evidence: 0x004C0800, 0x00512A00, 0x00604CE0, 0x00604D80)
+    // +0x38  void*                    getPoseRawDesiredDisplacement  (evidence: 0x004C0800, 0x00512A00, 0x00604CE0, 0x00604D80, 0x006707A0)
 };
 } // namespace lifted_layout
