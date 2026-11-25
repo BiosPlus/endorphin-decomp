@@ -1,0 +1,76 @@
+{
+  "va": "0x005433F0",
+  "size": 113,
+  "orig_symbol": "CameraTool::vfunc_33",
+  "src_path": "src/classes/CameraTool.cpp",
+  "lifted_path": "lifted/classes/CameraTool.cpp",
+  "name": "CameraTool::vfunc_33",
+  "class": "CameraTool",
+  "signature": "void __thiscall fn_005433F0(void* self)",
+  "summary": "Copies translation vector from the associated target's transform into two internal 4D vectors.",
+  "fields": [
+    {
+      "class": "CameraTool",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "CameraTool",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    },
+    {
+      "class": "CameraTool",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    },
+    {
+      "class": "CameraTool",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "CameraTool",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "field_0x40"
+    },
+    {
+      "class": "CameraTool",
+      "offset": "+0x74",
+      "type": "float",
+      "name": "field_0x74"
+    },
+    {
+      "class": "CameraTool",
+      "offset": "+0x78",
+      "type": "float",
+      "name": "field_0x78"
+    },
+    {
+      "class": "CameraTool",
+      "offset": "+0x7C",
+      "type": "float",
+      "name": "field_0x7c"
+    },
+    {
+      "class": "CameraTool",
+      "offset": "+0x80",
+      "type": "float",
+      "name": "field_0x80"
+    },
+    {
+      "class": "CameraTool",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:37:14Z"
+}

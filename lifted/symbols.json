@@ -24809,6 +24809,13 @@
     "summary": "Stores address of mem_009560E4 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x005433F0": {
+    "name": "CameraTool::vfunc_33",
+    "class": "CameraTool",
+    "signature": "void __thiscall fn_005433F0(void* self)",
+    "summary": "Copies translation vector from the associated target's transform into two internal 4D vectors.",
+    "lifted_path": "lifted/classes/CameraTool.cpp"
+  },
   "0x00543470": {
     "name": "CameraTool::vfunc_32",
     "class": "CameraTool",
