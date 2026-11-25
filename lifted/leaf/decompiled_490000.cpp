@@ -1419,3 +1419,24 @@ void* __thiscall fn_00495460(void* self, const void* src) {
     return self;
 }
 } // namespace lift_00495460
+
+// [0x0049AD40] sub_0049AD40 (42 bytes)
+namespace lift_0049AD40 {
+extern int mem_00925134; // IAT slot for MSVCR80!_invalid_parameter_noinfo
+
+// @name CompareSecondDword_0049AD40
+// @class Unknown
+// @summary Asserts self[0] is non-zero and equals other[0] (calls CRT _invalid_parameter_noinfo via IAT on failure), then returns 1 if self[+4] differs from other[+4], else 0.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+uint8_t fn_0049AD40(void* self, const void* other) {
+    const uint32_t key = lift_field<uint32_t>(self, 0x00);
+    if (!(key != 0 && key == lift_field<uint32_t>(other, 0x00))) {
+        using InvalidParamFn = void(__cdecl*)();
+        (*reinterpret_cast<InvalidParamFn*>(&mem_00925134))();
+    }
+    const uint32_t a = lift_field<uint32_t>(self, 0x04);
+    const uint32_t b = lift_field<uint32_t>(other, 0x04);
+    return static_cast<uint8_t>(a != b ? 1 : 0);
+}
+} // namespace lift_0049AD40

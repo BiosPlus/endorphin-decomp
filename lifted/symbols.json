@@ -7810,6 +7810,13 @@
     "summary": "Pure jump thunk forwarding to sub_0067B1F0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0046F830": {
+    "name": "Unknown::SignalEventAndResetSubObject",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0046F830(void* self)",
+    "summary": "Clears a flag at +0x12C, signals the event at index +0x148 on subobject +0x160, and tail-calls ClearFlagThenVirtualSlot2 on subobject +0x128.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046F8B0": {
     "name": "Unknown::IsReadyAndFlagSet",
     "class": "Unknown",
@@ -10856,6 +10863,13 @@
     "name": "descriptiveName: allFourFloatsInUnitRange",
     "signature": "bool fn_0049ACB0(const float* p)",
     "summary": "Returns true if all four float components at p[0..3] lie in [0.0, 1.0]; NaN fails.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
+  "0x0049AD40": {
+    "name": "CompareSecondDword_0049AD40",
+    "class": "Unknown",
+    "signature": "uint8_t fn_0049AD40(void* self, const void* other)",
+    "summary": "Asserts self[0] is non-zero and equals other[0] (calls CRT _invalid_parameter_noinfo via IAT on failure), then returns 1 if self[+4] differs from other[+4], else 0.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
   "0x0049AD70": {
@@ -23373,6 +23387,12 @@
     "class": "VTableDispatch",
     "signature": "uint32_t fn_00543580(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00543530 (VTableDispatch::ClearFlagsAndTailCallSlot16).",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
+  "0x005435A0": {
+    "name": "sub_005435A0",
+    "signature": "uint32_t __thiscall sub_005435A0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Calls vtable+0x50(arg1, arg2) on this and clears byte fields at +0x91 and +0x94",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
   "0x005435D0": {

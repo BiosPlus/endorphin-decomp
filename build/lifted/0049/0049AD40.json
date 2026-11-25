@@ -1,0 +1,28 @@
+{
+  "va": "0x0049AD40",
+  "size": 42,
+  "orig_symbol": "sub_0049AD40",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "CompareSecondDword_0049AD40",
+  "class": "Unknown",
+  "signature": "uint8_t fn_0049AD40(void* self, const void* other)",
+  "summary": "Asserts self[0] is non-zero and equals other[0] (calls CRT _invalid_parameter_noinfo via IAT on failure), then returns 1 if self[+4] differs from other[+4], else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:28:47Z"
+}
