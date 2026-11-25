@@ -115,6 +115,7 @@ struct Unknown_Fields {
     // +0x4   void* field_0x04 (sub-object pointer read from the NM::Vector3 const & argument)  (evidence: 0x005B80A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 begin  (evidence: 0x0067F9D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t*                 begin  (evidence: 0x0041CD10) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    begin  (evidence: 0x0050B960) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 beginPtr  (evidence: 0x0041CCC0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 cachedChild  (evidence: 0x0066BA00) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    callback  (evidence: 0x00810C30) // CONFLICT: multiple definitions at +0x4
@@ -200,6 +201,7 @@ struct Unknown_Fields {
     // +0x8   DWORD                    end  (evidence: 0x005991D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 end  (evidence: 0x0067F9D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t*                 end  (evidence: 0x0041CD10) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    end  (evidence: 0x0050B960) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 endPtr  (evidence: 0x0041CCC0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t*                 entriesEnd  (evidence: 0x00688B50) // CONFLICT: multiple definitions at +0x8
     // +0x8   BOOLEAN                  field_0x08  (evidence: 0x0041FD20) // CONFLICT: multiple definitions at +0x8
@@ -241,6 +243,7 @@ struct Unknown_Fields {
     // +0x9   BYTE                     field_0x09  (evidence: 0x004E9BB0)
     // +0xC   uint32_t field_0x0C      (slot[0])  (evidence: 0x00553A30) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* handler (handler pointer at table[kind*40 + 0x0C])  (evidence: 0x007D5B30) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void*                    capacity  (evidence: 0x0050B960) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  count  (evidence: 0x006408F0, 0x00648A20) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 counter  (evidence: 0x00640CB0, 0x00648A20) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t field_0x0C (count, decremented)  (evidence: 0x00640CD0, 0x00648A20) // CONFLICT: multiple definitions at +0xC

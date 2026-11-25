@@ -623,3 +623,32 @@ void fn_00505D00(void* self) {
     *reinterpret_cast<uint32_t*>(base + 0x0C) = 0;
 }
 } // namespace lift_00505D00
+
+// [0x0050B960] sub_0050B960 (73 bytes)
+namespace lift_0050B960 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* p);
+
+// @name Unknown::DestroyElementsAndReset_0050B960
+// @class Unknown
+// @summary Calls vtable slot 0 (deleting-destructor style, flag 0) on each 0x24-byte element between begin and end, frees the buffer at begin, then nulls begin/end/capacity.
+// @field Unknown +0x04 void* begin
+// @field Unknown +0x08 void* end
+// @field Unknown +0x0C void* capacity
+void fn_0050B960(void* self) {
+    auto* obj = static_cast<uint8_t*>(self);
+    uint8_t* begin = *reinterpret_cast<uint8_t**>(obj + 0x04);
+    if (begin != nullptr) {
+        uint8_t* end = *reinterpret_cast<uint8_t**>(obj + 0x08);
+        for (uint8_t* elem = begin; elem != end; elem += 0x24) {
+            void** vtable = *reinterpret_cast<void***>(elem);
+            auto dtor = reinterpret_cast<void (*)(void*, int)>(vtable[0]);
+            dtor(elem, 0);
+        }
+        ext_006A5C5C(begin);
+    }
+    *reinterpret_cast<uint8_t**>(obj + 0x04) = nullptr;
+    *reinterpret_cast<uint8_t**>(obj + 0x08) = nullptr;
+    *reinterpret_cast<uint8_t**>(obj + 0x0C) = nullptr;
+}
+} // namespace lift_0050B960

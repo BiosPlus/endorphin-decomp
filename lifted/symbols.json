@@ -16313,6 +16313,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x0050B960": {
+    "name": "Unknown::DestroyElementsAndReset_0050B960",
+    "class": "Unknown",
+    "signature": "void fn_0050B960(void* self)",
+    "summary": "Calls vtable slot 0 (deleting-destructor style, flag 0) on each 0x24-byte element between begin and end, frees the buffer at begin, then nulls begin/end/capacity.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050BFE0": {
     "name": "sub_0050BFE0",
     "signature": "extern \"C\" void fn_0050BFE0(void)",
