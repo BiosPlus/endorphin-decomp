@@ -1,0 +1,13 @@
+{
+  "va": "0x007CAB40",
+  "size": 57,
+  "orig_symbol": "sub_007CAB40",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "sign_float",
+  "signature": "float sign_float(float x)",
+  "summary": "Returns the sign of a float: 1.0 for x \u003e 0 (and NaN), -1.0 for x \u003c 0, 0.0 for x == 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:52:43Z"
+}

@@ -55879,6 +55879,12 @@
     "summary": "Adds 0x10 to the 32-bit argument and returns the result.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007CAB40": {
+    "name": "sign_float",
+    "signature": "float sign_float(float x)",
+    "summary": "Returns the sign of a float: 1.0 for x \u003e 0 (and NaN), -1.0 for x \u003c 0, 0.0 for x == 0.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CAFC0": {
     "name": "getField0x14Float",
     "signature": "float sub_007CAFC0(uint32_t obj)",

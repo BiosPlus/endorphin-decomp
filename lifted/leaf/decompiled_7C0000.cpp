@@ -685,3 +685,22 @@ uint32_t fn_007CCA20(uint32_t obj, uint32_t arg2, uint32_t arg3, uint32_t arg4) 
     return handler(pair, arg3, arg4);
 }
 } // namespace lift_007CCA20
+
+// [0x007CAB40]
+namespace lift_007CAB40 {
+// @name sign_float
+// @summary Returns the sign of a float: 1.0 for x > 0 (and NaN), -1.0 for x < 0, 0.0 for x == 0.
+// @field none
+
+extern const float mem_0093F7B8; // .rdata float -1.0
+
+float sign_float(float x) {
+    if (x == 0.0f) {
+        return 0.0f;
+    }
+    if (x < 0.0f) {
+        return mem_0093F7B8;
+    }
+    return 1.0f;
+}
+} // namespace lift_007CAB40
