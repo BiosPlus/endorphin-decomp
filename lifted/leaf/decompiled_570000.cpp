@@ -461,3 +461,38 @@ void fn_00574E20(void* os) {
     mem_00925094(os, version, 2);
 }
 } // namespace lift_00574E20
+
+// [0x0057BBE0]
+namespace lift_0057BBE0 {
+// @name Unknown::CopyBackwardStringPairs
+// @class StringPairRecord
+// @summary Copy-backward over 56-byte records (two std::string members); assigns each record into the destination ending at dst_end and returns the new destination begin.
+// @field StringPairRecord +0x00 std::string field_0x00
+// @field StringPairRecord +0x1C std::string field_0x1C
+
+
+struct StringPairRecord {
+    std::string field_0x00;  // +0x00
+    std::string field_0x1C;  // +0x1C
+    char pad_0x38[0];        // record size is 0x38 bytes
+};
+
+static_assert(sizeof(StringPairRecord) >= 0x38, "record size mismatch");
+
+StringPairRecord* Unknown_CopyBackwardStringPairs(StringPairRecord* first,
+                                                  StringPairRecord* last,
+                                                  StringPairRecord* dst_end) {
+    if (first == last) {
+        return dst_end;
+    }
+    StringPairRecord* src = last;
+    StringPairRecord* dst = dst_end;
+    do {
+        src -= 1;
+        dst -= 1;
+        dst->field_0x00 = src->field_0x00;
+        dst->field_0x1C = src->field_0x1C;
+    } while (src != first);
+    return dst;
+}
+} // namespace lift_0057BBE0
