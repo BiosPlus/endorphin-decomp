@@ -407,3 +407,26 @@ AdjustedRecord* fn_006ACF10(void* self, AdjustedRecord* out, uint32_t a2, uint32
     return out;
 }
 } // namespace lift_006ACF10
+
+// [0x006A7FF0] sub_006A7FF0 (42 bytes)
+namespace lift_006A7FF0 {
+// Known callee 0x0041FD20: Unknown::GetOrLoadModule (Returns cached module handle at +0x4; otherwise resolves it by name via GetModuleHandleA, falling back to LoadLibraryA (sets +0x8 flag on load path).)
+extern HMODULE ext_0041FD20(void* self);
+
+// Known .rdata slot 0x009241D8: KERNEL32!GetProcAddress (IAT entry)
+typedef void* (__stdcall *GetProcAddressFn)(HMODULE, LPCSTR);
+extern GetProcAddressFn mem_009241D8;
+
+// @name Unknown::GetOrResolveProcAddress
+// @class Unknown
+// @summary Returns the cached GetProcAddress result at +0x3C, resolving it from the loaded module (name at 0x00990980) on first use; result is written through out.
+// @field Unknown +0x3C void* cachedProc
+void fn_006A7FF0(void* self, void** out) {
+    if (lift_field<void*>(self, 0x3C) == nullptr) {
+        HMODULE mod = ext_0041FD20(self);
+        LPCSTR procName = reinterpret_cast<LPCSTR>(static_cast<uintptr_t>(0x00990980u));
+        lift_field<void*>(self, 0x3C) = mem_009241D8(mod, procName);
+    }
+    *out = lift_field<void*>(self, 0x3C);
+}
+} // namespace lift_006A7FF0

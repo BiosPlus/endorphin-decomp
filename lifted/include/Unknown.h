@@ -458,6 +458,7 @@ struct Unknown_Fields {
     // +0x38  uint8_t                  recordCopy[0x40]  (evidence: 0x004DE330) // CONFLICT: multiple definitions at +0x38
     // +0x39  uint8_t                  field_0x39  (evidence: 0x00553E80) // CONFLICT: multiple definitions at +0x39
     // +0x39  uint8_t                  flag  (evidence: 0x005A2BD0) // CONFLICT: multiple definitions at +0x39
+    // +0x3C  void*                    cachedProc  (evidence: 0x006A7FF0) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  DWORD                    field_0x3C  (evidence: 0x0051C5A0) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  float                    field_0x3C  (evidence: 0x006293A0, 0x006296D0, 0x0063DB50, 0x007CCAB0) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  uint32_t                 field_0x3C  (evidence: 0x0048C960, 0x006296A0) // CONFLICT: multiple definitions at +0x3C

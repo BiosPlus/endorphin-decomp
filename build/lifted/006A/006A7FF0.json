@@ -1,0 +1,22 @@
+{
+  "va": "0x006A7FF0",
+  "size": 42,
+  "orig_symbol": "sub_006A7FF0",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "Unknown::GetOrResolveProcAddress",
+  "class": "Unknown",
+  "signature": "void fn_006A7FF0(void* self, void** out)",
+  "summary": "Returns the cached GetProcAddress result at +0x3C, resolving it from the loaded module (name at 0x00990980) on first use; result is written through out.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "void*",
+      "name": "cachedProc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:29:15Z"
+}

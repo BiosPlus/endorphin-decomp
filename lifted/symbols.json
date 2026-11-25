@@ -44565,6 +44565,13 @@
     "summary": "MSVC scalar deleting destructor: calls thunk_MFC80_ord_663 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/templates/auto_tiny.cpp"
   },
+  "0x006A7FF0": {
+    "name": "Unknown::GetOrResolveProcAddress",
+    "class": "Unknown",
+    "signature": "void fn_006A7FF0(void* self, void** out)",
+    "summary": "Returns the cached GetProcAddress result at +0x3C, resolving it from the loaded module (name at 0x00990980) on first use; result is written through out.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006A8140": {
     "name": "Control::setScrollPos",
     "class": "Control",
