@@ -9192,6 +9192,12 @@
     "summary": "Sorts three 32-bit values in-place using a comparator functor passed by value.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00477190": {
+    "name": "adjustHeap",
+    "signature": "extern \"C\" void __cdecl sub_00477190(uint32_t* arr, int32_t holeIndex, int32_t bottom, uint32_t val, uint32_t pred)",
+    "summary": "Sifts a hole down in a binary heap and then pushes a value up using a predicate functor.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x004772E0": {
     "name": "MoveBackward12",
     "signature": "std::uint8_t* fn_004772E0(std::uint8_t* first, std::uint8_t* last, std::uint8_t* dst_last)",
@@ -23927,6 +23933,13 @@
     "summary": "Draws the base line segment with a dotted line stipple (GL_LINE_STIPPLE, factor 2, pattern 0xAAAA), restoring GL line state afterwards.",
     "lifted_path": "lifted/UtilityGraphics/StippledLine.cpp"
   },
+  "0x00538F20": {
+    "name": "UtilityGraphics::Arrow::vfunc_22",
+    "class": "UtilityGraphics::Arrow",
+    "signature": "void __thiscall fn_00538F20(void* self, uint32_t arg0)",
+    "summary": "Draws the arrow shaft via Line::vfunc_22 and renders a cone tip at 0.8 * length using gluCylinder.",
+    "lifted_path": "lifted/UtilityGraphics/Arrow.cpp"
+  },
   "0x00538FA0": {
     "name": "SetFloatPairAndDwordPair",
     "signature": "void fn_00538FA0(void* self, float f0, float f1, DWORD d0, DWORD d1)",
@@ -24837,6 +24850,13 @@
     "signature": "void fn_00540F60(void* self, DWORD /*unused_arg0*/, DWORD value)",
     "summary": "Stores one stack argument into four dword fields of the object at ECX.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
+  },
+  "0x00540F80": {
+    "name": "Unknown::InitWithSubobject",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_00540F80(void* self)",
+    "summary": "Zero-initializes fields, constructs subobject at +0x18 with 0.05f and flags (1, 1), and sets +0x34/+0x38; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
   "0x005431B0": {
     "name": "ViewportManager::vfunc_6",

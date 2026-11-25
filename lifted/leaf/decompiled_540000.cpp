@@ -1394,3 +1394,42 @@ extern void __fastcall fn_0054C890(void* self) {
     ext_0065C660(self);
 }
 } // namespace lift_0054C890
+
+// [0x00540F80]
+namespace lift_00540F80 {
+extern void* ext_00538530(void* self);
+extern void ext_00538550(void* self, float value, uint8_t byteA, uint8_t byteB);
+
+// @name Unknown::InitWithSubobject
+// @class Unknown
+// @summary Zero-initializes fields, constructs subobject at +0x18 with 0.05f and flags (1, 1), and sets +0x34/+0x38; returns this.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint8_t field_0x14
+// @field Unknown +0x18 uint8_t subobject_0x18
+// @field Unknown +0x34 uint32_t field_0x34
+// @field Unknown +0x38 uint32_t field_0x38
+void* __thiscall fn_00540F80(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+
+    *reinterpret_cast<uint32_t*>(obj + 0x00) = 0;
+    *reinterpret_cast<uint32_t*>(obj + 0x04) = 0;
+    *reinterpret_cast<uint32_t*>(obj + 0x08) = 0;
+    *reinterpret_cast<uint32_t*>(obj + 0x0C) = 0;
+    *reinterpret_cast<uint32_t*>(obj + 0x10) = 0;
+    *reinterpret_cast<uint8_t*>(obj + 0x14) = 0;
+
+    void* subobj = obj + 0x18;
+    ext_00538530(subobj);
+
+    *reinterpret_cast<uint32_t*>(obj + 0x34) = 0x0093A444u;
+    *reinterpret_cast<uint32_t*>(obj + 0x38) = 0;
+
+    ext_00538550(subobj, 0.05f, 1, 1);
+
+    return self;
+}
+} // namespace lift_00540F80
