@@ -583,3 +583,34 @@ uint32_t __stdcall fn_0085C430(uint32_t index) {
     }
 }
 } // namespace lift_0085C430
+
+// [0x008596F0]
+namespace lift_008596F0 {
+// @name LocalBlockResize
+// @summary Allocates, reallocates, or frees a LocalAlloc block depending on whether the handle and size arguments are zero.
+
+uint32_t ext_LocalAlloc(uint32_t uFlags, uint32_t uBytes);
+uint32_t ext_LocalFree(uint32_t hMem);
+uint32_t ext_LocalReAlloc(uint32_t hMem, uint32_t uBytes, uint32_t uFlags);
+
+// cdecl: (handle, size) -> handle
+//   handle != 0, size != 0 : LocalReAlloc(handle, size, LMEM_MOVEABLE)
+//   handle != 0, size == 0 : LocalFree(handle), return 0
+//   handle == 0, size != 0 : LocalAlloc(0, size)
+//   handle == 0, size == 0 : return 0
+uint32_t __cdecl fn_008596F0(uint32_t handle, uint32_t size) {
+    constexpr uint32_t kLmemMoveable = 0x0002;
+
+    if (handle != 0) {
+        if (size != 0) {
+            return ext_LocalReAlloc(handle, size, kLmemMoveable);
+        }
+        ext_LocalFree(handle);
+        return 0;
+    }
+    if (size == 0) {
+        return 0;
+    }
+    return ext_LocalAlloc(0, size);
+}
+} // namespace lift_008596F0

@@ -58465,6 +58465,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0079AF40 (GlobalAllocZeroFlags).",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x008596F0": {
+    "name": "LocalBlockResize",
+    "signature": "uint32_t __cdecl fn_008596F0(uint32_t handle, uint32_t size)",
+    "summary": "Allocates, reallocates, or frees a LocalAlloc block depending on whether the handle and size arguments are zero.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x00859730": {
     "name": "sub_00859730",
     "signature": "HGLOBAL fn_00859730(HGLOBAL hMem)",
