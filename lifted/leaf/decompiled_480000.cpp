@@ -937,3 +937,32 @@ void* fn_00487C00(void* self, const void* key) {
 
 } // namespace lift_00487C00
 } // namespace lift_00487C00
+
+// [0x00481BD0] sub_00481BD0 (71 bytes)
+namespace lift_00481BD0 {
+// Function pointer loaded from the import slot at 0x00925134; called on range-check failure.
+extern void (*mem_00925134)(void);
+
+// @name ZeroMatchingDwordRange
+// @class Unknown
+// @summary Zeroes every uint32_t in [self->+0x08, self->+0x0C) equal to value; calls the invalid-parameter handler if begin > end.
+// @field Unknown +0x08 uint32_t* field_0x08
+// @field Unknown +0x0C uint32_t* field_0x0C
+void fn_00481BD0(void* self, uint32_t value) {
+    uint32_t* const end = lift_field<uint32_t*>(self, 0x0C);
+    if (lift_field<uint32_t*>(self, 0x08) > end) {
+        mem_00925134();
+    }
+
+    uint32_t* cur = lift_field<uint32_t*>(self, 0x08);
+    if (cur > lift_field<uint32_t*>(self, 0x0C)) {
+        mem_00925134();
+    }
+
+    for (; cur != end; ++cur) {
+        if (*cur == value) {
+            *cur = 0;
+        }
+    }
+}
+} // namespace lift_00481BD0

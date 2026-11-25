@@ -7812,6 +7812,13 @@
     "summary": "Stores the single stack argument at offset 0, zeroes the 4-byte slots at +0x08/+0x0C/+0x10, returns this.",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x00481BD0": {
+    "name": "ZeroMatchingDwordRange",
+    "class": "Unknown",
+    "signature": "void fn_00481BD0(void* self, uint32_t value)",
+    "summary": "Zeroes every uint32_t in [self-\u003e+0x08, self-\u003e+0x0C) equal to value; calls the invalid-parameter handler if begin \u003e end.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00481DE0": {
     "name": "fillStructArrayAndGetEnd",
     "signature": "uint32_t __stdcall fn_00481DE0(uint32_t dst, uint32_t count, uint32_t src)",
