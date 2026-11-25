@@ -962,3 +962,21 @@ void* fn_0063DE10(void* self) {
 }
 } // namespace lift_0063DDF0
 } // namespace lift_0063DE10
+
+// [0x00630540] sub_00630540 (25 bytes)
+namespace lift_00630540 {
+extern void* __fastcall ext_00693F40(void* self, int edx_unused, void* arg);
+extern uint32_t __fastcall ext_0062CD30(uint32_t this_ptr);
+
+// @name sub_00630540
+// @summary Calls sub_00693F40 on the sub-object at +0x15c with the sub-object at +0x90 as argument; returns the +0x15c pointer.
+// @field Object +0x90 uint8_t field_0x90
+// @field Object +0x15c uint8_t field_0x15c
+extern void* __fastcall fn_00630540(void* self) {
+    (void)&ext_0062CD30;
+    char* base = reinterpret_cast<char*>(self);
+    void* sub = base + 0x15c;
+    ext_00693F40(sub, 0, base + 0x90);
+    return sub;
+}
+} // namespace lift_00630540

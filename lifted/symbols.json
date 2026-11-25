@@ -38638,6 +38638,12 @@
     "summary": "Copies a vec3 from +0x9c to +0x144, queries a scalar via vtable slot 19 of the object at +0x4, and divides the copied vec3 by that scalar.",
     "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
+  "0x00630540": {
+    "name": "sub_00630540",
+    "signature": "extern \"C\" void* __fastcall fn_00630540(void* self)",
+    "summary": "Calls sub_00693F40 on the sub-object at +0x15c with the sub-object at +0x90 as argument; returns the +0x15c pointer.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x00630560": {
     "name": "sub_00630560",
     "class": "UnknownClass",

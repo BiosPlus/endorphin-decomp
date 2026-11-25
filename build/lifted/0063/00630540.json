@@ -1,0 +1,27 @@
+{
+  "va": "0x00630540",
+  "size": 25,
+  "orig_symbol": "sub_00630540",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "sub_00630540",
+  "signature": "extern \"C\" void* __fastcall fn_00630540(void* self)",
+  "summary": "Calls sub_00693F40 on the sub-object at +0x15c with the sub-object at +0x90 as argument; returns the +0x15c pointer.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x90",
+      "type": "uint8_t",
+      "name": "field_0x90"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x15C",
+      "type": "uint8_t",
+      "name": "field_0x15c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@low",
+  "lifted_at": "2026-11-25T11:28:15Z"
+}
