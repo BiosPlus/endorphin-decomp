@@ -921,3 +921,40 @@ void fn_004629E0(void* self, void* str, uint32_t mode) {
     ext_004474F0(callbackOwner, text);
 }
 } // namespace lift_004629E0
+
+// [0x0046F930]
+namespace lift_0046F930 {
+// @name Unknown::RequestStop
+// @class Unknown
+// @summary Marks stop-requested flags and signals the event at this+0x160 using index this+0x148 if active.
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x148 int32_t field_0x148
+// @field Unknown +0x150 uint8_t field_0x150
+// @field Unknown +0x151 uint8_t field_0x151
+// @field Unknown +0x152 uint8_t field_0x152
+// @field Unknown +0x153 uint8_t field_0x153
+// @field Unknown +0x160 void* field_0x160
+
+extern uint8_t ext_0046F890(void* self);
+extern BOOL ext_0067AEB0(void* self, INT index);
+
+void fn_0046F930(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    if (ext_0046F890(self) != 0) {
+        return;
+    }
+    if (base[0x153] != 0) {
+        return;
+    }
+
+    base[0x150] = 1;
+    if (base[0x152] != 0) {
+        base[0x151] = 1;
+    }
+
+    if (*reinterpret_cast<uint32_t*>(base + 0x28) != 0) {
+        INT index = *reinterpret_cast<INT*>(base + 0x148);
+        ext_0067AEB0(base + 0x160, index);
+    }
+}
+} // namespace lift_0046F930

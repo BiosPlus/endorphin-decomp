@@ -1,0 +1,58 @@
+{
+  "va": "0x0046F930",
+  "size": 65,
+  "orig_symbol": "sub_0046F930",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "Unknown::RequestStop",
+  "class": "Unknown",
+  "signature": "void fn_0046F930(void* self)",
+  "summary": "Marks stop-requested flags and signals the event at this+0x160 using index this+0x148 if active.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x148",
+      "type": "int32_t",
+      "name": "field_0x148"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x150",
+      "type": "uint8_t",
+      "name": "field_0x150"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x151",
+      "type": "uint8_t",
+      "name": "field_0x151"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x152",
+      "type": "uint8_t",
+      "name": "field_0x152"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x153",
+      "type": "uint8_t",
+      "name": "field_0x153"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x160",
+      "type": "void*",
+      "name": "field_0x160"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:12:56Z"
+}
