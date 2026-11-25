@@ -222,3 +222,23 @@ void fn_004CA590(void* self, const char* name) {
     ext_004CA570(self, index);
 }
 } // namespace lift_004CA590
+
+// [0x004CE7B0]
+namespace lift_004CE7B0 {
+extern std::string mem_00AE51C8[7];
+extern std::string mem_00AE5290[7];
+
+// @name StringTableLookup_004CE7B0
+// @summary Returns the index of the first entry in two 7-element std::string tables that equals the key string (0 if none match).
+int __stdcall fn_004CE7B0(const std::string* key) {
+    for (int i = 0; i < 7; ++i) {
+        if (*key == mem_00AE51C8[i]) {
+            return i;
+        }
+        if (*key == mem_00AE5290[i]) {
+            return i;
+        }
+    }
+    return 0;
+}
+} // namespace lift_004CE7B0
