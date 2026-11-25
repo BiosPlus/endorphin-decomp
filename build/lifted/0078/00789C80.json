@@ -1,0 +1,13 @@
+{
+  "va": "0x00789C80",
+  "size": 32,
+  "orig_symbol": "sub_00789C80",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "ForwardSortedArrayFindValue",
+  "signature": "uint32_t __thiscall fn_00789C80(void* self, uint32_t key, int32_t* outIndex)",
+  "summary": "Thiscall forwarder: calls the SortedArray find routine on the subobject at this+0x04 with the same key and optional out-index arguments.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:55:36Z"
+}

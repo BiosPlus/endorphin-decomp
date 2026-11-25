@@ -1304,3 +1304,16 @@ uint32_t fn_00784DD0(void* self, uint32_t key1, uint32_t key2, uint32_t fallback
     return fallback;
 }
 } // namespace lift_00784DD0
+
+// [0x00789C80] sub_00789C80 (32 bytes)
+namespace lift_00789C80 {
+// Known callee 0x00782E70: sub_00782E70 (Auto-lifted identical-shape clone of 0x007846D0 (SortedArray::findValue).)
+extern uint32_t __thiscall ext_00782E70(void* self, uint32_t key, int32_t* outIndex);
+
+// @name ForwardSortedArrayFindValue
+// @summary Thiscall forwarder: calls the SortedArray find routine on the subobject at this+0x04 with the same key and optional out-index arguments.
+uint32_t __thiscall fn_00789C80(void* self, uint32_t key, int32_t* outIndex) {
+    void* sortedArray = static_cast<uint8_t*>(self) + 0x04;
+    return ext_00782E70(sortedArray, key, outIndex);
+}
+} // namespace lift_00789C80

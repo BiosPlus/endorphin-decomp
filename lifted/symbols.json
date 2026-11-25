@@ -58060,6 +58060,12 @@
     "summary": "Setter storing int32_t argument into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00789C80": {
+    "name": "ForwardSortedArrayFindValue",
+    "signature": "uint32_t __thiscall fn_00789C80(void* self, uint32_t key, int32_t* outIndex)",
+    "summary": "Thiscall forwarder: calls the SortedArray find routine on the subobject at this+0x04 with the same key and optional out-index arguments.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078AAC0": {
     "name": "dataTable_0078AAC0",
     "signature": "void fn_0078AAC0(void* self)",
