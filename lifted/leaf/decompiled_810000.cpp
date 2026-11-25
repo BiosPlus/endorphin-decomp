@@ -345,3 +345,19 @@ int __cdecl fn_00811080(const char* s1, uint32_t max_len, const char* s2) {
     return 0;
 }
 } // namespace lift_00811080
+
+// [0x00810320]
+namespace lift_00810320 {
+// @name setFlagBit24
+// @summary Sets or clears bit 24 (0x01000000) in a flags field reached via an indirect pointer at +0x4.
+// @field Unknown +0x04 void* field_0x04
+void __cdecl sub_00810320(void* self, int enable) {
+    uint8_t* inner = lift_field<uint8_t*>(self, 0x4);
+    uint32_t& flags = lift_field<uint32_t>(inner, 0x4);
+    if (enable) {
+        flags |= 0x01000000u;
+    } else {
+        flags &= 0xFEFFFFFFu;
+    }
+}
+} // namespace lift_00810320
