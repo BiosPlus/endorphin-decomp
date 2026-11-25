@@ -1378,3 +1378,21 @@ extern int __fastcall fn_00455CD0(void* self) {
     return ext_004090C0(self);
 }
 } // namespace lift_00455CD0
+
+// [0x00456340]
+namespace lift_00456340 {
+extern void ext_006A5EA8(void);
+
+// @name sub_00456340
+// @summary Invokes vtable slot +0x188 if field_0xdc is non-zero and arg1 != this, then calls MFC80!ord_1903.
+// @field Unknown +0xdc uint32_t field_0xdc
+void __thiscall fn_00456340(void* self, void* arg1) {
+    if (lift_field<uint32_t>(self, 0xdc) != 0 && arg1 != self) {
+        uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(self);
+        using vfn_t = void (__thiscall*)(void*);
+        auto vfn = reinterpret_cast<vfn_t>(vtable[0x188 / sizeof(uintptr_t)]);
+        vfn(self);
+    }
+    ext_006A5EA8();
+}
+} // namespace lift_00456340

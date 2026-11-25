@@ -1,0 +1,21 @@
+{
+  "va": "0x00456340",
+  "size": 39,
+  "orig_symbol": "sub_00456340",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "sub_00456340",
+  "signature": "void __thiscall fn_00456340(void* self, void* arg1)",
+  "summary": "Invokes vtable slot +0x188 if field_0xdc is non-zero and arg1 != this, then calls MFC80!ord_1903.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xDC",
+      "type": "uint32_t",
+      "name": "field_0xdc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T14:26:02Z"
+}

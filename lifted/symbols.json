@@ -5679,6 +5679,12 @@
     "summary": "Converts a client-space point to screen coordinates when field_0xdc is set, passes it to a virtual handler at vtable slot 0x18c, then tail-forwards to the MFC thunk.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x00456340": {
+    "name": "sub_00456340",
+    "signature": "void __thiscall fn_00456340(void* self, void* arg1)",
+    "summary": "Invokes vtable slot +0x188 if field_0xdc is non-zero and arg1 != this, then calls MFC80!ord_1903.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x004564A0": {
     "name": "ForwardToFirstChildWindow",
     "class": "Object",
@@ -7236,6 +7242,12 @@
     "signature": "int32_t fn_0046C2A0(void* self)",
     "summary": "If the object at +0x20 is non-null, calls its vtable slot +0x1B0 with (-1, -1) and returns that result; otherwise returns 0.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
+  "0x0046C2F0": {
+    "name": "sub_0046C2F0",
+    "signature": "void __thiscall sub_0046C2F0(void* self, float value)",
+    "summary": "Conditionally stores a float parameter into this+0x1c if it does not exceed a threshold at this-\u003e+0x4c-\u003e+0xf8-\u003e+0x138",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
   "0x0046C320": {
     "name": "ExceptionWithMessage::constructDefaultMessage",
