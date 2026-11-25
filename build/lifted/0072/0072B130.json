@@ -1,0 +1,58 @@
+{
+  "va": "0x0072B130",
+  "size": 80,
+  "orig_symbol": "sub_0072B130",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "Unknown::InitSubobjects",
+  "class": "Unknown",
+  "signature": "void fn_0072B130(void* self)",
+  "summary": "Calls ext_006B9960 on six embedded subobjects (+0x00, +0x4C, +0x98, +0xE4, +0x130, +0x17C), then zeroes the dword at +0x1C8.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "Unknown",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "Unknown",
+      "name": "field_0x4C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x98",
+      "type": "Unknown",
+      "name": "field_0x98"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xE4",
+      "type": "Unknown",
+      "name": "field_0xE4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x130",
+      "type": "Unknown",
+      "name": "field_0x130"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x17C",
+      "type": "Unknown",
+      "name": "field_0x17C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C8",
+      "type": "DWORD",
+      "name": "field_0x1C8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:53:05Z"
+}

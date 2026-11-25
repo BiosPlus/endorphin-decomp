@@ -499,3 +499,31 @@ void fn_0072C820(std::uint8_t* src, std::uint8_t* dst, std::uint32_t rowWidth, s
     }
 }
 } // namespace lift_0072C820
+
+// [0x0072B130] sub_0072B130 (80 bytes)
+namespace lift_0072B130 {
+struct Unknown;
+
+extern Unknown* ext_006B9960(Unknown* ecx);
+
+// @name Unknown::InitSubobjects
+// @class Unknown
+// @summary Calls ext_006B9960 on six embedded subobjects (+0x00, +0x4C, +0x98, +0xE4, +0x130, +0x17C), then zeroes the dword at +0x1C8.
+// @field Unknown +0x00 Unknown field_0x00
+// @field Unknown +0x4C Unknown field_0x4C
+// @field Unknown +0x98 Unknown field_0x98
+// @field Unknown +0xE4 Unknown field_0xE4
+// @field Unknown +0x130 Unknown field_0x130
+// @field Unknown +0x17C Unknown field_0x17C
+// @field Unknown +0x1C8 DWORD field_0x1C8
+void fn_0072B130(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    ext_006B9960(reinterpret_cast<Unknown*>(base + 0x00));
+    ext_006B9960(reinterpret_cast<Unknown*>(base + 0x4C));
+    ext_006B9960(reinterpret_cast<Unknown*>(base + 0x98));
+    ext_006B9960(reinterpret_cast<Unknown*>(base + 0xE4));
+    ext_006B9960(reinterpret_cast<Unknown*>(base + 0x130));
+    ext_006B9960(reinterpret_cast<Unknown*>(base + 0x17C));
+    lift_field<DWORD>(self, 0x1C8) = 0;
+}
+} // namespace lift_0072B130

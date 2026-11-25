@@ -56704,6 +56704,13 @@
     "summary": "Setter storing int32_t argument into field at offset +0x1C8.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x0072B130": {
+    "name": "Unknown::InitSubobjects",
+    "class": "Unknown",
+    "signature": "void fn_0072B130(void* self)",
+    "summary": "Calls ext_006B9960 on six embedded subobjects (+0x00, +0x4C, +0x98, +0xE4, +0x130, +0x17C), then zeroes the dword at +0x1C8.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x0072B180": {
     "name": "sub_0072D620",
     "class": "Unknown",
