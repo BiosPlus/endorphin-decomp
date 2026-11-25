@@ -1,0 +1,22 @@
+{
+  "va": "0x0050C4D0",
+  "size": 76,
+  "orig_symbol": "sub_0050C4D0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "Unknown::ResetElementsAndNotify_0050C4D0",
+  "class": "Unknown",
+  "signature": "void fn_0050C4D0(void* self)",
+  "summary": "Clears the element buffer at this+0x4 via ext_0050B960, then calls ext_0065F440 on this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t field_0x04 (subobject passed by address to ext_0050B960; contents not",
+      "name": "inspected)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:38:44Z"
+}

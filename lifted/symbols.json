@@ -16510,6 +16510,13 @@
     "summary": "Constructs an object: runs the base-class constructor (ext_00661980), installs vtable 0x00950314, zeroes four dwords at +0x08..+0x14, and returns this. Original SEH frame setup/teardown omitted.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x0050C4D0": {
+    "name": "Unknown::ResetElementsAndNotify_0050C4D0",
+    "class": "Unknown",
+    "signature": "void fn_0050C4D0(void* self)",
+    "summary": "Clears the element buffer at this+0x4 via ext_0050B960, then calls ext_0065F440 on this.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050C770": {
     "name": "NMData::Task::~Task (scalar deleting destructor)",
     "class": "NMData::Task",

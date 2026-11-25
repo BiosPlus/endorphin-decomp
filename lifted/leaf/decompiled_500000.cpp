@@ -701,3 +701,22 @@ uint32_t fn_0050BDF0(uint32_t begin, uint32_t end, uint32_t value) {
 }
 } // namespace lift_0054F290
 } // namespace lift_0050BDF0
+
+// [0x0050C4D0]
+namespace lift_0050C4D0 {
+// @name Unknown::ResetElementsAndNotify_0050C4D0
+// @class Unknown
+// @summary Clears the element buffer at this+0x4 via ext_0050B960, then calls ext_0065F440 on this.
+// @field Unknown +0x04 uint8_t field_0x04 (subobject passed by address to ext_0050B960; contents not inspected)
+
+void ext_0050B960(void* self);
+void ext_0065F440(void* self);
+
+void fn_0050C4D0(void* self) {
+    // Original MSVC SEH prologue/epilogue (fs:[0] frame setup/teardown) is
+    // omitted; it only manages exception-handler registration and has no
+    // effect on the logic below.
+    ext_0050B960(static_cast<uint8_t*>(self) + 0x4);
+    ext_0065F440(self);
+}
+} // namespace lift_0050C4D0

@@ -162,6 +162,7 @@ struct Unknown_Fields {
     // +0x4   uint32_t field_0x04 (vector begin, via holder)  (evidence: 0x0067AEB0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (sub-component object returned by vfunc_0; its class is not identified)  (evidence: 0x0066BDB0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    inner  (evidence: 0x007833F0, 0x00788E50) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint8_t field_0x04 (subobject passed by address to ext_0050B960; contents not inspected)  (evidence: 0x0050C4D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    linked  (evidence: 0x006B2F70, 0x006BDAF0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    m_begin  (evidence: 0x00505DC0, 0x00518030, 0x0051E560) // CONFLICT: multiple definitions at +0x4
     // +0x4   HMODULE                  module  (evidence: 0x0041FD20) // CONFLICT: multiple definitions at +0x4
