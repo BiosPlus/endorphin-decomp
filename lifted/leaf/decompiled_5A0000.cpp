@@ -482,3 +482,39 @@ void* fn_005ACB00(void* self, uint32_t a1, uint32_t a2, const void* a3) {
     return self;
 }
 } // namespace lift_005ACB00
+
+// [0x005ACD30] Unknown::InitWithFloat4_005ACD30 (77 bytes)
+namespace lift_005ACD30 {
+extern void* ext_006657F0(void* self, uint32_t arg);
+
+// @name Unknown::InitWithFloat4_005ACD30
+// @class Unknown
+// @summary Initializes the object: calls base init (ext_006657F0), stores vtable 0x0095F5AC, two uint32 args at +0x14/+0x18, zeroes +0x10/+0x1C, and copies four floats from the input array to +0x20..+0x2C. Returns self.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x20 float field_0x20
+// @field Unknown +0x24 float field_0x24
+// @field Unknown +0x28 float field_0x28
+// @field Unknown +0x2C float field_0x2C
+void* fn_005ACD30(void* self, uint32_t arg1, uint32_t arg2, const float* values) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+
+    ext_006657F0(self, 0u);
+
+    *reinterpret_cast<uint32_t*>(obj + 0x00) = 0x0095F5ACu;
+    *reinterpret_cast<uint32_t*>(obj + 0x14) = arg1;
+    *reinterpret_cast<uint32_t*>(obj + 0x10) = 0u;
+    *reinterpret_cast<uint32_t*>(obj + 0x18) = arg2;
+    *reinterpret_cast<uint32_t*>(obj + 0x1C) = 0u;
+
+    *reinterpret_cast<float*>(obj + 0x20) = values[0];
+    *reinterpret_cast<float*>(obj + 0x24) = values[1];
+    *reinterpret_cast<float*>(obj + 0x28) = values[2];
+    *reinterpret_cast<float*>(obj + 0x2C) = values[3];
+
+    return self;
+}
+} // namespace lift_005ACD30
