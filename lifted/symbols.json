@@ -4080,6 +4080,13 @@
     "summary": "Kills owner timer, updates selection/move state if active, invalidates view, and notifies field_0x04.",
     "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/SelectOrMoveState.cpp"
   },
+  "0x00443650": {
+    "name": "MultiTrackView::MultiTrackViewStates::MoveState::vfunc_7",
+    "class": "MultiTrackView::MultiTrackViewStates::MoveState",
+    "signature": "bool MultiTrackView_MultiTrackViewStates_MoveState_vfunc_7(void* self, uint32_t /*arg1*/, uint32_t /*arg2*/, uint32_t /*arg3*/)",
+    "summary": "Fetches the current cursor position, warps the cursor to (this-\u003efield_0x1c, cursor.x), and returns whether SetCursorPos succeeded.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/MoveState.cpp"
+  },
   "0x004436B0": {
     "name": "Unknown::InitP3DTagged",
     "class": "Unknown",
