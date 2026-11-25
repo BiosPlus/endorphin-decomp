@@ -1652,3 +1652,56 @@ void* fn_004019B0(void* self, const void* other) {
     return self;
 }
 } // namespace lift_004019B0
+
+// [0x004030F0] sub_004030F0 (98 bytes)
+namespace lift_004030F0 {
+// Known callee 0x006A342A: thunk_AVIFIL32_AVIFileExit (IAT jump thunk forwarding to AVIFIL32!AVIFileExit.)
+extern void ext_006A342A();
+// Known callee 0x006A3430: thunk_AVIFIL32_AVIFileRelease (IAT jump thunk forwarding to AVIFIL32!AVIFileRelease.)
+extern void ext_006A3430(void* file);
+// Known callee 0x006A3436: thunk_AVIFIL32_AVIStreamRelease (IAT jump thunk forwarding to AVIFIL32!AVIStreamRelease.)
+extern void ext_006A3436(void* stream);
+// Known callee 0x006A343C: thunk_AVIFIL32_AVIStreamGetFrameClose (IAT jump thunk forwarding to AVIFIL32!AVIStreamGetFrameClose.)
+extern void ext_006A343C(void* getFrame);
+
+// @name releaseAviHandles
+// @summary Releases the AVI get-frame object, stream, and file handles held at fixed offsets, clears them, calls AVIFileExit, and zeroes three trailing 32-bit fields.
+// @field Unknown +0x46C uint32_t field_0x46C
+// @field Unknown +0x470 uint32_t field_0x470
+// @field Unknown +0x474 uint32_t field_0x474
+// @field Unknown +0x47C uint32_t field_0x47C
+// @field Unknown +0x480 uint32_t field_0x480
+// @field Unknown +0x57C uint32_t field_0x57C
+void fn_004030F0(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+
+    auto load = [&](std::size_t off) -> uint32_t {
+        uint32_t v;
+        std::memcpy(&v, base + off, sizeof v);
+        return v;
+    };
+    auto store = [&](std::size_t off, uint32_t v) {
+        std::memcpy(base + off, &v, sizeof v);
+    };
+    auto asPtr = [](uint32_t v) -> void* {
+        return reinterpret_cast<void*>(static_cast<std::uintptr_t>(v));
+    };
+
+    if (uint32_t h = load(0x57C); h != 0) {
+        ext_006A343C(asPtr(h));
+        store(0x57C, 0);
+    }
+    if (uint32_t h = load(0x480); h != 0) {
+        ext_006A3436(asPtr(h));
+        store(0x480, 0);
+    }
+    if (uint32_t h = load(0x47C); h != 0) {
+        ext_006A3430(asPtr(h));
+        store(0x47C, 0);
+    }
+    ext_006A342A();
+    store(0x46C, 0);
+    store(0x470, 0);
+    store(0x474, 0);
+}
+} // namespace lift_004030F0
