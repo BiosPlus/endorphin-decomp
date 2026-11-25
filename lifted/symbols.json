@@ -6725,6 +6725,13 @@
     "summary": "Rounds a float argument by adding a constant double, stores the integer result at +0x288, and returns it",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046FC10": {
+    "name": "setReciprocalAndStoreValue",
+    "class": "unknown",
+    "signature": "void fn_0046FC10(void* self, float value)",
+    "summary": "Forwards 1.0f/value to the sub-object at this+0xD4 via ext_00642630, then stores value as a float at this-\u003e+0xCC-\u003e+0x26C-\u003e+0x1D0.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046FD70": {
     "name": "sub_0046FD70",
     "signature": "uint32_t __thiscall sub_0046FD70(uint32_t self, uint32_t out_ptr)",

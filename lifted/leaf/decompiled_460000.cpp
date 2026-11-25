@@ -858,3 +858,25 @@ INT fn_00469530(void* self, INT index, INT arg) {
     return slot1(element, arg);
 }
 } // namespace lift_00469530
+
+// [0x0046FC10] sub_0046FC10 (62 bytes)
+namespace lift_0046FC10 {
+// Known callee 0x00642630: SubObjectHolder::forwardSetField8Float (Forwards a float argument to the sub-object held at this+0x0C by calling setField8Float on it; the float is passed through unchanged.)
+extern void ext_00642630(void* self, float value);
+
+// @name setReciprocalAndStoreValue
+// @class unknown
+// @summary Forwards 1.0f/value to the sub-object at this+0xD4 via ext_00642630, then stores value as a float at this->+0xCC->+0x26C->+0x1D0.
+// @field unknown +0xCC void* field_0xCC
+// @field unknown +0xD4 void field_0xD4
+// @field unknown +0x26C void* field_0x26C
+// @field unknown +0x1D0 float field_0x1D0
+void fn_0046FC10(void* self, float value) {
+    float reciprocal = 1.0f / value;
+    ext_00642630(static_cast<unsigned char*>(self) + 0xD4, reciprocal);
+
+    void* obj = lift_field<void*>(self, 0xCC);
+    void* inner = lift_field<void*>(obj, 0x26C);
+    lift_field<float>(inner, 0x1D0) = value;
+}
+} // namespace lift_0046FC10

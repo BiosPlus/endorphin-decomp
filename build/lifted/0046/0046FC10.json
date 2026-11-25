@@ -1,0 +1,40 @@
+{
+  "va": "0x0046FC10",
+  "size": 62,
+  "orig_symbol": "sub_0046FC10",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "setReciprocalAndStoreValue",
+  "class": "unknown",
+  "signature": "void fn_0046FC10(void* self, float value)",
+  "summary": "Forwards 1.0f/value to the sub-object at this+0xD4 via ext_00642630, then stores value as a float at this-\u003e+0xCC-\u003e+0x26C-\u003e+0x1D0.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0xCC",
+      "type": "void*",
+      "name": "field_0xCC"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0xD4",
+      "type": "void",
+      "name": "field_0xD4"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x26C",
+      "type": "void*",
+      "name": "field_0x26C"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x1D0",
+      "type": "float",
+      "name": "field_0x1D0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:59:20Z"
+}
