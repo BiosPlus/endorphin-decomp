@@ -932,3 +932,27 @@ void* fn_005007F0(const void* first, const void* last, void* dest) {
 }
 } // namespace lift_0050B060
 } // namespace lift_005007F0
+
+// [0x00509EB0]
+namespace lift_00509EB0 {
+// @name UnknownClass::copyCtor_00509EB0
+// @class UnknownClass
+// @summary Copy constructor setting vtable, copying std::string at +0x4 and float at +0x20
+// @field UnknownClass +0x00 void* vtable
+// @field UnknownClass +0x04 std::string field_0x04
+// @field UnknownClass +0x20 float field_0x20
+
+
+extern void* (__thiscall* mem_00924FE0)(void* self, const void* other);
+
+void* __thiscall sub_00509EB0(void* self, const void* other) {
+    uint8_t* dst = static_cast<uint8_t*>(self);
+    const uint8_t* src = static_cast<const uint8_t*>(other);
+
+    *reinterpret_cast<uint32_t*>(dst + 0x00) = 0x0094F92C;
+    mem_00924FE0(dst + 0x04, src + 0x04);
+    *reinterpret_cast<uint32_t*>(dst + 0x20) = *reinterpret_cast<const uint32_t*>(src + 0x20);
+
+    return self;
+}
+} // namespace lift_00509EB0

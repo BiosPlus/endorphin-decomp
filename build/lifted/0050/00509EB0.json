@@ -1,0 +1,34 @@
+{
+  "va": "0x00509EB0",
+  "size": 88,
+  "orig_symbol": "sub_00509EB0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "UnknownClass::copyCtor_00509EB0",
+  "class": "UnknownClass",
+  "signature": "void* __thiscall sub_00509EB0(void* self, const void* other)",
+  "summary": "Copy constructor setting vtable, copying std::string at +0x4 and float at +0x20",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:16:05Z"
+}
