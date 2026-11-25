@@ -4021,6 +4021,13 @@
     "summary": "Returns the address of the global mem_00932E64 (no per-instance state is read).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00447DD0": {
+    "name": "ProcessorWarningDialog::~ProcessorWarningDialog",
+    "class": "ProcessorWarningDialog",
+    "signature": "void fn_00447DD0(void* self)",
+    "summary": "Destructor body: resets vfptr to the ProcessorWarningDialog vtable (0x00932E8C), tears down the subobject at +0x74, then runs base teardown on this.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00447EA0": {
     "name": "ProcessorWarningDialog::vfunc_1",
     "class": "ProcessorWarningDialog",

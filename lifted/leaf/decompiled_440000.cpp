@@ -1946,3 +1946,29 @@ void* fn_00443960(void* self, uint32_t arg, uint32_t unused_arg) {
     return self;
 }
 } // namespace lift_00443960
+
+// [0x00447DD0] sub_00447DD0 (82 bytes)
+namespace lift_00447DD0 {
+// Known callee 0x006A5DFA: thunk_MFC80_ord_587 (IAT jump thunk forwarding to MFC80!ord_587.)
+extern void ext_006A5DFA(void* ecx);
+// Known callee 0x006A5F6E: thunk_MFC80_ord_605 (IAT jump thunk forwarding to MFC80!ord_605.)
+extern void ext_006A5F6E(void* ecx);
+
+// @name ProcessorWarningDialog::~ProcessorWarningDialog
+// @class ProcessorWarningDialog
+// @summary Destructor body: resets vfptr to the ProcessorWarningDialog vtable (0x00932E8C), tears down the subobject at +0x74, then runs base teardown on this.
+// @field ProcessorWarningDialog +0x00 void* vfptr
+// @field ProcessorWarningDialog +0x74 uint8_t field_0x74
+// The MSVC SEH frame (fs:[0] push/restore, state counter) is not modeled; only the
+// observable call sequence and vfptr store are kept.
+void fn_00447DD0(void* self) {
+    // Reset vfptr to this class's primary vtable.
+    *static_cast<void**>(self) = reinterpret_cast<void*>(static_cast<uintptr_t>(0x00932E8C));
+
+    // Tear down the member subobject at +0x74 (passed as ecx).
+    ext_006A5DFA(static_cast<unsigned char*>(self) + 0x74);
+
+    // Base teardown on this.
+    ext_006A5F6E(self);
+}
+} // namespace lift_00447DD0
