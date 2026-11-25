@@ -456,3 +456,26 @@ void* fn_004FFA00() {
     return &mem_00AEB284;
 }
 } // namespace lift_004FFA00
+
+// [0x004F9190] sub_004F9190 (87 bytes)
+namespace lift_004F9190 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00AE9F20;
+extern int mem_00AE9F1C;
+
+// @name initAndGetStaticSingleton_004F9190
+// @summary Guarded one-time initializer: on first call sets guard bit 0 of mem_00AE9F20, runs the 0x0067A670 helper on the object at mem_00AE9F1C, writes its vtable-like value 0x94CE8C, and returns the object's address.
+void* fn_004F9190() {
+    // The original wraps this in an x86 SEH frame (fs:[0] push/restore with a
+    // cleanup handler at 0x008904EE). That exception-frame plumbing is not
+    // reproduced here; only the guard and initialization logic are kept.
+    if (mem_00AE9F20 & 1) {
+        return &mem_00AE9F1C;
+    }
+    mem_00AE9F20 |= 1;
+    ext_0067A670(&mem_00AE9F1C, 0);
+    mem_00AE9F1C = 0x0094CE8C;
+    return &mem_00AE9F1C;
+}
+} // namespace lift_004F9190

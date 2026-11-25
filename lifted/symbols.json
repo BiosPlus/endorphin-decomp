@@ -16935,6 +16935,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData\u003e::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004F9190": {
+    "name": "initAndGetStaticSingleton_004F9190",
+    "signature": "void* fn_004F9190()",
+    "summary": "Guarded one-time initializer: on first call sets guard bit 0 of mem_00AE9F20, runs the 0x0067A670 helper on the object at mem_00AE9F1C, writes its vtable-like value 0x94CE8C, and returns the object's address.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F91F0": {
     "name": "ReleaseNestedCriticalSection",
     "class": "NMData::SkeletalCalibrationVariables (inferred from callee ext_004F4EA0; not confirmed)",

@@ -1,0 +1,13 @@
+{
+  "va": "0x004F9190",
+  "size": 87,
+  "orig_symbol": "sub_004F9190",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "initAndGetStaticSingleton_004F9190",
+  "signature": "void* fn_004F9190()",
+  "summary": "Guarded one-time initializer: on first call sets guard bit 0 of mem_00AE9F20, runs the 0x0067A670 helper on the object at mem_00AE9F1C, writes its vtable-like value 0x94CE8C, and returns the object's address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:08:28Z"
+}
