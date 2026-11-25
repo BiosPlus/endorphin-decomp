@@ -40119,6 +40119,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B9400 (ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getUnitLength, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00670C50": {
+    "name": "lowerBoundByPairU32",
+    "signature": "extern \"C\" uint32_t __cdecl sub_00670C50(uint32_t begin, uint32_t end, uint32_t key_ptr_addr)",
+    "summary": "Binary search (std::lower_bound) over pointer array comparing (field_0x04, field_0x08) as unsigned 32-bit pairs",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00670CB0": {
     "name": "ExprParser::ExpressionContainerType::vfunc_1",
     "class": "ExprParser::ExpressionContainerType",
