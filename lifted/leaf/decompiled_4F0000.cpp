@@ -835,3 +835,41 @@ void* fn_004F0A90(void* self, uint32_t arg) {
     return obj;
 }
 } // namespace lift_004F0A90
+
+// [0x004FDAA0]
+namespace lift_004FDAA0 {
+// @name sub_004FDAA0
+// @summary Constructor-like initialization: copies a std::string at +0x00, queries vtable+0x70 on arg2->+0x04 if non-null, and stores results at +0x1C and +0x20
+// @field Self +0x00 std::string name
+// @field Self +0x1C uint32_t field_0x1C
+// @field Self +0x20 uint32_t field_0x20
+
+
+extern uint32_t mem_00924FE0;
+
+using std_string_copy_ctor_t = uint32_t(__thiscall*)(void* self, uint32_t src);
+using vfunc_70_t = uint32_t*(__thiscall*)(void* self, uint32_t* out, uint32_t arg2);
+
+uint32_t __thiscall sub_004FDAA0(void* self, uint32_t arg1, uint32_t arg2) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    auto copy_ctor = reinterpret_cast<std_string_copy_ctor_t>(static_cast<uintptr_t>(mem_00924FE0));
+    copy_ctor(base, arg1);
+
+    uint32_t obj = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(arg2) + 0x4);
+    uint32_t out_val = 0;
+    uint32_t* val_ptr = &out_val;
+
+    if (obj != 0) {
+        void* obj_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(obj));
+        uint32_t* vtable = *reinterpret_cast<uint32_t**>(obj_ptr);
+        auto vfunc = reinterpret_cast<vfunc_70_t>(static_cast<uintptr_t>(vtable[0x70 / 4]));
+        val_ptr = vfunc(obj_ptr, &out_val, arg2);
+    }
+
+    *reinterpret_cast<uint32_t*>(base + 0x1C) = *val_ptr;
+    *reinterpret_cast<uint32_t*>(base + 0x20) = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(arg2) + 0x4);
+
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+}
+} // namespace lift_004FDAA0
