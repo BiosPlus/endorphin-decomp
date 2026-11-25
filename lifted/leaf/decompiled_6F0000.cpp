@@ -2076,3 +2076,35 @@ uint32_t fn_006FAEA0(void* p, uint32_t a2, uint32_t a3, uint32_t a4,
     return slot(obj, a2, a3, a4, a5, a6, a7);
 }
 } // namespace lift_006FAEA0
+
+// [0x006F90F0]
+namespace lift_006F90F0 {
+// @name findStringInTable_006F90F0
+// @summary Searches a 44-entry string pointer table at 0x00AAB3EC for an exact match and returns its index or -1.
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern uint8_t mem_read8(uint32_t addr);
+
+int32_t sub_006F90F0(uint32_t str_addr) {
+    int32_t index = 0;
+    for (uint32_t table_addr = 0x00AAB3ECu; table_addr < 0x00AAB49Cu; table_addr += 4u, ++index) {
+        uint32_t entry_addr = mem_read32(table_addr);
+        uint32_t p1 = str_addr;
+        uint32_t p2 = entry_addr;
+        while (true) {
+            uint8_t c1 = mem_read8(p1);
+            uint8_t c2 = mem_read8(p2);
+            if (c1 != c2) {
+                break;
+            }
+            if (c1 == 0) {
+                return index;
+            }
+            ++p1;
+            ++p2;
+        }
+    }
+    return -1;
+}
+} // namespace lift_006F90F0

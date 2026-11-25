@@ -1,0 +1,13 @@
+{
+  "va": "0x006F90F0",
+  "size": 96,
+  "orig_symbol": "sub_006F90F0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "findStringInTable_006F90F0",
+  "signature": "int32_t sub_006F90F0(uint32_t str_addr)",
+  "summary": "Searches a 44-entry string pointer table at 0x00AAB3EC for an exact match and returns its index or -1.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:42:59Z"
+}
