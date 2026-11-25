@@ -10143,6 +10143,12 @@
     "summary": "Allocates count * 0x7C bytes via MFC80 ord_762; throws std::exception(\"l{b\") when the size would overflow.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x0048FC00": {
+    "name": "moveRangeWithRelease_0048FC00",
+    "signature": "uint32_t sub_0048FC00(uint32_t first, uint32_t last, uint32_t dest)",
+    "summary": "Move-assigns an 8-byte-element range [first,last) into dest; releases each dest object via vtable+0x78 and derives dest value from src object via vtable+0x70. Returns dest end (or dest begin if range empty).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048FE80": {
     "name": "ExprParser::ReadMethodType\u003cGraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cGraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1\u003e",

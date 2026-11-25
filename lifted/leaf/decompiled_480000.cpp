@@ -1956,3 +1956,52 @@ void* fn_0048E270(void* self, uint32_t a, uint32_t b) {
     return self;
 }
 } // namespace lift_0048E270
+
+// [0x0048FC00]
+namespace lift_0048FC00 {
+// @name moveRangeWithRelease_0048FC00
+// @summary Move-assigns an 8-byte-element range [first,last) into dest; releases each dest object via vtable+0x78 and derives dest value from src object via vtable+0x70. Returns dest end (or dest begin if range empty).
+// @field Element +0x00 uint32_t field_0x00
+// @field Element +0x04 uint32_t field_0x04
+
+
+template <typename T>
+T mem_read(uint32_t addr);
+
+template <typename T>
+void mem_write(uint32_t addr, T value);
+
+// Virtual slot calls: the slot is read from the object's vtable at the given byte offset.
+extern void ext_vcall_0x78(uint32_t thisPtr, uint32_t arg);
+extern uint32_t ext_vcall_0x70(uint32_t thisPtr, uint32_t arg);
+
+uint32_t sub_0048FC00(uint32_t first, uint32_t last, uint32_t dest) {
+    if (first == last) {
+        return dest;
+    }
+
+    uint32_t d = dest;
+    uint32_t s = first;
+    do {
+        if (d != s) {
+            uint32_t oldPtr = mem_read<uint32_t>(d + 0x04u);
+            if (oldPtr != 0u) {
+                ext_vcall_0x78(oldPtr, d);
+            }
+
+            uint32_t srcPtr = mem_read<uint32_t>(s + 0x04u);
+            mem_write<uint32_t>(d + 0x04u, srcPtr);
+
+            uint32_t value = 0u;
+            if (srcPtr != 0u) {
+                value = ext_vcall_0x70(srcPtr, s);
+            }
+            mem_write<uint32_t>(d + 0x00u, value);
+        }
+        s += 8u;
+        d += 8u;
+    } while (s != last);
+
+    return d;
+}
+} // namespace lift_0048FC00
