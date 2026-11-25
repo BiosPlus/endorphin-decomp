@@ -56841,3 +56841,36 @@ uint32_t __stdcall fn_00670700(void* self) {
     return 1;
 }
 } // namespace lift_00670700
+
+// [0x006749C0] ExprParser::ReadMethodType<ExpressionEntry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ExpressionEntry::getExpression(void) const, 0>::vfunc_4 (71 bytes)
+namespace lift_006749C0 {
+// Known callee 0x004276B0: StdStringCopyConstruct (copy-constructs a std::string at dst from src; returns dst)
+extern void* ext_004276B0(void* dst, const void* src);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in-place with fixed message)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk to MSVCR80!_CxxThrowException)
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<ExpressionEntry, std::string const &, &ExpressionEntry::getExpression, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<ExpressionEntry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ExpressionEntry::getExpression(void) const, 0>
+// @summary Reads the ExpressionEntry* stored in the output slot, copy-constructs its expression string into that slot, and returns it; throws if the entry pointer is null.
+// @field ExpressionEntry +0x1c std::string expression
+void* fn_006749C0(void* a1, void** a2) {
+    (void)a1; // unused stack argument in the original frame
+
+    // The output slot initially holds the ExpressionEntry* to read from.
+    void* entry = *a2;
+    if (entry != nullptr) {
+        // Copy-construct ExpressionEntry::expression (at +0x1c) into the output slot.
+        void* src = static_cast<uint8_t*>(entry) + 0x1c;
+        ext_004276B0(a2, src);
+        return a2;
+    }
+
+    // Null entry: construct a DerivedException in a local buffer and throw it.
+    alignas(16) uint8_t exception_object[40];
+    ext_0046C3C0(exception_object);
+    ext_006A6DD2(exception_object, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+    return nullptr; // not reached
+}
+} // namespace lift_006749C0
