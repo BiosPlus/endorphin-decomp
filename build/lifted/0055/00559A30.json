@@ -1,0 +1,22 @@
+{
+  "va": "0x00559A30",
+  "size": 17,
+  "orig_symbol": "sub_00559A30",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "Unknown::ReleaseHandleAndClearThenThrow",
+  "class": "Unknown",
+  "signature": "void fn_00559A30(void* self)",
+  "summary": "Releases the handle held in a frame-local slot, then raises a C++ exception with null arguments.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "\u003cunknown\u003e (not accessed directly; the frame-local at [ebp-0x18] is passed as the release",
+      "name": "target)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:03:20Z"
+}

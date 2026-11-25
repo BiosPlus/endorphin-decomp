@@ -740,3 +740,24 @@ void fn_00559B00(void* self) {
     ext_006A6DD2();
 }
 } // namespace lift_00559B00
+
+// [0x00559A30] sub_00559A30 (17 bytes)
+namespace lift_00559A30 {
+// Known callee 0x00559800: sub_00559800 (Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).)
+extern void ext_00559800(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void);
+
+// @name Unknown::ReleaseHandleAndClearThenThrow
+// @class Unknown
+// @summary Releases the handle held in a frame-local slot, then raises a C++ exception with null arguments.
+// @field Unknown +0x00 <unknown> (not accessed directly; the frame-local at [ebp-0x18] is passed as the release target)
+void fn_00559A30(void* self) {
+    // mov ecx, [ebp-0x18]: the release target is a frame-local, not the incoming argument.
+    // The incoming `self` is not read by the original code; it is kept for signature uniformity.
+    void* ecx = self;
+    ext_00559800(ecx);
+    // push 0; push 0; call _CxxThrowException (argument block is (nullptr, nullptr))
+    ext_006A6DD2();
+}
+} // namespace lift_00559A30

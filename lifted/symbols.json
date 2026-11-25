@@ -20165,6 +20165,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00559A30": {
+    "name": "Unknown::ReleaseHandleAndClearThenThrow",
+    "class": "Unknown",
+    "signature": "void fn_00559A30(void* self)",
+    "summary": "Releases the handle held in a frame-local slot, then raises a C++ exception with null arguments.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00559B00": {
     "name": "Unknown::ReleaseAndThrowNull",
     "class": "Unknown",
