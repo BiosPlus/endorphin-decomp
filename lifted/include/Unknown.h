@@ -89,7 +89,7 @@ struct Unknown_Fields {
     // +0x0   std::string              str  (evidence: 0x004C4390, 0x004CF910) // CONFLICT: multiple definitions at +0x0
     // +0x0   std::string              str0  (evidence: 0x00553F00, 0x00574D30) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t* field_0x00 (pointer to range-holder struct)  (evidence: 0x0067A670, 0x0067F8F0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    subobject  (evidence: 0x006616C0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    subobject  (evidence: 0x006616C0, 0x0079E410) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    table  (evidence: 0x0077F4E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   <unknown> (not accessed directly; the frame-local at [ebp-0x18] is passed as the release target)  (evidence: 0x00559A30) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (pointer to a sub-object; dereferenced to reach the target)  (evidence: 0x006BB780) // CONFLICT: multiple definitions at +0x0

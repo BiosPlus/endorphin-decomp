@@ -791,3 +791,29 @@ void fn_00798F60(uint32_t* slot, const char* src) {
     ext_00798F10(slot, src, size);
 }
 } // namespace lift_00798F60
+
+// [0x0079E410] sub_0079E410 (64 bytes)
+namespace lift_0079E410 {
+// Known callee 0x00714AE0: getField0xD8 (Return the 32-bit field at offset 0xD8 of the object in ecx.)
+// Stack args pushed by the caller: (0, sel) where sel = flag ? 0 : 6.
+extern uint32_t ext_00714AE0(uintptr_t ecx, uint32_t arg0, uint32_t arg1);
+// Known callee 0x006C3390: sub_006C3390 (Sets a 32-bit field at offset 0x1e78 in an array of 496-byte entries pointed to by this+0xf0.)
+// Self is passed in ecx; index/value are stack args whose slots are not fully established here.
+extern void ext_006C3390(uintptr_t self, uint32_t index, uint32_t value);
+
+// @name Unknown::updateIndexedRecordFromD8
+// @class Unknown
+// @summary Reads the 0xD8 field of the sub-object referenced by self+0x00, then stores it into the indexed record array via ext_006C3390.
+// @field Unknown +0x00 void* subobject
+void fn_0079E410(void* self, uint32_t flag) {
+    // Load the sub-object pointer stored at self+0x00 (mov ecx, [ecx]).
+    void* subobject = *reinterpret_cast<void**>(self);
+
+    // flag != 0 -> second stack arg is 0; flag == 0 -> second stack arg is 6.
+    const uint32_t sel = (flag != 0) ? 0u : 6u;
+    const uint32_t value = ext_00714AE0(reinterpret_cast<uintptr_t>(subobject), 0u, sel);
+
+    // Store into the record array; index is the stacked flag, value slot is not established here.
+    ext_006C3390(static_cast<uintptr_t>(value), flag, 0u);
+}
+} // namespace lift_0079E410

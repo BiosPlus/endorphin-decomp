@@ -65461,6 +65461,13 @@
     "summary": "Dispatches on a selector (stack arg): 0 checks *self, 1 checks *self+0x48, 2 checks *self+0x90; any other selector returns 0.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x0079E410": {
+    "name": "Unknown::updateIndexedRecordFromD8",
+    "class": "Unknown",
+    "signature": "void fn_0079E410(void* self, uint32_t flag)",
+    "summary": "Reads the 0xD8 field of the sub-object referenced by self+0x00, then stores it into the indexed record array via ext_006C3390.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079E5E0": {
     "name": "descriptiveName: SelectSelfOrOffsetByMode",
     "class": "(none, free function)",

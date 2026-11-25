@@ -1,0 +1,22 @@
+{
+  "va": "0x0079E410",
+  "size": 64,
+  "orig_symbol": "sub_0079E410",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "Unknown::updateIndexedRecordFromD8",
+  "class": "Unknown",
+  "signature": "void fn_0079E410(void* self, uint32_t flag)",
+  "summary": "Reads the 0xD8 field of the sub-object referenced by self+0x00, then stores it into the indexed record array via ext_006C3390.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "subobject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:47:09Z"
+}
