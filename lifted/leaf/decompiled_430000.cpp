@@ -3204,3 +3204,22 @@ double __thiscall fn_0043CDD0(void* self, int arg) {
     return v < 0.0 ? 0.0 : v;
 }
 } // namespace lift_0043CDD0
+
+// [0x0043CEB0] sub_0043CEB0 (39 bytes)
+namespace lift_0043CEB0 {
+// Known callee 0x0043CDD0: lerpByClientWidth (Maps integer arg against the client rect's horizontal span [field_0xFC, client.right] onto the double range [field_0xE8, field_0xF0] (linear, centered), clamped to be non-negative; returns result in st0 (single int arg, ret 4).)
+extern double ext_0043CDD0(int arg);
+// 8-byte double constant read by `fadd qword ptr [0x92BD70]`.
+extern double mem_0092BD70;
+
+// @name lerpByClientWidthRounded
+// @summary Evaluates lerpByClientWidth for arg, adds the constant at mem_0092BD70, and rounds the result to the nearest int32 (FPU default rounding).
+int fn_0043CEB0(int arg) {
+    const double v = ext_0043CDD0(arg) + mem_0092BD70;
+    // fistp: round to nearest per FPU control word; out-of-range/NaN yields INT32_MIN ("integer indefinite").
+    if (!(v >= -2147483648.5 && v < 2147483647.5)) {
+        return INT32_MIN;
+    }
+    return static_cast<int>(std::nearbyint(v));
+}
+} // namespace lift_0043CEB0

@@ -3833,6 +3833,12 @@
     "summary": "Maps integer arg against the client rect's horizontal span [field_0xFC, client.right] onto the double range [field_0xE8, field_0xF0] (linear, centered), clamped to be non-negative; returns result (stdcall-style single int arg, ret 4).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043CEB0": {
+    "name": "lerpByClientWidthRounded",
+    "signature": "int fn_0043CEB0(int arg)",
+    "summary": "Evaluates lerpByClientWidth for arg, adds the constant at mem_0092BD70, and rounds the result to the nearest int32 (FPU default rounding).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043CEE0": {
     "name": "MultiTrackView::View::vfunc_81",
     "class": "MultiTrackView::View",

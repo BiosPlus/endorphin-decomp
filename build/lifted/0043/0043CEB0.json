@@ -1,0 +1,13 @@
+{
+  "va": "0x0043CEB0",
+  "size": 39,
+  "orig_symbol": "sub_0043CEB0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "lerpByClientWidthRounded",
+  "signature": "int fn_0043CEB0(int arg)",
+  "summary": "Evaluates lerpByClientWidth for arg, adds the constant at mem_0092BD70, and rounds the result to the nearest int32 (FPU default rounding).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:59:06Z"
+}
