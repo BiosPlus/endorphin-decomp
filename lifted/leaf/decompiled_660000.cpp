@@ -2274,3 +2274,28 @@ TextRange* fn_00664CD0(TextRange* out, const char* first, const char* last, uint
     return out;
 }
 } // namespace lift_00664CD0
+
+// [0x00664D40] sub_00664D40 (103 bytes)
+namespace lift_00664D40 {
+extern void __thiscall ext_0065F7F0(void* self, uint32_t diff);
+extern void __cdecl ext_00664BA0(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6);
+
+// @name ComputeDeltaAndDispatch
+// @summary Packs two args into a pair, calls sub_0065F7F0 with (a3 - a2) to produce two result words, stores them into the out pointer, then calls sub_00664BA0 with masked a3 and returns the out pointer.
+extern void* __cdecl fn_00664D40(void* a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6) {
+    uint32_t pair[2];
+    pair[0] = a4;
+    pair[1] = a5;
+    ext_0065F7F0(pair, a3 - a2);
+    uint32_t r0 = pair[0];
+    uint32_t r1 = pair[1];
+
+    uint32_t* out = static_cast<uint32_t*>(a1);
+    out[0] = r0;
+    out[1] = r1;
+
+    uint32_t a3_low_cleared = a3 & 0xFFFFFF00u;
+    ext_00664BA0(a2, a3, a5, a6, a3_low_cleared, a3_low_cleared);
+    return a1;
+}
+} // namespace lift_00664D40

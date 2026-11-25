@@ -1,0 +1,13 @@
+{
+  "va": "0x00664D40",
+  "size": 103,
+  "orig_symbol": "sub_00664D40",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "ComputeDeltaAndDispatch",
+  "signature": "extern \"C\" void* __cdecl fn_00664D40(void* a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6)",
+  "summary": "Packs two args into a pair, calls sub_0065F7F0 with (a3 - a2) to produce two result words, stores them into the out pointer, then calls sub_00664BA0 with masked a3 and returns the out pointer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:49:05Z"
+}
