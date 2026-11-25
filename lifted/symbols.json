@@ -46107,6 +46107,13 @@
     "summary": "For count \u003e 0, resolve a pointer via ext_006CA060(self, count-1), call ext_006CA060(self, count) for its side effect, then return whether bit 0x02000000 of ext_006C9D20(ptr) is set; returns false when count \u003c= 0.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006CC950": {
+    "name": "Unknown::HasFlag29OfFirstOfRange",
+    "class": "Unknown",
+    "signature": "bool fn_006CC950(void* self, int32_t count)",
+    "summary": "For count \u003e 0, resolves the element at (count - 1) and the element at count via ext_006CA060, then returns true if bit 29 (0x20000000) of ext_006C9D60(first) is set; false for count \u003c= 0.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006CD310": {
     "name": "sub_006CD310",
     "signature": "extern \"C\" void __fastcall fn_006CD310(void* self, int edx_unused, int32_t value)",

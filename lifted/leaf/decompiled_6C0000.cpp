@@ -888,3 +888,28 @@ bool fn_006CC6B0(void* self, int32_t count) {
     return (flags & 0x02000000u) != 0;
 }
 } // namespace lift_006CC6B0
+
+// [0x006CC950] sub_006CC950 (64 bytes)
+namespace lift_006CC950 {
+// Known callee 0x006CA060: sub_006CA060 (Auto-lifted identical-shape clone of 0x00707980 (Unknown::NotifySlot17IfSelfLinkedWrapper).)
+// Machine code: receiver in ecx, one stack argument (ret 4). Returns a pointer in eax, used below as a receiver.
+extern void* ext_006CA060(void* self, int32_t arg);
+// Known callee 0x006C9D60: Unknown::GetMaskedFlags30 (Returns the bits 28-29 (mask 0x30000000) of the dword at this+0x10.)
+extern uint32_t ext_006C9D60(void* self);
+
+// @name Unknown::HasFlag29OfFirstOfRange
+// @class Unknown
+// @summary For count > 0, resolves the element at (count - 1) and the element at count via ext_006CA060, then returns true if bit 29 (0x20000000) of ext_006C9D60(first) is set; false for count <= 0.
+bool fn_006CC950(void* self, int32_t count) {
+    if (count <= 0) {
+        return false;
+    }
+
+    // Call order matches the original: element (count - 1) first, then element (count).
+    void* first = ext_006CA060(self, count - 1);
+    (void)ext_006CA060(self, count);
+
+    const uint32_t flags = ext_006C9D60(first);
+    return (flags & 0x20000000u) != 0;
+}
+} // namespace lift_006CC950
