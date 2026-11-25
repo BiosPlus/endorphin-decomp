@@ -5620,6 +5620,12 @@
     "summary": "Forwards two stack arguments with this to an external MFC80 routine, then zeroes the DWORD at this+0xE8.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x00455EB0": {
+    "name": "sub_00455EB0_dtor",
+    "signature": "extern \"C\" void __thiscall fn_00455EB0(uintptr_t self)",
+    "summary": "Destructor that resets vtables at +0x00 and +0xfc and invokes MFC base/member destructors",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00455F10": {
     "name": "Unknown::setBackgroundColor",
     "class": "Unknown",
