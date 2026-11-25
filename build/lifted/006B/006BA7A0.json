@@ -1,0 +1,14 @@
+{
+  "va": "0x006BA7A0",
+  "size": 32,
+  "orig_symbol": "sub_006BA7A0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "String::compareNotEqual",
+  "class": "String",
+  "signature": "extern \"C\" int32_t __thiscall fn_006BA7A0(void* self, void* arg)",
+  "summary": "Fetches an int32 from the argument via ext_006E7460, compares this string against it, and returns 1 if the comparison is nonzero, else 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:39:18Z"
+}

@@ -1474,3 +1474,20 @@ int32_t sub_006BA780(const char* const* self, void* arg) {
     return cmp == 0 ? 1 : 0;
 }
 } // namespace lift_006BA780
+
+// [0x006BA7A0] sub_006BA7A0 (32 bytes)
+namespace lift_006BA7A0 {
+// Known callee 0x006BA660: String::compare (Compare this string's buffer with another C-string, treating null pointers as mem_00B5D2C0)
+extern int32_t __thiscall ext_006BA660(const void* self, const char* other);
+// Known callee 0x006E7460: sub_006E7460 (Getter returning int32_t field at offset +0x0.)
+extern int32_t __fastcall ext_006E7460(void* self);
+
+// @name String::compareNotEqual
+// @class String
+// @summary Fetches an int32 from the argument via ext_006E7460, compares this string against it, and returns 1 if the comparison is nonzero, else 0.
+extern int32_t __thiscall fn_006BA7A0(void* self, void* arg) {
+    const int32_t key = ext_006E7460(arg);
+    const int32_t cmp = ext_006BA660(self, reinterpret_cast<const char*>(static_cast<intptr_t>(key)));
+    return cmp != 0 ? 1 : 0;
+}
+} // namespace lift_006BA7A0
