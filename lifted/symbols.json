@@ -32182,6 +32182,12 @@
     "summary": "Stores a DWORD value into dst[0] and the lazily-initialized static object's address into dst[1].",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005EC8F0": {
+    "name": "storeValueAndStaticObject",
+    "signature": "extern \"C\" DWORD mem_00B45F1C; // init-guard flags word (bit 0 = initialized/in-progress) extern \"C\" DWORD mem_00B45F18; // static object storage void fn_005EC8F0(DWORD* out, DWORD value)",
+    "summary": "Writes a DWORD value into *out and the lazily-initialized static object's address into out[1].",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005EC910": {
     "name": "fillPairWithStaticObject",
     "signature": "void fn_005EC910(uint32_t* dst, uint32_t value)",

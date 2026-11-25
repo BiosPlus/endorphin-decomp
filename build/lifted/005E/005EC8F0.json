@@ -1,0 +1,27 @@
+{
+  "va": "0x005EC8F0",
+  "size": 30,
+  "orig_symbol": "sub_005EC8F0",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "storeValueAndStaticObject",
+  "signature": "extern \"C\" DWORD mem_00B45F1C; // init-guard flags word (bit 0 = initialized/in-progress) extern \"C\" DWORD mem_00B45F18; // static object storage void fn_005EC8F0(DWORD* out, DWORD value)",
+  "summary": "Writes a DWORD value into *out and the lazily-initialized static object's address into out[1].",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:12:44Z"
+}

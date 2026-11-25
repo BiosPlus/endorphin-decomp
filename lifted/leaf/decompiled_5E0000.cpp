@@ -773,3 +773,23 @@ void fn_005EC910(uint32_t* dst, uint32_t value) {
     dst[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
 }
 } // namespace lift_005EC910
+
+// [0x005EC8F0] sub_005EC8F0 (30 bytes)
+namespace lift_005EC8F0 {
+// Known callee 0x005EAF40: getOrInitStaticObject_005EAF40
+extern void* ext_005EAF40();
+
+// Init-guard flags word and static object storage used by the callee.
+extern DWORD mem_00B45F1C; // init-guard flags word (bit 0 = initialized/in-progress)
+extern DWORD mem_00B45F18; // static object storage
+
+// @name storeValueAndStaticObject
+// @summary Writes a DWORD value into *out and the lazily-initialized static object's address into out[1].
+// @field Unknown +0x00 DWORD field_0x00
+// @field Unknown +0x04 DWORD field_0x04
+void fn_005EC8F0(DWORD* out, DWORD value) {
+    DWORD obj = static_cast<DWORD>(reinterpret_cast<uintptr_t>(ext_005EAF40()));
+    out[0] = value;
+    out[1] = obj;
+}
+} // namespace lift_005EC8F0
