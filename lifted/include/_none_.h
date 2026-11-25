@@ -8,8 +8,16 @@
 // Recovered field layout for <none>:
 namespace lifted_layout {
 struct _none__Fields {
-    // +0x0   uint32_t                 first  (evidence: 0x005E2C70)
-    // +0x4   uint32_t block[16] (bytes +0x04..+0x43)  (evidence: 0x005E2C70)
+    // +0x0   DWORD                    field_0x00  (evidence: 0x00625950) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 first  (evidence: 0x005E2C70) // CONFLICT: multiple definitions at +0x0
+    // +0x4   uint32_t block[16] (bytes +0x04..+0x43)  (evidence: 0x005E2C70) // CONFLICT: multiple definitions at +0x4
+    // +0x4   DWORD                    field_0x04  (evidence: 0x00625950) // CONFLICT: multiple definitions at +0x4
+    // +0x8   DWORD                    field_0x08  (evidence: 0x00625950)
+    // +0xC   DWORD                    field_0x0C  (evidence: 0x00625950)
+    // +0x10  DWORD                    field_0x10  (evidence: 0x00625950)
+    // +0x14  DWORD                    field_0x14  (evidence: 0x00625950)
+    // +0x18  BYTE                     field_0x18  (evidence: 0x00625950)
+    // +0x19  BYTE                     field_0x19  (evidence: 0x00625950)
     // +0x20  int32_t                  field_0x20  (evidence: 0x00465EA0)
     // +0x100 uint32_t                 field_0x100  (evidence: 0x00465EA0)
 };

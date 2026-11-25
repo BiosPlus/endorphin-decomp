@@ -1,0 +1,63 @@
+{
+  "va": "0x00625950",
+  "size": 69,
+  "orig_symbol": "sub_00625950",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "allocRecord28",
+  "signature": "void* fn_00625950(uint32_t a0, uint32_t a1, uint32_t a2, const uint32_t* src, uint8_t flag)",
+  "summary": "Allocates a 0x1C-byte record and fills it from three DWORD args, a 3-DWORD source block and a flag byte; returns NULL if allocation fails.",
+  "fields": [
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    },
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0xC",
+      "type": "DWORD",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x10",
+      "type": "DWORD",
+      "name": "field_0x10"
+    },
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x14",
+      "type": "DWORD",
+      "name": "field_0x14"
+    },
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x18",
+      "type": "BYTE",
+      "name": "field_0x18"
+    },
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x19",
+      "type": "BYTE",
+      "name": "field_0x19"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:22:22Z"
+}

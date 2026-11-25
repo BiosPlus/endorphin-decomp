@@ -1046,3 +1046,37 @@ void fn_00622D30(void* dst, uint32_t count, const void* src) {
     } while (count != 0);
 }
 } // namespace lift_00622D30
+
+// [0x00625950] sub_00625950 (69 bytes)
+namespace lift_00625950 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Used here as operator new(size_t): allocates the 0x1C-byte record.
+extern void* ext_006A5C62(size_t size);
+
+// @name allocRecord28
+// @summary Allocates a 0x1C-byte record and fills it from three DWORD args, a 3-DWORD source block and a flag byte; returns NULL if allocation fails.
+// @field <none> +0x00 DWORD field_0x00
+// @field <none> +0x04 DWORD field_0x04
+// @field <none> +0x08 DWORD field_0x08
+// @field <none> +0x0C DWORD field_0x0C
+// @field <none> +0x10 DWORD field_0x10
+// @field <none> +0x14 DWORD field_0x14
+// @field <none> +0x18 BYTE  field_0x18
+// @field <none> +0x19 BYTE  field_0x19
+void* fn_00625950(uint32_t a0, uint32_t a1, uint32_t a2,
+                  const uint32_t* src, uint8_t flag) {
+    void* rec = ext_006A5C62(0x1C);
+    if (rec == nullptr) {
+        return nullptr;
+    }
+    lift_field<uint32_t>(rec, 0x00) = a0;
+    lift_field<uint32_t>(rec, 0x04) = a1;
+    lift_field<uint32_t>(rec, 0x08) = a2;
+    lift_field<uint32_t>(rec, 0x0C) = src[0];
+    lift_field<uint32_t>(rec, 0x10) = src[1];
+    lift_field<uint32_t>(rec, 0x14) = src[2];
+    lift_field<uint8_t>(rec, 0x18) = flag;
+    lift_field<uint8_t>(rec, 0x19) = 0;
+    return rec;
+}
+} // namespace lift_00625950
