@@ -603,6 +603,13 @@
     "summary": "Returns the first dword of the record at index this-\u003e+0x684 in the 0x58-byte record array [+0x564, +0x568); invalid-parameter path if the array is empty or the index is out of range.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00405FB0": {
+    "name": "throwPreparedStringError_00405FB0",
+    "class": "Unknown",
+    "signature": "explicit Unknown(const std::string\u0026 message) : std::exception(), field_0x0C(message)",
+    "summary": "Builds a std::string from the literal at 0x00928F30 and throws it inside an std::exception-derived object.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00406030": {
     "name": "sub_00407830",
     "class": "unknown",

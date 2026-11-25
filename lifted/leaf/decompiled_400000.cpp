@@ -43,6 +43,7 @@ void* fn_00407850(void* self) {
     return ext_006A5E00(parent);
 }
 } // namespace lift_00407850
+#include <exception>
 
 // [0x0040F0B0] sub_0040F0B0 (25 bytes)
 namespace lift_0040F0B0 {
@@ -1859,3 +1860,30 @@ void* fn_00404D70(void* self, const void* src) {
     return self;  // eax = this
 }
 } // namespace lift_00404D70
+
+// [0x00405FB0] sub_00405FB0 (112 bytes)
+namespace lift_00405FB0 {
+// @name throwPreparedStringError_00405FB0
+// @class Unknown
+// @summary Builds a std::string from the literal at 0x00928F30 and throws it inside an std::exception-derived object.
+// @field Unknown +0x0C std::string field_0x0C
+
+// Exception object layout as seen by the throw site: std::exception base
+// (vptr + internal state, 0x0C bytes) followed by a std::string at +0x0C.
+class Unknown : public std::exception {
+public:
+    explicit Unknown(const std::string& message)
+        : std::exception(), field_0x0C(message) {}
+
+    std::string field_0x0C;
+};
+
+// Literal stored at rdata VA 0x00928F30. Its text was not recovered in this lift.
+static const std::string kLiteral_00928F30 = "<rdata 0x00928F30>";
+
+void fn_00405FB0() {
+    std::string source = kLiteral_00928F30;
+    Unknown thrown(source);
+    throw thrown;
+}
+} // namespace lift_00405FB0
