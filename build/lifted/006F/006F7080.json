@@ -1,0 +1,14 @@
+{
+  "va": "0x006F7080",
+  "size": 106,
+  "orig_symbol": "sub_006F7080",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "CompositeOwner::initSubobjects",
+  "class": "CompositeOwner",
+  "signature": "void fn_006F7080(void* self)",
+  "summary": "Initializes four embedded subobjects (at +0x90, +0x70, +0x50, +0x04) in turn, then invokes the finalizer thunk.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:53:56Z"
+}

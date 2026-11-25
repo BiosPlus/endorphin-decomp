@@ -58090,6 +58090,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006F6B40 (GetRigidNameStdcall).",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006F7080": {
+    "name": "CompositeOwner::initSubobjects",
+    "class": "CompositeOwner",
+    "signature": "void fn_006F7080(void* self)",
+    "summary": "Initializes four embedded subobjects (at +0x90, +0x70, +0x50, +0x04) in turn, then invokes the finalizer thunk.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F7260": {
     "name": "sub_006F7260",
     "signature": "extern \"C\" void* __fastcall fn_006F7260(void* self, int edx_unused, unsigned int flags)",
@@ -69968,6 +69975,12 @@
     "summary": "Appends at most count characters from src to null-terminated dst, always null-terminating, and returns dst.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x00859A90": {
+    "name": "releaseRefCountedBuffer",
+    "signature": "void fn_00859A90(void* node)",
+    "summary": "Decrements a reference-counted buffer's refcount and frees it (and optionally its linked buffer) when zero.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x00859AF0": {
     "name": "destroyTreeNode",
     "signature": "void sub_00859AF0(uint32_t* node)",
@@ -70026,11 +70039,23 @@
     "summary": "Zeroes a 100-byte block, clears its flag byte, sets most dword fields to -1, and sets the dword at +0x2C to 1.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085BBC0": {
+    "name": "__allshl",
+    "signature": "uint64_t sub_0085BBC0(uint64_t val, uint32_t shift)",
+    "summary": "64-bit unsigned/signed left shift (MSVC CRT helper)",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085BC20": {
     "name": "GetField08",
     "signature": "uint32_t GetField08(uint32_t self_ptr)",
     "summary": "Returns the 32-bit value at offset +0x08 of the object pointed to by the first stack argument.",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
+  },
+  "0x0085BE20": {
+    "name": "ReadBigEndianBytes",
+    "signature": "extern \"C\" uint32_t fn_0085BE20(void* self, uint32_t count, uint32_t* out_val)",
+    "summary": "Reads up to `count` bytes in big-endian order into `*out_val` and returns the number of bytes consumed.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
   "0x0085BF40": {
     "name": "findEntryValueByKey",

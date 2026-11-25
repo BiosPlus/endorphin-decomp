@@ -2238,3 +2238,22 @@ uint8_t __thiscall sub_006FC250(uint32_t self, uint32_t arg1) {
     return 0;
 }
 } // namespace lift_006FC250
+
+// [0x006F7080] sub_006F7080 (106 bytes)
+namespace lift_006F7080 {
+extern void ext_006B9D70(void);
+extern void ext_006D80A0(void);
+
+// @name CompositeOwner::initSubobjects
+// @class CompositeOwner
+// @summary Initializes four embedded subobjects (at +0x90, +0x70, +0x50, +0x04) in turn, then invokes the finalizer thunk.
+// Subobject offsets are only passed as `this` addresses; no field memory is read or written directly.
+// The MSVC SEH frame setup/teardown (fs:[0] push/pop) and EH state writes are not reproduced.
+void fn_006F7080(void* self) {
+    (void)self;
+    ext_006D80A0();  // subobject at +0x90 (state 2)
+    ext_006D80A0();  // subobject at +0x70 (state 1)
+    ext_006D80A0();  // subobject at +0x50 (state 0)
+    ext_006B9D70();  // subobject at +0x04 (state -1), forwards to sub_006B9970
+}
+} // namespace lift_006F7080
