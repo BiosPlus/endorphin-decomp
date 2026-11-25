@@ -1,0 +1,22 @@
+{
+  "va": "0x00789810",
+  "size": 97,
+  "orig_symbol": "sub_00789810",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "Unknown::InitWithCrc32Table",
+  "class": "Unknown",
+  "signature": "void* fn_00789810(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint8_t a4)",
+  "summary": "Constructs the record from four args, sets the vtable pointer, builds the CRC-32 table, and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:38:16Z"
+}

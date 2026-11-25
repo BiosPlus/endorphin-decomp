@@ -1407,3 +1407,22 @@ int fn_0078A1A0(const char* str, int start) {
     }
 }
 } // namespace lift_0078A1A0
+
+// [0x00789810] sub_00789810 (97 bytes)
+namespace lift_00789810 {
+// Known callee 0x00789260: ConstructRecord4 (Constructor-style init: stores four args at +0x04..+0x10, zeroes +0x14, sets vtable at +0x00; returns self.)
+extern void* ext_00789260(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint8_t a4);
+// Known callee 0x00789940: Unknown::BuildCrc32MsbTable (Fills a 256-entry MSB-first CRC-32 table (polynomial 0x04C11DB7) starting at +0x18.)
+extern void ext_00789940(void* self);
+
+// @name Unknown::InitWithCrc32Table
+// @class Unknown
+// @summary Constructs the record from four args, sets the vtable pointer, builds the CRC-32 table, and returns self.
+// @field Unknown +0x00 uint32_t vptr
+void* fn_00789810(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint8_t a4) {
+    ext_00789260(self, a1, a2, a3, a4);
+    lift_field<uint32_t>(self, 0x00) = 0x00996FE4u;
+    ext_00789940(self);
+    return self;
+}
+} // namespace lift_00789810

@@ -64070,6 +64070,13 @@
     "summary": "Forwards to a virtual method on the object at +0x08 if set, otherwise to a virtual method on the object at +0x14.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00789810": {
+    "name": "Unknown::InitWithCrc32Table",
+    "class": "Unknown",
+    "signature": "void* fn_00789810(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint8_t a4)",
+    "summary": "Constructs the record from four args, sets the vtable pointer, builds the CRC-32 table, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00789880": {
     "name": "sub_00789880",
     "signature": "extern \"C\" void* __fastcall fn_00789880(void* self, int edx_unused, unsigned int flags)",
