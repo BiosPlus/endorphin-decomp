@@ -153,3 +153,39 @@ bool fn_004F9AA0(void* self) {
     return begin == end;
 }
 } // namespace lift_004F9AA0
+
+// [0x004FA1F0] VMCSModes::DefaultImplementation::vfunc_137 (58 bytes)
+namespace lift_004FA1F0 {
+// OglRenderer::vfunc_118 (thiscall, this in ecx, result in eax)
+extern void* ext_005B11F0(void* self);
+
+// @name VMCSModes::DefaultImplementation::vfunc_137
+// @class VMCSModes::DefaultImplementation
+// @summary Returns true if the vector reached via this->+0x8 -> +0x14 -> +0x34 -> vfunc(+0x18) has a non-zero begin and end != begin.
+// @field VMCSModes::DefaultImplementation +0x08 void* delegate_0x8
+bool fn_004FA1F0(void* self) {
+    // eax = this->delegate (+0x8); ecx = delegate->field_0x14; ecx = field->field_0x34
+    void* delegate = lift_field<void*>(self, 0x08);
+    void* middle = lift_field<void*>(delegate, 0x14);
+    void* renderer_src = lift_field<void*>(middle, 0x34);
+
+    // eax = ext_005B11F0(ecx): OglRenderer::vfunc_118 returns an object pointer
+    void* obj = ext_005B11F0(renderer_src);
+
+    // Virtual call: vtable slot at +0x18 (index 6), invoked with obj in ecx, result in eax
+    void* vtable = lift_field<void*>(obj, 0x00);
+    using VFn = void* (*)(void*);
+    VFn slot = reinterpret_cast<VFn>(lift_field<void*>(vtable, 0x18));
+    void* vec = slot(obj);
+
+    // vec layout (std::vector-like): begin at +0x4, end at +0x8
+    void* begin = lift_field<void*>(vec, 0x04);
+    if (begin == nullptr) {
+        return false;
+    }
+    void* end = lift_field<void*>(vec, 0x08);
+    // (end - begin) >> 2 != 0 : true when the element count is non-zero
+    std::ptrdiff_t diff = reinterpret_cast<uint8_t*>(end) - reinterpret_cast<uint8_t*>(begin);
+    return (diff >> 2) != 0;
+}
+} // namespace lift_004FA1F0

@@ -1,0 +1,22 @@
+{
+  "va": "0x004FA1F0",
+  "size": 58,
+  "orig_symbol": "VMCSModes::DefaultImplementation::vfunc_137",
+  "src_path": "src/VMCSModes/DefaultImplementation.cpp",
+  "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp",
+  "name": "VMCSModes::DefaultImplementation::vfunc_137",
+  "class": "VMCSModes::DefaultImplementation",
+  "signature": "bool fn_004FA1F0(void* self)",
+  "summary": "Returns true if the vector reached via this-\u003e+0x8 -\u003e +0x14 -\u003e +0x34 -\u003e vfunc(+0x18) has a non-zero begin and end != begin.",
+  "fields": [
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "delegate_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:52:52Z"
+}
