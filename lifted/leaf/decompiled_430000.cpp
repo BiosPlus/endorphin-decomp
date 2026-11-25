@@ -3389,3 +3389,45 @@ void* fn_0043E690(uint32_t /*unused_arg1*/, uint32_t /*unused_arg2*/, void* cont
     return out;
 }
 } // namespace lift_0043E690
+
+// [0x00435C70] sub_00435C70 (72 bytes)
+namespace lift_00435C70 {
+// Known callee 0x00405FB0: throwPreparedStringError_00405FB0 (throws; never returns)
+extern void ext_00405FB0();
+// Known callee 0x004A59A0: allocate_u32_array (allocates count * 4 bytes, throws std::bad_alloc on overflow)
+extern void* ext_004A59A0(uint32_t count);
+
+// @name Unknown::initU32Array_00435C70
+// @class Unknown
+// @summary Resets the three buffer pointers, then allocates a zeroed-size-agnostic u32 array of `count` elements; returns false when count is 0.
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+
+// Pointer-sized slots are stored as 32-bit values to match the original 32-bit layout.
+static inline void write_u32_field(void* self, std::size_t offset, uint32_t value) {
+    std::memcpy(static_cast<uint8_t*>(self) + offset, &value, sizeof value);
+}
+
+bool fn_00435C70(void* self, uint32_t count) {
+    write_u32_field(self, 0x04, 0);
+    write_u32_field(self, 0x08, 0);
+    write_u32_field(self, 0x0C, 0);
+
+    if (count == 0) {
+        return false;
+    }
+
+    if (count > 0x3FFFFFFFu) {
+        ext_00405FB0();
+    }
+
+    void* data = ext_004A59A0(count);
+    const uint32_t begin = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(data));
+
+    write_u32_field(self, 0x04, begin);
+    write_u32_field(self, 0x08, begin);
+    write_u32_field(self, 0x0C, begin + count * 4u);
+    return true;
+}
+} // namespace lift_00435C70

@@ -3654,6 +3654,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00642600 (forwardEraseTailRange).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00435C70": {
+    "name": "Unknown::initU32Array_00435C70",
+    "class": "Unknown",
+    "signature": "static inline void write_u32_field(void* self, std::size_t offset, uint32_t value)",
+    "summary": "Resets the three buffer pointers, then allocates a zeroed-size-agnostic u32 array of `count` elements; returns false when count is 0.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00435CC0": {
     "name": "AllocTriple",
     "signature": "void* fn_00435CC0(DWORD a1, DWORD a2, const DWORD* a3)",

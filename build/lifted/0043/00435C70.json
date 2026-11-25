@@ -1,0 +1,34 @@
+{
+  "va": "0x00435C70",
+  "size": 72,
+  "orig_symbol": "sub_00435C70",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::initU32Array_00435C70",
+  "class": "Unknown",
+  "signature": "static inline void write_u32_field(void* self, std::size_t offset, uint32_t value)",
+  "summary": "Resets the three buffer pointers, then allocates a zeroed-size-agnostic u32 array of `count` elements; returns false when count is 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:06:36Z"
+}
