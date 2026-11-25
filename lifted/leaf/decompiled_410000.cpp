@@ -1152,3 +1152,32 @@ void* fn_0041CD10(void* self, uint32_t index) {
     return begin + static_cast<std::ptrdiff_t>(index) * kElementSize;
 }
 } // namespace lift_0041CD10
+
+// [0x0041CCC0] sub_0041CCC0 (69 bytes)
+namespace lift_0041CCC0 {
+extern int mem_00925134;  // IAT slot for MSVCR80!_invalid_parameter_noinfo (out-of-range path)
+
+// @name Unknown::getElementAt
+// @class Unknown
+// @summary Bounds-checked element address for a 28-byte element array delimited by begin/end pointers.
+// @field Unknown +0x04 uint32_t beginPtr
+// @field Unknown +0x08 uint32_t endPtr
+uint32_t fn_0041CCC0(void* self, int32_t index) {
+    constexpr int32_t kElementSize = 28;
+
+    const uint32_t begin = lift_field<uint32_t>(self, 0x04);
+    const uint32_t end   = lift_field<uint32_t>(self, 0x08);
+
+    // Element count = (end - begin) / 28, signed division as in the original.
+    const int32_t count = (begin == 0) ? 0 : static_cast<int32_t>(end - begin) / kElementSize;
+
+    // Unsigned compare: out-of-range (including negative) indices fail.
+    // The original calls _invalid_parameter_noinfo here and then still returns
+    // the computed address; that diagnostic is not reproduced.
+    if (static_cast<uint32_t>(index) >= static_cast<uint32_t>(count)) {
+        // out-of-range: no portable equivalent of the CRT invalid-parameter handler
+    }
+
+    return begin + static_cast<uint32_t>(index) * kElementSize;
+}
+} // namespace lift_0041CCC0
