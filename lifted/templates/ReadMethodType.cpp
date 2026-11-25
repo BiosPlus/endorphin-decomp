@@ -42951,3 +42951,35 @@ void fn_005056A0(void* self) {
     ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
 }
 } // namespace lift_005056A0
+
+// [0x00505080] ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>::vfunc_5 (42 bytes)
+namespace lift_00505080 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs an ExceptionWithMessage-derived exception in place with a fixed message and installs its vtable).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (builds a default-message exception and throws it; does not return).
+extern void ext_0046C4E0(void);
+// Known callee 0x006A6DD2: IAT thunk to MSVCR80!_CxxThrowException(void* object, const void* throwInfo); does not return.
+// Same address as the thunk, declared with its real argument list.
+extern void ext_006A6DD2_CxxThrow(void* object, const void* throwInfo);
+
+// ThrowInfo descriptor for the DerivedException throw, at 0x009DEC1C.
+static inline const void* throwInfo_009DEC1C() {
+    return reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1CU));
+}
+
+// @name ExprParser::ReadMethodType<Interpreter, int, bogus>::vfunc_5
+// @class ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>
+// @summary If the object's first dword is non-zero, throw the default-message exception; otherwise build a DerivedException and throw it.
+// @field ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0> +0x00 uint32_t field_0x00
+void fn_00505080(void* self) {
+    uint32_t first = *static_cast<uint32_t*>(self);
+    if (first != 0) {
+        ext_0046C4E0();  // throws; never returns normally
+    }
+
+    // Exception object lives in a 0x28-byte local frame.
+    alignas(8) unsigned char exception_storage[0x28];
+    ext_0046C3C0(exception_storage);  // construct DerivedException in place
+    ext_006A6DD2_CxxThrow(exception_storage, throwInfo_009DEC1C());
+}
+} // namespace lift_00505080
