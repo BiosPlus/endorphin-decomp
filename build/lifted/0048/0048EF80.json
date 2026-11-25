@@ -1,0 +1,22 @@
+{
+  "va": "0x0048EF80",
+  "size": 106,
+  "orig_symbol": "sub_0048EF80",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "std_vector_8_erase_range",
+  "class": "std_vector_8",
+  "signature": "uint32_t __thiscall sub_0048EF80( void* self, uint32_t ret_iter, uint32_t first_proxy, uint32_t first_ptr, uint32_t last_proxy, uint32_t last_ptr)",
+  "summary": "Erases a range [first, last) of 8-byte elements from a vector and returns the updated iterator.",
+  "fields": [
+    {
+      "class": "std_vector_8",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "_Mylast"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T05:06:06Z"
+}

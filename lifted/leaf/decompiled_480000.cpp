@@ -2300,3 +2300,49 @@ extern void __fastcall fn_0048F590(void* self) {
     ext_00665810(self);
 }
 } // namespace lift_0048F590
+
+// [0x0048EF80]
+namespace lift_0048EF80 {
+extern void (*mem_00925134)(void);
+
+// @name std_vector_8_erase_range
+// @class std_vector_8
+// @summary Erases a range [first, last) of 8-byte elements from a vector and returns the updated iterator.
+// @field std_vector_8 +0x08 uint32_t _Mylast
+uint32_t __thiscall sub_0048EF80(
+    void* self,
+    uint32_t ret_iter,
+    uint32_t first_proxy,
+    uint32_t first_ptr,
+    uint32_t last_proxy,
+    uint32_t last_ptr) {
+    uint8_t* edi = static_cast<uint8_t*>(self);
+    uint32_t ebp = first_proxy;
+    if (ebp == 0 || ebp != last_proxy) {
+        mem_00925134();
+    }
+
+    uint32_t esi = first_ptr;
+    uint32_t eax = last_ptr;
+    if (esi != eax) {
+        uint32_t ecx = *reinterpret_cast<uint32_t*>(edi + 0x8);
+        int32_t edx = static_cast<int32_t>(ecx - eax) >> 3;
+        uint32_t ebx = esi + 8u * static_cast<uint32_t>(edx);
+        if (eax != ecx) {
+            uint32_t diff = esi - eax;
+            do {
+                uint32_t lo = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(eax));
+                *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(diff + eax)) = lo;
+                uint32_t hi = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(eax + 4));
+                *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(diff + eax + 4)) = hi;
+                eax += 8;
+            } while (eax != ecx);
+        }
+        *reinterpret_cast<uint32_t*>(edi + 0x8) = ebx;
+    }
+
+    *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(ret_iter) + 0x4) = esi;
+    *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(ret_iter)) = ebp;
+    return ret_iter;
+}
+} // namespace lift_0048EF80
