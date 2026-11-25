@@ -2011,3 +2011,38 @@ void fn_006877B0(void* arg1, void* self, uint32_t arg2, uint32_t arg3, uint8_t a
     lift_field<uint32_t>(self, 0x150) |= arg3;
 }
 } // namespace lift_006877B0
+
+// [0x006823B0]
+namespace lift_006823B0 {
+extern uint32_t mem_00B5ACB8;
+extern uint32_t mem_00B5ACBC;
+extern void (*ext_00925134)(void);
+
+// @name VectorU32::BackChecked
+// @summary Returns the last element of the global uint32 vector (first at B5ACB8, end at B5ACBC) with MSVC debug bounds checks; returns 0 when empty.
+uint32_t fn_006823B0() {
+    uint32_t first = mem_00B5ACB8;
+    if (first == 0) {
+        return 0;
+    }
+    uint32_t last = mem_00B5ACBC;
+    int32_t count = static_cast<int32_t>(last - first) >> 2;
+    if (count == 0) {
+        return 0;
+    }
+    if (first > last) {
+        ext_00925134();
+        first = mem_00B5ACB8;
+        last = mem_00B5ACBC;
+    }
+    uint32_t q = last - 4;
+    if (q > last || q < first) {
+        ext_00925134();
+    }
+    // Second debug check: element must lie below the container end at B5ACBC (offset +8 of B5ACB4).
+    if (q >= mem_00B5ACBC) {
+        ext_00925134();
+    }
+    return *reinterpret_cast<uint32_t *>(static_cast<uintptr_t>(q));
+}
+} // namespace lift_006823B0

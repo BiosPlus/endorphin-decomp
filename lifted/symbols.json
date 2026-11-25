@@ -45720,6 +45720,13 @@
     "summary": "For each element after the first in a std::string[] range, swap it with element 0, 1 or -1 chosen by gen(n) % 2 (n starts at 2).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x006823B0": {
+    "name": "VectorU32::BackChecked",
+    "class": "VectorU32",
+    "signature": "uint32_t fn_006823B0()",
+    "summary": "Returns the last element of the global uint32 vector (first at B5ACB8, end at B5ACBC) with MSVC debug bounds checks; returns 0 when empty.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00682990": {
     "name": "sub_00682990",
     "signature": "extern \"C\" void __fastcall fn_00682990(void* self)",

@@ -1,0 +1,14 @@
+{
+  "va": "0x006823B0",
+  "size": 104,
+  "orig_symbol": "sub_006823B0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "VectorU32::BackChecked",
+  "class": "VectorU32",
+  "signature": "uint32_t fn_006823B0()",
+  "summary": "Returns the last element of the global uint32 vector (first at B5ACB8, end at B5ACBC) with MSVC debug bounds checks; returns 0 when empty.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:50:02Z"
+}
