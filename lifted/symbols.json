@@ -39121,6 +39121,12 @@
     "summary": "Validates the element index against the element count derived from the (end - begin) range at +0x14/+0x18 (28-byte elements) and returns begin + index * 28; invalid parameter is raised when begin is null or the index is out of range.",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00682280": {
+    "name": "ShuffleStringRange_00682280",
+    "signature": "void fn_00682280(void* begin, void* end, void* gen)",
+    "summary": "For each element after the first in a std::string[] range, swap it with element 0, 1 or -1 chosen by gen(n) % 2 (n starts at 2).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00682990": {
     "name": "sub_00682990",
     "signature": "extern \"C\" void __fastcall fn_00682990(void* self)",

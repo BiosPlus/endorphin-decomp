@@ -857,3 +857,38 @@ uint32_t fn_00688700(uint32_t begin, uint32_t end, uint32_t value) {
 }
 } // namespace lift_0054F290
 } // namespace lift_00688700
+
+// [0x00682280] sub_00682280 (75 bytes)
+namespace lift_00682280 {
+// IAT slot holding MSVCP80 std::basic_string<char>::swap (thiscall, 1 stack arg).
+extern uint32_t mem_00924FBC;
+
+// @name ShuffleStringRange_00682280
+// @summary For each element after the first in a std::string[] range, swap it with element 0, 1 or -1 chosen by gen(n) % 2 (n starts at 2).
+// @field none: accesses only element-relative addresses (stride 0x1C), no fixed-offset fields
+void fn_00682280(void* begin, void* end, void* gen) {
+    using StringSwapFn = void(__thiscall*)(void* self, void* other);
+    using GenFn = int(__cdecl*)(int);
+
+    constexpr std::ptrdiff_t kStride = 0x1C;
+
+    auto* base = static_cast<uint8_t*>(begin);
+    auto* last = static_cast<uint8_t*>(end);
+    uint8_t* cur = base + kStride;
+    if (cur == last) {
+        return;
+    }
+
+    auto swapFn = reinterpret_cast<StringSwapFn>(static_cast<uintptr_t>(mem_00924FBC));
+    GenFn genFn = *reinterpret_cast<GenFn*>(gen);
+
+    int n = 2;
+    do {
+        int r = genFn(n) % 2;  // signed remainder: -1, 0 or 1
+        uint8_t* other = base + static_cast<std::ptrdiff_t>(r) * kStride;
+        swapFn(cur, other);
+        cur += kStride;
+        ++n;
+    } while (cur != last);
+}
+} // namespace lift_00682280
