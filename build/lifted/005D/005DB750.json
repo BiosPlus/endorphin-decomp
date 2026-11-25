@@ -1,0 +1,22 @@
+{
+  "va": "0x005DB750",
+  "size": 45,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cVideoPlaneData, getEndFrame\u003e::vfunc_5",
+  "class": "ExprParser::ReadMethodType",
+  "signature": "[[noreturn]] void fn_005DB750(void* self)",
+  "summary": "Reads the VideoPlaneData object from the argument; if non-null, throws using its +0x24 field, otherwise throws a fixed-message exception. Never returns.",
+  "fields": [
+    {
+      "class": "NMData::VideoPlaneData",
+      "offset": "+0x24",
+      "type": "DWORD",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:08:22Z"
+}

@@ -43097,3 +43097,32 @@ void fn_004EB260(void* slot) {
     ext_006A6DD2(excObj, reinterpret_cast<const void*>(kDerivedExceptionThrowInfo));
 }
 } // namespace lift_004EB260
+
+// [0x005DB750] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>::vfunc_5 (45 bytes)
+namespace lift_005DB750 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(DWORD value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// Data: RTTI ThrowInfo for DerivedException at 0x009DEC1C (address-only reference).
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getEndFrame>::vfunc_5
+// @class ExprParser::ReadMethodType
+// @summary Reads the VideoPlaneData object from the argument; if non-null, throws using its +0x24 field, otherwise throws a fixed-message exception. Never returns.
+// @field NMData::VideoPlaneData +0x24 DWORD field_0x24
+[[noreturn]] void fn_005DB750(void* self) {
+    void* obj = *static_cast<void**>(self);
+    if (obj != nullptr) {
+        DWORD value = *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(obj) + 0x24);
+        ext_0046C4E0(value);
+    }
+
+    // Exception object lives in a 0x28-byte stack frame (sub esp, 0x28).
+    alignas(16) unsigned char exception[0x28];
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005DB750
