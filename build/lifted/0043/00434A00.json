@@ -1,0 +1,27 @@
+{
+  "va": "0x00434A00",
+  "size": 109,
+  "orig_symbol": "sub_00434A00",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "SubObjectStateDispatch",
+  "signature": "static inline void* as_ptr(uint32_t v)",
+  "summary": "Resolves a sub-object via the global object and ext_006AD940, checks it with ext_00492550, then updates the object at self+0x15C and optionally notifies self via ext_006A651A using self+0x158.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "uint32_t",
+      "name": "field_0x158"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x15C",
+      "type": "uint32_t",
+      "name": "field_0x15C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:57:52Z"
+}

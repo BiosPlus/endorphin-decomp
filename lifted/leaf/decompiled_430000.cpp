@@ -3130,3 +3130,48 @@ void fn_0043D710(void* self) {
     s->field_0x08 = 0;
 }
 } // namespace lift_0043D710
+
+// [0x00434A00] sub_00434A00 (109 bytes)
+namespace lift_00434A00 {
+// @name SubObjectStateDispatch
+// @summary Resolves a sub-object via the global object and ext_006AD940, checks it with ext_00492550, then updates the object at self+0x15C and optionally notifies self via ext_006A651A using self+0x158.
+// @field Unknown +0x158 uint32_t field_0x158
+// @field Unknown +0x15C uint32_t field_0x15C
+
+extern uint32_t __cdecl ext_00594000(void);
+extern uint32_t __thiscall ext_006AD940(uint32_t self);
+extern uint8_t __thiscall ext_00492550(uint32_t self);
+extern void __thiscall ext_00455AD0(uint32_t self);
+extern void __thiscall ext_00455AF0(uint32_t self);
+extern uint8_t __thiscall ext_00455440(uint32_t self);
+extern void __thiscall ext_006A5E72(uint32_t self, uint32_t arg);
+extern void __thiscall ext_006A651A(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+static inline void* as_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+static inline uint32_t as_u32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+void fn_00434A00(void* self) {
+    const uint32_t globalObj = ext_00594000();
+    const uint32_t subObj = ext_006AD940(lift_field<uint32_t>(as_ptr(globalObj), 0x26C));
+    const uint8_t ready = ext_00492550(subObj);
+
+    const uint32_t target = lift_field<uint32_t>(self, 0x15C);
+    if (ready != 0) {
+        ext_00455AD0(target);
+        ext_006A5E72(target, 0);
+        return;
+    }
+
+    ext_006A5E72(target, 5);
+    ext_00455AF0(target);
+    if (ext_00455440(target) != 0) {
+        const uint32_t arg = lift_field<uint32_t>(self, 0x158);
+        ext_006A651A(as_u32(self), arg, 1, 0);
+    }
+}
+} // namespace lift_00434A00

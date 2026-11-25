@@ -3474,6 +3474,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00431330 (sub_00431330).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00434A00": {
+    "name": "SubObjectStateDispatch",
+    "signature": "static inline void* as_ptr(uint32_t v)",
+    "summary": "Resolves a sub-object via the global object and ext_006AD940, checks it with ext_00492550, then updates the object at self+0x15C and optionally notifies self via ext_006A651A using self+0x158.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00434AB0": {
     "name": "Cursor::CopyAndAdvance",
     "class": "Unknown",
