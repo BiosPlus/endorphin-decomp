@@ -57199,6 +57199,13 @@
     "summary": "Returns bit 0 of the dword at offset +0x1C4 of the object (cdecl, one stack argument).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C6810": {
+    "name": "Unknown::ForEachNode",
+    "class": "Unknown",
+    "signature": "void sub_007C6810(std::uint32_t arg0, std::uint32_t arg1, std::uint32_t arg2)",
+    "summary": "Iterates over nodes in the link structure at +0x1D4, invoking a callback with each node's +0x14 value and a user argument.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C6C10": {
     "name": "setFlag0x4At0x0C",
     "signature": "void sub_007C6C10(uint32_t arg0)",

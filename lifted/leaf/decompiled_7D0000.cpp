@@ -825,3 +825,27 @@ std::uint32_t fn_007D4AA0(std::uint32_t key, std::uint32_t head) {
     return cur;
 }
 } // namespace lift_007D4AA0
+
+// [0x007DA820]
+namespace lift_007DA820 {
+// @name FindNonFlaggedLinkNode
+// @summary Walks a link structure via ext_007D4AA0 until a node whose +0x14 object lacks flag 0x2 at +0x1C4 is found.
+// @field LinkNode +0x14 uint32_t field_0x14
+// @field LinkObject +0x1C4 uint8_t field_0x1C4
+
+
+extern std::uint32_t mem_load32(std::uint32_t addr);
+extern std::uint8_t mem_load8(std::uint32_t addr);
+extern std::uint32_t ext_007D4AA0(std::uint32_t key, std::uint32_t node);
+
+extern std::uint32_t fn_007DA820(std::uint32_t key, std::uint32_t node) {
+    while (node != 0u) {
+        std::uint32_t obj = mem_load32(node + 0x14u);
+        if ((mem_load8(obj + 0x1C4u) & 0x2u) == 0u) {
+            return node;
+        }
+        node = ext_007D4AA0(key, node);
+    }
+    return 0u;
+}
+} // namespace lift_007DA820
