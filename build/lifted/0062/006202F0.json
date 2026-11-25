@@ -1,0 +1,13 @@
+{
+  "va": "0x006202F0",
+  "size": 95,
+  "orig_symbol": "sub_006202F0",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "GetOnceInitString_006202F0",
+  "signature": "void* fn_006202F0()",
+  "summary": "Once-guarded initializer for a global string object; builds it via ext_0066AD10, registers a cleanup with ext_006A6C87, and returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:33:56Z"
+}

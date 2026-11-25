@@ -2489,3 +2489,28 @@ void* fn_0062CC90() {
     return &mem_00B522E4;
 }
 } // namespace lift_0062CC90
+
+// [0x006202F0] sub_006202F0 (95 bytes)
+namespace lift_006202F0 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0066AD10(void* out_str, uint8_t flag);
+// Callee 0x006A6C87 (18B, signature not identified); takes one pointer-sized argument.
+extern void ext_006A6C87(void* arg);
+// Once-guard flag word; bit 0 means the object below has been initialized.
+extern int mem_00B49E40;
+// Static string object returned to the caller.
+extern int mem_00B49E24;
+
+// @name GetOnceInitString_006202F0
+// @summary Once-guarded initializer for a global string object; builds it via ext_0066AD10, registers a cleanup with ext_006A6C87, and returns its address.
+void* fn_006202F0() {
+    if ((mem_00B49E40 & 1) == 0) {
+        mem_00B49E40 |= 1;
+        // The original pushes 0xA97C7C as the second argument; the callee's
+        // declared parameter is uint8_t, so only its low byte is passed.
+        ext_0066AD10(&mem_00B49E24, static_cast<uint8_t>(0xA97C7Cu));
+        ext_006A6C87(reinterpret_cast<void*>(static_cast<uintptr_t>(0x91ED70u)));
+    }
+    return &mem_00B49E24;
+}
+} // namespace lift_006202F0

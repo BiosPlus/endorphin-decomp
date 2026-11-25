@@ -36876,6 +36876,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
     "lifted_path": "lifted/NMData/GraphicData.cpp"
   },
+  "0x006202F0": {
+    "name": "GetOnceInitString_006202F0",
+    "signature": "void* fn_006202F0()",
+    "summary": "Once-guarded initializer for a global string object; builds it via ext_0066AD10, registers a cleanup with ext_006A6C87, and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x006203B0": {
     "name": "Unknown::Unknown_006203B0",
     "class": "Unknown",
