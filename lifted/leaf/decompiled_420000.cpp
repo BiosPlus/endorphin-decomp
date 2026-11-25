@@ -1097,3 +1097,25 @@ extern void* fn_004277B0(uint32_t count) {
     return ext_006A5C62(count * 36u);
 }
 } // namespace lift_004277B0
+
+// [0x00420530] sub_00420530 (95 bytes)
+namespace lift_00420530 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0066AD10(void* out_str, const void* arg);
+extern void ext_006A6C87(const void* arg);
+extern uint8_t mem_00ACCBC0;
+extern uint8_t mem_00ACCBA4;
+extern uint8_t mem_00A2F20C;
+extern uint8_t mem_00914C30;
+
+// @name Unknown::GetOnceInitializedBuffer_00420530
+// @summary One-time guarded initializer for the buffer at mem_00ACCBA4; returns its address.
+void* fn_00420530() {
+    if ((mem_00ACCBC0 & 1u) == 0) {
+        mem_00ACCBC0 |= 1u;
+        ext_0066AD10(&mem_00ACCBA4, &mem_00A2F20C);
+        ext_006A6C87(&mem_00914C30);
+    }
+    return &mem_00ACCBA4;
+}
+} // namespace lift_00420530

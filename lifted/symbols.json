@@ -2273,6 +2273,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0041FC70 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00420530": {
+    "name": "Unknown::GetOnceInitializedBuffer_00420530",
+    "class": "Unknown",
+    "signature": "void* fn_00420530()",
+    "summary": "One-time guarded initializer for the buffer at mem_00ACCBA4; returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x00420590": {
     "name": "sub_00420590",
     "signature": "void* fn_00420590(void* arg)",
