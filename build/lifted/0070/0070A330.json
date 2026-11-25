@@ -1,0 +1,13 @@
+{
+  "va": "0x0070A330",
+  "size": 74,
+  "orig_symbol": "sub_0070A330",
+  "src_path": "src/clones/auto_clones_700000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_700000.cpp",
+  "name": "CopyHugeValueToGlobals_0070A330",
+  "signature": "void fn_0070A330(void* self)",
+  "summary": "Reads the 64-bit value pointed to by the global pointer at 0x925284 (MSVCR80 _HUGE) and copies it into five consecutive 64-bit globals at 0xB5EBF8..0xB5EC17, as two 32-bit halves per slot.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:34:53Z"
+}

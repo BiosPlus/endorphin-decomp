@@ -52915,6 +52915,12 @@
     "summary": "Initializes three 64-bit globals (likely a 3D double vector) from MSVCR80!_HUGE.",
     "lifted_path": "lifted/clones/auto_clones_700000.cpp"
   },
+  "0x0070A330": {
+    "name": "CopyHugeValueToGlobals_0070A330",
+    "signature": "void fn_0070A330(void* self)",
+    "summary": "Reads the 64-bit value pointed to by the global pointer at 0x925284 (MSVCR80 _HUGE) and copies it into five consecutive 64-bit globals at 0xB5EBF8..0xB5EC17, as two 32-bit halves per slot.",
+    "lifted_path": "lifted/clones/auto_clones_700000.cpp"
+  },
   "0x0070AAD0": {
     "name": "isKnownGlobalHandle",
     "signature": "bool __stdcall sub_0070AAD0(uint32_t arg0)",

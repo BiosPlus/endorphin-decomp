@@ -169,3 +169,35 @@ void sub_0070C8E0() {
     mem_00B5ED5C = hi;
 }
 } // namespace lift_0070C8E0
+
+// [0x0070A330] sub_0070A330 (74 bytes)
+namespace lift_0070A330 {
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5EBF8;
+extern uint32_t mem_00B5EBFC;
+extern uint32_t mem_00B5EC00;
+extern uint32_t mem_00B5EC04;
+extern uint32_t mem_00B5EC08;
+extern uint32_t mem_00B5EC0C;
+extern uint32_t mem_00B5EC10;
+extern uint32_t mem_00B5EC14;
+
+// @name CopyHugeValueToGlobals_0070A330
+// @summary Reads the 64-bit value pointed to by the global pointer at 0x925284 (MSVCR80 _HUGE) and copies it into five consecutive 64-bit globals at 0xB5EBF8..0xB5EC17, as two 32-bit halves per slot.
+void fn_0070A330(void* self) {
+    (void)self;
+    // The global at mem_00925284 holds the address of the source (_HUGE).
+    const uint32_t* src = reinterpret_cast<const uint32_t*>(
+        static_cast<uintptr_t>(mem_00925284));
+
+    // Five slots, each receiving the low and high 32-bit words of *src.
+    mem_00B5EBF8 = src[0];
+    mem_00B5EBFC = src[1];
+    mem_00B5EC00 = src[0];
+    mem_00B5EC04 = src[1];
+    mem_00B5EC08 = src[0];
+    mem_00B5EC0C = src[1];
+    mem_00B5EC10 = src[0];
+    mem_00B5EC14 = src[1];
+}
+} // namespace lift_0070A330
