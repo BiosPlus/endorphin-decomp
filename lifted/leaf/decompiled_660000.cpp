@@ -770,3 +770,49 @@ void* fn_006629F0(void* out, const char* from, const char* to) {
     return out;
 }
 } // namespace lift_006629F0
+
+// [0x006659F0]
+namespace lift_006659F0 {
+// @name destroyListElements
+// @summary Iterates a checked std::list<T*> range [first, last) and invokes the deleting destructor on each non-null element.
+
+extern uint32_t mem_00925134;
+
+void __stdcall sub_006659F0(uint32_t first_cont, uint32_t first_node, uint32_t last_cont, uint32_t last_node) {
+    auto invalid_param = reinterpret_cast<void (*)()>(mem_00925134);
+    uint32_t cont = first_cont;
+    uint32_t node = first_node;
+
+    while (true) {
+        if (cont == 0 || cont != last_cont) {
+            invalid_param();
+        }
+        if (node == last_node) {
+            break;
+        }
+
+        uint32_t cur = node;
+        if (cont == 0) {
+            invalid_param();
+        }
+        if (node == *reinterpret_cast<uint32_t*>(cont + 4)) {
+            invalid_param();
+        }
+        node = *reinterpret_cast<uint32_t*>(node);
+
+        if (cont == 0) {
+            invalid_param();
+        }
+        if (cur == *reinterpret_cast<uint32_t*>(cont + 4)) {
+            invalid_param();
+        }
+
+        uint32_t elem = *reinterpret_cast<uint32_t*>(cur + 8);
+        if (elem != 0) {
+            uint32_t vtable = *reinterpret_cast<uint32_t*>(elem);
+            auto dtor = reinterpret_cast<void(__thiscall*)(uint32_t, uint32_t)>(*reinterpret_cast<uint32_t*>(vtable));
+            dtor(elem, 1);
+        }
+    }
+}
+} // namespace lift_006659F0

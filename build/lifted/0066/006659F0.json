@@ -1,0 +1,13 @@
+{
+  "va": "0x006659F0",
+  "size": 90,
+  "orig_symbol": "sub_006659F0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "destroyListElements",
+  "signature": "void __stdcall sub_006659F0(uint32_t first_cont, uint32_t first_node, uint32_t last_cont, uint32_t last_node)",
+  "summary": "Iterates a checked std::list\u003cT*\u003e range [first, last) and invokes the deleting destructor on each non-null element.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:24:23Z"
+}
