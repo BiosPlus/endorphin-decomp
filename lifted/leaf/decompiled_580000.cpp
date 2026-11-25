@@ -1225,3 +1225,32 @@ uint32_t fn_005861D0(void* self) {
     return count;
 }
 } // namespace lift_005861D0
+
+// [0x00582A70]
+namespace lift_00582A70 {
+extern bool ext_005631C0(double val, double eps);
+extern bool ext_0056B670(double a, double b, double eps);
+extern double mem_0095A0C0;
+
+// @name Matrix4x4::isIdentity
+// @class Matrix4x4
+// @summary Checks whether a 4x4 float matrix is the identity matrix within 1e-6 tolerance.
+// @field Matrix4x4 +0x00 float[16] m
+bool __thiscall fn_00582A70(void* self, uint32_t /*unused*/) {
+    const auto* m = reinterpret_cast<const float*>(self);
+    const double eps = mem_0095A0C0;
+
+    for (int32_t i = 0; i < 4; ++i) {
+        for (int32_t j = 0; j < 4; ++j) {
+            const double val = static_cast<double>(m[i * 4 + j]);
+            const bool ok = (i == j)
+                ? ext_0056B670(val, 1.0, eps)
+                : ext_005631C0(val, eps);
+            if (!ok) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+} // namespace lift_00582A70

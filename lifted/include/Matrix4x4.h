@@ -8,7 +8,8 @@
 // Recovered field layout for Matrix4x4:
 namespace lifted_layout {
 struct Matrix4x4_Fields {
-    // +0x0   float                    field_0x00  (evidence: 0x004803F0, 0x004890D0, 0x007CA7C0)
+    // +0x0   float                    field_0x00  (evidence: 0x004803F0, 0x004890D0, 0x007CA7C0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   float[16]                m  (evidence: 0x00582A70) // CONFLICT: multiple definitions at +0x0
     // +0x4   float                    field_0x04  (evidence: 0x004803F0, 0x004890D0, 0x007CA7C0)
     // +0x8   float                    field_0x08  (evidence: 0x004803F0, 0x004890D0, 0x007CA7C0)
     // +0xC   float                    field_0x0C  (evidence: 0x004803F0, 0x004890D0)

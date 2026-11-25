@@ -1,0 +1,22 @@
+{
+  "va": "0x00582A70",
+  "size": 100,
+  "orig_symbol": "sub_00582A70",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "Matrix4x4::isIdentity",
+  "class": "Matrix4x4",
+  "signature": "bool __thiscall fn_00582A70(void* self, uint32_t /*unused*/)",
+  "summary": "Checks whether a 4x4 float matrix is the identity matrix within 1e-6 tolerance.",
+  "fields": [
+    {
+      "class": "Matrix4x4",
+      "offset": "+0x0",
+      "type": "float[16]",
+      "name": "m"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:57:35Z"
+}
