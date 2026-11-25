@@ -41662,6 +41662,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x00648300": {
+    "name": "Unknown::releaseOwnedAndDestroy_00648300",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall ext_0065A9A0(void* self);          // sub_0065A9A0: pure thunk to sub_0065A8E0 extern \"C\" void __cdecl ext_006A5C5C(void* p);                // thunk_MFC80_ord_764: CRT delete, one stack arg extern \"C\" void __thiscall ext_00628FF0(void* self);          // MSVCP80 std::string dtor (pointer at mem_00924FF4 == 0x00628FF0) extern \"C\" void __fastcall ext_005B1870(void* self);          // sub_005B1870: class destructor (string at +0x28, owned obj at +0x0C, base dtor) extern \"C\" void __thiscall fn_00648300(void* self)",
+    "summary": "Releases the owned object at +0xA4 (if any), destroys the std::string at +0x4C, then runs the class destructor.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00648370": {
     "name": "sub_00648370",
     "signature": "uint32_t __thiscall sub_00648370(void* self, uint32_t arg1, uint32_t arg2)",

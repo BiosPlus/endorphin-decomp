@@ -2085,3 +2085,32 @@ uint32_t fn_006452E0(void* self, float dx, float dy, float dz, uint32_t /*unused
     return method(sink, matrix);
 }
 } // namespace lift_006452E0
+
+// [0x00648300]
+namespace lift_00648300 {
+// Callees
+extern void __fastcall ext_0065A9A0(void* self);          // sub_0065A9A0: pure thunk to sub_0065A8E0
+extern void __cdecl ext_006A5C5C(void* p);                // thunk_MFC80_ord_764: CRT delete, one stack arg
+extern void __thiscall ext_00628FF0(void* self);          // MSVCP80 std::string dtor (pointer at mem_00924FF4 == 0x00628FF0)
+extern void __fastcall ext_005B1870(void* self);          // sub_005B1870: class destructor (string at +0x28, owned obj at +0x0C, base dtor)
+
+// @name Unknown::releaseOwnedAndDestroy_00648300
+// @class Unknown
+// @summary Releases the owned object at +0xA4 (if any), destroys the std::string at +0x4C, then runs the class destructor.
+// @field Unknown +0x4C std::string field_0x4C
+// @field Unknown +0xA4 void* field_0xA4
+extern void __thiscall fn_00648300(void* self) {
+    unsigned char* const esi = static_cast<unsigned char*>(self);
+
+    void* const owned = *reinterpret_cast<void**>(esi + 0xA4);
+    if (owned != nullptr) {
+        ext_0065A9A0(owned);
+        ext_006A5C5C(owned);
+    }
+
+    // Original calls the string dtor indirectly through mem_00924FF4 (== 0x00628FF0).
+    ext_00628FF0(esi + 0x4C);
+
+    ext_005B1870(self);
+}
+} // namespace lift_00648300

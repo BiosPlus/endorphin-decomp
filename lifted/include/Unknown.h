@@ -721,6 +721,7 @@ struct Unknown_Fields {
     // +0x4C  Unknown                  field_0x4C  (evidence: 0x0072B130) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  float                    field_0x4C  (evidence: 0x0051CCC0, 0x0055CD10, 0x00622B40, 0x006296D0, 0x007D85B0) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  int32_t                  field_0x4C  (evidence: 0x006CA540) // CONFLICT: multiple definitions at +0x4C
+    // +0x4C  std::string              field_0x4C  (evidence: 0x00648300) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  uint32_t                 field_0x4C  (evidence: 0x00648800, 0x006C1BB0, 0x006CE080, 0x006CE0A0) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  void*                    field_0x4C  (evidence: 0x005304E0, 0x00530C00) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  DWORD                    field_0x4c  (evidence: 0x00648640) // CONFLICT: multiple definitions at +0x4C
@@ -930,7 +931,7 @@ struct Unknown_Fields {
     // +0xA4  int32_t                  elementCount  (evidence: 0x00707FB0, 0x0070BF00) // CONFLICT: multiple definitions at +0xA4
     // +0xA4  int32_t                  field_0xA4  (evidence: 0x006A8A00) // CONFLICT: multiple definitions at +0xA4
     // +0xA4  uint32_t                 field_0xA4  (evidence: 0x006A9340) // CONFLICT: multiple definitions at +0xA4
-    // +0xA4  void*                    field_0xA4  (evidence: 0x00647BF0, 0x00647C10, 0x00647C30, 0x00647C50, 0x00648A20) // CONFLICT: multiple definitions at +0xA4
+    // +0xA4  void*                    field_0xA4  (evidence: 0x00647BF0, 0x00647C10, 0x00647C30, 0x00647C50, 0x00648300, 0x00648A20) // CONFLICT: multiple definitions at +0xA4
     // +0xA4  float                    field_0xa4  (evidence: 0x00630420, 0x0063E050) // CONFLICT: multiple definitions at +0xA4
     // +0xA4  uint32_t                 field_0xa4  (evidence: 0x00648370, 0x00648A20) // CONFLICT: multiple definitions at +0xA4
     // +0xA4  void*                    field_0xa4  (evidence: 0x00647CE0, 0x00647D60) // CONFLICT: multiple definitions at +0xA4
