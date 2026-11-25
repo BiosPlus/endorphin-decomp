@@ -833,3 +833,22 @@ void* fn_0066DCB0(void* unused, void* out) {
     return out;
 }
 } // namespace lift_0066DCB0
+
+// [0x0048B1C0] ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}>::vfunc_4 (40 bytes)
+namespace lift_0048B1C0 {
+// Known callee 0x0048ABF0: sub_0048ABF0 (Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).)
+extern void ext_0048ABF0(void* self);
+// Import slot 0x00924FE8 (MSVCP80 std::basic_string<char> default constructor), called indirectly.
+extern void(__thiscall* mem_00924FE8)(void* self);
+
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_4
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}>
+// @summary Passes the first pointer stored in the out-string object to ext_0048ABF0, default-constructs that std::string in place, and returns it; ignores this.
+// @field std::string +0x00 void* field_0x00
+void* fn_0048B1C0(void* /*this_unused*/, void* out) {
+    void* self = *reinterpret_cast<void**>(out);
+    ext_0048ABF0(self);
+    mem_00924FE8(out);
+    return out;
+}
+} // namespace lift_0048B1C0

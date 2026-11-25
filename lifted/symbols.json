@@ -9326,6 +9326,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00489540 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x0048B1C0": {
+    "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, endEvent\u003e::vfunc_4",
+    "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}\u003e",
+    "signature": "void* fn_0048B1C0(void* /*this_unused*/, void* out)",
+    "summary": "Passes the first pointer stored in the out-string object to ext_0048ABF0, default-constructs that std::string in place, and returns it; ignores this.",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x0048B1F0": {
     "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, endEvent\u003e::vfunc_41",
     "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}\u003e",
