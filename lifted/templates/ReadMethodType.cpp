@@ -56539,3 +56539,1686 @@ extern void ext_006A6DD2(void* obj, const void* info);
     for (;;) {}
 }
 } // namespace lift_005B95F0
+
+// [0x0058D1D0] ExprParser::ReadMethodType<AnimatableTransform, NM::Vector4 const &, {protected: class NM::Vector4 const & __thiscall AnimatableTransform::getQuat(void) const, 0}, 0>::vfunc_4 (60 bytes)
+namespace lift_0058D1D0 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, NM::Vector4 const &, {protected: class NM::Vector4 const & __thiscall AnimatableTransform::getQuat(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<AnimatableTransform, NM::Vector4 const &, {protected: class NM::Vector4 const & __thiscall AnimatableTransform::getQuat(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_0058B2A0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_0058D1D0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_0058B2A0(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_0058D1D0
+
+// [0x005BA4C0] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularAcceleration(void) const, 0}, 1>::vfunc_4 (60 bytes)
+namespace lift_005BA4C0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularAcceleration(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularAcceleration(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005B6BF0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005BA4C0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005B6BF0(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005BA4C0
+
+// [0x005BA9B0] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getForce(void) const, 0}, 1>::vfunc_4 (60 bytes)
+namespace lift_005BA9B0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getForce(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getForce(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005B6C20(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005BA9B0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005B6C20(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005BA9B0
+
+// [0x005BAEA0] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getTorque(void) const, 0}, 1>::vfunc_4 (60 bytes)
+namespace lift_005BAEA0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getTorque(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getTorque(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005B6C50(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005BAEA0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005B6C50(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005BAEA0
+
+// [0x005BBBA0] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, 0>::vfunc_4 (60 bytes)
+namespace lift_005BBBA0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005B6A10(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005BBBA0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005B6A10(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005BBBA0
+
+// [0x005BCE90] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, 0>::vfunc_4 (60 bytes)
+namespace lift_005BCE90 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005B6930(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005BCE90(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005B6930(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005BCE90
+
+// [0x005BD530] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, 0>::vfunc_4 (60 bytes)
+namespace lift_005BD530 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005B6A80(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005BD530(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005B6A80(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005BD530
+
+// [0x005BD7D0] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, 0>::vfunc_4 (60 bytes)
+namespace lift_005BD7D0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005B6AF0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005BD7D0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005B6AF0(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005BD7D0
+
+// [0x005BD980] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, 0>::vfunc_4 (60 bytes)
+namespace lift_005BD980 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005B69A0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005BD980(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005B69A0(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005BD980
+
+// [0x005C49C0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalXAxisInWorldSpace(void) const, 0}, 1>::vfunc_4 (60 bytes)
+namespace lift_005C49C0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalXAxisInWorldSpace(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalXAxisInWorldSpace(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005C3110(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005C49C0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005C3110(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005C49C0
+
+// [0x005C4EB0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalYAxisInWorldSpace(void) const, 0}, 1>::vfunc_4 (60 bytes)
+namespace lift_005C4EB0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalYAxisInWorldSpace(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalYAxisInWorldSpace(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005C3130(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005C4EB0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005C3130(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005C4EB0
+
+// [0x005C53D0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1>::vfunc_4 (60 bytes)
+namespace lift_005C53D0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005C3150(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005C53D0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005C3150(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005C53D0
+
+// [0x005C8FA0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1>::vfunc_4 (60 bytes)
+namespace lift_005C8FA0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005C3A30(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005C8FA0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005C3A30(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005C8FA0
+
+// [0x005C9AA0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearVelocity(void) const, 0}, 1>::vfunc_4 (60 bytes)
+namespace lift_005C9AA0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearVelocity(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearVelocity(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005C38F0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005C9AA0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005C38F0(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005C9AA0
+
+// [0x005C9FC0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularVelocity(void) const, 0}, 1>::vfunc_4 (60 bytes)
+namespace lift_005C9FC0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularVelocity(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularVelocity(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005C3930(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005C9FC0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005C3930(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005C9FC0
+
+// [0x005CA4B0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearAcceleration(void) const, 0}, 1>::vfunc_4 (60 bytes)
+namespace lift_005CA4B0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearAcceleration(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearAcceleration(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005C3970(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005CA4B0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005C3970(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005CA4B0
+
+// [0x005CA9A0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularAcceleration(void) const, 0}, 1>::vfunc_4 (60 bytes)
+namespace lift_005CA9A0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularAcceleration(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularAcceleration(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005C39B0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005CA9A0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005C39B0(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005CA9A0
+
+// [0x005F7CA0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector4 const &, {public: class NM::Vector4 const & __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, 0>::vfunc_4 (60 bytes)
+namespace lift_005F7CA0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector4 const &, {public: class NM::Vector4 const & __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector4 const &, {public: class NM::Vector4 const & __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005F5160(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005F7CA0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005F5160(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005F7CA0
+
+// [0x005F8780] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getColour(void) const, 0}, 0>::vfunc_4 (60 bytes)
+namespace lift_005F8780 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getColour(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getColour(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005F5410(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005F8780(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005F5410(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005F8780
+
+// [0x005F92F0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, 0>::vfunc_4 (60 bytes)
+namespace lift_005F92F0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005F5140(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005F92F0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005F5140(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005F92F0
+
+// [0x005F95E0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, 0>::vfunc_4 (60 bytes)
+namespace lift_005F95E0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005F5190(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005F95E0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005F5190(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005F95E0
+
+// [0x005F9F80] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, 0>::vfunc_4 (60 bytes)
+namespace lift_005F9F80 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005F5860(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005F9F80(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005F5860(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005F9F80
+
+// [0x005FA4B0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationE(void) const, 0}, 0>::vfunc_4 (60 bytes)
+namespace lift_005FA4B0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationE(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationE(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005F5940(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005FA4B0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005F5940(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005FA4B0
+
+// [0x005FA5D0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTS(void) const, 0}, 0>::vfunc_4 (60 bytes)
+namespace lift_005FA5D0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTS(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTS(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005F57F0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005FA5D0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005F57F0(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005FA5D0
+
+// [0x005FABC0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationSE(void) const, 0}, 0>::vfunc_4 (60 bytes)
+namespace lift_005FABC0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationSE(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationSE(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_005F58D0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_005FABC0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_005F58D0(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_005FABC0
+
+// [0x006039D0] ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getForce(void) const, 1>::vfunc_4 (60 bytes)
+namespace lift_006039D0 {
+// @name ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getForce(void) const, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getForce(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_00602F00(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_006039D0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_00602F00(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_006039D0
+
+// [0x00603EC0] ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_4 (60 bytes)
+namespace lift_00603EC0 {
+// @name ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_00602F20(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_00603EC0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_00602F20(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_00603EC0
+
+// [0x00627B60] ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1>::vfunc_4 (60 bytes)
+namespace lift_00627B60 {
+// @name ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_00627530(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_00627B60(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_00627530(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_00627B60
+
+// [0x00628050] ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwing(void) const, 1>::vfunc_4 (60 bytes)
+namespace lift_00628050 {
+// @name ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwing(void) const, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwing(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_006275A0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_00628050(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_006275A0(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_00628050
+
+// [0x00628540] ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwingAngles(void) const, 1>::vfunc_4 (60 bytes)
+namespace lift_00628540 {
+// @name ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwingAngles(void) const, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwingAngles(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_00627610(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_00628540(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_00627610(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_00628540
+
+// [0x00628A30] ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffEulers(void) const, 1>::vfunc_4 (60 bytes)
+namespace lift_00628A30 {
+// @name ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffEulers(void) const, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffEulers(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_00627680(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_00628A30(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_00627680(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_00628A30
+
+// [0x0062E9A0] ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1>::vfunc_4 (60 bytes)
+namespace lift_0062E9A0 {
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0062E4B0 (Sensors::CompoundSensorPlanes::getVertAxis (ReadMethodType vfunc_4)).
+namespace lift_0062E4B0 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* arg, void* msgSlot);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, void* throwInfo);
+
+// @name Sensors::CompoundSensorPlanes::getVertAxis (ReadMethodType vfunc_4)
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary If the owner pointer (*arg2) is non-null, raises a default-message exception via ext_0046C4E0; then always throws a DerivedException. Never returns.
+// @field Sensors::CompoundSensorPlanes +0x78 void* field_0x78 (address only, passed to ext_0046C4E0)
+void fn_0062E9A0(void* arg1, void** arg2) {
+    uint8_t* owner = static_cast<uint8_t*>(*arg2);
+    if (owner != nullptr) {
+        ext_0046C4E0(arg1, owner + 0x84);
+    }
+
+    // The exception object lives in the 0x28-byte frame slot at [esp+4] (layout not recovered).
+    alignas(8) uint8_t exception[0x28] = {};
+    ext_0046C3C0(exception);
+
+    // Throw via the MSVC RTTI ThrowInfo at 0x009DEC1C.
+    ext_006A6DD2(exception, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+}
+} // namespace lift_0062E4B0
+} // namespace lift_0062E9A0
+
+// [0x00631190] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngle(void) const, 1>::vfunc_4 (60 bytes)
+namespace lift_00631190 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngle(void) const, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngle(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_00630580(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_00631190(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_00630580(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_00631190
+
+// [0x006316B0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngleRaw(void) const, 1>::vfunc_4 (60 bytes)
+namespace lift_006316B0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngleRaw(void) const, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngleRaw(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_006305A0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_006316B0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_006305A0(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_006316B0
+
+// [0x00631BA0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingNormalized(void) const, 1>::vfunc_4 (60 bytes)
+namespace lift_00631BA0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingNormalized(void) const, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingNormalized(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_006305C0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_00631BA0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_006305C0(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_00631BA0
+
+// [0x00632090] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualPosition(void) const, 1>::vfunc_4 (60 bytes)
+namespace lift_00632090 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualPosition(void) const, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualPosition(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_00630560(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_00632090(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_00630560(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_00632090
+
+// [0x00632580] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualLinearVelocity(void) const, 1>::vfunc_4 (60 bytes)
+namespace lift_00632580 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualLinearVelocity(void) const, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualLinearVelocity(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_006305E0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_00632580(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_006305E0(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_00632580
+
+// [0x006364B0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>::vfunc_4 (60 bytes)
+namespace lift_006364B0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0062E4B0 (Sensors::CompoundSensorPlanes::getVertAxis (ReadMethodType vfunc_4)).
+namespace lift_0062E4B0 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* arg, void* msgSlot);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, void* throwInfo);
+
+// @name Sensors::CompoundSensorPlanes::getVertAxis (ReadMethodType vfunc_4)
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary If the owner pointer (*arg2) is non-null, raises a default-message exception via ext_0046C4E0; then always throws a DerivedException. Never returns.
+// @field Sensors::CompoundSensorPlanes +0x78 void* field_0x78 (address only, passed to ext_0046C4E0)
+void fn_006364B0(void* arg1, void** arg2) {
+    uint8_t* owner = static_cast<uint8_t*>(*arg2);
+    if (owner != nullptr) {
+        ext_0046C4E0(arg1, owner + 0x90);
+    }
+
+    // The exception object lives in the 0x28-byte frame slot at [esp+4] (layout not recovered).
+    alignas(8) uint8_t exception[0x28] = {};
+    ext_0046C3C0(exception);
+
+    // Throw via the MSVC RTTI ThrowInfo at 0x009DEC1C.
+    ext_006A6DD2(exception, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+}
+} // namespace lift_0062E4B0
+} // namespace lift_006364B0
+
+// [0x00636CA0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0>::vfunc_4 (60 bytes)
+namespace lift_00636CA0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0062E4B0 (Sensors::CompoundSensorPlanes::getVertAxis (ReadMethodType vfunc_4)).
+namespace lift_0062E4B0 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* arg, void* msgSlot);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, void* throwInfo);
+
+// @name Sensors::CompoundSensorPlanes::getVertAxis (ReadMethodType vfunc_4)
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary If the owner pointer (*arg2) is non-null, raises a default-message exception via ext_0046C4E0; then always throws a DerivedException. Never returns.
+// @field Sensors::CompoundSensorPlanes +0x78 void* field_0x78 (address only, passed to ext_0046C4E0)
+void fn_00636CA0(void* arg1, void** arg2) {
+    uint8_t* owner = static_cast<uint8_t*>(*arg2);
+    if (owner != nullptr) {
+        ext_0046C4E0(arg1, owner + 0xB4);
+    }
+
+    // The exception object lives in the 0x28-byte frame slot at [esp+4] (layout not recovered).
+    alignas(8) uint8_t exception[0x28] = {};
+    ext_0046C3C0(exception);
+
+    // Throw via the MSVC RTTI ThrowInfo at 0x009DEC1C.
+    ext_006A6DD2(exception, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+}
+} // namespace lift_0062E4B0
+} // namespace lift_00636CA0
+
+// [0x006394E0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getDesiredQuat(void) const, 0>::vfunc_4 (60 bytes)
+namespace lift_006394E0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getDesiredQuat(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getDesiredQuat(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_00630540(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_006394E0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_00630540(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_006394E0
+
+// [0x00639770] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0>::vfunc_4 (60 bytes)
+namespace lift_00639770 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0062E4B0 (Sensors::CompoundSensorPlanes::getVertAxis (ReadMethodType vfunc_4)).
+namespace lift_0062E4B0 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* arg, void* msgSlot);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, void* throwInfo);
+
+// @name Sensors::CompoundSensorPlanes::getVertAxis (ReadMethodType vfunc_4)
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary If the owner pointer (*arg2) is non-null, raises a default-message exception via ext_0046C4E0; then always throws a DerivedException. Never returns.
+// @field Sensors::CompoundSensorPlanes +0x78 void* field_0x78 (address only, passed to ext_0046C4E0)
+void fn_00639770(void* arg1, void** arg2) {
+    uint8_t* owner = static_cast<uint8_t*>(*arg2);
+    if (owner != nullptr) {
+        ext_0046C4E0(arg1, owner + 0x9C);
+    }
+
+    // The exception object lives in the 0x28-byte frame slot at [esp+4] (layout not recovered).
+    alignas(8) uint8_t exception[0x28] = {};
+    ext_0046C3C0(exception);
+
+    // Throw via the MSVC RTTI ThrowInfo at 0x009DEC1C.
+    ext_006A6DD2(exception, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+}
+} // namespace lift_0062E4B0
+} // namespace lift_00639770
+
+// [0x00639A60] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0>::vfunc_4 (60 bytes)
+namespace lift_00639A60 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0062E4B0 (Sensors::CompoundSensorPlanes::getVertAxis (ReadMethodType vfunc_4)).
+namespace lift_0062E4B0 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* arg, void* msgSlot);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, void* throwInfo);
+
+// @name Sensors::CompoundSensorPlanes::getVertAxis (ReadMethodType vfunc_4)
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary If the owner pointer (*arg2) is non-null, raises a default-message exception via ext_0046C4E0; then always throws a DerivedException. Never returns.
+// @field Sensors::CompoundSensorPlanes +0x78 void* field_0x78 (address only, passed to ext_0046C4E0)
+void fn_00639A60(void* arg1, void** arg2) {
+    uint8_t* owner = static_cast<uint8_t*>(*arg2);
+    if (owner != nullptr) {
+        ext_0046C4E0(arg1, owner + 0xA8);
+    }
+
+    // The exception object lives in the 0x28-byte frame slot at [esp+4] (layout not recovered).
+    alignas(8) uint8_t exception[0x28] = {};
+    ext_0046C3C0(exception);
+
+    // Throw via the MSVC RTTI ThrowInfo at 0x009DEC1C.
+    ext_006A6DD2(exception, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+}
+} // namespace lift_0062E4B0
+} // namespace lift_00639A60
+
+// [0x00639D90] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, 0>::vfunc_4 (60 bytes)
+namespace lift_00639D90 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_00630420(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_00639D90(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_00630420(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_00639D90
+
+// [0x0063A090] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, 0>::vfunc_4 (60 bytes)
+namespace lift_0063A090 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_00630740(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_0063A090(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_00630740(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_0063A090
+
+// [0x0063A650] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getActualQuat(void) const, 1>::vfunc_4 (60 bytes)
+namespace lift_0063A650 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getActualQuat(void) const, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getActualQuat(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_00630E60(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_0063A650(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_00630E60(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_0063A650
+
+// [0x0063AB40] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwing(void) const, 1>::vfunc_4 (60 bytes)
+namespace lift_0063AB40 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwing(void) const, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwing(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_00630E80(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_0063AB40(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_00630E80(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_0063AB40
+
+// [0x0063AFF0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, 0>::vfunc_4 (60 bytes)
+namespace lift_0063AFF0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_00630E40(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_0063AFF0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_00630E40(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_0063AFF0
+
+// [0x00653970] ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintPosition(void) const, 0}, 1>::vfunc_4 (60 bytes)
+namespace lift_00653970 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintPosition(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintPosition(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_0064E220(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_00653970(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_0064E220(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_00653970
+
+// [0x00653E60] ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintPosition(void) const, 0}, 1>::vfunc_4 (60 bytes)
+namespace lift_00653E60 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintPosition(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintPosition(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_0064E250(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_00653E60(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_0064E250(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_00653E60
+
+// [0x00656440] ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintOrientationTSA(void) const, 0}, 1>::vfunc_4 (60 bytes)
+namespace lift_00656440 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintOrientationTSA(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintOrientationTSA(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_00650800(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_00656440(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_00650800(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_00656440
+
+// [0x00656960] ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintOrientationTSA(void) const, 0}, 1>::vfunc_4 (60 bytes)
+namespace lift_00656960 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintOrientationTSA(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintOrientationTSA(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_006508C0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_00656960(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_006508C0(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_00656960

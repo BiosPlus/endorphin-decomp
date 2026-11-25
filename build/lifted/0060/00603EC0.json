@@ -1,0 +1,14 @@
+{
+  "va": "0x00603EC0",
+  "size": 60,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cEffectorBase, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorBase::getTorque(void) const, 1\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cEffectorBase, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorBase::getTorque(void) const, 1\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cEffectorBase, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorBase::getTorque(void) const, 1\u003e",
+  "signature": "[[noreturn]] void fn_00603EC0(void* a, void** b)",
+  "summary": "Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType\u003cNMData::MetaBodyData,getLinearVelocity\u003e::vfunc_4).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T05:00:52Z"
+}
