@@ -1,0 +1,13 @@
+{
+  "va": "0x007B8968",
+  "size": 64,
+  "orig_symbol": "sub_007B8968",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "sub_007B8968_table",
+  "signature": "const uint8_t* fn_007B8968(void* self)",
+  "summary": "Static 4x16 byte table (data, not code): each row is one 0 followed by fifteen 1s.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:09:47Z"
+}

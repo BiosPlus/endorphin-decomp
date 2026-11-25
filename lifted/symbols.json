@@ -55955,6 +55955,12 @@
     "summary": "Passes each byte of a NUL-terminated string to ext_007B7720, then passes a terminating 0.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B8968": {
+    "name": "sub_007B8968_table",
+    "signature": "const uint8_t* fn_007B8968(void* self)",
+    "summary": "Static 4x16 byte table (data, not code): each row is one 0 followed by fifteen 1s.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B8A48": {
     "name": "dataTable_007B8A48",
     "class": "none",
