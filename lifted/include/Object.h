@@ -39,7 +39,7 @@ struct Object_Fields {
     // +0xC   float                    field_0x0c  (evidence: 0x00533FB0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0x0c  (evidence: 0x00602EC0, 0x00622B40, 0x0062CD30) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0x0c  (evidence: 0x0071C520) // CONFLICT: multiple definitions at +0xC
-    // +0xC   void*                    geometry  (evidence: 0x0046CE90, 0x004A2930, 0x004B7D80, 0x004C0800, 0x00512A00, 0x005B3B70, 0x00604D80, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void*                    geometry  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B7D80, 0x004C0800, 0x00512A00, 0x005B3B70, 0x00604D80, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0xC
     // +0x10  BYTE                     enabledFlag  (evidence: 0x00468730, 0x00468A30) // CONFLICT: multiple definitions at +0x10
     // +0x10  float                    field_0x10  (evidence: 0x00533FB0) // CONFLICT: multiple definitions at +0x10
     // +0x10  float[]                  field_0x10  (evidence: 0x005B11E0, 0x005B7040) // CONFLICT: multiple definitions at +0x10
