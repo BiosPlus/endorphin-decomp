@@ -908,3 +908,27 @@ extern uint32_t fn_006996C0(uint32_t arg0) {
     return ext_006A6E9E(res, 0, 0xA2E2F8, 0xAA3D80, 0);
 }
 } // namespace lift_006996C0
+
+// [0x00698900]
+namespace lift_00698900 {
+// @name String::findTokenEnd
+// @class String
+// @summary Finds the end index of a token delimited by chars starting at *pos, advancing *pos to the next token or -1.
+// @field String +0x04 int32_t length
+
+extern int32_t __thiscall ext_00698840(void* self, const char* chars, int32_t start_index);
+extern int32_t __thiscall ext_006988A0(void* self, const char* chars, int32_t start_index);
+
+int32_t __thiscall sub_00698900(void* self, int32_t* pos, const char* chars) {
+    int32_t found = ext_00698840(self, chars, *pos);
+    int32_t end_index;
+    if (found == -1) {
+        *pos = -1;
+        end_index = *reinterpret_cast<const int32_t*>(static_cast<const uint8_t*>(self) + 0x4) - 1;
+    } else {
+        end_index = found - 1;
+        *pos = ext_006988A0(self, chars, found);
+    }
+    return end_index < 0 ? 0 : end_index;
+}
+} // namespace lift_00698900

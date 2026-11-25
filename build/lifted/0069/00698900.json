@@ -1,0 +1,22 @@
+{
+  "va": "0x00698900",
+  "size": 87,
+  "orig_symbol": "sub_00698900",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "String::findTokenEnd",
+  "class": "String",
+  "signature": "int32_t __thiscall sub_00698900(void* self, int32_t* pos, const char* chars)",
+  "summary": "Finds the end index of a token delimited by chars starting at *pos, advancing *pos to the next token or -1.",
+  "fields": [
+    {
+      "class": "String",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "length"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:21:52Z"
+}
