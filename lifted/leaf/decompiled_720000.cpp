@@ -399,3 +399,42 @@ void fn_007299C0(void* self) {
     }
 }
 } // namespace lift_007299C0
+
+// [0x00725300] sub_00725300 (64 bytes)
+namespace lift_00725300 {
+namespace lift_00725300 {
+
+// Thiscall function-pointer shapes for the virtual slots used below.
+using VSlotCall0 = uint32_t(__thiscall*)(void* self);
+using VSlotCall2 = uint32_t(__thiscall*)(void* self, uint32_t a1, uint32_t a2);
+using VSlotCall1Void = void(__thiscall*)(void* self, uint32_t a1);
+
+// Fetch vtable entry `index` (slot offset / 4) of the object at `obj`.
+inline void* vtable_entry(void* obj, size_t index) {
+    void** vtable = *reinterpret_cast<void***>(obj);
+    return vtable[index];
+}
+
+// @name Unknown::ForwardVtableCallsToChild
+// @class Unknown
+// @summary Calls vslot+0x24 on the child at this+0x10 (result t), then vslot+0x14 with (a1, 0x10) returning its result r, then vslot+0x28 with t; returns r.
+// @field Unknown +0x10 void* field_0x10
+uint32_t fn_00725300(void* self, uint32_t a1) {
+    // Original: ecx = [self+0x10]; eax = [ecx]; call [eax+0x24]  -> t
+    //           ecx = [self+0x10]; push 0x10; push a1; call [[ecx]+0x14] -> r
+    //           ecx = [self+0x10]; push t; call [[ecx]+0x28]
+    //           return r
+    void* child = lift_field<void*>(self, 0x10);
+    uint32_t t = reinterpret_cast<VSlotCall0>(vtable_entry(child, 0x24 / 4))(child);
+
+    child = lift_field<void*>(self, 0x10);
+    uint32_t r = reinterpret_cast<VSlotCall2>(vtable_entry(child, 0x14 / 4))(child, a1, 0x10);
+
+    child = lift_field<void*>(self, 0x10);
+    reinterpret_cast<VSlotCall1Void>(vtable_entry(child, 0x28 / 4))(child, t);
+
+    return r;
+}
+
+} // namespace lift_00725300
+} // namespace lift_00725300

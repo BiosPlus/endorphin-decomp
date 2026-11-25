@@ -53615,6 +53615,13 @@
     "summary": "Returns max(0, this-\u003efield_0x194 - 1) as a signed 32-bit value.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
+  "0x00725300": {
+    "name": "Unknown::ForwardVtableCallsToChild",
+    "class": "Unknown",
+    "signature": "inline void* vtable_entry(void* obj, size_t index)",
+    "summary": "Calls vslot+0x24 on the child at this+0x10 (result t), then vslot+0x14 with (a1, 0x10) returning its result r, then vslot+0x28 with t; returns r.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x00725DE0": {
     "name": "xorChainBlock16",
     "signature": "void sub_00725DE0(uint8_t* buf, const uint8_t* key)",
