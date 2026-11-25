@@ -19751,6 +19751,13 @@
     "summary": "Returns the first float of the last 8-byte element in the channel's [begin, end) array, or 0.0f when empty.",
     "lifted_path": "lifted/NMData/RealChannel.cpp"
   },
+  "0x0051ABD0": {
+    "name": "NMData::RealChannel::vfunc_13",
+    "class": "NMData::RealChannel",
+    "signature": "static inline void invalid_parameter()",
+    "summary": "Scales the float at +4 of each 8-byte entry in the [begin, end) range by a float factor, calling the CRT invalid-parameter handler on range violations.",
+    "lifted_path": "lifted/NMData/RealChannel.cpp"
+  },
   "0x0051ADC0": {
     "name": "NMData::QuatChannel::vfunc_7",
     "class": "NMData::QuatChannel",

@@ -167,3 +167,38 @@ void NMData_RealChannel_vfunc_16(void* self) {
     lift_field<uint32_t>(self, 0x40) = begin;
 }
 } // namespace lift_0051BEF0
+
+// [0x0051ABD0] NMData::RealChannel::vfunc_13 (89 bytes)
+namespace lift_0051ABD0 {
+// CRT invalid-parameter handler pointer (_invalid_parameter_noinfo), loaded from 0x00925134.
+extern void* mem_00925134;
+
+static inline void invalid_parameter() {
+    reinterpret_cast<void (*)()>(mem_00925134)();
+}
+
+// @name NMData::RealChannel::vfunc_13
+// @class NMData::RealChannel
+// @summary Scales the float at +4 of each 8-byte entry in the [begin, end) range by a float factor, calling the CRT invalid-parameter handler on range violations.
+// @field NMData::RealChannel +0x30 uint32_t begin
+// @field NMData::RealChannel +0x34 uint32_t end
+void fn_0051ABD0(void* self, float scale) {
+    const uint32_t end = lift_field<uint32_t>(self, 0x34);
+    if (lift_field<uint32_t>(self, 0x30) > end) {
+        invalid_parameter();
+    }
+
+    uint32_t p = lift_field<uint32_t>(self, 0x30);
+    while (p != end) {
+        if (p >= end) {
+            invalid_parameter();
+        }
+        auto* value = reinterpret_cast<float*>(static_cast<uintptr_t>(p) + 4);
+        *value *= scale;
+        if (p >= end) {
+            invalid_parameter();
+        }
+        p += 8;
+    }
+}
+} // namespace lift_0051ABD0

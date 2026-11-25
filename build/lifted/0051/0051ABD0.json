@@ -1,0 +1,28 @@
+{
+  "va": "0x0051ABD0",
+  "size": 89,
+  "orig_symbol": "NMData::RealChannel::vfunc_13",
+  "src_path": "src/NMData/RealChannel.cpp",
+  "lifted_path": "lifted/NMData/RealChannel.cpp",
+  "name": "NMData::RealChannel::vfunc_13",
+  "class": "NMData::RealChannel",
+  "signature": "static inline void invalid_parameter()",
+  "summary": "Scales the float at +4 of each 8-byte entry in the [begin, end) range by a float factor, calling the CRT invalid-parameter handler on range violations.",
+  "fields": [
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:12:24Z"
+}
