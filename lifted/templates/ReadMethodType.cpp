@@ -57169,3 +57169,35 @@ float fn_005B36D0(void* self) {
     return static_cast<float>(reinterpret_cast<AtofFn>(mem_009251F0)(text));
 }
 } // namespace lift_005B36D0
+
+// [0x00471D60]
+namespace lift_00471D60 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, bool, RuntimeEngine::getPlaybackLoopingEnabled, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<RuntimeEngine, bool, RuntimeEngine::getPlaybackLoopingEnabled, 0>
+// @summary Reads the byte returned by ext_0046F910 from the object pointed to by arg2's first dword, passes it to ext_006720A0 on arg1, and returns arg1; throws if that pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+
+uint8_t ext_0046F910(void* self);
+void ext_006720A0(void* self, uint32_t value);
+void ext_0046C3C0(void* self);
+[[noreturn]] void ext_006A6DD2(void* exception_object, const void* throw_info);
+extern const uint32_t mem_009DEC1C;
+
+void* fn_00471D60(void* arg1, void* arg2) {
+    // arg2 is a pointer to a holder whose first dword is the target object pointer.
+    void* inner = *reinterpret_cast<void**>(arg2);
+    if (inner != nullptr) {
+        uint8_t flag = ext_0046F910(inner);
+        // The original stores the byte into the arg2 stack slot and reloads the dword,
+        // so the low byte of arg2's value is replaced by the flag before being passed on.
+        uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg2));
+        slot = (slot & ~0xFFu) | flag;
+        ext_006720A0(arg1, slot);
+        return arg1;
+    }
+    // Frame-derived size (object starts at frame+4, frame locals end at +0x2C); not verified.
+    alignas(8) uint8_t exception_object[0x24];
+    ext_0046C3C0(exception_object);
+    ext_006A6DD2(exception_object, &mem_009DEC1C);
+}
+} // namespace lift_00471D60

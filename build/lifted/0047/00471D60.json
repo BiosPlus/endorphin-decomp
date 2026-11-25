@@ -1,0 +1,22 @@
+{
+  "va": "0x00471D60",
+  "size": 79,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cRuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cRuntimeEngine, bool, RuntimeEngine::getPlaybackLoopingEnabled, 0\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, bool, RuntimeEngine::getPlaybackLoopingEnabled, 0\u003e",
+  "signature": "void* fn_00471D60(void* arg1, void* arg2)",
+  "summary": "Reads the byte returned by ext_0046F910 from the object pointed to by arg2's first dword, passes it to ext_006720A0 on arg1, and returns arg1; throws if that pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:08:39Z"
+}
