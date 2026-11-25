@@ -10313,6 +10313,13 @@
     "summary": "Returns true if the 2D point (arg[0], arg[1]) lies inside the float rect at this (x1,y1,x2,y2), inclusive; any NaN yields false.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x00497720": {
+    "name": "Vec2::midpoint",
+    "class": "Vec2",
+    "signature": "uint32_t __thiscall sub_00497720(uint32_t this_ptr, uint32_t out_ptr, uint32_t other_ptr)",
+    "summary": "Computes the midpoint between this 2D vector and another, writing to out and returning out.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00497780": {
     "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_42",
     "class": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e",

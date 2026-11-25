@@ -905,3 +905,27 @@ void* fn_00498F90() {
     return &mem_00ADD174;
 }
 } // namespace lift_00498F90
+
+// [0x00497720]
+namespace lift_00497720 {
+extern const double mem_00993828;
+
+// @name Vec2::midpoint
+// @class Vec2
+// @summary Computes the midpoint between this 2D vector and another, writing to out and returning out.
+// @field Vec2 +0x00 float x
+// @field Vec2 +0x04 float y
+uint32_t __thiscall sub_00497720(uint32_t this_ptr, uint32_t out_ptr, uint32_t other_ptr) {
+    float* self = reinterpret_cast<float*>(static_cast<uintptr_t>(this_ptr));
+    float* out = reinterpret_cast<float*>(static_cast<uintptr_t>(out_ptr));
+    const float* other = reinterpret_cast<const float*>(static_cast<uintptr_t>(other_ptr));
+
+    float dx = static_cast<float>((other[0] - self[0]) * mem_00993828);
+    float dy = static_cast<float>((other[1] - self[1]) * mem_00993828);
+
+    out[0] = self[0] + dx;
+    out[1] = self[1] + dy;
+
+    return out_ptr;
+}
+} // namespace lift_00497720
