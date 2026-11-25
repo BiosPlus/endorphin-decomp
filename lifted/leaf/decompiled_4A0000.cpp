@@ -345,3 +345,32 @@ uint32_t fn_004A5A00(uint32_t obj) {
     return edi;
 }
 } // namespace lift_004A5A00
+
+// [0x004AEFF0] sub_004AEFF0 (70 bytes)
+namespace lift_004AEFF0 {
+// Callee 0x00493D90: AddCharacterDialog::vfunc_3, thiscall (element pointer in ECX).
+extern void ext_00493D90(void* self);
+// Callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764).
+// Called with one stack argument (the buffer pointer), cdecl.
+extern void ext_006A5C5C(uint32_t ptr);
+
+// @name CArray-like::RemoveAll (element vfunc_3 over range, then free storage)
+// @class <Unknown> (type not identified; layout inferred from accessors)
+// @summary Calls vfunc_3 on each 8-byte element in [begin, end), frees the buffer at begin, and resets begin/end/capacity to null.
+// @field <Unknown> +0x04 uint32_t begin
+// @field <Unknown> +0x08 uint32_t end
+// @field <Unknown> +0x0C uint32_t capacity
+void fn_004AEFF0(void* self) {
+    uint32_t begin = lift_field<uint32_t>(self, 0x04);
+    if (begin != 0) {
+        uint32_t end = lift_field<uint32_t>(self, 0x08);
+        for (uint32_t it = begin; it != end; it += 8) {
+            ext_00493D90(reinterpret_cast<void*>(static_cast<uintptr_t>(it)));
+        }
+        ext_006A5C5C(begin);
+    }
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+}
+} // namespace lift_004AEFF0
