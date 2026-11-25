@@ -1561,6 +1561,13 @@
     "summary": "Returns whether the given rect is visible in the memory DC's HDC (GDI32!RectVisible).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0041B740": {
+    "name": "CMemDC::vfunc_27",
+    "class": "CMemDC",
+    "signature": "SIZE* fn_0041B740(void* self, SIZE* out, int x, int y, LPCSTR text, int count, int nTabPositions, const INT* lpnTabStopPositions, int nTabOrigin)",
+    "summary": "Calls TabbedTextOutA on the DC and returns its packed SIZE result (cx low word, cy high word) via the caller's buffer.",
+    "lifted_path": "lifted/classes/CMemDC.cpp"
+  },
   "0x0041B7F0": {
     "name": "CMemDC::vfunc_30",
     "class": "CMemDC",

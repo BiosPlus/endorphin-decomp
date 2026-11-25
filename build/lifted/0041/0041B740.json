@@ -1,0 +1,22 @@
+{
+  "va": "0x0041B740",
+  "size": 68,
+  "orig_symbol": "CMemDC::vfunc_27",
+  "src_path": "src/classes/CMemDC.cpp",
+  "lifted_path": "lifted/classes/CMemDC.cpp",
+  "name": "CMemDC::vfunc_27",
+  "class": "CMemDC",
+  "signature": "SIZE* fn_0041B740(void* self, SIZE* out, int x, int y, LPCSTR text, int count, int nTabPositions, const INT* lpnTabStopPositions, int nTabOrigin)",
+  "summary": "Calls TabbedTextOutA on the DC and returns its packed SIZE result (cx low word, cy high word) via the caller's buffer.",
+  "fields": [
+    {
+      "class": "CMemDC",
+      "offset": "+0x4",
+      "type": "HDC",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:18:28Z"
+}
