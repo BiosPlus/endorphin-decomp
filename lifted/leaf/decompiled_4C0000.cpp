@@ -385,3 +385,22 @@ DWORD initStaticObjectOnce_004CF910(void) {
     return static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AE4B84));
 }
 } // namespace lift_004CF910
+
+// [0x004C6010]
+namespace lift_004C6010 {
+// @name initStaticObjectOnce_004C6010
+// @summary One-time initializer for the static object at 0x00AE3710, guarded by the flag byte at 0x00AE3714 (bit 0). On first call it runs the constructor helper and stores the vtable pointer 0x0094541C; returns the object address.
+
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AE3714;
+extern DWORD mem_00AE3710;
+
+void* initStaticObjectOnce_004C6010() {
+    if ((mem_00AE3714 & 1u) == 0) {
+        mem_00AE3714 |= 1u;
+        ext_0067A670((void*)&mem_00AE3710, 0);
+        mem_00AE3710 = 0x0094541Cu;
+    }
+    return (void*)&mem_00AE3710;
+}
+} // namespace lift_004C6010

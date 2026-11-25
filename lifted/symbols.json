@@ -13746,6 +13746,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData\u003e::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004C6010": {
+    "name": "initStaticObjectOnce_004C6010",
+    "signature": "void* initStaticObjectOnce_004C6010()",
+    "summary": "One-time initializer for the static object at 0x00AE3710, guarded by the flag byte at 0x00AE3714 (bit 0). On first call it runs the constructor helper and stores the vtable pointer 0x0094541C; returns the object address.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C60D0": {
     "name": "NMData::ForceEventData::vfunc_14",
     "class": "NMData::ForceEventData",

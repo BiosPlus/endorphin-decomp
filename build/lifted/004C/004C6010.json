@@ -1,0 +1,13 @@
+{
+  "va": "0x004C6010",
+  "size": 87,
+  "orig_symbol": "sub_004C6010",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "initStaticObjectOnce_004C6010",
+  "signature": "void* initStaticObjectOnce_004C6010()",
+  "summary": "One-time initializer for the static object at 0x00AE3710, guarded by the flag byte at 0x00AE3714 (bit 0). On first call it runs the constructor helper and stores the vtable pointer 0x0094541C; returns the object address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:32:31Z"
+}
