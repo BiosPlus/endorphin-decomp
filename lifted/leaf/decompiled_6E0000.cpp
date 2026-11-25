@@ -1239,3 +1239,50 @@ double fn_006E4CD0(double a, double b) {
     return a + n * 360.0;
 }
 } // namespace lift_006E4CD0
+
+// [0x006E5750]
+namespace lift_006E5750 {
+// @name sub_006E5750
+// @summary Updates state flags/counters on field_0x98 and invokes registered callbacks before calling sub_006E5730
+// @field unknown +0x5c uint32_t field_0x5c
+// @field unknown +0x98 uint32_t field_0x98
+
+
+template <typename T>
+T mem_rd(uint32_t addr);
+template <typename T>
+void mem_wr(uint32_t addr, T val);
+
+extern void __thiscall ext_006E5730(uint32_t self);
+
+void __thiscall sub_006E5750(uint32_t self, uint32_t flags) {
+    uint32_t state = mem_rd<uint32_t>(self + 0x98);
+    if (state == 0) {
+        return;
+    }
+
+    mem_wr<uint32_t>(state, mem_rd<uint32_t>(state) | flags);
+    mem_wr<uint32_t>(state + 0x8, mem_rd<uint32_t>(state + 0x8) + 1);
+    mem_wr<uint32_t>(self + 0x5c, mem_rd<uint32_t>(self + 0x5c) + 1);
+
+    state = mem_rd<uint32_t>(self + 0x98);
+    if (mem_rd<uint8_t>(state + 0x40) == 0) {
+        return;
+    }
+
+    int32_t idx = static_cast<int32_t>(mem_rd<uint32_t>(state + 0x10)) - 1;
+    while (idx >= 0) {
+        state = mem_rd<uint32_t>(self + 0x98);
+        uint32_t user_data_arr = mem_rd<uint32_t>(state + 0x38);
+        uint32_t fn_arr = mem_rd<uint32_t>(state + 0x20);
+        uint32_t user_data = mem_rd<uint32_t>(user_data_arr + static_cast<uint32_t>(idx) * 4);
+        uint32_t fn_addr = mem_rd<uint32_t>(fn_arr + static_cast<uint32_t>(idx) * 4);
+
+        using CallbackFn = void(__cdecl*)(uint32_t, uint32_t, uint32_t);
+        reinterpret_cast<CallbackFn>(static_cast<uintptr_t>(fn_addr))(self, state, user_data);
+        --idx;
+    }
+
+    ext_006E5730(self);
+}
+} // namespace lift_006E5750
