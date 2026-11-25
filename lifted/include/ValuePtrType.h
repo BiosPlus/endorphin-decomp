@@ -18,12 +18,14 @@ struct ValuePtrType_Fields {
     // +0x0   void*                    sensor  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCBD0, 0x005FCC10, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    target  (evidence: 0x0046CE90, 0x0046E570, 0x0046F1E0, 0x004886F0, 0x00488E30, 0x00497E20, 0x004A2530, 0x004A2930, 0x004A2AD0, 0x004B1FF0, 0x004B21D0, 0x004B8920, 0x004CB250, 0x00508EE0, 0x0059F920, 0x005FCC10, 0x00633240, 0x00635060, 0x006351A0, 0x00639730, 0x0066F700, 0x0068DE60, 0x00695740) // CONFLICT: multiple definitions at +0x0
     // +0x0   const uint8_t*           value_ptr  (evidence: 0x0049AE90) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    value_ptr  (evidence: 0x0049D4B0) // CONFLICT: multiple definitions at +0x0
     // +0x4   void*                    field_04  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x00633240) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00494DE0, 0x004A2E70, 0x004CB250, 0x00515BD0, 0x00607C50) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x00494DE0, 0x004AA0C0, 0x004B8310, 0x004C1040, 0x004C5BD0, 0x004CB250, 0x004CB500, 0x005B7BC0, 0x0066EDE0, 0x0066EE20) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    inner  (evidence: 0x00594550, 0x005B7BC0, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    ptr  (evidence: 0x004B86C0, 0x004CB250) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    target  (evidence: 0x005B7BC0, 0x0064F2F0) // CONFLICT: multiple definitions at +0x4
+    // +0x8   void*                    field_0x08  (evidence: 0x0049D4B0)
     // +0xC   void*                    field_0x0C  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740)
     // +0x28  int32_t                  field_0x28  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005D6630, 0x005FCC10, 0x00639730, 0x00695740)
 };

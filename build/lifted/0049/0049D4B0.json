@@ -1,0 +1,28 @@
+{
+  "va": "0x0049D4B0",
+  "size": 117,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::State, std::string const\u0026\u003e::vfunc_2",
+  "class": "ExprParser::ReadMethodType\u003cNMData::State, std::string const\u0026, {[thunk]: NMData::State::`vcall'{4}}, 0\u003e",
+  "signature": "int fn_0049D4B0(void** arg)",
+  "summary": "Takes a pointer to a value holder, fetches a std::string through a virtual getter at holder-\u003eobj+8, parses it with atof, and returns it rounded half away from zero as int; throws DerivedException if the holder pointer is null.",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "value_ptr"
+    },
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:24:33Z"
+}

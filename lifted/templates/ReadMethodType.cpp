@@ -61062,3 +61062,47 @@ double fn_00685360(void* self) {
 }
 } // namespace lift_00488B80
 } // namespace lift_00685360
+
+// [0x0049D4B0]
+namespace lift_0049D4B0 {
+// @name ExprParser::ReadMethodType<NMData::State, std::string const&>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, std::string const&, {[thunk]: NMData::State::`vcall'{4}}, 0>
+// @summary Takes a pointer to a value holder, fetches a std::string through a virtual getter at holder->obj+8, parses it with atof, and returns it rounded half away from zero as int; throws DerivedException if the holder pointer is null.
+// @field ValuePtrType +0x00 void* value_ptr
+// @field ValuePtrType +0x08 void* field_0x08
+
+// VirtualSlot1Thunk: calls slot 1 of the vtable of its this pointer; returns a std::string*.
+void* ext_0046A470(void* self);
+// DerivedException::DerivedException: constructs the exception object in place.
+void* ext_0046C3C0(void* self);
+// thunk_MSVCR80__CxxThrowException: forwards to _CxxThrowException(object, throwInfo).
+void ext_006A6DD2(void* exception, void* throw_info);
+// sub_006A6DE0: consumes the double-precision value and yields the rounded int result.
+int ext_006A6DE0(double rounded);
+
+// Imported slots: MSVCP80 std::string::c_str and MSVCR80 atof (IAT entries).
+using CStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double (__cdecl*)(const char* text);
+
+int fn_0049D4B0(void** arg) {
+    void* obj = *arg;
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[16]{};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return 0;  // not reached: _CxxThrowException does not return
+    }
+
+    unsigned char* holder = reinterpret_cast<unsigned char*>(obj) + 0x08;
+    void* str = ext_0046A470(holder);
+
+    auto c_str = reinterpret_cast<CStrFn>(*reinterpret_cast<void* const*>(static_cast<uintptr_t>(0x00924FF0u)));
+    auto atof_fn = reinterpret_cast<AtofFn>(*reinterpret_cast<void* const*>(static_cast<uintptr_t>(0x009251F0u)));
+    float value = static_cast<float>(atof_fn(c_str(str)));
+
+    // Round half away from zero. The original tests (value < 0) with an
+    // unordered-aware compare, so NaN takes the subtract path.
+    double bias = !(value >= 0.0f) ? -0.5 : 0.5;
+    return ext_006A6DE0(static_cast<double>(value) + bias);
+}
+} // namespace lift_0049D4B0

@@ -11103,6 +11103,13 @@
     "summary": "Reads the stored string through a virtual accessor and returns it parsed as a float (atof); throws if the held pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0049D4B0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::State, std::string const\u0026\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNMData::State, std::string const\u0026, {[thunk]: NMData::State::`vcall'{4}}, 0\u003e",
+    "signature": "int fn_0049D4B0(void** arg)",
+    "summary": "Takes a pointer to a value holder, fetches a std::string through a virtual getter at holder-\u003eobj+8, parses it with atof, and returns it rounded half away from zero as int; throws DerivedException if the holder pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0049D530": {
     "name": "ExprParser::ReadMethodType\u003cNMData::State\u003e::vfunc_4",
     "class": "ExprParser::ReadMethodType\u003cNMData::State\u003e",
