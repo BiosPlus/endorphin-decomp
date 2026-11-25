@@ -48,3 +48,50 @@ void __thiscall fn_006B3C40(
     reinterpret_cast<Draw3dRectFn>(&ext_006A61C6)(dc, rect, 0, 0);
 }
 } // namespace lift_006B3C40
+
+// [0x006B3AC0]
+namespace lift_006B3AC0 {
+// @name GWCRGBPropertyValue::vfunc_5
+// @class GWCRGBPropertyValue
+// @summary Sets the enabled flag at +0x34; when the object type is 0x64, releases or allocates the pointer at +0x40.
+// @field GWCRGBPropertyValue +0x04 uint32_t field_0x04
+// @field GWCRGBPropertyValue +0x34 uint8_t field_0x34
+// @field GWCRGBPropertyValue +0x40 uint32_t* field_0x40
+
+extern void ext_006A5C5C(uint32_t arg);
+extern uint32_t* ext_006A5C62(uint32_t size);
+
+struct GWCRGBPropertyValue_vfunc5_view {
+    uint8_t  pad0[0x04];
+    uint32_t field_0x04;
+    uint8_t  pad1[0x34 - 0x08];
+    uint8_t  field_0x34;
+    uint8_t  pad2[0x40 - 0x35];
+    uint32_t* field_0x40;
+};
+
+void GWCRGBPropertyValue_vfunc_5(GWCRGBPropertyValue_vfunc5_view* self, uint32_t arg1, uint8_t arg2)
+{
+    if (self->field_0x34 == 1 && self->field_0x04 == 0x64) {
+        ext_006A5C5C(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self->field_0x40)));
+    }
+
+    self->field_0x34 = arg2;
+
+    if (arg2 != 0) {
+        if (self->field_0x04 == 0x64) {
+            uint32_t* p = ext_006A5C62(4);
+            if (p != nullptr) {
+                *p = 0;
+                self->field_0x40 = p;
+            } else {
+                self->field_0x40 = nullptr;
+            }
+        }
+    } else {
+        if (self->field_0x04 == 0x64) {
+            self->field_0x40 = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(arg1));
+        }
+    }
+}
+} // namespace lift_006B3AC0

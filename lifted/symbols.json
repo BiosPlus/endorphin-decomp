@@ -52250,6 +52250,13 @@
     "summary": "Destructor tail-call: restores vtable mem_009919BC and tail-calls base destructor sub_006AEB40.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006B3AC0": {
+    "name": "GWCRGBPropertyValue::vfunc_5",
+    "class": "GWCRGBPropertyValue",
+    "signature": "void GWCRGBPropertyValue_vfunc_5(GWCRGBPropertyValue_vfunc5_view* self, uint32_t arg1, uint8_t arg2)",
+    "summary": "Sets the enabled flag at +0x34; when the object type is 0x64, releases or allocates the pointer at +0x40.",
+    "lifted_path": "lifted/classes/GWCRGBPropertyValue.cpp"
+  },
   "0x006B3C20": {
     "name": "GWCRGBPropertyValue::vfunc_0",
     "class": "GWCRGBPropertyValue",
