@@ -1532,3 +1532,33 @@ void* fn_0053C4C0(void* self) {
     return self;
 }
 } // namespace lift_0053C4C0
+
+// [0x0053C910] sub_0053C910 (88 bytes)
+namespace lift_0053C910 {
+// Known callee 0x0053B240: Unknown::initAnimationDerived_0053B240 (Base-initializes self, installs three 32-bit vtable pointers (+0x00, +0x14, +0x18), zeroes +0x1C/+0x20/+0x34/+0x38, then calls Animation::vfunc_29 to reset state; returns self.)
+extern void ext_0053B240(void* self);
+// Callee 0x00537E50 (31B), invoked with this = self + 0x40.
+extern void ext_00537E50(void* self);
+
+// Vtable addresses written into the object.
+extern int mem_00955BDC;
+extern int mem_00955BD4;
+
+// @name Unknown::initDerivedWithSubobject_0053C910
+// @class Unknown
+// @summary Base-initializes self via 0x0053B240, installs two vtable pointers, calls 0x00537E50 on the subobject at +0x40, and clears the int at +0x5C.
+// @field Unknown +0x00 uint32_t field_0x00 (vtable pointer 0x955BDC)
+// @field Unknown +0x14 uint32_t field_0x14 (vtable pointer 0x955BD4)
+// @field Unknown +0x40 void field_0x40 (subobject passed as this to 0x00537E50)
+// @field Unknown +0x5C int32_t field_0x5C
+void fn_0053C910(void* self) {
+    ext_0053B240(self);
+
+    lift_field<uint32_t>(self, 0x00) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00955BDC));
+    lift_field<uint32_t>(self, 0x14) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00955BD4));
+
+    ext_00537E50(static_cast<uint8_t*>(self) + 0x40);
+
+    lift_field<int32_t>(self, 0x5C) = 0;
+}
+} // namespace lift_0053C910

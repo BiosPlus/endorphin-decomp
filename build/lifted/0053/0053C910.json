@@ -1,0 +1,40 @@
+{
+  "va": "0x0053C910",
+  "size": 88,
+  "orig_symbol": "sub_0053C910",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::initDerivedWithSubobject_0053C910",
+  "class": "Unknown",
+  "signature": "void fn_0053C910(void* self)",
+  "summary": "Base-initializes self via 0x0053B240, installs two vtable pointers, calls 0x00537E50 on the subobject at +0x40, and clears the int at +0x5C.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t field_0x00 (vtable pointer",
+      "name": "0x955BDC)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t field_0x14 (vtable pointer",
+      "name": "0x955BD4)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "void field_0x40 (subobject passed as this to",
+      "name": "0x00537E50)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "int32_t",
+      "name": "field_0x5C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:01:12Z"
+}

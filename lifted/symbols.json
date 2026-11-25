@@ -7573,6 +7573,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x28 and forwards through mem_00924FDC.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x0046C0A0": {
+    "name": "parseFloatFromString",
+    "signature": "extern \"C\" void fn_0046C0A0(void* /*unused*/, float* out_val)",
+    "summary": "Converts a string retrieved via sub_004275C0 to a float using atof.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046C110": {
     "name": "Unknown::GetFieldF138ViaF8",
     "class": "Unknown",
@@ -22702,6 +22708,13 @@
     "class": "QuadricWrapper",
     "signature": "void* fn_00530070()",
     "summary": "Auto-lifted identical-shape clone of 0x0061EA10 (HingeSecondaryConstraint::AllocAndConstruct).",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
+  "0x0053C910": {
+    "name": "Unknown::initDerivedWithSubobject_0053C910",
+    "class": "Unknown",
+    "signature": "void fn_0053C910(void* self)",
+    "summary": "Base-initializes self via 0x0053B240, installs two vtable pointers, calls 0x00537E50 on the subobject at +0x40, and clears the int at +0x5C.",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
   "0x0053C970": {
@@ -71076,6 +71089,12 @@
     "name": "MultiWordShiftLeft",
     "signature": "uint32_t fn_0086A1E0(uint32_t* dst, const uint32_t* src, uint32_t shift, uint32_t count)",
     "summary": "Shifts a little-endian array of uint32 words left by 0..31 bits in place (or to dst), returning the bits shifted out of the top word.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
+  "0x0086A240": {
+    "name": "shiftRightWords",
+    "signature": "uint32_t sub_0086A240(uint32_t* dst, const uint32_t* src, uint32_t shift, uint32_t count)",
+    "summary": "Right-shifts an array of 32-bit words by 0..31 bits and returns the bits shifted out.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
   "0x0086AE50": {
