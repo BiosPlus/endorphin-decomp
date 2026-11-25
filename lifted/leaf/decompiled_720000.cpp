@@ -660,3 +660,66 @@ extern bool __thiscall fn_00726770(void* self, uint32_t key) {
     return true;
 }
 } // namespace lift_00726770
+
+// [0x00729A00]
+namespace lift_00729A00 {
+template <typename T> T mem_read(uint32_t addr);
+template <typename T> void mem_write(uint32_t addr, T val);
+
+extern int32_t __fastcall ext_006FDF30(uint32_t self, uint32_t edx, uint32_t index);
+extern uint32_t __fastcall ext_006FDF90(uint32_t self, uint32_t edx, uint32_t ordinal, uint32_t index);
+extern uint32_t __fastcall ext_006B99C0(uint32_t self, uint32_t edx);
+extern uint32_t __fastcall ext_006D23F0(uint32_t self, uint32_t edx, uint32_t index);
+
+// @name ResetMatchingEntryDoubles
+// @summary Resets the 4th 8-byte slot (index 3) of each 0x20-byte element in the first matching entry's sub-array to 1.0.
+// @field EntryList +0x08 int32_t count
+// @field EntryList +0x18 uint32_t data_ptr
+void __stdcall fn_00729A00(uint32_t obj) {
+    if (ext_006FDF30(obj, 0, 1) <= 0) {
+        return;
+    }
+
+    uint32_t entry = ext_006FDF90(obj, 0, 0, 1);
+    uint32_t base = ext_006B99C0(entry, 0);
+    uint32_t list_ptr = base + 8;
+
+    int32_t count = mem_read<int32_t>(list_ptr);
+    if (count <= 0) {
+        return;
+    }
+
+    uint32_t data_ptr = mem_read<uint32_t>(list_ptr + 0x10);
+    uint32_t offset = 0;
+    for (int32_t i = 0; i < count; ++i) {
+        uint32_t slot = ext_006D23F0(data_ptr + offset, 0, 3);
+        mem_write<uint32_t>(slot, 0x00000000);
+        mem_write<uint32_t>(slot + 4, 0x3FF00000);
+        offset += 0x20;
+    }
+}
+} // namespace lift_00729A00
+
+// [0x0072BF70]
+namespace lift_0072BF70 {
+// @name sub_0072BF70
+// @summary Destructor/cleanup helper that frees field_0x10, clears field_0x64, and destroys subobject at +0x18.
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x18 uint8_t field_0x18
+// @field Unknown +0x64 uint8_t field_0x64
+
+
+extern uint32_t mem_r32(uint32_t addr);
+extern void mem_w8(uint32_t addr, uint8_t val);
+extern void ext_006A5C5C(uint32_t ptr);
+extern void ext_006B9D70(uint32_t self);
+
+extern void fn_0072BF70(uint32_t self) {
+    uint32_t ptr = mem_r32(self + 0x10);
+    if (ptr != 0) {
+        ext_006A5C5C(ptr);
+    }
+    mem_w8(self + 0x64, 0);
+    ext_006B9D70(self + 0x18);
+}
+} // namespace lift_0072BF70
