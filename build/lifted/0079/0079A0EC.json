@@ -1,0 +1,13 @@
+{
+  "va": "0x0079A0EC",
+  "size": 43,
+  "orig_symbol": "sub_0079A0EC",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "sub_0079A0EC",
+  "signature": "void fn_0079A0EC(void* self)",
+  "summary": "Data table misidentified as function: 43-byte index-remap table (0x19 = invalid); read by fn_007995B0 via mem_0079A0EC",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-25T14:31:10Z"
+}
