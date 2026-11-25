@@ -1,0 +1,34 @@
+{
+  "va": "0x0060CCC0",
+  "size": 85,
+  "orig_symbol": "sub_0060CCC0",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "Unknown::constructEffectorData",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_0060CCC0(void* self)",
+  "summary": "Constructs an object via ext_0060C570, sets vtable 0x009721BC, calls EffectorData::vfunc_19, and initializes fields at +0x5C and +0x60.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "float",
+      "name": "field_0x5C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:55:56Z"
+}

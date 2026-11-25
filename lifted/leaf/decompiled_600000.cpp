@@ -1140,3 +1140,25 @@ void* fn_0060B240(void* self) {
     return self;
 }
 } // namespace lift_0060B240
+
+// [0x0060CCC0]
+namespace lift_0060CCC0 {
+extern void* __thiscall ext_0060C570(void* self);
+extern void __thiscall ext_0060BDF0(void* self);
+uint32_t& mem_u32(void* base, ptrdiff_t offset);
+float& mem_f32(void* base, ptrdiff_t offset);
+
+// @name Unknown::constructEffectorData
+// @summary Constructs an object via ext_0060C570, sets vtable 0x009721BC, calls EffectorData::vfunc_19, and initializes fields at +0x5C and +0x60.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x5C float field_0x5C
+// @field Unknown +0x60 uint32_t field_0x60
+void* __thiscall fn_0060CCC0(void* self) {
+    ext_0060C570(self);
+    mem_u32(self, 0x00) = 0x009721BCu;
+    ext_0060BDF0(self);
+    mem_f32(self, 0x5C) = 0.0f;
+    mem_u32(self, 0x60) = 0x14u;
+    return self;
+}
+} // namespace lift_0060CCC0

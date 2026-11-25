@@ -35798,6 +35798,13 @@
     "summary": "One-time initializer for global string mem_00B47F1C; returns its address.",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x0060CCC0": {
+    "name": "Unknown::constructEffectorData",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_0060CCC0(void* self)",
+    "summary": "Constructs an object via ext_0060C570, sets vtable 0x009721BC, calls EffectorData::vfunc_19, and initializes fields at +0x5C and +0x60.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060CD20": {
     "name": "NMData::EffectorData::vfunc_0",
     "class": "NMData::EffectorData",
