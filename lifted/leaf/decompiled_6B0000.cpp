@@ -1220,3 +1220,41 @@ void fn_006BC6F0(void* self, int32_t index) {
     reinterpret_cast<void (*)(void*, int32_t)>(vtbl[5])(item, 1);
 }
 } // namespace lift_006BC6F0
+
+// [0x006B16F0] sub_006B16F0 (82 bytes)
+namespace lift_006B16F0 {
+// Win32 import thunk slot for USER32!SendMessageA (indirect call target at 0x00925694).
+extern uint32_t mem_00925694;
+// Imported USER32!SendMessageA (called through mem_00925694 in the original).
+extern LRESULT __stdcall ext_SendMessageA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+
+// @name Unknown::NotifyWindowMessage411
+// @class Unknown
+// @summary Clears the byte at +0x70, builds a 0x2C-byte message block from the child pointer at +0x74 (its +0x20 value), and sends message 0x411 to the window handle at +0x20.
+// @field Unknown +0x20 HWND hwnd
+// @field Unknown +0x70 uint8_t field_0x70
+// @field Unknown +0x74 void* child
+// @field Unknown.child +0x20 uint32_t field_0x20
+int32_t __thiscall fn_006B16F0(void* self, uint32_t arg0, uint32_t arg1) {
+    (void)arg0;
+    (void)arg1;
+
+    void* child = lift_field<void*>(self, 0x74);
+    lift_field<uint8_t>(self, 0x70) = 0;
+
+    uint32_t value = 0;
+    if (child != nullptr) {
+        value = lift_field<uint32_t>(child, 0x20);
+    }
+
+    // 0x2C-byte message block: [0] = size (0x2C), [2] and [3] = value. Remaining bytes are zero.
+    uint32_t msg[11] = {};
+    msg[0] = 0x2C;
+    msg[2] = value;
+    msg[3] = value;
+
+    HWND hwnd = lift_field<HWND>(self, 0x20);
+    ext_SendMessageA(hwnd, 0x411, 0, static_cast<LPARAM>(reinterpret_cast<intptr_t>(msg)));
+    return 0;
+}
+} // namespace lift_006B16F0

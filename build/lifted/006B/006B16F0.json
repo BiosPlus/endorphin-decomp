@@ -1,0 +1,40 @@
+{
+  "va": "0x006B16F0",
+  "size": 82,
+  "orig_symbol": "sub_006B16F0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::NotifyWindowMessage411",
+  "class": "Unknown",
+  "signature": "int32_t __thiscall fn_006B16F0(void* self, uint32_t arg0, uint32_t arg1)",
+  "summary": "Clears the byte at +0x70, builds a 0x2C-byte message block from the child pointer at +0x74 (its +0x20 value), and sends message 0x411 to the window handle at +0x20.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "hwnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x70",
+      "type": "uint8_t",
+      "name": "field_0x70"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "void*",
+      "name": "child"
+    },
+    {
+      "class": "Unknown.child",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:03:11Z"
+}
