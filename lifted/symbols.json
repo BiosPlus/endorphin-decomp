@@ -15750,6 +15750,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004CBEA0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, getAngularStrengthFromFSM, 0\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, getAngularStrengthFromFSM, 0\u003e",
+    "signature": "const void* fn_004CBEA0(void* self, void* const* slot)",
+    "summary": "Unsupported accessor for MetaBodyConstraintData::getAngularStrengthFromFSM; always throws (never returns).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004CC160": {
     "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, 0\u003e",

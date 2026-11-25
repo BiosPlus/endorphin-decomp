@@ -56313,3 +56313,27 @@ float fn_00604EB0(void* self) {
     throw std::runtime_error("ReadMethodType<Effector>: getPoseRawDesiredDisplacement");
 }
 } // namespace lift_00604EB0
+
+// [0x004CBEA0]
+namespace lift_004CBEA0 {
+// Callees (lifted elsewhere). Arguments follow the call sites in the disassembly.
+extern void* ext_004CB400(void* self);
+extern void ext_0046C4E0(void* field, void* self);
+
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, getAngularStrengthFromFSM, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, getAngularStrengthFromFSM, 0>
+// @summary Unsupported accessor for MetaBodyConstraintData::getAngularStrengthFromFSM; always throws (never returns).
+const void* fn_004CBEA0(void* self, void* const* slot) {
+    // Original: if the dereferenced slot pointer is non-null, resolve the field
+    // via ext_004CB400 and report through ext_0046C4E0 (which throws). Otherwise
+    // the fallthrough constructs and throws a fixed exception. Both paths throw.
+    void* p = *slot;
+    if (p != nullptr) {
+        void* field = ext_004CB400(p);
+        ext_0046C4E0(field, self);
+    }
+    // Portable stand-in for the MSVC _CxxThrowException path (DerivedException).
+    // The original message string is not recovered, so a generic one is used.
+    throw std::runtime_error("ExprParser: getAngularStrengthFromFSM is not supported");
+}
+} // namespace lift_004CBEA0
