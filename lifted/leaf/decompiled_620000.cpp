@@ -2716,3 +2716,47 @@ void* fn_006267B0(void* self) {
     return self;
 }
 } // namespace lift_006267B0
+
+// [0x00624640]
+namespace lift_00624640 {
+extern void* fn_005A07A0(void* self, void* out_iter, const void* key);
+extern void (*mem_00925134)();
+
+// @name StdMapString::lookupValue
+// @class StdMapString
+// @summary Looks up a string key in the map and returns its mapped pointer value, or nullptr if absent.
+// @field StdMapString +0x04 void* head_node
+// @field StdMapString +0x08 uint32_t size
+void* fn_00624640(void* self, const void* key) {
+    if (*reinterpret_cast<const uint32_t*>(reinterpret_cast<const char*>(self) + 0x8) == 0) {
+        return nullptr;
+    }
+
+    struct MapIter {
+        void* container;
+        void* node;
+    } iter{};
+
+    fn_005A07A0(self, &iter, key);
+
+    void* end_node = *reinterpret_cast<void* const*>(reinterpret_cast<const char*>(self) + 0x4);
+    auto invalid_param = mem_00925134;
+
+    if (iter.container == nullptr || iter.container != self) {
+        invalid_param();
+    }
+
+    if (iter.node == end_node) {
+        return nullptr;
+    }
+
+    if (iter.container == nullptr) {
+        invalid_param();
+    }
+    if (iter.node == *reinterpret_cast<void* const*>(reinterpret_cast<const char*>(iter.container) + 0x4)) {
+        invalid_param();
+    }
+
+    return *reinterpret_cast<void* const*>(reinterpret_cast<const char*>(iter.node) + 0x28);
+}
+} // namespace lift_00624640

@@ -9,6 +9,8 @@
 namespace lifted_layout {
 struct StdMapString_Fields {
     // +0x4   uint32_t                 head  (evidence: 0x0059B170) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    head_node  (evidence: 0x00624640) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    header  (evidence: 0x005A07A0, 0x005AE100, 0x00667EA0) // CONFLICT: multiple definitions at +0x4
+    // +0x8   uint32_t                 size  (evidence: 0x00624640)
 };
 } // namespace lifted_layout
