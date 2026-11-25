@@ -1,0 +1,21 @@
+{
+  "va": "0x006C3520",
+  "size": 112,
+  "orig_symbol": "sub_006C3520",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "sub_006C3520",
+  "signature": "extern \"C\" void __thiscall fn_006C3520( void* self, uint32_t index, uint32_t arg2, uint32_t arg3, uint32_t arg4, uint32_t arg5, uint32_t arg6, uint32_t arg7, uint32_t arg8, uint32_t arg9)",
+  "summary": "Computes element pointer at *(this + 0xF0) + index * 0x1F0 + 0x1D98 and calls ext_007873F0 with \u0026arg2",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "uint32_t",
+      "name": "field_0xF0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T05:07:57Z"
+}

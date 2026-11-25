@@ -2014,3 +2014,61 @@ extern void* fn_006C9320(void* arg) {
 }
 } // namespace lift_007B2210
 } // namespace lift_006C9320
+
+// [0x006C3520]
+namespace lift_006C3520 {
+// @name sub_006C3520
+// @summary Computes element pointer at *(this + 0xF0) + index * 0x1F0 + 0x1D98 and calls ext_007873F0 with &arg2
+// @field Unknown +0xF0 uint32_t field_0xF0
+
+
+extern void __thiscall ext_007873F0(void* self, void* arg);
+extern void __cdecl ext_006D80A0(void);
+
+extern void __thiscall fn_006C3520(
+    void* self,
+    uint32_t index,
+    uint32_t arg2,
+    uint32_t arg3,
+    uint32_t arg4,
+    uint32_t arg5,
+    uint32_t arg6,
+    uint32_t arg7,
+    uint32_t arg8,
+    uint32_t arg9)
+{
+    (void)arg3;
+    (void)arg4;
+    (void)arg5;
+    (void)arg6;
+    (void)arg7;
+    (void)arg8;
+    (void)arg9;
+
+    uint32_t base = *(uint32_t*)((uint8_t*)self + 0xF0);
+    void* target = (void*)(uintptr_t)(base + index * 0x1F0u + 0x1D98u);
+    ext_007873F0(target, &arg2);
+    ext_006D80A0();
+}
+} // namespace lift_006C3520
+
+// [0x006C3490]
+namespace lift_006C3490 {
+// @name sub_006C3490
+// @summary Copies an 8-dword value into an indexed element (stride 0x1F0) of a sub-array at +0x1D78 of field_0xF0.
+// @field Unknown +0xf0 uintptr_t field_0xf0
+
+
+extern uint32_t mem_read32(uintptr_t addr);
+extern void __thiscall ext_007873F0(void* self, void* src);
+extern void __cdecl ext_006D80A0(void* self);
+
+extern void __thiscall fn_006C3490(void* self, uint32_t index, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4, uint32_t arg5, uint32_t arg6, uint32_t arg7, uint32_t arg8)
+{
+    uint32_t value[8] = { arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8 };
+    uintptr_t base = mem_read32(reinterpret_cast<uintptr_t>(self) + 0xF0);
+    uintptr_t target = base + 0x1D78 + static_cast<uintptr_t>(index) * 0x1F0;
+    ext_007873F0(reinterpret_cast<void*>(target), value);
+    ext_006D80A0(value);
+}
+} // namespace lift_006C3490
