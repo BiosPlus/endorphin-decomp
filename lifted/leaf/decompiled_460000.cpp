@@ -1412,3 +1412,23 @@ DWORD fn_0046F340() {
     return static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AD8344));
 }
 } // namespace lift_0046F340
+
+// [0x0046F400] sub_0046F400 (87 bytes)
+namespace lift_0046F400 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AD8358;
+extern DWORD mem_00AD8354;
+
+// @name ensureGlobalObjectInit_0046F400
+// @summary One-time initializer for the global object at 0xAD8354: guarded by bit 0 of 0xAD8358, calls ext_0067A670 once, then stores vtable 0x93AB8C; returns the object address.
+// Note: the original installs/restores an SEH registration frame via fs:[0]. That is not portable C++ and is omitted; the saved-frame argument is passed as 0.
+void* fn_0046F400() {
+    if ((mem_00AD8358 & 1u) == 0) {
+        mem_00AD8358 |= 1u;
+        ext_0067A670(&mem_00AD8354, 0);
+        mem_00AD8354 = 0x93ab8c;
+    }
+    return &mem_00AD8354;
+}
+} // namespace lift_0046F400

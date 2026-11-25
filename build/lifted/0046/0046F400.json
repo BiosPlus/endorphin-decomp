@@ -1,0 +1,13 @@
+{
+  "va": "0x0046F400",
+  "size": 87,
+  "orig_symbol": "sub_0046F400",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "ensureGlobalObjectInit_0046F400",
+  "signature": "void* fn_0046F400()",
+  "summary": "One-time initializer for the global object at 0xAD8354: guarded by bit 0 of 0xAD8358, calls ext_0067A670 once, then stores vtable 0x93AB8C; returns the object address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:27:51Z"
+}
