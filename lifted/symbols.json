@@ -19349,6 +19349,13 @@
     "summary": "Calls vfunc slot 24 on the sub-renderable at +0x14 (if present), then tail-calls slot 24 on the object at +0x18 with this = \u0026field_0x18.",
     "lifted_path": "lifted/classes/CompoundRenderable.cpp"
   },
+  "0x00537D80": {
+    "name": "CompoundRenderable::vfunc_23",
+    "class": "CompoundRenderable",
+    "signature": "static uint8_t callVirtual23(void* obj, TagValue arg)",
+    "summary": "Sets the flag at +0x04 when the child at +0x14 or the embedded sub-object at +0x18 reports true (vtable slot 23) for the tag/value pair.",
+    "lifted_path": "lifted/classes/CompoundRenderable.cpp"
+  },
   "0x00537DE0": {
     "name": "CompoundRenderable::vfunc_15",
     "class": "CompoundRenderable",

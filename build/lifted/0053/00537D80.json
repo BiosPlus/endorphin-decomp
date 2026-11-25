@@ -1,0 +1,34 @@
+{
+  "va": "0x00537D80",
+  "size": 84,
+  "orig_symbol": "CompoundRenderable::vfunc_23",
+  "src_path": "src/classes/CompoundRenderable.cpp",
+  "lifted_path": "lifted/classes/CompoundRenderable.cpp",
+  "name": "CompoundRenderable::vfunc_23",
+  "class": "CompoundRenderable",
+  "signature": "static uint8_t callVirtual23(void* obj, TagValue arg)",
+  "summary": "Sets the flag at +0x04 when the child at +0x14 or the embedded sub-object at +0x18 reports true (vtable slot 23) for the tag/value pair.",
+  "fields": [
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "flag"
+    },
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "childPtr"
+    },
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x18",
+      "type": "void* embeddedObj (address only; its vptr is read at",
+      "name": "+0x18)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:07:01Z"
+}

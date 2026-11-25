@@ -211,3 +211,45 @@ void fn_00537CC0(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
     call_vslot12(static_cast<uint8_t*>(self) + 0x18, a1, a2, a3);
 }
 } // namespace lift_00537CC0
+
+// [0x00537D80] CompoundRenderable::vfunc_23 (84 bytes)
+namespace lift_00537D80 {
+// @name CompoundRenderable::vfunc_23
+// @class CompoundRenderable
+// @summary Sets the flag at +0x04 when the child at +0x14 or the embedded sub-object at +0x18 reports true (vtable slot 23) for the tag/value pair.
+// @field CompoundRenderable +0x04 uint8_t flag
+// @field CompoundRenderable +0x14 void* childPtr
+// @field CompoundRenderable +0x18 void* embeddedObj (address only; its vptr is read at +0x18)
+
+// Tag/value pair passed by value on the stack (8 bytes): {tag address, value}.
+struct TagValue {
+    const void* tag;
+    uint32_t value;
+};
+
+extern const char mem_0093A444[];
+
+// Calls vtable slot 23 (offset 0x5C) on the object whose address is `obj`.
+static uint8_t callVirtual23(void* obj, TagValue arg) {
+    void** vtbl = lift_field<void**>(obj, 0);
+    using Fn = uint8_t (*)(void*, TagValue);
+    return reinterpret_cast<Fn>(vtbl[23])(obj, arg);
+}
+
+uint8_t fn_00537D80(void* self, uint32_t /*arg0 unused*/, uint32_t arg1) {
+    TagValue tv{ mem_0093A444, arg1 };
+
+    void* childPtr = lift_field<void*>(self, 0x14);
+    if (childPtr != nullptr && callVirtual23(childPtr, tv) != 0) {
+        lift_field<uint8_t>(self, 0x04) = 1;
+    }
+
+    // +0x18 is an embedded sub-object: its address is `this + 0x18` and no null check is done.
+    void* embeddedObj = static_cast<uint8_t*>(self) + 0x18;
+    if (callVirtual23(embeddedObj, tv) != 0) {
+        lift_field<uint8_t>(self, 0x04) = 1;
+    }
+
+    return lift_field<uint8_t>(self, 0x04);
+}
+} // namespace lift_00537D80
