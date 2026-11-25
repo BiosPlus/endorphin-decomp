@@ -1,0 +1,13 @@
+{
+  "va": "0x00488050",
+  "size": 87,
+  "orig_symbol": "sub_00488050",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "initOnceAndGetStaticObject_00488050",
+  "signature": "void* fn_00488050()",
+  "summary": "Function-local static initializer: on first call sets bit 0 of the guard byte at mem_00AD9E10, runs ext_0067A670 on the object at mem_00AD9E0C with argument 0, stores the vtable-like constant 0x0093D19C into it, and returns the object's address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:28:49Z"
+}

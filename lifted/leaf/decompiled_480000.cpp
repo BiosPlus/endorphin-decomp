@@ -1611,3 +1611,23 @@ void* fn_00487F90() {
     return &mem_00AD9DFC;
 }
 } // namespace lift_00487F90
+
+// [0x00488050] sub_00488050 (87 bytes)
+namespace lift_00488050 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670(void* self, uint32_t value);
+extern int mem_00AD9E10;
+extern int mem_00AD9E0C;
+
+// @name initOnceAndGetStaticObject_00488050
+// @summary Function-local static initializer: on first call sets bit 0 of the guard byte at mem_00AD9E10, runs ext_0067A670 on the object at mem_00AD9E0C with argument 0, stores the vtable-like constant 0x0093D19C into it, and returns the object's address.
+// (No per-instance @class/@field: the function takes no self and only touches global storage.)
+void* fn_00488050() {
+    if ((mem_00AD9E10 & 1) == 0) {
+        mem_00AD9E10 |= 1;
+        ext_0067A670(&mem_00AD9E0C, 0);
+        mem_00AD9E0C = 0x0093D19C;
+    }
+    return &mem_00AD9E0C;
+}
+} // namespace lift_00488050
