@@ -1,0 +1,52 @@
+{
+  "va": "0x005C3A30",
+  "size": 107,
+  "orig_symbol": "sub_005C3A30",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "UnknownClass::GetCachedVec3Ptr",
+  "class": "UnknownClass",
+  "signature": "float* fn_005C3A30(void* self)",
+  "summary": "Returns a pointer to a cached float[3] at this+0x170: refreshed from the object returned by ext_00648480(this+0x16C) when the flag at +0x168 is set and +0x16C is non-null, otherwise returns the callback result at this+0x04 plus 0x30.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x168",
+      "type": "uint8_t",
+      "name": "field_0x168"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x16C",
+      "type": "void*",
+      "name": "field_0x16c"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x170",
+      "type": "float",
+      "name": "field_0x170"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x174",
+      "type": "float",
+      "name": "field_0x174"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x178",
+      "type": "float",
+      "name": "field_0x178"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:54:26Z"
+}

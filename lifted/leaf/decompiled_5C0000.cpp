@@ -1544,3 +1544,43 @@ extern uint32_t __thiscall fn_005C3FB0(void* self) {
     return 0;
 }
 } // namespace lift_005C3FB0
+
+// [0x005C3A30] sub_005C3A30 (107 bytes)
+namespace lift_005C3A30 {
+// Known callee 0x00648480: GetIndirectField_0x5c_0x00 (Loads the object pointer at self+0x5C, reads the dword it points to, and returns GetField_0x44Thunk applied to that value.)
+extern void* ext_00648480(void* self);
+extern int mem_00B40640;
+
+// @name UnknownClass::GetCachedVec3Ptr
+// @class UnknownClass
+// @summary Returns a pointer to a cached float[3] at this+0x170: refreshed from the object returned by ext_00648480(this+0x16C) when the flag at +0x168 is set and +0x16C is non-null, otherwise returns the callback result at this+0x04 plus 0x30.
+// @field UnknownClass +0x04 void* field_0x04
+// @field UnknownClass +0x168 uint8_t field_0x168
+// @field UnknownClass +0x16c void* field_0x16c
+// @field UnknownClass +0x170 float field_0x170
+// @field UnknownClass +0x174 float field_0x174
+// @field UnknownClass +0x178 float field_0x178
+float* fn_005C3A30(void* self) {
+    void* ptr16c = lift_field<void*>(self, 0x16c);
+    uint8_t flag = lift_field<uint8_t>(self, 0x168);
+
+    if (ptr16c != nullptr && flag != 0) {
+        // Read all three source floats before writing, matching the original.
+        void* src = ext_00648480(ptr16c);
+        float x = lift_field<float>(src, 0x30);
+        float y = lift_field<float>(src, 0x34);
+        float z = lift_field<float>(src, 0x38);
+        lift_field<float>(self, 0x170) = x;
+        lift_field<float>(self, 0x174) = y;
+        lift_field<float>(self, 0x178) = z;
+        return &lift_field<float>(self, 0x170);
+    }
+
+    // Fallback: call the function pointer stored at obj+0x14 with (&this->field_0x04, mem_00B40640).
+    void* obj = lift_field<void*>(self, 0x04);
+    using Callback = void* (*)(void*, int);
+    auto cb = reinterpret_cast<Callback>(lift_field<void*>(obj, 0x14));
+    void* r = cb(&lift_field<void*>(self, 0x04), mem_00B40640);
+    return reinterpret_cast<float*>(static_cast<uint8_t*>(r) + 0x30);
+}
+} // namespace lift_005C3A30
