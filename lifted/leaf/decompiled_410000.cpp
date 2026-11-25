@@ -2101,3 +2101,61 @@ void fn_00414E00(void* a1, void* a2, void* a3, void* a4) {
     }
 }
 } // namespace lift_00414E00
+
+// [0x0041A200] sub_0041A200 (87 bytes)
+namespace lift_0041A200 {
+// Known callee 0x00419F50: sub_00419F50 (Auto-lifted identical-shape clone of 0x005E0B20 (TreeIterator::increment).)
+extern void ext_00419F50(void* self);
+
+// IAT slot for MSVCR80!_invalid_parameter_noinfo (called with no arguments).
+extern void (*mem_00925134)();
+
+// @name eraseNodesUntil
+// @class (none)
+// @summary Loop: check a1 == a3, stop when a2 == a4; otherwise advance the iterator
+//          at a1 via TreeIterator::increment and delete the object at a2+0x10 if present.
+// @field (none) +0x04 void* field_0x04
+// @field (none) +0x10 void* field_0x10
+
+namespace {
+
+// MSVC scalar deleting destructor slot: thiscall(self) with flags pushed.
+using ScalarDeleteFn = void (*)(void* self, int flags);
+
+inline void invalidParameter() {
+    mem_00925134();
+}
+
+} // namespace
+
+// Stack arguments (stdcall, 4 x 4 bytes, callee-pops 0x10 in the original).
+void fn_0041A200(void* a1, void* a2, void* a3, void* a4) {
+    for (;;) {
+        void* cursor = a1;
+        if (cursor == nullptr || cursor != a3) {
+            invalidParameter();
+        }
+
+        void* node = a2;
+        if (node == a4) {
+            return;
+        }
+
+        ext_00419F50(&a1);
+
+        if (cursor == nullptr) {
+            invalidParameter();
+        }
+        if (node == *reinterpret_cast<void* const*>(static_cast<char*>(cursor) + 0x04)) {
+            invalidParameter();
+        }
+
+        void* child = *reinterpret_cast<void* const*>(static_cast<char*>(node) + 0x10);
+        if (child != nullptr) {
+            void** vtable = *reinterpret_cast<void***>(child);
+            auto dtor = reinterpret_cast<ScalarDeleteFn>(vtable[1]);
+            dtor(child, 1);
+        }
+    }
+}
+} // namespace lift_0041A200

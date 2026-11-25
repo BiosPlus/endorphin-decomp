@@ -1845,6 +1845,13 @@
     "summary": "Tree lower_bound on a 32-bit unsigned key: returns {this, node} for the first node whose key is not less than the argument, or {this, header} when none matches.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041A200": {
+    "name": "eraseNodesUntil",
+    "class": "(none)",
+    "signature": "inline void invalidParameter()",
+    "summary": "Loop: check a1 == a3, stop when a2 == a4; otherwise advance the iterator",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041A4F0": {
     "name": "sub_0041A4F0",
     "class": "NMData::RealChannel",
