@@ -598,3 +598,16 @@ void fn_00679A30(void* self) {
     mem_0092427C(value);
 }
 } // namespace lift_00679A30
+
+// [0x00679A40] sub_00679A40 (13 bytes)
+namespace lift_00679A40 {
+extern BOOL(__stdcall* mem_0092427C)(void* lpPerformanceCount);
+
+// @name QueryPerformanceCounterAtSelfPlus8
+// @summary Calls QueryPerformanceCounter on the buffer at (*self + 8).
+// @field Unknown +0x00 void* field_0x00
+void fn_00679A40(void* self) {
+    uint8_t* buf = lift_field<uint8_t*>(self, 0) + 8;
+    mem_0092427C(buf);
+}
+} // namespace lift_00679A40

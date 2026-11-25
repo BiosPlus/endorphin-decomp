@@ -1,0 +1,21 @@
+{
+  "va": "0x00679A40",
+  "size": 13,
+  "orig_symbol": "sub_00679A40",
+  "src_path": "src/leaf/tiny_670000.cpp",
+  "lifted_path": "lifted/leaf/tiny_670000.cpp",
+  "name": "QueryPerformanceCounterAtSelfPlus8",
+  "signature": "void fn_00679A40(void* self)",
+  "summary": "Calls QueryPerformanceCounter on the buffer at (*self + 8).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:23:06Z"
+}
