@@ -181,3 +181,18 @@ uint32_t sub_007BDC00(uint8_t* obj) {
     return 1;
 }
 } // namespace lift_007BDC00
+
+// [0x007B8BA0]
+namespace lift_007B8BA0 {
+// @name freeLinkedListIfNonEmpty_007B8BA0
+// @summary Frees the linked list rooted at mem_00B61DB8 if it is non-empty; otherwise does nothing.
+
+extern DWORD mem_00B61DB8;   // list head pointer (global)
+void ext_007B8BB0();         // freeLinkedList_007B8BB0: frees all nodes and their buffers
+
+void sub_007B8BA0() {
+    if (mem_00B61DB8 != 0) {
+        ext_007B8BB0();
+    }
+}
+} // namespace lift_007B8BA0

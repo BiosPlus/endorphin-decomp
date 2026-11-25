@@ -1,0 +1,13 @@
+{
+  "va": "0x007B8BA0",
+  "size": 15,
+  "orig_symbol": "sub_007B8BA0",
+  "src_path": "src/leaf/tiny_7B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7B0000.cpp",
+  "name": "freeLinkedListIfNonEmpty_007B8BA0",
+  "signature": "extern DWORD mem_00B61DB8;   // list head pointer (global) void ext_007B8BB0();         // freeLinkedList_007B8BB0: frees all nodes and their buffers void sub_007B8BA0()",
+  "summary": "Frees the linked list rooted at mem_00B61DB8 if it is non-empty; otherwise does nothing.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:11:26Z"
+}
