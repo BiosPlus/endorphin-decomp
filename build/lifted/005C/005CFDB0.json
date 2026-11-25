@@ -1,0 +1,13 @@
+{
+  "va": "0x005CFDB0",
+  "size": 92,
+  "orig_symbol": "sub_005CFDB0",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "findStringIndex",
+  "signature": "int32_t __stdcall sub_005CFDB0(uint32_t arg1)",
+  "summary": "Checks if a string matches a literal or an element in a 4-element std::string array and returns its index (or 1 / 0).",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:15:54Z"
+}

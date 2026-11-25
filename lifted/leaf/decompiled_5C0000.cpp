@@ -1411,3 +1411,27 @@ void* fn_005CF420() {
 }
 } // namespace lift_004CAE30
 } // namespace lift_005CF420
+
+// [0x005CFDB0]
+namespace lift_005CFDB0 {
+// @name findStringIndex
+// @summary Checks if a string matches a literal or an element in a 4-element std::string array and returns its index (or 1 / 0).
+
+extern uint8_t __cdecl ext_006294AC(uint32_t str_ptr, uint32_t cstr_ptr);
+extern uint8_t __cdecl ext_00629432(uint32_t str1_ptr, uint32_t str2_ptr);
+
+int32_t __stdcall sub_005CFDB0(uint32_t arg1) {
+    if (ext_006294AC(arg1, 0x0092F10Cu) != 0) {
+        return 1;
+    }
+
+    int32_t idx = 0;
+    for (uint32_t elem = 0x00B45938u; elem < 0x00B459A8u; elem += 0x1Cu, ++idx) {
+        if (ext_00629432(elem, arg1) != 0) {
+            return idx;
+        }
+    }
+
+    return 0;
+}
+} // namespace lift_005CFDB0

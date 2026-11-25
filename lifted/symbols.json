@@ -26895,6 +26895,13 @@
     "summary": "Pure jump thunk forwarding to sub_00665810.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x005AC560": {
+    "name": "Commands::MirrorCommand::vfunc_1",
+    "class": "Commands::MirrorCommand",
+    "signature": "void __thiscall fn_005AC560(void* self)",
+    "summary": "Applies a mirror operation via field_0x14 and notifies it and up to two chained objects via vfunc_0x8c",
+    "lifted_path": "lifted/Commands/MirrorCommand.cpp"
+  },
   "0x005AC640": {
     "name": "Commands::MirrorCommand::vfunc_3",
     "class": "Commands::MirrorCommand",
