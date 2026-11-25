@@ -49927,6 +49927,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006E8610 (Unknown::GetByteAtIndirect20).",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E87B0": {
+    "name": "setClampedValue",
+    "signature": "void __thiscall sub_006E87B0(void* self, double val)",
+    "summary": "Clamps a double argument to [0.0, 300.0] and stores it at *(double*)(*(uintptr_t*)this + 0x70).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E8800": {
     "name": "sub_006E8800",
     "class": "Unknown",
@@ -58544,6 +58550,13 @@
     "signature": "extern \"C\" void __fastcall fn_0079DB20(void* self)",
     "summary": "Destructor tail-call: restores vtable mem_009976F8 and tail-calls base destructor sub_00785430.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
+  "0x0079DB50": {
+    "name": "ThunkCallVirtualSlot4OverArray",
+    "class": "(none; free function)",
+    "signature": "uint8_t __stdcall fn_0079DB50(void* self, const uint32_t* values)",
+    "summary": "Forwards its two stack arguments to callVirtualSlot4OverArray (ext_007857A0) and returns that flag unchanged.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
   "0x0079DCE0": {
     "name": "sub_007928E0",

@@ -612,3 +612,16 @@ void fn_00798FB0(uint32_t* slot, const void* src, uint32_t count) {
     ext_00798F10(slot, src, count * 2u);
 }
 } // namespace lift_00798FB0
+
+// [0x0079DB50] sub_0079DB50 (18 bytes)
+namespace lift_0079DB50 {
+// Known callee 0x007857A0: callVirtualSlot4OverArray (Walks a uint32 array and calls virtual slot 4 on this for each element, alternating which return values are kept; returns the final flag (initially true).)
+extern uint8_t ext_007857A0(void* self, const uint32_t* values);
+
+// @name ThunkCallVirtualSlot4OverArray
+// @class (none; free function)
+// @summary Forwards its two stack arguments to callVirtualSlot4OverArray (ext_007857A0) and returns that flag unchanged.
+uint8_t __stdcall fn_0079DB50(void* self, const uint32_t* values) {
+    return ext_007857A0(self, values);
+}
+} // namespace lift_0079DB50
