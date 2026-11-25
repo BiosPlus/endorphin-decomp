@@ -24,6 +24,7 @@ void* fn_00530070() {
 #include <cstdint>
 #include <stdexcept>
 #include <cstddef>
+#include <cstdlib>
 
 // [0x005300D0] sub_005300D0 (86 bytes)
 namespace lift_005300D0 {
@@ -1661,3 +1662,17 @@ void* fn_005301F0(void) {
 }
 } // namespace lift_0052FD90
 } // namespace lift_005301F0
+
+// [0x0053F5F0]
+namespace lift_0053F5F0 {
+// @name parseIntFromField
+// @summary Parses an integer from a string retrieved via ext_004275C0 and stores it in outValue.
+
+extern std::string* __thiscall ext_004275C0(void* self, std::string* outStr);
+
+extern void __cdecl fn_0053F5F0(int* outValue, void* obj) {
+    std::string str;
+    ext_004275C0(obj, &str);
+    *outValue = std::atoi(str.c_str());
+}
+} // namespace lift_0053F5F0
