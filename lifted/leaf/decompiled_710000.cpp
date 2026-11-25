@@ -1277,3 +1277,43 @@ void fn_00715670(void* self, const void* src) {
     }
 }
 } // namespace lift_00715670
+
+// [0x0071FC30] sub_0071FC30 (64 bytes)
+namespace lift_0071FC30 {
+// Known callee 0x00784750: EntryTable::getEntryValue (Sorts the entry table if dirty, optionally writes entry[idx].key to *outKey, and returns entry[idx].value (0 if idx is out of range).)
+struct EntryTable {
+    uint8_t  _pad0[4];
+    int32_t  field_0x04;  // entry count, read as [this+0x04]
+};
+extern int32_t __thiscall ext_00784750(EntryTable* self, int32_t idx, uint32_t* outKey);
+extern EntryTable* mem_00B5FFC0;
+
+// @name EntryTable::FindValueByKey
+// @class EntryTable
+// @summary Scans the global entry table in index order, calling getEntryValue for each index until the returned key equals the requested key; returns that entry's value, or 0 if no entry matches.
+// @field EntryTable +0x04 int32_t field_0x04
+int32_t __cdecl fn_0071FC30(int32_t target) {
+    EntryTable* table = mem_00B5FFC0;
+    if (table == nullptr || table->field_0x04 <= 0) {
+        return 0;
+    }
+
+    int32_t i = 0;
+    for (;;) {
+        // The key slot is seeded with the requested key; getEntryValue overwrites it with the entry's key.
+        uint32_t key = static_cast<uint32_t>(target);
+        int32_t value = ext_00784750(table, i, &key);
+        if (static_cast<int32_t>(key) == target) {
+            return value;
+        }
+
+        // Re-read the global table and bounds each iteration, as the original does.
+        table = mem_00B5FFC0;
+        ++i;
+        if (i >= table->field_0x04) {
+            break;
+        }
+    }
+    return 0;
+}
+} // namespace lift_0071FC30
