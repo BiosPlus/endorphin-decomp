@@ -1236,3 +1236,41 @@ extern void __fastcall fn_00536540(void* self) {
     ext_0065C660(self);
 }
 } // namespace lift_00536540
+
+// [0x00539AA0]
+namespace lift_00539AA0 {
+extern void* ext_00539740(const float* begin, const float* end, float* dst);
+extern void (*mem_00925134)(void);
+
+struct CheckedFloat3Iter {
+    void* container;
+    float* ptr;
+};
+
+// @name Float3Vector::erase
+// @class Float3Vector
+// @summary Erases a range [first, last) of 12-byte float3 elements from the vector and returns the updated checked iterator.
+// @field Float3Vector +0x08 float* end
+CheckedFloat3Iter* __thiscall fn_00539AA0(
+    void* self,
+    CheckedFloat3Iter* out_iter,
+    void* first_container,
+    float* first_ptr,
+    void* last_container,
+    float* last_ptr)
+{
+    if (!first_container || first_container != last_container) {
+        mem_00925134();
+    }
+
+    if (first_ptr != last_ptr) {
+        auto* vec_end = *reinterpret_cast<float**>(reinterpret_cast<uint8_t*>(self) + 0x08);
+        void* new_end = ext_00539740(last_ptr, vec_end, first_ptr);
+        *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x08) = new_end;
+    }
+
+    out_iter->container = first_container;
+    out_iter->ptr = first_ptr;
+    return out_iter;
+}
+} // namespace lift_00539AA0
