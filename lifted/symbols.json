@@ -40975,6 +40975,13 @@
     "summary": "Exception catch handler that logs an error string at [ebp-0x14]+0xC to std::cout and returns continuation 0x006A049F.",
     "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
   },
+  "0x006A04E0": {
+    "name": "Commands::ChangePropertyCommand::vfunc_2",
+    "class": "Commands::ChangePropertyCommand",
+    "signature": "void __thiscall Commands_ChangePropertyCommand_vfunc_2(uint32_t self)",
+    "summary": "Invokes virtual method +0xA4 on field_0x14 with pointers to field_0x10 and field_0x18.",
+    "lifted_path": "lifted/Commands/ChangePropertyCommand.cpp"
+  },
   "0x006A0530": {
     "name": "catch_006A0530",
     "signature": "uint32_t sub_006A0530(uintptr_t ebp)",
