@@ -8735,6 +8735,13 @@
     "summary": "Heap-sorts a range of 4-byte elements in place (pop-heap loop); pred is forwarded to the sift-down helper.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00481D80": {
+    "name": "vectorDestroyAndClear",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_00481D80(void* self)",
+    "summary": "Destroys every pointer element in a checked vector range [field_0x04, field_0x08) and erases the range.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00481DE0": {
     "name": "fillStructArrayAndGetEnd",
     "signature": "uint32_t __stdcall fn_00481DE0(uint32_t dst, uint32_t count, uint32_t src)",

@@ -1717,3 +1717,43 @@ void* fn_00488110() {
     return &mem_00AD9E1C;
 }
 } // namespace lift_00488110
+
+// [0x00481D80] sub_00481D80 (90 bytes)
+namespace lift_00481D80 {
+// Known callee 0x004080C0: destroyPointerVectorRange (Iterates over a checked vector range of object pointers and invokes each non-null object's deleting destructor.)
+extern void ext_004080C0(void* container1, uint32_t iterPtr, void* container2, uint32_t endPtr);
+// Known callee 0x00596660: Vector_erase_range (Erases a range [first, last) of 4-byte elements from a vector and returns the updated iterator.)
+extern void* ext_00596660(void* this_ptr, void* out_iter, void* first_container, uint32_t first_ptr, void* last_container, uint32_t last_ptr);
+// MSVCR80!_invalid_parameter_noinfo, loaded through a pointer slot.
+extern void (*mem_00925134)();
+
+// @name vectorDestroyAndClear
+// @class <unknown>
+// @summary Destroys every pointer element in a checked vector range [field_0x04, field_0x08) and erases the range.
+// @field <unknown> +0x04 uint32_t field_0x04
+// @field <unknown> +0x08 uint32_t field_0x08
+void fn_00481D80(void* self) {
+    // Range check: field_0x04 must not exceed field_0x08 (invalid-parameter handler otherwise).
+    if (lift_field<uint32_t>(self, 0x04) > lift_field<uint32_t>(self, 0x08)) {
+        mem_00925134();
+    }
+    uint32_t begin = lift_field<uint32_t>(self, 0x04);
+    if (begin > lift_field<uint32_t>(self, 0x08)) {
+        mem_00925134();
+    }
+    // Destroy the pointed-to objects in [begin, end).
+    ext_004080C0(self, begin, self, lift_field<uint32_t>(self, 0x08));
+
+    // Re-read the range (destructors may have changed it) and erase it.
+    uint32_t end = lift_field<uint32_t>(self, 0x08);
+    if (lift_field<uint32_t>(self, 0x04) > end) {
+        mem_00925134();
+    }
+    begin = lift_field<uint32_t>(self, 0x04);
+    if (begin > lift_field<uint32_t>(self, 0x08)) {
+        mem_00925134();
+    }
+    uint32_t out_iter[4] = {};
+    ext_00596660(self, out_iter, self, begin, self, end);
+}
+} // namespace lift_00481D80

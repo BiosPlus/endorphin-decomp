@@ -1,0 +1,28 @@
+{
+  "va": "0x00481D80",
+  "size": 90,
+  "orig_symbol": "sub_00481D80",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "vectorDestroyAndClear",
+  "class": "\u003cunknown\u003e",
+  "signature": "void fn_00481D80(void* self)",
+  "summary": "Destroys every pointer element in a checked vector range [field_0x04, field_0x08) and erases the range.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:17:05Z"
+}
