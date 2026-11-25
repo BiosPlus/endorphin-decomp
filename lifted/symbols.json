@@ -5648,6 +5648,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x54 and tail-calls sub_004584B0.",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
+  "0x004586A0": {
+    "name": "SetTimerOnWindow",
+    "class": "Unknown",
+    "signature": "UINT_PTR __thiscall fn_004586A0(void* self, UINT_PTR nIDEvent, UINT uElapse)",
+    "summary": "Calls SetTimer(this-\u003ehwnd, nIDEvent, uElapse, NULL) through the IAT and returns its result.",
+    "lifted_path": "lifted/leaf/tiny_450000.cpp"
+  },
   "0x004586C0": {
     "name": "KillOwnerTimerWithId",
     "class": "Unknown",

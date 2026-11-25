@@ -1,0 +1,22 @@
+{
+  "va": "0x004586A0",
+  "size": 25,
+  "orig_symbol": "sub_004586A0",
+  "src_path": "src/leaf/tiny_450000.cpp",
+  "lifted_path": "lifted/leaf/tiny_450000.cpp",
+  "name": "SetTimerOnWindow",
+  "class": "Unknown",
+  "signature": "UINT_PTR __thiscall fn_004586A0(void* self, UINT_PTR nIDEvent, UINT uElapse)",
+  "summary": "Calls SetTimer(this-\u003ehwnd, nIDEvent, uElapse, NULL) through the IAT and returns its result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:26:00Z"
+}

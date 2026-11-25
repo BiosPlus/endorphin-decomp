@@ -383,3 +383,21 @@ LRESULT __thiscall fn_00458E10(void* self) {
     return mem_00925694(hwnd, msg, 0, reinterpret_cast<LPARAM>(self));
 }
 } // namespace lift_00458E10
+
+// [0x004586A0] sub_004586A0 (25 bytes)
+namespace lift_004586A0 {
+// IAT slot holding USER32!SetTimer (original: call dword ptr [0x925664]).
+extern DWORD mem_00925664;
+
+using SetTimerFn = UINT_PTR(__stdcall*)(HWND hWnd, UINT_PTR nIDEvent, UINT uElapse, void* lpTimerFunc);
+
+// @name SetTimerOnWindow
+// @class Unknown
+// @summary Calls SetTimer(this->hwnd, nIDEvent, uElapse, NULL) through the IAT and returns its result.
+// @field Unknown +0x20 HWND field_0x20
+UINT_PTR __thiscall fn_004586A0(void* self, UINT_PTR nIDEvent, UINT uElapse) {
+    HWND hwnd = lift_field<HWND>(self, 0x20);
+    auto setTimer = reinterpret_cast<SetTimerFn>(static_cast<uintptr_t>(mem_00925664));
+    return setTimer(hwnd, nIDEvent, uElapse, nullptr);
+}
+} // namespace lift_004586A0
