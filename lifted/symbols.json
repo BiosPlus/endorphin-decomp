@@ -13738,6 +13738,13 @@
     "summary": "Forwards the call to the virtual method at vtable byte offset 0x158 on the same object.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004CEAC0": {
+    "name": "Unknown::copyFloatAndClearFlag_004CEAC0",
+    "class": "Unknown",
+    "signature": "inline uint32_t rd32(const void* base, uintptr_t off)",
+    "summary": "Copies a float from arg+0x18C into self+0x08; when arg+0x17C is set and count at (global ext chain) is below mem_009849C0, clears a dword in self's pointee at +0x5F0.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CEB20": {
     "name": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0\u003e",

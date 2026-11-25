@@ -242,3 +242,68 @@ int __stdcall fn_004CE7B0(const std::string* key) {
     return 0;
 }
 } // namespace lift_004CE7B0
+
+// [0x004CEAC0] sub_004CEAC0 (87 bytes)
+namespace lift_004CEAC0 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000();
+extern int mem_009849C0;
+
+namespace {
+
+inline uint32_t rd32(const void* base, uintptr_t off) {
+    uint32_t v;
+    std::memcpy(&v, static_cast<const uint8_t*>(base) + off, sizeof v);
+    return v;
+}
+
+inline uint8_t rd8(const void* base, uintptr_t off) {
+    return *(static_cast<const uint8_t*>(base) + off);
+}
+
+inline float rdf(const void* base, uintptr_t off) {
+    float v;
+    std::memcpy(&v, static_cast<const uint8_t*>(base) + off, sizeof v);
+    return v;
+}
+
+inline void wr32(void* base, uintptr_t off, uint32_t v) {
+    std::memcpy(static_cast<uint8_t*>(base) + off, &v, sizeof v);
+}
+
+inline void wrf(void* base, uintptr_t off, float v) {
+    std::memcpy(static_cast<uint8_t*>(base) + off, &v, sizeof v);
+}
+
+inline void* ptrFrom32(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+} // namespace
+
+// @name Unknown::copyFloatAndClearFlag_004CEAC0
+// @class Unknown
+// @summary Copies a float from arg+0x18C into self+0x08; when arg+0x17C is set and count at (global ext chain) is below mem_009849C0, clears a dword in self's pointee at +0x5F0.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x17C uint8_t field_0x17C
+// @field Unknown +0x18C float field_0x18C
+void fn_004CEAC0(void* self, void* arg) {
+    // eax = ext_00594000(); eax = [eax+0x26C]; ecx = [eax+0x538]
+    void* base = ptrFrom32(static_cast<uint32_t>(ext_00594000()));
+    void* sub = ptrFrom32(rd32(base, 0x26C));
+    uint32_t count = rd32(sub, 0x538);
+    uint32_t limit = static_cast<uint32_t>(mem_009849C0);
+
+    if (count < limit) {
+        if (rd8(arg, 0x17C) != 0) {
+            uint32_t target = rd32(self, 0x00);
+            if (target != 0) {
+                wr32(ptrFrom32(target), 0x5F0, 0u);
+            }
+        }
+    }
+
+    wrf(self, 0x08, rdf(arg, 0x18C));
+}
+} // namespace lift_004CEAC0
