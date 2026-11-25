@@ -201,3 +201,35 @@ uint32_t __fastcall sub_00609670(uint32_t this_ptr, uint32_t /*edx*/, uint32_t o
     return 0;
 }
 } // namespace lift_00609670
+
+// [0x0060A340] sub_0060A340 (85 bytes)
+namespace lift_0060A340 {
+// Known callee 0x00609670: StringPairKey::operator< (__fastcall: this in ECX, EDX unused, other on stack; returns bool in AL)
+extern uint32_t ext_00609670(uint32_t this_ptr, uint32_t unused_edx, uint32_t other_ptr);
+
+// @name Sort3StringPairKeys
+// @summary Three-element compare-and-swap network over 32-bit slots holding StringPairKey pointers; orders *a <= *b <= *c using StringPairKey::operator<.
+void fn_0060A340(uint32_t* a, uint32_t* b, uint32_t* c) {
+    auto lessThan = [](uint32_t lhs, uint32_t rhs) -> bool {
+        return (ext_00609670(lhs, 0, rhs) & 0xFFu) != 0;
+    };
+    auto swapSlots = [](uint32_t* x, uint32_t* y) {
+        uint32_t tmp = *x;
+        *x = *y;
+        *y = tmp;
+    };
+
+    // Step 1: if (*b < *a) swap(a, b)
+    if (lessThan(*b, *a)) {
+        swapSlots(b, a);
+    }
+    // Step 2: if (*c < *b) swap(c, b)
+    if (lessThan(*c, *b)) {
+        swapSlots(c, b);
+    }
+    // Step 3: if (*b < *a) swap(b, a)
+    if (lessThan(*b, *a)) {
+        swapSlots(b, a);
+    }
+}
+} // namespace lift_0060A340

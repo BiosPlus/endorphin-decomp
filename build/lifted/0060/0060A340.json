@@ -1,0 +1,13 @@
+{
+  "va": "0x0060A340",
+  "size": 85,
+  "orig_symbol": "sub_0060A340",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "Sort3StringPairKeys",
+  "signature": "void fn_0060A340(uint32_t* a, uint32_t* b, uint32_t* c)",
+  "summary": "Three-element compare-and-swap network over 32-bit slots holding StringPairKey pointers; orders *a \u003c= *b \u003c= *c using StringPairKey::operator\u003c.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:18:12Z"
+}

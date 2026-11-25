@@ -31890,6 +31890,12 @@
     "summary": "Lazily constructs a function-local static object (guarded by bit 0 of mem_00B478C8) and stores its address into this+0x04.",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x0060A340": {
+    "name": "Sort3StringPairKeys",
+    "signature": "void fn_0060A340(uint32_t* a, uint32_t* b, uint32_t* c)",
+    "summary": "Three-element compare-and-swap network over 32-bit slots holding StringPairKey pointers; orders *a \u003c= *b \u003c= *c using StringPairKey::operator\u003c.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060A640": {
     "name": "NMData::DisabledCollisionPairList::vfunc_13",
     "class": "NMData::DisabledCollisionPairList",
