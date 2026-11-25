@@ -56614,3 +56614,38 @@ extern float fn_00635120(void* self) {
 }
 } // namespace lift_004B1B30
 } // namespace lift_00635120
+
+// [0x005FCB90]
+namespace lift_005FCB90 {
+// Leaf-level externals referenced by the original asm.
+void ext_0046C4E0(void* message);                              // ExceptionWithMessage::throwDefaultMessage
+void* ext_0046C3C0(void* self);                                // DerivedException::DerivedException (thiscall)
+void ext_006A6DD2(void* exception_object, const void* throw_info);  // thunk to _CxxThrowException
+
+namespace {
+// RTTI ThrowInfo for the exception thrown on the null-target path (.data 0x009DEC1C).
+constexpr std::uintptr_t kThrowInfoAddr = 0x009DEC1C;
+// Virtual getter lives at vtable+0x38 (slot 14 with 4-byte pointers).
+constexpr std::size_t kGetterSlot = 0x38 / sizeof(void*);
+constexpr std::size_t kExceptionObjectSize = 0x28;
+}  // namespace
+
+// @name ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &Sensor::getMutableVector3, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &Sensor::getMutableVector3, 1>
+// @summary Calls the wrapped Sensor's virtual getter (vtable slot 14) through the ValuePtrType; always throws (default-message exception if the getter path ran, otherwise a fresh exception on a null target).
+// @field ExprParser::ValuePtrType +0x00 void* target
+void fn_005FCB90(void* value_ptr) {
+    void* target = *static_cast<void**>(value_ptr);
+
+    if (target != nullptr) {
+        void** vtable = *static_cast<void***>(target);
+        auto getter = reinterpret_cast<void*(__thiscall*)(void*)>(vtable[kGetterSlot]);
+        void* result = getter(target);
+        ext_0046C4E0(result);
+    }
+
+    alignas(8) unsigned char exception_object[kExceptionObjectSize];
+    ext_0046C3C0(exception_object);
+    ext_006A6DD2(exception_object, reinterpret_cast<const void*>(kThrowInfoAddr));
+}
+} // namespace lift_005FCB90

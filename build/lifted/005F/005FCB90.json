@@ -1,0 +1,22 @@
+{
+  "va": "0x005FCB90",
+  "size": 51,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026private: class NM::Vector3 const \u0026 __thiscall Sensor::getMutableVector3(void) const, 1\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026Sensor::getMutableVector3, 1\u003e::vfunc_1",
+  "class": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026Sensor::getMutableVector3, 1\u003e",
+  "signature": "void ext_0046C4E0(void* message);                              // ExceptionWithMessage::throwDefaultMessage void* ext_0046C3C0(void* self);                                // DerivedException::DerivedException (thiscall) void ext_006A6DD2(void* exception_object, const void* throw_info);  // thunk to _CxxThrowException namespace",
+  "summary": "Calls the wrapped Sensor's virtual getter (vtable slot 14) through the ValuePtrType; always throws (default-message exception if the getter path ran, otherwise a fresh exception on a null target).",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:58:50Z"
+}
