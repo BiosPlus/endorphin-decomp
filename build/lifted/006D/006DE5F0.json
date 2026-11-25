@@ -1,0 +1,34 @@
+{
+  "va": "0x006DE5F0",
+  "size": 95,
+  "orig_symbol": "sub_006DE5F0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::removeAndRelease",
+  "class": "Unknown",
+  "signature": "void fn_006DE5F0(void* self, void* item)",
+  "summary": "Removes an item from the owner's pointer array (if present), optionally releases it via its vtable, then calls ReleaseIfNonNull on it.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t flags (read through",
+      "name": "GetFlag08)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "void**",
+      "name": "items"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:33:43Z"
+}

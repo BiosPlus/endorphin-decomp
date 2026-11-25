@@ -54953,6 +54953,13 @@
     "summary": "Destroys subobject at +0x4c and base object via sub_006B9D70.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006DE5F0": {
+    "name": "Unknown::removeAndRelease",
+    "class": "Unknown",
+    "signature": "void fn_006DE5F0(void* self, void* item)",
+    "summary": "Removes an item from the owner's pointer array (if present), optionally releases it via its vtable, then calls ReleaseIfNonNull on it.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DE660": {
     "name": "getItemAt",
     "signature": "uint32_t __thiscall fn_006DE660(uint32_t self, int32_t index)",

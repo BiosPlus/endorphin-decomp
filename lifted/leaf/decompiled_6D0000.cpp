@@ -19,6 +19,7 @@ extern "C" void* __fastcall fn_006D7B30(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+#include <cstdint>
 
 // [0x006D7D90] sub_006D7D90 (32 bytes)
 // @name sub_006D7D90
@@ -1449,3 +1450,45 @@ void Unknown_resetAndReleaseMember_006D8E70(void* self) {
     fn_0077FA20(self);
 }
 } // namespace lift_006D8E70
+
+// [0x006DE5F0]
+namespace lift_006DE5F0 {
+// @name Unknown::removeAndRelease
+// @class Unknown
+// @summary Removes an item from the owner's pointer array (if present), optionally releases it via its vtable, then calls ReleaseIfNonNull on it.
+// @field Unknown +0x18 uint32_t flags (read through GetFlag08)
+// @field Unknown +0x20 int32_t count
+// @field Unknown +0x30 void** items
+
+
+
+// Callees (thiscall lifted as plain functions; self is the first argument).
+extern uint32_t ext_006DEEA0(const uint8_t* self);          // Unknown::GetFlag08
+extern void     ext_006DE130(void* self, int32_t unused);   // Unknown::ReleaseIfNonNull
+extern void     ext_006D2200(void* self, int32_t index);    // DynamicArray::removeAt
+
+// Vtable slot 0x2c (index 11) is invoked with a single argument, flag 0.
+using VirtualSlot11Fn = void (*)(void* self, int32_t flag);
+
+void fn_006DE5F0(void* self, void* item) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+
+    if (item != nullptr && ext_006DEEA0(obj) == 0) {
+        void** vtable = *static_cast<void***>(item);
+        auto slot11 = reinterpret_cast<VirtualSlot11Fn>(vtable[11]);
+        slot11(item, 0);
+    }
+
+    int32_t count = *reinterpret_cast<int32_t*>(obj + 0x20);
+    void** items = *reinterpret_cast<void***>(obj + 0x30);
+
+    for (int32_t i = 0; i < count; ++i) {
+        if (items[i] == item) {
+            ext_006D2200(obj + 0x20, i);
+            break;
+        }
+    }
+
+    ext_006DE130(item, 0);
+}
+} // namespace lift_006DE5F0

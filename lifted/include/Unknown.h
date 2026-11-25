@@ -413,6 +413,7 @@ struct Unknown_Fields {
     // +0x16  uint8_t                  field_0x16  (evidence: 0x0074B080) // CONFLICT: multiple definitions at +0x16
     // +0x17  uint8_t                  field_0x17  (evidence: 0x0074B080)
     // +0x18  uint8_t field_0x18 (3 bytes, indexed by 0..2)  (evidence: 0x005539B0) // CONFLICT: multiple definitions at +0x18
+    // +0x18  uint32_t flags (read through GetFlag08)  (evidence: 0x006DE5F0) // CONFLICT: multiple definitions at +0x18
     // +0x18  void*                    chain  (evidence: 0x007839B0) // CONFLICT: multiple definitions at +0x18
     // +0x18  std::uint32_t            elemScale  (evidence: 0x00790EE0) // CONFLICT: multiple definitions at +0x18
     // +0x18  DWORD                    field_0x18  (evidence: 0x005555D0, 0x005B34C0, 0x006FC200, 0x006FC950) // CONFLICT: multiple definitions at +0x18
@@ -471,7 +472,7 @@ struct Unknown_Fields {
     // +0x1E  BYTE                     field_0x1E  (evidence: 0x005555D0)
     // +0x20  BYTE field_0x20 (base of byte array indexed by first argument)  (evidence: 0x0071E660) // CONFLICT: multiple definitions at +0x20
     // +0x20  void*                    child  (evidence: 0x005940E0, 0x005947B0) // CONFLICT: multiple definitions at +0x20
-    // +0x20  int32_t                  count  (evidence: 0x006DE690, 0x006DE720) // CONFLICT: multiple definitions at +0x20
+    // +0x20  int32_t                  count  (evidence: 0x006DE5F0, 0x006DE690, 0x006DE720) // CONFLICT: multiple definitions at +0x20
     // +0x20  int32_t field_0x20 (entry count)  (evidence: 0x006DE770) // CONFLICT: multiple definitions at +0x20
     // +0x20  std::uint32_t*           entries  (evidence: 0x006FDF90) // CONFLICT: multiple definitions at +0x20
     // +0x20  DWORD                    field_0x20  (evidence: 0x0041FEA0, 0x0045BC30, 0x00465EF0, 0x00538FA0, 0x00622B40, 0x00624540, 0x00642010, 0x006423D0, 0x006B0DE0, 0x006FC200, 0x006FDFC0, 0x0078C230, 0x0078C3A0) // CONFLICT: multiple definitions at +0x20
@@ -560,6 +561,7 @@ struct Unknown_Fields {
     // +0x30  u8 field_0x30 (flag byte inside sub-object at field_0xA4)  (evidence: 0x00547CE0) // CONFLICT: multiple definitions at +0x30
     // +0x30  uint8_t                  flag  (evidence: 0x00622B40, 0x00624E50) // CONFLICT: multiple definitions at +0x30
     // +0x30  uint32_t*                items  (evidence: 0x006DE660) // CONFLICT: multiple definitions at +0x30
+    // +0x30  void**                   items  (evidence: 0x006DE5F0) // CONFLICT: multiple definitions at +0x30
     // +0x30  float                    m30  (evidence: 0x00480010, 0x004890D0) // CONFLICT: multiple definitions at +0x30
     // +0x30  void*                    subObject  (evidence: 0x004DE330) // CONFLICT: multiple definitions at +0x30
     // +0x34  BYTE                     field_0x34  (evidence: 0x005F5350, 0x006FA990, 0x006FC200) // CONFLICT: multiple definitions at +0x34
