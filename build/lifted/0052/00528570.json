@@ -1,0 +1,22 @@
+{
+  "va": "0x00528570",
+  "size": 39,
+  "orig_symbol": "Interpolator::Const::vfunc_1",
+  "src_path": "src/Interpolator/Const.cpp",
+  "lifted_path": "lifted/Interpolator/Const.cpp",
+  "name": "Interpolator::Const::vfunc_1",
+  "class": "Interpolator::Const",
+  "signature": "uint32_t fn_00528570(void* unused0, void* obj, uint32_t index, uint32_t unused3)",
+  "summary": "Bounds-checked index into an object's table at +0x08 count; returns index + 4.",
+  "fields": [
+    {
+      "class": "Interpolator::Const",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:52:47Z"
+}
