@@ -189,3 +189,34 @@ bool fn_004FA1F0(void* self) {
     return (diff >> 2) != 0;
 }
 } // namespace lift_004FA1F0
+
+// [0x004FA230] VMCSModes::DefaultImplementation::vfunc_134 (58 bytes)
+namespace lift_004FA230 {
+extern void* ext_005B11F0(void* self);
+
+// @name VMCSModes::DefaultImplementation::vfunc_134
+// @class VMCSModes::DefaultImplementation
+// @summary Returns true when the container returned by vtable slot 9 of the object obtained via OglRenderer::vfunc_118 is non-empty.
+// @field VMCSModes::DefaultImplementation +0x08 void* field_0x08
+bool fn_004FA230(void* self) {
+    uint8_t* const base = reinterpret_cast<uint8_t*>(self);
+    void* const p = *reinterpret_cast<void**>(base + 0x08);
+    void* const q = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(p) + 0x14);
+    void* const obj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(q) + 0x34);
+
+    void* const r = ext_005B11F0(obj);
+
+    using Method0x24 = void* (*)(void*);
+    void* const vtbl = *reinterpret_cast<void**>(r);
+    Method0x24 method = reinterpret_cast<Method0x24>(*reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtbl) + 0x24));
+    uint8_t* const container = reinterpret_cast<uint8_t*>(method(r));
+
+    void* const begin = *reinterpret_cast<void**>(container + 0x04);
+    if (begin == nullptr) {
+        return false;
+    }
+    const intptr_t end = reinterpret_cast<intptr_t>(*reinterpret_cast<void**>(container + 0x08));
+    const int32_t count = static_cast<int32_t>(end - reinterpret_cast<intptr_t>(begin)) >> 2;
+    return count != 0;
+}
+} // namespace lift_004FA230

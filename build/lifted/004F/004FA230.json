@@ -1,0 +1,22 @@
+{
+  "va": "0x004FA230",
+  "size": 58,
+  "orig_symbol": "VMCSModes::DefaultImplementation::vfunc_134",
+  "src_path": "src/VMCSModes/DefaultImplementation.cpp",
+  "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp",
+  "name": "VMCSModes::DefaultImplementation::vfunc_134",
+  "class": "VMCSModes::DefaultImplementation",
+  "signature": "bool fn_004FA230(void* self)",
+  "summary": "Returns true when the container returned by vtable slot 9 of the object obtained via OglRenderer::vfunc_118 is non-empty.",
+  "fields": [
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:52:59Z"
+}
