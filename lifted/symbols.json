@@ -25271,6 +25271,12 @@
     "summary": "Returns a std::string (via hidden out-pointer) constructed from the C string at global mem_00A9ED98; this is unused.",
     "lifted_path": "lifted/NMData/BackGroundData.cpp"
   },
+  "0x0059DDA0": {
+    "name": "sub_0059DDA0",
+    "signature": "void __fastcall sub_0059DDA0(uint32_t self)",
+    "summary": "Validates state via virtual predicate +0x28 and sub_00410390, resetting string at +0x458 to 0x00B41B9C when needed",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x0059DE00": {
     "name": "sub_0059DE00",
     "signature": "void* fn_0059DE00(void* arg)",
