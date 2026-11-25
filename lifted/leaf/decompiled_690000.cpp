@@ -535,3 +535,27 @@ void __thiscall sub_006991A0(uint32_t ecx_this) {
     mem_write32(ecx_this, 0x0098FABCu);
 }
 } // namespace lift_006991A0
+
+// [0x00692B50]
+namespace lift_00692B50 {
+extern void ext_00661980(void* self);
+
+// @name ctor_00944E74
+// @summary Constructor that initializes base vtable via ext_00661980, sets vtables 0x00944E74 and 0x00944E44, and zeroes fields at +0x0c, +0x10, +0x14.
+// @field +0x00 uint32_t vtable
+// @field +0x04 uint32_t vtable_04
+// @field +0x0c uint32_t field_0x0c
+// @field +0x10 uint32_t field_0x10
+// @field +0x14 uint32_t field_0x14
+void* fn_00692B50(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    ext_00661980(obj);
+    *reinterpret_cast<uint32_t*>(obj + 0x04) = 0x00928EFCEu & 0xFFFFFFFFu;
+    *reinterpret_cast<uint32_t*>(obj + 0x00) = 0x00944E74u;
+    *reinterpret_cast<uint32_t*>(obj + 0x04) = 0x00944E44u;
+    *reinterpret_cast<uint32_t*>(obj + 0x0C) = 0u;
+    *reinterpret_cast<uint32_t*>(obj + 0x10) = 0u;
+    *reinterpret_cast<uint32_t*>(obj + 0x14) = 0u;
+    return obj;
+}
+} // namespace lift_00692B50
