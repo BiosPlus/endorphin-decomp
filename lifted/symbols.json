@@ -49936,6 +49936,13 @@
     "summary": "Reads the angle unit name string from a UnitsWithProperties pointer and copy-constructs it into dst, or throws on null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0068F2A0": {
+    "name": "ExprParser::ReadMethodType\u003cUnitsWithProperties\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cUnitsWithProperties, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0\u003e",
+    "signature": "void fn_0068F2A0(void* self)",
+    "summary": "Always throws: resolves the wrapped record index via GetRecordByIndex and throws a DerivedException with a fixed message.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00691FC0": {
     "name": "CompareStringLess",
     "signature": "extern \"C\" __cdecl BOOLEAN CompareStringLess(const UCHAR* s1, const UCHAR* s2)",

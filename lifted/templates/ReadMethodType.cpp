@@ -50623,3 +50623,39 @@ void fn_00471E80(void* arg) {
     ext_006A6DD2(exc_obj, static_cast<const void*>(mem_009DEC1C));
 }
 } // namespace lift_00471E80
+
+// [0x0068F2A0] ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0>::vfunc_5 (54 bytes)
+namespace lift_0068F2A0 {
+// Known callee 0x0068EE60: sub_0068EE60 (Auto-lifted identical-shape clone of 0x004CE810 (Unknown::GetRecordByIndex).)
+extern void* ext_0068EE60(uint32_t index);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* arg);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// @name ExprParser::ReadMethodType<UnitsWithProperties>::vfunc_5
+// @class ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0>
+// @summary Always throws: resolves the wrapped record index via GetRecordByIndex and throws a DerivedException with a fixed message.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x0C uint32_t field_0x0C
+void fn_0068F2A0(void* self) {
+    // self->ptr at +0x00 points to an object; if non-null, its +0x04 pointer
+    // leads to a record whose +0x0C dword is the index to resolve.
+    void* ptr = *reinterpret_cast<void**>(self);
+    if (ptr != nullptr) {
+        void* rec = lift_field<void*>(ptr, 0x04);
+        uint32_t index = lift_field<uint32_t>(rec, 0x0C);
+        void* resolved = ext_0068EE60(index);
+        ext_0046C4E0(resolved);
+    }
+
+    // Fallthrough (and the null-pointer path): build the DerivedException
+    // on the stack and throw it.
+    alignas(8) uint8_t exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+}
+} // namespace lift_0068F2A0
