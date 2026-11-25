@@ -19,6 +19,8 @@ struct SubObject_Fields {
     // +0x2C  void*                    field_0x2c  (evidence: 0x0058A9E0) // CONFLICT: multiple definitions at +0x2C
     // +0x30  uint32_t                 field_0x30  (evidence: 0x007BD5E0) // CONFLICT: multiple definitions at +0x30
     // +0x30  void*                    owner  (evidence: 0x005B68F0) // CONFLICT: multiple definitions at +0x30
+    // +0x34  uint32_t                 field_0x34  (evidence: 0x004519B0)
+    // +0x38  uint32_t                 field_0x38  (evidence: 0x004519B0)
     // +0x48  uint32_t                 field_0x48  (evidence: 0x007BD5E0)
     // +0x68  DWORD                    field_0x68  (evidence: 0x00687230, 0x00687250)
     // +0x6C  uint32_t                 field_0x6C  (evidence: 0x007BD5E0)

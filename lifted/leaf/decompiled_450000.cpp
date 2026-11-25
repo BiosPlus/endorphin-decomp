@@ -1223,3 +1223,72 @@ void fn_00458A00(void* self) {
     ext_006A6808(self);
 }
 } // namespace lift_00458A00
+
+// [0x004519B0] sub_004519B0 (107 bytes)
+namespace lift_004519B0 {
+// Known callee 0x00594000: returns the owner object pointer (guest address).
+extern int32_t ext_00594000();
+
+namespace {
+
+// Guest addresses are 32-bit values; convert them to host pointers.
+inline void* guest_ptr(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+// Original calls the CRT invalid-parameter handler (via a pointer loaded from
+// 0x00925134) on range violations; the default handler terminates the process.
+inline void invalid_parameter() {
+    std::abort();
+}
+
+} // namespace
+
+// @name dispatchSlotRangeHooks
+// @summary Walks the slot range of the owner's sub-object; for each non-null element, calls its vtable slot 0xF8, and if that returns 7 also calls vtable slot 0x164.
+// @field Owner +0x26C uint32_t field_0x26c
+// @field SubObject +0x34 uint32_t field_0x34
+// @field SubObject +0x38 uint32_t field_0x38
+void fn_004519B0() {
+    void* owner = guest_ptr(static_cast<uint32_t>(ext_00594000()));
+    void* subObject = guest_ptr(lift_field<uint32_t>(owner, 0x26C));
+
+    // Range: begin at +0x34, end at +0x38 (exclusive), elements are 4-byte slots.
+    uint32_t cursor = lift_field<uint32_t>(subObject, 0x34);
+    if (cursor > lift_field<uint32_t>(subObject, 0x38)) {
+        invalid_parameter();
+    }
+
+    for (;;) {
+        uint32_t end = lift_field<uint32_t>(subObject, 0x38);
+        if (lift_field<uint32_t>(subObject, 0x34) > end) {
+            invalid_parameter();
+        }
+        if (cursor == end) {
+            break;
+        }
+        if (cursor >= end) {
+            invalid_parameter();
+        }
+
+        uint32_t elem = lift_field<uint32_t>(guest_ptr(cursor), 0);
+        if (elem != 0) {
+            void* obj = guest_ptr(elem);
+            uint32_t vtable = lift_field<uint32_t>(obj, 0);
+
+            uint32_t slot0F8 = lift_field<uint32_t>(guest_ptr(vtable), 0xF8);
+            auto fn0F8 = reinterpret_cast<int32_t (*)(void*)>(guest_ptr(slot0F8));
+            if (fn0F8(obj) == 7) {
+                uint32_t slot164 = lift_field<uint32_t>(guest_ptr(vtable), 0x164);
+                auto fn164 = reinterpret_cast<void (*)(void*)>(guest_ptr(slot164));
+                fn164(obj);
+            }
+        }
+
+        if (cursor >= lift_field<uint32_t>(subObject, 0x38)) {
+            invalid_parameter();
+        }
+        cursor += 4;
+    }
+}
+} // namespace lift_004519B0
