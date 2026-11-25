@@ -1,0 +1,22 @@
+{
+  "va": "0x0046E2B0",
+  "size": 55,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_5 (ImageExporter::isEnabled)",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0\u003e",
+  "signature": "void fn_0046E2B0(void* self)",
+  "summary": "Virtual slot 5 for a ReadMethodType\u003cImageExporter\u003e wrapper: calls the wrapped object's isEnabled check, then always throws a DerivedException (the function never returns normally).",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (target object pointer, dereferenced",
+      "name": "first)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:56:19Z"
+}

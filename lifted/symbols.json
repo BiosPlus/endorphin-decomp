@@ -8080,6 +8080,13 @@
     "summary": "Reads a boolean from ImageExporter::isEnabled and formats it as a string, or throws on null object.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0046E2B0": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_5 (ImageExporter::isEnabled)",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_0046E2B0(void* self)",
+    "summary": "Virtual slot 5 for a ReadMethodType\u003cImageExporter\u003e wrapper: calls the wrapped object's isEnabled check, then always throws a DerivedException (the function never returns normally).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046E450": {
     "name": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)",
     "class": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, float, \u0026public: void __thiscall DoubleWithProperties::setValue(float)\u003e",

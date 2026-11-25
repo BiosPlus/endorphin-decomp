@@ -50659,3 +50659,38 @@ void fn_0068F2A0(void* self) {
     ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
 }
 } // namespace lift_0068F2A0
+
+// [0x0046E2B0] ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_0046E2B0 {
+// Known callee 0x0046C070: sub_0046C070 (4B). Called thiscall-style with the target object as `this`; returns a bool in al.
+extern uint8_t ext_0046C070(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Receives one DWORD argument (the bool result from ext_0046C070) pushed by the caller.
+extern void ext_0046C4E0(uint32_t arg);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Thiscall-style: the exception object address is passed as `this`.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Arguments: (exception object, ThrowInfo*).
+extern void ext_006A6DD2(void* object, void* throwInfo);
+// ThrowInfo descriptor for the DerivedException type, pushed as the second argument to _CxxThrowException.
+extern uint8_t mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_5 (ImageExporter::isEnabled)
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Virtual slot 5 for a ReadMethodType<ImageExporter> wrapper: calls the wrapped object's isEnabled check, then always throws a DerivedException (the function never returns normally).
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00 (target object pointer, dereferenced first)
+void fn_0046E2B0(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target != nullptr) {
+        uint8_t enabled = ext_0046C070(target);
+        // Falls into the throw path below only if the callee returns; per its summary it throws.
+        ext_0046C4E0(static_cast<uint32_t>(enabled));
+    }
+
+    // Construct the derived exception in a local buffer and throw it.
+    alignas(8) uint8_t exception_object[0x28] = {};
+    ext_0046C3C0(exception_object);
+    ext_006A6DD2(exception_object, mem_009DEC1C);
+}
+} // namespace lift_0046E2B0
