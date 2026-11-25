@@ -968,6 +968,7 @@ struct Unknown_Fields {
     // +0x5A0 DWORD                    field_0x5A0  (evidence: 0x007046E0)
     // +0x5A4 DWORD                    field_0x5A4  (evidence: 0x007046E0)
     // +0x5F0 uint32_t                 field_0x5F0  (evidence: 0x007C8490)
+    // +0x61C HWND                     hwnd  (evidence: 0x0044DA90)
     // +0x654 uint8_t                  field_0x654  (evidence: 0x00788D00)
     // +0x684 int32_t                  field_0x684  (evidence: 0x00405160, 0x0040BE90) // CONFLICT: multiple definitions at +0x684
     // +0x684 DWORD                    recordIndex  (evidence: 0x004053C0, 0x0040BE90) // CONFLICT: multiple definitions at +0x684

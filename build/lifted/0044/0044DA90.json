@@ -1,0 +1,22 @@
+{
+  "va": "0x0044DA90",
+  "size": 76,
+  "orig_symbol": "sub_0044DA90",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "NotifyWindowPair_0044DA90",
+  "class": "Unknown",
+  "signature": "LRESULT fn_0044DA90(void* self)",
+  "summary": "Sends message 0x188 to the window at this+0x61C; if that fails (-1), returns 0, otherwise sends 0x188 again and then 0x199 with the second result as LPARAM, returning the last result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x61C",
+      "type": "HWND",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:37:33Z"
+}

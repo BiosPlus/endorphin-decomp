@@ -4765,6 +4765,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004554C0 (MultiTrackView::Frame::vfunc_106).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0044DA90": {
+    "name": "NotifyWindowPair_0044DA90",
+    "class": "Unknown",
+    "signature": "LRESULT fn_0044DA90(void* self)",
+    "summary": "Sends message 0x188 to the window at this+0x61C; if that fails (-1), returns 0, otherwise sends 0x188 again and then 0x199 with the second result as LPARAM, returning the last result.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044F740": {
     "name": "fn_0044F740 (global object subsystem check)",
     "signature": "int32_t fn_0044F740(void)",

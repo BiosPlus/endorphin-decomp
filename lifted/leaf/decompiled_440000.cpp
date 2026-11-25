@@ -1826,3 +1826,30 @@ void fn_00444360(void* self, void** out) {
     *out = proc;
 }
 } // namespace lift_00444360
+
+// [0x0044DA90] sub_0044DA90 (76 bytes)
+namespace lift_0044DA90 {
+extern int mem_00925694;
+
+// @name NotifyWindowPair_0044DA90
+// @class Unknown
+// @summary Sends message 0x188 to the window at this+0x61C; if that fails (-1), returns 0, otherwise sends 0x188 again and then 0x199 with the second result as LPARAM, returning the last result.
+// @field Unknown +0x61C HWND hwnd
+LRESULT fn_0044DA90(void* self) {
+    using SendMessageFn = LRESULT(__stdcall*)(HWND, UINT, WPARAM, LPARAM);
+    auto SendMessageA = reinterpret_cast<SendMessageFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925694)));
+
+    HWND hwnd = lift_field<HWND>(self, 0x61C);
+    LRESULT first = SendMessageA(hwnd, 0x188, 0, 0);
+    if (first == -1) {
+        return 0;
+    }
+
+    hwnd = lift_field<HWND>(self, 0x61C);
+    LRESULT second = SendMessageA(hwnd, 0x188, 0, 0);
+
+    hwnd = lift_field<HWND>(self, 0x61C);
+    return SendMessageA(hwnd, 0x199, 0, second);
+}
+} // namespace lift_0044DA90
