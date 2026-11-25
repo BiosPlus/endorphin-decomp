@@ -1,0 +1,13 @@
+{
+  "va": "0x005273B0",
+  "size": 95,
+  "orig_symbol": "sub_005273B0",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "GetOnceInitString_005273B0",
+  "signature": "extern \"C\" int mem_00AED308;  // one-time initialization flag (bit 0) extern \"C\" int mem_00AED2EC;  // global string object storage void* fn_005273B0()",
+  "summary": "Returns the process-global string at 0x00AED2EC, initializing it once on first call and registering its teardown.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:30:39Z"
+}

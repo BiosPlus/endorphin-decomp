@@ -880,3 +880,26 @@ uint32_t fn_00520D30(uint32_t first, uint32_t last, uint32_t dst, uint32_t base)
     return base - static_cast<uint32_t>(count * 0x168);
 }
 } // namespace lift_00520D30
+
+// [0x005273B0]
+namespace lift_005273B0 {
+// @name GetOnceInitString_005273B0
+// @summary Returns the process-global string at 0x00AED2EC, initializing it once on first call and registering its teardown.
+
+// Auto-lifted clone of 0x00497860 (forwardMakeBoolString): builds the string into out_str.
+// The caller pushes a 32-bit constant as the second argument, so it is declared as uint32_t here.
+extern void* ext_0066AD10(void* out_str, uint32_t arg);
+// Registers a teardown callback; the single argument is the address 0x0091A130.
+extern void ext_006A6C87(uintptr_t fn);
+extern int mem_00AED308;  // one-time initialization flag (bit 0)
+extern int mem_00AED2EC;  // global string object storage
+
+void* fn_005273B0() {
+    if ((mem_00AED308 & 1) == 0) {
+        mem_00AED308 |= 1;
+        ext_0066AD10(reinterpret_cast<void*>(&mem_00AED2EC), 0x00A40D44u);
+        ext_006A6C87(static_cast<uintptr_t>(0x0091A130u));
+    }
+    return reinterpret_cast<void*>(&mem_00AED2EC);
+}
+} // namespace lift_005273B0

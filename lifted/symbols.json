@@ -20177,6 +20177,12 @@
     "summary": "Returns a copy of the string reported by the element at the given index (vtable slot 9).",
     "lifted_path": "lifted/classes/InitialVariableValues.cpp"
   },
+  "0x005273B0": {
+    "name": "GetOnceInitString_005273B0",
+    "signature": "extern \"C\" int mem_00AED308;  // one-time initialization flag (bit 0) extern \"C\" int mem_00AED2EC;  // global string object storage void* fn_005273B0()",
+    "summary": "Returns the process-global string at 0x00AED2EC, initializing it once on first call and registering its teardown.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00527AF0": {
     "name": "vectorBackPtr",
     "signature": "uint32_t __thiscall sub_00527AF0(void* self)",
