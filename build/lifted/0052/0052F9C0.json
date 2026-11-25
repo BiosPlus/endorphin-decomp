@@ -1,0 +1,34 @@
+{
+  "va": "0x0052F9C0",
+  "size": 91,
+  "orig_symbol": "sub_0052F9C0",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "Unknown::initDerived_0052F9C0",
+  "class": "Unknown",
+  "signature": "void* fn_0052F9C0(void* self)",
+  "summary": "Base-initializes self, installs two vtable pointers at +0x00/+0x14, initializes the embedded subobject at +0x3C, and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "void*",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:01:39Z"
+}

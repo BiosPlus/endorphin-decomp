@@ -21286,6 +21286,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0052F920 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0052F9C0": {
+    "name": "Unknown::initDerived_0052F9C0",
+    "class": "Unknown",
+    "signature": "void* fn_0052F9C0(void* self)",
+    "summary": "Base-initializes self, installs two vtable pointers at +0x00/+0x14, initializes the embedded subobject at +0x3C, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052FA20": {
     "name": "Primitives::Marker::vfunc_30",
     "class": "Primitives::Marker",

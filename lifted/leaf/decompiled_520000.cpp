@@ -1584,3 +1584,37 @@ void* fn_0052F690(void* self) {
     return self;
 }
 } // namespace lift_0052F690
+
+// [0x0052F9C0] sub_0052F9C0 (91 bytes)
+namespace lift_0052F9C0 {
+// Known callee 0x00538530: Unknown::InitWithVTableAndDefaults (Base-initializes this object, then sets vtable to 0x95501c, a float at +0x14 to 1.0, and flag bytes at +0x18 and +0x19 to 1; returns this.)
+extern void* ext_00538530(void* self);
+// Known callee 0x0053B240: Unknown::initAnimationDerived_0053B240 (Base-initializes self, installs three 32-bit vtable pointers (+0x00, +0x14, +0x18), zeroes +0x1C/+0x20/+0x34/+0x38, then calls Animation::vfunc_29 to reset state; returns self.)
+extern void* ext_0053B240(void* self);
+
+// @name Unknown::initDerived_0052F9C0
+// @class Unknown
+// @summary Base-initializes self, installs two vtable pointers at +0x00/+0x14, initializes the embedded subobject at +0x3C, and returns self.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x3C void* field_0x3c
+void* fn_0052F9C0(void* self) {
+    // Portable 32-bit vtable slots: write as uint32_t via memcpy (no host pointer punning).
+    auto store32 = [](void* base, std::size_t off, std::uint32_t value) {
+        std::memcpy(static_cast<unsigned char*>(base) + off, &value, sizeof(value));
+    };
+
+    ext_0053B240(self);
+
+    void* sub = static_cast<unsigned char*>(self) + 0x3C;
+
+    store32(self, 0x00, 0x009540A4u);
+    store32(self, 0x14, 0x0095409Cu);
+
+    ext_00538530(sub);
+
+    store32(sub, 0x00, 0x00953BF4u);
+
+    return self;
+}
+} // namespace lift_0052F9C0
