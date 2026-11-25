@@ -53728,6 +53728,12 @@
     "summary": "out[i] = in[i] * scalar for i in 0..2 (three doubles); cdecl, args: out, in, scalar",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C42E0": {
+    "name": "isMatrix3x3DetNonNegative",
+    "signature": "int32_t sub_006C42E0(uintptr_t arg0)",
+    "summary": "Computes the 3x3 determinant of a double matrix and returns 1 if \u003e= 0.0, else 0",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C59C0": {
     "name": "Unknown::GetChildByIndex",
     "class": "Unknown",
