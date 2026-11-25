@@ -26982,6 +26982,13 @@
     "summary": "Stores address of mem_0095F7EC into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
   },
+  "0x005B1160": {
+    "name": "Geometry::CuboidType::vfunc_1",
+    "class": "Geometry::CuboidType",
+    "signature": "void fn_005B1160(void* self)",
+    "summary": "Forwards its single stack argument as `this` to ext_00647C30 (ecx = [esp+4]), then returns, popping 4 bytes.",
+    "lifted_path": "lifted/Geometry/CuboidType.cpp"
+  },
   "0x005B11D0": {
     "name": "UnknownClass::getElementPtr",
     "class": "UnknownClass",

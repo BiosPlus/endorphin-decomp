@@ -135,3 +135,19 @@ void* __stdcall fn_005B4190(void* self, uint32_t key, uint32_t value) {
     return self;
 }
 } // namespace lift_005B4190
+
+// [0x005B1160] Geometry::CuboidType::vfunc_1 (12 bytes)
+namespace lift_005B1160 {
+// Known callee 0x00647C30: sub_00647C30 (Auto-lifted identical-shape clone of 0x00647BF0 (Unknown::ForwardFloat68ToSubobjectA4).)
+extern void ext_00647C30(void* self);
+
+// @name Geometry::CuboidType::vfunc_1
+// @class Geometry::CuboidType
+// @summary Forwards its single stack argument as `this` to ext_00647C30 (ecx = [esp+4]), then returns, popping 4 bytes.
+// @field Geometry::CuboidType +0x00 void* vtable (no direct field access in this function)
+void fn_005B1160(void* self) {
+    // mov ecx, [esp+4]; call 0x647C30; ret 4
+    // The stack argument is loaded into ecx and used as the `this` for the callee.
+    ext_00647C30(self);
+}
+} // namespace lift_005B1160

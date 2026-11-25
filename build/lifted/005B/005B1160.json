@@ -1,0 +1,22 @@
+{
+  "va": "0x005B1160",
+  "size": 12,
+  "orig_symbol": "Geometry::CuboidType::vfunc_1",
+  "src_path": "src/Geometry/CuboidType.cpp",
+  "lifted_path": "lifted/Geometry/CuboidType.cpp",
+  "name": "Geometry::CuboidType::vfunc_1",
+  "class": "Geometry::CuboidType",
+  "signature": "void fn_005B1160(void* self)",
+  "summary": "Forwards its single stack argument as `this` to ext_00647C30 (ecx = [esp+4]), then returns, popping 4 bytes.",
+  "fields": [
+    {
+      "class": "Geometry::CuboidType",
+      "offset": "+0x0",
+      "type": "void* vtable (no direct field access in this",
+      "name": "function)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:20:40Z"
+}
