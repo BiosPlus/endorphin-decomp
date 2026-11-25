@@ -19539,6 +19539,12 @@
     "summary": "Copies a byte range [first, last) to dest using memmove if last \u003e first, returning dest + (last - first).",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x00536230": {
+    "name": "deleteRangeChecked",
+    "signature": "void fn_00536230(uint8_t* self, const void* owner, uint32_t* first, uint32_t* last)",
+    "summary": "Deletes each non-null element of a 4-byte-slot range [first, last), validating the owner and its bound at every step.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x00536530": {
     "name": "sub_00536530",
     "signature": "extern \"C\" void fn_00536530(void)",

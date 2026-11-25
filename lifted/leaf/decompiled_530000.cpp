@@ -1170,3 +1170,50 @@ void* __thiscall fn_00539660(void* self) {
     return self;
 }
 } // namespace lift_00539660
+
+// [0x00536230] sub_00536230 (90 bytes)
+namespace lift_00536230 {
+extern void (*mem_00925134)(void);
+
+// Base for the polymorphic elements; `delete` dispatches through the virtual
+// (scalar deleting) destructor, matching the original vtable[0](1) call.
+struct LiftDeletable {
+    virtual ~LiftDeletable() = default;
+};
+
+// @name deleteRangeChecked
+// @summary Deletes each non-null element of a 4-byte-slot range [first, last), validating the owner and its bound at every step.
+// @field Container +0x08 uint32_t field_0x08
+void fn_00536230(uint8_t* self, const void* owner, uint32_t* first, uint32_t* last) {
+    for (;;) {
+        if (self == nullptr || self != owner) {
+            mem_00925134();
+        }
+        if (first == last) {
+            return;
+        }
+
+        uint32_t* cur = first;
+
+        if (self == nullptr) {
+            mem_00925134();
+        }
+        if (reinterpret_cast<uintptr_t>(first) >= lift_field<uint32_t>(self, 0x08)) {
+            mem_00925134();
+        }
+        ++first;
+
+        if (self == nullptr) {
+            mem_00925134();
+        }
+        if (reinterpret_cast<uintptr_t>(cur) >= lift_field<uint32_t>(self, 0x08)) {
+            mem_00925134();
+        }
+
+        const uint32_t element = *cur;
+        if (element != 0) {
+            delete reinterpret_cast<LiftDeletable*>(static_cast<uintptr_t>(element));
+        }
+    }
+}
+} // namespace lift_00536230

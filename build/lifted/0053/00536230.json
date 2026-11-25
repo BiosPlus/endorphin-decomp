@@ -1,0 +1,21 @@
+{
+  "va": "0x00536230",
+  "size": 90,
+  "orig_symbol": "sub_00536230",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "deleteRangeChecked",
+  "signature": "void fn_00536230(uint8_t* self, const void* owner, uint32_t* first, uint32_t* last)",
+  "summary": "Deletes each non-null element of a 4-byte-slot range [first, last), validating the owner and its bound at every step.",
+  "fields": [
+    {
+      "class": "Container",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:19:42Z"
+}
