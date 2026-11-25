@@ -447,3 +447,32 @@ void __cdecl sub_007F9D50(int32_t count, float* data) {
     }
 }
 } // namespace lift_007F9D50
+
+// [0x007FC3D0] sub_007FC3D0 (111 bytes)
+namespace lift_007FC3D0 {
+// @name vec3QuatCrossHalf_007FC3D0
+// @summary Computes four half-scaled components from a 4-float input (ecx) and a 3-float input (eax), writing 4 floats to out (edx).
+// Register-argument layout (no class context):
+//   ecx -> float a[4]  (a0..a3 at +0x00..+0x0C)
+//   eax -> float b[3]  (b0..b2 at +0x00..+0x08)
+//   edx -> float out[4]
+
+extern const double mem_00993828;  // .rdata double 0.5
+
+void __cdecl fn_007FC3D0(const float* a, const float* b, float* out) {
+    const float half = static_cast<float>(mem_00993828);
+
+    const float a0 = a[0];
+    const float a1 = a[1];
+    const float a2 = a[2];
+    const float a3 = a[3];
+    const float b0 = b[0];
+    const float b1 = b[1];
+    const float b2 = b[2];
+
+    out[0] = ((-a1 * b0) - a2 * b1 - a3 * b2) * half;
+    out[1] = ((a0 * b0 + a3 * b1) - a2 * b2) * half;
+    out[2] = ((a0 * b1 - a3 * b0) + a1 * b2) * half;
+    out[3] = ((a2 * b0 - a1 * b1) + a0 * b2) * half;
+}
+} // namespace lift_007FC3D0

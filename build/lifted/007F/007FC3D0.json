@@ -1,0 +1,13 @@
+{
+  "va": "0x007FC3D0",
+  "size": 111,
+  "orig_symbol": "sub_007FC3D0",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "vec3QuatCrossHalf_007FC3D0",
+  "signature": "void __cdecl fn_007FC3D0(const float* a, const float* b, float* out)",
+  "summary": "Computes four half-scaled components from a 4-float input (ecx) and a 3-float input (eax), writing 4 floats to out (edx).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:05:19Z"
+}
