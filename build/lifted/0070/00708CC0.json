@@ -1,0 +1,28 @@
+{
+  "va": "0x00708CC0",
+  "size": 80,
+  "orig_symbol": "sub_00708CC0",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::FindFirstMatchAndSelect",
+  "class": "Unknown",
+  "signature": "void fn_00708CC0(void* self, uint32_t target)",
+  "summary": "Scans the 32-bit item array at +0xD0 (count at +0xC0) for the first entry equal to target; if the entry passes the sub-object check, invokes findAndSelectItem(target).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC0",
+      "type": "int32_t",
+      "name": "field_0xC0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD0",
+      "type": "uint32_t*",
+      "name": "field_0xD0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:50:10Z"
+}

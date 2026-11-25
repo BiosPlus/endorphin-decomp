@@ -53679,6 +53679,13 @@
     "summary": "Searches an array of 32-bit items at +0xD0 (count at +0xC0) for a matching value and invokes vtable +0xE8 with its index.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00708CC0": {
+    "name": "Unknown::FindFirstMatchAndSelect",
+    "class": "Unknown",
+    "signature": "void fn_00708CC0(void* self, uint32_t target)",
+    "summary": "Scans the 32-bit item array at +0xD0 (count at +0xC0) for the first entry equal to target; if the entry passes the sub-object check, invokes findAndSelectItem(target).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00708D70": {
     "name": "Unknown::CountSubObjectsMatching0x40",
     "class": "Unknown",

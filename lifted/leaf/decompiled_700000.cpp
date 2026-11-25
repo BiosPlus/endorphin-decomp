@@ -1583,3 +1583,32 @@ void fn_00707FB0(void* self) {
     ext_006D2250(reinterpret_cast<uint8_t*>(self) + 0xA4);
 }
 } // namespace lift_00707FB0
+
+// [0x00708CC0]
+namespace lift_00708CC0 {
+// @name Unknown::FindFirstMatchAndSelect
+// @class Unknown
+// @summary Scans the 32-bit item array at +0xD0 (count at +0xC0) for the first entry equal to target; if the entry passes the sub-object check, invokes findAndSelectItem(target).
+// @field Unknown +0xC0 int32_t field_0xC0
+// @field Unknown +0xD0 uint32_t* field_0xD0
+
+uint32_t ext_00708C10(void* self, uint32_t target);
+uint8_t ext_00711A80(void* self);
+
+void fn_00708CC0(void* self, uint32_t target) {
+    auto* base = static_cast<unsigned char*>(self);
+    const int32_t count = *reinterpret_cast<int32_t*>(base + 0xC0);
+    if (count <= 0) {
+        return;
+    }
+    auto* items = *reinterpret_cast<uint32_t**>(base + 0xD0);
+    for (int32_t i = 0; i < count; ++i) {
+        if (items[i] == target) {
+            if (ext_00711A80(reinterpret_cast<void*>(static_cast<uintptr_t>(items[i]))) != 0) {
+                ext_00708C10(self, target);
+            }
+            return;
+        }
+    }
+}
+} // namespace lift_00708CC0
