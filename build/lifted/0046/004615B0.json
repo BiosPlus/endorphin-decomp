@@ -1,0 +1,39 @@
+{
+  "va": "0x004615B0",
+  "size": 114,
+  "orig_symbol": "sub_004615B0",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "sub_004615B0_dtor",
+  "signature": "extern \"C\" void __fastcall fn_004615B0(void* self)",
+  "summary": "Destructor: restores vtables, destroys member subobjects at +0x11c and +0x114, and calls base destructor.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vftable_0x00"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x74",
+      "type": "void*",
+      "name": "vftable_0x74"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x114",
+      "type": "void*",
+      "name": "field_0x114_vftable"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x11C",
+      "type": "uint8_t",
+      "name": "field_0x11c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:38:56Z"
+}

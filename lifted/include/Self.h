@@ -12,6 +12,7 @@ struct Self_Fields {
     // +0x0   int32_t                  field_0x00  (evidence: 0x00492550) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 field_0x00  (evidence: 0x0046C120) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x006E6D70, 0x006E7000, 0x006E8440, 0x006E86F0, 0x0072C0B0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    vftable_0x00  (evidence: 0x004615B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable  (evidence: 0x005947B0, 0x005963F0, 0x0059DDA0, 0x006B0CD0, 0x006BA780) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t*                vtable  (evidence: 0x00414260, 0x006F7970, 0x006FC200) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x006118E0) // CONFLICT: multiple definitions at +0x0
@@ -49,6 +50,7 @@ struct Self_Fields {
     // +0x4C  uint8_t                  field_0x4c  (evidence: 0x006DE460)
     // +0x54  uint8_t                  field_0x54  (evidence: 0x00622B40, 0x00627510)
     // +0x64  uint32_t                 member_0x64_vtable  (evidence: 0x006B0CD0, 0x006BA780)
+    // +0x74  void*                    vftable_0x74  (evidence: 0x004615B0)
     // +0x88  void*                    childObject  (evidence: 0x006B2F70, 0x006B8190, 0x006BA780)
     // +0xA8  DWORD                    field_0xA8  (evidence: 0x006B2F70, 0x006B8190, 0x006BA780)
     // +0xBC  int32_t                  field_0xBC  (evidence: 0x0053F960)
@@ -64,8 +66,10 @@ struct Self_Fields {
     // +0xFC  int32_t                  field_0xfc  (evidence: 0x00533F50)
     // +0x10C uint32_t                 field_0x10c  (evidence: 0x007025C0)
     // +0x110 uint32_t                 field_0x110  (evidence: 0x007025C0)
-    // +0x114 void*                    field_114  (evidence: 0x00630580)
-    // +0x11C int32_t                  field_0x11c  (evidence: 0x004329A0)
+    // +0x114 void*                    field_0x114_vftable  (evidence: 0x004615B0) // CONFLICT: multiple definitions at +0x114
+    // +0x114 void*                    field_114  (evidence: 0x00630580) // CONFLICT: multiple definitions at +0x114
+    // +0x11C int32_t                  field_0x11c  (evidence: 0x004329A0) // CONFLICT: multiple definitions at +0x11C
+    // +0x11C uint8_t                  field_0x11c  (evidence: 0x004615B0) // CONFLICT: multiple definitions at +0x11C
     // +0x150 uint32_t                 field_0x150  (evidence: 0x00687230, 0x00687280)
     // +0x158 BYTE field_0x158 (address taken only, passed to ext_00661A90; not dereferenced here)  (evidence: 0x005947B0, 0x005963F0, 0x0059DC60)
     // +0x15C DWORD                    field_0x15C  (evidence: 0x007B1E20)

@@ -1846,3 +1846,30 @@ void* fn_0046C560(void* self) {
     return self;
 }
 } // namespace lift_0046C560
+
+// [0x004615B0]
+namespace lift_004615B0 {
+extern uint8_t mem_0092A23C[];
+extern uint8_t mem_00938734[];
+extern uint8_t mem_00938764[];
+
+extern void __fastcall ext_0040EF90(void* self);
+extern void ext_006A5FF2(void);
+extern void ext_006A624A(void);
+
+// @name sub_004615B0_dtor
+// @summary Destructor: restores vtables, destroys member subobjects at +0x11c and +0x114, and calls base destructor.
+// @field Self +0x00 void* vftable_0x00
+// @field Self +0x74 void* vftable_0x74
+// @field Self +0x114 void* field_0x114_vftable
+// @field Self +0x11c uint8_t field_0x11c
+extern void __fastcall fn_004615B0(void* self) {
+    uint8_t* p = static_cast<uint8_t*>(self);
+    *reinterpret_cast<void**>(p + 0x00) = mem_00938764;
+    *reinterpret_cast<void**>(p + 0x74) = mem_00938734;
+    ext_0040EF90(p + 0x11c);
+    *reinterpret_cast<void**>(p + 0x114) = mem_0092A23C;
+    ext_006A5FF2();
+    ext_006A624A();
+}
+} // namespace lift_004615B0
