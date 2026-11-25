@@ -32366,6 +32366,13 @@
     "summary": "If flag bit 0 is clear and the one-shot byte at +0x11 is clear, appends '\\n' to the std::string referenced at +0x08 and sets +0x11.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00640A10": {
+    "name": "AdvXMLParser::EntityRef::vfunc_5",
+    "class": "AdvXMLParser::EntityRef",
+    "signature": "void fn_00640A10(void* self, void* ctx)",
+    "summary": "Appends the entity reference \"\u0026\u003cname\u003e;\" to the std::string pointed to by the argument's +0x08 slot and clears the argument's +0x11 flag byte.",
+    "lifted_path": "lifted/AdvXMLParser/EntityRef.cpp"
+  },
   "0x00640CB0": {
     "name": "Unknown::IncrementAndFlushOnce",
     "class": "Unknown",
