@@ -1627,3 +1627,50 @@ uint32_t __fastcall sub_004103F0(uint32_t self) {
     return 0;
 }
 } // namespace lift_004103F0
+
+// [0x00412E60]
+namespace lift_00412E60 {
+// @name getVectorElementAt
+// @summary Returns the 32-bit element at the given index from a vector-like container, or 0 if out of bounds.
+// @field Container +0x08 uint32_t* begin
+// @field Container +0x0c uint32_t* end
+
+
+extern uint32_t mem_00925134;
+
+uint32_t __thiscall sub_00412E60(void* self, int32_t index) {
+    if (index < 0) {
+        return 0;
+    }
+
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uint32_t begin = *reinterpret_cast<uint32_t*>(base + 0x8);
+    int32_t count = 0;
+    if (begin != 0) {
+        uint32_t end = *reinterpret_cast<uint32_t*>(base + 0xc);
+        count = static_cast<int32_t>(end - begin) >> 2;
+    }
+
+    if (index > count - 1) {
+        return 0;
+    }
+
+    using InvalidParamFn = void(__cdecl*)();
+    InvalidParamFn invalid_param = reinterpret_cast<InvalidParamFn>(static_cast<uintptr_t>(mem_00925134));
+
+    uint32_t ptr = begin;
+    if (ptr > *reinterpret_cast<uint32_t*>(base + 0xc)) {
+        invalid_param();
+    }
+
+    ptr += static_cast<uint32_t>(index) * 4;
+    if (ptr > *reinterpret_cast<uint32_t*>(base + 0xc) || ptr < *reinterpret_cast<uint32_t*>(base + 0x8)) {
+        invalid_param();
+    }
+    if (ptr >= *reinterpret_cast<uint32_t*>(base + 0xc)) {
+        invalid_param();
+    }
+
+    return *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(ptr));
+}
+} // namespace lift_00412E60

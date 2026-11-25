@@ -1,0 +1,27 @@
+{
+  "va": "0x00412E60",
+  "size": 93,
+  "orig_symbol": "sub_00412E60",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "getVectorElementAt",
+  "signature": "uint32_t __thiscall sub_00412E60(void* self, int32_t index)",
+  "summary": "Returns the 32-bit element at the given index from a vector-like container, or 0 if out of bounds.",
+  "fields": [
+    {
+      "class": "Container",
+      "offset": "+0x8",
+      "type": "uint32_t*",
+      "name": "begin"
+    },
+    {
+      "class": "Container",
+      "offset": "+0xC",
+      "type": "uint32_t*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:17:08Z"
+}
