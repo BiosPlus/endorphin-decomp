@@ -799,3 +799,15 @@ void fn_0064C900(void* dst, uint32_t count, const void* src) {
     }
 }
 } // namespace lift_0064C900
+
+// [0x0064CB20] sub_0064CB20 (54 bytes)
+namespace lift_0064CB20 {
+extern void __cdecl ext_0064C900(void* dst, uint32_t count, const void* src);
+
+// @name fillRecordsAndGetEnd_0064CB20
+// @summary Fills `count` consecutive 24-byte slots at dst from src and returns the one-past-end pointer (dst + 24 * count).
+void* __stdcall fn_0064CB20(void* dst, uint32_t count, const void* src) {
+    ext_0064C900(dst, count, src);
+    return static_cast<char*>(dst) + static_cast<size_t>(count) * 24u;
+}
+} // namespace lift_0064CB20

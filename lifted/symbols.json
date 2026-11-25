@@ -34725,6 +34725,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0064CB20": {
+    "name": "fillRecordsAndGetEnd_0064CB20",
+    "signature": "void* __stdcall fn_0064CB20(void* dst, uint32_t count, const void* src)",
+    "summary": "Fills `count` consecutive 24-byte slots at dst from src and returns the one-past-end pointer (dst + 24 * count).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x0064CB60": {
     "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundLocalAxis(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundLocalAxis(float), 0}\u003e",

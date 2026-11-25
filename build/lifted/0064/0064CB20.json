@@ -1,0 +1,13 @@
+{
+  "va": "0x0064CB20",
+  "size": 54,
+  "orig_symbol": "sub_0064CB20",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "fillRecordsAndGetEnd_0064CB20",
+  "signature": "void* __stdcall fn_0064CB20(void* dst, uint32_t count, const void* src)",
+  "summary": "Fills `count` consecutive 24-byte slots at dst from src and returns the one-past-end pointer (dst + 24 * count).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:19:18Z"
+}
