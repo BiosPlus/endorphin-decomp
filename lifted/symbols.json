@@ -40134,6 +40134,13 @@
     "summary": "Copies a range of 24-byte elements backward from [first, last) to [..., result).",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x00649840": {
+    "name": "Unknown::ResetVtablesAndRelease",
+    "class": "Unknown",
+    "signature": "void fn_00649840(void* self)",
+    "summary": "Installs three vtable pointers into the object, calls vfunc_50 on it via ext_00648F90, then runs ext_00645EB0 to release the handle at +0x10 and forward to the subobject.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00649B40": {
     "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisX(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisX(float), 0}\u003e",
