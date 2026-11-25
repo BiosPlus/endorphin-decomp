@@ -581,3 +581,16 @@ extern int32_t __cdecl fn_0080EC60(uint32_t base, uint32_t cursor) {
     return -1;
 }
 } // namespace lift_0080EC60
+
+// [0x0080B540]
+namespace lift_0080B540 {
+// @name LocalBlockResizeThunk
+// @summary Forwards handle and size arguments to LocalBlockResize.
+
+
+extern uint32_t __cdecl ext_008596F0(uint32_t handle, uint32_t size);
+
+uint32_t __cdecl fn_0080B540(uint32_t handle, uint32_t size) {
+    return ext_008596F0(handle, size);
+}
+} // namespace lift_0080B540
