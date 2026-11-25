@@ -16810,6 +16810,13 @@
     "summary": "Destroys each 0x28-byte element in the vector at this+0x4..this+0x8 via its vtable slot 0 (deleting flag 0), frees the storage, and clears begin/end/capacity.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00506030": {
+    "name": "Interpreter::Interpreter",
+    "class": "Interpreter",
+    "signature": "void* fn_00506030(void* self)",
+    "summary": "Constructor: runs the base-class initializer, sets the Interpreter vtable, default-constructs the std::string at +0x04 and zeroes the five dwords at +0x24..+0x34; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00506160": {
     "name": "Chromosome::vfunc_0",
     "class": "Chromosome",

@@ -956,3 +956,33 @@ void* __thiscall sub_00509EB0(void* self, const void* other) {
     return self;
 }
 } // namespace lift_00509EB0
+
+// [0x00506030] sub_00506030 (90 bytes)
+namespace lift_00506030 {
+// Known callee 0x00661980: setVtable_0093BFB4 (Stores the vtable address 0x0093BFB4 into the first dword of the object pointed to by ECX (this).)
+extern void ext_00661980(void* self);
+// IAT slot for the MSVCP80 std::string default constructor (thiscall, this in ECX).
+extern void (*mem_00924FE8)(void* self);
+
+// @name Interpreter::Interpreter
+// @class Interpreter
+// @summary Constructor: runs the base-class initializer, sets the Interpreter vtable, default-constructs the std::string at +0x04 and zeroes the five dwords at +0x24..+0x34; returns this.
+// @field Interpreter +0x00 uint32_t vtable
+// @field Interpreter +0x04 std::string field_0x04
+// @field Interpreter +0x24 uint32_t field_0x24
+// @field Interpreter +0x28 uint32_t field_0x28
+// @field Interpreter +0x2c uint32_t field_0x2c
+// @field Interpreter +0x30 uint32_t field_0x30
+// @field Interpreter +0x34 uint32_t field_0x34
+void* fn_00506030(void* self) {
+    ext_00661980(self);
+    lift_field<uint32_t>(self, 0x00) = 0x0094F564u;
+    mem_00924FE8(static_cast<uint8_t*>(self) + 0x04);
+    lift_field<uint32_t>(self, 0x24) = 0;
+    lift_field<uint32_t>(self, 0x28) = 0;
+    lift_field<uint32_t>(self, 0x2C) = 0;
+    lift_field<uint32_t>(self, 0x30) = 0;
+    lift_field<uint32_t>(self, 0x34) = 0;
+    return self;
+}
+} // namespace lift_00506030

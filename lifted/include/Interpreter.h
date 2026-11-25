@@ -10,6 +10,12 @@
 // Recovered field layout for Interpreter:
 namespace lifted_layout {
 struct Interpreter_Fields {
-    // +0x4   std::string              field_0x04  (evidence: 0x0046E570, 0x004983A0, 0x004986A0, 0x004B7D80, 0x004B8920, 0x004C0800, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x00512A00, 0x005B2D00, 0x005B3680, 0x005D6550, 0x00604D80, 0x0066F700, 0x006749C0)
+    // +0x0   uint32_t                 vtable  (evidence: 0x00506030)
+    // +0x4   std::string              field_0x04  (evidence: 0x0046E570, 0x004983A0, 0x004986A0, 0x004B7D80, 0x004B8920, 0x004C0800, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x00506030, 0x00512A00, 0x005B2D00, 0x005B3680, 0x005D6550, 0x00604D80, 0x0066F700, 0x006749C0)
+    // +0x24  uint32_t                 field_0x24  (evidence: 0x00506030)
+    // +0x28  uint32_t                 field_0x28  (evidence: 0x00506030)
+    // +0x2C  uint32_t                 field_0x2c  (evidence: 0x00506030)
+    // +0x30  uint32_t                 field_0x30  (evidence: 0x00506030)
+    // +0x34  uint32_t                 field_0x34  (evidence: 0x00506030)
 };
 } // namespace lifted_layout
