@@ -3858,6 +3858,12 @@
     "summary": "Registers the window to receive a WM_MOUSELEAVE notification via TrackMouseEvent.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043CA30": {
+    "name": "sub_0043CA30",
+    "signature": "void __thiscall sub_0043CA30(void* self)",
+    "summary": "Compute range differences, midpoints, and rate from double and int32 bounds",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043CAA0": {
     "name": "sub_0043CAA0",
     "signature": "extern \"C\" void __fastcall fn_0043CAA0(void* self)",
