@@ -13599,6 +13599,13 @@
     "summary": "Performs a checked binary search for a std::string in a sorted range.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004BBBF0": {
+    "name": "Properties::TerminalParentType\u003cNMData::MaterialInteraction\u003e::vfunc_0",
+    "class": "Properties::TerminalParentType\u003cNMData::MaterialInteraction\u003e",
+    "signature": "DWORD* fn_004BBBF0(DWORD* dst, DWORD selector, DWORD /*arg3*/)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B6530 (Properties::TerminalParentType\u003cNMData::GraphEntryData\u003e::vfunc_0).",
+    "lifted_path": "lifted/templates/TerminalParentType.cpp"
+  },
   "0x004BBF50": {
     "name": "sub_004BBF50",
     "signature": "extern \"C\" void __fastcall fn_004BBF50(void* self)",
@@ -14109,6 +14116,13 @@
     "signature": "void* __thiscall fn_004C5350(void* self, float* out_vec)",
     "summary": "Computes a 4D vector with x=y=z from a subobject's float property and w=0.0f.",
     "lifted_path": "lifted/NMData/ForceEventData.cpp"
+  },
+  "0x004C5560": {
+    "name": "Properties::TerminalParentType\u003cMatrixWithProperties\u003e::vfunc_0",
+    "class": "Properties::TerminalParentType\u003cMatrixWithProperties\u003e",
+    "signature": "DWORD* fn_004C5560(DWORD* dst, DWORD selector, DWORD /*arg3*/)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B6530 (Properties::TerminalParentType\u003cNMData::GraphEntryData\u003e::vfunc_0).",
+    "lifted_path": "lifted/templates/TerminalParentType.cpp"
   },
   "0x004C5590": {
     "name": "ExprParser::ReadMethodType\u003cNMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0\u003e::vfunc_1",

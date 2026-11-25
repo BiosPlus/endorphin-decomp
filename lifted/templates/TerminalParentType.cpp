@@ -30,3 +30,41 @@ void* fn_00511930(void* self, void** ptr_to_obj, DWORD arg2) {
     return self;
 }
 } // namespace lift_00511930
+
+// [0x004BBBF0] Properties::TerminalParentType<NMData::MaterialInteraction>::vfunc_0 (38 bytes)
+namespace lift_004BBBF0 {
+// @name Properties::TerminalParentType<NMData::MaterialInteraction>::vfunc_0
+// @class Properties::TerminalParentType<NMData::MaterialInteraction>
+// @summary Auto-lifted identical-shape clone of 0x004B6530 (Properties::TerminalParentType<NMData::GraphEntryData>::vfunc_0).
+namespace lift_004B6530 {
+// Known callee 0x004B64C0: ConstructBySelector_004B64C0 (Dispatches on selector (arg2 - 0x386): 0/1/2 call the matching StoreValueAndSingleton-style initializer; any other value calls sub_00671F30 on dst. Returns dst.)
+extern DWORD* ext_004BA950(DWORD* dst, DWORD selector);
+
+// @name Properties::TerminalParentType<NMData::GraphEntryData>::vfunc_0
+// @class Properties::TerminalParentType<NMData::GraphEntryData>
+// @summary Forwards (dst, selector) to ConstructBySelector_004B64C0 and returns dst; the third stdcall argument is ignored.
+DWORD* fn_004BBBF0(DWORD* dst, DWORD selector, DWORD /*arg3*/) {
+    ext_004BA950(dst, selector);
+    return dst;
+}
+} // namespace lift_004B6530
+} // namespace lift_004BBBF0
+
+// [0x004C5560] Properties::TerminalParentType<MatrixWithProperties>::vfunc_0 (38 bytes)
+namespace lift_004C5560 {
+// @name Properties::TerminalParentType<MatrixWithProperties>::vfunc_0
+// @class Properties::TerminalParentType<MatrixWithProperties>
+// @summary Auto-lifted identical-shape clone of 0x004B6530 (Properties::TerminalParentType<NMData::GraphEntryData>::vfunc_0).
+namespace lift_004B6530 {
+// Known callee 0x004B64C0: ConstructBySelector_004B64C0 (Dispatches on selector (arg2 - 0x386): 0/1/2 call the matching StoreValueAndSingleton-style initializer; any other value calls sub_00671F30 on dst. Returns dst.)
+extern DWORD* ext_004F9610(DWORD* dst, DWORD selector);
+
+// @name Properties::TerminalParentType<NMData::GraphEntryData>::vfunc_0
+// @class Properties::TerminalParentType<NMData::GraphEntryData>
+// @summary Forwards (dst, selector) to ConstructBySelector_004B64C0 and returns dst; the third stdcall argument is ignored.
+DWORD* fn_004C5560(DWORD* dst, DWORD selector, DWORD /*arg3*/) {
+    ext_004F9610(dst, selector);
+    return dst;
+}
+} // namespace lift_004B6530
+} // namespace lift_004C5560
