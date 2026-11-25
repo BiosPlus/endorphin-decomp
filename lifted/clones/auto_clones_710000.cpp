@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/clones/auto_clones_710000.cpp
 #include "lift_compat.h"
+#include <cstdint>
+#include <cstring>
 
-// [0x00713730] sub_00713730 (10 bytes)
+#include <cstring>
 namespace lift_00713730 {
 // @name sub_00713730
 // @summary Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).
@@ -1075,3 +1077,38 @@ void fn_00718330(void* self) {
     mem_00B5FCFC = src[1];
 }
 } // namespace lift_00718330
+
+// [0x00710620] sub_00710620 (74 bytes)
+namespace lift_00710620 {
+extern int mem_00925284;
+extern int mem_00B5F0A8;
+extern int mem_00B5F0AC;
+extern int mem_00B5F0B0;
+extern int mem_00B5F0B4;
+extern int mem_00B5F0B8;
+extern int mem_00B5F0BC;
+extern int mem_00B5F0C0;
+extern int mem_00B5F0C4;
+
+// @name CopyHugeValueToGlobals_00710620
+// @summary Reads the 8-byte value pointed to by mem_00925284 (_HUGE) and copies it into four consecutive 8-byte global slots.
+void fn_00710620(void* self) {
+    (void)self;
+    // mem_00925284 holds the address of the source 8-byte value (_HUGE).
+    const auto src_addr = static_cast<std::uintptr_t>(static_cast<std::uint32_t>(mem_00925284));
+    std::uint32_t src[2];
+    std::memcpy(src, reinterpret_cast<const void*>(src_addr), sizeof(src));
+
+    // Four 8-byte copies into the globals at 0xB5F0A8, 0xB5F0B0, 0xB5F0B8, 0xB5F0C0.
+    std::uint32_t* dst[4] = {
+        reinterpret_cast<std::uint32_t*>(&mem_00B5F0A8),
+        reinterpret_cast<std::uint32_t*>(&mem_00B5F0B0),
+        reinterpret_cast<std::uint32_t*>(&mem_00B5F0B8),
+        reinterpret_cast<std::uint32_t*>(&mem_00B5F0C0),
+    };
+    for (std::uint32_t* d : dst) {
+        d[0] = src[0];
+        d[1] = src[1];
+    }
+}
+} // namespace lift_00710620

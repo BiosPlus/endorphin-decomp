@@ -53429,6 +53429,12 @@
     "summary": "Load the double pointed to by mem_00925284, negate it, and store the result to three globals.",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00710620": {
+    "name": "CopyHugeValueToGlobals_00710620",
+    "signature": "void fn_00710620(void* self)",
+    "summary": "Reads the 8-byte value pointed to by mem_00925284 (_HUGE) and copies it into four consecutive 8-byte global slots.",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00710C00": {
     "name": "initHugeVec3",
     "signature": "void sub_00710C00()",
