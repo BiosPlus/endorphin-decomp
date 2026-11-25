@@ -1330,18 +1330,6 @@ uint32_t fn_007C8880(void* self) {
 } // namespace lift_007CC9F0
 } // namespace lift_007C8880
 
-// [0x007C6C20]
-namespace lift_007C6C20 {
-// @name fn_007C6C20
-// @summary Sets bit 0x8 in the dword at +0x0C of the object pointed to by the first argument.
-// @field  +0x0C uint32_t field_0x0C
-
-void fn_007C6C20(void* self) {
-    auto* flags = reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t>(self) + 0x0C);
-    *flags |= 0x8u;
-}
-} // namespace lift_007C6C20
-
 // [0x007C6C10]
 namespace lift_007C6C10 {
 // @name SetFlag0x4
@@ -1366,3 +1354,14 @@ WORD __cdecl sub_007C70E0(const void* obj) {
     return lift_field<const WORD>(obj, 0x24);
 }
 } // namespace lift_007C70E0
+
+// [0x007C6C20]
+namespace lift_007C6C20 {
+// @name fn_007C6C20
+// @summary Sets bit 0x08 in the dword at +0x0C of the object passed as the first argument.
+// @field UnknownObject +0x0C uint32_t field_0x0C
+
+void fn_007C6C20(void* self) {
+    lift_field<uint32_t>(self, 0x0C) |= 0x8u;
+}
+} // namespace lift_007C6C20

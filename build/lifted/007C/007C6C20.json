@@ -6,8 +6,16 @@
   "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
   "name": "fn_007C6C20",
   "signature": "void fn_007C6C20(void* self)",
-  "summary": "Sets bit 0x8 in the dword at +0x0C of the object pointed to by the first argument.",
+  "summary": "Sets bit 0x08 in the dword at +0x0C of the object passed as the first argument.",
+  "fields": [
+    {
+      "class": "UnknownObject",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T07:16:12Z"
+  "lifted_at": "2026-11-25T07:16:29Z"
 }
