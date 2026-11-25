@@ -430,3 +430,41 @@ void fn_006A7FF0(void* self, void** out) {
     *out = lift_field<void*>(self, 0x3C);
 }
 } // namespace lift_006A7FF0
+
+// [0x006AAC90] sub_006AAC90 (72 bytes)
+namespace lift_006AAC90 {
+// Known callee 0x006A663A: thunk_MFC80_ord_4888 (IAT jump thunk forwarding to MFC80!ord_4888.)
+extern void __stdcall ext_006A663A(DWORD arg);
+// Known callee 0x006AA920 (sub_006AA920, 233 bytes): thiscall, one pointer arg, callee-cleans.
+extern void ext_006AA920(void* self, void* slot);
+// Known callee 0x006AD0D0 (sub_006AD0D0, 4 bytes): thiscall, returns bool in al.
+extern uint8_t ext_006AD0D0(void* self);
+// USER32!InvalidateRect via IAT slot 0x00925688.
+extern BOOL(__stdcall* mem_00925688)(HWND, const RECT*, BOOL);
+
+// @name Unknown::UpdateValueAndInvalidate
+// @class Unknown
+// @summary Notifies the thunk, then invalidates the window if the value changed and a sub-object is set.
+// @field Unknown +0x20 HWND field_0x20
+// @field Unknown +0x54 void* field_0x54
+// @field Unknown +0x100 DWORD field_0x100
+void fn_006AAC90(void* self, DWORD arg) {
+    ext_006A663A(arg);
+
+    if (arg == lift_field<DWORD>(self, 0x100) && arg != 0) {
+        return;
+    }
+
+    HWND hwnd = lift_field<HWND>(self, 0x20);
+    mem_00925688(hwnd, nullptr, TRUE);
+
+    void* sub = lift_field<void*>(self, 0x54);
+    if (sub == nullptr) {
+        return;
+    }
+    if (ext_006AD0D0(sub) != 0) {
+        return;
+    }
+    ext_006AA920(self, static_cast<uint8_t*>(self) + 0x54);
+}
+} // namespace lift_006AAC90

@@ -1,0 +1,34 @@
+{
+  "va": "0x006AAC90",
+  "size": 72,
+  "orig_symbol": "sub_006AAC90",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "Unknown::UpdateValueAndInvalidate",
+  "class": "Unknown",
+  "signature": "void fn_006AAC90(void* self, DWORD arg)",
+  "summary": "Notifies the thunk, then invalidates the window if the value changed and a sub-object is set.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "void*",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x100",
+      "type": "DWORD",
+      "name": "field_0x100"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:29:43Z"
+}

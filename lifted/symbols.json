@@ -44642,6 +44642,13 @@
     "summary": "Locks or unlocks redraw of this object's window via LockWindowUpdate and sets the locked flag at +0x198.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006AAC90": {
+    "name": "Unknown::UpdateValueAndInvalidate",
+    "class": "Unknown",
+    "signature": "void fn_006AAC90(void* self, DWORD arg)",
+    "summary": "Notifies the thunk, then invalidates the window if the value changed and a sub-object is set.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006AC340": {
     "name": "GWCPropertiesCtrl::vfunc_1",
     "class": "GWCPropertiesCtrl",
