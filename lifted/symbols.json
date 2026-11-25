@@ -32235,6 +32235,12 @@
     "summary": "Maps an unsigned index (0..3) to a slot index (0, 1, 1, 2) or 4 if out of range.",
     "lifted_path": "lifted/leaf/decompiled_610000.cpp"
   },
+  "0x00611100": {
+    "name": "setSlotValue",
+    "signature": "void fn_00611100(void* self, uint32_t index, float value)",
+    "summary": "Maps index to a slot via mapIndexToOffset and stores a float into the slot array at +0xAC.",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
   "0x00611160": {
     "name": "readFloatAtIndex3",
     "signature": "float fn_00611160(uint32_t ecx)",

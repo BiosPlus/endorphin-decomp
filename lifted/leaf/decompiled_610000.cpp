@@ -490,3 +490,21 @@ uint32_t __stdcall sub_006110A0(uint32_t index) {
     }
 }
 } // namespace lift_006110A0
+
+// [0x00611100] sub_00611100 (24 bytes)
+namespace lift_00611100 {
+// Known callee 0x006110A0: mapIndexToOffset (Maps an unsigned index (0..3) to a slot index (0, 1, 1, 2) or 4 if out of range.)
+extern uint32_t ext_006110A0(uint32_t index);
+
+// @name setSlotValue
+// @summary Maps index to a slot via mapIndexToOffset and stores a float into the slot array at +0xAC.
+// @field Unknown +0xAC float field_0xac
+// @field Unknown +0xB0 float field_0xb0
+// @field Unknown +0xB4 float field_0xb4
+// @field Unknown +0xB8 float field_0xb8
+// @field Unknown +0xBC float field_0xbc
+void fn_00611100(void* self, uint32_t index, float value) {
+    const uint32_t slot = ext_006110A0(index);
+    lift_field<float>(self, static_cast<ptrdiff_t>(0xac + 4 * slot)) = value;
+}
+} // namespace lift_00611100
