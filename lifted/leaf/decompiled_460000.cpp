@@ -1314,3 +1314,39 @@ void fn_0046C120(void* self) {
     ext_0065F440(base + 0x04);
 }
 } // namespace lift_0046C120
+
+// [0x0046C440]
+namespace lift_0046C440 {
+extern void* __thiscall ext_00401C60(void* self, const void* other);
+extern uint32_t mem_0093A7DC;
+
+// @name std::out_of_range::out_of_range
+// @class std::out_of_range
+// @summary Copy constructor for a std::logic_error-derived exception class.
+// @field std::out_of_range +0x00 void* vftable
+void* __thiscall sub_0046C440(void* self, const void* other) {
+    ext_00401C60(self, other);
+    *reinterpret_cast<uint32_t*>(self) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_0093A7DC));
+    return self;
+}
+} // namespace lift_0046C440
+
+// [0x0046F3A0]
+namespace lift_0046F3A0 {
+// @name lazyInitStaticObject_0046F3A0
+// @summary Function-local static guard: constructs the global object at mem_00AD834C once (ctor ext_0067A670 with arg 0), then sets its first DWORD to 0x0093A9DC and returns its address.
+// @field <unknown> +0x00 DWORD field_0x00
+
+extern DWORD ext_0067A670(void* self, DWORD value);  // thiscall: ECX = self, one stack arg
+extern DWORD mem_00AD8350;                           // init-guard flags (bit 0 = initialized/started)
+extern BYTE mem_00AD834C[];                          // global object storage
+
+void* lazyInitStaticObject_0046F3A0() {
+    if ((mem_00AD8350 & 1u) == 0) {
+        mem_00AD8350 |= 1u;
+        ext_0067A670(mem_00AD834C, 0);
+        lift_field<DWORD>(mem_00AD834C, 0) = 0x0093A9DCu;
+    }
+    return mem_00AD834C;
+}
+} // namespace lift_0046F3A0
