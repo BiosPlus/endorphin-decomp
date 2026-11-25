@@ -1235,3 +1235,34 @@ void* __thiscall sub_0060B990(void* self, const void* other) {
     return self;
 }
 } // namespace lift_0060B990
+
+// [0x0060BBA0]
+namespace lift_0060BBA0 {
+extern void* __thiscall ext_0060B990(void* self, const void* other);
+
+// @name CopyCtor_0060BBA0
+// @summary Copy constructor calling base copy constructor 0x0060B990, setting vtable 0x0097215C, and copying fields at +0x44..+0x58.
+// @field Class_0060BBA0 +0x00 uint32_t vtable
+// @field Class_0060BBA0 +0x44 uint32_t field_0x44
+// @field Class_0060BBA0 +0x48 uint32_t field_0x48
+// @field Class_0060BBA0 +0x4c uint32_t field_0x4c
+// @field Class_0060BBA0 +0x50 uint32_t field_0x50
+// @field Class_0060BBA0 +0x54 uint32_t field_0x54
+// @field Class_0060BBA0 +0x58 uint32_t field_0x58
+void* __thiscall sub_0060BBA0(void* self, const void* other) {
+    ext_0060B990(self, other);
+
+    auto* dst = static_cast<uint8_t*>(self);
+    const auto* src = static_cast<const uint8_t*>(other);
+
+    *reinterpret_cast<uint32_t*>(dst + 0x00) = 0x0097215Cu;
+    *reinterpret_cast<uint32_t*>(dst + 0x44) = *reinterpret_cast<const uint32_t*>(src + 0x44);
+    *reinterpret_cast<uint32_t*>(dst + 0x48) = *reinterpret_cast<const uint32_t*>(src + 0x48);
+    *reinterpret_cast<uint32_t*>(dst + 0x4c) = *reinterpret_cast<const uint32_t*>(src + 0x4c);
+    *reinterpret_cast<uint32_t*>(dst + 0x50) = *reinterpret_cast<const uint32_t*>(src + 0x50);
+    *reinterpret_cast<uint32_t*>(dst + 0x54) = *reinterpret_cast<const uint32_t*>(src + 0x54);
+    *reinterpret_cast<uint32_t*>(dst + 0x58) = *reinterpret_cast<const uint32_t*>(src + 0x58);
+
+    return self;
+}
+} // namespace lift_0060BBA0

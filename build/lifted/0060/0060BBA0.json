@@ -1,0 +1,57 @@
+{
+  "va": "0x0060BBA0",
+  "size": 66,
+  "orig_symbol": "sub_0060BBA0",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "CopyCtor_0060BBA0",
+  "signature": "void* __thiscall sub_0060BBA0(void* self, const void* other)",
+  "summary": "Copy constructor calling base copy constructor 0x0060B990, setting vtable 0x0097215C, and copying fields at +0x44..+0x58.",
+  "fields": [
+    {
+      "class": "Class_0060BBA0",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Class_0060BBA0",
+      "offset": "+0x44",
+      "type": "uint32_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Class_0060BBA0",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "Class_0060BBA0",
+      "offset": "+0x4C",
+      "type": "uint32_t",
+      "name": "field_0x4c"
+    },
+    {
+      "class": "Class_0060BBA0",
+      "offset": "+0x50",
+      "type": "uint32_t",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Class_0060BBA0",
+      "offset": "+0x54",
+      "type": "uint32_t",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Class_0060BBA0",
+      "offset": "+0x58",
+      "type": "uint32_t",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:43:57Z"
+}
