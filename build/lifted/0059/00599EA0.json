@@ -1,0 +1,63 @@
+{
+  "va": "0x00599EA0",
+  "size": 98,
+  "orig_symbol": "sub_00599EA0",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "GetFirstElementDwordAt22C",
+  "signature": "uint32_t fn_00599EA0(void* self)",
+  "summary": "Returns the dword at +0x22C of the first element in S's pointer vector (S = R-\u003e+0x28), falling back to GetNestedDwordAt38C(self) when that vector is empty or P-\u003e+0x20 is zero.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x26C",
+      "type": "void*",
+      "name": "nodeP"
+    },
+    {
+      "class": "NodeP",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "nodeQ"
+    },
+    {
+      "class": "NodeP",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "NodeQ",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "nodeR"
+    },
+    {
+      "class": "NodeR",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "nodeS"
+    },
+    {
+      "class": "NodeS",
+      "offset": "+0x334",
+      "type": "void*",
+      "name": "elemBegin"
+    },
+    {
+      "class": "NodeS",
+      "offset": "+0x338",
+      "type": "void*",
+      "name": "elemEnd"
+    },
+    {
+      "class": "NodeT",
+      "offset": "+0x22C",
+      "type": "uint32_t",
+      "name": "value22C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:39:35Z"
+}

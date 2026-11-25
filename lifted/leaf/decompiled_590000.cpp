@@ -1207,3 +1207,44 @@ void* fn_005947B0() {
 }
 } // namespace lift_005947B0
 } // namespace lift_005947B0
+
+// [0x00599EA0] sub_00599EA0 (98 bytes)
+namespace lift_00599EA0 {
+// Known callee 0x00599E70: GetNestedDwordAt38C (Follows self->+0x26C -> P; returns 0 if P->+0x20 is zero. Otherwise walks P->+0x1C -> Q -> R (Q->+0x00), and returns R->+0x28 -> S's dword at +0x38C.)
+extern uint32_t ext_00599E70(void* self);
+// IAT slot for MSVCR80!_invalid_parameter_noinfo (called only on a sentinel self-loop check).
+extern int mem_00925134;
+
+// @name GetFirstElementDwordAt22C
+// @summary Returns the dword at +0x22C of the first element in S's pointer vector (S = R->+0x28), falling back to GetNestedDwordAt38C(self) when that vector is empty or P->+0x20 is zero.
+// @field Self +0x26C void* nodeP
+// @field NodeP +0x1C void* nodeQ
+// @field NodeP +0x20 uint32_t field_0x20
+// @field NodeQ +0x00 void* nodeR
+// @field NodeR +0x28 void* nodeS
+// @field NodeS +0x334 void* elemBegin
+// @field NodeS +0x338 void* elemEnd
+// @field NodeT +0x22C uint32_t value22C
+uint32_t fn_00599EA0(void* self) {
+    void* p = lift_field<void*>(self, 0x26C);
+    if (lift_field<uint32_t>(p, 0x20) == 0) {
+        return 0;
+    }
+
+    void* q = lift_field<void*>(p, 0x1C);
+    void* r = lift_field<void*>(q, 0x00);
+    if (r == q) {
+        // Sentinel self-loop: original calls _invalid_parameter_noinfo (mem_00925134) and continues.
+    }
+
+    void* s = lift_field<void*>(r, 0x28);
+    void* begin = lift_field<void*>(s, 0x334);
+    void* end = lift_field<void*>(s, 0x338);
+    if (begin == nullptr || end == begin) {
+        return ext_00599E70(self);
+    }
+
+    void* first = lift_field<void*>(begin, 0x00);
+    return lift_field<uint32_t>(first, 0x22C);
+}
+} // namespace lift_00599EA0

@@ -71,7 +71,8 @@ struct Self_Fields {
     // +0x198 uint32_t                 field_0x198  (evidence: 0x006F7560)
     // +0x19C uint32_t                 field_0x19c  (evidence: 0x006F7560)
     // +0x268 uint32_t                 field_0x268  (evidence: 0x00702780)
-    // +0x26C uint32_t                 field_0x26C  (evidence: 0x005947B0, 0x00599E70)
+    // +0x26C uint32_t                 field_0x26C  (evidence: 0x005947B0, 0x00599E70) // CONFLICT: multiple definitions at +0x26C
+    // +0x26C void*                    nodeP  (evidence: 0x00599EA0) // CONFLICT: multiple definitions at +0x26C
     // +0x458 std::string              field_0x458  (evidence: 0x005947B0, 0x0059DDA0)
     // +0x5F8 uint32_t                 field_0x5F8  (evidence: 0x005947B0, 0x0059E060)
     // +0x61C uint32_t result (written with the return value of ext_00661A90)  (evidence: 0x005947B0, 0x0059DC60)
