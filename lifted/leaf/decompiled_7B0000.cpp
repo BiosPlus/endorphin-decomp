@@ -1318,3 +1318,26 @@ void fn_007B6094(void* self) {
     return;
 }
 } // namespace lift_007B6094
+
+// [0x007B617C] sub_007B617C (20 bytes)
+namespace lift_007B617C {
+// @name DataTable_007B617C
+// @summary 20-byte constant table (00 04 01, 02 04, 04 04, 04 03 x5, 8D 49 00 tail); bytes decode as nonsense x86, so this is data, not code
+// @note this range is not a function; no calling code was verified and no ext_/mem_ references exist in the original.
+void fn_007B617C(void* self) {
+    (void)self;
+    static const uint8_t kTable_007B617C[20] = {
+        0x00, 0x04, 0x01,
+        0x04, 0x02,
+        0x04, 0x04,
+        0x04, 0x03,
+        0x04, 0x03,
+        0x04, 0x03,
+        0x04, 0x03,
+        0x04, 0x03,
+        0x8D, 0x49, 0x00,
+    };
+    (void)kTable_007B617C;
+    return;
+}
+} // namespace lift_007B617C

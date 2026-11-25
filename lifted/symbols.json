@@ -66105,6 +66105,12 @@
     "summary": "19-byte constant table (00 04 01, 13x 04, 02 03 03); bytes decode as nonsense x86, so this is data, not code",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B617C": {
+    "name": "DataTable_007B617C",
+    "signature": "void fn_007B617C(void* self)",
+    "summary": "20-byte constant table (00 04 01, 02 04, 04 04, 04 03 x5, 8D 49 00 tail); bytes decode as nonsense x86, so this is data, not code",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B6F5C": {
     "name": "sub_007B6F5C_table",
     "signature": "const uint8_t* fn_007B6F5C(void* self)",
