@@ -1571,3 +1571,57 @@ extern int32_t __fastcall fn_006BC3F0(void* self, void* /*edx*/, int32_t type) {
     return ext_006E9610(inner, nullptr, type);
 }
 } // namespace lift_006BC3F0
+
+// [0x006BC3A0] sub_006BC3A0 (16 bytes)
+namespace lift_006BC3A0 {
+// @name sub_006BC3A0
+// @summary Auto-lifted identical-shape clone of 0x006BC3F0 (countItemsByTypeWrapper).
+namespace lift_006BC3F0 {
+extern uint32_t mem_read32(const void* base, int32_t offset);
+extern int32_t __fastcall ext_006E9430(void* self, void* edx, int32_t type);
+
+// @name countItemsByTypeWrapper
+// @summary Forwards countItemsByType call to the member object at +0x04.
+// @field Unknown +0x04 void* field_0x04
+extern int32_t __fastcall fn_006BC3A0(void* self, void* /*edx*/, int32_t type) {
+    void* inner = reinterpret_cast<void*>(static_cast<uintptr_t>(mem_read32(self, 0x04)));
+    return ext_006E9430(inner, nullptr, type);
+}
+} // namespace lift_006BC3F0
+} // namespace lift_006BC3A0
+
+// [0x006BC400] sub_006BC400 (16 bytes)
+namespace lift_006BC400 {
+// @name sub_006BC400
+// @summary Auto-lifted identical-shape clone of 0x006BC3F0 (countItemsByTypeWrapper).
+namespace lift_006BC3F0 {
+extern uint32_t mem_read32(const void* base, int32_t offset);
+extern int32_t __fastcall ext_006E9680(void* self, void* edx, int32_t type);
+
+// @name countItemsByTypeWrapper
+// @summary Forwards countItemsByType call to the member object at +0x04.
+// @field Unknown +0x04 void* field_0x04
+extern int32_t __fastcall fn_006BC400(void* self, void* /*edx*/, int32_t type) {
+    void* inner = reinterpret_cast<void*>(static_cast<uintptr_t>(mem_read32(self, 0x04)));
+    return ext_006E9680(inner, nullptr, type);
+}
+} // namespace lift_006BC3F0
+} // namespace lift_006BC400
+
+// [0x006BC430] sub_006BC430 (16 bytes)
+namespace lift_006BC430 {
+// @name sub_006BC430
+// @summary Auto-lifted identical-shape clone of 0x006BC3F0 (countItemsByTypeWrapper).
+namespace lift_006BC3F0 {
+extern uint32_t mem_read32(const void* base, int32_t offset);
+extern int32_t __fastcall ext_006E97C0(void* self, void* edx, int32_t type);
+
+// @name countItemsByTypeWrapper
+// @summary Forwards countItemsByType call to the member object at +0x04.
+// @field Unknown +0x04 void* field_0x04
+extern int32_t __fastcall fn_006BC430(void* self, void* /*edx*/, int32_t type) {
+    void* inner = reinterpret_cast<void*>(static_cast<uintptr_t>(mem_read32(self, 0x04)));
+    return ext_006E97C0(inner, nullptr, type);
+}
+} // namespace lift_006BC3F0
+} // namespace lift_006BC430

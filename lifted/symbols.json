@@ -58874,10 +58874,28 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x4 and tail-calls sub_006E9420.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006BC3A0": {
+    "name": "sub_006BC3A0",
+    "signature": "extern int32_t __fastcall fn_006BC3A0(void* self, void* /*edx*/, int32_t type)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BC3F0 (countItemsByTypeWrapper).",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BC3F0": {
     "name": "countItemsByTypeWrapper",
     "signature": "extern \"C\" int32_t __fastcall fn_006BC3F0(void* self, void* /*edx*/, int32_t type)",
     "summary": "Forwards countItemsByType call to the member object at +0x04.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
+  "0x006BC400": {
+    "name": "sub_006BC400",
+    "signature": "extern int32_t __fastcall fn_006BC400(void* self, void* /*edx*/, int32_t type)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BC3F0 (countItemsByTypeWrapper).",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
+  "0x006BC430": {
+    "name": "sub_006BC430",
+    "signature": "extern int32_t __fastcall fn_006BC430(void* self, void* /*edx*/, int32_t type)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BC3F0 (countItemsByTypeWrapper).",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
   "0x006BC600": {
