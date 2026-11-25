@@ -1104,3 +1104,30 @@ void __thiscall fn_0041CAB0(void* self, void* a, void* b) {
     fn(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), da, db);
 }
 } // namespace lift_0041CAB0
+
+// [0x0041C660] sub_0041C660 (68 bytes)
+namespace lift_0041C660 {
+// @name forwardScaledVirtualCall_0041C660
+// @class Unknown
+// @summary If this->+0x08 is non-null, calls its vtable slot 13 with (arg1, arg2 / 120, arg3, arg4); otherwise returns 0.
+// @field Unknown +0x08 void* field_0x08
+
+namespace {
+// Slot 13 of the vtable at byte offset 0x34 (0x34 / sizeof(void*) on 32-bit = 13).
+using VirtualSlot13Fn = uint8_t(__thiscall*)(void* self, int32_t arg1, int32_t scaled, int32_t arg3, int32_t arg4);
+}
+
+uint8_t __thiscall fn_0041C660(void* self, int32_t arg1, int16_t arg2, int32_t arg3, int32_t arg4) {
+    void* target = lift_field<void*>(self, 0x08);
+    if (target == nullptr) {
+        return 0;
+    }
+
+    // Signed 16-bit arg2 divided by 120 (compiled as a magic-number multiply in the original).
+    const int32_t scaled = static_cast<int32_t>(arg2) / 120;
+
+    void** vtable = *reinterpret_cast<void***>(target);
+    auto fn = reinterpret_cast<VirtualSlot13Fn>(vtable[13]);
+    return fn(target, arg1, scaled, arg3, arg4);
+}
+} // namespace lift_0041C660

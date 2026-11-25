@@ -1658,6 +1658,13 @@
     "summary": "Stores two 32-bit values at +0x14 and +0x18 and forwards the call to child-\u003evtable[0x30] if child (+0x08) is non-null.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041C660": {
+    "name": "forwardScaledVirtualCall_0041C660",
+    "class": "Unknown",
+    "signature": "uint8_t __thiscall fn_0041C660(void* self, int32_t arg1, int16_t arg2, int32_t arg3, int32_t arg4)",
+    "summary": "If this-\u003e+0x08 is non-null, calls its vtable slot 13 with (arg1, arg2 / 120, arg3, arg4); otherwise returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041C6B0": {
     "name": "Dispatch::ForwardSlot14IfChild",
     "class": "Dispatch",
