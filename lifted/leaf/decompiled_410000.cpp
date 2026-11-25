@@ -1542,3 +1542,44 @@ void* __thiscall sub_00414D30(void* self, float x0, float y0, float x1, float y1
     return self;
 }
 } // namespace lift_00414D30
+
+// [0x00410390]
+namespace lift_00410390 {
+// @name sub_00410390
+// @summary Checks virtual predicate at +0x28 and compares string at +0x458 against three known values
+// @field unknown +0x00 void* vtable
+// @field unknown +0x458 std::string field_0x458
+
+
+extern uint32_t mem_00924FC0;
+extern uint32_t mem_00924FC4;
+
+uint8_t __fastcall sub_00410390(uint32_t self) {
+    uint32_t vtable = *reinterpret_cast<uint32_t*>(self);
+    using VFunc0x28 = uint8_t(__fastcall*)(uint32_t);
+    auto vfunc = reinterpret_cast<VFunc0x28>(*reinterpret_cast<uint32_t*>(vtable + 0x28));
+    if (vfunc(self) != 0) {
+        return 0;
+    }
+
+    uint32_t str_ptr = self + 0x458;
+
+    using StrEqCStr = uint8_t(__cdecl*)(uint32_t, uint32_t);
+    auto eq_cstr = reinterpret_cast<StrEqCStr>(mem_00924FC0);
+    if (eq_cstr(str_ptr, 0x00928B5Du) != 0) {
+        return 1;
+    }
+
+    using StrEqStr = uint8_t(__cdecl*)(uint32_t, uint32_t);
+    auto eq_str = reinterpret_cast<StrEqStr>(mem_00924FC4);
+    if (eq_str(str_ptr, 0x00B41B9Cu) != 0) {
+        return 1;
+    }
+
+    if (eq_str(str_ptr, 0x00B41B80u) != 0) {
+        return 1;
+    }
+
+    return 0;
+}
+} // namespace lift_00410390

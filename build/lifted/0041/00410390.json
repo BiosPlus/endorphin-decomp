@@ -1,0 +1,27 @@
+{
+  "va": "0x00410390",
+  "size": 89,
+  "orig_symbol": "sub_00410390",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "sub_00410390",
+  "signature": "uint8_t __fastcall sub_00410390(uint32_t self)",
+  "summary": "Checks virtual predicate at +0x28 and compares string at +0x458 against three known values",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x458",
+      "type": "std::string",
+      "name": "field_0x458"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:20:31Z"
+}
