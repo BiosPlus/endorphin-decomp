@@ -1,0 +1,13 @@
+{
+  "va": "0x006C1B40",
+  "size": 77,
+  "orig_symbol": "sub_006C1B40",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "LookupStringPtrByIndex",
+  "signature": "extern \"C\" uint32_t __stdcall fn_006C1B40(uint32_t index)",
+  "summary": "Maps selector 0..6 to one of seven fixed read-only string/table addresses; returns 0 otherwise.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:44:00Z"
+}

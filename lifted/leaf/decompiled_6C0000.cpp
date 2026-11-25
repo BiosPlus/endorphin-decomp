@@ -1558,3 +1558,22 @@ void fn_006C11B0(void* self, void* result) {
 }
 } // namespace lift_006C06A0
 } // namespace lift_006C11B0
+
+// [0x006C1B40] sub_006C1B40 (77 bytes)
+namespace lift_006C1B40 {
+// @name LookupStringPtrByIndex
+// @summary Maps selector 0..6 to one of seven fixed read-only string/table addresses; returns 0 otherwise.
+// (stdcall, one dword argument, ret 4)
+extern uint32_t __stdcall fn_006C1B40(uint32_t index) {
+    switch (index) {
+        case 0: return 0x00AA8C80u;
+        case 1: return 0x00AA8C74u;
+        case 2: return 0x00AA8C68u;
+        case 3: return 0x00AA8C5Cu;
+        case 4: return 0x00AA8C50u;
+        case 5: return 0x00AA8C44u;
+        case 6: return 0x00AA8C38u;
+        default: return 0u;
+    }
+}
+} // namespace lift_006C1B40
