@@ -2110,3 +2110,28 @@ void fn_00494DE0(void* self) {
     ext_006A6DD2(exc, nullptr);
 }
 } // namespace lift_00494DE0
+
+// [0x005C8C60]
+namespace lift_005C8C60 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Reads the object pointer behind its argument; if non-null, calls a helper and throws a default-message ExceptionWithMessage, otherwise throws a DerivedException. Never returns.
+
+int ext_005C3FB0(void* self);
+[[noreturn]] void ext_0046C4E0(int arg);
+void* ext_0046C3C0(void* self);
+[[noreturn]] void ext_006A6DD2(void* exceptionObject, const void* throwInfo);
+
+extern const unsigned char mem_009DEC1C[];
+
+void fn_005C8C60(void** arg) {
+    void* obj = *arg;
+    if (obj != nullptr) {
+        int result = ext_005C3FB0(obj);
+        ext_0046C4E0(result);
+    }
+    unsigned char exceptionObject[0x28];
+    ext_0046C3C0(exceptionObject);
+    ext_006A6DD2(exceptionObject, mem_009DEC1C);
+}
+} // namespace lift_005C8C60

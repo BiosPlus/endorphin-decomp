@@ -31809,6 +31809,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType\u003cImageExporter, int, ImageExporter::getEndFrame, 0\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x005C8C60": {
+    "name": "ExprParser::DynamicEnumType::vfunc_5",
+    "class": "ExprParser::DynamicEnumType",
+    "signature": "void fn_005C8C60(void** arg)",
+    "summary": "Reads the object pointer behind its argument; if non-null, calls a helper and throws a default-message ExceptionWithMessage, otherwise throws a DerivedException. Never returns.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x005C8F10": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1\u003e",
