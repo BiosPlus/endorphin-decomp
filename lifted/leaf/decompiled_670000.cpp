@@ -1442,3 +1442,31 @@ void* fn_00674770() {
     return &mem_00B59D84;
 }
 } // namespace lift_00674770
+
+// [0x00679990]
+namespace lift_00679990 {
+extern uint32_t mem_0092427C;
+extern double mem_00928E78;
+
+// @name PerfTimer::getElapsedMs
+// @class PerfTimer
+// @summary Returns elapsed time in milliseconds since start using QueryPerformanceCounter.
+// @field PerfTimer +0x00 int64_t startCounter
+// @field PerfTimer +0x10 int64_t frequency
+float __thiscall sub_00679990(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    int64_t now = 0;
+    using QPCFn = int32_t(__stdcall*)(int64_t*);
+    reinterpret_cast<QPCFn>(mem_0092427C)(&now);
+
+    int64_t freq = *reinterpret_cast<const int64_t*>(obj + 0x10);
+    if (freq == 0) {
+        return 0.0f;
+    }
+
+    int64_t start = *reinterpret_cast<const int64_t*>(obj + 0x00);
+    int64_t elapsed = now - start;
+    double ms = (static_cast<double>(elapsed) * mem_00928E78) / static_cast<double>(freq);
+    return static_cast<float>(ms);
+}
+} // namespace lift_00679990
