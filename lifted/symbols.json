@@ -24650,6 +24650,12 @@
     "summary": "Checks whether a CSLModel pointer is non-null and has primitive type 0x1b or 0x1c.",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
+  "0x00563280": {
+    "name": "CheckAgainstTwoArgs",
+    "signature": "BOOL fn_00563280(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Returns true when arg1 matches any of three predicates and arg2 matches either of two.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x005632F0": {
     "name": "CheckModelAgainstSelf",
     "class": "\u003cClassName\u003e (unknown; `this` is passed in ecx)",
@@ -62707,6 +62713,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C1B0": {
+    "name": "ComputeClampedAngleDegrees",
+    "signature": "double __thiscall fn_0071C1B0(void* self)",
+    "summary": "Computes an angle in degrees from inner object extents and clamps it to [1.0, 179.0].",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071C210": {
     "name": "ComputeAngleDegreesFromExtent",
     "class": "Unknown",
@@ -63439,6 +63451,12 @@
     "class": "Object",
     "signature": "int32_t fn_007266C0(void* self, uint32_t key)",
     "summary": "Looks up key in the sorted array held at this+0x250; if found, returns the getter value of the match, otherwise 0.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
+  "0x00728570": {
+    "name": "sub_00728570",
+    "signature": "extern \"C\" void __fastcall fn_00728570(void* self)",
+    "summary": "Iterates field_0xee4 times calling vtable +0x3c on field_0x10 with 0xaad0b8 when preconditions hold",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
   "0x00728D30": {

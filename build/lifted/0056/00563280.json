@@ -1,0 +1,13 @@
+{
+  "va": "0x00563280",
+  "size": 103,
+  "orig_symbol": "sub_00563280",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "CheckAgainstTwoArgs",
+  "signature": "BOOL fn_00563280(void* self, DWORD arg1, DWORD arg2)",
+  "summary": "Returns true when arg1 matches any of three predicates and arg2 matches either of two.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:46:51Z"
+}

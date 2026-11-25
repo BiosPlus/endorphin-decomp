@@ -450,3 +450,31 @@ int __thiscall fn_00563330(void* self, void* model) {
     return accepted;
 }
 } // namespace lift_00563330
+
+// [0x00563280] sub_00563280 (103 bytes)
+namespace lift_00563280 {
+extern BOOL ext_00563220(void* self, DWORD arg);
+extern BOOL ext_00563240(void* self, DWORD arg);
+extern BOOL ext_00563260(void* self, DWORD arg);
+
+// @name CheckAgainstTwoArgs
+// @summary Returns true when arg1 matches any of three predicates and arg2 matches either of two.
+// @field none (no direct field accesses; `self` is only forwarded to callees)
+BOOL fn_00563280(void* self, DWORD arg1, DWORD arg2) {
+    BOOL first = FALSE;
+    if (ext_00563220(self, arg1)) {
+        first = TRUE;
+    } else if (ext_00563240(self, arg1)) {
+        first = TRUE;
+    } else if (ext_00563260(self, arg1)) {
+        first = TRUE;
+    }
+
+    BOOL second = ext_00563240(self, arg2) ? TRUE : FALSE;
+    if (!second) {
+        second = ext_00563260(self, arg2) ? TRUE : FALSE;
+    }
+
+    return (first && second) ? TRUE : FALSE;
+}
+} // namespace lift_00563280
