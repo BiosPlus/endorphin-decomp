@@ -1,0 +1,28 @@
+{
+  "va": "0x00527690",
+  "size": 109,
+  "orig_symbol": "sub_00527690",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "Unknown::dispatchToElements_00527690",
+  "class": "Unknown",
+  "signature": "void fn_00527690(void* self, void* arg1, void* arg2)",
+  "summary": "Walks a pointer array embedded at this+0x18..this+0x1C and calls virtual slot 2 (offset 0x08) on each element, passing the two stack arguments.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint8_t* field_0x18 (begin of element-pointer",
+      "name": "array)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint8_t* field_0x1C (end of element-pointer array, re-read every",
+      "name": "iteration)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:59:13Z"
+}

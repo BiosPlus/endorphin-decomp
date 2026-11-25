@@ -1264,3 +1264,32 @@ void __thiscall sub_00524B50(void* self, float value) {
     data[idx] = static_cast<double>(value);
 }
 } // namespace lift_00524B50
+
+// [0x00527690] sub_00527690 (109 bytes)
+namespace lift_00527690 {
+// @name Unknown::dispatchToElements_00527690
+// @class Unknown
+// @summary Walks a pointer array embedded at this+0x18..this+0x1C and calls virtual slot 2 (offset 0x08) on each element, passing the two stack arguments.
+// @field Unknown +0x18 uint8_t* field_0x18 (begin of element-pointer array)
+// @field Unknown +0x1C uint8_t* field_0x1C (end of element-pointer array, re-read every iteration)
+
+// Calls the element's virtual slot 2 with (element, arg1, arg2). On MSVC this
+// is a thiscall; the element pointer is passed as the first argument here.
+using ElementDispatchFn = void (*)(void* self, void* arg1, void* arg2);
+
+void fn_00527690(void* self, void* arg1, void* arg2) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+
+    // The original emits _invalid_parameter_noinfo guards for iterator
+    // range checks (begin <= end, it < end); they are debug-only and omitted.
+    uint8_t* it = *reinterpret_cast<uint8_t**>(obj + 0x18);
+
+    while (it != *reinterpret_cast<uint8_t**>(obj + 0x1C)) {
+        void* element = *reinterpret_cast<void**>(it);
+        void** vtable = *reinterpret_cast<void***>(element);
+        auto fn = reinterpret_cast<ElementDispatchFn>(vtable[2]);
+        fn(element, arg1, arg2);
+        it += 4; // element slots are 4 bytes on the 32-bit target
+    }
+}
+} // namespace lift_00527690

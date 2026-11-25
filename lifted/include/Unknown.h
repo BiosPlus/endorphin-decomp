@@ -438,6 +438,7 @@ struct Unknown_Fields {
     // +0x17  uint8_t                  field_0x17  (evidence: 0x0074B080)
     // +0x18  uint8_t field_0x18 (3 bytes, indexed by 0..2)  (evidence: 0x005539B0) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t flags (read through GetFlag08)  (evidence: 0x006DE5F0) // CONFLICT: multiple definitions at +0x18
+    // +0x18  uint8_t* field_0x18 (begin of element-pointer array)  (evidence: 0x00527690) // CONFLICT: multiple definitions at +0x18
     // +0x18  void*                    chain  (evidence: 0x007839B0) // CONFLICT: multiple definitions at +0x18
     // +0x18  void**                   children_end  (evidence: 0x00517230) // CONFLICT: multiple definitions at +0x18
     // +0x18  std::uint32_t            elemScale  (evidence: 0x00790EE0) // CONFLICT: multiple definitions at +0x18
@@ -496,6 +497,7 @@ struct Unknown_Fields {
     // +0x1C  bool                     flag  (evidence: 0x004C4390, 0x004CF910) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  HMODULE                  hModule  (evidence: 0x00401920) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  void*                    hwnd  (evidence: 0x00458DF0, 0x00458FE0) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  uint8_t* field_0x1C (end of element-pointer array, re-read every iteration)  (evidence: 0x00527690) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  float                    m13  (evidence: 0x00480010, 0x004890D0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  void*                    ptr1C  (evidence: 0x00495AB0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  std::string              str1  (evidence: 0x00553F00, 0x00574D30) // CONFLICT: multiple definitions at +0x1C
