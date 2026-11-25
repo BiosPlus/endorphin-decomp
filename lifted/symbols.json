@@ -8652,6 +8652,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00401D00 (AVIIO::vfunc_7).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00477EC0": {
+    "name": "sub_00477EC0",
+    "signature": "void __thiscall sub_00477EC0(void* self, uint32_t arg0)",
+    "summary": "Iterates over a pointer vector at this+0x30 and invokes vtable+0xEC on each element with arg0",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00477F30": {
     "name": "Unknown::getMaxChildField160",
     "class": "Unknown",

@@ -658,3 +658,45 @@ void __cdecl sub_00477120(uint32_t* a, uint32_t* b, uint32_t* c, uint32_t cmp) {
     }
 }
 } // namespace lift_00477120
+
+// [0x00477EC0]
+namespace lift_00477EC0 {
+extern uint32_t mem_00925134;
+
+// @name sub_00477EC0
+// @summary Iterates over a pointer vector at this+0x30 and invokes vtable+0xEC on each element with arg0
+// @field Unknown +0x34 uint32_t* begin_0x34
+// @field Unknown +0x38 uint32_t* end_0x38
+void __thiscall sub_00477EC0(void* self, uint32_t arg0) {
+    auto* base = static_cast<uint8_t*>(self);
+    uint8_t* vec = base + 0x30;
+
+    auto invalid_param = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+
+    uint32_t* edi = *reinterpret_cast<uint32_t**>(vec + 0x04);
+    if (edi > *reinterpret_cast<uint32_t**>(vec + 0x08)) {
+        invalid_param();
+    }
+
+    uint32_t* ebx = *reinterpret_cast<uint32_t**>(vec + 0x08);
+    if (*reinterpret_cast<uint32_t**>(vec + 0x04) > ebx) {
+        invalid_param();
+    }
+
+    while (edi != ebx) {
+        if (edi >= *reinterpret_cast<uint32_t**>(vec + 0x08)) {
+            invalid_param();
+        }
+
+        uint32_t* obj = reinterpret_cast<uint32_t*>(*edi);
+        uint32_t* vtable = reinterpret_cast<uint32_t*>(*obj);
+        auto fn = reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(vtable[0xEC / 4]);
+        fn(obj, arg0);
+
+        if (edi >= *reinterpret_cast<uint32_t**>(vec + 0x08)) {
+            invalid_param();
+        }
+        ++edi;
+    }
+}
+} // namespace lift_00477EC0

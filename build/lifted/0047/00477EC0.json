@@ -1,0 +1,27 @@
+{
+  "va": "0x00477EC0",
+  "size": 100,
+  "orig_symbol": "sub_00477EC0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "sub_00477EC0",
+  "signature": "void __thiscall sub_00477EC0(void* self, uint32_t arg0)",
+  "summary": "Iterates over a pointer vector at this+0x30 and invokes vtable+0xEC on each element with arg0",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "uint32_t*",
+      "name": "begin_0x34"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "uint32_t*",
+      "name": "end_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:57:13Z"
+}
