@@ -53761,6 +53761,12 @@
     "summary": "Computes the 3x3 determinant of a double matrix and returns 1 if \u003e= 0.0, else 0",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C4A30": {
+    "name": "vec3Transform3x3",
+    "signature": "void sub_006C4A30(double* out, const double* mat, const double* vec)",
+    "summary": "Transforms a 3D double vector by the upper-left 3x3 transpose of a 4x4 double matrix.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C59C0": {
     "name": "Unknown::GetChildByIndex",
     "class": "Unknown",

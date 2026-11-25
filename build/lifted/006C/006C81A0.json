@@ -1,0 +1,13 @@
+{
+  "va": "0x006C81A0",
+  "size": 96,
+  "orig_symbol": "sub_006C81A0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "scaleMatrix3x3Rows",
+  "signature": "void* __cdecl sub_006C81A0(void* dst, const void* src, const void* scale)",
+  "summary": "Scales the three 3-element rows (stride 0x20) of a double matrix by a 3-element double vector.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:39:16Z"
+}

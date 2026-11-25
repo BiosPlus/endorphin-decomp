@@ -1894,3 +1894,65 @@ int32_t sub_006C42E0(uintptr_t arg0) {
     return (det >= mem_0092A278) ? 1 : 0;
 }
 } // namespace lift_006C42E0
+
+// [0x006C81A0]
+namespace lift_006C81A0 {
+// @name scaleMatrix3x3Rows
+// @summary Scales the three 3-element rows (stride 0x20) of a double matrix by a 3-element double vector.
+
+
+void* __cdecl sub_006C81A0(void* dst, const void* src, const void* scale) {
+    auto* out = static_cast<double*>(dst);
+    const auto* mat = static_cast<const double*>(src);
+    const auto* vec = static_cast<const double*>(scale);
+
+    const double s0 = vec[0];
+    out[0] = s0 * mat[0];
+    out[1] = s0 * mat[1];
+    out[2] = s0 * mat[2];
+
+    const double s1 = vec[1];
+    out[4] = s1 * mat[4];
+    out[5] = s1 * mat[5];
+    out[6] = s1 * mat[6];
+
+    const double s2 = vec[2];
+    out[8]  = s2 * mat[8];
+    out[9]  = s2 * mat[9];
+    out[10] = s2 * mat[10];
+
+    return dst;
+}
+} // namespace lift_006C81A0
+
+// [0x006C7B60]
+namespace lift_006C7B60 {
+// @name transformPoint3d
+// @summary Transforms a 3D double-precision point by a 4x4 double-precision affine matrix.
+
+
+void sub_006C7B60(double* out, const double* mat, const double* vec) {
+    double v0 = vec[0];
+    double v1 = vec[1];
+    double v2 = vec[2];
+
+    out[0] = v2 * mat[0x40 / 8] + v1 * mat[0x20 / 8] + v0 * mat[0x00 / 8] + mat[0x60 / 8];
+    out[1] = v2 * mat[0x48 / 8] + v1 * mat[0x28 / 8] + v0 * mat[0x08 / 8] + mat[0x68 / 8];
+    out[2] = v2 * mat[0x50 / 8] + v1 * mat[0x30 / 8] + v0 * mat[0x10 / 8] + mat[0x70 / 8];
+}
+} // namespace lift_006C7B60
+
+// [0x006C4A30]
+namespace lift_006C4A30 {
+// @name vec3Transform3x3
+// @summary Transforms a 3D double vector by the upper-left 3x3 transpose of a 4x4 double matrix.
+void sub_006C4A30(double* out, const double* mat, const double* vec) {
+    const double v0 = vec[0];
+    const double v1 = vec[1];
+    const double v2 = vec[2];
+
+    out[0] = v2 * mat[8] + v1 * mat[4] + v0 * mat[0];
+    out[1] = v2 * mat[9] + v1 * mat[5] + v0 * mat[1];
+    out[2] = v2 * mat[10] + v1 * mat[6] + v0 * mat[2];
+}
+} // namespace lift_006C4A30
