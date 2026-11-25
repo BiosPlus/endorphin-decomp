@@ -13958,6 +13958,12 @@
     "summary": "Translates the TransformInterface subobject's matrix by the given 3D vector and notifies the base object.",
     "lifted_path": "lifted/NMData/ForceEventData.cpp"
   },
+  "0x004C50C0": {
+    "name": "computeIdentityMatrixFirstRowNorm",
+    "signature": "float fn_004C50C0(void)",
+    "summary": "Initializes a 3x3 identity matrix, passes it to sub_0067DAD0, and returns the Euclidean norm of the first row.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C5350": {
     "name": "NMData::ForceEventData::vfunc_6_off_C",
     "class": "NMData::ForceEventData",
@@ -18136,6 +18142,13 @@
     "summary": "Constructor: runs the base-class initializer, sets the Interpreter vtable, default-constructs the std::string at +0x04 and zeroes the five dwords at +0x24..+0x34; returns this.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00506090": {
+    "name": "Unknown::Destructor_00506090",
+    "class": "Unknown",
+    "signature": "extern \"C\" void fn_00506090(void* self)",
+    "summary": "Destructor that sets the vtable, destroys the container at +0x20, destroys the std::string at +0x4, and calls the base destructor.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00506160": {
     "name": "Chromosome::vfunc_0",
     "class": "Chromosome",
@@ -20033,6 +20046,12 @@
     "name": "sub_005231F0",
     "signature": "DWORD* __thiscall fn_005231F0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
+  "0x00524540": {
+    "name": "fn_00524540",
+    "signature": "void* __thiscall fn_00524540(void* self, uint32_t arg0, uint32_t arg1, const void* arg2)",
+    "summary": "Constructs an object with base vtable 0x0093BFB4, sets vtable 0x0094F484, initializes fields +0x04 and +0x08, and copy-constructs std::string at +0x0C.",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
   "0x005245D0": {

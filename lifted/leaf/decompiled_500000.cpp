@@ -2094,3 +2094,28 @@ void* fn_0050FC70() {
     return &mem_00AEBD84;
 }
 } // namespace lift_0050FC70
+
+// [0x00506090]
+namespace lift_00506090 {
+// @name Unknown::Destructor_00506090
+// @class Unknown
+// @summary Destructor that sets the vtable, destroys the container at +0x20, destroys the std::string at +0x4, and calls the base destructor.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x04 std::string field_0x04
+// @field Unknown +0x20 UnknownContainer field_0x20
+
+
+extern uint8_t mem_0094F564[];
+extern void (*mem_00924FF4)(void*);
+
+extern void ext_00505D00(void* self);
+extern void ext_0065F440(void* self);
+
+extern void fn_00506090(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uintptr_t*>(base + 0x00) = reinterpret_cast<uintptr_t>(mem_0094F564);
+    ext_00505D00(base + 0x20);
+    mem_00924FF4(base + 0x04);
+    ext_0065F440(self);
+}
+} // namespace lift_00506090

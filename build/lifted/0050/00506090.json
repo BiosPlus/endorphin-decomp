@@ -1,0 +1,34 @@
+{
+  "va": "0x00506090",
+  "size": 96,
+  "orig_symbol": "sub_00506090",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "Unknown::Destructor_00506090",
+  "class": "Unknown",
+  "signature": "extern \"C\" void fn_00506090(void* self)",
+  "summary": "Destructor that sets the vtable, destroys the container at +0x20, destroys the std::string at +0x4, and calls the base destructor.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "UnknownContainer",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:35:52Z"
+}
