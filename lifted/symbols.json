@@ -27062,6 +27062,13 @@
     "summary": "Reads a float via virtual method at +0x80 on CharacterData+4 and rounds to int, or throws if null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0059F8D0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e",
+    "signature": "extern \"C\" int __stdcall fn_0059F8D0(void** holder)",
+    "summary": "Reads a float from the CharacterData held behind the argument pointer and returns 1 if it is \u003e= 1e-6, otherwise 0; throws DerivedException if the held pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0059F920": {
     "name": "ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)",
     "class": "ExprParser::ReadMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getDamping(void) const, 0\u003e",

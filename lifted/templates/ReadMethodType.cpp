@@ -56993,3 +56993,28 @@ float __stdcall fn_0059F600(void* self) {
 }
 } // namespace lift_0049D460
 } // namespace lift_0059F600
+
+// [0x0059F8D0]
+namespace lift_0059F8D0 {
+// @name ExprParser::ReadMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0>
+// @summary Reads a float from the CharacterData held behind the argument pointer and returns 1 if it is >= 1e-6, otherwise 0; throws DerivedException if the held pointer is null.
+
+extern void* __fastcall ext_0046C3C0(void* self);
+extern double __fastcall ext_0059DEB0(void* self);
+extern void ext_006A6DD2(void* exception, void* throwInfo);
+
+extern int __stdcall fn_0059F8D0(void** holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        unsigned char exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+    double value = ext_0059DEB0(static_cast<unsigned char*>(obj) + 0x4);
+    double threshold = *reinterpret_cast<const double*>(0x0095DD18);
+    // fcomp + fnstsw/test ah,1: result is 0 when value < threshold or unordered (NaN).
+    return value >= threshold ? 1 : 0;
+}
+} // namespace lift_0059F8D0
