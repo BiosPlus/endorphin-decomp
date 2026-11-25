@@ -1,0 +1,46 @@
+{
+  "va": "0x006293A0",
+  "size": 43,
+  "orig_symbol": "sub_006293A0",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "Unknown::initFieldsWithArg",
+  "class": "Unknown",
+  "signature": "void* fn_006293A0(void* self, uint32_t arg0)",
+  "summary": "Runs base init with the stack argument, then sets vtable 0x009780BC, zeroes floats at +0x34/+0x38/+0x3C, sets +0x30 to 4, and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:16:24Z"
+}

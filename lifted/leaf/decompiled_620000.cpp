@@ -868,3 +868,29 @@ uintptr_t fn_00629370(uintptr_t this_ptr, uint32_t arg0) {
     return this_ptr;
 }
 } // namespace lift_00629370
+
+// [0x006293A0] sub_006293A0 (43 bytes)
+namespace lift_006293A0 {
+// Known callee 0x005FF240: sub_005FF240 (Initializes object fields to zero, stores argument at +0x28, and sets vtable to 0x0096F154)
+extern uint32_t ext_005FF240(uintptr_t this_ptr, uint32_t arg0);
+
+// @name Unknown::initFieldsWithArg
+// @class Unknown
+// @summary Runs base init with the stack argument, then sets vtable 0x009780BC, zeroes floats at +0x34/+0x38/+0x3C, sets +0x30 to 4, and returns this.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x30 uint32_t field_0x30
+// @field Unknown +0x34 float field_0x34
+// @field Unknown +0x38 float field_0x38
+// @field Unknown +0x3C float field_0x3C
+void* fn_006293A0(void* self, uint32_t arg0) {
+    ext_005FF240(reinterpret_cast<uintptr_t>(self), arg0);
+
+    lift_field<uint32_t>(self, 0x00) = 0x009780BCu;
+    lift_field<float>(self, 0x3C) = 0.0f;
+    lift_field<float>(self, 0x38) = 0.0f;
+    lift_field<float>(self, 0x34) = 0.0f;
+    lift_field<uint32_t>(self, 0x30) = 4u;
+
+    return self;
+}
+} // namespace lift_006293A0

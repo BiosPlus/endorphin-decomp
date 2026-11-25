@@ -31662,6 +31662,13 @@
     "summary": "Base-initializes the object via ext_005FF240, sets vtable to 0x0097804C, zeroes three float fields, and returns this.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x006293A0": {
+    "name": "Unknown::initFieldsWithArg",
+    "class": "Unknown",
+    "signature": "void* fn_006293A0(void* self, uint32_t arg0)",
+    "summary": "Runs base init with the stack argument, then sets vtable 0x009780BC, zeroes floats at +0x34/+0x38/+0x3C, sets +0x30 to 4, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x006294C0": {
     "name": "Sensors::SensorAbsoluteGeneralEulers::vfunc_14",
     "class": "Sensors::SensorAbsoluteGeneralEulers",
