@@ -978,3 +978,43 @@ void* __thiscall sub_0069C1C0(void* self) {
     return self;
 }
 } // namespace lift_0069C1C0
+
+// [0x00699870] sub_00699870 (91 bytes)
+namespace lift_00699870 {
+// Indirect call through the object's vtable slot at +0x70 (index 28).
+// Convention: MSVC __fastcall-style, ecx = object, first stack arg = out-slot pointer, second = record pointer.
+typedef void* (__fastcall *VirtualGetSlot70Fn)(void* self, int edx_unused, void** out_slot, void* record);
+
+// @name Unknown::copyRecordWithOptionalResolve
+// @class Unknown
+// @summary Copies a 16-byte record from src into self; when src+0xC is non-null, calls vtable slot 0x70 on it to fetch the +0x8 value, otherwise +0x8 is zeroed. Returns self.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+extern void* __fastcall fn_00699870(void* self, int edx_unused, const void* src) {
+    (void)edx_unused;
+
+    // Copy the first two dwords of the source record.
+    lift_field<uint32_t>(self, 0x0) = lift_field<const uint32_t>(src, 0x0);
+    lift_field<uint32_t>(self, 0x4) = lift_field<const uint32_t>(src, 0x4);
+
+    // Sub-record at src+0x8; its pointer field lives at src+0xC.
+    const void* sub = static_cast<const uint8_t*>(src) + 0x8;
+    void* obj = lift_field<void*>(sub, 0x4);
+
+    if (obj != nullptr) {
+        // Vtable slot 0x70 on the object; the result points at the value to copy.
+        void** vtbl = *static_cast<void***>(obj);
+        auto getSlot = reinterpret_cast<VirtualGetSlot70Fn>(vtbl[0x70 / sizeof(void*)]);
+        void* out_slot = const_cast<void*>(src);
+        void* result = getSlot(obj, 0, &out_slot, const_cast<void*>(sub));
+        lift_field<uint32_t>(self, 0x8) = lift_field<const uint32_t>(result, 0x0);
+    } else {
+        lift_field<uint32_t>(self, 0x8) = 0;
+    }
+
+    lift_field<uint32_t>(self, 0xC) = lift_field<const uint32_t>(sub, 0x4);
+    return self;
+}
+} // namespace lift_00699870

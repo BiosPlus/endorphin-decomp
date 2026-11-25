@@ -42376,6 +42376,13 @@
     "summary": "Allocates an array of count 0x2c-byte elements, throwing std::bad_alloc on size_t overflow.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x00699870": {
+    "name": "Unknown::copyRecordWithOptionalResolve",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __fastcall fn_00699870(void* self, int edx_unused, const void* src)",
+    "summary": "Copies a 16-byte record from src into self; when src+0xC is non-null, calls vtable slot 0x70 on it to fetch the +0x8 value, otherwise +0x8 is zeroed. Returns self.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00699930": {
     "name": "sub_00699930",
     "signature": "extern \"C\" int __thiscall fn_00699930(void* self)",
