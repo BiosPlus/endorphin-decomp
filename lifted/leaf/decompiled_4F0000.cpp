@@ -372,3 +372,18 @@ void fn_004F95D0(void* out, uint32_t value) {
     lift_field<uint32_t>(out, 4) = singleton;
 }
 } // namespace lift_004F95D0
+
+// [0x004F9570] sub_004F9570 (30 bytes)
+namespace lift_004F9570 {
+// Known callee 0x004F9310: getStaticSingleton_004F9310 (Lazily initializes and returns the static singleton object at 0x00AE9F3C.)
+extern void* ext_004F9310();
+
+// @name pairWithStaticSingleton
+// @summary Stores value in dst[0] and the lazily-initialized static singleton in dst[1]; returns dst.
+void* fn_004F9570(void** dst, void* value) {
+    void* singleton = ext_004F9310();
+    dst[0] = value;
+    dst[1] = singleton;
+    return dst;
+}
+} // namespace lift_004F9570

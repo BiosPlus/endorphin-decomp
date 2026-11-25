@@ -16996,6 +16996,12 @@
     "summary": "Initializes a 2-DWORD struct with a given value and the lazy static object pointer, returning the struct pointer.",
     "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
+  "0x004F9570": {
+    "name": "pairWithStaticSingleton",
+    "signature": "void* fn_004F9570(void** dst, void* value)",
+    "summary": "Stores value in dst[0] and the lazily-initialized static singleton in dst[1]; returns dst.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F95B0": {
     "name": "storeValueAndStaticObject",
     "signature": "void fn_004F95B0(uint32_t* out, uint32_t value)",
