@@ -832,3 +832,24 @@ void* fn_005B84E0() {
     return &mem_00B43CE4;
 }
 } // namespace lift_005B84E0
+
+// [0x005B8540] sub_005B8540 (87 bytes)
+namespace lift_005B8540 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self, one stack arg; stores the arg into the first DWORD of self and returns it)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00B43CF0;
+extern DWORD mem_00B43CEC;
+
+// @name getOrInitStaticObjectSEH_005B8540
+// @summary Lazily initializes the static object at mem_00B43CEC once (guarded by bit 0 of mem_00B43CF0) inside an SEH-protected region and returns its address.
+// The original wraps the body in an fs:[0] exception frame; that frame link is not modeled here and the saved link is passed as the stack argument.
+void* fn_005B8540() {
+    DWORD seh_prev_frame = 0; // saved fs:[0] exception-frame link (not modeled)
+    if ((mem_00B43CF0 & 1) == 0) {
+        mem_00B43CF0 |= 1;
+        ext_0067A670(&mem_00B43CEC, seh_prev_frame);
+        mem_00B43CEC = 0x961524;
+    }
+    return &mem_00B43CEC;
+}
+} // namespace lift_005B8540
