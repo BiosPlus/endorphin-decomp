@@ -646,3 +646,73 @@ void fn_005A9FB0(void* self) {
     ext_00678280(self);
 }
 } // namespace lift_005A9FB0
+
+// [0x005AC8C0]
+namespace lift_005AC8C0 {
+// @name TreeIterator::increment
+// @class TreeIterator
+// @summary Advances a tree iterator to its in-order successor (MSVC-style _Tree::_Inc); reports invalid_parameter on null container or sentinel node.
+// @field TreeIterator +0x00 void* field_0x00
+// @field TreeIterator +0x04 TreeNode* field_0x04
+// @field TreeNode +0x00 TreeNode* field_0x00
+// @field TreeNode +0x04 TreeNode* field_0x04
+// @field TreeNode +0x08 TreeNode* field_0x08
+// @field TreeNode +0x29 uint8_t field_0x29
+
+extern void (*ext_invalid_parameter_noinfo)(void);
+
+struct TreeNode {
+    TreeNode* field_0x00;   // left child
+    TreeNode* field_0x04;   // parent
+    TreeNode* field_0x08;   // right child
+    uint8_t   field_0x0C[0x29 - 0x0C];
+    uint8_t   field_0x29;   // nonzero when this node is the sentinel/head
+};
+
+struct TreeIterator {
+    void*     field_0x00;   // container; must be nonnull
+    TreeNode* field_0x04;   // current node
+
+    void increment();
+};
+
+void TreeIterator::increment() {
+    if (this->field_0x00 == nullptr) {
+        ext_invalid_parameter_noinfo();
+    }
+
+    TreeNode* node = this->field_0x04;
+    if (node->field_0x29 != 0) {
+        ext_invalid_parameter_noinfo();
+        return;
+    }
+
+    TreeNode* right = node->field_0x08;
+    if (right->field_0x29 == 0) {
+        // Successor is the leftmost node of the right subtree.
+        TreeNode* cur = right;
+        while (cur->field_0x00->field_0x29 == 0) {
+            cur = cur->field_0x00;
+        }
+        this->field_0x04 = cur;
+        return;
+    }
+
+    // No right subtree: climb until we come from a left child.
+    TreeNode* p = node->field_0x04;
+    if (p->field_0x29 != 0) {
+        this->field_0x04 = p;
+        return;
+    }
+
+    TreeNode* cur = node;
+    while (cur == p->field_0x08) {
+        cur = p;
+        p = p->field_0x04;
+        if (p->field_0x29 != 0) {
+            break;
+        }
+    }
+    this->field_0x04 = p;
+}
+} // namespace lift_005AC8C0

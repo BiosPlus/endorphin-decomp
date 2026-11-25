@@ -28243,6 +28243,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
     "lifted_path": "lifted/leaf/tiny_5A0000.cpp"
   },
+  "0x005AC8C0": {
+    "name": "TreeIterator::increment",
+    "class": "TreeIterator",
+    "signature": "void TreeIterator::increment()",
+    "summary": "Advances a tree iterator to its in-order successor (MSVC-style _Tree::_Inc); reports invalid_parameter on null container or sentinel node.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005ACAE0": {
     "name": "Command::vfunc_0",
     "class": "Command",

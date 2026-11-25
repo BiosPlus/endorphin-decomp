@@ -1,0 +1,52 @@
+{
+  "va": "0x005AC8C0",
+  "size": 108,
+  "orig_symbol": "sub_005AC8C0",
+  "src_path": "src/leaf/decompiled_5A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5A0000.cpp",
+  "name": "TreeIterator::increment",
+  "class": "TreeIterator",
+  "signature": "void TreeIterator::increment()",
+  "summary": "Advances a tree iterator to its in-order successor (MSVC-style _Tree::_Inc); reports invalid_parameter on null container or sentinel node.",
+  "fields": [
+    {
+      "class": "TreeIterator",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "TreeIterator",
+      "offset": "+0x4",
+      "type": "TreeNode*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "TreeNode*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x4",
+      "type": "TreeNode*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "TreeNode*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x29",
+      "type": "uint8_t",
+      "name": "field_0x29"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:57:47Z"
+}
