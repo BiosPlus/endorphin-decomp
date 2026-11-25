@@ -1221,6 +1221,18 @@
     "summary": "Checks virtual predicate at +0x28 and compares string at +0x458 against three known values",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x004103F0": {
+    "name": "sub_004103F0",
+    "signature": "uint32_t __fastcall sub_004103F0(uint32_t self)",
+    "summary": "Checks virtual predicate at +0x28 and ext_00410390, returning 1 if (!pred \u0026\u0026 !ext_00410390) or ext_00410390",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
+  "0x00410420": {
+    "name": "sub_00410420",
+    "signature": "uint32_t __fastcall sub_00410420(uint32_t self)",
+    "summary": "Returns 1 if neither the virtual predicate at +0x28 nor ext_00410390 returns true",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x004104A0": {
     "name": "MultiTrackView::CompositeEventTrack::vfunc_1",
     "class": "MultiTrackView::CompositeEventTrack",
