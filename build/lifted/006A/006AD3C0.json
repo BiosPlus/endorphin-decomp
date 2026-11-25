@@ -1,0 +1,45 @@
+{
+  "va": "0x006AD3C0",
+  "size": 114,
+  "orig_symbol": "sub_006AD3C0",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "DestructSub6AD3C0",
+  "signature": "void fn_006AD3C0(void* self)",
+  "summary": "Destructor that resets vtable, releases sub-object at +0x44, decrements refcount at +0x4, and destroys members at +0xC and +0x8.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "refObj"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Self",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x44",
+      "type": "void*",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:40:49Z"
+}

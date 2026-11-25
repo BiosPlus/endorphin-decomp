@@ -44954,6 +44954,12 @@
     "summary": "Serializes an XML attribute as name=\"value\" into the output context string and recurses into child nodes.",
     "lifted_path": "lifted/AdvXMLParser/Attribute.cpp"
   },
+  "0x00641350": {
+    "name": "Tree_find_i8",
+    "signature": "extern \"C\" uint32_t __thiscall sub_00641350(uint32_t self, uint32_t out_iter, uint32_t key_ptr)",
+    "summary": "Finds a signed-byte key in an MSVC red-black tree and returns an iterator.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00641760": {
     "name": "TreeNode::EraseSubtree",
     "class": "TreeNode",

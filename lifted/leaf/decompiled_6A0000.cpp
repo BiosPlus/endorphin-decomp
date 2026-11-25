@@ -788,3 +788,39 @@ void fn_006A3700(void* self, uint32_t n, const uint8_t* src) {
     lift_field<uint8_t*>(self, 0x08) = dst + n;
 }
 } // namespace lift_006A3700
+
+// [0x006AD3C0]
+namespace lift_006AD3C0 {
+extern void ext_006A5C5C(void* ptr);
+extern void ext_006AD960(void* self);
+extern uint32_t mem_009242F4;
+
+// @name DestructSub6AD3C0
+// @summary Destructor that resets vtable, releases sub-object at +0x44, decrements refcount at +0x4, and destroys members at +0xC and +0x8.
+// @field Self +0x00 uint32_t vtable
+// @field Self +0x04 void* refObj
+// @field Self +0x08 uint32_t field_0x08
+// @field Self +0x0C uint32_t field_0x0C
+// @field Self +0x44 void* field_0x44
+void fn_006AD3C0(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x00) = 0x0099103Cu;
+
+    void* sub = *reinterpret_cast<void**>(base + 0x44);
+    if (sub != nullptr) {
+        ext_006AD960(sub);
+    }
+
+    uint8_t* refObj = *reinterpret_cast<uint8_t**>(base + 0x04);
+    int32_t* refCount = reinterpret_cast<int32_t*>(refObj + 0x08);
+    *refCount -= 1;
+    if (*reinterpret_cast<int32_t*>(*reinterpret_cast<uint8_t**>(base + 0x04) + 0x08) == 0) {
+        ext_006A5C5C(*reinterpret_cast<void**>(base + 0x04));
+    }
+
+    using DtorFn = void(__thiscall*)(void*);
+    DtorFn dtor = reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_009242F4));
+    dtor(base + 0x0C);
+    dtor(base + 0x08);
+}
+} // namespace lift_006AD3C0
