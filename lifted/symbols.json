@@ -30302,6 +30302,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00610D10 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00612370": {
+    "name": "Unknown::setFirstElementAndNotify",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00612370(void* self, float value)",
+    "summary": "Stores the float argument into element 0 of the inline array at this+0x8, sets the flag at +0xC, forwards a notify through the object at +0xBC, and dispatches on the global handle's +0x258 subobject when the handle is non-zero.",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
   "0x006123C0": {
     "name": "UnknownClass::setElement1AndNotify",
     "class": "UnknownClass",

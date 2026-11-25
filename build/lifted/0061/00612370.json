@@ -1,0 +1,34 @@
+{
+  "va": "0x00612370",
+  "size": 69,
+  "orig_symbol": "sub_00612370",
+  "src_path": "src/leaf/decompiled_610000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_610000.cpp",
+  "name": "Unknown::setFirstElementAndNotify",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00612370(void* self, float value)",
+  "summary": "Stores the float argument into element 0 of the inline array at this+0x8, sets the flag at +0xC, forwards a notify through the object at +0xBC, and dispatches on the global handle's +0x258 subobject when the handle is non-zero.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xBC",
+      "type": "void*",
+      "name": "field_0xBC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:22:13Z"
+}

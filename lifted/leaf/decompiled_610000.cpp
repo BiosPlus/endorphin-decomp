@@ -375,3 +375,45 @@ void __thiscall sub_00610C60(uintptr_t self, uintptr_t src, uint32_t index) {
     *reinterpret_cast<uint8_t*>(self + 0x4) = 1;
 }
 } // namespace lift_00610C60
+
+// [0x00612370] Unknown::setFirstElementAndNotify (69 bytes)
+namespace lift_00612370 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t __cdecl ext_00594000(void);
+// Known callee 0x005B11D0: UnknownClass::getElementPtr (Returns a pointer to the 32-bit element at the given index in an inline array at offset 0x10.)
+extern uint32_t* __thiscall ext_005B11D0(void* self, uint32_t index);
+// Known callee 0x005E1330: Unknown::ForwardVCall0xCCToSubobjectField0x234 (If the subobject at +0x234 is non-null, call its virtual slot 0xCC with self as the stack argument.)
+extern void ext_005E1330(void* self);
+// Known callee 0x00493EE0: dispatchVirtualSlot154OfPointedObject (Loads the object pointer stored at *ecx; if non-null, calls its vtable slot at +0x154 with the object as this and returns that result (tail call).)
+extern void* ext_00493EE0(void* ecx);
+
+// @name Unknown::setFirstElementAndNotify
+// @class Unknown
+// @summary Stores the float argument into element 0 of the inline array at this+0x8, sets the flag at +0xC, forwards a notify through the object at +0xBC, and dispatches on the global handle's +0x258 subobject when the handle is non-zero.
+// @field Unknown +0x08 uint8_t field_0x08
+// @field Unknown +0x0C uint8_t field_0x0C
+// @field Unknown +0xBC void* field_0xBC
+void __thiscall fn_00612370(void* self, float value) {
+    // Global int32 handle, treated as a pointer-sized value below.
+    const uintptr_t handle = static_cast<uintptr_t>(static_cast<uint32_t>(ext_00594000()));
+
+    // Element 0 of the array at this+0x8 receives the float argument.
+    void* subobject = static_cast<uint8_t*>(self) + 0x8;
+    uint32_t* elem = ext_005B11D0(subobject, 0);
+    std::memcpy(elem, &value, sizeof value);
+
+    lift_field<uint8_t>(self, 0xC) = 1;
+
+    // Notify the object referenced at +0xBC if its first dword is non-null.
+    void* obj = lift_field<void*>(self, 0xBC);
+    void* inner = *static_cast<void**>(obj);
+    if (inner != nullptr) {
+        ext_005E1330(inner);
+    }
+
+    // Dispatch on the handle's +0x258 subobject.
+    if (handle != 0) {
+        ext_00493EE0(reinterpret_cast<void*>(handle + 0x258));
+    }
+}
+} // namespace lift_00612370
