@@ -1191,3 +1191,38 @@ void fn_00558F80(uint32_t begin, uint32_t end) {
     }
 }
 } // namespace lift_00558F80
+
+// [0x00558F20] sub_00558F20 (85 bytes)
+namespace lift_00558F20 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* ptr);
+extern uint32_t mem_00924FF4;
+
+// @name Unknown::clearStringVectorRange
+// @class Unknown
+// @summary Destroys the 0x1C-byte elements of each 0x14-byte record's buffer in [first, last), frees a non-null buffer, and zeroes its three pointer fields.
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x0C void* field_0x0C
+// @field Unknown +0x10 void* field_0x10
+void fn_00558F20(void* first, void* last) {
+    // Element destructor is fetched indirectly from the IAT slot at mem_00924FF4 (thiscall).
+    using ElementDtor = void(__thiscall*)(void*);
+    const auto destroy = reinterpret_cast<ElementDtor>(static_cast<uintptr_t>(mem_00924FF4));
+
+    for (uint8_t* rec = static_cast<uint8_t*>(first); rec != last; rec += 0x14) {
+        const uint32_t begin = lift_field<uint32_t>(rec, 0x08);
+        const uint32_t end = lift_field<uint32_t>(rec, 0x0C);
+
+        if (begin != 0) {
+            for (uint32_t elem = begin; elem != end; elem += 0x1C) {
+                destroy(reinterpret_cast<void*>(static_cast<uintptr_t>(elem)));
+            }
+            ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(begin)));
+        }
+
+        lift_field<uint32_t>(rec, 0x08) = 0;
+        lift_field<uint32_t>(rec, 0x0C) = 0;
+        lift_field<uint32_t>(rec, 0x10) = 0;
+    }
+}
+} // namespace lift_00558F20

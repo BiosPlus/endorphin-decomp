@@ -21728,6 +21728,13 @@
     "summary": "Scans a 4-byte-stride pointer range; entries whose std::string at +4 equals a fixed key are routed into this+0x5C (first hit, then moved to +0x16C via ext_00406FC0) or into this+0x16C (later hits).",
     "lifted_path": "lifted/classes/NMFileIO.cpp"
   },
+  "0x00558F20": {
+    "name": "Unknown::clearStringVectorRange",
+    "class": "Unknown",
+    "signature": "void fn_00558F20(void* first, void* last)",
+    "summary": "Destroys the 0x1C-byte elements of each 0x14-byte record's buffer in [first, last), frees a non-null buffer, and zeroes its three pointer fields.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00558F80": {
     "name": "Unknown::destroyRange_00558F80",
     "class": "DestroyRangeElement",

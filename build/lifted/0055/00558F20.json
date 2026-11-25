@@ -1,0 +1,34 @@
+{
+  "va": "0x00558F20",
+  "size": 85,
+  "orig_symbol": "sub_00558F20",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "Unknown::clearStringVectorRange",
+  "class": "Unknown",
+  "signature": "void fn_00558F20(void* first, void* last)",
+  "summary": "Destroys the 0x1C-byte elements of each 0x14-byte record's buffer in [first, last), frees a non-null buffer, and zeroes its three pointer fields.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:09:00Z"
+}
