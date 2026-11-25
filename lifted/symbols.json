@@ -66730,6 +66730,12 @@
     "summary": "Sets the 32-bit field at +0x44 if bit 0 of +0x9C is clear.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CAFC0": {
+    "name": "getFloatField14",
+    "signature": "float fn_007CAFC0(void* self)",
+    "summary": "Returns the float stored at offset 0x14 of the object passed as the single stack argument (x87 ST0 return).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007CAFD0": {
     "name": "Unknown::setXYAndComputeLength",
     "class": "Unknown",

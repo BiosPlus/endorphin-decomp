@@ -1204,3 +1204,14 @@ DWORD sub_007C6FC0(const void* self) {
     return lift_field<DWORD>(self, 0x14);
 }
 } // namespace lift_007C6FC0
+
+// [0x007CAFC0] sub_007CAFC0 (8 bytes)
+namespace lift_007CAFC0 {
+// @name getFloatField14
+// @summary Returns the float stored at offset 0x14 of the object passed as the single stack argument (x87 ST0 return).
+// @field Unknown +0x14 float field_0x14
+
+float fn_007CAFC0(void* self) {
+    return lift_field<float>(self, 0x14);
+}
+} // namespace lift_007CAFC0
