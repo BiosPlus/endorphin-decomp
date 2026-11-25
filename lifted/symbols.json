@@ -62213,6 +62213,13 @@
     "summary": "If arg2 != 0, set 0x400 in the dword at (*(self+0x04))+0x04; otherwise clear it.",
     "lifted_path": "lifted/leaf/decompiled_810000.cpp"
   },
+  "0x008106D0": {
+    "name": "CopyStringToStaticBuffer",
+    "class": "(none)",
+    "signature": "void fn_008106D0(const uint8_t* src)",
+    "summary": "Copies a string into the global 64-byte buffer at mem_00AB6AC4 via CopyStringToFixedBuffer.",
+    "lifted_path": "lifted/leaf/decompiled_810000.cpp"
+  },
   "0x00810C30": {
     "name": "ChainWalkWhileFlagged",
     "signature": "void fn_00810C30(void* self)",

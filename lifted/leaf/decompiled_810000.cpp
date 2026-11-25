@@ -283,3 +283,18 @@ uint32_t __cdecl fn_00811190(uint32_t handle, uint32_t size) {
 }
 } // namespace lift_0080B540
 } // namespace lift_00811190
+
+// [0x008106D0] sub_008106D0 (21 bytes)
+namespace lift_008106D0 {
+// Known callee 0x0080EB80: CopyStringToFixedBuffer (Copies src into dst via strncpyZeroPad using (size - 1) bytes, forces a NUL terminator at dst[size - 1], and returns 1.)
+extern void ext_0080EB80(uint8_t* dst, size_t size, const uint8_t* src);
+extern int mem_00AB6AC4;
+
+// @name CopyStringToStaticBuffer
+// @class (none)
+// @summary Copies a string into the global 64-byte buffer at mem_00AB6AC4 via CopyStringToFixedBuffer.
+// @field (none)
+void fn_008106D0(const uint8_t* src) {
+    ext_0080EB80(reinterpret_cast<uint8_t*>(&mem_00AB6AC4), 0x40, src);
+}
+} // namespace lift_008106D0
