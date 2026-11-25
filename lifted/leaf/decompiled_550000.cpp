@@ -1112,3 +1112,18 @@ void fn_00551A20(void* self) {
     ext_005478F0(self);
 }
 } // namespace lift_00551A20
+
+// [0x005541A0]
+namespace lift_005541A0 {
+extern void ext_00628FF0(void* self);
+
+// @name destroyStringPair
+// @summary Destroys two std::string members at offsets +0x20 and +0x04
+// @field Object +0x04 std::string field_0x04
+// @field Object +0x20 std::string field_0x20
+void __thiscall sub_005541A0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    ext_00628FF0(base + 0x20);
+    ext_00628FF0(base + 0x04);
+}
+} // namespace lift_005541A0
