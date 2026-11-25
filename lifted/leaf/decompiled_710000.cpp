@@ -3,6 +3,7 @@
 extern "C" void __fastcall ext_00712F60(void* self);
 extern "C" void __cdecl ext_006A5C5C(void* ptr);
 #include <cstdint>
+#include <cstdlib>
 
 // [0x00712F40] sub_00712F40 (32 bytes)
 // @name sub_00712F40
@@ -1609,3 +1610,33 @@ void fn_00715770(void* self, const void* src) {
     ext_007155B0(self, block);
 }
 } // namespace lift_00715770
+
+// [0x00713390]
+namespace lift_00713390 {
+// @name parseDouble4
+// @summary Parses a brace-enclosed, comma-separated 4-double tuple "{d0,d1,d2,d3}" into an array of 4 doubles.
+
+
+bool __stdcall sub_00713390(const char* str, double* out) {
+    if (*str != '{') {
+        return false;
+    }
+
+    const char* cur = str;
+    char* endptr = nullptr;
+
+    for (int i = 0; i < 4; ++i) {
+        ++cur;
+        out[i] = std::strtod(cur, &endptr);
+        if (cur == endptr) {
+            return false;
+        }
+        if (*endptr != ',' && i < 3) {
+            return false;
+        }
+        cur = endptr;
+    }
+
+    return *endptr == '}';
+}
+} // namespace lift_00713390

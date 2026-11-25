@@ -54860,6 +54860,12 @@
     "summary": "Reads the 12-byte entry at (index + arg); if its linked node is non-null and the node's key matches the entry's key, returns the node's value, else 0.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00706DD0": {
+    "name": "AllocAndInitUnknown_00706DD0",
+    "signature": "extern \"C\" void* fn_00706DD0(void)",
+    "summary": "Allocates 0x4C bytes via MFC operator new and initializes the Unknown object if allocation succeeds.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00706EF0": {
     "name": "Unknown::CallWithField5COrDefault",
     "class": "Unknown",
@@ -55832,6 +55838,12 @@
     "signature": "extern \"C\" uint8_t __stdcall fn_007131C0(void* self)",
     "summary": "Stdcall (ret 4) helper: zeroes two consecutive 32-bit fields at +0x00 and +0x04 of the object whose pointer is passed on the stack, then returns 1 in al.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713390": {
+    "name": "parseDouble4",
+    "signature": "bool __stdcall sub_00713390(const char* str, double* out)",
+    "summary": "Parses a brace-enclosed, comma-separated 4-double tuple \"{d0,d1,d2,d3}\" into an array of 4 doubles.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x007134C0": {
     "name": "LookupStaticAddress_007134C0",
