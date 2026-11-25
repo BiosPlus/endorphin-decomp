@@ -22523,6 +22523,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0041C750 (sub_0041C750).",
     "lifted_path": "lifted/leaf/tiny_570000.cpp"
   },
+  "0x005761E0": {
+    "name": "copyRecordRangeAdvance_005761E0",
+    "signature": "void* fn_005761E0(uint8_t* first, uint8_t* last, uint8_t* dest)",
+    "summary": "Copies a [first,last) range of 0x54-byte records into dest via ext_00575230 and returns dest advanced by the record count ((last - first) / 0x54) times 0x54.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00576240": {
     "name": "fillBytesFromSource",
     "signature": "void fn_00576240(uint8_t* dst, uint8_t* dstEnd, const uint8_t* src)",

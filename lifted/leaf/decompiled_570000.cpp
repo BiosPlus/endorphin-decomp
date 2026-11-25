@@ -1001,3 +1001,21 @@ void* fn_00574D30(void* self) {
     return self;
 }
 } // namespace lift_00574D30
+
+// [0x005761E0] sub_005761E0 (85 bytes)
+namespace lift_005761E0 {
+// Known callee 0x00575230: Unknown::CopyStringTripleRange (Copies a [first,last) range of 0x54-byte records into dest, assigning three std::string members per record; returns dest when empty, else one past the last written record.)
+extern void* ext_00575230(uint8_t* first, uint8_t* last, uint8_t* dest);
+
+// @name copyRecordRangeAdvance_005761E0
+// @summary Copies a [first,last) range of 0x54-byte records into dest via ext_00575230 and returns dest advanced by the record count ((last - first) / 0x54) times 0x54.
+void* fn_005761E0(uint8_t* first, uint8_t* last, uint8_t* dest) {
+    constexpr std::ptrdiff_t kStride = 0x54;
+
+    ext_00575230(first, last, dest);
+
+    std::ptrdiff_t span = last - first;
+    std::ptrdiff_t count = span / kStride;
+    return dest + count * kStride;
+}
+} // namespace lift_005761E0
