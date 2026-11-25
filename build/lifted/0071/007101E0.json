@@ -1,0 +1,22 @@
+{
+  "va": "0x007101E0",
+  "size": 11,
+  "orig_symbol": "sub_007101E0",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "CallVtableSlot4OnField0xF4",
+  "class": "(none; object type not recovered)",
+  "signature": "DWORD fn_007101E0(void* self)",
+  "summary": "Tail-calls vtable slot 4 (+0x10) of the object stored at this+0xF4; returns its result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF4",
+      "type": "void*",
+      "name": "field_0xf4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:19:47Z"
+}

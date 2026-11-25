@@ -2848,3 +2848,21 @@ uint8_t __thiscall fn_0071C5C0(uint8_t* self) {
 } // namespace lift_0071C970
 } // namespace lift_0071C8D0
 } // namespace lift_0071C5C0
+
+// [0x007101E0] sub_007101E0 (11 bytes)
+namespace lift_007101E0 {
+// @name CallVtableSlot4OnField0xF4
+// @class (none; object type not recovered)
+// @summary Tail-calls vtable slot 4 (+0x10) of the object stored at this+0xF4; returns its result.
+// @field Unknown +0xF4 void* field_0xf4
+// Original asm: mov ecx,[ecx+0xf4]; mov eax,[ecx]; jmp [eax+0x10]
+// Thiscall on the sub-object (ecx = sub-object); the callee's return value in eax is passed through.
+typedef DWORD(__thiscall* SubObjectSlot4Fn)(void* self);
+
+DWORD fn_007101E0(void* self) {
+    void* sub = lift_field<void*>(self, 0xF4);
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    SubObjectSlot4Fn target = reinterpret_cast<SubObjectSlot4Fn>(vtbl[4]);
+    return target(sub);
+}
+} // namespace lift_007101E0
