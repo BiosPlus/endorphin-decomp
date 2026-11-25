@@ -1568,3 +1568,27 @@ void fn_005172A0(void* self, void* arg) {
     }
 }
 } // namespace lift_005172A0
+
+// [0x005170D0] sub_005170D0 (104 bytes)
+namespace lift_005170D0 {
+// @name Unknown::CallSlot3OnEachEntry
+// @class Unknown
+// @summary Walks the pointer array bounded by this+0x18 (begin) and this+0x1C (end) and calls vtable slot 3 (+0x0C) on each object with the argument.
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1c
+void fn_005170D0(void* self, void* arg) {
+    uint32_t cursor = lift_field<uint32_t>(self, 0x18);
+    const uint32_t last = lift_field<uint32_t>(self, 0x1C);
+
+    while (cursor != last) {
+        const uint32_t objAddr = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(cursor));
+        void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(objAddr));
+
+        void** vtable = *reinterpret_cast<void***>(obj);
+        auto method = reinterpret_cast<void (*)(void*, void*)>(vtable[3]);
+        method(obj, arg);
+
+        cursor += sizeof(uint32_t);
+    }
+}
+} // namespace lift_005170D0
