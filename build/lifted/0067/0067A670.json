@@ -1,0 +1,21 @@
+{
+  "va": "0x0067A670",
+  "size": 26,
+  "orig_symbol": "sub_0067A670",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "InitWithStaticInstance_0067A670",
+  "signature": "void* __thiscall fn_0067A670(void* self)",
+  "summary": "Stores the vtable pointer 0x0098816C at offset 0, passes the lazily created static instance to ext_006A0790, and returns this.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vfptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:25:57Z"
+}

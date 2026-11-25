@@ -14,6 +14,7 @@ struct _ClassName__Fields {
     // +0x0   int32_t                  field_0x00  (evidence: 0x00494050) // CONFLICT: multiple definitions at +0x0
     // +0x0   u32                      field_0x00  (evidence: 0x00676780) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 field_0x00  (evidence: 0x00492590) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vfptr  (evidence: 0x0067A670) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable  (evidence: 0x0063D970, 0x0063DAB0, 0x0063DDF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x00518030) // CONFLICT: multiple definitions at +0x0
     // +0x4   float                    field_0x04  (evidence: 0x005539D0) // CONFLICT: multiple definitions at +0x4

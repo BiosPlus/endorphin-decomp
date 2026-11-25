@@ -989,3 +989,26 @@ extern uint32_t __cdecl sub_00670C50(uint32_t begin, uint32_t end, uint32_t key_
     return begin;
 }
 } // namespace lift_00670C50
+
+// [0x0067A670] sub_0067A670 (26 bytes)
+namespace lift_0067A670 {
+// Known callee 0x006A0680: getStaticInstance_00B5CA74 (Lazily initializes and returns the static object at 0x00B5CA74, registering its destructor via atexit.)
+extern void* __thiscall ext_006A0680();
+// Callee 0x006A0790 (13B, unlifted): takes the static instance as `this`.
+extern void __thiscall ext_006A0790(void* self);
+
+// @name InitWithStaticInstance_0067A670
+// @summary Stores the vtable pointer 0x0098816C at offset 0, passes the lazily created static instance to ext_006A0790, and returns this.
+// @field <ClassName> +0x00 uint32_t vfptr
+void* __thiscall fn_0067A670(void* self) {
+    // mov dword ptr [esi], 0x98816c
+    lift_field<uint32_t>(self, 0x00) = 0x0098816Cu;
+
+    // call ext_006A0680 -> eax = static instance; mov ecx, eax; call ext_006A0790
+    void* instance = ext_006A0680();
+    ext_006A0790(instance);
+
+    // mov eax, esi
+    return self;
+}
+} // namespace lift_0067A670

@@ -40773,6 +40773,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x24 and tail-calls sub_0067A080.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x0067A670": {
+    "name": "InitWithStaticInstance_0067A670",
+    "signature": "void* __thiscall fn_0067A670(void* self)",
+    "summary": "Stores the vtable pointer 0x0098816C at offset 0, passes the lazily created static instance to ext_006A0790, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067A690": {
     "name": "ExprParser::ExpressionContainerType::vfunc_42",
     "class": "ExprParser::ExpressionContainerType",
