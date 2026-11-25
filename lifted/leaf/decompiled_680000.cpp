@@ -1833,3 +1833,47 @@ void* fn_00687980(void* first, void* last, void* d_last) {
 }
 } // namespace lift_0050A720
 } // namespace lift_00687980
+
+// [0x00688670]
+namespace lift_00688670 {
+// @name Unknown::FindFirstKind13Element
+// @class Unknown
+// @summary Scans the 0x24-byte element array bounded by +0x144/+0x148 and returns the first element whose object has kind 0x13, or nullptr.
+// @field Unknown +0x144 uint8_t* elems_begin
+// @field Unknown +0x148 uint8_t* elems_end
+// @field Element +0x00 uint8_t* obj
+// @field ElementObject +0x48 uint32_t kind
+
+// Invalid-parameter handler (original: indirect call through the IAT slot at 0x925134).
+extern void (*mem_00925134)(void);
+
+extern void* __thiscall Unknown_FindFirstKind13Element(void* self) {
+    uint8_t* cur = lift_field<uint8_t*>(self, 0x144);
+    if (cur > lift_field<uint8_t*>(self, 0x148)) {
+        mem_00925134();
+    }
+
+    for (;;) {
+        uint8_t* const end = lift_field<uint8_t*>(self, 0x148);
+        if (lift_field<uint8_t*>(self, 0x144) > end) {
+            mem_00925134();
+        }
+        if (cur == end) {
+            return nullptr;
+        }
+        if (cur >= end) {
+            mem_00925134();
+        }
+
+        uint8_t* const obj = lift_field<uint8_t*>(cur, 0x00);
+        if (lift_field<uint32_t>(obj, 0x48) == 0x13u) {
+            return cur;
+        }
+
+        if (cur >= end) {
+            mem_00925134();
+        }
+        cur += 0x24;
+    }
+}
+} // namespace lift_00688670

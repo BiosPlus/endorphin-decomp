@@ -44830,6 +44830,13 @@
     "summary": "Copies the 0x24-byte records in [first, last) to dest and returns dest advanced by the copied record count times 0x24.",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00688670": {
+    "name": "Unknown::FindFirstKind13Element",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __thiscall Unknown_FindFirstKind13Element(void* self)",
+    "summary": "Scans the 0x24-byte element array bounded by +0x144/+0x148 and returns the first element whose object has kind 0x13, or nullptr.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x006886D0": {
     "name": "sub_006886D0",
     "signature": "uint32_t fn_006886D0(uint32_t begin, uint32_t end, uint32_t value)",
