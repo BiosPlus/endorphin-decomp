@@ -22815,6 +22815,13 @@
     "summary": "Writes the 8-byte value at *src into every 8-byte slot in [dst_begin, dst_end). Source pointer is not advanced.",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005AE170": {
+    "name": "ReleaseNodeChain",
+    "class": "\u003cunknown\u003e",
+    "signature": "static inline uint8_t* lift_ptr(uint32_t v)",
+    "summary": "Walks a linked list of nodes from `node`; for each node whose +0x29 flag is clear, recursively releases its child at +0x08 (same `self`), destroys the std::string at +0x0C, passes the node to ext_006A5C5C, and advances via the next pointer at +0x00. Stops at the first flagged node.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005AE480": {
     "name": "ReleaseChainNodes",
     "class": "ChainNode",

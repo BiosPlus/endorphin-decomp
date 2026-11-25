@@ -285,3 +285,33 @@ void ReleaseChainNodes(void* self, void* node) {
     } while (DoneFlag(cur) == 0);
 }
 } // namespace lift_005AE480
+
+// [0x005AE170] sub_005AE170 (62 bytes)
+namespace lift_005AE170 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* p);
+// Indirect callee via mem_00924FF4 (holds 0x00628FF0): MSVCP80 basic_string<char> destructor, thiscall.
+extern void ext_00628FF0(void* self);
+
+static inline uint8_t* lift_ptr(uint32_t v) {
+    return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(v));
+}
+
+// @name ReleaseNodeChain
+// @class <unknown>
+// @summary Walks a linked list of nodes from `node`; for each node whose +0x29 flag is clear, recursively releases its child at +0x08 (same `self`), destroys the std::string at +0x0C, passes the node to ext_006A5C5C, and advances via the next pointer at +0x00. Stops at the first flagged node.
+// @field <unknown> +0x00 uint32_t nextNode
+// @field <unknown> +0x08 uint32_t childNode
+// @field <unknown> +0x0C std::string name
+// @field <unknown> +0x29 uint8_t releasedFlag
+void fn_005AE170(void* self, uint8_t* node) {
+    uint8_t* cur = node;
+    while (lift_field<uint8_t>(cur, 0x29) == 0) {
+        fn_005AE170(self, lift_ptr(lift_field<uint32_t>(cur, 0x08)));
+        uint8_t* next = lift_ptr(lift_field<uint32_t>(cur, 0x00));
+        ext_00628FF0(cur + 0x0C);
+        ext_006A5C5C(cur);
+        cur = next;
+    }
+}
+} // namespace lift_005AE170
