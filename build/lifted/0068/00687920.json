@@ -1,0 +1,14 @@
+{
+  "va": "0x00687920",
+  "size": 89,
+  "orig_symbol": "sub_00687920",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "Unknown::copyRecordRangeAndRebase_00687920",
+  "class": "Unknown",
+  "signature": "void* fn_00687920(void* first, void* last, void* dest_last)",
+  "summary": "Copies a 0x2C-byte record range backward via ext_006873D0, then returns dest_last rewound by the whole-record count of [first, last).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:16:46Z"
+}
