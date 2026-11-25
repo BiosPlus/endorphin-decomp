@@ -1,0 +1,22 @@
+{
+  "va": "0x005B11E0",
+  "size": 11,
+  "orig_symbol": "sub_005B11E0",
+  "src_path": "src/leaf/tiny_5B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5B0000.cpp",
+  "name": "ReadFloatArrayElement",
+  "class": "\u003cClassName\u003e (unknown; receiver is a thiscall object)",
+  "signature": "float fn_005B11E0(void* self, int32_t index)",
+  "summary": "Returns float element `index` from the float array at this+0x10 (thiscall, ret 4).",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x10",
+      "type": "float field_0x10 (float array base; element stride",
+      "name": "4)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:19:21Z"
+}

@@ -26906,6 +26906,13 @@
     "summary": "Returns a pointer to the 32-bit element at the given index in an inline array at offset 0x10.",
     "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
   },
+  "0x005B11E0": {
+    "name": "ReadFloatArrayElement",
+    "class": "\u003cClassName\u003e (unknown; receiver is a thiscall object)",
+    "signature": "float fn_005B11E0(void* self, int32_t index)",
+    "summary": "Returns float element `index` from the float array at this+0x10 (thiscall, ret 4).",
+    "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
+  },
   "0x005B1370": {
     "name": "Geometry::SphereType::vfunc_4",
     "class": "Geometry::SphereType",

@@ -329,3 +329,14 @@ extern void fn_005B72A0(void* self, DWORD stackArg0, DWORD stackArg1) {
 } // namespace lift_005B7260
 } // namespace lift_005C3070
 } // namespace lift_005B72A0
+
+// [0x005B11E0] sub_005B11E0 (11 bytes)
+namespace lift_005B11E0 {
+// @name ReadFloatArrayElement
+// @class <ClassName> (unknown; receiver is a thiscall object)
+// @summary Returns float element `index` from the float array at this+0x10 (thiscall, ret 4).
+// @field <ClassName> +0x10 float field_0x10 (float array base; element stride 4)
+float fn_005B11E0(void* self, int32_t index) {
+    return lift_field<float>(self, 0x10 + static_cast<ptrdiff_t>(index) * 4);
+}
+} // namespace lift_005B11E0
