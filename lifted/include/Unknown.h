@@ -919,7 +919,7 @@ struct Unknown_Fields {
     // +0x88  int32_t                  field_0x88  (evidence: 0x00685890) // CONFLICT: multiple definitions at +0x88
     // +0x88  uint32_t                 field_0x88  (evidence: 0x0053DAA0) // CONFLICT: multiple definitions at +0x88
     // +0x88  uint8_t                  field_0x88  (evidence: 0x004407C0, 0x00441020) // CONFLICT: multiple definitions at +0x88
-    // +0x88  void*                    field_0x88  (evidence: 0x0045B450, 0x0045B4A0, 0x0045B4F0, 0x00545BE0, 0x00545C40) // CONFLICT: multiple definitions at +0x88
+    // +0x88  void*                    field_0x88  (evidence: 0x0045B450, 0x0045B4A0, 0x0045B4F0, 0x0045B5D0, 0x00545BE0, 0x00545C40) // CONFLICT: multiple definitions at +0x88
     // +0x88  void* field_0x88 (object pointer; vtable slot +0x90 is invoked with the float)  (evidence: 0x0045B580) // CONFLICT: multiple definitions at +0x88
     // +0x88  ptr field_0x88 (pointer to child object; owner class not identified)  (evidence: 0x005434C0, 0x005457B0) // CONFLICT: multiple definitions at +0x88
     // +0x88  void*                    nodeList  (evidence: 0x00456C20) // CONFLICT: multiple definitions at +0x88
@@ -1333,6 +1333,7 @@ struct Unknown_Fields {
     // +0x270 uint8                    field_0x270  (evidence: 0x00702620, 0x0070AD00, 0x0070BF00, 0x0070E390, 0x0070E3B0, 0x0070EC70) // CONFLICT: multiple definitions at +0x270
     // +0x270 uint8_t                  field_0x270  (evidence: 0x00702640, 0x0070AD00, 0x0070BF00, 0x0070E390, 0x0070E3B0, 0x0070EC70) // CONFLICT: multiple definitions at +0x270
     // +0x27C void* field_0x27c (embedded polymorphic sub-object; its vptr is read at +0x27c)  (evidence: 0x00564600)
+    // +0x284 void                     field_0x284  (evidence: 0x0045B5D0)
     // +0x288 int32_t                  field_0x288  (evidence: 0x0046FBE0) // CONFLICT: multiple definitions at +0x288
     // +0x288 uint32_t                 field_0x288  (evidence: 0x006C0610) // CONFLICT: multiple definitions at +0x288
     // +0x28C uint32_t                 field_0x28c  (evidence: 0x006C0610)

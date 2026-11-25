@@ -6514,6 +6514,13 @@
     "summary": "Reads a float from the embedded window at +0x230; if it is strictly positive, forwards it to the virtual method at vtable+0x90 of the object at +0x88.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x0045B5D0": {
+    "name": "Unknown::notifyPositiveWindowFloat_0045B5D0",
+    "class": "Unknown",
+    "signature": "void fn_0045B5D0(void* self)",
+    "summary": "Reads a float from the window text at +0x284; if it is \u003e 0, forwards it to a virtual method on the object at +0x88.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x0045B670": {
     "name": "sub_0045B670",
     "signature": "extern \"C\" void* __cdecl fn_0045B670(void)",

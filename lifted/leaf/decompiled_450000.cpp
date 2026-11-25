@@ -1573,3 +1573,32 @@ void fn_0045B410(void* self) {
     method(target, value);
 }
 } // namespace lift_0045B410
+
+// [0x0045B5D0] sub_0045B5D0 (65 bytes)
+namespace lift_0045B5D0 {
+// Known callee 0x0045AEE0: getWindowTextAsFloat (Reads the window text of a CWnd into a string and parses it as a float using atof.)
+extern float __stdcall ext_0045AEE0(void* wnd);
+
+// Virtual slot at vtable+0x94 is invoked as a thiscall taking one float argument.
+using ThisFloatFn = void(__thiscall*)(void*, float);
+
+// @name Unknown::notifyPositiveWindowFloat_0045B5D0
+// @class Unknown
+// @summary Reads a float from the window text at +0x284; if it is > 0, forwards it to a virtual method on the object at +0x88.
+// @field Unknown +0x88 void* field_0x88
+// @field Unknown +0x284 void field_0x284
+void fn_0045B5D0(void* self) {
+    void* wnd = reinterpret_cast<uint8_t*>(self) + 0x284;
+    float v = ext_0045AEE0(wnd);
+
+    // Original: fcom against 0.0; returns unless v > 0 (NaN also returns).
+    if (!(v > 0.0f)) {
+        return;
+    }
+
+    void* obj = lift_field<void*>(self, 0x88);
+    void* vtbl = lift_field<void*>(obj, 0);
+    ThisFloatFn method = lift_field<ThisFloatFn>(vtbl, 0x94);
+    method(obj, v);
+}
+} // namespace lift_0045B5D0

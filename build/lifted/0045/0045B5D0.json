@@ -1,0 +1,28 @@
+{
+  "va": "0x0045B5D0",
+  "size": 65,
+  "orig_symbol": "sub_0045B5D0",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "Unknown::notifyPositiveWindowFloat_0045B5D0",
+  "class": "Unknown",
+  "signature": "void fn_0045B5D0(void* self)",
+  "summary": "Reads a float from the window text at +0x284; if it is \u003e 0, forwards it to a virtual method on the object at +0x88.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x284",
+      "type": "void",
+      "name": "field_0x284"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:06:38Z"
+}
