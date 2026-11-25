@@ -1,0 +1,28 @@
+{
+  "va": "0x004673A0",
+  "size": 61,
+  "orig_symbol": "VMCActionDoc::vfunc_41",
+  "src_path": "src/classes/VMCActionDoc.cpp",
+  "lifted_path": "lifted/classes/VMCActionDoc.cpp",
+  "name": "VMCActionDoc::vfunc_41",
+  "class": "VMCActionDoc",
+  "signature": "bool fn_004673A0(void* self)",
+  "summary": "Gate on ext_004663A0; if the state at +0x60 is 0 forward to the MFC thunk, if 1 run the helper and then invoke the vtable slot at +0x64 with arg 0; otherwise return false.",
+  "fields": [
+    {
+      "class": "VMCActionDoc",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtbl"
+    },
+    {
+      "class": "VMCActionDoc",
+      "offset": "+0x60",
+      "type": "int32_t",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:56:24Z"
+}

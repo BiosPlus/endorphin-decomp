@@ -5915,6 +5915,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x004673A0": {
+    "name": "VMCActionDoc::vfunc_41",
+    "class": "VMCActionDoc",
+    "signature": "bool fn_004673A0(void* self)",
+    "summary": "Gate on ext_004663A0; if the state at +0x60 is 0 forward to the MFC thunk, if 1 run the helper and then invoke the vtable slot at +0x64 with arg 0; otherwise return false.",
+    "lifted_path": "lifted/classes/VMCActionDoc.cpp"
+  },
   "0x004675D0": {
     "name": "sub_004675D0",
     "signature": "extern \"C\" void __fastcall fn_004675D0(void* self)",
