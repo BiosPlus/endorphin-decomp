@@ -1998,3 +1998,25 @@ void* fn_00503A70() {
     return &mem_00AEBAFC;
 }
 } // namespace lift_00503A70
+
+// [0x00508DD0] sub_00508DD0 (95 bytes)
+namespace lift_00508DD0 {
+// @name InitOnceGlobalString_00508DD0
+// @summary One-time initializer for global string mem_00AEBC34; on first call sets guard bit 0 of mem_00AEBC50, runs the string init via ext_0066AD10 and registers a cleanup callback via ext_006A6C87, then returns the string's address.
+
+extern void* ext_0066AD10(void* out_str, uint8_t flag);
+extern int ext_006A6C87(void* fn);
+extern uint32_t mem_00AEBC50;
+extern uint8_t mem_00AEBC34[];
+
+void* fn_00508DD0() {
+    // Guard bit 0 of mem_00AEBC50: run initialization only once.
+    if ((mem_00AEBC50 & 1u) == 0u) {
+        mem_00AEBC50 |= 1u;
+        // Original pushes 0x00A41290 as the second argument; passed through as its low byte (uint8_t flag).
+        ext_0066AD10(static_cast<void*>(mem_00AEBC34), static_cast<uint8_t>(0x00A41290u));
+        ext_006A6C87(reinterpret_cast<void*>(static_cast<uintptr_t>(0x00919D60u)));
+    }
+    return static_cast<void*>(mem_00AEBC34);
+}
+} // namespace lift_00508DD0

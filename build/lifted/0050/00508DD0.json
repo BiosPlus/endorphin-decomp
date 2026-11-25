@@ -1,0 +1,13 @@
+{
+  "va": "0x00508DD0",
+  "size": 95,
+  "orig_symbol": "sub_00508DD0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "InitOnceGlobalString_00508DD0",
+  "signature": "void* fn_00508DD0()",
+  "summary": "One-time initializer for global string mem_00AEBC34; on first call sets guard bit 0 of mem_00AEBC50, runs the string init via ext_0066AD10 and registers a cleanup callback via ext_006A6C87, then returns the string's address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:28:54Z"
+}
