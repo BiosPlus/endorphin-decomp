@@ -394,3 +394,29 @@ void fn_00478CB0(float* first, float* last) {
     }
 }
 } // namespace lift_00478CB0
+
+// [0x004772E0] sub_004772E0 (83 bytes)
+namespace lift_004772E0 {
+// @name MoveBackward12
+// @summary Moves the 12-byte elements in [first, last) backward so the range ends at dst_last; returns the new range start.
+
+// Copies the 12-byte elements in [first, last) backward (last element first)
+// so that the moved block ends at dst_last. Overlapping ranges are handled
+// per element with memmove. Returns dst_last - 12 * count, where
+// count = (last - first) / 12 (signed division, as in the original).
+std::uint8_t* fn_004772E0(std::uint8_t* first, std::uint8_t* last, std::uint8_t* dst_last) {
+    const std::ptrdiff_t count = (last - first) / 12;
+    std::uint8_t* const result = dst_last - 12 * count;
+
+    if (first != last) {
+        const std::ptrdiff_t offset = dst_last - last;
+        std::uint8_t* cur = last;
+        do {
+            cur -= 12;
+            std::memmove(cur + offset, cur, 12);
+        } while (cur != first);
+    }
+
+    return result;
+}
+} // namespace lift_004772E0

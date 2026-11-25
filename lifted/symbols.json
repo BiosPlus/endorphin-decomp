@@ -7754,6 +7754,12 @@
     "summary": "Looks up a symbol pointer in the inner searchable map and dereferences the result if found.",
     "lifted_path": "lifted/templates/auto_tiny.cpp"
   },
+  "0x004772E0": {
+    "name": "MoveBackward12",
+    "signature": "std::uint8_t* fn_004772E0(std::uint8_t* first, std::uint8_t* last, std::uint8_t* dst_last)",
+    "summary": "Moves the 12-byte elements in [first, last) backward so the range ends at dst_last; returns the new range start.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x004773B0": {
     "name": "Unknown::SetByteAndAssignString",
     "class": "Unknown",

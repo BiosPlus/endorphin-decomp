@@ -1,0 +1,13 @@
+{
+  "va": "0x004772E0",
+  "size": 83,
+  "orig_symbol": "sub_004772E0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "MoveBackward12",
+  "signature": "std::uint8_t* fn_004772E0(std::uint8_t* first, std::uint8_t* last, std::uint8_t* dst_last)",
+  "summary": "Moves the 12-byte elements in [first, last) backward so the range ends at dst_last; returns the new range start.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:04:19Z"
+}
