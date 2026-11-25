@@ -817,3 +817,16 @@ int32_t fn_0080FB10(void* self) {
 }
 } // namespace lift_007AF730
 } // namespace lift_0080FB10
+
+// [0x0080EB80] sub_0080EB80 (41 bytes)
+namespace lift_0080EB80 {
+// Known callee 0x008598E0: strncpyZeroPad (Copy up to n bytes of a NUL-terminated string from src to dst, zero-filling the remainder of the n-byte window; returns dst.)
+extern uint8_t* ext_008598E0(uint8_t* dst, const uint8_t* src, size_t n);
+
+// @name CopyStringToFixedBuffer
+// @summary Copies src into dst via strncpyZeroPad using (size - 1) bytes, forces a NUL terminator at dst[size - 1], and returns 1.
+void fn_0080EB80(uint8_t* dst, size_t size, const uint8_t* src) {
+    ext_008598E0(dst, src, size - 1);
+    dst[size - 1] = 0;
+}
+} // namespace lift_0080EB80
