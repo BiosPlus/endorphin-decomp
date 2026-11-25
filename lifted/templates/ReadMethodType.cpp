@@ -50249,3 +50249,35 @@ void fn_00639730(void* self) {
     throw exc;
 }
 } // namespace lift_00639730
+
+// [0x006399F0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0>::vfunc_1 (49 bytes)
+namespace lift_006399F0 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* target);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// RTTI ThrowInfo for the DerivedException thrown below.
+extern const unsigned char mem_009DEC1C[];
+
+// Portable stand-in for _CxxThrowException(object, throwInfo).
+[[noreturn]] void lift_cxx_throw(void* object, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<EffectorSkeletal>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0>
+// @summary Always throws; if the held EffectorSkeletal pointer is non-null, first reports via ext_0046C4E0 at (ptr + 0xA8), then throws a DerivedException.
+// @field ExprParser::ReadMethodType<EffectorSkeletal> +0x00 void* m_pObject
+// @field EffectorSkeletal +0xA8 void* field_0xA8
+void fn_006399F0(void* self) {
+    void* object = *static_cast<void**>(self);
+    if (object != nullptr) {
+        ext_0046C4E0(static_cast<unsigned char*>(object) + 0xA8);
+    }
+    // The exception object is constructed in-place on the stack by ext_0046C3C0.
+    alignas(16) unsigned char exception[64];
+    ext_0046C3C0(exception);
+    lift_cxx_throw(exception, mem_009DEC1C);
+}
+} // namespace lift_006399F0

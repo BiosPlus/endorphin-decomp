@@ -42331,6 +42331,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0062E520 (ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006399F0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0\u003e",
+    "signature": "void fn_006399F0(void* self)",
+    "summary": "Always throws; if the held EffectorSkeletal pointer is non-null, first reports via ext_0046C4E0 at (ptr + 0xA8), then throws a DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00639A30": {
     "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0\u003e",
