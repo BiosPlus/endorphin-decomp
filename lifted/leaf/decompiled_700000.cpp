@@ -1936,3 +1936,69 @@ extern void* fn_00706DD0(void) {
     return nullptr;
 }
 } // namespace lift_00706DD0
+
+// [0x00709AB0] sub_00709AB0 (94 bytes)
+namespace lift_00709AB0 {
+// Field access helpers. Pointers inside the object are stored as 32-bit
+// addresses (the original code is 32-bit x86), so they are read as uint32_t
+// and converted back to pointers when dereferenced.
+template <typename T>
+static inline T fld(const void* base, uintptr_t off) {
+    T v;
+    std::memcpy(&v, static_cast<const unsigned char*>(base) + off, sizeof(T));
+    return v;
+}
+
+static inline void* as_ptr(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+// @name Unknown::ValidateChildStates
+// @class Unknown
+// @summary Returns TRUE when arg is null, +0x14 is zero, +0x18 is <= 1 (and if 1, the object at +0x4c matches key +0x48), and every entry in the array at +0xD0 (count +0xC0) has zero +0x14 and +0x18.
+// @field Unknown +0x14 int32_t field_0x14
+// @field Unknown +0x18 int32_t field_0x18
+// @field Unknown +0x48 int32_t field_0x48
+// @field Unknown +0x4c uint32_t field_0x4c
+// @field Unknown +0xC0 int32_t field_0xc0
+// @field Unknown +0xD0 uint32_t field_0xd0
+// @field ChildElement +0x14 int32_t field_0x14
+// @field ChildElement +0x18 int32_t field_0x18
+extern BOOL __thiscall fn_00709AB0(void* self, void* arg) {
+    if (arg != nullptr) {
+        return FALSE;
+    }
+    if (fld<int32_t>(self, 0x14) != 0) {
+        return FALSE;
+    }
+
+    int32_t state = fld<int32_t>(self, 0x18);
+    if (state > 1) {
+        return FALSE;
+    }
+    if (state == 1) {
+        uint32_t obj_addr = fld<uint32_t>(self, 0x4c);
+        if (obj_addr == 0) {
+            return FALSE;
+        }
+        int32_t key = fld<int32_t>(self, 0x48);
+        if (*reinterpret_cast<int32_t*>(as_ptr(obj_addr)) != key) {
+            return FALSE;
+        }
+    }
+
+    int32_t count = fld<int32_t>(self, 0xc0);
+    uint32_t arr_addr = fld<uint32_t>(self, 0xd0);
+    for (int32_t i = count - 1; i >= 0; --i) {
+        uint32_t* arr = reinterpret_cast<uint32_t*>(as_ptr(arr_addr));
+        void* elem = as_ptr(arr[i]);
+        if (fld<int32_t>(elem, 0x18) != 0) {
+            return FALSE;
+        }
+        if (fld<int32_t>(elem, 0x14) != 0) {
+            return FALSE;
+        }
+    }
+    return TRUE;
+}
+} // namespace lift_00709AB0

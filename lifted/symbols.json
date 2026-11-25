@@ -59189,6 +59189,13 @@
     "summary": "Walks the +0x08 link chain from the argument to its last node; returns that node if its virtual slot 5 accepts mem_00B5EB78, otherwise null.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00709AB0": {
+    "name": "Unknown::ValidateChildStates",
+    "class": "Unknown",
+    "signature": "static inline T fld(const void* base, uintptr_t off)",
+    "summary": "Returns TRUE when arg is null, +0x14 is zero, +0x18 is \u003c= 1 (and if 1, the object at +0x4c matches key +0x48), and every entry in the array at +0xD0 (count +0xC0) has zero +0x14 and +0x18.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00709C90": {
     "name": "ChainedNodeValueIfKeyMatches",
     "signature": "DWORD fn_00709C90(void* self)",
