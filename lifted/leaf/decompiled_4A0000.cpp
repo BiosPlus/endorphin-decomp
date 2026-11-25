@@ -213,3 +213,24 @@ void DwordVector::EraseAt(void* out, uint32_t value, uint32_t* pos) {
     lift_field<uint32_t*>(out, 4) = pos;
 }
 } // namespace lift_004A6020
+
+// [0x004ABA70] sub_004ABA70 (39 bytes)
+namespace lift_004ABA70 {
+// Known callee 0x00430EF0: FindStringInArray (Linear search over an array of 28-byte std::string objects; returns the first element equal to value, or last if none match.)
+extern void* ext_00430EF0(void* first, void* last, const void* value);
+
+// @name FindStringInRangeToPair
+// @summary Searches [first, last) for value via ext_00430EF0 and writes {owner, found} to the out pair.
+// Note: arg4 (+0x10) is unused by the code; kept so the cdecl stack layout matches.
+struct StringFindResult {
+    void* owner;
+    void* found;
+};
+
+void fn_004ABA70(StringFindResult* out, void* owner, void* first, void* unused, void* last, const void* value) {
+    (void)unused;
+    void* found = ext_00430EF0(first, last, value);
+    out->owner = owner;
+    out->found = found;
+}
+} // namespace lift_004ABA70

@@ -10367,6 +10367,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType\u003cRuntimeEngine, int, getNumTicksToRun, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x004ABA70": {
+    "name": "FindStringInRangeToPair",
+    "signature": "void fn_004ABA70(StringFindResult* out, void* owner, void* first, void* unused, void* last, const void* value)",
+    "summary": "Searches [first, last) for value via ext_00430EF0 and writes {owner, found} to the out pair.",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004ABE70": {
     "name": "BehaviourData::vfunc_8_off_C",
     "class": "NMData::BehaviourData",

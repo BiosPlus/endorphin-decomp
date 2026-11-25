@@ -1,0 +1,13 @@
+{
+  "va": "0x004ABA70",
+  "size": 39,
+  "orig_symbol": "sub_004ABA70",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "FindStringInRangeToPair",
+  "signature": "void fn_004ABA70(StringFindResult* out, void* owner, void* first, void* unused, void* last, const void* value)",
+  "summary": "Searches [first, last) for value via ext_00430EF0 and writes {owner, found} to the out pair.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:00:37Z"
+}
