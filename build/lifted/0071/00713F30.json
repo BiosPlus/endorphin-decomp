@@ -1,0 +1,13 @@
+{
+  "va": "0x00713F30",
+  "size": 40,
+  "orig_symbol": "sub_00713F30",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "getTableEntry_00713F30",
+  "signature": "uint32_t __stdcall sub_00713F30(uint32_t index)",
+  "summary": "Maps an index (0, 1, or other) to one of three static data addresses.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T14:29:25Z"
+}

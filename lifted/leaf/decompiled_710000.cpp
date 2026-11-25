@@ -2039,3 +2039,19 @@ void* fn_0071C320(void* self, uint32_t arg1) {
 }
 } // namespace lift_0071B010
 } // namespace lift_0071C320
+
+// [0x00713F30]
+namespace lift_00713F30 {
+// @name getTableEntry_00713F30
+// @summary Maps an index (0, 1, or other) to one of three static data addresses.
+uint32_t __stdcall sub_00713F30(uint32_t index) {
+    switch (index) {
+    case 0:
+        return 0x00AAC224u;
+    case 1:
+        return 0x00AAC220u;
+    default:
+        return 0x00AAC03Cu;
+    }
+}
+} // namespace lift_00713F30
