@@ -24223,6 +24223,13 @@
     "summary": "Copies a 64-byte transform matrix from TransformInterface vfunc[5] into the buffer returned by ext_00648480 if field_0x18 is non-null.",
     "lifted_path": "lifted/NMData/CollisionModelData.cpp"
   },
+  "0x005C38F0": {
+    "name": "Unknown::getStaticZeroVec4",
+    "class": "Unknown",
+    "signature": "float* fn_005C38F0(void* self)",
+    "summary": "If this+0x164 is nonzero, forwards to ext_005B6B60; otherwise lazily zeroes a static float4 at mem_00AE558C on first call and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005C3AB0": {
     "name": "NMData::CollisionModelData::vfunc_36",
     "class": "NMData::CollisionModelData",

@@ -248,3 +248,35 @@ void fn_005C40C0(void* self, void* peer) {
     ext_006484F0(self_delegate, peer_delegate);
 }
 } // namespace lift_005C40C0
+
+// [0x005C38F0] sub_005C38F0 (60 bytes)
+namespace lift_005C38F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void ext_005B6B60(void* self);
+// Known callee 0x005B6B90: Unknown::forwardToSubobject158 (If the pointer at +0x158 is non-null, forwards this+0x1C4 to ext_005CE9D0 on that pointer.)
+extern void ext_005B6B90(void* self);
+extern int mem_00AE5598;
+extern int mem_00AE558C;
+extern int mem_00AE5590;
+extern int mem_00AE5594;
+
+// @name Unknown::getStaticZeroVec4
+// @class Unknown
+// @summary If this+0x164 is nonzero, forwards to ext_005B6B60; otherwise lazily zeroes a static float4 at mem_00AE558C on first call and returns its address.
+// @field Unknown +0x164 int field_164
+float* fn_005C38F0(void* self) {
+    int subFlag = *reinterpret_cast<int*>(static_cast<char*>(self) + 0x164);
+    if (subFlag != 0) {
+        ext_005B6B60(self);
+        return nullptr;
+    }
+    if ((mem_00AE5598 & 1) == 0) {
+        mem_00AE5598 |= 1;
+        // 0.0f has an all-zero bit pattern, so zeroing the int storage matches the original fldz/fst stores.
+        mem_00AE558C = 0;
+        mem_00AE5590 = 0;
+        mem_00AE5594 = 0;
+    }
+    return reinterpret_cast<float*>(&mem_00AE558C);
+}
+} // namespace lift_005C38F0
