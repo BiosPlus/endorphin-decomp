@@ -20771,6 +20771,13 @@
     "summary": "Clears the three-pointer element range at +0x04/+0x08/+0x0C, then, for a nonzero count not above 0x1555555, allocates count * 192 bytes and sets begin, end and capacity-end. Returns true when storage was allocated.",
     "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
+  "0x0051E120": {
+    "name": "Unknown::initElementRange_0051E120",
+    "class": "Unknown",
+    "signature": "bool fn_0051E120(void* self, uint32_t count)",
+    "summary": "Resets the three-pointer range at self+0x04..0x0C and, for a nonzero count, allocates count*0x168-byte elements and stores [begin, begin, end]; returns false when count is zero.",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x0051E170": {
     "name": "sub_0051E170",
     "signature": "extern uint32_t fn_0051E170(uint32_t first, uint32_t last, uint32_t dest)",

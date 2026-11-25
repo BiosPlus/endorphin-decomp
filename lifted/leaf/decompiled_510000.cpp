@@ -378,3 +378,44 @@ bool fn_0051E0D0(void* self, uint32_t count) {
     return true;
 }
 } // namespace lift_0051E0D0
+
+// [0x0051E120] sub_0051E120 (77 bytes)
+namespace lift_0051E120 {
+// Known callee 0x00405FB0: throwPreparedStringError_00405FB0 (Builds a std::string from the literal at 0x00928F30 and throws it inside an std::exception-derived object.)
+extern void ext_00405FB0();
+// Known callee 0x0051DF00: sub_0051DF00 (Auto-lifted identical-shape clone of 0x00699810 (allocate_array_0x2c).)
+extern void* ext_0051DF00(uint32_t count);
+
+// @name Unknown::initElementRange_0051E120
+// @class Unknown
+// @summary Resets the three-pointer range at self+0x04..0x0C and, for a nonzero count, allocates count*0x168-byte elements and stores [begin, begin, end]; returns false when count is zero.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x0C void* field_0x0C
+bool fn_0051E120(void* self, uint32_t count) {
+    auto* obj = static_cast<uint8_t*>(self);
+    auto& f04 = *reinterpret_cast<uint8_t**>(obj + 0x04);
+    auto& f08 = *reinterpret_cast<uint8_t**>(obj + 0x08);
+    auto& f0C = *reinterpret_cast<uint8_t**>(obj + 0x0C);
+
+    f04 = nullptr;
+    f08 = nullptr;
+    f0C = nullptr;
+
+    if (count == 0) {
+        return false;
+    }
+    // 0xB60B60 * 0x168 is the largest product that fits in 32 bits.
+    if (count > 0xB60B60u) {
+        ext_00405FB0();
+    }
+
+    auto* buf = static_cast<uint8_t*>(ext_0051DF00(count));
+    uint8_t* end = buf + static_cast<size_t>(count) * 0x168u;
+
+    f04 = buf;
+    f08 = buf;
+    f0C = end;
+    return true;
+}
+} // namespace lift_0051E120
