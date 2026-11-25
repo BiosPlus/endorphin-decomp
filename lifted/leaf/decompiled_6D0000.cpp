@@ -1563,3 +1563,99 @@ bool __thiscall fn_006D2940(const double* self, const double* other) {
     return true;
 }
 } // namespace lift_006D2940
+
+// [0x006D4140]
+namespace lift_006D4140 {
+extern void* ext_006A5C62(uint32_t size);
+extern void* __thiscall ext_006D7AE0(void* self, void* arg);
+
+// @name allocateAndConstruct_006D7AE0
+// @summary Allocates 0x1d0 bytes and constructs an object via sub_006D7AE0, returning nullptr on allocation failure.
+
+void* __thiscall fn_006D4140(void* self) {
+    void* obj = ext_006A5C62(0x1d0);
+    if (!obj) {
+        return nullptr;
+    }
+    return ext_006D7AE0(obj, self);
+}
+} // namespace lift_006D4140
+
+// [0x006DE970]
+namespace lift_006DE970 {
+// @name Unknown::FindChildById
+// @class Unknown
+// @summary Recursively searches child nodes for one whose indirect uint32 at +0x14/+0x98 matches the given ID.
+// @field Unknown +0x00 void** vtable
+
+
+extern uint32_t __fastcall ext_006DE3E0(void* self);
+
+extern void* __thiscall fn_006DE970(void* self, uint32_t id) {
+    using GetCountFn = int32_t(__thiscall*)(void*);
+    using GetChildFn = void*(__thiscall*)(void*, int32_t);
+
+    void** vtable = *reinterpret_cast<void***>(self);
+    int32_t count = reinterpret_cast<GetCountFn>(vtable[0x14 / 4])(self);
+    if (count <= 0) {
+        return nullptr;
+    }
+
+    for (int32_t i = 0; i < count; ++i) {
+        vtable = *reinterpret_cast<void***>(self);
+        void* child = reinterpret_cast<GetChildFn>(vtable[0x18 / 4])(self, i);
+
+        if (ext_006DE3E0(child) == id) {
+            return child;
+        }
+
+        void* found = fn_006DE970(child, id);
+        if (found != nullptr) {
+            return found;
+        }
+
+        vtable = *reinterpret_cast<void***>(self);
+        count = reinterpret_cast<GetCountFn>(vtable[0x14 / 4])(self);
+    }
+
+    return nullptr;
+}
+} // namespace lift_006DE970
+
+// [0x006D7BE0]
+namespace lift_006D7BE0 {
+void mem_write32(uint32_t addr, uint32_t val);
+void mem_write8(uint32_t addr, uint8_t val);
+
+// @name UnknownClass::resetFields
+// @class UnknownClass
+// @summary Initializes several dword and byte fields starting at offset 0x1A8 to 4 or 0.
+// @field UnknownClass +0x1A8 uint32_t field_0x1a8
+// @field UnknownClass +0x1AC uint32_t field_0x1ac
+// @field UnknownClass +0x1B0 uint32_t field_0x1b0
+// @field UnknownClass +0x1B4 uint32_t field_0x1b4
+// @field UnknownClass +0x1B8 uint32_t field_0x1b8
+// @field UnknownClass +0x1BC uint32_t field_0x1bc
+// @field UnknownClass +0x1C0 uint8_t field_0x1c0
+// @field UnknownClass +0x1C1 uint8_t field_0x1c1
+// @field UnknownClass +0x1C2 uint8_t field_0x1c2
+// @field UnknownClass +0x1C3 uint8_t field_0x1c3
+// @field UnknownClass +0x1C4 uint8_t field_0x1c4
+// @field UnknownClass +0x1C5 uint8_t field_0x1c5
+// @field UnknownClass +0x1C8 uint32_t field_0x1c8
+void __thiscall sub_006D7BE0(uint32_t self) {
+    mem_write32(self + 0x1A8, 4);
+    mem_write32(self + 0x1AC, 4);
+    mem_write32(self + 0x1B0, 0);
+    mem_write32(self + 0x1B4, 0);
+    mem_write32(self + 0x1B8, 0);
+    mem_write32(self + 0x1BC, 0);
+    mem_write8(self + 0x1C0, 0);
+    mem_write8(self + 0x1C1, 0);
+    mem_write32(self + 0x1C8, 4);
+    mem_write8(self + 0x1C2, 0);
+    mem_write8(self + 0x1C3, 0);
+    mem_write8(self + 0x1C4, 0);
+    mem_write8(self + 0x1C5, 0);
+}
+} // namespace lift_006D7BE0

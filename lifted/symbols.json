@@ -55035,6 +55035,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006D2FB0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D4140": {
+    "name": "allocateAndConstruct_006D7AE0",
+    "signature": "void* __thiscall fn_006D4140(void* self)",
+    "summary": "Allocates 0x1d0 bytes and constructs an object via sub_006D7AE0, returning nullptr on allocation failure.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D55F0": {
     "name": "sub_006D55F0",
     "signature": "extern \"C\" int32_t __fastcall fn_006D55F0(void* self)",
@@ -55185,6 +55191,13 @@
     "name": "sub_006D7B30",
     "signature": "extern \"C\" void* __fastcall fn_006D7B30(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006D7B50 and frees memory when (flags \u0026 1) is set.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
+  "0x006D7BE0": {
+    "name": "UnknownClass::resetFields",
+    "class": "UnknownClass",
+    "signature": "void __thiscall sub_006D7BE0(uint32_t self)",
+    "summary": "Initializes several dword and byte fields starting at offset 0x1A8 to 4 or 0.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
   "0x006D7CA0": {
@@ -55575,6 +55588,13 @@
     "class": "Unknown",
     "signature": "uint8_t fn_006DE770(void* self, void* arg1, uint32_t arg2)",
     "summary": "Scans the pointer array at this+0x30 (count at this+0x20). Returns 1 if an entry equals arg1; otherwise, when the low byte of arg2 is nonzero, returns 1 if entry-\u003evtbl[7](arg2, arg1) is nonzero. Returns 0 if no entry matches.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
+  "0x006DE970": {
+    "name": "Unknown::FindChildById",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __thiscall fn_006DE970(void* self, uint32_t id)",
+    "summary": "Recursively searches child nodes for one whose indirect uint32 at +0x14/+0x98 matches the given ID.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
   "0x006DECA0": {
