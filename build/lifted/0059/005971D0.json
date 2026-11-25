@@ -1,0 +1,21 @@
+{
+  "va": "0x005971D0",
+  "size": 113,
+  "orig_symbol": "sub_005971D0",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "computeScaledTimeOffset",
+  "signature": "float __thiscall fn_005971D0(void* self)",
+  "summary": "Computes (globalListCount + self-\u003efield_0xEC) * reciprocal(globalObj) as float.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0xEC",
+      "type": "uint32_t",
+      "name": "field_0xEC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:37:46Z"
+}
