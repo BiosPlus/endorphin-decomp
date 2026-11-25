@@ -1,0 +1,13 @@
+{
+  "va": "0x00430960",
+  "size": 55,
+  "orig_symbol": "sub_00430960",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "updateObjectStateFromGlobals",
+  "signature": "extern \"C\" void __stdcall fn_00430960(void* obj)",
+  "summary": "Calls vtable[0] with CheckFieldAt60IsZero() result and vtable[1] with checkSubObjectBitFlag(get_global_field_0x58(), 9) result.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:32:42Z"
+}

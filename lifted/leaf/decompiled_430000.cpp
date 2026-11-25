@@ -3702,3 +3702,27 @@ void __stdcall fn_004309D0(void* obj) {
     fn(obj, static_cast<uint32_t>(flag ? 1 : 0));
 }
 } // namespace lift_004309D0
+
+// [0x00430960]
+namespace lift_00430960 {
+// @name updateObjectStateFromGlobals
+// @summary Calls vtable[0] with CheckFieldAt60IsZero() result and vtable[1] with checkSubObjectBitFlag(get_global_field_0x58(), 9) result.
+
+
+extern uint8_t __cdecl ext_00430370(void);
+extern int32_t __cdecl ext_00465B30(void);
+extern bool __thiscall ext_004694E0(void* self, uint32_t index);
+
+extern void __stdcall fn_00430960(void* obj) {
+    using VtableFn = void(__thiscall*)(void*, uint32_t);
+
+    void** vtable = *reinterpret_cast<void***>(obj);
+    uint8_t flag0 = ext_00430370();
+    reinterpret_cast<VtableFn>(vtable[0])(obj, static_cast<uint32_t>(flag0));
+
+    vtable = *reinterpret_cast<void***>(obj);
+    void* sub_obj = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(ext_00465B30())));
+    bool flag1 = ext_004694E0(sub_obj, 9);
+    reinterpret_cast<VtableFn>(vtable[1])(obj, static_cast<uint32_t>(flag1));
+}
+} // namespace lift_00430960
