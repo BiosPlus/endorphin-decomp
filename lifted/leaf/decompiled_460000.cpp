@@ -1392,3 +1392,23 @@ DWORD fn_0046F580() {
     return static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AD8374));
 }
 } // namespace lift_0046F580
+
+// [0x0046F340] sub_0046F340 (87 bytes)
+namespace lift_0046F340 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AD8348;
+extern DWORD mem_00AD8344;
+
+// @name initOnceGlobalObject_0046F340
+// @summary One-time lazy initializer: on first call, runs ext_0067A670 on the global at 0xAD8344, stores 0x93A82C there, and returns that global's address.
+// @field (none: no class; accessed globals are mem_00AD8348 (flag byte, bit 0) and mem_00AD8344 (DWORD object slot))
+DWORD fn_0046F340() {
+    if ((mem_00AD8348 & 1u) == 0u) {
+        mem_00AD8348 |= 1u;
+        ext_0067A670(&mem_00AD8344, 0u);
+        mem_00AD8344 = 0x0093A82Cu;
+    }
+    return static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AD8344));
+}
+} // namespace lift_0046F340

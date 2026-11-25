@@ -1,0 +1,13 @@
+{
+  "va": "0x0046F340",
+  "size": 87,
+  "orig_symbol": "sub_0046F340",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "initOnceGlobalObject_0046F340",
+  "signature": "DWORD fn_0046F340()",
+  "summary": "One-time lazy initializer: on first call, runs ext_0067A670 on the global at 0xAD8344, stores 0x93A82C there, and returns that global's address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:27:47Z"
+}

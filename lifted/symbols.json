@@ -7511,6 +7511,12 @@
     "summary": "Reads the wrapped ImageExporter object pointer from the value holder and forwards it to the getImageWidth read path; throws if the holder is empty.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0046F340": {
+    "name": "initOnceGlobalObject_0046F340",
+    "signature": "DWORD fn_0046F340()",
+    "summary": "One-time lazy initializer: on first call, runs ext_0067A670 on the global at 0xAD8344, stores 0x93A82C there, and returns that global's address.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046F3A0": {
     "name": "lazyInitStaticObject_0046F3A0",
     "signature": "extern DWORD ext_0067A670(void* self, DWORD value);  // thiscall: ECX = self, one stack arg extern DWORD mem_00AD8350;                           // init-guard flags (bit 0 = initialized/started) extern BYTE mem_00AD834C[];                          // global object storage void* lazyInitStaticObject_0046F3A0()",
