@@ -1376,3 +1376,18 @@ extern int32_t __fastcall fn_006DE690(void* self, void* /*edx*/, const char* nam
     return -1;
 }
 } // namespace lift_006DE690
+
+// [0x006DE460]
+namespace lift_006DE460 {
+// @name sub_006DE460
+// @summary Destroys subobject at +0x4c and base object via sub_006B9D70.
+// @field Self +0x4c uint8_t field_0x4c
+
+extern void __thiscall ext_006B9D70(void* self);
+
+extern void __thiscall fn_006DE460(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    ext_006B9D70(base + 0x4c);
+    ext_006B9D70(base);
+}
+} // namespace lift_006DE460
