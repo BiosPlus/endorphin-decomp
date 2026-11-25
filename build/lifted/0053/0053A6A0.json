@@ -1,0 +1,22 @@
+{
+  "va": "0x0053A6A0",
+  "size": 20,
+  "orig_symbol": "HasConstantTMPtr::vfunc_1",
+  "src_path": "src/classes/HasConstantTMPtr.cpp",
+  "lifted_path": "lifted/classes/HasConstantTMPtr.cpp",
+  "name": "HasConstantTMPtr::vfunc_1",
+  "class": "HasConstantTMPtr",
+  "signature": "float* fn_0053A6A0(void* self, float* out)",
+  "summary": "Loads the constant float pointer at this+0x4, copies its Vec3 into out as a Vec4 (w=0) via ext_004F9950, and returns out.",
+  "fields": [
+    {
+      "class": "HasConstantTMPtr",
+      "offset": "+0x4",
+      "type": "const float*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:19:04Z"
+}

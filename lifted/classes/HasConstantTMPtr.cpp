@@ -37,3 +37,21 @@ float* HasConstantTMPtr_vfunc_3(void* self, float* out) {
     return out;
 }
 } // namespace lift_0053A6C0
+
+// [0x0053A6A0]
+namespace lift_0053A6A0 {
+// @name HasConstantTMPtr::vfunc_1
+// @class HasConstantTMPtr
+// @summary Loads the constant float pointer at this+0x4, copies its Vec3 into out as a Vec4 (w=0) via ext_004F9950, and returns out.
+// @field HasConstantTMPtr +0x4 const float* field_0x04
+
+void ext_004F9950(void* self, float* out);
+
+float* fn_0053A6A0(void* self, float* out) {
+    extern const char mem_009253D0[]; // .rdata ">sb" (listed in original refs; unused by code)
+    unsigned char* obj = static_cast<unsigned char*>(self);
+    void* src = *reinterpret_cast<void* const*>(obj + 0x4);
+    ext_004F9950(src, out);
+    return out;
+}
+} // namespace lift_0053A6A0

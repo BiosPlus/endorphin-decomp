@@ -21368,6 +21368,13 @@
     "summary": "Copies the 16-float (64-byte, 4x4) matrix pointed to by this-\u003efield_0x04 into the caller-supplied destination buffer.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0053A6A0": {
+    "name": "HasConstantTMPtr::vfunc_1",
+    "class": "HasConstantTMPtr",
+    "signature": "float* fn_0053A6A0(void* self, float* out)",
+    "summary": "Loads the constant float pointer at this+0x4, copies its Vec3 into out as a Vec4 (w=0) via ext_004F9950, and returns out.",
+    "lifted_path": "lifted/classes/HasConstantTMPtr.cpp"
+  },
   "0x0053A6C0": {
     "name": "HasConstantTMPtr::vfunc_3",
     "class": "HasConstantTMPtr",
