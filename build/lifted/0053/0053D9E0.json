@@ -1,0 +1,40 @@
+{
+  "va": "0x0053D9E0",
+  "size": 89,
+  "orig_symbol": "Primitives::Sensor2::vfunc_28",
+  "src_path": "src/Primitives/Sensor2.cpp",
+  "lifted_path": "lifted/Primitives/Sensor2.cpp",
+  "name": "Primitives::Sensor2::vfunc_28",
+  "class": "Primitives::Sensor2",
+  "signature": "static inline void vcall0(void* obj, int slot)",
+  "summary": "Conditional dispatch: arg==2 is a no-op; otherwise either calls the +0x3C/+0x40 vfuncs (when +0x5C is null) or the +0x38/+0x40/+0x5C vfuncs (when +0x5C is set).",
+  "fields": [
+    {
+      "class": "Primitives::Sensor2",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Primitives::Sensor2",
+      "offset": "+0x3C",
+      "type": "void*",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "Primitives::Sensor2",
+      "offset": "+0x40",
+      "type": "void*",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Primitives::Sensor2",
+      "offset": "+0x5C",
+      "type": "void*",
+      "name": "field_0x5c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:12:19Z"
+}

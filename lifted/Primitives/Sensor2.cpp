@@ -72,3 +72,43 @@ void fn_0053CA10(void* self) {
     *reinterpret_cast<void**>(base + 0x5C) = nullptr;
     *reinterpret_cast<void**>(base + 0x3C) = nullptr;
 }
+
+// [0x0053D9E0] Primitives::Sensor2::vfunc_28 (89 bytes)
+namespace lift_0053D9E0 {
+// Virtual-call helpers: obj's first dword is its vtable pointer; slot index = byte offset / 4.
+static inline void vcall0(void* obj, int slot) {
+    void** vt = *reinterpret_cast<void***>(obj);
+    reinterpret_cast<void (__thiscall*)(void*)>(vt[slot])(obj);
+}
+
+static inline void vcall1(void* obj, int slot, int arg) {
+    void** vt = *reinterpret_cast<void***>(obj);
+    reinterpret_cast<void (__thiscall*)(void*, int)>(vt[slot])(obj, arg);
+}
+
+// @name Primitives::Sensor2::vfunc_28
+// @class Primitives::Sensor2
+// @summary Conditional dispatch: arg==2 is a no-op; otherwise either calls the +0x3C/+0x40 vfuncs (when +0x5C is null) or the +0x38/+0x40/+0x5C vfuncs (when +0x5C is set).
+// @field Primitives::Sensor2 +0x38 void* field_0x38
+// @field Primitives::Sensor2 +0x3C void* field_0x3c
+// @field Primitives::Sensor2 +0x40 void* field_0x40
+// @field Primitives::Sensor2 +0x5C void* field_0x5c
+void fn_0053D9E0(void* self, int arg) {
+    if (arg == 2) {
+        return;
+    }
+
+    auto* base = reinterpret_cast<uint8_t*>(self);
+    void* embedded40 = base + 0x40; // embedded sub-object; its vtable pointer lives at +0x40
+
+    if (lift_field<void*>(self, 0x5c) == nullptr) {
+        vcall0(lift_field<void*>(self, 0x3c), 0x34 / 4);
+        vcall1(embedded40, 0x58 / 4, 1);
+        return;
+    }
+
+    vcall0(lift_field<void*>(self, 0x38), 0x2c / 4);
+    vcall1(embedded40, 0x58 / 4, 1);
+    vcall1(lift_field<void*>(self, 0x5c), 0x58 / 4, arg);
+}
+} // namespace lift_0053D9E0
