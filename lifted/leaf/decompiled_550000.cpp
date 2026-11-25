@@ -1240,3 +1240,26 @@ void* fn_00553EA0(uint32_t count) {
     return ext_006A5C62(count * 0x54u);
 }
 } // namespace lift_00553EA0
+
+// [0x00554D60] sub_00554D60 (91 bytes)
+namespace lift_00554D60 {
+extern void ext_00553230();
+
+// @name scaleVec3ByFieldScalar
+// @summary Writes out = field_0x20 * (*ext_00553230(v)) for a Vec3 argument v
+// @field <unknown> +0x20 float field_0x20
+
+// Callee ext_00553230 is only partially recovered: it receives a pointer to a
+// 3-float scratch slot and returns a pointer to a Vec3 (edx in the original).
+using Vec3ResultFn = float* (*)(float* scratch);
+
+void fn_00554D60(void* self, float* out, float x, float y, float z) {
+    float buf[6] = {x, y, z, 0.0f, 0.0f, 0.0f};
+    float* result = reinterpret_cast<Vec3ResultFn>(ext_00553230)(buf + 3);
+
+    const float scale = lift_field<float>(self, 0x20);
+    out[0] = scale * result[0];
+    out[1] = scale * result[1];
+    out[2] = scale * result[2];
+}
+} // namespace lift_00554D60

@@ -22093,6 +22093,12 @@
     "summary": "Scales a float angle via ext_00553170 (unit-mode conversion), then divides the result by the float at this+0x20.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00554D60": {
+    "name": "scaleVec3ByFieldScalar",
+    "signature": "void fn_00554D60(void* self, float* out, float x, float y, float z)",
+    "summary": "Writes out = field_0x20 * (*ext_00553230(v)) for a Vec3 argument v",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00554E50": {
     "name": "Unknown::scaleByReciprocal_00554E50",
     "class": "Unknown",

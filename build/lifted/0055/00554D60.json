@@ -1,0 +1,21 @@
+{
+  "va": "0x00554D60",
+  "size": 91,
+  "orig_symbol": "sub_00554D60",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "scaleVec3ByFieldScalar",
+  "signature": "void fn_00554D60(void* self, float* out, float x, float y, float z)",
+  "summary": "Writes out = field_0x20 * (*ext_00553230(v)) for a Vec3 argument v",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:23:47Z"
+}
