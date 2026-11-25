@@ -314,3 +314,34 @@ int __stdcall fn_004A9760(const void* name) {
     return 1;
 }
 } // namespace lift_004A9760
+
+// [0x004A5A00]
+namespace lift_004A5A00 {
+// @name findAncestorOfType
+// @summary Walks an object hierarchy via vtable+0x10 until __RTDynamicCast succeeds.
+// @field Object +0x00 uint32_t* vtable
+
+extern uint32_t ext_006A6E9E(uint32_t inptr, uint32_t vf_delta, uint32_t src_type, uint32_t target_type, uint32_t is_reference);
+extern uint32_t mem_read32(uint32_t addr);
+
+uint32_t fn_004A5A00(uint32_t obj) {
+    uint32_t esi = obj;
+    if (esi == 0) {
+        return 0;
+    }
+
+    uint32_t edi = 0;
+    do {
+        edi = ext_006A6E9E(esi, 0, 0x00A2E2F8u, 0x00A2FB78u, 0);
+        if (edi != 0) {
+            break;
+        }
+        uint32_t vtable = mem_read32(esi);
+        uint32_t fn_addr = mem_read32(vtable + 0x10u);
+        auto fn = reinterpret_cast<uint32_t (*)(uint32_t, uint32_t)>(static_cast<uintptr_t>(fn_addr));
+        esi = fn(esi, 0u);
+    } while (esi != 0);
+
+    return edi;
+}
+} // namespace lift_004A5A00
