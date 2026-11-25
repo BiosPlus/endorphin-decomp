@@ -917,3 +917,21 @@ void __thiscall sub_00802D90(void* this_ptr, int32_t* out1, int32_t* out2) {
     }
 }
 } // namespace lift_00802D90
+
+// [0x0080FAE0]
+namespace lift_0080FAE0 {
+extern uint32_t ext_00859730(void* hMem);
+extern void ext_0080ABA0(void);
+extern void ext_0080ABC0(void);
+
+// @name FreeIfNonNull
+// @summary If the pointer argument is non-null, frees it via LocalFreeWrapper.
+void fn_0080FAE0(void* p)
+{
+    if (p != nullptr) {
+        ext_0080ABA0();
+        ext_00859730(p);
+        ext_0080ABC0();
+    }
+}
+} // namespace lift_0080FAE0

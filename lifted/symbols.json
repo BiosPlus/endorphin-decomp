@@ -68711,6 +68711,12 @@
     "summary": "If the argument pointer is non-null, releases the handle stored at its first dword via ext_0080FAE0, then frees the argument itself via GlobalFree wrapper ext_00859730.",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x0080FAE0": {
+    "name": "FreeIfNonNull",
+    "signature": "void fn_0080FAE0(void* p)",
+    "summary": "If the pointer argument is non-null, frees it via LocalFreeWrapper.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080FAF0": {
     "name": "ResetDwordTripleReturnFirst",
     "signature": "uint32_t fn_0080FAF0(uint32_t* self)",
