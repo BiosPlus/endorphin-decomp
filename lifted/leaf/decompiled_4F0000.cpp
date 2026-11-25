@@ -432,3 +432,27 @@ void fn_004F95F0(DWORD* out, DWORD value) {
     out[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(singleton));
 }
 } // namespace lift_004F95F0
+
+// [0x004FFA00] sub_004FFA00 (87 bytes)
+namespace lift_004FFA00 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AEB288;
+extern DWORD mem_00AEB284;
+
+// @name ensureStaticSingletonInitialized_004FFA00
+// @summary One-time initializer for the global singleton at 0x00AEB284; sets its first DWORD to vtable 0x0094E44C and returns its address.
+void* fn_004FFA00() {
+    // The original wraps this in an SEH frame (fs:[0] push/pop) for MSVC
+    // thread-safe static init; that scaffolding is dropped here.
+    constexpr DWORD kInitBit = 0x1;
+    constexpr DWORD kVtable = 0x0094E44C;
+
+    if ((mem_00AEB288 & kInitBit) == 0) {
+        mem_00AEB288 |= kInitBit;
+        ext_0067A670(&mem_00AEB284, 0);
+        mem_00AEB284 = kVtable;
+    }
+    return &mem_00AEB284;
+}
+} // namespace lift_004FFA00
