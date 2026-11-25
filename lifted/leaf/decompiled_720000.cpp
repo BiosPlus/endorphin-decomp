@@ -579,3 +579,50 @@ int32_t fn_007266C0(void* self, uint32_t key) {
     return ext_006E7460(reinterpret_cast<void*>(static_cast<uintptr_t>(found)));
 }
 } // namespace lift_007266C0
+
+// [0x00728570]
+namespace lift_00728570 {
+// @name sub_00728570
+// @summary Iterates field_0xee4 times calling vtable +0x3c on field_0x10 with 0xaad0b8 when preconditions hold
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x15 uint8_t field_0x15
+// @field Unknown +0xee4 int32_t field_0xee4
+// @field Unknown +0xef0 uint8_t field_0xef0
+
+
+extern int32_t __fastcall ext_006E7460(void* self);
+
+extern void __fastcall fn_00728570(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    if (ext_006E7460(base + 0xef0) > -1) {
+        return;
+    }
+
+    void* obj = *reinterpret_cast<void**>(base + 0x10);
+    if (!obj) {
+        return;
+    }
+
+    auto* vtable = *reinterpret_cast<uintptr_t**>(obj);
+    using VFn2C = uint8_t(__fastcall*)(void* this_ptr);
+    auto fn_2c = reinterpret_cast<VFn2C>(vtable[0x2c / sizeof(uintptr_t)]);
+    if (!fn_2c(obj)) {
+        return;
+    }
+
+    if (base[0x15] != 0) {
+        return;
+    }
+
+    int32_t count = *reinterpret_cast<int32_t*>(base + 0xee4);
+    for (int32_t i = 0; i < count; ++i) {
+        void* cur_obj = *reinterpret_cast<void**>(base + 0x10);
+        auto* cur_vtable = *reinterpret_cast<uintptr_t**>(cur_obj);
+        using VFn3C = void(__cdecl*)(void* obj_arg, uint32_t arg2);
+        auto fn_3c = reinterpret_cast<VFn3C>(cur_vtable[0x3c / sizeof(uintptr_t)]);
+        fn_3c(cur_obj, 0xaad0b8u);
+        count = *reinterpret_cast<int32_t*>(base + 0xee4);
+    }
+}
+} // namespace lift_00728570

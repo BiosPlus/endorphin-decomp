@@ -63019,6 +63019,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0071C970 (Unknown::getByteViaPtr0x0C_0x1960).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C750": {
+    "name": "sub_0071C750",
+    "signature": "void __thiscall sub_0071C750(uint32_t this_ptr, uint32_t src)",
+    "summary": "Copies 8 32-bit words (32 bytes) from a source struct into the object's sub-struct at +0xc -\u003e +0x738.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071C870": {
     "name": "Unknown::setChildFlag18D8",
     "class": "Unknown",

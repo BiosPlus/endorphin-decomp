@@ -1,0 +1,39 @@
+{
+  "va": "0x00728570",
+  "size": 96,
+  "orig_symbol": "sub_00728570",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "sub_00728570",
+  "signature": "extern \"C\" void __fastcall fn_00728570(void* self)",
+  "summary": "Iterates field_0xee4 times calling vtable +0x3c on field_0x10 with 0xaad0b8 when preconditions hold",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x15",
+      "type": "uint8_t",
+      "name": "field_0x15"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xEE4",
+      "type": "int32_t",
+      "name": "field_0xee4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xEF0",
+      "type": "uint8_t",
+      "name": "field_0xef0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:46:48Z"
+}
