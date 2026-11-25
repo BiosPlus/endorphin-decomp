@@ -33,3 +33,32 @@ void* fn_0061EAB0(void* self) {
     void* owner = static_cast<unsigned char*>(self) - 0xC;
     return ext_0061D750(mem, owner);
 }
+
+// [0x0061F990] sub_0061F990 (102 bytes)
+namespace lift_0061F990 {
+extern uint32_t ext_005DF1F0(void* self, DWORD arg2);
+extern void* ext_0061EFD0(void* dst, DWORD value);
+extern void* ext_0061EFF0(void* dst, DWORD value);
+extern void* ext_0061F010(void* dst, DWORD value);
+
+// @name NMData::SecondaryTwistAndSwingConstraint::vfunc_15
+// @class NMData::SecondaryTwistAndSwingConstraint
+// @summary Dispatches on arg2 (0x33B, 0x33E, 0x356) to one of three helpers, otherwise forwards to AnimatableTransform::vfunc_15; always returns self.
+void* fn_0061F990(void* self, DWORD arg2) {
+    // The original passes the live ECX register at entry as the helper's
+    // value argument; that register is not recoverable in portable C++.
+    // Zero is used here as a placeholder.
+    DWORD value = 0;
+
+    if (arg2 == 0x33B) {
+        ext_0061EFF0(self, value);
+    } else if (arg2 == 0x33E) {
+        ext_0061F010(self, value);
+    } else if (arg2 == 0x356) {
+        ext_0061EFD0(self, value);
+    } else {
+        ext_005DF1F0(self, arg2);
+    }
+    return self;
+}
+} // namespace lift_0061F990

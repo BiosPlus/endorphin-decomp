@@ -37314,6 +37314,13 @@
     "summary": "Dispatches property/attribute IDs 0x247 and 0x27C to HingeConstraint helpers, delegating others to AnimatableTransform::vfunc_15.",
     "lifted_path": "lifted/NMData/HingeConstraint.cpp"
   },
+  "0x0061F990": {
+    "name": "NMData::SecondaryTwistAndSwingConstraint::vfunc_15",
+    "class": "NMData::SecondaryTwistAndSwingConstraint",
+    "signature": "void* fn_0061F990(void* self, DWORD arg2)",
+    "summary": "Dispatches on arg2 (0x33B, 0x33E, 0x356) to one of three helpers, otherwise forwards to AnimatableTransform::vfunc_15; always returns self.",
+    "lifted_path": "lifted/NMData/SecondaryTwistAndSwingConstraint.cpp"
+  },
   "0x0061FE60": {
     "name": "NMData::GraphicData::vfunc_4_off_C",
     "class": "NMData::GraphicData",

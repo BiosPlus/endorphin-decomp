@@ -1,0 +1,14 @@
+{
+  "va": "0x0061F990",
+  "size": 102,
+  "orig_symbol": "NMData::SecondaryTwistAndSwingConstraint::vfunc_15",
+  "src_path": "src/NMData/SecondaryTwistAndSwingConstraint.cpp",
+  "lifted_path": "lifted/NMData/SecondaryTwistAndSwingConstraint.cpp",
+  "name": "NMData::SecondaryTwistAndSwingConstraint::vfunc_15",
+  "class": "NMData::SecondaryTwistAndSwingConstraint",
+  "signature": "void* fn_0061F990(void* self, DWORD arg2)",
+  "summary": "Dispatches on arg2 (0x33B, 0x33E, 0x356) to one of three helpers, otherwise forwards to AnimatableTransform::vfunc_15; always returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:45:24Z"
+}
