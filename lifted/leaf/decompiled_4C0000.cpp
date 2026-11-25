@@ -307,3 +307,24 @@ void fn_004CEAC0(void* self, void* arg) {
     wrf(self, 0x08, rdf(arg, 0x18C));
 }
 } // namespace lift_004CEAC0
+
+// [0x004C0E40] sub_004C0E40 (87 bytes)
+namespace lift_004C0E40 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670(void* self, DWORD value);
+extern int mem_00AE3008;
+extern int mem_00AE3004;
+
+// @name initStaticObjectOnce_004C0E40
+// @summary One-time initializer: on first call, runs the helper on the static object at mem_00AE3004 and stores 0x9443D4 into it; returns its address.
+// @field none (no self-relative accesses)
+void* fn_004C0E40() {
+    // Guard bit 0 of mem_00AE3008 ensures the one-time initialization runs once.
+    if ((mem_00AE3008 & 1) == 0) {
+        mem_00AE3008 |= 1;
+        ext_0067A670(&mem_00AE3004, 0);
+        mem_00AE3004 = 0x9443D4;
+    }
+    return &mem_00AE3004;
+}
+} // namespace lift_004C0E40

@@ -1,0 +1,13 @@
+{
+  "va": "0x004C0E40",
+  "size": 87,
+  "orig_symbol": "sub_004C0E40",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "initStaticObjectOnce_004C0E40",
+  "signature": "void* fn_004C0E40()",
+  "summary": "One-time initializer: on first call, runs the helper on the static object at mem_00AE3004 and stores 0x9443D4 into it; returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:31:44Z"
+}
