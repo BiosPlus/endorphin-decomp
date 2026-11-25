@@ -13258,6 +13258,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0050C4D0 (sub_00508310).",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004BED30": {
+    "name": "NMData::EvolveEngineData::vfunc_6",
+    "class": "NMData::EvolveEngineData",
+    "signature": "void* fn_004BED30(void* self)",
+    "summary": "Constructs a std::string in the caller-supplied return slot from the C string whose address is stored in mem_00A9EEA0, and returns that slot.",
+    "lifted_path": "lifted/NMData/EvolveEngineData.cpp"
+  },
   "0x004BED60": {
     "name": "NMData::EvolveEngineData::vfunc_0",
     "class": "NMData::EvolveEngineData",

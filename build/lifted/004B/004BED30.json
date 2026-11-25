@@ -1,0 +1,14 @@
+{
+  "va": "0x004BED30",
+  "size": 35,
+  "orig_symbol": "NMData::EvolveEngineData::vfunc_6",
+  "src_path": "src/NMData/EvolveEngineData.cpp",
+  "lifted_path": "lifted/NMData/EvolveEngineData.cpp",
+  "name": "NMData::EvolveEngineData::vfunc_6",
+  "class": "NMData::EvolveEngineData",
+  "signature": "void* fn_004BED30(void* self)",
+  "summary": "Constructs a std::string in the caller-supplied return slot from the C string whose address is stored in mem_00A9EEA0, and returns that slot.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:50:20Z"
+}
