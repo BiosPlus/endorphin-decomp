@@ -581,3 +581,57 @@ uint32_t fn_005DF940(void* self, uint32_t key_ptr) {
     return lift_field<uint32_t>(addr_of(node), 0x10);
 }
 } // namespace lift_005DF940
+
+// [0x005DFE30]
+namespace lift_005DFE30 {
+// @name destroyTreeNodePayloads
+// @summary Iterates over a red-black tree iterator range [first, last) and frees each node's +0x28 payload object and its +0x04 sub-buffer via MFC80!ord_764.
+
+
+void __thiscall ext_00673C20(void* iter);
+void __cdecl ext_006A5C5C(void* ptr);
+extern uintptr_t mem_00925134;
+
+struct TreeIter {
+    void* container;
+    uint8_t* node;
+};
+
+void __stdcall fn_005DFE30(TreeIter first, TreeIter last) {
+    using InvalidParamFn = void(__cdecl*)(void);
+    auto invalidParam = reinterpret_cast<InvalidParamFn>(mem_00925134);
+
+    for (;;) {
+        void* container = first.container;
+        if (!container || container != last.container) {
+            invalidParam();
+        }
+
+        uint8_t* node = first.node;
+        if (node == last.node) {
+            break;
+        }
+
+        ext_00673C20(&first);
+
+        if (!container) {
+            invalidParam();
+        }
+        if (node == *reinterpret_cast<uint8_t**>(static_cast<uint8_t*>(container) + 4)) {
+            invalidParam();
+        }
+
+        uint8_t* payload = *reinterpret_cast<uint8_t**>(node + 0x28);
+        if (payload) {
+            void* inner = *reinterpret_cast<void**>(payload + 0x4);
+            if (inner) {
+                ext_006A5C5C(inner);
+            }
+            *reinterpret_cast<uint32_t*>(payload + 0x4) = 0;
+            *reinterpret_cast<uint32_t*>(payload + 0x8) = 0;
+            *reinterpret_cast<uint32_t*>(payload + 0xC) = 0;
+            ext_006A5C5C(payload);
+        }
+    }
+}
+} // namespace lift_005DFE30
