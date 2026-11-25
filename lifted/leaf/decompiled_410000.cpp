@@ -1048,3 +1048,29 @@ void fn_00418830(void* self) {
     ext_006A5FDA(lift_field<void*>(self, 0x85C), checked);
 }
 } // namespace lift_00418830
+
+// [0x0041CB00] sub_0041CB00 (64 bytes)
+namespace lift_0041CB00 {
+// Known callee 0x006AD180: getDerefField0x4 (Reads a pointer at offset 0x4 and returns the dereferenced 32-bit value.)
+extern uint32_t __thiscall ext_006AD180(void* self);
+
+// @name Unknown::DispatchDerefPair
+// @class Unknown
+// @summary Derefs arg1 (and arg2 when nonzero) via ext_006AD180, then calls vtable slot 4 of the object at self+0x4 with (y, x), where y is deref(arg2) or 0 and x is deref(arg1).
+// @field Unknown +0x04 void* field_0x04
+extern uint32_t __thiscall fn_0041CB00(void* self, uint32_t arg1, uint32_t arg2) {
+    const uint32_t x = ext_006AD180(reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)));
+
+    uint32_t y = 0;
+    if (arg2 != 0) {
+        y = ext_006AD180(reinterpret_cast<void*>(static_cast<uintptr_t>(arg2)));
+    }
+
+    void* obj = lift_field<void*>(self, 0x4);
+    void** vtable = *reinterpret_cast<void***>(obj);
+
+    using SlotFn = uint32_t(__thiscall*)(void* self_, uint32_t a, uint32_t b);
+    SlotFn target = reinterpret_cast<SlotFn>(vtable[4]);
+    return target(obj, y, x);
+}
+} // namespace lift_0041CB00

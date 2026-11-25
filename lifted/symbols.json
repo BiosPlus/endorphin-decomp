@@ -1710,6 +1710,13 @@
     "summary": "Returns 0 for a null argument; otherwise forwards the argument to ext_006AD180 and returns its result.",
     "lifted_path": "lifted/Properties/GWCPropertiesControlDriver.cpp"
   },
+  "0x0041CB00": {
+    "name": "Unknown::DispatchDerefPair",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t __thiscall fn_0041CB00(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Derefs arg1 (and arg2 when nonzero) via ext_006AD180, then calls vtable slot 4 of the object at self+0x4 with (y, x), where y is deref(arg2) or 0 and x is deref(arg1).",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041CB40": {
     "name": "dynamicCastSubobject0x10",
     "signature": "void* __stdcall fn_0041CB40(void* arg0)",

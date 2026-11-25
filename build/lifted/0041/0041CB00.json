@@ -1,0 +1,22 @@
+{
+  "va": "0x0041CB00",
+  "size": 64,
+  "orig_symbol": "sub_0041CB00",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::DispatchDerefPair",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint32_t __thiscall fn_0041CB00(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Derefs arg1 (and arg2 when nonzero) via ext_006AD180, then calls vtable slot 4 of the object at self+0x4 with (y, x), where y is deref(arg2) or 0 and x is deref(arg1).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:04:33Z"
+}
