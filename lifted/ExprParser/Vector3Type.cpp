@@ -304,3 +304,30 @@ void fn_0066D0E0(void* a0, void* a1, void* a2, void* a3) {
     ext_004B70B0(&a2, r2, r1, mem_0098B17C);
 }
 } // namespace lift_0066D0E0
+
+// [0x0066B560]
+namespace lift_0066B560 {
+// @name ExprParser::Vector3Type::vfunc_5
+// @class ExprParser::Vector3Type
+// @summary Returns this->data if non-null; otherwise sets a one-time init flag, zeroes three shared static floats, and returns the address of the last one.
+// @field ExprParser::Vector3Type +0x0 float* data
+
+extern std::uint32_t mem_00B59648; // init flag (bit 0)
+extern float mem_00B59644;
+extern float mem_00B59640;
+extern float mem_00B5963C;
+
+float* fn_0066B560(void* self) {
+    float* data = *static_cast<float**>(self);
+    if (data != nullptr) {
+        return data;
+    }
+    if ((mem_00B59648 & 1u) == 0u) {
+        mem_00B59648 |= 1u;
+        mem_00B59644 = 0.0f;
+        mem_00B59640 = 0.0f;
+        mem_00B5963C = 0.0f;
+    }
+    return &mem_00B5963C;
+}
+} // namespace lift_0066B560

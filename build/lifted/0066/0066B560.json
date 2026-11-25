@@ -1,0 +1,22 @@
+{
+  "va": "0x0066B560",
+  "size": 57,
+  "orig_symbol": "ExprParser::Vector3Type::vfunc_5",
+  "src_path": "src/ExprParser/Vector3Type.cpp",
+  "lifted_path": "lifted/ExprParser/Vector3Type.cpp",
+  "name": "ExprParser::Vector3Type::vfunc_5",
+  "class": "ExprParser::Vector3Type",
+  "signature": "float* fn_0066B560(void* self)",
+  "summary": "Returns this-\u003edata if non-null; otherwise sets a one-time init flag, zeroes three shared static floats, and returns the address of the last one.",
+  "fields": [
+    {
+      "class": "ExprParser::Vector3Type",
+      "offset": "+0x0",
+      "type": "float*",
+      "name": "data"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:59:33Z"
+}

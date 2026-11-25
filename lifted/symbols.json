@@ -44333,6 +44333,13 @@
     "summary": "Calls slot 5 on self with arg2, passes the result to sub_00672110 (this=arg2), returns arg2.",
     "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
   },
+  "0x0066B560": {
+    "name": "ExprParser::Vector3Type::vfunc_5",
+    "class": "ExprParser::Vector3Type",
+    "signature": "float* fn_0066B560(void* self)",
+    "summary": "Returns this-\u003edata if non-null; otherwise sets a one-time init flag, zeroes three shared static floats, and returns the address of the last one.",
+    "lifted_path": "lifted/ExprParser/Vector3Type.cpp"
+  },
   "0x0066B5A0": {
     "name": "ExprParser::Vector3Type::vfunc_33",
     "class": "ExprParser::Vector3Type",
