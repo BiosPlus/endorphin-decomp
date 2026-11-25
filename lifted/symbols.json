@@ -13520,6 +13520,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004C1CC0": {
+    "name": "initStaticObjectOnce_004C1CC0",
+    "signature": "void* fn_004C1CC0()",
+    "summary": "One-time initializer guarded by a bit in mem_00AE3058; sets mem_00AE3054 to vtable 0x944744 and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C2070": {
     "name": "NMData::SeverEventData::vfunc_14",
     "class": "NMData::SeverEventData",
