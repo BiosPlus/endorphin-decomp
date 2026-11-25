@@ -1257,3 +1257,23 @@ void fn_00710F10(void* self) {
     lift_field<uint16_t>(self, 0x30) = 0xFFFFu;
 }
 } // namespace lift_00710F10
+
+// [0x00715670] sub_00715670 (64 bytes)
+namespace lift_00715670 {
+// Known callee 0x006D2A30: returns its first argument unchanged.
+extern void* __fastcall ext_006D2A30(void* self);
+
+// @name Unknown::CopySixDwordsToSubobject
+// @class Unknown
+// @summary Passes src through ext_006D2A30 (identity), then copies six DWORDs from it into the block at this->field_0x10 + 0x398.
+// @field Unknown +0x10 void* field_0x10
+void fn_00715670(void* self, const void* src) {
+    const DWORD* s = static_cast<const DWORD*>(ext_006D2A30(const_cast<void*>(src)));
+    auto* base = static_cast<unsigned char*>(self);
+    auto* sub = static_cast<unsigned char*>(*reinterpret_cast<void**>(base + 0x10));
+    DWORD* d = reinterpret_cast<DWORD*>(sub + 0x398);
+    for (int i = 0; i < 6; ++i) {
+        d[i] = s[i];
+    }
+}
+} // namespace lift_00715670

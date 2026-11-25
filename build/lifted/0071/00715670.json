@@ -1,0 +1,22 @@
+{
+  "va": "0x00715670",
+  "size": 64,
+  "orig_symbol": "sub_00715670",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::CopySixDwordsToSubobject",
+  "class": "Unknown",
+  "signature": "void fn_00715670(void* self, const void* src)",
+  "summary": "Passes src through ext_006D2A30 (identity), then copies six DWORDs from it into the block at this-\u003efield_0x10 + 0x398.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:07:38Z"
+}
