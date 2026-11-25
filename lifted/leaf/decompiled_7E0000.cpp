@@ -74,3 +74,41 @@ void fn_007E5280(float* out, uint32_t n) {
     out[esi] = in[edx];
 }
 } // namespace lift_007E5280
+
+// [0x007E4870]
+namespace lift_007E4870 {
+// @name TransformVector3ByMatrixColumns
+// @class Unknown
+// @summary Multiplies a 3-float input vector by the 3x3 part of a 4-float-row matrix (row-vector convention) and writes a 3-float result; original is __thiscall with callee-cleanup of 8 bytes (two pointer args).
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x10 float field_0x10
+// @field Unknown +0x14 float field_0x14
+// @field Unknown +0x18 float field_0x18
+// @field Unknown +0x20 float field_0x20
+// @field Unknown +0x24 float field_0x24
+// @field Unknown +0x28 float field_0x28
+
+void TransformVector3ByMatrixColumns(const void* self, const float* in, float* out) {
+    const float in0 = in[0];
+    const float in1 = in[1];
+    const float in2 = in[2];
+
+    // out[i] = self[0x00 + i] * in0 + self[0x10 + i] * in1 + self[0x20 + i] * in2
+    // (evaluation order matches the original x87 sequence)
+    const float m00 = lift_field<float>(self, 0x00);
+    const float m04 = lift_field<float>(self, 0x04);
+    const float m08 = lift_field<float>(self, 0x08);
+    const float m10 = lift_field<float>(self, 0x10);
+    const float m14 = lift_field<float>(self, 0x14);
+    const float m18 = lift_field<float>(self, 0x18);
+    const float m20 = lift_field<float>(self, 0x20);
+    const float m24 = lift_field<float>(self, 0x24);
+    const float m28 = lift_field<float>(self, 0x28);
+
+    out[0] = ((m10 * in1) + (in0 * m00)) + (m20 * in2);
+    out[1] = ((m14 * in1) + (m04 * in0)) + (m24 * in2);
+    out[2] = ((m18 * in1) + (m08 * in0)) + (m28 * in2);
+}
+} // namespace lift_007E4870
