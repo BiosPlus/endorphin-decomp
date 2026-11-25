@@ -1,0 +1,28 @@
+{
+  "va": "0x0044CEC0",
+  "size": 97,
+  "orig_symbol": "sub_0044CEC0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::setupSubObjectDefaults",
+  "class": "Unknown",
+  "signature": "void fn_0044CEC0(void* self)",
+  "summary": "Configures the embedded sub-object at +0xC80 with four .rdata values, then invokes its vtable slot 81 with a flag taken from this+0xA9.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xA9",
+      "type": "uint8_t",
+      "name": "flag"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC80",
+      "type": "uint8_t",
+      "name": "field_0xC80"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:38:10Z"
+}

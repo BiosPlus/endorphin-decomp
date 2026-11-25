@@ -2121,3 +2121,38 @@ void fn_004406C0(void* self) {
     ext_00628FF0(base + 0x0C);
 }
 } // namespace lift_004406C0
+
+// [0x0044CEC0]
+namespace lift_0044CEC0 {
+extern void ext_0040FD30(void* self, DWORD arg);
+extern void ext_0040FD40(void* self, DWORD arg);
+extern void ext_0040FD50(void* self, DWORD arg);
+extern void ext_006A7BC0(void* self, DWORD arg);
+extern DWORD mem_0093A0C4;
+extern DWORD mem_0093A0C8;
+extern DWORD mem_0093A0CC;
+extern DWORD mem_0093A0D0;
+
+// @name Unknown::setupSubObjectDefaults
+// @class Unknown
+// @summary Configures the embedded sub-object at +0xC80 with four .rdata values, then invokes its vtable slot 81 with a flag taken from this+0xA9.
+// @field Unknown +0xA9 uint8_t flag
+// @field Unknown +0xC80 uint8_t field_0xC80
+void fn_0044CEC0(void* self) {
+    // this + 0xC80 is the embedded sub-object (ecx for all calls below).
+    void* sub = static_cast<uint8_t*>(self) + 0xC80;
+
+    ext_0040FD30(sub, mem_0093A0C4);
+    ext_0040FD40(sub, mem_0093A0CC);
+    ext_006A7BC0(sub, mem_0093A0C8);
+    ext_0040FD50(sub, mem_0093A0D0);
+
+    // Vtable slot at byte offset 0x144 (32-bit slot index 81).
+    using VFn = void (*)(void*, DWORD);
+    void** vtbl = *static_cast<void***>(sub);
+    VFn fn = reinterpret_cast<VFn>(vtbl[0x144 / 4]);
+
+    DWORD flag = lift_field<uint8_t>(self, 0xA9) != 0 ? 1u : 0u;
+    fn(sub, flag);
+}
+} // namespace lift_0044CEC0

@@ -5218,6 +5218,13 @@
     "summary": "Initializes two embedded subobjects at +0xAC and +0x9C0 via ord_4118 with flags 0x20201, size 0x20.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044CEC0": {
+    "name": "Unknown::setupSubObjectDefaults",
+    "class": "Unknown",
+    "signature": "void fn_0044CEC0(void* self)",
+    "summary": "Configures the embedded sub-object at +0xC80 with four .rdata values, then invokes its vtable slot 81 with a flag taken from this+0xA9.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044CF30": {
     "name": "ForwardFieldToSubobject_0044CF30",
     "class": "\u003cunknown\u003e",
