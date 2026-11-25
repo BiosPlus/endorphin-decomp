@@ -1,0 +1,13 @@
+{
+  "va": "0x005B3FF0",
+  "size": 30,
+  "orig_symbol": "sub_005B3FF0",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "storeValueAndSingleton",
+  "signature": "void fn_005B3FF0(void* dst, DWORD value)",
+  "summary": "Writes a 32-bit value and the lazily-initialized singleton pointer (as a 32-bit word) into the two words at dst.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:07:41Z"
+}

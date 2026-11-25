@@ -702,3 +702,17 @@ void fn_005B4010(uint32_t* out, uint32_t value) {
     out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(singleton));
 }
 } // namespace lift_005B4010
+
+// [0x005B3FF0] sub_005B3FF0 (30 bytes)
+namespace lift_005B3FF0 {
+// Known callee 0x005B3CB0: getSingleton_005B3CB0 (Lazily initializes and returns the singleton object at 0x00B4354C.)
+extern void* ext_005B3CB0();
+
+// @name storeValueAndSingleton
+// @summary Writes a 32-bit value and the lazily-initialized singleton pointer (as a 32-bit word) into the two words at dst.
+void fn_005B3FF0(void* dst, DWORD value) {
+    DWORD singleton = static_cast<DWORD>(reinterpret_cast<uintptr_t>(ext_005B3CB0()));
+    lift_field<DWORD>(dst, 0x0) = value;
+    lift_field<DWORD>(dst, 0x4) = singleton;
+}
+} // namespace lift_005B3FF0

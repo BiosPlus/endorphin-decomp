@@ -27555,6 +27555,12 @@
     "summary": "Lazily initializes and returns the singleton object at 0x00B4356C.",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
+  "0x005B3FF0": {
+    "name": "storeValueAndSingleton",
+    "signature": "void fn_005B3FF0(void* dst, DWORD value)",
+    "summary": "Writes a 32-bit value and the lazily-initialized singleton pointer (as a 32-bit word) into the two words at dst.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B4010": {
     "name": "storeValueAndSingleton_005B4010",
     "signature": "void fn_005B4010(uint32_t* out, uint32_t value)",
