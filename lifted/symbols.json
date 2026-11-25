@@ -10722,6 +10722,12 @@
     "summary": "Reads a bool from the source proxy (via its vtable slot 3) and stores it through this proxy's value pointer.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0049B3A0": {
+    "name": "initStaticObjectOnce_0049B3A0",
+    "signature": "void* fn_0049B3A0()",
+    "summary": "One-time guarded initialization of the static object at 0x00ADD7E4; returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049B4D0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::State, std::string const\u0026, \u0026NMData::State::getFileName\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType",

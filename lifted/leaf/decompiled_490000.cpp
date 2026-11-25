@@ -847,3 +847,23 @@ DWORD fn_0049DAA0() {
     return static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00ADD82C));
 }
 } // namespace lift_0049DAA0
+
+// [0x0049B3A0] sub_0049B3A0 (87 bytes)
+namespace lift_0049B3A0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+extern int mem_00ADD7E8;
+extern int mem_00ADD7E4;
+
+// @name initStaticObjectOnce_0049B3A0
+// @summary One-time guarded initialization of the static object at 0x00ADD7E4; returns its address.
+void* fn_0049B3A0() {
+    // Bit 0 of mem_00ADD7E8 guards one-time init.
+    if ((mem_00ADD7E8 & 1) == 0) {
+        mem_00ADD7E8 |= 1;
+        ext_0067A670();
+        mem_00ADD7E4 = 0x0093FBEC;
+    }
+    return reinterpret_cast<void*>(&mem_00ADD7E4);
+}
+} // namespace lift_0049B3A0
