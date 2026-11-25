@@ -13105,6 +13105,12 @@
     "summary": "Returns 1 if the EngineData float at +0x44 is \u003e= 1e-6 (false for NaN); throws if the EngineData pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B99B0": {
+    "name": "initStaticObjectOnce_004B99B0",
+    "signature": "void* fn_004B99B0()",
+    "summary": "One-time guarded initializer for the static object at mem_00AE1694; sets init bit 0 in mem_00AE1698, runs ext_0067A670 on the object with 0, stores 0x0094376C in its first DWORD, and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B9A40": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::MaterialPair\u003e::vfunc_27",
     "class": "ExprParser::DynamicEnumType\u003cNMData::MaterialPair\u003e",

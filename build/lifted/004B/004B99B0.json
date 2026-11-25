@@ -1,0 +1,21 @@
+{
+  "va": "0x004B99B0",
+  "size": 87,
+  "orig_symbol": "sub_004B99B0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "initStaticObjectOnce_004B99B0",
+  "signature": "void* fn_004B99B0()",
+  "summary": "One-time guarded initializer for the static object at mem_00AE1694; sets init bit 0 in mem_00AE1698, runs ext_0067A670 on the object with 0, stores 0x0094376C in its first DWORD, and returns its address.",
+  "fields": [
+    {
+      "class": "StaticObject_00AE1694",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:31:44Z"
+}

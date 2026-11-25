@@ -640,3 +640,23 @@ void* fn_004B7920(void) {
     return &mem_00AE165C;
 }
 } // namespace lift_004B7920
+
+// [0x004B99B0] sub_004B99B0 (87 bytes)
+namespace lift_004B99B0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: self in ECX, one stack argument; stores the argument into the first DWORD of self and returns it.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern uint32_t mem_00AE1698;
+extern uint32_t mem_00AE1694;
+
+// @name initStaticObjectOnce_004B99B0
+// @summary One-time guarded initializer for the static object at mem_00AE1694; sets init bit 0 in mem_00AE1698, runs ext_0067A670 on the object with 0, stores 0x0094376C in its first DWORD, and returns its address.
+// @field StaticObject_00AE1694 +0x00 uint32_t field_0x00
+void* fn_004B99B0() {
+    if ((mem_00AE1698 & 1u) == 0) {
+        mem_00AE1698 |= 1u;
+        ext_0067A670(&mem_00AE1694, 0);
+        mem_00AE1694 = 0x0094376Cu;
+    }
+    return &mem_00AE1694;
+}
+} // namespace lift_004B99B0
