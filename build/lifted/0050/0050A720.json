@@ -1,0 +1,13 @@
+{
+  "va": "0x0050A720",
+  "size": 93,
+  "orig_symbol": "sub_0050A720",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "CopyBackwardElements24Wrapper",
+  "signature": "void* fn_0050A720(void* first, void* last, void* d_last)",
+  "summary": "Copies 0x24-byte elements backward from [first, last) to d_last and returns the new destination start.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:18:02Z"
+}
