@@ -231,3 +231,24 @@ uint32_t fn_00810200(void* self) {
     return (flags >> 3) & 1u;
 }
 } // namespace lift_00810200
+
+// [0x00810C30] sub_00810C30 (64 bytes)
+namespace lift_00810C30 {
+// Flag table at 0x00AB8E00: 2-byte entries indexed by value; bit 0x08 of the low byte means "continue".
+extern const uint8_t mem_00AB8E00[];
+
+// @name ChainWalkWhileFlagged
+// @summary Reads an index from self+0x0c, then repeatedly calls the callback at self+0x04 with that index
+//          (updated in place by the callback) while the flag table marks the index as continuable.
+// @field Unknown +0x04 void* callback
+// @field Unknown +0x0c uint32_t index
+void fn_00810C30(void* self) {
+    using Callback = void (__cdecl*)(void* self, uint32_t* index);
+
+    uint32_t index = lift_field<uint32_t>(self, 0x0c);
+    while (mem_00AB8E00[2 * static_cast<size_t>(index)] & 0x08) {
+        auto callback = lift_field<Callback>(self, 0x04);
+        callback(self, &index);
+    }
+}
+} // namespace lift_00810C30

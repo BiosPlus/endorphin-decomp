@@ -58355,6 +58355,12 @@
     "summary": "If arg2 != 0, set 0x400 in the dword at (*(self+0x04))+0x04; otherwise clear it.",
     "lifted_path": "lifted/leaf/decompiled_810000.cpp"
   },
+  "0x00810C30": {
+    "name": "ChainWalkWhileFlagged",
+    "signature": "void fn_00810C30(void* self)",
+    "summary": "Reads an index from self+0x0c, then repeatedly calls the callback at self+0x04 with that index",
+    "lifted_path": "lifted/leaf/decompiled_810000.cpp"
+  },
   "0x008110F0": {
     "name": "ToUpperAsciiLowercaseOnly",
     "signature": "int fn_008110F0(int c)",

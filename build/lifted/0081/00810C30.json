@@ -1,0 +1,27 @@
+{
+  "va": "0x00810C30",
+  "size": 64,
+  "orig_symbol": "sub_00810C30",
+  "src_path": "src/leaf/decompiled_810000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_810000.cpp",
+  "name": "ChainWalkWhileFlagged",
+  "signature": "void fn_00810C30(void* self)",
+  "summary": "Reads an index from self+0x0c, then repeatedly calls the callback at self+0x04 with that index",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "callback"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "index"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:10:53Z"
+}
