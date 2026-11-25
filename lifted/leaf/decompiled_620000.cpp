@@ -2427,3 +2427,20 @@ void* fn_00620FE0(uint32_t count) {
     return ext_006A5C62(count * 0x48u);
 }
 } // namespace lift_00620FE0
+
+// [0x00622C40] sub_00622C40 (93 bytes)
+namespace lift_00622C40 {
+// @name sub_00622C40
+// @summary Auto-lifted identical-shape clone of 0x0051A6D0 (CopyRangeBackward5f_0051A6D0).
+namespace lift_0051A6D0 {
+extern void* ext_00622700(void* first, void* last, void* destEnd);
+
+// @name CopyRangeBackward5f_0051A6D0
+// @summary Copies a range of 20-byte (5-float) elements backward into a destination ending at destEnd and returns the destination begin.
+extern void* fn_00622C40(void* first, void* last, void* destEnd) {
+    ext_00622700(first, last, destEnd);
+    ptrdiff_t count = (static_cast<const char*>(last) - static_cast<const char*>(first)) / 20;
+    return static_cast<char*>(destEnd) - count * 20;
+}
+} // namespace lift_0051A6D0
+} // namespace lift_00622C40

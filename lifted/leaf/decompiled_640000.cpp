@@ -1892,3 +1892,32 @@ void fn_00649840(void* self) {
     ext_00645EB0(self);
 }
 } // namespace lift_00649840
+
+// [0x0064F950] sub_0064F950 (93 bytes)
+namespace lift_0064F950 {
+// @name sub_0064F950
+// @summary Auto-lifted identical-shape clone of 0x00649840 (Unknown::ResetVtablesAndRelease).
+namespace lift_00649840 {
+// Known callee 0x00648F90: RelationshipRPROMagnet::vfunc_50 (Releases and clears field_0x94 if non-null after invoking vtable+0x1c)
+extern void __thiscall ext_0064E320(void* self);
+// Known callee 0x00645EB0: Unknown::ResetHandleAndForwardSubobject (Writes three rdata pointers into the object, releases the handle at +0x10 if non-null, zeroes +0x10..+0x18, then tail-calls fn_0065F440 on the subobject at +0x8.)
+extern void __fastcall ext_00645EB0(void* self);
+
+// @name Unknown::ResetVtablesAndRelease
+// @class Unknown
+// @summary Installs three vtable pointers into the object, calls vfunc_50 on it via ext_00648F90, then runs ext_00645EB0 to release the handle at +0x10 and forward to the subobject.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+void fn_0064F950(void* self) {
+    // The SEH frame setup/teardown and unwind-state writes in the original are
+    // compiler bookkeeping and have no effect on the object; they are omitted.
+    lift_field<uint32_t>(self, 0x00) = 0x97E0BC;
+    lift_field<uint32_t>(self, 0x04) = 0x97E0A4;
+    lift_field<uint32_t>(self, 0x08) = 0x97E070;
+
+    ext_0064E320(self);
+    ext_00645EB0(self);
+}
+} // namespace lift_00649840
+} // namespace lift_0064F950

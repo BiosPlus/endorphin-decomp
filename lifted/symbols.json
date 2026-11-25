@@ -3398,6 +3398,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00433320 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
   },
+  "0x00435B30": {
+    "name": "sub_00435B30",
+    "class": "Unknown",
+    "signature": "void fn_00435B30(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00642600 (forwardEraseTailRange).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00435CC0": {
     "name": "AllocTriple",
     "signature": "void* fn_00435CC0(DWORD a1, DWORD a2, const DWORD* a3)",
@@ -24411,6 +24418,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005015E0 (Unknown::eraseRangeFromSelf).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x00579680": {
+    "name": "sub_00579680",
+    "signature": "extern void* fn_00579680(void* first, void* last, void* destEnd)",
+    "summary": "Auto-lifted identical-shape clone of 0x0051A6D0 (CopyRangeBackward5f_0051A6D0).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00579F40": {
     "name": "sub_00579F40",
     "signature": "void* fn_00579F40(const void* first, const void* last, void* out)",
@@ -24518,6 +24531,12 @@
     "class": "Unknown",
     "signature": "void* fn_0057D7F0(void* self)",
     "summary": "Initializes three float fields to 0.0, default-constructs a std::string at +0x0C, zeroes three dwords at +0x2C/+0x30/+0x34, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057DEE0": {
+    "name": "sub_0057DEE0",
+    "signature": "extern void* fn_0057DEE0(void* first, void* last, void* destEnd)",
+    "summary": "Auto-lifted identical-shape clone of 0x0051A6D0 (CopyRangeBackward5f_0051A6D0).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
   "0x0057E110": {
@@ -36607,6 +36626,12 @@
     "summary": "Copies one 20-byte element from src into every 20-byte slot from dst up to end (exclusive); no-op when dst == end.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x00622C40": {
+    "name": "sub_00622C40",
+    "signature": "extern void* fn_00622C40(void* first, void* last, void* destEnd)",
+    "summary": "Auto-lifted identical-shape clone of 0x0051A6D0 (CopyRangeBackward5f_0051A6D0).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00622D30": {
     "name": "fillStridedFromSource",
     "signature": "void fn_00622D30(void* dst, uint32_t count, const void* src)",
@@ -40865,6 +40890,13 @@
     "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 30 (offset +0x78) with the same this pointer; the callee's result is passed through.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x0064F950": {
+    "name": "sub_0064F950",
+    "class": "Unknown",
+    "signature": "void fn_0064F950(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00649840 (Unknown::ResetVtablesAndRelease).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00650D80": {
     "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{84, {flat}}, 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{84, {flat}}, 0}\u003e",
@@ -41243,6 +41275,13 @@
     "summary": "Reads field +0x64, offsets it by 0x160, and calls the helper with (ptr, 0.0f, 0.0f).",
     "lifted_path": "lifted/classes/RelationshipHinge.cpp"
   },
+  "0x00658CF0": {
+    "name": "sub_00658CF0",
+    "class": "Unknown",
+    "signature": "void fn_00658CF0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00649840 (Unknown::ResetVtablesAndRelease).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x006595B0": {
     "name": "RelationshipRPROJoint::vfunc_49",
     "class": "RelationshipRPROJoint",
@@ -41284,6 +41323,13 @@
     "signature": "float fn_00659630(void* self, uint32_t index)",
     "summary": "Returns 3.14f for an index below 3, otherwise 1.0f.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x0065A200": {
+    "name": "sub_0065A200",
+    "class": "Unknown",
+    "signature": "void fn_0065A200(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00649840 (Unknown::ResetVtablesAndRelease).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
   "0x0065A8B0": {
     "name": "initZeroField0",
@@ -44751,6 +44797,12 @@
     "class": "Unknown",
     "signature": "void* fn_00687920(void* first, void* last, void* dest_last)",
     "summary": "Copies a 0x2C-byte record range backward via ext_006873D0, then returns dest_last rewound by the whole-record count of [first, last).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x00687980": {
+    "name": "sub_00687980",
+    "signature": "void* fn_00687980(void* first, void* last, void* d_last)",
+    "summary": "Auto-lifted identical-shape clone of 0x0050A720 (CopyBackwardElements24Wrapper).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x00687E20": {

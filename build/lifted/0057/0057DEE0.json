@@ -1,0 +1,13 @@
+{
+  "va": "0x0057DEE0",
+  "size": 93,
+  "orig_symbol": "sub_0057DEE0",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "sub_0057DEE0",
+  "signature": "extern void* fn_0057DEE0(void* first, void* last, void* destEnd)",
+  "summary": "Auto-lifted identical-shape clone of 0x0051A6D0 (CopyRangeBackward5f_0051A6D0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T03:18:51Z"
+}

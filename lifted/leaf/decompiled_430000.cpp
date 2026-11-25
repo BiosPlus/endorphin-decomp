@@ -14,8 +14,10 @@ void fn_00431310(uint32_t arg) {
 }
 } // namespace lift_00431310
 #include <cstdint>
+#include <cstring>
+#include <stdexcept>
 
-// [0x00437DC0] sub_00437DC0 (18 bytes)
+#include <stdexcept>
 namespace lift_00437DC0 {
 extern void ext_00436FA0(void* arg, int flag);
 
@@ -2817,3 +2819,25 @@ uint32_t __thiscall fn_00434700(uint32_t self, uint32_t arg0) {
     return fn0(arg0, result);
 }
 } // namespace lift_00434700
+
+// [0x00435B30] sub_00435B30 (22 bytes)
+namespace lift_00435B30 {
+// @name sub_00435B30
+// @summary Auto-lifted identical-shape clone of 0x00642600 (forwardEraseTailRange).
+namespace lift_00642600 {
+// Known callee 0x00648DB0: Owner::eraseTailRange (Erases the element range [vec.begin, B+0x20) from the vector embedded at B+0x18, where B = this->field_0x30.)
+extern void __fastcall ext_0045D270(void* self);
+// Known callee 0x006425E0: sub_006425E0 (Member forwarding thunk: loads subobject pointer at +0xC and tail-calls sub_00648940.)
+extern void __fastcall ext_004339D0(void* self);
+
+// @name forwardEraseTailRange
+// @class Unknown
+// @summary Erases the tail range of the subobject at +0x0C, then forwards to ext_006425E0 with the same this.
+// @field Unknown +0x0C void* field_0x0C
+void fn_00435B30(void* self) {
+    void* subobject = lift_field<void*>(self, 0x108);
+    ext_0045D270(subobject);
+    ext_004339D0(self);
+}
+} // namespace lift_00642600
+} // namespace lift_00435B30

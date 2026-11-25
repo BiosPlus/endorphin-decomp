@@ -1,0 +1,13 @@
+{
+  "va": "0x00687980",
+  "size": 93,
+  "orig_symbol": "sub_00687980",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "sub_00687980",
+  "signature": "void* fn_00687980(void* first, void* last, void* d_last)",
+  "summary": "Auto-lifted identical-shape clone of 0x0050A720 (CopyBackwardElements24Wrapper).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T03:18:51Z"
+}

@@ -1811,3 +1811,25 @@ void* fn_0068C400() {
 }
 } // namespace lift_004CAE30
 } // namespace lift_0068C400
+
+// [0x00687980] sub_00687980 (93 bytes)
+namespace lift_00687980 {
+// @name sub_00687980
+// @summary Auto-lifted identical-shape clone of 0x0050A720 (CopyBackwardElements24Wrapper).
+namespace lift_0050A720 {
+// @name CopyBackwardElements24Wrapper
+// @summary Copies 0x24-byte elements backward from [first, last) to d_last and returns the new destination start.
+
+
+extern void* ext_00687420(void* first, void* last, void* d_last);
+
+void* fn_00687980(void* first, void* last, void* d_last) {
+    ext_00687420(first, last, d_last);
+    int32_t byte_diff = static_cast<int32_t>(
+        reinterpret_cast<uintptr_t>(last) - reinterpret_cast<uintptr_t>(first));
+    int32_t count = byte_diff / 0x24;
+    return reinterpret_cast<void*>(
+        reinterpret_cast<uintptr_t>(d_last) - static_cast<uintptr_t>(count * 0x24));
+}
+} // namespace lift_0050A720
+} // namespace lift_00687980

@@ -24,8 +24,10 @@ DWORD* __thiscall fn_00573A10(void* self, const DWORD* first, const DWORD* last,
 #include <istream>
 #include <bit>
 #include <cstddef>
+#include <cmath>
+#include <cstdlib>
 
-// [0x00578020] sub_00578020 (41 bytes)
+#include <cstdlib>
 namespace lift_00578020 {
 // @name sub_00578020
 // @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
@@ -1490,3 +1492,37 @@ extern uint32_t sub_005733D0(uint32_t arg1, uint32_t arg2, uint32_t arg3) {
     return arg3 - static_cast<uint32_t>(count * 48);
 }
 } // namespace lift_005733D0
+
+// [0x00579680] sub_00579680 (93 bytes)
+namespace lift_00579680 {
+// @name sub_00579680
+// @summary Auto-lifted identical-shape clone of 0x0051A6D0 (CopyRangeBackward5f_0051A6D0).
+namespace lift_0051A6D0 {
+extern void* ext_005790C0(void* first, void* last, void* destEnd);
+
+// @name CopyRangeBackward5f_0051A6D0
+// @summary Copies a range of 20-byte (5-float) elements backward into a destination ending at destEnd and returns the destination begin.
+extern void* fn_00579680(void* first, void* last, void* destEnd) {
+    ext_005790C0(first, last, destEnd);
+    ptrdiff_t count = (static_cast<const char*>(last) - static_cast<const char*>(first)) / 20;
+    return static_cast<char*>(destEnd) - count * 20;
+}
+} // namespace lift_0051A6D0
+} // namespace lift_00579680
+
+// [0x0057DEE0] sub_0057DEE0 (93 bytes)
+namespace lift_0057DEE0 {
+// @name sub_0057DEE0
+// @summary Auto-lifted identical-shape clone of 0x0051A6D0 (CopyRangeBackward5f_0051A6D0).
+namespace lift_0051A6D0 {
+extern void* ext_0057DB70(void* first, void* last, void* destEnd);
+
+// @name CopyRangeBackward5f_0051A6D0
+// @summary Copies a range of 20-byte (5-float) elements backward into a destination ending at destEnd and returns the destination begin.
+extern void* fn_0057DEE0(void* first, void* last, void* destEnd) {
+    ext_0057DB70(first, last, destEnd);
+    ptrdiff_t count = (static_cast<const char*>(last) - static_cast<const char*>(first)) / 20;
+    return static_cast<char*>(destEnd) - count * 20;
+}
+} // namespace lift_0051A6D0
+} // namespace lift_0057DEE0
