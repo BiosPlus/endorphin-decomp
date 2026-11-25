@@ -6811,3 +6811,27 @@ bool __stdcall CharacterReloader_vfunc_14(void* a0, std::uint32_t a1, std::uint3
     return true;
 }
 } // namespace lift_005A9ED0
+
+// [0x00582BA0]
+namespace lift_00582BA0 {
+// @name Acclaim2MotionIO::vfunc_57
+// @class Acclaim2MotionIO
+// @summary Returns 2 if the std::string at this+0x568 is empty, otherwise 3.
+// @field Acclaim2MotionIO +0x568 std::string field_0x568
+// @field Acclaim2MotionIO +0x578 size_t field_0x578
+
+// MSVCP80 basic_string::empty() import slot at 0x00924FEC (mem_00924FEC), called via `call [0x924fec]` in the original.
+extern uint32_t mem_00924FEC;
+
+int32_t Acclaim2MotionIO_vfunc_57(void* self) {
+    // add ecx, 0x568 -> string object at this+0x568.
+    // MSVC basic_string::empty() is (_Mysize == 0); _Mysize lives at string+0x10 = this+0x578.
+    // Original dispatches through the MSVCP80 IAT slot; the inlined empty() needs no call,
+    // so the slot is only referenced (no load/call) to keep the import dependency visible.
+    (void)&mem_00924FEC;
+    size_t size = lift_field<size_t>(self, 0x578);
+    bool empty = (size == 0);
+    // neg al; sbb eax,eax; add eax,3  ->  empty ? 2 : 3
+    return empty ? 2 : 3;
+}
+} // namespace lift_00582BA0
