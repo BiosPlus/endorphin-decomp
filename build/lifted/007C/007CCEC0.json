@@ -1,0 +1,27 @@
+{
+  "va": "0x007CCEC0",
+  "size": 89,
+  "orig_symbol": "sub_007CCEC0",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "triangularElementAddr_007CCEC0",
+  "signature": "uint32_t sub_007CCEC0(const uint32_t* self, uint32_t a, uint32_t b)",
+  "summary": "Returns base + 0x58 * tri(lo,hi) for index pair (a,b) in a table of count *self; 0 if a or b exceeds count.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:18:06Z"
+}

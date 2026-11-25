@@ -62303,6 +62303,12 @@
     "summary": "Stores v into +0x20 and +0x2c, replacing v with 0.0f when v \u003c 0 (NaN and -0.0 pass through).",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CCEC0": {
+    "name": "triangularElementAddr_007CCEC0",
+    "signature": "uint32_t sub_007CCEC0(const uint32_t* self, uint32_t a, uint32_t b)",
+    "summary": "Returns base + 0x58 * tri(lo,hi) for index pair (a,b) in a table of count *self; 0 if a or b exceeds count.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CD040": {
     "name": "Unknown::postIncrementField04",
     "class": "Unknown",

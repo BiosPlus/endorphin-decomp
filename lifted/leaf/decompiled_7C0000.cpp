@@ -1293,3 +1293,32 @@ void __cdecl sub_007CA1E0(float mass, float dimX, float dimY, float dimZ, void* 
     lift_field<float>(out, 0x20) = static_cast<float>((x2 + y2) * m12);
 }
 } // namespace lift_007CA1E0
+
+// [0x007CCEC0]
+namespace lift_007CCEC0 {
+// @name triangularElementAddr_007CCEC0
+// @summary Returns base + 0x58 * tri(lo,hi) for index pair (a,b) in a table of count *self; 0 if a or b exceeds count.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x08 uint32_t field_0x08
+
+uint32_t sub_007CCEC0(const uint32_t* self, uint32_t a, uint32_t b) {
+    const uint32_t count = self[0];
+    if (a > count || b > count) {
+        return 0;
+    }
+
+    // m = all-ones when b < a (signed difference sign), else 0.
+    const int32_t m = static_cast<int32_t>(b - a) >> 31;
+    const uint32_t mask = static_cast<uint32_t>(m);
+
+    const uint32_t lo = (~mask & a) | (mask & b);
+    const uint32_t hi = (mask & a) | (~mask & b);
+
+    // Triangular-index: lo * count + hi - lo * (lo + 1) / 2
+    const uint32_t tri = (lo * (lo + 1)) >> 1;
+    const uint32_t index = lo * count + hi - tri;
+
+    const uint32_t base = self[2];
+    return base + index * 0x58u;
+}
+} // namespace lift_007CCEC0
