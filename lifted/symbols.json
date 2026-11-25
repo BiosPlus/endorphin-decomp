@@ -22129,6 +22129,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xB4 and tail-calls sub_00533CF0.",
     "lifted_path": "lifted/leaf/tiny_530000.cpp"
   },
+  "0x0053F6A0": {
+    "name": "forwardValueToChildSetField498",
+    "class": "unknown",
+    "signature": "void fn_0053F6A0(void* self, DWORD arg0, DWORD value)",
+    "summary": "Forwards its second DWORD argument, with a fixed constant, to SetField498 on the object at this+0xB4.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x0053F6C0": {
     "name": "SelectionTool::vfunc_31",
     "class": "SelectionTool",

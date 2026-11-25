@@ -1524,3 +1524,20 @@ void* fn_0053C8F0(void* self) {
     return self;
 }
 } // namespace lift_0053C8F0
+
+// [0x0053F6A0] sub_0053F6A0 (32 bytes)
+namespace lift_0053F6A0 {
+// Known callee 0x00533D40: SetField498 (Stores the second stack argument (DWORD) into this+0x498 and returns, popping 8 bytes of arguments.)
+extern void ext_00533D40(void* self, DWORD arg0, DWORD value);
+
+// @name forwardValueToChildSetField498
+// @class unknown
+// @summary Forwards its second DWORD argument, with a fixed constant, to SetField498 on the object at this+0xB4.
+// @field unknown +0xB4 void* field_0xB4
+void fn_0053F6A0(void* self, DWORD arg0, DWORD value) {
+    // Original: ecx = [this+0xB4]; push 0x93A444; push value; call ext_00533D40; ret 8
+    void* child = lift_field<void*>(self, 0xB4);
+    (void)arg0;  // first stack argument is unused
+    ext_00533D40(child, 0x0093A444u, value);
+}
+} // namespace lift_0053F6A0

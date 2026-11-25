@@ -1,0 +1,22 @@
+{
+  "va": "0x0053F6A0",
+  "size": 32,
+  "orig_symbol": "sub_0053F6A0",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "forwardValueToChildSetField498",
+  "class": "unknown",
+  "signature": "void fn_0053F6A0(void* self, DWORD arg0, DWORD value)",
+  "summary": "Forwards its second DWORD argument, with a fixed constant, to SetField498 on the object at this+0xB4.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0xB4",
+      "type": "void*",
+      "name": "field_0xB4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:41:26Z"
+}
