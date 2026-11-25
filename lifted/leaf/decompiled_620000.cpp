@@ -1566,3 +1566,65 @@ uint8_t* fn_00621190(const uint8_t* first, const uint8_t* last, uint8_t* dst) {
     return dst + count * kRecordSize;
 }
 } // namespace lift_00621190
+
+// [0x00629AA0]
+namespace lift_00629AA0 {
+// @name sub_00629AA0
+// @summary Constructor that initializes base object, sets vtable to 0x00978494, and initializes a 4x4 identity matrix and 3D zero vector.
+// @field sub_00629AA0 +0x00 uint32_t vtable
+// @field sub_00629AA0 +0x30 float field_0x30
+// @field sub_00629AA0 +0x34 float field_0x34
+// @field sub_00629AA0 +0x38 float field_0x38
+// @field sub_00629AA0 +0x3c float field_0x3c
+// @field sub_00629AA0 +0x40 float field_0x40
+// @field sub_00629AA0 +0x44 float field_0x44
+// @field sub_00629AA0 +0x48 float field_0x48
+// @field sub_00629AA0 +0x4c float field_0x4c
+// @field sub_00629AA0 +0x50 float field_0x50
+// @field sub_00629AA0 +0x54 float field_0x54
+// @field sub_00629AA0 +0x58 float field_0x58
+// @field sub_00629AA0 +0x5c float field_0x5c
+// @field sub_00629AA0 +0x60 float field_0x60
+// @field sub_00629AA0 +0x64 float field_0x64
+// @field sub_00629AA0 +0x68 float field_0x68
+// @field sub_00629AA0 +0x6c float field_0x6c
+// @field sub_00629AA0 +0x70 float field_0x70
+// @field sub_00629AA0 +0x74 float field_0x74
+// @field sub_00629AA0 +0x78 float field_0x78
+
+extern uint32_t& mem_u32(uintptr_t addr);
+extern float& mem_f32(uintptr_t addr);
+extern uint32_t __thiscall ext_005FF240(uintptr_t this_ptr, uint32_t arg0);
+
+uintptr_t __thiscall sub_00629AA0(uintptr_t this_ptr, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    (void)arg1;
+    (void)arg2;
+    (void)arg3;
+
+    ext_005FF240(this_ptr, arg0);
+    mem_u32(this_ptr + 0x00) = 0x00978494u;
+
+    mem_f32(this_ptr + 0x30) = 1.0f;
+    mem_f32(this_ptr + 0x34) = 0.0f;
+    mem_f32(this_ptr + 0x38) = 0.0f;
+    mem_f32(this_ptr + 0x3c) = 0.0f;
+    mem_f32(this_ptr + 0x40) = 0.0f;
+    mem_f32(this_ptr + 0x44) = 1.0f;
+    mem_f32(this_ptr + 0x48) = 0.0f;
+    mem_f32(this_ptr + 0x4c) = 0.0f;
+    mem_f32(this_ptr + 0x50) = 0.0f;
+    mem_f32(this_ptr + 0x54) = 0.0f;
+    mem_f32(this_ptr + 0x58) = 1.0f;
+    mem_f32(this_ptr + 0x5c) = 0.0f;
+    mem_f32(this_ptr + 0x60) = 0.0f;
+    mem_f32(this_ptr + 0x64) = 0.0f;
+    mem_f32(this_ptr + 0x68) = 0.0f;
+    mem_f32(this_ptr + 0x6c) = 1.0f;
+
+    mem_f32(this_ptr + 0x70) = 0.0f;
+    mem_f32(this_ptr + 0x74) = 0.0f;
+    mem_f32(this_ptr + 0x78) = 0.0f;
+
+    return this_ptr;
+}
+} // namespace lift_00629AA0
