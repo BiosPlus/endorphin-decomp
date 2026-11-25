@@ -1562,3 +1562,68 @@ void fn_0053C910(void* self) {
     lift_field<int32_t>(self, 0x5C) = 0;
 }
 } // namespace lift_0053C910
+
+// [0x00537380] sub_00537380 (100 bytes)
+namespace lift_00537380 {
+// Known callee 0x0067B3D0: CriticalSectionGuardedRecord::init (Locks the embedded critical section at +0x18, stores three arguments into the record, clears the flag at +0x0C, then unlocks.)
+extern void ext_0067B3D0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+// Known callee 0x0067B530: MultimediaTimer::start (Acquires lock, configures timer resolution, and starts a periodic multimedia timer.)
+extern void ext_0067B530(void* self);
+// IAT slot for USER32!SetTimer (holds the import address at runtime).
+extern uint32_t mem_00925664;
+
+namespace {
+
+inline void* as_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+// Reads the function address stored at byte offset `slotOffset` in the vtable of `obj`.
+inline uint32_t vtable_slot(void* obj, uint32_t slotOffset) {
+    const uint32_t vtbl = lift_field<uint32_t>(obj, 0x0);
+    return lift_field<uint32_t>(as_ptr(vtbl), slotOffset);
+}
+
+using VoidThisFn = void (*)(void* self);
+using SetTimerFn = uintptr_t (__stdcall*)(HWND hWnd, uintptr_t nIDEvent, UINT uElapse, uintptr_t lpTimerFunc);
+
+} // namespace
+
+// @name Unknown::startTimerOrInitRecord
+// @class Unknown
+// @summary Calls virtual slot 0x1C4 on self, then if flag +0x376 is clear, initializes the record at +0x18 and starts the MultimediaTimer at +0x48 (argument 0 defaults to 0x21); otherwise calls virtual slot 0x1D0 and arms a 10 ms SetTimer on the window at +0x1C.
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1c
+// @field Unknown +0x48 uint32_t field_0x48
+// @field Unknown +0x376 uint8_t field_0x376
+void __thiscall fn_00537380(void* self, uint32_t arg) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // call [vtable + 0x1C4] with this = self
+    reinterpret_cast<VoidThisFn>(as_ptr(vtable_slot(self, 0x1C4)))(self);
+
+    // eax = arg; if arg == 0 then eax = 0x21
+    const uint32_t value = (arg != 0) ? arg : 0x21u;
+
+    if (lift_field<uint8_t>(self, 0x376) == 0) {
+        // Initialize the guarded record at +0x18, then start the timer at +0x48.
+        ext_0067B3D0(base + 0x48,
+                     value,
+                     static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base + 0x18)),
+                     4u);
+        ext_0067B530(base + 0x48);
+        return;
+    }
+
+    // call [vtable + 0x1D0] with this = self
+    reinterpret_cast<VoidThisFn>(as_ptr(vtable_slot(self, 0x1D0)))(self);
+
+    // SetTimer(hwnd = [self+0x1C], nIDEvent = 1, uElapse = 10, lpTimerFunc = 0x537360)
+    const uint32_t hwnd = lift_field<uint32_t>(self, 0x1C);
+    auto setTimer = reinterpret_cast<SetTimerFn>(static_cast<uintptr_t>(mem_00925664));
+    (void)setTimer(static_cast<HWND>(as_ptr(hwnd)),
+                   static_cast<uintptr_t>(1),
+                   static_cast<UINT>(10),
+                   static_cast<uintptr_t>(0x00537360u));
+}
+} // namespace lift_00537380

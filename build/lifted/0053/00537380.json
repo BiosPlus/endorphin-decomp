@@ -1,0 +1,40 @@
+{
+  "va": "0x00537380",
+  "size": 100,
+  "orig_symbol": "sub_00537380",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::startTimerOrInitRecord",
+  "class": "Unknown",
+  "signature": "inline void* as_ptr(uint32_t v)",
+  "summary": "Calls virtual slot 0x1C4 on self, then if flag +0x376 is clear, initializes the record at +0x18 and starts the MultimediaTimer at +0x48 (argument 0 defaults to 0x21); otherwise calls virtual slot 0x1D0 and arms a 10 ms SetTimer on the window at +0x1C.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x376",
+      "type": "uint8_t",
+      "name": "field_0x376"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:01:33Z"
+}
