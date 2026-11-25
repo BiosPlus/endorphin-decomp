@@ -1360,3 +1360,17 @@ void fn_004647A0(void* self) {
 }
 } // namespace lift_00464780
 } // namespace lift_004647A0
+
+// [0x0046F7D0]
+namespace lift_0046F7D0 {
+extern void ext_00661620(void* self);
+extern void ext_0046F8A0();
+
+// @name initAndReturnObject
+// @summary Initializes an object via ext_00661620 and returns it.
+void* sub_0046F7D0(void* obj) {
+    (void)ext_0046F8A0;
+    ext_00661620(obj);
+    return obj;
+}
+} // namespace lift_0046F7D0

@@ -55213,6 +55213,12 @@
     "summary": "Scans backward for an index where the two parallel int32 arrays match (arg1 in the +0x78 array, arg2 in the +0x90 array); on the first match, removes that index from both DynamicArrays at +0x68 and +0x80.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D1FB4": {
+    "name": "sub_006D1FB4",
+    "signature": "void __fastcall sub_006D1FB4(uint8_t* ecx, uint32_t /*edx*/)",
+    "summary": "Performs byte and dword additions on ecx and stack-relative offsets",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D1FDC": {
     "name": "GetByteTable006D1FDC",
     "class": "\u003cClassName\u003e (optional)",

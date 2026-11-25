@@ -1,0 +1,13 @@
+{
+  "va": "0x0046F7D0",
+  "size": 26,
+  "orig_symbol": "sub_0046F7D0",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "initAndReturnObject",
+  "signature": "void* sub_0046F7D0(void* obj)",
+  "summary": "Initializes an object via ext_00661620 and returns it.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T11:28:38Z"
+}
