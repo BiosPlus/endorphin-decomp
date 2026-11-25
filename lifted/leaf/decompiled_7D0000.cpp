@@ -970,3 +970,27 @@ void __cdecl sub_007D6260(void* self) {
     }
 }
 } // namespace lift_007D6260
+
+// [0x007D48C0]
+namespace lift_007D48C0 {
+// @name treeRotateLeft
+// @summary Performs a binary tree left rotation on the given node.
+// @field Node +0x00 uint32_t left
+// @field Node +0x04 uint32_t right
+// @field Node +0x08 uint32_t parent
+void sub_007D48C0(void* node) {
+    void* right = lift_field<void*>(node, 0x4);
+    void* right_left = lift_field<void*>(right, 0x0);
+    lift_field<void*>(node, 0x4) = right_left;
+    lift_field<void*>(right_left, 0x8) = node;
+    void* parent = lift_field<void*>(node, 0x8);
+    lift_field<void*>(right, 0x8) = parent;
+    if (node == lift_field<void*>(parent, 0x0)) {
+        lift_field<void*>(parent, 0x0) = right;
+    } else {
+        lift_field<void*>(parent, 0x4) = right;
+    }
+    lift_field<void*>(right, 0x0) = node;
+    lift_field<void*>(node, 0x8) = right;
+}
+} // namespace lift_007D48C0

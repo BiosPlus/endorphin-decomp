@@ -70534,6 +70534,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007D47A0 (Diff_0x14_minus_0x0C).",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D48C0": {
+    "name": "treeRotateLeft",
+    "signature": "void sub_007D48C0(void* node)",
+    "summary": "Performs a binary tree left rotation on the given node.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007D4920": {
     "name": "SearchPairTree",
     "signature": "static inline uint32_t read_guest_u32(uint32_t addr)",
