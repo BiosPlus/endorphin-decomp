@@ -1282,3 +1282,65 @@ int __cdecl fn_0085D9D0(uint16_t a1, uint16_t a2, uint16_t a3, uint32_t a4) {
     return 0;
 }
 } // namespace lift_0085D9D0
+
+// [0x0085F750]
+namespace lift_0085F750 {
+extern int32_t __cdecl ext_0085F7B0(const void* buf1, const void* buf2, uint32_t count);
+
+// @name compare_tagged_payload
+// @summary Compare two tagged byte buffers based on a leading 1-byte type tag (1, 4, or 8)
+int32_t __cdecl sub_0085F750(const uint8_t* a, const uint8_t* b) {
+    uint8_t tag = a[0];
+    if (b[0] != tag) {
+        return 0;
+    }
+
+    uint32_t count = 0;
+    if (tag == 1) {
+        count = 10;
+    } else if (tag == 4 || tag == 8) {
+        count = 4;
+    } else {
+        return 0;
+    }
+
+    return ext_0085F7B0(a + 1, b + 1, count) == 0 ? 1 : 0;
+}
+} // namespace lift_0085F750
+
+// [0x00859F60]
+namespace lift_00859F60 {
+// @name allocBufferObject
+// @summary Allocates a 16-byte buffer/sync object and optionally allocates a zero-initialized buffer of size bytes.
+// @field BufferObject +0x04 uint32_t data
+// @field BufferObject +0x08 uint32_t size
+// @field BufferObject +0x0C uint32_t field_0x0C
+
+
+void mem_write32(uint32_t addr, uint32_t val);
+uint32_t ext_00859730(uint32_t hMem);
+uint32_t ext_0086CF90(uint32_t count, uint32_t size);
+uint32_t ext_0086CFB0(uint32_t initial_state);
+
+uint32_t __cdecl fn_00859F60(uint32_t data, uint32_t size) {
+    uint32_t obj = ext_0086CFB0(0);
+    if (!obj) {
+        return 0;
+    }
+
+    if (!data) {
+        mem_write32(obj + 0x0C, 0);
+        if (size != 0) {
+            data = ext_0086CF90(size, 1);
+            if (!data) {
+                ext_00859730(obj);
+                return 0;
+            }
+        }
+    }
+
+    mem_write32(obj + 0x04, data);
+    mem_write32(obj + 0x08, size);
+    return obj;
+}
+} // namespace lift_00859F60

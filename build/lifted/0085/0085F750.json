@@ -1,0 +1,13 @@
+{
+  "va": "0x0085F750",
+  "size": 96,
+  "orig_symbol": "sub_0085F750",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "compare_tagged_payload",
+  "signature": "int32_t __cdecl sub_0085F750(const uint8_t* a, const uint8_t* b)",
+  "summary": "Compare two tagged byte buffers based on a leading 1-byte type tag (1, 4, or 8)",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:54:16Z"
+}
