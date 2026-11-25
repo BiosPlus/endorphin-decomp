@@ -68708,6 +68708,12 @@
     "summary": "Zeroes three indexed 32-bit array elements referenced by pointer/index pairs in the struct.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CFEC0": {
+    "name": "transformVec3Affine",
+    "signature": "void fn_007CFEC0(const float* m, const float* v, float* linear, float* point)",
+    "summary": "Multiplies a 3-vector by the 3x3 linear part of a column-major 4x4 float matrix (m[i + 4*j]) into linear, then adds the translation column (m[12..14]) into point.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007D4720": {
     "name": "Unknown::InvokeSlotThenForward",
     "class": "Unknown",

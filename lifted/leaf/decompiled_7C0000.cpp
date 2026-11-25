@@ -1661,3 +1661,20 @@ extern void fn_007CA830(unsigned char* out, float a, float x, float y)
     *reinterpret_cast<float*>(out + 0x1c) = std::sqrt(sumSq);
 }
 } // namespace lift_007CA830
+
+// [0x007CFEC0] sub_007CFEC0 (108 bytes)
+namespace lift_007CFEC0 {
+// @name transformVec3Affine
+// @summary Multiplies a 3-vector by the 3x3 linear part of a column-major 4x4 float matrix (m[i + 4*j]) into linear, then adds the translation column (m[12..14]) into point.
+void fn_007CFEC0(const float* m, const float* v, float* linear, float* point) {
+    for (int i = 0; i < 3; ++i) {
+        // Accumulate in double to match the x87 extended-precision intermediates of the original.
+        double acc = 0.0;
+        for (int j = 0; j < 3; ++j) {
+            acc += static_cast<double>(m[i + 4 * j]) * static_cast<double>(v[j]);
+        }
+        linear[i] = static_cast<float>(acc);
+        point[i] = static_cast<float>(static_cast<double>(linear[i]) + static_cast<double>(m[12 + i]));
+    }
+}
+} // namespace lift_007CFEC0

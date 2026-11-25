@@ -1,0 +1,13 @@
+{
+  "va": "0x007CFEC0",
+  "size": 108,
+  "orig_symbol": "sub_007CFEC0",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "transformVec3Affine",
+  "signature": "void fn_007CFEC0(const float* m, const float* v, float* linear, float* point)",
+  "summary": "Multiplies a 3-vector by the 3x3 linear part of a column-major 4x4 float matrix (m[i + 4*j]) into linear, then adds the translation column (m[12..14]) into point.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:57:40Z"
+}
