@@ -5868,6 +5868,12 @@
     "summary": "Forwards this object's +0x74 field and the single argument to sub_00451CE0.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x00453EB0": {
+    "name": "OnEditChangeText",
+    "signature": "extern \"C\" void fn_00453EB0(void* self)",
+    "summary": "Reads window text from control at +0x278 into std::string at +0xb0 and calls sub_004535B0.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00453F30": {
     "name": "RigEditorFrame::vfunc_1_off_144",
     "class": "RigEditorFrame",
@@ -50607,6 +50613,13 @@
     "class": "Vec2",
     "signature": "extern \"C\" void __thiscall fn_0067C4D0(void* this_ptr, float angle)",
     "summary": "Rotates a 2D vector in-place by the given angle in radians.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
+  "0x0067D9E0": {
+    "name": "Matrix3::isIdentity",
+    "class": "Matrix3",
+    "signature": "bool __thiscall fn_0067D9E0(const float* self, float tol)",
+    "summary": "Checks whether a 3x3 float matrix is the identity matrix within a given tolerance.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x0067DB90": {

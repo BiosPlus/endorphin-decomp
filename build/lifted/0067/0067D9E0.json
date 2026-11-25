@@ -1,0 +1,22 @@
+{
+  "va": "0x0067D9E0",
+  "size": 114,
+  "orig_symbol": "sub_0067D9E0",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "Matrix3::isIdentity",
+  "class": "Matrix3",
+  "signature": "bool __thiscall fn_0067D9E0(const float* self, float tol)",
+  "summary": "Checks whether a 3x3 float matrix is the identity matrix within a given tolerance.",
+  "fields": [
+    {
+      "class": "Matrix3",
+      "offset": "+0x0",
+      "type": "float[9]",
+      "name": "m"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:40:36Z"
+}

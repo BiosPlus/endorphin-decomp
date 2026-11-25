@@ -1917,3 +1917,29 @@ extern void __thiscall fn_0067C4D0(void* this_ptr, float angle) {
     vec[1] = x * s + y * c;
 }
 } // namespace lift_0067C4D0
+
+// [0x0067D9E0]
+namespace lift_0067D9E0 {
+// @name Matrix3::isIdentity
+// @class Matrix3
+// @summary Checks whether a 3x3 float matrix is the identity matrix within a given tolerance.
+// @field Matrix3 +0x00 float[9] m
+
+bool ext_0056B670(double a, double b, double tol);
+bool ext_005631C0(double a, double tol);
+
+bool __thiscall fn_0067D9E0(const float* self, float tol) {
+    for (int row = 0; row < 3; ++row) {
+        for (int col = 0; col < 3; ++col) {
+            float val = self[row * 3 + col];
+            bool ok = (row == col)
+                ? ext_0056B670(static_cast<double>(val), 1.0, static_cast<double>(tol))
+                : ext_005631C0(static_cast<double>(val), static_cast<double>(tol));
+            if (!ok) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+} // namespace lift_0067D9E0
