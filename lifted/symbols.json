@@ -20725,6 +20725,13 @@
     "summary": "Sets the originator on the scene's CSLFileInfo from a global std::string if FileInfo is non-null.",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
+  "0x00565010": {
+    "name": "UnknownClass::updateAngleTypeFromField194",
+    "class": "UnknownClass",
+    "signature": "void fn_00565010(void* self)",
+    "summary": "Looks up the CSLAngle from the scene at +0x494, sets its angle type to 0, then sets it again to 0 or 1 based on the mode at +0x194 (other values leave it at 0).",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x005650F0": {
     "name": "writeAndCloseXSIScene",
     "class": "UnknownClass",

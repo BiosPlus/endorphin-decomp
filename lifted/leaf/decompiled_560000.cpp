@@ -270,3 +270,41 @@ void fn_00566380(uint8_t* self, const void* key) {
 }
 } // namespace lift_005AAD10
 } // namespace lift_00566380
+
+// [0x00565010] sub_00565010 (67 bytes)
+namespace lift_00565010 {
+// Known callee 0x007C56AC: thunk_XSIFtk-3.6.2.1_?Angle@CSLScene@@QAEPAVCSLAngle@@XZ (IAT jump thunk forwarding to XSIFtk-3.6.2.1!?Angle@CSLScene@@QAEPAVCSLAngle@@XZ.)
+extern void ext_007C56AC();
+// Known callee 0x007C56EE: thunk_XSIFtk-3.6.2.1_?SetAngleType@CSLAngle@@QAEXW4EAngleType@1@@Z (IAT jump thunk forwarding to XSIFtk-3.6.2.1!?SetAngleType@CSLAngle@@QAEXW4EAngleType@1@@Z.)
+extern void ext_007C56EE();
+
+// @name UnknownClass::updateAngleTypeFromField194
+// @class UnknownClass
+// @summary Looks up the CSLAngle from the scene at +0x494, sets its angle type to 0, then sets it again to 0 or 1 based on the mode at +0x194 (other values leave it at 0).
+// @field UnknownClass +0x194 int32_t field_0x194
+// @field UnknownClass +0x494 void* field_0x494
+void fn_00565010(void* self) {
+    auto* base = reinterpret_cast<uint8_t*>(self);
+    auto* scene = lift_field<void*>(base, 0x494);
+
+    // CSLScene::Angle (thiscall: this = scene) -> CSLAngle*
+    using AngleFn = void* (*)(void*);
+    void* angle = reinterpret_cast<AngleFn>(ext_007C56AC)(scene);
+    if (angle == nullptr) {
+        return;
+    }
+
+    // CSLAngle::SetAngleType (thiscall: this = angle, stack arg = type)
+    using SetAngleTypeFn = void (*)(void*, int32_t);
+    auto setAngleType = reinterpret_cast<SetAngleTypeFn>(ext_007C56EE);
+
+    setAngleType(angle, 0);
+
+    int32_t mode = lift_field<int32_t>(base, 0x194);
+    if (mode == 0) {
+        setAngleType(angle, 0);
+    } else if (mode == 1) {
+        setAngleType(angle, 1);
+    }
+}
+} // namespace lift_00565010
