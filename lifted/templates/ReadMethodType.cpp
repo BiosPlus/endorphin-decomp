@@ -56286,3 +56286,30 @@ void fn_0068D970(void* self) {
 }
 } // namespace lift_004B21D0
 } // namespace lift_0068D970
+
+// [0x00604EB0] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1>::vfunc_5 (59 bytes)
+namespace lift_00604EB0 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<Effector>::vfunc_5 (Effector::getPoseRawDesiredDisplacement)
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1>
+// @summary Always throws. If the wrapped Effector pointer is non-null, the original calls its virtual getter (vtable slot +0x38) and raises an
+//          exception carrying the float result; otherwise it raises a DerivedException. Control never returns to the caller.
+// @field ExprParser::ValuePtrType +0x00 void* effector
+float fn_00604EB0(void* self) {
+    void* effector = lift_field<void*>(self, 0x00);
+    if (effector == nullptr) {
+        // Original: construct DerivedException in a local and throw it via _CxxThrowException.
+        throw std::runtime_error("ReadMethodType<Effector>: null Effector");
+    }
+    // Original: virtual getter at vtable +0x38 returns float*, its value is passed to
+    // ExceptionWithMessage::throwDefaultMessage (ext_0046C4E0), which always throws.
+    // The vtable dispatch has no portable equivalent here, so the exception is raised directly.
+    throw std::runtime_error("ReadMethodType<Effector>: getPoseRawDesiredDisplacement");
+}
+} // namespace lift_00604EB0
