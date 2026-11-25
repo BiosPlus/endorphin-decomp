@@ -31238,6 +31238,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00404D50 (ElementCountFromRange).",
     "lifted_path": "lifted/leaf/tiny_620000.cpp"
   },
+  "0x006210E0": {
+    "name": "fillStruct0x48Range",
+    "signature": "void __cdecl sub_006210E0(uint32_t begin, uint32_t end, uint32_t src)",
+    "summary": "Fills a range of 0x48-byte structs (two std::strings and two doubles) by copying from a source element.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00621720": {
     "name": "sub_00621720",
     "class": "(none)",
@@ -33848,6 +33854,13 @@
     "class": "MagnetJoint",
     "signature": "void __thiscall fn_00645D30(void* self, uint32_t index, double value)",
     "summary": "Sets the double value at the start of the element at the given index in a 24-byte-stride vector, with bounds checking.",
+    "lifted_path": "lifted/classes/MagnetJoint.cpp"
+  },
+  "0x00645D80": {
+    "name": "MagnetJoint::vfunc_4",
+    "class": "MagnetJoint",
+    "signature": "void __thiscall fn_00645D80(uint8_t* self, uint32_t index, double value)",
+    "summary": "Bounds-checked setter for a double at offset +0x10 of a 24-byte element in the vector at +0x10..+0x14",
     "lifted_path": "lifted/classes/MagnetJoint.cpp"
   },
   "0x00645F40": {

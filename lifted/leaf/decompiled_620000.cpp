@@ -970,3 +970,35 @@ uintptr_t fn_006296A0(uintptr_t self, uint32_t arg0, uint32_t arg1, uint32_t arg
     return self;
 }
 } // namespace lift_006296A0
+
+// [0x006210E0]
+namespace lift_006210E0 {
+// @name fillStruct0x48Range
+// @summary Fills a range of 0x48-byte structs (two std::strings and two doubles) by copying from a source element.
+// @field Struct0x48 +0x00 std::string field_0x00
+// @field Struct0x48 +0x1c std::string field_0x1c
+// @field Struct0x48 +0x38 double field_0x38
+// @field Struct0x48 +0x40 double field_0x40
+
+extern uint32_t mem_00924FDC;
+
+using StringAssignFn = uint32_t(__thiscall*)(uint32_t self, uint32_t other);
+
+void __cdecl sub_006210E0(uint32_t begin, uint32_t end, uint32_t src) {
+    if (begin == end) {
+        return;
+    }
+
+    auto assign_str = reinterpret_cast<StringAssignFn>(mem_00924FDC);
+    uint32_t src_str2 = src + 0x1c;
+    uint32_t cur = begin;
+
+    do {
+        assign_str(cur, src);
+        assign_str(cur + 0x1c, src_str2);
+        *reinterpret_cast<double*>(cur + 0x38) = *reinterpret_cast<const double*>(src + 0x38);
+        cur += 0x48;
+        *reinterpret_cast<double*>(cur - 0x8) = *reinterpret_cast<const double*>(src + 0x40);
+    } while (cur != end);
+}
+} // namespace lift_006210E0
