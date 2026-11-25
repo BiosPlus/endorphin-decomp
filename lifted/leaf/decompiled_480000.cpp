@@ -1308,3 +1308,30 @@ void* fn_0048FB80(unsigned int count) {
     return reinterpret_cast<AllocFn>(ext_006A5C62)(size);
 }
 } // namespace lift_0048FB80
+
+// [0x00486EA0] sub_00486EA0 (87 bytes)
+namespace lift_00486EA0 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void ext_006A5C62();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+// std::exception(const char* const&) constructor IAT slot; the C++ throw below replaces it.
+extern int mem_00925130;
+
+// @name allocArrayOf0x68Checked
+// @summary Allocates count * 0x68 bytes via the MFC80 allocator; count==0 allocates 0 bytes, and a count whose byte size would overflow throws.
+// @field none (free function; no struct member accessed)
+void* fn_00486EA0(uint32_t count) {
+    using AllocFn = void* (*)(size_t);
+    auto alloc = reinterpret_cast<AllocFn>(ext_006A5C62);
+
+    if (count == 0) {
+        return alloc(0);
+    }
+    // Overflow guard: (0xFFFFFFFF / count) < 0x68 means count * 0x68 would not fit in 32 bits.
+    if (0xFFFFFFFFu / count < 0x68u) {
+        throw std::length_error("allocation size overflow");
+    }
+    return alloc(static_cast<size_t>(count) * 0x68u);
+}
+} // namespace lift_00486EA0

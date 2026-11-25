@@ -8550,6 +8550,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x00486EA0": {
+    "name": "allocArrayOf0x68Checked",
+    "signature": "void* fn_00486EA0(uint32_t count)",
+    "summary": "Allocates count * 0x68 bytes via the MFC80 allocator; count==0 allocates 0 bytes, and a count whose byte size would overflow throws.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00486F00": {
     "name": "ExprParser::ROMethod0Type::vfunc_0 (NM::Vector3::normalize2)",
     "class": "ExprParser::ROMethod0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",
