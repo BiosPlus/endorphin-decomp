@@ -518,3 +518,26 @@ bool fn_00566F70(void* self, void* stream) {
     }
 }
 } // namespace lift_00566F70
+
+// [0x00567210] sub_00567210 (109 bytes)
+namespace lift_00567210 {
+// @name Unknown::visitChildrenRecursive_00567210
+// @class Unknown
+// @summary Recursively walks the dword child-pointer list at node+0x28..+0x2C, calling itself on each child with the same second argument.
+// @field Unknown +0x28 uint32_t* field_0x28
+// @field Unknown +0x2C uint32_t* field_0x2C
+void fn_00567210(void* self, void* node, void* arg2) {
+    uint32_t* it = reinterpret_cast<uint32_t*>(
+        static_cast<uintptr_t>(lift_field<uint32_t>(node, 0x28)));
+    for (;;) {
+        uint32_t* end = reinterpret_cast<uint32_t*>(
+            static_cast<uintptr_t>(lift_field<uint32_t>(node, 0x2C)));
+        if (it == end) {
+            return;
+        }
+        void* child = reinterpret_cast<void*>(static_cast<uintptr_t>(*it));
+        fn_00567210(self, child, arg2);
+        ++it;
+    }
+}
+} // namespace lift_00567210

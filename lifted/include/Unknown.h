@@ -580,6 +580,7 @@ struct Unknown_Fields {
     // +0x28  std::uint32_t            field_0x28  (evidence: 0x00518030, 0x00519CB0) // CONFLICT: multiple definitions at +0x28
     // +0x28  struct_006D2130          field_0x28  (evidence: 0x006D7880) // CONFLICT: multiple definitions at +0x28
     // +0x28  uint32_t                 field_0x28  (evidence: 0x0041DDA0, 0x0046F930, 0x004F0A90, 0x0054C570, 0x00564600, 0x0056B900, 0x00572680, 0x0057BBE0, 0x005947B0, 0x005963F0, 0x00599E70, 0x005B51E0, 0x005FF240, 0x0060B240, 0x00629850, 0x0063E050, 0x0063F350, 0x00648910, 0x006767D0, 0x006AD290, 0x00790DC0, 0x007911E0, 0x007CD510) // CONFLICT: multiple definitions at +0x28
+    // +0x28  uint32_t*                field_0x28  (evidence: 0x00567210) // CONFLICT: multiple definitions at +0x28
     // +0x28  uint8_t                  field_0x28  (evidence: 0x00507F50, 0x00507F60, 0x0050E350, 0x0050F970, 0x00798EA0) // CONFLICT: multiple definitions at +0x28
     // +0x28  void*                    field_0x28  (evidence: 0x004773B0, 0x00622B40, 0x00627280, 0x00629D30, 0x006488A0, 0x006C8440, 0x007C15A0, 0x007C8A10, 0x007CAF70) // CONFLICT: multiple definitions at +0x28
     // +0x28  uint8_t                  field_0x28[32]  (evidence: 0x006E8670) // CONFLICT: multiple definitions at +0x28
@@ -593,6 +594,7 @@ struct Unknown_Fields {
     // +0x2C  void**                   elements_begin  (evidence: 0x00665B80) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  float                    field_0x2C  (evidence: 0x004B10D0, 0x004B6CC0, 0x004B6CF0, 0x004B6FF0, 0x004C4390, 0x004CCC30, 0x004CF910, 0x00538FA0, 0x0055CD10, 0x005ACB00, 0x005ACD30, 0x00622B40, 0x00629E80, 0x007CAF70, 0x007CCAB0) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  uint32_t                 field_0x2C  (evidence: 0x0041DDA0, 0x0057FD10, 0x00790E20, 0x007C9D80, 0x007CAF70) // CONFLICT: multiple definitions at +0x2C
+    // +0x2C  uint32_t*                field_0x2C  (evidence: 0x00567210) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  uint8_t[4]               field_0x2C  (evidence: 0x00771B90) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  void*                    field_0x2C  (evidence: 0x006FA830) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  CRITICAL_SECTION         field_0x2c  (evidence: 0x004155E0) // CONFLICT: multiple definitions at +0x2C

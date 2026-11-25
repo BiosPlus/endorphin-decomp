@@ -1,0 +1,28 @@
+{
+  "va": "0x00567210",
+  "size": 109,
+  "orig_symbol": "sub_00567210",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "Unknown::visitChildrenRecursive_00567210",
+  "class": "Unknown",
+  "signature": "void fn_00567210(void* self, void* node, void* arg2)",
+  "summary": "Recursively walks the dword child-pointer list at node+0x28..+0x2C, calling itself on each child with the same second argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "uint32_t*",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "uint32_t*",
+      "name": "field_0x2C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:01:58Z"
+}
