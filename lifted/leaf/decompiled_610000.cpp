@@ -470,3 +470,23 @@ void fn_00610C10(void* self) {
     lift_field<float>(obj, 0x10) = v3;
 }
 } // namespace lift_00610C10
+
+// [0x006110A0]
+namespace lift_006110A0 {
+// @name mapIndexToOffset
+// @summary Maps an unsigned index (0..3) to a slot index (0, 1, 1, 2) or 4 if out of range.
+
+uint32_t __stdcall sub_006110A0(uint32_t index) {
+    switch (index) {
+        case 0:
+            return 0;
+        case 1:
+        case 2:
+            return 1;
+        case 3:
+            return 2;
+        default:
+            return 4;
+    }
+}
+} // namespace lift_006110A0

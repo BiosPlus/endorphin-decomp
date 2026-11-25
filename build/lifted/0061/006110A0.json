@@ -1,0 +1,13 @@
+{
+  "va": "0x006110A0",
+  "size": 88,
+  "orig_symbol": "sub_006110A0",
+  "src_path": "src/leaf/decompiled_610000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_610000.cpp",
+  "name": "mapIndexToOffset",
+  "signature": "uint32_t __stdcall sub_006110A0(uint32_t index)",
+  "summary": "Maps an unsigned index (0..3) to a slot index (0, 1, 1, 2) or 4 if out of range.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:16:58Z"
+}
