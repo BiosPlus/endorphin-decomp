@@ -1549,3 +1549,36 @@ uint32_t __thiscall sub_0078C690(void* self, int32_t index, uint8_t swap_endian)
     return static_cast<uint32_t>(std::atoi(strings[index]));
 }
 } // namespace lift_0078C690
+
+// [0x00780030] sub_00780030 (96 bytes)
+namespace lift_00780030 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x0077FFD0: sub_0077FFD0 (Initializes object fields to zero and sets field_0x00 to -1, returning this.)
+extern uintptr_t ext_0077FFD0(uintptr_t this_ptr);
+
+// @name AllocAndInitArray
+// @summary Stores a count, allocates count * 0x130 bytes, initializes each 0x130-byte element, and returns this.
+// @field Unknown +0x00 int32_t field_0x00
+// @field Unknown +0x04 uintptr_t field_0x04
+void* __thiscall fn_00780030(void* self_ptr, int32_t count) {
+    uint8_t* self = static_cast<uint8_t*>(self_ptr);
+    *reinterpret_cast<int32_t*>(self + 0x00) = count;
+
+    size_t total = static_cast<size_t>(static_cast<int64_t>(count) * 0x130);
+    uint8_t* items = static_cast<uint8_t*>(ext_006A5C62(total));
+    if (items == nullptr) {
+        *reinterpret_cast<uintptr_t*>(self + 0x04) = 0;
+        return self;
+    }
+
+    uint8_t* cursor = items;
+    for (int32_t i = 0; i < count; ++i) {
+        ext_0077FFD0(reinterpret_cast<uintptr_t>(cursor));
+        cursor += 0x130;
+    }
+
+    *reinterpret_cast<uintptr_t*>(self + 0x04) = reinterpret_cast<uintptr_t>(items);
+    return self;
+}
+} // namespace lift_00780030

@@ -64539,6 +64539,12 @@
     "summary": "Initializes object fields to zero and sets field_0x00 to -1, returning this.",
     "lifted_path": "lifted/leaf/decompiled_770000.cpp"
   },
+  "0x00780030": {
+    "name": "AllocAndInitArray",
+    "signature": "void* __thiscall fn_00780030(void* self_ptr, int32_t count)",
+    "summary": "Stores a count, allocates count * 0x130 bytes, initializes each 0x130-byte element, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00780090": {
     "name": "SetValueAndCopyString",
     "signature": "void fn_00780090(uint8_t* self, uint32_t value, const char* src)",
