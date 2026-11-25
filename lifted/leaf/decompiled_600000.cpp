@@ -63,6 +63,7 @@ uint32_t __thiscall sub_00602EC0(uint32_t this_ptr) {
     return this_ptr;
 }
 } // namespace lift_00602EC0
+#include <cstring>
 
 // [0x0060B8D0] sub_0060B8D0 (62 bytes)
 namespace lift_0060B8D0 {
@@ -1098,3 +1099,44 @@ __thiscall void* fn_0060C570(void* self) {
     return self;
 }
 } // namespace lift_0060C570
+
+// [0x0060B240] sub_0060B240 (102 bytes)
+namespace lift_0060B240 {
+// Known callee 0x00661980: setVtable_0093BFB4 (Stores the vtable address 0x0093BFB4 into the first dword of the object pointed to by ECX (this).)
+extern void ext_00661980(void* self);
+
+// @name Unknown::initVtablesAndClearFields
+// @class Unknown
+// @summary Thiscall initializer: runs the base-setup callee on this, overwrites the vtable slots and several dwords with constants, zeroes six dword fields, and returns this.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1c
+// @field Unknown +0x24 uint32_t field_0x24
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x2C uint32_t field_0x2c
+void* fn_0060B240(void* self) {
+    ext_00661980(self);
+
+    auto store32 = [](void* base, std::size_t off, uint32_t value) {
+        std::memcpy(static_cast<uint8_t*>(base) + off, &value, sizeof(value));
+    };
+
+    store32(self, 0x04, 0x971B4Cu);
+    store32(self, 0x08, 0x9443BCu);
+    store32(self, 0x00, 0x97202Cu);
+    store32(self, 0x04, 0x972020u);
+    store32(self, 0x08, 0x972010u);
+
+    store32(self, 0x14, 0u);
+    store32(self, 0x18, 0u);
+    store32(self, 0x1C, 0u);
+    store32(self, 0x24, 0u);
+    store32(self, 0x28, 0u);
+    store32(self, 0x2C, 0u);
+
+    return self;
+}
+} // namespace lift_0060B240

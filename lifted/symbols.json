@@ -35323,6 +35323,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x0060B240": {
+    "name": "Unknown::initVtablesAndClearFields",
+    "class": "Unknown",
+    "signature": "void* fn_0060B240(void* self)",
+    "summary": "Thiscall initializer: runs the base-setup callee on this, overwrites the vtable slots and several dwords with constants, zeroes six dword fields, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060B440": {
     "name": "NMData::DisabledCollisionPairList::vfunc_0",
     "class": "NMData::DisabledCollisionPairList",
