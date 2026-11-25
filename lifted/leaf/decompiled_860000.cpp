@@ -968,3 +968,22 @@ const uint8_t* fn_008665CC() {
     return kDataBlock_008665CC;
 }
 } // namespace lift_008665CC
+
+// [0x0086AF30]
+namespace lift_0086AF30 {
+// @name copyDwords
+// @summary Copies count 32-bit dwords from src to dst.
+
+
+extern uint32_t ext_008599F0(const void* s);
+extern void* __cdecl ext_0086CCC0(void* self);
+
+extern void __cdecl fn_0086AF30(uint32_t* dst, const uint32_t* src, uint32_t count) {
+    (void)&ext_008599F0;
+    (void)&ext_0086CCC0;
+    while (count != 0) {
+        *dst++ = *src++;
+        --count;
+    }
+}
+} // namespace lift_0086AF30
