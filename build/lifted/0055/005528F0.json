@@ -1,0 +1,13 @@
+{
+  "va": "0x005528F0",
+  "size": 76,
+  "orig_symbol": "sub_005528F0",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "FillParityBlendTable_005528F0",
+  "signature": "uint32_t fn_005528F0(uint32_t ecx)",
+  "summary": "Fills a 256x256 byte table at mem_00AF7D00 (4 bytes per entry, offset by 1) with 0x00/0xFF values derived from bit 3 of (col ^ row), with the fourth byte always 0xFF; returns the input ecx unchanged.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:38:49Z"
+}

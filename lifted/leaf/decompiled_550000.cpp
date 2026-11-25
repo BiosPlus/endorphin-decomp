@@ -1023,3 +1023,25 @@ void* fn_00555420(void* first, void* last, const void* key) {
     return cur;
 }
 } // namespace lift_00555420
+
+// [0x005528F0] sub_005528F0 (76 bytes)
+namespace lift_005528F0 {
+extern uint8_t mem_00AF7D00[];
+
+// @name FillParityBlendTable_005528F0
+// @summary Fills a 256x256 byte table at mem_00AF7D00 (4 bytes per entry, offset by 1) with 0x00/0xFF values derived from bit 3 of (col ^ row), with the fourth byte always 0xFF; returns the input ecx unchanged.
+uint32_t fn_005528F0(uint32_t ecx) {
+    uint8_t* esi = mem_00AF7D00 + 1;
+    for (uint32_t row = 0; row < 256; ++row) {
+        for (uint32_t col = 0; col < 256; ++col) {
+            uint8_t dl = (((col ^ row) >> 3) & 1) ? 0xFF : 0x00;
+            esi[-1] = dl;
+            esi[0] = dl;
+            esi[1] = dl;
+            esi[2] = 0xFF;
+            esi += 4;
+        }
+    }
+    return ecx;
+}
+} // namespace lift_005528F0

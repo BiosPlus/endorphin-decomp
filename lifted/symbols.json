@@ -20813,6 +20813,12 @@
     "summary": "Stores constant vtable-like word at +0x00 of self, calls fn_005528D0(self), returns self.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x005528F0": {
+    "name": "FillParityBlendTable_005528F0",
+    "signature": "uint32_t fn_005528F0(uint32_t ecx)",
+    "summary": "Fills a 256x256 byte table at mem_00AF7D00 (4 bytes per entry, offset by 1) with 0x00/0xFF values derived from bit 3 of (col ^ row), with the fourth byte always 0xFF; returns the input ecx unchanged.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00553170": {
     "name": "AngleScaler::ScaleByUnitMode",
     "class": "AngleScaler",
