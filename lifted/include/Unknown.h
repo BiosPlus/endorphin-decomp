@@ -891,7 +891,8 @@ struct Unknown_Fields {
     // +0xC0  int32_t                  field_0xC0  (evidence: 0x00708C10, 0x00708CC0, 0x0070BF00) // CONFLICT: multiple definitions at +0xC0
     // +0xC0  int32_t                  field_0xc0  (evidence: 0x00709AB0) // CONFLICT: multiple definitions at +0xC0
     // +0xC1  uint8_t                  field_0xC1  (evidence: 0x00666C90)
-    // +0xC4  uint32_t                 field_0xc4  (evidence: 0x0051DDB0)
+    // +0xC4  int32_t                  field_0xC4  (evidence: 0x006BCEE0) // CONFLICT: multiple definitions at +0xC4
+    // +0xC4  uint32_t                 field_0xc4  (evidence: 0x0051DDB0) // CONFLICT: multiple definitions at +0xC4
     // +0xC8  int32_t*                 field_0xC8  (evidence: 0x006DC460) // CONFLICT: multiple definitions at +0xC8
     // +0xC8  void*                    field_0xc8  (evidence: 0x00455410) // CONFLICT: multiple definitions at +0xC8
     // +0xC8  DWORD                    selectionBuffer  (evidence: 0x00448420) // CONFLICT: multiple definitions at +0xC8
@@ -905,7 +906,8 @@ struct Unknown_Fields {
     // +0xD0  int32_t                  field_0xd0  (evidence: 0x0053F990) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  uint32_t                 field_0xd0  (evidence: 0x00709AB0) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  uint32_t field_0xD0 (accessed on the object returned by ord_3085(self), not on self)  (evidence: 0x00456DE0) // CONFLICT: multiple definitions at +0xD0
-    // +0xD4  int32_t                  field_0xd4  (evidence: 0x0053F990)
+    // +0xD4  void**                   field_0xD4  (evidence: 0x006BCEE0) // CONFLICT: multiple definitions at +0xD4
+    // +0xD4  int32_t                  field_0xd4  (evidence: 0x0053F990) // CONFLICT: multiple definitions at +0xD4
     // +0xD8  uint32_t                 field_0xD8  (evidence: 0x004023C0, 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0) // CONFLICT: multiple definitions at +0xD8
     // +0xD8  int32_t                  field_0xd8  (evidence: 0x0053F990) // CONFLICT: multiple definitions at +0xD8
     // +0xDC  uint32_t field_0xdc (read-only gate; multiple conflicting definitions in Unknown.h)  (evidence: 0x00456280) // CONFLICT: multiple definitions at +0xDC

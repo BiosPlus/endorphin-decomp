@@ -53392,6 +53392,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x78 and tail-calls sub_006E7460.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006BCEE0": {
+    "name": "Unknown::findFirstMatch",
+    "class": "Unknown",
+    "signature": "void* fn_006BCEE0(void* self, void* arg)",
+    "summary": "Scans the pointer array at +0xD4 (length at +0xC4) and returns the first element for which ext_006BA780(arg, element) is nonzero, or null if none match.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BD210": {
     "name": "Pair::equals",
     "class": "Pair",

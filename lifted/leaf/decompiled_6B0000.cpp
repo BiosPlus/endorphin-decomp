@@ -1491,3 +1491,29 @@ extern int32_t __thiscall fn_006BA7A0(void* self, void* arg) {
     return cmp != 0 ? 1 : 0;
 }
 } // namespace lift_006BA7A0
+
+// [0x006BCEE0] sub_006BCEE0 (80 bytes)
+namespace lift_006BCEE0 {
+// Known callee 0x006BA780: Unknown::InitAndReturnSelf (Calls sub_006B9910 on the object (zero-inits fields, sets vtable) and returns the same object pointer.)
+// Note: the caller tests AL after the call, so it is modeled here as returning a boolean-like byte.
+extern uint8_t ext_006BA780(void* self, void* elem);
+
+// @name Unknown::findFirstMatch
+// @class Unknown
+// @summary Scans the pointer array at +0xD4 (length at +0xC4) and returns the first element for which ext_006BA780(arg, element) is nonzero, or null if none match.
+// @field Unknown +0xC4 int32_t field_0xC4
+// @field Unknown +0xD4 void** field_0xD4
+void* fn_006BCEE0(void* self, void* arg) {
+    auto* base = static_cast<unsigned char*>(self);
+    int32_t i = 0;
+    while (i < *reinterpret_cast<int32_t*>(base + 0xC4)) {
+        void** items = *reinterpret_cast<void***>(base + 0xD4);
+        void* elem = items[i];
+        if (ext_006BA780(arg, elem) != 0) {
+            return elem;
+        }
+        ++i;
+    }
+    return nullptr;
+}
+} // namespace lift_006BCEE0

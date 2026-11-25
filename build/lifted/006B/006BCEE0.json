@@ -1,0 +1,28 @@
+{
+  "va": "0x006BCEE0",
+  "size": 80,
+  "orig_symbol": "sub_006BCEE0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::findFirstMatch",
+  "class": "Unknown",
+  "signature": "void* fn_006BCEE0(void* self, void* arg)",
+  "summary": "Scans the pointer array at +0xD4 (length at +0xC4) and returns the first element for which ext_006BA780(arg, element) is nonzero, or null if none match.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC4",
+      "type": "int32_t",
+      "name": "field_0xC4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD4",
+      "type": "void**",
+      "name": "field_0xD4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:41:19Z"
+}
