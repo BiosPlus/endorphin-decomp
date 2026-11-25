@@ -403,3 +403,31 @@ void* fn_005C39F0(void* self, uint32_t arg) {
     return &mem_00AE558C;
 }
 } // namespace lift_005C39F0
+
+// [0x005CFD20] sub_005CFD20 (64 bytes)
+namespace lift_005CFD20 {
+// IAT slot holding MSVCP80 std::operator==(basic_string const&, basic_string const&)
+extern void* mem_00924FC4;
+// Table of 4 MSVC std::string entries (28 bytes each), 0xB45890..0xB45900
+extern uint8_t mem_00B45890[];
+
+using StringEqualFn = bool(__cdecl*)(const void* lhs, const void* rhs);
+
+// @name FindStringTableIndex
+// @summary Returns the index of the first table string equal to key; returns 0 when no entry matches.
+uint32_t __stdcall fn_005CFD20(const void* key) {
+    constexpr uintptr_t kEntrySize = 0x1c;
+    constexpr uintptr_t kTableBytes = 0xB45900 - 0xB45890;
+
+    const auto equal = reinterpret_cast<StringEqualFn>(mem_00924FC4);
+    const uint8_t* entry = mem_00B45890;
+
+    uint32_t index = 0;
+    for (uintptr_t offset = 0; offset < kTableBytes; offset += kEntrySize, ++index) {
+        if (equal(entry + offset, key)) {
+            return index;
+        }
+    }
+    return 0;
+}
+} // namespace lift_005CFD20

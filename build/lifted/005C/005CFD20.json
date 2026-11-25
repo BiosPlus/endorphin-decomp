@@ -1,0 +1,13 @@
+{
+  "va": "0x005CFD20",
+  "size": 64,
+  "orig_symbol": "sub_005CFD20",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "FindStringTableIndex",
+  "signature": "uint32_t __stdcall fn_005CFD20(const void* key)",
+  "summary": "Returns the index of the first table string equal to key; returns 0 when no entry matches.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:04:30Z"
+}
