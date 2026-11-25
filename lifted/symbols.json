@@ -46524,6 +46524,12 @@
     "summary": "Resolves a handle via ext_006FDF70(0) and fn_006FC930; if the resolved pointer is non-null and the int32 it points to is in [1, 2], returns that value, else 0.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D8940": {
+    "name": "GetGatedFieldValue",
+    "signature": "static inline void* lift_ptr_from_u32(int32_t v)",
+    "summary": "Resolves a sub-object via two lookups; if its kind at +0x04 is 1 or 2, returns its +0x30 value, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D89C0": {
     "name": "sub_006D89C0",
     "signature": "extern \"C\" void* __fastcall fn_006D89C0(void* self)",

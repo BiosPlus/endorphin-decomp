@@ -1013,3 +1013,40 @@ int32_t fn_006D86F0() {
     return lift_field<int32_t>(handle_to_ptr(result), 0);
 }
 } // namespace lift_006D86F0
+
+// [0x006D8940] sub_006D8940 (64 bytes)
+namespace lift_006D8940 {
+// Callee 0x006FDF70: sub_006FDF70 (unlifted). Called as __thiscall-style with
+// one stack argument (pushed 0); returns a 32-bit object address (eax).
+extern int32_t ext_006FDF70(void* self, int32_t arg);
+// Known callee 0x00715550: sub_00715550 (Getter returning int32_t field at offset +0xC.)
+extern int32_t ext_00715550(void* self);
+
+// Converts a 32-bit address value returned by the original code into a pointer.
+static inline void* lift_ptr_from_u32(int32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(v)));
+}
+
+// @name GetGatedFieldValue
+// @summary Resolves a sub-object via two lookups; if its kind at +0x04 is 1 or 2, returns its +0x30 value, else 0.
+// @field Unknown +0x04 int32_t field_0x04
+// @field Unknown +0x30 int32_t field_0x30
+int32_t fn_006D8940(void* self) {
+    if (ext_006FDF70(self, 0) == 0) {
+        return 0;
+    }
+
+    int32_t sub = ext_006FDF70(self, 0);
+    int32_t node = ext_00715550(lift_ptr_from_u32(sub));
+    if (node == 0) {
+        return 0;
+    }
+
+    void* obj = lift_ptr_from_u32(node);
+    int32_t kind = lift_field<int32_t>(obj, 0x04);
+    if (kind == 1 || kind == 2) {
+        return lift_field<int32_t>(obj, 0x30);
+    }
+    return 0;
+}
+} // namespace lift_006D8940

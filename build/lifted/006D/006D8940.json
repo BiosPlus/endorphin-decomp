@@ -1,0 +1,27 @@
+{
+  "va": "0x006D8940",
+  "size": 64,
+  "orig_symbol": "sub_006D8940",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "GetGatedFieldValue",
+  "signature": "static inline void* lift_ptr_from_u32(int32_t v)",
+  "summary": "Resolves a sub-object via two lookups; if its kind at +0x04 is 1 or 2, returns its +0x30 value, else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "int32_t",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:06:25Z"
+}
