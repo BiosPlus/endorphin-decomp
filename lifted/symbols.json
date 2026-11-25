@@ -10970,6 +10970,12 @@
     "summary": "Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0049CC60": {
+    "name": "ensureStaticObjectInitialized_0049CC60",
+    "signature": "int* fn_0049CC60()",
+    "summary": "One-time guarded initialization of the global object at 0x00ADD80C (guard bit 0 of 0x00ADD810); returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049CCC0": {
     "name": "NMData::NameTableLoader::vfunc_1",
     "class": "NMData::NameTableLoader",

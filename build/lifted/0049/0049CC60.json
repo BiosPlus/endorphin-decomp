@@ -1,0 +1,13 @@
+{
+  "va": "0x0049CC60",
+  "size": 87,
+  "orig_symbol": "sub_0049CC60",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "ensureStaticObjectInitialized_0049CC60",
+  "signature": "int* fn_0049CC60()",
+  "summary": "One-time guarded initialization of the global object at 0x00ADD80C (guard bit 0 of 0x00ADD810); returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:30:17Z"
+}

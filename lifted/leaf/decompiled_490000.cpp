@@ -991,3 +991,24 @@ void* fn_0049BE80() {
     return reinterpret_cast<void*>(&mem_00ADD7EC);
 }
 } // namespace lift_0049BE80
+
+// [0x0049CC60] sub_0049CC60 (87 bytes)
+namespace lift_0049CC60 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+extern int mem_00ADD810;
+extern int mem_00ADD80C;
+
+// @name ensureStaticObjectInitialized_0049CC60
+// @summary One-time guarded initialization of the global object at 0x00ADD80C (guard bit 0 of 0x00ADD810); returns its address.
+int* fn_0049CC60() {
+    // The SEH frame setup/teardown (fs:[0] push/restore) is exception-handling
+    // bookkeeping and is intentionally not modeled in portable C++.
+    if ((mem_00ADD810 & 1) == 0) {
+        mem_00ADD810 |= 1;
+        ext_0067A670();
+        mem_00ADD80C = 0x940024;
+    }
+    return &mem_00ADD80C;
+}
+} // namespace lift_0049CC60
