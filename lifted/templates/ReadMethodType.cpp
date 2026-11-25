@@ -42983,3 +42983,29 @@ void fn_00505080(void* self) {
     ext_006A6DD2_CxxThrow(exception_storage, throwInfo_009DEC1C());
 }
 } // namespace lift_00505080
+
+// [0x004EA3D0]
+namespace lift_004EA3D0 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (builds a default-message exception and throws it).
+extern void ext_0046C4E0(uint8_t flag);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs the exception with a fixed message).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk forwarding to MSVCR80!_CxxThrowException).
+[[noreturn]] void ext_006A6DD2(void* pObject, const void* pThrowInfo);
+// RDATA 0x009DEC1C: throw info passed by address as the ThrowInfo argument.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ExceptionWithMessage::throw_004EA3D0
+// @summary Throws a DerivedException; when the referenced object is non-null, first forwards its flag byte to the default-message thrower.
+// @field Unknown +0x06 uint8_t field_0x06
+void fn_004EA3D0(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj != nullptr) {
+        uint8_t flag = lift_field<uint8_t>(obj, 0x06);
+        ext_0046C4E0(flag);
+    }
+    alignas(8) uint8_t exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, reinterpret_cast<const void*>(mem_009DEC1C));
+}
+} // namespace lift_004EA3D0

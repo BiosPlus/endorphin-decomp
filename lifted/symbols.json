@@ -17366,6 +17366,13 @@
     "summary": "Stringifies the gravity-enabled flag of the PoseToolOptions object referenced by the second argument into the caller-provided result slot; throws if the object pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004EA3D0": {
+    "name": "ExceptionWithMessage::throw_004EA3D0",
+    "class": "ExceptionWithMessage",
+    "signature": "void fn_004EA3D0(void* arg)",
+    "summary": "Throws a DerivedException; when the referenced object is non-null, first forwards its flag byte to the default-message thrower.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004EA400": {
     "name": "ExprParser::ReadWriteMethodType::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions, bool, isProjectRootEnabled, bool, setProjectRootEnabled\u003e",
