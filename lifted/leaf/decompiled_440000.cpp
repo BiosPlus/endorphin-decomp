@@ -1724,3 +1724,23 @@ void __thiscall fn_00448950(void* self, void* arg) {
     ext_006A60D0(from_u32(ecx));
 }
 } // namespace lift_00448950
+
+// [0x0044ACE0]
+namespace lift_0044ACE0 {
+extern uintptr_t fn_006A6E9E(uintptr_t inptr, int32_t vf_delta, uintptr_t src_type, uintptr_t target_type, int32_t is_reference);
+extern void __thiscall fn_0044ABD0(uintptr_t self, uintptr_t a1, uintptr_t a2, uintptr_t a3);
+
+// @name sub_0044ACE0
+// @summary Dynamically casts the third argument and, if it matches this+0x148, forwards to sub_0044ABD0
+// @field Unknown +0xf4 uint8_t field_0xf4
+// @field Unknown +0x148 uint8_t field_0x148
+
+extern void __thiscall fn_0044ACE0(uintptr_t self, uintptr_t arg1, uintptr_t arg2, uintptr_t arg3) {
+    (void)arg2;
+    uintptr_t field_148 = self + 0x148;
+    uintptr_t cast_result = fn_006A6E9E(arg3, 0, 0x00A2FFB8u, 0x00A2FF24u, 0);
+    if (cast_result == field_148) {
+        fn_0044ABD0(self, field_148, self + 0xF4, arg1);
+    }
+}
+} // namespace lift_0044ACE0
