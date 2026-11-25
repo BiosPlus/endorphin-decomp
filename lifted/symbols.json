@@ -19363,6 +19363,13 @@
     "summary": "Copy-backward over 0x24-byte elements (std::string at +0x04, float at +0x20); returns the new destination start.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00509DE0": {
+    "name": "Unknown::initEntryArray_00509DE0",
+    "class": "Unknown",
+    "signature": "bool __thiscall fn_00509DE0(uint8_t* self, uint32_t count)",
+    "summary": "Resets the three buffer pointers to null, then allocates storage for `count` 36-byte entries; returns false for a zero count and true after allocating (throws on overflow).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00509EB0": {
     "name": "UnknownClass::copyCtor_00509EB0",
     "class": "UnknownClass",

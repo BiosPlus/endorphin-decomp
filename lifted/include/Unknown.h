@@ -146,7 +146,7 @@ struct Unknown_Fields {
     // +0x4   void* field_0x04 (sub-object pointer read from the NM::Vector3 const & argument)  (evidence: 0x005B80A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t                  base_subobject  (evidence: 0x006BA780, 0x006BAC20) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 begin  (evidence: 0x0067A670, 0x0067F9D0) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint8_t*                 begin  (evidence: 0x0041CD10) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint8_t*                 begin  (evidence: 0x0041CD10, 0x00509DE0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    begin  (evidence: 0x00503BC0, 0x0050B960, 0x0050C4D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 beginPtr  (evidence: 0x0041CCC0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 cachedChild  (evidence: 0x0066BA00) // CONFLICT: multiple definitions at +0x4
@@ -253,7 +253,7 @@ struct Unknown_Fields {
     // +0x8   uint32_t                 elements[]  (evidence: 0x007D8470, 0x007D9610) // CONFLICT: multiple definitions at +0x8
     // +0x8   DWORD                    end  (evidence: 0x005947B0, 0x005963F0, 0x005991D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 end  (evidence: 0x0067A670, 0x0067F9D0) // CONFLICT: multiple definitions at +0x8
-    // +0x8   uint8_t*                 end  (evidence: 0x0041CD10, 0x00688CC0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint8_t*                 end  (evidence: 0x0041CD10, 0x00509DE0, 0x00688CC0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    end  (evidence: 0x005013F0, 0x00503BC0, 0x0050B960, 0x0050C4D0, 0x00577DE0, 0x0057A770, 0x0057E9E0, 0x00681410, 0x0069A160) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 endPtr  (evidence: 0x0041CCC0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t*                 entriesEnd  (evidence: 0x00688B50, 0x0068BDF0) // CONFLICT: multiple definitions at +0x8
@@ -351,6 +351,7 @@ struct Unknown_Fields {
     // +0xC   u32                      flags  (evidence: 0x007CAF70, 0x007CCC30) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 index  (evidence: 0x00810C30) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    inner  (evidence: 0x007155B0, 0x0071C430) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint8_t*                 limit  (evidence: 0x00509DE0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0c (table pointer passed as self to the pair-flag lookup)  (evidence: 0x007C8C50) // CONFLICT: multiple definitions at +0xC
     // +0xC   float                    m03  (evidence: 0x00480010, 0x004890D0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    m_capacity  (evidence: 0x00503BC0, 0x00505DC0, 0x0050C4D0, 0x00518030, 0x0051E560) // CONFLICT: multiple definitions at +0xC

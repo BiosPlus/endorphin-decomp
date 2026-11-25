@@ -2436,3 +2436,40 @@ bool fn_005053D0(uint8_t* self, uint32_t count) {
     return true;
 }
 } // namespace lift_005053D0
+
+// [0x00509DE0]
+namespace lift_00509DE0 {
+namespace lift_00509DE0 {
+[[noreturn]] void __cdecl ext_00405FB0();
+void* __cdecl ext_004277B0(uint32_t count);
+
+// @name Unknown::initEntryArray_00509DE0
+// @class Unknown
+// @summary Resets the three buffer pointers to null, then allocates storage for `count` 36-byte entries; returns false for a zero count and true after allocating (throws on overflow).
+// @field Unknown +0x04 uint8_t* begin
+// @field Unknown +0x08 uint8_t* end
+// @field Unknown +0x0C uint8_t* limit
+bool __thiscall fn_00509DE0(uint8_t* self, uint32_t count) {
+    lift_field<uint8_t*>(self, 0x04) = nullptr;
+    lift_field<uint8_t*>(self, 0x08) = nullptr;
+    lift_field<uint8_t*>(self, 0x0C) = nullptr;
+
+    if (count == 0) {
+        return false;
+    }
+
+    // 0x71C71C7 * 36 is the largest product that fits in 32 bits.
+    if (count > 0x71C71C7u) {
+        ext_00405FB0();
+    }
+
+    uint8_t* base = static_cast<uint8_t*>(ext_004277B0(count));
+    uint8_t* limit = base + static_cast<size_t>(count) * 36u;
+
+    lift_field<uint8_t*>(self, 0x04) = base;
+    lift_field<uint8_t*>(self, 0x08) = base;
+    lift_field<uint8_t*>(self, 0x0C) = limit;
+    return true;
+}
+} // namespace lift_00509DE0
+} // namespace lift_00509DE0
