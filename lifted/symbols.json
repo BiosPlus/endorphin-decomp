@@ -2596,6 +2596,13 @@
     "summary": "Calls global getter, queries mode via Acclaim2CharacterIO::vfunc_23, and invokes vtable+0x4 on arg1 with (mode == 3).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430550": {
+    "name": "Unknown::ProcessCallback_00430550",
+    "class": "Unknown",
+    "signature": "void fn_00430550(void* self, void* arg)",
+    "summary": "Queries a global object's byte result and forwards it to the callback at *arg; if this+0x100 is set, also forwards a nested-field flag to the callback at (*arg)+4.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430780": {
     "name": "sub_00430780",
     "class": "Unknown",

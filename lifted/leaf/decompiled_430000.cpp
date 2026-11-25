@@ -2343,3 +2343,42 @@ void fn_0043BAF0(uint32_t* first, uint32_t* last, uint32_t pred) {
 }
 } // namespace lift_00481C90
 } // namespace lift_0043BAF0
+
+// [0x00430550] sub_00430550 (76 bytes)
+namespace lift_00430550 {
+// Known callee 0x00465B40: returns an object pointer (eax); called with this in ecx.
+extern void* ext_00465B40(void* self);
+// Known callee 0x0044B5B0: GetNestedFieldOrZero(self) -> int.
+extern int32_t ext_0044B5B0(void* self);
+
+// @name Unknown::ProcessCallback_00430550
+// @class Unknown
+// @summary Queries a global object's byte result and forwards it to the callback at *arg; if this+0x100 is set, also forwards a nested-field flag to the callback at (*arg)+4.
+// @field Unknown +0x100 uint32_t field_0x100
+void fn_00430550(void* self, void* arg) {
+    using ByteGetter = uint8_t (*)(void* obj);
+    using Callback0 = void (*)(void* obj, uint32_t value);
+    using Callback1 = void (*)(void* obj, uint32_t value);
+
+    // obj = ext_00465B40(self); value = obj->vtbl[0xf8](obj);
+    void* obj = ext_00465B40(self);
+    void* vtbl = lift_field<void*>(obj, 0);
+    void* getter = lift_field<void*>(vtbl, 0xf8);
+    uint8_t value = reinterpret_cast<ByteGetter>(getter)(obj);
+
+    // Forward value to the first slot of the table pointed to by *arg.
+    void* table = lift_field<void*>(arg, 0);
+    void* slot0 = lift_field<void*>(table, 0);
+    reinterpret_cast<Callback0>(slot0)(arg, static_cast<uint32_t>(value));
+
+    // If this+0x100 is nonzero, forward (nested-field-is-zero) to slot 1.
+    uint32_t gate = lift_field<uint32_t>(self, 0x100);
+    if (gate != 0) {
+        void* table2 = lift_field<void*>(arg, 0);
+        int32_t nested = ext_0044B5B0(reinterpret_cast<void*>(static_cast<uintptr_t>(gate)));
+        uint32_t flag = (nested == 0) ? 1u : 0u;
+        void* slot1 = lift_field<void*>(table2, 4);
+        reinterpret_cast<Callback1>(slot1)(arg, flag);
+    }
+}
+} // namespace lift_00430550

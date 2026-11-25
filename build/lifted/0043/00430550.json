@@ -1,0 +1,22 @@
+{
+  "va": "0x00430550",
+  "size": 76,
+  "orig_symbol": "sub_00430550",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::ProcessCallback_00430550",
+  "class": "Unknown",
+  "signature": "void fn_00430550(void* self, void* arg)",
+  "summary": "Queries a global object's byte result and forwards it to the callback at *arg; if this+0x100 is set, also forwards a nested-field flag to the callback at (*arg)+4.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x100",
+      "type": "uint32_t",
+      "name": "field_0x100"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:37:45Z"
+}
