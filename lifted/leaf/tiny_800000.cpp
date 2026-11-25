@@ -58,3 +58,24 @@ uint32_t sub_0080F700(const char* str) {
     return static_cast<uint32_t>(p - str);
 }
 } // namespace lift_0080F700
+
+// [0x0080AC30] sub_0080AC30 (31 bytes)
+namespace lift_0080AC30 {
+// @name ReleaseGlobalCriticalSection
+// @summary If the global init flag is set, deletes the global CRITICAL_SECTION and clears the flag.
+extern DWORD mem_00B73C84;   // global init flag (nonzero = CS initialized)
+extern DWORD mem_00B73C40;   // global CRITICAL_SECTION object
+extern DWORD mem_009242E4;   // IAT slot holding KERNEL32!DeleteCriticalSection
+
+void fn_0080AC30() {
+    if (mem_00B73C84 == 0)
+        return;
+
+    // Indirect call through the IAT slot, as in the original `call dword ptr [0x9242e4]`.
+    using PFN_DeleteCriticalSection = void(__stdcall*)(void*);
+    auto delete_cs = *reinterpret_cast<PFN_DeleteCriticalSection*>(&mem_009242E4);
+    delete_cs(reinterpret_cast<void*>(&mem_00B73C40));
+
+    mem_00B73C84 = 0;
+}
+} // namespace lift_0080AC30

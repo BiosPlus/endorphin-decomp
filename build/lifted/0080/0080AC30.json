@@ -1,0 +1,13 @@
+{
+  "va": "0x0080AC30",
+  "size": 31,
+  "orig_symbol": "sub_0080AC30",
+  "src_path": "src/leaf/tiny_800000.cpp",
+  "lifted_path": "lifted/leaf/tiny_800000.cpp",
+  "name": "ReleaseGlobalCriticalSection",
+  "signature": "extern \"C\" DWORD mem_00B73C84;   // global init flag (nonzero = CS initialized) extern \"C\" DWORD mem_00B73C40;   // global CRITICAL_SECTION object extern \"C\" DWORD mem_009242E4;   // IAT slot holding KERNEL32!DeleteCriticalSection void fn_0080AC30()",
+  "summary": "If the global init flag is set, deletes the global CRITICAL_SECTION and clears the flag.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:40:57Z"
+}

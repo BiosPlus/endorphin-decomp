@@ -69022,6 +69022,12 @@
     "summary": "Ensures the global critical section is initialized, then leaves it via the imported LeaveCriticalSection.",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x0080AC30": {
+    "name": "ReleaseGlobalCriticalSection",
+    "signature": "extern \"C\" DWORD mem_00B73C84;   // global init flag (nonzero = CS initialized) extern \"C\" DWORD mem_00B73C40;   // global CRITICAL_SECTION object extern \"C\" DWORD mem_009242E4;   // IAT slot holding KERNEL32!DeleteCriticalSection void fn_0080AC30()",
+    "summary": "If the global init flag is set, deletes the global CRITICAL_SECTION and clears the flag.",
+    "lifted_path": "lifted/leaf/tiny_800000.cpp"
+  },
   "0x0080B530": {
     "name": "sub_0080B530_forwardAllocZeroFlags",
     "signature": "extern \"C\" uint32_t fn_0080B530(uint32_t size)",
