@@ -1,0 +1,28 @@
+{
+  "va": "0x007CCBB0",
+  "size": 69,
+  "orig_symbol": "sub_007CCBB0",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "Unknown::setClampedValueAndFlag",
+  "class": "Unknown",
+  "signature": "void fn_007CCBB0(void* self, float x)",
+  "summary": "Stores max(x, 0) (NaN passes through) at +0x18 and sets bit 0x4 at +0x0C when |value| \u003e 1e-6 or NaN, else clears it.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:23:11Z"
+}

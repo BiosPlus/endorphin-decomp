@@ -976,3 +976,28 @@ void fn_007C9D30(uint8_t* self, float value) {
     std::memcpy(self + 0x0C, &result, sizeof(float));
 }
 } // namespace lift_007C9D30
+
+// [0x007CCBB0] sub_007CCBB0 (69 bytes)
+namespace lift_007CCBB0 {
+extern int mem_0094CE80;
+
+// @name Unknown::setClampedValueAndFlag
+// @class Unknown
+// @summary Stores max(x, 0) (NaN passes through) at +0x18 and sets bit 0x4 at +0x0C when |value| > 1e-6 or NaN, else clears it.
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x18 float field_0x18
+void fn_007CCBB0(void* self, float x) {
+    const float epsilon = std::bit_cast<float>(static_cast<uint32_t>(mem_0094CE80));
+
+    // Negative inputs clamp to +0.0f; -0.0f, positives and NaN pass through unchanged.
+    float v = (x < 0.0f) ? 0.0f : x;
+    lift_field<float>(self, 0x18) = v;
+
+    float a = std::fabs(v);
+    if (a > epsilon || std::isnan(a)) {
+        lift_field<uint32_t>(self, 0x0C) |= 0x4u;
+    } else {
+        lift_field<uint32_t>(self, 0x0C) &= ~0x4u;
+    }
+}
+} // namespace lift_007CCBB0

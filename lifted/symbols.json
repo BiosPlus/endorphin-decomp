@@ -58193,6 +58193,13 @@
     "summary": "Looks up a handler in the object's context table by its type byte and calls it with (\u0026{obj, arg2}, arg3, arg4).",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CCBB0": {
+    "name": "Unknown::setClampedValueAndFlag",
+    "class": "Unknown",
+    "signature": "void fn_007CCBB0(void* self, float x)",
+    "summary": "Stores max(x, 0) (NaN passes through) at +0x18 and sets bit 0x4 at +0x0C when |value| \u003e 1e-6 or NaN, else clears it.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CCC00": {
     "name": "setFloatAndUpdateFlag",
     "signature": "void sub_007CCC00(uintptr_t ecx_ptr, float value)",
