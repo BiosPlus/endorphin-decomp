@@ -1,0 +1,21 @@
+{
+  "va": "0x00434040",
+  "size": 80,
+  "orig_symbol": "sub_00434040",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "toggleSceneFlagAndInvalidate",
+  "signature": "extern \"C\" void __thiscall fn_00434040(uint32_t this_ptr)",
+  "summary": "Toggles a boolean state via virtual calls on the global sub-object and invalidates the view window.",
+  "fields": [
+    {
+      "class": "this",
+      "offset": "+0x108",
+      "type": "uint32_t",
+      "name": "field_0x108"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:48:30Z"
+}

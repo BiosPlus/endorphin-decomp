@@ -2532,3 +2532,34 @@ void fn_004305A0(void* self, void* target) {
     reinterpret_cast<ThisVoidIntFn>(vtable_of(target)[1])(target, isOne);
 }
 } // namespace lift_004305A0
+
+// [0x00434040]
+namespace lift_00434040 {
+// @name toggleSceneFlagAndInvalidate
+// @summary Toggles a boolean state via virtual calls on the global sub-object and invalidates the view window.
+// @field this +0x108 uint32_t field_0x108
+
+
+extern int32_t __cdecl ext_00465B30(void);
+extern uint32_t __thiscall ext_00468660(uint32_t this_ptr);
+extern uint32_t mem_00925688;
+
+using vfn_get_bool_t = uint8_t(__thiscall*)(uint32_t);
+using vfn_set_bool_t = void(__thiscall*)(uint32_t, uint32_t);
+using invalidate_rect_t = int32_t(__stdcall*)(uint32_t, uint32_t, int32_t);
+
+extern void __thiscall fn_00434040(uint32_t this_ptr) {
+    uint32_t obj1 = ext_00468660(static_cast<uint32_t>(ext_00465B30()));
+    uint32_t vtbl1 = *reinterpret_cast<uint32_t*>(obj1);
+    uint8_t cur = reinterpret_cast<vfn_get_bool_t>(*reinterpret_cast<uint32_t*>(vtbl1 + 0x7c))(obj1);
+
+    uint32_t obj2 = ext_00468660(static_cast<uint32_t>(ext_00465B30()));
+    uint32_t vtbl2 = *reinterpret_cast<uint32_t*>(obj2);
+    uint32_t next_val = (cur == 0) ? 1u : 0u;
+    reinterpret_cast<vfn_set_bool_t>(*reinterpret_cast<uint32_t*>(vtbl2 + 0x80))(obj2, next_val);
+
+    uint32_t view_obj = *reinterpret_cast<uint32_t*>(this_ptr + 0x108);
+    uint32_t hwnd = *reinterpret_cast<uint32_t*>(view_obj + 0x20);
+    reinterpret_cast<invalidate_rect_t>(mem_00925688)(hwnd, 0, 1);
+}
+} // namespace lift_00434040
