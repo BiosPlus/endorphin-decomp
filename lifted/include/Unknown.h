@@ -413,6 +413,7 @@ struct Unknown_Fields {
     // +0x14  void*                    inner  (evidence: 0x004689B0) // CONFLICT: multiple definitions at +0x14
     // +0x14  std::string field_0x14 (returned address when the +0x4C string equals the literal)  (evidence: 0x00584BD0) // CONFLICT: multiple definitions at +0x14
     // +0x14  float                    m11  (evidence: 0x00480010, 0x004890D0) // CONFLICT: multiple definitions at +0x14
+    // +0x14  void**                   m_begin  (evidence: 0x005172A0) // CONFLICT: multiple definitions at +0x14
     // +0x14  void*                    ownedObjectB  (evidence: 0x007892B0) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t                 range2_begin  (evidence: 0x00526960) // CONFLICT: multiple definitions at +0x14
     // +0x14  void**                   range_begin  (evidence: 0x00517310) // CONFLICT: multiple definitions at +0x14
@@ -444,6 +445,7 @@ struct Unknown_Fields {
     // +0x18  int32_t                  flag  (evidence: 0x007D4720) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t flags (of the stack argument `arg`; class not identified)  (evidence: 0x004561C0) // CONFLICT: multiple definitions at +0x18
     // +0x18  float                    m12  (evidence: 0x00480010, 0x004890D0) // CONFLICT: multiple definitions at +0x18
+    // +0x18  void**                   m_end  (evidence: 0x005172A0) // CONFLICT: multiple definitions at +0x18
     // +0x18  void*                    quadric  (evidence: 0x0054A0E0) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t                 range2_end  (evidence: 0x00526960) // CONFLICT: multiple definitions at +0x18
     // +0x18  void**                   range_end  (evidence: 0x00517310) // CONFLICT: multiple definitions at +0x18

@@ -19581,6 +19581,13 @@
     "summary": "Copy-constructs the global string (from InitOnceGlobalString_00516F90) into the caller-supplied string object and returns that object's address.",
     "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
+  "0x005172A0": {
+    "name": "Unknown::ForEachInvokeVirtualSlot24",
+    "class": "Unknown",
+    "signature": "void fn_005172A0(void* self, void* arg)",
+    "summary": "Iterates the pointer range at self+0x14..self+0x18 and calls vtable slot 24 on each element with one argument.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00517310": {
     "name": "Unknown::CallVirtual68OnRange_00517310",
     "class": "Unknown",

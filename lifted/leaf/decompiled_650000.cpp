@@ -1548,3 +1548,23 @@ void* fn_0051CCC0(void* self) {
     return self;
 }
 } // namespace lift_0051CCC0
+
+// [0x005172A0] sub_005172A0 (104 bytes)
+namespace lift_005172A0 {
+// @name Unknown::ForEachInvokeVirtualSlot24
+// @class Unknown
+// @summary Iterates the pointer range at self+0x14..self+0x18 and calls vtable slot 24 on each element with one argument.
+// @field Unknown +0x14 void** m_begin
+// @field Unknown +0x18 void** m_end
+void fn_005172A0(void* self, void* arg) {
+    void** cur = lift_field<void**>(self, 0x14);
+    void** end = lift_field<void**>(self, 0x18);
+    for (; cur != end; ++cur) {
+        void* obj = *cur;
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        // Slot 24 (0x60 bytes into a 32-bit vtable).
+        auto fn = reinterpret_cast<void (*)(void*, void*)>(vtbl[24]);
+        fn(obj, arg);
+    }
+}
+} // namespace lift_005172A0
