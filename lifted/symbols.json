@@ -29076,6 +29076,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004757F0 (sub_0047A010).",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x00594250": {
+    "name": "copy_string_and_field",
+    "signature": "void* __thiscall sub_00594250(void* self, const void* rhs)",
+    "summary": "Copy-constructs a std::string at +0x00 and clones/copies a vtable-backed member at +0x1C/+0x20",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x005942D0": {
     "name": "FindFirstFlaggedAncestor",
     "signature": "void* fn_005942D0(void* self)",
@@ -29461,6 +29467,12 @@
     "class": "Unknown",
     "signature": "void fn_00596C50(void* self)",
     "summary": "Calls ext_005A3610 on every element of the pointer array [+0x23C, +0x240) in order, then raises self+0xF4 to at least 2.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
+  "0x005971D0": {
+    "name": "computeScaledTimeOffset",
+    "signature": "float __thiscall fn_005971D0(void* self)",
+    "summary": "Computes (globalListCount + self-\u003efield_0xEC) * reciprocal(globalObj) as float.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
   "0x00597630": {
@@ -44853,6 +44865,12 @@
     "class": "TreeNode",
     "signature": "void fn_00641760(void* self, uint8_t* node)",
     "summary": "Recursively erases a binary-tree subtree: recurses into the right child, walks the left-child chain destroying each node's key string and calling ext_006A5C5C on it until a sentinel (isNil at +0x2d) is reached.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x00641E90": {
+    "name": "trimWhitespace",
+    "signature": "void __cdecl sub_00641E90(void* str)",
+    "summary": "Trims leading and trailing whitespace characters from a std::string in-place.",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
   "0x00641F10": {

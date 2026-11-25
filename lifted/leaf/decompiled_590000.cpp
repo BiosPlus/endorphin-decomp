@@ -1706,3 +1706,75 @@ void* fn_0059B2E0(void* self, void* out_iter, const void* key) {
     return out_iter;
 }
 } // namespace lift_0059B2E0
+
+// [0x00594250]
+namespace lift_00594250 {
+// @name copy_string_and_field
+// @summary Copy-constructs a std::string at +0x00 and clones/copies a vtable-backed member at +0x1C/+0x20
+// @field Obj +0x00 std::string name
+// @field Obj +0x1C uint32_t field_0x1C
+// @field Obj +0x20 void* field_0x20
+
+
+extern uint32_t mem_00924FE0;
+
+typedef void (__thiscall *msvcp80_string_copy_ctor_t)(void* self, const void* rhs);
+typedef uint32_t* (__thiscall *vtable_clone_70_t)(void* self, uint32_t* out, const void* src_pair);
+
+void* __thiscall sub_00594250(void* self, const void* rhs) {
+    uint8_t* dst = static_cast<uint8_t*>(self);
+    const uint8_t* src = static_cast<const uint8_t*>(rhs);
+
+    auto string_copy_ctor = reinterpret_cast<msvcp80_string_copy_ctor_t>(mem_00924FE0);
+    string_copy_ctor(dst, src);
+
+    const uint8_t* src_pair = src + 0x1C;
+    void* obj = *reinterpret_cast<void* const*>(src_pair + 0x04);
+    uint32_t cloned_val = 0;
+
+    if (obj != nullptr) {
+        uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(obj);
+        auto clone_fn = reinterpret_cast<vtable_clone_70_t>(vtable[0x70 / sizeof(uintptr_t)]);
+        uint32_t tmp = 0;
+        uint32_t* res = clone_fn(obj, &tmp, src_pair);
+        cloned_val = *res;
+    }
+
+    *reinterpret_cast<uint32_t*>(dst + 0x1C) = cloned_val;
+    *reinterpret_cast<void**>(dst + 0x20) = obj;
+
+    return self;
+}
+} // namespace lift_00594250
+
+// [0x005971D0]
+namespace lift_005971D0 {
+// @name computeScaledTimeOffset
+// @summary Computes (globalListCount + self->field_0xEC) * reciprocal(globalObj) as float.
+// @field Self +0xEC uint32_t field_0xEC
+
+
+extern uint32_t ext_00596330();
+extern uint32_t ext_00596370();
+extern float __thiscall ext_00661A40(void* self);
+
+extern uint8_t mem_00B3F200;
+extern void* mem_00B40640;
+extern void* mem_00B40644;
+
+float __thiscall fn_005971D0(void* self) {
+    uint32_t count;
+    void* obj;
+    if (mem_00B3F200 != 0) {
+        count = ext_00596370();
+        obj = mem_00B40644;
+    } else {
+        count = ext_00596330();
+        obj = mem_00B40640;
+    }
+    int32_t total = static_cast<int32_t>(count + *reinterpret_cast<const uint32_t*>(static_cast<const uint8_t*>(self) + 0xEC));
+    double total_d = static_cast<double>(total);
+    float recip = ext_00661A40(obj);
+    return static_cast<float>(static_cast<double>(recip) * total_d);
+}
+} // namespace lift_005971D0
