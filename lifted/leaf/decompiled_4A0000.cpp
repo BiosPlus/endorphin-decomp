@@ -683,3 +683,28 @@ void* fn_004A7440(void* self, void* out_iter, const void* key) {
 }
 } // namespace lift_0059B2E0
 } // namespace lift_004A7440
+
+// [0x004A5A50] sub_004A5A50 (35 bytes)
+namespace lift_004A5A50 {
+// @name checkRangeNonEmptyAndUnflagged
+// @summary Returns 0 when the [+0x0C, +0x10) element range is non-empty and the byte flag at +0x24 is clear; otherwise returns 1.
+// @field Self +0x0C DWORD field_0x0C
+// @field Self +0x10 DWORD field_0x10
+// @field Self +0x24 BYTE field_0x24
+uint32_t fn_004A5A50(void* self) {
+    uint32_t begin = lift_field<uint32_t>(self, 0x0C);
+    if (begin == 0) {
+        return 1;
+    }
+    uint32_t end = lift_field<uint32_t>(self, 0x10);
+    // Element count = (end - begin) / 4, arithmetic shift as in the original sar.
+    int32_t count = static_cast<int32_t>(end - begin) >> 2;
+    if (count == 0) {
+        return 1;
+    }
+    if (lift_field<uint8_t>(self, 0x24) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004A5A50

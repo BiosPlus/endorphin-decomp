@@ -11860,6 +11860,12 @@
     "summary": "Allocates an array of 4-byte elements, throwing std::bad_alloc on overflow.",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
+  "0x004A5A50": {
+    "name": "checkRangeNonEmptyAndUnflagged",
+    "signature": "uint32_t fn_004A5A50(void* self)",
+    "summary": "Returns 0 when the [+0x0C, +0x10) element range is non-empty and the byte flag at +0x24 is clear; otherwise returns 1.",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004A5BE0": {
     "name": "sub_004A5BE0",
     "class": "Unknown",

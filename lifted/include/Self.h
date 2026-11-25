@@ -30,12 +30,13 @@ struct Self_Fields {
     // +0x8   uint8_t[]                field_0x08  (evidence: 0x00533F50) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_0x08  (evidence: 0x0041C540, 0x006E6D70, 0x006E7000) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    lock  (evidence: 0x0067A670, 0x0067AE20) // CONFLICT: multiple definitions at +0x8
-    // +0xC   DWORD                    field_0x0C  (evidence: 0x007B1E20) // CONFLICT: multiple definitions at +0xC
+    // +0xC   DWORD                    field_0x0C  (evidence: 0x004A5A50, 0x007B1E20) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0x0C  (evidence: 0x006AD3C0, 0x00700940) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0x0C  (evidence: 0x0067A670, 0x0067AE20, 0x0071C1B0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0x0c  (evidence: 0x0041C540) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0x0c  (evidence: 0x006D9170) // CONFLICT: multiple definitions at +0xC
-    // +0x10  uint32_t                 field_0x10  (evidence: 0x0041C540, 0x006D9170)
+    // +0x10  DWORD                    field_0x10  (evidence: 0x004A5A50) // CONFLICT: multiple definitions at +0x10
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x0041C540, 0x006D9170) // CONFLICT: multiple definitions at +0x10
     // +0x14  void*                    field_0x14  (evidence: 0x0048F590, 0x007B1FA0, 0x007BD640)
     // +0x17  uint8_t                  field_0x17  (evidence: 0x006D9170)
     // +0x18  std::string              field_0x18  (evidence: 0x0054C890)
@@ -44,7 +45,8 @@ struct Self_Fields {
     // +0x20  uint8_t                  field_0x20  (evidence: 0x00610CB0) // CONFLICT: multiple definitions at +0x20
     // +0x20  void*                    field_0x20  (evidence: 0x0048F590) // CONFLICT: multiple definitions at +0x20
     // +0x20  uintptr_t                m_hWnd  (evidence: 0x00430FA0) // CONFLICT: multiple definitions at +0x20
-    // +0x24  uint32_t                 field_0x24  (evidence: 0x0048F590)
+    // +0x24  BYTE                     field_0x24  (evidence: 0x004A5A50) // CONFLICT: multiple definitions at +0x24
+    // +0x24  uint32_t                 field_0x24  (evidence: 0x0048F590) // CONFLICT: multiple definitions at +0x24
     // +0x28  uint32_t                 field_0x28  (evidence: 0x0048F590) // CONFLICT: multiple definitions at +0x28
     // +0x28  void*                    field_0x28  (evidence: 0x00622B40, 0x00627510) // CONFLICT: multiple definitions at +0x28
     // +0x30  void*                    field_0x30  (evidence: 0x00648A20, 0x00648A60)
