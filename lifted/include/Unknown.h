@@ -865,13 +865,16 @@ struct Unknown_Fields {
     // +0x4C4 uint32_t                 field_0x4C4  (evidence: 0x00408050)
     // +0x4E2 uint8_t                  field_0x4E2  (evidence: 0x004104E0)
     // +0x531 uint8_t                  field_0x531  (evidence: 0x00434610)
-    // +0x564 int32_t                  field_0x564  (evidence: 0x00405160)
-    // +0x568 int32_t                  field_0x568  (evidence: 0x00405160)
+    // +0x564 int32_t                  field_0x564  (evidence: 0x00405160) // CONFLICT: multiple definitions at +0x564
+    // +0x564 DWORD                    recordsBegin  (evidence: 0x004053C0) // CONFLICT: multiple definitions at +0x564
+    // +0x568 int32_t                  field_0x568  (evidence: 0x00405160) // CONFLICT: multiple definitions at +0x568
+    // +0x568 DWORD                    recordsEnd  (evidence: 0x004053C0) // CONFLICT: multiple definitions at +0x568
     // +0x5A0 DWORD                    field_0x5A0  (evidence: 0x007046E0)
     // +0x5A4 DWORD                    field_0x5A4  (evidence: 0x007046E0)
     // +0x5F0 uint32_t                 field_0x5F0  (evidence: 0x007C8490)
     // +0x654 uint8_t                  field_0x654  (evidence: 0x00788D00)
-    // +0x684 int32_t                  field_0x684  (evidence: 0x00405160)
+    // +0x684 int32_t                  field_0x684  (evidence: 0x00405160) // CONFLICT: multiple definitions at +0x684
+    // +0x684 DWORD                    recordIndex  (evidence: 0x004053C0) // CONFLICT: multiple definitions at +0x684
     // +0x734 uint32_t field_0x734 (base of 18-entry dword array; element i at +0x734 + 4*i, valid i = 1..17)  (evidence: 0x007AA7F0, 0x007AAA00, 0x007AC670)
     // +0x738 DWORD                    field_0x738  (evidence: 0x00719BB0)
     // +0x73C DWORD                    field_0x73C  (evidence: 0x00719BB0)

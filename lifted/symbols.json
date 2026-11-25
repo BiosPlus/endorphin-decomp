@@ -464,6 +464,13 @@
     "summary": "If the slot at +0x564 is set, computes (end - begin) / 88 from +0x568 and +0x564 and compares the stored index at +0x684 against that count minus one; if not at the last index it increments the index and returns true, otherwise returns false.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x004053C0": {
+    "name": "Unknown::getIndexedRecordDword",
+    "class": "Unknown",
+    "signature": "DWORD fn_004053C0(void* self)",
+    "summary": "Returns the first dword of the record at index this-\u003e+0x684 in the 0x58-byte record array [+0x564, +0x568); invalid-parameter path if the array is empty or the index is out of range.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00406480": {
     "name": "sub_00406480",
     "signature": "DWORD* __thiscall fn_00406480(void* self, const DWORD* first, const DWORD* last, DWORD* out)",

@@ -770,3 +770,36 @@ void fn_004077E0(void* self, SIZE* outSize, void* textObj) {
     outSize->cy = measured.cy;
 }
 } // namespace lift_004077E0
+
+// [0x004053C0] sub_004053C0 (70 bytes)
+namespace lift_004053C0 {
+// IAT slot 0x00925134 holds MSVCR80!_invalid_parameter_noinfo (noreturn).
+extern void ext_MSVCR80_invalid_parameter_noinfo();
+extern int mem_00925134;
+
+// @name Unknown::getIndexedRecordDword
+// @class Unknown
+// @summary Returns the first dword of the record at index this->+0x684 in the 0x58-byte record array [+0x564, +0x568); invalid-parameter path if the array is empty or the index is out of range.
+// @field Unknown +0x564 DWORD recordsBegin
+// @field Unknown +0x568 DWORD recordsEnd
+// @field Unknown +0x684 DWORD recordIndex
+DWORD fn_004053C0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    const DWORD begin = *reinterpret_cast<DWORD*>(base + 0x564);
+    const DWORD index = *reinterpret_cast<DWORD*>(base + 0x684);
+
+    // Record count = (end - begin) / sizeof(record) with sizeof(record) == 0x58.
+    const DWORD end = *reinterpret_cast<DWORD*>(base + 0x568);
+    const auto diff = static_cast<int32_t>(end - begin);
+    const DWORD count = static_cast<DWORD>(diff / 0x58);
+
+    if (begin == 0 || index >= count) {
+        ext_MSVCR80_invalid_parameter_noinfo();
+    }
+
+    const DWORD recordBase = *reinterpret_cast<DWORD*>(base + 0x564);
+    const auto* record = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(recordBase))
+                         + static_cast<size_t>(index) * 0x58;
+    return *reinterpret_cast<const DWORD*>(record);
+}
+} // namespace lift_004053C0

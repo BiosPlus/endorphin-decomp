@@ -1,0 +1,34 @@
+{
+  "va": "0x004053C0",
+  "size": 70,
+  "orig_symbol": "sub_004053C0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "Unknown::getIndexedRecordDword",
+  "class": "Unknown",
+  "signature": "DWORD fn_004053C0(void* self)",
+  "summary": "Returns the first dword of the record at index this-\u003e+0x684 in the 0x58-byte record array [+0x564, +0x568); invalid-parameter path if the array is empty or the index is out of range.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x564",
+      "type": "DWORD",
+      "name": "recordsBegin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x568",
+      "type": "DWORD",
+      "name": "recordsEnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x684",
+      "type": "DWORD",
+      "name": "recordIndex"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:23:06Z"
+}
