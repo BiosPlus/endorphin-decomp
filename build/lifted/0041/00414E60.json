@@ -1,0 +1,40 @@
+{
+  "va": "0x00414E60",
+  "size": 94,
+  "orig_symbol": "sub_00414E60",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "TreeIterator::releaseChildrenUntil",
+  "class": "TreeIterator",
+  "signature": "static inline void* as_ptr(uint32_t addr)",
+  "summary": "Walks an iterator from `node` until it reaches `end`, advancing it with TreeIterator::increment; for each visited node with a non-null +0x10 pointer, forwards that pointer to ext_004153A0 and ext_006A5C5C. Invalid-parameter handler is called on owner/expectation mismatches.",
+  "fields": [
+    {
+      "class": "TreeIterator",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "owner"
+    },
+    {
+      "class": "TreeIterator",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "node"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:00:08Z"
+}

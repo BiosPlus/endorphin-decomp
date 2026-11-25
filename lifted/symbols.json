@@ -1475,6 +1475,13 @@
     "summary": "Walks tree iterator a1 toward a3, releasing each a2 node's +0x28 chain via fn_004153A0 and MFC80 ord_764, and returns once a2 equals a4.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00414E60": {
+    "name": "TreeIterator::releaseChildrenUntil",
+    "class": "TreeIterator",
+    "signature": "static inline void* as_ptr(uint32_t addr)",
+    "summary": "Walks an iterator from `node` until it reaches `end`, advancing it with TreeIterator::increment; for each visited node with a non-null +0x10 pointer, forwards that pointer to ext_004153A0 and ext_006A5C5C. Invalid-parameter handler is called on owner/expectation mismatches.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00414EC0": {
     "name": "sub_00414EC0",
     "signature": "uint32_t __thiscall sub_00414EC0( uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)",

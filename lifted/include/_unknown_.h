@@ -23,7 +23,7 @@ struct _unknown__Fields {
     // +0x4   void* field_0x04 (child object; slot 1 invoked with arg 1)  (evidence: 0x006B0C60) // CONFLICT: multiple definitions at +0x4
     // +0x4   DWORD                    field_0x04  (evidence: 0x00495AB0, 0x0049E440, 0x00782D00, 0x00784620, 0x00788E50) // CONFLICT: multiple definitions at +0x4
     // +0x4   float                    field_0x04  (evidence: 0x00669E40) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x004584C0, 0x00481D80, 0x0069B680, 0x00710F10, 0x007155B0, 0x007D59C0, 0x007D5BA0, 0x007D8470) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00414E60, 0x004584C0, 0x00481D80, 0x0069B680, 0x00710F10, 0x007155B0, 0x007D59C0, 0x007D5BA0, 0x007D8470) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t*                field_0x04  (evidence: 0x006AD170) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x00515B90, 0x00710F50, 0x007155B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t                  field_0x04[0x1C]  (evidence: 0x0063D970, 0x0063DDF0, 0x0063E050, 0x0063E0C0) // CONFLICT: multiple definitions at +0x4
@@ -49,7 +49,7 @@ struct _unknown__Fields {
     // +0x10  DWORD                    field_0x10  (evidence: 0x00543300) // CONFLICT: multiple definitions at +0x10
     // +0x10  float                    field_0x10  (evidence: 0x007D59C0) // CONFLICT: multiple definitions at +0x10
     // +0x10  int32_t                  field_0x10  (evidence: 0x005528A0) // CONFLICT: multiple definitions at +0x10
-    // +0x10  uint32_t                 field_0x10  (evidence: 0x00481BB0, 0x00710F10, 0x007155B0) // CONFLICT: multiple definitions at +0x10
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x00414E60, 0x00481BB0, 0x00710F10, 0x007155B0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t* field_0x10 (array base pointer)  (evidence: 0x0078CB70) // CONFLICT: multiple definitions at +0x10
     // +0x11  BYTE                     field_0x11  (evidence: 0x00782D00, 0x00788E50)
     // +0x14  DWORD                    field_0x14  (evidence: 0x00543300) // CONFLICT: multiple definitions at +0x14

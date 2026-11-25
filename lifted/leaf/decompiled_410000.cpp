@@ -2159,3 +2159,76 @@ void fn_0041A200(void* a1, void* a2, void* a3, void* a4) {
     }
 }
 } // namespace lift_0041A200
+
+// [0x00414E60] sub_00414E60 (94 bytes)
+namespace lift_00414E60 {
+// Known callee 0x004153A0: sub_004153A0 (Pure jump thunk forwarding to sub_00415300.)
+// Takes its single argument in ECX.
+extern void ext_004153A0(void* thisPtr);
+// Known callee 0x00419F50: sub_00419F50 (Auto-lifted TreeIterator::increment clone.)
+// Takes a pointer to the iterator slots in ECX.
+extern void ext_00419F50(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* p);
+// IAT slot holding the invalid-parameter handler (MSVCR80!_invalid_parameter_noinfo).
+extern void (*mem_00925134)();
+
+// Iterator slots as laid out on the stack: the increment helper advances `node` in place.
+struct TreeIterSlot {
+    uint32_t owner; // +0x00
+    uint32_t node;  // +0x04
+};
+
+static inline void* as_ptr(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+static inline uint32_t field32(uint32_t base, ptrdiff_t offset) {
+    return lift_field<uint32_t>(as_ptr(base), offset);
+}
+
+static inline void invalid_parameter() {
+    if (mem_00925134) {
+        mem_00925134();
+    }
+}
+
+// @name TreeIterator::releaseChildrenUntil
+// @class TreeIterator
+// @summary Walks an iterator from `node` until it reaches `end`, advancing it with TreeIterator::increment; for each visited node with a non-null +0x10 pointer, forwards that pointer to ext_004153A0 and ext_006A5C5C. Invalid-parameter handler is called on owner/expectation mismatches.
+// @field TreeIterator +0x00 uint32_t owner
+// @field TreeIterator +0x04 uint32_t node
+// @field <unknown> +0x04 uint32_t field_0x04
+// @field <unknown> +0x10 uint32_t field_0x10
+void __stdcall fn_00414E60(uint32_t owner, uint32_t node, uint32_t expectedOwner, uint32_t end) {
+    TreeIterSlot it{owner, node};
+
+    for (;;) {
+        const uint32_t curOwner = it.owner;
+        if (curOwner == 0 || curOwner != expectedOwner) {
+            invalid_parameter();
+        }
+
+        const uint32_t cur = it.node;
+        if (cur == end) {
+            return;
+        }
+
+        ext_00419F50(&it); // advances it.node to the in-order successor
+
+        if (curOwner == 0) {
+            invalid_parameter();
+        } else if (cur == field32(curOwner, 0x04)) {
+            invalid_parameter();
+        }
+
+        const uint32_t child = field32(cur, 0x10);
+        if (child == 0) {
+            continue;
+        }
+
+        ext_004153A0(as_ptr(child));
+        ext_006A5C5C(as_ptr(child));
+    }
+}
+} // namespace lift_00414E60
