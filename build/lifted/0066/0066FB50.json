@@ -1,0 +1,34 @@
+{
+  "va": "0x0066FB50",
+  "size": 82,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::calcNorm(void) const, 1\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, calcNorm, 1\u003e::vfunc_5",
+  "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::calcNorm(void) const, 1\u003e",
+  "signature": "float fn_0066FB50(void* self)",
+  "summary": "Reads the Vector3 pointer behind self; if non-null computes its Euclidean norm and reports it, otherwise throws a DerivedException.",
+  "fields": [
+    {
+      "class": "NM::Vector3",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "x"
+    },
+    {
+      "class": "NM::Vector3",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "y"
+    },
+    {
+      "class": "NM::Vector3",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "z"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T05:01:52Z"
+}

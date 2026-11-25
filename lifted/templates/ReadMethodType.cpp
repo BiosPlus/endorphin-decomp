@@ -58284,3 +58284,36 @@ void fn_005FCC10(void* a1, void** a2) {
     ext_006A6DD2(exc_storage, static_cast<const void*>(mem_009DEC1C));
 }
 } // namespace lift_005FCC10
+
+// [0x0066FB50] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>::vfunc_5 (82 bytes)
+namespace lift_0066FB50 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(float norm);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NM::Vector3, float, calcNorm, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>
+// @summary Reads the Vector3 pointer behind self; if non-null computes its Euclidean norm and reports it, otherwise throws a DerivedException.
+// @field NM::Vector3 +0x00 float x
+// @field NM::Vector3 +0x04 float y
+// @field NM::Vector3 +0x08 float z
+float fn_0066FB50(void* self) {
+    void* vec = *static_cast<void**>(self);
+    if (vec != nullptr) {
+        const float x = lift_field<float>(vec, 0x00);
+        const float y = lift_field<float>(vec, 0x04);
+        const float z = lift_field<float>(vec, 0x08);
+        const float norm = std::sqrt(x * x + y * y + z * z);
+        ext_0046C4E0(norm);
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return 0.0f;
+}
+} // namespace lift_0066FB50
