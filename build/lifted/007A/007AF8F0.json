@@ -1,0 +1,45 @@
+{
+  "va": "0x007AF8F0",
+  "size": 80,
+  "orig_symbol": "sub_007AF8F0",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "FindRecordByKey16",
+  "signature": "uint8_t* fn_007AF8F0(uint16_t key)",
+  "summary": "Looks up a 16-bit key in the node list first, then the static table; returns the match or null.",
+  "fields": [
+    {
+      "class": "ListNode",
+      "offset": "+0x0",
+      "type": "uint8_t*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ListNode",
+      "offset": "+0x4",
+      "type": "uint8_t*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x4",
+      "type": "uint16_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "TableEntry",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "TableEntry",
+      "offset": "+0x4",
+      "type": "uint16_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:53:57Z"
+}

@@ -59084,6 +59084,12 @@
     "summary": "Loads the first dword of the struct pointed to by arg1 and forwards it with constant tag 0x00AB11D8 to the optional dispatch hook; always returns 0.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AF8F0": {
+    "name": "FindRecordByKey16",
+    "signature": "uint8_t* fn_007AF8F0(uint16_t key)",
+    "summary": "Looks up a 16-bit key in the node list first, then the static table; returns the match or null.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007B04A8": {
     "name": "dataTable_007B04A8",
     "class": "(none)",

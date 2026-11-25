@@ -668,3 +668,45 @@ void fn_007AE020(void* self) {
     std::free(flags);
 }
 } // namespace lift_007AE020
+
+// [0x007AF8F0] sub_007AF8F0 (80 bytes)
+namespace lift_007AF8F0 {
+extern uint8_t* mem_00B61C18;   // head of singly linked node list
+extern uint8_t  mem_00AB1870[]; // static 12-byte-stride entry table
+
+// @name FindRecordByKey16
+// @summary Looks up a 16-bit key in the node list first, then the static table; returns the match or null.
+// @field ListNode +0x00 uint8_t* field_0x00
+// @field ListNode +0x04 uint8_t* field_0x04
+// @field Record +0x04 uint16_t field_0x04
+// @field TableEntry +0x00 uint32_t field_0x00
+// @field TableEntry +0x04 uint16_t field_0x04
+uint8_t* fn_007AF8F0(uint16_t key) {
+    // Pass 1: walk the linked node list; each node points at a record whose +4 word is the key.
+    uint8_t* node = mem_00B61C18;
+    while (node != nullptr) {
+        uint8_t* record = *reinterpret_cast<uint8_t**>(node + 4);
+        if (lift_field<uint16_t>(record, 4) == key) {
+            return record;
+        }
+        node = *reinterpret_cast<uint8_t**>(node);
+    }
+
+    // Pass 2: scan the static table. An empty table (first dword == 0) yields null.
+    uint8_t* entry = mem_00AB1870;
+    if (lift_field<uint32_t>(entry, 0) == 0) {
+        return nullptr;
+    }
+    for (;;) {
+        if (lift_field<uint16_t>(entry, 4) == key) {
+            return entry;
+        }
+        uint32_t next = lift_field<uint32_t>(entry, 12);
+        entry += 12;
+        if (next == 0) {
+            break;
+        }
+    }
+    return nullptr;
+}
+} // namespace lift_007AF8F0

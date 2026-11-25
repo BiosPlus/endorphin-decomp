@@ -14,7 +14,7 @@ struct Record_Fields {
     // +0x2   uint16_t                 field_0x02  (evidence: 0x00864F30, 0x0086EFD0)
     // +0x4   int32_t                  field_0x04  (evidence: 0x0074F7A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              field_0x04  (evidence: 0x00508BC0, 0x00509C10, 0x0050C4D0) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint16_t                 field_0x04  (evidence: 0x00864F30, 0x0086EFD0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint16_t                 field_0x04  (evidence: 0x007AF8F0, 0x00864F30, 0x0086EFD0) // CONFLICT: multiple definitions at +0x4
     // +0x6   uint16_t                 field_0x06  (evidence: 0x00864F30, 0x0086EFD0)
     // +0x8   int32_t                  field_0x08  (evidence: 0x0074F7A0)
     // +0x1C  std::string              field_0x1c  (evidence: 0x00621040)
