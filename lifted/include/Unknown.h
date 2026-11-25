@@ -326,6 +326,7 @@ struct Unknown_Fields {
     // +0x14  std::string field_0x14 (returned address when the +0x4C string equals the literal)  (evidence: 0x00584BD0) // CONFLICT: multiple definitions at +0x14
     // +0x14  void*                    ownedObjectB  (evidence: 0x007892B0) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t field_0x14 (on subobject returned by ext_0071E680, i.e. self+0x40)  (evidence: 0x00711D40) // CONFLICT: multiple definitions at +0x14
+    // +0x14  void* field_0x14 (pointer to holder whose +0x04 is the lookup table)  (evidence: 0x0080D220) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint16_t                 wordArg  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0x14
     // +0x15  BYTE                     field_0x15  (evidence: 0x006D9030) // CONFLICT: multiple definitions at +0x15
     // +0x15  uint8                    field_0x15  (evidence: 0x004C4390, 0x004CCC30) // CONFLICT: multiple definitions at +0x15

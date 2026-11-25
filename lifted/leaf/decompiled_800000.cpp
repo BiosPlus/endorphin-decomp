@@ -678,3 +678,36 @@ void __thiscall sub_00802D40(uintptr_t ecx) {
     }
 }
 } // namespace lift_00802D40
+
+// [0x0080D220] sub_0080D220 (71 bytes)
+namespace lift_0080D220 {
+// Known callee 0x0085BF40: findEntryValueByKey (Linearly searches an array of 8-byte key-value pairs for a matching 32-bit key and returns its 32-bit value, or 0 if not found.)
+extern uint32_t ext_0085BF40(uint32_t tablePtr, uint32_t key);
+
+// @name Unknown::FindChainNodeByKey
+// @class Unknown
+// @summary Walks a singly linked node chain (next at +0x1C) starting at `node`, skipping nodes whose address has an entry in the table at holder+0x14->+0x04; returns the first node whose +0x00 id equals `key` (or any node when key is -2), or 0 when key is -1 or nothing matches.
+// @field Unknown +0x14 void* field_0x14 (pointer to holder whose +0x04 is the lookup table)
+// @field UnknownTableHolder +0x04 uint32_t field_0x04 (lookup table passed to ext_0085BF40)
+// @field UnknownChainNode +0x00 uint32_t field_0x00 (node id compared with key)
+// @field UnknownChainNode +0x1C void* field_0x1C (next node in chain)
+void* fn_0080D220(void* self, void* node, uint32_t key) {
+    if (key == 0xFFFFFFFFu) {
+        return nullptr;
+    }
+    void* const holder = lift_field<void*>(self, 0x14);
+    while (node != nullptr) {
+        const uint32_t table = lift_field<uint32_t>(holder, 0x04);
+        const uint32_t nodeAddr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(node));
+        const uint32_t found = ext_0085BF40(table, nodeAddr);
+        if (found == 0) {
+            const uint32_t id = lift_field<uint32_t>(node, 0x00);
+            if (key == id || key == 0xFFFFFFFEu) {
+                return node;
+            }
+        }
+        node = lift_field<void*>(node, 0x1C);
+    }
+    return nullptr;
+}
+} // namespace lift_0080D220
