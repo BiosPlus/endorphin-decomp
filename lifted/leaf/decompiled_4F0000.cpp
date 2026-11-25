@@ -479,3 +479,24 @@ void* fn_004F9190() {
     return &mem_00AE9F1C;
 }
 } // namespace lift_004F9190
+
+// [0x004FFA60] sub_004FFA60 (87 bytes)
+namespace lift_004FFA60 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AEB290;
+extern DWORD mem_00AEB28C;
+
+// @name getStaticSingletonAddress_004FFA60
+// @summary Lazily initializes the static singleton at 0x00AEB28C (guarded by bit 0 of 0x00AEB290) and returns its address.
+void* fn_004FFA60() {
+    if ((mem_00AEB290 & 1u) == 0) {
+        mem_00AEB290 |= 1u;
+        // The original passes the saved previous SEH frame as the stack argument; its
+        // value is discarded because the first DWORD is overwritten below.
+        ext_0067A670(&mem_00AEB28C, 0);
+        mem_00AEB28C = 0x0094E524u;
+    }
+    return &mem_00AEB28C;
+}
+} // namespace lift_004FFA60
