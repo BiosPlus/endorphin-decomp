@@ -504,3 +504,24 @@ extern uint8_t __thiscall fn_0079DDC0(void* self, uint32_t mode) {
     }
 }
 } // namespace lift_0079DDC0
+
+// [0x0079F2E0]
+namespace lift_0079F2E0 {
+extern DWORD mem_00B61168;
+extern DWORD mem_00B61230;
+extern DWORD mem_00B60F58;
+extern DWORD mem_00B5EB78;
+extern DWORD mem_00B5E400;
+
+// @name sub_0079F2E0 (descriptiveName: IsAnyKnownValue)
+// @summary Returns TRUE if the argument equals any of five global sentinel values (mem_00B61168, mem_00B61230, mem_00B60F58, mem_00B5EB78, mem_00B5E400).
+// (no class; no struct field offsets accessed)
+BOOLEAN __stdcall fn_0079F2E0(DWORD value) {
+    return static_cast<BOOLEAN>(
+        value == mem_00B61168 ||
+        value == mem_00B61230 ||
+        value == mem_00B60F58 ||
+        value == mem_00B5EB78 ||
+        value == mem_00B5E400);
+}
+} // namespace lift_0079F2E0

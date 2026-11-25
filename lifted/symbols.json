@@ -56298,6 +56298,12 @@
     "summary": "Stores four initial values into globals mem_00B61158, mem_00B61160, mem_00B6115C and mem_00B61164.",
     "lifted_path": "lifted/clones/auto_clones_790000.cpp"
   },
+  "0x0079F2E0": {
+    "name": "sub_0079F2E0 (descriptiveName: IsAnyKnownValue)",
+    "signature": "BOOLEAN __stdcall fn_0079F2E0(DWORD value)",
+    "summary": "Returns TRUE if the argument equals any of five global sentinel values (mem_00B61168, mem_00B61230, mem_00B60F58, mem_00B5EB78, mem_00B5E400).",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079F330": {
     "name": "sub_0079F330",
     "signature": "extern \"C\" int32_t __cdecl fn_0079F330(void)",

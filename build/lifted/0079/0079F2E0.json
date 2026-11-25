@@ -1,0 +1,13 @@
+{
+  "va": "0x0079F2E0",
+  "size": 70,
+  "orig_symbol": "sub_0079F2E0",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "sub_0079F2E0 (descriptiveName: IsAnyKnownValue)",
+  "signature": "BOOLEAN __stdcall fn_0079F2E0(DWORD value)",
+  "summary": "Returns TRUE if the argument equals any of five global sentinel values (mem_00B61168, mem_00B61230, mem_00B60F58, mem_00B5EB78, mem_00B5E400).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:25:10Z"
+}
