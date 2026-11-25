@@ -2108,3 +2108,37 @@ int32_t sub_006F90F0(uint32_t str_addr) {
     return -1;
 }
 } // namespace lift_006F90F0
+
+// [0x006FACA0]
+namespace lift_006FACA0 {
+// @name ListNode_dispatchVfunc3C_recursive
+// @summary Recursively traverses a linked list in post-order and invokes vtable+0x3C on each node's object
+// @field ListNode +0x00 uint32_t item
+// @field ListNode +0x04 uint32_t next
+
+
+extern uint32_t mem_read32(uint32_t addr);
+
+extern uint8_t __stdcall sub_006FACA0(
+    uint32_t node,
+    uint32_t arg1,
+    uint32_t arg2,
+    uint32_t arg3,
+    uint32_t arg4,
+    uint32_t arg5,
+    uint32_t arg6)
+{
+    if (!node) {
+        return 0;
+    }
+
+    uint32_t next = mem_read32(node + 0x04);
+    sub_006FACA0(next, arg1, arg2, arg3, arg4, arg5, arg6);
+
+    uint32_t obj = mem_read32(node + 0x00);
+    uint32_t vtable = mem_read32(obj);
+    using VFunc3C = uint8_t(__thiscall*)(uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t);
+    auto fn = reinterpret_cast<VFunc3C>(static_cast<uintptr_t>(mem_read32(vtable + 0x3C)));
+    return fn(obj, arg1, arg2, arg3, arg4, arg5, arg6);
+}
+} // namespace lift_006FACA0

@@ -59300,6 +59300,12 @@
     "summary": "Checks flag bit 1 at +0x34, queries vtable+0x74 on field_0x38, and dispatches vtable+0x40 on this.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006FACA0": {
+    "name": "ListNode_dispatchVfunc3C_recursive",
+    "signature": "extern \"C\" uint8_t __stdcall sub_006FACA0( uint32_t node, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4, uint32_t arg5, uint32_t arg6)",
+    "summary": "Recursively traverses a linked list in post-order and invokes vtable+0x3C on each node's object",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FAEA0": {
     "name": "ForwardToChildThenDispatchVirtual40",
     "signature": "uint32_t fn_006FAEA0(void* p, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7, uint32_t a8)",
