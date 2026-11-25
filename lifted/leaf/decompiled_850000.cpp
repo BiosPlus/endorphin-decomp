@@ -627,3 +627,26 @@ void* fn_00859740(void* dst, uint8_t value, uint32_t count) {
     return dst;
 }
 } // namespace lift_00859740
+
+// [0x0085D890]
+namespace lift_0085D890 {
+// @name rotateRight32
+// @summary Rotates a 32-bit unsigned integer at ptr right by 1 bit, count times.
+
+
+void __cdecl sub_0085D890(uint32_t* ptr, uint16_t count) {
+    if (count == 0) {
+        return;
+    }
+    do {
+        uint32_t val = *ptr;
+        if (val & 1u) {
+            val = (val >> 1) | 0x80000000u;
+        } else {
+            val = val >> 1;
+        }
+        *ptr = val;
+        --count;
+    } while (count != 0);
+}
+} // namespace lift_0085D890
