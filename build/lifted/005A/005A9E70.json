@@ -1,0 +1,34 @@
+{
+  "va": "0x005A9E70",
+  "size": 89,
+  "orig_symbol": "sub_005A9E70",
+  "src_path": "src/leaf/decompiled_5A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5A0000.cpp",
+  "name": "sub_005A9E70",
+  "class": "XMLConverterSubclass",
+  "signature": "void* fn_005A9E70(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x005A9F50 (XMLConverterSubclass::XMLConverterSubclass).",
+  "fields": [
+    {
+      "class": "XMLConverterSubclass",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "XMLConverterSubclass",
+      "offset": "+0x2C",
+      "type": "std::string",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "XMLConverterSubclass",
+      "offset": "+0x48",
+      "type": "std::string",
+      "name": "field_0x48"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T12:42:57Z"
+}

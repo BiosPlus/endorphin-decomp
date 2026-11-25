@@ -26801,6 +26801,19 @@
     "summary": "Argument-shuffling forwarder to copyStringRangeFromTreeIterator (0x0059FDE0); returns its result unchanged.",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005A0380": {
+    "name": "sub_005A0380",
+    "signature": "void fn_005A0380(void* it, void* last, void* guard, void* end, int32_t* counter)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046A4D0 (advanceIteratorCounted).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
+  "0x005A07A0": {
+    "name": "sub_005A07A0",
+    "class": "TreeMap",
+    "signature": "void* fn_005A07A0(void* self, void* out_iter, const void* key)",
+    "summary": "Auto-lifted identical-shape clone of 0x0059B2E0 (TreeMap::find).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005A2BD0": {
     "name": "DestroyNodeChain",
     "signature": "void __thiscall ext_005A2BD0(void* self, void* node)",
@@ -26813,6 +26826,12 @@
     "signature": "static inline void* vslot(void* obj, size_t byteOffset)",
     "summary": "Auto-lifted identical-shape clone of 0x00650DB0 (ExprParser::WriteMethodType\u003cSkeletalJoint, int, ...\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x005A3610": {
+    "name": "sub_005A3610",
+    "signature": "void fn_005A3610()",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C940 (sub_0044C940).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
   "0x005A3DC0": {
     "name": "catch_005A3DC0_printExceptionMessage",
@@ -26925,12 +26944,26 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005A9970 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005A9E70": {
+    "name": "sub_005A9E70",
+    "class": "XMLConverterSubclass",
+    "signature": "void* fn_005A9E70(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005A9F50 (XMLConverterSubclass::XMLConverterSubclass).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005A9ED0": {
     "name": "CharacterReloader::vfunc_14",
     "class": "CharacterReloader",
     "signature": "bool __stdcall CharacterReloader_vfunc_14(void* a0, std::uint32_t a1, std::uint32_t a2, std::uint32_t a3, std::uint32_t a4, std::uint32_t a5, std::uint32_t a6, std::uint32_t a7)",
     "summary": "Destroys the std::string passed in the first stack argument and returns true; callee pops 0x20 bytes.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x005A9EE0": {
+    "name": "sub_005A9EE0",
+    "class": "ClassVt95EE74",
+    "signature": "void fn_005A9EE0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005A9FB0 (ClassVt95EE74::~ClassVt95EE74).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
   "0x005A9F50": {
     "name": "XMLConverterSubclass::XMLConverterSubclass",
@@ -27183,6 +27216,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
     "lifted_path": "lifted/leaf/tiny_5A0000.cpp"
   },
+  "0x005AC8C0": {
+    "name": "sub_005AC8C0",
+    "class": "TreeConstIterator",
+    "signature": "static inline void* node_ptr(uint32_t addr)",
+    "summary": "Auto-lifted identical-shape clone of 0x00624DC0 (TreeConstIterator::operator++).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005ACAE0": {
     "name": "Command::vfunc_0",
     "class": "Command",
@@ -27211,11 +27251,25 @@
     "summary": "Initializes the object: calls base init (ext_006657F0), stores vtable 0x0095F5AC, two uint32 args at +0x14/+0x18, zeroes +0x10/+0x1C, and copies four floats from the input array to +0x20..+0x2C. Returns self.",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005ACD80": {
+    "name": "sub_005ACD80",
+    "class": "Unknown",
+    "signature": "void fn_005ACD80(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0048E310 (Unknown::resetChildAndRefresh_0048E310).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005ACEE0": {
     "name": "Unknown::initWithArgsAndZeroFloats_005ACEE0",
     "class": "Unknown",
     "signature": "void* __thiscall fn_005ACEE0(void* self, uint32_t arg0, uint32_t arg1)",
     "summary": "Calls ext_006657F0(self, 0), stores the second stack argument at +0x10 and the first at +0x14, sets the vtable to mem_0095F5C4, zeroes +0x18 (int) and the floats at +0x1C..+0x28, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
+  "0x005AD010": {
+    "name": "sub_005AD010",
+    "class": "Tree",
+    "signature": "void* __thiscall fn_005AD010(void* self, const void* key)",
+    "summary": "Auto-lifted identical-shape clone of 0x00472730 (Tree::lowerBound).",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
   "0x005AD0C0": {
@@ -27229,6 +27283,13 @@
     "name": "sub_005AD180",
     "signature": "void* fn_005AD180()",
     "summary": "Auto-lifted identical-shape clone of 0x0043D780 (AllocAndInitRecord).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
+  "0x005AE100": {
+    "name": "sub_005AE100",
+    "class": "TreeMap",
+    "signature": "void* fn_005AE100(void* self, void* out_iter, const void* key)",
+    "summary": "Auto-lifted identical-shape clone of 0x0059B2E0 (TreeMap::find).",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
   "0x005AE480": {

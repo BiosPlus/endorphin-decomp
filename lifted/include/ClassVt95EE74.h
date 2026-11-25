@@ -8,8 +8,8 @@
 // Recovered field layout for ClassVt95EE74:
 namespace lifted_layout {
 struct ClassVt95EE74_Fields {
-    // +0x0   uint32_t                 vtable  (evidence: 0x005A9FB0)
-    // +0x2C  std::string              field_0x2c  (evidence: 0x005A9FB0)
-    // +0x48  std::string              field_0x48  (evidence: 0x005A9FB0)
+    // +0x0   uint32_t                 vtable  (evidence: 0x005A9EE0, 0x005A9FB0)
+    // +0x2C  std::string              field_0x2c  (evidence: 0x005A9EE0, 0x005A9FB0)
+    // +0x48  std::string              field_0x48  (evidence: 0x005A9EE0, 0x005A9FB0)
 };
 } // namespace lifted_layout

@@ -43,8 +43,12 @@ void fillRangeWith8ByteValue(uint32_t* dst_begin, uint32_t* dst_end, const uint3
     } while (dst != dst_end);
 }
 } // namespace lift_005AD1C0
+#include <stdexcept>
+#include <utility>
+#include <istream>
+#include <bit>
 
-// [0x005A3DC0]
+#include <bit>
 namespace lift_005A3DC0 {
 extern uint32_t mem_00924E90;
 extern uint32_t mem_00924FA0;
@@ -540,3 +544,324 @@ void* __thiscall sub_005AC360(void* self, const float* row0, const float* row1, 
     return self;
 }
 } // namespace lift_005AC360
+
+// [0x005A0380] sub_005A0380 (61 bytes)
+namespace lift_005A0380 {
+// @name sub_005A0380
+// @summary Auto-lifted identical-shape clone of 0x0046A4D0 (advanceIteratorCounted).
+namespace lift_0046A4D0 {
+// Known callee 0x00474FF0: sub_00474FF0 (Auto-lifted identical-shape clone of 0x005E0B20 (TreeIterator::increment).)
+extern void ext_00673C20(void* self);
+// IAT slot holding MSVCR80!_invalid_parameter_noinfo (called with no arguments).
+extern void (*mem_00925134)();
+
+// @name advanceIteratorCounted
+// @summary Advances an iterator with TreeIterator::increment until it equals `last`, incrementing `*counter` once per step; asserts the iterator is non-null and equal to `guard` before each step.
+void fn_005A0380(void* it, void* last, void* guard, void* end, int32_t* counter) {
+    for (;;) {
+        if (it == nullptr || it != guard) {
+            mem_00925134();
+        }
+        if (last == end) {
+            return;
+        }
+        ++*counter;
+        ext_00673C20(&it);
+    }
+}
+} // namespace lift_0046A4D0
+} // namespace lift_005A0380
+
+// [0x005A07A0] sub_005A07A0 (105 bytes)
+namespace lift_005A07A0 {
+// @name sub_005A07A0
+// @summary Auto-lifted identical-shape clone of 0x0059B2E0 (TreeMap::find).
+namespace lift_0059B2E0 {
+// @name TreeMap::find
+// @class TreeMap
+// @summary Finds a string key in the red-black tree map and writes an iterator pair (map, node) to out_iter.
+// @field TreeMap +0x04 void* head
+
+
+extern void* ext_0055C490(void* self, const void* key);
+extern void (*mem_00925134)(void);
+extern uint8_t (*mem_00924EF4)(const void* lhs, const void* rhs);
+
+void* fn_005A07A0(void* self, void* out_iter, const void* key) {
+    void* node = ext_0055C490(self, key);
+    if (!self) {
+        mem_00925134();
+    }
+    void* head = *reinterpret_cast<void**>(reinterpret_cast<uintptr_t>(self) + 0x4);
+    void* result_node = head;
+    if (node != head) {
+        const void* node_key = reinterpret_cast<const void*>(reinterpret_cast<uintptr_t>(node) + 0xc);
+        if (!mem_00924EF4(key, node_key)) {
+            result_node = node;
+        }
+    }
+    void** iter = reinterpret_cast<void**>(out_iter);
+    iter[0] = self;
+    iter[1] = result_node;
+    return out_iter;
+}
+} // namespace lift_0059B2E0
+} // namespace lift_005A07A0
+
+// [0x005A3610] sub_005A3610 (8 bytes)
+namespace lift_005A3610 {
+// @name sub_005A3610
+// @summary Auto-lifted identical-shape clone of 0x0044C940 (sub_0044C940).
+namespace lift_0044C940 {
+// @name sub_0044C940
+// @summary Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).
+namespace lift_00437DE0 {
+// @name callSub00437DC0WithOne
+// @summary Calls ext_00437DC0 with argument 1.
+
+extern void ext_005A1070(void* arg);
+
+void fn_005A3610() {
+    ext_005A1070(reinterpret_cast<void*>(static_cast<uintptr_t>(3)));
+}
+} // namespace lift_00437DE0
+} // namespace lift_0044C940
+} // namespace lift_005A3610
+
+// [0x005A9E70] sub_005A9E70 (89 bytes)
+namespace lift_005A9E70 {
+// @name sub_005A9E70
+// @summary Auto-lifted identical-shape clone of 0x005A9F50 (XMLConverterSubclass::XMLConverterSubclass).
+namespace lift_005A9F50 {
+// Known callee 0x00678520: XMLConverter::XMLConverter (Constructor: installs XMLConverter primary vtable and default-constructs the std::string member at +0x04; returns this.)
+extern void* ext_00678520(void* self);
+// Import slot 0x00924FE8: std::string default constructor (MSVCP80, __thiscall, ecx = this).
+extern void (*mem_00924FE8)(void* self);
+
+// @name XMLConverterSubclass::XMLConverterSubclass
+// @class XMLConverterSubclass
+// @summary Constructor: runs the XMLConverter base constructor, installs this class's vtable (0x0095EE74), and default-constructs two std::string members at +0x2C and +0x48. Returns this.
+// @field XMLConverterSubclass +0x00 void* vtable
+// @field XMLConverterSubclass +0x2C std::string field_0x2C
+// @field XMLConverterSubclass +0x48 std::string field_0x48
+void* fn_005A9E70(void* self) {
+    ext_00678520(self);
+    lift_field<uintptr_t>(self, 0x00) = 0x95EE1Cu;
+    mem_00924FE8(static_cast<uint8_t*>(self) + 0x2C);
+    mem_00924FE8(static_cast<uint8_t*>(self) + 0x48);
+    return self;
+}
+} // namespace lift_005A9F50
+} // namespace lift_005A9E70
+
+// [0x005A9EE0] sub_005A9EE0 (97 bytes)
+namespace lift_005A9EE0 {
+// @name sub_005A9EE0
+// @summary Auto-lifted identical-shape clone of 0x005A9FB0 (ClassVt95EE74::~ClassVt95EE74).
+namespace lift_005A9FB0 {
+// Known callee 0x00678280: Unknown::~Unknown (Destructor: sets the derived vtable, destroys the string member at +0x04, then runs the base-class reset via sub_0065C660.)
+extern void ext_00678280(void* self);
+// Holds the address of the MSVCP std::string destructor (value 0x00628FF0).
+extern uintptr_t mem_00924FF4;
+
+// @name ClassVt95EE74::~ClassVt95EE74
+// @class ClassVt95EE74
+// @summary Derived destructor: restores this class's vtable, destroys two std::string members (+0x48, then +0x2C), then chains to the Unknown base destructor.
+// @field ClassVt95EE74 +0x00 uint32_t vtable
+// @field ClassVt95EE74 +0x2C std::string field_0x2c
+// @field ClassVt95EE74 +0x48 std::string field_0x48
+void fn_005A9EE0(void* self) {
+    using StringDtor = void (*)(void*);
+    const auto string_dtor = reinterpret_cast<StringDtor>(mem_00924FF4);
+
+    // Restore this class's vtable pointer (0x0095EE74) at offset 0.
+    lift_field<uint32_t>(self, 0x00) = 0x95EE1Cu;
+
+    // Destroy string member at +0x48, then the string member at +0x2C.
+    string_dtor(static_cast<uint8_t*>(self) + 0x48);
+    string_dtor(static_cast<uint8_t*>(self) + 0x2C);
+
+    // Chain to the base-class destructor Unknown::~Unknown.
+    ext_00678280(self);
+}
+} // namespace lift_005A9FB0
+} // namespace lift_005A9EE0
+
+// [0x005AC8C0] sub_005AC8C0 (108 bytes)
+namespace lift_005AC8C0 {
+// @name sub_005AC8C0
+// @summary Auto-lifted identical-shape clone of 0x00624DC0 (TreeConstIterator::operator++).
+namespace lift_00624DC0 {
+// IAT slot 0x00925134: MSVCR80!_invalid_parameter_noinfo (called on debug-iterator misuse).
+extern void (*mem_00925134)();
+
+// Node addresses are stored as 32-bit values to match the original layout.
+static inline void* node_ptr(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+// @name TreeConstIterator::operator++
+// @class TreeConstIterator
+// @summary Debug-checked MSVC std::_Tree const iterator increment: advances to the in-order successor node.
+// @field TreeConstIterator +0x00 uint32_t container
+// @field TreeConstIterator +0x04 uint32_t node
+// @field TreeNode +0x00 uint32_t left
+// @field TreeNode +0x04 uint32_t parent
+// @field TreeNode +0x08 uint32_t right
+// @field TreeNode +0x19 uint8_t isnil
+void fn_005AC8C0(void* self) {
+    if (lift_field<uint32_t>(self, 0) == 0) {
+        mem_00925134();
+    }
+
+    uint32_t node = lift_field<uint32_t>(self, 4);
+    if (lift_field<uint8_t>(node_ptr(node), 0x29) != 0) {
+        // Incrementing the head/end sentinel is invalid.
+        mem_00925134();
+        return;
+    }
+
+    uint32_t right = lift_field<uint32_t>(node_ptr(node), 0x08);
+    if (lift_field<uint8_t>(node_ptr(right), 0x29) == 0) {
+        // Successor is the leftmost node of the right subtree.
+        uint32_t cur = right;
+        for (;;) {
+            uint32_t left = lift_field<uint32_t>(node_ptr(cur), 0x00);
+            if (lift_field<uint8_t>(node_ptr(left), 0x29) != 0) {
+                break;
+            }
+            cur = left;
+        }
+        lift_field<uint32_t>(self, 4) = cur;
+        return;
+    }
+
+    // No right subtree: climb until we come from a left child.
+    uint32_t par = lift_field<uint32_t>(node_ptr(node), 0x04);
+    if (lift_field<uint8_t>(node_ptr(par), 0x29) == 0) {
+        for (;;) {
+            uint32_t curPtr = lift_field<uint32_t>(self, 4);
+            if (curPtr != lift_field<uint32_t>(node_ptr(par), 0x08)) {
+                break;
+            }
+            lift_field<uint32_t>(self, 4) = par;
+            uint32_t gp = lift_field<uint32_t>(node_ptr(par), 0x04);
+            par = gp;
+            if (lift_field<uint8_t>(node_ptr(gp), 0x29) != 0) {
+                break;
+            }
+        }
+    }
+    lift_field<uint32_t>(self, 4) = par;
+}
+} // namespace lift_00624DC0
+} // namespace lift_005AC8C0
+
+// [0x005ACD80] sub_005ACD80 (83 bytes)
+namespace lift_005ACD80 {
+// @name sub_005ACD80
+// @summary Auto-lifted identical-shape clone of 0x0048E310 (Unknown::resetChildAndRefresh_0048E310).
+namespace lift_0048E310 {
+// Known callee 0x00665810: sub_00665810 (Stores address of mem_00987A04 into field at offset +0x0.)
+extern void ext_00665810(void* self);
+
+// @name Unknown::resetChildAndRefresh_0048E310
+// @class Unknown
+// @summary Releases the object held at +0x14 (via its vtable slot 0 with flag 1) and then calls ext_00665810 on self.
+// @field Unknown +0x14 void* field_0x14
+struct Unknown {
+    unsigned char _pad_0000[0x1C];
+    void* field_0x14;
+};
+
+void fn_005ACD80(void* self) {
+    auto* obj = static_cast<Unknown*>(self);
+    void* child = obj->field_0x14;
+    if (child != nullptr) {
+        void** vtbl = *static_cast<void***>(child);
+        reinterpret_cast<void (*)(void*, int)>(vtbl[0])(child, 1);
+    }
+    ext_00665810(self);
+}
+} // namespace lift_0048E310
+} // namespace lift_005ACD80
+
+// [0x005AD010] sub_005AD010 (70 bytes)
+namespace lift_005AD010 {
+// @name sub_005AD010
+// @summary Auto-lifted identical-shape clone of 0x00472730 (Tree::lowerBound).
+namespace lift_00472730 {
+// Imported string less-than comparator (function address stored in .rdata).
+extern uint32_t mem_00924EF4;
+
+using KeyLess = bool (__cdecl*)(const void* a, const void* b);
+
+// @name Tree::lowerBound
+// @class Tree
+// @summary MSVC-style std::_Tree lower_bound: walks from the root to the first node whose key is not less than the argument; returns the head (end) sentinel if none.
+// @field Tree +0x04 void* head
+// @field TreeNode +0x00 void* left
+// @field TreeNode +0x04 void* parent_or_root
+// @field TreeNode +0x08 void* right
+// @field TreeNode +0x0C std::string key
+// @field TreeNode +0x39 uint8_t is_nil
+void* __thiscall fn_005AD010(void* self, const void* key) {
+    void* head = lift_field<void*>(self, 0x4);
+    void* node = lift_field<void*>(head, 0x4);  // root
+    void* result = head;                         // end() if nothing qualifies
+
+    if (lift_field<uint8_t>(node, 0x29) != 0) {
+        return head;
+    }
+
+    KeyLess less = reinterpret_cast<KeyLess>(static_cast<uintptr_t>(mem_00924EF4));
+    while (lift_field<uint8_t>(node, 0x29) == 0) {
+        if (less(static_cast<char*>(node) + 0xC, key)) {
+            // node.key < key: answer lies in the right subtree.
+            node = lift_field<void*>(node, 0x8);
+        } else {
+            // node.key >= key: candidate; keep searching left.
+            result = node;
+            node = lift_field<void*>(node, 0x0);
+        }
+    }
+    return result;
+}
+} // namespace lift_00472730
+} // namespace lift_005AD010
+
+// [0x005AE100] sub_005AE100 (105 bytes)
+namespace lift_005AE100 {
+// @name sub_005AE100
+// @summary Auto-lifted identical-shape clone of 0x0059B2E0 (TreeMap::find).
+namespace lift_0059B2E0 {
+// @name TreeMap::find
+// @class TreeMap
+// @summary Finds a string key in the red-black tree map and writes an iterator pair (map, node) to out_iter.
+// @field TreeMap +0x04 void* head
+
+
+extern void* ext_005AD010(void* self, const void* key);
+extern void (*mem_00925134)(void);
+extern uint8_t (*mem_00924EF4)(const void* lhs, const void* rhs);
+
+void* fn_005AE100(void* self, void* out_iter, const void* key) {
+    void* node = ext_005AD010(self, key);
+    if (!self) {
+        mem_00925134();
+    }
+    void* head = *reinterpret_cast<void**>(reinterpret_cast<uintptr_t>(self) + 0x4);
+    void* result_node = head;
+    if (node != head) {
+        const void* node_key = reinterpret_cast<const void*>(reinterpret_cast<uintptr_t>(node) + 0xc);
+        if (!mem_00924EF4(key, node_key)) {
+            result_node = node;
+        }
+    }
+    void** iter = reinterpret_cast<void**>(out_iter);
+    iter[0] = self;
+    iter[1] = result_node;
+    return out_iter;
+}
+} // namespace lift_0059B2E0
+} // namespace lift_005AE100
