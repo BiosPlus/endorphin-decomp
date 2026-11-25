@@ -1675,6 +1675,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005E0B20 (TreeIterator::increment).",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041A070": {
+    "name": "fn_0041A070_checkKeyAndDiffField4",
+    "signature": "int __thiscall fn_0041A070(void* self, void* other)",
+    "summary": "Asserts self-\u003e[0] is nonzero and equal to other-\u003e[0] (else invalid-parameter handler), then returns self-\u003e[4] - other-\u003e[4].",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041A160": {
     "name": "copyBackwardBytes",
     "signature": "void* __cdecl sub_0041A160(const void* first, const void* last, void* destEnd)",

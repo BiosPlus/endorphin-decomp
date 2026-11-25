@@ -1777,3 +1777,21 @@ uint32_t __fastcall sub_00415F97(void* ecx_this, void* /*edx*/, uint32_t eax_val
     return 0;
 }
 } // namespace lift_00415F97
+
+// [0x0041A070] sub_0041A070 (35 bytes)
+namespace lift_0041A070 {
+// Indirect import slot called via `call dword ptr [0x925134]` (MSVCR80!_invalid_parameter_noinfo).
+extern void (*mem_00925134)(void);
+
+// @name fn_0041A070_checkKeyAndDiffField4
+// @summary Asserts self->[0] is nonzero and equal to other->[0] (else invalid-parameter handler), then returns self->[4] - other->[4].
+// @field Unknown +0x00 DWORD field_0x00
+// @field Unknown +0x04 DWORD field_0x04
+int __thiscall fn_0041A070(void* self, void* other) {
+    DWORD key = lift_field<DWORD>(self, 0x00);
+    if (key == 0 || key != lift_field<DWORD>(other, 0x00)) {
+        mem_00925134();
+    }
+    return static_cast<int>(lift_field<DWORD>(self, 0x04) - lift_field<DWORD>(other, 0x04));
+}
+} // namespace lift_0041A070
