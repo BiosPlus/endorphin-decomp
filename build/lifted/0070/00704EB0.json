@@ -1,0 +1,22 @@
+{
+  "va": "0x00704EB0",
+  "size": 16,
+  "orig_symbol": "sub_00704EB0",
+  "src_path": "src/leaf/tiny_700000.cpp",
+  "lifted_path": "lifted/leaf/tiny_700000.cpp",
+  "name": "ForwardToSubobjectVirtual154",
+  "class": "Unknown",
+  "signature": "uint32_t fn_00704EB0(void* self)",
+  "summary": "Tail-calls virtual slot 0x154 (index 85) of the subobject stored at this+0xF0, passing that subobject as this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "void*",
+      "name": "subobject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:29:01Z"
+}

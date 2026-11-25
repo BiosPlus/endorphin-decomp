@@ -59921,6 +59921,13 @@
     "summary": "Returns the byte at this-\u003efield_0xF0-\u003efield_0x7CC, merged into the low byte of the return value.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00704EB0": {
+    "name": "ForwardToSubobjectVirtual154",
+    "class": "Unknown",
+    "signature": "uint32_t fn_00704EB0(void* self)",
+    "summary": "Tail-calls virtual slot 0x154 (index 85) of the subobject stored at this+0xF0, passing that subobject as this.",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x00704FD0": {
     "name": "sub_00704FD0",
     "signature": "extern int __thiscall fn_00704FD0(void* self)",

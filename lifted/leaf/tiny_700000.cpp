@@ -1358,3 +1358,21 @@ uint32_t GetSubobjectByteField7CD(const uint8_t* self) {
 }
 } // namespace lift_00705160
 } // namespace lift_00705160
+
+// [0x00704EB0] sub_00704EB0 (16 bytes)
+namespace lift_00704EB0 {
+// @name ForwardToSubobjectVirtual154
+// @class Unknown
+// @summary Tail-calls virtual slot 0x154 (index 85) of the subobject stored at this+0xF0, passing that subobject as this.
+// @field Unknown +0xF0 void* subobject
+// Note: the original ends in `jmp [eax+0x154]`, so any stack arguments are forwarded
+// unchanged and the callee's return value (eax) is passed straight through. This C++
+// form only models the implicit `this` argument; callers must not rely on extra args.
+uint32_t fn_00704EB0(void* self) {
+    void* subobject = lift_field<void*>(self, 0xF0);
+    void** vtable = *reinterpret_cast<void***>(subobject);
+    using Slot154 = uint32_t (__thiscall*)(void*);
+    Slot154 target = reinterpret_cast<Slot154>(vtable[0x154 / sizeof(void*)]);
+    return target(subobject);
+}
+} // namespace lift_00704EB0
