@@ -3356,6 +3356,12 @@
     "summary": "Computes a bool from a global object's sub-object and tail-dispatches it through the out-object's vtable slot 0.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00434810": {
+    "name": "ConditionalVirtualDispatch",
+    "signature": "void fn_00434810(void* self, void* obj)",
+    "summary": "Computes a gated boolean from a global-chain object and dispatches two virtual slots (0 and 1) on the stack-argument object.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x004348F0": {
     "name": "sub_004348F0",
     "class": "(none)",

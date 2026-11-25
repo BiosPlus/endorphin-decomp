@@ -2891,3 +2891,44 @@ void* fn_00434CA0() {
     return static_cast<void*>(&mem_00ACE1F4);
 }
 } // namespace lift_00434CA0
+
+// [0x00434810] sub_00434810 (97 bytes)
+namespace lift_00434810 {
+// Known callee 0x00594000: sub_00594000 (returns global int32 from mem_00B40D08)
+extern int32_t ext_00594000(void);
+// Known callee 0x006AD940: sub_006AD940 (4B; takes object pointer, returns object pointer)
+extern void* ext_006AD940(void* self);
+// Known callee 0x00430380: isGlobalObjectField60Is1 (returns 1 if int32 at +0x60 of ext_004658C0() object == 1)
+extern uint8_t ext_00430380(void);
+// Known callee 0x00492520: selector 0 -> +0x0C, 1 -> +0x10, else 0
+extern int32_t ext_00492520(void* self, int32_t selector);
+// Known callee 0x004925D0: checks field equality selected by mode (0 or 1)
+extern uint8_t ext_004925D0(void* self, uint32_t mode);
+
+// @name ConditionalVirtualDispatch
+// @summary Computes a gated boolean from a global-chain object and dispatches two virtual slots (0 and 1) on the stack-argument object.
+// @field Unknown +0x26C uint32_t field_0x26C
+void fn_00434810(void* self, void* obj) {
+    (void)self;
+
+    // eax = sub_00594000(); ecx = [eax + 0x26C]; edi = sub_006AD940(ecx)
+    void* global_obj = reinterpret_cast<void*>(static_cast<uintptr_t>(ext_00594000()));
+    uint32_t field_val = lift_field<uint32_t>(global_obj, 0x26C);
+    void* a = ext_006AD940(reinterpret_cast<void*>(static_cast<uintptr_t>(field_val)));
+
+    // cond = ext_00430380() && ext_00492520(a, 0) != 0
+    int32_t cond = 0;
+    if (ext_00430380() != 0) {
+        cond = (ext_00492520(a, 0) != 0) ? 1 : 0;
+    }
+
+    // obj->vtbl[0](cond)
+    void** vt = *reinterpret_cast<void***>(obj);
+    reinterpret_cast<void (*)(void*, int32_t)>(vt[0])(obj, cond);
+
+    // r = ext_004925D0(a, 0); obj->vtbl[1](r)
+    void** vt2 = *reinterpret_cast<void***>(obj);
+    uint8_t r = ext_004925D0(a, 0);
+    reinterpret_cast<void (*)(void*, uint32_t)>(vt2[1])(obj, static_cast<uint32_t>(r));
+}
+} // namespace lift_00434810
