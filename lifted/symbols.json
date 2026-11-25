@@ -34845,6 +34845,12 @@
     "summary": "Lexicographically compares two std::string fields at +0x04 and +0x20.",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x00609730": {
+    "name": "ThunkForwardToEmbeddedVfunc24",
+    "signature": "void* fn_00609730(void* self)",
+    "summary": "Thunk: loads the subobject at self+0x0C, calls its secondary vtable slot at +0x24 with this adjusted to subobject+4, and returns that result.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x006098F0": {
     "name": "Unknown::ctor_006098F0",
     "class": "Unknown",

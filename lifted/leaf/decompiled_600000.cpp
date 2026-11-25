@@ -1058,3 +1058,25 @@ void* __thiscall sub_0060BBA0(void* self, const void* other) {
     return self;
 }
 } // namespace lift_0060BBA0
+
+// [0x00609730] sub_00609730 (14 bytes)
+namespace lift_00609730 {
+// Callee 0x00602F20 (sub_00602F20, auto-lifted clone of 0x00602F00). The asm reaches it only
+// through the vtable slot at +0x24, so it is recorded here as the known dispatch target and not called directly.
+extern void ext_00602F20();
+
+// @name ThunkForwardToEmbeddedVfunc24
+// @summary Thunk: loads the subobject at self+0x0C, calls its secondary vtable slot at +0x24 with this adjusted to subobject+4, and returns that result.
+// @field UnknownClass +0x0C void* field_0x0C
+// @field UnknownSubobject +0x04 void* field_0x04
+void* fn_00609730(void* self) {
+    using VFn = void* (*)(void*);
+    [[maybe_unused]] void* const knownSlot24Target = reinterpret_cast<void*>(&ext_00602F20);  // address only, never called
+
+    void* inner = lift_field<void*>(self, 0x0C);                         // mov ecx, [self+0x0C]
+    void* vptr = lift_field<void*>(inner, 0x04);                         // mov eax, [inner+0x04]
+    VFn target = reinterpret_cast<VFn>(lift_field<void*>(vptr, 0x24));   // mov edx, [vptr+0x24]
+    void* adjusted = static_cast<uint8_t*>(inner) + 0x04;                // add ecx, 4
+    return target(adjusted);                                             // jmp edx
+}
+} // namespace lift_00609730
