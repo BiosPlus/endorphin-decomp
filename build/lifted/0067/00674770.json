@@ -1,0 +1,13 @@
+{
+  "va": "0x00674770",
+  "size": 95,
+  "orig_symbol": "sub_00674770",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "GetOnceInitString_00674770",
+  "signature": "void* fn_00674770()",
+  "summary": "Runs a one-time initialization of the global at mem_00B59D84 (guarded by bit 0 of mem_00B59DA0) and returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:33:59Z"
+}

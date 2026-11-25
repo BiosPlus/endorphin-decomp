@@ -44136,6 +44136,12 @@
     "summary": "This-adjustor thunk: offsets this by 0x1c and forwards the call to the function pointer stored at mem_00924FDC.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00674770": {
+    "name": "GetOnceInitString_00674770",
+    "signature": "void* fn_00674770()",
+    "summary": "Runs a one-time initialization of the global at mem_00B59D84 (guarded by bit 0 of mem_00B59DA0) and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00674900": {
     "name": "ExprParser::ReadMethodType\u003cExpressionEntry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ExpressionEntry::getExpression(void) const, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cExpressionEntry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ExpressionEntry::getExpression(void) const, 0\u003e",

@@ -1417,3 +1417,28 @@ void* fn_0067B8D0(void* self, const float* r0, const float* r1, const float* r2)
     return self;
 }
 } // namespace lift_0067B8D0
+
+// [0x00674770] sub_00674770 (95 bytes)
+namespace lift_00674770 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+// Signature from the callee listing: void* fn(void* out_str, uint8_t flag). Cdecl; caller cleans up.
+extern void* ext_0066AD10(void* out_str, uint8_t flag);
+// Unlifted callee 0x006A6C87 (18 bytes). Signature is inferred from the single pushed argument (0x9219C0).
+extern void ext_006A6C87(const void* arg);
+// Guard word for the one-time initialization.
+extern int mem_00B59DA0;
+// Storage whose address is returned.
+extern int mem_00B59D84;
+
+// @name GetOnceInitString_00674770
+// @summary Runs a one-time initialization of the global at mem_00B59D84 (guarded by bit 0 of mem_00B59DA0) and returns its address.
+void* fn_00674770() {
+    if ((mem_00B59DA0 & 1) == 0) {
+        mem_00B59DA0 |= 1;
+        // Original pushes 0xAA19C8 as the second argument; the callee reads it as uint8_t.
+        ext_0066AD10(&mem_00B59D84, static_cast<uint8_t>(0xAA19C8u));
+        ext_006A6C87(reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009219C0u)));
+    }
+    return &mem_00B59D84;
+}
+} // namespace lift_00674770
