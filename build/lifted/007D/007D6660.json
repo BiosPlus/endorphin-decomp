@@ -1,0 +1,27 @@
+{
+  "va": "0x007D6660",
+  "size": 79,
+  "orig_symbol": "sub_007D6660",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "incrementClampedBucket",
+  "signature": "uint32_t sub_007D6660(int32_t eax, uint32_t esi)",
+  "summary": "Rounds input up to a multiple of 4, divides by 4, clamps to [0, field_0x14 - 1], increments that uint32_t entry in field_0x10, and returns its address.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x14",
+      "type": "int32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:48:02Z"
+}

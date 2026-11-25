@@ -983,3 +983,32 @@ void __stdcall SplitRangeEvenly_007D9630(Range* out, int32_t start, int32_t tota
     }
 }
 } // namespace lift_007D9630
+
+// [0x007D6660]
+namespace lift_007D6660 {
+uint32_t mem_read32(uint32_t addr);
+void mem_write32(uint32_t addr, uint32_t val);
+
+// @name incrementClampedBucket
+// @summary Rounds input up to a multiple of 4, divides by 4, clamps to [0, field_0x14 - 1], increments that uint32_t entry in field_0x10, and returns its address.
+// @field unknown +0x10 uint32_t field_0x10
+// @field unknown +0x14 int32_t field_0x14
+uint32_t sub_007D6660(int32_t eax, uint32_t esi) {
+    int32_t rem = eax % 4;
+    if (rem != 0) {
+        eax = eax - rem + 4;
+    }
+    int32_t idx = eax / 4;
+    int32_t max_idx = mem_read32(esi + 0x14) - 1;
+    if (idx >= max_idx) {
+        idx = max_idx;
+    }
+    if (idx < 0) {
+        idx = 0;
+    }
+    uint32_t arr = mem_read32(esi + 0x10);
+    uint32_t addr = arr + static_cast<uint32_t>(idx) * 4u;
+    mem_write32(addr, mem_read32(addr) + 1u);
+    return addr;
+}
+} // namespace lift_007D6660
