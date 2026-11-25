@@ -17112,6 +17112,12 @@
     "summary": "Thunk for the PointainerWithUndo::Owner base at +0x38: recovers the InitialVariableValues this (ecx-0x38) and tail-dispatches vtable slot 23 (+0x5c) with argument 0, popping 8 bytes of args.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00527AF0": {
+    "name": "vectorBackPtr",
+    "signature": "uint32_t __thiscall sub_00527AF0(void* self)",
+    "summary": "Validates vector bounds and returns a pointer to the last 4-byte element.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00528540": {
     "name": "Interpolator::Const::vfunc_3",
     "class": "Interpolator::Const",
@@ -32721,6 +32727,12 @@
     "signature": "void fn_0063CB90(void* out, void* const* selfRef, void* ctx)",
     "summary": "Stores a float produced by the child's vfunc_1 into the target's +0x60 slot and returns a (value, child) pair via out-param.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0063D950": {
+    "name": "constructWithZeroedFloats",
+    "signature": "void* fn_0063D950(void* self)",
+    "summary": "Runs the base constructor, installs vtable 0x009793d4, and zeroes three float fields at +0x40, +0x44, +0x48. Returns this.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
   "0x0063DAB0": {
     "name": "sub_0063DAB0_init",
