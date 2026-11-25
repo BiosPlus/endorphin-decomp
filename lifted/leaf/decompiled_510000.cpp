@@ -276,3 +276,26 @@ void* fn_0051A210(void) {
     return mem_00AEC70C;
 }
 } // namespace lift_0051A210
+
+// [0x0051A270] sub_0051A270 (95 bytes)
+namespace lift_0051A270 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+// Second pushed argument is a 32-bit literal (0x00A43218), so it is declared as uint32_t.
+extern void* ext_0066AD10(void* out, uint32_t arg);
+// Callee 0x006A6C87 takes one pointer argument (0x00919FE0, a teardown routine registered once).
+extern int ext_006A6C87(void* fn);
+extern int mem_00AEC748;   // once-init guard flag (bit 0)
+extern int mem_00AEC72C;   // static string/object storage
+extern void ext_00919FE0(); // teardown routine (address pushed as the argument to 0x006A6C87)
+
+// @name InitOnceGlobalString_0051A270
+// @summary One-time guarded initializer for the global at mem_00AEC72C (guarded by bit 0 of mem_00AEC748); registers a teardown and returns its address.
+void* fn_0051A270(void) {
+    if ((mem_00AEC748 & 1) == 0) {
+        mem_00AEC748 |= 1;
+        ext_0066AD10(&mem_00AEC72C, 0x00A43218u);
+        ext_006A6C87(reinterpret_cast<void*>(&ext_00919FE0));
+    }
+    return &mem_00AEC72C;
+}
+} // namespace lift_0051A270

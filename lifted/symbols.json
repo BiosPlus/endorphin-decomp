@@ -19440,6 +19440,12 @@
     "summary": "One-time guarded initializer for the global at 0x00AEC70C; on first call builds it via ext_0066AD10 and registers its teardown via ext_006A6C87; later calls only return its address.",
     "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
+  "0x0051A270": {
+    "name": "InitOnceGlobalString_0051A270",
+    "signature": "extern int mem_00AEC748;   // once-init guard flag (bit 0) extern int mem_00AEC72C;   // static string/object storage extern void ext_00919FE0(); // teardown routine (address pushed as the argument to 0x006A6C87) void* fn_0051A270(void)",
+    "summary": "One-time guarded initializer for the global at mem_00AEC72C (guarded by bit 0 of mem_00AEC748); registers a teardown and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x0051A400": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::RealChannel, float, \u0026public: float __thiscall NMData::RealChannel::getValue(void) const, float, \u0026public: void __thiscall NMData::RealChannel::setKeyFrame(float)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::RealChannel, float, \u0026public: float __thiscall NMData::RealChannel::getValue(void) const, float, \u0026public: void __thiscall NMData::RealChannel::setKeyFrame(float)\u003e",
