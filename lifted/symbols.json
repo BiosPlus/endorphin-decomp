@@ -35249,6 +35249,13 @@
     "summary": "Thunk: loads the subobject at self+0x0C, calls its secondary vtable slot at +0x24 with this adjusted to subobject+4, and returns that result.",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x00609740": {
+    "name": "ExprParser::ROMethod0Type\u003cNM::Vector3, normalize2\u003e::vfunc_4",
+    "class": "ExprParser::ROMethod0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",
+    "signature": "void* fn_00609740(void* self, const void* unused)",
+    "summary": "Default-constructs a std::string in the caller-supplied return buffer and returns that buffer pointer.",
+    "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
+  },
   "0x006098F0": {
     "name": "Unknown::ctor_006098F0",
     "class": "Unknown",

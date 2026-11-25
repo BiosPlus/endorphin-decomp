@@ -776,3 +776,20 @@ std::uintptr_t fn_0066BCA0(void* self, void* arg) {
     void** vtbl = *reinterpret_cast<void***>(sub);
     return reinterpret_cast<ForwardFn>(vtbl[45])(sub, inner, arg);
 }
+
+// [0x00609740] ExprParser::ROMethod0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>::vfunc_4 (29 bytes)
+namespace lift_00609740 {
+extern int mem_00924FE8;
+
+// @name ExprParser::ROMethod0Type<NM::Vector3, normalize2>::vfunc_4
+// @class ExprParser::ROMethod0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>
+// @summary Default-constructs a std::string in the caller-supplied return buffer and returns that buffer pointer.
+void* fn_00609740(void* self, const void* unused) {
+    (void)unused;
+    // ext_: MSVCP80 std::basic_string<char>::basic_string() via IAT slot mem_00924FE8.
+    using StringCtorFn = void(__thiscall*)(void* this_ptr, const void* alloc);
+    auto ctor = *reinterpret_cast<StringCtorFn*>(&mem_00924FE8);
+    ctor(self, nullptr);
+    return self;
+}
+} // namespace lift_00609740
