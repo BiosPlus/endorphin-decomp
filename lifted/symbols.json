@@ -3851,6 +3851,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00497090 (NMData::Transition::vfunc_37).",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x00443960": {
+    "name": "InitDerivedWithTag",
+    "signature": "void* fn_00443960(void* self, uint32_t arg, uint32_t unused_arg)",
+    "summary": "Runs the base init helper ext_00442960 with (self, arg, unused_arg), installs this class's vtable at self+0x00, zeroes the fields at +0x10, +0x14, +0x18 and the flag byte at +0x30, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x004442C0": {
     "name": "descriptiveName: fn_004442C0 (walk first-link chain until flag at +0xC1 is set)",
     "signature": "void fn_004442C0(void* self)",

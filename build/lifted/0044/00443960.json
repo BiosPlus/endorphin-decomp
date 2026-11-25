@@ -1,0 +1,39 @@
+{
+  "va": "0x00443960",
+  "size": 82,
+  "orig_symbol": "sub_00443960",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "InitDerivedWithTag",
+  "signature": "void* fn_00443960(void* self, uint32_t arg, uint32_t unused_arg)",
+  "summary": "Runs the base init helper ext_00442960 with (self, arg, unused_arg), installs this class's vtable at self+0x00, zeroes the fields at +0x10, +0x14, +0x18 and the flag byte at +0x30, and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "uint8_t",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:01:38Z"
+}

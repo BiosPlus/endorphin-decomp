@@ -1920,3 +1920,29 @@ void fn_00448420(void* self, DWORD arg) {
     lift_field<DWORD>(self, 0xec) = lift_field<DWORD>(result, 0x19c);
 }
 } // namespace lift_00448420
+
+// [0x00443960] sub_00443960 (82 bytes)
+namespace lift_00443960 {
+// Known callee 0x00442960: Unknown::InitWithTag (Runs the base init helper with arg, then overwrites the vtable slot with mem_009324DC and stores arg at +0x8; returns self.)
+extern void* ext_00442960(void* self, uint32_t arg, uint32_t unused_arg);
+// Vtable for this class; its first slot holds 0x004439C0 (mem_009327F4 .rdata u32).
+extern int mem_009327F4;
+
+// @name InitDerivedWithTag
+// @summary Runs the base init helper ext_00442960 with (self, arg, unused_arg), installs this class's vtable at self+0x00, zeroes the fields at +0x10, +0x14, +0x18 and the flag byte at +0x30, and returns self.
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x30 uint8_t field_0x30
+void* fn_00443960(void* self, uint32_t arg, uint32_t unused_arg) {
+    ext_00442960(self, arg, unused_arg);
+
+    lift_field<void*>(self, 0x00) = reinterpret_cast<void*>(&mem_009327F4);
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x14) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint8_t>(self, 0x30) = 0;
+
+    return self;
+}
+} // namespace lift_00443960
