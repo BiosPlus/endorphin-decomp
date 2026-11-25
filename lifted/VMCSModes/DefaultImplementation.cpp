@@ -119,3 +119,37 @@ bool fn_004FA1B0(void* self) {
     return count != 0;
 }
 } // namespace lift_004FA1B0
+
+// [0x004F9AA0] VMCSModes::DefaultImplementation::vfunc_71 (58 bytes)
+namespace lift_004F9AA0 {
+extern void* ext_005B11F0(void* self);
+
+// @name VMCSModes::DefaultImplementation::isVectorEmpty
+// @class VMCSModes::DefaultImplementation
+// @summary Returns true when the vector reached via this->field_0x8 -> ->0x14 -> ->0x34 -> OglRenderer::vfunc_118 -> vtable[7] is empty (begin == nullptr or begin == end).
+// @field VMCSModes::DefaultImplementation +0x08 void* field_0x8
+bool fn_004F9AA0(void* self) {
+    using VFn = void* (*)(void*);
+
+    auto ptr = [](uint32_t addr) -> void* {
+        return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+    };
+
+    uint32_t a = lift_field<uint32_t>(self, 0x8);
+    uint32_t b = lift_field<uint32_t>(ptr(a), 0x14);
+    uint32_t c = lift_field<uint32_t>(ptr(b), 0x34);
+
+    void* d = ext_005B11F0(ptr(c));
+
+    void** vtbl = *reinterpret_cast<void***>(d);
+    void* e = reinterpret_cast<VFn>(vtbl[0x1c / sizeof(void*)])(d);
+
+    uint32_t begin = lift_field<uint32_t>(e, 0x4);
+    uint32_t end = lift_field<uint32_t>(e, 0x8);
+
+    if (begin == 0) {
+        return true;
+    }
+    return begin == end;
+}
+} // namespace lift_004F9AA0

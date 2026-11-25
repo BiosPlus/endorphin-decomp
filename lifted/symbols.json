@@ -14842,6 +14842,13 @@
     "summary": "Copies three floats from self+0x30..0x38 to out[0..2] and sets out[3] = 0.0f (Vec3 -\u003e Vec4 with w = 0).",
     "lifted_path": "lifted/leaf/tiny_4F0000.cpp"
   },
+  "0x004F9AA0": {
+    "name": "VMCSModes::DefaultImplementation::isVectorEmpty",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "bool fn_004F9AA0(void* self)",
+    "summary": "Returns true when the vector reached via this-\u003efield_0x8 -\u003e -\u003e0x14 -\u003e -\u003e0x34 -\u003e OglRenderer::vfunc_118 -\u003e vtable[7] is empty (begin == nullptr or begin == end).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
   "0x004F9BD0": {
     "name": "VMCSModes::DefaultImplementation::vfunc_33",
     "class": "VMCSModes::DefaultImplementation",

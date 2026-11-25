@@ -1,0 +1,22 @@
+{
+  "va": "0x004F9AA0",
+  "size": 58,
+  "orig_symbol": "VMCSModes::DefaultImplementation::vfunc_71",
+  "src_path": "src/VMCSModes/DefaultImplementation.cpp",
+  "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp",
+  "name": "VMCSModes::DefaultImplementation::isVectorEmpty",
+  "class": "VMCSModes::DefaultImplementation",
+  "signature": "bool fn_004F9AA0(void* self)",
+  "summary": "Returns true when the vector reached via this-\u003efield_0x8 -\u003e -\u003e0x14 -\u003e -\u003e0x34 -\u003e OglRenderer::vfunc_118 -\u003e vtable[7] is empty (begin == nullptr or begin == end).",
+  "fields": [
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:52:49Z"
+}
