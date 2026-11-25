@@ -973,3 +973,16 @@ extern void __thiscall fn_0079E4B0(
     ext_006D80A0();
 }
 } // namespace lift_0079E4B0
+
+// [0x0079EBE0] sub_0079EBE0 (16 bytes)
+namespace lift_0079EBE0 {
+// Known callee 0x0079EBD0: sub_0079EBD0 (Returns global int32 value from mem_00B61148.)
+extern int32_t __cdecl ext_0079EBD0(void);
+
+// @name sub_0079EBE0
+// @summary Calls ext_0079EBD0 to get a pointer-sized address and returns the int32 stored at it.
+extern int32_t __cdecl fn_0079EBE0(void) {
+    const uintptr_t addr = static_cast<uintptr_t>(static_cast<uint32_t>(ext_0079EBD0()));
+    return *reinterpret_cast<const int32_t*>(addr);
+}
+} // namespace lift_0079EBE0

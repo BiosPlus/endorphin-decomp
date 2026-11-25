@@ -65218,6 +65218,12 @@
     "summary": "Returns global int32 value from mem_00B61148.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x0079EBE0": {
+    "name": "sub_0079EBE0",
+    "signature": "extern \"C\" int32_t __cdecl fn_0079EBE0(void)",
+    "summary": "Calls ext_0079EBD0 to get a pointer-sized address and returns the int32 stored at it.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079F2E0": {
     "name": "sub_0079F2E0 (descriptiveName: IsAnyKnownValue)",
     "signature": "BOOLEAN __stdcall fn_0079F2E0(DWORD value)",
