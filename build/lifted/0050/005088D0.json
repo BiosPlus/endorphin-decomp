@@ -1,0 +1,40 @@
+{
+  "va": "0x005088D0",
+  "size": 85,
+  "orig_symbol": "sub_005088D0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "Unknown::initVtableAndDefaults_005088D0",
+  "class": "Unknown",
+  "signature": "void fn_005088D0(void* self)",
+  "summary": "Sets the vtable, default-constructs a std::string at +0x04, and initializes two floats (+0x20 = 0.0f, +0x24 = 1.0f).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "name"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:08:25Z"
+}

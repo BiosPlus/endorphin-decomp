@@ -840,3 +840,35 @@ void fn_00508790(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_00508790
+
+// [0x005088D0] sub_005088D0 (85 bytes)
+namespace lift_005088D0 {
+// Known callee 0x00661980: setVtable_0093BFB4 (Stores the vtable address 0x0093BFB4 into the first dword of the object pointed to by ECX (this).)
+extern void ext_00661980(void* self);
+// Import slot holding the MSVCP80 std::basic_string<char> default-constructor thunk.
+extern int mem_00924FE8;
+
+// @name Unknown::initVtableAndDefaults_005088D0
+// @class Unknown
+// @summary Sets the vtable, default-constructs a std::string at +0x04, and initializes two floats (+0x20 = 0.0f, +0x24 = 1.0f).
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x04 std::string name
+// @field Unknown +0x20 float field_0x20
+// @field Unknown +0x24 float field_0x24
+void fn_005088D0(void* self) {
+    // The original SEH frame setup/teardown (fs:[0] push/restore) is MSVC-specific
+    // exception bookkeeping and is omitted here.
+    ext_00661980(self);
+
+    // Default-construct the string member at this+0x04 via the imported thunk.
+    using StringCtorFn = void (*)(void*);
+    auto string_ctor = reinterpret_cast<StringCtorFn>(static_cast<uintptr_t>(mem_00924FE8));
+    string_ctor(static_cast<uint8_t*>(self) + 4);
+
+    // Final vtable value is 0x0094F8D4 (overwrites the value set by ext_00661980).
+    lift_field<uint32_t>(self, 0) = 0x0094F8D4u;
+
+    lift_field<float>(self, 0x20) = 0.0f;
+    lift_field<float>(self, 0x24) = 1.0f;
+}
+} // namespace lift_005088D0
