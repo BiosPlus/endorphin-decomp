@@ -16274,6 +16274,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType\u003cNMData::State\u003e::vfunc_4 (NMData::State::getFileName)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004DEC00": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData,bool\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, bool, {public: void __thiscall NMData::AnimationEventData::setIsPassiveAnimationEnabled(bool), 0}\u003e",
+    "signature": "void fn_004DEC00(void* out)",
+    "summary": "One-time guarded init of a static object (sets vtable, calls 0x67A670 with arg 0), then writes the object's address into the out-pointer's +4 slot.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004DEC80": {
     "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0\u003e",

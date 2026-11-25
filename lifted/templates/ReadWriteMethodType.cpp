@@ -10375,3 +10375,31 @@ void __stdcall fn_004DF460(void* self) {
         static_cast<void*>(&mem_00AE643C);
 }
 } // namespace lift_004DF460
+
+// [0x004DEC00] ExprParser::ReadWriteMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, bool, {public: void __thiscall NMData::AnimationEventData::setIsPassiveAnimationEnabled(bool), 0}>::vfunc_40 (122 bytes)
+namespace lift_004DEC00 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self, one stack arg)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+// Guard dword for the function-local static object.
+extern int mem_00AE6430;
+// Storage of the function-local static object (its first DWORD is the vtable pointer).
+extern int mem_00AE642C;
+
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData,bool>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, bool, {public: void __thiscall NMData::AnimationEventData::setIsPassiveAnimationEnabled(bool), 0}>
+// @summary One-time guarded init of a static object (sets vtable, calls 0x67A670 with arg 0), then writes the object's address into the out-pointer's +4 slot.
+// @field ExprParser::ReadWriteMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, bool, {public: void __thiscall NMData::AnimationEventData::setIsPassiveAnimationEnabled(bool), 0}> +0x04 DWORD field_0x04
+void fn_004DEC00(void* out) {
+    DWORD* guard = reinterpret_cast<DWORD*>(&mem_00AE6430);
+    DWORD* obj = reinterpret_cast<DWORD*>(&mem_00AE642C);
+
+    if ((*guard & 1u) == 0) {
+        *guard |= 1u;
+        ext_0067A670(obj, 0);
+        *obj = 0x0094A10Cu;
+    }
+
+    *reinterpret_cast<DWORD*>(static_cast<uint8_t*>(out) + 4) =
+        static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_004DEC00
