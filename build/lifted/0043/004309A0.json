@@ -1,0 +1,21 @@
+{
+  "va": "0x004309A0",
+  "size": 38,
+  "orig_symbol": "sub_004309A0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "syncObjectFlagFromGlobal",
+  "signature": "int32_t __stdcall fn_004309A0(void* obj)",
+  "summary": "Queries bit flag 4 on the global sub-object and passes it to the target object's vtable+0x04 method.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:31:29Z"
+}
