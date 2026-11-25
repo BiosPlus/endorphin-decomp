@@ -35593,6 +35593,13 @@
     "summary": "If flag bit 0 is clear: when the one-shot byte at +0x10 is set, runs AppendNewlineOnce and the flush helper; then decrements the count at +0x0C and sets the one-shot byte at +0x10.",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x00640D00": {
+    "name": "AdvXMLParser::Comment::Generate",
+    "class": "AdvXMLParser::Comment",
+    "signature": "extern \"C\" void __thiscall fn_00640D00(void* self, void* ctx)",
+    "summary": "Serializes an XML comment node (\"\u003c!--\" + text + \"--\u003e\") to the output context.",
+    "lifted_path": "lifted/AdvXMLParser/Comment.cpp"
+  },
   "0x00641760": {
     "name": "TreeNode::EraseSubtree",
     "class": "TreeNode",
