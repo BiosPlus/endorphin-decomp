@@ -28008,6 +28008,12 @@
     "summary": "Lazily initializes and returns a pointer to the static singleton at 0x00B43CAC.",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
+  "0x005B82A0": {
+    "name": "getSingleton_005B82A0",
+    "signature": "void* fn_005B82A0()",
+    "summary": "Lazily initializes and returns the singleton object at 0x00B43CB4.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B8660": {
     "name": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getNearestGeomPoint\u003e::vfunc_16",
     "class": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getNearestGeomPoint\u003e",

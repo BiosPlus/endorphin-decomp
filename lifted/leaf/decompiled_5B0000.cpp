@@ -589,3 +589,22 @@ void* fn_005B81E0() {
     return &mem_00B43CA4;
 }
 } // namespace lift_005B81E0
+
+// [0x005B82A0]
+namespace lift_005B82A0 {
+extern uint32_t mem_00B43CB8;
+extern uint32_t mem_00B43CB4;
+
+extern void ext_0067A670(void* self);
+
+// @name getSingleton_005B82A0
+// @summary Lazily initializes and returns the singleton object at 0x00B43CB4.
+void* fn_005B82A0() {
+    if ((mem_00B43CB8 & 1u) == 0) {
+        mem_00B43CB8 |= 1u;
+        ext_0067A670(&mem_00B43CB4);
+        mem_00B43CB4 = 0x00960E64u;
+    }
+    return &mem_00B43CB4;
+}
+} // namespace lift_005B82A0
