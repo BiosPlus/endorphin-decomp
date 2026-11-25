@@ -119,3 +119,23 @@ DWORD initStaticObjectOnce() {
     return 0x00AE9F24u;
 }
 } // namespace lift_004F91F0
+
+// [0x004F9250] sub_004F9250 (87 bytes)
+namespace lift_004F9250 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AE9F30; // init guard flags (bit 0 = initialized)
+extern DWORD mem_00AE9F2C; // function-local static object storage
+
+// @name getLazyStaticObject
+// @summary Lazily initializes a function-local static object once and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_004F9250() {
+    if ((mem_00AE9F30 & 1u) == 0) {
+        mem_00AE9F30 |= 1u;
+        ext_0067A670(&mem_00AE9F2C, 0u);
+        mem_00AE9F2C = 0x0094D1ECu;
+    }
+    return &mem_00AE9F2C;
+}
+} // namespace lift_004F9250

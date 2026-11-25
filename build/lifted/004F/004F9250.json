@@ -1,0 +1,21 @@
+{
+  "va": "0x004F9250",
+  "size": 87,
+  "orig_symbol": "sub_004F9250",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "getLazyStaticObject",
+  "signature": "extern \"C\" DWORD mem_00AE9F30; // init guard flags (bit 0 = initialized) extern \"C\" DWORD mem_00AE9F2C; // function-local static object storage void* fn_004F9250()",
+  "summary": "Lazily initializes a function-local static object once and returns its address.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:34:35Z"
+}

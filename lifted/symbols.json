@@ -16942,6 +16942,12 @@
     "summary": "If the pointer stored at self is non-null, leave the critical section stored in that object's first field, then pass the object to MFC80 ord_764.",
     "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
+  "0x004F9250": {
+    "name": "getLazyStaticObject",
+    "signature": "extern \"C\" DWORD mem_00AE9F30; // init guard flags (bit 0 = initialized) extern \"C\" DWORD mem_00AE9F2C; // function-local static object storage void* fn_004F9250()",
+    "summary": "Lazily initializes a function-local static object once and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F9800": {
     "name": "initVtableAndStoreTwoArgsAlt",
     "class": "Unknown",
