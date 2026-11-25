@@ -7728,6 +7728,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x004694E0": {
+    "name": "checkSubObjectBitFlag",
+    "signature": "bool __thiscall fn_004694E0(void* self, uint32_t index)",
+    "summary": "Checks if the object is enabled at +0x10 and its sub-object at +0x1c has the given bit flag set.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00469530": {
     "name": "Unknown::DispatchToIndexedChild",
     "class": "Unknown",

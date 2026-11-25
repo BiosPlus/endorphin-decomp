@@ -1,0 +1,27 @@
+{
+  "va": "0x006E9610",
+  "size": 112,
+  "orig_symbol": "sub_006E9610",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "countItemsByType",
+  "signature": "extern \"C\" int32_t __fastcall fn_006E9610(void* self, void* /*edx*/, int32_t type)",
+  "summary": "Counts items in array at +0x8c matching the given type, or returns total count if type is 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x7C",
+      "type": "int32_t",
+      "name": "field_0x7c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8C",
+      "type": "uint32_t*",
+      "name": "field_0x8c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T05:09:54Z"
+}
