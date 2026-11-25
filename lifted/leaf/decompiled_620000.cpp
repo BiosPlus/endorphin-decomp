@@ -2674,3 +2674,45 @@ void fn_00624DC0(void* self) {
     lift_field<uint32_t>(self, 4) = par;
 }
 } // namespace lift_00624DC0
+
+// [0x006267B0] sub_006267B0 (111 bytes)
+namespace lift_006267B0 {
+// Known callee 0x0060B910: unknown::ctorWithTwoStrings (Constructor: stamps vtable 0x009720F4 at this+0, default-constructs the std::string members at this+0x04 and this+0x20 via MSVCP80, zeroes the dwords at this+0x3C and this+0x40, and returns this. Exception-frame setup from the original is omitted.)
+extern void* ext_0060B910(void* self);
+
+// Known callee 0x0063D8F0: initFields (Initializes float, integer, and flag fields on the object to default values (0.0f, 10.0f, 20.0f, 0, and 1).)
+extern void ext_0063D8F0(void* self);
+
+// Vtable for this class (0x00977734).
+extern char mem_00977734[];
+
+// @name Unknown::ctorFloatFields_006267B0
+// @class Unknown
+// @summary Constructor: runs base ctor, stamps vtable 0x00977734, zeroes twelve floats at this+0x44..+0x70, then calls initFields and returns this.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x44 float field_0x44
+// @field Unknown +0x48 float field_0x48
+// @field Unknown +0x4C float field_0x4C
+// @field Unknown +0x50 float field_0x50
+// @field Unknown +0x54 float field_0x54
+// @field Unknown +0x58 float field_0x58
+// @field Unknown +0x5C float field_0x5C
+// @field Unknown +0x60 float field_0x60
+// @field Unknown +0x64 float field_0x64
+// @field Unknown +0x68 float field_0x68
+// @field Unknown +0x6C float field_0x6C
+// @field Unknown +0x70 float field_0x70
+void* fn_006267B0(void* self) {
+    ext_0060B910(self);
+
+    *static_cast<void**>(self) = static_cast<void*>(mem_00977734);
+
+    auto* base = static_cast<std::uint8_t*>(self) + 0x44;
+    for (std::uintptr_t off = 0; off < 0x2C + 4; off += 4) {
+        *reinterpret_cast<float*>(base + off) = 0.0f;
+    }
+
+    ext_0063D8F0(self);
+    return self;
+}
+} // namespace lift_006267B0

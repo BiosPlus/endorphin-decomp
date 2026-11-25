@@ -6421,6 +6421,12 @@
     "summary": "Returns address of global mem_00937A1C.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0045AEE0": {
+    "name": "getWindowTextAsFloat",
+    "signature": "float __stdcall fn_0045AEE0(void* wnd)",
+    "summary": "Reads the window text of a CWnd into a string and parses it as a float using atof.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x0045B080": {
     "name": "ToolsPropertyPage::vfunc_1",
     "class": "ToolsPropertyPage",
@@ -38919,6 +38925,13 @@
     "name": "FindStringTableIndex",
     "signature": "int32_t fn_00626770(const void* arg)",
     "summary": "Scans a 9-entry string-pointer table and returns the index of the first entry equal to the argument (0 if none match).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x006267B0": {
+    "name": "Unknown::ctorFloatFields_006267B0",
+    "class": "Unknown",
+    "signature": "void* fn_006267B0(void* self)",
+    "summary": "Constructor: runs base ctor, stamps vtable 0x00977734, zeroes twelve floats at this+0x44..+0x70, then calls initFields and returns this.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x00626820": {
