@@ -164,3 +164,40 @@ void fn_006098F0(void* self) {
     construct_default_string(static_cast<uint8_t*>(self) + 0x20);
 }
 } // namespace lift_006098F0
+
+// [0x00609670]
+namespace lift_00609670 {
+// @name StringPairKey::operator<
+// @class StringPairKey
+// @summary Lexicographically compares two std::string fields at +0x04 and +0x20.
+// @field StringPairKey +0x04 std::string field_0x04
+// @field StringPairKey +0x20 std::string field_0x20
+
+
+extern uint32_t mem_00924EF4;
+extern uint32_t mem_00924FC4;
+
+using str_cmp_fn = uint8_t(__cdecl*)(const void*, const void*);
+
+uint32_t __fastcall sub_00609670(uint32_t this_ptr, uint32_t /*edx*/, uint32_t other_ptr) {
+    const auto str_lt = reinterpret_cast<str_cmp_fn>(static_cast<uintptr_t>(mem_00924EF4));
+    const auto str_eq = reinterpret_cast<str_cmp_fn>(static_cast<uintptr_t>(mem_00924FC4));
+
+    const void* lhs_first = reinterpret_cast<const void*>(static_cast<uintptr_t>(this_ptr + 0x4));
+    const void* rhs_first = reinterpret_cast<const void*>(static_cast<uintptr_t>(other_ptr + 0x4));
+
+    if (str_lt(lhs_first, rhs_first) != 0) {
+        return 1;
+    }
+
+    if (str_eq(lhs_first, rhs_first) != 0) {
+        const void* lhs_second = reinterpret_cast<const void*>(static_cast<uintptr_t>(this_ptr + 0x20));
+        const void* rhs_second = reinterpret_cast<const void*>(static_cast<uintptr_t>(other_ptr + 0x20));
+        if (str_lt(lhs_second, rhs_second) != 0) {
+            return 1;
+        }
+    }
+
+    return 0;
+}
+} // namespace lift_00609670
