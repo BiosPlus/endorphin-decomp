@@ -1904,3 +1904,46 @@ int32_t __thiscall sub_006FB550(uintptr_t this_ptr, uintptr_t arg0) {
     return -1;
 }
 } // namespace lift_006FB550
+
+// [0x006FBCE0]
+namespace lift_006FBCE0 {
+// @name cleanupInvalidEntries
+// @summary Iterates backwards over a 12-byte entry array and invokes ext_006FBC50 on matching non-null sub-entries.
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 int32_t field_0x14
+// @field Unknown +0x18 int32_t field_0x18
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern void __thiscall ext_006FBC50(uint32_t self, uint32_t arg1);
+
+extern void __thiscall sub_006FBCE0(uint32_t self) {
+    int32_t idx = static_cast<int32_t>(mem_read32(self + 0x18)) - 1;
+    if (idx < 0) {
+        return;
+    }
+
+    do {
+        uint32_t base_offset = mem_read32(self + 0x14);
+        uint32_t array_ptr = mem_read32(self + 0x10);
+        uint32_t entry_addr = array_ptr + (base_offset + static_cast<uint32_t>(idx)) * 12;
+
+        uint32_t obj_ptr = mem_read32(entry_addr + 0x4);
+        if (obj_ptr != 0) {
+            if (mem_read32(obj_ptr) == mem_read32(entry_addr)) {
+                uint32_t sub_val = mem_read32(obj_ptr + 0x4);
+                if (sub_val != 0) {
+                    ext_006FBC50(self, sub_val);
+                }
+            }
+        }
+
+        int32_t count = static_cast<int32_t>(mem_read32(self + 0x18));
+        if (idx > count) {
+            idx = count - 1;
+        } else {
+            idx -= 1;
+        }
+    } while (idx >= 0);
+}
+} // namespace lift_006FBCE0
