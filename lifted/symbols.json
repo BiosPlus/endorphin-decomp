@@ -39975,6 +39975,12 @@
     "summary": "Clears this-\u003efield_0x68, loads it from obj-\u003e+0x22C-\u003e+0x158-\u003e+0xAC when that chain is non-null, then calls embedded-base vslot 5 with arg2 and passes the result to this vslot 0x2B; returns that call's result.",
     "lifted_path": "lifted/classes/NullRelationship.cpp"
   },
+  "0x00645B50": {
+    "name": "GetOnceInitString_00645B50",
+    "signature": "void* fn_00645B50(void)",
+    "summary": "Thread-unsafe one-time initializer for a static string global; returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00645D30": {
     "name": "MagnetJoint::vfunc_3",
     "class": "MagnetJoint",

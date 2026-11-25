@@ -1,0 +1,13 @@
+{
+  "va": "0x00645B50",
+  "size": 95,
+  "orig_symbol": "sub_00645B50",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "GetOnceInitString_00645B50",
+  "signature": "void* fn_00645B50(void)",
+  "summary": "Thread-unsafe one-time initializer for a static string global; returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:33:54Z"
+}

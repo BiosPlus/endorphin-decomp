@@ -1921,3 +1921,25 @@ void fn_0064F950(void* self) {
 }
 } // namespace lift_00649840
 } // namespace lift_0064F950
+
+// [0x00645B50] sub_00645B50 (95 bytes)
+namespace lift_00645B50 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+// Constructs the static string object at mem_00B5446C from the literal at 0x00A9BCE8.
+extern void* ext_0066AD10(void* out_str, const char* init);
+// Registers the static object's destructor (0x00920910) for process exit.
+extern void ext_006A6C87(void* dtor);
+extern int mem_00B54488;   // guard byte: bit 0 = initialized
+extern int mem_00B5446C;   // static object storage
+
+// @name GetOnceInitString_00645B50
+// @summary Thread-unsafe one-time initializer for a static string global; returns its address.
+void* fn_00645B50(void) {
+    if ((mem_00B54488 & 1) == 0) {
+        mem_00B54488 |= 1;
+        ext_0066AD10(&mem_00B5446C, reinterpret_cast<const char*>(0x00A9BCE8));
+        ext_006A6C87(reinterpret_cast<void*>(0x00920910));
+    }
+    return &mem_00B5446C;
+}
+} // namespace lift_00645B50
