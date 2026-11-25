@@ -854,3 +854,45 @@ uint32_t fn_007BBB90(void* self, uint32_t cursor, uint32_t remaining, uint32_t a
     return remaining == 0 ? 1u : 0u;
 }
 } // namespace lift_007BBB90
+
+// [0x007BF2F0] sub_007BF2F0 (74 bytes)
+namespace lift_007BF2F0 {
+// Known callee 0x0079AF50: GlobalFreeWrapper (Frees a global memory handle via KERNEL32!GlobalFree and returns its result.)
+extern HGLOBAL ext_0079AF50(HGLOBAL hMem);
+
+// Little-endian 32-bit guest memory access (the original is 32-bit x86 code).
+static inline uint32_t rd32(uintptr_t addr) {
+    uint32_t v;
+    std::memcpy(&v, reinterpret_cast<const void*>(addr), sizeof v);
+    return v;
+}
+
+static inline void wr32(uintptr_t addr, uint32_t v) {
+    std::memcpy(reinterpret_cast<void*>(addr), &v, sizeof v);
+}
+
+// @name Unknown::releaseHandleHolder
+// @class Unknown_Fields
+// @summary If self->+0x1CC holds a handle-holder, free its inner handle (+0x5C if +0x40 is set, else +0x64) and the holder itself, then clear the slot.
+// @field Unknown_Fields +0x1CC void* handleHolder (freed via GlobalFree, cleared to 0)
+// @field HandleHolder +0x40 uint32_t field_0x40 (selects which inner-handle slot is used when nonzero)
+// @field HandleHolder +0x5C uint32_t innerHandle (preferred inner handle when +0x40 != 0)
+// @field HandleHolder +0x64 uint32_t field_0x64 (inner handle used when +0x40 == 0)
+void fn_007BF2F0(void* self) {
+    const uintptr_t base = reinterpret_cast<uintptr_t>(self);
+
+    const uintptr_t holder = rd32(base + 0x1CC);
+    if (holder == 0) {
+        return;
+    }
+
+    const uint32_t inner = (rd32(holder + 0x40) != 0) ? rd32(holder + 0x5C)
+                                                      : rd32(holder + 0x64);
+    if (inner != 0) {
+        ext_0079AF50(reinterpret_cast<HGLOBAL>(static_cast<uintptr_t>(inner)));
+    }
+
+    ext_0079AF50(reinterpret_cast<HGLOBAL>(holder));
+    wr32(base + 0x1CC, 0);
+}
+} // namespace lift_007BF2F0

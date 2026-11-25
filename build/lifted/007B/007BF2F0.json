@@ -1,0 +1,40 @@
+{
+  "va": "0x007BF2F0",
+  "size": 74,
+  "orig_symbol": "sub_007BF2F0",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "Unknown::releaseHandleHolder",
+  "class": "Unknown_Fields",
+  "signature": "static inline uint32_t rd32(uintptr_t addr)",
+  "summary": "If self-\u003e+0x1CC holds a handle-holder, free its inner handle (+0x5C if +0x40 is set, else +0x64) and the holder itself, then clear the slot.",
+  "fields": [
+    {
+      "class": "Unknown_Fields",
+      "offset": "+0x1CC",
+      "type": "void* handleHolder (freed via GlobalFree, cleared to",
+      "name": "0)"
+    },
+    {
+      "class": "HandleHolder",
+      "offset": "+0x40",
+      "type": "uint32_t field_0x40 (selects which inner-handle slot is used when",
+      "name": "nonzero)"
+    },
+    {
+      "class": "HandleHolder",
+      "offset": "+0x5C",
+      "type": "uint32_t innerHandle (preferred inner handle when +0x40 !=",
+      "name": "0)"
+    },
+    {
+      "class": "HandleHolder",
+      "offset": "+0x64",
+      "type": "uint32_t field_0x64 (inner handle used when +0x40 ==",
+      "name": "0)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:36:13Z"
+}

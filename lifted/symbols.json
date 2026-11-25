@@ -58210,6 +58210,13 @@
     "summary": "Fills 1125 blocks of 8 dwords (stride 8, walking backward 0x40 per block) plus one trailing dword in a table at self-\u003e+0x5c+0x11940 with -1.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BF2F0": {
+    "name": "Unknown::releaseHandleHolder",
+    "class": "Unknown_Fields",
+    "signature": "static inline uint32_t rd32(uintptr_t addr)",
+    "summary": "If self-\u003e+0x1CC holds a handle-holder, free its inner handle (+0x5C if +0x40 is set, else +0x64) and the holder itself, then clear the slot.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BF4A0": {
     "name": "Unknown::applyScaledDeltaToPair",
     "class": "Unknown",
