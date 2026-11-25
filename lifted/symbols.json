@@ -63773,6 +63773,12 @@
     "summary": "Fetches the indexed dword via ext_0072BC70; if it is non-zero returns it plus 0x50, otherwise returns the constant 0xB60020.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
+  "0x0072BF70": {
+    "name": "sub_0072BF70",
+    "signature": "extern \"C\" void fn_0072BF70(uint32_t self)",
+    "summary": "Destructor/cleanup helper that frees field_0x10, clears field_0x64, and destroys subobject at +0x18.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x0072C050": {
     "name": "sub_0072C050",
     "signature": "extern \"C\" void __fastcall fn_0072C050(void* self, int edx_unused, uint8_t value)",
