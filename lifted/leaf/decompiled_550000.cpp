@@ -1045,3 +1045,27 @@ uint32_t fn_005528F0(uint32_t ecx) {
     return ecx;
 }
 } // namespace lift_005528F0
+
+// [0x0055F340] sub_0055F340 (77 bytes)
+namespace lift_0055F340 {
+// @name LowerBoundFloatKey16
+// @summary Binary search over 16-byte records keyed by their leading float; returns the first record whose key is not less than *key (std::lower_bound semantics).
+void* fn_0055F340(void* begin, void* end, const float* key) {
+    uint8_t* first = static_cast<uint8_t*>(begin);
+    ptrdiff_t count = (static_cast<uint8_t*>(end) - first) / 16;
+
+    while (count > 0) {
+        ptrdiff_t half = count / 2;
+        uint8_t* mid = first + half * 16;
+        if (*key > *reinterpret_cast<const float*>(mid)) {
+            // record key < *key: search the upper half
+            first = mid + 16;
+            count = count - half - 1;
+        } else {
+            // record key >= *key (or unordered): search the lower half
+            count = half;
+        }
+    }
+    return first;
+}
+} // namespace lift_0055F340

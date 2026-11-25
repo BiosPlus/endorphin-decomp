@@ -21568,6 +21568,12 @@
     "summary": "Copies a range of 16-byte (4 x float) elements from [srcBegin, srcEnd) to dst; no-op for an empty range, and skips the store when dst is null.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x0055F340": {
+    "name": "LowerBoundFloatKey16",
+    "signature": "void* fn_0055F340(void* begin, void* end, const float* key)",
+    "summary": "Binary search over 16-byte records keyed by their leading float; returns the first record whose key is not less than *key (std::lower_bound semantics).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x0055F390": {
     "name": "descriptiveName: fillVec4Array",
     "signature": "void fillVec4Array(float* dst, uint32_t count, const float* src)",
