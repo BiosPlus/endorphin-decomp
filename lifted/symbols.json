@@ -1385,6 +1385,12 @@
     "summary": "Destructor tail-call: restores vtable mem_0092C764 and tail-calls base destructor sub_00404650.",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x0041603E": {
+    "name": "GetSysColor_BtnFace",
+    "signature": "extern \"C\" DWORD __stdcall fn_0041603E(int /*unused*/)",
+    "summary": "Returns the system color COLOR_BTNFACE (index 15) by tail-calling USER32!GetSysColor through the IAT slot mem_00925680; the incoming argument is discarded.",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
   "0x004160A0": {
     "name": "sub_004160A0",
     "signature": "void sub_004160A0(uint32_t arg0, uint32_t arg1)",

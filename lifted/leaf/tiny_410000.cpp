@@ -417,3 +417,16 @@ void fn_00410310(void* self, DWORD value) {
     redraw(hwnd, nullptr, nullptr, 0x105u);
 }
 } // namespace lift_00410310
+
+// [0x0041603E] sub_0041603E (14 bytes)
+namespace lift_0041603E {
+extern int mem_00925680;
+
+// @name GetSysColor_BtnFace
+// @summary Returns the system color COLOR_BTNFACE (index 15) by tail-calling USER32!GetSysColor through the IAT slot mem_00925680; the incoming argument is discarded.
+extern DWORD __stdcall fn_0041603E(int /*unused*/) {
+    using GetSysColorFn = DWORD(__stdcall*)(int nIndex);
+    auto getSysColor = reinterpret_cast<GetSysColorFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925680)));
+    return getSysColor(15);
+}
+} // namespace lift_0041603E

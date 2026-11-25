@@ -1,0 +1,13 @@
+{
+  "va": "0x0041603E",
+  "size": 14,
+  "orig_symbol": "sub_0041603E",
+  "src_path": "src/leaf/tiny_410000.cpp",
+  "lifted_path": "lifted/leaf/tiny_410000.cpp",
+  "name": "GetSysColor_BtnFace",
+  "signature": "extern \"C\" DWORD __stdcall fn_0041603E(int /*unused*/)",
+  "summary": "Returns the system color COLOR_BTNFACE (index 15) by tail-calling USER32!GetSysColor through the IAT slot mem_00925680; the incoming argument is discarded.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:23:07Z"
+}
