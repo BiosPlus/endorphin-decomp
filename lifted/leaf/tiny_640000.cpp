@@ -995,3 +995,15 @@ float fn_00648930(void* self) {
 }
 } // namespace lift_0046C110
 } // namespace lift_00648930
+
+// [0x00640930] sub_00640930 (9 bytes)
+namespace lift_00640930 {
+// @name fn_00640930 (decrement dword at +0x0C, set byte at +0x10 = 1)
+// @summary Decrements the 32-bit counter at this+0x0C (wrapping) and sets the byte flag at this+0x10 to 1.
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint8_t field_0x10
+void fn_00640930(void* self) {
+    lift_field<uint32_t>(self, 0x0C) += 0xFFFFFFFFu;
+    lift_field<uint8_t>(self, 0x10) = 1;
+}
+} // namespace lift_00640930

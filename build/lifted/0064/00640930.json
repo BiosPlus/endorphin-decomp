@@ -1,0 +1,27 @@
+{
+  "va": "0x00640930",
+  "size": 9,
+  "orig_symbol": "sub_00640930",
+  "src_path": "src/leaf/tiny_640000.cpp",
+  "lifted_path": "lifted/leaf/tiny_640000.cpp",
+  "name": "fn_00640930 (decrement dword at +0x0C, set byte at +0x10 = 1)",
+  "signature": "void fn_00640930(void* self)",
+  "summary": "Decrements the 32-bit counter at this+0x0C (wrapping) and sets the byte flag at this+0x10 to 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:16:00Z"
+}

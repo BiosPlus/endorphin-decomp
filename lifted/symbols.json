@@ -39733,6 +39733,12 @@
     "summary": "Initializes a 18-byte record at self: stores arg2 at +0x00, arg1 at +0x04 (defaulting to \u0026mem_0092F67C when zero), arg0 at +0x08, zeroes +0x0C and the two flag bytes at +0x10/+0x11. Callee-cleans 12 bytes.",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x00640930": {
+    "name": "fn_00640930 (decrement dword at +0x0C, set byte at +0x10 = 1)",
+    "signature": "void fn_00640930(void* self)",
+    "summary": "Decrements the 32-bit counter at this+0x0C (wrapping) and sets the byte flag at this+0x10 to 1.",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
   "0x00640940": {
     "name": "Unknown::AppendNewlineOnce",
     "class": "Unknown",
