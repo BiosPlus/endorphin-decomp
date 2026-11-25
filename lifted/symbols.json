@@ -20463,6 +20463,13 @@
     "summary": "Sets the vtable pointer at offset 0 of the object in ecx and returns this.",
     "lifted_path": "lifted/leaf/tiny_530000.cpp"
   },
+  "0x0053F570": {
+    "name": "NullRenderer::vfunc_118",
+    "class": "NullRenderer",
+    "signature": "void* fn_0053F570(void* self)",
+    "summary": "Lazily initializes a static object on first call (guarded by bit 0 of mem_00AF0BA0) and returns its address.",
+    "lifted_path": "lifted/classes/NullRenderer.cpp"
+  },
   "0x0053F5D0": {
     "name": "NullRenderer::vfunc_0",
     "class": "NullRenderer",

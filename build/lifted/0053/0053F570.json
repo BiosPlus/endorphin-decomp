@@ -1,0 +1,14 @@
+{
+  "va": "0x0053F570",
+  "size": 90,
+  "orig_symbol": "NullRenderer::vfunc_118",
+  "src_path": "src/classes/NullRenderer.cpp",
+  "lifted_path": "lifted/classes/NullRenderer.cpp",
+  "name": "NullRenderer::vfunc_118",
+  "class": "NullRenderer",
+  "signature": "void* fn_0053F570(void* self)",
+  "summary": "Lazily initializes a static object on first call (guarded by bit 0 of mem_00AF0BA0) and returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:19:13Z"
+}
