@@ -1058,3 +1058,29 @@ void fn_0049E4C0(uint32_t* dst, uint32_t value) {
     dst[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
 }
 } // namespace lift_0049E4C0
+
+// [0x0049D390] sub_0049D390 (87 bytes)
+namespace lift_0049D390 {
+// Known callee 0x0049CFF0: ensureStaticObjectInitialized_0049CFF0 (One-time initializer guarded by bit 0 of mem_00ADD818; initializes the static object at mem_00ADD814 and returns its address.)
+extern void* ext_0049CFF0();
+extern int mem_00B599BC;
+
+// @name initPairWithStaticHandle
+// @summary Writes a value into dst[0], stores the static object handle into dst[1], and returns dst.
+// @field Pair +0x00 uint32_t field_0x00
+// @field Pair +0x04 uint32_t field_0x04
+void* fn_0049D390(void* dst, uint32_t value) {
+    auto* out = static_cast<uint32_t*>(dst);
+
+    // Pre-initialize both slots (original code zeroes [dst] and seeds [dst+4] from mem_00B599BC).
+    out[0] = 0;
+    out[1] = static_cast<uint32_t>(mem_00B599BC);
+
+    // One-time initialization of the static object; returns its address.
+    void* handle = ext_0049CFF0();
+
+    out[0] = value;
+    out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(handle));
+    return dst;
+}
+} // namespace lift_0049D390

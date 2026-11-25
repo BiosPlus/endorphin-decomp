@@ -10996,6 +10996,12 @@
     "summary": "One-time initializer guarded by bit 0 of mem_00ADD818; initializes the static object at mem_00ADD814 and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x0049D390": {
+    "name": "initPairWithStaticHandle",
+    "signature": "void* fn_0049D390(void* dst, uint32_t value)",
+    "summary": "Writes a value into dst[0], stores the static object handle into dst[1], and returns dst.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049D3F0": {
     "name": "storeValueAndStaticObjectAddr",
     "signature": "void fn_0049D3F0(uint32_t* out, uint32_t value)",

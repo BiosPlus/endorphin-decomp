@@ -1,0 +1,27 @@
+{
+  "va": "0x0049D390",
+  "size": 87,
+  "orig_symbol": "sub_0049D390",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "initPairWithStaticHandle",
+  "signature": "void* fn_0049D390(void* dst, uint32_t value)",
+  "summary": "Writes a value into dst[0], stores the static object handle into dst[1], and returns dst.",
+  "fields": [
+    {
+      "class": "Pair",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Pair",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:31:24Z"
+}
