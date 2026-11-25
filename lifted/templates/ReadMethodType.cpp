@@ -47374,3 +47374,30 @@ void fn_005D3410(void* self) {
     ext_006A6DD2(exception, mem_009DEC1C);
 }
 } // namespace lift_005D3410
+
+// [0x004B8AA0]
+namespace lift_004B8AA0 {
+extern void __cdecl ext_0046C4E0(float value);
+extern void* __fastcall ext_0046C3C0(void* self);
+extern void __cdecl ext_006A6DD2(void* exception_object, void* throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::EngineData,getUnitMass>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the object pointer from the holder (first stack argument); if non-null, passes the EngineData float at +0x48 (unit mass) to ext_0046C4E0, then always constructs a DerivedException and throws it.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x48 float field_0x48
+
+extern void __cdecl fn_004B8AA0(void* holder) {
+    void* obj = lift_field<void*>(holder, 0x00);
+    if (obj != nullptr) {
+        float field_0x48 = lift_field<float>(obj, 0x48);
+        ext_0046C4E0(field_0x48);
+    }
+
+    alignas(16) unsigned char exception_object[0x28] = {};
+    ext_0046C3C0(exception_object);
+
+    void* throw_info = reinterpret_cast<void*>(static_cast<std::uintptr_t>(0x009DEC1Cu));
+    ext_006A6DD2(exception_object, throw_info);
+}
+} // namespace lift_004B8AA0

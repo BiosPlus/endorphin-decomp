@@ -14160,6 +14160,13 @@
     "summary": "Checks whether EngineData's unit mass at +0x48 is at least the threshold, throwing if the target pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B8AA0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::EngineData,getUnitMass\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0\u003e",
+    "signature": "extern \"C\" void __cdecl fn_004B8AA0(void* holder)",
+    "summary": "Reads the object pointer from the holder (first stack argument); if non-null, passes the EngineData float at +0x48 (unit mass) to ext_0046C4E0, then always constructs a DerivedException and throws it.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B8CF0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getPosBufferFrameRate, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getPosBufferFrameRate, 0\u003e",
