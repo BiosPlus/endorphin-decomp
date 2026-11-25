@@ -2179,3 +2179,44 @@ void fn_00660710(std::uint8_t* last, std::uint8_t* first) {
     }
 }
 } // namespace lift_00660710
+
+// [0x00665990]
+namespace lift_00665990 {
+extern void (*mem_00925134)(void);
+extern void ext_006A5C5C(void*);
+
+// @name StdList::erase
+// @class StdList
+// @summary Removes a node from a doubly-linked list and returns an iterator to the next node.
+// @field StdList +0x04 void* _Myhead
+// @field StdList +0x08 uint32_t _Mysize
+extern void* __thiscall fn_00665990(void* self, void* ret_iter, void* cont, void* node) {
+    uint8_t* list_ptr = static_cast<uint8_t*>(self);
+    uint8_t* cont_ptr = static_cast<uint8_t*>(cont);
+    uint8_t* node_ptr = static_cast<uint8_t*>(node);
+
+    if (!cont_ptr) {
+        mem_00925134();
+    }
+    if (node_ptr == *reinterpret_cast<uint8_t**>(cont_ptr + 0x4)) {
+        mem_00925134();
+    }
+
+    uint8_t* next_node = *reinterpret_cast<uint8_t**>(node_ptr + 0x0);
+    if (node_ptr != *reinterpret_cast<uint8_t**>(list_ptr + 0x4)) {
+        uint8_t* prev_node = *reinterpret_cast<uint8_t**>(node_ptr + 0x4);
+        *reinterpret_cast<uint8_t**>(prev_node + 0x0) = next_node;
+        uint8_t* cur_next = *reinterpret_cast<uint8_t**>(node_ptr + 0x0);
+        uint8_t* cur_prev = *reinterpret_cast<uint8_t**>(node_ptr + 0x4);
+        *reinterpret_cast<uint8_t**>(cur_next + 0x4) = cur_prev;
+
+        ext_006A5C5C(node_ptr);
+        *reinterpret_cast<uint32_t*>(list_ptr + 0x8) -= 1;
+    }
+
+    uint8_t* out_iter = static_cast<uint8_t*>(ret_iter);
+    *reinterpret_cast<uint8_t**>(out_iter + 0x4) = next_node;
+    *reinterpret_cast<uint8_t**>(out_iter + 0x0) = cont_ptr;
+    return out_iter;
+}
+} // namespace lift_00665990

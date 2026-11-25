@@ -1,0 +1,28 @@
+{
+  "va": "0x00665990",
+  "size": 96,
+  "orig_symbol": "sub_00665990",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "StdList::erase",
+  "class": "StdList",
+  "signature": "extern \"C\" void* __thiscall fn_00665990(void* self, void* ret_iter, void* cont, void* node)",
+  "summary": "Removes a node from a doubly-linked list and returns an iterator to the next node.",
+  "fields": [
+    {
+      "class": "StdList",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "_Myhead"
+    },
+    {
+      "class": "StdList",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "_Mysize"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:37:29Z"
+}
