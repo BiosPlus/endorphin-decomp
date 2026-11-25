@@ -10,7 +10,9 @@
 // Recovered field layout for SpinButtonStates::DragSpinState:
 namespace lifted_layout {
 struct SpinButtonStates_DragSpinState_Fields {
-    // +0x8   void*                    field_0x08  (evidence: 0x00458810)
-    // +0x10  uint32_t                 field_0x10  (evidence: 0x00458810)
+    // +0x4   void*                    field_0x04  (evidence: 0x00458990)
+    // +0x8   void*                    field_0x08  (evidence: 0x00458810, 0x00458990)
+    // +0xC   void*                    field_0x0C  (evidence: 0x00458990)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x00458810, 0x00458990)
 };
 } // namespace lifted_layout
