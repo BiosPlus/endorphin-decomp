@@ -12307,6 +12307,12 @@
     "summary": "If the pointer at +0x08 is non-null, invoke its virtual slot 1 with argument 1.",
     "lifted_path": "lifted/templates/auto_tiny.cpp"
   },
+  "0x004B79B0": {
+    "name": "parseFloatFromString",
+    "signature": "float parseFloatFromString(std::string s)",
+    "summary": "Converts a std::string argument (by value) to float via atof; returns the result in ST0.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B7A10": {
     "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_0",
     "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",

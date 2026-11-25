@@ -4,6 +4,7 @@
 #include <string>
 #include <cstdint>
 #include <cstring>
+#include <cstdlib>
 
 // [0x004B6C90] sub_004B6C90 (34 bytes)
 namespace lift_004B6C90 {
@@ -419,3 +420,12 @@ void fn_004B7340(void* self, uint32_t index) {
     lift_field<std::string>(self, 0x58) = begin[index];
 }
 } // namespace lift_004B7340
+
+// [0x004B79B0]
+namespace lift_004B79B0 {
+// @name parseFloatFromString
+// @summary Converts a std::string argument (by value) to float via atof; returns the result in ST0.
+float parseFloatFromString(std::string s) {
+    return static_cast<float>(std::atof(s.c_str()));
+}
+} // namespace lift_004B79B0

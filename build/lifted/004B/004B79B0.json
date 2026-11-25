@@ -1,0 +1,13 @@
+{
+  "va": "0x004B79B0",
+  "size": 90,
+  "orig_symbol": "sub_004B79B0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "parseFloatFromString",
+  "signature": "float parseFloatFromString(std::string s)",
+  "summary": "Converts a std::string argument (by value) to float via atof; returns the result in ST0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:19:14Z"
+}
