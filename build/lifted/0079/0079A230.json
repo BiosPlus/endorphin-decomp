@@ -1,0 +1,27 @@
+{
+  "va": "0x0079A230",
+  "size": 96,
+  "orig_symbol": "sub_0079A230",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "MeasureNullTerminatedStringTableSize",
+  "signature": "uint32_t fn_0079A230(uintptr_t record, int32_t maxLen, uintptr_t buf)",
+  "summary": "Measures the total byte size of a table of null-terminated strings bounded by a maximum length, reporting an error via ext_0079B140 if the bound is exceeded.",
+  "fields": [
+    {
+      "class": "Record",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x4E",
+      "type": "uint16_t",
+      "name": "stringCount"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:50:18Z"
+}
