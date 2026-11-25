@@ -3856,6 +3856,13 @@
     "summary": "Pure jump thunk forwarding to GetStringLiteral_00440680.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x004406C0": {
+    "name": "Unknown::destructorBody",
+    "class": "Unknown",
+    "signature": "void fn_004406C0(void* self)",
+    "summary": "Sets the object vtable to 0x93240c, tears down the embedded object at +0x78, then destroys two std::string members.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00440770": {
     "name": "Unknown::getNameOrFallbackPtr",
     "class": "Unknown",

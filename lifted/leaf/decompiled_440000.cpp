@@ -2095,3 +2095,29 @@ int fn_0044E100(void* self) {
     return ext_SendMessageA(lift_field<HWND>(self, 0x768), 0x187, 0, 0) == 0 ? 1 : 0;
 }
 } // namespace lift_0044E100
+
+// [0x004406C0] sub_004406C0 (98 bytes)
+namespace lift_004406C0 {
+// Callee: AddCharacterDialog::vfunc_3, invoked on the embedded object at this+0x78.
+extern void ext_00493D90(void* self);
+// Basic-string destructor; address comes from mem_00924FF4 (.rdata u32 0x00628FF0).
+extern void ext_00628FF0(void* self);
+extern uint32_t mem_00924FF4;
+
+// @name Unknown::destructorBody
+// @class Unknown
+// @summary Sets the object vtable to 0x93240c, tears down the embedded object at +0x78, then destroys two std::string members.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x0C std::string field_0x0C
+// @field Unknown +0x28 std::string field_0x28
+// @field Unknown +0x78 uint8_t field_0x78[]
+void fn_004406C0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    lift_field<uint32_t>(base, 0x00) = 0x0093240Cu;
+
+    ext_00493D90(base + 0x78);
+    ext_00628FF0(base + 0x28);
+    ext_00628FF0(base + 0x0C);
+}
+} // namespace lift_004406C0
