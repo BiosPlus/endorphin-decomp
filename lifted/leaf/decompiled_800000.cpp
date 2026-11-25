@@ -1055,3 +1055,40 @@ extern uint32_t fn_0080AA80(uint32_t handle, uint32_t* out_entry) {
     return 0u;
 }
 } // namespace lift_0080AA80
+
+// [0x00802D90]
+namespace lift_00802D90 {
+// @name sub_00802D90
+// @summary Classify array elements against lower/upper bounds into two output int arrays
+// @field +0x04 int32_t field_0x04
+// @field +0x30 float* field_0x30
+// @field +0x38 float* field_0x38
+// @field +0x3C float* field_0x3C
+
+
+void __thiscall sub_00802D90(void* this_ptr, int32_t* out1, int32_t* out2) {
+    auto* base = static_cast<uint8_t*>(this_ptr);
+    int32_t count = *reinterpret_cast<int32_t*>(base + 0x4);
+    if (count <= 0) {
+        return;
+    }
+
+    float* values = *reinterpret_cast<float**>(base + 0x30);
+    float* upper = *reinterpret_cast<float**>(base + 0x38);
+    float* lower = *reinterpret_cast<float**>(base + 0x3C);
+
+    for (int32_t i = 0; i < count; ++i) {
+        float v = values[i];
+        if (v < lower[i]) {
+            out1[i] = -1;
+            out2[i] = 0;
+        } else if (v > upper[i]) {
+            out1[i] = -1;
+            out2[i] = -1;
+        } else {
+            out1[i] = 0;
+            out2[i] = 0;
+        }
+    }
+}
+} // namespace lift_00802D90

@@ -12397,6 +12397,12 @@
     "summary": "Calls sub_0049CFF0 to obtain a 32-bit result and stores it into this+0x04.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x0049E2F0": {
+    "name": "findByName",
+    "signature": "extern uintptr_t mem_00924FC4; // MSVCP80!std::operator==(const std::string\u0026, const std::string\u0026) uint32_t __thiscall sub_0049E2F0(void* self, uint32_t target_str)",
+    "summary": "Searches a vector of objects for one whose vtable+0x24 name matches the given std::string",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049E440": {
     "name": "initObjectWithStaticBase_0049E440",
     "signature": "void* fn_0049E440(void* self, DWORD arg2)",
