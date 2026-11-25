@@ -4710,6 +4710,13 @@
     "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_1361.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0044BFB0": {
+    "name": "Unknown::forwardFlagsAndReleaseCapture_0044BFB0",
+    "class": "Unknown",
+    "signature": "void fn_0044BFB0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Clears the byte flag at +0x78; if the dword at +0x64 is nonzero, forwards the three stack arguments to ext_00530C00 on the child at +0x68; then calls ReleaseCapture.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044C0D0": {
     "name": "Unknown::ReleaseChildThenForward",
     "class": "Unknown",
