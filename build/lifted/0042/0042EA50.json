@@ -1,0 +1,28 @@
+{
+  "va": "0x0042EA50",
+  "size": 21,
+  "orig_symbol": "sub_0042EA50",
+  "src_path": "src/leaf/tiny_420000.cpp",
+  "lifted_path": "lifted/leaf/tiny_420000.cpp",
+  "name": "Unknown::ReleaseWindowDCFromArg",
+  "class": "Unknown",
+  "signature": "int fn_0042EA50(void* self, void* arg)",
+  "summary": "Thiscall helper taking one stack argument. Calls USER32!ReleaseDC with hWnd = this-\u003efield_0x20 and hDC = arg-\u003efield_0x04, and returns its result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "hWnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "HDC",
+      "name": "hDC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:20:00Z"
+}

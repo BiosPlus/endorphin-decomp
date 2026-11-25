@@ -2414,6 +2414,13 @@
     "summary": "Returns the address of the global mem_0092F394 (ignores this).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0042EA50": {
+    "name": "Unknown::ReleaseWindowDCFromArg",
+    "class": "Unknown",
+    "signature": "int fn_0042EA50(void* self, void* arg)",
+    "summary": "Thiscall helper taking one stack argument. Calls USER32!ReleaseDC with hWnd = this-\u003efield_0x20 and hDC = arg-\u003efield_0x04, and returns its result.",
+    "lifted_path": "lifted/leaf/tiny_420000.cpp"
+  },
   "0x0042EC80": {
     "name": "sub_0042EC80",
     "class": "ResourceHolder",

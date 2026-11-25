@@ -228,3 +228,29 @@ void* fn_00426960(void* self) {
     return self;
 }
 } // namespace lift_00426960
+
+// [0x0042EA50]
+namespace lift_0042EA50 {
+// @name Unknown::ReleaseWindowDCFromArg
+// @class Unknown
+// @summary Thiscall helper taking one stack argument. Calls USER32!ReleaseDC with hWnd = this->field_0x20 and hDC = arg->field_0x04, and returns its result.
+// @field Unknown +0x20 HWND hWnd
+// @field Unknown +0x04 HDC hDC
+
+// IAT slot for USER32!ReleaseDC (resolved by the loader at runtime).
+extern void* mem_00925620;
+
+typedef int(__stdcall* ReleaseDCFn)(HWND hWnd, HDC hDC);
+
+// Thiscall: `this` in ECX (passed here as the first parameter), one stack arg, callee-cleans (ret 4).
+int fn_0042EA50(void* self, void* arg) {
+    // mov eax, [esp+4]    -> arg
+    // mov edx, [arg+4]    -> hDC
+    // mov eax, [ecx+0x20] -> hWnd
+    HDC hDC = lift_field<HDC>(arg, 0x04);
+    HWND hWnd = lift_field<HWND>(self, 0x20);
+    // call [0x925620]     -> ReleaseDC(hWnd, hDC)
+    auto releaseDC = reinterpret_cast<ReleaseDCFn>(mem_00925620);
+    return releaseDC(hWnd, hDC);
+}
+} // namespace lift_0042EA50
