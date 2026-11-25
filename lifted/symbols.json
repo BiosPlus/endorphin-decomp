@@ -53349,6 +53349,12 @@
     "summary": "Fills a 3-double output buffer with float values fetched via accessor chains off a singleton-like object.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00702AA0": {
+    "name": "FillDoubleTripleFromCounter",
+    "signature": "extern \"C\" double* __thiscall fn_00702AA0(void* self, double* out)",
+    "summary": "Looks up an object via ext_006DC460, then writes three doubles (each a float getter result) into out and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00702F60": {
     "name": "sub_00702F60",
     "class": "Unknown",

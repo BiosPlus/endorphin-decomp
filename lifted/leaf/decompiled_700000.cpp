@@ -1644,3 +1644,28 @@ extern double* __stdcall fn_00702A00(double* out) {
     return out;
 }
 } // namespace lift_00702A00
+
+// [0x00702AA0]
+namespace lift_00702AA0 {
+// @name FillDoubleTripleFromCounter
+// @summary Looks up an object via ext_006DC460, then writes three doubles (each a float getter result) into out and returns out.
+extern int32_t __fastcall ext_006DC460(void* self);
+extern void* __fastcall ext_006C96E0(void* self);
+extern void* __fastcall ext_006C9700(void* self);
+extern void* __fastcall ext_006C9720(void* self);
+extern float __fastcall ext_006C9F70(void* self);
+
+extern double* __thiscall fn_00702AA0(void* self, double* out) {
+    int32_t v = ext_006DC460(self);
+    void* p0 = ext_006C96E0(reinterpret_cast<void*>(static_cast<uintptr_t>(v)));
+    out[0] = static_cast<double>(ext_006C9F70(p0));
+
+    void* p1 = ext_006C9700(reinterpret_cast<void*>(static_cast<uintptr_t>(v)));
+    out[1] = static_cast<double>(ext_006C9F70(p1));
+
+    void* p2 = ext_006C9720(reinterpret_cast<void*>(static_cast<uintptr_t>(v)));
+    out[2] = static_cast<double>(ext_006C9F70(p2));
+
+    return out;
+}
+} // namespace lift_00702AA0

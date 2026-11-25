@@ -1,0 +1,13 @@
+{
+  "va": "0x00702AA0",
+  "size": 80,
+  "orig_symbol": "sub_00702AA0",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "FillDoubleTripleFromCounter",
+  "signature": "extern \"C\" double* __thiscall fn_00702AA0(void* self, double* out)",
+  "summary": "Looks up an object via ext_006DC460, then writes three doubles (each a float getter result) into out and returns out.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:50:18Z"
+}
