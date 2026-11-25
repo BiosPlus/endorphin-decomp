@@ -95,3 +95,42 @@ void vfunc_16_0051C7C0(void* self) {
     }
 }
 } // namespace lift_0051C7C0
+
+// [0x0051ADC0] NMData::QuatChannel::vfunc_7 (82 bytes)
+namespace lift_0051ADC0 {
+// CRT _invalid_parameter_noinfo function pointer slot (MSVCR80), at 0x00925134.
+extern void (*mem_00925134)(void);
+
+// @name NMData::QuatChannel::vfunc_7
+// @class NMData::QuatChannel
+// @summary Returns the first float of the last 20-byte keyframe in the channel's [begin, end) array, or 0.0f if the array is empty.
+// @field NMData::QuatChannel +0x30 uint32_t field_0x30
+// @field NMData::QuatChannel +0x34 uint32_t field_0x34
+float fn_0051ADC0(void* self) {
+    const uint32_t begin = lift_field<uint32_t>(self, 0x30);
+    if (begin == 0) {
+        return 0.0f;
+    }
+
+    const uint32_t end = lift_field<uint32_t>(self, 0x34);
+    // Element size is 20 bytes; signed quotient matches the original sign-corrected division.
+    const int32_t count = static_cast<int32_t>(end - begin) / 20;
+    if (count == 0) {
+        return 0.0f;
+    }
+
+    // Range sanity checks from the original; each failing check invokes the CRT handler.
+    if (begin > end) {
+        mem_00925134();
+    }
+    if (end <= begin) {
+        mem_00925134();
+    }
+    const uint32_t last = end - 20;
+    if (last >= end) {
+        mem_00925134();
+    }
+
+    return *reinterpret_cast<const float*>(static_cast<uintptr_t>(last));
+}
+} // namespace lift_0051ADC0

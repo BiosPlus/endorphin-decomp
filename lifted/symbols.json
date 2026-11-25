@@ -19751,6 +19751,13 @@
     "summary": "Returns the first float of the last 8-byte element in the channel's [begin, end) array, or 0.0f when empty.",
     "lifted_path": "lifted/NMData/RealChannel.cpp"
   },
+  "0x0051ADC0": {
+    "name": "NMData::QuatChannel::vfunc_7",
+    "class": "NMData::QuatChannel",
+    "signature": "float fn_0051ADC0(void* self)",
+    "summary": "Returns the first float of the last 20-byte keyframe in the channel's [begin, end) array, or 0.0f if the array is empty.",
+    "lifted_path": "lifted/NMData/QuatChannel.cpp"
+  },
   "0x0051AE20": {
     "name": "sub_0051AE20",
     "signature": "DWORD ext_0051A9A0();  // ConstructOnce_0046F580 DWORD* fn_0051AE20(DWORD* dst, DWORD value)",
