@@ -2221,3 +2221,32 @@ void fn_00515EB0(void* self) {
     ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
 }
 } // namespace lift_00515EB0
+
+// [0x00516000] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, ...>::vfunc_5 (45 bytes)
+namespace lift_00516000 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// The caller pushes one dword before the call; the callee is documented as void(void), so the value is passed through but unused.
+extern void ext_0046C4E0(int32_t arg);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception in place with a fixed message and installs its vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_obj, const void* type_info);
+// .rdata exception type info at 0x009DEC1C (address is pushed as the throw-info argument)
+extern const void* mem_009DEC1C;
+
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>::vfunc_5
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>
+// @summary Reads the object pointer from the holder argument; if non-null, throws a default-message exception via ext_0046C4E0, otherwise constructs and throws a DerivedException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field Unknown +0x08 int32_t field_0x08
+void fn_00516000(void* const* holder) {
+    void* obj = *holder;
+    if (obj != nullptr) {
+        ext_0046C4E0(lift_field<int32_t>(obj, 0x08));
+    }
+
+    alignas(8) uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+}
+} // namespace lift_00516000
