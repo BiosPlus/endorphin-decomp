@@ -57243,3 +57243,29 @@ extern void* __fastcall fn_0049C690(void* ecx_unused, void* edx_unused, void* ds
     return dst;
 }
 } // namespace lift_0049C690
+
+// [0x004A42B0]
+namespace lift_004A42B0 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawActions, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawActions, 0>
+// @summary Reads a pointer from the second stack argument; throws a fixed-message exception if it is null, otherwise calls the pointee's bool method and forwards the result to the first argument's method, returning the first argument.
+
+extern void* __thiscall ext_0046C3C0(void* self);
+extern void __cdecl ext_006A6DD2(void* exc, const void* throwInfo);
+extern uint8_t __thiscall ext_0049AA50(void* self);
+extern void __thiscall ext_006720A0(void* self, bool flag);
+extern char mem_009DEC1C[];
+
+extern void* __thiscall fn_004A42B0(void* self, void* out, void** src) {
+    (void)self;
+    if (*src == nullptr) {
+        // Exception object storage; its size was not recovered from the asm.
+        alignas(8) unsigned char exc[16];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, mem_009DEC1C);
+    }
+    bool flag = ext_0049AA50(*src) != 0;
+    ext_006720A0(out, flag);
+    return out;
+}
+} // namespace lift_004A42B0
