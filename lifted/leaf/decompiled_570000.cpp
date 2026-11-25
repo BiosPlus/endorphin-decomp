@@ -22,6 +22,7 @@ DWORD* __thiscall fn_00573A10(void* self, const DWORD* first, const DWORD* last,
 } // namespace lift_0044C4D0
 } // namespace lift_00573A10
 #include <istream>
+#include <bit>
 
 // [0x00578020] sub_00578020 (41 bytes)
 namespace lift_00578020 {
@@ -1106,3 +1107,62 @@ uint32_t sub_00575F50(uint32_t src_begin, uint32_t src_end, uint32_t a3, uint32_
     return dst + static_cast<uint32_t>(count * 160);
 }
 } // namespace lift_00575F50
+
+// [0x00576290] sub_00576290 (43 bytes)
+namespace lift_00576290 {
+// @name sub_00576290
+// @summary Auto-lifted identical-shape clone of 0x00406290 (copyStringRange_00406290).
+namespace lift_00406290 {
+// Known callee 0x00406090: std::copy<std::string*, std::string*> (Copies a range of std::string objects from [first, last) to dest and returns the end of the destination range.)
+extern uint32_t ext_00575F50(uint32_t first, uint32_t last, uint32_t dest);
+
+// @name copyStringRange_00406290
+// @summary Forwards (first, last, dest) to the std::string range-copy helper and returns its result.
+extern uint32_t fn_00576290(uint32_t first, uint32_t last, uint32_t dest) {
+    // The original's stack shuffling (a dead zeroed byte local and redundant
+    // argument pushes) has no observable effect; only the three arguments
+    // reach the callee, and its return value is passed through in eax.
+    return ext_00575F50(first, last, dest);
+}
+} // namespace lift_00406290
+} // namespace lift_00576290
+
+// [0x0057C010] sub_0057C010 (43 bytes)
+namespace lift_0057C010 {
+// @name sub_0057C010
+// @summary Auto-lifted identical-shape clone of 0x00406290 (copyStringRange_00406290).
+namespace lift_00406290 {
+// Known callee 0x00406090: std::copy<std::string*, std::string*> (Copies a range of std::string objects from [first, last) to dest and returns the end of the destination range.)
+extern uint32_t ext_0057BEC0(uint32_t first, uint32_t last, uint32_t dest);
+
+// @name copyStringRange_00406290
+// @summary Forwards (first, last, dest) to the std::string range-copy helper and returns its result.
+extern uint32_t fn_0057C010(uint32_t first, uint32_t last, uint32_t dest) {
+    // The original's stack shuffling (a dead zeroed byte local and redundant
+    // argument pushes) has no observable effect; only the three arguments
+    // reach the callee, and its return value is passed through in eax.
+    return ext_0057BEC0(first, last, dest);
+}
+} // namespace lift_00406290
+} // namespace lift_0057C010
+
+// [0x0057E110] sub_0057E110 (89 bytes)
+namespace lift_0057E110 {
+// @name sub_0057E110
+// @summary Auto-lifted identical-shape clone of 0x00687920 (Unknown::copyRecordRangeAndRebase_00687920).
+namespace lift_00687920 {
+// Known callee 0x006873D0: Unknown::CopyRecordRangeBackward_006873D0 (Copies records of 0x2C bytes from [first, last) backward into the range ending at dest_last, returning the new begin (dest_last if the range is empty).)
+extern void* ext_0057DC60(void* first, void* last, void* dest_last);
+
+// @name Unknown::copyRecordRangeAndRebase_00687920
+// @summary Copies a 0x2C-byte record range backward via ext_006873D0, then returns dest_last rewound by the whole-record count of [first, last).
+void* fn_0057E110(void* first, void* last, void* dest_last) {
+    ext_0057DC60(first, last, dest_last);
+
+    const std::intptr_t bytes = reinterpret_cast<std::intptr_t>(last) - reinterpret_cast<std::intptr_t>(first);
+    const std::intptr_t records = bytes / 44; // 0x2C-byte records, truncated toward zero
+    const std::intptr_t newBegin = reinterpret_cast<std::intptr_t>(dest_last) - records * 44;
+    return reinterpret_cast<void*>(newBegin);
+}
+} // namespace lift_00687920
+} // namespace lift_0057E110

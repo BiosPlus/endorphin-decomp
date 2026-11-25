@@ -22,6 +22,8 @@ void* fn_006829E0(void* self) {
     return ext_0066B080(index);
 }
 } // namespace lift_006829E0
+#include <cstddef>
+#include <bit>
 
 // [0x006813B0] sub_006813B0 (27 bytes)
 namespace lift_006813B0 {
@@ -1056,3 +1058,40 @@ void* fn_00687920(void* first, void* last, void* dest_last) {
     return reinterpret_cast<void*>(newBegin);
 }
 } // namespace lift_00687920
+
+// [0x00682E50] sub_00682E50 (92 bytes)
+namespace lift_00682E50 {
+// @name sub_00682E50
+// @summary Auto-lifted identical-shape clone of 0x00699810 (allocate_array_0x2c).
+namespace lift_00699810 {
+extern void* fn_006A5C62(uint32_t size);
+
+// @name allocate_array_0x2c
+// @summary Allocates an array of count 0x2c-byte elements, throwing std::bad_alloc on size_t overflow.
+extern void* fn_00682E50(uint32_t count) {
+    if (count > 0 && (0xFFFFFFFFu / count) < 0x94u) {
+        throw std::bad_alloc();
+    }
+    return fn_006A5C62(count * 0x94u);
+}
+} // namespace lift_00699810
+} // namespace lift_00682E50
+
+// [0x00687E20] sub_00687E20 (43 bytes)
+namespace lift_00687E20 {
+// @name sub_00687E20
+// @summary Auto-lifted identical-shape clone of 0x00406290 (copyStringRange_00406290).
+namespace lift_00406290 {
+// Known callee 0x00406090: std::copy<std::string*, std::string*> (Copies a range of std::string objects from [first, last) to dest and returns the end of the destination range.)
+extern uint32_t ext_0062BA00(uint32_t first, uint32_t last, uint32_t dest);
+
+// @name copyStringRange_00406290
+// @summary Forwards (first, last, dest) to the std::string range-copy helper and returns its result.
+extern uint32_t fn_00687E20(uint32_t first, uint32_t last, uint32_t dest) {
+    // The original's stack shuffling (a dead zeroed byte local and redundant
+    // argument pushes) has no observable effect; only the three arguments
+    // reach the callee, and its return value is passed through in eax.
+    return ext_0062BA00(first, last, dest);
+}
+} // namespace lift_00406290
+} // namespace lift_00687E20

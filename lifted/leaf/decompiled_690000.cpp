@@ -821,3 +821,24 @@ uint32_t __thiscall fn_006992E0(void* self, void* out, uint32_t arg2) {
 }
 } // namespace lift_006992E0
 } // namespace lift_006992E0
+
+// [0x00699E30] sub_00699E30 (89 bytes)
+namespace lift_00699E30 {
+// @name sub_00699E30
+// @summary Auto-lifted identical-shape clone of 0x00687920 (Unknown::copyRecordRangeAndRebase_00687920).
+namespace lift_00687920 {
+// Known callee 0x006873D0: Unknown::CopyRecordRangeBackward_006873D0 (Copies records of 0x2C bytes from [first, last) backward into the range ending at dest_last, returning the new begin (dest_last if the range is empty).)
+extern void* ext_00699AE0(void* first, void* last, void* dest_last);
+
+// @name Unknown::copyRecordRangeAndRebase_00687920
+// @summary Copies a 0x2C-byte record range backward via ext_006873D0, then returns dest_last rewound by the whole-record count of [first, last).
+void* fn_00699E30(void* first, void* last, void* dest_last) {
+    ext_00699AE0(first, last, dest_last);
+
+    const std::intptr_t bytes = reinterpret_cast<std::intptr_t>(last) - reinterpret_cast<std::intptr_t>(first);
+    const std::intptr_t records = bytes / 44; // 0x2C-byte records, truncated toward zero
+    const std::intptr_t newBegin = reinterpret_cast<std::intptr_t>(dest_last) - records * 44;
+    return reinterpret_cast<void*>(newBegin);
+}
+} // namespace lift_00687920
+} // namespace lift_00699E30

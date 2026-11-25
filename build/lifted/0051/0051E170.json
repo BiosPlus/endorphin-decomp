@@ -1,0 +1,13 @@
+{
+  "va": "0x0051E170",
+  "size": 43,
+  "orig_symbol": "sub_0051E170",
+  "src_path": "src/leaf/decompiled_510000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_510000.cpp",
+  "name": "sub_0051E170",
+  "signature": "extern uint32_t fn_0051E170(uint32_t first, uint32_t last, uint32_t dest)",
+  "summary": "Auto-lifted identical-shape clone of 0x00406290 (copyStringRange_00406290).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T02:17:32Z"
+}

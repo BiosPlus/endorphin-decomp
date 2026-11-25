@@ -950,6 +950,12 @@
     "summary": "Swaps a range of 28-byte std::string objects backward from [first, last) into [destEnd - (last - first), destEnd).",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x0040E6C0": {
+    "name": "sub_0040E6C0",
+    "signature": "extern uint32_t fn_0040E6C0(uint32_t first, uint32_t last, uint32_t dest)",
+    "summary": "Auto-lifted identical-shape clone of 0x00406290 (copyStringRange_00406290).",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040E860": {
     "name": "sub_0040E860",
     "signature": "DWORD* __thiscall fn_0040E860(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -18089,11 +18095,23 @@
     "summary": "Returns (end - begin) / 12 for the 12-byte element range at +0x4/+0x8, or 0 if begin is null.",
     "lifted_path": "lifted/leaf/tiny_510000.cpp"
   },
+  "0x0051DF00": {
+    "name": "sub_0051DF00",
+    "signature": "extern void* fn_0051DF00(uint32_t count)",
+    "summary": "Auto-lifted identical-shape clone of 0x00699810 (allocate_array_0x2c).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x0051DF60": {
     "name": "FindFirstEntryMatchingKey",
     "signature": "uint8_t* fn_0051DF60(uint8_t* begin, uint8_t* end, uint32_t key)",
     "summary": "Scans entries from begin to end (stride 0x168) and returns the first entry whose subobject's virtual method result matches key, or end if none match.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
+  "0x0051E170": {
+    "name": "sub_0051E170",
+    "signature": "extern uint32_t fn_0051E170(uint32_t first, uint32_t last, uint32_t dest)",
+    "summary": "Auto-lifted identical-shape clone of 0x00406290 (copyStringRange_00406290).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
   "0x0051E560": {
     "name": "sub_0051E560",
@@ -18120,6 +18138,12 @@
     "signature": "void* fn_0051EBB0(void* self, void* a1, uint32_t a2)",
     "summary": "Forwards a stack argument to the sub-object at +0x158; if it yields a nonzero result, calls ext_006721F0, otherwise calls Character::vfunc_2. Returns the first argument.",
     "lifted_path": "lifted/StateMachine/State.cpp"
+  },
+  "0x0051F540": {
+    "name": "sub_0051F540",
+    "signature": "extern uint32_t fn_0051F540(uint32_t first, uint32_t last, uint32_t dest)",
+    "summary": "Auto-lifted identical-shape clone of 0x00406290 (copyStringRange_00406290).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
   "0x0051F610": {
     "name": "sub_0051F610",
@@ -22792,6 +22816,12 @@
     "summary": "Writes the byte at *src into every byte in [dst, dstEnd); does nothing if dst == dstEnd. The source pointer is not advanced.",
     "lifted_path": "lifted/leaf/tiny_570000.cpp"
   },
+  "0x00576290": {
+    "name": "sub_00576290",
+    "signature": "extern uint32_t fn_00576290(uint32_t first, uint32_t last, uint32_t dest)",
+    "summary": "Auto-lifted identical-shape clone of 0x00406290 (copyStringRange_00406290).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00576D50": {
     "name": "sub_00576D50",
     "signature": "uint32_t fn_00576D50(uint32_t begin, uint32_t end, uint32_t value)",
@@ -22893,6 +22923,12 @@
     "summary": "Copies each 0x3C-byte record in [first, last) to dest (two bytes plus two std::string members), returns dest past the last copied record.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057C010": {
+    "name": "sub_0057C010",
+    "signature": "extern uint32_t fn_0057C010(uint32_t first, uint32_t last, uint32_t dest)",
+    "summary": "Auto-lifted identical-shape clone of 0x00406290 (copyStringRange_00406290).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057CA60": {
     "name": "sub_0057CA60",
     "signature": "uint32_t fn_0057CA60(uint32_t begin, uint32_t end, uint32_t value)",
@@ -22916,6 +22952,12 @@
     "class": "Unknown",
     "signature": "void* fn_0057D7F0(void* self)",
     "summary": "Initializes three float fields to 0.0, default-constructs a std::string at +0x0C, zeroes three dwords at +0x2C/+0x30/+0x34, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057E110": {
+    "name": "sub_0057E110",
+    "signature": "void* fn_0057E110(void* first, void* last, void* dest_last)",
+    "summary": "Auto-lifted identical-shape clone of 0x00687920 (Unknown::copyRecordRangeAndRebase_00687920).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
   "0x0057E2C0": {
@@ -40714,6 +40756,12 @@
     "summary": "Returns 0 if field_0x04 is 0; otherwise returns (field_0x08 - field_0x04) scaled by a signed reciprocal multiply and divided by 128 with round-toward-zero correction.",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00682E50": {
+    "name": "sub_00682E50",
+    "signature": "extern void* fn_00682E50(uint32_t count)",
+    "summary": "Auto-lifted identical-shape clone of 0x00699810 (allocate_array_0x2c).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00682ED0": {
     "name": "VirtualSlot9Thunk",
     "class": "Object (unidentified; receiver is passed in ecx)",
@@ -41041,6 +41089,12 @@
     "class": "Unknown",
     "signature": "void* fn_00687920(void* first, void* last, void* dest_last)",
     "summary": "Copies a 0x2C-byte record range backward via ext_006873D0, then returns dest_last rewound by the whole-record count of [first, last).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x00687E20": {
+    "name": "sub_00687E20",
+    "signature": "extern uint32_t fn_00687E20(uint32_t first, uint32_t last, uint32_t dest)",
+    "summary": "Auto-lifted identical-shape clone of 0x00406290 (copyStringRange_00406290).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x00687E50": {
@@ -41872,6 +41926,12 @@
     "name": "initOnceGetSlotAddress",
     "signature": "void* fn_006999B0(void* self)",
     "summary": "One-time init guard: if bit 0 of the flag byte at mem_00B5C9A4 is clear, sets it, zeroes mem_00B5C99C, copies mem_00B599BC into mem_00B5C9A0, calls ext_006A6C87(0x921FE0); always returns \u0026mem_00B5C99C.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
+  "0x00699E30": {
+    "name": "sub_00699E30",
+    "signature": "void* fn_00699E30(void* first, void* last, void* dest_last)",
+    "summary": "Auto-lifted identical-shape clone of 0x00687920 (Unknown::copyRecordRangeAndRebase_00687920).",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
   "0x0069A090": {

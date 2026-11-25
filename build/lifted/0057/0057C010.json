@@ -1,0 +1,13 @@
+{
+  "va": "0x0057C010",
+  "size": 43,
+  "orig_symbol": "sub_0057C010",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "sub_0057C010",
+  "signature": "extern uint32_t fn_0057C010(uint32_t first, uint32_t last, uint32_t dest)",
+  "summary": "Auto-lifted identical-shape clone of 0x00406290 (copyStringRange_00406290).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T02:17:32Z"
+}

@@ -1243,3 +1243,22 @@ extern uint32_t fn_00406290(uint32_t first, uint32_t last, uint32_t dest) {
     return ext_00406090(first, last, dest);
 }
 } // namespace lift_00406290
+
+// [0x0040E6C0] sub_0040E6C0 (43 bytes)
+namespace lift_0040E6C0 {
+// @name sub_0040E6C0
+// @summary Auto-lifted identical-shape clone of 0x00406290 (copyStringRange_00406290).
+namespace lift_00406290 {
+// Known callee 0x00406090: std::copy<std::string*, std::string*> (Copies a range of std::string objects from [first, last) to dest and returns the end of the destination range.)
+extern uint32_t ext_0040E1D0(uint32_t first, uint32_t last, uint32_t dest);
+
+// @name copyStringRange_00406290
+// @summary Forwards (first, last, dest) to the std::string range-copy helper and returns its result.
+extern uint32_t fn_0040E6C0(uint32_t first, uint32_t last, uint32_t dest) {
+    // The original's stack shuffling (a dead zeroed byte local and redundant
+    // argument pushes) has no observable effect; only the three arguments
+    // reach the callee, and its return value is passed through in eax.
+    return ext_0040E1D0(first, last, dest);
+}
+} // namespace lift_00406290
+} // namespace lift_0040E6C0
