@@ -3272,6 +3272,13 @@
     "summary": "Pure jump thunk forwarding to GetConstant_0043AAF0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0043B380": {
+    "name": "sub_0043B380",
+    "class": "GWCPropertyEditFeel",
+    "signature": "void* fn_0043B380(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006B28A0 (GWCPropertyEditFeel::vfunc_6).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043B3E0": {
     "name": "CopyFloat4Assign",
     "class": "Unknown (class not yet identified; ecx = this, arg = const source ref)",
@@ -4776,6 +4783,13 @@
     "name": "DWORD_RangeCopy (descriptive; sub_0044C2A0)",
     "signature": "DWORD* fn_0044C2A0(const DWORD* first, const DWORD* last, DWORD* out)",
     "summary": "Copies DWORDs from [first, last) to out (skipping stores when out is null); returns out + count.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044C2D0": {
+    "name": "sub_0044C2D0",
+    "class": "GWCPropertyEditFeel",
+    "signature": "void* fn_0044C2D0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006B28A0 (GWCPropertyEditFeel::vfunc_6).",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
   "0x0044C360": {
@@ -6564,6 +6578,13 @@
     "name": "sub_004663A0",
     "signature": "bool fn_004663A0(void* self)",
     "summary": "Returns true if self+0x60 is nonzero; otherwise queries a helper object's vfunc at +0x84 and, if it returns true, invokes ext_006A5E60 and returns false.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
+  "0x004663D0": {
+    "name": "sub_004663D0",
+    "class": "GWCPropertyEditFeel",
+    "signature": "void* fn_004663D0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006B28A0 (GWCPropertyEditFeel::vfunc_6).",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
   "0x00466430": {
@@ -16400,6 +16421,12 @@
     "name": "DwordPairInitWrapper_005007C0",
     "signature": "void* fn_005007C0(void* self, void* pair, DWORD b)",
     "summary": "Forwards (self, pair, b) to ext_00500310 with the result discarded, then returns the pair object (first stack argument).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x005007F0": {
+    "name": "sub_005007F0",
+    "signature": "void* fn_005007F0(const void* first, const void* last, void* dest)",
+    "summary": "Auto-lifted identical-shape clone of 0x0050B060 (Unknown::copyRecordRangeAndAdvance_0050B060).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
   "0x00500B70": {

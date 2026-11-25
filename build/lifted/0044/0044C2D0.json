@@ -1,0 +1,14 @@
+{
+  "va": "0x0044C2D0",
+  "size": 86,
+  "orig_symbol": "sub_0044C2D0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "sub_0044C2D0",
+  "class": "GWCPropertyEditFeel",
+  "signature": "void* fn_0044C2D0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x006B28A0 (GWCPropertyEditFeel::vfunc_6).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T02:12:42Z"
+}

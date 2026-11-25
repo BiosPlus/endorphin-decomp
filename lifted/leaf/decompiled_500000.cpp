@@ -912,3 +912,23 @@ void* fn_0050B060(const void* first, const void* last, void* dest) {
     return static_cast<char*>(dest) + static_cast<intptr_t>(count) * 36;
 }
 } // namespace lift_0050B060
+
+// [0x005007F0] sub_005007F0 (86 bytes)
+namespace lift_005007F0 {
+// @name sub_005007F0
+// @summary Auto-lifted identical-shape clone of 0x0050B060 (Unknown::copyRecordRangeAndAdvance_0050B060).
+namespace lift_0050B060 {
+// @name Unknown::copyRecordRangeAndAdvance_0050B060
+// @summary Copies the 0x24-byte records in [first, last) to dest and returns dest advanced past them.
+
+void* ext_004FFD90(const void* first, const void* last, void* dest);
+
+void* fn_005007F0(const void* first, const void* last, void* dest) {
+    ext_004FFD90(first, last, dest);
+    const int32_t diff = static_cast<int32_t>(
+        reinterpret_cast<const char*>(last) - reinterpret_cast<const char*>(first));
+    const int32_t count = diff / 36;  // 0x24-byte records; truncates toward zero like the original sign fixup
+    return static_cast<char*>(dest) + static_cast<intptr_t>(count) * 36;
+}
+} // namespace lift_0050B060
+} // namespace lift_005007F0

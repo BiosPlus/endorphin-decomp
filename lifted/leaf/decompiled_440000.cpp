@@ -2052,3 +2052,27 @@ void fn_0044C130(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
 }
 } // namespace lift_0044BFB0
 } // namespace lift_0044C130
+
+// [0x0044C2D0] sub_0044C2D0 (86 bytes)
+namespace lift_0044C2D0 {
+// @name sub_0044C2D0
+// @summary Auto-lifted identical-shape clone of 0x006B28A0 (GWCPropertyEditFeel::vfunc_6).
+namespace lift_006B28A0 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (allocator; takes byte size, returns block or null).
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x006B0CA0: sub_006B0CA0 (thiscall initializer for the new object; its eax result is returned).
+extern void* ext_0044BD70(void* self);
+
+// @name GWCPropertyEditFeel::vfunc_6
+// @class GWCPropertyEditFeel
+// @summary Allocates a 0x6C-byte object and initializes it; returns the result, or null if allocation fails.
+void* fn_0044C2D0(void* self) {
+    (void)self;
+    void* obj = ext_006A5C62(0x7C);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+    return ext_0044BD70(obj);
+}
+} // namespace lift_006B28A0
+} // namespace lift_0044C2D0
