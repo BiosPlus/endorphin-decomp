@@ -48353,3 +48353,34 @@ void fn_005B9580(void* self) {
     throw std::runtime_error("ExprParser: ReadMethodType<MetaBodyData>::getLinearVelocity");
 }
 } // namespace lift_005B9580
+
+// [0x0051B200] ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>::vfunc_1 (49 bytes)
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_0051AEF0(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_0051B200(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_0051AEF0(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200

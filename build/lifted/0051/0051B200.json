@@ -1,0 +1,14 @@
+{
+  "va": "0x0051B200",
+  "size": 49,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::QuatChannel, NM::Vector4 const \u0026, \u0026public: class NM::Vector4 const \u0026 __thiscall NMData::QuatChannel::getValue(void) const, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ReadMethodType\u003cNMData::QuatChannel\u003e::vfunc_1",
+  "class": "ExprParser::ReadMethodType\u003cNMData::QuatChannel, NM::Vector4 const \u0026, \u0026public: class NM::Vector4 const \u0026 __thiscall NMData::QuatChannel::getValue(void) const, 0\u003e",
+  "signature": "void fn_0051B200(void* self)",
+  "summary": "If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:12:04Z"
+}
