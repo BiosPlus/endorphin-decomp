@@ -990,3 +990,43 @@ void* __thiscall sub_004207F0(void* self, const void* other) {
     return self;
 }
 } // namespace lift_004207F0
+
+// [0x00422B60] sub_00422B60 (92 bytes)
+namespace lift_00422B60 {
+extern void __fastcall ext_006A5EA8(void* self);
+
+extern void* mem_00925688; // USER32!InvalidateRect IAT slot
+extern void* mem_009255E8; // USER32!TrackMouseEvent IAT slot
+
+using InvalidateRectFn = int(__stdcall*)(void* hWnd, const void* rect, int erase);
+using TrackMouseEventFn = int(__stdcall*)(void* eventTrack);
+
+struct TrackMouseEventInfo {
+    DWORD cbSize;
+    DWORD dwFlags;
+    void* hwndTrack;
+    DWORD dwHoverTime;
+};
+
+// @name CWnd::OnMouseEnterOnce (descriptive; tracking-arm helper)
+// @class Unknown
+// @summary If the flag at +0x8E is clear, set it, invalidate the window at +0x20, and arm WM_MOUSELEAVE tracking; then forward to the base handler.
+// @field Unknown +0x20 void* field_0x20
+// @field Unknown +0x8E BYTE field_0x8E
+void fn_00422B60(void* self, DWORD /*unusedEdx*/, DWORD /*unusedArg0*/, DWORD /*unusedArg1*/, DWORD /*unusedArg2*/) {
+    auto* base = static_cast<BYTE*>(self);
+    if (base[0x8E] == 0) {
+        base[0x8E] = 1;
+        void* hwnd = *reinterpret_cast<void**>(base + 0x20);
+        reinterpret_cast<InvalidateRectFn>(mem_00925688)(hwnd, nullptr, FALSE);
+
+        TrackMouseEventInfo tme{};
+        tme.cbSize = sizeof(tme);
+        tme.dwFlags = 0x00000002; // TME_LEAVE
+        tme.hwndTrack = hwnd;
+        tme.dwHoverTime = 0xFFFFFFFFu; // HOVER_DEFAULT
+        reinterpret_cast<TrackMouseEventFn>(mem_009255E8)(&tme);
+    }
+    ext_006A5EA8(self);
+}
+} // namespace lift_00422B60

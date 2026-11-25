@@ -779,6 +779,12 @@
     "summary": "Copies one of two std::string fields by index (0 or 1) or constructs from a default C-string",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x0040ABC0": {
+    "name": "getStringByIndex",
+    "signature": "void* __thiscall sub_0040ABC0(void* this_ptr, void* out_str, uint32_t index)",
+    "summary": "Copies one of two member strings by index (0 or 1) into the output string, or constructs from a default C-string.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040AE10": {
     "name": "sub_0040AE10",
     "signature": "extern \"C\" void __fastcall fn_0040AE10(void* self)",
@@ -2275,6 +2281,13 @@
     "name": "postCommandToMainWnd",
     "signature": "extern \"C\" void __thiscall fn_00422B20(void* self, uint32_t, uint32_t, uint32_t)",
     "summary": "Calls MFC80_ord_1091, invokes vtable+0x7C if non-null, and posts WM_COMMAND with field_0x84 to the resulting CWnd's HWND.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
+  "0x00422B60": {
+    "name": "CWnd::OnMouseEnterOnce (descriptive; tracking-arm helper)",
+    "class": "Unknown",
+    "signature": "void fn_00422B60(void* self, DWORD /*unusedEdx*/, DWORD /*unusedArg0*/, DWORD /*unusedArg1*/, DWORD /*unusedArg2*/)",
+    "summary": "If the flag at +0x8E is clear, set it, invalidate the window at +0x20, and arm WM_MOUSELEAVE tracking; then forward to the base handler.",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
   "0x00422BC0": {

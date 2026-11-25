@@ -1,0 +1,28 @@
+{
+  "va": "0x00422B60",
+  "size": 92,
+  "orig_symbol": "sub_00422B60",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "CWnd::OnMouseEnterOnce (descriptive; tracking-arm helper)",
+  "class": "Unknown",
+  "signature": "void fn_00422B60(void* self, DWORD /*unusedEdx*/, DWORD /*unusedArg0*/, DWORD /*unusedArg1*/, DWORD /*unusedArg2*/)",
+  "summary": "If the flag at +0x8E is clear, set it, invalidate the window at +0x20, and arm WM_MOUSELEAVE tracking; then forward to the base handler.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8E",
+      "type": "BYTE",
+      "name": "field_0x8E"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:25:56Z"
+}
