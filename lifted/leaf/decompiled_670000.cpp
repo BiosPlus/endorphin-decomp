@@ -852,3 +852,24 @@ void __stdcall fn_00670D80(uint8_t* container1, uint32_t* first, uint8_t* contai
     }
 }
 } // namespace lift_00670D80
+
+// [0x00672590] sub_00672590 (89 bytes)
+namespace lift_00672590 {
+extern void ext_00628FF0(void* self);
+
+// @name UnknownClass::dtor_00672590
+// @class UnknownClass
+// @summary If the pointer at +0x28 is set, calls virtual slot 0x78 on that object with &this->+0x24, then destroys this via the MSVCP80 string dtor.
+// @field UnknownClass +0x24 uint32_t field_0x24
+// @field UnknownClass +0x28 void* field_0x28
+void fn_00672590(void* self) {
+    void* child = lift_field<void*>(self, 0x28);
+    if (child != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(child);
+        auto slot = reinterpret_cast<void (*)(void*, void*)>(
+            *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtbl) + 0x78));
+        slot(child, reinterpret_cast<uint8_t*>(self) + 0x24);
+    }
+    ext_00628FF0(self);
+}
+} // namespace lift_00672590

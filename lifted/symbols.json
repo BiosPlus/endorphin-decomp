@@ -39871,6 +39871,13 @@
     "summary": "Pops the return address into edi and returns, releasing 4 bytes of stack arguments.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x00672590": {
+    "name": "UnknownClass::dtor_00672590",
+    "class": "UnknownClass",
+    "signature": "void fn_00672590(void* self)",
+    "summary": "If the pointer at +0x28 is set, calls virtual slot 0x78 on that object with \u0026this-\u003e+0x24, then destroys this via the MSVCP80 string dtor.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00672810": {
     "name": "CopyRangeAndComputeDestEnd",
     "signature": "void* fn_00672810(const void* first, const void* last, void* dest)",
