@@ -1,0 +1,13 @@
+{
+  "va": "0x0086FFF0",
+  "size": 72,
+  "orig_symbol": "sub_0086FFF0",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "StoreBigEndianQword",
+  "signature": "void fn_0086FFF0(uint8_t* dst, const uint8_t* src)",
+  "summary": "Copies two little-endian dwords from src into dst as big-endian bytes (8 bytes total).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:30:58Z"
+}

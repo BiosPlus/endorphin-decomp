@@ -572,3 +572,26 @@ void sub_0086F8F0(uint32_t* arr) {
     }
 }
 } // namespace lift_0086F8F0
+
+// [0x0086FFF0] sub_0086FFF0 (72 bytes)
+namespace lift_0086FFF0 {
+// @name StoreBigEndianQword
+// @summary Copies two little-endian dwords from src into dst as big-endian bytes (8 bytes total).
+void fn_0086FFF0(uint8_t* dst, const uint8_t* src) {
+    // Read both dwords as they are laid out in memory (little-endian host layout).
+    uint32_t w0;
+    uint32_t w1;
+    std::memcpy(&w0, src + 0, sizeof(w0));
+    std::memcpy(&w1, src + 4, sizeof(w1));
+
+    // Emit each dword most-significant byte first.
+    dst[0] = static_cast<uint8_t>(w0 >> 24);
+    dst[1] = static_cast<uint8_t>(w0 >> 16);
+    dst[2] = static_cast<uint8_t>(w0 >> 8);
+    dst[3] = static_cast<uint8_t>(w0);
+    dst[4] = static_cast<uint8_t>(w1 >> 24);
+    dst[5] = static_cast<uint8_t>(w1 >> 16);
+    dst[6] = static_cast<uint8_t>(w1 >> 8);
+    dst[7] = static_cast<uint8_t>(w1);
+}
+} // namespace lift_0086FFF0
