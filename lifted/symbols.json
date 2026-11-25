@@ -59948,6 +59948,12 @@
     "summary": "Getter returning int32_t field at offset +0x10C.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x007025C0": {
+    "name": "sub_007025C0",
+    "signature": "void __thiscall sub_007025C0(uint8_t* self, uint32_t mode)",
+    "summary": "Sets field_0x110 and updates target-\u003efield_0x380 based on mode when field_0x10c == 1",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00702620": {
     "name": "Unknown::SetInverseFlagOnSubObject",
     "class": "Unknown",

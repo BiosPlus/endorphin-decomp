@@ -2002,3 +2002,34 @@ extern BOOL __thiscall fn_00709AB0(void* self, void* arg) {
     return TRUE;
 }
 } // namespace lift_00709AB0
+
+// [0x007025C0]
+namespace lift_007025C0 {
+// @name sub_007025C0
+// @summary Sets field_0x110 and updates target->field_0x380 based on mode when field_0x10c == 1
+// @field Self +0x10c uint32_t field_0x10c
+// @field Self +0x110 uint32_t field_0x110
+// @field Self +0x268 uint8_t* field_0x268
+void __thiscall sub_007025C0(uint8_t* self, uint32_t mode) {
+    uint32_t state = *reinterpret_cast<uint32_t*>(self + 0x10c);
+    *reinterpret_cast<uint32_t*>(self + 0x110) = mode;
+    if (state != 1) {
+        return;
+    }
+
+    uint8_t* target = *reinterpret_cast<uint8_t**>(self + 0x268);
+    switch (mode) {
+    case 0:
+        *reinterpret_cast<uint32_t*>(target + 0x380) = 2;
+        break;
+    case 1:
+        *reinterpret_cast<uint32_t*>(target + 0x380) = 3;
+        break;
+    case 2:
+        *reinterpret_cast<uint32_t*>(target + 0x380) = 1;
+        break;
+    default:
+        break;
+    }
+}
+} // namespace lift_007025C0
