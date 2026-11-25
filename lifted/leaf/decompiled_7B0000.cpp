@@ -1593,3 +1593,46 @@ uint32_t sub_007BC630(uint32_t arg0) {
     return 0xFFFFFFFFu;
 }
 } // namespace lift_007BC630
+
+// [0x007B3120]
+namespace lift_007B3120 {
+// @name freePointerTable
+// @summary Frees a pointer-pair table, its entry pointers, and clears the table pointer
+// @field Table +0x00 uint32_t count
+// @field Table +0x04 uint32_t entries
+void __cdecl sub_007B3120(uint32_t* pTablePtr) {
+    if (!pTablePtr) {
+        return;
+    }
+
+    uint32_t table = *pTablePtr;
+    if (!table) {
+        return;
+    }
+
+    uint32_t entries = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(table) + 4);
+    if (entries != 0) {
+        uint32_t count = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(table));
+        for (uint32_t i = 0; i < count; ++i) {
+            uint32_t curTable = *pTablePtr;
+            uint32_t curEntries = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(curTable) + 4);
+            uint32_t itemPtr = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(curEntries) + static_cast<uintptr_t>(i) * 8);
+            std::free(reinterpret_cast<void*>(static_cast<uintptr_t>(itemPtr)));
+
+            curTable = *pTablePtr;
+            curEntries = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(curTable) + 4);
+            *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(curEntries) + static_cast<uintptr_t>(i) * 8 + 4) = 0;
+
+            table = *pTablePtr;
+            count = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(table));
+        }
+
+        uint32_t curTable = *pTablePtr;
+        uint32_t curEntries = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(curTable) + 4);
+        std::free(reinterpret_cast<void*>(static_cast<uintptr_t>(curEntries)));
+    }
+
+    std::free(reinterpret_cast<void*>(static_cast<uintptr_t>(*pTablePtr)));
+    *pTablePtr = 0;
+}
+} // namespace lift_007B3120
