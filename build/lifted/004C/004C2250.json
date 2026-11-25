@@ -1,0 +1,13 @@
+{
+  "va": "0x004C2250",
+  "size": 30,
+  "orig_symbol": "sub_004C2250",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "StorePairWithStaticObject",
+  "signature": "void fn_004C2250(uint32_t* out, uint32_t value)",
+  "summary": "Writes the value argument to out[0], then writes the address returned by initStaticObjectOnce_004C1D20 to out[1].",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:34:11Z"
+}

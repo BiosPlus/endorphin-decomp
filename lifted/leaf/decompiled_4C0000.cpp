@@ -676,3 +676,18 @@ void fn_004CFDC0(uint8_t* out, uint32_t value) {
     lift_field<uint32_t>(out, 4) = result;
 }
 } // namespace lift_004CFDC0
+
+// [0x004C2250] sub_004C2250 (30 bytes)
+namespace lift_004C2250 {
+// Known callee 0x004C1D20: initStaticObjectOnce_004C1D20 (One-time initializer guarded by bit 0 of mem_00AE3060; sets mem_00AE305C to vtable 0x9448F4 and returns its address.)
+extern void* ext_004C1D20();
+
+// @name StorePairWithStaticObject
+// @summary Writes the value argument to out[0], then writes the address returned by initStaticObjectOnce_004C1D20 to out[1].
+void fn_004C2250(uint32_t* out, uint32_t value) {
+    // The original passes a zero dummy stack argument to the callee; it is not read by the callee.
+    void* obj = ext_004C1D20();
+    out[0] = value;
+    out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_004C2250

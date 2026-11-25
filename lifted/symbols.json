@@ -13576,6 +13576,12 @@
     "summary": "Stores the value into dst[0], then stores the address returned by the one-time static object initializer into dst[1].",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
+  "0x004C2250": {
+    "name": "StorePairWithStaticObject",
+    "signature": "void fn_004C2250(uint32_t* out, uint32_t value)",
+    "summary": "Writes the value argument to out[0], then writes the address returned by initStaticObjectOnce_004C1D20 to out[1].",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C2270": {
     "name": "storeValueAndStaticObjectAddr",
     "signature": "void fn_004C2270(DWORD* dst, DWORD value)",
