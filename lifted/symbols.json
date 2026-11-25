@@ -6593,6 +6593,13 @@
     "summary": "Loads the pointer stored at this+0x04 and zeroes the dword at +0x04 of the pointed-to object.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00462D10": {
+    "name": "Unknown::getByteByMode_00462D10",
+    "class": "Unknown",
+    "signature": "uint8_t fn_00462D10(void* self, int32_t mode)",
+    "summary": "Mode 1 returns byte +0x18 of the object at this+0x0C; mode 2 returns GetInnerByte1C(this+0x08) if non-null; otherwise 0.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00462E50": {
     "name": "Dispatch::forwardStringIfInnerCountOne",
     "class": "Dispatch",

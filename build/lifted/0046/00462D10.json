@@ -1,0 +1,28 @@
+{
+  "va": "0x00462D10",
+  "size": 43,
+  "orig_symbol": "sub_00462D10",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "Unknown::getByteByMode_00462D10",
+  "class": "Unknown",
+  "signature": "uint8_t fn_00462D10(void* self, int32_t mode)",
+  "summary": "Mode 1 returns byte +0x18 of the object at this+0x0C; mode 2 returns GetInnerByte1C(this+0x08) if non-null; otherwise 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:30:26Z"
+}

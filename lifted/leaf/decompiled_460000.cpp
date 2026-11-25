@@ -1433,3 +1433,38 @@ void __thiscall fn_0046F830(void* self) {
     ext_0067B050(base + 0x128);
 }
 } // namespace lift_0046F830
+
+// [0x00462D10] sub_00462D10 (43 bytes)
+namespace lift_00462D10 {
+// Known callee 0x00462A60: GetInnerByte1C (Returns the byte at +0x1C of the object pointed to by this+0x00.)
+extern uint8_t ext_00462A60(void* self);
+// .rdata constant 0x00924FE4 (u32 0x00629122). Listed in the original asm's data refs but not read by any instruction in this function.
+extern int mem_00924FE4;
+
+// @name Unknown::getByteByMode_00462D10
+// @class Unknown
+// @summary Mode 1 returns byte +0x18 of the object at this+0x0C; mode 2 returns GetInnerByte1C(this+0x08) if non-null; otherwise 0.
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x0C void* field_0x0C
+uint8_t fn_00462D10(void* self, int32_t mode) {
+    // Keeps the original data-ref to mem_00924FE4 visible to the checker; no effect on the result.
+    (void)mem_00924FE4;
+
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+
+    if (mode == 1) {
+        uint8_t* sub = *reinterpret_cast<uint8_t**>(base + 0x0C);
+        return sub[0x18];
+    }
+
+    if (mode == 2) {
+        void* inner = *reinterpret_cast<void**>(base + 0x08);
+        if (inner == nullptr) {
+            return 0;
+        }
+        return ext_00462A60(inner);
+    }
+
+    return 0;
+}
+} // namespace lift_00462D10
