@@ -1223,3 +1223,39 @@ void* fn_00489A80(const void* first, const void* last, void* out) {
     return static_cast<char*>(out) + recordCount * 20;
 }
 } // namespace lift_00489A80
+
+// [0x0048B730]
+namespace lift_0048B730 {
+// @name Unknown::appendRangeToEnd_0048B730
+// @class Unknown
+// @summary Validates the range bounds at this+0x04 (begin) and this+0x08 (end), then, if non-empty, copies the [old end, begin) records through CopyFloat5RangeAndAdvance and stores the advanced output pointer back into this+0x08.
+// @field Unknown +0x04 uint8_t* field_0x04
+// @field Unknown +0x08 uint8_t* field_0x08
+
+extern void* ext_00489A80(const void* first, const void* last, void* out);
+extern int mem_00925134; // _invalid_parameter_noinfo
+
+namespace {
+using InvalidParamFn = void (*)();
+}
+
+extern void __fastcall fn_0048B730(void* ecx) {
+    InvalidParamFn invalid_param = reinterpret_cast<InvalidParamFn>(static_cast<intptr_t>(mem_00925134));
+
+    uint8_t* const original_end = lift_field<uint8_t*>(ecx, 0x08);
+    if (lift_field<uint8_t*>(ecx, 0x04) > original_end) {
+        invalid_param();
+    }
+
+    uint8_t* const begin = lift_field<uint8_t*>(ecx, 0x04);
+    if (begin > lift_field<uint8_t*>(ecx, 0x08)) {
+        invalid_param();
+    }
+
+    if (begin != original_end) {
+        void* out = lift_field<uint8_t*>(ecx, 0x08);
+        lift_field<uint8_t*>(ecx, 0x08) = static_cast<uint8_t*>(
+            ext_00489A80(original_end, begin, out));
+    }
+}
+} // namespace lift_0048B730

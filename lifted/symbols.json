@@ -8933,6 +8933,13 @@
     "summary": "Stdcall (ret 8) proxy: loads the target pointer stored at the proxy's first dword and forwards it to ext_0048ABF0 in ECX; the second stack argument is ignored.",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x0048B730": {
+    "name": "Unknown::appendRangeToEnd_0048B730",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_0048B730(void* ecx)",
+    "summary": "Validates the range bounds at this+0x04 (begin) and this+0x08 (end), then, if non-empty, copies the [old end, begin) records through CopyFloat5RangeAndAdvance and stores the advanced output pointer back into this+0x08.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048B770": {
     "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::addJointWithChildren(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::addJointWithChildren(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",

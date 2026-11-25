@@ -1,0 +1,28 @@
+{
+  "va": "0x0048B730",
+  "size": 58,
+  "orig_symbol": "sub_0048B730",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "Unknown::appendRangeToEnd_0048B730",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __fastcall fn_0048B730(void* ecx)",
+  "summary": "Validates the range bounds at this+0x04 (begin) and this+0x08 (end), then, if non-empty, copies the [old end, begin) records through CopyFloat5RangeAndAdvance and stores the advanced output pointer back into this+0x08.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:11:28Z"
+}
