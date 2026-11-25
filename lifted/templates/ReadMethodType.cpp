@@ -50143,3 +50143,36 @@ void fn_0062E960(void* self) {
     ext_006A6DD2(exception, mem_009DEC1C);
 }
 } // namespace lift_0062E960
+
+// [0x005FCBD0] ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &private: class NM::Vector3 const & __thiscall Sensor::getMutableVector3(void) const, 1>::vfunc_2 (49 bytes)
+namespace lift_005FCBD0 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0(void* exception_object);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// @name ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, Sensor::getMutableVector3, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &private: class NM::Vector3 const & __thiscall Sensor::getMutableVector3(void) const, 1>
+// @summary Invokes vtable slot 14 (+0x38) on the Sensor held in the ValuePtr and then throws; throws a fixed exception if the Sensor pointer is null.
+// @field ValuePtrType +0x00 void* sensor
+void fn_005FCBD0(void* self) {
+    // The original never reaches a normal return: both paths end in a throw.
+    void* sensor = lift_field<void*>(self, 0x00);
+    if (sensor != nullptr) {
+        // Virtual call through vtable slot 14 (byte offset 0x38), thiscall with this = sensor.
+        void** vtable = *reinterpret_cast<void***>(sensor);
+        using VSlot14 = void* (*)(void*);
+        VSlot14 slot14 = reinterpret_cast<VSlot14>(vtable[14]);
+        (void)slot14(sensor);
+        ext_0046C4E0();
+        return;
+    }
+
+    // Null sensor: construct a DerivedException (0x28-byte local) and throw it.
+    alignas(8) unsigned char exception_object[0x28] = {};
+    ext_0046C3C0(exception_object);
+    ext_006A6DD2(exception_object, reinterpret_cast<const void*>(0x009DEC1C));
+}
+} // namespace lift_005FCBD0

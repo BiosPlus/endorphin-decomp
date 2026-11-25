@@ -1,0 +1,22 @@
+{
+  "va": "0x005FCBD0",
+  "size": 49,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026private: class NM::Vector3 const \u0026 __thiscall Sensor::getMutableVector3(void) const, 1\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, Sensor::getMutableVector3, 1\u003e::vfunc_2",
+  "class": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026private: class NM::Vector3 const \u0026 __thiscall Sensor::getMutableVector3(void) const, 1\u003e",
+  "signature": "void fn_005FCBD0(void* self)",
+  "summary": "Invokes vtable slot 14 (+0x38) on the Sensor held in the ValuePtr and then throws; throws a fixed exception if the Sensor pointer is null.",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "sensor"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:12:55Z"
+}

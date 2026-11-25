@@ -36708,6 +36708,13 @@
     "summary": "Reads a Sensor's mutable Vector3 via vtable +0x38 and constructs/copies into out_ptr, or throws on null Sensor.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005FCBD0": {
+    "name": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, Sensor::getMutableVector3, 1\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026private: class NM::Vector3 const \u0026 __thiscall Sensor::getMutableVector3(void) const, 1\u003e",
+    "signature": "void fn_005FCBD0(void* self)",
+    "summary": "Invokes vtable slot 14 (+0x38) on the Sensor held in the ValuePtr and then throws; throws a fixed exception if the Sensor pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005FCC50": {
     "name": "ExprParser::ReadMethodType\u003cSensor\u003e::vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026private: class NM::Vector3 const \u0026 __thiscall Sensor::getMutableVector3(void) const, 1\u003e",
