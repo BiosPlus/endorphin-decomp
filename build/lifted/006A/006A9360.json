@@ -1,0 +1,22 @@
+{
+  "va": "0x006A9360",
+  "size": 60,
+  "orig_symbol": "sub_006A9360",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "UnknownWindowOwner::invalidateChildWindow",
+  "class": "UnknownWindowOwner",
+  "signature": "int fn_006A9360(void* self, void* other, void* unused)",
+  "summary": "If the given window (arg's HWND at +0x20, or NULL) is not a child of this owner's HWND, run sub_006A8980 on this and invalidate the owner's whole window; always returns 0.",
+  "fields": [
+    {
+      "class": "UnknownWindowOwner",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:55:28Z"
+}

@@ -279,3 +279,41 @@ void fn_006A8800(void* self, uint32_t arg1, uint32_t arg2) {
     lift_field<uint32_t>(slot, 0) = arg2;
 }
 } // namespace lift_006A8800
+
+// [0x006A9360] sub_006A9360 (60 bytes)
+namespace lift_006A9360 {
+extern void __fastcall ext_006A8980(void* self);
+// IAT slot holding USER32!IsChild.
+extern void* mem_009256BC;
+// IAT slot holding USER32!InvalidateRect.
+extern void* mem_00925688;
+
+using IsChildFn = BOOL(__stdcall*)(void* hWndParent, void* hWnd);
+using InvalidateRectFn = BOOL(__stdcall*)(void* hWnd, const void* lpRect, BOOL bErase);
+
+// @name UnknownWindowOwner::invalidateChildWindow
+// @summary If the given window (arg's HWND at +0x20, or NULL) is not a child of this owner's HWND, run sub_006A8980 on this and invalidate the owner's whole window; always returns 0.
+// @field UnknownWindowOwner +0x20 HWND field_0x20
+int fn_006A9360(void* self, void* other, void* unused) {
+    (void)unused;
+    if (other == self) {
+        return 0;
+    }
+
+    auto* base = static_cast<std::uint8_t*>(self);
+    void* ownerHwnd = lift_field<void*>(base, 0x20);
+
+    void* otherHwnd = nullptr;
+    if (other != nullptr) {
+        otherHwnd = lift_field<void*>(other, 0x20);
+    }
+
+    if (reinterpret_cast<IsChildFn>(mem_009256BC)(ownerHwnd, otherHwnd) != FALSE) {
+        return 0;
+    }
+
+    ext_006A8980(self);
+    reinterpret_cast<InvalidateRectFn>(mem_00925688)(ownerHwnd, nullptr, TRUE);
+    return 0;
+}
+} // namespace lift_006A9360

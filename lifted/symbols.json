@@ -42860,6 +42860,13 @@
     "summary": "Forwards this+0x9C as the thiscall receiver, this-\u003efield_0xA4 and arg1 to ext_006A6796 and returns its result.",
     "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
   },
+  "0x006A9360": {
+    "name": "UnknownWindowOwner::invalidateChildWindow",
+    "class": "UnknownWindowOwner",
+    "signature": "int fn_006A9360(void* self, void* other, void* unused)",
+    "summary": "If the given window (arg's HWND at +0x20, or NULL) is not a child of this owner's HWND, run sub_006A8980 on this and invalidate the owner's whole window; always returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006A95C0": {
     "name": "SubObject::SetWindowUpdateLocked",
     "class": "SubObject",
