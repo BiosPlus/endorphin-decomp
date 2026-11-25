@@ -2154,3 +2154,30 @@ extern uint8_t fn_00434F90(void) {
     return result;
 }
 } // namespace lift_00434F90
+
+// [0x00434760]
+namespace lift_00434760 {
+uintptr_t __cdecl ext_00594000(void);
+uintptr_t __thiscall ext_006AD940(uintptr_t self);
+uint8_t __thiscall ext_00492570(uintptr_t self);
+uint8_t __thiscall ext_00430370(void* self);
+
+// @name CheckStateAndFieldThenNotify
+// @summary Checks global state and object field at +0x60, then tail-calls arg1's vtable[0] with the boolean result.
+
+int32_t __thiscall fn_00434760(void* self, void* arg1) {
+    uintptr_t globalObj = ext_00594000();
+    uintptr_t subObj = *reinterpret_cast<uintptr_t*>(globalObj + 0x26C);
+    uintptr_t target = ext_006AD940(subObj);
+
+    uint32_t result = 0;
+    if (ext_00492570(target) != 0 && ext_00430370(self) != 0) {
+        result = 1;
+    }
+
+    using Vfn0 = int32_t(__thiscall*)(void*, uint32_t);
+    void** vtable = *reinterpret_cast<void***>(arg1);
+    Vfn0 fn = reinterpret_cast<Vfn0>(vtable[0]);
+    return fn(arg1, result);
+}
+} // namespace lift_00434760
