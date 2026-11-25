@@ -32144,6 +32144,12 @@
     "summary": "Lazy-initializes global object mem_00B45F88 guarded by mem_00B45F8C and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005EB4E0": {
+    "name": "getOrInitSingleton_005EB4E0",
+    "signature": "void* fn_005EB4E0()",
+    "summary": "Lazily initializes the global singleton at 0x00B45F90 guarded by 0x00B45F94 and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005EB890": {
     "name": "NMData::FixedPathJointData::vfunc_10_off_C",
     "class": "NMData::FixedPathJointData",
@@ -43005,6 +43011,13 @@
     "class": "Unknown",
     "signature": "void* fn_00670EC0(void* self)",
     "summary": "Clears the header words of self, runs ext_0065C5F0 on the subobject at +0x14, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
+  "0x00670FD0": {
+    "name": "Unknown::ctor_00670FD0",
+    "class": "Unknown",
+    "signature": "void* fn_00670FD0(void* self)",
+    "summary": "Initializes base object, sets vtable pointers at +0x0 and +0x4, constructs subobject at +0x8, and returns self.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x00671030": {

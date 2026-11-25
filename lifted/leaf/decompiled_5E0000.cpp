@@ -919,3 +919,21 @@ void* fn_005EB360() {
     return &mem_00B45F70;
 }
 } // namespace lift_005EB360
+
+// [0x005EB4E0]
+namespace lift_005EB4E0 {
+extern uint32_t mem_00B45F94;
+extern uint32_t mem_00B45F90;
+extern uint32_t ext_0067A670(void* self, uint32_t value);
+
+// @name getOrInitSingleton_005EB4E0
+// @summary Lazily initializes the global singleton at 0x00B45F90 guarded by 0x00B45F94 and returns its address.
+void* fn_005EB4E0() {
+    if ((mem_00B45F94 & 1u) == 0u) {
+        mem_00B45F94 |= 1u;
+        ext_0067A670(&mem_00B45F90, 0);
+        mem_00B45F90 = 0x0096A9E4u;
+    }
+    return &mem_00B45F90;
+}
+} // namespace lift_005EB4E0
