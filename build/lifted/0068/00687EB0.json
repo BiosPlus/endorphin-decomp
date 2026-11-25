@@ -1,0 +1,13 @@
+{
+  "va": "0x00687EB0",
+  "size": 86,
+  "orig_symbol": "sub_00687EB0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "copyRange0x24AndGetEnd_00687EB0",
+  "signature": "uint8_t* fn_00687EB0(uint8_t* first, uint8_t* last, uint8_t* dest)",
+  "summary": "Copies the 0x24-byte records in [first, last) to dest and returns dest advanced by the copied record count times 0x24.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:12:25Z"
+}

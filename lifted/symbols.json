@@ -40772,6 +40772,12 @@
     "summary": "Copies the StringRecord range [first, last) to dest, then returns dest advanced by the record count times 0x2C (sizeof StringRecord).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00687EB0": {
+    "name": "copyRange0x24AndGetEnd_00687EB0",
+    "signature": "uint8_t* fn_00687EB0(uint8_t* first, uint8_t* last, uint8_t* dest)",
+    "summary": "Copies the 0x24-byte records in [first, last) to dest and returns dest advanced by the copied record count times 0x24.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x006886D0": {
     "name": "sub_006886D0",
     "signature": "uint32_t fn_006886D0(uint32_t begin, uint32_t end, uint32_t value)",

@@ -1024,3 +1024,18 @@ void* fn_00687E50(const void* first, const void* last, void* dest) {
     return out + static_cast<ptrdiff_t>(count) * 0x2C;
 }
 } // namespace lift_00687E50
+
+// [0x00687EB0] sub_00687EB0 (86 bytes)
+namespace lift_00687EB0 {
+// Known callee 0x00687380: copyRange0x24 (Copies a range of 0x24-byte elements containing a u32, a u8, and a std::string.)
+extern uint8_t* ext_00687380(uint8_t* first, uint8_t* last, uint8_t* dest);
+
+// @name copyRange0x24AndGetEnd_00687EB0
+// @summary Copies the 0x24-byte records in [first, last) to dest and returns dest advanced by the copied record count times 0x24.
+uint8_t* fn_00687EB0(uint8_t* first, uint8_t* last, uint8_t* dest) {
+    ext_00687380(first, last, dest);
+    const int32_t byteCount = static_cast<int32_t>(last - first);
+    const int32_t recordCount = byteCount / 36;
+    return dest + static_cast<ptrdiff_t>(recordCount) * 36;
+}
+} // namespace lift_00687EB0
