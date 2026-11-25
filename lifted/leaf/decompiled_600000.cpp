@@ -27,8 +27,10 @@ void fn_00609730(void* self) {
 }
 } // namespace lift_004AEC60
 } // namespace lift_00609730
+#include <cstdint>
+#include <cstddef>
 
-// [0x00602EC0]
+#include <cstddef>
 namespace lift_00602EC0 {
 void mem_write32(uint32_t addr, uint32_t val);
 void mem_write_f32(uint32_t addr, float val);
@@ -1010,3 +1012,21 @@ void fn_0060BA10(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_0060BA10
+
+// [0x0060A4F0] sub_0060A4F0 (33 bytes)
+namespace lift_0060A4F0 {
+// @name sub_0060A4F0
+// @summary Auto-lifted identical-shape clone of 0x00527570 (GetOnceInitString_00527570).
+namespace lift_00527570 {
+// Known callee 0x005273B0: GetOnceInitString_005273B0 (Returns the process-global string at 0x00AED2EC, initializing it once on first call and registering its teardown.)
+// The caller passes a 0 flag argument on the stack before the call.
+extern void* ext_00609A10(int flag);
+
+// @name GetOnceInitString_00527570
+// @summary Copy-constructs the caller-provided std::string slot from the process-global once-initialized string and returns that slot.
+void* fn_0060A4F0(void* out) {
+    const auto* src = static_cast<const std::string*>(ext_00609A10(0));
+    return new (out) std::string(*src);
+}
+} // namespace lift_00527570
+} // namespace lift_0060A4F0

@@ -35082,6 +35082,12 @@
     "summary": "Three-element compare-and-swap network over 32-bit slots holding StringPairKey pointers; orders *a \u003c= *b \u003c= *c using StringPairKey::operator\u003c.",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x0060A4F0": {
+    "name": "sub_0060A4F0",
+    "signature": "void* fn_0060A4F0(void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x00527570 (GetOnceInitString_00527570).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060A640": {
     "name": "NMData::DisabledCollisionPairList::vfunc_13",
     "class": "NMData::DisabledCollisionPairList",
