@@ -1,0 +1,13 @@
+{
+  "va": "0x005AD1C0",
+  "size": 36,
+  "orig_symbol": "sub_005AD1C0",
+  "src_path": "src/leaf/decompiled_5A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5A0000.cpp",
+  "name": "fill_qword_range",
+  "signature": "uint32_t sub_005AD1C0(uint32_t first, uint32_t last, const uint32_t* val)",
+  "summary": "Fills a range [first, last) with an 8-byte value pointed to by val.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T14:21:44Z"
+}

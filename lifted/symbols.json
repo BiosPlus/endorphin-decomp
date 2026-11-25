@@ -28430,6 +28430,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0043D780 (AllocAndInitRecord).",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005AD1C0": {
+    "name": "fill_qword_range",
+    "signature": "uint32_t sub_005AD1C0(uint32_t first, uint32_t last, const uint32_t* val)",
+    "summary": "Fills a range [first, last) with an 8-byte value pointed to by val.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005AE100": {
     "name": "sub_005AE100",
     "class": "TreeMap",

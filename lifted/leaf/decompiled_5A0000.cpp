@@ -865,3 +865,23 @@ void* fn_005AE100(void* self, void* out_iter, const void* key) {
 }
 } // namespace lift_0059B2E0
 } // namespace lift_005AE100
+
+// [0x005AD1C0]
+namespace lift_005AD1C0 {
+// @name fill_qword_range
+// @summary Fills a range [first, last) with an 8-byte value pointed to by val.
+
+
+uint32_t sub_005AD1C0(uint32_t first, uint32_t last, const uint32_t* val) {
+    uint32_t cur = first;
+    if (cur == last) {
+        return cur;
+    }
+    do {
+        *reinterpret_cast<uint32_t*>(cur) = val[0];
+        *reinterpret_cast<uint32_t*>(cur + 4) = val[1];
+        cur += 8;
+    } while (cur != last);
+    return cur;
+}
+} // namespace lift_005AD1C0
