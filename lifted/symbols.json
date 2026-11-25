@@ -66965,6 +66965,12 @@
     "summary": "Resets a 0x38-byte extent struct: zeroes the header and flag words, sets min (+0x08..+0x10) to +FLT_MAX and max (+0x14..+0x1C) to -FLT_MAX, and zeroes +0x20..+0x34.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007D5AE0": {
+    "name": "loadDwordFromPtrArg",
+    "signature": "uint32_t loadDwordFromPtrArg(void* p)",
+    "summary": "Returns the 32-bit value stored at the address passed as the first (cdecl) argument.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007D5B30": {
     "name": "dispatchThroughKindTable",
     "signature": "uint32_t fn_007D5B30(void* arg1, void* arg2, void* arg3)",

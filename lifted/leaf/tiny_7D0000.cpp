@@ -501,3 +501,12 @@ void __cdecl sub_007DCAA0(void* a1, void* a2) {
     fn(reinterpret_cast<uintptr_t>(a1));
 }
 } // namespace lift_007DCAA0
+
+// [0x007D5AE0]
+namespace lift_007D5AE0 {
+// @name loadDwordFromPtrArg
+// @summary Returns the 32-bit value stored at the address passed as the first (cdecl) argument.
+uint32_t loadDwordFromPtrArg(void* p) {
+    return *reinterpret_cast<const uint32_t*>(p);
+}
+} // namespace lift_007D5AE0

@@ -1,0 +1,13 @@
+{
+  "va": "0x007D5AE0",
+  "size": 7,
+  "orig_symbol": "sub_007D5AE0",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "loadDwordFromPtrArg",
+  "signature": "uint32_t loadDwordFromPtrArg(void* p)",
+  "summary": "Returns the 32-bit value stored at the address passed as the first (cdecl) argument.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:12:29Z"
+}
