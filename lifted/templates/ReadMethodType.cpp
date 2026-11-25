@@ -50220,3 +50220,32 @@ void fn_00636C30(void* self) {
     ext_006A6DD2(exc, reinterpret_cast<void*>(static_cast<std::uintptr_t>(0x009DEC1CU)));
 }
 } // namespace lift_00636C30
+
+// [0x00639730] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0>::vfunc_1 (49 bytes)
+namespace lift_00639730 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* arg);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0(void* self);
+
+// Portable carrier for the exception object built by DerivedException (replaces MSVC _CxxThrowException).
+struct LiftedDerivedException {
+    alignas(16) unsigned char storage[64];
+};
+
+// @name ExprParser::ReadMethodType<EffectorSkeletal>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0>
+// @summary Always throws: if the wrapped EffectorSkeletal pointer is non-null it reports via ext_0046C4E0, then unconditionally throws a DerivedException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field EffectorSkeletal +0x9c void* field_0x9c
+void fn_00639730(void* self) {
+    void* const inner = *reinterpret_cast<void**>(self);
+    if (inner != nullptr) {
+        ext_0046C4E0(static_cast<unsigned char*>(inner) + 0x9c);
+    }
+
+    LiftedDerivedException exc{};
+    ext_0046C3C0(exc.storage);
+    throw exc;
+}
+} // namespace lift_00639730

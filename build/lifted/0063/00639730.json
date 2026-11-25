@@ -1,0 +1,28 @@
+{
+  "va": "0x00639730",
+  "size": 49,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal\u003e::vfunc_1",
+  "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0\u003e",
+  "signature": "void fn_00639730(void* self)",
+  "summary": "Always throws: if the wrapped EffectorSkeletal pointer is non-null it reports via ext_0046C4E0, then unconditionally throws a DerivedException.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0x9C",
+      "type": "void*",
+      "name": "field_0x9c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:13:19Z"
+}
