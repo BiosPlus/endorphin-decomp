@@ -819,6 +819,8 @@ struct Unknown_Fields {
     // +0x3270 int32_t                  field_0x3270  (evidence: 0x006F6910)
     // +0x3278 uint8_t                  field_0x3278  (evidence: 0x006F08A0, 0x006F08E0, 0x006F1120)
     // +0x3300 uint8_t field_0x3300[] (embedded subobject, used by address only)  (evidence: 0x006F08E0, 0x006F1120)
+    // +0x3BBC uint8_t[0x210]           record_table  (evidence: 0x006F8FB0) // CONFLICT: multiple definitions at +0x3BBC
+    // +0x3BBC int32_t                  record_table_flag_0  (evidence: 0x006F8FB0) // CONFLICT: multiple definitions at +0x3BBC
     // +0x40D0 void*                    field_0x40D0  (evidence: 0x006F08E0, 0x006F0F60, 0x006F1120)
     // +0x4158 uint8_t                  field_0x4158  (evidence: 0x006F08E0, 0x006F0FA0, 0x006F1120)
     // +0x41E0 uint8_t field_0x41e0 (subobject; only its address is taken)  (evidence: 0x006F08E0, 0x006F0FE0, 0x006F1120)

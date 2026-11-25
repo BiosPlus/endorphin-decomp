@@ -49891,6 +49891,13 @@
     "summary": "Getter returning uint8_t field at offset +0xA.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006F8FB0": {
+    "name": "Unknown::CopyRecordIfActive",
+    "class": "Unknown",
+    "signature": "uint8_t fn_006F8FB0(void* self, int32_t index, void* dst)",
+    "summary": "If index is in [0,44) and the record's leading dword is nonzero, copies that 9-byte record into dst (when dst is non-null) and returns true; otherwise returns false.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F90D0": {
     "name": "Unknown::LookupTableEntry",
     "class": "Unknown",

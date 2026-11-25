@@ -1214,3 +1214,36 @@ void fn_006FA370(uintptr_t self) {
     }
 }
 } // namespace lift_006FA370
+
+// [0x006F8FB0] sub_006F8FB0 (64 bytes)
+namespace lift_006F8FB0 {
+// @name Unknown::CopyRecordIfActive
+// @class Unknown
+// @summary If index is in [0,44) and the record's leading dword is nonzero, copies that 9-byte record into dst (when dst is non-null) and returns true; otherwise returns false.
+// @field Unknown +0x3BBC uint8_t[0x210] record_table
+// @field Unknown +0x3BBC int32_t record_table_flag_0
+
+// Callee: Unknown::copyAssign9 (lifted as ext_006F8B30).
+void* ext_006F8B30(void* self, const void* src);
+
+uint8_t fn_006F8FB0(void* self, int32_t index, void* dst) {
+    constexpr int32_t kCount = 0x2C;
+    constexpr ptrdiff_t kTableOffset = 0x3BBC;
+    constexpr ptrdiff_t kStride = 12;
+
+    if (index < 0 || index >= kCount) {
+        return 0;
+    }
+
+    const ptrdiff_t recOffset = kTableOffset + kStride * static_cast<ptrdiff_t>(index);
+    const int32_t flag = lift_field<int32_t>(self, recOffset);
+    if (flag == 0) {
+        return 0;
+    }
+
+    if (dst != nullptr) {
+        ext_006F8B30(dst, static_cast<const uint8_t*>(self) + recOffset);
+    }
+    return 1;
+}
+} // namespace lift_006F8FB0
