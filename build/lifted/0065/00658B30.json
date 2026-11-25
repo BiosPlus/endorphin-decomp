@@ -1,0 +1,22 @@
+{
+  "va": "0x00658B30",
+  "size": 40,
+  "orig_symbol": "RelationshipHinge::vfunc_53",
+  "src_path": "src/classes/RelationshipHinge.cpp",
+  "lifted_path": "lifted/classes/RelationshipHinge.cpp",
+  "name": "RelationshipHinge::vfunc_53",
+  "class": "RelationshipHinge",
+  "signature": "void __thiscall fn_00658B30(void* self)",
+  "summary": "Initializes a sub-object parameter at offset 0x160 from field_0x64 with 0.0f and 80.0f.",
+  "fields": [
+    {
+      "class": "RelationshipHinge",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T14:29:22Z"
+}

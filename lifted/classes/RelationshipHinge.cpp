@@ -82,3 +82,24 @@ void fn_00658910(void* self, FLOAT* out) {
 }
 } // namespace lift_006588F0
 } // namespace lift_00658910
+
+// [0x00658B30]
+namespace lift_00658B30 {
+// @name RelationshipHinge::vfunc_53
+// @class RelationshipHinge
+// @summary Initializes a sub-object parameter at offset 0x160 from field_0x64 with 0.0f and 80.0f.
+// @field RelationshipHinge +0x64 uint32_t field_0x64
+
+
+extern uint32_t ext_007C9C50(uint32_t arg0);
+extern void ext_007C9E80(void* self, float val1, float val2);
+extern const float mem_00984790;
+extern const char mem_00925134[];
+
+void __thiscall fn_00658B30(void* self) {
+    (void)mem_00925134;
+    uint32_t field = lift_field<uint32_t>(self, 0x64);
+    uint32_t target = ext_007C9C50(field);
+    ext_007C9E80(reinterpret_cast<void*>(static_cast<uintptr_t>(target)), 0.0f, mem_00984790);
+}
+} // namespace lift_00658B30
