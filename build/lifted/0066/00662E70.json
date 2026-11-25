@@ -1,0 +1,13 @@
+{
+  "va": "0x00662E70",
+  "size": 70,
+  "orig_symbol": "sub_00662E70",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "CanonicalPathString",
+  "signature": "extern \"C\" const char* __thiscall ext_00924FF0(const void* self);             // basic_string::c_str extern \"C\" void        __thiscall ext_00924FE4(void* self, const char* s);    // basic_string(const char*) extern \"C\" BOOL        __stdcall  ext_00925550(char* out, const char* path);  // SHLWAPI!PathCanonicalizeA void* fn_00662E70(void* out, const void* in)",
+  "summary": "Canonicalizes the path held in a std::string and constructs the result string in-place into the output slot.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:24:57Z"
+}

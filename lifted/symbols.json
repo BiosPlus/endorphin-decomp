@@ -36188,6 +36188,12 @@
     "summary": "Returns 1 if the std::string path is relative (PathIsRelativeA == TRUE), else 0.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x00662E70": {
+    "name": "CanonicalPathString",
+    "signature": "extern \"C\" const char* __thiscall ext_00924FF0(const void* self);             // basic_string::c_str extern \"C\" void        __thiscall ext_00924FE4(void* self, const char* s);    // basic_string(const char*) extern \"C\" BOOL        __stdcall  ext_00925550(char* out, const char* path);  // SHLWAPI!PathCanonicalizeA void* fn_00662E70(void* out, const void* in)",
+    "summary": "Canonicalizes the path held in a std::string and constructs the result string in-place into the output slot.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00662F50": {
     "name": "showFatalErrorAndExit",
     "signature": "void sub_00662F50(uint32_t arg0)",

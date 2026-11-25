@@ -566,3 +566,24 @@ uint32_t __fastcall sub_00660210(uint32_t ecx) {
     return elem;
 }
 } // namespace lift_00660210
+
+// [0x00662E70] sub_00662E70 (70 bytes)
+namespace lift_00662E70 {
+// Imported MSVCP80 / SHLWAPI thunks (IAT slots 0x924FF0, 0x924FE4, 0x925550).
+// Calls are declared with their original MSVC calling conventions.
+extern const char* __thiscall ext_00924FF0(const void* self);             // basic_string::c_str
+extern void        __thiscall ext_00924FE4(void* self, const char* s);    // basic_string(const char*)
+extern BOOL        __stdcall  ext_00925550(char* out, const char* path);  // SHLWAPI!PathCanonicalizeA
+
+// @name CanonicalPathString
+// @summary Canonicalizes the path held in a std::string and constructs the result string in-place into the output slot.
+void* fn_00662E70(void* out, const void* in) {
+    char buf[0x100];  // MAX_PATH-sized canonical path buffer
+    buf[0] = '\0';
+
+    const char* path = ext_00924FF0(in);
+    ext_00925550(buf, path);
+    ext_00924FE4(out, buf);
+    return out;
+}
+} // namespace lift_00662E70
