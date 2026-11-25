@@ -48592,6 +48592,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006B85F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B8AB0": {
+    "name": "NMCAutoCompleteList::PreTranslateMessage",
+    "class": "NMCAutoCompleteList",
+    "signature": "uint32_t __thiscall fn_006B8AB0(void* self, uint32_t pMsg)",
+    "summary": "Forwards non-navigation WM_KEYDOWN messages to a buddy window's HWND after peeking them.",
+    "lifted_path": "lifted/classes/NMCAutoCompleteList.cpp"
+  },
   "0x006B8B10": {
     "name": "thunk_forwardToMFC80Ord1903",
     "signature": "void fn_006B8B10(void)",
