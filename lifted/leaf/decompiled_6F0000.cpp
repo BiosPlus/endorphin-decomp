@@ -1728,3 +1728,40 @@ bool sub_006F7850(uint32_t target, int32_t* outRow, int32_t* outCol) {
     return false;
 }
 } // namespace lift_006F7850
+
+// [0x006F8A70]
+namespace lift_006F8A70 {
+// @name Unknown::InitMemberAndSelf
+// @class Unknown
+// @summary Initializes a subobject at +0x4 via ext_006B9D10, initializes this via ext_006F8AC0, and returns this.
+// @field Unknown +0x04 uint8_t field_0x04
+
+
+extern void* ext_006B9D10(void* ecx);
+extern void* ext_006F8AC0(void* ecx);
+
+void* fn_006F8A70(void* ecx) {
+    ext_006B9D10(static_cast<uint8_t*>(ecx) + 4);
+    ext_006F8AC0(ecx);
+    return ecx;
+}
+} // namespace lift_006F8A70
+
+// [0x006F8700]
+namespace lift_006F8700 {
+// @name initPositiveHuge
+// @summary Initializes global double at 0x00B5E260/0x00B5E264 from MSVCR80!_HUGE pointer at 0x00925284
+
+
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5E260;
+extern uint32_t mem_00B5E264;
+
+void sub_006F8700() {
+    uint32_t eax = mem_00925284;
+    uint32_t ecx = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(eax));
+    uint32_t edx = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(eax + 4));
+    mem_00B5E260 = ecx;
+    mem_00B5E264 = edx;
+}
+} // namespace lift_006F8700

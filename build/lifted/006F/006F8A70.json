@@ -1,0 +1,22 @@
+{
+  "va": "0x006F8A70",
+  "size": 80,
+  "orig_symbol": "sub_006F8A70",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::InitMemberAndSelf",
+  "class": "Unknown",
+  "signature": "void* fn_006F8A70(void* ecx)",
+  "summary": "Initializes a subobject at +0x4 via ext_006B9D10, initializes this via ext_006F8AC0, and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:56:45Z"
+}
