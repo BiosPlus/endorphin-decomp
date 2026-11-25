@@ -14,6 +14,6 @@ struct Arg1_Fields {
     // +0x4   uint32_t                 typeDescriptor  (evidence: 0x0046E840, 0x004A2AD0, 0x004CB250) // CONFLICT: multiple definitions at +0x4
     // +0x14  void**                   items  (evidence: 0x006E7340)
     // +0x5C  uint32_t                 field_0x5C  (evidence: 0x007D8470, 0x007D8750)
-    // +0x1CC uint32_t                 field_0x1cc  (evidence: 0x007BD640, 0x007BFC60)
+    // +0x1CC uint32_t                 field_0x1cc  (evidence: 0x007B89BC, 0x007BD640, 0x007BFC60)
 };
 } // namespace lifted_layout

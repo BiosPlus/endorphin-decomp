@@ -8,6 +8,6 @@
 // Recovered field layout for Unknown_Fields:
 namespace lifted_layout {
 struct Unknown_Fields_Fields {
-    // +0x1CC void* handleHolder (freed via GlobalFree, cleared to 0)  (evidence: 0x007BF2F0)
+    // +0x1CC void* handleHolder (freed via GlobalFree, cleared to 0)  (evidence: 0x007B89BC, 0x007BF2F0)
 };
 } // namespace lifted_layout

@@ -59304,9 +59304,10 @@
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
   "0x007B89BC": {
-    "name": "Data_007B89BC_ByteTable",
-    "signature": "void fn_007B89BC(void* self)",
-    "summary": "80-byte constant table of small values (0-3) at 0x007B89BC; not executable code",
+    "name": "SwitchCaseIndexTable_007B7084",
+    "class": "(none)",
+    "signature": "void fn_007B617C(void* self)",
+    "summary": "12-byte byte-index table indexed by (eax) and used by a jump table dispatch at 0x007B6xxx (mov cl, [eax+0x7B7084]; jmp [ecx*4+0x7B7074]); this is data, not code.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
   "0x007B8A48": {

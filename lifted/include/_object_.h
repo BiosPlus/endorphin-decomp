@@ -8,6 +8,6 @@
 // Recovered field layout for <object>:
 namespace lifted_layout {
 struct _object__Fields {
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x007B0680, 0x007BD640)
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x007B0680, 0x007B89BC, 0x007BD640)
 };
 } // namespace lifted_layout

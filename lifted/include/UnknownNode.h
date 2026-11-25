@@ -12,7 +12,7 @@ struct UnknownNode_Fields {
     // +0x8   uint32_t                 field_0x08  (evidence: 0x004A73F0, 0x0059B120) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_0x08  (evidence: 0x005942F0) // CONFLICT: multiple definitions at +0x8
     // +0xC   uint8_t                  field_0x0C  (evidence: 0x004A73F0, 0x0059B120)
-    // +0x10  void*                    next  (evidence: 0x007B2E20, 0x007BD640)
+    // +0x10  void*                    next  (evidence: 0x007B2E20, 0x007B89BC, 0x007BD640)
     // +0x31  uint8_t                  field_0x31  (evidence: 0x005942F0)
     // +0xAD  uint8_t                  field_0xAD  (evidence: 0x004A73F0, 0x0059B120)
 };

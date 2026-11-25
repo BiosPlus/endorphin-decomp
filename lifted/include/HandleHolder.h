@@ -8,8 +8,8 @@
 // Recovered field layout for HandleHolder:
 namespace lifted_layout {
 struct HandleHolder_Fields {
-    // +0x40  uint32_t field_0x40 (selects which inner-handle slot is used when nonzero)  (evidence: 0x007BF2F0)
-    // +0x5C  uint32_t innerHandle (preferred inner handle when +0x40 != 0)  (evidence: 0x007BF2F0)
-    // +0x64  uint32_t field_0x64 (inner handle used when +0x40 == 0)  (evidence: 0x007BF2F0)
+    // +0x40  uint32_t field_0x40 (selects which inner-handle slot is used when nonzero)  (evidence: 0x007B89BC, 0x007BF2F0)
+    // +0x5C  uint32_t innerHandle (preferred inner handle when +0x40 != 0)  (evidence: 0x007B89BC, 0x007BF2F0)
+    // +0x64  uint32_t field_0x64 (inner handle used when +0x40 == 0)  (evidence: 0x007B89BC, 0x007BF2F0)
 };
 } // namespace lifted_layout
