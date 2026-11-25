@@ -21,7 +21,7 @@ struct Object_Fields {
     // +0x0   uint32_t                 vtable  (evidence: 0x005749F0, 0x0057BBE0, 0x00602EC0, 0x00622B40, 0x0062CD30, 0x0063E050, 0x0063E980, 0x006601E0, 0x006B19B0, 0x006B9950) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t*                vtable  (evidence: 0x004304F0, 0x004A5A00, 0x006A7F50) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x00420070, 0x0042FD30, 0x005F35C0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void**                   vtable  (evidence: 0x004030F0, 0x00406030, 0x0040BE90, 0x0040FD60, 0x005435A0, 0x005457B0, 0x00709100, 0x007558B0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void**                   vtable  (evidence: 0x004030F0, 0x00406030, 0x0040BE90, 0x0040FD60, 0x00430840, 0x00430870, 0x005435A0, 0x005457B0, 0x00709100, 0x007558B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable_0x00  (evidence: 0x00517AD0) // CONFLICT: multiple definitions at +0x0
     // +0x4   int32_t                  field_0x04  (evidence: 0x00533F10) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              field_0x04  (evidence: 0x005541A0) // CONFLICT: multiple definitions at +0x4

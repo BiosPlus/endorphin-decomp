@@ -1,0 +1,21 @@
+{
+  "va": "0x00430840",
+  "size": 38,
+  "orig_symbol": "sub_00430840",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "updateObjectFlagFromGlobal",
+  "signature": "void __stdcall fn_00430840(void* obj)",
+  "summary": "Checks bit flag 2 on the global sub-object and passes the result to the target object's virtual method at +0x4.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:31:06Z"
+}

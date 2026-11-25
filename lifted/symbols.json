@@ -3243,6 +3243,24 @@
     "summary": "Queries a global manager flag, notifies the arg object with it, and if self+0x100 is set, notifies again with (nested==5).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430810": {
+    "name": "updateObjectFlagFromGlobalBit1",
+    "signature": "extern \"C\" int32_t __stdcall fn_00430810(void* obj)",
+    "summary": "Checks global bit flag 1 via ext_00465B30/ext_004694E0 and invokes vtable+0x4 on the given object with the boolean result.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x00430840": {
+    "name": "updateObjectFlagFromGlobal",
+    "signature": "void __stdcall fn_00430840(void* obj)",
+    "summary": "Checks bit flag 2 on the global sub-object and passes the result to the target object's virtual method at +0x4.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x00430870": {
+    "name": "updateObjectFlag5State",
+    "signature": "int32_t __stdcall fn_00430870(void* obj)",
+    "summary": "Queries bit flag 5 on the global sub-object and passes it to the object's vtable slot +0x4.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430900": {
     "name": "forwardChildStateToTarget",
     "signature": "void __thiscall fn_00430900(void* self, void* target)",
