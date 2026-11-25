@@ -1,0 +1,14 @@
+{
+  "va": "0x006B12F0",
+  "size": 68,
+  "orig_symbol": "sub_006B12F0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "roundDoubleToInt",
+  "class": "none (free function)",
+  "signature": "extern \"C\" int32_t __cdecl sub_006B12F0(double x)",
+  "summary": "Truncates x via ext_006A6DE0, then corrects to the nearest integer (ties away from zero, NaN/zero take the -1 branch).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:20:21Z"
+}

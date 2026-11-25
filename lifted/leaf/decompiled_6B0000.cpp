@@ -921,3 +921,23 @@ void __thiscall fn_006B1750(void* self, uint32_t arg0, uint32_t arg1, uint32_t a
     ext_006A5EA8(self);
 }
 } // namespace lift_006B1750
+
+// [0x006B12F0]
+namespace lift_006B12F0 {
+// @name roundDoubleToInt
+// @summary Truncates x via ext_006A6DE0, then corrects to the nearest integer (ties away from zero, NaN/zero take the -1 branch).
+
+extern int32_t __cdecl ext_006A6DE0(double x);
+
+// @class none (free function)
+
+extern int32_t __cdecl sub_006B12F0(double x) {
+    int32_t n = ext_006A6DE0(x);
+    double diff = std::fabs(x - static_cast<double>(n));
+    if (diff < 0.5) {
+        return n;
+    }
+    // Remaining branch: x > 0 => n + 1, otherwise (x <= 0 or NaN) => n - 1.
+    return (x > 0.0) ? n + 1 : n - 1;
+}
+} // namespace lift_006B12F0
