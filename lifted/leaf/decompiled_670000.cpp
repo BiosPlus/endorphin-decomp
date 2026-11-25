@@ -1523,3 +1523,28 @@ extern void fn_00675240(OwnedPointerRange* owner, void** first, OwnedPointerRang
 }
 } // namespace lift_004A5F70
 } // namespace lift_00675240
+
+// [0x00673C90]
+namespace lift_00673C90 {
+// Imported MSVCP80 std::string copy-constructor (thiscall, one stack arg).
+// Original IAT slot: mem_00924FE0.
+extern void ext_std_string_copy_ctor(void* dst, const void* src);
+
+// @name Unknown::CopyConstruct
+// @class Unknown
+// @summary Copy constructor: copy-constructs std::string members at +0x00 and +0x1C from src, copies 4-byte fields +0x38/+0x3C/+0x40, returns this.
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1C std::string field_0x1C
+// @field Unknown +0x38 uint32_t field_0x38
+// @field Unknown +0x3C uint32_t field_0x3C
+// @field Unknown +0x40 uint32_t field_0x40
+extern void* __fastcall fn_00673C90(void* self, int edx_unused, const void* src) {
+    (void)edx_unused;
+    ext_std_string_copy_ctor(static_cast<uint8_t*>(self) + 0x00, static_cast<const uint8_t*>(src) + 0x00);
+    ext_std_string_copy_ctor(static_cast<uint8_t*>(self) + 0x1C, static_cast<const uint8_t*>(src) + 0x1C);
+    lift_field<uint32_t>(self, 0x38) = lift_field<uint32_t>(src, 0x38);
+    lift_field<uint32_t>(self, 0x3C) = lift_field<uint32_t>(src, 0x3C);
+    lift_field<uint32_t>(self, 0x40) = lift_field<uint32_t>(src, 0x40);
+    return self;
+}
+} // namespace lift_00673C90

@@ -44689,6 +44689,13 @@
     "summary": "Stores a DWORD argument at this+0x60 and sets the byte flag at this+0x65 to 1.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x00673C90": {
+    "name": "Unknown::CopyConstruct",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __fastcall fn_00673C90(void* self, int edx_unused, const void* src)",
+    "summary": "Copy constructor: copy-constructs std::string members at +0x00 and +0x1C from src, copies 4-byte fields +0x38/+0x3C/+0x40, returns this.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x006744A0": {
     "name": "NMData::State::vfunc_7",
     "class": "NMData::State",
