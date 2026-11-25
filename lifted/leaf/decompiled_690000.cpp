@@ -1268,3 +1268,44 @@ bool fn_00696910(void* stream, char delim) {
     }
 }
 } // namespace lift_00696910
+
+// [0x00699B80] sub_00699B80 (74 bytes)
+namespace lift_00699B80 {
+// Known callee 0x00405FB0: throwPreparedStringError_00405FB0 (Builds a std::string from the literal at 0x00928F30 and throws it inside an std::exception-derived object.)
+extern void ext_00405FB0();
+// Known callee 0x00699810: allocate_array_0x2c (Allocates an array of count 0x2c-byte elements, throwing std::bad_alloc on size_t overflow.)
+extern void* ext_00699810(uint32_t count);
+
+// @name allocateEntryArray
+// @summary Zeroes three 32-bit slots of self, then allocates count 0x2c-byte entries and stores the begin/end/capacity pointers. Returns false when count is 0.
+// @field <unknown> +0x04 uint32_t field_0x04
+// @field <unknown> +0x08 uint32_t field_0x08
+// @field <unknown> +0x0C uint32_t field_0x0C
+bool fn_00699B80(void* self, uint32_t count) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uint32_t* field04 = reinterpret_cast<uint32_t*>(base + 0x04);
+    uint32_t* field08 = reinterpret_cast<uint32_t*>(base + 0x08);
+    uint32_t* field0C = reinterpret_cast<uint32_t*>(base + 0x0C);
+
+    *field04 = 0;
+    *field08 = 0;
+    *field0C = 0;
+
+    if (count == 0) {
+        return false;
+    }
+
+    if (count > 0x05D1745Du) {
+        ext_00405FB0();
+    }
+
+    void* block = ext_00699810(count);
+    uint32_t blockAddr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(block));
+    uint32_t endAddr = blockAddr + count * 0x2Cu;
+
+    *field04 = blockAddr;
+    *field08 = blockAddr;
+    *field0C = endAddr;
+    return true;
+}
+} // namespace lift_00699B80

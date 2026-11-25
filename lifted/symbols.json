@@ -48398,6 +48398,12 @@
     "summary": "Constructs a static string object from a literal on first call, registers its destructor, and returns it.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x00699B80": {
+    "name": "allocateEntryArray",
+    "signature": "bool fn_00699B80(void* self, uint32_t count)",
+    "summary": "Zeroes three 32-bit slots of self, then allocates count 0x2c-byte entries and stores the begin/end/capacity pointers. Returns false when count is 0.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00699E30": {
     "name": "sub_00699E30",
     "signature": "void* fn_00699E30(void* first, void* last, void* dest_last)",
