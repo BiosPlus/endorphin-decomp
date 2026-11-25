@@ -14098,6 +14098,12 @@
     "summary": "Copies [first,last) of 0x20-byte elements backward so they end at d_last; returns the new begin of the destination range (d_last - count), or d_last when the range is empty.",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
+  "0x004C73A0": {
+    "name": "InitOnceGlobalString_004C73A0",
+    "signature": "void* fn_004C73A0()",
+    "summary": "One-time guarded initializer for the global string at 0x00AE3D64; registers its teardown and returns the global's address.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C7400": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::SeverEventData\u003e::vfunc_40",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::SeverEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::SeverEventData::getSeverEventType(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::SeverEventData::setSeverEventType(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",

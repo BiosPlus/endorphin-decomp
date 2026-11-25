@@ -691,3 +691,27 @@ void fn_004C2250(uint32_t* out, uint32_t value) {
     out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
 }
 } // namespace lift_004C2250
+
+// [0x004C73A0] sub_004C73A0 (95 bytes)
+namespace lift_004C73A0 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0066AD10(void* out_str, uint8_t flag);
+// Known callee 0x006A6C87: sub_006A6C87 (registers teardown for a global; takes one argument)
+extern void ext_006A6C87(void* arg);
+extern uint32_t mem_00AE3D80;
+extern int mem_00AE3D64;
+
+// @name InitOnceGlobalString_004C73A0
+// @summary One-time guarded initializer for the global string at 0x00AE3D64; registers its teardown and returns the global's address.
+void* fn_004C73A0() {
+    // Guard bit 0 of the init flag; initialize only on first call.
+    if ((mem_00AE3D80 & 1u) == 0) {
+        mem_00AE3D80 |= 1u;
+        // Original pushes the constant 0xA3A6A4 as a dword; the callee's
+        // signature takes a uint8_t flag, so only the low byte is passed.
+        ext_0066AD10(&mem_00AE3D64, static_cast<uint8_t>(0xA3A6A4u));
+        ext_006A6C87(reinterpret_cast<void*>(static_cast<uintptr_t>(0x918AD0u)));
+    }
+    return &mem_00AE3D64;
+}
+} // namespace lift_004C73A0
