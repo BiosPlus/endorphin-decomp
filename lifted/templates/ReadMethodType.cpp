@@ -50813,3 +50813,1257 @@ void fn_004A3260(void* self) {
     ext_006A6DD2(exc, mem_009DEC1C);
 }
 } // namespace lift_004A3260
+
+// [0x004A35D0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_004A35D0 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_00496F40(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004A35D0(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_00496F40(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_004A35D0
+
+// [0x004AAAF0] ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_004AAAF0 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_004A9A60(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004AAAF0(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_004A9A60(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_004AAAF0
+
+// [0x004AB090] ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_004AB090 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_004A9A50(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004AB090(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_004A9A50(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_004AB090
+
+// [0x004B4560] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_004B4560 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_0048FAF0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004B4560(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_0048FAF0(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_004B4560
+
+// [0x004CB030] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_004CB030 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_004CA2F0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004CB030(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_004CA2F0(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_004CB030
+
+// [0x004D6E60] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_004D6E60 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_004D39B0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004D6E60(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_004D39B0(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_004D6E60
+
+// [0x004D71A0] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_004D71A0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_004D39C0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004D71A0(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_004D39C0(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_004D71A0
+
+// [0x004D7D90] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_004D7D90 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_004D3C10(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004D7D90(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_004D3C10(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_004D7D90
+
+// [0x004D80D0] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_004D80D0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_004D39F0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004D80D0(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_004D39F0(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_004D80D0
+
+// [0x004D8480] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_004D8480 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_004D3A00(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004D8480(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_004D3A00(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_004D8480
+
+// [0x004DFE50] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_004DFE50 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_004DE320(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004DFE50(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_004DE320(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_004DFE50
+
+// [0x004E0460] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_004E0460 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_004DDE60(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004E0460(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_004DDE60(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_004E0460
+
+// [0x004E0730] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_004E0730 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_004DDE50(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004E0730(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_004DDE50(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_004E0730
+
+// [0x004EE8D0] ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>::vfunc_5 (55 bytes)
+namespace lift_004EE8D0 {
+// @name ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_004EDE20(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004EE8D0(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_004EDE20(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_004EE8D0
+
+// [0x00585780] ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_00585780 {
+// @name ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_00584C00(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00585780(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_00584C00(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_00585780
+
+// [0x005B7680] ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>::vfunc_5 (55 bytes)
+namespace lift_005B7680 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_005B64D0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005B7680(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_005B64D0(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_005B7680
+
+// [0x005C6700] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_005C6700 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_005B6470(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005C6700(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_005B6470(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_005C6700
+
+// [0x005C6B00] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_005C6B00 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_005B6480(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005C6B00(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_005B6480(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_005C6B00
+
+// [0x005C7540] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_005C7540 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_005B6490(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005C7540(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_005B6490(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_005C7540
+
+// [0x005CB550] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>::vfunc_5 (55 bytes)
+namespace lift_005CB550 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_005C3650(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005CB550(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_005C3650(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_005CB550
+
+// [0x005CBC80] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_005CBC80 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_005C3640(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005CBC80(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_005C3640(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_005CBC80
+
+// [0x005D61A0] ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_005D61A0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_005CF950(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005D61A0(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_005CF950(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_005D61A0
+
+// [0x005D96D0] ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_005D96D0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_005CF940(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005D96D0(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_005CF940(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_005D96D0
+
+// [0x005D9AC0] ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_005D9AC0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_005CFE50(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005D9AC0(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_005CFE50(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_005D9AC0
+
+// [0x005F7490] ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_005F7490 {
+// @name ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_005F51B0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005F7490(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_005F51B0(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_005F7490
+
+// [0x00616A60] ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_00616A60 {
+// @name ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_00610A90(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00616A60(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_00610A90(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_00616A60
+
+// [0x0061BA40] ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_0061BA40 {
+// @name ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_00610A80(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_0061BA40(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_00610A80(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_0061BA40
+
+// [0x0061CEA0] ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_0061CEA0 {
+// @name ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_00610AA0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_0061CEA0(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_00610AA0(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_0061CEA0
+
+// [0x00643AE0] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_00643AE0 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_00641FD0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00643AE0(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_00641FD0(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_00643AE0
+
+// [0x00643DC0] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_00643DC0 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_00641FE0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00643DC0(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_00641FE0(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_00643DC0
+
+// [0x006440A0] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_006440A0 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_00641FF0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_006440A0(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_00641FF0(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_006440A0
+
+// [0x00644380] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_00644380 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_00642000(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00644380(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_00642000(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_00644380
+
+// [0x00644770] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_00644770 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)).
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_00642010(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00644770(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_00642010(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
+} // namespace lift_00644770

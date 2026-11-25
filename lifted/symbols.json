@@ -12474,6 +12474,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004A35D0": {
+    "name": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0\u003e",
+    "signature": "void fn_004A35D0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004A3820": {
     "name": "ReadWriteMethodType\u003cFSMEditView,int,getFontSize,int,setFontSize\u003e::vfunc_40",
     "class": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setFontSize(int), 0}\u003e",
@@ -12991,6 +12998,13 @@
     "summary": "Reads the dword at the argument; if non-null, forwards it as `this` to ext_004A9A60 and returns its result, otherwise throws (original builds an exception object and calls _CxxThrowException).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004AAAF0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_004AAAF0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004AABE0": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::BehaviourData,bool,\u0026NMData::BehaviourData::getVisibility,bool,\u0026NMData::BehaviourData::vcall_32\u003e::vfunc_40",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::BehaviourData,bool,\u0026NMData::BehaviourData::getVisibility,bool,\u0026NMData::BehaviourData::vcall_32\u003e",
@@ -13031,6 +13045,13 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0\u003e",
     "signature": "extern void* __thiscall fn_004AB030(void* self, void* out_str, void** target_ptr)",
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004AB090": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0\u003e",
+    "signature": "void fn_004AB090(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004AB2B0": {
@@ -13787,6 +13808,13 @@
     "class": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0\u003e",
     "signature": "extern void* __thiscall fn_004B4500(void* self, void* out_str, void** target_ptr)",
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004B4560": {
+    "name": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_004B4560(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004B4740": {
@@ -15500,6 +15528,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004CB030": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0\u003e",
+    "signature": "void fn_004CB030(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004CB1D0": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData\u003e::vfunc_40",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setPositionStrengthFromFSM(class NM::Vector3 const \u0026), 0}\u003e",
@@ -16735,11 +16770,25 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004D6E60": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_004D6E60(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004D7160": {
     "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0\u003e",
     "signature": "bool fn_004D7160(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_2).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004D71A0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_004D71A0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004D7550": {
@@ -16826,6 +16875,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004D7D90": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0\u003e",
+    "signature": "void fn_004D7D90(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004D7FE0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0\u003e",
@@ -16847,6 +16903,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004D80D0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_004D80D0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004D83D0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0\u003e",
@@ -16859,6 +16922,13 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0\u003e",
     "signature": "extern void* __thiscall fn_004D8420(void* self, void* out_str, void** target_ptr)",
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004D8480": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_004D8480(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004D8620": {
@@ -17335,6 +17405,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004DFE50": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0\u003e",
+    "signature": "void fn_004DFE50(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004E0070": {
     "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0\u003e",
@@ -17370,6 +17447,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004E0460": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_004E0460(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004E06B0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0\u003e",
@@ -17382,6 +17466,13 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0\u003e",
     "signature": "void fn_004E0700(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004E0730": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_004E0730(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004E0820": {
@@ -18090,6 +18181,13 @@
     "class": "ExprParser::ReadMethodType\u003cSelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1\u003e",
     "signature": "extern void* __thiscall fn_004EE870(void* self, void* out_str, void** target_ptr)",
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004EE8D0": {
+    "name": "ExprParser::ReadMethodType\u003cSelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cSelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1\u003e",
+    "signature": "void fn_004EE8D0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004EF2B0": {
@@ -27421,6 +27519,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00585780": {
+    "name": "ExprParser::ReadMethodType\u003cObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0\u003e",
+    "signature": "void fn_00585780(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00585E40": {
     "name": "ExprParser::ReadMethodType\u003cNMData::NetworkConnectorData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::NetworkConnectorData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0\u003e",
@@ -31020,6 +31125,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005B7680": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1\u003e",
+    "signature": "void fn_005B7680(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005B7AE0": {
     "name": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getVelocityAtPoint\u003e::vfunc_48",
     "class": "ExprParser::FunctionType\u003cNMData::MetaBodyData,getVelocityAtPoint\u003e",
@@ -32360,11 +32472,25 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005C6700": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0\u003e",
+    "signature": "void fn_005C6700(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005C6AB0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0\u003e",
     "signature": "void* fn_005C6AB0(void* arg0, void** arg1)",
     "summary": "Auto-lifted identical-shape clone of 0x0046CA90 (ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_0).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005C6B00": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0\u003e",
+    "signature": "void fn_005C6B00(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005C6E00": {
@@ -32483,6 +32609,13 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0\u003e",
     "signature": "extern void* __thiscall fn_005C74E0(void* self, void* out_str, void** target_ptr)",
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005C7540": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0\u003e",
+    "signature": "void fn_005C7540(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005C76E0": {
@@ -32904,6 +33037,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005CB550": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1\u003e",
+    "signature": "void fn_005CB550(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005CB9B0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0\u003e",
@@ -32937,6 +33077,13 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0\u003e",
     "signature": "bool fn_005CBC40(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_2).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005CBC80": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0\u003e",
+    "signature": "void fn_005CBC80(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005CBF80": {
@@ -33854,6 +34001,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D61A0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0\u003e",
+    "signature": "void fn_005D61A0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D6550": {
     "name": "ExprParser::ReadMethodType\u003cInterpreter, std::string const \u0026, \u0026Interpreter::getType\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cInterpreter, std::string const \u0026, \u0026Interpreter::getType\u003e",
@@ -34113,6 +34267,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D96D0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_005D96D0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D99D0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0\u003e",
@@ -34132,6 +34293,13 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0\u003e",
     "signature": "extern void* __thiscall fn_005D9A60(void* self, void* out_str, void** target_ptr)",
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005D9AC0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0\u003e",
+    "signature": "void fn_005D9AC0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005D9C60": {
@@ -36433,6 +36601,13 @@
     "class": "ExprParser::ReadMethodType\u003cHelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0\u003e",
     "signature": "extern void* __thiscall fn_005F7430(void* self, void* out_str, void** target_ptr)",
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005F7490": {
+    "name": "ExprParser::ReadMethodType\u003cHelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cHelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0\u003e",
+    "signature": "void fn_005F7490(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005F76B0": {
@@ -39016,6 +39191,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00616A60": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_00616A60(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00616CB0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0\u003e",
@@ -39471,6 +39653,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0061BA40": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_0061BA40(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0061BD10": {
     "name": "ExprParser::ReadMethodType\u003cNMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0\u003e",
@@ -39609,6 +39798,13 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0\u003e",
     "signature": "extern void* __thiscall fn_0061CE40(void* self, void* out_str, void** target_ptr)",
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0061CEA0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_0061CEA0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x0061D250": {
@@ -43526,6 +43722,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00643AE0": {
+    "name": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_00643AE0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00643D30": {
     "name": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0\u003e",
@@ -43538,6 +43741,13 @@
     "class": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0\u003e",
     "signature": "bool fn_00643D80(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_2).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00643DC0": {
+    "name": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_00643DC0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00644010": {
@@ -43554,6 +43764,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006440A0": {
+    "name": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_006440A0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x006442F0": {
     "name": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0\u003e",
@@ -43566,6 +43783,13 @@
     "class": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0\u003e",
     "signature": "bool fn_00644340(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_2).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00644380": {
+    "name": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_00644380(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00644680": {
@@ -43587,6 +43811,13 @@
     "class": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0\u003e",
     "signature": "extern void* __thiscall fn_00644710(void* self, void* out_str, void** target_ptr)",
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00644770": {
+    "name": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_00644770(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A3260 (ReadMethodType\u003cStateMachineEditor::FSMEditView\u003e::vfunc_5 (drawConditions)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x006449C0": {
