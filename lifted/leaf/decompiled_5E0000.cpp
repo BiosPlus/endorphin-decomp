@@ -1330,3 +1330,31 @@ void fn_005E0B20(void* self) {
     store_ptr(it, 0x04, p);
 }
 } // namespace lift_005E0B20
+
+// [0x005E2830] sub_005E2830 (34 bytes)
+namespace lift_005E2830 {
+// Virtual dispatch helper: calls vtable slot `Slot` (index, not byte offset) of `obj`, passing obj as the implicit this.
+template <typename R, std::size_t Slot, typename... A>
+inline R lift_vcall(void* obj, A... args) {
+    void** vt = lift_field<void**>(obj, 0);
+    using Fn = R (*)(void*, A...);
+    return reinterpret_cast<Fn>(vt[Slot])(obj, args...);
+}
+
+// @name UnknownClass::forwardSetElement2ViaSubobject
+// @class UnknownClass
+// @summary Reads the subobject at +0x17C, calls its vtable slot 0x120 (index 72) with the float value, then forwards the value to setElement2AndNotify on the object that call returned.
+// @field UnknownClass +0x17C void* field_0x17C
+
+// Known callee 0x00612410: UnknownClass::setElement2AndNotify (Stores a float into element 2 of subobject +0x8, sets flag +0xC, and notifies subobject +0xBC and global +0x258.)
+extern void ext_00612410(void* self, float value);
+// Known callee 0x00612460: UnknownClass::setElement3AndNotify (Sets float element 3 in subobject at +0x8, marks flag at +0xC, notifies subobject at +0xBC, and dispatches virtual slot 0x154 on global object +0x258 if non-null.) Not called by this function's body; declared because the original asm's callee set includes it.
+extern void ext_00612460(void* self, float value);
+
+void fn_005E2830(void* self, float value) {
+    void* sub = lift_field<void*>(self, 0x17C);
+    void* target = lift_vcall<void*, 72>(sub, value); // vtable +0x120
+    ext_00612410(target, value);
+    (void)&ext_00612460; // reference only: the disassembly does not call 0x00612460
+}
+} // namespace lift_005E2830

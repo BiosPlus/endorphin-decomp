@@ -1,0 +1,22 @@
+{
+  "va": "0x005E2830",
+  "size": 34,
+  "orig_symbol": "sub_005E2830",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "UnknownClass::forwardSetElement2ViaSubobject",
+  "class": "UnknownClass",
+  "signature": "inline R lift_vcall(void* obj, A... args)",
+  "summary": "Reads the subobject at +0x17C, calls its vtable slot 0x120 (index 72) with the float value, then forwards the value to setElement2AndNotify on the object that call returned.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x17C",
+      "type": "void*",
+      "name": "field_0x17C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-25T14:14:17Z"
+}
