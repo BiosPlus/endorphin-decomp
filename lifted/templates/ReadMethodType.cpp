@@ -59440,3 +59440,49 @@ double fn_0046D230(void* self) {
     return ext_006A6DE0(rounded);
 }
 } // namespace lift_0046D230
+
+// [0x00488B80] ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_00488B80 {
+// Known callee 0x00486C90: GetChildOrGlobalViaSlot9 (If this->field_0x168 is null, return &mem_00B59400; otherwise tail-dispatch)
+extern void* ext_00486C90(void* self);
+// Unknown callee 0x006A6DE0 (171B): consumes the rounded value left on the x87 stack; signature not recovered.
+extern void ext_006A6DE0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+// IAT slots (MSVCP80 std::string::c_str, MSVCR80 atof) read through mem_ addresses in the original.
+extern void* mem_00924FF0;
+extern void* mem_009251F0;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData>::vfunc_2 (NMData::AnimationEventData::getCharacterName)
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0>
+// @summary Reads the first pointer of its argument, resolves a string via ext_00486C90, parses it with atof, and returns the value rounded half away from zero; throws if the first pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+double fn_00488B80(void* self) {
+    void* holder = *static_cast<void**>(self);
+    if (holder == nullptr) {
+        // Original builds a local DerivedException (ext_0046C3C0) and throws via the CRT thunk.
+        ext_0046C3C0(nullptr);
+        ext_006A6DD2();
+        return 0.0;
+    }
+
+    const std::string* name =
+        static_cast<const std::string*>(ext_00486C90(holder));
+    // Indirect calls through the IAT slots. The original is __thiscall (this in ecx) for c_str;
+    // here it is modelled as a single-argument call.
+    using CStrFn = const char* (*)(const void*);
+    using AtofFn = double (*)(const char*);
+    CStrFn c_str = *reinterpret_cast<CStrFn*>(&mem_00924FF0);
+    AtofFn atof_fn = *reinterpret_cast<AtofFn*>(&mem_009251F0);
+    double value = atof_fn(c_str(name));
+
+    // Round half away from zero (original: fcom against 0, then +/-0.5).
+    double rounded = (value < 0.0) ? (value - 0.5) : (value + 0.5);
+
+    // Original hands the rounded value to ext_006A6DE0 via the x87 stack.
+    ext_006A6DE0();
+    return rounded;
+}
+} // namespace lift_00488B80
