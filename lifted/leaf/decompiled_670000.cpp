@@ -1363,3 +1363,34 @@ void* fn_00672530(void* self) {
     return &mem_00B59CC4;
 }
 } // namespace lift_00672530
+
+// [0x0067DB90]
+namespace lift_0067DB90 {
+// @name SetRotationYMatrix
+// @summary Writes a 3x3 row-major rotation matrix about the Y axis (cos/0/-sin, 0/1/0, sin/0/cos) into the object at this, from a float angle.
+// @field  +0x00 float m00 (cos(angle))
+// @field  +0x04 float m01 (0.0f)
+// @field  +0x08 float m02 (-sin(angle))
+// @field  +0x0C float m10 (0.0f)
+// @field  +0x10 float m11 (1.0f)
+// @field  +0x14 float m12 (0.0f)
+// @field  +0x18 float m20 (sin(angle))
+// @field  +0x1C float m21 (0.0f)
+// @field  +0x20 float m22 (cos(angle))
+// Original: __thiscall (this in ecx), one float arg, ret 4. The x87 CIsin/CIcos
+// thunks (ext_006A6EB0 / ext_006A6EAA) are replaced by std::sin / std::cos.
+void SetRotationYMatrix(void* self, float angle) {
+    const float s = static_cast<float>(std::sin(static_cast<double>(angle)));
+    const float c = static_cast<float>(std::cos(static_cast<double>(angle)));
+
+    lift_field<float>(self, 0x00) = c;
+    lift_field<float>(self, 0x04) = 0.0f;
+    lift_field<float>(self, 0x08) = -s;
+    lift_field<float>(self, 0x0C) = 0.0f;
+    lift_field<float>(self, 0x10) = 1.0f;
+    lift_field<float>(self, 0x14) = 0.0f;
+    lift_field<float>(self, 0x18) = s;
+    lift_field<float>(self, 0x1C) = 0.0f;
+    lift_field<float>(self, 0x20) = c;
+}
+} // namespace lift_0067DB90

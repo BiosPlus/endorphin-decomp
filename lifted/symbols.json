@@ -44640,6 +44640,12 @@
     "summary": "Builds a local 3x3 identity float matrix and passes it to two helper calls (with arg and self).",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067DB90": {
+    "name": "SetRotationYMatrix",
+    "signature": "void SetRotationYMatrix(void* self, float angle)",
+    "summary": "Writes a 3x3 row-major rotation matrix about the Y axis (cos/0/-sin, 0/1/0, sin/0/cos) into the object at this, from a float angle.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067EC60": {
     "name": "initZeroDouble",
     "signature": "void* __thiscall sub_0067EC60(void* self)",

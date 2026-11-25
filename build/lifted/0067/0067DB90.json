@@ -1,0 +1,13 @@
+{
+  "va": "0x0067DB90",
+  "size": 95,
+  "orig_symbol": "sub_0067DB90",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "SetRotationYMatrix",
+  "signature": "void SetRotationYMatrix(void* self, float angle)",
+  "summary": "Writes a 3x3 row-major rotation matrix about the Y axis (cos/0/-sin, 0/1/0, sin/0/cos) into the object at this, from a float angle.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:33:48Z"
+}
