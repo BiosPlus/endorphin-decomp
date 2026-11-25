@@ -2503,6 +2503,12 @@
     "summary": "Copy-constructs a std::string at dst from src via the MSVCP80 copy constructor; returns dst.",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x00427700": {
+    "name": "InitStaticObjectOnce_00427700",
+    "signature": "extern \"C\" int mem_00ACDB04;   // init guard bitfield (bit 0 = initialized) extern \"C\" int mem_00ACDAE8;   // function-local static object extern \"C\" int mem_00A2F2F0;   // constant argument (.data u32 0x009908FC) extern \"C\" int mem_00914FC0;   // teardown routine address void* fn_00427700()",
+    "summary": "One-time construction of a static object at 0x00ACDAE8 guarded by bit 0 of 0x00ACDB04; registers its teardown on first use and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x004277B0": {
     "name": "allocateArray36",
     "signature": "extern \"C\" void* fn_004277B0(uint32_t count)",

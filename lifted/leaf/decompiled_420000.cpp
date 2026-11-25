@@ -1119,3 +1119,29 @@ void* fn_00420530() {
     return &mem_00ACCBA4;
 }
 } // namespace lift_00420530
+
+// [0x00427700] sub_00427700 (95 bytes)
+namespace lift_00427700 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0066AD10(void* out_str, const void* arg);
+// Known callee 0x006A6C87: sub_006A6C87 (registers a destructor for atexit-style teardown)
+extern void ext_006A6C87(void* dtor);
+extern int mem_00ACDB04;   // init guard bitfield (bit 0 = initialized)
+extern int mem_00ACDAE8;   // function-local static object
+extern int mem_00A2F2F0;   // constant argument (.data u32 0x009908FC)
+extern int mem_00914FC0;   // teardown routine address
+
+// @name InitStaticObjectOnce_00427700
+// @summary One-time construction of a static object at 0x00ACDAE8 guarded by bit 0 of 0x00ACDB04; registers its teardown on first use and returns its address.
+void* fn_00427700() {
+    auto* guard = reinterpret_cast<uint32_t*>(&mem_00ACDB04);
+    void* obj = reinterpret_cast<void*>(&mem_00ACDAE8);
+
+    if ((*guard & 1u) == 0) {
+        *guard |= 1u;
+        ext_0066AD10(obj, reinterpret_cast<const void*>(&mem_00A2F2F0));
+        ext_006A6C87(reinterpret_cast<void*>(&mem_00914FC0));
+    }
+    return obj;
+}
+} // namespace lift_00427700
