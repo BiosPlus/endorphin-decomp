@@ -48280,3 +48280,30 @@ void fn_0066F400(void* holder) {
 }
 } // namespace lift_005D7700
 } // namespace lift_0066F400
+
+// [0x004CC1B0]
+namespace lift_004CC1B0 {
+// External callees (lifted or thunked).
+DWORD ext_004CB3E0(void* self);                 // Unknown::GetFieldOr0x188Address
+void ext_0046C4E0(DWORD pending);               // ExceptionWithMessage::throwDefaultMessage (throws)
+void* ext_0046C3C0(void* self);                 // DerivedException::DerivedException
+[[noreturn]] void ext_006A6DD2(void* obj, const void* throwInfo);  // thunk to _CxxThrowException
+
+// @name ReadMethodType<MetaBodyConstraintData>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, getPositionStrengthFromFSM, 0>
+// @summary Reads the object pointer from the argument; if non-null, resolves its cached field and throws a default-message exception, otherwise throws a fixed-message DerivedException.
+DWORD fn_004CC1B0(DWORD* arg) {
+    DWORD ecx = *arg;
+    if (ecx != 0) {
+        DWORD eax = ext_004CB3E0(reinterpret_cast<void*>(ecx));
+        ext_0046C4E0(eax);  // always throws; the original's trailing fstp is unreachable
+    }
+
+    alignas(16) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+
+    // Fixed RTTI/throw-info descriptor at 0x009DEC1C.
+    static const unsigned char kThrowInfo_009DEC1C[1] = {0};
+    ext_006A6DD2(exc, kThrowInfo_009DEC1C);
+}
+} // namespace lift_004CC1B0

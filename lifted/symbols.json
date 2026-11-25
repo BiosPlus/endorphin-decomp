@@ -15589,6 +15589,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType\u003cImageExporter, int, ImageExporter::getEndFrame, 0\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004CC1B0": {
+    "name": "ReadMethodType\u003cMetaBodyConstraintData\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, getPositionStrengthFromFSM, 0\u003e",
+    "signature": "DWORD ext_004CB3E0(void* self);                 // Unknown::GetFieldOr0x188Address void ext_0046C4E0(DWORD pending);               // ExceptionWithMessage::throwDefaultMessage (throws) void* ext_0046C3C0(void* self);                 // DerivedException::DerivedException [[noreturn]] void ext_006A6DD2(void* obj, const void* throwInfo);  // thunk to _CxxThrowException } DWORD fn_004CC1B0(DWORD* arg)",
+    "summary": "Reads the object pointer from the argument; if non-null, resolves its cached field and throws a default-message exception, otherwise throws a fixed-message DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004CC1F0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, 0\u003e::vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, 0\u003e",
