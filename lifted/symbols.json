@@ -17479,6 +17479,12 @@
     "summary": "Lazily initializes the static object at mem_00AEB2B4 (guard bit 0 in mem_00AEB2B8), then returns its address.",
     "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
+  "0x004FFD00": {
+    "name": "initStaticObjectWithVtable_004FFD00",
+    "signature": "void* fn_004FFD00(void* /*unused*/)",
+    "summary": "One-time guarded init of global object at 0x00AEB2C4: runs ctor 0x0067A670 then sets vtable 0x0094EB0C; returns the object's address.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004FFF60": {
     "name": "sub_004FFF60",
     "signature": "extern \"C\" void __fastcall fn_004FFF60(void* self)",

@@ -621,3 +621,27 @@ void* fn_004FFC40() {
     return &mem_00AEB2B4;
 }
 } // namespace lift_004FFC40
+
+// [0x004FFD00] sub_004FFD00 (87 bytes)
+namespace lift_004FFD00 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00AEB2C8;
+extern int mem_00AEB2C4;
+
+// @name initStaticObjectWithVtable_004FFD00
+// @summary One-time guarded init of global object at 0x00AEB2C4: runs ctor 0x0067A670 then sets vtable 0x0094EB0C; returns the object's address.
+// @field Unknown_AEB2C4 +0x00 DWORD field_0x00
+void* fn_004FFD00(void* /*unused*/) {
+    void* obj = &mem_00AEB2C4;
+
+    // Init guard: bit 0 of the flag DWORD at 0x00AEB2C8 marks "already initialized".
+    if ((lift_field<BYTE>(&mem_00AEB2C8, 0) & 1) == 0) {
+        lift_field<DWORD>(&mem_00AEB2C8, 0) |= 1;
+        ext_0067A670(obj, 0);
+        lift_field<DWORD>(obj, 0) = 0x0094EB0C;
+    }
+
+    return obj;
+}
+} // namespace lift_004FFD00
