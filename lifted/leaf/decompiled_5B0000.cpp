@@ -568,3 +568,24 @@ void* fn_005B3E30() {
     return &mem_00B4356C;
 }
 } // namespace lift_005B3E30
+
+// [0x005B81E0]
+namespace lift_005B81E0 {
+// @name getStaticSingleton_005B81E0
+// @summary Lazily initializes and returns a static singleton object at 0x00B43CA4.
+
+
+extern uint32_t mem_00B43CA8;
+extern uint32_t mem_00B43CA4;
+
+extern void ext_0067A670(void* self);
+
+void* fn_005B81E0() {
+    if ((mem_00B43CA8 & 1u) == 0) {
+        mem_00B43CA8 |= 1u;
+        ext_0067A670(&mem_00B43CA4);
+        mem_00B43CA4 = 0x00960CB4u;
+    }
+    return &mem_00B43CA4;
+}
+} // namespace lift_005B81E0

@@ -27996,6 +27996,12 @@
     "summary": "Lazily initializes and returns the static object at 0x00B43C9C.",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
+  "0x005B81E0": {
+    "name": "getStaticSingleton_005B81E0",
+    "signature": "void* fn_005B81E0()",
+    "summary": "Lazily initializes and returns a static singleton object at 0x00B43CA4.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B8240": {
     "name": "getStaticSingleton_005B8240",
     "signature": "void* fn_005B8240()",
