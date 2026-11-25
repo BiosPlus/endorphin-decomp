@@ -2493,3 +2493,42 @@ void fn_00430C50(void* self) {
     sink(self_addr, forwarded);
 }
 } // namespace lift_00430C50
+
+// [0x004305A0] sub_004305A0 (79 bytes)
+namespace lift_004305A0 {
+// Known callee 0x00465B40: sub_00465B40 (identical-shape clone of 0x00430360; returns a global object pointer.)
+extern void* ext_00465B40(void);
+// Known callee 0x0044B5B0: GetNestedFieldOrZero (If this+0x64 is nonzero, returns dword at (this+0x68)->+0x38; otherwise returns 0.)
+extern int ext_0044B5B0(unsigned char* self);
+
+namespace {
+
+// Virtual-call helpers. Slot indices are vtable byte offsets / 4.
+using ThisU8Fn = uint8_t (__thiscall*)(void* self);
+using ThisVoidU8Fn = void (__thiscall*)(void* self, uint8_t arg);
+using ThisVoidIntFn = void (__thiscall*)(void* self, int arg);
+
+inline void** vtable_of(void* obj) {
+    return *reinterpret_cast<void***>(obj);
+}
+
+} // namespace
+
+// @name Unknown::ForwardStateToTarget_004305A0
+// @class Unknown
+// @summary Reads a flag from the global object via vtable slot 63 (+0xFC) and forwards it to target slot 0; if self+0x100 is set, forwards (nested result == 1) to target slot 1.
+// @field Unknown +0x100 void* field_0x100
+void fn_004305A0(void* self, void* target) {
+    void* obj = ext_00465B40();
+    uint8_t flag = reinterpret_cast<ThisU8Fn>(vtable_of(obj)[0xFC / 4])(obj);
+    reinterpret_cast<ThisVoidU8Fn>(vtable_of(target)[0])(target, flag);
+
+    void* nested = lift_field<void*>(self, 0x100);
+    if (nested == nullptr) {
+        return;
+    }
+    int result = ext_0044B5B0(static_cast<unsigned char*>(nested));
+    int isOne = (result == 1) ? 1 : 0;
+    reinterpret_cast<ThisVoidIntFn>(vtable_of(target)[1])(target, isOne);
+}
+} // namespace lift_004305A0

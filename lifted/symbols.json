@@ -2637,6 +2637,13 @@
     "summary": "Queries a global object's byte result and forwards it to the callback at *arg; if this+0x100 is set, also forwards a nested-field flag to the callback at (*arg)+4.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x004305A0": {
+    "name": "Unknown::ForwardStateToTarget_004305A0",
+    "class": "Unknown",
+    "signature": "inline void** vtable_of(void* obj)",
+    "summary": "Reads a flag from the global object via vtable slot 63 (+0xFC) and forwards it to target slot 0; if self+0x100 is set, forwards (nested result == 1) to target slot 1.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430780": {
     "name": "sub_00430780",
     "class": "Unknown",
