@@ -47572,6 +47572,13 @@
     "summary": "Reads a double from the target object, converts it to float, and constructs the result; throws if null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006959E0": {
+    "name": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float\u003e::vfunc_1 (DoubleWithProperties::getValue)",
+    "class": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e",
+    "signature": "float __stdcall fn_006959E0(void* self)",
+    "summary": "Reads the double at the pointer stored in the ValuePtrType argument and returns it narrowed to float; throws if that pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00695A20": {
     "name": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026DoubleWithProperties::getValue, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e",

@@ -56649,3 +56649,33 @@ void fn_005FCB90(void* value_ptr) {
     ext_006A6DD2(exception_object, reinterpret_cast<const void*>(kThrowInfoAddr));
 }
 } // namespace lift_005FCB90
+
+// [0x006959E0] ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0>::vfunc_1 (52 bytes)
+namespace lift_006959E0 {
+// Callee 0x0046C3C0 (DerivedException::DerivedException): constructs an exception object in the
+// caller-provided buffer and returns it.
+extern void* ext_0046C3C0(void* self);
+
+// Callee 0x006A6DD2: IAT jump thunk forwarding to MSVCR80!_CxxThrowException.
+extern void ext_006A6DD2(void);
+
+// @name ExprParser::ReadMethodType<DoubleWithProperties, float>::vfunc_1 (DoubleWithProperties::getValue)
+// @class ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0>
+// @summary Reads the double at the pointer stored in the ValuePtrType argument and returns it narrowed to float; throws if that pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field DoubleWithProperties +0x00 double field_0x00
+float __stdcall fn_006959E0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target != nullptr) {
+        // Original: fld qword [target]; fstp dword -> narrowing double-to-float.
+        double value = lift_field<double>(target, 0x00);
+        return static_cast<float>(value);
+    }
+
+    // Null target: build the exception object (sub_0046C3C0) and raise it via the CRT throw thunk.
+    alignas(8) unsigned char exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2();
+    return 0.0f;
+}
+} // namespace lift_006959E0

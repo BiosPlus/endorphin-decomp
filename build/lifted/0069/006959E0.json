@@ -1,0 +1,28 @@
+{
+  "va": "0x006959E0",
+  "size": 52,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float\u003e::vfunc_1 (DoubleWithProperties::getValue)",
+  "class": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e",
+  "signature": "float __stdcall fn_006959E0(void* self)",
+  "summary": "Reads the double at the pointer stored in the ValuePtrType argument and returns it narrowed to float; throws if that pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "DoubleWithProperties",
+      "offset": "+0x0",
+      "type": "double",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:58:58Z"
+}
