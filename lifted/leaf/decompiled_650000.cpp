@@ -794,3 +794,33 @@ void* fn_00519E50(void* first, void* last, void* destEnd) {
     return dst;
 }
 } // namespace lift_00519E50
+
+// [0x0051A670] sub_0051A670 (81 bytes)
+namespace lift_0051A670 {
+// Import slot holding the address of MSVCP80 operator<(const std::string&, const std::string&).
+extern uint32_t mem_00924EF4;
+
+// @name std::lower_bound over std::string elements (32-byte stride)
+// @summary Binary search for the first std::string in [first, last) that is not less than value, using operator<.
+using StringLessFn = bool(__cdecl*)(const void* elem, const void* value);
+
+// Elements are 32 bytes apart (sizeof std::string in this build).
+static constexpr ptrdiff_t kElementStride = 0x20;
+
+uint8_t* __cdecl fn_0051A670(uint8_t* first, uint8_t* last, const void* value) {
+    auto string_less = reinterpret_cast<StringLessFn>(static_cast<uintptr_t>(mem_00924EF4));
+
+    ptrdiff_t count = (last - first) >> 5;
+    while (count > 0) {
+        ptrdiff_t half = count / 2;
+        uint8_t* mid = first + half * kElementStride;
+        if (string_less(mid, value)) {
+            first = mid + kElementStride;
+            count = count - half - 1;
+        } else {
+            count = half;
+        }
+    }
+    return first;
+}
+} // namespace lift_0051A670

@@ -17440,6 +17440,13 @@
     "summary": "Forwards its argument to shared dispatcher sub_00671100 with selector 8 (dispatcher not yet lifted).",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x0051A670": {
+    "name": "std::lower_bound over std::string elements (32-byte stride)",
+    "class": "std::lower_bound over std",
+    "signature": "uint8_t* __cdecl fn_0051A670(uint8_t* first, uint8_t* last, const void* value)",
+    "summary": "Binary search for the first std::string in [first, last) that is not less than value, using operator\u003c.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x0051AB80": {
     "name": "NMData::RealChannel::vfunc_7",
     "class": "NMData::RealChannel",
