@@ -8948,6 +8948,12 @@
     "summary": "Walks [first, last) in 0x68-byte elements; for each, releases the pointer at +0x34 via ext_006A5C5C when non-null, zeroes +0x34..+0x3C, then destroys the std::string at +0x04 via ext_00519CE0.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x0048CBD0": {
+    "name": "ComputeStrideOffset_0048CBD0",
+    "signature": "int32_t fn_0048CBD0(int32_t arg1, int32_t arg2, int32_t arg3)",
+    "summary": "Calls ext_0048C9A0 with the stack args, then returns arg3 + ((arg2 - arg1) / 104) * 104 (signed, truncating).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048CC30": {
     "name": "sub_0048CC30",
     "signature": "__stdcall std::uint8_t* fn_0048CC30(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2)",

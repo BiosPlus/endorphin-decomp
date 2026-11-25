@@ -1185,3 +1185,22 @@ float* fn_00480770(const float* first, const float* last, float* dstEnd) {
     return reinterpret_cast<float*>(dstLast - span);
 }
 } // namespace lift_00480770
+
+// [0x0048CBD0] sub_0048CBD0 (85 bytes)
+namespace lift_0048CBD0 {
+extern void ext_0048C9A0(int32_t a1, int32_t a2, int32_t a3, int32_t a4, uint8_t a5, uint8_t a6);
+
+// @name ComputeStrideOffset_0048CBD0
+// @summary Calls ext_0048C9A0 with the stack args, then returns arg3 + ((arg2 - arg1) / 104) * 104 (signed, truncating).
+int32_t fn_0048CBD0(int32_t arg1, int32_t arg2, int32_t arg3) {
+    // Locals cleared to zero before the call (only the low byte is written).
+    const uint8_t flag5 = 0;
+    const uint8_t flag6 = 0;
+    ext_0048C9A0(arg1, arg2, arg3, arg3, flag5, flag6);
+
+    const int32_t diff = static_cast<int32_t>(static_cast<uint32_t>(arg2) - static_cast<uint32_t>(arg1));
+    const int32_t quotient = diff / 104;
+    const uint32_t scaled = static_cast<uint32_t>(quotient) * 104u;
+    return static_cast<int32_t>(static_cast<uint32_t>(arg3) + scaled);
+}
+} // namespace lift_0048CBD0
