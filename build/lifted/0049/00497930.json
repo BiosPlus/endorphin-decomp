@@ -1,0 +1,14 @@
+{
+  "va": "0x00497930",
+  "size": 71,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e::vfunc_2",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar\u003e\u003e::vfunc_2",
+  "class": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e",
+  "signature": "void __stdcall fn_00497930(void* arg)",
+  "summary": "Parses the string referenced by the stack argument as a number (atof), rounds it half away from zero, and forwards the result to 0x006A6DE0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:04:51Z"
+}

@@ -633,3 +633,35 @@ void fn_004B7B50(void* self, void* arg) {
     *target = *target + delta;
 }
 } // namespace lift_004B7B50
+
+// [0x00497930]
+namespace lift_00497930 {
+// Import slots (MSVCP80 std::string::c_str, MSVCR80 atof) and the rounding callee.
+extern void* mem_00924FF0;
+extern void* mem_009251F0;
+extern void ext_006A6DE0(double rounded);
+
+// 0x00993828 holds the constant 0.5 (double), used as the rounding bias.
+extern double mem_00993828;
+
+// @name ExprParser::PrimitiveProxyType<std::basic_string<char>>::vfunc_2
+// @class ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>
+// @summary Parses the string referenced by the stack argument as a number (atof), rounds it half away from zero, and forwards the result to 0x006A6DE0.
+// @field ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>> +0x00 void* field_0x00
+// Disassembly: mov eax,[esp+4]; mov ecx,[eax]; call c_str; push eax; call atof;
+// store float; compare with 0; add or subtract 0.5; call ext_006A6DE0; ret 4.
+void __stdcall fn_00497930(void* arg) {
+    // The stack argument points to a cell whose first dword is the std::string object.
+    void* str = *static_cast<void**>(arg);
+
+    using CStrFn = const char* (__thiscall*)(void* self);
+    using AtofFn = double (__cdecl*)(const char* s);
+    const char* text = (*reinterpret_cast<CStrFn*>(&mem_00924FF0))(str);
+    float value = static_cast<float>((*reinterpret_cast<AtofFn*>(&mem_009251F0))(text));
+
+    // Round half away from zero: x < 0 ? x - 0.5 : x + 0.5.
+    double biased = (value < 0.0f) ? static_cast<double>(value) - mem_00993828
+                                   : static_cast<double>(value) + mem_00993828;
+    ext_006A6DE0(biased);
+}
+} // namespace lift_00497930

@@ -10367,6 +10367,13 @@
     "summary": "Initializes the std::string at self from the C-string pointer held in src's first dword, returns self.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x00497930": {
+    "name": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar\u003e\u003e::vfunc_2",
+    "class": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e",
+    "signature": "void __stdcall fn_00497930(void* arg)",
+    "summary": "Parses the string referenced by the stack argument as a number (atof), rounds it half away from zero, and forwards the result to 0x006A6DE0.",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x00497980": {
     "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_7",
     "class": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e",
