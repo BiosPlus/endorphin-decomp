@@ -235,3 +235,30 @@ void fn_00584B60(void* self, std::string* out) {
     }
 }
 } // namespace lift_00584B60
+
+// [0x005851B0]
+namespace lift_005851B0 {
+// @name AnimatableTransform::vfunc_14_off_C
+// @class AnimatableTransform
+// @summary Checks if field_0x5c is nonzero and if arg2 contains the bit flag for vfunc_0x2C().
+// @field AnimatableTransform +0x00 uint32_t* vtable
+// @field AnimatableTransform +0x5C uint8_t field_0x5c
+
+
+extern uint32_t ext_0052F540(uint32_t index);
+
+uint8_t __thiscall fn_005851B0(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg1;
+    uint8_t* bytes = static_cast<uint8_t*>(self);
+    if (bytes[0x5C] == 0) {
+        return 0;
+    }
+
+    using VFunc2C = uint32_t(__thiscall*)(void*);
+    uint32_t* vtable = *reinterpret_cast<uint32_t**>(self);
+    VFunc2C fn = reinterpret_cast<VFunc2C>(vtable[0x2C / 4]);
+    uint32_t index = fn(self);
+    uint32_t flag = ext_0052F540(index);
+    return (arg2 & flag) == flag ? 1 : 0;
+}
+} // namespace lift_005851B0

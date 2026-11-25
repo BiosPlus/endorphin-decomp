@@ -1,0 +1,28 @@
+{
+  "va": "0x005851B0",
+  "size": 45,
+  "orig_symbol": "AnimatableTransform::vfunc_14_off_C",
+  "src_path": "src/classes/AnimatableTransform.cpp",
+  "lifted_path": "lifted/classes/AnimatableTransform.cpp",
+  "name": "AnimatableTransform::vfunc_14_off_C",
+  "class": "AnimatableTransform",
+  "signature": "uint8_t __thiscall fn_005851B0(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Checks if field_0x5c is nonzero and if arg2 contains the bit flag for vfunc_0x2C().",
+  "fields": [
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0x0",
+      "type": "uint32_t*",
+      "name": "vtable"
+    },
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0x5C",
+      "type": "uint8_t",
+      "name": "field_0x5c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T05:07:26Z"
+}

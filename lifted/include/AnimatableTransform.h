@@ -11,6 +11,7 @@
 namespace lifted_layout {
 struct AnimatableTransform_Fields {
     // +0x0   uint32_t                 vtable  (evidence: 0x00402060, 0x00535610, 0x00545B80, 0x0058A670, 0x00593680, 0x00593D00, 0x005A9ED0, 0x005FF1C0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t*                vtable  (evidence: 0x005851B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x00585170, 0x0058A550, 0x0058A670) // CONFLICT: multiple definitions at +0x0
     // +0x4   void*                    child  (evidence: 0x00528C10) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x004020E0, 0x00528C50, 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0) // CONFLICT: multiple definitions at +0x4
@@ -21,6 +22,7 @@ struct AnimatableTransform_Fields {
     // +0x10  void* subobject_0x10 (sub-object pointer read from field_0x04 + 0x10; class unknown)  (evidence: 0x00528C50)
     // +0x30  std::string              field_0x30  (evidence: 0x00584B60)
     // +0x44  std::string              field_0x44  (evidence: 0x00584B60)
+    // +0x5C  uint8_t                  field_0x5c  (evidence: 0x005851B0)
     // +0x94  void*                    subobject_0x94  (evidence: 0x00584B60)
     // +0xE0  uint32_t                 field_0xE0  (evidence: 0x0058A670, 0x00593680, 0x00593D00)
     // +0xE4  uint32_t                 field_0xE4  (evidence: 0x004020A0, 0x0058A670, 0x00593680, 0x00593D00)
