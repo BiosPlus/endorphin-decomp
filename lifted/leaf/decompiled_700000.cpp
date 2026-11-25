@@ -2097,3 +2097,39 @@ void fn_00708FF0(void* self, void* other) {
     }
 }
 } // namespace lift_00708FF0
+
+// [0x00709100] sub_00709100 (62 bytes)
+namespace lift_00709100 {
+// Lifted WIP: lifted/wip/fn_00709100.cpp -> lifted/leaf/decompiled_700000.cpp
+
+// Known callee 0x00708FF0: Unknown::InvokeOnMatchingSubObjects (For each matching sub-object of `other`, calls this's virtual slot 0xF4 with that sub-object.)
+extern void __thiscall ext_00708FF0(void* self, void* other);
+
+// @name DispatchVirtualSlotsByFlags
+// @summary Dispatches on flag bits: bit 0 calls virtual slot 63 (offset +0xFC) on self with other; bit 2 calls ext_00708FF0 (InvokeOnMatchingSubObjects) with other; bit 3 calls virtual slot 64 (offset +0x100) on self with other.
+// @field Object +0x00 void** vtable
+void __thiscall fn_00709100(void* self, void* other, uint8_t flags) {
+    // mov esi, ecx: esi = self; edi = other; bl = flags
+    using SlotFn = void(__thiscall*)(void* self, void* other);
+    void** vtable = *reinterpret_cast<void***>(self);
+
+    // test bl, 1 / je: if (flags & 1) call [vtable + 0xFC] (slot 63)
+    if (flags & 0x01) {
+        SlotFn target = reinterpret_cast<SlotFn>(vtable[0xFC / sizeof(void*)]);
+        target(self, other);
+    }
+
+    // test bl, 4 / je: if (flags & 4) call sub_00708FF0(self, other)
+    if (flags & 0x04) {
+        ext_00708FF0(self, other);
+    }
+
+    // test bl, 8 / je: if (flags & 8) call [vtable + 0x100] (slot 64)
+    // Vtable is re-read from self (mov edx, [esi]) before this call.
+    if (flags & 0x08) {
+        void** vtable2 = *reinterpret_cast<void***>(self);
+        SlotFn target = reinterpret_cast<SlotFn>(vtable2[0x100 / sizeof(void*)]);
+        target(self, other);
+    }
+}
+} // namespace lift_00709100

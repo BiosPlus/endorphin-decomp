@@ -1,0 +1,21 @@
+{
+  "va": "0x00709100",
+  "size": 62,
+  "orig_symbol": "sub_00709100",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "DispatchVirtualSlotsByFlags",
+  "signature": "void __thiscall fn_00709100(void* self, void* other, uint8_t flags)",
+  "summary": "Dispatches on flag bits: bit 0 calls virtual slot 63 (offset +0xFC) on self with other; bit 2 calls ext_00708FF0 (InvokeOnMatchingSubObjects) with other; bit 3 calls virtual slot 64 (offset +0x100) on self with other.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:48:29Z"
+}

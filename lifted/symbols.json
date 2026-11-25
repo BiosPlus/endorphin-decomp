@@ -60678,6 +60678,12 @@
     "summary": "For each matching sub-object of `other`, calls this's virtual slot 0xF4 with that sub-object.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00709100": {
+    "name": "DispatchVirtualSlotsByFlags",
+    "signature": "void __thiscall fn_00709100(void* self, void* other, uint8_t flags)",
+    "summary": "Dispatches on flag bits: bit 0 calls virtual slot 63 (offset +0xFC) on self with other; bit 2 calls ext_00708FF0 (InvokeOnMatchingSubObjects) with other; bit 3 calls virtual slot 64 (offset +0x100) on self with other.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x007094A0": {
     "name": "Unknown::FindTailAcceptedByGlobal",
     "class": "Unknown",
