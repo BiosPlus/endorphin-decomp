@@ -503,3 +503,25 @@ void __thiscall sub_0078D1E0(void* self) {
     reinterpret_cast<LeaveCriticalSection_fn>(ext_009241BC)(cs);
 }
 } // namespace lift_0078D1E0
+
+// [0x00783630] sub_00783630 (21 bytes)
+namespace lift_00783630 {
+// IAT slot for MSVCR80 clearerr (value 0x0062D47C in .rdata at 0x00925194).
+extern uint32_t mem_00925194;
+using ClearerrFn = void(__cdecl*)(void*);
+
+// @name Unknown::ClearStreamErrorIfFlagged
+// @class Unknown
+// @summary If the byte at child+0x04 is nonzero, call clearerr on the stream pointer stored at child+0x00.
+// @field Unknown +0x04 uint32_t field_04
+void fn_00783630(void* self) {
+    const uint32_t child = lift_field<uint32_t>(self, 0x04);
+    void* const child_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(child));
+    if (lift_field<uint8_t>(child_ptr, 0x04) == 0) {
+        return;
+    }
+    const uint32_t stream = lift_field<uint32_t>(child_ptr, 0x00);
+    const auto clearerr_fn = reinterpret_cast<ClearerrFn>(static_cast<uintptr_t>(mem_00925194));
+    clearerr_fn(reinterpret_cast<void*>(static_cast<uintptr_t>(stream)));
+}
+} // namespace lift_00783630

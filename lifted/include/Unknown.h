@@ -151,7 +151,7 @@ struct Unknown_Fields {
     // +0x4   void* field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066AF60) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string field_0x04 (destroyed via ext_00924FF4)  (evidence: 0x0063E0F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              field_04  (evidence: 0x0057BB20) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint32_t                 field_04  (evidence: 0x006B9950) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 field_04  (evidence: 0x006B9950, 0x00783630) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_04  (evidence: 0x005C3130, 0x005F5140) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (base pointer of the 16-byte element array, on the object at field_0x00)  (evidence: 0x0077FF70, 0x0077FFB0) // CONFLICT: multiple definitions at +0x4
     // +0x4   BYTE                     field_0x04  (evidence: 0x004E9BB0, 0x005F5350, 0x006F8B30, 0x006FC200, 0x007148C0, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x4

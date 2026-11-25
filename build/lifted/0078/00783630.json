@@ -1,0 +1,22 @@
+{
+  "va": "0x00783630",
+  "size": 21,
+  "orig_symbol": "sub_00783630",
+  "src_path": "src/leaf/tiny_780000.cpp",
+  "lifted_path": "lifted/leaf/tiny_780000.cpp",
+  "name": "Unknown::ClearStreamErrorIfFlagged",
+  "class": "Unknown",
+  "signature": "void fn_00783630(void* self)",
+  "summary": "If the byte at child+0x04 is nonzero, call clearerr on the stream pointer stored at child+0x00.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:20:47Z"
+}

@@ -64388,6 +64388,13 @@
     "summary": "Reads a pointer at this+0x04; if that object's byte at +0x04 is nonzero, returns (object-\u003evtbl-ish dword at +0x00)-\u003edword+0x0C \u0026 0x20, otherwise returns 0.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00783630": {
+    "name": "Unknown::ClearStreamErrorIfFlagged",
+    "class": "Unknown",
+    "signature": "void fn_00783630(void* self)",
+    "summary": "If the byte at child+0x04 is nonzero, call clearerr on the stream pointer stored at child+0x00.",
+    "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
   "0x007836D0": {
     "name": "FileStream::setSize",
     "class": "FileStream",
