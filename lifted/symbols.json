@@ -2870,6 +2870,12 @@
     "summary": "Reads a flag from the global object via vtable slot 63 (+0xFC) and forwards it to target slot 0; if self+0x100 is set, forwards (nested result == 1) to target slot 1.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430660": {
+    "name": "OnUpdateCommandUI_00430660",
+    "signature": "void __thiscall sub_00430660(unsigned char* self, void* pCmdUI)",
+    "summary": "Enables a UI command object and sets its check state to 1 if field_0x100's nested value is 3 or 7, or 0 otherwise.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x004306C0": {
     "name": "Unknown::conditionalVirtualDispatch_004306C0",
     "class": "Unknown",
