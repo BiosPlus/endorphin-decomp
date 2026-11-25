@@ -1,0 +1,13 @@
+{
+  "va": "0x0079AF50",
+  "size": 16,
+  "orig_symbol": "sub_0079AF50",
+  "src_path": "src/leaf/tiny_790000.cpp",
+  "lifted_path": "lifted/leaf/tiny_790000.cpp",
+  "name": "FreeGlobalMemory",
+  "signature": "uint32_t fn_0079AF50(uint32_t hMem)",
+  "summary": "Frees the global memory handle passed as its single stack argument via GlobalFree and returns GlobalFree's result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:15:43Z"
+}

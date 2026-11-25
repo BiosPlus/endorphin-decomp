@@ -522,3 +522,18 @@ uint32_t fn_0079AF40(uint32_t size) {
     return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(global_alloc(0, size)));
 }
 } // namespace lift_0079AF40
+
+// [0x0079AF50] sub_0079AF50 (16 bytes)
+namespace lift_0079AF50 {
+// Import slot for KERNEL32!GlobalFree (IAT entry in the .rdata import table).
+// The loader writes the real GlobalFree address here at runtime.
+extern uint32_t mem_009241E8;
+
+// @name FreeGlobalMemory
+// @summary Frees the global memory handle passed as its single stack argument via GlobalFree and returns GlobalFree's result.
+uint32_t fn_0079AF50(uint32_t hMem) {
+    using GlobalFreeFn = uint32_t(__stdcall*)(uint32_t);
+    auto globalFree = reinterpret_cast<GlobalFreeFn>(static_cast<uintptr_t>(mem_009241E8));
+    return globalFree(hMem);
+}
+} // namespace lift_0079AF50

@@ -64952,6 +64952,12 @@
     "summary": "Calls KERNEL32!GlobalAlloc(uFlags=0, dwBytes=size) through the IAT slot and returns the HGLOBAL. Cdecl caller cleans up the argument.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x0079AF50": {
+    "name": "FreeGlobalMemory",
+    "signature": "uint32_t fn_0079AF50(uint32_t hMem)",
+    "summary": "Frees the global memory handle passed as its single stack argument via GlobalFree and returns GlobalFree's result.",
+    "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
   "0x0079B010": {
     "name": "CopyMemoryForward",
     "signature": "extern \"C\" void __cdecl fn_0079B010(void* dst, const void* src, uint32_t count)",
