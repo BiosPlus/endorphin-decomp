@@ -13451,6 +13451,12 @@
     "summary": "Reads the object pointer from *out, builds a temporary std::string via sub_004BC770, copy-assigns it into out, and returns out.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004BEAA0": {
+    "name": "InitOnceGlobalString_004BEAA0",
+    "signature": "void* fn_004BEAA0()",
+    "summary": "One-time initializer for global string at mem_00AE1D24; returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BEB00": {
     "name": "sub_004BEB00",
     "class": "Unknown",

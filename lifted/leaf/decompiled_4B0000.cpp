@@ -858,3 +858,22 @@ void* fn_004B4A40() {
     return reinterpret_cast<void*>(&mem_00AE0D70);
 }
 } // namespace lift_004B4A40
+
+// [0x004BEAA0]
+namespace lift_004BEAA0 {
+extern void* ext_0066AD10(void* out_str, uintptr_t arg);
+extern int ext_006A6C87(uintptr_t fn);
+extern uint32_t mem_00AE1D40;
+extern int mem_00AE1D24;
+
+// @name InitOnceGlobalString_004BEAA0
+// @summary One-time initializer for global string at mem_00AE1D24; returns its address.
+void* fn_004BEAA0() {
+    if ((mem_00AE1D40 & 1u) == 0) {
+        mem_00AE1D40 |= 1u;
+        ext_0066AD10(&mem_00AE1D24, static_cast<uintptr_t>(0x00A395E8u));
+        ext_006A6C87(static_cast<uintptr_t>(0x009185D0u));
+    }
+    return &mem_00AE1D24;
+}
+} // namespace lift_004BEAA0
