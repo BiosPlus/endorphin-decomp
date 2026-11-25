@@ -1,0 +1,40 @@
+{
+  "va": "0x006F9DC0",
+  "size": 32,
+  "orig_symbol": "sub_006F9DC0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::InitFourFields",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_006F9DC0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint8_t arg4)",
+  "summary": "Initializes three 32-bit fields and one 8-bit field on the object and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T12:46:02Z"
+}

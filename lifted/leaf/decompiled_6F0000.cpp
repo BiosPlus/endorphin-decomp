@@ -1804,3 +1804,30 @@ void fn_006FA3E0(void* self) {
     ext_006FA3C0(self, static_cast<int32_t>(static_cast<uint32_t>(shifted) + 1u));
 }
 } // namespace lift_006FA3E0
+
+// [0x006F9DC0]
+namespace lift_006F9DC0 {
+// @name Unknown::InitFourFields
+// @class Unknown
+// @summary Initializes three 32-bit fields and one 8-bit field on the object and returns this.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint8_t field_0x0C
+
+
+extern void* __thiscall ext_006FBC50(void*);
+extern void* __thiscall ext_006B9D10(void*);
+extern void* __thiscall ext_006F8AC0(void*);
+
+void* __thiscall fn_006F9DC0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint8_t arg4) {
+    (void)ext_006FBC50;
+    (void)ext_006B9D10;
+    (void)ext_006F8AC0;
+    lift_field<uint32_t>(self, 0x00) = arg1;
+    lift_field<uint32_t>(self, 0x04) = arg2;
+    lift_field<uint32_t>(self, 0x08) = arg3;
+    lift_field<uint8_t>(self, 0x0C) = arg4;
+    return self;
+}
+} // namespace lift_006F9DC0

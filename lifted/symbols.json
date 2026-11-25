@@ -59526,6 +59526,13 @@
     "summary": "Setter storing int32_t argument into field at offset +0x114.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006F9DC0": {
+    "name": "Unknown::InitFourFields",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_006F9DC0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint8_t arg4)",
+    "summary": "Initializes three 32-bit fields and one 8-bit field on the object and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F9FD0": {
     "name": "initKPlugGlobals",
     "signature": "void fn_006F9FD0(void* self)",
