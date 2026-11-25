@@ -1027,3 +1027,18 @@ void sub_0049E4A0(DWORD* out, DWORD value) {
     out[1] = obj;
 }
 } // namespace lift_0049E4A0
+
+// [0x0049D3F0] sub_0049D3F0 (30 bytes)
+namespace lift_0049D3F0 {
+// Known callee 0x0049BE80: initStaticObjectOnce_0049BE80 (One-time guarded initialization of the static object at 0x00ADD7EC; stores 0x0093FA3C into it; returns its address.)
+// The disassembly pushes a single 0 argument before the call, so the callee takes one stack argument.
+extern void* ext_0049BE80(uint32_t flag);
+
+// @name storeValueAndStaticObjectAddr
+// @summary Writes a value into out[0] and the address of the one-time-initialized static object into out[1].
+void fn_0049D3F0(uint32_t* out, uint32_t value) {
+    void* obj = ext_0049BE80(0);
+    out[0] = value;
+    out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_0049D3F0
