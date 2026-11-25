@@ -1,0 +1,27 @@
+{
+  "va": "0x00780160",
+  "size": 112,
+  "orig_symbol": "sub_00780160",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "findItemIndexByName",
+  "signature": "int32_t __thiscall sub_00780160(void* self, const char* name)",
+  "summary": "Searches an array of 0x130-byte entries for a matching name string at +0x04 and returns its index or -1.",
+  "fields": [
+    {
+      "class": "this",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "this",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "items"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:28:51Z"
+}
