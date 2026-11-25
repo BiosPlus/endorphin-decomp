@@ -2026,3 +2026,41 @@ void fn_0040CAC0(uint8_t* self) {
     vfunc_168(self);
 }
 } // namespace lift_0040CAC0
+
+// [0x00402630]
+namespace lift_00402630 {
+// @name copyElements32
+// @summary Copies 32-byte structs from [src, srcEnd) to dst, skipping writes if dst is null, and returns the advanced dst pointer.
+
+
+uint8_t mem_read8(uint32_t addr);
+uint16_t mem_read16(uint32_t addr);
+uint32_t mem_read32(uint32_t addr);
+void mem_write8(uint32_t addr, uint8_t val);
+void mem_write16(uint32_t addr, uint16_t val);
+void mem_write32(uint32_t addr, uint32_t val);
+
+uint32_t sub_00402630(uint32_t src, uint32_t srcEnd, uint32_t dst) {
+    if (src == srcEnd) {
+        return dst;
+    }
+
+    do {
+        if (dst != 0) {
+            mem_write32(dst + 0x00, mem_read32(src + 0x00));
+            mem_write32(dst + 0x04, mem_read32(src + 0x04));
+            mem_write32(dst + 0x08, mem_read32(src + 0x08));
+            mem_write32(dst + 0x0c, mem_read32(src + 0x0c));
+            mem_write32(dst + 0x10, mem_read32(src + 0x10));
+            mem_write32(dst + 0x14, mem_read32(src + 0x14));
+            mem_write32(dst + 0x18, mem_read32(src + 0x18));
+            mem_write16(dst + 0x1c, mem_read16(src + 0x1c));
+            mem_write8(dst + 0x1e, mem_read8(src + 0x1e));
+        }
+        src += 0x20;
+        dst += 0x20;
+    } while (src != srcEnd);
+
+    return dst;
+}
+} // namespace lift_00402630

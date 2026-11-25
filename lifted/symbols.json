@@ -407,6 +407,12 @@
     "summary": "Copy constructor for a std::logic_error subclass, calling base copy constructor and setting vtable.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00402630": {
+    "name": "copyElements32",
+    "signature": "uint32_t sub_00402630(uint32_t src, uint32_t srcEnd, uint32_t dst)",
+    "summary": "Copies 32-byte structs from [src, srcEnd) to dst, skipping writes if dst is null, and returns the advanced dst pointer.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x004026E0": {
     "name": "StringArray::ReleaseElements",
     "class": "StringArray",
@@ -75413,6 +75419,12 @@
     "name": "negateFloatArray",
     "signature": "void __cdecl sub_007F9DB0(int32_t count, float* dst, const float* src)",
     "summary": "Negates an array of single-precision floats from src into dst.",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
+  "0x007F9F30": {
+    "name": "scaleFloatArray",
+    "signature": "void sub_007F9F30(int32_t count, uint32_t dst, uint32_t src, float scale)",
+    "summary": "Scales an array of count 32-bit floats from src by scale and writes to dst.",
     "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
   "0x007FC290": {
