@@ -670,8 +670,10 @@ struct Unknown_Fields {
     // +0x1EC int32_t                  field_0x1EC  (evidence: 0x004D3DE0)
     // +0x1F2 uint8_t                  field_0x1F2  (evidence: 0x005CFE10)
     // +0x1F4 uint8_t                  field_0x1F4  (evidence: 0x005B0E60, 0x005B6C50)
-    // +0x200 DWORD                    field_0x200  (evidence: 0x0070AC00, 0x0070AD00)
-    // +0x204 DWORD                    field_0x204  (evidence: 0x004A57F0, 0x0070AC00, 0x0070AD00)
+    // +0x200 DWORD                    field_0x200  (evidence: 0x0070AC00, 0x0070AD00) // CONFLICT: multiple definitions at +0x200
+    // +0x200 uint32_t                 invertedFlag  (evidence: 0x004A5810) // CONFLICT: multiple definitions at +0x200
+    // +0x204 void*                    cachedSubobject  (evidence: 0x004A5810) // CONFLICT: multiple definitions at +0x204
+    // +0x204 DWORD                    field_0x204  (evidence: 0x004A57F0, 0x0070AC00, 0x0070AD00) // CONFLICT: multiple definitions at +0x204
     // +0x208 DWORD                    field_0x208  (evidence: 0x0070AC00, 0x0070AD00) // CONFLICT: multiple definitions at +0x208
     // +0x208 float                    field_0x208  (evidence: 0x007C76B0) // CONFLICT: multiple definitions at +0x208
     // +0x208 void*                    field_0x208  (evidence: 0x0070AD00, 0x0070ED10) // CONFLICT: multiple definitions at +0x208
@@ -685,6 +687,7 @@ struct Unknown_Fields {
     // +0x234 void*                    field_0x234  (evidence: 0x005E1330, 0x005E1360, 0x005E2C70) // CONFLICT: multiple definitions at +0x234
     // +0x234 void* field_0x234 (subobject pointer; class unrecovered)  (evidence: 0x005E1310, 0x005E2C70) // CONFLICT: multiple definitions at +0x234
     // +0x250 int32_t                  field_0x250  (evidence: 0x007266A0, 0x0072B180)
+    // +0x258 void*                    child  (evidence: 0x004A5810)
     // +0x268 DWORD                    field_0x268  (evidence: 0x00702700, 0x0070AD00) // CONFLICT: multiple definitions at +0x268
     // +0x268 float                    field_0x268  (evidence: 0x007C76B0) // CONFLICT: multiple definitions at +0x268
     // +0x268 ptr                      field_0x268  (evidence: 0x00702620, 0x0070AD00, 0x0070E390, 0x0070E3B0, 0x0070EC70) // CONFLICT: multiple definitions at +0x268

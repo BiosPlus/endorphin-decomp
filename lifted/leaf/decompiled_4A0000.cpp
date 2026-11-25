@@ -234,3 +234,30 @@ void fn_004ABA70(StringFindResult* out, void* owner, void* first, void* unused, 
     out->found = found;
 }
 } // namespace lift_004ABA70
+
+// [0x004A5810] sub_004A5810 (61 bytes)
+namespace lift_004A5810 {
+// @name Unknown::UpdateInvertedFlagAndChildCache
+// @class Unknown
+// @summary Stores the inverted low bit of its argument at +0x200; if the child at +0x258 is non-null, caches (child's +0x168 pointer + 4) at +0x204, or 0 when that pointer is null.
+// @field Unknown +0x200 uint32_t invertedFlag
+// @field Unknown +0x204 void* cachedSubobject
+// @field Unknown +0x258 void* child
+void __thiscall fn_004A5810(void* self, uint8_t value) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    void* child = *reinterpret_cast<void**>(base + 0x258);
+    *reinterpret_cast<uint32_t*>(base + 0x200) = static_cast<uint32_t>(~value) & 1u;
+
+    if (child == nullptr) {
+        return;
+    }
+
+    void* inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(child) + 0x168);
+    if (inner == nullptr) {
+        *reinterpret_cast<void**>(base + 0x204) = nullptr;
+        return;
+    }
+    *reinterpret_cast<void**>(base + 0x204) = static_cast<uint8_t*>(inner) + 4;
+}
+} // namespace lift_004A5810
