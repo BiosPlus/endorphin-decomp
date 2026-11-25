@@ -26070,6 +26070,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057CEE0": {
+    "name": "Unknown::assignRecordRange_0057CEE0",
+    "class": "Unknown",
+    "signature": "void fn_0057CEE0(void* self, void** out, void* a2, void* a3, void* a4, void* a5)",
+    "summary": "Replaces the record buffer at +0x08 with a copy of records [a3, a5), destroying the old records; writes (a2, a3) to *out.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057CF50": {
     "name": "sub_0057CF50",
     "signature": "DWORD* __thiscall fn_0057CF50(void* self, const DWORD* first, const DWORD* last, DWORD* out)",

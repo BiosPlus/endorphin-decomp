@@ -1748,3 +1748,39 @@ DWORD* __cdecl fn_0057DFB0(const DWORD* first, const DWORD* last, DWORD* out) {
 }
 } // namespace lift_0057BDF0
 } // namespace lift_0057DFB0
+
+// [0x0057CEE0] sub_0057CEE0 (109 bytes)
+namespace lift_0057CEE0 {
+// Callee 0x0057BEC0: copies a range of 0x3C-byte records. Disassembly pushes six dwords
+// (cdecl, caller-cleaned); the summary lists three parameters. Values below follow the disassembly order.
+extern void* ext_0057BEC0(void* a0, void* a1, void* a2, void* a3, void* a4, void* a5);
+// Callee 0x005567D0: destroys the two std::string members of each 0x3C-byte record in a range.
+// Disassembly pushes four dwords (cdecl, caller-cleaned).
+extern void ext_005567D0(void* a0, void* a1, void* a2, void* a3);
+
+// @name Unknown::assignRecordRange_0057CEE0
+// @class Unknown
+// @summary Replaces the record buffer at +0x08 with a copy of records [a3, a5), destroying the old records; writes (a2, a3) to *out.
+// @field Unknown +0x08 void* field_0x08
+void fn_0057CEE0(void* self, void** out, void* a2, void* a3, void* a4, void* a5) {
+    // Original: if (a2 == 0 || a2 != a4) _invalid_parameter_noinfo()
+    if (a2 == nullptr || a2 != a4) {
+        std::abort();
+    }
+
+    if (a3 != a5) {
+        void* oldBuf = lift_field<void*>(self, 8);
+
+        // Original zeroes the low byte of the a2 stack slot before pushing it as an argument.
+        uintptr_t a2Masked = reinterpret_cast<uintptr_t>(a2) & ~static_cast<uintptr_t>(0xFF);
+
+        void* newEnd = ext_0057BEC0(a5, oldBuf, a3, out, out, reinterpret_cast<void*>(a2Masked));
+        ext_005567D0(newEnd, oldBuf, self, out);
+
+        lift_field<void*>(self, 8) = newEnd;
+    }
+
+    out[0] = a2;
+    out[1] = a3;
+}
+} // namespace lift_0057CEE0
