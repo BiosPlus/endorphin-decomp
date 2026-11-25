@@ -12178,9 +12178,10 @@
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
   "0x004C4390": {
-    "name": "ResetStringAndFlag",
-    "signature": "void fn_004C4390(void* self)",
-    "summary": "Re-initializes a std::string at offset 0, clears it, and zeroes the bool flag at +0x1c.",
+    "name": "sub_004CCDE0",
+    "class": "NMData::RealChannel",
+    "signature": "void __thiscall fn_004CCDE0(uint8_t* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
   "0x004C4D80": {

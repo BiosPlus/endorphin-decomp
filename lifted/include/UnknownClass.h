@@ -82,8 +82,8 @@ struct UnknownClass_Fields {
     // +0xF0  uint32_t                 field_0xF0  (evidence: 0x0058AB60)
     // +0xF4  int32_t                  field_0xF4  (evidence: 0x00594040, 0x0059DE20)
     // +0x158 uint32_t                 field_0x158  (evidence: 0x006C3070)
-    // +0x15C int32_t                  field_0x15c  (evidence: 0x004C1AC0)
-    // +0x160 int32_t                  field_0x160  (evidence: 0x004C1AC0) // CONFLICT: multiple definitions at +0x160
+    // +0x15C int32_t                  field_0x15c  (evidence: 0x004C1AC0, 0x004C4390)
+    // +0x160 int32_t                  field_0x160  (evidence: 0x004C1AC0, 0x004C4390) // CONFLICT: multiple definitions at +0x160
     // +0x160 uint32_t                 field_0x160  (evidence: 0x0070AB80, 0x0070AD00) // CONFLICT: multiple definitions at +0x160
     // +0x164 uint32_t                 field_0x164  (evidence: 0x0070AB80, 0x0070AD00)
     // +0x168 uint32_t                 field_0x168  (evidence: 0x0070AB80, 0x0070AD00)
