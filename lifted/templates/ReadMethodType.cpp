@@ -50449,3 +50449,39 @@ void fn_004F5830(void* self) {
     ext_006A6DD2(exception, kThrowInfo);
 }
 } // namespace lift_004F5830
+
+// [0x004F5BA0] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getY(void) const, 0>::vfunc_5 (50 bytes)
+namespace lift_004F5BA0 {
+// Known callee 0x004F4DE0 (sub_004F4DE0, 4B): float getter invoked with the matrix pointer in ecx; result returned in st(0).
+extern float ext_004F4DE0(void* matrix);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// ThrowInfo pushed as the second argument to _CxxThrowException (RTTI/ThrowInfo for the exception type).
+inline constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<MatrixWithProperties>::getY_vfunc_5
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getY(void) const, 0>
+// @summary Reads the wrapped MatrixWithProperties pointer; invokes its getY path if non-null, then always throws an ExceptionWithMessage (no return path in the binary).
+// @field ValuePtrType +0x00 void* field_0x00
+void fn_004F5BA0(void* self) {
+    // [eax] -> matrix pointer held by the ValuePtrType base.
+    void* matrix = lift_field<void*>(self, 0x00);
+
+    if (matrix != nullptr) {
+        // Result is computed but not consumed; the original stores it over the pushed argument slot before throwing.
+        float value = ext_004F4DE0(matrix);
+        (void)value;
+        ext_0046C4E0();
+    }
+
+    // Exception object lives in a 0x28-byte stack frame in the original (sub esp, 0x28).
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+}
+} // namespace lift_004F5BA0
