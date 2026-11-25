@@ -1456,3 +1456,23 @@ bool fn_0049B170() {
     return s == mem_0093A810;
 }
 } // namespace lift_0049B170
+
+// [0x0049ACB0] sub_0049ACB0 (112 bytes)
+namespace lift_0049ACB0 {
+// @name descriptiveName: allFourFloatsInUnitRange
+// @summary Returns true if all four float components at p[0..3] lie in [0.0, 1.0]; NaN fails.
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x0C float field_0x0C
+bool fn_0049ACB0(const float* p) {
+    // Ordered comparisons: NaN makes both >= and <= false, so NaN returns false.
+    for (int i = 0; i < 4; ++i) {
+        const float v = p[i];
+        if (!(v >= 0.0f && v <= 1.0f)) {
+            return false;
+        }
+    }
+    return true;
+}
+} // namespace lift_0049ACB0

@@ -11550,6 +11550,12 @@
     "summary": "Dynamic-casts arg2 to a polymorphic target type; if non-null, calls vtable slot 10 on it with (arg1, this-8).",
     "lifted_path": "lifted/NMData/State.cpp"
   },
+  "0x0049ACB0": {
+    "name": "descriptiveName: allFourFloatsInUnitRange",
+    "signature": "bool fn_0049ACB0(const float* p)",
+    "summary": "Returns true if all four float components at p[0..3] lie in [0.0, 1.0]; NaN fails.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049AD40": {
     "name": "sub_00495A20",
     "class": "NMData::RealChannel",
