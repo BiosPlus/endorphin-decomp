@@ -58222,3 +58222,36 @@ extern void ext_006A6DD2(void* obj, const void* info);
 }
 } // namespace lift_005B95F0
 } // namespace lift_00656960
+
+// [0x0059F920] ExprParser::ReadMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0>::vfunc_5 (61 bytes)
+namespace lift_0059F920 {
+// Known callee 0x0059DEB0: sub_0059DEB0 (Virtual dispatch thunk: forwards to vtable slot at +0x80.)
+extern float ext_0059DEB0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::CharacterData, float>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0>
+// @summary Reads a float via the held CharacterData pointer's virtual getter; throws a default-message exception if the pointer is null or after the read.
+// @field ExprParser::ReadMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0> +0x00 void* field_0x00
+void fn_0059F920(void* self) {
+    void* ptr = *reinterpret_cast<void**>(self);
+
+    if (ptr != nullptr) {
+        // Getter receives the sub-object at ptr+0x04 (passed in ecx).
+        void* sub = static_cast<unsigned char*>(ptr) + 0x04;
+        float value = ext_0059DEB0(sub);
+        ext_0046C4E0(value);   // throws
+    }
+
+    // Null path: construct a DerivedException on the stack and throw it.
+    alignas(8) unsigned char exception[64] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception,
+                 reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+}
+} // namespace lift_0059F920

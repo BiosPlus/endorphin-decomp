@@ -29764,6 +29764,13 @@
     "summary": "Loads the object pointer held in *arg; if it is null throws, otherwise returns 1 when the float from the child's getter (sub_0059DEB0) is \u003e= 1e-6 (NaN yields 0), else 0.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0059F920": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e",
+    "signature": "void fn_0059F920(void* self)",
+    "summary": "Reads a float via the held CharacterData pointer's virtual getter; throws a default-message exception if the pointer is null or after the read.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0059FDE0": {
     "name": "copyStringRangeFromTreeIterator",
     "signature": "static inline void invalid_parameter_noinfo()",
