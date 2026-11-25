@@ -344,3 +344,17 @@ void* fn_004FF8E0() {
     return mem_00AEB26C;
 }
 } // namespace lift_004FF8E0
+
+// [0x004F95B0] sub_004F95B0 (30 bytes)
+namespace lift_004F95B0 {
+// Known callee 0x004F93D0: getStaticObject_004F93D0 (Lazily initializes and returns a pointer to static object mem_00AE9F4C)
+extern void* ext_004F93D0();
+
+// @name storeValueAndStaticObject
+// @summary Writes `value` into out[0] and the lazily-initialized static object pointer into out[1].
+void fn_004F95B0(uint32_t* out, uint32_t value) {
+    void* obj = ext_004F93D0();
+    out[0] = value;
+    out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_004F95B0
