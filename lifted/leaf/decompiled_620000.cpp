@@ -642,3 +642,19 @@ void fn_00621B30(void* self) {
     lift_field<uint32_t>(self, 0x1C) = 0;
 }
 } // namespace lift_00621B30
+
+// [0x00622C00] sub_00622C00 (62 bytes)
+namespace lift_00622C00 {
+// @name FillRangeWithElement
+// @summary Copies one 20-byte element from src into every 20-byte slot from dst up to end (exclusive); no-op when dst == end.
+void fn_00622C00(uint8_t* dst, const uint8_t* end, const uint8_t* src) {
+    constexpr size_t kElemSize = 0x14;
+    if (dst == end) {
+        return;
+    }
+    do {
+        std::memcpy(dst, src, kElemSize);
+        dst += kElemSize;
+    } while (dst != end);
+}
+} // namespace lift_00622C00

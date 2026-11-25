@@ -1,0 +1,13 @@
+{
+  "va": "0x00622C00",
+  "size": 62,
+  "orig_symbol": "sub_00622C00",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "FillRangeWithElement",
+  "signature": "void fn_00622C00(uint8_t* dst, const uint8_t* end, const uint8_t* src)",
+  "summary": "Copies one 20-byte element from src into every 20-byte slot from dst up to end (exclusive); no-op when dst == end.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:00:39Z"
+}

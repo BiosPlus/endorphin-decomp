@@ -30743,6 +30743,12 @@
     "summary": "Serializes or compares three float calibration fields via vtable calls and sub_00487A30.",
     "lifted_path": "lifted/NMData/HingeCalibrationVariables.cpp"
   },
+  "0x00622C00": {
+    "name": "FillRangeWithElement",
+    "signature": "void fn_00622C00(uint8_t* dst, const uint8_t* end, const uint8_t* src)",
+    "summary": "Copies one 20-byte element from src into every 20-byte slot from dst up to end (exclusive); no-op when dst == end.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x006233B0": {
     "name": "sub_006233B0",
     "signature": "uint32_t fn_006233B0(uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3)",
