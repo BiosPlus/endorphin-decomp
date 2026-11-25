@@ -37,3 +37,31 @@ void fn_0058F670(void* self, uint32_t arg) {
     lift_field<uint32_t>(self, 0xE4) = result;
 }
 } // namespace lift_0058F670
+
+// [0x005F57B0] HelperGraphic::vfunc_0_off_158 (34 bytes)
+namespace lift_005F57B0 {
+// Known callee 0x005F5410: CopyThisFloatTripletToGlobals (On first call, zeroes three float globals and sets init flag bit 0 in mem_00B46878; then copies this->+0x170/+0x174/+0x178 into mem_00B4686C/mem_00B46870/mem_00B46874. thiscall, this in ecx.)
+extern void ext_005F5410(void* self);
+
+// Globals filled by the callee; the original caller reads them through eax,
+// which points at mem_00B4686C (the three floats are contiguous).
+extern float mem_00B4686C;
+extern float mem_00B46870;
+extern float mem_00B46874;
+
+// @name HelperGraphic::vfunc_0_off_158
+// @class HelperGraphic
+// @summary Rebases the secondary-subobject this (+0x158) to the HelperGraphic, refreshes the cached float triple via CopyThisFloatTripletToGlobals, and copies the three floats to the caller's out buffer.
+// @field HelperGraphic +0x170 float field_0x170
+// @field HelperGraphic +0x174 float field_0x174
+// @field HelperGraphic +0x178 float field_0x178
+void fn_005F57B0(void* self, float* out) {
+    // self points at the HasBufferedVector subobject (+0x158) of HelperGraphic.
+    char* obj = static_cast<char*>(self) - 0x158;
+    ext_005F5410(obj);
+
+    out[0] = mem_00B4686C;
+    out[1] = mem_00B46870;
+    out[2] = mem_00B46874;
+}
+} // namespace lift_005F57B0

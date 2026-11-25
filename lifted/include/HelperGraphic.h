@@ -14,5 +14,8 @@ struct HelperGraphic_Fields {
     // +0x4   void*                    vptr_TransformInterface  (evidence: 0x00402110, 0x00402130, 0x00535610, 0x00545B80) // CONFLICT: multiple definitions at +0x4
     // +0xE4  uint32_t                 field_0xE4  (evidence: 0x0058F670)
     // +0x14C uint8_t                  field_0x14C  (evidence: 0x0058F670)
+    // +0x170 float                    field_0x170  (evidence: 0x005F57B0)
+    // +0x174 float                    field_0x174  (evidence: 0x005F57B0)
+    // +0x178 float                    field_0x178  (evidence: 0x005F57B0)
 };
 } // namespace lifted_layout

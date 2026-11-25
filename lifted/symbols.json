@@ -29798,6 +29798,13 @@
     "summary": "On first call, zeroes three float globals and sets init flag bit 0 in mem_00B46878; then copies this-\u003e+0x170/+0x174/+0x178 into mem_00B4686C/mem_00B46870/mem_00B46874. thiscall, this in ecx.",
     "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
+  "0x005F57B0": {
+    "name": "HelperGraphic::vfunc_0_off_158",
+    "class": "HelperGraphic",
+    "signature": "void fn_005F57B0(void* self, float* out)",
+    "summary": "Rebases the secondary-subobject this (+0x158) to the HelperGraphic, refreshes the cached float triple via CopyThisFloatTripletToGlobals, and copies the three floats to the caller's out buffer.",
+    "lifted_path": "lifted/classes/HelperGraphic.cpp"
+  },
   "0x005F57E0": {
     "name": "HelperGraphic::vfunc_1_off_158",
     "class": "HelperGraphic",
