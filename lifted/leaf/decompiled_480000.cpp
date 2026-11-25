@@ -987,3 +987,34 @@ void* fn_00489080(const void* first, const void* last, void* out) {
     return dst;
 }
 } // namespace lift_00489080
+
+// [0x00489DC0]
+namespace lift_00489DC0 {
+// @name CopyRecordRange20
+// @summary Copies 20-byte records from [src_begin, src_end) to dst, advancing both by 20 bytes per record; the copy is skipped while dst is zero.
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x0C float field_0x0C
+// @field Unknown +0x10 float field_0x10
+void fn_00489DC0(const void* src_begin, const void* src_end, void* dst) {
+    uintptr_t src = reinterpret_cast<uintptr_t>(src_begin);
+    const uintptr_t end = reinterpret_cast<uintptr_t>(src_end);
+    uintptr_t out = reinterpret_cast<uintptr_t>(dst);
+
+    if (src == end) {
+        return;
+    }
+
+    do {
+        // Null test only guards the current iteration; out is advanced
+        // afterwards regardless, exactly as the original loop does.
+        if (out != 0) {
+            std::memcpy(reinterpret_cast<void*>(out),
+                        reinterpret_cast<const void*>(src), 20);
+        }
+        src += 20;
+        out += 20;
+    } while (src != end);
+}
+} // namespace lift_00489DC0

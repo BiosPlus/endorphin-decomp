@@ -8341,6 +8341,12 @@
     "summary": "If self-\u003e+0x04 is non-null, tail-calls child's vtable slot 0x78/4 with child as this and self as the argument; otherwise returns self.",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x00489DC0": {
+    "name": "CopyRecordRange20",
+    "signature": "void fn_00489DC0(const void* src_begin, const void* src_end, void* dst)",
+    "summary": "Copies 20-byte records from [src_begin, src_end) to dst, advancing both by 20 bytes per record; the copy is skipped while dst is zero.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048A0E0": {
     "name": "DestroyNodeChain",
     "signature": "void fn_0048A0E0(void* self, void* node)",

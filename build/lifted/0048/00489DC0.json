@@ -1,0 +1,45 @@
+{
+  "va": "0x00489DC0",
+  "size": 73,
+  "orig_symbol": "sub_00489DC0",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "CopyRecordRange20",
+  "signature": "void fn_00489DC0(const void* src_begin, const void* src_end, void* dst)",
+  "summary": "Copies 20-byte records from [src_begin, src_end) to dst, advancing both by 20 bytes per record; the copy is skipped while dst is zero.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:31:08Z"
+}
