@@ -41578,6 +41578,13 @@
     "summary": "Case-sensitive string compare (strcmp-style, unsigned bytes) that steps two bytes per iteration; returns -1/0/1. Takes the string pointer from *self and the other string as its one argument.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x00698840": {
+    "name": "String::findFirstOf",
+    "class": "String",
+    "signature": "int32_t __thiscall sub_00698840(void* self, uint32_t chars_ptr, int32_t start_index)",
+    "summary": "Finds the first occurrence of any character from a C-string starting at a given index.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x006988A0": {
     "name": "String::findFirstNotOf",
     "class": "String",

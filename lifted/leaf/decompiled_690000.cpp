@@ -739,3 +739,39 @@ uint32_t* sub_00692010(uint32_t* first, uint32_t* last, const uint32_t* val_ptr,
     return first;
 }
 } // namespace lift_00692010
+
+// [0x00698840]
+namespace lift_00698840 {
+extern uint8_t mem_read8(uint32_t addr);
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name String::findFirstOf
+// @class String
+// @summary Finds the first occurrence of any character from a C-string starting at a given index.
+// @field String +0x00 uint32_t data_ptr
+// @field String +0x04 int32_t length
+int32_t __thiscall sub_00698840(void* self, uint32_t chars_ptr, int32_t start_index) {
+    int32_t chars_len = 0;
+    while (mem_read8(chars_ptr + static_cast<uint32_t>(chars_len)) != 0) {
+        ++chars_len;
+    }
+
+    uint32_t this_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    int32_t length = static_cast<int32_t>(mem_read32(this_addr + 0x04));
+    if (start_index >= length) {
+        return -1;
+    }
+
+    uint32_t data_ptr = mem_read32(this_addr);
+    for (int32_t i = start_index; i < length; ++i) {
+        uint8_t ch = mem_read8(data_ptr + static_cast<uint32_t>(i));
+        for (int32_t j = 0; j < chars_len; ++j) {
+            if (ch == mem_read8(chars_ptr + static_cast<uint32_t>(j))) {
+                return i;
+            }
+        }
+    }
+
+    return -1;
+}
+} // namespace lift_00698840
