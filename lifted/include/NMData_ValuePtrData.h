@@ -10,7 +10,7 @@
 // Recovered field layout for NMData::ValuePtrData:
 namespace lifted_layout {
 struct NMData_ValuePtrData_Fields {
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x0046CE90, 0x004C0800, 0x00639730, 0x00683930)
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x0046CE90, 0x004A2930, 0x004C0800, 0x00639730, 0x00683930)
     // +0x24  void*                    field_0x24  (evidence: 0x00682DC0)
     // +0x28  void*                    field_0x28  (evidence: 0x00682CE0)
     // +0x48  uint8_t field_0x48 (embedded sub-object; address only, passed to virtual call)  (evidence: 0x00682C20) // CONFLICT: multiple definitions at +0x48

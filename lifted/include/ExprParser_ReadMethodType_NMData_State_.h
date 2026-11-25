@@ -8,6 +8,6 @@
 // Recovered field layout for ExprParser::ReadMethodType<NMData::State>:
 namespace lifted_layout {
 struct ExprParser_ReadMethodType_NMData_State__Fields {
-    // +0x8   void* field_0x08 (subobject passed as `this` to the virtual string accessor)  (evidence: 0x0046CE90, 0x0049D780, 0x004C0800, 0x00604D80, 0x00639730)
+    // +0x8   void* field_0x08 (subobject passed as `this` to the virtual string accessor)  (evidence: 0x0046CE90, 0x0049D780, 0x004A2930, 0x004C0800, 0x00604D80, 0x00639730)
 };
 } // namespace lifted_layout

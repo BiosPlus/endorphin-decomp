@@ -10,6 +10,6 @@
 // Recovered field layout for Sensor:
 namespace lifted_layout {
 struct Sensor_Fields {
-    // +0x0   void**                   vtable  (evidence: 0x0046CE90, 0x0046E570, 0x004983A0, 0x004B7D80, 0x004C0800, 0x00512A00, 0x005B3680, 0x005FCB40, 0x00604D80, 0x00639730, 0x006749C0)
+    // +0x0   void**                   vtable  (evidence: 0x0046CE90, 0x0046E570, 0x004983A0, 0x004A2930, 0x004B7D80, 0x004C0800, 0x00512A00, 0x005B3680, 0x005FCB40, 0x00604D80, 0x00639730, 0x006749C0)
 };
 } // namespace lifted_layout

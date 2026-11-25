@@ -10,7 +10,7 @@
 // Recovered field layout for UnitsWithProperties:
 namespace lifted_layout {
 struct UnitsWithProperties_Fields {
-    // +0x4   void*                    field_0x04  (evidence: 0x0046CE90, 0x004B7D80, 0x004C0800, 0x00512A00, 0x00604D80, 0x00639730, 0x0068F240) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    field_0x4  (evidence: 0x0046CE90, 0x004B7D80, 0x004C0800, 0x00512A00, 0x00604D80, 0x00639730, 0x0068EFF0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_0x04  (evidence: 0x0046CE90, 0x004A2930, 0x004B7D80, 0x004C0800, 0x00512A00, 0x00604D80, 0x00639730, 0x0068F240) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_0x4  (evidence: 0x0046CE90, 0x004A2930, 0x004B7D80, 0x004C0800, 0x00512A00, 0x00604D80, 0x00639730, 0x0068EFF0) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout
