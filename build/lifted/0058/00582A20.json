@@ -1,0 +1,13 @@
+{
+  "va": "0x00582A20",
+  "size": 73,
+  "orig_symbol": "sub_00582A20",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "IsIdentityMatrix3x3_00582A20",
+  "signature": "bool IsIdentityMatrix3x3_00582A20(const float* m)",
+  "summary": "Returns true if the 9 floats at ecx (row-major 3x3) are exactly the identity matrix; NaN fails.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:32:19Z"
+}

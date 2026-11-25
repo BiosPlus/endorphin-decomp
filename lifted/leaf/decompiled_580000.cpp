@@ -526,3 +526,20 @@ uint32_t __thiscall sub_00584B10(uint32_t self) {
     return result;
 }
 } // namespace lift_00584B10
+
+// [0x00582A20]
+namespace lift_00582A20 {
+// @name IsIdentityMatrix3x3_00582A20
+// @summary Returns true if the 9 floats at ecx (row-major 3x3) are exactly the identity matrix; NaN fails.
+bool IsIdentityMatrix3x3_00582A20(const float* m) {
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 3; ++j) {
+            const float expected = (i == j) ? 1.0f : 0.0f;
+            if (!(m[3 * i + j] == expected)) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+} // namespace lift_00582A20
