@@ -98,3 +98,24 @@ extern void __fastcall fn_004FDEF0(void* self) {
     ext_00665810(self);
 }
 } // namespace lift_004FDEF0
+
+// [0x004F91F0]
+namespace lift_004F91F0 {
+// @name initStaticObjectOnce
+// @summary One-time initializer for the static object at 0x00AE9F24 guarded by the bit in 0x00AE9F28; returns the object's address.
+// @field mem_00AE9F28 bit0 guard flag (set before the constructor runs)
+
+extern DWORD mem_00AE9F28;
+extern DWORD mem_00AE9F24;
+
+DWORD ext_0067A670(void* self, DWORD value);
+
+DWORD initStaticObjectOnce() {
+    if ((mem_00AE9F28 & 1u) == 0) {
+        mem_00AE9F28 |= 1u;
+        ext_0067A670(reinterpret_cast<void*>(0x00AE9F24u), 0u);
+        mem_00AE9F24 = 0x0094D03Cu;
+    }
+    return 0x00AE9F24u;
+}
+} // namespace lift_004F91F0

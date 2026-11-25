@@ -1,0 +1,13 @@
+{
+  "va": "0x004F91F0",
+  "size": 87,
+  "orig_symbol": "sub_004F91F0",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "initStaticObjectOnce",
+  "signature": "DWORD initStaticObjectOnce()",
+  "summary": "One-time initializer for the static object at 0x00AE9F24 guarded by the bit in 0x00AE9F28; returns the object's address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:34:28Z"
+}
