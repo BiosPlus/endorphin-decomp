@@ -60266,6 +60266,12 @@
     "summary": "Stores address of mem_009983BC into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007ABC20": {
+    "name": "sub_007ABC20",
+    "signature": "void* __thiscall sub_007ABC20(void* self)",
+    "summary": "Constructor that initializes base, a 20-byte member at +0x04, an inline pointer at +0x18, and sets vtable mem_009983CC.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007ABC80": {
     "name": "sub_007ABC80",
     "signature": "extern \"C\" void* __fastcall fn_007ABC80(void* self, int edx_unused, unsigned int flags)",
