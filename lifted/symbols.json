@@ -4860,6 +4860,13 @@
     "summary": "Returns the address of the global data slot mem_00933A38 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00449C90": {
+    "name": "Unknown::initWithStringMembers_00449C90",
+    "class": "Unknown",
+    "signature": "void* fn_00449C90(void* self, uint32_t arg)",
+    "summary": "Sets the vtable, forwards its argument through an IAT call, and constructs two embedded string members at +0x74 and +0x78.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00449D00": {
     "name": "Unknown::resetVptrAndReleaseSubobjects",
     "class": "Unknown",
@@ -6622,6 +6629,13 @@
     "class": "Tree",
     "signature": "inline uint8_t* ptrAt(const uint8_t* base, std::size_t off)",
     "summary": "Binary-search-tree equal_range on a dword key: writes {self, lower_bound, self, upper_bound} to the out pair.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
+  "0x0045E690": {
+    "name": "Unknown::LookupOrDefault",
+    "class": "Unknown",
+    "signature": "static inline uint32_t guest_u32(uint32_t addr, ptrdiff_t off)",
+    "summary": "Looks up a 32-bit key in the tree at +0xc and returns the node's value at +0x10, or the default value at +0x18 if not found.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
   "0x0045E700": {

@@ -2407,3 +2407,54 @@ void __thiscall fn_00441C10(Unknown* self, uint32_t arg) {
     ext_006A6172(0, &buf2[0], r2);
 }
 } // namespace lift_00441C10
+
+// [0x00447F20]
+namespace lift_00447F20 {
+extern void mem_write32(uint32_t addr, uint32_t val);
+extern void ext_006A5EFC(uint32_t ecx);
+extern void ext_006A6622(uint32_t ecx);
+extern void ext_006A5F6E(uint32_t ecx);
+
+// @name sub_00447F20
+// @summary Destructor that resets vtables and destroys member subobjects at +0xCC and +0x78 before calling base destructor
+// @field Unknown +0x00 uint32_t vtable_0x00
+// @field Unknown +0x74 uint32_t vtable_0x74
+// @field Unknown +0x78 uint8_t field_0x78
+// @field Unknown +0xCC uint8_t field_0xCC
+void __thiscall fn_00447F20(uint32_t ecx) {
+    uint32_t self = ecx;
+    mem_write32(self + 0x00, 0x00933064u);
+    mem_write32(self + 0x74, 0x0093304Cu);
+    ext_006A5EFC(self + 0xCC);
+    ext_006A6622(self + 0x78);
+    ext_006A5F6E(self);
+}
+} // namespace lift_00447F20
+
+// [0x00449C90] sub_00449C90 (111 bytes)
+namespace lift_00449C90 {
+// @name Unknown::initWithStringMembers_00449C90
+// @class Unknown
+// @summary Sets the vtable, forwards its argument through an IAT call, and constructs two embedded string members at +0x74 and +0x78.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x74 uint8_t[4] field_0x74
+// @field Unknown +0x78 uint8_t[4] field_0x78
+
+extern void ext_006A5FC2(uint32_t flags, uint32_t arg);
+extern void (__thiscall* mem_009242F0)(void* self, const void* arg);
+extern const uint32_t mem_00928B5D;
+extern const uint32_t mem_00933A64;
+
+void* fn_00449C90(void* self, uint32_t arg) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+
+    ext_006A5FC2(0x316, arg);
+
+    *reinterpret_cast<const void**>(obj + 0x00) = &mem_00933A64;
+
+    mem_009242F0(obj + 0x74, &mem_00928B5D);
+    mem_009242F0(obj + 0x78, &mem_00928B5D);
+
+    return self;
+}
+} // namespace lift_00449C90
