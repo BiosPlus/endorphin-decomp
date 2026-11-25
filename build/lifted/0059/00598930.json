@@ -1,0 +1,13 @@
+{
+  "va": "0x00598930",
+  "size": 53,
+  "orig_symbol": "sub_00598930",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "forwardInvalidParameterNoinfo_00598930",
+  "signature": "void __cdecl fn_00598930(void)",
+  "summary": "Pushes eight stack copies of its caller's arguments (unused by the callee), calls invalid_parameter_noinfo, and cdecl-cleans the 0x24 bytes.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:01:16Z"
+}

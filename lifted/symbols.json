@@ -27660,6 +27660,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00598930": {
+    "name": "forwardInvalidParameterNoinfo_00598930",
+    "signature": "void __cdecl fn_00598930(void)",
+    "summary": "Pushes eight stack copies of its caller's arguments (unused by the callee), calls invalid_parameter_noinfo, and cdecl-cleans the 0x24 bytes.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x005991D0": {
     "name": "Unknown::EraseAtAndWritePair",
     "class": "Unknown",

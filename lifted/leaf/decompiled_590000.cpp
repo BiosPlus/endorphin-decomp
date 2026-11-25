@@ -1605,3 +1605,15 @@ void* fn_00596B20(void* container, void* node, void* expectedContainer, void* en
 }
 } // namespace lift_0059FDE0
 } // namespace lift_00596B20
+
+// [0x00598930] sub_00598930 (53 bytes)
+namespace lift_00598930 {
+// Known callee 0x00596B20: invalid_parameter_noinfo (no arguments in lifted form; clone of the MSVCR80 invalid-parameter path).
+extern void ext_00596B20(void);
+
+// @name forwardInvalidParameterNoinfo_00598930
+// @summary Pushes eight stack copies of its caller's arguments (unused by the callee), calls invalid_parameter_noinfo, and cdecl-cleans the 0x24 bytes.
+void __cdecl fn_00598930(void) {
+    ext_00596B20();
+}
+} // namespace lift_00598930
