@@ -1087,3 +1087,40 @@ void fn_00401BB0(void* self) {
     mem_009251C0(self);
 }
 } // namespace lift_00401BB0
+
+// [0x00404E40] sub_00404E40 (85 bytes)
+namespace lift_00404E40 {
+extern uintptr_t mem_00924FDC;  // MSVCP80 std::basic_string<char>::operator= (IAT slot)
+
+namespace {
+
+constexpr std::ptrdiff_t kRecordSize = 0x58;
+
+// thiscall: this in ECX, single pointer argument on the stack.
+using BasicStringAssign_t = void* (__thiscall*)(void* self, const void* rhs);
+
+inline void assignString(void* dst, const void* src) {
+    reinterpret_cast<BasicStringAssign_t>(mem_00924FDC)(dst, src);
+}
+
+} // namespace
+
+// @name copyRecordRange_00404E40
+// @summary Copies each 0x58-byte record in [first,last) to dest (DWORD at +0, three std::strings at +4/+0x20/+0x3C); returns dest past the last copied record.
+// @field Unknown +0x00 uint32_t key
+// @field Unknown +0x04 std::string text0
+// @field Unknown +0x20 std::string text1
+// @field Unknown +0x3C std::string text2
+void* fn_00404E40(const void* first, const void* last, void* dest) {
+    uint8_t* out = static_cast<uint8_t*>(dest);
+    for (const uint8_t* in = static_cast<const uint8_t*>(first);
+         in != static_cast<const uint8_t*>(last);
+         in += kRecordSize, out += kRecordSize) {
+        lift_field<uint32_t>(out, 0x00) = lift_field<uint32_t>(in, 0x00);
+        assignString(out + 0x04, in + 0x04);
+        assignString(out + 0x20, in + 0x20);
+        assignString(out + 0x3C, in + 0x3C);
+    }
+    return out;
+}
+} // namespace lift_00404E40
