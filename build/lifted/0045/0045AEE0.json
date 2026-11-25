@@ -1,0 +1,13 @@
+{
+  "va": "0x0045AEE0",
+  "size": 105,
+  "orig_symbol": "sub_0045AEE0",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "getWindowTextAsFloat",
+  "signature": "float __stdcall fn_0045AEE0(void* wnd)",
+  "summary": "Reads the window text of a CWnd into a string and parses it as a float using atof.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:04:45Z"
+}

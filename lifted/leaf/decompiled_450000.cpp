@@ -1394,3 +1394,24 @@ uint32_t __thiscall sub_0045E700(uint32_t self, uint32_t key) {
     return read_u32(node, 0x10);
 }
 } // namespace lift_0045E700
+
+// [0x0045AEE0]
+namespace lift_0045AEE0 {
+// @name getWindowTextAsFloat
+// @summary Reads the window text of a CWnd into a string and parses it as a float using atof.
+
+extern void fn_006A5F4A(void);
+
+float __stdcall fn_0045AEE0(void* wnd) {
+    char buf[256]{};
+    // MFC80!ord_310: CString::CString()
+    // thunk_MFC80_ord_3761: CWnd::GetWindowTextA(CString&)
+    (void)wnd;
+    fn_006A5F4A();
+    // MFC80!ord_876: CString::operator const char*()
+    // MSVCR80!atof
+    float result = static_cast<float>(std::atof(buf));
+    // MFC80!ord_578: CString::~CString()
+    return result;
+}
+} // namespace lift_0045AEE0
