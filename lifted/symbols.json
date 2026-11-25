@@ -61735,6 +61735,13 @@
     "summary": "Matches a null-terminated string against the stream, restoring state on mismatch.",
     "lifted_path": "lifted/leaf/decompiled_870000.cpp"
   },
+  "0x008710B0": {
+    "name": "TextCursor::SkipBlankLinesBack_008710B0",
+    "class": "TextCursor",
+    "signature": "static inline bool is_text_whitespace(uint8_t c)",
+    "summary": "Reads backward past whitespace; if the first character read is non-whitespace, steps back one line and returns 0, otherwise skips the remaining whitespace, steps back one line and returns 1.",
+    "lifted_path": "lifted/leaf/decompiled_870000.cpp"
+  },
   "0x00871860": {
     "name": "Unknown_CallVtableSlot0_IfNonNull",
     "class": "Unknown",

@@ -208,3 +208,32 @@ void fn_00870EF0(void* self) {
     lift_field<uint32_t>(self, 0x14) = lift_field<uint32_t>(self, 0x18);
 }
 } // namespace lift_00870EF0
+
+// [0x008710B0] sub_008710B0 (61 bytes)
+namespace lift_008710B0 {
+// Returns the character under the backward cursor (in AL) and advances it.
+extern uint8_t ext_00870E90();
+// Known callee 0x00870EF0: TextCursor::StepBackOneLine_00870EF0 (Steps a backward text cursor to the start of the previous line (LF or CRLF terminated), tracking a line counter; resets to buffer start and line state when the start is reached.)
+extern void ext_00870EF0();
+
+static inline bool is_text_whitespace(uint8_t c) {
+    return c == 0x20 || c == 0x09 || c == 0x0D || c == 0x0A;  // space, tab, CR, LF
+}
+
+// @name TextCursor::SkipBlankLinesBack_008710B0
+// @class TextCursor
+// @summary Reads backward past whitespace; if the first character read is non-whitespace, steps back one line and returns 0, otherwise skips the remaining whitespace, steps back one line and returns 1.
+uint8_t fn_008710B0(void* self) {
+    (void)self;
+    uint8_t c = ext_00870E90();
+    if (!is_text_whitespace(c)) {
+        ext_00870EF0();
+        return 0;
+    }
+    do {
+        c = ext_00870E90();
+    } while (is_text_whitespace(c));
+    ext_00870EF0();
+    return 1;
+}
+} // namespace lift_008710B0
