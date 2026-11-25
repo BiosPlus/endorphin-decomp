@@ -894,7 +894,7 @@ struct Unknown_Fields {
     // +0x100 void* field_0x100 (tail-call target passed to ext_0044B780)  (evidence: 0x00430DA0, 0x004332B0, 0x004332D0, 0x00648940, 0x00648A20) // CONFLICT: multiple definitions at +0x100
     // +0x100 DWORD                    field_0x100  (evidence: 0x006AAC90) // CONFLICT: multiple definitions at +0x100
     // +0x100 uint32_t                 field_0x100  (evidence: 0x00430550, 0x007155B0, 0x0071C700) // CONFLICT: multiple definitions at +0x100
-    // +0x100 void*                    field_0x100  (evidence: 0x00430260, 0x00430310, 0x004305A0, 0x004306C0, 0x00430720, 0x00430780, 0x004307C0, 0x00430CE0, 0x00430DA0) // CONFLICT: multiple definitions at +0x100
+    // +0x100 void*                    field_0x100  (evidence: 0x00430260, 0x00430310, 0x004305A0, 0x00430660, 0x004306C0, 0x00430720, 0x00430780, 0x004307C0, 0x00430CE0, 0x00430DA0) // CONFLICT: multiple definitions at +0x100
     // +0x104 void**                   childArray  (evidence: 0x006C1BB0, 0x006C59C0) // CONFLICT: multiple definitions at +0x104
     // +0x104 DWORD                    field_0x104  (evidence: 0x00455F10) // CONFLICT: multiple definitions at +0x104
     // +0x104 uint32_t                 field_0x104  (evidence: 0x00431330, 0x00433260, 0x00434900, 0x007155B0, 0x0071C700) // CONFLICT: multiple definitions at +0x104

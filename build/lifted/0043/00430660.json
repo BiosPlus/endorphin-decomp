@@ -1,0 +1,21 @@
+{
+  "va": "0x00430660",
+  "size": 91,
+  "orig_symbol": "sub_00430660",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "OnUpdateCommandUI_00430660",
+  "signature": "void __thiscall sub_00430660(unsigned char* self, void* pCmdUI)",
+  "summary": "Enables a UI command object and sets its check state to 1 if field_0x100's nested value is 3 or 7, or 0 otherwise.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x100",
+      "type": "void*",
+      "name": "field_0x100"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:27:58Z"
+}

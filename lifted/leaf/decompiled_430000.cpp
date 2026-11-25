@@ -2754,3 +2754,28 @@ extern void __thiscall fn_0043E090(void* self, uint32_t arg) {
     }
 }
 } // namespace lift_0043E090
+
+// [0x00430660]
+namespace lift_00430660 {
+// @name OnUpdateCommandUI_00430660
+// @summary Enables a UI command object and sets its check state to 1 if field_0x100's nested value is 3 or 7, or 0 otherwise.
+// @field Unknown +0x100 void* field_0x100
+
+
+extern int __thiscall ext_0044B5B0(unsigned char* self);
+
+void __thiscall sub_00430660(unsigned char* self, void* pCmdUI) {
+    uint32_t* vtable = *reinterpret_cast<uint32_t**>(pCmdUI);
+    using VFn1 = void(__thiscall*)(void*, int);
+    reinterpret_cast<VFn1>(vtable[0])(pCmdUI, 1);
+
+    unsigned char* obj = *reinterpret_cast<unsigned char**>(self + 0x100);
+    if (!obj) {
+        return;
+    }
+
+    int check = (ext_0044B5B0(obj) == 3 || ext_0044B5B0(obj) == 7) ? 1 : 0;
+    vtable = *reinterpret_cast<uint32_t**>(pCmdUI);
+    reinterpret_cast<VFn1>(vtable[1])(pCmdUI, check);
+}
+} // namespace lift_00430660
