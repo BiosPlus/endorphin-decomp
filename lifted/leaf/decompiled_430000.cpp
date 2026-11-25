@@ -2427,3 +2427,20 @@ void fn_004307C0(void* self, void* arg) {
     }
 }
 } // namespace lift_004307C0
+
+// [0x00433320] sub_00433320 (77 bytes)
+namespace lift_00433320 {
+// Known callee 0x0065C660: sub_0065C660 (Stores address of mem_00928E8C into field at offset +0x0.)
+extern void ext_0065C660(void* self);
+// Import 0x00628FF0 (MSVCP80 std::basic_string<char> destructor), reached via IAT slot mem_00924FF4.
+extern void ext_00628FF0(void* self);
+
+// @name Unknown::Dtor_00433320
+// @class Unknown
+// @summary Destroys the std::string member at +0x04, then runs the base-part teardown at 0x0065C660.
+// @field Unknown +0x04 std::string field_0x04
+void fn_00433320(void* self) {
+    ext_00628FF0(static_cast<uint8_t*>(self) + 4);
+    ext_0065C660(self);
+}
+} // namespace lift_00433320
