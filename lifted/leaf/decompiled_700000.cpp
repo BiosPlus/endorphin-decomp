@@ -2118,3 +2118,21 @@ void* fn_0070EBF0(void* self, void* arg1) {
 }
 } // namespace lift_006C2CB0
 } // namespace lift_0070EBF0
+
+// [0x00705760] sub_00705760 (35 bytes)
+namespace lift_00705760 {
+// @name UnknownClass::forwardClearFlagViaVcallBc
+// @class UnknownClass
+// @summary Calls virtual slot 0xBC with (this->field_0x84 & ~1), then zeroes field_0xDC.
+// @field UnknownClass +0x84 uint32_t field_0x84
+// @field UnknownClass +0xDC uint32_t field_0xDC
+void fn_00705760(void* self) {
+    uint32_t flags = lift_field<uint32_t>(self, 0x84) & ~1u;
+
+    void* vtbl = lift_field<void*>(self, 0);
+    auto vcall = lift_field<void(__thiscall*)(void*, uint32_t)>(vtbl, 0xBC);
+    vcall(self, flags);
+
+    lift_field<uint32_t>(self, 0xDC) = 0;
+}
+} // namespace lift_00705760

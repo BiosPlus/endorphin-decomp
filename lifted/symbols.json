@@ -62424,6 +62424,13 @@
     "summary": "Calls virtual slot 0xE8 once per index, from (count-1) down to 0, where count is the int at +0xC0.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00705760": {
+    "name": "UnknownClass::forwardClearFlagViaVcallBc",
+    "class": "UnknownClass",
+    "signature": "void fn_00705760(void* self)",
+    "summary": "Calls virtual slot 0xBC with (this-\u003efield_0x84 \u0026 ~1), then zeroes field_0xDC.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x007057C0": {
     "name": "sub_007057C0",
     "signature": "extern \"C\" int32_t __stdcall fn_007057C0(int a1, int a2, int a3)",
