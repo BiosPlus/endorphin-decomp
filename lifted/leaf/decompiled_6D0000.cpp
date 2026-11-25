@@ -1511,3 +1511,23 @@ extern int32_t __fastcall fn_006D8520(void* self) {
 }
 } // namespace lift_006D8550
 } // namespace lift_006D8520
+
+// [0x006D2064] sub_006D2064 (20 bytes)
+namespace lift_006D2064 {
+// @name DataTable_006D2064
+// @summary Returns a pointer to a constant 20-byte lookup table at 0x006D2064 (data, not code; bytes 00 04x10 01 04 02 04 04 04 03 8b ff).
+
+namespace {
+// Raw bytes at 0x006D2064..0x006D2077, copied from the original image.
+constexpr uint8_t kDataTable006D2064[20] = {
+    0x00,
+    0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04,
+    0x01, 0x04, 0x02, 0x04, 0x04, 0x04, 0x03,
+    0x8b, 0xff,
+};
+} // namespace
+
+const uint8_t* fn_006D2064() {
+    return kDataTable006D2064;
+}
+} // namespace lift_006D2064
