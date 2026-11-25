@@ -1,0 +1,13 @@
+{
+  "va": "0x0040BF00",
+  "size": 20,
+  "orig_symbol": "sub_0040BF00",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "sub_0040BF00",
+  "signature": "extern \"C\" void* __thiscall fn_0040BF00(void* self)",
+  "summary": "Calls MFC80_ord_1084, passes [eax+4] to MFC80_ord_1308, and returns self.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T05:06:44Z"
+}

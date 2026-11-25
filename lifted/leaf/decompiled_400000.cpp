@@ -1985,3 +1985,44 @@ extern void __thiscall fn_0040B930(void* self) {
     mem_009242F4(cstring_buf);
 }
 } // namespace lift_0040B930
+
+// [0x0040BF00]
+namespace lift_0040BF00 {
+// @name sub_0040BF00
+// @summary Calls MFC80_ord_1084, passes [eax+4] to MFC80_ord_1308, and returns self.
+
+
+extern void* ext_006A5EDE(void);
+extern void __thiscall ext_006A60D6(void* self);
+
+extern void* __thiscall fn_0040BF00(void* self) {
+    void* obj = ext_006A5EDE();
+    void* inner = reinterpret_cast<void*>(*reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(obj) + 0x4));
+    ext_006A60D6(inner);
+    return self;
+}
+} // namespace lift_0040BF00
+
+// [0x0040CAC0]
+namespace lift_0040CAC0 {
+extern void ext_0040B640(void* self);
+extern void ext_0040C300(uint8_t* self);
+
+// @name Unknown::refreshAndClear
+// @class Unknown
+// @summary Reads window text, clears child state, and invokes two virtual methods at vtable +0x164 and +0x168.
+// @field Unknown +0x00 void** vtable
+void fn_0040CAC0(uint8_t* self) {
+    ext_0040B640(self);
+    ext_0040C300(self);
+
+    using VFunc = void(__thiscall*)(void*);
+    void** vtable = *reinterpret_cast<void***>(self);
+    auto vfunc_164 = reinterpret_cast<VFunc>(vtable[0x164 / 4]);
+    vfunc_164(self);
+
+    vtable = *reinterpret_cast<void***>(self);
+    auto vfunc_168 = reinterpret_cast<VFunc>(vtable[0x168 / 4]);
+    vfunc_168(self);
+}
+} // namespace lift_0040CAC0

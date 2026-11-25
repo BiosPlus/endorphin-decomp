@@ -1008,6 +1008,13 @@
     "summary": "Sends message 0x18B to the control handle at +0xA4 and then message 0x186 with wParam 1 (count \u003e= 2) or -1 (otherwise).",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x0040CAC0": {
+    "name": "Unknown::refreshAndClear",
+    "class": "Unknown",
+    "signature": "void fn_0040CAC0(uint8_t* self)",
+    "summary": "Reads window text, clears child state, and invokes two virtual methods at vtable +0x164 and +0x168.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040CDF0": {
     "name": "NewCharacterDialog::vfunc_92",
     "class": "NewCharacterDialog",
