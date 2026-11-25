@@ -1,0 +1,34 @@
+{
+  "va": "0x004CF320",
+  "size": 29,
+  "orig_symbol": "NMData::IncarnationEventData::vfunc_89",
+  "src_path": "src/NMData/IncarnationEventData.cpp",
+  "lifted_path": "lifted/NMData/IncarnationEventData.cpp",
+  "name": "NMData::IncarnationEventData::vfunc_89",
+  "class": "NMData::IncarnationEventData",
+  "signature": "void fn_004CF320(void* self)",
+  "summary": "Clears field_0x188 and, if field_0x17c is non-zero, calls ext_004CEAC0 on field_0x184 with self.",
+  "fields": [
+    {
+      "class": "NMData::IncarnationEventData",
+      "offset": "+0x17C",
+      "type": "uint8_t",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "NMData::IncarnationEventData",
+      "offset": "+0x184",
+      "type": "void*",
+      "name": "field_0x184"
+    },
+    {
+      "class": "NMData::IncarnationEventData",
+      "offset": "+0x188",
+      "type": "uint8_t",
+      "name": "field_0x188"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T12:43:44Z"
+}

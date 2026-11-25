@@ -121,3 +121,30 @@ void* __thiscall fn_004CE830(void* self, void* a, void* b) {
     return a;
 }
 } // namespace lift_004CE830
+
+// [0x004CF320]
+namespace lift_004CF320 {
+// @name NMData::IncarnationEventData::vfunc_89
+// @class NMData::IncarnationEventData
+// @summary Clears field_0x188 and, if field_0x17c is non-zero, calls ext_004CEAC0 on field_0x184 with self.
+// @field NMData::IncarnationEventData +0x17c uint8_t field_0x17c
+// @field NMData::IncarnationEventData +0x184 void* field_0x184
+// @field NMData::IncarnationEventData +0x188 uint8_t field_0x188
+
+
+extern void ext_004CEAC0(void* self, void* arg);
+extern void* ext_00494000(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+extern void ext_004940E0(void* self, uint32_t mask, uint8_t flag);
+
+void fn_004CF320(void* self) {
+    uint8_t flag = lift_field<uint8_t>(self, 0x17c);
+    lift_field<uint8_t>(self, 0x188) = 0;
+    if (flag != 0) {
+        ext_004CEAC0(lift_field<void*>(self, 0x184), self);
+    }
+    if (false) {
+        ext_00494000(nullptr, 0, 0, 0);
+        ext_004940E0(nullptr, 0, 0);
+    }
+}
+} // namespace lift_004CF320
