@@ -1579,3 +1579,38 @@ int fn_0067EC70(void* self, char* buf, size_t size) {
     return snprintf_fn(buf, size, fmt, b, a);
 }
 } // namespace lift_0067EC70
+
+// [0x0067ED10] sub_0067ED10 (35 bytes)
+namespace lift_0067ED10 {
+// Known callee 0x00661980: setVtable_0093BFB4 (Stores the vtable address 0x0093BFB4 into the first dword of the object pointed to by ECX (this).)
+extern void ext_00661980();
+// Import slots (IAT entries) referenced by the original asm:
+//   mem_00924FFC: std::basic_string<char>::operator[](size_t) const   (MSVCP80)
+//   mem_0092530C: strtoul                                             (MSVCR80)
+extern int mem_00924FFC;
+extern int mem_0092530C;
+extern int mem_0098C254;
+
+// Signatures of the two imported functions, read through their IAT slots.
+typedef const char& (__thiscall* StringIndexFn)(const void* self, size_t index);
+typedef unsigned long (__cdecl* StrtoulFn)(const char* s, char** end, int base);
+
+// @name parseHexStringToDword
+// @summary Parses the std::string argument as hex via strtoul(&str[0], NULL, 16) and stores the result in *self.
+// @field Unknown +0x00 uint32_t field_0x00
+void fn_0067ED10(void* self, const void* str) {
+    // Original: ext_00661980 (setVtable) is in the callee graph but not invoked here.
+    static_cast<void>(&ext_00661980);
+
+    // Original: push 0; call [mem_00924FFC] -> str.operator[](0)
+    const StringIndexFn string_index = *reinterpret_cast<StringIndexFn*>(&mem_00924FFC);
+    const char& first = string_index(str, 0);
+
+    // Original: push 0x10; push 0; push eax; call [mem_0092530C] -> strtoul(&first, NULL, 16)
+    const StrtoulFn strtoul_fn = *reinterpret_cast<StrtoulFn*>(&mem_0092530C);
+    const unsigned long value = strtoul_fn(&first, nullptr, 16);
+
+    // Original: mov [esi], eax
+    lift_field<uint32_t>(self, 0x00) = static_cast<uint32_t>(value);
+}
+} // namespace lift_0067ED10

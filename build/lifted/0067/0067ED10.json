@@ -1,0 +1,21 @@
+{
+  "va": "0x0067ED10",
+  "size": 35,
+  "orig_symbol": "sub_0067ED10",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "parseHexStringToDword",
+  "signature": "void fn_0067ED10(void* self, const void* str)",
+  "summary": "Parses the std::string argument as hex via strtoul(\u0026str[0], NULL, 16) and stores the result in *self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:15:48Z"
+}

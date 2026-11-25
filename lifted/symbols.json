@@ -47584,6 +47584,12 @@
     "summary": "Formats the DWORD pointed to by self as \"%08x\" into buf (max size bytes) via _snprintf; returns its result.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x0067ED10": {
+    "name": "parseHexStringToDword",
+    "signature": "void fn_0067ED10(void* self, const void* str)",
+    "summary": "Parses the std::string argument as hex via strtoul(\u0026str[0], NULL, 16) and stores the result in *self.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067F5A0": {
     "name": "lookupTableByIndexField",
     "class": "Unknown (no class recovered; receiver is passed in ecx)",
