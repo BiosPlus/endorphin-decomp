@@ -685,3 +685,30 @@ void* fn_0054F0D0(const uint8_t* begin, const uint8_t* end, uint8_t* dest) {
     return result;
 }
 } // namespace lift_0054F0D0
+
+// [0x0054F120] sub_0054F120 (73 bytes)
+namespace lift_0054F120 {
+extern void ext_0054F030(uint32_t self, uint32_t elem);
+
+// @name Unknown::RelocateRangeBackward_0054F120
+// @summary Walks a 104-byte-element range [begin,end) from the back, invoking ext_0054F030 on each element with a destination pointer shifted by (value - end); returns value minus the range size in bytes.
+uint32_t fn_0054F120(uint32_t begin, uint32_t end, uint32_t value) {
+    constexpr int32_t kElemSize = 0x68; // 104 bytes per element
+
+    // Range size in bytes, truncated to a whole number of elements (signed divide).
+    int32_t byteSpan = static_cast<int32_t>(end - begin);
+    int32_t wholeBytes = (byteSpan / kElemSize) * kElemSize;
+    uint32_t result = value - static_cast<uint32_t>(wholeBytes);
+
+    // Constant displacement from source element to destination slot.
+    uint32_t delta = value - end;
+
+    // Visit elements from the last one down to begin.
+    for (uint32_t p = end; p != begin;) {
+        p -= kElemSize;
+        ext_0054F030(p + delta, p);
+    }
+
+    return result;
+}
+} // namespace lift_0054F120

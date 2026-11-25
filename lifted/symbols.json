@@ -20376,6 +20376,13 @@
     "summary": "Invokes the per-element copy routine over [begin, end) in 0x68-byte steps, writing to dest; returns dest + count*0x68.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x0054F120": {
+    "name": "Unknown::RelocateRangeBackward_0054F120",
+    "class": "Unknown",
+    "signature": "uint32_t fn_0054F120(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Walks a 104-byte-element range [begin,end) from the back, invoking ext_0054F030 on each element with a destination pointer shifted by (value - end); returns value minus the range size in bytes.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x0054F1B0": {
     "name": "constructRange_0054F1B0",
     "signature": "void sub_0054F1B0(uint8_t* begin, uint8_t* end, uint32_t arg)",
