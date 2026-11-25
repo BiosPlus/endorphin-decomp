@@ -1,0 +1,13 @@
+{
+  "va": "0x00494070",
+  "size": 89,
+  "orig_symbol": "sub_00494070",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "findAncestorWithFlags",
+  "signature": "extern \"C\" uint32_t fn_00494070(uint32_t mask, uint32_t obj)",
+  "summary": "Walks up an object's parent chain via vtable+0x10 and dynamic_cast until finding one whose vtable+0x50 flags match the given mask",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:21:10Z"
+}

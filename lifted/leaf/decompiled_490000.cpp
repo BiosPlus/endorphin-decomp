@@ -759,3 +759,28 @@ void* __thiscall fn_00494860(void* self, void* out_str, int32_t index) {
     return out_str;
 }
 } // namespace lift_00494860
+
+// [0x00494070]
+namespace lift_00494070 {
+// @name findAncestorWithFlags
+// @summary Walks up an object's parent chain via vtable+0x10 and dynamic_cast until finding one whose vtable+0x50 flags match the given mask
+
+extern uint32_t mem_read32(uint32_t addr);
+extern uint32_t ext_006A6E9E(uint32_t inptr, uint32_t vf_delta, uint32_t src_type, uint32_t dst_type, uint32_t is_reference);
+
+extern uint32_t fn_00494070(uint32_t mask, uint32_t obj) {
+    uint32_t cur = obj;
+    while (cur != 0) {
+        uint32_t vtable = mem_read32(cur);
+        uint32_t get_flags = mem_read32(vtable + 0x50);
+        uint32_t flags = reinterpret_cast<uint32_t (*)(uint32_t)>(static_cast<uintptr_t>(get_flags))(cur);
+        if ((flags & mask) == mask) {
+            return cur;
+        }
+        uint32_t get_parent = mem_read32(vtable + 0x10);
+        uint32_t parent = reinterpret_cast<uint32_t (*)(uint32_t, uint32_t)>(static_cast<uintptr_t>(get_parent))(cur, 0u);
+        cur = ext_006A6E9E(parent, 0u, 0x00A2E2F8u, 0x00A2E2D8u, 0u);
+    }
+    return 0;
+}
+} // namespace lift_00494070
