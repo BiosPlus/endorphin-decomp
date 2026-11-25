@@ -66923,6 +66923,12 @@
     "summary": "Decodes `count` 16-bit log-scale codes from the buffer at self+0x0C into floats written to `out`.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BC160": {
+    "name": "SampleLog16ToSqrtBytes",
+    "signature": "extern \"C\" const double mem_0092A278; // 0.0 (returned for zero magnitude) extern \"C\" const double mem_0092A270; // 1.0 extern \"C\" const double mem_00999A68; // 256.0 struct SampleLog16Source",
+    "summary": "Decodes `count` sign-magnitude log16 codes from arg0-\u003esamples and stores each as a byte: sqrt(v)*256 for 0\u003cv\u003c1, 0 for v\u003c=0, 255 for v\u003e=1.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BC4F0": {
     "name": "classifyPackedFields",
     "signature": "int32_t __cdecl sub_007BC4F0(uint32_t obj)",

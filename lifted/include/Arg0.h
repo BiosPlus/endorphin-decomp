@@ -13,6 +13,7 @@ struct Arg0_Fields {
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00470B40, 0x004CB250, 0x005C60B0, 0x005EC910, 0x0066D3B0, 0x0066D430) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x005F3C70) // CONFLICT: multiple definitions at +0x4
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00433080)
-    // +0xC   uint32_t                 field_0x0C  (evidence: 0x007CCA00)
+    // +0xC   uint32_t                 field_0x0C  (evidence: 0x007CCA00) // CONFLICT: multiple definitions at +0xC
+    // +0xC   const std::int16_t*      samples  (evidence: 0x007BC160) // CONFLICT: multiple definitions at +0xC
 };
 } // namespace lifted_layout

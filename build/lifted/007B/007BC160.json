@@ -1,0 +1,21 @@
+{
+  "va": "0x007BC160",
+  "size": 107,
+  "orig_symbol": "sub_007BC160",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "SampleLog16ToSqrtBytes",
+  "signature": "extern \"C\" const double mem_0092A278; // 0.0 (returned for zero magnitude) extern \"C\" const double mem_0092A270; // 1.0 extern \"C\" const double mem_00999A68; // 256.0 struct SampleLog16Source",
+  "summary": "Decodes `count` sign-magnitude log16 codes from arg0-\u003esamples and stores each as a byte: sqrt(v)*256 for 0\u003cv\u003c1, 0 for v\u003c=0, 255 for v\u003e=1.",
+  "fields": [
+    {
+      "class": "Arg0",
+      "offset": "+0xC",
+      "type": "const std::int16_t*",
+      "name": "samples"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:54:11Z"
+}

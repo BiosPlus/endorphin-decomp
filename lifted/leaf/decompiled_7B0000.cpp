@@ -1439,3 +1439,41 @@ uint32_t fn_007BF430(void* self, uint32_t dst, uint32_t count) {
     return 1;
 }
 } // namespace lift_007BF430
+
+// [0x007BC160] sub_007BC160 (107 bytes)
+namespace lift_007BC160 {
+// Known callee 0x007BAE40: DecodeSignedLogScale16 (Decodes a 16-bit sign-magnitude code (bit 15 sign, bits 0-14 magnitude) to 2^((m+0.5)/256 - 64), negated when the sign bit is set; magnitude 0 returns mem_0092A278.)
+extern double ext_007BAE40(std::uint32_t arg);
+
+extern const double mem_0092A278; // 0.0 (returned for zero magnitude)
+extern const double mem_0092A270; // 1.0
+extern const double mem_00999A68; // 256.0
+
+// @name SampleLog16ToSqrtBytes
+// @summary Decodes `count` sign-magnitude log16 codes from arg0->samples and stores each as a byte: sqrt(v)*256 for 0<v<1, 0 for v<=0, 255 for v>=1.
+// @field Arg0 +0x0C const std::int16_t* samples
+
+struct SampleLog16Source {
+    std::uint8_t pad_0x00[0x0C];
+    const std::int16_t* samples; // +0x0C
+};
+
+void fn_007BC160(const SampleLog16Source* arg0, std::uint8_t* out, std::int32_t count) {
+    const std::int16_t* src = arg0->samples;
+    for (std::int32_t i = 0; i < count; ++i) {
+        const std::uint32_t code = static_cast<std::uint32_t>(static_cast<std::int32_t>(src[i]));
+        const double v = ext_007BAE40(code);
+
+        std::uint8_t byte;
+        if (v <= mem_0092A278) {
+            byte = 0;
+        } else if (v < mem_0092A270) {
+            const double scaled = std::sqrt(v) * mem_00999A68;
+            byte = static_cast<std::uint8_t>(static_cast<std::int32_t>(scaled));
+        } else {
+            byte = 0xFF;
+        }
+        out[i] = byte;
+    }
+}
+} // namespace lift_007BC160
