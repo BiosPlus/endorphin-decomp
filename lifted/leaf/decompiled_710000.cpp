@@ -1317,3 +1317,28 @@ int32_t __cdecl fn_0071FC30(int32_t target) {
     return 0;
 }
 } // namespace lift_0071FC30
+
+// [0x00712780] sub_00712780 (72 bytes)
+namespace lift_00712780 {
+extern uint32_t ext_006FB690(void* self, uint32_t a, uint32_t b);
+extern uint32_t ext_006FB6B0(void* self, uint32_t a, uint32_t b);
+
+// @name Unknown::DispatchByFlag34
+// @class Unknown
+// @summary Invokes virtual slot 0xD0 on self, then forwards two stack args to ext_006FB690 if flag bit 0 at +0x34 is set, else to ext_006FB6B0; returns low byte.
+// @field Unknown +0x34 uint8_t field_0x34
+uint8_t fn_00712780(void* self, uint32_t arg1, uint32_t arg2) {
+    // Virtual call through vtable slot 0xD0 (index 52), no arguments, result unused.
+    void** vtbl = *reinterpret_cast<void***>(self);
+    reinterpret_cast<void (*)(void*)>(vtbl[0xD0 / sizeof(void*)])(self);
+
+    uint8_t flags = lift_field<uint8_t>(self, 0x34);
+    uint32_t result;
+    if (flags & 0x01) {
+        result = ext_006FB690(self, arg1, arg2);
+    } else {
+        result = ext_006FB6B0(self, arg1, arg2);
+    }
+    return static_cast<uint8_t>(result & 0xFF);
+}
+} // namespace lift_00712780

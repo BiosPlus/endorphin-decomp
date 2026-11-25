@@ -444,7 +444,7 @@ struct Unknown_Fields {
     // +0x34  float                    field_0x34  (evidence: 0x004F9950, 0x00554510, 0x006271A0, 0x00627240, 0x00629370, 0x006293A0, 0x006296A0, 0x006296D0, 0x0062A0C0, 0x007CCAB0, 0x007CCC80) // CONFLICT: multiple definitions at +0x34
     // +0x34  int32_t                  field_0x34  (evidence: 0x006FA370, 0x006FA400) // CONFLICT: multiple definitions at +0x34
     // +0x34  uint32_t                 field_0x34  (evidence: 0x0048C960, 0x0057FD10, 0x0062A590, 0x006EF810, 0x006EFEA0, 0x007AF200) // CONFLICT: multiple definitions at +0x34
-    // +0x34  uint8_t                  field_0x34  (evidence: 0x007126A0) // CONFLICT: multiple definitions at +0x34
+    // +0x34  uint8_t                  field_0x34  (evidence: 0x007126A0, 0x00712780) // CONFLICT: multiple definitions at +0x34
     // +0x34  BYTE field_0x34 (bit 0x2 gates the forward)  (evidence: 0x006FA9C0) // CONFLICT: multiple definitions at +0x34
     // +0x34  uint32_t                 value  (evidence: 0x00624E50) // CONFLICT: multiple definitions at +0x34
     // +0x38  uint32_t                 array_base  (evidence: 0x007299C0) // CONFLICT: multiple definitions at +0x38

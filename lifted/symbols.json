@@ -52911,6 +52911,13 @@
     "summary": "Returns the dword at +0x14 if bit 0 of the byte at +0x34 is set, otherwise the dword at +0x18.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00712780": {
+    "name": "Unknown::DispatchByFlag34",
+    "class": "Unknown",
+    "signature": "uint8_t fn_00712780(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Invokes virtual slot 0xD0 on self, then forwards two stack args to ext_006FB690 if flag bit 0 at +0x34 is set, else to ext_006FB6B0; returns low byte.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00712950": {
     "name": "sub_00712950",
     "signature": "extern \"C\" void __fastcall fn_00712950(void* self)",
