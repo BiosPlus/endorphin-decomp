@@ -19104,6 +19104,12 @@
     "summary": "Allocates an 8-byte object (vtable 0x009553F4, tag -1), swaps it into this+0x38",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x0053B1F0": {
+    "name": "GetElementAddress",
+    "signature": "inline void* guest_ptr(const void* base, ptrdiff_t off)",
+    "summary": "Validates self-\u003e+0x08/+0x0C and returns the address of element `index` in the",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x0053B2B0": {
     "name": "Primitives::Animation::vfunc_12",
     "class": "Primitives::Animation",

@@ -790,3 +790,51 @@ uint32_t fn_00539890(uint32_t begin, uint32_t end, uint32_t value) {
 }
 } // namespace lift_0054F290
 } // namespace lift_00539890
+
+// [0x0053B1F0] sub_0053B1F0 (75 bytes)
+namespace lift_0053B1F0 {
+extern uintptr_t mem_00925134;  // IAT slot holding the invalid-parameter handler
+
+namespace {
+// Reads a 32-bit guest pointer stored at base+off and returns it as a host pointer.
+inline void* guest_ptr(const void* base, ptrdiff_t off) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, off)));
+}
+}  // namespace
+
+// @name GetElementAddress
+// @summary Validates self->+0x08/+0x0C and returns the address of element `index` in the
+//          array at (self->+0x0C)+0x50, bounds-checked against its end pointer (+0x54).
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x50 uint32_t field_0x50
+// @field Unknown +0x54 uint32_t field_0x54
+void* fn_0053B1F0(void* self, uint32_t index) {
+    auto invalid_parameter = reinterpret_cast<void (*)()>(mem_00925134);
+
+    // Validate the first referenced object (A = self->+0x08).
+    const void* a = guest_ptr(self, 0x08);
+    if (a == nullptr) {
+        invalid_parameter();
+    }
+    if (lift_field<uint32_t>(self, 0x0C) == lift_field<uint32_t>(a, 0x04)) {
+        invalid_parameter();
+    }
+
+    // Element array lives in the object B = self->+0x0C.
+    const void* b = guest_ptr(self, 0x0C);
+    const uint32_t begin = lift_field<uint32_t>(b, 0x50);
+    const uint32_t end = lift_field<uint32_t>(b, 0x54);
+
+    if (begin == 0) {
+        invalid_parameter();
+    } else {
+        const uint32_t count = static_cast<uint32_t>(static_cast<int32_t>(end - begin) >> 2);
+        if (!(index < count)) {
+            invalid_parameter();
+        }
+    }
+
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(begin + 4u * index));
+}
+} // namespace lift_0053B1F0
