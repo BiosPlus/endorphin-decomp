@@ -50171,6 +50171,12 @@
     "summary": "Returns address of global mem_00B5EBA8.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x0070AB80": {
+    "name": "CopyFieldBlock160ToOut",
+    "signature": "void fn_0070AB80(void* self, void* out)",
+    "summary": "Copies six consecutive 32-bit values from self+0x160..+0x174 into the 24-byte output struct passed on the stack (callee pops 4 bytes).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070AC00": {
     "name": "CopyBlock0x200ToOut",
     "signature": "void fn_0070AC00(void* self, void* out)",

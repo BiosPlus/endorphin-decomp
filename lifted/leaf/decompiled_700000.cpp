@@ -1209,3 +1209,21 @@ void fn_0070AC00(void* self, void* out) {
     lift_field<DWORD>(out, 0x14) = lift_field<DWORD>(self, 0x214);
 }
 } // namespace lift_0070AC00
+
+// [0x0070AB80] sub_0070AB80 (60 bytes)
+namespace lift_0070AB80 {
+// @name CopyFieldBlock160ToOut
+// @summary Copies six consecutive 32-bit values from self+0x160..+0x174 into the 24-byte output struct passed on the stack (callee pops 4 bytes).
+// @field UnknownClass +0x160 uint32_t field_0x160
+// @field UnknownClass +0x164 uint32_t field_0x164
+// @field UnknownClass +0x168 uint32_t field_0x168
+// @field UnknownClass +0x16C uint32_t field_0x16C
+// @field UnknownClass +0x170 uint32_t field_0x170
+// @field UnknownClass +0x174 uint32_t field_0x174
+void fn_0070AB80(void* self, void* out) {
+    for (int i = 0; i < 6; ++i) {
+        lift_field<uint32_t>(out, static_cast<std::size_t>(i) * 4) =
+            lift_field<uint32_t>(self, 0x160 + static_cast<std::size_t>(i) * 4);
+    }
+}
+} // namespace lift_0070AB80

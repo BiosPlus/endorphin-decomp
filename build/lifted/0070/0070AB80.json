@@ -1,0 +1,51 @@
+{
+  "va": "0x0070AB80",
+  "size": 60,
+  "orig_symbol": "sub_0070AB80",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "CopyFieldBlock160ToOut",
+  "signature": "void fn_0070AB80(void* self, void* out)",
+  "summary": "Copies six consecutive 32-bit values from self+0x160..+0x174 into the 24-byte output struct passed on the stack (callee pops 4 bytes).",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x160",
+      "type": "uint32_t",
+      "name": "field_0x160"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x164",
+      "type": "uint32_t",
+      "name": "field_0x164"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x168",
+      "type": "uint32_t",
+      "name": "field_0x168"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x16C",
+      "type": "uint32_t",
+      "name": "field_0x16C"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x170",
+      "type": "uint32_t",
+      "name": "field_0x170"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x174",
+      "type": "uint32_t",
+      "name": "field_0x174"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:55:13Z"
+}
