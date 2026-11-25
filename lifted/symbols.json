@@ -14896,6 +14896,12 @@
     "summary": "Stores a 32-bit value at dst[0] and the address of the one-time static object (from ext_004D2590) at dst[1].",
     "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
   },
+  "0x004D2730": {
+    "name": "storeValueAndStaticObjectAddr_004D2730",
+    "signature": "void fn_004D2730(DWORD* dst, DWORD value)",
+    "summary": "Writes the value into dst[0] and the address returned by initStaticObjectOnce_004D2650 into dst[1].",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
+  },
   "0x004D2C70": {
     "name": "sub_004D2C70",
     "class": "Unknown",

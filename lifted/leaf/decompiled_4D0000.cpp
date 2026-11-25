@@ -282,3 +282,17 @@ void fn_004D26F0(uint32_t* dst, uint32_t value) {
     dst[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
 }
 } // namespace lift_004D26F0
+
+// [0x004D2730] sub_004D2730 (30 bytes)
+namespace lift_004D2730 {
+// Known callee 0x004D2650: initStaticObjectOnce_004D2650 (One-time initializer guarded by bit 0 of mem_00AE55C8; initializes mem_00AE55C4 and returns its address.)
+extern void* ext_004D2650();
+
+// @name storeValueAndStaticObjectAddr_004D2730
+// @summary Writes the value into dst[0] and the address returned by initStaticObjectOnce_004D2650 into dst[1].
+void fn_004D2730(DWORD* dst, DWORD value) {
+    DWORD staticAddr = static_cast<DWORD>(reinterpret_cast<uintptr_t>(ext_004D2650()));
+    dst[0] = value;
+    dst[1] = staticAddr;
+}
+} // namespace lift_004D2730
