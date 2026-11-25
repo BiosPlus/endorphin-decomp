@@ -8675,6 +8675,13 @@
     "summary": "Lazily initializes a static type descriptor at 0x00AD8FFC and stores its pointer at arg0 + 0x04",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x00470C20": {
+    "name": "ExprParser::ReadMethodType\u003cRuntimeEngine\u003e::vfunc_5 (RuntimeEngine::getSimulationFrameRate)",
+    "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0\u003e",
+    "signature": "float fn_00470C20(void* const* holder)",
+    "summary": "Reads the wrapped object pointer; if null throws a fixed-message exception, otherwise calls the frame-rate getter helper and throws a default-message exception. Never returns normally.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00470FD0": {
     "name": "ExprParser::ReadWriteMethodType\u003cRuntimeEngine, bool, getPlaybackLoopingEnabled, bool, enablePlaybackLooping\u003e::vfunc_40",
     "class": "ExprParser::ReadWriteMethodType",

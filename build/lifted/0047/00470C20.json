@@ -1,0 +1,22 @@
+{
+  "va": "0x00470C20",
+  "size": 58,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cRuntimeEngine\u003e::vfunc_5 (RuntimeEngine::getSimulationFrameRate)",
+  "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0\u003e",
+  "signature": "float fn_00470C20(void* const* holder)",
+  "summary": "Reads the wrapped object pointer; if null throws a fixed-message exception, otherwise calls the frame-rate getter helper and throws a default-message exception. Never returns normally.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:58:16Z"
+}

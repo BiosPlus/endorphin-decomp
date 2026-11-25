@@ -52190,3 +52190,25 @@ float fn_004716D0(void* self) {
     return 0.0f;
 }
 } // namespace lift_004716D0
+
+// [0x00470C20] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_00470C20 {
+// @name ExprParser::ReadMethodType<RuntimeEngine>::vfunc_5 (RuntimeEngine::getSimulationFrameRate)
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @summary Reads the wrapped object pointer; if null throws a fixed-message exception, otherwise calls the frame-rate getter helper and throws a default-message exception. Never returns normally.
+// The original is an always-throwing stub. The getter helper sub_0046F860 (returns float) and the throw helpers
+// sub_0046C4E0 / sub_0046C3C0 / MSVCR80 _CxxThrowException are replaced by portable C++ exceptions. The original
+// message strings are not recovered, so the messages below are descriptive placeholders.
+float fn_00470C20(void* const* holder) {
+    float ext_0046F860(void* obj);  // sub_0046F860 (24B): float-returning helper, receives the wrapped object pointer
+
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<RuntimeEngine>: null value pointer");
+    }
+    float rate = ext_0046F860(obj);
+    (void)rate;
+    throw std::runtime_error("ExprParser::ReadMethodType<RuntimeEngine>: getSimulationFrameRate failed");
+}
+} // namespace lift_00470C20
