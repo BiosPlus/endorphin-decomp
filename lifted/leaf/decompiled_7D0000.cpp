@@ -1008,3 +1008,31 @@ uint32_t __cdecl sub_007D5DA0(uint32_t precision) {
     return ((precision & 0x3u) << 8) | 0x7fu;
 }
 } // namespace lift_007D5DA0
+
+// [0x007D48F0]
+namespace lift_007D48F0 {
+// @name TreeNode::rotateRight
+// @class TreeNode
+// @summary Performs a right rotation on a binary tree node with left/right/parent pointers.
+// @field TreeNode +0x00 void* left
+// @field TreeNode +0x04 void* right
+// @field TreeNode +0x08 void* parent
+void sub_007D48F0(void* node) {
+    void* left = lift_field<void*>(node, 0x0);
+    void* leftRight = lift_field<void*>(left, 0x4);
+    lift_field<void*>(node, 0x0) = leftRight;
+    lift_field<void*>(leftRight, 0x8) = node;
+
+    void* parent = lift_field<void*>(node, 0x8);
+    lift_field<void*>(left, 0x8) = parent;
+
+    if (node == lift_field<void*>(parent, 0x4)) {
+        lift_field<void*>(parent, 0x4) = left;
+    } else {
+        lift_field<void*>(parent, 0x0) = left;
+    }
+
+    lift_field<void*>(left, 0x4) = node;
+    lift_field<void*>(node, 0x8) = left;
+}
+} // namespace lift_007D48F0
