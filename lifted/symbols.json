@@ -34153,6 +34153,12 @@
     "summary": "Calls the base-class update routine on this, then returns the float at +0x6C.",
     "lifted_path": "lifted/Sensors/SensorTreeCentreOfMassZ.cpp"
   },
+  "0x00629AA0": {
+    "name": "sub_00629AA0",
+    "signature": "uintptr_t __thiscall sub_00629AA0(uintptr_t this_ptr, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Constructor that initializes base object, sets vtable to 0x00978494, and initializes a 4x4 identity matrix and 3D zero vector.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00629B00": {
     "name": "CompoundSensor::vfunc_19",
     "class": "CompoundSensor",

@@ -842,3 +842,37 @@ void* fn_00699E30(void* first, void* last, void* dest_last) {
 }
 } // namespace lift_00687920
 } // namespace lift_00699E30
+
+// [0x00696BD0]
+namespace lift_00696BD0 {
+// @name readLineFromStream
+// @summary Reads characters from an istream into a std::string until '\n', '\r', or EOF (-1), returning true.
+
+
+// MSVCP80!?get@?$basic_istream@DU?$char_traits@D@std@@@std@@QAEHXZ
+extern uintptr_t mem_009250E4;
+// MSVCP80!?clear@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXXZ
+extern uintptr_t mem_00924EA8;
+// MSVCP80!??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@D@Z
+extern uintptr_t mem_00924EC0;
+
+using istream_get_fn = int(__thiscall*)(void*);
+using string_clear_fn = void(__thiscall*)(void*);
+using string_append_char_fn = void*(__thiscall*)(void*, char);
+
+uint8_t __cdecl sub_00696BD0(void* stream, void* str) {
+    auto istream_get = reinterpret_cast<istream_get_fn>(mem_009250E4);
+    auto string_clear = reinterpret_cast<string_clear_fn>(mem_00924EA8);
+    auto string_append_char = reinterpret_cast<string_append_char_fn>(mem_00924EC0);
+
+    char ch = static_cast<char>(istream_get(stream));
+    string_clear(str);
+
+    while (ch != '\n' && ch != '\r' && ch != static_cast<char>(-1)) {
+        string_append_char(str, ch);
+        ch = static_cast<char>(istream_get(stream));
+    }
+
+    return 1;
+}
+} // namespace lift_00696BD0
