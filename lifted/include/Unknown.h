@@ -536,7 +536,7 @@ struct Unknown_Fields {
     // +0x20  HWND                     hWnd  (evidence: 0x0042EA50) // CONFLICT: multiple definitions at +0x20
     // +0x20  HDC                      hdc  (evidence: 0x004275C0) // CONFLICT: multiple definitions at +0x20
     // +0x20  DWORD                    hwnd  (evidence: 0x00441C10, 0x0044BF00) // CONFLICT: multiple definitions at +0x20
-    // +0x20  HWND                     hwnd  (evidence: 0x004030F0, 0x0040BE90, 0x0041FF10, 0x006A92F0, 0x006B0E30, 0x006B1790, 0x006B53D0, 0x006BA780) // CONFLICT: multiple definitions at +0x20
+    // +0x20  HWND                     hwnd  (evidence: 0x004030F0, 0x0040BE90, 0x0041FEA0, 0x0041FF10, 0x006A92F0, 0x006B0E30, 0x006B1790, 0x006B53D0, 0x006BA780) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint32_t                 hwnd  (evidence: 0x0040BEE0) // CONFLICT: multiple definitions at +0x20
     // +0x20  void*                    hwnd  (evidence: 0x00454AD0) // CONFLICT: multiple definitions at +0x20
     // +0x20  int32_t field_0x20 (pair index id)  (evidence: 0x007C8C50) // CONFLICT: multiple definitions at +0x20

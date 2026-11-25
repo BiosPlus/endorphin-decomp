@@ -476,3 +476,31 @@ void fn_0041C380(void (*target)()) {
     target();
 }
 } // namespace lift_0041C380
+
+// [0x0041FEA0]
+namespace lift_0041FEA0 {
+// @name Unknown::sendMessage0x100cFromField20PlusOne
+// @class Unknown
+// @summary Sends message 0x100C (wParam=-1, lParam=2) to the window handle at this+0x20 via SendMessageA and returns the low 32 bits of the result plus one.
+// @field Unknown +0x20 HWND hwnd
+
+// Import slot holding the SendMessageA function pointer.
+extern int mem_00925694;
+
+using SendMessageAFn = LRESULT(__stdcall*)(HWND, UINT, WPARAM, LPARAM);
+
+int __fastcall fn_0041FEA0(void* self) {
+    // mov eax, [ecx + 0x20]      ; eax = this->hwnd
+    HWND hwnd = lift_field<HWND>(self, 0x20);
+
+    // push 2 / push -1 / push 0x100c / push eax / call [SendMessageA]
+    // SendMessageA(hwnd, 0x100C, (WPARAM)-1, (LPARAM)2)
+    auto SendMessageA = reinterpret_cast<SendMessageAFn>(
+        static_cast<uintptr_t>(mem_00925694));
+    LRESULT result = SendMessageA(hwnd, 0x100C, static_cast<WPARAM>(-1), static_cast<LPARAM>(2));
+
+    // add eax, 1
+    // ret
+    return static_cast<int>(result) + 1;
+}
+} // namespace lift_0041FEA0
