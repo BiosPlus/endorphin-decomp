@@ -923,6 +923,7 @@ struct Unknown_Fields {
     // +0x88  void* field_0x88 (object pointer; vtable slot +0x90 is invoked with the float)  (evidence: 0x0045B580) // CONFLICT: multiple definitions at +0x88
     // +0x88  ptr field_0x88 (pointer to child object; owner class not identified)  (evidence: 0x005434C0, 0x005457B0) // CONFLICT: multiple definitions at +0x88
     // +0x88  void*                    nodeList  (evidence: 0x00456C20) // CONFLICT: multiple definitions at +0x88
+    // +0x88  void*                    target  (evidence: 0x0045B620) // CONFLICT: multiple definitions at +0x88
     // +0x89  uint8_t                  field_0x89  (evidence: 0x004408B0, 0x00441C10)
     // +0x8C  int32_t                  field_0x8C  (evidence: 0x00685890) // CONFLICT: multiple definitions at +0x8C
     // +0x8C  uint8_t                  field_0x8C  (evidence: 0x00410370) // CONFLICT: multiple definitions at +0x8C
@@ -1353,6 +1354,7 @@ struct Unknown_Fields {
     // +0x2D0 DWORD                    field_0x2D0  (evidence: 0x005963F0, 0x00597630) // CONFLICT: multiple definitions at +0x2D0
     // +0x2D0 std::string              field_0x2d0  (evidence: 0x004030F0, 0x0040AB60) // CONFLICT: multiple definitions at +0x2D0
     // +0x2D4 DWORD                    field_0x2D4  (evidence: 0x005963F0, 0x00597630)
+    // +0x2D8 uint8_t                  wnd  (evidence: 0x0045B620)
     // +0x2DC void*                    field_0x2dc  (evidence: 0x00594600)
     // +0x2F8 DWORD field_0x2F8 (on sub-object at this+0x0C)  (evidence: 0x007155B0, 0x0071C0E0, 0x0071F070)
     // +0x2FC DWORD field_0x2FC (on sub-object at this+0x0C)  (evidence: 0x007155B0, 0x0071C0E0, 0x0071F070)

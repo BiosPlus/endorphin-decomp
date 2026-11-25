@@ -1,0 +1,28 @@
+{
+  "va": "0x0045B620",
+  "size": 65,
+  "orig_symbol": "sub_0045B620",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "Unknown::forwardPositiveWindowFloat_0045B620",
+  "class": "Unknown",
+  "signature": "void fn_0045B620(void* self)",
+  "summary": "Reads a float from the window text at this+0x2D8; if it is greater than zero, passes it to the object at this+0x88 through vtable slot 0x98.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2D8",
+      "type": "uint8_t",
+      "name": "wnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:06:40Z"
+}

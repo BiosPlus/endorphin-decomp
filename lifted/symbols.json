@@ -6528,6 +6528,13 @@
     "summary": "Reads a float from the window text at +0x284; if it is \u003e 0, forwards it to a virtual method on the object at +0x88.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x0045B620": {
+    "name": "Unknown::forwardPositiveWindowFloat_0045B620",
+    "class": "Unknown",
+    "signature": "void fn_0045B620(void* self)",
+    "summary": "Reads a float from the window text at this+0x2D8; if it is greater than zero, passes it to the object at this+0x88 through vtable slot 0x98.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x0045B670": {
     "name": "sub_0045B670",
     "signature": "extern \"C\" void* __cdecl fn_0045B670(void)",

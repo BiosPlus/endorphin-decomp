@@ -1632,3 +1632,30 @@ void fn_0045B530(void* self) {
     method(target, value);
 }
 } // namespace lift_0045B530
+
+// [0x0045B620] sub_0045B620 (65 bytes)
+namespace lift_0045B620 {
+// Known callee 0x0045AEE0: getWindowTextAsFloat (Reads the window text of a CWnd into a string and parses it as a float using atof.)
+extern float __stdcall ext_0045AEE0(void* wnd);
+
+// @name Unknown::forwardPositiveWindowFloat_0045B620
+// @class Unknown
+// @summary Reads a float from the window text at this+0x2D8; if it is greater than zero, passes it to the object at this+0x88 through vtable slot 0x98.
+// @field Unknown +0x88 void* target
+// @field Unknown +0x2D8 uint8_t wnd
+void fn_0045B620(void* self) {
+    void* wnd = reinterpret_cast<uint8_t*>(self) + 0x2D8;
+    float value = ext_0045AEE0(wnd);
+
+    // fcom/fnstsw/test ah,0x41: proceed only when value > 0 (false for zero, negative, and NaN).
+    if (!(value > 0.0f)) {
+        return;
+    }
+
+    void* target = lift_field<void*>(self, 0x88);
+    void** vtable = lift_field<void**>(target, 0);
+    using Method = void(__thiscall*)(void*, float);
+    Method method = reinterpret_cast<Method>(vtable[0x98 / sizeof(void*)]);
+    method(target, value);
+}
+} // namespace lift_0045B620
