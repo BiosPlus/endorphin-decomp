@@ -618,3 +618,35 @@ extern void* __fastcall fn_00595C90(void* self, int edx_unused, const void* src)
 }
 } // namespace lift_006998D0
 } // namespace lift_00595C90
+
+// [0x0059DDA0]
+namespace lift_0059DDA0 {
+extern uint8_t __fastcall ext_00410390(uint32_t self);
+extern uint32_t mem_00924FC4;
+extern uint32_t mem_00924FDC;
+
+// @name sub_0059DDA0
+// @summary Validates state via virtual predicate +0x28 and sub_00410390, resetting string at +0x458 to 0x00B41B9C when needed
+// @field Self +0x00 uint32_t vtable
+// @field Self +0x458 std::string field_0x458
+void __fastcall sub_0059DDA0(uint32_t self) {
+    auto vtable = lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(self)), 0);
+    auto vfn_28 = reinterpret_cast<uint8_t(__fastcall*)(uint32_t)>(
+        static_cast<uintptr_t>(lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(vtable)), 0x28)));
+
+    bool assign_default = false;
+    if (vfn_28(self) == 0 && ext_00410390(self) == 0) {
+        assign_default = true;
+    } else if (vfn_28(self) == 0) {
+        auto str_eq = reinterpret_cast<uint8_t(__cdecl*)(uint32_t, uint32_t)>(mem_00924FC4);
+        if (str_eq(self + 0x458, 0x00B41B80) != 0) {
+            assign_default = true;
+        }
+    }
+
+    if (assign_default) {
+        auto str_assign = reinterpret_cast<uint32_t(__fastcall*)(uint32_t, uint32_t, uint32_t)>(mem_00924FDC);
+        str_assign(self + 0x458, 0, 0x00B41B9C);
+    }
+}
+} // namespace lift_0059DDA0

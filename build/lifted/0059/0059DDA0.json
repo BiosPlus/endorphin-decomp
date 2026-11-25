@@ -1,0 +1,27 @@
+{
+  "va": "0x0059DDA0",
+  "size": 82,
+  "orig_symbol": "sub_0059DDA0",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "sub_0059DDA0",
+  "signature": "void __fastcall sub_0059DDA0(uint32_t self)",
+  "summary": "Validates state via virtual predicate +0x28 and sub_00410390, resetting string at +0x458 to 0x00B41B9C when needed",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x458",
+      "type": "std::string",
+      "name": "field_0x458"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:29:13Z"
+}
