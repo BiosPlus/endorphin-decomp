@@ -691,3 +691,25 @@ void fn_00672BD0(uint32_t* first, uint32_t* last, uint32_t pred) {
 }
 } // namespace lift_00481C90
 } // namespace lift_00672BD0
+
+// [0x0067BCE0]
+namespace lift_0067BCE0 {
+// @name Unknown::InitIdentity3x3AndDispatch_0067BCE0
+// @summary Builds a 3x3 identity float matrix on the stack, passes it with the stack argument to ext_006951A0, then passes it with this to ext_00694880.
+
+extern void __thiscall ext_006951A0(void* self, DWORD arg);
+extern void __thiscall ext_00694880(void* self, void* arg);
+
+void __thiscall fn_0067BCE0(void* self, DWORD arg) {
+    // 9-float (0x24-byte) local block, initialised to identity:
+    // [0]=1 [4]=0 [8]=0 / [0xC]=0 [0x10]=1 [0x14]=0 / [0x18]=0 [0x1C]=0 [0x20]=1
+    float m[9] = {
+        1.0f, 0.0f, 0.0f,
+        0.0f, 1.0f, 0.0f,
+        0.0f, 0.0f, 1.0f,
+    };
+
+    ext_006951A0(m, arg);
+    ext_00694880(m, self);
+}
+} // namespace lift_0067BCE0

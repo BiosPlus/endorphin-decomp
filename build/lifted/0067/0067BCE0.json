@@ -1,0 +1,14 @@
+{
+  "va": "0x0067BCE0",
+  "size": 77,
+  "orig_symbol": "sub_0067BCE0",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "Unknown::InitIdentity3x3AndDispatch_0067BCE0",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_0067BCE0(void* self, DWORD arg)",
+  "summary": "Builds a 3x3 identity float matrix on the stack, passes it with the stack argument to ext_006951A0, then passes it with this to ext_00694880.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:43:49Z"
+}
