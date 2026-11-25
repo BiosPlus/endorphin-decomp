@@ -1,0 +1,13 @@
+{
+  "va": "0x004BA340",
+  "size": 85,
+  "orig_symbol": "sub_004BA340",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "lowerBoundStringPtr_004BA340",
+  "signature": "DWORD* fn_004BA340(DWORD* first, DWORD* last, DWORD value)",
+  "summary": "std::lower_bound-style binary search over a DWORD array using the indirect comparator; returns first element not less than value.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:08:34Z"
+}

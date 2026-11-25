@@ -366,3 +366,30 @@ void fn_004B4CD0(void* self) {
     }
 }
 } // namespace lift_004B4CD0
+
+// [0x004BA340] sub_004BA340 (85 bytes)
+namespace lift_004BA340 {
+// Import slot holding the address of MSVC std::operator< for std::string.
+extern int mem_00924EF4;
+
+using StrLessFn = bool(__cdecl*)(DWORD lhs, DWORD rhs);
+
+// @name lowerBoundStringPtr_004BA340
+// @summary std::lower_bound-style binary search over a DWORD array using the indirect comparator; returns first element not less than value.
+DWORD* fn_004BA340(DWORD* first, DWORD* last, DWORD value) {
+    auto less = reinterpret_cast<StrLessFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924EF4)));
+    ptrdiff_t count = last - first;
+    while (count > 0) {
+        ptrdiff_t half = count / 2;
+        DWORD* mid = first + half;
+        if (less(*mid, value)) {
+            first = mid + 1;
+            count -= half + 1;
+        } else {
+            count = half;
+        }
+    }
+    return first;
+}
+} // namespace lift_004BA340
