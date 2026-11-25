@@ -17980,6 +17980,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x60 and tail-calls sub_00526960.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00526C70": {
+    "name": "initFourVectorsAndFlag",
+    "signature": "void* __thiscall sub_00526C70(void* self)",
+    "summary": "Zero-initializes four 3-dword ranges (at +0x04, +0x14, +0x24, +0x34) and a byte flag at +0x40, returning this.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x005270D0": {
     "name": "NMData::NetworkConnectorData::vfunc_26",
     "class": "NMData::NetworkConnectorData",

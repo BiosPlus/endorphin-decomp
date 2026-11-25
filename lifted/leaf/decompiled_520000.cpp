@@ -601,3 +601,41 @@ void fn_0052A020(void* self) {
 }
 } // namespace lift_004757F0
 } // namespace lift_0052A020
+
+// [0x00526C70]
+namespace lift_00526C70 {
+// @name initFourVectorsAndFlag
+// @summary Zero-initializes four 3-dword ranges (at +0x04, +0x14, +0x24, +0x34) and a byte flag at +0x40, returning this.
+// @field UnknownClass +0x04 uint32_t field_0x04
+// @field UnknownClass +0x08 uint32_t field_0x08
+// @field UnknownClass +0x0c uint32_t field_0x0c
+// @field UnknownClass +0x14 uint32_t field_0x14
+// @field UnknownClass +0x18 uint32_t field_0x18
+// @field UnknownClass +0x1c uint32_t field_0x1c
+// @field UnknownClass +0x24 uint32_t field_0x24
+// @field UnknownClass +0x28 uint32_t field_0x28
+// @field UnknownClass +0x2c uint32_t field_0x2c
+// @field UnknownClass +0x34 uint32_t field_0x34
+// @field UnknownClass +0x38 uint32_t field_0x38
+// @field UnknownClass +0x3c uint32_t field_0x3c
+// @field UnknownClass +0x40 uint8_t field_0x40
+
+
+void* __thiscall sub_00526C70(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x04) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x08) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x0c) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x14) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x18) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x1c) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x24) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x28) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x2c) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x34) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x38) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x3c) = 0;
+    *(base + 0x40) = 0;
+    return self;
+}
+} // namespace lift_00526C70
