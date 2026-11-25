@@ -60825,6 +60825,12 @@
     "summary": "Writes a double into the subobject's +0x20 slot when it differs (ordered compare) from the argument, then calls virtual slot 15 on self; always returns true.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x00711BB0": {
+    "name": "getSubobjectDoubleField20",
+    "signature": "extern double __fastcall fn_00711BB0(void* self)",
+    "summary": "Calls ext_0071E680 on self and returns the double at offset +0x20 of the returned subobject.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00711BC0": {
     "name": "Unknown::InvokeSubObjectSlot0",
     "class": "Unknown",

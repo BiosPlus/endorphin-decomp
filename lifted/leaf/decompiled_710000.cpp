@@ -1914,3 +1914,17 @@ extern void __thiscall fn_00711DA0(void* self, uint32_t value) {
     lift_field<uint32_t>(sub, 0x28) = value;
 }
 } // namespace lift_00711DA0
+
+// [0x00711BB0] sub_00711BB0 (16 bytes)
+namespace lift_00711BB0 {
+// Known callee 0x0071E680: sub_0071E680 (Returns pointer to subobject/field at offset +0x40.)
+extern void* __fastcall ext_0071E680(void* self);
+
+// @name getSubobjectDoubleField20
+// @summary Calls ext_0071E680 on self and returns the double at offset +0x20 of the returned subobject.
+// @field Subobject +0x20 double field_0x20
+
+extern double __fastcall fn_00711BB0(void* self) {
+    return lift_field<double>(ext_0071E680(self), 0x20);
+}
+} // namespace lift_00711BB0

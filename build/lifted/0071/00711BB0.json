@@ -1,0 +1,21 @@
+{
+  "va": "0x00711BB0",
+  "size": 16,
+  "orig_symbol": "sub_00711BB0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "getSubobjectDoubleField20",
+  "signature": "extern double __fastcall fn_00711BB0(void* self)",
+  "summary": "Calls ext_0071E680 on self and returns the double at offset +0x20 of the returned subobject.",
+  "fields": [
+    {
+      "class": "Subobject",
+      "offset": "+0x20",
+      "type": "double",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:28:56Z"
+}

@@ -14,7 +14,7 @@ struct Subobject_Fields {
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00711FD0, 0x007155B0, 0x0071F070)
     // +0xC   uint32_t                 field_0x0C  (evidence: 0x00715520, 0x007155B0)
     // +0x18  double                   field_0x18  (evidence: 0x00711AA0, 0x007155B0, 0x0071F070)
-    // +0x20  double                   field_0x20  (evidence: 0x00711AA0)
+    // +0x20  double                   field_0x20  (evidence: 0x00711AA0, 0x00711BB0)
     // +0x24  uint32_t                 begin  (evidence: 0x004AECC0)
     // +0x28  uint32_t                 end  (evidence: 0x004AECC0) // CONFLICT: multiple definitions at +0x28
     // +0x28  uint32_t                 field_0x28  (evidence: 0x00711D70, 0x007155B0) // CONFLICT: multiple definitions at +0x28
