@@ -1531,3 +1531,23 @@ const uint8_t* fn_006D2064() {
     return kDataTable006D2064;
 }
 } // namespace lift_006D2064
+
+// [0x006D1FB4]
+namespace lift_006D1FB4 {
+// @name sub_006D1FB4
+// @summary Performs byte and dword additions on ecx and stack-relative offsets
+void __fastcall sub_006D1FB4(uint8_t* ecx, uint32_t /*edx*/) {
+    uint32_t eax = 0;
+    uint8_t stack_buf[256]{};
+    *ecx += static_cast<uint8_t>(eax);
+    stack_buf[eax] += static_cast<uint8_t>(eax);
+    eax = (eax & ~0xFFu) | ((eax + 4) & 0xFFu);
+    *reinterpret_cast<uint32_t*>(ecx) += eax;
+    eax = (eax & ~0xFFu) | ((eax + 4) & 0xFFu);
+    eax = (eax & ~0xFFu) | ((eax + stack_buf[eax]) & 0xFFu);
+    *reinterpret_cast<uint32_t*>(stack_buf + eax) += eax;
+    *reinterpret_cast<uint32_t*>(ecx + eax) += eax;
+    eax += *reinterpret_cast<uint32_t*>(stack_buf + eax);
+    eax = (eax & ~0xFFu) | ((eax + 4) & 0xFFu);
+}
+} // namespace lift_006D1FB4
