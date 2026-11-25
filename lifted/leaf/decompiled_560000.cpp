@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 #include <string>
 #include <new>
+#include <cstdint>
 
 // [0x005694F0] sub_005694F0 (27 bytes)
 namespace lift_005694F0 {
@@ -250,3 +251,22 @@ void fn_00569970(void* self) {
     lift_field<uint32_t>(self, 0xC) = 0;
 }
 } // namespace lift_00569970
+
+// [0x00566380] sub_00566380 (25 bytes)
+namespace lift_00566380 {
+// @name sub_00566380
+// @summary Auto-lifted identical-shape clone of 0x005AAD10 (ObjectWithChild::SetValueFromStringKey).
+namespace lift_005AAD10 {
+// @name ObjectWithChild::SetValueFromStringKey
+// @class ObjectWithChild
+// @summary Looks up a key in a 7-entry string table and stores the resulting index on the object via setValueAndNotifyChild.
+
+extern int __stdcall ext_00565120(const void* key);
+extern void ext_00565F00(uint8_t* self, int32_t value);
+
+void fn_00566380(uint8_t* self, const void* key) {
+    int32_t index = ext_00565120(key);
+    ext_00565F00(self, index);
+}
+} // namespace lift_005AAD10
+} // namespace lift_00566380

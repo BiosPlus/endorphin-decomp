@@ -8830,6 +8830,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00495AB0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00496CE0": {
+    "name": "sub_00496CE0",
+    "class": "ObjectWithChild",
+    "signature": "void fn_00496CE0(uint8_t* self, const void* key)",
+    "summary": "Auto-lifted identical-shape clone of 0x005AAD10 (ObjectWithChild::SetValueFromStringKey).",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00496DA0": {
     "name": "ExprParser::DynamicEnumType\u003cRigManager, \u0026public: int __thiscall RigManager::getRigTypeIndex(void) const, \u0026public: void __thiscall RigManager::setRigTypeIndex(int), \u0026public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall RigManager::getRigTypeNameFromIndex(int) const\u003e::vfunc_41",
     "class": "ExprParser::DynamicEnumType\u003cRigManager, \u0026public: int __thiscall RigManager::getRigTypeIndex(void) const, \u0026public: void __thiscall RigManager::setRigTypeIndex(int), \u0026public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall RigManager::getRigTypeNameFromIndex(int) const\u003e",
@@ -20576,6 +20583,13 @@
     "class": "UnknownClass",
     "signature": "extern \"C\" int __thiscall fn_005650F0(void* self)",
     "summary": "Writes the XSI scene using the filename at +0x478 and closes the CSLScene at +0x494.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
+  "0x00566380": {
+    "name": "sub_00566380",
+    "class": "ObjectWithChild",
+    "signature": "void fn_00566380(uint8_t* self, const void* key)",
+    "summary": "Auto-lifted identical-shape clone of 0x005AAD10 (ObjectWithChild::SetValueFromStringKey).",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
   "0x00566FE0": {

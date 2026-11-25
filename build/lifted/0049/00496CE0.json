@@ -1,0 +1,14 @@
+{
+  "va": "0x00496CE0",
+  "size": 25,
+  "orig_symbol": "sub_00496CE0",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "sub_00496CE0",
+  "class": "ObjectWithChild",
+  "signature": "void fn_00496CE0(uint8_t* self, const void* key)",
+  "summary": "Auto-lifted identical-shape clone of 0x005AAD10 (ObjectWithChild::SetValueFromStringKey).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:06:42Z"
+}

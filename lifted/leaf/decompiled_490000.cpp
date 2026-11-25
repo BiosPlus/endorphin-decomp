@@ -567,3 +567,22 @@ void fn_004918D0(void* self) {
 }
 } // namespace lift_00569970
 } // namespace lift_004918D0
+
+// [0x00496CE0] sub_00496CE0 (25 bytes)
+namespace lift_00496CE0 {
+// @name sub_00496CE0
+// @summary Auto-lifted identical-shape clone of 0x005AAD10 (ObjectWithChild::SetValueFromStringKey).
+namespace lift_005AAD10 {
+// @name ObjectWithChild::SetValueFromStringKey
+// @class ObjectWithChild
+// @summary Looks up a key in a 7-entry string table and stores the resulting index on the object via setValueAndNotifyChild.
+
+extern int __stdcall ext_004948C0(const void* key);
+extern void ext_00496CC0(uint8_t* self, int32_t value);
+
+void fn_00496CE0(uint8_t* self, const void* key) {
+    int32_t index = ext_004948C0(key);
+    ext_00496CC0(self, index);
+}
+} // namespace lift_005AAD10
+} // namespace lift_00496CE0
