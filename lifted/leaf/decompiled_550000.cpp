@@ -1627,3 +1627,29 @@ void* fn_0055CD10(void* self, uint32_t arg) {
     return self;
 }
 } // namespace lift_0055CD10
+
+// [0x005566D0]
+namespace lift_005566D0 {
+// @name Unknown::destroyStringRecordRange_005566D0
+// @class Unknown
+// @summary Destroys each 0x54-byte record in [first, last), releasing three std::string members at +0x38, +0x1C and +0x00.
+// @field Unknown +0x00 std::string field_00
+// @field Unknown +0x1C std::string field_1C
+// @field Unknown +0x38 std::string field_38
+
+namespace {
+constexpr std::size_t kRecordSize = 0x54;
+constexpr std::size_t kOffsetA = 0x00;
+constexpr std::size_t kOffsetB = 0x1C;
+constexpr std::size_t kOffsetC = 0x38;
+}  // namespace
+
+void destroyStringRecordRange_005566D0(std::uint8_t* first, std::uint8_t* last) {
+    using StringT = std::string;
+    for (std::uint8_t* rec = first; rec != last; rec += kRecordSize) {
+        reinterpret_cast<StringT*>(rec + kOffsetC)->~StringT();
+        reinterpret_cast<StringT*>(rec + kOffsetB)->~StringT();
+        reinterpret_cast<StringT*>(rec + kOffsetA)->~StringT();
+    }
+}
+} // namespace lift_005566D0
