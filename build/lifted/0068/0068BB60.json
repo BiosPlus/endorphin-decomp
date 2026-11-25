@@ -1,0 +1,27 @@
+{
+  "va": "0x0068BB60",
+  "size": 88,
+  "orig_symbol": "sub_0068BB60",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "sub_0068BB60_dtor",
+  "signature": "extern \"C\" void __fastcall fn_0068BB60(void* self)",
+  "summary": "Destructor that resets vtables at +0x0 and +0x4, then calls subobject and base destructors",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "uintptr_t",
+      "name": "field_0x0"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "uintptr_t",
+      "name": "field_0x4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:17:54Z"
+}

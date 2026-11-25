@@ -1095,3 +1095,26 @@ extern uint32_t fn_00687E20(uint32_t first, uint32_t last, uint32_t dest) {
 }
 } // namespace lift_00406290
 } // namespace lift_00687E20
+
+// [0x0068BB60]
+namespace lift_0068BB60 {
+// @name sub_0068BB60_dtor
+// @summary Destructor that resets vtables at +0x0 and +0x4, then calls subobject and base destructors
+// @field Self +0x0 uintptr_t field_0x0
+// @field Self +0x4 uintptr_t field_0x4
+
+
+extern uint8_t mem_0098DD14[];
+extern uint8_t mem_0098DCE4[];
+
+void __fastcall ext_0065C660(void* self);
+void __fastcall ext_0065F440(void* self);
+
+extern void __fastcall fn_0068BB60(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uintptr_t*>(base + 0x0) = reinterpret_cast<uintptr_t>(mem_0098DD14);
+    *reinterpret_cast<uintptr_t*>(base + 0x4) = reinterpret_cast<uintptr_t>(mem_0098DCE4);
+    ext_0065C660(base + 0x4);
+    ext_0065F440(base);
+}
+} // namespace lift_0068BB60
