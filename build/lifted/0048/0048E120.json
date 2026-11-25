@@ -1,0 +1,46 @@
+{
+  "va": "0x0048E120",
+  "size": 110,
+  "orig_symbol": "sub_0048E120",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "Unknown::initWithVectorElement_0048E120",
+  "class": "Unknown",
+  "signature": "static inline void store_u32(uint8_t* base, uint32_t off, uint32_t value)",
+  "summary": "Base-initializes self, installs vtable 0x0093E588, stores two args, and derives +0x08 from a vector element and +0x18 from the arg0 object.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:03:36Z"
+}

@@ -2150,3 +2150,50 @@ void* fn_0048E190(void* self, void* arg1, uint32_t arg2) {
     return self;
 }
 } // namespace lift_0048E190
+
+// [0x0048E120] sub_0048E120 (110 bytes)
+namespace lift_0048E120 {
+// Known callee 0x006657F0: Unknown::InitVtblAndArg (stores vtable, stack arg at +0x04, zeroes +0x08/+0x0C; returns self)
+extern void* ext_006657F0(void* self, uint32_t arg);
+// Known callee 0x00468180: returns global int32 value from mem_00AD7CD8
+extern int32_t ext_00468180();
+// Known callee 0x00469570: getVectorElementAt (returns 32-bit element at index; self in ecx, index on stack)
+extern uint32_t ext_00469570(void* self, uint32_t index);
+
+static inline void store_u32(uint8_t* base, uint32_t off, uint32_t value) {
+    memcpy(base + off, &value, sizeof(value));
+}
+
+static inline uint32_t load_u32(const uint8_t* base, uint32_t off) {
+    uint32_t value = 0;
+    memcpy(&value, base + off, sizeof(value));
+    return value;
+}
+
+// @name Unknown::initWithVectorElement_0048E120
+// @class Unknown
+// @summary Base-initializes self, installs vtable 0x0093E588, stores two args, and derives +0x08 from a vector element and +0x18 from the arg0 object.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+void* fn_0048E120(void* self, uint32_t arg0, uint32_t arg1) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+
+    ext_006657F0(self, 1);
+
+    store_u32(obj, 0x00, 0x0093E588u);
+    store_u32(obj, 0x10, arg0);
+    store_u32(obj, 0x14, arg1);
+
+    uint32_t global_value = static_cast<uint32_t>(ext_00468180());
+    void* vector_self = reinterpret_cast<void*>(static_cast<uintptr_t>(global_value));
+    store_u32(obj, 0x08, ext_00469570(vector_self, 5));
+
+    uint8_t* src = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(load_u32(obj, 0x10)));
+    store_u32(obj, 0x18, load_u32(src, 0x18));
+
+    return self;
+}
+} // namespace lift_0048E120

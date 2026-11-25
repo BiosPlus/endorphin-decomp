@@ -10218,6 +10218,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005F0D40 (NMData::MagnetJointData::vfunc_59).",
     "lifted_path": "lifted/Commands/CreateTriggeredEventCommand.cpp"
   },
+  "0x0048E120": {
+    "name": "Unknown::initWithVectorElement_0048E120",
+    "class": "Unknown",
+    "signature": "static inline void store_u32(uint8_t* base, uint32_t off, uint32_t value)",
+    "summary": "Base-initializes self, installs vtable 0x0093E588, stores two args, and derives +0x08 from a vector element and +0x18 from the arg0 object.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048E190": {
     "name": "Unknown::initFromArgs_0048E190",
     "class": "Unknown",
