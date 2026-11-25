@@ -22953,6 +22953,12 @@
     "summary": "Bounds-checked address of element idx in an array of 20-byte elements; begin at +0x4, end at +0x8. Calls _invalid_parameter_noinfo when empty or out of range.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x00575EF0": {
+    "name": "CopyBackwardStringRecords",
+    "signature": "void* fn_00575EF0(void* first, void* last, void* dest_last)",
+    "summary": "Copies 0x54-byte string records backward to dest_last and returns the new destination start pointer.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00575F50": {
     "name": "sub_00575F50",
     "signature": "uint32_t sub_00575F50(uint32_t src_begin, uint32_t src_end, uint32_t a3, uint32_t dst)",

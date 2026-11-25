@@ -1166,3 +1166,22 @@ void* fn_0057E110(void* first, void* last, void* dest_last) {
 }
 } // namespace lift_00687920
 } // namespace lift_0057E110
+
+// [0x00575EF0]
+namespace lift_00575EF0 {
+// @name CopyBackwardStringRecords
+// @summary Copies 0x54-byte string records backward to dest_last and returns the new destination start pointer.
+
+
+extern void* ext_005752C0(void* first, void* last, void* dest_last);
+
+void* fn_00575EF0(void* first, void* last, void* dest_last) {
+    ext_005752C0(first, last, dest_last);
+    int32_t count = static_cast<int32_t>(
+        reinterpret_cast<uintptr_t>(last) - reinterpret_cast<uintptr_t>(first)
+    ) / 0x54;
+    return reinterpret_cast<void*>(
+        reinterpret_cast<uintptr_t>(dest_last) - static_cast<uintptr_t>(count * 0x54)
+    );
+}
+} // namespace lift_00575EF0
