@@ -8,8 +8,12 @@
 // Recovered field layout for Entry:
 namespace lifted_layout {
 struct Entry_Fields {
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x007AF580, 0x007F0B60)
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x007AF580, 0x007F0B60) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint8_t                  flag_0x00  (evidence: 0x00427270) // CONFLICT: multiple definitions at +0x0
+    // +0x1   uint8_t                  flag_0x01  (evidence: 0x00427270)
+    // +0x2   uint8_t                  flag_0x02  (evidence: 0x00427270)
     // +0x4   DWORD                    field_0x04  (evidence: 0x005224E0, 0x0052F7D0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   std::string              field_0x04  (evidence: 0x00427270) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00670C50, 0x0067A670, 0x007F0B60) // CONFLICT: multiple definitions at +0x4
     // +0x8   DWORD                    field_0x08  (evidence: 0x005224E0, 0x0052F7D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00670C50, 0x0067A670, 0x007AF580, 0x007F0B60) // CONFLICT: multiple definitions at +0x8

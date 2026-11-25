@@ -1328,3 +1328,40 @@ uint32_t sub_00427860(uint32_t first, uint32_t last, uint32_t d_last) {
     return d_last - static_cast<uint32_t>(count * 36);
 }
 } // namespace lift_00427860
+
+// [0x00427270]
+namespace lift_00427270 {
+// @name isValidStringOption
+// @summary Checks that a struct's string at +0x4 is non-empty and not disallowed by flag bytes at +0x0..+0x2
+// @field Entry +0x00 uint8_t flag_0x00
+// @field Entry +0x01 uint8_t flag_0x01
+// @field Entry +0x02 uint8_t flag_0x02
+// @field Entry +0x04 std::string field_0x04
+
+extern uint32_t mem_00924FEC;
+extern uint32_t mem_00924FC0;
+
+using StdStringEmptyFn = uint8_t (__thiscall*)(uint32_t this_ptr);
+using StdStringEqCStrFn = uint8_t (__cdecl*)(uint32_t str_ptr, uint32_t cstr_ptr);
+
+uint8_t __stdcall sub_00427270(uint32_t arg1) {
+    uint32_t str_ptr = arg1 + 0x4;
+    auto fn_empty = reinterpret_cast<StdStringEmptyFn>(mem_00924FEC);
+    if (fn_empty(str_ptr) != 0) {
+        return 0;
+    }
+
+    auto fn_eq = reinterpret_cast<StdStringEqCStrFn>(mem_00924FC0);
+    if (fn_eq(str_ptr, 0x92e3c8) != 0 && *reinterpret_cast<const uint8_t*>(arg1 + 0x1) != 0) {
+        return 0;
+    }
+    if (fn_eq(str_ptr, 0x92e3d0) != 0 && *reinterpret_cast<const uint8_t*>(arg1 + 0x2) != 0) {
+        return 0;
+    }
+    if (fn_eq(str_ptr, 0x92f104) != 0 && *reinterpret_cast<const uint8_t*>(arg1 + 0x0) != 0) {
+        return 0;
+    }
+
+    return 1;
+}
+} // namespace lift_00427270

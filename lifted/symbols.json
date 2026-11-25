@@ -2698,6 +2698,12 @@
     "summary": "Searches a 54-entry string table for a match against a std::string and returns the matching C-string pointer or 0.",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x00427270": {
+    "name": "isValidStringOption",
+    "signature": "uint8_t __stdcall sub_00427270(uint32_t arg1)",
+    "summary": "Checks that a struct's string at +0x4 is non-empty and not disallowed by flag bytes at +0x0..+0x2",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x00427370": {
     "name": "findLastBeforeFlaggedChild",
     "signature": "uintptr_t sub_00427370(uintptr_t node)",
