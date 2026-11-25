@@ -1,0 +1,46 @@
+{
+  "va": "0x00526DC0",
+  "size": 117,
+  "orig_symbol": "sub_00526DC0",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "InterpreterSubclass::InterpreterSubclass",
+  "class": "InterpreterSubclass",
+  "signature": "void* __thiscall fn_00526DC0(void* self)",
+  "summary": "Constructor: initializes Interpreter base, sets vtable 0x0094F6CC, constructs subobjects at +0x38, +0x4C, +0x60, and default-constructs std::string at +0xA4.",
+  "fields": [
+    {
+      "class": "InterpreterSubclass",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "InterpreterSubclass",
+      "offset": "+0x38",
+      "type": "uint8_t[0x14]",
+      "name": "field_0x38"
+    },
+    {
+      "class": "InterpreterSubclass",
+      "offset": "+0x4C",
+      "type": "uint8_t[0x14]",
+      "name": "field_0x4C"
+    },
+    {
+      "class": "InterpreterSubclass",
+      "offset": "+0x60",
+      "type": "uint8_t[0x44]",
+      "name": "field_0x60"
+    },
+    {
+      "class": "InterpreterSubclass",
+      "offset": "+0xA4",
+      "type": "std::string",
+      "name": "field_0xA4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:45:40Z"
+}

@@ -1757,3 +1757,35 @@ float __thiscall fn_00524A60(void* self) {
     return static_cast<float>(data[idx]);
 }
 } // namespace lift_00524A60
+
+// [0x00526DC0]
+namespace lift_00526DC0 {
+// @name InterpreterSubclass::InterpreterSubclass
+// @class InterpreterSubclass
+// @summary Constructor: initializes Interpreter base, sets vtable 0x0094F6CC, constructs subobjects at +0x38, +0x4C, +0x60, and default-constructs std::string at +0xA4.
+// @field InterpreterSubclass +0x00 void* vtable
+// @field InterpreterSubclass +0x38 uint8_t[0x14] field_0x38
+// @field InterpreterSubclass +0x4C uint8_t[0x14] field_0x4C
+// @field InterpreterSubclass +0x60 uint8_t[0x44] field_0x60
+// @field InterpreterSubclass +0xA4 std::string field_0xA4
+
+
+extern void* __thiscall ext_00506030(void* self);
+extern void* __thiscall ext_00526C70(void* self);
+extern void* __thiscall ext_008703B0(void* self);
+extern void* (__thiscall *mem_00924FE8)(void* self);
+
+void* __thiscall fn_00526DC0(void* self) {
+    uint8_t* p = static_cast<uint8_t*>(self);
+
+    ext_00506030(p);
+    *reinterpret_cast<uint32_t*>(p + 0x00) = 0x0094F6CC;
+
+    ext_008703B0(p + 0x38);
+    ext_008703B0(p + 0x4C);
+    ext_00526C70(p + 0x60);
+    mem_00924FE8(p + 0xA4);
+
+    return self;
+}
+} // namespace lift_00526DC0

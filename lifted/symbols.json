@@ -12457,6 +12457,12 @@
     "summary": "Searches the list at this+0xdc for a node matching key and returns a pointer to its value (node+8) or null.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x0049F0C0": {
+    "name": "FindMatchingItemInList",
+    "signature": "void* __thiscall fn_0049F0C0(void* self, uint32_t arg)",
+    "summary": "Searches a sentinel-terminated linked list at this+0xC4 for the first node matching arg and returns its embedded object (node+8), or nullptr.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049F2E0": {
     "name": "sub_0049F2E0",
     "class": "(none)",
@@ -22469,6 +22475,13 @@
     "name": "initFourVectorsAndFlag",
     "signature": "void* __thiscall sub_00526C70(void* self)",
     "summary": "Zero-initializes four 3-dword ranges (at +0x04, +0x14, +0x24, +0x34) and a byte flag at +0x40, returning this.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
+  "0x00526DC0": {
+    "name": "InterpreterSubclass::InterpreterSubclass",
+    "class": "InterpreterSubclass",
+    "signature": "void* __thiscall fn_00526DC0(void* self)",
+    "summary": "Constructor: initializes Interpreter base, sets vtable 0x0094F6CC, constructs subobjects at +0x38, +0x4C, +0x60, and default-constructs std::string at +0xA4.",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
   "0x005270D0": {
