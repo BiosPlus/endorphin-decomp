@@ -921,3 +921,20 @@ void __thiscall sub_0063D8F0(void* self) {
     *reinterpret_cast<float*>(base + 0x60) = zero;
 }
 } // namespace lift_0063D8F0
+
+// [0x0063E610] sub_0063E610 (94 bytes)
+namespace lift_0063E610 {
+// Known callee 0x0063E0C0: Unknown::Unknown(uint32_t, const std::string&) (string-copy ctor stub) (Stamps vtable 0x0097CB4C at +0x00, copy-constructs a std::string from the second argument into this+0x04, stores the first argument at +0x20, and returns this.)
+extern void* ext_0063E0C0(void* self, uint32_t arg0, const void* name);
+
+// @name Unknown::Unknown
+// @class Unknown
+// @summary Derived ctor: runs base ctor (arg0, name), sets derived vtable 0x0097CBEC, copy-constructs std::string at +0x24 from extra.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x24 std::string field_0x24
+void fn_0063E610(void* self, uint32_t arg0, const void* name, const void* extra) {
+    ext_0063E0C0(self, arg0, name);
+    lift_field<void*>(self, 0x00) = reinterpret_cast<void*>(static_cast<uintptr_t>(0x0097CBECu));
+    new (&lift_field<std::string>(self, 0x24)) std::string(*static_cast<const std::string*>(extra));
+}
+} // namespace lift_0063E610
