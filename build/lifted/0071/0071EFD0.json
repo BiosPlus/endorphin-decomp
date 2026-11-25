@@ -1,0 +1,13 @@
+{
+  "va": "0x0071EFD0",
+  "size": 97,
+  "orig_symbol": "sub_0071EFD0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "initEmbeddedListObject (0x0071EFD0)",
+  "signature": "void* fn_0071EFD0(void* self)",
+  "summary": "Zeroes field +0x04, initializes the embedded 20-byte struct at +0x08 with count 16 and arg 4, links the self-pointer at +0x1C to +0x18, sets the vtable to 0x009967AC, calls the thunk on self, and returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:38:17Z"
+}

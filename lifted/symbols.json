@@ -62619,6 +62619,12 @@
     "summary": "Returns pointer to subobject/field at offset +0xB8.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071EFD0": {
+    "name": "initEmbeddedListObject (0x0071EFD0)",
+    "signature": "void* fn_0071EFD0(void* self)",
+    "summary": "Zeroes field +0x04, initializes the embedded 20-byte struct at +0x08 with count 16 and arg 4, links the self-pointer at +0x1C to +0x18, sets the vtable to 0x009967AC, calls the thunk on self, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071F040": {
     "name": "sub_0071F040",
     "signature": "extern \"C\" void* __fastcall fn_0071F040(void* self, int edx_unused, unsigned int flags)",

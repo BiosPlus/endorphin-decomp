@@ -1667,3 +1667,36 @@ bool __stdcall sub_007135C0(const char* str, double* out) {
     return *endptr == '}';
 }
 } // namespace lift_007135C0
+
+// [0x0071EFD0] sub_0071EFD0 (97 bytes)
+namespace lift_0071EFD0 {
+// Known callee 0x006D2130: uint32_t __thiscall sub_006D2130(self, arg1, arg2).
+// Initializes a 20-byte embedded struct at self; arg1 = count (min 1) at +0x08, arg2 at +0x0C.
+extern uint32_t ext_006D2130(void* self, int32_t arg1, uint32_t arg2);
+// Known callee 0x0071F090: this-adjustor thunk (self += 8, tail-calls sub_006D2250).
+extern void ext_0071F090(void* self);
+
+// @name initEmbeddedListObject (0x0071EFD0)
+// @summary Zeroes field +0x04, initializes the embedded 20-byte struct at +0x08 with count 16 and arg 4, links the self-pointer at +0x1C to +0x18, sets the vtable to 0x009967AC, calls the thunk on self, and returns self.
+// @field field_0x00 uint32_t vtable (set to 0x009967AC)
+// @field field_0x04 uint32_t field_0x04 (zeroed)
+// @field field_0x08 uint8_t[20] embedded (initialized via ext_006D2130)
+// @field field_0x1C uint32_t field_0x1C (address of base+0x18, 32-bit layout)
+void* fn_0071EFD0(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    lift_field<uint32_t>(self, 0x04) = 0;
+
+    void* embedded = base + 0x08;
+    ext_006D2130(embedded, 16, 4);
+
+    // Stores a 32-bit address, matching the original 32-bit layout.
+    lift_field<uint32_t>(self, 0x1C) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base + 0x18));
+
+    lift_field<uint32_t>(self, 0x00) = 0x009967AC;
+
+    ext_0071F090(self);
+
+    return self;
+}
+} // namespace lift_0071EFD0
