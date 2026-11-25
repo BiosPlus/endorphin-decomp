@@ -1,0 +1,21 @@
+{
+  "va": "0x005DC930",
+  "size": 37,
+  "orig_symbol": "sub_005DC930",
+  "src_path": "src/leaf/decompiled_5D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5D0000.cpp",
+  "name": "ResetOwnedField0x44",
+  "signature": "void fn_005DC930(void* self)",
+  "summary": "Releases and frees the owned object at this+0x44, then clears the pointer to null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "void*",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T14:27:37Z"
+}

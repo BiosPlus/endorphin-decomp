@@ -509,3 +509,31 @@ void __stdcall fn_005DFE30(TreeIter first, TreeIter last) {
     }
 }
 } // namespace lift_005DFE30
+
+// [0x005DC930]
+namespace lift_005DC930 {
+// @name ResetOwnedField0x44
+// @summary Releases and frees the owned object at this+0x44, then clears the pointer to null.
+// @field Unknown +0x44 void* field_0x44
+
+
+extern void ext_005D9F30(void* self);
+extern void ext_006A5C5C(void* ptr);
+extern float ext_005B11E0(void* self, int32_t index);
+extern double mem_00955AD8;
+extern double mem_00965CE0;
+extern double mem_00993828;
+
+void fn_005DC930(void* self) {
+    (void)ext_005B11E0;
+    (void)mem_00955AD8;
+    (void)mem_00965CE0;
+    (void)mem_00993828;
+    void* obj = lift_field<void*>(self, 0x44);
+    if (obj != nullptr) {
+        ext_005D9F30(obj);
+        ext_006A5C5C(obj);
+    }
+    lift_field<void*>(self, 0x44) = nullptr;
+}
+} // namespace lift_005DC930
