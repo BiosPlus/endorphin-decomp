@@ -57521,6 +57521,12 @@
     "summary": "Clears the pointer-sized slot at +0x18, and if it was non-null, passes it through ext_007D8700 and tail-dispatches the result to ext_007C9930; otherwise returns.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CDB70": {
+    "name": "alignFieldAndIncrementCounters",
+    "signature": "void sub_007CDB70(uint32_t arg0)",
+    "summary": "Aligns field_0xac up to a 4-byte boundary and increments four 32-bit counters",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CDBC0": {
     "name": "clearIndexedSlots",
     "signature": "void sub_007CDBC0(uint32_t arg0)",
