@@ -1,0 +1,21 @@
+{
+  "va": "0x006E87B0",
+  "size": 80,
+  "orig_symbol": "sub_006E87B0",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "setClampedValue",
+  "signature": "void __thiscall sub_006E87B0(void* self, double val)",
+  "summary": "Clamps a double argument to [0.0, 300.0] and stores it at *(double*)(*(uintptr_t*)this + 0x70).",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:55:39Z"
+}

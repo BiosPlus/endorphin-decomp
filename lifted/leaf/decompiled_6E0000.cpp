@@ -1166,3 +1166,20 @@ void __thiscall sub_006E86F0(void* self, double value) {
     }
 }
 } // namespace lift_006E86F0
+
+// [0x006E87B0]
+namespace lift_006E87B0 {
+// @name setClampedValue
+// @summary Clamps a double argument to [0.0, 300.0] and stores it at *(double*)(*(uintptr_t*)this + 0x70).
+// @field unknown +0x00 uint32_t field_0x00
+void __thiscall sub_006E87B0(void* self, double val) {
+    double clamped = val;
+    if (val < 0.0) {
+        clamped = 0.0;
+    } else if (val > 300.0) {
+        clamped = 300.0;
+    }
+    uintptr_t ptr = *reinterpret_cast<uintptr_t*>(self);
+    *reinterpret_cast<double*>(ptr + 0x70) = clamped;
+}
+} // namespace lift_006E87B0
