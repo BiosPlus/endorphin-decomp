@@ -1,0 +1,27 @@
+{
+  "va": "0x00481B50",
+  "size": 96,
+  "orig_symbol": "sub_00481B50",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "std_equal_u32",
+  "signature": "bool __cdecl sub_00481B50(uint32_t* first1, uint32_t* last1, uint32_t* cont2, uint32_t* first2)",
+  "summary": "Checks whether two uint32_t ranges are equal with MSVC8 checked-iterator bounds validation",
+  "fields": [
+    {
+      "class": "CheckedVector",
+      "offset": "+0x4",
+      "type": "uint32_t*",
+      "name": "begin"
+    },
+    {
+      "class": "CheckedVector",
+      "offset": "+0x8",
+      "type": "uint32_t*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:35:26Z"
+}

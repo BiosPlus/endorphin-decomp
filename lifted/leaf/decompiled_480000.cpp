@@ -1863,3 +1863,33 @@ void fn_00481300(void* self) {
     reinterpret_cast<ElementSlot5Fn>(objVtbl[5])(obj, arg);
 }
 } // namespace lift_00481300
+
+// [0x00481B50]
+namespace lift_00481B50 {
+extern void (*mem_00925134)();
+
+// @name std_equal_u32
+// @summary Checks whether two uint32_t ranges are equal with MSVC8 checked-iterator bounds validation
+// @field CheckedVector +0x04 uint32_t* begin
+// @field CheckedVector +0x08 uint32_t* end
+bool __cdecl sub_00481B50(uint32_t* first1, uint32_t* last1, uint32_t* cont2, uint32_t* first2) {
+    int32_t count = static_cast<int32_t>(reinterpret_cast<uintptr_t>(last1) - reinterpret_cast<uintptr_t>(first1)) >> 2;
+    if (cont2 == nullptr) {
+        mem_00925134();
+    }
+    uintptr_t end2 = reinterpret_cast<uintptr_t>(first2) + static_cast<uintptr_t>(count) * 4;
+    if (end2 > cont2[2] || end2 < cont2[1]) {
+        mem_00925134();
+    }
+    uint32_t* it1 = first1;
+    uint32_t* it2 = first2;
+    while (it1 != last1) {
+        if (*it1 != *it2) {
+            return false;
+        }
+        ++it1;
+        ++it2;
+    }
+    return true;
+}
+} // namespace lift_00481B50

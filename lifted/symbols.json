@@ -2191,6 +2191,12 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x1A0 and tail-calls sub_0041DB60.",
     "lifted_path": "lifted/Properties/auto_tiny.cpp"
   },
+  "0x0041DD40": {
+    "name": "destroyStringPairRange",
+    "signature": "void sub_0041DD40(uint32_t begin, uint32_t end)",
+    "summary": "Destroys a range [begin, end) of 0x38-byte elements, each containing two std::string fields at +0x00 and +0x1C.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041DDA0": {
     "name": "Unknown::resetPtrAndStringMembers",
     "class": "Unknown",
@@ -8320,6 +8326,12 @@
     "summary": "Returns (field_0x08 - field_0x04) / 3 as int32, or 0 when field_0x04 is 0.",
     "lifted_path": "lifted/leaf/tiny_470000.cpp"
   },
+  "0x00476CA0": {
+    "name": "pushHeap",
+    "signature": "extern \"C\" void __cdecl sub_00476CA0(uint32_t* arr, int32_t holeIndex, int32_t topIndex, uint32_t val, uint32_t pred)",
+    "summary": "Sifts an element up in a binary heap using a predicate functor.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00476EA0": {
     "name": "SymbolPtrMap::vfunc_1",
     "class": "SymbolPtrMap\u003cSearchableMap\u003cNMData::TriggeredEventData *, GetNameFromAttribute\u003cNMData::TriggeredEventData *\u003e\u003e\u003e",
@@ -8834,6 +8846,12 @@
     "name": "fillVec4Array",
     "signature": "void sub_004817A0(uint32_t dst, uint32_t count, uint32_t src)",
     "summary": "Fills an array of 16-byte 4-float vectors with a constant 4-float value.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
+  "0x00481B50": {
+    "name": "std_equal_u32",
+    "signature": "bool __cdecl sub_00481B50(uint32_t* first1, uint32_t* last1, uint32_t* cont2, uint32_t* first2)",
+    "summary": "Checks whether two uint32_t ranges are equal with MSVC8 checked-iterator bounds validation",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
   "0x00481BB0": {
