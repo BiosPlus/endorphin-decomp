@@ -516,6 +516,13 @@
     "summary": "Passes the field at self+0x20 to USER32!GetDC, then forwards the returned HDC to MFC80 ord_2367.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00406090": {
+    "name": "std::copy\u003cstd::string*, std::string*\u003e",
+    "class": "std::copy\u003cstd::string*, std",
+    "signature": "extern \"C\" uint32_t __cdecl sub_00406090(uint32_t first, uint32_t last, uint32_t dest)",
+    "summary": "Copies a range of std::string objects from [first, last) to dest and returns the end of the destination range.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x004060F0": {
     "name": "CopyRecordRange_004060F0",
     "class": "ExtRecord58",
@@ -929,6 +936,12 @@
     "name": "fill_std_string_range",
     "signature": "void sub_0040E1A0(uint32_t first, uint32_t last, uint32_t val)",
     "summary": "Fills a range of std::string objects [first, last) with copies of val.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
+  "0x0040E1D0": {
+    "name": "std_swap_backward_string",
+    "signature": "uint32_t __cdecl sub_0040E1D0(uint32_t first, uint32_t last, uint32_t destEnd)",
+    "summary": "Swaps a range of 28-byte std::string objects backward from [first, last) into [destEnd - (last - first), destEnd).",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
   "0x0040E860": {
@@ -55856,6 +55869,12 @@
     "signature": "extern \"C\" void* __stdcall fn_00713580(int a1)",
     "summary": "Returns address of global mem_00AAC03C.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x007135C0": {
+    "name": "parseDoubleArray16",
+    "signature": "bool __stdcall sub_007135C0(const char* str, double* out)",
+    "summary": "Parses a brace-enclosed comma-separated list of 16 doubles into an output array.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x00713730": {
     "name": "sub_00713730",

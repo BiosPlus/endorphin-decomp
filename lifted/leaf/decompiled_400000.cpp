@@ -1175,3 +1175,56 @@ void* fn_00406030(uint32_t count) {
     return ext_006A5C62(bytes);
 }
 } // namespace lift_00406030
+
+// [0x00406090]
+namespace lift_00406090 {
+// @name std::copy<std::string*, std::string*>
+// @summary Copies a range of std::string objects from [first, last) to dest and returns the end of the destination range.
+
+
+extern uint32_t mem_00924FDC;
+
+extern uint32_t __cdecl sub_00406090(uint32_t first, uint32_t last, uint32_t dest) {
+    int32_t count = static_cast<int32_t>(last - first) / 0x1C;
+    uint32_t result = dest + static_cast<uint32_t>(count * 0x1C);
+    if (first != last) {
+        using AssignFn = uint32_t(__thiscall*)(uint32_t self, uint32_t rhs);
+        auto assign = reinterpret_cast<AssignFn>(mem_00924FDC);
+        uint32_t src = first;
+        uint32_t dst = dest;
+        do {
+            assign(dst, src);
+            src += 0x1C;
+            dst += 0x1C;
+        } while (src != last);
+    }
+    return result;
+}
+} // namespace lift_00406090
+
+// [0x0040E1D0]
+namespace lift_0040E1D0 {
+// @name std_swap_backward_string
+// @summary Swaps a range of 28-byte std::string objects backward from [first, last) into [destEnd - (last - first), destEnd).
+
+
+extern uint32_t mem_00924FBC; // MSVCP80!std::string::swap
+
+uint32_t __cdecl sub_0040E1D0(uint32_t first, uint32_t last, uint32_t destEnd) {
+    int32_t diff = static_cast<int32_t>(last - first);
+    int32_t count = diff / 28;
+    uint32_t destBegin = destEnd - static_cast<uint32_t>(count * 28);
+
+    if (first != last) {
+        uint32_t offset = destEnd - last;
+        uint32_t cur = last;
+        do {
+            cur -= 0x1c;
+            uint32_t dest = cur + offset;
+            reinterpret_cast<void(__thiscall*)(uint32_t, uint32_t)>(mem_00924FBC)(dest, cur);
+        } while (cur != first);
+    }
+
+    return destBegin;
+}
+} // namespace lift_0040E1D0
