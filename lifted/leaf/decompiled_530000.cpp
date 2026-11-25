@@ -1368,3 +1368,30 @@ uint32_t fn_005397A0(uint32_t begin, uint32_t end, uint32_t dest_end) {
     return static_cast<uint32_t>(dest_end - static_cast<uint32_t>(count) * 12u);
 }
 } // namespace lift_005397A0
+
+// [0x00532BC0] sub_00532BC0 (102 bytes)
+namespace lift_00532BC0 {
+// Known callee 0x00532B60: fn_00532B60 (Unknown::initVtableAndFlags).
+extern void ext_00532B60(void* self);
+// Known callee 0x00538FA0: fn_00538FA0 (SetFloatPairAndDwordPair), thiscall, callee pops 0x10 bytes.
+extern void ext_00538FA0(void* self, float f0, float f1, DWORD d0, DWORD d1);
+
+// Read-only .rdata constants.
+extern const float mem_009518E0; // 10.0f
+extern const float mem_0093C188; // 4.0f
+
+// @name Unknown::ctorSetDefaults
+// @class Unknown
+// @summary Base-initializes this object, stores its vtable, applies float/dword defaults via fn_00538FA0, sets +0x1C to 4.0f, and returns this.
+// @field Unknown +0x00 DWORD vtable
+// @field Unknown +0x1C float field_0x1C
+void* fn_00532BC0(void* self) {
+    // SEH frame push/pop (fs:[0] chain, try-level bookkeeping) is compiler/runtime
+    // scaffolding and is intentionally not reproduced.
+    ext_00532B60(self);
+    lift_field<DWORD>(self, 0x00) = 0x00954674u;
+    ext_00538FA0(self, mem_009518E0, mem_009518E0, 10u, 5u);
+    lift_field<float>(self, 0x1C) = mem_0093C188;
+    return self;
+}
+} // namespace lift_00532BC0

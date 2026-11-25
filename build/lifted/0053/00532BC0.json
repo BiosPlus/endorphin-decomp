@@ -1,0 +1,28 @@
+{
+  "va": "0x00532BC0",
+  "size": 102,
+  "orig_symbol": "sub_00532BC0",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::ctorSetDefaults",
+  "class": "Unknown",
+  "signature": "void* fn_00532BC0(void* self)",
+  "summary": "Base-initializes this object, stores its vtable, applies float/dword defaults via fn_00538FA0, sets +0x1C to 4.0f, and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:45:22Z"
+}
