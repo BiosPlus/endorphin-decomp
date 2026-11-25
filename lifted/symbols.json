@@ -47852,6 +47852,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C8440": {
+    "name": "sub_006C8440_dtor",
+    "signature": "extern \"C\" void __thiscall fn_006C8440(void* self)",
+    "summary": "Destructor that invokes empty subobject destructors at +0xa8 and +0x28.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C8500": {
     "name": "sub_006C8500",
     "signature": "extern \"C\" void __fastcall fn_006C8500(void* self)",
