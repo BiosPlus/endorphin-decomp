@@ -43140,6 +43140,13 @@
     "summary": "Walks the command list at +0x30 and invokes virtual slot 1 on each element's payload.",
     "lifted_path": "lifted/classes/MacroCommand.cpp"
   },
+  "0x00665B10": {
+    "name": "MacroCommand::vfunc_4",
+    "class": "MacroCommand",
+    "signature": "void fn_00665B10(void* self)",
+    "summary": "Iterates the child command pointer array (this+0x3C..this+0x40) and calls vtable slot 1 on each child, passing this+0x0C as the argument.",
+    "lifted_path": "lifted/classes/MacroCommand.cpp"
+  },
   "0x00665B80": {
     "name": "Unknown::ReleaseElements_00665B80",
     "class": "Unknown",

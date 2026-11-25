@@ -45,3 +45,27 @@ void fn_00665A50(void* self) {
     }
 }
 } // namespace lift_00665A50
+
+// [0x00665B10] MacroCommand::vfunc_4 (104 bytes)
+namespace lift_00665B10 {
+// @name MacroCommand::vfunc_4
+// @class MacroCommand
+// @summary Iterates the child command pointer array (this+0x3C..this+0x40) and calls vtable slot 1 on each child, passing this+0x0C as the argument.
+// @field MacroCommand +0x0C DWORD field_0x0C
+// @field MacroCommand +0x3C void* field_0x3C
+// @field MacroCommand +0x40 void* field_0x40
+void fn_00665B10(void* self) {
+    using ChildFn = void(__thiscall*)(void*, DWORD);
+
+    void** it = lift_field<void**>(self, 0x3C);
+    void** end = lift_field<void**>(self, 0x40);
+
+    for (; it != end; ++it) {
+        void* child = *it;
+        void** vtbl = *reinterpret_cast<void***>(child);
+        ChildFn fn = reinterpret_cast<ChildFn>(vtbl[1]);
+        DWORD arg = lift_field<DWORD>(self, 0x0C);
+        fn(child, arg);
+    }
+}
+} // namespace lift_00665B10
