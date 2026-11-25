@@ -61443,6 +61443,12 @@
     "summary": "Sets the vtable word, initializes an embedded 20-byte sub-object at +0x04 with count 0x10 and value 4, and links its tail pointer at +0x18 to +0x14.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E72D0": {
+    "name": "sub_006E72D0",
+    "signature": "extern \"C\" void* __fastcall fn_006E72D0(void* self, void* /*edx*/, void* arg1)",
+    "summary": "Constructor initializing embedded buffer at +0x04, setting vtable 0x993ce0, and populating items from arg1.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E7340": {
     "name": "sub_006E7340",
     "signature": "extern \"C\" void __fastcall fn_006E7340(void* self, void* /*edx*/, void* arg1)",

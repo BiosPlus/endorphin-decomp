@@ -1363,3 +1363,66 @@ extern uint32_t __fastcall fn_006E7000(void* self) {
     return 0;
 }
 } // namespace lift_006E7000
+
+// [0x006E6D70]
+namespace lift_006E6D70 {
+// @name setOrClearSubobjectFlags
+// @summary Sets or clears flag bits in two subobjects, remapping bits for the second subobject.
+// @field Self +0x00 void* field_0x00
+// @field Self +0x08 void* field_0x08
+
+
+extern void* __fastcall ext_0071E680(void* self);
+extern void __thiscall ext_00710F80(void* target, uint32_t mask, uint8_t flag);
+
+extern void __thiscall fn_006E6D70(void* self, uint32_t mask, uint8_t flag) {
+    uint8_t* obj8 = *reinterpret_cast<uint8_t**>(reinterpret_cast<uint8_t*>(self) + 0x8);
+    if (obj8 != nullptr) {
+        uint32_t* bits = reinterpret_cast<uint32_t*>(obj8 + 0xb0);
+        if (flag != 0) {
+            *bits |= mask;
+        } else {
+            *bits &= ~mask;
+        }
+    }
+
+    void* obj0 = *reinterpret_cast<void**>(self);
+    if (obj0 != nullptr) {
+        uint32_t mapped = 0;
+        if ((mask & 0x1u) != 0) {
+            mapped = 0x2u;
+        }
+        if ((mask & 0x2u) != 0) {
+            mapped |= 0x40u;
+        }
+        if ((mask & 0x4u) != 0) {
+            mapped |= 0x80u;
+        }
+        void* target = ext_0071E680(obj0);
+        ext_00710F80(target, mapped, flag);
+    }
+}
+} // namespace lift_006E6D70
+
+// [0x006E72D0]
+namespace lift_006E72D0 {
+extern uint32_t __fastcall ext_006D2130(uint32_t self, void* /*edx*/, int32_t arg1, uint32_t arg2);
+extern void __fastcall ext_006E7340(void* self, void* /*edx*/, void* arg1);
+
+// @name sub_006E72D0
+// @summary Constructor initializing embedded buffer at +0x04, setting vtable 0x993ce0, and populating items from arg1.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x04 uint8_t field_0x04[0x14]
+// @field Unknown +0x18 uint32_t field_0x18
+extern void* __fastcall fn_006E72D0(void* self, void* /*edx*/, void* arg1) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uint32_t sub_obj = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base + 0x04));
+
+    ext_006D2130(sub_obj, nullptr, 0x10, 4);
+    *reinterpret_cast<uint32_t*>(base + 0x18) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base + 0x14));
+    *reinterpret_cast<uint32_t*>(base + 0x00) = 0x00993CE0u;
+    ext_006E7340(self, nullptr, arg1);
+
+    return self;
+}
+} // namespace lift_006E72D0

@@ -1,0 +1,27 @@
+{
+  "va": "0x006E6D70",
+  "size": 112,
+  "orig_symbol": "sub_006E6D70",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "setOrClearSubobjectFlags",
+  "signature": "extern \"C\" void __thiscall fn_006E6D70(void* self, uint32_t mask, uint8_t flag)",
+  "summary": "Sets or clears flag bits in two subobjects, remapping bits for the second subobject.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T05:09:15Z"
+}
