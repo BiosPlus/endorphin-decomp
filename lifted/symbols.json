@@ -71724,6 +71724,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005C0E00 (NMData::MetaBodyData::vfunc_6).",
     "lifted_path": "lifted/leaf/decompiled_870000.cpp"
   },
+  "0x00870930": {
+    "name": "NMData::Marker::vfunc_34",
+    "class": "NMData::Marker",
+    "signature": "uintptr_t __attribute__((thiscall)) fn_00870930(void* self, uintptr_t arg)",
+    "summary": "Resolves a value through the object at +0x04 and a vfunc, converts it via ext_00493E40 and stores it as peer at +0x0C.",
+    "lifted_path": "lifted/NMData/Marker.cpp"
+  },
   "0x00870E00": {
     "name": "sub_00870E00",
     "signature": "extern \"C\" void fn_00870E00(void)",

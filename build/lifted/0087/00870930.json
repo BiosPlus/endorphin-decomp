@@ -1,0 +1,28 @@
+{
+  "va": "0x00870930",
+  "size": 116,
+  "orig_symbol": "NMData::Marker::vfunc_34",
+  "src_path": "src/NMData/Marker.cpp",
+  "lifted_path": "lifted/NMData/Marker.cpp",
+  "name": "NMData::Marker::vfunc_34",
+  "class": "NMData::Marker",
+  "signature": "uintptr_t __attribute__((thiscall)) fn_00870930(void* self, uintptr_t arg)",
+  "summary": "Resolves a value through the object at +0x04 and a vfunc, converts it via ext_00493E40 and stores it as peer at +0x0C.",
+  "fields": [
+    {
+      "class": "NMData::Marker",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::Marker",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@low",
+  "lifted_at": "2026-11-25T13:29:00Z"
+}
