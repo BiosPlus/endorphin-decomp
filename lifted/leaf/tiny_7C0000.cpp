@@ -1193,3 +1193,14 @@ float __cdecl readFloatAt1C(void* self) {
     return lift_field<float>(self, 0x1C);
 }
 } // namespace lift_007C6F30
+
+// [0x007C6FC0]
+namespace lift_007C6FC0 {
+// @name readDwordAt0x14
+// @summary Returns the 32-bit value stored at offset +0x14 of the object passed as the single stack argument.
+// @field <unknown> +0x14 DWORD field_0x14
+
+DWORD sub_007C6FC0(const void* self) {
+    return lift_field<DWORD>(self, 0x14);
+}
+} // namespace lift_007C6FC0

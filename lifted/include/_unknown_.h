@@ -49,7 +49,7 @@ struct _unknown__Fields {
     // +0x10  uint32_t                 field_0x10  (evidence: 0x00414E60, 0x00481BB0, 0x00710F10, 0x007155B0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t* field_0x10 (array base pointer)  (evidence: 0x0078CB70) // CONFLICT: multiple definitions at +0x10
     // +0x11  BYTE                     field_0x11  (evidence: 0x00782D00, 0x00788E50)
-    // +0x14  DWORD                    field_0x14  (evidence: 0x00543300) // CONFLICT: multiple definitions at +0x14
+    // +0x14  DWORD                    field_0x14  (evidence: 0x00543300, 0x007C6FC0) // CONFLICT: multiple definitions at +0x14
     // +0x14  float                    field_0x14  (evidence: 0x007C2E50, 0x007C9DF0, 0x007CB9C0, 0x007D59C0) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t                 field_0x14  (evidence: 0x006FC200, 0x006FCF80, 0x00710F10, 0x007155B0) // CONFLICT: multiple definitions at +0x14
     // +0x18  float                    field_0x18  (evidence: 0x007D59C0) // CONFLICT: multiple definitions at +0x18

@@ -66281,6 +66281,12 @@
     "summary": "Stores the second stack argument into the object's field at +0x14.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C6FC0": {
+    "name": "readDwordAt0x14",
+    "signature": "DWORD sub_007C6FC0(const void* self)",
+    "summary": "Returns the 32-bit value stored at offset +0x14 of the object passed as the single stack argument.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C6FD0": {
     "name": "setField18_007C6FD0",
     "class": "unknown",
