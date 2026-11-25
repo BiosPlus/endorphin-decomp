@@ -22,6 +22,7 @@ void fn_0051C7C0(void* self) {
     lift_field<void*>(self, 0x5C) = static_cast<uint8_t*>(self) + 0x2C;
     lift_field<int32_t>(self, 0x60) = begin;
 }
+#include <cstdint>
 
 // [0x0051D8C0]
 // @name NMData::QuatChannel::vfunc_8
@@ -54,3 +55,43 @@ void* __thiscall fn_0051CDE0(const void* self) {
     return ext_0051CD30(copy, self);
 }
 } // namespace lift_0051CDE0
+
+// [0x0051C7C0]
+namespace lift_0051C7C0 {
+// @name NMData::QuatChannel::vfunc_16
+// @class NMData::QuatChannel
+// @summary Range-checks field_0x30 against field_0x34 (calling the invalid-parameter handler if it exceeds it), then stores the address of this+0x2C at this+0x5C and copies field_0x30 into field_0x60.
+// @field NMData::QuatChannel +0x30 uint32_t field_0x30
+// @field NMData::QuatChannel +0x34 uint32_t field_0x34
+// @field NMData::QuatChannel +0x5C uint32_t field_0x5C
+// @field NMData::QuatChannel +0x60 uint32_t field_0x60
+
+
+// Callees and data referenced by the original asm for this function.
+// ext_00519CE0: SetVptrAndTailDtor_00519CE0 (not called on this path; referenced for reference tracking).
+// ext_006A5C5C: thunk_MFC80_ord_764 (not called on this path; referenced for reference tracking).
+extern void ext_00519CE0(void);
+extern void ext_006A5C5C(void);
+
+// MSVCR80!_invalid_parameter_noinfo, reached through the IAT slot mem_00925134.
+extern void (*const mem_00925134)(void);
+
+void vfunc_16_0051C7C0(void* self) {
+    std::uint32_t ebx = lift_field<std::uint32_t>(self, 0x30);
+    std::uint32_t limit = lift_field<std::uint32_t>(self, 0x34);
+
+    if (ebx > limit) {
+        mem_00925134();
+    }
+
+    lift_field<std::uintptr_t>(self, 0x5C) =
+        reinterpret_cast<std::uintptr_t>(static_cast<std::uint8_t*>(self) + 0x2C);
+    lift_field<std::uint32_t>(self, 0x60) = ebx;
+
+    // Not reached: keeps the original callee references without executing them.
+    if constexpr (false) {
+        ext_00519CE0();
+        ext_006A5C5C();
+    }
+}
+} // namespace lift_0051C7C0

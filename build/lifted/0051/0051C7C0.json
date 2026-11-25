@@ -1,0 +1,40 @@
+{
+  "va": "0x0051C7C0",
+  "size": 32,
+  "orig_symbol": "NMData::QuatChannel::vfunc_16",
+  "src_path": "src/NMData/QuatChannel.cpp",
+  "lifted_path": "lifted/NMData/QuatChannel.cpp",
+  "name": "NMData::QuatChannel::vfunc_16",
+  "class": "NMData::QuatChannel",
+  "signature": "void vfunc_16_0051C7C0(void* self)",
+  "summary": "Range-checks field_0x30 against field_0x34 (calling the invalid-parameter handler if it exceeds it), then stores the address of this+0x2C at this+0x5C and copies field_0x30 into field_0x60.",
+  "fields": [
+    {
+      "class": "NMData::QuatChannel",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "NMData::QuatChannel",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "NMData::QuatChannel",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5C"
+    },
+    {
+      "class": "NMData::QuatChannel",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:41:23Z"
+}

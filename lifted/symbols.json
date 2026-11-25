@@ -19569,6 +19569,13 @@
     "summary": "Returns 0 if the dword at +0x30 is zero; otherwise returns (dword at +0x34 - dword at +0x30) / 20 (signed, truncating).",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0051C7C0": {
+    "name": "NMData::QuatChannel::vfunc_16",
+    "class": "NMData::QuatChannel",
+    "signature": "void vfunc_16_0051C7C0(void* self)",
+    "summary": "Range-checks field_0x30 against field_0x34 (calling the invalid-parameter handler if it exceeds it), then stores the address of this+0x2C at this+0x5C and copies field_0x30 into field_0x60.",
+    "lifted_path": "lifted/NMData/QuatChannel.cpp"
+  },
   "0x0051CCC0": {
     "name": "Unknown::InitDefaultsFloatMax",
     "class": "Unknown",
