@@ -7189,6 +7189,13 @@
     "summary": "Destructor tail-call: restores vtable mem_00939D3C and tail-calls base destructor thunk_MFC80_ord_612.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x004675E0": {
+    "name": "VMCActionDocTemplate::vfunc_28",
+    "class": "VMCActionDocTemplate",
+    "signature": "uint32_t __thiscall fn_004675E0(void* self, uint32_t arg1, uint32_t* arg2)",
+    "summary": "Checks whether a document matching the given path is already open, otherwise delegates to CSingleDocTemplate::MatchDocType.",
+    "lifted_path": "lifted/classes/VMCActionDocTemplate.cpp"
+  },
   "0x00467650": {
     "name": "VMCActionDocManager::vfunc_1",
     "class": "VMCActionDocManager",

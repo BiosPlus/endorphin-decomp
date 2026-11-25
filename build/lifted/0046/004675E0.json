@@ -1,0 +1,22 @@
+{
+  "va": "0x004675E0",
+  "size": 100,
+  "orig_symbol": "VMCActionDocTemplate::vfunc_28",
+  "src_path": "src/classes/VMCActionDocTemplate.cpp",
+  "lifted_path": "lifted/classes/VMCActionDocTemplate.cpp",
+  "name": "VMCActionDocTemplate::vfunc_28",
+  "class": "VMCActionDocTemplate",
+  "signature": "uint32_t __thiscall fn_004675E0(void* self, uint32_t arg1, uint32_t* arg2)",
+  "summary": "Checks whether a document matching the given path is already open, otherwise delegates to CSingleDocTemplate::MatchDocType.",
+  "fields": [
+    {
+      "class": "VMCActionDocTemplate",
+      "offset": "+0x0",
+      "type": "uint32_t*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:56:23Z"
+}
