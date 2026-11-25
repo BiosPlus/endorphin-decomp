@@ -1399,3 +1399,25 @@ void* __thiscall sub_0052EC80(void* self) {
     return self;
 }
 } // namespace lift_0052EC80
+
+// [0x00527570]
+namespace lift_00527570 {
+// Import slot holding the MSVCP80 std::string copy-constructor pointer.
+extern int mem_00924FE0;
+
+// Returns the process-global string (initialized once; arg is always 0 at this call site).
+void* ext_005273B0(int flag);
+
+// @name GetGlobalStringCopy_00527570
+// @summary Copy-constructs the caller-provided std::string from the process-global string and returns it.
+
+// MSVC std::string copy-ctor: thiscall, this in ECX, source on stack.
+using StringCopyCtor = void(__thiscall*)(void* self, const void* other);
+
+void* sub_00527570(void* dst) {
+    void* src = ext_005273B0(0);
+    StringCopyCtor copy_ctor = *reinterpret_cast<StringCopyCtor*>(&mem_00924FE0);
+    copy_ctor(dst, src);
+    return dst;
+}
+} // namespace lift_00527570

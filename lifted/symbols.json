@@ -20897,6 +20897,12 @@
     "summary": "Returns the process-global string at 0x00AED2EC, initializing it once on first call and registering its teardown.",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00527570": {
+    "name": "GetGlobalStringCopy_00527570",
+    "signature": "void* sub_00527570(void* dst)",
+    "summary": "Copy-constructs the caller-provided std::string from the process-global string and returns it.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00527AC0": {
     "name": "Unknown::forwardDispatchThenVfunc1",
     "class": "Unknown",
