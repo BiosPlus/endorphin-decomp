@@ -70043,6 +70043,12 @@
     "summary": "Stores a 32-bit value at offset 0 and copies a NUL-terminated string (including terminator) to offset 4.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00780160": {
+    "name": "findItemIndexByName",
+    "signature": "int32_t __thiscall sub_00780160(void* self, const char* name)",
+    "summary": "Searches an array of 0x130-byte entries for a matching name string at +0x04 and returns its index or -1.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00780250": {
     "name": "UnknownClass::destroyField04",
     "class": "UnknownClass",

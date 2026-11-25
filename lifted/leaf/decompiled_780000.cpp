@@ -1709,3 +1709,51 @@ void __stdcall sub_0078FED0(
     }
 }
 } // namespace lift_0078FED0
+
+// [0x00783270]
+namespace lift_00783270 {
+extern void fn_007833F0(void* self);
+extern void fn_006A5C5C(uint32_t ptr);
+extern void fn_006B9D70(void* self);
+
+// @name sub_00783270
+// @summary Destructor-like cleanup: sets vtable 0x00996e80, closes owned file, frees +0x04 via MFC80_ord_764, and destroys +0x0c.
+// @field Class +0x00 uint32_t vtable
+// @field Class +0x04 uint32_t field_0x04
+// @field Class +0x0c uint8_t field_0x0c
+void fn_00783270(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(obj + 0x00) = 0x00996E80u;
+    fn_007833F0(obj);
+    uint32_t val = *reinterpret_cast<uint32_t*>(obj + 0x04);
+    fn_006A5C5C(val);
+    *reinterpret_cast<uint32_t*>(obj + 0x04) = 0u;
+    fn_006B9D70(obj + 0x0C);
+}
+} // namespace lift_00783270
+
+// [0x00780160]
+namespace lift_00780160 {
+// @name findItemIndexByName
+// @summary Searches an array of 0x130-byte entries for a matching name string at +0x04 and returns its index or -1.
+// @field this +0x00 int32_t count
+// @field this +0x04 uint32_t items
+int32_t __thiscall sub_00780160(void* self, const char* name) {
+    const auto* base = static_cast<const uint8_t*>(self);
+    int32_t count = *reinterpret_cast<const int32_t*>(base + 0x00);
+    if (count <= 0) {
+        return -1;
+    }
+
+    uintptr_t item_ptr = *reinterpret_cast<const uint32_t*>(base + 0x04) + 0x04;
+    for (int32_t i = 0; i < count; ++i) {
+        const char* entry_name = reinterpret_cast<const char*>(item_ptr);
+        if (std::strcmp(entry_name, name) == 0) {
+            return i;
+        }
+        item_ptr += 0x130;
+    }
+
+    return -1;
+}
+} // namespace lift_00780160
