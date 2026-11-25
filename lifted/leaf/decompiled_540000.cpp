@@ -1296,3 +1296,31 @@ void fn_0054A070(void* self, float radius) {
     mem_00925404();                 // glPopMatrix
 }
 } // namespace lift_0054A070
+
+// [0x0054A860]
+namespace lift_0054A860 {
+// @name TranslateHandleGraphic::TranslateHandleGraphic
+// @class TranslateHandleGraphic
+// @summary Constructs a TranslateHandleGraphic, creates and configures a GLU quadric, and initializes it.
+// @field TranslateHandleGraphic +0x00 uint32_t vtable
+// @field TranslateHandleGraphic +0x18 uint32_t quadric
+
+
+extern uint32_t& mem_u32(void* base, int32_t offset);
+extern void* ext_005528E0(void* self);
+extern void ext_00549940(void* self);
+extern uint32_t ext_0063E000(void);
+extern void ext_0063E00C(uint32_t quadric, uint32_t normals);
+extern void ext_0063E012(uint32_t quadric, uint32_t drawStyle);
+
+extern void* fn_0054A860(void* self) {
+    ext_005528E0(self);
+    mem_u32(self, 0x00) = 0x00956CFCu;
+    uint32_t quadric = ext_0063E000();
+    mem_u32(self, 0x18) = quadric;
+    ext_0063E012(quadric, 0x186ACu);
+    ext_0063E00C(mem_u32(self, 0x18), 0x186A0u);
+    ext_00549940(self);
+    return self;
+}
+} // namespace lift_0054A860
