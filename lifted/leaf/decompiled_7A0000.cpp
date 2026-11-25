@@ -361,3 +361,30 @@ bool sub_007AA7F0(uint32_t arg) {
     return arg == mem_00B5E400;
 }
 } // namespace lift_007AA7F0
+
+// [0x007AA3D0] sub_007AA3D0 (64 bytes)
+namespace lift_007AA3D0 {
+// @name descriptiveName: ClassifyDoubleIndirectTag
+// @summary Follows a double pointer to a 32-bit tag and maps known tags to codes 3, 1, 2 (else 0); returns 0 on any null pointer.
+// @field none (raw double-pointer dereference, no named struct layout)
+int32_t fn_007AA3D0(const void* const* pp) {
+    if (pp == nullptr) {
+        return 0;
+    }
+    const uint32_t* p = static_cast<const uint32_t*>(*pp);
+    if (p == nullptr) {
+        return 0;
+    }
+    const uint32_t tag = *p;
+    if (tag == 0x3DAAu) {
+        return 3;
+    }
+    if (tag == 0x4D4Du) {
+        return 1;
+    }
+    if (tag == 0xC23Du) {
+        return 2;
+    }
+    return 0;
+}
+} // namespace lift_007AA3D0

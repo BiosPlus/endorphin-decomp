@@ -55363,6 +55363,12 @@
     "summary": "Copies the low byte of global mem_00998070 into byte +0x06 of the object passed as the single stack argument.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007AA3D0": {
+    "name": "descriptiveName: ClassifyDoubleIndirectTag",
+    "signature": "int32_t fn_007AA3D0(const void* const* pp)",
+    "summary": "Follows a double pointer to a 32-bit tag and maps known tags to codes 3, 1, 2 (else 0); returns 0 on any null pointer.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AA6B0": {
     "name": "sub_007AA6B0_initGlobalPtrs",
     "signature": "void sub_007AA6B0(void)",

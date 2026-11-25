@@ -1,0 +1,13 @@
+{
+  "va": "0x007AA3D0",
+  "size": 64,
+  "orig_symbol": "sub_007AA3D0",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "descriptiveName: ClassifyDoubleIndirectTag",
+  "signature": "int32_t fn_007AA3D0(const void* const* pp)",
+  "summary": "Follows a double pointer to a 32-bit tag and maps known tags to codes 3, 1, 2 (else 0); returns 0 on any null pointer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:09:23Z"
+}
