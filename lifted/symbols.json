@@ -32182,6 +32182,12 @@
     "summary": "Stores a DWORD value into dst[0] and the lazily-initialized static object's address into dst[1].",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005EC910": {
+    "name": "fillPairWithStaticObject",
+    "signature": "void fn_005EC910(uint32_t* dst, uint32_t value)",
+    "summary": "Calls getOrInitStaticObject_005EAFA0 and stores the given value in dst[0] and the returned static object address in dst[1].",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005EC930": {
     "name": "getOrInitStaticObjectAndStore_005EC930",
     "signature": "void fn_005EC930(void* out, uint32_t value)",

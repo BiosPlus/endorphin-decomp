@@ -756,3 +756,20 @@ void fn_005EC8D0(DWORD* dst, DWORD value) {
     dst[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
 }
 } // namespace lift_005EC8D0
+
+// [0x005EC910] sub_005EC910 (30 bytes)
+namespace lift_005EC910 {
+// Known callee 0x005EAFA0: getOrInitStaticObject_005EAFA0 (Lazily constructs the static object at 0x00B45F20 once (guarded by bit 0 of 0x00B45F24), then returns its address.)
+extern void* ext_005EAFA0();
+
+// @name fillPairWithStaticObject
+// @summary Calls getOrInitStaticObject_005EAFA0 and stores the given value in dst[0] and the returned static object address in dst[1].
+// @field Arg0 +0x00 uint32_t field_0x00
+// @field Arg0 +0x04 uint32_t field_0x04
+void fn_005EC910(uint32_t* dst, uint32_t value) {
+    // The callee takes no meaningful arguments; the original's stack scratch write is dropped.
+    void* obj = ext_005EAFA0();
+    dst[0] = value;
+    dst[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_005EC910
