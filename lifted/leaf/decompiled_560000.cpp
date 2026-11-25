@@ -334,3 +334,28 @@ BOOL fn_00563280(void* self, DWORD arg1, DWORD arg2) {
     return (first && second) ? TRUE : FALSE;
 }
 } // namespace lift_00563280
+
+// [0x005649D0] sub_005649D0 (34 bytes)
+namespace lift_005649D0 {
+// Known callee 0x007C569A: thunk_XSIFtk-3.6.2.1_?Open@CSLScene@@QAEHPAD@Z (IAT jump thunk forwarding to XSIFtk-3.6.2.1!?Open@CSLScene@@QAEHPAD@Z.)
+extern void ext_007C569A();
+extern int mem_00924FF0;
+
+// @name CSLScene::OpenNamed
+// @class CSLScene
+// @summary Converts the std::string argument to a C string via MSVCP80 c_str, passes it to the scene's Open at self+0x494, and returns true when Open reports failure-free (returns 0).
+// @field CSLScene +0x494 void* field_0x494
+
+// __thiscall(this = self), one stack arg (std::string const&), callee-cleans 4 bytes.
+bool fn_005649D0(void* self, const void* name) {
+    using CStrFn = const char* (__thiscall*)(const void*);
+    const char* cstr = reinterpret_cast<CStrFn>(static_cast<uintptr_t>(mem_00924FF0))(name);
+
+    void* scene = *reinterpret_cast<void**>(static_cast<unsigned char*>(self) + 0x494);
+
+    using OpenFn = int (__thiscall*)(void*, const char*);
+    int result = reinterpret_cast<OpenFn>(&ext_007C569A)(scene, cstr);
+
+    return result == 0;
+}
+} // namespace lift_005649D0
