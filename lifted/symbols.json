@@ -14656,6 +14656,12 @@
     "summary": "If the pointer at +0x184 is set, release it (via 0x4CE8D0 and the MFC80 free thunk) and clear the slot.",
     "lifted_path": "lifted/NMData/IncarnationEventData.cpp"
   },
+  "0x004CFDE0": {
+    "name": "storeStaticObjectPair_004CFDE0",
+    "signature": "void storeStaticObjectPair_004CFDE0(DWORD* out, DWORD value)",
+    "summary": "Stores a caller-supplied value into out[0] and the address of the one-time static object (via initStaticObjectOnce_004CF970) into out[1].",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CFE00": {
     "name": "NMData::IncarnationEventData::vfunc_0",
     "class": "NMData::IncarnationEventData",

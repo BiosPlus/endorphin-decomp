@@ -588,3 +588,17 @@ void* fn_004CAE30() {
     return &mem_00AE44A8;
 }
 } // namespace lift_004CAE30
+
+// [0x004CFDE0]
+namespace lift_004CFDE0 {
+// @name storeStaticObjectPair_004CFDE0
+// @summary Stores a caller-supplied value into out[0] and the address of the one-time static object (via initStaticObjectOnce_004CF970) into out[1].
+
+DWORD ext_004CF970(void);
+
+void storeStaticObjectPair_004CFDE0(DWORD* out, DWORD value) {
+    DWORD obj = ext_004CF970();
+    out[0] = value;
+    out[1] = obj;
+}
+} // namespace lift_004CFDE0

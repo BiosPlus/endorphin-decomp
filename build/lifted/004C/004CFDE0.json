@@ -1,0 +1,13 @@
+{
+  "va": "0x004CFDE0",
+  "size": 30,
+  "orig_symbol": "sub_004CFDE0",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "storeStaticObjectPair_004CFDE0",
+  "signature": "void storeStaticObjectPair_004CFDE0(DWORD* out, DWORD value)",
+  "summary": "Stores a caller-supplied value into out[0] and the address of the one-time static object (via initStaticObjectOnce_004CF970) into out[1].",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:34:01Z"
+}
