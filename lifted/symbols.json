@@ -7450,6 +7450,13 @@
     "summary": "Lazily initializes a static type/value descriptor at 0x00AD831C and stores its address at arg0 + 0x4.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x0046E520": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter, bool, getUseRenderer, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0\u003e",
+    "signature": "uint32_t __stdcall fn_0046E520(uint32_t first, uint32_t second)",
+    "summary": "Reads the ImageExporter pointer from the second stack argument, throws if null, otherwise stores ImageExporter::getUseRenderer() into the holder and returns it.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046E570": {
     "name": "ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)",
     "class": "ExprParser::ReadMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getDamping(void) const, 0\u003e",

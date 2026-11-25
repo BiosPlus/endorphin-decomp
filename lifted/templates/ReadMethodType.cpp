@@ -57058,3 +57058,46 @@ void* fn_005B3680(void* unused_arg, void* self) {
     return nullptr;
 }
 } // namespace lift_005B3680
+
+// [0x0046E520] ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_0046E520 {
+// Callee 0x0046C2E0 (thiscall, no stack args): reads the ImageExporter's renderer flag, returns bool in al.
+extern uint8_t __thiscall ext_0046C2E0(void* self);
+// Callee 0x006720A0 (thiscall, one stack argument, callee pops 4 bytes): stores the bool result into the holder.
+extern void __thiscall ext_006720A0(void* self, uint8_t flag);
+// Callee 0x0046C3C0: DerivedException::DerivedException (constructs an ExceptionWithMessage-derived exception with a fixed message and installs its vtable).
+extern void* __thiscall ext_0046C3C0(void* self);
+// Callee 0x006A6DD2: IAT jump thunk forwarding to MSVCR80!_CxxThrowException (cdecl: exception object, ThrowInfo).
+extern void __cdecl ext_006A6DD2(void* exc, const void* throw_info);
+// ThrowInfo address pushed by the original code (0x009DEC1C in .rdata; only its address is used).
+extern uint8_t mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, getUseRenderer, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0>
+// @summary Reads the ImageExporter pointer from the second stack argument, throws if null, otherwise stores ImageExporter::getUseRenderer() into the holder and returns it.
+// @field ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0> +0x00 void* field_0x00
+uint32_t __stdcall fn_0046E520(uint32_t first, uint32_t second) {
+    (void)first;  // Stack argument at [esp+4] is not read by the original code.
+
+    // mov ecx, [eax] where eax = second: the ImageExporter instance stored at offset 0 of the holder.
+    void* holder = reinterpret_cast<void*>(static_cast<uintptr_t>(second));
+    void* exporter = *reinterpret_cast<void**>(holder);
+
+    if (exporter == nullptr) {
+        // Null path: build a local exception object and throw it (original: lea ecx,[esp+4]; call ctor; push ThrowInfo; push &exc; call _CxxThrowException).
+        alignas(8) uint8_t exc[0x40] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return 0;  // Not reached: _CxxThrowException does not return.
+    }
+
+    // call sub_0046C2E0 with ecx = exporter; result is the bool in al.
+    uint8_t flag = ext_0046C2E0(exporter);
+
+    // call sub_006720A0 with ecx = holder (esi), one stack argument = flag.
+    ext_006720A0(holder, flag);
+
+    // mov eax, esi: return the holder pointer. ret 8 is handled by __stdcall with two args.
+    return second;
+}
+} // namespace lift_0046E520

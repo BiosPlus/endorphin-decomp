@@ -1,0 +1,14 @@
+{
+  "va": "0x0046E520",
+  "size": 79,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter, bool, getUseRenderer, 0\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0\u003e",
+  "signature": "uint32_t __stdcall fn_0046E520(uint32_t first, uint32_t second)",
+  "summary": "Reads the ImageExporter pointer from the second stack argument, throws if null, otherwise stores ImageExporter::getUseRenderer() into the holder and returns it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:07:49Z"
+}
