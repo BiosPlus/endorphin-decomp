@@ -1741,3 +1741,25 @@ extern void fn_0046C0A0(void* /*unused*/, float* out_val) {
     *out_val = static_cast<float>(std::atof(s->c_str()));
 }
 } // namespace lift_0046C0A0
+
+// [0x0046C320]
+namespace lift_0046C320 {
+extern void* ext_00403560(void* self, const void* msg);
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FF4;
+
+// @name ExceptionWithMessage::constructDefaultMessage
+// @class ExceptionWithMessage
+// @summary Constructs an ExceptionWithMessage-derived exception with a default message string at 0x0093a7b4 and installs vtable 0x0093a7ac.
+// @field ExceptionWithMessage +0x00 uint32_t vtable
+void* fn_0046C320(void* self) {
+    uint8_t temp_str[0x1C];
+    using StringCtor = void(__thiscall*)(void*, const char*);
+    using StringDtor = void(__thiscall*)(void*);
+    reinterpret_cast<StringCtor>(mem_00924FE4)(temp_str, reinterpret_cast<const char*>(0x0093a7b4));
+    ext_00403560(self, temp_str);
+    reinterpret_cast<StringDtor>(mem_00924FF4)(temp_str);
+    *reinterpret_cast<uint32_t*>(self) = 0x0093a7ac;
+    return self;
+}
+} // namespace lift_0046C320

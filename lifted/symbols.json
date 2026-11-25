@@ -7697,6 +7697,13 @@
     "summary": "Sets this+0x1c to val if val is less than or equal to the float limit at *( *(this+0x4c) + 0xf8 ) + 0x138.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046C320": {
+    "name": "ExceptionWithMessage::constructDefaultMessage",
+    "class": "ExceptionWithMessage",
+    "signature": "void* fn_0046C320(void* self)",
+    "summary": "Constructs an ExceptionWithMessage-derived exception with a default message string at 0x0093a7b4 and installs vtable 0x0093a7ac.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046C430": {
     "name": "ExprParser::BoolType::vfunc_51",
     "class": "ExprParser::BoolType",

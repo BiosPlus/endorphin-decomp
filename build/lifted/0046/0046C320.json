@@ -1,0 +1,22 @@
+{
+  "va": "0x0046C320",
+  "size": 105,
+  "orig_symbol": "sub_0046C320",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "ExceptionWithMessage::constructDefaultMessage",
+  "class": "ExceptionWithMessage",
+  "signature": "void* fn_0046C320(void* self)",
+  "summary": "Constructs an ExceptionWithMessage-derived exception with a default message string at 0x0093a7b4 and installs vtable 0x0093a7ac.",
+  "fields": [
+    {
+      "class": "ExceptionWithMessage",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:05:05Z"
+}
