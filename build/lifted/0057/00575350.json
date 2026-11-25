@@ -1,0 +1,40 @@
+{
+  "va": "0x00575350",
+  "size": 96,
+  "orig_symbol": "sub_00575350",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "Quat::setAxisAngle",
+  "class": "Quat",
+  "signature": "extern \"C\" void __thiscall fn_00575350(void* self, const float* axis, float angle)",
+  "summary": "Sets a quaternion (w, x, y, z) from an axis vector and rotation angle in radians.",
+  "fields": [
+    {
+      "class": "Quat",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "w"
+    },
+    {
+      "class": "Quat",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "x"
+    },
+    {
+      "class": "Quat",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "y"
+    },
+    {
+      "class": "Quat",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "z"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:36:55Z"
+}

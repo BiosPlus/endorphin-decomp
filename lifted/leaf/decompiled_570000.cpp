@@ -1618,3 +1618,26 @@ void* fn_0057BF20(void* first, void* last, const std::string& key) {
     return base;
 }
 } // namespace lift_0057BF20
+
+// [0x00575350]
+namespace lift_00575350 {
+// @name Quat::setAxisAngle
+// @class Quat
+// @summary Sets a quaternion (w, x, y, z) from an axis vector and rotation angle in radians.
+// @field Quat +0x00 float w
+// @field Quat +0x04 float x
+// @field Quat +0x08 float y
+// @field Quat +0x0C float z
+
+
+extern void __thiscall fn_00575350(void* self, const float* axis, float angle) {
+    float* q = static_cast<float*>(self);
+    float halfAngle = static_cast<float>(static_cast<double>(angle) * 0.5);
+    float s = std::sin(halfAngle);
+    float c = std::cos(halfAngle);
+    q[0] = c;
+    q[1] = axis[0] * s;
+    q[2] = axis[1] * s;
+    q[3] = axis[2] * s;
+}
+} // namespace lift_00575350
