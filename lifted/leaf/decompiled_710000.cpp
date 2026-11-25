@@ -1383,3 +1383,30 @@ uint32_t fn_0071C430(void* self) {
     return result;
 }
 } // namespace lift_0071C430
+
+// [0x0071C250]
+namespace lift_0071C250 {
+extern const double mem_00993C98;
+extern const double mem_00993828;
+extern const double mem_00996640;
+
+// @name Unknown::ComputeScaledHalfAngleRatio
+// @class Unknown
+// @summary Returns 0.5 * x / tan(angle * pi/360), where x is arg2 * 25.4 when this->field_0x0C->field_0x408 == 2, otherwise arg0 * 25.4 * field_0x0C->field_0xD28.
+// @field Unknown +0x0C void* field_0x0C
+// @field Unknown +0x408 int32_t field_0x408
+// @field Unknown +0xD28 double field_0xD28
+extern double __thiscall fn_0071C250(void* self, double arg0, double arg1, double angleDeg) {
+    void* obj = lift_field<void*>(self, 0x0C);
+
+    double x;
+    if (lift_field<int32_t>(obj, 0x408) == 2) {
+        x = arg1 * mem_00996640;
+    } else {
+        x = arg0 * mem_00996640 * lift_field<double>(obj, 0xD28);
+    }
+
+    double halfTan = std::tan(angleDeg * mem_00993C98);
+    return (x / halfTan) * mem_00993828;
+}
+} // namespace lift_0071C250

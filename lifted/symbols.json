@@ -55879,6 +55879,13 @@
     "summary": "Returns atan(0.5 * scaled(a1 or a2) / a3) in degrees; a1 is scaled by 25.4 and by a double at this-\u003efield_0x0C-\u003efield_0xD28 unless field_0x0C-\u003efield_0x408 == 2, in which case a2 is scaled by 25.4 instead.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x0071C250": {
+    "name": "Unknown::ComputeScaledHalfAngleRatio",
+    "class": "Unknown",
+    "signature": "extern \"C\" double __thiscall fn_0071C250(void* self, double arg0, double arg1, double angleDeg)",
+    "summary": "Returns 0.5 * x / tan(angle * pi/360), where x is arg2 * 25.4 when this-\u003efield_0x0C-\u003efield_0x408 == 2, otherwise arg0 * 25.4 * field_0x0C-\u003efield_0xD28.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071C2E0": {
     "name": "sub_0071C2E0",
     "class": "Unknown",

@@ -278,7 +278,7 @@ struct Unknown_Fields {
     // +0xC   uint32_t*                field_0x0C  (evidence: 0x00481BD0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t[16]             field_0x0C  (evidence: 0x0065C320, 0x0065F280) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint8_t                  field_0x0C  (evidence: 0x00532B60, 0x00612370, 0x006B2F70, 0x006B9990, 0x006F0120, 0x006F01A0, 0x006F0220, 0x006F08E0, 0x006F1120, 0x006F9DC0, 0x006FC200, 0x00790D60, 0x0079ADA0, 0x0079DCE0, 0x0079EB70) // CONFLICT: multiple definitions at +0xC
-    // +0xC   void*                    field_0x0C  (evidence: 0x0041D330, 0x00428A60, 0x0059FF10, 0x005B1B90, 0x00642660, 0x006426F0, 0x00648A20, 0x0067AE70, 0x006D9030, 0x006D9060, 0x0071C210, 0x0071C3B0, 0x0071C480, 0x0071C870, 0x0071C8E0, 0x0071C960, 0x0071C9B0, 0x0071C9E0, 0x0071F070, 0x007D8470, 0x007DFDC0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void*                    field_0x0C  (evidence: 0x0041D330, 0x00428A60, 0x0059FF10, 0x005B1B90, 0x00642660, 0x006426F0, 0x00648A20, 0x0067AE70, 0x006D9030, 0x006D9060, 0x0071C210, 0x0071C250, 0x0071C3B0, 0x0071C480, 0x0071C870, 0x0071C8E0, 0x0071C960, 0x0071C9B0, 0x0071C9E0, 0x0071F070, 0x007D8470, 0x007DFDC0) // CONFLICT: multiple definitions at +0xC
     // +0xC   FLOAT                    field_0x0c  (evidence: 0x005F5350) // CONFLICT: multiple definitions at +0xC
     // +0xC   float                    field_0x0c  (evidence: 0x00519E50) // CONFLICT: multiple definitions at +0xC
     // +0xC   std::string              field_0x0c  (evidence: 0x00522220, 0x00557280, 0x0057D7F0) // CONFLICT: multiple definitions at +0xC
@@ -1029,6 +1029,7 @@ struct Unknown_Fields {
     // +0x3D8 uint32_t                 field_0x3d8  (evidence: 0x006C0730)
     // +0x3DC uint32_t                 field_0x3dc  (evidence: 0x006C0730)
     // +0x3E0 uint32_t                 field_0x3e0  (evidence: 0x004800A0)
+    // +0x408 int32_t                  field_0x408  (evidence: 0x0071C250)
     // +0x420 void*                    field_0x420  (evidence: 0x00553760)
     // +0x428 void*                    field_0x428  (evidence: 0x0040B860, 0x0040B880)
     // +0x458 std::string              field_0x458  (evidence: 0x0044CCF0)
@@ -1060,6 +1061,7 @@ struct Unknown_Fields {
     // +0x7D4 uint32_t                 field_0x7d4  (evidence: 0x007AC510)
     // +0x81C void*                    field_0x81C  (evidence: 0x00704A20, 0x0070AD00, 0x0070BF00)
     // +0x9C0 uint8_t                  field_0x9C0  (evidence: 0x0044CE90)
+    // +0xD28 double                   field_0xD28  (evidence: 0x0071C250)
     // +0xF88 uint8_t                  field_0xF88  (evidence: 0x0079D6D0)
     // +0xFD0 uint32_t field_0xFD0 (on the object pointed to by +0x0C)  (evidence: 0x0071C480, 0x0071F070)
     // +0xFD4 uint32_t field_0xFD4 (on the object pointed to by +0x0C)  (evidence: 0x0071C480, 0x0071F070)

@@ -1,0 +1,34 @@
+{
+  "va": "0x0071C250",
+  "size": 80,
+  "orig_symbol": "sub_0071C250",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::ComputeScaledHalfAngleRatio",
+  "class": "Unknown",
+  "signature": "extern \"C\" double __thiscall fn_0071C250(void* self, double arg0, double arg1, double angleDeg)",
+  "summary": "Returns 0.5 * x / tan(angle * pi/360), where x is arg2 * 25.4 when this-\u003efield_0x0C-\u003efield_0x408 == 2, otherwise arg0 * 25.4 * field_0x0C-\u003efield_0xD28.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x408",
+      "type": "int32_t",
+      "name": "field_0x408"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD28",
+      "type": "double",
+      "name": "field_0xD28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:51:49Z"
+}
