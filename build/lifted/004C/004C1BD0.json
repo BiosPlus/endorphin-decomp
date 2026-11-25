@@ -1,0 +1,27 @@
+{
+  "va": "0x004C1BD0",
+  "size": 30,
+  "orig_symbol": "sub_004C1BD0",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "storeValueAndStaticPtrPair_004C1BD0",
+  "signature": "void fn_004C1BD0(void* dst, uint32_t value)",
+  "summary": "Stores value into dst+0x00 and the result of ext_004C0E40(0) into dst+0x04.",
+  "fields": [
+    {
+      "class": "DwordPair",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "DwordPair",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:32:39Z"
+}

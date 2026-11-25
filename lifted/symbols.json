@@ -13518,6 +13518,12 @@
     "summary": "Stores a [first, second] int pair into the event's range fields, widening an empty range by one, then calls ext_004C0340.",
     "lifted_path": "lifted/NMData/ForceEventData.cpp"
   },
+  "0x004C1BD0": {
+    "name": "storeValueAndStaticPtrPair_004C1BD0",
+    "signature": "void fn_004C1BD0(void* dst, uint32_t value)",
+    "summary": "Stores value into dst+0x00 and the result of ext_004C0E40(0) into dst+0x04.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C1C20": {
     "name": "ExprParser::ReadMethodType_NetworkConnectorData_string_vfunc_1",
     "class": "ExprParser::ReadMethodType",

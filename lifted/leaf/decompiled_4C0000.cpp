@@ -470,3 +470,19 @@ void* __cdecl fn_004CADD0() {
     return &mem_00AE44A0;
 }
 } // namespace lift_004CADD0
+
+// [0x004C1BD0] sub_004C1BD0 (30 bytes)
+namespace lift_004C1BD0 {
+// Known callee 0x004C0E40: initStaticObjectOnce_004C0E40 (One-time initializer returning the address of the static object; caller passes a single stack argument of 0.)
+extern void* ext_004C0E40(uint32_t arg0);
+
+// @name storeValueAndStaticPtrPair_004C1BD0
+// @summary Stores value into dst+0x00 and the result of ext_004C0E40(0) into dst+0x04.
+// @field DwordPair +0x00 uint32_t field_0x00
+// @field DwordPair +0x04 uint32_t field_0x04
+void fn_004C1BD0(void* dst, uint32_t value) {
+    uint32_t result = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(ext_004C0E40(0)));
+    lift_field<uint32_t>(dst, 0x00) = value;
+    lift_field<uint32_t>(dst, 0x04) = result;
+}
+} // namespace lift_004C1BD0

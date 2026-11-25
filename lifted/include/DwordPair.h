@@ -8,7 +8,9 @@
 // Recovered field layout for DwordPair:
 namespace lifted_layout {
 struct DwordPair_Fields {
-    // +0x0   DWORD                    field_0x00  (evidence: 0x0055DA20)
-    // +0x4   DWORD                    field_0x04  (evidence: 0x0055DA20)
+    // +0x0   DWORD                    field_0x00  (evidence: 0x0055DA20) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x004C1BD0) // CONFLICT: multiple definitions at +0x0
+    // +0x4   DWORD                    field_0x04  (evidence: 0x0055DA20) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x004C1BD0) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout
