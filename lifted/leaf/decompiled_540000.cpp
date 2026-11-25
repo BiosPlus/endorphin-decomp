@@ -1037,3 +1037,32 @@ void fn_00545C40(void* self, float* out, int32_t index, float value) {
     out[index] = value;
 }
 } // namespace lift_00545C40
+
+// [0x0054C700] sub_0054C700 (94 bytes)
+namespace lift_0054C700 {
+// Imported MSVCP80 std::basic_string<char> members (called through the IAT in the original).
+extern void ext_MSVCP80_basic_string_ctor(void* str);
+extern void ext_MSVCP80_basic_string_assign_cstr(void* str, const char* s);
+
+// .rdata string literal passed to basic_string::operator=(const char*).
+extern const char mem_0092C520[];
+
+// @name Unknown::InitWithStringLiteral
+// @class Unknown
+// @summary Constructs the object: sets vtable, stores length 14 at +0x4, and assigns a literal string to the embedded std::string at +0x8; returns this.
+// @field Unknown +0x00 uint32_t vftable
+// @field Unknown +0x04 int32_t field_0x04
+// @field Unknown +0x08 void* field_0x08
+//
+// The original wraps the body in an MSVC SEH frame (fs:[0] push/pop, -1 try-state)
+// used only for unwinding if the string constructor throws; that is compiler
+// scaffolding and is not reproduced here.
+void* fn_0054C700(void* self) {
+    void* str = static_cast<uint8_t*>(self) + 0x08;            // embedded std::string (ecx = this+8)
+    lift_field<uint32_t>(self, 0x00) = 0x956DFC;               // vftable
+    ext_MSVCP80_basic_string_ctor(str);
+    lift_field<int32_t>(self, 0x04) = 0x0E;                    // stored length/state
+    ext_MSVCP80_basic_string_assign_cstr(str, mem_0092C520);
+    return self;                                               // mov eax, esi
+}
+} // namespace lift_0054C700

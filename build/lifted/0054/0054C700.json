@@ -1,0 +1,34 @@
+{
+  "va": "0x0054C700",
+  "size": 94,
+  "orig_symbol": "sub_0054C700",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Unknown::InitWithStringLiteral",
+  "class": "Unknown",
+  "signature": "void* fn_0054C700(void* self)",
+  "summary": "Constructs the object: sets vtable, stores length 14 at +0x4, and assigns a literal string to the embedded std::string at +0x8; returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:21:49Z"
+}
