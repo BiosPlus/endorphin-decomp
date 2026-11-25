@@ -57,3 +57,23 @@ float fn_004F4ED0(void* self) {
     return static_cast<float>(std::acos(static_cast<double>(ratio)));
 }
 } // namespace lift_004F4ED0
+
+// [0x004FDE90] sub_004FDE90 (83 bytes)
+namespace lift_004FDE90 {
+// Known callee 0x00665810: sub_00665810 (Stores address of mem_00987A04 into field at offset +0x0.)
+extern void __fastcall ext_00665810(void* self);
+
+// @name Unknown::releaseChildAndResetBase_004FDE90
+// @class Unknown
+// @summary Releases the object at +0x18 via its virtual slot 0 (deleting dtor, flag 1), then calls the base-reset helper on self.
+// @field Unknown +0x18 void* field_0x18
+void fn_004FDE90(void* self) {
+    void* child = lift_field<void*>(self, 0x18);
+    if (child != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(child);
+        using ScalarDtorFn = void (*)(void* thisPtr, int flags);
+        reinterpret_cast<ScalarDtorFn>(vtbl[0])(child, 1);
+    }
+    ext_00665810(self);
+}
+} // namespace lift_004FDE90

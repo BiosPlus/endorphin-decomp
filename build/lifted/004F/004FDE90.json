@@ -1,0 +1,22 @@
+{
+  "va": "0x004FDE90",
+  "size": 83,
+  "orig_symbol": "sub_004FDE90",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "Unknown::releaseChildAndResetBase_004FDE90",
+  "class": "Unknown",
+  "signature": "void fn_004FDE90(void* self)",
+  "summary": "Releases the object at +0x18 via its virtual slot 0 (deleting dtor, flag 1), then calls the base-reset helper on self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:04:10Z"
+}
