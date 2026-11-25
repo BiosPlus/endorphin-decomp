@@ -953,3 +953,19 @@ uint32_t __thiscall sub_007AEC70(void* self, void* dst, uint32_t size, uint8_t f
     return toCopy;
 }
 } // namespace lift_007AEC70
+
+// [0x007AED60]
+namespace lift_007AED60 {
+// @name MemoryReader::readUInt32
+// @class MemoryReader
+// @summary Reads a 32-bit unsigned integer from an in-memory buffer into dst
+extern uint32_t __thiscall ext_007AEC70(void* self, void* dst, uint32_t size, uint8_t failIfShort);
+
+uint32_t __thiscall sub_007AED60(void* self, uint32_t* dst, uint8_t swapEndian) {
+    if (!ext_007AEC70(self, dst, 4, 1)) {
+        return 0;
+    }
+    (void)swapEndian;
+    return *dst;
+}
+} // namespace lift_007AED60

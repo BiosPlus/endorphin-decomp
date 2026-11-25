@@ -1,0 +1,14 @@
+{
+  "va": "0x007AED60",
+  "size": 52,
+  "orig_symbol": "sub_007AED60",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "MemoryReader::readUInt32",
+  "class": "MemoryReader",
+  "signature": "uint32_t __thiscall sub_007AED60(void* self, uint32_t* dst, uint8_t swapEndian)",
+  "summary": "Reads a 32-bit unsigned integer from an in-memory buffer into dst",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:22:44Z"
+}
