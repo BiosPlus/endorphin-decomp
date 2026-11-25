@@ -1173,3 +1173,20 @@ void fn_00719BB0(void* self, void* out) {
     }
 }
 } // namespace lift_00719BB0
+
+// [0x0071A580] sub_0071A580 (61 bytes)
+namespace lift_0071A580 {
+// @name GetStringTableEntryVA
+// @summary Maps an index 0..4 to a fixed data-section VA constant; returns 0 for out-of-range indices.
+DWORD fn_0071A580(DWORD index) {
+    // Jump-table dispatch on index (cmp eax,4 / ja default). Each case loads a VA immediate.
+    switch (index) {
+        case 0:  return 0x00AAC8A8u;
+        case 1:  return 0x00AAC89Cu;
+        case 2:  return 0x00AAC888u;
+        case 3:  return 0x00AAC870u;
+        case 4:  return 0x00AAC858u;
+        default: return 0u;
+    }
+}
+} // namespace lift_0071A580

@@ -52009,6 +52009,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0071A1F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071A580": {
+    "name": "GetStringTableEntryVA",
+    "signature": "DWORD fn_0071A580(DWORD index)",
+    "summary": "Maps an index 0..4 to a fixed data-section VA constant; returns 0 for out-of-range indices.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071A5E0": {
     "name": "getOrientationString",
     "signature": "const char* __stdcall sub_0071A5E0(int32_t orientation)",

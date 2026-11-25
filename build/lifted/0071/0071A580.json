@@ -1,0 +1,13 @@
+{
+  "va": "0x0071A580",
+  "size": 61,
+  "orig_symbol": "sub_0071A580",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "GetStringTableEntryVA",
+  "signature": "DWORD fn_0071A580(DWORD index)",
+  "summary": "Maps an index 0..4 to a fixed data-section VA constant; returns 0 for out-of-range indices.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:57:35Z"
+}
