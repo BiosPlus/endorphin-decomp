@@ -30985,6 +30985,13 @@
     "summary": "Gets an int32 handle from ext_00594000, calls ext_006781B0 on the object at (handle + 0x2E0) with the float argument, and stores the float result into this+0x08; thiscall, callee pops 4 bytes.",
     "lifted_path": "lifted/leaf/decompiled_610000.cpp"
   },
+  "0x00610C10": {
+    "name": "Unknown::ResetAndSetDefaults_00610C10",
+    "class": "Unknown",
+    "signature": "void fn_00610C10(void* self)",
+    "summary": "Thiscall initializer: clears flag byte at +0x04, zeroes the two 32-bit elements at indices 1 and 0 of the inline array at +0x20, and stores the float defaults 1.5, 1000.0 and 0.1 into the +0x08..+0x1C pairs.",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
   "0x00610C60": {
     "name": "UnknownClass::setElementFromVec4",
     "class": "UnknownClass",

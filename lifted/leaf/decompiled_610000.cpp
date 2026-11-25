@@ -417,3 +417,56 @@ void __thiscall fn_00612370(void* self, float value) {
     }
 }
 } // namespace lift_00612370
+
+// [0x00610C10] sub_00610C10 (76 bytes)
+namespace lift_00610C10 {
+// Known callee 0x005B11D0: UnknownClass::getElementPtr (Returns a pointer to the 32-bit element at the given index in an inline array at offset 0x10.)
+extern uint32_t* ext_005B11D0(uintptr_t self, uint32_t index);
+
+// Float constants in .rdata
+extern float mem_0092C8CC; // 1.5f
+extern float mem_0093E990; // 1000.0f
+extern float mem_0093F8EC; // 0.1f
+
+// @name Unknown::ResetAndSetDefaults_00610C10
+// @class Unknown
+// @summary Thiscall initializer: clears flag byte at +0x04, zeroes the two 32-bit elements at indices 1 and 0 of the inline array at +0x20, and stores the float defaults 1.5, 1000.0 and 0.1 into the +0x08..+0x1C pairs.
+// @field Unknown +0x04 uint8_t field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x0C float field_0x0C
+// @field Unknown +0x10 float field_0x10
+// @field Unknown +0x14 float field_0x14
+// @field Unknown +0x18 float field_0x18
+// @field Unknown +0x1C float field_0x1C
+// @field Unknown +0x20 uint8_t field_0x20
+void fn_00610C10(void* self) {
+    uint8_t* obj = reinterpret_cast<uint8_t*>(self);
+
+    // mov byte ptr [esi + 0x4], 0x0
+    lift_field<uint8_t>(obj, 0x04) = 0;
+
+    // Element 1 of the inline array at +0x20 = 0.0f (fldz/fstp; +0.0f bit pattern is 0)
+    uintptr_t arr = reinterpret_cast<uintptr_t>(obj + 0x20);
+    uint32_t* elem1 = ext_005B11D0(arr, 1);
+    *elem1 = 0u;
+
+    // Element 0 of the inline array at +0x20 = 0.0f
+    uint32_t* elem0 = ext_005B11D0(arr, 0);
+    *elem0 = 0u;
+
+    // fld [0x92c8cc] -> fst [esi+0xc] -> fstp [esi+0x8]
+    float v1 = mem_0092C8CC;
+    lift_field<float>(obj, 0x0C) = v1;
+    lift_field<float>(obj, 0x08) = v1;
+
+    // fld [0x93e990] -> fst [esi+0x1c] -> fstp [esi+0x18]
+    float v2 = mem_0093E990;
+    lift_field<float>(obj, 0x1C) = v2;
+    lift_field<float>(obj, 0x18) = v2;
+
+    // fld [0x93f8ec] -> fst [esi+0x14] -> fstp [esi+0x10]
+    float v3 = mem_0093F8EC;
+    lift_field<float>(obj, 0x14) = v3;
+    lift_field<float>(obj, 0x10) = v3;
+}
+} // namespace lift_00610C10
