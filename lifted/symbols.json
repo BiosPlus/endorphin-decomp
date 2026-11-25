@@ -45065,6 +45065,18 @@
     "summary": "Returns 1 if the double behind the held pointer, rounded to float, is \u003e= 1e-6 (NaN yields 0); throws via ext_0046C3C0 when the pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00695CE0": {
+    "name": "sub_00695CE0",
+    "signature": "void* fn_00695CE0()",
+    "summary": "Auto-lifted identical-shape clone of 0x0066E660 (sub_0066E660).",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
+  "0x00695E00": {
+    "name": "sub_00695E00",
+    "signature": "DWORD ext_00695CE0();  // ConstructOnce_0046F580 DWORD* fn_00695E00(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0061EED0 (sub_0061EED0).",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00695E20": {
     "name": "sub_00695E20",
     "signature": "void* fn_00695E20(void* self, uint32_t ecx_in)",
@@ -45314,10 +45326,24 @@
     "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x0069A160": {
+    "name": "sub_0069A160",
+    "class": "Unknown",
+    "signature": "VectorIterator* __thiscall fn_0069A160(void* self, VectorIterator* out_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr)",
+    "summary": "Auto-lifted identical-shape clone of 0x0057A770 (sub_0057A770).",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x0069A1C0": {
     "name": "sub_0069A1C0",
     "signature": "DWORD* __thiscall fn_0069A1C0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
+  "0x0069A260": {
+    "name": "sub_0069A260",
+    "class": "Unknown",
+    "signature": "void fn_0069A260(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0051EC00 (sub_0051EC00).",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
   "0x0069A820": {

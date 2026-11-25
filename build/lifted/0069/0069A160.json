@@ -1,0 +1,22 @@
+{
+  "va": "0x0069A160",
+  "size": 89,
+  "orig_symbol": "sub_0069A160",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "sub_0069A160",
+  "class": "Unknown",
+  "signature": "VectorIterator* __thiscall fn_0069A160(void* self, VectorIterator* out_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr)",
+  "summary": "Auto-lifted identical-shape clone of 0x0057A770 (sub_0057A770).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T03:12:18Z"
+}

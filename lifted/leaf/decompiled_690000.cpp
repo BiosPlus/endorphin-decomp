@@ -52,8 +52,11 @@ void* fn_00695E20(void* self, uint32_t ecx_in) {
     return self;
 }
 } // namespace lift_00695E20
+#include <cstring>
+#include <cmath>
+#include <cstdlib>
 
-// [0x006991F0]
+#include <cstdlib>
 namespace lift_006991F0 {
 // @name setOwnedObject_006991F0
 // @summary Replaces an owned object pointer at +0x8, invoking its virtual deleting destructor if non-null and different
@@ -74,8 +77,10 @@ void __thiscall sub_006991F0(uint32_t self, uint32_t newPtr) {
     mem_w32(self + 0x8, newPtr);
 }
 } // namespace lift_006991F0
+#include <istream>
+#include <bit>
 
-// [0x006989B0]
+#include <bit>
 namespace lift_006989B0 {
 // @name CopyBytesRange
 // @summary Copies bytes from [first, last) to dst; returns dst advanced past the copied bytes. Null dst skips stores but still advances the count.
@@ -94,6 +99,7 @@ uint8_t* CopyBytesRange(const uint8_t* first, const uint8_t* last, uint8_t* dst)
     return out;
 }
 } // namespace lift_006989B0
+#include <stdexcept>
 
 // [0x00698A40]
 namespace lift_00698A40 {
@@ -1041,3 +1047,156 @@ extern void* __fastcall fn_006998D0(void* self, int edx_unused, const void* src)
     return self;
 }
 } // namespace lift_006998D0
+
+// [0x00695CE0] sub_00695CE0 (87 bytes)
+namespace lift_00695CE0 {
+// @name sub_00695CE0
+// @summary Auto-lifted identical-shape clone of 0x0066E660 (sub_0066E660).
+namespace lift_0066E660 {
+// @name sub_0066E660
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B5C7A0;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B5C79C;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_00695CE0() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8B603Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B5C7A0 & 1u) == 0) {
+        mem_00B5C7A0 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B5C79C, frame[0]);
+        mem_00B5C79C = 0x98F41Cu;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B5C79C;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0066E660
+} // namespace lift_00695CE0
+
+// [0x00695E00] sub_00695E00 (30 bytes)
+namespace lift_00695E00 {
+// @name sub_00695E00
+// @summary Auto-lifted identical-shape clone of 0x0061EED0 (sub_0061EED0).
+namespace lift_0061EED0 {
+// @name sub_0061EED0
+// @summary Auto-lifted identical-shape clone of 0x0058D8D0 (sub_0058D8D0).
+namespace lift_0058D8D0 {
+// @name sub_0058D8D0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_00695CE0();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_00695E00(DWORD* dst, DWORD value) {
+    DWORD obj = ext_00695CE0();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0058D8D0
+} // namespace lift_0061EED0
+} // namespace lift_00695E00
+
+// [0x0069A160] sub_0069A160 (89 bytes)
+namespace lift_0069A160 {
+// @name sub_0069A160
+// @summary Auto-lifted identical-shape clone of 0x0057A770 (sub_0057A770).
+namespace lift_0057A770 {
+// @name sub_0057A770
+// @summary Auto-lifted identical-shape clone of 0x0057E9E0 (Unknown::eraseStringVectorRange).
+namespace lift_0057E9E0 {
+// @name Unknown::eraseStringVectorRange
+// @class Unknown
+// @summary Erases [first, last) from a 0x14-byte-record vector by shifting [last, end) over first, destroying the trailing elements, and returning the updated iterator.
+// @field Unknown +0x08 void* end
+
+void ext_00672C20(void* first, void* last);
+void* ext_0069A090(const void* first, const void* last, void* out);
+extern void (*mem_00925134)();
+
+struct VectorIterator {
+    void* container;
+    void* ptr;
+};
+
+VectorIterator* __thiscall fn_0069A160(void* self, VectorIterator* out_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr) {
+    if (!first_container || first_container != last_container) {
+        mem_00925134();
+    }
+    if (first_ptr != last_ptr) {
+        void* end_ptr = *(void**)((char*)self + 0x08);
+        void* new_end = ext_0069A090(last_ptr, end_ptr, first_ptr);
+        ext_00672C20(new_end, end_ptr);
+        *(void**)((char*)self + 0x08) = new_end;
+    }
+    out_iter->container = first_container;
+    out_iter->ptr = first_ptr;
+    return out_iter;
+}
+} // namespace lift_0057E9E0
+} // namespace lift_0057A770
+} // namespace lift_0069A160
+
+// [0x0069A260] sub_0069A260 (59 bytes)
+namespace lift_0069A260 {
+// @name sub_0069A260
+// @summary Auto-lifted identical-shape clone of 0x0051EC00 (sub_0051EC00).
+namespace lift_0051EC00 {
+// @name sub_0051EC00
+// @summary Auto-lifted identical-shape clone of 0x005015E0 (Unknown::eraseRangeFromSelf).
+namespace lift_005015E0 {
+// Known callee 0x005013F0: sub_005013F0 (Auto-lifted identical-shape clone of 0x0057E9E0 (Unknown::eraseStringVectorRange).)
+// Thiscall: self in ecx, then five stack args (out_iter, first_container, first_ptr, last_container, last_ptr).
+extern void* ext_0069A160(void* self, void* out_iter, void* first_container,
+                              void* first_ptr, void* last_container, void* last_ptr);
+
+// @name Unknown::eraseRangeFromSelf
+// @class Unknown
+// @summary Erases the element range bounded by self+0x04 .. self+0x08 by forwarding both bounds to 0x005013F0.
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+void fn_0069A260(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    auto load_u32 = [&](std::size_t off) {
+        std::uint32_t v;
+        std::memcpy(&v, base + off, sizeof v);
+        return v;
+    };
+
+    // The original asserts first <= last via _invalid_parameter_noinfo (diagnostic only; no
+    // observable effect on the erase), so it is omitted here.
+    const auto first = static_cast<std::uintptr_t>(load_u32(0x04));
+    const auto last = static_cast<std::uintptr_t>(load_u32(0x08));
+
+    // The out iterator is a caller-provided slot; this function never reads it.
+    alignas(8) unsigned char out_iter[16] = {};
+    ext_0069A160(self, out_iter, self, reinterpret_cast<void*>(first),
+                 self, reinterpret_cast<void*>(last));
+}
+} // namespace lift_005015E0
+} // namespace lift_0051EC00
+} // namespace lift_0069A260

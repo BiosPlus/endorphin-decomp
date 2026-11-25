@@ -1,0 +1,27 @@
+{
+  "va": "0x00695E00",
+  "size": 30,
+  "orig_symbol": "sub_00695E00",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "sub_00695E00",
+  "signature": "DWORD ext_00695CE0();  // ConstructOnce_0046F580 DWORD* fn_00695E00(DWORD* dst, DWORD value)",
+  "summary": "Auto-lifted identical-shape clone of 0x0061EED0 (sub_0061EED0).",
+  "fields": [
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x0",
+      "type": "DWORD field_0x00 (written from the value",
+      "name": "argument)"
+    },
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x4",
+      "type": "DWORD field_0x04 (written from ext_0046F580()",
+      "name": "result)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T03:12:18Z"
+}
