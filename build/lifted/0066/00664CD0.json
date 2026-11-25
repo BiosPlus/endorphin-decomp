@@ -1,0 +1,27 @@
+{
+  "va": "0x00664CD0",
+  "size": 103,
+  "orig_symbol": "sub_00664CD0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "upperCopyRangeToPair",
+  "signature": "TextRange* fn_00664CD0(TextRange* out, const char* first, const char* last, uint32_t a3, uint32_t a4)",
+  "summary": "Builds a TextRange from (a3,a4) and the span length, stores it to out, then uppercase-copies [first,last) into dest; returns out.",
+  "fields": [
+    {
+      "class": "TextRange",
+      "offset": "+0x0",
+      "type": "char*",
+      "name": "first"
+    },
+    {
+      "class": "TextRange",
+      "offset": "+0x4",
+      "type": "char*",
+      "name": "last"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:48:35Z"
+}

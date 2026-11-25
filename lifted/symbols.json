@@ -43016,6 +43016,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00664CD0": {
+    "name": "upperCopyRangeToPair",
+    "signature": "TextRange* fn_00664CD0(TextRange* out, const char* first, const char* last, uint32_t a3, uint32_t a4)",
+    "summary": "Builds a TextRange from (a3,a4) and the span length, stores it to out, then uppercase-copies [first,last) into dest; returns out.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x006657F0": {
     "name": "Unknown::InitVtblAndArg",
     "class": "Unknown",

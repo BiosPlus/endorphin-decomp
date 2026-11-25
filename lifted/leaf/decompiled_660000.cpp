@@ -2242,3 +2242,35 @@ std::string* __cdecl fn_00662AB0(std::string* out) {
     return out;
 }
 } // namespace lift_00662AB0
+
+// [0x00664CD0] sub_00664CD0 (103 bytes)
+namespace lift_00664CD0 {
+// Callee 0x0065F7F0: sub_0065F7F0 (thiscall-style: ecx = result slot, one stack arg = length, callee pops it).
+extern void ext_0065F7F0(void* result_slot, int32_t length, uint32_t a, uint32_t b);
+// Known callee 0x00664B50: upperCopyRange (Copies [first, last) into dest converting each char via toupper; returns one past the last written char (dest if empty).
+extern char* ext_00664B50(const char* first, const char* last, char* dest);
+
+struct TextRange {
+    char* first; // +0x00
+    char* last;  // +0x04
+};
+
+// @name upperCopyRangeToPair
+// @summary Builds a TextRange from (a3,a4) and the span length, stores it to out, then uppercase-copies [first,last) into dest; returns out.
+// @field TextRange +0x00 char* first
+// @field TextRange +0x04 char* last
+TextRange* fn_00664CD0(TextRange* out, const char* first, const char* last, uint32_t a3, uint32_t a4) {
+    struct Slot {
+        uint32_t lo;
+        uint32_t hi;
+    } slot{a3, a4};
+
+    ext_0065F7F0(&slot, static_cast<int32_t>(last - first), a3, a4);
+
+    out->first = reinterpret_cast<char*>(static_cast<uintptr_t>(slot.lo));
+    out->last = reinterpret_cast<char*>(static_cast<uintptr_t>(slot.hi));
+
+    ext_00664B50(first, last, reinterpret_cast<char*>(static_cast<uintptr_t>(a4)));
+    return out;
+}
+} // namespace lift_00664CD0
