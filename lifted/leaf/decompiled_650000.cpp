@@ -1620,3 +1620,18 @@ void __fastcall fn_00517230(void* self, int edx_unused, void* arg) {
     }
 }
 } // namespace lift_00517230
+
+// [0x00517510] sub_00517510 (26 bytes)
+namespace lift_00517510 {
+// Known callee 0x005170D0: Unknown::CallSlot3OnEachEntry (Walks the pointer array bounded by this+0x18 (begin) and this+0x1C (end) and calls vtable slot 3 (+0x0C) on each object with the argument.)
+extern void ext_005170D0(void* self, void* arg);
+// Known callee 0x00678D70: BaseEventDispatcher (direct call; call site comment says vfunc_1, callee clone is named vfunc_3). Called with a single int argument of 1.
+extern void ext_00678D70(void* self, int32_t flag);
+
+// @name CallSlot3OnEachEntryThenDispatch
+// @summary Forwards its argument to CallSlot3OnEachEntry (0x005170D0) on this, then calls 0x00678D70 on this with flag 1.
+void fn_00517510(void* self, void* arg) {
+    ext_005170D0(self, arg);
+    ext_00678D70(self, 1);
+}
+} // namespace lift_00517510

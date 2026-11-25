@@ -19636,6 +19636,12 @@
     "summary": "Walks the pointer array stored at self+0x14..+0x18 and invokes virtual slot 0x6C/4 (thiscall, no args) on each element.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00517510": {
+    "name": "CallSlot3OnEachEntryThenDispatch",
+    "signature": "void fn_00517510(void* self, void* arg)",
+    "summary": "Forwards its argument to CallSlot3OnEachEntry (0x005170D0) on this, then calls 0x00678D70 on this with flag 1.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00517A60": {
     "name": "Individual::vfunc_0_off_C",
     "class": "Individual",
