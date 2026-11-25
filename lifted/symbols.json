@@ -58875,6 +58875,13 @@
     "summary": "Returns address of global mem_0099E074.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D83B0": {
+    "name": "Unknown::InitStateBlock",
+    "class": "Unknown",
+    "signature": "void* fn_007D83B0(void* self, void* arg2)",
+    "summary": "Zeroes a 0xD8-byte object, sets float defaults (1.0 at +0x50/+0x6C, FLT_MAX at +0xD0), resets the sub-block at +0x84, then runs a secondary init with arg2; returns self.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007D8450": {
     "name": "CopyVec3FromOffset40",
     "class": "\u003cnone\u003e",

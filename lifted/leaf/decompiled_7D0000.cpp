@@ -886,3 +886,37 @@ void fn_007DFCE0(void* self, uint32_t a2, uint32_t a3) {
     }
 }
 } // namespace lift_007DFCE0
+
+// [0x007D83B0] sub_007D83B0 (68 bytes)
+namespace lift_007D83B0 {
+// Known callee 0x006A6E8C: thunk_MSVCR80_memset (IAT jump thunk forwarding to MSVCR80!memset.)
+extern void* ext_006A6E8C(void* dst, int value, size_t count);
+// Known callee 0x007CCAB0: Unknown::ResetDefaults (Zeroes a 0x44-byte state block and sets float defaults.)
+extern void ext_007CCAB0(void* self);
+// Callee 0x007D8760: sub_007D8760 (98 bytes, signature not yet recovered; called as (arg2, self)).
+extern void ext_007D8760(void* arg, void* self);
+// .rdata constant 0x0099D148 = 0x7F7FFFFF (FLT_MAX bit pattern).
+extern int mem_0099D148;
+
+// @name Unknown::InitStateBlock
+// @class Unknown
+// @summary Zeroes a 0xD8-byte object, sets float defaults (1.0 at +0x50/+0x6C, FLT_MAX at +0xD0), resets the sub-block at +0x84, then runs a secondary init with arg2; returns self.
+// @field Unknown +0x50 float field_0x50
+// @field Unknown +0x6C float field_0x6C
+// @field Unknown +0xD0 float field_0xD0
+void* fn_007D83B0(void* self, void* arg2) {
+    ext_006A6E8C(self, 0, 0xD8);
+
+    const float one = 1.0f;
+    const float flt_max = std::bit_cast<float>(mem_0099D148);
+
+    lift_field<float>(self, 0x6C) = one;
+    lift_field<float>(self, 0x50) = one;
+
+    lift_field<float>(self, 0xD0) = flt_max;
+
+    ext_007CCAB0(static_cast<uint8_t*>(self) + 0x84);
+    ext_007D8760(arg2, self);
+    return self;
+}
+} // namespace lift_007D83B0
