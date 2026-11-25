@@ -9366,6 +9366,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x00495A60": {
+    "name": "RigManager::RigManager",
+    "class": "RigManager",
+    "signature": "void* fn_00495A60(void* self)",
+    "summary": "Constructor: runs the PropertySource base constructor, installs the RigManager vtable (0x0093F0FC), zeroes the member fields, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00496130": {
     "name": "RigManager::vfunc_0",
     "class": "RigManager",

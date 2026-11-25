@@ -629,3 +629,34 @@ uint32_t fn_00491840(uint32_t begin, uint32_t end, uint32_t value) {
 }
 } // namespace lift_0054F290
 } // namespace lift_00491840
+
+// [0x00495A60] sub_00495A60 (77 bytes)
+namespace lift_00495A60 {
+// Known callee 0x00661980: setVtable_0093BFB4 (Stores the vtable address 0x0093BFB4 into the first dword of the object pointed to by ECX (this).)
+extern void ext_00661980(void* self);
+
+// @name RigManager::RigManager
+// @class RigManager
+// @summary Constructor: runs the PropertySource base constructor, installs the RigManager vtable (0x0093F0FC), zeroes the member fields, and returns this.
+// @field RigManager +0x00 DWORD vtable
+// @field RigManager +0x0c DWORD field_0x0c
+// @field RigManager +0x10 DWORD field_0x10
+// @field RigManager +0x14 DWORD field_0x14
+// @field RigManager +0x1c DWORD field_0x1c
+// @field RigManager +0x20 DWORD field_0x20
+// @field RigManager +0x24 DWORD field_0x24
+// @field RigManager +0x28 DWORD field_0x28
+void* fn_00495A60(void* self) {
+    auto* p = static_cast<unsigned char*>(self);
+    ext_00661980(self);
+    *reinterpret_cast<DWORD*>(p + 0x00) = 0x0093F0FCu;
+    *reinterpret_cast<DWORD*>(p + 0x0c) = 0;
+    *reinterpret_cast<DWORD*>(p + 0x10) = 0;
+    *reinterpret_cast<DWORD*>(p + 0x14) = 0;
+    *reinterpret_cast<DWORD*>(p + 0x1c) = 0;
+    *reinterpret_cast<DWORD*>(p + 0x20) = 0;
+    *reinterpret_cast<DWORD*>(p + 0x24) = 0;
+    *reinterpret_cast<DWORD*>(p + 0x28) = 0;
+    return self;
+}
+} // namespace lift_00495A60
