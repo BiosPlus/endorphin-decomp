@@ -1402,3 +1402,42 @@ void fn_00624630(void* self) {
     ext_00624590(self);
 }
 } // namespace lift_00624630
+
+// [0x00622700]
+namespace lift_00622700 {
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t val);
+extern float mem_read_f32(uint32_t addr);
+extern void mem_write_f32(uint32_t addr, float val);
+
+// @name copy_backward_20b
+// @summary Copies 20-byte elements (1 dword + 4 floats) backward from [src_begin, src_end) to dst_end.
+uint32_t sub_00622700(uint32_t src_begin, uint32_t src_end, uint32_t dst_end) {
+    uint32_t eax = dst_end;
+    uint32_t esi = src_end;
+    uint32_t edi = src_begin;
+    if (edi == esi) {
+        return eax;
+    }
+
+    uint32_t edx = eax + 0xc;
+    uint32_t ecx = esi + 0xc;
+    do {
+        mem_write32(eax - 0x14, mem_read32(esi - 0x14));
+        float f0 = mem_read_f32(ecx - 0x1c);
+        esi -= 0x14;
+        mem_write_f32(edx - 0x1c, f0);
+        float f1 = mem_read_f32(ecx - 0x18);
+        ecx -= 0x14;
+        eax -= 0x14;
+        mem_write_f32(edx - 0x18, f1);
+        float f2 = mem_read_f32(ecx);
+        edx -= 0x14;
+        mem_write_f32(edx, f2);
+        float f3 = mem_read_f32(ecx + 0x4);
+        mem_write_f32(edx + 0x4, f3);
+    } while (esi != edi);
+
+    return eax;
+}
+} // namespace lift_00622700

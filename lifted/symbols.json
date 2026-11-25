@@ -32751,6 +32751,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006227B0 (NMData::HingeCalibrationVariables::vfunc_28).",
     "lifted_path": "lifted/NMData/SkeletalCalibrationVariables.cpp"
   },
+  "0x00622700": {
+    "name": "copy_backward_20b",
+    "signature": "uint32_t sub_00622700(uint32_t src_begin, uint32_t src_end, uint32_t dst_end)",
+    "summary": "Copies 20-byte elements (1 dword + 4 floats) backward from [src_begin, src_end) to dst_end.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00622750": {
     "name": "InitTaggedZeroFloatTriple",
     "signature": "void* InitTaggedZeroFloatTriple(void* self)",
