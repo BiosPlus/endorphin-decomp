@@ -9887,3 +9887,39 @@ extern void __stdcall fn_00695620(void* a1, void* a2) {
     ext_006A6DD2(exc, reinterpret_cast<void*>(&mem_009DEC1C));
 }
 } // namespace lift_00695620
+
+// [0x005853E0] ExprParser::ReadWriteMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, bool, {[thunk]: __thiscall NMData::BehaviourData::`vcall'{32, {flat}}, 12}>::vfunc_41 (69 bytes)
+namespace lift_005853E0 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException. Constructs the exception object in the buffer passed as this.
+extern void ext_0046C3C0(void* self);
+// Known callee 0x004AA580: VirtualSlot8Thunk. Takes this plus one stack value and tail-calls vtable slot 8 (+0x20) with the same this.
+extern uint32_t ext_004AA580(void* self, uint32_t value);
+// Known callee 0x006A6DD2: thunk forwarding to MSVCR80!_CxxThrowException(exceptionObject, throwInfo). Does not return.
+extern void ext_006A6DD2(void* obj, void* throwInfo);
+
+// @name ExprParser::ReadWriteMethodType<NMData::BehaviourData, bool, getVisibility, bool, vcall32>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, bool, {[thunk]: __thiscall NMData::BehaviourData::`vcall'{32, {flat}}, 12}>
+// @summary Reads the target pointer from *self (throws if null), then forwards arg through the vcall at slot 3 of arg->+0x04 and passes the result to the target's +0x0C subobject via ext_004AA580.
+// @field ExprParser::ReadWriteMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, bool, {[thunk]: __thiscall NMData::BehaviourData::`vcall'{32, {flat}}, 12}> +0x00 void* field_0x00
+uint32_t fn_005853E0(void* self, void* arg) {
+    // esi = *(void**)self
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        // Build an exception object in a local buffer (0x20 bytes fit in the original frame) and throw it.
+        alignas(8) uint8_t exc[0x20];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(uintptr_t{0x009DEC1Cu}));
+        return 0; // not reached: _CxxThrowException does not return
+    }
+
+    // eax = arg; ecx = arg->+0x04; edx = *ecx (vtable of that object)
+    void* inner = lift_field<void*>(arg, 0x04);
+    void** vtbl = *static_cast<void***>(inner);
+    // call [vtbl + 0x0C] with this = inner and stack argument = arg
+    using Slot3Fn = uint32_t (*)(void* self, void* arg);
+    uint32_t result = reinterpret_cast<Slot3Fn>(vtbl[3])(inner, arg);
+
+    // this = target + 0x0C, stack value = result; the thunk's eax is returned unchanged
+    return ext_004AA580(static_cast<uint8_t*>(target) + 0x0C, result);
+}
+} // namespace lift_005853E0

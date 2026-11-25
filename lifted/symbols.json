@@ -25093,6 +25093,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005F09E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005853E0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::BehaviourData, bool, getVisibility, bool, vcall32\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, bool, {[thunk]: __thiscall NMData::BehaviourData::`vcall'{32, {flat}}, 12}\u003e",
+    "signature": "uint32_t fn_005853E0(void* self, void* arg)",
+    "summary": "Reads the target pointer from *self (throws if null), then forwards arg through the vcall at slot 3 of arg-\u003e+0x04 and passes the result to the target's +0x0C subobject via ext_004AA580.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x00585660": {
     "name": "ExprParser::ReadMethodType\u003cObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0\u003e",

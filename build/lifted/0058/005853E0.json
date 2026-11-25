@@ -1,0 +1,14 @@
+{
+  "va": "0x005853E0",
+  "size": 69,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, bool, {[thunk]: __thiscall NMData::BehaviourData::`vcall'{32, {flat}}, 12}\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::BehaviourData, bool, getVisibility, bool, vcall32\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, bool, {[thunk]: __thiscall NMData::BehaviourData::`vcall'{32, {flat}}, 12}\u003e",
+  "signature": "uint32_t fn_005853E0(void* self, void* arg)",
+  "summary": "Reads the target pointer from *self (throws if null), then forwards arg through the vcall at slot 3 of arg-\u003e+0x04 and passes the result to the target's +0x0C subobject via ext_004AA580.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:02:46Z"
+}
