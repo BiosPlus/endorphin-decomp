@@ -185,3 +185,23 @@ extern void __stdcall fn_006718A0(void* self, const std::string* src) {
     (void)&mem_00924FDC; // keep IAT slot referenced for differential testing
 }
 } // namespace lift_006718A0
+
+// [0x0066B240]
+namespace lift_0066B240 {
+// @name ExprParser::StringType::vfunc_1
+// @class ExprParser::StringType
+// @summary Converts the held std::string to a float via atof; returns 0.0f when the string pointer is null.
+// @field ExprParser::StringType +0x00 std::string* field_0x00
+
+extern const char* ext_00924FF0(void* std_string_this); // std::string::c_str (MSVCP80)
+extern double ext_009251F0(const char* s);              // atof (MSVCR80)
+
+float __stdcall fn_0066B240(void* self) {
+    void* str = lift_field<void*>(self, 0x00);
+    if (str == nullptr) {
+        return 0.0f;
+    }
+    const char* s = ext_00924FF0(str);
+    return static_cast<float>(ext_009251F0(s));
+}
+} // namespace lift_0066B240
