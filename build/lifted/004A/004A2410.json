@@ -1,0 +1,13 @@
+{
+  "va": "0x004A2410",
+  "size": 114,
+  "orig_symbol": "sub_004A2410",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "getStaticObject_004A2410",
+  "signature": "uint32_t __cdecl sub_004A2410()",
+  "summary": "Lazily initializes a static object at 0x00ADDA7C with vtable 0x00940704, registers atexit destructor 0x00917B40, and returns its address.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:38:57Z"
+}

@@ -937,3 +937,34 @@ DWORD* Unknown_findStringKeyPair_004A7440(uint8_t* self, DWORD* out, const void*
     return out;
 }
 } // namespace lift_004A7440
+
+// [0x004A2410]
+namespace lift_004A2410 {
+extern uint32_t mem_00ADDA7C;
+extern uint32_t mem_00ADDA84;
+extern uint32_t mem_00ADDA88;
+extern uint32_t mem_00ADDA8C;
+extern uint32_t mem_00ADDA94;
+extern uint32_t mem_00ADDA98;
+extern uint32_t mem_00ADDA9C;
+extern uint32_t mem_00ADDAA0;
+
+extern int __cdecl ext_006A6C87(uint32_t func);
+
+// @name getStaticObject_004A2410
+// @summary Lazily initializes a static object at 0x00ADDA7C with vtable 0x00940704, registers atexit destructor 0x00917B40, and returns its address.
+uint32_t __cdecl sub_004A2410() {
+    if ((mem_00ADDAA0 & 1u) == 0u) {
+        mem_00ADDAA0 |= 1u;
+        mem_00ADDA84 = 0u;
+        mem_00ADDA88 = 0u;
+        mem_00ADDA8C = 0u;
+        mem_00ADDA7C = 0x00940704u;
+        mem_00ADDA94 = 0u;
+        mem_00ADDA98 = 0u;
+        mem_00ADDA9C = 0u;
+        ext_006A6C87(0x00917B40u);
+    }
+    return 0x00ADDA7Cu;
+}
+} // namespace lift_004A2410
