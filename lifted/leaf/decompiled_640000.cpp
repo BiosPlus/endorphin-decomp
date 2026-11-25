@@ -811,3 +811,39 @@ void* __stdcall fn_0064CB20(void* dst, uint32_t count, const void* src) {
     return static_cast<char*>(dst) + static_cast<size_t>(count) * 24u;
 }
 } // namespace lift_0064CB20
+
+// [0x006488A0] Unknown::refreshSubobjects (68 bytes)
+namespace lift_006488A0 {
+// Known callee 0x0065B100: sub_0065B100 (21B). Thiscall; ecx = this+0x30; no stack args.
+extern void ext_0065B100(void* self);
+// Known callee 0x007C8730: sub_007C8730 (22B). Cdecl; one dword arg = [[this+0x2c]+0x10].
+extern void ext_007C8730(uint32_t arg);
+// Known callee 0x0065BD50: sub_0065BD50 (39B). ecx = [this+0x2c]; one stack arg = this (callee cleans).
+extern void ext_0065BD50(void* self, void* arg);
+// Known callee 0x0065BED0: sub_0065BED0 (24B). Thiscall; ecx = this+0x28; no stack args.
+extern void ext_0065BED0(void* self);
+// Known callee 0x0065B0F0: sub_0065B0F0 (11B). Thiscall; ecx = this+0x30; no stack args.
+extern void ext_0065B0F0(void* self);
+// Known callee 0x007C8750: sub_007C8750 (180B). Cdecl; one dword arg = [[this+0x2c]+0x10].
+extern void ext_007C8750(uint32_t arg);
+
+// @name Unknown::refreshSubobjects
+// @class Unknown
+// @summary Calls two sub-object helpers on this+0x28/+0x30, passes the object at this+0x2c to two others, and forwards its +0x10 dword to two cdecl helpers; semantics not recovered.
+// @field Unknown +0x28 void* field_0x28
+// @field Unknown +0x2c void* field_0x2c
+// @field Unknown +0x30 void* field_0x30
+void fn_006488A0(void* self) {
+    ext_0065B100(lift_field<void*>(self, 0x30));
+
+    uint32_t first = lift_field<uint32_t>(lift_field<void*>(self, 0x2c), 0x10);
+    ext_007C8730(first);
+
+    ext_0065BD50(lift_field<void*>(self, 0x2c), self);
+    ext_0065BED0(lift_field<void*>(self, 0x28));
+    ext_0065B0F0(lift_field<void*>(self, 0x30));
+
+    uint32_t second = lift_field<uint32_t>(lift_field<void*>(self, 0x2c), 0x10);
+    ext_007C8750(second);
+}
+} // namespace lift_006488A0

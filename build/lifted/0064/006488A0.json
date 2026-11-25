@@ -1,0 +1,34 @@
+{
+  "va": "0x006488A0",
+  "size": 68,
+  "orig_symbol": "sub_006488A0",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "Unknown::refreshSubobjects",
+  "class": "Unknown",
+  "signature": "void fn_006488A0(void* self)",
+  "summary": "Calls two sub-object helpers on this+0x28/+0x30, passes the object at this+0x2c to two others, and forwards its +0x10 dword to two cdecl helpers; semantics not recovered.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "void*",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "void*",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:20:24Z"
+}

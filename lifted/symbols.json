@@ -34275,6 +34275,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A24A0 (setGlobalU32FromArg).",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x006488A0": {
+    "name": "Unknown::refreshSubobjects",
+    "class": "Unknown",
+    "signature": "void fn_006488A0(void* self)",
+    "summary": "Calls two sub-object helpers on this+0x28/+0x30, passes the object at this+0x2c to two others, and forwards its +0x10 dword to two cdecl helpers; semantics not recovered.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x006488F0": {
     "name": "get_field_0x28_float_0x08",
     "signature": "float __thiscall sub_006488F0(const void* self)",
@@ -56759,6 +56766,12 @@
     "class": "Unknown",
     "signature": "int32_t fn_007BF4A0(void* self, int32_t scale)",
     "summary": "Adds scale * field_0x1D0 to field_0x1E0 and subtracts it from field_0x1E4; returns 1.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
+  "0x007BF9C0": {
+    "name": "testAndUpdateField1CC",
+    "signature": "uint32_t sub_007BF9C0(uint32_t self, uint32_t a2, uint32_t a3, uint32_t a4)",
+    "summary": "Calls vtable+0x10(self, a2, a3, a4); if non-zero, calls vtable+0x0C(self, a2, a3) and returns 1, else 0.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
   "0x007BFC60": {
