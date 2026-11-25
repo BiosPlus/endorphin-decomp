@@ -1,0 +1,14 @@
+{
+  "va": "0x006CCAB0",
+  "size": 64,
+  "orig_symbol": "sub_006CCAB0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::GetScaledValueOfPrevElementIfFlagged",
+  "class": "Unknown",
+  "signature": "float __fastcall fn_006CCAB0(void* self, int edx_unused, int32_t count)",
+  "summary": "If HasFlag29OfFirstOfRange(count) is set, returns GetScaledOrRawValue(element at count-1, 5); otherwise returns 0.0f.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:07:25Z"
+}

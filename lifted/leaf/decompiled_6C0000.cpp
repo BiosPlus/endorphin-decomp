@@ -932,3 +932,30 @@ float fn_006CC810(void* self, int32_t count) {
     return 0.33333334f;
 }
 } // namespace lift_006CC810
+
+// [0x006CCAB0] sub_006CCAB0 (64 bytes)
+namespace lift_006CCAB0 {
+// Known callee 0x006CC950: Unknown::HasFlag29OfFirstOfRange (For count > 0, resolves the element at (count - 1) and the element at count via ext_006CA060, then returns true if bit 29 (0x20000000) of ext_006C9D60(first) is set; false for count <= 0.)
+// Original: __fastcall-style (ecx = self, one stack arg), `ret 4`.
+extern bool __fastcall ext_006CC950(void* self, int edx_unused, int32_t count);
+
+// Known callee 0x006CA060: sub_006CA060 (returns the element pointer in eax for index idx).
+// Original: ecx = self, one stack arg (idx); result returned in eax.
+extern void* __fastcall ext_006CA060(void* self, int edx_unused, int32_t idx);
+
+// Known callee 0x006C9DC0: Unknown::GetScaledOrRawValue (For idx < 2 returns the float at this+0x14+4*idx; otherwise returns int16 at this+0x18+2*idx scaled by 0.00010001f.)
+// Original: __fastcall-style (ecx = self, one stack arg), `ret 4`.
+extern float __fastcall ext_006C9DC0(void* self, int edx_unused, int32_t idx);
+
+// @name Unknown::GetScaledValueOfPrevElementIfFlagged
+// @class Unknown
+// @summary If HasFlag29OfFirstOfRange(count) is set, returns GetScaledOrRawValue(element at count-1, 5); otherwise returns 0.0f.
+float __fastcall fn_006CCAB0(void* self, int edx_unused, int32_t count) {
+    (void)edx_unused;
+    if (!ext_006CC950(self, 0, count)) {
+        return 0.0f;
+    }
+    void* element = ext_006CA060(self, 0, count - 1);
+    return ext_006C9DC0(element, 0, 5);
+}
+} // namespace lift_006CCAB0
