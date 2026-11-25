@@ -722,7 +722,7 @@ struct Unknown_Fields {
     // +0x40  float                    field_0x40  (evidence: 0x0051CCC0, 0x0053C4C0, 0x0055CD10, 0x005DC650, 0x00622B40, 0x006296D0, 0x00629850, 0x0063D950, 0x0063D970, 0x0063DB50, 0x0063DDF0, 0x0063DE10, 0x0063E050, 0x007CAF70, 0x007CCAB0, 0x007D8590) // CONFLICT: multiple definitions at +0x40
     // +0x40  float*                   field_0x40  (evidence: 0x00802D40) // CONFLICT: multiple definitions at +0x40
     // +0x40  float[4]                 field_0x40  (evidence: 0x007C9D80, 0x007CAF70) // CONFLICT: multiple definitions at +0x40
-    // +0x40  uint16_t                 field_0x40  (evidence: 0x007AF200) // CONFLICT: multiple definitions at +0x40
+    // +0x40  uint16_t                 field_0x40  (evidence: 0x007AF200, 0x007AF500) // CONFLICT: multiple definitions at +0x40
     // +0x40  uint32_t                 field_0x40  (evidence: 0x004AFE50, 0x004ED640, 0x00518080, 0x005B51E0, 0x0063E050, 0x0063F960, 0x00673C90, 0x006DEC60) // CONFLICT: multiple definitions at +0x40
     // +0x40  uint8_t                  field_0x40  (evidence: 0x006AD290) // CONFLICT: multiple definitions at +0x40
     // +0x40  void*                    field_0x40  (evidence: 0x007D8890) // CONFLICT: multiple definitions at +0x40
@@ -732,6 +732,7 @@ struct Unknown_Fields {
     // +0x40  void*                    subObject  (evidence: 0x00711A40, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x40
     // +0x40  void*                    subobject  (evidence: 0x00712010) // CONFLICT: multiple definitions at +0x40
     // +0x41  uint8_t                  field_0x41  (evidence: 0x006AD290)
+    // +0x42  uint16_t                 field_0x42  (evidence: 0x007AF500)
     // +0x44  DWORD                    field_0x44  (evidence: 0x00519100) // CONFLICT: multiple definitions at +0x44
     // +0x44  float                    field_0x44  (evidence: 0x0051CCC0, 0x0053C4C0, 0x0054E340, 0x0054E400, 0x0055CD10, 0x00622B40, 0x006267B0, 0x006296D0, 0x00629850, 0x0063D950, 0x0063D970, 0x0063DB50, 0x0063DDF0, 0x0063E050, 0x007D8590) // CONFLICT: multiple definitions at +0x44
     // +0x44  int32_t                  field_0x44  (evidence: 0x005DC650) // CONFLICT: multiple definitions at +0x44
