@@ -1,0 +1,13 @@
+{
+  "va": "0x005EC9D0",
+  "size": 30,
+  "orig_symbol": "sub_005EC9D0",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "storeValueAndLazyStaticObject_005EC9D0",
+  "signature": "void fn_005EC9D0(uint32_t* dst, uint32_t value)",
+  "summary": "Stores a value into dst[0] and the lazily-initialized static object's address into dst[1].",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:13:11Z"
+}

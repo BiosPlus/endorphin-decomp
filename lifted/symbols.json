@@ -32213,6 +32213,12 @@
     "summary": "Stores a value into dst[0] and the static object address (from the one-time initializer) into dst[1].",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005EC9D0": {
+    "name": "storeValueAndLazyStaticObject_005EC9D0",
+    "signature": "void fn_005EC9D0(uint32_t* dst, uint32_t value)",
+    "summary": "Stores a value into dst[0] and the lazily-initialized static object's address into dst[1].",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005ECB10": {
     "name": "NMData::FixedPathJointData::vfunc_9_off_C",
     "class": "NMData::FixedPathJointData",

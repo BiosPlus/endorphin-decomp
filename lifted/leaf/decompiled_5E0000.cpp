@@ -810,3 +810,17 @@ void __cdecl fn_005EC970(DWORD* dst, DWORD value) {
     dst[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
 }
 } // namespace lift_005EC970
+
+// [0x005EC9D0] sub_005EC9D0 (30 bytes)
+namespace lift_005EC9D0 {
+// Known callee 0x005EB1E0: lazyInitStaticVtableObject_005EB1E0 (One-time lazy init of the static object at mem_00B45F50 (vtable 0x969C64); guarded by bit 0 of mem_00B45F54; returns the object's address.)
+extern void* ext_005EB1E0();
+
+// @name storeValueAndLazyStaticObject_005EC9D0
+// @summary Stores a value into dst[0] and the lazily-initialized static object's address into dst[1].
+void fn_005EC9D0(uint32_t* dst, uint32_t value) {
+    void* obj = ext_005EB1E0();
+    dst[0] = value;
+    dst[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_005EC9D0
