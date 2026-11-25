@@ -46128,6 +46128,13 @@
     "summary": "For count \u003e 0, resolve a pointer via ext_006CA060(self, count-1), call ext_006CA060(self, count) for its side effect, then return whether bit 0x02000000 of ext_006C9D20(ptr) is set; returns false when count \u003c= 0.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006CC810": {
+    "name": "Unknown::GetCountedFlagScaledValue",
+    "class": "Unknown",
+    "signature": "float fn_006CC810(void* self, int32_t count)",
+    "summary": "If the counted self-flag check passes for count, return the scaled int16 value (index 3) of the element resolved at count-1; otherwise return the constant 1/3.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006CC950": {
     "name": "Unknown::HasFlag29OfFirstOfRange",
     "class": "Unknown",

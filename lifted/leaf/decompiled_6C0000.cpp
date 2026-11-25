@@ -913,3 +913,22 @@ bool fn_006CC950(void* self, int32_t count) {
     return (flags & 0x20000000u) != 0;
 }
 } // namespace lift_006CC950
+
+// [0x006CC810]
+namespace lift_006CC810 {
+// @name Unknown::GetCountedFlagScaledValue
+// @class Unknown
+// @summary If the counted self-flag check passes for count, return the scaled int16 value (index 3) of the element resolved at count-1; otherwise return the constant 1/3.
+
+extern bool ext_006CC6B0(void* self, int32_t count);
+extern void* ext_006CA060(void* self, int32_t count);
+extern float ext_006C9DC0(void* self, int32_t edx_unused, int32_t idx);
+
+float fn_006CC810(void* self, int32_t count) {
+    if (ext_006CC6B0(self, count)) {
+        void* ptr = ext_006CA060(self, count - 1);
+        return ext_006C9DC0(ptr, 0, 3);
+    }
+    return 0.33333334f;
+}
+} // namespace lift_006CC810
