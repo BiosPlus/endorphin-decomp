@@ -58848,6 +58848,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006F9AA0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006F9AA0": {
+    "name": "sub_006F9AA0_dtor",
+    "signature": "void fn_006F9AA0(void* self)",
+    "summary": "Destructor body: sets vtable, calls virtual slot 0x70 on the member at +0xB4 with (+0xB8, 1), then runs the base destructor.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F9B20": {
     "name": "sub_006F9B20",
     "signature": "extern \"C\" int32_t __cdecl fn_006F9B20(void)",

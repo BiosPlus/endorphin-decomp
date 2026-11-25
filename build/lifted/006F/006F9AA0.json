@@ -1,0 +1,33 @@
+{
+  "va": "0x006F9AA0",
+  "size": 96,
+  "orig_symbol": "sub_006F9AA0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "sub_006F9AA0_dtor",
+  "signature": "void fn_006F9AA0(void* self)",
+  "summary": "Destructor body: sets vtable, calls virtual slot 0x70 on the member at +0xB4 with (+0xB8, 1), then runs the base destructor.",
+  "fields": [
+    {
+      "class": "sub_006F9AA0_dtor",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    },
+    {
+      "class": "sub_006F9AA0_dtor",
+      "offset": "+0xB4",
+      "type": "void*",
+      "name": "field_0xB4"
+    },
+    {
+      "class": "sub_006F9AA0_dtor",
+      "offset": "+0xB8",
+      "type": "uint32_t",
+      "name": "field_0xB8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:39:34Z"
+}

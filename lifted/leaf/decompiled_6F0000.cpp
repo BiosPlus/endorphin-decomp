@@ -2016,3 +2016,32 @@ void fn_006F99B0(void* self, void* a1, [[maybe_unused]] void* a2, [[maybe_unused
                                          reinterpret_cast<uintptr_t>(a1), 0, 0);
 }
 } // namespace lift_006F99B0
+
+// [0x006F9AA0] sub_006F9AA0 (96 bytes)
+namespace lift_006F9AA0 {
+// Known callee 0x006BAC20: sub_006BAC20_dtor (destructor; sets vtable to 0x009931C4, destroys subobject at +0x9C, base subobject at +0x04).
+extern void ext_006BAC20(void* self);
+
+// @name sub_006F9AA0_dtor
+// @summary Destructor body: sets vtable, calls virtual slot 0x70 on the member at +0xB4 with (+0xB8, 1), then runs the base destructor.
+// @field sub_006F9AA0_dtor +0x00 void* vptr
+// @field sub_006F9AA0_dtor +0xB4 void* field_0xB4
+// @field sub_006F9AA0_dtor +0xB8 uint32_t field_0xB8
+void fn_006F9AA0(void* self) {
+    auto* obj = static_cast<uint8_t*>(self);
+
+    // Set this object's vtable to 0x00994FE0.
+    *reinterpret_cast<uintptr_t*>(obj) = static_cast<uintptr_t>(0x00994FE0u);
+
+    // Call virtual slot 0x70 on the member at +0xB4, passing (+0xB8, 1).
+    void* member = *reinterpret_cast<void**>(obj + 0xB4);
+    uint32_t arg = *reinterpret_cast<uint32_t*>(obj + 0xB8);
+    void** member_vtbl = *reinterpret_cast<void***>(member);
+    auto slot = *reinterpret_cast<void (**)(void*, uint32_t, int32_t)>(
+        reinterpret_cast<uint8_t*>(member_vtbl) + 0x70);
+    slot(member, arg, 1);
+
+    // Chain to the base destructor.
+    ext_006BAC20(self);
+}
+} // namespace lift_006F9AA0
