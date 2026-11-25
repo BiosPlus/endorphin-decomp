@@ -1056,3 +1056,28 @@ void* fn_00539740(const float* begin, const float* end, float* dst) {
     return out;
 }
 } // namespace lift_00539740
+
+// [0x00532770] sub_00532770 (84 bytes)
+namespace lift_00532770 {
+// Imported MSVCP80 std::basic_string<char> destructor, called through the IAT slot at 0x00924FF4.
+extern void (*mem_00924FF4)(void* thisPtr);
+// Known callee 0x00493D90: AddCharacterDialog::vfunc_3 (thiscall, takes the dialog subobject at this+0x08).
+extern void ext_00493D90(void* self);
+
+// @name Unknown::resetVtableDestroyStringNotifyDialog_00532770
+// @class Unknown
+// @summary Resets the vtable to 0x009543B4, destroys the std::string at +0x18, then calls AddCharacterDialog::vfunc_3 on the subobject at +0x08.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x08 uint8_t field_0x08
+// @field Unknown +0x18 uint8_t field_0x18
+void fn_00532770(void* self) {
+    // Original SEH frame setup/teardown (fs:[0] push/restore) is omitted in the portable lift.
+    lift_field<uint32_t>(self, 0x00) = 0x009543B4u;
+
+    // Destroy the std::string member at this+0x18.
+    mem_00924FF4(static_cast<uint8_t*>(self) + 0x18);
+
+    // Notify the dialog subobject at this+0x08.
+    ext_00493D90(&lift_field<uint8_t>(self, 0x08));
+}
+} // namespace lift_00532770

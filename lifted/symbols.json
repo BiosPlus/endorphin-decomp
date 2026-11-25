@@ -18729,6 +18729,13 @@
     "summary": "Calls glTranslatef with the translation vector (+0x30..+0x38) of the objects referenced by fields +0x4 and +0x8.",
     "lifted_path": "lifted/classes/HasRelativeTMPtr.cpp"
   },
+  "0x00532770": {
+    "name": "Unknown::resetVtableDestroyStringNotifyDialog_00532770",
+    "class": "Unknown",
+    "signature": "void fn_00532770(void* self)",
+    "summary": "Resets the vtable to 0x009543B4, destroys the std::string at +0x18, then calls AddCharacterDialog::vfunc_3 on the subobject at +0x08.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x005327D0": {
     "name": "Material::vfunc_0",
     "class": "Material",
