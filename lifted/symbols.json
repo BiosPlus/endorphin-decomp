@@ -24611,6 +24611,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004205B0 (TreeMap::lowerBound).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x0055CD10": {
+    "name": "Unknown::InitWithDefaults",
+    "class": "Unknown",
+    "signature": "void* fn_0055CD10(void* self, uint32_t arg)",
+    "summary": "Allocates a self-linked node via ext_0059F5C0, stores it at +0x04, stores arg at +0x0C, and sets float fields to 0.0/1.0 defaults.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x0055D2B0": {
     "name": "sub_0055D2B0",
     "signature": "extern \"C\" void fn_0055D2B0(void)",
