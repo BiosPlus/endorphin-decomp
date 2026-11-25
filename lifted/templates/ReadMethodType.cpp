@@ -56951,3 +56951,45 @@ float __stdcall fn_0049D460(void* self) {
     return 0.0f;  // not reached: the throw does not return
 }
 } // namespace lift_0049D460
+
+// [0x0059F600] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>::vfunc_1 (76 bytes)
+namespace lift_0059F600 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049D460 (ExprParser::ReadMethodType<NMData::State, std::string const &, NMData::State::vcall{4}, 0>::vfunc_1).
+namespace lift_0049D460 {
+// Callee 0x0046A470: VirtualSlot1Thunk. __thiscall; returns the string subobject pointer.
+extern void* __thiscall ext_00682ED0(void* self);
+// Callee 0x0046C3C0: DerivedException::DerivedException. Constructs the exception in place.
+extern void* __thiscall ext_0046C3C0(void* self);
+// Callee 0x006A6DD2: thunk to MSVCR80!_CxxThrowException(obj, throwInfo).
+extern void __cdecl ext_006A6DD2(void* obj, void* throwInfo);
+// IAT slots: std::string::c_str and MSVCR80 atof.
+extern const char* (__thiscall* mem_00924FF0)(void* self);
+extern double (__cdecl* mem_009251F0)(const char* s);
+
+// @name ExprParser::ReadMethodType<NMData::State, std::string const &, NMData::State::vcall{4}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0>
+// @summary Reads the stored string through a virtual accessor and returns it parsed as a float (atof); throws if the held pointer is null.
+// @field ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0> +0x00 void* field_0x00
+//
+// Calling convention: `this` is on the stack and the callee pops 4 (ret 4),
+// so this is __stdcall-shaped. Return value is x87 st0, emitted here as float.
+float __stdcall fn_0059F600(void* self) {
+    // 0x28-byte local frame in the original; holds the exception object on the throw path.
+    uint8_t frame[0x28];
+
+    void* inner = lift_field<void*>(self, 0x00);
+    if (inner != nullptr) {
+        // ecx = inner + 8; slot-1 virtual call yields the string object.
+        void* str = ext_00682ED0(static_cast<uint8_t*>(inner) + 0x4);
+        const char* text = mem_00924FF0(str);
+        return static_cast<float>(mem_009251F0(text));
+    }
+
+    ext_0046C3C0(frame);
+    ext_006A6DD2(frame, reinterpret_cast<void*>(0x009DEC1C));
+    return 0.0f;  // not reached: the throw does not return
+}
+} // namespace lift_0049D460
+} // namespace lift_0059F600

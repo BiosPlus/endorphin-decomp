@@ -27027,6 +27027,13 @@
     "summary": "Handles property 0x14B if ext_0059E060 succeeds by calling ext_00661650 on field at +0x61C; otherwise delegates to ext_0058F6B0.",
     "lifted_path": "lifted/NMData/BackGroundData.cpp"
   },
+  "0x0059F600": {
+    "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e",
+    "signature": "float __stdcall fn_0059F600(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049D460 (ExprParser::ReadMethodType\u003cNMData::State, std::string const \u0026, NMData::State::vcall{4}, 0\u003e::vfunc_1).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0059F6C0": {
     "name": "WriteMethodType\u003cCharacterData, ValuePtr const\u0026\u003e::vfunc_40",
     "class": "ExprParser::WriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e",
