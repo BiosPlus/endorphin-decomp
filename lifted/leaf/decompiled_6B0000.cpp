@@ -1071,3 +1071,45 @@ void fn_006B0720(void* self) {
     ext_006A5FFE(sub, hfont);
 }
 } // namespace lift_006B0720
+
+// [0x006B0DE0]
+namespace lift_006B0DE0 {
+// IAT slot 0x00925658 holds USER32!GetDC.
+extern DWORD ext_GetDC(DWORD hwnd);
+// IAT jump thunk forwarding to MFC80!ord_2367; takes the HDC, returns a wrapper object.
+extern DWORD ext_006A6004(DWORD hdc);
+// SelectionBuffer::vfunc_21 (thiscall, this in ecx, no stack args).
+extern DWORD ext_006AD1C0(DWORD self);
+// sub_006A7D50 (thiscall, this in ecx).
+extern DWORD sub_006A7D50(DWORD self);
+
+// @name Unknown::CacheSelectionAndInvoke_006B0DE0
+// @class Unknown
+// @summary Caches the selection buffer from the argument, fetches a DC for the window handle at +0x20, and invokes vtable slot 0x38 on the DC wrapper.
+// @field Unknown +0x20 DWORD field_0x20
+// @field Unknown +0x54 DWORD field_0x54
+// @field Unknown +0x58 DWORD field_0x58
+// @field Unknown +0x5c DWORD field_0x5c
+void fn_006B0DE0(void* self, DWORD arg) {
+    lift_field<DWORD>(self, 0x54) = arg;
+
+    DWORD sel = ext_006AD1C0(arg);
+    lift_field<DWORD>(self, 0x58) = sel;
+    DWORD sel_19c = lift_field<DWORD>(reinterpret_cast<void*>(static_cast<uintptr_t>(sel)), 0x19c);
+    lift_field<DWORD>(self, 0x5c) = sel_19c;
+
+    DWORD hwnd = lift_field<DWORD>(self, 0x20);
+    DWORD hdc = ext_GetDC(hwnd);
+    DWORD wrapper = ext_006A6004(hdc);
+
+    DWORD sel2 = ext_006AD1C0(lift_field<DWORD>(self, 0x54));
+    DWORD value = sub_006A7D50(sel2);
+
+    // Virtual call: vtable slot at +0x38 on `wrapper`, this = wrapper, one argument = value.
+    void* wrapper_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(wrapper));
+    DWORD vtbl = lift_field<DWORD>(wrapper_ptr, 0);
+    DWORD slot = lift_field<DWORD>(reinterpret_cast<void*>(static_cast<uintptr_t>(vtbl)), 0x38);
+    using ThisCall1 = void (*)(DWORD self_this, DWORD a);
+    reinterpret_cast<ThisCall1>(static_cast<uintptr_t>(slot))(wrapper, value);
+}
+} // namespace lift_006B0DE0

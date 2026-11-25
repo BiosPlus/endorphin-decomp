@@ -45763,6 +45763,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006B0C60 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B0DE0": {
+    "name": "Unknown::CacheSelectionAndInvoke_006B0DE0",
+    "class": "Unknown",
+    "signature": "void fn_006B0DE0(void* self, DWORD arg)",
+    "summary": "Caches the selection buffer from the argument, fetches a DC for the window handle at +0x20, and invokes vtable slot 0x38 on the DC wrapper.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B0E30": {
     "name": "Unknown::clearSelectionAndScrollCaret",
     "class": "Unknown",
