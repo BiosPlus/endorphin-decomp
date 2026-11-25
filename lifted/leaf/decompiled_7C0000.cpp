@@ -1267,3 +1267,29 @@ void fn_007CC970(void* self) {
     reinterpret_cast<Handler>(static_cast<uintptr_t>(notify))(self);
 }
 } // namespace lift_007CC970
+
+// [0x007CA1E0]
+namespace lift_007CA1E0 {
+// @name ComputeBoxInertiaDiagonal
+// @summary Writes a 3x3 (4-float row stride) box inertia tensor: diagonal m*(sum of other two squared dims)/12, off-diagonals zero.
+
+extern const double mem_009548E0; // .rdata double 12.0
+
+// Args (cdecl): mass, dimX, dimY, dimZ, out (float[9] with row stride 0x10).
+void __cdecl sub_007CA1E0(float mass, float dimX, float dimY, float dimZ, void* out) {
+    const double m12 = static_cast<double>(mass) / mem_009548E0;
+    const double x2 = static_cast<double>(dimX) * static_cast<double>(dimX);
+    const double y2 = static_cast<double>(dimY) * static_cast<double>(dimY);
+    const double z2 = static_cast<double>(dimZ) * static_cast<double>(dimZ);
+
+    lift_field<float>(out, 0x00) = static_cast<float>((y2 + z2) * m12);
+    lift_field<float>(out, 0x04) = 0.0f;
+    lift_field<float>(out, 0x08) = 0.0f;
+    lift_field<float>(out, 0x0C) = 0.0f;
+    lift_field<float>(out, 0x10) = static_cast<float>((x2 + z2) * m12);
+    lift_field<float>(out, 0x14) = 0.0f;
+    lift_field<float>(out, 0x18) = 0.0f;
+    lift_field<float>(out, 0x1C) = 0.0f;
+    lift_field<float>(out, 0x20) = static_cast<float>((x2 + y2) * m12);
+}
+} // namespace lift_007CA1E0

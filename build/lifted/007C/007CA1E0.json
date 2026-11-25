@@ -1,0 +1,13 @@
+{
+  "va": "0x007CA1E0",
+  "size": 81,
+  "orig_symbol": "sub_007CA1E0",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "ComputeBoxInertiaDiagonal",
+  "signature": "void __cdecl sub_007CA1E0(float mass, float dimX, float dimY, float dimZ, void* out)",
+  "summary": "Writes a 3x3 (4-float row stride) box inertia tensor: diagonal m*(sum of other two squared dims)/12, off-diagonals zero.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:00:49Z"
+}
