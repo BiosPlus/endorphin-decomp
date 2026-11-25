@@ -1301,6 +1301,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00414D30": {
+    "name": "Rect2D::initNormalized",
+    "class": "Rect2D",
+    "signature": "void* __thiscall sub_00414D30(void* self, float x0, float y0, float x1, float y1)",
+    "summary": "Initializes a 2D bounding box from four floats and normalizes min/max X and Y",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00414EC0": {
     "name": "sub_00414EC0",
     "signature": "uint32_t __thiscall sub_00414EC0( uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)",
@@ -8807,6 +8814,12 @@
     "class": "Unknown",
     "signature": "void fn_00480750(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
+  "0x00489230": {
+    "name": "std_copy_backward_string",
+    "signature": "uint32_t __cdecl sub_00489230(uint32_t first, uint32_t last, uint32_t dest_end)",
+    "summary": "Copies a range of std::string objects backward from [first, last) to [dest_end - (last - first), dest_end)",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
   "0x00489320": {
@@ -17009,6 +17022,13 @@
     "name": "CopyBackwardElements24",
     "signature": "void* fn_00509C50(void* first, void* last, void* d_last)",
     "summary": "Copy-backward over 0x24-byte elements (std::string at +0x04, float at +0x20); returns the new destination start.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x00509EB0": {
+    "name": "UnknownClass::copyCtor_00509EB0",
+    "class": "UnknownClass",
+    "signature": "void* __thiscall sub_00509EB0(void* self, const void* other)",
+    "summary": "Copy constructor setting vtable, copying std::string at +0x4 and float at +0x20",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
   "0x0050A1A0": {

@@ -1,0 +1,13 @@
+{
+  "va": "0x00489230",
+  "size": 88,
+  "orig_symbol": "sub_00489230",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "std_copy_backward_string",
+  "signature": "uint32_t __cdecl sub_00489230(uint32_t first, uint32_t last, uint32_t dest_end)",
+  "summary": "Copies a range of std::string objects backward from [first, last) to [dest_end - (last - first), dest_end)",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:16:03Z"
+}

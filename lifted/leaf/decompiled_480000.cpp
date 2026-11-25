@@ -1373,3 +1373,31 @@ void* fn_004802B0(uint32_t count) {
     return ext_006A5C62(count << 6);
 }
 } // namespace lift_004802B0
+
+// [0x00489230]
+namespace lift_00489230 {
+// @name std_copy_backward_string
+// @summary Copies a range of std::string objects backward from [first, last) to [dest_end - (last - first), dest_end)
+
+
+extern uint32_t mem_00924FDC;
+
+using StringAssignFn = uint32_t(__thiscall*)(uint32_t self, uint32_t src);
+
+uint32_t __cdecl sub_00489230(uint32_t first, uint32_t last, uint32_t dest_end) {
+    int32_t count = static_cast<int32_t>(last - first) / 0x1c;
+    uint32_t result = dest_end - static_cast<uint32_t>(count * 0x1c);
+
+    if (first != last) {
+        uint32_t offset = dest_end - last;
+        uint32_t cur = last;
+        auto assign_fn = reinterpret_cast<StringAssignFn>(static_cast<uintptr_t>(mem_00924FDC));
+        do {
+            cur -= 0x1c;
+            assign_fn(cur + offset, cur);
+        } while (cur != first);
+    }
+
+    return result;
+}
+} // namespace lift_00489230
