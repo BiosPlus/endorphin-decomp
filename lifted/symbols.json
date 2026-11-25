@@ -76273,6 +76273,18 @@
     "summary": "Resets an MD5 context: zeroes the 64-bit bit count and loads the four standard MD5 initial state words.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x00869E50": {
+    "name": "bytesToUint32ArrayLE",
+    "signature": "void sub_00869E50(uint32_t dst, uint32_t dst_count, uint32_t src, int32_t src_len)",
+    "summary": "Converts a big-endian byte array into a little-endian uint32_t array, zero-padding remaining words.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
+  "0x00869EC0": {
+    "name": "uint32ArrayToBigEndianBytes",
+    "signature": "void sub_00869EC0(uint8_t* dst, int32_t dst_len, const uint32_t* src, uint32_t src_count)",
+    "summary": "Converts an array of uint32_t words (little-endian word order) into a big-endian byte buffer, zero-padding leading bytes.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x00869F30": {
     "name": "ZeroDwordRange",
     "signature": "void ZeroDwordRange(uint32_t* dst, uint32_t count)",

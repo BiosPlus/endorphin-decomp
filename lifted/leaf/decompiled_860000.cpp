@@ -1167,3 +1167,80 @@ void __cdecl sub_00865960(uint32_t* state, const uint32_t* key) {
     }
 }
 } // namespace lift_00865960
+
+// [0x00869E50]
+namespace lift_00869E50 {
+// @name bytesToUint32ArrayLE
+// @summary Converts a big-endian byte array into a little-endian uint32_t array, zero-padding remaining words.
+
+
+uint8_t mem_r8(uint32_t addr);
+void mem_w32(uint32_t addr, uint32_t val);
+
+void sub_00869E50(uint32_t dst, uint32_t dst_count, uint32_t src, int32_t src_len) {
+    if (dst_count == 0) {
+        return;
+    }
+
+    int32_t src_idx = src_len - 1;
+    uint32_t dst_idx = 0;
+    uint32_t out_ptr = dst;
+
+    while (dst_idx < dst_count) {
+        if (src_idx < 0) {
+            for (uint32_t i = dst_idx; i < dst_count; ++i) {
+                mem_w32(dst + i * 4, 0);
+            }
+            return;
+        }
+
+        uint32_t word = 0;
+        uint32_t shift = 0;
+        while (shift < 32 && src_idx >= 0) {
+            uint32_t byte_val = mem_r8(src + static_cast<uint32_t>(src_idx));
+            word |= (byte_val << shift);
+            shift += 8;
+            --src_idx;
+        }
+
+        mem_w32(out_ptr, word);
+        ++dst_idx;
+        out_ptr += 4;
+    }
+}
+} // namespace lift_00869E50
+
+// [0x00869EC0]
+namespace lift_00869EC0 {
+// @name uint32ArrayToBigEndianBytes
+// @summary Converts an array of uint32_t words (little-endian word order) into a big-endian byte buffer, zero-padding leading bytes.
+
+
+void sub_00869EC0(uint8_t* dst, int32_t dst_len, const uint32_t* src, uint32_t src_count) {
+    int32_t idx = dst_len - 1;
+    uint32_t word_idx = 0;
+
+    if (src_count > 0) {
+        while (idx >= 0) {
+            uint32_t val = src[word_idx];
+            for (uint32_t shift = 0; shift < 32; shift += 8) {
+                uint8_t byte = static_cast<uint8_t>(val >> shift);
+                dst[idx] = byte;
+                idx--;
+                if (idx < 0) {
+                    break;
+                }
+            }
+            word_idx++;
+            if (word_idx >= src_count) {
+                break;
+            }
+        }
+    }
+
+    while (idx >= 0) {
+        dst[idx] = 0;
+        idx--;
+    }
+}
+} // namespace lift_00869EC0
