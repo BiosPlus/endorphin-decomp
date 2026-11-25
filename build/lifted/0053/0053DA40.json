@@ -1,0 +1,46 @@
+{
+  "va": "0x0053DA40",
+  "size": 90,
+  "orig_symbol": "Primitives::Sphyl::vfunc_25",
+  "src_path": "src/Primitives/Sphyl.cpp",
+  "lifted_path": "lifted/Primitives/Sphyl.cpp",
+  "name": "Primitives::Sphyl::vfunc_25",
+  "class": "Primitives::Sphyl",
+  "signature": "void Primitives_Sphyl_vfunc_25(void* self, uint32_t a1, void* src, uint32_t a3)",
+  "summary": "Forwards to Plane::vfunc_25, sets flag 0x40 in this-\u003efield_0x1C, copies three uint32 values from the source record (+0x84/+0x88/+0x8C) and the first char of its std::string member (+0x9C) into this.",
+  "fields": [
+    {
+      "class": "Primitives::Sphyl",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Primitives::Sphyl",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "Primitives::Sphyl",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Primitives::Sphyl",
+      "offset": "+0x44",
+      "type": "uint32_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Primitives::Sphyl",
+      "offset": "+0x48",
+      "type": "uint8_t",
+      "name": "field_0x48"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:12:39Z"
+}

@@ -11,11 +11,9 @@
 namespace lifted_layout {
 struct Primitives_Sphyl_Fields {
     // +0x1C  uint32_t                 field_0x1C  (evidence: 0x0053DA40)
-    // +0x20  void*                    field_0x20  (evidence: 0x0053B8A0)
-    // +0x3C  uint32_t                 field_0x3C  (evidence: 0x0053B8A0, 0x0053DA40)
-    // +0x40  uint32_t                 field_0x40  (evidence: 0x0053B8A0, 0x0053DA40)
-    // +0x44  uint32_t                 field_0x44  (evidence: 0x0053B8A0, 0x0053DA40)
+    // +0x3C  uint32_t                 field_0x3C  (evidence: 0x0053DA40)
+    // +0x40  uint32_t                 field_0x40  (evidence: 0x0053DA40)
+    // +0x44  uint32_t                 field_0x44  (evidence: 0x0053DA40)
     // +0x48  uint8_t                  field_0x48  (evidence: 0x0053DA40)
-    // +0x4C  GLUquadric*              field_0x4C  (evidence: 0x0053B8A0)
 };
 } // namespace lifted_layout

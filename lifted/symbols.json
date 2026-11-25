@@ -22418,6 +22418,13 @@
     "summary": "Conditional dispatch: arg==2 is a no-op; otherwise either calls the +0x3C/+0x40 vfuncs (when +0x5C is null) or the +0x38/+0x40/+0x5C vfuncs (when +0x5C is set).",
     "lifted_path": "lifted/Primitives/Sensor2.cpp"
   },
+  "0x0053DA40": {
+    "name": "Primitives::Sphyl::vfunc_25",
+    "class": "Primitives::Sphyl",
+    "signature": "void Primitives_Sphyl_vfunc_25(void* self, uint32_t a1, void* src, uint32_t a3)",
+    "summary": "Forwards to Plane::vfunc_25, sets flag 0x40 in this-\u003efield_0x1C, copies three uint32 values from the source record (+0x84/+0x88/+0x8C) and the first char of its std::string member (+0x9C) into this.",
+    "lifted_path": "lifted/Primitives/Sphyl.cpp"
+  },
   "0x0053DAA0": {
     "name": "Primitives::Cylinder::vfunc_25",
     "class": "Primitives::Cylinder",
