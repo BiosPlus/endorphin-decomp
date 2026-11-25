@@ -1628,3 +1628,41 @@ uintptr_t __thiscall sub_00629AA0(uintptr_t this_ptr, uint32_t arg0, uint32_t ar
     return this_ptr;
 }
 } // namespace lift_00629AA0
+
+// [0x0062C3F0] sub_0062C3F0 (90 bytes)
+namespace lift_0062C3F0 {
+// Known callee 0x005FF240: sub_005FF240 (Initializes object fields to zero, stores argument at +0x28, and sets vtable to 0x0096F154)
+extern uint32_t __thiscall ext_005FF240(uintptr_t this_ptr, uint32_t arg0);
+
+template<typename T> void mem_write(uintptr_t addr, T val);
+
+// @name Sensors::AxisSensor::AxisSensor
+// @class Sensors::AxisSensor
+// @summary Constructor: runs base init, sets AxisSensor vtable, zeroes float fields at +0x30/+0x34/+0x38, stores arg2 at +0x3C, zeroes +0x44/+0x48/+0x4C; returns this.
+// @field Sensors::AxisSensor +0x00 uint32_t vtable
+// @field Sensors::AxisSensor +0x30 float field_0x30
+// @field Sensors::AxisSensor +0x34 float field_0x34
+// @field Sensors::AxisSensor +0x38 float field_0x38
+// @field Sensors::AxisSensor +0x3C uint32_t field_0x3c
+// @field Sensors::AxisSensor +0x44 uint32_t field_0x44
+// @field Sensors::AxisSensor +0x48 uint32_t field_0x48
+// @field Sensors::AxisSensor +0x4C uint32_t field_0x4c
+uintptr_t fn_0062C3F0(uintptr_t self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    // arg1 and arg3 are part of the stdcall-style frame (ret 0x10) but unused here.
+    (void)arg1;
+    (void)arg3;
+
+    ext_005FF240(self, arg0);
+
+    mem_write<uint32_t>(self + 0x00, 0x0097900Cu);
+    mem_write<float>(self + 0x30, 0.0f);
+    mem_write<float>(self + 0x34, 0.0f);
+    mem_write<float>(self + 0x38, 0.0f);
+    mem_write<uint32_t>(self + 0x3C, arg2);
+    mem_write<uint32_t>(self + 0x44, 0u);
+    mem_write<uint32_t>(self + 0x48, 0u);
+    mem_write<uint32_t>(self + 0x4C, 0u);
+
+    return self;
+}
+} // namespace lift_0062C3F0

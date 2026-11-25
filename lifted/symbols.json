@@ -34530,6 +34530,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x0062C3F0": {
+    "name": "Sensors::AxisSensor::AxisSensor",
+    "class": "Sensors::AxisSensor",
+    "signature": "uintptr_t fn_0062C3F0(uintptr_t self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Constructor: runs base init, sets AxisSensor vtable, zeroes float fields at +0x30/+0x34/+0x38, stores arg2 at +0x3C, zeroes +0x44/+0x48/+0x4C; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x0062C5E0": {
     "name": "Sensors::AxisSensor::vfunc_0",
     "class": "Sensors::AxisSensor",
