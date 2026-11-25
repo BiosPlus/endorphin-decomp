@@ -65419,6 +65419,13 @@
     "summary": "Allocates a 0x11948-byte global block, stores its handle at +0x5C of the object referenced by self+0x1CC, and returns 1 on success or 0 after dispatching the failure hook.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BEDE0": {
+    "name": "InitMinusOneTableState_007BEDE0",
+    "class": "Unknown",
+    "signature": "extern \"C\" int __cdecl fn_007BEDE0(void* self)",
+    "summary": "Initializes the state block at self-\u003e+0x1cc (rates/limits/counters), sets +0x58 from self-\u003e+0x1d8/+0x1dc, fills its -1 table via FillMinusOneTable, and returns 1.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BF2B0": {
     "name": "Unknown::FillMinusOneTable",
     "class": "Unknown",

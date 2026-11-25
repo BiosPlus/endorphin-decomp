@@ -1220,3 +1220,52 @@ int fn_007BFA10(void* a1, uint8_t* a2, int a3, void* a4, void* a5) {
     return 1;
 }
 } // namespace lift_007BFA10
+
+// [0x007BEDE0] sub_007BEDE0 (95 bytes)
+namespace lift_007BEDE0 {
+// Known callee 0x007BF2B0: Unknown::FillMinusOneTable (Fills 1125 blocks of 8 dwords (stride 8, walking backward 0x40 per block) plus one trailing dword in a table at self->+0x5c+0x11940 with -1.)
+extern void __cdecl ext_007BF2B0(void* self);
+
+// @name InitMinusOneTableState_007BEDE0
+// @class Unknown
+// @summary Initializes the state block at self->+0x1cc (rates/limits/counters), sets +0x58 from self->+0x1d8/+0x1dc, fills its -1 table via FillMinusOneTable, and returns 1.
+// @field Unknown +0x1cc void* subobject
+// @field Unknown +0x1d8 std::uint32_t field_0x1d8
+// @field Unknown +0x1dc std::uint32_t field_0x1dc
+// @field Unknown +0x30 std::uint16_t field_0x30
+// @field Unknown +0x32 std::uint16_t field_0x32
+// @field Unknown +0x34 std::uint16_t field_0x34
+// @field Unknown +0x38 std::uint32_t field_0x38
+// @field Unknown +0x3c std::uint32_t field_0x3c
+// @field Unknown +0x44 std::uint32_t field_0x44
+// @field Unknown +0x48 std::uint32_t field_0x48
+// @field Unknown +0x4c std::uint32_t field_0x4c
+// @field Unknown +0x50 std::uint32_t field_0x50
+// @field Unknown +0x54 std::uint32_t field_0x54
+// @field Unknown +0x58 std::uint32_t field_0x58
+extern int __cdecl fn_007BEDE0(void* self) {
+    // Sub-object pointer is a 32-bit address stored at self+0x1cc.
+    void* sub = reinterpret_cast<void*>(
+        static_cast<std::uintptr_t>(lift_field<std::uint32_t>(self, 0x1cc)));
+
+    lift_field<std::uint16_t>(sub, 0x30) = 0x0009;
+    lift_field<std::uint16_t>(sub, 0x32) = 0x01FF;
+    lift_field<std::uint16_t>(sub, 0x34) = 0x0102;
+    lift_field<std::uint32_t>(sub, 0x3C) = 0;
+    lift_field<std::uint32_t>(sub, 0x38) = 0;
+    lift_field<std::uint32_t>(sub, 0x48) = 0x2710;
+    lift_field<std::uint32_t>(sub, 0x4C) = 0;
+    lift_field<std::uint32_t>(sub, 0x50) = 0;
+    lift_field<std::uint32_t>(sub, 0x54) = 0;
+
+    // field_0x58 = self->field_0x1dc + self->field_0x1d8 - 5
+    const std::uint32_t v1dc = lift_field<std::uint32_t>(self, 0x1DC);
+    const std::uint32_t v1d8 = lift_field<std::uint32_t>(self, 0x1D8);
+    lift_field<std::uint32_t>(sub, 0x58) = static_cast<std::uint32_t>(v1dc + v1d8 - 5u);
+
+    ext_007BF2B0(sub);
+
+    lift_field<std::uint32_t>(sub, 0x44) = 0x0000FFFF;
+    return 1;
+}
+} // namespace lift_007BEDE0

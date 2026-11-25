@@ -1,0 +1,100 @@
+{
+  "va": "0x007BEDE0",
+  "size": 95,
+  "orig_symbol": "sub_007BEDE0",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "InitMinusOneTableState_007BEDE0",
+  "class": "Unknown",
+  "signature": "extern \"C\" int __cdecl fn_007BEDE0(void* self)",
+  "summary": "Initializes the state block at self-\u003e+0x1cc (rates/limits/counters), sets +0x58 from self-\u003e+0x1d8/+0x1dc, fills its -1 table via FillMinusOneTable, and returns 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1CC",
+      "type": "void*",
+      "name": "subobject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1D8",
+      "type": "std::uint32_t",
+      "name": "field_0x1d8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1DC",
+      "type": "std::uint32_t",
+      "name": "field_0x1dc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "std::uint16_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x32",
+      "type": "std::uint16_t",
+      "name": "field_0x32"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "std::uint16_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "std::uint32_t",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "std::uint32_t",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "std::uint32_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "std::uint32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "std::uint32_t",
+      "name": "field_0x4c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "std::uint32_t",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "std::uint32_t",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "std::uint32_t",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:34:20Z"
+}
