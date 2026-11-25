@@ -439,3 +439,35 @@ std::string* fn_004D4230(void* self, std::string* out, uint32_t index) {
     return out;
 }
 } // namespace lift_004D4230
+
+// [0x004D41C0] sub_004D41C0 (103 bytes)
+namespace lift_004D41C0 {
+// Known import 0x00924FE0 (mem_00924FE0): MSVCP80 std::basic_string<char> copy constructor.
+// Called as this=dst, one argument = source string (28-byte std::string element).
+extern void ext_MSVCP80_string_copy_ctor(void* dst, const void* src);
+// Known import 0x00925134 (mem_00925134): MSVCR80 _invalid_parameter_noinfo (no return on failure path).
+extern void ext_MSVCR80_invalid_parameter_noinfo();
+extern int mem_00924FE0;
+extern int mem_00925134;
+
+// @name Unknown::CopyStringElementAt
+// @class Unknown
+// @summary Copy-constructs the std::string at index (element size 28) of the vector whose begin/end pointers live at +0x448/+0x44C into the caller-supplied out slot, and returns out.
+// @field Unknown +0x448 uint32_t vector_begin
+// @field Unknown +0x44C uint32_t vector_end
+void* fn_004D41C0(void* self, void* out, uint32_t index) {
+    const uint32_t begin = lift_field<uint32_t>(self, 0x448);
+    const uint32_t end = lift_field<uint32_t>(self, 0x44C);
+
+    // Bounds check: begin must be non-null and index must be below element count.
+    const uint32_t count = (end - begin) / 28u;
+    if (begin == 0 || index >= count) {
+        ext_MSVCR80_invalid_parameter_noinfo();
+    }
+
+    // Reload begin (original re-reads +0x448 after the check) and locate element.
+    const uint32_t element = lift_field<uint32_t>(self, 0x448) + index * 28u;
+    ext_MSVCP80_string_copy_ctor(out, reinterpret_cast<const void*>(static_cast<uintptr_t>(element)));
+    return out;
+}
+} // namespace lift_004D41C0
