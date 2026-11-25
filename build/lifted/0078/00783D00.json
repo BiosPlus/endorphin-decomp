@@ -1,0 +1,22 @@
+{
+  "va": "0x00783D00",
+  "size": 96,
+  "orig_symbol": "sub_00783D00",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "findLastSetBit",
+  "class": "BitSet",
+  "signature": "bool __thiscall sub_00783D00(void* self, uint32_t* outIndex)",
+  "summary": "Finds the index of the highest set bit in a bitset and stores it in outIndex.",
+  "fields": [
+    {
+      "class": "BitSet",
+      "offset": "+0x0",
+      "type": "uint32_t*",
+      "name": "data"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:49:53Z"
+}
