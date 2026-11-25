@@ -1186,3 +1186,37 @@ uint32_t __thiscall sub_006BB150(uint32_t self, uint32_t arg0) {
     return 0;
 }
 } // namespace lift_006BB150
+
+// [0x006BC6F0] sub_006BC6F0 (64 bytes)
+namespace lift_006BC6F0 {
+// Known callee 0x006D2200: DynamicArray::removeAt (Removes the element at the given index by shifting subsequent elements left and decrementing the count.)
+extern void ext_006D2200(void* self, int32_t index);
+
+// @name Unknown::RemoveAndReleaseAt
+// @class Unknown
+// @summary Removes the element at the given index from the embedded DynamicArray, then releases it via its vtable (vfunc 1, then deleting vfunc 5 with arg 1).
+// @field Unknown +0x3c DynamicArray elements
+// @field Unknown +0x4c void** field_0x4c
+void fn_006BC6F0(void* self, int32_t index) {
+    if (index < 0) {
+        return;
+    }
+    const int32_t count = lift_field<int32_t>(self, 0x3c);
+    if (index >= count) {
+        return;
+    }
+    void** data = lift_field<void**>(self, 0x4c);
+    void* item = data[index];
+
+    ext_006D2200(reinterpret_cast<uint8_t*>(self) + 0x3c, index);
+
+    void** vtbl = *reinterpret_cast<void***>(item);
+    reinterpret_cast<void (*)(void*)>(vtbl[1])(item);
+
+    if (item == nullptr) {
+        return;
+    }
+    vtbl = *reinterpret_cast<void***>(item);
+    reinterpret_cast<void (*)(void*, int32_t)>(vtbl[5])(item, 1);
+}
+} // namespace lift_006BC6F0

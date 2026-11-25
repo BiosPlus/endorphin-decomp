@@ -47313,6 +47313,13 @@
     "summary": "Getter returning int32_t field at offset +0x3C.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006BC6F0": {
+    "name": "Unknown::RemoveAndReleaseAt",
+    "class": "Unknown",
+    "signature": "void fn_006BC6F0(void* self, int32_t index)",
+    "summary": "Removes the element at the given index from the embedded DynamicArray, then releases it via its vtable (vfunc 1, then deleting vfunc 5 with arg 1).",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BC730": {
     "name": "sub_006BC730",
     "signature": "extern \"C\" int32_t __fastcall fn_006BC730(void* self)",
