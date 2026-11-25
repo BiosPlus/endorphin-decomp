@@ -250,3 +250,41 @@ extern void __thiscall fn_005F51D0(void* self, uint32_t arg) {
     slot2C(sub, 0x1000u, static_cast<uint32_t>(stored));
 }
 } // namespace lift_005F51D0
+
+// [0x005F5350] sub_005F5350 (74 bytes)
+namespace lift_005F5350 {
+// IAT slot 0x924FDC: MSVCP80 std::basic_string<char>::operator=(const basic_string&).
+// Called thiscall (this in ecx, source string pushed as the single argument).
+extern uint32_t mem_00924FDC;
+extern void ext_00924FDC(void* dst_string, const void* src_string);
+
+// @name Unknown::CopyFromSource_005F5350
+// @class Unknown
+// @summary Copies a 4-byte flag (from src+4, or the byte at address 0 when src is null), two floats at +0x08/+0x0C, two floats at +0x10/+0x14, assigns the std::string at +0x18 from src+0x18, and copies the byte at +0x34; returns self.
+// @field Unknown +0x04 BYTE field_0x04
+// @field Unknown +0x08 FLOAT field_0x08
+// @field Unknown +0x0C FLOAT field_0x0c
+// @field Unknown +0x10 FLOAT field_0x10
+// @field Unknown +0x14 FLOAT field_0x14
+// @field Unknown +0x18 std::string field_0x18
+// @field Unknown +0x34 BYTE field_0x34
+void* fn_005F5350(void* self, const void* src) {
+    const uint8_t* s = static_cast<const uint8_t*>(src);
+    uint8_t* d = static_cast<uint8_t*>(self);
+
+    // Byte at (src + 4) when src is non-null; the original reads address 0 otherwise.
+    const uint8_t* flag_src = s ? s + 0x04 : nullptr;
+    lift_field<uint8_t>(d, 0x04) = *flag_src;
+
+    lift_field<float>(d, 0x08) = lift_field<float>(s, 0x08);
+    lift_field<float>(d, 0x0C) = lift_field<float>(s, 0x0C);
+    lift_field<float>(d, 0x10) = lift_field<float>(s, 0x10);
+    lift_field<float>(d, 0x14) = lift_field<float>(s, 0x14);
+
+    // std::string assignment at +0x18 from src+0x18.
+    ext_00924FDC(d + 0x18, s + 0x18);
+
+    lift_field<uint8_t>(d, 0x34) = lift_field<uint8_t>(s, 0x34);
+    return self;
+}
+} // namespace lift_005F5350
