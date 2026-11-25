@@ -8,9 +8,9 @@
 // Recovered field layout for Vector:
 namespace lifted_layout {
 struct Vector_Fields {
-    // +0x4   uint32_t                 begin  (evidence: 0x00527AF0, 0x0052F7D0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 begin  (evidence: 0x0041C7C0, 0x00527AF0, 0x0052F7D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00441C10, 0x0044C500, 0x00490920, 0x00490B80, 0x0049B170, 0x004A6A90, 0x004B51F0, 0x0050BE20, 0x006753D0) // CONFLICT: multiple definitions at +0x4
-    // +0x8   uint32_t                 end  (evidence: 0x00527AF0, 0x0052F7D0, 0x005947B0, 0x005963F0, 0x00596660) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 end  (evidence: 0x0041C7C0, 0x00527AF0, 0x0052F7D0, 0x005947B0, 0x005963F0, 0x00596660) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t*                 end  (evidence: 0x00527D60, 0x0052F7D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 end_ptr  (evidence: 0x004B4930) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00441C10, 0x0044C460, 0x0044C500, 0x00490920, 0x00490B80, 0x0049B170, 0x004A6A90, 0x004B51F0, 0x0050BE20, 0x006753D0) // CONFLICT: multiple definitions at +0x8

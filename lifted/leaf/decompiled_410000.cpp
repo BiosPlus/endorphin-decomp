@@ -2321,3 +2321,47 @@ uint32_t __thiscall fn_0041A530(uint32_t self, uint32_t key) {
     return guest_u32(node, 0x10);
 }
 } // namespace lift_0041A530
+
+// [0x0041C7C0]
+namespace lift_0041C7C0 {
+// @name Vector::at
+// @class Vector
+// @summary Bounds-checked element pointer access (std::vector::at) with MSVC checked-iterator validation.
+// @field Vector +0x04 uint32_t begin
+// @field Vector +0x08 uint32_t end
+
+
+[[noreturn]] extern void ext_0067F5B0();
+extern uint32_t mem_00925134;
+
+uint32_t __thiscall fn_0041C7C0(uint32_t self, uint32_t index) {
+    uint32_t begin = *reinterpret_cast<uint32_t*>(self + 0x4);
+    uint32_t end = 0;
+
+    if (begin == 0) {
+        ext_0067F5B0();
+    } else {
+        end = *reinterpret_cast<uint32_t*>(self + 0x8);
+        uint32_t count = static_cast<uint32_t>(static_cast<int32_t>(end - begin) >> 2);
+        if (count <= index) {
+            ext_0067F5B0();
+        }
+    }
+
+    auto invalid_param = reinterpret_cast<void (*)()>(mem_00925134);
+    if (begin > end) {
+        invalid_param();
+    }
+
+    uint32_t elem = begin + 4u * index;
+    if (elem > *reinterpret_cast<uint32_t*>(self + 0x8) ||
+        elem < *reinterpret_cast<uint32_t*>(self + 0x4)) {
+        invalid_param();
+    }
+    if (elem >= *reinterpret_cast<uint32_t*>(self + 0x8)) {
+        invalid_param();
+    }
+
+    return elem;
+}
+} // namespace lift_0041C7C0
