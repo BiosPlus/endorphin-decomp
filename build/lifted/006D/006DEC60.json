@@ -1,0 +1,21 @@
+{
+  "va": "0x006DEC60",
+  "size": 64,
+  "orig_symbol": "sub_006DEC60",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "sub_006DEC60",
+  "signature": "extern \"C\" void __thiscall fn_006DEC60(void* self, uint32_t value, uint8_t release_old)",
+  "summary": "Sets field_0x40, optionally releasing the previous value, and notifies field_0x44 with flag 0x10.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:55:28Z"
+}
