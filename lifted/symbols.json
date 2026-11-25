@@ -47820,6 +47820,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006C3470 (Unknown::GetEntryAddressAlt).",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C3C10": {
+    "name": "vec3dCross",
+    "signature": "void sub_006C3C10(uint32_t out_ptr, uint32_t a_ptr, uint32_t b_ptr)",
+    "summary": "Computes the 3D cross product of two double-precision vectors: out = a x b.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C3EE0": {
     "name": "scaleVec3ToOut",
     "signature": "void fn_006C3EE0(double* out, const double* in, double scalar)",
