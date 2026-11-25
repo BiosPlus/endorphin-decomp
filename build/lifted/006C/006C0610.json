@@ -1,0 +1,52 @@
+{
+  "va": "0x006C0610",
+  "size": 74,
+  "orig_symbol": "sub_006C0610",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "CopySnapshotWithUnitWeight_006C0610",
+  "class": "Unknown",
+  "signature": "void fn_006C0610(void* self, void* out)",
+  "summary": "Copies six dwords from self+0x288..+0x29c into out[0..0x14], then writes 0 at out+0x18 and the double 1.0 at out+0x18 (high dword at out+0x1c).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x288",
+      "type": "uint32_t",
+      "name": "field_0x288"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28C",
+      "type": "uint32_t",
+      "name": "field_0x28c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x290",
+      "type": "uint32_t",
+      "name": "field_0x290"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x294",
+      "type": "uint32_t",
+      "name": "field_0x294"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x298",
+      "type": "uint32_t",
+      "name": "field_0x298"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x29C",
+      "type": "uint32_t",
+      "name": "field_0x29c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:34:04Z"
+}

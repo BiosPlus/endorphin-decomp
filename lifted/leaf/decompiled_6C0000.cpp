@@ -1023,3 +1023,35 @@ void fn_006C0730(void* self, void* out) {
     lift_field<uint32_t>(out, 0x1c) = 0x3ff00000u;
 }
 } // namespace lift_006C0730
+
+// [0x006C0610]
+namespace lift_006C0610 {
+// @name CopySnapshotWithUnitWeight_006C0610
+// @class Unknown
+// @summary Copies six dwords from self+0x288..+0x29c into out[0..0x14], then writes 0 at out+0x18 and the double 1.0 at out+0x18 (high dword at out+0x1c).
+// @field Unknown +0x288 uint32_t field_0x288
+// @field Unknown +0x28c uint32_t field_0x28c
+// @field Unknown +0x290 uint32_t field_0x290
+// @field Unknown +0x294 uint32_t field_0x294
+// @field Unknown +0x298 uint32_t field_0x298
+// @field Unknown +0x29c uint32_t field_0x29c
+void fn_006C0610(void* self, void* out) {
+    uint8_t* src = static_cast<uint8_t*>(self);
+    uint8_t* dst = static_cast<uint8_t*>(out);
+
+    uint32_t v[6];
+    std::memcpy(v, src + 0x288, sizeof(v));
+
+    std::memcpy(dst + 0x00, &v[0], sizeof(uint32_t));
+    std::memcpy(dst + 0x04, &v[1], sizeof(uint32_t));
+    std::memcpy(dst + 0x08, &v[2], sizeof(uint32_t));
+    std::memcpy(dst + 0x0c, &v[3], sizeof(uint32_t));
+    std::memcpy(dst + 0x10, &v[4], sizeof(uint32_t));
+    std::memcpy(dst + 0x14, &v[5], sizeof(uint32_t));
+
+    const double one = 1.0;
+    uint32_t zero = 0;
+    std::memcpy(dst + 0x18, &zero, sizeof(uint32_t));
+    std::memcpy(dst + 0x1c, reinterpret_cast<const uint8_t*>(&one) + 4, sizeof(uint32_t));
+}
+} // namespace lift_006C0610
