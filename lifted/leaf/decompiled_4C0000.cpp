@@ -796,3 +796,29 @@ float fn_004C50C0(void) {
     return std::sqrt(x * x + y * y + z * z);
 }
 } // namespace lift_004C50C0
+
+// [0x004C70F0] sub_004C70F0 (97 bytes)
+namespace lift_004C70F0 {
+// Known callee 0x00401BB0: DIBException::~DIBException (Base destructor: installs DIBException vtable, destroys the std::string member at +0x0C, then destroys the std::exception base.)
+extern void ext_00401BB0(void* self);
+// IAT slot for MSVCP80 std::basic_string<char>::~basic_string (thiscall; ecx = this).
+extern void (*mem_00924FF4)(void* self);
+
+// @name DIBExceptionDerived::~DIBExceptionDerived
+// @class DIBExceptionDerived
+// @summary Derived-class destructor: installs derived vtable, destroys two std::string members (+0x44, then +0x28), then chains to DIBException base destructor.
+// @field DIBExceptionDerived +0x00 void* vtable
+// @field DIBExceptionDerived +0x28 std::string field_0x28
+// @field DIBExceptionDerived +0x44 std::string field_0x44
+void fn_004C70F0(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    // Derived vtable pointer (0x00945A5C).
+    *reinterpret_cast<uintptr_t*>(base + 0x00) = 0x00945A5CU;
+    // Destroy member string at +0x44.
+    mem_00924FF4(base + 0x44);
+    // Destroy member string at +0x28.
+    mem_00924FF4(base + 0x28);
+    // Chain to DIBException base destructor.
+    ext_00401BB0(self);
+}
+} // namespace lift_004C70F0

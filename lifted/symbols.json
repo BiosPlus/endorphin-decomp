@@ -14133,6 +14133,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x180 and forwards through mem_00924FDC.",
     "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
   },
+  "0x004C70F0": {
+    "name": "DIBExceptionDerived::~DIBExceptionDerived",
+    "class": "DIBExceptionDerived",
+    "signature": "void fn_004C70F0(void* self)",
+    "summary": "Derived-class destructor: installs derived vtable, destroys two std::string members (+0x44, then +0x28), then chains to DIBException base destructor.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C7160": {
     "name": "UnregisteredTypeException::vfunc_0",
     "class": "UnregisteredTypeException",
