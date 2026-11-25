@@ -32150,6 +32150,12 @@
     "summary": "Lazily initializes the global singleton at 0x00B45F90 guarded by 0x00B45F94 and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005EB540": {
+    "name": "getSingleton_005EB540",
+    "signature": "void* fn_005EB540()",
+    "summary": "Lazily initializes a static singleton at 0x00B45F98 with vtable 0x0096AB94 and returns its pointer.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005EB890": {
     "name": "NMData::FixedPathJointData::vfunc_10_off_C",
     "class": "NMData::FixedPathJointData",

@@ -937,3 +937,22 @@ void* fn_005EB4E0() {
     return &mem_00B45F90;
 }
 } // namespace lift_005EB4E0
+
+// [0x005EB540]
+namespace lift_005EB540 {
+extern uint32_t mem_00B45F9C;
+extern uint32_t mem_00B45F98;
+
+extern void __thiscall ext_0067A670(void* self);
+
+// @name getSingleton_005EB540
+// @summary Lazily initializes a static singleton at 0x00B45F98 with vtable 0x0096AB94 and returns its pointer.
+void* fn_005EB540() {
+    if ((mem_00B45F9C & 1u) == 0) {
+        mem_00B45F9C |= 1u;
+        ext_0067A670(&mem_00B45F98);
+        mem_00B45F98 = 0x0096AB94u;
+    }
+    return &mem_00B45F98;
+}
+} // namespace lift_005EB540

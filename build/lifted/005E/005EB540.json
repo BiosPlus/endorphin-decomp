@@ -1,0 +1,13 @@
+{
+  "va": "0x005EB540",
+  "size": 87,
+  "orig_symbol": "sub_005EB540",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "getSingleton_005EB540",
+  "signature": "void* fn_005EB540()",
+  "summary": "Lazily initializes a static singleton at 0x00B45F98 with vtable 0x0096AB94 and returns its pointer.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:14:27Z"
+}
