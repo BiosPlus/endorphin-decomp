@@ -1,0 +1,21 @@
+{
+  "va": "0x007C8BB0",
+  "size": 16,
+  "orig_symbol": "sub_007C8BB0",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "forwardBucketMapFromOwner_007C8BB0",
+  "signature": "bool fn_007C8BB0(void* self, void* cur, void* out)",
+  "summary": "Forwards the bucket map stored at +0x2C of the owner to fillValuesFromBucketCursor with the caller's cursor and output buffer; tail-calls it.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "BucketMap*",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:06:26Z"
+}

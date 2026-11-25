@@ -1438,3 +1438,17 @@ void fn_007CD530(void* self) {
     link = nullptr;
 }
 } // namespace lift_007CD530
+
+// [0x007C8BB0] sub_007C8BB0 (16 bytes)
+namespace lift_007C8BB0 {
+// Known callee 0x007DCC20: fillValuesFromBucketCursor_007DCC20 (Walks a bucketed node map from a cursor, copying node values into an output buffer until it is full or the map is exhausted; returns true if the buffer filled up.)
+extern bool ext_007DCC20(void* map, void* cur, void* out);
+
+// @name forwardBucketMapFromOwner_007C8BB0
+// @summary Forwards the bucket map stored at +0x2C of the owner to fillValuesFromBucketCursor with the caller's cursor and output buffer; tail-calls it.
+// @field Unknown +0x2C BucketMap* field_0x2c
+bool fn_007C8BB0(void* self, void* cur, void* out) {
+    void* map = lift_field<void*>(self, 0x2C);
+    return ext_007DCC20(map, cur, out);
+}
+} // namespace lift_007C8BB0

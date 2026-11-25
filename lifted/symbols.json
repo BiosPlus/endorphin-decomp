@@ -14175,6 +14175,12 @@
     "summary": "Reads the object pointer from *out, builds a temporary std::string via sub_004BC770, copy-assigns it into out, and returns out.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004BE680": {
+    "name": "sub_004BE680",
+    "signature": "void __fastcall fn_004BE680(void* self)",
+    "summary": "Destructs three std::string fields and calls base destructor sub_0065F440",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BEAA0": {
     "name": "InitOnceGlobalString_004BEAA0",
     "signature": "void* fn_004BEAA0()",
@@ -17349,6 +17355,13 @@
     "name": "sub_004EBE30",
     "signature": "void* fn_004EBE30()",
     "summary": "Auto-lifted identical-shape clone of 0x0043D780 (AllocAndInitRecord).",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
+  "0x004EC380": {
+    "name": "TreeMap::find",
+    "class": "TreeMap",
+    "signature": "void* fn_004EC380(void* self, void* out_iter, const void* key)",
+    "summary": "Finds an element by string key in the red-black tree and writes the resulting iterator.",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
   "0x004EC3F0": {
@@ -69098,6 +69111,12 @@
     "class": "\u003cunknown\u003e",
     "signature": "void fn_007C8A70(void* self, DWORD value)",
     "summary": "Auto-lifted identical-shape clone of 0x007D5BB0 (setField20_007D5BB0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C8BB0": {
+    "name": "forwardBucketMapFromOwner_007C8BB0",
+    "signature": "bool fn_007C8BB0(void* self, void* cur, void* out)",
+    "summary": "Forwards the bucket map stored at +0x2C of the owner to fillValuesFromBucketCursor with the caller's cursor and output buffer; tail-calls it.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
   "0x007C8C50": {

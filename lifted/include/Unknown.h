@@ -619,6 +619,7 @@ struct Unknown_Fields {
     // +0x2C  uint32_t*                field_0x2C  (evidence: 0x00567210) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  uint8_t[4]               field_0x2C  (evidence: 0x00771B90) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  void*                    field_0x2C  (evidence: 0x006FA830) // CONFLICT: multiple definitions at +0x2C
+    // +0x2C  BucketMap*               field_0x2c  (evidence: 0x007C8BB0) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  CRITICAL_SECTION         field_0x2c  (evidence: 0x004155E0) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  DWORD                    field_0x2c  (evidence: 0x0057D7F0, 0x006AD0F0) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  float                    field_0x2c  (evidence: 0x00602F70, 0x007C8490, 0x007CAF70, 0x007CCCD0) // CONFLICT: multiple definitions at +0x2C
