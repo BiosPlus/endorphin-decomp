@@ -482,3 +482,20 @@ void fn_0072DA80(void* self) {
     ext_006B9D70(static_cast<uint8_t*>(self) + 0x04);
 }
 } // namespace lift_0072DA80
+
+// [0x0072C820] sub_0072C820 (80 bytes)
+namespace lift_0072C820 {
+// @name CopyStridedBytes
+// @summary Copies `rowCount` rows of `rowWidth` (low 16 bits) bytes from src to dst, packed back to back, byte by byte.
+void fn_0072C820(std::uint8_t* src, std::uint8_t* dst, std::uint32_t rowWidth, std::uint32_t rowCount) {
+    std::uint32_t width = rowWidth & 0xFFFFu;
+    std::uint32_t offset = 0;
+
+    for (std::uint32_t row = rowCount; row != 0; --row) {
+        for (std::uint32_t i = 0; i < width; ++i) {
+            dst[offset + i] = src[offset + i];
+        }
+        offset += width;
+    }
+}
+} // namespace lift_0072C820

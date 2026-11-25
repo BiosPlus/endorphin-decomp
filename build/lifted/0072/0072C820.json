@@ -1,0 +1,13 @@
+{
+  "va": "0x0072C820",
+  "size": 80,
+  "orig_symbol": "sub_0072C820",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "CopyStridedBytes",
+  "signature": "void fn_0072C820(std::uint8_t* src, std::uint8_t* dst, std::uint32_t rowWidth, std::uint32_t rowCount)",
+  "summary": "Copies `rowCount` rows of `rowWidth` (low 16 bits) bytes from src to dst, packed back to back, byte by byte.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:53:03Z"
+}

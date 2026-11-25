@@ -56867,6 +56867,12 @@
     "summary": "Setter storing uint8_t argument into field at offset +0x14.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x0072C820": {
+    "name": "CopyStridedBytes",
+    "signature": "void fn_0072C820(std::uint8_t* src, std::uint8_t* dst, std::uint32_t rowWidth, std::uint32_t rowCount)",
+    "summary": "Copies `rowCount` rows of `rowWidth` (low 16 bits) bytes from src to dst, packed back to back, byte by byte.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x0072CB00": {
     "name": "sub_0072CB00",
     "class": "Unknown",
