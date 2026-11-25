@@ -1163,3 +1163,46 @@ void fn_0050C610(void* self) {
 }
 } // namespace lift_005015E0
 } // namespace lift_0050C610
+
+// [0x00503BC0]
+namespace lift_00503BC0 {
+// MSVCR80!_invalid_parameter_noinfo IAT slot
+extern void* mem_00925134;
+// MSVCR80!memmove_s IAT slot
+extern void* mem_009251EC;
+
+typedef void (__cdecl* InvalidParameterNoInfoFn)(void);
+typedef int (__cdecl* MemmoveSFn)(void* dst, size_t dstSize, const void* src, size_t count);
+
+// @name moveRangeToEnd
+// @summary Validates a range pair, shifts the tail [a5, self->end) down to a3 when the range is non-empty, updates self->end, and writes (a2, a3) to the out-pair.
+// @field field_0x08 uint32 end
+// @class field_0x08 is the only accessed offset; class name unknown.
+__attribute__((used)) void __thiscall fn_00503BC0(void* self, uint32_t* out, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)
+{
+    uint32_t ebp = a2;
+    if (ebp == 0 || ebp != a4) {
+        reinterpret_cast<InvalidParameterNoInfoFn>(mem_00925134)();
+    }
+
+    uint32_t esi = a3;
+    uint32_t edx = a5;
+    if (esi != edx) {
+        auto words = static_cast<uint32_t*>(self);
+        int32_t count = static_cast<int32_t>(words[2] - edx) >> 3;
+        uint32_t bytes = static_cast<uint32_t>(count) * 8u;
+        uint32_t newEnd = esi + bytes;
+        if (count > 0) {
+            reinterpret_cast<MemmoveSFn>(mem_009251EC)(
+                reinterpret_cast<void*>(static_cast<uintptr_t>(esi)),
+                static_cast<size_t>(bytes),
+                reinterpret_cast<const void*>(static_cast<uintptr_t>(edx)),
+                static_cast<size_t>(bytes));
+        }
+        words[2] = newEnd;
+    }
+
+    out[0] = ebp;
+    out[1] = esi;
+}
+} // namespace lift_00503BC0

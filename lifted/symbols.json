@@ -16787,6 +16787,13 @@
     "summary": "Stores the double at *value into every 8-byte slot in [first, last); no-op if first == last.",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x00503BC0": {
+    "name": "moveRangeToEnd",
+    "class": "field_0x08 is the only accessed offset; class name unknown.",
+    "signature": "__attribute__((used)) void __thiscall fn_00503BC0(void* self, uint32_t* out, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)",
+    "summary": "Validates a range pair, shifts the tail [a5, self-\u003eend) down to a3 when the range is non-empty, updates self-\u003eend, and writes (a2, a3) to the out-pair.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00503C20": {
     "name": "CopyRangeToDest",
     "signature": "uint32_t fn_00503C20(uint32_t first, uint32_t last, uint32_t dest)",
