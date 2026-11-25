@@ -1,0 +1,22 @@
+{
+  "va": "0x004C1A80",
+  "size": 28,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_23",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_23",
+  "class": "NMData::AnimationEventData",
+  "signature": "void __thiscall fn_004C1A80(void* self, const void* str)",
+  "summary": "Assigns a std::string to field_0x14 and calls ext_004C0340 to set the global object flag.",
+  "fields": [
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T11:31:29Z"
+}

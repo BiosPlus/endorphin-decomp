@@ -227,3 +227,19 @@ int32_t __thiscall sub_004BFBE0(void* self) {
     return ext_00599F10(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(handle))));
 }
 } // namespace lift_004BFBE0
+
+// [0x004C1A80]
+namespace lift_004C1A80 {
+// @name NMData::AnimationEventData::vfunc_23
+// @class NMData::AnimationEventData
+// @summary Assigns a std::string to field_0x14 and calls ext_004C0340 to set the global object flag.
+// @field NMData::AnimationEventData +0x14 void* field_0x14
+
+extern void* (__thiscall* mem_00924FDC)(void* self, const void* other);
+extern void __thiscall ext_004C0340(void* self);
+
+void __thiscall fn_004C1A80(void* self, const void* str) {
+    mem_00924FDC(static_cast<uint8_t*>(self) + 0x14, str);
+    ext_004C0340(self);
+}
+} // namespace lift_004C1A80
