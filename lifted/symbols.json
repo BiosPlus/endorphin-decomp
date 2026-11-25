@@ -66452,6 +66452,13 @@
     "summary": "Initializes object via sub_007C6C60 and invokes callback at 0x00AB28C8 with field_0x17c + 0x114 and object",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007C6F20": {
+    "name": "descriptiveName: ReadBytePointeeAt44",
+    "class": "\u003cClass\u003e (unknown; accessed via this-\u003efield_0x44)",
+    "signature": "uint8_t fn_007C6F20(void* self)",
+    "summary": "Loads the pointer at this+0x44 and returns the byte it points to, zero-extended.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C6F30": {
     "name": "readFloatAt1C",
     "signature": "float __cdecl readFloatAt1C(void* self)",

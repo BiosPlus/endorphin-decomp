@@ -1365,3 +1365,16 @@ void fn_007C6C20(void* self) {
     lift_field<uint32_t>(self, 0x0C) |= 0x8u;
 }
 } // namespace lift_007C6C20
+
+// [0x007C6F20]
+namespace lift_007C6F20 {
+// @name descriptiveName: ReadBytePointeeAt44
+// @class <Class> (unknown; accessed via this->field_0x44)
+// @summary Loads the pointer at this+0x44 and returns the byte it points to, zero-extended.
+// @field <Class> +0x44 uint8_t* field_0x44 (pointer dereferenced as byte)
+
+uint8_t fn_007C6F20(void* self) {
+    uint8_t* p = *reinterpret_cast<uint8_t**>(static_cast<uint8_t*>(self) + 0x44);
+    return *p;
+}
+} // namespace lift_007C6F20

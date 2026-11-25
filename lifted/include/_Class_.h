@@ -9,6 +9,7 @@
 namespace lifted_layout {
 struct _Class__Fields {
     // +0x0   DWORD field_0x00 (dereferenced as the forwarded argument)  (evidence: 0x00537EC0)
+    // +0x44  uint8_t* field_0x44 (pointer dereferenced as byte)  (evidence: 0x007C6F20)
     // +0xDC  DWORD field_0xdc (array; element stride 4, indexed by field_0x194*15)  (evidence: 0x00533CF0)
     // +0x194 DWORD                    field_0x194  (evidence: 0x00533CF0)
     // +0x498 DWORD                    field_0x498  (evidence: 0x00533CF0)
