@@ -1353,3 +1353,44 @@ void fn_0045E4C0(void* it, void* last, void* guard, void* end, int32_t* counter)
 }
 } // namespace lift_0046A4D0
 } // namespace lift_0045E4C0
+
+// [0x0045E700]
+namespace lift_0045E700 {
+extern void __thiscall ext_0041A190(uint32_t self, uint32_t out_it, uint32_t key_ptr);
+extern void (__cdecl *mem_00925134)();
+
+static inline uint32_t read_u32(uint32_t addr, ptrdiff_t off) {
+    return *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(addr) + off);
+}
+
+// @name Unknown::FindOrDefault
+// @class Unknown
+// @summary Looks up a 32-bit unsigned key in a tree map and returns the node's value or a default at +0x1c.
+// @field Unknown +0x04 uint32_t header
+// @field Unknown +0x1c uint32_t default_value
+uint32_t __thiscall sub_0045E700(uint32_t self, uint32_t key) {
+    uint32_t it[2] = {0, 0};
+    ext_0041A190(self, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(it)),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&key)));
+
+    uint32_t container = it[0];
+    uint32_t header = read_u32(self, 0x04);
+    if (container == 0 || container != self) {
+        mem_00925134();
+    }
+
+    uint32_t node = it[1];
+    if (node == header) {
+        return read_u32(self, 0x1c);
+    }
+
+    if (container == 0) {
+        mem_00925134();
+    }
+    if (node == read_u32(container, 0x04)) {
+        mem_00925134();
+    }
+
+    return read_u32(node, 0x10);
+}
+} // namespace lift_0045E700

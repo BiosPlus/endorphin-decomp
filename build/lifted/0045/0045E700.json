@@ -1,0 +1,28 @@
+{
+  "va": "0x0045E700",
+  "size": 102,
+  "orig_symbol": "sub_0045E700",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "Unknown::FindOrDefault",
+  "class": "Unknown",
+  "signature": "static inline uint32_t read_u32(uint32_t addr, ptrdiff_t off)",
+  "summary": "Looks up a 32-bit unsigned key in a tree map and returns the node's value or a default at +0x1c.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "header"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "default_value"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:03:23Z"
+}

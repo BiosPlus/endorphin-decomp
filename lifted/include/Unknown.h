@@ -185,7 +185,7 @@ struct Unknown_Fields {
     // +0x4   BYTE field_0x04 (inner object: valid flag)  (evidence: 0x00783570) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 flags  (evidence: 0x008103A0, 0x008103F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (destination operand holder; inner object's vtable slot 6 returns float* to 4 floats)  (evidence: 0x0066D190) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint32_t                 header  (evidence: 0x0041A530) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 header  (evidence: 0x0041A530, 0x0045E700) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    header  (evidence: 0x004757F0, 0x004774B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (read indirectly via ext_006AD180, not directly here)  (evidence: 0x0041CB80) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t                  hi  (evidence: 0x006DBE30) // CONFLICT: multiple definitions at +0x4
@@ -491,6 +491,7 @@ struct Unknown_Fields {
     // +0x1A  uint8_t                  field_0x1a  (evidence: 0x00553980) // CONFLICT: multiple definitions at +0x1A
     // +0x1C  int16_t field_0x1C (int16 array; element idx at +0x18+2*idx for idx >= 2)  (evidence: 0x006C9DC0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  void*                    criticalSection  (evidence: 0x006F9E90, 0x006FC200) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  uint32_t                 default_value  (evidence: 0x0045E700) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  int32_t                  elementCount  (evidence: 0x006FA460) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  DWORD                    field_0x1C  (evidence: 0x005679D0, 0x00622B40, 0x00624540) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  StringArray              field_0x1C  (evidence: 0x00420070, 0x004291A0, 0x004757F0, 0x004A5890, 0x0052A020, 0x0052F7D0, 0x00594140, 0x005947B0, 0x005963F0, 0x00666930) // CONFLICT: multiple definitions at +0x1C
