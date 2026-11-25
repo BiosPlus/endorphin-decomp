@@ -1,0 +1,22 @@
+{
+  "va": "0x004205B0",
+  "size": 70,
+  "orig_symbol": "sub_004205B0",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "TreeMap::lowerBound",
+  "class": "TreeMap",
+  "signature": "void* fn_004205B0(void* self, const void* key)",
+  "summary": "Lower-bound search in an MSVC-style std::map tree: returns first node whose key is not less than the argument, or the header node if none.",
+  "fields": [
+    {
+      "class": "TreeMap",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:23:17Z"
+}
