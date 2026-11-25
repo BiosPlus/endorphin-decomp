@@ -19595,6 +19595,12 @@
     "summary": "Walks [first, last) backward in 0x168-byte steps, calling ext_00520AE0(dst slot, element) for each; returns the final dst cursor (dst itself if the range is empty)",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00520D30": {
+    "name": "ArrayRangeReverse_ReturnBaseMinusCount_00520D30",
+    "signature": "uint32_t fn_00520D30(uint32_t first, uint32_t last, uint32_t dst, uint32_t base)",
+    "summary": "Runs the reverse range init on [first, last) into dst, then returns base minus ((last - first) / 0x168) * 0x168 (signed truncating count).",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00520D90": {
     "name": "initArrayRange_00520D90",
     "signature": "void __cdecl sub_00520D90(uint32_t begin, uint32_t end, uint32_t arg)",

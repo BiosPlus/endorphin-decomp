@@ -863,3 +863,20 @@ void* fn_005247B0() {
 }
 } // namespace lift_004CAE30
 } // namespace lift_005247B0
+
+// [0x00520D30] sub_00520D30 (94 bytes)
+namespace lift_00520D30 {
+// Known callee 0x00520B90: initArrayRangeReverse_00520B90 (Walks [first, last) backward in 0x168-byte steps, calling ext_00520AE0(dst slot, element) for each; returns the final dst cursor (dst itself if the range is empty))
+extern uint32_t ext_00520B90(uint32_t first, uint32_t last, uint32_t dst);
+
+// @name ArrayRangeReverse_ReturnBaseMinusCount_00520D30
+// @summary Runs the reverse range init on [first, last) into dst, then returns base minus ((last - first) / 0x168) * 0x168 (signed truncating count).
+// Note: the caller also pushes two scratch dwords and base (a4) into the callee frame; the callee reads only its first three args.
+uint32_t fn_00520D30(uint32_t first, uint32_t last, uint32_t dst, uint32_t base) {
+    (void)ext_00520B90(first, last, dst);
+
+    const int32_t span = static_cast<int32_t>(last - first);
+    const int32_t count = span / 0x168;
+    return base - static_cast<uint32_t>(count * 0x168);
+}
+} // namespace lift_00520D30
