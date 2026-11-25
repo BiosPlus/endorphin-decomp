@@ -65468,6 +65468,13 @@
     "summary": "Reads the 0xD8 field of the sub-object referenced by self+0x00, then stores it into the indexed record array via ext_006C3390.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x0079E480": {
+    "name": "Unknown::isFirstRecordTagSix",
+    "class": "Unknown",
+    "signature": "BOOL fn_0079E480(void* self)",
+    "summary": "Reads the object pointer at self+0, fetches its field at 0xD8, loads record 0 through that object, and returns whether the loaded dword equals 6.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079E5E0": {
     "name": "descriptiveName: SelectSelfOrOffsetByMode",
     "class": "(none, free function)",

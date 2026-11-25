@@ -1,0 +1,22 @@
+{
+  "va": "0x0079E480",
+  "size": 48,
+  "orig_symbol": "sub_0079E480",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "Unknown::isFirstRecordTagSix",
+  "class": "Unknown",
+  "signature": "BOOL fn_0079E480(void* self)",
+  "summary": "Reads the object pointer at self+0, fetches its field at 0xD8, loads record 0 through that object, and returns whether the loaded dword equals 6.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:47:10Z"
+}

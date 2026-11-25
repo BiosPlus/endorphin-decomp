@@ -817,3 +817,23 @@ void fn_0079E410(void* self, uint32_t flag) {
     ext_006C3390(static_cast<uintptr_t>(value), flag, 0u);
 }
 } // namespace lift_0079E410
+
+// [0x0079E480] sub_0079E480 (48 bytes)
+namespace lift_0079E480 {
+// Known callee 0x00714AE0: getField0xD8 (Return the 32-bit field at offset 0xD8 of the object in ecx.)
+extern uint32_t ext_00714AE0(uintptr_t ecx);
+// Known callee 0x006C33C0: Unknown::loadRecordDwordByIndex (Computes index * 496 (index*31*16), adds the base pointer stored at +0xF0 and the constant 0x1E78, loads a dword from that address, and writes it through the out-pointer.)
+extern void ext_006C33C0(uintptr_t self, uint32_t index, uint32_t* out);
+
+// @name Unknown::isFirstRecordTagSix
+// @class Unknown
+// @summary Reads the object pointer at self+0, fetches its field at 0xD8, loads record 0 through that object, and returns whether the loaded dword equals 6.
+// @field Unknown +0x00 uint32_t field_0x00
+BOOL fn_0079E480(void* self) {
+    uintptr_t obj = lift_field<uint32_t>(self, 0x00);
+    uint32_t field = ext_00714AE0(obj);
+    uint32_t value = 0;
+    ext_006C33C0(static_cast<uintptr_t>(field), 0, &value);
+    return value == 6 ? 1 : 0;
+}
+} // namespace lift_0079E480
