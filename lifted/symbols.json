@@ -62941,6 +62941,12 @@
     "summary": "out = a - b for 20-limb 16-bit-limb numbers: copies b into a temporary, two's-complement negates it, then adds it to a.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086F8A0": {
+    "name": "ReadFiveDwordsMasked",
+    "signature": "void ReadFiveDwordsMasked(uint32_t* out)",
+    "summary": "Reads 5 dwords through the read callback into out[0..4], then clears the top two bits of out[0].",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086F8F0": {
     "name": "shiftRight1_20",
     "signature": "void sub_0086F8F0(uint32_t* arr)",

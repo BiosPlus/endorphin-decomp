@@ -8,6 +8,11 @@
 // Recovered field layout for out:
 namespace lifted_layout {
 struct out_Fields {
-    // +0x4   uint32_t                 typePtr  (evidence: 0x00470FD0, 0x004CB250)
+    // +0x0   u32                      field_0x00  (evidence: 0x0086F8A0)
+    // +0x4   u32                      field_0x04  (evidence: 0x0086F8A0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 typePtr  (evidence: 0x00470FD0, 0x004CB250) // CONFLICT: multiple definitions at +0x4
+    // +0x8   u32                      field_0x08  (evidence: 0x0086F8A0)
+    // +0xC   u32                      field_0x0C  (evidence: 0x0086F8A0)
+    // +0x10  u32                      field_0x10  (evidence: 0x0086F8A0)
 };
 } // namespace lifted_layout

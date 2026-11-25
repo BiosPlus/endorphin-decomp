@@ -708,3 +708,27 @@ int32_t fn_0086AEB0(const uint32_t* a, uint32_t arg2) {
     return 0;
 }
 } // namespace lift_0086AEB0
+
+// [0x0086F8A0]
+namespace lift_0086F8A0 {
+// @name ReadFiveDwordsMasked
+// @summary Reads 5 dwords through the read callback into out[0..4], then clears the top two bits of out[0].
+// @field out +0x00 u32 field_0x00
+// @field out +0x04 u32 field_0x04
+// @field out +0x08 u32 field_0x08
+// @field out +0x0C u32 field_0x0C
+// @field out +0x10 u32 field_0x10
+
+extern void (*mem_00AC4A94)(void* dst, uint32_t size);
+
+void ReadFiveDwordsMasked(uint32_t* out) {
+    uint32_t tmp = 0;
+    for (int16_t i = 0; i < 5; ++i) {
+        if (mem_00AC4A94 != nullptr) {
+            mem_00AC4A94(&tmp, 4);
+        }
+        out[i] = tmp;
+    }
+    out[0] &= 0x3fffffffu;
+}
+} // namespace lift_0086F8A0
