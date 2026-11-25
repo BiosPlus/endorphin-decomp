@@ -1,0 +1,13 @@
+{
+  "va": "0x006FECE0",
+  "size": 112,
+  "orig_symbol": "sub_006FECE0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "splitPathComponents",
+  "signature": "extern \"C\" int32_t __cdecl fn_006FECE0(void* pathObj, char** outParts)",
+  "summary": "Splits a path string in-place at '/' and '\\\\' separators into an array of component pointers",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T05:10:16Z"
+}

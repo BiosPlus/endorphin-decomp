@@ -2257,3 +2257,34 @@ void fn_006F7080(void* self) {
     ext_006B9D70();  // subobject at +0x04 (state -1), forwards to sub_006B9970
 }
 } // namespace lift_006F7080
+
+// [0x006FECE0]
+namespace lift_006FECE0 {
+// @name splitPathComponents
+// @summary Splits a path string in-place at '/' and '\\' separators into an array of component pointers
+
+extern int32_t __fastcall ext_006B99C0(void* self);
+extern int32_t __fastcall ext_006E7460(void* self);
+
+extern int32_t __cdecl fn_006FECE0(void* pathObj, char** outParts) {
+    int32_t maxIdx = ext_006B99C0(pathObj);
+    int32_t count = 0;
+
+    if (maxIdx < 0) {
+        return count - 1;
+    }
+
+    for (int32_t i = 0; i <= maxIdx; ++i) {
+        char* buf = reinterpret_cast<char*>(static_cast<uintptr_t>(static_cast<uint32_t>(ext_006E7460(pathObj))));
+        if (buf[i] == '\\' || buf[i] == '/') {
+            buf = reinterpret_cast<char*>(static_cast<uintptr_t>(static_cast<uint32_t>(ext_006E7460(pathObj))));
+            buf[i] = '\0';
+            buf = reinterpret_cast<char*>(static_cast<uintptr_t>(static_cast<uint32_t>(ext_006E7460(pathObj))));
+            *outParts++ = &buf[i + 1];
+            ++count;
+        }
+    }
+
+    return count - 1;
+}
+} // namespace lift_006FECE0
