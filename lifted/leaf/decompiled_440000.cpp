@@ -1992,3 +1992,21 @@ void __stdcall fn_004444C0(void* obj) {
     }
 }
 } // namespace lift_004444C0
+
+// [0x004489E0] sub_004489E0 (33 bytes)
+namespace lift_004489E0 {
+// IAT slot for USER32!SendMessageA (original: call dword ptr [0x925694]).
+extern uint32_t (__stdcall* mem_00925694)(uint32_t hWnd, uint32_t Msg, uint32_t wParam, uint32_t lParam);
+
+// @name ForwardWM046FToChildWindow_004489E0
+// @class Unresolved_004489E0
+// @summary Sends message 0x046F (wParam=arg1, lParam=arg2) to the HWND at this->field_0x58->field_0x20; returns 0.
+// @field Unresolved_004489E0 +0x58 uint32_t field_0x58
+// @field Unresolved_004489E0 +0x58->+0x20 uint32_t field_0x20
+int fn_004489E0(void* self, uint32_t arg1, uint32_t arg2) {
+    const uint32_t child = lift_field<uint32_t>(self, 0x58);
+    const uint32_t hwnd = lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(child)), 0x20);
+    (void)mem_00925694(hwnd, 0x46F, arg1, arg2);
+    return 0;
+}
+} // namespace lift_004489E0

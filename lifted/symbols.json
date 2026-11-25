@@ -4383,6 +4383,13 @@
     "summary": "Compares arg-\u003e+0x20 with self-\u003e+0x5c-\u003e+0x20; on match, resolves GetParent(self-\u003e+0x20) and forwards it, then dispatches ext_006A60D0 on the resulting object.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x004489E0": {
+    "name": "ForwardWM046FToChildWindow_004489E0",
+    "class": "Unresolved_004489E0",
+    "signature": "int fn_004489E0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Sends message 0x046F (wParam=arg1, lParam=arg2) to the HWND at this-\u003efield_0x58-\u003efield_0x20; returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00448B70": {
     "name": "Properties::PropInPlaceSpinbuttonEdit::vfunc_2_off_54",
     "class": "Properties::PropInPlaceSpinbuttonEdit",
