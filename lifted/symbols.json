@@ -19430,6 +19430,13 @@
     "summary": "Invokes vtable slots +0xA4 and +0xA8 on field_0x88, then tail-calls PoseTool::vfunc_32 (+0x80).",
     "lifted_path": "lifted/classes/PoseTool.cpp"
   },
+  "0x00545320": {
+    "name": "PoseTool::vfunc_18",
+    "class": "PoseTool",
+    "signature": "inline void* vtable_slot(void* obj, std::size_t off)",
+    "summary": "Queries the sub-object at +0xA0 via vtable slot 0x38; if it returns true, calls vtable slot 0x14 on this (arg 0 if +0x9C is nonzero, else 1) and returns 1, otherwise returns 0.",
+    "lifted_path": "lifted/classes/PoseTool.cpp"
+  },
   "0x00545370": {
     "name": "PoseTool::vfunc_21",
     "class": "PoseTool",

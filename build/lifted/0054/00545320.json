@@ -1,0 +1,28 @@
+{
+  "va": "0x00545320",
+  "size": 68,
+  "orig_symbol": "PoseTool::vfunc_18",
+  "src_path": "src/classes/PoseTool.cpp",
+  "lifted_path": "lifted/classes/PoseTool.cpp",
+  "name": "PoseTool::vfunc_18",
+  "class": "PoseTool",
+  "signature": "inline void* vtable_slot(void* obj, std::size_t off)",
+  "summary": "Queries the sub-object at +0xA0 via vtable slot 0x38; if it returns true, calls vtable slot 0x14 on this (arg 0 if +0x9C is nonzero, else 1) and returns 1, otherwise returns 0.",
+  "fields": [
+    {
+      "class": "PoseTool",
+      "offset": "+0x9C",
+      "type": "uint32_t",
+      "name": "field_0x9c"
+    },
+    {
+      "class": "PoseTool",
+      "offset": "+0xA0",
+      "type": "void*",
+      "name": "field_0xa0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:19:10Z"
+}

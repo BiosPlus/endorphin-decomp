@@ -203,3 +203,42 @@ void __thiscall fn_00545400(void* self, uint32_t arg0, uint32_t arg1, float arg2
     slot33(poseTool);
 }
 } // namespace lift_00545400
+
+// [0x00545320] sub_00545320 (68 bytes)
+namespace lift_00545320 {
+// @name PoseTool::vfunc_18
+// @class PoseTool
+// @summary Queries the sub-object at +0xA0 via vtable slot 0x38; if it returns true, calls vtable slot 0x14 on this (arg 0 if +0x9C is nonzero, else 1) and returns 1, otherwise returns 0.
+// @field PoseTool +0x9C uint32_t field_0x9c
+// @field PoseTool +0xA0 void* field_0xa0
+
+namespace {
+
+// Fetch the function pointer stored at byte offset `off` within a vtable.
+inline void* vtable_slot(void* obj, std::size_t off) {
+    auto* vt = *reinterpret_cast<uint8_t**>(obj);
+    return *reinterpret_cast<void**>(vt + off);
+}
+
+}  // namespace
+
+int fn_00545320(void* self, uint32_t arg0, uint32_t arg1) {
+    (void)arg0;
+    (void)arg1;
+
+    auto* base = static_cast<uint8_t*>(self);
+
+    void* sub = *reinterpret_cast<void**>(base + 0xA0);
+    using QueryFn = int (*)(void*);
+    auto query = reinterpret_cast<QueryFn>(vtable_slot(sub, 0x38));
+    if (!query(sub)) {
+        return 0;
+    }
+
+    uint32_t flag = *reinterpret_cast<uint32_t*>(base + 0x9C);
+    using NotifyFn = void (*)(void*, int);
+    auto notify = reinterpret_cast<NotifyFn>(vtable_slot(self, 0x14));
+    notify(self, flag != 0 ? 0 : 1);
+    return 1;
+}
+} // namespace lift_00545320
