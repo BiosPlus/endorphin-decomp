@@ -1042,3 +1042,25 @@ void fn_0040B710(void* self) {
     ext_0040FD50(sub, mem_0093A0D0);
 }
 } // namespace lift_0040B710
+
+// [0x0040B6B0]
+namespace lift_0040B6B0 {
+// @name matchesAnyKnownString_0040B6B0
+// @summary Returns true if the argument string equals any of four fixed .rdata string constants.
+
+// Import thunk for std::string equality (MSVCP80), cdecl, two arguments, returns bool.
+extern bool(__cdecl* mem_00924FC4)(const void* lhs, const void* rhs);
+
+static const void* const kKnownString0 = reinterpret_cast<const void*>(0x00AC853C);
+static const void* const kKnownString1 = reinterpret_cast<const void*>(0x00AC85AC);
+static const void* const kKnownString2 = reinterpret_cast<const void*>(0x00AC87A4);
+static const void* const kKnownString3 = reinterpret_cast<const void*>(0x00AC87C0);
+
+extern bool __stdcall sub_0040B6B0(const void* str) {
+    if (mem_00924FC4(kKnownString0, str)) return true;
+    if (mem_00924FC4(kKnownString1, str)) return true;
+    if (mem_00924FC4(kKnownString2, str)) return true;
+    if (mem_00924FC4(kKnownString3, str)) return true;
+    return false;
+}
+} // namespace lift_0040B6B0

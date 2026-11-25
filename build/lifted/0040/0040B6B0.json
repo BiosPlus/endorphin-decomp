@@ -1,0 +1,13 @@
+{
+  "va": "0x0040B6B0",
+  "size": 84,
+  "orig_symbol": "sub_0040B6B0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "matchesAnyKnownString_0040B6B0",
+  "signature": "extern \"C\" bool __stdcall sub_0040B6B0(const void* str)",
+  "summary": "Returns true if the argument string equals any of four fixed .rdata string constants.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:05:13Z"
+}
