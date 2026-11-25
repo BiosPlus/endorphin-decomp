@@ -587,3 +587,20 @@ void* fn_00662E70(void* out, const void* in) {
     return out;
 }
 } // namespace lift_00662E70
+
+// [0x006648C0] sub_006648C0 (72 bytes)
+namespace lift_006648C0 {
+extern const char mem_009879C8[];
+
+// @name Unknown::FormatIntAndDoubleToString
+// @class Unknown
+// @summary Formats an int and a double with the format string at 0x009879C8 into a 50-byte buffer and constructs the output std::string in place from it.
+// @field Unknown +0x00 uint32_t vtable
+std::string* fn_006648C0(std::string* out, double value, int32_t intArg) {
+    char buf[50];
+    buf[49] = '\0';
+    std::snprintf(buf, sizeof(buf) - 1, mem_009879C8, intArg, value);
+    new (out) std::string(buf);
+    return out;
+}
+} // namespace lift_006648C0
