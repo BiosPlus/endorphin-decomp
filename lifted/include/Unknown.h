@@ -924,7 +924,7 @@ struct Unknown_Fields {
     // +0xAC  void*                    field_0xac  (evidence: 0x005B6980, 0x005CE8D0) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  uint32_t field_0xac (read from the child at +0x158; becomes `this` for the forward)  (evidence: 0x005B7040) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  uint32_t field_0xac (read from the sub-object at self+0x158, not from self)  (evidence: 0x005B6FE0, 0x005B7040) // CONFLICT: multiple definitions at +0xAC
-    // +0xB0  uint32_t                 field_0xB0  (evidence: 0x007C58E0, 0x007C8690, 0x007CAF70, 0x007D48A0, 0x007D8470, 0x007D8710, 0x007DADA0, 0x007DEC80) // CONFLICT: multiple definitions at +0xB0
+    // +0xB0  uint32_t                 field_0xB0  (evidence: 0x007C58E0, 0x007C8690, 0x007CAF70, 0x007CC5D0, 0x007D48A0, 0x007D8470, 0x007D8710, 0x007DADA0, 0x007DEC80) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  uint8                    field_0xB0  (evidence: 0x00687230) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  void*                    field_0xB0  (evidence: 0x007C8490, 0x007CAF70, 0x007CB890, 0x007CC1C0) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  float                    field_0xb0  (evidence: 0x00611100) // CONFLICT: multiple definitions at +0xB0

@@ -1,0 +1,22 @@
+{
+  "va": "0x007CC5D0",
+  "size": 43,
+  "orig_symbol": "sub_007CC5D0",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "Unknown::callAllocAndInit_007CC5D0",
+  "class": "Unknown",
+  "signature": "uint32_t fn_007CC5D0(void* self)",
+  "summary": "Calls the function pointer at obj+0x08 (obj = self+0xB0) with (0x10, 0x10); if it returns non-null, forwards that result and self to ext_007CC200 and returns its result, otherwise returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xB0",
+      "type": "uint32_t",
+      "name": "field_0xB0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:30:58Z"
+}

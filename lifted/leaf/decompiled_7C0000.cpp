@@ -1541,3 +1541,36 @@ void sub_007C9E50(void* self, int32_t flag) {
     *reinterpret_cast<int32_t*>(p + 0x04) = result;
 }
 } // namespace lift_007C9E50
+
+// [0x007CC5D0] sub_007CC5D0 (43 bytes)
+namespace lift_007CC5D0 {
+// Known callee 0x007CC200: sub_007CC200 (cdecl, 25 bytes). Called as (result, self).
+extern uint32_t ext_007CC200(uint32_t result, void* self);
+
+// @name Unknown::callAllocAndInit_007CC5D0
+// @class Unknown
+// @summary Calls the function pointer at obj+0x08 (obj = self+0xB0) with (0x10, 0x10); if it returns non-null, forwards that result and self to ext_007CC200 and returns its result, otherwise returns 0.
+// @field Unknown +0xB0 uint32_t field_0xB0
+uint32_t fn_007CC5D0(void* self) {
+    // mov esi, [esp+8]; mov eax, [esi+0xB0]   -> obj address
+    const uint32_t obj_addr = lift_field<uint32_t>(self, 0xB0);
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(obj_addr));
+
+    // mov ecx, [eax+8]                        -> function pointer slot at obj+0x08
+    const uint32_t fn_addr = lift_field<uint32_t>(obj, 0x08);
+
+    // push 0x10; push 0x10; call ecx; add esp,8   -> cdecl call, result in eax
+    using AllocFn = uint32_t (*)(uint32_t, uint32_t);
+    auto fn = reinterpret_cast<AllocFn>(static_cast<uintptr_t>(fn_addr));
+    uint32_t eax = fn(0x10, 0x10);
+
+    // test eax,eax; je .zero
+    if (eax != 0) {
+        // push esi; push eax; call ext_007CC200; add esp,8
+        return ext_007CC200(eax, self);
+    }
+
+    // .zero: xor eax,eax
+    return 0;
+}
+} // namespace lift_007CC5D0

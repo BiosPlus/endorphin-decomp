@@ -70550,6 +70550,13 @@
     "summary": "Calls the function pointer at sub-object +0x08 with (0x18, 0x10); if it returns non-null, forwards (sub-object, self, x, y) to ext_007CC180, otherwise returns null.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CC5D0": {
+    "name": "Unknown::callAllocAndInit_007CC5D0",
+    "class": "Unknown",
+    "signature": "uint32_t fn_007CC5D0(void* self)",
+    "summary": "Calls the function pointer at obj+0x08 (obj = self+0xB0) with (0x10, 0x10); if it returns non-null, forwards that result and self to ext_007CC200 and returns its result, otherwise returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CC600": {
     "name": "readDwordAt0x28",
     "signature": "DWORD fn_007CC600(const void* self)",
