@@ -861,3 +861,28 @@ std::string* __stdcall fn_0040B2B0(std::string* out, int mode) {
     return out;
 }
 } // namespace lift_0040B2B0
+
+// [0x0040BE90] sub_0040BE90 (73 bytes)
+namespace lift_0040BE90 {
+extern void __thiscall ext_004102D0(void* self, DWORD value);
+extern void __thiscall ext_00410310(void* self, DWORD value);
+extern DWORD mem_0093A0C8;
+extern DWORD mem_0093A0CC;
+
+// @name Unknown::initSubobjectsValues_0040BE90
+// @class Unknown
+// @summary Applies the value at mem_0093A0C8 via setValueAndRedraw and mem_0093A0CC via sub_004102D0 to two embedded subobjects at this+0x360 and this+0x3C4.
+// @field Unknown +0x360 void* field_0x360
+// @field Unknown +0x3C4 void* field_0x3C4
+void fn_0040BE90(void* self) {
+    auto* base = reinterpret_cast<uint8_t*>(self);
+
+    void* sub360 = base + 0x360;
+    ext_00410310(sub360, mem_0093A0C8);
+    ext_004102D0(sub360, mem_0093A0CC);
+
+    void* sub3C4 = base + 0x3C4;
+    ext_00410310(sub3C4, mem_0093A0C8);
+    ext_004102D0(sub3C4, mem_0093A0CC);
+}
+} // namespace lift_0040BE90

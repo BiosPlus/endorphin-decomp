@@ -733,6 +733,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x168.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x0040BE90": {
+    "name": "Unknown::initSubobjectsValues_0040BE90",
+    "class": "Unknown",
+    "signature": "void fn_0040BE90(void* self)",
+    "summary": "Applies the value at mem_0093A0C8 via setValueAndRedraw and mem_0093A0CC via sub_004102D0 to two embedded subobjects at this+0x360 and this+0x3C4.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040BEE0": {
     "name": "Window::sendMessage_0x18B",
     "class": "Window",
