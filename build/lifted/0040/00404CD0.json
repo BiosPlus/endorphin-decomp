@@ -1,0 +1,33 @@
+{
+  "va": "0x00404CD0",
+  "size": 93,
+  "orig_symbol": "sub_00404CD0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "sub_00404CD0",
+  "signature": "void __thiscall sub_00404CD0(void* self)",
+  "summary": "Destroys three std::string members at offsets +0x3c, +0x20, and +0x04",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x20",
+      "type": "std::string",
+      "name": "field_0x20"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x3C",
+      "type": "std::string",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:16:47Z"
+}

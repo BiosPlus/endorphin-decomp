@@ -498,6 +498,12 @@
     "summary": "Pure jump thunk forwarding to GetConstant_006A5ED2.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00404CD0": {
+    "name": "sub_00404CD0",
+    "signature": "void __thiscall sub_00404CD0(void* self)",
+    "summary": "Destroys three std::string members at offsets +0x3c, +0x20, and +0x04",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00404D30": {
     "name": "BatchModeDialog::vfunc_0",
     "class": "BatchModeDialog",
@@ -41520,6 +41526,12 @@
     "name": "showInfoMessageBox",
     "signature": "void showInfoMessageBox(const std::string* caption, const std::string* text)",
     "summary": "Shows an information message box: arg1 is the caption, arg2 is the message text, no owner window.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x00663060": {
+    "name": "sub_00663060_dtor",
+    "signature": "void __thiscall sub_00663060(void* self)",
+    "summary": "Destroys three std::string members at offsets +0x38, +0x1c, and +0x00",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
   "0x006630C0": {

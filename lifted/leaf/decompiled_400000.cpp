@@ -1536,3 +1536,24 @@ void* __thiscall sub_004024E0(void* self, const void* other) {
     return self;
 }
 } // namespace lift_004024E0
+
+// [0x00404CD0]
+namespace lift_00404CD0 {
+// @name sub_00404CD0
+// @summary Destroys three std::string members at offsets +0x3c, +0x20, and +0x04
+// @field unknown +0x04 std::string field_0x04
+// @field unknown +0x20 std::string field_0x20
+// @field unknown +0x3c std::string field_0x3c
+
+extern uint32_t mem_00924FF4;
+
+using MsvcStringDtorFn = void(__thiscall*)(void* self);
+
+void __thiscall sub_00404CD0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    auto dtor = reinterpret_cast<MsvcStringDtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+    dtor(base + 0x3c);
+    dtor(base + 0x20);
+    dtor(base + 0x04);
+}
+} // namespace lift_00404CD0
