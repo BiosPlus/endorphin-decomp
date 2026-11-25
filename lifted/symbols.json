@@ -2170,6 +2170,13 @@
     "summary": "Sets the vtable word, allocates a 0x10-byte node (zeroing its +0x4/+0x8/+0xC words) and stores it at +0x04 (or NULL if allocation fails); returns this.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041C880": {
+    "name": "Manager::selectByIndex",
+    "class": "Manager",
+    "signature": "uint8_t __thiscall fn_0041C880(uint32_t self, uint32_t index)",
+    "summary": "Switches the active object at +0x08 to the element at index in the vector at +0x04, calling vtable+0x08 on the old and vtable+0x04 on the new.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041C980": {
     "name": "GuiControllerMFC::vfunc_0",
     "class": "GuiControllerMFC",
@@ -70960,6 +70967,12 @@
     "summary": "Sums the double at offset +0x8 of each 16-byte entry in a nested array, optionally taking absolute values.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x0078D6B0": {
+    "name": "releaseTwoPointerBuffers",
+    "signature": "static void release_pointer_buffer(uint8_t* buf)",
+    "summary": "Releases and frees elements in two pointer buffers at +0x00 and +0x18, then releases both buffers.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078D720": {
     "name": "initSelfRefAt14",
     "signature": "uint32_t fn_0078D720(void* self, int32_t arg1)",
@@ -71151,6 +71164,12 @@
     "name": "fn_0079A16C_byteLookupTable",
     "signature": "void fn_0079A16C(void* self)",
     "summary": "Static 37-byte lookup table (values 0x00-0x14, 0x14 used as filler); trailing 3 bytes are padding/lea not part of the table.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
+  "0x0079A1C0": {
+    "name": "SetAndCopyUint16Array",
+    "signature": "extern \"C\" int32_t fn_0079A1C0(uint8_t* obj, const void* src_desc, int32_t* out_count)",
+    "summary": "Validates a count and uint16_t array (elements \u003c= 2) against a max limit and copies it into a global block.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
   "0x0079A230": {
@@ -71455,6 +71474,12 @@
     "class": "Unknown",
     "signature": "BOOL fn_0079E480(void* self)",
     "summary": "Reads the object pointer at self+0, fetches its field at 0xD8, loads record 0 through that object, and returns whether the loaded dword equals 6.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
+  "0x0079E4B0": {
+    "name": "forwardArgsToElement0",
+    "signature": "extern \"C\" void __thiscall fn_0079E4B0( void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4, uint32_t arg5, uint32_t arg6, uint32_t arg7)",
+    "summary": "Forwards 8 32-bit stack arguments via ext_006D2390 to ext_006C3520 at index 0 on the object returned by ext_00714AE0(*(this + 0x00)).",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
   "0x0079E5E0": {

@@ -2365,3 +2365,55 @@ uint32_t __thiscall fn_0041C7C0(uint32_t self, uint32_t index) {
     return elem;
 }
 } // namespace lift_0041C7C0
+
+// [0x0041C880]
+namespace lift_0041C880 {
+// @name Manager::selectByIndex
+// @class Manager
+// @summary Switches the active object at +0x08 to the element at index in the vector at +0x04, calling vtable+0x08 on the old and vtable+0x04 on the new.
+// @field Manager +0x04 uint32_t field_0x04
+// @field Manager +0x08 uint32_t field_0x08
+
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t val);
+extern uint32_t __thiscall ext_0041C7C0(uint32_t self, uint32_t index);
+
+uint8_t __thiscall fn_0041C880(uint32_t self, uint32_t index) {
+    uint32_t vec = mem_read32(self + 0x4);
+    uint32_t begin = mem_read32(vec + 0x4);
+    if (begin == 0) {
+        return 0;
+    }
+
+    uint32_t end = mem_read32(vec + 0x8);
+    uint32_t count = static_cast<uint32_t>(static_cast<int32_t>(end - begin) >> 2);
+    if (index >= count) {
+        return 0;
+    }
+
+    uint32_t elem_ptr = ext_0041C7C0(vec, index);
+    if (mem_read32(elem_ptr) == 0) {
+        return 0;
+    }
+
+    uint32_t old_obj = mem_read32(self + 0x8);
+    if (old_obj != 0) {
+        uint32_t vtable = mem_read32(old_obj);
+        using vfn_t = void(__thiscall*)(uint32_t);
+        reinterpret_cast<vfn_t>(mem_read32(vtable + 0x8))(old_obj);
+    }
+
+    vec = mem_read32(self + 0x4);
+    elem_ptr = ext_0041C7C0(vec, index);
+    uint32_t new_obj = mem_read32(elem_ptr);
+    mem_write32(self + 0x8, new_obj);
+    if (new_obj == 0) {
+        return 0;
+    }
+
+    uint32_t vtable = mem_read32(new_obj);
+    using vfn_t = void(__thiscall*)(uint32_t);
+    reinterpret_cast<vfn_t>(mem_read32(vtable + 0x4))(new_obj);
+    return 1;
+}
+} // namespace lift_0041C880
