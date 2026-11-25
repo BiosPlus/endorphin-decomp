@@ -20450,6 +20450,13 @@
     "summary": "Invokes sub_0054F030 on each 0x68-byte element in [begin, end) with arg.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x0054F290": {
+    "name": "Unknown::RelocateRangeBackwardWrapper_0054F290",
+    "class": "Unknown",
+    "signature": "uint32_t fn_0054F290(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Forwards its three stack arguments unchanged to RelocateRangeBackward (0x0054F120) and returns that result; the original stack shuffling only reorders copies of the arguments.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x0054F2C0": {
     "name": "ComputeRecordAddress",
     "signature": "__stdcall std::uint8_t* fn_0054F2C0(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2)",
