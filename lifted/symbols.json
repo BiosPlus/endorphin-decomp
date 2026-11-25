@@ -46024,6 +46024,13 @@
     "summary": "Getter returning int32_t field at offset +0x34.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006CA020": {
+    "name": "Unknown::getEntryPtr",
+    "class": "Unknown",
+    "signature": "void* fn_006CA020(void* self, int n)",
+    "summary": "Returns self-\u003efield_0x20[n / 100] + 40 * (n % 25), using signed division/modulo on the int argument n.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006CA060": {
     "name": "sub_006CA060",
     "class": "Unknown",

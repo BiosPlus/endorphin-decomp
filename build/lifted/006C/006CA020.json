@@ -1,0 +1,22 @@
+{
+  "va": "0x006CA020",
+  "size": 64,
+  "orig_symbol": "sub_006CA020",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::getEntryPtr",
+  "class": "Unknown",
+  "signature": "void* fn_006CA020(void* self, int n)",
+  "summary": "Returns self-\u003efield_0x20[n / 100] + 40 * (n % 25), using signed division/modulo on the int argument n.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "void**",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:05:51Z"
+}

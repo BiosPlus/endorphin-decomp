@@ -854,3 +854,16 @@ void __cdecl sub_006C8E60() {
     mem_00B5D604 = hi;
 }
 } // namespace lift_006C8E60
+
+// [0x006CA020] sub_006CA020 (64 bytes)
+namespace lift_006CA020 {
+// @name Unknown::getEntryPtr
+// @class Unknown
+// @summary Returns self->field_0x20[n / 100] + 40 * (n % 25), using signed division/modulo on the int argument n.
+// @field Unknown +0x20 void** field_0x20
+void* fn_006CA020(void* self, int n) {
+    void** table = *reinterpret_cast<void***>(static_cast<unsigned char*>(self) + 0x20);
+    unsigned char* base = static_cast<unsigned char*>(table[n / 100]);
+    return base + 40 * (n % 25);
+}
+} // namespace lift_006CA020
