@@ -14379,6 +14379,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004CAEE0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, bool, mustKeepOffset, bool, setMustKeepOffset\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, bool, {public: void __thiscall NMData::MetaBodyConstraintData::setMustKeepOffset(bool), 0}\u003e",
+    "signature": "void fn_004CAEE0([[maybe_unused]] void* self, void* out)",
+    "summary": "One-time guarded init of a static instance at 0xAE44B0 (vtable 0x946E14); stores its address into out+4.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004CAF60": {
     "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0\u003e",

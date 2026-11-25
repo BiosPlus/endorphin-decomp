@@ -9923,3 +9923,28 @@ uint32_t fn_005853E0(void* self, void* arg) {
     return ext_004AA580(static_cast<uint8_t*>(target) + 0x0C, result);
 }
 } // namespace lift_005853E0
+
+// [0x004CAEE0]
+namespace lift_004CAEE0 {
+// Callee: ext_0067A670 (storeArgIntoFirstDword_006721B0). Takes thiscall self + one DWORD argument.
+void ext_0067A670(void* self, std::uint32_t value);
+
+// @name ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData, bool, mustKeepOffset, bool, setMustKeepOffset>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, bool, {public: void __thiscall NMData::MetaBodyConstraintData::setMustKeepOffset(bool), 0}>
+// @summary One-time guarded init of a static instance at 0xAE44B0 (vtable 0x946E14); stores its address into out+4.
+// @field ExprParser::ReadWriteMethodType<...> +0x04 void* field_0x04 (out->+4 receives &static_instance)
+void fn_004CAEE0([[maybe_unused]] void* self, void* out) {
+    // Static guard byte at 0xAE44B4: first call performs construction.
+    auto* guard_byte = reinterpret_cast<std::uint8_t*>(0xAE44B4u);
+    auto* guard_word = reinterpret_cast<std::uint32_t*>(0xAE44B4u);
+    auto* instance = reinterpret_cast<std::uint32_t*>(0xAE44B0u);
+
+    if ((*guard_byte & 1u) == 0) {
+        *guard_word |= 1u;
+        ext_0067A670(instance, 0u);
+        *instance = 0x946E14u; // vtable pointer
+    }
+
+    *reinterpret_cast<std::uint32_t*>(static_cast<std::uint8_t*>(out) + 4) = 0xAE44B0u;
+}
+} // namespace lift_004CAEE0
