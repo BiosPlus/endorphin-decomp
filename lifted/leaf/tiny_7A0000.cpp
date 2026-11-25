@@ -435,8 +435,7 @@ namespace lift_007AEEE0 {
 // @field Unknown +0x58 uint32_t field_0x58
 
 uint32_t sub_007AEEE0(const void* self) {
-    const uint32_t value = *reinterpret_cast<const uint32_t*>(
-        static_cast<const uint8_t*>(self) + 0x58);
+    const uint32_t value = lift_field<uint32_t>(self, 0x58);
     return value != 0 ? 1u : 0u;
 }
 } // namespace lift_007AEEE0
