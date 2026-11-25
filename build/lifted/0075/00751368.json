@@ -1,0 +1,14 @@
+{
+  "va": "0x00751368",
+  "size": 72,
+  "orig_symbol": "sub_00751368",
+  "src_path": "src/leaf/decompiled_750000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_750000.cpp",
+  "name": "DataBlob::Lookup00751368",
+  "class": "DataBlob",
+  "signature": "void fn_00751368(void* self)",
+  "summary": "Static 72-byte lookup table (mostly 0x04 entries, 0x90 padding); not executable code.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:29:40Z"
+}
