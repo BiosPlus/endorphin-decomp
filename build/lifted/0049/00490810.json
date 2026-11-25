@@ -1,0 +1,13 @@
+{
+  "va": "0x00490810",
+  "size": 69,
+  "orig_symbol": "sub_00490810",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "moveRangeWithReleaseCount_00490810",
+  "signature": "uint32_t fn_00490810(uint32_t first, uint32_t last, uint32_t dest)",
+  "summary": "Moves the 8-byte-element range [first,last) into dest via ext_0048FC00, then returns dest advanced by the range's element count.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T05:01:28Z"
+}

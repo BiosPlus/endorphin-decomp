@@ -10706,6 +10706,12 @@
     "summary": "Resets the three range pointers of an 8-byte element buffer and allocates `count` elements; returns false when count is 0.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x00490810": {
+    "name": "moveRangeWithReleaseCount_00490810",
+    "signature": "uint32_t fn_00490810(uint32_t first, uint32_t last, uint32_t dest)",
+    "summary": "Moves the 8-byte-element range [first,last) into dest via ext_0048FC00, then returns dest advanced by the range's element count.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00490920": {
     "name": "sub_00490920",
     "class": "Vector",

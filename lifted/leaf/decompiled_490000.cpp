@@ -1476,3 +1476,17 @@ bool fn_0049ACB0(const float* p) {
     return true;
 }
 } // namespace lift_0049ACB0
+
+// [0x00490810] sub_00490810 (69 bytes)
+namespace lift_00490810 {
+// Known callee 0x0048FC00: moveRangeWithRelease_0048FC00 (Move-assigns an 8-byte-element range [first,last) into dest; releases each dest object via vtable+0x78 and derives dest value from src object via vtable+0x70. Returns dest end (or dest begin if range empty).)
+extern uint32_t ext_0048FC00(uint32_t first, uint32_t last, uint32_t dest);
+
+// @name moveRangeWithReleaseCount_00490810
+// @summary Moves the 8-byte-element range [first,last) into dest via ext_0048FC00, then returns dest advanced by the range's element count.
+uint32_t fn_00490810(uint32_t first, uint32_t last, uint32_t dest) {
+    ext_0048FC00(first, last, dest);
+    const int32_t count = static_cast<int32_t>(last - first) >> 3;
+    return dest + static_cast<uint32_t>(count) * 8u;
+}
+} // namespace lift_00490810
