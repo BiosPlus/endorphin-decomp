@@ -1795,3 +1795,25 @@ int __thiscall fn_0041A070(void* self, void* other) {
     return static_cast<int>(lift_field<DWORD>(self, 0x04) - lift_field<DWORD>(other, 0x04));
 }
 } // namespace lift_0041A070
+
+// [0x00410420] sub_00410420 (36 bytes)
+namespace lift_00410420 {
+// Known callee 0x00410390: sub_00410390 (Checks virtual predicate at +0x28 and compares string at +0x458 against three known values)
+extern uint8_t __fastcall ext_00410390(void* self);
+
+// @name checkVirtualPredicateAndStrEq
+// @summary Returns 0 if the virtual predicate at vtable+0x28 is true or ext_00410390 returns true; otherwise returns 1.
+// @field unknown +0x00 void* vtable
+uint8_t __fastcall fn_00410420(void* self) {
+    void* vtbl = lift_field<void*>(self, 0x00);
+    auto vfunc = lift_field<uint8_t(__fastcall*)(void*)>(vtbl, 0x28);
+
+    if (vfunc(self) != 0) {
+        return 0;
+    }
+    if (ext_00410390(self) != 0) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_00410420

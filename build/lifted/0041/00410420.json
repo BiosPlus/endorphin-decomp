@@ -1,0 +1,21 @@
+{
+  "va": "0x00410420",
+  "size": 36,
+  "orig_symbol": "sub_00410420",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "checkVirtualPredicateAndStrEq",
+  "signature": "uint8_t __fastcall fn_00410420(void* self)",
+  "summary": "Returns 0 if the virtual predicate at vtable+0x28 is true or ext_00410390 returns true; otherwise returns 1.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:18:13Z"
+}
