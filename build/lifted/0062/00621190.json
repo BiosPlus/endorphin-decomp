@@ -1,0 +1,13 @@
+{
+  "va": "0x00621190",
+  "size": 86,
+  "orig_symbol": "sub_00621190",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "CopyRecordRangeAndAdvance_00621190",
+  "signature": "uint8_t* fn_00621190(const uint8_t* first, const uint8_t* last, uint8_t* dst)",
+  "summary": "Copies the 0x48-byte records in [first, last) to dst via ext_00621040, then returns dst advanced by the whole-record count of the range.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:11:45Z"
+}

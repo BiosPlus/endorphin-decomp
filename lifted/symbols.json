@@ -33237,6 +33237,12 @@
     "summary": "Fills a range of 0x48-byte structs (two std::strings and two doubles) by copying from a source element.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x00621190": {
+    "name": "CopyRecordRangeAndAdvance_00621190",
+    "signature": "uint8_t* fn_00621190(const uint8_t* first, const uint8_t* last, uint8_t* dst)",
+    "summary": "Copies the 0x48-byte records in [first, last) to dst via ext_00621040, then returns dst advanced by the whole-record count of the range.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x006215A0": {
     "name": "sub_006215A0",
     "signature": "uint32_t fn_006215A0(uint32_t begin, uint32_t end, uint32_t value)",

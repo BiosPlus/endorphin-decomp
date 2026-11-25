@@ -1549,3 +1549,20 @@ void fn_00629D30(void* self) {
     f34 = a;
 }
 } // namespace lift_00629D30
+
+// [0x00621190] sub_00621190 (86 bytes)
+namespace lift_00621190 {
+// Known callee 0x00621040: CopyRecordRange_00621040 (Copies records in [first, last) (0x48 bytes each: std::string at +0x00 and +0x1c, doubles at +0x38 and +0x40) to dst; returns dst end, or dst unchanged when the range is empty.)
+uint8_t* ext_00621040(const uint8_t* first, const uint8_t* last, uint8_t* dst);
+
+// @name CopyRecordRangeAndAdvance_00621190
+// @summary Copies the 0x48-byte records in [first, last) to dst via ext_00621040, then returns dst advanced by the whole-record count of the range.
+uint8_t* fn_00621190(const uint8_t* first, const uint8_t* last, uint8_t* dst) {
+    constexpr std::ptrdiff_t kRecordSize = 0x48;
+
+    ext_00621040(first, last, dst);
+
+    const std::ptrdiff_t count = (last - first) / kRecordSize;
+    return dst + count * kRecordSize;
+}
+} // namespace lift_00621190
