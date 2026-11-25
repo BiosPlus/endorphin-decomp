@@ -62071,6 +62071,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AF730 (ForwardDispatchRecordByKey16Const).",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x0080FB20": {
+    "name": "GrowableBlock::AppendByte",
+    "class": "GrowableBlock",
+    "signature": "BOOL fn_0080FB20(void* self, uint8_t value)",
+    "summary": "Appends one byte to the block, growing it first when the length has reached the capacity reported by ext_0080FBB0; returns 1 on success, 0 if growth fails.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080FB60": {
     "name": "GrowableBlock_GrowByDelta",
     "class": "GrowableBlock",

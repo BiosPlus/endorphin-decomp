@@ -830,3 +830,34 @@ void fn_0080EB80(uint8_t* dst, size_t size, const uint8_t* src) {
     dst[size - 1] = 0;
 }
 } // namespace lift_0080EB80
+
+// [0x0080FB20] sub_0080FB20 (64 bytes)
+namespace lift_0080FB20 {
+// Known callee 0x0080FBB0: sub_0080FBB0_getField08 (Returns the 32-bit value at +0x08 of the object pointer passed as the single stack argument.)
+extern uint32_t ext_0080FBB0(const void* obj);
+// Known callee 0x0080FB60: GrowableBlock_GrowByDelta (Resizes a LocalAlloc-backed block by a delta (or doubles/initializes it when delta is 0), storing the new handle and size on success; returns 1 on success, 0 on failure.)
+extern uint32_t ext_0080FB60(void* self, uint32_t delta);
+
+// @name GrowableBlock::AppendByte
+// @class GrowableBlock
+// @summary Appends one byte to the block, growing it first when the length has reached the capacity reported by ext_0080FBB0; returns 1 on success, 0 if growth fails.
+// @field GrowableBlock +0x00 uint8_t* field_0x00
+// @field GrowableBlock +0x04 int32_t field_0x04
+BOOL fn_0080FB20(void* self, uint8_t value)
+{
+    uint8_t* obj = static_cast<uint8_t*>(self);
+
+    int32_t capacity = static_cast<int32_t>(ext_0080FBB0(obj));
+    if (lift_field<int32_t>(obj, 0x04) >= capacity) {
+        if (ext_0080FB60(obj, 0) == 0) {
+            return 0;
+        }
+    }
+
+    uint8_t* data = lift_field<uint8_t*>(obj, 0x00);
+    int32_t index = lift_field<int32_t>(obj, 0x04);
+    data[index] = value;
+    lift_field<int32_t>(obj, 0x04) = index + 1;
+    return 1;
+}
+} // namespace lift_0080FB20

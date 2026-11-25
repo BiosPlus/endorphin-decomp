@@ -8,7 +8,9 @@
 // Recovered field layout for GrowableBlock:
 namespace lifted_layout {
 struct GrowableBlock_Fields {
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x0080FB60)
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x0080FB60) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint8_t*                 field_0x00  (evidence: 0x0080FB20) // CONFLICT: multiple definitions at +0x0
+    // +0x4   int32_t                  field_0x04  (evidence: 0x0080FB20)
     // +0x8   uint32_t                 field_0x08  (evidence: 0x0080FB60)
 };
 } // namespace lifted_layout
