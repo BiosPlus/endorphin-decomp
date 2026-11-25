@@ -1,0 +1,13 @@
+{
+  "va": "0x00798F60",
+  "size": 48,
+  "orig_symbol": "sub_00798F60",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "ReplaceGlobalBlockFromString",
+  "signature": "void fn_00798F60(uint32_t* slot, const char* src)",
+  "summary": "Replaces the global block in *slot with a copy of the NUL-terminated string src, sized strlen(src)+1 including the terminator.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:46:48Z"
+}

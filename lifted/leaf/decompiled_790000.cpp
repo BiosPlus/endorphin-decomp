@@ -778,3 +778,16 @@ std::uint32_t fn_00790EE0(void* self) {
     return result;
 }
 } // namespace lift_00790EE0
+
+// [0x00798F60] sub_00798F60 (48 bytes)
+namespace lift_00798F60 {
+// Known callee 0x00798F10: ReplaceGlobalBlock (Frees the global block held in *slot (if any); if src is non-null, allocates a new block of size bytes into *slot and copies src into it.)
+extern void ext_00798F10(uint32_t* slot, const void* src, uint32_t size);
+
+// @name ReplaceGlobalBlockFromString
+// @summary Replaces the global block in *slot with a copy of the NUL-terminated string src, sized strlen(src)+1 including the terminator.
+void fn_00798F60(uint32_t* slot, const char* src) {
+    const uint32_t size = static_cast<uint32_t>(std::strlen(src)) + 1u;
+    ext_00798F10(slot, src, size);
+}
+} // namespace lift_00798F60
