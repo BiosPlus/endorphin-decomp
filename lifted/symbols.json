@@ -38201,6 +38201,13 @@
     "summary": "Initializes object fields to zero, stores argument at +0x28, and sets vtable to 0x0096F154",
     "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
+  "0x005FF290": {
+    "name": "Unknown::create_005FF290",
+    "class": "Unknown",
+    "signature": "void* fn_005FF290(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Allocates a 0x40-byte object, initializes it via ext_00627240 with four 32-bit arguments, and sets its vtable to 0x0096EB5C.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x00602EB0": {
     "name": "Effector::vfunc_25",
     "class": "Effector",

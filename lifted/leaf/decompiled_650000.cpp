@@ -1746,3 +1746,39 @@ void fn_0051C730(void* self, const void* name) {
     lift_field<int32_t>(self, 0x60) = 0;
 }
 } // namespace lift_0051C730
+
+// [0x00517AD0]
+namespace lift_00517AD0 {
+extern void ext_00661980(void* self);
+extern void mem_write8(void* addr, uint8_t val);
+extern void mem_write32(void* addr, uint32_t val);
+
+// @name sub_00517AD0
+// @summary Constructor that initializes vtables, subobject at +0x0C, and zero-initializes fields at +0x14..+0x1C.
+// @field Object +0x00 uint32_t vtable_0x00
+// @field Object +0x04 uint8_t field_0x04
+// @field Object +0x08 uint32_t vtable_0x08
+// @field Object +0x0C uint32_t vtable_0x0C
+// @field Object +0x14 uint32_t field_0x14
+// @field Object +0x18 uint32_t field_0x18
+// @field Object +0x1C uint32_t field_0x1C
+void* fn_00517AD0(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+
+    mem_write8(obj + 0x04, 1);
+    mem_write32(obj + 0x00, 0x0093C08Cu);
+    mem_write32(obj + 0x08, 0x00951F3Cu);
+
+    void* subobj = obj + 0x0C;
+    ext_00661980(subobj);
+
+    mem_write32(subobj, 0x00951FB4u);
+    mem_write32(obj + 0x00, 0x00952018u);
+    mem_write32(obj + 0x08, 0x0095200Cu);
+    mem_write32(obj + 0x14, 0u);
+    mem_write32(obj + 0x18, 0u);
+    mem_write32(obj + 0x1C, 0u);
+
+    return self;
+}
+} // namespace lift_00517AD0
