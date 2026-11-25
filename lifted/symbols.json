@@ -37378,6 +37378,13 @@
     "summary": "One-time init of a function-local static (guard bit 0 of mem_00B477F0), then stores the static's address into self+0x4.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00607F20": {
+    "name": "FloatArray::assignFilled (allocate count floats and fill with value)",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00607F20(void* self, uint32_t count, uint32_t value_ptr)",
+    "summary": "Resets the three array pointers, then for count \u003e 0 allocates count float slots (throws if count \u003e 0x3FFFFFFF) and fills them with *value_ptr.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x00608160": {
     "name": "EffectorWithModes::vfunc_0",
     "class": "EffectorWithModes",

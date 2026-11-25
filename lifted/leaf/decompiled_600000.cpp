@@ -1162,3 +1162,44 @@ void* __thiscall fn_0060CCC0(void* self) {
     return self;
 }
 } // namespace lift_0060CCC0
+
+// [0x00607F20]
+namespace lift_00607F20 {
+extern void ext_00405FB0(void);
+extern uint32_t ext_004A59A0(uint32_t count, uint32_t zero);
+
+// @name FloatArray::assignFilled (allocate count floats and fill with value)
+// @class Unknown
+// @summary Resets the three array pointers, then for count > 0 allocates count float slots (throws if count > 0x3FFFFFFF) and fills them with *value_ptr.
+// @field Unknown +0x04 float* field_0x04 (begin pointer)
+// @field Unknown +0x08 float* field_0x08 (end-of-data pointer)
+// @field Unknown +0x0C float* field_0x0C (end-of-capacity pointer)
+void __thiscall fn_00607F20(void* self, uint32_t count, uint32_t value_ptr) {
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+
+    if (count == 0) {
+        return;
+    }
+
+    if (count > 0x3FFFFFFFu) {
+        ext_00405FB0();
+    }
+
+    uint32_t data = ext_004A59A0(count, 0);
+    uint32_t end = data + 4u * count;
+
+    lift_field<uint32_t>(self, 0x0C) = end;
+    lift_field<uint32_t>(self, 0x04) = data;
+    lift_field<uint32_t>(self, 0x08) = data;
+
+    float* dst = reinterpret_cast<float*>(static_cast<uintptr_t>(data));
+    for (uint32_t i = 0; i < count; ++i) {
+        const float* src = reinterpret_cast<const float*>(static_cast<uintptr_t>(value_ptr));
+        dst[i] = *src;
+    }
+
+    lift_field<uint32_t>(self, 0x08) = end;
+}
+} // namespace lift_00607F20

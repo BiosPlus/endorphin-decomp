@@ -1,0 +1,34 @@
+{
+  "va": "0x00607F20",
+  "size": 108,
+  "orig_symbol": "sub_00607F20",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "FloatArray::assignFilled (allocate count floats and fill with value)",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00607F20(void* self, uint32_t count, uint32_t value_ptr)",
+  "summary": "Resets the three array pointers, then for count \u003e 0 allocates count float slots (throws if count \u003e 0x3FFFFFFF) and fills them with *value_ptr.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "float* field_0x04 (begin",
+      "name": "pointer)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "float* field_0x08 (end-of-data",
+      "name": "pointer)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "float* field_0x0C (end-of-capacity",
+      "name": "pointer)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:09:47Z"
+}
