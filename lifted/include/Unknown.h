@@ -115,6 +115,7 @@ struct Unknown_Fields {
     // +0x0   void*                    vtable  (evidence: 0x004155E0, 0x00442B80, 0x00442BB0, 0x00442BD0, 0x004436B0, 0x00443700, 0x00447E30, 0x004562C0, 0x00458DF0, 0x00458FE0, 0x00493FF0, 0x00518030, 0x0051C5A0, 0x00537A30, 0x00538530, 0x0053F6A0, 0x00545940, 0x00547AD0, 0x00547E50, 0x0054A0E0, 0x005ACB00, 0x005ACC50, 0x005ACEE0, 0x00611910, 0x00611980, 0x006203B0, 0x00622B40, 0x00624E50, 0x00624EA0, 0x006293A0, 0x006296A0, 0x00629850, 0x0063E050, 0x0063E610, 0x0063FFE0, 0x006A7AC0, 0x006A7F30, 0x006A7F90, 0x006A7FB0, 0x006B2590, 0x006B2F70, 0x006BA780, 0x006C0420, 0x006D8E70, 0x00705760, 0x007057F0, 0x00705D70, 0x007094A0, 0x0070AD00, 0x0070BF00, 0x0070E390, 0x0070E3B0, 0x0070EC70, 0x007155B0, 0x0071FCC0, 0x0072DC60, 0x00774EC0, 0x007856A0, 0x00788E50, 0x0078BEC0, 0x00790D60, 0x0079ADA0, 0x0079D730, 0x0079DCE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* const*             vtable  (evidence: 0x0064F8F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtable  (evidence: 0x00420070, 0x0042FAE0, 0x0042FDD0, 0x004345B0, 0x00434880, 0x00456340, 0x00622B40, 0x0062A590, 0x00648A20, 0x00649010, 0x0067ADB0, 0x006C92D0, 0x006DE660, 0x006DE690, 0x006DE720, 0x006DE970, 0x006F99B0, 0x006FA920, 0x00704A20, 0x00707FB0, 0x0070AD00, 0x0070BF00, 0x007857A0, 0x00790D60, 0x0079ADA0, 0x0079DCE0, 0x0079E610) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vtable0  (evidence: 0x0052FEB0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtablePtr  (evidence: 0x00503BC0, 0x00503CA0, 0x00508BC0, 0x0050C4D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   u32                      vtable_0x953D74  (evidence: 0x0052F7D0, 0x0052FD90) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable_or_ptr  (evidence: 0x005457B0) // CONFLICT: multiple definitions at +0x0
@@ -435,6 +436,7 @@ struct Unknown_Fields {
     // +0x14  uint32_t field_0x14 (on subobject returned by ext_0071E680, i.e. self+0x40)  (evidence: 0x00711D40, 0x007155B0) // CONFLICT: multiple definitions at +0x14
     // +0x14  void* field_0x14 (pointer to holder whose +0x04 is the lookup table)  (evidence: 0x0080D220) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t                 vptr_secondary  (evidence: 0x0052F7D0, 0x0052FC10) // CONFLICT: multiple definitions at +0x14
+    // +0x14  uint32_t                 vtable1  (evidence: 0x0052FEB0) // CONFLICT: multiple definitions at +0x14
     // +0x14  u32                      vtable_0x953D6C  (evidence: 0x0052F7D0, 0x0052FD90) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t                 vtable_ptr_2  (evidence: 0x0053C4C0) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t                 vtable_secondary  (evidence: 0x0053B240) // CONFLICT: multiple definitions at +0x14

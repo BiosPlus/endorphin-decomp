@@ -21302,6 +21302,13 @@
     "summary": "Scalar deleting destructor: destroys the +0x3C subobject, runs the base destructor, and frees this if flags bit 0 is set.",
     "lifted_path": "lifted/Primitives/Arrow.cpp"
   },
+  "0x0052FEB0": {
+    "name": "Unknown::createAnimationDerived",
+    "class": "Unknown",
+    "signature": "void* fn_0052FEB0()",
+    "summary": "Allocates a 0x3c-byte object, base/derived-initializes it, installs the derived vtable pointers, and returns it (or null on allocation failure).",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052FF10": {
     "name": "getStaticInstance_0052FF10",
     "signature": "void* fn_0052FF10(void* self)",
