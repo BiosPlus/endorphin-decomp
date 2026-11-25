@@ -1195,3 +1195,38 @@ bool fn_0042ECC0(void* self, uint32_t value) {
     return cur != end;
 }
 } // namespace lift_0042ECC0
+
+// [0x004280C0] sub_004280C0 (105 bytes)
+namespace lift_004280C0 {
+// Known callee 0x004205B0: TreeMap::lowerBound (Lower-bound search in an MSVC-style std::map tree: returns first node whose key is not less than the argument, or the header node if none.)
+extern void* ext_004205B0(void* self, const void* key);
+// MSVCRT _invalid_parameter_noinfo import slot (0x00925134)
+extern void (*mem_00925134)();
+// MSVCP80 std::string operator< import slot (0x00924EF4): operator<(lhs, rhs)
+extern bool (*mem_00924EF4)(const void* lhs, const void* rhs);
+
+struct TreeMapLookupResult {
+    void* first;
+    void* second;
+};
+
+// @name TreeMap::findInsertPoint
+// @class TreeMap
+// @summary Lower-bound lookup of a string key; returns (map, node) when the key exists, otherwise (map, header) for the end sentinel.
+// @field TreeMap +0x04 void* header
+TreeMapLookupResult fn_004280C0(void* self, const void* key) {
+    void* node = ext_004205B0(self, key);
+
+    if (self == nullptr) {
+        mem_00925134();
+    }
+
+    char* base = static_cast<char*>(self);
+    void* header = *reinterpret_cast<void**>(base + 0x04);
+
+    if (node == header || mem_00924EF4(key, static_cast<char*>(node) + 0x0C)) {
+        return TreeMapLookupResult{self, header};
+    }
+    return TreeMapLookupResult{self, node};
+}
+} // namespace lift_004280C0
