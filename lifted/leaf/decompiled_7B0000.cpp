@@ -1525,3 +1525,27 @@ void __cdecl fn_007BFD80(void* self, FILE* stream, DWORD arg3) {
     }
 }
 } // namespace lift_007BFD80
+
+// [0x007B06A0] sub_007B06A0 (80 bytes)
+namespace lift_007B06A0 {
+// Known callee 0x007AF5E0: LookupEntryByKeyWithFallback (Looks up a cached entry by (a1, a2) with key2 = 0; if not found, dispatches a fallback hook with a2 and returns the (null) result.)
+extern void* ext_007AF5E0(void* a1, uint32_t a2);
+// Known callee 0x007AF620: ForwardToCallbackWithArgPtr (If the global callback pointer is set, call it cdecl with (a1, a2, &a3) and return.)
+extern void ext_007AF620(uint32_t a1, uint32_t a2, uint32_t a3);
+
+// @name CheckKeyOrForwardToCallback
+// @summary Returns 1 if a3 equals a2->field_0x04; otherwise looks up an entry for (a1, a2->field_0x00), forwards (a1->field_0x00, 0xAB1430, entry->field_0x10) to the callback, and returns 0.
+// @field Unknown +0x00 uint16_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+uint32_t fn_007B06A0(void* a1, void* a2, uint32_t a3) {
+    if (a3 == lift_field<uint32_t>(a2, 0x04)) {
+        return 1;
+    }
+    uint16_t key = lift_field<uint16_t>(a2, 0x00);
+    void* entry = ext_007AF5E0(a1, static_cast<uint32_t>(key));
+    uint32_t value = lift_field<uint32_t>(entry, 0x10);
+    uint32_t target = lift_field<uint32_t>(a1, 0x00);
+    ext_007AF620(target, 0x00AB1430u, value);
+    return 0;
+}
+} // namespace lift_007B06A0

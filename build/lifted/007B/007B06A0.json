@@ -1,0 +1,27 @@
+{
+  "va": "0x007B06A0",
+  "size": 80,
+  "orig_symbol": "sub_007B06A0",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "CheckKeyOrForwardToCallback",
+  "signature": "uint32_t fn_007B06A0(void* a1, void* a2, uint32_t a3)",
+  "summary": "Returns 1 if a3 equals a2-\u003efield_0x04; otherwise looks up an entry for (a1, a2-\u003efield_0x00), forwards (a1-\u003efield_0x00, 0xAB1430, entry-\u003efield_0x10) to the callback, and returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint16_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T05:03:36Z"
+}
