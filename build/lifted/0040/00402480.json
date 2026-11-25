@@ -1,0 +1,34 @@
+{
+  "va": "0x00402480",
+  "size": 81,
+  "orig_symbol": "sub_00402480",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "ArrayBlock::allocate28",
+  "class": "ArrayBlock",
+  "signature": "bool fn_00402480(void* self, uint32_t n)",
+  "summary": "Clears three block pointers, then allocates n 28-byte elements and sets begin/end; returns false when n is 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:09:37Z"
+}

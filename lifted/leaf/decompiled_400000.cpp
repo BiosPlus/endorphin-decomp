@@ -1887,3 +1887,42 @@ void fn_00405FB0() {
     throw thrown;
 }
 } // namespace lift_00405FB0
+
+// [0x00402480] sub_00402480 (81 bytes)
+namespace lift_00402480 {
+// Known callee 0x00401E80: checkedArrayAllocate (Allocates n elements of 28 bytes each; n == 0 requests a zero-byte block, and an n whose byte count would overflow throws bad_array_new_length.)
+// The caller pushes a second zero argument before n; the callee's use of it is not recovered.
+extern void* ext_00401E80(uint32_t n, uint32_t zero);
+// Known callee 0x00405FB0: throwPreparedStringError_00405FB0 (Builds a std::string from the literal at 0x00928F30 and throws it inside an std::exception-derived object.)
+extern void ext_00405FB0();
+
+// @name ArrayBlock::allocate28
+// @class ArrayBlock
+// @summary Clears three block pointers, then allocates n 28-byte elements and sets begin/end; returns false when n is 0.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x0C void* field_0x0C
+bool fn_00402480(void* self, uint32_t n) {
+    lift_field<void*>(self, 0x4) = nullptr;
+    lift_field<void*>(self, 0x8) = nullptr;
+    lift_field<void*>(self, 0xC) = nullptr;
+
+    if (n == 0) {
+        return false;
+    }
+
+    if (n > 0x9249249u) {
+        ext_00405FB0();
+    }
+
+    void* begin = ext_00401E80(n, 0u);
+    // end = begin + 4 * (8n - n) bytes, i.e. begin + 28 * n.
+    uint32_t span_bytes = 4u * (8u * n - n);
+    void* end = reinterpret_cast<uint8_t*>(begin) + span_bytes;
+
+    lift_field<void*>(self, 0x4) = begin;
+    lift_field<void*>(self, 0x8) = begin;
+    lift_field<void*>(self, 0xC) = end;
+    return true;
+}
+} // namespace lift_00402480
