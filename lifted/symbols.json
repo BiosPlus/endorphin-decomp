@@ -50890,6 +50890,13 @@
     "summary": "Calls ext_006A7C10 once; if nonzero, repeatedly calls ext_006A7C20 with each returned value (passing this) until it returns zero, and returns the number of successful iterations.",
     "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
   },
+  "0x006A8A00": {
+    "name": "Unknown::ForEachChildUntilNonZero",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006A8A00(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "Iterates the child-pointer array at this+0xA0 (count at this+0xA4); calls child vfunc slot 1 with (a1, a2, a3) and returns the first nonzero result, else 0. Out-of-range index calls the MFC80 failure thunk.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006A9290": {
     "name": "sub_006A9290",
     "signature": "extern \"C\" int32_t __thiscall fn_006A9290(void* self, uint32_t arg1)",

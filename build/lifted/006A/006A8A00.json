@@ -1,0 +1,28 @@
+{
+  "va": "0x006A8A00",
+  "size": 94,
+  "orig_symbol": "sub_006A8A00",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "Unknown::ForEachChildUntilNonZero",
+  "class": "Unknown",
+  "signature": "uint32_t fn_006A8A00(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+  "summary": "Iterates the child-pointer array at this+0xA0 (count at this+0xA4); calls child vfunc slot 1 with (a1, a2, a3) and returns the first nonzero result, else 0. Out-of-range index calls the MFC80 failure thunk.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xA0",
+      "type": "void**",
+      "name": "field_0xA0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA4",
+      "type": "int32_t",
+      "name": "field_0xA4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:23:02Z"
+}

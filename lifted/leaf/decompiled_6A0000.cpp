@@ -679,3 +679,40 @@ void* sub_006A0680() {
     return mem_00B5CA74;
 }
 } // namespace lift_006A0680
+
+// [0x006A8A00] sub_006A8A00 (94 bytes)
+namespace lift_006A8A00 {
+// Known callee 0x006A60EE: IAT jump thunk forwarding to MFC80!ord_1185 (no-return failure path).
+extern void ext_006A60EE(void);
+
+// @name Unknown::ForEachChildUntilNonZero
+// @class Unknown
+// @summary Iterates the child-pointer array at this+0xA0 (count at this+0xA4); calls child vfunc slot 1 with (a1, a2, a3) and returns the first nonzero result, else 0. Out-of-range index calls the MFC80 failure thunk.
+// @field Unknown +0xA0 void** field_0xA0
+// @field Unknown +0xA4 int32_t field_0xA4
+uint32_t fn_006A8A00(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
+    int32_t esi = 0;
+    if (lift_field<int32_t>(self, 0xA4) <= 0) {
+        return 0;
+    }
+    for (;;) {
+        if (esi < 0 || esi >= lift_field<int32_t>(self, 0xA4)) {
+            ext_006A60EE();
+            return 0;
+        }
+        void** array = lift_field<void**>(self, 0xA0);
+        void* child = array[esi];
+        void** vtable = *reinterpret_cast<void***>(child);
+        using VFunc1 = uint32_t (*)(void* self, uint32_t a1, uint32_t a2, uint32_t a3);
+        VFunc1 fn = reinterpret_cast<VFunc1>(vtable[1]);
+        uint32_t result = fn(child, a1, a2, a3);
+        if (result != 0) {
+            return result;
+        }
+        ++esi;
+        if (esi >= lift_field<int32_t>(self, 0xA4)) {
+            return 0;
+        }
+    }
+}
+} // namespace lift_006A8A00
