@@ -1,0 +1,34 @@
+{
+  "va": "0x005A9FB0",
+  "size": 97,
+  "orig_symbol": "sub_005A9FB0",
+  "src_path": "src/leaf/decompiled_5A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5A0000.cpp",
+  "name": "ClassVt95EE74::~ClassVt95EE74",
+  "class": "ClassVt95EE74",
+  "signature": "void fn_005A9FB0(void* self)",
+  "summary": "Derived destructor: restores this class's vtable, destroys two std::string members (+0x48, then +0x2C), then chains to the Unknown base destructor.",
+  "fields": [
+    {
+      "class": "ClassVt95EE74",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "ClassVt95EE74",
+      "offset": "+0x2C",
+      "type": "std::string",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "ClassVt95EE74",
+      "offset": "+0x48",
+      "type": "std::string",
+      "name": "field_0x48"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:38:08Z"
+}

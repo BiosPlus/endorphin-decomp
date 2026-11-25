@@ -27343,6 +27343,13 @@
     "summary": "Constructor: runs the XMLConverter base constructor, installs this class's vtable (0x0095EE74), and default-constructs two std::string members at +0x2C and +0x48. Returns this.",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005A9FB0": {
+    "name": "ClassVt95EE74::~ClassVt95EE74",
+    "class": "ClassVt95EE74",
+    "signature": "void fn_005A9FB0(void* self)",
+    "summary": "Derived destructor: restores this class's vtable, destroys two std::string members (+0x48, then +0x2C), then chains to the Unknown base destructor.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005AA020": {
     "name": "CharacterReloader::vfunc_10",
     "class": "CharacterReloader",

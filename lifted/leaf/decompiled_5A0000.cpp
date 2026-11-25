@@ -617,3 +617,32 @@ void fn_005A9EE0(void* self) {
     ext_00678280(self);
 }
 } // namespace lift_005A9EE0
+
+// [0x005A9FB0] sub_005A9FB0 (97 bytes)
+namespace lift_005A9FB0 {
+// Known callee 0x00678280: Unknown::~Unknown (Destructor: sets the derived vtable, destroys the string member at +0x04, then runs the base-class reset via sub_0065C660.)
+extern void ext_00678280(void* self);
+// Holds the address of the MSVCP std::string destructor (value 0x00628FF0).
+extern uintptr_t mem_00924FF4;
+
+// @name ClassVt95EE74::~ClassVt95EE74
+// @class ClassVt95EE74
+// @summary Derived destructor: restores this class's vtable, destroys two std::string members (+0x48, then +0x2C), then chains to the Unknown base destructor.
+// @field ClassVt95EE74 +0x00 uint32_t vtable
+// @field ClassVt95EE74 +0x2C std::string field_0x2c
+// @field ClassVt95EE74 +0x48 std::string field_0x48
+void fn_005A9FB0(void* self) {
+    using StringDtor = void (*)(void*);
+    const auto string_dtor = reinterpret_cast<StringDtor>(mem_00924FF4);
+
+    // Restore this class's vtable pointer (0x0095EE74) at offset 0.
+    lift_field<uint32_t>(self, 0x00) = 0x0095EE74u;
+
+    // Destroy string member at +0x48, then the string member at +0x2C.
+    string_dtor(static_cast<uint8_t*>(self) + 0x48);
+    string_dtor(static_cast<uint8_t*>(self) + 0x2C);
+
+    // Chain to the base-class destructor Unknown::~Unknown.
+    ext_00678280(self);
+}
+} // namespace lift_005A9FB0
