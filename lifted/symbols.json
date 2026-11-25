@@ -20649,6 +20649,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005731A0 (OBJIO::vfunc_3).",
     "lifted_path": "lifted/classes/VIO.cpp"
   },
+  "0x00574E20": {
+    "name": "WriteTagAndVersionMarker",
+    "signature": "void fn_00574E20(void* os)",
+    "summary": "Writes the 2-byte tag \"V#\" followed by the 2-byte value 0x0001 (little-endian dword 1, low two bytes) to the given ostream.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00575280": {
     "name": "sub_00575280",
     "signature": "uint32_t __cdecl fn_00575280(uint32_t first, uint32_t last, uint32_t dst)",

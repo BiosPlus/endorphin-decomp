@@ -446,3 +446,18 @@ uint32_t fn_00575DF0(uint32_t self, uint32_t idx) {
     return begin + idx * 20u;
 }
 } // namespace lift_00575DF0
+
+// [0x00574E20] sub_00574E20 (63 bytes)
+namespace lift_00574E20 {
+// std::basic_ostream<char>::write(const char*, streamsize) from MSVCP80.
+extern void* (__thiscall* mem_00925094)(void* self, const char* s, int n);
+
+// @name WriteTagAndVersionMarker
+// @summary Writes the 2-byte tag "V#" followed by the 2-byte value 0x0001 (little-endian dword 1, low two bytes) to the given ostream.
+void fn_00574E20(void* os) {
+    char tag[2] = {'V', '#'};
+    char version[4] = {0x01, 0x00, 0x00, 0x00};
+    mem_00925094(os, tag, 2);
+    mem_00925094(os, version, 2);
+}
+} // namespace lift_00574E20
