@@ -2731,3 +2731,26 @@ void __thiscall fn_00430720(void* self, void* obj) {
     reinterpret_cast<ThisCallVoidInt>(vtbl[1])(obj, takeFirstPath);
 }
 } // namespace lift_00430720
+
+// [0x0043E090] sub_0043E090 (92 bytes)
+namespace lift_0043E090 {
+// @name Unknown::InvokeSlot0OnEachElement
+// @class Unknown
+// @summary Iterates the pointer range stored at +0x58..+0x5c and calls virtual slot 0 on each element with the single stack argument.
+// @field Unknown +0x58 void* field_0x58
+// @field Unknown +0x5c void* field_0x5c
+extern void __thiscall fn_0043E090(void* self, uint32_t arg) {
+    // The original's debug iterator-validity checks (calls to _invalid_parameter_noinfo)
+    // only fire on broken container state and are omitted here.
+    using Slot0Fn = void(__thiscall*)(void* self, uint32_t a0);
+
+    void** cur = lift_field<void**>(self, 0x58);
+    while (cur != lift_field<void**>(self, 0x5c)) {
+        void* elem = *cur;
+        void* vtable = lift_field<void*>(elem, 0x00);
+        Slot0Fn slot = lift_field<Slot0Fn>(vtable, 0x00);
+        slot(elem, arg);
+        ++cur;
+    }
+}
+} // namespace lift_0043E090
