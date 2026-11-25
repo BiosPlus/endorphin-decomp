@@ -1,0 +1,14 @@
+{
+  "va": "0x00505030",
+  "size": 68,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cInterpreter,int,bogus\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e",
+  "signature": "void* fn_00505030(void* out, const void* src)",
+  "summary": "Returns out after forwarding to ext_0046C500 when *src is nonzero; otherwise builds a DerivedException and throws it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:02:25Z"
+}

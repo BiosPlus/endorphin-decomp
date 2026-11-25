@@ -56742,3 +56742,29 @@ void fn_00604EB0(void* self) {
     ext_006A6DD2(frame + 0x14, throwInfo);
 }
 } // namespace lift_00604EB0
+
+// [0x00505030] ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>::vfunc_4 (68 bytes)
+namespace lift_00505030 {
+// Known callee 0x0046C500: sub_0046C500 (cdecl, (void* out_str, uint8_t flag); clone of forwardMakeBoolString)
+extern void* ext_0046C500(void* out_str, uint8_t flag);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall ctor, ecx = exception object)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk to MSVCR80!_CxxThrowException (args forwarded unchanged)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// @name ExprParser::ReadMethodType<Interpreter,int,bogus>::vfunc_4
+// @class ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>
+// @summary Returns out after forwarding to ext_0046C500 when *src is nonzero; otherwise builds a DerivedException and throws it.
+void* fn_00505030(void* out, const void* src) {
+    if (*reinterpret_cast<const uint32_t*>(src) == 0) {
+        // Original throws a locally constructed exception; the frame space
+        // available for it in the asm is esp+4..esp+0x2c (0x28 bytes).
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return nullptr; // not reached: _CxxThrowException does not return
+    }
+    ext_0046C500(out, 0);
+    return out;
+}
+} // namespace lift_00505030
