@@ -10030,3 +10030,31 @@ DWORD fn_004D55F0(void* out) {
     return static_cast<DWORD>(reinterpret_cast<uintptr_t>(out));
 }
 } // namespace lift_004D55F0
+
+// [0x004D5670] ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setIsInitTargetPoseEnabled(bool), 0}>::vfunc_40 (122 bytes)
+namespace lift_004D5670 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+// Once-init guard dword (bit 0 = initialized) and the static object at 0x00AE5D0C (its first DWORD is the vtable pointer).
+extern uint32_t mem_00AE5D10;
+extern uint32_t mem_00AE5D0C;
+
+// @name ExprParser::ReadWriteMethodType<NMData::RigEventData,bool,isInitTargetPoseEnabled,setIsInitTargetPoseEnabled>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setIsInitTargetPoseEnabled(bool), 0}>
+// @summary Lazily initializes the shared static accessor object at 0x00AE5D0C once (guarded by bit 0 of 0x00AE5D10), then points the stack argument's +0x04 slot at it.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void __stdcall fn_004D5670(void* arg) {
+    using StoreFn = uint32_t (__thiscall*)(void* self, uint32_t value);
+
+    if ((mem_00AE5D10 & 1u) == 0) {
+        // Mark initialized before running the initializer (matches the original ordering).
+        mem_00AE5D10 |= 1u;
+        // Callee stores 0 into the object's first DWORD; the vtable is stamped afterwards.
+        StoreFn store = reinterpret_cast<StoreFn>(ext_0067A670);
+        store(&mem_00AE5D0C, 0u);
+        mem_00AE5D0C = 0x009487BCu;
+    }
+
+    *reinterpret_cast<void**>(static_cast<uint8_t*>(arg) + 0x04) = &mem_00AE5D0C;
+}
+} // namespace lift_004D5670
