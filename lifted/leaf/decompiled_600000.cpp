@@ -254,3 +254,31 @@ void fn_006096D0(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_006096D0
+
+// [0x00602F70] sub_00602F70 (91 bytes)
+namespace lift_00602F70 {
+// Known callee 0x00602EC0: sub_00602EC0_ctor (Initializes vtable and zeroes integer and float fields of an object)
+extern void ext_00602EC0(void* self);
+// Known callee 0x0060BCD0: descriptiveName (unknown class; initializes a 0x11-byte record) (thiscall, this in ecx)
+extern void ext_0060BCD0(void* self);
+
+// @name Unknown::ctor_00602F70
+// @class Unknown
+// @summary Runs the base ctor (sub_00602EC0), sets vtable to 0x0096F8A4, zeroes floats at +0x2c/+0x30 and int at +0x34, initializes sub-records at +0x38 and +0x4c via sub_0060BCD0; returns this.
+// @field Unknown +0x00 uint32_t vptr
+// @field Unknown +0x2c float field_0x2c
+// @field Unknown +0x30 float field_0x30
+// @field Unknown +0x34 uint32_t field_0x34
+// @field Unknown +0x38 uint8_t field_0x38[0x11]
+// @field Unknown +0x4c uint8_t field_0x4c[0x11]
+void* fn_00602F70(void* self) {
+    ext_00602EC0(self);
+    lift_field<float>(self, 0x2C) = 0.0f;
+    lift_field<float>(self, 0x30) = 0.0f;
+    lift_field<uint32_t>(self, 0x34) = 0u;
+    lift_field<uint32_t>(self, 0x00) = 0x0096F8A4u;
+    ext_0060BCD0(static_cast<uint8_t*>(self) + 0x38);
+    ext_0060BCD0(static_cast<uint8_t*>(self) + 0x4C);
+    return self;
+}
+} // namespace lift_00602F70

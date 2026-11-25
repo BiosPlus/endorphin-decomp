@@ -31521,6 +31521,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00602F00 (UnknownClass::GetSubobject14ViaVirtual28).",
     "lifted_path": "lifted/leaf/tiny_600000.cpp"
   },
+  "0x00602F70": {
+    "name": "Unknown::ctor_00602F70",
+    "class": "Unknown",
+    "signature": "void* fn_00602F70(void* self)",
+    "summary": "Runs the base ctor (sub_00602EC0), sets vtable to 0x0096F8A4, zeroes floats at +0x2c/+0x30 and int at +0x34, initializes sub-records at +0x38 and +0x4c via sub_0060BCD0; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x00602FF0": {
     "name": "Effector::vfunc_26",
     "class": "Effector",
