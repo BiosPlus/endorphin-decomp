@@ -197,3 +197,26 @@ void __thiscall fn_005ED330(uint32_t self, uint32_t node) {
     }
 }
 } // namespace lift_005ED330
+
+// [0x005E27E0]
+namespace lift_005E27E0 {
+// Known callee 0x006123C0: UnknownClass::setElement1AndNotify
+extern void ext_006123C0(uintptr_t self, float value);
+
+// @name UnknownClass::forwardValueToSubobjectAt17C
+// @class UnknownClass
+// @summary Loads the subobject pointer at +0x17C, calls its vtable slot 0x120 with the float argument, and forwards the returned object plus the same float to setElement1AndNotify (0x006123C0). Stack arg is popped by callee (ret 4).
+// @field UnknownClass +0x17C uintptr_t subobject
+// @field UnknownClass +0x0 uint32_t vtable
+
+using VCall120Fn = uintptr_t (*)(uintptr_t self, float value);
+
+void fn_005E27E0(uintptr_t self, float value) {
+    uintptr_t sub = lift_field<uintptr_t>(reinterpret_cast<void*>(self), 0x17C);
+    uint32_t vtbl = lift_field<uint32_t>(reinterpret_cast<void*>(sub), 0x0);
+    uint32_t slotAddr = lift_field<uint32_t>(reinterpret_cast<void*>(vtbl), 0x120);
+    VCall120Fn slot = reinterpret_cast<VCall120Fn>(static_cast<uintptr_t>(slotAddr));
+    uintptr_t result = slot(sub, value);
+    ext_006123C0(result, value);
+}
+} // namespace lift_005E27E0

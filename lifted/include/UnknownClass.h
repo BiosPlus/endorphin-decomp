@@ -13,7 +13,7 @@ struct UnknownClass_Fields {
     // +0x0   void*                    field_0x00  (evidence: 0x00465B20, 0x00468730, 0x00492A50, 0x0049AD40) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD field_0x00 (array of 24-byte elements; element +0x10 holds table pointer)  (evidence: 0x0078D4E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vptr  (evidence: 0x00413C40) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 vtable  (evidence: 0x00629D00, 0x00629E20) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vtable  (evidence: 0x005E27E0, 0x00629D00, 0x00629E20) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x006294D0, 0x0063D970, 0x0063DDF0, 0x006A7AE0) // CONFLICT: multiple definitions at +0x0
     // +0x1   uint8_t                  field_0x01  (evidence: 0x004B0F50, 0x004B10D0, 0x004B6FF0)
     // +0x2   uint8_t                  field_0x02  (evidence: 0x004B0F50, 0x004B10D0, 0x004B6FF0)
@@ -85,6 +85,7 @@ struct UnknownClass_Fields {
     // +0x16C uint32_t                 field_0x16C  (evidence: 0x0070AB80, 0x0070AD00)
     // +0x170 uint32_t                 field_0x170  (evidence: 0x0070AB80, 0x0070AD00)
     // +0x174 uint32_t                 field_0x174  (evidence: 0x0070AB80, 0x0070AD00)
+    // +0x17C uintptr_t                subobject  (evidence: 0x005E27E0)
     // +0x1CC void*                    field_0x1cc  (evidence: 0x007BD4A0, 0x007BD640)
     // +0x1D8 uint32_t                 field_0x1d8  (evidence: 0x007BD640)
     // +0x1E4 uint32_t                 field_0x1e4  (evidence: 0x007BD640)

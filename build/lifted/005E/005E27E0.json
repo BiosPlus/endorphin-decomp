@@ -1,0 +1,28 @@
+{
+  "va": "0x005E27E0",
+  "size": 34,
+  "orig_symbol": "sub_005E27E0",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "UnknownClass::forwardValueToSubobjectAt17C",
+  "class": "UnknownClass",
+  "signature": "void fn_005E27E0(uintptr_t self, float value)",
+  "summary": "Loads the subobject pointer at +0x17C, calls its vtable slot 0x120 with the float argument, and forwards the returned object plus the same float to setElement1AndNotify (0x006123C0). Stack arg is popped by callee (ret 4).",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x17C",
+      "type": "uintptr_t",
+      "name": "subobject"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:15:47Z"
+}

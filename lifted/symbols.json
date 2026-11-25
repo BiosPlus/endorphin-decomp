@@ -27157,6 +27157,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005E2770 (descriptiveName_005E2770).",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005E27E0": {
+    "name": "UnknownClass::forwardValueToSubobjectAt17C",
+    "class": "UnknownClass",
+    "signature": "void fn_005E27E0(uintptr_t self, float value)",
+    "summary": "Loads the subobject pointer at +0x17C, calls its vtable slot 0x120 with the float argument, and forwards the returned object plus the same float to setElement1AndNotify (0x006123C0). Stack arg is popped by callee (ret 4).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005E2810": {
     "name": "descriptiveName_005E2810",
     "signature": "float fn_005E2810(void* self)",
