@@ -2563,3 +2563,36 @@ extern void __thiscall fn_00434040(uint32_t this_ptr) {
     reinterpret_cast<invalidate_rect_t>(mem_00925688)(hwnd, 0, 1);
 }
 } // namespace lift_00434040
+
+// [0x004347B0] sub_004347B0 (84 bytes)
+namespace lift_004347B0 {
+// Known callee 0x00594000: sub_00594000 (returns the global object pointer used as a base here)
+extern void* ext_00594000(void);
+// Callee 0x006AD940: sub_006AD940 (4B, thiscall-style, takes the field value and returns a pointer)
+extern void* ext_006AD940(void* self);
+// Known callee 0x00430380: isGlobalObjectField60Is1 (thiscall, returns 1 if the int32 at +0x60 equals 1)
+extern uint8_t ext_00430380(void* self);
+// Known callee 0x00492520: fn_00492520 (thiscall, selector 0 -> +0x0C, 1 -> +0x10, else 0)
+extern int32_t ext_00492520(void* self, int32_t selector);
+
+// @name Unknown::dispatchFlagResult_004347B0
+// @class Unknown
+// @summary Computes a bool from a global object's sub-object and tail-dispatches it through the out-object's vtable slot 0.
+// @field Unknown +0x26C void* field_0x26C
+int32_t fn_004347B0(void* self, void* out) {
+    void* global = ext_00594000();
+    void* sub = ext_006AD940(lift_field<void*>(global, 0x26C));
+
+    int32_t result = 0;
+    if (ext_00430380(self) != 0) {
+        if (ext_00492520(sub, 0) != 0 && ext_00492520(sub, 1) != 0) {
+            result = 1;
+        }
+    }
+
+    // Tail call: out->vtable[0](out, result). The callee pops its own argument.
+    using VTSlot0 = int32_t (__thiscall*)(void* self, int32_t value);
+    void** vtable = *reinterpret_cast<void***>(out);
+    return reinterpret_cast<VTSlot0>(vtable[0])(out, result);
+}
+} // namespace lift_004347B0

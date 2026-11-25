@@ -1,0 +1,22 @@
+{
+  "va": "0x004347B0",
+  "size": 84,
+  "orig_symbol": "sub_004347B0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::dispatchFlagResult_004347B0",
+  "class": "Unknown",
+  "signature": "int32_t fn_004347B0(void* self, void* out)",
+  "summary": "Computes a bool from a global object's sub-object and tail-dispatches it through the out-object's vtable slot 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x26C",
+      "type": "void*",
+      "name": "field_0x26C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:05:38Z"
+}

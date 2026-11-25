@@ -3035,6 +3035,13 @@
     "summary": "Checks global state and object field at +0x60, then tail-calls arg1's vtable[0] with the boolean result.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x004347B0": {
+    "name": "Unknown::dispatchFlagResult_004347B0",
+    "class": "Unknown",
+    "signature": "int32_t fn_004347B0(void* self, void* out)",
+    "summary": "Computes a bool from a global object's sub-object and tail-dispatches it through the out-object's vtable slot 0.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x004348F0": {
     "name": "sub_004348F0",
     "class": "(none)",
