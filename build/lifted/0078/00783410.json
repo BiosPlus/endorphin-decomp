@@ -1,0 +1,34 @@
+{
+  "va": "0x00783410",
+  "size": 42,
+  "orig_symbol": "sub_00783410",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "Unknown::readFromWrapped_00783410",
+  "class": "Unknown",
+  "signature": "uint32_t fn_00783410(void* self, void* buf, uint32_t count)",
+  "summary": "Reads up to count bytes into buf via the wrapped FILE* when the wrapper's open flag is set; returns 0 otherwise.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "wrapper"
+    },
+    {
+      "class": "UnknownWrapper",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "stream"
+    },
+    {
+      "class": "UnknownWrapper",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "active"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:29:01Z"
+}

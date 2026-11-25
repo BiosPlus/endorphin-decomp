@@ -67026,6 +67026,13 @@
     "summary": "If the FileStream behind this ref is marked open, clear its open flag and fclose its FILE*.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00783410": {
+    "name": "Unknown::readFromWrapped_00783410",
+    "class": "Unknown",
+    "signature": "uint32_t fn_00783410(void* self, void* buf, uint32_t count)",
+    "summary": "Reads up to count bytes into buf via the wrapped FILE* when the wrapper's open flag is set; returns 0 otherwise.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00783510": {
     "name": "StreamReader::readByte",
     "class": "StreamReader",

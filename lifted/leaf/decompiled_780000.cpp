@@ -1450,3 +1450,29 @@ void __thiscall FileStreamRef_CloseFile(void* self) {
     reinterpret_cast<int (*)(FILE*)>(mem_00925264)(file);
 }
 } // namespace lift_007833F0
+
+// [0x00783410] sub_00783410 (42 bytes)
+namespace lift_00783410 {
+// IAT slot holding MSVCR80 fread (original asm: call dword ptr [0x9252ac]).
+extern void* mem_009252AC;
+typedef size_t (*fread_fn)(void* buffer, size_t size, size_t count, void* stream);
+
+// @name Unknown::readFromWrapped_00783410
+// @class Unknown
+// @summary Reads up to count bytes into buf via the wrapped FILE* when the wrapper's open flag is set; returns 0 otherwise.
+// @field Unknown +0x04 uint32_t wrapper
+// @field UnknownWrapper +0x00 uint32_t stream
+// @field UnknownWrapper +0x04 uint8_t active
+uint32_t fn_00783410(void* self, void* buf, uint32_t count) {
+    // Wrapper pointer at self+0x04; its +0x04 byte is an active flag, +0x00 holds the FILE*.
+    void* wrapper = reinterpret_cast<void*>(
+        static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x04)));
+    if (lift_field<uint8_t>(wrapper, 0x04) == 0) {
+        return 0;
+    }
+    void* stream = reinterpret_cast<void*>(
+        static_cast<uintptr_t>(lift_field<uint32_t>(wrapper, 0x00)));
+    fread_fn fread_ = reinterpret_cast<fread_fn>(mem_009252AC);
+    return static_cast<uint32_t>(fread_(buf, 1, count, stream));
+}
+} // namespace lift_00783410
