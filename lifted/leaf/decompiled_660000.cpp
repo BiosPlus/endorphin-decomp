@@ -491,3 +491,21 @@ void fn_0066A720(void* self, DWORD count) {
     buf[count - 1] = 0;
 }
 } // namespace lift_0066A720
+
+// [0x00664B50]
+namespace lift_00664B50 {
+// IAT slot (.rdata 0x009252F4) holding MSVCR80!toupper
+extern int (*mem_009252F4)(int);
+
+// @name upperCopyRange
+// @summary Copies [first, last) into dest converting each char via toupper; returns one past the last written char (dest if empty).
+char* sub_00664B50(const char* first, const char* last, char* dest) {
+    if (first == last) {
+        return dest;
+    }
+    do {
+        *dest++ = static_cast<char>(mem_009252F4(static_cast<int>(*first)));
+    } while (++first != last);
+    return dest;
+}
+} // namespace lift_00664B50

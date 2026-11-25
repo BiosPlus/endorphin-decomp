@@ -35861,6 +35861,12 @@
     "summary": "Returns true if needle occurs as a substring of haystack (strstr on c_str() of both strings).",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00664B50": {
+    "name": "upperCopyRange",
+    "signature": "char* sub_00664B50(const char* first, const char* last, char* dest)",
+    "summary": "Copies [first, last) into dest converting each char via toupper; returns one past the last written char (dest if empty).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00664BF0": {
     "name": "ScanBytesUntil",
     "signature": "const uint8_t* ScanBytesUntil(const uint8_t* begin, const uint8_t* end, ByteTestFn pred)",

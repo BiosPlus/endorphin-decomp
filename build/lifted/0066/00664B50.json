@@ -1,0 +1,13 @@
+{
+  "va": "0x00664B50",
+  "size": 67,
+  "orig_symbol": "sub_00664B50",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "upperCopyRange",
+  "signature": "char* sub_00664B50(const char* first, const char* last, char* dest)",
+  "summary": "Copies [first, last) into dest converting each char via toupper; returns one past the last written char (dest if empty).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:17:34Z"
+}
