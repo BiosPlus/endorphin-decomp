@@ -72513,6 +72513,12 @@
     "summary": "Walks the linked list headed by global mem_00B61DB8 and returns the first node whose leading 16-bit key equals the argument, or NULL.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BA200": {
+    "name": "tiff_set_ifd_short_or_long",
+    "signature": "void sub_007BA200(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Populates a TIFF IFD entry with a 16-bit or 32-bit value, applying byte-order mask/shift for 16-bit values.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BADD0": {
     "name": "sub_007BADD0",
     "signature": "uint32_t __cdecl sub_007BADD0(uintptr_t arg0)",
@@ -72776,6 +72782,12 @@
     "signature": "extern \"C\" void __cdecl fn_007C2E70(void* ptr)",
     "summary": "Cdecl wrapper that forwards its single pointer argument to the CRT free() via an indirect IAT call.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C3C40": {
+    "name": "initStructFields_007C3C40",
+    "signature": "void sub_007C3C40(uintptr_t arg0)",
+    "summary": "Zeroes three strided uint16_t arrays and four uint32_t fields, and sets uint16_t at +0x48c to 1.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
   "0x007C5440": {
     "name": "BitReverseLowBits",

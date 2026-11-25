@@ -1777,3 +1777,37 @@ bool fn_007C8C50(void* first, void* second) {
     return ext_007DD160(table, idA, idB);
 }
 } // namespace lift_007C8C50
+
+// [0x007C3C40]
+namespace lift_007C3C40 {
+extern void mem_write16(uintptr_t addr, uint16_t val);
+extern void mem_write32(uintptr_t addr, uint32_t val);
+
+// @name initStructFields_007C3C40
+// @summary Zeroes three strided uint16_t arrays and four uint32_t fields, and sets uint16_t at +0x48c to 1.
+void sub_007C3C40(uintptr_t arg0) {
+    uintptr_t eax = arg0 + 0x8c;
+    for (uint32_t ecx = 0x11e; ecx != 0; --ecx) {
+        mem_write16(eax, 0);
+        eax += 4;
+    }
+
+    eax = arg0 + 0x980;
+    for (uint32_t ecx = 0x1e; ecx != 0; --ecx) {
+        mem_write16(eax, 0);
+        eax += 4;
+    }
+
+    eax = arg0 + 0xa74;
+    for (uint32_t ecx = 0x13; ecx != 0; --ecx) {
+        mem_write16(eax, 0);
+        eax += 4;
+    }
+
+    mem_write32(arg0 + 0x16a4, 0);
+    mem_write32(arg0 + 0x16a0, 0);
+    mem_write32(arg0 + 0x16a8, 0);
+    mem_write32(arg0 + 0x1698, 0);
+    mem_write16(arg0 + 0x48c, 1);
+}
+} // namespace lift_007C3C40
