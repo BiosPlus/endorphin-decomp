@@ -12,5 +12,7 @@ namespace lifted_layout {
 struct MagnetJoint_Fields {
     // +0x10  void*                    field_0x10  (evidence: 0x00645D30, 0x00645D80, 0x00645DD0)
     // +0x14  void*                    field_0x14  (evidence: 0x00645D30, 0x00645D80, 0x00645DD0)
+    // +0x1C  uint32_t                 field_0x1C[16]  (evidence: 0x00645520)
+    // +0x5C  void*                    field_0x5C  (evidence: 0x00645520)
 };
 } // namespace lifted_layout

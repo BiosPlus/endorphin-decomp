@@ -33949,6 +33949,13 @@
     "summary": "Tail-call virtual method at vtable +0x1c on delegate at +0x04",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00645520": {
+    "name": "MagnetJoint::vfunc_0_off_4",
+    "class": "MagnetJoint",
+    "signature": "extern \"C\" void __thiscall fn_00645520(void* self, const void* src)",
+    "summary": "Forwards src to the owning joint's vslot 47 (+0xBC), copies 64 bytes from src into the joint at +0x1C, then if +0x5C is set calls its vslot 3 and passes the result with src to ext_0067E990.",
+    "lifted_path": "lifted/classes/MagnetJoint.cpp"
+  },
   "0x00645570": {
     "name": "NullRelationship::vfunc_43",
     "class": "NullRelationship",

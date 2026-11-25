@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/classes/MagnetJoint.cpp
 #include "lift_compat.h"
+#include <cstring>
 
 // [0x00645D30]
 namespace lift_00645D30 {
@@ -83,3 +84,35 @@ void __thiscall fn_00645DD0(void* self, uint32_t index, double value) {
     *reinterpret_cast<double*>(base + index * 24 + 0x8) = value;
 }
 } // namespace lift_00645DD0
+
+// [0x00645520] MagnetJoint::vfunc_0_off_4 (68 bytes)
+namespace lift_00645520 {
+extern void __thiscall ext_0067E990(void* self, uint32_t value);
+
+// @name MagnetJoint::vfunc_0_off_4
+// @class MagnetJoint
+// @summary Forwards src to the owning joint's vslot 47 (+0xBC), copies 64 bytes from src into the joint at +0x1C, then if +0x5C is set calls its vslot 3 and passes the result with src to ext_0067E990.
+// @field MagnetJoint +0x1C uint32_t field_0x1C[16]
+// @field MagnetJoint +0x5C void* field_0x5C
+extern void __thiscall fn_00645520(void* self, const void* src) {
+    // `self` is the HasBufferedTM subobject, at offset +4 within MagnetJoint.
+    uint8_t* joint = static_cast<uint8_t*>(self) - 4;
+
+    // Virtual call: joint->vtable[0xBC / 4](src)
+    void** vtbl = *reinterpret_cast<void***>(joint);
+    using SlotFn = void(__thiscall*)(void*, const void*);
+    reinterpret_cast<SlotFn>(vtbl[0xBC / sizeof(void*)])(joint, src);
+
+    // Copy 16 dwords (64 bytes) from src to joint +0x1C.
+    std::memcpy(&lift_field<uint32_t>(joint, 0x1C), src, 0x40);
+
+    void* target = lift_field<void*>(joint, 0x5C);
+    if (target != nullptr) {
+        // Virtual call: target->vtable[0xC / 4]() returning a 32-bit value.
+        void** tvtbl = *reinterpret_cast<void***>(target);
+        using ValueFn = uint32_t(__thiscall*)(void*);
+        uint32_t value = reinterpret_cast<ValueFn>(tvtbl[0xC / sizeof(void*)])(target);
+        ext_0067E990(const_cast<void*>(src), value);
+    }
+}
+} // namespace lift_00645520

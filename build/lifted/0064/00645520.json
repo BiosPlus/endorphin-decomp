@@ -1,0 +1,28 @@
+{
+  "va": "0x00645520",
+  "size": 68,
+  "orig_symbol": "MagnetJoint::vfunc_0_off_4",
+  "src_path": "src/classes/MagnetJoint.cpp",
+  "lifted_path": "lifted/classes/MagnetJoint.cpp",
+  "name": "MagnetJoint::vfunc_0_off_4",
+  "class": "MagnetJoint",
+  "signature": "extern \"C\" void __thiscall fn_00645520(void* self, const void* src)",
+  "summary": "Forwards src to the owning joint's vslot 47 (+0xBC), copies 64 bytes from src into the joint at +0x1C, then if +0x5C is set calls its vslot 3 and passes the result with src to ext_0067E990.",
+  "fields": [
+    {
+      "class": "MagnetJoint",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C[16]"
+    },
+    {
+      "class": "MagnetJoint",
+      "offset": "+0x5C",
+      "type": "void*",
+      "name": "field_0x5C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:20:23Z"
+}
