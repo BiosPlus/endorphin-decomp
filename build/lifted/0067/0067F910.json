@@ -1,0 +1,28 @@
+{
+  "va": "0x0067F910",
+  "size": 66,
+  "orig_symbol": "sub_0067F910",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "Vector8::back",
+  "class": "Vector8",
+  "signature": "uint32_t __thiscall fn_0067F910(uintptr_t self)",
+  "summary": "Returns a pointer to the last 8-byte element of the vector with MSVC8 checked-iterator bounds validation.",
+  "fields": [
+    {
+      "class": "Vector8",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "Vector8",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:18:58Z"
+}
