@@ -1,0 +1,21 @@
+{
+  "va": "0x00665D20",
+  "size": 76,
+  "orig_symbol": "sub_00665D20",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "destroyOwnedListElements",
+  "signature": "void fn_00665D20(void* self)",
+  "summary": "Destroys every element of the list whose head pointer is stored at +0x04, then runs the follow-up cleanup on this object.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:25:57Z"
+}

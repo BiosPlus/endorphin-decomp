@@ -39016,6 +39016,12 @@
     "summary": "Walks the pointer vector at this+0x2C..this+0x30 and invokes virtual slot 0 on each element.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00665D20": {
+    "name": "destroyOwnedListElements",
+    "signature": "void fn_00665D20(void* self)",
+    "summary": "Destroys every element of the list whose head pointer is stored at +0x04, then runs the follow-up cleanup on this object.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00666340": {
     "name": "MacroCommand::vfunc_0",
     "class": "MacroCommand",

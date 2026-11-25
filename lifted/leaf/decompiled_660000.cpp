@@ -845,3 +845,25 @@ void fn_00660180(Elem* first, Elem* last) {
     }
 }
 } // namespace lift_00660180
+
+// [0x00665D20] sub_00665D20 (76 bytes)
+namespace lift_00665D20 {
+extern void ext_004369D0(void* self);
+// Known callee 0x006659F0: destroyListElements (Iterates a checked std::list<T*> range [first, last) and invokes the deleting destructor on each non-null element.)
+extern void ext_006659F0(uint32_t first_cont, uint32_t first_node, uint32_t last_cont, uint32_t last_node);
+
+// @name destroyOwnedListElements
+// @summary Destroys every element of the list whose head pointer is stored at +0x04, then runs the follow-up cleanup on this object.
+// @field Unknown +0x04 void* field_0x04
+void fn_00665D20(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    void* head = *reinterpret_cast<void**>(base + 0x04);
+    uint32_t headNext = head ? *reinterpret_cast<uint32_t*>(head) : 0u;
+
+    ext_006659F0(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)),
+                 headNext,
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(head)));
+    ext_004369D0(self);
+}
+} // namespace lift_00665D20
