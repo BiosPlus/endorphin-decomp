@@ -19,6 +19,7 @@ float fn_005478B0(uint32_t ecx) {
 }
 } // namespace lift_00611160
 } // namespace lift_005478B0
+#include <cstdint>
 
 // [0x005478C0] sub_005478C0 (14 bytes)
 namespace lift_005478C0 {
@@ -625,3 +626,40 @@ void __thiscall fn_00540510(void* self, DWORD arg) {
     reinterpret_cast<GlEnableFn>(static_cast<uintptr_t>(mem_00925418))(GL_CULL_FACE);
 }
 } // namespace lift_00540510
+
+// [0x0054EFF0] sub_0054EFF0 (60 bytes)
+namespace lift_0054EFF0 {
+extern void ext_invalid_parameter_noinfo(void); // MSVCR80 _invalid_parameter_noinfo (IAT slot 0x00925134)
+
+// @name sub_0054EFF0
+// @class <unknown>
+// @summary Returns the address of element [index] in a contiguous array of 104-byte (0x68) records bounded by this+0x1c (begin) and this+0x20 (end); invalid-parameter handler on null begin or out-of-range index.
+// @field <unknown> +0x1c uint32_t field_0x1c
+// @field <unknown> +0x20 uint32_t field_0x20
+
+namespace {
+
+constexpr uint32_t kElementStride = 0x68;
+
+inline uint32_t read_u32(const void* self, uintptr_t offset) {
+    return *reinterpret_cast<const uint32_t*>(static_cast<const uint8_t*>(self) + offset);
+}
+
+} // namespace
+
+uint32_t __thiscall fn_0054EFF0(void* self, uint32_t index) {
+    const uint32_t begin = read_u32(self, 0x1c);
+    if (begin == 0) {
+        ext_invalid_parameter_noinfo();
+    }
+
+    const uint32_t end = read_u32(self, 0x20);
+    const int32_t byte_span = static_cast<int32_t>(end - begin);
+    const uint32_t count = static_cast<uint32_t>(byte_span / static_cast<int32_t>(kElementStride));
+    if (index >= count) {
+        ext_invalid_parameter_noinfo();
+    }
+
+    return begin + index * kElementStride;
+}
+} // namespace lift_0054EFF0

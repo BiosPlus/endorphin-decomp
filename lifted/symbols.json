@@ -19460,6 +19460,13 @@
     "summary": "Scalar deleting destructor: tears down the sub-object at +0x0C, stamps the vtable, and frees self when flags bit 0 is set. Returns self.",
     "lifted_path": "lifted/classes/OptimizedMatrixStackManager.cpp"
   },
+  "0x0054EFF0": {
+    "name": "sub_0054EFF0",
+    "class": "\u003cunknown\u003e",
+    "signature": "extern \"C\" void ext_invalid_parameter_noinfo(void); // MSVCR80 _invalid_parameter_noinfo (IAT slot 0x00925134) namespace",
+    "summary": "Returns the address of element [index] in a contiguous array of 104-byte (0x68) records bounded by this+0x1c (begin) and this+0x20 (end); invalid-parameter handler on null begin or out-of-range index.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x0054F1B0": {
     "name": "constructRange_0054F1B0",
     "signature": "void sub_0054F1B0(uint8_t* begin, uint8_t* end, uint32_t arg)",
