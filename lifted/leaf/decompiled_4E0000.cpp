@@ -395,3 +395,44 @@ void* fn_004ECC40() {
 }
 } // namespace lift_004CAE30
 } // namespace lift_004ECC40
+
+// [0x004EFAC0]
+namespace lift_004EFAC0 {
+extern void (*mem_00925134)();
+
+// @name destroyCheckedPointerRange
+// @summary Destroys a checked iterator range of pointers by calling the virtual deleting destructor at +4
+void __stdcall sub_004EFAC0(uint32_t* vec1, uint32_t* first, uint32_t* vec2, uint32_t* last) {
+    auto invalid_param = mem_00925134;
+    while (true) {
+        if (!vec1 || vec1 != vec2) {
+            invalid_param();
+        }
+        if (first == last) {
+            break;
+        }
+        uint32_t* cur = first;
+        if (!vec1) {
+            invalid_param();
+        }
+        if (reinterpret_cast<uintptr_t>(first) >= static_cast<uintptr_t>(vec1[2])) {
+            invalid_param();
+        }
+        first += 1;
+        if (!vec1) {
+            invalid_param();
+        }
+        if (reinterpret_cast<uintptr_t>(cur) >= static_cast<uintptr_t>(vec1[2])) {
+            invalid_param();
+        }
+        uint32_t obj = *cur;
+        if (obj != 0) {
+            uintptr_t subobj = static_cast<uintptr_t>(obj) + 4;
+            uint32_t vtable = *reinterpret_cast<uint32_t*>(subobj);
+            using dtor_fn = void(__thiscall*)(uintptr_t, uint32_t);
+            auto dtor = reinterpret_cast<dtor_fn>(*reinterpret_cast<uint32_t*>(vtable));
+            dtor(subobj, 1);
+        }
+    }
+}
+} // namespace lift_004EFAC0

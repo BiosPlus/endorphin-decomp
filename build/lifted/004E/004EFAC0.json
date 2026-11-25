@@ -1,0 +1,13 @@
+{
+  "va": "0x004EFAC0",
+  "size": 93,
+  "orig_symbol": "sub_004EFAC0",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "destroyCheckedPointerRange",
+  "signature": "void __stdcall sub_004EFAC0(uint32_t* vec1, uint32_t* first, uint32_t* vec2, uint32_t* last)",
+  "summary": "Destroys a checked iterator range of pointers by calling the virtual deleting destructor at +4",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:18:04Z"
+}
