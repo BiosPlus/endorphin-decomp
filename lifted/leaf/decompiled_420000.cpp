@@ -966,3 +966,27 @@ void __thiscall sub_0042F6F0(uint32_t self, uint32_t out_str) {
     fn_append_str(out_str, self + 0x4);
 }
 } // namespace lift_0042F6F0
+
+// [0x004207F0]
+namespace lift_004207F0 {
+// @name std::out_of_range::out_of_range
+// @class std::out_of_range
+// @summary Copy constructor for a std::logic_error-derived exception with a std::string at +0x28.
+// @field std::out_of_range +0x00 uint32_t vftable
+// @field std::out_of_range +0x28 uint8_t[0x1C] field_0x28
+
+
+extern void* __thiscall ext_00401C60(void* self, const void* other);
+extern void* (__thiscall * const mem_00924FE0)(void* self, const void* other);
+
+void* __thiscall sub_004207F0(void* self, const void* other) {
+    uint8_t* dst = static_cast<uint8_t*>(self);
+    const uint8_t* src = static_cast<const uint8_t*>(other);
+
+    ext_00401C60(dst, src);
+    *reinterpret_cast<uint32_t*>(dst) = 0x0092E2E0u;
+    mem_00924FE0(dst + 0x28, src + 0x28);
+
+    return self;
+}
+} // namespace lift_004207F0
