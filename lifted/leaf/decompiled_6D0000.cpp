@@ -1423,3 +1423,29 @@ void fn_006D0490(void* self, int32_t arg1, int32_t arg2) {
     }
 }
 } // namespace lift_006D0490
+
+// [0x006D8E70]
+namespace lift_006D8E70 {
+// @name Unknown::resetAndReleaseMember_006D8E70
+// @class Unknown
+// @summary Re-installs the vtable at +0x0, invokes virtual slot 1 (arg 0) on the member at +0xC, then calls fn_0077FA20 on self.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x0C void* member
+
+extern int mem_00993BB8;
+extern void __fastcall fn_0077FA20(void* self);
+
+void Unknown_resetAndReleaseMember_006D8E70(void* self) {
+    // Install vtable (mem_00993BB8 is the vtable for this class).
+    lift_field<void*>(self, 0x00) = reinterpret_cast<void*>(&mem_00993BB8);
+
+    // Virtual call: member->vtable[1](member, 0)
+    void* member = lift_field<void*>(self, 0x0C);
+    void** vtbl = *reinterpret_cast<void***>(member);
+    auto slot1 = reinterpret_cast<void (*)(void*, int)>(vtbl[1]);
+    slot1(member, 0);
+
+    // Tail call to the lifted helper with self in the this/fastcall slot.
+    fn_0077FA20(self);
+}
+} // namespace lift_006D8E70

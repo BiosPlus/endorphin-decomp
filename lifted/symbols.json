@@ -49646,6 +49646,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006D8E70 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D8E70": {
+    "name": "Unknown::resetAndReleaseMember_006D8E70",
+    "class": "Unknown",
+    "signature": "void Unknown_resetAndReleaseMember_006D8E70(void* self)",
+    "summary": "Re-installs the vtable at +0x0, invokes virtual slot 1 (arg 0) on the member at +0xC, then calls fn_0077FA20 on self.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D8FD0": {
     "name": "Unknown::SetRangeIfState1",
     "class": "Unknown",
