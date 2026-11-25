@@ -886,3 +886,22 @@ void* fn_0049CFF0() {
     return &mem_00ADD814;
 }
 } // namespace lift_0049CFF0
+
+// [0x00498F90] sub_00498F90 (87 bytes)
+namespace lift_00498F90 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00ADD178;
+extern DWORD mem_00ADD174;
+
+// @name initStaticObjectOnce_00498F90
+// @summary One-time guarded initializer for the static object at mem_00ADD174; sets init bit 0 in mem_00ADD178, runs ext_0067A670 on the object, stores its vtable-like pointer 0x0093F284, and returns the object address.
+void* fn_00498F90() {
+    if ((mem_00ADD178 & 1u) == 0) {
+        mem_00ADD178 |= 1u;
+        ext_0067A670(&mem_00ADD174, 0);
+        mem_00ADD174 = 0x0093F284u;
+    }
+    return &mem_00ADD174;
+}
+} // namespace lift_00498F90
