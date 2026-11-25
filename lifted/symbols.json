@@ -2495,6 +2495,12 @@
     "summary": "Fetches a nested object via the global field, queries a boolean virtual method on it, and forwards the result to slot 0 of self's vtable.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430C00": {
+    "name": "checkConditionAndNotify",
+    "signature": "extern \"C\" uint32_t __thiscall fn_00430C00(uint32_t this_ptr, uint32_t arg0)",
+    "summary": "Checks a nested object's vtable+0x11c predicate and field+0x60 == 0, then tail-calls arg0's vtable[0] with the boolean result.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430CA0": {
     "name": "Unknown::forwardVirtual0WithArg1",
     "class": "Unknown",
