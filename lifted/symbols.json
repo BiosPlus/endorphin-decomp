@@ -67884,6 +67884,12 @@
     "summary": "Allocates a 0x1C-byte object via the slot at [[self+0xB0]+8]; if that succeeds, initializes it with two floats via 0x007CB5F0, else returns null.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CB8D0": {
+    "name": "vec3_ComponentwiseMax",
+    "signature": "void vec3_ComponentwiseMax(const float* a, const float* b, float* out)",
+    "summary": "Stores componentwise max of two float[3] vectors (a at edx, b at ecx) into out (esi); NaN in b yields b.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CB940": {
     "name": "setNonNegativeFloat_0x10",
     "signature": "void sub_007CB940(void* self, float value)",

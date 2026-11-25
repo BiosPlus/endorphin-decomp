@@ -1521,3 +1521,17 @@ void fn_007C8690(void* self) {
     } while (head != nullptr);
 }
 } // namespace lift_007C8690
+
+// [0x007CB8D0]
+namespace lift_007CB8D0 {
+// @name vec3_ComponentwiseMax
+// @summary Stores componentwise max of two float[3] vectors (a at edx, b at ecx) into out (esi); NaN in b yields b.
+void vec3_ComponentwiseMax(const float* a, const float* b, float* out)
+{
+    for (int i = 0; i < 3; ++i) {
+        float av = a[i];
+        float bv = b[i];
+        out[i] = (bv < av) ? av : bv;
+    }
+}
+} // namespace lift_007CB8D0

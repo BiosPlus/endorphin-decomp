@@ -1,0 +1,13 @@
+{
+  "va": "0x007CB8D0",
+  "size": 103,
+  "orig_symbol": "sub_007CB8D0",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "vec3_ComponentwiseMax",
+  "signature": "void vec3_ComponentwiseMax(const float* a, const float* b, float* out)",
+  "summary": "Stores componentwise max of two float[3] vectors (a at edx, b at ecx) into out (esi); NaN in b yields b.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:48:16Z"
+}
