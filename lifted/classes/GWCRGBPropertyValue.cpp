@@ -128,3 +128,32 @@ void GWCRGBPropertyValue_vfunc_3(void* self, void* arg) {
     ext_MFC80_CString_Destruct(&arg);
 }
 } // namespace lift_006B3BB0
+
+// [0x006B3B30]
+namespace lift_006B3B30 {
+// @name GWCRGBPropertyValue::vfunc_2
+// @class GWCRGBPropertyValue
+// @summary Formats the RGB property value into a CString using MFC80::Format
+// @field GWCRGBPropertyValue +0x40 uint8_t* field_0x40
+
+
+extern uint32_t mem_009242FC;
+extern uint32_t mem_00924410;
+
+void* __thiscall fn_006B3B30(void* self, void* out_str) {
+    // Construct CString
+    reinterpret_cast<void(__thiscall*)(void*)>(mem_009242FC)(out_str);
+
+    // Format RGB bytes from *(uint8_t**)(self + 0x40)
+    const uint8_t* rgb = *reinterpret_cast<const uint8_t* const*>(reinterpret_cast<const uint8_t*>(self) + 0x40);
+    uint32_t r = rgb[0];
+    uint32_t g = rgb[1];
+    uint32_t b = rgb[2];
+
+    reinterpret_cast<void(__cdecl*)(void*, uint32_t, uint32_t, uint32_t, uint32_t)>(mem_00924410)(
+        out_str, 0x009919D4u, r, g, b
+    );
+
+    return out_str;
+}
+} // namespace lift_006B3B30

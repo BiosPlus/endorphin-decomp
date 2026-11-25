@@ -1,0 +1,22 @@
+{
+  "va": "0x006B3B30",
+  "size": 115,
+  "orig_symbol": "GWCRGBPropertyValue::vfunc_2",
+  "src_path": "src/classes/GWCRGBPropertyValue.cpp",
+  "lifted_path": "lifted/classes/GWCRGBPropertyValue.cpp",
+  "name": "GWCRGBPropertyValue::vfunc_2",
+  "class": "GWCRGBPropertyValue",
+  "signature": "void* __thiscall fn_006B3B30(void* self, void* out_str)",
+  "summary": "Formats the RGB property value into a CString using MFC80::Format",
+  "fields": [
+    {
+      "class": "GWCRGBPropertyValue",
+      "offset": "+0x40",
+      "type": "uint8_t*",
+      "name": "field_0x40"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:42:00Z"
+}

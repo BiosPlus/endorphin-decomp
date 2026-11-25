@@ -12,6 +12,7 @@ namespace lifted_layout {
 struct GWCRGBPropertyValue_Fields {
     // +0x4   uint32_t                 field_0x04  (evidence: 0x006B3AC0, 0x006B3C40)
     // +0x34  uint8_t                  field_0x34  (evidence: 0x006B3AC0)
-    // +0x40  uint32_t*                field_0x40  (evidence: 0x006B3AC0, 0x006B3BB0, 0x006B3C40)
+    // +0x40  uint32_t*                field_0x40  (evidence: 0x006B3AC0, 0x006B3BB0, 0x006B3C40) // CONFLICT: multiple definitions at +0x40
+    // +0x40  uint8_t*                 field_0x40  (evidence: 0x006B3B30) // CONFLICT: multiple definitions at +0x40
 };
 } // namespace lifted_layout
