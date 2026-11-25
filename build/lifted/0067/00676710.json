@@ -1,0 +1,27 @@
+{
+  "va": "0x00676710",
+  "size": 102,
+  "orig_symbol": "sub_00676710",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "compareDwordPairRange",
+  "signature": "inline DWORD addr_of(const void* p)",
+  "summary": "Validates that the other-range end (other + 8*count, count = (end-begin)/8) lies within [range+0x04, range+0x08] (invalid-parameter handler otherwise), then returns 1 iff IsSameDwordPair matches for every 8-byte element of [begin, end) against the same-offset element of other.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:47:11Z"
+}

@@ -44927,6 +44927,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00553F70 (ScaledRangeDivide160).",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x00676710": {
+    "name": "compareDwordPairRange",
+    "signature": "inline DWORD addr_of(const void* p)",
+    "summary": "Validates that the other-range end (other + 8*count, count = (end-begin)/8) lies within [range+0x04, range+0x08] (invalid-parameter handler otherwise), then returns 1 iff IsSameDwordPair matches for every 8-byte element of [begin, end) against the same-offset element of other.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00676780": {
     "name": "ObjectInit_00676780",
     "class": "\u003cClassName\u003e (unknown; object layout not recovered)",

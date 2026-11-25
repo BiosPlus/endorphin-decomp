@@ -1548,3 +1548,53 @@ extern void* __fastcall fn_00673C90(void* self, int edx_unused, const void* src)
     return self;
 }
 } // namespace lift_00673C90
+
+// [0x00676710] sub_00676710 (102 bytes)
+namespace lift_00676710 {
+// Known callee 0x006616D0: Unknown::IsSameDwordPair (Returns 1 if both leading DWORDs of *this and *other match, else 0 (stdcall-style, one stack arg, ret 4).)
+extern int ext_006616D0(void* self, const void* other);
+extern void (__cdecl* mem_00925134)(void);
+
+namespace {
+
+inline DWORD addr_of(const void* p) {
+    return static_cast<DWORD>(reinterpret_cast<uintptr_t>(p));
+}
+
+} // namespace
+
+// @name compareDwordPairRange
+// @summary Validates that the other-range end (other + 8*count, count = (end-begin)/8) lies within [range+0x04, range+0x08] (invalid-parameter handler otherwise), then returns 1 iff IsSameDwordPair matches for every 8-byte element of [begin, end) against the same-offset element of other.
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x08 DWORD field_0x08
+int fn_00676710(const void* begin, const void* end, void* range, const void* other) {
+    if (range == nullptr) {
+        mem_00925134();
+        return 0;
+    }
+
+    const DWORD count = static_cast<DWORD>(static_cast<int32_t>(addr_of(end) - addr_of(begin)) >> 3);
+    const DWORD other_end = addr_of(other) + 8u * count;
+
+    if (other_end > lift_field<DWORD>(range, 0x08) ||
+        other_end < lift_field<DWORD>(range, 0x04)) {
+        mem_00925134();
+        return 0;
+    }
+
+    const unsigned char* cur = static_cast<const unsigned char*>(begin);
+    const unsigned char* const last = static_cast<const unsigned char*>(end);
+    const unsigned char* const base = static_cast<const unsigned char*>(begin);
+    const unsigned char* const other_base = static_cast<const unsigned char*>(other);
+
+    while (cur != last) {
+        void* self = const_cast<unsigned char*>(cur);
+        const void* rhs = other_base + (cur - base);
+        if (ext_006616D0(self, rhs) == 0) {
+            return 0;
+        }
+        cur += 8;
+    }
+    return 1;
+}
+} // namespace lift_00676710
