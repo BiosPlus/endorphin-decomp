@@ -1,0 +1,13 @@
+{
+  "va": "0x004802B0",
+  "size": 87,
+  "orig_symbol": "sub_004802B0",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "allocateCountTimes64",
+  "signature": "void* fn_004802B0(uint32_t count)",
+  "summary": "Returns a block of count*64 bytes from ext_006A5C62; throws std::length_error when count*64 overflows 32 bits.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:13:27Z"
+}

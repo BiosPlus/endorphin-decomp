@@ -1353,3 +1353,23 @@ void* fn_00480310(uint32_t count) {
     return ext_006A5C62(count << 4);
 }
 } // namespace lift_00480310
+
+// [0x004802B0] sub_004802B0 (87 bytes)
+namespace lift_004802B0 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Used as the allocator: takes the byte count and returns the allocated block.
+extern void* ext_006A5C62(uint32_t bytes);
+
+// @name allocateCountTimes64
+// @summary Returns a block of count*64 bytes from ext_006A5C62; throws std::length_error when count*64 overflows 32 bits.
+void* fn_004802B0(uint32_t count) {
+    // Original: count==0 falls through to a zero-size request; count>0 is valid
+    // only if count*64 fits in 32 bits (count <= 0x03FFFFFF). The overflow path
+    // builds a std::exception with a null message, retags it as a length error,
+    // and throws; a portable C++ throw expresses the same control flow.
+    if (count > 0x03FFFFFFu) {
+        throw std::length_error("allocation size overflow");
+    }
+    return ext_006A5C62(count << 6);
+}
+} // namespace lift_004802B0

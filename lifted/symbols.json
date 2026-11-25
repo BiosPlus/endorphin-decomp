@@ -8129,6 +8129,12 @@
     "summary": "Returns true if the range pointer at +0x04 is null, or the byte span [+0x04, +0x08) has fewer than one 4-byte element (signed (end - begin) \u003e\u003e 2 == 0).",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x004802B0": {
+    "name": "allocateCountTimes64",
+    "signature": "void* fn_004802B0(uint32_t count)",
+    "summary": "Returns a block of count*64 bytes from ext_006A5C62; throws std::length_error when count*64 overflows 32 bits.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00480310": {
     "name": "allocArray16ByteElements_00480310",
     "signature": "void* fn_00480310(uint32_t count)",
