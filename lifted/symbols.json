@@ -59691,6 +59691,13 @@
     "summary": "Reads this-\u003efield_0x268-\u003efield_0x160 and maps values 1..5 to codes 1..5; anything else returns 0.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00702780": {
+    "name": "GetSubobjectField490",
+    "class": "Unknown",
+    "signature": "DWORD fn_00702780(void* self)",
+    "summary": "Returns the dword at +0x490 of the object pointed to by this-\u003e+0x268.",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x007027C0": {
     "name": "Unknown::forwardVcall88ToSubobjectAt80",
     "class": "Unknown",

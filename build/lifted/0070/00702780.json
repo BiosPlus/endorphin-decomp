@@ -1,0 +1,28 @@
+{
+  "va": "0x00702780",
+  "size": 16,
+  "orig_symbol": "sub_00702780",
+  "src_path": "src/leaf/tiny_700000.cpp",
+  "lifted_path": "lifted/leaf/tiny_700000.cpp",
+  "name": "GetSubobjectField490",
+  "class": "Unknown",
+  "signature": "DWORD fn_00702780(void* self)",
+  "summary": "Returns the dword at +0x490 of the object pointed to by this-\u003e+0x268.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x268",
+      "type": "void*",
+      "name": "field_0x268"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x490",
+      "type": "DWORD",
+      "name": "field_0x490"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:27:41Z"
+}

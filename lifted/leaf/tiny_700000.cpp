@@ -1300,3 +1300,18 @@ uint32_t __fastcall sub_00704DA0(void* ecx) {
     return result;
 }
 } // namespace lift_00704DA0
+
+// [0x00702780] sub_00702780 (16 bytes)
+namespace lift_00702780 {
+// @name GetSubobjectField490
+// @class Unknown
+// @summary Returns the dword at +0x490 of the object pointed to by this->+0x268.
+// @field Unknown +0x268 void* field_0x268
+// @field Unknown +0x490 DWORD field_0x490
+
+// Thiscall: `self` is passed in ECX.
+DWORD fn_00702780(void* self) {
+    void* sub = lift_field<void*>(self, 0x268);
+    return lift_field<DWORD>(sub, 0x490);
+}
+} // namespace lift_00702780
