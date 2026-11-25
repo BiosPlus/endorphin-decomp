@@ -196,3 +196,29 @@ void fn_004C4390(void* self) {
     lift_field<uint8_t>(self, 0x1C) = 0;
 }
 } // namespace lift_004C4390
+
+// [0x004CA590] sub_004CA590 (75 bytes)
+namespace lift_004CA590 {
+// Known callee 0x004CA570: Unknown::SetIndexClamped0To4 (Stores arg if it is in 0..4 into this+0x184, then sets byte +4 of the global object at mem_00AE29D0 (if non-null) to 1.)
+extern void ext_004CA570(void* self, DWORD value);
+
+// Slot holding the string comparator (imported MSVCP80 operator==(const char*, const char*)); returns nonzero on match.
+extern bool (*mem_00924FC0)(const char* lhs, const char* rhs);
+
+// Table of 5 const char* entries at 0x00945F78.
+extern const char* const mem_00945F78[5];
+
+// @name Unknown::SetIndexFromName
+// @class Unknown
+// @summary Compares name against the 5-entry string table; passes the matching index (or 2 if none) to SetIndexClamped0To4.
+void fn_004CA590(void* self, const char* name) {
+    DWORD index = 2;
+    for (int i = 0; i < 5; ++i) {
+        if (mem_00924FC0(name, mem_00945F78[i])) {
+            index = static_cast<DWORD>(i);
+            break;
+        }
+    }
+    ext_004CA570(self, index);
+}
+} // namespace lift_004CA590

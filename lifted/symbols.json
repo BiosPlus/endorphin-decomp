@@ -12756,6 +12756,13 @@
     "summary": "Stores arg if it is in 0..4 into this+0x184, then sets byte +4 of the global object at mem_00AE29D0 (if non-null) to 1.",
     "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
   },
+  "0x004CA590": {
+    "name": "Unknown::SetIndexFromName",
+    "class": "Unknown",
+    "signature": "void fn_004CA590(void* self, const char* name)",
+    "summary": "Compares name against the 5-entry string table; passes the matching index (or 2 if none) to SetIndexClamped0To4.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CA750": {
     "name": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData\u003e::vfunc_40",
     "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {[thunk]: __thiscall NMData::MetaBodyConstraintData::`vcall'{352, {flat}}, 0}\u003e",

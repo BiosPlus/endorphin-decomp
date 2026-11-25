@@ -1,0 +1,14 @@
+{
+  "va": "0x004CA590",
+  "size": 75,
+  "orig_symbol": "sub_004CA590",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "Unknown::SetIndexFromName",
+  "class": "Unknown",
+  "signature": "void fn_004CA590(void* self, const char* name)",
+  "summary": "Compares name against the 5-entry string table; passes the matching index (or 2 if none) to SetIndexClamped0To4.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:35:58Z"
+}
