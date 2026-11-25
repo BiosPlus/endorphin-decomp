@@ -53107,6 +53107,11 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0074F910 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_740000.cpp"
   },
+  "0x007511F4": {
+    "name": "DataTable_007511F4",
+    "summary": "Static 49-byte lookup table (values 0x00-0x07 and filler 0x08) followed by 11 bytes of 0x90 padding; not executable code.",
+    "lifted_path": "lifted/leaf/decompiled_750000.cpp"
+  },
   "0x00754F80": {
     "name": "sub_00754F80",
     "signature": "extern \"C\" void* __fastcall fn_00754F80(void* self, int edx_unused, unsigned int flags)",
