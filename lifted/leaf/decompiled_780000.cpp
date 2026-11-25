@@ -2022,3 +2022,38 @@ uint32_t __thiscall sub_0078C280(uint32_t self) {
     return self;
 }
 } // namespace lift_0078C280
+
+// [0x0078D6B0]
+namespace lift_0078D6B0 {
+// @name releaseTwoPointerBuffers
+// @summary Releases and frees elements in two pointer buffers at +0x00 and +0x18, then releases both buffers.
+// @field Unknown +0x00 uint32_t count_00
+// @field Unknown +0x10 void** data_10
+// @field Unknown +0x18 uint32_t count_18
+// @field Unknown +0x28 void** data_28
+
+
+extern void __thiscall ext_0074ADF0(void* self);
+extern void __cdecl ext_006A5C5C(void* ptr);
+extern void __thiscall ext_006D2250(void* self);
+
+static void release_pointer_buffer(uint8_t* buf) {
+    uint32_t count = *reinterpret_cast<const uint32_t*>(buf + 0x00);
+    while (count != 0) {
+        --count;
+        void** array = *reinterpret_cast<void***>(buf + 0x10);
+        void* elem = array[count];
+        if (elem != nullptr) {
+            ext_0074ADF0(elem);
+            ext_006A5C5C(elem);
+        }
+    }
+    ext_006D2250(buf);
+}
+
+extern void __thiscall fn_0078D6B0(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    release_pointer_buffer(base);
+    release_pointer_buffer(base + 0x18);
+}
+} // namespace lift_0078D6B0
