@@ -50780,3 +50780,36 @@ extern void __stdcall fn_004A2C20(void* self) {
     ext_006A6DD2(exception, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1C)));
 }
 } // namespace lift_004A2C20
+
+// [0x004A3260] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_004A3260 {
+// Callee 0x00496F30 (sub_00496F30, 4B): inner pointer is passed in ecx; returns a bool in al.
+extern uint8_t ext_00496F30(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one dword argument (the bool result widened to 32 bits).
+extern void ext_0046C4E0(uint32_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called thiscall-style with ecx = address of the exception object.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo referenced by the push at 0x004A3288.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ReadMethodType<StateMachineEditor::FSMEditView>::vfunc_5 (drawConditions)
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Always throws: if the held pointer is non-null it calls a predicate and then the default-message throw helper; otherwise (or after that helper returns) it throws a DerivedException via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004A3260(void* self) {
+    // ecx = [self]: the held inner pointer is the first dword of the object.
+    void* inner = *static_cast<void**>(self);
+    if (inner != nullptr) {
+        uint8_t result = ext_00496F30(inner);
+        ext_0046C4E0(static_cast<uint32_t>(result));
+    }
+    // Local exception object in the 0x28-byte frame; the original constructs it in place at esp.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004A3260
