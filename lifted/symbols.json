@@ -17531,6 +17531,12 @@
     "summary": "One-time initializer for global string mem_00AEB22C; registers a cleanup callback on first call and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
+  "0x004FDD00": {
+    "name": "StaticInitOnce_004FDD00",
+    "signature": "void* fn_004FDD00()",
+    "summary": "One-time initializer for a function-local static; returns the address of the static object at 0x00AEB24C.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004FDD60": {
     "name": "sub_004FDD60",
     "signature": "extern \"C\" void __fastcall fn_004FDD60(void* self)",

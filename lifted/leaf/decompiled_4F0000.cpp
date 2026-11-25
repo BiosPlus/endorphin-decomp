@@ -763,3 +763,28 @@ void fn_004F0FB0(void* self, void* node) {
     }
 }
 } // namespace lift_004F0FB0
+
+// [0x004FDD00] sub_004FDD00 (95 bytes)
+namespace lift_004FDD00 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0066AD10(void* out_str, uint8_t flag);
+// Known callee 0x006A6C87: sub_006A6C87 (18 bytes); takes one pointer argument (registration of 0x00919C90).
+extern void ext_006A6C87(void* arg);
+extern uint32_t mem_00AEB268;  // one-time-init guard dword; bit 0 = initialized
+extern uint8_t mem_00AEB24C;   // function-local static object
+
+// @name StaticInitOnce_004FDD00
+// @summary One-time initializer for a function-local static; returns the address of the static object at 0x00AEB24C.
+void* fn_004FDD00() {
+    // Guard check: if bit 0 of the guard dword is already set, skip initialization.
+    if ((mem_00AEB268 & 1u) == 0) {
+        mem_00AEB268 |= 1u;
+        // Original pushes: 0x00A353F8 then 0x00AEB24C; cdecl args are (&obj, 0x00A353F8).
+        // Only the low byte reaches the callee's uint8_t parameter.
+        ext_0066AD10(&mem_00AEB24C, static_cast<uint8_t>(0xA353F8u));
+        // Original pushes 0x00919C90 and calls 0x006A6C87 (registers a teardown with that address).
+        ext_006A6C87(reinterpret_cast<void*>(static_cast<uintptr_t>(0x00919C90u)));
+    }
+    return &mem_00AEB24C;
+}
+} // namespace lift_004FDD00
