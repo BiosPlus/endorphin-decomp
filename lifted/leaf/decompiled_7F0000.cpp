@@ -533,3 +533,22 @@ uint8_t __cdecl sub_007F66D0(const float* a, const float* b, float threshold) {
     return (epsSq > distSq) ? 1 : 0;
 }
 } // namespace lift_007F66D0
+
+// [0x007F9F30]
+namespace lift_007F9F30 {
+template <typename T> T mem_read(uint32_t addr);
+template <typename T> void mem_write(uint32_t addr, T val);
+
+// @name scaleFloatArray
+// @summary Scales an array of count 32-bit floats from src by scale and writes to dst.
+
+void sub_007F9F30(int32_t count, uint32_t dst, uint32_t src, float scale) {
+    uint32_t end = dst + static_cast<uint32_t>(count) * 4u;
+    while (dst < end) {
+        float val = mem_read<float>(src);
+        mem_write<float>(dst, val * scale);
+        dst += 4u;
+        src += 4u;
+    }
+}
+} // namespace lift_007F9F30
