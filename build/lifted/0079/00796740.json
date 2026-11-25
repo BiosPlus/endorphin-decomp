@@ -1,0 +1,13 @@
+{
+  "va": "0x00796740",
+  "size": 62,
+  "orig_symbol": "sub_00796740",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "CountAdjacentDeltasAboveThreshold",
+  "signature": "__stdcall uint32_t fn_00796740(const double* base, uint32_t limit, uint32_t start)",
+  "summary": "Counts how many adjacent double-pair deltas (p[i+1] - p[i]) over a span exceed a constant threshold; returns 0 when the index range is empty.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:01:20Z"
+}

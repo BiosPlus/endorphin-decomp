@@ -54302,6 +54302,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00792900 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x00796740": {
+    "name": "CountAdjacentDeltasAboveThreshold",
+    "signature": "__stdcall uint32_t fn_00796740(const double* base, uint32_t limit, uint32_t start)",
+    "summary": "Counts how many adjacent double-pair deltas (p[i+1] - p[i]) over a span exceed a constant threshold; returns 0 when the index range is empty.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x00798800": {
     "name": "computeRowsPerStrip",
     "signature": "int32_t fn_00798800(uint8_t* self, int32_t rowsPerStrip)",

@@ -384,3 +384,45 @@ int32_t fn_00798800(uint8_t* self, int32_t rowsPerStrip) {
     return (rows == 0) ? 1 : static_cast<int32_t>(rows);
 }
 } // namespace lift_00798800
+
+// [0x00796740]
+namespace lift_00796740 {
+// @name CountAdjacentDeltasAboveThreshold
+// @summary Counts how many adjacent double-pair deltas (p[i+1] - p[i]) over a span exceed a constant threshold; returns 0 when the index range is empty.
+//
+// Stdcall, 3 args, `ret 0xc`:
+//   arg1 = const double* base
+//   arg2 = uint32_t limit (eax)
+//   arg3 = uint32_t start (edx)
+//
+// The threshold is the 8-byte double at mem_00997100 (the RDATA dump lists
+// it as u32 0xE2308C3A, but the instruction is `fcomp qword ptr`, so the
+// full 64-bit double is used here).
+extern const double mem_00997100;
+
+__stdcall uint32_t fn_00796740(const double* base, uint32_t limit, uint32_t start) {
+    uint32_t count = limit - start;   // eax = arg2 - arg3
+    uint32_t idx = start - 1;         // ecx = arg3 - 1
+    uint32_t hits = 0;                // esi
+
+    // Unsigned: if (arg3 - 1) >= (arg2 - arg3), nothing to do.
+    if (idx >= count) {
+        return hits;
+    }
+
+    const double* p = base + idx;     // edx = base + 8*ecx
+    count -= idx;                     // eax -= ecx; ecx = eax (nonzero here)
+
+    do {
+        const double delta = p[1] - p[0];
+        // fcomp + test ah,0x41: increment only when delta > threshold
+        // (unordered/less/equal all skip).
+        if (delta > mem_00997100) {
+            ++hits;
+        }
+        ++p;
+    } while (--count != 0);
+
+    return hits;
+}
+} // namespace lift_00796740
