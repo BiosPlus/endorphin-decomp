@@ -1,0 +1,39 @@
+{
+  "va": "0x00771B90",
+  "size": 88,
+  "orig_symbol": "sub_00771B90",
+  "src_path": "src/leaf/decompiled_770000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_770000.cpp",
+  "name": "sub_00771B90",
+  "signature": "void* __thiscall sub_00771B90(void* self)",
+  "summary": "Constructor that initializes base via sub_007ABC20, initializes a 20-byte member at +0x1C, sets inline pointer at +0x30, and sets vtable mem_00996C88.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint8_t[20]",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "uint8_t[4]",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "void*",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:23:21Z"
+}

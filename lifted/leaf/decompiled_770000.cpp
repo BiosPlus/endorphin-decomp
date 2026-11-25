@@ -287,3 +287,32 @@ extern uint8_t __stdcall fn_00771FC0(char** dst) {
     return 1;
 }
 } // namespace lift_00771FC0
+
+// [0x00771B90]
+namespace lift_00771B90 {
+// @name sub_00771B90
+// @summary Constructor that initializes base via sub_007ABC20, initializes a 20-byte member at +0x1C, sets inline pointer at +0x30, and sets vtable mem_00996C88.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x1C uint8_t[20] field_0x1C
+// @field Unknown +0x2C uint8_t[4] field_0x2C
+// @field Unknown +0x30 void* field_0x30
+
+
+extern uint32_t mem_00996C88;
+
+void* __thiscall ext_007ABC20(void* self);
+uint32_t __thiscall ext_006D2130(void* self, int32_t arg1, uint32_t arg2);
+
+void* __thiscall sub_00771B90(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    ext_007ABC20(self);
+
+    uint8_t* member = base + 0x1C;
+    ext_006D2130(member, 0x10, 4);
+
+    *reinterpret_cast<void**>(member + 0x14) = member + 0x10;
+    *reinterpret_cast<uint32_t*>(base) = mem_00996C88;
+
+    return self;
+}
+} // namespace lift_00771B90
