@@ -5607,6 +5607,13 @@
     "summary": "Forwards the virtual call at offset +0x144 to sub_00453E00 on delegate_0xC.",
     "lifted_path": "lifted/classes/RigEditorFrame.cpp"
   },
+  "0x00453F50": {
+    "name": "RigEditor::PreTranslateMessage",
+    "class": "RigEditor",
+    "signature": "extern \"C\" int __thiscall fn_00453F50(uint32_t self, uint32_t pMsg)",
+    "summary": "Handles WM_KEYDOWN (VK_RETURN and forwarding to global handler) and WM_LBUTTONDOWN before delegating to CDialog::PreTranslateMessage.",
+    "lifted_path": "lifted/classes/RigEditor.cpp"
+  },
   "0x004543E0": {
     "name": "sub_004543E0",
     "signature": "extern \"C\" const int* fn_004543E0()",
