@@ -1,0 +1,22 @@
+{
+  "va": "0x004BEB00",
+  "size": 76,
+  "orig_symbol": "sub_004BEB00",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "sub_004BEB00",
+  "class": "Unknown",
+  "signature": "void fn_004BEB00(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0050C4D0 (sub_00508310).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t field_0x04 (subobject passed by address to ext_0050B960; contents not",
+      "name": "inspected)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:39:55Z"
+}

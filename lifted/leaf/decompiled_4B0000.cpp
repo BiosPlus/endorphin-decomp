@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 #include <new>
 #include <string>
+#include <cstdint>
 
 // [0x004B6C90] sub_004B6C90 (34 bytes)
 namespace lift_004B6C90 {
@@ -282,3 +283,26 @@ extern void __thiscall fn_004B6FF0(void* self) {
     lift_field<std::string>(self, 0x58) = mem_0093C18C;
 }
 } // namespace lift_004B6FF0
+
+// [0x004BEB00] sub_004BEB00 (76 bytes)
+namespace lift_004BEB00 {
+// @name sub_004BEB00
+// @summary Auto-lifted identical-shape clone of 0x0050C4D0 (sub_00508310).
+namespace lift_0050C4D0 {
+// @name Unknown::ResetElementsAndNotify_0050C4D0
+// @class Unknown
+// @summary Clears the element buffer at this+0x4 via ext_0050B960, then calls ext_0065F440 on this.
+// @field Unknown +0x04 uint8_t field_0x04 (subobject passed by address to ext_0050B960; contents not inspected)
+
+void ext_006246B0(void* self);
+void ext_0065F440(void* self);
+
+void fn_004BEB00(void* self) {
+    // Original MSVC SEH prologue/epilogue (fs:[0] frame setup/teardown) is
+    // omitted; it only manages exception-handler registration and has no
+    // effect on the logic below.
+    ext_006246B0(static_cast<uint8_t*>(self) + 0x4);
+    ext_0065F440(self);
+}
+} // namespace lift_0050C4D0
+} // namespace lift_004BEB00

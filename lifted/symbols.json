@@ -12111,6 +12111,13 @@
     "summary": "Reads the object pointer from *out, builds a temporary std::string via sub_004BC770, copy-assigns it into out, and returns out.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004BEB00": {
+    "name": "sub_004BEB00",
+    "class": "Unknown",
+    "signature": "void fn_004BEB00(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0050C4D0 (sub_00508310).",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BED30": {
     "name": "NMData::EvolveEngineData::vfunc_6",
     "class": "NMData::EvolveEngineData",
