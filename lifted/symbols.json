@@ -1149,6 +1149,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0040FD00 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0040FE70": {
+    "name": "toggleFlagAndInvalidate",
+    "signature": "void fn_0040FE70(void *self)",
+    "summary": "Toggles the dword at +0x54 between 0 and 1 (sets it to 1 if it was 0, else 0), calls the ext_006A5EA8 thunk, then invalidates the whole window at +0x20 via USER32!InvalidateRect (no erase flag clear, full client area).",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040FED0": {
     "name": "sub_0040FED0",
     "class": "(none)",

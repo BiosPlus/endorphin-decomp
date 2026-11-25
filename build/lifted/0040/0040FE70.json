@@ -1,0 +1,27 @@
+{
+  "va": "0x0040FE70",
+  "size": 37,
+  "orig_symbol": "sub_0040FE70",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "toggleFlagAndInvalidate",
+  "signature": "void fn_0040FE70(void *self)",
+  "summary": "Toggles the dword at +0x54 between 0 and 1 (sets it to 1 if it was 0, else 0), calls the ext_006A5EA8 thunk, then invalidates the whole window at +0x20 via USER32!InvalidateRect (no erase flag clear, full client area).",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x54",
+      "type": "DWORD",
+      "name": "field_0x54"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:21:21Z"
+}

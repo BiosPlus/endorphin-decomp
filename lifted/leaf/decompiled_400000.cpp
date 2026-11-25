@@ -1534,3 +1534,36 @@ int32_t __stdcall fn_0040F270(void* arg1) {
     return (res == -1) ? -1 : 0;
 }
 } // namespace lift_0040F270
+
+// [0x0040FE70]
+namespace lift_0040FE70 {
+// @name toggleFlagAndInvalidate
+// @summary Toggles the dword at +0x54 between 0 and 1 (sets it to 1 if it was 0, else 0), calls the ext_006A5EA8 thunk, then invalidates the whole window at +0x20 via USER32!InvalidateRect (no erase flag clear, full client area).
+// @field <unknown> +0x20 HWND field_0x20
+// @field <unknown> +0x54 DWORD field_0x54
+
+// Known callee 0x006A5EA8: thunk_MFC80_ord_1903 (IAT jump thunk forwarding to MFC80!ord_1903.)
+extern void ext_006A5EA8();
+
+// IAT slot for USER32!InvalidateRect at 0x00925688.
+extern uint32_t mem_00925688;
+
+// .rdata string "P{b" at 0x00925134 (referenced by the original asm's constant pool).
+extern uint32_t mem_00925134;
+
+typedef BOOL(__stdcall *InvalidateRect_fn)(HWND hWnd, const RECT *lpRect, BOOL bErase);
+
+void fn_0040FE70(void *self) {
+    (void)mem_00925134; // Constant-pool reference from the original asm; no load is emitted.
+
+    DWORD &flag = lift_field<DWORD>(self, 0x54);
+    flag = (flag == 0) ? 1u : 0u;
+
+    ext_006A5EA8();
+
+    HWND hwnd = lift_field<HWND>(self, 0x20);
+    InvalidateRect_fn invalidateRect =
+        reinterpret_cast<InvalidateRect_fn>(static_cast<uintptr_t>(mem_00925688));
+    invalidateRect(hwnd, nullptr, TRUE);
+}
+} // namespace lift_0040FE70
