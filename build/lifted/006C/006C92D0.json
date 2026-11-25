@@ -1,0 +1,22 @@
+{
+  "va": "0x006C92D0",
+  "size": 80,
+  "orig_symbol": "sub_006C92D0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::PruneFlag08Children",
+  "class": "Unknown",
+  "signature": "void __thiscall sub_006C92D0(void* self, void* node)",
+  "summary": "Recursively removes child items whose flag 0x08 is set via vtable calls.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:52:53Z"
+}
