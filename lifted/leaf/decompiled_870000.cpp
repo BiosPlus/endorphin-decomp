@@ -14,6 +14,7 @@ void fn_00870E86(void* self) {
     // not part of this 3-byte range.
     (void)self;
 }
+#include <cstdint>
 
 // [0x008703F0] sub_008703F0 (111 bytes)
 namespace lift_008703F0 {
@@ -318,3 +319,51 @@ bool fn_008710F0(void* self) {
     return false;
 }
 } // namespace lift_008710F0
+
+// [0x008718C0] sub_008718C0 (76 bytes)
+namespace lift_008718C0 {
+// Known callee 0x00870E40: sub_00870E40 (Builds a 0x14-byte exception object from this-fields +0x10/+0x08/+0x04/+0x14 and a stack argument, then throws it.)
+extern void ext_00870E40(void* self, uint32_t arg1);
+// Known callee 0x00870F40: StreamReader::matchString (Matches a null-terminated string against the stream, restoring state on mismatch.)
+extern bool ext_00870F40(void* self, const char* str);
+// Known callee 0x008710F0: TextCursor::ConsumeEqualsOrRewind_008710F0 (Skips blank lines backward, then consumes '=' if present (skipping blanks again) or restores the saved cursor fields and returns false.)
+extern bool ext_008710F0(void* self);
+// Known callee 0x008710B0: TextCursor::SkipBlankLinesBack_008710B0 (Reads backward past whitespace; if the first character read is non-whitespace, steps back one line and returns 0, otherwise skips the remaining whitespace, steps back one line and returns 1.)
+extern bool ext_008710B0(void* self);
+
+namespace {
+template <typename T>
+T& field_at(void* self, std::uintptr_t off) {
+    return *reinterpret_cast<T*>(static_cast<std::uint8_t*>(self) + off);
+}
+}  // namespace
+
+// @name TextCursor::MatchStringThenEquals_008718C0
+// @class TextCursor
+// @summary Skips blank lines backward, matches str, then consumes '=' (throws on failure); restores cursor fields if str does not match.
+// @field TextCursor +0x08 uint32_t field_0x08
+// @field TextCursor +0x10 uint32_t field_0x10
+// @field TextCursor +0x14 uint32_t field_0x14
+bool fn_008718C0(void* self, const char* str) {
+    // Snapshot the cursor fields so they can be restored on a failed match.
+    const uint32_t saved08 = field_at<uint32_t>(self, 0x08);
+    const uint32_t saved10 = field_at<uint32_t>(self, 0x10);
+    const uint32_t saved14 = field_at<uint32_t>(self, 0x14);
+
+    if (!ext_008710B0(self)) {
+        return false;
+    }
+
+    if (!ext_00870F40(self, str)) {
+        field_at<uint32_t>(self, 0x08) = saved08;
+        field_at<uint32_t>(self, 0x10) = saved10;
+        field_at<uint32_t>(self, 0x14) = saved14;
+        return false;
+    }
+
+    if (!ext_008710F0(self)) {
+        ext_00870E40(self, 3);
+    }
+    return true;
+}
+} // namespace lift_008718C0

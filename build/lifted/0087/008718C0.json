@@ -1,0 +1,34 @@
+{
+  "va": "0x008718C0",
+  "size": 76,
+  "orig_symbol": "sub_008718C0",
+  "src_path": "src/leaf/decompiled_870000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_870000.cpp",
+  "name": "TextCursor::MatchStringThenEquals_008718C0",
+  "class": "TextCursor",
+  "signature": "T\u0026 field_at(void* self, std::uintptr_t off)",
+  "summary": "Skips blank lines backward, matches str, then consumes '=' (throws on failure); restores cursor fields if str does not match.",
+  "fields": [
+    {
+      "class": "TextCursor",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "TextCursor",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "TextCursor",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:44:50Z"
+}

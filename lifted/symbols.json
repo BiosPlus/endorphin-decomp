@@ -62031,6 +62031,13 @@
     "summary": "Copy-constructs a 20-byte object: installs vtable 0x0099F138 at +0x00, copies +0x04..+0x10 from source, returns this.",
     "lifted_path": "lifted/leaf/decompiled_870000.cpp"
   },
+  "0x008718C0": {
+    "name": "TextCursor::MatchStringThenEquals_008718C0",
+    "class": "TextCursor",
+    "signature": "T\u0026 field_at(void* self, std::uintptr_t off)",
+    "summary": "Skips blank lines backward, matches str, then consumes '=' (throws on failure); restores cursor fields if str does not match.",
+    "lifted_path": "lifted/leaf/decompiled_870000.cpp"
+  },
   "0x00872730": {
     "name": "sub_00872730",
     "signature": "DWORD NMData_GraphicData_vfunc_0_off_C(const void* self)",
