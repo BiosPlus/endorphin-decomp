@@ -8196,6 +8196,13 @@
     "summary": "Dereferences RuntimeEngine*, calls getNumTicksToRun() and returns as double, or throws on null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004722F0": {
+    "name": "Unknown::GetOnceInitializedString_004722F0",
+    "class": "Unknown",
+    "signature": "void* fn_004722F0()",
+    "summary": "One-time guarded initializer for the string buffer at mem_00AD9014; returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00472730": {
     "name": "Tree::lowerBound",
     "class": "Tree",

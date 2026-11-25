@@ -448,3 +448,28 @@ extern void* __fastcall fn_00475840(void* self, int edx_unused, const void* src)
 }
 } // namespace lift_006998D0
 } // namespace lift_00475840
+
+// [0x004722F0] sub_004722F0 (95 bytes)
+namespace lift_004722F0 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0066AD10(void* out_str, const void* arg);
+// Known callee 0x006A6C87: sub_006A6C87 (18B)
+extern void ext_006A6C87(const void* arg);
+extern uint8_t mem_00AD9030;
+extern uint8_t mem_00AD9014;
+extern uint8_t mem_00A32430;
+extern uint8_t mem_00916DE0;
+
+// @name Unknown::GetOnceInitializedString_004722F0
+// @summary One-time guarded initializer for the string buffer at mem_00AD9014; returns its address.
+namespace lift_004722F0 {
+void* fn_004722F0() {
+    if ((mem_00AD9030 & 1u) == 0) {
+        mem_00AD9030 |= 1u;
+        ext_0066AD10(&mem_00AD9014, &mem_00A32430);
+        ext_006A6C87(&mem_00916DE0);
+    }
+    return &mem_00AD9014;
+}
+} // namespace lift_004722F0
+} // namespace lift_004722F0
