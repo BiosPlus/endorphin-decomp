@@ -1,0 +1,22 @@
+{
+  "va": "0x00487C00",
+  "size": 70,
+  "orig_symbol": "sub_00487C00",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "TreeMap::lowerBound (string key, nil flag at node +0x69)",
+  "class": "TreeMap",
+  "signature": "void* fn_00487C00(void* self, const void* key)",
+  "summary": "Lower-bound search in an MSVC-style std::map\u003cstd::string, ...\u003e tree: returns the first node whose key is not less than the argument, or the header node if none; header node is returned for an empty tree.",
+  "fields": [
+    {
+      "class": "TreeMap",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:24:00Z"
+}
