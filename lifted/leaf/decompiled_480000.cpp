@@ -720,3 +720,53 @@ void* fn_00481700(void* first, void* last, void* d_last) {
     return reinterpret_cast<void*>(result);
 }
 } // namespace lift_00481700
+
+// [0x0048A0E0]
+namespace lift_0048A0E0 {
+namespace lift_0048A0E0 {
+
+// IAT jump thunk forwarding to MFC80!ord_764; cdecl, takes one pointer argument.
+extern void ext_006A5C5C(void* node);
+
+// IAT slot holding the address of MSVCP80 basic_string<char> destructor (__thiscall).
+extern uint32_t mem_00924FF4;
+
+// @name DestroyNodeChain
+// @summary Walks a linked node chain from node: recurses into each node's child at +0x08, destroys the node's string at +0x0C and calls ext_006A5C5C on it, following next pointers at +0x00 until a node with flag +0x69 set is reached.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x0C std::string field_0x0C
+// @field Unknown +0x69 uint8_t field_0x69
+void fn_0048A0E0(void* self, void* node) {
+    using DtorFn = void (*)(void*);
+
+    // edi = node; if (node->flag69 != 0) return;
+    void* cur = node;
+    if (lift_field<uint8_t>(cur, 0x69) != 0) {
+        return;
+    }
+
+    // esi = edi = cur
+    void* esi = cur;
+    do {
+        // recurse on child: fn(self, esi->field_0x08)
+        void* child = lift_field<void*>(esi, 0x08);
+        fn_0048A0E0(self, child);
+
+        // esi = esi->next (+0x00)
+        esi = lift_field<void*>(esi, 0x00);
+
+        // destroy std::string at cur+0x0C (thiscall dtor via IAT slot; ecx = this passed as arg)
+        auto dtor = reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+        dtor(static_cast<uint8_t*>(cur) + 0x0C);
+
+        // push cur; call ext_006A5C5C; add esp,4
+        ext_006A5C5C(cur);
+
+        // edi = esi (cur = next)
+        cur = esi;
+    } while (lift_field<uint8_t>(esi, 0x69) == 0);
+}
+
+} // namespace lift_0048A0E0
+} // namespace lift_0048A0E0

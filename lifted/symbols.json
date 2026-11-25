@@ -7938,6 +7938,12 @@
     "summary": "If self-\u003e+0x04 is non-null, tail-calls child's vtable slot 0x78/4 with child as this and self as the argument; otherwise returns self.",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x0048A0E0": {
+    "name": "DestroyNodeChain",
+    "signature": "void fn_0048A0E0(void* self, void* node)",
+    "summary": "Walks a linked node chain from node: recurses into each node's child at +0x08, destroys the node's string at +0x0C and calls ext_006A5C5C on it, following next pointers at +0x00 until a node with flag +0x69 set is reached.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048A120": {
     "name": "notifyRangeVtable78",
     "signature": "void sub_0048A120(uint32_t begin, uint32_t end)",
