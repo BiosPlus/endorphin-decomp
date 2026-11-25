@@ -1,0 +1,34 @@
+{
+  "va": "0x0051E0D0",
+  "size": 77,
+  "orig_symbol": "sub_0051E0D0",
+  "src_path": "src/leaf/decompiled_510000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_510000.cpp",
+  "name": "Unknown::reserveElements192",
+  "class": "Unknown",
+  "signature": "bool fn_0051E0D0(void* self, uint32_t count)",
+  "summary": "Clears the three-pointer element range at +0x04/+0x08/+0x0C, then, for a nonzero count not above 0x1555555, allocates count * 192 bytes and sets begin, end and capacity-end. Returns true when storage was allocated.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:06:51Z"
+}

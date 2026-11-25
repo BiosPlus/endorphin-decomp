@@ -342,3 +342,39 @@ void* fn_00517070(void* dst) {
     return dst;
 }
 } // namespace lift_00517070
+
+// [0x0051E0D0] sub_0051E0D0 (77 bytes)
+namespace lift_0051E0D0 {
+// Known callee 0x00405FB0: throwPreparedStringError_00405FB0 (Builds a std::string from the literal at 0x00928F30 and throws it inside an std::exception-derived object.)
+extern void ext_00405FB0();
+
+// Known callee 0x0051DEA0: allocateElements192 (Allocates count elements of 192 bytes (0xC0) with overflow check, throwing std::bad_alloc on overflow)
+// The call site pushes two stack words (a zero, then count), so both are declared here.
+extern void* ext_0051DEA0(uint32_t hiddenArg, uint32_t count);
+
+// @name Unknown::reserveElements192
+// @class Unknown
+// @summary Clears the three-pointer element range at +0x04/+0x08/+0x0C, then, for a nonzero count not above 0x1555555, allocates count * 192 bytes and sets begin, end and capacity-end. Returns true when storage was allocated.
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+bool fn_0051E0D0(void* self, uint32_t count) {
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+
+    if (count == 0) {
+        return false;
+    }
+    if (count > 0x1555555u) {
+        ext_00405FB0();
+    }
+
+    // Stored as 32-bit values to keep the original field offsets exact.
+    uint32_t base = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(ext_0051DEA0(0u, count)));
+    lift_field<uint32_t>(self, 0x04) = base;
+    lift_field<uint32_t>(self, 0x08) = base;
+    lift_field<uint32_t>(self, 0x0C) = base + count * 0xC0u;
+    return true;
+}
+} // namespace lift_0051E0D0

@@ -20764,6 +20764,13 @@
     "summary": "Calls ext_0051DFC0 (result unused), then returns c + (b - a) with the delta truncated toward zero to a multiple of 360.",
     "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
+  "0x0051E0D0": {
+    "name": "Unknown::reserveElements192",
+    "class": "Unknown",
+    "signature": "bool fn_0051E0D0(void* self, uint32_t count)",
+    "summary": "Clears the three-pointer element range at +0x04/+0x08/+0x0C, then, for a nonzero count not above 0x1555555, allocates count * 192 bytes and sets begin, end and capacity-end. Returns true when storage was allocated.",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x0051E170": {
     "name": "sub_0051E170",
     "signature": "extern uint32_t fn_0051E170(uint32_t first, uint32_t last, uint32_t dest)",
