@@ -1024,3 +1024,48 @@ void sub_007AEF10(uint8_t* obj, const char* fmt, ...) {
     write_fn(obj, buf, len);
 }
 } // namespace lift_007AEF10
+
+// [0x007AECF0] sub_007AECF0 (101 bytes)
+namespace lift_007AECF0 {
+// @name TextReader::ReadLine
+// @class TextReader
+// @summary Copies up to maxCount-1 bytes from the read position into dst, stopping after a '\n' (kept), NUL-terminates, advances the read position; returns dst, or nullptr if dst is null or the buffer is unset.
+// @field TextReader +0x58 char* buffer
+// @field TextReader +0x5c uint32_t size
+// @field TextReader +0x60 uint32_t pos
+char* fn_007AECF0(void* self, char* dst, uint32_t maxCount) {
+    if (dst == nullptr) {
+        return nullptr;
+    }
+    char* buffer = lift_field<char*>(self, 0x58);
+    if (buffer == nullptr) {
+        return nullptr;
+    }
+
+    const uint32_t size = lift_field<uint32_t>(self, 0x5c);
+    const uint32_t pos = lift_field<uint32_t>(self, 0x60);
+    const uint32_t remaining = size - pos;
+    const uint32_t limit = maxCount - 1;
+    const char* src = buffer + pos;
+
+    uint32_t count = 0;
+    if (limit != 0) {
+        while (count < remaining) {
+            const char c = src[count];
+            dst[count] = c;
+            if (c == '\n') {
+                ++count;
+                break;
+            }
+            ++count;
+            if (count >= limit) {
+                break;
+            }
+        }
+    }
+
+    dst[count] = '\0';
+    lift_field<uint32_t>(self, 0x60) = pos + count;
+    return dst;
+}
+} // namespace lift_007AECF0

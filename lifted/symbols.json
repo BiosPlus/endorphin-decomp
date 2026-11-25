@@ -65808,6 +65808,13 @@
     "summary": "Reads up to size bytes from an in-memory buffer into dst without failing on short read",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AECF0": {
+    "name": "TextReader::ReadLine",
+    "class": "TextReader",
+    "signature": "char* fn_007AECF0(void* self, char* dst, uint32_t maxCount)",
+    "summary": "Copies up to maxCount-1 bytes from the read position into dst, stopping after a '\\n' (kept), NUL-terminates, advances the read position; returns dst, or nullptr if dst is null or the buffer is unset.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AED60": {
     "name": "MemoryReader::readUInt32",
     "class": "MemoryReader",

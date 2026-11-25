@@ -1,0 +1,34 @@
+{
+  "va": "0x007AECF0",
+  "size": 101,
+  "orig_symbol": "sub_007AECF0",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "TextReader::ReadLine",
+  "class": "TextReader",
+  "signature": "char* fn_007AECF0(void* self, char* dst, uint32_t maxCount)",
+  "summary": "Copies up to maxCount-1 bytes from the read position into dst, stopping after a '\\n' (kept), NUL-terminates, advances the read position; returns dst, or nullptr if dst is null or the buffer is unset.",
+  "fields": [
+    {
+      "class": "TextReader",
+      "offset": "+0x58",
+      "type": "char*",
+      "name": "buffer"
+    },
+    {
+      "class": "TextReader",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "size"
+    },
+    {
+      "class": "TextReader",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "pos"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:45:27Z"
+}
