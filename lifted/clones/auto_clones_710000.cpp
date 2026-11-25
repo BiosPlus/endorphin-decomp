@@ -1197,7 +1197,6 @@ extern uint32_t mem_00B5F944;
 
 // @name CopyHugeToGlobals_00712C30
 // @summary Copies the 8-byte value pointed to by _HUGE into four consecutive 8-byte globals (dword pairs).
-// @field  ...
 void fn_00712C30(void) {
     // Re-reads the source pointer and value for each copy, matching the original code.
     for (int i = 0; i < 4; ++i) {
