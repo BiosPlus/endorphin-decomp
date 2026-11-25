@@ -1490,3 +1490,18 @@ void __stdcall sub_004080C0(uint32_t container1, uint32_t iterPtr, uint32_t cont
     }
 }
 } // namespace lift_004080C0
+
+// [0x00401D80]
+namespace lift_00401D80 {
+extern void* __thiscall ext_00401C60(void* self, const void* other);
+
+// @name std::logic_error_subclass::copy_ctor
+// @class std::logic_error_subclass
+// @summary Copy constructor for a std::logic_error-derived exception class.
+// @field std::logic_error_subclass +0x00 uint32_t vptr
+void* __thiscall sub_00401D80(void* self, const void* other) {
+    ext_00401C60(self, other);
+    *reinterpret_cast<uint32_t*>(self) = 0x00928F28u;
+    return self;
+}
+} // namespace lift_00401D80
