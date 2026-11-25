@@ -8,8 +8,8 @@
 // Recovered field layout for Vec3:
 namespace lifted_layout {
 struct Vec3_Fields {
-    // +0x0   float                    x  (evidence: 0x004C4D80, 0x005B1740, 0x007CA2F0, 0x007CA790, 0x007DB9E0)
-    // +0x4   float                    y  (evidence: 0x004C4D80, 0x005B1740, 0x007CA2F0, 0x007CA790, 0x007DB9E0)
-    // +0x8   float                    z  (evidence: 0x004C4D80, 0x005B1740, 0x007CA2F0, 0x007CA790, 0x007DB9E0)
+    // +0x0   float                    x  (evidence: 0x004C4D80, 0x005B1740, 0x007CA2F0, 0x007CA790, 0x007DB9E0, 0x007E51F0)
+    // +0x4   float                    y  (evidence: 0x004C4D80, 0x005B1740, 0x007CA2F0, 0x007CA790, 0x007DB9E0, 0x007E51F0)
+    // +0x8   float                    z  (evidence: 0x004C4D80, 0x005B1740, 0x007CA2F0, 0x007CA790, 0x007DB9E0, 0x007E51F0)
 };
 } // namespace lifted_layout
