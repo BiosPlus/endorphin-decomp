@@ -1030,3 +1030,26 @@ void* fn_0060A4F0(void* out) {
 }
 } // namespace lift_00527570
 } // namespace lift_0060A4F0
+
+// [0x0060B910] sub_0060B910 (98 bytes)
+namespace lift_0060B910 {
+// IAT slot for MSVCP80 std::basic_string<char>::basic_string() (default ctor, thiscall).
+extern void(__thiscall* mem_00924FE8)(void* self);
+
+// @name unknown::ctorWithTwoStrings
+// @class unknown
+// @summary Constructor: stamps vtable 0x009720F4 at this+0, default-constructs the std::string members at this+0x04 and this+0x20 via MSVCP80, zeroes the dwords at this+0x3C and this+0x40, and returns this. Exception-frame setup from the original is omitted.
+// @field unknown +0x00 void* vptr
+// @field unknown +0x04 std::string field_0x04
+// @field unknown +0x20 std::string field_0x20
+// @field unknown +0x3C DWORD field_0x3c
+// @field unknown +0x40 DWORD field_0x40
+void* fn_0060B910(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x9720F4u;              // mov dword ptr [esi], 0x9720f4
+    mem_00924FE8(static_cast<uint8_t*>(self) + 0x04);          // lea ecx,[esi+4]; call [0x924fe8]
+    mem_00924FE8(static_cast<uint8_t*>(self) + 0x20);          // lea ecx,[esi+0x20]; call [0x924fe8]
+    lift_field<uint32_t>(self, 0x40) = 0;                      // mov dword ptr [esi+0x40], 0
+    lift_field<uint32_t>(self, 0x3C) = 0;                      // mov dword ptr [esi+0x3c], 0
+    return self;                                               // mov eax, esi
+}
+} // namespace lift_0060B910
