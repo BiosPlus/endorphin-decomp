@@ -1,0 +1,28 @@
+{
+  "va": "0x00410D10",
+  "size": 42,
+  "orig_symbol": "sub_00410D10",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Range::get",
+  "class": "Range",
+  "signature": "uint32_t* fn_00410D10(void* self, uint32_t* out)",
+  "summary": "Zeroes out[0], checks self-\u003e+0x04 \u003c= self-\u003e+0x08 (unsigned, else invalid-parameter), then writes {self, self-\u003e+0x08} to out and returns out.",
+  "fields": [
+    {
+      "class": "Range",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Range",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:27:43Z"
+}

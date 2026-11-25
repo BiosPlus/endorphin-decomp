@@ -1878,3 +1878,26 @@ bool __thiscall sub_0041C5A0(void* self, uint32_t arg1, uint32_t arg2, uint32_t 
     return fn(delegate, arg1, arg2, arg3);
 }
 } // namespace lift_0041C5A0
+
+// [0x00410D10] sub_00410D10 (42 bytes)
+namespace lift_00410D10 {
+// Import slot for _invalid_parameter_noinfo (MSVCR80), called indirectly via [0x925134].
+extern int mem_00925134;
+
+// @name Range::get
+// @class Range
+// @summary Zeroes out[0], checks self->+0x04 <= self->+0x08 (unsigned, else invalid-parameter), then writes {self, self->+0x08} to out and returns out.
+// @field Range +0x04 uint32_t field_0x04
+// @field Range +0x08 uint32_t field_0x08
+uint32_t* fn_00410D10(void* self, uint32_t* out) {
+    const uint32_t last = lift_field<uint32_t>(self, 0x08);
+    out[0] = 0;
+    if (lift_field<uint32_t>(self, 0x04) > last) {
+        // call dword ptr [0x925134] ; _invalid_parameter_noinfo
+        (*reinterpret_cast<void (**)(void)>(&mem_00925134))();
+    }
+    out[0] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    out[1] = last;
+    return out;
+}
+} // namespace lift_00410D10
