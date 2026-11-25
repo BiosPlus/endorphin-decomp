@@ -32722,6 +32722,13 @@
     "summary": "Stores a float produced by the child's vfunc_1 into the target's +0x60 slot and returns a (value, child) pair via out-param.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0063DAB0": {
+    "name": "sub_0063DAB0_init",
+    "class": "\u003cClassName\u003e (unknown)",
+    "signature": "void* fn_0063DAB0(void* self)",
+    "summary": "Calls base constructor sub_0062CD30, sets vtable to 0x009792f4, zeroes float fields at +0x3C/+0x40/+0x44, returns this.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063DFF4": {
     "name": "thunk_GLU32_gluErrorString",
     "signature": "extern \"C\" void fn_0063DFF4(void)",

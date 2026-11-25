@@ -126,3 +126,29 @@ void fn_00630510(void* self, const float* src) {
     base[0xF6] = 1;
 }
 } // namespace lift_00630510
+
+// [0x0063DAB0] sub_0063DAB0 (29 bytes)
+namespace lift_0063DAB0 {
+// Known callee 0x0062CD30: sub_0062CD30_ctor (Initializes object vtable to 0x009791a4 and zeroes two 3-dword blocks at +0x08 and +0x2c.)
+extern void ext_0062CD30();
+
+// @name sub_0063DAB0_init
+// @class <ClassName> (unknown)
+// @summary Calls base constructor sub_0062CD30, sets vtable to 0x009792f4, zeroes float fields at +0x3C/+0x40/+0x44, returns this.
+// @field <ClassName> +0x00 uint32_t vtable
+// @field <ClassName> +0x3C float field_0x3C
+// @field <ClassName> +0x40 float field_0x40
+// @field <ClassName> +0x44 float field_0x44
+void* fn_0063DAB0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    ext_0062CD30();
+
+    const float zero = 0.0f;
+    const uint32_t vtable = 0x009792f4u;
+    std::memcpy(base + 0x00, &vtable, sizeof(vtable));
+    std::memcpy(base + 0x44, &zero, sizeof(zero));
+    std::memcpy(base + 0x40, &zero, sizeof(zero));
+    std::memcpy(base + 0x3C, &zero, sizeof(zero));
+    return self;
+}
+} // namespace lift_0063DAB0
