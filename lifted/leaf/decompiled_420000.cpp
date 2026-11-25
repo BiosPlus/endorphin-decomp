@@ -1315,3 +1315,16 @@ void __thiscall sub_00420680(uint32_t self) {
     *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(self + 0x04)) = parent;
 }
 } // namespace lift_00420680
+
+// [0x00427860]
+namespace lift_00427860 {
+extern uint32_t ext_004274E0(uint32_t first, uint32_t last, uint32_t d_last);
+
+// @name copyBackward36Wrapper
+// @summary Copies a range of 36-byte structs backward and returns the destination start pointer.
+uint32_t sub_00427860(uint32_t first, uint32_t last, uint32_t d_last) {
+    ext_004274E0(first, last, d_last);
+    int32_t count = static_cast<int32_t>(last - first) / 36;
+    return d_last - static_cast<uint32_t>(count * 36);
+}
+} // namespace lift_00427860
