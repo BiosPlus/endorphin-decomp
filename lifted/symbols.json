@@ -22075,6 +22075,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005991D0": {
+    "name": "Unknown::EraseAtAndWritePair",
+    "class": "Unknown",
+    "signature": "void* fn_005991D0(void* self, void* out, DWORD a2, DWORD pos)",
+    "summary": "Erases the 8-byte slot at pos by shifting later slots down, decrements end by 8, and writes (a2, pos) to out.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x005995C0": {
     "name": "ExprParser::ReadMethodType\u003cWorld, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cWorld, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1\u003e",

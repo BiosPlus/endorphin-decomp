@@ -1,0 +1,22 @@
+{
+  "va": "0x005991D0",
+  "size": 63,
+  "orig_symbol": "sub_005991D0",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "Unknown::EraseAtAndWritePair",
+  "class": "Unknown",
+  "signature": "void* fn_005991D0(void* self, void* out, DWORD a2, DWORD pos)",
+  "summary": "Erases the 8-byte slot at pos by shifting later slots down, decrements end by 8, and writes (a2, pos) to out.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:02:40Z"
+}

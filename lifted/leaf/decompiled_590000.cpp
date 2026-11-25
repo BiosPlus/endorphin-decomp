@@ -276,3 +276,24 @@ void fn_0059FE40(uint32_t* first, const uint32_t* last) {
     }
 }
 } // namespace lift_0059FE40
+
+// [0x005991D0]
+namespace lift_005991D0 {
+// @name Unknown::EraseAtAndWritePair
+// @class Unknown
+// @summary Erases the 8-byte slot at pos by shifting later slots down, decrements end by 8, and writes (a2, pos) to out.
+// @field Unknown +0x08 DWORD end
+void* fn_005991D0(void* self, void* out, DWORD a2, DWORD pos) {
+    DWORD end = lift_field<DWORD>(self, 0x8);
+    DWORD src = pos + 8;
+    if (src != end) {
+        auto* dst = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(pos));
+        const auto* from = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(src));
+        std::memmove(dst, from, static_cast<size_t>(end - src));
+    }
+    lift_field<DWORD>(self, 0x8) -= 8;
+    lift_field<DWORD>(out, 0x0) = a2;
+    lift_field<DWORD>(out, 0x4) = pos;
+    return out;
+}
+} // namespace lift_005991D0
