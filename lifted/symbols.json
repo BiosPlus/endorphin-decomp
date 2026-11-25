@@ -19298,6 +19298,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005DA9C0 (ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, getEndFrame\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x00515FD0": {
+    "name": "ExprParser::DynamicEnumType\u003cEvolverRuntimeOptions\u003e::vfunc_1",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const\u003e",
+    "signature": "double fn_00515FD0(void* self)",
+    "summary": "Reads the int at +0x08 of the bound EvolverRuntimeOptions target as a number (returned on the x87 stack); throws if the target pointer is null.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x00516000": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions\u003e::vfunc_5",
     "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const\u003e",

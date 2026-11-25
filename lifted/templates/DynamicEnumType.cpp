@@ -2446,3 +2446,33 @@ __stdcall double fn_00515E80(void* self) {
     return 0.0; // not reached: _CxxThrowException does not return
 }
 } // namespace lift_00515E80
+
+// [0x00515FD0] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_1 (45 bytes)
+namespace lift_00515FD0 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall in the original; constructs an
+// ExceptionWithMessage-derived exception with a fixed message string and installs its vtable).
+// Original passes `this` in ECX with no stack args; here the object buffer is passed explicitly.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException).
+// Original pushes the ThrowInfo address and the exception object address, then calls the thunk (cdecl).
+[[noreturn]] void ext_006A6DD2(void* exceptionObject, const void* throwInfo);
+// Static ThrowInfo data for the exception type, original address 0x009DEC1C.
+extern uint8_t mem_009DEC1C[];
+
+// @name ExprParser::DynamicEnumType<EvolverRuntimeOptions>::vfunc_1
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>
+// @summary Reads the int at +0x08 of the bound EvolverRuntimeOptions target as a number (returned on the x87 stack); throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EvolverRuntimeOptions* target
+// @field NMData::EvolverRuntimeOptions +0x08 int field_0x08
+double fn_00515FD0(void* self) {
+    // self->+0x00 is the bound target pointer (ValuePtrType base).
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        // Build the exception object in the 0x28-byte frame slot (as the original does) and throw.
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, mem_009DEC1C);
+    }
+    return static_cast<double>(lift_field<int32_t>(target, 0x08));
+}
+} // namespace lift_00515FD0
