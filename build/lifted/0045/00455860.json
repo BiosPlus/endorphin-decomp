@@ -1,0 +1,28 @@
+{
+  "va": "0x00455860",
+  "size": 73,
+  "orig_symbol": "sub_00455860",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "Unknown::SendWindowMessageWithCallback",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00455860(uint8_t* self)",
+  "summary": "Sends WM_GETTEXTLENGTH (0x0E) to the window at +0x94, then sends user message 0x44A to it with a 12-byte request block holding this+0x13c and the 0x00455260 callback.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x94",
+      "type": "HWND",
+      "name": "hwnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x13C",
+      "type": "uint8_t",
+      "name": "field_0x13c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:31:14Z"
+}

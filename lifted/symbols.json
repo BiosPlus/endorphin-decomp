@@ -5008,6 +5008,13 @@
     "summary": "Forwards to ext_006A60D0 when the object at Frame+0x144 is non-null and its +0x20 field is nonzero; otherwise returns.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x00455860": {
+    "name": "Unknown::SendWindowMessageWithCallback",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00455860(uint8_t* self)",
+    "summary": "Sends WM_GETTEXTLENGTH (0x0E) to the window at +0x94, then sends user message 0x44A to it with a 12-byte request block holding this+0x13c and the 0x00455260 callback.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00455A90": {
     "name": "SceneNotesEditor::vfunc_1",
     "class": "SceneNotesEditor",

@@ -602,6 +602,7 @@ struct Unknown_Fields {
     // +0x94  DWORD                    field_0x94  (evidence: 0x007C8490, 0x007C93A0) // CONFLICT: multiple definitions at +0x94
     // +0x94  uint32_t                 field_0x94  (evidence: 0x007C8490, 0x007C97C0, 0x007D8860) // CONFLICT: multiple definitions at +0x94
     // +0x94  void*                    field_0x94  (evidence: 0x00666CB0) // CONFLICT: multiple definitions at +0x94
+    // +0x94  HWND                     hwnd  (evidence: 0x00455860) // CONFLICT: multiple definitions at +0x94
     // +0x94  uint32_t field_0x94[] (array of 4-byte entries, indexed by idx)  (evidence: 0x007C2E50, 0x007C9300) // CONFLICT: multiple definitions at +0x94
     // +0x98  DWORD                    field_0x98  (evidence: 0x007C8490, 0x007C93A0) // CONFLICT: multiple definitions at +0x98
     // +0x98  int32_t                  field_0x98  (evidence: 0x00455CD0, 0x004584C0) // CONFLICT: multiple definitions at +0x98
@@ -731,7 +732,8 @@ struct Unknown_Fields {
     // +0x138 UINT                     field_0x138  (evidence: 0x0043CD80) // CONFLICT: multiple definitions at +0x138
     // +0x138 float                    field_0x138  (evidence: 0x004646A0, 0x00468730, 0x0046C110, 0x00594700, 0x0059DE20) // CONFLICT: multiple definitions at +0x138
     // +0x138 uint8_t                  field_0x138  (evidence: 0x007AA7F0, 0x007AA930, 0x007AC670) // CONFLICT: multiple definitions at +0x138
-    // +0x13C std::string              field_0x13c  (evidence: 0x00455AD0, 0x004584C0)
+    // +0x13C std::string              field_0x13c  (evidence: 0x00455AD0, 0x004584C0) // CONFLICT: multiple definitions at +0x13C
+    // +0x13C uint8_t                  field_0x13c  (evidence: 0x00455860) // CONFLICT: multiple definitions at +0x13C
     // +0x148 int32_t                  field_0x148  (evidence: 0x0046F830, 0x0046F930) // CONFLICT: multiple definitions at +0x148
     // +0x148 uint8_t                  field_0x148  (evidence: 0x0044ACE0) // CONFLICT: multiple definitions at +0x148
     // +0x148 void*                    subObject  (evidence: 0x0070AD00, 0x0070E3B0, 0x0070EC50) // CONFLICT: multiple definitions at +0x148

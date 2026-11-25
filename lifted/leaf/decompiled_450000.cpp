@@ -727,3 +727,34 @@ void fn_00458860(void* self, uint32_t index) {
     reinterpret_cast<VFn>(nextVtbl[1])(next);
 }
 } // namespace lift_00458860
+
+// [0x00455860] sub_00455860 (73 bytes)
+namespace lift_00455860 {
+// Known callee 0x00455260: std::string::assign(const char*, size_t) wrapper (Assigns the first n bytes of src into the std::string at self; returns 0 (stdcall, callee pops 16 bytes).)
+extern void ext_00455260();
+// USER32!SendMessageA import slot (function pointer value stored at 0x00925694)
+extern uint32_t mem_00925694;
+
+// @name Unknown::SendWindowMessageWithCallback
+// @class Unknown
+// @summary Sends WM_GETTEXTLENGTH (0x0E) to the window at +0x94, then sends user message 0x44A to it with a 12-byte request block holding this+0x13c and the 0x00455260 callback.
+// @field Unknown +0x94 HWND hwnd
+// @field Unknown +0x13c uint8_t field_0x13c
+void __thiscall fn_00455860(uint8_t* self) {
+    using SendMessageAFn = intptr_t(__stdcall*)(HWND, UINT, WPARAM, LPARAM);
+    auto send_message = reinterpret_cast<SendMessageAFn>(static_cast<uintptr_t>(mem_00925694));
+
+    const uint32_t hwnd_value = *reinterpret_cast<uint32_t*>(self + 0x94);
+    HWND hwnd = reinterpret_cast<HWND>(static_cast<uintptr_t>(hwnd_value));
+
+    // WM_GETTEXTLENGTH; result unused by the original code.
+    (void)send_message(hwnd, 0x0E, 0, 0);
+
+    // Request block: [0] = this+0x13c, [1] = unset in original (zeroed here), [2] = callback.
+    uintptr_t request[3] = {};
+    request[0] = reinterpret_cast<uintptr_t>(self + 0x13c);
+    request[2] = reinterpret_cast<uintptr_t>(&ext_00455260);
+
+    (void)send_message(hwnd, 0x44A, 2, reinterpret_cast<LPARAM>(request));
+}
+} // namespace lift_00455860
