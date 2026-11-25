@@ -10198,3 +10198,29 @@ void fn_004D6320(void* self) {
     *reinterpret_cast<uint32_t*>(holder + 0x04) = static_cast<uint32_t>(addr);
 }
 } // namespace lift_004D6320
+
+// [0x004D6090] ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setIsVisible(bool), 0}>::vfunc_40 (122 bytes)
+namespace lift_004D6090 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+extern uint32_t mem_00AE5D30;
+extern uint32_t mem_00AE5D2C;
+
+// @name ExprParser::ReadWriteMethodType<RigEventData,bool>::vfunc_40 (isVisible / setIsVisible)
+// @class ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setIsVisible(bool), 0}>
+// @summary One-time init of the static value-accessor object at mem_00AE5D2C (guarded by bit 0 of mem_00AE5D30), then stores its address into self+4.
+// @field ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setIsVisible(bool), 0}> +0x04 uint32_t field_0x04
+//
+// The original SEH frame (fs:[0] push/pop, trylevel) is an MSVC EH wrapper with
+// no portable equivalent and is intentionally dropped; it does not affect the
+// observable effect of the function.
+void __stdcall fn_004D6090(void* self) {
+    if ((mem_00AE5D30 & 1u) == 0) {
+        mem_00AE5D30 |= 1u;
+        ext_0067A670(&mem_00AE5D2C, 0);
+        mem_00AE5D2C = 0x948E7Cu;  // vtable pointer of the static object
+    }
+    lift_field<uint32_t>(self, 0x04) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE5D2C));
+}
+} // namespace lift_004D6090

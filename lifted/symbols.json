@@ -15632,6 +15632,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004D6090": {
+    "name": "ExprParser::ReadWriteMethodType\u003cRigEventData,bool\u003e::vfunc_40 (isVisible / setIsVisible)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setIsVisible(bool), 0}\u003e",
+    "signature": "void __stdcall fn_004D6090(void* self)",
+    "summary": "One-time init of the static value-accessor object at mem_00AE5D2C (guarded by bit 0 of mem_00AE5D30), then stores its address into self+4.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004D6320": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::RigEventData,bool,isGravityEnabled,setGravityEnabled\u003e::vfunc_40",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setGravityEnabled(bool), 0}\u003e",
