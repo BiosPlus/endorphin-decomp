@@ -598,3 +598,36 @@ void fn_006A92F0(void* self, void* other) {
     invalidate_rect(lift_field<HWND>(base, 0x20), nullptr, TRUE);
 }
 } // namespace lift_006A92F0
+
+// [0x006AC2E0] sub_006AC2E0 (89 bytes)
+namespace lift_006AC2E0 {
+// Known callee 0x006AB410: sub_006AB410 (takes this plus two sizes derived from the client rect; semantics not yet recovered)
+extern void ext_006AB410(void* self, LONG width, LONG height);
+
+// USER32 imports (called through IAT slots 0x925584, 0x92566C, 0x925668 in the original)
+extern BOOL LockWindowUpdate(HWND hWndLock);
+extern BOOL GetClientRect(HWND hWnd, RECT* lpRect);
+extern BOOL RedrawWindow(HWND hWnd, const RECT* lprcUpdate, HRGN hrgnUpdate, UINT flags);
+
+// @name Unknown::resizeAndRedrawClient
+// @class Unknown
+// @summary Clears a flag byte, locks window updates, forwards the client rect size to sub_006AB410, then redraws the window if its handle is set.
+// @field Unknown +0x20 HWND hwnd
+// @field Unknown +0x198 uint8_t flag
+void fn_006AC2E0(void* self) {
+    lift_field<uint8_t>(self, 0x198) = 0;
+    LockWindowUpdate(nullptr);
+
+    HWND hwnd = lift_field<HWND>(self, 0x20);
+    RECT rc{};
+    GetClientRect(hwnd, &rc);
+
+    // Original pushes (bottom - top) first and (right - left) last, so the callee sees right-left as its first argument.
+    ext_006AB410(self, rc.right - rc.left, rc.bottom - rc.top);
+
+    hwnd = lift_field<HWND>(self, 0x20);
+    if (hwnd != nullptr) {
+        RedrawWindow(hwnd, nullptr, nullptr, 0x105);
+    }
+}
+} // namespace lift_006AC2E0
