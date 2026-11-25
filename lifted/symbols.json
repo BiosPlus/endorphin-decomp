@@ -34874,6 +34874,12 @@
     "summary": "Stores address of mem_0097CC34 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_630000.cpp"
   },
+  "0x0063E980": {
+    "name": "ConstructFromString",
+    "signature": "void fn_0063E980(void* self, const std::string\u0026 src)",
+    "summary": "Initializes an object's vtable pointer to 0x0097CC3C and copy-constructs a std::string member at +0x04 from the argument.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063E9E0": {
     "name": "Unknown::DestroyStringThenCallback_0063E9E0",
     "class": "Unknown",

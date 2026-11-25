@@ -1,8 +1,10 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_630000.cpp
 #include "lift_compat.h"
 #include <cstring>
+#include <new>
+#include <string>
 
-// [0x00630E60]
+#include <string>
 namespace lift_00630E60 {
 // @name Unknown::NotifyAndReturnSubobjectF8
 // @class Unknown
@@ -359,3 +361,26 @@ uint32_t __thiscall sub_0063FFF0(uint32_t this_ptr, uint32_t other_ptr) {
     return this_ptr;
 }
 } // namespace lift_0063FFF0
+
+// [0x0063E980] sub_0063E980 (82 bytes)
+namespace lift_0063E980 {
+// @name ConstructFromString
+// @summary Initializes an object's vtable pointer to 0x0097CC3C and copy-constructs a std::string member at +0x04 from the argument.
+// @field Object +0x00 uint32_t vtable
+// @field Object +0x04 std::string name
+
+namespace {
+constexpr uint32_t kVtable_0097CC3C = 0x0097CC3C;
+}
+
+void fn_0063E980(void* self, const std::string& src) {
+    // The original calls the base initializer sub_0063E960, which only stores
+    // 0x0097CC34 at +0x00; that value is immediately overwritten with
+    // 0x0097CC3C below, so the base call has no observable effect here.
+    std::memcpy(self, &kVtable_0097CC3C, sizeof(uint32_t));
+
+    // Copy-construct the std::string member at +0x04 in place.
+    ::new (static_cast<void*>(static_cast<unsigned char*>(self) + 0x04))
+        std::string(src);
+}
+} // namespace lift_0063E980

@@ -1,0 +1,27 @@
+{
+  "va": "0x0063E980",
+  "size": 82,
+  "orig_symbol": "sub_0063E980",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "ConstructFromString",
+  "signature": "void fn_0063E980(void* self, const std::string\u0026 src)",
+  "summary": "Initializes an object's vtable pointer to 0x0097CC3C and copy-constructs a std::string member at +0x04 from the argument.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "name"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:02:36Z"
+}
