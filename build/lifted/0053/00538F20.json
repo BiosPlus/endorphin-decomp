@@ -1,0 +1,28 @@
+{
+  "va": "0x00538F20",
+  "size": 115,
+  "orig_symbol": "UtilityGraphics::Arrow::vfunc_22",
+  "src_path": "src/UtilityGraphics/Arrow.cpp",
+  "lifted_path": "lifted/UtilityGraphics/Arrow.cpp",
+  "name": "UtilityGraphics::Arrow::vfunc_22",
+  "class": "UtilityGraphics::Arrow",
+  "signature": "void __thiscall fn_00538F20(void* self, uint32_t arg0)",
+  "summary": "Draws the arrow shaft via Line::vfunc_22 and renders a cone tip at 0.8 * length using gluCylinder.",
+  "fields": [
+    {
+      "class": "UtilityGraphics::Arrow",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    },
+    {
+      "class": "UtilityGraphics::Arrow",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:41:25Z"
+}
