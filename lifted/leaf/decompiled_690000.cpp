@@ -949,3 +949,32 @@ void* __thiscall sub_0069B560(void* self, const void* other) {
     return self;
 }
 } // namespace lift_0069B560
+
+// [0x0069C1C0]
+namespace lift_0069C1C0 {
+// @name sub_0069C1C0
+// @summary Default constructor initializing two std::string members and five 32-bit zero fields
+// @field UnknownClass +0x00 std::string field_0x00
+// @field UnknownClass +0x20 uint32_t field_0x20
+// @field UnknownClass +0x24 uint32_t field_0x24
+// @field UnknownClass +0x28 uint32_t field_0x28
+// @field UnknownClass +0x2C std::string field_0x2C
+// @field UnknownClass +0x48 uint32_t field_0x48
+// @field UnknownClass +0x4C uint32_t field_0x4C
+
+
+extern uint32_t mem_00924FE8;
+extern void __thiscall ext_006290D8(void* self);
+
+void* __thiscall sub_0069C1C0(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    reinterpret_cast<void(__thiscall*)(void*)>(mem_00924FE8)(obj);
+    *reinterpret_cast<uint32_t*>(obj + 0x20) = 0;
+    *reinterpret_cast<uint32_t*>(obj + 0x24) = 0;
+    *reinterpret_cast<uint32_t*>(obj + 0x28) = 0;
+    reinterpret_cast<void(__thiscall*)(void*)>(mem_00924FE8)(obj + 0x2C);
+    *reinterpret_cast<uint32_t*>(obj + 0x48) = 0;
+    *reinterpret_cast<uint32_t*>(obj + 0x4C) = 0;
+    return self;
+}
+} // namespace lift_0069C1C0

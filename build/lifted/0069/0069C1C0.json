@@ -1,0 +1,57 @@
+{
+  "va": "0x0069C1C0",
+  "size": 90,
+  "orig_symbol": "sub_0069C1C0",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "sub_0069C1C0",
+  "signature": "void* __thiscall sub_0069C1C0(void* self)",
+  "summary": "Default constructor initializing two std::string members and five 32-bit zero fields",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x2C",
+      "type": "std::string",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x4C",
+      "type": "uint32_t",
+      "name": "field_0x4C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:24:42Z"
+}
