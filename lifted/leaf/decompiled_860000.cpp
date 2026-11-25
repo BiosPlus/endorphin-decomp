@@ -1078,3 +1078,35 @@ uint32_t sub_0086A240(uint32_t* dst, const uint32_t* src, uint32_t shift, uint32
     return carry;
 }
 } // namespace lift_0086A240
+
+// [0x00860800]
+namespace lift_00860800 {
+// @name configureBroadcastNonBlockingSocket
+// @summary Enable broadcast and non-blocking mode on a socket, closing it on failure.
+
+
+extern uint32_t mem_00BC70C0; // setsockopt
+extern uint32_t mem_00BC7100; // closesocket
+extern uint32_t mem_00BC672C; // ioctlsocket
+extern uint32_t mem_00AB9608;
+extern uint32_t mem_00AB960C;
+
+using FnSetSockOpt = int32_t(__stdcall*)(uint32_t s, int32_t level, int32_t optname, const void* optval, int32_t optlen);
+using FnCloseSocket = int32_t(__stdcall*)(uint32_t s);
+using FnIoctlSocket = int32_t(__stdcall*)(uint32_t s, uint32_t cmd, uint32_t* argp);
+
+uint32_t sub_00860800(uint32_t s) {
+    uint32_t optval = 1;
+    auto setsockopt_fn = reinterpret_cast<FnSetSockOpt>(static_cast<uintptr_t>(mem_00BC70C0));
+    if (setsockopt_fn(s, 0xffff, 0x20, &optval, 4) == -1) {
+        auto closesocket_fn = reinterpret_cast<FnCloseSocket>(static_cast<uintptr_t>(mem_00BC7100));
+        closesocket_fn(s);
+        return 1;
+    }
+
+    auto ioctlsocket_fn = reinterpret_cast<FnIoctlSocket>(static_cast<uintptr_t>(mem_00BC672C));
+    ioctlsocket_fn(s, 0x8004667eu, &mem_00AB9608);
+    setsockopt_fn(s, 0x3e8, 0x4000, &mem_00AB960C, 4);
+    return 0;
+}
+} // namespace lift_00860800
