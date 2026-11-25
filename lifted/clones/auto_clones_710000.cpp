@@ -1181,3 +1181,35 @@ void fn_00714BE0(void) {
     mem_00B5FAE4 = src[1];
 }
 } // namespace lift_00714BE0
+
+// [0x00712C30] sub_00712C30 (74 bytes)
+namespace lift_00712C30 {
+// mem_00925284 is a .rdata u32 holding the address of the 8-byte _HUGE value.
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5F928;
+extern uint32_t mem_00B5F92C;
+extern uint32_t mem_00B5F930;
+extern uint32_t mem_00B5F934;
+extern uint32_t mem_00B5F938;
+extern uint32_t mem_00B5F93C;
+extern uint32_t mem_00B5F940;
+extern uint32_t mem_00B5F944;
+
+// @name CopyHugeToGlobals_00712C30
+// @summary Copies the 8-byte value pointed to by _HUGE into four consecutive 8-byte globals (dword pairs).
+// @field  ...
+void fn_00712C30(void) {
+    // Re-reads the source pointer and value for each copy, matching the original code.
+    for (int i = 0; i < 4; ++i) {
+        const uintptr_t src_addr = static_cast<uintptr_t>(mem_00925284);
+        const uint32_t lo = lift_field<uint32_t>(reinterpret_cast<const void*>(src_addr), 0);
+        const uint32_t hi = lift_field<uint32_t>(reinterpret_cast<const void*>(src_addr), 4);
+        switch (i) {
+            case 0: mem_00B5F928 = lo; mem_00B5F92C = hi; break;
+            case 1: mem_00B5F930 = lo; mem_00B5F934 = hi; break;
+            case 2: mem_00B5F938 = lo; mem_00B5F93C = hi; break;
+            default: mem_00B5F940 = lo; mem_00B5F944 = hi; break;
+        }
+    }
+}
+} // namespace lift_00712C30

@@ -1,0 +1,13 @@
+{
+  "va": "0x00712C30",
+  "size": 74,
+  "orig_symbol": "sub_00712C30",
+  "src_path": "src/clones/auto_clones_710000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_710000.cpp",
+  "name": "CopyHugeToGlobals_00712C30",
+  "signature": "void fn_00712C30(void)",
+  "summary": "Copies the 8-byte value pointed to by _HUGE into four consecutive 8-byte globals (dword pairs).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:34:54Z"
+}
