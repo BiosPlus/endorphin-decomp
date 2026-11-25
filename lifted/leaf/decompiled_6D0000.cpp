@@ -20,6 +20,7 @@ extern "C" void* __fastcall fn_006D7B30(void* self, int edx_unused, unsigned int
     return self;
 }
 #include <cstdint>
+#include <cmath>
 
 // [0x006D7D90] sub_006D7D90 (32 bytes)
 // @name sub_006D7D90
@@ -1535,3 +1536,30 @@ extern uint32_t __thiscall fn_006D0370(void* self, uint8_t flag) {
     return 0;
 }
 } // namespace lift_006D0370
+
+// [0x006D2940]
+namespace lift_006D2940 {
+// @name Vec3d::equalsEpsilon
+// @class Vec3d
+// @summary Checks whether two 3D double-precision vectors are component-wise equal within 1e-06.
+// @field Vec3d +0x00 double x
+// @field Vec3d +0x08 double y
+// @field Vec3d +0x10 double z
+
+
+extern const double mem_00993810;
+
+bool __thiscall fn_006D2940(const double* self, const double* other) {
+    const double eps = mem_00993810;
+    if (std::fabs(self[0] - other[0]) > eps) {
+        return false;
+    }
+    if (std::fabs(self[1] - other[1]) > eps) {
+        return false;
+    }
+    if (std::fabs(self[2] - other[2]) > eps) {
+        return false;
+    }
+    return true;
+}
+} // namespace lift_006D2940
