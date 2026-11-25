@@ -10349,3 +10349,29 @@ void fn_004DF840(void* self) {
     lift_field<DWORD>(self, 0x04) = 0x00AE6444u;
 }
 } // namespace lift_004DF840
+
+// [0x004DF460] ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, float, {public: void __thiscall NMData::AnimationEventData::setStrength(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_004DF460 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00AE6440;
+extern int mem_00AE643C;
+
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData,float,...>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, float, {public: void __thiscall NMData::AnimationEventData::setStrength(float), 0}>
+// @summary One-time lazy init of the static holder at 0xAE643C (guard bit 0 of 0xAE6440); stores its address into the stack-argument object at +4.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void __stdcall fn_004DF460(void* self) {
+    // One-time initialization guard (bit 0 of mem_00AE6440).
+    if ((mem_00AE6440 & 1) == 0) {
+        mem_00AE6440 |= 1;
+        // Initialize the static holder (ECX = &mem_00AE643C, stack arg = 0).
+        ext_0067A670(&mem_00AE643C, 0);
+        // Install vtable pointer 0x0094A46C into the holder.
+        mem_00AE643C = 0x0094A46C;
+    }
+    // Store holder address into the argument object at +4.
+    *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x04) =
+        static_cast<void*>(&mem_00AE643C);
+}
+} // namespace lift_004DF460

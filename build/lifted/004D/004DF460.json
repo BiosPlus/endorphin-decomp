@@ -1,0 +1,22 @@
+{
+  "va": "0x004DF460",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, float, {public: void __thiscall NMData::AnimationEventData::setStrength(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData,float,...\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, float, {public: void __thiscall NMData::AnimationEventData::setStrength(float), 0}\u003e",
+  "signature": "void __stdcall fn_004DF460(void* self)",
+  "summary": "One-time lazy init of the static holder at 0xAE643C (guard bit 0 of 0xAE6440); stores its address into the stack-argument object at +4.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:36:02Z"
+}

@@ -16316,6 +16316,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004DF460": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData,float,...\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, float, {public: void __thiscall NMData::AnimationEventData::setStrength(float), 0}\u003e",
+    "signature": "void __stdcall fn_004DF460(void* self)",
+    "summary": "One-time lazy init of the static holder at 0xAE643C (guard bit 0 of 0xAE6440); stores its address into the stack-argument object at +4.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004DF4E0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, 0\u003e",
