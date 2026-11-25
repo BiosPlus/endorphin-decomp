@@ -1,0 +1,13 @@
+{
+  "va": "0x004A59A0",
+  "size": 91,
+  "orig_symbol": "sub_004A59A0",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "allocate_u32_array",
+  "signature": "void* fn_004A59A0(uint32_t count)",
+  "summary": "Allocates an array of 4-byte elements, throwing std::bad_alloc on overflow.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:30:24Z"
+}
