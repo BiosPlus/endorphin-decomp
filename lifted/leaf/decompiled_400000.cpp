@@ -1751,3 +1751,37 @@ void* fn_00403560(void* self, const void* msg) {
     return self;
 }
 } // namespace lift_00403560
+
+// [0x00404C60] sub_00404C60 (105 bytes)
+namespace lift_00404C60 {
+// Import thunks for MSVCP80 std::basic_string<char> constructors (IAT slots 0x924FE4 / 0x924FE8).
+extern void ext_string_ctor_cstr(void* self, const char* s);  // basic_string(const char*) via mem_00924FE4
+extern void ext_string_ctor_default(void* self);              // basic_string()          via mem_00924FE8
+
+// Empty C string in .rdata.
+extern const char mem_00928B5D[];
+
+// @name sub_00404C60
+// @class <ClassName> (optional)
+// @summary Constructs an object in place: stores its argument at +0x00, then builds three std::string members.
+// @field <ClassName> +0x00 uint32_t field_0x00
+// @field <ClassName> +0x04 std::string field_0x04
+// @field <ClassName> +0x20 std::string field_0x20
+// @field <ClassName> +0x3C std::string field_0x3c
+void* fn_00404C60(void* self, uint32_t arg) {
+    // Stores the first argument as the leading 32-bit field.
+    lift_field<uint32_t>(self, 0x00) = arg;
+
+    // Member string at +0x04 is constructed from "".
+    ext_string_ctor_cstr(&lift_field<uint8_t>(self, 0x04), mem_00928B5D);
+
+    // Member string at +0x20 is constructed from "".
+    ext_string_ctor_cstr(&lift_field<uint8_t>(self, 0x20), mem_00928B5D);
+
+    // Member string at +0x3C is default-constructed.
+    ext_string_ctor_default(&lift_field<uint8_t>(self, 0x3C));
+
+    // Original returns `this` in EAX (thiscall, ret 4).
+    return self;
+}
+} // namespace lift_00404C60

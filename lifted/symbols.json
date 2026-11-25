@@ -531,6 +531,13 @@
     "summary": "Pure jump thunk forwarding to GetConstant_006A5ED2.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00404C60": {
+    "name": "sub_00404C60",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void* fn_00404C60(void* self, uint32_t arg)",
+    "summary": "Constructs an object in place: stores its argument at +0x00, then builds three std::string members.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00404CD0": {
     "name": "sub_00404CD0",
     "signature": "void __thiscall sub_00404CD0(void* self)",

@@ -1,0 +1,40 @@
+{
+  "va": "0x00404C60",
+  "size": 105,
+  "orig_symbol": "sub_00404C60",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "sub_00404C60",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "void* fn_00404C60(void* self, uint32_t arg)",
+  "summary": "Constructs an object in place: stores its argument at +0x00, then builds three std::string members.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x20",
+      "type": "std::string",
+      "name": "field_0x20"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x3C",
+      "type": "std::string",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:50:05Z"
+}
