@@ -1976,3 +1976,24 @@ extern uint32_t __thiscall fn_006CA520(void* self) {
     return ext_006D0370(self, 1);
 }
 } // namespace lift_006CA520
+
+// [0x006CA540] sub_006CA540 (48 bytes)
+namespace lift_006CA540 {
+// Known callee 0x006D0370: sub_006D0370 (Sets enabled state at +0x1C and, when enabling with positive count at +0x64, invokes callbacks in +0x78 with +0x90 args and calls sub_006D03D0.)
+extern uint32_t ext_006D0370(void* self, uint8_t flag);
+
+// @name Unknown::setValueAndEnable
+// @class Unknown
+// @summary Resets two range fields to sentinel values, bumps the counter at +0x18, stores the stack argument at +0x24, then calls ext_006D0370 with flag 1 and returns its result.
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x24 uint32_t field_0x24
+// @field Unknown +0x48 int32_t field_0x48
+// @field Unknown +0x4C int32_t field_0x4C
+extern uint32_t fn_006CA540(void* self, uint32_t value) {
+    lift_field<int32_t>(self, 0x48) = -1;
+    lift_field<int32_t>(self, 0x4C) = INT32_MAX;
+    lift_field<uint32_t>(self, 0x18) += 1;
+    lift_field<uint32_t>(self, 0x24) = value;
+    return ext_006D0370(self, 1);
+}
+} // namespace lift_006CA540
