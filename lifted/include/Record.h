@@ -9,7 +9,7 @@
 namespace lifted_layout {
 struct Record_Fields {
     // +0x0   int32_t                  field_0x00  (evidence: 0x0074F7A0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   std::string              field_0x00  (evidence: 0x00621040) // CONFLICT: multiple definitions at +0x0
+    // +0x0   std::string              field_0x00  (evidence: 0x00621040, 0x00622B40) // CONFLICT: multiple definitions at +0x0
     // +0x0   std::uint32_t            field_0x00  (evidence: 0x00420070, 0x00427480) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 field_0x00  (evidence: 0x00492C60) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint16_t                 tag  (evidence: 0x00864F30, 0x0086EFD0) // CONFLICT: multiple definitions at +0x0
@@ -30,11 +30,11 @@ struct Record_Fields {
     // +0x14  float                    field_0x14  (evidence: 0x00492C60)
     // +0x18  float                    field_0x18  (evidence: 0x00492C60)
     // +0x1C  float                    field_0x1c  (evidence: 0x00492C60) // CONFLICT: multiple definitions at +0x1C
-    // +0x1C  std::string              field_0x1c  (evidence: 0x00621040) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  std::string              field_0x1c  (evidence: 0x00621040, 0x00622B40) // CONFLICT: multiple definitions at +0x1C
     // +0x20  float                    field_0x20  (evidence: 0x00508BC0, 0x00509C10, 0x0050C4D0) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint8_t                  field_0x20  (evidence: 0x00492C60) // CONFLICT: multiple definitions at +0x20
     // +0x21  uint8_t                  field_0x21  (evidence: 0x00492C60)
-    // +0x38  double                   field_0x38  (evidence: 0x00621040)
-    // +0x40  double                   field_0x40  (evidence: 0x00621040)
+    // +0x38  double                   field_0x38  (evidence: 0x00621040, 0x00622B40)
+    // +0x40  double                   field_0x40  (evidence: 0x00621040, 0x00622B40)
 };
 } // namespace lifted_layout

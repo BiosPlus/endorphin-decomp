@@ -8,7 +8,7 @@
 // Recovered field layout for StringPairRecord:
 namespace lifted_layout {
 struct StringPairRecord_Fields {
-    // +0x0   std::string              field_0x00  (evidence: 0x0057BBE0, 0x0062B8B0)
-    // +0x1C  std::string              field_0x1C  (evidence: 0x0057BBE0, 0x0062B8B0)
+    // +0x0   std::string              field_0x00  (evidence: 0x0057BBE0, 0x00622B40, 0x0062B8B0)
+    // +0x1C  std::string              field_0x1C  (evidence: 0x0057BBE0, 0x00622B40, 0x0062B8B0)
 };
 } // namespace lifted_layout

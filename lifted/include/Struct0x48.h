@@ -8,9 +8,9 @@
 // Recovered field layout for Struct0x48:
 namespace lifted_layout {
 struct Struct0x48_Fields {
-    // +0x0   std::string              field_0x00  (evidence: 0x006210E0)
-    // +0x1C  std::string              field_0x1c  (evidence: 0x006210E0)
-    // +0x38  double                   field_0x38  (evidence: 0x006210E0)
-    // +0x40  double                   field_0x40  (evidence: 0x006210E0)
+    // +0x0   std::string              field_0x00  (evidence: 0x006210E0, 0x00622B40)
+    // +0x1C  std::string              field_0x1c  (evidence: 0x006210E0, 0x00622B40)
+    // +0x38  double                   field_0x38  (evidence: 0x006210E0, 0x00622B40)
+    // +0x40  double                   field_0x40  (evidence: 0x006210E0, 0x00622B40)
 };
 } // namespace lifted_layout

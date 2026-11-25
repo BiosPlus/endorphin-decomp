@@ -4,34 +4,52 @@
   "orig_symbol": "sub_00622B40",
   "src_path": "src/leaf/decompiled_620000.cpp",
   "lifted_path": "lifted/leaf/decompiled_620000.cpp",
-  "name": "Unknown::initFromStringAndFloats_00622B40",
-  "class": "Unknown",
-  "signature": "void* fn_00622B40(void* self, uint32_t a1, uint32_t a2, uint32_t a3, const void* a4, uint8_t a5)",
-  "summary": "Stores two dwords, copy-constructs an embedded string plus four floats from a source record, stores a flag byte, clears the following byte, and returns this.",
+  "name": "ComputeFloatIntoField30",
+  "class": "\u003cunknown\u003e (owning class not yet identified)",
+  "signature": "extern void __fastcall fn_00629DF0(void* self)",
+  "summary": "Fetches an int32 handle from ext_00594000, resolves it through ext_00594010, and stores the float result at this+0x30.",
   "fields": [
     {
-      "class": "Unknown",
-      "offset": "+0x0",
-      "type": "uint32_t",
-      "name": "field_0x00"
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "field_0x30"
     },
     {
       "class": "Unknown",
-      "offset": "+0x4",
-      "type": "uint32_t",
-      "name": "field_0x04"
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
     },
     {
       "class": "Unknown",
-      "offset": "+0x8",
-      "type": "uint32_t",
-      "name": "field_0x08"
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
     },
     {
-      "class": "Unknown",
-      "offset": "+0xC",
+      "class": "Self",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x54",
       "type": "uint8_t",
-      "name": "field_0x0C"
+      "name": "field_0x54"
+    },
+    {
+      "class": "self",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    },
+    {
+      "class": "self",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "field_0x30"
     },
     {
       "class": "Unknown",
@@ -52,10 +70,598 @@
       "name": "field_0x30"
     },
     {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x60",
+      "type": "uint32_t[16]",
+      "name": "field_0x60"
+    },
+    {
+      "class": "ResourceHolder",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "ResourceHolder",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "ResourceHolder",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "ResourceHolder",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "AllocAndInitRecord",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "AllocAndInitRecord",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "AllocAndInitRecord",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "AllocAndInitRecord",
+      "offset": "+0x14",
+      "type": "uint8_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "AllocAndInitRecord",
+      "offset": "+0x15",
+      "type": "uint8_t",
+      "name": "field_0x15"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "uint32_t",
+      "name": "field_0x38"
+    },
+    {
+      "class": "RBTree",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "RBTreeNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "left"
+    },
+    {
+      "class": "RBTreeNode",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "parent"
+    },
+    {
+      "class": "RBTreeNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "right"
+    },
+    {
+      "class": "RBTreeNode",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "key0"
+    },
+    {
+      "class": "RBTreeNode",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "key1"
+    },
+    {
+      "class": "RBTreeNode",
+      "offset": "+0x19",
+      "type": "uint8_t",
+      "name": "isNil"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "StringPairRecord",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "StringPairRecord",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Object",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
       "class": "Unknown",
       "offset": "+0x34",
       "type": "float",
       "name": "field_0x34"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "field_0x48"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "float",
+      "name": "field_0x4c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "float",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "float",
+      "name": "field_0x78"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x7C",
+      "type": "float",
+      "name": "field_0x7c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "float",
+      "name": "field_0x80"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "float",
+      "name": "field_0x84"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "float",
+      "name": "field_0x88"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8C",
+      "type": "float",
+      "name": "field_0x8c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "uint8_t",
+      "name": "flag"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "value"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "Struct0x48",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Struct0x48",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Struct0x48",
+      "offset": "+0x38",
+      "type": "double",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Struct0x48",
+      "offset": "+0x40",
+      "type": "double",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Record20",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Record20",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Record20",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Record20",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Record20",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    },
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0xC",
+      "type": "DWORD",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x10",
+      "type": "DWORD",
+      "name": "field_0x10"
+    },
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x14",
+      "type": "DWORD",
+      "name": "field_0x14"
+    },
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x18",
+      "type": "BYTE",
+      "name": "field_0x18"
+    },
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x19",
+      "type": "BYTE",
+      "name": "field_0x19"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "float",
+      "name": "field_0x4C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "uint32_t",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "double",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "double",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x38",
+      "type": "double",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x40",
+      "type": "double",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "void**",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "void**",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "DWORD",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Record20",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Record20",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Record20",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Record20",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
     },
     {
       "class": "Unknown",
@@ -72,5 +678,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T02:07:09Z"
+  "lifted_at": "2026-11-25T02:07:15Z"
 }

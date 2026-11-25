@@ -33153,10 +33153,10 @@
     "lifted_path": "lifted/NMData/HingeCalibrationVariables.cpp"
   },
   "0x00622B40": {
-    "name": "Unknown::initFromStringAndFloats_00622B40",
-    "class": "Unknown",
-    "signature": "void* fn_00622B40(void* self, uint32_t a1, uint32_t a2, uint32_t a3, const void* a4, uint8_t a5)",
-    "summary": "Stores two dwords, copy-constructs an embedded string plus four floats from a source record, stores a flag byte, clears the following byte, and returns this.",
+    "name": "ComputeFloatIntoField30",
+    "class": "\u003cunknown\u003e (owning class not yet identified)",
+    "signature": "extern void __fastcall fn_00629DF0(void* self)",
+    "summary": "Fetches an int32 handle from ext_00594000, resolves it through ext_00594010, and stores the float result at this+0x30.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x00622C00": {

@@ -8,6 +8,6 @@
 // Recovered field layout for RBTree:
 namespace lifted_layout {
 struct RBTree_Fields {
-    // +0x4   void*                    head  (evidence: 0x00624F10)
+    // +0x4   void*                    head  (evidence: 0x00622B40, 0x00624F10)
 };
 } // namespace lifted_layout
