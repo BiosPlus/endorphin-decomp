@@ -1,0 +1,14 @@
+{
+  "va": "0x005C3180",
+  "size": 34,
+  "orig_symbol": "NMData::CollisionModelData::vfunc_62",
+  "src_path": "src/NMData/CollisionModelData.cpp",
+  "lifted_path": "lifted/NMData/CollisionModelData.cpp",
+  "name": "NMData::CollisionModelData::vfunc_62",
+  "class": "NMData::CollisionModelData",
+  "signature": "void* __stdcall fn_005C3180(void* self)",
+  "summary": "Constructs a std::string in the caller-supplied buffer from a literal and returns the buffer pointer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:47:55Z"
+}

@@ -268,3 +268,21 @@ void __thiscall fn_005C38B0(void* self, uint32_t arg1) {
     std::memcpy(dst, src, 64);
 }
 } // namespace lift_005C38B0
+
+// [0x005C3180] NMData::CollisionModelData::vfunc_62 (34 bytes)
+namespace lift_005C3180 {
+// IAT slot the original called for the MSVCP80 std::basic_string ctor; the
+// portable version constructs the std::string directly, so this is unused.
+extern int mem_00924FE0;
+// C string literal pushed at 0x005C3186 (argument to the string ctor).
+extern const char mem_00B447F4[];
+
+// @name NMData::CollisionModelData::vfunc_62
+// @class NMData::CollisionModelData
+// @summary Constructs a std::string in the caller-supplied buffer from a literal and returns the buffer pointer.
+void* __stdcall fn_005C3180(void* self) {
+    (void)&mem_00924FE0;  // keep the original IAT reference visible; no ABI call needed
+    new (self) std::string(mem_00B447F4);
+    return self;
+}
+} // namespace lift_005C3180
