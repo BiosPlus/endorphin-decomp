@@ -987,3 +987,34 @@ void* fn_005B6AF0(void* self) {
 }
 } // namespace lift_005B6A80
 } // namespace lift_005B6AF0
+
+// [0x005B1870]
+namespace lift_005B1870 {
+// Calls into other lifted/imported functions.
+extern void __fastcall ext_0065F440(void* self);           // base-class destructor, re-stores base vtable at +0x00
+extern void __thiscall ext_00628FF0(void* self);           // MSVCP80 std::string dtor (via pointer at mem_00924FF4)
+extern void __thiscall ext_vcall_slot0(void* obj, int flags); // virtual slot 0 (deleting dtor) of object at +0x0C
+
+// Constant data.
+extern const uint32_t mem_00924FF4;                            // .rdata: 0x00628FF0 (string dtor pointer)
+
+// @name Unknown::DestructWithStringAndOwnedObject
+// @class Unknown
+// @summary Destructor: sets vtable, destroys std::string at +0x28, deletes owned object at +0x0C via its virtual slot 0, then runs base destructor sub_0065F440.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x0C void* owned_object
+// @field Unknown +0x28 std::string name
+extern void __fastcall fn_005B1870(void* self) {
+    // MSVC EH frame setup/teardown (fs:[0] SEH chain, unwind states) is omitted.
+    lift_field<uint32_t>(self, 0x00) = 0x0095f88cu;
+
+    ext_00628FF0(static_cast<uint8_t*>(self) + 0x28);
+
+    void* owned = reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x0C)));
+    if (owned != nullptr) {
+        ext_vcall_slot0(owned, 1);
+    }
+
+    ext_0065F440(self);
+}
+} // namespace lift_005B1870
