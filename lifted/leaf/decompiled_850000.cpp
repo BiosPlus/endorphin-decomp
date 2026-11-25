@@ -1064,3 +1064,29 @@ int32_t fn_0085A580(void* self) {
     return result;
 }
 } // namespace lift_0085A580
+
+// [0x008522E0] sub_008522E0 (91 bytes)
+namespace lift_008522E0 {
+// Callees. ext_008179EA / ext_008179F2 / ext_008203F7 / ext_0083CAAF are only
+// reached through `jb` after an `and` (CF cleared) or `clc`, so they are never taken.
+extern void __cdecl ext_008179EA(void);
+extern void __cdecl ext_008179F2(void);
+extern void __cdecl ext_008203F7(void);
+extern void __cdecl ext_0083CAAF(void);
+// Tail-jump target; the packed value is passed in edi. Return type is assumed.
+extern uint32_t __cdecl ext_00852345(uint32_t packed);
+
+// @name sub_008522E0
+// @summary Packs four byte-sized caller stack locals (ebp-0x19..ebp-0x1c) into a big-endian uint32 and tail-jumps to ext_00852345.
+extern uint32_t __cdecl fn_008522E0(uint8_t mem_ebp_m19, uint8_t mem_ebp_m1a,
+                                        uint8_t mem_ebp_m1b, uint8_t mem_ebp_m1c) {
+    // Original sequence: edi = byte[ebp-0x19]; edi = (edi << 8) | byte[ebp-0x1a];
+    // edi = (edi << 8) | byte[ebp-0x1b]; edi = (edi << 8) | byte[ebp-0x1c].
+    // Each byte is masked with 0xff first. Overflow/carry paths are unreachable.
+    uint32_t packed = static_cast<uint32_t>(mem_ebp_m19) & 0xffu;
+    packed = (packed << 8) + (static_cast<uint32_t>(mem_ebp_m1a) & 0xffu);
+    packed = (packed << 8) + (static_cast<uint32_t>(mem_ebp_m1b) & 0xffu);
+    packed = (packed << 8) + (static_cast<uint32_t>(mem_ebp_m1c) & 0xffu);
+    return ext_00852345(packed);
+}
+} // namespace lift_008522E0

@@ -64258,6 +64258,12 @@
     "summary": "36-byte read-only lookup table (not executable code): 22 index/value bytes followed by 9 0x90 padding bytes.",
     "lifted_path": "lifted/leaf/decompiled_810000.cpp"
   },
+  "0x008522E0": {
+    "name": "sub_008522E0",
+    "signature": "extern \"C\" uint32_t __cdecl fn_008522E0(uint8_t mem_ebp_m19, uint8_t mem_ebp_m1a, uint8_t mem_ebp_m1b, uint8_t mem_ebp_m1c)",
+    "summary": "Packs four byte-sized caller stack locals (ebp-0x19..ebp-0x1c) into a big-endian uint32 and tail-jumps to ext_00852345.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x008523A4": {
     "name": "adjustStackAndTailCall_0084A145",
     "signature": "void sub_008523A4()",
