@@ -344,3 +344,26 @@ bool fn_006968D0(void* stream) {
     }
 }
 } // namespace lift_006968D0
+
+// [0x006999B0] sub_006999B0 (60 bytes)
+namespace lift_006999B0 {
+extern void ext_006A6C87(DWORD arg);
+extern int mem_00B5C9A4;
+extern int mem_00B599BC;
+extern int mem_00B5C99C;
+extern int mem_00B5C9A0;
+
+// @name initOnceGetSlotAddress
+// @summary One-time init guard: if bit 0 of the flag byte at mem_00B5C9A4 is clear, sets it, zeroes mem_00B5C99C, copies mem_00B599BC into mem_00B5C9A0, calls ext_006A6C87(0x921FE0); always returns &mem_00B5C99C.
+void* fn_006999B0(void* self) {
+    (void)self;
+    if ((static_cast<unsigned char>(mem_00B5C9A4) & 1u) == 0) {
+        mem_00B5C9A4 |= 1;
+        int value = mem_00B599BC;
+        mem_00B5C99C = 0;
+        mem_00B5C9A0 = value;
+        ext_006A6C87(0x921FE0u);
+    }
+    return &mem_00B5C99C;
+}
+} // namespace lift_006999B0

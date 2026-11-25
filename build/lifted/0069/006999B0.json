@@ -1,0 +1,13 @@
+{
+  "va": "0x006999B0",
+  "size": 60,
+  "orig_symbol": "sub_006999B0",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "initOnceGetSlotAddress",
+  "signature": "void* fn_006999B0(void* self)",
+  "summary": "One-time init guard: if bit 0 of the flag byte at mem_00B5C9A4 is clear, sets it, zeroes mem_00B5C99C, copies mem_00B599BC into mem_00B5C9A0, calls ext_006A6C87(0x921FE0); always returns \u0026mem_00B5C99C.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:55:18Z"
+}

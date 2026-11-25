@@ -37920,6 +37920,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BED0 (NMData::RealChannel::vfunc_9).",
     "lifted_path": "lifted/leaf/tiny_690000.cpp"
   },
+  "0x006999B0": {
+    "name": "initOnceGetSlotAddress",
+    "signature": "void* fn_006999B0(void* self)",
+    "summary": "One-time init guard: if bit 0 of the flag byte at mem_00B5C9A4 is clear, sets it, zeroes mem_00B5C99C, copies mem_00B599BC into mem_00B5C9A0, calls ext_006A6C87(0x921FE0); always returns \u0026mem_00B5C99C.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x0069A0F0": {
     "name": "sub_0069A0F0",
     "signature": "__stdcall std::uint8_t* fn_0069A0F0(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2)",
