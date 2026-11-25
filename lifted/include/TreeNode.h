@@ -11,19 +11,24 @@ struct TreeNode_Fields {
     // +0x0   uint32_t                 field_0x00  (evidence: 0x007D4AA0) // CONFLICT: multiple definitions at +0x0
     // +0x0   TreeNode*                left  (evidence: 0x00641760) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 left  (evidence: 0x0046A510, 0x00493330, 0x005DF270, 0x005ED330, 0x005FD330, 0x005FF000, 0x007D48C0, 0x007D48F0, 0x007DEC80) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    left  (evidence: 0x00472730) // CONFLICT: multiple definitions at +0x0
     // +0x4   uint32_t                 field_0x04  (evidence: 0x007D4AA0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 parent  (evidence: 0x005FF000) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    parent_or_root  (evidence: 0x00472730) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 right  (evidence: 0x007D48C0, 0x007D48F0, 0x007DEC80) // CONFLICT: multiple definitions at +0x4
     // +0x8   uint32_t                 field_0x08  (evidence: 0x007D4AA0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 parent  (evidence: 0x007D48C0, 0x007D48F0, 0x007DEC80) // CONFLICT: multiple definitions at +0x8
     // +0x8   TreeNode*                right  (evidence: 0x00641760) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 right  (evidence: 0x0043CB50, 0x0046A510, 0x00493330, 0x005DF270, 0x005ED330, 0x005FD330, 0x005FF000) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    right  (evidence: 0x00472730) // CONFLICT: multiple definitions at +0x8
+    // +0xC   std::string              key  (evidence: 0x00472730)
     // +0x10  std::string              key  (evidence: 0x00641760)
     // +0x11  uint8_t                  is_nil  (evidence: 0x0046A510)
     // +0x15  uint8_t                  isNil  (evidence: 0x0043CB50, 0x005DF270)
     // +0x19  uint8_t                  isNil  (evidence: 0x005FD330)
     // +0x21  uint8_t                  is_nil  (evidence: 0x00493330)
     // +0x2D  uint8_t                  isNil  (evidence: 0x00641760)
+    // +0x39  uint8_t                  is_nil  (evidence: 0x00472730)
     // +0x51  uint8_t                  isNil  (evidence: 0x005ED330)
 };
 } // namespace lifted_layout

@@ -7279,6 +7279,13 @@
     "summary": "Dereferences RuntimeEngine*, calls getNumTicksToRun() and returns as double, or throws on null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00472730": {
+    "name": "Tree::lowerBound",
+    "class": "Tree",
+    "signature": "void* __thiscall fn_00472730(void* self, const void* key)",
+    "summary": "MSVC-style std::_Tree lower_bound: walks from the root to the first node whose key is not less than the argument; returns the head (end) sentinel if none.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00472780": {
     "name": "TreeMap::lowerBound",
     "class": "TreeMap",

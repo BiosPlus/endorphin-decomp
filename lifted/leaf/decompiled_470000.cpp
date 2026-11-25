@@ -222,3 +222,43 @@ void* fn_00472780(void* self, const void* key) {
     return result;
 }
 } // namespace lift_00472780
+
+// [0x00472730] sub_00472730 (70 bytes)
+namespace lift_00472730 {
+// Imported string less-than comparator (function address stored in .rdata).
+extern uint32_t mem_00924EF4;
+
+using KeyLess = bool (__cdecl*)(const void* a, const void* b);
+
+// @name Tree::lowerBound
+// @class Tree
+// @summary MSVC-style std::_Tree lower_bound: walks from the root to the first node whose key is not less than the argument; returns the head (end) sentinel if none.
+// @field Tree +0x04 void* head
+// @field TreeNode +0x00 void* left
+// @field TreeNode +0x04 void* parent_or_root
+// @field TreeNode +0x08 void* right
+// @field TreeNode +0x0C std::string key
+// @field TreeNode +0x39 uint8_t is_nil
+void* __thiscall fn_00472730(void* self, const void* key) {
+    void* head = lift_field<void*>(self, 0x4);
+    void* node = lift_field<void*>(head, 0x4);  // root
+    void* result = head;                         // end() if nothing qualifies
+
+    if (lift_field<uint8_t>(node, 0x39) != 0) {
+        return head;
+    }
+
+    KeyLess less = reinterpret_cast<KeyLess>(static_cast<uintptr_t>(mem_00924EF4));
+    while (lift_field<uint8_t>(node, 0x39) == 0) {
+        if (less(static_cast<char*>(node) + 0xC, key)) {
+            // node.key < key: answer lies in the right subtree.
+            node = lift_field<void*>(node, 0x8);
+        } else {
+            // node.key >= key: candidate; keep searching left.
+            result = node;
+            node = lift_field<void*>(node, 0x0);
+        }
+    }
+    return result;
+}
+} // namespace lift_00472730
