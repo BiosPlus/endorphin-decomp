@@ -978,6 +978,7 @@ struct Unknown_Fields {
     // +0x1CC void*                    field_0x1CC  (evidence: 0x007B89BC, 0x007BFCF0) // CONFLICT: multiple definitions at +0x1CC
     // +0x1CC uint32_t                 field_0x1cc  (evidence: 0x007B89BC, 0x007BE010) // CONFLICT: multiple definitions at +0x1CC
     // +0x1CC void*                    field_0x1cc  (evidence: 0x007B89BC, 0x007BEDA0, 0x007BFC90, 0x007BFD40) // CONFLICT: multiple definitions at +0x1CC
+    // +0x1CC ptr field_0x1cc (sub-object: +0x08 int chunkSize, +0x0c chunk callback, +0x18 begin hook)  (evidence: 0x007BFA10) // CONFLICT: multiple definitions at +0x1CC
     // +0x1D0 int32_t                  field_0x1D0  (evidence: 0x007B89BC, 0x007BF4A0) // CONFLICT: multiple definitions at +0x1D0
     // +0x1D0 void*                    field_1D0  (evidence: 0x005B0E60, 0x005B6BC0) // CONFLICT: multiple definitions at +0x1D0
     // +0x1D4 LONG field_0x1D4 (read through the pointer stored at +0xB4)  (evidence: 0x0053F9D0) // CONFLICT: multiple definitions at +0x1D4

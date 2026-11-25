@@ -1,0 +1,22 @@
+{
+  "va": "0x007BFA10",
+  "size": 84,
+  "orig_symbol": "sub_007BFA10",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "Unknown::forEachChunk_007BFA10",
+  "class": "Unknown",
+  "signature": "int fn_007BFA10(void* a1, uint8_t* a2, int a3, void* a4, void* a5)",
+  "summary": "Calls the sub-object's begin hook; if it succeeds, feeds `count` bytes to its chunk callback in steps of the chunk size.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1CC",
+      "type": "ptr field_0x1cc (sub-object: +0x08 int chunkSize, +0x0c chunk callback, +0x18 begin",
+      "name": "hook)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:07:20Z"
+}

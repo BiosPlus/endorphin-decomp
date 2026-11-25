@@ -60124,6 +60124,13 @@
     "summary": "Calls vtable+0x10(self, a2, a3, a4); if non-zero, calls vtable+0x0C(self, a2, a3) and returns 1, else 0.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BFA10": {
+    "name": "Unknown::forEachChunk_007BFA10",
+    "class": "Unknown",
+    "signature": "int fn_007BFA10(void* a1, uint8_t* a2, int a3, void* a4, void* a5)",
+    "summary": "Calls the sub-object's begin hook; if it succeeds, feeds `count` bytes to its chunk callback in steps of the chunk size.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BFC60": {
     "name": "sub_007BFC60",
     "signature": "uint32_t sub_007BFC60(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",

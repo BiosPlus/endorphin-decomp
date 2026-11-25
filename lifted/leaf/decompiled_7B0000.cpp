@@ -1188,3 +1188,35 @@ void fn_007B1E20(void* self, DWORD mode, DWORD flag) {
     }
 }
 } // namespace lift_007B1E20
+
+// [0x007BFA10] sub_007BFA10 (84 bytes)
+namespace lift_007BFA10 {
+// @name Unknown::forEachChunk_007BFA10
+// @class Unknown
+// @summary Calls the sub-object's begin hook; if it succeeds, feeds `count` bytes to its chunk callback in steps of the chunk size.
+// @field Unknown +0x1cc ptr field_0x1cc (sub-object: +0x08 int chunkSize, +0x0c chunk callback, +0x18 begin hook)
+int fn_007BFA10(void* a1, uint8_t* a2, int a3, void* a4, void* a5) {
+    uint8_t* obj = static_cast<uint8_t*>(a1);
+    uint8_t* sub = *reinterpret_cast<uint8_t**>(obj + 0x1cc);
+
+    using BeginFn = int(__cdecl*)(void*, uint8_t*, int, void*);
+    using ChunkFn = int(__cdecl*)(void*, uint8_t*, int);
+
+    BeginFn begin = *reinterpret_cast<BeginFn*>(sub + 0x18);
+    if (begin(a1, a2, a3, a4) == 0) {
+        return 0;
+    }
+
+    int chunk = *reinterpret_cast<int*>(sub + 0x08);
+    ChunkFn onChunk = *reinterpret_cast<ChunkFn*>(sub + 0x0c);
+
+    int remaining = a3;
+    uint8_t* cursor = a2;
+    while (remaining > 0) {
+        onChunk(a5, cursor, chunk);
+        remaining -= chunk;
+        cursor += chunk;
+    }
+    return 1;
+}
+} // namespace lift_007BFA10
