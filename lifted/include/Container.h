@@ -15,5 +15,7 @@ struct Container_Fields {
     // +0x28  uint32_t*                begin  (evidence: 0x00503BC0, 0x00508BC0, 0x0050C4D0)
     // +0x2C  uint32_t*                end  (evidence: 0x00503BC0, 0x00508BC0, 0x0050C4D0)
     // +0x34  uint32_t                 selected  (evidence: 0x00503BC0, 0x00508BC0, 0x0050C4D0)
+    // +0x214 uint32_t*                field_0x214  (evidence: 0x007AF580)
+    // +0x218 int32_t                  field_0x218  (evidence: 0x007AF580)
 };
 } // namespace lifted_layout

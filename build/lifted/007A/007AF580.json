@@ -1,0 +1,39 @@
+{
+  "va": "0x007AF580",
+  "size": 96,
+  "orig_symbol": "sub_007AF580",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "findCachedEntryByKeys",
+  "signature": "uint32_t __cdecl sub_007AF580(uint32_t self, uint32_t key1, uint32_t key2)",
+  "summary": "Searches a pointer array at +0x214 (count at +0x218) for an entry matching key1 at +0x0 and optional key2 at +0x8, caching the result in mem_00B61C14.",
+  "fields": [
+    {
+      "class": "Entry",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Entry",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Container",
+      "offset": "+0x214",
+      "type": "uint32_t*",
+      "name": "field_0x214"
+    },
+    {
+      "class": "Container",
+      "offset": "+0x218",
+      "type": "int32_t",
+      "name": "field_0x218"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:51:05Z"
+}
