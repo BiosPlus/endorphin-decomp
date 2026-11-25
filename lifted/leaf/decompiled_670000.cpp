@@ -790,3 +790,22 @@ void* fn_006721F0(void* self, DWORD value) {
     return self;
 }
 } // namespace lift_006721F0
+
+// [0x00672250] sub_00672250 (85 bytes)
+namespace lift_00672250 {
+// Known callee 0x00672190: ext_00672190 (18 bytes). Thiscall: ECX = self, one stack argument.
+extern void ext_00672190(void* self, uint32_t arg);
+extern uint32_t mem_00B599BC;
+
+// @name Unknown::initWithArg_00672250
+// @class Unknown
+// @summary Zeroes the first DWORD of the output object, stores a global into the second DWORD, runs the 0x00672190 initializer with the argument, and returns the object. The original SEH frame bookkeeping is dropped.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+extern void* fn_00672250(void* out, uint32_t arg) {
+    lift_field<uint32_t>(out, 0x00) = 0;
+    lift_field<uint32_t>(out, 0x04) = mem_00B599BC;
+    ext_00672190(out, arg);
+    return out;
+}
+} // namespace lift_00672250

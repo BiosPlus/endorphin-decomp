@@ -1,0 +1,28 @@
+{
+  "va": "0x00672250",
+  "size": 85,
+  "orig_symbol": "sub_00672250",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "Unknown::initWithArg_00672250",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* fn_00672250(void* out, uint32_t arg)",
+  "summary": "Zeroes the first DWORD of the output object, stores a global into the second DWORD, runs the 0x00672190 initializer with the argument, and returns the object. The original SEH frame bookkeeping is dropped.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:10:07Z"
+}

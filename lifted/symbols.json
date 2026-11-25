@@ -39465,6 +39465,13 @@
     "summary": "Zeroes self's first DWORD, copies global mem_00B599BC into self+0x04, calls ext_006721B0(self, value) to store value into the first DWORD, and returns self. Original SEH frame bookkeeping is omitted.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x00672250": {
+    "name": "Unknown::initWithArg_00672250",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* fn_00672250(void* out, uint32_t arg)",
+    "summary": "Zeroes the first DWORD of the output object, stores a global into the second DWORD, runs the 0x00672190 initializer with the argument, and returns the object. The original SEH frame bookkeeping is dropped.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x006722B0": {
     "name": "sub_0067AEE8",
     "class": "Unknown (no class recovered; receiver is passed in ecx)",
