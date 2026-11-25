@@ -650,3 +650,40 @@ void __cdecl sub_0085D890(uint32_t* ptr, uint16_t count) {
     } while (count != 0);
 }
 } // namespace lift_0085D890
+
+// [0x0085BF70]
+namespace lift_0085BF70 {
+extern uint8_t& mem_u8(uint32_t addr);
+extern uint32_t& mem_u32(uint32_t addr);
+extern uint32_t ext_00859DA0();
+extern uint32_t ext_0085BC20(uint32_t self_ptr);
+
+// @name CloneOrShareStream
+// @summary Allocates a stream/buffer wrapper via ext_00859DA0 and initializes it to share the underlying buffer of arg0, incrementing its reference count.
+// @field Stream +0x00 uint32_t inner_ptr
+// @field Stream +0x08 uint32_t field_0x08
+// @field Stream +0x10 uint32_t cursor
+// @field Stream +0x14 uint32_t flags
+// @field Stream +0x18 uint32_t ref_count
+uint32_t fn_0085BF70(uint32_t arg0) {
+    uint32_t esi = ext_00859DA0();
+    if (esi == 0) {
+        return 0;
+    }
+
+    uint32_t src = arg0;
+    if ((mem_u8(src + 0x14) & 0x4) != 0) {
+        src = mem_u32(src);
+    }
+
+    uint32_t ref_count = mem_u32(src + 0x18) + 1;
+    mem_u32(src + 0x18) = ref_count;
+    mem_u32(esi) = src;
+
+    mem_u32(esi + 0x8) = ext_0085BC20(src);
+    mem_u32(esi + 0x14) = mem_u32(esi + 0x14) | 0x6;
+    mem_u32(esi + 0x10) = 0;
+
+    return esi;
+}
+} // namespace lift_0085BF70

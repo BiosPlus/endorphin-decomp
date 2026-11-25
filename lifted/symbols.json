@@ -58557,6 +58557,12 @@
     "summary": "Linearly searches an array of 8-byte key-value pairs for a matching 32-bit key and returns its 32-bit value, or 0 if not found.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085BF70": {
+    "name": "CloneOrShareStream",
+    "signature": "uint32_t fn_0085BF70(uint32_t arg0)",
+    "summary": "Allocates a stream/buffer wrapper via ext_00859DA0 and initializes it to share the underlying buffer of arg0, incrementing its reference count.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085BFE0": {
     "name": "GlobalFreeForwarder_0085BFE0",
     "signature": "uint32_t __cdecl fn_0085BFE0(uint32_t hMem)",

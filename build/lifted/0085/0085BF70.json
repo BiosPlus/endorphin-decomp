@@ -1,0 +1,45 @@
+{
+  "va": "0x0085BF70",
+  "size": 64,
+  "orig_symbol": "sub_0085BF70",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "CloneOrShareStream",
+  "signature": "uint32_t fn_0085BF70(uint32_t arg0)",
+  "summary": "Allocates a stream/buffer wrapper via ext_00859DA0 and initializes it to share the underlying buffer of arg0, incrementing its reference count.",
+  "fields": [
+    {
+      "class": "Stream",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "inner_ptr"
+    },
+    {
+      "class": "Stream",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Stream",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "cursor"
+    },
+    {
+      "class": "Stream",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "flags"
+    },
+    {
+      "class": "Stream",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "ref_count"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:12:00Z"
+}
