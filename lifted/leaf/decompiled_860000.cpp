@@ -987,3 +987,30 @@ extern void __cdecl fn_0086AF30(uint32_t* dst, const uint32_t* src, uint32_t cou
     }
 }
 } // namespace lift_0086AF30
+
+// [0x00864F30]
+namespace lift_00864F30 {
+// @name initStatusRecordAndClearGlobal
+// @summary Initializes an 8-byte status record with 0xCF and clears mem_00AB98EC, returning 0.
+
+
+extern uint32_t mem_00AB98EC;
+extern uint32_t ext_008596E0(uint32_t size);
+extern void* ext_00859780(void* dst, const void* src, size_t n);
+
+uint32_t fn_00864F30(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4, uint16_t* outRecord) {
+    (void)arg1;
+    (void)arg2;
+    (void)arg3;
+    (void)arg4;
+    (void)ext_008596E0;
+    (void)ext_00859780;
+
+    outRecord[0] = 0x00CF;
+    outRecord[1] = 0;
+    outRecord[2] = 0;
+    outRecord[3] = 0;
+    mem_00AB98EC = 0;
+    return 0;
+}
+} // namespace lift_00864F30

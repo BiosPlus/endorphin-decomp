@@ -1,0 +1,13 @@
+{
+  "va": "0x00864F30",
+  "size": 32,
+  "orig_symbol": "sub_00864F30",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "initStatusRecordAndClearGlobal",
+  "signature": "uint32_t fn_00864F30(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4, uint16_t* outRecord)",
+  "summary": "Initializes an 8-byte status record with 0xCF and clears mem_00AB98EC, returning 0.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T14:11:35Z"
+}
