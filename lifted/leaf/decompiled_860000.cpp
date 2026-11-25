@@ -383,3 +383,27 @@ void fn_0086F120(const uint32_t* a, const uint32_t* b, uint32_t* out) {
     }
 }
 } // namespace lift_0086F120
+
+// [0x0086F0E0] sub_0086F0E0 (61 bytes)
+namespace lift_0086F0E0 {
+// @name NegateLimbs20
+// @summary Two's-complement negates a 20-limb number of 16-bit limbs (stored in 32-bit slots) in place; limb 19 is least significant.
+void fn_0086F0E0(DWORD* limbs) {
+    // Pass 1: one's complement of each 16-bit limb, from limb 19 down to limb 0.
+    for (int i = 19; i >= 0; --i) {
+        limbs[i] = (~limbs[i]) & 0xFFFFu;
+    }
+
+    // Pass 2: add 1 with carry propagating toward limb 0.
+    // Stop at the first limb whose low 16 bits are nonzero after the increment;
+    // limbs that wrapped to zero are cleared and the carry moves on.
+    for (int i = 19; i >= 0; --i) {
+        DWORD v = limbs[i] + 1;
+        limbs[i] = v;
+        if ((v & 0xFFFFu) != 0) {
+            break;
+        }
+        limbs[i] = 0;
+    }
+}
+} // namespace lift_0086F0E0

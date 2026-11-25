@@ -57881,6 +57881,12 @@
     "summary": "Copies 20 DWORDs from src to dst, walking indices 19 down to 0.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086F0E0": {
+    "name": "NegateLimbs20",
+    "signature": "void fn_0086F0E0(DWORD* limbs)",
+    "summary": "Two's-complement negates a 20-limb number of 16-bit limbs (stored in 32-bit slots) in place; limb 19 is least significant.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086F120": {
     "name": "addLimbArrays20",
     "signature": "void fn_0086F120(const uint32_t* a, const uint32_t* b, uint32_t* out)",
