@@ -867,3 +867,24 @@ void* fn_006CA020(void* self, int n) {
     return base + 40 * (n % 25);
 }
 } // namespace lift_006CA020
+
+// [0x006CC6B0] sub_006CC6B0 (64 bytes)
+namespace lift_006CC6B0 {
+// Known callee 0x006C9D20: Unknown::GetMaskedFlags18 (Returns the bits 0x03000000 of the DWORD at this+0x10.)
+extern uint32_t ext_006C9D20(void* self);
+// Known callee 0x006CA060: sub_006CA060 (Auto-lifted identical-shape clone of 0x00707980 (Unknown::NotifySlot17IfSelfLinkedWrapper).)
+// Takes one stack argument (ret 4) and returns a pointer.
+extern void* ext_006CA060(void* self, int32_t arg);
+
+// @name CheckCountedSelfFlag18
+// @summary For count > 0, resolve a pointer via ext_006CA060(self, count-1), call ext_006CA060(self, count) for its side effect, then return whether bit 0x02000000 of ext_006C9D20(ptr) is set; returns false when count <= 0.
+bool fn_006CC6B0(void* self, int32_t count) {
+    if (count <= 0) {
+        return false;
+    }
+    void* ptr = ext_006CA060(self, count - 1);
+    ext_006CA060(self, count);  // result discarded
+    uint32_t flags = ext_006C9D20(ptr);
+    return (flags & 0x02000000u) != 0;
+}
+} // namespace lift_006CC6B0

@@ -1,0 +1,13 @@
+{
+  "va": "0x006CC6B0",
+  "size": 64,
+  "orig_symbol": "sub_006CC6B0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "CheckCountedSelfFlag18",
+  "signature": "bool fn_006CC6B0(void* self, int32_t count)",
+  "summary": "For count \u003e 0, resolve a pointer via ext_006CA060(self, count-1), call ext_006CA060(self, count) for its side effect, then return whether bit 0x02000000 of ext_006C9D20(ptr) is set; returns false when count \u003c= 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:05:55Z"
+}

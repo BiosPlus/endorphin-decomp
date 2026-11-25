@@ -46088,6 +46088,12 @@
     "summary": "Resolve a source block via ext_006CA060(arg2), then copy 10 dwords (40 bytes) into arg1 (stdcall, ret 8).",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006CC6B0": {
+    "name": "CheckCountedSelfFlag18",
+    "signature": "bool fn_006CC6B0(void* self, int32_t count)",
+    "summary": "For count \u003e 0, resolve a pointer via ext_006CA060(self, count-1), call ext_006CA060(self, count) for its side effect, then return whether bit 0x02000000 of ext_006C9D20(ptr) is set; returns false when count \u003c= 0.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006CD310": {
     "name": "sub_006CD310",
     "signature": "extern \"C\" void __fastcall fn_006CD310(void* self, int edx_unused, int32_t value)",
