@@ -38616,9 +38616,10 @@
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
   "0x0069B5A0": {
-    "name": "ConsumeKeywordPrefix",
-    "signature": "bool fn_0069B5A0(char **dst, const char *src)",
-    "summary": "If src is a prefix of *dst and the next char is not an identifier char, advance *dst past it and return true; otherwise leave *dst unchanged and return false.",
+    "name": "sub_00692D90",
+    "class": "NMData::RealChannel",
+    "signature": "void __thiscall fn_00692D90(uint8_t* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
   "0x0069B5E0": {

@@ -8,7 +8,7 @@
 // Recovered field layout for VectorLike:
 namespace lifted_layout {
 struct VectorLike_Fields {
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x00699360)
-    // +0xC   uint32_t                 field_0x0C  (evidence: 0x00699360)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00699360, 0x0069B5A0)
+    // +0xC   uint32_t                 field_0x0C  (evidence: 0x00699360, 0x0069B5A0)
 };
 } // namespace lifted_layout
