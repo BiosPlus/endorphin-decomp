@@ -768,3 +768,33 @@ void fn_0080F720(void* self, uint32_t arg) {
     lift_field<uint32_t>(self, 0x10) += 1;
 }
 } // namespace lift_0080F720
+
+// [0x0080FB60] sub_0080FB60 (80 bytes)
+namespace lift_0080FB60 {
+// Known callee 0x008596F0: LocalBlockResize (Allocates, reallocates, or frees a LocalAlloc block depending on whether the handle and size arguments are zero.)
+extern uint32_t __cdecl ext_008596F0(uint32_t handle, uint32_t size);
+
+// @name GrowableBlock_GrowByDelta
+// @class GrowableBlock
+// @summary Resizes a LocalAlloc-backed block by a delta (or doubles/initializes it when delta is 0), storing the new handle and size on success; returns 1 on success, 0 on failure.
+// @field GrowableBlock +0x00 uint32_t field_0x00
+// @field GrowableBlock +0x08 uint32_t field_0x08
+extern uint32_t __cdecl fn_0080FB60(void* self, uint32_t delta) {
+    uint32_t newSize;
+    if (delta != 0) {
+        newSize = lift_field<uint32_t>(self, 0x08) + delta;
+    } else {
+        uint32_t cur = lift_field<uint32_t>(self, 0x08);
+        newSize = (cur != 0) ? cur * 2u : 1u;
+    }
+
+    uint32_t handle = lift_field<uint32_t>(self, 0x00);
+    uint32_t newHandle = ext_008596F0(handle, newSize);
+    if (newHandle != 0) {
+        lift_field<uint32_t>(self, 0x00) = newHandle;
+        lift_field<uint32_t>(self, 0x08) = newSize;
+        return 1u;
+    }
+    return 0u;
+}
+} // namespace lift_0080FB60
