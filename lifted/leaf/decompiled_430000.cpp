@@ -2062,3 +2062,29 @@ void __thiscall sub_00430780(void* self, void* cmdUI) {
     }
 }
 } // namespace lift_00430780
+
+// [0x0043D7C0]
+namespace lift_0043D7C0 {
+// @name BackwardStride4Walk
+// @summary Visits 4-byte elements of [begin,end) from last to first, calling ext_MFC80_ord_781(cursor, elem) with cursor stepping down by 4 from dest; returns dest minus the byte span.
+
+extern void ext_MFC80_ord_781(std::uint32_t cursor, std::uint32_t elem);
+
+std::uint32_t BackwardStride4Walk(std::uint32_t begin, std::uint32_t end, std::uint32_t dest) {
+    // Byte span of the range, normalised to whole 4-byte elements (sar 2 / add x2).
+    const std::int32_t count = static_cast<std::int32_t>(end - begin) >> 2;
+    const std::uint32_t span = static_cast<std::uint32_t>(count) * 4u;
+    const std::uint32_t result = dest - span;
+
+    if (begin != end) {
+        const std::uint32_t base = dest - end;  // ebx = dest - end (constant across the loop)
+        std::uint32_t p = end;
+        do {
+            p -= 4;
+            ext_MFC80_ord_781(base + p, p);     // ecx = base + p, stack = p
+        } while (p != begin);
+    }
+
+    return result;
+}
+} // namespace lift_0043D7C0

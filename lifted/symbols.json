@@ -3062,6 +3062,12 @@
     "summary": "Allocates a 0x18-byte record, zeroes its three dword slots at +0x00/+0x04/+0x08, sets the flag bytes at +0x14=1 and +0x15=0, and returns the record.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043D7C0": {
+    "name": "BackwardStride4Walk",
+    "signature": "std::uint32_t BackwardStride4Walk(std::uint32_t begin, std::uint32_t end, std::uint32_t dest)",
+    "summary": "Visits 4-byte elements of [begin,end) from last to first, calling ext_MFC80_ord_781(cursor, elem) with cursor stepping down by 4 from dest; returns dest minus the byte span.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043DCC0": {
     "name": "sub_0043DCC0",
     "signature": "extern \"C\" void fn_0043DCC0(void)",
