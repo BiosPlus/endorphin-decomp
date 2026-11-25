@@ -800,3 +800,18 @@ void fn_0048D310(void* self) {
 }
 } // namespace lift_00569970
 } // namespace lift_0048D310
+
+// [0x00486880]
+namespace lift_00486880 {
+// Format string literal at 0x0093C670 (contents not recovered from .rdata listing).
+extern const char mem_0093C670[];
+
+// @name sub_00486880 (formatDoubleToString)
+// @summary Formats a double into a 50-byte buffer with snprintf and assigns the result to a std::string via the hidden return pointer.
+std::string* fn_00486880(std::string* out, double value) {
+    char buf[50] = {};
+    std::snprintf(buf, sizeof(buf), mem_0093C670, value);
+    *out = std::string(buf);
+    return out;
+}
+} // namespace lift_00486880

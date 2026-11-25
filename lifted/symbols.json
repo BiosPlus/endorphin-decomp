@@ -7667,6 +7667,12 @@
     "summary": "Computes the 4D dot product of two 4-component float vectors.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00486880": {
+    "name": "sub_00486880 (formatDoubleToString)",
+    "signature": "std::string* fn_00486880(std::string* out, double value)",
+    "summary": "Formats a double into a 50-byte buffer with snprintf and assigns the result to a std::string via the hidden return pointer.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00486980": {
     "name": "sub_00486980",
     "class": "Unknown",
