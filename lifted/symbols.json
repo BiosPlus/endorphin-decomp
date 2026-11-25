@@ -1457,6 +1457,12 @@
     "summary": "Destructor tail-call: restores vtable mem_0092C764 and tail-calls base destructor sub_00404650.",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x00415F97": {
+    "name": "get_sys_color_or_field",
+    "signature": "uint32_t __fastcall sub_00415F97(void* ecx_this, void* /*edx*/, uint32_t eax_val)",
+    "summary": "Returns GetSysColor(COLOR_BTNFACE) if field_0x54 is -1, otherwise branches to tail.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00415FF6": {
     "name": "GetSysColor_BtnFace_Thunk",
     "signature": "extern \"C\" DWORD fn_00415FF6()",

@@ -1,0 +1,21 @@
+{
+  "va": "0x00415F97",
+  "size": 28,
+  "orig_symbol": "sub_00415F97",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "get_sys_color_or_field",
+  "signature": "uint32_t __fastcall sub_00415F97(void* ecx_this, void* /*edx*/, uint32_t eax_val)",
+  "summary": "Returns GetSysColor(COLOR_BTNFACE) if field_0x54 is -1, otherwise branches to tail.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "uint32_t",
+      "name": "field_0x54"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T11:31:13Z"
+}

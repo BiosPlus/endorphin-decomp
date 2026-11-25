@@ -1756,3 +1756,24 @@ extern void __stdcall fn_0041FD10(DWORD arg0, DWORD arg1) {
     ext_006A608E(0);
 }
 } // namespace lift_0041FD10
+
+// [0x00415F97]
+namespace lift_00415F97 {
+// @name get_sys_color_or_field
+// @summary Returns GetSysColor(COLOR_BTNFACE) if field_0x54 is -1, otherwise branches to tail.
+// @field Unknown +0x54 uint32_t field_0x54
+
+
+extern uintptr_t mem_00925680;
+
+uint32_t __fastcall sub_00415F97(void* ecx_this, void* /*edx*/, uint32_t eax_val) {
+    if (eax_val != 0) {
+        uint32_t val = lift_field<uint32_t>(ecx_this, 0x54);
+        if (val == 0xFFFFFFFFu) {
+            using GetSysColorFn = uint32_t(__stdcall*)(int32_t);
+            return reinterpret_cast<GetSysColorFn>(mem_00925680)(0xF);
+        }
+    }
+    return 0;
+}
+} // namespace lift_00415F97
