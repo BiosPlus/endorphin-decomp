@@ -2043,3 +2043,30 @@ void* fn_00504C90() {
     return mem_00AEBB4C;
 }
 } // namespace lift_00504C90
+
+// [0x00508CD0] sub_00508CD0 (95 bytes)
+namespace lift_00508CD0 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0066AD10(void* out_str, uint8_t flag);
+// Known callee 0x006A6C87: sub_006A6C87 (18B) - registers a teardown routine.
+extern void ext_006A6C87(void (*teardown)(void));
+// Teardown routine whose address is pushed to 0x006A6C87.
+extern void ext_00919D70(void);
+extern uint32_t mem_00AEBC30;   // once-init guard flag (bit 0)
+extern uint8_t mem_00AEBC14[];  // static object storage (size not recovered)
+
+// @name GetOnceInitString_00508CD0
+// @summary One-time guarded initializer for the global at 0x00AEBC14; on first call builds it via ext_0066AD10 and registers its teardown via ext_006A6C87; later calls only return its address.
+void* fn_00508CD0(void) {
+    // Guard bit 0 of mem_00AEBC30. Original MSVC SEH frame (fs:[0] push/pop around the
+    // initialization) is an exception-unwind detail and is not reproduced here.
+    if ((mem_00AEBC30 & 1u) == 0u) {
+        mem_00AEBC30 |= 1u;
+        // Original pushes the operand 0x00A40F04 as the second argument; only its low byte
+        // fits uint8_t. Its meaning (rdata pointer vs. flag) is not recovered.
+        ext_0066AD10(mem_00AEBC14, static_cast<uint8_t>(0xA40F04u));
+        ext_006A6C87(ext_00919D70);
+    }
+    return mem_00AEBC14;
+}
+} // namespace lift_00508CD0

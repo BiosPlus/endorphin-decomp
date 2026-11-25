@@ -18300,6 +18300,12 @@
     "summary": "Forwards its single stdcall argument to sub_005087F0 (tail call) when the argument is \u003c= 2 unsigned; otherwise returns immediately, popping the 4-byte argument.",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x00508CD0": {
+    "name": "GetOnceInitString_00508CD0",
+    "signature": "extern \"C\" uint32_t mem_00AEBC30;   // once-init guard flag (bit 0) extern \"C\" uint8_t mem_00AEBC14[];  // static object storage (size not recovered) void* fn_00508CD0(void)",
+    "summary": "One-time guarded initializer for the global at 0x00AEBC14; on first call builds it via ext_0066AD10 and registers its teardown via ext_006A6C87; later calls only return its address.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00508DD0": {
     "name": "InitOnceGlobalString_00508DD0",
     "signature": "void* fn_00508DD0()",
