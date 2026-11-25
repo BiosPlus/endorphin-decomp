@@ -18,6 +18,7 @@ void* fn_00617340(void* self) {
 #include <cmath>
 #include <new>
 #include <memory>
+#include <cstddef>
 
 // [0x006178B0] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getLowerDamping(void) const, 0>::vfunc_16 (30 bytes)
 // @name ExprParser::ReadMethodType<NMData::HingeLimit>::vfunc_16 (NMData::HingeLimit::getLowerDamping)
@@ -58255,3 +58256,31 @@ void fn_0059F920(void* self) {
                  reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
 }
 } // namespace lift_0059F920
+
+// [0x005FCC10]
+namespace lift_005FCC10 {
+extern void* ext_0046C3C0(void* self);
+extern void ext_0046C4E0(void* a, void* b);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+extern unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<Sensor,getMutableVector3>::vfunc_4
+// @class ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, Sensor::getMutableVector3, 1>
+// @summary Calls the virtual getter (slot 14) on the held object, reports it via ext_0046C4E0, then always throws a DerivedException.
+// @field ValuePtrType +0x00 void* field_0x00
+void fn_005FCC10(void* a1, void** a2) {
+    void* obj = a2[0];
+    if (obj != nullptr) {
+        using VirtFn = void* (*)(void*);
+        void** vtbl = *static_cast<void***>(obj);
+        VirtFn slot14 = reinterpret_cast<VirtFn>(vtbl[14]);
+        void* r = slot14(obj);
+        ext_0046C4E0(r, a1);
+    }
+
+    // Local exception object storage (size not recovered; the original reserves stack space at [esp+4]).
+    alignas(16) unsigned char exc_storage[64] = {};
+    ext_0046C3C0(exc_storage);
+    ext_006A6DD2(exc_storage, static_cast<const void*>(mem_009DEC1C));
+}
+} // namespace lift_005FCC10

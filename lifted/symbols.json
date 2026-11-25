@@ -37814,6 +37814,13 @@
     "summary": "Invokes vtable slot 14 (+0x38) on the Sensor held in the ValuePtr and then throws; throws a fixed exception if the Sensor pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005FCC10": {
+    "name": "ExprParser::ReadMethodType\u003cSensor,getMutableVector3\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, Sensor::getMutableVector3, 1\u003e",
+    "signature": "void fn_005FCC10(void* a1, void** a2)",
+    "summary": "Calls the virtual getter (slot 14) on the held object, reports it via ext_0046C4E0, then always throws a DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005FCC50": {
     "name": "ExprParser::ReadMethodType\u003cSensor\u003e::vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026private: class NM::Vector3 const \u0026 __thiscall Sensor::getMutableVector3(void) const, 1\u003e",
