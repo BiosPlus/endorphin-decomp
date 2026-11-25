@@ -1,0 +1,14 @@
+{
+  "va": "0x0059DD00",
+  "size": 104,
+  "orig_symbol": "sub_0059DD00",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "Unknown::DispatchOrDynamicCastByKey",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* __thiscall fn_0059DD00(void* self, void* arg1, const void* arg2)",
+  "summary": "Compares arg2 (std::string) to a global C string; on match dispatches arg1 via sub_0059DCD0, otherwise dispatches arg1 and dynamic_casts the sub_00586140 result to a fixed RTTI type.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:50:21Z"
+}

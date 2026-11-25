@@ -1322,3 +1322,39 @@ extern uint32_t __fastcall fn_005963F0(void* self, int edx_unused) {
     return sum;
 }
 } // namespace lift_005963F0
+
+// [0x0059DD00] sub_0059DD00 (104 bytes)
+namespace lift_0059DD00 {
+// @name Unknown::DispatchOrDynamicCastByKey
+// @class Unknown
+// @summary Compares arg2 (std::string) to a global C string; on match dispatches arg1 via sub_0059DCD0, otherwise dispatches arg1 and dynamic_casts the sub_00586140 result to a fixed RTTI type.
+// (no direct field accesses on this; self is only forwarded to callees)
+
+extern void* __thiscall ext_0059DCD0(void* self, void* arg);
+extern void* __thiscall ext_00586140(void* self, const void* arg);
+extern void* ext_006A6E9E(void* pVoid, int32_t vdelta, const void* srcType, const void* dstType, int32_t isReference);
+
+// Global C string pointer (0x00A34650) and MSVCP80 std::operator==(const std::string&, const char*) (0x00924FC0).
+extern uint32_t mem_00A34650;
+extern uint32_t mem_00924FC0;
+
+typedef uint8_t (__cdecl *StdStringEqCStrFn)(const void* str, uint32_t cstr);
+
+extern void* __thiscall fn_0059DD00(void* self, void* arg1, const void* arg2) {
+    auto str_eq = reinterpret_cast<StdStringEqCStrFn>(static_cast<uintptr_t>(mem_00924FC0));
+    if (str_eq(arg2, mem_00A34650)) {
+        return ext_0059DCD0(self, arg1);
+    }
+
+    void* r = ext_0059DCD0(self, arg1);
+    if (r == nullptr) {
+        return nullptr;
+    }
+
+    void* t = ext_00586140(r, arg2);
+    // RTTI type_info addresses (source 0x00A2E2BC, target 0x00A30158).
+    const void* src_type = reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00A2E2BCu));
+    const void* dst_type = reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00A30158u));
+    return ext_006A6E9E(t, 0, src_type, dst_type, 0);
+}
+} // namespace lift_0059DD00

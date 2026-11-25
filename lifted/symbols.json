@@ -27372,6 +27372,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x620 and tail-calls sub_00496D00.",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
+  "0x0059DD00": {
+    "name": "Unknown::DispatchOrDynamicCastByKey",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __thiscall fn_0059DD00(void* self, void* arg1, const void* arg2)",
+    "summary": "Compares arg2 (std::string) to a global C string; on match dispatches arg1 via sub_0059DCD0, otherwise dispatches arg1 and dynamic_casts the sub_00586140 result to a fixed RTTI type.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x0059DD70": {
     "name": "NMData::BackGroundData::vfunc_6",
     "class": "NMData::BackGroundData",
