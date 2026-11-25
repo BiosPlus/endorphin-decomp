@@ -357,3 +357,18 @@ uint8_t __stdcall sub_0072CC90(uint32_t arg0) {
     return arg0 == mem_00B5E400 ? 1 : 0;
 }
 } // namespace lift_0072CC90
+
+// [0x00722660] sub_00722660 (64 bytes)
+namespace lift_00722660 {
+extern const double mem_009334D8; // 100.0
+extern const double mem_009939D8; // 0.01
+extern const double mem_00993828; // 0.5
+
+// @name BlendTwoValuesOverRange100
+// @summary Returns 0.5 * ((100 - a) * 0.01 * c + (100 + a) * 0.01 * b), a weighted blend of b and c with a in [-100, 100] (double return in ST0).
+double fn_00722660(double a, double b, double c) {
+    double t1 = (mem_009334D8 - a) * mem_009939D8 * c;
+    double t2 = (a + mem_009334D8) * mem_009939D8 * b;
+    return (t1 + t2) * mem_00993828;
+}
+} // namespace lift_00722660

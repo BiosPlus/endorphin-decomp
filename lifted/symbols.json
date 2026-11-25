@@ -53577,6 +53577,12 @@
     "summary": "Reads and returns the byte flag at 0x00AACAF0.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x00722660": {
+    "name": "BlendTwoValuesOverRange100",
+    "signature": "double fn_00722660(double a, double b, double c)",
+    "summary": "Returns 0.5 * ((100 - a) * 0.01 * c + (100 + a) * 0.01 * b), a weighted blend of b and c with a in [-100, 100] (double return in ST0).",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x00722720": {
     "name": "mulSquareDouble",
     "signature": "double sub_00722720(double a, double b)",

@@ -1,0 +1,13 @@
+{
+  "va": "0x00722660",
+  "size": 64,
+  "orig_symbol": "sub_00722660",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "BlendTwoValuesOverRange100",
+  "signature": "double fn_00722660(double a, double b, double c)",
+  "summary": "Returns 0.5 * ((100 - a) * 0.01 * c + (100 + a) * 0.01 * b), a weighted blend of b and c with a in [-100, 100] (double return in ST0).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:08:20Z"
+}
