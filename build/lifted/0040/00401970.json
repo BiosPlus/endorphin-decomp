@@ -1,0 +1,21 @@
+{
+  "va": "0x00401970",
+  "size": 10,
+  "orig_symbol": "sub_00401970",
+  "src_path": "src/leaf/tiny_400000.cpp",
+  "lifted_path": "lifted/leaf/tiny_400000.cpp",
+  "name": "fn_00401970 (tail-dispatch through function pointer at +0x14)",
+  "signature": "void fn_00401970(void* self)",
+  "summary": "Loads the function pointer at this+0x14; if non-null, transfers control to it with this in ecx (thiscall), else returns.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:16:22Z"
+}

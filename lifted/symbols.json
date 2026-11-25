@@ -80,6 +80,12 @@
     "summary": "Returns the address of the constant u32 0x006A60A6 stored in .rdata at mem_0092A510.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x00401970": {
+    "name": "fn_00401970 (tail-dispatch through function pointer at +0x14)",
+    "signature": "void fn_00401970(void* self)",
+    "summary": "Loads the function pointer at this+0x14; if non-null, transfers control to it with this in ecx (thiscall), else returns.",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x00401A10": {
     "name": "DestroyStringMembers_00401A10",
     "signature": "inline void CallStringDtor(void* self)",

@@ -495,3 +495,17 @@ int32_t fn_00404D50(void* self) {
     return shifted + sign;
 }
 } // namespace lift_00404D50
+
+// [0x00401970] sub_00401970 (10 bytes)
+namespace lift_00401970 {
+// @name fn_00401970 (tail-dispatch through function pointer at +0x14)
+// @summary Loads the function pointer at this+0x14; if non-null, transfers control to it with this in ecx (thiscall), else returns.
+// @field Unknown +0x14 void* field_0x14
+void fn_00401970(void* self) {
+    using Handler = void (*)(void*);
+    Handler handler = lift_field<Handler>(self, 0x14);
+    if (handler != nullptr) {
+        handler(self);
+    }
+}
+} // namespace lift_00401970
