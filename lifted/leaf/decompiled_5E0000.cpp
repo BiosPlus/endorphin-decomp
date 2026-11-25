@@ -1312,3 +1312,36 @@ void* fn_005E46B0() {
     return &mem_00B45EF0;
 }
 } // namespace lift_005E46B0
+
+// [0x005E0180] sub_005E0180 (104 bytes)
+namespace lift_005E0180 {
+extern void* ext_0059F5C0(void* self);
+
+// @name Unknown::InitNodeLink
+// @class Unknown
+// @summary Stores a vtable value, obtains a node via ext_0059F5C0, links the node to itself, clears the trailing pointer, and returns this.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// Node (returned by ext_0059F5C0) accessed offsets: +0x00, +0x04, +0x08 (self-links), +0x2D (flag byte set to 1).
+void* fn_005E0180(void* self) {
+    uint8_t* const base = static_cast<uint8_t*>(self);
+
+    // Original stores a 32-bit value (0x968E28) at this+0x00.
+    lift_field<uint32_t>(base, 0x00) = 0x00968E28u;
+
+    // ext_0059F5C0 is called with ecx = this+0x04; its result is stored at this+0x04.
+    void* node = ext_0059F5C0(base + 0x04);
+    const uint32_t nodeVa = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(node));
+    lift_field<uint32_t>(base, 0x04) = nodeVa;
+
+    uint8_t* const n = static_cast<uint8_t*>(node);
+    lift_field<uint8_t>(n, 0x2D) = 1;
+    lift_field<uint32_t>(n, 0x04) = nodeVa;
+    lift_field<uint32_t>(n, 0x00) = nodeVa;
+    lift_field<uint32_t>(n, 0x08) = nodeVa;
+
+    lift_field<uint32_t>(base, 0x08) = 0;
+    return self;
+}
+} // namespace lift_005E0180

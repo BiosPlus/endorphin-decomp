@@ -1,0 +1,34 @@
+{
+  "va": "0x005E0180",
+  "size": 104,
+  "orig_symbol": "sub_005E0180",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "Unknown::InitNodeLink",
+  "class": "Unknown",
+  "signature": "void* fn_005E0180(void* self)",
+  "summary": "Stores a vtable value, obtains a node via ext_0059F5C0, links the node to itself, clears the trailing pointer, and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:50:06Z"
+}

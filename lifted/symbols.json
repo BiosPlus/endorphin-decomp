@@ -32393,6 +32393,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005E00D0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005E0180": {
+    "name": "Unknown::InitNodeLink",
+    "class": "Unknown",
+    "signature": "void* fn_005E0180(void* self)",
+    "summary": "Stores a vtable value, obtains a node via ext_0059F5C0, links the node to itself, clears the trailing pointer, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005E0280": {
     "name": "DesiredPoseManager::vfunc_0",
     "class": "DesiredPoseManager",
