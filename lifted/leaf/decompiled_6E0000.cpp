@@ -1286,3 +1286,38 @@ void __thiscall sub_006E5750(uint32_t self, uint32_t flags) {
     ext_006E5730(self);
 }
 } // namespace lift_006E5750
+
+// [0x006E6DE0]
+namespace lift_006E6DE0 {
+// @name sub_006E6DE0
+// @summary Checks a bitflag on subobject +0x00 (via fn_0071E680) or fallback +0x08+0xb0
+// @field unknown +0x00 void* field_0x00
+// @field unknown +0x08 void* field_0x08
+
+
+extern void* __fastcall fn_0071E680(void* self);
+
+extern uint8_t __thiscall fn_006E6DE0(void* self, uint32_t mask) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    void* obj0 = *reinterpret_cast<void**>(base);
+    if (obj0 != nullptr) {
+        uint32_t shift = 0;
+        switch (mask) {
+            case 1: shift = 1; break;
+            case 2: shift = 6; break;
+            case 4: shift = 7; break;
+            default: return 0;
+        }
+        uint32_t* flags = static_cast<uint32_t*>(fn_0071E680(obj0));
+        return static_cast<uint8_t>((*flags >> shift) & 1u);
+    }
+
+    uint8_t* obj8 = *reinterpret_cast<uint8_t**>(base + 0x8);
+    if (obj8 == nullptr) {
+        return 0;
+    }
+
+    uint32_t flags = *reinterpret_cast<uint32_t*>(obj8 + 0xb0);
+    return (mask & flags) != 0 ? 1 : 0;
+}
+} // namespace lift_006E6DE0

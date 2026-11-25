@@ -1,0 +1,27 @@
+{
+  "va": "0x006E6DE0",
+  "size": 96,
+  "orig_symbol": "sub_006E6DE0",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "sub_006E6DE0",
+  "signature": "extern \"C\" uint8_t __thiscall fn_006E6DE0(void* self, uint32_t mask)",
+  "summary": "Checks a bitflag on subobject +0x00 (via fn_0071E680) or fallback +0x08+0xb0",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:43:02Z"
+}
