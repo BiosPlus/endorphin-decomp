@@ -68107,6 +68107,12 @@
     "summary": "Word-wise subtract-with-borrow over a uint32 array; returns final borrow flag (0/1). Returns 0 when count == 0.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086A1E0": {
+    "name": "MultiWordShiftLeft",
+    "signature": "uint32_t fn_0086A1E0(uint32_t* dst, const uint32_t* src, uint32_t shift, uint32_t count)",
+    "summary": "Shifts a little-endian array of uint32 words left by 0..31 bits in place (or to dst), returning the bits shifted out of the top word.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086AE50": {
     "name": "BitsetBitLength",
     "signature": "uint32_t fn_0086AE50(const uint32_t* words, uint32_t count)",

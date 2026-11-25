@@ -839,3 +839,22 @@ uint32_t fn_0086AE50(const uint32_t* words, uint32_t count) {
     return (k - 1) * 32u + bits;
 }
 } // namespace lift_0086AE50
+
+// [0x0086A1E0] sub_0086A1E0 (93 bytes)
+namespace lift_0086A1E0 {
+// @name MultiWordShiftLeft
+// @summary Shifts a little-endian array of uint32 words left by 0..31 bits in place (or to dst), returning the bits shifted out of the top word.
+// (no member class; no fields accessed)
+uint32_t fn_0086A1E0(uint32_t* dst, const uint32_t* src, uint32_t shift, uint32_t count) {
+    if (shift >= 32 || count == 0) {
+        return 0;
+    }
+    uint32_t carry = 0;
+    for (uint32_t i = 0; i < count; ++i) {
+        const uint32_t word = src[i];
+        dst[i] = (word << shift) | carry;
+        carry = (shift != 0) ? (word >> (32 - shift)) : 0;
+    }
+    return carry;
+}
+} // namespace lift_0086A1E0
