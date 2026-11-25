@@ -1,0 +1,33 @@
+{
+  "va": "0x006FC250",
+  "size": 96,
+  "orig_symbol": "sub_006FC250",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "sub_006FC250",
+  "signature": "uint8_t __thiscall sub_006FC250(uint32_t self, uint32_t arg1)",
+  "summary": "Reverse-searches a 12-byte-element array for a matching (u32, u32) pair",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "int32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "int32_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:43:48Z"
+}
