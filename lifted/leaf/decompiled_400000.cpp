@@ -1316,3 +1316,17 @@ void* __thiscall sub_00401E00(void* self, const void* other) {
     return self;
 }
 } // namespace lift_00401E00
+
+// [0x00406140]
+namespace lift_00406140 {
+extern void* ext_00404EA0(void* begin, void* end, void* dstEnd);
+
+// @name copyBackwardRecordRangeWrapper_00406140
+// @summary Copies a range of 0x58-byte records backward to dstEnd via ext_00404EA0 and returns the computed destination begin pointer.
+extern void* fn_00406140(void* begin, void* end, void* dstEnd) {
+    ext_00404EA0(begin, end, dstEnd);
+    int32_t diff = static_cast<int32_t>(reinterpret_cast<uintptr_t>(end) - reinterpret_cast<uintptr_t>(begin));
+    int32_t count = diff / 0x58;
+    return reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(dstEnd) - static_cast<uintptr_t>(count * 0x58));
+}
+} // namespace lift_00406140
