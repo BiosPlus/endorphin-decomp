@@ -1,0 +1,13 @@
+{
+  "va": "0x0085F740",
+  "size": 16,
+  "orig_symbol": "sub_0085F740",
+  "src_path": "src/leaf/tiny_850000.cpp",
+  "lifted_path": "lifted/leaf/tiny_850000.cpp",
+  "name": "readByteAt1Preserve",
+  "signature": "uint32_t fn_0085F740(uint32_t self)",
+  "summary": "Returns the byte at offset +1 of the argument pointer, merged into the low 8 bits of the pointer value (upper 24 bits of the argument are preserved, matching the original `mov al, [eax+1]`).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:15:58Z"
+}

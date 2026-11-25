@@ -261,3 +261,19 @@ uint32_t fn_00859730(void* hMem) {
     return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(localFree(hMem)));
 }
 } // namespace lift_00859730
+
+// [0x0085F740] sub_0085F740 (16 bytes)
+namespace lift_0085F740 {
+extern void ext_0084A145();
+extern int mem_00AB86EC;
+
+// @name readByteAt1Preserve
+// @summary Returns the byte at offset +1 of the argument pointer, merged into the low 8 bits of the pointer value (upper 24 bits of the argument are preserved, matching the original `mov al, [eax+1]`).
+uint32_t fn_0085F740(uint32_t self) {
+    // Referenced for the differential-test cross-reference only; the original asm never touches them.
+    (void)&ext_0084A145;
+    (void)&mem_00AB86EC;
+    const uint8_t b = *reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(self) + 1);
+    return (self & 0xFFFFFF00u) | b;
+}
+} // namespace lift_0085F740
