@@ -1,0 +1,13 @@
+{
+  "va": "0x0078D1F0",
+  "size": 112,
+  "orig_symbol": "sub_0078D1F0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "buildConvexPolygonTriangleIndices",
+  "signature": "void sub_0078D1F0(int32_t* outIndices, int32_t vertexCount)",
+  "summary": "Generates triangle vertex indices for a convex polygon of n vertices in zigzag order.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:30:20Z"
+}
