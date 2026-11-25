@@ -5195,6 +5195,13 @@
     "summary": "Calls slot 1 then slot 2 on the object at +0x04, passing each the result of ext_006A5EC0(+0x08), then calls setCurrentByIndex(+0x0C, 0).",
     "lifted_path": "lifted/SpinButtonStates/ClickedDownState.cpp"
   },
+  "0x00458940": {
+    "name": "SpinButtonStates::ClickedUpState::vfunc_5",
+    "class": "SpinButtonStates::ClickedUpState",
+    "signature": "void fn_00458940(void* self)",
+    "summary": "Calls vtable slots 0 and 2 on the object at self+0x04 (each fed a result of ext_006A5EC0(self+0x08)), then sets index 0 on the object at self+0x0C.",
+    "lifted_path": "lifted/SpinButtonStates/ClickedUpState.cpp"
+  },
   "0x004589E0": {
     "name": "sub_004589E0",
     "signature": "extern \"C\" void* __cdecl fn_004589E0(void)",
