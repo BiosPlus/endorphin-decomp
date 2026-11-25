@@ -1587,3 +1587,23 @@ extern bool __fastcall fn_006FC200(void* self, int edx_unused, void* key) {
     return false;
 }
 } // namespace lift_006FC200
+
+// [0x006FDF90] sub_006FDF90 (48 bytes)
+namespace lift_006FDF90 {
+extern int ext_006FDFC0(void* self, std::uint32_t ordinal, std::uint32_t index);
+
+// @name Unknown::FindNthMatchingEntry
+// @class Unknown
+// @summary Returns the entry at the ordinal-th match in the pointer array at +0x20, or 0 if no match exists.
+// @field Unknown +0x20 std::uint32_t* entries
+std::uint32_t fn_006FDF90(void* self, std::uint32_t ordinal, std::uint32_t index) {
+    // Find the index of the ordinal-th matching entry (-1 if none).
+    const int found = ext_006FDFC0(self, ordinal, index);
+    if (found < 0) {
+        return 0;
+    }
+    // Fetch the entry at that index from the pointer array stored at +0x20.
+    auto* entries = *reinterpret_cast<std::uint32_t**>(static_cast<unsigned char*>(self) + 0x20);
+    return entries[found];
+}
+} // namespace lift_006FDF90

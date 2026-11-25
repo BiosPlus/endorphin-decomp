@@ -1,0 +1,22 @@
+{
+  "va": "0x006FDF90",
+  "size": 48,
+  "orig_symbol": "sub_006FDF90",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::FindNthMatchingEntry",
+  "class": "Unknown",
+  "signature": "std::uint32_t fn_006FDF90(void* self, std::uint32_t ordinal, std::uint32_t index)",
+  "summary": "Returns the entry at the ordinal-th match in the pointer array at +0x20, or 0 if no match exists.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "std::uint32_t*",
+      "name": "entries"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:51:48Z"
+}
