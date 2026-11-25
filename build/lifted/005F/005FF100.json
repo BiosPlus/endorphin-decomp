@@ -1,0 +1,28 @@
+{
+  "va": "0x005FF100",
+  "size": 76,
+  "orig_symbol": "CompoundSensor::vfunc_24",
+  "src_path": "src/classes/CompoundSensor.cpp",
+  "lifted_path": "lifted/classes/CompoundSensor.cpp",
+  "name": "CompoundSensor::vfunc_24",
+  "class": "CompoundSensor",
+  "signature": "float __thiscall fn_005FF100(void* self)",
+  "summary": "Queries a virtual double via vtable slot +0x44, then forwards it with two member doubles and constants (-1.0, 1.0) to ext_005FF080, returning the result as float.",
+  "fields": [
+    {
+      "class": "CompoundSensor",
+      "offset": "+0x18",
+      "type": "double",
+      "name": "field_0x18"
+    },
+    {
+      "class": "CompoundSensor",
+      "offset": "+0x20",
+      "type": "double",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:39:12Z"
+}

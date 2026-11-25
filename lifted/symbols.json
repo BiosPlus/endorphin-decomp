@@ -29954,6 +29954,13 @@
     "summary": "Returns address of global mem_00A92C90.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005FF100": {
+    "name": "CompoundSensor::vfunc_24",
+    "class": "CompoundSensor",
+    "signature": "float __thiscall fn_005FF100(void* self)",
+    "summary": "Queries a virtual double via vtable slot +0x44, then forwards it with two member doubles and constants (-1.0, 1.0) to ext_005FF080, returning the result as float.",
+    "lifted_path": "lifted/classes/CompoundSensor.cpp"
+  },
   "0x005FF1B0": {
     "name": "sub_005FF1B0",
     "signature": "extern \"C\" void fn_005FF1B0(void)",
