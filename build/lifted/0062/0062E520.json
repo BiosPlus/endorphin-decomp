@@ -1,0 +1,28 @@
+{
+  "va": "0x0062E520",
+  "size": 45,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes\u003e::vfunc_2",
+  "class": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1\u003e",
+  "signature": "void fn_0062E520(void* self)",
+  "summary": "Reads the pointer stored at self+0x00; if non-null, raises a default-message exception using target+0x78, then always throws a DerivedException.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadMethodType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Sensors::CompoundSensorPlanes",
+      "offset": "+0x78",
+      "type": "void*",
+      "name": "field_0x78"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:08:16Z"
+}

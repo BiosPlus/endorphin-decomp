@@ -43009,3 +43009,31 @@ void fn_004EA3D0(void* arg) {
     ext_006A6DD2(exception, reinterpret_cast<const void*>(mem_009DEC1C));
 }
 } // namespace lift_004EA3D0
+
+// [0x0062E520] ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>::vfunc_2 (45 bytes)
+namespace lift_0062E520 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(const void* msgSource);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes>::vfunc_2
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary Reads the pointer stored at self+0x00; if non-null, raises a default-message exception using target+0x78, then always throws a DerivedException.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field Sensors::CompoundSensorPlanes +0x78 void* field_0x78
+void fn_0062E520(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target != nullptr) {
+        ext_0046C4E0(static_cast<uint8_t*>(target) + 0x78);
+    }
+
+    alignas(8) uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+
+    const void* throwInfo = reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu));
+    ext_006A6DD2(exc, throwInfo);
+}
+} // namespace lift_0062E520
