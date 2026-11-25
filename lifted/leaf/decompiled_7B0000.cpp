@@ -1040,3 +1040,34 @@ uint32_t fn_007BADF0(uint8_t* self) {
     return 0;
 }
 } // namespace lift_007BADF0
+
+// [0x007BAE40]
+namespace lift_007BAE40 {
+// @name DecodeSignedLogScale16
+// @summary Decodes a 16-bit sign-magnitude code (bit 15 sign, bits 0-14 magnitude) to 2^((m+0.5)/256 - 64), negated when the sign bit is set; magnitude 0 returns mem_0092A278.
+
+extern const double mem_0092A278; // returned for zero magnitude (fld qword)
+extern const double mem_00999A50; // 0.0027076061740622863 (ln2/256)
+extern const double mem_00999A48; // 44.3614195558365 (64*ln2)
+extern const double mem_00993828; // 0.5
+
+double sub_007BAE40(std::uint32_t arg) {
+    const bool negative = (arg & 0x8000u) != 0;
+    const std::uint32_t mag = arg & 0x7fffu;
+
+    if (mag == 0) {
+        return mem_0092A278;
+    }
+
+    // y = (mag + 0.5) * ln2/256 - 64*ln2, then 2^(y * log2(e)) computed x87-style.
+    const double y = (static_cast<double>(mag) + mem_00993828) * mem_00999A50 - mem_00999A48;
+    const double t = y * 1.4426950408889634; // fldl2e
+
+    const double n = std::nearbyint(t);      // frndint
+    const double f = t - n;                  // fsub: fraction in [-0.5, 0.5]
+    const double p = std::exp2(f);           // f2xm1 + 1
+    const double r = std::ldexp(p, static_cast<int>(n)); // fscale
+
+    return negative ? -r : r;
+}
+} // namespace lift_007BAE40

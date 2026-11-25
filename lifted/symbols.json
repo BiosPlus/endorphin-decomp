@@ -59450,6 +59450,12 @@
     "summary": "Copies a 32-bit value from the address in arg1 to the address in arg2 (cdecl, no stack cleanup).",
     "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
   },
+  "0x007BAE40": {
+    "name": "DecodeSignedLogScale16",
+    "signature": "extern const double mem_0092A278; // returned for zero magnitude (fld qword) extern const double mem_00999A50; // 0.0027076061740622863 (ln2/256) extern const double mem_00999A48; // 44.3614195558365 (64*ln2) extern const double mem_00993828; // 0.5 double sub_007BAE40(std::uint32_t arg)",
+    "summary": "Decodes a 16-bit sign-magnitude code (bit 15 sign, bits 0-14 magnitude) to 2^((m+0.5)/256 - 64), negated when the sign bit is set; magnitude 0 returns mem_0092A278.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BB100": {
     "name": "ExpCurveFromIndex",
     "signature": "double fn_007BB100(int index)",
