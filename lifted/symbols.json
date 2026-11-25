@@ -20444,6 +20444,13 @@
     "summary": "Forwards two stack arguments plus the incoming ECX value to ext_005693E0 (range destroy helper).",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
+  "0x00569970": {
+    "name": "Unknown::ReleaseHandleAndClear",
+    "class": "Unknown",
+    "signature": "void fn_00569970(void* self)",
+    "summary": "If field +0x04 is nonzero, run ext_005693E0 with it and forward it to fn_006A5C5C, then clear fields +0x04, +0x08 and +0x0C.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x00569FC0": {
     "name": "ASFData::Bone::vfunc_0",
     "class": "ASFData::Bone",
