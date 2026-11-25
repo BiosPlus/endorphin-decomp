@@ -1322,3 +1322,32 @@ uint32_t sub_007CCEC0(const uint32_t* self, uint32_t a, uint32_t b) {
     return base + index * 0x58u;
 }
 } // namespace lift_007CCEC0
+
+// [0x007CA7C0]
+namespace lift_007CA7C0 {
+// @name Matrix4x4::transformPoint
+// @class Matrix4x4
+// @summary Transforms a 3D point by a 4x4 matrix (3x3 linear part plus translation)
+// @field Matrix4x4 +0x00 float field_0x00
+// @field Matrix4x4 +0x04 float field_0x04
+// @field Matrix4x4 +0x08 float field_0x08
+// @field Matrix4x4 +0x10 float field_0x10
+// @field Matrix4x4 +0x14 float field_0x14
+// @field Matrix4x4 +0x18 float field_0x18
+// @field Matrix4x4 +0x20 float field_0x20
+// @field Matrix4x4 +0x24 float field_0x24
+// @field Matrix4x4 +0x28 float field_0x28
+// @field Matrix4x4 +0x30 float field_0x30
+// @field Matrix4x4 +0x34 float field_0x34
+// @field Matrix4x4 +0x38 float field_0x38
+void __thiscall sub_007CA7C0(void* self, const float* in, float* out) {
+    const uint8_t* m = reinterpret_cast<const uint8_t*>(self);
+    auto f = [m](uint32_t off) -> float {
+        return *reinterpret_cast<const float*>(m + off);
+    };
+
+    out[0] = f(0x10) * in[1] + f(0x00) * in[0] + f(0x20) * in[2] + f(0x30);
+    out[1] = f(0x04) * in[0] + f(0x14) * in[1] + f(0x24) * in[2] + f(0x34);
+    out[2] = f(0x08) * in[0] + f(0x18) * in[1] + f(0x28) * in[2] + f(0x38);
+}
+} // namespace lift_007CA7C0
