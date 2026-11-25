@@ -50557,3 +50557,34 @@ void fn_005B3BC0(void* self) {
     ext_006A6DD2();
 }
 } // namespace lift_005B3BC0
+
+// [0x0046CE90] ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_0046CE90 {
+// Known callee 0x0046C2E0: sub_0046C2E0 (4B), bool getter taking the ImageExporter pointer.
+extern bool ext_0046C2E0(void* target);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes bool, throws).
+extern void ext_0046C4E0(bool value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException).
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+// RTTI/ThrowInfo data referenced by the push at 0x0046CEB8.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_5
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0>
+// @summary Reads the bound ImageExporter pointer; if non-null, queries getUseRenderer and throws via the default-message path; always ends by throwing DerivedException.
+// @field ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0046CE90(void* self) {
+    void* target = *reinterpret_cast<void**>(self);
+    if (target != nullptr) {
+        bool useRenderer = ext_0046C2E0(target);
+        ext_0046C4E0(useRenderer);
+    }
+
+    // Exception object lives in the 0x28-byte local frame ([esp]).
+    alignas(16) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_0046CE90

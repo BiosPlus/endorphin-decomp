@@ -7926,6 +7926,13 @@
     "summary": "Virtual getter: if the held pointer is non-null, delegates to sub_0046C2E0; otherwise constructs a temporary and throws via _CxxThrowException.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0046CE90": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0\u003e",
+    "signature": "void fn_0046CE90(void* self)",
+    "summary": "Reads the bound ImageExporter pointer; if non-null, queries getUseRenderer and throws via the default-message path; always ends by throwing DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046D190": {
     "name": "ExprParser::ReadMethodType\u003cImageExporter, getDestination, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cImageExporter, std::basic_string\u003cchar\u003e const \u0026, ImageExporter::getDestination, 0\u003e",

@@ -1,0 +1,14 @@
+{
+  "va": "0x0046CE90",
+  "size": 55,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_5",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0\u003e",
+  "signature": "void fn_0046CE90(void* self)",
+  "summary": "Reads the bound ImageExporter pointer; if non-null, queries getUseRenderer and throws via the default-message path; always ends by throwing DerivedException.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:56:05Z"
+}
