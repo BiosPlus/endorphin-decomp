@@ -53124,6 +53124,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00700990": {
+    "name": "Unknown::FillDoubleTripleFromFloatGetters",
+    "class": "Unknown",
+    "signature": "double* fn_00700990(void* self, double* out)",
+    "summary": "Resolves a subobject via GetValueIfCountPositive(self-\u003efield_0x04), then writes three float getter results as doubles to out[0..2].",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x007009E0": {
     "name": "Unknown::GetChainedFloat",
     "class": "Unknown",

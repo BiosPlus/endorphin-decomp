@@ -1,0 +1,22 @@
+{
+  "va": "0x00700990",
+  "size": 80,
+  "orig_symbol": "sub_00700990",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::FillDoubleTripleFromFloatGetters",
+  "class": "Unknown",
+  "signature": "double* fn_00700990(void* self, double* out)",
+  "summary": "Resolves a subobject via GetValueIfCountPositive(self-\u003efield_0x04), then writes three float getter results as doubles to out[0..2].",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:50:22Z"
+}

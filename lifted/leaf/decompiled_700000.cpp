@@ -1665,3 +1665,27 @@ extern double* fn_00702A00(double* out) {
     return out;
 }
 } // namespace lift_00702A00
+
+// [0x00700990] sub_00700990 (80 bytes)
+namespace lift_00700990 {
+extern int32_t ext_006DC460(void* self);
+extern void* ext_006C9490(void* self);
+extern void* ext_006C94B0(void* self);
+extern void* ext_006C94D0(void* self);
+// Known callee 0x006C9F70: sub_006C9F70 (Getter returning float field at offset +0x14.)
+extern float ext_006C9F70(void* self);
+// Known callee 0x006DC460: Unknown::GetValueIfCountPositive (Returns *(this->field_0xC8) when this->field_0xB8 > 0, otherwise 0.)
+
+// @name Unknown::FillDoubleTripleFromFloatGetters
+// @summary Resolves a subobject via GetValueIfCountPositive(self->field_0x04), then writes three float getter results as doubles to out[0..2].
+// @field Unknown +0x04 void* field_0x04
+double* fn_00700990(void* self, double* out) {
+    void* a = lift_field<void*>(self, 0x04);
+    void* obj = reinterpret_cast<void*>(static_cast<intptr_t>(ext_006DC460(a)));
+
+    out[0] = static_cast<double>(ext_006C9F70(ext_006C9490(obj)));
+    out[1] = static_cast<double>(ext_006C9F70(ext_006C94B0(obj)));
+    out[2] = static_cast<double>(ext_006C9F70(ext_006C94D0(obj)));
+    return out;
+}
+} // namespace lift_00700990
