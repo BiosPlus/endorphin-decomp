@@ -1,0 +1,13 @@
+{
+  "va": "0x00509F40",
+  "size": 33,
+  "orig_symbol": "sub_00509F40",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "sub_00509F40",
+  "signature": "void* fn_00509F40(void* dst)",
+  "summary": "Auto-lifted identical-shape clone of 0x004B4AA0 (CopyInitOnceGlobalString_004B4AA0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T03:28:20Z"
+}

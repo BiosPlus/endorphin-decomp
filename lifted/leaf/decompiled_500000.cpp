@@ -68,6 +68,7 @@ void __stdcall sub_0050EE70(uint32_t begin, uint32_t end) {
     }
 }
 } // namespace lift_0050EE70
+#include <memory>
 
 // [0x00503CA0] sub_00503CA0 (37 bytes)
 namespace lift_00503CA0 {
@@ -1930,3 +1931,49 @@ void fn_0050BE20(void* self) {
     ext_00596660(self, outIter, selfValue, first, selfValue, bound);
 }
 } // namespace lift_0050BE20
+
+// [0x00509F10] sub_00509F10 (33 bytes)
+namespace lift_00509F10 {
+// @name sub_00509F10
+// @summary Auto-lifted identical-shape clone of 0x004B4AA0 (CopyInitOnceGlobalString_004B4AA0).
+namespace lift_004B4AA0 {
+// Known callee 0x004B4A40: InitOnceGlobalString_004B4A40 (One-time guarded initializer for the global string at 0x00AE0D70; registers its teardown via ext_006A6C87 and returns the global's address.)
+extern void* ext_00508CD0();
+// Import slot for the MSVCP80 std::basic_string<char> copy constructor (__thiscall, one stack arg).
+extern int mem_00924FE0;
+
+// @name CopyInitOnceGlobalString_004B4AA0
+// @summary Copy-constructs the caller's std::string from the lazily initialized global string and returns the destination.
+void* fn_00509F10(void* dst) {
+    // Original code also zeroes a scratch stack slot before the call; it is unobservable and omitted.
+    using CopyCtor = void(__thiscall*)(void* self, const void* other);
+    const void* src = ext_00508CD0();
+    // Indirect call through the import slot at mem_00924FE0 (thiscall: callee cleans the stack arg).
+    (*reinterpret_cast<CopyCtor*>(&mem_00924FE0))(dst, src);
+    return dst;
+}
+} // namespace lift_004B4AA0
+} // namespace lift_00509F10
+
+// [0x00509F40] sub_00509F40 (33 bytes)
+namespace lift_00509F40 {
+// @name sub_00509F40
+// @summary Auto-lifted identical-shape clone of 0x004B4AA0 (CopyInitOnceGlobalString_004B4AA0).
+namespace lift_004B4AA0 {
+// Known callee 0x004B4A40: InitOnceGlobalString_004B4A40 (One-time guarded initializer for the global string at 0x00AE0D70; registers its teardown via ext_006A6C87 and returns the global's address.)
+extern void* ext_00508DD0();
+// Import slot for the MSVCP80 std::basic_string<char> copy constructor (__thiscall, one stack arg).
+extern int mem_00924FE0;
+
+// @name CopyInitOnceGlobalString_004B4AA0
+// @summary Copy-constructs the caller's std::string from the lazily initialized global string and returns the destination.
+void* fn_00509F40(void* dst) {
+    // Original code also zeroes a scratch stack slot before the call; it is unobservable and omitted.
+    using CopyCtor = void(__thiscall*)(void* self, const void* other);
+    const void* src = ext_00508DD0();
+    // Indirect call through the import slot at mem_00924FE0 (thiscall: callee cleans the stack arg).
+    (*reinterpret_cast<CopyCtor*>(&mem_00924FE0))(dst, src);
+    return dst;
+}
+} // namespace lift_004B4AA0
+} // namespace lift_00509F40

@@ -18420,6 +18420,18 @@
     "summary": "Copy constructor setting vtable, copying std::string at +0x4 and float at +0x20",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00509F10": {
+    "name": "sub_00509F10",
+    "signature": "void* fn_00509F10(void* dst)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B4AA0 (CopyInitOnceGlobalString_004B4AA0).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x00509F40": {
+    "name": "sub_00509F40",
+    "signature": "void* fn_00509F40(void* dst)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B4AA0 (CopyInitOnceGlobalString_004B4AA0).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050A120": {
     "name": "sub_0050A120",
     "signature": "DWORD ext_00509540();  // ConstructOnce_0046F580 DWORD* fn_0050A120(DWORD* dst, DWORD value)",
