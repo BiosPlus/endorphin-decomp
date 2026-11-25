@@ -1651,3 +1651,32 @@ void* __thiscall sub_00783020(void* self, uint32_t key) {
     return mem_0092529C(search_key, entries, count, 8, compar);
 }
 } // namespace lift_00783020
+
+// [0x007831E0]
+namespace lift_007831E0 {
+// @name Unknown_007831E0::Unknown_007831E0
+// @class Unknown_007831E0
+// @summary Constructor that initializes an embedded subobject at +0x0C, sets the vtable to 0x00996E80, and allocates an 8-byte zero-initialized structure at +0x04.
+// @field Unknown_007831E0 +0x00 uint32_t vtable
+// @field Unknown_007831E0 +0x04 void* field_0x04
+// @field Unknown_007831E0 +0x0C uint8_t field_0x0C
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_006B9D10(void* ecx);
+
+extern void* __fastcall fn_007831E0(void* ecx) {
+    uint8_t* self = static_cast<uint8_t*>(ecx);
+    ext_006B9D10(self + 0x0C);
+    *reinterpret_cast<uint32_t*>(self) = 0x00996E80u;
+
+    uint8_t* alloc = static_cast<uint8_t*>(ext_006A5C62(8));
+    if (alloc != nullptr) {
+        *reinterpret_cast<uint32_t*>(alloc) = 0;
+        alloc[4] = 0;
+    }
+
+    *reinterpret_cast<void**>(self + 0x04) = alloc;
+    return self;
+}
+} // namespace lift_007831E0

@@ -20619,6 +20619,12 @@
     "summary": "Looks up table entry via this-\u003e+0x04, takes element 0 of its 104-byte record array, and returns (float) of the double at index this-\u003e+0x08 from that record's vector; returns 0.0f on any null or empty step.",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00524B50": {
+    "name": "set_field_0x08_double_value",
+    "signature": "void __thiscall sub_00524B50(void* self, float value)",
+    "summary": "Sets a double value in a nested vector at index field_0x08 from a float argument.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00524BC0": {
     "name": "Unknown::SetElementFloat_00524BC0",
     "class": "Unknown",

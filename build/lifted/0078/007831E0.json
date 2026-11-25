@@ -1,0 +1,34 @@
+{
+  "va": "0x007831E0",
+  "size": 100,
+  "orig_symbol": "sub_007831E0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "Unknown_007831E0::Unknown_007831E0",
+  "class": "Unknown_007831E0",
+  "signature": "extern \"C\" void* __fastcall fn_007831E0(void* ecx)",
+  "summary": "Constructor that initializes an embedded subobject at +0x0C, sets the vtable to 0x00996E80, and allocates an 8-byte zero-initialized structure at +0x04.",
+  "fields": [
+    {
+      "class": "Unknown_007831E0",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown_007831E0",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown_007831E0",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:59:01Z"
+}
