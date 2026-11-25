@@ -510,10 +510,10 @@
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
   "0x00406030": {
-    "name": "newArrayOfRecords_00406030",
-    "class": "(none)",
-    "signature": "void* fn_00406030(uint32_t count)",
-    "summary": "Allocates an array of `count` 0x58-byte records; throws bad_array_new_length on size overflow.",
+    "name": "sub_00407830",
+    "class": "unknown",
+    "signature": "void fn_00407830(void* self)",
+    "summary": "Passes the field at self+0x20 to USER32!GetDC, then forwards the returned HDC to MFC80 ord_2367.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
   "0x004060F0": {

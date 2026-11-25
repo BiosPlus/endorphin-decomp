@@ -8,9 +8,9 @@
 // Recovered field layout for ExtRecord58:
 namespace lifted_layout {
 struct ExtRecord58_Fields {
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x004060F0)
-    // +0x4   std::string              field_0x04  (evidence: 0x004060F0)
-    // +0x20  std::string              field_0x20  (evidence: 0x004060F0)
-    // +0x3C  std::string              field_0x3C  (evidence: 0x004060F0)
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x00406030, 0x004060F0)
+    // +0x4   std::string              field_0x04  (evidence: 0x00406030, 0x004060F0)
+    // +0x20  std::string              field_0x20  (evidence: 0x00406030, 0x004060F0)
+    // +0x3C  std::string              field_0x3C  (evidence: 0x00406030, 0x004060F0)
 };
 } // namespace lifted_layout

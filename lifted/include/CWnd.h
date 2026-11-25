@@ -10,7 +10,7 @@
 namespace lifted_layout {
 struct CWnd_Fields {
     // +0x20  uint32_t                 hwnd  (evidence: 0x004046E0) // CONFLICT: multiple definitions at +0x20
-    // +0x20  uint32_t                 m_hWnd  (evidence: 0x00401080, 0x0040BE90, 0x004545A0) // CONFLICT: multiple definitions at +0x20
+    // +0x20  uint32_t                 m_hWnd  (evidence: 0x00401080, 0x00406030, 0x0040BE90, 0x004545A0) // CONFLICT: multiple definitions at +0x20
     // +0x54  uint32_t                 field_0x54  (evidence: 0x004046E0)
 };
 } // namespace lifted_layout
