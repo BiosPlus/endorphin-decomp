@@ -1059,3 +1059,35 @@ void fn_007DD040(void* self) {
     fnC(target, self);
 }
 } // namespace lift_007DD040
+
+// [0x007DB130] sub_007DB130 (83 bytes)
+namespace lift_007DB130 {
+// @name Unknown::DispatchSixFields_007DB130
+// @class Unknown
+// @summary Calls a function pointer at [[self+0x24]+0x0c] once per field (+0x00..+0x10), then tail-calls it with +0x14; returns that callee's result.
+// @field Unknown +0x00 DWORD field_0x00
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x08 DWORD field_0x08
+// @field Unknown +0x0c DWORD field_0x0c
+// @field Unknown +0x10 DWORD field_0x10
+// @field Unknown +0x14 DWORD field_0x14
+// @field Unknown +0x24 void* field_0x24
+int fn_007DB130(void* self) {
+    using Slot = int(__cdecl*)(DWORD);
+    // Each call re-reads the dispatch object at self+0x24 and its slot at +0x0c,
+    // matching the original code, which reloads them before every call.
+    auto call = [self](ptrdiff_t fieldOffset) -> int {
+        void* obj = lift_field<void*>(self, 0x24);
+        Slot fn = reinterpret_cast<Slot>(lift_field<void*>(obj, 0x0c));
+        return fn(lift_field<DWORD>(self, fieldOffset));
+    };
+
+    call(0x00);
+    call(0x04);
+    call(0x08);
+    call(0x0c);
+    call(0x10);
+    // Tail call in the original: the result of this last call is returned as-is.
+    return call(0x14);
+}
+} // namespace lift_007DB130

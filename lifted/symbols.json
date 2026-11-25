@@ -61814,6 +61814,13 @@
     "summary": "Allocates a 32-byte (16-byte aligned) block via context-\u003efield_0xb0 and initializes it with sub_007DAD50.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007DB130": {
+    "name": "Unknown::DispatchSixFields_007DB130",
+    "class": "Unknown",
+    "signature": "int fn_007DB130(void* self)",
+    "summary": "Calls a function pointer at [[self+0x24]+0x0c] once per field (+0x00..+0x10), then tail-calls it with +0x14; returns that callee's result.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007DB4C0": {
     "name": "QueryFunctionThenForward_007DB4C0",
     "signature": "DWORD fn_007DB4C0(void* self, DWORD a1, float a2)",
