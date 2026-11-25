@@ -20476,6 +20476,13 @@
     "summary": "Reads a string via virtual slot 9 on the held object at +0x04, parses it with atof, and rounds half away from zero.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005140F0": {
+    "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e",
+    "signature": "void fn_005140F0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049D7F0 (ExprParser::ReadMethodType\u003cNMData::State\u003e::vfunc_5).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005141D0": {
     "name": "Chromosome::vfunc_13",
     "class": "Chromosome",
