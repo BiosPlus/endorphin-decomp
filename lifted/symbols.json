@@ -52778,6 +52778,12 @@
     "summary": "Tail-dispatches vtable slot 0x40/4 (index 16) on self with fixed arguments (0, 0x11, self, -1, 0, 0, 0) and returns its result; the callee pops the 7 stack args.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006FC200": {
+    "name": "FindRecordMatchingKey",
+    "signature": "extern \"C\" bool __fastcall fn_006FC200(void* self, int edx_unused, void* key)",
+    "summary": "Scans a 12-byte record array backwards from the last entry and returns true if a record's first two dwords match the key pair derived from the argument.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FC570": {
     "name": "isKnownGlobalHandle",
     "signature": "uint8_t __stdcall sub_006FC570(uint32_t value)",

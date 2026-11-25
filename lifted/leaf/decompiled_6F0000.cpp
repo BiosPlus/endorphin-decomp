@@ -1549,3 +1549,40 @@ int32_t fn_006FDFC0(void* self, DWORD ordinal, DWORD index) {
 }
 } // namespace lift_006FDFC0
 } // namespace lift_006FDFC0
+
+// [0x006FC200] sub_006FC200 (80 bytes)
+namespace lift_006FC200 {
+// @name FindRecordMatchingKey
+// @summary Scans a 12-byte record array backwards from the last entry and returns true if a record's first two dwords match the key pair derived from the argument.
+// @field field_0x10 void* records (base pointer of 12-byte records)
+// @field field_0x14 int32_t count (number of records)
+extern bool __fastcall fn_006FC200(void* self, int edx_unused, void* key) {
+    (void)edx_unused;
+
+    const auto* obj = static_cast<const uint8_t*>(self);
+    const auto load32 = [](const void* p) -> uint32_t {
+        uint32_t v;
+        std::memcpy(&v, p, sizeof(v));
+        return v;
+    };
+
+    const uintptr_t records = static_cast<uintptr_t>(load32(obj + 0x10));
+    int32_t index = static_cast<int32_t>(load32(obj + 0x14)) - 1;
+
+    // Key pair: second dword = key->link, first dword = *key->link (both 0 when key is null).
+    uint32_t wantFirst = 0;
+    uint32_t wantSecond = 0;
+    if (key != nullptr) {
+        wantSecond = load32(static_cast<const uint8_t*>(key) + 4);
+        wantFirst = load32(reinterpret_cast<const void*>(static_cast<uintptr_t>(wantSecond)));
+    }
+
+    for (; index >= 0; --index) {
+        const uint8_t* rec = reinterpret_cast<const uint8_t*>(records) + static_cast<size_t>(index) * 12u;
+        if (load32(rec) == wantFirst && load32(rec + 4) == wantSecond) {
+            return true;
+        }
+    }
+    return false;
+}
+} // namespace lift_006FC200

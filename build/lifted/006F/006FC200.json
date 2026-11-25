@@ -1,0 +1,13 @@
+{
+  "va": "0x006FC200",
+  "size": 80,
+  "orig_symbol": "sub_006FC200",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "FindRecordMatchingKey",
+  "signature": "extern \"C\" bool __fastcall fn_006FC200(void* self, int edx_unused, void* key)",
+  "summary": "Scans a 12-byte record array backwards from the last entry and returns true if a record's first two dwords match the key pair derived from the argument.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:50:35Z"
+}
