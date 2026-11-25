@@ -9870,3 +9870,39 @@ void __stdcall fn_004EA260(void* a, void* b) {
     ext_004E9D70();
 }
 } // namespace lift_004EA260
+
+// [0x004E9F60] ExprParser::ReadWriteMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, bool, &public: void __thiscall NMData::PoseToolOptions::setCollisionEnabled(bool)>::vfunc_41 (70 bytes)
+namespace lift_004E9F60 {
+// Known callee 0x004E9D70: Unknown::DispatchIndex5ToSelector (Fetches a global int32 as the receiver and dispatches index 5 (arg 0) to its indexed child.)
+extern void ext_004E9D70();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, bool, &public: void __thiscall NMData::PoseToolOptions::setCollisionEnabled(bool)>
+// @summary Stores a bool from a value object into the target's +0x05 byte, throwing if the target pointer is null, then triggers the index-5 dispatch.
+// @field UnknownTarget +0x00 void* field_0x00
+// @field UnknownTarget +0x05 uint8_t field_0x05
+// @field UnknownSource +0x04 void* field_0x04
+void fn_004E9F60(void** target, void* source) {
+    void* obj = *target;
+    if (obj == nullptr) {
+        // Original builds an exception object on the stack and throws it.
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return;
+    }
+
+    // Virtual call: source->+4 is a sub-object; its vtable slot 3 is invoked with source as argument.
+    void* sub = lift_field<void*>(source, 4);
+    using ReadFn = uint8_t (*)(void* self, void* arg);
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    ReadFn read = reinterpret_cast<ReadFn>(vtbl[3]);
+    uint8_t value = read(sub, source);
+
+    lift_field<uint8_t>(obj, 5) = value;
+    ext_004E9D70();
+}
+} // namespace lift_004E9F60

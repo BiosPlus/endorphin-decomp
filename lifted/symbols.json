@@ -17268,6 +17268,13 @@
     "summary": "Reads a bool from the wrapped object's getter (vtable slot 3 of the sub-object at arg1+0x04), stores it into the inner object at +0x04, then dispatches index 5; throws if the inner pointer is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004E9F60": {
+    "name": "ExprParser::ReadWriteMethodType::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, bool, \u0026public: void __thiscall NMData::PoseToolOptions::setCollisionEnabled(bool)\u003e",
+    "signature": "void fn_004E9F60(void** target, void* source)",
+    "summary": "Stores a bool from a value object into the target's +0x05 byte, throwing if the target pointer is null, then triggers the index-5 dispatch.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004EA030": {
     "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, isCollisionEnabled, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0\u003e",

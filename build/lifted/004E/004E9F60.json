@@ -1,0 +1,34 @@
+{
+  "va": "0x004E9F60",
+  "size": 70,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, bool, \u0026public: void __thiscall NMData::PoseToolOptions::setCollisionEnabled(bool)\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, bool, \u0026public: void __thiscall NMData::PoseToolOptions::setCollisionEnabled(bool)\u003e",
+  "signature": "void fn_004E9F60(void** target, void* source)",
+  "summary": "Stores a bool from a value object into the target's +0x05 byte, throwing if the target pointer is null, then triggers the index-5 dispatch.",
+  "fields": [
+    {
+      "class": "UnknownTarget",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "UnknownTarget",
+      "offset": "+0x5",
+      "type": "uint8_t",
+      "name": "field_0x05"
+    },
+    {
+      "class": "UnknownSource",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:06:40Z"
+}
