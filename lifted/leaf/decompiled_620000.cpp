@@ -894,3 +894,30 @@ void* fn_006293A0(void* self, uint32_t arg0) {
     return self;
 }
 } // namespace lift_006293A0
+
+// [0x006271A0] sub_006271A0 (36 bytes)
+namespace lift_006271A0 {
+// Known callee 0x005FF240: sub_005FF240 (Initializes object fields to zero, stores argument at +0x28, and sets vtable to 0x0096F154)
+extern uint32_t ext_005FF240(uintptr_t this_ptr, uint32_t arg0);
+
+// @name Unknown::initWithArgVtableAndZeroFloats
+// @class Unknown
+// @summary Calls base initializer with arg, sets vtable to 0x009777EC, zeroes floats at +0x30/+0x34/+0x38, returns this
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x30 float field_0x30
+// @field Unknown +0x34 float field_0x34
+// @field Unknown +0x38 float field_0x38
+void* fn_006271A0(void* self, uint32_t arg0) {
+    ext_005FF240(reinterpret_cast<uintptr_t>(self), arg0);
+
+    uint8_t* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x00) = 0x009777ECu;
+
+    const float zero = 0.0f;
+    *reinterpret_cast<float*>(base + 0x38) = zero;
+    *reinterpret_cast<float*>(base + 0x34) = zero;
+    *reinterpret_cast<float*>(base + 0x30) = zero;
+
+    return self;
+}
+} // namespace lift_006271A0
