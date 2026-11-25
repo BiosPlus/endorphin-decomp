@@ -876,3 +876,35 @@ uint8_t __cdecl sub_00696BD0(void* stream, void* str) {
     return 1;
 }
 } // namespace lift_00696BD0
+
+// [0x006996C0]
+namespace lift_006996C0 {
+// @name sub_006996C0
+// @summary Checks a subobject at +0x48 via RTTI dynamic_cast, invokes a virtual method on its +0x4 member, and dynamic_casts the result.
+// @field Obj +0x48 uint32_t field_0x48
+// @field Obj +0x4c uint32_t field_0x4c
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern uint32_t ext_006A6E9E(uint32_t inptr, uint32_t vf_delta, uint32_t src_type, uint32_t target_type, uint32_t is_reference);
+
+extern uint32_t fn_006996C0(uint32_t arg0) {
+    if (arg0 == 0) {
+        return 0;
+    }
+    uint32_t esi = arg0 + 0x48;
+    if (mem_read32(esi) == 0) {
+        return 0;
+    }
+    uint32_t obj = mem_read32(esi + 0x4);
+    if (ext_006A6E9E(obj, 0, 0xA31114, 0xAA1808, 0) == 0) {
+        return 0;
+    }
+    uint32_t ecx = mem_read32(esi + 0x4);
+    uint32_t vtable = mem_read32(ecx);
+    uint32_t vfunc = mem_read32(vtable + 0x60);
+    typedef uint32_t(__thiscall* vfunc_t)(uint32_t, uint32_t);
+    uint32_t res = reinterpret_cast<vfunc_t>(static_cast<uintptr_t>(vfunc))(ecx, esi);
+    return ext_006A6E9E(res, 0, 0xA2E2F8, 0xAA3D80, 0);
+}
+} // namespace lift_006996C0

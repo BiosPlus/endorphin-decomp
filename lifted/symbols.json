@@ -41978,6 +41978,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x006996C0": {
+    "name": "sub_006996C0",
+    "signature": "extern \"C\" uint32_t fn_006996C0(uint32_t arg0)",
+    "summary": "Checks a subobject at +0x48 via RTTI dynamic_cast, invokes a virtual method on its +0x4 member, and dynamic_casts the result.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x006997E0": {
     "name": "getTypedObjectViaVfunc60",
     "signature": "void* __thiscall fn_006997E0(void* self, uint32_t arg1)",
@@ -46985,6 +46991,12 @@
     "class": "(none)",
     "signature": "uint32_t sub_006A88A0(void* self)",
     "summary": "Calls ext_006A7C10 once; if nonzero, repeatedly calls ext_006A7C20 with each returned value (passing this) until it returns zero, and returns the number of successful iterations.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
+  "0x006A9290": {
+    "name": "sub_006A9290",
+    "signature": "extern \"C\" int32_t __thiscall fn_006A9290(void* self, uint32_t arg1)",
+    "summary": "Calls MFC80!ord_1903 and if not -1, dispatches a virtual call on subobject at +0x108 with a zeroed 16-byte buffer",
     "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
   },
   "0x006A92F0": {
