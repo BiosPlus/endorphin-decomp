@@ -2228,3 +2228,42 @@ void* __thiscall fn_006407C0(void* self, uint32_t arg0) {
     return obj;
 }
 } // namespace lift_006407C0
+
+// [0x00641E90]
+namespace lift_00641E90 {
+// @name trimWhitespace
+// @summary Trims leading and trailing whitespace characters from a std::string in-place.
+
+
+extern uintptr_t mem_00925060;
+extern uintptr_t mem_00924EC4;
+extern uintptr_t mem_00925100;
+extern uintptr_t mem_00925064;
+
+using FindNotOfFn = uint32_t(__thiscall*)(void* self, const char* s, uint32_t pos, uint32_t count);
+using EraseFn = void*(__thiscall*)(void* self, uint32_t pos, uint32_t count);
+
+void __cdecl sub_00641E90(void* str) {
+    auto find_first_not_of = reinterpret_cast<FindNotOfFn>(mem_00925060);
+    auto find_last_not_of = reinterpret_cast<FindNotOfFn>(mem_00925064);
+    auto erase = reinterpret_cast<EraseFn>(mem_00925100);
+    const uint32_t* npos_ptr = reinterpret_cast<const uint32_t*>(mem_00924EC4);
+    const char* ws = reinterpret_cast<const char*>(0x0097CDAC);
+
+    uint32_t first = find_first_not_of(str, ws, 0, 4);
+    uint32_t npos = *npos_ptr;
+    if (first == npos) {
+        erase(str, 0, npos);
+        return;
+    }
+    if (first != 0) {
+        erase(str, 0, first);
+    }
+
+    uint32_t last = find_last_not_of(str, ws, *npos_ptr, 4);
+    npos = *npos_ptr;
+    if (last != npos) {
+        erase(str, last + 1, npos);
+    }
+}
+} // namespace lift_00641E90

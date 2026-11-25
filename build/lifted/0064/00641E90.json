@@ -1,0 +1,13 @@
+{
+  "va": "0x00641E90",
+  "size": 113,
+  "orig_symbol": "sub_00641E90",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "trimWhitespace",
+  "signature": "void __cdecl sub_00641E90(void* str)",
+  "summary": "Trims leading and trailing whitespace characters from a std::string in-place.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:37:46Z"
+}
