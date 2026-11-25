@@ -1,0 +1,40 @@
+{
+  "va": "0x0060D730",
+  "size": 65,
+  "orig_symbol": "sub_0060D730",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "unknown::ctorWithTailFields",
+  "class": "unknown",
+  "signature": "void* fn_0060D730(void* self)",
+  "summary": "Constructor: runs the base ctor ext_0060B910 on this, stamps vtable 0x009723F4 at this+0, and zeroes the dwords at this+0x48, +0x4C and +0x50; returns this. The original SEH frame setup/teardown is omitted.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x4C",
+      "type": "uint32_t",
+      "name": "field_0x4c"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x50",
+      "type": "uint32_t",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:41:16Z"
+}

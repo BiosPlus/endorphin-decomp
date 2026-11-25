@@ -1053,3 +1053,26 @@ void* fn_0060B910(void* self) {
     return self;                                               // mov eax, esi
 }
 } // namespace lift_0060B910
+
+// [0x0060D730] sub_0060D730 (65 bytes)
+namespace lift_0060D730 {
+// Known callee 0x0060B910: unknown::ctorWithTwoStrings (Constructor: stamps vtable 0x009720F4 at this+0, default-constructs the std::string members at this+0x04 and this+0x20 via MSVCP80, zeroes the dwords at this+0x3C and this+0x40, and returns this. Exception-frame setup from the original is omitted.)
+extern void* ext_0060B910(void* self);
+
+// @name unknown::ctorWithTailFields
+// @class unknown
+// @summary Constructor: runs the base ctor ext_0060B910 on this, stamps vtable 0x009723F4 at this+0, and zeroes the dwords at this+0x48, +0x4C and +0x50; returns this. The original SEH frame setup/teardown is omitted.
+// @field unknown +0x00 uint32_t vptr
+// @field unknown +0x48 uint32_t field_0x48
+// @field unknown +0x4C uint32_t field_0x4c
+// @field unknown +0x50 uint32_t field_0x50
+void* fn_0060D730(void* self) {
+    ext_0060B910(self);
+
+    lift_field<uint32_t>(self, 0x00) = 0x009723F4u;   // mov dword ptr [esi], 0x9723f4
+    lift_field<uint32_t>(self, 0x48) = 0u;            // mov dword ptr [esi+0x48], eax (eax = 0)
+    lift_field<uint32_t>(self, 0x4C) = 0u;            // mov dword ptr [esi+0x4c], eax
+    lift_field<uint32_t>(self, 0x50) = 0u;            // mov dword ptr [esi+0x50], eax
+    return self;                                      // mov eax, esi
+}
+} // namespace lift_0060D730
