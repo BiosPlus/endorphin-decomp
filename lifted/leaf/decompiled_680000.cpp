@@ -800,7 +800,12 @@ float ComputeAbsBlendWithCallee(void* self, float x, float a) {
     }
     r *= mem_0094FF78;
 
-    const double result = xd + r * (std::fabs(static_cast<double>(a) - xd));
+    double d = static_cast<double>(a) - xd;
+    if (d < 0.0) {
+        d = -d;
+    }
+
+    const double result = xd + r * d;
     return static_cast<float>(result);
 }
 } // namespace lift_0068BDF0
