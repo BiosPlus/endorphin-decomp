@@ -987,3 +987,16 @@ uint16_t __thiscall sub_007AEDA0(void* self, uint16_t* dst, uint8_t swapEndian) 
     return *dst;
 }
 } // namespace lift_007AEDA0
+
+// [0x007AECD0]
+namespace lift_007AECD0 {
+// @name MemoryReader::readBytesAllowShort
+// @class MemoryReader
+// @summary Reads up to size bytes from an in-memory buffer into dst without failing on short read
+
+extern uint32_t ext_007AEC70(void* self, void* dst, uint32_t size, uint8_t failIfShort);
+
+uint32_t sub_007AECD0(void* self, void* dst, uint32_t size) {
+    return ext_007AEC70(self, dst, size, 0);
+}
+} // namespace lift_007AECD0

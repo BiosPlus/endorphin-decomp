@@ -1,0 +1,14 @@
+{
+  "va": "0x007AECD0",
+  "size": 20,
+  "orig_symbol": "sub_007AECD0",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "MemoryReader::readBytesAllowShort",
+  "class": "MemoryReader",
+  "signature": "uint32_t sub_007AECD0(void* self, void* dst, uint32_t size)",
+  "summary": "Reads up to size bytes from an in-memory buffer into dst without failing on short read",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:27:42Z"
+}
