@@ -8,7 +8,7 @@
 // Recovered field layout for Pair:
 namespace lifted_layout {
 struct Pair_Fields {
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x00495AB0, 0x0049D390, 0x004BA740, 0x006B2F70, 0x006BA780, 0x006BD210)
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00495AB0, 0x0049D390, 0x004BA740, 0x006B2F70, 0x006BA780, 0x006BD210)
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x00495AB0, 0x0049B170, 0x0049D390, 0x004BA740, 0x006B2F70, 0x006BA780, 0x006BD210)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00495AB0, 0x0049B170, 0x0049D390, 0x004BA740, 0x006B2F70, 0x006BA780, 0x006BD210)
 };
 } // namespace lifted_layout

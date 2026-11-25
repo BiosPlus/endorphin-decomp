@@ -11614,9 +11614,10 @@
     "lifted_path": "lifted/NMData/State.cpp"
   },
   "0x0049B170": {
-    "name": "descriptiveName: compareLocalStringToTwoLiterals",
-    "signature": "bool fn_0049B170()",
-    "summary": "Builds a local std::string, returns true if it equals either of two .rdata string literals.",
+    "name": "sub_00495A20",
+    "class": "NMData::RealChannel",
+    "signature": "void __thiscall fn_00495A20(uint8_t* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
   "0x0049B1E0": {
@@ -46927,10 +46928,10 @@
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x006707A0": {
-    "name": "ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)",
-    "class": "ExprParser::ReadMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getDamping(void) const, 0\u003e",
-    "signature": "void* fn_00617340(void* self)",
-    "summary": "Runtime type check: returns self for a ReadMethodType\u003cNMData::JointLimit\u003e object (getDamping), else NULL; identity for valid objects.",
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, getX\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",
+    "signature": "void fn_006707A0(void* self)",
+    "summary": "Reads the Vector3 value pointer at +0; if non-null, dereferences its float x component (value unused), then always constructs and throws a DerivedException.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00670930": {

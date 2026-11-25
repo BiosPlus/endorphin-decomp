@@ -10,13 +10,13 @@
 // Recovered field layout for RigManager:
 namespace lifted_layout {
 struct RigManager_Fields {
-    // +0x0   DWORD                    vtable  (evidence: 0x00495A60, 0x00495AB0)
-    // +0xC   DWORD                    field_0x0c  (evidence: 0x00495A60, 0x00495AB0)
-    // +0x10  DWORD                    field_0x10  (evidence: 0x00495A60, 0x00495AB0)
-    // +0x14  DWORD                    field_0x14  (evidence: 0x00495A60, 0x00495AB0)
-    // +0x1C  DWORD                    field_0x1c  (evidence: 0x00495A60, 0x00495AB0)
-    // +0x20  DWORD                    field_0x20  (evidence: 0x00495A60, 0x00495AB0)
-    // +0x24  DWORD                    field_0x24  (evidence: 0x00495A60, 0x00495AB0)
-    // +0x28  DWORD                    field_0x28  (evidence: 0x00495A60, 0x00495AB0)
+    // +0x0   DWORD                    vtable  (evidence: 0x00495A60, 0x00495AB0, 0x0049B170)
+    // +0xC   DWORD                    field_0x0c  (evidence: 0x00495A60, 0x00495AB0, 0x0049B170)
+    // +0x10  DWORD                    field_0x10  (evidence: 0x00495A60, 0x00495AB0, 0x0049B170)
+    // +0x14  DWORD                    field_0x14  (evidence: 0x00495A60, 0x00495AB0, 0x0049B170)
+    // +0x1C  DWORD                    field_0x1c  (evidence: 0x00495A60, 0x00495AB0, 0x0049B170)
+    // +0x20  DWORD                    field_0x20  (evidence: 0x00495A60, 0x00495AB0, 0x0049B170)
+    // +0x24  DWORD                    field_0x24  (evidence: 0x00495A60, 0x00495AB0, 0x0049B170)
+    // +0x28  DWORD                    field_0x28  (evidence: 0x00495A60, 0x00495AB0, 0x0049B170)
 };
 } // namespace lifted_layout

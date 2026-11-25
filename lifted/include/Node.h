@@ -40,8 +40,8 @@ struct Node_Fields {
     // +0x84  Node**                   children_end  (evidence: 0x00586240)
     // +0x94  uint32_t                 next  (evidence: 0x00584B10)
     // +0xAD  uint8_t                  flag  (evidence: 0x004A58E0)
-    // +0xDC  void*                    child_list  (evidence: 0x00495AB0, 0x0049DFA0)
-    // +0x130 uint32_t                 field_0x130  (evidence: 0x00495AB0, 0x0049DFA0)
+    // +0xDC  void*                    child_list  (evidence: 0x00495AB0, 0x0049B170, 0x0049DFA0)
+    // +0x130 uint32_t                 field_0x130  (evidence: 0x00495AB0, 0x0049B170, 0x0049DFA0)
     // +0x164 uint32_t                 field_0x164  (evidence: 0x007DA8E0)
 };
 } // namespace lifted_layout
