@@ -100,6 +100,12 @@
     "summary": "Tail-calls a callback function pointer stored at offset 0x14 if non-null",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x00401A10": {
+    "name": "DestroyStringMembers_00401A10",
+    "signature": "inline void CallStringDtor(void* self)",
+    "summary": "Destroys two std::string-like members (this+0x20, then this+0x00) via the MSVCP80 basic_string destructor. The original SEH frame setup/teardown (fs:[0] handler chain, saved esp) is dropped in portable form.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00401A60": {
     "name": "HasBufferedTM::vfunc_3",
     "class": "HasBufferedTM",

@@ -952,3 +952,27 @@ void fn_004060F0(void* dst, void* dstEnd, const void* src) {
     }
 }
 } // namespace lift_004060F0
+
+// [0x00401A10]
+namespace lift_00401A10 {
+// @name DestroyStringMembers_00401A10
+// @summary Destroys two std::string-like members (this+0x20, then this+0x00) via the MSVCP80 basic_string destructor. The original SEH frame setup/teardown (fs:[0] handler chain, saved esp) is dropped in portable form.
+// @field <unknown> +0x20 std::string field_0x20
+
+extern const uint32_t mem_00924FF4; // .rdata: MSVCP80 std::basic_string<char> dtor address
+
+namespace {
+using StringDtorFn = void (*)(void* self);
+
+inline void CallStringDtor(void* self) {
+    auto fn = reinterpret_cast<StringDtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+    fn(self);
+}
+} // namespace
+
+void DestroyStringMembers_00401A10(void* this_ptr) {
+    auto* self = reinterpret_cast<uint8_t*>(this_ptr);
+    CallStringDtor(self + 0x20);
+    CallStringDtor(self);
+}
+} // namespace lift_00401A10

@@ -1,0 +1,21 @@
+{
+  "va": "0x00401A10",
+  "size": 78,
+  "orig_symbol": "sub_00401A10",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "DestroyStringMembers_00401A10",
+  "signature": "inline void CallStringDtor(void* self)",
+  "summary": "Destroys two std::string-like members (this+0x20, then this+0x00) via the MSVCP80 basic_string destructor. The original SEH frame setup/teardown (fs:[0] handler chain, saved esp) is dropped in portable form.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x20",
+      "type": "std::string",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:44:45Z"
+}
