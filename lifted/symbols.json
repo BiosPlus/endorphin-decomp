@@ -28307,6 +28307,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004205B0 (TreeMap::lowerBound).",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x0059B2E0": {
+    "name": "TreeMap::find",
+    "class": "TreeMap",
+    "signature": "void* fn_0059B2E0(void* self, void* out_iter, const void* key)",
+    "summary": "Finds a string key in the red-black tree map and writes an iterator pair (map, node) to out_iter.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x0059B350": {
     "name": "SearchableMap\u003cValuePtr, GetNameFromAttribute\u003cValuePtr\u003e\u003e::vfunc_0",
     "class": "SearchableMap\u003cValuePtr, GetNameFromAttribute\u003cValuePtr\u003e\u003e",

@@ -1674,3 +1674,35 @@ uint32_t sub_0059B170(uint32_t self, uint32_t out_iter, uint32_t key) {
     return out_iter;
 }
 } // namespace lift_0059B170
+
+// [0x0059B2E0]
+namespace lift_0059B2E0 {
+// @name TreeMap::find
+// @class TreeMap
+// @summary Finds a string key in the red-black tree map and writes an iterator pair (map, node) to out_iter.
+// @field TreeMap +0x04 void* head
+
+
+extern void* ext_0059B290(void* self, const void* key);
+extern void (*mem_00925134)(void);
+extern uint8_t (*mem_00924EF4)(const void* lhs, const void* rhs);
+
+void* fn_0059B2E0(void* self, void* out_iter, const void* key) {
+    void* node = ext_0059B290(self, key);
+    if (!self) {
+        mem_00925134();
+    }
+    void* head = *reinterpret_cast<void**>(reinterpret_cast<uintptr_t>(self) + 0x4);
+    void* result_node = head;
+    if (node != head) {
+        const void* node_key = reinterpret_cast<const void*>(reinterpret_cast<uintptr_t>(node) + 0xc);
+        if (!mem_00924EF4(key, node_key)) {
+            result_node = node;
+        }
+    }
+    void** iter = reinterpret_cast<void**>(out_iter);
+    iter[0] = self;
+    iter[1] = result_node;
+    return out_iter;
+}
+} // namespace lift_0059B2E0

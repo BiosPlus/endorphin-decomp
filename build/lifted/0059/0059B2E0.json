@@ -1,0 +1,22 @@
+{
+  "va": "0x0059B2E0",
+  "size": 105,
+  "orig_symbol": "sub_0059B2E0",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "TreeMap::find",
+  "class": "TreeMap",
+  "signature": "void* fn_0059B2E0(void* self, void* out_iter, const void* key)",
+  "summary": "Finds a string key in the red-black tree map and writes an iterator pair (map, node) to out_iter.",
+  "fields": [
+    {
+      "class": "TreeMap",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:07:06Z"
+}
