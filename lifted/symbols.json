@@ -4653,6 +4653,12 @@
     "summary": "Returns the address of the global data slot mem_00933000 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00447F20": {
+    "name": "sub_00447F20",
+    "signature": "void __thiscall fn_00447F20(uint32_t ecx)",
+    "summary": "Destructor that resets vtables and destroys member subobjects at +0xCC and +0x78 before calling base destructor",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00447F90": {
     "name": "GetConstantAddress_00447F90",
     "signature": "extern \"C\" const unsigned int* __cdecl fn_00447F90()",
