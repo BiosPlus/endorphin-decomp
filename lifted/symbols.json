@@ -55991,6 +55991,12 @@
     "summary": "Copies a 32-bit value from the address in arg1 to the address in arg2 (cdecl, no stack cleanup).",
     "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
   },
+  "0x007BB100": {
+    "name": "ExpCurveFromIndex",
+    "signature": "double fn_007BB100(int index)",
+    "summary": "Returns mem_0092A278 for index 0; otherwise 2^((index + 0.5) * mem_00999AE8 - mem_00999AE0) as a double.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BD310": {
     "name": "initField40And4E",
     "signature": "uint32_t sub_007BD310(uint32_t a1)",

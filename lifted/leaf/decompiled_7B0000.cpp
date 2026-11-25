@@ -663,3 +663,22 @@ const uint8_t* fn_007B8968(void* self) {
     return &kTable_007B8968[0][0];
 }
 } // namespace lift_007B8968
+
+// [0x007BB100] sub_007BB100 (64 bytes)
+namespace lift_007BB100 {
+// .rdata constants (x87 loads these as qword)
+extern const double mem_0092A278; // returned when input is 0
+extern const double mem_00999AE8; // scale factor
+extern const double mem_00999AE0; // offset subtracted before exponent
+extern const double mem_00993828; // bias added to input
+
+// @name ExpCurveFromIndex
+// @summary Returns mem_0092A278 for index 0; otherwise 2^((index + 0.5) * mem_00999AE8 - mem_00999AE0) as a double.
+double fn_007BB100(int index) {
+    if (index == 0) {
+        return mem_0092A278;
+    }
+    double t = (static_cast<double>(index) + mem_00993828) * mem_00999AE8 - mem_00999AE0;
+    return std::exp2(t);
+}
+} // namespace lift_007BB100

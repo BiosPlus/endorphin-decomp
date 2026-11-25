@@ -1,0 +1,13 @@
+{
+  "va": "0x007BB100",
+  "size": 64,
+  "orig_symbol": "sub_007BB100",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "ExpCurveFromIndex",
+  "signature": "double fn_007BB100(int index)",
+  "summary": "Returns mem_0092A278 for index 0; otherwise 2^((index + 0.5) * mem_00999AE8 - mem_00999AE0) as a double.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:09:47Z"
+}
