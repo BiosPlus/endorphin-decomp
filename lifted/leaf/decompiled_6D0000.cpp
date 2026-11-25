@@ -5,8 +5,10 @@ extern "C" void __cdecl ext_006A5C5C(void* ptr);
 extern "C" void __fastcall ext_006D7DB0(void* self);
 #include <cstring>
 #include <cstdlib>
+#include <new>
+#include <string>
 
-// [0x006D7B30] sub_006D7B30 (32 bytes)
+#include <string>
 // @name sub_006D7B30
 // @summary MSVC scalar deleting destructor: calls sub_006D7B50 and frees memory when (flags & 1) is set.
 extern "C" void* __fastcall fn_006D7B30(void* self, int edx_unused, unsigned int flags) {
@@ -1125,3 +1127,108 @@ extern void* __fastcall fn_006DE720(void* self, uint32_t /*edx*/, uint32_t targe
     return nullptr;
 }
 } // namespace lift_006DE720
+
+// [0x006D7600] sub_006D7600 (74 bytes)
+namespace lift_006D7600 {
+// @name sub_006D7600
+// @summary Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).
+namespace lift_006BBA40 {
+extern uint32_t mem_00B5D7B8;
+extern uint32_t mem_00B5D7BC;
+extern uint32_t mem_00B5D7C0;
+extern uint32_t mem_00B5D7C4;
+extern uint32_t mem_00B5D7C8;
+extern uint32_t mem_00B5D7CC;
+extern uint32_t mem_00B5D7D0;
+extern uint32_t mem_00B5D7D4;
+extern uint32_t mem_00925284;
+
+// @name fn_006D7600 (copyHugeDoubleToGlobals)
+// @summary Copies the 8-byte double pointed to by the _HUGE pointer into four consecutive 8-byte globals.
+void fn_006BBA40(void) {
+    // mem_00925284 holds the address of _HUGE (a double); read its two 32-bit halves.
+    const auto* src = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    const uint32_t lo = src[0];
+    const uint32_t hi = src[1];
+
+    mem_00B5D7B8 = lo;
+    mem_00B5D7BC = hi;
+    mem_00B5D7C0 = lo;
+    mem_00B5D7C4 = hi;
+    mem_00B5D7C8 = lo;
+    mem_00B5D7CC = hi;
+    mem_00B5D7D0 = lo;
+    mem_00B5D7D4 = hi;
+}
+} // namespace lift_006BBA40
+} // namespace lift_006D7600
+
+// [0x006DBF80] sub_006DBF80 (74 bytes)
+namespace lift_006DBF80 {
+// @name sub_006DBF80
+// @summary Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).
+namespace lift_006BBA40 {
+extern uint32_t mem_00B5DAD0;
+extern uint32_t mem_00B5DAD4;
+extern uint32_t mem_00B5DAD8;
+extern uint32_t mem_00B5DADC;
+extern uint32_t mem_00B5DAE0;
+extern uint32_t mem_00B5DAE4;
+extern uint32_t mem_00B5DAE8;
+extern uint32_t mem_00B5DAEC;
+extern uint32_t mem_00925284;
+
+// @name fn_006DBF80 (copyHugeDoubleToGlobals)
+// @summary Copies the 8-byte double pointed to by the _HUGE pointer into four consecutive 8-byte globals.
+void fn_006BBA40(void) {
+    // mem_00925284 holds the address of _HUGE (a double); read its two 32-bit halves.
+    const auto* src = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    const uint32_t lo = src[0];
+    const uint32_t hi = src[1];
+
+    mem_00B5DAD0 = lo;
+    mem_00B5DAD4 = hi;
+    mem_00B5DAD8 = lo;
+    mem_00B5DADC = hi;
+    mem_00B5DAE0 = lo;
+    mem_00B5DAE4 = hi;
+    mem_00B5DAE8 = lo;
+    mem_00B5DAEC = hi;
+}
+} // namespace lift_006BBA40
+} // namespace lift_006DBF80
+
+// [0x006DDA10] sub_006DDA10 (74 bytes)
+namespace lift_006DDA10 {
+// @name sub_006DDA10
+// @summary Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).
+namespace lift_006BBA40 {
+extern uint32_t mem_00B5DC50;
+extern uint32_t mem_00B5DC54;
+extern uint32_t mem_00B5DC58;
+extern uint32_t mem_00B5DC5C;
+extern uint32_t mem_00B5DC60;
+extern uint32_t mem_00B5DC64;
+extern uint32_t mem_00B5DC68;
+extern uint32_t mem_00B5DC6C;
+extern uint32_t mem_00925284;
+
+// @name fn_006DDA10 (copyHugeDoubleToGlobals)
+// @summary Copies the 8-byte double pointed to by the _HUGE pointer into four consecutive 8-byte globals.
+void fn_006BBA40(void) {
+    // mem_00925284 holds the address of _HUGE (a double); read its two 32-bit halves.
+    const auto* src = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    const uint32_t lo = src[0];
+    const uint32_t hi = src[1];
+
+    mem_00B5DC50 = lo;
+    mem_00B5DC54 = hi;
+    mem_00B5DC58 = lo;
+    mem_00B5DC5C = hi;
+    mem_00B5DC60 = lo;
+    mem_00B5DC64 = hi;
+    mem_00B5DC68 = lo;
+    mem_00B5DC6C = hi;
+}
+} // namespace lift_006BBA40
+} // namespace lift_006DDA10

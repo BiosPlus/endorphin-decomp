@@ -908,3 +908,19 @@ void fn_0040C330(void* self) {
     sendMessage(hwnd, 0x186, flag, 0);
 }
 } // namespace lift_0040C330
+
+// [0x00406350] sub_00406350 (43 bytes)
+namespace lift_00406350 {
+// @name sub_00406350
+// @summary Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).
+namespace lift_0054F290 {
+// Known callee 0x0054F120: Unknown::RelocateRangeBackward_0054F120 (Walks a 104-byte-element range [begin,end) from the back, invoking ext_0054F030 on each element with a destination pointer shifted by (value - end); returns value minus the range size in bytes.)
+extern uint32_t ext_00406140(uint32_t begin, uint32_t end, uint32_t value);
+
+// @name Unknown::RelocateRangeBackwardWrapper_0054F290
+// @summary Forwards its three stack arguments unchanged to RelocateRangeBackward (0x0054F120) and returns that result; the original stack shuffling only reorders copies of the arguments.
+uint32_t fn_00406350(uint32_t begin, uint32_t end, uint32_t value) {
+    return ext_00406140(begin, end, value);
+}
+} // namespace lift_0054F290
+} // namespace lift_00406350

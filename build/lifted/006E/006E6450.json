@@ -1,0 +1,13 @@
+{
+  "va": "0x006E6450",
+  "size": 74,
+  "orig_symbol": "sub_006E6450",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "sub_006E6450",
+  "signature": "void fn_006BBA40(void)",
+  "summary": "Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:34:25Z"
+}

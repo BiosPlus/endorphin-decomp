@@ -4,8 +4,10 @@ extern "C" void __fastcall ext_0070A1F0(void* self);
 extern "C" void __cdecl ext_006A5C5C(void* ptr);
 #include <cstdint>
 #include <cstring>
+#include <new>
+#include <string>
 
-// [0x0070A1D0] sub_0070A1D0 (32 bytes)
+#include <string>
 // @name sub_0070A1D0
 // @summary MSVC scalar deleting destructor: calls sub_0070A1F0 and frees memory when (flags & 1) is set.
 extern "C" void* __fastcall fn_0070A1D0(void* self, int edx_unused, unsigned int flags) {
@@ -16,6 +18,7 @@ extern "C" void* __fastcall fn_0070A1D0(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+#include <cstdlib>
 
 // [0x00707980] sub_00707980 (13 bytes)
 namespace lift_00707980 {
@@ -1403,3 +1406,151 @@ extern bool __thiscall fn_00707F50(uint8_t* self, uint32_t a, uint32_t b) {
     return false;
 }
 } // namespace lift_00707F50
+
+// [0x00701190] sub_00701190 (74 bytes)
+namespace lift_00701190 {
+// @name sub_00701190
+// @summary Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).
+namespace lift_006BBA40 {
+extern uint32_t mem_00B5E808;
+extern uint32_t mem_00B5E80C;
+extern uint32_t mem_00B5E810;
+extern uint32_t mem_00B5E814;
+extern uint32_t mem_00B5E818;
+extern uint32_t mem_00B5E81C;
+extern uint32_t mem_00B5E820;
+extern uint32_t mem_00B5E824;
+extern uint32_t mem_00925284;
+
+// @name fn_00701190 (copyHugeDoubleToGlobals)
+// @summary Copies the 8-byte double pointed to by the _HUGE pointer into four consecutive 8-byte globals.
+void fn_006BBA40(void) {
+    // mem_00925284 holds the address of _HUGE (a double); read its two 32-bit halves.
+    const auto* src = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    const uint32_t lo = src[0];
+    const uint32_t hi = src[1];
+
+    mem_00B5E808 = lo;
+    mem_00B5E80C = hi;
+    mem_00B5E810 = lo;
+    mem_00B5E814 = hi;
+    mem_00B5E818 = lo;
+    mem_00B5E81C = hi;
+    mem_00B5E820 = lo;
+    mem_00B5E824 = hi;
+}
+} // namespace lift_006BBA40
+} // namespace lift_00701190
+
+// [0x00701AC0] sub_00701AC0 (74 bytes)
+namespace lift_00701AC0 {
+// @name sub_00701AC0
+// @summary Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).
+namespace lift_006C06A0 {
+// @name CopyStateAndWriteUnitDouble_006C06A0
+// @summary Copies six dwords from self+0x328..0x33C into a 0x20-byte caller-provided result buffer (hidden sret pointer), then writes the double 1.0 at result+0x18.
+// @field self +0x328 uint32_t field_0x328
+// @field self +0x32C uint32_t field_0x32C
+// @field self +0x330 uint32_t field_0x330
+// @field self +0x334 uint32_t field_0x334
+// @field self +0x338 uint32_t field_0x338
+// @field self +0x33C uint32_t field_0x33C
+void fn_00701AC0(void* self, void* result) {
+    // Source block: six 32-bit fields of the object; the first five map
+    // to result+0x00..0x10, the sixth to result+0x14.
+    const uint8_t* src = static_cast<const uint8_t*>(self);
+    uint32_t* out = static_cast<uint32_t*>(result);
+
+    uint32_t f0, f1, f2, f3, f4, f5;
+    std::memcpy(&f0, src + 0x5A0, sizeof(uint32_t));
+    std::memcpy(&f1, src + 0x5A4, sizeof(uint32_t));
+    std::memcpy(&f2, src + 0x5A8, sizeof(uint32_t));
+    std::memcpy(&f3, src + 0x5AC, sizeof(uint32_t));
+    std::memcpy(&f4, src + 0x5B0, sizeof(uint32_t));
+    std::memcpy(&f5, src + 0x5B4, sizeof(uint32_t));
+
+    out[0] = f0;
+    out[1] = f1;
+    out[2] = f2;
+    out[3] = f3;
+    out[4] = f4;
+    out[5] = f5;             // result+0x14
+    out[6] = 0x00000000u;    // result+0x18 (low dword of 1.0)
+    out[7] = 0x3FF00000u;    // result+0x1C (high dword of 1.0)
+}
+} // namespace lift_006C06A0
+} // namespace lift_00701AC0
+
+// [0x00701B50] sub_00701B50 (74 bytes)
+namespace lift_00701B50 {
+// @name sub_00701B50
+// @summary Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).
+namespace lift_006C06A0 {
+// @name CopyStateAndWriteUnitDouble_006C06A0
+// @summary Copies six dwords from self+0x328..0x33C into a 0x20-byte caller-provided result buffer (hidden sret pointer), then writes the double 1.0 at result+0x18.
+// @field self +0x328 uint32_t field_0x328
+// @field self +0x32C uint32_t field_0x32C
+// @field self +0x330 uint32_t field_0x330
+// @field self +0x334 uint32_t field_0x334
+// @field self +0x338 uint32_t field_0x338
+// @field self +0x33C uint32_t field_0x33C
+void fn_00701B50(void* self, void* result) {
+    // Source block: six 32-bit fields of the object; the first five map
+    // to result+0x00..0x10, the sixth to result+0x14.
+    const uint8_t* src = static_cast<const uint8_t*>(self);
+    uint32_t* out = static_cast<uint32_t*>(result);
+
+    uint32_t f0, f1, f2, f3, f4, f5;
+    std::memcpy(&f0, src + 0x640, sizeof(uint32_t));
+    std::memcpy(&f1, src + 0x644, sizeof(uint32_t));
+    std::memcpy(&f2, src + 0x648, sizeof(uint32_t));
+    std::memcpy(&f3, src + 0x64C, sizeof(uint32_t));
+    std::memcpy(&f4, src + 0x650, sizeof(uint32_t));
+    std::memcpy(&f5, src + 0x654, sizeof(uint32_t));
+
+    out[0] = f0;
+    out[1] = f1;
+    out[2] = f2;
+    out[3] = f3;
+    out[4] = f4;
+    out[5] = f5;             // result+0x14
+    out[6] = 0x00000000u;    // result+0x18 (low dword of 1.0)
+    out[7] = 0x3FF00000u;    // result+0x1C (high dword of 1.0)
+}
+} // namespace lift_006C06A0
+} // namespace lift_00701B50
+
+// [0x00703CF0] sub_00703CF0 (74 bytes)
+namespace lift_00703CF0 {
+// @name sub_00703CF0
+// @summary Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).
+namespace lift_006BBA40 {
+extern uint32_t mem_00B5EA00;
+extern uint32_t mem_00B5EA04;
+extern uint32_t mem_00B5EA08;
+extern uint32_t mem_00B5EA0C;
+extern uint32_t mem_00B5EA10;
+extern uint32_t mem_00B5EA14;
+extern uint32_t mem_00B5EA18;
+extern uint32_t mem_00B5EA1C;
+extern uint32_t mem_00925284;
+
+// @name fn_00703CF0 (copyHugeDoubleToGlobals)
+// @summary Copies the 8-byte double pointed to by the _HUGE pointer into four consecutive 8-byte globals.
+void fn_006BBA40(void) {
+    // mem_00925284 holds the address of _HUGE (a double); read its two 32-bit halves.
+    const auto* src = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    const uint32_t lo = src[0];
+    const uint32_t hi = src[1];
+
+    mem_00B5EA00 = lo;
+    mem_00B5EA04 = hi;
+    mem_00B5EA08 = lo;
+    mem_00B5EA0C = hi;
+    mem_00B5EA10 = lo;
+    mem_00B5EA14 = hi;
+    mem_00B5EA18 = lo;
+    mem_00B5EA1C = hi;
+}
+} // namespace lift_006BBA40
+} // namespace lift_00703CF0

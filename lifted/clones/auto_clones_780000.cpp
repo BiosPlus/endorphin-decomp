@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 #include <new>
 #include <string>
+#include <cstring>
 
 // [0x0078D2C0] sub_0078D2C0 (8 bytes)
 namespace lift_0078D2C0 {
@@ -187,3 +188,73 @@ void sub_00785F60() {
     mem_00B609D4 = huge[1];
 }
 } // namespace lift_00785F60
+
+// [0x00785FF0] sub_00785FF0 (74 bytes)
+namespace lift_00785FF0 {
+// @name sub_00785FF0
+// @summary Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).
+namespace lift_006BBA40 {
+extern uint32_t mem_00B609F0;
+extern uint32_t mem_00B609F4;
+extern uint32_t mem_00B609F8;
+extern uint32_t mem_00B609FC;
+extern uint32_t mem_00B60A00;
+extern uint32_t mem_00B60A04;
+extern uint32_t mem_00B60A08;
+extern uint32_t mem_00B60A0C;
+extern uint32_t mem_00925284;
+
+// @name fn_00785FF0 (copyHugeDoubleToGlobals)
+// @summary Copies the 8-byte double pointed to by the _HUGE pointer into four consecutive 8-byte globals.
+void fn_006BBA40(void) {
+    // mem_00925284 holds the address of _HUGE (a double); read its two 32-bit halves.
+    const auto* src = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    const uint32_t lo = src[0];
+    const uint32_t hi = src[1];
+
+    mem_00B609F0 = lo;
+    mem_00B609F4 = hi;
+    mem_00B609F8 = lo;
+    mem_00B609FC = hi;
+    mem_00B60A00 = lo;
+    mem_00B60A04 = hi;
+    mem_00B60A08 = lo;
+    mem_00B60A0C = hi;
+}
+} // namespace lift_006BBA40
+} // namespace lift_00785FF0
+
+// [0x00787560] sub_00787560 (74 bytes)
+namespace lift_00787560 {
+// @name sub_00787560
+// @summary Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).
+namespace lift_006BBA40 {
+extern uint32_t mem_00B60B70;
+extern uint32_t mem_00B60B74;
+extern uint32_t mem_00B60B78;
+extern uint32_t mem_00B60B7C;
+extern uint32_t mem_00B60B80;
+extern uint32_t mem_00B60B84;
+extern uint32_t mem_00B60B88;
+extern uint32_t mem_00B60B8C;
+extern uint32_t mem_00925284;
+
+// @name fn_00787560 (copyHugeDoubleToGlobals)
+// @summary Copies the 8-byte double pointed to by the _HUGE pointer into four consecutive 8-byte globals.
+void fn_006BBA40(void) {
+    // mem_00925284 holds the address of _HUGE (a double); read its two 32-bit halves.
+    const auto* src = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    const uint32_t lo = src[0];
+    const uint32_t hi = src[1];
+
+    mem_00B60B70 = lo;
+    mem_00B60B74 = hi;
+    mem_00B60B78 = lo;
+    mem_00B60B7C = hi;
+    mem_00B60B80 = lo;
+    mem_00B60B84 = hi;
+    mem_00B60B88 = lo;
+    mem_00B60B8C = hi;
+}
+} // namespace lift_006BBA40
+} // namespace lift_00787560

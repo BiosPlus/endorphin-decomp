@@ -1090,3 +1090,471 @@ void fn_006C06A0(void* self, void* result) {
     out[7] = 0x3FF00000u;    // result+0x1C (high dword of 1.0)
 }
 } // namespace lift_006C06A0
+
+// [0x006C07C0] sub_006C07C0 (74 bytes)
+namespace lift_006C07C0 {
+// @name sub_006C07C0
+// @summary Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).
+namespace lift_006C06A0 {
+// @name CopyStateAndWriteUnitDouble_006C06A0
+// @summary Copies six dwords from self+0x328..0x33C into a 0x20-byte caller-provided result buffer (hidden sret pointer), then writes the double 1.0 at result+0x18.
+// @field self +0x328 uint32_t field_0x328
+// @field self +0x32C uint32_t field_0x32C
+// @field self +0x330 uint32_t field_0x330
+// @field self +0x334 uint32_t field_0x334
+// @field self +0x338 uint32_t field_0x338
+// @field self +0x33C uint32_t field_0x33C
+void fn_006C07C0(void* self, void* result) {
+    // Source block: six 32-bit fields of the object; the first five map
+    // to result+0x00..0x10, the sixth to result+0x14.
+    const uint8_t* src = static_cast<const uint8_t*>(self);
+    uint32_t* out = static_cast<uint32_t*>(result);
+
+    uint32_t f0, f1, f2, f3, f4, f5;
+    std::memcpy(&f0, src + 0x468, sizeof(uint32_t));
+    std::memcpy(&f1, src + 0x46C, sizeof(uint32_t));
+    std::memcpy(&f2, src + 0x470, sizeof(uint32_t));
+    std::memcpy(&f3, src + 0x474, sizeof(uint32_t));
+    std::memcpy(&f4, src + 0x478, sizeof(uint32_t));
+    std::memcpy(&f5, src + 0x47C, sizeof(uint32_t));
+
+    out[0] = f0;
+    out[1] = f1;
+    out[2] = f2;
+    out[3] = f3;
+    out[4] = f4;
+    out[5] = f5;             // result+0x14
+    out[6] = 0x00000000u;    // result+0x18 (low dword of 1.0)
+    out[7] = 0x3FF00000u;    // result+0x1C (high dword of 1.0)
+}
+} // namespace lift_006C06A0
+} // namespace lift_006C07C0
+
+// [0x006C0850] sub_006C0850 (74 bytes)
+namespace lift_006C0850 {
+// @name sub_006C0850
+// @summary Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).
+namespace lift_006C06A0 {
+// @name CopyStateAndWriteUnitDouble_006C06A0
+// @summary Copies six dwords from self+0x328..0x33C into a 0x20-byte caller-provided result buffer (hidden sret pointer), then writes the double 1.0 at result+0x18.
+// @field self +0x328 uint32_t field_0x328
+// @field self +0x32C uint32_t field_0x32C
+// @field self +0x330 uint32_t field_0x330
+// @field self +0x334 uint32_t field_0x334
+// @field self +0x338 uint32_t field_0x338
+// @field self +0x33C uint32_t field_0x33C
+void fn_006C0850(void* self, void* result) {
+    // Source block: six 32-bit fields of the object; the first five map
+    // to result+0x00..0x10, the sixth to result+0x14.
+    const uint8_t* src = static_cast<const uint8_t*>(self);
+    uint32_t* out = static_cast<uint32_t*>(result);
+
+    uint32_t f0, f1, f2, f3, f4, f5;
+    std::memcpy(&f0, src + 0x508, sizeof(uint32_t));
+    std::memcpy(&f1, src + 0x50C, sizeof(uint32_t));
+    std::memcpy(&f2, src + 0x510, sizeof(uint32_t));
+    std::memcpy(&f3, src + 0x514, sizeof(uint32_t));
+    std::memcpy(&f4, src + 0x518, sizeof(uint32_t));
+    std::memcpy(&f5, src + 0x51C, sizeof(uint32_t));
+
+    out[0] = f0;
+    out[1] = f1;
+    out[2] = f2;
+    out[3] = f3;
+    out[4] = f4;
+    out[5] = f5;             // result+0x14
+    out[6] = 0x00000000u;    // result+0x18 (low dword of 1.0)
+    out[7] = 0x3FF00000u;    // result+0x1C (high dword of 1.0)
+}
+} // namespace lift_006C06A0
+} // namespace lift_006C0850
+
+// [0x006C0900] sub_006C0900 (74 bytes)
+namespace lift_006C0900 {
+// @name sub_006C0900
+// @summary Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).
+namespace lift_006C06A0 {
+// @name CopyStateAndWriteUnitDouble_006C06A0
+// @summary Copies six dwords from self+0x328..0x33C into a 0x20-byte caller-provided result buffer (hidden sret pointer), then writes the double 1.0 at result+0x18.
+// @field self +0x328 uint32_t field_0x328
+// @field self +0x32C uint32_t field_0x32C
+// @field self +0x330 uint32_t field_0x330
+// @field self +0x334 uint32_t field_0x334
+// @field self +0x338 uint32_t field_0x338
+// @field self +0x33C uint32_t field_0x33C
+void fn_006C0900(void* self, void* result) {
+    // Source block: six 32-bit fields of the object; the first five map
+    // to result+0x00..0x10, the sixth to result+0x14.
+    const uint8_t* src = static_cast<const uint8_t*>(self);
+    uint32_t* out = static_cast<uint32_t*>(result);
+
+    uint32_t f0, f1, f2, f3, f4, f5;
+    std::memcpy(&f0, src + 0x630, sizeof(uint32_t));
+    std::memcpy(&f1, src + 0x634, sizeof(uint32_t));
+    std::memcpy(&f2, src + 0x638, sizeof(uint32_t));
+    std::memcpy(&f3, src + 0x63C, sizeof(uint32_t));
+    std::memcpy(&f4, src + 0x640, sizeof(uint32_t));
+    std::memcpy(&f5, src + 0x644, sizeof(uint32_t));
+
+    out[0] = f0;
+    out[1] = f1;
+    out[2] = f2;
+    out[3] = f3;
+    out[4] = f4;
+    out[5] = f5;             // result+0x14
+    out[6] = 0x00000000u;    // result+0x18 (low dword of 1.0)
+    out[7] = 0x3FF00000u;    // result+0x1C (high dword of 1.0)
+}
+} // namespace lift_006C06A0
+} // namespace lift_006C0900
+
+// [0x006C0990] sub_006C0990 (74 bytes)
+namespace lift_006C0990 {
+// @name sub_006C0990
+// @summary Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).
+namespace lift_006C06A0 {
+// @name CopyStateAndWriteUnitDouble_006C06A0
+// @summary Copies six dwords from self+0x328..0x33C into a 0x20-byte caller-provided result buffer (hidden sret pointer), then writes the double 1.0 at result+0x18.
+// @field self +0x328 uint32_t field_0x328
+// @field self +0x32C uint32_t field_0x32C
+// @field self +0x330 uint32_t field_0x330
+// @field self +0x334 uint32_t field_0x334
+// @field self +0x338 uint32_t field_0x338
+// @field self +0x33C uint32_t field_0x33C
+void fn_006C0990(void* self, void* result) {
+    // Source block: six 32-bit fields of the object; the first five map
+    // to result+0x00..0x10, the sixth to result+0x14.
+    const uint8_t* src = static_cast<const uint8_t*>(self);
+    uint32_t* out = static_cast<uint32_t*>(result);
+
+    uint32_t f0, f1, f2, f3, f4, f5;
+    std::memcpy(&f0, src + 0x6D0, sizeof(uint32_t));
+    std::memcpy(&f1, src + 0x6D4, sizeof(uint32_t));
+    std::memcpy(&f2, src + 0x6D8, sizeof(uint32_t));
+    std::memcpy(&f3, src + 0x6DC, sizeof(uint32_t));
+    std::memcpy(&f4, src + 0x6E0, sizeof(uint32_t));
+    std::memcpy(&f5, src + 0x6E4, sizeof(uint32_t));
+
+    out[0] = f0;
+    out[1] = f1;
+    out[2] = f2;
+    out[3] = f3;
+    out[4] = f4;
+    out[5] = f5;             // result+0x14
+    out[6] = 0x00000000u;    // result+0x18 (low dword of 1.0)
+    out[7] = 0x3FF00000u;    // result+0x1C (high dword of 1.0)
+}
+} // namespace lift_006C06A0
+} // namespace lift_006C0990
+
+// [0x006C0B50] sub_006C0B50 (74 bytes)
+namespace lift_006C0B50 {
+// @name sub_006C0B50
+// @summary Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).
+namespace lift_006C06A0 {
+// @name CopyStateAndWriteUnitDouble_006C06A0
+// @summary Copies six dwords from self+0x328..0x33C into a 0x20-byte caller-provided result buffer (hidden sret pointer), then writes the double 1.0 at result+0x18.
+// @field self +0x328 uint32_t field_0x328
+// @field self +0x32C uint32_t field_0x32C
+// @field self +0x330 uint32_t field_0x330
+// @field self +0x334 uint32_t field_0x334
+// @field self +0x338 uint32_t field_0x338
+// @field self +0x33C uint32_t field_0x33C
+void fn_006C0B50(void* self, void* result) {
+    // Source block: six 32-bit fields of the object; the first five map
+    // to result+0x00..0x10, the sixth to result+0x14.
+    const uint8_t* src = static_cast<const uint8_t*>(self);
+    uint32_t* out = static_cast<uint32_t*>(result);
+
+    uint32_t f0, f1, f2, f3, f4, f5;
+    std::memcpy(&f0, src + 0xC38, sizeof(uint32_t));
+    std::memcpy(&f1, src + 0xC3C, sizeof(uint32_t));
+    std::memcpy(&f2, src + 0xC40, sizeof(uint32_t));
+    std::memcpy(&f3, src + 0xC44, sizeof(uint32_t));
+    std::memcpy(&f4, src + 0xC48, sizeof(uint32_t));
+    std::memcpy(&f5, src + 0xC4C, sizeof(uint32_t));
+
+    out[0] = f0;
+    out[1] = f1;
+    out[2] = f2;
+    out[3] = f3;
+    out[4] = f4;
+    out[5] = f5;             // result+0x14
+    out[6] = 0x00000000u;    // result+0x18 (low dword of 1.0)
+    out[7] = 0x3FF00000u;    // result+0x1C (high dword of 1.0)
+}
+} // namespace lift_006C06A0
+} // namespace lift_006C0B50
+
+// [0x006C0BE0] sub_006C0BE0 (74 bytes)
+namespace lift_006C0BE0 {
+// @name sub_006C0BE0
+// @summary Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).
+namespace lift_006C06A0 {
+// @name CopyStateAndWriteUnitDouble_006C06A0
+// @summary Copies six dwords from self+0x328..0x33C into a 0x20-byte caller-provided result buffer (hidden sret pointer), then writes the double 1.0 at result+0x18.
+// @field self +0x328 uint32_t field_0x328
+// @field self +0x32C uint32_t field_0x32C
+// @field self +0x330 uint32_t field_0x330
+// @field self +0x334 uint32_t field_0x334
+// @field self +0x338 uint32_t field_0x338
+// @field self +0x33C uint32_t field_0x33C
+void fn_006C0BE0(void* self, void* result) {
+    // Source block: six 32-bit fields of the object; the first five map
+    // to result+0x00..0x10, the sixth to result+0x14.
+    const uint8_t* src = static_cast<const uint8_t*>(self);
+    uint32_t* out = static_cast<uint32_t*>(result);
+
+    uint32_t f0, f1, f2, f3, f4, f5;
+    std::memcpy(&f0, src + 0xCD8, sizeof(uint32_t));
+    std::memcpy(&f1, src + 0xCDC, sizeof(uint32_t));
+    std::memcpy(&f2, src + 0xCE0, sizeof(uint32_t));
+    std::memcpy(&f3, src + 0xCE4, sizeof(uint32_t));
+    std::memcpy(&f4, src + 0xCE8, sizeof(uint32_t));
+    std::memcpy(&f5, src + 0xCEC, sizeof(uint32_t));
+
+    out[0] = f0;
+    out[1] = f1;
+    out[2] = f2;
+    out[3] = f3;
+    out[4] = f4;
+    out[5] = f5;             // result+0x14
+    out[6] = 0x00000000u;    // result+0x18 (low dword of 1.0)
+    out[7] = 0x3FF00000u;    // result+0x1C (high dword of 1.0)
+}
+} // namespace lift_006C06A0
+} // namespace lift_006C0BE0
+
+// [0x006C0C90] sub_006C0C90 (74 bytes)
+namespace lift_006C0C90 {
+// @name sub_006C0C90
+// @summary Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).
+namespace lift_006C06A0 {
+// @name CopyStateAndWriteUnitDouble_006C06A0
+// @summary Copies six dwords from self+0x328..0x33C into a 0x20-byte caller-provided result buffer (hidden sret pointer), then writes the double 1.0 at result+0x18.
+// @field self +0x328 uint32_t field_0x328
+// @field self +0x32C uint32_t field_0x32C
+// @field self +0x330 uint32_t field_0x330
+// @field self +0x334 uint32_t field_0x334
+// @field self +0x338 uint32_t field_0x338
+// @field self +0x33C uint32_t field_0x33C
+void fn_006C0C90(void* self, void* result) {
+    // Source block: six 32-bit fields of the object; the first five map
+    // to result+0x00..0x10, the sixth to result+0x14.
+    const uint8_t* src = static_cast<const uint8_t*>(self);
+    uint32_t* out = static_cast<uint32_t*>(result);
+
+    uint32_t f0, f1, f2, f3, f4, f5;
+    std::memcpy(&f0, src + 0xE00, sizeof(uint32_t));
+    std::memcpy(&f1, src + 0xE04, sizeof(uint32_t));
+    std::memcpy(&f2, src + 0xE08, sizeof(uint32_t));
+    std::memcpy(&f3, src + 0xE0C, sizeof(uint32_t));
+    std::memcpy(&f4, src + 0xE10, sizeof(uint32_t));
+    std::memcpy(&f5, src + 0xE14, sizeof(uint32_t));
+
+    out[0] = f0;
+    out[1] = f1;
+    out[2] = f2;
+    out[3] = f3;
+    out[4] = f4;
+    out[5] = f5;             // result+0x14
+    out[6] = 0x00000000u;    // result+0x18 (low dword of 1.0)
+    out[7] = 0x3FF00000u;    // result+0x1C (high dword of 1.0)
+}
+} // namespace lift_006C06A0
+} // namespace lift_006C0C90
+
+// [0x006C0D20] sub_006C0D20 (74 bytes)
+namespace lift_006C0D20 {
+// @name sub_006C0D20
+// @summary Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).
+namespace lift_006C06A0 {
+// @name CopyStateAndWriteUnitDouble_006C06A0
+// @summary Copies six dwords from self+0x328..0x33C into a 0x20-byte caller-provided result buffer (hidden sret pointer), then writes the double 1.0 at result+0x18.
+// @field self +0x328 uint32_t field_0x328
+// @field self +0x32C uint32_t field_0x32C
+// @field self +0x330 uint32_t field_0x330
+// @field self +0x334 uint32_t field_0x334
+// @field self +0x338 uint32_t field_0x338
+// @field self +0x33C uint32_t field_0x33C
+void fn_006C0D20(void* self, void* result) {
+    // Source block: six 32-bit fields of the object; the first five map
+    // to result+0x00..0x10, the sixth to result+0x14.
+    const uint8_t* src = static_cast<const uint8_t*>(self);
+    uint32_t* out = static_cast<uint32_t*>(result);
+
+    uint32_t f0, f1, f2, f3, f4, f5;
+    std::memcpy(&f0, src + 0xEA0, sizeof(uint32_t));
+    std::memcpy(&f1, src + 0xEA4, sizeof(uint32_t));
+    std::memcpy(&f2, src + 0xEA8, sizeof(uint32_t));
+    std::memcpy(&f3, src + 0xEAC, sizeof(uint32_t));
+    std::memcpy(&f4, src + 0xEB0, sizeof(uint32_t));
+    std::memcpy(&f5, src + 0xEB4, sizeof(uint32_t));
+
+    out[0] = f0;
+    out[1] = f1;
+    out[2] = f2;
+    out[3] = f3;
+    out[4] = f4;
+    out[5] = f5;             // result+0x14
+    out[6] = 0x00000000u;    // result+0x18 (low dword of 1.0)
+    out[7] = 0x3FF00000u;    // result+0x1C (high dword of 1.0)
+}
+} // namespace lift_006C06A0
+} // namespace lift_006C0D20
+
+// [0x006C0F40] sub_006C0F40 (74 bytes)
+namespace lift_006C0F40 {
+// @name sub_006C0F40
+// @summary Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).
+namespace lift_006C06A0 {
+// @name CopyStateAndWriteUnitDouble_006C06A0
+// @summary Copies six dwords from self+0x328..0x33C into a 0x20-byte caller-provided result buffer (hidden sret pointer), then writes the double 1.0 at result+0x18.
+// @field self +0x328 uint32_t field_0x328
+// @field self +0x32C uint32_t field_0x32C
+// @field self +0x330 uint32_t field_0x330
+// @field self +0x334 uint32_t field_0x334
+// @field self +0x338 uint32_t field_0x338
+// @field self +0x33C uint32_t field_0x33C
+void fn_006C0F40(void* self, void* result) {
+    // Source block: six 32-bit fields of the object; the first five map
+    // to result+0x00..0x10, the sixth to result+0x14.
+    const uint8_t* src = static_cast<const uint8_t*>(self);
+    uint32_t* out = static_cast<uint32_t*>(result);
+
+    uint32_t f0, f1, f2, f3, f4, f5;
+    std::memcpy(&f0, src + 0x1518, sizeof(uint32_t));
+    std::memcpy(&f1, src + 0x151C, sizeof(uint32_t));
+    std::memcpy(&f2, src + 0x1520, sizeof(uint32_t));
+    std::memcpy(&f3, src + 0x1524, sizeof(uint32_t));
+    std::memcpy(&f4, src + 0x1528, sizeof(uint32_t));
+    std::memcpy(&f5, src + 0x152C, sizeof(uint32_t));
+
+    out[0] = f0;
+    out[1] = f1;
+    out[2] = f2;
+    out[3] = f3;
+    out[4] = f4;
+    out[5] = f5;             // result+0x14
+    out[6] = 0x00000000u;    // result+0x18 (low dword of 1.0)
+    out[7] = 0x3FF00000u;    // result+0x1C (high dword of 1.0)
+}
+} // namespace lift_006C06A0
+} // namespace lift_006C0F40
+
+// [0x006C0FD0] sub_006C0FD0 (74 bytes)
+namespace lift_006C0FD0 {
+// @name sub_006C0FD0
+// @summary Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).
+namespace lift_006C06A0 {
+// @name CopyStateAndWriteUnitDouble_006C06A0
+// @summary Copies six dwords from self+0x328..0x33C into a 0x20-byte caller-provided result buffer (hidden sret pointer), then writes the double 1.0 at result+0x18.
+// @field self +0x328 uint32_t field_0x328
+// @field self +0x32C uint32_t field_0x32C
+// @field self +0x330 uint32_t field_0x330
+// @field self +0x334 uint32_t field_0x334
+// @field self +0x338 uint32_t field_0x338
+// @field self +0x33C uint32_t field_0x33C
+void fn_006C0FD0(void* self, void* result) {
+    // Source block: six 32-bit fields of the object; the first five map
+    // to result+0x00..0x10, the sixth to result+0x14.
+    const uint8_t* src = static_cast<const uint8_t*>(self);
+    uint32_t* out = static_cast<uint32_t*>(result);
+
+    uint32_t f0, f1, f2, f3, f4, f5;
+    std::memcpy(&f0, src + 0x15B8, sizeof(uint32_t));
+    std::memcpy(&f1, src + 0x15BC, sizeof(uint32_t));
+    std::memcpy(&f2, src + 0x15C0, sizeof(uint32_t));
+    std::memcpy(&f3, src + 0x15C4, sizeof(uint32_t));
+    std::memcpy(&f4, src + 0x15C8, sizeof(uint32_t));
+    std::memcpy(&f5, src + 0x15CC, sizeof(uint32_t));
+
+    out[0] = f0;
+    out[1] = f1;
+    out[2] = f2;
+    out[3] = f3;
+    out[4] = f4;
+    out[5] = f5;             // result+0x14
+    out[6] = 0x00000000u;    // result+0x18 (low dword of 1.0)
+    out[7] = 0x3FF00000u;    // result+0x1C (high dword of 1.0)
+}
+} // namespace lift_006C06A0
+} // namespace lift_006C0FD0
+
+// [0x006C1120] sub_006C1120 (74 bytes)
+namespace lift_006C1120 {
+// @name sub_006C1120
+// @summary Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).
+namespace lift_006C06A0 {
+// @name CopyStateAndWriteUnitDouble_006C06A0
+// @summary Copies six dwords from self+0x328..0x33C into a 0x20-byte caller-provided result buffer (hidden sret pointer), then writes the double 1.0 at result+0x18.
+// @field self +0x328 uint32_t field_0x328
+// @field self +0x32C uint32_t field_0x32C
+// @field self +0x330 uint32_t field_0x330
+// @field self +0x334 uint32_t field_0x334
+// @field self +0x338 uint32_t field_0x338
+// @field self +0x33C uint32_t field_0x33C
+void fn_006C1120(void* self, void* result) {
+    // Source block: six 32-bit fields of the object; the first five map
+    // to result+0x00..0x10, the sixth to result+0x14.
+    const uint8_t* src = static_cast<const uint8_t*>(self);
+    uint32_t* out = static_cast<uint32_t*>(result);
+
+    uint32_t f0, f1, f2, f3, f4, f5;
+    std::memcpy(&f0, src + 0x1988, sizeof(uint32_t));
+    std::memcpy(&f1, src + 0x198C, sizeof(uint32_t));
+    std::memcpy(&f2, src + 0x1990, sizeof(uint32_t));
+    std::memcpy(&f3, src + 0x1994, sizeof(uint32_t));
+    std::memcpy(&f4, src + 0x1998, sizeof(uint32_t));
+    std::memcpy(&f5, src + 0x199C, sizeof(uint32_t));
+
+    out[0] = f0;
+    out[1] = f1;
+    out[2] = f2;
+    out[3] = f3;
+    out[4] = f4;
+    out[5] = f5;             // result+0x14
+    out[6] = 0x00000000u;    // result+0x18 (low dword of 1.0)
+    out[7] = 0x3FF00000u;    // result+0x1C (high dword of 1.0)
+}
+} // namespace lift_006C06A0
+} // namespace lift_006C1120
+
+// [0x006C11B0] sub_006C11B0 (74 bytes)
+namespace lift_006C11B0 {
+// @name sub_006C11B0
+// @summary Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).
+namespace lift_006C06A0 {
+// @name CopyStateAndWriteUnitDouble_006C06A0
+// @summary Copies six dwords from self+0x328..0x33C into a 0x20-byte caller-provided result buffer (hidden sret pointer), then writes the double 1.0 at result+0x18.
+// @field self +0x328 uint32_t field_0x328
+// @field self +0x32C uint32_t field_0x32C
+// @field self +0x330 uint32_t field_0x330
+// @field self +0x334 uint32_t field_0x334
+// @field self +0x338 uint32_t field_0x338
+// @field self +0x33C uint32_t field_0x33C
+void fn_006C11B0(void* self, void* result) {
+    // Source block: six 32-bit fields of the object; the first five map
+    // to result+0x00..0x10, the sixth to result+0x14.
+    const uint8_t* src = static_cast<const uint8_t*>(self);
+    uint32_t* out = static_cast<uint32_t*>(result);
+
+    uint32_t f0, f1, f2, f3, f4, f5;
+    std::memcpy(&f0, src + 0x1A28, sizeof(uint32_t));
+    std::memcpy(&f1, src + 0x1A2C, sizeof(uint32_t));
+    std::memcpy(&f2, src + 0x1A30, sizeof(uint32_t));
+    std::memcpy(&f3, src + 0x1A34, sizeof(uint32_t));
+    std::memcpy(&f4, src + 0x1A38, sizeof(uint32_t));
+    std::memcpy(&f5, src + 0x1A3C, sizeof(uint32_t));
+
+    out[0] = f0;
+    out[1] = f1;
+    out[2] = f2;
+    out[3] = f3;
+    out[4] = f4;
+    out[5] = f5;             // result+0x14
+    out[6] = 0x00000000u;    // result+0x18 (low dword of 1.0)
+    out[7] = 0x3FF00000u;    // result+0x1C (high dword of 1.0)
+}
+} // namespace lift_006C06A0
+} // namespace lift_006C11B0

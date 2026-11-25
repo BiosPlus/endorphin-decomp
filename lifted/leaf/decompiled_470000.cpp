@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 #include <new>
 #include <string>
+#include <cstdint>
 
 // [0x0047A010] sub_0047A010 (41 bytes)
 namespace lift_0047A010 {
@@ -323,3 +324,19 @@ void fn_00478C60(uint32_t* first, uint32_t* last, uint32_t pred) {
 }
 } // namespace lift_00481C90
 } // namespace lift_00478C60
+
+// [0x004788A0] sub_004788A0 (43 bytes)
+namespace lift_004788A0 {
+// @name sub_004788A0
+// @summary Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).
+namespace lift_0054F290 {
+// Known callee 0x0054F120: Unknown::RelocateRangeBackward_0054F120 (Walks a 104-byte-element range [begin,end) from the back, invoking ext_0054F030 on each element with a destination pointer shifted by (value - end); returns value minus the range size in bytes.)
+extern uint32_t ext_004772E0(uint32_t begin, uint32_t end, uint32_t value);
+
+// @name Unknown::RelocateRangeBackwardWrapper_0054F290
+// @summary Forwards its three stack arguments unchanged to RelocateRangeBackward (0x0054F120) and returns that result; the original stack shuffling only reorders copies of the arguments.
+uint32_t fn_004788A0(uint32_t begin, uint32_t end, uint32_t value) {
+    return ext_004772E0(begin, end, value);
+}
+} // namespace lift_0054F290
+} // namespace lift_004788A0

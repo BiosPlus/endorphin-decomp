@@ -1,0 +1,13 @@
+{
+  "va": "0x0051AE60",
+  "size": 43,
+  "orig_symbol": "sub_0051AE60",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "sub_0051AE60",
+  "signature": "uint32_t fn_0051AE60(uint32_t begin, uint32_t end, uint32_t value)",
+  "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:34:25Z"
+}

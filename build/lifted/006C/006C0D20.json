@@ -1,0 +1,51 @@
+{
+  "va": "0x006C0D20",
+  "size": 74,
+  "orig_symbol": "sub_006C0D20",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "sub_006C0D20",
+  "signature": "void fn_006C0D20(void* self, void* result)",
+  "summary": "Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x328",
+      "type": "uint32_t",
+      "name": "field_0x328"
+    },
+    {
+      "class": "self",
+      "offset": "+0x32C",
+      "type": "uint32_t",
+      "name": "field_0x32C"
+    },
+    {
+      "class": "self",
+      "offset": "+0x330",
+      "type": "uint32_t",
+      "name": "field_0x330"
+    },
+    {
+      "class": "self",
+      "offset": "+0x334",
+      "type": "uint32_t",
+      "name": "field_0x334"
+    },
+    {
+      "class": "self",
+      "offset": "+0x338",
+      "type": "uint32_t",
+      "name": "field_0x338"
+    },
+    {
+      "class": "self",
+      "offset": "+0x33C",
+      "type": "uint32_t",
+      "name": "field_0x33C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:34:25Z"
+}

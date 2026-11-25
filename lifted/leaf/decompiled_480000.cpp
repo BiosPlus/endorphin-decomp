@@ -27,6 +27,7 @@ void fn_00480750(void* self) {
 }
 } // namespace lift_00594790
 } // namespace lift_00480750
+#include <cstdint>
 
 // [0x0048CCA0] sub_0048CCA0 (27 bytes)
 namespace lift_0048CCA0 {
@@ -1036,3 +1037,35 @@ void fn_00481C90(uint32_t* first, uint32_t* last, uint32_t pred) {
     }
 }
 } // namespace lift_00481C90
+
+// [0x00481740] sub_00481740 (43 bytes)
+namespace lift_00481740 {
+// @name sub_00481740
+// @summary Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).
+namespace lift_0054F290 {
+// Known callee 0x0054F120: Unknown::RelocateRangeBackward_0054F120 (Walks a 104-byte-element range [begin,end) from the back, invoking ext_0054F030 on each element with a destination pointer shifted by (value - end); returns value minus the range size in bytes.)
+extern uint32_t ext_00480770(uint32_t begin, uint32_t end, uint32_t value);
+
+// @name Unknown::RelocateRangeBackwardWrapper_0054F290
+// @summary Forwards its three stack arguments unchanged to RelocateRangeBackward (0x0054F120) and returns that result; the original stack shuffling only reorders copies of the arguments.
+uint32_t fn_00481740(uint32_t begin, uint32_t end, uint32_t value) {
+    return ext_00480770(begin, end, value);
+}
+} // namespace lift_0054F290
+} // namespace lift_00481740
+
+// [0x0048CC70] sub_0048CC70 (43 bytes)
+namespace lift_0048CC70 {
+// @name sub_0048CC70
+// @summary Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).
+namespace lift_0054F290 {
+// Known callee 0x0054F120: Unknown::RelocateRangeBackward_0054F120 (Walks a 104-byte-element range [begin,end) from the back, invoking ext_0054F030 on each element with a destination pointer shifted by (value - end); returns value minus the range size in bytes.)
+extern uint32_t ext_0048CA80(uint32_t begin, uint32_t end, uint32_t value);
+
+// @name Unknown::RelocateRangeBackwardWrapper_0054F290
+// @summary Forwards its three stack arguments unchanged to RelocateRangeBackward (0x0054F120) and returns that result; the original stack shuffling only reorders copies of the arguments.
+uint32_t fn_0048CC70(uint32_t begin, uint32_t end, uint32_t value) {
+    return ext_0048CA80(begin, end, value);
+}
+} // namespace lift_0054F290
+} // namespace lift_0048CC70

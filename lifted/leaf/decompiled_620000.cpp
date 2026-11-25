@@ -1157,3 +1157,35 @@ void* fn_0062BF30(uint8_t* first, uint8_t* last, uint8_t* d_last) {
 }
 } // namespace lift_00510830
 } // namespace lift_0062BF30
+
+// [0x006215A0] sub_006215A0 (43 bytes)
+namespace lift_006215A0 {
+// @name sub_006215A0
+// @summary Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).
+namespace lift_0054F290 {
+// Known callee 0x0054F120: Unknown::RelocateRangeBackward_0054F120 (Walks a 104-byte-element range [begin,end) from the back, invoking ext_0054F030 on each element with a destination pointer shifted by (value - end); returns value minus the range size in bytes.)
+extern uint32_t ext_00621130(uint32_t begin, uint32_t end, uint32_t value);
+
+// @name Unknown::RelocateRangeBackwardWrapper_0054F290
+// @summary Forwards its three stack arguments unchanged to RelocateRangeBackward (0x0054F120) and returns that result; the original stack shuffling only reorders copies of the arguments.
+uint32_t fn_006215A0(uint32_t begin, uint32_t end, uint32_t value) {
+    return ext_00621130(begin, end, value);
+}
+} // namespace lift_0054F290
+} // namespace lift_006215A0
+
+// [0x00622FE0] sub_00622FE0 (43 bytes)
+namespace lift_00622FE0 {
+// @name sub_00622FE0
+// @summary Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).
+namespace lift_0054F290 {
+// Known callee 0x0054F120: Unknown::RelocateRangeBackward_0054F120 (Walks a 104-byte-element range [begin,end) from the back, invoking ext_0054F030 on each element with a destination pointer shifted by (value - end); returns value minus the range size in bytes.)
+extern uint32_t ext_00622C40(uint32_t begin, uint32_t end, uint32_t value);
+
+// @name Unknown::RelocateRangeBackwardWrapper_0054F290
+// @summary Forwards its three stack arguments unchanged to RelocateRangeBackward (0x0054F120) and returns that result; the original stack shuffling only reorders copies of the arguments.
+uint32_t fn_00622FE0(uint32_t begin, uint32_t end, uint32_t value) {
+    return ext_00622C40(begin, end, value);
+}
+} // namespace lift_0054F290
+} // namespace lift_00622FE0

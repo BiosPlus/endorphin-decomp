@@ -499,3 +499,35 @@ void* fn_0052A230(void* self, const void* key) {
 }
 } // namespace lift_004205B0
 } // namespace lift_0052A230
+
+// [0x00520DC0] sub_00520DC0 (43 bytes)
+namespace lift_00520DC0 {
+// @name sub_00520DC0
+// @summary Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).
+namespace lift_0054F290 {
+// Known callee 0x0054F120: Unknown::RelocateRangeBackward_0054F120 (Walks a 104-byte-element range [begin,end) from the back, invoking ext_0054F030 on each element with a destination pointer shifted by (value - end); returns value minus the range size in bytes.)
+extern uint32_t ext_00520D30(uint32_t begin, uint32_t end, uint32_t value);
+
+// @name Unknown::RelocateRangeBackwardWrapper_0054F290
+// @summary Forwards its three stack arguments unchanged to RelocateRangeBackward (0x0054F120) and returns that result; the original stack shuffling only reorders copies of the arguments.
+uint32_t fn_00520DC0(uint32_t begin, uint32_t end, uint32_t value) {
+    return ext_00520D30(begin, end, value);
+}
+} // namespace lift_0054F290
+} // namespace lift_00520DC0
+
+// [0x00522FD0] sub_00522FD0 (43 bytes)
+namespace lift_00522FD0 {
+// @name sub_00522FD0
+// @summary Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).
+namespace lift_0054F290 {
+// Known callee 0x0054F120: Unknown::RelocateRangeBackward_0054F120 (Walks a 104-byte-element range [begin,end) from the back, invoking ext_0054F030 on each element with a destination pointer shifted by (value - end); returns value minus the range size in bytes.)
+extern uint32_t ext_00522760(uint32_t begin, uint32_t end, uint32_t value);
+
+// @name Unknown::RelocateRangeBackwardWrapper_0054F290
+// @summary Forwards its three stack arguments unchanged to RelocateRangeBackward (0x0054F120) and returns that result; the original stack shuffling only reorders copies of the arguments.
+uint32_t fn_00522FD0(uint32_t begin, uint32_t end, uint32_t value) {
+    return ext_00522760(begin, end, value);
+}
+} // namespace lift_0054F290
+} // namespace lift_00522FD0

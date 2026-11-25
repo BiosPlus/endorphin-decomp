@@ -30,6 +30,7 @@ void* __thiscall fn_00508310(const void* self) {
 } // namespace lift_0051CDE0
 } // namespace lift_0051C6D0
 } // namespace lift_00508310
+#include <cstdint>
 
 // [0x00504930] sub_00504930 (10 bytes)
 namespace lift_00504930 {
@@ -652,3 +653,51 @@ void fn_0050B960(void* self) {
     *reinterpret_cast<uint8_t**>(obj + 0x0C) = nullptr;
 }
 } // namespace lift_0050B960
+
+// [0x00500B70] sub_00500B70 (43 bytes)
+namespace lift_00500B70 {
+// @name sub_00500B70
+// @summary Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).
+namespace lift_0054F290 {
+// Known callee 0x0054F120: Unknown::RelocateRangeBackward_0054F120 (Walks a 104-byte-element range [begin,end) from the back, invoking ext_0054F030 on each element with a destination pointer shifted by (value - end); returns value minus the range size in bytes.)
+extern uint32_t ext_004FFE90(uint32_t begin, uint32_t end, uint32_t value);
+
+// @name Unknown::RelocateRangeBackwardWrapper_0054F290
+// @summary Forwards its three stack arguments unchanged to RelocateRangeBackward (0x0054F120) and returns that result; the original stack shuffling only reorders copies of the arguments.
+uint32_t fn_00500B70(uint32_t begin, uint32_t end, uint32_t value) {
+    return ext_004FFE90(begin, end, value);
+}
+} // namespace lift_0054F290
+} // namespace lift_00500B70
+
+// [0x00506900] sub_00506900 (43 bytes)
+namespace lift_00506900 {
+// @name sub_00506900
+// @summary Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).
+namespace lift_0054F290 {
+// Known callee 0x0054F120: Unknown::RelocateRangeBackward_0054F120 (Walks a 104-byte-element range [begin,end) from the back, invoking ext_0054F030 on each element with a destination pointer shifted by (value - end); returns value minus the range size in bytes.)
+extern uint32_t ext_00506600(uint32_t begin, uint32_t end, uint32_t value);
+
+// @name Unknown::RelocateRangeBackwardWrapper_0054F290
+// @summary Forwards its three stack arguments unchanged to RelocateRangeBackward (0x0054F120) and returns that result; the original stack shuffling only reorders copies of the arguments.
+uint32_t fn_00506900(uint32_t begin, uint32_t end, uint32_t value) {
+    return ext_00506600(begin, end, value);
+}
+} // namespace lift_0054F290
+} // namespace lift_00506900
+
+// [0x0050BDF0] sub_0050BDF0 (43 bytes)
+namespace lift_0050BDF0 {
+// @name sub_0050BDF0
+// @summary Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).
+namespace lift_0054F290 {
+// Known callee 0x0054F120: Unknown::RelocateRangeBackward_0054F120 (Walks a 104-byte-element range [begin,end) from the back, invoking ext_0054F030 on each element with a destination pointer shifted by (value - end); returns value minus the range size in bytes.)
+extern uint32_t ext_0050A720(uint32_t begin, uint32_t end, uint32_t value);
+
+// @name Unknown::RelocateRangeBackwardWrapper_0054F290
+// @summary Forwards its three stack arguments unchanged to RelocateRangeBackward (0x0054F120) and returns that result; the original stack shuffling only reorders copies of the arguments.
+uint32_t fn_0050BDF0(uint32_t begin, uint32_t end, uint32_t value) {
+    return ext_0050A720(begin, end, value);
+}
+} // namespace lift_0054F290
+} // namespace lift_0050BDF0

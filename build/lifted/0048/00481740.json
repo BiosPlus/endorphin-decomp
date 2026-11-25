@@ -1,0 +1,13 @@
+{
+  "va": "0x00481740",
+  "size": 43,
+  "orig_symbol": "sub_00481740",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "sub_00481740",
+  "signature": "uint32_t fn_00481740(uint32_t begin, uint32_t end, uint32_t value)",
+  "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:34:25Z"
+}

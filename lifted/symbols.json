@@ -478,6 +478,12 @@
     "summary": "Returns the first dword of the record at index this-\u003e+0x684 in the 0x58-byte record array [+0x564, +0x568); invalid-parameter path if the array is empty or the index is out of range.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00406350": {
+    "name": "sub_00406350",
+    "signature": "uint32_t fn_00406350(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00406480": {
     "name": "sub_00406480",
     "signature": "DWORD* __thiscall fn_00406480(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -2192,6 +2198,12 @@
     "name": "StdStringCopyConstruct",
     "signature": "void* fn_004276B0(void* dst, const void* src)",
     "summary": "Copy-constructs a std::string at dst from src via the MSVCP80 copy constructor; returns dst.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
+  "0x00427B20": {
+    "name": "sub_00427B20",
+    "signature": "uint32_t fn_00427B20(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
   "0x00428A60": {
@@ -7545,6 +7557,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00401D00 (AVIIO::vfunc_7).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004788A0": {
+    "name": "sub_004788A0",
+    "signature": "uint32_t fn_004788A0(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x004788D0": {
     "name": "CopyBackwardElements8",
     "signature": "static inline uint32_t ReadU32(uint32_t addr)",
@@ -7894,6 +7912,12 @@
     "name": "CopyBackwardBlocks64",
     "signature": "void* fn_00481700(void* first, void* last, void* d_last)",
     "summary": "Copy-backward [first, last) in 64-byte (16-dword) blocks to a destination ending at d_last; returns d_last minus the 64-byte-rounded span length.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
+  "0x00481740": {
+    "name": "sub_00481740",
+    "signature": "uint32_t fn_00481740(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
   "0x00481770": {
@@ -8570,6 +8594,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x0048CC70": {
+    "name": "sub_0048CC70",
+    "signature": "uint32_t fn_0048CC70(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048CCA0": {
     "name": "sub_0048CCA0",
     "class": "(none)",
@@ -8824,6 +8854,12 @@
     "signature": "__stdcall int32_t fn_0048FF80(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00491840": {
+    "name": "sub_00491840",
+    "signature": "uint32_t fn_00491840(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
   "0x00491870": {
     "name": "sub_00491870",
@@ -15837,6 +15873,12 @@
     "summary": "Forwards (self, pair, b) to ext_00500310 with the result discarded, then returns the pair object (first stack argument).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00500B70": {
+    "name": "sub_00500B70",
+    "signature": "uint32_t fn_00500B70(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x005013A0": {
     "name": "EvolveEngine::vfunc_2_off_10",
     "class": "EvolveEngine",
@@ -16069,6 +16111,12 @@
     "name": "sub_00506810",
     "signature": "__stdcall std::uint8_t* fn_00506810(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2)",
     "summary": "Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x00506900": {
+    "name": "sub_00506900",
+    "signature": "uint32_t fn_00506900(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
   "0x00506D10": {
@@ -16355,6 +16403,12 @@
     "class": "Unknown",
     "signature": "void fn_0050B960(void* self)",
     "summary": "Calls vtable slot 0 (deleting-destructor style, flag 0) on each 0x24-byte element between begin and end, frees the buffer at begin, then nulls begin/end/capacity.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x0050BDF0": {
+    "name": "sub_0050BDF0",
+    "signature": "uint32_t fn_0050BDF0(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
   "0x0050BFE0": {
@@ -17068,6 +17122,12 @@
     "summary": "Returns the first float (time) of the last 20-byte keyframe in [begin, end), or 0.0f if the range is empty.",
     "lifted_path": "lifted/NMData/QuatChannel.cpp"
   },
+  "0x0051AE60": {
+    "name": "sub_0051AE60",
+    "signature": "uint32_t fn_0051AE60(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x0051AE90": {
     "name": "sub_0051AE90",
     "signature": "static float call_vslot1_float(void* obj, void* arg)",
@@ -17278,6 +17338,12 @@
     "summary": "Forwards a stack argument to the sub-object at +0x158; if it yields a nonzero result, calls ext_006721F0, otherwise calls Character::vfunc_2. Returns the first argument.",
     "lifted_path": "lifted/StateMachine/State.cpp"
   },
+  "0x0051F610": {
+    "name": "sub_0051F610",
+    "signature": "uint32_t fn_0051F610(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x0051F640": {
     "name": "sub_0051F640",
     "signature": "DWORD* __thiscall fn_0051F640(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -17326,6 +17392,12 @@
     "name": "initArrayRange_00520D90",
     "signature": "void __cdecl sub_00520D90(uint32_t begin, uint32_t end, uint32_t arg)",
     "summary": "Iterates over a range [begin, end) with stride 0x168, calling ext_00520AE0 on each element with arg",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
+  "0x00520DC0": {
+    "name": "sub_00520DC0",
+    "signature": "uint32_t fn_00520DC0(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
   "0x00521350": {
@@ -17450,6 +17522,12 @@
     "signature": "void* fn_005225B0(void* out_str, void* const* value_ptr)",
     "summary": "Auto-lifted identical-shape clone of 0x005D2470 (ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, getFrameOffset, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00522FD0": {
+    "name": "sub_00522FD0",
+    "signature": "uint32_t fn_00522FD0(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
   "0x005231F0": {
     "name": "sub_005231F0",
@@ -18819,6 +18897,12 @@
     "name": "sub_00539800",
     "signature": "void __cdecl fn_00539800(const void* src_begin, const void* src_end, void* dst)",
     "summary": "Copies 12-byte (3 x float) records from [src_begin, src_end) to dst, advancing dst by 12 per record; skips the store when dst is null.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
+  "0x00539890": {
+    "name": "sub_00539890",
+    "signature": "uint32_t fn_00539890(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
   "0x005398C0": {
@@ -21536,6 +21620,12 @@
     "summary": "Returns the iterator's position; sentinel -2 (end) returns the position directly, otherwise asserts the position lies within the owning string's data range.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x005738D0": {
+    "name": "sub_005738D0",
+    "signature": "uint32_t fn_005738D0(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00573A10": {
     "name": "sub_00573A10",
     "signature": "DWORD* __thiscall fn_00573A10(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -21614,6 +21704,18 @@
     "summary": "Writes the byte at *src into every byte in [dst, dstEnd); does nothing if dst == dstEnd. The source pointer is not advanced.",
     "lifted_path": "lifted/leaf/tiny_570000.cpp"
   },
+  "0x00576D50": {
+    "name": "sub_00576D50",
+    "signature": "uint32_t fn_00576D50(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x00576D80": {
+    "name": "sub_00576D80",
+    "signature": "uint32_t fn_00576D80(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x005774B0": {
     "name": "Vector20::back",
     "class": "Vector20",
@@ -21643,6 +21745,12 @@
     "name": "sub_00578050",
     "signature": "DWORD* __thiscall fn_00578050(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057A250": {
+    "name": "sub_0057A250",
+    "signature": "uint32_t fn_0057A250(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
   "0x0057A730": {
@@ -21678,6 +21786,18 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057CA60": {
+    "name": "sub_0057CA60",
+    "signature": "uint32_t fn_0057CA60(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057CA90": {
+    "name": "sub_0057CA90",
+    "signature": "uint32_t fn_0057CA90(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057CF50": {
     "name": "sub_0057CF50",
     "signature": "DWORD* __thiscall fn_0057CF50(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -21691,10 +21811,34 @@
     "summary": "Initializes three float fields to 0.0, default-constructs a std::string at +0x0C, zeroes three dwords at +0x2C/+0x30/+0x34, and returns this.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057E560": {
+    "name": "sub_0057E560",
+    "signature": "uint32_t fn_0057E560(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057E590": {
+    "name": "sub_0057E590",
+    "signature": "uint32_t fn_0057E590(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057E5C0": {
+    "name": "sub_0057E5C0",
+    "signature": "uint32_t fn_0057E5C0(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057E7D0": {
     "name": "sub_0057E7D0",
     "signature": "__stdcall std::uint8_t* fn_0057E7D0(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2)",
     "summary": "Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057E810": {
+    "name": "sub_0057E810",
+    "signature": "uint32_t fn_0057E810(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
   "0x0057E840": {
@@ -21733,6 +21877,12 @@
     "signature": "extern \"C\" void* __thiscall fn_0057FD10(void* self)",
     "summary": "Calls ext_00696D90 on self, then zeroes six 32-bit fields at +0x1C, +0x20, +0x24, +0x2C, +0x30, +0x34 (skips +0x28); returns self.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x00581750": {
+    "name": "sub_00581750",
+    "signature": "uint32_t fn_00581750(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
   "0x005817F0": {
     "name": "sub_005817F0",
@@ -31952,6 +32102,12 @@
     "summary": "Fills a range of 0x48-byte structs (two std::strings and two doubles) by copying from a source element.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x006215A0": {
+    "name": "sub_006215A0",
+    "signature": "uint32_t fn_006215A0(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00621720": {
     "name": "sub_00621720",
     "class": "(none)",
@@ -32084,6 +32240,12 @@
     "name": "fillStridedFromSource",
     "signature": "void fn_00622D30(void* dst, uint32_t count, const void* src)",
     "summary": "Copies one 20-byte record (5 dwords) from src into each of `count` consecutive 20-byte slots starting at dst; NULL dst skips the copy but still advances.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x00622FE0": {
+    "name": "sub_00622FE0",
+    "signature": "uint32_t fn_00622FE0(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x006233B0": {
@@ -35425,6 +35587,12 @@
     "name": "fillRecordsFromSource",
     "signature": "void fn_0064C900(void* dst, uint32_t count, const void* src)",
     "summary": "Copies a 24-byte source record into each of `count` consecutive 24-byte destination slots; a null destination pointer skips that slot's copy but still advances.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x0064CA20": {
+    "name": "sub_0064CA20",
+    "signature": "uint32_t fn_0064CA20(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
   "0x0064CA50": {
@@ -39118,6 +39286,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00686780": {
+    "name": "sub_00686780",
+    "signature": "uint32_t fn_00686780(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00686800": {
     "name": "sub_00686800",
     "signature": "DWORD* __thiscall fn_00686800(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -39224,6 +39398,18 @@
     "name": "fn_006878E0 (fill range with copies of one record)",
     "signature": "void fn_006878E0(void* dst, void* end, const void* src)",
     "summary": "Copy-assigns one 36-byte record (u32, u8, string) from src into every slot of [dst, end).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x006886D0": {
+    "name": "sub_006886D0",
+    "signature": "uint32_t fn_006886D0(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x00688700": {
+    "name": "sub_00688700",
+    "signature": "uint32_t fn_00688700(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x00688AF0": {
@@ -39974,6 +40160,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x0069A130": {
+    "name": "sub_0069A130",
+    "signature": "uint32_t fn_0069A130(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x0069A1C0": {
     "name": "sub_0069A1C0",
     "signature": "DWORD* __thiscall fn_0069A1C0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -40045,6 +40237,12 @@
     "signature": "extern \"C\" void __fastcall fn_00699040(void* self)",
     "summary": "Stores address of mem_0098FABC into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_690000.cpp"
+  },
+  "0x0069E7E0": {
+    "name": "sub_0069E7E0",
+    "signature": "uint32_t fn_0069E7E0(uint32_t begin, uint32_t end, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
   "0x0069E850": {
     "name": "sub_0069E850",
@@ -46524,11 +46722,59 @@
     "summary": "Copies five dwords and one dword from self into the output record, then writes the constant double 1.0 at +0x18.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C07C0": {
+    "name": "sub_006C07C0",
+    "signature": "void fn_006C07C0(void* self, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
+  "0x006C0850": {
+    "name": "sub_006C0850",
+    "signature": "void fn_006C0850(void* self, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
+  "0x006C0900": {
+    "name": "sub_006C0900",
+    "signature": "void fn_006C0900(void* self, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
+  "0x006C0990": {
+    "name": "sub_006C0990",
+    "signature": "void fn_006C0990(void* self, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C0AE0": {
     "name": "sub_006C0AE0",
     "signature": "void fn_006C0AE0(void* self, uint32_t a0, uint32_t a1)",
     "summary": "Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
+  },
+  "0x006C0B50": {
+    "name": "sub_006C0B50",
+    "signature": "void fn_006C0B50(void* self, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
+  "0x006C0BE0": {
+    "name": "sub_006C0BE0",
+    "signature": "void fn_006C0BE0(void* self, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
+  "0x006C0C90": {
+    "name": "sub_006C0C90",
+    "signature": "void fn_006C0C90(void* self, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
+  "0x006C0D20": {
+    "name": "sub_006C0D20",
+    "signature": "void fn_006C0D20(void* self, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
   "0x006C0D70": {
     "name": "sub_006C0D70",
@@ -46547,6 +46793,36 @@
     "signature": "void fn_006C0DD0(void* self, uint32_t a0, uint32_t a1)",
     "summary": "Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
+  },
+  "0x006C0F40": {
+    "name": "sub_006C0F40",
+    "signature": "void fn_006C0F40(void* self, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
+  "0x006C0FD0": {
+    "name": "sub_006C0FD0",
+    "signature": "void fn_006C0FD0(void* self, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
+  "0x006C1120": {
+    "name": "sub_006C1120",
+    "signature": "void fn_006C1120(void* self, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
+  "0x006C11B0": {
+    "name": "sub_006C11B0",
+    "signature": "void fn_006C11B0(void* self, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
+  "0x006C1240": {
+    "name": "sub_006C1240",
+    "signature": "void fn_006C1240(void* self, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).",
+    "lifted_path": "lifted/clones/auto_clones_6C0000.cpp"
   },
   "0x006C1290": {
     "name": "Unknown::ForwardToSubobjectVirtual2",
@@ -47368,6 +47644,12 @@
     "summary": "Initializes three 64-bit double globals from MSVCR80.dll!_HUGE.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C8EF0": {
+    "name": "sub_006C8EF0",
+    "signature": "void fn_006BBA40(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).",
+    "lifted_path": "lifted/clones/auto_clones_6C0000.cpp"
+  },
   "0x006C9330": {
     "name": "sub_006C9330",
     "signature": "extern \"C\" void fn_006C9330(void)",
@@ -47916,6 +48198,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007747B0 (initNegatedHugeGlobals).",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D7600": {
+    "name": "sub_006D7600",
+    "signature": "void fn_006BBA40(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D7660": {
     "name": "negHugeIntoGlobals",
     "signature": "void fn_006D7660(void* self)",
@@ -48187,6 +48475,12 @@
     "summary": "Initializes three consecutive 64-bit values (double[3]) at 0x00B5DAA0..0x00B5DAB4 to MSVCR80!_HUGE",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006DBF80": {
+    "name": "sub_006DBF80",
+    "signature": "void fn_006BBA40(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DC2A0": {
     "name": "sub_006DC2A0",
     "signature": "extern \"C\" void* __fastcall fn_006DC2A0(void* self, int edx_unused, unsigned int flags)",
@@ -48222,6 +48516,12 @@
     "name": "initHugeVectorGlobals",
     "signature": "void sub_006DD980()",
     "summary": "Initializes three 64-bit globals from the _HUGE double pointer at 0x00925284.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
+  "0x006DDA10": {
+    "name": "sub_006DDA10",
+    "signature": "void fn_006BBA40(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
   "0x006DDEE0": {
@@ -48391,6 +48691,12 @@
     "name": "sub_006E6410",
     "signature": "void fn_006E6410(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007747B0 (initNegatedHugeGlobals).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
+  "0x006E6450": {
+    "name": "sub_006E6450",
+    "signature": "void fn_006BBA40(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
   "0x006E67C0": {
@@ -48715,6 +49021,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007747B0 (initNegatedHugeGlobals).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E9D40": {
+    "name": "sub_006E9D40",
+    "signature": "void fn_006BBA40(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006EA050": {
     "name": "isKnownGlobalId",
     "signature": "bool __stdcall sub_006EA050(uint32_t value)",
@@ -48755,6 +49067,12 @@
     "name": "negateHugeConstantsToGlobals",
     "signature": "void fn_006EA410(void)",
     "summary": "Loads the CRT _HUGE constant, negates it, and stores the result into three globals.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
+  "0x006EA450": {
+    "name": "sub_006EA450",
+    "signature": "void fn_006BBA40(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
   "0x006EA820": {
@@ -48823,6 +49141,18 @@
     "signature": "void fn_006EF9D0(void* self, uint32_t a0, uint32_t a1)",
     "summary": "Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
+  "0x006EFC00": {
+    "name": "sub_006EFC00",
+    "signature": "void fn_006EFC00(void* self, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
+  "0x006EFC50": {
+    "name": "sub_006EFC50",
+    "signature": "void fn_006EFC50(void* self, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
   "0x006EFCB0": {
     "name": "Unknown::ForwardArgsToSubobject1A08",
@@ -51358,6 +51688,12 @@
     "summary": "Stores the negation of the double pointed to by the _HUGE pointer into three globals.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006F87F0": {
+    "name": "sub_006F87F0",
+    "signature": "void fn_006BBA40(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F8AC0": {
     "name": "Unknown::InitZeroAndDelegate",
     "class": "Unknown",
@@ -51814,6 +52150,12 @@
     "summary": "Initializes three 64-bit double globals (0x00B5E450..0x00B5E464) to MSVCR80._HUGE.",
     "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
   },
+  "0x006FD120": {
+    "name": "sub_006FD120",
+    "signature": "void fn_006BBA40(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FD400": {
     "name": "sub_006FD400",
     "signature": "extern \"C\" void* __fastcall fn_006FD400(void* self, int edx_unused, unsigned int flags)",
@@ -51849,6 +52191,12 @@
     "name": "SetNegHugeGlobals_006FFEE0",
     "signature": "void fn_006FFEE0()",
     "summary": "Sets three global doubles to -_HUGE (negative infinity), loading _HUGE through the pointer stored at mem_00925284.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
+  "0x006FFF20": {
+    "name": "sub_006FFF20",
+    "signature": "void fn_006BBA40(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
   "0x007004C0": {
@@ -52019,6 +52367,12 @@
     "summary": "Initializes three 64-bit globals from the MSVCR80 _HUGE double pointer.",
     "lifted_path": "lifted/clones/auto_clones_700000.cpp"
   },
+  "0x00701190": {
+    "name": "sub_00701190",
+    "signature": "void fn_006BBA40(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00701990": {
     "name": "isKnownGlobalHandle",
     "signature": "uint8_t __stdcall sub_00701990(uint32_t value)",
@@ -52036,6 +52390,18 @@
     "signature": "extern \"C\" void* __cdecl fn_007019E0(void)",
     "summary": "Returns address of global mem_00B5E760.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x00701AC0": {
+    "name": "sub_00701AC0",
+    "signature": "void fn_00701AC0(void* self, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
+  "0x00701B50": {
+    "name": "sub_00701B50",
+    "signature": "void fn_00701B50(void* self, void* result)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C06A0 (CopyStateAndWriteUnitDouble_006C06A0).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x00701BA0": {
     "name": "sub_00701BA0",
@@ -52238,6 +52604,12 @@
     "signature": "void sub_00703C60(void)",
     "summary": "Initializes three 64-bit global values from MSVCR80!_HUGE.",
     "lifted_path": "lifted/clones/auto_clones_700000.cpp"
+  },
+  "0x00703CF0": {
+    "name": "sub_00703CF0",
+    "signature": "void fn_006BBA40(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x007045A0": {
     "name": "isKnownGlobalHandle",
@@ -56205,6 +56577,12 @@
     "summary": "Loads the double pointed to by the HUGE constant and stores its negation into three globals.",
     "lifted_path": "lifted/clones/auto_clones_780000.cpp"
   },
+  "0x00785FF0": {
+    "name": "sub_00785FF0",
+    "signature": "void fn_006BBA40(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).",
+    "lifted_path": "lifted/clones/auto_clones_780000.cpp"
+  },
   "0x00786050": {
     "name": "negateHugeIntoGlobals",
     "signature": "void fn_00786050(void* self)",
@@ -56239,6 +56617,12 @@
     "name": "initNegHugeGlobals",
     "signature": "void fn_00787520(void* self)",
     "summary": "Stores -HUGE_VAL into three double globals (mem_00B60B58/60/68).",
+    "lifted_path": "lifted/clones/auto_clones_780000.cpp"
+  },
+  "0x00787560": {
+    "name": "sub_00787560",
+    "signature": "void fn_006BBA40(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).",
     "lifted_path": "lifted/clones/auto_clones_780000.cpp"
   },
   "0x00787840": {
