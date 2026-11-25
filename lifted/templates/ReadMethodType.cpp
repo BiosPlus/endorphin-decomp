@@ -50350,3 +50350,36 @@ void fn_005140F0(void* self) {
 }
 } // namespace lift_0049D7F0
 } // namespace lift_005140F0
+
+// [0x005FCB90]
+namespace lift_005FCB90 {
+// @name ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, Sensor::getMutableVector3, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, Sensor::getMutableVector3, 1>
+// @summary Vtable slot 1 thunk: takes a pointer-to-Sensor-pointer argument; if the Sensor pointer is null throws a derived exception, otherwise invokes Sensor vfunc at +0x38 and throws the default message.
+
+extern void ext_0046C4E0(void* arg);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void);
+
+extern unsigned char mem_009DEC1C[];
+
+extern void ext_CxxThrowException(void* obj, void* throwInfo);
+
+void* ExprParser_ReadMethodType_Sensor_vfunc_1(void* const* argPtr)
+{
+    void* sensor = *reinterpret_cast<void* const*>(argPtr);
+    if (sensor != nullptr) {
+        using VFn = void* (*)(void*);
+        void** vtbl = *reinterpret_cast<void***>(sensor);
+        VFn fn = reinterpret_cast<VFn>(vtbl[0x38 / sizeof(void*)]);
+        void* result = fn(sensor);
+        ext_0046C4E0(result);
+        // unreachable: ext_0046C4E0 throws
+    }
+
+    alignas(8) unsigned char exc[0x20];
+    ext_0046C3C0(exc);
+    ext_CxxThrowException(exc, mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_005FCB90
