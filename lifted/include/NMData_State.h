@@ -11,6 +11,7 @@
 namespace lifted_layout {
 struct NMData_State_Fields {
     // +0x8   subobject                field_0x08  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    field_0x08  (evidence: 0x0049D780) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_0x8  (evidence: 0x0046CE90, 0x00488E30, 0x0049D530, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0x8
     // +0x1C  void*                    adjusted_base  (evidence: 0x004A9B50, 0x006744A0)
     // +0x54  BYTE                     field_0x54  (evidence: 0x0049DF50)

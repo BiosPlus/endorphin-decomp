@@ -59147,3 +59147,49 @@ void* fn_0066F930([[maybe_unused]] void* arg1, void* arg2) {
     return arg2;
 }
 } // namespace lift_0066F930
+
+// [0x0049D780] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0>::vfunc_3 (107 bytes)
+namespace lift_0049D780 {
+// Known callee 0x0046A470: VirtualSlot1Thunk (Virtual dispatch thunk: loads the object's vtable and tail-calls slot 1 (offset +0x4) with the same this pointer.)
+extern void* __thiscall ext_0046A470(void* self);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* __thiscall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __stdcall ext_006A6DD2(void* exception_obj, const void* throw_info);
+// Import slot 0x00924FC0 holds MSVCP80 operator==(const std::string&, const char*); read via its address below.
+extern int mem_00924FC0;
+
+namespace lift_0049D780 {
+// @name ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0>
+// @summary Returns true if the string returned by the state's virtual getter equals one of two fixed literals; throws DerivedException if the held pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::State +0x08 void* field_0x08
+bool __stdcall fn_0049D780(void* self) {
+    using StrEqFn = bool(__cdecl*)(const std::string&, const char*);
+
+    // Original: eax = *(void**)self; if (!eax) throw DerivedException(...);
+    void* target = *reinterpret_cast<void**>(self);
+    if (target == nullptr) {
+        // Exception object lives in the 0x28-byte local frame in the original (lea ecx,[esp]).
+        alignas(8) unsigned char exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1C)));
+        return false; // not reached
+    }
+
+    // Original: string* s = ext_0046A470(target + 8) (virtual slot 1 on the subobject).
+    auto* s = static_cast<std::string*>(
+        ext_0046A470(static_cast<unsigned char*>(target) + 0x08));
+
+    const auto str_eq = *reinterpret_cast<StrEqFn*>(static_cast<uintptr_t>(0x00924FC0));
+    if (str_eq(*s, reinterpret_cast<const char*>(static_cast<uintptr_t>(0x0092F10C)))) {
+        return true;
+    }
+    if (str_eq(*s, reinterpret_cast<const char*>(static_cast<uintptr_t>(0x0093A810)))) {
+        return true;
+    }
+    return false;
+}
+} // namespace lift_0049D780
+} // namespace lift_0049D780
