@@ -1,0 +1,28 @@
+{
+  "va": "0x004757F0",
+  "size": 77,
+  "orig_symbol": "sub_004757F0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "Unknown::Dtor_004757F0",
+  "class": "Unknown",
+  "signature": "void fn_004757F0(void* self)",
+  "summary": "Destructor body: releases the StringArray at +0x1C, then destroys the std::string at +0x00.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "StringArray",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:41:52Z"
+}
