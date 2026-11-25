@@ -21072,6 +21072,12 @@
     "summary": "Pure jump thunk forwarding to sub_006D2160.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0055E230": {
+    "name": "CopyFloat4RangeBackward",
+    "signature": "void fn_0055E230(float* first, float* last, float* dst_end)",
+    "summary": "Backward (high-to-low) copy of 4-float (16-byte) blocks from [first, last) into the range ending at dst_end, safe for overlapping ranges where dst_end \u003e last.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x0055E280": {
     "name": "NMData::NullRelationshipData::vfunc_1_off_C",
     "class": "NMData::NullRelationshipData",

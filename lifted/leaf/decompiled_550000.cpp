@@ -956,3 +956,24 @@ void* fn_0055F620(uint8_t* first, uint8_t* last, uint8_t* d_last) {
 }
 } // namespace lift_00510830
 } // namespace lift_0055F620
+
+// [0x0055E230] sub_0055E230 (73 bytes)
+namespace lift_0055E230 {
+// @name CopyFloat4RangeBackward
+// @summary Backward (high-to-low) copy of 4-float (16-byte) blocks from [first, last) into the range ending at dst_end, safe for overlapping ranges where dst_end > last.
+void fn_0055E230(float* first, float* last, float* dst_end) {
+    if (first == last) {
+        return;
+    }
+    float* src = last;
+    float* dst = dst_end;
+    do {
+        src -= 4;
+        dst -= 4;
+        dst[0] = src[0];
+        dst[1] = src[1];
+        dst[2] = src[2];
+        dst[3] = src[3];
+    } while (src != first);
+}
+} // namespace lift_0055E230

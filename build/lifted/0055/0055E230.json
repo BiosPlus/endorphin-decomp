@@ -1,0 +1,13 @@
+{
+  "va": "0x0055E230",
+  "size": 73,
+  "orig_symbol": "sub_0055E230",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "CopyFloat4RangeBackward",
+  "signature": "void fn_0055E230(float* first, float* last, float* dst_end)",
+  "summary": "Backward (high-to-low) copy of 4-float (16-byte) blocks from [first, last) into the range ending at dst_end, safe for overlapping ranges where dst_end \u003e last.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:32:15Z"
+}
