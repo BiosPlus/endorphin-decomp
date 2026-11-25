@@ -704,3 +704,23 @@ float sign_float(float x) {
     return 1.0f;
 }
 } // namespace lift_007CAB40
+
+// [0x007CC180] sub_007CC180 (57 bytes)
+namespace lift_007CC180 {
+// Known callee 0x007CB940: setNonNegativeFloat_0x10 (Clamps a float to >= 0.0f and stores it at offset +0x10)
+extern void ext_007CB940(void* self, float value);
+// Known callee 0x007CB980: ObjectField::SetHalfOrZeroFloat14 (Stores x*0.5 at self+0x14 as float, or 0.0f when x < 0 (NaN takes the x*0.5 path).)
+extern void ext_007CB980(void* self, float x);
+// Unlifted callee 0x007CC8E0 (68 bytes); called as (self, a2, 5) with cdecl-style pushes.
+extern void ext_007CC8E0(void* self, void* a2, int32_t mode);
+
+// @name ObjectField::InitFloatsFromArgs
+// @class ObjectField
+// @summary Runs the mode-5 setup helper on (self, a2), then forwards a3 to setNonNegativeFloat_0x10 and a4 to SetHalfOrZeroFloat14; returns self.
+void* fn_007CC180(void* self, void* a2, float a3, float a4) {
+    ext_007CC8E0(self, a2, 5);
+    ext_007CB940(self, a3);
+    ext_007CB980(self, a4);
+    return self;
+}
+} // namespace lift_007CC180

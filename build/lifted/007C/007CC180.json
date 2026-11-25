@@ -1,0 +1,14 @@
+{
+  "va": "0x007CC180",
+  "size": 57,
+  "orig_symbol": "sub_007CC180",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "ObjectField::InitFloatsFromArgs",
+  "class": "ObjectField",
+  "signature": "void* fn_007CC180(void* self, void* a2, float a3, float a4)",
+  "summary": "Runs the mode-5 setup helper on (self, a2), then forwards a3 to setNonNegativeFloat_0x10 and a4 to SetHalfOrZeroFloat14; returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:53:04Z"
+}

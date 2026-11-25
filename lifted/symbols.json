@@ -55958,6 +55958,13 @@
     "summary": "Returns twice the float at offset +0x14 of the object passed in (self + 0x14) * 2.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007CC180": {
+    "name": "ObjectField::InitFloatsFromArgs",
+    "class": "ObjectField",
+    "signature": "void* fn_007CC180(void* self, void* a2, float a3, float a4)",
+    "summary": "Runs the mode-5 setup helper on (self, a2), then forwards a3 to setNonNegativeFloat_0x10 and a4 to SetHalfOrZeroFloat14; returns self.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CC5D0": {
     "name": "allocAndInit_007CC5D0",
     "signature": "uint32_t fn_007CC5D0(uint32_t arg0)",
