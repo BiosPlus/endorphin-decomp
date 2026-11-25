@@ -8,6 +8,7 @@
 // Recovered field layout for Self:
 namespace lifted_layout {
 struct Self_Fields {
+    // +0x0   int32_t                  count  (evidence: 0x007C8820) // CONFLICT: multiple definitions at +0x0
     // +0x0   uintptr_t                field_0x0  (evidence: 0x0068BB60) // CONFLICT: multiple definitions at +0x0
     // +0x0   int32_t                  field_0x00  (evidence: 0x00492550) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x006E6D70, 0x006E7000, 0x006E8440, 0x006E86F0, 0x0072C0B0) // CONFLICT: multiple definitions at +0x0
@@ -44,6 +45,7 @@ struct Self_Fields {
     // +0x20  uint32_t                 field_0x20  (evidence: 0x004FDAA0) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint8_t                  field_0x20  (evidence: 0x00610CB0) // CONFLICT: multiple definitions at +0x20
     // +0x20  void*                    field_0x20  (evidence: 0x0048F590) // CONFLICT: multiple definitions at +0x20
+    // +0x20  uint8_t*                 items  (evidence: 0x007C8820) // CONFLICT: multiple definitions at +0x20
     // +0x20  uintptr_t                m_hWnd  (evidence: 0x00430FA0) // CONFLICT: multiple definitions at +0x20
     // +0x24  BYTE                     field_0x24  (evidence: 0x004A5A50) // CONFLICT: multiple definitions at +0x24
     // +0x24  uint32_t                 field_0x24  (evidence: 0x0048F590) // CONFLICT: multiple definitions at +0x24

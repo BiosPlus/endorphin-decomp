@@ -1498,3 +1498,21 @@ float fn_007CA790(const float* self, const float* other) {
     return t;
 }
 } // namespace lift_007CA790
+
+// [0x007C8820]
+namespace lift_007C8820 {
+// @name hasItemAtIndex
+// @summary Checks whether the item at the given index has a non-zero field at offset 0x24.
+// @field Self +0x00 int32_t count
+// @field Self +0x20 uint8_t* items
+uint32_t __cdecl fn_007C8820(void* self, int32_t index) {
+    if (index < 0 || index >= lift_field<int32_t>(self, 0x00)) {
+        return 0;
+    }
+    uint8_t* items = lift_field<uint8_t*>(self, 0x20);
+    if (lift_field<uint32_t>(items + static_cast<size_t>(index) * 40, 0x24) == 0) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_007C8820

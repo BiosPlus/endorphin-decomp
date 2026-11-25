@@ -1,0 +1,27 @@
+{
+  "va": "0x007C8820",
+  "size": 38,
+  "orig_symbol": "sub_007C8820",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "hasItemAtIndex",
+  "signature": "uint32_t __cdecl fn_007C8820(void* self, int32_t index)",
+  "summary": "Checks whether the item at the given index has a non-zero field at offset 0x24.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x20",
+      "type": "uint8_t*",
+      "name": "items"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T14:24:34Z"
+}
