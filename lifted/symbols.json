@@ -54400,6 +54400,13 @@
     "summary": "Copies six consecutive uint32 fields (+0x270..+0x284) from self into the 24-byte out buffer.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x00715260": {
+    "name": "Unknown::CopyBlock398ToOut_00715260",
+    "class": "Unknown",
+    "signature": "void CopyBlock398ToOut_00715260(Unknown* self, Out32* out)",
+    "summary": "Copies six 32-bit words from this+0x398..0x3AC into out, then writes out+0x18 = 1.0 (double) and out+0x14 from this+0x3AC, returning with stdcall 4-byte pop.",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x007152B0": {
     "name": "sub_007152B0",
     "signature": "extern \"C\" void* __fastcall fn_007152B0(void* self, int edx_unused, unsigned int flags)",

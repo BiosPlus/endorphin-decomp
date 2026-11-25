@@ -999,3 +999,47 @@ void sub_007182A0(void) {
     mem_00B5FCC4 = hi;
 }
 } // namespace lift_007182A0
+
+// [0x00715260]
+namespace lift_00715260 {
+// @name Unknown::CopyBlock398ToOut_00715260
+// @class Unknown
+// @summary Copies six 32-bit words from this+0x398..0x3AC into out, then writes out+0x18 = 1.0 (double) and out+0x14 from this+0x3AC, returning with stdcall 4-byte pop.
+// @field Unknown +0x398 uint32_t field_0x398
+// @field Unknown +0x39C uint32_t field_0x39c
+// @field Unknown +0x3A0 uint32_t field_0x3a0
+// @field Unknown +0x3A4 uint32_t field_0x3a4
+// @field Unknown +0x3A8 uint32_t field_0x3a8
+// @field Unknown +0x3AC uint32_t field_0x3ac
+
+struct Unknown;
+
+struct Out32 {
+    uint32_t w0;
+    uint32_t w1;
+    uint32_t w2;
+    uint32_t w3;
+    uint32_t w4;
+    uint32_t w5;
+    uint32_t pad18;
+    uint32_t hi1c;
+};
+
+// The 0x18 slot is written as a little-endian double 1.0 (low dword 0, high dword 0x3FF00000).
+void CopyBlock398ToOut_00715260(Unknown* self, Out32* out) {
+    const uint8_t* src = reinterpret_cast<const uint8_t*>(self);
+    auto rd = [&](uint32_t off) -> uint32_t {
+        uint32_t v;
+        std::memcpy(&v, src + off, sizeof(v));
+        return v;
+    };
+    out->w0 = rd(0x398);
+    out->w1 = rd(0x39C);
+    out->w2 = rd(0x3A0);
+    out->w3 = rd(0x3A4);
+    out->w4 = rd(0x3A8);
+    out->w5 = rd(0x3AC);
+    out->pad18 = 0x00000000u;
+    out->hi1c = 0x3FF00000u;
+}
+} // namespace lift_00715260

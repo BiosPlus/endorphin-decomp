@@ -931,6 +931,12 @@ struct Unknown_Fields {
     // +0x354 uint32_t                 field_0x354  (evidence: 0x0070AD00) // CONFLICT: multiple definitions at +0x354
     // +0x360 void*                    field_0x360  (evidence: 0x0040BE90)
     // +0x38C uint32_t                 field_0x38C  (evidence: 0x00599E70)
+    // +0x398 uint32_t                 field_0x398  (evidence: 0x00715260)
+    // +0x39C uint32_t                 field_0x39c  (evidence: 0x00715260)
+    // +0x3A0 uint32_t                 field_0x3a0  (evidence: 0x00715260)
+    // +0x3A4 uint32_t                 field_0x3a4  (evidence: 0x00715260)
+    // +0x3A8 uint32_t                 field_0x3a8  (evidence: 0x00715260)
+    // +0x3AC uint32_t                 field_0x3ac  (evidence: 0x00715260)
     // +0x3C4 void*                    field_0x3C4  (evidence: 0x0040BE90)
     // +0x3C8 uint32_t                 field_0x3c8  (evidence: 0x006C0730)
     // +0x3CC uint32_t                 field_0x3cc  (evidence: 0x006C0730)

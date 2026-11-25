@@ -1,0 +1,52 @@
+{
+  "va": "0x00715260",
+  "size": 74,
+  "orig_symbol": "sub_00715260",
+  "src_path": "src/clones/auto_clones_710000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_710000.cpp",
+  "name": "Unknown::CopyBlock398ToOut_00715260",
+  "class": "Unknown",
+  "signature": "void CopyBlock398ToOut_00715260(Unknown* self, Out32* out)",
+  "summary": "Copies six 32-bit words from this+0x398..0x3AC into out, then writes out+0x18 = 1.0 (double) and out+0x14 from this+0x3AC, returning with stdcall 4-byte pop.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x398",
+      "type": "uint32_t",
+      "name": "field_0x398"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x39C",
+      "type": "uint32_t",
+      "name": "field_0x39c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3A0",
+      "type": "uint32_t",
+      "name": "field_0x3a0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3A4",
+      "type": "uint32_t",
+      "name": "field_0x3a4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3A8",
+      "type": "uint32_t",
+      "name": "field_0x3a8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3AC",
+      "type": "uint32_t",
+      "name": "field_0x3ac"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:34:47Z"
+}
