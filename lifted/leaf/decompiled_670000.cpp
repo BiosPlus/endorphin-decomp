@@ -713,3 +713,24 @@ void __thiscall fn_0067BCE0(void* self, DWORD arg) {
     ext_00694880(m, self);
 }
 } // namespace lift_0067BCE0
+
+// [0x0067BD80] sub_0067BD80 (77 bytes)
+namespace lift_0067BD80 {
+extern void ext_006951E0(void* matrix, DWORD arg);
+extern void ext_00694840(void* matrix, void* self);
+
+// @name Unknown::CallWithIdentityMat3_0067BD80
+// @class Unknown
+// @summary Builds a local 3x3 identity float matrix and passes it to two helper calls (with arg and self).
+void fn_0067BD80(void* self, DWORD arg) {
+    // Local 3x3 identity matrix (row-major), 9 floats.
+    float matrix[9] = {
+        1.0f, 0.0f, 0.0f,
+        0.0f, 1.0f, 0.0f,
+        0.0f, 0.0f, 1.0f,
+    };
+
+    ext_006951E0(matrix, arg);
+    ext_00694840(matrix, self);
+}
+} // namespace lift_0067BD80

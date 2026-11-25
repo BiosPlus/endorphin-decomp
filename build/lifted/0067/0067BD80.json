@@ -1,0 +1,14 @@
+{
+  "va": "0x0067BD80",
+  "size": 77,
+  "orig_symbol": "sub_0067BD80",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "Unknown::CallWithIdentityMat3_0067BD80",
+  "class": "Unknown",
+  "signature": "void fn_0067BD80(void* self, DWORD arg)",
+  "summary": "Builds a local 3x3 identity float matrix and passes it to two helper calls (with arg and self).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:43:55Z"
+}

@@ -39325,6 +39325,13 @@
     "summary": "Builds a 3x3 identity float matrix on the stack, passes it with the stack argument to ext_006951A0, then passes it with this to ext_00694880.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067BD80": {
+    "name": "Unknown::CallWithIdentityMat3_0067BD80",
+    "class": "Unknown",
+    "signature": "void fn_0067BD80(void* self, DWORD arg)",
+    "summary": "Builds a local 3x3 identity float matrix and passes it to two helper calls (with arg and self).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067EC60": {
     "name": "initZeroDouble",
     "signature": "void* __thiscall sub_0067EC60(void* self)",
