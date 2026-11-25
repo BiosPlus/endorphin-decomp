@@ -1215,3 +1215,13 @@ float fn_007CAFC0(void* self) {
     return lift_field<float>(self, 0x14);
 }
 } // namespace lift_007CAFC0
+
+// [0x007CC600]
+namespace lift_007CC600 {
+// @name readDwordAt0x28
+// @summary Returns the DWORD stored at offset 0x28 of the object passed as the single argument.
+// @field <unknown> +0x28 DWORD field_0x28
+DWORD fn_007CC600(const void* self) {
+    return lift_field<DWORD>(self, 0x28);
+}
+} // namespace lift_007CC600
