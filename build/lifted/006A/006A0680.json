@@ -1,0 +1,13 @@
+{
+  "va": "0x006A0680",
+  "size": 90,
+  "orig_symbol": "sub_006A0680",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "getStaticInstance_00B5CA74",
+  "signature": "void* sub_006A0680()",
+  "summary": "Lazily initializes and returns the static object at 0x00B5CA74, registering its destructor via atexit.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:24:41Z"
+}

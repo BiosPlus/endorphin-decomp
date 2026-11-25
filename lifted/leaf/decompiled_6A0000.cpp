@@ -658,3 +658,24 @@ extern int32_t __thiscall fn_006A9290(void* self, uint32_t arg1) {
     return 0;
 }
 } // namespace lift_006A9290
+
+// [0x006A0680]
+namespace lift_006A0680 {
+// @name getStaticInstance_00B5CA74
+// @summary Lazily initializes and returns the static object at 0x00B5CA74, registering its destructor via atexit.
+
+
+extern uint32_t mem_00B5CA84;
+extern uint8_t mem_00B5CA74[];
+extern void* ext_006A0670(void* self);
+extern void ext_006A6C87(uint32_t fn);
+
+void* sub_006A0680() {
+    if ((mem_00B5CA84 & 1u) == 0u) {
+        mem_00B5CA84 |= 1u;
+        ext_006A0670(mem_00B5CA74);
+        ext_006A6C87(0x00922030u);
+    }
+    return mem_00B5CA74;
+}
+} // namespace lift_006A0680
