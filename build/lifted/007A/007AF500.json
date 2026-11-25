@@ -1,0 +1,27 @@
+{
+  "va": "0x007AF500",
+  "size": 105,
+  "orig_symbol": "sub_007AF500",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "getPixelFormatType",
+  "signature": "uint32_t sub_007AF500(uint32_t arg0)",
+  "summary": "Maps bit depth at +0x40 and channel count at +0x42 to a format enum value.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "uint16_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x42",
+      "type": "uint16_t",
+      "name": "field_0x42"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:09:51Z"
+}

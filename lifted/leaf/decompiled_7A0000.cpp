@@ -1217,3 +1217,35 @@ extern void* __fastcall fn_007AEBA0(void* ecx) {
     return self;
 }
 } // namespace lift_007AEBA0
+
+// [0x007AF500]
+namespace lift_007AF500 {
+// @name getPixelFormatType
+// @summary Maps bit depth at +0x40 and channel count at +0x42 to a format enum value.
+// @field Unknown +0x40 uint16_t field_0x40
+// @field Unknown +0x42 uint16_t field_0x42
+
+
+uint16_t mem_read16(uint32_t addr);
+
+uint32_t sub_007AF500(uint32_t arg0) {
+    uint32_t byteDepth = (static_cast<uint32_t>(mem_read16(arg0 + 0x40)) + 7u) >> 3;
+    uint32_t kind = static_cast<uint32_t>(mem_read16(arg0 + 0x42));
+    switch (kind - 1u) {
+    case 0:
+        if (static_cast<int32_t>(byteDepth) <= 1) {
+            return 1;
+        }
+        return (static_cast<int32_t>(byteDepth) > 2) ? 4u : 3u;
+    case 2:
+        if (static_cast<int32_t>(byteDepth) <= 1) {
+            return 6;
+        }
+        return (static_cast<int32_t>(byteDepth) > 2) ? 9u : 8u;
+    case 3:
+        return (byteDepth != 4u) ? 12u : 11u;
+    default:
+        return 7;
+    }
+}
+} // namespace lift_007AF500
