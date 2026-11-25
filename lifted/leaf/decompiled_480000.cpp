@@ -2266,3 +2266,37 @@ TreeMapIterator* __thiscall fn_0048BBA0(void* self, TreeMapIterator* out, const 
     return out;
 }
 } // namespace lift_0048BBA0
+
+// [0x0048F590]
+namespace lift_0048F590 {
+extern void __fastcall ext_00665810(void* self);
+extern void ext_006A5C5C(void* ptr);
+
+// @name sub_0048F590_dtor
+// @summary Destructor that frees buffer at +0x20, deletes subobject at +0x14, and calls base destructor.
+// @field Self +0x14 void* field_0x14
+// @field Self +0x20 void* field_0x20
+// @field Self +0x24 uint32_t field_0x24
+// @field Self +0x28 uint32_t field_0x28
+extern void __fastcall fn_0048F590(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    void* ptr = *reinterpret_cast<void**>(base + 0x20);
+    if (ptr != nullptr) {
+        ext_006A5C5C(ptr);
+    }
+
+    *reinterpret_cast<uint32_t*>(base + 0x20) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x24) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x28) = 0;
+
+    void* obj = *reinterpret_cast<void**>(base + 0x14);
+    if (obj != nullptr) {
+        using DeletingDtor = void (__thiscall*)(void*, int);
+        void** vtable = *reinterpret_cast<void***>(obj);
+        reinterpret_cast<DeletingDtor>(vtable[0])(obj, 1);
+    }
+
+    ext_00665810(self);
+}
+} // namespace lift_0048F590

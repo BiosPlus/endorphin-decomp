@@ -10624,6 +10624,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00419E20 (FolderDialog::vfunc_79).",
     "lifted_path": "lifted/Commands/BufferChannelsCommand.cpp"
   },
+  "0x0048F590": {
+    "name": "sub_0048F590_dtor",
+    "signature": "extern \"C\" void __fastcall fn_0048F590(void* self)",
+    "summary": "Destructor that frees buffer at +0x20, deletes subobject at +0x14, and calls base destructor.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048F600": {
     "name": "Commands::CreateTriggeredEventCommand::vfunc_0",
     "class": "Commands::CreateTriggeredEventCommand",
@@ -41627,6 +41633,13 @@
     "class": "Unknown",
     "signature": "void fn_00624630(void* self)",
     "summary": "Runs the virtual-slot-18 range pass (00624540) then the slot-12 range pass (00624590) on the same object.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x00624640": {
+    "name": "StdMapString::lookupValue",
+    "class": "StdMapString",
+    "signature": "void* fn_00624640(void* self, const void* key)",
+    "summary": "Looks up a string key in the map and returns its mapped pointer value, or nullptr if absent.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x006248D0": {
