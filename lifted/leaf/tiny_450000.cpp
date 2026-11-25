@@ -366,3 +366,20 @@ int fn_0045BBE0(void) {
     return static_cast<int>(state >> 15);
 }
 } // namespace lift_0045BBE0
+
+// [0x00458E10] sub_00458E10 (21 bytes)
+namespace lift_00458E10 {
+extern DWORD mem_00AD3E2C;
+// IAT slot for USER32!SendMessageA
+extern LRESULT(__stdcall* mem_00925694)(HWND, UINT, WPARAM, LPARAM);
+
+// @name Unknown::sendMessageToWindow
+// @class Unknown
+// @summary Sends the global message id mem_00AD3E2C to the window handle stored at +0x1C, passing self as lParam and 0 as wParam.
+// @field Unknown +0x1C HWND field_0x1C
+void __thiscall fn_00458E10(void* self) {
+    HWND hwnd = lift_field<HWND>(self, 0x1C);
+    UINT msg = static_cast<UINT>(mem_00AD3E2C);
+    mem_00925694(hwnd, msg, 0, reinterpret_cast<LPARAM>(self));
+}
+} // namespace lift_00458E10

@@ -5726,6 +5726,13 @@
     "summary": "Returns the address of the read-only constant mem_00935E44 (initialised to 0x006A5FCE).",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
+  "0x00458E10": {
+    "name": "Unknown::sendMessageToWindow",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00458E10(void* self)",
+    "summary": "Sends the global message id mem_00AD3E2C to the window handle stored at +0x1C, passing self as lParam and 0 as wParam.",
+    "lifted_path": "lifted/leaf/tiny_450000.cpp"
+  },
   "0x00458FE0": {
     "name": "Unknown::SetVtableAndSendIfWindow",
     "class": "Unknown",

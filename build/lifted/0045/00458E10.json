@@ -1,0 +1,22 @@
+{
+  "va": "0x00458E10",
+  "size": 21,
+  "orig_symbol": "sub_00458E10",
+  "src_path": "src/leaf/tiny_450000.cpp",
+  "lifted_path": "lifted/leaf/tiny_450000.cpp",
+  "name": "Unknown::sendMessageToWindow",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00458E10(void* self)",
+  "summary": "Sends the global message id mem_00AD3E2C to the window handle stored at +0x1C, passing self as lParam and 0 as wParam.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "HWND",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:20:31Z"
+}

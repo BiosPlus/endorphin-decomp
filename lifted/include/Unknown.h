@@ -480,6 +480,7 @@ struct Unknown_Fields {
     // +0x1C  uint32_t                 default_value  (evidence: 0x0045E700) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  int32_t                  elementCount  (evidence: 0x006FA460) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  DWORD                    field_0x1C  (evidence: 0x00622B40, 0x00624540) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  HWND                     field_0x1C  (evidence: 0x00458E10) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  StringArray              field_0x1C  (evidence: 0x0052F7D0, 0x005947B0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  WORD                     field_0x1C  (evidence: 0x005555D0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  float                    field_0x1C  (evidence: 0x004B10D0, 0x004B1100, 0x004CCC30, 0x004CF910, 0x00532BC0, 0x0054A070, 0x0055CD10, 0x005ACC50, 0x005ACEE0, 0x005B1B90, 0x00610C10, 0x0067B8D0, 0x007CAF70, 0x007CCAB0) // CONFLICT: multiple definitions at +0x1C
