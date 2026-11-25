@@ -61697,6 +61697,13 @@
     "summary": "Invokes virtual slot 0xD0 on self, then forwards two stack args to ext_006FB690 if flag bit 0 at +0x34 is set, else to ext_006FB6B0; returns low byte.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x007128A0": {
+    "name": "Unknown::FindEntryIndexByObject",
+    "class": "Unknown",
+    "signature": "int32_t fn_007128A0(void* self, DWORD target)",
+    "summary": "Scans a 12-byte entry array for a matching key whose object's virtual slot 5 accepts mem_00B5EB78; returns the entry index when the object equals the target, else -1.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00712950": {
     "name": "sub_00712950",
     "signature": "extern \"C\" void __fastcall fn_00712950(void* self)",

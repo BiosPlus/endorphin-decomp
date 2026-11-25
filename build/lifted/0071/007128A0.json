@@ -1,0 +1,28 @@
+{
+  "va": "0x007128A0",
+  "size": 104,
+  "orig_symbol": "sub_007128A0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::FindEntryIndexByObject",
+  "class": "Unknown",
+  "signature": "int32_t fn_007128A0(void* self, DWORD target)",
+  "summary": "Scans a 12-byte entry array for a matching key whose object's virtual slot 5 accepts mem_00B5EB78; returns the entry index when the object equals the target, else -1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "DWORD",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "int32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:50:11Z"
+}

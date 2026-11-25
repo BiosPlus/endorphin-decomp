@@ -1977,3 +1977,50 @@ uint32_t fn_00712010(void* self) {
     }
 }
 } // namespace lift_00712010
+
+// [0x007128A0] sub_007128A0 (104 bytes)
+namespace lift_007128A0 {
+extern int mem_00B5EB78;
+
+// @name Unknown::FindEntryIndexByObject
+// @class Unknown
+// @summary Scans a 12-byte entry array for a matching key whose object's virtual slot 5 accepts mem_00B5EB78; returns the entry index when the object equals the target, else -1.
+// @field Unknown +0x10 DWORD field_0x10
+// @field Unknown +0x14 int32_t field_0x14
+int32_t fn_007128A0(void* self, DWORD target) {
+    const uintptr_t base = reinterpret_cast<uintptr_t>(self);
+    const auto rd32 = [](uintptr_t addr) -> uint32_t {
+        return *reinterpret_cast<const uint32_t*>(addr);
+    };
+
+    const int32_t count = static_cast<int32_t>(rd32(base + 0x14));
+    const uintptr_t entries = rd32(base + 0x10);
+
+    for (int32_t i = 0; i < count; ++i) {
+        const uintptr_t entry = entries + static_cast<uintptr_t>(i) * 12u;
+        const uintptr_t node = rd32(entry + 4);
+        if (node == 0) {
+            continue;
+        }
+        if (rd32(node) != rd32(entry)) {
+            continue;
+        }
+        const uintptr_t obj = rd32(node + 4);
+        if (obj == 0) {
+            continue;
+        }
+
+        // Virtual slot 5 (offset 0x14) on the object's vtable.
+        const uintptr_t vtbl = rd32(obj);
+        const uintptr_t fn = rd32(vtbl + 0x14);
+        using SlotFn = bool (*)(uintptr_t self_obj, uint32_t arg);
+        const bool accepted = reinterpret_cast<SlotFn>(fn)(
+            obj, static_cast<uint32_t>(mem_00B5EB78));
+
+        if (accepted && static_cast<DWORD>(obj) == target) {
+            return i;
+        }
+    }
+    return -1;
+}
+} // namespace lift_007128A0
