@@ -62645,6 +62645,12 @@
     "summary": "No-op stub (add eax, 0).",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x00860330": {
+    "name": "ClampedDivmodPair",
+    "signature": "void fn_00860330(int32_t a, int32_t b, int32_t* out_divisor, int32_t* out_quotient)",
+    "summary": "Clamps two ints (a to [1,60], b to [1,30]), takes max(a,b) and writes b and max(a,b)/b to out params.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x008607F4": {
     "name": "sub_008607F4",
     "signature": "void fn_008607F4(void)",

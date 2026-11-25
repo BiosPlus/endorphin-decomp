@@ -617,3 +617,20 @@ uint64_t fn_00868690(uint32_t lo, uint32_t hi, uint32_t n) {
     return (static_cast<uint64_t>(newHi) << 32) | newLo;
 }
 } // namespace lift_00868690
+
+// [0x00860330] sub_00860330 (80 bytes)
+namespace lift_00860330 {
+// @name ClampedDivmodPair
+// @summary Clamps two ints (a to [1,60], b to [1,30]), takes max(a,b) and writes b and max(a,b)/b to out params.
+// @field none (no struct field accesses; operates on plain stack arguments and out pointers)
+void fn_00860330(int32_t a, int32_t b, int32_t* out_divisor, int32_t* out_quotient) {
+    if (b < 1) b = 1;
+    if (b > 30) b = 30;
+    if (a < 1) a = 1;
+    if (a > 60) a = 60;
+    int32_t n = a;
+    if (b > n) n = b;
+    *out_divisor = b;
+    *out_quotient = n / b;
+}
+} // namespace lift_00860330
