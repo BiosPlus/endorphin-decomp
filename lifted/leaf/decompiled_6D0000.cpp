@@ -1861,3 +1861,24 @@ uint32_t fn_006DEED0(uint32_t self, uint32_t new_val, uint8_t release_old) {
     return prev_val;
 }
 } // namespace lift_006DEED0
+
+// [0x006D5A60]
+namespace lift_006D5A60 {
+extern void __fastcall ext_006B9D70(void* self);
+extern void __fastcall ext_007641C0(void* self);
+
+// @name UnknownClass_0099393c::dtor
+// @class UnknownClass_0099393c
+// @summary Destructor that resets vtable to 0x0099393c and destroys subobjects at +0xb0, +0x5c, and +0x4.
+// @field UnknownClass_0099393c +0x00 uint32_t vftable
+// @field UnknownClass_0099393c +0x04 uint8_t field_0x04
+// @field UnknownClass_0099393c +0x5c uint8_t field_0x5c
+// @field UnknownClass_0099393c +0xb0 uint8_t field_0xb0
+extern void __fastcall fn_006D5A60(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(obj + 0x0) = 0x0099393cU;
+    ext_006B9D70(obj + 0xb0);
+    ext_006B9D70(obj + 0x5c);
+    ext_007641C0(obj + 0x4);
+}
+} // namespace lift_006D5A60
