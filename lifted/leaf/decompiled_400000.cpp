@@ -1725,3 +1725,29 @@ void* fn_00401E80(uint32_t n) {
     return ext_006A5C62(28u * n);
 }
 } // namespace lift_00401E80
+
+// [0x00403560] sub_00403560 (104 bytes)
+namespace lift_00403560 {
+// Import slots referenced by the original thunks (IAT entries).
+extern int mem_00924FF0;  // MSVCP80 std::basic_string<char>::c_str
+extern int mem_00925130;  // MSVCR80 std::exception::exception(const char* const&)
+extern int mem_00924FE0;  // MSVCP80 std::basic_string<char>::basic_string(const basic_string&)
+extern int mem_00928EF0;  // vtable address written into the object
+
+// Imported helpers, bound to the slots above.
+extern const char* ext_std_string_c_str(const void* str);
+extern void ext_std_exception_ctor(void* self, const char* const* what);
+extern void ext_std_string_copy_ctor(void* dst, const void* src);
+
+// @name ExceptionWithMessage::ExceptionWithMessage
+// @class ExceptionWithMessage
+// @summary Constructs a std::exception-derived object from a const std::string&: passes its c_str() to the base exception, installs the class vtable, and copy-constructs the string at +0x0C.
+// @field ExceptionWithMessage +0x0C std::string field_0x0c
+void* fn_00403560(void* self, const void* msg) {
+    const char* what = ext_std_string_c_str(msg);
+    ext_std_exception_ctor(self, &what);
+    lift_field<uint32_t>(self, 0x00) = 0x00928EF0u;
+    ext_std_string_copy_ctor(static_cast<uint8_t*>(self) + 0x0C, msg);
+    return self;
+}
+} // namespace lift_00403560

@@ -446,6 +446,13 @@
     "summary": "Closes the DrawDib handle at this+0xDC via DrawDibClose, then deletes the device context at this+0xE4 via GDI32!DeleteDC (thiscall, no args).",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00403560": {
+    "name": "ExceptionWithMessage::ExceptionWithMessage",
+    "class": "ExceptionWithMessage",
+    "signature": "void* fn_00403560(void* self, const void* msg)",
+    "summary": "Constructs a std::exception-derived object from a const std::string\u0026: passes its c_str() to the base exception, installs the class vtable, and copy-constructs the string at +0x0C.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00403F10": {
     "name": "VideoExporter::vfunc_0",
     "class": "VideoExporter",
