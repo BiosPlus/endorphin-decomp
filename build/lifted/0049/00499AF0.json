@@ -1,0 +1,14 @@
+{
+  "va": "0x00499AF0",
+  "size": 35,
+  "orig_symbol": "NMData::Transition::vfunc_6_off_10",
+  "src_path": "src/NMData/Transition.cpp",
+  "lifted_path": "lifted/NMData/Transition.cpp",
+  "name": "NMData::Transition::vfunc_6_off_10",
+  "class": "NMData::Transition",
+  "signature": "extern \"C\" uint32_t mem_00A9F354;  // holds the address of the default C string (0x00928C00) extern \"C\" uint32_t mem_00924FE4;  // IAT slot for MSVCP80 basic_string\u003cchar\u003e::basic_string(const char*, const Alloc\u0026) void* __stdcall fn_00499AF0(void* self)",
+  "summary": "Constructs a std::string from the default C string at mem_00A9F354 into the stack-passed object and returns it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:50:27Z"
+}

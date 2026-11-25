@@ -115,3 +115,20 @@ uint32_t* fn_004991A0(void* self, uint32_t* out, int32_t kind) {
     return out;
 }
 } // namespace lift_004991A0
+
+// [0x00499AF0] NMData::Transition::vfunc_6_off_10 (35 bytes)
+namespace lift_00499AF0 {
+extern uint32_t mem_00A9F354;  // holds the address of the default C string (0x00928C00)
+extern uint32_t mem_00924FE4;  // IAT slot for MSVCP80 basic_string<char>::basic_string(const char*, const Alloc&)
+
+// @name NMData::Transition::vfunc_6_off_10
+// @class NMData::Transition
+// @summary Constructs a std::string from the default C string at mem_00A9F354 into the stack-passed object and returns it.
+void* __stdcall fn_00499AF0(void* self) {
+    using StrCtorFn = void(__thiscall*)(void* self, const char* s, const void* alloc);
+    const char* s = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9F354));
+    auto ctor = reinterpret_cast<StrCtorFn>(static_cast<uintptr_t>(mem_00924FE4));
+    ctor(self, s, nullptr);
+    return self;
+}
+} // namespace lift_00499AF0
