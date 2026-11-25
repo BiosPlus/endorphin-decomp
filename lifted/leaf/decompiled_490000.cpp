@@ -1155,3 +1155,19 @@ void* fn_0049B340() {
     return reinterpret_cast<void*>(&mem_00ADD7C4);
 }
 } // namespace lift_0049B340
+
+// [0x0049D190] sub_0049D190 (33 bytes)
+namespace lift_0049D190 {
+// Known callee 0x0049B340: InitOnceGlobalString_0049B340 (One-time guarded initializer for the global string at 0x00ADD7C4; registers its teardown via ext_006A6C87 and returns the global's address.)
+extern void* ext_0049B340();
+
+// @name CopyGlobalStringToOut
+// @summary Ensures the global string is initialized, copy-constructs it into the caller-supplied std::string slot, and returns that slot.
+void* fn_0049D190(void* self) {
+    // The original stores 0 to a local stack slot before the call; that slot is unused, so it is dropped.
+    void* global = ext_0049B340();
+    // MSVC's basic_string copy constructor (via mem_00924FE0) is replaced by placement-new copy construction.
+    new (self) std::string(*static_cast<const std::string*>(global));
+    return self;
+}
+} // namespace lift_0049D190
