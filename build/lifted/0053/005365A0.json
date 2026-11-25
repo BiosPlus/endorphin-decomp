@@ -1,0 +1,14 @@
+{
+  "va": "0x005365A0",
+  "size": 96,
+  "orig_symbol": "OglRenderer::vfunc_1",
+  "src_path": "src/classes/OglRenderer.cpp",
+  "lifted_path": "lifted/classes/OglRenderer.cpp",
+  "name": "OglRenderer::vfunc_1",
+  "class": "OglRenderer",
+  "signature": "void __thiscall sub_005365A0(void* self)",
+  "summary": "Acquires the renderer's critical section lock, invokes sub_005364D0, and releases the lock.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:36:30Z"
+}

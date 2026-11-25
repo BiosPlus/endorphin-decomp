@@ -252,3 +252,26 @@ void __fastcall fn_00532F60(void* self) {
     mem_00925660(hwnd, 1);
 }
 } // namespace lift_00532F60
+
+// [0x005365A0]
+namespace lift_005365A0 {
+// @name OglRenderer::vfunc_1
+// @class OglRenderer
+// @summary Acquires the renderer's critical section lock, invokes sub_005364D0, and releases the lock.
+
+
+extern void* __thiscall ext_0065C640(void* self);
+extern void __thiscall ext_0065C650(void* self);
+extern void __thiscall ext_005364D0(void* self);
+
+void __thiscall sub_005365A0(void* self) {
+    uint32_t* vtable = *reinterpret_cast<uint32_t**>(self);
+    using GetLockFn = void* (__thiscall*)(void*);
+    auto get_lock = reinterpret_cast<GetLockFn>(vtable[0x1D8 / 4]);
+    void* lock = get_lock(self);
+
+    ext_0065C640(lock);
+    ext_005364D0(self);
+    ext_0065C650(lock);
+}
+} // namespace lift_005365A0
