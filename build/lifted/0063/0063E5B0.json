@@ -1,0 +1,28 @@
+{
+  "va": "0x0063E5B0",
+  "size": 96,
+  "orig_symbol": "sub_0063E5B0",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "Unknown::Unknown(const std::string\u0026, const std::string\u0026)",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_0063E5B0(void* self, const void* arg0, const void* arg1)",
+  "summary": "Constructs base with global u32 and first string, stamps vtable 0x0097CBEC, and copy-constructs std::string at +0x24 from second string.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "std::string",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:36:57Z"
+}

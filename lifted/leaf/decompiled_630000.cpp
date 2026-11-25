@@ -977,3 +977,25 @@ void fn_00630420(void* self) {
     dz *= inv;
 }
 } // namespace lift_00630420
+
+// [0x0063E5B0]
+namespace lift_0063E5B0 {
+// @name Unknown::Unknown(const std::string&, const std::string&)
+// @class Unknown
+// @summary Constructs base with global u32 and first string, stamps vtable 0x0097CBEC, and copy-constructs std::string at +0x24 from second string.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x24 std::string field_0x24
+
+
+extern void* (__thiscall* ext_0063E0C0)(void* self, uint32_t arg0, const void* name);
+extern uint32_t mem_00A9B148;
+extern void (__thiscall* mem_00924FE0)(void* self, const void* other);
+
+void* __thiscall fn_0063E5B0(void* self, const void* arg0, const void* arg1) {
+    uint8_t* p = static_cast<uint8_t*>(self);
+    ext_0063E0C0(self, mem_00A9B148, arg0);
+    *reinterpret_cast<uint32_t*>(p + 0x00) = 0x0097CBECu;
+    mem_00924FE0(p + 0x24, arg1);
+    return self;
+}
+} // namespace lift_0063E5B0
