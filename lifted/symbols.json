@@ -9196,6 +9196,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x0048CCC0": {
+    "name": "UnknownElementVector::erase",
+    "class": "UnknownElementVector",
+    "signature": "uint32_t* __thiscall fn_0048CCC0( uint8_t* self, uint32_t* out_iter, uint32_t first_container, uint32_t first_ptr, uint32_t last_container, uint32_t last_ptr)",
+    "summary": "Erases a checked iterator range [first, last) from a vector of 0x68-byte elements, shifting trailing elements and destroying the vacated tail.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048CDB0": {
     "name": "sub_0048CDB0",
     "signature": "DWORD* __thiscall fn_0048CDB0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -9764,6 +9771,12 @@
     "signature": "void __thiscall sub_00494060(void* self, uint32_t mask)",
     "summary": "XORs a 32-bit value at [ecx] with the first stack argument.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
+  "0x00494070": {
+    "name": "findAncestorWithFlags",
+    "signature": "extern \"C\" uint32_t fn_00494070(uint32_t mask, uint32_t obj)",
+    "summary": "Walks up an object's parent chain via vtable+0x10 and dynamic_cast until finding one whose vtable+0x50 flags match the given mask",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
   "0x004940D0": {
     "name": "ForwardToDeletingDtorReturnSelf",

@@ -1438,3 +1438,40 @@ VectorIter_0048EF20* __thiscall fn_0048EF20(
     return out_iter;
 }
 } // namespace lift_0048EF20
+
+// [0x0048CCC0]
+namespace lift_0048CCC0 {
+extern void (*mem_00925134)();
+extern void ext_0048CB80(uint8_t* first, uint8_t* last);
+extern int32_t ext_0048CBD0(int32_t arg1, int32_t arg2, int32_t arg3);
+
+// @name UnknownElementVector::erase
+// @class UnknownElementVector
+// @summary Erases a checked iterator range [first, last) from a vector of 0x68-byte elements, shifting trailing elements and destroying the vacated tail.
+// @field UnknownElementVector +0x08 uint8_t* last
+uint32_t* __thiscall fn_0048CCC0(
+    uint8_t* self,
+    uint32_t* out_iter,
+    uint32_t first_container,
+    uint32_t first_ptr,
+    uint32_t last_container,
+    uint32_t last_ptr) {
+  if (first_container == 0 || first_container != last_container) {
+    mem_00925134();
+  }
+  if (first_ptr != last_ptr) {
+    int32_t old_last = *reinterpret_cast<int32_t*>(self + 0x8);
+    int32_t new_last = ext_0048CBD0(
+        static_cast<int32_t>(last_ptr),
+        old_last,
+        static_cast<int32_t>(first_ptr));
+    ext_0048CB80(
+        reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(new_last)),
+        reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(*reinterpret_cast<uint32_t*>(self + 0x8))));
+    *reinterpret_cast<int32_t*>(self + 0x8) = new_last;
+  }
+  out_iter[0] = first_container;
+  out_iter[1] = first_ptr;
+  return out_iter;
+}
+} // namespace lift_0048CCC0
