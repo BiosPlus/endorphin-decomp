@@ -105,6 +105,11 @@ struct _unknown__Fields {
     // +0x9C  void* vtable slot (called with two zero args)  (evidence: 0x00420070, 0x0042FD70)
     // +0xA0  void*                    field_0xA0  (evidence: 0x005480D0) // CONFLICT: multiple definitions at +0xA0
     // +0xA0  void*                    field_0xa0  (evidence: 0x005457B0, 0x00548240) // CONFLICT: multiple definitions at +0xA0
+    // +0xAC  float                    field_0xAC  (evidence: 0x00611140)
+    // +0xB0  float                    field_0xB0  (evidence: 0x00611140)
+    // +0xB4  float                    field_0xB4  (evidence: 0x00611140)
+    // +0xB8  float                    field_0xB8  (evidence: 0x00611140)
+    // +0xBC  float                    field_0xBC  (evidence: 0x00611140)
     // +0xDC  int                      field_0xdc  (evidence: 0x004562F0)
     // +0xE0  void* embedded-object vptr slot (called with this=second object)  (evidence: 0x00420070, 0x0042FD70)
     // +0xF0  uint32_t field_0xF0 (indexed array base, slots 0x00..0x11 at +0xF0..+0x128; index 0 never read)  (evidence: 0x007AA7F0, 0x007AA910, 0x007AC670)

@@ -508,3 +508,22 @@ void fn_00611100(void* self, uint32_t index, float value) {
     lift_field<float>(self, static_cast<ptrdiff_t>(0xac + 4 * slot)) = value;
 }
 } // namespace lift_00611100
+
+// [0x00611140] sub_00611140 (20 bytes)
+namespace lift_00611140 {
+// Known callee 0x006110A0: mapIndexToOffset (Maps an unsigned index (0..3) to a slot index (0, 1, 1, 2) or 4 if out of range.)
+extern uint32_t ext_006110A0(uint32_t index);
+
+// @name getFloatBySlotIndex
+// @class <unknown> (this is in ecx; owning class not yet recovered)
+// @summary Maps the argument index to a slot (0..4) via mapIndexToOffset, then returns the float at this+0xAC+4*slot (x87 st0); thiscall, callee pops 4.
+// @field <unknown> +0xAC float field_0xAC
+// @field <unknown> +0xB0 float field_0xB0
+// @field <unknown> +0xB4 float field_0xB4
+// @field <unknown> +0xB8 float field_0xB8
+// @field <unknown> +0xBC float field_0xBC
+float fn_00611140(void* self, uint32_t index) {
+    uint32_t slot = ext_006110A0(index);                       // push eax ; call mapIndexToOffset
+    return lift_field<float>(self, 0xACu + 4u * slot);         // fld dword ptr [ecx + 4*eax + 0xac] ; ret 4
+}
+} // namespace lift_00611140

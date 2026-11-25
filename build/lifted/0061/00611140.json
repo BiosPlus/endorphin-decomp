@@ -1,0 +1,46 @@
+{
+  "va": "0x00611140",
+  "size": 20,
+  "orig_symbol": "sub_00611140",
+  "src_path": "src/leaf/decompiled_610000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_610000.cpp",
+  "name": "getFloatBySlotIndex",
+  "class": "\u003cunknown\u003e (this is in ecx; owning class not yet recovered)",
+  "signature": "float fn_00611140(void* self, uint32_t index)",
+  "summary": "Maps the argument index to a slot (0..4) via mapIndexToOffset, then returns the float at this+0xAC+4*slot (x87 st0); thiscall, callee pops 4.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xAC",
+      "type": "float",
+      "name": "field_0xAC"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xB0",
+      "type": "float",
+      "name": "field_0xB0"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xB4",
+      "type": "float",
+      "name": "field_0xB4"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xB8",
+      "type": "float",
+      "name": "field_0xB8"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xBC",
+      "type": "float",
+      "name": "field_0xBC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:18:03Z"
+}

@@ -32241,6 +32241,13 @@
     "summary": "Maps index to a slot via mapIndexToOffset and stores a float into the slot array at +0xAC.",
     "lifted_path": "lifted/leaf/decompiled_610000.cpp"
   },
+  "0x00611140": {
+    "name": "getFloatBySlotIndex",
+    "class": "\u003cunknown\u003e (this is in ecx; owning class not yet recovered)",
+    "signature": "float fn_00611140(void* self, uint32_t index)",
+    "summary": "Maps the argument index to a slot (0..4) via mapIndexToOffset, then returns the float at this+0xAC+4*slot (x87 st0); thiscall, callee pops 4.",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
   "0x00611160": {
     "name": "readFloatAtIndex3",
     "signature": "float fn_00611160(uint32_t ecx)",
