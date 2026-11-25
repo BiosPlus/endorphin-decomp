@@ -1,0 +1,118 @@
+{
+  "va": "0x0085A5D0",
+  "size": 80,
+  "orig_symbol": "sub_0085A5D0",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "Block::ResetDefaults",
+  "class": "Block",
+  "signature": "void fn_0085A5D0(void* self)",
+  "summary": "Zeroes a 100-byte block, clears its flag byte, sets most dword fields to -1, and sets the dword at +0x2C to 1.",
+  "fields": [
+    {
+      "class": "Block",
+      "offset": "+0x0",
+      "type": "uint8_t",
+      "name": "flag"
+    },
+    {
+      "class": "Block",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Block",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Block",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Block",
+      "offset": "+0x14",
+      "type": "int32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Block",
+      "offset": "+0x1C",
+      "type": "int32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Block",
+      "offset": "+0x20",
+      "type": "int32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Block",
+      "offset": "+0x24",
+      "type": "int32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Block",
+      "offset": "+0x2C",
+      "type": "int32_t",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "Block",
+      "offset": "+0x3C",
+      "type": "int32_t",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "Block",
+      "offset": "+0x40",
+      "type": "int32_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Block",
+      "offset": "+0x44",
+      "type": "int32_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Block",
+      "offset": "+0x48",
+      "type": "int32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "Block",
+      "offset": "+0x4C",
+      "type": "int32_t",
+      "name": "field_0x4C"
+    },
+    {
+      "class": "Block",
+      "offset": "+0x50",
+      "type": "int32_t",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Block",
+      "offset": "+0x54",
+      "type": "int32_t",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Block",
+      "offset": "+0x58",
+      "type": "int32_t",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:57:21Z"
+}

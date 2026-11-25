@@ -892,3 +892,57 @@ static uint8_t* strncpyZeroPad(uint8_t* dst, const uint8_t* src, size_t n) {
     return dst;
 }
 } // namespace lift_008598E0
+
+// [0x0085A5D0] sub_0085A5D0 (80 bytes)
+namespace lift_0085A5D0 {
+// Known callee 0x00859740: MemsetReturnDst (Fills count bytes at dst with value (memset semantics) and returns dst.)
+extern void* ext_00859740(void* dst, uint8_t value, uint32_t count);
+
+// @name Block::ResetDefaults
+// @class Block
+// @summary Zeroes a 100-byte block, clears its flag byte, sets most dword fields to -1, and sets the dword at +0x2C to 1.
+// @field Block +0x00 uint8_t flag
+// @field Block +0x08 int32_t field_0x08
+// @field Block +0x0C int32_t field_0x0C
+// @field Block +0x10 int32_t field_0x10
+// @field Block +0x14 int32_t field_0x14
+// @field Block +0x1C int32_t field_0x1C
+// @field Block +0x20 int32_t field_0x20
+// @field Block +0x24 int32_t field_0x24
+// @field Block +0x2C int32_t field_0x2C
+// @field Block +0x3C int32_t field_0x3C
+// @field Block +0x40 int32_t field_0x40
+// @field Block +0x44 int32_t field_0x44
+// @field Block +0x48 int32_t field_0x48
+// @field Block +0x4C int32_t field_0x4C
+// @field Block +0x50 int32_t field_0x50
+// @field Block +0x54 int32_t field_0x54
+// @field Block +0x58 int32_t field_0x58
+void fn_0085A5D0(void* self) {
+    auto* p = static_cast<uint8_t*>(self);
+
+    ext_00859740(p, 0, 100);
+
+    auto store_i32 = [p](uint32_t off, int32_t v) {
+        std::memcpy(p + off, &v, sizeof(v));
+    };
+
+    p[0x00] = 0;
+    store_i32(0x08, -1);
+    store_i32(0x0C, -1);
+    store_i32(0x10, -1);
+    store_i32(0x14, -1);
+    store_i32(0x1C, -1);
+    store_i32(0x20, -1);
+    store_i32(0x24, -1);
+    store_i32(0x2C, 1);
+    store_i32(0x3C, -1);
+    store_i32(0x40, -1);
+    store_i32(0x44, -1);
+    store_i32(0x48, -1);
+    store_i32(0x4C, -1);
+    store_i32(0x50, -1);
+    store_i32(0x54, -1);
+    store_i32(0x58, -1);
+}
+} // namespace lift_0085A5D0

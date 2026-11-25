@@ -62403,6 +62403,13 @@
     "summary": "Walks a singly linked node chain (next pointer at +0x1C) from head and returns the first node whose DWORD key at +0x00 equals the given key, or NULL if none match or head is NULL.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085A5D0": {
+    "name": "Block::ResetDefaults",
+    "class": "Block",
+    "signature": "void fn_0085A5D0(void* self)",
+    "summary": "Zeroes a 100-byte block, clears its flag byte, sets most dword fields to -1, and sets the dword at +0x2C to 1.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085BC20": {
     "name": "GetField08",
     "signature": "uint32_t GetField08(uint32_t self_ptr)",
