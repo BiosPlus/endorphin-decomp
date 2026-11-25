@@ -1,0 +1,22 @@
+{
+  "va": "0x0057EA40",
+  "size": 109,
+  "orig_symbol": "sub_0057EA40",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "sub_0057EA40",
+  "class": "Unknown",
+  "signature": "void fn_0057EA40(void* self, void** out, void* a2, void* a3, void* a4, void* a5)",
+  "summary": "Auto-lifted identical-shape clone of 0x0057CEE0 (Unknown::assignRecordRange_0057CEE0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T04:04:13Z"
+}

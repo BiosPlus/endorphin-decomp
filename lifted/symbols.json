@@ -9978,6 +9978,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0048BC10": {
+    "name": "SearchableMap\u003cNM::Matrix4, GetNameFromAttribute\u003cNM::Matrix4\u003e\u003e::vfunc_0",
+    "class": "SearchableMap\u003cNM::Matrix4, GetNameFromAttribute\u003cNM::Matrix4\u003e\u003e",
+    "signature": "void* fn_0048BC10(void* self, const void* key)",
+    "summary": "Auto-lifted identical-shape clone of 0x0042E7B0 (SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e::vfunc_0).",
+    "lifted_path": "lifted/templates/SearchableMap.cpp"
+  },
   "0x0048BD50": {
     "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
@@ -12382,6 +12389,13 @@
     "summary": "Walks a binary search tree (head sentinel at holder-\u003efield_0x04) comparing each node's string key at +0x0C against the argument; returns the last left-branch node visited (or the holder when the tree is empty).",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
+  "0x004A74B0": {
+    "name": "SearchableMap\u003cNMData::PoseData, GetNameFromAttribute\u003cNMData::PoseData\u003e\u003e::vfunc_0",
+    "class": "SearchableMap\u003cNMData::PoseData, GetNameFromAttribute\u003cNMData::PoseData\u003e\u003e",
+    "signature": "void* fn_004A74B0(void* self, const void* key)",
+    "summary": "Auto-lifted identical-shape clone of 0x0042E7B0 (SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e::vfunc_0).",
+    "lifted_path": "lifted/templates/SearchableMap.cpp"
+  },
   "0x004A82D0": {
     "name": "sub_004A82D0",
     "signature": "extern void* __fastcall fn_004A82D0(void* self, int edx_unused, const void* src)",
@@ -14017,6 +14031,20 @@
     "signature": "extern \"C\" void fn_004BC420(void)",
     "summary": "Pure jump thunk forwarding to sub_004BBC90.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x004BC6D0": {
+    "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand::vfunc_1",
+    "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand",
+    "signature": "static inline void* to_ptr(uint32_t v)",
+    "summary": "Auto-lifted identical-shape clone of 0x00528370 (PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::AddElementCommand::vfunc_1).",
+    "lifted_path": "lifted/templates/AddElementCommand.cpp"
+  },
+  "0x004BC720": {
+    "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::AddElementCommand::vfunc_1",
+    "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::AddElementCommand",
+    "signature": "static inline void* to_ptr(uint32_t v)",
+    "summary": "Auto-lifted identical-shape clone of 0x00528370 (PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::AddElementCommand::vfunc_1).",
+    "lifted_path": "lifted/templates/AddElementCommand.cpp"
   },
   "0x004BC8E0": {
     "name": "NMData::EngineData::vfunc_0",
@@ -17222,6 +17250,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0043D780 (AllocAndInitRecord).",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
+  "0x004EC3F0": {
+    "name": "SearchableMap\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, GetNameFromAttribute\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e\u003e::vfunc_0",
+    "class": "SearchableMap\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, GetNameFromAttribute\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e\u003e",
+    "signature": "void* fn_004EC3F0(void* self, const void* key)",
+    "summary": "Auto-lifted identical-shape clone of 0x0042E7B0 (SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e::vfunc_0).",
+    "lifted_path": "lifted/templates/SearchableMap.cpp"
+  },
   "0x004EC560": {
     "name": "NMData::TopLevelState::vfunc_0_off_10",
     "class": "NMData::TopLevelState",
@@ -18485,6 +18520,13 @@
     "signature": "extern \"C\" void __fastcall fn_00501EC0(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by -0x10 and tail-calls EvolveEngine::vfunc_0.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00501ED0": {
+    "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::ValuePtrData\u003e\u003e::AddElementCommand::vfunc_1",
+    "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::ValuePtrData\u003e\u003e::AddElementCommand",
+    "signature": "static inline void* to_ptr(uint32_t v)",
+    "summary": "Auto-lifted identical-shape clone of 0x00528370 (PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::AddElementCommand::vfunc_1).",
+    "lifted_path": "lifted/templates/AddElementCommand.cpp"
   },
   "0x00502110": {
     "name": "EvolveEngine::vfunc_0",
@@ -21157,6 +21199,13 @@
     "signature": "void* fn_0052A230(void* self, const void* key)",
     "summary": "Auto-lifted identical-shape clone of 0x004205B0 (TreeMap::lowerBound).",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
+  "0x0052EC10": {
+    "name": "SearchableMap\u003cMaterial, GetNameFromAttribute\u003cMaterial\u003e\u003e::vfunc_0",
+    "class": "SearchableMap\u003cMaterial, GetNameFromAttribute\u003cMaterial\u003e\u003e",
+    "signature": "void* fn_0052EC10(void* self, const void* key)",
+    "summary": "Auto-lifted identical-shape clone of 0x0042E7B0 (SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e::vfunc_0).",
+    "lifted_path": "lifted/templates/SearchableMap.cpp"
   },
   "0x0052ED00": {
     "name": "MaterialList::vfunc_6",
@@ -25919,6 +25968,13 @@
     "summary": "Writes the byte at *src into count consecutive bytes starting at dst (src is not advanced, so it is re-read each iteration); returns dst + count. stdcall, callee pops 12 bytes.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x00577B10": {
+    "name": "sub_00577B10",
+    "class": "Unknown",
+    "signature": "void fn_00577B10(void* self, void** out, void* a2, void* a3, void* a4, void* a5)",
+    "summary": "Auto-lifted identical-shape clone of 0x0057CEE0 (Unknown::assignRecordRange_0057CEE0).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00577DE0": {
     "name": "sub_00577DE0",
     "class": "Unknown",
@@ -26187,6 +26243,20 @@
     "class": "Unknown",
     "signature": "VectorIterator* __thiscall fn_0057E9E0(void* self, VectorIterator* out_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr)",
     "summary": "Erases [first, last) from a 0x14-byte-record vector by shifting [last, end) over first, destroying the trailing elements, and returning the updated iterator.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057EA40": {
+    "name": "sub_0057EA40",
+    "class": "Unknown",
+    "signature": "void fn_0057EA40(void* self, void** out, void* a2, void* a3, void* a4, void* a5)",
+    "summary": "Auto-lifted identical-shape clone of 0x0057CEE0 (Unknown::assignRecordRange_0057CEE0).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057EAB0": {
+    "name": "sub_0057EAB0",
+    "class": "Unknown",
+    "signature": "void fn_0057EAB0(void* self, void** out, void* a2, void* a3, void* a4, void* a5)",
+    "summary": "Auto-lifted identical-shape clone of 0x0057CEE0 (Unknown::assignRecordRange_0057CEE0).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
   "0x0057EB20": {
@@ -27921,6 +27991,13 @@
     "summary": "Returns the dword at +0x22C of the first element in S's pointer vector (S = R-\u003e+0x28), falling back to GetNestedDwordAt38C(self) when that vector is empty or P-\u003e+0x20 is zero.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x0059B070": {
+    "name": "SearchableMap\u003cNM::Color *, GetNameFromAttribute\u003cNM::Color *\u003e\u003e::vfunc_0",
+    "class": "SearchableMap\u003cNM::Color *, GetNameFromAttribute\u003cNM::Color *\u003e\u003e",
+    "signature": "void* fn_0059B070(void* self, const void* key)",
+    "summary": "Auto-lifted identical-shape clone of 0x0042E7B0 (SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e::vfunc_0).",
+    "lifted_path": "lifted/templates/SearchableMap.cpp"
+  },
   "0x0059B120": {
     "name": "sub_0059B120",
     "class": "Unknown",
@@ -27928,12 +28005,26 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A73F0 (Unknown::FindNodeByStringKey).",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x0059B1E0": {
+    "name": "SearchableMap\u003cNMData::ValuePtrData, GetNameFromElement\u003cNMData::ValuePtrData\u003e\u003e::vfunc_0",
+    "class": "SearchableMap\u003cNMData::ValuePtrData, GetNameFromElement\u003cNMData::ValuePtrData\u003e\u003e",
+    "signature": "void* fn_0059B1E0(void* self, const void* key)",
+    "summary": "Auto-lifted identical-shape clone of 0x0042E7B0 (SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e::vfunc_0).",
+    "lifted_path": "lifted/templates/SearchableMap.cpp"
+  },
   "0x0059B290": {
     "name": "sub_0059B290",
     "class": "TreeMap",
     "signature": "void* fn_0059B290(void* self, const void* key)",
     "summary": "Auto-lifted identical-shape clone of 0x004205B0 (TreeMap::lowerBound).",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
+  "0x0059B350": {
+    "name": "SearchableMap\u003cValuePtr, GetNameFromAttribute\u003cValuePtr\u003e\u003e::vfunc_0",
+    "class": "SearchableMap\u003cValuePtr, GetNameFromAttribute\u003cValuePtr\u003e\u003e",
+    "signature": "void* fn_0059B350(void* self, const void* key)",
+    "summary": "Auto-lifted identical-shape clone of 0x0042E7B0 (SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e::vfunc_0).",
+    "lifted_path": "lifted/templates/SearchableMap.cpp"
   },
   "0x0059C7E0": {
     "name": "World::vfunc_33",
@@ -44065,6 +44156,20 @@
     "signature": "void* fn_00667140()",
     "summary": "Auto-lifted identical-shape clone of 0x0043D780 (AllocAndInitRecord).",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x00667F10": {
+    "name": "SearchableMap\u003cFileProject::File, GetNameFromAttribute\u003cFileProject::File\u003e\u003e::vfunc_0",
+    "class": "SearchableMap\u003cFileProject::File, GetNameFromAttribute\u003cFileProject::File\u003e\u003e",
+    "signature": "void* fn_00667F10(void* self, const void* key)",
+    "summary": "Auto-lifted identical-shape clone of 0x0042E7B0 (SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e::vfunc_0).",
+    "lifted_path": "lifted/templates/SearchableMap.cpp"
+  },
+  "0x00668D80": {
+    "name": "SearchableMap\u003cNM::Vector4, GetNameFromAttribute\u003cNM::Vector4\u003e\u003e::vfunc_0",
+    "class": "SearchableMap\u003cNM::Vector4, GetNameFromAttribute\u003cNM::Vector4\u003e\u003e",
+    "signature": "void* fn_00668D80(void* self, const void* key)",
+    "summary": "Auto-lifted identical-shape clone of 0x0042E7B0 (SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e::vfunc_0).",
+    "lifted_path": "lifted/templates/SearchableMap.cpp"
   },
   "0x00668ED0": {
     "name": "FileProject::vfunc_0",

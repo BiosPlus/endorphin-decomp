@@ -1784,3 +1784,123 @@ void fn_0057CEE0(void* self, void** out, void* a2, void* a3, void* a4, void* a5)
     out[1] = a3;
 }
 } // namespace lift_0057CEE0
+
+// [0x00577B10] sub_00577B10 (109 bytes)
+namespace lift_00577B10 {
+// @name sub_00577B10
+// @summary Auto-lifted identical-shape clone of 0x0057CEE0 (Unknown::assignRecordRange_0057CEE0).
+namespace lift_0057CEE0 {
+// Callee 0x0057BEC0: copies a range of 0x3C-byte records. Disassembly pushes six dwords
+// (cdecl, caller-cleaned); the summary lists three parameters. Values below follow the disassembly order.
+extern void* ext_00575F50(void* a0, void* a1, void* a2, void* a3, void* a4, void* a5);
+// Callee 0x005567D0: destroys the two std::string members of each 0x3C-byte record in a range.
+// Disassembly pushes four dwords (cdecl, caller-cleaned).
+extern void ext_00556740(void* a0, void* a1, void* a2, void* a3);
+
+// @name Unknown::assignRecordRange_0057CEE0
+// @class Unknown
+// @summary Replaces the record buffer at +0x08 with a copy of records [a3, a5), destroying the old records; writes (a2, a3) to *out.
+// @field Unknown +0x08 void* field_0x08
+void fn_00577B10(void* self, void** out, void* a2, void* a3, void* a4, void* a5) {
+    // Original: if (a2 == 0 || a2 != a4) _invalid_parameter_noinfo()
+    if (a2 == nullptr || a2 != a4) {
+        std::abort();
+    }
+
+    if (a3 != a5) {
+        void* oldBuf = lift_field<void*>(self, 8);
+
+        // Original zeroes the low byte of the a2 stack slot before pushing it as an argument.
+        uintptr_t a2Masked = reinterpret_cast<uintptr_t>(a2) & ~static_cast<uintptr_t>(0xFF);
+
+        void* newEnd = ext_00575F50(a5, oldBuf, a3, out, out, reinterpret_cast<void*>(a2Masked));
+        ext_00556740(newEnd, oldBuf, self, out);
+
+        lift_field<void*>(self, 8) = newEnd;
+    }
+
+    out[0] = a2;
+    out[1] = a3;
+}
+} // namespace lift_0057CEE0
+} // namespace lift_00577B10
+
+// [0x0057EA40] sub_0057EA40 (109 bytes)
+namespace lift_0057EA40 {
+// @name sub_0057EA40
+// @summary Auto-lifted identical-shape clone of 0x0057CEE0 (Unknown::assignRecordRange_0057CEE0).
+namespace lift_0057CEE0 {
+// Callee 0x0057BEC0: copies a range of 0x3C-byte records. Disassembly pushes six dwords
+// (cdecl, caller-cleaned); the summary lists three parameters. Values below follow the disassembly order.
+extern void* ext_0057DD90(void* a0, void* a1, void* a2, void* a3, void* a4, void* a5);
+// Callee 0x005567D0: destroys the two std::string members of each 0x3C-byte record in a range.
+// Disassembly pushes four dwords (cdecl, caller-cleaned).
+extern void ext_00558F80(void* a0, void* a1, void* a2, void* a3);
+
+// @name Unknown::assignRecordRange_0057CEE0
+// @class Unknown
+// @summary Replaces the record buffer at +0x08 with a copy of records [a3, a5), destroying the old records; writes (a2, a3) to *out.
+// @field Unknown +0x08 void* field_0x08
+void fn_0057EA40(void* self, void** out, void* a2, void* a3, void* a4, void* a5) {
+    // Original: if (a2 == 0 || a2 != a4) _invalid_parameter_noinfo()
+    if (a2 == nullptr || a2 != a4) {
+        std::abort();
+    }
+
+    if (a3 != a5) {
+        void* oldBuf = lift_field<void*>(self, 8);
+
+        // Original zeroes the low byte of the a2 stack slot before pushing it as an argument.
+        uintptr_t a2Masked = reinterpret_cast<uintptr_t>(a2) & ~static_cast<uintptr_t>(0xFF);
+
+        void* newEnd = ext_0057DD90(a5, oldBuf, a3, out, out, reinterpret_cast<void*>(a2Masked));
+        ext_00558F80(newEnd, oldBuf, self, out);
+
+        lift_field<void*>(self, 8) = newEnd;
+    }
+
+    out[0] = a2;
+    out[1] = a3;
+}
+} // namespace lift_0057CEE0
+} // namespace lift_0057EA40
+
+// [0x0057EAB0] sub_0057EAB0 (109 bytes)
+namespace lift_0057EAB0 {
+// @name sub_0057EAB0
+// @summary Auto-lifted identical-shape clone of 0x0057CEE0 (Unknown::assignRecordRange_0057CEE0).
+namespace lift_0057CEE0 {
+// Callee 0x0057BEC0: copies a range of 0x3C-byte records. Disassembly pushes six dwords
+// (cdecl, caller-cleaned); the summary lists three parameters. Values below follow the disassembly order.
+extern void* ext_0057DDF0(void* a0, void* a1, void* a2, void* a3, void* a4, void* a5);
+// Callee 0x005567D0: destroys the two std::string members of each 0x3C-byte record in a range.
+// Disassembly pushes four dwords (cdecl, caller-cleaned).
+extern void ext_00558FE0(void* a0, void* a1, void* a2, void* a3);
+
+// @name Unknown::assignRecordRange_0057CEE0
+// @class Unknown
+// @summary Replaces the record buffer at +0x08 with a copy of records [a3, a5), destroying the old records; writes (a2, a3) to *out.
+// @field Unknown +0x08 void* field_0x08
+void fn_0057EAB0(void* self, void** out, void* a2, void* a3, void* a4, void* a5) {
+    // Original: if (a2 == 0 || a2 != a4) _invalid_parameter_noinfo()
+    if (a2 == nullptr || a2 != a4) {
+        std::abort();
+    }
+
+    if (a3 != a5) {
+        void* oldBuf = lift_field<void*>(self, 8);
+
+        // Original zeroes the low byte of the a2 stack slot before pushing it as an argument.
+        uintptr_t a2Masked = reinterpret_cast<uintptr_t>(a2) & ~static_cast<uintptr_t>(0xFF);
+
+        void* newEnd = ext_0057DDF0(a5, oldBuf, a3, out, out, reinterpret_cast<void*>(a2Masked));
+        ext_00558FE0(newEnd, oldBuf, self, out);
+
+        lift_field<void*>(self, 8) = newEnd;
+    }
+
+    out[0] = a2;
+    out[1] = a3;
+}
+} // namespace lift_0057CEE0
+} // namespace lift_0057EAB0

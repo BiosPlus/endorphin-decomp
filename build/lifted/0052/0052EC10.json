@@ -1,0 +1,34 @@
+{
+  "va": "0x0052EC10",
+  "size": 110,
+  "orig_symbol": "SearchableMap\u003cMaterial, GetNameFromAttribute\u003cMaterial\u003e\u003e::vfunc_0",
+  "src_path": "src/templates/SearchableMap.cpp",
+  "lifted_path": "lifted/templates/SearchableMap.cpp",
+  "name": "SearchableMap\u003cMaterial, GetNameFromAttribute\u003cMaterial\u003e\u003e::vfunc_0",
+  "class": "SearchableMap\u003cMaterial, GetNameFromAttribute\u003cMaterial\u003e\u003e",
+  "signature": "void* fn_0052EC10(void* self, const void* key)",
+  "summary": "Auto-lifted identical-shape clone of 0x0042E7B0 (SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e::vfunc_0).",
+  "fields": [
+    {
+      "class": "SearchableMap\u003cKeyMapping,GetNameFromAttribute\u003cKeyMapping\u003e\u003e",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "SearchableMap\u003cKeyMapping,GetNameFromAttribute\u003cKeyMapping\u003e\u003e",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "SearchableMap\u003cKeyMapping,GetNameFromAttribute\u003cKeyMapping\u003e\u003e",
+      "offset": "+0xC",
+      "type": "DWORD",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T04:04:13Z"
+}

@@ -8,8 +8,8 @@
 // Recovered field layout for SearchableMap<KeyMapping,GetNameFromAttribute<KeyMapping>>:
 namespace lifted_layout {
 struct SearchableMap_KeyMapping_GetNameFromAttribute_KeyMapping___Fields {
-    // +0x4   void*                    field_0x04  (evidence: 0x0042E7B0)
-    // +0x8   void*                    field_0x08  (evidence: 0x0042E7B0)
-    // +0xC   DWORD                    field_0x0C  (evidence: 0x0042E7B0)
+    // +0x4   void*                    field_0x04  (evidence: 0x0042E7B0, 0x0048BC10, 0x004A74B0, 0x004EC3F0, 0x0052EC10, 0x0059B070, 0x0059B1E0, 0x0059B350, 0x00667F10, 0x00668D80)
+    // +0x8   void*                    field_0x08  (evidence: 0x0042E7B0, 0x0048BC10, 0x004A74B0, 0x004EC3F0, 0x0052EC10, 0x0059B070, 0x0059B1E0, 0x0059B350, 0x00667F10, 0x00668D80)
+    // +0xC   DWORD                    field_0x0C  (evidence: 0x0042E7B0, 0x0048BC10, 0x004A74B0, 0x004EC3F0, 0x0052EC10, 0x0059B070, 0x0059B1E0, 0x0059B350, 0x00667F10, 0x00668D80)
 };
 } // namespace lifted_layout
