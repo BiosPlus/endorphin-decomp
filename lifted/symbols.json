@@ -54155,6 +54155,12 @@
     "summary": "Stores four constant words into globals mem_00B61220, mem_00B61224, mem_00B61228, mem_00B6122C.",
     "lifted_path": "lifted/clones/auto_clones_7A0000.cpp"
   },
+  "0x007AA7F0": {
+    "name": "sub_007AA7F0",
+    "signature": "bool sub_007AA7F0(uint32_t arg)",
+    "summary": "Returns true if the argument matches any of four global sentinel values; otherwise returns whether it equals the fourth global.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AA830": {
     "name": "sub_007AA830",
     "signature": "extern \"C\" int32_t __cdecl fn_007AA830(void)",

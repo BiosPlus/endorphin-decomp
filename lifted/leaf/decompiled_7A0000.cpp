@@ -339,3 +339,25 @@ void fn_007ABD00(void* ecx) {
     ext_006D2250(buf);
 }
 } // namespace lift_007ABD00
+
+// [0x007AA7F0]
+namespace lift_007AA7F0 {
+// @name sub_007AA7F0
+// @summary Returns true if the argument matches any of four global sentinel values; otherwise returns whether it equals the fourth global.
+// @field mem_00B61230 (global) used as comparison value 1
+// @field mem_00B60F58 (global) used as comparison value 2
+// @field mem_00B5EB78 (global) used as comparison value 3
+// @field mem_00B5E400 (global) used as comparison value 4 (result is equality)
+
+extern uint32_t mem_00B61230;
+extern uint32_t mem_00B60F58;
+extern uint32_t mem_00B5EB78;
+extern uint32_t mem_00B5E400;
+
+bool sub_007AA7F0(uint32_t arg) {
+    if (arg == mem_00B61230) return true;
+    if (arg == mem_00B60F58) return true;
+    if (arg == mem_00B5EB78) return true;
+    return arg == mem_00B5E400;
+}
+} // namespace lift_007AA7F0
