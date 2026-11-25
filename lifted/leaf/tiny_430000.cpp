@@ -221,3 +221,23 @@ void* fn_0043CB50(void* a) {
 } // namespace lift_005AC820
 } // namespace lift_00476B80
 } // namespace lift_0043CB50
+
+// [0x0043C900] sub_0043C900 (21 bytes)
+namespace lift_0043C900 {
+extern int mem_00925704;
+
+// @name SetCursorFromTable
+// @summary Loads a cursor handle from the object's table at +0x128 (indexed by arg) and tail-calls SetCursor through the IAT slot at 0x925704.
+// @field Unknown +0x128 DWORD field_0x128
+HCURSOR __thiscall fn_0043C900(void* self, uint32_t index) {
+    // Effective address is computed in 32 bits, matching the original lea-free indexing.
+    const uint32_t offset = 0x128u + index * 4u;
+    const HCURSOR cursor = lift_field<HCURSOR>(self, static_cast<ptrdiff_t>(offset));
+
+    // Indirect call through the SetCursor pointer stored at mem_00925704.
+    using SetCursorFn = HCURSOR(__stdcall*)(HCURSOR);
+    auto setCursor = reinterpret_cast<SetCursorFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925704)));
+    return setCursor(cursor);
+}
+} // namespace lift_0043C900

@@ -1,0 +1,21 @@
+{
+  "va": "0x0043C900",
+  "size": 21,
+  "orig_symbol": "sub_0043C900",
+  "src_path": "src/leaf/tiny_430000.cpp",
+  "lifted_path": "lifted/leaf/tiny_430000.cpp",
+  "name": "SetCursorFromTable",
+  "signature": "HCURSOR __thiscall fn_0043C900(void* self, uint32_t index)",
+  "summary": "Loads a cursor handle from the object's table at +0x128 (indexed by arg) and tail-calls SetCursor through the IAT slot at 0x925704.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x128",
+      "type": "DWORD",
+      "name": "field_0x128"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:20:35Z"
+}

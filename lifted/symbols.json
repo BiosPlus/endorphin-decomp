@@ -3425,6 +3425,12 @@
     "summary": "Stores the result of ext_00455F40(self) into self+0xEC, then forwards the three stack arguments to ext_004564A0(self, arg0, arg1, arg2). Callee pops 12 bytes (ret 0xC).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043C900": {
+    "name": "SetCursorFromTable",
+    "signature": "HCURSOR __thiscall fn_0043C900(void* self, uint32_t index)",
+    "summary": "Loads a cursor handle from the object's table at +0x128 (indexed by arg) and tail-calls SetCursor through the IAT slot at 0x925704.",
+    "lifted_path": "lifted/leaf/tiny_430000.cpp"
+  },
   "0x0043C930": {
     "name": "ForwardWmChar",
     "class": "\u003cnone\u003e",

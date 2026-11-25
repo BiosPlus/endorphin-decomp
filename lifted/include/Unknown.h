@@ -1047,6 +1047,7 @@ struct Unknown_Fields {
     // +0x121 uint8_t                  field_0x121  (evidence: 0x0077FFD0)
     // +0x124 uint32_t                 field_0x124  (evidence: 0x00454AD0, 0x0077FFD0)
     // +0x128 BYTE                     field_0x128  (evidence: 0x00458290, 0x004582B0, 0x004584C0) // CONFLICT: multiple definitions at +0x128
+    // +0x128 DWORD                    field_0x128  (evidence: 0x0043C900) // CONFLICT: multiple definitions at +0x128
     // +0x128 uint32_t                 field_0x128  (evidence: 0x0077FFD0) // CONFLICT: multiple definitions at +0x128
     // +0x128 uint8_t                  field_0x128  (evidence: 0x00454AD0) // CONFLICT: multiple definitions at +0x128
     // +0x12C uint8_t field_0x12C (address taken when flag != 0)  (evidence: 0x007C9490, 0x007CAF70) // CONFLICT: multiple definitions at +0x12C
