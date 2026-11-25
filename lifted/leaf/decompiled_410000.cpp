@@ -1509,3 +1509,36 @@ void fn_00410230(uint32_t self) {
     ext_006A5EFC(self);
 }
 } // namespace lift_00410230
+
+// [0x00414D30]
+namespace lift_00414D30 {
+// @name Rect2D::initNormalized
+// @class Rect2D
+// @summary Initializes a 2D bounding box from four floats and normalizes min/max X and Y
+// @field Rect2D +0x00 float minX
+// @field Rect2D +0x04 float minY
+// @field Rect2D +0x08 float maxX
+// @field Rect2D +0x0c float maxY
+
+
+void* __thiscall sub_00414D30(void* self, float x0, float y0, float x1, float y1) {
+    float* rect = static_cast<float*>(self);
+    rect[0] = x0;
+    rect[1] = y0;
+    rect[2] = x1;
+    rect[3] = y1;
+
+    if (x1 < x0) {
+        rect[0] = rect[2];
+        rect[2] = x0;
+    }
+
+    if (rect[3] < rect[1]) {
+        float tmp = rect[1];
+        rect[1] = rect[3];
+        rect[3] = tmp;
+    }
+
+    return self;
+}
+} // namespace lift_00414D30

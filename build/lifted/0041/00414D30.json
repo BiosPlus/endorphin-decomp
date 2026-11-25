@@ -1,0 +1,40 @@
+{
+  "va": "0x00414D30",
+  "size": 88,
+  "orig_symbol": "sub_00414D30",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Rect2D::initNormalized",
+  "class": "Rect2D",
+  "signature": "void* __thiscall sub_00414D30(void* self, float x0, float y0, float x1, float y1)",
+  "summary": "Initializes a 2D bounding box from four floats and normalizes min/max X and Y",
+  "fields": [
+    {
+      "class": "Rect2D",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "minX"
+    },
+    {
+      "class": "Rect2D",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "minY"
+    },
+    {
+      "class": "Rect2D",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "maxX"
+    },
+    {
+      "class": "Rect2D",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "maxY"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:16:05Z"
+}
