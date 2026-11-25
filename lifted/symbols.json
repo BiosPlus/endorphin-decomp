@@ -66226,6 +66226,12 @@
     "summary": "Initializes object via sub_007C6C60 and invokes callback at 0x00AB28C8 with field_0x17c + 0x114 and object",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007C6F30": {
+    "name": "readFloatAt1C",
+    "signature": "float __cdecl readFloatAt1C(void* self)",
+    "summary": "Returns the float stored at offset +0x1C of the object pointed to by the single argument.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C6F40": {
     "name": "sub_007C6F40",
     "signature": "void fn_007C6F40(void* self)",

@@ -1183,3 +1183,13 @@ DWORD fn_007C6FF0(void* self) {
     return lift_field<DWORD>(self, 0x7C);
 }
 } // namespace lift_007C6FF0
+
+// [0x007C6F30]
+namespace lift_007C6F30 {
+// @name readFloatAt1C
+// @summary Returns the float stored at offset +0x1C of the object pointed to by the single argument.
+
+float __cdecl readFloatAt1C(void* self) {
+    return lift_field<float>(self, 0x1C);
+}
+} // namespace lift_007C6F30
