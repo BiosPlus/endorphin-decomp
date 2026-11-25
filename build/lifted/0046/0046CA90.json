@@ -1,0 +1,14 @@
+{
+  "va": "0x0046CA90",
+  "size": 79,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e",
+  "signature": "void* __stdcall fn_0046CA90(void* out, void** holder)",
+  "summary": "Throws if the object pointed to by the second argument is null; otherwise calls isEnabled() on it and stores the bool into the first argument via ext_006720A0, returning the first argument.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:07:52Z"
+}

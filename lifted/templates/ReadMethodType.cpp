@@ -57101,3 +57101,34 @@ uint32_t __stdcall fn_0046E520(uint32_t first, uint32_t second) {
     return second;
 }
 } // namespace lift_0046E520
+
+// [0x0046CA90] ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_0 (79 bytes)
+namespace lift_0046CA90 {
+// Callee 0x0046C070 (thiscall: ecx = self, no stack arguments); returns bool in al.
+extern uint8_t ext_0046C070(void* self);
+// Callee 0x006720A0 (thiscall: ecx = self, one stack argument, callee pops 4 bytes).
+extern void ext_006720A0(void* self, uint8_t flag);
+// Callee 0x0046C3C0 (ExceptionWithMessage-derived constructor; installs vtable into self storage).
+extern void* ext_0046C3C0(void* self);
+// Callee 0x006A6DD2: IAT thunk forwarding to MSVCR80!_CxxThrowException.
+[[noreturn]] void ext_006A6DD2(void* pObject, const void* pThrowInfo);
+// RDATA 0x009DEC1C: .rdata throw info (u32 0x00000000), passed by address as the ThrowInfo argument.
+extern uint32_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>
+// @summary Throws if the object pointed to by the second argument is null; otherwise calls isEnabled() on it and stores the bool into the first argument via ext_006720A0, returning the first argument.
+void* __stdcall fn_0046CA90(void* out, void** holder) {
+    void* target = *holder;
+    if (target == nullptr) {
+        // Null target: construct the exception on the stack and throw it.
+        alignas(8) uint8_t exception[0x28] = {};
+        ext_0046C3C0(exception);
+        ext_006A6DD2(exception, reinterpret_cast<const void*>(&mem_009DEC1C));
+    }
+
+    const uint8_t enabled = ext_0046C070(target);
+    ext_006720A0(out, enabled);
+    return out;
+}
+} // namespace lift_0046CA90
