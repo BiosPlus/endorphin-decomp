@@ -432,3 +432,60 @@ void __thiscall sub_005B1FA0(void* self) {
     *reinterpret_cast<float*>(reinterpret_cast<char*>(self) + 0x18) = 0.0f;
 }
 } // namespace lift_005B1FA0
+
+// [0x005B3CB0]
+namespace lift_005B3CB0 {
+extern uint32_t mem_00B43550;
+extern uint32_t mem_00B4354C;
+
+extern void ext_0067A670(void* self);
+
+// @name getSingleton_005B3CB0
+// @summary Lazily initializes and returns the singleton object at 0x00B4354C.
+void* fn_005B3CB0() {
+    if ((mem_00B43550 & 1u) == 0u) {
+        mem_00B43550 |= 1u;
+        ext_0067A670(&mem_00B4354C);
+        mem_00B4354C = 0x0095FFD4u;
+    }
+    return &mem_00B4354C;
+}
+} // namespace lift_005B3CB0
+
+// [0x005B3D10]
+namespace lift_005B3D10 {
+extern void __thiscall ext_0067A670(void* self);
+extern DWORD mem_00B43558;
+extern DWORD mem_00B43554;
+
+// @name getStaticSingleton_005B3D10
+// @summary Lazily initializes a static singleton at mem_00B43554 (guarded by mem_00B43558) and returns its pointer.
+void* fn_005B3D10() {
+    if ((mem_00B43558 & 1u) == 0) {
+        mem_00B43558 |= 1u;
+        ext_0067A670(&mem_00B43554);
+        mem_00B43554 = 0x00960184u;
+    }
+    return &mem_00B43554;
+}
+} // namespace lift_005B3D10
+
+// [0x005B3D70]
+namespace lift_005B3D70 {
+extern uint32_t mem_00B43560;
+extern uint32_t mem_00B4355C;
+extern void* mem_00960334;
+
+extern void ext_0067A670(void* self);
+
+// @name getStaticSingleton_005B3D70
+// @summary Initializes and returns a pointer to the static singleton at 0x00B4355C.
+void* fn_005B3D70() {
+    if ((mem_00B43560 & 1u) == 0) {
+        mem_00B43560 |= 1u;
+        ext_0067A670(&mem_00B4355C);
+        mem_00B4355C = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00960334));
+    }
+    return &mem_00B4355C;
+}
+} // namespace lift_005B3D70
