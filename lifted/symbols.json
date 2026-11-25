@@ -19035,6 +19035,13 @@
     "summary": "Reads the wrapped value object's string at +0x04 and returns it converted to float via atof; throws if the wrapped pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005056A0": {
+    "name": "ExprParser::ReadMethodType::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cInterpreter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Interpreter::getType(void) const, 0\u003e",
+    "signature": "void fn_005056A0(void* self)",
+    "summary": "Virtual slot 5: throws. If the wrapped pointer is non-null, throws via the message helper at +4; otherwise throws a fixed DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00505820": {
     "name": "Chromosome::Descriptor::vfunc_0_off_4",
     "class": "Chromosome::Descriptor",

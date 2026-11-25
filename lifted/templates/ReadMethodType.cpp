@@ -42919,3 +42919,35 @@ void fn_004B1E50(void* self) {
     ext_006A6DD2(exception, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
 }
 } // namespace lift_004B1E50
+
+// [0x005056A0] ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>::vfunc_5 (45 bytes)
+namespace lift_005056A0 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(const void* msg);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// RTTI ThrowInfo for the DerivedException thrown below (VA 0x009DEC1C).
+static const uintptr_t kThrowInfo_009DEC1C = 0x009DEC1Cu;
+
+// @name ExprParser::ReadMethodType::vfunc_5
+// @class ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>
+// @summary Virtual slot 5: throws. If the wrapped pointer is non-null, throws via the message helper at +4; otherwise throws a fixed DerivedException.
+// @field ValuePtrType +0x00 void* ptr
+void fn_005056A0(void* self) {
+    // The first DWORD of *self holds the wrapped pointer.
+    void* inner = *reinterpret_cast<void**>(self);
+    if (inner != nullptr) {
+        // Pass the address of the payload at +4 to the message-throwing helper.
+        const void* msg = static_cast<const char*>(inner) + 4;
+        ext_0046C4E0(msg);
+        return;
+    }
+    // Fallback: construct a DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+}
+} // namespace lift_005056A0
