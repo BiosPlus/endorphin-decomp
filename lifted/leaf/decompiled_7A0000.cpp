@@ -584,3 +584,25 @@ void fn_007AEF80(void* self) {
     return;
 }
 } // namespace lift_007AEF80
+
+// [0x007AC510] sub_007AC510 (75 bytes)
+namespace lift_007AC510 {
+// Callee 0x007AA910: GetIndexedFieldF0 (returns the 32-bit slot at self+0xF0 + 4*index, or 0 if index is outside [1, 17]).
+extern uint32_t ext_007AA910(const void* self, int32_t index);
+
+// @name StateFromIndexedF0Slot6_007AC510
+// @class Unknown
+// @summary Reads the F0 slot at index 6 and maps it to a state value (0->0, 1->2, 2->1) stored at +0x7D4 and returned; other values leave +0x7D4 unchanged and return it.
+// @field Unknown +0x7D4 uint32_t field_0x7d4
+uint32_t fn_007AC510(void* self) {
+    const uint32_t v = ext_007AA910(self, 6);
+    if (v == 0) {
+        lift_field<uint32_t>(self, 0x7D4) = 0;
+    } else if (v == 1) {
+        lift_field<uint32_t>(self, 0x7D4) = 2;
+    } else if (v == 2) {
+        lift_field<uint32_t>(self, 0x7D4) = 1;
+    }
+    return lift_field<uint32_t>(self, 0x7D4);
+}
+} // namespace lift_007AC510

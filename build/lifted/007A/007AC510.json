@@ -1,0 +1,22 @@
+{
+  "va": "0x007AC510",
+  "size": 75,
+  "orig_symbol": "sub_007AC510",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "StateFromIndexedF0Slot6_007AC510",
+  "class": "Unknown",
+  "signature": "uint32_t fn_007AC510(void* self)",
+  "summary": "Reads the F0 slot at index 6 and maps it to a state value (0-\u003e0, 1-\u003e2, 2-\u003e1) stored at +0x7D4 and returned; other values leave +0x7D4 unchanged and return it.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x7D4",
+      "type": "uint32_t",
+      "name": "field_0x7d4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:37:28Z"
+}

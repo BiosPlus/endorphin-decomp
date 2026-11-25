@@ -57713,6 +57713,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_007AC2B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007AC510": {
+    "name": "StateFromIndexedF0Slot6_007AC510",
+    "class": "Unknown",
+    "signature": "uint32_t fn_007AC510(void* self)",
+    "summary": "Reads the F0 slot at index 6 and maps it to a state value (0-\u003e0, 1-\u003e2, 2-\u003e1) stored at +0x7D4 and returned; other values leave +0x7D4 unchanged and return it.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AC570": {
     "name": "sub_007AC570",
     "signature": "void fn_007AC570(void)",
