@@ -1,0 +1,22 @@
+{
+  "va": "0x0040C330",
+  "size": 73,
+  "orig_symbol": "sub_0040C330",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "Unknown::UpdateSelectionMarker_0040C330",
+  "class": "Unknown",
+  "signature": "void fn_0040C330(void* self)",
+  "summary": "Sends message 0x18B to the control handle at +0xA4 and then message 0x186 with wParam 1 (count \u003e= 2) or -1 (otherwise).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xA4",
+      "type": "HWND",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:30:56Z"
+}

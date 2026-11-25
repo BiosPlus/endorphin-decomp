@@ -886,3 +886,25 @@ void fn_0040BE90(void* self) {
     ext_004102D0(sub3C4, mem_0093A0CC);
 }
 } // namespace lift_0040BE90
+
+// [0x0040C330] sub_0040C330 (73 bytes)
+namespace lift_0040C330 {
+extern int mem_00925694;
+
+using SendMessageAFn = LRESULT(__stdcall*)(HWND, UINT, WPARAM, LPARAM);
+
+// @name Unknown::UpdateSelectionMarker_0040C330
+// @class Unknown
+// @summary Sends message 0x18B to the control handle at +0xA4 and then message 0x186 with wParam 1 (count >= 2) or -1 (otherwise).
+// @field Unknown +0xA4 HWND hwnd
+void fn_0040C330(void* self) {
+    auto sendMessage = reinterpret_cast<SendMessageAFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925694)));
+
+    HWND hwnd = lift_field<HWND>(self, 0xA4);
+
+    LRESULT count = sendMessage(hwnd, 0x18B, 0, 0);
+    WPARAM flag = (count >= 2) ? static_cast<WPARAM>(1) : static_cast<WPARAM>(-1);
+    sendMessage(hwnd, 0x186, flag, 0);
+}
+} // namespace lift_0040C330
