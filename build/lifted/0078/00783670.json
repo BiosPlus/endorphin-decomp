@@ -1,0 +1,34 @@
+{
+  "va": "0x00783670",
+  "size": 83,
+  "orig_symbol": "sub_00783670",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "Unknown::logFormatted_00783670",
+  "class": "Unknown",
+  "signature": "void fn_00783670(void* self, const char* fmt, ...)",
+  "summary": "Formats a printf-style message into a 16 KiB stack buffer and writes it to the sink's FILE* when the sink's enabled byte is nonzero.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "FILE*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:05:31Z"
+}

@@ -58070,6 +58070,13 @@
     "summary": "Checks whether bit 4 of an inner object's flags at +0xc is set when the wrapper at +0x4 is active.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00783670": {
+    "name": "Unknown::logFormatted_00783670",
+    "class": "Unknown",
+    "signature": "void fn_00783670(void* self, const char* fmt, ...)",
+    "summary": "Formats a printf-style message into a 16 KiB stack buffer and writes it to the sink's FILE* when the sink's enabled byte is nonzero.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x007836D0": {
     "name": "FileStream::setSize",
     "class": "FileStream",

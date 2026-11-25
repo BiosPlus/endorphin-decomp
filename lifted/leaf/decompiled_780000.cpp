@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 #include <cstdio>
 #include <cstdlib>
+#include <cstdarg>
 
 // [0x00780250]
 namespace lift_00780250 {
@@ -1317,3 +1318,29 @@ uint32_t __thiscall fn_00789C80(void* self, uint32_t key, int32_t* outIndex) {
     return ext_00782E70(sortedArray, key, outIndex);
 }
 } // namespace lift_00789C80
+
+// [0x00783670] sub_00783670 (83 bytes)
+namespace lift_00783670 {
+// @name Unknown::logFormatted_00783670
+// @class Unknown
+// @summary Formats a printf-style message into a 16 KiB stack buffer and writes it to the sink's FILE* when the sink's enabled byte is nonzero.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x00 FILE* field_0x00
+// @field Unknown +0x04 uint8_t field_0x04
+void fn_00783670(void* self, const char* fmt, ...) {
+    // self+0x4 points to a sink object: sink+0x0 is the FILE*, sink+0x4 is an enabled flag.
+    void* sink = lift_field<void*>(self, 0x4);
+    if (lift_field<uint8_t>(sink, 0x4) == 0) {
+        return;
+    }
+
+    char buf[0x4000];
+    va_list args;
+    va_start(args, fmt);
+    std::vsnprintf(buf, sizeof(buf), fmt, args);
+    va_end(args);
+
+    FILE* stream = lift_field<FILE*>(sink, 0x0);
+    std::fputs(buf, stream);
+}
+} // namespace lift_00783670
