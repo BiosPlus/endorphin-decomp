@@ -1,0 +1,13 @@
+{
+  "va": "0x0050FC70",
+  "size": 95,
+  "orig_symbol": "sub_0050FC70",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "GetStaticBoolString",
+  "signature": "void* fn_0050FC70()",
+  "summary": "Lazily initializes a static bool-string object once and returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:29:33Z"
+}

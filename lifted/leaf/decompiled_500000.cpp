@@ -2070,3 +2070,27 @@ void* fn_00508CD0(void) {
     return mem_00AEBC14;
 }
 } // namespace lift_00508CD0
+
+// [0x0050FC70] sub_0050FC70 (95 bytes)
+namespace lift_0050FC70 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+// The original pushes (0xAEBD84, 0xA41DD8) as cdecl args; the second is passed through uintptr_t
+// to preserve the exact pushed value, since its true type is not recovered.
+extern void* ext_0066AD10(void* out_str, uintptr_t arg);
+// Callee 0x006A6C87 (18B, unnamed): called with one argument, the destructor 0x00919D90.
+extern void ext_006A6C87(uintptr_t dtor);
+// Guard word (bit 0 = initialized) and the static object storage.
+extern uint32_t mem_00AEBDA0;
+extern char mem_00AEBD84;
+
+// @name GetStaticBoolString
+// @summary Lazily initializes a static bool-string object once and returns its address.
+void* fn_0050FC70() {
+    if ((mem_00AEBDA0 & 1u) == 0) {
+        mem_00AEBDA0 |= 1u;
+        ext_0066AD10(&mem_00AEBD84, static_cast<uintptr_t>(0xA41DD8u));
+        ext_006A6C87(static_cast<uintptr_t>(0x919D90u));
+    }
+    return &mem_00AEBD84;
+}
+} // namespace lift_0050FC70
