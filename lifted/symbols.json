@@ -7517,6 +7517,12 @@
     "summary": "Function-local static guard: constructs the global object at mem_00AD834C once (ctor ext_0067A670 with arg 0), then sets its first DWORD to 0x0093A9DC and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046F460": {
+    "name": "getStaticDwordSingleton_0046F460",
+    "signature": "void* fn_0046F460()",
+    "summary": "Lazily initializes the function-local static at mem_00AD835C (guard bit 0 in mem_00AD8360) and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046F7D0": {
     "name": "sub_00467320",
     "class": "(none)",

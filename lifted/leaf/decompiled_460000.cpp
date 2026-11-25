@@ -1350,3 +1350,22 @@ void* lazyInitStaticObject_0046F3A0() {
     return mem_00AD834C;
 }
 } // namespace lift_0046F3A0
+
+// [0x0046F460] sub_0046F460 (87 bytes)
+namespace lift_0046F460 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AD8360;
+extern DWORD mem_00AD835C;
+
+// @name getStaticDwordSingleton_0046F460
+// @summary Lazily initializes the function-local static at mem_00AD835C (guard bit 0 in mem_00AD8360) and returns its address.
+void* fn_0046F460() {
+    if ((mem_00AD8360 & 1u) == 0) {
+        mem_00AD8360 |= 1u;
+        ext_0067A670(&mem_00AD835C, 0u);
+        mem_00AD835C = 0x0093AD3Cu;
+    }
+    return reinterpret_cast<void*>(&mem_00AD835C);
+}
+} // namespace lift_0046F460
