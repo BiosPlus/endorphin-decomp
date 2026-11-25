@@ -67379,6 +67379,12 @@
     "summary": "Sets the 32-bit field at +0x44 if bit 0 of +0x9C is clear.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007C8690": {
+    "name": "DestroyGeometryList",
+    "signature": "void fn_007C8690(void* self)",
+    "summary": "Walks the circular node list at self+0x0C, releasing each node whose flag bits are clear; reports an error if the list does not drain within 101 passes.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C8810": {
     "name": "getField0x8cFloat",
     "signature": "float sub_007C8810(const void* obj)",

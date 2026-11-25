@@ -1477,3 +1477,47 @@ void fn_007CD900(const void* src, void* dst) {
     lift_field<float>(dst, 0x2C) = s0;
 }
 } // namespace lift_007CD900
+
+// [0x007C8690] sub_007C8690 (102 bytes)
+namespace lift_007C8690 {
+// Known callee 0x007CC9C0: getShiftedField0 (Dereferences a 32-bit pointer and shifts the value right by 8 bits.)
+extern uint32_t ext_007CC9C0(const uint32_t* ptr);
+// Known callee 0x007CC970: DispatchReleaseByType (Reports if the node's high flag bits are set, then invokes the owner's type-indexed handler for this node.)
+extern void ext_007CC970(void* self);
+// Callee 0x007D58E0: unnamed error reporter (level, owner, format, message); cdecl, 4 args.
+extern void ext_007D58E0(int level, uint32_t owner, const char* fmt, const char* msg);
+extern const char mem_0099D228[];
+extern const char mem_009548E8[];
+
+// @name DestroyGeometryList
+// @summary Walks the circular node list at self+0x0C, releasing each node whose flag bits are clear; reports an error if the list does not drain within 101 passes.
+// @field Unknown +0x0C void* field_0x0C
+// @field Unknown +0xB0 uint32_t field_0xB0
+// @field ListNode +0x08 void* field_0x08
+void fn_007C8690(void* self) {
+    void* node = lift_field<void*>(self, 0x0C);
+    if (node == nullptr) {
+        return;
+    }
+
+    int32_t counter = 0;
+    void* head = nullptr;
+    do {
+        void* next = lift_field<void*>(node, 0x08);
+        if (ext_007CC9C0(static_cast<const uint32_t*>(node)) == 0) {
+            ext_007CC970(node);
+        }
+
+        head = lift_field<void*>(self, 0x0C);
+        if (next == head) {
+            if (counter > 100) {
+                ext_007D58E0(1, lift_field<uint32_t>(self, 0xB0), mem_009548E8,
+                             mem_0099D228);
+                return;
+            }
+            ++counter;
+        }
+        node = next;
+    } while (head != nullptr);
+}
+} // namespace lift_007C8690

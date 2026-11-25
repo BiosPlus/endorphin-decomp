@@ -1,0 +1,33 @@
+{
+  "va": "0x007C8690",
+  "size": 102,
+  "orig_symbol": "sub_007C8690",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "DestroyGeometryList",
+  "signature": "void fn_007C8690(void* self)",
+  "summary": "Walks the circular node list at self+0x0C, releasing each node whose flag bits are clear; reports an error if the list does not drain within 101 passes.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB0",
+      "type": "uint32_t",
+      "name": "field_0xB0"
+    },
+    {
+      "class": "ListNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:47:08Z"
+}
