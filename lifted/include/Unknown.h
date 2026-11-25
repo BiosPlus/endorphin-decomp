@@ -253,6 +253,7 @@ struct Unknown_Fields {
     // +0xC   void*                    field_0x0c  (evidence: 0x0058A9A0, 0x0058AA20, 0x005B2130, 0x005B7040, 0x0071C740, 0x0071C8D0, 0x0071C970) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0xC  (evidence: 0x004B7D80, 0x004C0800, 0x00512A00, 0x00604D80, 0x0068EFF0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0xc  (evidence: 0x007D4B20, 0x007D8470) // CONFLICT: multiple definitions at +0xC
+    // +0xC   DWORD                    flags  (evidence: 0x007CCC80) // CONFLICT: multiple definitions at +0xC
     // +0xC   u32                      flags  (evidence: 0x007CCC30) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 index  (evidence: 0x00810C30) // CONFLICT: multiple definitions at +0xC
     // +0xC   std::string              name  (evidence: 0x005A2BD0) // CONFLICT: multiple definitions at +0xC
@@ -424,7 +425,7 @@ struct Unknown_Fields {
     // +0x30  uint32_t*                items  (evidence: 0x006DE660) // CONFLICT: multiple definitions at +0x30
     // +0x30  void*                    subObject  (evidence: 0x004DE330) // CONFLICT: multiple definitions at +0x30
     // +0x34  BYTE                     field_0x34  (evidence: 0x006FA990) // CONFLICT: multiple definitions at +0x34
-    // +0x34  float                    field_0x34  (evidence: 0x004F9950, 0x00554510, 0x006271A0, 0x00627240, 0x00629370, 0x006293A0, 0x006296A0, 0x0062A0C0) // CONFLICT: multiple definitions at +0x34
+    // +0x34  float                    field_0x34  (evidence: 0x004F9950, 0x00554510, 0x006271A0, 0x00627240, 0x00629370, 0x006293A0, 0x006296A0, 0x0062A0C0, 0x007CCC80) // CONFLICT: multiple definitions at +0x34
     // +0x34  int32_t                  field_0x34  (evidence: 0x006FA370, 0x006FA400) // CONFLICT: multiple definitions at +0x34
     // +0x34  uint32_t                 field_0x34  (evidence: 0x0048C960, 0x0057FD10, 0x0062A590, 0x006EF810, 0x006EFEA0, 0x007AF200) // CONFLICT: multiple definitions at +0x34
     // +0x34  uint8_t                  field_0x34  (evidence: 0x007126A0) // CONFLICT: multiple definitions at +0x34

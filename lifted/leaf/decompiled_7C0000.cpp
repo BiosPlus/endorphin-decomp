@@ -1033,3 +1033,35 @@ void fn_007CCC30(void* self, float x) {
     std::memcpy(base + 0x0C, &flags, sizeof(flags));
 }
 } // namespace lift_007CCC30
+
+// [0x007CCC80] sub_007CCC80 (69 bytes)
+namespace lift_007CCC80 {
+extern int mem_0094CE80;
+
+// @name Unknown::storeClampedValueAndUpdateFlag
+// @class Unknown
+// @summary Clamps value to >= 0 (NaN -> 0), stores it at +0x34, then sets flag 0x20 at +0x0C when |value| > epsilon, else clears it.
+// @field Unknown +0x0C DWORD flags
+// @field Unknown +0x34 float field_0x34
+void fn_007CCC80(void* self, float value) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+
+    // x87 original: if (value < 0 || NaN) value = 0.0f; (the stack argument slot
+    // is also overwritten in the original, but the caller never reads it back).
+    float v = (value < 0.0f || std::isnan(value)) ? 0.0f : value;
+    std::memcpy(obj + 0x34, &v, sizeof v);
+
+    // Epsilon constant at mem_0094CE80 (IEEE-754 bits 0x358637BD, ~1e-6).
+    const float eps = std::bit_cast<float>(static_cast<uint32_t>(mem_0094CE80));
+    const float mag = std::fabs(v);
+
+    uint32_t flags;
+    std::memcpy(&flags, obj + 0x0C, sizeof flags);
+    if (mag > eps) {
+        flags |= 0x20u;
+    } else {
+        flags &= ~0x20u;
+    }
+    std::memcpy(obj + 0x0C, &flags, sizeof flags);
+}
+} // namespace lift_007CCC80

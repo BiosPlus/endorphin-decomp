@@ -58212,6 +58212,13 @@
     "summary": "Clamps x to \u003e= 0 (NaN passes through), stores it at +0x28, then sets flag 0x10 in +0x0C when |x| \u003e ~1e-6 (or NaN), else clears it.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CCC80": {
+    "name": "Unknown::storeClampedValueAndUpdateFlag",
+    "class": "Unknown",
+    "signature": "void fn_007CCC80(void* self, float value)",
+    "summary": "Clamps value to \u003e= 0 (NaN -\u003e 0), stores it at +0x34, then sets flag 0x20 at +0x0C when |value| \u003e epsilon, else clears it.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CCCD0": {
     "name": "Unknown::clampNonNegativeToFields20And2C",
     "class": "Unknown",
