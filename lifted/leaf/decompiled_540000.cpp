@@ -1066,3 +1066,25 @@ void* fn_0054C700(void* self) {
     return self;                                               // mov eax, esi
 }
 } // namespace lift_0054C700
+
+// [0x005450C0] sub_005450C0 (95 bytes)
+namespace lift_005450C0 {
+// Known callee 0x00549920: unlisted helper, destroys the subobject at this+0xB8.
+extern void __fastcall ext_00549920(void* self);
+// Known callee 0x005498E0: QuadricRenderer::destroy (Destroys two GLU quadrics and delegates to base destructor.)
+extern void __fastcall ext_005498E0(void* self);
+// Known callee 0x00543320: sub_00543320 (Stores address of mem_009560E4 into field at offset +0x0.)
+extern void __fastcall ext_00543320(void* self);
+
+// @name RotateTool::~RotateTool
+// @class RotateTool
+// @summary Non-deleting destructor body: destroys the subobject at +0xB8, destroys the QuadricRenderer at +0x98, then resets the object's vtable pointer at +0x0.
+// @field RotateTool +0x98 QuadricRenderer quadricRenderer
+// @field RotateTool +0xB8 unknown field_0xB8
+void fn_005450C0(void* self) {
+    // Teardown order matches the original: +0xB8 first, then +0x98, then +0x0.
+    ext_00549920(static_cast<uint8_t*>(self) + 0xB8);
+    ext_005498E0(static_cast<uint8_t*>(self) + 0x98);
+    ext_00543320(self);
+}
+} // namespace lift_005450C0

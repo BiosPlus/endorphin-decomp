@@ -1,0 +1,28 @@
+{
+  "va": "0x005450C0",
+  "size": 95,
+  "orig_symbol": "sub_005450C0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "RotateTool::~RotateTool",
+  "class": "RotateTool",
+  "signature": "void fn_005450C0(void* self)",
+  "summary": "Non-deleting destructor body: destroys the subobject at +0xB8, destroys the QuadricRenderer at +0x98, then resets the object's vtable pointer at +0x0.",
+  "fields": [
+    {
+      "class": "RotateTool",
+      "offset": "+0x98",
+      "type": "QuadricRenderer",
+      "name": "quadricRenderer"
+    },
+    {
+      "class": "RotateTool",
+      "offset": "+0xB8",
+      "type": "unknown",
+      "name": "field_0xB8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:31:11Z"
+}

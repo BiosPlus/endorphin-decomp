@@ -22667,6 +22667,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00544F30 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005450C0": {
+    "name": "RotateTool::~RotateTool",
+    "class": "RotateTool",
+    "signature": "void fn_005450C0(void* self)",
+    "summary": "Non-deleting destructor body: destroys the subobject at +0xB8, destroys the QuadricRenderer at +0x98, then resets the object's vtable pointer at +0x0.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00545120": {
     "name": "PoseTool::vfunc_23",
     "class": "PoseTool",
