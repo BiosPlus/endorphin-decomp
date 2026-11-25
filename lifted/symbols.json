@@ -30626,6 +30626,13 @@
     "summary": "Queries a virtual double via vtable slot +0x44, then forwards it with two member doubles and constants (-1.0, 1.0) to ext_005FF080, returning the result as float.",
     "lifted_path": "lifted/classes/CompoundSensor.cpp"
   },
+  "0x005FF150": {
+    "name": "CompoundSensor::vfunc_23",
+    "class": "CompoundSensor",
+    "signature": "float __thiscall fn_005FF150(void* self, uint32_t arg0)",
+    "summary": "Queries a virtual double via vtable slot +0x40 using a caller-supplied argument, then forwards it with two member doubles and constants (-1.0, 1.0) to ext_005FF080, returning the result as float.",
+    "lifted_path": "lifted/classes/CompoundSensor.cpp"
+  },
   "0x005FF1B0": {
     "name": "sub_005FF1B0",
     "signature": "extern \"C\" void fn_005FF1B0(void)",
