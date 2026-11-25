@@ -44486,6 +44486,13 @@
     "summary": "Indexes a 16-byte-stride table at self, looks up key in the SearchableMap found there, and returns the first value (or result of a second lookup when arg3+0x14 is nonzero); returns null on miss.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00667EA0": {
+    "name": "StdMapString::find",
+    "class": "StdMapString",
+    "signature": "void* fn_00667EA0(void* self, void* out_iter, const void* key)",
+    "summary": "Finds a node by string key in a std::map-like tree, returning a checked iterator {self, node} or {self, header} if not found.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00667F10": {
     "name": "SearchableMap\u003cFileProject::File, GetNameFromAttribute\u003cFileProject::File\u003e\u003e::vfunc_0",
     "class": "SearchableMap\u003cFileProject::File, GetNameFromAttribute\u003cFileProject::File\u003e\u003e",
@@ -45502,6 +45509,13 @@
     "signature": "int fn_0060A070(void* self)",
     "summary": "Forwards the object's first dword to ext_00493D90 and returns 0 (stdcall, one arg).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
+  "0x0066E050": {
+    "name": "StringPool::freeNode",
+    "class": "StringPool",
+    "signature": "void sub_0066E050(void* self, void* node)",
+    "summary": "Destroys a string node and prepends it to the thread-safe free list.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
   "0x0066E0C0": {
     "name": "sub_0066E0C0",
