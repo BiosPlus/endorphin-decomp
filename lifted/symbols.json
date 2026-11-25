@@ -52877,6 +52877,13 @@
     "summary": "Destructor tail-call: restores vtable mem_00995180 and tail-calls base destructor sub_006FC830.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006FC8E0": {
+    "name": "CleanupSubobjects_006FC8E0",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_006FC8E0(void* self)",
+    "summary": "Releases two embedded subobjects at this+0x20 and this+0x08 via ext_006D2160, in that order.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FC930": {
     "name": "sub_006FC930",
     "signature": "extern \"C\" int32_t __fastcall fn_006FC930(void* self)",

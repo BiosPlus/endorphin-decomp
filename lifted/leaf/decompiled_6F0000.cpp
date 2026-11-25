@@ -1487,3 +1487,22 @@ int32_t __thiscall sub_006F7970(void* self, uint32_t arg0, uint32_t arg1) {
     return fn(self, &arg0, 0, 0, 0);
 }
 } // namespace lift_006F7970
+
+// [0x006FC8E0] sub_006FC8E0 (80 bytes)
+namespace lift_006FC8E0 {
+// Known callee 0x006D2160: sub_006D2160 (Pure jump thunk forwarding to sub_006D2250.)
+// Thiscall receiver is passed as the first argument in this portable form.
+extern void ext_006D2160(void* self);
+
+// @name CleanupSubobjects_006FC8E0
+// @class <unknown>
+// @summary Releases two embedded subobjects at this+0x20 and this+0x08 via ext_006D2160, in that order.
+// @field <unknown> +0x08 void field_0x08
+// @field <unknown> +0x20 void field_0x20
+void fn_006FC8E0(void* self) {
+    // The original SEH frame (fs:[0] push/restore) only guards the two calls;
+    // it has no portable equivalent and no observable effect here.
+    ext_006D2160(static_cast<uint8_t*>(self) + 0x20);
+    ext_006D2160(static_cast<uint8_t*>(self) + 0x08);
+}
+} // namespace lift_006FC8E0
