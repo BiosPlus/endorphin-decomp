@@ -55,3 +55,31 @@ void __thiscall fn_00645D80(uint8_t* self, uint32_t index, double value) {
     *reinterpret_cast<double*>(begin + static_cast<size_t>(index) * 24 + 0x10) = value;
 }
 } // namespace lift_00645D80
+
+// [0x00645DD0]
+namespace lift_00645DD0 {
+// @name MagnetJoint::vfunc_5
+// @class MagnetJoint
+// @summary Sets a double field at offset +0x08 of a 24-byte element in a vector at +0x10/+0x14 after bounds checking
+// @field MagnetJoint +0x10 void* field_0x10
+// @field MagnetJoint +0x14 void* field_0x14
+
+
+extern void (*mem_00925134)();
+
+void __thiscall fn_00645DD0(void* self, uint32_t index, double value) {
+    uint8_t* begin = *reinterpret_cast<uint8_t**>(reinterpret_cast<uint8_t*>(self) + 0x10);
+    if (!begin) {
+        mem_00925134();
+    } else {
+        uint8_t* end = *reinterpret_cast<uint8_t**>(reinterpret_cast<uint8_t*>(self) + 0x14);
+        int32_t count = static_cast<int32_t>(end - begin) / 24;
+        if (index >= static_cast<uint32_t>(count)) {
+            mem_00925134();
+        }
+    }
+
+    uint8_t* base = *reinterpret_cast<uint8_t**>(reinterpret_cast<uint8_t*>(self) + 0x10);
+    *reinterpret_cast<double*>(base + index * 24 + 0x8) = value;
+}
+} // namespace lift_00645DD0

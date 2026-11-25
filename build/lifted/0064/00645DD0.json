@@ -1,0 +1,28 @@
+{
+  "va": "0x00645DD0",
+  "size": 66,
+  "orig_symbol": "MagnetJoint::vfunc_5",
+  "src_path": "src/classes/MagnetJoint.cpp",
+  "lifted_path": "lifted/classes/MagnetJoint.cpp",
+  "name": "MagnetJoint::vfunc_5",
+  "class": "MagnetJoint",
+  "signature": "void __thiscall fn_00645DD0(void* self, uint32_t index, double value)",
+  "summary": "Sets a double field at offset +0x08 of a 24-byte element in a vector at +0x10/+0x14 after bounds checking",
+  "fields": [
+    {
+      "class": "MagnetJoint",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "MagnetJoint",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:19:02Z"
+}
