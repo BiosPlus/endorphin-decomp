@@ -2449,3 +2449,42 @@ extern void __fastcall fn_00419840(void* self) {
     ext_006A624A(self);
 }
 } // namespace lift_00419840
+
+// [0x004167A0]
+namespace lift_004167A0 {
+// @name sub_004167A0
+// @summary Reads window text from control at +0xDC, converts to int via atoi, and stores in [this+0x184]+0x17C
+// @field unknown +0xDC void* field_0xDC
+// @field unknown +0x184 void* field_0x184
+
+
+    void fn_006A5F4A(void); // thunk_MFC80_ord_3761
+    void mem_009242FC(void); // MFC80!ord_310 (CString::CString)
+    void mem_00924300(void); // MFC80!ord_876 (CString::operator LPCTSTR)
+    void mem_009242F4(void); // MFC80!ord_578 (CString::~CString)
+    int mem_009251E4(const char* str); // MSVCR80!atoi
+
+void __thiscall fn_004167A0(void* this_ptr) {
+    uint32_t str_obj = 0;
+
+    // Construct CString
+    ((void(__thiscall*)(void*))mem_009242FC)(&str_obj);
+
+    // GetWindowTextA into str_obj from control at this + 0xDC
+    ((void(__thiscall*)(void*, void*))fn_006A5F4A)(
+        reinterpret_cast<uint8_t*>(this_ptr) + 0xDC,
+        &str_obj
+    );
+
+    // Convert to const char* and parse int
+    const char* text = ((const char*(__thiscall*)(void*))mem_00924300)(&str_obj);
+    int value = mem_009251E4(text);
+
+    // Store result at *(*(this + 0x184) + 0x17C)
+    uint8_t* target_obj = *reinterpret_cast<uint8_t**>(reinterpret_cast<uint8_t*>(this_ptr) + 0x184);
+    *reinterpret_cast<int*>(target_obj + 0x17C) = value;
+
+    // Destruct CString
+    ((void(__thiscall*)(void*))mem_009242F4)(&str_obj);
+}
+} // namespace lift_004167A0

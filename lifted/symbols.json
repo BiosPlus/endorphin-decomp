@@ -1697,6 +1697,12 @@
     "summary": "Returns the address of the global constant mem_0092C8E4 (a .rdata pointer value).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004167A0": {
+    "name": "sub_004167A0",
+    "signature": "void fn_006A5F4A(void); // thunk_MFC80_ord_3761 void mem_009242FC(void); // MFC80!ord_310 (CString::CString) void mem_00924300(void); // MFC80!ord_876 (CString::operator LPCTSTR) void mem_009242F4(void); // MFC80!ord_578 (CString::~CString) int mem_009251E4(const char* str); // MSVCR80!atoi } void __thiscall fn_004167A0(void* this_ptr)",
+    "summary": "Reads window text from control at +0xDC, converts to int via atoi, and stores in [this+0x184]+0x17C",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x004168D0": {
     "name": "EventViewIndicator::vfunc_1",
     "class": "EventViewIndicator",
@@ -2781,6 +2787,12 @@
     "name": "copyBackward36Wrapper",
     "signature": "uint32_t sub_00427860(uint32_t first, uint32_t last, uint32_t d_last)",
     "summary": "Copies a range of 36-byte structs backward and returns the destination start pointer.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
+  "0x00427A60": {
+    "name": "advanceIteratorUntilMatch",
+    "signature": "void __thiscall sub_00427A60(void* self)",
+    "summary": "Advances a checked vector iterator until end or an element's vfunc(+0xC)(1) returns true",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
   "0x00427B20": {
@@ -7393,6 +7405,12 @@
     "signature": "extern \"C\" void fn_004647C0(void)",
     "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_4189.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x004647D0": {
+    "name": "openWithShellExecute",
+    "signature": "void __stdcall fn_004647D0(const void* file_str)",
+    "summary": "Opens a file or URL using ShellExecuteA with SW_SHOW.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
   "0x00464850": {
     "name": "VMCActionCommandLineInfo::vfunc_1",
