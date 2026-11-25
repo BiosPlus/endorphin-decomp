@@ -1659,3 +1659,25 @@ void __thiscall sub_006D7BE0(uint32_t self) {
     mem_write8(self + 0x1C5, 0);
 }
 } // namespace lift_006D7BE0
+
+// [0x006D6B10]
+namespace lift_006D6B10 {
+// @name sub_006D6B10
+// @summary Copies three int32 fields from +0x1c4/+0x1c8/+0x1cc to output pointers, or clamps to (5, 0, 0) when field_0x1c4 is in [1, 4].
+// @field +0x1c4 int32_t field_0x1c4
+// @field +0x1c8 int32_t field_0x1c8
+// @field +0x1cc int32_t field_0x1cc
+void __thiscall sub_006D6B10(void* self, int32_t* out0, int32_t* out1, int32_t* out2) {
+    const uint8_t* base = reinterpret_cast<const uint8_t*>(self);
+    int32_t v0 = *reinterpret_cast<const int32_t*>(base + 0x1c4);
+    if (v0 > 0 && v0 < 5) {
+        *out0 = 5;
+        *out1 = 0;
+        *out2 = 0;
+        return;
+    }
+    *out0 = v0;
+    *out1 = *reinterpret_cast<const int32_t*>(base + 0x1c8);
+    *out2 = *reinterpret_cast<const int32_t*>(base + 0x1cc);
+}
+} // namespace lift_006D6B10

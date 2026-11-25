@@ -1,0 +1,94 @@
+{
+  "va": "0x006D7BE0",
+  "size": 96,
+  "orig_symbol": "sub_006D7BE0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "UnknownClass::resetFields",
+  "class": "UnknownClass",
+  "signature": "void __thiscall sub_006D7BE0(uint32_t self)",
+  "summary": "Initializes several dword and byte fields starting at offset 0x1A8 to 4 or 0.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1A8",
+      "type": "uint32_t",
+      "name": "field_0x1a8"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1AC",
+      "type": "uint32_t",
+      "name": "field_0x1ac"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1B0",
+      "type": "uint32_t",
+      "name": "field_0x1b0"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1B4",
+      "type": "uint32_t",
+      "name": "field_0x1b4"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1B8",
+      "type": "uint32_t",
+      "name": "field_0x1b8"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1BC",
+      "type": "uint32_t",
+      "name": "field_0x1bc"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1C0",
+      "type": "uint8_t",
+      "name": "field_0x1c0"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1C1",
+      "type": "uint8_t",
+      "name": "field_0x1c1"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1C2",
+      "type": "uint8_t",
+      "name": "field_0x1c2"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1C3",
+      "type": "uint8_t",
+      "name": "field_0x1c3"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1C4",
+      "type": "uint8_t",
+      "name": "field_0x1c4"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1C5",
+      "type": "uint8_t",
+      "name": "field_0x1c5"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1C8",
+      "type": "uint32_t",
+      "name": "field_0x1c8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:41:11Z"
+}
