@@ -1521,3 +1521,53 @@ extern uint8_t __cdecl fn_0071FC70(uint32_t* outKey, uint32_t searchValue) {
     return 0;
 }
 } // namespace lift_0071FC70
+
+// [0x00711B00] sub_00711B00 (80 bytes)
+namespace lift_00711B00 {
+// Known callee 0x0071E680: sub_0071E680 (Returns pointer to subobject/field at offset +0x40.)
+extern void* __fastcall ext_0071E680(void* self);
+
+// @name Unknown::SetSubobjectDoubleIfChanged
+// @class Unknown
+// @summary Compares the double at +0x18 of the subobject at self+0x40 with the stack argument; if they differ (or are unordered), stores the argument there and dispatches vtable slot 15 of self. Always returns true.
+// @field Unknown +0x00 void* field_0x00 (vtable pointer of self)
+// @field Unknown +0x18 double field_0x18 (on subobject returned by ext_0071E680, i.e. self+0x40)
+namespace {
+
+inline void* as_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+using VSlot15Fn = void (*)(void* self_, uint32_t a0, uint32_t a1, void* a2,
+                           uint32_t a3, uint32_t a4, uint32_t a5);
+
+} // namespace
+
+// The original pushes six dwords for the vtable call and relies on the callee to
+// clean the stack. Its calling convention is not confirmed, so the signature above
+// is a portable approximation; the argument values are preserved in order.
+bool fn_00711B00(void* self, double value) {
+    // call ext_0071E680(self) -> eax; fld qword [eax+0x18]; fcomp value
+    void* const sub = ext_0071E680(self);
+    const double current = *reinterpret_cast<double*>(static_cast<uint8_t*>(sub) + 0x18);
+
+    // fcomp sets C3 on equal and on unordered; the jne skips the update in that case.
+    const bool equalOrUnordered = !(current < value) && !(current > value);
+    if (equalOrUnordered) {
+        return true;
+    }
+
+    // Re-resolve the subobject, store the double at +0x18 (low dword to +0x18, high to +0x1c).
+    void* const sub2 = ext_0071E680(self);
+    *reinterpret_cast<double*>(static_cast<uint8_t*>(sub2) + 0x18) = value;
+
+    // mov eax, [esi]; call [eax+0x3c]  -> vtable slot 15, pushed args (0, 0x1f, self, 0, 0, 0)
+    const uint32_t vtbl = lift_field<uint32_t>(self, 0x00);
+    const uint32_t slot15 = lift_field<uint32_t>(as_ptr(vtbl), 0x3c);
+    auto fn = reinterpret_cast<VSlot15Fn>(static_cast<uintptr_t>(slot15));
+    fn(self, 0u, 0x1fu, self, 0u, 0u, 0u);
+
+    // mov al, 1
+    return true;
+}
+} // namespace lift_00711B00

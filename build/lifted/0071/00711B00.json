@@ -1,0 +1,28 @@
+{
+  "va": "0x00711B00",
+  "size": 80,
+  "orig_symbol": "sub_00711B00",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::SetSubobjectDoubleIfChanged",
+  "class": "Unknown",
+  "signature": "inline void* as_ptr(uint32_t v)",
+  "summary": "Compares the double at +0x18 of the subobject at self+0x40 with the stack argument; if they differ (or are unordered), stores the argument there and dispatches vtable slot 15 of self. Always returns true.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (vtable pointer of",
+      "name": "self)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "double field_0x18 (on subobject returned by ext_0071E680, i.e.",
+      "name": "self+0x40)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:52:11Z"
+}

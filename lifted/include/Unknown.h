@@ -77,6 +77,7 @@ struct Unknown_Fields {
     // +0x0   double field_0x00[] (indexed by arg, stride 8; element type inferred from fld qword)  (evidence: 0x0077FAE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 selector  (evidence: 0x007155B0, 0x0071A790) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    self  (evidence: 0x00493EE0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void* field_0x00 (vtable pointer of self)  (evidence: 0x00711B00) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* innerPtr (pointer to inner struct, dereferenced from self)  (evidence: 0x006B2F70, 0x006BB790) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (on subobject returned by ext_0071E680, i.e. self+0x40)  (evidence: 0x00711A20, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x0
     // +0x0   float                    src_x  (evidence: 0x007C8490, 0x007CA310) // CONFLICT: multiple definitions at +0x0
@@ -398,6 +399,7 @@ struct Unknown_Fields {
     // +0x18  uint32_t flags (of the stack argument `arg`; class not identified)  (evidence: 0x004561C0) // CONFLICT: multiple definitions at +0x18
     // +0x18  float                    m12  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x18
     // +0x18  void**                   range_end  (evidence: 0x00517310) // CONFLICT: multiple definitions at +0x18
+    // +0x18  double field_0x18 (on subobject returned by ext_0071E680, i.e. self+0x40)  (evidence: 0x00711B00) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t                 value  (evidence: 0x00790DC0) // CONFLICT: multiple definitions at +0x18
     // +0x19  uint8_t                  field_0x19  (evidence: 0x00538530, 0x00538550, 0x0053F6A0, 0x00553980, 0x00553A10)
     // +0x1A  uint8_t                  field_0x1A  (evidence: 0x00553A10) // CONFLICT: multiple definitions at +0x1A

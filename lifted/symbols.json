@@ -54484,6 +54484,13 @@
     "summary": "Tests bit 0x08 of the flags word at this+0x78 by tail-forwarding to TestMaskedFieldAt0x78 and returns its result.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x00711B00": {
+    "name": "Unknown::SetSubobjectDoubleIfChanged",
+    "class": "Unknown",
+    "signature": "inline void* as_ptr(uint32_t v)",
+    "summary": "Compares the double at +0x18 of the subobject at self+0x40 with the stack argument; if they differ (or are unordered), stores the argument there and dispatches vtable slot 15 of self. Always returns true.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00711B50": {
     "name": "Unknown::SetDoubleIfChanged",
     "class": "Unknown",
