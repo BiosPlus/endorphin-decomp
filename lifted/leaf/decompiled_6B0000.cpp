@@ -1364,3 +1364,63 @@ extern void __thiscall fn_006B4C50(void* self) {
     ext_006A641E(obj);
 }
 } // namespace lift_006B4C50
+
+// [0x006BA370]
+namespace lift_006BA370 {
+// @name String::find
+// @class String
+// @summary Finds the first occurrence of a substring starting at a clamped offset, returning its index or -1.
+// @field String +0x00 const char* data
+
+
+extern int32_t __fastcall ext_006B99C0(void* self);
+
+extern int32_t __fastcall fn_006BA370(void* self, void* /*edx*/, const char* substr, uint32_t start_pos) {
+    if (!substr) {
+        return 0;
+    }
+
+    uint32_t len = static_cast<uint32_t>(ext_006B99C0(self));
+    if (start_pos > len) {
+        start_pos = static_cast<uint32_t>(ext_006B99C0(self));
+    }
+
+    const char* data = *reinterpret_cast<const char* const*>(self);
+    const char* found = std::strstr(data + start_pos, substr);
+    if (!found) {
+        return -1;
+    }
+
+    data = *reinterpret_cast<const char* const*>(self);
+    return static_cast<int32_t>(found - data);
+}
+} // namespace lift_006BA370
+
+// [0x006BA660]
+namespace lift_006BA660 {
+// @name String::compare
+// @class String
+// @summary Compare this string's buffer with another C-string, treating null pointers as mem_00B5D2C0
+// @field String +0x00 const char* data
+
+
+extern const char mem_00B5D2C0[];
+
+int32_t __thiscall sub_006BA660(const char* const* self, const char* other) {
+    const uint8_t* lhs = reinterpret_cast<const uint8_t*>(*self ? *self : mem_00B5D2C0);
+    const uint8_t* rhs = reinterpret_cast<const uint8_t*>(other ? other : mem_00B5D2C0);
+
+    while (true) {
+        uint8_t a = *lhs;
+        uint8_t b = *rhs;
+        if (a != b) {
+            return (a < b) ? -1 : 1;
+        }
+        if (a == 0) {
+            return 0;
+        }
+        ++lhs;
+        ++rhs;
+    }
+}
+} // namespace lift_006BA660

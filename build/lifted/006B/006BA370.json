@@ -1,0 +1,22 @@
+{
+  "va": "0x006BA370",
+  "size": 96,
+  "orig_symbol": "sub_006BA370",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "String::find",
+  "class": "String",
+  "signature": "extern \"C\" int32_t __fastcall fn_006BA370(void* self, void* /*edx*/, const char* substr, uint32_t start_pos)",
+  "summary": "Finds the first occurrence of a substring starting at a clamped offset, returning its index or -1.",
+  "fields": [
+    {
+      "class": "String",
+      "offset": "+0x0",
+      "type": "const char*",
+      "name": "data"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:37:51Z"
+}

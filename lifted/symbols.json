@@ -52894,6 +52894,20 @@
     "summary": "Finds the index of the first character in the string (starting at startPos) that matches any character in control, or -1 if not found.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006BA370": {
+    "name": "String::find",
+    "class": "String",
+    "signature": "extern \"C\" int32_t __fastcall fn_006BA370(void* self, void* /*edx*/, const char* substr, uint32_t start_pos)",
+    "summary": "Finds the first occurrence of a substring starting at a clamped offset, returning its index or -1.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
+  "0x006BA660": {
+    "name": "String::compare",
+    "class": "String",
+    "signature": "int32_t __thiscall sub_006BA660(const char* const* self, const char* other)",
+    "summary": "Compare this string's buffer with another C-string, treating null pointers as mem_00B5D2C0",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BAC00": {
     "name": "sub_006BAC00",
     "signature": "extern \"C\" void* __fastcall fn_006BAC00(void* self, int edx_unused, unsigned int flags)",
