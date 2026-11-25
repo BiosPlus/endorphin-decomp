@@ -531,10 +531,10 @@ namespace lift_0079AD50 {
 extern DWORD __stdcall ext_SetFilePointer(HANDLE hFile, LONG lDistanceToMove, LONG* lpDistanceToMoveHigh, DWORD dwMoveMethod);
 
 // @name SeekFile
-// @summary Returns -1 if offset is -1; otherwise maps origin 0/1/2 to FILE_BEGIN/CURRENT/END (other values to BEGIN) and calls SetFilePointer with a zero high part.
-void fn_0079AD50(HANDLE handle, LONG offset, LONG origin) {
+// @summary Returns -1 if offset is -1; otherwise maps origin 0/1/2 to FILE_BEGIN/CURRENT/END (other values to BEGIN) and returns SetFilePointer with a zero high part.
+LONG fn_0079AD50(HANDLE handle, LONG offset, LONG origin) {
     if (offset == -1) {
-        return;
+        return -1;
     }
     DWORD method = 0;
     switch (origin) {
@@ -544,6 +544,6 @@ void fn_0079AD50(HANDLE handle, LONG offset, LONG origin) {
     default: method = 0; break;
     }
     LONG high = 0;
-    (void)ext_SetFilePointer(handle, offset, &high, method);
+    return static_cast<LONG>(ext_SetFilePointer(handle, offset, &high, method));
 }
 } // namespace lift_0079AD50

@@ -56014,8 +56014,8 @@
   },
   "0x0079AD50": {
     "name": "SeekFile",
-    "signature": "void fn_0079AD50(HANDLE handle, LONG offset, LONG origin)",
-    "summary": "Returns -1 if offset is -1; otherwise maps origin 0/1/2 to FILE_BEGIN/CURRENT/END (other values to BEGIN) and calls SetFilePointer with a zero high part.",
+    "signature": "LONG fn_0079AD50(HANDLE handle, LONG offset, LONG origin)",
+    "summary": "Returns -1 if offset is -1; otherwise maps origin 0/1/2 to FILE_BEGIN/CURRENT/END (other values to BEGIN) and returns SetFilePointer with a zero high part.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
   "0x0079ADA0": {
