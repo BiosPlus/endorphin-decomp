@@ -42543,6 +42543,12 @@
     "summary": "Zeroes the dwords at this+0x4, this+0x8 and this+0xC, and returns this.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006A0680": {
+    "name": "getStaticInstance_00B5CA74",
+    "signature": "void* sub_006A0680()",
+    "summary": "Lazily initializes and returns the static object at 0x00B5CA74, registering its destructor via atexit.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006A07B0": {
     "name": "ExprParser::Operators::CopyValuePtr::vfunc_3",
     "class": "ExprParser::Operators::CopyValuePtr",
