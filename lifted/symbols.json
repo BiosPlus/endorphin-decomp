@@ -22281,6 +22281,13 @@
     "summary": "Stores two float arguments at +0x28/+0x2C and two dword arguments at +0x20/+0x24 of this (thiscall, ECX = this, callee pops 0x10 bytes).",
     "lifted_path": "lifted/leaf/tiny_530000.cpp"
   },
+  "0x00539340": {
+    "name": "UtilityGraphics::Label::vfunc_22",
+    "class": "UtilityGraphics::Label",
+    "signature": "void fn_00539340(void* self, int mode)",
+    "summary": "Draws the label text at a fixed raster position inside a push/pop matrix, optionally setting a color and invoking a child's virtual slot 11 first.",
+    "lifted_path": "lifted/UtilityGraphics/Label.cpp"
+  },
   "0x00539490": {
     "name": "Unknown::allocateElements12",
     "class": "Unknown",
