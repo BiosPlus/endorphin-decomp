@@ -40,6 +40,7 @@ uint8_t descriptiveName_00553960(void* arg) {
 }
 } // namespace lift_00553960
 #include <cstdio>
+#include <cstddef>
 
 // [0x00554CE0] sub_00554CE0 (27 bytes)
 namespace lift_00554CE0 {
@@ -1263,3 +1264,57 @@ void fn_00554D60(void* self, float* out, float x, float y, float z) {
     out[2] = scale * result[2];
 }
 } // namespace lift_00554D60
+
+// [0x00557200] sub_00557200 (82 bytes)
+namespace lift_00557200 {
+// @name sub_00557200
+// @summary Auto-lifted identical-shape clone of 0x006998D0 (copyStringAndRecord).
+namespace lift_006998D0 {
+// Known callee 0x00699870: Unknown::copyRecordWithOptionalResolve (Copies a 16-byte record from src into self; when src+0xC is non-null, calls vtable slot 0x70 on it to fetch the +0x8 value, otherwise +0x8 is zeroed. Returns self.)
+extern void* ext_0049EEE0(void* self, int edx_unused, const void* src);
+
+// MSVCP80 std::string copy constructor, reached through the import slot mem_00924FE0.
+extern void ext_std_string_copy_ctor(void* self, const void* src);
+extern int mem_00924FE0;
+
+// @name copyStringAndRecord
+// @summary Copy-constructs the leading std::string from src, then copies the 16-byte record at +0x1C from src into this; returns this.
+// @field Unknown +0x1C uint8_t field_0x1c[16]
+extern void* __fastcall fn_00557200(void* self, int edx_unused, const void* src) {
+    ext_std_string_copy_ctor(self, src);
+
+    auto* dst_record = static_cast<uint8_t*>(self) + 0x1C;
+    const auto* src_record = static_cast<const uint8_t*>(src) + 0x1C;
+    ext_0049EEE0(dst_record, 0, src_record);
+
+    return self;
+}
+} // namespace lift_006998D0
+} // namespace lift_00557200
+
+// [0x005588C0] sub_005588C0 (82 bytes)
+namespace lift_005588C0 {
+// @name sub_005588C0
+// @summary Auto-lifted identical-shape clone of 0x006998D0 (copyStringAndRecord).
+namespace lift_006998D0 {
+// Known callee 0x00699870: Unknown::copyRecordWithOptionalResolve (Copies a 16-byte record from src into self; when src+0xC is non-null, calls vtable slot 0x70 on it to fetch the +0x8 value, otherwise +0x8 is zeroed. Returns self.)
+extern void* ext_00557960(void* self, int edx_unused, const void* src);
+
+// MSVCP80 std::string copy constructor, reached through the import slot mem_00924FE0.
+extern void ext_std_string_copy_ctor(void* self, const void* src);
+extern int mem_00924FE0;
+
+// @name copyStringAndRecord
+// @summary Copy-constructs the leading std::string from src, then copies the 16-byte record at +0x1C from src into this; returns this.
+// @field Unknown +0x1C uint8_t field_0x1c[16]
+extern void* __fastcall fn_005588C0(void* self, int edx_unused, const void* src) {
+    ext_std_string_copy_ctor(self, src);
+
+    auto* dst_record = static_cast<uint8_t*>(self) + 0x1C;
+    const auto* src_record = static_cast<const uint8_t*>(src) + 0x1C;
+    ext_00557960(dst_record, 0, src_record);
+
+    return self;
+}
+} // namespace lift_006998D0
+} // namespace lift_005588C0

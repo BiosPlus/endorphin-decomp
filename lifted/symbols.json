@@ -2479,6 +2479,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004757F0 (sub_0047A010).",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x004291F0": {
+    "name": "sub_004291F0",
+    "signature": "extern void* __fastcall fn_004291F0(void* self, int edx_unused, const void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x006998D0 (copyStringAndRecord).",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x0042E920": {
     "name": "KeyMappingManager::vfunc_6",
     "class": "KeyMappingManager",
@@ -8023,6 +8029,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00475840": {
+    "name": "sub_00475840",
+    "signature": "extern void* __fastcall fn_00475840(void* self, int edx_unused, const void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x006998D0 (copyStringAndRecord).",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00476630": {
     "name": "makeStdStringFromCStr",
     "signature": "void* fn_00476630(std::string* out, const char* s)",
@@ -11370,6 +11382,12 @@
     "summary": "Walks a binary search tree (head sentinel at holder-\u003efield_0x04) comparing each node's string key at +0x0C against the argument; returns the last left-branch node visited (or the holder when the tree is empty).",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
+  "0x004A82D0": {
+    "name": "sub_004A82D0",
+    "signature": "extern void* __fastcall fn_004A82D0(void* self, int edx_unused, const void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x006998D0 (copyStringAndRecord).",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004A96A0": {
     "name": "sub_004A96A0",
     "signature": "extern \"C\" void __fastcall fn_004A96A0(void* self)",
@@ -11745,6 +11763,12 @@
     "class": "Unknown",
     "signature": "void fn_004AD970(void* self)",
     "summary": "Releases the StringArray at +0x1c, then runs the std::string destructor on the object itself.",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
+  "0x004ADA20": {
+    "name": "sub_004ADA20",
+    "signature": "extern void* __fastcall fn_004ADA20(void* self, int edx_unused, const void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x006998D0 (copyStringAndRecord).",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
   "0x004AEC60": {
@@ -18920,6 +18944,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
     "lifted_path": "lifted/leaf/tiny_520000.cpp"
   },
+  "0x0052A140": {
+    "name": "sub_0052A140",
+    "signature": "extern void* __fastcall fn_0052A140(void* self, int edx_unused, const void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x006998D0 (copyStringAndRecord).",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052A1A0": {
     "name": "sub_0052A1A0",
     "class": "Unknown",
@@ -22292,6 +22322,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00557200": {
+    "name": "sub_00557200",
+    "signature": "extern void* __fastcall fn_00557200(void* self, int edx_unused, const void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x006998D0 (copyStringAndRecord).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00557260": {
     "name": "sub_00557260",
     "signature": "extern \"C\" void __fastcall fn_00557260(void* self)",
@@ -22358,6 +22394,12 @@
     "class": "Unknown",
     "signature": "void fn_005587E0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
+  "0x005588C0": {
+    "name": "sub_005588C0",
+    "signature": "extern void* __fastcall fn_005588C0(void* self, int edx_unused, const void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x006998D0 (copyStringAndRecord).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
   "0x00558A10": {
@@ -23039,6 +23081,12 @@
     "class": "Unknown",
     "signature": "void __thiscall fn_00572680(void* self)",
     "summary": "Releases the pointer at +0x20 via MFC80 ord_764 when non-null, zeroes the +0x20..+0x28 dword fields, then destroys the object at offset 0 through the basic_string destructor slot.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x005726C0": {
+    "name": "sub_005726C0",
+    "signature": "extern void* __fastcall fn_005726C0(void* self, int edx_unused, const void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x006998D0 (copyStringAndRecord).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
   "0x00572CC0": {
@@ -24753,6 +24801,12 @@
     "name": "sub_00595C50",
     "signature": "void* fn_00595C50()",
     "summary": "Auto-lifted identical-shape clone of 0x0043D780 (AllocAndInitRecord).",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
+  "0x00595C90": {
+    "name": "sub_00595C90",
+    "signature": "extern void* __fastcall fn_00595C90(void* self, int edx_unused, const void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x006998D0 (copyStringAndRecord).",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
   "0x00595CF0": {
@@ -39098,6 +39152,12 @@
     "class": "Unknown",
     "signature": "void fn_00666930(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x004757F0 (sub_0047A010).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x00666BA0": {
+    "name": "sub_00666BA0",
+    "signature": "extern void* __fastcall fn_00666BA0(void* self, int edx_unused, const void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x006998D0 (copyStringAndRecord).",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
   "0x00666C90": {

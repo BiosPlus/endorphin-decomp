@@ -1,0 +1,21 @@
+{
+  "va": "0x005588C0",
+  "size": 82,
+  "orig_symbol": "sub_005588C0",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "sub_005588C0",
+  "signature": "extern void* __fastcall fn_005588C0(void* self, int edx_unused, const void* src)",
+  "summary": "Auto-lifted identical-shape clone of 0x006998D0 (copyStringAndRecord).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint8_t",
+      "name": "field_0x1c[16]"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T02:27:14Z"
+}
