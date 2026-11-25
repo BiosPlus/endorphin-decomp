@@ -28413,6 +28413,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005DC930": {
+    "name": "ClearOwnedObjectAt0x44",
+    "signature": "void fn_005DC930(void* self)",
+    "summary": "If the owned pointer at +0x44 is non-null, release its scope, pass it to MFC80!ord_764, then clear the slot.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005DC960": {
     "name": "sub_005DC960",
     "signature": "extern \"C\" void __fastcall fn_005DC960(void* self)",

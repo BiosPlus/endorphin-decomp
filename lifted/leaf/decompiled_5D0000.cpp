@@ -112,3 +112,27 @@ void fn_005D9F30(void* self) {
     }
 }
 } // namespace lift_005D9F30
+
+// [0x005DC930] sub_005DC930 (37 bytes)
+namespace lift_005DC930 {
+// Known callee 0x005D9F30: ReleaseOwnedObjectScope (ECX = self; thiscall, one pointer argument)
+extern void ext_005D9F30(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk to MFC80!ord_764; cdecl, one argument pushed)
+extern void ext_006A5C5C(void* arg);
+
+// @name ClearOwnedObjectAt0x44
+// @summary If the owned pointer at +0x44 is non-null, release its scope, pass it to MFC80!ord_764, then clear the slot.
+// @field UnknownClass +0x44 void* field_0x44
+
+void fn_005DC930(void* self) {
+    auto* base = static_cast<std::uint8_t*>(self);
+    auto** slot = reinterpret_cast<void**>(base + 0x44);
+
+    void* owned = *slot;
+    if (owned != nullptr) {
+        ext_005D9F30(owned);
+        ext_006A5C5C(owned);
+    }
+    *slot = nullptr;
+}
+} // namespace lift_005DC930
