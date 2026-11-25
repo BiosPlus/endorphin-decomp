@@ -1,0 +1,14 @@
+{
+  "va": "0x00715770",
+  "size": 32,
+  "orig_symbol": "sub_00715770",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::ForwardCopiedBlock",
+  "class": "Unknown",
+  "signature": "void fn_00715770(void* self, const void* src)",
+  "summary": "Copies 32 bytes from the source pointer into a local block and forwards it with self to ext_007155B0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:52:56Z"
+}

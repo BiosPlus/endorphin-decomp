@@ -1593,3 +1593,19 @@ void fn_0071FD10(void* self, double* out, const double* a, const double* b) {
     }
 }
 } // namespace lift_0071FD10
+
+// [0x00715770] sub_00715770 (32 bytes)
+namespace lift_00715770 {
+// Known callee 0x007155B0: sub_007155B0 (ext_007155B0). Receives `this` and a
+// 32-byte argument block copied by value from the caller's source pointer.
+extern void ext_007155B0(void* self, const uint32_t* args);
+
+// @name Unknown::ForwardCopiedBlock
+// @class Unknown
+// @summary Copies 32 bytes from the source pointer into a local block and forwards it with self to ext_007155B0.
+void fn_00715770(void* self, const void* src) {
+    uint32_t block[8];
+    std::memcpy(block, src, sizeof(block));
+    ext_007155B0(self, block);
+}
+} // namespace lift_00715770

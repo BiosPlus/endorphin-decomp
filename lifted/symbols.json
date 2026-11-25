@@ -55526,6 +55526,13 @@
     "summary": "If field +0xC == 2, follows the pointer at +0x4 through two helper calls and returns a float getter result; otherwise returns 0.0.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x00715770": {
+    "name": "Unknown::ForwardCopiedBlock",
+    "class": "Unknown",
+    "signature": "void fn_00715770(void* self, const void* src)",
+    "summary": "Copies 32 bytes from the source pointer into a local block and forwards it with self to ext_007155B0.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00715BE0": {
     "name": "copyBlock24",
     "signature": "void* fn_00715BE0(void* dst, const void* src)",
