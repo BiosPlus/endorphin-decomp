@@ -54973,6 +54973,13 @@
     "summary": "Counts how many adjacent double-pair deltas (p[i+1] - p[i]) over a span exceed a constant threshold; returns 0 when the index range is empty.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x00798710": {
+    "name": "Unknown::ComputeScaledPageCount",
+    "class": "Unknown",
+    "signature": "DWORD fn_00798710(void* self)",
+    "summary": "Returns ceil(+0x28 / +0x50) (or nonzero-flag when +0x50 == -1); if +0x72 == 2, multiplies the result by the u16 at +0x4e.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x00798800": {
     "name": "computeRowsPerStrip",
     "signature": "int32_t fn_00798800(uint8_t* self, int32_t rowsPerStrip)",

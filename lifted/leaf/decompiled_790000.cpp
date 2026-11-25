@@ -426,3 +426,31 @@ __stdcall uint32_t fn_00796740(const double* base, uint32_t limit, uint32_t star
     return hits;
 }
 } // namespace lift_00796740
+
+// [0x00798710] sub_00798710 (64 bytes)
+namespace lift_00798710 {
+// @name Unknown::ComputeScaledPageCount
+// @class Unknown
+// @summary Returns ceil(+0x28 / +0x50) (or nonzero-flag when +0x50 == -1); if +0x72 == 2, multiplies the result by the u16 at +0x4e.
+// @field Unknown +0x28 DWORD field_0x28
+// @field Unknown +0x4e WORD field_0x4e
+// @field Unknown +0x50 INT field_0x50
+// @field Unknown +0x72 WORD field_0x72
+DWORD fn_00798710(void* self) {
+    DWORD count = lift_field<DWORD>(self, 0x28);
+    INT divisor = lift_field<INT>(self, 0x50);
+
+    DWORD result;
+    if (divisor == -1) {
+        result = (count != 0) ? 1u : 0u;
+    } else {
+        // Unsigned ceiling division: (count + divisor - 1) / divisor
+        result = (count + static_cast<DWORD>(divisor) - 1u) / static_cast<DWORD>(divisor);
+    }
+
+    if (lift_field<WORD>(self, 0x72) == 2) {
+        result = static_cast<DWORD>(lift_field<WORD>(self, 0x4e)) * result;
+    }
+    return result;
+}
+} // namespace lift_00798710

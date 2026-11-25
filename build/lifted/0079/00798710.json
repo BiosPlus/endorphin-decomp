@@ -1,0 +1,40 @@
+{
+  "va": "0x00798710",
+  "size": 64,
+  "orig_symbol": "sub_00798710",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "Unknown::ComputeScaledPageCount",
+  "class": "Unknown",
+  "signature": "DWORD fn_00798710(void* self)",
+  "summary": "Returns ceil(+0x28 / +0x50) (or nonzero-flag when +0x50 == -1); if +0x72 == 2, multiplies the result by the u16 at +0x4e.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "DWORD",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4E",
+      "type": "WORD",
+      "name": "field_0x4e"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "INT",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x72",
+      "type": "WORD",
+      "name": "field_0x72"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:08:52Z"
+}
