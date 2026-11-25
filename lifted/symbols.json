@@ -67630,6 +67630,12 @@
     "summary": "Stores -_HUGE (negated MSVCRT HUGE_VAL) into three global doubles.",
     "lifted_path": "lifted/clones/auto_clones_790000.cpp"
   },
+  "0x0079BC10": {
+    "name": "sub_0079BC10",
+    "signature": "void fn_0079BC10()",
+    "summary": "Auto-lifted identical-shape clone of 0x007747F0 (CopyHugeValueToGlobals_007747F0).",
+    "lifted_path": "lifted/clones/auto_clones_790000.cpp"
+  },
   "0x0079C1B0": {
     "name": "codeSelectOrZero",
     "signature": "uint32_t fn_0079C1B0(uint32_t ecxValue, uint32_t selector, uint32_t unusedArg)",
@@ -67859,6 +67865,12 @@
     "signature": "void fn_0079EED0(int32_t offset)",
     "summary": "Gets a stream handle from ext_0079EBE0 and calls CRT fseek(stream, offset, SEEK_SET), discarding the result.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
+  "0x0079F1D0": {
+    "name": "sub_0079F1D0",
+    "signature": "void fn_0079F1D0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0079B8F0 (initGlobalsA_0079B8F0).",
+    "lifted_path": "lifted/clones/auto_clones_790000.cpp"
   },
   "0x0079F2E0": {
     "name": "sub_0079F2E0 (descriptiveName: IsAnyKnownValue)",
