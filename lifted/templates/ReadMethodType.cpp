@@ -42791,3 +42791,41 @@ void fn_00508F70(void* self) {
     ext_006A6DD2(exc, nullptr);
 }
 } // namespace lift_00508F70
+
+// [0x004EA790] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0>::vfunc_5 (46 bytes)
+namespace lift_004EA790 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Called with one byte argument pushed by the caller (the byte at object+0x04).
+extern void ext_0046C4E0(unsigned char value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called with `this` = pointer to the exception storage on the stack.
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Called with (exception object, ThrowInfo*).
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<PoseToolOptions>::isGroundCollisionEnabled_vfunc5
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0>
+// @summary Reads the wrapped object's byte at +0x04 (if the pointer is non-null) and then throws a DerivedException.
+// @field NMData::PoseToolOptions +0x04 uint8_t field_0x04
+void fn_004EA790(void* self) {
+    // The argument points at a holder whose first member is the wrapped object pointer.
+    void* const* holder = static_cast<void* const*>(self);
+    const unsigned char* obj = nullptr;
+    if (holder != nullptr) {
+        obj = static_cast<const unsigned char*>(*holder);
+    }
+
+    if (obj != nullptr) {
+        ext_0046C4E0(obj[0x04]);
+    }
+
+    // Construct the exception object in a local 0x28-byte buffer and throw it.
+    alignas(8) unsigned char exception[0x28];
+    ext_0046C3C0(exception);
+
+    // ThrowInfo for the exception type, at image address 0x009DEC1C.
+    const void* throwInfo = reinterpret_cast<const void*>(static_cast<std::uintptr_t>(0x009DEC1Cu));
+    ext_006A6DD2(exception, throwInfo);
+}
+} // namespace lift_004EA790

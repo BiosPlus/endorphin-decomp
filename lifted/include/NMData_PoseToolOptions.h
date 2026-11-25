@@ -11,6 +11,7 @@
 namespace lifted_layout {
 struct NMData_PoseToolOptions_Fields {
     // +0x4   bool                     field_0x04  (evidence: 0x0046E570, 0x004983A0, 0x004986A0, 0x004B7D80, 0x004B8920, 0x004C0800, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x004EA700, 0x00508EE0, 0x00512A00, 0x005B2D00, 0x005B3680, 0x00604D80, 0x0066F700, 0x006749C0, 0x0068DE60) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint8_t                  field_0x04  (evidence: 0x004EA790) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t                  m_isGroundCollisionEnabled  (evidence: 0x0046E570, 0x004983A0, 0x004986A0, 0x004B7D80, 0x004B8920, 0x004C0800, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x004EA6B0, 0x00512A00, 0x005B2D00, 0x005B3680, 0x00604D80, 0x0066F700, 0x006749C0) // CONFLICT: multiple definitions at +0x4
     // +0x5   uint8_t                  collisionEnabled  (evidence: 0x0046E570, 0x004983A0, 0x004B7D80, 0x004C0800, 0x004EA080, 0x00512A00, 0x005B3680, 0x00604D80, 0x006749C0) // CONFLICT: multiple definitions at +0x5
     // +0x5   uint8_t                  field_0x05  (evidence: 0x004EA0D0) // CONFLICT: multiple definitions at +0x5

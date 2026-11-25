@@ -17394,6 +17394,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004EA380 (ExprParser::ReadMethodType\u003cPoseToolOptions,isGravityEnabled\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004EA790": {
+    "name": "ExprParser::ReadMethodType\u003cPoseToolOptions\u003e::isGroundCollisionEnabled_vfunc5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0\u003e",
+    "signature": "void fn_004EA790(void* self)",
+    "summary": "Reads the wrapped object's byte at +0x04 (if the pointer is non-null) and then throws a DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004EA9D0": {
     "name": "ExprParser::ReadMethodType\u003cPoseToolOptions\u003e::isCollisionEnabled_vfunc_2",
     "class": "NMData::PoseToolOptions",
