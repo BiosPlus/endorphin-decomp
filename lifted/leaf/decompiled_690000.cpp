@@ -511,3 +511,27 @@ uint32_t fn_0069E7E0(uint32_t begin, uint32_t end, uint32_t value) {
 }
 } // namespace lift_0054F290
 } // namespace lift_0069E7E0
+
+// [0x006991A0]
+namespace lift_006991A0 {
+uint32_t mem_read32(uint32_t addr);
+void mem_write32(uint32_t addr, uint32_t val);
+
+// @name sub_006991A0_dtor
+// @summary Destructor that sets vtable 0x98fac4, deletes member at +0x8 via vtable[0](1), and restores base vtable 0x98fabc
+// @field Class +0x00 uint32_t vptr
+// @field Class +0x08 uint32_t field_0x08
+void __thiscall sub_006991A0(uint32_t ecx_this) {
+    mem_write32(ecx_this, 0x0098FAC4u);
+
+    uint32_t member = mem_read32(ecx_this + 0x8u);
+    if (member != 0u) {
+        uint32_t vtable = mem_read32(member);
+        uint32_t dtor_fn = mem_read32(vtable);
+        using dtor_t = void (__thiscall *)(uint32_t, uint32_t);
+        reinterpret_cast<dtor_t>(static_cast<uintptr_t>(dtor_fn))(member, 1u);
+    }
+
+    mem_write32(ecx_this, 0x0098FABCu);
+}
+} // namespace lift_006991A0

@@ -1,0 +1,27 @@
+{
+  "va": "0x006991A0",
+  "size": 80,
+  "orig_symbol": "sub_006991A0",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "sub_006991A0_dtor",
+  "signature": "void __thiscall sub_006991A0(uint32_t ecx_this)",
+  "summary": "Destructor that sets vtable 0x98fac4, deletes member at +0x8 via vtable[0](1), and restores base vtable 0x98fabc",
+  "fields": [
+    {
+      "class": "Class",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr"
+    },
+    {
+      "class": "Class",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:50:07Z"
+}
