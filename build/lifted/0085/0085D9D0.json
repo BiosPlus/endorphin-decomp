@@ -1,0 +1,46 @@
+{
+  "va": "0x0085D9D0",
+  "size": 106,
+  "orig_symbol": "sub_0085D9D0",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "FindOrReserveKeyedSlot",
+  "class": "SlotEntry",
+  "signature": "int __cdecl fn_0085D9D0(uint16_t a1, uint16_t a2, uint16_t a3, uint32_t a4)",
+  "summary": "Scans the 20-byte slot table at 0x00ABB380..0x00AC018C for a live entry matching (key16a, key16b, key16c, key32); returns its 1-based index, else -(first empty 1-based index), else 0.",
+  "fields": [
+    {
+      "class": "SlotEntry",
+      "offset": "+0x0",
+      "type": "uint16_t",
+      "name": "key16a"
+    },
+    {
+      "class": "SlotEntry",
+      "offset": "+0x2",
+      "type": "uint16_t",
+      "name": "key16b"
+    },
+    {
+      "class": "SlotEntry",
+      "offset": "+0x4",
+      "type": "uint16_t",
+      "name": "key16c"
+    },
+    {
+      "class": "SlotEntry",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "key32"
+    },
+    {
+      "class": "SlotEntry",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "inUse"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:54:10Z"
+}

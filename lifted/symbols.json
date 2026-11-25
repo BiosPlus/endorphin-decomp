@@ -70175,6 +70175,13 @@
     "summary": "Rotates a 32-bit unsigned integer at ptr right by 1 bit, count times.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085D9D0": {
+    "name": "FindOrReserveKeyedSlot",
+    "class": "SlotEntry",
+    "signature": "int __cdecl fn_0085D9D0(uint16_t a1, uint16_t a2, uint16_t a3, uint32_t a4)",
+    "summary": "Scans the 20-byte slot table at 0x00ABB380..0x00AC018C for a live entry matching (key16a, key16b, key16c, key32); returns its 1-based index, else -(first empty 1-based index), else 0.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085DA40": {
     "name": "NoOpReturn_0085DA40",
     "signature": "void fn_0085DA40(void* self)",

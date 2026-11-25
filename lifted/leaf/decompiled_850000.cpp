@@ -1241,3 +1241,44 @@ extern uint32_t fn_0085BE20(void* self, uint32_t count, uint32_t* out_val) {
     return end_pos - start_pos;
 }
 } // namespace lift_0085BE20
+
+// [0x0085D9D0] sub_0085D9D0 (106 bytes)
+namespace lift_0085D9D0 {
+extern uint32_t mem_read32(uint32_t addr);
+extern uint16_t mem_read16(uint32_t addr);
+
+// @name FindOrReserveKeyedSlot
+// @summary Scans the 20-byte slot table at 0x00ABB380..0x00AC018C for a live entry matching (key16a, key16b, key16c, key32); returns its 1-based index, else -(first empty 1-based index), else 0.
+// @class SlotEntry
+// @field SlotEntry +0x00 uint16_t key16a
+// @field SlotEntry +0x02 uint16_t key16b
+// @field SlotEntry +0x04 uint16_t key16c
+// @field SlotEntry +0x08 uint32_t key32
+// @field SlotEntry +0x0C uint32_t inUse
+int __cdecl fn_0085D9D0(uint16_t a1, uint16_t a2, uint16_t a3, uint32_t a4) {
+    constexpr uint32_t kTableBegin = 0x00ABB380u;
+    constexpr uint32_t kTableLastEntry = 0x00AC018Cu;
+    constexpr uint32_t kEntrySize = 0x14u;
+
+    int32_t firstEmpty = -1;
+    uint32_t index = 1;
+    for (uint32_t entry = kTableBegin; entry <= kTableLastEntry; entry += kEntrySize, ++index) {
+        if (mem_read32(entry) != 0) {
+            // Live entry: match on all four keys; the key block begins at entry - 0x0C.
+            if (mem_read16(entry - 0x08) == a3 &&
+                mem_read16(entry - 0x0C) == a1 &&
+                mem_read16(entry - 0x0A) == a2 &&
+                mem_read32(entry - 0x04) == a4) {
+                return static_cast<int32_t>(index);
+            }
+        } else if (firstEmpty < 0) {
+            firstEmpty = static_cast<int32_t>(index);
+        }
+    }
+
+    if (firstEmpty >= 0) {
+        return -firstEmpty;
+    }
+    return 0;
+}
+} // namespace lift_0085D9D0
