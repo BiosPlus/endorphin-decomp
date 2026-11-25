@@ -56765,6 +56765,12 @@
     "summary": "Computes out = a x b (3-component float cross product), stores three floats to out.",
     "lifted_path": "lifted/leaf/decompiled_7E0000.cpp"
   },
+  "0x007E5240": {
+    "name": "ScatterSignSwizzle4",
+    "signature": "void fn_007E5240(float* a, const float* b, int32_t i)",
+    "summary": "Zeroes a[i], then writes a[d] = b[s] and a[s] = -b[d] where d = (1\u003c\u003ci)\u00263 and s = (1\u003c\u003cd)\u00263 (x86 shift counts masked to 5 bits).",
+    "lifted_path": "lifted/leaf/decompiled_7E0000.cpp"
+  },
   "0x007EC6E0": {
     "name": "reciprocalOrZero_007EC6E0",
     "signature": "float fn_007EC6E0(float x)",

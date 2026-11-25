@@ -37,3 +37,20 @@ void fn_007E51F0(const float* a, float* out, const float* b) {
     out[2] = ax * by - ay * bx;
 }
 } // namespace lift_007E51F0
+
+// [0x007E5240] sub_007E5240 (60 bytes)
+namespace lift_007E5240 {
+// @name ScatterSignSwizzle4
+// @summary Zeroes a[i], then writes a[d] = b[s] and a[s] = -b[d] where d = (1<<i)&3 and s = (1<<d)&3 (x86 shift counts masked to 5 bits).
+void fn_007E5240(float* a, const float* b, int32_t i) {
+    // x86 shifts mask the count to 5 bits; mirror that explicitly.
+    a[i] = 0.0f;
+
+    const uint32_t d = (1u << (static_cast<uint32_t>(i) & 31u)) & 3u;
+    const uint32_t s = (1u << (d & 31u)) & 3u;
+
+    const float v = b[s];
+    a[d] = v;
+    a[s] = -b[d];
+}
+} // namespace lift_007E5240
