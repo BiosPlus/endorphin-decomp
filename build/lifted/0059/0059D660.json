@@ -1,0 +1,22 @@
+{
+  "va": "0x0059D660",
+  "size": 63,
+  "orig_symbol": "sub_0059D660",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "Unknown::ForwardUnlessIgnoredId",
+  "class": "Unknown",
+  "signature": "uint32_t fn_0059D660(void* self, uint32_t id)",
+  "summary": "Returns the id unchanged if it is one of five ignored ids; otherwise tail-forwards it to vtable entry +0x54 of the object at self+0x160.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x160",
+      "type": "void*",
+      "name": "subobject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:02:48Z"
+}

@@ -297,3 +297,30 @@ void* fn_005991D0(void* self, void* out, DWORD a2, DWORD pos) {
     return out;
 }
 } // namespace lift_005991D0
+
+// [0x0059D660] sub_0059D660 (63 bytes)
+namespace lift_0059D660 {
+// @name Unknown::ForwardUnlessIgnoredId
+// @class Unknown
+// @summary Returns the id unchanged if it is one of five ignored ids; otherwise tail-forwards it to vtable entry +0x54 of the object at self+0x160.
+// @field Unknown +0x160 void* subobject
+uint32_t fn_0059D660(void* self, uint32_t id) {
+    constexpr uint32_t kIgnoredIds[] = {
+        0x00B53A34, 0x00B53B30, 0x00B53AB0, 0x00B53A70, 0x00B53AF0,
+    };
+    for (uint32_t ignored : kIgnoredIds) {
+        if (id == ignored) {
+            return id;
+        }
+    }
+
+    using ForwardFn = uint32_t (*)(void* thisPtr, uint32_t value);
+
+    auto* base = static_cast<uint8_t*>(self);
+    void* object = base + 0x160;
+    // The object's first dword is its vtable pointer; +0x54 is the byte offset of the slot.
+    auto* vtable = *reinterpret_cast<uint8_t**>(object);
+    auto target = *reinterpret_cast<ForwardFn*>(vtable + 0x54);
+    return target(object, id);
+}
+} // namespace lift_0059D660

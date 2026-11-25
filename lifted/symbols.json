@@ -22184,6 +22184,13 @@
     "summary": "Pure jump thunk forwarding to sub_005EF450.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0059D660": {
+    "name": "Unknown::ForwardUnlessIgnoredId",
+    "class": "Unknown",
+    "signature": "uint32_t fn_0059D660(void* self, uint32_t id)",
+    "summary": "Returns the id unchanged if it is one of five ignored ids; otherwise tail-forwards it to vtable entry +0x54 of the object at self+0x160.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x0059D7D0": {
     "name": "NMData::CharacterData::vfunc_20_off_4",
     "class": "NMData::CharacterData",
