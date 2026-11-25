@@ -1766,3 +1766,20 @@ void* __thiscall sub_0041E070(void* self) {
     return self;
 }
 } // namespace lift_0041E070
+
+// [0x0041D9E0] sub_0041D9E0 (99 bytes)
+namespace lift_0041D9E0 {
+extern void* ext_006A5C62(size_t size);
+
+// @name AllocateArrayOf56ByteElements
+// @summary Allocates storage for count 56-byte elements; throws std::length_error if count * 56 would overflow.
+void* fn_0041D9E0(uint32_t count) {
+    if (count == 0) {
+        return ext_006A5C62(0);
+    }
+    if (0xFFFFFFFFu / count < 0x38u) {
+        throw std::length_error("vector too long");
+    }
+    return ext_006A5C62(static_cast<size_t>(count) * 0x38u);
+}
+} // namespace lift_0041D9E0

@@ -2190,6 +2190,12 @@
     "summary": "Lazily constructs a function-local static at mem_00ACC524 on first call (guard bit 0 in mem_00ACC540), registers its teardown, and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041D9E0": {
+    "name": "AllocateArrayOf56ByteElements",
+    "signature": "void* fn_0041D9E0(uint32_t count)",
+    "summary": "Allocates storage for count 56-byte elements; throws std::length_error if count * 56 would overflow.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041DD20": {
     "name": "Properties::PropertiesControl::vfunc_80",
     "class": "Properties::PropertiesControl",
