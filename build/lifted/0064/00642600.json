@@ -1,0 +1,22 @@
+{
+  "va": "0x00642600",
+  "size": 19,
+  "orig_symbol": "sub_00642600",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "forwardEraseTailRange",
+  "class": "Unknown",
+  "signature": "void fn_00642600(void* self)",
+  "summary": "Erases the tail range of the subobject at +0x0C, then forwards to ext_006425E0 with the same this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:18:07Z"
+}

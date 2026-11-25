@@ -39014,6 +39014,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xC and tail-calls sub_00648B40.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00642600": {
+    "name": "forwardEraseTailRange",
+    "class": "Unknown",
+    "signature": "void fn_00642600(void* self)",
+    "summary": "Erases the tail range of the subobject at +0x0C, then forwards to ext_006425E0 with the same this.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00642620": {
     "name": "sub_00642620",
     "signature": "extern \"C\" void __fastcall fn_00642620(void* self)",

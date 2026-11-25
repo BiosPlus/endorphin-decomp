@@ -1827,3 +1827,21 @@ void fn_00648800(void* self) {
                  vec_addr, begin, vec_addr, limit);
 }
 } // namespace lift_00648800
+
+// [0x00642600] sub_00642600 (19 bytes)
+namespace lift_00642600 {
+// Known callee 0x00648DB0: Owner::eraseTailRange (Erases the element range [vec.begin, B+0x20) from the vector embedded at B+0x18, where B = this->field_0x30.)
+extern void __fastcall ext_00648DB0(void* self);
+// Known callee 0x006425E0: sub_006425E0 (Member forwarding thunk: loads subobject pointer at +0xC and tail-calls sub_00648940.)
+extern void __fastcall ext_006425E0(void* self);
+
+// @name forwardEraseTailRange
+// @class Unknown
+// @summary Erases the tail range of the subobject at +0x0C, then forwards to ext_006425E0 with the same this.
+// @field Unknown +0x0C void* field_0x0C
+void fn_00642600(void* self) {
+    void* subobject = lift_field<void*>(self, 0x0C);
+    ext_00648DB0(subobject);
+    ext_006425E0(self);
+}
+} // namespace lift_00642600
