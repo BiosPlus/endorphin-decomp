@@ -1,0 +1,21 @@
+{
+  "va": "0x007C6C10",
+  "size": 9,
+  "orig_symbol": "sub_007C6C10",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "SetFlag0x4",
+  "signature": "void __cdecl sub_007C6C10(void* self)",
+  "summary": "Sets bit 0x4 in the dword at +0x0C of the object pointed to by the argument.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:16:16Z"
+}

@@ -1341,3 +1341,14 @@ void fn_007C6C20(void* self) {
     *flags |= 0x8u;
 }
 } // namespace lift_007C6C20
+
+// [0x007C6C10]
+namespace lift_007C6C10 {
+// @name SetFlag0x4
+// @summary Sets bit 0x4 in the dword at +0x0C of the object pointed to by the argument.
+// @field <unknown> +0x0C uint32_t field_0x0C
+
+void __cdecl sub_007C6C10(void* self) {
+    lift_field<uint32_t>(self, 0x0C) |= 0x4u;
+}
+} // namespace lift_007C6C10
