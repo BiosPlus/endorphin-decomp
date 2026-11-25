@@ -49586,6 +49586,13 @@
     "summary": "Maps an index in [0, 5] to a constant address/pointer, returning 0 otherwise.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E70E0": {
+    "name": "Unknown::SetDoubleOnSubobjectAndForward",
+    "class": "Unknown",
+    "signature": "void fn_006E70E0(void* self, uint32_t lo, uint32_t hi)",
+    "summary": "Stores a 64-bit double (lo/hi stack dwords) into the subobject at self+0x08 (offsets +0xA0/+0xA4) if present, then forwards the same value to the object at self+0x00 via ext_00711B00.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E7120": {
     "name": "getFieldA0OrNegHuge",
     "class": "Unknown",

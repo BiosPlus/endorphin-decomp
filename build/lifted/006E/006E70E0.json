@@ -1,0 +1,28 @@
+{
+  "va": "0x006E70E0",
+  "size": 53,
+  "orig_symbol": "sub_006E70E0",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::SetDoubleOnSubobjectAndForward",
+  "class": "Unknown",
+  "signature": "void fn_006E70E0(void* self, uint32_t lo, uint32_t hi)",
+  "summary": "Stores a 64-bit double (lo/hi stack dwords) into the subobject at self+0x08 (offsets +0xA0/+0xA4) if present, then forwards the same value to the object at self+0x00 via ext_00711B00.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:53:03Z"
+}

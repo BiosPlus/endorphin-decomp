@@ -999,3 +999,30 @@ void fn_006E7150(void* self, double value) {
     }
 }
 } // namespace lift_006E7150
+
+// [0x006E70E0] sub_006E70E0 (53 bytes)
+namespace lift_006E70E0 {
+// Known callee 0x00711B00: Unknown::SetSubobjectDoubleIfChanged (__thiscall-style: this in ecx,
+// 64-bit double passed as two stack dwords: lo then hi). Always returns true.
+extern void ext_00711B00(void* self, uint32_t lo, uint32_t hi);
+
+// @name Unknown::SetDoubleOnSubobjectAndForward
+// @class Unknown
+// @summary Stores a 64-bit double (lo/hi stack dwords) into the subobject at self+0x08 (offsets +0xA0/+0xA4) if present, then forwards the same value to the object at self+0x00 via ext_00711B00.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x08 void* field_0x08
+void fn_006E70E0(void* self, uint32_t lo, uint32_t hi) {
+    // Subobject at self+0x08: store the double at its +0xA0 (lo) / +0xA4 (hi) slots.
+    void* sub = lift_field<void*>(self, 0x08);
+    if (sub != nullptr) {
+        lift_field<uint32_t>(sub, 0xA0) = lo;
+        lift_field<uint32_t>(sub, 0xA4) = hi;
+    }
+
+    // Object at self+0x00: forward the value to SetSubobjectDoubleIfChanged if non-null.
+    void* obj = lift_field<void*>(self, 0x00);
+    if (obj != nullptr) {
+        ext_00711B00(obj, lo, hi);
+    }
+}
+} // namespace lift_006E70E0
