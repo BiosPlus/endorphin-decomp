@@ -61,3 +61,26 @@ void fn_0060D3A0(void* self, void* src, void* arg2, void* arg3) {
                  reinterpret_cast<const char*>(&mem_009723D4));
 }
 } // namespace lift_0060D3A0
+
+// [0x0060DB20] NMData::EffectorGroupData::vfunc_0 (96 bytes)
+namespace lift_0060DB20 {
+// sub_004026E0 (StringArray::ReleaseElements): thiscall, this = sub-object at +0x44, no stack args.
+extern void __thiscall ext_004026E0(void* self);
+// sub_0060BA10 (ConstructStringsThenCallBase): thiscall, this = self, no stack args.
+extern void __thiscall ext_0060BA10(void* self);
+// thunk_MFC80_ord_764: cdecl, one stack arg (the object pointer). Used as the delete path.
+extern void ext_006A5C5C(void* p);
+
+// @name NMData::EffectorGroupData::vfunc_0
+// @class NMData::EffectorGroupData
+// @summary Scalar deleting destructor: releases the array at +0x44, runs the base-construct/teardown helper on self, then frees self when bit 0 of the flags argument is set; returns self.
+// @field NMData::EffectorGroupData +0x44 uint8_t field_0x44
+void* __thiscall fn_0060DB20(void* self, uint32_t flags) {
+    ext_004026E0(static_cast<unsigned char*>(self) + 0x44);
+    ext_0060BA10(self);
+    if (flags & 1) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+} // namespace lift_0060DB20

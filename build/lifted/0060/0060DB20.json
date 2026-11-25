@@ -1,0 +1,22 @@
+{
+  "va": "0x0060DB20",
+  "size": 96,
+  "orig_symbol": "NMData::EffectorGroupData::vfunc_0",
+  "src_path": "src/NMData/EffectorGroupData.cpp",
+  "lifted_path": "lifted/NMData/EffectorGroupData.cpp",
+  "name": "NMData::EffectorGroupData::vfunc_0",
+  "class": "NMData::EffectorGroupData",
+  "signature": "void* __thiscall fn_0060DB20(void* self, uint32_t flags)",
+  "summary": "Scalar deleting destructor: releases the array at +0x44, runs the base-construct/teardown helper on self, then frees self when bit 0 of the flags argument is set; returns self.",
+  "fields": [
+    {
+      "class": "NMData::EffectorGroupData",
+      "offset": "+0x44",
+      "type": "uint8_t",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:39:28Z"
+}
