@@ -2362,3 +2362,29 @@ int fn_006629B0(void* self) {
     return r == 0 ? 1 : 0;
 }
 } // namespace lift_006629B0
+
+// [0x00664B20] sub_00664B20 (37 bytes)
+namespace lift_00664B20 {
+extern int mem_00924FF0;
+extern int mem_00925240;
+
+// @name StdStringContainsCStr
+// @summary Returns true if the C string of the first std::string argument contains the C string of the second (strstr != NULL).
+// Cdecl: a at [esp+4], b at [esp+8]; bool result in al.
+// Both arguments are opaque MSVCP80 std::basic_string objects; no fields are accessed.
+bool __cdecl fn_00664B20(const void* a, const void* b) {
+    // MSVCP80 basic_string::c_str (thiscall, this in ecx, no stack args).
+    using CStrFn = const char*(__thiscall*)(const void* self);
+    // MSVCR80 strstr (cdecl).
+    using StrstrFn = const char*(__cdecl*)(const char* haystack, const char* needle);
+
+    // IAT slots: the pointer stored in each slot is the callable target.
+    auto c_str = *reinterpret_cast<CStrFn*>(&mem_00924FF0);
+    auto strstr_fn = *reinterpret_cast<StrstrFn*>(&mem_00925240);
+
+    // Original order: b.c_str() first (ecx=[esp+8]), then a.c_str() (ecx=[esp+4]).
+    const char* needle = c_str(b);
+    const char* haystack = c_str(a);
+    return strstr_fn(haystack, needle) != nullptr;
+}
+} // namespace lift_00664B20

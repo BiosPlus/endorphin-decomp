@@ -45169,6 +45169,12 @@
     "summary": "Returns 1 if the byte is ASCII whitespace (space, tab, CR, LF), otherwise 0.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x00664B20": {
+    "name": "StdStringContainsCStr",
+    "signature": "bool __cdecl fn_00664B20(const void* a, const void* b)",
+    "summary": "Returns true if the C string of the first std::string argument contains the C string of the second (strstr != NULL).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00664B50": {
     "name": "upperCopyRange",
     "signature": "char* sub_00664B50(const char* first, const char* last, char* dest)",
