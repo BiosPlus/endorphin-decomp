@@ -4907,6 +4907,13 @@
     "summary": "Calls the MFC80 thunk, then if the window at +0x20 is valid and both stack args are positive, invokes vtable slot 0x15C of the handler at +0x64 with those args.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044BF40": {
+    "name": "RenderView::vfunc_28",
+    "class": "RenderView",
+    "signature": "BOOL fn_0044BF40(void* self, RECT* rect)",
+    "summary": "If field_0x6c is set, fills rect via GetWindowRect on the window handle at *(mem_00ACDB40 + 0x20); otherwise returns FALSE.",
+    "lifted_path": "lifted/classes/RenderView.cpp"
+  },
   "0x0044BF61": {
     "name": "sub_0044BF61",
     "signature": "extern \"C\" void fn_0044BF61(void)",

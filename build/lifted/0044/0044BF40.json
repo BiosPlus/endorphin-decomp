@@ -1,0 +1,22 @@
+{
+  "va": "0x0044BF40",
+  "size": 33,
+  "orig_symbol": "RenderView::vfunc_28",
+  "src_path": "src/classes/RenderView.cpp",
+  "lifted_path": "lifted/classes/RenderView.cpp",
+  "name": "RenderView::vfunc_28",
+  "class": "RenderView",
+  "signature": "BOOL fn_0044BF40(void* self, RECT* rect)",
+  "summary": "If field_0x6c is set, fills rect via GetWindowRect on the window handle at *(mem_00ACDB40 + 0x20); otherwise returns FALSE.",
+  "fields": [
+    {
+      "class": "RenderView",
+      "offset": "+0x6C",
+      "type": "uint8_t",
+      "name": "field_0x6c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:47:02Z"
+}
