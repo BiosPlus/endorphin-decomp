@@ -18,7 +18,7 @@ struct _unknown__Fields {
     // +0x0   DWORD                    typeTag  (evidence: 0x007D47D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vftable  (evidence: 0x0063E0C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vptr  (evidence: 0x0042FD70, 0x00610A60) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 vtable  (evidence: 0x006B2400) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vtable  (evidence: 0x006B2400, 0x006B2F70) // CONFLICT: multiple definitions at +0x0
     // +0x4   void* field_0x04 (child object; slot 1 invoked with arg 1)  (evidence: 0x006B0C60) // CONFLICT: multiple definitions at +0x4
     // +0x4   DWORD                    field_0x04  (evidence: 0x00782D00, 0x00784620, 0x00788E50) // CONFLICT: multiple definitions at +0x4
     // +0x4   float                    field_0x04  (evidence: 0x00669E40) // CONFLICT: multiple definitions at +0x4

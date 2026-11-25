@@ -8,9 +8,9 @@
 // Recovered field layout for CObjectBase:
 namespace lifted_layout {
 struct CObjectBase_Fields {
-    // +0x74  void*                    field_0x74  (evidence: 0x006B7D90)
-    // +0x88  void*                    field_0x88  (evidence: 0x006B7D90)
-    // +0x1A4 void*                    field_0x1A4  (evidence: 0x006B7D90, 0x006B8170)
+    // +0x74  void*                    field_0x74  (evidence: 0x006B2F70, 0x006B7D90)
+    // +0x88  void*                    field_0x88  (evidence: 0x006B2F70, 0x006B7D90)
+    // +0x1A4 void*                    field_0x1A4  (evidence: 0x006B2F70, 0x006B7D90, 0x006B8170)
     // +0x1A8 uint8_t                  field_0x1A8  (evidence: 0x006B8170)
 };
 } // namespace lifted_layout

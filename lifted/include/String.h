@@ -8,6 +8,6 @@
 // Recovered field layout for String:
 namespace lifted_layout {
 struct String_Fields {
-    // +0x0   const char*              m_data  (evidence: 0x006BA2F0)
+    // +0x0   const char*              m_data  (evidence: 0x006B2F70, 0x006BA2F0)
 };
 } // namespace lifted_layout

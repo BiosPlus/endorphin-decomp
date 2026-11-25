@@ -58,7 +58,7 @@ struct UnknownClass_Fields {
     // +0x64  uint32_t                 field_0x64  (evidence: 0x0044B390) // CONFLICT: multiple definitions at +0x64
     // +0x64  void*                    field_0x64  (evidence: 0x0044B700) // CONFLICT: multiple definitions at +0x64
     // +0x72  uint16_t                 field_0x72  (evidence: 0x00798840)
-    // +0x7C  HWND                     field_0x7C  (evidence: 0x006B87B0)
+    // +0x7C  HWND                     field_0x7C  (evidence: 0x006B2F70, 0x006B87B0)
     // +0x88  void*                    subobject  (evidence: 0x00454C00)
     // +0x92  uint8_t                  field_0x92  (evidence: 0x005435F0)
     // +0x95  uint8_t                  field_0x95  (evidence: 0x005435F0)

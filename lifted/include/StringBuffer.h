@@ -8,7 +8,7 @@
 // Recovered field layout for StringBuffer:
 namespace lifted_layout {
 struct StringBuffer_Fields {
-    // +0x0   uint32_t                 data  (evidence: 0x004FD800, 0x006BA2C0)
-    // +0x4   uint32_t                 size  (evidence: 0x006BA2C0)
+    // +0x0   uint32_t                 data  (evidence: 0x004FD800, 0x006B2F70, 0x006BA2C0)
+    // +0x4   uint32_t                 size  (evidence: 0x006B2F70, 0x006BA2C0)
 };
 } // namespace lifted_layout
