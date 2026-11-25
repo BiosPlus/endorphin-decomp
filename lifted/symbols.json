@@ -65326,6 +65326,12 @@
     "summary": "Reads a 32-bit integer from either a binary row/offset table (with optional byte-swap) or a string array via atoi.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x0078C8C0": {
+    "name": "sub_0078C8C0",
+    "signature": "uint8_t* __thiscall sub_0078C8C0(void* self, int32_t index, uint8_t swapEndian, uint32_t* outLength)",
+    "summary": "Reads a 32-bit length (optionally byte-swapped) at offset +0x20 of an indexed buffer and returns a pointer to the payload after it.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078CA10": {
     "name": "SwitchIndexByteTable_0078CA10",
     "summary": "Byte lookup table (17 entries) used as switch-case index map; not executable code.",

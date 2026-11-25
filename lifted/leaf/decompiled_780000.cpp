@@ -1582,3 +1582,45 @@ void* __thiscall fn_00780030(void* self_ptr, int32_t count) {
     return self;
 }
 } // namespace lift_00780030
+
+// [0x0078C8C0]
+namespace lift_0078C8C0 {
+uint32_t mem_r32(uintptr_t addr);
+
+// @name sub_0078C8C0
+// @summary Reads a 32-bit length (optionally byte-swapped) at offset +0x20 of an indexed buffer and returns a pointer to the payload after it.
+// @field unknown +0x20 uint32_t field_0x20
+// @field unknown +0x28 int32_t field_0x28
+// @field unknown +0x2c uint8_t** field_0x2c
+uint8_t* __thiscall sub_0078C8C0(void* self, int32_t index, uint8_t swapEndian, uint32_t* outLength) {
+    *outLength = 0;
+
+    uint32_t offset = mem_r32(reinterpret_cast<uintptr_t>(self) + 0x20);
+    if (offset == 0) {
+        return nullptr;
+    }
+
+    int32_t count = static_cast<int32_t>(mem_r32(reinterpret_cast<uintptr_t>(self) + 0x28));
+    if (index >= count) {
+        return nullptr;
+    }
+
+    uintptr_t table = mem_r32(reinterpret_cast<uintptr_t>(self) + 0x2C);
+    uintptr_t entry = mem_r32(table + static_cast<uintptr_t>(index) * 4);
+    uint32_t length = mem_r32(entry + offset);
+
+    if (swapEndian != 0) {
+        length = ((length & 0x000000FFu) << 24) |
+                 ((length & 0x0000FF00u) << 8) |
+                 ((length & 0x00FF0000u) >> 8) |
+                 ((length & 0xFF000000u) >> 24);
+    }
+
+    if (length == 0) {
+        return nullptr;
+    }
+
+    *outLength = length;
+    return reinterpret_cast<uint8_t*>(entry + offset + 4);
+}
+} // namespace lift_0078C8C0
