@@ -59063,6 +59063,12 @@
     "summary": "Appends at most count characters from src to null-terminated dst, always null-terminating, and returns dst.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x00859AF0": {
+    "name": "destroyTreeNode",
+    "signature": "void sub_00859AF0(uint32_t* node)",
+    "summary": "Recursively destroys a node's right/child (+0x20 if flag 0x20000000 set) and left/next (+0x1c) pointers, then frees the node.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x00859D30": {
     "name": "sub_00859D30",
     "signature": "uint32_t sub_00859D30(uint32_t arg0)",
