@@ -911,3 +911,16 @@ int32_t __cdecl sub_0085F750(const uint8_t* a, const uint8_t* b) {
     return ext_0085F7B0(a + 1, b + 1, count) == 0 ? 1 : 0;
 }
 } // namespace lift_0085F750
+
+// [0x0085D560] sub_0085D560 (16 bytes)
+namespace lift_0085D560 {
+// KERNEL32!LocalAlloc import slot (IAT entry at 0x00924214).
+using LocalAllocFn = void* (__stdcall*)(UINT uFlags, size_t uBytes);
+extern LocalAllocFn mem_00924214;
+
+// @name AllocLocalMemory
+// @summary Allocates a fixed (non-movable) local heap block of the given size via LocalAlloc(LMEM_FIXED, size).
+void* fn_0085D560(uint32_t size) {
+    return mem_00924214(0 /* LMEM_FIXED */, static_cast<size_t>(size));
+}
+} // namespace lift_0085D560

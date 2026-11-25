@@ -69071,6 +69071,12 @@
     "summary": "No-op stub (add eax, 0).",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085D560": {
+    "name": "AllocLocalMemory",
+    "signature": "void* fn_0085D560(uint32_t size)",
+    "summary": "Allocates a fixed (non-movable) local heap block of the given size via LocalAlloc(LMEM_FIXED, size).",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085D820": {
     "name": "applyTableKeystream",
     "signature": "void fn_0085D820(uint8_t* buf, int32_t count)",

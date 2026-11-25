@@ -1,0 +1,13 @@
+{
+  "va": "0x0085D560",
+  "size": 16,
+  "orig_symbol": "sub_0085D560",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "AllocLocalMemory",
+  "signature": "void* fn_0085D560(uint32_t size)",
+  "summary": "Allocates a fixed (non-movable) local heap block of the given size via LocalAlloc(LMEM_FIXED, size).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:15:39Z"
+}
