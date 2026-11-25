@@ -506,3 +506,30 @@ void sub_007F4C50(uintptr_t dst_addr, uintptr_t src_base, uint32_t index) {
     }
 }
 } // namespace lift_007F4C50
+
+// [0x007F9DB0]
+namespace lift_007F9DB0 {
+// @name negateFloatArray
+// @summary Negates an array of single-precision floats from src into dst.
+void __cdecl sub_007F9DB0(int32_t count, float* dst, const float* src) {
+    for (int32_t i = 0; i < count; ++i) {
+        dst[i] = -src[i];
+    }
+}
+} // namespace lift_007F9DB0
+
+// [0x007F66D0]
+namespace lift_007F66D0 {
+extern const double mem_009453D8;
+
+// @name vec3DistanceSqLessThanScaledEps
+// @summary Checks if squared distance between two 3D vectors is less than threshold^2 * 1e-4.
+uint8_t __cdecl sub_007F66D0(const float* a, const float* b, float threshold) {
+    float dx = a[0] - b[0];
+    float dy = a[1] - b[1];
+    float dz = a[2] - b[2];
+    float distSq = (dx * dx + dy * dy) + dz * dz;
+    float epsSq = static_cast<float>(threshold * (threshold * mem_009453D8));
+    return (epsSq > distSq) ? 1 : 0;
+}
+} // namespace lift_007F66D0
