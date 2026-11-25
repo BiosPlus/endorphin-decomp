@@ -23,3 +23,47 @@ void fn_00645570(void* self, const uint32_t* src) {
     }
 }
 } // namespace lift_00645570
+
+// [0x00645A80] sub_00645A80 (78 bytes)
+namespace lift_00645A80 {
+// No ext_ or mem_ symbols are referenced by this function.
+
+// @name NullRelationship::vfunc_48
+// @class NullRelationship
+// @summary Clears this->field_0x68, loads it from obj->+0x22C->+0x158->+0xAC when that chain is non-null, then calls embedded-base vslot 5 with arg2 and passes the result to this vslot 0x2B; returns that call's result.
+// @field NullRelationship +0x00 uint32_t vtable
+// @field NullRelationship +0x68 uint32_t field_0x68
+namespace lift_00645A80 {
+
+uint32_t fn_00645A80(void* self, void* obj, uint32_t arg2) {
+    // Thiscall signatures: (void* this, uint32_t a) -> uint32_t.
+    typedef uint32_t(__thiscall* VFn)(void* self, uint32_t a);
+
+    // this->field_0x68 = 0;
+    lift_field<uint32_t>(self, 0x68) = 0u;
+
+    // if (obj->+0x22C && ->+0x158) this->field_0x68 = ->+0xAC;
+    // Offsets +0x22C, +0x158 and +0xAC belong to objects that are not
+    // part of NullRelationship, so they are accessed by offset only.
+    void* p = lift_field<void*>(obj, 0x22C);
+    if (p != nullptr) {
+        void* q = lift_field<void*>(p, 0x158);
+        if (q != nullptr) {
+            lift_field<uint32_t>(self, 0x68) = lift_field<uint32_t>(q, 0xAC);
+        }
+    }
+
+    // Embedded base at obj+0x04: call its vtable slot 5 (+0x14) as thiscall(arg2).
+    uint8_t* base = static_cast<uint8_t*>(obj) + 0x04;
+    void** baseVt = *reinterpret_cast<void***>(base);
+    VFn first = reinterpret_cast<VFn>(baseVt[5]);
+    uint32_t result = first(base, arg2);
+
+    // Then this's vtable slot 0x2B (+0xAC) as thiscall(result); return its value.
+    void** selfVt = *reinterpret_cast<void***>(self);
+    VFn second = reinterpret_cast<VFn>(selfVt[0x2B]);
+    return second(self, result);
+}
+
+} // namespace lift_00645A80
+} // namespace lift_00645A80

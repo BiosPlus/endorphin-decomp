@@ -35284,6 +35284,13 @@
     "summary": "Returns (end - begin) / 6 for a range stored at +4 (begin) and +8 (end); 0 if begin is null.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00645A80": {
+    "name": "NullRelationship::vfunc_48",
+    "class": "NullRelationship",
+    "signature": "uint32_t fn_00645A80(void* self, void* obj, uint32_t arg2)",
+    "summary": "Clears this-\u003efield_0x68, loads it from obj-\u003e+0x22C-\u003e+0x158-\u003e+0xAC when that chain is non-null, then calls embedded-base vslot 5 with arg2 and passes the result to this vslot 0x2B; returns that call's result.",
+    "lifted_path": "lifted/classes/NullRelationship.cpp"
+  },
   "0x00645D30": {
     "name": "MagnetJoint::vfunc_3",
     "class": "MagnetJoint",
