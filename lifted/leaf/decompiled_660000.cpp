@@ -2220,3 +2220,25 @@ extern void* __thiscall fn_00665990(void* self, void* ret_iter, void* cont, void
     return out_iter;
 }
 } // namespace lift_00665990
+
+// [0x00662AB0]
+namespace lift_00662AB0 {
+// @name makeTempFileName
+// @summary Gets the temp directory, creates a unique temp file name using the global prefix, and constructs the resulting path string into the caller-supplied std::string.
+
+DWORD __stdcall ext_GetTempPathA(DWORD nBufferLength, LPSTR lpBuffer);
+UINT __stdcall ext_GetTempFileNameA(LPCSTR lpPathName, LPCSTR lpPrefixString, UINT uUnique, LPSTR lpTempFileName);
+
+extern std::string mem_00B5925C;
+
+std::string* __cdecl fn_00662AB0(std::string* out) {
+    char tempPath[0x104];
+    char tempName[0x104];
+
+    ext_GetTempPathA(0x104, tempPath);
+    ext_GetTempFileNameA(tempPath, mem_00B5925C.c_str(), 0, tempName);
+
+    new (out) std::string(tempName);
+    return out;
+}
+} // namespace lift_00662AB0

@@ -42431,6 +42431,12 @@
     "summary": "Writes the Windows temp directory path into the caller's std::string, or an empty string if GetTempPathA fails. Returns the string pointer.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00662AB0": {
+    "name": "makeTempFileName",
+    "signature": "std::string* __cdecl fn_00662AB0(std::string* out)",
+    "summary": "Gets the temp directory, creates a unique temp file name using the global prefix, and constructs the resulting path string into the caller-supplied std::string.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00662B20": {
     "name": "appendTrailingBackslash",
     "signature": "extern size_t ext_string_size(void* str);                  // size() const extern char*  ext_string_index(void* str, size_t pos);     // operator[](size_t) -\u003e char\u0026 extern void   ext_string_append_char(void* str, char ch);  // operator+=(char) -\u003e basic_string\u0026 extern void   ext_string_copy_construct(void* dst, const void* src); // basic_string(const basic_string\u0026) void* fn_00662B20(void* ret, void* path)",

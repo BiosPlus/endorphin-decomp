@@ -1,0 +1,13 @@
+{
+  "va": "0x00662AB0",
+  "size": 97,
+  "orig_symbol": "sub_00662AB0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "makeTempFileName",
+  "signature": "std::string* __cdecl fn_00662AB0(std::string* out)",
+  "summary": "Gets the temp directory, creates a unique temp file name using the global prefix, and constructs the resulting path string into the caller-supplied std::string.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:38:21Z"
+}
