@@ -21,6 +21,7 @@ float fn_005478B0(uint32_t ecx) {
 } // namespace lift_005478B0
 #include <cstdint>
 #include <cstdlib>
+#include <cmath>
 
 // [0x005478C0] sub_005478C0 (14 bytes)
 namespace lift_005478C0 {
@@ -1144,3 +1145,69 @@ void* fn_00545940(void* self, uint32_t a1, uint32_t a2) {
     return self;
 }
 } // namespace lift_00545940
+
+// [0x00540D60]
+namespace lift_00540D60 {
+// @name Vec3::normalize
+// @class Vec3
+// @summary Normalizes a 3D vector in place if its length is non-zero and returns this.
+// @field Vec3 +0x00 float x
+// @field Vec3 +0x04 float y
+// @field Vec3 +0x08 float z
+
+
+struct Vec3 {
+    float x;
+    float y;
+    float z;
+};
+
+Vec3* __fastcall fn_00540D60(Vec3* self) {
+    float len = std::sqrt(self->x * self->x + self->y * self->y + self->z * self->z);
+    if (len != 0.0f) {
+        self->x /= len;
+        self->y /= len;
+        self->z /= len;
+    }
+    return self;
+}
+} // namespace lift_00540D60
+
+// [0x0054C570]
+namespace lift_0054C570 {
+// @name Unknown::ctor_0054C570
+// @class Unknown
+// @summary Constructs the object, initializes base and embedded subobject, and invokes subobject virtual init.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x0C uint8_t field_0x0C
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 uint32_t subobj_vtable
+// @field Unknown +0x28 uint32_t field_0x28
+
+
+extern void ext_00532B60(void* self);
+
+void* fn_0054C570(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    ext_00532B60(obj);
+
+    *reinterpret_cast<uint32_t*>(obj + 0x00) = 0x00956D8Cu;
+    *reinterpret_cast<uint32_t*>(obj + 0x18) = 0;
+    *reinterpret_cast<uint32_t*>(obj + 0x1C) = 0;
+    *reinterpret_cast<uint32_t*>(obj + 0x20) = 0;
+
+    uint8_t* subobj = obj + 0x24;
+    *reinterpret_cast<uint32_t*>(subobj + 0x00) = 0x0093A444u;
+    *reinterpret_cast<uint32_t*>(subobj + 0x04) = 0;
+    *reinterpret_cast<uint8_t*>(obj + 0x0C) = 1;
+
+    uint32_t* vtable = *reinterpret_cast<uint32_t**>(subobj);
+    using SubobjInitFn = void (*)(void*);
+    SubobjInitFn init_fn = reinterpret_cast<SubobjInitFn>(static_cast<uintptr_t>(vtable[0]));
+    init_fn(subobj);
+
+    return self;
+}
+} // namespace lift_0054C570
