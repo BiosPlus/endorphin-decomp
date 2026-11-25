@@ -9128,6 +9128,13 @@
     "summary": "Invoke the normalize2 helper on self with flag 0 and return self. The second argument is unused.",
     "lifted_path": "lifted/templates/ROMethod0Type.cpp"
   },
+  "0x00486F20": {
+    "name": "std::unique\u003cstd::string\u003e",
+    "class": "std::unique\u003cstd",
+    "signature": "std::string* fn_00486F20(std::string* first, std::string* last)",
+    "summary": "Removes consecutive duplicate std::string elements in [first, last) (std::unique semantics); returns new logical end.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00486F90": {
     "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",

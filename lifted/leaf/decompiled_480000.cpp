@@ -1893,3 +1893,37 @@ bool __cdecl sub_00481B50(uint32_t* first1, uint32_t* last1, uint32_t* cont2, ui
     return true;
 }
 } // namespace lift_00481B50
+
+// [0x00486F20] sub_00486F20 (98 bytes)
+namespace lift_00486F20 {
+// @name std::unique<std::string>
+// @summary Removes consecutive duplicate std::string elements in [first, last) (std::unique semantics); returns new logical end.
+// @field std::string +0x00 <element> (no fixed field offsets accessed; whole 28-byte elements are compared and assigned)
+std::string* fn_00486F20(std::string* first, std::string* last) {
+    if (first == last) return last;
+
+    std::string* dst = first;
+    std::string* src = first + 1;
+    if (src == last) return last;
+
+    // Find the first adjacent pair that compares equal.
+    while (!(*dst == *src)) {
+        dst = src;
+        ++src;
+        if (src == last) return last;
+    }
+
+    // Compact the remainder, keeping only elements that differ from their predecessor kept.
+    ++src;
+    if (src == last) return dst + 1;
+    do {
+        if (!(*dst == *src)) {
+            ++dst;
+            *dst = *src;
+        }
+        ++src;
+    } while (src != last);
+
+    return dst + 1;
+}
+} // namespace lift_00486F20
