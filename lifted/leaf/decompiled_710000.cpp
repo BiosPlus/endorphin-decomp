@@ -1780,3 +1780,34 @@ extern uint8_t __thiscall fn_00711AA0(void* self, double val1, double val2) {
     return 1;
 }
 } // namespace lift_00711AA0
+
+// [0x00712FC0]
+namespace lift_00712FC0 {
+// @name lookupTriggerOrGlobal
+// @summary Returns mem_00AAC0A0 if name is "Trigger", otherwise looks up name in mem_00B5FA68 via ext_00782E70.
+
+extern const char mem_00AAC13C[];
+extern uint32_t mem_00AAC0A0;
+extern void* mem_00B5FA68;
+
+extern uint32_t __thiscall ext_00782E70(void* self, uint32_t key, int32_t* outIndex);
+
+uint32_t fn_00712FC0(const char* name) {
+    if (std::strcmp(name, mem_00AAC13C) == 0) {
+        return mem_00AAC0A0;
+    }
+    return ext_00782E70(mem_00B5FA68, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(name)), nullptr);
+}
+} // namespace lift_00712FC0
+
+// [0x00714AE0]
+namespace lift_00714AE0 {
+// @name getField0xD8
+// @summary Return the 32-bit field at offset 0xD8 of the object in ecx.
+// @field Object +0xd8 uint32_t field_0xd8
+
+
+uint32_t __fastcall sub_00714AE0(uintptr_t ecx) {
+    return *reinterpret_cast<const uint32_t*>(ecx + 0xd8);
+}
+} // namespace lift_00714AE0

@@ -1,0 +1,13 @@
+{
+  "va": "0x00712FC0",
+  "size": 96,
+  "orig_symbol": "sub_00712FC0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "lookupTriggerOrGlobal",
+  "signature": "uint32_t fn_00712FC0(const char* name)",
+  "summary": "Returns mem_00AAC0A0 if name is \"Trigger\", otherwise looks up name in mem_00B5FA68 via ext_00782E70.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:44:58Z"
+}
