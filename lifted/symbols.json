@@ -2331,6 +2331,12 @@
     "summary": "Pure jump thunk forwarding to sub_00425D80.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00425DA0": {
+    "name": "resetDwordAndAssignGlobalString",
+    "signature": "void* fn_00425DA0(void* self)",
+    "summary": "Zeroes the dword at this+0, assigns global string mem_00ACD714 from mem_00AD7BD8, returns this.",
+    "lifted_path": "lifted/leaf/tiny_420000.cpp"
+  },
   "0x00426960": {
     "name": "ConstructEmptyStdString",
     "signature": "void* fn_00426960(void* self)",

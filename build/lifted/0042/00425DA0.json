@@ -1,0 +1,21 @@
+{
+  "va": "0x00425DA0",
+  "size": 29,
+  "orig_symbol": "sub_00425DA0",
+  "src_path": "src/leaf/tiny_420000.cpp",
+  "lifted_path": "lifted/leaf/tiny_420000.cpp",
+  "name": "resetDwordAndAssignGlobalString",
+  "signature": "void* fn_00425DA0(void* self)",
+  "summary": "Zeroes the dword at this+0, assigns global string mem_00ACD714 from mem_00AD7BD8, returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:39:03Z"
+}

@@ -269,3 +269,26 @@ bool __stdcall fn_004271F0(const void* str) {
     return string_ne(str, rhs);
 }
 } // namespace lift_004271F0
+
+// [0x00425DA0]
+namespace lift_00425DA0 {
+extern int mem_00AD7BD8;
+extern int mem_00ACD714;
+extern int mem_00924FDC;
+
+// MSVC std::basic_string<char>::operator=(const basic_string&), imported via IAT slot mem_00924FDC.
+typedef void* (__thiscall* StringAssignFn)(void* self, const void* rhs);
+
+// @name resetDwordAndAssignGlobalString
+// @summary Zeroes the dword at this+0, assigns global string mem_00ACD714 from mem_00AD7BD8, returns this.
+// @field Unknown +0x00 uint32_t field_0x00
+void* fn_00425DA0(void* self) {
+    lift_field<uint32_t>(self, 0) = 0;
+
+    // The original does `call dword ptr [0x924fdc]`, i.e. the function pointer is stored in that slot.
+    auto assign = *reinterpret_cast<StringAssignFn*>(&mem_00924FDC);
+    assign(&mem_00ACD714, &mem_00AD7BD8);
+
+    return self;
+}
+} // namespace lift_00425DA0
