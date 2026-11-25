@@ -1,0 +1,13 @@
+{
+  "va": "0x0048E3D0",
+  "size": 77,
+  "orig_symbol": "sub_0048E3D0",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "CopyRecords12Bytes_0048E3D0",
+  "signature": "void* fn_0048E3D0(const void* first, const void* last, void* dest)",
+  "summary": "Copies 12-byte records from [first, last) to dest in forward order and returns dest + count * 12.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:41:51Z"
+}

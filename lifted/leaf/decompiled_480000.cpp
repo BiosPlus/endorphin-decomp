@@ -1069,3 +1069,23 @@ uint32_t fn_0048CC70(uint32_t begin, uint32_t end, uint32_t value) {
 }
 } // namespace lift_0054F290
 } // namespace lift_0048CC70
+
+// [0x0048E3D0] sub_0048E3D0 (77 bytes)
+namespace lift_0048E3D0 {
+// @name CopyRecords12Bytes_0048E3D0
+// @summary Copies 12-byte records from [first, last) to dest in forward order and returns dest + count * 12.
+void* fn_0048E3D0(const void* first, const void* last, void* dest) {
+    const auto* src = static_cast<const unsigned char*>(first);
+    const auto* end = static_cast<const unsigned char*>(last);
+    auto* out = static_cast<unsigned char*>(dest);
+
+    const std::ptrdiff_t byteCount = end - src;
+    const std::ptrdiff_t count = byteCount / 12;
+    void* result = out + count * 12;
+
+    for (const unsigned char* p = src; p != end; p += 12) {
+        std::memcpy(out + (p - src), p, 12);
+    }
+    return result;
+}
+} // namespace lift_0048E3D0

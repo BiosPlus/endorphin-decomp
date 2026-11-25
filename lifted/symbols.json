@@ -8875,6 +8875,12 @@
     "summary": "Initializes base via ext_006657F0(self, 0), sets vtable to 0x0093E5E8, and stores arg2 at +0x10, 0 at +0x14, and arg1 at +0x18; returns self.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x0048E3D0": {
+    "name": "CopyRecords12Bytes_0048E3D0",
+    "signature": "void* fn_0048E3D0(const void* first, const void* last, void* dest)",
+    "summary": "Copies 12-byte records from [first, last) to dest in forward order and returns dest + count * 12.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048E790": {
     "name": "Commands::DestroyTriggeredEventCommand::vfunc_0",
     "class": "Commands::DestroyTriggeredEventCommand",
