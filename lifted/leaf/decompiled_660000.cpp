@@ -634,3 +634,48 @@ bool fn_006630C0(const void* str) {
     return true;
 }
 } // namespace lift_006630C0
+
+// [0x00665B80]
+namespace lift_00665B80 {
+// @name Unknown::ReleaseElements_00665B80
+// @class Unknown
+// @summary Walks the pointer vector at this+0x2C..this+0x30 and invokes virtual slot 0 on each element.
+// @field Unknown +0x2C void** elements_begin
+// @field Unknown +0x30 void** elements_end
+
+extern void (__cdecl* mem_00925134)(void);
+
+using VirtualSlot0 = void(__thiscall*)(void* self);
+
+void __thiscall fn_00665B80(void* self) {
+    void** cursor = lift_field<void**>(self, 0x2C);
+
+    // Range sanity: begin must not be past end (invalid_parameter on violation).
+    if (cursor > lift_field<void**>(self, 0x30)) {
+        mem_00925134();
+    }
+
+    for (;;) {
+        void** end = lift_field<void**>(self, 0x30);
+        if (cursor == end) {
+            break;
+        }
+
+        // Cursor must be strictly before end before dereferencing.
+        if (!(cursor < lift_field<void**>(self, 0x30))) {
+            mem_00925134();
+        }
+
+        void* obj = *cursor;
+        void** vtable = *reinterpret_cast<void***>(obj);
+        auto fn = reinterpret_cast<VirtualSlot0>(vtable[0]);
+        fn(obj);
+
+        // Re-validate after the virtual call, then advance by one pointer.
+        if (!(cursor < lift_field<void**>(self, 0x30))) {
+            mem_00925134();
+        }
+        ++cursor;
+    }
+}
+} // namespace lift_00665B80

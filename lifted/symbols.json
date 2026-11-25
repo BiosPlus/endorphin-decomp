@@ -36995,6 +36995,13 @@
     "summary": "Walks the command list at +0x30 and invokes virtual slot 1 on each element's payload.",
     "lifted_path": "lifted/classes/MacroCommand.cpp"
   },
+  "0x00665B80": {
+    "name": "Unknown::ReleaseElements_00665B80",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00665B80(void* self)",
+    "summary": "Walks the pointer vector at this+0x2C..this+0x30 and invokes virtual slot 0 on each element.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00666340": {
     "name": "MacroCommand::vfunc_0",
     "class": "MacroCommand",

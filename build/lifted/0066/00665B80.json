@@ -1,0 +1,28 @@
+{
+  "va": "0x00665B80",
+  "size": 75,
+  "orig_symbol": "sub_00665B80",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "Unknown::ReleaseElements_00665B80",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00665B80(void* self)",
+  "summary": "Walks the pointer vector at this+0x2C..this+0x30 and invokes virtual slot 0 on each element.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "void**",
+      "name": "elements_begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "void**",
+      "name": "elements_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:37:39Z"
+}
