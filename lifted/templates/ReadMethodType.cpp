@@ -59486,3 +59486,49 @@ double fn_00488B80(void* self) {
     return rounded;
 }
 } // namespace lift_00488B80
+
+// [0x00674950] ExprParser::ReadMethodType<ExpressionEntry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ExpressionEntry::getExpression(void) const, 0>::vfunc_2 (110 bytes)
+namespace lift_00674950 {
+// Callee 0x006A6DE0: converts the rounded double to int32 (value passed on the FPU stack in the original).
+extern int32_t ext_006A6DE0(double rounded);
+// Callee 0x0046C3C0: DerivedException::DerivedException (constructs an exception object in caller storage).
+extern void ext_0046C3C0(void* exceptionObj);
+// Callee 0x006A6DD2: IAT jump thunk forwarding to MSVCR80!_CxxThrowException(obj, throwInfo).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// IAT slot 0x00924FF0: MSVCP80 std::string::c_str.
+extern const char* (*mem_00924FF0)(const void* str);
+// IAT slot 0x009251F0: MSVCR80 atof.
+extern double (*mem_009251F0)(const char* s);
+// 0x00993828 holds the constant 0.5 (double), used as the rounding bias.
+extern const double mem_00993828;
+
+// RTTI/ThrowInfo address for the exception raised on a null entry pointer (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<ExpressionEntry>::vfunc_2 (ExpressionEntry::getExpression)
+// @class ExprParser::ReadMethodType<ExpressionEntry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ExpressionEntry::getExpression(void) const, 0>
+// @summary Parses the expression string of the ExpressionEntry held by the ValuePtrType argument with atof, rounds half away from zero, and returns ext_006A6DE0(rounded); throws if the entry pointer is null.
+// @field ExprParser::ValuePtrType +0x00 ExpressionEntry* target
+// @field ExpressionEntry +0x1c std::string field_0x1c
+int32_t __stdcall fn_00674950(void* holder) {
+    void* entry = *static_cast<void**>(holder);
+    if (entry == nullptr) {
+        // Null entry: build the exception object and throw it.
+        alignas(8) uint8_t exceptionObj[0x28];
+        ext_0046C3C0(exceptionObj);
+        ext_006A6DD2(exceptionObj, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0;
+    }
+
+    const void* exprStr = static_cast<const uint8_t*>(entry) + 0x1c;
+    const char* text = mem_00924FF0(exprStr);
+    const float value = static_cast<float>(mem_009251F0(text));
+
+    // Round half away from zero: (x < 0 or NaN) ? x - 0.5 : x + 0.5.
+    const double biased = (!(value >= 0.0f))
+        ? static_cast<double>(value) - mem_00993828
+        : static_cast<double>(value) + mem_00993828;
+    return ext_006A6DE0(biased);
+}
+} // namespace lift_00674950

@@ -46274,6 +46274,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0062E430 (ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, getVertAxis, 1\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00674950": {
+    "name": "ExprParser::ReadMethodType\u003cExpressionEntry\u003e::vfunc_2 (ExpressionEntry::getExpression)",
+    "class": "ExprParser::ReadMethodType\u003cExpressionEntry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ExpressionEntry::getExpression(void) const, 0\u003e",
+    "signature": "int32_t __stdcall fn_00674950(void* holder)",
+    "summary": "Parses the expression string of the ExpressionEntry held by the ValuePtrType argument with atof, rounds half away from zero, and returns ext_006A6DE0(rounded); throws if the entry pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x006749C0": {
     "name": "ExprParser::ReadMethodType\u003cExpressionEntry, std::string const \u0026, \u0026ExpressionEntry::getExpression, 0\u003e::vfunc_4",
     "class": "ExprParser::ReadMethodType\u003cExpressionEntry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ExpressionEntry::getExpression(void) const, 0\u003e",

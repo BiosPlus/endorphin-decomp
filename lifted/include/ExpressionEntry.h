@@ -9,6 +9,6 @@
 namespace lifted_layout {
 struct ExpressionEntry_Fields {
     // +0x1C  std::string              expression  (evidence: 0x0046CE90, 0x0046E570, 0x00488E30, 0x004A2930, 0x004B21D0, 0x004B8920, 0x00505510, 0x0059F920, 0x005FCC10, 0x00639730, 0x0066F700, 0x006749C0, 0x00674C90, 0x00674CE0, 0x00695740) // CONFLICT: multiple definitions at +0x1C
-    // +0x1C  std::string              field_0x1c  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  std::string              field_0x1c  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00674950, 0x00695740) // CONFLICT: multiple definitions at +0x1C
 };
 } // namespace lifted_layout
