@@ -527,3 +527,57 @@ uint32_t __thiscall sub_005DF6B0(uint32_t self, uint32_t out_iter, uint32_t key_
     return out_iter;
 }
 } // namespace lift_005DF6B0
+
+// [0x005DF940] sub_005DF940 (110 bytes)
+namespace lift_005DF940 {
+// Known callee 0x005DF6B0: RbTree::find (Finds a node matching the given 32-bit signed key in an MSVC-style red-black tree, returning an iterator pair (tree, node) or (tree, head) if not found.)
+extern uint32_t ext_005DF6B0(void* self, uint32_t* out_iter, uint32_t key_ptr);
+
+namespace {
+
+// Stand-in for the CRT invalid-parameter path (original: indirect call through the CRT slot).
+[[noreturn]] void invalid_parameter() {
+    std::abort();
+}
+
+// Converts a 32-bit guest address into a host pointer.
+inline void* addr_of(uint32_t a) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(a));
+}
+
+} // namespace
+
+// @name RbTree::lookupValue
+// @class RbTree
+// @summary Looks up a 32-bit key in an MSVC-style red-black tree and returns the value at node+0x10, or 0 if the tree is empty or the key is absent.
+// @field RbTree +0x04 uint32_t field_0x04
+// @field RbTree +0x08 uint32_t field_0x08
+// @field RbNode +0x10 uint32_t field_0x10
+uint32_t fn_005DF940(void* self, uint32_t key_ptr) {
+    // Empty tree: nothing to find.
+    if (lift_field<uint32_t>(self, 0x08) == 0) {
+        return 0;
+    }
+
+    // find() writes the iterator pair (tree, node) into iter.
+    uint32_t iter[2] = {0, 0};
+    ext_005DF6B0(self, iter, key_ptr);
+
+    const uint32_t self_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    const uint32_t tree = iter[0];
+    const uint32_t node = iter[1];
+
+    // The iterator must belong to this tree.
+    if (tree != self_addr) {
+        invalid_parameter();
+    }
+
+    // Not found: node is the head sentinel.
+    const uint32_t head = lift_field<uint32_t>(self, 0x04);
+    if (node == head) {
+        return 0;
+    }
+
+    return lift_field<uint32_t>(addr_of(node), 0x10);
+}
+} // namespace lift_005DF940

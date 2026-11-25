@@ -34262,6 +34262,13 @@
     "summary": "Walks a cursor from slot1 toward end (arg4), advancing it each step and invoking ext_006A5C5C on the element at field +0x10 of the current node; reports invalid parameters via the CRT handler.",
     "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
   },
+  "0x005DF940": {
+    "name": "RbTree::lookupValue",
+    "class": "RbTree",
+    "signature": "[[noreturn]] void invalid_parameter()",
+    "summary": "Looks up a 32-bit key in an MSVC-style red-black tree and returns the value at node+0x10, or 0 if the tree is empty or the key is absent.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005E0060": {
     "name": "Unknown::InitEmptyList",
     "class": "Unknown",
