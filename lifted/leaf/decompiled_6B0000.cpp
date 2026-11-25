@@ -1673,3 +1673,23 @@ uint8_t __thiscall sub_006B40A0(void* self, void* out_system_time) {
     return 1;
 }
 } // namespace lift_006B40A0
+
+// [0x006B2BC0]
+namespace lift_006B2BC0 {
+// @name DestructSub6B2BC0
+// @summary Destructor that resets vtable, destroys member at +0x50 via MFC80!ord_1934, and delegates to DestructSub6AD3C0.
+// @field Sub6B2BC0 +0x00 uint32_t vtable
+// @field Sub6B2BC0 +0x50 uint32_t member_0x50_vtable
+
+
+extern void ext_006A5FF2(void);
+void ext_006AD3C0(void* self);
+
+void fn_006B2BC0(void* self) {
+    *static_cast<uint32_t*>(self) = 0x00991878;
+    uint8_t* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x50) = 0x0092a23c;
+    ext_006A5FF2();
+    ext_006AD3C0(self);
+}
+} // namespace lift_006B2BC0

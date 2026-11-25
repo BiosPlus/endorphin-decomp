@@ -1,0 +1,27 @@
+{
+  "va": "0x006B2BC0",
+  "size": 88,
+  "orig_symbol": "sub_006B2BC0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "DestructSub6B2BC0",
+  "signature": "void fn_006B2BC0(void* self)",
+  "summary": "Destructor that resets vtable, destroys member at +0x50 via MFC80!ord_1934, and delegates to DestructSub6AD3C0.",
+  "fields": [
+    {
+      "class": "Sub6B2BC0",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Sub6B2BC0",
+      "offset": "+0x50",
+      "type": "uint32_t",
+      "name": "member_0x50_vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:44:04Z"
+}

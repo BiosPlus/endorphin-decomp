@@ -58296,6 +58296,12 @@
     "summary": "Returns address of global mem_00991858.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B2BC0": {
+    "name": "DestructSub6B2BC0",
+    "signature": "void fn_006B2BC0(void* self)",
+    "summary": "Destructor that resets vtable, destroys member at +0x50 via MFC80!ord_1934, and delegates to DestructSub6AD3C0.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B2EC0": {
     "name": "GWCHotLinkItem::vfunc_1",
     "class": "GWCHotLinkItem",
