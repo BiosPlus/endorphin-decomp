@@ -69972,6 +69972,12 @@
     "summary": "Right-shifts a 20-element 32-bit limb array (16-bit limbs) by 1 bit.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086FF80": {
+    "name": "ReadBigEndianPairToDwords",
+    "signature": "uint32_t* __cdecl ReadBigEndianPairToDwords(uint32_t* dst, const uint8_t* src)",
+    "summary": "Reads 8 bytes from src and stores them as two big-endian uint32 values at dst[0] and dst[1]; returns dst + 1.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086FFF0": {
     "name": "StoreBigEndianQword",
     "signature": "void fn_0086FFF0(uint8_t* dst, const uint8_t* src)",

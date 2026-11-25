@@ -1924,3 +1924,18 @@ double __thiscall fn_0071C1B0(void* self) {
     return angle;
 }
 } // namespace lift_0071C1B0
+
+// [0x0071C750]
+namespace lift_0071C750 {
+uint32_t& mem_u32(uint32_t addr);
+
+// @name sub_0071C750
+// @summary Copies 8 32-bit words (32 bytes) from a source struct into the object's sub-struct at +0xc -> +0x738.
+// @field Class +0x0c uint32_t field_0x0c
+void __thiscall sub_0071C750(uint32_t this_ptr, uint32_t src) {
+    uint32_t dst = mem_u32(this_ptr + 0xc);
+    for (uint32_t i = 0; i < 8; ++i) {
+        mem_u32(dst + 0x738 + i * 4) = mem_u32(src + i * 4);
+    }
+}
+} // namespace lift_0071C750

@@ -1,0 +1,21 @@
+{
+  "va": "0x0071C750",
+  "size": 96,
+  "orig_symbol": "sub_0071C750",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "sub_0071C750",
+  "signature": "void __thiscall sub_0071C750(uint32_t this_ptr, uint32_t src)",
+  "summary": "Copies 8 32-bit words (32 bytes) from a source struct into the object's sub-struct at +0xc -\u003e +0x738.",
+  "fields": [
+    {
+      "class": "Class",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:46:56Z"
+}

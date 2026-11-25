@@ -858,3 +858,24 @@ uint32_t fn_0086A1E0(uint32_t* dst, const uint32_t* src, uint32_t shift, uint32_
     return carry;
 }
 } // namespace lift_0086A1E0
+
+// [0x0086FF80]
+namespace lift_0086FF80 {
+// @name ReadBigEndianPairToDwords
+// @summary Reads 8 bytes from src and stores them as two big-endian uint32 values at dst[0] and dst[1]; returns dst + 1.
+uint32_t* __cdecl ReadBigEndianPairToDwords(uint32_t* dst, const uint8_t* src) {
+    uint32_t hi = (static_cast<uint32_t>(src[0]) << 24) |
+                  (static_cast<uint32_t>(src[1]) << 16) |
+                  (static_cast<uint32_t>(src[2]) << 8) |
+                  static_cast<uint32_t>(src[3]);
+    dst[0] = hi;
+
+    uint32_t lo = (static_cast<uint32_t>(src[4]) << 24) |
+                  (static_cast<uint32_t>(src[5]) << 16) |
+                  (static_cast<uint32_t>(src[6]) << 8) |
+                  static_cast<uint32_t>(src[7]);
+    dst[1] = lo;
+
+    return dst + 1;
+}
+} // namespace lift_0086FF80

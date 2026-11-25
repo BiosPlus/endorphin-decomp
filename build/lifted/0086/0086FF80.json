@@ -1,0 +1,13 @@
+{
+  "va": "0x0086FF80",
+  "size": 102,
+  "orig_symbol": "sub_0086FF80",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "ReadBigEndianPairToDwords",
+  "signature": "uint32_t* __cdecl ReadBigEndianPairToDwords(uint32_t* dst, const uint8_t* src)",
+  "summary": "Reads 8 bytes from src and stores them as two big-endian uint32 values at dst[0] and dst[1]; returns dst + 1.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:47:02Z"
+}
