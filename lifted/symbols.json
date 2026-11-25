@@ -32375,6 +32375,13 @@
     "summary": "Advances a binary-tree iterator to its in-order successor (red-black tree style, nil sentinel at node+0x51).",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005E0E70": {
+    "name": "NMData::FixedPathJointData::vfunc_0_off_154",
+    "class": "NMData::FixedPathJointData",
+    "signature": "void fn_005E0E70(void* self, uintptr_t arg)",
+    "summary": "Thunk-style tick forwarder: if +0x140 is zero and +0xE0 is set, calls vslot 0x14 on the object at self-0x150 with arg, then vslot 0xAC on the +0xE0 object with that result.",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005E1060": {
     "name": "NMData::FixedPathJointData::vfunc_0_off_154",
     "class": "NMData::FixedPathJointData",

@@ -1,0 +1,28 @@
+{
+  "va": "0x005E0E70",
+  "size": 63,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_0_off_154",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_0_off_154",
+  "class": "NMData::FixedPathJointData",
+  "signature": "void fn_005E0E70(void* self, uintptr_t arg)",
+  "summary": "Thunk-style tick forwarder: if +0x140 is zero and +0xE0 is set, calls vslot 0x14 on the object at self-0x150 with arg, then vslot 0xAC on the +0xE0 object with that result.",
+  "fields": [
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x140",
+      "type": "int32_t",
+      "name": "field_0x140"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0xE0",
+      "type": "void*",
+      "name": "field_0xe0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:02:15Z"
+}

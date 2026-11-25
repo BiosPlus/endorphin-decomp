@@ -253,3 +253,37 @@ std::string* NMData_FixedPathJointData_vfunc_59(std::string* out) {
     return out;
 }
 } // namespace lift_005EFF60
+
+// [0x005E0E70] NMData::FixedPathJointData::vfunc_0_off_154 (63 bytes)
+namespace lift_005E0E70 {
+// @name NMData::FixedPathJointData::vfunc_0_off_154
+// @class NMData::FixedPathJointData
+// @summary Thunk-style tick forwarder: if +0x140 is zero and +0xE0 is set, calls vslot 0x14 on the object at self-0x150 with arg, then vslot 0xAC on the +0xE0 object with that result.
+// @field NMData::FixedPathJointData +0x140 int32_t field_0x140
+// @field NMData::FixedPathJointData +0xE0 void* field_0xe0
+void fn_005E0E70(void* self, uintptr_t arg) {
+    // Disabled when field_0x140 is non-zero.
+    if (lift_field<int32_t>(self, 0x140) != 0) {
+        return;
+    }
+
+    void* child = lift_field<void*>(self, 0xE0);
+    if (child == nullptr) {
+        return;
+    }
+
+    // Owner subobject at self-0x150; its vtable slot at byte offset +0x14 is called
+    // with the owner as `this` and the incoming argument.
+    void* owner = static_cast<uint8_t*>(self) - 0x150;
+    void* owner_vtbl = lift_field<void*>(owner, 0);
+    using OwnerFn = uintptr_t (*)(void*, uintptr_t);
+    const uintptr_t result =
+        reinterpret_cast<OwnerFn>(lift_field<void*>(owner_vtbl, 0x14))(owner, arg);
+
+    // Child vtable slot at byte offset +0xAC is called with the child as `this`
+    // and the result as its argument.
+    void* child_vtbl = lift_field<void*>(child, 0);
+    using ChildFn = void (*)(void*, uintptr_t);
+    reinterpret_cast<ChildFn>(lift_field<void*>(child_vtbl, 0xAC))(child, result);
+}
+} // namespace lift_005E0E70
