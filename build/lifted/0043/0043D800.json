@@ -1,0 +1,39 @@
+{
+  "va": "0x0043D800",
+  "size": 110,
+  "orig_symbol": "sub_0043D800",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "findChunkEntryMatch_0043D800",
+  "signature": "void* fn_0043D800(void* out, uint32_t /*unused_arg2*/, void* container, uint32_t index, uint32_t /*unused_arg5*/, uint32_t /*unused_arg6*/, uint32_t end, const uint32_t* value)",
+  "summary": "Scans indices [index, end) in a two-level chunk table for an entry equal to *value; writes {0, container, matchIndex} into out and returns out.",
+  "fields": [
+    {
+      "class": "ChunkTable",
+      "offset": "+0x4",
+      "type": "uint32_t**",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ChunkTable",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "ChunkTable",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "ChunkTable",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:03:14Z"
+}

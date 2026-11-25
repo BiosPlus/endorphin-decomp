@@ -27,6 +27,7 @@ void fn_00437DC0(void* arg) {
     ext_00436FA0(arg, 9632248);
 }
 } // namespace lift_00437DC0
+#include <cstdlib>
 
 // [0x00437DE0]
 namespace lift_00437DE0 {
@@ -3223,3 +3224,50 @@ int fn_0043CEB0(int arg) {
     return static_cast<int>(std::nearbyint(v));
 }
 } // namespace lift_0043CEB0
+
+// [0x0043D800] sub_0043D800 (110 bytes)
+namespace lift_0043D800 {
+extern void ext_0043D800();
+extern int mem_00925134;
+
+// @name findChunkEntryMatch_0043D800
+// @summary Scans indices [index, end) in a two-level chunk table for an entry equal to *value; writes {0, container, matchIndex} into out and returns out.
+// @field ChunkTable +0x04 uint32_t** field_0x04
+// @field ChunkTable +0x08 uint32_t field_0x08
+// @field ChunkTable +0x0C uint32_t field_0x0C
+// @field ChunkTable +0x10 uint32_t field_0x10
+void* fn_0043D800(void* out, uint32_t /*unused_arg2*/, void* container, uint32_t index,
+                  uint32_t /*unused_arg5*/, uint32_t /*unused_arg6*/, uint32_t end,
+                  const uint32_t* value) {
+    while (index != end) {
+        // Original invalid-parameter paths (_invalid_parameter_noinfo) are fatal.
+        if (container == nullptr) {
+            std::abort();
+        }
+        const uint32_t limit = lift_field<uint32_t>(container, 0x0C) +
+                               lift_field<uint32_t>(container, 0x10);
+        if (index >= limit) {
+            std::abort();
+        }
+
+        uint32_t word = index >> 2;
+        const uint32_t bit = index & 3u;
+        const uint32_t base = lift_field<uint32_t>(container, 0x08);
+        if (base <= word) {
+            word -= base;
+        }
+
+        uint32_t** table = lift_field<uint32_t**>(container, 0x04);
+        const uint32_t* row = table[word];
+        if (row[bit] == *value) {
+            break;
+        }
+        ++index;
+    }
+
+    lift_field<uint32_t>(out, 0x00) = 0;
+    lift_field<uint32_t>(out, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(container));
+    lift_field<uint32_t>(out, 0x08) = index;
+    return out;
+}
+} // namespace lift_0043D800

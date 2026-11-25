@@ -3969,6 +3969,12 @@
     "summary": "Visits 4-byte elements of [begin,end) from last to first, calling ext_MFC80_ord_781(cursor, elem) with cursor stepping down by 4 from dest; returns dest minus the byte span.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043D800": {
+    "name": "findChunkEntryMatch_0043D800",
+    "signature": "void* fn_0043D800(void* out, uint32_t /*unused_arg2*/, void* container, uint32_t index, uint32_t /*unused_arg5*/, uint32_t /*unused_arg6*/, uint32_t end, const uint32_t* value)",
+    "summary": "Scans indices [index, end) in a two-level chunk table for an entry equal to *value; writes {0, container, matchIndex} into out and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043DCC0": {
     "name": "sub_0043DCC0",
     "signature": "extern \"C\" void fn_0043DCC0(void)",
