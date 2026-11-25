@@ -439,3 +439,17 @@ uint32_t sub_007AEEE0(const void* self) {
     return value != 0 ? 1u : 0u;
 }
 } // namespace lift_007AEEE0
+
+// [0x007AE130] sub_007AE130 (16 bytes)
+namespace lift_007AE130 {
+// Known callee 0x006E7460: sub_006E7460 (Getter returning int32_t field at offset +0x0.)
+extern int32_t ext_006E7460(void* self);
+extern int mem_00B61758;
+
+// @name SubobjectGetter_B61758
+// @summary Forwards to the getter at 0x006E7460 with the global object at 0x00B61758 as `this`.
+// (The caller's self argument is ignored: the asm overwrites ecx with the global address and tail-jumps.)
+int32_t fn_007AE130([[maybe_unused]] void* self) {
+    return ext_006E7460(static_cast<void*>(&mem_00B61758));
+}
+} // namespace lift_007AE130

@@ -1,0 +1,13 @@
+{
+  "va": "0x007AE130",
+  "size": 16,
+  "orig_symbol": "sub_007AE130",
+  "src_path": "src/leaf/tiny_7A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7A0000.cpp",
+  "name": "SubobjectGetter_B61758",
+  "signature": "int32_t fn_007AE130([[maybe_unused]] void* self)",
+  "summary": "Forwards to the getter at 0x006E7460 with the global object at 0x00B61758 as `this`.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:15:34Z"
+}
