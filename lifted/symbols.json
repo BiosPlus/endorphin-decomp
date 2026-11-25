@@ -6400,6 +6400,12 @@
     "summary": "Iteratively calls MFC80_ord_2867 and sub_0045BF30 on a node chain until null.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x0045C0C0": {
+    "name": "sub_0045C0C0",
+    "signature": "void __thiscall fn_0045C0C0(void* self, uint32_t arg0, uint8_t flag)",
+    "summary": "Updates an MFC control/item state based on a boolean flag and dispatches a message/command with computed parameters.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x0045C1C0": {
     "name": "CTreeCtrl::clearAllItemStates",
     "class": "CTreeCtrl",
@@ -56317,6 +56323,12 @@
     "signature": "extern \"C\" int32_t __fastcall fn_006DEEC0(void* self)",
     "summary": "Getter returning int32_t field at offset +0x38.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
+  },
+  "0x006DEED0": {
+    "name": "sub_006DEED0",
+    "signature": "uint32_t fn_006DEED0(uint32_t self, uint32_t new_val, uint8_t release_old)",
+    "summary": "Replaces field_0x38 with a new pointer, optionally releasing the old one, and notifies via sub_006E5750.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
   "0x006DFFF0": {
     "name": "vec4d_length",

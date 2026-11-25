@@ -1831,3 +1831,33 @@ extern void __thiscall fn_006DEC60(void* self, uint32_t value, uint8_t release_o
     ext_006E5750(static_cast<uint32_t>(target), 0x10);
 }
 } // namespace lift_006DEC60
+
+// [0x006DEED0]
+namespace lift_006DEED0 {
+// @name sub_006DEED0
+// @summary Replaces field_0x38 with a new pointer, optionally releasing the old one, and notifies via sub_006E5750.
+// @field Unknown +0x38 uint32_t field_0x38
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t val);
+extern void ext_006DE130(uint32_t self, int32_t unused_stack_arg);
+extern void ext_006E5750(uint32_t self, uint32_t flags);
+
+uint32_t fn_006DEED0(uint32_t self, uint32_t new_val, uint8_t release_old) {
+    uint32_t old_val = mem_read32(self + 0x38);
+    if (old_val == new_val) {
+        return 0;
+    }
+
+    if (release_old != 0 && old_val != 0) {
+        ext_006DE130(old_val, 0);
+        mem_write32(self + 0x38, 0);
+    }
+
+    uint32_t prev_val = mem_read32(self + 0x38);
+    mem_write32(self + 0x38, new_val);
+    ext_006E5750(self, 4);
+    return prev_val;
+}
+} // namespace lift_006DEED0

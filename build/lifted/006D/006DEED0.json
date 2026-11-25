@@ -1,0 +1,21 @@
+{
+  "va": "0x006DEED0",
+  "size": 80,
+  "orig_symbol": "sub_006DEED0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "sub_006DEED0",
+  "signature": "uint32_t fn_006DEED0(uint32_t self, uint32_t new_val, uint8_t release_old)",
+  "summary": "Replaces field_0x38 with a new pointer, optionally releasing the old one, and notifies via sub_006E5750.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "uint32_t",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:55:49Z"
+}
