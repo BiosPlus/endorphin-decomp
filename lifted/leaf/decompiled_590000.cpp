@@ -1358,3 +1358,80 @@ extern void* __thiscall fn_0059DD00(void* self, void* arg1, const void* arg2) {
     return ext_006A6E9E(t, 0, src_type, dst_type, 0);
 }
 } // namespace lift_0059DD00
+
+// [0x005943D0] sub_005943D0 (108 bytes)
+namespace lift_005943D0 {
+// CRT invalid-parameter handler, reached through the import slot at 0x00925134.
+extern void __cdecl ext_invalid_parameter_noinfo(void);
+
+namespace {
+
+// Addresses in the 32-bit target are stored as 32-bit values.
+inline void* asPtr(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+inline uint32_t nodeLink0(uint32_t node) { return lift_field<uint32_t>(asPtr(node), 0x00); }
+inline uint32_t nodeLink4(uint32_t node) { return lift_field<uint32_t>(asPtr(node), 0x04); }
+inline uint32_t nodeLink8(uint32_t node) { return lift_field<uint32_t>(asPtr(node), 0x08); }
+inline bool     nodeIsNil(uint32_t node) { return lift_field<uint8_t>(asPtr(node), 0x31) != 0; }
+
+} // namespace
+
+// @name NodeCursor::advanceSkipSentinels
+// @class NodeCursor
+// @summary Moves the cursor's current node forward past nil sentinel nodes, using the node's +0x04/+0x08 links.
+// @field NodeCursor +0x00 uint32_t field_0x00
+// @field NodeCursor +0x04 uint32_t field_0x04
+// @field TreeNode +0x00 uint32_t field_0x00
+// @field TreeNode +0x04 uint32_t field_0x04
+// @field TreeNode +0x08 uint32_t field_0x08
+// @field TreeNode +0x31 uint8_t field_0x31
+void fn_005943D0(void* self) {
+    // Owner pointer must be non-null; the handler is invoked otherwise, and execution continues as in the original.
+    if (lift_field<uint32_t>(self, 0x00) == 0) {
+        ext_invalid_parameter_noinfo();
+    }
+
+    uint32_t node = lift_field<uint32_t>(self, 0x04);
+    if (nodeIsNil(node)) {
+        ext_invalid_parameter_noinfo();
+        return;
+    }
+
+    uint32_t next = nodeLink8(node);
+    if (!nodeIsNil(next)) {
+        // Descend the +0x00 chain from `next` while it stays non-nil.
+        uint32_t left = nodeLink0(next);
+        if (nodeIsNil(left)) {
+            lift_field<uint32_t>(self, 0x04) = next;
+            return;
+        }
+        uint32_t cur = left;
+        uint32_t child = nodeLink0(cur);
+        while (!nodeIsNil(child)) {
+            cur = child;
+            child = nodeLink0(cur);
+        }
+        lift_field<uint32_t>(self, 0x04) = cur;
+        return;
+    }
+
+    // `next` is nil: follow the +0x04 link and keep stepping while the cursor
+    // was the left child of its successor.
+    uint32_t succ = nodeLink4(node);
+    if (!nodeIsNil(succ)) {
+        for (;;) {
+            if (lift_field<uint32_t>(self, 0x04) != nodeLink8(succ)) {
+                break;
+            }
+            lift_field<uint32_t>(self, 0x04) = succ;
+            succ = nodeLink4(succ);
+            if (nodeIsNil(succ)) {
+                break;
+            }
+        }
+    }
+    lift_field<uint32_t>(self, 0x04) = succ;
+}
+} // namespace lift_005943D0

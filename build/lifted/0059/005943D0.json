@@ -1,0 +1,52 @@
+{
+  "va": "0x005943D0",
+  "size": 108,
+  "orig_symbol": "sub_005943D0",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "NodeCursor::advanceSkipSentinels",
+  "class": "NodeCursor",
+  "signature": "inline void* asPtr(uint32_t addr)",
+  "summary": "Moves the cursor's current node forward past nil sentinel nodes, using the node's +0x04/+0x08 links.",
+  "fields": [
+    {
+      "class": "NodeCursor",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "NodeCursor",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x31",
+      "type": "uint8_t",
+      "name": "field_0x31"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:58:00Z"
+}

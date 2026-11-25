@@ -26989,6 +26989,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
+  "0x005943D0": {
+    "name": "NodeCursor::advanceSkipSentinels",
+    "class": "NodeCursor",
+    "signature": "inline void* asPtr(uint32_t addr)",
+    "summary": "Moves the cursor's current node forward past nil sentinel nodes, using the node's +0x04/+0x08 links.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00594440": {
     "name": "ExprParser::Function2Type\u003cRandomizer\u003e::vfunc_16",
     "class": "ExprParser::Function2Type\u003cSelectionVariable, bool, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, ValuePtr const \u0026, {public: bool __thiscall SelectionVariable::getMethodForEachChild(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, ValuePtr const \u0026), 0}\u003e",
