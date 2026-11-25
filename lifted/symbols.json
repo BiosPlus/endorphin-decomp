@@ -509,6 +509,13 @@
     "summary": "Returns the first dword of the record at index this-\u003e+0x684 in the 0x58-byte record array [+0x564, +0x568); invalid-parameter path if the array is empty or the index is out of range.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00406030": {
+    "name": "newArrayOfRecords_00406030",
+    "class": "(none)",
+    "signature": "void* fn_00406030(uint32_t count)",
+    "summary": "Allocates an array of `count` 0x58-byte records; throws bad_array_new_length on size overflow.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x004060F0": {
     "name": "CopyRecordRange_004060F0",
     "class": "ExtRecord58",

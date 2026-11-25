@@ -1149,3 +1149,29 @@ void* fn_00404EA0(void* begin, void* end, void* dstEnd) {
     return dst;
 }
 } // namespace lift_00404EA0
+
+// [0x00406030] sub_00406030 (87 bytes)
+namespace lift_00406030 {
+// Allocator thunk: IAT jump to MFC80!ord_762 (operator new-style allocator).
+extern void* ext_006A5C62(uint32_t size);
+
+// @name newArrayOfRecords_00406030
+// @class (none)
+// @summary Allocates an array of `count` 0x58-byte records; throws bad_array_new_length on size overflow.
+void* fn_00406030(uint32_t count) {
+    if (count == 0) {
+        // Zero elements: request a zero-byte allocation.
+        return ext_006A5C62(0);
+    }
+
+    // Overflow guard: 0xFFFFFFFF / count must be >= 0x58 for count * 0x58 to fit in 32 bits.
+    const uint32_t maxCount = 0xFFFFFFFFu / count;
+    if (maxCount < 0x58u) {
+        throw std::bad_array_new_length();
+    }
+
+    // Truncation to 32 bits is safe here because the guard above ensures no overflow.
+    const uint32_t bytes = count * 0x58u;
+    return ext_006A5C62(bytes);
+}
+} // namespace lift_00406030

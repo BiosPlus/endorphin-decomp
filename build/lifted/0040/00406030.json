@@ -1,0 +1,14 @@
+{
+  "va": "0x00406030",
+  "size": 87,
+  "orig_symbol": "sub_00406030",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "newArrayOfRecords_00406030",
+  "class": "(none)",
+  "signature": "void* fn_00406030(uint32_t count)",
+  "summary": "Allocates an array of `count` 0x58-byte records; throws bad_array_new_length on size overflow.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:13:17Z"
+}
