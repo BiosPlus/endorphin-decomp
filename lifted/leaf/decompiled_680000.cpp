@@ -2046,3 +2046,45 @@ uint32_t fn_006823B0() {
     return *reinterpret_cast<uint32_t *>(static_cast<uintptr_t>(q));
 }
 } // namespace lift_006823B0
+
+// [0x00688CC0] sub_00688CC0 (107 bytes)
+namespace lift_00688CC0 {
+// Known callee 0x00687EB0: copyRange0x24AndGetEnd_00687EB0 (Copies the 0x24-byte records in [first, last) to dest and returns dest advanced by the copied record count times 0x24.)
+extern uint8_t* __cdecl ext_00687EB0(uint8_t* first, uint8_t* last, uint8_t* dest);
+
+// Import slots (MSVCR80 _invalid_parameter_noinfo, MSVCP80 basic_string dtor).
+extern uintptr_t mem_00925134;
+extern uintptr_t mem_00924FF4;
+
+// @name VectorRecords::EraseRangeAndReport
+// @class (none)
+// @summary Erases the 0x24-byte records in [dest, src) by moving the tail [src, end) down via ext_00687EB0, destroys the vacated tail strings at +0x08, updates end at this+0x08, and writes (guardCopy, src) to outPair.
+// @field Unknown +0x08 uint8_t* end
+void __thiscall fn_00688CC0(void* self, uint8_t** outPair, uint8_t* guard, uint8_t* dest,
+                            uint8_t* guardCopy, uint8_t* src) {
+    // Original: guard must be non-null and equal guardCopy, else _invalid_parameter_noinfo.
+    if (guard == nullptr || guard != guardCopy) {
+        auto invalidParam = reinterpret_cast<void (*)()>(mem_00925134);
+        invalidParam();
+    }
+
+    if (dest != src) {
+        uint8_t* const selfBytes = static_cast<uint8_t*>(self);
+        uint8_t** endSlot = reinterpret_cast<uint8_t**>(selfBytes + 0x08);
+        uint8_t* end = *endSlot;
+
+        uint8_t* newEnd = ext_00687EB0(src, end, dest);
+
+        using StringDtorFn = void(__thiscall*)(void* self);
+        auto dtor = reinterpret_cast<StringDtorFn>(mem_00924FF4);
+        for (uint8_t* rec = newEnd; rec != end; rec += 0x24) {
+            dtor(rec + 0x08);
+        }
+
+        *endSlot = newEnd;
+    }
+
+    outPair[0] = guardCopy;
+    outPair[1] = src;
+}
+} // namespace lift_00688CC0

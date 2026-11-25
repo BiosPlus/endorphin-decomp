@@ -46397,6 +46397,13 @@
     "summary": "Destroys the std::string member (at +0x08) of each 0x24-byte element in [begin, end).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00688CC0": {
+    "name": "VectorRecords::EraseRangeAndReport",
+    "class": "(none)",
+    "signature": "void __thiscall fn_00688CC0(void* self, uint8_t** outPair, uint8_t* guard, uint8_t* dest, uint8_t* guardCopy, uint8_t* src)",
+    "summary": "Erases the 0x24-byte records in [dest, src) by moving the tail [src, end) down via ext_00687EB0, destroys the vacated tail strings at +0x08, updates end at this+0x08, and writes (guardCopy, src) to outPair.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00688D30": {
     "name": "sub_00688D30",
     "signature": "DWORD* __thiscall fn_00688D30(void* self, const DWORD* first, const DWORD* last, DWORD* out)",

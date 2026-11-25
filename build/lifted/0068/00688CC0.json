@@ -1,0 +1,22 @@
+{
+  "va": "0x00688CC0",
+  "size": 107,
+  "orig_symbol": "sub_00688CC0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "VectorRecords::EraseRangeAndReport",
+  "class": "(none)",
+  "signature": "void __thiscall fn_00688CC0(void* self, uint8_t** outPair, uint8_t* guard, uint8_t* dest, uint8_t* guardCopy, uint8_t* src)",
+  "summary": "Erases the 0x24-byte records in [dest, src) by moving the tail [src, end) down via ext_00687EB0, destroys the vacated tail strings at +0x08, updates end at this+0x08, and writes (guardCopy, src) to outPair.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:54:23Z"
+}
