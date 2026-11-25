@@ -1,0 +1,13 @@
+{
+  "va": "0x004F9530",
+  "size": 30,
+  "orig_symbol": "sub_004F9530",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "initPairWithLazyStatic",
+  "signature": "extern \"C\" void* fn_004F9530(void* outPair, DWORD value)",
+  "summary": "Initializes a 2-DWORD struct with a given value and the lazy static object pointer, returning the struct pointer.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:35:26Z"
+}
