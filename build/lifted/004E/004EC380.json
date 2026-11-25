@@ -1,0 +1,22 @@
+{
+  "va": "0x004EC380",
+  "size": 105,
+  "orig_symbol": "sub_004EC380",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "TreeMap::find",
+  "class": "TreeMap",
+  "signature": "void* fn_004EC380(void* self, void* out_iter, const void* key)",
+  "summary": "Finds an element by string key in the red-black tree and writes the resulting iterator.",
+  "fields": [
+    {
+      "class": "TreeMap",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "header"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:06:26Z"
+}

@@ -544,3 +544,42 @@ extern void* __thiscall fn_004ED640(void* self) {
     return self;
 }
 } // namespace lift_004ED640
+
+// [0x004EC380]
+namespace lift_004EC380 {
+// @name TreeMap::find
+// @class TreeMap
+// @summary Finds an element by string key in the red-black tree and writes the resulting iterator.
+// @field TreeMap +0x04 void* header
+
+
+extern void* fn_00472780(void* self, const void* key);
+#define ext_00472780 fn_00472780
+
+extern void (*mem_00925134)();
+extern bool (*mem_00924EF4)(const void* lhs, const void* rhs);
+
+struct TreeMapIterator {
+    void* container;
+    void* node;
+};
+
+void* fn_004EC380(void* self, void* out_iter, const void* key) {
+    void* node = ext_00472780(self, key);
+    if (!self) {
+        mem_00925134();
+    }
+
+    void* header = *reinterpret_cast<void**>(static_cast<char*>(self) + 0x04);
+    auto* iter = static_cast<TreeMapIterator*>(out_iter);
+    iter->container = self;
+
+    if (node == header || mem_00924EF4(key, static_cast<const char*>(node) + 0x0C)) {
+        iter->node = header;
+    } else {
+        iter->node = node;
+    }
+
+    return out_iter;
+}
+} // namespace lift_004EC380
