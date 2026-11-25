@@ -57838,6 +57838,12 @@
     "summary": "Thiscall-style thunk: passes the address of its stack argument block (esp+4) in ecx to fn_006B9D70, then returns 0 (al = 0) and pops 0x54 bytes of arguments.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AEF80": {
+    "name": "ScopedGuardPair_007AEF80",
+    "signature": "void fn_007AEF80(void* self)",
+    "summary": "Runs two guarded calls on stack-local scope objects (state 0, then -1) and returns FALSE; the SEH frame setup and teardown from the original is omitted.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AEFD0": {
     "name": "SwapFirstTwoBytes",
     "signature": "void sub_007AEFD0(uint8_t* p)",

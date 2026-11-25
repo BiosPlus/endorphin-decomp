@@ -556,3 +556,31 @@ BOOLEAN __stdcall fn_007AC210(DWORD value) {
 }
 } // namespace lift_0079F2E0
 } // namespace lift_007AC210
+
+// [0x007AEF80] sub_007AEF80 (74 bytes)
+namespace lift_007AEF80 {
+// Known callee 0x006B9D70: sub_006B9D70 (Pure jump thunk forwarding to sub_006B9970.)
+// Called thiscall-style: ecx = object pointer, one stack argument (0 or -1).
+extern void ext_006B9D70(void* thisPtr, int32_t arg);
+
+// @name ScopedGuardPair_007AEF80
+// @summary Runs two guarded calls on stack-local scope objects (state 0, then -1) and returns FALSE; the SEH frame setup and teardown from the original is omitted.
+// @field none (no accesses through self)
+void fn_007AEF80(void* self) {
+    (void)self;
+
+    // Stack-local scope objects (original: esp+0x10 and esp+0x5C). Sizes are not
+    // recovered from the disassembly; only their addresses are used here.
+    alignas(8) uint8_t scopeA[0x4C] = {};
+    alignas(8) uint8_t scopeB[0x20] = {};
+
+    // First guarded call: state 0 (original: [esp+8] = 0).
+    ext_006B9D70(scopeA, 0);
+
+    // Second guarded call: state -1 (original: [esp+8] = 0xFFFFFFFF).
+    ext_006B9D70(scopeB, -1);
+
+    // Original returns al = 0 with ret 0x98 (callee pops 0x98 bytes of arguments).
+    return;
+}
+} // namespace lift_007AEF80

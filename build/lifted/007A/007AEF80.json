@@ -1,0 +1,13 @@
+{
+  "va": "0x007AEF80",
+  "size": 74,
+  "orig_symbol": "sub_007AEF80",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "ScopedGuardPair_007AEF80",
+  "signature": "void fn_007AEF80(void* self)",
+  "summary": "Runs two guarded calls on stack-local scope objects (state 0, then -1) and returns FALSE; the SEH frame setup and teardown from the original is omitted.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:36:04Z"
+}
