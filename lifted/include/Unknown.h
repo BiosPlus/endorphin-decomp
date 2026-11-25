@@ -1242,7 +1242,9 @@ struct Unknown_Fields {
     // +0x420 void*                    field_0x420  (evidence: 0x00553760)
     // +0x424 void* field_0x424 (optional object pointer; vtable slot +0x0C is called with 0xB39F84 when non-null)  (evidence: 0x00564600)
     // +0x428 void*                    field_0x428  (evidence: 0x0040B860, 0x0040B880)
-    // +0x458 std::string              field_0x458  (evidence: 0x0044CCF0)
+    // +0x458 std::string              field_0x458  (evidence: 0x0044CCF0) // CONFLICT: multiple definitions at +0x458
+    // +0x458 std::string*             field_0x458  (evidence: 0x004D4230) // CONFLICT: multiple definitions at +0x458
+    // +0x45C std::string*             field_0x45C  (evidence: 0x004D4230)
     // +0x46C uint32_t                 field_0x46C  (evidence: 0x004030F0) // CONFLICT: multiple definitions at +0x46C
     // +0x46C std::string              field_0x46c  (evidence: 0x005703C0) // CONFLICT: multiple definitions at +0x46C
     // +0x470 uint32_t                 field_0x470  (evidence: 0x004030F0)

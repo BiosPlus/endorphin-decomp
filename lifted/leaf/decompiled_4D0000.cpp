@@ -412,3 +412,30 @@ void fn_004D0D40(void* self, const void* name) {
     *reinterpret_cast<int32_t*>(reinterpret_cast<uint8_t*>(self) + 0x190) = result;
 }
 } // namespace lift_004D0D40
+
+// [0x004D4230]
+namespace lift_004D4230 {
+extern void ext_invalid_parameter_noinfo();
+
+// @name GetIndexedString
+// @summary Copy-constructs the std::string at element `index` of the vector stored at self+0x458 into the caller-provided return slot (returned as out).
+// @field Unknown +0x458 std::string* field_0x458
+// @field Unknown +0x45C std::string* field_0x45C
+std::string* fn_004D4230(void* self, std::string* out, uint32_t index) {
+    auto begin = lift_field<uint8_t*>(self, 0x458);
+    auto end = lift_field<uint8_t*>(self, 0x45C);
+
+    // Element count: (end - begin) / sizeof(std::string) where sizeof == 28 (MSVC layout).
+    const ptrdiff_t bytes = end - begin;
+    const size_t count = begin ? static_cast<size_t>(bytes / 28) : 0;
+
+    if (begin == nullptr || index >= count) {
+        ext_invalid_parameter_noinfo();
+        return out;
+    }
+
+    const std::string* elem = reinterpret_cast<const std::string*>(begin + static_cast<size_t>(index) * 28);
+    new (out) std::string(*elem);
+    return out;
+}
+} // namespace lift_004D4230

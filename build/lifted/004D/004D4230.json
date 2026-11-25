@@ -1,0 +1,27 @@
+{
+  "va": "0x004D4230",
+  "size": 103,
+  "orig_symbol": "sub_004D4230",
+  "src_path": "src/leaf/decompiled_4D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4D0000.cpp",
+  "name": "GetIndexedString",
+  "signature": "std::string* fn_004D4230(void* self, std::string* out, uint32_t index)",
+  "summary": "Copy-constructs the std::string at element `index` of the vector stored at self+0x458 into the caller-provided return slot (returned as out).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x458",
+      "type": "std::string*",
+      "name": "field_0x458"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x45C",
+      "type": "std::string*",
+      "name": "field_0x45C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:47:04Z"
+}
