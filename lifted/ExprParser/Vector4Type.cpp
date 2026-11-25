@@ -182,3 +182,24 @@ void __stdcall ExprParser_Vector4Type_vfunc_46(void* self, void* src) {
     }
 }
 } // namespace lift_0066B990
+
+// [0x006710B0] ExprParser::Vector4Type::vfunc_0 (35 bytes)
+namespace lift_006710B0 {
+extern void __thiscall ext_00672150(void* self, int32_t value);
+
+// @name ExprParser::Vector4Type::vfunc_0
+// @class ExprParser::Vector4Type
+// @summary Auto-lifted identical-shape clone of 0x0066AE10 (ExprParser::IntType::vfunc_0).
+namespace lift_0066AE10 {
+extern void ext_00672150(void* self, int32_t value, int32_t zero);
+
+// @name ExprParser::IntType::vfunc_0
+// @class ExprParser::IntType
+// @summary Forwards the int32 value read from *src into ext_006720C0 on self with a zero second argument, then returns self.
+void* fn_006710B0(void* self, const int32_t* src) {
+    const int32_t value = *src;
+    ext_00672150(self, value, 0);
+    return self;
+}
+} // namespace lift_0066AE10
+} // namespace lift_006710B0

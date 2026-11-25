@@ -1,0 +1,22 @@
+{
+  "va": "0x006930A0",
+  "size": 40,
+  "orig_symbol": "ExprParser::Method0Type\u003cValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}\u003e::vfunc_4",
+  "src_path": "src/templates/Method0Type.cpp",
+  "lifted_path": "lifted/templates/Method0Type.cpp",
+  "name": "ExprParser::Method0Type\u003cValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}\u003e::vfunc_4",
+  "class": "ExprParser::Method0Type\u003cValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}\u003e",
+  "signature": "void* fn_006930A0(void* /*this_unused*/, void* out)",
+  "summary": "Auto-lifted identical-shape clone of 0x0048B1C0 (ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, endEvent\u003e::vfunc_4).",
+  "fields": [
+    {
+      "class": "std::string",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T12:53:21Z"
+}

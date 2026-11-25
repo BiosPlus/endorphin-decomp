@@ -852,3 +852,275 @@ void* fn_0048B1C0(void* /*this_unused*/, void* out) {
     return out;
 }
 } // namespace lift_0048B1C0
+
+// [0x0048B120] ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::fire(void), 0}>::vfunc_4 (40 bytes)
+namespace lift_0048B120 {
+extern void ext_0048ABB0(void* self);
+extern void __fastcall ext_0048ABB0(void* self);
+
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::fire(void), 0}>::vfunc_4
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::fire(void), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0048B1C0 (ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_4).
+namespace lift_0048B1C0 {
+// Known callee 0x0048ABF0: sub_0048ABF0 (Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).)
+extern void ext_0048ABB0(void* self);
+// Import slot 0x00924FE8 (MSVCP80 std::basic_string<char> default constructor), called indirectly.
+extern void(__thiscall* mem_00924FE8)(void* self);
+
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_4
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}>
+// @summary Passes the first pointer stored in the out-string object to ext_0048ABF0, default-constructs that std::string in place, and returns it; ignores this.
+// @field std::string +0x00 void* field_0x00
+void* fn_0048B120(void* /*this_unused*/, void* out) {
+    void* self = *reinterpret_cast<void**>(out);
+    ext_0048ABB0(self);
+    mem_00924FE8(out);
+    return out;
+}
+} // namespace lift_0048B1C0
+} // namespace lift_0048B120
+
+// [0x004CB440] ExprParser::Method0Type<NMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}>::vfunc_4 (40 bytes)
+namespace lift_004CB440 {
+extern void ext_004CA560(void* self);
+extern void __fastcall ext_004CA560(void* self);
+
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}>::vfunc_4
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}>
+// @summary Auto-lifted identical-shape clone of 0x0048B1C0 (ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_4).
+namespace lift_0048B1C0 {
+// Known callee 0x0048ABF0: sub_0048ABF0 (Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).)
+extern void ext_004CA560(void* self);
+// Import slot 0x00924FE8 (MSVCP80 std::basic_string<char> default constructor), called indirectly.
+extern void(__thiscall* mem_00924FE8)(void* self);
+
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_4
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}>
+// @summary Passes the first pointer stored in the out-string object to ext_0048ABF0, default-constructs that std::string in place, and returns it; ignores this.
+// @field std::string +0x00 void* field_0x00
+void* fn_004CB440(void* /*this_unused*/, void* out) {
+    void* self = *reinterpret_cast<void**>(out);
+    ext_004CA560(self);
+    mem_00924FE8(out);
+    return out;
+}
+} // namespace lift_0048B1C0
+} // namespace lift_004CB440
+
+// [0x004CCCE0] ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}>::vfunc_4 (40 bytes)
+namespace lift_004CCCE0 {
+extern void __fastcall ext_004CCAF0(void* self);
+extern void ext_004CCAF0(void* self);
+extern void ext_004CCAF0(void* target);
+
+// @name ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}>::vfunc_4
+// @class ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0048B1C0 (ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_4).
+namespace lift_0048B1C0 {
+// Known callee 0x0048ABF0: sub_0048ABF0 (Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).)
+extern void ext_004CCAF0(void* self);
+// Import slot 0x00924FE8 (MSVCP80 std::basic_string<char> default constructor), called indirectly.
+extern void(__thiscall* mem_00924FE8)(void* self);
+
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_4
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}>
+// @summary Passes the first pointer stored in the out-string object to ext_0048ABF0, default-constructs that std::string in place, and returns it; ignores this.
+// @field std::string +0x00 void* field_0x00
+void* fn_004CCCE0(void* /*this_unused*/, void* out) {
+    void* self = *reinterpret_cast<void**>(out);
+    ext_004CCAF0(self);
+    mem_00924FE8(out);
+    return out;
+}
+} // namespace lift_0048B1C0
+} // namespace lift_004CCCE0
+
+// [0x004CCD80] ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}>::vfunc_4 (40 bytes)
+namespace lift_004CCD80 {
+extern void ext_004CCB00(void* self);
+extern void __fastcall ext_004CCB00(void* self);
+
+// @name ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}>::vfunc_4
+// @class ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0048B1C0 (ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_4).
+namespace lift_0048B1C0 {
+// Known callee 0x0048ABF0: sub_0048ABF0 (Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).)
+extern void ext_004CCB00(void* self);
+// Import slot 0x00924FE8 (MSVCP80 std::basic_string<char> default constructor), called indirectly.
+extern void(__thiscall* mem_00924FE8)(void* self);
+
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_4
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}>
+// @summary Passes the first pointer stored in the out-string object to ext_0048ABF0, default-constructs that std::string in place, and returns it; ignores this.
+// @field std::string +0x00 void* field_0x00
+void* fn_004CCD80(void* /*this_unused*/, void* out) {
+    void* self = *reinterpret_cast<void**>(out);
+    ext_004CCB00(self);
+    mem_00924FE8(out);
+    return out;
+}
+} // namespace lift_0048B1C0
+} // namespace lift_004CCD80
+
+// [0x004CD790] ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::clearMetaBodiesFromFSM(void), 0}>::vfunc_4 (40 bytes)
+namespace lift_004CD790 {
+extern void ext_004CCDE0(void* self);
+extern void __fastcall ext_004CCDE0(void* self);
+
+// @name ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::clearMetaBodiesFromFSM(void), 0}>::vfunc_4
+// @class ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::clearMetaBodiesFromFSM(void), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0048B1C0 (ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_4).
+namespace lift_0048B1C0 {
+// Known callee 0x0048ABF0: sub_0048ABF0 (Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).)
+extern void ext_004CCDE0(void* self);
+// Import slot 0x00924FE8 (MSVCP80 std::basic_string<char> default constructor), called indirectly.
+extern void(__thiscall* mem_00924FE8)(void* self);
+
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_4
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}>
+// @summary Passes the first pointer stored in the out-string object to ext_0048ABF0, default-constructs that std::string in place, and returns it; ignores this.
+// @field std::string +0x00 void* field_0x00
+void* fn_004CD790(void* /*this_unused*/, void* out) {
+    void* self = *reinterpret_cast<void**>(out);
+    ext_004CCDE0(self);
+    mem_00924FE8(out);
+    return out;
+}
+} // namespace lift_0048B1C0
+} // namespace lift_004CD790
+
+// [0x005BB330] ExprParser::Method0Type<NMData::MetaBodyData, {public: void __thiscall NMData::MetaBodyData::resetForcesAndImpulses(void), 0}>::vfunc_4 (40 bytes)
+namespace lift_005BB330 {
+extern void ext_005B72E0(void* self);
+extern void __fastcall ext_005B72E0(void* self);
+
+// @name ExprParser::Method0Type<NMData::MetaBodyData, {public: void __thiscall NMData::MetaBodyData::resetForcesAndImpulses(void), 0}>::vfunc_4
+// @class ExprParser::Method0Type<NMData::MetaBodyData, {public: void __thiscall NMData::MetaBodyData::resetForcesAndImpulses(void), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0048B1C0 (ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_4).
+namespace lift_0048B1C0 {
+// Known callee 0x0048ABF0: sub_0048ABF0 (Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).)
+extern void ext_005B72E0(void* self);
+// Import slot 0x00924FE8 (MSVCP80 std::basic_string<char> default constructor), called indirectly.
+extern void(__thiscall* mem_00924FE8)(void* self);
+
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_4
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}>
+// @summary Passes the first pointer stored in the out-string object to ext_0048ABF0, default-constructs that std::string in place, and returns it; ignores this.
+// @field std::string +0x00 void* field_0x00
+void* fn_005BB330(void* /*this_unused*/, void* out) {
+    void* self = *reinterpret_cast<void**>(out);
+    ext_005B72E0(self);
+    mem_00924FE8(out);
+    return out;
+}
+} // namespace lift_0048B1C0
+} // namespace lift_005BB330
+
+// [0x005C6210] ExprParser::Method0Type<NMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}>::vfunc_4 (40 bytes)
+namespace lift_005C6210 {
+extern void __fastcall ext_005C3170(void* self);
+extern void ext_005C3170(void* self);
+
+// @name ExprParser::Method0Type<NMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}>::vfunc_4
+// @class ExprParser::Method0Type<NMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0048B1C0 (ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_4).
+namespace lift_0048B1C0 {
+// Known callee 0x0048ABF0: sub_0048ABF0 (Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).)
+extern void ext_005C3170(void* self);
+// Import slot 0x00924FE8 (MSVCP80 std::basic_string<char> default constructor), called indirectly.
+extern void(__thiscall* mem_00924FE8)(void* self);
+
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_4
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}>
+// @summary Passes the first pointer stored in the out-string object to ext_0048ABF0, default-constructs that std::string in place, and returns it; ignores this.
+// @field std::string +0x00 void* field_0x00
+void* fn_005C6210(void* /*this_unused*/, void* out) {
+    void* self = *reinterpret_cast<void**>(out);
+    ext_005C3170(self);
+    mem_00924FE8(out);
+    return out;
+}
+} // namespace lift_0048B1C0
+} // namespace lift_005C6210
+
+// [0x0066DD10] ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>::vfunc_4 (40 bytes)
+namespace lift_0066DD10 {
+extern void __fastcall ext_0067B860(void* self);
+extern void ext_0067B860(void* self);
+
+// @name ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>::vfunc_4
+// @class ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>
+// @summary Auto-lifted identical-shape clone of 0x0048B1C0 (ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_4).
+namespace lift_0048B1C0 {
+// Known callee 0x0048ABF0: sub_0048ABF0 (Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).)
+extern void ext_0067B860(void* self);
+// Import slot 0x00924FE8 (MSVCP80 std::basic_string<char> default constructor), called indirectly.
+extern void(__thiscall* mem_00924FE8)(void* self);
+
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_4
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}>
+// @summary Passes the first pointer stored in the out-string object to ext_0048ABF0, default-constructs that std::string in place, and returns it; ignores this.
+// @field std::string +0x00 void* field_0x00
+void* fn_0066DD10(void* /*this_unused*/, void* out) {
+    void* self = *reinterpret_cast<void**>(out);
+    ext_0067B860(self);
+    mem_00924FE8(out);
+    return out;
+}
+} // namespace lift_0048B1C0
+} // namespace lift_0066DD10
+
+// [0x0068BFE0] ExprParser::Method0Type<Randomizer, {public: void __thiscall Randomizer::applySeed(void), 0}>::vfunc_4 (40 bytes)
+namespace lift_0068BFE0 {
+extern void __fastcall ext_0068BC50(void* self);
+extern void ext_0068BC50(void* self);
+extern void __thiscall ext_0068BC50(void* self);
+
+// @name ExprParser::Method0Type<Randomizer, {public: void __thiscall Randomizer::applySeed(void), 0}>::vfunc_4
+// @class ExprParser::Method0Type<Randomizer, {public: void __thiscall Randomizer::applySeed(void), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0048B1C0 (ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_4).
+namespace lift_0048B1C0 {
+// Known callee 0x0048ABF0: sub_0048ABF0 (Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).)
+extern void ext_0068BC50(void* self);
+// Import slot 0x00924FE8 (MSVCP80 std::basic_string<char> default constructor), called indirectly.
+extern void(__thiscall* mem_00924FE8)(void* self);
+
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_4
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}>
+// @summary Passes the first pointer stored in the out-string object to ext_0048ABF0, default-constructs that std::string in place, and returns it; ignores this.
+// @field std::string +0x00 void* field_0x00
+void* fn_0068BFE0(void* /*this_unused*/, void* out) {
+    void* self = *reinterpret_cast<void**>(out);
+    ext_0068BC50(self);
+    mem_00924FE8(out);
+    return out;
+}
+} // namespace lift_0048B1C0
+} // namespace lift_0068BFE0
+
+// [0x006930A0] ExprParser::Method0Type<ValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}>::vfunc_4 (40 bytes)
+namespace lift_006930A0 {
+extern void ext_00692D90(void* self);
+extern void __fastcall ext_00692D90(void* self);
+
+// @name ExprParser::Method0Type<ValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}>::vfunc_4
+// @class ExprParser::Method0Type<ValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0048B1C0 (ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_4).
+namespace lift_0048B1C0 {
+// Known callee 0x0048ABF0: sub_0048ABF0 (Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).)
+extern void ext_00692D90(void* self);
+// Import slot 0x00924FE8 (MSVCP80 std::basic_string<char> default constructor), called indirectly.
+extern void(__thiscall* mem_00924FE8)(void* self);
+
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_4
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}>
+// @summary Passes the first pointer stored in the out-string object to ext_0048ABF0, default-constructs that std::string in place, and returns it; ignores this.
+// @field std::string +0x00 void* field_0x00
+void* fn_006930A0(void* /*this_unused*/, void* out) {
+    void* self = *reinterpret_cast<void**>(out);
+    ext_00692D90(self);
+    mem_00924FE8(out);
+    return out;
+}
+} // namespace lift_0048B1C0
+} // namespace lift_006930A0

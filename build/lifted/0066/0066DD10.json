@@ -1,0 +1,22 @@
+{
+  "va": "0x0066DD10",
+  "size": 40,
+  "orig_symbol": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e::vfunc_4",
+  "src_path": "src/templates/Method0Type.cpp",
+  "lifted_path": "lifted/templates/Method0Type.cpp",
+  "name": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e::vfunc_4",
+  "class": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",
+  "signature": "void* fn_0066DD10(void* /*this_unused*/, void* out)",
+  "summary": "Auto-lifted identical-shape clone of 0x0048B1C0 (ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, endEvent\u003e::vfunc_4).",
+  "fields": [
+    {
+      "class": "std::string",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T12:53:21Z"
+}
