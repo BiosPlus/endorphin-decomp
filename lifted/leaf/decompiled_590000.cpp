@@ -562,3 +562,31 @@ extern void fn_00593EB0(void) {
     }
 }
 } // namespace lift_00593EB0
+
+// [0x005940E0] sub_005940E0 (89 bytes)
+namespace lift_005940E0 {
+// Import thunk pointer: MSVCP80 std::basic_string<char>::~basic_string (0x00628FF0).
+extern uint32_t mem_00924FF4;
+
+// @name Unknown::destructorBody_005940E0
+// @class Unknown
+// @summary Releases an optional child object at +0x20 through its vtable slot 0x78 (passing &field_0x1c), then destroys the std::string at offset 0.
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1C void* field_0x1c
+// @field Unknown +0x20 void* child
+void __thiscall fn_005940E0(uint8_t* self) {
+    // Optional virtual notification on the child object at +0x20.
+    uint8_t* child = *reinterpret_cast<uint8_t**>(self + 0x20);
+    if (child != nullptr) {
+        uint8_t* arg = self + 0x1c;
+        uint8_t* vtbl = *reinterpret_cast<uint8_t**>(child);
+        uintptr_t slot = *reinterpret_cast<uintptr_t*>(vtbl + 0x78);
+        using VirtualFn = void(__thiscall*)(void* obj, void* arg);
+        reinterpret_cast<VirtualFn>(slot)(child, arg);
+    }
+
+    // Destroy the std::string stored at offset 0 of this object.
+    using StringDtorFn = void(__thiscall*)(void* obj);
+    reinterpret_cast<StringDtorFn>(static_cast<uintptr_t>(mem_00924FF4))(self);
+}
+} // namespace lift_005940E0

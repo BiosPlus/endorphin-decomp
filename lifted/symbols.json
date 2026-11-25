@@ -24043,6 +24043,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xF8 and tail-calls sub_006425C0.",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
+  "0x005940E0": {
+    "name": "Unknown::destructorBody_005940E0",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_005940E0(uint8_t* self)",
+    "summary": "Releases an optional child object at +0x20 through its vtable slot 0x78 (passing \u0026field_0x1c), then destroys the std::string at offset 0.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00594140": {
     "name": "sub_00594140",
     "class": "Unknown",
