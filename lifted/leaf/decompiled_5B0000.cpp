@@ -730,3 +730,24 @@ void fn_005B4030(uint32_t* out, uint32_t value) {
     out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(singleton));
 }
 } // namespace lift_005B4030
+
+// [0x005B4050] sub_005B4050 (30 bytes)
+namespace lift_005B4050 {
+// Known callee 0x005B3DD0: getStaticObject_005B3DD0 (Lazily initializes and returns the static singleton object at 0x00B43564)
+extern void* ext_005B3DD0(uint32_t);
+
+// @name StoreValueWithStaticSingleton_005B4050
+// @summary Writes the value argument to out->+0x00 and the lazily-initialized static singleton (from 0x005B3DD0) to out->+0x04.
+// @field StoredPair +0x00 uint32_t value
+// @field StoredPair +0x04 void* singleton
+struct StoredPair {
+    uint32_t value;
+    void* singleton;
+};
+
+void fn_005B4050(StoredPair* out, uint32_t value) {
+    void* singleton = ext_005B3DD0(0);
+    out->value = value;
+    out->singleton = singleton;
+}
+} // namespace lift_005B4050

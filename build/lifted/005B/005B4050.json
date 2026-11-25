@@ -1,0 +1,27 @@
+{
+  "va": "0x005B4050",
+  "size": 30,
+  "orig_symbol": "sub_005B4050",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "StoreValueWithStaticSingleton_005B4050",
+  "signature": "void fn_005B4050(StoredPair* out, uint32_t value)",
+  "summary": "Writes the value argument to out-\u003e+0x00 and the lazily-initialized static singleton (from 0x005B3DD0) to out-\u003e+0x04.",
+  "fields": [
+    {
+      "class": "StoredPair",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "value"
+    },
+    {
+      "class": "StoredPair",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "singleton"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:08:25Z"
+}
