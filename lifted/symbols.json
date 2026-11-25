@@ -49115,6 +49115,13 @@
     "summary": "Pops the last 4-byte element from a [begin, end) vector if begin is non-null and the vector is non-empty.",
     "lifted_path": "lifted/ExprParser/Operators/Comma.cpp"
   },
+  "0x006A1E20": {
+    "name": "ExprParser::Operators::Abs::vfunc_2",
+    "class": "ExprParser::Operators::Abs",
+    "signature": "void fn_006A1E20(void* self, void* out, void* in)",
+    "summary": "Takes the last entry of the input vector (8-byte elements), evaluates it via this-\u003evtable[3], then pops the last 4-byte entry off the output vector.",
+    "lifted_path": "lifted/ExprParser/Operators/Abs.cpp"
+  },
   "0x006A2B10": {
     "name": "TableLookup_006A2B10",
     "signature": "uint32_t fn_006A2B10(uint32_t index)",

@@ -1,0 +1,14 @@
+{
+  "va": "0x006A1E20",
+  "size": 116,
+  "orig_symbol": "ExprParser::Operators::Abs::vfunc_2",
+  "src_path": "src/ExprParser/Operators/Abs.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/Abs.cpp",
+  "name": "ExprParser::Operators::Abs::vfunc_2",
+  "class": "ExprParser::Operators::Abs",
+  "signature": "void fn_006A1E20(void* self, void* out, void* in)",
+  "summary": "Takes the last entry of the input vector (8-byte elements), evaluates it via this-\u003evtable[3], then pops the last 4-byte entry off the output vector.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:24:17Z"
+}
