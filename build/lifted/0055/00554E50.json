@@ -1,0 +1,22 @@
+{
+  "va": "0x00554E50",
+  "size": 85,
+  "orig_symbol": "sub_00554E50",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "Unknown::scaleByReciprocal_00554E50",
+  "class": "Unknown",
+  "signature": "float* fn_00554E50(void* self, float* out, float x, float y, float z)",
+  "summary": "Calls ext_00553340 to produce a vec3 from (x, y, z), then divides it by self-\u003efield_0x20 and writes the result to out.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:08:50Z"
+}

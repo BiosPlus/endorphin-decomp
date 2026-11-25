@@ -1127,3 +1127,24 @@ void __thiscall sub_005541A0(void* self) {
     ext_00628FF0(base + 0x04);
 }
 } // namespace lift_005541A0
+
+// [0x00554E50] sub_00554E50 (85 bytes)
+namespace lift_00554E50 {
+// Callee: thiscall-style, self passed in ecx, dst receives a 3-float vector.
+extern void ext_00553340(void* self, float* dst, float x, float y, float z);
+
+// @name Unknown::scaleByReciprocal_00554E50
+// @class Unknown
+// @summary Calls ext_00553340 to produce a vec3 from (x, y, z), then divides it by self->field_0x20 and writes the result to out.
+// @field Unknown +0x20 float field_0x20
+float* fn_00554E50(void* self, float* out, float x, float y, float z) {
+    float tmp[3];
+    ext_00553340(self, tmp, x, y, z);
+
+    const float inv = 1.0f / lift_field<float>(self, 0x20);
+    out[0] = tmp[0] * inv;
+    out[1] = tmp[1] * inv;
+    out[2] = tmp[2] * inv;
+    return out;
+}
+} // namespace lift_00554E50

@@ -21589,6 +21589,13 @@
     "summary": "Scales a float angle via ext_00553170 (unit-mode conversion), then divides the result by the float at this+0x20.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00554E50": {
+    "name": "Unknown::scaleByReciprocal_00554E50",
+    "class": "Unknown",
+    "signature": "float* fn_00554E50(void* self, float* out, float x, float y, float z)",
+    "summary": "Calls ext_00553340 to produce a vec3 from (x, y, z), then divides it by self-\u003efield_0x20 and writes the result to out.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00555420": {
     "name": "LowerBound32ByFirstDword_00555420",
     "class": "Element",
