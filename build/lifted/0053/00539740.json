@@ -1,0 +1,13 @@
+{
+  "va": "0x00539740",
+  "size": 84,
+  "orig_symbol": "sub_00539740",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "copyFloat3Range_00539740",
+  "signature": "void* fn_00539740(const float* begin, const float* end, float* dst)",
+  "summary": "Copies a range of 12-byte (3 x float) elements from [begin, end) to dst and returns dst advanced by the element count.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:06:49Z"
+}

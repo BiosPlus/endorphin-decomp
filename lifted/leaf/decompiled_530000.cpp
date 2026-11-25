@@ -1040,3 +1040,19 @@ void fn_00530740(void* self, DWORD flags) {
     }
 }
 } // namespace lift_00530740
+
+// [0x00539740] sub_00539740 (84 bytes)
+namespace lift_00539740 {
+// @name copyFloat3Range_00539740
+// @summary Copies a range of 12-byte (3 x float) elements from [begin, end) to dst and returns dst advanced by the element count.
+void* fn_00539740(const float* begin, const float* end, float* dst) {
+    float* out = dst;
+    for (const float* src = begin; src != end; src += 3) {
+        out[0] = src[0];
+        out[1] = src[1];
+        out[2] = src[2];
+        out += 3;
+    }
+    return out;
+}
+} // namespace lift_00539740
