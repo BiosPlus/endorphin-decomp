@@ -1763,3 +1763,26 @@ void* fn_0046C320(void* self) {
     return self;
 }
 } // namespace lift_0046C320
+
+// [0x0046C3C0]
+namespace lift_0046C3C0 {
+// @name DerivedException::DerivedException
+// @class DerivedException
+// @summary Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.
+// @field DerivedException +0x00 void* vtable
+
+extern void* (*mem_00924FE4)(void* self, const char* str);
+extern void (*mem_00924FF4)(void* self);
+extern void* ext_00403560(void* self, const void* msg);
+extern const char mem_0093A7E4[];
+extern void* mem_0093A7DC[];
+
+void* fn_0046C3C0(void* self) {
+    alignas(4) uint8_t msg[28];
+    mem_00924FE4(msg, mem_0093A7E4);
+    ext_00403560(self, msg);
+    mem_00924FF4(msg);
+    *reinterpret_cast<void**>(self) = mem_0093A7DC;
+    return self;
+}
+} // namespace lift_0046C3C0
