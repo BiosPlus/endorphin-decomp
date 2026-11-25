@@ -1492,3 +1492,26 @@ void* fn_0055E8E0() {
     return &mem_00B398EC;
 }
 } // namespace lift_0055E8E0
+
+// [0x005567D0] sub_005567D0 (97 bytes)
+namespace lift_005567D0 {
+// Imported MSVCP80 std::basic_string<char> destructor, reached through the IAT slot at 0x924FF4.
+extern void (*mem_00924FF4)(void* self);
+
+// @name destroyStringRange
+// @summary Destroys the two std::string members of each 0x3C-byte record in [first, last).
+// @field Element +0x04 std::string field_0x04
+// @field Element +0x20 std::string field_0x20
+void fn_005567D0(void* first, void* last) {
+    constexpr std::size_t kRecordSize = 0x3C;
+
+    uint8_t* cur = static_cast<uint8_t*>(first);
+    uint8_t* const end = static_cast<uint8_t*>(last);
+
+    while (cur != end) {
+        mem_00924FF4(cur + 0x20);
+        mem_00924FF4(cur + 0x04);
+        cur += kRecordSize;
+    }
+}
+} // namespace lift_005567D0

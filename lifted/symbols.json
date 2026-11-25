@@ -23866,6 +23866,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00510830 (CopyRangeBackwardAndComputeDestBegin).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x005567D0": {
+    "name": "destroyStringRange",
+    "signature": "void fn_005567D0(void* first, void* last)",
+    "summary": "Destroys the two std::string members of each 0x3C-byte record in [first, last).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00556AB0": {
     "name": "sub_00556AB0",
     "signature": "DWORD* __thiscall fn_00556AB0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
