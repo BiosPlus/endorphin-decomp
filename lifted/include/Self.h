@@ -26,10 +26,10 @@ struct Self_Fields {
     // +0x8   int32_t                  field_0x08  (evidence: 0x00492550) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 field_0x08  (evidence: 0x0041C570) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_0x08  (evidence: 0x0041C540) // CONFLICT: multiple definitions at +0x8
-    // +0x8   void*                    lock  (evidence: 0x0067AE20) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    lock  (evidence: 0x0067A670, 0x0067AE20) // CONFLICT: multiple definitions at +0x8
     // +0xC   DWORD                    field_0x0C  (evidence: 0x007B1E20) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0x0C  (evidence: 0x00700940, 0x0071B910) // CONFLICT: multiple definitions at +0xC
-    // +0xC   void*                    field_0x0C  (evidence: 0x0067AE20) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void*                    field_0x0C  (evidence: 0x0067A670, 0x0067AE20) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0x0c  (evidence: 0x0041C540, 0x007008B0, 0x00700960, 0x0071C4E0, 0x0071C530, 0x0071C560) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0x0c  (evidence: 0x006D9170) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0xc  (evidence: 0x00700920) // CONFLICT: multiple definitions at +0xC

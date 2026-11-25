@@ -4,12 +4,403 @@
   "orig_symbol": "sub_0067A670",
   "src_path": "src/leaf/decompiled_670000.cpp",
   "lifted_path": "lifted/leaf/decompiled_670000.cpp",
-  "name": "InitWithStaticInstance_0067A670",
-  "signature": "void* __thiscall fn_0067A670(void* self)",
-  "summary": "Stores the vtable pointer 0x0098816C at offset 0, passes the lazily created static instance to ext_006A0790, and returns this.",
+  "name": "storeArgIntoFirstDword_006721B0",
+  "class": "Unknown",
+  "signature": "DWORD fn_006721B0(void* self, DWORD value)",
+  "summary": "Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.",
   "fields": [
     {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint8_t* field_0x00 (pointer to range-holder",
+      "name": "struct)"
+    },
+    {
+      "class": "RangeHolder",
+      "offset": "+0x4",
+      "type": "uint32_t field_0x04 (range",
+      "name": "begin)"
+    },
+    {
+      "class": "RangeHolder",
+      "offset": "+0x8",
+      "type": "uint32_t field_0x08 (range",
+      "name": "end)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "lock"
+    },
+    {
+      "class": "Self",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end"
+    },
+    {
+      "class": "CriticalSectionGuardedRecord",
+      "offset": "+0x4",
+      "type": "uint32_t field_0x04",
+      "name": "(zeroed)"
+    },
+    {
+      "class": "CriticalSectionGuardedRecord",
+      "offset": "+0x8",
+      "type": "uint32_t field_0x08",
+      "name": "(arg1)"
+    },
+    {
+      "class": "CriticalSectionGuardedRecord",
+      "offset": "+0xC",
+      "type": "uint8_t field_0x0C",
+      "name": "(cleared)"
+    },
+    {
+      "class": "CriticalSectionGuardedRecord",
+      "offset": "+0x10",
+      "type": "uint32_t field_0x10",
+      "name": "(arg3)"
+    },
+    {
+      "class": "CriticalSectionGuardedRecord",
+      "offset": "+0x14",
+      "type": "uint32_t field_0x14",
+      "name": "(arg2)"
+    },
+    {
+      "class": "CriticalSectionGuardedRecord",
+      "offset": "+0x18",
+      "type": "CriticalSectionLock",
+      "name": "lock"
+    },
+    {
+      "class": "PerformanceTimer",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "state"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "pointer",
+      "name": "vecHolder"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t field_0x04 (vector begin, via",
+      "name": "holder)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t field_0x08 (vector end, via",
+      "name": "holder)"
+    },
+    {
+      "class": "EventTable",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "slots"
+    },
+    {
+      "class": "EventSlotVec",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "EventSlotVec",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end"
+    },
+    {
+      "class": "TimerHandle",
+      "offset": "+0x4",
+      "type": "UINT",
+      "name": "field_0x04"
+    },
+    {
+      "class": "TimerHandle",
+      "offset": "+0x8",
+      "type": "UINT",
+      "name": "field_0x08"
+    },
+    {
+      "class": "TimerHandle",
+      "offset": "+0x18",
+      "type": "CriticalSectionLock",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "HANDLE*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "HANDLE*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Vector8",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "Vector8",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end"
+    },
+    {
       "class": "\u003cClassName\u003e",
+      "offset": "+0x0",
+      "type": "u32",
+      "name": "field_0x00"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x24",
+      "type": "u32",
+      "name": "field_0x24"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x28",
+      "type": "u32",
+      "name": "field_0x28"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x2C",
+      "type": "u32",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x30",
+      "type": "u32",
+      "name": "field_0x30"
+    },
+    {
+      "class": "XMLConverter",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vfptr"
+    },
+    {
+      "class": "XMLConverter",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "StringArray",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "begin"
+    },
+    {
+      "class": "StringArray",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "end"
+    },
+    {
+      "class": "StringArray",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "capacity"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint8_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "TimerHandle",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "TimerHandle",
+      "offset": "+0x18",
+      "type": "CriticalSectionLock",
+      "name": "lock"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x10",
+      "type": "std::string",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Entry",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Entry",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
       "offset": "+0x0",
       "type": "uint32_t",
       "name": "vfptr"
@@ -17,5 +408,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T02:25:57Z"
+  "lifted_at": "2026-11-25T02:26:08Z"
 }

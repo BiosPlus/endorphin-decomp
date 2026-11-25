@@ -8,6 +8,6 @@
 // Recovered field layout for PerformanceTimer:
 namespace lifted_layout {
 struct PerformanceTimer_Fields {
-    // +0x0   void*                    state  (evidence: 0x006799F0)
+    // +0x0   void*                    state  (evidence: 0x006799F0, 0x0067A670)
 };
 } // namespace lifted_layout

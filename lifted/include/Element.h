@@ -16,7 +16,7 @@ struct Element_Fields {
     // +0x4   uint8_t[28] field_0x04 (std::string sub-object, assigned via ext_MSVCP80_string_assign)  (evidence: 0x00508BC0, 0x0050A6E0, 0x0050C4D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              field_0x04  (evidence: 0x00508BC0, 0x00509C50, 0x0050C4D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              name  (evidence: 0x00508860, 0x00508BC0, 0x0050C4D0) // CONFLICT: multiple definitions at +0x4
-    // +0x10  std::string              field_0x10  (evidence: 0x00679EB0)
+    // +0x10  std::string              field_0x10  (evidence: 0x00679EB0, 0x0067A670)
     // +0x1C  int32_t                  field_0x1C  (evidence: 0x004C4390, 0x004C72D0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  std::string              field_0x1C  (evidence: 0x00575230) // CONFLICT: multiple definitions at +0x1C
     // +0x20  float                    field_0x20  (evidence: 0x00508BC0, 0x00509C50, 0x0050A6E0, 0x0050C4D0)

@@ -8,11 +8,11 @@
 // Recovered field layout for CriticalSectionGuardedRecord:
 namespace lifted_layout {
 struct CriticalSectionGuardedRecord_Fields {
-    // +0x4   uint32_t field_0x04      (zeroed)  (evidence: 0x0067B3D0)
-    // +0x8   uint32_t field_0x08      (arg1)  (evidence: 0x0067B3D0)
-    // +0xC   uint8_t field_0x0C       (cleared)  (evidence: 0x0067B3D0)
-    // +0x10  uint32_t field_0x10      (arg3)  (evidence: 0x0067B3D0)
-    // +0x14  uint32_t field_0x14      (arg2)  (evidence: 0x0067B3D0)
-    // +0x18  CriticalSectionLock      lock  (evidence: 0x0067B3D0)
+    // +0x4   uint32_t field_0x04      (zeroed)  (evidence: 0x0067A670, 0x0067B3D0)
+    // +0x8   uint32_t field_0x08      (arg1)  (evidence: 0x0067A670, 0x0067B3D0)
+    // +0xC   uint8_t field_0x0C       (cleared)  (evidence: 0x0067A670, 0x0067B3D0)
+    // +0x10  uint32_t field_0x10      (arg3)  (evidence: 0x0067A670, 0x0067B3D0)
+    // +0x14  uint32_t field_0x14      (arg2)  (evidence: 0x0067A670, 0x0067B3D0)
+    // +0x18  CriticalSectionLock      lock  (evidence: 0x0067A670, 0x0067B3D0)
 };
 } // namespace lifted_layout

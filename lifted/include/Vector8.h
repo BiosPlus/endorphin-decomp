@@ -8,7 +8,7 @@
 // Recovered field layout for Vector8:
 namespace lifted_layout {
 struct Vector8_Fields {
-    // +0x4   uint32_t                 begin  (evidence: 0x004ECA40, 0x0067F910)
-    // +0x8   uint32_t                 end  (evidence: 0x004ECA40, 0x0067F910)
+    // +0x4   uint32_t                 begin  (evidence: 0x004ECA40, 0x0067A670, 0x0067F910)
+    // +0x8   uint32_t                 end  (evidence: 0x004ECA40, 0x0067A670, 0x0067F910)
 };
 } // namespace lifted_layout

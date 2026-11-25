@@ -999,7 +999,7 @@ extern void __thiscall ext_006A0790(void* self);
 
 // @name InitWithStaticInstance_0067A670
 // @summary Stores the vtable pointer 0x0098816C at offset 0, passes the lazily created static instance to ext_006A0790, and returns this.
-// @field <ClassName> +0x00 uint32_t vfptr
+// @field Unknown +0x00 uint32_t vfptr
 void* __thiscall fn_0067A670(void* self) {
     // mov dword ptr [esi], 0x98816c
     lift_field<uint32_t>(self, 0x00) = 0x0098816Cu;

@@ -40793,9 +40793,10 @@
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
   "0x0067A670": {
-    "name": "InitWithStaticInstance_0067A670",
-    "signature": "void* __thiscall fn_0067A670(void* self)",
-    "summary": "Stores the vtable pointer 0x0098816C at offset 0, passes the lazily created static instance to ext_006A0790, and returns this.",
+    "name": "storeArgIntoFirstDword_006721B0",
+    "class": "Unknown",
+    "signature": "DWORD fn_006721B0(void* self, DWORD value)",
+    "summary": "Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x0067A690": {

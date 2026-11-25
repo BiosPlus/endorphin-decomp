@@ -8,7 +8,7 @@
 // Recovered field layout for RangeHolder:
 namespace lifted_layout {
 struct RangeHolder_Fields {
-    // +0x4   uint32_t field_0x04 (range begin)  (evidence: 0x0067F8F0)
-    // +0x8   uint32_t field_0x08 (range end)  (evidence: 0x0067F8F0)
+    // +0x4   uint32_t field_0x04 (range begin)  (evidence: 0x0067A670, 0x0067F8F0)
+    // +0x8   uint32_t field_0x08 (range end)  (evidence: 0x0067A670, 0x0067F8F0)
 };
 } // namespace lifted_layout
