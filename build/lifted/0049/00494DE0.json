@@ -4,11 +4,203 @@
   "orig_symbol": "ExprParser::DynamicEnumType\u003cRigManager, \u0026public: int __thiscall RigManager::getRigTypeIndex(void) const, \u0026public: void __thiscall RigManager::setRigTypeIndex(int), \u0026public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall RigManager::getRigTypeNameFromIndex(int) const\u003e::vfunc_5",
   "src_path": "src/templates/DynamicEnumType.cpp",
   "lifted_path": "lifted/templates/DynamicEnumType.cpp",
-  "name": "ExprParser::DynamicEnumType::vfunc_5",
-  "class": "ExprParser::DynamicEnumType\u003cRigManager, \u0026public: int __thiscall RigManager::getRigTypeIndex(void) const, \u0026public: void __thiscall RigManager::setRigTypeIndex(int), \u0026public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall RigManager::getRigTypeNameFromIndex(int) const\u003e",
-  "signature": "void fn_00494DE0(void* self)",
-  "summary": "Throws an exception: if the object's first pointer field is non-null, throws a message built from ext_006AD970(); otherwise constructs a DerivedException and throws it.",
+  "name": "ExprParser::DynamicEnumType\u003cNMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}\u003e::vfunc_26",
+  "class": "ExprParser::DynamicEnumType\u003cNMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}\u003e",
+  "signature": "void fn_00495020(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00495020 (ExprParser::DynamicEnumType\u003cRigManager\u003e::vfunc_26).",
   "fields": [
+    {
+      "class": "ExprParser::DynamicEnumType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "DynEnumVfunc9Arg",
+      "offset": "+0x4",
+      "type": "void**",
+      "name": "field_0x4"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xC",
+      "type": "int",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "ptr"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0xC",
+      "type": "std::uint32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "EvolverRuntimeOptions",
+      "offset": "+0x8",
+      "type": "int",
+      "name": "field_0x08"
+    },
+    {
+      "class": "DynamicEnumType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::DynamicEnumType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "ptr"
+    },
+    {
+      "class": "ExprParser::DynamicEnumType",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions\u003e",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "NMData::EvolverRuntimeOptions",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::DynamicEnumType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ReadWriteMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x8",
+      "type": "int",
+      "name": "field_0x08"
+    },
+    {
+      "class": "ExprParser::DynamicEnumType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "ptr_ref"
+    },
+    {
+      "class": "ExprParser::DynamicEnumType",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "value_ptr"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0xC",
+      "type": "int",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void**",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ValueArg",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x4"
+    },
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::DynamicEnumType",
+      "offset": "+0x0",
+      "type": "int",
+      "name": "field_0x00"
+    },
     {
       "class": "DynamicEnumType",
       "offset": "+0x0",
@@ -18,5 +210,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T04:08:03Z"
+  "lifted_at": "2026-11-25T04:08:09Z"
 }

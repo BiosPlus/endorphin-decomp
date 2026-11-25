@@ -10,6 +10,6 @@
 // Recovered field layout for NMData::EvolverRuntimeOptions:
 namespace lifted_layout {
 struct NMData_EvolverRuntimeOptions_Fields {
-    // +0xC   int32_t                  field_0x0c  (evidence: 0x00515E30, 0x005161A0)
+    // +0xC   int32_t                  field_0x0c  (evidence: 0x00494DE0, 0x00515E30, 0x005161A0)
 };
 } // namespace lifted_layout

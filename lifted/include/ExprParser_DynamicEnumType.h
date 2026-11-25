@@ -8,13 +8,13 @@
 // Recovered field layout for ExprParser::DynamicEnumType:
 namespace lifted_layout {
 struct ExprParser_DynamicEnumType_Fields {
-    // +0x0   int                      field_0x00  (evidence: 0x004D51B0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   int                      field_0x00  (evidence: 0x00494DE0, 0x004D51B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 field_0x00  (evidence: 0x004B9BC0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    field_0x00  (evidence: 0x00515C50, 0x00515EB0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    ptr  (evidence: 0x00494D50, 0x00516580) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    ptr_ref  (evidence: 0x005165C0) // CONFLICT: multiple definitions at +0x0
-    // +0x4   void*                    field_0x04  (evidence: 0x00515C50, 0x00516550, 0x0067A770)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x00516580) // CONFLICT: multiple definitions at +0x8
-    // +0x8   uint8_t                  field_0x08  (evidence: 0x005165C0) // CONFLICT: multiple definitions at +0x8
+    // +0x0   void*                    field_0x00  (evidence: 0x00494DE0, 0x00515C50, 0x00515EB0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    ptr  (evidence: 0x00494D50, 0x00494DE0, 0x00516580) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    ptr_ref  (evidence: 0x00494DE0, 0x005165C0) // CONFLICT: multiple definitions at +0x0
+    // +0x4   void*                    field_0x04  (evidence: 0x00494DE0, 0x00515C50, 0x00516550, 0x0067A770)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00494DE0, 0x00516580) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint8_t                  field_0x08  (evidence: 0x00494DE0, 0x005165C0) // CONFLICT: multiple definitions at +0x8
 };
 } // namespace lifted_layout

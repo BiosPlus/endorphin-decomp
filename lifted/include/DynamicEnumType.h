@@ -8,7 +8,7 @@
 // Recovered field layout for DynamicEnumType:
 namespace lifted_layout {
 struct DynamicEnumType_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x00494A60) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    field_0x00  (evidence: 0x00494A60, 0x00494DE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    firstPtr  (evidence: 0x00494DE0) // CONFLICT: multiple definitions at +0x0
 };
 } // namespace lifted_layout
