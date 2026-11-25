@@ -1681,3 +1681,23 @@ void __thiscall sub_006D6B10(void* self, int32_t* out0, int32_t* out1, int32_t* 
     *out2 = *reinterpret_cast<const int32_t*>(base + 0x1cc);
 }
 } // namespace lift_006D6B10
+
+// [0x006DFFF0]
+namespace lift_006DFFF0 {
+// @name vec4d_length
+// @summary Computes the Euclidean norm (magnitude) of a 4-element double-precision vector or quaternion.
+// @field Vec4d +0x00 double field_0x00
+// @field Vec4d +0x08 double field_0x08
+// @field Vec4d +0x10 double field_0x10
+// @field Vec4d +0x18 double field_0x18
+
+
+double __cdecl sub_006DFFF0(uint32_t arg0) {
+    const double* v = reinterpret_cast<const double*>(static_cast<uintptr_t>(arg0));
+    double x = v[0];
+    double y = v[1];
+    double z = v[2];
+    double w = v[3];
+    return std::sqrt(x * x + y * y + z * z + w * w);
+}
+} // namespace lift_006DFFF0
