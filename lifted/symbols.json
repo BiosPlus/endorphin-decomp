@@ -18010,6 +18010,13 @@
     "summary": "Multiplies the current GL matrix by the two matrix pointers stored at this+0x04 and this+0x08 via glMultMatrixf.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00532240": {
+    "name": "HasRelativeTMPtr::vfunc_13",
+    "class": "HasRelativeTMPtr",
+    "signature": "static void translate_by_object_vector(uint32_t object_addr)",
+    "summary": "Calls glTranslatef with the translation vector (+0x30..+0x38) of the objects referenced by fields +0x4 and +0x8.",
+    "lifted_path": "lifted/classes/HasRelativeTMPtr.cpp"
+  },
   "0x005327D0": {
     "name": "Material::vfunc_0",
     "class": "Material",

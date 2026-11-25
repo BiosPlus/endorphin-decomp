@@ -1,0 +1,28 @@
+{
+  "va": "0x00532240",
+  "size": 73,
+  "orig_symbol": "HasRelativeTMPtr::vfunc_13",
+  "src_path": "src/classes/HasRelativeTMPtr.cpp",
+  "lifted_path": "lifted/classes/HasRelativeTMPtr.cpp",
+  "name": "HasRelativeTMPtr::vfunc_13",
+  "class": "HasRelativeTMPtr",
+  "signature": "static void translate_by_object_vector(uint32_t object_addr)",
+  "summary": "Calls glTranslatef with the translation vector (+0x30..+0x38) of the objects referenced by fields +0x4 and +0x8.",
+  "fields": [
+    {
+      "class": "HasRelativeTMPtr",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "HasRelativeTMPtr",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:31:37Z"
+}
