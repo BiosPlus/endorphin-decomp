@@ -49108,6 +49108,13 @@
     "summary": "Evaluates the operand via its vfunc_1, applies base-10 log (float-rounded), and passes the result to the operand's vfunc_7.",
     "lifted_path": "lifted/ExprParser/Operators/Log.cpp"
   },
+  "0x006A1B10": {
+    "name": "ExprParser::Operators::Print::vfunc_3",
+    "class": "ExprParser::Operators::Print",
+    "signature": "static inline T iat_fn(uint32_t slot_value)",
+    "summary": "If the global mute flag is clear, formats the stack argument via ext_0041CEB0 into a string and writes it followed by std::endl to std::cout.",
+    "lifted_path": "lifted/ExprParser/Operators/Print.cpp"
+  },
   "0x006A1B90": {
     "name": "ExprParser::Operators::Sin::vfunc_3",
     "class": "ExprParser::Operators::Sin",

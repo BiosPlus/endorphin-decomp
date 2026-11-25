@@ -1,0 +1,14 @@
+{
+  "va": "0x006A1B10",
+  "size": 120,
+  "orig_symbol": "ExprParser::Operators::Print::vfunc_3",
+  "src_path": "src/ExprParser/Operators/Print.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/Print.cpp",
+  "name": "ExprParser::Operators::Print::vfunc_3",
+  "class": "ExprParser::Operators::Print",
+  "signature": "static inline T iat_fn(uint32_t slot_value)",
+  "summary": "If the global mute flag is clear, formats the stack argument via ext_0041CEB0 into a string and writes it followed by std::endl to std::cout.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:26:23Z"
+}
