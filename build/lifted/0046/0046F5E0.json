@@ -1,0 +1,13 @@
+{
+  "va": "0x0046F5E0",
+  "size": 30,
+  "orig_symbol": "sub_0046F5E0",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "storePairWithLazyGlobal",
+  "signature": "void sub_0046F5E0(DWORD* dst, DWORD value)",
+  "summary": "Stores a value into dst[0] and the lazily initialized global's address into dst[1].",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:28:45Z"
+}

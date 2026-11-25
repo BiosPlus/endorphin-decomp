@@ -1499,3 +1499,18 @@ void fillStaticPair_0046F640(uint32_t* out, uint32_t value) {
     out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
 }
 } // namespace lift_0046F640
+
+// [0x0046F5E0]
+namespace lift_0046F5E0 {
+// @name storePairWithLazyGlobal
+// @summary Stores a value into dst[0] and the lazily initialized global's address into dst[1].
+
+DWORD ext_0046F340(DWORD unused);
+
+// cdecl: void(DWORD* dst, DWORD value)
+void sub_0046F5E0(DWORD* dst, DWORD value) {
+    DWORD global_addr = ext_0046F340(0);
+    dst[0] = value;
+    dst[1] = global_addr;
+}
+} // namespace lift_0046F5E0

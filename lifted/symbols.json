@@ -7573,6 +7573,12 @@
     "summary": "One-time guarded initializer for the global object at 0x00AD8374: runs the base init on first call, then sets its vtable-like first DWORD to 0x0093B24C and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046F5E0": {
+    "name": "storePairWithLazyGlobal",
+    "signature": "void sub_0046F5E0(DWORD* dst, DWORD value)",
+    "summary": "Stores a value into dst[0] and the lazily initialized global's address into dst[1].",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046F640": {
     "name": "fillStaticPair_0046F640",
     "signature": "void fillStaticPair_0046F640(uint32_t* out, uint32_t value)",
