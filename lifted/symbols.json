@@ -8588,6 +8588,12 @@
     "summary": "One-time initializer for global string at mem_00AD90BC; returns its address.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00477120": {
+    "name": "sortThreeByComparator",
+    "signature": "void __cdecl sub_00477120(uint32_t* a, uint32_t* b, uint32_t* c, uint32_t cmp)",
+    "summary": "Sorts three 32-bit values in-place using a comparator functor passed by value.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x004772E0": {
     "name": "MoveBackward12",
     "signature": "std::uint8_t* fn_004772E0(std::uint8_t* first, std::uint8_t* last, std::uint8_t* dst_last)",
@@ -13176,6 +13182,12 @@
     "summary": "Lazily caches a value from ext_004B4710 in a global on first call, then forwards it with the self+8 subobject to ext_0055DA20 on the second stack argument; returns that second argument.",
     "lifted_path": "lifted/NMData/GraphEngineData.cpp"
   },
+  "0x004B4930": {
+    "name": "destroyStringEntryRange",
+    "signature": "void __stdcall fn_004B4930(uint32_t begin_cont, uint32_t begin_ptr, uint32_t end_cont, uint32_t end_ptr)",
+    "summary": "Iterates a checked vector iterator range, destroying each non-null entry's std::string at +0x4 and freeing the entry.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B4A40": {
     "name": "InitOnceGlobalString_004B4A40",
     "signature": "void* fn_004B4A40()",
@@ -17142,6 +17154,13 @@
     "class": "Properties::TargetSelectionProxy",
     "signature": "uint32_t __thiscall Properties_TargetSelectionProxy_vfunc_0(void* self, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3)",
     "summary": "Forwards virtual slot 0 to the first source object in the proxy's vector (tail call); returns the vector begin value when the vector is empty, or 0 when it is unset.",
+    "lifted_path": "lifted/Properties/TargetSelectionProxy.cpp"
+  },
+  "0x004EF4A0": {
+    "name": "Properties::TargetSelectionProxy::vfunc_1",
+    "class": "Properties::TargetSelectionProxy",
+    "signature": "void __thiscall fn_004EF4A0(uint32_t self, uint32_t arg0)",
+    "summary": "Iterates over a vector of child objects and invokes vfunc_1 on each with the given argument.",
     "lifted_path": "lifted/Properties/TargetSelectionProxy.cpp"
   },
   "0x004EF790": {

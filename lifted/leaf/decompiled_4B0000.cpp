@@ -1104,3 +1104,55 @@ extern uint32_t __thiscall fn_004B72D0(void* self) {
 }
 } // namespace lift_005C3FB0
 } // namespace lift_004B72D0
+
+// [0x004B4930]
+namespace lift_004B4930 {
+// @name destroyStringEntryRange
+// @summary Iterates a checked vector iterator range, destroying each non-null entry's std::string at +0x4 and freeing the entry.
+// @field Vector +0x08 uint32_t end_ptr
+
+
+extern void fn_006A5C5C(void* ptr);
+extern uint32_t mem_00925134;
+extern uint32_t mem_00924FF4;
+
+void __stdcall fn_004B4930(uint32_t begin_cont, uint32_t begin_ptr, uint32_t end_cont, uint32_t end_ptr) {
+    using InvalidParamFn = void (__cdecl*)(void);
+    using StringDtorFn = void (__thiscall*)(void*);
+
+    auto invalid_param = reinterpret_cast<InvalidParamFn>(static_cast<uintptr_t>(mem_00925134));
+    auto string_dtor = reinterpret_cast<StringDtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+
+    uint32_t cur = begin_ptr;
+    for (;;) {
+        if (begin_cont == 0 || begin_cont != end_cont) {
+            invalid_param();
+        }
+        if (cur == end_ptr) {
+            break;
+        }
+        uint32_t elem_slot = cur;
+        if (begin_cont == 0) {
+            invalid_param();
+        }
+        uint32_t vec_end = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(begin_cont + 0x8u));
+        if (cur >= vec_end) {
+            invalid_param();
+        }
+        cur += 4u;
+        if (begin_cont == 0) {
+            invalid_param();
+        }
+        vec_end = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(begin_cont + 0x8u));
+        if (elem_slot >= vec_end) {
+            invalid_param();
+        }
+        uint32_t elem = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(elem_slot));
+        if (elem == 0) {
+            continue;
+        }
+        string_dtor(reinterpret_cast<void*>(static_cast<uintptr_t>(elem + 0x4u)));
+        fn_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(elem)));
+    }
+}
+} // namespace lift_004B4930
