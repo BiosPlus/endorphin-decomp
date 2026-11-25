@@ -1358,3 +1358,21 @@ void fn_005E2830(void* self, float value) {
     (void)&ext_00612460; // reference only: the disassembly does not call 0x00612460
 }
 } // namespace lift_005E2830
+
+// [0x005E29C0]
+namespace lift_005E29C0 {
+extern uint32_t mem_00925134;
+uintptr_t __thiscall ext_005E1350(void* self);
+void __thiscall ext_00612460(void* self, float value);
+
+// @name UnknownClass::forwardSetElement3ViaSubobject
+// @class UnknownClass
+// @summary Resolves an object via the subobject at +0x17C (virtual slot 0x128, 0x005E1350) and calls setElement3AndNotify on it with value.
+// @field UnknownClass +0x17C void* subobject
+void __thiscall fn_005E29C0(void* self, float value) {
+    (void)&mem_00925134;
+    void* sub = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x17C);
+    void* result = reinterpret_cast<void*>(ext_005E1350(sub));
+    ext_00612460(result, value);
+}
+} // namespace lift_005E29C0

@@ -1,0 +1,22 @@
+{
+  "va": "0x005E29C0",
+  "size": 34,
+  "orig_symbol": "sub_005E29C0",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "UnknownClass::forwardSetElement3ViaSubobject",
+  "class": "UnknownClass",
+  "signature": "void __thiscall fn_005E29C0(void* self, float value)",
+  "summary": "Resolves an object via the subobject at +0x17C (virtual slot 0x128, 0x005E1350) and calls setElement3AndNotify on it with value.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x17C",
+      "type": "void*",
+      "name": "subobject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@low",
+  "lifted_at": "2026-11-25T14:15:24Z"
+}

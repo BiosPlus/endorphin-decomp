@@ -33520,6 +33520,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005E2770 (descriptiveName_005E2770).",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005E29C0": {
+    "name": "UnknownClass::forwardSetElement3ViaSubobject",
+    "class": "UnknownClass",
+    "signature": "void __thiscall fn_005E29C0(void* self, float value)",
+    "summary": "Resolves an object via the subobject at +0x17C (virtual slot 0x128, 0x005E1350) and calls setElement3AndNotify on it with value.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005E29F0": {
     "name": "NMData::FixedPathJointData::vfunc_14",
     "class": "NMData::FixedPathJointData",
