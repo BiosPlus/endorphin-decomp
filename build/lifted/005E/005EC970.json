@@ -1,0 +1,13 @@
+{
+  "va": "0x005EC970",
+  "size": 30,
+  "orig_symbol": "sub_005EC970",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "storeValueAndStaticObject_005EC970",
+  "signature": "void __cdecl fn_005EC970(DWORD* dst, DWORD value)",
+  "summary": "Stores a value into dst[0] and the static object address (from the one-time initializer) into dst[1].",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:13:01Z"
+}

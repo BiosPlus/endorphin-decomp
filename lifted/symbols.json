@@ -32207,6 +32207,12 @@
     "summary": "Stores a DWORD value into out[0] and the static object address from ext_005EB060 into out[1].",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005EC970": {
+    "name": "storeValueAndStaticObject_005EC970",
+    "signature": "void __cdecl fn_005EC970(DWORD* dst, DWORD value)",
+    "summary": "Stores a value into dst[0] and the static object address (from the one-time initializer) into dst[1].",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005ECB10": {
     "name": "NMData::FixedPathJointData::vfunc_9_off_C",
     "class": "NMData::FixedPathJointData",

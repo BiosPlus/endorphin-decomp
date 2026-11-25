@@ -793,3 +793,20 @@ void fn_005EC8F0(DWORD* out, DWORD value) {
     out[1] = obj;
 }
 } // namespace lift_005EC8F0
+
+// [0x005EC970]
+namespace lift_005EC970 {
+// @name storeValueAndStaticObject_005EC970
+// @summary Stores a value into dst[0] and the static object address (from the one-time initializer) into dst[1].
+
+extern DWORD mem_00B45F3C; // init-guard flags (bit 0 = initialization started)
+extern DWORD mem_00B45F38; // static object storage (first DWORD = vtable pointer)
+
+void* ext_005EB0C0(DWORD arg0);
+
+void __cdecl fn_005EC970(DWORD* dst, DWORD value) {
+    void* obj = ext_005EB0C0(0);
+    dst[0] = value;
+    dst[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_005EC970
