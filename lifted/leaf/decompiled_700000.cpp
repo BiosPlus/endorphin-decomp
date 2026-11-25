@@ -1787,3 +1787,85 @@ extern double* __thiscall fn_00702A50(void* self, double* out) {
     return out;
 }
 } // namespace lift_00702A50
+
+// [0x0070BD10] sub_0070BD10 (80 bytes)
+namespace lift_0070BD10 {
+// @name sub_0070BD10
+// @summary Auto-lifted identical-shape clone of 0x0070BBD0 (Unknown::FillTripleFromChains).
+namespace lift_0070BBD0 {
+// Callee 0x006C97B0: sub_006C97B0 (32B). Takes self in ECX, returns a pointer in EAX. Signature inferred from call sites.
+extern void* ext_006C9870(void* self);
+// Callee 0x006C97D0: sub_006C97D0 (32B). Takes self in ECX, returns a pointer in EAX. Signature inferred from call sites.
+extern void* ext_006C9890(void* self);
+// Callee 0x006C97F0: sub_006C97F0 (32B). Takes self in ECX, returns a pointer in EAX. Signature inferred from call sites.
+extern void* ext_006C98B0(void* self);
+// Known callee 0x006C9F70: sub_006C9F70 (Getter returning float field at offset +0x14.)
+extern float ext_006C9F70(void* self);
+// Known callee 0x006DC460: Unknown::GetValueIfCountPositive (Returns *(this->field_0xC8) when this->field_0xB8 > 0, otherwise 0.)
+extern int32_t ext_006DC460(void* self);
+
+static inline void* lift_0070BBD0_ptr(int32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(v)));
+}
+
+// @name Unknown::FillTripleFromChains
+// @class Unknown
+// @summary Resolves a value index via GetValueIfCountPositive, then reads three float getters through chained sub-object lookups and stores them as doubles into the caller-supplied buffer at offsets 0x00, 0x08 and 0x10; returns that buffer.
+// (No @field lines: this function does not dereference self directly; all accesses go through callees.)
+double* __thiscall fn_0070BD10(void* self, double* out) {
+    int32_t v = ext_006DC460(self);
+
+    void* p0 = ext_006C9870(lift_0070BBD0_ptr(v));
+    out[0] = static_cast<double>(ext_006C9F70(p0));
+
+    void* p1 = ext_006C9890(lift_0070BBD0_ptr(v));
+    out[1] = static_cast<double>(ext_006C9F70(p1));
+
+    void* p2 = ext_006C98B0(lift_0070BBD0_ptr(v));
+    out[2] = static_cast<double>(ext_006C9F70(p2));
+
+    return out;
+}
+} // namespace lift_0070BBD0
+} // namespace lift_0070BD10
+
+// [0x0070BDB0] sub_0070BDB0 (80 bytes)
+namespace lift_0070BDB0 {
+// @name sub_0070BDB0
+// @summary Auto-lifted identical-shape clone of 0x0070BBD0 (Unknown::FillTripleFromChains).
+namespace lift_0070BBD0 {
+// Callee 0x006C97B0: sub_006C97B0 (32B). Takes self in ECX, returns a pointer in EAX. Signature inferred from call sites.
+extern void* ext_006C9750(void* self);
+// Callee 0x006C97D0: sub_006C97D0 (32B). Takes self in ECX, returns a pointer in EAX. Signature inferred from call sites.
+extern void* ext_006C9770(void* self);
+// Callee 0x006C97F0: sub_006C97F0 (32B). Takes self in ECX, returns a pointer in EAX. Signature inferred from call sites.
+extern void* ext_006C9790(void* self);
+// Known callee 0x006C9F70: sub_006C9F70 (Getter returning float field at offset +0x14.)
+extern float ext_006C9F70(void* self);
+// Known callee 0x006DC460: Unknown::GetValueIfCountPositive (Returns *(this->field_0xC8) when this->field_0xB8 > 0, otherwise 0.)
+extern int32_t ext_006DC460(void* self);
+
+static inline void* lift_0070BBD0_ptr(int32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(v)));
+}
+
+// @name Unknown::FillTripleFromChains
+// @class Unknown
+// @summary Resolves a value index via GetValueIfCountPositive, then reads three float getters through chained sub-object lookups and stores them as doubles into the caller-supplied buffer at offsets 0x00, 0x08 and 0x10; returns that buffer.
+// (No @field lines: this function does not dereference self directly; all accesses go through callees.)
+double* __thiscall fn_0070BDB0(void* self, double* out) {
+    int32_t v = ext_006DC460(self);
+
+    void* p0 = ext_006C9750(lift_0070BBD0_ptr(v));
+    out[0] = static_cast<double>(ext_006C9F70(p0));
+
+    void* p1 = ext_006C9770(lift_0070BBD0_ptr(v));
+    out[1] = static_cast<double>(ext_006C9F70(p1));
+
+    void* p2 = ext_006C9790(lift_0070BBD0_ptr(v));
+    out[2] = static_cast<double>(ext_006C9F70(p2));
+
+    return out;
+}
+} // namespace lift_0070BBD0
+} // namespace lift_0070BDB0

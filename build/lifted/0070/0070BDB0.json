@@ -1,0 +1,14 @@
+{
+  "va": "0x0070BDB0",
+  "size": 80,
+  "orig_symbol": "sub_0070BDB0",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "sub_0070BDB0",
+  "class": "Unknown",
+  "signature": "static inline void* lift_0070BBD0_ptr(int32_t v)",
+  "summary": "Auto-lifted identical-shape clone of 0x0070BBD0 (Unknown::FillTripleFromChains).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:51:18Z"
+}

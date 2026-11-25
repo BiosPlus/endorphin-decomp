@@ -53893,6 +53893,20 @@
     "summary": "Fills out[0..2] with three float getter results (as doubles) read from sub-objects of the value returned by GetValueIfCountPositive; returns out.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x0070BD10": {
+    "name": "sub_0070BD10",
+    "class": "Unknown",
+    "signature": "static inline void* lift_0070BBD0_ptr(int32_t v)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070BBD0 (Unknown::FillTripleFromChains).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
+  "0x0070BDB0": {
+    "name": "sub_0070BDB0",
+    "class": "Unknown",
+    "signature": "static inline void* lift_0070BBD0_ptr(int32_t v)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070BBD0 (Unknown::FillTripleFromChains).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070BE80": {
     "name": "Unknown::GetFloatAtChainedValue",
     "class": "Unknown",
