@@ -1,0 +1,34 @@
+{
+  "va": "0x00672D10",
+  "size": 71,
+  "orig_symbol": "sub_00672D10",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "sub_00672D10",
+  "class": "StringArray",
+  "signature": "void fn_00672D10(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004026E0 (StringArray::ReleaseElements).",
+  "fields": [
+    {
+      "class": "StringArray",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "begin"
+    },
+    {
+      "class": "StringArray",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "end"
+    },
+    {
+      "class": "StringArray",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "capacity"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:27:12Z"
+}

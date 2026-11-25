@@ -37775,6 +37775,13 @@
     "summary": "Pops the return address into edi and returns, releasing 4 bytes of stack arguments.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x00672D10": {
+    "name": "sub_00672D10",
+    "class": "StringArray",
+    "signature": "void fn_00672D10(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004026E0 (StringArray::ReleaseElements).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00672E50": {
     "name": "sub_00672E50",
     "class": "(none)",
