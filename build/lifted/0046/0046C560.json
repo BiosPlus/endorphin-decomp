@@ -1,0 +1,69 @@
+{
+  "va": "0x0046C560",
+  "size": 113,
+  "orig_symbol": "sub_0046C560",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "sub_0046C560_ctor",
+  "signature": "void* fn_0046C560(void* self)",
+  "summary": "Constructor initializing vtables, subobject at +0x4, std::string at +0x28, and scalar fields.",
+  "fields": [
+    {
+      "class": "Obj",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "subobj_vtable"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x24",
+      "type": "uint8_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x28",
+      "type": "std::string",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x44",
+      "type": "uint32_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x4C",
+      "type": "uint32_t",
+      "name": "field_0x4c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:36:29Z"
+}

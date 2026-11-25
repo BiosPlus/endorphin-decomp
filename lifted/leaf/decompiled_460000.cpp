@@ -1805,3 +1805,44 @@ void fn_0046C4E0(void) {
     ext_006A6DD2(exception, reinterpret_cast<const void*>(&mem_009DEBA4));
 }
 } // namespace lift_0046C4E0
+
+// [0x0046C560]
+namespace lift_0046C560 {
+// @name sub_0046C560_ctor
+// @summary Constructor initializing vtables, subobject at +0x4, std::string at +0x28, and scalar fields.
+// @field Obj +0x00 void* vtable
+// @field Obj +0x04 void* subobj_vtable
+// @field Obj +0x08 uint8_t field_0x08
+// @field Obj +0x20 uint32_t field_0x20
+// @field Obj +0x24 uint8_t field_0x24
+// @field Obj +0x28 std::string field_0x28
+// @field Obj +0x44 uint32_t field_0x44
+// @field Obj +0x48 uint32_t field_0x48
+// @field Obj +0x4c uint32_t field_0x4c
+
+
+extern void ext_00661980(void* self);
+extern void* (*mem_00924FE8)(void* self);
+
+void* fn_0046C560(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    uint8_t* subobj = obj + 0x4;
+
+    *reinterpret_cast<uint32_t*>(obj) = 0x0093A744u;
+    ext_00661980(subobj);
+
+    *reinterpret_cast<uint32_t*>(obj) = 0x0093A7A4u;
+    *reinterpret_cast<uint32_t*>(subobj) = 0x0093A74Cu;
+    *reinterpret_cast<uint8_t*>(obj + 0x8) = 0;
+    *reinterpret_cast<uint32_t*>(obj + 0x20) = 0;
+    *reinterpret_cast<uint8_t*>(obj + 0x24) = 1;
+
+    mem_00924FE8(obj + 0x28);
+
+    *reinterpret_cast<uint32_t*>(obj + 0x44) = 0;
+    *reinterpret_cast<uint32_t*>(obj + 0x48) = 0;
+    *reinterpret_cast<uint32_t*>(obj + 0x4c) = 0;
+
+    return self;
+}
+} // namespace lift_0046C560
