@@ -547,3 +547,30 @@ LONG fn_0079AD50(HANDLE handle, LONG offset, LONG origin) {
     return static_cast<LONG>(ext_SetFilePointer(handle, offset, &high, method));
 }
 } // namespace lift_0079AD50
+
+// [0x00798F10] sub_00798F10 (80 bytes)
+namespace lift_00798F10 {
+// Known callee 0x0079AF40: GlobalAllocZeroFlags (Allocates a global memory block of the requested size with uFlags = 0 (GMEM_FIXED) and returns the handle.)
+extern uint32_t ext_0079AF40(uint32_t size);
+// Known callee 0x0079AF50: GlobalFreeWrapper (Frees a global memory handle via KERNEL32!GlobalFree and returns its result.)
+extern void* ext_0079AF50(void* hMem);
+// Known callee 0x0079B010: CopyMemoryForward (Forward copy of n bytes from src to dst.)
+extern void ext_0079B010(void* dst, const void* src, uint32_t count);
+
+// @name ReplaceGlobalBlock
+// @summary Frees the global block held in *slot (if any); if src is non-null, allocates a new block of size bytes into *slot and copies src into it.
+void fn_00798F10(uint32_t* slot, const void* src, uint32_t size) {
+    if (*slot != 0) {
+        ext_0079AF50(reinterpret_cast<void*>(static_cast<uintptr_t>(*slot)));
+        *slot = 0;
+    }
+    if (src == nullptr) {
+        return;
+    }
+    uint32_t handle = ext_0079AF40(size);
+    *slot = handle;
+    if (handle != 0) {
+        ext_0079B010(reinterpret_cast<void*>(static_cast<uintptr_t>(handle)), src, size);
+    }
+}
+} // namespace lift_00798F10
