@@ -14,3 +14,19 @@ DWORD* fn_004B6530(DWORD* dst, DWORD selector, DWORD /*arg3*/) {
     return dst;
 }
 } // namespace lift_004B6530
+
+// [0x00511930] Properties::TerminalParentType<DoubleWithProperties>::vfunc_0 (38 bytes)
+namespace lift_00511930 {
+// Known callee 0x00695E20: sub_00695E20 (Auto-lifted identical-shape clone of 0x0051AED0 (NMData::RealChannel::vfunc_8).)
+// Real call shape from asm: ecx = *arg1 (this), stack args = (arg0, arg2, 0), callee cleans up (ret 0xc).
+extern void* ext_00695E20(void* obj, void* arg0, DWORD arg2, DWORD arg3);
+
+// @name Properties::TerminalParentType<DoubleWithProperties>::vfunc_0
+// @class Properties::TerminalParentType<DoubleWithProperties>
+// @summary Calls ext_00695E20 on the object pointed to by the second argument, passing (self, arg2, 0), and returns self.
+void* fn_00511930(void* self, void** ptr_to_obj, DWORD arg2) {
+    void* obj = *ptr_to_obj;
+    ext_00695E20(obj, self, arg2, 0);
+    return self;
+}
+} // namespace lift_00511930

@@ -1,0 +1,14 @@
+{
+  "va": "0x00511930",
+  "size": 38,
+  "orig_symbol": "Properties::TerminalParentType\u003cDoubleWithProperties\u003e::vfunc_0",
+  "src_path": "src/templates/TerminalParentType.cpp",
+  "lifted_path": "lifted/templates/TerminalParentType.cpp",
+  "name": "Properties::TerminalParentType\u003cDoubleWithProperties\u003e::vfunc_0",
+  "class": "Properties::TerminalParentType\u003cDoubleWithProperties\u003e",
+  "signature": "void* fn_00511930(void* self, void** ptr_to_obj, DWORD arg2)",
+  "summary": "Calls ext_00695E20 on the object pointed to by the second argument, passing (self, arg2, 0), and returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:24:43Z"
+}
