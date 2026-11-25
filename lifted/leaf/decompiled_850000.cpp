@@ -1124,3 +1124,44 @@ extern int32_t sub_00852AD0(uint32_t dst, uint8_t type, uint32_t src) {
     return 1;
 }
 } // namespace lift_00852AD0
+
+// [0x008592A0]
+namespace lift_008592A0 {
+// @name calcCrc16Nibble
+// @summary Computes a 16-bit CRC over a byte buffer using a 16-entry nibble lookup table at 0x00AB8C70.
+
+extern uint8_t mem_r8(uint32_t addr);
+extern uint32_t mem_r32(uint32_t addr);
+
+uint32_t __cdecl sub_008592A0(uint32_t data_addr, uint32_t length) {
+    uint32_t eax = 0;
+    if (length == 0) {
+        return eax;
+    }
+
+    uint32_t esi = data_addr;
+    uint32_t edi = length;
+    constexpr uint32_t kTableBase = 0x00AB8C70u;
+
+    do {
+        uint32_t edx = mem_r8(esi);
+        uint32_t ecx = mem_r32(kTableBase + (eax & 0xFu) * 4u);
+        uint32_t ebx = edx & 0xFu;
+
+        eax = (eax & 0xFFFF0000u) | ((eax & 0xFFFFu) >> 4);
+        ecx ^= static_cast<uint16_t>(mem_r32(kTableBase + ebx * 4u));
+        edx >>= 4;
+        ecx ^= eax;
+
+        eax = mem_r32(kTableBase + (ecx & 0xFu) * 4u);
+        ecx = (ecx & 0xFFFF0000u) | ((ecx & 0xFFFFu) >> 4);
+        eax ^= static_cast<uint16_t>(mem_r32(kTableBase + edx * 4u));
+        eax ^= ecx;
+
+        esi += 1;
+        edi -= 1;
+    } while (edi != 0);
+
+    return eax;
+}
+} // namespace lift_008592A0

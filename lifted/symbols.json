@@ -69882,6 +69882,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00782B30 (selectStaticAddressByIndex).",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x008592A0": {
+    "name": "calcCrc16Nibble",
+    "signature": "uint32_t __cdecl sub_008592A0(uint32_t data_addr, uint32_t length)",
+    "summary": "Computes a 16-bit CRC over a byte buffer using a 16-entry nibble lookup table at 0x00AB8C70.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x00859300": {
     "name": "UnknownClass::clearFlagIfKeyMatches",
     "class": "UnknownClass",
