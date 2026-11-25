@@ -34651,6 +34651,12 @@
     "summary": "Copies 0x18-byte records from [first, last) to dst; if dst is null, only advances the source (no copy).",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x0064C900": {
+    "name": "fillRecordsFromSource",
+    "signature": "void fn_0064C900(void* dst, uint32_t count, const void* src)",
+    "summary": "Copies a 24-byte source record into each of `count` consecutive 24-byte destination slots; a null destination pointer skips that slot's copy but still advances.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x0064CA50": {
     "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundAxis(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundAxis(float), 0}\u003e",

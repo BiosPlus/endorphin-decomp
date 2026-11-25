@@ -783,3 +783,19 @@ void fn_0064B840(const void* first, const void* last, void* dst) {
     } while (src != end);
 }
 } // namespace lift_0064B840
+
+// [0x0064C900] sub_0064C900 (67 bytes)
+namespace lift_0064C900 {
+// @name fillRecordsFromSource
+// @summary Copies a 24-byte source record into each of `count` consecutive 24-byte destination slots; a null destination pointer skips that slot's copy but still advances.
+void fn_0064C900(void* dst, uint32_t count, const void* src) {
+    uintptr_t out = reinterpret_cast<uintptr_t>(dst);
+    while (count != 0) {
+        if (out != 0) {
+            std::memcpy(reinterpret_cast<void*>(out), src, 0x18);
+        }
+        --count;
+        out += 0x18;
+    }
+}
+} // namespace lift_0064C900

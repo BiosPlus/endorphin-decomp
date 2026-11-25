@@ -1,0 +1,13 @@
+{
+  "va": "0x0064C900",
+  "size": 67,
+  "orig_symbol": "sub_0064C900",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "fillRecordsFromSource",
+  "signature": "void fn_0064C900(void* dst, uint32_t count, const void* src)",
+  "summary": "Copies a 24-byte source record into each of `count` consecutive 24-byte destination slots; a null destination pointer skips that slot's copy but still advances.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:17:29Z"
+}
