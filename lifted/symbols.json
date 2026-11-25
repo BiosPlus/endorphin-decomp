@@ -33952,6 +33952,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006227B0 (NMData::HingeCalibrationVariables::vfunc_28).",
     "lifted_path": "lifted/NMData/SkeletalCalibrationVariables.cpp"
   },
+  "0x006226A0": {
+    "name": "allocateElements20",
+    "signature": "void* fn_006226A0(uint32_t count)",
+    "summary": "Allocates storage for `count` 20-byte elements; count 0 allocates 0 bytes, and a count whose byte size would overflow 32 bits throws std::length_error.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00622700": {
     "name": "copy_backward_20b",
     "signature": "uint32_t sub_00622700(uint32_t src_begin, uint32_t src_end, uint32_t dst_end)",

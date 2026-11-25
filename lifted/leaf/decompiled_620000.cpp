@@ -1747,3 +1747,23 @@ uintptr_t fn_0062C510(uintptr_t self, uint32_t arg0, uint32_t arg1, uint32_t arg
     return self;
 }
 } // namespace lift_0062C510
+
+// [0x006226A0] sub_006226A0 (91 bytes)
+namespace lift_006226A0 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Cdecl, one argument (size in bytes), returns an allocated block or NULL.
+extern void* ext_006A5C62(size_t size);
+
+// @name allocateElements20
+// @summary Allocates storage for `count` 20-byte elements; count 0 allocates 0 bytes, and a count whose byte size would overflow 32 bits throws std::length_error.
+void* fn_006226A0(uint32_t count) {
+    if (count == 0) {
+        return ext_006A5C62(0);
+    }
+    // Overflow check: 0xFFFFFFFF / count < 20 means count * 20 does not fit in 32 bits.
+    if (0xFFFFFFFFu / count < 20u) {
+        throw std::length_error("l{b");
+    }
+    return ext_006A5C62(static_cast<size_t>(count * 20u));
+}
+} // namespace lift_006226A0
