@@ -1394,3 +1394,26 @@ void SetRotationYMatrix(void* self, float angle) {
     lift_field<float>(self, 0x20) = c;
 }
 } // namespace lift_0067DB90
+
+// [0x0067B8D0] sub_0067B8D0 (95 bytes)
+namespace lift_0067B8D0 {
+// @name Mat3x3FromRows_0067B8D0
+// @class Unknown (owner class not identified)
+// @summary Builds a row-major 3x3 float matrix at self from three vec3 rows (rows 0..2 from r0, r1, r2) and returns self; the initial zeroing is fully overwritten.
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x0C float field_0x0C
+// @field Unknown +0x10 float field_0x10
+// @field Unknown +0x14 float field_0x14
+// @field Unknown +0x18 float field_0x18
+// @field Unknown +0x1C float field_0x1C
+// @field Unknown +0x20 float field_0x20
+void* fn_0067B8D0(void* self, const float* r0, const float* r1, const float* r2) {
+    float* m = static_cast<float*>(self);
+    m[0] = r0[0]; m[1] = r0[1]; m[2] = r0[2];
+    m[3] = r1[0]; m[4] = r1[1]; m[5] = r1[2];
+    m[6] = r2[0]; m[7] = r2[1]; m[8] = r2[2];
+    return self;
+}
+} // namespace lift_0067B8D0

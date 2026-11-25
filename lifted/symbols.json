@@ -44632,6 +44632,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0067B450 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0067B8D0": {
+    "name": "Mat3x3FromRows_0067B8D0",
+    "class": "Unknown (owner class not identified)",
+    "signature": "void* fn_0067B8D0(void* self, const float* r0, const float* r1, const float* r2)",
+    "summary": "Builds a row-major 3x3 float matrix at self from three vec3 rows (rows 0..2 from r0, r1, r2) and returns self; the initial zeroing is fully overwritten.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067BCE0": {
     "name": "Unknown::InitIdentity3x3AndDispatch_0067BCE0",
     "class": "Unknown",
