@@ -39022,6 +39022,13 @@
     "summary": "Destroys every element of the list whose head pointer is stored at +0x04, then runs the follow-up cleanup on this object.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00665D70": {
+    "name": "NodeList::clearNodes",
+    "class": "NodeList",
+    "signature": "static inline uint32_t\u0026 node_next(uint32_t node)",
+    "summary": "Destroys all element nodes of a circular list (between sentinel head and first node), resets the head to self-loop, and zeroes the size.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00666340": {
     "name": "MacroCommand::vfunc_0",
     "class": "MacroCommand",

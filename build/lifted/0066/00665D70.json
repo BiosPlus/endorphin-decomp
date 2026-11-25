@@ -1,0 +1,28 @@
+{
+  "va": "0x00665D70",
+  "size": 69,
+  "orig_symbol": "sub_00665D70",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "NodeList::clearNodes",
+  "class": "NodeList",
+  "signature": "static inline uint32_t\u0026 node_next(uint32_t node)",
+  "summary": "Destroys all element nodes of a circular list (between sentinel head and first node), resets the head to self-loop, and zeroes the size.",
+  "fields": [
+    {
+      "class": "NodeList",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "head"
+    },
+    {
+      "class": "NodeList",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "size"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:26:02Z"
+}

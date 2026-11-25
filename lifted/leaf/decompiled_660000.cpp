@@ -867,3 +867,51 @@ void fn_00665D20(void* self) {
     ext_004369D0(self);
 }
 } // namespace lift_00665D20
+
+// [0x00665D70] sub_00665D70 (69 bytes)
+namespace lift_00665D70 {
+// Known callee 0x006659F0: destroyListElements (Iterates a checked std::list<T*> range [first, last) and invokes the deleting destructor on each non-null element.)
+extern void ext_006659F0(uint32_t first_cont, uint32_t first_node, uint32_t last_cont, uint32_t last_node);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(uint32_t node);
+
+// Node layout (MSVC-style circular list node): +0x00 next, +0x04 prev.
+static inline uint32_t& node_next(uint32_t node) {
+    return lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(node)), 0x00);
+}
+static inline uint32_t& node_prev(uint32_t node) {
+    return lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(node)), 0x04);
+}
+
+// @name NodeList::clearNodes
+// @class NodeList
+// @summary Destroys all element nodes of a circular list (between sentinel head and first node), resets the head to self-loop, and zeroes the size.
+// @field NodeList +0x04 uint32_t head
+// @field NodeList +0x08 uint32_t size
+void fn_00665D70(void* self) {
+    const uint32_t self_va = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+
+    uint32_t head  = lift_field<uint32_t>(self, 0x04);
+    uint32_t first = node_next(head);
+
+    ext_006659F0(self_va, first, self_va, head);
+
+    // Reset sentinel to an empty self-loop.
+    head = lift_field<uint32_t>(self, 0x04);
+    node_next(head) = head;
+    node_prev(head) = head;
+    lift_field<uint32_t>(self, 0x08) = 0;
+
+    if (first == head) {
+        return;
+    }
+
+    // Free every element node; read next before freeing the current one.
+    uint32_t cur = first;
+    do {
+        uint32_t next = node_next(cur);
+        ext_006A5C5C(cur);
+        cur = next;
+    } while (cur != head);
+}
+} // namespace lift_00665D70
