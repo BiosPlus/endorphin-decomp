@@ -41294,6 +41294,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BED0 (NMData::RealChannel::vfunc_9).",
     "lifted_path": "lifted/leaf/tiny_690000.cpp"
   },
+  "0x00699950": {
+    "name": "Unknown::assignElement_00699950",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_00699950(void* self, uint32_t index, void* other)",
+    "summary": "Bounds-checked element assignment: calls the invalid-parameter handler if the element array at field_0x1c is null or index is out of range (count = (field_0x20 - field_0x1c) / 8), otherwise forwards \u0026elements[index] and other to Unknown::assignFromOther_0041CF50 and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x006999B0": {
     "name": "initOnceGetSlotAddress",
     "signature": "void* fn_006999B0(void* self)",

@@ -440,7 +440,7 @@ struct Unknown_Fields {
     // +0x1C  std::string              field_0x1c  (evidence: 0x0046FAD0, 0x00621090, 0x00622B40) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 field_0x1c  (evidence: 0x004586E0, 0x00503CD0, 0x00508BC0, 0x0050C4D0, 0x005B51E0, 0x00678DE0, 0x006AD290, 0x0078CB80, 0x007C8490, 0x007C9E20, 0x0080F720) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint8_t                  field_0x1c  (evidence: 0x004773B0) // CONFLICT: multiple definitions at +0x1C
-    // +0x1C  void*                    field_0x1c  (evidence: 0x005ACD80) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  void*                    field_0x1c  (evidence: 0x005ACD80, 0x00699950) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  bool                     flag  (evidence: 0x004C4390) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  HMODULE                  hModule  (evidence: 0x00401920) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  void*                    hwnd  (evidence: 0x00458DF0, 0x00458FE0) // CONFLICT: multiple definitions at +0x1C
@@ -462,7 +462,7 @@ struct Unknown_Fields {
     // +0x20  std::uint32_t            field_0x20  (evidence: 0x00518030, 0x00519CB0) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint32_t                 field_0x20  (evidence: 0x00404720, 0x0040BE90, 0x0040FE70, 0x004586E0, 0x0046E450, 0x0046EA50, 0x004886F0, 0x004A25E0, 0x004A2AD0, 0x004B1A70, 0x004CB250, 0x00515B20, 0x00572680, 0x0057BBE0, 0x0057FD10, 0x00599E70, 0x005B51E0, 0x00633240, 0x00641FE0, 0x00641FF0, 0x00642390, 0x006423F0, 0x00642410, 0x006AD290) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint8_t                  field_0x20  (evidence: 0x004809B0, 0x00492CC0, 0x00503CA0, 0x00508BC0, 0x0050C4D0, 0x00610C10, 0x006E8610, 0x006E87A0) // CONFLICT: multiple definitions at +0x20
-    // +0x20  void*                    field_0x20  (evidence: 0x004489E0, 0x0046C2A0, 0x007C8A50) // CONFLICT: multiple definitions at +0x20
+    // +0x20  void*                    field_0x20  (evidence: 0x004489E0, 0x0046C2A0, 0x00699950, 0x007C8A50) // CONFLICT: multiple definitions at +0x20
     // +0x20  void**                   field_0x20  (evidence: 0x00622B40, 0x006245E0, 0x006CA020) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint32_t                 flags  (evidence: 0x006423B0) // CONFLICT: multiple definitions at +0x20
     // +0x20  HDC                      hdc  (evidence: 0x004275C0, 0x0042EA50) // CONFLICT: multiple definitions at +0x20

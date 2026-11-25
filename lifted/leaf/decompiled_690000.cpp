@@ -586,3 +586,36 @@ void* fn_006981A0(void* self, const void* src) {
     return self;
 }
 } // namespace lift_006981A0
+
+// [0x00699950] sub_00699950 (54 bytes)
+namespace lift_00699950 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+// Prototype adjusted from the wip stub: __thiscall(self, other) is passed as a plain (self, other) call.
+extern void* ext_0041CF50(void* self, void* other);
+// Import slot for the CRT invalid-parameter handler (MSVCR80 _invalid_parameter_noinfo).
+extern void (*mem_00925134)();
+
+// @name Unknown::assignElement_00699950
+// @class Unknown
+// @summary Bounds-checked element assignment: calls the invalid-parameter handler if the element array at field_0x1c is null or index is out of range (count = (field_0x20 - field_0x1c) / 8), otherwise forwards &elements[index] and other to Unknown::assignFromOther_0041CF50 and returns its result.
+// @field Unknown +0x1c void* field_0x1c
+// @field Unknown +0x20 void* field_0x20
+void* __thiscall fn_00699950(void* self, uint32_t index, void* other) {
+    void* begin = lift_field<void*>(self, 0x1c);
+    bool invalid = (begin == nullptr);
+    if (!invalid) {
+        intptr_t bytes = reinterpret_cast<intptr_t>(lift_field<void*>(self, 0x20))
+                       - reinterpret_cast<intptr_t>(begin);
+        uint32_t count = static_cast<uint32_t>(bytes >> 3);
+        invalid = (index >= count);
+    }
+    if (invalid) {
+        mem_00925134();
+        return nullptr;
+    }
+
+    // Elements are 8 bytes each.
+    uint8_t* elem = static_cast<uint8_t*>(begin) + 8u * static_cast<size_t>(index);
+    return ext_0041CF50(elem, other);
+}
+} // namespace lift_00699950
