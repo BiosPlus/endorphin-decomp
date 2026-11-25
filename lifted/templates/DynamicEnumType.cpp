@@ -2058,3 +2058,28 @@ void __thiscall fn_005C47F0(void* self, uint32_t arg0) {
     *(uint32_t*)((uintptr_t)arg0 + 4) = (uint32_t)(uintptr_t)&mem_00B44420;
 }
 } // namespace lift_005C47F0
+
+// [0x004D51B0]
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_004D3CF0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004D51B0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_004D3CF0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
