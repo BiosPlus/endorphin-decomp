@@ -1,0 +1,52 @@
+{
+  "va": "0x00472780",
+  "size": 70,
+  "orig_symbol": "sub_00472780",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "TreeMap::lowerBound",
+  "class": "TreeMap",
+  "signature": "void* fn_00472780(void* self, const void* key)",
+  "summary": "Walks the red-black tree and returns the first node whose key is not less than the probe key, or the header node if none.",
+  "fields": [
+    {
+      "class": "TreeMap",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "TreeMapNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "left"
+    },
+    {
+      "class": "TreeMapNode",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "parent"
+    },
+    {
+      "class": "TreeMapNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "right"
+    },
+    {
+      "class": "TreeMapNode",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "TreeMapNode",
+      "offset": "+0x45",
+      "type": "uint8_t",
+      "name": "isNil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:23:53Z"
+}

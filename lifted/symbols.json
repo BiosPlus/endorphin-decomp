@@ -7279,6 +7279,13 @@
     "summary": "Dereferences RuntimeEngine*, calls getNumTicksToRun() and returns as double, or throws on null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00472780": {
+    "name": "TreeMap::lowerBound",
+    "class": "TreeMap",
+    "signature": "void* fn_00472780(void* self, const void* key)",
+    "summary": "Walks the red-black tree and returns the first node whose key is not less than the probe key, or the header node if none.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00473C30": {
     "name": "RuntimeEngine::CaptureTicker::vfunc_0",
     "class": "RuntimeEngine::CaptureTicker",

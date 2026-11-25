@@ -191,3 +191,34 @@ void fn_00478D00(uint32_t* first, uint32_t* last) {
     }
 }
 } // namespace lift_00478D00
+
+// [0x00472780] sub_00472780 (70 bytes)
+namespace lift_00472780 {
+// Import slot holding the string less-than comparator (cdecl, two const-ref args).
+extern bool (__cdecl* mem_00924EF4)(const void* lhs, const void* rhs);
+
+// @name TreeMap::lowerBound
+// @class TreeMap
+// @summary Walks the red-black tree and returns the first node whose key is not less than the probe key, or the header node if none.
+// @field TreeMap +0x04 void* head
+// @field TreeMapNode +0x00 void* left
+// @field TreeMapNode +0x04 void* parent
+// @field TreeMapNode +0x08 void* right
+// @field TreeMapNode +0x0C uint8_t field_0x0C
+// @field TreeMapNode +0x45 uint8_t isNil
+void* fn_00472780(void* self, const void* key) {
+    void* head = lift_field<void*>(self, 0x04);
+    void* result = head;
+    void* cur = lift_field<void*>(head, 0x04);  // root
+    while (lift_field<uint8_t>(cur, 0x45) == 0) {
+        const void* nodeKey = reinterpret_cast<const uint8_t*>(cur) + 0x0C;
+        if (mem_00924EF4(nodeKey, key)) {
+            cur = lift_field<void*>(cur, 0x08);  // node key < probe: go right
+        } else {
+            result = cur;                        // candidate; go left
+            cur = lift_field<void*>(cur, 0x00);
+        }
+    }
+    return result;
+}
+} // namespace lift_00472780
