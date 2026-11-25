@@ -10332,6 +10332,20 @@
     "summary": "One-time guarded initializer for the static DWORD at mem_00ADAB74; returns its address.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x00490920": {
+    "name": "sub_00490920",
+    "class": "Vector",
+    "signature": "void fn_00490920(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
+  "0x00490B80": {
+    "name": "sub_00490B80",
+    "class": "Vector",
+    "signature": "void fn_00490B80(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00491840": {
     "name": "sub_00491840",
     "signature": "uint32_t fn_00491840(uint32_t begin, uint32_t end, uint32_t value)",
@@ -21416,6 +21430,13 @@
     "name": "sub_00530190",
     "signature": "void* fn_00530190()",
     "summary": "Auto-lifted identical-shape clone of 0x0061EA10 (HingeSecondaryConstraint::AllocAndConstruct).",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
+  "0x005301F0": {
+    "name": "sub_005301F0",
+    "class": "Unknown",
+    "signature": "void* fn_005301F0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x0052FD90 (Unknown::allocAndInitAnimation_0052FD90).",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
   "0x005304A0": {

@@ -1,0 +1,28 @@
+{
+  "va": "0x005301F0",
+  "size": 87,
+  "orig_symbol": "sub_005301F0",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "sub_005301F0",
+  "class": "Unknown",
+  "signature": "void* fn_005301F0(void)",
+  "summary": "Auto-lifted identical-shape clone of 0x0052FD90 (Unknown::allocAndInitAnimation_0052FD90).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "u32",
+      "name": "vtable_0x953D74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "u32",
+      "name": "vtable_0x953D6C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T04:02:21Z"
+}
