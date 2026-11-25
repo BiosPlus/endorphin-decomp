@@ -1,0 +1,28 @@
+{
+  "va": "0x006B3C40",
+  "size": 79,
+  "orig_symbol": "GWCRGBPropertyValue::vfunc_1",
+  "src_path": "src/classes/GWCRGBPropertyValue.cpp",
+  "lifted_path": "lifted/classes/GWCRGBPropertyValue.cpp",
+  "name": "GWCRGBPropertyValue::vfunc_1",
+  "class": "GWCRGBPropertyValue",
+  "signature": "void __thiscall fn_006B3C40( void* self, void* dc, int32_t left, int32_t top, int32_t right, int32_t bottom, uint32_t arg6, uint32_t arg7)",
+  "summary": "Draws an RGB property value swatch if its type/state at +0x04 equals 0x64.",
+  "fields": [
+    {
+      "class": "GWCRGBPropertyValue",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "GWCRGBPropertyValue",
+      "offset": "+0x40",
+      "type": "uint32_t*",
+      "name": "field_0x40"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:53:50Z"
+}
