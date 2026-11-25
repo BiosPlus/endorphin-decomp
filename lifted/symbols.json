@@ -43865,6 +43865,13 @@
     "summary": "Pure jump thunk forwarding to sub_006B8450.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x006B8470": {
+    "name": "NMCAutoCompleteEdit::vfunc_79",
+    "class": "NMCAutoCompleteEdit",
+    "signature": "DWORD NMCAutoCompleteEdit_vfunc_79(void* self, DWORD arg1, DWORD arg2, DWORD arg3)",
+    "summary": "If the embedded subobject pointer at +0x58 is non-null, forward three",
+    "lifted_path": "lifted/classes/NMCAutoCompleteEdit.cpp"
+  },
   "0x006B85F0": {
     "name": "sub_006B85F0",
     "signature": "extern \"C\" void __fastcall fn_006B85F0(void* self)",
