@@ -13199,6 +13199,13 @@
     "summary": "Reads through a pointer-to-object; formats the object's +0x20 field into out via ext_0046C500 and returns out, or throws if the object pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B1320": {
+    "name": "ExprParser::ReadMethodType\u003cGraphEntryData,getColor\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0\u003e",
+    "signature": "void fn_004B1320(void* slot)",
+    "summary": "Reads the pointer held in *slot; if non-null, reports its +0x20 code via ext_0046C4E0, then always throws a fixed DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B1350": {
     "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, \u0026NMData::GraphEntryData::isActive, 0\u003e::vfunc_0",
     "class": "ExprParser::ValuePtrType",

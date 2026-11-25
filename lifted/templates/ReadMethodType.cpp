@@ -42855,3 +42855,38 @@ void fn_005D6630(void* self) {
     ext_006A6DD2(exception_object, reinterpret_cast<const void*>(0x009DEC1C));
 }
 } // namespace lift_005D6630
+
+// [0x004B1320] ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>::vfunc_5 (45 bytes)
+namespace lift_004B1320 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller pushes one argument (the value loaded from the object's +0x20 field).
+extern void ext_0046C4E0(uint32_t code);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Called with `this` = the exception storage (ECX).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+
+// Address of the RTTI/ThrowInfo descriptor pushed before the throw.
+inline constexpr uintptr_t kDerivedExceptionThrowInfo = 0x009DEC1Cu;
+
+// @name ExprParser::ReadMethodType<GraphEntryData,getColor>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>
+// @summary Reads the pointer held in *slot; if non-null, reports its +0x20 code via ext_0046C4E0, then always throws a fixed DerivedException.
+// @field Unknown +0x20 uint32_t field_0x20
+void fn_004B1320(void* slot) {
+    // Load the object pointer stored in the slot argument.
+    void* obj = *reinterpret_cast<void**>(slot);
+
+    if (obj != nullptr) {
+        uint32_t code = lift_field<uint32_t>(obj, 0x20);
+        ext_0046C4E0(code);
+    }
+
+    // Build the fixed-message exception in local storage and throw it.
+    // Storage size covers the 0x28-byte local frame of the original function.
+    alignas(8) unsigned char exception[0x28] = {};
+    void* excObj = ext_0046C3C0(exception);
+    ext_006A6DD2(excObj, reinterpret_cast<const void*>(kDerivedExceptionThrowInfo));
+}
+} // namespace lift_004B1320

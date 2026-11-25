@@ -1,0 +1,22 @@
+{
+  "va": "0x004B1320",
+  "size": 45,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cGraphEntryData,getColor\u003e::vfunc_5",
+  "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, \u0026public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0\u003e",
+  "signature": "void fn_004B1320(void* slot)",
+  "summary": "Reads the pointer held in *slot; if non-null, reports its +0x20 code via ext_0046C4E0, then always throws a fixed DerivedException.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:08:05Z"
+}
