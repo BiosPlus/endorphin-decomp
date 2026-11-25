@@ -582,3 +582,24 @@ void fn_006816F0(void* self) {
 }
 } // namespace lift_00569970
 } // namespace lift_006816F0
+
+// [0x0068EE80] sub_0068EE80 (64 bytes)
+namespace lift_0068EE80 {
+extern uint32_t mem_00924FC4;   // import: std::operator==(const std::string&, const std::string&)
+extern uint8_t mem_00B5AE40[84]; // static table: 3 string-sized entries (28 bytes each) at 0x00B5AE40
+
+// @name FindStringInStaticTable
+// @summary Linear search of the 3-entry static string table at 0x00B5AE40; returns the matching index, or 0 if none match.
+int __stdcall fn_0068EE80(const void* key) {
+    using StringEqualFn = bool(__cdecl*)(const void*, const void*);
+    auto string_equal = reinterpret_cast<StringEqualFn>(static_cast<uintptr_t>(mem_00924FC4));
+
+    for (int index = 0; index < 3; ++index) {
+        const void* entry = mem_00B5AE40 + index * 28;
+        if (string_equal(key, entry)) {
+            return index;
+        }
+    }
+    return 0;
+}
+} // namespace lift_0068EE80

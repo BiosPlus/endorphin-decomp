@@ -38212,6 +38212,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CE810 (Unknown::GetRecordByIndex).",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
   },
+  "0x0068EE80": {
+    "name": "FindStringInStaticTable",
+    "signature": "extern \"C\" uint32_t mem_00924FC4;   // import: std::operator==(const std::string\u0026, const std::string\u0026) extern \"C\" uint8_t mem_00B5AE40[84]; // static table: 3 string-sized entries (28 bytes each) at 0x00B5AE40 int __stdcall fn_0068EE80(const void* key)",
+    "summary": "Linear search of the 3-entry static string table at 0x00B5AE40; returns the matching index, or 0 if none match.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x0068EFF0": {
     "name": "ExprParser::ReadMethodType\u003cUnitsWithProperties, getAngleUnitName\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cUnitsWithProperties, std::string const \u0026, \u0026UnitsWithProperties::getAngleUnitName, 0\u003e",
