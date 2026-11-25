@@ -1,0 +1,21 @@
+{
+  "va": "0x005B0E60",
+  "size": 40,
+  "orig_symbol": "sub_005B0E60",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "getTypeName",
+  "signature": "void* __thiscall sub_005B0E60(void* self, void* out_str)",
+  "summary": "Constructs a std::string from a name lookup table indexed by field_0x08.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T14:28:33Z"
+}

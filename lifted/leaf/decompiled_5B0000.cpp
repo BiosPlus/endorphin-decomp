@@ -947,3 +947,21 @@ void* fn_005B6AF0(void* self) {
 }
 } // namespace lift_005B6A80
 } // namespace lift_005B6AF0
+
+// [0x005B0E60]
+namespace lift_005B0E60 {
+// @name getTypeName
+// @summary Constructs a std::string from a name lookup table indexed by field_0x08.
+// @field Self +0x08 uint32_t field_0x08
+
+
+extern const char* mem_00A88A40[];
+extern void* (__thiscall* mem_00924FE4)(void* self, const char* str);
+
+void* __thiscall sub_005B0E60(void* self, void* out_str) {
+    uint32_t idx = lift_field<uint32_t>(self, 0x8);
+    const char* str = mem_00A88A40[idx];
+    mem_00924FE4(out_str, str);
+    return out_str;
+}
+} // namespace lift_005B0E60
