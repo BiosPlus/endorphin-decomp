@@ -48384,3 +48384,1731 @@ void fn_0051B200(void* self) {
     ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
 }
 } // namespace lift_0051B200
+
+// [0x0058D160] ExprParser::ReadMethodType<AnimatableTransform, NM::Vector4 const &, {protected: class NM::Vector4 const & __thiscall AnimatableTransform::getQuat(void) const, 0}, 0>::vfunc_1 (49 bytes)
+namespace lift_0058D160 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, NM::Vector4 const &, {protected: class NM::Vector4 const & __thiscall AnimatableTransform::getQuat(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<AnimatableTransform, NM::Vector4 const &, {protected: class NM::Vector4 const & __thiscall AnimatableTransform::getQuat(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_0058B2A0(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_0058D160(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_0058B2A0(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_0058D160
+
+// [0x005B9A70] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularVelocity(void) const, 0}, 1>::vfunc_1 (49 bytes)
+namespace lift_005B9A70 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularVelocity(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularVelocity(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005B6B90(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005B9A70(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005B6B90(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005B9A70
+
+// [0x005B9F60] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearAcceleration(void) const, 0}, 1>::vfunc_1 (49 bytes)
+namespace lift_005B9F60 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearAcceleration(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearAcceleration(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005B6BC0(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005B9F60(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005B6BC0(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005B9F60
+
+// [0x005BA450] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularAcceleration(void) const, 0}, 1>::vfunc_1 (49 bytes)
+namespace lift_005BA450 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularAcceleration(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularAcceleration(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005B6BF0(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005BA450(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005B6BF0(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005BA450
+
+// [0x005BA940] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getForce(void) const, 0}, 1>::vfunc_1 (49 bytes)
+namespace lift_005BA940 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getForce(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getForce(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005B6C20(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005BA940(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005B6C20(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005BA940
+
+// [0x005BAE30] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getTorque(void) const, 0}, 1>::vfunc_1 (49 bytes)
+namespace lift_005BAE30 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getTorque(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getTorque(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005B6C50(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005BAE30(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005B6C50(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005BAE30
+
+// [0x005BB980] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, 0>::vfunc_1 (49 bytes)
+namespace lift_005BB980 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005B6930(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005BB980(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005B6930(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005BB980
+
+// [0x005BBF10] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, 0>::vfunc_1 (49 bytes)
+namespace lift_005BBF10 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005B6AF0(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005BBF10(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005B6AF0(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005BBF10
+
+// [0x005BC250] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, 0>::vfunc_1 (49 bytes)
+namespace lift_005BC250 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005B69A0(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005BC250(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005B69A0(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005BC250
+
+// [0x005BD160] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, 0>::vfunc_1 (49 bytes)
+namespace lift_005BD160 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005B6A10(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005BD160(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005B6A10(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005BD160
+
+// [0x005BD4F0] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, 0>::vfunc_1 (49 bytes)
+namespace lift_005BD4F0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005B6A80(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005BD4F0(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005B6A80(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005BD4F0
+
+// [0x005C4980] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalXAxisInWorldSpace(void) const, 0}, 1>::vfunc_1 (49 bytes)
+namespace lift_005C4980 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalXAxisInWorldSpace(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalXAxisInWorldSpace(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005C3110(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005C4980(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005C3110(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005C4980
+
+// [0x005C4E70] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalYAxisInWorldSpace(void) const, 0}, 1>::vfunc_1 (49 bytes)
+namespace lift_005C4E70 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalYAxisInWorldSpace(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalYAxisInWorldSpace(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005C3130(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005C4E70(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005C3130(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005C4E70
+
+// [0x005C5360] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1>::vfunc_1 (49 bytes)
+namespace lift_005C5360 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005C3150(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005C5360(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005C3150(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005C5360
+
+// [0x005C8F60] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1>::vfunc_1 (49 bytes)
+namespace lift_005C8F60 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005C3A30(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005C8F60(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005C3A30(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005C8F60
+
+// [0x005C9A60] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearVelocity(void) const, 0}, 1>::vfunc_1 (49 bytes)
+namespace lift_005C9A60 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearVelocity(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearVelocity(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005C38F0(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005C9A60(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005C38F0(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005C9A60
+
+// [0x005C9F50] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularVelocity(void) const, 0}, 1>::vfunc_1 (49 bytes)
+namespace lift_005C9F50 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularVelocity(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularVelocity(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005C3930(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005C9F50(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005C3930(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005C9F50
+
+// [0x005CA440] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearAcceleration(void) const, 0}, 1>::vfunc_1 (49 bytes)
+namespace lift_005CA440 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearAcceleration(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearAcceleration(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005C3970(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005CA440(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005C3970(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005CA440
+
+// [0x005CA930] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularAcceleration(void) const, 0}, 1>::vfunc_1 (49 bytes)
+namespace lift_005CA930 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularAcceleration(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularAcceleration(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005C39B0(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005CA930(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005C39B0(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005CA930
+
+// [0x005F76B0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, 0>::vfunc_1 (49 bytes)
+namespace lift_005F76B0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005F5140(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005F76B0(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005F5140(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005F76B0
+
+// [0x005F8740] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getColour(void) const, 0}, 0>::vfunc_1 (49 bytes)
+namespace lift_005F8740 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getColour(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getColour(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005F5410(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005F8740(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005F5410(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005F8740
+
+// [0x005F9470] ExprParser::ReadMethodType<HelperGraphic, NM::Vector4 const &, {public: class NM::Vector4 const & __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, 0>::vfunc_1 (49 bytes)
+namespace lift_005F9470 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector4 const &, {public: class NM::Vector4 const & __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector4 const &, {public: class NM::Vector4 const & __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005F5160(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005F9470(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005F5160(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005F9470
+
+// [0x005F95A0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, 0>::vfunc_1 (49 bytes)
+namespace lift_005F95A0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005F5190(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005F95A0(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005F5190(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005F95A0
+
+// [0x005FA590] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTS(void) const, 0}, 0>::vfunc_1 (49 bytes)
+namespace lift_005FA590 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTS(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTS(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005F57F0(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005FA590(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005F57F0(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005FA590
+
+// [0x005FA7F0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, 0>::vfunc_1 (49 bytes)
+namespace lift_005FA7F0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005F5860(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005FA7F0(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005F5860(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005FA7F0
+
+// [0x005FAB80] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationSE(void) const, 0}, 0>::vfunc_1 (49 bytes)
+namespace lift_005FAB80 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationSE(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationSE(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005F58D0(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005FAB80(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005F58D0(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005FAB80
+
+// [0x005FACA0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationE(void) const, 0}, 0>::vfunc_1 (49 bytes)
+namespace lift_005FACA0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationE(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationE(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005F5940(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005FACA0(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005F5940(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005FACA0
+
+// [0x00603990] ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getForce(void) const, 1>::vfunc_1 (49 bytes)
+namespace lift_00603990 {
+// @name ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getForce(void) const, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getForce(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_00602F00(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_00603990(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_00602F00(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_00603990
+
+// [0x00603E80] ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_1 (49 bytes)
+namespace lift_00603E80 {
+// @name ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_00602F20(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_00603E80(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_00602F20(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_00603E80
+
+// [0x00627AF0] ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1>::vfunc_1 (49 bytes)
+namespace lift_00627AF0 {
+// @name ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_00627530(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_00627AF0(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_00627530(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_00627AF0
+
+// [0x00627FE0] ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwing(void) const, 1>::vfunc_1 (49 bytes)
+namespace lift_00627FE0 {
+// @name ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwing(void) const, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwing(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_006275A0(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_00627FE0(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_006275A0(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_00627FE0
+
+// [0x006284D0] ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwingAngles(void) const, 1>::vfunc_1 (49 bytes)
+namespace lift_006284D0 {
+// @name ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwingAngles(void) const, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwingAngles(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_00627610(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_006284D0(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_00627610(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_006284D0
+
+// [0x006289C0] ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffEulers(void) const, 1>::vfunc_1 (49 bytes)
+namespace lift_006289C0 {
+// @name ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffEulers(void) const, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffEulers(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_00627680(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_006289C0(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_00627680(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_006289C0
+
+// [0x00631150] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngle(void) const, 1>::vfunc_1 (49 bytes)
+namespace lift_00631150 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngle(void) const, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngle(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_00630580(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_00631150(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_00630580(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_00631150
+
+// [0x00631640] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngleRaw(void) const, 1>::vfunc_1 (49 bytes)
+namespace lift_00631640 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngleRaw(void) const, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngleRaw(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_006305A0(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_00631640(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_006305A0(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_00631640
+
+// [0x00631B30] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingNormalized(void) const, 1>::vfunc_1 (49 bytes)
+namespace lift_00631B30 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingNormalized(void) const, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingNormalized(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_006305C0(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_00631B30(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_006305C0(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_00631B30
+
+// [0x00632020] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualPosition(void) const, 1>::vfunc_1 (49 bytes)
+namespace lift_00632020 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualPosition(void) const, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualPosition(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_00630560(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_00632020(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_00630560(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_00632020
+
+// [0x00632510] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualLinearVelocity(void) const, 1>::vfunc_1 (49 bytes)
+namespace lift_00632510 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualLinearVelocity(void) const, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualLinearVelocity(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_006305E0(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_00632510(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_006305E0(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_00632510
+
+// [0x006368A0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, 0>::vfunc_1 (49 bytes)
+namespace lift_006368A0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_00630740(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_006368A0(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_00630740(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_006368A0
+
+// [0x006394A0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getDesiredQuat(void) const, 0>::vfunc_1 (49 bytes)
+namespace lift_006394A0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getDesiredQuat(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getDesiredQuat(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_00630540(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_006394A0(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_00630540(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_006394A0
+
+// [0x00639D50] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, 0>::vfunc_1 (49 bytes)
+namespace lift_00639D50 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_00630420(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_00639D50(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_00630420(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_00639D50
+
+// [0x0063A5E0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getActualQuat(void) const, 1>::vfunc_1 (49 bytes)
+namespace lift_0063A5E0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getActualQuat(void) const, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getActualQuat(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_00630E60(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_0063A5E0(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_00630E60(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_0063A5E0
+
+// [0x0063AAD0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwing(void) const, 1>::vfunc_1 (49 bytes)
+namespace lift_0063AAD0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwing(void) const, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwing(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_00630E80(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_0063AAD0(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_00630E80(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_0063AAD0
+
+// [0x0063B260] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, 0>::vfunc_1 (49 bytes)
+namespace lift_0063B260 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_00630E40(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_0063B260(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_00630E40(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_0063B260
+
+// [0x00653930] ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintPosition(void) const, 0}, 1>::vfunc_1 (49 bytes)
+namespace lift_00653930 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintPosition(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintPosition(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_0064E220(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_00653930(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_0064E220(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_00653930
+
+// [0x00653E20] ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintPosition(void) const, 0}, 1>::vfunc_1 (49 bytes)
+namespace lift_00653E20 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintPosition(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintPosition(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_0064E250(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_00653E20(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_0064E250(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_00653E20
+
+// [0x00656400] ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintOrientationTSA(void) const, 0}, 1>::vfunc_1 (49 bytes)
+namespace lift_00656400 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintOrientationTSA(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintOrientationTSA(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_00650800(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_00656400(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_00650800(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_00656400
+
+// [0x006568F0] ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintOrientationTSA(void) const, 0}, 1>::vfunc_1 (49 bytes)
+namespace lift_006568F0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintOrientationTSA(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintOrientationTSA(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_006508C0(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_006568F0(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_006508C0(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_006568F0
