@@ -43,3 +43,20 @@ extern "C" void* __fastcall fn_00755590(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+
+// [0x007558B0] sub_007558B0 (8 bytes)
+namespace lift_007558B0 {
+// @name VirtualDispatch::slot8_pushZero
+// @class VirtualDispatch
+// @summary Calls vtable slot 8 (byte offset 0x20) on self with a single zero argument and returns its result.
+// @field VirtualDispatch +0x00 void* vtable
+uint32_t fn_007558B0(void* self) {
+    // mov eax, [ecx]        ; eax = vtable = *(void**)self
+    void* vtable = lift_field<void*>(self, 0x00);
+    // push 0x0              ; single stack argument = 0
+    // call [eax+0x20]       ; thiscall vtable[8](self, 0); callee cleans stack
+    void* target = lift_field<void*>(vtable, 0x20);
+    return reinterpret_cast<uint32_t(__thiscall*)(void*, int)>(target)(self, 0);
+    // ret                   ; return with eax = callee result
+}
+} // namespace lift_007558B0

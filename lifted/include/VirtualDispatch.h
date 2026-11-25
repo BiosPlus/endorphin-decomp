@@ -8,6 +8,6 @@
 // Recovered field layout for VirtualDispatch:
 namespace lifted_layout {
 struct VirtualDispatch_Fields {
-    // +0x0   void*                    vtable  (evidence: 0x00543620)
+    // +0x0   void*                    vtable  (evidence: 0x00543620, 0x007558B0)
 };
 } // namespace lifted_layout

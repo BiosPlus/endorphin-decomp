@@ -1,0 +1,22 @@
+{
+  "va": "0x007558B0",
+  "size": 8,
+  "orig_symbol": "sub_007558B0",
+  "src_path": "src/leaf/tiny_750000.cpp",
+  "lifted_path": "lifted/leaf/tiny_750000.cpp",
+  "name": "VirtualDispatch::slot8_pushZero",
+  "class": "VirtualDispatch",
+  "signature": "uint32_t fn_007558B0(void* self)",
+  "summary": "Calls vtable slot 8 (byte offset 0x20) on self with a single zero argument and returns its result.",
+  "fields": [
+    {
+      "class": "VirtualDispatch",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:12:45Z"
+}

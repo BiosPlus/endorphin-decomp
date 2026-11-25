@@ -63177,6 +63177,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_007555B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_750000.cpp"
   },
+  "0x007558B0": {
+    "name": "VirtualDispatch::slot8_pushZero",
+    "class": "VirtualDispatch",
+    "signature": "uint32_t fn_007558B0(void* self)",
+    "summary": "Calls vtable slot 8 (byte offset 0x20) on self with a single zero argument and returns its result.",
+    "lifted_path": "lifted/leaf/tiny_750000.cpp"
+  },
   "0x007558C0": {
     "name": "sub_007558C0",
     "signature": "void fn_007558C0(uint32_t arg)",
