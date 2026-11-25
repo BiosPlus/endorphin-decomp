@@ -1,0 +1,13 @@
+{
+  "va": "0x0064B7E0",
+  "size": 95,
+  "orig_symbol": "sub_0064B7E0",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "copyBackward24AndAdjust",
+  "signature": "uint32_t fn_0064B7E0(uint32_t first, uint32_t last, uint32_t result)",
+  "summary": "Calls copyBackward24(first, last, result), then returns result minus 24 * (scaled (last - first) quotient).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:34:25Z"
+}

@@ -40960,6 +40960,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x0064B7E0": {
+    "name": "copyBackward24AndAdjust",
+    "signature": "uint32_t fn_0064B7E0(uint32_t first, uint32_t last, uint32_t result)",
+    "summary": "Calls copyBackward24(first, last, result), then returns result minus 24 * (scaled (last - first) quotient).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x0064B840": {
     "name": "copyRange0x18",
     "signature": "void fn_0064B840(const void* first, const void* last, void* dst)",

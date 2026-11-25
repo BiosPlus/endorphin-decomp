@@ -1943,3 +1943,24 @@ void* fn_00645B50(void) {
     return &mem_00B5446C;
 }
 } // namespace lift_00645B50
+
+// [0x0064B7E0] sub_0064B7E0 (95 bytes)
+namespace lift_0064B7E0 {
+// Known callee 0x00649770: copyBackward24 (Copies a range of 24-byte elements backward from [first, last) to [..., result).)
+extern uint32_t ext_00649770(uint32_t first, uint32_t last, uint32_t result);
+
+// @name copyBackward24AndAdjust
+// @summary Calls copyBackward24(first, last, result), then returns result minus 24 * (scaled (last - first) quotient).
+uint32_t fn_0064B7E0(uint32_t first, uint32_t last, uint32_t result) {
+    ext_00649770(first, last, result);
+
+    // Replicates the original multiply-by-0x2AAAAAAB, arithmetic shift right by 2,
+    // sign-correction, and *24 sequence exactly.
+    const int32_t d = static_cast<int32_t>(last - first);
+    const int64_t prod = static_cast<int64_t>(d) * static_cast<int64_t>(static_cast<int32_t>(0x2AAAAAABu));
+    int32_t q = static_cast<int32_t>(prod >> 32) >> 2;
+    q += static_cast<int32_t>(static_cast<uint32_t>(q) >> 31);
+
+    return result - static_cast<uint32_t>(q) * 24u;
+}
+} // namespace lift_0064B7E0
