@@ -1943,6 +1943,13 @@
     "summary": "Copies a (value, object) pair into self; value comes from virtual slot 0x70 of the source object, or 0 if there is no object.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041CF50": {
+    "name": "Unknown::assignFromOther_0041CF50",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_0041CF50(void* self, void* other)",
+    "summary": "Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041CFB0": {
     "name": "Properties::PropertiesControl::vfunc_86",
     "class": "Properties::PropertiesControl",

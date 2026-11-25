@@ -54,6 +54,7 @@ void __stdcall fn_0041FD10(uint32_t arg0, uint32_t arg1) {
 }
 } // namespace lift_0041FD10
 #include <stdexcept>
+#include <cstdint>
 
 // [0x004137F0] sub_004137F0 (23 bytes)
 namespace lift_004137F0 {
@@ -1421,3 +1422,40 @@ void fn_0041A100(uint32_t n) {
     ext_006A5C62(n);
 }
 } // namespace lift_0041A100
+
+// [0x0041CF50] sub_0041CF50 (85 bytes)
+namespace lift_0041CF50 {
+// @name Unknown::assignFromOther_0041CF50
+// @class Unknown
+// @summary Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 void* field_0x04
+void* __thiscall fn_0041CF50(void* self, void* other) {
+    if (self == other) {
+        return self;
+    }
+
+    // Release the current field_0x04 object (vtable slot 0x78, arg = self).
+    void* old = lift_field<void*>(self, 0x04);
+    if (old != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(old);
+        using ReleaseFn = void(__thiscall*)(void* self_, void* owner);
+        reinterpret_cast<ReleaseFn>(vtbl[0x78 / 4])(old, self);
+    }
+
+    // Copy other's field_0x04 into self.
+    lift_field<void*>(self, 0x04) = lift_field<void*>(other, 0x04);
+
+    // Fetch a value from the copied object (vtable slot 0x70) into an out-slot.
+    uint32_t out = 0;
+    void* src = lift_field<void*>(other, 0x04);
+    if (src != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(src);
+        using FetchFn = void(__thiscall*)(void* self_, uint32_t* out_, void* other_);
+        reinterpret_cast<FetchFn>(vtbl[0x70 / 4])(src, &out, other);
+    }
+    lift_field<uint32_t>(self, 0x00) = out;
+
+    return self;
+}
+} // namespace lift_0041CF50
