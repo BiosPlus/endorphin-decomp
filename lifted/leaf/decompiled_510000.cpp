@@ -326,3 +326,19 @@ void* fn_0051A560(void) {
     return mem_00AEC75C;
 }
 } // namespace lift_0051A560
+
+// [0x00517070] sub_00517070 (33 bytes)
+namespace lift_00517070 {
+// Known callee 0x00516F90: InitOnceGlobalString_00516F90 (One-time initializer for global string object 0x00AEC0A8; sets guard bit 0 of 0x00AEC0C4, builds the string, registers a cleanup routine, and returns the string's address.)
+extern void* ext_00516F90();
+// Import slot 0x00924FE0: MSVCP80 std::basic_string<char> copy constructor (thiscall, one stack arg: source string).
+extern void (*mem_00924FE0)(void* self, const void* src);
+
+// @name InitOnceGlobalStringCopy_00517070
+// @summary Copy-constructs the global string (from InitOnceGlobalString_00516F90) into the caller-supplied string object and returns that object's address.
+void* fn_00517070(void* dst) {
+    const void* src = ext_00516F90();
+    mem_00924FE0(dst, src);
+    return dst;
+}
+} // namespace lift_00517070

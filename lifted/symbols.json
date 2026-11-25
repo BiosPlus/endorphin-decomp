@@ -19270,6 +19270,12 @@
     "summary": "One-time initializer for global string object 0x00AEC0A8; sets guard bit 0 of 0x00AEC0C4, builds the string, registers a cleanup routine, and returns the string's address.",
     "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
+  "0x00517070": {
+    "name": "InitOnceGlobalStringCopy_00517070",
+    "signature": "void* fn_00517070(void* dst)",
+    "summary": "Copy-constructs the global string (from InitOnceGlobalString_00516F90) into the caller-supplied string object and returns that object's address.",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x00517310": {
     "name": "Unknown::CallVirtual68OnRange_00517310",
     "class": "Unknown",
