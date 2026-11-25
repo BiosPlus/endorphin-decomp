@@ -1566,3 +1566,32 @@ void fn_00533D50(void* self) {
     ext_00532B40(self);
 }
 } // namespace lift_00533D50
+
+// [0x00533E00] sub_00533E00 (33 bytes)
+namespace lift_00533E00 {
+// @name sub_00533E00
+// @summary Auto-lifted identical-shape clone of 0x00533D50 (Unknown::dtor_00533D50).
+namespace lift_00533D50 {
+// Known callee 0x00532B40: Unknown::dtor_00532B40 (Sets vtable to 0x009543E4 and unlinks peer at +0x08 if it points back to this at +0x04.)
+// Tail-called with this in ecx (thiscall); passed here as the first argument.
+extern void ext_0054C5E0(void* self);
+// OPENGL32!glDeleteLists IAT slot (stdcall: list, range).
+extern void (*mem_009253E8)(GLuint list, GLsizei range);
+// Vtable VA 0x009547FC is an immediate written into +0x00; the rdata word at that address is not read here.
+extern uint32_t mem_00954864;
+
+// @name Unknown::dtor_00533D50
+// @class Unknown
+// @summary Resets vtable to 0x009547FC, deletes the display list at +0x30 if non-zero, then tail-calls the base dtor ext_00532B40.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x30 uint32_t field_0x30
+void fn_00533E00(void* self) {
+    uint32_t list = lift_field<uint32_t>(self, 0x2C);
+    lift_field<uint32_t>(self, 0x00) = 0x954864u;
+    if (list != 0) {
+        mem_009253E8(list, 1);
+    }
+    ext_0054C5E0(self);
+}
+} // namespace lift_00533D50
+} // namespace lift_00533E00
