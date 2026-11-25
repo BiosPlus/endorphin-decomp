@@ -1124,3 +1124,28 @@ void* fn_00404E40(const void* first, const void* last, void* dest) {
     return out;
 }
 } // namespace lift_00404E40
+
+// [0x00404EA0] sub_00404EA0 (86 bytes)
+namespace lift_00404EA0 {
+// MSVCP80 std::string::operator=(const std::string&), thiscall; import slot mem_00924FDC resolves to 0x006291BE.
+extern void* __thiscall ext_006291BE(void* self, const void* src);
+
+// @name copyBackwardRecordRange_00404EA0
+// @summary Copy-assigns a range of 0x58-byte records backward (last to first) into a destination ending at dstEnd; returns the destination begin.
+void* fn_00404EA0(void* begin, void* end, void* dstEnd) {
+    uint8_t* first = static_cast<uint8_t*>(begin);
+    uint8_t* last = static_cast<uint8_t*>(end);
+    uint8_t* dst = static_cast<uint8_t*>(dstEnd);
+
+    while (last != first) {
+        last -= 0x58;
+        uint32_t key = *reinterpret_cast<uint32_t*>(last);
+        dst -= 0x58;
+        *reinterpret_cast<uint32_t*>(dst) = key;
+        ext_006291BE(dst + 0x04, last + 0x04);
+        ext_006291BE(dst + 0x20, last + 0x20);
+        ext_006291BE(dst + 0x3C, last + 0x3C);
+    }
+    return dst;
+}
+} // namespace lift_00404EA0

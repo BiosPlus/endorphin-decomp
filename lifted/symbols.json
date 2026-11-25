@@ -489,6 +489,12 @@
     "summary": "Copies each 0x58-byte record in [first,last) to dest (DWORD at +0, three std::strings at +4/+0x20/+0x3C); returns dest past the last copied record.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00404EA0": {
+    "name": "copyBackwardRecordRange_00404EA0",
+    "signature": "void* fn_00404EA0(void* begin, void* end, void* dstEnd)",
+    "summary": "Copy-assigns a range of 0x58-byte records backward (last to first) into a destination ending at dstEnd; returns the destination begin.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00405160": {
     "name": "Unknown::AdvanceIndexUnlessAtLast",
     "class": "Unknown",
