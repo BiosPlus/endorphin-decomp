@@ -549,7 +549,7 @@ struct Unknown_Fields {
     // +0x20  uint32_t                 flags  (evidence: 0x006423B0) // CONFLICT: multiple definitions at +0x20
     // +0x20  HDC                      hdc  (evidence: 0x004275C0, 0x0042EA50) // CONFLICT: multiple definitions at +0x20
     // +0x20  DWORD                    hwnd  (evidence: 0x00441C10, 0x0044BF00) // CONFLICT: multiple definitions at +0x20
-    // +0x20  HWND                     hwnd  (evidence: 0x004030F0, 0x00404770, 0x00406030, 0x0040BE90, 0x00414880, 0x0041FF10, 0x0045BED0, 0x00460540, 0x006A92F0, 0x006AC2E0, 0x006B0E30, 0x006B16F0, 0x006B2F70, 0x006B53D0, 0x006B8B70, 0x006BA780) // CONFLICT: multiple definitions at +0x20
+    // +0x20  HWND                     hwnd  (evidence: 0x004030F0, 0x00404770, 0x00406030, 0x0040BE90, 0x00414880, 0x0041FF10, 0x0045BED0, 0x00460540, 0x006A92F0, 0x006AC2E0, 0x006B0E30, 0x006B16F0, 0x006B1790, 0x006B2F70, 0x006B53D0, 0x006B8B70, 0x006BA780) // CONFLICT: multiple definitions at +0x20
     // +0x20  void*                    hwnd  (evidence: 0x00454AD0) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint8_t                  initialized  (evidence: 0x006F9E90, 0x006FC200) // CONFLICT: multiple definitions at +0x20
     // +0x20  float                    m20  (evidence: 0x00480010, 0x004890D0) // CONFLICT: multiple definitions at +0x20
@@ -849,6 +849,7 @@ struct Unknown_Fields {
     // +0x72  WORD                     field_0x72  (evidence: 0x00798710) // CONFLICT: multiple definitions at +0x72
     // +0x72  uint16_t                 field_0x72  (evidence: 0x007AF200) // CONFLICT: multiple definitions at +0x72
     // +0x74  void*                    child  (evidence: 0x006B16F0, 0x006BA780) // CONFLICT: multiple definitions at +0x74
+    // +0x74  void*                    childPtr  (evidence: 0x006B1790) // CONFLICT: multiple definitions at +0x74
     // +0x74  DWORD                    field_0x74  (evidence: 0x00417630, 0x00422CE0, 0x004275C0, 0x00452100, 0x004584C0) // CONFLICT: multiple definitions at +0x74
     // +0x74  int32_t                  field_0x74  (evidence: 0x007C8490, 0x007CAF70, 0x007CDB70) // CONFLICT: multiple definitions at +0x74
     // +0x74  uint32_t                 field_0x74  (evidence: 0x004407C0, 0x00441020, 0x0044B6A0, 0x0044CF80, 0x0050E4E0, 0x006D5620, 0x007057D0) // CONFLICT: multiple definitions at +0x74

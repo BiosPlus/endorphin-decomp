@@ -53565,6 +53565,13 @@
     "summary": "If mouse-leave tracking is not yet armed (byte +0x70 == 0), arm it and request WM_MOUSELEAVE via TrackMouseEvent(TME_LEAVE) on the window at +0x20; then forward to ext_006A5EA8 with self. Takes 3 stack args (ret 0xc), which are unused.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006B1790": {
+    "name": "Unknown::forwardMouseMessageToChild_006B1790",
+    "class": "Unknown",
+    "signature": "void fn_006B1790(void* self, uint32_t a0, uint32_t a1, uint32_t a2)",
+    "summary": "Resets state via the 0x006B16F0 helper, converts the mouse point from parent-client to child-client coordinates, and posts it to the child window as WM_LBUTTONDOWN.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B1810": {
     "name": "sub_006B1810",
     "signature": "extern \"C\" void* __cdecl fn_006B1810(void)",

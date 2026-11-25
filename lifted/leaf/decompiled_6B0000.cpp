@@ -1517,3 +1517,43 @@ void* fn_006BCEE0(void* self, void* arg) {
     return nullptr;
 }
 } // namespace lift_006BCEE0
+
+// [0x006B1790]
+namespace lift_006B1790 {
+// Callee 0x006B16F0: clears the byte at self+0x70, builds a 0x2C-byte message block from the child at self+0x74, and sends message 0x411 to the window at self+0x20.
+extern int32_t ext_006B16F0(void* self, uint32_t arg0, uint32_t arg1);
+// IAT slot for USER32!ClientToScreen(HWND, LPPOINT).
+extern BOOL (*mem_00925630)(HWND, POINT*);
+// IAT slot for USER32!ScreenToClient(HWND, LPPOINT).
+extern BOOL (*mem_0092570C)(HWND, POINT*);
+// IAT slot for USER32!SendMessageA(HWND, UINT, WPARAM, LPARAM).
+extern LRESULT (*mem_00925694)(HWND, UINT, WPARAM, LPARAM);
+
+// @name Unknown::forwardMouseMessageToChild_006B1790
+// @class Unknown
+// @summary Resets state via the 0x006B16F0 helper, converts the mouse point from parent-client to child-client coordinates, and posts it to the child window as WM_LBUTTONDOWN.
+// @field Unknown +0x20 HWND hwnd
+// @field Unknown +0x74 void* childPtr
+void fn_006B1790(void* self, uint32_t a0, uint32_t a1, uint32_t a2) {
+    ext_006B16F0(self, 0, 0);
+
+    // pt = { a1, a2 } in the caller's client space.
+    POINT pt;
+    pt.x = static_cast<LONG>(a1);
+    pt.y = static_cast<LONG>(a2);
+
+    HWND parent = lift_field<HWND>(self, 0x20);
+    mem_00925630(parent, &pt); // ClientToScreen
+
+    HWND child = lift_field<HWND>(lift_field<void*>(self, 0x74), 0x20);
+    mem_0092570C(child, &pt); // ScreenToClient
+
+    // lParam = (pt.y & 0xFFFF) << 16 | (pt.x & 0xFFFF)
+    const uint32_t lParam =
+        (static_cast<uint32_t>(static_cast<uint16_t>(pt.y)) << 16) |
+        static_cast<uint32_t>(static_cast<uint16_t>(pt.x));
+
+    HWND target = lift_field<HWND>(lift_field<void*>(self, 0x74), 0x20);
+    (void)mem_00925694(target, 0x201 /* WM_LBUTTONDOWN */, a0, lParam);
+}
+} // namespace lift_006B1790

@@ -1,0 +1,28 @@
+{
+  "va": "0x006B1790",
+  "size": 110,
+  "orig_symbol": "sub_006B1790",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::forwardMouseMessageToChild_006B1790",
+  "class": "Unknown",
+  "signature": "void fn_006B1790(void* self, uint32_t a0, uint32_t a1, uint32_t a2)",
+  "summary": "Resets state via the 0x006B16F0 helper, converts the mouse point from parent-client to child-client coordinates, and posts it to the child window as WM_LBUTTONDOWN.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "hwnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "void*",
+      "name": "childPtr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:03:35Z"
+}
