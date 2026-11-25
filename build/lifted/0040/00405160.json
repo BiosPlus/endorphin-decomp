@@ -1,0 +1,34 @@
+{
+  "va": "0x00405160",
+  "size": 63,
+  "orig_symbol": "sub_00405160",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "Unknown::AdvanceIndexUnlessAtLast",
+  "class": "Unknown",
+  "signature": "extern \"C\" bool __thiscall fn_00405160(void* self)",
+  "summary": "If the slot at +0x564 is set, computes (end - begin) / 88 from +0x568 and +0x564 and compares the stored index at +0x684 against that count minus one; if not at the last index it increments the index and returns true, otherwise returns false.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x564",
+      "type": "int32_t",
+      "name": "field_0x564"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x568",
+      "type": "int32_t",
+      "name": "field_0x568"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x684",
+      "type": "int32_t",
+      "name": "field_0x684"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:02:09Z"
+}

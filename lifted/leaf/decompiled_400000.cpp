@@ -625,3 +625,29 @@ uint32_t fn_0040C010(void* self, uint32_t index) {
     return reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(begin_again))[index];
 }
 } // namespace lift_0040C010
+
+// [0x00405160] sub_00405160 (63 bytes)
+namespace lift_00405160 {
+// @name Unknown::AdvanceIndexUnlessAtLast
+// @class Unknown
+// @summary If the slot at +0x564 is set, computes (end - begin) / 88 from +0x568 and +0x564 and compares the stored index at +0x684 against that count minus one; if not at the last index it increments the index and returns true, otherwise returns false.
+// @field Unknown +0x564 int32_t field_0x564
+// @field Unknown +0x568 int32_t field_0x568
+// @field Unknown +0x684 int32_t field_0x684
+extern bool __thiscall fn_00405160(void* self) {
+    int32_t begin = lift_field<int32_t>(self, 0x564);
+    int32_t count = 0;
+    if (begin != 0) {
+        int32_t end = lift_field<int32_t>(self, 0x568);
+        int32_t diff = static_cast<int32_t>(static_cast<uint32_t>(end) - static_cast<uint32_t>(begin));
+        count = diff / 88;
+    }
+    int32_t last = count - 1;
+    int32_t& index = lift_field<int32_t>(self, 0x684);
+    if (index == last) {
+        return false;
+    }
+    index += 1;
+    return true;
+}
+} // namespace lift_00405160
