@@ -48761,6 +48761,13 @@
     "summary": "If the counted self-flag check passes for count, return the scaled int16 value (index 3) of the element resolved at count-1; otherwise return the constant 1/3.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006CC850": {
+    "name": "Unknown::GetSlot2OrDefaultThird",
+    "class": "Unknown",
+    "signature": "float __fastcall fn_006CC850(void* self, int32_t /*edx*/, int32_t index)",
+    "summary": "Returns GetScaledOrRawValue(2) on the item at index if valid, otherwise 1/3.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006CC950": {
     "name": "Unknown::HasFlag29OfFirstOfRange",
     "class": "Unknown",
@@ -49879,6 +49886,12 @@
     "signature": "double sub_006E86E0(void* self)",
     "summary": "Returns the double at offset 0x60 of the object pointed to by this+0x00.",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
+  "0x006E86F0": {
+    "name": "clampValueToRange",
+    "signature": "void __thiscall sub_006E86F0(void* self, double value)",
+    "summary": "Clamps a double argument to [0.0, obj-\u003efield_0x58] and stores it in obj-\u003efield_0x50 via dereferenced this pointer",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
   "0x006E8740": {
     "name": "Unknown::GetIndirectDouble50",
@@ -58293,6 +58306,12 @@
     "name": "sub_00798F90",
     "signature": "void* fn_00798F90(void* dst, const void* src, size_t n)",
     "summary": "Auto-lifted identical-shape clone of 0x0080B590 (Thunk::copyMemoryDwordThenBytesForward).",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
+  "0x00798FB0": {
+    "name": "ReplaceGlobalBlockFromCount",
+    "signature": "void fn_00798FB0(uint32_t* slot, const void* src, uint32_t count)",
+    "summary": "Forwards to ReplaceGlobalBlock with a size of twice the count argument (count * 2 bytes).",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
   "0x0079A0EC": {

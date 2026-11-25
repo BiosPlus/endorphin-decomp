@@ -1,0 +1,13 @@
+{
+  "va": "0x00798FB0",
+  "size": 32,
+  "orig_symbol": "sub_00798FB0",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "ReplaceGlobalBlockFromCount",
+  "signature": "void fn_00798FB0(uint32_t* slot, const void* src, uint32_t count)",
+  "summary": "Forwards to ReplaceGlobalBlock with a size of twice the count argument (count * 2 bytes).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:55:33Z"
+}

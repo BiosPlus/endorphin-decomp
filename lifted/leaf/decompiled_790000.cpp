@@ -600,3 +600,15 @@ void fn_00798EA0(void* self) {
     }
 }
 } // namespace lift_00798EA0
+
+// [0x00798FB0] sub_00798FB0 (32 bytes)
+namespace lift_00798FB0 {
+// Known callee 0x00798F10: ReplaceGlobalBlock (Frees the global block held in *slot (if any); if src is non-null, allocates a new block of size bytes into *slot and copies src into it.)
+extern void ext_00798F10(uint32_t* slot, const void* src, uint32_t size);
+
+// @name ReplaceGlobalBlockFromCount
+// @summary Forwards to ReplaceGlobalBlock with a size of twice the count argument (count * 2 bytes).
+void fn_00798FB0(uint32_t* slot, const void* src, uint32_t count) {
+    ext_00798F10(slot, src, count * 2u);
+}
+} // namespace lift_00798FB0
