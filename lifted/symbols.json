@@ -43579,6 +43579,13 @@
     "summary": "Zeroes the scalar fields of a 0x34-byte object and default-constructs an embedded std::string at +0x04; returns this.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x006767D0": {
+    "name": "resetStringAndEraseVectorTail",
+    "class": "Unknown",
+    "signature": "void fn_006767D0(void* self_)",
+    "summary": "Clears the string at +0x04, erases the vector range [+0x24, +0x28) of the vector at +0x20, and zeroes fields +0x00 and +0x30.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00676850": {
     "name": "sub_00676850",
     "signature": "extern \"C\" void __fastcall fn_00676850(void* self)",

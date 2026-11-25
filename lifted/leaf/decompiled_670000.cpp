@@ -1247,3 +1247,46 @@ void* fn_00670FD0(void* self) {
     return self;
 }
 } // namespace lift_00670FD0
+
+// [0x006767D0]
+namespace lift_006767D0 {
+// Known callee 0x00596660: Vector_erase_range (Erases a range [first, last) of 4-byte elements from a vector and returns the updated iterator.)
+extern void* ext_00596660(void* this_ptr, void* out_iter, uint32_t first_container, uint32_t first_ptr, uint32_t last_container, uint32_t last_ptr);
+
+// [0x006767D0] sub_006767D0 (86 bytes)
+// @name resetStringAndEraseVectorTail
+// @class Unknown
+// @summary Clears the string at +0x04, erases the vector range [+0x24, +0x28) of the vector at +0x20, and zeroes fields +0x00 and +0x30.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 std::string field_0x04
+// @field Unknown +0x20 void* field_0x20
+// @field Unknown +0x24 uint32_t field_0x24
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x30 uint32_t field_0x30
+void fn_006767D0(void* self_) {
+    auto* self = static_cast<uint8_t*>(self_);
+    auto rd32 = [self](size_t off) {
+        uint32_t v;
+        std::memcpy(&v, self + off, sizeof v);
+        return v;
+    };
+    auto wr32 = [self](size_t off, uint32_t v) {
+        std::memcpy(self + off, &v, sizeof v);
+    };
+
+    reinterpret_cast<std::string*>(self + 0x04)->clear();
+
+    const uint32_t last = rd32(0x28);
+    const uint32_t first = rd32(0x24);
+    if (first > last) {
+        std::abort(); // was _invalid_parameter_noinfo
+    }
+
+    uint32_t out_iter[2] = {0, 0};
+    const uint32_t vec = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self + 0x20));
+    ext_00596660(self + 0x20, out_iter, vec, first, vec, last);
+
+    wr32(0x30, 0);
+    wr32(0x00, 0);
+}
+} // namespace lift_006767D0
