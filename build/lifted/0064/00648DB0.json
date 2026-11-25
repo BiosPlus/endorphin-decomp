@@ -1,0 +1,28 @@
+{
+  "va": "0x00648DB0",
+  "size": 73,
+  "orig_symbol": "sub_00648DB0",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "Owner::eraseTailRange",
+  "class": "Owner",
+  "signature": "static inline void invalid_parameter_noinfo_call()",
+  "summary": "Erases the element range [vec.begin, B+0x20) from the vector embedded at B+0x18, where B = this-\u003efield_0x30.",
+  "fields": [
+    {
+      "class": "Owner",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Owner",
+      "offset": "+0x30",
+      "type": "void*",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:17:05Z"
+}

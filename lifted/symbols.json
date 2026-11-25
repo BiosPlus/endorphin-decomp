@@ -39762,6 +39762,13 @@
     "summary": "Calls sub_0065B040 on field_0x30 with the float argument if field_0x28+0x04 \u003c field_0x28+0x08.",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x00648DB0": {
+    "name": "Owner::eraseTailRange",
+    "class": "Owner",
+    "signature": "static inline void invalid_parameter_noinfo_call()",
+    "summary": "Erases the element range [vec.begin, B+0x20) from the vector embedded at B+0x18, where B = this-\u003efield_0x30.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00648E00": {
     "name": "sub_00648E00",
     "signature": "extern \"C\" void __fastcall fn_00648E00(void* self, int edx_unused, float value)",

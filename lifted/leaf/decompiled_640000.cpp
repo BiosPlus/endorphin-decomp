@@ -1733,3 +1733,48 @@ void* fn_0064B780() {
 }
 } // namespace lift_004CAE30
 } // namespace lift_0064B780
+
+// [0x00648DB0]
+namespace lift_00648DB0 {
+// @name Owner::eraseTailRange
+// @class Owner
+// @summary Erases the element range [vec.begin, B+0x20) from the vector embedded at B+0x18, where B = this->field_0x30.
+// @field Owner +0x28 void* field_0x28
+// @field Owner +0x30 void* field_0x30
+
+extern void* ext_0065BEF0(void* this_ptr);
+extern void* ext_00596660(void* this_ptr, void* out_iter, uint32_t first_container, uint32_t first_ptr, uint32_t last_container, uint32_t last_ptr);
+extern uint32_t mem_00925134;
+
+// Placeholder for the CRT invalid-parameter handler stored in the import slot.
+static inline void invalid_parameter_noinfo_call() {
+    using handler_t = void (*)();
+    reinterpret_cast<handler_t>(static_cast<uintptr_t>(mem_00925134))();
+}
+
+void Owner_eraseTailRange(void* this_ptr) {
+    uint8_t* self = static_cast<uint8_t*>(this_ptr);
+
+    // Call into sub-object at this+0x28 (result unused).
+    ext_0065BEF0(*reinterpret_cast<void**>(self + 0x28));
+
+    uint8_t* b = *reinterpret_cast<uint8_t**>(self + 0x30);
+    uint32_t last_ptr = *reinterpret_cast<uint32_t*>(b + 0x20);
+
+    uint8_t* vec = b + 0x18;   // vector header: +0x4 begin, +0x8 end
+    uint32_t vec_begin = *reinterpret_cast<uint32_t*>(vec + 0x4);
+    uint32_t vec_end = *reinterpret_cast<uint32_t*>(vec + 0x8);
+
+    if (vec_begin > last_ptr) {
+        invalid_parameter_noinfo_call();
+    }
+    uint32_t first_ptr = vec_begin;
+    if (first_ptr > vec_end) {
+        invalid_parameter_noinfo_call();
+    }
+
+    uint32_t out_iter[2] = {0, 0};
+    uint32_t container = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(vec));
+    ext_00596660(vec, out_iter, container, first_ptr, container, last_ptr);
+}
+} // namespace lift_00648DB0
