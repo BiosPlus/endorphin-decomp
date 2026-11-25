@@ -1401,3 +1401,40 @@ uint32_t __cdecl sub_00489230(uint32_t first, uint32_t last, uint32_t dest_end) 
     return result;
 }
 } // namespace lift_00489230
+
+// [0x0048EF20]
+namespace lift_0048EF20 {
+void* ext_0048E3D0(const void* first, const void* last, void* dest);
+extern void (*mem_00925134)(void);
+
+struct VectorIter_0048EF20 {
+    void* cont;
+    void* ptr;
+};
+
+// @name Vector12::eraseRange
+// @class Vector12
+// @summary Erases [first, last) from a 12-byte-element vector by shifting trailing elements forward and updating _Mylast.
+// @field Vector12 +0x08 void* _Mylast
+VectorIter_0048EF20* __thiscall fn_0048EF20(
+    void* self,
+    VectorIter_0048EF20* out_iter,
+    void* first_cont,
+    void* first_ptr,
+    void* last_cont,
+    void* last_ptr) {
+    if (first_cont == nullptr || first_cont != last_cont) {
+        mem_00925134();
+    }
+
+    if (first_ptr != last_ptr) {
+        void* mylast = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x08);
+        void* new_last = ext_0048E3D0(last_ptr, mylast, first_ptr);
+        *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x08) = new_last;
+    }
+
+    out_iter->cont = first_cont;
+    out_iter->ptr = first_ptr;
+    return out_iter;
+}
+} // namespace lift_0048EF20

@@ -9369,6 +9369,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0048E310 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Commands/auto_tiny.cpp"
   },
+  "0x0048EF20": {
+    "name": "Vector12::eraseRange",
+    "class": "Vector12",
+    "signature": "VectorIter_0048EF20* __thiscall fn_0048EF20( void* self, VectorIter_0048EF20* out_iter, void* first_cont, void* first_ptr, void* last_cont, void* last_ptr)",
+    "summary": "Erases [first, last) from a 12-byte-element vector by shifting trailing elements forward and updating _Mylast.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048F0D0": {
     "name": "Commands::BufferPoseCommand::vfunc_0",
     "class": "Commands::BufferPoseCommand",

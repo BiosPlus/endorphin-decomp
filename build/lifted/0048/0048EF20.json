@@ -1,0 +1,22 @@
+{
+  "va": "0x0048EF20",
+  "size": 89,
+  "orig_symbol": "sub_0048EF20",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "Vector12::eraseRange",
+  "class": "Vector12",
+  "signature": "VectorIter_0048EF20* __thiscall fn_0048EF20( void* self, VectorIter_0048EF20* out_iter, void* first_cont, void* first_ptr, void* last_cont, void* last_ptr)",
+  "summary": "Erases [first, last) from a 12-byte-element vector by shifting trailing elements forward and updating _Mylast.",
+  "fields": [
+    {
+      "class": "Vector12",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "_Mylast"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:21:00Z"
+}
