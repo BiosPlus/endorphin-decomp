@@ -8339,6 +8339,12 @@
     "summary": "Runs one-time construction of the static object at mem_00AD909C (guarded by bit 0 of mem_00AD90B8), registers its teardown, and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00477030": {
+    "name": "InitOnceGlobalString_00477030",
+    "signature": "void* fn_00477030()",
+    "summary": "One-time initializer for global string at mem_00AD90BC; returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x004772E0": {
     "name": "MoveBackward12",
     "signature": "std::uint8_t* fn_004772E0(std::uint8_t* first, std::uint8_t* last, std::uint8_t* dst_last)",
