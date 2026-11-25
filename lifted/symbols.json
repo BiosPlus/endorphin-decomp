@@ -44005,6 +44005,12 @@
     "summary": "Pops the return address into edi and returns, releasing 4 bytes of stack arguments.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x00672530": {
+    "name": "GetOnceInitString_00672530",
+    "signature": "void* fn_00672530(void* self)",
+    "summary": "Returns the global string at 0x00B59CC4, initializing it once on first call (sets bit 0 of 0x00B59CE0, calls ext_0066AD10, then registers teardown via ext_006A6C87).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00672590": {
     "name": "UnknownClass::dtor_00672590",
     "class": "UnknownClass",

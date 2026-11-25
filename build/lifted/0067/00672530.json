@@ -1,0 +1,13 @@
+{
+  "va": "0x00672530",
+  "size": 95,
+  "orig_symbol": "sub_00672530",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "GetOnceInitString_00672530",
+  "signature": "void* fn_00672530(void* self)",
+  "summary": "Returns the global string at 0x00B59CC4, initializing it once on first call (sets bit 0 of 0x00B59CE0, calls ext_0066AD10, then registers teardown via ext_006A6C87).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:33:49Z"
+}

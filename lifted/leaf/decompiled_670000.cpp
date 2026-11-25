@@ -1340,3 +1340,26 @@ void fn_006753D0(void* self) {
 }
 } // namespace lift_0050BE20
 } // namespace lift_006753D0
+
+// [0x00672530] sub_00672530 (95 bytes)
+namespace lift_00672530 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString)).
+// Takes (out_str, flag); the second pushed argument is a raw 32-bit constant (0x00A2F0CC).
+extern void* ext_0066AD10(void* out_str, uint32_t arg);
+// Known callee 0x006A6C87: sub_006A6C87 (one stack argument, the constant 0x009218D0; return value unused).
+extern void ext_006A6C87(uint32_t arg);
+extern int mem_00B59CE0;
+extern int mem_00B59CC4;
+
+// @name GetOnceInitString_00672530
+// @summary Returns the global string at 0x00B59CC4, initializing it once on first call (sets bit 0 of 0x00B59CE0, calls ext_0066AD10, then registers teardown via ext_006A6C87).
+void* fn_00672530(void* self) {
+    (void)self;
+    if ((mem_00B59CE0 & 1) == 0) {
+        mem_00B59CE0 |= 1;
+        ext_0066AD10(&mem_00B59CC4, 0x00A2F0CCu);
+        ext_006A6C87(0x009218D0u);
+    }
+    return &mem_00B59CC4;
+}
+} // namespace lift_00672530
