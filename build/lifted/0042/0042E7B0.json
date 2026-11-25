@@ -1,0 +1,14 @@
+{
+  "va": "0x0042E7B0",
+  "size": 110,
+  "orig_symbol": "SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e::vfunc_0",
+  "src_path": "src/templates/SearchableMap.cpp",
+  "lifted_path": "lifted/templates/SearchableMap.cpp",
+  "name": "SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e::vfunc_0",
+  "class": "SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e",
+  "signature": "void* fn_0042E7B0(void* self, const void* key)",
+  "summary": "Looks up a string key in the embedded tree map; returns the node payload (node+0x28), or null if the map is empty or the key is absent.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:03:18Z"
+}

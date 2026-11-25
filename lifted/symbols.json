@@ -2711,6 +2711,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006998D0 (copyStringAndRecord).",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x0042E7B0": {
+    "name": "SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e::vfunc_0",
+    "class": "SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e",
+    "signature": "void* fn_0042E7B0(void* self, const void* key)",
+    "summary": "Looks up a string key in the embedded tree map; returns the node payload (node+0x28), or null if the map is empty or the key is absent.",
+    "lifted_path": "lifted/templates/SearchableMap.cpp"
+  },
   "0x0042E920": {
     "name": "KeyMappingManager::vfunc_6",
     "class": "KeyMappingManager",
