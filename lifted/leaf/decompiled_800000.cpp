@@ -900,3 +900,18 @@ void fn_0080FC70(void* self, uint8_t value) {
     lift_field<DWORD>(self, 0x10) += 1;
 }
 } // namespace lift_0080FC70
+
+// [0x0080FEF0] sub_0080FEF0 (32 bytes)
+namespace lift_0080FEF0 {
+// Known callee 0x0080F700: strlen (Returns the length of a NUL-terminated string (equivalent to repne scasb strlen idiom).)
+extern uint32_t ext_0080F700(const char* str);
+// Known callee 0x0080FC10: AllocCopyString (Allocates n+1 zeroed bytes, copies up to n bytes from src into it with zero padding and a forced NUL terminator; returns the buffer (0 on allocation failure).)
+extern uint32_t ext_0080FC10(const uint8_t* src, uint32_t n);
+
+// @name CopyStringDuplicate
+// @summary Duplicates a NUL-terminated string via AllocCopyString, sized by its strlen; returns the new buffer (0 on failure).
+uint32_t fn_0080FEF0(const char* str) {
+    uint32_t len = ext_0080F700(str);
+    return ext_0080FC10(reinterpret_cast<const uint8_t*>(str), len);
+}
+} // namespace lift_0080FEF0

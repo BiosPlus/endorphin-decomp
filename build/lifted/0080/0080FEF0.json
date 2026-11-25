@@ -1,0 +1,13 @@
+{
+  "va": "0x0080FEF0",
+  "size": 32,
+  "orig_symbol": "sub_0080FEF0",
+  "src_path": "src/leaf/decompiled_800000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_800000.cpp",
+  "name": "CopyStringDuplicate",
+  "signature": "uint32_t fn_0080FEF0(const char* str)",
+  "summary": "Duplicates a NUL-terminated string via AllocCopyString, sized by its strlen; returns the new buffer (0 on failure).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:00:37Z"
+}
