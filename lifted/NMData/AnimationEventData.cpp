@@ -243,3 +243,34 @@ void __thiscall fn_004C1A80(void* self, const void* str) {
     ext_004C0340(self);
 }
 } // namespace lift_004C1A80
+
+// [0x00486BE0] NMData::AnimationEventData::vfunc_81 (37 bytes)
+namespace lift_00486BE0 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000();
+// Known callee 0x00594640: sub_00594640 (Member forwarding thunk: loads subobject pointer at +0x26C and tail-calls sub_0047A580.)
+// Returns a value in eax; the original asm stores it into +0x168.
+extern int32_t __fastcall ext_00594640(void* self);
+// Known callee 0x004C0340: SetGlobalObjectFlag4IfPresent (If the global object pointer mem_00AE29D0 is non-null, set the byte at its +0x04 offset to 1.)
+extern void ext_004C0340();
+// .rdata constants referenced by the original asm's data section.
+extern int mem_00924FCC;
+extern int mem_009443C8;
+
+// @name NMData::AnimationEventData::vfunc_81
+// @class NMData::AnimationEventData
+// @summary Stores the result of ext_00594640(ext_00594000()) into this->+0x168, then calls ext_004C0340.
+// @field NMData::AnimationEventData +0x168 int32_t field_0x168
+// The original asm also pushes its stack argument before the calls and pops it via `ret 4`;
+// the value is never read, so it is kept as an unused parameter here.
+void fn_00486BE0(void* self, [[maybe_unused]] int32_t arg) {
+    // Keep rdata references from the original asm (no runtime effect).
+    (void)&mem_00924FCC;
+    (void)&mem_009443C8;
+
+    int32_t g = ext_00594000();
+    int32_t r = ext_00594640(reinterpret_cast<void*>(static_cast<intptr_t>(g)));
+    lift_field<int32_t>(self, 0x168) = r;
+    ext_004C0340();
+}
+} // namespace lift_00486BE0

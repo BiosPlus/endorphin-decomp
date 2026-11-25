@@ -8849,6 +8849,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x00486BE0": {
+    "name": "NMData::AnimationEventData::vfunc_81",
+    "class": "NMData::AnimationEventData",
+    "signature": "void fn_00486BE0(void* self, [[maybe_unused]] int32_t arg)",
+    "summary": "Stores the result of ext_00594640(ext_00594000()) into this-\u003e+0x168, then calls ext_004C0340.",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
   "0x00486C10": {
     "name": "sub_00486C10",
     "signature": "extern \"C\" void __fastcall fn_00486C10(void* self, int edx_unused, float value)",

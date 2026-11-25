@@ -1,0 +1,22 @@
+{
+  "va": "0x00486BE0",
+  "size": 37,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_81",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_81",
+  "class": "NMData::AnimationEventData",
+  "signature": "void fn_00486BE0(void* self, [[maybe_unused]] int32_t arg)",
+  "summary": "Stores the result of ext_00594640(ext_00594000()) into this-\u003e+0x168, then calls ext_004C0340.",
+  "fields": [
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x168",
+      "type": "int32_t",
+      "name": "field_0x168"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:52:14Z"
+}
