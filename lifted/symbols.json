@@ -24903,6 +24903,13 @@
     "summary": "Returns the address of the global data slot mem_0092CE00 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005A9F50": {
+    "name": "XMLConverterSubclass::XMLConverterSubclass",
+    "class": "XMLConverterSubclass",
+    "signature": "void* fn_005A9F50(void* self)",
+    "summary": "Constructor: runs the XMLConverter base constructor, installs this class's vtable (0x0095EE74), and default-constructs two std::string members at +0x2C and +0x48. Returns this.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005AA020": {
     "name": "CharacterReloader::vfunc_10",
     "class": "CharacterReloader",

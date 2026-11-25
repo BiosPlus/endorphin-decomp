@@ -542,3 +542,25 @@ void fn_005ACD80(void* self) {
     ext_00665810(self);
 }
 } // namespace lift_005ACD80
+
+// [0x005A9F50] sub_005A9F50 (89 bytes)
+namespace lift_005A9F50 {
+// Known callee 0x00678520: XMLConverter::XMLConverter (Constructor: installs XMLConverter primary vtable and default-constructs the std::string member at +0x04; returns this.)
+extern void* ext_00678520(void* self);
+// Import slot 0x00924FE8: std::string default constructor (MSVCP80, __thiscall, ecx = this).
+extern void (*mem_00924FE8)(void* self);
+
+// @name XMLConverterSubclass::XMLConverterSubclass
+// @class XMLConverterSubclass
+// @summary Constructor: runs the XMLConverter base constructor, installs this class's vtable (0x0095EE74), and default-constructs two std::string members at +0x2C and +0x48. Returns this.
+// @field XMLConverterSubclass +0x00 void* vtable
+// @field XMLConverterSubclass +0x2C std::string field_0x2C
+// @field XMLConverterSubclass +0x48 std::string field_0x48
+void* fn_005A9F50(void* self) {
+    ext_00678520(self);
+    lift_field<uintptr_t>(self, 0x00) = 0x0095EE74u;
+    mem_00924FE8(static_cast<uint8_t*>(self) + 0x2C);
+    mem_00924FE8(static_cast<uint8_t*>(self) + 0x48);
+    return self;
+}
+} // namespace lift_005A9F50
