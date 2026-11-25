@@ -1811,3 +1811,41 @@ void sub_007C3C40(uintptr_t arg0) {
     mem_write16(arg0 + 0x48c, 1);
 }
 } // namespace lift_007C3C40
+
+// [0x007C3BD0]
+namespace lift_007C3BD0 {
+// @name initStruct_007C3BD0
+// @summary Initializes struct pointers, vtables/descriptors, and fields before tail-calling initStructFields_007C3C40.
+// @field Struct +0xb10 uint32_t field_0xb10
+// @field Struct +0xb18 uint32_t field_0xb18
+// @field Struct +0xb1c uint32_t field_0xb1c
+// @field Struct +0xb24 uint32_t field_0xb24
+// @field Struct +0xb28 uint32_t field_0xb28
+// @field Struct +0xb30 uint32_t field_0xb30
+// @field Struct +0x16ac uint32_t field_0x16ac
+// @field Struct +0x16b0 uint16_t field_0x16b0
+// @field Struct +0x16b4 uint32_t field_0x16b4
+
+
+extern uint32_t& mem_u32(uintptr_t);
+extern uint16_t& mem_u16(uintptr_t);
+extern void ext_006D80A0(void);
+extern void ext_007C3C40(uintptr_t arg0);
+
+void sub_007C3BD0(uintptr_t arg0) {
+    ext_006D80A0();
+
+    mem_u32(arg0 + 0xb10) = static_cast<uint32_t>(arg0 + 0x8c);
+    mem_u32(arg0 + 0xb18) = 0xab286cu;
+    mem_u32(arg0 + 0xb1c) = static_cast<uint32_t>(arg0 + 0x980);
+    mem_u32(arg0 + 0xb24) = 0xab2880u;
+    mem_u32(arg0 + 0xb28) = static_cast<uint32_t>(arg0 + 0xa74);
+    mem_u32(arg0 + 0xb30) = 0xab2894u;
+
+    mem_u16(arg0 + 0x16b0) = 0;
+    mem_u32(arg0 + 0x16b4) = 0;
+    mem_u32(arg0 + 0x16ac) = 8;
+
+    ext_007C3C40(arg0);
+}
+} // namespace lift_007C3BD0

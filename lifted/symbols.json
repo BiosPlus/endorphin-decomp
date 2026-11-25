@@ -72879,6 +72879,12 @@
     "summary": "Cdecl wrapper that forwards its single pointer argument to the CRT free() via an indirect IAT call.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C3BD0": {
+    "name": "initStruct_007C3BD0",
+    "signature": "void sub_007C3BD0(uintptr_t arg0)",
+    "summary": "Initializes struct pointers, vtables/descriptors, and fields before tail-calling initStructFields_007C3C40.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C3C40": {
     "name": "initStructFields_007C3C40",
     "signature": "void sub_007C3C40(uintptr_t arg0)",
