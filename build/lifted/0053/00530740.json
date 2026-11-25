@@ -1,0 +1,28 @@
+{
+  "va": "0x00530740",
+  "size": 84,
+  "orig_symbol": "sub_00530740",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::updateFlags_00530740",
+  "class": "Unknown",
+  "signature": "void fn_00530740(void* self, DWORD flags)",
+  "summary": "Sets/clears byte +0x86 from bits 0x1/0x2/0x10 of the argument, then forces it on if byte +0x84 is nonzero.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "BYTE",
+      "name": "field_0x84"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x86",
+      "type": "BYTE",
+      "name": "field_0x86"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:05:58Z"
+}

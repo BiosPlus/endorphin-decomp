@@ -1014,3 +1014,29 @@ int32_t fn_0053F8A0(int32_t count, const void* records) {
     return static_cast<int32_t>(result);
 }
 } // namespace lift_0053F8A0
+
+// [0x00530740] sub_00530740 (84 bytes)
+namespace lift_00530740 {
+// @name Unknown::updateFlags_00530740
+// @summary Sets/clears byte +0x86 from bits 0x1/0x2/0x10 of the argument, then forces it on if byte +0x84 is nonzero.
+// @field Unknown +0x84 BYTE field_0x84
+// @field Unknown +0x86 BYTE field_0x86
+void fn_00530740(void* self, DWORD flags) {
+    BYTE* obj = static_cast<BYTE*>(self);
+    const DWORD bit0 = flags & 0x1;
+    const DWORD bit4 = flags & 0x10;
+    const bool  bit1 = (flags & 0x2) != 0;
+
+    if (bit0 != 0 && bit1) {
+        obj[0x86] = 1;
+    } else if (bit4 != 0 && bit1) {
+        obj[0x86] = 1;
+    } else if (bit0 == 0 && bit4 == 0 && !bit1) {
+        obj[0x86] = 0;
+    }
+
+    if (obj[0x84] != 0) {
+        obj[0x86] = 1;
+    }
+}
+} // namespace lift_00530740

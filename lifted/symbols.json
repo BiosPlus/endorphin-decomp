@@ -18641,6 +18641,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00515840 (sub_00511290).",
     "lifted_path": "lifted/leaf/tiny_530000.cpp"
   },
+  "0x00530740": {
+    "name": "Unknown::updateFlags_00530740",
+    "class": "Unknown",
+    "signature": "void fn_00530740(void* self, DWORD flags)",
+    "summary": "Sets/clears byte +0x86 from bits 0x1/0x2/0x10 of the argument, then forces it on if byte +0x84 is nonzero.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x005314C0": {
     "name": "getNestedField_0x10_0x1b0",
     "signature": "uint32_t __thiscall sub_005314C0(uint32_t this_ptr)",
