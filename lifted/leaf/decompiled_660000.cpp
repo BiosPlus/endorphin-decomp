@@ -679,3 +679,28 @@ void __thiscall fn_00665B80(void* self) {
     }
 }
 } // namespace lift_00665B80
+
+// [0x00666930] sub_00666930 (77 bytes)
+namespace lift_00666930 {
+// @name sub_00666930
+// @summary Auto-lifted identical-shape clone of 0x004757F0 (sub_0047A010).
+namespace lift_004757F0 {
+// Known callee 0x00672D10: sub_00672D10 (Auto-lifted identical-shape clone of 0x004026E0 (StringArray::ReleaseElements).)
+extern void ext_006668B0(void* self);
+// Imported MSVC CRT slot for std::basic_string<char>::~basic_string (used via explicit dtor call below).
+extern int mem_00924FF4;
+
+// @name Unknown::Dtor_004757F0
+// @class Unknown
+// @summary Destructor body: releases the StringArray at +0x1C, then destroys the std::string at +0x00.
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1C StringArray field_0x1C
+void fn_00666930(void* self) {
+    // ecx+0x1c is passed as `this` to the StringArray release routine.
+    ext_006668B0(static_cast<unsigned char*>(self) + 0x1C);
+    // The original calls the MSVC CRT string dtor through mem_00924FF4 on `this`.
+    using StdString = std::string;
+    reinterpret_cast<StdString*>(self)->~StdString();
+}
+} // namespace lift_004757F0
+} // namespace lift_00666930

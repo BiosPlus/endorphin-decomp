@@ -1,0 +1,28 @@
+{
+  "va": "0x00594140",
+  "size": 77,
+  "orig_symbol": "sub_00594140",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "sub_00594140",
+  "class": "Unknown",
+  "signature": "void fn_00594140(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004757F0 (sub_0047A010).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "StringArray",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:42:51Z"
+}

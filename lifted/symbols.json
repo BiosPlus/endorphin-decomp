@@ -2246,6 +2246,13 @@
     "summary": "Pure jump thunk forwarding to sub_00428A60.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x004291A0": {
+    "name": "sub_004291A0",
+    "class": "Unknown",
+    "signature": "void fn_004291A0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004757F0 (sub_0047A010).",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x0042E920": {
     "name": "KeyMappingManager::vfunc_6",
     "class": "KeyMappingManager",
@@ -10712,6 +10719,13 @@
     "summary": "Adjusts this by +4 and tail-calls vtable slot 3 (+0xc)",
     "lifted_path": "lifted/leaf/tiny_4A0000.cpp"
   },
+  "0x004A5890": {
+    "name": "sub_004A5890",
+    "class": "Unknown",
+    "signature": "void fn_004A5890(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004757F0 (sub_0047A010).",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004A58E0": {
     "name": "Unknown::FindFirstFlaggedNextLink",
     "class": "Unknown",
@@ -17990,6 +18004,13 @@
     "summary": "Byte-swaps each 16-bit element of an array in place (count \u003c= 0 is a no-op).",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x0052A020": {
+    "name": "sub_0052A020",
+    "class": "Unknown",
+    "signature": "void fn_0052A020(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004757F0 (sub_0047A010).",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052A070": {
     "name": "sub_0052A070",
     "signature": "void* fn_0052A070(void* arg)",
@@ -23160,6 +23181,13 @@
     "signature": "extern \"C\" void __fastcall fn_005940C0(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0xF8 and tail-calls sub_006425C0.",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
+  },
+  "0x00594140": {
+    "name": "sub_00594140",
+    "class": "Unknown",
+    "signature": "void fn_00594140(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004757F0 (sub_0047A010).",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
   "0x005942D0": {
     "name": "FindFirstFlaggedAncestor",
@@ -37295,6 +37323,13 @@
     "signature": "extern \"C\" void __fastcall fn_006667D0(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0x0 and tail-calls sub_006667A0.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
+  "0x00666930": {
+    "name": "sub_00666930",
+    "class": "Unknown",
+    "signature": "void fn_00666930(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004757F0 (sub_0047A010).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
   "0x00666C90": {
     "name": "Unknown::FindParentOfFirstFlaggedChild",
