@@ -1467,3 +1467,45 @@ void* fn_0053B240(void* self) {
     return self;
 }
 } // namespace lift_0053B240
+
+// [0x00537B10] sub_00537B10 (101 bytes)
+namespace lift_00537B10 {
+// Known callee 0x0054C570: Unknown::ctor_0054C570 (Constructs the object, initializes base and embedded subobject, and invokes subobject virtual init.)
+extern void* ext_0054C570(void* self);
+// Known callee 0x00532B60: Unknown::initVtableAndFlags (Stores the vtable address at +0x00, sets flag bytes at +0x04 and +0x0C to 1, and zeroes the dwords at +0x08 and +0x10.)
+extern void ext_00532B60(void* self);
+
+// @name Unknown::ctor_00537B10
+// @class Unknown
+// @summary Base-initializes self, stores vtable and owner link, constructs embedded subobject at +0x18, and registers self as back-reference on the owner.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x18 void* field_0x18
+void* fn_00537B10(void* self, void* owner) {
+    // Base initialization (sets flags and zeroes dwords at +0x08 / +0x10).
+    ext_00532B60(self);
+
+    // Vtable pointer at +0x00 (32-bit target layout).
+    lift_field<uint32_t>(self, 0x00) = 0x00954F24u;
+
+    // Store owner link at +0x14.
+    lift_field<void*>(self, 0x14) = owner;
+
+    // Construct embedded subobject at +0x18.
+    ext_0054C570(reinterpret_cast<uint8_t*>(self) + 0x18);
+
+    // Re-read owner link (the subobject constructor may have changed it).
+    void* linked = lift_field<void*>(self, 0x14);
+
+    // Self back-reference at +0x10.
+    lift_field<void*>(self, 0x10) = self;
+
+    // If an owner exists, point its +0x10 back at self.
+    if (linked != nullptr) {
+        lift_field<void*>(linked, 0x10) = self;
+    }
+
+    return self;
+}
+} // namespace lift_00537B10

@@ -21968,6 +21968,13 @@
     "summary": "Forwards vfunc_13 call to the child object at +0x14.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00537B10": {
+    "name": "Unknown::ctor_00537B10",
+    "class": "Unknown",
+    "signature": "void* fn_00537B10(void* self, void* owner)",
+    "summary": "Base-initializes self, stores vtable and owner link, constructs embedded subobject at +0x18, and registers self as back-reference on the owner.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x00537B80": {
     "name": "CompoundRenderable::vfunc_22",
     "class": "CompoundRenderable",
@@ -45899,6 +45906,13 @@
     "class": "TimerHandle",
     "signature": "void __fastcall fn_0067B450(void* self)",
     "summary": "Destroys TimerHandle by stopping the timer and destroying its critical section lock.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
+  "0x0067B530": {
+    "name": "MultimediaTimer::start",
+    "class": "MultimediaTimer",
+    "signature": "void __thiscall sub_0067B530(void* self)",
+    "summary": "Acquires lock, configures timer resolution, and starts a periodic multimedia timer.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x0067B5A0": {
