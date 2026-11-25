@@ -1,0 +1,13 @@
+{
+  "va": "0x006BE9E0",
+  "size": 74,
+  "orig_symbol": "sub_006BE9E0",
+  "src_path": "src/clones/auto_clones_6B0000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_6B0000.cpp",
+  "name": "CopyHugeConstantPairToGlobals_006BE9E0",
+  "signature": "void fn_006BE9E0()",
+  "summary": "Dereferences the _HUGE pointer and copies its 8-byte value into four adjacent 8-byte globals.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:33:33Z"
+}

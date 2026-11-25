@@ -46332,6 +46332,12 @@
     "summary": "Initializes three 64-bit globals with the double value from MSVCR80.dll!_HUGE",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006BE9E0": {
+    "name": "CopyHugeConstantPairToGlobals_006BE9E0",
+    "signature": "void fn_006BE9E0()",
+    "summary": "Dereferences the _HUGE pointer and copies its 8-byte value into four adjacent 8-byte globals.",
+    "lifted_path": "lifted/clones/auto_clones_6B0000.cpp"
+  },
   "0x006BEC70": {
     "name": "sub_006BEC70_init_globals",
     "signature": "void sub_006BEC70_init_globals()",
