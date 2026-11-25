@@ -1,0 +1,13 @@
+{
+  "va": "0x0085BBC0",
+  "size": 96,
+  "orig_symbol": "sub_0085BBC0",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "__allshl",
+  "signature": "uint64_t sub_0085BBC0(uint64_t val, uint32_t shift)",
+  "summary": "64-bit unsigned/signed left shift (MSVC CRT helper)",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:53:53Z"
+}

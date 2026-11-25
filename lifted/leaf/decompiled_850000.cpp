@@ -1165,3 +1165,79 @@ uint32_t __cdecl sub_008592A0(uint32_t data_addr, uint32_t length) {
     return eax;
 }
 } // namespace lift_008592A0
+
+// [0x0085BBC0]
+namespace lift_0085BBC0 {
+// @name __allshl
+// @summary 64-bit unsigned/signed left shift (MSVC CRT helper)
+uint64_t sub_0085BBC0(uint64_t val, uint32_t shift) {
+    if (shift >= 64) {
+        return 0;
+    }
+    return val << shift;
+}
+} // namespace lift_0085BBC0
+
+// [0x00859A90]
+namespace lift_00859A90 {
+// @name releaseRefCountedBuffer
+// @summary Decrements a reference-counted buffer's refcount and frees it (and optionally its linked buffer) when zero.
+// @field Buffer +0x00 void* field_0x00
+// @field Buffer +0x14 uint32_t flags
+// @field Buffer +0x18 uint32_t refCount
+
+
+extern void* ext_00859730(void* hMem);
+
+void fn_00859A90(void* node) {
+    uint8_t* p = static_cast<uint8_t*>(node);
+    uint32_t refCount = *reinterpret_cast<uint32_t*>(p + 0x18) - 1;
+    uint32_t flags = *reinterpret_cast<uint32_t*>(p + 0x14);
+    *reinterpret_cast<uint32_t*>(p + 0x18) = refCount;
+
+    if (flags & 0x4) {
+        void* linked = *reinterpret_cast<void**>(p + 0x00);
+        fn_00859A90(linked);
+        if (*reinterpret_cast<uint32_t*>(p + 0x18) == 0) {
+            ext_00859730(node);
+        }
+        return;
+    }
+
+    if (refCount != 0) {
+        return;
+    }
+
+    void* linked = *reinterpret_cast<void**>(p + 0x00);
+    if (linked != nullptr && (flags & 0x2) == 0) {
+        ext_00859730(linked);
+    }
+    ext_00859730(node);
+}
+} // namespace lift_00859A90
+
+// [0x0085BE20]
+namespace lift_0085BE20 {
+// @name ReadBigEndianBytes
+// @summary Reads up to `count` bytes in big-endian order into `*out_val` and returns the number of bytes consumed.
+
+
+extern uint32_t ext_0085BC20(void* self);
+extern uint32_t ext_00859DD0(void* self);
+
+extern uint32_t fn_0085BE20(void* self, uint32_t count, uint32_t* out_val) {
+    uint32_t start_pos = ext_0085BC20(self);
+    *out_val = 0;
+
+    for (uint32_t i = 0; i < count; ++i) {
+        uint32_t byte_or_sentinel = ext_00859DD0(self);
+        if (byte_or_sentinel == 0xFF00u) {
+            break;
+        }
+        *out_val = (*out_val << 8) | byte_or_sentinel;
+    }
+
+    uint32_t end_pos = ext_0085BC20(self);
+    return end_pos - start_pos;
+}
+} // namespace lift_0085BE20
