@@ -1,0 +1,39 @@
+{
+  "va": "0x00447F20",
+  "size": 105,
+  "orig_symbol": "sub_00447F20",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "sub_00447F20",
+  "signature": "void __thiscall fn_00447F20(uint32_t ecx)",
+  "summary": "Destructor that resets vtables and destroys member subobjects at +0xCC and +0x78 before calling base destructor",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "uint32_t",
+      "name": "vtable_0x74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "uint8_t",
+      "name": "field_0x78"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xCC",
+      "type": "uint8_t",
+      "name": "field_0xCC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:04:51Z"
+}

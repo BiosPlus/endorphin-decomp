@@ -3894,6 +3894,12 @@
     "summary": "Maps integer arg against the client rect's horizontal span [field_0xFC, client.right] onto the double range [field_0xE8, field_0xF0] (linear, centered), clamped to be non-negative; returns result (stdcall-style single int arg, ret 4).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043CE40": {
+    "name": "sub_0043CE40",
+    "signature": "int32_t __thiscall sub_0043CE40(void* self, int32_t arg0)",
+    "summary": "Scales a Y coordinate relative to the client rect height and a field at +0xF8",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043CEB0": {
     "name": "lerpByClientWidthRounded",
     "signature": "int fn_0043CEB0(int arg)",
