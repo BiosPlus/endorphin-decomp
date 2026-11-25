@@ -2090,3 +2090,30 @@ void fn_00486E30(void* self) {
 }
 } // namespace lift_005E0B20
 } // namespace lift_00486E30
+
+// [0x0048E200]
+namespace lift_0048E200 {
+extern void* __thiscall ext_006657F0(void* self, uint32_t arg);
+extern uint32_t __thiscall ext_0046FD70(uint32_t self, uint32_t out_ptr);
+
+// @name sub_0048E200
+// @summary Initializes base object with vtable 0x0093E5B8, stores two arguments at +0x10/+0x14, and fetches a 32-bit value via ext_0046FD70 into +0x18.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+void* __thiscall fn_0048E200(void* self, uint32_t arg0, uint32_t arg1) {
+    uint8_t* p = static_cast<uint8_t*>(self);
+    ext_006657F0(self, 1);
+
+    *reinterpret_cast<uint32_t*>(p + 0x00) = 0x0093E5B8u;
+    *reinterpret_cast<uint32_t*>(p + 0x10) = arg0;
+    *reinterpret_cast<uint32_t*>(p + 0x14) = arg1;
+
+    uint32_t out_buf[2] = {0, 0};
+    uint32_t res_ptr = ext_0046FD70(arg0, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(out_buf)));
+    *reinterpret_cast<uint32_t*>(p + 0x18) = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(res_ptr));
+
+    return self;
+}
+} // namespace lift_0048E200

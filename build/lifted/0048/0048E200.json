@@ -1,0 +1,39 @@
+{
+  "va": "0x0048E200",
+  "size": 101,
+  "orig_symbol": "sub_0048E200",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "sub_0048E200",
+  "signature": "void* __thiscall fn_0048E200(void* self, uint32_t arg0, uint32_t arg1)",
+  "summary": "Initializes base object with vtable 0x0093E5B8, stores two arguments at +0x10/+0x14, and fetches a 32-bit value via ext_0046FD70 into +0x18.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:01:16Z"
+}
