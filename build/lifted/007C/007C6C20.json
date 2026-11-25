@@ -1,0 +1,13 @@
+{
+  "va": "0x007C6C20",
+  "size": 9,
+  "orig_symbol": "sub_007C6C20",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "fn_007C6C20",
+  "signature": "void fn_007C6C20(void* self)",
+  "summary": "Sets bit 0x8 in the dword at +0x0C of the object pointed to by the first argument.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:16:12Z"
+}

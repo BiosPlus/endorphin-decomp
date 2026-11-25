@@ -66309,6 +66309,12 @@
     "summary": "Returns bit 0 of the dword at offset +0x1C4 of the object (cdecl, one stack argument).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C6C20": {
+    "name": "fn_007C6C20",
+    "signature": "void fn_007C6C20(void* self)",
+    "summary": "Sets bit 0x8 in the dword at +0x0C of the object pointed to by the first argument.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C6DB0": {
     "name": "sub_007C6DB0",
     "signature": "void sub_007C6DB0(uint32_t arg0)",
