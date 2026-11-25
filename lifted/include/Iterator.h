@@ -8,10 +8,10 @@
 // Recovered field layout for Iterator:
 namespace lifted_layout {
 struct Iterator_Fields {
-    // +0x0   uint32_t                 container_ptr  (evidence: 0x00427A60)
+    // +0x0   uint32_t                 container_ptr  (evidence: 0x00427A60, 0x00495460)
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00661B10) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint32_t                 proxy_ptr  (evidence: 0x00427A60) // CONFLICT: multiple definitions at +0x4
-    // +0x8   uint32_t                 elem_ptr  (evidence: 0x00427A60) // CONFLICT: multiple definitions at +0x8
+    // +0x4   uint32_t                 proxy_ptr  (evidence: 0x00427A60, 0x00495460) // CONFLICT: multiple definitions at +0x4
+    // +0x8   uint32_t                 elem_ptr  (evidence: 0x00427A60, 0x00495460) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00661B10) // CONFLICT: multiple definitions at +0x8
     // +0xC   uint32_t                 field_0x0c  (evidence: 0x00661B10)
 };

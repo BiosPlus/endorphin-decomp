@@ -1395,3 +1395,27 @@ void* fn_0049D190(void* self) {
     return self;
 }
 } // namespace lift_0049D190
+
+// [0x00495460] sub_00495460 (36 bytes)
+namespace lift_00495460 {
+// Known callee 0x00427A60: advanceIteratorUntilMatch (Advances a checked vector iterator until end or an element's vfunc(+0xC)(1) returns true)
+extern void __thiscall ext_00427A60(void* self);
+
+// @name Iterator::copyFromAndAdvance
+// @class Iterator
+// @summary Copies the three iterator words from src into self, advances it via advanceIteratorUntilMatch, and returns self.
+// @field Iterator +0x00 uint32_t container_ptr
+// @field Iterator +0x04 uint32_t proxy_ptr
+// @field Iterator +0x08 uint32_t elem_ptr
+void* __thiscall fn_00495460(void* self, const void* src) {
+    auto* dst = reinterpret_cast<uint32_t*>(self);
+    const auto* in = reinterpret_cast<const uint32_t*>(src);
+
+    dst[0] = in[0];
+    dst[1] = in[1];
+    dst[2] = in[2];
+
+    ext_00427A60(self);
+    return self;
+}
+} // namespace lift_00495460

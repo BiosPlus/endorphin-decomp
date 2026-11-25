@@ -1,0 +1,34 @@
+{
+  "va": "0x00495460",
+  "size": 36,
+  "orig_symbol": "sub_00495460",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "Iterator::copyFromAndAdvance",
+  "class": "Iterator",
+  "signature": "void* __thiscall fn_00495460(void* self, const void* src)",
+  "summary": "Copies the three iterator words from src into self, advances it via advanceIteratorUntilMatch, and returns self.",
+  "fields": [
+    {
+      "class": "Iterator",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "container_ptr"
+    },
+    {
+      "class": "Iterator",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "proxy_ptr"
+    },
+    {
+      "class": "Iterator",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "elem_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:18:29Z"
+}

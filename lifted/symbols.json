@@ -10306,6 +10306,13 @@
     "summary": "Gets the rig type name string for the given index via RigManager::getRigTypeNameFromIndex",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x00495460": {
+    "name": "Iterator::copyFromAndAdvance",
+    "class": "Iterator",
+    "signature": "void* __thiscall fn_00495460(void* self, const void* src)",
+    "summary": "Copies the three iterator words from src into self, advances it via advanceIteratorUntilMatch, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00495A20": {
     "name": "sub_00495A20",
     "class": "NMData::RealChannel",
