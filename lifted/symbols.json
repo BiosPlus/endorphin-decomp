@@ -57574,6 +57574,13 @@
     "summary": "Pure jump thunk forwarding to sub_00782D30.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00782E70": {
+    "name": "sub_00782E70",
+    "class": "SortedArray",
+    "signature": "extern uint32_t __thiscall fn_00782E70(void* self, uint32_t key, int32_t* outIndex)",
+    "summary": "Auto-lifted identical-shape clone of 0x007846D0 (SortedArray::findValue).",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00783100": {
     "name": "init_global_block_B608C8",
     "signature": "void fn_00783100(void* self)",

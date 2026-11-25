@@ -9,7 +9,7 @@
 namespace lifted_layout {
 struct SortedArray_Fields {
     // +0x0   void*                    data  (evidence: 0x007847E0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    field_0x00  (evidence: 0x007846D0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    field_0x00  (evidence: 0x00782E70, 0x007846D0) // CONFLICT: multiple definitions at +0x0
     // +0x4   int32_t                  count  (evidence: 0x007847E0)
 };
 } // namespace lifted_layout

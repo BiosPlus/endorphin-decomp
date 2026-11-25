@@ -1,0 +1,22 @@
+{
+  "va": "0x00782E70",
+  "size": 80,
+  "orig_symbol": "sub_00782E70",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "sub_00782E70",
+  "class": "SortedArray",
+  "signature": "extern uint32_t __thiscall fn_00782E70(void* self, uint32_t key, int32_t* outIndex)",
+  "summary": "Auto-lifted identical-shape clone of 0x007846D0 (SortedArray::findValue).",
+  "fields": [
+    {
+      "class": "SortedArray",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:55:08Z"
+}
