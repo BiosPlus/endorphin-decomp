@@ -11109,6 +11109,12 @@
     "summary": "Calls the one-time guarded initializer for the static object at mem_00ADD82C, then writes the given value to out[0] and the object's address to out[1].",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x0049E4C0": {
+    "name": "storeValueAndStaticObject_0049E4C0",
+    "signature": "void fn_0049E4C0(uint32_t* dst, uint32_t value)",
+    "summary": "Writes value to dst[0] and the address returned by initStaticObjectOnce_0049DB00() to dst[1].",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049ED30": {
     "name": "sub_0049ED30",
     "signature": "extern \"C\" void __fastcall fn_0049ED30(void* self)",

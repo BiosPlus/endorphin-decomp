@@ -1,0 +1,27 @@
+{
+  "va": "0x0049E4C0",
+  "size": 30,
+  "orig_symbol": "sub_0049E4C0",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "storeValueAndStaticObject_0049E4C0",
+  "signature": "void fn_0049E4C0(uint32_t* dst, uint32_t value)",
+  "summary": "Writes value to dst[0] and the address returned by initStaticObjectOnce_0049DB00() to dst[1].",
+  "fields": [
+    {
+      "class": "dst",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "value"
+    },
+    {
+      "class": "dst",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "staticObject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:31:15Z"
+}

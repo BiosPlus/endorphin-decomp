@@ -1042,3 +1042,19 @@ void fn_0049D3F0(uint32_t* out, uint32_t value) {
     out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
 }
 } // namespace lift_0049D3F0
+
+// [0x0049E4C0] sub_0049E4C0 (30 bytes)
+namespace lift_0049E4C0 {
+// Known callee 0x0049DB00: initStaticObjectOnce_0049DB00 (One-time guarded initializer: if bit 0 of mem_00ADD838 is clear, set it, run ext_0067A670 on &mem_00ADD834, then store 0x009402AC there; returns &mem_00ADD834.)
+extern void* ext_0049DB00();
+
+// @name storeValueAndStaticObject_0049E4C0
+// @summary Writes value to dst[0] and the address returned by initStaticObjectOnce_0049DB00() to dst[1].
+// @field dst +0x00 uint32_t value
+// @field dst +0x04 void* staticObject
+void fn_0049E4C0(uint32_t* dst, uint32_t value) {
+    void* obj = ext_0049DB00();
+    dst[0] = value;
+    dst[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_0049E4C0
