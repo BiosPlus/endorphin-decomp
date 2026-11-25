@@ -955,6 +955,12 @@
     "summary": "Calls the function pointer stored at child+0x148 (child = self+0x428), passing \u0026self-\u003echild as this; returns true if it yields nonzero.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x0040B930": {
+    "name": "sub_0040B930",
+    "signature": "extern \"C\" void __thiscall fn_0040B930(void* self)",
+    "summary": "Reads window text from control at +0x360 into std::string at +0x340",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040BC30": {
     "name": "sub_0040BC30",
     "signature": "extern \"C\" void __fastcall fn_0040BC30(void* self)",

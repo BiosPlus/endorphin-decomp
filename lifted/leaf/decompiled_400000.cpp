@@ -1961,3 +1961,27 @@ void __thiscall fn_0040B640(void* self) {
     reinterpret_cast<void(__thiscall*)(void*)>(static_cast<uintptr_t>(mem_009242F4))(&cstr_storage);
 }
 } // namespace lift_0040B640
+
+// [0x0040B930]
+namespace lift_0040B930 {
+// @name sub_0040B930
+// @summary Reads window text from control at +0x360 into std::string at +0x340
+// @field Unknown +0x340 uint8_t[0x20] field_0x340
+// @field Unknown +0x360 uint8_t[0x04] field_0x360
+
+extern void ext_006A5F4A(void* self, void* outStr);
+extern void (__thiscall *mem_009242FC)(void* self);
+extern const char* (__thiscall *mem_00924300)(void* self);
+extern void* (__thiscall *mem_00924FD4)(void* self, const char* s);
+extern void (__thiscall *mem_009242F4)(void* self);
+
+extern void __thiscall fn_0040B930(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uint8_t cstring_buf[16] = {};
+    mem_009242FC(cstring_buf);
+    ext_006A5F4A(base + 0x360, cstring_buf);
+    const char* text = mem_00924300(cstring_buf);
+    mem_00924FD4(base + 0x340, text);
+    mem_009242F4(cstring_buf);
+}
+} // namespace lift_0040B930
