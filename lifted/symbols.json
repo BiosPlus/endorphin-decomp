@@ -3580,6 +3580,13 @@
     "summary": "Computes a layout offset from two system metrics plus an argument and stores it into two fields; sets flag bits 0xC on a sub-object.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043CD60": {
+    "name": "Window::StartRedrawTimer",
+    "class": "Window",
+    "signature": "extern \"C\" void __thiscall fn_0043CD60(void* self, uint32_t nIDEvent)",
+    "summary": "Calls USER32!SetTimer(this-\u003ehwnd(+0x20), nIDEvent, 1, NULL) and stores the returned timer id at +0x138.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043CD80": {
     "name": "KillOwnerTimer",
     "signature": "void fn_0043CD80(void* self)",

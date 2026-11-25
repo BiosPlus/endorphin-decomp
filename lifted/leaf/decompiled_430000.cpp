@@ -3314,3 +3314,25 @@ void __thiscall fn_00430FA0(void* self) {
     reinterpret_cast<void(__thiscall *)(void*)>(&ext_006A64EA)(self);
 }
 } // namespace lift_00430FA0
+
+// [0x0043CD60]
+namespace lift_0043CD60 {
+// @name Window::StartRedrawTimer
+// @class Window
+// @summary Calls USER32!SetTimer(this->hwnd(+0x20), nIDEvent, 1, NULL) and stores the returned timer id at +0x138.
+// @field Window +0x20 uint32_t hwnd
+// @field Window +0x138 uint32_t timerId
+
+extern int mem_00925664; // IAT slot for USER32!SetTimer
+
+extern void __thiscall fn_0043CD60(void* self, uint32_t nIDEvent) {
+    using SetTimerFn = uintptr_t(__stdcall*)(void* hWnd, uintptr_t nIDEvent, uint32_t uElapse, void* lpTimerFunc);
+    auto SetTimer = *reinterpret_cast<SetTimerFn*>(&mem_00925664);
+    uintptr_t result = SetTimer(
+        reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x20))),
+        static_cast<uintptr_t>(nIDEvent),
+        1,
+        nullptr);
+    lift_field<uint32_t>(self, 0x138) = static_cast<uint32_t>(result);
+}
+} // namespace lift_0043CD60
