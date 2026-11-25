@@ -18328,6 +18328,13 @@
     "summary": "Forwards three floats to fn_00538CF0 and stores a 32-bit value at this+0x24.",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x00538E40": {
+    "name": "UtilityGraphics::Line::vfunc_22",
+    "class": "UtilityGraphics::Line",
+    "signature": "void fn_00538E40(void* self)",
+    "summary": "Draws a GL_LINES segment from the origin to (0, 0, field_0x14).",
+    "lifted_path": "lifted/UtilityGraphics/Line.cpp"
+  },
   "0x00538FA0": {
     "name": "SetFloatPairAndDwordPair",
     "signature": "void fn_00538FA0(void* self, float f0, float f1, DWORD d0, DWORD d1)",
@@ -35631,6 +35638,12 @@
     "summary": "Sets vtable pointer to 0x00987730 and pops an element from the global vector at 0x00B59080 if non-empty",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00660210": {
+    "name": "std_vector_28_back",
+    "signature": "uint32_t __fastcall sub_00660210(uint32_t ecx)",
+    "summary": "Returns a pointer to the last 28-byte element in a checked vector, validating bounds via _invalid_parameter_noinfo",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00660260": {
     "name": "SymbolResolver::vfunc_4",
     "class": "SymbolResolver",
@@ -37862,6 +37875,12 @@
     "summary": "Formats the two ints at this+0x00 and this+0x04 into a caller buffer via snprintf (__thiscall, ret 8).",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067ECA0": {
+    "name": "parseHexPairFromString",
+    "signature": "void __thiscall sub_0067ECA0(void* self, const void* str)",
+    "summary": "Parses two 16-based unsigned longs from a string at offsets 0 and 9 into fields +0x04 and +0x00.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067ECF0": {
     "name": "Unknown::formatDwordHex (descriptive; owner class not identified)",
     "class": "Unknown",
@@ -37887,6 +37906,13 @@
     "class": "Unknown",
     "signature": "void fn_0067F8F0(void* self)",
     "summary": "If the element range [begin, end) spans at least one 4-byte slot, decrement end by 4 (pop back).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
+  "0x0067F910": {
+    "name": "Vector8::back",
+    "class": "Vector8",
+    "signature": "uint32_t __thiscall fn_0067F910(uintptr_t self)",
+    "summary": "Returns a pointer to the last 8-byte element of the vector with MSVC8 checked-iterator bounds validation.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x0067F9D0": {
