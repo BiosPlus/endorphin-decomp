@@ -1,0 +1,22 @@
+{
+  "va": "0x004A3FA0",
+  "size": 79,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType::vfunc_0[FSMEditView::drawVariables]",
+  "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, drawVariables, 0\u003e",
+  "signature": "void* fn_004A3FA0(void* self, uint32_t unused_arg)",
+  "summary": "Validates the wrapped pointer at arg+0 (throws if null), calls sub_0049AA60 on it, passes the result to sub_006720A0 on arg, and returns arg.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:09:03Z"
+}

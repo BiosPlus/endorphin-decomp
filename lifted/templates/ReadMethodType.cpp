@@ -57269,3 +57269,34 @@ extern void* __thiscall fn_004A42B0(void* self, void* out, void** src) {
     return out;
 }
 } // namespace lift_004A42B0
+
+// [0x004A3FA0]
+namespace lift_004A3FA0 {
+// @name ExprParser::ReadMethodType::vfunc_0[FSMEditView::drawVariables]
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawVariables, 0>
+// @summary Validates the wrapped pointer at arg+0 (throws if null), calls sub_0049AA60 on it, passes the result to sub_006720A0 on arg, and returns arg.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+
+extern bool __thiscall ext_0049AA60(void* self);
+extern void __thiscall ext_006720A0(void* self, bool value);
+// 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place)
+extern void* __thiscall ext_0046C3C0(void* self);
+// 0x006A6DD2: thunk to MSVCR80!_CxxThrowException(object, throwInfo); never returns
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+extern int mem_009DEC1C;
+
+// Second stack argument (ret 8) is never read by the original code.
+void* fn_004A3FA0(void* self, uint32_t unused_arg) {
+    void* inner = lift_field<void*>(self, 0);
+    if (inner == nullptr) {
+        // Exception object storage: the original frame slot (esp+4 .. esp+0x2c), 40 bytes.
+        alignas(8) unsigned char exception_object[40];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return nullptr; // unreachable: _CxxThrowException does not return
+    }
+    bool value = ext_0049AA60(inner);
+    ext_006720A0(self, value);
+    return self;
+}
+} // namespace lift_004A3FA0
