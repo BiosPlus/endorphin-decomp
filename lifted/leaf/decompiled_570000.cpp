@@ -566,3 +566,39 @@ void* fn_0057BB40(void* self) {
     return self;
 }
 } // namespace lift_0057BB40
+
+// [0x0057D7F0]
+namespace lift_0057D7F0 {
+// @name Unknown::Ctor_0057D7F0
+// @class Unknown
+// @summary Initializes three float fields to 0.0, default-constructs a std::string at +0x0C, zeroes three dwords at +0x2C/+0x30/+0x34, and returns this.
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x0C std::string field_0x0c
+// @field Unknown +0x2C DWORD field_0x2c
+// @field Unknown +0x30 DWORD field_0x30
+// @field Unknown +0x34 DWORD field_0x34
+void* fn_0057D7F0(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+
+    // Original: fldz; fst [+8]; fst [+4]; fstp [+0] -> all three floats are 0.0f.
+    const float zero_f = 0.0f;
+    std::memcpy(base + 0x00, &zero_f, sizeof(float));
+    std::memcpy(base + 0x04, &zero_f, sizeof(float));
+    std::memcpy(base + 0x08, &zero_f, sizeof(float));
+
+    // Original: call std::string default constructor on [+0x0C] (MSVC runtime, via IAT).
+    // Not reproducible portably in place; the std::string storage at +0x0C is left to the
+    // caller/runtime to construct. Size of that object is not assumed here.
+
+    // Original: xor eax,eax; zero dwords at +0x2C, +0x30, +0x34.
+    const std::uint32_t zero_u = 0;
+    std::memcpy(base + 0x2C, &zero_u, sizeof(std::uint32_t));
+    std::memcpy(base + 0x30, &zero_u, sizeof(std::uint32_t));
+    std::memcpy(base + 0x34, &zero_u, sizeof(std::uint32_t));
+
+    // Original: mov eax, esi -> return this.
+    return self;
+}
+} // namespace lift_0057D7F0

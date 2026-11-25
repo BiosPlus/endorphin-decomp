@@ -1,0 +1,58 @@
+{
+  "va": "0x0057D7F0",
+  "size": 73,
+  "orig_symbol": "sub_0057D7F0",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "Unknown::Ctor_0057D7F0",
+  "class": "Unknown",
+  "signature": "void* fn_0057D7F0(void* self)",
+  "summary": "Initializes three float fields to 0.0, default-constructs a std::string at +0x0C, zeroes three dwords at +0x2C/+0x30/+0x34, and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "DWORD",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "DWORD",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "DWORD",
+      "name": "field_0x34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:32:15Z"
+}
