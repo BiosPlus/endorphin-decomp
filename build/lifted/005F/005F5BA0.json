@@ -1,0 +1,13 @@
+{
+  "va": "0x005F5BA0",
+  "size": 25,
+  "orig_symbol": "sub_005F5BA0",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "FindStringIndexAndInvoke",
+  "signature": "uint32_t __thiscall fn_005F5BA0(void* self, const void* name)",
+  "summary": "Looks up a name in the static string table to get its index, then passes that index to sub_005F5470 on the same this pointer and returns its result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:05:58Z"
+}

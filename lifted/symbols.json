@@ -28104,6 +28104,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0xFFFFFEA8 and tail-calls sub_005F5410.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005F5BA0": {
+    "name": "FindStringIndexAndInvoke",
+    "signature": "uint32_t __thiscall fn_005F5BA0(void* self, const void* name)",
+    "summary": "Looks up a name in the static string table to get its index, then passes that index to sub_005F5470 on the same this pointer and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005F5CC0": {
     "name": "ExprParser::ReadWriteMethodType\u003cHelperGraphic\u003e::vfunc_41 (HelperGraphic::getColour -\u003e setColour)",
     "class": "ExprParser::ReadWriteMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getColour(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall HelperGraphic::setColour(class NM::Vector3 const \u0026), 0}\u003e",

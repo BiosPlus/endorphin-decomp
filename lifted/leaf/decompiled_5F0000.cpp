@@ -178,3 +178,21 @@ UINT __stdcall fn_005F5240(const void* name) {
     return 0;
 }
 } // namespace lift_005F5240
+
+// [0x005F5BA0]
+namespace lift_005F5BA0 {
+extern uint32_t __stdcall ext_005F5240(const void* name);
+extern uint32_t __thiscall ext_005F5470(void* self, uint32_t index);
+
+// @name FindStringIndexAndInvoke
+// @summary Looks up a name in the static string table to get its index, then passes that index to sub_005F5470 on the same this pointer and returns its result.
+uint32_t __thiscall fn_005F5BA0(void* self, const void* name) {
+    // mov eax, [esp+4]  -> name (first stack argument)
+    // push esi / mov esi, ecx -> this saved in esi (here: the self parameter)
+    // push eax; call ext_005F5240 -> index in eax
+    // push eax; mov ecx, esi; call ext_005F5470 -> result in eax
+    // ret 4 -> callee-cleans the one stack argument (thiscall)
+    uint32_t index = ext_005F5240(name);
+    return ext_005F5470(self, index);
+}
+} // namespace lift_005F5BA0
