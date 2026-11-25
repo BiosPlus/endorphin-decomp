@@ -1360,3 +1360,26 @@ const uint8_t* fn_007B04A8() {
     return kDataTable_007B04A8;
 }
 } // namespace lift_007B04A8
+
+// [0x007B9050]
+namespace lift_007B9050 {
+// @name FindNodeByKey_007B9050
+// @class ListNode
+// @summary Walks the global node list from mem_00B61DB8 and returns the first node whose u16 key matches, or null.
+// @field ListNode +0x00 uint16_t field_0x00
+// @field ListNode +0x14 uint32_t field_0x14
+
+extern uint32_t mem_00B61DB8;
+
+uint32_t FindNodeByKey_007B9050(uint16_t key) {
+    uint32_t node = mem_00B61DB8;
+    while (node != 0) {
+        uint8_t* p = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(node));
+        if (*reinterpret_cast<uint16_t*>(p) == key) {
+            break;
+        }
+        node = *reinterpret_cast<uint32_t*>(p + 0x14);
+    }
+    return node;
+}
+} // namespace lift_007B9050

@@ -8,6 +8,7 @@
 // Recovered field layout for ListNode:
 namespace lifted_layout {
 struct ListNode_Fields {
+    // +0x0   uint16_t                 field_0x00  (evidence: 0x007B9050) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t*                 field_0x00  (evidence: 0x007AF8F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   WORD                     index  (evidence: 0x007B8E30, 0x007BD640) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 key  (evidence: 0x007B2DF0, 0x007BD640) // CONFLICT: multiple definitions at +0x0
@@ -26,6 +27,7 @@ struct ListNode_Fields {
     // +0xC   void*                    prev  (evidence: 0x007F6830) // CONFLICT: multiple definitions at +0xC
     // +0x10  void*                    embeddedObjectVtable  (evidence: 0x0049DBA0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 next  (evidence: 0x007B2DF0, 0x007BD640) // CONFLICT: multiple definitions at +0x10
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x007B9050) // CONFLICT: multiple definitions at +0x14
     // +0x14  void*                    field_0x14  (evidence: 0x007B8D80) // CONFLICT: multiple definitions at +0x14
     // +0x14  DWORD                    next  (evidence: 0x007B8E30, 0x007BD640) // CONFLICT: multiple definitions at +0x14
     // +0x24  std::string              key  (evidence: 0x0049DB60)

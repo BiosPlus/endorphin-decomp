@@ -66740,6 +66740,13 @@
     "summary": "If any node in the global list has its leading u16 equal to the key, renumber all nodes 0..N-1 from the head.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B9050": {
+    "name": "FindNodeByKey_007B9050",
+    "class": "ListNode",
+    "signature": "uint32_t FindNodeByKey_007B9050(uint16_t key)",
+    "summary": "Walks the global node list from mem_00B61DB8 and returns the first node whose u16 key matches, or null.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BADD0": {
     "name": "sub_007BADD0",
     "signature": "uint32_t __cdecl sub_007BADD0(uintptr_t arg0)",
