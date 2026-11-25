@@ -985,3 +985,18 @@ void* fn_0080B570(void* dst, uint32_t value, uint32_t count) {
     return ext_00859740(dst, static_cast<uint8_t>(value), count);
 }
 } // namespace lift_0080B570
+
+// [0x0080EBD0]
+namespace lift_0080EBD0 {
+extern uint8_t mem_0080EC00[];
+
+// @name isDelimiterOrSpecialChar
+// @summary Checks whether a character is in the set mapped to 0 in the lookup table at 0x0080EC00
+int32_t __cdecl sub_0080EBD0(int8_t ch) {
+    uint32_t idx = static_cast<uint32_t>(static_cast<int32_t>(ch) - 0x20);
+    if (idx > 0x5Au) {
+        return 0;
+    }
+    return mem_0080EC00[idx] == 0 ? 1 : 0;
+}
+} // namespace lift_0080EBD0

@@ -1,0 +1,13 @@
+{
+  "va": "0x0080EBD0",
+  "size": 37,
+  "orig_symbol": "sub_0080EBD0",
+  "src_path": "src/leaf/decompiled_800000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_800000.cpp",
+  "name": "isDelimiterOrSpecialChar",
+  "signature": "int32_t __cdecl sub_0080EBD0(int8_t ch)",
+  "summary": "Checks whether a character is in the set mapped to 0 in the lookup table at 0x0080EC00",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T14:24:43Z"
+}
