@@ -1535,3 +1535,26 @@ void vec3_ComponentwiseMax(const float* a, const float* b, float* out)
     }
 }
 } // namespace lift_007CB8D0
+
+// [0x007C9490]
+namespace lift_007C9490 {
+extern void ext_007CA120(int32_t mode, float* vec, int32_t value, uint8_t* sub);
+
+// @name sub_007C9490
+// @summary Copies a 3-float vector and forwards it with a selected per-object value and subobject to ext_007CA120.
+// @class Unknown (object pointer; class not identified)
+// @field Unknown +0x94 int32_t field_0x94 (read when flag == 0)
+// @field Unknown +0xEC uint8_t field_0xEC (address taken when flag == 0)
+// @field Unknown +0x98 int32_t field_0x98 (read when flag != 0)
+// @field Unknown +0x12C uint8_t field_0x12C (address taken when flag != 0)
+void fn_007C9490(uint8_t* self, int32_t flag, float x, float y, float z) {
+    float vec[3] = {x, y, z};
+    if (flag == 0) {
+        int32_t value = *reinterpret_cast<int32_t*>(self + 0x94);
+        ext_007CA120(0, vec, value, self + 0xEC);
+    } else {
+        int32_t value = *reinterpret_cast<int32_t*>(self + 0x98);
+        ext_007CA120(0, vec, value, self + 0x12C);
+    }
+}
+} // namespace lift_007C9490

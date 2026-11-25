@@ -67648,6 +67648,13 @@
     "summary": "Forwards the call to the function pointer stored at self+0xa8, passing self unchanged; returns the callee's result.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C9490": {
+    "name": "sub_007C9490",
+    "class": "Unknown (object pointer; class not identified)",
+    "signature": "void fn_007C9490(uint8_t* self, int32_t flag, float x, float y, float z)",
+    "summary": "Copies a 3-float vector and forwards it with a selected per-object value and subobject to ext_007CA120.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C97A0": {
     "name": "Unknown::setField44IfBit0Clear",
     "class": "Unknown",
