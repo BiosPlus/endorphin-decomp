@@ -421,3 +421,32 @@ bool fn_00564600(void* self, const std::string& name) {
     return ret == 0;
 }
 } // namespace lift_00564600
+
+// [0x00563330] sub_00563330 (97 bytes)
+namespace lift_00563330 {
+// Known callee 0x005632F0: CheckModelAgainstSelf (Returns true if model is non-null and is either a mesh/NURBS primitive or accepted by sub_00563220(this, model).)
+extern bool __thiscall ext_005632F0(void* self, void* model);
+// Known callee 0x007C5616: thunk_XSIFtk-3.6.2.1_?GetChildrenList@CSLModel@@QAEPAPAV1@XZ (IAT jump thunk forwarding to XSIFtk-3.6.2.1!?GetChildrenList@CSLModel@@QAEPAPAV1@XZ.)
+extern void** __thiscall ext_007C5616(void* self);
+// Known callee 0x007C561C: thunk_XSIFtk-3.6.2.1_?GetChildrenCount@CSLModel@@QAEHXZ (IAT jump thunk forwarding to XSIFtk-3.6.2.1!?GetChildrenCount@CSLModel@@QAEHXZ.)
+extern int __thiscall ext_007C561C(void* self);
+
+// @name CountAcceptedChildren
+// @summary Counts the children of model for which self's CheckModelAgainstSelf accepts the child; returns 0 for a null model.
+int __thiscall fn_00563330(void* self, void* model) {
+    if (model == nullptr) {
+        return 0;
+    }
+
+    int accepted = 0;
+    const int count = ext_007C561C(model);
+    void** children = ext_007C5616(model);
+
+    for (int i = 0; i < count; ++i) {
+        if (ext_005632F0(self, children[i])) {
+            ++accepted;
+        }
+    }
+    return accepted;
+}
+} // namespace lift_00563330

@@ -1,0 +1,13 @@
+{
+  "va": "0x00563330",
+  "size": 97,
+  "orig_symbol": "sub_00563330",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "CountAcceptedChildren",
+  "signature": "int __thiscall fn_00563330(void* self, void* model)",
+  "summary": "Counts the children of model for which self's CheckModelAgainstSelf accepts the child; returns 0 for a null model.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:38:10Z"
+}
