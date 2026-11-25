@@ -4,11 +4,47 @@
   "orig_symbol": "sub_00699360",
   "src_path": "src/leaf/decompiled_690000.cpp",
   "lifted_path": "lifted/leaf/decompiled_690000.cpp",
-  "name": "VectorLike::checkedBegin",
-  "class": "VectorLike",
-  "signature": "uint32_t fn_00699360(void* self)",
-  "summary": "Returns the begin pointer when the range holds at least one 32-byte element, else a static sentinel; asserts begin is inside [begin, end).",
+  "name": "sub_00692D90",
+  "class": "NMData::RealChannel",
+  "signature": "void __thiscall fn_00692D90(uint8_t* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
   "fields": [
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "end"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x0",
+      "type": "const char* string (self dereferenced; owning class not yet",
+      "name": "identified)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "field_0x1C"
+    },
     {
       "class": "VectorLike",
       "offset": "+0x8",
@@ -24,5 +60,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T00:55:19Z"
+  "lifted_at": "2026-11-25T00:55:24Z"
 }

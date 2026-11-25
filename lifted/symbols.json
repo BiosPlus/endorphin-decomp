@@ -37909,10 +37909,10 @@
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
   "0x00699360": {
-    "name": "VectorLike::checkedBegin",
-    "class": "VectorLike",
-    "signature": "uint32_t fn_00699360(void* self)",
-    "summary": "Returns the begin pointer when the range holds at least one 32-byte element, else a static sentinel; asserts begin is inside [begin, end).",
+    "name": "sub_00692D90",
+    "class": "NMData::RealChannel",
+    "signature": "void __thiscall fn_00692D90(uint8_t* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
   "0x006997E0": {
