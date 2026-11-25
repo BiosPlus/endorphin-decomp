@@ -1,0 +1,46 @@
+{
+  "va": "0x00476530",
+  "size": 114,
+  "orig_symbol": "sub_00476530",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "sub_00476530",
+  "class": "UnknownClass",
+  "signature": "uint32_t __thiscall sub_00476530(uint32_t self, uint32_t arg0, uint32_t arg1)",
+  "summary": "Constructor initializing two std::string fields by copy, two by default, and a uint8_t flag to 0",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x0",
+      "type": "uint8_t[0x1C]",
+      "name": "field_0x00"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1C",
+      "type": "uint8_t[0x1C]",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x38",
+      "type": "uint8_t[0x1C]",
+      "name": "field_0x38"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x54",
+      "type": "uint8_t[0x1C]",
+      "name": "field_0x54"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x70",
+      "type": "uint8_t",
+      "name": "field_0x70"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:39:00Z"
+}

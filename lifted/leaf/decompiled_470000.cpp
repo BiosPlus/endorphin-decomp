@@ -886,3 +886,34 @@ void fn_00476770(void* self) {
     lift_field<std::string>(self, 0x00).~basic_string();
 }
 } // namespace lift_00476770
+
+// [0x00476530]
+namespace lift_00476530 {
+// @name sub_00476530
+// @class UnknownClass
+// @summary Constructor initializing two std::string fields by copy, two by default, and a uint8_t flag to 0
+// @field UnknownClass +0x00 uint8_t[0x1C] field_0x00
+// @field UnknownClass +0x1C uint8_t[0x1C] field_0x1c
+// @field UnknownClass +0x38 uint8_t[0x1C] field_0x38
+// @field UnknownClass +0x54 uint8_t[0x1C] field_0x54
+// @field UnknownClass +0x70 uint8_t field_0x70
+
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FE8;
+
+uint32_t __thiscall sub_00476530(uint32_t self, uint32_t arg0, uint32_t arg1) {
+    using string_copy_ctor_t = uint32_t(__thiscall*)(uint32_t, uint32_t);
+    using string_default_ctor_t = uint32_t(__thiscall*)(uint32_t);
+
+    auto string_copy_ctor = reinterpret_cast<string_copy_ctor_t>(static_cast<uintptr_t>(mem_00924FE0));
+    auto string_default_ctor = reinterpret_cast<string_default_ctor_t>(static_cast<uintptr_t>(mem_00924FE8));
+
+    string_copy_ctor(self + 0x00, arg0);
+    string_copy_ctor(self + 0x1C, arg1);
+    string_default_ctor(self + 0x38);
+    string_default_ctor(self + 0x54);
+    *reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(self + 0x70)) = 0;
+
+    return self;
+}
+} // namespace lift_00476530
