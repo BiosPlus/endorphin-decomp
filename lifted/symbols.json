@@ -21206,6 +21206,12 @@
     "summary": "Returns 1 if the 0x20 flag bit in the dword at +0x1C is set, otherwise 0.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0052F610": {
+    "name": "createAnimationDerived_0052F610",
+    "signature": "void* fn_0052F610()",
+    "summary": "Allocates a 0x9C-byte object, runs the Animation-derived initializer, installs the two vtable pointers, and returns it (or NULL if allocation failed).",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052F670": {
     "name": "Primitives::Animation::vfunc_0",
     "class": "Primitives::Animation",

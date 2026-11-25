@@ -1436,3 +1436,31 @@ void* fn_0052F770() {
     return obj;
 }
 } // namespace lift_0052F770
+
+// [0x0052F610] sub_0052F610 (90 bytes)
+namespace lift_0052F610 {
+// Known callee 0x0053B240: Unknown::initAnimationDerived_0053B240 (Base-initializes self, installs three 32-bit vtable pointers (+0x00, +0x14, +0x18), zeroes +0x1C/+0x20/+0x34/+0x38, then calls Animation::vfunc_29 to reset state; returns self.)
+extern void* ext_0053B240(void* self);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Used here as the allocator: called with a single 0x9C-byte size argument, returns a pointer or NULL.
+extern void* ext_006A5C62(size_t size);
+
+// @name createAnimationDerived_0052F610
+// @summary Allocates a 0x9C-byte object, runs the Animation-derived initializer, installs the two vtable pointers, and returns it (or NULL if allocation failed).
+// @field AnimationDerived +0x00 void* vtable_primary
+// @field AnimationDerived +0x14 void* vtable_secondary
+//
+// The original SEH frame setup/teardown (fs:[0] push/pop) is omitted: it is
+// compiler/runtime exception bookkeeping and has no portable C++ equivalent.
+void* fn_0052F610() {
+    void* obj = ext_006A5C62(0x9C);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+
+    ext_0053B240(obj);
+    lift_field<void*>(obj, 0x00) = reinterpret_cast<void*>(static_cast<uintptr_t>(0x00953994));
+    lift_field<void*>(obj, 0x14) = reinterpret_cast<void*>(static_cast<uintptr_t>(0x0095398C));
+    return obj;
+}
+} // namespace lift_0052F610
