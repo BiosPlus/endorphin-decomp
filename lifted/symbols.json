@@ -53033,6 +53033,13 @@
     "summary": "Compare this string's buffer with another C-string, treating null pointers as mem_00B5D2C0",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006BA7C0": {
+    "name": "String::equals",
+    "class": "String",
+    "signature": "int32_t sub_006BA7C0(const char* const* self, const char* other)",
+    "summary": "Returns 1 if String::compare(self, other) is zero (equal), otherwise 0.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BAC00": {
     "name": "sub_006BAC00",
     "signature": "extern \"C\" void* __fastcall fn_006BAC00(void* self, int edx_unused, unsigned int flags)",

@@ -1445,3 +1445,16 @@ extern void __thiscall fn_006BAC20(void* self) {
     ext_006DE460(base + 0x04);
 }
 } // namespace lift_006BAC20
+
+// [0x006BA7C0]
+namespace lift_006BA7C0 {
+// @name String::equals
+// @class String
+// @summary Returns 1 if String::compare(self, other) is zero (equal), otherwise 0.
+
+int32_t ext_006BA660(const char* const* self, const char* other);
+
+int32_t sub_006BA7C0(const char* const* self, const char* other) {
+    return ext_006BA660(self, other) == 0 ? 1 : 0;
+}
+} // namespace lift_006BA7C0
