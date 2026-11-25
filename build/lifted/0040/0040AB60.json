@@ -1,0 +1,27 @@
+{
+  "va": "0x0040AB60",
+  "size": 91,
+  "orig_symbol": "sub_0040AB60",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "getStringByIndex",
+  "signature": "uint32_t __thiscall sub_0040AB60(uint32_t self, uint32_t out_str, uint32_t index)",
+  "summary": "Copies one of two std::string fields by index (0 or 1) or constructs from a default C-string",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x2D0",
+      "type": "std::string",
+      "name": "field_0x2d0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x308",
+      "type": "std::string",
+      "name": "field_0x308"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:25:49Z"
+}

@@ -1368,3 +1368,31 @@ void fn_004065D0(void* self) {
 }
 } // namespace lift_005015E0
 } // namespace lift_004065D0
+
+// [0x0040AB60]
+namespace lift_0040AB60 {
+// @name getStringByIndex
+// @summary Copies one of two std::string fields by index (0 or 1) or constructs from a default C-string
+// @field Unknown +0x2d0 std::string field_0x2d0
+// @field Unknown +0x308 std::string field_0x308
+
+
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FE4;
+
+using StringCopyCtorFn = uint32_t(__thiscall*)(uint32_t self, uint32_t other);
+using StringCStrCtorFn = uint32_t(__thiscall*)(uint32_t self, uint32_t cstr);
+
+uint32_t __thiscall sub_0040AB60(uint32_t self, uint32_t out_str, uint32_t index) {
+    if (index == 0) {
+        reinterpret_cast<StringCopyCtorFn>(mem_00924FE0)(out_str, self + 0x2d0);
+        return out_str;
+    }
+    if (index == 1) {
+        reinterpret_cast<StringCopyCtorFn>(mem_00924FE0)(out_str, self + 0x308);
+        return out_str;
+    }
+    reinterpret_cast<StringCStrCtorFn>(mem_00924FE4)(out_str, 0x00928B5Du);
+    return out_str;
+}
+} // namespace lift_0040AB60

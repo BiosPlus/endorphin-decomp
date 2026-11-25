@@ -773,6 +773,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0040A910 (sub_00407830).",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x0040AB60": {
+    "name": "getStringByIndex",
+    "signature": "uint32_t __thiscall sub_0040AB60(uint32_t self, uint32_t out_str, uint32_t index)",
+    "summary": "Copies one of two std::string fields by index (0 or 1) or constructs from a default C-string",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040AE10": {
     "name": "sub_0040AE10",
     "signature": "extern \"C\" void __fastcall fn_0040AE10(void* self)",
@@ -62714,6 +62720,13 @@
     "class": "Vec3",
     "signature": "float __thiscall sub_007CA790(uintptr_t self, uintptr_t other)",
     "summary": "Computes the 3D dot product of this vector with another vector.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
+  "0x007CA7C0": {
+    "name": "Matrix4x4::transformPoint",
+    "class": "Matrix4x4",
+    "signature": "void __thiscall sub_007CA7C0(void* self, const float* in, float* out)",
+    "summary": "Transforms a 3D point by a 4x4 matrix (3x3 linear part plus translation)",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
   "0x007CA820": {
