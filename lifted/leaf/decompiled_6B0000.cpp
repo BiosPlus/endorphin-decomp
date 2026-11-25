@@ -878,3 +878,46 @@ void fn_006B2F70(void) {
     (void)(platformId == 2);
 }
 } // namespace lift_006B2F70
+
+// [0x006B1750] sub_006B1750 (64 bytes)
+namespace lift_006B1750 {
+// Known callee 0x006A5EA8: thunk_MFC80_ord_1903 (IAT jump thunk forwarding to MFC80!ord_1903.)
+extern void __thiscall ext_006A5EA8(void* self);
+// IAT slot holding USER32!TrackMouseEvent.
+extern int mem_009255E8;
+
+// Win32 TRACKMOUSEEVENT (16 bytes).
+struct TrackMouseEventLayout {
+    uint32_t cbSize;
+    uint32_t dwFlags;
+    uint32_t hwndTrack;
+    uint32_t dwHoverTime;
+};
+
+// @name Window::StartMouseLeaveTracking
+// @class Window
+// @summary If mouse-leave tracking is not yet armed (byte +0x70 == 0), arm it and request WM_MOUSELEAVE via TrackMouseEvent(TME_LEAVE) on the window at +0x20; then forward to ext_006A5EA8 with self. Takes 3 stack args (ret 0xc), which are unused.
+// @field Window +0x20 uint32_t hwnd
+// @field Window +0x70 uint8_t mouseTrackArmed
+void __thiscall fn_006B1750(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2) {
+    (void)arg0;
+    (void)arg1;
+    (void)arg2;
+
+    auto* base = reinterpret_cast<uint8_t*>(self);
+    if (base[0x70] == 0) {
+        base[0x70] = 1;
+
+        TrackMouseEventLayout tme{};
+        tme.cbSize = 0x10;
+        tme.dwFlags = 0x2; // TME_LEAVE
+        tme.hwndTrack = *reinterpret_cast<uint32_t*>(base + 0x20);
+
+        using TrackMouseEventFn = int(__stdcall*)(TrackMouseEventLayout*);
+        auto fn = reinterpret_cast<TrackMouseEventFn>(static_cast<uintptr_t>(mem_009255E8));
+        fn(&tme);
+    }
+
+    ext_006A5EA8(self);
+}
+} // namespace lift_006B1750
