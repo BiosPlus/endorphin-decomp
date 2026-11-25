@@ -1,0 +1,34 @@
+{
+  "va": "0x005441C0",
+  "size": 44,
+  "orig_symbol": "ForceApplicationTool::vfunc_28",
+  "src_path": "src/classes/ForceApplicationTool.cpp",
+  "lifted_path": "lifted/classes/ForceApplicationTool.cpp",
+  "name": "ForceApplicationTool::vfunc_28",
+  "class": "ForceApplicationTool",
+  "signature": "void fn_005441C0(void* self, int32_t arg1, int32_t arg2)",
+  "summary": "Forwards index to embedded helper at +0xB0, then invokes vtable slot 0x70 on the object at +0xA8 with (arg1, arg2).",
+  "fields": [
+    {
+      "class": "ForceApplicationTool",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    },
+    {
+      "class": "ForceApplicationTool",
+      "offset": "+0xA8",
+      "type": "void*",
+      "name": "field_0xA8"
+    },
+    {
+      "class": "ForceApplicationTool",
+      "offset": "+0xB0",
+      "type": "uint8_t",
+      "name": "field_0xB0[0]"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:59:04Z"
+}

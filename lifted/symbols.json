@@ -18879,6 +18879,13 @@
     "summary": "Calls virtual method at +0x74 on this and tail-calls virtual method at +0x3c on field_0x88 if non-null",
     "lifted_path": "lifted/classes/ForceApplicationTool.cpp"
   },
+  "0x005441C0": {
+    "name": "ForceApplicationTool::vfunc_28",
+    "class": "ForceApplicationTool",
+    "signature": "void fn_005441C0(void* self, int32_t arg1, int32_t arg2)",
+    "summary": "Forwards index to embedded helper at +0xB0, then invokes vtable slot 0x70 on the object at +0xA8 with (arg1, arg2).",
+    "lifted_path": "lifted/classes/ForceApplicationTool.cpp"
+  },
   "0x00544220": {
     "name": "ForceApplicationTool::vfunc_1",
     "class": "ForceApplicationTool",
