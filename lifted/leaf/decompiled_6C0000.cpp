@@ -1768,3 +1768,49 @@ extern void* __fastcall fn_006C84B0(void* self) {
     return self;
 }
 } // namespace lift_006C84B0
+
+// [0x006C8E00]
+namespace lift_006C8E00 {
+// @name initHugePos
+// @summary Initializes global positive infinity double from MSVCR80!_HUGE
+
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5D5E8;
+extern uint32_t mem_00B5D5EC;
+
+void sub_006C8E00() {
+    uint32_t* huge_ptr = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B5D5E8 = huge_ptr[0];
+    mem_00B5D5EC = huge_ptr[1];
+}
+} // namespace lift_006C8E00
+
+// [0x006C92D0]
+namespace lift_006C92D0 {
+// @name Unknown::PruneFlag08Children
+// @class Unknown
+// @summary Recursively removes child items whose flag 0x08 is set via vtable calls.
+// @field Unknown +0x00 void** vtable
+
+
+extern uint32_t ext_006DEEA0(const uint8_t* self);
+
+void __thiscall sub_006C92D0(void* self, void* node) {
+    auto* vtable = *reinterpret_cast<void***>(node);
+    using GetCountFn = int32_t(__thiscall*)(void*);
+    using GetItemFn = void*(__thiscall*)(void*, int32_t);
+    using RemoveAtFn = void(__thiscall*)(void*, int32_t);
+
+    int32_t idx = reinterpret_cast<GetCountFn>(vtable[0x14 / 4])(node) - 1;
+    while (idx >= 0) {
+        vtable = *reinterpret_cast<void***>(node);
+        void* child = reinterpret_cast<GetItemFn>(vtable[0x18 / 4])(node, idx);
+        if (ext_006DEEA0(reinterpret_cast<const uint8_t*>(child)) == 8) {
+            sub_006C92D0(self, child);
+            vtable = *reinterpret_cast<void***>(node);
+            reinterpret_cast<RemoveAtFn>(vtable[0x10 / 4])(node, idx);
+        }
+        --idx;
+    }
+}
+} // namespace lift_006C92D0
