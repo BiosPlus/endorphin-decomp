@@ -1,0 +1,52 @@
+{
+  "va": "0x0070AC80",
+  "size": 60,
+  "orig_symbol": "sub_0070AC80",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "sub_0070AC80",
+  "class": "Unknown",
+  "signature": "void sub_0070AC80_impl(uint8_t* self, Lift6Dword* out)",
+  "summary": "Copies six dwords from this+0x2A0..this+0x2B4 into the caller-provided output buffer (hidden return pointer on stack); __thiscall, ret 4.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x2A0",
+      "type": "uint32_t",
+      "name": "field_0x2A0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2A4",
+      "type": "uint32_t",
+      "name": "field_0x2A4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2A8",
+      "type": "uint32_t",
+      "name": "field_0x2A8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2AC",
+      "type": "uint32_t",
+      "name": "field_0x2AC"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2B0",
+      "type": "uint32_t",
+      "name": "field_0x2B0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2B4",
+      "type": "uint32_t",
+      "name": "field_0x2B4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:55:06Z"
+}

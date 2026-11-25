@@ -50171,6 +50171,13 @@
     "summary": "Returns address of global mem_00B5EBA8.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x0070AC80": {
+    "name": "sub_0070AC80",
+    "class": "Unknown",
+    "signature": "void sub_0070AC80_impl(uint8_t* self, Lift6Dword* out)",
+    "summary": "Copies six dwords from this+0x2A0..this+0x2B4 into the caller-provided output buffer (hidden return pointer on stack); __thiscall, ret 4.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070AD40": {
     "name": "sub_0070AD40",
     "signature": "void fn_0070AD40(void* self, uint32_t a0, uint32_t a1)",

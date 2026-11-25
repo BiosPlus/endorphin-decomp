@@ -1138,3 +1138,30 @@ bool __stdcall sub_0070FB20(uint32_t value) {
            value == mem_00B5E400;
 }
 } // namespace lift_0070FB20
+
+// [0x0070AC80]
+namespace lift_0070AC80 {
+// @name sub_0070AC80
+// @summary Copies six dwords from this+0x2A0..this+0x2B4 into the caller-provided output buffer (hidden return pointer on stack); __thiscall, ret 4.
+// @class Unknown
+// @field Unknown +0x2A0 uint32_t field_0x2A0
+// @field Unknown +0x2A4 uint32_t field_0x2A4
+// @field Unknown +0x2A8 uint32_t field_0x2A8
+// @field Unknown +0x2AC uint32_t field_0x2AC
+// @field Unknown +0x2B0 uint32_t field_0x2B0
+// @field Unknown +0x2B4 uint32_t field_0x2B4
+
+
+struct Lift6Dword {
+    uint32_t v[6];
+};
+
+// __thiscall: ecx = this, [esp+4] = output pointer; callee pops 4 bytes.
+void sub_0070AC80_impl(uint8_t* self, Lift6Dword* out)
+{
+    const uint8_t* src = self + 0x2A0;
+    for (int i = 0; i < 6; ++i) {
+        out->v[i] = *reinterpret_cast<const uint32_t*>(src + i * 4);
+    }
+}
+} // namespace lift_0070AC80
