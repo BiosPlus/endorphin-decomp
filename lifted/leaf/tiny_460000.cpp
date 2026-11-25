@@ -934,3 +934,19 @@ bool sub_004646A0() {
     return static_cast<short>(state) < 0;
 }
 } // namespace lift_004646A0
+
+// [0x0046FE90]
+namespace lift_0046FE90 {
+// @name Unknown::RequestStopIfNotFlagged
+// @class Unknown
+// @summary If the byte at this+0x152 is zero, requests stop via ext_0046F930; otherwise returns without action.
+// @field Unknown +0x152 uint8_t field_0x152
+
+void ext_0046F930(void* self);
+
+void fn_0046FE90(void* self) {
+    if (*reinterpret_cast<uint8_t*>(static_cast<char*>(self) + 0x152) == 0) {
+        ext_0046F930(self);
+    }
+}
+} // namespace lift_0046FE90
