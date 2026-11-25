@@ -39540,6 +39540,13 @@
     "summary": "Stores a value, its reciprocal (1.0 / divisor), and 0.0 into self; the 16-byte arg block is callee-popped (ret 0x10).",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x0067B330": {
+    "name": "RateSynchronizer::vfunc_0",
+    "class": "RateSynchronizer",
+    "signature": "bool fn_0067B330(void* self)",
+    "summary": "Advances the accumulator at +0x18 by the value at +0x08, then repeatedly subtracts the period at +0x10 and calls the object at +0x20 (vtable slot 0) while the accumulator plus epsilon remains at or above the period. Returns false if that call fails.",
+    "lifted_path": "lifted/classes/RateSynchronizer.cpp"
+  },
   "0x0067B390": {
     "name": "Unknown::InitVtableAndSetDefaults",
     "class": "Unknown",

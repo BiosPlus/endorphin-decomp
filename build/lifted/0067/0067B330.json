@@ -1,0 +1,40 @@
+{
+  "va": "0x0067B330",
+  "size": 81,
+  "orig_symbol": "RateSynchronizer::vfunc_0",
+  "src_path": "src/classes/RateSynchronizer.cpp",
+  "lifted_path": "lifted/classes/RateSynchronizer.cpp",
+  "name": "RateSynchronizer::vfunc_0",
+  "class": "RateSynchronizer",
+  "signature": "bool fn_0067B330(void* self)",
+  "summary": "Advances the accumulator at +0x18 by the value at +0x08, then repeatedly subtracts the period at +0x10 and calls the object at +0x20 (vtable slot 0) while the accumulator plus epsilon remains at or above the period. Returns false if that call fails.",
+  "fields": [
+    {
+      "class": "RateSynchronizer",
+      "offset": "+0x8",
+      "type": "double",
+      "name": "field_0x08"
+    },
+    {
+      "class": "RateSynchronizer",
+      "offset": "+0x10",
+      "type": "double",
+      "name": "field_0x10"
+    },
+    {
+      "class": "RateSynchronizer",
+      "offset": "+0x18",
+      "type": "double",
+      "name": "field_0x18"
+    },
+    {
+      "class": "RateSynchronizer",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:59:42Z"
+}
