@@ -8,6 +8,6 @@
 // Recovered field layout for field_0x30:
 namespace lifted_layout {
 struct field_0x30_Fields {
-    // +0x30  uint32_t                 global_table_handle  (evidence: 0x00504970, 0x00508BC0)
+    // +0x30  uint32_t                 global_table_handle  (evidence: 0x00504970, 0x00508BC0, 0x0050C4D0)
 };
 } // namespace lifted_layout

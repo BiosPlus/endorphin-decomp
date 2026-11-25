@@ -8,8 +8,8 @@
 // Recovered field layout for Container:
 namespace lifted_layout {
 struct Container_Fields {
-    // +0x28  uint32_t*                begin  (evidence: 0x00508BC0)
-    // +0x2C  uint32_t*                end  (evidence: 0x00508BC0)
-    // +0x34  uint32_t                 selected  (evidence: 0x00508BC0)
+    // +0x28  uint32_t*                begin  (evidence: 0x00508BC0, 0x0050C4D0)
+    // +0x2C  uint32_t*                end  (evidence: 0x00508BC0, 0x0050C4D0)
+    // +0x34  uint32_t                 selected  (evidence: 0x00508BC0, 0x0050C4D0)
 };
 } // namespace lifted_layout

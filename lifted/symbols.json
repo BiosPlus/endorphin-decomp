@@ -16511,10 +16511,10 @@
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
   "0x0050C4D0": {
-    "name": "Unknown::ResetElementsAndNotify_0050C4D0",
-    "class": "Unknown",
-    "signature": "void fn_0050C4D0(void* self)",
-    "summary": "Clears the element buffer at this+0x4 via ext_0050B960, then calls ext_0065F440 on this.",
+    "name": "sub_00508310",
+    "class": "NMData::RealChannel",
+    "signature": "void* __thiscall fn_00508310(const void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0051C6D0 (NMData::RealChannel::vfunc_4).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
   "0x0050C770": {
