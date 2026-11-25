@@ -1,0 +1,27 @@
+{
+  "va": "0x0063FFF0",
+  "size": 80,
+  "orig_symbol": "sub_0063FFF0",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "sub_0063FFF0_copy_ctor",
+  "signature": "uint32_t __thiscall sub_0063FFF0(uint32_t this_ptr, uint32_t other_ptr)",
+  "summary": "Copy constructor setting vftable 0x0097CC3C and copying std::string at +0x04",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:49:40Z"
+}

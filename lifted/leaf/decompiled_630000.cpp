@@ -342,3 +342,20 @@ void fn_0063E9E0(void* self) {
     ext_0063E0F0(self);
 }
 } // namespace lift_0063E9E0
+
+// [0x0063FFF0]
+namespace lift_0063FFF0 {
+extern uint32_t mem_00924FE0;
+
+// @name sub_0063FFF0_copy_ctor
+// @summary Copy constructor setting vftable 0x0097CC3C and copying std::string at +0x04
+// @field Unknown +0x00 uint32_t vftable
+// @field Unknown +0x04 std::string field_0x04
+uint32_t __thiscall sub_0063FFF0(uint32_t this_ptr, uint32_t other_ptr) {
+    *reinterpret_cast<uint32_t*>(this_ptr) = 0x0097CC3Cu;
+    using string_copy_ctor_t = uint32_t(__thiscall*)(uint32_t, uint32_t);
+    auto string_copy_ctor = reinterpret_cast<string_copy_ctor_t>(mem_00924FE0);
+    string_copy_ctor(this_ptr + 4u, other_ptr + 4u);
+    return this_ptr;
+}
+} // namespace lift_0063FFF0
