@@ -351,3 +351,18 @@ void* fn_004584B0(void* self) {
 }
 } // namespace lift_005455F0
 } // namespace lift_004584B0
+
+// [0x0045BBE0] sub_0045BBE0 (15 bytes)
+namespace lift_0045BBE0 {
+// USER32!GetKeyState, imported through the IAT slot at 0x009255F4.
+extern uint32_t mem_009255F4;
+
+// @name IsControlKeyDown
+// @summary Returns 1 if the Ctrl key (VK_CONTROL, 0x11) is currently held down, else 0.
+int fn_0045BBE0(void) {
+    using GetKeyStateFn = int16_t(__stdcall*)(int);
+    auto get_key_state = reinterpret_cast<GetKeyStateFn>(static_cast<uintptr_t>(mem_009255F4));
+    const uint16_t state = static_cast<uint16_t>(get_key_state(0x11));
+    return static_cast<int>(state >> 15);
+}
+} // namespace lift_0045BBE0

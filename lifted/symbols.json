@@ -5856,6 +5856,12 @@
     "summary": "Calls MFC80_ord_2867 with arg2, invokes vtable+0xc on the returned object with arg1, and returns arg1.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x0045BBE0": {
+    "name": "IsControlKeyDown",
+    "signature": "int fn_0045BBE0(void)",
+    "summary": "Returns 1 if the Ctrl key (VK_CONTROL, 0x11) is currently held down, else 0.",
+    "lifted_path": "lifted/leaf/tiny_450000.cpp"
+  },
   "0x0045BC10": {
     "name": "TransformNodeViewCtrl::vfunc_1",
     "class": "TransformNodeViewCtrl",
