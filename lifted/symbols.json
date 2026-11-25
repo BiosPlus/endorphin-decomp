@@ -51513,6 +51513,13 @@
     "summary": "Loads the pointer at self+0xF0, offsets it by 0x7D0, and returns the int32 at its +0x0 via the getter.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x007051F0": {
+    "name": "Unknown::fetchCachedPair",
+    "class": "Unknown",
+    "signature": "void fn_007051F0(void* self, DWORD* out, DWORD /*unused2*/, DWORD /*unused3*/, DWORD /*unused4*/)",
+    "summary": "Writes the cached DWORD pair at +0x80/+0x84 to *out, first refreshing it from the getter at +0x50 when that pointer is set.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00705250": {
     "name": "ClearGlobalDwordPair",
     "signature": "void fn_00705250(void* self)",

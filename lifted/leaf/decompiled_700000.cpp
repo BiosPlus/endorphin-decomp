@@ -1334,3 +1334,29 @@ uint32_t __thiscall sub_00708C10(void* self, uint32_t target) {
     return 1;
 }
 } // namespace lift_00708C10
+
+// [0x007051F0] sub_007051F0 (68 bytes)
+namespace lift_007051F0 {
+// @name Unknown::fetchCachedPair
+// @class Unknown
+// @summary Writes the cached DWORD pair at +0x80/+0x84 to *out, first refreshing it from the getter at +0x50 when that pointer is set.
+// @field Unknown +0x08 void* getterContext
+// @field Unknown +0x50 void* getter
+// @field Unknown +0x80 DWORD cachedA
+// @field Unknown +0x84 DWORD cachedB
+
+// Getter called as thiscall: ecx = getterContext, one stack arg = output buffer; returns pointer to two DWORDs.
+typedef const DWORD* (__thiscall *PairGetterFn)(void* self, void* outBuf);
+
+void fn_007051F0(void* self, DWORD* out, DWORD /*unused2*/, DWORD /*unused3*/, DWORD /*unused4*/) {
+    PairGetterFn getter = lift_field<PairGetterFn>(self, 0x50);
+    if (getter != nullptr) {
+        DWORD buf[2] = {0, 0};
+        const DWORD* src = getter(lift_field<void*>(self, 0x08), buf);
+        lift_field<DWORD>(self, 0x80) = src[0];
+        lift_field<DWORD>(self, 0x84) = src[1];
+    }
+    out[0] = lift_field<DWORD>(self, 0x80);
+    out[1] = lift_field<DWORD>(self, 0x84);
+}
+} // namespace lift_007051F0

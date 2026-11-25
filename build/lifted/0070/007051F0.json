@@ -1,0 +1,40 @@
+{
+  "va": "0x007051F0",
+  "size": 68,
+  "orig_symbol": "sub_007051F0",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::fetchCachedPair",
+  "class": "Unknown",
+  "signature": "void fn_007051F0(void* self, DWORD* out, DWORD /*unused2*/, DWORD /*unused3*/, DWORD /*unused4*/)",
+  "summary": "Writes the cached DWORD pair at +0x80/+0x84 to *out, first refreshing it from the getter at +0x50 when that pointer is set.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "getterContext"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "void*",
+      "name": "getter"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "DWORD",
+      "name": "cachedA"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "DWORD",
+      "name": "cachedB"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:20:22Z"
+}
