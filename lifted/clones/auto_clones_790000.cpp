@@ -88,3 +88,32 @@ uint8_t __stdcall sub_0079BA10(uint32_t value) {
     return (value == mem_00B60F58 || value == mem_00B5EB78 || value == mem_00B5E400) ? 1 : 0;
 }
 } // namespace lift_0079BA10
+
+// [0x0079BB80]
+namespace lift_0079BB80 {
+// @name copyHugeValueToGlobals_0079BB80
+// @summary Copies the 8-byte _HUGE value (pointed to by mem_00925284) into three consecutive 8-byte globals.
+// @field none
+
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B60FD0;
+extern uint32_t mem_00B60FD4;
+extern uint32_t mem_00B60FD8;
+extern uint32_t mem_00B60FDC;
+extern uint32_t mem_00B60FE0;
+extern uint32_t mem_00B60FE4;
+
+void sub_0079BB80() {
+    const uint32_t* src = reinterpret_cast<const uint32_t*>(
+        static_cast<uintptr_t>(mem_00925284));
+    const uint32_t lo = src[0];
+    const uint32_t hi = src[1];
+
+    mem_00B60FD0 = lo;
+    mem_00B60FD4 = hi;
+    mem_00B60FD8 = lo;
+    mem_00B60FDC = hi;
+    mem_00B60FE0 = lo;
+    mem_00B60FE4 = hi;
+}
+} // namespace lift_0079BB80

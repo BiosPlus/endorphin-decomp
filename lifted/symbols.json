@@ -53938,6 +53938,12 @@
     "summary": "Destructor tail-call: restores vtable mem_00997530 and tail-calls base destructor sub_00705450.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x0079BB80": {
+    "name": "copyHugeValueToGlobals_0079BB80",
+    "signature": "void sub_0079BB80()",
+    "summary": "Copies the 8-byte _HUGE value (pointed to by mem_00925284) into three consecutive 8-byte globals.",
+    "lifted_path": "lifted/clones/auto_clones_790000.cpp"
+  },
   "0x0079BBD0": {
     "name": "sub_0079BBD0",
     "signature": "void fn_0079BBD0(void)",
