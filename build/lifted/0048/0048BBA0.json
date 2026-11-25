@@ -1,0 +1,22 @@
+{
+  "va": "0x0048BBA0",
+  "size": 105,
+  "orig_symbol": "sub_0048BBA0",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "TreeMap::find",
+  "class": "TreeMap",
+  "signature": "TreeMapIterator* __thiscall fn_0048BBA0(void* self, TreeMapIterator* out, const void* key)",
+  "summary": "Finds a node by std::string key in an MSVC-style std::map, returning an iterator {tree, node} or {tree, header} if not found.",
+  "fields": [
+    {
+      "class": "TreeMap",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "header"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:06:38Z"
+}
