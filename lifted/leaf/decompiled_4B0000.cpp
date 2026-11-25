@@ -393,3 +393,29 @@ DWORD* fn_004BA340(DWORD* first, DWORD* last, DWORD value) {
     return first;
 }
 } // namespace lift_004BA340
+
+// [0x004B7340] sub_004B7340 (90 bytes)
+namespace lift_004B7340 {
+extern std::string* mem_00AE1D18; // global string table: begin
+extern std::string* mem_00AE1D1C; // global string table: end
+
+extern void ext_invalid_parameter_noinfo(void);
+
+// @name Unknown::copyStringFromTable
+// @class Unknown
+// @summary Copies table[index] into this+0x58 (std::string), with bounds check on the global table.
+// @field Unknown +0x58 std::string field_0x58
+
+void fn_004B7340(void* self, uint32_t index) {
+    std::string* begin = mem_00AE1D18;
+    std::string* end = mem_00AE1D1C;
+    size_t count = static_cast<size_t>(end - begin);
+
+    if (begin == nullptr || static_cast<size_t>(index) >= count) {
+        ext_invalid_parameter_noinfo();
+        return;
+    }
+
+    lift_field<std::string>(self, 0x58) = begin[index];
+}
+} // namespace lift_004B7340

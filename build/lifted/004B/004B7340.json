@@ -1,0 +1,22 @@
+{
+  "va": "0x004B7340",
+  "size": 90,
+  "orig_symbol": "sub_004B7340",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "Unknown::copyStringFromTable",
+  "class": "Unknown",
+  "signature": "void fn_004B7340(void* self, uint32_t index)",
+  "summary": "Copies table[index] into this+0x58 (std::string), with bounds check on the global table.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "std::string",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:18:36Z"
+}

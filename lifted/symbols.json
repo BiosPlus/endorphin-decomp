@@ -12279,6 +12279,13 @@
     "summary": "Loads the float referenced by the source's first pointer, forwards it to ext_0046C390 with self, and returns self.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x004B7340": {
+    "name": "Unknown::copyStringFromTable",
+    "class": "Unknown",
+    "signature": "void fn_004B7340(void* self, uint32_t index)",
+    "summary": "Copies table[index] into this+0x58 (std::string), with bounds check on the global table.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B7410": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::MaterialPair, \u0026public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, \u0026public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), \u0026public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const\u003e::vfunc_41",
     "class": "ExprParser::DynamicEnumType\u003cNMData::MaterialPair, \u0026public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, \u0026public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), \u0026public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const\u003e",
