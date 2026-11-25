@@ -583,3 +583,35 @@ void* fn_004EC380(void* self, void* out_iter, const void* key) {
     return out_iter;
 }
 } // namespace lift_004EC380
+
+// [0x004ED750] sub_004ED750 (82 bytes)
+namespace lift_004ED750 {
+// Known callee 0x004ED640: Unknown::ctor_004ED640 (Object constructor: runs base ctor ext_00692B50, installs three vtable pointers, constructs an embedded std::string at +0x1c, zeroes five trailing fields, and returns this.)
+extern void* ext_004ED640(void* self);
+
+// @name Unknown::ctor_004ED750
+// @class Unknown
+// @summary Derived object constructor: runs base ctor ext_004ED640, zeroes three trailing fields, installs three vtable pointers, and returns this.
+// @field Unknown +0x00 uint32_t vptr_00
+// @field Unknown +0x04 uint32_t vptr_04
+// @field Unknown +0x18 uint32_t vptr_18
+// @field Unknown +0x50 uint32_t field_0x50
+// @field Unknown +0x58 uint32_t field_0x58
+// @field Unknown +0x5c uint32_t field_0x5c
+// @field Unknown +0x60 uint32_t field_0x60
+void* fn_004ED750(void* self) {
+    // The original SEH frame setup/teardown (fs:[0] push/pop, cookie 0x88EF98)
+    // is compiler exception-handling bookkeeping and is not reproduced here.
+    ext_004ED640(self);
+
+    lift_field<uint32_t>(self, 0x50) = 0;
+    lift_field<uint32_t>(self, 0x00) = 0x0094BF94;
+    lift_field<uint32_t>(self, 0x04) = 0x0094BF68;
+    lift_field<uint32_t>(self, 0x18) = 0x0094BF58;
+    lift_field<uint32_t>(self, 0x58) = 0;
+    lift_field<uint32_t>(self, 0x5C) = 0;
+    lift_field<uint32_t>(self, 0x60) = 0;
+
+    return self;
+}
+} // namespace lift_004ED750

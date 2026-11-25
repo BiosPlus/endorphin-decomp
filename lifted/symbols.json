@@ -17900,6 +17900,13 @@
     "summary": "Object constructor: runs base ctor ext_00692B50, installs three vtable pointers, constructs an embedded std::string at +0x1c, zeroes five trailing fields, and returns this.",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
+  "0x004ED750": {
+    "name": "Unknown::ctor_004ED750",
+    "class": "Unknown",
+    "signature": "void* fn_004ED750(void* self)",
+    "summary": "Derived object constructor: runs base ctor ext_004ED640, zeroes three trailing fields, installs three vtable pointers, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004ED7C0": {
     "name": "MetaBodyJointSelection::vfunc_0_off_4",
     "class": "MetaBodyJointSelection",
