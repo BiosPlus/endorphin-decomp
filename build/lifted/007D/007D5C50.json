@@ -1,0 +1,13 @@
+{
+  "va": "0x007D5C50",
+  "size": 10,
+  "orig_symbol": "sub_007D5C50",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "ReadByteThroughPointerArg",
+  "signature": "uint8_t fn_007D5C50(void** pp)",
+  "summary": "Takes a pointer-to-pointer (cdecl arg at [esp+4]), loads the inner pointer, and returns the byte it points to, zero-extended.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:17:58Z"
+}

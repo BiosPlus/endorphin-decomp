@@ -604,3 +604,14 @@ uint32_t fn_007DB730(void* self) {
 }
 } // namespace lift_007CC9F0
 } // namespace lift_007DB730
+
+// [0x007D5C50] sub_007D5C50 (10 bytes)
+namespace lift_007D5C50 {
+// @name ReadByteThroughPointerArg
+// @summary Takes a pointer-to-pointer (cdecl arg at [esp+4]), loads the inner pointer, and returns the byte it points to, zero-extended.
+// (Free function, no class; no struct offsets accessed beyond the two dereferences at offset 0.)
+uint8_t fn_007D5C50(void** pp) {
+    void* inner = *pp;
+    return *static_cast<uint8_t*>(inner);
+}
+} // namespace lift_007D5C50

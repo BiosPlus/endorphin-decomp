@@ -67252,6 +67252,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007CC9F0 (readDwordAt0x0C).",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D5C50": {
+    "name": "ReadByteThroughPointerArg",
+    "signature": "uint8_t fn_007D5C50(void** pp)",
+    "summary": "Takes a pointer-to-pointer (cdecl arg at [esp+4]), loads the inner pointer, and returns the byte it points to, zero-extended.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007D5C60": {
     "name": "ExtentBounds::TryInitFromSub",
     "class": "ExtentBounds",
