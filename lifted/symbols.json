@@ -27697,6 +27697,13 @@
     "summary": "Sets the guard flag, queries a float via vtable slot 1 of the object at +0x25C, stores it into the element at +0x204, and marks +0x208 as set.",
     "lifted_path": "lifted/NMData/CameraData.cpp"
   },
+  "0x005D1460": {
+    "name": "Unknown::scaleThenStore_005D1460",
+    "class": "Unknown",
+    "signature": "void fn_005D1460(void* self, float arg)",
+    "summary": "Computes the scaled tan ratio for arg, then passes the result to ext_005D1430 on the same object.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005D1480": {
     "name": "descriptiveName_005D1480 (thiscall: stores arg into first dword, zeroes second, returns this)",
     "signature": "void* fn_005D1480(void* self, DWORD arg)",

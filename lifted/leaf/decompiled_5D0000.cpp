@@ -165,3 +165,19 @@ float fn_005D0610(void* self, float arg) {
     return static_cast<float>(numerator / static_cast<double>(tanValue));
 }
 } // namespace lift_005D0610
+
+// [0x005D1460] sub_005D1460 (31 bytes)
+namespace lift_005D1460 {
+// Known callee 0x005D0610: Unknown::computeScaledTanRatio_005D0610 (Returns (getFloatAt(this+0x210, 1) * this->+0x204 * 12.7) / tan(arg * pi/180 * 0.5), computed as float.)
+extern float ext_005D0610(void* self, float arg);
+// Callee 0x005D1430 (sub_005D1430, 33 bytes): receives the scaled value as a float argument.
+extern void ext_005D1430(void* self, float arg);
+
+// @name Unknown::scaleThenStore_005D1460
+// @class Unknown
+// @summary Computes the scaled tan ratio for arg, then passes the result to ext_005D1430 on the same object.
+void fn_005D1460(void* self, float arg) {
+    float scaled = ext_005D0610(self, arg);
+    ext_005D1430(self, scaled);
+}
+} // namespace lift_005D1460
