@@ -1441,3 +1441,29 @@ uint32_t sub_00622700(uint32_t src_begin, uint32_t src_end, uint32_t dst_end) {
     return eax;
 }
 } // namespace lift_00622700
+
+// [0x00622D80] sub_00622D80 (82 bytes)
+namespace lift_00622D80 {
+// @name CopyRecord20Range
+// @summary Copies each 20-byte record in [begin, end) to consecutive 20-byte slots at dst: the dword at +0x00 and the four floats at +0x04..+0x10. A slot whose pointer is null is skipped, but the source still advances.
+// @field Record20 +0x00 uint32_t field_0x00
+// @field Record20 +0x04 float field_0x04
+// @field Record20 +0x08 float field_0x08
+// @field Record20 +0x0C float field_0x0C
+// @field Record20 +0x10 float field_0x10
+extern void __cdecl fn_00622D80(const uint8_t* begin, const uint8_t* end, uint8_t* dst) {
+    if (begin == end) {
+        return;
+    }
+    const uint8_t* src = begin;
+    uint8_t* out = dst;
+    do {
+        if (out != nullptr) {
+            std::memcpy(out, src, sizeof(uint32_t));
+            std::memcpy(out + 0x04, src + 0x04, 4 * sizeof(float));
+        }
+        src += 0x14;
+        out += 0x14;
+    } while (src != end);
+}
+} // namespace lift_00622D80

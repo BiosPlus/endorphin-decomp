@@ -32914,6 +32914,12 @@
     "summary": "Copies one 20-byte record (5 dwords) from src into each of `count` consecutive 20-byte slots starting at dst; NULL dst skips the copy but still advances.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x00622D80": {
+    "name": "CopyRecord20Range",
+    "signature": "extern \"C\" void __cdecl fn_00622D80(const uint8_t* begin, const uint8_t* end, uint8_t* dst)",
+    "summary": "Copies each 20-byte record in [begin, end) to consecutive 20-byte slots at dst: the dword at +0x00 and the four floats at +0x04..+0x10. A slot whose pointer is null is skipped, but the source still advances.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00622FE0": {
     "name": "sub_00622FE0",
     "signature": "uint32_t fn_00622FE0(uint32_t begin, uint32_t end, uint32_t value)",
