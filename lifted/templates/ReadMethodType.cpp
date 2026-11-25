@@ -47185,3 +47185,37 @@ void fn_004B94A0(void* self) {
     ext_006A6DD2(exception_object, mem_009DEC1C);
 }
 } // namespace lift_004B94A0
+
+// [0x004B8010] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0>::vfunc_5 (48 bytes)
+namespace lift_004B8010 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Disassembly pushes a float argument (the value read from *ptr+0x24) before the call.
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Thiscall: `this` is passed in ecx, lifted here as the first argument.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Arguments: (exception object, ThrowInfo/type descriptor).
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Type descriptor / ThrowInfo for the thrown exception, at image address 0x009DEC1C.
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getTimeZoomFactor, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0>
+// @summary Reads the float at +0x24 of the wrapped NMData::EngineData (if present) and then always throws a DerivedException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x24 float field_0x24
+void fn_004B8010(void* self) {
+    void* ptr = lift_field<void*>(self, 0x00);
+    if (ptr != nullptr) {
+        float value = lift_field<float>(ptr, 0x24);
+        ext_0046C4E0(value);
+    }
+
+    // Exception object lives in the 0x28-byte frame the original reserved.
+    alignas(8) unsigned char exception_storage[0x28];
+    ext_0046C3C0(exception_storage);
+    ext_006A6DD2(exception_storage, mem_009DEC1C);
+}
+} // namespace lift_004B8010
