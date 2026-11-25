@@ -1,0 +1,28 @@
+{
+  "va": "0x004AD970",
+  "size": 77,
+  "orig_symbol": "sub_004AD970",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "Unknown::DestroyStringAndArray",
+  "class": "Unknown",
+  "signature": "void fn_004AD970(void* self)",
+  "summary": "Releases the StringArray at +0x1c, then runs the std::string destructor on the object itself.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "StringArray",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:41:53Z"
+}

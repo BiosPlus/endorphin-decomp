@@ -11120,6 +11120,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x10 and tail-calls SearchableMap\u003cNM::Vector4, GetNameFromAttribute\u003cNM::Vector4\u003e\u003e::vfunc_0.",
     "lifted_path": "lifted/leaf/tiny_4A0000.cpp"
   },
+  "0x004AD970": {
+    "name": "Unknown::DestroyStringAndArray",
+    "class": "Unknown",
+    "signature": "void fn_004AD970(void* self)",
+    "summary": "Releases the StringArray at +0x1c, then runs the std::string destructor on the object itself.",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004AEC60": {
     "name": "thunk_004AEC60",
     "class": "Unknown",
