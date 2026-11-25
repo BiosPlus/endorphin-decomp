@@ -1520,3 +1520,17 @@ void __thiscall sub_00401B60(void* self) {
     mem_009251C0(self);
 }
 } // namespace lift_00401B60
+
+// [0x0040F270]
+namespace lift_0040F270 {
+extern int32_t ext_006A5EA8(void);
+
+// @name setFlagsAndCallOrd1903
+// @summary Sets bits 0xb at offset +0x2c of the argument, calls ext_006A5EA8, and returns -1 if the result is -1 or 0 otherwise.
+// @field Arg +0x2c uint32_t field_0x2c
+int32_t __stdcall fn_0040F270(void* arg1) {
+    lift_field<uint32_t>(arg1, 0x2c) |= 0xb;
+    int32_t res = ext_006A5EA8();
+    return (res == -1) ? -1 : 0;
+}
+} // namespace lift_0040F270

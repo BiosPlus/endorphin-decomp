@@ -1,0 +1,21 @@
+{
+  "va": "0x0040F270",
+  "size": 28,
+  "orig_symbol": "sub_0040F270",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "setFlagsAndCallOrd1903",
+  "signature": "int32_t __stdcall fn_0040F270(void* arg1)",
+  "summary": "Sets bits 0xb at offset +0x2c of the argument, calls ext_006A5EA8, and returns -1 if the result is -1 or 0 otherwise.",
+  "fields": [
+    {
+      "class": "Arg",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T11:31:04Z"
+}

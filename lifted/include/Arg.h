@@ -8,6 +8,7 @@
 // Recovered field layout for Arg:
 namespace lifted_layout {
 struct Arg_Fields {
+    // +0x2C  uint32_t                 field_0x2c  (evidence: 0x0040F270)
     // +0x34  uint32_t                 index  (evidence: 0x00516EB0, 0x00518030)
 };
 } // namespace lifted_layout
