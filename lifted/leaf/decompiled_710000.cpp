@@ -1718,3 +1718,31 @@ extern void* fn_0071C630(void* arg) {
 }
 } // namespace lift_007B2210
 } // namespace lift_0071C630
+
+// [0x00710520]
+namespace lift_00710520 {
+// @name getGlobal00B5EEB8
+// @summary Returns the 32-bit value stored at global 0x00B5EEB8.
+
+extern uint32_t mem_00B5EEB8;
+
+uint32_t sub_00710520() {
+    return mem_00B5EEB8;
+}
+} // namespace lift_00710520
+
+// [0x00712250]
+namespace lift_00712250 {
+extern const char* mem_00aabf1c[19];
+
+// @name findStringIndex
+// @summary Searches a 19-entry string table at 0x00aabf1c and returns the matching index, or 0 if not found.
+int __cdecl sub_00712250(const char* str) {
+    for (int i = 0; i < 19; ++i) {
+        if (std::strcmp(str, mem_00aabf1c[i]) == 0) {
+            return i;
+        }
+    }
+    return 0;
+}
+} // namespace lift_00712250

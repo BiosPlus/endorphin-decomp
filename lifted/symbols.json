@@ -60370,6 +60370,13 @@
     "summary": "Scans the 32-bit item array at +0xD0 (count at +0xC0) for the first entry equal to target; if the entry passes the sub-object check, invokes findAndSelectItem(target).",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00708D10": {
+    "name": "Unknown::FindNthMatchingItem",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* fn_00708D10(void* self, int32_t target_index)",
+    "summary": "Returns the Nth item in the array at +0xd0 for which CompareSubObjectWith0x40 returns non-zero, or nullptr if not found.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00708D70": {
     "name": "Unknown::CountSubObjectsMatching0x40",
     "class": "Unknown",
@@ -60964,6 +60971,12 @@
     "summary": "Getter returning int32_t field at offset +0x154.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00710520": {
+    "name": "getGlobal00B5EEB8",
+    "signature": "uint32_t sub_00710520()",
+    "summary": "Returns the 32-bit value stored at global 0x00B5EEB8.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00710590": {
     "name": "initHugeDoubleTriplet",
     "signature": "void sub_00710590()",
@@ -61165,6 +61178,12 @@
     "name": "getTableEntryBySubobjectField28",
     "signature": "extern \"C\" uint32_t __fastcall fn_00712240(void* self)",
     "summary": "Returns mem_00AABF1C[getSubobjectField28(self)].",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
+  "0x00712250": {
+    "name": "findStringIndex",
+    "signature": "int __cdecl sub_00712250(const char* str)",
+    "summary": "Searches a 19-entry string table at 0x00aabf1c and returns the matching index, or 0 if not found.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x007124F0": {
