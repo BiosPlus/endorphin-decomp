@@ -19338,6 +19338,12 @@
     "summary": "Wraps a signed int into [0, b) style range using the modulus at +0x04: negative values get b added, values \u003e= b get b subtracted.",
     "lifted_path": "lifted/leaf/tiny_510000.cpp"
   },
+  "0x005184F0": {
+    "name": "FillUniqueRandomIndices",
+    "signature": "void fn_005184F0(int* out, int n, int m)",
+    "summary": "Fills out[0..n) with distinct values produced by ext_005111E0 bounded by m-1 (0 when m == 0), rerolling duplicates.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00519060": {
     "name": "sub_00519060",
     "signature": "void fn_00519060(uint32_t* first, uint32_t* last, uint32_t pred)",

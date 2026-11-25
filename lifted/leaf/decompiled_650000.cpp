@@ -1462,3 +1462,38 @@ void fn_0065A200(void* self) {
 }
 } // namespace lift_00649840
 } // namespace lift_0065A200
+
+// [0x005184F0] sub_005184F0 (95 bytes)
+namespace lift_005184F0 {
+// Known callee 0x006955D0: sub_006955D0 (returns an object pointer used as `this` for ext_005111E0).
+extern void* ext_006955D0();
+// Known callee 0x005111E0: sub_005111E0 (thiscall-style: this in ecx, one stack pointer arg; returns int).
+extern int ext_005111E0(void* self, int* bound);
+
+// @name FillUniqueRandomIndices
+// @summary Fills out[0..n) with distinct values produced by ext_005111E0 bounded by m-1 (0 when m == 0), rerolling duplicates.
+void fn_005184F0(int* out, int n, int m) {
+    void* self = ext_006955D0();
+    for (int i = 0; i < n; ++i) {
+        for (;;) {
+            int value = 0;
+            if (m != 0) {
+                int bound = m - 1;
+                value = ext_005111E0(self, &bound);
+            }
+            out[i] = value;
+
+            bool duplicate = false;
+            for (int j = 0; j < i; ++j) {
+                if (out[j] == value) {
+                    duplicate = true;
+                    break;
+                }
+            }
+            if (!duplicate) {
+                break;
+            }
+        }
+    }
+}
+} // namespace lift_005184F0
