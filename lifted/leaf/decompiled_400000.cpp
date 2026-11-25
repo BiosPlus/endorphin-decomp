@@ -1396,3 +1396,36 @@ uint32_t __thiscall sub_0040AB60(uint32_t self, uint32_t out_str, uint32_t index
     return out_str;
 }
 } // namespace lift_0040AB60
+
+// [0x0040ABC0]
+namespace lift_0040ABC0 {
+// @name getStringByIndex
+// @summary Copies one of two member strings by index (0 or 1) into the output string, or constructs from a default C-string.
+// @field +0x2EC void* field_0x2EC
+// @field +0x324 void* field_0x324
+
+
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FE4;
+extern uint8_t mem_00928B5D[];
+
+using fn_str_copy_ctor = void(__thiscall*)(void* dst, const void* src);
+using fn_str_cstr_ctor = void(__thiscall*)(void* dst, const char* src);
+
+void* __thiscall sub_0040ABC0(void* this_ptr, void* out_str, uint32_t index) {
+    uint8_t* self = reinterpret_cast<uint8_t*>(this_ptr);
+    if (index == 0) {
+        auto ctor = reinterpret_cast<fn_str_copy_ctor>(static_cast<uintptr_t>(mem_00924FE0));
+        ctor(out_str, self + 0x2EC);
+        return out_str;
+    }
+    if (index == 1) {
+        auto ctor = reinterpret_cast<fn_str_copy_ctor>(static_cast<uintptr_t>(mem_00924FE0));
+        ctor(out_str, self + 0x324);
+        return out_str;
+    }
+    auto ctor = reinterpret_cast<fn_str_cstr_ctor>(static_cast<uintptr_t>(mem_00924FE4));
+    ctor(out_str, reinterpret_cast<const char*>(mem_00928B5D));
+    return out_str;
+}
+} // namespace lift_0040ABC0

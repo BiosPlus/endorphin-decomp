@@ -1,0 +1,13 @@
+{
+  "va": "0x0040ABC0",
+  "size": 91,
+  "orig_symbol": "sub_0040ABC0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "getStringByIndex",
+  "signature": "void* __thiscall sub_0040ABC0(void* this_ptr, void* out_str, uint32_t index)",
+  "summary": "Copies one of two member strings by index (0 or 1) into the output string, or constructs from a default C-string.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:25:56Z"
+}
