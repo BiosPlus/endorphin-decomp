@@ -7310,6 +7310,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, std::string const\u0026, getPhysicsLevel\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0046D230": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter,getDestination\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter,getDestination\u003e",
+    "signature": "double fn_0046D230(void* self)",
+    "summary": "Reads the exporter's destination string as a number (atof), rounds half away from zero, and returns it; throws if the exporter pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046D2B0": {
     "name": "ExprParser::ReadMethodType\u003cImageExporter, std::string const \u0026, ImageExporter::getDestination\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cImageExporter, std::string const \u0026, ImageExporter::getDestination\u003e",

@@ -59392,3 +59392,51 @@ float fn_004B1990(void* self) {
     return static_cast<float>(adjusted);
 }
 } // namespace lift_004B1990
+
+// [0x0046D230] ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_0046D230 {
+// Known callee 0x0042F6E0: thiscall getter; ecx = object, returns std::string* (ImageExporter destination).
+extern void* __thiscall ext_0042F6E0(void* self);
+// Known callee 0x006A6DE0: consumes a double (original passes it on the x87 stack) and returns the result in st0.
+extern double ext_006A6DE0(double value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; constructs exception in place at self).
+extern void* __thiscall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (cdecl; forwards to _CxxThrowException(pExc, pThrowInfo)).
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+extern int mem_00924FF0;   // IAT slot: MSVCP80 std::string::c_str
+extern int mem_009251F0;   // IAT slot: MSVCR80 atof
+extern int mem_00993828;   // .rdata double 0.5
+extern int mem_009DEC1C;   // .rdata ThrowInfo for the exception throw
+
+// @name ExprParser::ReadMethodType<ImageExporter,getDestination>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter,getDestination>
+// @summary Reads the exporter's destination string as a number (atof), rounds half away from zero, and returns it; throws if the exporter pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter,getDestination> +0x00 void* field_0x00
+double fn_0046D230(void* self) {
+    void* object = lift_field<void*>(self, 0x00);
+    if (object == nullptr) {
+        // Null object: construct the exception in local storage and throw it.
+        alignas(8) unsigned char exception_storage[0x28] = {};
+        ext_0046C3C0(exception_storage);
+        ext_006A6DD2(exception_storage, &mem_009DEC1C);
+        return 0.0; // not reached
+    }
+
+    using CStrFn = const char* (__thiscall*)(void* self_string);
+    using AtofFn = double (*)(const char* text);
+
+    void* destination = ext_0042F6E0(object);
+    auto c_str = reinterpret_cast<CStrFn>(*reinterpret_cast<void* const*>(&mem_00924FF0));
+    auto atof_fn = reinterpret_cast<AtofFn>(*reinterpret_cast<void* const*>(&mem_009251F0));
+    const char* text = c_str(destination);
+
+    // Original stores atof's result as a float before rounding.
+    float value = static_cast<float>(atof_fn(text));
+    const double half = *reinterpret_cast<const double*>(&mem_00993828);
+
+    // Round half away from zero: subtract 0.5 for negatives, add 0.5 otherwise.
+    double rounded = (value < 0.0f) ? (static_cast<double>(value) - half)
+                                    : (static_cast<double>(value) + half);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
