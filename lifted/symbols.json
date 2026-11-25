@@ -28141,6 +28141,13 @@
     "summary": "If the flag at +0x1f1 is clear, forward a global value through a helper and a virtual call on the object at +0x04, then store the float constant 5.0 at +0x1f4.",
     "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
   },
+  "0x005D9F30": {
+    "name": "ReleaseOwnedObjectScope",
+    "class": "\u003cunknown owner\u003e (member; owner class not recovered)",
+    "signature": "void fn_005D9F30(void* self)",
+    "summary": "Calls ResetOwnedObject on self, then if self+0x04 is still non-null, invokes its vtable slot 0 with flag 1 (deleting destructor).",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005DA110": {
     "name": "Unknown::setChildField5C",
     "class": "Unknown",

@@ -1,0 +1,22 @@
+{
+  "va": "0x005D9F30",
+  "size": 81,
+  "orig_symbol": "sub_005D9F30",
+  "src_path": "src/leaf/decompiled_5D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5D0000.cpp",
+  "name": "ReleaseOwnedObjectScope",
+  "class": "\u003cunknown owner\u003e (member; owner class not recovered)",
+  "signature": "void fn_005D9F30(void* self)",
+  "summary": "Calls ResetOwnedObject on self, then if self+0x04 is still non-null, invokes its vtable slot 0 with flag 1 (deleting destructor).",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "ownedObject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:59:34Z"
+}

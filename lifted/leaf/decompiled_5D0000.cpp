@@ -89,3 +89,26 @@ void fn_005D9EF0(void* self) {
     lift_field<float>(self, 0x1f4) = 5.0f;
 }
 } // namespace lift_005D9EF0
+
+// [0x005D9F30] sub_005D9F30 (81 bytes)
+namespace lift_005D9F30 {
+// Known callee 0x005D14A0: ResetOwnedObject (If the object at +0x04 is non-null, call its vtable slot 0 with flag 1 (deleting destructor), then clear the pointer.)
+extern void ext_005D14A0(void* self);
+
+// @name ReleaseOwnedObjectScope
+// @class <unknown owner> (member; owner class not recovered)
+// @summary Calls ResetOwnedObject on self, then if self+0x04 is still non-null, invokes its vtable slot 0 with flag 1 (deleting destructor).
+// @field Self +0x04 void* ownedObject
+void fn_005D9F30(void* self) {
+    // The original wraps this in an SEH unwind frame (state -1, cookie handler 0x008A562B).
+    // That frame only performs cleanup on unwind; the normal path below is unchanged.
+    ext_005D14A0(self);
+
+    void* obj = lift_field<void*>(self, 0x04);
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        auto slot0 = reinterpret_cast<void (*)(void*, int)>(vtbl[0]);
+        slot0(obj, 1);
+    }
+}
+} // namespace lift_005D9F30
