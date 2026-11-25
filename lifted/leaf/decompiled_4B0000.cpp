@@ -22,6 +22,7 @@ void* fn_004B6C90(void* self, void* dst, void* arg2) {
     return dst;
 }
 } // namespace lift_004B6C90
+#include <memory>
 
 // [0x004B6CF0]
 namespace lift_004B6CF0 {
@@ -764,3 +765,24 @@ void fn_004B51F0(void* self) {
 }
 } // namespace lift_0050BE20
 } // namespace lift_004B51F0
+
+// [0x004BA170] sub_004BA170 (94 bytes)
+namespace lift_004BA170 {
+// Known callee 0x00665810: sub_00665810 (Stores address of mem_00987A04 into field at offset +0x0.)
+extern void ext_00665810(void* self);
+
+// @name Unknown::ReleaseStringAndBase
+// @class Unknown
+// @summary Destroys and frees the heap-allocated std::string at +0x18 if set, then runs the base-part reset (ext_00665810).
+// @field Unknown +0x18 void* field_0x18
+void fn_004BA170(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    void** slot = reinterpret_cast<void**>(base + 0x18);
+    void* str = *slot;
+    if (str != nullptr) {
+        std::destroy_at(static_cast<std::string*>(str));
+        ::operator delete(str);
+    }
+    ext_00665810(self);
+}
+} // namespace lift_004BA170
