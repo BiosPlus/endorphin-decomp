@@ -883,3 +883,20 @@ void fn_00480C30(void* self) {
     ext_006A5C5C(holder);
 }
 } // namespace lift_00480C30
+
+// [0x004801C0] sub_004801C0 (44 bytes)
+namespace lift_004801C0 {
+// Known callee 0x00584B10: findFirstMatchingAncestor (Walks the +0x94 parent/next chain starting at this and returns the first node whose vtable+0x70 predicate returns true.)
+extern uint32_t ext_00584B10(uint32_t self);
+
+// @name hasDifferentMatchingAncestor
+// @summary Returns true only when both nodes are non-null and their first matching ancestors differ.
+bool fn_004801C0(uint32_t a, uint32_t b) {
+    if (a == 0 || b == 0) {
+        return false;
+    }
+    const uint32_t fa = ext_00584B10(a);
+    const uint32_t fb = ext_00584B10(b);
+    return fa != fb;
+}
+} // namespace lift_004801C0

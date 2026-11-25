@@ -7393,6 +7393,12 @@
     "summary": "Gets child object at this+0x3B0 -\u003e +0x30, calls its vtable slot 0xB4, and sets byte +0x86 of the returned object to 1.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004801C0": {
+    "name": "hasDifferentMatchingAncestor",
+    "signature": "bool fn_004801C0(uint32_t a, uint32_t b)",
+    "summary": "Returns true only when both nodes are non-null and their first matching ancestors differ.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x004801F0": {
     "name": "Commands::BufferTransformsCommand::vfunc_3",
     "class": "Commands::BufferTransformsCommand",
