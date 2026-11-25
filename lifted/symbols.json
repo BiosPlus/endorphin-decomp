@@ -59615,6 +59615,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x160 and tail-calls sub_006E7460.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00702400": {
+    "name": "GetSubobjectByteField408",
+    "class": "Unknown",
+    "signature": "uint32_t GetSubobjectByteField408(const uint8_t* self)",
+    "summary": "Loads the pointer at this+0x268 and returns the byte at ptr+0x408 in the low 8 bits of EAX (upper 24 bits keep the pointer's upper bits).",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x00702410": {
     "name": "sub_00702410",
     "signature": "extern \"C\" void __fastcall fn_00702410(void* self, int edx_unused, int32_t value)",

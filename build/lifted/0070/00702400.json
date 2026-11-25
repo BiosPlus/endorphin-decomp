@@ -1,0 +1,28 @@
+{
+  "va": "0x00702400",
+  "size": 16,
+  "orig_symbol": "sub_00702400",
+  "src_path": "src/leaf/tiny_700000.cpp",
+  "lifted_path": "lifted/leaf/tiny_700000.cpp",
+  "name": "GetSubobjectByteField408",
+  "class": "Unknown",
+  "signature": "uint32_t GetSubobjectByteField408(const uint8_t* self)",
+  "summary": "Loads the pointer at this+0x268 and returns the byte at ptr+0x408 in the low 8 bits of EAX (upper 24 bits keep the pointer's upper bits).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x268",
+      "type": "uint32_t",
+      "name": "field_0x268"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x408",
+      "type": "uint8_t",
+      "name": "field_0x408"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:27:40Z"
+}

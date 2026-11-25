@@ -1266,3 +1266,19 @@ uint8_t __thiscall fn_00700960(uint8_t* self) {
 } // namespace lift_0071C970
 } // namespace lift_0071C8D0
 } // namespace lift_00700960
+
+// [0x00702400]
+namespace lift_00702400 {
+// @name GetSubobjectByteField408
+// @class Unknown
+// @summary Loads the pointer at this+0x268 and returns the byte at ptr+0x408 in the low 8 bits of EAX (upper 24 bits keep the pointer's upper bits).
+// @field Unknown +0x268 uint32_t field_0x268
+// @field Unknown +0x408 uint8_t field_0x408
+
+uint32_t GetSubobjectByteField408(const uint8_t* self) {
+    uint32_t ptr = *reinterpret_cast<const uint32_t*>(self + 0x268);
+    uint8_t low = *reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(ptr) + 0x408);
+    // mov al, byte: only the low byte of EAX is replaced; upper 24 bits remain from the first mov.
+    return (ptr & 0xFFFFFF00u) | low;
+}
+} // namespace lift_00702400
