@@ -1,0 +1,28 @@
+{
+  "va": "0x00401E00",
+  "size": 89,
+  "orig_symbol": "sub_00401E00",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "std::logic_error::logic_error(const logic_error\u0026)",
+  "class": "std::logic_error",
+  "signature": "void* __thiscall sub_00401E00(void* self, const void* other)",
+  "summary": "Copy constructor for std::logic_error, copying base std::exception, setting vtable, and copying the message std::string.",
+  "fields": [
+    {
+      "class": "std::logic_error",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr"
+    },
+    {
+      "class": "std::logic_error",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "message"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:20:29Z"
+}

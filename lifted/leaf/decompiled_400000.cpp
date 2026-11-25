@@ -1289,3 +1289,30 @@ void* __thiscall sub_00401C60(void* self, const void* other) {
     return self;
 }
 } // namespace lift_00401C60
+
+// [0x00401E00]
+namespace lift_00401E00 {
+// @name std::logic_error::logic_error(const logic_error&)
+// @class std::logic_error
+// @summary Copy constructor for std::logic_error, copying base std::exception, setting vtable, and copying the message std::string.
+// @field std::logic_error +0x00 uint32_t vptr
+// @field std::logic_error +0x0C std::string message
+
+
+extern uint32_t mem_009251C8;
+extern uint32_t mem_00924FE0;
+
+typedef void (__thiscall *fn_exception_copy_ctor_t)(void* self, const void* other);
+typedef void (__thiscall *fn_string_copy_ctor_t)(void* self, const void* other);
+
+void* __thiscall sub_00401E00(void* self, const void* other) {
+    uint8_t* self_bytes = reinterpret_cast<uint8_t*>(self);
+    const uint8_t* other_bytes = reinterpret_cast<const uint8_t*>(other);
+
+    reinterpret_cast<fn_exception_copy_ctor_t>(static_cast<uintptr_t>(mem_009251C8))(self_bytes, other_bytes);
+    *reinterpret_cast<uint32_t*>(self_bytes) = 0x00928ECCu;
+    reinterpret_cast<fn_string_copy_ctor_t>(static_cast<uintptr_t>(mem_00924FE0))(self_bytes + 0x0C, other_bytes + 0x0C);
+
+    return self;
+}
+} // namespace lift_00401E00

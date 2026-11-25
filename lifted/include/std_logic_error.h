@@ -10,7 +10,8 @@
 // Recovered field layout for std::logic_error:
 namespace lifted_layout {
 struct std_logic_error_Fields {
-    // +0x0   void*                    vftable  (evidence: 0x00401C60)
-    // +0xC   std::string              message  (evidence: 0x00401C60)
+    // +0x0   void*                    vftable  (evidence: 0x00401C60) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vptr  (evidence: 0x00401E00) // CONFLICT: multiple definitions at +0x0
+    // +0xC   std::string              message  (evidence: 0x00401C60, 0x00401E00)
 };
 } // namespace lifted_layout
