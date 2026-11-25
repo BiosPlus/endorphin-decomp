@@ -1,0 +1,22 @@
+{
+  "va": "0x00660280",
+  "size": 104,
+  "orig_symbol": "sub_00660280",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "VectorBack",
+  "class": "Unknown",
+  "signature": "static void invalid_parameter_noinfo()",
+  "summary": "Returns the last element of the global vector at mem_00B59080..mem_00B59084, or 0 if empty; validates iterator range first.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:50:04Z"
+}

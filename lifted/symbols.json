@@ -42771,6 +42771,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006601E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00660280": {
+    "name": "VectorBack",
+    "class": "Unknown",
+    "signature": "static void invalid_parameter_noinfo()",
+    "summary": "Returns the last element of the global vector at mem_00B59080..mem_00B59084, or 0 if empty; validates iterator range first.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00660710": {
     "name": "SortHeapTail_00660710",
     "signature": "void fn_00660710(std::uint8_t* last, std::uint8_t* first)",

@@ -2299,3 +2299,50 @@ extern void* __cdecl fn_00664D40(void* a1, uint32_t a2, uint32_t a3, uint32_t a4
     return a1;
 }
 } // namespace lift_00664D40
+
+// [0x00660280] sub_00660280 (104 bytes)
+namespace lift_00660280 {
+extern uint32_t mem_00B5907C;
+extern uint32_t mem_00B59080;
+extern uint32_t mem_00B59084;
+extern uint32_t mem_00925134;
+
+// Debug-checked "back()" on an MSVC-style vector whose storage is [mem_00B59080, mem_00B59084).
+// Invalid-parameter handler is reached through the IAT slot at mem_00925134.
+static void invalid_parameter_noinfo() {
+    reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134))();
+}
+
+// @name VectorBack
+// @summary Returns the last element of the global vector at mem_00B59080..mem_00B59084, or 0 if empty; validates iterator range first.
+// @class Unknown
+// @field Unknown +0x08 uint32_t field_0x08
+uint32_t fn_00660280() {
+    const uint32_t begin = mem_00B59080;
+    const uint32_t end = mem_00B59084;
+
+    if (begin == 0) {
+        return 0;
+    }
+    // Element count = (end - begin) / 4 (arithmetic shift); empty -> 0.
+    const int32_t count = static_cast<int32_t>(end - begin) >> 2;
+    if (count == 0) {
+        return 0;
+    }
+    if (begin > end) {
+        invalid_parameter_noinfo();
+    }
+
+    const uint32_t last = end - 4;
+    if (last > end || last < begin) {
+        invalid_parameter_noinfo();
+    }
+
+    const uint32_t cursor = last;
+    if (cursor >= lift_field<uint32_t>(&mem_00B5907C, 0x08)) {
+        invalid_parameter_noinfo();
+    }
+
+    return *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(cursor));
+}
+} // namespace lift_00660280
