@@ -603,3 +603,21 @@ int __stdcall fn_0068EE80(const void* key) {
     return 0;
 }
 } // namespace lift_0068EE80
+
+// [0x00687380]
+namespace lift_00687380 {
+extern uint32_t (__thiscall* mem_00924FDC)(void* self, const void* rhs);
+
+// @name copyRange0x24
+// @summary Copies a range of 0x24-byte elements containing a u32, a u8, and a std::string.
+uint8_t* __cdecl sub_00687380(uint8_t* first, uint8_t* last, uint8_t* dest) {
+    while (first != last) {
+        *reinterpret_cast<uint32_t*>(dest) = *reinterpret_cast<const uint32_t*>(first);
+        dest[4] = first[4];
+        mem_00924FDC(dest + 8, first + 8);
+        first += 0x24;
+        dest += 0x24;
+    }
+    return dest;
+}
+} // namespace lift_00687380

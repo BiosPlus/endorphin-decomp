@@ -1,0 +1,13 @@
+{
+  "va": "0x00687380",
+  "size": 65,
+  "orig_symbol": "sub_00687380",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "copyRange0x24",
+  "signature": "uint8_t* __cdecl sub_00687380(uint8_t* first, uint8_t* last, uint8_t* dest)",
+  "summary": "Copies a range of 0x24-byte elements containing a u32, a u8, and a std::string.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:13:48Z"
+}
