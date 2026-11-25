@@ -512,3 +512,18 @@ extern int32_t __fastcall fn_006DEEC0(void* self) {
     return static_cast<int32_t>(lift_field<int32_t>(self, 0x38));
 }
 } // namespace lift_006DEEC0
+
+// [0x006D5620]
+namespace lift_006D5620 {
+// @name getElementAt
+// @summary Returns the element at the given signed index if within bounds [0, count), otherwise 0.
+// @field Unknown +0x64 int32_t field_0x64
+// @field Unknown +0x74 uint32_t* field_0x74
+uint32_t __thiscall sub_006D5620(void* self, int32_t index) {
+    if (index < 0 || index >= lift_field<int32_t>(self, 0x64)) {
+        return 0;
+    }
+    uint32_t* arr = lift_field<uint32_t*>(self, 0x74);
+    return arr[index];
+}
+} // namespace lift_006D5620

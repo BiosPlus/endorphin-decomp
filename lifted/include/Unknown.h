@@ -774,7 +774,7 @@ struct Unknown_Fields {
     // +0x64  uint8_t                  dirtyFlag  (evidence: 0x006B53D0, 0x006BA780) // CONFLICT: multiple definitions at +0x64
     // +0x64  float                    field_0x64  (evidence: 0x005DA150, 0x006267B0) // CONFLICT: multiple definitions at +0x64
     // +0x64  int                      field_0x64  (evidence: 0x00441020, 0x0044B5B0) // CONFLICT: multiple definitions at +0x64
-    // +0x64  int32_t                  field_0x64  (evidence: 0x00441020, 0x0044B6A0, 0x006D0370) // CONFLICT: multiple definitions at +0x64
+    // +0x64  int32_t                  field_0x64  (evidence: 0x00441020, 0x0044B6A0, 0x006D0370, 0x006D5620) // CONFLICT: multiple definitions at +0x64
     // +0x64  uint32_t                 field_0x64  (evidence: 0x00441020, 0x00441C10, 0x0044B560, 0x0044B5C0, 0x00648A20, 0x0064DC80, 0x0064DEE0, 0x0064DF20, 0x006B6990) // CONFLICT: multiple definitions at +0x64
     // +0x64  uint8_t                  field_0x64  (evidence: 0x0043D170, 0x0043D200, 0x0043D230, 0x0043D260) // CONFLICT: multiple definitions at +0x64
     // +0x64  void*                    field_0x64  (evidence: 0x0043D2C0, 0x00441C10, 0x0044B1F0, 0x0044B260, 0x0044B290, 0x0044B360, 0x0044B4E0, 0x0044B6B0, 0x00535690) // CONFLICT: multiple definitions at +0x64
@@ -803,6 +803,7 @@ struct Unknown_Fields {
     // +0x74  DWORD                    field_0x74  (evidence: 0x00417630, 0x00422CE0, 0x004275C0, 0x00452100, 0x004584C0) // CONFLICT: multiple definitions at +0x74
     // +0x74  int32_t                  field_0x74  (evidence: 0x007C8490, 0x007CAF70) // CONFLICT: multiple definitions at +0x74
     // +0x74  uint32_t                 field_0x74  (evidence: 0x004407C0, 0x00441020, 0x0044B6A0, 0x007057D0) // CONFLICT: multiple definitions at +0x74
+    // +0x74  uint32_t*                field_0x74  (evidence: 0x006D5620) // CONFLICT: multiple definitions at +0x74
     // +0x74  uint8_t[4]               field_0x74  (evidence: 0x00449C90) // CONFLICT: multiple definitions at +0x74
     // +0x74  void                     field_0x74  (evidence: 0x00441C10, 0x00449D00) // CONFLICT: multiple definitions at +0x74
     // +0x74  void*                    field_0x74  (evidence: 0x00441C10, 0x00447E30) // CONFLICT: multiple definitions at +0x74
