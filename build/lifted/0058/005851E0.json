@@ -1,0 +1,13 @@
+{
+  "va": "0x005851E0",
+  "size": 66,
+  "orig_symbol": "sub_005851E0",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "sub_005851E0_ctor",
+  "signature": "void* __thiscall sub_005851E0(void* self, uint32_t arg0)",
+  "summary": "Constructor that calls base sub_00584F80 and initializes vtable pointers.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:16:16Z"
+}

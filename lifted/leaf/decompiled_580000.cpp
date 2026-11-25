@@ -469,3 +469,32 @@ void fn_0058AA20(void* self, float value) {
 }
 } // namespace lift_0058A9A0
 } // namespace lift_0058AA20
+
+// [0x005851E0]
+namespace lift_005851E0 {
+// @name sub_005851E0_ctor
+// @summary Constructor that calls base sub_00584F80 and initializes vtable pointers.
+// @field +0x00 uint32_t vptr_0x00
+// @field +0x04 uint32_t vptr_0x04
+// @field +0x08 uint32_t vptr_0x08
+// @field +0x0C uint32_t vptr_0x0C
+// @field +0x150 uint32_t vptr_0x150
+// @field +0x154 uint32_t vptr_0x154
+
+
+extern void* __thiscall ext_00584F80(void* self, uint32_t arg0);
+
+void* __thiscall sub_005851E0(void* self, uint32_t arg0) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    ext_00584F80(obj, arg0);
+
+    *reinterpret_cast<uint32_t*>(obj + 0x00) = 0x0095A31Cu;
+    *reinterpret_cast<uint32_t*>(obj + 0x04) = 0x0095A2D4u;
+    *reinterpret_cast<uint32_t*>(obj + 0x08) = 0x0095A294u;
+    *reinterpret_cast<uint32_t*>(obj + 0x0C) = 0x0095A244u;
+    *reinterpret_cast<uint32_t*>(obj + 0x150) = 0x0095A22Cu;
+    *reinterpret_cast<uint32_t*>(obj + 0x154) = 0x0095A224u;
+
+    return obj;
+}
+} // namespace lift_005851E0
