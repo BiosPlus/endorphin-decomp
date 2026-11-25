@@ -1,0 +1,22 @@
+{
+  "va": "0x00494940",
+  "size": 83,
+  "orig_symbol": "sub_00494940",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "Unknown::ReleaseOptionalSubobjectAndReset",
+  "class": "Unknown",
+  "signature": "void fn_00494940(void* self)",
+  "summary": "If the subobject pointer at +0x08 is non-null, calls its vtable slot 0 with argument 1 (thiscall), then calls ext_0065C660(this) to reset the object's +0x00 field.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:04:09Z"
+}

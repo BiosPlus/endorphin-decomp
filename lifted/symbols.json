@@ -9450,6 +9450,13 @@
     "summary": "Dynamic-cast self (RTTI src 0xA2E2F8 -\u003e dst 0xA346B0, no vfptr offset) and return the resulting pointer.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x00494940": {
+    "name": "Unknown::ReleaseOptionalSubobjectAndReset",
+    "class": "Unknown",
+    "signature": "void fn_00494940(void* self)",
+    "summary": "If the subobject pointer at +0x08 is non-null, calls its vtable slot 0 with argument 1 (thiscall), then calls ext_0065C660(this) to reset the object's +0x00 field.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x004949A0": {
     "name": "ExprParser::DynamicEnumType\u003cRigManager\u003e::vfunc_40 (lazy static accessor)",
     "class": "ExprParser::DynamicEnumType\u003cRigManager, \u0026public: int __thiscall RigManager::getRigTypeIndex(void) const, \u0026public: void __thiscall RigManager::setRigTypeIndex(int), \u0026public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall RigManager::getRigTypeNameFromIndex(int) const\u003e",

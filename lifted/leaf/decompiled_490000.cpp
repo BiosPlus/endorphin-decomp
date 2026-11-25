@@ -708,3 +708,26 @@ void* __stdcall fn_00492C60(DWORD a1, DWORD a2, DWORD a3, const DWORD* src, BYTE
     return p;
 }
 } // namespace lift_00492C60
+
+// [0x00494940] sub_00494940 (83 bytes)
+namespace lift_00494940 {
+// Known callee 0x0065C660: sub_0065C660 (Stores address of mem_00928E8C into field at offset +0x0.)
+extern void __fastcall ext_0065C660(void* self);
+
+// @name Unknown::ReleaseOptionalSubobjectAndReset
+// @class Unknown
+// @summary If the subobject pointer at +0x08 is non-null, calls its vtable slot 0 with argument 1 (thiscall), then calls ext_0065C660(this) to reset the object's +0x00 field.
+// @field Unknown +0x08 void* field_0x08
+void fn_00494940(void* self) {
+    using SubobjectDtorFn = void (__thiscall*)(void* self, uint32_t flags);
+
+    void* subobject = lift_field<void*>(self, 0x08);
+    if (subobject != nullptr) {
+        void** vtable = *reinterpret_cast<void***>(subobject);
+        auto release = reinterpret_cast<SubobjectDtorFn>(vtable[0]);
+        release(subobject, 1u);
+    }
+
+    ext_0065C660(self);
+}
+} // namespace lift_00494940
