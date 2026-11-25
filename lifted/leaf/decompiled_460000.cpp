@@ -1392,3 +1392,19 @@ void __thiscall fn_0046FD70(void* self, DWORD* out) {
     out[1] = lift_field<DWORD>(leaf, 0x1E4);
 }
 } // namespace lift_0046FD70
+
+// [0x0046C2F0]
+namespace lift_0046C2F0 {
+// @name sub_0046C2F0
+// @summary Conditionally stores a float parameter into this+0x1c if it does not exceed a threshold at this->+0x4c->+0xf8->+0x138
+// @field Unknown +0x1c float field_0x1c
+// @field Unknown +0x4c void* field_0x4c
+void __thiscall sub_0046C2F0(void* self, float value) {
+    void* obj1 = lift_field<void*>(self, 0x4c);
+    void* obj2 = lift_field<void*>(obj1, 0xf8);
+    float limit = lift_field<float>(obj2, 0x138);
+    if (limit >= value) {
+        lift_field<float>(self, 0x1c) = value;
+    }
+}
+} // namespace lift_0046C2F0
