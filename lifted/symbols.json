@@ -3976,6 +3976,13 @@
     "summary": "Applies horizontal zoom to the owner MultiTrackView based on drag delta and invalidates its window",
     "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/ZoomState.cpp"
   },
+  "0x00443500": {
+    "name": "MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_12",
+    "class": "MultiTrackView::MultiTrackViewStates::DragSelectState",
+    "signature": "extern \"C\" unsigned char fn_00443500(DragSelectState_lift* self)",
+    "summary": "Invalidates the window handle at +0x20 of the object referenced by +0x8 (no erase), returns TRUE; callee pops 0xC bytes of args.",
+    "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
+  },
   "0x00443520": {
     "name": "MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_18",
     "class": "MultiTrackView::MultiTrackViewStates::DragSelectState",

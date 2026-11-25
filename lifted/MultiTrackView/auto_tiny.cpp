@@ -337,3 +337,32 @@ void __thiscall MultiTrackView_View_vfunc_81(void* self) {
     mem_00925688(hwnd, nullptr, TRUE);
 }
 } // namespace lift_0043CEE0
+
+// [0x00443500]
+namespace lift_00443500 {
+// @name MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_12
+// @class MultiTrackView::MultiTrackViewStates::DragSelectState
+// @summary Invalidates the window handle at +0x20 of the object referenced by +0x8 (no erase), returns TRUE; callee pops 0xC bytes of args.
+// @field MultiTrackView::MultiTrackViewStates::DragSelectState +0x08 void* field_0x08
+
+// USER32!InvalidateRect, reached through the import slot at 0x00925688.
+extern int ext_InvalidateRect(void* hwnd, const void* rect, int erase);
+extern unsigned char mem_00925688[];
+
+using InvalidateRectFn = int (*)(void*, const void*, int);
+
+struct DragSelectState_lift {
+    unsigned char pad_00[0x04];
+    void* field_0x04;
+    void* field_0x08;
+};
+
+extern unsigned char fn_00443500(DragSelectState_lift* self) {
+    unsigned char* target = static_cast<unsigned char*>(self->field_0x08);
+    void* hwnd = *reinterpret_cast<void**>(target + 0x20);
+    auto invalidate = *reinterpret_cast<InvalidateRectFn*>(mem_00925688);
+    invalidate(hwnd, nullptr, 0);
+    (void)ext_InvalidateRect;
+    return 1;
+}
+} // namespace lift_00443500

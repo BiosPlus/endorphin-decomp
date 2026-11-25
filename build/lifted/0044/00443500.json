@@ -1,0 +1,22 @@
+{
+  "va": "0x00443500",
+  "size": 22,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_12",
+  "src_path": "src/MultiTrackView/auto_tiny.cpp",
+  "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_12",
+  "class": "MultiTrackView::MultiTrackViewStates::DragSelectState",
+  "signature": "extern \"C\" unsigned char fn_00443500(DragSelectState_lift* self)",
+  "summary": "Invalidates the window handle at +0x20 of the object referenced by +0x8 (no erase), returns TRUE; callee pops 0xC bytes of args.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::DragSelectState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:21:51Z"
+}
