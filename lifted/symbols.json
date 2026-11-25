@@ -2267,6 +2267,12 @@
     "summary": "Pure jump thunk forwarding to sub_00425D80.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00426960": {
+    "name": "ConstructEmptyStdString",
+    "signature": "void* fn_00426960(void* self)",
+    "summary": "Calls the MSVCP80 std::string(const char*) constructor in place on self with the literal \"\" (mem_00928B5D) via the IAT slot mem_00924FE4, then returns self.",
+    "lifted_path": "lifted/leaf/tiny_420000.cpp"
+  },
   "0x00427210": {
     "name": "findMatchingString",
     "signature": "uint32_t __stdcall sub_00427210(uint32_t str_ptr)",

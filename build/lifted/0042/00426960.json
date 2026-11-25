@@ -1,0 +1,13 @@
+{
+  "va": "0x00426960",
+  "size": 18,
+  "orig_symbol": "sub_00426960",
+  "src_path": "src/leaf/tiny_420000.cpp",
+  "lifted_path": "lifted/leaf/tiny_420000.cpp",
+  "name": "ConstructEmptyStdString",
+  "signature": "void* fn_00426960(void* self)",
+  "summary": "Calls the MSVCP80 std::string(const char*) constructor in place on self with the literal \"\" (mem_00928B5D) via the IAT slot mem_00924FE4, then returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:17:57Z"
+}

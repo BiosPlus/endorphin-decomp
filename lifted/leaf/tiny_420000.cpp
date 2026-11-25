@@ -213,3 +213,18 @@ void* fn_00427370(void* a) {
 } // namespace lift_005AC820
 } // namespace lift_00476B80
 } // namespace lift_00427370
+
+// [0x00426960] sub_00426960 (18 bytes)
+namespace lift_00426960 {
+extern int mem_00928B5D;
+extern int mem_00924FE4;
+
+// @name ConstructEmptyStdString
+// @summary Calls the MSVCP80 std::string(const char*) constructor in place on self with the literal "" (mem_00928B5D) via the IAT slot mem_00924FE4, then returns self.
+void* fn_00426960(void* self) {
+    using StrCtorFn = void(__thiscall*)(void*, const char*);
+    auto ctor = *reinterpret_cast<StrCtorFn*>(&mem_00924FE4);
+    ctor(self, reinterpret_cast<const char*>(&mem_00928B5D));
+    return self;
+}
+} // namespace lift_00426960
