@@ -19595,6 +19595,13 @@
     "summary": "Walks the pointer array bounded by this+0x18 (begin) and this+0x1C (end) and calls vtable slot 3 (+0x0C) on each object with the argument.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00517230": {
+    "name": "Unknown::InvokeSlot23OnChildren",
+    "class": "Unknown",
+    "signature": "void __fastcall fn_00517230(void* self, int edx_unused, void* arg)",
+    "summary": "Iterates the pointer vector at this+0x14..0x18 and calls virtual slot 23 on each element with one argument.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x005172A0": {
     "name": "Unknown::ForEachInvokeVirtualSlot24",
     "class": "Unknown",

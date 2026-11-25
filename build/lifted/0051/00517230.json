@@ -1,0 +1,28 @@
+{
+  "va": "0x00517230",
+  "size": 104,
+  "orig_symbol": "sub_00517230",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "Unknown::InvokeSlot23OnChildren",
+  "class": "Unknown",
+  "signature": "void __fastcall fn_00517230(void* self, int edx_unused, void* arg)",
+  "summary": "Iterates the pointer vector at this+0x14..0x18 and calls virtual slot 23 on each element with one argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void**",
+      "name": "children_begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "void**",
+      "name": "children_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:48:29Z"
+}

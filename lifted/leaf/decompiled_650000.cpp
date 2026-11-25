@@ -1592,3 +1592,31 @@ void fn_005170D0(void* self, void* arg) {
     }
 }
 } // namespace lift_005170D0
+
+// [0x00517230] sub_00517230 (104 bytes)
+namespace lift_00517230 {
+// @name Unknown::InvokeSlot23OnChildren
+// @class Unknown
+// @summary Iterates the pointer vector at this+0x14..0x18 and calls virtual slot 23 on each element with one argument.
+// @field Unknown +0x14 void** children_begin
+// @field Unknown +0x18 void** children_end
+void __fastcall fn_00517230(void* self, int edx_unused, void* arg) {
+    (void)edx_unused;
+
+    struct ChildList {
+        void** begin;
+        void** end;
+    };
+    using Slot23Fn = void(__fastcall*)(void* self, int edx_unused, void* arg);
+
+    auto* list = reinterpret_cast<ChildList*>(static_cast<uint8_t*>(self) + 0x10);
+    void** cur = list->begin;
+    while (cur != list->end) {
+        void* child = *cur;
+        void* const* vtbl = *reinterpret_cast<void* const* const*>(child);
+        auto fn = reinterpret_cast<Slot23Fn>(vtbl[23]);
+        fn(child, 0, arg);
+        ++cur;
+    }
+}
+} // namespace lift_00517230
