@@ -523,3 +523,44 @@ void* fn_0050C480(void* self) {
     return self;
 }
 } // namespace lift_0050C480
+
+// [0x00508BC0]
+namespace lift_00508BC0 {
+// @name Container::selectIndex
+// @class Container
+// @summary Clears +0x34, then stores element[index] of the array spanning +0x28..+0x2c into +0x34 if index is in range.
+// @field Container +0x28 uint32_t* begin
+// @field Container +0x2c uint32_t* end
+// @field Container +0x34 uint32_t selected
+
+struct Container {
+    unsigned char pad_0000[0x28];
+    std::uint32_t* begin;   // +0x28
+    std::uint32_t* end;     // +0x2c
+    unsigned char pad_0030[0x04];
+    std::uint32_t selected; // +0x34
+};
+
+// Imported CRT invalid-parameter handler (IAT slot at 0x00925134).
+extern void (*mem_00925134)();
+
+static std::size_t element_count(const Container* self) {
+    return static_cast<std::size_t>(
+        reinterpret_cast<const unsigned char*>(self->end) -
+        reinterpret_cast<const unsigned char*>(self->begin)) / sizeof(std::uint32_t);
+}
+
+void fn_00508BC0(Container* self, std::uint32_t index) {
+    self->selected = 0;
+    if (self->begin == nullptr) {
+        return;
+    }
+    if (index >= element_count(self)) {
+        return;
+    }
+    if (self->begin == nullptr || index >= element_count(self)) {
+        mem_00925134();
+    }
+    self->selected = self->begin[index];
+}
+} // namespace lift_00508BC0

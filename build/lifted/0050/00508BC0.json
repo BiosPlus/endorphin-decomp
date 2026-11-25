@@ -1,0 +1,34 @@
+{
+  "va": "0x00508BC0",
+  "size": 70,
+  "orig_symbol": "sub_00508BC0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "Container::selectIndex",
+  "class": "Container",
+  "signature": "static std::size_t element_count(const Container* self)",
+  "summary": "Clears +0x34, then stores element[index] of the array spanning +0x28..+0x2c into +0x34 if index is in range.",
+  "fields": [
+    {
+      "class": "Container",
+      "offset": "+0x28",
+      "type": "uint32_t*",
+      "name": "begin"
+    },
+    {
+      "class": "Container",
+      "offset": "+0x2C",
+      "type": "uint32_t*",
+      "name": "end"
+    },
+    {
+      "class": "Container",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "selected"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:24:32Z"
+}
