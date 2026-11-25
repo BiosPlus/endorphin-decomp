@@ -56707,3 +56707,38 @@ float __stdcall fn_00604D40(void* self) {
     ext_006A6DD2(frame + 0x10, mem_009DEC1C);
 }
 } // namespace lift_00604D40
+
+// [0x00604EB0] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1>::vfunc_5 (59 bytes)
+namespace lift_00604EB0 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, void* throwInfo);
+
+// @name ExprParser::ReadMethodType<Effector,float,getPoseRawDesiredDisplacement>::vfunc_5
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1>
+// @summary Reads the wrapped Effector pointer; if non-null, calls its vtable slot 14 for a float and passes it to ext_0046C4E0, then always builds a DerivedException and throws it via _CxxThrowException.
+// @field ExprParser::ValuePtrType +0x00 void* target
+void fn_00604EB0(void* self) {
+    // Local frame of 0x38 bytes: [0x00] float temp, [0x10] exception object, [0x14] throw object pointer.
+    alignas(8) unsigned char frame[0x38] = {};
+
+    void* target = lift_field<void*>(self, 0);
+    if (target != nullptr) {
+        // vtable slot 14 (offset 0x38): float* getter taking an out-pointer, returning a pointer to the float value.
+        void** vtbl = lift_field<void**>(target, 0);
+        using FloatGetter = void* (*)(void* thisptr, void* out);
+        auto getter = reinterpret_cast<FloatGetter>(vtbl[14]);
+        void* result = getter(target, frame);
+        float value = *static_cast<float*>(result);
+        ext_0046C4E0(value);
+    }
+
+    // Construct the exception object at frame+0x10, then throw it (type info 0x009DEC1C).
+    ext_0046C3C0(frame + 0x10);
+    void* throwInfo = reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu));
+    ext_006A6DD2(frame + 0x14, throwInfo);
+}
+} // namespace lift_00604EB0
