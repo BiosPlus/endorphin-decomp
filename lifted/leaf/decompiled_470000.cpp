@@ -610,3 +610,25 @@ void fn_00476DF0(void* self) {
     ext_006A6D5C(base + 0x18, 0x1Cu, 4u, dtor);
 }
 } // namespace lift_00476DF0
+
+// [0x00478410] sub_00478410 (95 bytes)
+namespace lift_00478410 {
+// Known callee 0x005170D0: Unknown::CallSlot3OnEachEntry (thiscall: self in ecx, one stack arg)
+extern void ext_005170D0(void* self, void* arg);
+// Known callee 0x00678D70: BaseEventDispatcher::vfunc_1 (thiscall: self in ecx, one stack arg = 1)
+extern void ext_00678D70(void* self, int flag);
+
+// @name Unknown::ForEachEntryThenDispatch
+// @class Unknown
+// @summary Calls ext_005170D0 on each pointer in the range [range+0x04, range+0x08), then calls ext_00678D70(self, 1).
+// @field Unknown +0x04 void** field_0x04
+// @field Unknown +0x08 void** field_0x08
+void fn_00478410(void* self, void* range) {
+    void** it = lift_field<void**>(range, 0x04);
+    while (it != lift_field<void**>(range, 0x08)) {
+        ext_005170D0(self, *it);
+        ++it;
+    }
+    ext_00678D70(self, 1);
+}
+} // namespace lift_00478410

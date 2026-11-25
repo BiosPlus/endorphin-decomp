@@ -8595,6 +8595,13 @@
     "summary": "Returns the maximum of the int at +0x160 over all element pointers in the vector at +0x34..+0x38 (floored at 0).",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00478410": {
+    "name": "Unknown::ForEachEntryThenDispatch",
+    "class": "Unknown",
+    "signature": "void fn_00478410(void* self, void* range)",
+    "summary": "Calls ext_005170D0 on each pointer in the range [range+0x04, range+0x08), then calls ext_00678D70(self, 1).",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x004788A0": {
     "name": "sub_004788A0",
     "signature": "uint32_t fn_004788A0(uint32_t begin, uint32_t end, uint32_t value)",
