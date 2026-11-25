@@ -432,3 +432,34 @@ void* fn_005224E0(const void* begin, const void* end, void* dst) {
     return out;
 }
 } // namespace lift_005224E0
+
+// [0x00527AF0]
+namespace lift_00527AF0 {
+// @name vectorBackPtr
+// @summary Validates vector bounds and returns a pointer to the last 4-byte element.
+// @field Vector +0x04 uint32_t begin
+// @field Vector +0x08 uint32_t end
+
+extern uint32_t mem_00925134;
+
+uint32_t __thiscall sub_00527AF0(void* self) {
+    auto invalid_param = reinterpret_cast<void (__cdecl*)()>(mem_00925134);
+    uint32_t begin = *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x04);
+    uint32_t end = *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x08);
+
+    if (begin > end) {
+        invalid_param();
+    }
+
+    uint32_t last = end - 4;
+    if (last > end || last < begin) {
+        invalid_param();
+    }
+
+    if (last >= end) {
+        invalid_param();
+    }
+
+    return last;
+}
+} // namespace lift_00527AF0

@@ -1,0 +1,27 @@
+{
+  "va": "0x00527AF0",
+  "size": 66,
+  "orig_symbol": "sub_00527AF0",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "vectorBackPtr",
+  "signature": "uint32_t __thiscall sub_00527AF0(void* self)",
+  "summary": "Validates vector bounds and returns a pointer to the last 4-byte element.",
+  "fields": [
+    {
+      "class": "Vector",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:15:11Z"
+}
