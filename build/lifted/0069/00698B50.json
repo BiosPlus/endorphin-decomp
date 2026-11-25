@@ -1,0 +1,34 @@
+{
+  "va": "0x00698B50",
+  "size": 49,
+  "orig_symbol": "sub_00698B50",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "ByteVector::readVector3",
+  "class": "ByteVector",
+  "signature": "void __thiscall fn_00698B50(void* self, uint32_t* offsetPtr, float* outVec)",
+  "summary": "Reads three 32-bit floats from the byte vector at *offsetPtr into outVec, advancing *offsetPtr by 12 bytes.",
+  "fields": [
+    {
+      "class": "Vector3",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "x"
+    },
+    {
+      "class": "Vector3",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "y"
+    },
+    {
+      "class": "Vector3",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "z"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:36:28Z"
+}

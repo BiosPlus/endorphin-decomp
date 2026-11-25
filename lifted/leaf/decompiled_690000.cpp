@@ -1383,3 +1383,22 @@ float __thiscall fn_00698AB0(void* self, uint32_t* offsetPtr) {
     return value;
 }
 } // namespace lift_00698AB0
+
+// [0x00698B50]
+namespace lift_00698B50 {
+// @name ByteVector::readVector3
+// @class ByteVector
+// @summary Reads three 32-bit floats from the byte vector at *offsetPtr into outVec, advancing *offsetPtr by 12 bytes.
+// @field Vector3 +0x00 float x
+// @field Vector3 +0x04 float y
+// @field Vector3 +0x08 float z
+
+
+extern float __thiscall ext_00698AB0(void* self, uint32_t* offsetPtr);
+
+void __thiscall fn_00698B50(void* self, uint32_t* offsetPtr, float* outVec) {
+    outVec[0] = ext_00698AB0(self, offsetPtr);
+    outVec[1] = ext_00698AB0(self, offsetPtr);
+    outVec[2] = ext_00698AB0(self, offsetPtr);
+}
+} // namespace lift_00698B50
