@@ -1625,3 +1625,51 @@ extern int32_t __fastcall fn_006BC430(void* self, void* /*edx*/, int32_t type) {
 }
 } // namespace lift_006BC3F0
 } // namespace lift_006BC430
+
+// [0x006B40A0]
+namespace lift_006B40A0 {
+// @name time64ToSystemTime
+// @summary Converts a 64-bit time_t value to a Windows SYSTEMTIME structure via _localtime64_s.
+// @field SYSTEMTIME +0x00 uint16_t wYear
+// @field SYSTEMTIME +0x02 uint16_t wMonth
+// @field SYSTEMTIME +0x04 uint16_t wDayOfWeek
+// @field SYSTEMTIME +0x06 uint16_t wDay
+// @field SYSTEMTIME +0x08 uint16_t wHour
+// @field SYSTEMTIME +0x0A uint16_t wMinute
+// @field SYSTEMTIME +0x0C uint16_t wSecond
+// @field SYSTEMTIME +0x0E uint16_t wMilliseconds
+
+
+extern uint32_t mem_00925270;
+
+uint8_t __thiscall sub_006B40A0(void* self, void* out_system_time) {
+    struct Tm {
+        int32_t tm_sec;
+        int32_t tm_min;
+        int32_t tm_hour;
+        int32_t tm_mday;
+        int32_t tm_mon;
+        int32_t tm_year;
+        int32_t tm_wday;
+        int32_t tm_yday;
+        int32_t tm_isdst;
+    } tm_buf;
+
+    using Localtime64SFn = int32_t(__cdecl*)(Tm*, const void*);
+    auto localtime64_s_fn = reinterpret_cast<Localtime64SFn>(static_cast<uintptr_t>(mem_00925270));
+    if (localtime64_s_fn(&tm_buf, self) != 0) {
+        return 0;
+    }
+
+    auto* st = static_cast<uint16_t*>(out_system_time);
+    st[0] = static_cast<uint16_t>(tm_buf.tm_year + 1900);
+    st[1] = static_cast<uint16_t>(tm_buf.tm_mon + 1);
+    st[2] = static_cast<uint16_t>(tm_buf.tm_wday);
+    st[3] = static_cast<uint16_t>(tm_buf.tm_mday);
+    st[4] = static_cast<uint16_t>(tm_buf.tm_hour);
+    st[5] = static_cast<uint16_t>(tm_buf.tm_min);
+    st[6] = static_cast<uint16_t>(tm_buf.tm_sec);
+    st[7] = 0;
+    return 1;
+}
+} // namespace lift_006B40A0

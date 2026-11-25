@@ -1,0 +1,63 @@
+{
+  "va": "0x006B40A0",
+  "size": 116,
+  "orig_symbol": "sub_006B40A0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "time64ToSystemTime",
+  "signature": "uint8_t __thiscall sub_006B40A0(void* self, void* out_system_time)",
+  "summary": "Converts a 64-bit time_t value to a Windows SYSTEMTIME structure via _localtime64_s.",
+  "fields": [
+    {
+      "class": "SYSTEMTIME",
+      "offset": "+0x0",
+      "type": "uint16_t",
+      "name": "wYear"
+    },
+    {
+      "class": "SYSTEMTIME",
+      "offset": "+0x2",
+      "type": "uint16_t",
+      "name": "wMonth"
+    },
+    {
+      "class": "SYSTEMTIME",
+      "offset": "+0x4",
+      "type": "uint16_t",
+      "name": "wDayOfWeek"
+    },
+    {
+      "class": "SYSTEMTIME",
+      "offset": "+0x6",
+      "type": "uint16_t",
+      "name": "wDay"
+    },
+    {
+      "class": "SYSTEMTIME",
+      "offset": "+0x8",
+      "type": "uint16_t",
+      "name": "wHour"
+    },
+    {
+      "class": "SYSTEMTIME",
+      "offset": "+0xA",
+      "type": "uint16_t",
+      "name": "wMinute"
+    },
+    {
+      "class": "SYSTEMTIME",
+      "offset": "+0xC",
+      "type": "uint16_t",
+      "name": "wSecond"
+    },
+    {
+      "class": "SYSTEMTIME",
+      "offset": "+0xE",
+      "type": "uint16_t",
+      "name": "wMilliseconds"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:43:23Z"
+}
