@@ -426,6 +426,7 @@ struct Unknown_Fields {
     // +0x2C  uint32_t                 field_0x2c  (evidence: 0x0056B900, 0x00790D60, 0x007911E0, 0x0079ADA0, 0x0079DCE0) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  uint8_t                  field_0x2c  (evidence: 0x0041CAB0) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  void*                    field_0x2c  (evidence: 0x0058A9A0, 0x0058AA20, 0x006488A0) // CONFLICT: multiple definitions at +0x2C
+    // +0x2C  void*                    procAddress  (evidence: 0x0041FD70) // CONFLICT: multiple definitions at +0x2C
     // +0x30  GLuint                   displayList  (evidence: 0x00533D50) // CONFLICT: multiple definitions at +0x30
     // +0x30  DWORD                    field_0x30  (evidence: 0x0051C5A0) // CONFLICT: multiple definitions at +0x30
     // +0x30  double                   field_0x30  (evidence: 0x00766240) // CONFLICT: multiple definitions at +0x30

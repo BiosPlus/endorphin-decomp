@@ -1962,6 +1962,13 @@
     "summary": "Returns cached module handle at +0x4; otherwise resolves it by name via GetModuleHandleA, falling back to LoadLibraryA (sets +0x8 flag on load path).",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041FD70": {
+    "name": "Unknown::GetOrCacheProcAddress",
+    "class": "Unknown",
+    "signature": "void fn_0041FD70(void* self, void** out)",
+    "summary": "Returns the cached procedure address at +0x2C; if unset, resolves it via GetProcAddress on the module from GetOrLoadModule and caches it.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041FEA0": {
     "name": "Unknown::SendWmUser100CAndIncrement",
     "class": "Unknown",

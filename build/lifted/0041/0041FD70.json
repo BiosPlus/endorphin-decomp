@@ -1,0 +1,22 @@
+{
+  "va": "0x0041FD70",
+  "size": 42,
+  "orig_symbol": "sub_0041FD70",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::GetOrCacheProcAddress",
+  "class": "Unknown",
+  "signature": "void fn_0041FD70(void* self, void** out)",
+  "summary": "Returns the cached procedure address at +0x2C; if unset, resolves it via GetProcAddress on the module from GetOrLoadModule and caches it.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "void*",
+      "name": "procAddress"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:29:16Z"
+}

@@ -1296,3 +1296,25 @@ void fn_0041CB80(void* self) {
     ext_00469020(lift_ptr(static_cast<uint32_t>(second)));
 }
 } // namespace lift_0041CB80
+
+// [0x0041FD70] sub_0041FD70 (42 bytes)
+namespace lift_0041FD70 {
+// Known callee 0x0041FD20: Unknown::GetOrLoadModule (thiscall-style, takes the object pointer, returns cached HMODULE).
+extern void* ext_0041FD20(void* self);
+// KERNEL32!GetProcAddress (IAT slot mem_009241D8). Stack-argument convention (__stdcall).
+extern void* __stdcall ext_GetProcAddress(void* hModule, const char* lpProcName);
+extern int mem_009241D8;
+
+// @name Unknown::GetOrCacheProcAddress
+// @class Unknown
+// @summary Returns the cached procedure address at +0x2C; if unset, resolves it via GetProcAddress on the module from GetOrLoadModule and caches it.
+// @field Unknown +0x2C void* procAddress
+void fn_0041FD70(void* self, void** out) {
+    void** cached = reinterpret_cast<void**>(static_cast<uint8_t*>(self) + 0x2C);
+    if (*cached == nullptr) {
+        void* module = ext_0041FD20(reinterpret_cast<void*>(0x0092E180));
+        *cached = ext_GetProcAddress(module, reinterpret_cast<const char*>(self));
+    }
+    *out = *cached;
+}
+} // namespace lift_0041FD70
