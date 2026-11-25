@@ -521,3 +521,29 @@ uint32_t __thiscall sub_005774B0(void* self) {
     return last;
 }
 } // namespace lift_005774B0
+
+// [0x0057FD10] sub_0057FD10 (68 bytes)
+namespace lift_0057FD10 {
+// Known callee 0x00696D90: initStruct_00696D90 (Initializes a 20-byte struct with 0x19 at +0x00, zeros at +0x04..+0x0C, and 1 at +0x10, returning this.)
+extern uint32_t ext_00696D90(void* this_ptr);
+
+// @name Unknown::initTailFields0057FD10
+// @class Unknown
+// @summary Calls ext_00696D90 on self, then zeroes six 32-bit fields at +0x1C, +0x20, +0x24, +0x2C, +0x30, +0x34 (skips +0x28); returns self.
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 uint32_t field_0x24
+// @field Unknown +0x2C uint32_t field_0x2C
+// @field Unknown +0x30 uint32_t field_0x30
+// @field Unknown +0x34 uint32_t field_0x34
+extern void* __thiscall fn_0057FD10(void* self) {
+    ext_00696D90(self);
+    lift_field<uint32_t>(self, 0x1C) = 0;
+    lift_field<uint32_t>(self, 0x20) = 0;
+    lift_field<uint32_t>(self, 0x24) = 0;
+    lift_field<uint32_t>(self, 0x2C) = 0;
+    lift_field<uint32_t>(self, 0x30) = 0;
+    lift_field<uint32_t>(self, 0x34) = 0;
+    return self;
+}
+} // namespace lift_0057FD10

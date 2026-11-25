@@ -21181,6 +21181,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057FD10": {
+    "name": "Unknown::initTailFields0057FD10",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __thiscall fn_0057FD10(void* self)",
+    "summary": "Calls ext_00696D90 on self, then zeroes six 32-bit fields at +0x1C, +0x20, +0x24, +0x2C, +0x30, +0x34 (skips +0x28); returns self.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x005817F0": {
     "name": "sub_005817F0",
     "signature": "DWORD* __thiscall fn_005817F0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -58645,6 +58652,12 @@
     "signature": "void __stdcall fn_007F44C0(void* self_ptr, void* arg1_ptr, const uint32_t* arg2_dwords)",
     "summary": "Projected Gauss-Seidel / LCP iterative solver step for MdtArthur::arthurSolver_sse",
     "lifted_path": "lifted/MdtArthur/arthurSolver_sse.cpp"
+  },
+  "0x007F4A60": {
+    "name": "addVec3Pair",
+    "signature": "void sub_007F4A60(float* dst, const float* src)",
+    "summary": "Adds two pairs of 3-element float vectors (at +0x00 and +0x10) from src into dst.",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
   "0x007F6690": {
     "name": "CallLookupResultWithOutParam",
