@@ -17282,6 +17282,13 @@
     "summary": "Evaluates PoseToolOptions::isCollisionEnabled() as a float (1.0f or 0.0f), throwing if null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004EA260": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions,bool\u003e::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType",
+    "signature": "void __stdcall fn_004EA260(void* a, void* b)",
+    "summary": "Stores the bool result of a sub-object getter (slot 3) into the target's byte at +0x06, then dispatches index 5; throws if the target pointer is null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004EA330": {
     "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, isGravityEnabled, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0\u003e",

@@ -9844,3 +9844,29 @@ void ExprParser_ReadWriteMethodType_vfunc_41(void** pSelf, void* arg1) {
     (void)ext_004E9D70();
 }
 } // namespace lift_004E9DE0
+
+// [0x004EA260]
+namespace lift_004EA260 {
+// Callee 0x004E9D70: fetches a global int32 receiver and dispatches index 5 to its indexed child.
+extern int32_t __cdecl ext_004E9D70(void);
+
+// @name ExprParser::ReadWriteMethodType<NMData::PoseToolOptions,bool>::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Stores the bool result of a sub-object getter (slot 3) into the target's byte at +0x06, then dispatches index 5; throws if the target pointer is null.
+// @field NMData::PoseToolOptions +0x06 bool field_0x06
+void __stdcall fn_004EA260(void* a, void* b) {
+    void* target = *reinterpret_cast<void**>(a);
+    if (target == nullptr) {
+        // Original raises a CRT exception here (DerivedException -> _CxxThrowException).
+        throw std::out_of_range("ExprParser::ReadWriteMethodType::vfunc_41: null target");
+    }
+
+    void* sub = lift_field<void*>(b, 4);
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    using GetFn = uint8_t (__thiscall*)(void*, void*);
+    uint8_t value = reinterpret_cast<GetFn>(vtbl[3])(sub, b);
+    lift_field<uint8_t>(target, 6) = value;
+
+    ext_004E9D70();
+}
+} // namespace lift_004EA260
