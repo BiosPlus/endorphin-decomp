@@ -222,3 +222,25 @@ int vfunc_18(void* self, void* arg) {
     return 0;
 }
 } // namespace lift_0054C0F0
+
+// [0x0054C1F0] ManagedDisplayList<RenderableList>::vfunc_1 (104 bytes)
+namespace lift_0054C1F0 {
+// @name ManagedDisplayList<RenderableList>::vfunc_1
+// @class ManagedDisplayList<RenderableList>
+// @summary Invokes virtual slot 1 (with one argument) on every element of the object pointer vector at +0x18..+0x1C.
+// @field ManagedDisplayList<RenderableList> +0x00 void* vptr
+// @field ManagedDisplayList<RenderableList> +0x18 void** field_0x18
+// @field ManagedDisplayList<RenderableList> +0x1C void** field_0x1C
+void fn_0054C1F0(void* self, void* arg) {
+    // Original is a thiscall with one stack argument (ret 4).
+    // Walk [begin, end) with end re-read each iteration, as the original does.
+    for (void** it = lift_field<void**>(self, 0x18);
+         it != lift_field<void**>(self, 0x1C);
+         ++it) {
+        void* obj = *it;
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        auto slot1 = reinterpret_cast<void (*)(void*, void*)>(vtbl[1]);
+        slot1(obj, arg);
+    }
+}
+} // namespace lift_0054C1F0

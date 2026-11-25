@@ -23567,6 +23567,13 @@
     "summary": "Calls vtable slot 18 on each entry in [field_0x18, field_0x1C); returns 1 on the first nonzero result, else 0.",
     "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
   },
+  "0x0054C1F0": {
+    "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_1",
+    "class": "ManagedDisplayList\u003cRenderableList\u003e",
+    "signature": "void fn_0054C1F0(void* self, void* arg)",
+    "summary": "Invokes virtual slot 1 (with one argument) on every element of the object pointer vector at +0x18..+0x1C.",
+    "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
+  },
   "0x0054C260": {
     "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_2",
     "class": "ManagedDisplayList\u003cRenderableList\u003e",
