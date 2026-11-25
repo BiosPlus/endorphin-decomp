@@ -1,0 +1,22 @@
+{
+  "va": "0x00611120",
+  "size": 20,
+  "orig_symbol": "sub_00611120",
+  "src_path": "src/leaf/decompiled_610000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_610000.cpp",
+  "name": "Unknown::getFloatSlot",
+  "class": "Unknown",
+  "signature": "float __thiscall fn_00611120(void* self, uint32_t index)",
+  "summary": "Maps an index to a slot via mapIndexToOffset and returns the float stored at this+0xA0 + 4*slot.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xA0",
+      "type": "float field_0xA0 (array of 5 float slots; element i at +0xA0 +",
+      "name": "4*i)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:18:03Z"
+}

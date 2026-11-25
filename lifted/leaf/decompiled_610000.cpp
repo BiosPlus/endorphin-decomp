@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_610000.cpp
 #include "lift_compat.h"
 #include <cstdint>
+#include <cstring>
 
 // [0x00611160] sub_00611160 (11 bytes)
 namespace lift_00611160 {
@@ -527,3 +528,21 @@ float fn_00611140(void* self, uint32_t index) {
     return lift_field<float>(self, 0xACu + 4u * slot);         // fld dword ptr [ecx + 4*eax + 0xac] ; ret 4
 }
 } // namespace lift_00611140
+
+// [0x00611120]
+namespace lift_00611120 {
+// Known callee 0x006110A0: mapIndexToOffset (Maps an unsigned index (0..3) to a slot index (0, 1, 1, 2) or 4 if out of range.)
+extern uint32_t __stdcall ext_006110A0(uint32_t index);
+
+// @name Unknown::getFloatSlot
+// @class Unknown
+// @summary Maps an index to a slot via mapIndexToOffset and returns the float stored at this+0xA0 + 4*slot.
+// @field Unknown +0xA0 float field_0xA0 (array of 5 float slots; element i at +0xA0 + 4*i)
+float __thiscall fn_00611120(void* self, uint32_t index) {
+    const uint32_t slot = ext_006110A0(index);
+    const uint8_t* base = static_cast<const uint8_t*>(self);
+    float value;
+    std::memcpy(&value, base + 0xA0 + static_cast<size_t>(slot) * 4, sizeof(value));
+    return value;
+}
+} // namespace lift_00611120
