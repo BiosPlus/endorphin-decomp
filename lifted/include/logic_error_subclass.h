@@ -8,6 +8,6 @@
 // Recovered field layout for logic_error_subclass:
 namespace lifted_layout {
 struct logic_error_subclass_Fields {
-    // +0x0   uint32_t                 vptr  (evidence: 0x00401E60)
+    // +0x0   uint32_t                 vptr  (evidence: 0x00401E60, 0x004030F0)
 };
 } // namespace lifted_layout

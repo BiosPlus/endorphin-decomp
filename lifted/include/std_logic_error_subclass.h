@@ -8,6 +8,6 @@
 // Recovered field layout for std::logic_error_subclass:
 namespace lifted_layout {
 struct std_logic_error_subclass_Fields {
-    // +0x0   uint32_t                 vptr  (evidence: 0x00401D80)
+    // +0x0   uint32_t                 vptr  (evidence: 0x00401D80, 0x004030F0)
 };
 } // namespace lifted_layout

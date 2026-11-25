@@ -8,6 +8,6 @@
 // Recovered field layout for DC:
 namespace lifted_layout {
 struct DC_Fields {
-    // +0x0   uint32_t*                vtable  (evidence: 0x0040FE10)
+    // +0x0   uint32_t*                vtable  (evidence: 0x004030F0, 0x0040FE10)
 };
 } // namespace lifted_layout

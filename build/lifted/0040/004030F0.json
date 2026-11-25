@@ -4,10 +4,485 @@
   "orig_symbol": "sub_004030F0",
   "src_path": "src/leaf/decompiled_400000.cpp",
   "lifted_path": "lifted/leaf/decompiled_400000.cpp",
-  "name": "releaseAviHandles",
-  "signature": "void fn_004030F0(void* self)",
-  "summary": "Releases the AVI get-frame object, stream, and file handles held at fixed offsets, clears them, calls AVIFileExit, and zeroes three trailing 32-bit fields.",
+  "name": "sub_00407830",
+  "class": "unknown",
+  "signature": "void fn_00407830(void* self)",
+  "summary": "Passes the field at self+0x20 to USER32!GetDC, then forwards the returned HDC to MFC80 ord_2367.",
   "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "heldPtr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vfptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "struct_0040F270",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xDC",
+      "type": "void*",
+      "name": "field_0xdc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xE4",
+      "type": "void*",
+      "name": "field_0xe4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "void*",
+      "name": "subobject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (pointer written from vtable call result; later passed to",
+      "name": "CriticalSectionLock::enter)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "uint32_t",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "uint8_t[]",
+      "name": "field_0x84"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA4",
+      "type": "uint32_t",
+      "name": "hwnd"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x54",
+      "type": "uint32_t",
+      "name": "field_0x54"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x58",
+      "type": "uint32_t",
+      "name": "field_0x58"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5C"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "field_0x60"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x68",
+      "type": "uint32_t",
+      "name": "field_0x68"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x6C",
+      "type": "uint32_t",
+      "name": "field_0x6C"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "CWnd",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "m_hWnd"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x46C",
+      "type": "void*",
+      "name": "aviFile"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x470",
+      "type": "void*",
+      "name": "aviStreamA"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x500",
+      "type": "void*",
+      "name": "aviStreamB"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C4",
+      "type": "uint32_t",
+      "name": "field_0x4C4"
+    },
+    {
+      "class": "CArray",
+      "offset": "+0x23C",
+      "type": "uint32_t*",
+      "name": "field_0x23C"
+    },
+    {
+      "class": "CArray",
+      "offset": "+0x240",
+      "type": "uint32_t*",
+      "name": "field_0x240"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x564",
+      "type": "int32_t",
+      "name": "field_0x564"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x568",
+      "type": "int32_t",
+      "name": "field_0x568"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x684",
+      "type": "int32_t",
+      "name": "field_0x684"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "hwnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "arg1_saved"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "arg2_saved"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "HDC",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x564",
+      "type": "DWORD",
+      "name": "recordsBegin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x568",
+      "type": "DWORD",
+      "name": "recordsEnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x684",
+      "type": "DWORD",
+      "name": "recordIndex"
+    },
+    {
+      "class": "StringArray",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "begin"
+    },
+    {
+      "class": "StringArray",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "end"
+    },
+    {
+      "class": "StringArray",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "capacity"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x360",
+      "type": "void*",
+      "name": "field_0x360"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C4",
+      "type": "void*",
+      "name": "field_0x3C4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA4",
+      "type": "HWND",
+      "name": "hwnd"
+    },
+    {
+      "class": "ExtRecord58",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExtRecord58",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExtRecord58",
+      "offset": "+0x20",
+      "type": "std::string",
+      "name": "field_0x20"
+    },
+    {
+      "class": "ExtRecord58",
+      "offset": "+0x3C",
+      "type": "std::string",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x20",
+      "type": "std::string",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x340",
+      "type": "void*",
+      "name": "field_0x340"
+    },
+    {
+      "class": "DIBException",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "DIBException",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "message"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "key"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "text0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "std::string",
+      "name": "text1"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "std::string",
+      "name": "text2"
+    },
+    {
+      "class": "std::logic_error",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vftable"
+    },
+    {
+      "class": "std::logic_error",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "message"
+    },
+    {
+      "class": "std::logic_error",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2D0",
+      "type": "std::string",
+      "name": "field_0x2d0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x308",
+      "type": "std::string",
+      "name": "field_0x308"
+    },
+    {
+      "class": "std::logic_error_subclass",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr"
+    },
+    {
+      "class": "logic_error_subclass",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr"
+    },
+    {
+      "class": "LogicErrorDerived",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x20",
+      "type": "std::string",
+      "name": "field_0x20"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x3C",
+      "type": "std::string",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "DC",
+      "offset": "+0x0",
+      "type": "uint32_t*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "int32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "std::string",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "int32_t",
+      "name": "field_0x3C"
+    },
     {
       "class": "Unknown",
       "offset": "+0x46C",
@@ -47,5 +522,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T03:38:01Z"
+  "lifted_at": "2026-11-25T03:38:07Z"
 }

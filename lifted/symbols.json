@@ -421,9 +421,10 @@
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x004030F0": {
-    "name": "releaseAviHandles",
-    "signature": "void fn_004030F0(void* self)",
-    "summary": "Releases the AVI get-frame object, stream, and file handles held at fixed offsets, clears them, calls AVIFileExit, and zeroes three trailing 32-bit fields.",
+    "name": "sub_00407830",
+    "class": "unknown",
+    "signature": "void fn_00407830(void* self)",
+    "summary": "Passes the field at self+0x20 to USER32!GetDC, then forwards the returned HDC to MFC80 ord_2367.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
   "0x00403290": {
