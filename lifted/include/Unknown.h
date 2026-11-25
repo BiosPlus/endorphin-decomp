@@ -311,7 +311,7 @@ struct Unknown_Fields {
     // +0x20  BYTE field_0x20 (base of byte array indexed by first argument)  (evidence: 0x0071E660) // CONFLICT: multiple definitions at +0x20
     // +0x20  DWORD                    field_0x20  (evidence: 0x0041FEA0, 0x00465EF0, 0x00538FA0, 0x00642010, 0x006423D0, 0x0078C230, 0x0078C3A0) // CONFLICT: multiple definitions at +0x20
     // +0x20  HMODULE                  field_0x20  (evidence: 0x00441020, 0x004474D0, 0x0044B6A0) // CONFLICT: multiple definitions at +0x20
-    // +0x20  HWND                     field_0x20  (evidence: 0x00407850, 0x0040A910, 0x00410310, 0x00416B20, 0x0043CD80, 0x004586C0, 0x00458DF0) // CONFLICT: multiple definitions at +0x20
+    // +0x20  HWND                     field_0x20  (evidence: 0x00407850, 0x0040A910, 0x00410310, 0x00415540, 0x00416B20, 0x0043CD80, 0x004586C0, 0x00458DF0) // CONFLICT: multiple definitions at +0x20
     // +0x20  double                   field_0x20  (evidence: 0x00507F50, 0x00507F60, 0x0050E350, 0x0050F970) // CONFLICT: multiple definitions at +0x20
     // +0x20  float                    field_0x20  (evidence: 0x004B10A0, 0x004B10D0, 0x004B1100, 0x004B1130, 0x004B6CC0, 0x004B6CF0, 0x004CCC30, 0x00538CF0, 0x00549A10, 0x005ACC50, 0x005ACEE0, 0x007C9ED0, 0x007CCCD0) // CONFLICT: multiple definitions at +0x20
     // +0x20  std::uint32_t            field_0x20  (evidence: 0x00519CB0) // CONFLICT: multiple definitions at +0x20

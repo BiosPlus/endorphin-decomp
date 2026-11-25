@@ -1188,6 +1188,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004153D0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00415540": {
+    "name": "Unknown::NotifyWindowPair",
+    "class": "Unknown",
+    "signature": "void fn_00415540(void* self)",
+    "summary": "Calls fn_006A5EA8, then sends message 0xB8 to the window at +0x20; if that returns nonzero, sends 0xB9 to the same window and calls sub_00415430(self).",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00415580": {
     "name": "sub_00415580",
     "signature": "extern \"C\" const char* __cdecl fn_00415580()",

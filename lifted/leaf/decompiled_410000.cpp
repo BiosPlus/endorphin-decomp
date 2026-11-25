@@ -995,3 +995,30 @@ char* fn_004155A0(LPCWSTR src, LPSTR dst) {
     return dst;
 }
 } // namespace lift_004155A0
+
+// [0x00415540] sub_00415540 (61 bytes)
+namespace lift_00415540 {
+extern void fn_006A5EA8(void);
+extern uint32_t mem_00925694;
+extern void sub_00415430(void* self);
+
+// @name Unknown::NotifyWindowPair
+// @class Unknown
+// @summary Calls fn_006A5EA8, then sends message 0xB8 to the window at +0x20; if that returns nonzero, sends 0xB9 to the same window and calls sub_00415430(self).
+// @field Unknown +0x20 HWND field_0x20
+void fn_00415540(void* self) {
+    using SendMessageFn = LRESULT(__stdcall*)(HWND, UINT, WPARAM, LPARAM);
+    // mem_00925694 is the IAT slot for USER32!SendMessageA.
+    auto send = reinterpret_cast<SendMessageFn>(static_cast<uintptr_t>(mem_00925694));
+
+    fn_006A5EA8();
+
+    HWND hwnd = lift_field<HWND>(self, 0x20);
+    LRESULT r = send(hwnd, 0xB8, 0, 0);
+    if (r != 0) {
+        hwnd = lift_field<HWND>(self, 0x20);
+        send(hwnd, 0xB9, 0, 0);
+        sub_00415430(self);
+    }
+}
+} // namespace lift_00415540
