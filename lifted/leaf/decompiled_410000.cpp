@@ -1459,3 +1459,32 @@ void* __thiscall fn_0041CF50(void* self, void* other) {
     return self;
 }
 } // namespace lift_0041CF50
+
+// [0x0041C820] sub_0041C820 (86 bytes)
+namespace lift_0041C820 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762).
+// Allocator: called cdecl with a byte count (0x10 here); returns NULL on failure.
+extern void* __cdecl ext_006A5C62(size_t size);
+
+// @name Unknown::ctorAllocNode_0041C820
+// @class Unknown
+// @summary Sets the vtable word, allocates a 0x10-byte node (zeroing its +0x4/+0x8/+0xC words) and stores it at +0x04 (or NULL if allocation fails); returns this.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+void* fn_0041C820(void* self) {
+    // Original MSVC SEH frame (fs:[0] push/pop) is compiler scaffolding and is omitted.
+    lift_field<uint32_t>(self, 0x00) = 0x0092DB90u;
+    lift_field<uint32_t>(self, 0x08) = 0u;
+
+    void* node = ext_006A5C62(0x10);
+    if (node != nullptr) {
+        lift_field<uint32_t>(node, 0x04) = 0u;
+        lift_field<uint32_t>(node, 0x08) = 0u;
+        lift_field<uint32_t>(node, 0x0C) = 0u;
+    }
+
+    lift_field<void*>(self, 0x04) = node;
+    return self;
+}
+} // namespace lift_0041C820
