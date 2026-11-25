@@ -346,3 +346,33 @@ void* fn_006ACE40(void* self, void* out, void* in) {
     return out;
 }
 } // namespace lift_006ACE40
+
+// [0x006AF840]
+namespace lift_006AF840 {
+// @name hasAnyFlaggedItem
+// @summary Checks whether any element in the array at +0x54/+0x58 satisfies sub_006AD090
+// @field unknown +0x54 uint32_t field_0x54
+// @field unknown +0x58 int32_t field_0x58
+
+
+extern uint8_t __thiscall ext_006AD090(uint32_t self);
+extern void ext_006A60EE(void);
+
+extern uint32_t mem_read32(uint32_t addr);
+
+uint8_t __thiscall fn_006AF840(uint32_t self) {
+    int32_t count = static_cast<int32_t>(mem_read32(self + 0x58));
+    for (int32_t i = 0; i < count; ++i) {
+        if (i < 0 || i >= static_cast<int32_t>(mem_read32(self + 0x58))) {
+            ext_006A60EE();
+            return 0;
+        }
+        uint32_t arr = mem_read32(self + 0x54);
+        uint32_t item = mem_read32(arr + static_cast<uint32_t>(i) * 4u);
+        if (ext_006AD090(item) != 0) {
+            return 1;
+        }
+    }
+    return 0;
+}
+} // namespace lift_006AF840
