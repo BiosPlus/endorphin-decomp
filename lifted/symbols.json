@@ -12177,6 +12177,12 @@
     "summary": "Copies the input string, passes it to sub_004C2790, then invokes vtable+0x5C with it.",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x004C4390": {
+    "name": "ResetStringAndFlag",
+    "signature": "void fn_004C4390(void* self)",
+    "summary": "Re-initializes a std::string at offset 0, clears it, and zeroes the bool flag at +0x1c.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C4D80": {
     "name": "Vec3::Scale",
     "class": "Vec3",

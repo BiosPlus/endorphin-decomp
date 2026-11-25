@@ -1,0 +1,13 @@
+{
+  "va": "0x004C4390",
+  "size": 70,
+  "orig_symbol": "sub_004C4390",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "ResetStringAndFlag",
+  "signature": "void fn_004C4390(void* self)",
+  "summary": "Re-initializes a std::string at offset 0, clears it, and zeroes the bool flag at +0x1c.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:24:44Z"
+}

@@ -180,3 +180,19 @@ extern uint8_t* __cdecl fn_004C72D0(uint8_t* first, uint8_t* last, uint8_t* d_la
 }
 } // namespace lift_004C72D0
 } // namespace lift_004C72D0
+
+// [0x004C4390]
+namespace lift_004C4390 {
+// @name ResetStringAndFlag
+// @summary Re-initializes a std::string at offset 0, clears it, and zeroes the bool flag at +0x1c.
+// @field field_0x00 std::string str
+// @field field_0x1C bool flag
+void fn_004C4390(void* self) {
+    // Construct the string in place (original: MSVCP80 basic_string ctor), then clear it
+    // (original: basic_string::clear).
+    auto* str = new (self) std::string();
+    str->clear();
+    // Original: mov byte ptr [esi + 0x1c], al  (al == 0)
+    lift_field<uint8_t>(self, 0x1C) = 0;
+}
+} // namespace lift_004C4390
