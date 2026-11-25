@@ -20,6 +20,7 @@ void* fn_0052EFC0() {
     return ext_0053B6B0(obj);
 }
 } // namespace lift_0052EFC0
+#include <cstdint>
 
 // [0x0052F020] sub_0052F020 (86 bytes)
 namespace lift_0052F020 {
@@ -374,3 +375,24 @@ void fn_00522220(uint8_t* first, uint8_t* last, const uint8_t* src) {
     }
 }
 } // namespace lift_00522220
+
+// [0x00522530]
+namespace lift_00522530 {
+// @name sub_00522530_copyRangeBackward
+// @summary Copies a backward range of 0x28-byte records (ending at last) into dst_end, returning the new begin of the destination.
+// @field UnknownRecord +0x04 uint32_t field_0x04
+// @field UnknownRecord +0x08 uint32_t field_0x08
+// @field UnknownRecord +0x0C std::string field_0x0C
+uint8_t* fn_00522530(uint8_t* first, uint8_t* last, uint8_t* dst_end) {
+    uint8_t* src = last;
+    uint8_t* dst = dst_end;
+    while (src != first) {
+        src -= 0x28;
+        dst -= 0x28;
+        lift_field<uint32_t>(dst, 0x04) = lift_field<uint32_t>(src, 0x04);
+        lift_field<uint32_t>(dst, 0x08) = lift_field<uint32_t>(src, 0x08);
+        lift_field<std::string>(dst, 0x0C) = lift_field<std::string>(src, 0x0C);
+    }
+    return dst;
+}
+} // namespace lift_00522530
