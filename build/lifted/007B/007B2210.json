@@ -1,0 +1,14 @@
+{
+  "va": "0x007B2210",
+  "size": 16,
+  "orig_symbol": "sub_007B2210",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "Unknown::initAndReturnArg",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* fn_007B2210(void* arg)",
+  "summary": "Forwards its single stack argument to ext_006BA780 (Unknown::InitAndReturnSelf) and returns that callee's result (stdcall, 4 bytes of args).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:41:13Z"
+}

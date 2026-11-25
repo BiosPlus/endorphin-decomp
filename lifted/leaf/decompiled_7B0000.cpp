@@ -1269,3 +1269,15 @@ extern int __cdecl fn_007BEDE0(void* self) {
     return 1;
 }
 } // namespace lift_007BEDE0
+
+// [0x007B2210] sub_007B2210 (16 bytes)
+namespace lift_007B2210 {
+// Known callee 0x006BA780: Unknown::InitAndReturnSelf (Zero-inits the object's fields, sets its vtable, and returns the same object pointer.)
+extern void* ext_006BA780(void* self);
+
+// @name Unknown::initAndReturnArg
+// @summary Forwards its single stack argument to ext_006BA780 (Unknown::InitAndReturnSelf) and returns that callee's result (stdcall, 4 bytes of args).
+extern void* fn_007B2210(void* arg) {
+    return ext_006BA780(arg);
+}
+} // namespace lift_007B2210

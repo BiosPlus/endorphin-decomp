@@ -65697,6 +65697,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
   },
+  "0x007B2210": {
+    "name": "Unknown::initAndReturnArg",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* fn_007B2210(void* arg)",
+    "summary": "Forwards its single stack argument to ext_006BA780 (Unknown::InitAndReturnSelf) and returns that callee's result (stdcall, 4 bytes of args).",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B2290": {
     "name": "sub_007B2290",
     "signature": "extern \"C\" void* __fastcall fn_007B2290(void* self, int edx_unused, unsigned int flags)",
