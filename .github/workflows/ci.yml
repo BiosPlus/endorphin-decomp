@@ -22,9 +22,6 @@ jobs:
   windows-ci:
     name: MSVC 2005 Parity & Dashboard (`windows-latest`)
     runs-on: windows-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
@@ -120,9 +117,17 @@ jobs:
         with:
           path: docs/
 
+  deploy-pages:
+    name: Deploy Decompilation Dashboard
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: windows-ci
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: actions/deploy-pages@v5
 
   lift-ci:

@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"os/exec"
+	"path/filepath"
 	"regexp"
 	"strconv"
 	"strings"
@@ -257,16 +259,23 @@ func findNativeCompiler() (string, error) {
 	return "", fmt.Errorf("neither g++ nor clang++ found in PATH")
 }
 
-// syntaxCheckCpp compiles cppPath with -std=c++20 -c -o /dev/null -Wall -Wno-unused.
+// syntaxCheckCpp compiles cppPath with -std=c++20 -c -Wall -Wno-unused into a
+// temporary object file so it works identically on Unix and Windows runners.
 func syntaxCheckCpp(cppPath string) (string, error) {
 	cc, err := findNativeCompiler()
 	if err != nil {
 		return "", err
 	}
+	tmpDir, err := os.MkdirTemp("", "liftwork-compile-*")
+	if err != nil {
+		return "", err
+	}
+	defer os.RemoveAll(tmpDir)
+	objPath := filepath.Join(tmpDir, "check.o")
 	args := []string{
 		"-std=c++20",
 		"-c",
-		"-o", "/dev/null",
+		"-o", objPath,
 		"-Wall",
 		"-Wno-unused",
 		"-Ilifted/include",
