@@ -1361,3 +1361,29 @@ void __thiscall fn_00527AC0(void* self, void* arg1, void* arg2) {
     ext_00678D70(self, 1);
 }
 } // namespace lift_00527AC0
+
+// [0x0052FC10]
+namespace lift_0052FC10 {
+// @name Unknown::initDerivedWithSubobject_0052FC10
+// @class Unknown
+// @summary Base-initializes self, installs two vtable pointers (+0x00, +0x14), and runs a reset on the sub-object at +0x44; returns self.
+// @field Unknown +0x00 uint32_t vptr_primary
+// @field Unknown +0x14 uint32_t vptr_secondary
+// @field Unknown +0x44 uint8_t field_0x44
+
+extern void* ext_0053B240(void* self);
+extern void ext_00537E90(void* self);
+
+void* fn_0052FC10(void* self) {
+    // The original wraps this in an MSVC SEH frame (fs:[0] push/restore). The
+    // frame only exists for exception unwinding; its state slot is not part of
+    // the logic, so it is omitted here.
+    ext_0053B240(self);
+
+    lift_field<uint32_t>(self, 0x00) = 0x009541B4u;
+    lift_field<uint32_t>(self, 0x14) = 0x009541ACu;
+
+    ext_00537E90(static_cast<uint8_t*>(self) + 0x44);
+    return self;
+}
+} // namespace lift_0052FC10

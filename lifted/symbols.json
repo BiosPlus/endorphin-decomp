@@ -21255,6 +21255,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0052FB80 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0052FC10": {
+    "name": "Unknown::initDerivedWithSubobject_0052FC10",
+    "class": "Unknown",
+    "signature": "void* fn_0052FC10(void* self)",
+    "summary": "Base-initializes self, installs two vtable pointers (+0x00, +0x14), and runs a reset on the sub-object at +0x44; returns self.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052FC70": {
     "name": "Primitives::TwistLimit::scalar_deleting_dtor",
     "class": "Primitives::TwistLimit",
