@@ -1183,3 +1183,34 @@ void __thiscall sub_006E87B0(void* self, double val) {
     *reinterpret_cast<double*>(ptr + 0x70) = clamped;
 }
 } // namespace lift_006E87B0
+
+// [0x006E99C0]
+namespace lift_006E99C0 {
+// @name ConstructObject_006E99C0
+// @class Unknown
+// @summary Constructor: sets vtable 0x00993D08, runs base ctor sub_0077F9E0 with the first stack argument, initializes an embedded 0x10-element array at +0x0C, and points +0x20 at +0x1C. Returns this.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x0C uint32_t embedded_array_base
+// @field Unknown +0x20 uint32_t embedded_array_data_ptr
+
+uint32_t __thiscall ext_0077F9E0(uint32_t self, uint32_t arg1);
+uint32_t __thiscall ext_006D2130(uint32_t self, int32_t arg1, uint32_t arg2);
+
+uint32_t __thiscall sub_006E99C0(uint32_t self, uint32_t arg1) {
+    constexpr uint32_t kVtable = 0x00993D08u;
+
+    ext_0077F9E0(self, arg1);
+
+    uint32_t embedded = self + 0x0Cu;
+    ext_006D2130(embedded, 0x10, 4);
+
+    // [embedded + 0x14] = embedded + 0x10  (i.e. this+0x20 = this+0x1C)
+    lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(embedded)), 0x14) =
+        embedded + 0x10u;
+
+    // [this] = vtable
+    lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(self)), 0x00) = kVtable;
+
+    return self;
+}
+} // namespace lift_006E99C0

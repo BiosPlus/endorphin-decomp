@@ -55569,6 +55569,13 @@
     "summary": "Getter returning int32_t field at offset +0x64.",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E99C0": {
+    "name": "ConstructObject_006E99C0",
+    "class": "Unknown",
+    "signature": "uint32_t __thiscall sub_006E99C0(uint32_t self, uint32_t arg1)",
+    "summary": "Constructor: sets vtable 0x00993D08, runs base ctor sub_0077F9E0 with the first stack argument, initializes an embedded 0x10-element array at +0x0C, and points +0x20 at +0x1C. Returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E9A20": {
     "name": "sub_006E9A20",
     "signature": "extern \"C\" void* __fastcall fn_006E9A20(void* self, int edx_unused, unsigned int flags)",
