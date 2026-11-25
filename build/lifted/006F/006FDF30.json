@@ -1,0 +1,28 @@
+{
+  "va": "0x006FDF30",
+  "size": 64,
+  "orig_symbol": "sub_006FDF30",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::CountMatchingByIndex",
+  "class": "Unknown",
+  "signature": "T load_at(const void* base, std::size_t off)",
+  "summary": "Counts entries of the pointer array at +0x20 (length at +0x10) for which GetDwordByIndex(entry, index) is nonzero.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "DWORD*",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:07:13Z"
+}

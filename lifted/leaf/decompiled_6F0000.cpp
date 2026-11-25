@@ -1306,3 +1306,41 @@ DWORD fn_006FBD30(void* self, DWORD index) {
     return ext_006FBC50(self, 0);
 }
 } // namespace lift_006FBD30
+
+// [0x006FDF30] sub_006FDF30 (64 bytes)
+namespace lift_006FDF30 {
+// Known callee 0x006FC950: GetDwordByIndex (Returns the DWORD at this+0x04..+0x18 (step 4) selected by a 1-based index; returns 0 for index outside 1..6.)
+extern DWORD ext_006FC950(void* self, DWORD index);
+
+namespace {
+
+template <typename T>
+T load_at(const void* base, std::size_t off) {
+    T value{};
+    std::memcpy(&value, static_cast<const unsigned char*>(base) + off, sizeof(T));
+    return value;
+}
+
+} // namespace
+
+// @name Unknown::CountMatchingByIndex
+// @class Unknown
+// @summary Counts entries of the pointer array at +0x20 (length at +0x10) for which GetDwordByIndex(entry, index) is nonzero.
+// @field Unknown +0x10 int32_t field_0x10
+// @field Unknown +0x20 DWORD* field_0x20
+DWORD fn_006FDF30(void* self, DWORD index) {
+    const auto count = load_at<int32_t>(self, 0x10);
+    DWORD matches = 0;
+
+    for (int32_t i = 0; i < count; ++i) {
+        const auto array = static_cast<uintptr_t>(load_at<DWORD>(self, 0x20));
+        const auto entry = load_at<DWORD>(reinterpret_cast<const void*>(array),
+                                          static_cast<std::size_t>(i) * sizeof(DWORD));
+        if (ext_006FC950(reinterpret_cast<void*>(static_cast<uintptr_t>(entry)), index) != 0) {
+            ++matches;
+        }
+    }
+
+    return matches;
+}
+} // namespace lift_006FDF30
