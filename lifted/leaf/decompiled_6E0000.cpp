@@ -974,3 +974,28 @@ uint32_t sub_006E7078(uint32_t index) {
     }
 }
 } // namespace lift_006E7078
+
+// [0x006E7150] sub_006E7150 (64 bytes)
+namespace lift_006E7150 {
+// Known callee 0x00711B50: Unknown::SetDoubleIfChanged (Writes a double into the subobject's +0x20 slot when it differs (ordered compare) from the argument, then calls virtual slot 15 on self; always returns true.)
+extern bool ext_00711B50(void* self, double value);
+
+// @name Unknown::SetSubobjectDoubleAndForward
+// @class Unknown
+// @summary Stores a double into the +0xa8 slot of the subobject at self+0x08 (if present), then forwards the value to Unknown::SetDoubleIfChanged on the object at self+0x00 (if present).
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x08 void* field_0x08
+void fn_006E7150(void* self, double value) {
+    // thiscall: self in ecx, double passed on stack, callee cleans up (ret 8).
+    void* sub = lift_field<void*>(self, 0x08);
+    if (sub != nullptr) {
+        // Subobject field at +0xa8 (owning class not recovered; stored as raw 8-byte double).
+        lift_field<double>(sub, 0xa8) = value;
+    }
+
+    void* obj = lift_field<void*>(self, 0x00);
+    if (obj != nullptr) {
+        ext_00711B50(obj, value);
+    }
+}
+} // namespace lift_006E7150

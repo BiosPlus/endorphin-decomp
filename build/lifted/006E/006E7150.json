@@ -1,0 +1,28 @@
+{
+  "va": "0x006E7150",
+  "size": 64,
+  "orig_symbol": "sub_006E7150",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::SetSubobjectDoubleAndForward",
+  "class": "Unknown",
+  "signature": "void fn_006E7150(void* self, double value)",
+  "summary": "Stores a double into the +0xa8 slot of the subobject at self+0x08 (if present), then forwards the value to Unknown::SetDoubleIfChanged on the object at self+0x00 (if present).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:53:01Z"
+}

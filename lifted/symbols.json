@@ -49593,6 +49593,13 @@
     "summary": "If self-\u003e+0x00 is nonzero, tail-returns ext_00711BA0(self); otherwise returns *(double*)(self-\u003e+0x08 + 0xA0), or -_HUGE if that pointer is null.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E7150": {
+    "name": "Unknown::SetSubobjectDoubleAndForward",
+    "class": "Unknown",
+    "signature": "void fn_006E7150(void* self, double value)",
+    "summary": "Stores a double into the +0xa8 slot of the subobject at self+0x08 (if present), then forwards the value to Unknown::SetDoubleIfChanged on the object at self+0x00 (if present).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E7190": {
     "name": "Unknown::getDoubleOrHuge",
     "class": "Unknown",
