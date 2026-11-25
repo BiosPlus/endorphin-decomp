@@ -2224,6 +2224,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
     "lifted_path": "lifted/Properties/GWCPropertiesControlDriver.cpp"
   },
+  "0x0041E070": {
+    "name": "sub_0041E070",
+    "signature": "void* __thiscall sub_0041E070(void* self)",
+    "summary": "Constructor that zeroes fields, sets vtable 0x0092DF58, and calls sub_0041DCF0.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041FC60": {
     "name": "HotkeyDialog::vfunc_0",
     "class": "HotkeyDialog",

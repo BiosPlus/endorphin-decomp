@@ -1731,3 +1731,38 @@ void sub_0041DD40(uint32_t begin, uint32_t end) {
     }
 }
 } // namespace lift_0041DD40
+
+// [0x0041E070]
+namespace lift_0041E070 {
+// @name sub_0041E070
+// @summary Constructor that zeroes fields, sets vtable 0x0092DF58, and calls sub_0041DCF0.
+// @field unknown +0x00 uint32_t vtable
+// @field unknown +0x04 uint32_t field_0x04
+// @field unknown +0x08 uint32_t field_0x08
+// @field unknown +0x0c uint32_t field_0x0c
+// @field unknown +0x14 uint32_t field_0x14
+// @field unknown +0x18 uint32_t field_0x18
+// @field unknown +0x20 uint32_t field_0x20
+// @field unknown +0x24 uint32_t field_0x24
+// @field unknown +0x28 uint32_t field_0x28
+// @field unknown +0x2c uint8_t field_0x2c
+
+extern void mem_write32(void* base, int32_t offset, uint32_t val);
+extern void mem_write8(void* base, int32_t offset, uint8_t val);
+extern void __thiscall ext_0041DCF0(void* self);
+
+void* __thiscall sub_0041E070(void* self) {
+    mem_write32(self, 0x00, 0x0092DF58u);
+    mem_write32(self, 0x04, 0);
+    mem_write32(self, 0x08, 0);
+    mem_write32(self, 0x0C, 0);
+    mem_write32(self, 0x14, 0);
+    mem_write32(self, 0x18, 0);
+    mem_write32(self, 0x20, 0);
+    mem_write32(self, 0x24, 0);
+    mem_write32(self, 0x28, 0);
+    mem_write8(self, 0x2C, 0);
+    ext_0041DCF0(self);
+    return self;
+}
+} // namespace lift_0041E070
