@@ -252,3 +252,17 @@ void fn_00810C30(void* self) {
     }
 }
 } // namespace lift_00810C30
+
+// [0x008101C0]
+namespace lift_008101C0 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name getFlagBit4
+// @summary Reads bit 4 of a 32-bit flags field via a two-level pointer dereference at offset +0x04.
+// @field Object +0x04 uint32_t field_0x04
+uint32_t sub_008101C0(uint32_t arg0) {
+    uint32_t ecx = mem_read32(arg0 + 0x4);
+    uint32_t eax = mem_read32(ecx + 0x4);
+    return (eax >> 4) & 1u;
+}
+} // namespace lift_008101C0

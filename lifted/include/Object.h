@@ -21,7 +21,7 @@ struct Object_Fields {
     // +0x0   void*                    vtable  (evidence: 0x0042FD30, 0x005F35C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtable  (evidence: 0x0040FD60, 0x005435A0, 0x007558B0) // CONFLICT: multiple definitions at +0x0
     // +0x4   int32_t                  field_0x04  (evidence: 0x00533F10) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00414880, 0x00419990, 0x00602EC0, 0x007D4800, 0x007D48A0, 0x007D8470, 0x007DEC80) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00414880, 0x00419990, 0x00602EC0, 0x007D4800, 0x007D48A0, 0x007D8470, 0x007DEC80, 0x008101C0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x00810410) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (flags dword at target+0x4)  (evidence: 0x00810410) // CONFLICT: multiple definitions at +0x4
     // +0x8   float                    field_0x08  (evidence: 0x00533FB0) // CONFLICT: multiple definitions at +0x8

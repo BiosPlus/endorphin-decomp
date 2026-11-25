@@ -58712,6 +58712,12 @@
     "summary": "Returns bit 6 (0x40) of the dword at +0x04 of the object referenced by self+0x04.",
     "lifted_path": "lifted/leaf/decompiled_810000.cpp"
   },
+  "0x008101C0": {
+    "name": "getFlagBit4",
+    "signature": "uint32_t sub_008101C0(uint32_t arg0)",
+    "summary": "Reads bit 4 of a 32-bit flags field via a two-level pointer dereference at offset +0x04.",
+    "lifted_path": "lifted/leaf/decompiled_810000.cpp"
+  },
   "0x00810200": {
     "name": "Unknown::QueryLinkedFlagBit3",
     "class": "Unknown",
