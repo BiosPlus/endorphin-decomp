@@ -7567,6 +7567,12 @@
     "summary": "One-time guarded initializer for the static object at mem_00AD8364; runs the constructor helper once, then installs vtable 0x0093AEEC and returns the object's address.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046F520": {
+    "name": "initStaticObjectAD836C_0046F520",
+    "signature": "void* fn_0046F520()",
+    "summary": "One-time guarded initializer for the static object at mem_00AD836C: runs the constructor helper once, installs vtable 0x0093B09C, and returns the object's address.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046F580": {
     "name": "ConstructOnce_0046F580",
     "signature": "DWORD fn_0046F580()",

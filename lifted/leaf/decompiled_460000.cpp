@@ -1545,3 +1545,24 @@ void fn_0046F620(DWORD* dst, DWORD value) {
     dst[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
 }
 } // namespace lift_0046F620
+
+// [0x0046F520] sub_0046F520 (87 bytes)
+namespace lift_0046F520 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AD8370;
+extern DWORD mem_00AD836C;
+
+// @name initStaticObjectAD836C_0046F520
+// @summary One-time guarded initializer for the static object at mem_00AD836C: runs the constructor helper once, installs vtable 0x0093B09C, and returns the object's address.
+// @field StaticObjectAD836C +0x00 DWORD field_0x00
+void* fn_0046F520() {
+    // Guard bit (bit 0 of mem_00AD8370) ensures one-time initialization.
+    if ((mem_00AD8370 & 1u) == 0) {
+        mem_00AD8370 |= 1u;
+        ext_0067A670(&mem_00AD836C, 0);
+        mem_00AD836C = 0x0093B09Cu;
+    }
+    return &mem_00AD836C;
+}
+} // namespace lift_0046F520
