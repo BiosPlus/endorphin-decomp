@@ -1053,3 +1053,30 @@ void* fn_004689B0(void* self, void* out) {
     return out;
 }
 } // namespace lift_004689B0
+
+// [0x00460540] sub_00460540 (76 bytes)
+namespace lift_00460540 {
+// Known callee 0x006A5E5A: thunk_MFC80_ord_4125 (IAT jump thunk forwarding to MFC80!ord_4125.)
+extern void ext_006A5E5A();
+extern int mem_00925690;
+
+// @name Unknown::PlaceWindowBottomAtPoint_00460540
+// @class Unknown
+// @summary Reads the window rect of the handle at +0x20 and moves the window so its bottom-left corner sits at the given point (x = pt.x, y = pt.y - height), keeping its size.
+// @field Unknown +0x20 HWND hwnd
+void fn_00460540(void* self, const POINT* pt) {
+    HWND hwnd = lift_field<HWND>(self, 0x20);
+
+    RECT rc{};
+    using GetWindowRectFn = int(*)(HWND, RECT*);
+    reinterpret_cast<GetWindowRectFn>(static_cast<uintptr_t>(mem_00925690))(hwnd, &rc);
+
+    const LONG width = rc.right - rc.left;
+    const LONG height = rc.bottom - rc.top;
+    const LONG x = pt->x;
+    const LONG y = pt->y - height;
+
+    using MoveWindowFn = void(*)(void*, int, int, int, int, BOOL);
+    reinterpret_cast<MoveWindowFn>(&ext_006A5E5A)(self, x, y, width, height, TRUE);
+}
+} // namespace lift_00460540

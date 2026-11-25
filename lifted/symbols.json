@@ -5772,6 +5772,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xB4 and tail-calls sub_0045DD20.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00460540": {
+    "name": "Unknown::PlaceWindowBottomAtPoint_00460540",
+    "class": "Unknown",
+    "signature": "void fn_00460540(void* self, const POINT* pt)",
+    "summary": "Reads the window rect of the handle at +0x20 and moves the window so its bottom-left corner sits at the given point (x = pt.x, y = pt.y - height), keeping its size.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x004605E0": {
     "name": "sub_004605E0",
     "signature": "extern \"C\" void* __cdecl fn_004605E0(void)",
