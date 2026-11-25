@@ -1095,3 +1095,20 @@ void fn_00557280(void* self) {
     dtor(base + 0x0C);
 }
 } // namespace lift_00557280
+
+// [0x00551A20]
+namespace lift_00551A20 {
+// @name sub_00551A20_dtor
+// @summary Destroys a std::string member at +0xf8 and calls base/member destructor ext_005478F0.
+// @field Self +0xf8 std::string field_0xf8
+
+
+extern void ext_005478F0(void* self);
+extern uint32_t mem_00924FF4;
+
+void fn_00551A20(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    reinterpret_cast<void (*)(void*)>(static_cast<uintptr_t>(mem_00924FF4))(base + 0xf8);
+    ext_005478F0(self);
+}
+} // namespace lift_00551A20

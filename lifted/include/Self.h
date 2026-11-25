@@ -42,6 +42,7 @@ struct Self_Fields {
     // +0xD0  uint32_t*                field_0xd0  (evidence: 0x00707960)
     // +0xF0  uint32_t                 field_0xF0  (evidence: 0x00704DA0) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  uint32_t                 field_0xf0  (evidence: 0x00704EB0) // CONFLICT: multiple definitions at +0xF0
+    // +0xF8  std::string              field_0xf8  (evidence: 0x00551A20)
     // +0x114 void*                    field_114  (evidence: 0x00630580)
     // +0x11C int32_t                  field_0x11c  (evidence: 0x004329A0)
     // +0x150 uint32_t                 field_0x150  (evidence: 0x00687230, 0x00687280)

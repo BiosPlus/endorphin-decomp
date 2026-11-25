@@ -1,0 +1,21 @@
+{
+  "va": "0x00551A20",
+  "size": 80,
+  "orig_symbol": "sub_00551A20",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "sub_00551A20_dtor",
+  "signature": "void fn_00551A20(void* self)",
+  "summary": "Destroys a std::string member at +0xf8 and calls base/member destructor ext_005478F0.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0xF8",
+      "type": "std::string",
+      "name": "field_0xf8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:49:34Z"
+}

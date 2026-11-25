@@ -20994,6 +20994,12 @@
     "summary": "Forwards its single stack argument unchanged to ext_005480D0 and returns (callee pops 4 bytes).",
     "lifted_path": "lifted/NMCamera/Orthogonal.cpp"
   },
+  "0x00551A20": {
+    "name": "sub_00551A20_dtor",
+    "signature": "void fn_00551A20(void* self)",
+    "summary": "Destroys a std::string member at +0xf8 and calls base/member destructor ext_005478F0.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00551A70": {
     "name": "NMCamera::Orthogonal::vfunc_1",
     "class": "NMCamera::Orthogonal",
@@ -22001,6 +22007,12 @@
     "name": "readUntilNewline",
     "signature": "bool __stdcall sub_00570380(void* stream)",
     "summary": "Reads one char at a time from the istream until '\\n' is consumed (returns true) or the stream fails (returns false).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x005703C0": {
+    "name": "readTokenFromLine",
+    "signature": "bool __thiscall fn_005703C0(void* self, void* stream)",
+    "summary": "Skips horizontal whitespace on an input stream and reads a string token into this+0x46c, returning false on newline.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
   "0x00570410": {
