@@ -233,3 +233,24 @@ void fn_0060A340(uint32_t* a, uint32_t* b, uint32_t* c) {
     }
 }
 } // namespace lift_0060A340
+
+// [0x006096D0] sub_006096D0 (91 bytes)
+namespace lift_006096D0 {
+// Known callee 0x0065F440: sub_0065F440 (Stores address of mem_0093BF24 into field at offset +0x0.)
+extern void ext_0065F440(void* self);
+
+// @name Unknown::resetStringFieldsAndInit
+// @class Unknown
+// @summary Clears the two std::string members at +0x20 and +0x04, then runs the 0x0065F440 initializer on self.
+// @field Unknown +0x04 std::string field_0x04
+// @field Unknown +0x20 std::string field_0x20
+void fn_006096D0(void* self) {
+    // The original MSVC code tears down the two string members via their
+    // destructor thunk (through the IAT slot at 0x00924FF4) and then calls
+    // 0x0065F440. Portable form: reset each string to empty in place (same
+    // observable state as the destroyed string being left empty), then call the initializer.
+    lift_field<std::string>(self, 0x20) = std::string();
+    lift_field<std::string>(self, 0x04) = std::string();
+    ext_0065F440(self);
+}
+} // namespace lift_006096D0

@@ -32056,6 +32056,13 @@
     "summary": "Lexicographically compares two std::string fields at +0x04 and +0x20.",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x006096D0": {
+    "name": "Unknown::resetStringFieldsAndInit",
+    "class": "Unknown",
+    "signature": "void fn_006096D0(void* self)",
+    "summary": "Clears the two std::string members at +0x20 and +0x04, then runs the 0x0065F440 initializer on self.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x00609730": {
     "name": "sub_00609730",
     "class": "Unknown",
