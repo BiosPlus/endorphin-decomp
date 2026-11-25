@@ -1861,6 +1861,12 @@
     "summary": "Stores two parameters at +0x0c and +0x10 and forwards all three arguments to child vtable+0x0c if present.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041C570": {
+    "name": "sub_0041C570",
+    "signature": "extern \"C\" uint8_t __thiscall sub_0041C570(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Forwards a 3-argument virtual call (vtable +0x10) to the delegate at +0x08 if non-null, returning false otherwise.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041C5D0": {
     "name": "sub_0041C5D0",
     "signature": "uint8_t __thiscall sub_0041C5D0(uintptr_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
@@ -70623,6 +70629,12 @@
     "summary": "Calls ext_007D5A00(arg0, arg1), then calls the function pointer at mem_00AB28C8 with (arg0 + 0x6C, arg1).",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007D6260": {
+    "name": "sub_007D6260_freeBuffer",
+    "signature": "void __cdecl sub_007D6260(void* self)",
+    "summary": "Frees an allocated buffer via a callback at +0x1c/+0x10 and clears pointer and size fields.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007D7190": {
     "name": "addClampedCounter",
     "signature": "int32_t fn_007D7190(int32_t* counter, int32_t bias, int32_t limit, int32_t delta, int32_t reportArg)",
@@ -71562,6 +71574,12 @@
     "signature": "uint32_t fn_00810300(void* self)",
     "summary": "Follows two pointer hops (self+0x4, then +0x4) and returns bit 24 of the final dword as 0 or 1.",
     "lifted_path": "lifted/leaf/tiny_810000.cpp"
+  },
+  "0x00810320": {
+    "name": "setFlagBit24",
+    "signature": "void __cdecl sub_00810320(void* self, int enable)",
+    "summary": "Sets or clears bit 24 (0x01000000) in a flags field reached via an indirect pointer at +0x4.",
+    "lifted_path": "lifted/leaf/decompiled_810000.cpp"
   },
   "0x00810350": {
     "name": "getNestedFlagBit15",

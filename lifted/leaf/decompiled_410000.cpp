@@ -1842,3 +1842,22 @@ int32_t fn_00414880(void* self, void* other) {
     return delta >> 3; // sar eax, 3 (arithmetic shift)
 }
 } // namespace lift_00414880
+
+// [0x0041C570]
+namespace lift_0041C570 {
+// @name sub_0041C570
+// @summary Forwards a 3-argument virtual call (vtable +0x10) to the delegate at +0x08 if non-null, returning false otherwise.
+// @field Unknown +0x08 void* field_0x08
+
+
+extern uint8_t __thiscall sub_0041C570(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* target = lift_field<void*>(self, 0x08);
+    if (!target) {
+        return 0;
+    }
+    using VMethod = uint8_t (__thiscall*)(void*, uint32_t, uint32_t, uint32_t);
+    void** vtable = lift_field<void**>(target, 0x00);
+    auto fn = reinterpret_cast<VMethod>(vtable[4]);
+    return fn(target, arg1, arg2, arg3);
+}
+} // namespace lift_0041C570
