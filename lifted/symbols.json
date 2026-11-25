@@ -47097,6 +47097,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00686180": {
+    "name": "Unknown::copyRecordRange_00686180",
+    "class": "Unknown",
+    "signature": "void fn_00686180(void* first, void* last, void* src)",
+    "summary": "For each 0x94-byte element in [first, last), stores the leading uint32 of src into it and copy-assigns src's subobject (+0x04) into the element's subobject via ext_00685890.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00686740": {
     "name": "sub_00686740",
     "signature": "__stdcall std::uint8_t* fn_00686740(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2)",

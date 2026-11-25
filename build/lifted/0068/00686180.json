@@ -1,0 +1,28 @@
+{
+  "va": "0x00686180",
+  "size": 51,
+  "orig_symbol": "sub_00686180",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "Unknown::copyRecordRange_00686180",
+  "class": "Unknown",
+  "signature": "void fn_00686180(void* first, void* last, void* src)",
+  "summary": "For each 0x94-byte element in [first, last), stores the leading uint32 of src into it and copy-assigns src's subobject (+0x04) into the element's subobject via ext_00685890.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:04:56Z"
+}

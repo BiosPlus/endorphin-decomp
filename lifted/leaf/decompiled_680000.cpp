@@ -2202,3 +2202,24 @@ PairResult* fn_00688E20(void* self, PairResult* out, char* begin, char* first, c
     return out;
 }
 } // namespace lift_00688E20
+
+// [0x00686180] sub_00686180 (51 bytes)
+namespace lift_00686180 {
+// Known callee 0x00685890: Unknown::assignFields_00685890 (thiscall: self in ECX, other on stack)
+extern void* __thiscall ext_00685890(void* self, void* other);
+
+// @name Unknown::copyRecordRange_00686180
+// @class Unknown
+// @summary For each 0x94-byte element in [first, last), stores the leading uint32 of src into it and copy-assigns src's subobject (+0x04) into the element's subobject via ext_00685890.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint8_t field_0x04
+void fn_00686180(void* first, void* last, void* src) {
+    uint8_t* it = reinterpret_cast<uint8_t*>(first);
+    uint8_t* end = reinterpret_cast<uint8_t*>(last);
+    while (it != end) {
+        lift_field<uint32_t>(it, 0x00) = lift_field<uint32_t>(src, 0x00);
+        ext_00685890(it + 0x04, static_cast<uint8_t*>(src) + 0x04);
+        it += 0x94;
+    }
+}
+} // namespace lift_00686180
