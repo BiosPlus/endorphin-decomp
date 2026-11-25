@@ -70478,6 +70478,13 @@
     "summary": "No-op stub (add eax, 0).",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x008685C0": {
+    "name": "CpuFeatures::isIntelWithFeatureBit30",
+    "class": "CpuFeatures",
+    "signature": "int fn_008685C0(void* self)",
+    "summary": "Returns 1 if CPUID is available, the vendor is \"GenuineIntel\", and CPUID leaf 1 EDX bit 30 is set; otherwise 0.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x00868690": {
     "name": "_aullshr (unsigned 64-bit logical shift right)",
     "signature": "uint64_t fn_00868690(uint32_t lo, uint32_t hi, uint32_t n)",

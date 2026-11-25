@@ -1,0 +1,14 @@
+{
+  "va": "0x008685C0",
+  "size": 106,
+  "orig_symbol": "sub_008685C0",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "CpuFeatures::isIntelWithFeatureBit30",
+  "class": "CpuFeatures",
+  "signature": "int fn_008685C0(void* self)",
+  "summary": "Returns 1 if CPUID is available, the vendor is \"GenuineIntel\", and CPUID leaf 1 EDX bit 30 is set; otherwise 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:54:43Z"
+}

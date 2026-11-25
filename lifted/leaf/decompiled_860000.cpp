@@ -900,3 +900,37 @@ void __cdecl sub_00860E90(char* dst, const uint8_t* src, int32_t len) {
     dst[out_idx] = '\0';
 }
 } // namespace lift_00860E90
+
+// [0x008685C0] sub_008685C0 (106 bytes)
+namespace lift_008685C0 {
+// C++ has no portable CPUID. The original's EFLAGS.ID probe and CPUID calls are
+// provided by a platform shim: lift_cpuid(leaf, regs) executes CPUID for `leaf`
+// and stores EAX, EBX, ECX, EDX into regs[0..3]; it returns false when CPUID is
+// unsupported (the EFLAGS.ID toggle failed).
+extern bool lift_cpuid(DWORD leaf, DWORD regs[4]);
+
+// @name CpuFeatures::isIntelWithFeatureBit30
+// @summary Returns 1 if CPUID is available, the vendor is "GenuineIntel", and CPUID leaf 1 EDX bit 30 is set; otherwise 0.
+int fn_008685C0(void* self) {
+    (void)self;
+
+    DWORD regs[4] = {0, 0, 0, 0}; // eax, ebx, ecx, edx
+
+    // Leaf 0: vendor string "GenuineIntel" split across EBX, EDX, ECX.
+    if (!lift_cpuid(0, regs)) {
+        return 0;
+    }
+    constexpr DWORD kEbx = 0x756e6547u; // "Genu"
+    constexpr DWORD kEdx = 0x49656e69u; // "ineI"
+    constexpr DWORD kEcx = 0x6c65746eu; // "ntel"
+    if (regs[1] != kEbx || regs[3] != kEdx || regs[2] != kEcx) {
+        return 0;
+    }
+
+    // Leaf 1: EDX bit 30.
+    if (!lift_cpuid(1, regs)) {
+        return 0;
+    }
+    return (regs[3] & 0x40000000u) != 0 ? 1 : 0;
+}
+} // namespace lift_008685C0
