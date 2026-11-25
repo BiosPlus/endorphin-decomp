@@ -1,0 +1,13 @@
+{
+  "va": "0x004CADD0",
+  "size": 87,
+  "orig_symbol": "sub_004CADD0",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "initStaticObjectOnce_004CADD0",
+  "signature": "extern DWORD mem_00AE44A0;   // the static object (first DWORD = vtable pointer) void* __cdecl fn_004CADD0()",
+  "summary": "Thread-safe-style one-time initializer for the global object at 0x00AE44A0; sets guard bit 0 of 0x00AE44A4, calls ext_0067A670 on the object, stores its vtable pointer 0x0094667C, and returns the object's address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:32:38Z"
+}

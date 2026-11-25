@@ -14083,6 +14083,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046CAE0 (ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004CADD0": {
+    "name": "initStaticObjectOnce_004CADD0",
+    "signature": "extern DWORD mem_00AE44A0;   // the static object (first DWORD = vtable pointer) void* __cdecl fn_004CADD0()",
+    "summary": "Thread-safe-style one-time initializer for the global object at 0x00AE44A0; sets guard bit 0 of 0x00AE44A4, calls ext_0067A670 on the object, stores its vtable pointer 0x0094667C, and returns the object's address.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CAE90": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, bool, {public: void __thiscall NMData::MetaBodyConstraintData::setMustKeepOffset(bool), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, bool, {public: void __thiscall NMData::MetaBodyConstraintData::setMustKeepOffset(bool), 0}\u003e",

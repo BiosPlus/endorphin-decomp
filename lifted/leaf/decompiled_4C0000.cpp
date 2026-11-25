@@ -444,3 +444,29 @@ void* fn_004C6070(void) {
     return &mem_00AE3718;
 }
 } // namespace lift_004C6070
+
+// [0x004CADD0]
+namespace lift_004CADD0 {
+// @name initStaticObjectOnce_004CADD0
+// @summary Thread-safe-style one-time initializer for the global object at 0x00AE44A0; sets guard bit 0 of 0x00AE44A4, calls ext_0067A670 on the object, stores its vtable pointer 0x0094667C, and returns the object's address.
+
+    // Thiscall (ECX = object address); no stack arguments are pushed at the call site.
+    DWORD __thiscall ext_0067A670(void* self);
+
+// Globals
+extern BYTE  mem_00AE44A4;   // guard byte; bit 0 = initialized flag
+extern DWORD mem_00AE44A0;   // the static object (first DWORD = vtable pointer)
+
+// NOTE: the original sets up an SEH frame via fs:[0] (handler 0x0088C08E,
+// trylevel -1 then 0 around the call). That exception-unwind bookkeeping has
+// no portable C++ equivalent and is omitted; only the control flow and data
+// effects are reproduced.
+void* __cdecl fn_004CADD0() {
+    if ((mem_00AE44A4 & 1) == 0) {
+        mem_00AE44A4 |= 1;
+        ext_0067A670(&mem_00AE44A0);
+        mem_00AE44A0 = 0x0094667C;
+    }
+    return &mem_00AE44A0;
+}
+} // namespace lift_004CADD0
