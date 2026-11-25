@@ -976,3 +976,38 @@ void fn_004561C0(void* self, void* arg) {
     }
 }
 } // namespace lift_004561C0
+
+// [0x00456DE0]
+namespace lift_00456DE0 {
+// Imports reached through IAT thunks (MFC80 ordinals) and one lifted helper.
+// Signatures are inferred from the call sites in the disassembly.
+extern void* ext_006A5EA8(void* self);             // thunk_MFC80_ord_1903
+extern void* ext_006A67BA();                       // thunk_MFC80_ord_3505
+extern void* ext_006A67A8(void* self);             // thunk_MFC80_ord_3085
+extern int   ext_006A63BE(void* self, void* arg);  // thunk_MFC80_ord_3952
+extern void  ext_006A5F50(void* self, void* arg);  // thunk_MFC80_ord_6067
+extern int   ext_00455F40(void* self);             // sub_00455F40
+
+// @name Unknown::conditionalPostProcessFlag_00456DE0
+// @class Unknown
+// @summary Calls an import with self, and if the predicate sub_00455F40(self) is nonzero and two follow-up checks succeed, forwards arg1 to the self+0x8C object and ORs 0xC into the +0xD0 field of the object returned by ord_3085. Always returns the first import's result. Callee cleans two stack args (ret 8); only arg1 is used.
+// @field Unknown +0x8C void* field_0x8C
+// @field Unknown +0xD0 uint32_t field_0xD0 (accessed on the object returned by ord_3085(self), not on self)
+void* fn_00456DE0(void* self, void* arg1) {
+    void* result = ext_006A5EA8(self);
+
+    if (ext_00455F40(self) != 0) {
+        void* a = ext_006A67BA();
+        void* obj = ext_006A67A8(self);
+        if (ext_006A63BE(obj, a) != 0) {
+            void* target = lift_field<void*>(self, 0x8C);
+            ext_006A5F50(target, arg1);
+
+            void* flagged = ext_006A67A8(self);
+            lift_field<uint32_t>(flagged, 0xD0) |= 0x0C;
+        }
+    }
+
+    return result;
+}
+} // namespace lift_00456DE0

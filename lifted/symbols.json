@@ -5385,6 +5385,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00455EB0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00456DE0": {
+    "name": "Unknown::conditionalPostProcessFlag_00456DE0",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* ext_006A5EA8(void* self);             // thunk_MFC80_ord_1903 extern \"C\" void* ext_006A67BA();                       // thunk_MFC80_ord_3505 extern \"C\" void* ext_006A67A8(void* self);             // thunk_MFC80_ord_3085 extern \"C\" int   ext_006A63BE(void* self, void* arg);  // thunk_MFC80_ord_3952 extern \"C\" void  ext_006A5F50(void* self, void* arg);  // thunk_MFC80_ord_6067 extern \"C\" int   ext_00455F40(void* self);             // sub_00455F40 void* fn_00456DE0(void* self, void* arg1)",
+    "summary": "Calls an import with self, and if the predicate sub_00455F40(self) is nonzero and two follow-up checks succeed, forwards arg1 to the self+0x8C object and ORs 0xC into the +0xD0 field of the object returned by ord_3085. Always returns the first import's result. Callee cleans two stack args (ret 8); only arg1 is used.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00457F50": {
     "name": "sub_00457F50",
     "signature": "extern \"C\" void* __cdecl fn_00457F50(void)",
