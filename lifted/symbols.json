@@ -5028,6 +5028,13 @@
     "summary": "Clears the std::string field at +0x13c and tail-calls sub_00455820.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x00455B50": {
+    "name": "Unknown::Sub_00455B50",
+    "class": "Unknown",
+    "signature": "void fn_00455B50(uint8_t* self)",
+    "summary": "Calls two helpers on this, then passes the byte at +0x158 and the address of +0x13c to a helper and forwards its result to another helper.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00455B80": {
     "name": "sub_00455B80",
     "signature": "extern \"C\" void fn_00455B80(void)",

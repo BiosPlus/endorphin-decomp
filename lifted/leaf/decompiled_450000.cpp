@@ -758,3 +758,27 @@ void __thiscall fn_00455860(uint8_t* self) {
     (void)send_message(hwnd, 0x44A, 2, reinterpret_cast<LPARAM>(request));
 }
 } // namespace lift_00455860
+
+// [0x00455B50]
+namespace lift_00455B50 {
+// @name Unknown::Sub_00455B50
+// @class Unknown
+// @summary Calls two helpers on this, then passes the byte at +0x158 and the address of +0x13c to a helper and forwards its result to another helper.
+// @field Unknown +0x13c uint8_t field_0x13c
+// @field Unknown +0x158 uint8_t field_0x158
+
+extern void ext_00455860(uint8_t* self);
+extern void ext_00455410(uintptr_t self);
+extern int32_t ext_00465B30(uint32_t flag, uint8_t* ptr);
+extern void ext_004691D0(int32_t value);
+
+void fn_00455B50(uint8_t* self)
+{
+    ext_00455860(self);
+    ext_00455410(reinterpret_cast<uintptr_t>(self));
+
+    uint32_t flag = static_cast<uint32_t>(self[0x158]);
+    int32_t result = ext_00465B30(flag, self + 0x13c);
+    ext_004691D0(result);
+}
+} // namespace lift_00455B50
