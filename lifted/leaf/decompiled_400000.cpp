@@ -1801,3 +1801,27 @@ void* __cdecl sub_00404F00(void* out_str, int32_t value) {
     return out_str;
 }
 } // namespace lift_00404F00
+
+// [0x00406380] sub_00406380 (111 bytes)
+namespace lift_00406380 {
+// MSVC 2005 std::string destructor (MSVCP80, reached via IAT slot mem_00924FF4).
+extern void __thiscall ext_MSVCP80_basic_string_dtor(void* self);
+
+// @name Unknown::destroyStringRange_00406380
+// @class Unknown
+// @summary Destroys three std::string members of each 0x58-byte element in [first, last), in reverse member order.
+// @field Unknown +0x04 std::string field_0x04
+// @field Unknown +0x20 std::string field_0x20
+// @field Unknown +0x3c std::string field_0x3c
+void fn_00406380(void* first, void* last) {
+    constexpr std::ptrdiff_t kElementSize = 0x58;
+
+    for (uint8_t* p = static_cast<uint8_t*>(first);
+         p != static_cast<uint8_t*>(last);
+         p += kElementSize) {
+        ext_MSVCP80_basic_string_dtor(p + 0x3c);
+        ext_MSVCP80_basic_string_dtor(p + 0x20);
+        ext_MSVCP80_basic_string_dtor(p + 0x04);
+    }
+}
+} // namespace lift_00406380
