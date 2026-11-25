@@ -1,0 +1,75 @@
+{
+  "va": "0x007DCC20",
+  "size": 110,
+  "orig_symbol": "sub_007DCC20",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "fillValuesFromBucketCursor_007DCC20",
+  "signature": "bool fillValuesFromBucketCursor_007DCC20(BucketMap* map, BucketCursor* cur, OutBuffer* out)",
+  "summary": "Walks a bucketed node map from a cursor, copying node values into an output buffer until it is full or the map is exhausted; returns true if the buffer filled up.",
+  "fields": [
+    {
+      "class": "BucketMap",
+      "offset": "+0x28",
+      "type": "BucketTable*",
+      "name": "table"
+    },
+    {
+      "class": "BucketTable",
+      "offset": "+0x0",
+      "type": "BucketNode**",
+      "name": "slots"
+    },
+    {
+      "class": "BucketTable",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "slotCount"
+    },
+    {
+      "class": "BucketCursor",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "slotIndex"
+    },
+    {
+      "class": "BucketCursor",
+      "offset": "+0x4",
+      "type": "BucketNode*",
+      "name": "node"
+    },
+    {
+      "class": "BucketNode",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "value"
+    },
+    {
+      "class": "BucketNode",
+      "offset": "+0x10",
+      "type": "BucketNode*",
+      "name": "next"
+    },
+    {
+      "class": "OutBuffer",
+      "offset": "+0x0",
+      "type": "uint32_t*",
+      "name": "data"
+    },
+    {
+      "class": "OutBuffer",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "capacity"
+    },
+    {
+      "class": "OutBuffer",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "count"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:05:19Z"
+}

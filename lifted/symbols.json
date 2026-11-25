@@ -7711,6 +7711,13 @@
     "summary": "Constructs an ExceptionWithMessage-derived exception with a default message string at 0x0093a7b4 and installs vtable 0x0093a7ac.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046C3C0": {
+    "name": "DerivedException::DerivedException",
+    "class": "DerivedException",
+    "signature": "void* fn_0046C3C0(void* self)",
+    "summary": "Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046C430": {
     "name": "ExprParser::BoolType::vfunc_51",
     "class": "ExprParser::BoolType",
@@ -70168,6 +70175,12 @@
     "name": "HashTable_FindAndUnlinkByKey",
     "signature": "uint32_t fn_007DCAC0(void* self, uint32_t key)",
     "summary": "Hashes a packed 32-bit key into a chained bucket table, unlinks the first node with a matching key, and returns it (or 0).",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
+  "0x007DCC20": {
+    "name": "fillValuesFromBucketCursor_007DCC20",
+    "signature": "bool fillValuesFromBucketCursor_007DCC20(BucketMap* map, BucketCursor* cur, OutBuffer* out)",
+    "summary": "Walks a bucketed node map from a cursor, copying node values into an output buffer until it is full or the map is exhausted; returns true if the buffer filled up.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
   "0x007DCFF0": {

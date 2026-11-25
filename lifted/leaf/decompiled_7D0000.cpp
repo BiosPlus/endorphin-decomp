@@ -1214,3 +1214,72 @@ bool fn_007DD160(void* self, int32_t a, int32_t b) {
     return flag == 0u;
 }
 } // namespace lift_007DD160
+
+// [0x007DCC20] sub_007DCC20 (110 bytes)
+namespace lift_007DCC20 {
+// Layouts assume the original 32-bit (x86) object layout.
+struct BucketNode {
+    uint8_t   pad_00[0x0C];
+    uint32_t  value;        // +0x0C
+    BucketNode* next;       // +0x10
+};
+
+struct BucketTable {
+    BucketNode** slots;     // +0x00
+    uint8_t   pad_04[0x04];
+    int32_t   slotCount;    // +0x08
+};
+
+struct BucketMap {
+    uint8_t   pad_00[0x28];
+    BucketTable* table;     // +0x28
+};
+
+struct BucketCursor {
+    int32_t   slotIndex;    // +0x00
+    BucketNode* node;       // +0x04
+};
+
+struct OutBuffer {
+    uint32_t* data;         // +0x00
+    int32_t   capacity;     // +0x04
+    int32_t   count;        // +0x08
+};
+
+// @name fillValuesFromBucketCursor_007DCC20
+// @summary Walks a bucketed node map from a cursor, copying node values into an output buffer until it is full or the map is exhausted; returns true if the buffer filled up.
+// @field BucketMap +0x28 BucketTable* table
+// @field BucketTable +0x00 BucketNode** slots
+// @field BucketTable +0x08 int32_t slotCount
+// @field BucketCursor +0x00 int32_t slotIndex
+// @field BucketCursor +0x04 BucketNode* node
+// @field BucketNode +0x0C uint32_t value
+// @field BucketNode +0x10 BucketNode* next
+// @field OutBuffer +0x00 uint32_t* data
+// @field OutBuffer +0x04 int32_t capacity
+// @field OutBuffer +0x08 int32_t count
+bool fillValuesFromBucketCursor_007DCC20(BucketMap* map, BucketCursor* cur, OutBuffer* out) {
+    BucketTable* table = map->table;
+    out->count = 0;
+    for (;;) {
+        BucketNode* n = cur->node;
+        if (n == nullptr) {
+            // Advance to the next non-empty bucket.
+            int32_t idx;
+            do {
+                idx = ++cur->slotIndex;
+            } while (idx < table->slotCount && table->slots[idx] == nullptr);
+            if (idx == table->slotCount) {
+                return false;
+            }
+            n = table->slots[idx];
+        }
+        cur->node = n->next;
+        out->data[out->count] = n->value;
+        out->count++;
+        if (out->count >= out->capacity) {
+            return true;
+        }
+    }
+}
+} // namespace lift_007DCC20
