@@ -17740,6 +17740,13 @@
     "summary": "Bounds-checked subscript access on a std::vector\u003cdouble\u003e-like container",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00524BC0": {
+    "name": "Unknown::SetElementFloat_00524BC0",
+    "class": "Unknown",
+    "signature": "void fn_00524BC0(void* self, float value)",
+    "summary": "Looks up an entry via self-\u003e+0x04, takes element 0 of the returned 104-byte record array, and stores the float argument as a double at index self-\u003e+0x08 of the record's double array (bounds-checked); returns with ret 4.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00524DA0": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::VariableValue, float, \u0026public: float __thiscall NMData::VariableValue::getInitialValue(void) const, float, \u0026public: void __thiscall NMData::VariableValue::setInitialValue(float)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::VariableValue, float, \u0026public: float __thiscall NMData::VariableValue::getInitialValue(void) const, float, \u0026public: void __thiscall NMData::VariableValue::setInitialValue(float)\u003e",

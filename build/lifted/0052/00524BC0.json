@@ -1,0 +1,28 @@
+{
+  "va": "0x00524BC0",
+  "size": 77,
+  "orig_symbol": "sub_00524BC0",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "Unknown::SetElementFloat_00524BC0",
+  "class": "Unknown",
+  "signature": "void fn_00524BC0(void* self, float value)",
+  "summary": "Looks up an entry via self-\u003e+0x04, takes element 0 of the returned 104-byte record array, and stores the float argument as a double at index self-\u003e+0x08 of the record's double array (bounds-checked); returns with ret 4.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:42:30Z"
+}

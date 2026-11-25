@@ -531,3 +531,48 @@ uint32_t fn_00522FD0(uint32_t begin, uint32_t end, uint32_t value) {
 }
 } // namespace lift_0054F290
 } // namespace lift_00522FD0
+
+// [0x00524BC0] sub_00524BC0 (77 bytes)
+namespace lift_00524BC0 {
+// Known callee 0x00504970: GetTableEntryPlus20 (Returns the table entry at self->+0x34 offset by 0x20, or null if the global table or entry is absent.)
+extern void* ext_00504970(void* self);
+// Known callee 0x005049B0: ElementArray::getElementAt (Returns the address of element `index` in a contiguous array of 104-byte records; calls the invalid-parameter handler if the array is empty or index >= count.)
+extern uint8_t* ext_005049B0(void* self, uint32_t index);
+// Import 0x00925134 (MSVCR80!_invalid_parameter_noinfo), called through the IAT slot.
+extern void ext_msvcr80_invalid_parameter_noinfo(void);
+
+// @name Unknown::SetElementFloat_00524BC0
+// @class Unknown
+// @summary Looks up an entry via self->+0x04, takes element 0 of the returned 104-byte record array, and stores the float argument as a double at index self->+0x08 of the record's double array (bounds-checked); returns with ret 4.
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x08 DWORD field_0x08
+void fn_00524BC0(void* self, float value) {
+    auto* p = static_cast<unsigned char*>(self);
+
+    DWORD ecx = *reinterpret_cast<DWORD*>(p + 0x04);
+    if (ecx == 0) {
+        return;
+    }
+    void* entry = ext_00504970(reinterpret_cast<void*>(static_cast<uintptr_t>(ecx)));
+    if (entry == nullptr) {
+        return;
+    }
+
+    DWORD index = *reinterpret_cast<DWORD*>(p + 0x08);
+    uint8_t* rec = ext_005049B0(entry, 0);
+
+    // rec+0x08 = begin pointer, rec+0x0c = end pointer of a double array (8-byte elements).
+    DWORD begin = *reinterpret_cast<DWORD*>(rec + 0x08);
+    if (begin == 0) {
+        ext_msvcr80_invalid_parameter_noinfo();
+    }
+    DWORD end = *reinterpret_cast<DWORD*>(rec + 0x0c);
+    DWORD count = static_cast<DWORD>(static_cast<int32_t>(end - begin) >> 3);
+    if (!(index < count)) {
+        ext_msvcr80_invalid_parameter_noinfo();
+    }
+
+    double* data = reinterpret_cast<double*>(static_cast<uintptr_t>(begin));
+    data[index] = static_cast<double>(value);
+}
+} // namespace lift_00524BC0
