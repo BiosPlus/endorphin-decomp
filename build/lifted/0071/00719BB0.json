@@ -1,0 +1,52 @@
+{
+  "va": "0x00719BB0",
+  "size": 60,
+  "orig_symbol": "sub_00719BB0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::GetBlock738",
+  "class": "Unknown",
+  "signature": "void fn_00719BB0(void* self, void* out)",
+  "summary": "Copies six consecutive DWORDs from this+0x738..this+0x74C into the caller-supplied output buffer.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x738",
+      "type": "DWORD",
+      "name": "field_0x738"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x73C",
+      "type": "DWORD",
+      "name": "field_0x73C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x740",
+      "type": "DWORD",
+      "name": "field_0x740"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x744",
+      "type": "DWORD",
+      "name": "field_0x744"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x748",
+      "type": "DWORD",
+      "name": "field_0x748"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74C",
+      "type": "DWORD",
+      "name": "field_0x74C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:55:30Z"
+}

@@ -51836,6 +51836,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00719BB0": {
+    "name": "Unknown::GetBlock738",
+    "class": "Unknown",
+    "signature": "void fn_00719BB0(void* self, void* out)",
+    "summary": "Copies six consecutive DWORDs from this+0x738..this+0x74C into the caller-supplied output buffer.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00719C90": {
     "name": "sub_00719C90",
     "signature": "void fn_00719C90(void* self, uint32_t a0, uint32_t a1)",

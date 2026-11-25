@@ -1150,3 +1150,26 @@ void fn_007151C0(void* self, void* out) {
     }
 }
 } // namespace lift_007151C0
+
+// [0x00719BB0] sub_00719BB0 (60 bytes)
+namespace lift_00719BB0 {
+// @name Unknown::GetBlock738
+// @class Unknown
+// @summary Copies six consecutive DWORDs from this+0x738..this+0x74C into the caller-supplied output buffer.
+// @field Unknown +0x738 DWORD field_0x738
+// @field Unknown +0x73C DWORD field_0x73C
+// @field Unknown +0x740 DWORD field_0x740
+// @field Unknown +0x744 DWORD field_0x744
+// @field Unknown +0x748 DWORD field_0x748
+// @field Unknown +0x74C DWORD field_0x74C
+void fn_00719BB0(void* self, void* out) {
+    const uint8_t* src = static_cast<const uint8_t*>(self);
+    uint8_t* dst = static_cast<uint8_t*>(out);
+
+    for (size_t i = 0; i < 6; ++i) {
+        DWORD v;
+        std::memcpy(&v, src + 0x738 + i * 4, sizeof(v));
+        std::memcpy(dst + i * 4, &v, sizeof(v));
+    }
+}
+} // namespace lift_00719BB0
