@@ -8,7 +8,7 @@
 // Recovered field layout for ClassName:
 namespace lifted_layout {
 struct ClassName_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x00508790)
-    // +0x4   std::string              field_0x04  (evidence: 0x00508790)
+    // +0x0   void*                    field_0x00  (evidence: 0x00503BC0, 0x00508790)
+    // +0x4   std::string              field_0x04  (evidence: 0x00503BC0, 0x00508790)
 };
 } // namespace lifted_layout

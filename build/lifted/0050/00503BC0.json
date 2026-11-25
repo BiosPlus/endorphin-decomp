@@ -4,11 +4,403 @@
   "orig_symbol": "sub_00503BC0",
   "src_path": "src/leaf/decompiled_500000.cpp",
   "lifted_path": "lifted/leaf/decompiled_500000.cpp",
-  "name": "moveRangeToEnd",
-  "class": "field_0x08 is the only accessed offset; class name unknown.",
-  "signature": "__attribute__((used)) void __thiscall fn_00503BC0(void* self, uint32_t* out, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)",
-  "summary": "Validates a range pair, shifts the tail [a5, self-\u003eend) down to a3 when the range is non-empty, updates self-\u003eend, and writes (a2, a3) to the out-pair.",
+  "name": "sub_00508310",
+  "class": "NMData::RealChannel",
+  "signature": "void* __thiscall fn_00508310(const void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0051C6D0 (NMData::RealChannel::vfunc_4).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtablePtr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint8_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x21",
+      "type": "uint8_t",
+      "name": "field_0x21"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "double",
+      "name": "field_0x28"
+    },
+    {
+      "class": "ArrayView",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ArrayView",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "field_0x30",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "global_table_handle"
+    },
+    {
+      "class": "ElementArray",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ElementArray",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x4",
+      "type": "uint8_t[28] field_0x04 (std::string sub-object, assigned via",
+      "name": "ext_MSVCP80_string_assign)"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "name"
+    },
+    {
+      "class": "self",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtablePtr"
+    },
+    {
+      "class": "self",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "self",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "self",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "self",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Container",
+      "offset": "+0x28",
+      "type": "uint32_t*",
+      "name": "begin"
+    },
+    {
+      "class": "Container",
+      "offset": "+0x2C",
+      "type": "uint32_t*",
+      "name": "end"
+    },
+    {
+      "class": "Container",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "selected"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "m_begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "m_end"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "m_capacity"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (array begin pointer; element stride",
+      "name": "0x68)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void* field_0x08 (array end",
+      "name": "pointer)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "DWORD field_0x0C (capacity pointer,",
+      "name": "zeroed)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "end"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "capacity"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t field_0x04 (subobject passed by address to ext_0050B960; contents not",
+      "name": "inspected)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "UnknownClass_0094F92C",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "UnknownClass_0094F92C",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownClass_0094F92C",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x20",
+      "type": "double",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ClassName",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ClassName",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "name"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Interpreter",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Interpreter",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Interpreter",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Interpreter",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Interpreter",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "Interpreter",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Interpreter",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "double",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T02:26:16Z"
+  "lifted_at": "2026-11-25T02:26:21Z"
 }

@@ -8,8 +8,8 @@
 // Recovered field layout for UnknownClass_0094F92C:
 namespace lifted_layout {
 struct UnknownClass_0094F92C_Fields {
-    // +0x0   uint32_t                 vtable  (evidence: 0x00508740)
-    // +0x4   std::string              field_0x04  (evidence: 0x00508740)
-    // +0x20  float                    field_0x20  (evidence: 0x00508740)
+    // +0x0   uint32_t                 vtable  (evidence: 0x00503BC0, 0x00508740)
+    // +0x4   std::string              field_0x04  (evidence: 0x00503BC0, 0x00508740)
+    // +0x20  float                    field_0x20  (evidence: 0x00503BC0, 0x00508740)
 };
 } // namespace lifted_layout

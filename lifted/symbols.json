@@ -16788,10 +16788,10 @@
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
   "0x00503BC0": {
-    "name": "moveRangeToEnd",
-    "class": "field_0x08 is the only accessed offset; class name unknown.",
-    "signature": "__attribute__((used)) void __thiscall fn_00503BC0(void* self, uint32_t* out, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)",
-    "summary": "Validates a range pair, shifts the tail [a5, self-\u003eend) down to a3 when the range is non-empty, updates self-\u003eend, and writes (a2, a3) to the out-pair.",
+    "name": "sub_00508310",
+    "class": "NMData::RealChannel",
+    "signature": "void* __thiscall fn_00508310(const void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0051C6D0 (NMData::RealChannel::vfunc_4).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
   "0x00503C20": {
