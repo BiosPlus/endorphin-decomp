@@ -1,0 +1,28 @@
+{
+  "va": "0x007648F0",
+  "size": 64,
+  "orig_symbol": "sub_007648F0",
+  "src_path": "src/leaf/decompiled_760000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_760000.cpp",
+  "name": "Unknown::FindIndexOfKeyPair",
+  "class": "Unknown",
+  "signature": "int32_t fn_007648F0(void* self, uint32_t a, uint32_t b)",
+  "summary": "Scans the pointer array at +0x16C (count at +0x15C) for an entry whose first two DWORDs match (a, b); returns its index or -1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x15C",
+      "type": "int32_t",
+      "name": "field_0x15C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x16C",
+      "type": "void**",
+      "name": "field_0x16C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:08:22Z"
+}
