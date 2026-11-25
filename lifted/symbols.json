@@ -31159,6 +31159,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D2410": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, getFrameOffset, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0\u003e",
+    "signature": "extern \"C\" int32_t fn_005D2410(void* self)",
+    "summary": "Reads the int at +0x28 of the VideoPlaneData pointed to by the ValuePtrType's first field; throws if that pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D2440": {
     "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026NMData::VideoPlaneData::getFrameOffset, 0\u003e",

@@ -56452,3 +56452,32 @@ double fn_00508E80(void* self) {
     ext_006A6DD2(exc, mem_009DEC1C);
 }
 } // namespace lift_00508E80
+
+// [0x005D2410] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_1 (45 bytes)
+namespace lift_005D2410 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Exception ThrowInfo descriptor referenced by the original push 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, getFrameOffset, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>
+// @summary Reads the int at +0x28 of the VideoPlaneData pointed to by the ValuePtrType's first field; throws if that pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field NMData::VideoPlaneData +0x28 int32_t field_0x28
+extern int32_t fn_005D2410(void* self) {
+    // self is an ExprParser::ValuePtrType*; its first dword is the VideoPlaneData*.
+    void* target = lift_field<void*>(self, 0x00);
+    if (target != nullptr) {
+        return lift_field<int32_t>(target, 0x28);
+    }
+
+    // Null target: build a local exception object (0x28 bytes) and throw it.
+    alignas(8) unsigned char exception_object[0x28];
+    ext_0046C3C0(exception_object);
+    ext_006A6DD2(exception_object, mem_009DEC1C);
+    return 0; // not reached: _CxxThrowException does not return
+}
+} // namespace lift_005D2410

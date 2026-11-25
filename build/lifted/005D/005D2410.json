@@ -1,0 +1,28 @@
+{
+  "va": "0x005D2410",
+  "size": 45,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, getFrameOffset, 0\u003e::vfunc_1",
+  "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0\u003e",
+  "signature": "extern \"C\" int32_t fn_005D2410(void* self)",
+  "summary": "Reads the int at +0x28 of the VideoPlaneData pointed to by the ValuePtrType's first field; throws if that pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "NMData::VideoPlaneData",
+      "offset": "+0x28",
+      "type": "int32_t",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:54:39Z"
+}
