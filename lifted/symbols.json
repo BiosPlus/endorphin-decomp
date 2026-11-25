@@ -34590,6 +34590,12 @@
     "summary": "Lazily initializes a static EffectorGroup-related object once (guard bit 0 in mem_00B46868), then stores its address at self+0x04.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005F3E70": {
+    "name": "IsElementValidAndNotLess_005F3E70",
+    "signature": "int fn_005F3E70(uintptr_t a1, uintptr_t a2, uintptr_t a3, uintptr_t a4, uintptr_t a5, uintptr_t a6)",
+    "summary": "Looks up an element via sub_004AB940, validates it against the container bounds at a1+8, and returns 1 if *a5 is not less than the element's value, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005F4930": {
     "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setForceCaps(float)\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setForceCaps(float)\u003e",

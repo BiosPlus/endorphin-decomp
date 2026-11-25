@@ -899,3 +899,36 @@ void* fn_005FD2D0() {
     return reinterpret_cast<void*>(&mem_00B47058);
 }
 } // namespace lift_005FD2D0
+
+// [0x005F3E70] sub_005F3E70 (109 bytes)
+namespace lift_005F3E70 {
+extern uintptr_t ext_004AB940(uintptr_t a, uintptr_t b, uintptr_t c, uintptr_t d, uintptr_t e);
+extern int mem_00925134;
+
+// @name IsElementValidAndNotLess_005F3E70
+// @summary Looks up an element via sub_004AB940, validates it against the container bounds at a1+8, and returns 1 if *a5 is not less than the element's value, else 0.
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x00 uint32_t field_0x00
+int fn_005F3E70(uintptr_t a1, uintptr_t a2, uintptr_t a3, uintptr_t a4, uintptr_t a5, uintptr_t a6) {
+    // MSVCR80!_invalid_parameter_noinfo (called via mem_00925134) terminates the process.
+    auto invalid_parameter = []() { std::abort(); };
+
+    uintptr_t elem = ext_004AB940(a2, a4, a5, a6, 0);
+
+    if (a1 == 0 || a1 != a3) {
+        invalid_parameter();
+    }
+    if (elem == a4) {
+        return 0;
+    }
+    if (a1 == 0 || elem >= *reinterpret_cast<uint32_t*>(a1 + 8)) {
+        invalid_parameter();
+    }
+    uint32_t lhs = *reinterpret_cast<uint32_t*>(a5);
+    if (lhs < *reinterpret_cast<uint32_t*>(elem)) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_005F3E70
