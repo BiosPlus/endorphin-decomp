@@ -7062,6 +7062,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00449A00 (RegistrationDialog::initOnceAndGetCounter).",
     "lifted_path": "lifted/classes/UpdateAvailableDialog.cpp"
   },
+  "0x004615B0": {
+    "name": "sub_004615B0_dtor",
+    "signature": "extern \"C\" void __fastcall fn_004615B0(void* self)",
+    "summary": "Destructor: restores vtables, destroys member subobjects at +0x11c and +0x114, and calls base destructor.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00461630": {
     "name": "ExportUnavailableDialog::vfunc_63",
     "class": "ExportUnavailableDialog",
@@ -9089,6 +9095,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006998D0 (copyStringAndRecord).",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00476530": {
+    "name": "sub_00476530",
+    "class": "UnknownClass",
+    "signature": "uint32_t __thiscall sub_00476530(uint32_t self, uint32_t arg0, uint32_t arg1)",
+    "summary": "Constructor initializing two std::string fields by copy, two by default, and a uint8_t flag to 0",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00476630": {
     "name": "makeStdStringFromCStr",
     "signature": "void* fn_00476630(std::string* out, const char* s)",
@@ -9298,6 +9311,13 @@
     "signature": "DWORD* __thiscall fn_0047A010(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
+  "0x0047AF80": {
+    "name": "ContainerEventDispatcher::vfunc_1",
+    "class": "ContainerEventDispatcher",
+    "signature": "void __thiscall fn_0047AF80(uint8_t* self, uint32_t arg1)",
+    "summary": "Dispatches an event to each element in the container and forwards to BaseEventDispatcher::vfunc_1.",
+    "lifted_path": "lifted/templates/ContainerEventDispatcher.cpp"
   },
   "0x0047D9E0": {
     "name": "sub_0047D9E0",
@@ -12465,6 +12485,12 @@
     "class": "Unknown",
     "signature": "void fn_004A0620(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
+  "0x004A2410": {
+    "name": "getStaticObject_004A2410",
+    "signature": "uint32_t __cdecl sub_004A2410()",
+    "summary": "Lazily initializes a static object at 0x00ADDA7C with vtable 0x00940704, registers atexit destructor 0x00917B40, and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
   "0x004A2490": {
