@@ -1,0 +1,34 @@
+{
+  "va": "0x007AEE50",
+  "size": 83,
+  "orig_symbol": "sub_007AEE50",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "SetClampedOffset_007AEE50",
+  "class": "\u003cClassName\u003e (unknown; member taking `this` in ECX)",
+  "signature": "void fn_007AEE50(void* self, int32_t mode, int32_t value)",
+  "summary": "Updates the field at +0x60 from mode/value, clamped to the limit at +0x5C; no-op when the gate at +0x58 is zero.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x58",
+      "type": "int32_t",
+      "name": "field_0x58"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x5C",
+      "type": "int32_t",
+      "name": "field_0x5C"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x60",
+      "type": "int32_t",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:05:25Z"
+}

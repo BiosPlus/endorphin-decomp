@@ -59466,6 +59466,13 @@
     "summary": "Copies min(count, remaining) bytes from src into the buffer at the write cursor and advances the cursor; returns bytes copied (0 if src or buffer is null).",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AEE50": {
+    "name": "SetClampedOffset_007AEE50",
+    "class": "\u003cClassName\u003e (unknown; member taking `this` in ECX)",
+    "signature": "void fn_007AEE50(void* self, int32_t mode, int32_t value)",
+    "summary": "Updates the field at +0x60 from mode/value, clamped to the limit at +0x5C; no-op when the gate at +0x58 is zero.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AEEB0": {
     "name": "Unknown::getField60IfField58",
     "class": "Unknown",

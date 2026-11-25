@@ -821,3 +821,47 @@ int32_t fn_007AF6F0(void* self) {
 }
 } // namespace lift_007AF730
 } // namespace lift_007AF6F0
+
+// [0x007AEE50] sub_007AEE50 (83 bytes)
+namespace lift_007AEE50 {
+// @name SetClampedOffset_007AEE50
+// @class <ClassName> (unknown; member taking `this` in ECX)
+// @summary Updates the field at +0x60 from mode/value, clamped to the limit at +0x5C; no-op when the gate at +0x58 is zero.
+// @field <ClassName> +0x58 int32_t field_0x58
+// @field <ClassName> +0x5C int32_t field_0x5C
+// @field <ClassName> +0x60 int32_t field_0x60
+void fn_007AEE50(void* self, int32_t mode, int32_t value) {
+    if (lift_field<int32_t>(self, 0x58) == 0) {
+        return;
+    }
+
+    // Wrapping add/sub to match the 32-bit hardware semantics without signed-overflow UB.
+    int32_t v = 0;
+    bool checkNegative = true;
+    switch (mode) {
+    case 0:
+        v = value;
+        break;
+    case 1:
+        v = static_cast<int32_t>(static_cast<uint32_t>(lift_field<int32_t>(self, 0x60)) +
+                                 static_cast<uint32_t>(value));
+        break;
+    case 2:
+        v = static_cast<int32_t>(static_cast<uint32_t>(lift_field<int32_t>(self, 0x5C)) -
+                                 static_cast<uint32_t>(value));
+        break;
+    default:
+        v = 0;
+        checkNegative = false;
+        break;
+    }
+
+    if (checkNegative && v < 0) {
+        lift_field<int32_t>(self, 0x60) = 0;
+        return;
+    }
+
+    const int32_t limit = lift_field<int32_t>(self, 0x5C);
+    lift_field<int32_t>(self, 0x60) = (v <= limit) ? v : limit;
+}
+} // namespace lift_007AEE50
