@@ -1298,3 +1298,39 @@ void Unknown_InvokeVirtual74OverRange_006245E0(Unknown* self)
     }
 }
 } // namespace lift_006245E0
+
+// [0x00624590] sub_00624590 (76 bytes)
+namespace lift_00624590 {
+// Invalid-parameter hook: the original calls through the pointer stored at 0x925134 on failed bounds checks.
+extern void (*mem_00925134)(void);
+
+// @name Unknown::CallVirtualOnRange_00624590
+// @class Unknown
+// @summary Iterates a pointer array at self+0x0C..self+0x10 and invokes vtable slot 12 (+0x30) on each element.
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+void fn_00624590(void* self) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    uint32_t cur = lift_field<uint32_t>(base, 0x0C);
+
+    for (;;) {
+        uint32_t end = lift_field<uint32_t>(base, 0x10);
+        if (cur == end) {
+            break;
+        }
+        if (!(cur < lift_field<uint32_t>(base, 0x10))) {
+            mem_00925134();
+        }
+
+        void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(*reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(cur))));
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        auto slot12 = reinterpret_cast<void (__thiscall*)(void*)>(vtbl[12]);
+        slot12(obj);
+
+        if (!(cur < lift_field<uint32_t>(base, 0x10))) {
+            mem_00925134();
+        }
+        cur += 4;
+    }
+}
+} // namespace lift_00624590

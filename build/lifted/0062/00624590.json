@@ -1,0 +1,28 @@
+{
+  "va": "0x00624590",
+  "size": 76,
+  "orig_symbol": "sub_00624590",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "Unknown::CallVirtualOnRange_00624590",
+  "class": "Unknown",
+  "signature": "void fn_00624590(void* self)",
+  "summary": "Iterates a pointer array at self+0x0C..self+0x10 and invokes vtable slot 12 (+0x30) on each element.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:40:32Z"
+}

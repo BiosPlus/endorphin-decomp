@@ -32482,6 +32482,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x38 and tail-calls sub_005E0130.",
     "lifted_path": "lifted/leaf/tiny_620000.cpp"
   },
+  "0x00624590": {
+    "name": "Unknown::CallVirtualOnRange_00624590",
+    "class": "Unknown",
+    "signature": "void fn_00624590(void* self)",
+    "summary": "Iterates a pointer array at self+0x0C..self+0x10 and invokes vtable slot 12 (+0x30) on each element.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x006245E0": {
     "name": "Unknown::InvokeVirtual74OverRange_006245E0",
     "class": "Unknown",
