@@ -58195,6 +58195,13 @@
     "summary": "47-byte index-to-class lookup table (default 0x0c; sparse entries 0x00-0x0a); data, not code",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x00798EA0": {
+    "name": "Unknown::InitMaskTable",
+    "class": "Unknown",
+    "signature": "void fn_00798EA0(void* self)",
+    "summary": "Allocates a 24-byte table of three {uint32 0, float mask} entries, where mask = (1 \u003c\u003c (field_0x28 \u0026 31)) - 1.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x00798F10": {
     "name": "ReplaceGlobalBlock",
     "signature": "void fn_00798F10(uint32_t* slot, const void* src, uint32_t size)",

@@ -574,3 +574,29 @@ void fn_00798F10(uint32_t* slot, const void* src, uint32_t size) {
     }
 }
 } // namespace lift_00798F10
+
+// [0x00798EA0] sub_00798EA0 (80 bytes)
+namespace lift_00798EA0 {
+// Known callee 0x0079AF40: sub_0079AF40 (GlobalAllocZeroFlags wrapper, uFlags = GMEM_FIXED).
+extern uint32_t ext_0079AF40(uint32_t size);
+
+// @name Unknown::InitMaskTable
+// @class Unknown
+// @summary Allocates a 24-byte table of three {uint32 0, float mask} entries, where mask = (1 << (field_0x28 & 31)) - 1.
+// @field Unknown +0x28 uint8_t field_0x28
+// @field Unknown +0xDC uint32_t field_0xDC
+void fn_00798EA0(void* self) {
+    const uint32_t block = ext_0079AF40(24);
+    lift_field<uint32_t>(self, 0xDC) = block;
+
+    const uint32_t shift = static_cast<uint32_t>(lift_field<uint8_t>(self, 0x28)) & 31u;
+    const float mask = static_cast<float>(static_cast<int32_t>((1u << shift) - 1u));
+
+    uint8_t* base = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(block));
+    for (uint32_t i = 0; i < 24; i += 8) {
+        const uint32_t zero = 0;
+        std::memcpy(base + i, &zero, sizeof(zero));
+        std::memcpy(base + i + 4, &mask, sizeof(mask));
+    }
+}
+} // namespace lift_00798EA0
