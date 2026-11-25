@@ -724,3 +724,19 @@ void fn_005EC950(DWORD* out, DWORD value) {
     out[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
 }
 } // namespace lift_005EC950
+
+// [0x005EC930] sub_005EC930 (30 bytes)
+namespace lift_005EC930 {
+// Known callee 0x005EB000: getOrInitStaticObject_005EB000 (One-time initializer for the static object at mem_00B45F28: sets guard bit 0 of mem_00B45F2C, runs the init callee on the object, writes the vtable pointer 0x009693F4, and returns the object's address. The original SEH frame (fs:[0] push/restore, handler 0x008A64DE) is not reproduced.)
+extern void* ext_005EB000();
+
+// @name getOrInitStaticObjectAndStore_005EC930
+// @summary Calls the static-object initializer, then stores the caller-supplied value at out+0 and the returned object pointer at out+4.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 void* field_0x04
+void fn_005EC930(void* out, uint32_t value) {
+    void* obj = ext_005EB000();
+    lift_field<uint32_t>(out, 0x00) = value;
+    lift_field<void*>(out, 0x04) = obj;
+}
+} // namespace lift_005EC930

@@ -1,0 +1,27 @@
+{
+  "va": "0x005EC930",
+  "size": 30,
+  "orig_symbol": "sub_005EC930",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "getOrInitStaticObjectAndStore_005EC930",
+  "signature": "void fn_005EC930(void* out, uint32_t value)",
+  "summary": "Calls the static-object initializer, then stores the caller-supplied value at out+0 and the returned object pointer at out+4.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:12:40Z"
+}
