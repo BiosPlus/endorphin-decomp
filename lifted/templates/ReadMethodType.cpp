@@ -50416,3 +50416,36 @@ void fn_004F5E40(void* self) {
     std::abort();
 }
 } // namespace lift_004F5E40
+
+// [0x004F5830] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getX(void) const, 0>::vfunc_5 (50 bytes)
+namespace lift_004F5830 {
+// Known callee 0x004F4DD0: sub_004F4DD0 (4B). Result is consumed as a float (fstp).
+extern float ext_004F4DD0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Called with (exception object, ThrowInfo) as two stack arguments.
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+
+// ThrowInfo for the exception type at 0x009DEC1C.
+static const void* const kThrowInfo = reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu));
+
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, getX, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getX(void) const, 0>
+// @summary Reads the pointer stored at +0x00 of the target; if non-null, invokes the error helpers, then always throws a DerivedException (getX has no valid read path here).
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004F5830(void* self) {
+    void* value = lift_field<void*>(self, 0x00);
+    if (value != nullptr) {
+        (void)ext_004F4DD0();
+        ext_0046C4E0();  // throws
+    }
+
+    // Exception object lives in the local frame (0x28 bytes reserved by the original prologue).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, kThrowInfo);
+}
+} // namespace lift_004F5830

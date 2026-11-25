@@ -1,0 +1,22 @@
+{
+  "va": "0x004F5830",
+  "size": 50,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getX(void) const, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, getX, 0\u003e::vfunc_5",
+  "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getX(void) const, 0\u003e",
+  "signature": "void fn_004F5830(void* self)",
+  "summary": "Reads the pointer stored at +0x00 of the target; if non-null, invokes the error helpers, then always throws a DerivedException (getX has no valid read path here).",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:14:24Z"
+}

@@ -18251,6 +18251,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType\u003cImageExporter, float, getFrameRate\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004F5830": {
+    "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, getX, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getX(void) const, 0\u003e",
+    "signature": "void fn_004F5830(void* self)",
+    "summary": "Reads the pointer stored at +0x00 of the target; if non-null, invokes the error helpers, then always throws a DerivedException (getX has no valid read path here).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004F5A80": {
     "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026MatrixWithProperties::getY, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026MatrixWithProperties::getY, 0\u003e",
