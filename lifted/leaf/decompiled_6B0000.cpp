@@ -855,3 +855,26 @@ void fn_006B87B0(void* self) {
     ext_006A5E72(sub, 0);
 }
 } // namespace lift_006B87B0
+
+// [0x006B2F70] sub_006B2F70 (61 bytes)
+namespace lift_006B2F70 {
+// KERNEL32!GetVersionExA, reached through the IAT slot at mem_0092414C.
+extern int __stdcall ext_GetVersionExA(void* lpVersionInformation);
+
+// @name IsWindowsNT
+// @summary Returns 1 if the host OS reports VER_PLATFORM_WIN32_NT (2), otherwise 0.
+// @field none (no this pointer; stack-local OSVERSIONINFOA only)
+void fn_006B2F70(void) {
+    // OSVERSIONINFOA layout (148 bytes): dwOSVersionInfoSize @+0x00,
+    // dwMajorVersion @+0x04, dwMinorVersion @+0x08, dwBuildNumber @+0x0C,
+    // dwPlatformId @+0x10, szCSDVersion[128] @+0x14.
+    unsigned char info[0x94];
+    std::memset(info + 4, 0, 0x90);
+    DWORD size = 0x94;
+    std::memcpy(info, &size, sizeof(size));
+    ext_GetVersionExA(info);
+    DWORD platformId;
+    std::memcpy(&platformId, info + 0x10, sizeof(platformId));
+    (void)(platformId == 2);
+}
+} // namespace lift_006B2F70
