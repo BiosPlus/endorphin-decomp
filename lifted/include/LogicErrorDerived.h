@@ -8,6 +8,7 @@
 // Recovered field layout for LogicErrorDerived:
 namespace lifted_layout {
 struct LogicErrorDerived_Fields {
-    // +0x0   uint32_t                 vftable  (evidence: 0x0069B560)
+    // +0x0   uint32_t                 vftable  (evidence: 0x0069B560) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vptr  (evidence: 0x004024E0) // CONFLICT: multiple definitions at +0x0
 };
 } // namespace lifted_layout

@@ -1,0 +1,22 @@
+{
+  "va": "0x004024E0",
+  "size": 25,
+  "orig_symbol": "sub_004024E0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "LogicErrorDerived::LogicErrorDerived(const LogicErrorDerived\u0026)",
+  "class": "LogicErrorDerived",
+  "signature": "void* __thiscall sub_004024E0(void* self, const void* other)",
+  "summary": "Copy constructor for a std::logic_error subclass, calling base copy constructor and setting vtable.",
+  "fields": [
+    {
+      "class": "LogicErrorDerived",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:28:11Z"
+}
