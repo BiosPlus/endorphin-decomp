@@ -57043,6 +57043,13 @@
     "summary": "Returns mem_0092A278 for index 0; otherwise 2^((index + 0.5) * mem_00999AE8 - mem_00999AE0) as a double.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BBB40": {
+    "name": "IterateRowRange",
+    "class": "UnknownClass",
+    "signature": "uint32_t fn_007BBB40(uint8_t* self, uint32_t start, uint32_t count, uint32_t arg4)",
+    "summary": "Invokes the callback stored at self +0x1A0 once per row-sized step over [start, start+count); returns 1 on success (or count == 0), 0 if the callback reports failure.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BBBE0": {
     "name": "UnknownClass::processRows",
     "class": "UnknownClass",

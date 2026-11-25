@@ -760,3 +760,35 @@ uint32_t fn_007BBBE0(uint8_t* self, uint8_t* base, uint32_t remaining, uint32_t 
     return 1;
 }
 } // namespace lift_007BBBE0
+
+// [0x007BBB40] sub_007BBB40 (70 bytes)
+namespace lift_007BBB40 {
+// Known callee 0x00798840: UnknownClass::computeRowByteSize (lifted, defined in lifted/leaf/decompiled_790000.cpp).
+uint32_t fn_00798840(uint8_t* self);
+
+// @name IterateRowRange
+// @class UnknownClass
+// @summary Invokes the callback stored at self +0x1A0 once per row-sized step over [start, start+count); returns 1 on success (or count == 0), 0 if the callback reports failure.
+// @field UnknownClass +0x1A0 <uint32_t (*)(uint8_t*, uint32_t, uint32_t, uint32_t)> field_0x1A0
+uint32_t fn_007BBB40(uint8_t* self, uint32_t start, uint32_t count, uint32_t arg4) {
+    using RowCallback = uint32_t (*)(uint8_t*, uint32_t, uint32_t, uint32_t);
+
+    const uint32_t rowBytes = fn_00798840(self);
+    if (count == 0) {
+        return 1;
+    }
+
+    uint32_t cur = start;
+    uint32_t remaining = count;
+    do {
+        const RowCallback cb = lift_field<RowCallback>(self, 0x1A0);
+        if (cb(self, cur, rowBytes, arg4) == 0) {
+            return 0;
+        }
+        cur += rowBytes;
+        remaining -= rowBytes;
+    } while (remaining != 0);
+
+    return 1;
+}
+} // namespace lift_007BBB40

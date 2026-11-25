@@ -1,0 +1,22 @@
+{
+  "va": "0x007BBB40",
+  "size": 70,
+  "orig_symbol": "sub_007BBB40",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "IterateRowRange",
+  "class": "UnknownClass",
+  "signature": "uint32_t fn_007BBB40(uint8_t* self, uint32_t start, uint32_t count, uint32_t arg4)",
+  "summary": "Invokes the callback stored at self +0x1A0 once per row-sized step over [start, start+count); returns 1 on success (or count == 0), 0 if the callback reports failure.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1A0",
+      "type": "\u003cuint32_t (*)(uint8_t*, uint32_t, uint32_t, uint32_t)\u003e",
+      "name": "field_0x1A0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:26:19Z"
+}
