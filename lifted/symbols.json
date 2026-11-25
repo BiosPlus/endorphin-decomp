@@ -15611,6 +15611,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004D5DC0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::RigEventData,int\u003e::vfunc_40 (getPhysicsTicks / setPhysicsTicks)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, int, {public: void __thiscall NMData::RigEventData::setPhysicsTicks(int), 0}\u003e",
+    "signature": "extern \"C\" DWORD mem_00AE5D28; // init guard flag (bit 0) extern \"C\" DWORD mem_00AE5D24; // static object; first DWORD is its vtable pointer void fn_004D5DC0([[maybe_unused]] void* self, void* out)",
+    "summary": "Lazily initializes the static object at 0xAE5D24 (once, guarded by bit 0 of 0xAE5D28) and stores its address into the out slot's +4 field.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004D5E40": {
     "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0\u003e",

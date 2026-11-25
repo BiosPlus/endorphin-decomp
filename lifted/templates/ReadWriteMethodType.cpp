@@ -10141,3 +10141,28 @@ void fn_004D6580(void* self) {
     lift_field<DWORD>(self, 0x04) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AE5D3C));
 }
 } // namespace lift_004D6580
+
+// [0x004D5DC0] ExprParser::ReadWriteMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, int, {public: void __thiscall NMData::RigEventData::setPhysicsTicks(int), 0}>::vfunc_40 (122 bytes)
+namespace lift_004D5DC0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AE5D28; // init guard flag (bit 0)
+extern DWORD mem_00AE5D24; // static object; first DWORD is its vtable pointer
+
+// @name ExprParser::ReadWriteMethodType<NMData::RigEventData,int>::vfunc_40 (getPhysicsTicks / setPhysicsTicks)
+// @class ExprParser::ReadWriteMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, int, {public: void __thiscall NMData::RigEventData::setPhysicsTicks(int), 0}>
+// @summary Lazily initializes the static object at 0xAE5D24 (once, guarded by bit 0 of 0xAE5D28) and stores its address into the out slot's +4 field.
+// @field ExprParser::ValuePtrType +0x04 DWORD field_0x04
+void fn_004D5DC0([[maybe_unused]] void* self, void* out) {
+    // One-time init: if guard bit 0 is clear, set it, run the object's init
+    // helper on the static object, then install its vtable (0x00948CCC), which
+    // overwrites the 0 written by the helper's stored argument.
+    if ((mem_00AE5D28 & 1u) == 0u) {
+        mem_00AE5D28 |= 1u;
+        ext_0067A670(static_cast<void*>(&mem_00AE5D24), 0u);
+        mem_00AE5D24 = 0x00948CCCu;
+    }
+    // Both paths: out->field_0x04 = &static object (immediate 0x00AE5D24).
+    lift_field<DWORD>(out, 4) = 0x00AE5D24u;
+}
+} // namespace lift_004D5DC0
