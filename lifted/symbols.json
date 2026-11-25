@@ -6219,6 +6219,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0xFFFFFDB8 and tail-calls sub_0045F150.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x004602B0": {
+    "name": "MultiTrackView::TriggeredEventView::vfunc_6_off_254",
+    "class": "MultiTrackView::TriggeredEventView",
+    "signature": "extern uint32_t mem_00924FE4;     // IAT slot: std::basic_string\u003cchar\u003e::basic_string(const char*, const allocator\u0026) extern const char mem_009381E8[]; // .rdata C-string literal passed to the string constructor void* __stdcall fn_004602B0(void* out)",
+    "summary": "Constructs a std::string from the literal at 0x009381E8 in the caller-supplied out object and returns out; the vtable this pointer is unused.",
+    "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
+  },
   "0x004602E0": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_0_off_254",
     "class": "MultiTrackView::TriggeredEventView",

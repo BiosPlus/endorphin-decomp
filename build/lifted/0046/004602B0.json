@@ -1,0 +1,14 @@
+{
+  "va": "0x004602B0",
+  "size": 34,
+  "orig_symbol": "MultiTrackView::TriggeredEventView::vfunc_6_off_254",
+  "src_path": "src/MultiTrackView/TriggeredEventView.cpp",
+  "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp",
+  "name": "MultiTrackView::TriggeredEventView::vfunc_6_off_254",
+  "class": "MultiTrackView::TriggeredEventView",
+  "signature": "extern uint32_t mem_00924FE4;     // IAT slot: std::basic_string\u003cchar\u003e::basic_string(const char*, const allocator\u0026) extern const char mem_009381E8[]; // .rdata C-string literal passed to the string constructor void* __stdcall fn_004602B0(void* out)",
+  "summary": "Constructs a std::string from the literal at 0x009381E8 in the caller-supplied out object and returns out; the vtable this pointer is unused.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:47:57Z"
+}

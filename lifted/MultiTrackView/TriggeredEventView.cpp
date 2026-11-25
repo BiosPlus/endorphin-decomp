@@ -115,3 +115,19 @@ void fn_0045DAC0(void* self, int32_t arg0, int32_t arg1, int32_t arg2, int32_t a
     ext_004686A0(reinterpret_cast<void*>(static_cast<uintptr_t>(target_addr)), sum);
 }
 } // namespace lift_0045DAC0
+
+// [0x004602B0] MultiTrackView::TriggeredEventView::vfunc_6_off_254 (34 bytes)
+namespace lift_004602B0 {
+extern uint32_t mem_00924FE4;     // IAT slot: std::basic_string<char>::basic_string(const char*, const allocator&)
+extern const char mem_009381E8[]; // .rdata C-string literal passed to the string constructor
+
+// @name MultiTrackView::TriggeredEventView::vfunc_6_off_254
+// @class MultiTrackView::TriggeredEventView
+// @summary Constructs a std::string from the literal at 0x009381E8 in the caller-supplied out object and returns out; the vtable this pointer is unused.
+void* __stdcall fn_004602B0(void* out) {
+    using StringCtorFn = void(__thiscall*)(void* self, const char* str, const void* alloc);
+    auto ctor = reinterpret_cast<StringCtorFn>(static_cast<uintptr_t>(mem_00924FE4));
+    ctor(out, mem_009381E8, nullptr);
+    return out;
+}
+} // namespace lift_004602B0
