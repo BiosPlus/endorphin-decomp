@@ -1134,3 +1134,20 @@ extern uint8_t __stdcall fn_007AEF70(void* args_ptr) {
     return 0; // xor al, al
 }
 } // namespace lift_007AEF70
+
+// [0x007AC670]
+namespace lift_007AC670 {
+// @name ReleaseAndNullPtr_007AC670
+// @summary If the pointer-to-pointer argument is non-null, free the pointee via the MSVCR80 free IAT slot (0x009251D8) and null it out.
+// @note Original asm: push esi; load arg; test; call [0x9251D8] (MSVCR80!free); mov [esi],0; pop esi; ret.
+
+// MSVCR80!free, reached through the IAT slot at 0x009251D8.
+extern void __cdecl ext_009251D8(void* ptr);
+
+extern void __cdecl ReleaseAndNullPtr_007AC670(void** slot) {
+    if (slot) {
+        ext_009251D8(*slot);
+        *slot = nullptr;
+    }
+}
+} // namespace lift_007AC670

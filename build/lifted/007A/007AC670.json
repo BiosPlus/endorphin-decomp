@@ -1,0 +1,13 @@
+{
+  "va": "0x007AC670",
+  "size": 32,
+  "orig_symbol": "sub_007AC670",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "ReleaseAndNullPtr_007AC670",
+  "signature": "extern \"C\" void __cdecl ReleaseAndNullPtr_007AC670(void** slot)",
+  "summary": "If the pointer-to-pointer argument is non-null, free the pointee via the MSVCR80 free IAT slot (0x009251D8) and null it out.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:43:25Z"
+}
