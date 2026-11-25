@@ -20,6 +20,7 @@ float fn_005478B0(uint32_t ecx) {
 } // namespace lift_00611160
 } // namespace lift_005478B0
 #include <cstdint>
+#include <cstdlib>
 
 // [0x005478C0] sub_005478C0 (14 bytes)
 namespace lift_005478C0 {
@@ -897,3 +898,28 @@ void* fn_005404B0(void* self, const void* src) {
     return self;
 }
 } // namespace lift_005404B0
+
+// [0x005432A0] sub_005432A0 (91 bytes)
+namespace lift_005432A0 {
+// Known callee 0x005434E0: sub_005434E0 (13B). Thiscall-style: ecx = element, one stack argument.
+extern void ext_005434E0(void* self, void* arg);
+
+// @name Unknown::callOnEachElement
+// @class Unknown
+// @summary Walks the pointer range [begin, end) of this container and calls ext_005434E0 on each element, forwarding the single argument; aborts if the range is inverted.
+// @field Unknown +0x08 void** begin
+// @field Unknown +0x0C void** end
+void fn_005432A0(void* self, void* arg) {
+    void** const begin = lift_field<void**>(self, 0x08);
+    void** const end   = lift_field<void**>(self, 0x0C);
+
+    // Original code calls _invalid_parameter_noinfo (ebp) when begin > end.
+    if (begin > end) {
+        std::abort();
+    }
+
+    for (void** it = begin; it != end; ++it) {
+        ext_005434E0(*it, arg);
+    }
+}
+} // namespace lift_005432A0

@@ -20773,6 +20773,13 @@
     "summary": "Tail-calls vtable slot +0x6c on member pointer at +0x14.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x005432A0": {
+    "name": "Unknown::callOnEachElement",
+    "class": "Unknown",
+    "signature": "void fn_005432A0(void* self, void* arg)",
+    "summary": "Walks the pointer range [begin, end) of this container and calls ext_005434E0 on each element, forwarding the single argument; aborts if the range is inverted.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00543300": {
     "name": "ResetHeaderFields",
     "class": "\u003cunknown\u003e",
