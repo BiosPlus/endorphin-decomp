@@ -65469,6 +65469,12 @@
     "summary": "If field +0x08 == 1, forward the first field with tag 0x00AAFA10 and return 0; otherwise return 1 when bit 10 of +0x0C equals the flag, else forward the first field with a tag chosen from the flag and return 0.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x007986B0": {
+    "name": "ComputeBufferOffset",
+    "signature": "uint32_t fn_007986B0(uint8_t* a1, uint32_t a2, uint32_t a3)",
+    "summary": "Computes a buffer offset by dividing arg2 by field_0x50 and adding a scaled plane/channel offset when field_0x72 == 2, or invoking ext_0079B140 if arg3 is out of range.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x00798710": {
     "name": "Unknown::ComputeScaledPageCount",
     "class": "Unknown",
@@ -65536,6 +65542,12 @@
     "name": "fn_0079A16C_byteLookupTable",
     "signature": "void fn_0079A16C(void* self)",
     "summary": "Static 37-byte lookup table (values 0x00-0x14, 0x14 used as filler); trailing 3 bytes are padding/lea not part of the table.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
+  "0x0079A230": {
+    "name": "MeasureNullTerminatedStringTableSize",
+    "signature": "uint32_t fn_0079A230(uintptr_t record, int32_t maxLen, uintptr_t buf)",
+    "summary": "Measures the total byte size of a table of null-terminated strings bounded by a maximum length, reporting an error via ext_0079B140 if the bound is exceeded.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
   "0x0079ABA0": {
@@ -65936,6 +65948,12 @@
     "signature": "extern \"C\" void __fastcall fn_0079F380(void* self)",
     "summary": "Destructor tail-call: restores vtable mem_009977F0 and tail-calls base destructor sub_007AA880.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
+  "0x007A1940": {
+    "name": "freeStructWithBuffers",
+    "signature": "void sub_007A1940(uint32_t* pPtr)",
+    "summary": "Frees four optional buffer fields (+0x30, +0x34, +0x40, +0x44) and the struct itself, then nulls the pointer.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
   "0x007A5EF0": {
     "name": "sub_007A5EF0",
