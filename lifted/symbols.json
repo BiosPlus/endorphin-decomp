@@ -44907,6 +44907,12 @@
     "summary": "Virtual dispatch thunk: loads the vtable pointer from the receiver and returns the code address stored at vtable byte offset 0x24 (slot 9 on x86). The original tail-jumps to that address with the same this; this lift returns the target so the caller performs the call.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
   },
+  "0x00683090": {
+    "name": "GetOnceInitString_00683090",
+    "signature": "extern uint32_t mem_00B5AD40;   // once-init guard flag (bit 0) extern uint8_t mem_00B5AD24[];  // static object storage (size not recovered) void* fn_00683090(void)",
+    "summary": "One-time guarded initializer for the global at 0x00B5AD24; on first call builds it via ext_0066AD10 and registers its teardown (0x00921E10) via ext_006A6C87; later calls only return its address.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x006830F0": {
     "name": "sub_006830F0",
     "signature": "extern \"C\" void __fastcall fn_006830F0(void* self)",

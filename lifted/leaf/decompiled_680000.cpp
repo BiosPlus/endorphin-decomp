@@ -1933,3 +1933,31 @@ void fn_0068C530(void* self) {
     ext_00695440(static_cast<std::uint8_t*>(self) + 0x10);
 }
 } // namespace lift_0068C530
+
+// [0x00683090] sub_00683090 (95 bytes)
+namespace lift_00683090 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+// Callee takes (out, flag); the original pushes a 32-bit literal (0x00A353F8) as the second argument.
+extern void* ext_0066AD10(void* out, uint32_t arg);
+// Callee 0x006A6C87 registers a teardown routine (0x00921E10) once.
+extern int ext_006A6C87(void (*fn)(void));
+extern void ext_00921E10(void);
+
+extern uint32_t mem_00B5AD40;   // once-init guard flag (bit 0)
+extern uint8_t mem_00B5AD24[];  // static object storage (size not recovered)
+
+// @name GetOnceInitString_00683090
+// @summary One-time guarded initializer for the global at 0x00B5AD24; on first call builds it via ext_0066AD10 and registers its teardown (0x00921E10) via ext_006A6C87; later calls only return its address.
+void* fn_00683090(void) {
+    // Guard bit 0 of mem_00B5AD40. The original MSVC SEH frame (fs:[0] push/pop, try-state
+    // slot) is an exception-unwind detail and is not reproduced here.
+    if ((mem_00B5AD40 & 1u) == 0u) {
+        mem_00B5AD40 |= 1u;
+        // Original pushes the operand 0x00A353F8 as the second argument.
+        ext_0066AD10(mem_00B5AD24, 0x00A353F8u);
+        // Original pushes 0x00921E10 as the teardown address for 0x006A6C87.
+        ext_006A6C87(ext_00921E10);
+    }
+    return mem_00B5AD24;
+}
+} // namespace lift_00683090
