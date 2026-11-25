@@ -43450,6 +43450,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049ABC0 (Unknown::getByteAt09OfPtr12C).",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x00667030": {
+    "name": "advanceCursorSkipFlagged",
+    "signature": "void fn_00667030(void* self)",
+    "summary": "Advances the cursor at self+0x04 past nodes whose byte at +0x39 is set, using the +0x04 and +0x08 links; calls the invalid-parameter handler when self+0x00 is null or the cursor node is flagged on entry.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00667140": {
     "name": "sub_00667140",
     "signature": "void* fn_00667140()",

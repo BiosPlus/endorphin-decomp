@@ -2346,3 +2346,62 @@ uint32_t fn_00660280() {
     return *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(cursor));
 }
 } // namespace lift_00660280
+
+// [0x00667030] sub_00667030 (108 bytes)
+namespace lift_00667030 {
+// Import slot 0x00925134 holds the address of MSVCR80!_invalid_parameter_noinfo.
+// The raw .rdata label is "P{b", but the code loads a function pointer from it.
+extern void (*mem_00925134)();
+
+// @name advanceCursorSkipFlagged
+// @summary Advances the cursor at self+0x04 past nodes whose byte at +0x39 is set, using the +0x04 and +0x08 links; calls the invalid-parameter handler when self+0x00 is null or the cursor node is flagged on entry.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 void* cursor
+// @field UnknownNode +0x00 void* field_0x00
+// @field UnknownNode +0x04 void* field_0x04
+// @field UnknownNode +0x08 void* field_0x08
+// @field UnknownNode +0x39 uint8_t flag
+void fn_00667030(void* self) {
+    if (lift_field<void*>(self, 0x00) == nullptr) {
+        mem_00925134();
+    }
+
+    void* eax = lift_field<void*>(self, 0x04);
+    if (lift_field<uint8_t>(eax, 0x39) != 0) {
+        mem_00925134();
+        return;
+    }
+
+    void* ecx = lift_field<void*>(eax, 0x08);
+    if (lift_field<uint8_t>(ecx, 0x39) == 0) {
+        // Walk the +0x00 chain from ecx until a node with flag set is found.
+        void* n = lift_field<void*>(ecx, 0x00);
+        if (lift_field<uint8_t>(n, 0x39) == 0) {
+            do {
+                ecx = n;
+                n = lift_field<void*>(ecx, 0x00);
+            } while (lift_field<uint8_t>(n, 0x39) == 0);
+        }
+        lift_field<void*>(self, 0x04) = ecx;
+        return;
+    }
+
+    // ecx (eax+0x08) is flagged: step to eax+0x04 and skip forward.
+    eax = lift_field<void*>(eax, 0x04);
+    if (lift_field<uint8_t>(eax, 0x39) == 0) {
+        for (;;) {
+            void* cur = lift_field<void*>(self, 0x04);
+            if (cur != lift_field<void*>(eax, 0x08)) {
+                break;
+            }
+            lift_field<void*>(self, 0x04) = eax;
+            void* edx = eax;
+            eax = lift_field<void*>(edx, 0x04);
+            if (lift_field<uint8_t>(eax, 0x39) != 0) {
+                break;
+            }
+        }
+    }
+    lift_field<void*>(self, 0x04) = eax;
+}
+} // namespace lift_00667030
