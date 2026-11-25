@@ -125,3 +125,45 @@ uint32_t fn_00480060(void* self, uint32_t arg1) {
     return vfunc(subobj, arg1, 3u, tuple, 1u);
 }
 } // namespace lift_00480060
+
+// [0x00480EA0]
+namespace lift_00480EA0 {
+// @name ToolEngine::vfunc_49
+// @class ToolEngine
+// @summary Calls vtable slot 11 of the subobject at +0x10 to get a range, bounds-checks its current element, and forwards that element to the delegate at +0x3B4.
+// @field ToolEngine +0x10 void* field_0x10
+// @field ToolEngine +0x3B4 void* delegate_0x3B4
+
+// Callee at 0x004A66D0: thiscall, this = delegate, one 32-bit argument.
+extern void __thiscall ext_004A66D0(void* self, uint32_t value);
+
+// Invalid-parameter handler pointer loaded from the import slot at 0x00925134.
+extern void (*mem_00925134)(void);
+
+extern void __thiscall fn_00480EA0(void* self) {
+    uint8_t* sub = static_cast<uint8_t*>(self) + 0x10;
+
+    // vtable of the subobject at +0x10 (its value is stored in field_0x10).
+    void* vtbl = lift_field<void*>(self, 0x10);
+    // Virtual slot 11 (offset 0x2C) is called with this = sub.
+    void* slot = lift_field<void*>(vtbl, 0x2C);
+    using RangeGetter = uint32_t* (__thiscall*)(void* self);
+    auto getRange = reinterpret_cast<RangeGetter>(slot);
+    uint32_t* range = getRange(sub);
+
+    // range layout: +0x4 = current element address, +0x8 = end address.
+    uint32_t cur = lift_field<uint32_t>(range, 0x4);
+    uint32_t end = lift_field<uint32_t>(range, 0x8);
+    if (cur > end) {
+        mem_00925134();
+    }
+    if (!(cur < end)) {
+        mem_00925134();
+    }
+
+    uint32_t value = lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(cur)), 0);
+
+    void* delegate = lift_field<void*>(self, 0x3B4);
+    ext_004A66D0(delegate, value);
+}
+} // namespace lift_00480EA0

@@ -1,0 +1,28 @@
+{
+  "va": "0x00480EA0",
+  "size": 61,
+  "orig_symbol": "ToolEngine::vfunc_49",
+  "src_path": "src/classes/ToolEngine.cpp",
+  "lifted_path": "lifted/classes/ToolEngine.cpp",
+  "name": "ToolEngine::vfunc_49",
+  "class": "ToolEngine",
+  "signature": "extern \"C\" void __thiscall fn_00480EA0(void* self)",
+  "summary": "Calls vtable slot 11 of the subobject at +0x10 to get a range, bounds-checks its current element, and forwards that element to the delegate at +0x3B4.",
+  "fields": [
+    {
+      "class": "ToolEngine",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "ToolEngine",
+      "offset": "+0x3B4",
+      "type": "void*",
+      "name": "delegate_0x3B4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:56:44Z"
+}
