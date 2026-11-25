@@ -1390,3 +1390,61 @@ void __stdcall sub_00426980(uint32_t arg1, uint32_t arg2) {
     reinterpret_cast<dtor_fn>(mem_00924FF4)(local_str);
 }
 } // namespace lift_00426980
+
+// [0x00427A60]
+namespace lift_00427A60 {
+extern void (*mem_00925134)();
+
+// @name advanceIteratorUntilMatch
+// @summary Advances a checked vector iterator until end or an element's vfunc(+0xC)(1) returns true
+// @field Iterator +0x00 uint32_t container_ptr
+// @field Iterator +0x04 uint32_t proxy_ptr
+// @field Iterator +0x08 uint32_t elem_ptr
+void __thiscall sub_00427A60(void* self) {
+    uint32_t* it = reinterpret_cast<uint32_t*>(self);
+    auto invalid_param = mem_00925134;
+
+    while (true) {
+        uint32_t container = it[0];
+        uint32_t end_ptr = *reinterpret_cast<uint32_t*>(container + 0x8);
+        if (*reinterpret_cast<uint32_t*>(container + 0x4) > end_ptr) {
+            invalid_param();
+        }
+
+        uint32_t proxy = it[1];
+        if (proxy == 0 || proxy != container) {
+            invalid_param();
+        }
+
+        if (it[2] >= end_ptr) {
+            break;
+        }
+
+        if (it[1] == 0) {
+            invalid_param();
+        }
+        proxy = it[1];
+        if (it[2] >= *reinterpret_cast<uint32_t*>(proxy + 0x8)) {
+            invalid_param();
+        }
+
+        uint32_t elem = *reinterpret_cast<uint32_t*>(it[2]);
+        uint32_t vtable = *reinterpret_cast<uint32_t*>(elem);
+        using VFunc = uint8_t(__thiscall*)(uint32_t, uint32_t);
+        auto fn = *reinterpret_cast<VFunc*>(vtable + 0xc);
+        if (fn(elem, 1) != 0) {
+            break;
+        }
+
+        if (it[1] == 0) {
+            invalid_param();
+        }
+        proxy = it[1];
+        if (it[2] >= *reinterpret_cast<uint32_t*>(proxy + 0x8)) {
+            invalid_param();
+        }
+
+        it[2] += 4;
+    }
+}
+} // namespace lift_00427A60
