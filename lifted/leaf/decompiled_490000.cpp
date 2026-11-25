@@ -1217,3 +1217,35 @@ void* fn_00497890(void* dst, void* src) {
     return dst;
 }
 } // namespace lift_00497890
+
+// [0x00495AB0]
+namespace lift_00495AB0 {
+// External callees (lifted elsewhere).
+extern void fn_004026E0(void* self);   // ext_004026E0: StringArray::ReleaseElements
+extern void fn_0065F440(void* self);   // ext_0065F440: stores &mem_0093BF24 at +0x0
+extern void fn_006A5C5C(void* arg);    // ext_006A5C5C: IAT thunk to MFC80!ord_764 (takes one pointer argument)
+
+// @name destructorReleaseStringArray
+// @summary Resets vtable, frees the pointer at +0x1C, releases the StringArray at +0x08, then runs base cleanup.
+// @field field_0x00 void* vtable
+// @field field_0x08 StringArray stringArray
+// @field field_0x1C void* ptr1C
+// @field field_0x20 uint32_t field20
+// @field field_0x24 uint32_t field24
+void fn_00495AB0(void* self) {
+    // Vtable pointer for this class (0x0093F0FC).
+    lift_field<void*>(self, 0x00) = reinterpret_cast<void*>(static_cast<uintptr_t>(0x0093F0FCu));
+
+    void* p = lift_field<void*>(self, 0x1C);
+    if (p != nullptr) {
+        fn_006A5C5C(p);
+    }
+
+    lift_field<void*>(self, 0x1C) = nullptr;
+    lift_field<uint32_t>(self, 0x20) = 0;
+    lift_field<uint32_t>(self, 0x24) = 0;
+
+    fn_004026E0(static_cast<uint8_t*>(self) + 0x08);
+    fn_0065F440(self);
+}
+} // namespace lift_00495AB0

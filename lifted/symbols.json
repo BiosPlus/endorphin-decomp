@@ -10588,6 +10588,12 @@
     "summary": "Constructor: runs the PropertySource base constructor, installs the RigManager vtable (0x0093F0FC), zeroes the member fields, and returns this.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x00495AB0": {
+    "name": "destructorReleaseStringArray",
+    "signature": "extern \"C\" void fn_004026E0(void* self);   // ext_004026E0: StringArray::ReleaseElements extern \"C\" void fn_0065F440(void* self);   // ext_0065F440: stores \u0026mem_0093BF24 at +0x0 extern \"C\" void fn_006A5C5C(void* arg);    // ext_006A5C5C: IAT thunk to MFC80!ord_764 (takes one pointer argument) void fn_00495AB0(void* self)",
+    "summary": "Resets vtable, frees the pointer at +0x1C, releases the StringArray at +0x08, then runs base cleanup.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00496130": {
     "name": "RigManager::vfunc_0",
     "class": "RigManager",
