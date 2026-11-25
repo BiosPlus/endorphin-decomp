@@ -1408,3 +1408,28 @@ void __thiscall sub_0046C2F0(void* self, float value) {
     }
 }
 } // namespace lift_0046C2F0
+
+// [0x0046F830]
+namespace lift_0046F830 {
+// @name Unknown::SignalEventAndResetSubObject
+// @class Unknown
+// @summary Clears a flag at +0x12C, signals the event at index +0x148 on subobject +0x160, and tail-calls ClearFlagThenVirtualSlot2 on subobject +0x128.
+// @field Unknown +0x128 SubObject subObject_0x128
+// @field Unknown +0x12C uint8_t field_0x12C
+// @field Unknown +0x148 int32_t field_0x148
+// @field Unknown +0x160 Unknown eventContainer_0x160
+
+
+extern BOOL __thiscall ext_0067AEB0(void* self, INT index);
+extern void __thiscall ext_0067B050(void* self);
+extern void ext_006A5C62(void);
+
+void __thiscall fn_0046F830(void* self) {
+    if (false) ext_006A5C62();
+    auto* base = static_cast<uint8_t*>(self);
+    int32_t index = lift_field<int32_t>(base, 0x148);
+    lift_field<uint8_t>(base, 0x12C) = 0;
+    ext_0067AEB0(base + 0x160, index);
+    ext_0067B050(base + 0x128);
+}
+} // namespace lift_0046F830
