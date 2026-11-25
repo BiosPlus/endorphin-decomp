@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_400000.cpp
 #include "lift_compat.h"
 #include <cstdint>
+#include <cstring>
 #include <new>
 #include <string>
 
