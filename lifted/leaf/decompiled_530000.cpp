@@ -536,3 +536,24 @@ void fn_00533FE0(void* self, void* out) {
     std::memcpy(out, base + srcOffset, 4 * sizeof(float));
 }
 } // namespace lift_00533FE0
+
+// [0x00534020] sub_00534020 (58 bytes)
+namespace lift_00534020 {
+// @name selectVec4ByFloatSign
+// @summary Copies a 16-byte vector to the output buffer, choosing the source at this+0x28 when the float at this+0x34 is >= 0 (or +0.0) and at this+0x08 when it is negative or NaN.
+// @field UnknownClass +0x08 float field_0x08[4]
+// @field UnknownClass +0x28 float field_0x28[4]
+// @field UnknownClass +0x34 float field_0x34
+void fn_00534020(void* self, void* out) {
+    auto* base = static_cast<unsigned char*>(self);
+
+    // fcomp of 0.0 against [this+0x34]: the branch is taken for (0.0 > f) or unordered,
+    // i.e. f < 0 or f is NaN. In that case use the +0x08 source, otherwise +0x28.
+    float f;
+    std::memcpy(&f, base + 0x34, sizeof(f));
+    const unsigned char* src = !(0.0f >= f) ? base + 0x08 : base + 0x28;
+
+    // Four 32-bit float copies (fld/fstp sequence in the original).
+    std::memcpy(out, src, 16);
+}
+} // namespace lift_00534020

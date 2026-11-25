@@ -1,0 +1,33 @@
+{
+  "va": "0x00534020",
+  "size": 58,
+  "orig_symbol": "sub_00534020",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "selectVec4ByFloatSign",
+  "signature": "void fn_00534020(void* self, void* out)",
+  "summary": "Copies a 16-byte vector to the output buffer, choosing the source at this+0x28 when the float at this+0x34 is \u003e= 0 (or +0.0) and at this+0x08 when it is negative or NaN.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08[4]"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x28",
+      "type": "float",
+      "name": "field_0x28[4]"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:53:20Z"
+}

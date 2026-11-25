@@ -17527,6 +17527,12 @@
     "summary": "Copies a 16-byte (4 x float) vector to *out from this+0x08, or from this+0x18 when 0.0 \u003c= this+0x24 fails (negative or NaN).",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x00534020": {
+    "name": "selectVec4ByFloatSign",
+    "signature": "void fn_00534020(void* self, void* out)",
+    "summary": "Copies a 16-byte vector to the output buffer, choosing the source at this+0x28 when the float at this+0x34 is \u003e= 0 (or +0.0) and at this+0x08 when it is negative or NaN.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x00534570": {
     "name": "NullRenderer::vfunc_77",
     "class": "NullRenderer",
