@@ -740,3 +740,19 @@ void fn_005EC930(void* out, uint32_t value) {
     lift_field<void*>(out, 0x04) = obj;
 }
 } // namespace lift_005EC930
+
+// [0x005EC8D0] sub_005EC8D0 (30 bytes)
+namespace lift_005EC8D0 {
+// Known callee 0x005EAEE0: lazyInitStaticVtableObject_005EAEE0 (One-time lazy init of the static object at 0x00B45F10 (guard bit 0 of 0x00B45F14); sets its first DWORD to 0x00968EE4 and returns its address.)
+extern void* ext_005EAEE0();
+
+// @name storeValueAndStaticObject
+// @summary Stores a DWORD value into dst[0] and the lazily-initialized static object's address into dst[1].
+// @field  +0x00 DWORD field_0x00
+// @field  +0x04 DWORD field_0x04
+void fn_005EC8D0(DWORD* dst, DWORD value) {
+    void* obj = ext_005EAEE0();
+    dst[0] = value;
+    dst[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_005EC8D0
