@@ -1068,3 +1068,41 @@ extern void fn_006E6800(void* self) {
     ext_006B9D70(base);
 }
 } // namespace lift_006E6800
+
+// [0x006E7340]
+namespace lift_006E7340 {
+// @name sub_006E7340
+// @summary Iterates over items in arg1, calling vtable+0x10 on self and vtable+0x8 per item.
+// @field Self +0x00 void** vtable
+// @field Self +0x04 int32_t field_0x04
+// @field Arg1 +0x04 int32_t count
+// @field Arg1 +0x14 void** items
+// @field Item +0x4C int32_t field_0x4c
+
+
+extern int32_t __fastcall ext_006E7460(void* self);
+
+extern void __fastcall fn_006E7340(void* self, void* /*edx*/, void* arg1) {
+    void** vtable = *reinterpret_cast<void***>(self);
+    reinterpret_cast<void(__thiscall*)(void*)>(vtable[0x10 / 4])(self);
+
+    int32_t count = *reinterpret_cast<int32_t*>(reinterpret_cast<uint8_t*>(arg1) + 0x4);
+    if (count <= 0) {
+        return;
+    }
+
+    for (int32_t i = 0; i < count; ++i) {
+        void** items = *reinterpret_cast<void***>(reinterpret_cast<uint8_t*>(arg1) + 0x14);
+        void* item = items[i];
+        int32_t field_4c = *reinterpret_cast<int32_t*>(reinterpret_cast<uint8_t*>(item) + 0x4C);
+        int32_t field_00 = ext_006E7460(item);
+
+        void** self_vtable = *reinterpret_cast<void***>(self);
+        int32_t self_field_04 = *reinterpret_cast<int32_t*>(reinterpret_cast<uint8_t*>(self) + 0x4);
+        reinterpret_cast<void(__thiscall*)(void*, int32_t, int32_t, int32_t)>(self_vtable[0x8 / 4])(
+            self, self_field_04, field_00, field_4c);
+
+        count = *reinterpret_cast<int32_t*>(reinterpret_cast<uint8_t*>(arg1) + 0x4);
+    }
+}
+} // namespace lift_006E7340

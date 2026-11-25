@@ -1,0 +1,45 @@
+{
+  "va": "0x006E7340",
+  "size": 80,
+  "orig_symbol": "sub_006E7340",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "sub_006E7340",
+  "signature": "extern \"C\" void __fastcall fn_006E7340(void* self, void* /*edx*/, void* arg1)",
+  "summary": "Iterates over items in arg1, calling vtable+0x10 on self and vtable+0x8 per item.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Arg1",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "Arg1",
+      "offset": "+0x14",
+      "type": "void**",
+      "name": "items"
+    },
+    {
+      "class": "Item",
+      "offset": "+0x4C",
+      "type": "int32_t",
+      "name": "field_0x4c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:54:10Z"
+}
