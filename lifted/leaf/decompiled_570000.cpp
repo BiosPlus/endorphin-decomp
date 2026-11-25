@@ -1659,3 +1659,26 @@ uint32_t fn_0057BD80(uint32_t first, uint32_t last, uint32_t d_last) {
     return d_last - static_cast<uint32_t>(count * 60);
 }
 } // namespace lift_0057BD80
+
+// [0x00575CE0]
+namespace lift_00575CE0 {
+// @name readNamedRecord
+// @summary Skips a tellg, reads a 4-byte int and a 0x1c-byte record from the stream, assigns the record's name (starting at +4) to name, then returns true and zeroes flag if flag was < 1 (false otherwise).
+bool readNamedRecord(std::istream& in, std::string& name, int& flag) {
+    in.tellg();  // result discarded by the original code
+    in.read(reinterpret_cast<char*>(&flag), 4);
+
+    char rec[0x1c];
+    in.read(rec, sizeof(rec));
+
+    // Original uses operator=(const char*); bound the scan to the record so
+    // a missing NUL cannot read past the buffer.
+    name.assign(rec + 4, strnlen(rec + 4, sizeof(rec) - 4));
+
+    if (flag >= 1) {
+        return false;
+    }
+    flag = 0;
+    return true;
+}
+} // namespace lift_00575CE0

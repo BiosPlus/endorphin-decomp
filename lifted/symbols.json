@@ -24889,6 +24889,12 @@
     "summary": "Skips two 2-byte reads from a std::istream and returns true unless the first two bytes read were 'V' '#'.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x00575CE0": {
+    "name": "readNamedRecord",
+    "signature": "bool readNamedRecord(std::istream\u0026 in, std::string\u0026 name, int\u0026 flag)",
+    "summary": "Skips a tellg, reads a 4-byte int and a 0x1c-byte record from the stream, assigns the record's name (starting at +4) to name, then returns true and zeroes flag if flag was \u003c 1 (false otherwise).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00575DF0": {
     "name": "descriptiveName: VectorLike20::ElementAt",
     "class": "descriptiveName: VectorLike20",
