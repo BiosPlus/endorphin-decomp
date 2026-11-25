@@ -945,3 +945,22 @@ void* sub_004B74E0() {
     return static_cast<void*>(mem_00AE161C);
 }
 } // namespace lift_004B74E0
+
+// [0x004B4AA0] sub_004B4AA0 (33 bytes)
+namespace lift_004B4AA0 {
+// Known callee 0x004B4A40: InitOnceGlobalString_004B4A40 (One-time guarded initializer for the global string at 0x00AE0D70; registers its teardown via ext_006A6C87 and returns the global's address.)
+extern void* ext_004B4A40();
+// Import slot for the MSVCP80 std::basic_string<char> copy constructor (__thiscall, one stack arg).
+extern int mem_00924FE0;
+
+// @name CopyInitOnceGlobalString_004B4AA0
+// @summary Copy-constructs the caller's std::string from the lazily initialized global string and returns the destination.
+void* fn_004B4AA0(void* dst) {
+    // Original code also zeroes a scratch stack slot before the call; it is unobservable and omitted.
+    using CopyCtor = void(__thiscall*)(void* self, const void* other);
+    const void* src = ext_004B4A40();
+    // Indirect call through the import slot at mem_00924FE0 (thiscall: callee cleans the stack arg).
+    (*reinterpret_cast<CopyCtor*>(&mem_00924FE0))(dst, src);
+    return dst;
+}
+} // namespace lift_004B4AA0

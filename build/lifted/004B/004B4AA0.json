@@ -1,0 +1,13 @@
+{
+  "va": "0x004B4AA0",
+  "size": 33,
+  "orig_symbol": "sub_004B4AA0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "CopyInitOnceGlobalString_004B4AA0",
+  "signature": "void* fn_004B4AA0(void* dst)",
+  "summary": "Copy-constructs the caller's std::string from the lazily initialized global string and returns the destination.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:27:09Z"
+}
