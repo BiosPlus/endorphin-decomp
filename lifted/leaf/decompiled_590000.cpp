@@ -26,8 +26,10 @@ void fn_00594790(void* self) {
 #include <cstdint>
 #include <cstddef>
 #include <cstring>
+#include <cmath>
+#include <cstdlib>
 
-// [0x0059E060] sub_0059E060 (31 bytes)
+#include <cstdlib>
 namespace lift_0059E060 {
 // Callee 0x006AD940 (sub_006AD940): thiscall, takes the object in ECX, returns a pointer-sized value in EAX.
 extern uint32_t __thiscall ext_006AD940(void* self);
@@ -1526,3 +1528,80 @@ void* fn_0059FDE0(void* container, void* node, void* expectedContainer, void* en
     return out;
 }
 } // namespace lift_0059FDE0
+
+// [0x00596AE0] sub_00596AE0 (61 bytes)
+namespace lift_00596AE0 {
+// @name sub_00596AE0
+// @summary Auto-lifted identical-shape clone of 0x0046A4D0 (advanceIteratorCounted).
+namespace lift_0046A4D0 {
+// Known callee 0x00474FF0: sub_00474FF0 (Auto-lifted identical-shape clone of 0x005E0B20 (TreeIterator::increment).)
+extern void ext_00595AF0(void* self);
+// IAT slot holding MSVCR80!_invalid_parameter_noinfo (called with no arguments).
+extern void (*mem_00925134)();
+
+// @name advanceIteratorCounted
+// @summary Advances an iterator with TreeIterator::increment until it equals `last`, incrementing `*counter` once per step; asserts the iterator is non-null and equal to `guard` before each step.
+void fn_00596AE0(void* it, void* last, void* guard, void* end, int32_t* counter) {
+    for (;;) {
+        if (it == nullptr || it != guard) {
+            mem_00925134();
+        }
+        if (last == end) {
+            return;
+        }
+        ++*counter;
+        ext_00595AF0(&it);
+    }
+}
+} // namespace lift_0046A4D0
+} // namespace lift_00596AE0
+
+// [0x00596B20] sub_00596B20 (88 bytes)
+namespace lift_00596B20 {
+// @name sub_00596B20
+// @summary Auto-lifted identical-shape clone of 0x0059FDE0 (copyStringRangeFromTreeIterator).
+namespace lift_0059FDE0 {
+// Known callee 0x00673C20: advanceTreeIterator (Advances a red-black tree iterator to its in-order successor: goes to the leftmost node of the right subtree if one exists, otherwise climbs parents while the current node is a right child; reports an invalid parameter when the iterator is null or already at the end.)
+extern void ext_00595AF0(void* iter);
+// IAT slot holding MSVCR80!_invalid_parameter_noinfo (function pointer, not data).
+extern int mem_00925134;
+
+static inline void invalid_parameter_noinfo() {
+    (*reinterpret_cast<void (**)()>(&mem_00925134))();
+}
+
+// @name copyStringRangeFromTreeIterator
+// @summary Walks a red-black tree range from (container, node) up to endNode, assigning each node's std::string at +0x0C into consecutive 0x1C-byte output slots and advancing the iterator; returns the final output pointer.
+// @field TreeIterator +0x00 void* container
+// @field TreeIterator +0x04 void* node
+// @field TreeContainer +0x04 void* field_0x04
+// @field TreeNode +0x0C std::string field_0x0C
+void* fn_00596B20(void* container, void* node, void* expectedContainer, void* endNode, std::string* out) {
+    struct Iter {
+        void* container; // +0x00
+        void* node;      // +0x04
+    } it{container, node};
+
+    for (;;) {
+        void* cur = it.container;
+        if (cur == nullptr || cur != expectedContainer) {
+            invalid_parameter_noinfo();
+        }
+        if (it.node == endNode) {
+            break;
+        }
+        if (cur == nullptr) {
+            invalid_parameter_noinfo();
+        }
+        if (it.node == *reinterpret_cast<void* const*>(static_cast<uint8_t*>(cur) + 0x04)) {
+            invalid_parameter_noinfo();
+        }
+
+        *out = *reinterpret_cast<std::string*>(static_cast<uint8_t*>(it.node) + 0x0C);
+        ext_00595AF0(&it);
+        out = reinterpret_cast<std::string*>(reinterpret_cast<uint8_t*>(out) + 0x1C);
+    }
+    return out;
+}
+} // namespace lift_0059FDE0
+} // namespace lift_00596B20

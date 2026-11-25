@@ -3,8 +3,10 @@
 #include <new>
 #include <string>
 #include <cstdint>
+#include <cmath>
+#include <cstdlib>
 
-// [0x005A3610] sub_005A3610 (8 bytes)
+#include <cstdlib>
 namespace lift_005A3610 {
 // @name sub_005A3610
 // @summary Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).
@@ -716,3 +718,30 @@ void TreeIterator::increment() {
     this->field_0x04 = p;
 }
 } // namespace lift_005AC8C0
+
+// [0x005A0380] sub_005A0380 (61 bytes)
+namespace lift_005A0380 {
+// @name sub_005A0380
+// @summary Auto-lifted identical-shape clone of 0x0046A4D0 (advanceIteratorCounted).
+namespace lift_0046A4D0 {
+// Known callee 0x00474FF0: sub_00474FF0 (Auto-lifted identical-shape clone of 0x005E0B20 (TreeIterator::increment).)
+extern void ext_00673C20(void* self);
+// IAT slot holding MSVCR80!_invalid_parameter_noinfo (called with no arguments).
+extern void (*mem_00925134)();
+
+// @name advanceIteratorCounted
+// @summary Advances an iterator with TreeIterator::increment until it equals `last`, incrementing `*counter` once per step; asserts the iterator is non-null and equal to `guard` before each step.
+void fn_005A0380(void* it, void* last, void* guard, void* end, int32_t* counter) {
+    for (;;) {
+        if (it == nullptr || it != guard) {
+            mem_00925134();
+        }
+        if (last == end) {
+            return;
+        }
+        ++*counter;
+        ext_00673C20(&it);
+    }
+}
+} // namespace lift_0046A4D0
+} // namespace lift_005A0380

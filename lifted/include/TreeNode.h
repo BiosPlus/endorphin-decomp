@@ -29,7 +29,7 @@ struct TreeNode_Fields {
     // +0x8   TreeNode*                right  (evidence: 0x00641760) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 right  (evidence: 0x0041A190, 0x0043CB50, 0x0046A510, 0x00493330, 0x00495AB0, 0x005D0670, 0x005DF270, 0x005ED330, 0x005FD330, 0x005FF000, 0x00624DC0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    right  (evidence: 0x0045E510, 0x00472730, 0x004757F0, 0x004774B0, 0x00492BC0, 0x00673C20) // CONFLICT: multiple definitions at +0x8
-    // +0xC   std::string              field_0x0C  (evidence: 0x0059FDE0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   std::string              field_0x0C  (evidence: 0x00596B20, 0x0059FDE0) // CONFLICT: multiple definitions at +0xC
     // +0xC   std::string              key  (evidence: 0x00472730, 0x004757F0, 0x004774B0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 key  (evidence: 0x0041A190, 0x0045E510) // CONFLICT: multiple definitions at +0xC
     // +0x10  std::string              key  (evidence: 0x00641760)

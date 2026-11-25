@@ -10,6 +10,7 @@
 #include <climits>
 #include <cmath>
 #include <cstddef>
+#include <cstdarg>
 #include <cstdint>
 #include <cstdio>
 #include <cstdlib>

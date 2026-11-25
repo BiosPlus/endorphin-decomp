@@ -1,0 +1,39 @@
+{
+  "va": "0x00596B20",
+  "size": 88,
+  "orig_symbol": "sub_00596B20",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "sub_00596B20",
+  "signature": "static inline void invalid_parameter_noinfo()",
+  "summary": "Auto-lifted identical-shape clone of 0x0059FDE0 (copyStringRangeFromTreeIterator).",
+  "fields": [
+    {
+      "class": "TreeIterator",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "container"
+    },
+    {
+      "class": "TreeIterator",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "node"
+    },
+    {
+      "class": "TreeContainer",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T04:00:37Z"
+}

@@ -6532,6 +6532,12 @@
     "summary": "Returns address of global mem_00937FC8.",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
+  "0x0045E4C0": {
+    "name": "sub_0045E4C0",
+    "signature": "void fn_0045E4C0(void* it, void* last, void* guard, void* end, int32_t* counter)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046A4D0 (advanceIteratorCounted).",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x0045E500": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_12",
     "class": "MultiTrackView::TriggeredEventView",
@@ -27484,6 +27490,18 @@
     "summary": "Walks a red-black tree range [first, last) in order, calling fn(node-\u003efield_0x28) for each node, then stores fn to the hidden return slot; reports invalid parameters when the iterators are null, mismatched, or the current node is the head's parent.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x00596AE0": {
+    "name": "sub_00596AE0",
+    "signature": "void fn_00596AE0(void* it, void* last, void* guard, void* end, int32_t* counter)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046A4D0 (advanceIteratorCounted).",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
+  "0x00596B20": {
+    "name": "sub_00596B20",
+    "signature": "static inline void invalid_parameter_noinfo()",
+    "summary": "Auto-lifted identical-shape clone of 0x0059FDE0 (copyStringRangeFromTreeIterator).",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00596C50": {
     "name": "Unknown::ForEachCallAndRaiseF4_00596C50",
     "class": "Unknown",
@@ -28001,6 +28019,12 @@
     "signature": "void fn_0059FF60(void* self, uint32_t arg)",
     "summary": "Iterates the pointer vector at +0x74..+0x78 and, for each element, calls its AnimationInterface (+0xC) vtable slots 9 (arg) and 10 (arg, 1).",
     "lifted_path": "lifted/NMData/BackGroundData.cpp"
+  },
+  "0x005A0380": {
+    "name": "sub_005A0380",
+    "signature": "void fn_005A0380(void* it, void* last, void* guard, void* end, int32_t* counter)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046A4D0 (advanceIteratorCounted).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
   "0x005A2BD0": {
     "name": "DestroyNodeChain",

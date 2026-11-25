@@ -1,0 +1,13 @@
+{
+  "va": "0x00596AE0",
+  "size": 61,
+  "orig_symbol": "sub_00596AE0",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "sub_00596AE0",
+  "signature": "void fn_00596AE0(void* it, void* last, void* guard, void* end, int32_t* counter)",
+  "summary": "Auto-lifted identical-shape clone of 0x0046A4D0 (advanceIteratorCounted).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T04:00:37Z"
+}
