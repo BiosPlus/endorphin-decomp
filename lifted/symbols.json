@@ -1512,6 +1512,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004155E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00415ED0": {
+    "name": "InitWithDefaultMode",
+    "signature": "void* fn_00415ED0(void* self)",
+    "summary": "Calls InitWithMode(self, 0), then stores the constant 0x0092C764 into the first dword of self (vtable slot), and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00415EF0": {
     "name": "sub_00415EF0",
     "signature": "extern \"C\" void __fastcall fn_00415EF0(void* self)",

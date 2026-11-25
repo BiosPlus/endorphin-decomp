@@ -1,0 +1,21 @@
+{
+  "va": "0x00415ED0",
+  "size": 20,
+  "orig_symbol": "sub_00415ED0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "InitWithDefaultMode",
+  "signature": "void* fn_00415ED0(void* self)",
+  "summary": "Calls InitWithMode(self, 0), then stores the constant 0x0092C764 into the first dword of self (vtable slot), and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:20:57Z"
+}

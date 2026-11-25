@@ -1674,3 +1674,18 @@ uint32_t __thiscall sub_00412E60(void* self, int32_t index) {
     return *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(ptr));
 }
 } // namespace lift_00412E60
+
+// [0x00415ED0] sub_00415ED0 (20 bytes)
+namespace lift_00415ED0 {
+// Known callee 0x00404BE0: InitWithMode (Initializes the object's vtable and state fields, applies mode via sub_00404720, and returns self.)
+extern void* ext_00404BE0(void* self, uint32_t mode);
+
+// @name InitWithDefaultMode
+// @summary Calls InitWithMode(self, 0), then stores the constant 0x0092C764 into the first dword of self (vtable slot), and returns self.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_00415ED0(void* self) {
+    ext_00404BE0(self, 0);
+    lift_field<uint32_t>(self, 0x00) = 0x0092C764;
+    return self;
+}
+} // namespace lift_00415ED0
