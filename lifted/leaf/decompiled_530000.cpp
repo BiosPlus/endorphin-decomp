@@ -1503,3 +1503,24 @@ extern void __thiscall fn_00537EC0(void* self) {
     ext_0063E006(eax);
 }
 } // namespace lift_00537EC0
+
+// [0x0053C8F0] sub_0053C8F0 (18 bytes)
+namespace lift_0053C8F0 {
+// ext_00532B60: [LIFTED] Unknown::initVtableAndFlags
+// Stores the vtable address at +0x00, sets flag bytes at +0x04 and +0x0C to 1,
+// and zeroes the dwords at +0x08 and +0x10.
+extern void ext_00532B60(void* self);
+
+// mem_00955B6C (.rdata) is the vtable address; the asm stores its address as an
+// immediate (0x00955B6C) into [self], so the constant is used directly.
+
+// @name Unknown::construct
+// @class Unknown
+// @summary Runs the base initializer, installs the vtable pointer at +0x00, and returns this.
+// @field Unknown +0x00 DWORD vtable
+void* fn_0053C8F0(void* self) {
+    ext_00532B60(self);
+    lift_field<DWORD>(self, 0x00) = 0x00955B6C;
+    return self;
+}
+} // namespace lift_0053C8F0

@@ -1,0 +1,22 @@
+{
+  "va": "0x0053C8F0",
+  "size": 18,
+  "orig_symbol": "sub_0053C8F0",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::construct",
+  "class": "Unknown",
+  "signature": "void* fn_0053C8F0(void* self)",
+  "summary": "Runs the base initializer, installs the vtable pointer at +0x00, and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:17:51Z"
+}
