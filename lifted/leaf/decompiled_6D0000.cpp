@@ -1578,3 +1578,25 @@ extern uint32_t __fastcall fn_006DE3B0(void* self) {
     return ext_00712000(reinterpret_cast<void*>(static_cast<uintptr_t>(ecx)));
 }
 } // namespace lift_006DE3B0
+
+// [0x006D66A0]
+namespace lift_006D66A0 {
+// @name sub_006D66A0
+// @summary Releases the sub-object at [this+0xFC]+0x4 via its virtual deleting destructor and clears the flag at +0x100.
+// @field unknown +0xfc void* field_0xfc
+// @field unknown +0x100 uint8_t field_0x100
+
+
+void __thiscall sub_006D66A0(void* self) {
+    void* edi = lift_field<void*>(self, 0xfc);
+    void* obj = lift_field<void*>(edi, 0x4);
+    if (obj != nullptr) {
+        using DeletingDtor = void (__thiscall*)(void*, int);
+        auto vtable = *reinterpret_cast<void***>(obj);
+        auto dtor = reinterpret_cast<DeletingDtor>(vtable[0]);
+        dtor(obj, 1);
+    }
+    lift_field<void*>(edi, 0x4) = nullptr;
+    lift_field<uint8_t>(self, 0x100) = 0;
+}
+} // namespace lift_006D66A0

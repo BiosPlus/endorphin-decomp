@@ -39732,6 +39732,12 @@
     "summary": "Returns the magnitude sqrt(f30^2 + f38^2) of the two horizontal velocity floats, sign-normalized to non-negative.",
     "lifted_path": "lifted/Sensors/SensorAbsoluteHorizontalVelocityMag.cpp"
   },
+  "0x00627450": {
+    "name": "copyMatrixFromTarget_0x60",
+    "signature": "void fn_00627450(void* self)",
+    "summary": "Copies 64 bytes (16 dwords) from an indirect sub-object's field into this+0x60",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00627480": {
     "name": "Sensors::SensorAbsoluteTM::vfunc_14",
     "class": "Sensors::SensorAbsoluteTM",
@@ -57670,6 +57676,12 @@
     "signature": "extern \"C\" void* __fastcall fn_006D5D40(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006D5D60 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
+  },
+  "0x006D66A0": {
+    "name": "sub_006D66A0",
+    "signature": "void __thiscall sub_006D66A0(void* self)",
+    "summary": "Releases the sub-object at [this+0xFC]+0x4 via its virtual deleting destructor and clears the flag at +0x100.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
   "0x006D6AD0": {
     "name": "sub_006D6AD0",

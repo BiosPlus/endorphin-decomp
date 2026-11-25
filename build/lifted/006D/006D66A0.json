@@ -1,0 +1,27 @@
+{
+  "va": "0x006D66A0",
+  "size": 39,
+  "orig_symbol": "sub_006D66A0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "sub_006D66A0",
+  "signature": "void __thiscall sub_006D66A0(void* self)",
+  "summary": "Releases the sub-object at [this+0xFC]+0x4 via its virtual deleting destructor and clears the flag at +0x100.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0xFC",
+      "type": "void*",
+      "name": "field_0xfc"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x100",
+      "type": "uint8_t",
+      "name": "field_0x100"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T14:26:41Z"
+}
