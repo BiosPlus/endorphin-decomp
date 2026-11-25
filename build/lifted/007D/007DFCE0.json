@@ -1,0 +1,58 @@
+{
+  "va": "0x007DFCE0",
+  "size": 68,
+  "orig_symbol": "sub_007DFCE0",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "Unknown::initPairAndNotify",
+  "class": "Unknown",
+  "signature": "void fn_007DFCE0(void* self, uint32_t a2, uint32_t a3)",
+  "summary": "Stores two inputs into the record, caches a lookup result, clears scratch slots, and invokes the object's vtable slot 0x98 if present.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:20:52Z"
+}

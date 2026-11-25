@@ -849,3 +849,40 @@ extern std::uint32_t fn_007DA820(std::uint32_t key, std::uint32_t node) {
     return 0u;
 }
 } // namespace lift_007DA820
+
+// [0x007DFCE0] sub_007DFCE0 (68 bytes)
+namespace lift_007DFCE0 {
+extern uint32_t ext_007C8880(uint32_t a1);
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_call1(uint32_t fn, void* arg);
+
+// @name Unknown::initPairAndNotify
+// @class Unknown
+// @summary Stores two inputs into the record, caches a lookup result, clears scratch slots, and invokes the object's vtable slot 0x98 if present.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1C
+void fn_007DFCE0(void* self, uint32_t a2, uint32_t a3) {
+    lift_field<uint32_t>(self, 0x00) = a2;
+    lift_field<uint32_t>(self, 0x04) = a3;
+
+    uint32_t vtable = mem_read32(a2);
+    lift_field<uint32_t>(self, 0x0C) = ext_007C8880(vtable);
+
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x1C) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x14) = 0;
+
+    uint32_t obj = lift_field<uint32_t>(self, 0x00);
+    uint32_t objVtable = mem_read32(obj);
+    uint32_t notify = mem_read32(objVtable + 0x98);
+    if (notify != 0) {
+        mem_call1(notify, self);
+    }
+}
+} // namespace lift_007DFCE0
