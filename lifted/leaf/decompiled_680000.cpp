@@ -766,8 +766,9 @@ void fn_00688B50(void* self) {
         unsigned char* last = *end;
         if (cur != last) {
             for (; cur != last; cur += kElemStride) {
-                auto* str = reinterpret_cast<std::string*>(cur + kStringOffset);
-                str->~basic_string();
+                using StringT = std::string;
+                auto* str = reinterpret_cast<StringT*>(cur + kStringOffset);
+                str->~StringT();
             }
         }
         ext_006A5C5C(*begin);
