@@ -6650,6 +6650,12 @@
     "summary": "Clears the dword at offset 0x4 of the object pointed to by field_0x04.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00462AA0": {
+    "name": "SehGuardedInitAndCleanup",
+    "signature": "void fn_00462AA0(void* self)",
+    "summary": "Builds a 0x120-byte local frame, runs an init call and a cleanup call under a guard state, then unwinds.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00462D10": {
     "name": "getByteByMode",
     "signature": "uint8_t __thiscall sub_00462D10(uint32_t this_ptr, uint32_t mode)",

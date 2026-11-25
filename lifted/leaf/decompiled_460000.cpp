@@ -1631,3 +1631,32 @@ void __thiscall fn_004638E0(void* self) {
     }
 }
 } // namespace lift_004638E0
+
+// [0x00462AA0] sub_00462AA0 (98 bytes)
+namespace lift_00462AA0 {
+// Known callee 0x006A5FA4: thunk_MFC80_ord_2020 (IAT jump thunk forwarding to MFC80!ord_2020.)
+extern void fn_006A5FA4(void);
+// Known callee 0x004624C0: sub_004624C0 (no lifted body yet; called with a frame-local object as `this`).
+extern void __fastcall ext_004624C0(void* self);
+// Known callee 0x00462440: sub_00462440 (VersionControlDialog-style cleanup; takes `this`).
+extern void __fastcall ext_00462440(void* self);
+
+// @name SehGuardedInitAndCleanup
+// @summary Builds a 0x120-byte local frame, runs an init call and a cleanup call under a guard state, then unwinds.
+void fn_00462AA0(void* self) {
+    (void)self;  // self is only passed through to callees as a frame pointer; no direct field access.
+
+    // Local frame (0x120 bytes) followed by the unwind bookkeeping slots the original code keeps on the stack.
+    alignas(8) uint8_t frame[0x120] = {};
+    int32_t saved_link = 0;   // previous exception-frame link (fs:[0] in the original; not reproducible portably)
+    int32_t unwind_state = 0; // guard state: 0 = init phase, -1 = cleanup phase
+
+    ext_004624C0(frame);      // init the frame object
+    fn_006A5FA4();            // MFC80 ord_2020 thunk (declared void(void) in the thunks file)
+
+    unwind_state = -1;        // enter cleanup phase
+    ext_00462440(frame);      // cleanup call
+
+    (void)saved_link;         // original restores fs:[0] from the saved link here; no portable equivalent
+}
+} // namespace lift_00462AA0

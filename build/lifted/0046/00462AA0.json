@@ -1,0 +1,13 @@
+{
+  "va": "0x00462AA0",
+  "size": 98,
+  "orig_symbol": "sub_00462AA0",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "SehGuardedInitAndCleanup",
+  "signature": "void fn_00462AA0(void* self)",
+  "summary": "Builds a 0x120-byte local frame, runs an init call and a cleanup call under a guard state, then unwinds.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:39:36Z"
+}
