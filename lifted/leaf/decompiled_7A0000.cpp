@@ -1266,3 +1266,21 @@ uint32_t fn_007AF5E0(uint32_t a1, uint32_t a2) {
     return result;
 }
 } // namespace lift_007AF5E0
+
+// [0x007AEBE0]
+namespace lift_007AEBE0 {
+// @name sub_007AEBE0
+// @summary Destructor: sets vtable 0x00998a30, clears fields via sub_007AEC60, and runs base destructor sub_00783270.
+// @field Unknown +0x00 uint32_t vtable
+
+
+extern void mem_write32(void* addr, uint32_t val);
+extern void ext_007AEC60(uint8_t* self);
+extern void ext_00783270(void* self);
+
+void fn_007AEBE0(uint8_t* self) {
+    mem_write32(self, 0x00998a30u);
+    ext_007AEC60(self);
+    ext_00783270(self);
+}
+} // namespace lift_007AEBE0

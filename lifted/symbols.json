@@ -3273,6 +3273,12 @@
     "summary": "If child at +0x100 is non-null, queries its state via ext_0044B660 and passes it to target's vtable+0x4 method.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430960": {
+    "name": "updateObjectStateFromGlobals",
+    "signature": "extern \"C\" void __stdcall fn_00430960(void* obj)",
+    "summary": "Calls vtable[0] with CheckFieldAt60IsZero() result and vtable[1] with checkSubObjectBitFlag(get_global_field_0x58(), 9) result.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x004309A0": {
     "name": "syncObjectFlagFromGlobal",
     "signature": "int32_t __stdcall fn_004309A0(void* obj)",
@@ -71977,6 +71983,12 @@
     "signature": "extern \"C\" void* __fastcall fn_007AEBC0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_007AEBE0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
+  },
+  "0x007AEBE0": {
+    "name": "sub_007AEBE0",
+    "signature": "void fn_007AEBE0(uint8_t* self)",
+    "summary": "Destructor: sets vtable 0x00998a30, clears fields via sub_007AEC60, and runs base destructor sub_00783270.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
   "0x007AEC30": {
     "name": "sub_007AEC30",
