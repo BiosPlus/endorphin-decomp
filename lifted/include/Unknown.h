@@ -357,6 +357,7 @@ struct Unknown_Fields {
     // +0x24  void*                    field_0x24  (evidence: 0x0058A9A0, 0x0058AA20) // CONFLICT: multiple definitions at +0x24
     // +0x24  void*                    ptrMember  (evidence: 0x0041DDA0) // CONFLICT: multiple definitions at +0x24
     // +0x24  void*                    subobject  (evidence: 0x0051AE90, 0x0051AEF0) // CONFLICT: multiple definitions at +0x24
+    // +0x28  int32_t                  count  (evidence: 0x007299C0) // CONFLICT: multiple definitions at +0x28
     // +0x28  DWORD                    field_0x28  (evidence: 0x005B34C0, 0x0078C230, 0x0078C3A0) // CONFLICT: multiple definitions at +0x28
     // +0x28  double                   field_0x28  (evidence: 0x00503CA0) // CONFLICT: multiple definitions at +0x28
     // +0x28  float                    field_0x28  (evidence: 0x004B10A0, 0x004B10D0, 0x004B1100, 0x004B6CC0, 0x004B6CF0, 0x004B6FF0, 0x004CCC30, 0x00538FA0, 0x005ACC50, 0x005ACEE0, 0x00629E80) // CONFLICT: multiple definitions at +0x28
@@ -388,6 +389,7 @@ struct Unknown_Fields {
     // +0x34  uint32_t                 field_0x34  (evidence: 0x0048C960, 0x0062A590, 0x006EF810, 0x006EFEA0) // CONFLICT: multiple definitions at +0x34
     // +0x34  uint8_t                  field_0x34  (evidence: 0x007126A0) // CONFLICT: multiple definitions at +0x34
     // +0x34  BYTE field_0x34 (bit 0x2 gates the forward)  (evidence: 0x006FA9C0) // CONFLICT: multiple definitions at +0x34
+    // +0x38  uint32_t                 array_base  (evidence: 0x007299C0) // CONFLICT: multiple definitions at +0x38
     // +0x38  float                    field_0x38  (evidence: 0x004F9950, 0x00554510, 0x00629F10) // CONFLICT: multiple definitions at +0x38
     // +0x38  int32_t                  field_0x38  (evidence: 0x006AD960) // CONFLICT: multiple definitions at +0x38
     // +0x38  uint32_t                 field_0x38  (evidence: 0x0048C960, 0x0062A590) // CONFLICT: multiple definitions at +0x38

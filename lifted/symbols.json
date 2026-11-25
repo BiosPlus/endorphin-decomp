@@ -53665,6 +53665,13 @@
     "summary": "Stores the single stack argument into the DWORD at *this and returns this (thiscall, ret 4).",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x007299C0": {
+    "name": "Unknown::FillDoubleOneAt24Stride32",
+    "class": "Unknown",
+    "signature": "void fn_007299C0(void* self)",
+    "summary": "For each of the count (+0x28) 32-byte entries starting at the array base (+0x38), writes the double 1.0 at entry offset +0x18.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x0072B120": {
     "name": "sub_0072B120",
     "signature": "extern \"C\" void __fastcall fn_0072B120(void* self, int edx_unused, int32_t value)",

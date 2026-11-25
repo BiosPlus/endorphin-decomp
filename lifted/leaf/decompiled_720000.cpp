@@ -372,3 +372,30 @@ double fn_00722660(double a, double b, double c) {
     return (t1 + t2) * mem_00993828;
 }
 } // namespace lift_00722660
+
+// [0x007299C0] sub_007299C0 (64 bytes)
+namespace lift_007299C0 {
+// @name Unknown::FillDoubleOneAt24Stride32
+// @class Unknown
+// @summary For each of the count (+0x28) 32-byte entries starting at the array base (+0x38), writes the double 1.0 at entry offset +0x18.
+// @field Unknown +0x28 int32_t count
+// @field Unknown +0x38 uint32_t array_base
+void fn_007299C0(void* self) {
+    // Callee 0x006D23F0 (GetAddressAt8) computes self + 8 * index; with index 3 this is base + 24.
+    // Its 8-byte element at that address is written as the IEEE-754 double 1.0 (low dword 0, high dword 0x3FF00000).
+    const int32_t count = lift_field<int32_t>(self, 0x28);
+    if (count <= 0) {
+        return;
+    }
+    const uint32_t base = lift_field<uint32_t>(self, 0x38);
+    for (int32_t i = 0; i < count; ++i) {
+        const uint32_t entry = base + static_cast<uint32_t>(i) * 0x20u;
+        const uint32_t target = entry + 0x18u;
+        uint8_t* dst = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(target));
+        const uint32_t lo = 0x00000000u;
+        const uint32_t hi = 0x3FF00000u;
+        std::memcpy(dst + 0, &lo, sizeof(lo));
+        std::memcpy(dst + 4, &hi, sizeof(hi));
+    }
+}
+} // namespace lift_007299C0
