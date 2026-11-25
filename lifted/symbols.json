@@ -17002,6 +17002,12 @@
     "summary": "Writes `value` into out[0] and the lazily-initialized static object pointer into out[1].",
     "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
+  "0x004F95D0": {
+    "name": "storeValueAndSingleton",
+    "signature": "void fn_004F95D0(void* out, uint32_t value)",
+    "summary": "Writes a 32-bit value into out[0] and the lazily-created singleton pointer into out[1].",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F9800": {
     "name": "initVtableAndStoreTwoArgsAlt",
     "class": "Unknown",

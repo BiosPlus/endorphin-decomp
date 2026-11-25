@@ -358,3 +358,17 @@ void fn_004F95B0(uint32_t* out, uint32_t value) {
     out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
 }
 } // namespace lift_004F95B0
+
+// [0x004F95D0] sub_004F95D0 (30 bytes)
+namespace lift_004F95D0 {
+// Known callee 0x004F9430: getSingleton_004F9430 (Lazily initializes and returns the singleton object at 0x00AE9F54.)
+extern void* ext_004F9430();
+
+// @name storeValueAndSingleton
+// @summary Writes a 32-bit value into out[0] and the lazily-created singleton pointer into out[1].
+void fn_004F95D0(void* out, uint32_t value) {
+    uint32_t singleton = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(ext_004F9430()));
+    lift_field<uint32_t>(out, 0) = value;
+    lift_field<uint32_t>(out, 4) = singleton;
+}
+} // namespace lift_004F95D0
