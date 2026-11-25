@@ -2841,3 +2841,28 @@ void fn_00435B30(void* self) {
 }
 } // namespace lift_00642600
 } // namespace lift_00435B30
+
+// [0x00434C40] sub_00434C40 (95 bytes)
+namespace lift_00434C40 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0066AD10(void* out_str, uint8_t flag);
+// Callee 0x006A6C87 (18 bytes), single stack argument.
+extern void ext_006A6C87(uint32_t arg);
+extern uint32_t mem_00ACE1F0;
+extern int mem_00ACE1D4;
+
+// @name InitOnceGlobalString_00434C40
+// @summary One-time initializer: on first call builds the global at mem_00ACE1D4 via ext_0066AD10 and registers it with ext_006A6C87; later calls only return its address.
+void* fn_00434C40() {
+    // The original wraps this in a thread-info (fs:[0]) exception frame and
+    // sets a trylevel. That is compiler scaffolding with no portable meaning,
+    // so it is dropped here. Only the guarded init and the return value remain.
+    if ((mem_00ACE1F0 & 1u) == 0) {
+        mem_00ACE1F0 |= 1u;
+        // push 0xa2f438 / push 0xace1d4 : callee reads the flag as uint8_t (0x38).
+        ext_0066AD10(static_cast<void*>(&mem_00ACE1D4), static_cast<uint8_t>(0xA2F438u));
+        ext_006A6C87(0x00915190u);
+    }
+    return static_cast<void*>(&mem_00ACE1D4);
+}
+} // namespace lift_00434C40
