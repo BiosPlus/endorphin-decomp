@@ -444,3 +444,43 @@ void* fn_005E4D90(uint32_t a1, uint32_t a2, uint32_t a3, const void* a4, uint8_t
     return obj;
 }
 } // namespace lift_005E4D90
+
+// [0x005ECDC0] sub_005ECDC0 (82 bytes)
+namespace lift_005ECDC0 {
+// Import slot 0x00925134: MSVCR80!_invalid_parameter_noinfo (called on bounds failure).
+extern void (*mem_00925134)();
+
+// @name Unknown::MarkVectorElementsFlag4
+// @class Unknown
+// @summary Walks the pointer vector at this+0x204..+0x208 and sets byte +4 of each pointed-to object to 1.
+// @field Unknown +0x204 DWORD vecBegin
+// @field Unknown +0x208 DWORD vecEnd
+void fn_005ECDC0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    auto* words = reinterpret_cast<uint32_t*>(base + 0x200);
+    // words[0] is the iterator-debug proxy slot at +0x200 (self-compare in the
+    // original is always equal, so the associated debug check is omitted).
+    uint32_t begin = words[1];
+    uint32_t end = words[2];
+
+    // Bounds sanity: begin must not be past end.
+    if (begin > end) {
+        mem_00925134();
+    }
+
+    uint32_t cur = begin;
+    while (cur != end) {
+        if (cur >= end) {
+            mem_00925134();
+        }
+        // Element is a 32-bit pointer to an object; set its byte at +0x04 to 1.
+        uint32_t obj = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(cur));
+        auto* target = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(obj));
+        target[4] = 1;
+        if (cur >= end) {
+            mem_00925134();
+        }
+        cur += 4;
+    }
+}
+} // namespace lift_005ECDC0
