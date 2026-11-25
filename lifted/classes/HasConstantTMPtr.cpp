@@ -75,3 +75,22 @@ extern void* __fastcall fn_00532200(void* self, int edx_unused, void*** obj) {
     return fn((void*)obj, 0, p + 0x30);
 }
 } // namespace lift_00532200
+
+// [0x005321B0]
+namespace lift_005321B0 {
+extern void __stdcall ext_0067DAD0(float x, float y, float z);
+extern void (__stdcall *mem_009253D0)(float, float, float);
+
+// @name HasConstantTMPtr::vfunc_13
+// @class HasConstantTMPtr
+// @summary Calls glTranslatef (import slot 0x009253D0) with the translation (x,y,z) stored at +0x30..+0x38 of the TM pointed to by this+4.
+// @field HasConstantTMPtr +0x4 void* tm
+extern void __fastcall fn_005321B0(void* self) {
+    char* tm = lift_field<char*>(self, 0x4);
+    float x = lift_field<float>(tm, 0x30);
+    float y = lift_field<float>(tm, 0x34);
+    float z = lift_field<float>(tm, 0x38);
+    (void)&ext_0067DAD0;
+    mem_009253D0(x, y, z);
+}
+} // namespace lift_005321B0

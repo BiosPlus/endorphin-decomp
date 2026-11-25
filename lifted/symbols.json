@@ -21591,6 +21591,13 @@
     "summary": "Multiplies the current OpenGL matrix by the constant transformation matrix.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005321B0": {
+    "name": "HasConstantTMPtr::vfunc_13",
+    "class": "HasConstantTMPtr",
+    "signature": "extern \"C\" void __fastcall fn_005321B0(void* self)",
+    "summary": "Calls glTranslatef (import slot 0x009253D0) with the translation (x,y,z) stored at +0x30..+0x38 of the TM pointed to by this+4.",
+    "lifted_path": "lifted/classes/HasConstantTMPtr.cpp"
+  },
   "0x005321E0": {
     "name": "HasConstantTMPtr::vfunc_10",
     "class": "HasConstantTMPtr",

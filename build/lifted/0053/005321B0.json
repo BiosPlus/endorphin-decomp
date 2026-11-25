@@ -1,0 +1,22 @@
+{
+  "va": "0x005321B0",
+  "size": 35,
+  "orig_symbol": "HasConstantTMPtr::vfunc_13",
+  "src_path": "src/classes/HasConstantTMPtr.cpp",
+  "lifted_path": "lifted/classes/HasConstantTMPtr.cpp",
+  "name": "HasConstantTMPtr::vfunc_13",
+  "class": "HasConstantTMPtr",
+  "signature": "extern \"C\" void __fastcall fn_005321B0(void* self)",
+  "summary": "Calls glTranslatef (import slot 0x009253D0) with the translation (x,y,z) stored at +0x30..+0x38 of the TM pointed to by this+4.",
+  "fields": [
+    {
+      "class": "HasConstantTMPtr",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "tm"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@low",
+  "lifted_at": "2026-11-25T14:18:24Z"
+}
