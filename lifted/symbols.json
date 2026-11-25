@@ -48447,6 +48447,12 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x138.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C8E00": {
+    "name": "initHugePos",
+    "signature": "void sub_006C8E00()",
+    "summary": "Initializes global positive infinity double from MSVCR80!_HUGE",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C8E60": {
     "name": "initHugeBounds",
     "signature": "void __cdecl sub_006C8E60()",
@@ -48458,6 +48464,13 @@
     "signature": "void fn_006BBA40(void)",
     "summary": "Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).",
     "lifted_path": "lifted/clones/auto_clones_6C0000.cpp"
+  },
+  "0x006C92D0": {
+    "name": "Unknown::PruneFlag08Children",
+    "class": "Unknown",
+    "signature": "void __thiscall sub_006C92D0(void* self, void* node)",
+    "summary": "Recursively removes child items whose flag 0x08 is set via vtable calls.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
   "0x006C9330": {
     "name": "sub_006C9330",
@@ -48804,6 +48817,13 @@
     "signature": "extern \"C\" void fn_006D2160(void)",
     "summary": "Pure jump thunk forwarding to sub_006D2250.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
+  },
+  "0x006D2200": {
+    "name": "DynamicArray::removeAt",
+    "class": "DynamicArray",
+    "signature": "void __thiscall sub_006D2200(void* self, int32_t index)",
+    "summary": "Removes the element at the given index by shifting subsequent elements left and decrementing the count.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
   "0x006D2250": {
     "name": "Buffer::release",
@@ -49239,6 +49259,12 @@
     "signature": "extern \"C\" double __fastcall fn_006D9060(void* self)",
     "summary": "Returns the double stored at +0x160 of the object pointed to by this+0x0C.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
+  },
+  "0x006D9170": {
+    "name": "sub_006D9170",
+    "signature": "void __thiscall sub_006D9170(void* self, uint32_t value)",
+    "summary": "Sets field_0x10 to the given value, sets field_0x17 to 1, and updates flag 0x10 on field_0x0c + 0x1f0 depending on whether value is 1 or 2.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
   "0x006D9450": {
     "name": "sub_006D9450",
@@ -56914,6 +56940,13 @@
     "name": "sub_0072D620",
     "signature": "extern \"C\" void* __fastcall fn_0072D620(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0072D640 and frees memory when (flags \u0026 1) is set.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
+  "0x0072DA80": {
+    "name": "Unknown::CleanupSubobjects",
+    "class": "Unknown",
+    "signature": "void fn_0072DA80(void* self)",
+    "summary": "Invokes ext_006B9D70 on the subobjects at this+0x50 and this+0x04 (member cleanup), in that order.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
   "0x0072DB80": {

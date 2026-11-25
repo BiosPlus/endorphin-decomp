@@ -1,0 +1,28 @@
+{
+  "va": "0x0072DA80",
+  "size": 80,
+  "orig_symbol": "sub_0072DA80",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "Unknown::CleanupSubobjects",
+  "class": "Unknown",
+  "signature": "void fn_0072DA80(void* self)",
+  "summary": "Invokes ext_006B9D70 on the subobjects at this+0x50 and this+0x04 (member cleanup), in that order.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "void",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:52:55Z"
+}

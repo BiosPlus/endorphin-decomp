@@ -467,3 +467,18 @@ void fn_0072B1E0(void* self, DWORD value) {
     }
 }
 } // namespace lift_0072B1E0
+
+// [0x0072DA80] sub_0072DA80 (80 bytes)
+namespace lift_0072DA80 {
+extern void ext_006B9D70(void* self);
+
+// @name Unknown::CleanupSubobjects
+// @class Unknown
+// @summary Invokes ext_006B9D70 on the subobjects at this+0x50 and this+0x04 (member cleanup), in that order.
+// @field Unknown +0x04 void field_0x04
+// @field Unknown +0x50 void field_0x50
+void fn_0072DA80(void* self) {
+    ext_006B9D70(static_cast<uint8_t*>(self) + 0x50);
+    ext_006B9D70(static_cast<uint8_t*>(self) + 0x04);
+}
+} // namespace lift_0072DA80
