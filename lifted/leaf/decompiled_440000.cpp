@@ -2369,3 +2369,41 @@ int fn_004490F0(void* self) {
 }
 } // namespace lift_00449160
 } // namespace lift_004490F0
+
+// [0x00441C10]
+namespace lift_00441C10 {
+// @name Unknown::updateBoundsAndCall_00441C10
+// @class Unknown
+// @summary Optionally computes a bounds rect from arg, and if its first component is less than the third, forwards two derived values through the MFC80 thunk; then always runs sub_00441A60 and forwards another derived value through the thunk.
+// @field Unknown +0xa1 uint8_t field_0xa1
+// @field Unknown +0x24 void* field_0x24
+// @field Unknown +0x34 void* field_0x34
+
+extern void ext_00441A60(uint32_t* dst, uint32_t src);
+extern void ext_00441A90(uint32_t* dst, uint32_t src);
+extern uint32_t ext_0066A180(uint32_t self);
+extern void ext_006A6172(uint32_t self, uint32_t* a, uint32_t b);
+
+struct Unknown {
+    uint8_t field_0xa1;
+};
+
+// thiscall: this = ecx, one stack argument (src), callee pops 8 (2 stack dwords in frame).
+void __thiscall fn_00441C10(Unknown* self, uint32_t arg) {
+    uint32_t buf[4] = {0, 0, 0, 0};
+    uint32_t buf2[4] = {0, 0, 0, 0};
+    uint32_t edi = arg;
+
+    if (self->field_0xa1 != 0) {
+        ext_00441A90(&buf[0], edi);
+        if (static_cast<int32_t>(buf[0]) < static_cast<int32_t>(buf[2])) {
+            uint32_t r = ext_0066A180(edi + 0x34);
+            ext_006A6172(0, &buf[0], r);
+        }
+    }
+
+    ext_00441A60(&buf2[0], edi);
+    uint32_t r2 = ext_0066A180(edi + 0x24);
+    ext_006A6172(0, &buf2[0], r2);
+}
+} // namespace lift_00441C10

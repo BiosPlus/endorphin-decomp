@@ -1,0 +1,34 @@
+{
+  "va": "0x00441C10",
+  "size": 110,
+  "orig_symbol": "sub_00441C10",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::updateBoundsAndCall_00441C10",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00441C10(Unknown* self, uint32_t arg)",
+  "summary": "Optionally computes a bounds rect from arg, and if its first component is less than the third, forwards two derived values through the MFC80 thunk; then always runs sub_00441A60 and forwards another derived value through the thunk.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xA1",
+      "type": "uint8_t",
+      "name": "field_0xa1"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "void*",
+      "name": "field_0x34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:03:08Z"
+}

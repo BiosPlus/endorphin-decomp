@@ -4207,6 +4207,13 @@
     "summary": "Computes a 4-dword bounds/rect structure from source fields at +0x04, +0x0C, +0x18, +0x1C.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x00441C10": {
+    "name": "Unknown::updateBoundsAndCall_00441C10",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00441C10(Unknown* self, uint32_t arg)",
+    "summary": "Optionally computes a bounds rect from arg, and if its first component is less than the third, forwards two derived values through the MFC80 thunk; then always runs sub_00441A60 and forwards another derived value through the thunk.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00441D20": {
     "name": "MultiTrackView::RangeMarker::vfunc_0",
     "class": "MultiTrackView::RangeMarker",
