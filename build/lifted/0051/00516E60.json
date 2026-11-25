@@ -1,0 +1,34 @@
+{
+  "va": "0x00516E60",
+  "size": 73,
+  "orig_symbol": "EvolvedIndividual::vfunc_1_off_8",
+  "src_path": "src/classes/EvolvedIndividual.cpp",
+  "lifted_path": "lifted/classes/EvolvedIndividual.cpp",
+  "name": "EvolvedIndividual::vfunc_1_off_8",
+  "class": "EvolvedIndividual",
+  "signature": "void fn_00516E60(void* self)",
+  "summary": "Walks the pointer vector at +0x0C..+0x10 and stores each element's index into that element's +0x34 field.",
+  "fields": [
+    {
+      "class": "EvolvedIndividual",
+      "offset": "+0xC",
+      "type": "void**",
+      "name": "elements_begin"
+    },
+    {
+      "class": "EvolvedIndividual",
+      "offset": "+0x10",
+      "type": "void**",
+      "name": "elements_end"
+    },
+    {
+      "class": "ElementUnknown",
+      "offset": "+0x34",
+      "type": "int32_t",
+      "name": "field_0x34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:31:28Z"
+}

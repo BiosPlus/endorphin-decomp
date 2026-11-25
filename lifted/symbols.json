@@ -16840,6 +16840,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0048B150 (ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, fire\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteOnlyMethod0Type.cpp"
   },
+  "0x00516E60": {
+    "name": "EvolvedIndividual::vfunc_1_off_8",
+    "class": "EvolvedIndividual",
+    "signature": "void fn_00516E60(void* self)",
+    "summary": "Walks the pointer vector at +0x0C..+0x10 and stores each element's index into that element's +0x34 field.",
+    "lifted_path": "lifted/classes/EvolvedIndividual.cpp"
+  },
   "0x00516EB0": {
     "name": "GetTableEntryByIndex",
     "class": "GlobalIndexTable",

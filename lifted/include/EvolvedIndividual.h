@@ -11,5 +11,7 @@
 namespace lifted_layout {
 struct EvolvedIndividual_Fields {
     // +0x0   void*                    vtable  (evidence: 0x00477EA0)
+    // +0xC   void**                   elements_begin  (evidence: 0x00516E60)
+    // +0x10  void**                   elements_end  (evidence: 0x00516E60)
 };
 } // namespace lifted_layout
