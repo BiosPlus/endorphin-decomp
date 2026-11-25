@@ -1,0 +1,27 @@
+{
+  "va": "0x00810180",
+  "size": 64,
+  "orig_symbol": "sub_00810180",
+  "src_path": "src/leaf/decompiled_810000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_810000.cpp",
+  "name": "sub_00810180",
+  "signature": "uint32_t fn_00810180(void* self)",
+  "summary": "Returns bit 6 (0x40) of the dword at +0x04 of the object referenced by self+0x04.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:10:32Z"
+}

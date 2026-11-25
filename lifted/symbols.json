@@ -58238,6 +58238,12 @@
     "summary": "Allocates a 12-byte object and zeroes its three 32-bit fields if allocation succeeds.",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x00810180": {
+    "name": "sub_00810180",
+    "signature": "uint32_t fn_00810180(void* self)",
+    "summary": "Returns bit 6 (0x40) of the dword at +0x04 of the object referenced by self+0x04.",
+    "lifted_path": "lifted/leaf/decompiled_810000.cpp"
+  },
   "0x00810240": {
     "name": "getBit1OfNestedField04",
     "signature": "uint32_t fn_00810240(void* self)",

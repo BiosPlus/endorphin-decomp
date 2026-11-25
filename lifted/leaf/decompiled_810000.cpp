@@ -193,3 +193,20 @@ DWORD fn_00810270(void* self) {
     return (flags >> 2) & 1u;
 }
 } // namespace lift_00810270
+
+// [0x00810180] sub_00810180 (17 bytes: 0x810180..0x810190, ends in ret)
+namespace lift_00810180 {
+// @name sub_00810180
+// @summary Returns bit 6 (0x40) of the dword at +0x04 of the object referenced by self+0x04.
+// @field unknown +0x04 void* field_0x04
+// @field unknown +0x04 uint32_t field_0x04
+//
+// Access chain: self -> p = [self+0x04] -> q = [p+0x04]; result = (q >> 6) & 1.
+// No class is identified for `self`; the intermediate object's type is unknown.
+// Offsets are kept as field_0xNN per the no-guess rule.
+uint32_t fn_00810180(void* self) {
+    void* p = lift_field<void*>(self, 0x04);
+    const uint32_t q = lift_field<uint32_t>(p, 0x04);
+    return (q >> 6) & 1u;
+}
+} // namespace lift_00810180
