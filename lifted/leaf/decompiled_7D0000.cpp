@@ -1091,3 +1091,46 @@ int fn_007DB130(void* self) {
     return call(0x14);
 }
 } // namespace lift_007DB130
+
+// [0x007DB6C0]
+namespace lift_007DB6C0 {
+extern uint32_t mem_r32(uint32_t);
+extern void ext_007CC9E0(uint32_t);
+extern void ext_007CC930(uint32_t);
+
+// @name destroyListNode
+// @summary Releases a node's array elements, frees its buffers via allocator callbacks, and unlinks it.
+// @field Node +0x0c uint32_t field_0x0c
+// @field Node +0x10 uint32_t field_0x10
+// @field Node +0x14 uint32_t field_0x14
+// @field Node +0x1c int32_t count
+void sub_007DB6C0(uint32_t node) {
+    if (node == 0) {
+        return;
+    }
+
+    int32_t count = static_cast<int32_t>(mem_r32(node + 0x1c));
+    for (int32_t i = 0; i < count; ++i) {
+        uint32_t arr = mem_r32(node + 0x14);
+        uint32_t elem = mem_r32(arr + static_cast<uint32_t>(i) * 4);
+        if (elem == 0) {
+            break;
+        }
+        ext_007CC9E0(elem);
+    }
+
+    uint32_t owner1 = mem_r32(node + 0xc);
+    uint32_t alloc1 = mem_r32(owner1 + 0xb0);
+    uint32_t free_fn1 = mem_r32(alloc1 + 0xc);
+    uint32_t buf1 = mem_r32(node + 0x14);
+    reinterpret_cast<void (*)(uint32_t)>(static_cast<uintptr_t>(free_fn1))(buf1);
+
+    uint32_t owner2 = mem_r32(node + 0xc);
+    uint32_t alloc2 = mem_r32(owner2 + 0xb0);
+    uint32_t free_fn2 = mem_r32(alloc2 + 0x10);
+    uint32_t buf2 = mem_r32(node + 0x10);
+    reinterpret_cast<void (*)(uint32_t)>(static_cast<uintptr_t>(free_fn2))(buf2);
+
+    ext_007CC930(node);
+}
+} // namespace lift_007DB6C0

@@ -1,0 +1,39 @@
+{
+  "va": "0x007DB6C0",
+  "size": 96,
+  "orig_symbol": "sub_007DB6C0",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "destroyListNode",
+  "signature": "void sub_007DB6C0(uint32_t node)",
+  "summary": "Releases a node's array elements, frees its buffers via allocator callbacks, and unlinks it.",
+  "fields": [
+    {
+      "class": "Node",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x1C",
+      "type": "int32_t",
+      "name": "count"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:53:01Z"
+}

@@ -68914,6 +68914,12 @@
     "summary": "Calls the function pointer at (self-\u003e+0xB0)-\u003e+0x08 with (0x4C, 0x10); if it returns nonzero, forwards (result, self, a1, a2) to sub_007DAE80, otherwise returns 0.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007DB6C0": {
+    "name": "destroyListNode",
+    "signature": "void sub_007DB6C0(uint32_t node)",
+    "summary": "Releases a node's array elements, frees its buffers via allocator callbacks, and unlinks it.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007DB720": {
     "name": "getField0x18",
     "signature": "uint32_t sub_007DB720(uint32_t obj)",
@@ -69801,6 +69807,12 @@
     "signature": "void thunk_jmp_esi_00852427(uint32_t esi)",
     "summary": "Pops 4 bytes from stack and tail-jumps to the function pointer at [esi]",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
+  },
+  "0x00852AD0": {
+    "name": "initTypedPayload16",
+    "signature": "extern \"C\" int32_t sub_00852AD0(uint32_t dst, uint8_t type, uint32_t src)",
+    "summary": "Validates a 1-byte type tag (1..3), writes it to dst[0], and copies or zeroes 16 bytes at dst+1.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
   "0x00853680": {
     "name": "initSha1Context",
