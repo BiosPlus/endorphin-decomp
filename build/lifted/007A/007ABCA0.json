@@ -1,0 +1,27 @@
+{
+  "va": "0x007ABCA0",
+  "size": 96,
+  "orig_symbol": "sub_007ABCA0",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "sub_007ABCA0",
+  "signature": "extern \"C\" void __fastcall fn_007ABCA0(void* self)",
+  "summary": "Destroys the object by setting its vtable, releasing buffer items at +0x4, destroying the member at +0x4, and calling the base destructor.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vftable"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:51:05Z"
+}

@@ -66133,6 +66133,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_007ABCA0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007ABCA0": {
+    "name": "sub_007ABCA0",
+    "signature": "extern \"C\" void __fastcall fn_007ABCA0(void* self)",
+    "summary": "Destroys the object by setting its vtable, releasing buffer items at +0x4, destroying the member at +0x4, and calling the base destructor.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007ABD00": {
     "name": "ReleaseBufferItems",
     "class": "Buffer",
@@ -66354,6 +66360,12 @@
     "summary": "Destructor tail-call: restores vtable mem_00998A0C and tail-calls base destructor sub_00785430.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007AE3C0": {
+    "name": "collectAndForwardIds",
+    "signature": "extern \"C\" void __fastcall fn_007AE3C0(void* self, void* /*edx*/, void* container, int32_t /*unused*/)",
+    "summary": "Collects int32_t values from elements of a container via vtable calls and forwards the array to self's vtable+0x14 method.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AEBC0": {
     "name": "sub_007AEBC0",
     "signature": "extern \"C\" void* __fastcall fn_007AEBC0(void* self, int edx_unused, unsigned int flags)",
@@ -66514,6 +66526,12 @@
     "summary": "Three-way style compare of two objects: unsigned key at +0x00 first, then signed value at +0x08 on tie; returns -1 or 1 (never 0).",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AF580": {
+    "name": "findCachedEntryByKeys",
+    "signature": "uint32_t __cdecl sub_007AF580(uint32_t self, uint32_t key1, uint32_t key2)",
+    "summary": "Searches a pointer array at +0x214 (count at +0x218) for an entry matching key1 at +0x0 and optional key2 at +0x8, caching the result in mem_00B61C14.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AF620": {
     "name": "ForwardToCallbackWithArgPtr",
     "class": "\u003cClassName\u003e (optional)",
@@ -66583,6 +66601,12 @@
     "class": "\u003cnone\u003e",
     "signature": "void fn_007B0680(void* self, uint32_t a2)",
     "summary": "Forwards the first dword of the argument object, the constant tag 0x00AB1400, and a second argument to ext_0079B140.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
+  "0x007B1920": {
+    "name": "ParseFileModeFlags",
+    "signature": "int32_t fn_007B1920(const char* mode, uint32_t a2)",
+    "summary": "Parses a file mode string ('r', 'r+', 'w', or 'a') into open flags, reporting an error on invalid modes.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
   "0x007B1E20": {

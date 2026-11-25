@@ -1100,3 +1100,94 @@ void sub_007A1940(uint32_t* pPtr) {
     *pPtr = 0;
 }
 } // namespace lift_007A1940
+
+// [0x007ABCA0]
+namespace lift_007ABCA0 {
+// @name sub_007ABCA0
+// @summary Destroys the object by setting its vtable, releasing buffer items at +0x4, destroying the member at +0x4, and calling the base destructor.
+// @field unknown +0x00 void* vftable
+// @field unknown +0x04 uint8_t field_0x04
+
+
+extern uint8_t mem_009983CC[];
+
+extern void __fastcall ext_007ABD00(void* self);
+extern void __fastcall ext_006D2160(void* self);
+extern void __fastcall ext_007ABC10(void* self);
+
+extern void __fastcall fn_007ABCA0(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    *reinterpret_cast<void**>(obj + 0x00) = static_cast<void*>(mem_009983CC);
+    ext_007ABD00(obj);
+    ext_006D2160(obj + 0x04);
+    ext_007ABC10(obj);
+}
+} // namespace lift_007ABCA0
+
+// [0x007AF580]
+namespace lift_007AF580 {
+// @name findCachedEntryByKeys
+// @summary Searches a pointer array at +0x214 (count at +0x218) for an entry matching key1 at +0x0 and optional key2 at +0x8, caching the result in mem_00B61C14.
+// @field Entry +0x00 uint32_t field_0x00
+// @field Entry +0x08 uint32_t field_0x08
+// @field Container +0x214 uint32_t* field_0x214
+// @field Container +0x218 int32_t field_0x218
+
+
+extern uint32_t mem_00B61C14;
+
+uint32_t __cdecl sub_007AF580(uint32_t self, uint32_t key1, uint32_t key2) {
+    uint32_t cached = mem_00B61C14;
+    if (cached != 0 && *(uint32_t*)cached == key1) {
+        if (key2 == 0 || *(uint32_t*)(cached + 0x8) == key2) {
+            return cached;
+        }
+    }
+
+    int32_t count = *(int32_t*)(self + 0x218);
+    if (count <= 0) {
+        return 0;
+    }
+
+    uint32_t* items = *(uint32_t**)(self + 0x214);
+    for (int32_t i = 0; i < count; ++i) {
+        uint32_t item = items[i];
+        if (*(uint32_t*)item == key1) {
+            if (key2 == 0 || *(uint32_t*)(item + 0x8) == key2) {
+                mem_00B61C14 = item;
+                return item;
+            }
+        }
+    }
+
+    return 0;
+}
+} // namespace lift_007AF580
+
+// [0x007AE3C0]
+namespace lift_007AE3C0 {
+// @name collectAndForwardIds
+// @summary Collects int32_t values from elements of a container via vtable calls and forwards the array to self's vtable+0x14 method.
+
+
+extern int32_t __fastcall ext_006DEEC0(void* self);
+
+extern void __fastcall fn_007AE3C0(void* self, void* /*edx*/, void* container, int32_t /*unused*/) {
+    int32_t buf[20];
+    void** containerVtbl = *reinterpret_cast<void***>(container);
+    auto getCount = reinterpret_cast<int32_t(__thiscall*)(void*)>(containerVtbl[0x14 / 4]);
+    int32_t count = getCount(container);
+
+    if (count > 0) {
+        auto getItem = reinterpret_cast<void*(__thiscall*)(void*, int32_t)>(containerVtbl[0x18 / 4]);
+        for (int32_t i = 0; i < count; ++i) {
+            void* item = getItem(container, i);
+            buf[i] = ext_006DEEC0(item);
+        }
+    }
+
+    void** selfVtbl = *reinterpret_cast<void***>(self);
+    auto processIds = reinterpret_cast<void(__thiscall*)(void*, int32_t*, int32_t)>(selfVtbl[0x14 / 4]);
+    processIds(self, buf, count);
+}
+} // namespace lift_007AE3C0
