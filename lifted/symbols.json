@@ -139,6 +139,13 @@
     "summary": "Destructor: installs derived vtable, destroys the std::string member at +0x0C, then tail-calls the std::exception base destructor.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00401BB0": {
+    "name": "DIBException::~DIBException",
+    "class": "DIBException",
+    "signature": "extern \"C\" void (*mem_00924FF4)(void* self);  // std::string::~basic_string extern \"C\" void (*mem_009251C0)(void* self);  // std::exception::~exception void fn_00401BB0(void* self)",
+    "summary": "Base destructor: installs DIBException vtable, destroys the std::string member at +0x0C, then destroys the std::exception base.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00401C10": {
     "name": "DIBException::vfunc_0",
     "class": "DIBException",

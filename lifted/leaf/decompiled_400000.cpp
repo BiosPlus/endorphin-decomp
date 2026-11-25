@@ -1064,3 +1064,26 @@ extern bool __stdcall sub_0040B6B0(const void* str) {
     return false;
 }
 } // namespace lift_0040B6B0
+
+// [0x00401BB0] sub_00401BB0 (84 bytes)
+namespace lift_00401BB0 {
+// IAT slots holding imported function pointers (MSVCP80 / MSVCR80).
+extern void (*mem_00924FF4)(void* self);  // std::string::~basic_string
+extern void (*mem_009251C0)(void* self);  // std::exception::~exception
+
+// @name DIBException::~DIBException
+// @class DIBException
+// @summary Base destructor: installs DIBException vtable, destroys the std::string member at +0x0C, then destroys the std::exception base.
+// @field DIBException +0x00 uint32_t vtable
+// @field DIBException +0x0C std::string message
+void fn_00401BB0(void* self) {
+    // Install this class's vtable (0x928EF0).
+    lift_field<uint32_t>(self, 0x00) = 0x00928EF0u;
+
+    // Destroy member std::string at +0x0C.
+    mem_00924FF4(static_cast<uint8_t*>(self) + 0x0C);
+
+    // Tail: destroy std::exception base.
+    mem_009251C0(self);
+}
+} // namespace lift_00401BB0

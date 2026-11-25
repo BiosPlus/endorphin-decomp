@@ -1,0 +1,28 @@
+{
+  "va": "0x00401BB0",
+  "size": 84,
+  "orig_symbol": "sub_00401BB0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "DIBException::~DIBException",
+  "class": "DIBException",
+  "signature": "extern \"C\" void (*mem_00924FF4)(void* self);  // std::string::~basic_string extern \"C\" void (*mem_009251C0)(void* self);  // std::exception::~exception void fn_00401BB0(void* self)",
+  "summary": "Base destructor: installs DIBException vtable, destroys the std::string member at +0x0C, then destroys the std::exception base.",
+  "fields": [
+    {
+      "class": "DIBException",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "DIBException",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "message"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:05:30Z"
+}
