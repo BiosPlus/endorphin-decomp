@@ -581,3 +581,24 @@ DWORD fn_004B4830() {
     return (DWORD)(uintptr_t)&mem_00AE0D60;
 }
 } // namespace lift_004B4830
+
+// [0x004B4770]
+namespace lift_004B4770 {
+// @name initStaticObjectOnce_004B4770
+// @summary One-time initializer for the static object at 0x00AE0D50; returns that object's address.
+
+extern uint32_t mem_00AE0D54;
+extern uint32_t mem_00AE0D50;
+DWORD ext_0067A670(void* self, DWORD value);
+
+uint32_t fn_004B4770() {
+    // The original sets up and tears down an SEH frame (fs:[0] chain) around this body.
+    // That is compiler/runtime state with no portable C++ equivalent, so it is omitted here.
+    if ((mem_00AE0D54 & 1u) == 0) {
+        mem_00AE0D54 |= 1u;
+        ext_0067A670(&mem_00AE0D50, 0);
+        mem_00AE0D50 = 0x009421BCu;
+    }
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE0D50));
+}
+} // namespace lift_004B4770
