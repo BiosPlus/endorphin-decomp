@@ -839,3 +839,25 @@ void fn_004026E0(void* self) {
     *cap_slot = nullptr;
 }
 } // namespace lift_004026E0
+
+// [0x0040B2B0]
+namespace lift_0040B2B0 {
+// @name Unknown::StringFromModeOrGlobal
+// @summary Constructs an std::string into the caller's sret slot: copies the global string for mode 1 or 2, otherwise builds it from the rdata C string; returns the slot pointer.
+// Note: no struct fields are accessed; the function only constructs std::string objects, so no @field lines are emitted.
+
+// Rdata C string literal (contents not recovered).
+extern const char mem_00928B5D[];
+// Global std::string object (0x00AC8884).
+extern std::string mem_00AC8884;
+
+// Stdcall, 2 args (callee cleans 8 bytes): hidden std::string* return slot and an int mode selector.
+std::string* __stdcall fn_0040B2B0(std::string* out, int mode) {
+    if (mode == 1 || mode == 2) {
+        new (out) std::string(mem_00AC8884);
+    } else {
+        new (out) std::string(mem_00928B5D);
+    }
+    return out;
+}
+} // namespace lift_0040B2B0
