@@ -1,0 +1,13 @@
+{
+  "va": "0x004028B0",
+  "size": 17,
+  "orig_symbol": "sub_004028B0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "sub_004028B0",
+  "signature": "void fn_004028B0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00559B00 (Unknown::ReleaseAndThrowNull).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:04:02Z"
+}
