@@ -303,3 +303,14 @@ void fn_0050F970(void* self) {
     lift_field<uint8_t>(self, 0x28) = 0u;
 }
 } // namespace lift_0050F970
+
+// [0x0050EA10]
+namespace lift_0050EA10 {
+// @name sub_0050EA10_getDoubleAtObj08Off20
+// @summary Returns the double at offset 0x20 of the object pointed to by this+0x08 (thiscall getter).
+// @field <ClassName> +0x08 void* field_0x08
+double fn_0050EA10(void* self) {
+    void* obj = lift_field<void*>(self, 0x08);
+    return lift_field<double>(obj, 0x20);
+}
+} // namespace lift_0050EA10

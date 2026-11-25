@@ -18153,6 +18153,12 @@
     "summary": "Loads a double at offset 0x18 from a pointer stored at offset 0x08 of this.",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x0050EA10": {
+    "name": "sub_0050EA10_getDoubleAtObj08Off20",
+    "signature": "double fn_0050EA10(void* self)",
+    "summary": "Returns the double at offset 0x20 of the object pointed to by this+0x08 (thiscall getter).",
+    "lifted_path": "lifted/leaf/tiny_500000.cpp"
+  },
   "0x0050EE70": {
     "name": "destroyStringRange",
     "signature": "void __stdcall sub_0050EE70(uint32_t begin, uint32_t end)",

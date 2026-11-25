@@ -1,0 +1,21 @@
+{
+  "va": "0x0050EA10",
+  "size": 7,
+  "orig_symbol": "sub_0050EA10",
+  "src_path": "src/leaf/tiny_500000.cpp",
+  "lifted_path": "lifted/leaf/tiny_500000.cpp",
+  "name": "sub_0050EA10_getDoubleAtObj08Off20",
+  "signature": "double fn_0050EA10(void* self)",
+  "summary": "Returns the double at offset 0x20 of the object pointed to by this+0x08 (thiscall getter).",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:12:11Z"
+}
