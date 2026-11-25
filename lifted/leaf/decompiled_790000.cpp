@@ -1191,3 +1191,76 @@ uint32_t fn_007990F0(void* self, uint32_t key, uint32_t extra) {
     return handler(toAddr(self), key, extra);
 }
 } // namespace lift_007990F0
+
+// [0x0079A1C0]
+namespace lift_0079A1C0 {
+// @name SetAndCopyUint16Array
+// @summary Validates a count and uint16_t array (elements <= 2) against a max limit and copies it into a global block.
+// @field Obj +0x36 uint16_t field_0x36
+// @field Obj +0x78 uint16_t field_0x78
+// @field Obj +0x7c uint32_t field_0x7c
+
+
+extern void ext_00798FB0(uint32_t* slot, const void* src, uint32_t count);
+
+extern int32_t fn_0079A1C0(uint8_t* obj, const void* src_desc, int32_t* out_count) {
+    const int32_t count = *reinterpret_cast<const int32_t*>(src_desc);
+    const uint16_t count16 = static_cast<uint16_t>(count);
+    *out_count = count;
+
+    const uint16_t max_count = *reinterpret_cast<const uint16_t*>(obj + 0x36);
+    if (count16 > max_count) {
+        return 0;
+    }
+
+    const uint16_t* data = *reinterpret_cast<const uint16_t* const*>(
+        reinterpret_cast<const uint8_t*>(src_desc) + 4);
+    if (count > 0 && data == nullptr) {
+        return 0;
+    }
+
+    for (int32_t i = 0; i < count; ++i) {
+        if (data[i] > 2) {
+            return 0;
+        }
+    }
+
+    *reinterpret_cast<uint16_t*>(obj + 0x78) = count16;
+    ext_00798FB0(reinterpret_cast<uint32_t*>(obj + 0x7c), data, static_cast<uint32_t>(count16));
+    return 1;
+}
+} // namespace lift_0079A1C0
+
+// [0x0079E4B0]
+namespace lift_0079E4B0 {
+extern void* __thiscall ext_006D2390(void* self, uint32_t arg1);
+extern uint32_t __fastcall ext_00714AE0(uintptr_t ecx);
+extern void __thiscall ext_006C3520(
+    void* self, uint32_t index,
+    uint32_t arg2, uint32_t arg3, uint32_t arg4, uint32_t arg5,
+    uint32_t arg6, uint32_t arg7, uint32_t arg8, uint32_t arg9);
+extern void __cdecl ext_006D80A0(void);
+
+// @name forwardArgsToElement0
+// @summary Forwards 8 32-bit stack arguments via ext_006D2390 to ext_006C3520 at index 0 on the object returned by ext_00714AE0(*(this + 0x00)).
+// @field unknown +0x00 void* field_0x00
+extern void __thiscall fn_0079E4B0(
+    void* self,
+    uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3,
+    uint32_t arg4, uint32_t arg5, uint32_t arg6, uint32_t arg7)
+{
+    uint32_t buf[8]{};
+    ext_006D2390(buf, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&arg0)));
+
+    uintptr_t inner = *reinterpret_cast<const uint32_t*>(self);
+    uint32_t target = ext_00714AE0(inner);
+
+    ext_006C3520(
+        reinterpret_cast<void*>(static_cast<uintptr_t>(target)),
+        0,
+        buf[0], buf[1], buf[2], buf[3],
+        buf[4], buf[5], buf[6], buf[7]);
+
+    ext_006D80A0();
+}
+} // namespace lift_0079E4B0
