@@ -22761,6 +22761,12 @@
     "summary": "Bounds-checked address of element idx in an array of 20-byte elements; begin at +0x4, end at +0x8. Calls _invalid_parameter_noinfo when empty or out of range.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x00575F50": {
+    "name": "sub_00575F50",
+    "signature": "uint32_t sub_00575F50(uint32_t src_begin, uint32_t src_end, uint32_t a3, uint32_t dst)",
+    "summary": "Copies a range of 160-byte elements via ext_00575310 and returns the advanced destination pointer.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x005760E0": {
     "name": "sub_005760E0",
     "class": "Unknown",
@@ -24895,6 +24901,13 @@
     "signature": "extern \"C\" void* __fastcall fn_005A9D30(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_005A9970 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x005A9E70": {
+    "name": "ctor_005A9E70_XMLConverterDerived",
+    "class": "XMLConverterDerived",
+    "signature": "void* fn_005A9E70(void* self)",
+    "summary": "Constructor for an XMLConverter-derived object: runs the XMLConverter base ctor, installs the derived vtable 0x0095EE1C, and default-constructs two std::string members at +0x2c and +0x48.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
   "0x005A9ED0": {
     "name": "ExportDialog::vfunc_0",

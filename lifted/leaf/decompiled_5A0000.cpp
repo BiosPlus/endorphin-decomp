@@ -564,3 +564,30 @@ void* fn_005A9F50(void* self) {
     return self;
 }
 } // namespace lift_005A9F50
+
+// [0x005A9E70] sub_005A9E70 (89 bytes)
+namespace lift_005A9E70 {
+// Known callee 0x00678520: XMLConverter::XMLConverter (Constructor: installs XMLConverter primary vtable and default-constructs the std::string member at +0x04; returns this.)
+extern void* ext_00678520(void* self);
+
+// @name ctor_005A9E70_XMLConverterDerived
+// @class XMLConverterDerived
+// @summary Constructor for an XMLConverter-derived object: runs the XMLConverter base ctor, installs the derived vtable 0x0095EE1C, and default-constructs two std::string members at +0x2c and +0x48.
+// @field XMLConverterDerived +0x00 uint32_t vtable
+// @field XMLConverterDerived +0x2c std::string field_0x2c
+// @field XMLConverterDerived +0x48 std::string field_0x48
+void* fn_005A9E70(void* self) {
+    // Base XMLConverter constructor runs first (installs its own vtable and
+    // constructs the string at +0x04).
+    ext_00678520(self);
+
+    // Overwrite the primary vtable pointer with this class's vtable.
+    lift_field<uint32_t>(self, 0x00) = 0x0095EE1C;
+
+    // Default-construct the two std::string members in place.
+    ::new (static_cast<void*>(static_cast<uint8_t*>(self) + 0x2c)) std::string();
+    ::new (static_cast<void*>(static_cast<uint8_t*>(self) + 0x48)) std::string();
+
+    return self;
+}
+} // namespace lift_005A9E70
