@@ -6704,6 +6704,12 @@
     "summary": "Sets the progress bar range on m_hProgressWnd via PBM_SETRANGE",
     "lifted_path": "lifted/classes/VideoGeneratorDialog.cpp"
   },
+  "0x004638E0": {
+    "name": "deleteSelectedListViewItems",
+    "signature": "void __thiscall fn_004638E0(void* self)",
+    "summary": "Repeatedly deletes every selected item of the list-view control at this+0x2E4 (LVM_GETNEXTITEM/LVM_DELETEITEM loop).",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00463950": {
     "name": "sub_00463950",
     "class": "Window",

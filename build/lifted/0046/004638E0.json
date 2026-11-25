@@ -1,0 +1,21 @@
+{
+  "va": "0x004638E0",
+  "size": 98,
+  "orig_symbol": "sub_004638E0",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "deleteSelectedListViewItems",
+  "signature": "void __thiscall fn_004638E0(void* self)",
+  "summary": "Repeatedly deletes every selected item of the list-view control at this+0x2E4 (LVM_GETNEXTITEM/LVM_DELETEITEM loop).",
+  "fields": [
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x2E4",
+      "type": "HWND",
+      "name": "field_0x2e4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:39:33Z"
+}

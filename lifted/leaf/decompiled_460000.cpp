@@ -1609,3 +1609,25 @@ extern void __fastcall fn_00462440(void* self) {
     ext_006A5F6E(self);
 }
 } // namespace lift_00462440
+
+// [0x004638E0] sub_004638E0 (98 bytes)
+namespace lift_004638E0 {
+extern LRESULT (__stdcall* mem_00925694)(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+
+// @name deleteSelectedListViewItems
+// @summary Repeatedly deletes every selected item of the list-view control at this+0x2E4 (LVM_GETNEXTITEM/LVM_DELETEITEM loop).
+// @field <none> +0x2e4 HWND field_0x2e4
+void __thiscall fn_004638E0(void* self) {
+    constexpr UINT kLvmDeleteItem = 0x1008;   // LVM_DELETEITEM
+    constexpr UINT kLvmGetNextItem = 0x100C;  // LVM_GETNEXTITEM
+    constexpr LPARAM kLvniSelected = 0x0002;  // LVNI_SELECTED
+    constexpr WPARAM kStartFromTop = static_cast<WPARAM>(-1);
+
+    LPARAM index = mem_00925694(lift_field<HWND>(self, 0x2e4), kLvmGetNextItem, kStartFromTop, kLvniSelected);
+    while (index != -1) {
+        mem_00925694(lift_field<HWND>(self, 0x2e4), kLvmGetNextItem, static_cast<WPARAM>(index), kLvniSelected);
+        mem_00925694(lift_field<HWND>(self, 0x2e4), kLvmDeleteItem, static_cast<WPARAM>(index), 0);
+        index = mem_00925694(lift_field<HWND>(self, 0x2e4), kLvmGetNextItem, kStartFromTop, kLvniSelected);
+    }
+}
+} // namespace lift_004638E0

@@ -22,5 +22,6 @@ struct _none__Fields {
     // +0x19  BYTE                     field_0x19  (evidence: 0x00622B40, 0x00625950)
     // +0x20  int32_t                  field_0x20  (evidence: 0x00465EA0)
     // +0x100 uint32_t                 field_0x100  (evidence: 0x00465EA0)
+    // +0x2E4 HWND                     field_0x2e4  (evidence: 0x004638E0)
 };
 } // namespace lifted_layout
