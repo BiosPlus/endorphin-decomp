@@ -2314,3 +2314,27 @@ int32_t sub_00662F80(uint32_t arg0, uint32_t arg1) {
     return reinterpret_cast<MessageBoxAFn>(mem_009255E0)(0, text, caption, 0x40u);
 }
 } // namespace lift_00662F80
+
+// [0x00661920] sub_00661920 (35 bytes)
+namespace lift_00661920 {
+// @name fn_00661920_forwardToSubobjectVcall11
+// @class <ClassName> (optional)
+// @summary Calls vtable slot 11 (+0x2C) of the object at self+0x00, passing (self+0x04, a1, a2, a3) as the call arguments; returns with 12 bytes of stack args cleaned up.
+// @field <ClassName> +0x00 void* field_0x00
+// @field <ClassName> +0x04 uint8_t field_0x04
+
+// Virtual dispatch helper: calls vtable slot `Slot` (index, not byte offset) of `obj`, passing obj as the implicit this.
+template <typename R, std::size_t Slot, typename... A>
+inline R lift_vcall(void* obj, A... args) {
+    void** vt = lift_field<void**>(obj, 0);
+    using Fn = R (*)(void*, A...);
+    return reinterpret_cast<Fn>(vt[Slot])(obj, args...);
+}
+
+void fn_00661920(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
+    void* sub = lift_field<void*>(self, 0x00);
+    // Passes (self + 0x04) as the first stack argument, followed by a1, a2, a3.
+    void* arg0 = static_cast<char*>(self) + 0x04;
+    lift_vcall<void, 11>(sub, arg0, a1, a2, a3); // vtable +0x2C
+}
+} // namespace lift_00661920

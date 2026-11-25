@@ -44889,6 +44889,13 @@
     "summary": "Forwards a 3-argument call to inner object's vtable slot +0x28 with (this + 4) prepended.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00661920": {
+    "name": "fn_00661920_forwardToSubobjectVcall11",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "inline R lift_vcall(void* obj, A... args)",
+    "summary": "Calls vtable slot 11 (+0x2C) of the object at self+0x00, passing (self+0x04, a1, a2, a3) as the call arguments; returns with 12 bytes of stack args cleaned up.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00661950": {
     "name": "sub_00661950",
     "class": "Unknown",
