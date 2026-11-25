@@ -1,0 +1,34 @@
+{
+  "va": "0x006CA520",
+  "size": 32,
+  "orig_symbol": "sub_006CA520",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::resetCountersAndEnable",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint32_t __thiscall fn_006CA520(void* self)",
+  "summary": "Resets the two range fields at +0x48/+0x4c, increments the counter at +0x18, then calls ext_006D0370 with flag=1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "int32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "int32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "int32_t",
+      "name": "field_0x4c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:41:12Z"
+}

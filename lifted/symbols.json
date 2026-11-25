@@ -54777,6 +54777,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00711A90 (Unknown::TestFlag0x08At0x78).",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006CA520": {
+    "name": "Unknown::resetCountersAndEnable",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t __thiscall fn_006CA520(void* self)",
+    "summary": "Resets the two range fields at +0x48/+0x4c, increments the counter at +0x18, then calls ext_006D0370 with flag=1.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006CA6A0": {
     "name": "sub_006CA6A0",
     "signature": "extern \"C\" int32_t __fastcall fn_006CA6A0(void* self)",

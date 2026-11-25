@@ -1956,3 +1956,23 @@ void sub_006C4A30(double* out, const double* mat, const double* vec) {
     out[2] = v2 * mat[10] + v1 * mat[6] + v0 * mat[2];
 }
 } // namespace lift_006C4A30
+
+// [0x006CA520] sub_006CA520 (32 bytes)
+namespace lift_006CA520 {
+// Known callee 0x006D0370: sub_006D0370 (Sets enabled state at +0x1C and, when enabling with positive count at +0x64, invokes callbacks in +0x78 with +0x90 args and calls sub_006D03D0.)
+extern uint32_t __thiscall ext_006D0370(void* self, uint8_t flag);
+
+// @name Unknown::resetCountersAndEnable
+// @class Unknown
+// @summary Resets the two range fields at +0x48/+0x4c, increments the counter at +0x18, then calls ext_006D0370 with flag=1.
+// @field Unknown +0x18 int32_t field_0x18
+// @field Unknown +0x48 int32_t field_0x48
+// @field Unknown +0x4c int32_t field_0x4c
+extern uint32_t __thiscall fn_006CA520(void* self) {
+    lift_field<int32_t>(self, 0x48) = -1;
+    lift_field<int32_t>(self, 0x4c) = INT32_MAX;
+    uint32_t count = static_cast<uint32_t>(lift_field<int32_t>(self, 0x18));
+    lift_field<int32_t>(self, 0x18) = static_cast<int32_t>(count + 1u);
+    return ext_006D0370(self, 1);
+}
+} // namespace lift_006CA520
