@@ -39847,6 +39847,13 @@
     "summary": "If state==0x15 returns 1 when both flag bytes are clear; otherwise returns 0 when the string at +0x10 equals the reference string, else looks up a byte table by state.",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00687330": {
+    "name": "Unknown::CopyStringRecordRange_00687330",
+    "class": "StringRecord",
+    "signature": "void* fn_00687330(const void* first, const void* last, void* dest)",
+    "summary": "Copies each 0x2C-byte StringRecord in [first, last) to dest (fields 0x00-0x0C as dwords, 0x10 as std::string) and returns the end of the written range.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00687380": {
     "name": "copyRange0x24",
     "signature": "uint8_t* __cdecl sub_00687380(uint8_t* first, uint8_t* last, uint8_t* dest)",

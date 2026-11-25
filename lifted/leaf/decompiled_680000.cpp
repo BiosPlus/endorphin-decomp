@@ -928,3 +928,37 @@ uint8_t fn_006872E0(void* self) {
     return (&mem_00AA2FE4)[state];
 }
 } // namespace lift_006872E0
+
+// [0x00687330] sub_00687330 (77 bytes)
+namespace lift_00687330 {
+// @name Unknown::CopyStringRecordRange_00687330
+// @class StringRecord
+// @summary Copies each 0x2C-byte StringRecord in [first, last) to dest (fields 0x00-0x0C as dwords, 0x10 as std::string) and returns the end of the written range.
+// @field StringRecord +0x00 uint32_t field_0x00
+// @field StringRecord +0x04 uint32_t field_0x04
+// @field StringRecord +0x08 uint32_t field_0x08
+// @field StringRecord +0x0C uint32_t field_0x0C
+// @field StringRecord +0x10 std::string field_0x10
+void* fn_00687330(const void* first, const void* last, void* dest) {
+    constexpr std::ptrdiff_t kRecordSize = 0x2C;
+
+    const uint8_t* src = static_cast<const uint8_t*>(first);
+    const uint8_t* srcEnd = static_cast<const uint8_t*>(last);
+    uint8_t* out = static_cast<uint8_t*>(dest);
+
+    if (src != srcEnd) {
+        do {
+            lift_field<uint32_t>(out, 0x00) = lift_field<const uint32_t>(src, 0x00);
+            lift_field<uint32_t>(out, 0x04) = lift_field<const uint32_t>(src, 0x04);
+            lift_field<uint32_t>(out, 0x08) = lift_field<const uint32_t>(src, 0x08);
+            lift_field<uint32_t>(out, 0x0C) = lift_field<const uint32_t>(src, 0x0C);
+            lift_field<std::string>(out, 0x10) = lift_field<const std::string>(src, 0x10);
+
+            src += kRecordSize;
+            out += kRecordSize;
+        } while (src != srcEnd);
+    }
+
+    return out;
+}
+} // namespace lift_00687330
