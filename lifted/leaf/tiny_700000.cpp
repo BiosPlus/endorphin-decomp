@@ -1282,3 +1282,21 @@ uint32_t GetSubobjectByteField408(const uint8_t* self) {
     return (ptr & 0xFFFFFF00u) | low;
 }
 } // namespace lift_00702400
+
+// [0x00704DA0]
+namespace lift_00704DA0 {
+// @name sub_00704DA0
+// @class Unknown
+// @summary Returns the byte at this->field_0xF0->field_0x7CC, merged into the low byte of the return value.
+// @field Unknown +0xF0 ptr field_0xF0
+// @field Unknown +0x7CC u8 field_0x7CC
+
+uint32_t __fastcall sub_00704DA0(void* ecx) {
+    uint8_t* self = static_cast<uint8_t*>(ecx);
+    uintptr_t inner = *reinterpret_cast<uintptr_t*>(self + 0xF0);
+    uint32_t result = static_cast<uint32_t>(inner);
+    uint8_t value = *reinterpret_cast<uint8_t*>(inner + 0x7CC);
+    result = (result & 0xFFFFFF00u) | value;
+    return result;
+}
+} // namespace lift_00704DA0

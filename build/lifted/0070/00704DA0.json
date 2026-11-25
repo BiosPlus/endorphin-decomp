@@ -1,0 +1,28 @@
+{
+  "va": "0x00704DA0",
+  "size": 16,
+  "orig_symbol": "sub_00704DA0",
+  "src_path": "src/leaf/tiny_700000.cpp",
+  "lifted_path": "lifted/leaf/tiny_700000.cpp",
+  "name": "sub_00704DA0",
+  "class": "Unknown",
+  "signature": "uint32_t __fastcall sub_00704DA0(void* ecx)",
+  "summary": "Returns the byte at this-\u003efield_0xF0-\u003efield_0x7CC, merged into the low byte of the return value.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "ptr",
+      "name": "field_0xF0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x7CC",
+      "type": "u8",
+      "name": "field_0x7CC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:27:40Z"
+}

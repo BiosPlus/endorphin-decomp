@@ -59874,6 +59874,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00704D00 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00704DA0": {
+    "name": "sub_00704DA0",
+    "class": "Unknown",
+    "signature": "uint32_t __fastcall sub_00704DA0(void* ecx)",
+    "summary": "Returns the byte at this-\u003efield_0xF0-\u003efield_0x7CC, merged into the low byte of the return value.",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x00704FD0": {
     "name": "sub_00704FD0",
     "signature": "extern int __thiscall fn_00704FD0(void* self)",
