@@ -991,3 +991,47 @@ void __cdecl sub_0079B070(const char* prefix, const char* fmt, va_list args) {
     std::fprintf(stderr, reinterpret_cast<const char*>(0x00AAFC40u));
 }
 } // namespace lift_0079B070
+
+// [0x007966D0] sub_007966D0 (110 bytes)
+namespace lift_007966D0 {
+// Known callee 0x00796740: CountAdjacentDeltasAboveThreshold (Counts how many adjacent double-pair deltas (p[i+1] - p[i]) over a span exceed a constant threshold; returns 0 when the index range is empty.)
+extern uint32_t ext_00796740(const double* base, uint32_t limit, uint32_t start);
+
+// @name Unknown::updateCachedSpanEnd_007966D0
+// @class Unknown
+// @summary Recomputes the cached span end at +0x2c when it is zero, using a count from ext_00796740 scaled by the stride at +0x1c.
+// @field Unknown +0x0c uint32_t field_0x0c
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x1c uint32_t field_0x1c
+// @field Unknown +0x2c uint32_t field_0x2c
+// @field Unknown +0x4c uint32_t field_0x4c
+// @field Unknown +0x268 uint32_t field_0x268
+// @field Unknown +0x270 uint32_t field_0x270
+void fn_007966D0(void* self) {
+    if (lift_field<uint32_t>(self, 0x2c) != 0) {
+        return;
+    }
+
+    const uint32_t count_mode = lift_field<uint32_t>(self, 0x0c);
+    const uint32_t base_index = lift_field<uint32_t>(self, 0x4c);
+    const uint32_t start      = lift_field<uint32_t>(self, 0x14);
+    const uint32_t stride     = lift_field<uint32_t>(self, 0x1c);
+    const double* base = reinterpret_cast<const double*>(
+        static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x268)));
+
+    uint32_t limit;
+    uint32_t extra;
+    if (count_mode == 1) {
+        limit = base_index + 2 * start - 1;
+        extra = 0;
+    } else {
+        limit = base_index + start;
+        extra = 1;
+    }
+
+    const uint32_t r = ext_00796740(base, limit, start);
+    lift_field<uint32_t>(self, 0x270) = r;
+    // Equivalent to (r - 1) * stride + stride + extra, wrapping like the 32-bit original.
+    lift_field<uint32_t>(self, 0x2c) = r * stride + extra;
+}
+} // namespace lift_007966D0

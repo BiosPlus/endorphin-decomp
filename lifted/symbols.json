@@ -66556,6 +66556,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00792900 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x007966D0": {
+    "name": "Unknown::updateCachedSpanEnd_007966D0",
+    "class": "Unknown",
+    "signature": "void fn_007966D0(void* self)",
+    "summary": "Recomputes the cached span end at +0x2c when it is zero, using a count from ext_00796740 scaled by the stride at +0x1c.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x00796740": {
     "name": "CountAdjacentDeltasAboveThreshold",
     "signature": "__stdcall uint32_t fn_00796740(const double* base, uint32_t limit, uint32_t start)",
