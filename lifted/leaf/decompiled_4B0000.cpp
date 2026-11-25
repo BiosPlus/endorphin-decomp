@@ -923,3 +923,25 @@ void* fn_004B7540() {
     return &mem_00AE163C;
 }
 } // namespace lift_004B7540
+
+// [0x004B74E0]
+namespace lift_004B74E0 {
+// @name InitOnceGlobalString_004B74E0
+// @summary One-time guarded initializer for the global string at mem_00AE161C; runs the setup call and registers its teardown on first use, then returns the global's address.
+
+extern uint32_t mem_00AE1638;   // init guard flag (bit 0 = initialized)
+extern uint8_t  mem_00AE161C[]; // global string storage
+
+void* ext_0066AD10(void* out_str, uint8_t flag);
+void  ext_006A6C87(void* teardown);
+void  ext_009184C0(void);       // teardown routine registered via ext_006A6C87
+
+void* sub_004B74E0() {
+    if ((mem_00AE1638 & 1u) == 0) {
+        mem_00AE1638 |= 1u;
+        ext_0066AD10(static_cast<void*>(mem_00AE161C), static_cast<uint8_t>(0x30));
+        ext_006A6C87(reinterpret_cast<void*>(&ext_009184C0));
+    }
+    return static_cast<void*>(mem_00AE161C);
+}
+} // namespace lift_004B74E0
