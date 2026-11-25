@@ -1040,3 +1040,43 @@ void fn_00789940(void* self) {
     }
 }
 } // namespace lift_00789940
+
+// [0x007892B0] sub_007892B0 (64 bytes)
+namespace lift_007892B0 {
+// @name Unknown::ReleaseOwnedObjects
+// @class Unknown
+// @summary Resets the vtable, deletes the optional owned object at +0x08 (only when the flag at +0x10 is set), then always deletes the owned object at +0x14, nulling each slot.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x08 void* ownedObjectA
+// @field Unknown +0x10 uint8_t ownsObjectA
+// @field Unknown +0x14 void* ownedObjectB
+namespace {
+
+// Calls the object's virtual slot 0 with the "delete" flag set (1),
+// mirroring the original `call [vtable+0]` with argument 1.
+inline void VirtualDeleteObject(void* obj) {
+    void** vtable = *reinterpret_cast<void***>(obj);
+    using DeleteFn = void (__thiscall*)(void*, int);
+    reinterpret_cast<DeleteFn>(vtable[0])(obj, 1);
+}
+
+} // namespace
+
+void fn_007892B0(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x996fa0;
+
+    void* objectA = lift_field<void*>(self, 0x08);
+    if (objectA != nullptr) {
+        if (lift_field<uint8_t>(self, 0x10) != 0) {
+            VirtualDeleteObject(objectA);
+        }
+        lift_field<void*>(self, 0x08) = nullptr;
+    }
+
+    void* objectB = lift_field<void*>(self, 0x14);
+    if (objectB != nullptr) {
+        VirtualDeleteObject(objectB);
+        lift_field<void*>(self, 0x14) = nullptr;
+    }
+}
+} // namespace lift_007892B0

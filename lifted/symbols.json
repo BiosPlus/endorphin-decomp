@@ -54737,6 +54737,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_007892B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x007892B0": {
+    "name": "Unknown::ReleaseOwnedObjects",
+    "class": "Unknown",
+    "signature": "inline void VirtualDeleteObject(void* obj)",
+    "summary": "Resets the vtable, deletes the optional owned object at +0x08 (only when the flag at +0x10 is set), then always deletes the owned object at +0x14, nulling each slot.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00789590": {
     "name": "UnknownClass::releaseChildOrField14",
     "class": "UnknownClass",

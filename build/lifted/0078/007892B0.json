@@ -1,0 +1,40 @@
+{
+  "va": "0x007892B0",
+  "size": 64,
+  "orig_symbol": "sub_007892B0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "Unknown::ReleaseOwnedObjects",
+  "class": "Unknown",
+  "signature": "inline void VirtualDeleteObject(void* obj)",
+  "summary": "Resets the vtable, deletes the optional owned object at +0x08 (only when the flag at +0x10 is set), then always deletes the owned object at +0x14, nulling each slot.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "ownedObjectA"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "ownsObjectA"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "ownedObjectB"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:08:47Z"
+}
