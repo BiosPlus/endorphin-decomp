@@ -1866,6 +1866,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041A530": {
+    "name": "Unknown::lowerBoundValue_0041A530",
+    "class": "Unknown",
+    "signature": "static inline uint32_t guest_u32(uint32_t addr, ptrdiff_t off)",
+    "summary": "Looks up the tree's lower_bound for a 32-bit key and returns the 32-bit value stored at node+0x10; returns 0 when the tree is empty or no node matches.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041B200": {
     "name": "GettingStartedDialog::vfunc_0",
     "class": "GettingStartedDialog",
@@ -3638,6 +3645,12 @@
     "signature": "void __thiscall fn_00435FA0(uint32_t self)",
     "summary": "Updates frame state and writes profile setting before forwarding to base handler",
     "lifted_path": "lifted/classes/MainFrame.cpp"
+  },
+  "0x004360C0": {
+    "name": "dispatchFirstRendererItem",
+    "signature": "void __thiscall fn_004360C0(void* self)",
+    "summary": "Gets the first non-null item from the OglRenderer's vfunc_118 vector and dispatches it via ext_0042FE70.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
   "0x00436A20": {
     "name": "findU32Iterator",

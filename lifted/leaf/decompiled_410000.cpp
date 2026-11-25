@@ -2271,3 +2271,53 @@ extern int32_t __cdecl fn_0041DA50(void) {
     return *begin_ptr;
 }
 } // namespace lift_0041DA50
+
+// [0x0041A530] sub_0041A530 (110 bytes)
+namespace lift_0041A530 {
+// Known callee 0x0041A190: Unknown::LowerBoundNode (Tree lower_bound on a 32-bit unsigned key: returns {this, node} for the first node whose key is not less than the argument, or {this, header} when none matches.)
+// Calling convention: thiscall, ecx = tree; stack = (result_pair*, const uint32_t* key); callee pops 8.
+extern void __thiscall ext_0041A190(void* self, uint32_t* out_pair, const uint32_t* key);
+extern uint32_t mem_00925134; // guest slot holding the invalid-parameter handler pointer
+
+static inline uint32_t guest_u32(uint32_t addr, ptrdiff_t off) {
+    return *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(addr) + static_cast<uintptr_t>(off));
+}
+
+// @name Unknown::lowerBoundValue_0041A530
+// @class Unknown
+// @summary Looks up the tree's lower_bound for a 32-bit key and returns the 32-bit value stored at node+0x10; returns 0 when the tree is empty or no node matches.
+// @field Unknown +0x04 uint32_t header
+// @field Unknown +0x08 uint32_t field_0x08
+uint32_t __thiscall fn_0041A530(uint32_t self, uint32_t key) {
+    using InvalidParamFn = void (*)();
+    auto invalid_param = reinterpret_cast<InvalidParamFn>(static_cast<uintptr_t>(mem_00925134));
+
+    if (guest_u32(self, 0x08) == 0) {
+        return 0;
+    }
+
+    // result[0] = tree the search was performed on, result[1] = found node (or header).
+    uint32_t result[2] = {};
+    ext_0041A190(reinterpret_cast<void*>(static_cast<uintptr_t>(self)), result, &key);
+
+    uint32_t tree = result[0];
+    uint32_t node = result[1];
+
+    if (tree == 0 || tree != self) {
+        invalid_param();
+    }
+
+    uint32_t header = guest_u32(self, 0x04);
+    if (node == header) {
+        return 0;
+    }
+
+    if (tree == 0) {
+        invalid_param();
+    } else if (node == guest_u32(tree, 0x04)) {
+        invalid_param();
+    }
+
+    return guest_u32(node, 0x10);
+}
+} // namespace lift_0041A530

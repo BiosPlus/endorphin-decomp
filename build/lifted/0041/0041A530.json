@@ -1,0 +1,28 @@
+{
+  "va": "0x0041A530",
+  "size": 110,
+  "orig_symbol": "sub_0041A530",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::lowerBoundValue_0041A530",
+  "class": "Unknown",
+  "signature": "static inline uint32_t guest_u32(uint32_t addr, ptrdiff_t off)",
+  "summary": "Looks up the tree's lower_bound for a 32-bit key and returns the 32-bit value stored at node+0x10; returns 0 when the tree is empty or no node matches.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "header"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:03:20Z"
+}
