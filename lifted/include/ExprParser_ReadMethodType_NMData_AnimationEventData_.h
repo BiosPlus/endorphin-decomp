@@ -8,6 +8,6 @@
 // Recovered field layout for ExprParser::ReadMethodType<NMData::AnimationEventData>:
 namespace lifted_layout {
 struct ExprParser_ReadMethodType_NMData_AnimationEventData__Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x00488B80, 0x004C0800)
+    // +0x0   void*                    field_0x00  (evidence: 0x00488B80, 0x004C0800, 0x00639730)
 };
 } // namespace lifted_layout

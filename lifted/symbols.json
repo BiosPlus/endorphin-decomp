@@ -42311,10 +42311,10 @@
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00639730": {
-    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal\u003e::vfunc_1",
-    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0\u003e",
-    "signature": "void fn_00639730(void* self)",
-    "summary": "Always throws: if the wrapped EffectorSkeletal pointer is non-null it reports via ext_0046C4E0, then unconditionally throws a DerivedException.",
+    "name": "ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getDamping(void) const, 0\u003e",
+    "signature": "void* fn_00617340(void* self)",
+    "summary": "Runtime type check: returns self for a ReadMethodType\u003cNMData::JointLimit\u003e object (getDamping), else NULL; identity for valid objects.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x006397B0": {
