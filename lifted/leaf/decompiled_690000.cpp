@@ -1348,3 +1348,38 @@ uint32_t __thiscall fn_006989E0(void* self, uint32_t index) {
     return elem;
 }
 } // namespace lift_006989E0
+
+// [0x00698A70]
+namespace lift_00698A70 {
+// @name ByteVector::readByte
+// @class ByteVector
+// @summary Reads the byte at *cursor and increments *cursor by 1.
+
+
+extern uint32_t __thiscall ext_006989E0(void* self, uint32_t index);
+
+uint8_t __thiscall fn_00698A70(void* self, uint32_t* cursor) {
+    uint32_t index = *cursor;
+    *cursor = index + 1;
+    uint32_t ptr = ext_006989E0(self, index);
+    return *reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(ptr));
+}
+} // namespace lift_00698A70
+
+// [0x00698AB0]
+namespace lift_00698AB0 {
+// @name ByteVector::readFloat
+// @class ByteVector
+// @summary Reads a 32-bit float from the byte vector at *offsetPtr and advances *offsetPtr by 4 bytes.
+
+
+extern uint32_t __thiscall ext_006989E0(void* self, uint32_t index);
+
+float __thiscall fn_00698AB0(void* self, uint32_t* offsetPtr) {
+    uint32_t ptr = ext_006989E0(self, *offsetPtr);
+    *offsetPtr += 4;
+    float value = 0.0f;
+    std::memcpy(&value, reinterpret_cast<const void*>(static_cast<uintptr_t>(ptr)), sizeof(value));
+    return value;
+}
+} // namespace lift_00698AB0

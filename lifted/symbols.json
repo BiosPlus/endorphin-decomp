@@ -52108,6 +52108,20 @@
     "summary": "Forward byte-by-byte copy of [first, last) to dest (no overlap handling, loop runs while cursor != last); returns dest + (last - first).",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x00698A70": {
+    "name": "ByteVector::readByte",
+    "class": "ByteVector",
+    "signature": "uint8_t __thiscall fn_00698A70(void* self, uint32_t* cursor)",
+    "summary": "Reads the byte at *cursor and increments *cursor by 1.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
+  "0x00698AB0": {
+    "name": "ByteVector::readFloat",
+    "class": "ByteVector",
+    "signature": "float __thiscall fn_00698AB0(void* self, uint32_t* offsetPtr)",
+    "summary": "Reads a 32-bit float from the byte vector at *offsetPtr and advances *offsetPtr by 4 bytes.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00698B90": {
     "name": "CopyBytesRangeStdcallAdapter",
     "signature": "extern \"C\" uint8_t* __stdcall fn_00698B90(uint32_t /*arg0*/, const uint8_t* first, uint32_t /*arg2*/, const uint8_t* last, uint8_t* dst)",

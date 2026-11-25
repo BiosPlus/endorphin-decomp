@@ -1,0 +1,14 @@
+{
+  "va": "0x00698A70",
+  "size": 24,
+  "orig_symbol": "sub_00698A70",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "ByteVector::readByte",
+  "class": "ByteVector",
+  "signature": "uint8_t __thiscall fn_00698A70(void* self, uint32_t* cursor)",
+  "summary": "Reads the byte at *cursor and increments *cursor by 1.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:32:48Z"
+}
