@@ -57597,10 +57597,10 @@
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
   "0x007C8490": {
-    "name": "Unknown::setField44IfBit0Clear",
-    "class": "Unknown",
-    "signature": "void fn_007C97A0(void* self, uint32_t value)",
-    "summary": "Sets the 32-bit field at +0x44 if bit 0 of +0x9C is clear.",
+    "name": "dispatchAndStoreOwner",
+    "class": "<unknown>",
+    "signature": "void fn_007C8490(uint32_t a1, uint32_t a2, float a3, float a4, void* self)",
+    "summary": "Calls vtable slot 0 of self with 0x5F4; if it returns non-null, stores self at obj+0x5F0 and forwards to sub_007C7330.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
   "0x007C8810": {
