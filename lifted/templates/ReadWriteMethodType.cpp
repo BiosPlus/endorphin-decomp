@@ -9973,7 +9973,6 @@ void fn_004D1840(void* out) {
 } // namespace lift_004D1840
 
 // [0x004D1CB0] ExprParser::ReadWriteMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, float, {public: void __thiscall NMData::TransitionEventData::setMomentumScaleFactor(float), 0}>::vfunc_40 (122 bytes)
-namespace lift_004D1CB0 {
 // Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack argument; calls ext_00672000 on self, then stores the stack argument into the first DWORD of self and returns it).
 // Declared with the logical signature; the lifted call site passes self and value explicitly.
 extern DWORD ext_0067A670(void* self, DWORD value);
@@ -9998,7 +9997,6 @@ __stdcall void fn_004D1CB0(void* self) {
     lift_field<void*>(self, 0x04) = static_cast<void*>(mem_00AE55AC);
 }
 
-} // namespace lift_004D1CB0
 } // namespace lift_004D1CB0
 
 // [0x004D55F0] ExprParser::ReadWriteMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::RigEventData::setSourceName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
