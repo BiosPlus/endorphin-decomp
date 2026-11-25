@@ -511,3 +511,22 @@ BOOL fn_005E0BB0(void* self, float tol) {
     return (static_cast<double>(len) <= hi) ? TRUE : FALSE;
 }
 } // namespace lift_005E0BB0
+
+// [0x005EB060] sub_005EB060 (87 bytes)
+namespace lift_005EB060 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self; stores the stack argument into the first DWORD of self; returns that value).
+extern void ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00B45F34; // init-guard flags (bit 0 = initialization started)
+extern DWORD mem_00B45F30; // static object storage (first DWORD = vtable pointer)
+
+// @name getOrInitStaticObject_005EB060
+// @summary One-time initializer for a static object at mem_00B45F30; returns its address.
+void* fn_005EB060() {
+    if ((mem_00B45F34 & 1) == 0) {
+        mem_00B45F34 |= 1;
+        ext_0067A670(reinterpret_cast<void*>(&mem_00B45F30), 0);
+        mem_00B45F30 = 0x009695A4;
+    }
+    return reinterpret_cast<void*>(&mem_00B45F30);
+}
+} // namespace lift_005EB060

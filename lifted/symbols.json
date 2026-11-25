@@ -32065,6 +32065,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005EB060": {
+    "name": "getOrInitStaticObject_005EB060",
+    "signature": "extern \"C\" DWORD mem_00B45F34; // init-guard flags (bit 0 = initialization started) extern \"C\" DWORD mem_00B45F30; // static object storage (first DWORD = vtable pointer) void* fn_005EB060()",
+    "summary": "One-time initializer for a static object at mem_00B45F30; returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005EB890": {
     "name": "NMData::FixedPathJointData::vfunc_10_off_C",
     "class": "NMData::FixedPathJointData",
