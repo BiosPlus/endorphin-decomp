@@ -745,3 +745,16 @@ void fn_005A0380(void* it, void* last, void* guard, void* end, int32_t* counter)
 }
 } // namespace lift_0046A4D0
 } // namespace lift_005A0380
+
+// [0x005A0200] sub_005A0200 (53 bytes)
+namespace lift_005A0200 {
+// Known callee 0x0059FDE0: copyStringRangeFromTreeIterator (Walks a red-black tree range from (container, node) up to endNode, assigning each node's std::string at +0x0C into consecutive 0x1C-byte output slots and advancing the iterator; returns the final output pointer.)
+// The caller pushes eight words; the callee reads only the first five (its lifted signature).
+extern void* ext_0059FDE0(void* container, void* node, void* expectedContainer, void* endNode, std::string* out);
+
+// @name copyStringRangeFromTreeIteratorWrapper
+// @summary Argument-shuffling forwarder to copyStringRangeFromTreeIterator (0x0059FDE0); returns its result unchanged.
+void* fn_005A0200(void* container, void* node, void* expectedContainer, void* endNode, std::string* out) {
+    return ext_0059FDE0(container, node, expectedContainer, endNode, out);
+}
+} // namespace lift_005A0200

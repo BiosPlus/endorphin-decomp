@@ -1,0 +1,13 @@
+{
+  "va": "0x005A0200",
+  "size": 53,
+  "orig_symbol": "sub_005A0200",
+  "src_path": "src/leaf/decompiled_5A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5A0000.cpp",
+  "name": "copyStringRangeFromTreeIteratorWrapper",
+  "signature": "void* fn_005A0200(void* container, void* node, void* expectedContainer, void* endNode, std::string* out)",
+  "summary": "Argument-shuffling forwarder to copyStringRangeFromTreeIterator (0x0059FDE0); returns its result unchanged.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:01:28Z"
+}
