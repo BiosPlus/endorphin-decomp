@@ -1574,3 +1574,52 @@ uint32_t __thiscall sub_0049E2F0(void* self, uint32_t target_str) {
     }
 }
 } // namespace lift_0049E2F0
+
+// [0x0049ED70]
+namespace lift_0049ED70 {
+struct ListFindResult {
+    uint32_t head;
+    uint32_t match;
+};
+
+extern uint32_t mem_00925134;
+extern ListFindResult* __cdecl ext_0049DB60(ListFindResult* out, uint32_t list, uint32_t first, uint32_t list2, uint32_t last, uint32_t key);
+
+// @name findNodeValueByKey
+// @summary Searches the list at this+0xdc for a node matching key and returns a pointer to its value (node+8) or null.
+// @field UnknownClass +0xdc uint32_t list_head
+uint32_t __thiscall sub_0049ED70(uint32_t self, uint32_t key) {
+    uint32_t list_ptr = self + 0xdc;
+    uint32_t end_node = *reinterpret_cast<const uint32_t*>(list_ptr + 0x4);
+    uint32_t first_node = *reinterpret_cast<const uint32_t*>(end_node);
+
+    ListFindResult result{};
+    ListFindResult* res_ptr = ext_0049DB60(&result, list_ptr, first_node, list_ptr, end_node, key);
+
+    uint32_t res_head = res_ptr->head;
+    uint32_t match = res_ptr->match;
+    auto invalid_param = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+
+    if (list_ptr != res_head) {
+        invalid_param();
+    }
+
+    uint32_t sentinel = *reinterpret_cast<const uint32_t*>(list_ptr + 0x4);
+    if (list_ptr == 0) {
+        invalid_param();
+    }
+
+    if (match == sentinel) {
+        return 0;
+    }
+
+    if (list_ptr == 0) {
+        invalid_param();
+    }
+    if (match == *reinterpret_cast<const uint32_t*>(list_ptr + 0x4)) {
+        invalid_param();
+    }
+
+    return match + 0x8;
+}
+} // namespace lift_0049ED70

@@ -12451,6 +12451,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0xC4 and tail-calls sub_0049EB50.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x0049ED70": {
+    "name": "findNodeValueByKey",
+    "signature": "uint32_t __thiscall sub_0049ED70(uint32_t self, uint32_t key)",
+    "summary": "Searches the list at this+0xdc for a node matching key and returns a pointer to its value (node+8) or null.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049F2E0": {
     "name": "sub_0049F2E0",
     "class": "(none)",

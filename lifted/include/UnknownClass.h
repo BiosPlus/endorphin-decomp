@@ -115,6 +115,7 @@ struct UnknownClass_Fields {
     // +0xC0  uint32_t                 field_0xC0  (evidence: 0x0043CC60)
     // +0xD0  uint32_t field_0xD0 (on object referenced by +0x88)  (evidence: 0x0043CC60)
     // +0xD8  void*                    ownedObject  (evidence: 0x00466360)
+    // +0xDC  uint32_t                 list_head  (evidence: 0x0049ED70)
     // +0xF0  uint32_t                 field_0xF0  (evidence: 0x0058AB60)
     // +0xF4  int32_t                  field_0xF4  (evidence: 0x00594040, 0x0059DE20)
     // +0x108 uint32_t                 field_0x108  (evidence: 0x0043CC60)
