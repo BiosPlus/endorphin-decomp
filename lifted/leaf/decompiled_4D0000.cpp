@@ -296,3 +296,19 @@ void fn_004D2730(DWORD* dst, DWORD value) {
     dst[1] = staticAddr;
 }
 } // namespace lift_004D2730
+
+// [0x004D2710] sub_004D2710 (30 bytes)
+namespace lift_004D2710 {
+// Known callee 0x004D25F0: initStaticObjectOnce_004D25F0 (One-time initializer guard: on first call sets bit 0 of mem_00AE55C0, runs ext_0067A670 on mem_00AE55BC, then sets mem_00AE55BC to 0x947CBC; returns &mem_00AE55BC.)
+extern DWORD ext_004D25F0();
+
+// @name storeValueWithStaticObjectAddr
+// @summary Writes value into dst[0] and the address returned by initStaticObjectOnce_004D25F0 into dst[1].
+// @field Unknown +0x00 DWORD field_0x00
+// @field Unknown +0x04 DWORD field_0x04
+void fn_004D2710(DWORD* dst, DWORD value) {
+    DWORD addr = ext_004D25F0();
+    dst[0] = value;
+    dst[1] = addr;
+}
+} // namespace lift_004D2710
