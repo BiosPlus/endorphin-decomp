@@ -932,3 +932,20 @@ int32_t __thiscall sub_00698900(void* self, int32_t* pos, const char* chars) {
     return end_index < 0 ? 0 : end_index;
 }
 } // namespace lift_00698900
+
+// [0x0069B560]
+namespace lift_0069B560 {
+// @name LogicErrorDerived::LogicErrorDerived
+// @class LogicErrorDerived
+// @summary Copy constructor for a std::logic_error-derived exception class setting vftable 0x0098FB84.
+// @field LogicErrorDerived +0x00 uint32_t vftable
+
+
+void* __thiscall ext_00401C60(void* self, const void* other);
+
+void* __thiscall sub_0069B560(void* self, const void* other) {
+    ext_00401C60(self, other);
+    *reinterpret_cast<uint32_t*>(self) = 0x0098FB84u;
+    return self;
+}
+} // namespace lift_0069B560

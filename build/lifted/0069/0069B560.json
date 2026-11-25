@@ -1,0 +1,22 @@
+{
+  "va": "0x0069B560",
+  "size": 25,
+  "orig_symbol": "sub_0069B560",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "LogicErrorDerived::LogicErrorDerived",
+  "class": "LogicErrorDerived",
+  "signature": "void* __thiscall sub_0069B560(void* self, const void* other)",
+  "summary": "Copy constructor for a std::logic_error-derived exception class setting vftable 0x0098FB84.",
+  "fields": [
+    {
+      "class": "LogicErrorDerived",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:22:44Z"
+}

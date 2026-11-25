@@ -34656,6 +34656,13 @@
     "summary": "Constructor: runs base init, sets AxisSensor vtable, zeroes float fields at +0x30/+0x34/+0x38, stores arg2 at +0x3C, zeroes +0x44/+0x48/+0x4C; returns this.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x0062C4D0": {
+    "name": "Sensors::AxisSensorDerived::AxisSensorDerived",
+    "class": "Sensors::AxisSensorDerived",
+    "signature": "uintptr_t fn_0062C4D0(uintptr_t self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Constructor: calls Sensors::AxisSensor::AxisSensor, sets vtable to 0x00979084, returns this.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x0062C5E0": {
     "name": "Sensors::AxisSensor::vfunc_0",
     "class": "Sensors::AxisSensor",
@@ -42261,6 +42268,13 @@
     "name": "matchingCloseBracket",
     "signature": "uint8_t matchingCloseBracket(int8_t c)",
     "summary": "Maps an opening bracket ( \u003c [ { to its closing counterpart; returns 0 for any other char.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
+  "0x0069B560": {
+    "name": "LogicErrorDerived::LogicErrorDerived",
+    "class": "LogicErrorDerived",
+    "signature": "void* __thiscall sub_0069B560(void* self, const void* other)",
+    "summary": "Copy constructor for a std::logic_error-derived exception class setting vftable 0x0098FB84.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
   "0x0069B580": {
@@ -60669,6 +60683,13 @@
     "class": "MemoryReader",
     "signature": "uint32_t __thiscall sub_007AEC70(void* self, void* dst, uint32_t size, uint8_t failIfShort)",
     "summary": "Reads up to size bytes from an in-memory buffer into dst, advancing the read offset",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
+  "0x007AED60": {
+    "name": "MemoryReader::readUInt32",
+    "class": "MemoryReader",
+    "signature": "uint32_t __thiscall sub_007AED60(void* self, uint32_t* dst, uint8_t swapEndian)",
+    "summary": "Reads a 32-bit unsigned integer from an in-memory buffer into dst",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
   "0x007AEE00": {
