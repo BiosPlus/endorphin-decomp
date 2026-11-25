@@ -704,3 +704,33 @@ void fn_00666930(void* self) {
 }
 } // namespace lift_004757F0
 } // namespace lift_00666930
+
+// [0x00662A50] sub_00662A50 (83 bytes)
+namespace lift_00662A50 {
+// IAT slots (MSVC import thunks) used by this function.
+extern int mem_0092424C;  // KERNEL32!GetTempPathA
+extern int mem_00924FE4;  // MSVCP80 std::basic_string<char>::basic_string(const char*)
+extern int mem_00924FE8;  // MSVCP80 std::basic_string<char>::basic_string()
+
+// @name Temp::getTempPathString_00662A50
+// @summary Writes the Windows temp directory path into the caller's std::string, or an empty string if GetTempPathA fails. Returns the string pointer.
+void* fn_00662A50(void* out) {
+    char buf[0x104];
+
+    using GetTempPathAFn = DWORD(__stdcall*)(DWORD, LPSTR);
+    using StringCtorCStrFn = void(__thiscall*)(void* self, const char* s);
+    using StringCtorFn = void(__thiscall*)(void* self);
+
+    const DWORD len = reinterpret_cast<GetTempPathAFn>(
+        static_cast<uintptr_t>(mem_0092424C))(0x104, buf);
+
+    if (len != 0) {
+        reinterpret_cast<StringCtorCStrFn>(
+            static_cast<uintptr_t>(mem_00924FE4))(out, buf);
+    } else {
+        reinterpret_cast<StringCtorFn>(
+            static_cast<uintptr_t>(mem_00924FE8))(out);
+    }
+    return out;
+}
+} // namespace lift_00662A50

@@ -1,0 +1,14 @@
+{
+  "va": "0x00662A50",
+  "size": 83,
+  "orig_symbol": "sub_00662A50",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "Temp::getTempPathString_00662A50",
+  "class": "Temp",
+  "signature": "extern \"C\" int mem_00924FE4;  // MSVCP80 std::basic_string\u003cchar\u003e::basic_string(const char*) extern \"C\" int mem_00924FE8;  // MSVCP80 std::basic_string\u003cchar\u003e::basic_string() void* fn_00662A50(void* out)",
+  "summary": "Writes the Windows temp directory path into the caller's std::string, or an empty string if GetTempPathA fails. Returns the string pointer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:04:44Z"
+}

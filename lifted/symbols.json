@@ -37659,6 +37659,13 @@
     "summary": "IAT jump thunk forwarding to MSVCR80!remove.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00662A50": {
+    "name": "Temp::getTempPathString_00662A50",
+    "class": "Temp",
+    "signature": "extern \"C\" int mem_00924FE4;  // MSVCP80 std::basic_string\u003cchar\u003e::basic_string(const char*) extern \"C\" int mem_00924FE8;  // MSVCP80 std::basic_string\u003cchar\u003e::basic_string() void* fn_00662A50(void* out)",
+    "summary": "Writes the Windows temp directory path into the caller's std::string, or an empty string if GetTempPathA fails. Returns the string pointer.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00662B20": {
     "name": "appendTrailingBackslash",
     "signature": "extern size_t ext_string_size(void* str);                  // size() const extern char*  ext_string_index(void* str, size_t pos);     // operator[](size_t) -\u003e char\u0026 extern void   ext_string_append_char(void* str, char ch);  // operator+=(char) -\u003e basic_string\u0026 extern void   ext_string_copy_construct(void* dst, const void* src); // basic_string(const basic_string\u0026) void* fn_00662B20(void* ret, void* path)",
