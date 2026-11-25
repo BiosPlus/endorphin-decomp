@@ -49134,6 +49134,12 @@
     "summary": "Find index of first character not in the given C-string starting at startIndex, or -1 if none.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x006989B0": {
+    "name": "copyBytesRangeToOptionalDst_006989B0",
+    "signature": "void copyBytesRangeToOptionalDst_006989B0(const uint8_t* begin, const uint8_t* end, uint8_t* dst)",
+    "summary": "Copies bytes from [begin, end) to dst, skipping stores when dst is null.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x006989E0": {
     "name": "ByteVector::at",
     "class": "ByteVector",

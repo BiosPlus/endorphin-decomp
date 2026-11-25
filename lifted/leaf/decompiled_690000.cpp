@@ -1171,3 +1171,17 @@ void fn_0069A260(void* self) {
 }
 } // namespace lift_0044C500
 } // namespace lift_0069A260
+
+// [0x006989B0]
+namespace lift_006989B0 {
+// @name copyBytesRangeToOptionalDst_006989B0
+// @summary Copies bytes from [begin, end) to dst, skipping stores when dst is null.
+void copyBytesRangeToOptionalDst_006989B0(const uint8_t* begin, const uint8_t* end, uint8_t* dst) {
+    const uintptr_t count = static_cast<uintptr_t>(end - begin);
+    for (uintptr_t i = 0; i < count; ++i) {
+        if (dst != nullptr) {
+            dst[i] = begin[i];
+        }
+    }
+}
+} // namespace lift_006989B0
