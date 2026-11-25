@@ -1,0 +1,22 @@
+{
+  "va": "0x0043CEE0",
+  "size": 15,
+  "orig_symbol": "MultiTrackView::View::vfunc_81",
+  "src_path": "src/MultiTrackView/auto_tiny.cpp",
+  "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp",
+  "name": "MultiTrackView::View::vfunc_81",
+  "class": "MultiTrackView::View",
+  "signature": "void __thiscall MultiTrackView_View_vfunc_81(void* self)",
+  "summary": "Invalidates the view's window (HWND at +0x20) with erase=TRUE via USER32!InvalidateRect.",
+  "fields": [
+    {
+      "class": "MultiTrackView::View",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:23:33Z"
+}

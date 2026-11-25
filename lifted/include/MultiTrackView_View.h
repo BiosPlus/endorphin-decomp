@@ -10,6 +10,6 @@
 // Recovered field layout for MultiTrackView::View:
 namespace lifted_layout {
 struct MultiTrackView_View_Fields {
-    // +0x20  HWND                     field_0x20  (evidence: 0x0043CEE0)
+    // +0x20  HWND                     hwnd  (evidence: 0x0043CEE0)
 };
 } // namespace lifted_layout

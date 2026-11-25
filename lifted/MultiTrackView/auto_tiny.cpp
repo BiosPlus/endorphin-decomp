@@ -321,3 +321,19 @@ extern void* __fastcall fn_00460450(void* self, int edx_unused, unsigned int fla
     return self;
 }
 } // namespace lift_00460450
+
+// [0x0043CEE0]
+namespace lift_0043CEE0 {
+// @name MultiTrackView::View::vfunc_81
+// @class MultiTrackView::View
+// @summary Invalidates the view's window (HWND at +0x20) with erase=TRUE via USER32!InvalidateRect.
+// @field MultiTrackView::View +0x20 HWND hwnd
+
+// IAT slot at 0x00925688 holding USER32!InvalidateRect.
+extern BOOL(__stdcall* mem_00925688)(HWND hWnd, const RECT* lpRect, BOOL bErase);
+
+void __thiscall MultiTrackView_View_vfunc_81(void* self) {
+    HWND hwnd = lift_field<HWND>(self, 0x20);
+    mem_00925688(hwnd, nullptr, TRUE);
+}
+} // namespace lift_0043CEE0
