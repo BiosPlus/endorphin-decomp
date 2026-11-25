@@ -8,6 +8,7 @@
 // Recovered field layout for <unknown>:
 namespace lifted_layout {
 struct _unknown__Fields {
+    // +0x0   void* cs (pointer to CRITICAL_SECTION, read from [ecx])  (evidence: 0x0078D1E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    delegate  (evidence: 0x00493E60, 0x00494050) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD                    field_0x00  (evidence: 0x0046F3A0, 0x0049E440, 0x00543300, 0x005EAEE0, 0x00782D00, 0x00784620, 0x00788E50) // CONFLICT: multiple definitions at +0x0
     // +0x0   float                    field_0x00  (evidence: 0x00669E40) // CONFLICT: multiple definitions at +0x0

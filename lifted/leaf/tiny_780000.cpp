@@ -486,3 +486,20 @@ uint8_t fn_007835F0(void* self) {
 }
 } // namespace lift_0046F910
 } // namespace lift_007835F0
+
+// [0x0078D1E0]
+namespace lift_0078D1E0 {
+// @name sub_0078D1E0 (LeaveCriticalSection on object's stored section)
+// @summary Leaves the CRITICAL_SECTION pointed to by the first dword of the object in ecx.
+// @field <unknown> +0x00 void* cs (pointer to CRITICAL_SECTION, read from [ecx])
+
+// IAT slot for KERNEL32!LeaveCriticalSection (stdcall, one argument).
+extern void* ext_009241BC;
+
+using LeaveCriticalSection_fn = void(__stdcall*)(void*);
+
+void __thiscall sub_0078D1E0(void* self) {
+    void* cs = *reinterpret_cast<void**>(self);
+    reinterpret_cast<LeaveCriticalSection_fn>(ext_009241BC)(cs);
+}
+} // namespace lift_0078D1E0

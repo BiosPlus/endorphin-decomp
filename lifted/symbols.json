@@ -64210,6 +64210,12 @@
     "summary": "Returns a 32-bit value with bits 0..n-1 set (n = stack argument); x86 shift count is masked to 5 bits, so bit index wraps modulo 32.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x0078D1E0": {
+    "name": "sub_0078D1E0 (LeaveCriticalSection on object's stored section)",
+    "signature": "void __thiscall sub_0078D1E0(void* self)",
+    "summary": "Leaves the CRITICAL_SECTION pointed to by the first dword of the object in ecx.",
+    "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
   "0x0078D1F0": {
     "name": "buildConvexPolygonTriangleIndices",
     "signature": "void sub_0078D1F0(int32_t* outIndices, int32_t vertexCount)",

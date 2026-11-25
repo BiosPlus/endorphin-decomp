@@ -1,0 +1,21 @@
+{
+  "va": "0x0078D1E0",
+  "size": 10,
+  "orig_symbol": "sub_0078D1E0",
+  "src_path": "src/leaf/tiny_780000.cpp",
+  "lifted_path": "lifted/leaf/tiny_780000.cpp",
+  "name": "sub_0078D1E0 (LeaveCriticalSection on object's stored section)",
+  "signature": "void __thiscall sub_0078D1E0(void* self)",
+  "summary": "Leaves the CRITICAL_SECTION pointed to by the first dword of the object in ecx.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x0",
+      "type": "void* cs (pointer to CRITICAL_SECTION, read from",
+      "name": "[ecx])"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:17:39Z"
+}
