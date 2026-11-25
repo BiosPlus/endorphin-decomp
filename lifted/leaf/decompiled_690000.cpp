@@ -775,3 +775,17 @@ int32_t __thiscall sub_00698840(void* self, uint32_t chars_ptr, int32_t start_in
     return -1;
 }
 } // namespace lift_00698840
+
+// [0x00699810]
+namespace lift_00699810 {
+extern void* fn_006A5C62(uint32_t size);
+
+// @name allocate_array_0x2c
+// @summary Allocates an array of count 0x2c-byte elements, throwing std::bad_alloc on size_t overflow.
+extern void* fn_00699810(uint32_t count) {
+    if (count > 0 && (0xFFFFFFFFu / count) < 0x2Cu) {
+        throw std::bad_alloc();
+    }
+    return fn_006A5C62(count * 0x2Cu);
+}
+} // namespace lift_00699810

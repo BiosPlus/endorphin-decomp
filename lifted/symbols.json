@@ -41690,6 +41690,12 @@
     "summary": "Calls virtual method at vtable+0x60 with arg1 and dynamic_casts the result via __RTDynamicCast",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x00699810": {
+    "name": "allocate_array_0x2c",
+    "signature": "extern \"C\" void* fn_00699810(uint32_t count)",
+    "summary": "Allocates an array of count 0x2c-byte elements, throwing std::bad_alloc on size_t overflow.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00699930": {
     "name": "sub_00699930",
     "signature": "extern \"C\" int __thiscall fn_00699930(void* self)",
@@ -47782,6 +47788,13 @@
     "signature": "extern \"C\" void* __fastcall fn_006B8270(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006B8210 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x006B8390": {
+    "name": "CColorStatic::CtlColor",
+    "class": "CColorStatic",
+    "signature": "extern \"C\" uint32_t __thiscall fn_006B8390(void* self, void* pDC, uint32_t nCtlColor)",
+    "summary": "Sets transparent background, text color, and recreates solid brush for CtlColor",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
   "0x006B8450": {
     "name": "sub_006B8450",
