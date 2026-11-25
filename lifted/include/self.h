@@ -45,6 +45,12 @@ struct self_Fields {
     // +0x1A8 DWORD slotB (pointer to  mem_007BDA50)  (evidence: 0x007BD640, 0x007BDA20)
     // +0x1B0 DWORD slotC (pointer to  mem_007BDA50)  (evidence: 0x007BD640, 0x007BDA20)
     // +0x234 void*                    field_0x234  (evidence: 0x005E12D0, 0x005E2C70)
+    // +0x270 uint32_t                 field_0x270  (evidence: 0x007151C0)
+    // +0x274 uint32_t                 field_0x274  (evidence: 0x007151C0)
+    // +0x278 uint32_t                 field_0x278  (evidence: 0x007151C0)
+    // +0x27C uint32_t                 field_0x27C  (evidence: 0x007151C0)
+    // +0x280 uint32_t                 field_0x280  (evidence: 0x007151C0)
+    // +0x284 uint32_t                 field_0x284  (evidence: 0x007151C0)
     // +0x9A0 int32_t                  field_0x9a0  (evidence: 0x004DE160)
     // +0x9D0 int32_t                  field_0x9d0  (evidence: 0x004DE440)
 };

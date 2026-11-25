@@ -1,0 +1,51 @@
+{
+  "va": "0x007151C0",
+  "size": 60,
+  "orig_symbol": "sub_007151C0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "CopyBlock6Dwords_0x270",
+  "signature": "void fn_007151C0(void* self, void* out)",
+  "summary": "Copies six consecutive uint32 fields (+0x270..+0x284) from self into the 24-byte out buffer.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x270",
+      "type": "uint32_t",
+      "name": "field_0x270"
+    },
+    {
+      "class": "self",
+      "offset": "+0x274",
+      "type": "uint32_t",
+      "name": "field_0x274"
+    },
+    {
+      "class": "self",
+      "offset": "+0x278",
+      "type": "uint32_t",
+      "name": "field_0x278"
+    },
+    {
+      "class": "self",
+      "offset": "+0x27C",
+      "type": "uint32_t",
+      "name": "field_0x27C"
+    },
+    {
+      "class": "self",
+      "offset": "+0x280",
+      "type": "uint32_t",
+      "name": "field_0x280"
+    },
+    {
+      "class": "self",
+      "offset": "+0x284",
+      "type": "uint32_t",
+      "name": "field_0x284"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:55:16Z"
+}

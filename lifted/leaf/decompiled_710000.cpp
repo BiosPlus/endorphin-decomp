@@ -1132,3 +1132,21 @@ uint32_t __stdcall sub_00715360(uint32_t index) {
     }
 }
 } // namespace lift_00715360
+
+// [0x007151C0]
+namespace lift_007151C0 {
+// @name CopyBlock6Dwords_0x270
+// @summary Copies six consecutive uint32 fields (+0x270..+0x284) from self into the 24-byte out buffer.
+// @field self +0x270 uint32_t field_0x270
+// @field self +0x274 uint32_t field_0x274
+// @field self +0x278 uint32_t field_0x278
+// @field self +0x27C uint32_t field_0x27C
+// @field self +0x280 uint32_t field_0x280
+// @field self +0x284 uint32_t field_0x284
+void fn_007151C0(void* self, void* out) {
+    for (ptrdiff_t i = 0; i < 6; ++i) {
+        const uint32_t v = lift_field<uint32_t>(self, 0x270 + i * 4);
+        lift_field<uint32_t>(out, i * 4) = v;
+    }
+}
+} // namespace lift_007151C0

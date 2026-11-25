@@ -51604,6 +51604,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x007151C0": {
+    "name": "CopyBlock6Dwords_0x270",
+    "signature": "void fn_007151C0(void* self, void* out)",
+    "summary": "Copies six consecutive uint32 fields (+0x270..+0x284) from self into the 24-byte out buffer.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x007152B0": {
     "name": "sub_007152B0",
     "signature": "extern \"C\" void* __fastcall fn_007152B0(void* self, int edx_unused, unsigned int flags)",
