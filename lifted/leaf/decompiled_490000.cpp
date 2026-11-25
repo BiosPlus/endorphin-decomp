@@ -1171,3 +1171,28 @@ void* fn_0049D190(void* self) {
     return self;
 }
 } // namespace lift_0049D190
+
+// [0x0049DFA0]
+namespace lift_0049DFA0 {
+// @name Node::setValueRecursive
+// @class Node
+// @summary Recursively sets field_0x130 on this node and all non-flagged children in its child list
+// @field Node +0xdc void* child_list
+// @field Node +0x130 uint32_t field_0x130
+
+
+void __thiscall fn_0049DFA0(uintptr_t self, uint32_t value) {
+    *reinterpret_cast<uint32_t*>(self + 0x130) = value;
+
+    uintptr_t list_ptr = self + 0xdc;
+    uintptr_t head = *reinterpret_cast<uintptr_t*>(list_ptr + 0x4);
+    uintptr_t node = *reinterpret_cast<uintptr_t*>(head);
+
+    while (node != *reinterpret_cast<uintptr_t*>(list_ptr + 0x4)) {
+        if (*reinterpret_cast<uint8_t*>(node + 0x6c) == 0) {
+            fn_0049DFA0(node + 0x8, value);
+        }
+        node = *reinterpret_cast<uintptr_t*>(node);
+    }
+}
+} // namespace lift_0049DFA0
