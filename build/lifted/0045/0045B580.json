@@ -1,0 +1,28 @@
+{
+  "va": "0x0045B580",
+  "size": 65,
+  "orig_symbol": "sub_0045B580",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "Unknown::forwardWindowTextFloat_0045B580",
+  "class": "Unknown",
+  "signature": "void fn_0045B580(void* self)",
+  "summary": "Reads a float from the embedded window at +0x230; if it is strictly positive, forwards it to the virtual method at vtable+0x90 of the object at +0x88.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "void* field_0x88 (object pointer; vtable slot +0x90 is invoked with the",
+      "name": "float)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x230",
+      "type": "void* field_0x230 (embedded CWnd passed to",
+      "name": "getWindowTextAsFloat)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:06:33Z"
+}

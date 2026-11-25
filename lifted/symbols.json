@@ -6493,6 +6493,13 @@
     "summary": "Sends BM_GETCHECK to the control handle at +0x1A8, then calls virtual slot 0x88 on the object at +0x88 with whether the control is checked.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x0045B580": {
+    "name": "Unknown::forwardWindowTextFloat_0045B580",
+    "class": "Unknown",
+    "signature": "void fn_0045B580(void* self)",
+    "summary": "Reads a float from the embedded window at +0x230; if it is strictly positive, forwards it to the virtual method at vtable+0x90 of the object at +0x88.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x0045B670": {
     "name": "sub_0045B670",
     "signature": "extern \"C\" void* __cdecl fn_0045B670(void)",

@@ -920,6 +920,7 @@ struct Unknown_Fields {
     // +0x88  uint32_t                 field_0x88  (evidence: 0x0053DAA0) // CONFLICT: multiple definitions at +0x88
     // +0x88  uint8_t                  field_0x88  (evidence: 0x004407C0, 0x00441020) // CONFLICT: multiple definitions at +0x88
     // +0x88  void*                    field_0x88  (evidence: 0x0045B4A0, 0x0045B4F0, 0x00545BE0, 0x00545C40) // CONFLICT: multiple definitions at +0x88
+    // +0x88  void* field_0x88 (object pointer; vtable slot +0x90 is invoked with the float)  (evidence: 0x0045B580) // CONFLICT: multiple definitions at +0x88
     // +0x88  ptr field_0x88 (pointer to child object; owner class not identified)  (evidence: 0x005434C0, 0x005457B0) // CONFLICT: multiple definitions at +0x88
     // +0x88  void*                    nodeList  (evidence: 0x00456C20) // CONFLICT: multiple definitions at +0x88
     // +0x89  uint8_t                  field_0x89  (evidence: 0x004408B0, 0x00441C10)
@@ -1303,7 +1304,8 @@ struct Unknown_Fields {
     // +0x210 DWORD                    field_0x210  (evidence: 0x004A57F0, 0x0070AC00, 0x0070AD00, 0x0070BF00) // CONFLICT: multiple definitions at +0x210
     // +0x210 uint32_t                 field_0x210  (evidence: 0x007CD510) // CONFLICT: multiple definitions at +0x210
     // +0x214 DWORD                    field_0x214  (evidence: 0x0070AC00, 0x0070AD00, 0x0070BF00)
-    // +0x230 uint8_t                  field_0x230  (evidence: 0x00644F00)
+    // +0x230 uint8_t                  field_0x230  (evidence: 0x00644F00) // CONFLICT: multiple definitions at +0x230
+    // +0x230 void* field_0x230 (embedded CWnd passed to getWindowTextAsFloat)  (evidence: 0x0045B580) // CONFLICT: multiple definitions at +0x230
     // +0x234 void*                    child  (evidence: 0x005E12F0, 0x005E2C70) // CONFLICT: multiple definitions at +0x234
     // +0x234 void*                    field_0x234  (evidence: 0x005E1330, 0x005E1360, 0x005E2C70) // CONFLICT: multiple definitions at +0x234
     // +0x234 void* field_0x234 (subobject pointer; class unrecovered)  (evidence: 0x005E1310, 0x005E2C70) // CONFLICT: multiple definitions at +0x234
