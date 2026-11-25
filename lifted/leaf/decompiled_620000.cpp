@@ -1467,3 +1467,43 @@ extern void __cdecl fn_00622D80(const uint8_t* begin, const uint8_t* end, uint8_
     } while (src != end);
 }
 } // namespace lift_00622D80
+
+// [0x00622B40] sub_00622B40 (84 bytes)
+namespace lift_00622B40 {
+// Import thunk slot mem_00924FE0 (MSVCP80 basic_string copy constructor, thiscall, one stack arg).
+extern uint32_t mem_00924FE0;
+// Call through the import slot: copy-constructs a std::string at dest from src.
+extern void ext_00924FE0(void* self, const void* src);
+
+// @name Unknown::initFromStringAndFloats_00622B40
+// @class Unknown
+// @summary Stores two dwords, copy-constructs an embedded string plus four floats from a source record, stores a flag byte, clears the following byte, and returns this.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint8_t field_0x0C
+// @field Unknown +0x28 float field_0x28
+// @field Unknown +0x2C float field_0x2C
+// @field Unknown +0x30 float field_0x30
+// @field Unknown +0x34 float field_0x34
+// @field Unknown +0x38 uint8_t field_0x38
+// @field Unknown +0x39 uint8_t field_0x39
+void* fn_00622B40(void* self, uint32_t a1, uint32_t a2, uint32_t a3, const void* a4, uint8_t a5) {
+    lift_field<uint32_t>(self, 0x00) = a1;
+    lift_field<uint32_t>(self, 0x04) = a2;
+    lift_field<uint32_t>(self, 0x08) = a3;
+
+    // Embedded string at +0x0C: copy-constructed from the source record at offset 0.
+    ext_00924FE0(static_cast<uint8_t*>(self) + 0x0C, a4);
+
+    // Copy four floats from the source record (offsets 0x1C..0x28) to +0x28..0x34.
+    lift_field<float>(self, 0x28) = lift_field<float>(a4, 0x1C);
+    lift_field<float>(self, 0x2C) = lift_field<float>(a4, 0x20);
+    lift_field<float>(self, 0x30) = lift_field<float>(a4, 0x24);
+    lift_field<float>(self, 0x34) = lift_field<float>(a4, 0x28);
+
+    lift_field<uint8_t>(self, 0x38) = a5;
+    lift_field<uint8_t>(self, 0x39) = 0;
+    return self;
+}
+} // namespace lift_00622B40
