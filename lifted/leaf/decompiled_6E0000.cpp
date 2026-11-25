@@ -1026,3 +1026,30 @@ void fn_006E70E0(void* self, uint32_t lo, uint32_t hi) {
     }
 }
 } // namespace lift_006E70E0
+
+// [0x006E0940]
+namespace lift_006E0940 {
+extern double mem_00993828;
+
+// @name quatToYAxis
+// @summary Converts a quaternion (x, y, z, w) into the Y-axis basis vector of its rotation matrix
+// @field Quat +0x00 double x
+// @field Quat +0x08 double y
+// @field Quat +0x10 double z
+// @field Quat +0x18 double w
+void __cdecl sub_006E0940(double* dst, const double* q) {
+    double x = q[0];
+    double y = q[1];
+    double z = q[2];
+    double w = q[3];
+
+    double xy_zw = (x * y) - (z * w);
+    dst[0] = xy_zw + xy_zw;
+
+    double half_xx_zz = (mem_00993828 - (x * x)) - (z * z);
+    dst[1] = half_xx_zz + half_xx_zz;
+
+    double zy_wx = (z * y) + (w * x);
+    dst[2] = zy_wx + zy_wx;
+}
+} // namespace lift_006E0940
