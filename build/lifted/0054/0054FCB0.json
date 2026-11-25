@@ -1,0 +1,34 @@
+{
+  "va": "0x0054FCB0",
+  "size": 90,
+  "orig_symbol": "sub_0054FCB0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Unknown::destroyMembers",
+  "class": "Unknown",
+  "signature": "void fn_0054FCB0(void* self)",
+  "summary": "Resets the vtable slot, tears down the sub-object at +0x820, then destroys the std::string at +0x804.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x804",
+      "type": "std::string",
+      "name": "field_0x804"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x820",
+      "type": "void*",
+      "name": "field_0x820"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:19:12Z"
+}

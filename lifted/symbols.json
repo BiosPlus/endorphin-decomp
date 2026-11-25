@@ -21593,6 +21593,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00536540 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0054FCB0": {
+    "name": "Unknown::destroyMembers",
+    "class": "Unknown",
+    "signature": "void fn_0054FCB0(void* self)",
+    "summary": "Resets the vtable slot, tears down the sub-object at +0x820, then destroys the std::string at +0x804.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00550F80": {
     "name": "ModelImporter::vfunc_0",
     "class": "ModelImporter",

@@ -857,3 +857,33 @@ void* fn_00549980(void* self) {
     return self;
 }
 } // namespace lift_00549980
+
+// [0x0054FCB0] sub_0054FCB0 (90 bytes)
+namespace lift_0054FCB0 {
+// Known callee 0x0066A760: sub_0066A760 (Auto-lifted identical-shape clone of 0x0046FAC0 (sub_0046FAC0).)
+extern void ext_0066A760(void* self);
+extern int mem_00924FF4;
+
+// @name Unknown::destroyMembers
+// @class Unknown
+// @summary Resets the vtable slot, tears down the sub-object at +0x820, then destroys the std::string at +0x804.
+// @field Unknown +0x000 uint32_t field_0x00
+// @field Unknown +0x804 std::string field_0x804
+// @field Unknown +0x820 void* field_0x820
+void fn_0054FCB0(void* self) {
+    std::uint8_t* base = static_cast<std::uint8_t*>(self);
+
+    // Vtable pointer reset to 0x009570A4.
+    *reinterpret_cast<std::uint32_t*>(base) = 0x009570A4u;
+
+    // Sub-object at +0x820 (callee 0x0066A760).
+    ext_0066A760(base + 0x820);
+
+    // std::string destructor at +0x804; the destructor address is stored in mem_00924FF4.
+    using StrDtor = void (*)(void*);
+    auto dtor = reinterpret_cast<StrDtor>(static_cast<std::uintptr_t>(mem_00924FF4));
+    if (dtor) {
+        dtor(base + 0x804);
+    }
+}
+} // namespace lift_0054FCB0
