@@ -10,6 +10,6 @@
 // Recovered field layout for PoseToolOptions:
 namespace lifted_layout {
 struct PoseToolOptions_Fields {
-    // +0x9   uint8_t                  field_0x09  (evidence: 0x004EB260, 0x00639730)
+    // +0x9   uint8_t                  field_0x09  (evidence: 0x0046CE90, 0x004EB260, 0x00639730)
 };
 } // namespace lifted_layout

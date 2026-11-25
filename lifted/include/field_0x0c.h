@@ -8,6 +8,6 @@
 // Recovered field layout for field_0x0c:
 namespace lifted_layout {
 struct field_0x0c_Fields {
-    // +0xC   void* inner (object pointer at p+0x0c, vtable slot 8 is called)  (evidence: 0x005B3BC0)
+    // +0xC   void* inner (object pointer at p+0x0c, vtable slot 8 is called)  (evidence: 0x0046CE90, 0x005B3BC0)
 };
 } // namespace lifted_layout
