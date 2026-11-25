@@ -1,8 +1,10 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_7E0000.cpp
 #include "lift_compat.h"
 #include <bit>
+#include <cmath>
+#include <cstdint>
 
-// [0x007EC6E0] sub_007EC6E0 (55 bytes)
+#include <cstdint>
 namespace lift_007EC6E0 {
 extern uint32_t mem_0099EC8C;
 
@@ -123,3 +125,43 @@ void fn_007E80E0(float* dst, const float* src) {
     }
 }
 } // namespace lift_007E80E0
+
+// [0x007EFE60]
+namespace lift_007EFE60 {
+// @name Vec3::copyAndLength
+// @class Vec3
+// @summary Copies three floats from src+0x10 to out, and writes the length of the vector (src+0x1C..0x24) to outLen; returns 1.
+// @field Vec3 +0x10 float field_0x10
+// @field Vec3 +0x14 float field_0x14
+// @field Vec3 +0x18 float field_0x18
+// @field Vec3 +0x1C float field_0x1c
+// @field Vec3 +0x20 float field_0x20
+// @field Vec3 +0x24 float field_0x24
+
+extern void ext_006A7250(void);   // IAT thunk to MSVCR80!_CIsqrt (replaced by std::sqrt)
+extern const std::uint32_t mem_0092A278; // .rdata constant added before sqrt (value 0)
+
+extern std::int32_t fn_007EFE60(const std::uint8_t* src, std::uint8_t* out, std::uint8_t* outLen)
+{
+    auto* in = reinterpret_cast<const float*>(src);
+    auto* o = reinterpret_cast<float*>(out);
+    auto* len = reinterpret_cast<float*>(outLen);
+
+    // Copy in[4..6] -> out[0..2]
+    o[0] = in[4];
+    o[1] = in[5];
+    o[2] = in[6];
+
+    // Accumulate squares in single-precision, matching the x87 spills.
+    const float c = static_cast<float>(mem_0092A278);
+    const float y = in[7];
+    const float x = in[8];
+    const float z = in[9];
+    float a = y * y + c;
+    float b = x * x + a;
+    float d = z * z + b;
+
+    *len = std::sqrt(d);
+    return 1;
+}
+} // namespace lift_007EFE60

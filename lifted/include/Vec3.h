@@ -11,5 +11,11 @@ struct Vec3_Fields {
     // +0x0   float                    x  (evidence: 0x004C4390, 0x004C4D80, 0x004CF910, 0x005B1740, 0x007C8490, 0x007CA2F0, 0x007CA790, 0x007DB9E0, 0x007E51F0, 0x007E80E0)
     // +0x4   float                    y  (evidence: 0x004C4390, 0x004C4D80, 0x004CF910, 0x005B1740, 0x007C8490, 0x007CA2F0, 0x007CA790, 0x007DB9E0, 0x007E51F0, 0x007E80E0)
     // +0x8   float                    z  (evidence: 0x004C4390, 0x004C4D80, 0x004CF910, 0x005B1740, 0x007C8490, 0x007CA2F0, 0x007CA790, 0x007DB9E0, 0x007E51F0, 0x007E80E0)
+    // +0x10  float                    field_0x10  (evidence: 0x007EFE60)
+    // +0x14  float                    field_0x14  (evidence: 0x007EFE60)
+    // +0x18  float                    field_0x18  (evidence: 0x007EFE60)
+    // +0x1C  float                    field_0x1c  (evidence: 0x007EFE60)
+    // +0x20  float                    field_0x20  (evidence: 0x007EFE60)
+    // +0x24  float                    field_0x24  (evidence: 0x007EFE60)
 };
 } // namespace lifted_layout

@@ -69106,6 +69106,13 @@
     "summary": "Returns 1/x for x with |x| \u003e FLT_MIN (0x00800000), otherwise 0.0f (also for NaN).",
     "lifted_path": "lifted/leaf/decompiled_7E0000.cpp"
   },
+  "0x007EFE60": {
+    "name": "Vec3::copyAndLength",
+    "class": "Vec3",
+    "signature": "extern \"C\" void ext_006A7250(void);   // IAT thunk to MSVCR80!_CIsqrt (replaced by std::sqrt) extern \"C\" const std::uint32_t mem_0092A278; // .rdata constant added before sqrt (value 0) extern \"C\" std::int32_t fn_007EFE60(const std::uint8_t* src, std::uint8_t* out, std::uint8_t* outLen)",
+    "summary": "Copies three floats from src+0x10 to out, and writes the length of the vector (src+0x1C..0x24) to outLen; returns 1.",
+    "lifted_path": "lifted/leaf/decompiled_7E0000.cpp"
+  },
   "0x007EFED0": {
     "name": "clearFlag_00AB2BD0",
     "signature": "void sub_007EFED0()",
