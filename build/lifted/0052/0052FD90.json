@@ -1,0 +1,28 @@
+{
+  "va": "0x0052FD90",
+  "size": 87,
+  "orig_symbol": "sub_0052FD90",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "Unknown::allocAndInitAnimation_0052FD90",
+  "class": "Unknown",
+  "signature": "void* fn_0052FD90(void)",
+  "summary": "Allocates 0x3C bytes, initializes an Animation-derived object via ext_0053B240, installs two vtable pointers, and returns it (or null on allocation failure).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "u32",
+      "name": "vtable_0x953D74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "u32",
+      "name": "vtable_0x953D6C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:01:01Z"
+}

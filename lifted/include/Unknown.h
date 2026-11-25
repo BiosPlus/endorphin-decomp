@@ -114,6 +114,7 @@ struct Unknown_Fields {
     // +0x0   void* const*             vtable  (evidence: 0x0064F8F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtable  (evidence: 0x00420070, 0x0042FAE0, 0x0042FDD0, 0x004345B0, 0x00434880, 0x00456340, 0x00622B40, 0x0062A590, 0x00648A20, 0x00649010, 0x0067ADB0, 0x006C92D0, 0x006DE660, 0x006DE690, 0x006DE720, 0x006DE970, 0x006F99B0, 0x006FA920, 0x00704A20, 0x00707FB0, 0x0070AD00, 0x0070BF00, 0x007857A0, 0x00790D60, 0x0079ADA0, 0x0079DCE0, 0x0079E610) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtablePtr  (evidence: 0x00503BC0, 0x00503CA0, 0x00508BC0, 0x0050C4D0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   u32                      vtable_0x953D74  (evidence: 0x0052FD90) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable_or_ptr  (evidence: 0x005457B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable_ptr  (evidence: 0x006AD290) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtbl  (evidence: 0x0048E270) // CONFLICT: multiple definitions at +0x0
@@ -430,6 +431,7 @@ struct Unknown_Fields {
     // +0x14  void**                   range_begin  (evidence: 0x00517310) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t field_0x14 (on subobject returned by ext_0071E680, i.e. self+0x40)  (evidence: 0x00711D40, 0x007155B0) // CONFLICT: multiple definitions at +0x14
     // +0x14  void* field_0x14 (pointer to holder whose +0x04 is the lookup table)  (evidence: 0x0080D220) // CONFLICT: multiple definitions at +0x14
+    // +0x14  u32                      vtable_0x953D6C  (evidence: 0x0052FD90) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t                 vtable_secondary  (evidence: 0x0053B240) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint16_t                 wordArg  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0x14
     // +0x15  BYTE                     field_0x15  (evidence: 0x006D9030) // CONFLICT: multiple definitions at +0x15

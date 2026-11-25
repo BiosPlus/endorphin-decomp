@@ -1293,3 +1293,30 @@ void fn_00527690(void* self, void* arg1, void* arg2) {
     }
 }
 } // namespace lift_00527690
+
+// [0x0052FD90]
+namespace lift_0052FD90 {
+// @name Unknown::allocAndInitAnimation_0052FD90
+// @class Unknown
+// @summary Allocates 0x3C bytes, initializes an Animation-derived object via ext_0053B240, installs two vtable pointers, and returns it (or null on allocation failure).
+// @field Unknown +0x00 u32 vtable_0x953D74
+// @field Unknown +0x14 u32 vtable_0x953D6C
+
+extern void* ext_006A5C62(uint32_t size);
+void* ext_0053B240(void* self);
+
+// SEH frame setup/teardown (fs:[0] push/restore) is omitted: it is an
+// exception-handling wrapper with no effect on the returned value.
+void* fn_0052FD90(void) {
+    void* obj = ext_006A5C62(0x3C);
+    void* result = nullptr;
+    if (obj != nullptr) {
+        ext_0053B240(obj);
+        uint32_t* words = static_cast<uint32_t*>(obj);
+        words[0x00 / 4] = 0x953D74;
+        words[0x14 / 4] = 0x953D6C;
+        result = obj;
+    }
+    return result;
+}
+} // namespace lift_0052FD90

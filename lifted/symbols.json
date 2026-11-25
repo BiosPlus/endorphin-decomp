@@ -21254,6 +21254,13 @@
     "summary": "Scalar deleting destructor: destroys embedded object at +0x44, runs base destructor chain, frees storage when flags bit 0 is set, returns this.",
     "lifted_path": "lifted/Primitives/HingeLimit.cpp"
   },
+  "0x0052FD90": {
+    "name": "Unknown::allocAndInitAnimation_0052FD90",
+    "class": "Unknown",
+    "signature": "void* fn_0052FD90(void)",
+    "summary": "Allocates 0x3C bytes, initializes an Animation-derived object via ext_0053B240, installs two vtable pointers, and returns it (or null on allocation failure).",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052FDF0": {
     "name": "sub_0052FDF0",
     "signature": "void* fn_0052FDF0()",
