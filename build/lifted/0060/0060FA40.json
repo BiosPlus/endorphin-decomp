@@ -1,0 +1,14 @@
+{
+  "va": "0x0060FA40",
+  "size": 17,
+  "orig_symbol": "sub_0060FA40",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "Unknown::ReleaseHandleAndThrowNull",
+  "class": "Unknown",
+  "signature": "void fn_0060FA40(void* local_18)",
+  "summary": "Passes a stack-slot value (ebp-0x18) to a release helper, then throws with two null arguments.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:03:13Z"
+}

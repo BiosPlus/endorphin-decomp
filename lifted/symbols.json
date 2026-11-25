@@ -29513,6 +29513,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0060F5E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0060FA40": {
+    "name": "Unknown::ReleaseHandleAndThrowNull",
+    "class": "Unknown",
+    "signature": "void fn_0060FA40(void* local_18)",
+    "summary": "Passes a stack-slot value (ebp-0x18) to a release helper, then throws with two null arguments.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060FB60": {
     "name": "NMData::AxisDefineSensorData::vfunc_1_off_C",
     "class": "NMData::AxisDefineSensorData",

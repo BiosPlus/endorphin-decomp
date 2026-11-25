@@ -76,3 +76,18 @@ std::string* fn_0060B8D0(std::string* self, int value) {
     return self;
 }
 } // namespace lift_0060B8D0
+
+// [0x0060FA40]
+namespace lift_0060FA40 {
+// @name Unknown::ReleaseHandleAndThrowNull
+// @summary Passes a stack-slot value (ebp-0x18) to a release helper, then throws with two null arguments.
+
+extern void ext_005577A0(void* self);
+extern void ext_006A6DD2(void);
+
+void fn_0060FA40(void* local_18) {
+    ext_005577A0(local_18);
+    // push 0; push 0; call _CxxThrowException
+    ext_006A6DD2();
+}
+} // namespace lift_0060FA40
