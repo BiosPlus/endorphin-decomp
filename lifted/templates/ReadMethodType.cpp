@@ -50756,3 +50756,27 @@ void fn_0049CB70(void* self) {
     ext_006A6DD2(exception_object, kThrowInfo_0049CB98);
 }
 } // namespace lift_0049CB70
+
+// [0x004A2C20]
+namespace lift_004A2C20 {
+extern uint8_t __fastcall ext_0049AA50(void* self);
+extern void __cdecl ext_0046C4E0(uint32_t value);
+extern void* __fastcall ext_0046C3C0(void* self);
+extern void __cdecl ext_006A6DD2(void* exception, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, StateMachineEditor::FSMEditView::drawActions, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, StateMachineEditor::FSMEditView::drawActions, 0>
+// @summary Stdcall (one pointer argument) that always throws: if the first dword of the argument's pointee is non-null it calls ext_0049AA50 and passes the byte result to ext_0046C4E0 (which throws), otherwise it builds a DerivedException with a fixed message on the stack and throws it.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, StateMachineEditor::FSMEditView::drawActions, 0> +0x00 void* field_0x00
+extern void __stdcall fn_004A2C20(void* self) {
+    void* ptr = *static_cast<void**>(self);
+    if (ptr != nullptr) {
+        const uint32_t result = ext_0049AA50(ptr);
+        ext_0046C4E0(result);
+    }
+
+    alignas(8) uint8_t exception[0x28];
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1C)));
+}
+} // namespace lift_004A2C20

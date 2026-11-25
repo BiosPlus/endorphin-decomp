@@ -12383,6 +12383,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004A2C20": {
+    "name": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, StateMachineEditor::FSMEditView::drawActions, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, StateMachineEditor::FSMEditView::drawActions, 0\u003e",
+    "signature": "extern \"C\" void __stdcall fn_004A2C20(void* self)",
+    "summary": "Stdcall (one pointer argument) that always throws: if the first dword of the argument's pointee is non-null it calls ext_0049AA50 and passes the byte result to ext_0046C4E0 (which throws), otherwise it builds a DerivedException with a fixed message on the stack and throws it.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004A2E70": {
     "name": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView, int, getDrawDepth, int, setDrawDepth\u003e::vfunc_40",
     "class": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView, int, getDrawDepth, int, setDrawDepth\u003e",
