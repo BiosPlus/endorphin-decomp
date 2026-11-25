@@ -56416,7 +56416,7 @@ extern void ext_006A6DD2(void* exception_object, void* throw_info);
 // @name ExprParser::ReadMethodType<Interpreter, int, Interpreter::bogus, 0>::vfunc_1
 // @class ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>
 // @summary Returns 0.0f when the pointer stored at offset 0 is non-null; otherwise constructs a DerivedException and throws it.
-// @field ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0> +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
 float fn_00505000(void* self) {
     if (lift_field<void*>(self, 0) == nullptr) {
         alignas(8) unsigned char exception_object[0x28];
@@ -56427,3 +56427,28 @@ float fn_00505000(void* self) {
     return 0.0f;
 }
 } // namespace lift_00505000
+
+// [0x00508E80]
+namespace lift_00508E80 {
+// @name ExprParser::ReadMethodType<NMData::Task, int, &NMData::Task::getID, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::Task, int, &NMData::Task::getID, 1>
+// @summary Reads the int ID from the Task referenced by the value pointer and returns it as a double (x87 st0); throws if the task pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::Task* task
+// @field NMData::Task +0x14 int id
+
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C[];  // ThrowInfo for the fixed-message exception
+
+double fn_00508E80(void* self) {
+    auto* task = *reinterpret_cast<unsigned char* const*>(self);
+    if (task != nullptr) {
+        int id = *reinterpret_cast<const int*>(task + 0x14);
+        return static_cast<double>(id);
+    }
+
+    alignas(8) unsigned char exc[16];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_00508E80

@@ -18413,6 +18413,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005DA9C0 (ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, getEndFrame\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00508E80": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::Task, int, \u0026NMData::Task::getID, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::Task, int, \u0026NMData::Task::getID, 1\u003e",
+    "signature": "double fn_00508E80(void* self)",
+    "summary": "Reads the int ID from the Task referenced by the value pointer and returns it as a double (x87 st0); throws if the task pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00508EB0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::Task, int, getID, 1\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::Task, int, \u0026public: int __thiscall NMData::Task::getID(void) const, 1\u003e",
