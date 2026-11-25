@@ -15688,6 +15688,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00603F00 (ExprParser::ReadMethodType\u003cEffectorBase, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorBase::getTorque(void) const, 1\u003e::vfunc_5).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004D6980": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::RigEventData,std::string\u003e::vfunc_40 (getUserRetargetRefFrame / setUserRetargetRefFrame)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::RigEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: void __thiscall NMData::RigEventData::setUserRetargetRefFrame(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e), 0}\u003e",
+    "signature": "void __stdcall fn_004D6980(void** out)",
+    "summary": "Lazily initializes a static accessor object (guard bit 0 in mem_00AE5D48, vtable 0x0094938C) and stores its address into the out ValuePtr's +0x04 slot; ECX is unused.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004D6C80": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::RigEventData, int, {private: int __thiscall NMData::RigEventData::getSaveTweakToStockCharacterDummy(void) const, 0}, int, {private: void __thiscall NMData::RigEventData::saveTweakToStockCharacter(int), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::RigEventData, int, {private: int __thiscall NMData::RigEventData::getSaveTweakToStockCharacterDummy(void) const, 0}, int, {private: void __thiscall NMData::RigEventData::saveTweakToStockCharacter(int), 0}\u003e",

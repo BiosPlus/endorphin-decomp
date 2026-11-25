@@ -10246,3 +10246,31 @@ void fn_004D6CD0(void* out) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE5D4C));
 }
 } // namespace lift_004D6CD0
+
+// [0x004D6980] ExprParser::ReadWriteMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: void __thiscall NMData::RigEventData::setUserRetargetRefFrame(class std::basic_string<char, std::char_traits<char>, std::allocator<char>>), 0}>::vfunc_40 (122 bytes)
+namespace lift_004D6980 {
+// Known callee 0x0067A670: thiscall (ECX = object), no stack arguments; initializes the static accessor object at mem_00AE5D44.
+extern void __thiscall ext_0067A670(void* self);
+// Function-local static guard flag (bit 0 = initialized/in-progress) and the static accessor object storage.
+extern uint32_t mem_00AE5D48;
+extern uint8_t mem_00AE5D44;
+
+// @name ExprParser::ReadWriteMethodType<NMData::RigEventData,std::string>::vfunc_40 (getUserRetargetRefFrame / setUserRetargetRefFrame)
+// @class ExprParser::ReadWriteMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: void __thiscall NMData::RigEventData::setUserRetargetRefFrame(class std::basic_string<char, std::char_traits<char>, std::allocator<char>>), 0}>
+// @summary Lazily initializes a static accessor object (guard bit 0 in mem_00AE5D48, vtable 0x0094938C) and stores its address into the out ValuePtr's +0x04 slot; ECX is unused.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void __stdcall fn_004D6980(void** out) {
+    uint32_t* guard = &mem_00AE5D48;
+    void* accessor = &mem_00AE5D44;
+
+    // First use: set the guard, run the accessor constructor, then install its vtable.
+    if ((*guard & 1u) == 0) {
+        *guard |= 1u;
+        ext_0067A670(accessor);
+        *reinterpret_cast<uintptr_t*>(accessor) = static_cast<uintptr_t>(0x0094938Cu);
+    }
+
+    // Hand back the accessor object's address through the out ValuePtr (ret 4 pops this one stack arg).
+    lift_field<void*>(out, 4) = accessor;
+}
+} // namespace lift_004D6980
