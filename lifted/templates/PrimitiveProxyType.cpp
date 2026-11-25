@@ -607,3 +607,29 @@ float fn_004975B0(void* self) {
     return static_cast<float>(mem_009251F0(text));
 }
 } // namespace lift_004975B0
+
+// [0x004B7B50] ExprParser::PrimitiveProxyType<float>::vfunc_43 (38 bytes)
+namespace lift_004B7B50 {
+// Known callee 0x006720A0: sub_006720A0 (18B). Resolved as the vtable slot 1 target of arg->+4.
+extern float ext_006720A0(void* self, void* arg);
+
+// @name ExprParser::PrimitiveProxyType<float>::vfunc_43
+// @class ExprParser::PrimitiveProxyType<float>
+// @summary Adds a float obtained from arg's virtual getter (vtable slot 1 of arg->+4) into the float this proxy points to, in place.
+// @field ExprParser::ValuePtrType +0x00 float* ptr
+void fn_004B7B50(void* self, void* arg) {
+    float* target = *static_cast<float**>(self);
+
+    // arg+4 is a pointer to a polymorphic object; its vtable slot 1 is called with the
+    // object as "this" and arg as its single argument, returning a float.
+    void* obj = lift_field<void*>(arg, 4);
+    void** vtbl = *static_cast<void***>(obj);
+    using Getter = float (*)(void* self_obj, void* arg_val);
+    // Dispatch through the vtable; ext_006720A0 is the known target for that slot.
+    // A null slot would crash in the original, so falling back to the known target is benign.
+    const Getter getter = vtbl[1] ? reinterpret_cast<Getter>(vtbl[1]) : &ext_006720A0;
+    const float delta = getter(obj, arg);
+
+    *target = *target + delta;
+}
+} // namespace lift_004B7B50

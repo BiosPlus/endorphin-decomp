@@ -12857,6 +12857,13 @@
     "summary": "Evaluates expression string via sub_004B79B0 and stores float result into *arg1",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x004B7B50": {
+    "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_43",
+    "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
+    "signature": "void fn_004B7B50(void* self, void* arg)",
+    "summary": "Adds a float obtained from arg's virtual getter (vtable slot 1 of arg-\u003e+4) into the float this proxy points to, in place.",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x004B7B80": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e",

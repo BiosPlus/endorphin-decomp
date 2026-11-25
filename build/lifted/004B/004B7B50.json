@@ -1,0 +1,22 @@
+{
+  "va": "0x004B7B50",
+  "size": 38,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_43",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_43",
+  "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
+  "signature": "void fn_004B7B50(void* self, void* arg)",
+  "summary": "Adds a float obtained from arg's virtual getter (vtable slot 1 of arg-\u003e+4) into the float this proxy points to, in place.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "float*",
+      "name": "ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:52:50Z"
+}
