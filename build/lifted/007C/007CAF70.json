@@ -1012,19 +1012,7 @@
       "name": "z"
     },
     {
-      "class": "SceneNode",
-      "offset": "+0xB0",
-      "type": "void*",
-      "name": "field_0xB0"
-    },
-    {
-      "class": "SceneNode",
-      "offset": "+0xB8",
-      "type": "void*",
-      "name": "field_0xB8"
-    },
-    {
-      "class": "SceneNode",
+      "class": "Unknown",
       "offset": "+0x8",
       "type": "void*",
       "name": "field_0x08"
@@ -1032,5 +1020,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T04:01:33Z"
+  "lifted_at": "2026-11-25T04:01:59Z"
 }

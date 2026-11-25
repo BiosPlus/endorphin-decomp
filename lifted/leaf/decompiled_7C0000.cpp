@@ -1739,13 +1739,11 @@ namespace lift_007CAF70 {
 // Known callee 0x007CAF30: storeHalfLengthVectorAfterSetup (Runs the 0x007CC8E0 setup with the second argument and count 2, then stores the (a,x,y) vector and half its length into out; returns out.)
 extern unsigned char* ext_007CAF30(unsigned char* out, uint32_t arg2, float a, float x, float y);
 
-// @name SceneNode::allocateAndStoreHalfLengthVector
-// @class SceneNode
-// @summary Requests a 0x20-byte block (count 0x10) through the allocator function stored at obj+0x08, where obj = self+0xB0; on success stores (a,x,y) and its half-length into it and returns it, else returns null.
-// @field SceneNode +0xB0 void* field_0xB0
-// @field SceneNode +0xB0 void* field_0xB0
-// @field SceneNode +0xB8 void* field_0xB8
-// @field SceneNode +0x08 void* field_0x08
+// @name allocateAndStoreHalfLengthVector
+// @class Unknown
+// @summary Requests a 0x20-byte block (count 0x10) via the function pointer at obj+0x08, where obj = self+0xB0; if it returns non-null, stores (a,x,y) and its half-length into it and returns nothing.
+// @field Unknown +0xB0 void* field_0xB0
+// @field Unknown +0x08 void* field_0x08
 void fn_007CAF70(void* self, float a, float x, float y) {
     using AllocFn = unsigned char* (__cdecl*)(uint32_t size, uint32_t count);
 
