@@ -1,0 +1,34 @@
+{
+  "va": "0x006123C0",
+  "size": 65,
+  "orig_symbol": "sub_006123C0",
+  "src_path": "src/leaf/decompiled_610000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_610000.cpp",
+  "name": "UnknownClass::setElement1AndNotify",
+  "class": "UnknownClass",
+  "signature": "extern \"C\" void __thiscall fn_006123C0(uintptr_t self, float value)",
+  "summary": "Sets float element 1 at +0x8, sets flag at +0xc, forwards vcall 0xCC via +0xbc, and dispatches slot 0x154 on global+0x258.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x8",
+      "type": "uint8_t[]",
+      "name": "field_0x08"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0xBC",
+      "type": "void**",
+      "name": "field_0xbc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:13:08Z"
+}

@@ -258,3 +258,65 @@ void __thiscall fn_00611980(void* self, float value) {
 }
 } // namespace lift_00611910
 } // namespace lift_00611980
+
+// [0x006123C0]
+namespace lift_006123C0 {
+extern uint32_t* __thiscall ext_005B11D0(uintptr_t self, uint32_t index);
+extern void __thiscall ext_005E1330(void* self);
+extern void* __thiscall ext_00493EE0(void* ecx);
+extern int32_t __cdecl ext_00594000(void);
+
+// @name UnknownClass::setElement1AndNotify
+// @class UnknownClass
+// @summary Sets float element 1 at +0x8, sets flag at +0xc, forwards vcall 0xCC via +0xbc, and dispatches slot 0x154 on global+0x258.
+// @field UnknownClass +0x08 uint8_t[] field_0x08
+// @field UnknownClass +0x0c uint8_t field_0x0c
+// @field UnknownClass +0xbc void** field_0xbc
+extern void __thiscall fn_006123C0(uintptr_t self, float value) {
+    uint32_t* elem = ext_005B11D0(self + 0x8, 1);
+    *reinterpret_cast<float*>(elem) = value;
+    *reinterpret_cast<uint8_t*>(self + 0xc) = 1;
+
+    void** sub = *reinterpret_cast<void***>(self + 0xbc);
+    if (*sub != nullptr) {
+        ext_005E1330(*sub);
+    }
+
+    int32_t global_obj = ext_00594000();
+    if (global_obj != 0) {
+        ext_00493EE0(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(global_obj)) + 0x258));
+    }
+}
+} // namespace lift_006123C0
+
+// [0x00612410]
+namespace lift_00612410 {
+// @name UnknownClass::setElement2AndNotify
+// @class UnknownClass
+// @summary Stores a float into element 2 of subobject +0x8, sets flag +0xC, and notifies subobject +0xBC and global +0x258.
+// @field UnknownClass +0x08 uint8_t[] field_0x08
+// @field UnknownClass +0x0C uint8_t field_0x0C
+// @field UnknownClass +0xBC void** field_0xBC
+
+
+void* __fastcall ext_00493EE0(void* ecx);
+int32_t __cdecl ext_00594000(void);
+uint32_t* __thiscall ext_005B11D0(uintptr_t self, uint32_t index);
+void __fastcall ext_005E1330(void* self);
+
+void __thiscall fn_00612410(uintptr_t self, float value) {
+    uint32_t* elem = ext_005B11D0(self + 0x8, 2);
+    *reinterpret_cast<float*>(elem) = value;
+    *reinterpret_cast<uint8_t*>(self + 0xC) = 1;
+
+    void** sub = *reinterpret_cast<void***>(self + 0xBC);
+    if (*sub != nullptr) {
+        ext_005E1330(*sub);
+    }
+
+    int32_t obj = ext_00594000();
+    if (obj != 0) {
+        ext_00493EE0(reinterpret_cast<void*>(static_cast<uintptr_t>(obj) + 0x258));
+    }
+}
+} // namespace lift_00612410

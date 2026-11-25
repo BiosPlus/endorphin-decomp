@@ -29936,6 +29936,20 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00610D10 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x006123C0": {
+    "name": "UnknownClass::setElement1AndNotify",
+    "class": "UnknownClass",
+    "signature": "extern \"C\" void __thiscall fn_006123C0(uintptr_t self, float value)",
+    "summary": "Sets float element 1 at +0x8, sets flag at +0xc, forwards vcall 0xCC via +0xbc, and dispatches slot 0x154 on global+0x258.",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x00612410": {
+    "name": "UnknownClass::setElement2AndNotify",
+    "class": "UnknownClass",
+    "signature": "void __thiscall fn_00612410(uintptr_t self, float value)",
+    "summary": "Stores a float into element 2 of subobject +0x8, sets flag +0xC, and notifies subobject +0xBC and global +0x258.",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
   "0x00612730": {
     "name": "NMData::Constraint::vfunc_72",
     "class": "NMData::Constraint",
