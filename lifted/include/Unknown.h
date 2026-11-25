@@ -780,7 +780,7 @@ struct Unknown_Fields {
     // +0x88  float                    field_0x88  (evidence: 0x00622B40, 0x0062E290) // CONFLICT: multiple definitions at +0x88
     // +0x88  uint32_t                 field_0x88  (evidence: 0x0053DAA0) // CONFLICT: multiple definitions at +0x88
     // +0x88  uint8_t                  field_0x88  (evidence: 0x004407C0, 0x00441020) // CONFLICT: multiple definitions at +0x88
-    // +0x88  void*                    field_0x88  (evidence: 0x0045B4F0, 0x00545C40) // CONFLICT: multiple definitions at +0x88
+    // +0x88  void*                    field_0x88  (evidence: 0x0045B4F0, 0x00545BE0, 0x00545C40) // CONFLICT: multiple definitions at +0x88
     // +0x88  ptr field_0x88 (pointer to child object; owner class not identified)  (evidence: 0x005434C0, 0x005457B0) // CONFLICT: multiple definitions at +0x88
     // +0x88  void*                    nodeList  (evidence: 0x00456C20) // CONFLICT: multiple definitions at +0x88
     // +0x89  uint8_t                  field_0x89  (evidence: 0x004408B0)

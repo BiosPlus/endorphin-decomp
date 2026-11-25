@@ -1088,3 +1088,33 @@ void fn_005450C0(void* self) {
     ext_00543320(self);
 }
 } // namespace lift_005450C0
+
+// [0x00545BE0]
+namespace lift_00545BE0 {
+// @name sub_00545BE0
+// @summary Initializes a 4-float vector to 1.0f, queries a subobject vtable method, and sets RGB/component values.
+// @field Unknown +0x88 void* field_0x88
+void __thiscall sub_00545BE0(void* self, float* out, int32_t index, float value) {
+    out[0] = 1.0f;
+    out[1] = 1.0f;
+    out[2] = 1.0f;
+    out[3] = 1.0f;
+
+    void* sub = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x88);
+    using Vfn = int32_t(__thiscall*)(void*);
+    void** vtable = *reinterpret_cast<void***>(sub);
+    Vfn fn = reinterpret_cast<Vfn>(vtable[0x28 / sizeof(void*)]);
+    int32_t mode = fn(sub);
+
+    out[0] = value;
+    out[1] = value;
+    out[2] = value;
+
+    if (mode == 1 || (mode == 2 && (index == 3 || index == 4))) {
+        return;
+    }
+
+    out[3] = 1.0f;
+    out[index - 3] = 1.0f;
+}
+} // namespace lift_00545BE0
