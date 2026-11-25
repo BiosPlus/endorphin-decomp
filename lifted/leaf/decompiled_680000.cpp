@@ -552,3 +552,33 @@ void fn_006812A0(uint32_t first, uint32_t last) {
     }
 }
 } // namespace lift_006812A0
+
+// [0x006816F0] sub_006816F0 (63 bytes)
+namespace lift_006816F0 {
+// @name sub_006816F0
+// @summary Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).
+namespace lift_00569970 {
+extern void ext_006812A0(uint32_t a0, uint32_t a1, void* a2, void* a3);
+extern void fn_006A5C5C(uint32_t arg);
+
+// @name Unknown::ReleaseHandleAndClear
+// @class Unknown
+// @summary If field +0x04 is nonzero, run ext_005693E0 with it and forward it to fn_006A5C5C, then clear fields +0x04, +0x08 and +0x0C.
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+void fn_006816F0(void* self) {
+    if (lift_field<uint32_t>(self, 0x4) != 0) {
+        // Argument order matches the original pushes: a0 = f04, a1 = f08, a2 = self, a3 = ecx (self).
+        ext_006812A0(lift_field<uint32_t>(self, 0x4),
+                     lift_field<uint32_t>(self, 0x8),
+                     self,
+                     self);
+        fn_006A5C5C(lift_field<uint32_t>(self, 0x4));
+    }
+    lift_field<uint32_t>(self, 0x4) = 0;
+    lift_field<uint32_t>(self, 0x8) = 0;
+    lift_field<uint32_t>(self, 0xC) = 0;
+}
+} // namespace lift_00569970
+} // namespace lift_006816F0

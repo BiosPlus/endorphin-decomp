@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_4A0000.cpp
 #include "lift_compat.h"
+#include <string>
+#include <new>
 
-// [0x004AEC60] sub_004AEC60 (14 bytes)
+#include <new>
 namespace lift_004AEC60 {
 // @name thunk_004AEC60
 // @class Unknown
@@ -261,3 +263,33 @@ void __thiscall fn_004A5810(void* self, uint8_t value) {
     *reinterpret_cast<void**>(base + 0x204) = static_cast<uint8_t*>(inner) + 4;
 }
 } // namespace lift_004A5810
+
+// [0x004A0620] sub_004A0620 (63 bytes)
+namespace lift_004A0620 {
+// @name sub_004A0620
+// @summary Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).
+namespace lift_00569970 {
+extern void ext_0049ECB0(uint32_t a0, uint32_t a1, void* a2, void* a3);
+extern void fn_006A5C5C(uint32_t arg);
+
+// @name Unknown::ReleaseHandleAndClear
+// @class Unknown
+// @summary If field +0x04 is nonzero, run ext_005693E0 with it and forward it to fn_006A5C5C, then clear fields +0x04, +0x08 and +0x0C.
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+void fn_004A0620(void* self) {
+    if (lift_field<uint32_t>(self, 0x4) != 0) {
+        // Argument order matches the original pushes: a0 = f04, a1 = f08, a2 = self, a3 = ecx (self).
+        ext_0049ECB0(lift_field<uint32_t>(self, 0x4),
+                     lift_field<uint32_t>(self, 0x8),
+                     self,
+                     self);
+        fn_006A5C5C(lift_field<uint32_t>(self, 0x4));
+    }
+    lift_field<uint32_t>(self, 0x4) = 0;
+    lift_field<uint32_t>(self, 0x8) = 0;
+    lift_field<uint32_t>(self, 0xC) = 0;
+}
+} // namespace lift_00569970
+} // namespace lift_004A0620
