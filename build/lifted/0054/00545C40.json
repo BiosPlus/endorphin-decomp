@@ -1,0 +1,22 @@
+{
+  "va": "0x00545C40",
+  "size": 94,
+  "orig_symbol": "sub_00545C40",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Unknown::fillFloat4FromQuery",
+  "class": "Unknown",
+  "signature": "void fn_00545C40(void* self, float* out, int32_t index, float value)",
+  "summary": "Writes 1.0 to a 4-float output array, calls vtable slot 0x28 on the object at this+0x88 to get an int code, then fills the array with value (code 1), with value at out[0..1] (code 2 and index 0 or 1), or with value at out[index] otherwise.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:21:37Z"
+}

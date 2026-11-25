@@ -22585,6 +22585,13 @@
     "summary": "Returns the address of the global data slot mem_0092CE00 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00545C40": {
+    "name": "Unknown::fillFloat4FromQuery",
+    "class": "Unknown",
+    "signature": "void fn_00545C40(void* self, float* out, int32_t index, float value)",
+    "summary": "Writes 1.0 to a 4-float output array, calls vtable slot 0x28 on the object at this+0x88 to get an int code, then fills the array with value (code 1), with value at out[0..1] (code 2 and index 0 or 1), or with value at out[index] otherwise.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00545CA0": {
     "name": "ResizeTool::vfunc_1",
     "class": "ResizeTool",

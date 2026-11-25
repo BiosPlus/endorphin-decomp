@@ -998,3 +998,42 @@ bool __thiscall sub_00546570(const float* self, const float* other) {
              self[3] == other[3]);
 }
 } // namespace lift_00546570
+
+// [0x00545C40] sub_00545C40 (94 bytes)
+namespace lift_00545C40 {
+// @name Unknown::fillFloat4FromQuery
+// @class Unknown
+// @summary Writes 1.0 to a 4-float output array, calls vtable slot 0x28 on the object at this+0x88 to get an int code, then fills the array with value (code 1), with value at out[0..1] (code 2 and index 0 or 1), or with value at out[index] otherwise.
+// @field Unknown +0x88 void* field_0x88
+void fn_00545C40(void* self, float* out, int32_t index, float value) {
+    void* obj = lift_field<void*>(self, 0x88);
+
+    // Vtable slot at byte offset 0x28 (thiscall, no stack args, returns int).
+    const auto vtableAddr = static_cast<uintptr_t>(lift_field<uint32_t>(obj, 0x0));
+    const auto target = lift_field<uint32_t>(reinterpret_cast<void*>(vtableAddr), 0x28);
+    using QueryFn = int32_t(__thiscall*)(void* self);
+    auto query = reinterpret_cast<QueryFn>(static_cast<uintptr_t>(target));
+
+    out[0] = 1.0f;
+    out[1] = 1.0f;
+    out[2] = 1.0f;
+    out[3] = 1.0f;
+
+    const int32_t code = query(obj);
+
+    if (code == 1) {
+        out[0] = value;
+        out[1] = value;
+        out[2] = value;
+        return;
+    }
+
+    if (code == 2 && (index == 0 || index == 1)) {
+        out[0] = value;
+        out[1] = value;
+        return;
+    }
+
+    out[index] = value;
+}
+} // namespace lift_00545C40
