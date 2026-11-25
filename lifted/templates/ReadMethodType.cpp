@@ -52327,3 +52327,3962 @@ void fn_004B24C0(void* self) {
     ext_006A6DD2(exc, mem_009DEC1C);
 }
 } // namespace lift_004B24C0
+
+// [0x004B2860] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_004B2860 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0048FAD0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004B2860(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0048FAD0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_004B2860
+
+// [0x004B2C40] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_004B2C40 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0048FAE0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004B2C40(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0048FAE0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_004B2C40
+
+// [0x004C5CB0] ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_004C5CB0 {
+// @name ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_004C4DB0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004C5CB0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_004C4DB0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_004C5CB0
+
+// [0x004CEC40] ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_004CEC40 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_004CE580();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004CEC40(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_004CE580();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_004CEC40
+
+// [0x004D1D60] ExprParser::ReadMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_004D1D60 {
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_004D0B10();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004D1D60(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_004D0B10();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_004D1D60
+
+// [0x004DF5F0] ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_004DF5F0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_004DDE70();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004DF5F0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_004DDE70();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_004DF5F0
+
+// [0x004E0180] ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_004E0180 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_004DDE40();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004E0180(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_004DDE40();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_004E0180
+
+// [0x004E2170] ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_004E2170 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_004E1980();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004E2170(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_004E1980();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_004E2170
+
+// [0x004F76D0] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, 0>::vfunc_5 (58 bytes)
+namespace lift_004F76D0 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_004F4F00();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004F76D0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_004F4F00();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_004F76D0
+
+// [0x004F7880] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>::vfunc_5 (58 bytes)
+namespace lift_004F7880 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_004F4F20();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004F7880(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_004F4F20();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_004F7880
+
+// [0x004F8300] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0>::vfunc_5 (58 bytes)
+namespace lift_004F8300 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_004F4EA0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004F8300(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_004F4EA0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_004F8300
+
+// [0x004F8C30] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, 0>::vfunc_5 (58 bytes)
+namespace lift_004F8C30 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_004F4F80();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004F8C30(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_004F4F80();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_004F8C30
+
+// [0x004F8FF0] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, 0>::vfunc_5 (58 bytes)
+namespace lift_004F8FF0 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_004F4FE0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004F8FF0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_004F4FE0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_004F8FF0
+
+// [0x004FE320] ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_004FE320 {
+// @name ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_004FD810();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004FE320(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_004FD810();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_004FE320
+
+// [0x004FE930] ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_004FE930 {
+// @name ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_004FD830();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004FE930(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_004FD830();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_004FE930
+
+// [0x004FEF40] ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_004FEF40 {
+// @name ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_004FD850();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004FEF40(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_004FD850();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_004FEF40
+
+// [0x00512630] ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_00512630 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_00511280();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00512630(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_00511280();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00512630
+
+// [0x00513BA0] ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_00513BA0 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_00511270();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00513BA0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_00511270();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00513BA0
+
+// [0x0051B0C0] ExprParser::ReadMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, 0>::vfunc_5 (58 bytes)
+namespace lift_0051B0C0 {
+// @name ExprParser::ReadMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0051AE90();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_0051B0C0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0051AE90();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_0051B0C0
+
+// [0x00525160] ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0>::vfunc_5 (58 bytes)
+namespace lift_00525160 {
+// @name ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_00524A60();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00525160(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_00524A60();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00525160
+
+// [0x00525AA0] ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0>::vfunc_5 (58 bytes)
+namespace lift_00525AA0 {
+// @name ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_00524AE0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00525AA0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_00524AE0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00525AA0
+
+// [0x00526500] ExprParser::ReadMethodType<NMData::NetworkConnectorData, float, &public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1>::vfunc_5 (58 bytes)
+namespace lift_00526500 {
+// @name ExprParser::ReadMethodType<NMData::NetworkConnectorData, float, &public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::NetworkConnectorData, float, &public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_00525E70();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00526500(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_00525E70();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00526500
+
+// [0x0058BE10] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_0058BE10 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0058A960();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_0058BE10(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0058A960();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_0058BE10
+
+// [0x0058C450] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_0058C450 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0058A8F0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_0058C450(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0058A8F0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_0058C450
+
+// [0x0058C850] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_0058C850 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0058A920();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_0058C850(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0058A920();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_0058C850
+
+// [0x0058E280] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_0058E280 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0058CFB0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_0058E280(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0058CFB0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_0058E280
+
+// [0x0058E560] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_0058E560 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0058CFC0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_0058E560(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0058CFC0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_0058E560
+
+// [0x0058E860] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_0058E860 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0058CFD0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_0058E860(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0058CFD0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_0058E860
+
+// [0x00590330] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_00590330 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0058F5B0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00590330(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0058F5B0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00590330
+
+// [0x005905D0] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005905D0 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0058F5C0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005905D0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0058F5C0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005905D0
+
+// [0x00590900] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_00590900 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0058F5D0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00590900(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0058F5D0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00590900
+
+// [0x00591510] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_00591510 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0058F5A0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00591510(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0058F5A0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00591510
+
+// [0x00592350] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_00592350 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0058F5E0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00592350(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0058F5E0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00592350
+
+// [0x00592610] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_00592610 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0058F5F0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00592610(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0058F5F0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00592610
+
+// [0x00595290] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_00595290 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_00594070();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00595290(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_00594070();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00595290
+
+// [0x00595EA0] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_00595EA0 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_00594700();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00595EA0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_00594700();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00595EA0
+
+// [0x00598490] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_00598490 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005963B0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00598490(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005963B0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00598490
+
+// [0x00599770] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_00599770 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005971D0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00599770(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005971D0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00599770
+
+// [0x0059E550] ExprParser::ReadMethodType<NMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_0059E550 {
+// @name ExprParser::ReadMethodType<NMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0059D580();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_0059E550(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0059D580();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_0059E550
+
+// [0x005B90D0] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_005B90D0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005B6970();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005B90D0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005B6970();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005B90D0
+
+// [0x005BB520] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_005BB520 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005B7040();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005BB520(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005B7040();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005BB520
+
+// [0x005BC440] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005BC440 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005B68F0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005BC440(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005B68F0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005BC440
+
+// [0x005BC850] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005BC850 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005B6FE0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005BC850(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005B6FE0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005BC850
+
+// [0x005BE2C0] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005BE2C0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005B6FC0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005BE2C0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005B6FC0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005BE2C0
+
+// [0x005C59B0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_005C59B0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005C2FF0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005C59B0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005C2FF0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005C59B0
+
+// [0x005C95B0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_005C95B0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005C3AA0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005C95B0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005C3AA0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005C95B0
+
+// [0x005CAF80] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_005CAF80 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005C3C00();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005CAF80(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005C3C00();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005CAF80
+
+// [0x005CEB40] ExprParser::ReadMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005CEB40 {
+// @name ExprParser::ReadMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005CE4E0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005CEB40(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005CE4E0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005CEB40
+
+// [0x005D1E80] ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005D1E80 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005D06D0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005D1E80(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005D06D0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005D1E80
+
+// [0x005D4240] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005D4240 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005CF930();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005D4240(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005CF930();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005D4240
+
+// [0x005D4F10] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005D4F10 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005D0710();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005D4F10(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005D0710();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005D4F10
+
+// [0x005D54A0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005D54A0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005478C0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005D54A0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005478C0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005D54A0
+
+// [0x005D5830] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005D5830 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005478D0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005D5830(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005478D0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005D5830
+
+// [0x005D7BF0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005D7BF0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005478A0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005D7BF0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005478A0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005D7BF0
+
+// [0x005D7E40] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005D7E40 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005D0670();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005D7E40(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005D0670();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005D7E40
+
+// [0x005D82F0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005D82F0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_00552160();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005D82F0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_00552160();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005D82F0
+
+// [0x005D8540] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005D8540 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005478B0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005D8540(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005478B0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005D8540
+
+// [0x005D8C40] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005D8C40 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005478E0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005D8C40(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005478E0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005D8C40
+
+// [0x005DA240] ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005DA240 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005D12A0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005DA240(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005D12A0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005DA240
+
+// [0x005E51E0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005E51E0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005E2620();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005E51E0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005E2620();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005E51E0
+
+// [0x005E5640] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005E5640 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005E2700();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005E5640(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005E2700();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005E5640
+
+// [0x005E5C00] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005E5C00 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005E2770();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005E5C00(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005E2770();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005E5C00
+
+// [0x005E5FF0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005E5FF0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005E2810();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005E5FF0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005E2810();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005E5FF0
+
+// [0x005E6130] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005E6130 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005E2860();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005E6130(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005E2860();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005E6130
+
+// [0x005E6310] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005E6310 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005E28B0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005E6310(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005E28B0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005E6310
+
+// [0x005E6600] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005E6600 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005E2900();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005E6600(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005E2900();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005E6600
+
+// [0x005E71A0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005E71A0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005E1F10();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005E71A0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005E1F10();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005E71A0
+
+// [0x005E7770] ExprParser::ReadMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005E7770 {
+// @name ExprParser::ReadMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005E25B0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005E7770(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005E25B0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005E7770
+
+// [0x005E7EC0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005E7EC0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005E2690();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005E7EC0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005E2690();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005E7EC0
+
+// [0x005E8D20] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005E8D20 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005E27C0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005E8D20(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005E27C0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005E8D20
+
+// [0x005E9FE0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005E9FE0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005E2950();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005E9FE0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005E2950();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005E9FE0
+
+// [0x005EA3C0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005EA3C0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005E29A0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005EA3C0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005E29A0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005EA3C0
+
+// [0x005EA5D0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005EA5D0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005E1EE0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005EA5D0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005E1EE0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005EA5D0
+
+// [0x005EABE0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005EABE0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005E1F40();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005EABE0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005E1F40();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005EABE0
+
+// [0x005F6150] ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005F6150 {
+// @name ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005F51C0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005F6150(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005F51C0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005F6150
+
+// [0x005F8AD0] ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_005F8AD0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005F5130();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005F8AD0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005F5130();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005F8AD0
+
+// [0x005FD520] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1>::vfunc_5 (58 bytes)
+namespace lift_005FD520 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0064F8F0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005FD520(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0064F8F0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005FD520
+
+// [0x005FDAA0] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1>::vfunc_5 (58 bytes)
+namespace lift_005FDAA0 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0062A580();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005FDAA0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0062A580();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005FDAA0
+
+// [0x005FDF50] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1>::vfunc_5 (58 bytes)
+namespace lift_005FDF50 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_005FCB30();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005FDF50(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_005FCB30();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005FDF50
+
+// [0x005FE560] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1>::vfunc_5 (58 bytes)
+namespace lift_005FE560 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_00603680();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005FE560(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_00603680();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005FE560
+
+// [0x005FEB70] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1>::vfunc_5 (58 bytes)
+namespace lift_005FEB70 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_006036A0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_005FEB70(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_006036A0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_005FEB70
+
+// [0x006044D0] ExprParser::ReadMethodType<EffectorBase, float, &public: float __thiscall EffectorBase::getTorqueZ(void) const, 1>::vfunc_5 (58 bytes)
+namespace lift_006044D0 {
+// @name ExprParser::ReadMethodType<EffectorBase, float, &public: float __thiscall EffectorBase::getTorqueZ(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorBase, float, &public: float __thiscall EffectorBase::getTorqueZ(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_00602F40();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_006044D0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_00602F40();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_006044D0
+
+// [0x00612FF0] ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0>::vfunc_5 (58 bytes)
+namespace lift_00612FF0 {
+// @name ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_00610B20();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00612FF0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_00610B20();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00612FF0
+
+// [0x00613500] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0>::vfunc_5 (58 bytes)
+namespace lift_00613500 {
+// @name ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_00610CE0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00613500(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_00610CE0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00613500
+
+// [0x006139E0] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0>::vfunc_5 (58 bytes)
+namespace lift_006139E0 {
+// @name ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_00610CB0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_006139E0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_00610CB0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_006139E0
+
+// [0x006147A0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0>::vfunc_5 (58 bytes)
+namespace lift_006147A0 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_006111A0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_006147A0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_006111A0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_006147A0
+
+// [0x00614A50] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>::vfunc_5 (58 bytes)
+namespace lift_00614A50 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_006111D0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00614A50(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_006111D0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00614A50
+
+// [0x00616040] ExprParser::ReadMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_00616040 {
+// @name ExprParser::ReadMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_00611870();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00616040(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_00611870();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00616040
+
+// [0x00616580] ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_00616580 {
+// @name ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_00611950();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00616580(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_00611950();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00616580
+
+// [0x00618F50] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0>::vfunc_5 (58 bytes)
+namespace lift_00618F50 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_00611170();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00618F50(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_00611170();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00618F50
+
+// [0x00619B90] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0>::vfunc_5 (58 bytes)
+namespace lift_00619B90 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_00611160();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00619B90(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_00611160();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00619B90
+
+// [0x0061BFE0] ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_0061BFE0 {
+// @name ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_006118E0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_0061BFE0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_006118E0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_0061BFE0
+
+// [0x0062AC40] ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>::vfunc_5 (58 bytes)
+namespace lift_0062AC40 {
+// @name ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0062A590();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_0062AC40(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0062A590();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_0062AC40
+
+// [0x0064A020] ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_0064A020 {
+// @name ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_00648EC0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_0064A020(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_00648EC0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_0064A020
+
+// [0x0064A630] ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_0064A630 {
+// @name ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_00648ED0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_0064A630(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_00648ED0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_0064A630
+
+// [0x0064AC40] ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_0064AC40 {
+// @name ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_00648EE0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_0064AC40(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_00648EE0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_0064AC40
+
+// [0x00651630] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_00651630 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0064EA20();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00651630(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0064EA20();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00651630
+
+// [0x00651C40] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_00651C40 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0064EA30();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00651C40(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0064EA30();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00651C40
+
+// [0x00652250] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_00652250 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0064EA40();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00652250(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0064EA40();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00652250
+
+// [0x00652860] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_00652860 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0064EA50();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00652860(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0064EA50();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00652860
+
+// [0x00652E70] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_00652E70 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0064EA60();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00652E70(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0064EA60();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00652E70
+
+// [0x00653480] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_00653480 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0064EA70();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00653480(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0064EA70();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00653480
+
+// [0x00670240] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1>::vfunc_5 (58 bytes)
+namespace lift_00670240 {
+// @name ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0067C550();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00670240(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0067C550();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_00670240
+
+// [0x0068C740] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_0068C740 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0068BDC0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_0068C740(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0068BDC0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_0068C740
+
+// [0x0068CD50] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_0068CD50 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0068BED0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_0068CD50(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0068BED0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_0068CD50
+
+// [0x0068D360] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_0068D360 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0068BE70();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_0068D360(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0068BE70();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_0068D360
+
+// [0x0068D970] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_0068D970 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0068BC30();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_0068D970(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0068BC30();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_0068D970
