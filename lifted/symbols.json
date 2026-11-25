@@ -12896,6 +12896,12 @@
     "summary": "Iterates over a vector of pointers at +0x8 and sets each element's byte at +0x1 to (byte at +0x2 == 0)",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004B5030": {
+    "name": "ReleaseOwnedStringNode",
+    "signature": "void fn_004B5030(void* self)",
+    "summary": "If the owner's +0x18 node pointer is set, destroy the std::string at node+0x4, free the node, then reset this object via sub_00665810.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B5160": {
     "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand::vfunc_0",
     "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand",

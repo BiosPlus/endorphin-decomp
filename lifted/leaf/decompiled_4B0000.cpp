@@ -877,3 +877,28 @@ void* fn_004BEAA0() {
     return &mem_00AE1D24;
 }
 } // namespace lift_004BEAA0
+
+// [0x004B5030] sub_004B5030 (95 bytes)
+namespace lift_004B5030 {
+// Known callee 0x00665810: sub_00665810 (Stores address of mem_00987A04 into field at offset +0x0.)
+extern void __fastcall ext_00665810(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// Called cdecl with one pointer argument (push esi; call; add esp,4).
+extern void ext_006A5C5C(void* p);
+
+// @name ReleaseOwnedStringNode
+// @summary If the owner's +0x18 node pointer is set, destroy the std::string at node+0x4, free the node, then reset this object via sub_00665810.
+// @field field_0x18 +0x18 void* node
+void fn_004B5030(void* self) {
+    auto* owner = static_cast<uint8_t*>(self);
+    void* node = lift_field<void*>(owner, 0x18);
+
+    if (node != nullptr) {
+        auto* str = reinterpret_cast<std::string*>(static_cast<uint8_t*>(node) + 0x4);
+        str->~basic_string();
+        ext_006A5C5C(node);
+    }
+
+    ext_00665810(self);
+}
+} // namespace lift_004B5030
