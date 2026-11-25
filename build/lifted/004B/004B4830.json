@@ -1,0 +1,13 @@
+{
+  "va": "0x004B4830",
+  "size": 87,
+  "orig_symbol": "sub_004B4830",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "ensureStaticObjectInitialized_004B4830",
+  "signature": "DWORD fn_004B4830()",
+  "summary": "One-time initializer guarded by bit 0 of mem_00AE0D64: constructs the static object at 0x00AE0D60 via ext_0067A670, sets its vtable to 0x0094251C, and returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:31:16Z"
+}

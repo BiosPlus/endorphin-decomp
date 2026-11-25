@@ -562,3 +562,22 @@ void* fn_004B1880(void) {
     return &mem_00AE0CE8;
 }
 } // namespace lift_004B1880
+
+// [0x004B4830] sub_004B4830 (87 bytes)
+namespace lift_004B4830 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (calls ext_00672000 on self, then stores the single argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AE0D60;
+extern DWORD mem_00AE0D64;
+
+// @name ensureStaticObjectInitialized_004B4830
+// @summary One-time initializer guarded by bit 0 of mem_00AE0D64: constructs the static object at 0x00AE0D60 via ext_0067A670, sets its vtable to 0x0094251C, and returns its address.
+DWORD fn_004B4830() {
+    if ((mem_00AE0D64 & 1u) == 0) {
+        mem_00AE0D64 |= 1u;
+        ext_0067A670(&mem_00AE0D60, 0);
+        mem_00AE0D60 = 0x0094251Cu;
+    }
+    return (DWORD)(uintptr_t)&mem_00AE0D60;
+}
+} // namespace lift_004B4830
