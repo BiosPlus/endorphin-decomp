@@ -2411,3 +2411,19 @@ void* fn_0062EE60() {
 }
 } // namespace lift_004CAE30
 } // namespace lift_0062EE60
+
+// [0x00620FE0]
+namespace lift_00620FE0 {
+// @name allocate_72byte_elements
+// @summary Allocates count * 72 bytes via MFC80 operator new, throwing std::bad_alloc on 32-bit overflow.
+
+
+extern void* ext_006A5C62(uint32_t size);
+
+void* fn_00620FE0(uint32_t count) {
+    if (count > 0 && (0xFFFFFFFFu / count) < 0x48u) {
+        throw std::bad_alloc();
+    }
+    return ext_006A5C62(count * 0x48u);
+}
+} // namespace lift_00620FE0
