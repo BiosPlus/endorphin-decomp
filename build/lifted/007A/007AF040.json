@@ -1,0 +1,13 @@
+{
+  "va": "0x007AF040",
+  "size": 64,
+  "orig_symbol": "sub_007AF040",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "ByteSwapDwordArray",
+  "signature": "void ByteSwapDwordArray(uint8_t* data, uint32_t count)",
+  "summary": "Reverses the byte order of each 32-bit word in an array of `count` dwords, in place.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:09:25Z"
+}

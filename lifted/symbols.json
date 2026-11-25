@@ -55738,6 +55738,12 @@
     "summary": "Swaps the two bytes of each 16-bit pair in a buffer, for `count` pairs (cdecl, args: buffer, count).",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AF040": {
+    "name": "ByteSwapDwordArray",
+    "signature": "void ByteSwapDwordArray(uint8_t* data, uint32_t count)",
+    "summary": "Reverses the byte order of each 32-bit word in an array of `count` dwords, in place.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AF4C0": {
     "name": "compareKeyPairThenSignedField",
     "class": "Unknown",

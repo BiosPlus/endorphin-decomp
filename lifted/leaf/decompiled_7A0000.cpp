@@ -388,3 +388,22 @@ int32_t fn_007AA3D0(const void* const* pp) {
     return 0;
 }
 } // namespace lift_007AA3D0
+
+// [0x007AF040]
+namespace lift_007AF040 {
+// @name ByteSwapDwordArray
+// @summary Reverses the byte order of each 32-bit word in an array of `count` dwords, in place.
+void ByteSwapDwordArray(uint8_t* data, uint32_t count) {
+    for (uint32_t i = 0; i < count; ++i) {
+        uint8_t* p = data + static_cast<size_t>(i) * 4;
+        uint8_t b0 = p[0];
+        uint8_t b1 = p[1];
+        uint8_t b2 = p[2];
+        uint8_t b3 = p[3];
+        p[0] = b3;
+        p[1] = b2;
+        p[2] = b1;
+        p[3] = b0;
+    }
+}
+} // namespace lift_007AF040
