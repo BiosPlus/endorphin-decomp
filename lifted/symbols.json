@@ -3268,6 +3268,12 @@
     "summary": "Computes a flag from the child at +0x100 and a predicate on self, then invokes vtable slots 0 and 1 of the object held in *arg with those flags.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430D30": {
+    "name": "sub_00430D30",
+    "signature": "void* fn_00430D30()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430D40": {
     "name": "sub_00430D40",
     "signature": "extern \"C\" void fn_00430D40(void)",
@@ -29215,6 +29221,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046A4D0 (advanceIteratorCounted).",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005A07A0": {
+    "name": "sub_005A07A0",
+    "class": "StdMapString",
+    "signature": "void* fn_005A07A0(void* self, void* out_iter, const void* key)",
+    "summary": "Auto-lifted identical-shape clone of 0x00667EA0 (StdMapString::find).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005A2BD0": {
     "name": "DestroyNodeChain",
     "signature": "void __thiscall ext_005A2BD0(void* self, void* node)",
@@ -29781,6 +29794,13 @@
     "name": "fillRangeWith8ByteValue",
     "signature": "void fillRangeWith8ByteValue(uint32_t* dst_begin, uint32_t* dst_end, const uint32_t* src)",
     "summary": "Writes the 8-byte value at *src into every 8-byte slot in [dst_begin, dst_end). Source pointer is not advanced.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
+  "0x005AE100": {
+    "name": "sub_005AE100",
+    "class": "StdMapString",
+    "signature": "void* fn_005AE100(void* self, void* out_iter, const void* key)",
+    "summary": "Auto-lifted identical-shape clone of 0x00667EA0 (StdMapString::find).",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
   "0x005AE170": {
@@ -37223,6 +37243,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B7D80 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00605C50": {
+    "name": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getForceBaseCap(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getForceBaseCap(void) const, 0\u003e",
+    "signature": "void fn_00605C50(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00605E70": {
     "name": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradient(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradient(void) const, 0\u003e",
@@ -37242,6 +37269,13 @@
     "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradientCap(void) const, 0\u003e",
     "signature": "int fn_00606280(void* self, void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004B9400 (ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getUnitLength, 0\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00606320": {
+    "name": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradientCap(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradientCap(void) const, 0\u003e",
+    "signature": "void fn_00606320(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x006065F0": {
@@ -37314,6 +37348,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B7D80 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00607040": {
+    "name": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradient(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradient(void) const, 0\u003e",
+    "signature": "void fn_00607040(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x006071E0": {
     "name": "ExprParser::ReadMethodType\u003cEffector, float, Effector::getGradientCap, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradientCap(void) const, 0\u003e",
@@ -37333,6 +37374,13 @@
     "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradientCap(void) const, 0\u003e",
     "signature": "int32_t __stdcall fn_00607260(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004B7D80 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x006074D0": {
+    "name": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getRawDesiredDisplacement(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getRawDesiredDisplacement(void) const, 0\u003e",
+    "signature": "void fn_006074D0(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x006077D0": {
@@ -38310,6 +38358,27 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B9400 (ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getUnitLength, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00613C30": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getZ(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getZ(void) const, 0\u003e",
+    "signature": "void fn_00613C30(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00613D20": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getUpperStiffness(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getUpperStiffness(void) const, 0\u003e",
+    "signature": "void fn_00613D20(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00613F70": {
+    "name": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam2(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam2(void) const, 0\u003e",
+    "signature": "void fn_00613F70(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00613FB0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, 0\u003e",
@@ -38443,6 +38512,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B9400 (ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getUnitLength, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00614F70": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getTwistStiffness(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getTwistStiffness(void) const, 0\u003e",
+    "signature": "void fn_00614F70(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x006151C0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getSwingStiffness(void) const, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getSwingStiffness(void) const, 0\u003e",
@@ -38471,6 +38547,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B7D80 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006156D0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getLinearStiffness(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getLinearStiffness(void) const, 0\u003e",
+    "signature": "void fn_006156D0(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00615A20": {
     "name": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getTwistDamping(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getTwistDamping(void) const, 0\u003e",
@@ -38485,6 +38568,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B9400 (ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getUnitLength, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00615AB0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getTwistDamping(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getTwistDamping(void) const, 0\u003e",
+    "signature": "void fn_00615AB0(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00615C50": {
     "name": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getLinearDamping(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getLinearDamping(void) const, 0\u003e",
@@ -38497,6 +38587,13 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getLinearDamping(void) const, 0\u003e",
     "signature": "int fn_00615C90(void* self, void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004B9400 (ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getUnitLength, 0\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00615CE0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getLinearDamping(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getLinearDamping(void) const, 0\u003e",
+    "signature": "void fn_00615CE0(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00615FE0": {
@@ -38744,6 +38841,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B7B80 (ExprParser::ReadWriteMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,setTimeZoomFactor\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x00618990": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, 0\u003e",
+    "signature": "void fn_00618990(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00618BB0": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getUpperRestitution(void) const, float, \u0026public: void __thiscall NMData::HingeLimit::setUpperRestitution(float)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getUpperRestitution(void) const, float, \u0026public: void __thiscall NMData::HingeLimit::setUpperRestitution(float)\u003e",
@@ -38863,6 +38967,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B7D80 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0061A3F0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getSwingStiffness(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getSwingStiffness(void) const, 0\u003e",
+    "signature": "void fn_0061A3F0(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0061A4E0": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getLinearStiffness(void) const, float, \u0026public: void __thiscall NMData::TwistAndSwingLimit::setLinearStiffness(float)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getLinearStiffness(void) const, float, \u0026public: void __thiscall NMData::TwistAndSwingLimit::setLinearStiffness(float)\u003e",
@@ -38924,6 +39035,13 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getSwingDamping(void) const, 0\u003e",
     "signature": "int fn_0061A9A0(void* self, void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004B9400 (ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getUnitLength, 0\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0061A9F0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getSwingDamping(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getSwingDamping(void) const, 0\u003e",
+    "signature": "void fn_0061A9F0(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x0061AE50": {
@@ -41394,6 +41512,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B9400 (ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getUnitLength, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00633EA0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getSwingStiffness(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getSwingStiffness(void) const, 0\u003e",
+    "signature": "void fn_00633EA0(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00634170": {
     "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getSwingDamping(void) const, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getSwingDamping(void) const, 0\u003e",
@@ -41401,11 +41526,25 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B9400 (ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getUnitLength, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006341C0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getSwingDamping(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getSwingDamping(void) const, 0\u003e",
+    "signature": "void fn_006341C0(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x006343E0": {
     "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getSwingForceLimit(void) const, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getSwingForceLimit(void) const, 0\u003e",
     "signature": "int32_t __stdcall fn_006343E0(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004B7D80 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00634450": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getSwingForceLimit(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getSwingForceLimit(void) const, 0\u003e",
+    "signature": "void fn_00634450(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00634670": {
@@ -41483,6 +41622,13 @@
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0\u003e",
     "signature": "int fn_00635550(void* self, void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004B9400 (ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getUnitLength, 0\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x006355A0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0\u003e",
+    "signature": "void fn_006355A0(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00635740": {
@@ -41590,6 +41736,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B9400 (ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getUnitLength, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00636FD0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearStiffness(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearStiffness(void) const, 0\u003e",
+    "signature": "void fn_00636FD0(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00637170": {
     "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearDamping(void) const, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearDamping(void) const, 0\u003e",
@@ -41604,6 +41757,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B8970 (ExprParser::ReadMethodType\u003cNMData::EngineData\u003e::vfunc_1 (NMData::EngineData::getUnitMass)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00637200": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearDamping(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearDamping(void) const, 0\u003e",
+    "signature": "void fn_00637200(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00637450": {
     "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0\u003e",
@@ -41616,6 +41776,13 @@
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0\u003e",
     "signature": "int32_t __stdcall fn_006374A0(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004B7D80 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00637560": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0\u003e",
+    "signature": "void fn_00637560(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x006377B0": {
@@ -41702,11 +41869,25 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B7D80 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006383C0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTwistStiffness(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTwistStiffness(void) const, 0\u003e",
+    "signature": "void fn_006383C0(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00638610": {
     "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTwistDamping(void) const, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTwistDamping(void) const, 0\u003e",
     "signature": "int fn_00638610(void* self, void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004B9400 (ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getUnitLength, 0\u003e::vfunc_3).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00638660": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTwistDamping(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTwistDamping(void) const, 0\u003e",
+    "signature": "void fn_00638660(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x006388B0": {
@@ -41728,6 +41909,13 @@
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTwistForceLimit(void) const, 0\u003e",
     "signature": "int32_t __stdcall fn_00638940(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004B7D80 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00638A00": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTwistForceLimit(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTwistForceLimit(void) const, 0\u003e",
+    "signature": "void fn_00638A00(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00638E50": {
@@ -46847,6 +47035,13 @@
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getY(void) const, 0\u003e",
     "signature": "int32_t __stdcall fn_0066F350(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004B7D80 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0066F400": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getY(void) const, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getY(void) const, 0\u003e",
+    "signature": "void fn_0066F400(void* holder)",
+    "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x0066F700": {
@@ -64314,6 +64509,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00713740": {
+    "name": "sub_00713740",
+    "signature": "void* fn_00713740()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00713750": {
     "name": "sub_00713750",
     "signature": "uint32_t fn_00713750()",
@@ -64332,6 +64533,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00713780": {
+    "name": "sub_00713780",
+    "signature": "void* fn_00713780()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x007137A0": {
     "name": "sub_007137A0",
     "signature": "extern void fn_007137A0(void)",
@@ -64344,6 +64551,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x007137C0": {
+    "name": "sub_007137C0",
+    "signature": "void* fn_007137C0()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x007137E0": {
     "name": "initSingleton_007137E0",
     "signature": "void sub_007137E0()",
@@ -64354,6 +64567,12 @@
     "name": "sub_007137F0",
     "signature": "void fn_007137F0(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x00713800": {
+    "name": "sub_00713800",
+    "signature": "void* fn_00713800()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00713810": {
@@ -64374,6 +64593,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00713840": {
+    "name": "sub_00713840",
+    "signature": "void* fn_00713840()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00713860": {
     "name": "tailcall_00714060_global_00B5F410",
     "signature": "void sub_00713860()",
@@ -64384,6 +64609,12 @@
     "name": "sub_00713870",
     "signature": "void fn_00713870(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x00713880": {
+    "name": "sub_00713880",
+    "signature": "void* fn_00713880()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x007138A0": {
@@ -64398,6 +64629,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x007138C0": {
+    "name": "sub_007138C0",
+    "signature": "void* fn_007138C0()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x007138E0": {
     "name": "tailCall_00714060_with_00B5F7E0",
     "signature": "int32_t sub_007138E0(void)",
@@ -64408,6 +64645,12 @@
     "name": "sub_007138F0",
     "signature": "void fn_007138F0(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x00713900": {
+    "name": "sub_00713900",
+    "signature": "void* fn_00713900()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00713920": {
@@ -64428,6 +64671,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00713960": {
+    "name": "sub_00713960",
+    "signature": "void* fn_00713960()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00713980": {
     "name": "sub_00713980_tailcall_00714060",
     "signature": "void __cdecl sub_00713980()",
@@ -64438,6 +64687,12 @@
     "name": "sub_00713990",
     "signature": "void fn_00713990(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x007139A0": {
+    "name": "sub_007139A0",
+    "signature": "void* fn_007139A0()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x007139C0": {
@@ -64452,6 +64707,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x007139E0": {
+    "name": "sub_007139E0",
+    "signature": "void* fn_007139E0()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00713A00": {
     "name": "sub_00713A00",
     "signature": "void fn_00713A00()",
@@ -64462,6 +64723,12 @@
     "name": "sub_00713A10",
     "signature": "void fn_00713A10(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x00713A20": {
+    "name": "sub_00713A20",
+    "signature": "void* fn_00713A20()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00713A40": {
@@ -64476,6 +64743,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00713A60": {
+    "name": "sub_00713A60",
+    "signature": "void* fn_00713A60()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00713A80": {
     "name": "sub_00713A80",
     "signature": "extern void fn_00713A80(void)",
@@ -64486,6 +64759,12 @@
     "name": "sub_00713A90",
     "signature": "void fn_00713A90(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x00713AA0": {
+    "name": "sub_00713AA0",
+    "signature": "void* fn_00713AA0()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00713AC0": {
@@ -64500,6 +64779,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00713AE0": {
+    "name": "sub_00713AE0",
+    "signature": "void* fn_00713AE0()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00713B00": {
     "name": "sub_00713B00",
     "signature": "extern void fn_00713B00(void)",
@@ -64510,6 +64795,12 @@
     "name": "sub_00713B10",
     "signature": "void fn_00713B10(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x00713B20": {
+    "name": "sub_00713B20",
+    "signature": "void* fn_00713B20()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00713B40": {
@@ -64524,6 +64815,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00713B60": {
+    "name": "sub_00713B60",
+    "signature": "void* fn_00713B60()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00713B80": {
     "name": "sub_00713B80",
     "signature": "extern void fn_00713B80(void)",
@@ -64534,6 +64831,12 @@
     "name": "sub_00713B90",
     "signature": "void fn_00713B90(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x00713BA0": {
+    "name": "sub_00713BA0",
+    "signature": "void* fn_00713BA0()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00713BC0": {
@@ -64548,6 +64851,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00713BE0": {
+    "name": "sub_00713BE0",
+    "signature": "void* fn_00713BE0()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00713C00": {
     "name": "sub_00713C00",
     "signature": "extern void fn_00713C00(void)",
@@ -64558,6 +64867,12 @@
     "name": "sub_00713C10",
     "signature": "void fn_00713C10(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x00713C20": {
+    "name": "sub_00713C20",
+    "signature": "void* fn_00713C20()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00713C40": {
@@ -64572,6 +64887,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00713C60": {
+    "name": "sub_00713C60",
+    "signature": "void* fn_00713C60()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00713C80": {
     "name": "sub_00713C80",
     "signature": "extern void fn_00713C80(void)",
@@ -64582,6 +64903,12 @@
     "name": "sub_00713C90",
     "signature": "void fn_00713C90(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x00713CA0": {
+    "name": "sub_00713CA0",
+    "signature": "void* fn_00713CA0()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00713CC0": {
@@ -64596,6 +64923,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00713CE0": {
+    "name": "sub_00713CE0",
+    "signature": "void* fn_00713CE0()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00713D00": {
     "name": "sub_00713D00",
     "signature": "extern void fn_00713D00(void)",
@@ -64606,6 +64939,12 @@
     "name": "sub_00713DF0",
     "signature": "void fn_00713DF0(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x00713E00": {
+    "name": "sub_00713E00",
+    "signature": "void* fn_00713E00()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00713E20": {
@@ -64620,6 +64959,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00713E90": {
+    "name": "sub_00713E90",
+    "signature": "void* fn_00713E90()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00713EB0": {
     "name": "sub_00713EB0",
     "signature": "extern void fn_00713EB0(void)",
@@ -64630,6 +64975,12 @@
     "name": "sub_00713EF0",
     "signature": "void fn_00713EF0(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x00713F00": {
+    "name": "sub_00713F00",
+    "signature": "void* fn_00713F00()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00713F20": {
@@ -64650,6 +65001,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00714030": {
+    "name": "sub_00714030",
+    "signature": "void* fn_00714030()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00714050": {
     "name": "sub_00714050",
     "signature": "extern void fn_00714050(void)",
@@ -64660,6 +65017,12 @@
     "name": "sub_00714070",
     "signature": "void fn_00714070(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x00714080": {
+    "name": "sub_00714080",
+    "signature": "void* fn_00714080()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x007140A0": {
@@ -64674,6 +65037,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x007140F0": {
+    "name": "sub_007140F0",
+    "signature": "void* fn_007140F0()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00714110": {
     "name": "sub_00714110",
     "signature": "extern void fn_00714110(void)",
@@ -64684,6 +65053,12 @@
     "name": "sub_00714120",
     "signature": "void fn_00714120(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x00714130": {
+    "name": "sub_00714130",
+    "signature": "void* fn_00714130()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00714150": {
@@ -64698,6 +65073,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00714170": {
+    "name": "sub_00714170",
+    "signature": "void* fn_00714170()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00714190": {
     "name": "sub_00714190",
     "signature": "extern void fn_00714190(void)",
@@ -64708,6 +65089,12 @@
     "name": "sub_007141A0",
     "signature": "void fn_007141A0(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x007141B0": {
+    "name": "sub_007141B0",
+    "signature": "void* fn_007141B0()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x007141D0": {
@@ -64722,6 +65109,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x007141F0": {
+    "name": "sub_007141F0",
+    "signature": "void* fn_007141F0()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00714210": {
     "name": "sub_00714210",
     "signature": "extern void fn_00714210(void)",
@@ -64732,6 +65125,12 @@
     "name": "sub_00714220",
     "signature": "void fn_00714220(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x00714230": {
+    "name": "sub_00714230",
+    "signature": "void* fn_00714230()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00714250": {
@@ -64746,6 +65145,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x007142A0": {
+    "name": "sub_007142A0",
+    "signature": "void* fn_007142A0()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x007142C0": {
     "name": "sub_007142C0",
     "signature": "extern void fn_007142C0(void)",
@@ -64756,6 +65161,12 @@
     "name": "sub_007142D0",
     "signature": "void fn_007142D0(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x007142E0": {
+    "name": "sub_007142E0",
+    "signature": "void* fn_007142E0()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00714300": {
@@ -64770,6 +65181,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00714320": {
+    "name": "sub_00714320",
+    "signature": "void* fn_00714320()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00714340": {
     "name": "sub_00714340",
     "signature": "extern void fn_00714340(void)",
@@ -64780,6 +65197,12 @@
     "name": "sub_00714350",
     "signature": "void fn_00714350(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x00714360": {
+    "name": "sub_00714360",
+    "signature": "void* fn_00714360()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00714380": {
@@ -64794,6 +65217,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x007143A0": {
+    "name": "sub_007143A0",
+    "signature": "void* fn_007143A0()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x007143C0": {
     "name": "sub_007143C0",
     "signature": "extern void fn_007143C0(void)",
@@ -64804,6 +65233,12 @@
     "name": "sub_00714400",
     "signature": "void fn_00714400(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x00714410": {
+    "name": "sub_00714410",
+    "signature": "void* fn_00714410()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00714430": {
@@ -64818,6 +65253,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00714480": {
+    "name": "sub_00714480",
+    "signature": "void* fn_00714480()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x007144A0": {
     "name": "sub_007144A0",
     "signature": "extern void fn_007144A0(void)",
@@ -64828,6 +65269,12 @@
     "name": "sub_007144B0",
     "signature": "void fn_007144B0(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x007144C0": {
+    "name": "sub_007144C0",
+    "signature": "void* fn_007144C0()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x007144E0": {
@@ -64842,6 +65289,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00714500": {
+    "name": "sub_00714500",
+    "signature": "void* fn_00714500()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00714520": {
     "name": "sub_00714520",
     "signature": "extern void fn_00714520(void)",
@@ -64852,6 +65305,12 @@
     "name": "sub_00714530",
     "signature": "void fn_00714530(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x00714540": {
+    "name": "sub_00714540",
+    "signature": "void* fn_00714540()",
+    "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x00714560": {

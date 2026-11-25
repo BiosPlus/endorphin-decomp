@@ -47430,3 +47430,853 @@ void fn_005D7700(void* holder) {
     ext_006A6DD2(exception, mem_009DEC1C);
 }
 } // namespace lift_005D7700
+
+// [0x00605C50] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getForceBaseCap(void) const, 0>::vfunc_5 (48 bytes)
+namespace lift_00605C50 {
+// @name ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getForceBaseCap(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getForceBaseCap(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_00605C50(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0x54);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_00605C50
+
+// [0x00606320] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getGradientCap(void) const, 0>::vfunc_5 (48 bytes)
+namespace lift_00606320 {
+// @name ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getGradientCap(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getGradientCap(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_00606320(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0x50);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_00606320
+
+// [0x00607040] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getGradient(void) const, 0>::vfunc_5 (48 bytes)
+namespace lift_00607040 {
+// @name ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getGradient(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getGradient(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_00607040(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0x4C);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_00607040
+
+// [0x006074D0] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getRawDesiredDisplacement(void) const, 0>::vfunc_5 (48 bytes)
+namespace lift_006074D0 {
+// @name ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getRawDesiredDisplacement(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getRawDesiredDisplacement(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_006074D0(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0x58);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_006074D0
+
+// [0x00613C30] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getZ(void) const, 0>::vfunc_5 (48 bytes)
+namespace lift_00613C30 {
+// @name ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getZ(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getZ(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_00613C30(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0x8);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_00613C30
+
+// [0x00613D20] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUpperStiffness(void) const, 0>::vfunc_5 (48 bytes)
+namespace lift_00613D20 {
+// @name ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUpperStiffness(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUpperStiffness(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_00613D20(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0xC);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_00613D20
+
+// [0x00613F70] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam2(void) const, 0>::vfunc_5 (48 bytes)
+namespace lift_00613F70 {
+// @name ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam2(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam2(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_00613F70(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0x18);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_00613F70
+
+// [0x00614F70] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getTwistStiffness(void) const, 0>::vfunc_5 (51 bytes)
+namespace lift_00614F70 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getTwistStiffness(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getTwistStiffness(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_00614F70(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0xA0);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_00614F70
+
+// [0x006156D0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearStiffness(void) const, 0>::vfunc_5 (51 bytes)
+namespace lift_006156D0 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearStiffness(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearStiffness(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_006156D0(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0xA8);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_006156D0
+
+// [0x00615AB0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getTwistDamping(void) const, 0>::vfunc_5 (51 bytes)
+namespace lift_00615AB0 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getTwistDamping(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getTwistDamping(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_00615AB0(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0xAC);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_00615AB0
+
+// [0x00615CE0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearDamping(void) const, 0>::vfunc_5 (51 bytes)
+namespace lift_00615CE0 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearDamping(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearDamping(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_00615CE0(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0xB4);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_00615CE0
+
+// [0x00618990] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, 0>::vfunc_5 (48 bytes)
+namespace lift_00618990 {
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_00618990(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0x1C);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_00618990
+
+// [0x0061A3F0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getSwingStiffness(void) const, 0>::vfunc_5 (51 bytes)
+namespace lift_0061A3F0 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getSwingStiffness(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getSwingStiffness(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_0061A3F0(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0xA4);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_0061A3F0
+
+// [0x0061A9F0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getSwingDamping(void) const, 0>::vfunc_5 (51 bytes)
+namespace lift_0061A9F0 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getSwingDamping(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getSwingDamping(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_0061A9F0(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0xB0);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_0061A9F0
+
+// [0x00633EA0] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingStiffness(void) const, 0>::vfunc_5 (51 bytes)
+namespace lift_00633EA0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingStiffness(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingStiffness(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_00633EA0(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0xD4);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_00633EA0
+
+// [0x006341C0] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingDamping(void) const, 0>::vfunc_5 (51 bytes)
+namespace lift_006341C0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingDamping(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingDamping(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_006341C0(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0xDC);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_006341C0
+
+// [0x00634450] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingForceLimit(void) const, 0>::vfunc_5 (51 bytes)
+namespace lift_00634450 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingForceLimit(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingForceLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_00634450(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0xE4);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_00634450
+
+// [0x006355A0] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0>::vfunc_5 (51 bytes)
+namespace lift_006355A0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_006355A0(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0xF0);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_006355A0
+
+// [0x00636FD0] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearStiffness(void) const, 0>::vfunc_5 (51 bytes)
+namespace lift_00636FD0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearStiffness(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearStiffness(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_00636FD0(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0xCC);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_00636FD0
+
+// [0x00637200] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearDamping(void) const, 0>::vfunc_5 (51 bytes)
+namespace lift_00637200 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearDamping(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearDamping(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_00637200(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0xD0);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_00637200
+
+// [0x00637560] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0>::vfunc_5 (51 bytes)
+namespace lift_00637560 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_00637560(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0xEC);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_00637560
+
+// [0x006383C0] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistStiffness(void) const, 0>::vfunc_5 (51 bytes)
+namespace lift_006383C0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistStiffness(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistStiffness(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_006383C0(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0xD8);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_006383C0
+
+// [0x00638660] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistDamping(void) const, 0>::vfunc_5 (51 bytes)
+namespace lift_00638660 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistDamping(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistDamping(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_00638660(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0xE0);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_00638660
+
+// [0x00638A00] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistForceLimit(void) const, 0>::vfunc_5 (51 bytes)
+namespace lift_00638A00 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistForceLimit(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistForceLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_00638A00(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0xE8);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_00638A00
+
+// [0x0066F400] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getY(void) const, 0>::vfunc_5 (48 bytes)
+namespace lift_0066F400 {
+// @name ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getY(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getY(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5).
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_0066F400(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0x4);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700
+} // namespace lift_0066F400

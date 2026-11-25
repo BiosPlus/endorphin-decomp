@@ -21,8 +21,10 @@ void fn_005A3610() {
 }
 } // namespace lift_00437DE0
 } // namespace lift_005A3610
+#include <cstring>
+#include <cstddef>
 
-// [0x005AD1C0]
+#include <cstddef>
 namespace lift_005AD1C0 {
 // @name fillRangeWith8ByteValue
 // @summary Writes the 8-byte value at *src into every 8-byte slot in [dst_begin, dst_end). Source pointer is not advanced.
@@ -758,3 +760,81 @@ void* fn_005A0200(void* container, void* node, void* expectedContainer, void* en
     return ext_0059FDE0(container, node, expectedContainer, endNode, out);
 }
 } // namespace lift_005A0200
+
+// [0x005A07A0] sub_005A07A0 (105 bytes)
+namespace lift_005A07A0 {
+// @name sub_005A07A0
+// @summary Auto-lifted identical-shape clone of 0x00667EA0 (StdMapString::find).
+namespace lift_00667EA0 {
+// @name StdMapString::find
+// @class StdMapString
+// @summary Finds a node by string key in a std::map-like tree, returning a checked iterator {self, node} or {self, header} if not found.
+// @field StdMapString +0x04 void* header
+
+
+extern void* ext_0055C490(void* self, const void* key);
+extern void (*mem_00925134)();
+extern bool (*mem_00924EF4)(const void* lhs, const void* rhs);
+
+struct MapIterator {
+    void* container;
+    void* node;
+};
+
+void* fn_005A07A0(void* self, void* out_iter, const void* key) {
+    void* node = ext_0055C490(self, key);
+    if (!self) {
+        mem_00925134();
+    }
+    void* header = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x4);
+    MapIterator* it = reinterpret_cast<MapIterator*>(out_iter);
+    if (node != header && !mem_00924EF4(key, reinterpret_cast<uint8_t*>(node) + 0xC)) {
+        it->container = self;
+        it->node = node;
+    } else {
+        it->container = self;
+        it->node = header;
+    }
+    return out_iter;
+}
+} // namespace lift_00667EA0
+} // namespace lift_005A07A0
+
+// [0x005AE100] sub_005AE100 (105 bytes)
+namespace lift_005AE100 {
+// @name sub_005AE100
+// @summary Auto-lifted identical-shape clone of 0x00667EA0 (StdMapString::find).
+namespace lift_00667EA0 {
+// @name StdMapString::find
+// @class StdMapString
+// @summary Finds a node by string key in a std::map-like tree, returning a checked iterator {self, node} or {self, header} if not found.
+// @field StdMapString +0x04 void* header
+
+
+extern void* ext_005AD010(void* self, const void* key);
+extern void (*mem_00925134)();
+extern bool (*mem_00924EF4)(const void* lhs, const void* rhs);
+
+struct MapIterator {
+    void* container;
+    void* node;
+};
+
+void* fn_005AE100(void* self, void* out_iter, const void* key) {
+    void* node = ext_005AD010(self, key);
+    if (!self) {
+        mem_00925134();
+    }
+    void* header = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x4);
+    MapIterator* it = reinterpret_cast<MapIterator*>(out_iter);
+    if (node != header && !mem_00924EF4(key, reinterpret_cast<uint8_t*>(node) + 0xC)) {
+        it->container = self;
+        it->node = node;
+    } else {
+        it->container = self;
+        it->node = header;
+    }
+    return out_iter;
+}
+} // namespace lift_00667EA0
+} // namespace lift_005AE100

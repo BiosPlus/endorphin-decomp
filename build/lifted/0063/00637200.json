@@ -1,0 +1,22 @@
+{
+  "va": "0x00637200",
+  "size": 51,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearDamping(void) const, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearDamping(void) const, 0\u003e::vfunc_5",
+  "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearDamping(void) const, 0\u003e",
+  "signature": "void fn_00637200(void* holder)",
+  "summary": "Auto-lifted identical-shape clone of 0x005D7700 (ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5).",
+  "fields": [
+    {
+      "class": "NMData::VideoPlaneData",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T04:11:03Z"
+}

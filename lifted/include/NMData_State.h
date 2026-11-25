@@ -10,8 +10,8 @@
 // Recovered field layout for NMData::State:
 namespace lifted_layout {
 struct NMData_State_Fields {
-    // +0x8   subobject                field_0x08  (evidence: 0x0049D4B0, 0x004C0800, 0x006707A0) // CONFLICT: multiple definitions at +0x8
-    // +0x8   void*                    field_0x8  (evidence: 0x0049D530, 0x004B7D80, 0x004C0800, 0x00512A00, 0x00604D80, 0x006707A0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   subobject                field_0x08  (evidence: 0x0049D4B0, 0x004C0800) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    field_0x8  (evidence: 0x0049D530, 0x004B7D80, 0x004C0800, 0x00512A00, 0x00604D80) // CONFLICT: multiple definitions at +0x8
     // +0x1C  void*                    adjusted_base  (evidence: 0x004A9B50, 0x006744A0)
     // +0x54  BYTE                     field_0x54  (evidence: 0x0049DF50)
     // +0xD0  void*                    list_sentinel  (evidence: 0x0049FCF0)

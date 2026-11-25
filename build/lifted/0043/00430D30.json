@@ -1,0 +1,13 @@
+{
+  "va": "0x00430D30",
+  "size": 16,
+  "orig_symbol": "sub_00430D30",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "sub_00430D30",
+  "signature": "void* fn_00430D30()",
+  "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T04:11:03Z"
+}

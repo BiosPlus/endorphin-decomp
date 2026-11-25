@@ -3531,3 +3531,21 @@ uint32_t __thiscall sub_0043DCF0(void* self, uint32_t key) {
     return lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(esi)), 0x10);
 }
 } // namespace lift_0043DCF0
+
+// [0x00430D30] sub_00430D30 (16 bytes)
+namespace lift_00430D30 {
+// @name sub_00430D30
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00AD6BC8;
+extern void* __thiscall ext_004647D0(void* self_ptr, int32_t count);
+
+void* fn_00430D30() {
+    return ext_004647D0(&mem_00AD6BC8, 0xACDD94);
+}
+} // namespace lift_00780270
+} // namespace lift_00430D30

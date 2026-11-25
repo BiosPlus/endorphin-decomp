@@ -1,0 +1,22 @@
+{
+  "va": "0x005A07A0",
+  "size": 105,
+  "orig_symbol": "sub_005A07A0",
+  "src_path": "src/leaf/decompiled_5A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5A0000.cpp",
+  "name": "sub_005A07A0",
+  "class": "StdMapString",
+  "signature": "void* fn_005A07A0(void* self, void* out_iter, const void* key)",
+  "summary": "Auto-lifted identical-shape clone of 0x00667EA0 (StdMapString::find).",
+  "fields": [
+    {
+      "class": "StdMapString",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "header"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T04:11:03Z"
+}

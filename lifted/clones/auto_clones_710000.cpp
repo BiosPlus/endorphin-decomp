@@ -19,8 +19,10 @@ void fn_00713730(void) {
 }
 } // namespace lift_007AE0F0
 } // namespace lift_00713730
+#include <new>
+#include <string>
 
-// [0x00713770] sub_00713770 (10 bytes)
+#include <string>
 namespace lift_00713770 {
 // @name sub_00713770
 // @summary Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).
@@ -1245,3 +1247,795 @@ void fn_0071E100(void) {
     mem_00B5FE94 = src[1];
 }
 } // namespace lift_0071E100
+
+// [0x00713740] sub_00713740 (16 bytes)
+namespace lift_00713740 {
+// @name sub_00713740
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F810;
+extern void* __thiscall ext_00713050(void* self_ptr, int32_t count);
+
+void* fn_00713740() {
+    return ext_00713050(&mem_00B5F810, 0xAABAF4);
+}
+} // namespace lift_00780270
+} // namespace lift_00713740
+
+// [0x00713780] sub_00713780 (16 bytes)
+namespace lift_00713780 {
+// @name sub_00713780
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F7B0;
+extern void* __thiscall ext_00713510(void* self_ptr, int32_t count);
+
+void* fn_00713780() {
+    return ext_00713510(&mem_00B5F7B0, 0xAAC1C4);
+}
+} // namespace lift_00780270
+} // namespace lift_00713780
+
+// [0x007137C0] sub_007137C0 (16 bytes)
+namespace lift_007137C0 {
+// @name sub_007137C0
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F888;
+extern void* __thiscall ext_007131E0(void* self_ptr, int32_t count);
+
+void* fn_007137C0() {
+    return ext_007131E0(&mem_00B5F888, 0xAA9494);
+}
+} // namespace lift_00780270
+} // namespace lift_007137C0
+
+// [0x00713800] sub_00713800 (16 bytes)
+namespace lift_00713800 {
+// @name sub_00713800
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F708;
+extern void* __thiscall ext_00713360(void* self_ptr, int32_t count);
+
+void* fn_00713800() {
+    return ext_00713360(&mem_00B5F708, 0xAAC1CC);
+}
+} // namespace lift_00780270
+} // namespace lift_00713800
+
+// [0x00713840] sub_00713840 (16 bytes)
+namespace lift_00713840 {
+// @name sub_00713840
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F410;
+extern void* __thiscall ext_00713590(void* self_ptr, int32_t count);
+
+void* fn_00713840() {
+    return ext_00713590(&mem_00B5F410, 0xAAC1D4);
+}
+} // namespace lift_00780270
+} // namespace lift_00713840
+
+// [0x00713880] sub_00713880 (16 bytes)
+namespace lift_00713880 {
+// @name sub_00713880
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F8A0;
+extern void* __thiscall ext_00714440(void* self_ptr, int32_t count);
+
+void* fn_00713880() {
+    return ext_00714440(&mem_00B5F8A0, 0xAA94A4);
+}
+} // namespace lift_00780270
+} // namespace lift_00713880
+
+// [0x007138C0] sub_007138C0 (16 bytes)
+namespace lift_007138C0 {
+// @name sub_007138C0
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F7E0;
+extern void* __thiscall ext_00714440(void* self_ptr, int32_t count);
+
+void* fn_007138C0() {
+    return ext_00714440(&mem_00B5F7E0, 0xAA949C);
+}
+} // namespace lift_00780270
+} // namespace lift_007138C0
+
+// [0x00713900] sub_00713900 (16 bytes)
+namespace lift_00713900 {
+// @name sub_00713900
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F798;
+extern void* __thiscall ext_00714440(void* self_ptr, int32_t count);
+
+void* fn_00713900() {
+    return ext_00714440(&mem_00B5F798, 0xAABFA4);
+}
+} // namespace lift_00780270
+} // namespace lift_00713900
+
+// [0x00713960] sub_00713960 (16 bytes)
+namespace lift_00713960 {
+// @name sub_00713960
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F3E0;
+extern void* __thiscall ext_00714440(void* self_ptr, int32_t count);
+
+void* fn_00713960() {
+    return ext_00714440(&mem_00B5F3E0, 0xAA8CF4);
+}
+} // namespace lift_00780270
+} // namespace lift_00713960
+
+// [0x007139A0] sub_007139A0 (16 bytes)
+namespace lift_007139A0 {
+// @name sub_007139A0
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F498;
+extern void* __thiscall ext_00714440(void* self_ptr, int32_t count);
+
+void* fn_007139A0() {
+    return ext_00714440(&mem_00B5F498, 0xAA8D00);
+}
+} // namespace lift_00780270
+} // namespace lift_007139A0
+
+// [0x007139E0] sub_007139E0 (16 bytes)
+namespace lift_007139E0 {
+// @name sub_007139E0
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F5F0;
+extern void* __thiscall ext_00714440(void* self_ptr, int32_t count);
+
+void* fn_007139E0() {
+    return ext_00714440(&mem_00B5F5F0, 0xAA8D0C);
+}
+} // namespace lift_00780270
+} // namespace lift_007139E0
+
+// [0x00713A20] sub_00713A20 (16 bytes)
+namespace lift_00713A20 {
+// @name sub_00713A20
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F780;
+extern void* __thiscall ext_00714440(void* self_ptr, int32_t count);
+
+void* fn_00713A20() {
+    return ext_00714440(&mem_00B5F780, 0xAABEBC);
+}
+} // namespace lift_00780270
+} // namespace lift_00713A20
+
+// [0x00713A60] sub_00713A60 (16 bytes)
+namespace lift_00713A60 {
+// @name sub_00713A60
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F650;
+extern void* __thiscall ext_00714440(void* self_ptr, int32_t count);
+
+void* fn_00713A60() {
+    return ext_00714440(&mem_00B5F650, 0xAA8D10);
+}
+} // namespace lift_00780270
+} // namespace lift_00713A60
+
+// [0x00713AA0] sub_00713AA0 (16 bytes)
+namespace lift_00713AA0 {
+// @name sub_00713AA0
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F608;
+extern void* __thiscall ext_00714440(void* self_ptr, int32_t count);
+
+void* fn_00713AA0() {
+    return ext_00714440(&mem_00B5F608, 0xAA8D1C);
+}
+} // namespace lift_00780270
+} // namespace lift_00713AA0
+
+// [0x00713AE0] sub_00713AE0 (16 bytes)
+namespace lift_00713AE0 {
+// @name sub_00713AE0
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F620;
+extern void* __thiscall ext_00714440(void* self_ptr, int32_t count);
+
+void* fn_00713AE0() {
+    return ext_00714440(&mem_00B5F620, 0xAA8D2C);
+}
+} // namespace lift_00780270
+} // namespace lift_00713AE0
+
+// [0x00713B20] sub_00713B20 (16 bytes)
+namespace lift_00713B20 {
+// @name sub_00713B20
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F428;
+extern void* __thiscall ext_00714440(void* self_ptr, int32_t count);
+
+void* fn_00713B20() {
+    return ext_00714440(&mem_00B5F428, 0xAA8D3C);
+}
+} // namespace lift_00780270
+} // namespace lift_00713B20
+
+// [0x00713B60] sub_00713B60 (16 bytes)
+namespace lift_00713B60 {
+// @name sub_00713B60
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F440;
+extern void* __thiscall ext_00714440(void* self_ptr, int32_t count);
+
+void* fn_00713B60() {
+    return ext_00714440(&mem_00B5F440, 0xAA8D4C);
+}
+} // namespace lift_00780270
+} // namespace lift_00713B60
+
+// [0x00713BA0] sub_00713BA0 (16 bytes)
+namespace lift_00713BA0 {
+// @name sub_00713BA0
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F6D8;
+extern void* __thiscall ext_00714440(void* self_ptr, int32_t count);
+
+void* fn_00713BA0() {
+    return ext_00714440(&mem_00B5F6D8, 0xAA8D5C);
+}
+} // namespace lift_00780270
+} // namespace lift_00713BA0
+
+// [0x00713BE0] sub_00713BE0 (16 bytes)
+namespace lift_00713BE0 {
+// @name sub_00713BE0
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F4C8;
+extern void* __thiscall ext_00714440(void* self_ptr, int32_t count);
+
+void* fn_00713BE0() {
+    return ext_00714440(&mem_00B5F4C8, 0xAA8D80);
+}
+} // namespace lift_00780270
+} // namespace lift_00713BE0
+
+// [0x00713C20] sub_00713C20 (16 bytes)
+namespace lift_00713C20 {
+// @name sub_00713C20
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F398;
+extern void* __thiscall ext_00714440(void* self_ptr, int32_t count);
+
+void* fn_00713C20() {
+    return ext_00714440(&mem_00B5F398, 0xAAC1DC);
+}
+} // namespace lift_00780270
+} // namespace lift_00713C20
+
+// [0x00713C60] sub_00713C60 (16 bytes)
+namespace lift_00713C60 {
+// @name sub_00713C60
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F738;
+extern void* __thiscall ext_00714440(void* self_ptr, int32_t count);
+
+void* fn_00713C60() {
+    return ext_00714440(&mem_00B5F738, 0xAA88C4);
+}
+} // namespace lift_00780270
+} // namespace lift_00713C60
+
+// [0x00713CA0] sub_00713CA0 (16 bytes)
+namespace lift_00713CA0 {
+// @name sub_00713CA0
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F720;
+extern void* __thiscall ext_00714440(void* self_ptr, int32_t count);
+
+void* fn_00713CA0() {
+    return ext_00714440(&mem_00B5F720, 0xAA94AC);
+}
+} // namespace lift_00780270
+} // namespace lift_00713CA0
+
+// [0x00713CE0] sub_00713CE0 (16 bytes)
+namespace lift_00713CE0 {
+// @name sub_00713CE0
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F5D8;
+extern void* __thiscall ext_00714440(void* self_ptr, int32_t count);
+
+void* fn_00713CE0() {
+    return ext_00714440(&mem_00B5F5D8, 0xAAC1E8);
+}
+} // namespace lift_00780270
+} // namespace lift_00713CE0
+
+// [0x00713E00] sub_00713E00 (16 bytes)
+namespace lift_00713E00 {
+// @name sub_00713E00
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F870;
+extern void* __thiscall ext_00713DC0(void* self_ptr, int32_t count);
+
+void* fn_00713E00() {
+    return ext_00713DC0(&mem_00B5F870, 0xAAC1FC);
+}
+} // namespace lift_00780270
+} // namespace lift_00713E00
+
+// [0x00713E90] sub_00713E90 (16 bytes)
+namespace lift_00713E90 {
+// @name sub_00713E90
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F768;
+extern void* __thiscall ext_00713EC0(void* self_ptr, int32_t count);
+
+void* fn_00713E90() {
+    return ext_00713EC0(&mem_00B5F768, 0xAAC210);
+}
+} // namespace lift_00780270
+} // namespace lift_00713E90
+
+// [0x00713F00] sub_00713F00 (16 bytes)
+namespace lift_00713F00 {
+// @name sub_00713F00
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F750;
+extern void* __thiscall ext_00713EC0(void* self_ptr, int32_t count);
+
+void* fn_00713F00() {
+    return ext_00713EC0(&mem_00B5F750, 0xAAC228);
+}
+} // namespace lift_00780270
+} // namespace lift_00713F00
+
+// [0x00714030] sub_00714030 (16 bytes)
+namespace lift_00714030 {
+// @name sub_00714030
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F668;
+extern void* __thiscall ext_007140B0(void* self_ptr, int32_t count);
+
+void* fn_00714030() {
+    return ext_007140B0(&mem_00B5F668, 0xAA8D90);
+}
+} // namespace lift_00780270
+} // namespace lift_00714030
+
+// [0x00714080] sub_00714080 (16 bytes)
+namespace lift_00714080 {
+// @name sub_00714080
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F5A8;
+extern void* __thiscall ext_007140B0(void* self_ptr, int32_t count);
+
+void* fn_00714080() {
+    return ext_007140B0(&mem_00B5F5A8, 0xAA8DA8);
+}
+} // namespace lift_00780270
+} // namespace lift_00714080
+
+// [0x007140F0] sub_007140F0 (16 bytes)
+namespace lift_007140F0 {
+// @name sub_007140F0
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F698;
+extern void* __thiscall ext_007140B0(void* self_ptr, int32_t count);
+
+void* fn_007140F0() {
+    return ext_007140B0(&mem_00B5F698, 0xAA8D9C);
+}
+} // namespace lift_00780270
+} // namespace lift_007140F0
+
+// [0x00714130] sub_00714130 (16 bytes)
+namespace lift_00714130 {
+// @name sub_00714130
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F828;
+extern void* __thiscall ext_007140B0(void* self_ptr, int32_t count);
+
+void* fn_00714130() {
+    return ext_007140B0(&mem_00B5F828, 0xAA88EC);
+}
+} // namespace lift_00780270
+} // namespace lift_00714130
+
+// [0x00714170] sub_00714170 (16 bytes)
+namespace lift_00714170 {
+// @name sub_00714170
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F4F8;
+extern void* __thiscall ext_007140B0(void* self_ptr, int32_t count);
+
+void* fn_00714170() {
+    return ext_007140B0(&mem_00B5F4F8, 0xAA88D0);
+}
+} // namespace lift_00780270
+} // namespace lift_00714170
+
+// [0x007141B0] sub_007141B0 (16 bytes)
+namespace lift_007141B0 {
+// @name sub_007141B0
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F3C8;
+extern void* __thiscall ext_007140B0(void* self_ptr, int32_t count);
+
+void* fn_007141B0() {
+    return ext_007140B0(&mem_00B5F3C8, 0xAA88DC);
+}
+} // namespace lift_00780270
+} // namespace lift_007141B0
+
+// [0x007141F0] sub_007141F0 (16 bytes)
+namespace lift_007141F0 {
+// @name sub_007141F0
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F6C0;
+extern void* __thiscall ext_00714260(void* self_ptr, int32_t count);
+
+void* fn_007141F0() {
+    return ext_00714260(&mem_00B5F6C0, 0xAAC240);
+}
+} // namespace lift_00780270
+} // namespace lift_007141F0
+
+// [0x00714230] sub_00714230 (16 bytes)
+namespace lift_00714230 {
+// @name sub_00714230
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F7C8;
+extern void* __thiscall ext_00714260(void* self_ptr, int32_t count);
+
+void* fn_00714230() {
+    return ext_00714260(&mem_00B5F7C8, 0xAAC254);
+}
+} // namespace lift_00780270
+} // namespace lift_00714230
+
+// [0x007142A0] sub_007142A0 (16 bytes)
+namespace lift_007142A0 {
+// @name sub_007142A0
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F5C0;
+extern void* __thiscall ext_00714260(void* self_ptr, int32_t count);
+
+void* fn_007142A0() {
+    return ext_00714260(&mem_00B5F5C0, 0xAAC264);
+}
+} // namespace lift_00780270
+} // namespace lift_007142A0
+
+// [0x007142E0] sub_007142E0 (16 bytes)
+namespace lift_007142E0 {
+// @name sub_007142E0
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F6F0;
+extern void* __thiscall ext_00714260(void* self_ptr, int32_t count);
+
+void* fn_007142E0() {
+    return ext_00714260(&mem_00B5F6F0, 0xAAC274);
+}
+} // namespace lift_00780270
+} // namespace lift_007142E0
+
+// [0x00714320] sub_00714320 (16 bytes)
+namespace lift_00714320 {
+// @name sub_00714320
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F680;
+extern void* __thiscall ext_007140B0(void* self_ptr, int32_t count);
+
+void* fn_00714320() {
+    return ext_007140B0(&mem_00B5F680, 0xAAC28C);
+}
+} // namespace lift_00780270
+} // namespace lift_00714320
+
+// [0x00714360] sub_00714360 (16 bytes)
+namespace lift_00714360 {
+// @name sub_00714360
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F638;
+extern void* __thiscall ext_007140B0(void* self_ptr, int32_t count);
+
+void* fn_00714360() {
+    return ext_007140B0(&mem_00B5F638, 0xAAC298);
+}
+} // namespace lift_00780270
+} // namespace lift_00714360
+
+// [0x007143A0] sub_007143A0 (16 bytes)
+namespace lift_007143A0 {
+// @name sub_007143A0
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F3F8;
+extern void* __thiscall ext_007143D0(void* self_ptr, int32_t count);
+
+void* fn_007143A0() {
+    return ext_007143D0(&mem_00B5F3F8, 0xAAC2A0);
+}
+} // namespace lift_00780270
+} // namespace lift_007143A0
+
+// [0x00714410] sub_00714410 (16 bytes)
+namespace lift_00714410 {
+// @name sub_00714410
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F3B0;
+extern void* __thiscall ext_007143D0(void* self_ptr, int32_t count);
+
+void* fn_00714410() {
+    return ext_007143D0(&mem_00B5F3B0, 0xAAC2AC);
+}
+} // namespace lift_00780270
+} // namespace lift_00714410
+
+// [0x00714480] sub_00714480 (16 bytes)
+namespace lift_00714480 {
+// @name sub_00714480
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F550;
+extern void* __thiscall ext_00714440(void* self_ptr, int32_t count);
+
+void* fn_00714480() {
+    return ext_00714440(&mem_00B5F550, 0xAAC2BC);
+}
+} // namespace lift_00780270
+} // namespace lift_00714480
+
+// [0x007144C0] sub_007144C0 (16 bytes)
+namespace lift_007144C0 {
+// @name sub_007144C0
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F4B0;
+extern void* __thiscall ext_00714440(void* self_ptr, int32_t count);
+
+void* fn_007144C0() {
+    return ext_00714440(&mem_00B5F4B0, 0xAAB3C8);
+}
+} // namespace lift_00780270
+} // namespace lift_007144C0
+
+// [0x00714500] sub_00714500 (16 bytes)
+namespace lift_00714500 {
+// @name sub_00714500
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F840;
+extern void* __thiscall ext_00714440(void* self_ptr, int32_t count);
+
+void* fn_00714500() {
+    return ext_00714440(&mem_00B5F840, 0xAAC2C8);
+}
+} // namespace lift_00780270
+} // namespace lift_00714500
+
+// [0x00714540] sub_00714540 (16 bytes)
+namespace lift_00714540 {
+// @name sub_00714540
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B5F7F8;
+extern void* __thiscall ext_00714440(void* self_ptr, int32_t count);
+
+void* fn_00714540() {
+    return ext_00714440(&mem_00B5F7F8, 0xAAC2E0);
+}
+} // namespace lift_00780270
+} // namespace lift_00714540

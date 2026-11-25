@@ -1,0 +1,13 @@
+{
+  "va": "0x00713F00",
+  "size": 16,
+  "orig_symbol": "sub_00713F00",
+  "src_path": "src/clones/auto_clones_710000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_710000.cpp",
+  "name": "sub_00713F00",
+  "signature": "void* fn_00713F00()",
+  "summary": "Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T04:11:03Z"
+}

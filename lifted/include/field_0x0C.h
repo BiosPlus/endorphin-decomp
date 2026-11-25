@@ -8,6 +8,6 @@
 // Recovered field layout for field_0x0C:
 namespace lifted_layout {
 struct field_0x0C_Fields {
-    // +0xC   uint32_t                 field_0x0C  (evidence: 0x006707A0, 0x0068F050)
+    // +0xC   uint32_t                 field_0x0C  (evidence: 0x0068F050)
 };
 } // namespace lifted_layout
