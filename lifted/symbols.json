@@ -59831,6 +59831,12 @@
     "summary": "Returns the length of a NUL-terminated string (equivalent to repne scasb strlen idiom).",
     "lifted_path": "lifted/leaf/tiny_800000.cpp"
   },
+  "0x0080F720": {
+    "name": "CallCallbackAndAdvanceCounters_0080F720",
+    "signature": "void fn_0080F720(void* self, uint32_t arg)",
+    "summary": "Calls the callback in the table at +0x08 with (ctx, arg); on success bumps +0x10/+0x14, on failure seeds +0x1c once and bumps +0x10.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080F830": {
     "name": "WriteByteAdvanceCursor",
     "class": "Writer",

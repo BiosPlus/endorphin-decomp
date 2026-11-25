@@ -736,3 +736,35 @@ void* fn_00803F80(void* self) {
     return static_cast<uint8_t*>(self) + static_cast<size_t>(index) * 24u;
 }
 } // namespace lift_00803F80
+
+// [0x0080F720] sub_0080F720 (73 bytes)
+namespace lift_0080F720 {
+// @name CallCallbackAndAdvanceCounters_0080F720
+// @summary Calls the callback in the table at +0x08 with (ctx, arg); on success bumps +0x10/+0x14, on failure seeds +0x1c once and bumps +0x10.
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x1c uint32_t field_0x1c
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+void fn_0080F720(void* self, uint32_t arg) {
+    auto* table = reinterpret_cast<unsigned char*>(
+        static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x08)));
+    uint32_t callbackAddr = lift_field<uint32_t>(table, 0x00);
+    if (callbackAddr != 0) {
+        uint32_t ctx = lift_field<uint32_t>(table, 0x04);
+        auto callback = reinterpret_cast<int32_t (*)(uint32_t, uint32_t)>(
+            static_cast<uintptr_t>(callbackAddr));
+        int32_t result = callback(ctx, arg);
+        if (result >= 0) {
+            lift_field<uint32_t>(self, 0x14) += 1;
+            lift_field<uint32_t>(self, 0x10) += 1;
+            return;
+        }
+        if (lift_field<uint32_t>(self, 0x1c) == 0) {
+            lift_field<uint32_t>(self, 0x1c) = (static_cast<uint32_t>(result) << 8) - 9;
+        }
+    }
+    lift_field<uint32_t>(self, 0x10) += 1;
+}
+} // namespace lift_0080F720
