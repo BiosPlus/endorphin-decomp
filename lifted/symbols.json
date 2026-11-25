@@ -8759,9 +8759,10 @@
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
   "0x004890D0": {
-    "name": "sortThreeStrings_004890D0",
-    "signature": "void fn_004890D0(std::string\u0026 a, std::string\u0026 b, std::string\u0026 c)",
-    "summary": "Sorts three std::string references into ascending order in place (3-element bubble network).",
+    "name": "sub_00480750",
+    "class": "Unknown",
+    "signature": "void fn_00480750(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
   "0x00489320": {

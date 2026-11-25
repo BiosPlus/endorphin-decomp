@@ -8,9 +8,9 @@
 // Recovered field layout for Vec4:
 namespace lifted_layout {
 struct Vec4_Fields {
-    // +0x0   float                    x  (evidence: 0x00486850)
-    // +0x4   float                    y  (evidence: 0x00486850)
-    // +0x8   float                    z  (evidence: 0x00486850)
-    // +0xC   float                    w  (evidence: 0x00486850)
+    // +0x0   float                    x  (evidence: 0x00486850, 0x004890D0)
+    // +0x4   float                    y  (evidence: 0x00486850, 0x004890D0)
+    // +0x8   float                    z  (evidence: 0x00486850, 0x004890D0)
+    // +0xC   float                    w  (evidence: 0x00486850, 0x004890D0)
 };
 } // namespace lifted_layout

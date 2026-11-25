@@ -8,8 +8,8 @@
 // Recovered field layout for UnknownElement:
 namespace lifted_layout {
 struct UnknownElement_Fields {
-    // +0x34  uint32_t                 field_0x34  (evidence: 0x0048CB80)
-    // +0x38  uint32_t                 field_0x38  (evidence: 0x0048CB80)
-    // +0x3C  uint32_t                 field_0x3C  (evidence: 0x0048CB80)
+    // +0x34  uint32_t                 field_0x34  (evidence: 0x004890D0, 0x0048CB80)
+    // +0x38  uint32_t                 field_0x38  (evidence: 0x004890D0, 0x0048CB80)
+    // +0x3C  uint32_t                 field_0x3C  (evidence: 0x004890D0, 0x0048CB80)
 };
 } // namespace lifted_layout

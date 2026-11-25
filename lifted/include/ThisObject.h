@@ -8,7 +8,7 @@
 // Recovered field layout for ThisObject:
 namespace lifted_layout {
 struct ThisObject_Fields {
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00489320)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x00489320)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x004890D0, 0x00489320)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x004890D0, 0x00489320)
 };
 } // namespace lifted_layout

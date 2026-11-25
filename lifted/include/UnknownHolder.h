@@ -8,8 +8,8 @@
 // Recovered field layout for UnknownHolder:
 namespace lifted_layout {
 struct UnknownHolder_Fields {
-    // +0x0   void*                    target  (evidence: 0x00480C30)
+    // +0x0   void*                    target  (evidence: 0x00480C30, 0x004890D0)
     // +0x4   uint32_t                 field_0x04  (evidence: 0x004A73F0, 0x0059B120) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint8_t                  stopOnRelease  (evidence: 0x00480C30) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint8_t                  stopOnRelease  (evidence: 0x00480C30, 0x004890D0) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout
