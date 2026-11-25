@@ -1817,3 +1817,28 @@ uint8_t __fastcall fn_00410420(void* self) {
     return 1;
 }
 } // namespace lift_00410420
+
+// [0x00414880] sub_00414880 (38 bytes)
+namespace lift_00414880 {
+// IAT slot for MSVCR80!_invalid_parameter_noinfo
+extern void* mem_00925134;
+
+// @name RangeElementDelta_00414880
+// @class UnknownThisType
+// @summary Validates that this->+0x00 matches other->+0x00 when non-null (invalid-parameter hook otherwise), then returns the signed element-count delta (this->+0x04 - other->+0x04) / 8.
+// @field UnknownThisType +0x00 void* field_0x00
+// @field UnknownThisType +0x04 uint32_t field_0x04
+int32_t fn_00414880(void* self, void* other) {
+    // Original: thiscall (ecx = self), one stack argument, ret 4.
+    void* first = lift_field<void*>(self, 0x00);
+    if (first != nullptr) {
+        if (first != lift_field<void*>(other, 0x00)) {
+            // Original calls through [0x925134] (MSVCR80!_invalid_parameter_noinfo) and falls through.
+            reinterpret_cast<void (*)()>(mem_00925134)();
+        }
+    }
+    int32_t delta = static_cast<int32_t>(lift_field<uint32_t>(self, 0x04) -
+                                         lift_field<uint32_t>(other, 0x04));
+    return delta >> 3; // sar eax, 3 (arithmetic shift)
+}
+} // namespace lift_00414880

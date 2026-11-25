@@ -1365,6 +1365,13 @@
     "summary": "Forwards its two string-operand arguments in order to MSVCP80 std::operator+ and returns the callee's result.",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x00414880": {
+    "name": "RangeElementDelta_00414880",
+    "class": "UnknownThisType",
+    "signature": "int32_t fn_00414880(void* self, void* other)",
+    "summary": "Validates that this-\u003e+0x00 matches other-\u003e+0x00 when non-null (invalid-parameter hook otherwise), then returns the signed element-count delta (this-\u003e+0x04 - other-\u003e+0x04) / 8.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00414D30": {
     "name": "Rect2D::initNormalized",
     "class": "Rect2D",

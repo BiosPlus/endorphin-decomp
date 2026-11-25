@@ -1,0 +1,28 @@
+{
+  "va": "0x00414880",
+  "size": 38,
+  "orig_symbol": "sub_00414880",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "RangeElementDelta_00414880",
+  "class": "UnknownThisType",
+  "signature": "int32_t fn_00414880(void* self, void* other)",
+  "summary": "Validates that this-\u003e+0x00 matches other-\u003e+0x00 when non-null (invalid-parameter hook otherwise), then returns the signed element-count delta (this-\u003e+0x04 - other-\u003e+0x04) / 8.",
+  "fields": [
+    {
+      "class": "UnknownThisType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "UnknownThisType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:24:15Z"
+}
