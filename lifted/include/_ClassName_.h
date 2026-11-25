@@ -78,7 +78,7 @@ struct _ClassName__Fields {
     // +0x98  double                   field_0x98  (evidence: 0x00441090)
     // +0xE8  DWORD                    field_0xe8  (evidence: 0x00455D10)
     // +0xF4  int32_t                  field_0xF4  (evidence: 0x00594020, 0x0059DE20)
-    // +0x16C void*                    field_0x16C  (evidence: 0x005C40C0)
+    // +0x16C void*                    field_0x16C  (evidence: 0x005C3FB0, 0x005C40C0)
     // +0x170 std::string              field_0x170  (evidence: 0x005AA8D0)
     // +0x190 void*                    field_0x190  (evidence: 0x005AA8D0)
     // +0x1C0 uint8_t                  field_0x1C0  (evidence: 0x006D7CA0)

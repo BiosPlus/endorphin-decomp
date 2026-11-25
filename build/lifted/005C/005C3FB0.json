@@ -4,10 +4,151 @@
   "orig_symbol": "sub_005C3FB0",
   "src_path": "src/leaf/decompiled_5C0000.cpp",
   "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
-  "name": "FindEntryIndexByStringAt17C",
-  "signature": "extern \"C\" uint32_t __thiscall fn_005C3FB0(void* self)",
-  "summary": "Scans the 28-byte entries between mem_00B44C08 (begin) and mem_00B44C0C (end) for the first whose leading std::string equals this+0x17C; returns its index, or 0 when none matches or the array is empty.",
+  "name": "sub_005CF3E0",
+  "class": "NMData::DesiredPoseEventData",
+  "signature": "extern void __thiscall fn_005CF3E0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0048DE30 (NMData::DesiredPoseEventData::vfunc_87).",
+  "fields": [
+    {
+      "class": "NMData::DesiredPoseEventData",
+      "offset": "+0x234",
+      "type": "void*",
+      "name": "field_0x234"
+    },
+    {
+      "class": "NMData::MetaBodyConstraintData",
+      "offset": "+0x180",
+      "type": "void*",
+      "name": "field_0x180"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "heldPtr"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x154",
+      "type": "uint32_t",
+      "name": "field_0x154"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x158",
+      "type": "uint32_t",
+      "name": "field_0x158"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "void*",
+      "name": "field_0xac"
+    },
+    {
+      "class": "CObjectHolder",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "m_pObject"
+    },
+    {
+      "class": "CObjectHolder",
+      "offset": "+0x164",
+      "type": "void*",
+      "name": "m_pSubobject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x164",
+      "type": "void*",
+      "name": "field_0x164"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1F2",
+      "type": "uint8_t",
+      "name": "field_0x1F2"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C4",
+      "type": "uint32_t",
+      "name": "field_0x2C4"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x16C",
+      "type": "void*",
+      "name": "field_0x16C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x164",
+      "type": "int",
+      "name": "field_164"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x164",
+      "type": "DWORD",
+      "name": "field_0x164"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x164",
+      "type": "uint32_t",
+      "name": "subobject164"
+    },
+    {
+      "class": "Owner",
+      "offset": "+0x164",
+      "type": "uint32_t",
+      "name": "subobject"
+    },
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x0",
+      "type": "DWORD field_0x00 (written from the value",
+      "name": "argument)"
+    },
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x4",
+      "type": "DWORD field_0x04 (written from ext_0046F580()",
+      "name": "result)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x17C",
+      "type": "std::string",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x198",
+      "type": "DWORD",
+      "name": "field_0x198"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T03:48:43Z"
+  "lifted_at": "2026-11-25T03:48:50Z"
 }

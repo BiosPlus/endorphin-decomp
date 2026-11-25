@@ -30055,9 +30055,10 @@
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
   "0x005C3FB0": {
-    "name": "FindEntryIndexByStringAt17C",
-    "signature": "extern \"C\" uint32_t __thiscall fn_005C3FB0(void* self)",
-    "summary": "Scans the 28-byte entries between mem_00B44C08 (begin) and mem_00B44C0C (end) for the first whose leading std::string equals this+0x17C; returns its index, or 0 when none matches or the array is empty.",
+    "name": "sub_005CF3E0",
+    "class": "NMData::DesiredPoseEventData",
+    "signature": "extern void __thiscall fn_005CF3E0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0048DE30 (NMData::DesiredPoseEventData::vfunc_87).",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
   "0x005C4020": {
