@@ -2190,3 +2190,34 @@ void fn_004D4E50(void* arg) {
     ext_006A6DD2();
 }
 } // namespace lift_004D4E50
+
+// [0x00515EB0] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_5 (45 bytes)
+namespace lift_00515EB0 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Called with one stack argument (the value loaded from obj+0x0C).
+extern void ext_0046C4E0(uint32_t arg);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Thiscall: `this` is the exception object buffer.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Forwards (exception object, ThrowInfo*) to _CxxThrowException.
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>
+// @summary Virtual slot 5 stub that, when the referenced object is non-null, reports its +0x0C value via a default-message exception, then unconditionally throws a fixed DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 void* field_0x00
+// @field Unknown +0x0C uint32_t field_0x0C
+void fn_00515EB0(void* self) {
+    void* obj = *static_cast<void**>(self);
+    if (obj != nullptr) {
+        uint32_t msg = lift_field<uint32_t>(obj, 0x0C);
+        ext_0046C4E0(msg);
+    }
+
+    // Stack-allocated exception object (frame reserves 0x28 bytes).
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+}
+} // namespace lift_00515EB0

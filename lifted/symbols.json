@@ -20203,6 +20203,13 @@
     "summary": "Reads the int at +0x0C of the object referenced by the first pointer in the argument block and returns it as a double; throws if that pointer is null.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x00515EB0": {
+    "name": "ExprParser::DynamicEnumType::vfunc_5",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const\u003e",
+    "signature": "void fn_00515EB0(void* self)",
+    "summary": "Virtual slot 5 stub that, when the referenced object is non-null, reports its +0x0C value via a default-message exception, then unconditionally throws a fixed DerivedException.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x00515F80": {
     "name": "ExprParser::DynamicEnumType::vfunc_0",
     "class": "ExprParser::DynamicEnumType",
@@ -34837,6 +34844,13 @@
     "class": "Unknown",
     "signature": "void fn_005ECDC0(void* self)",
     "summary": "Walks the pointer vector at this+0x204..+0x208 and sets byte +4 of each pointed-to object to 1.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
+  "0x005ED2C0": {
+    "name": "Tree::find",
+    "class": "Tree",
+    "signature": "extern \"C\" uint32_t __thiscall sub_005ED2C0(uint32_t self, uint32_t out_iter, uint32_t key_ptr)",
+    "summary": "Finds a node by uint32_t key in a red-black tree and writes the iterator to out.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
   "0x005ED330": {
