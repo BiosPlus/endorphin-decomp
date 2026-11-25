@@ -25741,6 +25741,12 @@
     "summary": "For index \u003c 3, copies four floats from +0x10..+0x1C into a local array and forwards (index, array) to vtable slot 9 of the subobject at +0x0C; otherwise returns 0.0f.",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
+  "0x005B1FA0": {
+    "name": "sub_005B1FA0",
+    "signature": "void __thiscall sub_005B1FA0(void* self)",
+    "summary": "Updates field_0x10 based on field_0x08 mode, clamps to \u003e= 0.0f, and zeroes field_0x14 and field_0x18",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B2130": {
     "name": "Unknown::ForwardArgToSubobjectVfunc5",
     "class": "Unknown",

@@ -392,3 +392,43 @@ void Unknown_ResetFields_005B51E0(std::uint8_t* self) {
     store_u32(self, 0x40, 0u);
 }
 } // namespace lift_005B51E0
+
+// [0x005B1FA0]
+namespace lift_005B1FA0 {
+// @name sub_005B1FA0
+// @summary Updates field_0x10 based on field_0x08 mode, clamps to >= 0.0f, and zeroes field_0x14 and field_0x18
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 float field_0x10
+// @field Unknown +0x14 float field_0x14
+// @field Unknown +0x18 float field_0x18
+
+
+void __thiscall sub_005B1FA0(void* self) {
+    uint32_t mode = *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(self) + 0x08);
+    float f10 = *reinterpret_cast<float*>(reinterpret_cast<char*>(self) + 0x10);
+    float f14 = *reinterpret_cast<float*>(reinterpret_cast<char*>(self) + 0x14);
+
+    float val = 0.0f;
+    switch (mode) {
+    case 1:
+        val = f10;
+        break;
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+        val = static_cast<float>((f14 + f10) * 0.25);
+        break;
+    default:
+        break;
+    }
+
+    if (val < 0.0f) {
+        val = 0.0f;
+    }
+
+    *reinterpret_cast<float*>(reinterpret_cast<char*>(self) + 0x10) = val;
+    *reinterpret_cast<float*>(reinterpret_cast<char*>(self) + 0x14) = 0.0f;
+    *reinterpret_cast<float*>(reinterpret_cast<char*>(self) + 0x18) = 0.0f;
+}
+} // namespace lift_005B1FA0
