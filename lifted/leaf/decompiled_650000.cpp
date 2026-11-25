@@ -1678,3 +1678,23 @@ void* fn_00519100(void* self) {
     return self;
 }
 } // namespace lift_00519100
+
+// [0x00517FC0]
+namespace lift_00517FC0 {
+// @name parseDoubleFromString
+// @summary Converts a string retrieved via ext_004275C0 to a double using atof and stores it at out.
+
+
+void* ext_004275C0(void* out_str);
+const char* __thiscall mem_00924FF0(void* self);
+void __thiscall mem_00924FF4(void* self);
+double mem_009251F0(const char* str);
+
+extern void fn_00517FC0(double* out) {
+    alignas(4) uint8_t local_str[0x1c]{};
+    void* str_ptr = ext_004275C0(local_str);
+    const char* cstr = mem_00924FF0(str_ptr);
+    *out = std::atof(cstr);
+    mem_00924FF4(local_str);
+}
+} // namespace lift_00517FC0
