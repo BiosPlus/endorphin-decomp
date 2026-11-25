@@ -50112,3 +50112,34 @@ void fn_006568F0(void* self) {
 }
 } // namespace lift_0051B200
 } // namespace lift_006568F0
+
+// [0x0062E960] ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1>::vfunc_1 (49 bytes)
+namespace lift_0062E960 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0. Always throws; the pushed argument is ignored.
+extern void ext_0046C4E0(void* unused);
+// Known callee 0x0046C3C0: DerivedException::DerivedException. Constructs the exception object in place (thiscall, this in ECX).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException. Forwards to _CxxThrowException(object, throwInfo).
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+
+// Throw-info descriptor for the DerivedException throw (VA 0x009DEC1C).
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<CompoundSensorPlanes>::getHorzAxis::vfunc_1
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1>
+// @summary Reads the bound CompoundSensorPlanes pointer; if non-null, throws a default-message exception via ext_0046C4E0, otherwise throws DerivedException with a fixed message.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field Sensors::CompoundSensorPlanes +0x84 void* field_0x84
+void fn_0062E960(void* self) {
+    unsigned char* target = *static_cast<unsigned char**>(self);
+    if (target != nullptr) {
+        ext_0046C4E0(target + 0x84);
+        // ext_0046C4E0 always throws; the original code's fall-through is unreachable.
+    }
+
+    // Stack storage for the DerivedException object (size not verified).
+    alignas(8) unsigned char exception[64];
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_0062E960

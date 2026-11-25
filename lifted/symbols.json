@@ -41293,6 +41293,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0062E430 (ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, getVertAxis, 1\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0062E960": {
+    "name": "ExprParser::ReadMethodType\u003cCompoundSensorPlanes\u003e::getHorzAxis::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1\u003e",
+    "signature": "void fn_0062E960(void* self)",
+    "summary": "Reads the bound CompoundSensorPlanes pointer; if non-null, throws a default-message exception via ext_0046C4E0, otherwise throws DerivedException with a fixed message.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0062E9E0": {
     "name": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1\u003e::vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1\u003e",
