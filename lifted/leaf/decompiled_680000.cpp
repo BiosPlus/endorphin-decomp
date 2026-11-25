@@ -779,3 +779,28 @@ void fn_00688B50(void* self) {
     *cap = nullptr;
 }
 } // namespace lift_00688B50
+
+// [0x0068BDF0]
+namespace lift_0068BDF0 {
+// @name ComputeAbsBlendWithCallee
+// @summary Returns x + r * |a - x|, where r is ext_00508680's result (read as unsigned) scaled by a constant.
+
+extern int ext_00508680(void* self, double arg);
+
+extern const double mem_0093BD38; // 2^32 bias added when the callee result is negative (unsigned reinterpretation)
+extern const double mem_0094FF78; // scale applied to the unsigned callee result
+
+float ComputeAbsBlendWithCallee(void* self, float x, float a) {
+    const double xd = static_cast<double>(x);
+    const int res = ext_00508680(static_cast<char*>(self) + 0x10, xd);
+
+    double r = static_cast<double>(res);
+    if (res < 0) {
+        r += mem_0093BD38;
+    }
+    r *= mem_0094FF78;
+
+    const double result = xd + r * (std::fabs(static_cast<double>(a) - xd));
+    return static_cast<float>(result);
+}
+} // namespace lift_0068BDF0

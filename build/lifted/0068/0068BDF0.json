@@ -1,0 +1,13 @@
+{
+  "va": "0x0068BDF0",
+  "size": 73,
+  "orig_symbol": "sub_0068BDF0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "ComputeAbsBlendWithCallee",
+  "signature": "extern const double mem_0093BD38; // 2^32 bias added when the callee result is negative (unsigned reinterpretation) extern const double mem_0094FF78; // scale applied to the unsigned callee result float ComputeAbsBlendWithCallee(void* self, float x, float a)",
+  "summary": "Returns x + r * |a - x|, where r is ext_00508680's result (read as unsigned) scaled by a constant.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:32:27Z"
+}
