@@ -52237,3 +52237,33 @@ float fn_00488E30(void* self) {
     throw std::runtime_error("ExprParser::ReadMethodType<NMData::DesiredPoseEventData>::vfunc_5: unsupported");
 }
 } // namespace lift_00488E30
+
+// [0x00490030] ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_5 (58 bytes)
+namespace lift_00490030 {
+// Known callee 0x0048FB10: sub_0048FB10 (float __thiscall; reads a double at +0x58 of its this and returns it as float)
+extern float ext_0048FB10(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (builds a default-message exception from the float argument and throws)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs the exception object in place with a fixed message)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk to MSVCR80!_CxxThrowException)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// Data 0x009DEC1C: throw-info descriptor passed to _CxxThrowException
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<GraphEngine, float, GraphEngine::getX, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<GraphEngine, float, GraphEngine::getX, 1>
+// @summary Reads the target GraphEngine pointer; if set, fetches getX() and throws a default-message exception, otherwise throws a fixed-message DerivedException.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00490030(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target != nullptr) {
+        float value = ext_0048FB10(target);
+        ext_0046C4E0(value);
+    }
+
+    alignas(16) unsigned char exception[0x28];
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_00490030

@@ -1,0 +1,22 @@
+{
+  "va": "0x00490030",
+  "size": 58,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cGraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cGraphEngine, float, GraphEngine::getX, 1\u003e::vfunc_5",
+  "class": "ExprParser::ReadMethodType\u003cGraphEngine, float, GraphEngine::getX, 1\u003e",
+  "signature": "void fn_00490030(void* self)",
+  "summary": "Reads the target GraphEngine pointer; if set, fetches getX() and throws a default-message exception, otherwise throws a fixed-message DerivedException.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:58:43Z"
+}

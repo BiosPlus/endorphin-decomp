@@ -10686,6 +10686,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00490030": {
+    "name": "ExprParser::ReadMethodType\u003cGraphEngine, float, GraphEngine::getX, 1\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cGraphEngine, float, GraphEngine::getX, 1\u003e",
+    "signature": "void fn_00490030(void* self)",
+    "summary": "Reads the target GraphEngine pointer; if set, fetches getX() and throws a default-message exception, otherwise throws a fixed-message DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00490490": {
     "name": "ensureGuardedStaticDword_00490490",
     "signature": "DWORD* fn_00490490()",
