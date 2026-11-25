@@ -224,3 +224,25 @@ void* fn_0063D970(void* self) {
     return self;
 }
 } // namespace lift_0063D970
+
+// [0x0063DDF0]
+namespace lift_0063DDF0 {
+// Known callee 0x0062CD30: sub_0062CD30_ctor (initializes vtable to 0x009791a4 and zeroes blocks at +0x08 and +0x2c).
+extern void* ext_0062CD30(void* self);
+
+// @name sub_0063DDF0_initVtableAndZeroFloats
+// @class <Class> (unknown; vtable 0x009794b4 not yet mapped to a class)
+// @summary Runs base constructor ext_0062CD30, sets vtable to 0x009794b4, zeroes floats at +0x38/+0x3c/+0x40, returns this.
+// @field field_0x00 uint32_t vtable
+// @field field_0x38 float field_0x38
+// @field field_0x3c float field_0x3c
+// @field field_0x40 float field_0x40
+void* fn_0063DDF0(void* self) {
+    ext_0062CD30(self);
+    lift_field<uint32_t>(self, 0x00) = 0x009794B4u;
+    lift_field<float>(self, 0x40) = 0.0f;
+    lift_field<float>(self, 0x3C) = 0.0f;
+    lift_field<float>(self, 0x38) = 0.0f;
+    return self;
+}
+} // namespace lift_0063DDF0

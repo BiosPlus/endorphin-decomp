@@ -2856,6 +2856,13 @@
     "summary": "Allocates a 12-byte block and fills it with two dwords and the dword that a3 points to; returns the block or null.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00435FA0": {
+    "name": "MainFrame::vfunc_26",
+    "class": "MainFrame",
+    "signature": "void __thiscall fn_00435FA0(uint32_t self)",
+    "summary": "Updates frame state and writes profile setting before forwarding to base handler",
+    "lifted_path": "lifted/classes/MainFrame.cpp"
+  },
   "0x00436A20": {
     "name": "findU32Iterator",
     "signature": "U32IterPair* __cdecl sub_00436A20( U32IterPair* out, uint32_t tag, uint32_t* first, uint32_t /*unused_arg4*/, uint32_t* last, const uint32_t* val_ptr)",
@@ -32759,6 +32766,13 @@
     "class": "\u003cClassName\u003e (unknown)",
     "signature": "void* fn_0063DAB0(void* self)",
     "summary": "Calls base constructor sub_0062CD30, sets vtable to 0x009792f4, zeroes float fields at +0x3C/+0x40/+0x44, returns this.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
+  "0x0063DDF0": {
+    "name": "sub_0063DDF0_initVtableAndZeroFloats",
+    "class": "\u003cClass\u003e (unknown; vtable 0x009794b4 not yet mapped to a class)",
+    "signature": "void* fn_0063DDF0(void* self)",
+    "summary": "Runs base constructor ext_0062CD30, sets vtable to 0x009794b4, zeroes floats at +0x38/+0x3c/+0x40, returns this.",
     "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
   "0x0063DFF4": {
