@@ -1,0 +1,13 @@
+{
+  "va": "0x00404BE0",
+  "size": 94,
+  "orig_symbol": "sub_00404BE0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "InitWithMode",
+  "signature": "void* fn_00404BE0(void* self, uint32_t mode)",
+  "summary": "Initializes the object's vtable and state fields, applies mode via sub_00404720, and returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:20:17Z"
+}

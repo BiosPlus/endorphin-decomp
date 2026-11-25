@@ -485,6 +485,12 @@
     "summary": "Stores two pointer-sized args at this+0x60/+0x64, then sends WM_SETFONT (0x30) to the control handle at this+0x20 using the font from the first non-null argument.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00404BE0": {
+    "name": "InitWithMode",
+    "signature": "void* fn_00404BE0(void* self, uint32_t mode)",
+    "summary": "Initializes the object's vtable and state fields, applies mode via sub_00404720, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00404C40": {
     "name": "GetConstant_006A5ED2",
     "signature": "extern \"C\" int* __cdecl fn_00404C40()",

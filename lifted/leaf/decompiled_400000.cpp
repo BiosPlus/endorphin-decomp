@@ -1598,3 +1598,32 @@ void __stdcall fn_0040FE10(uint32_t dc, uint32_t rect_left, uint32_t rect_top, u
     set_color(dc, old_color);
 }
 } // namespace lift_0040FE10
+
+// [0x00404BE0] sub_00404BE0 (94 bytes)
+namespace lift_00404BE0 {
+// Known callee 0x00404720: sub_00404720 (Sets mode at +0x5c if <= 2, toggles style 0x2000 via MFC80!ord_4115 and invalidates window if +0x20 is non-null.)
+extern int32_t ext_00404720(void* self, uint32_t mode);
+// Known callee 0x006A5C6E: thunk_MFC80_ord_572 (IAT jump thunk forwarding to MFC80!ord_572.)
+extern void ext_006A5C6E();
+
+// @name InitWithMode
+// @summary Initializes the object's vtable and state fields, applies mode via sub_00404720, and returns self.
+// @field  +0x00 uint32_t __vftable
+// @field  +0x54 int32_t field_0x54
+// @field  +0x5c uint32_t field_0x5c
+// @field  +0x60 uint32_t field_0x60
+// @field  +0x64 uint32_t field_0x64
+void* fn_00404BE0(void* self, uint32_t mode) {
+    ext_006A5C6E();
+
+    lift_field<uint32_t>(self, 0x60) = 0;
+    lift_field<uint32_t>(self, 0x64) = 0;
+    lift_field<uint32_t>(self, 0x5c) = 0;
+
+    lift_field<uint32_t>(self, 0x00) = 0x92979c;
+    lift_field<int32_t>(self, 0x54) = -1;
+
+    ext_00404720(self, mode);
+    return self;
+}
+} // namespace lift_00404BE0
