@@ -1,0 +1,13 @@
+{
+  "va": "0x007CA280",
+  "size": 103,
+  "orig_symbol": "sub_007CA280",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "Vec3ComponentMinNanToA",
+  "signature": "static inline void Vec3SelectComponentwise(const float* a, const float* b, float* out)",
+  "summary": "Componentwise select of three floats: out[i] = (a[i] \u003e b[i]) ? b[i] : a[i]; ties and unordered (NaN) pick a.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:48:20Z"
+}

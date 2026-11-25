@@ -1558,3 +1558,20 @@ void fn_007C9490(uint8_t* self, int32_t flag, float x, float y, float z) {
     }
 }
 } // namespace lift_007C9490
+
+// [0x007CA280]
+namespace lift_007CA280 {
+// @name Vec3ComponentMinNanToA
+// @summary Componentwise select of three floats: out[i] = (a[i] > b[i]) ? b[i] : a[i]; ties and unordered (NaN) pick a.
+// Register convention: a = ecx, b = edx, out = esi. Returns void.
+
+static inline void Vec3SelectComponentwise(const float* a, const float* b, float* out) {
+    out[0] = (a[0] > b[0]) ? b[0] : a[0];
+    out[1] = (a[1] > b[1]) ? b[1] : a[1];
+    out[2] = (a[2] > b[2]) ? b[2] : a[2];
+}
+
+void sub_007CA280(const float* a /* ecx */, const float* b /* edx */, float* out /* esi */) {
+    Vec3SelectComponentwise(a, b, out);
+}
+} // namespace lift_007CA280
