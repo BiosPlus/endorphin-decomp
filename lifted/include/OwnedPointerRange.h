@@ -8,6 +8,6 @@
 // Recovered field layout for OwnedPointerRange:
 namespace lifted_layout {
 struct OwnedPointerRange_Fields {
-    // +0x8   void**                   field_0x08  (evidence: 0x004A5F70)
+    // +0x8   void**                   field_0x08  (evidence: 0x004A5F70, 0x004EFA50, 0x00675240)
 };
 } // namespace lifted_layout
