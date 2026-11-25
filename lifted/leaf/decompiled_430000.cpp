@@ -3083,3 +3083,50 @@ void fn_0043B560(uint32_t* arr, int32_t hole, int32_t top, uint32_t value) {
     arr[hole] = value;
 }
 } // namespace lift_0043B560
+
+// [0x0043D710] sub_0043D710 (104 bytes)
+namespace lift_0043D710 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* p);
+
+// @name Unknown::ReleasePointerArrayAndReset
+// @class Unknown
+// @summary Resets a counter, then releases each non-null pointer in the owned pointer array (last to first), releases the array itself, and zeroes the array pointer and count.
+// @field Unknown +0x04 void** field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+void fn_0043D710(void* self) {
+    struct Layout {
+        uint8_t  field_0x00[4];
+        void**   field_0x04;
+        uint32_t field_0x08;
+        uint32_t field_0x0C;
+        uint32_t field_0x10;
+    };
+    auto* s = static_cast<Layout*>(self);
+
+    // Counter at +0x10 counts down to zero; reaching zero clears +0x0C.
+    if (s->field_0x10 != 0) {
+        s->field_0x10 = 0;
+        s->field_0x0C = 0;
+    }
+
+    // Release each non-null element, from index (count - 1) down to 0.
+    uint32_t i = s->field_0x08;
+    while (i > 0) {
+        --i;
+        void* elem = s->field_0x04[i];
+        if (elem != nullptr) {
+            ext_006A5C5C(elem);
+        }
+    }
+
+    // Release the array itself, then clear the array pointer and count.
+    if (s->field_0x04 != nullptr) {
+        ext_006A5C5C(s->field_0x04);
+    }
+    s->field_0x04 = nullptr;
+    s->field_0x08 = 0;
+}
+} // namespace lift_0043D710
