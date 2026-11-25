@@ -3055,3 +3055,31 @@ void fn_0043CF30(void* self) {
     ext_006A65F8(self, 1, value, 0, 1);
 }
 } // namespace lift_0043CF30
+
+// [0x0043B560] sub_0043B560 (103 bytes)
+namespace lift_0043B560 {
+// Known callee 0x004410C0: fn_004410C0 (difference of two rounded fields; returns ext_00441040(self) - ext_00441020(self), wrapping 32-bit)
+extern int32_t ext_004410C0(void* self);
+
+// @name PushHeapSiftUpByDiff
+// @summary Sift-up insertion of value into a heap of 32-bit element handles, using ext_004410C0 as the ordering key; stores value at the final hole.
+// (no class; no struct field offsets accessed, so no @field lines)
+void fn_0043B560(uint32_t* arr, int32_t hole, int32_t top, uint32_t value) {
+    auto as_self = [](uint32_t h) {
+        return reinterpret_cast<void*>(static_cast<uintptr_t>(h));
+    };
+
+    while (top < hole) {
+        int32_t parent = (hole - 1) / 2;
+        if (ext_004410C0(as_self(arr[parent])) <= 1) {
+            break;
+        }
+        if (ext_004410C0(as_self(value)) > 1) {
+            break;
+        }
+        arr[hole] = arr[parent];
+        hole = parent;
+    }
+    arr[hole] = value;
+}
+} // namespace lift_0043B560

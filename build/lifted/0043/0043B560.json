@@ -1,0 +1,13 @@
+{
+  "va": "0x0043B560",
+  "size": 103,
+  "orig_symbol": "sub_0043B560",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "PushHeapSiftUpByDiff",
+  "signature": "void fn_0043B560(uint32_t* arr, int32_t hole, int32_t top, uint32_t value)",
+  "summary": "Sift-up insertion of value into a heap of 32-bit element handles, using ext_004410C0 as the ordering key; stores value at the final hole.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:47:10Z"
+}

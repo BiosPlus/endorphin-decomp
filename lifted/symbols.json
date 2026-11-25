@@ -3637,6 +3637,12 @@
     "summary": "Copies four 32-bit floats (16 bytes) from the source block into self and returns self.",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
   },
+  "0x0043B560": {
+    "name": "PushHeapSiftUpByDiff",
+    "signature": "void fn_0043B560(uint32_t* arr, int32_t hole, int32_t top, uint32_t value)",
+    "summary": "Sift-up insertion of value into a heap of 32-bit element handles, using ext_004410C0 as the ordering key; stores value at the final hole.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043B6E0": {
     "name": "CopyDwordRange",
     "signature": "uint32_t* CopyDwordRange(const uint32_t* first, const uint32_t* last, uint32_t* d_first)",
