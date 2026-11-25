@@ -1,0 +1,22 @@
+{
+  "va": "0x0079DDC0",
+  "size": 64,
+  "orig_symbol": "sub_0079DDC0",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "Unknown::QueryInnerFlagByMode",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint8_t __thiscall fn_0079DDC0(void* self, uint32_t mode)",
+  "summary": "Dispatches on mode (stack arg): 0/1/2 call getters at +0xDC/+0xDD/+0xDE of the inner object and return their logical NOT; any other mode returns 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "inner"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:09:35Z"
+}

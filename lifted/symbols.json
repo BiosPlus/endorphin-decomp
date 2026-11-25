@@ -55244,6 +55244,13 @@
     "summary": "thiscall: stores one DWORD argument at +0x00, writes 0 to +0x08 and 0x3FF00000 to +0x0C (double 1.0 at +0x08), returns this.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x0079DDC0": {
+    "name": "Unknown::QueryInnerFlagByMode",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint8_t __thiscall fn_0079DDC0(void* self, uint32_t mode)",
+    "summary": "Dispatches on mode (stack arg): 0/1/2 call getters at +0xDC/+0xDD/+0xDE of the inner object and return their logical NOT; any other mode returns 1.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079DEC0": {
     "name": "Unknown::CheckSelectedSubobjectNonZero",
     "class": "Unknown",

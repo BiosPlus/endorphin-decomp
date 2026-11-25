@@ -479,3 +479,28 @@ uint8_t __fastcall fn_0079DEC0(void* self, int edx_unused, int selector) {
     }
 }
 } // namespace lift_0079DEC0
+
+// [0x0079DDC0] sub_0079DDC0 (64 bytes)
+namespace lift_0079DDC0 {
+extern uint8_t __fastcall ext_00714980(void* self);
+extern uint8_t __fastcall ext_007149B0(void* self);
+extern uint8_t __fastcall ext_007149D0(void* self);
+
+// @name Unknown::QueryInnerFlagByMode
+// @class Unknown
+// @summary Dispatches on mode (stack arg): 0/1/2 call getters at +0xDC/+0xDD/+0xDE of the inner object and return their logical NOT; any other mode returns 1.
+// @field Unknown +0x00 void* inner
+extern uint8_t __thiscall fn_0079DDC0(void* self, uint32_t mode) {
+    void* inner = *reinterpret_cast<void**>(self);
+    switch (mode) {
+    case 0:
+        return static_cast<uint8_t>(ext_00714980(inner) == 0);
+    case 1:
+        return static_cast<uint8_t>(ext_007149B0(inner) == 0);
+    case 2:
+        return static_cast<uint8_t>(ext_007149D0(inner) == 0);
+    default:
+        return 1;
+    }
+}
+} // namespace lift_0079DDC0
