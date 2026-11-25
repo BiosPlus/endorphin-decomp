@@ -3605,6 +3605,13 @@
     "summary": "Calls ext_00584C20 on a non-null object and stores the negated boolean result at +0x69",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x00444750": {
+    "name": "ForwardToWindowPair_00444750",
+    "class": "Unknown",
+    "signature": "void fn_00444750(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2)",
+    "summary": "Forwards three arguments to ext_004564A0, then, if the embedded object at self+0x15C is non-null and its +0x20 field is set, calls ext_006A5E4E with adjusted arguments.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00446740": {
     "name": "NodeView::vfunc_0_off_14C",
     "class": "NodeView",

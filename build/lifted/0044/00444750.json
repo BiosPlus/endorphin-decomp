@@ -1,0 +1,22 @@
+{
+  "va": "0x00444750",
+  "size": 68,
+  "orig_symbol": "sub_00444750",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "ForwardToWindowPair_00444750",
+  "class": "Unknown",
+  "signature": "void fn_00444750(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2)",
+  "summary": "Forwards three arguments to ext_004564A0, then, if the embedded object at self+0x15C is non-null and its +0x20 field is set, calls ext_006A5E4E with adjusted arguments.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x15C",
+      "type": "uint8_t[] embedded_subobject (address only; not dereferenced at this",
+      "name": "level)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:19:14Z"
+}

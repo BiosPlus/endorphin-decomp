@@ -1744,3 +1744,27 @@ extern void __thiscall fn_0044ACE0(uintptr_t self, uintptr_t arg1, uintptr_t arg
     }
 }
 } // namespace lift_0044ACE0
+
+// [0x00444750] sub_00444750 (68 bytes)
+namespace lift_00444750 {
+// Known callee 0x004564A0: ForwardToFirstChildWindow (If flag 0x20 is set on self, looks up the first child HWND of self->+0x20 via GetWindow(GW_CHILD) and forwards to the MFC80 wrapper pair, passing the two stack arguments.)
+// Original convention: __thiscall (self in ECX), three stack arguments.
+extern void ext_004564A0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2);
+// Known callee 0x006A5E4E: thunk_MFC80_ord_6065 (IAT jump thunk forwarding to MFC80!ord_6065.)
+// Original convention: six stack arguments, callee-cleaned (stdcall-style).
+extern void ext_006A5E4E(uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5);
+
+// @name ForwardToWindowPair_00444750
+// @class Unknown
+// @summary Forwards three arguments to ext_004564A0, then, if the embedded object at self+0x15C is non-null and its +0x20 field is set, calls ext_006A5E4E with adjusted arguments.
+// @field Unknown +0x15C uint8_t[] embedded_subobject (address only; not dereferenced at this level)
+// @field Unknown +0x15C+0x20 uint32_t subobject_flags_0x20
+void fn_00444750(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2) {
+    ext_004564A0(self, arg0, arg1, arg2);
+
+    void* sub = static_cast<uint8_t*>(self) + 0x15C;
+    if (sub != nullptr && lift_field<uint32_t>(sub, 0x20) != 0) {
+        ext_006A5E4E(0, 2, 2, arg1 - 4, arg2 - 4, 4);
+    }
+}
+} // namespace lift_00444750
