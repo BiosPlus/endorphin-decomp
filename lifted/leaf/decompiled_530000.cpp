@@ -1217,3 +1217,22 @@ void fn_00536230(uint8_t* self, const void* owner, uint32_t* first, uint32_t* la
     }
 }
 } // namespace lift_00536230
+
+// [0x00536540]
+namespace lift_00536540 {
+extern void __fastcall ext_00505D00(void* self);
+extern void __fastcall ext_00493D90(void* self);
+extern void __fastcall ext_0065C660(void* self);
+
+// @name Unknown::Destroy_00536540
+// @class Unknown
+// @summary Destroys member subobjects at +0x18 and +0x4, then calls base/cleanup ext_0065C660.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x18 void* field_0x18
+extern void __fastcall fn_00536540(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    ext_00505D00(base + 0x18);
+    ext_00493D90(base + 0x4);
+    ext_0065C660(self);
+}
+} // namespace lift_00536540

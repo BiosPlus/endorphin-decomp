@@ -1,0 +1,28 @@
+{
+  "va": "0x00536540",
+  "size": 89,
+  "orig_symbol": "sub_00536540",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::Destroy_00536540",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __fastcall fn_00536540(void* self)",
+  "summary": "Destroys member subobjects at +0x18 and +0x4, then calls base/cleanup ext_0065C660.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:21:42Z"
+}

@@ -12250,6 +12250,12 @@
     "summary": "For each 32-bit pointer in the range [this+0x0C, this+0x10) (stepping by 4), copies byte +2 of the pointed-to object into byte +1 of that object; asserts the range is ordered.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004B4D30": {
+    "name": "sub_004B4D30",
+    "signature": "void __thiscall sub_004B4D30(void* self)",
+    "summary": "Iterates over a vector of pointers at +0x8 and sets each element's byte at +0x1 to (byte at +0x2 == 0)",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B5160": {
     "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand::vfunc_0",
     "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand",
@@ -19603,6 +19609,13 @@
     "signature": "extern \"C\" void fn_00536530(void)",
     "summary": "Pure jump thunk forwarding to sub_00505D00.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x00536540": {
+    "name": "Unknown::Destroy_00536540",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_00536540(void* self)",
+    "summary": "Destroys member subobjects at +0x18 and +0x4, then calls base/cleanup ext_0065C660.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
   "0x00536CC0": {
     "name": "OglRenderer::vfunc_90",
