@@ -52053,6 +52053,13 @@
     "summary": "Copies bytes from [first, last) to dst; returns dst advanced past the copied bytes. Null dst skips stores but still advances the count.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x006989E0": {
+    "name": "ByteVector::at",
+    "class": "ByteVector",
+    "signature": "uint32_t __thiscall fn_006989E0(void* self, uint32_t index)",
+    "summary": "Returns a pointer to the byte at index in a vector-like container after bounds and iterator validation.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00698A40": {
     "name": "copyByteRangeForward",
     "signature": "uint32_t fn_00698A40(uint32_t a1, uint32_t first, uint32_t a3, uint32_t last, uint32_t dest)",
@@ -70167,6 +70174,12 @@
     "signature": "extern \"C\" void* __fastcall fn_00783250(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00783270 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
+  "0x00783270": {
+    "name": "sub_00783270",
+    "signature": "void fn_00783270(void* self)",
+    "summary": "Destructor-like cleanup: sets vtable 0x00996e80, closes owned file, frees +0x04 via MFC80_ord_764, and destroys +0x0c.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
   "0x007833F0": {
     "name": "CloseOwnedFileIfOpen",

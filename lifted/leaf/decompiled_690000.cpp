@@ -1309,3 +1309,42 @@ bool fn_00699B80(void* self, uint32_t count) {
     return true;
 }
 } // namespace lift_00699B80
+
+// [0x006989E0]
+namespace lift_006989E0 {
+[[noreturn]] void ext_0067F5B0();
+extern void (*mem_00925134)(void);
+
+// @name ByteVector::at
+// @class ByteVector
+// @summary Returns a pointer to the byte at index in a vector-like container after bounds and iterator validation.
+// @field ByteVector +0x04 uint32_t m_first
+// @field ByteVector +0x08 uint32_t m_last
+uint32_t __thiscall fn_006989E0(void* self, uint32_t index) {
+    auto* base = static_cast<const uint8_t*>(self);
+    uint32_t first = 0;
+    uint32_t last = 0;
+    std::memcpy(&first, base + 0x04, sizeof(first));
+    if (first == 0) {
+        ext_0067F5B0();
+    }
+    std::memcpy(&last, base + 0x08, sizeof(last));
+    if ((last - first) <= index) {
+        ext_0067F5B0();
+    }
+    if (first > last) {
+        mem_00925134();
+    }
+    uint32_t elem = first + index;
+    std::memcpy(&last, base + 0x08, sizeof(last));
+    std::memcpy(&first, base + 0x04, sizeof(first));
+    if (elem > last || elem < first) {
+        mem_00925134();
+    }
+    std::memcpy(&last, base + 0x08, sizeof(last));
+    if (elem >= last) {
+        mem_00925134();
+    }
+    return elem;
+}
+} // namespace lift_006989E0

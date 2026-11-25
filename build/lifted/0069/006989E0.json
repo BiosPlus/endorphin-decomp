@@ -1,0 +1,28 @@
+{
+  "va": "0x006989E0",
+  "size": 85,
+  "orig_symbol": "sub_006989E0",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "ByteVector::at",
+  "class": "ByteVector",
+  "signature": "uint32_t __thiscall fn_006989E0(void* self, uint32_t index)",
+  "summary": "Returns a pointer to the byte at index in a vector-like container after bounds and iterator validation.",
+  "fields": [
+    {
+      "class": "ByteVector",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "m_first"
+    },
+    {
+      "class": "ByteVector",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "m_last"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@medium",
+  "lifted_at": "2026-11-25T06:28:43Z"
+}
