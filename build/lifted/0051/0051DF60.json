@@ -1,0 +1,21 @@
+{
+  "va": "0x0051DF60",
+  "size": 81,
+  "orig_symbol": "sub_0051DF60",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "FindFirstEntryMatchingKey",
+  "signature": "uint8_t* fn_0051DF60(uint8_t* begin, uint8_t* end, uint32_t key)",
+  "summary": "Scans entries from begin to end (stride 0x168) and returns the first entry whose subobject's virtual method result matches key, or end if none match.",
+  "fields": [
+    {
+      "class": "Entry",
+      "offset": "+0x154",
+      "type": "void*",
+      "name": "field_0x154"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:59:32Z"
+}

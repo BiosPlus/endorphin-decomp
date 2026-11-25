@@ -824,3 +824,45 @@ uint8_t* __cdecl fn_0051A670(uint8_t* first, uint8_t* last, const void* value) {
     return first;
 }
 } // namespace lift_0051A670
+
+// [0x0051DF60] sub_0051DF60 (81 bytes)
+namespace lift_0051DF60 {
+extern uint32_t mem_00924FC4;
+
+// @name FindFirstEntryMatchingKey
+// @summary Scans entries from begin to end (stride 0x168) and returns the first entry whose subobject's virtual method result matches key, or end if none match.
+// @field Entry +0x154 void* field_0x154
+uint8_t* fn_0051DF60(uint8_t* begin, uint8_t* end, uint32_t key) {
+    if (begin == end) {
+        return begin;
+    }
+
+    auto pred = reinterpret_cast<int (*)(uint32_t, uint32_t)>(
+        static_cast<uintptr_t>(mem_00924FC4));
+
+    uint8_t* p = begin;
+    do {
+        uint8_t* entry = p;
+        uint32_t subRaw = 0;
+        std::memcpy(&subRaw, entry + 0x154, sizeof(subRaw));
+        uint8_t* sub = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(subRaw)) + 8;
+
+        uint32_t vtblRaw = 0;
+        std::memcpy(&vtblRaw, sub, sizeof(vtblRaw));
+        uint8_t* vtbl = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(vtblRaw));
+
+        uint32_t slotRaw = 0;
+        std::memcpy(&slotRaw, vtbl + 4, sizeof(slotRaw));
+        auto method = reinterpret_cast<uint32_t (*)(uint8_t*, uint32_t)>(
+            static_cast<uintptr_t>(slotRaw));
+
+        uint32_t value = method(sub, key);
+        if (pred(value, key) != 0) {
+            return p;
+        }
+        p += 0x168;
+    } while (p != end);
+
+    return end;
+}
+} // namespace lift_0051DF60

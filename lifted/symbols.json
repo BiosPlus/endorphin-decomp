@@ -17658,6 +17658,12 @@
     "summary": "Returns (end - begin) / 12 for the 12-byte element range at +0x4/+0x8, or 0 if begin is null.",
     "lifted_path": "lifted/leaf/tiny_510000.cpp"
   },
+  "0x0051DF60": {
+    "name": "FindFirstEntryMatchingKey",
+    "signature": "uint8_t* fn_0051DF60(uint8_t* begin, uint8_t* end, uint32_t key)",
+    "summary": "Scans entries from begin to end (stride 0x168) and returns the first entry whose subobject's virtual method result matches key, or end if none match.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x0051E560": {
     "name": "sub_0051E560",
     "class": "Unknown",
