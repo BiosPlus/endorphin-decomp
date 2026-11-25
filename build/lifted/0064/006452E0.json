@@ -1,0 +1,28 @@
+{
+  "va": "0x006452E0",
+  "size": 103,
+  "orig_symbol": "sub_006452E0",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "Unknown::OffsetMatrixTranslationAndDispatch",
+  "class": "Unknown",
+  "signature": "inline void* load_ptr(const void* base, ptrdiff_t offset)",
+  "summary": "Copies a 4x4 matrix from a sub-object, adds (dx, dy, dz) to its translation row, and forwards it to a virtual method on this-\u003efield_0x04.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:48:41Z"
+}

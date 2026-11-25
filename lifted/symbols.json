@@ -40637,6 +40637,13 @@
     "summary": "Tail-call virtual method at vtable +0x1c on delegate at +0x04",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x006452E0": {
+    "name": "Unknown::OffsetMatrixTranslationAndDispatch",
+    "class": "Unknown",
+    "signature": "inline void* load_ptr(const void* base, ptrdiff_t offset)",
+    "summary": "Copies a 4x4 matrix from a sub-object, adds (dx, dy, dz) to its translation row, and forwards it to a virtual method on this-\u003efield_0x04.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00645520": {
     "name": "MagnetJoint::vfunc_0_off_4",
     "class": "MagnetJoint",

@@ -2036,3 +2036,52 @@ void fn_00648790(void* self) {
     *field54 = nullptr;
 }
 } // namespace lift_00648790
+
+// [0x006452E0] sub_006452E0 (103 bytes)
+namespace lift_006452E0 {
+// Known callee 0x00647F00: sub_00647F00 (Auto-lifted identical-shape clone of 0x00648480 (GetIndirectField_0x5c_0x00).)
+// Takes its receiver in ecx and returns a pointer to a 4x4 float matrix.
+extern void* ext_00647F00(void* self);
+
+// @name Unknown::OffsetMatrixTranslationAndDispatch
+// @class Unknown
+// @summary Copies a 4x4 matrix from a sub-object, adds (dx, dy, dz) to its translation row, and forwards it to a virtual method on this->field_0x04.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 void* field_0x04
+
+namespace {
+
+// 32-bit pointer load: the target stores pointers as 4-byte fields.
+inline void* load_ptr(const void* base, ptrdiff_t offset) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, offset)));
+}
+
+// Virtual method at vtable slot 0xAC: thiscall with one stack argument, returns a 32-bit value.
+using MatrixMethod = uint32_t (*)(void* self, const float* matrix);
+
+} // namespace
+
+uint32_t fn_006452E0(void* self, float dx, float dy, float dz, uint32_t /*unused_stack_arg*/) {
+    // Resolve the receiver chain: this->field_0x00 -> +0x158 -> +0xAC.
+    void* p = load_ptr(self, 0x00);
+    void* q = load_ptr(p, 0x158);
+    void* receiver = load_ptr(q, 0xAC);
+
+    // Fetch the source matrix and copy it locally (16 floats).
+    void* src = ext_00647F00(receiver);
+    float matrix[16];
+    std::memcpy(matrix, src, sizeof(matrix));
+
+    // Offset the translation row (elements 12..14).
+    matrix[12] = dx + matrix[12];
+    matrix[13] = dy + matrix[13];
+    matrix[14] = dz + matrix[14];
+
+    // Dispatch to vtable slot 0xAC of this->field_0x04.
+    void* sink = load_ptr(self, 0x04);
+    void* sink_vtbl = load_ptr(sink, 0x00);
+    uint32_t slot = lift_field<uint32_t>(sink_vtbl, 0xAC);
+    auto method = reinterpret_cast<MatrixMethod>(static_cast<uintptr_t>(slot));
+    return method(sink, matrix);
+}
+} // namespace lift_006452E0
