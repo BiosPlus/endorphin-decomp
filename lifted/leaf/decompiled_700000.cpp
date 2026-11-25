@@ -2033,3 +2033,38 @@ void __thiscall sub_007025C0(uint8_t* self, uint32_t mode) {
     }
 }
 } // namespace lift_007025C0
+
+// [0x00708D10]
+namespace lift_00708D10 {
+// @name Unknown::FindNthMatchingItem
+// @class Unknown
+// @summary Returns the Nth item in the array at +0xd0 for which CompareSubObjectWith0x40 returns non-zero, or nullptr if not found.
+// @field Unknown +0xc0 int32_t field_0xc0
+// @field Unknown +0xd0 void** field_0xd0
+
+
+extern uint8_t ext_00711A80(void* self);
+
+extern void* fn_00708D10(void* self, int32_t target_index) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    int32_t count = *reinterpret_cast<int32_t*>(base + 0xc0);
+    if (count <= 0) {
+        return nullptr;
+    }
+
+    int32_t match_count = 0;
+    for (int32_t i = 0; i < count; ++i) {
+        void** items = *reinterpret_cast<void***>(base + 0xd0);
+        void* item = items[i];
+        if (ext_00711A80(item) != 0) {
+            if (target_index == match_count) {
+                return (*reinterpret_cast<void***>(base + 0xd0))[i];
+            }
+            ++match_count;
+        }
+        count = *reinterpret_cast<int32_t*>(base + 0xc0);
+    }
+
+    return nullptr;
+}
+} // namespace lift_00708D10
