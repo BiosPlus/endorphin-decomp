@@ -1507,3 +1507,45 @@ void* fn_00622B40(void* self, uint32_t a1, uint32_t a2, uint32_t a3, const void*
     return self;
 }
 } // namespace lift_00622B40
+
+// [0x00629D30] sub_00629D30 (86 bytes)
+namespace lift_00629D30 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000();
+// Known callee 0x00594010: sub_00594010 (Member forwarding thunk: loads subobject pointer at +0xF8 and tail-calls sub_00642650.)
+extern float ext_00594010(void* self);
+
+// @name Unknown::updateScaledRatio_00629D30
+// @class Unknown
+// @summary Samples two floats (virtual getter on a sub-object, and a free-function/member pair), stores their offsets from this->field_0x34/0x38 as the new field_0x34/0x38, and writes their ratio to field_0x30.
+// @field Unknown +0x28 void* field_0x28
+// @field Unknown +0x30 float field_0x30
+// @field Unknown +0x34 float field_0x34
+// @field Unknown +0x38 float field_0x38
+void fn_00629D30(void* self) {
+    auto* const base = static_cast<uint8_t*>(self);
+
+    // obj = self->field_0x28->field_0x20C->field_0x234 (nested pointer chain, offsets on other classes)
+    void* p28 = lift_field<void*>(base, 0x28);
+    void* p20c = lift_field<void*>(p28, 0x20C);
+    void* obj = lift_field<void*>(p20c, 0x234);
+
+    // a = obj->vtable[0x20 / 4]( 0 )  (virtual getter returning float)
+    void** vtable = *static_cast<void***>(obj);
+    auto getter = reinterpret_cast<float (*)(void*, int32_t)>(vtable[0x20 / sizeof(void*)]);
+    float a = getter(obj, 0);
+
+    // b = ext_00594010( ext_00594000() )
+    int32_t key = ext_00594000();
+    float b = ext_00594010(reinterpret_cast<void*>(static_cast<intptr_t>(key)));
+
+    float& f30 = lift_field<float>(base, 0x30);
+    float& f34 = lift_field<float>(base, 0x34);
+    float& f38 = lift_field<float>(base, 0x38);
+
+    float ratio = (a - f34) / (b - f38);
+    f30 = ratio;
+    f38 = b;
+    f34 = a;
+}
+} // namespace lift_00629D30

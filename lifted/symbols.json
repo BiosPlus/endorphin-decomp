@@ -33830,6 +33830,13 @@
     "summary": "Initializes base via ext_005FF240, zeroes floats at +0x34/+0x38, sets vtable to 0x0097852C, returns this.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x00629D30": {
+    "name": "Unknown::updateScaledRatio_00629D30",
+    "class": "Unknown",
+    "signature": "void fn_00629D30(void* self)",
+    "summary": "Samples two floats (virtual getter on a sub-object, and a free-function/member pair), stores their offsets from this-\u003efield_0x34/0x38 as the new field_0x34/0x38, and writes their ratio to field_0x30.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00629DF0": {
     "name": "ComputeFloatIntoField30",
     "class": "\u003cunknown\u003e (owning class not yet identified)",
