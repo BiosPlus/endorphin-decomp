@@ -2396,6 +2396,12 @@
     "summary": "Stdcall (callee pops 4): compares the std::string passed on the stack against the global C-string at mem_00ACD9E0 via operator!=, returning the bool result.",
     "lifted_path": "lifted/leaf/tiny_420000.cpp"
   },
+  "0x00427210": {
+    "name": "findMatchingString",
+    "signature": "uint32_t __stdcall sub_00427210(uint32_t str_ptr)",
+    "summary": "Searches a 54-entry string table for a match against a std::string and returns the matching C-string pointer or 0.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x00427370": {
     "name": "findLastBeforeFlaggedChild",
     "signature": "uintptr_t sub_00427370(uintptr_t node)",
