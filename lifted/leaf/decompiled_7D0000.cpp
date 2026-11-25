@@ -920,3 +920,31 @@ void* fn_007D83B0(void* self, void* arg2) {
     return self;
 }
 } // namespace lift_007D83B0
+
+// [0x007D4920] sub_007D4920 (76 bytes)
+namespace lift_007D4920 {
+// Node addresses are guest addresses; each node is a pair of guest addresses
+// (node[0], node[1]). Reads go through the guest address as a pointer.
+// @name SearchPairTree
+// @summary Depth-first search over pair nodes from node until end (returns 1) or sentinel (returns 0).
+
+static inline uint32_t read_guest_u32(uint32_t addr) {
+    return *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(addr));
+}
+
+int fn_007D4920(uint32_t sentinel, uint32_t node, uint32_t end) {
+    if (node == sentinel) {
+        return 0;
+    }
+    if (node == end) {
+        return 1;
+    }
+    if (fn_007D4920(sentinel, read_guest_u32(node), end) != 0) {
+        return 1;
+    }
+    if (fn_007D4920(sentinel, read_guest_u32(node + 4), end) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_007D4920

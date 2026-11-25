@@ -59939,6 +59939,12 @@
     "summary": "Rotates node x's left child up into x's place (right rotation); updates child/parent links.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007D4920": {
+    "name": "SearchPairTree",
+    "signature": "static inline uint32_t read_guest_u32(uint32_t addr)",
+    "summary": "Depth-first search over pair nodes from node until end (returns 1) or sentinel (returns 0).",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007D4AA0": {
     "name": "Unknown::FindLinkPredecessor",
     "class": "Unknown",
