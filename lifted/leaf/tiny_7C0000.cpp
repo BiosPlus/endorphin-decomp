@@ -1235,3 +1235,13 @@ float fn_007CB970(void* self) {
     return lift_field<float>(self, 0x10);
 }
 } // namespace lift_007CB970
+
+// [0x007CC9F0] sub_007CC9F0 (8 bytes)
+namespace lift_007CC9F0 {
+// @name readDwordAt0x0C
+// @summary Returns the 32-bit value stored at offset 0x0C of the object passed as the first argument.
+// @field Unknown +0x0C uint32_t field_0x0C
+uint32_t fn_007CC9F0(void* self) {
+    return lift_field<uint32_t>(self, 0x0C);
+}
+} // namespace lift_007CC9F0

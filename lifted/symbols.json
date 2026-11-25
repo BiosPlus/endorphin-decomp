@@ -66837,6 +66837,12 @@
     "summary": "Subtracts 0x100 from the 32-bit value that the pointer argument refers to (cdecl, returns nothing).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007CC9F0": {
+    "name": "readDwordAt0x0C",
+    "signature": "uint32_t fn_007CC9F0(void* self)",
+    "summary": "Returns the 32-bit value stored at offset 0x0C of the object passed as the first argument.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007CCA20": {
     "name": "DispatchObject::dispatchThroughTable",
     "class": "DispatchObject",

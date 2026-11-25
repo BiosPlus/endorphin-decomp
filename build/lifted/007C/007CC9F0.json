@@ -1,0 +1,21 @@
+{
+  "va": "0x007CC9F0",
+  "size": 8,
+  "orig_symbol": "sub_007CC9F0",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "readDwordAt0x0C",
+  "signature": "uint32_t fn_007CC9F0(void* self)",
+  "summary": "Returns the 32-bit value stored at offset 0x0C of the object passed as the first argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:14:48Z"
+}
