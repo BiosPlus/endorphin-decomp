@@ -14,6 +14,7 @@ extern const uint8_t mem_007B7084[12] = {
 };
 } // namespace lift_007B7084
 #include <cstdlib>
+#include <bit>
 
 // [0x007B5224] sub_007B5224 (16 bytes)
 namespace lift_007B5224 {
@@ -1676,3 +1677,32 @@ void sub_007BA200(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
     mem_write32(arg2 + 0x8, val);
 }
 } // namespace lift_007BA200
+
+// [0x007B0FC0]
+namespace lift_007B0FC0 {
+// @name readTiffFieldFloat
+// @summary Reads a masked (and shifted if big-endian 'MM') 32-bit field value and returns it as a float.
+// @field TiffReader +0x150 uint16_t endianMagic
+// @field TiffReader +0x15c uint32_t* shiftTable
+// @field TiffReader +0x160 uint32_t* maskTable
+// @field TiffEntry +0x02 uint16_t typeIndex
+// @field TiffEntry +0x08 uint32_t rawValue
+
+
+uint16_t mem_r16(uint32_t addr);
+uint32_t mem_r32(uint32_t addr);
+
+float sub_007B0FC0(uint32_t reader, uint32_t entry) {
+    uint32_t idx = mem_r16(entry + 0x2);
+    uint32_t val = mem_r32(entry + 0x8);
+    uint32_t mask = mem_r32(mem_r32(reader + 0x160) + idx * 4);
+
+    if (mem_r16(reader + 0x150) == 0x4d4d) {
+        uint32_t shift = mem_r32(mem_r32(reader + 0x15c) + idx * 4);
+        val >>= (shift & 0x1f);
+    }
+
+    uint32_t result = val & mask;
+    return std::bit_cast<float>(result);
+}
+} // namespace lift_007B0FC0
