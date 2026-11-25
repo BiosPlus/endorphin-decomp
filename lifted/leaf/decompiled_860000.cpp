@@ -651,3 +651,35 @@ int fn_00869330(const unsigned char* s1, const unsigned char* s2, unsigned int n
     return 0;
 }
 } // namespace lift_00869330
+
+// [0x00869F90]
+namespace lift_00869F90 {
+// @name sub_00869F90
+// @summary Word-wise subtract-with-borrow over a uint32 array; returns final borrow flag (0/1). Returns 0 when count == 0.
+
+uint32_t sub_00869F90(uint32_t* dst, const uint32_t* src1, const uint32_t* src2, uint32_t count) {
+    uint32_t prev = 0;
+    if (count == 0) {
+        return 0;
+    }
+    do {
+        uint32_t a = *src1++;
+        uint32_t t = a - prev;
+        uint32_t result;
+        if (t == 0xFFFFFFFFu) {
+            uint32_t b = *src2;
+            result = t - b;
+            // prev unchanged on this path
+        } else {
+            uint32_t b = *src2;
+            result = t - b;
+            uint32_t nb = 0xFFFFFFFFu - b;
+            prev = (nb < result) ? 1u : 0u;
+        }
+        *dst++ = result;
+        ++src2;
+        --count;
+    } while (count != 0);
+    return prev;
+}
+} // namespace lift_00869F90

@@ -1,0 +1,13 @@
+{
+  "va": "0x00869F90",
+  "size": 80,
+  "orig_symbol": "sub_00869F90",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "sub_00869F90",
+  "signature": "uint32_t sub_00869F90(uint32_t* dst, const uint32_t* src1, const uint32_t* src2, uint32_t count)",
+  "summary": "Word-wise subtract-with-borrow over a uint32 array; returns final borrow flag (0/1). Returns 0 when count == 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:58:11Z"
+}

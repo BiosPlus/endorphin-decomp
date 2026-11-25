@@ -62787,6 +62787,12 @@
     "summary": "Zeroes a bitset array of uint32_t words and sets a single bit if within bounds.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x00869F90": {
+    "name": "sub_00869F90",
+    "signature": "uint32_t sub_00869F90(uint32_t* dst, const uint32_t* src1, const uint32_t* src2, uint32_t count)",
+    "summary": "Word-wise subtract-with-borrow over a uint32 array; returns final borrow flag (0/1). Returns 0 when count == 0.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086AF00": {
     "name": "AllDwordsZero",
     "signature": "extern \"C\" uint32_t __cdecl fn_0086AF00(const uint32_t* data, uint32_t count)",
