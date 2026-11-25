@@ -1,0 +1,14 @@
+{
+  "va": "0x006B28A0",
+  "size": 86,
+  "orig_symbol": "GWCPropertyEditFeel::vfunc_6",
+  "src_path": "src/classes/GWCPropertyEditFeel.cpp",
+  "lifted_path": "lifted/classes/GWCPropertyEditFeel.cpp",
+  "name": "GWCPropertyEditFeel::vfunc_6",
+  "class": "GWCPropertyEditFeel",
+  "signature": "void* fn_006B28A0(void* self)",
+  "summary": "Allocates a 0x6C-byte object and initializes it; returns the result, or null if allocation fails.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:12:14Z"
+}
