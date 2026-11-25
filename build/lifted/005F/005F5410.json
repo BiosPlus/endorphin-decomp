@@ -1,0 +1,33 @@
+{
+  "va": "0x005F5410",
+  "size": 81,
+  "orig_symbol": "sub_005F5410",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "CopyThisFloatTripletToGlobals",
+  "signature": "extern \"C\" void __thiscall sub_005F5410(void* self)",
+  "summary": "On first call, zeroes three float globals and sets init flag bit 0 in mem_00B46878; then copies this-\u003e+0x170/+0x174/+0x178 into mem_00B4686C/mem_00B46870/mem_00B46874. thiscall, this in ecx.",
+  "fields": [
+    {
+      "class": "\u003cunknown-class\u003e",
+      "offset": "+0x170",
+      "type": "float",
+      "name": "field_0x170"
+    },
+    {
+      "class": "\u003cunknown-class\u003e",
+      "offset": "+0x174",
+      "type": "float",
+      "name": "field_0x174"
+    },
+    {
+      "class": "\u003cunknown-class\u003e",
+      "offset": "+0x178",
+      "type": "float",
+      "name": "field_0x178"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:59:37Z"
+}

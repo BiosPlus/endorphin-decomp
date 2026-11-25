@@ -288,3 +288,30 @@ void* fn_005F5350(void* self, const void* src) {
     return self;
 }
 } // namespace lift_005F5350
+
+// [0x005F5410]
+namespace lift_005F5410 {
+// @name CopyThisFloatTripletToGlobals
+// @summary On first call, zeroes three float globals and sets init flag bit 0 in mem_00B46878; then copies this->+0x170/+0x174/+0x178 into mem_00B4686C/mem_00B46870/mem_00B46874. thiscall, this in ecx.
+// @field <unknown-class> +0x170 float field_0x170
+// @field <unknown-class> +0x174 float field_0x174
+// @field <unknown-class> +0x178 float field_0x178
+
+extern uint32_t mem_00B46878;
+extern float mem_00B4686C;
+extern float mem_00B46870;
+extern float mem_00B46874;
+
+extern void __thiscall sub_005F5410(void* self) {
+    if ((mem_00B46878 & 1u) == 0) {
+        mem_00B46874 = 0.0f;
+        mem_00B46870 = 0.0f;
+        mem_00B4686C = 0.0f;
+        mem_00B46878 |= 1u;
+    }
+
+    mem_00B4686C = lift_field<float>(self, 0x170);
+    mem_00B46870 = lift_field<float>(self, 0x174);
+    mem_00B46874 = lift_field<float>(self, 0x178);
+}
+} // namespace lift_005F5410

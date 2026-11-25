@@ -29779,6 +29779,12 @@
     "summary": "Copies a 4-byte flag (from src+4, or the byte at address 0 when src is null), two floats at +0x08/+0x0C, two floats at +0x10/+0x14, assigns the std::string at +0x18 from src+0x18, and copies the byte at +0x34; returns self.",
     "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
+  "0x005F5410": {
+    "name": "CopyThisFloatTripletToGlobals",
+    "signature": "extern \"C\" void __thiscall sub_005F5410(void* self)",
+    "summary": "On first call, zeroes three float globals and sets init flag bit 0 in mem_00B46878; then copies this-\u003e+0x170/+0x174/+0x178 into mem_00B4686C/mem_00B46870/mem_00B46874. thiscall, this in ecx.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005F57E0": {
     "name": "HelperGraphic::vfunc_1_off_158",
     "class": "HelperGraphic",
