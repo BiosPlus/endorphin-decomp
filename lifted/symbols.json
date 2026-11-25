@@ -56988,6 +56988,13 @@
     "summary": "Calls ext_007CA120 with this-\u003e+0x98 as first argument, this+0x12C as second, 0 as third, and arg2 as fourth; returns its result.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007C93A0": {
+    "name": "Unknown::DispatchSelectedSubobject",
+    "class": "Unknown",
+    "signature": "void fn_007C93A0(void* self, DWORD flag, [[maybe_unused]] DWORD unused_arg)",
+    "summary": "Calls ext_007CA120 with a DWORD field and the address of a subobject; flag selects the 0x94/0xEC pair (zero) or the 0x98/0x12C pair (non-zero).",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C9480": {
     "name": "sub_007C9480_virtualSlot0xA8Thunk",
     "signature": "uint32_t fn_007C9480(void* self)",

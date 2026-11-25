@@ -839,3 +839,26 @@ void fn_007CB010(void* self, float x) {
     lift_field<float>(self, 0x18) = std::sqrt(sum);
 }
 } // namespace lift_007CB010
+
+// [0x007C93A0] sub_007C93A0 (64 bytes)
+namespace lift_007C93A0 {
+extern void ext_007CA120(DWORD value, void* target);
+
+// @name Unknown::DispatchSelectedSubobject
+// @class Unknown
+// @summary Calls ext_007CA120 with a DWORD field and the address of a subobject; flag selects the 0x94/0xEC pair (zero) or the 0x98/0x12C pair (non-zero).
+// @field Unknown +0x94 DWORD field_0x94
+// @field Unknown +0x98 DWORD field_0x98
+// @field Unknown +0xEC BYTE field_0xEC
+// @field Unknown +0x12C BYTE field_0x12C
+void fn_007C93A0(void* self, DWORD flag, [[maybe_unused]] DWORD unused_arg) {
+    auto* base = static_cast<uint8_t*>(self);
+    if (flag == 0) {
+        DWORD v = *reinterpret_cast<DWORD*>(base + 0x94);
+        ext_007CA120(v, base + 0xEC);
+    } else {
+        DWORD v = *reinterpret_cast<DWORD*>(base + 0x98);
+        ext_007CA120(v, base + 0x12C);
+    }
+}
+} // namespace lift_007C93A0

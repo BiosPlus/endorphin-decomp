@@ -1,0 +1,40 @@
+{
+  "va": "0x007C93A0",
+  "size": 64,
+  "orig_symbol": "sub_007C93A0",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "Unknown::DispatchSelectedSubobject",
+  "class": "Unknown",
+  "signature": "void fn_007C93A0(void* self, DWORD flag, [[maybe_unused]] DWORD unused_arg)",
+  "summary": "Calls ext_007CA120 with a DWORD field and the address of a subobject; flag selects the 0x94/0xEC pair (zero) or the 0x98/0x12C pair (non-zero).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x94",
+      "type": "DWORD",
+      "name": "field_0x94"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x98",
+      "type": "DWORD",
+      "name": "field_0x98"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xEC",
+      "type": "BYTE",
+      "name": "field_0xEC"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x12C",
+      "type": "BYTE",
+      "name": "field_0x12C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:09:57Z"
+}
