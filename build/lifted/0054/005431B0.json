@@ -1,0 +1,14 @@
+{
+  "va": "0x005431B0",
+  "size": 35,
+  "orig_symbol": "ViewportManager::vfunc_6",
+  "src_path": "src/classes/ViewportManager.cpp",
+  "lifted_path": "lifted/classes/ViewportManager.cpp",
+  "name": "ViewportManager::vfunc_6",
+  "class": "ViewportManager",
+  "signature": "std::string fn_005431B0(const void* /*self*/)",
+  "summary": "Auto-lifted identical-shape clone of 0x005A98F0 (NMData::BackGroundData::vfunc_6).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T14:09:48Z"
+}

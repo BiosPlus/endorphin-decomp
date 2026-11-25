@@ -1,0 +1,14 @@
+{
+  "va": "0x00401C30",
+  "size": 35,
+  "orig_symbol": "AVIIO::vfunc_6",
+  "src_path": "src/classes/AVIIO.cpp",
+  "lifted_path": "lifted/classes/AVIIO.cpp",
+  "name": "AVIIO::vfunc_6",
+  "class": "AVIIO",
+  "signature": "std::string fn_00401C30(const void* /*self*/)",
+  "summary": "Auto-lifted identical-shape clone of 0x005A98F0 (NMData::BackGroundData::vfunc_6).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T14:09:48Z"
+}

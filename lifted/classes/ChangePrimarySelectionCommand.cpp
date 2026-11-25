@@ -55,3 +55,29 @@ void* fn_004B0130(void* self, uint8_t flags) {
 }
 } // namespace lift_0048F920
 } // namespace lift_004B0130
+
+// [0x004B00E0] ChangePrimarySelectionCommand::vfunc_3 (34 bytes)
+namespace lift_004B00E0 {
+extern const std::string mem_0092AB40;
+
+// @name ChangePrimarySelectionCommand::vfunc_3
+// @class ChangePrimarySelectionCommand
+// @summary Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).
+// @field ChangePrimarySelectionCommand +0x0 void** vptr
+namespace lift_005C3270 {
+// Static std::string object at VA 0x00B44944 (copy source).
+extern const std::string mem_0092AB40;
+// MSVCP80 import slot [0x924FE0]: address of std::basic_string copy constructor (thiscall).
+extern void (__thiscall* mem_00924FE4)(void* self, const std::string& rhs);
+
+// @name NMData::FluidObjectData::vfunc_62
+// @class NMData::FluidObjectData
+// @summary Copy-constructs a std::string from the static string at 0x00B44944 into the caller's sret buffer and returns that buffer.
+// @field NMData::FluidObjectData +0x00 void** vptr
+void* __thiscall fn_004B00E0(void* self, void* out) {
+    (void)self;
+    mem_00924FE4(out, mem_0092AB40);
+    return out;
+}
+} // namespace lift_005C3270
+} // namespace lift_004B00E0

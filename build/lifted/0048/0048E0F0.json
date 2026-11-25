@@ -1,0 +1,28 @@
+{
+  "va": "0x0048E0F0",
+  "size": 34,
+  "orig_symbol": "Commands::CreateTriggeredEventCommand::vfunc_3",
+  "src_path": "src/Commands/CreateTriggeredEventCommand.cpp",
+  "lifted_path": "lifted/Commands/CreateTriggeredEventCommand.cpp",
+  "name": "Commands::CreateTriggeredEventCommand::vfunc_3",
+  "class": "Commands::CreateTriggeredEventCommand",
+  "signature": "void* __thiscall fn_0048E0F0(void* self, void* out)",
+  "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+  "fields": [
+    {
+      "class": "Commands::CreateTriggeredEventCommand",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    },
+    {
+      "class": "NMData::FluidObjectData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T14:09:48Z"
+}

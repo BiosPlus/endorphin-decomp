@@ -10,6 +10,7 @@
 // Recovered field layout for Commands::BufferChannelsCommand:
 namespace lifted_layout {
 struct Commands_BufferChannelsCommand_Fields {
+    // +0x0   void**                   vptr  (evidence: 0x0048DFC0)
     // +0x14  uint8_t                  field_0x14  (evidence: 0x0048F500)
     // +0x20  uint8_t                  field_0x20  (evidence: 0x0048F4F0)
 };

@@ -10,6 +10,7 @@
 // Recovered field layout for AdvXMLParser::Document:
 namespace lifted_layout {
 struct AdvXMLParser_Document_Fields {
+    // +0x0   void**                   vptr  (evidence: 0x0065F5E0)
     // +0x3C  std::string              field_0x3C  (evidence: 0x006410D0)
     // +0x58  std::string              field_0x58  (evidence: 0x006410D0)
 };

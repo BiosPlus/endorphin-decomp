@@ -1,0 +1,28 @@
+{
+  "va": "0x005AC640",
+  "size": 34,
+  "orig_symbol": "Commands::MirrorCommand::vfunc_3",
+  "src_path": "src/Commands/MirrorCommand.cpp",
+  "lifted_path": "lifted/Commands/MirrorCommand.cpp",
+  "name": "Commands::MirrorCommand::vfunc_3",
+  "class": "Commands::MirrorCommand",
+  "signature": "void* __thiscall fn_005AC640(void* self, void* out)",
+  "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+  "fields": [
+    {
+      "class": "Commands::MirrorCommand",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    },
+    {
+      "class": "NMData::FluidObjectData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T14:09:48Z"
+}

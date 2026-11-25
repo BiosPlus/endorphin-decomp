@@ -10,6 +10,7 @@
 // Recovered field layout for ChangePrimarySelectionCommand:
 namespace lifted_layout {
 struct ChangePrimarySelectionCommand_Fields {
+    // +0x0   void**                   vptr  (evidence: 0x004B00E0)
     // +0x8   void*                    field_0x08  (evidence: 0x00665820)
     // +0xC   uint32_t                 field_0x0C  (evidence: 0x00665820)
     // +0x18  void*                    field_0x18  (evidence: 0x0048F920, 0x004B0130)

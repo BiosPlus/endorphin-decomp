@@ -781,3 +781,33 @@ void __thiscall sub_004C4650(uint8_t* self, uint32_t val) {
     }
 }
 } // namespace lift_004C4650
+
+// [0x004CFFE0] sub_004CFFE0 (34 bytes)
+namespace lift_004CFFE0 {
+extern const char mem_00947AC0[];
+
+// @name sub_004CFFE0
+// @summary Auto-lifted identical-shape clone of 0x00622380 (NMData::SkeletalCalibrationVariables::vfunc_28).
+namespace lift_00622380 {
+extern const char mem_00947AC0[];
+
+// @name NMData::SkeletalCalibrationVariables::vfunc_28
+// @class NMData::SkeletalCalibrationVariables
+// @summary Auto-lifted identical-shape clone of 0x006227B0 (NMData::HingeCalibrationVariables::vfunc_28).
+namespace lift_006227B0 {
+// String literal whose address (0x009770F4) is pushed as the const char* argument.
+extern const char mem_00947AC0[];
+// Import slot for the std::string constructor (MSVCP80); the portable version below replaces the indirect call.
+extern int mem_00924FE4;
+
+// @name NMData::HingeCalibrationVariables::vfunc_28
+// @class NMData::HingeCalibrationVariables
+// @summary Constructs a std::string at the hidden out-pointer from the literal at 0x009770F4 and returns that pointer; the second stack argument is ignored (stdcall, ret 8).
+void fn_004CFFE0(std::string* out, void* unused) {
+    (void)unused;
+    (void)&mem_00924FE4; // original calls the MSVCP80 ctor through this IAT slot
+    new (out) std::string(mem_00947AC0);
+}
+} // namespace lift_006227B0
+} // namespace lift_00622380
+} // namespace lift_004CFFE0

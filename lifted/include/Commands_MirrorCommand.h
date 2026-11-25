@@ -10,8 +10,6 @@
 // Recovered field layout for Commands::MirrorCommand:
 namespace lifted_layout {
 struct Commands_MirrorCommand_Fields {
-    // +0x10  uint32_t                 field_0x10  (evidence: 0x005AC560)
-    // +0x14  uint32_t                 field_0x14  (evidence: 0x005AC560)
-    // +0x18  uint32_t                 field_0x18  (evidence: 0x005AC560)
+    // +0x0   void**                   vptr  (evidence: 0x005AC640)
 };
 } // namespace lifted_layout

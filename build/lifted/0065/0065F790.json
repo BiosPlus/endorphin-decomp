@@ -1,0 +1,28 @@
+{
+  "va": "0x0065F790",
+  "size": 34,
+  "orig_symbol": "SymbolResolver::vfunc_0",
+  "src_path": "src/classes/SymbolResolver.cpp",
+  "lifted_path": "lifted/classes/SymbolResolver.cpp",
+  "name": "SymbolResolver::vfunc_0",
+  "class": "SymbolResolver",
+  "signature": "void* __thiscall fn_0065F790(void* self, void* out)",
+  "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+  "fields": [
+    {
+      "class": "SymbolResolver",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    },
+    {
+      "class": "NMData::FluidObjectData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T14:09:48Z"
+}

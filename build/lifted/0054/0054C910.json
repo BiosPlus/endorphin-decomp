@@ -1,0 +1,14 @@
+{
+  "va": "0x0054C910",
+  "size": 35,
+  "orig_symbol": "RenderProperties::vfunc_6",
+  "src_path": "src/classes/RenderProperties.cpp",
+  "lifted_path": "lifted/classes/RenderProperties.cpp",
+  "name": "RenderProperties::vfunc_6",
+  "class": "RenderProperties",
+  "signature": "std::string fn_0054C910(const void* /*self*/)",
+  "summary": "Auto-lifted identical-shape clone of 0x005A98F0 (NMData::BackGroundData::vfunc_6).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T14:09:48Z"
+}

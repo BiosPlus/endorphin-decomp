@@ -1,0 +1,28 @@
+{
+  "va": "0x0065F5E0",
+  "size": 34,
+  "orig_symbol": "AdvXMLParser::Document::vfunc_1",
+  "src_path": "src/AdvXMLParser/Document.cpp",
+  "lifted_path": "lifted/AdvXMLParser/Document.cpp",
+  "name": "AdvXMLParser::Document::vfunc_1",
+  "class": "AdvXMLParser::Document",
+  "signature": "void* __thiscall fn_0065F5E0(void* self, void* out)",
+  "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+  "fields": [
+    {
+      "class": "AdvXMLParser::Document",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    },
+    {
+      "class": "NMData::FluidObjectData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T14:09:48Z"
+}

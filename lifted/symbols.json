@@ -153,6 +153,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00401BB0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00401C30": {
+    "name": "AVIIO::vfunc_6",
+    "class": "AVIIO",
+    "signature": "std::string fn_00401C30(const void* /*self*/)",
+    "summary": "Auto-lifted identical-shape clone of 0x005A98F0 (NMData::BackGroundData::vfunc_6).",
+    "lifted_path": "lifted/classes/AVIIO.cpp"
+  },
   "0x00401C60": {
     "name": "std::logic_error::logic_error",
     "class": "std::logic_error",
@@ -2456,6 +2463,13 @@
     "signature": "void* fn_0042E7B0(void* self, const void* key)",
     "summary": "Looks up a string key in the embedded tree map; returns the node payload (node+0x28), or null if the map is empty or the key is absent.",
     "lifted_path": "lifted/templates/SearchableMap.cpp"
+  },
+  "0x0042E920": {
+    "name": "KeyMappingManager::vfunc_6",
+    "class": "KeyMappingManager",
+    "signature": "std::string fn_0042E920(const void* /*self*/)",
+    "summary": "Auto-lifted identical-shape clone of 0x005A98F0 (NMData::BackGroundData::vfunc_6).",
+    "lifted_path": "lifted/classes/KeyMappingManager.cpp"
   },
   "0x0042EA10": {
     "name": "KeyMappingManager::vfunc_0",
@@ -8526,6 +8540,27 @@
     "summary": "Returns true only when both nodes are non-null and their first matching ancestors differ.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x004801F0": {
+    "name": "Commands::BufferTransformsCommand::vfunc_3",
+    "class": "Commands::BufferTransformsCommand",
+    "signature": "void* __thiscall fn_004801F0(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+    "lifted_path": "lifted/Commands/BufferTransformsCommand.cpp"
+  },
+  "0x00480220": {
+    "name": "Commands::ResizeCommand::vfunc_3",
+    "class": "Commands::ResizeCommand",
+    "signature": "void* __thiscall fn_00480220(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+    "lifted_path": "lifted/Commands/ResizeCommand.cpp"
+  },
+  "0x00480250": {
+    "name": "Commands::ReshapeCommand::vfunc_3",
+    "class": "Commands::ReshapeCommand",
+    "signature": "void* __thiscall fn_00480250(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+    "lifted_path": "lifted/Commands/ReshapeCommand.cpp"
+  },
   "0x00480280": {
     "name": "IsEmptyDwordRange_00480280",
     "signature": "BOOLEAN fn_00480280(void* self)",
@@ -9559,6 +9594,20 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0048DC60 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0048DF90": {
+    "name": "Commands::BufferPoseCommand::vfunc_3",
+    "class": "Commands::BufferPoseCommand",
+    "signature": "void* __thiscall fn_0048DF90(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+    "lifted_path": "lifted/Commands/BufferPoseCommand.cpp"
+  },
+  "0x0048DFC0": {
+    "name": "Commands::BufferChannelsCommand::vfunc_3",
+    "class": "Commands::BufferChannelsCommand",
+    "signature": "void* __thiscall fn_0048DFC0(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+    "lifted_path": "lifted/Commands/BufferChannelsCommand.cpp"
+  },
   "0x0048DFF0": {
     "name": "Unknown::InitWithVectorElement",
     "class": "Unknown",
@@ -9621,6 +9670,13 @@
     "signature": "void fn_0048E0E0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0048E070 (Commands::SetPlaybackStartFrameCommand::vfunc_1).",
     "lifted_path": "lifted/Commands/SetSaveEndFrameCommand.cpp"
+  },
+  "0x0048E0F0": {
+    "name": "Commands::CreateTriggeredEventCommand::vfunc_3",
+    "class": "Commands::CreateTriggeredEventCommand",
+    "signature": "void* __thiscall fn_0048E0F0(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+    "lifted_path": "lifted/Commands/CreateTriggeredEventCommand.cpp"
   },
   "0x0048E120": {
     "name": "Unknown::initWithVectorElement_0048E120",
@@ -11845,6 +11901,13 @@
     "summary": "Destructor tail-call: restores vtable mem_00941484 and tail-calls base destructor sub_0065C660.",
     "lifted_path": "lifted/leaf/tiny_4A0000.cpp"
   },
+  "0x004A96B0": {
+    "name": "VersionControlManager::vfunc_6",
+    "class": "VersionControlManager",
+    "signature": "void* __thiscall fn_004A96B0(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+    "lifted_path": "lifted/classes/VersionControlManager.cpp"
+  },
   "0x004A96E0": {
     "name": "FindStringTableIndex",
     "signature": "uint32_t fn_004A96E0(const void* key)",
@@ -12332,6 +12395,20 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x8 and tail-calls sub_004E78B0.",
     "lifted_path": "lifted/leaf/tiny_4A0000.cpp"
   },
+  "0x004AFDE0": {
+    "name": "ChangeSecondarySelectionCommand::vfunc_3",
+    "class": "ChangeSecondarySelectionCommand",
+    "signature": "void* __thiscall fn_004AFDE0(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+    "lifted_path": "lifted/classes/ChangeSecondarySelectionCommand.cpp"
+  },
+  "0x004B00E0": {
+    "name": "ChangePrimarySelectionCommand::vfunc_3",
+    "class": "ChangePrimarySelectionCommand",
+    "signature": "void* __thiscall fn_004B00E0(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+    "lifted_path": "lifted/classes/ChangePrimarySelectionCommand.cpp"
+  },
   "0x004B0130": {
     "name": "ChangePrimarySelectionCommand::vfunc_0",
     "class": "ChangePrimarySelectionCommand",
@@ -12357,6 +12434,13 @@
     "signature": "extern \"C\" void __fastcall fn_004B0840(void* self)",
     "summary": "Destructor tail-call: restores vtable mem_0094200C and tail-calls base destructor sub_0065C660.",
     "lifted_path": "lifted/leaf/tiny_4B0000.cpp"
+  },
+  "0x004B0850": {
+    "name": "ViewManager::vfunc_6",
+    "class": "ViewManager",
+    "signature": "std::string fn_004B0850(const void* /*self*/)",
+    "summary": "Auto-lifted identical-shape clone of 0x005A98F0 (NMData::BackGroundData::vfunc_6).",
+    "lifted_path": "lifted/classes/ViewManager.cpp"
   },
   "0x004B0880": {
     "name": "ViewManager::vfunc_0",
@@ -12957,6 +13041,13 @@
     "signature": "extern \"C\" void* __fastcall fn_004B67C0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_004B6760 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/templates/auto_tiny.cpp"
+  },
+  "0x004B6C90": {
+    "name": "sub_004B6C90",
+    "class": "NMData::SkeletalCalibrationVariables",
+    "signature": "void fn_004B6C90(std::string* out, void* unused)",
+    "summary": "Auto-lifted identical-shape clone of 0x00622380 (NMData::SkeletalCalibrationVariables::vfunc_28).",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
   "0x004B7030": {
     "name": "sub_004B7030",
@@ -15016,6 +15107,13 @@
     "signature": "extern \"C\" void __thiscall fn_004CFE90(void* self)",
     "summary": "Resets state flag, allocates and initializes a 12-byte object, frees any previous object at +0x184, and registers the new one.",
     "lifted_path": "lifted/NMData/IncarnationEventData.cpp"
+  },
+  "0x004CFFE0": {
+    "name": "sub_004CFFE0",
+    "class": "NMData::SkeletalCalibrationVariables",
+    "signature": "void fn_004CFFE0(std::string* out, void* unused)",
+    "summary": "Auto-lifted identical-shape clone of 0x00622380 (NMData::SkeletalCalibrationVariables::vfunc_28).",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
   "0x004D0AE0": {
     "name": "sub_004D0AE0",
@@ -18720,6 +18818,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00523160 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00507E80": {
+    "name": "EvolvedIndividual::vfunc_6",
+    "class": "EvolvedIndividual",
+    "signature": "std::string fn_00507E80(const void* /*self*/)",
+    "summary": "Auto-lifted identical-shape clone of 0x005A98F0 (NMData::BackGroundData::vfunc_6).",
+    "lifted_path": "lifted/classes/EvolvedIndividual.cpp"
+  },
   "0x00507F50": {
     "name": "SetDoubleValueAndEnableFlag",
     "class": "Unknown",
@@ -20950,6 +21055,13 @@
     "summary": "Constructor that initializes vtables, an empty RB-tree at +0x08, and registers this in global 0x00AED9D0",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x0052ED00": {
+    "name": "MaterialList::vfunc_6",
+    "class": "MaterialList",
+    "signature": "std::string fn_0052ED00(const void* /*self*/)",
+    "summary": "Auto-lifted identical-shape clone of 0x005A98F0 (NMData::BackGroundData::vfunc_6).",
+    "lifted_path": "lifted/classes/MaterialList.cpp"
+  },
   "0x0052EDD0": {
     "name": "MaterialList::vfunc_0",
     "class": "MaterialList",
@@ -22958,6 +23070,13 @@
     "summary": "Zero-initializes fields, constructs subobject at +0x18 with 0.05f and flags (1, 1), and sets +0x34/+0x38; returns this.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x005431B0": {
+    "name": "ViewportManager::vfunc_6",
+    "class": "ViewportManager",
+    "signature": "std::string fn_005431B0(const void* /*self*/)",
+    "summary": "Auto-lifted identical-shape clone of 0x005A98F0 (NMData::BackGroundData::vfunc_6).",
+    "lifted_path": "lifted/classes/ViewportManager.cpp"
+  },
   "0x005431F0": {
     "name": "ViewportManager::vfunc_0",
     "class": "ViewportManager",
@@ -23813,6 +23932,13 @@
     "signature": "extern \"C\" void __fastcall fn_0054C890(void* self)",
     "summary": "Destructor that resets vtable, destroys three std::string fields, and calls base destructor.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
+  "0x0054C910": {
+    "name": "RenderProperties::vfunc_6",
+    "class": "RenderProperties",
+    "signature": "std::string fn_0054C910(const void* /*self*/)",
+    "summary": "Auto-lifted identical-shape clone of 0x005A98F0 (NMData::BackGroundData::vfunc_6).",
+    "lifted_path": "lifted/classes/RenderProperties.cpp"
   },
   "0x0054CD30": {
     "name": "RenderProperties::vfunc_0",
@@ -28035,6 +28161,48 @@
     "signature": "extern \"C\" void fn_005AC550(void)",
     "summary": "Pure jump thunk forwarding to sub_00665810.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x005AC640": {
+    "name": "Commands::MirrorCommand::vfunc_3",
+    "class": "Commands::MirrorCommand",
+    "signature": "void* __thiscall fn_005AC640(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+    "lifted_path": "lifted/Commands/MirrorCommand.cpp"
+  },
+  "0x005AC6B0": {
+    "name": "Commands::MirrorVMUpdateCommand::vfunc_3",
+    "class": "Commands::MirrorVMUpdateCommand",
+    "signature": "void* __thiscall fn_005AC6B0(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+    "lifted_path": "lifted/Commands/MirrorVMUpdateCommand.cpp"
+  },
+  "0x005AC720": {
+    "name": "Commands::MirrorCollisionModelCommand::vfunc_3",
+    "class": "Commands::MirrorCollisionModelCommand",
+    "signature": "void* __thiscall fn_005AC720(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+    "lifted_path": "lifted/Commands/MirrorCollisionModelCommand.cpp"
+  },
+  "0x005AC750": {
+    "name": "Commands::RemoveCollisionModelCommand::vfunc_3",
+    "class": "Commands::RemoveCollisionModelCommand",
+    "signature": "void* __thiscall fn_005AC750(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+    "lifted_path": "lifted/Commands/RemoveCollisionModelCommand.cpp"
+  },
+  "0x005AC7C0": {
+    "name": "Commands::MirrorFluidObjectCommand::vfunc_3",
+    "class": "Commands::MirrorFluidObjectCommand",
+    "signature": "void* __thiscall fn_005AC7C0(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+    "lifted_path": "lifted/Commands/MirrorFluidObjectCommand.cpp"
+  },
+  "0x005AC7F0": {
+    "name": "Commands::RemoveFluidObjectCommand::vfunc_3",
+    "class": "Commands::RemoveFluidObjectCommand",
+    "signature": "void* __thiscall fn_005AC7F0(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+    "lifted_path": "lifted/Commands/RemoveFluidObjectCommand.cpp"
   },
   "0x005AC820": {
     "name": "Unknown::walkLinkUntilFlagSet_005AC820",
@@ -44483,6 +44651,27 @@
     "signature": "extern \"C\" void __fastcall fn_0065F440(void* self)",
     "summary": "Stores address of mem_0093BF24 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_650000.cpp"
+  },
+  "0x0065F5E0": {
+    "name": "AdvXMLParser::Document::vfunc_1",
+    "class": "AdvXMLParser::Document",
+    "signature": "void* __thiscall fn_0065F5E0(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+    "lifted_path": "lifted/AdvXMLParser/Document.cpp"
+  },
+  "0x0065F790": {
+    "name": "SymbolResolver::vfunc_0",
+    "class": "SymbolResolver",
+    "signature": "void* __thiscall fn_0065F790(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+    "lifted_path": "lifted/classes/SymbolResolver.cpp"
+  },
+  "0x0065F7C0": {
+    "name": "SymbolResolver::vfunc_1",
+    "class": "SymbolResolver",
+    "signature": "void* __thiscall fn_0065F7C0(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+    "lifted_path": "lifted/classes/SymbolResolver.cpp"
   },
   "0x0065F8E0": {
     "name": "CalibrationManager::vfunc_9",

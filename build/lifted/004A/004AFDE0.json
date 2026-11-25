@@ -1,0 +1,28 @@
+{
+  "va": "0x004AFDE0",
+  "size": 34,
+  "orig_symbol": "ChangeSecondarySelectionCommand::vfunc_3",
+  "src_path": "src/classes/ChangeSecondarySelectionCommand.cpp",
+  "lifted_path": "lifted/classes/ChangeSecondarySelectionCommand.cpp",
+  "name": "ChangeSecondarySelectionCommand::vfunc_3",
+  "class": "ChangeSecondarySelectionCommand",
+  "signature": "void* __thiscall fn_004AFDE0(void* self, void* out)",
+  "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+  "fields": [
+    {
+      "class": "ChangeSecondarySelectionCommand",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    },
+    {
+      "class": "NMData::FluidObjectData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T14:09:48Z"
+}

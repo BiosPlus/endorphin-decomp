@@ -1,0 +1,28 @@
+{
+  "va": "0x004B00E0",
+  "size": 34,
+  "orig_symbol": "ChangePrimarySelectionCommand::vfunc_3",
+  "src_path": "src/classes/ChangePrimarySelectionCommand.cpp",
+  "lifted_path": "lifted/classes/ChangePrimarySelectionCommand.cpp",
+  "name": "ChangePrimarySelectionCommand::vfunc_3",
+  "class": "ChangePrimarySelectionCommand",
+  "signature": "void* __thiscall fn_004B00E0(void* self, void* out)",
+  "summary": "Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).",
+  "fields": [
+    {
+      "class": "ChangePrimarySelectionCommand",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    },
+    {
+      "class": "NMData::FluidObjectData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T14:09:48Z"
+}

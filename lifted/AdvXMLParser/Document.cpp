@@ -86,3 +86,29 @@ extern void __thiscall fn_006410D0(void* self, void* ctx) {
     ext_00640EE0(self, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(ctx)));
 }
 } // namespace lift_006410D0
+
+// [0x0065F5E0] AdvXMLParser::Document::vfunc_1 (34 bytes)
+namespace lift_0065F5E0 {
+extern const std::string mem_00928B5D;
+
+// @name AdvXMLParser::Document::vfunc_1
+// @class AdvXMLParser::Document
+// @summary Auto-lifted identical-shape clone of 0x005C3270 (NMData::FluidObjectData::vfunc_62).
+// @field AdvXMLParser::Document +0x0 void** vptr
+namespace lift_005C3270 {
+// Static std::string object at VA 0x00B44944 (copy source).
+extern const std::string mem_00928B5D;
+// MSVCP80 import slot [0x924FE0]: address of std::basic_string copy constructor (thiscall).
+extern void (__thiscall* mem_00924FE4)(void* self, const std::string& rhs);
+
+// @name NMData::FluidObjectData::vfunc_62
+// @class NMData::FluidObjectData
+// @summary Copy-constructs a std::string from the static string at 0x00B44944 into the caller's sret buffer and returns that buffer.
+// @field NMData::FluidObjectData +0x00 void** vptr
+void* __thiscall fn_0065F5E0(void* self, void* out) {
+    (void)self;
+    mem_00924FE4(out, mem_00928B5D);
+    return out;
+}
+} // namespace lift_005C3270
+} // namespace lift_0065F5E0
