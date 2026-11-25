@@ -59239,3 +59239,51 @@ int fn_0059F650(void* arg) {
     return 0;
 }
 } // namespace lift_0059F650
+
+// [0x005B37A0] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>::vfunc_3 (109 bytes)
+namespace lift_005B37A0 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+// .rdata string "true" (address of the literal itself)
+extern int mem_0092F10C;
+// .rdata string "TRUE"
+extern int mem_0093A810;
+// .rdata u32 holding the MSVCP std::string operator== function pointer (replaced by std::string ==)
+extern int mem_00924FC0;
+// .rdata u32 0 (exception type-info slot for the throw path)
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<Geometry>::vfunc_3 (Geometry::getFileName string-to-bool check)
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>
+// @summary Calls the value's vtable slot 8 to fetch a string and returns 1 if it equals "true" or "TRUE", else 0; throws when the value pointer is null.
+// @field ExprParser::ValuePtrType +0x0c void* field_0x0c
+int fn_005B37A0(void* const* self) {
+    void* obj = self ? *self : nullptr;
+    if (obj == nullptr) {
+        // Original path: construct DerivedException and call _CxxThrowException (ext_0046C3C0 / ext_006A6DD2).
+        (void)&ext_0046C3C0;
+        (void)&ext_006A6DD2;
+        (void)&mem_009DEC1C;
+        throw std::runtime_error("ExprParser::ReadMethodType: null value");
+    }
+
+    void* inner = lift_field<void*>(obj, 0x0c);
+    void** vtbl = *reinterpret_cast<void***>(inner);
+    using GetStringFn = const std::string& (*)(void*);
+    const std::string& s = reinterpret_cast<GetStringFn>(vtbl[8])(inner);
+
+    const char* lit_true = reinterpret_cast<const char*>(&mem_0092F10C);
+    const char* lit_TRUE = reinterpret_cast<const char*>(&mem_0093A810);
+    (void)&mem_00924FC0;
+
+    if (s == lit_true) {
+        return 1;
+    }
+    if (s == lit_TRUE) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_005B37A0
