@@ -1227,3 +1227,44 @@ void* fn_006999F0() {
     return &mem_00B5C9A8;
 }
 } // namespace lift_006999F0
+
+// [0x00696910]
+namespace lift_00696910 {
+// @name skipUntilCharOrEofSkippingComments
+// @summary Reads chars from an istream, skipping '#' comment lines, until delim or 0xFF is reached and put back; returns false on stream failure.
+
+
+bool ext_006968D0(void* stream);
+extern uint32_t mem_009250BC; // MSVCP80!basic_istream::get(char&)
+extern uint32_t mem_009250C0; // MSVCP80!ios_base::operator!()
+extern uint32_t mem_009250E8; // MSVCP80!basic_istream::putback(char)
+
+using istream_get_fn = void* (__thiscall*)(void* self, char* ch);
+using ios_not_fn = bool (__thiscall*)(void* ios_base_ptr);
+using istream_putback_fn = void* (__thiscall*)(void* self, char ch);
+
+bool fn_00696910(void* stream, char delim) {
+    char ch = 0;
+    auto get_fn = reinterpret_cast<istream_get_fn>(static_cast<uintptr_t>(mem_009250BC));
+    auto not_fn = reinterpret_cast<ios_not_fn>(static_cast<uintptr_t>(mem_009250C0));
+    auto putback_fn = reinterpret_cast<istream_putback_fn>(static_cast<uintptr_t>(mem_009250E8));
+
+    while (true) {
+        void* strm = get_fn(stream, &ch);
+        uint32_t* vptr = *reinterpret_cast<uint32_t**>(strm);
+        void* ios_base_ptr = reinterpret_cast<char*>(strm) + static_cast<int32_t>(vptr[1]);
+        if (not_fn(ios_base_ptr)) {
+            return false;
+        }
+        if (ch == '#') {
+            if (!ext_006968D0(stream)) {
+                return false;
+            }
+        }
+        if (ch == delim || ch == static_cast<char>(-1)) {
+            putback_fn(stream, ch);
+            return true;
+        }
+    }
+}
+} // namespace lift_00696910

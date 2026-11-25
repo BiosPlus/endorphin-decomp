@@ -1,0 +1,13 @@
+{
+  "va": "0x00696910",
+  "size": 100,
+  "orig_symbol": "sub_00696910",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "skipUntilCharOrEofSkippingComments",
+  "signature": "bool fn_00696910(void* stream, char delim)",
+  "summary": "Reads chars from an istream, skipping '#' comment lines, until delim or 0xFF is reached and put back; returns false on stream failure.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:59:02Z"
+}
