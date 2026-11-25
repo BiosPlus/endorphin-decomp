@@ -179,3 +179,37 @@ uint32_t fn_004A96E0(const void* key) {
     return 0;
 }
 } // namespace lift_004A96E0
+
+// [0x004A6020]
+namespace lift_004A6020 {
+// @name DwordVector::EraseAt
+// @class DwordVector
+// @summary Erases the dword at pos by shifting the tail down one slot, decrements end, and writes {value, pos} to out.
+// @field DwordVector +0x08 uint32_t* end (one past the last element)
+
+struct DwordVector {
+    // Thiscall: `this` is passed in ECX, out/value/pos on the stack (callee-cleans 12 bytes).
+    void EraseAt(void* out, uint32_t value, uint32_t* pos);
+};
+
+void DwordVector::EraseAt(void* out, uint32_t value, uint32_t* pos) {
+    uint32_t*& end = lift_field<uint32_t*>(this, 0x08);
+
+    // Count of dwords strictly after pos (signed; sar 2 in the original).
+    const intptr_t tail_bytes = reinterpret_cast<intptr_t>(end) -
+                                reinterpret_cast<intptr_t>(pos + 1);
+    const intptr_t count = tail_bytes >> 2;
+
+    if (count > 0) {
+        // Shift the tail down by one dword (memmove_s in the original).
+        std::memmove(pos, pos + 1, static_cast<size_t>(count) * 4);
+    }
+
+    // Drop one element from the end (add dword ptr [esi+8], -4).
+    end = end - 1;
+
+    // Return value written through the sret/out buffer: { value, pos }.
+    lift_field<uint32_t>(out, 0) = value;
+    lift_field<uint32_t*>(out, 4) = pos;
+}
+} // namespace lift_004A6020

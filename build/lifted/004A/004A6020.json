@@ -1,0 +1,22 @@
+{
+  "va": "0x004A6020",
+  "size": 62,
+  "orig_symbol": "sub_004A6020",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "DwordVector::EraseAt",
+  "class": "DwordVector",
+  "signature": "void DwordVector::EraseAt(void* out, uint32_t value, uint32_t* pos)",
+  "summary": "Erases the dword at pos by shifting the tail down one slot, decrements end, and writes {value, pos} to out.",
+  "fields": [
+    {
+      "class": "DwordVector",
+      "offset": "+0x8",
+      "type": "uint32_t* end (one past the last",
+      "name": "element)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:59:54Z"
+}
