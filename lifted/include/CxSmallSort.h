@@ -9,8 +9,8 @@
 // Recovered field layout for CxSmallSort:
 namespace lifted_layout {
 struct CxSmallSort_Fields {
-    // +0x0   uint32_t                 vtable_ptr  (evidence: 0x007D8470, 0x007DD020)
-    // +0x20  uint32_t                 field_0x20  (evidence: 0x007D8470, 0x007DD020)
-    // +0x28  uint32_t                 field_0x28  (evidence: 0x007D8470, 0x007DD020)
+    // +0x0   uint32_t                 vtable_ptr  (evidence: 0x007D48A0, 0x007D8470, 0x007DD020)
+    // +0x20  uint32_t                 field_0x20  (evidence: 0x007D48A0, 0x007D8470, 0x007DD020)
+    // +0x28  uint32_t                 field_0x28  (evidence: 0x007D48A0, 0x007D8470, 0x007DD020)
 };
 } // namespace lifted_layout
