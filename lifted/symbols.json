@@ -2739,6 +2739,12 @@
     "summary": "Allocates an array of 36-byte elements with overflow check, throwing std::bad_alloc on overflow.",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x00427860": {
+    "name": "copyBackward36Wrapper",
+    "signature": "uint32_t sub_00427860(uint32_t first, uint32_t last, uint32_t d_last)",
+    "summary": "Copies a range of 36-byte structs backward and returns the destination start pointer.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x00427B20": {
     "name": "sub_00427B20",
     "signature": "uint32_t fn_00427B20(uint32_t begin, uint32_t end, uint32_t value)",
@@ -27809,6 +27815,13 @@
     "summary": "Resolves a property/transform value via TransformInterface and vfunc_54, then forwards to ext_00493E40.",
     "lifted_path": "lifted/classes/AnimatableTransform.cpp"
   },
+  "0x005851B0": {
+    "name": "AnimatableTransform::vfunc_14_off_C",
+    "class": "AnimatableTransform",
+    "signature": "uint8_t __thiscall fn_005851B0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Checks if field_0x5c is nonzero and if arg2 contains the bit flag for vfunc_0x2C().",
+    "lifted_path": "lifted/classes/AnimatableTransform.cpp"
+  },
   "0x005851E0": {
     "name": "sub_005851E0_ctor",
     "signature": "void* __thiscall sub_005851E0(void* self, uint32_t arg0)",
@@ -44584,6 +44597,12 @@
     "signature": "extern \"C\" void fn_00640100(void)",
     "summary": "Pure jump thunk forwarding to sub_006400A0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x006406D0": {
+    "name": "sub_006406D0",
+    "signature": "void __thiscall sub_006406D0(void* self, uint32_t arg0)",
+    "summary": "Iterates over vector of objects at +0x24, calls vtable+0x10 on each with arg0, and passes result to ext_00640240.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
   "0x006407B0": {
     "name": "AdvXMLParser::Attribute::vfunc_4",

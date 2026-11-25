@@ -2114,3 +2114,28 @@ extern void __thiscall fn_00648300(void* self) {
     ext_005B1870(self);
 }
 } // namespace lift_00648300
+
+// [0x006406D0]
+namespace lift_006406D0 {
+// @name sub_006406D0
+// @summary Iterates over vector of objects at +0x24, calls vtable+0x10 on each with arg0, and passes result to ext_00640240.
+// @field Class +0x28 uint32_t* field_0x28
+// @field Class +0x2C uint32_t* field_0x2C
+
+
+extern uint32_t __thiscall ext_00640240(void* self, uint32_t arg0);
+
+void __thiscall sub_006406D0(void* self, uint32_t arg0) {
+    uint8_t* vec = static_cast<uint8_t*>(self) + 0x24;
+    uint32_t* it = *reinterpret_cast<uint32_t**>(vec + 0x04);
+    while (it < *reinterpret_cast<uint32_t**>(vec + 0x08)) {
+        void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(*it));
+        uint32_t* vtable = *reinterpret_cast<uint32_t**>(obj);
+        using VFunc = uint32_t(__thiscall*)(void*, uint32_t);
+        VFunc fn = reinterpret_cast<VFunc>(static_cast<uintptr_t>(vtable[4]));
+        uint32_t res = fn(obj, arg0);
+        ext_00640240(reinterpret_cast<void*>(static_cast<uintptr_t>(arg0)), res);
+        ++it;
+    }
+}
+} // namespace lift_006406D0
