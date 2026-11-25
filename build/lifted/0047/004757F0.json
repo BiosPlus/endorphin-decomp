@@ -4,11 +4,95 @@
   "orig_symbol": "sub_004757F0",
   "src_path": "src/leaf/decompiled_470000.cpp",
   "lifted_path": "lifted/leaf/decompiled_470000.cpp",
-  "name": "Unknown::Dtor_004757F0",
-  "class": "Unknown",
-  "signature": "void fn_004757F0(void* self)",
-  "summary": "Destructor body: releases the StringArray at +0x1C, then destroys the std::string at +0x00.",
+  "name": "sub_0047A010",
+  "class": "TreeMap",
+  "signature": "DWORD* __thiscall fn_0047A010(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+  "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
   "fields": [
+    {
+      "class": "TreeMap",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "TreeMapNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "left"
+    },
+    {
+      "class": "TreeMapNode",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "parent"
+    },
+    {
+      "class": "TreeMapNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "right"
+    },
+    {
+      "class": "TreeMapNode",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "TreeMapNode",
+      "offset": "+0x45",
+      "type": "uint8_t",
+      "name": "isNil"
+    },
+    {
+      "class": "Tree",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "left"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "parent_or_root"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "right"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "key"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x39",
+      "type": "uint8_t",
+      "name": "is_nil"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "header"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0xC1",
+      "type": "uint8_t",
+      "name": "is_nil"
+    },
     {
       "class": "Unknown",
       "offset": "+0x0",
@@ -24,5 +108,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T01:41:52Z"
+  "lifted_at": "2026-11-25T01:41:59Z"
 }

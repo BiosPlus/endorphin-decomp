@@ -7574,10 +7574,10 @@
     "lifted_path": "lifted/classes/RuntimeEngine.cpp"
   },
   "0x004757F0": {
-    "name": "Unknown::Dtor_004757F0",
-    "class": "Unknown",
-    "signature": "void fn_004757F0(void* self)",
-    "summary": "Destructor body: releases the StringArray at +0x1C, then destroys the std::string at +0x00.",
+    "name": "sub_0047A010",
+    "class": "TreeMap",
+    "signature": "DWORD* __thiscall fn_0047A010(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
   "0x00476630": {

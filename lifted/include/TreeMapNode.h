@@ -8,10 +8,10 @@
 // Recovered field layout for TreeMapNode:
 namespace lifted_layout {
 struct TreeMapNode_Fields {
-    // +0x0   void*                    left  (evidence: 0x00472780)
-    // +0x4   void*                    parent  (evidence: 0x00472780)
-    // +0x8   void*                    right  (evidence: 0x00472780)
-    // +0xC   uint8_t                  field_0x0C  (evidence: 0x00472780)
-    // +0x45  uint8_t                  isNil  (evidence: 0x00472780)
+    // +0x0   void*                    left  (evidence: 0x00472780, 0x004757F0)
+    // +0x4   void*                    parent  (evidence: 0x00472780, 0x004757F0)
+    // +0x8   void*                    right  (evidence: 0x00472780, 0x004757F0)
+    // +0xC   uint8_t                  field_0x0C  (evidence: 0x00472780, 0x004757F0)
+    // +0x45  uint8_t                  isNil  (evidence: 0x00472780, 0x004757F0)
 };
 } // namespace lifted_layout

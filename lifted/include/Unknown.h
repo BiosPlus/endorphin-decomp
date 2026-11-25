@@ -156,7 +156,7 @@ struct Unknown_Fields {
     // +0x4   BYTE field_0x04 (inner object: valid flag)  (evidence: 0x00783570) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 flags  (evidence: 0x008103A0, 0x008103F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (destination operand holder; inner object's vtable slot 6 returns float* to 4 floats)  (evidence: 0x0066D190) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    header  (evidence: 0x004774B0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    header  (evidence: 0x004757F0, 0x004774B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (read indirectly via ext_006AD180, not directly here)  (evidence: 0x0041CB80) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t                  hi  (evidence: 0x006DBE30) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (vector begin, via holder)  (evidence: 0x0067AEB0) // CONFLICT: multiple definitions at +0x4
