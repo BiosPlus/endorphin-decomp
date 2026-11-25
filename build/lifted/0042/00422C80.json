@@ -1,0 +1,22 @@
+{
+  "va": "0x00422C80",
+  "size": 77,
+  "orig_symbol": "sub_00422C80",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "Unknown::AssignNameField_00422C80",
+  "class": "Unknown",
+  "signature": "void fn_00422C80(void* self, const std::string\u0026 src)",
+  "summary": "Copies a std::string argument into this+0x50 (std::string::operator=), with SEH-frame cleanup of the temporary.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "std::string",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:40:28Z"
+}

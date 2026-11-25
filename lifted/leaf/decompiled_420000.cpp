@@ -725,3 +725,15 @@ uint32_t fn_00427B20(uint32_t begin, uint32_t end, uint32_t value) {
 }
 } // namespace lift_0054F290
 } // namespace lift_00427B20
+
+// [0x00422C80] sub_00422C80 (77 bytes)
+namespace lift_00422C80 {
+// @name Unknown::AssignNameField_00422C80
+// @class Unknown
+// @summary Copies a std::string argument into this+0x50 (std::string::operator=), with SEH-frame cleanup of the temporary.
+// @field Unknown +0x50 std::string field_0x50
+void fn_00422C80(void* self, const std::string& src) {
+    std::string& dst = lift_field<std::string>(self, 0x50);
+    dst = src;
+}
+} // namespace lift_00422C80
