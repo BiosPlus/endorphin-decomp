@@ -38336,6 +38336,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
     "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
+  "0x0063D8F0": {
+    "name": "initFields",
+    "signature": "void __thiscall sub_0063D8F0(void* self)",
+    "summary": "Initializes float, integer, and flag fields on the object to default values (0.0f, 10.0f, 20.0f, 0, and 1).",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063D950": {
     "name": "constructWithZeroedFloats",
     "signature": "void* fn_0063D950(void* self)",

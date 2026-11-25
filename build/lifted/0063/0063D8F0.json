@@ -1,0 +1,165 @@
+{
+  "va": "0x0063D8F0",
+  "size": 92,
+  "orig_symbol": "sub_0063D8F0",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "initFields",
+  "signature": "void __thiscall sub_0063D8F0(void* self)",
+  "summary": "Initializes float, integer, and flag fields on the object to default values (0.0f, 10.0f, 20.0f, 0, and 1).",
+  "fields": [
+    {
+      "class": "Obj",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x28",
+      "type": "float",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x2C",
+      "type": "float",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x38",
+      "type": "uint8_t",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "field_0x48"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x4C",
+      "type": "float",
+      "name": "field_0x4C"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x50",
+      "type": "float",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x54",
+      "type": "float",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x58",
+      "type": "float",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x5C",
+      "type": "float",
+      "name": "field_0x5C"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x60",
+      "type": "float",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:16:10Z"
+}

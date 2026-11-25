@@ -850,3 +850,74 @@ void* fn_0063CC00() {
 }
 } // namespace lift_004CAE30
 } // namespace lift_0063CC00
+
+// [0x0063D8F0]
+namespace lift_0063D8F0 {
+extern float mem_009518E0;
+extern float mem_00956EE0;
+
+// @name initFields
+// @summary Initializes float, integer, and flag fields on the object to default values (0.0f, 10.0f, 20.0f, 0, and 1).
+// @field Obj +0x00 float field_0x00
+// @field Obj +0x04 float field_0x04
+// @field Obj +0x08 float field_0x08
+// @field Obj +0x0C float field_0x0C
+// @field Obj +0x10 float field_0x10
+// @field Obj +0x14 float field_0x14
+// @field Obj +0x18 float field_0x18
+// @field Obj +0x1C float field_0x1C
+// @field Obj +0x20 float field_0x20
+// @field Obj +0x24 float field_0x24
+// @field Obj +0x28 float field_0x28
+// @field Obj +0x2C float field_0x2C
+// @field Obj +0x30 uint32_t field_0x30
+// @field Obj +0x34 uint32_t field_0x34
+// @field Obj +0x38 uint8_t field_0x38
+// @field Obj +0x3C float field_0x3C
+// @field Obj +0x40 float field_0x40
+// @field Obj +0x44 float field_0x44
+// @field Obj +0x48 float field_0x48
+// @field Obj +0x4C float field_0x4C
+// @field Obj +0x50 float field_0x50
+// @field Obj +0x54 float field_0x54
+// @field Obj +0x58 float field_0x58
+// @field Obj +0x5C float field_0x5C
+// @field Obj +0x60 float field_0x60
+void __thiscall sub_0063D8F0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    const float zero = 0.0f;
+    const float val10 = mem_009518E0;
+    const float val20 = mem_00956EE0;
+
+    *reinterpret_cast<uint8_t*>(base + 0x38) = 1;
+
+    *reinterpret_cast<float*>(base + 0x00) = zero;
+    *reinterpret_cast<float*>(base + 0x04) = zero;
+    *reinterpret_cast<float*>(base + 0x08) = zero;
+    *reinterpret_cast<float*>(base + 0x0C) = zero;
+    *reinterpret_cast<float*>(base + 0x10) = zero;
+    *reinterpret_cast<float*>(base + 0x14) = zero;
+    *reinterpret_cast<float*>(base + 0x18) = zero;
+    *reinterpret_cast<float*>(base + 0x1C) = zero;
+    *reinterpret_cast<float*>(base + 0x20) = zero;
+    *reinterpret_cast<float*>(base + 0x24) = zero;
+    *reinterpret_cast<float*>(base + 0x28) = zero;
+    *reinterpret_cast<float*>(base + 0x2C) = zero;
+
+    *reinterpret_cast<uint32_t*>(base + 0x30) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x34) = 0;
+
+    *reinterpret_cast<float*>(base + 0x3C) = val10;
+    *reinterpret_cast<float*>(base + 0x40) = val10;
+    *reinterpret_cast<float*>(base + 0x44) = val10;
+    *reinterpret_cast<float*>(base + 0x48) = val10;
+
+    *reinterpret_cast<float*>(base + 0x4C) = val20;
+    *reinterpret_cast<float*>(base + 0x50) = val20;
+    *reinterpret_cast<float*>(base + 0x5C) = val20;
+
+    *reinterpret_cast<float*>(base + 0x54) = val10;
+    *reinterpret_cast<float*>(base + 0x58) = val10;
+    *reinterpret_cast<float*>(base + 0x60) = zero;
+}
+} // namespace lift_0063D8F0
