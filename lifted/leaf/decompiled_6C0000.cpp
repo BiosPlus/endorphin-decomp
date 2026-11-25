@@ -1867,3 +1867,30 @@ uint8_t __stdcall fn_006C1AF0(void* self, const uint32_t* values) {
 }
 } // namespace lift_0079DB50
 } // namespace lift_006C1AF0
+
+// [0x006C42E0]
+namespace lift_006C42E0 {
+extern const double mem_0092A278;
+
+// @name isMatrix3x3DetNonNegative
+// @summary Computes the 3x3 determinant of a double matrix and returns 1 if >= 0.0, else 0
+// @field Matrix3x4 +0x00 double field_0x00
+// @field Matrix3x4 +0x08 double field_0x08
+// @field Matrix3x4 +0x10 double field_0x10
+// @field Matrix3x4 +0x20 double field_0x20
+// @field Matrix3x4 +0x28 double field_0x28
+// @field Matrix3x4 +0x30 double field_0x30
+// @field Matrix3x4 +0x40 double field_0x40
+// @field Matrix3x4 +0x48 double field_0x48
+// @field Matrix3x4 +0x50 double field_0x50
+int32_t sub_006C42E0(uintptr_t arg0) {
+    auto f64 = [arg0](uintptr_t off) -> double {
+        return *reinterpret_cast<const double*>(arg0 + off);
+    };
+    double c0 = f64(0x30) * f64(0x08) - f64(0x10) * f64(0x28);
+    double c1 = f64(0x10) * f64(0x20) - f64(0x30) * f64(0x00);
+    double c2 = f64(0x00) * f64(0x28) - f64(0x20) * f64(0x08);
+    double det = c0 * f64(0x40) + c1 * f64(0x48) + c2 * f64(0x50);
+    return (det >= mem_0092A278) ? 1 : 0;
+}
+} // namespace lift_006C42E0
