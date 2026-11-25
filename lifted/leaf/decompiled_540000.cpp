@@ -809,7 +809,7 @@ void fn_005457B0(void* self) {
     lift_field<uintptr_t>(self, 0x00) = static_cast<uintptr_t>(0x00956944u);
 
     // Construct the embedded subobject at self+0x9C.
-    ext_00537E70(static_cast<unsigned char*>(self) + 0x9C);
+    ext_00537E70(static_cast<uint8_t*>(self) + 0x9C);
 
     // Final initialization of self (overwrites +0x00 with &mem_009560E4).
     fn_00543320(self);
