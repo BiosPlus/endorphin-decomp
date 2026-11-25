@@ -1,0 +1,21 @@
+{
+  "va": "0x0046F580",
+  "size": 87,
+  "orig_symbol": "sub_0046F580",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "ConstructOnce_0046F580",
+  "signature": "DWORD fn_0046F580()",
+  "summary": "One-time guarded initializer for the global object at 0x00AD8374: runs the base init on first call, then sets its vtable-like first DWORD to 0x0093B24C and returns its address.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:27:46Z"
+}

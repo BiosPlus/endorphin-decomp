@@ -1369,3 +1369,26 @@ void* fn_0046F460() {
     return reinterpret_cast<void*>(&mem_00AD835C);
 }
 } // namespace lift_0046F460
+
+// [0x0046F580] sub_0046F580 (87 bytes)
+namespace lift_0046F580 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern BYTE mem_00AD8378;
+extern DWORD mem_00AD8374;
+
+// @name ConstructOnce_0046F580
+// @summary One-time guarded initializer for the global object at 0x00AD8374: runs the base init on first call, then sets its vtable-like first DWORD to 0x0093B24C and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+DWORD fn_0046F580() {
+    // Original SEH frame setup/teardown (fs:[0] push/restore) is compiler/runtime
+    // scaffolding with no portable equivalent and is intentionally omitted.
+    if ((mem_00AD8378 & 1) == 0) {
+        mem_00AD8378 |= 1;
+        // thiscall: ECX = &mem_00AD8374, single argument 0
+        ext_0067A670(reinterpret_cast<void*>(&mem_00AD8374), 0);
+        mem_00AD8374 = 0x0093B24C;
+    }
+    return static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AD8374));
+}
+} // namespace lift_0046F580

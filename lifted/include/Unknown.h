@@ -30,7 +30,7 @@ struct Unknown_Fields {
     // +0x0   DWORD                    field_00  (evidence: 0x0049AD40, 0x0057BB20, 0x006B2F70, 0x006BDAF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint16_t                 field_00  (evidence: 0x007B89BC, 0x007B9050, 0x007BD640) // CONFLICT: multiple definitions at +0x0
     // +0x0   BYTE*                    field_0x00  (evidence: 0x0066A720) // CONFLICT: multiple definitions at +0x0
-    // +0x0   DWORD                    field_0x00  (evidence: 0x00468730, 0x0046FA80, 0x0046FAA0, 0x005D1480, 0x006721F0, 0x0067A670, 0x0067ECF0, 0x006F8B30, 0x006FC200, 0x00728DE0, 0x007C8A10, 0x007DB130, 0x0086B180, 0x0086B200) // CONFLICT: multiple definitions at +0x0
+    // +0x0   DWORD                    field_0x00  (evidence: 0x00468730, 0x0046F580, 0x0046FA80, 0x0046FAA0, 0x005D1480, 0x006721F0, 0x0067A670, 0x0067ECF0, 0x006F8B30, 0x006FC200, 0x00728DE0, 0x007C8A10, 0x007DB130, 0x0086B180, 0x0086B200) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD*                   field_0x00  (evidence: 0x006E85D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   FILE*                    field_0x00  (evidence: 0x00783670) // CONFLICT: multiple definitions at +0x0
     // +0x0   Unknown                  field_0x00  (evidence: 0x0072B130) // CONFLICT: multiple definitions at +0x0
