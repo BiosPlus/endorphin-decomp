@@ -559,3 +559,30 @@ void* fn_00692B50(void* self) {
     return obj;
 }
 } // namespace lift_00692B50
+
+// [0x006981A0] sub_006981A0 (83 bytes)
+namespace lift_006981A0 {
+extern uint32_t mem_00924FE0;
+
+namespace {
+// MSVCP80 std::basic_string<char> copy constructor, reached through the import slot.
+using StringCopyCtorFn = void(__thiscall*)(void* self, const void* src);
+} // namespace
+
+// @name Unknown::CopyConstructPair_006981A0
+// @class Unknown
+// @summary Copy-constructs two std::string members (at +0x00 and +0x1C) from the matching strings of src; returns this.
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1C std::string field_0x1C
+void* fn_006981A0(void* self, const void* src) {
+    auto copyCtor = reinterpret_cast<StringCopyCtorFn>(static_cast<uintptr_t>(mem_00924FE0));
+
+    auto* dst = static_cast<uint8_t*>(self);
+    const auto* from = static_cast<const uint8_t*>(src);
+
+    copyCtor(dst + 0x00, from + 0x00);
+    copyCtor(dst + 0x1C, from + 0x1C);
+
+    return self;
+}
+} // namespace lift_006981A0

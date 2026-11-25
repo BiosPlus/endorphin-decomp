@@ -41042,6 +41042,13 @@
     "summary": "Initializes a 20-byte struct with 0x19, three zeros, and 1.",
     "lifted_path": "lifted/leaf/tiny_690000.cpp"
   },
+  "0x006981A0": {
+    "name": "Unknown::CopyConstructPair_006981A0",
+    "class": "Unknown",
+    "signature": "void* fn_006981A0(void* self, const void* src)",
+    "summary": "Copy-constructs two std::string members (at +0x00 and +0x1C) from the matching strings of src; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00698200": {
     "name": "copyStringPairRange",
     "signature": "extern \"C\" void __cdecl fn_00698200(uint32_t begin, uint32_t end, uint32_t src)",
