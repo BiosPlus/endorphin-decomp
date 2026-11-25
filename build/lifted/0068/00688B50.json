@@ -4,11 +4,269 @@
   "orig_symbol": "sub_00688B50",
   "src_path": "src/leaf/decompiled_680000.cpp",
   "lifted_path": "lifted/leaf/decompiled_680000.cpp",
-  "name": "Unknown::ResetStringEntryArray",
-  "class": "Unknown",
-  "signature": "void fn_00688B50(void* self)",
-  "summary": "Destroys each 0x2C-byte entry's std::string, frees the entry array, and zeroes the three array pointers.",
+  "name": "VTableDispatch::GetTableEntry28ViaSlot30",
+  "class": "VTableDispatch",
+  "signature": "void* fn_006829E0(void* self)",
+  "summary": "Loads the object at this+0x28, calls its vtable slot at +0x30 to obtain an index, and returns GetTableEntry28Address(index).",
   "fields": [
+    {
+      "class": "VTableDispatch",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "void*",
+      "name": "subobject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void* field_0x10 (address only; this+0x10 passed as the this-pointer to",
+      "name": "ext_005111E0)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "std::string",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "std::string",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Class",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x88",
+      "type": "int32_t",
+      "name": "field_0x88"
+    },
+    {
+      "class": "sub_0068BED0",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "(none)",
+      "offset": "+0x0",
+      "type": "uint8_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "(none)",
+      "offset": "+0x1",
+      "type": "uint8_t",
+      "name": "field_0x01"
+    },
+    {
+      "class": "(none)",
+      "offset": "+0x2",
+      "type": "uint8_t",
+      "name": "field_0x02"
+    },
+    {
+      "class": "(none)",
+      "offset": "+0x3",
+      "type": "uint8_t",
+      "name": "field_0x03"
+    },
+    {
+      "class": "(none)",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "(none)",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "(none)",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "(none)",
+      "offset": "+0x10",
+      "type": "double",
+      "name": "field_0x10"
+    },
+    {
+      "class": "(none)",
+      "offset": "+0x18",
+      "type": "double",
+      "name": "field_0x18"
+    },
+    {
+      "class": "(none)",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "(none)",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "(none)",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "(none)",
+      "offset": "+0x30",
+      "type": "double",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable_0"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "vtable_4"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x10",
+      "type": "uint8_t[0x9d8]",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Record36",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "value"
+    },
+    {
+      "class": "Record36",
+      "offset": "+0x4",
+      "type": "BYTE",
+      "name": "flag"
+    },
+    {
+      "class": "Record36",
+      "offset": "+0x8",
+      "type": "std_string",
+      "name": "str"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10[]"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "UnknownElement44",
+      "offset": "+0x0",
+      "type": "u32",
+      "name": "field_0x00"
+    },
+    {
+      "class": "UnknownElement44",
+      "offset": "+0x4",
+      "type": "u32",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownElement44",
+      "offset": "+0x8",
+      "type": "u32",
+      "name": "field_0x08"
+    },
+    {
+      "class": "UnknownElement44",
+      "offset": "+0xC",
+      "type": "u32",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "UnknownElement44",
+      "offset": "+0x10",
+      "type": "std::string",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
     {
       "class": "Unknown",
       "offset": "+0x4",
@@ -30,5 +288,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T01:29:06Z"
+  "lifted_at": "2026-11-25T01:29:11Z"
 }

@@ -8,19 +8,19 @@
 // Recovered field layout for (none):
 namespace lifted_layout {
 struct (none)_Fields {
-    // +0x0   uint8_t                  field_0x00  (evidence: 0x00689570)
-    // +0x1   uint8_t                  field_0x01  (evidence: 0x00689570)
-    // +0x2   uint8_t                  field_0x02  (evidence: 0x00689570)
-    // +0x3   uint8_t                  field_0x03  (evidence: 0x00689570)
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00689570)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x00689570)
-    // +0xC   uint32_t                 field_0x0C  (evidence: 0x00689570)
-    // +0x10  double                   field_0x10  (evidence: 0x00689570)
-    // +0x18  double                   field_0x18  (evidence: 0x00689570)
-    // +0x24  uint32_t                 field_0x24  (evidence: 0x00689570)
-    // +0x28  uint32_t                 field_0x28  (evidence: 0x00689570)
-    // +0x2C  uint32_t                 field_0x2C  (evidence: 0x00689570)
-    // +0x30  double                   field_0x30  (evidence: 0x00689570)
+    // +0x0   uint8_t                  field_0x00  (evidence: 0x00688B50, 0x00689570)
+    // +0x1   uint8_t                  field_0x01  (evidence: 0x00688B50, 0x00689570)
+    // +0x2   uint8_t                  field_0x02  (evidence: 0x00688B50, 0x00689570)
+    // +0x3   uint8_t                  field_0x03  (evidence: 0x00688B50, 0x00689570)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00688B50, 0x00689570)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00688B50, 0x00689570)
+    // +0xC   uint32_t                 field_0x0C  (evidence: 0x00688B50, 0x00689570)
+    // +0x10  double                   field_0x10  (evidence: 0x00688B50, 0x00689570)
+    // +0x18  double                   field_0x18  (evidence: 0x00688B50, 0x00689570)
+    // +0x24  uint32_t                 field_0x24  (evidence: 0x00688B50, 0x00689570)
+    // +0x28  uint32_t                 field_0x28  (evidence: 0x00688B50, 0x00689570)
+    // +0x2C  uint32_t                 field_0x2C  (evidence: 0x00688B50, 0x00689570)
+    // +0x30  double                   field_0x30  (evidence: 0x00688B50, 0x00689570)
     // +0x7C  uint32_t                 field_7C  (evidence: 0x007C2E50, 0x007C6FE0)
 };
 } // namespace lifted_layout
