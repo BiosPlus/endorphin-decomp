@@ -2186,6 +2186,13 @@
     "summary": "Passes arg through ext_006AD180, then tail-dispatches to vtable slot 5 (+0x14) of the object stored at self+0x4, passing the result as its argument.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041CBF0": {
+    "name": "Properties::AutoCompleteSupplier::vfunc_1",
+    "class": "Properties::AutoCompleteSupplier",
+    "signature": "uint32_t __thiscall fn_0041CBF0(uint32_t /*this_ptr*/, uint32_t out_str)",
+    "summary": "Returns a string from the last element of the global vector via its vfunc_0, or constructs an empty/default std::string if empty.",
+    "lifted_path": "lifted/Properties/AutoCompleteSupplier.cpp"
+  },
   "0x0041CC30": {
     "name": "Properties::AutoCompleteSupplier::vfunc_2",
     "class": "Properties::AutoCompleteSupplier",

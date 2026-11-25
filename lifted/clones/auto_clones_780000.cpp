@@ -258,3 +258,17 @@ void fn_006BBA40(void) {
 }
 } // namespace lift_006BBA40
 } // namespace lift_00787560
+
+// [0x00780270]
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B608A0;
+extern void* __thiscall ext_00780030(void* self_ptr, int32_t count);
+
+void* fn_00780270() {
+    return ext_00780030(&mem_00B608A0, 0xB1);
+}
+} // namespace lift_00780270
