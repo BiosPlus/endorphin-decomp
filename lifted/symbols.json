@@ -17317,6 +17317,13 @@
     "summary": "Stringifies the gravity-enabled flag of the PoseToolOptions object referenced by the second argument into the caller-provided result slot; throws if the object pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004EA400": {
+    "name": "ExprParser::ReadWriteMethodType::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions, bool, isProjectRootEnabled, bool, setProjectRootEnabled\u003e",
+    "signature": "extern \"C\" void __stdcall fn_004EA400(void** slot, void* arg)",
+    "summary": "Reads the bool from the argument's sub-object via vtable slot 3, stores it at obj+0x09, then triggers the global dispatch; throws if the value pointer is null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004EA4D0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, isProjectRootEnabled, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0\u003e",

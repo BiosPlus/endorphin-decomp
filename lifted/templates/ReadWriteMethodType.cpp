@@ -9906,3 +9906,36 @@ void fn_004E9F60(void** target, void* source) {
     ext_004E9D70();
 }
 } // namespace lift_004E9F60
+
+// [0x004EA400]
+namespace lift_004EA400 {
+extern INT ext_004E9D70(void);
+extern void* ext_0046C3C0(void* self);
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::PoseToolOptions, bool, isProjectRootEnabled, bool, setProjectRootEnabled>
+// @summary Reads the bool from the argument's sub-object via vtable slot 3, stores it at obj+0x09, then triggers the global dispatch; throws if the value pointer is null.
+// @field ExprParser::ValuePtrType +0x09 BOOLEAN field_0x09
+
+extern void __stdcall fn_004EA400(void** slot, void* arg) {
+    void* obj = *slot;
+    if (obj == nullptr) {
+        // Original constructs an exception object and throws it via _CxxThrowException.
+        // The exception object layout is not recovered, so a standard exception is thrown instead.
+        void* exc_storage[8] = {};
+        ext_0046C3C0(exc_storage);
+        throw std::runtime_error("ReadWriteMethodType::vfunc_41: null value pointer");
+    }
+
+    // arg->sub (at +4); sub's vtable slot 3 (+0x0C) is called with this=sub and arg pushed.
+    void* sub = lift_field<void*>(arg, 4);
+    void** vtable = lift_field<void**>(sub, 0);
+    void* method = lift_field<void*>(vtable, 0x0C);
+    auto fn = reinterpret_cast<uint8_t (*)(void*, void*)>(method);
+    uint8_t result = fn(sub, arg);
+
+    lift_field<uint8_t>(obj, 0x09) = result;
+
+    ext_004E9D70();
+}
+} // namespace lift_004EA400
