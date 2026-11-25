@@ -1,0 +1,22 @@
+{
+  "va": "0x004FD800",
+  "size": 6,
+  "orig_symbol": "sub_004FD800",
+  "src_path": "src/leaf/tiny_4F0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4F0000.cpp",
+  "name": "WriteZeroThroughPtrField",
+  "class": "Unknown",
+  "signature": "void fn_004FD800(void* self)",
+  "summary": "Loads the pointer stored at self+0x00 and writes a zero byte to the location it points to.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint8_t*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:12:12Z"
+}

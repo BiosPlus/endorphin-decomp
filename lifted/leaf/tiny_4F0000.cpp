@@ -136,3 +136,15 @@ void fn_004F9950(void* self, float* out) {
     out[3] = 0.0f;
 }
 } // namespace lift_004F9950
+
+// [0x004FD800] sub_004FD800 (6 bytes)
+namespace lift_004FD800 {
+// @name WriteZeroThroughPtrField
+// @class Unknown
+// @summary Loads the pointer stored at self+0x00 and writes a zero byte to the location it points to.
+// @field Unknown +0x00 uint8_t* field_0x00
+void fn_004FD800(void* self) {
+    uint8_t* target = lift_field<uint8_t*>(self, 0);
+    *target = 0;
+}
+} // namespace lift_004FD800

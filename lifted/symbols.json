@@ -16961,6 +16961,13 @@
     "summary": "Returns true when the vector reached through this-\u003efield_0x08 chain is non-empty (begin != null and end != begin).",
     "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
   },
+  "0x004FD800": {
+    "name": "WriteZeroThroughPtrField",
+    "class": "Unknown",
+    "signature": "void fn_004FD800(void* self)",
+    "summary": "Loads the pointer stored at self+0x00 and writes a zero byte to the location it points to.",
+    "lifted_path": "lifted/leaf/tiny_4F0000.cpp"
+  },
   "0x004FDA70": {
     "name": "NMData::EvolveEngineData::vfunc_7",
     "class": "NMData::EvolveEngineData",
