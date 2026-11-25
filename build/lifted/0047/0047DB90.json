@@ -1,0 +1,14 @@
+{
+  "va": "0x0047DB90",
+  "size": 35,
+  "orig_symbol": "NMData::SceneData::vfunc_6",
+  "src_path": "src/NMData/SceneData.cpp",
+  "lifted_path": "lifted/NMData/SceneData.cpp",
+  "name": "NMData::SceneData::vfunc_6",
+  "class": "NMData::SceneData",
+  "signature": "std::string fn_0047DB90(const void* /*self*/)",
+  "summary": "Returns a std::string constructed from the C-string pointer stored in mem_00A9F23C; does not read self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:50:33Z"
+}
