@@ -1,0 +1,45 @@
+{
+  "va": "0x006678A0",
+  "size": 81,
+  "orig_symbol": "sub_006678A0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "lookupIndexedSearchableMapValue_006678A0",
+  "signature": "void* fn_006678A0(void* self, uint32_t index, const void* key, void* arg3)",
+  "summary": "Indexes a 16-byte-stride table at self, looks up key in the SearchableMap found there, and returns the first value (or result of a second lookup when arg3+0x14 is nonzero); returns null on miss.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "int32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint8_t*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "uint8_t",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:04:59Z"
+}

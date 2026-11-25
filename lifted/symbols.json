@@ -44224,6 +44224,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0043D780 (AllocAndInitRecord).",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x006678A0": {
+    "name": "lookupIndexedSearchableMapValue_006678A0",
+    "signature": "void* fn_006678A0(void* self, uint32_t index, const void* key, void* arg3)",
+    "summary": "Indexes a 16-byte-stride table at self, looks up key in the SearchableMap found there, and returns the first value (or result of a second lookup when arg3+0x14 is nonzero); returns null on miss.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00667F10": {
     "name": "SearchableMap\u003cFileProject::File, GetNameFromAttribute\u003cFileProject::File\u003e\u003e::vfunc_0",
     "class": "SearchableMap\u003cFileProject::File, GetNameFromAttribute\u003cFileProject::File\u003e\u003e",

@@ -5,6 +5,7 @@
 #include <cstring>
 #include <cstdint>
 #include <cstddef>
+#include <cstdlib>
 
 // [0x0066A760] sub_0066A760 (10 bytes)
 namespace lift_0066A760 {
@@ -2405,3 +2406,45 @@ void fn_00667030(void* self) {
     lift_field<void*>(self, 0x04) = eax;
 }
 } // namespace lift_00667030
+
+// [0x006678A0]
+namespace lift_006678A0 {
+// Known callee 0x00667F10: SearchableMap<FileProject::File, GetNameFromAttribute<FileProject::File>>::vfunc_0
+extern void ext_00667F10();
+// Known callee 0x00668D80: SearchableMap<NM::Vector4, GetNameFromAttribute<NM::Vector4>>::vfunc_0
+extern void ext_00668D80();
+
+// @name lookupIndexedSearchableMapValue_006678A0
+// @summary Indexes a 16-byte-stride table at self, looks up key in the SearchableMap found there, and returns the first value (or result of a second lookup when arg3+0x14 is nonzero); returns null on miss.
+// @field Unknown +0x14 int32_t field_0x14
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x08 uint8_t* field_0x08
+// @field Unknown +0x00 uint8_t* field_0x00
+// @field Unknown +0x28 uint8_t field_0x28
+void* fn_006678A0(void* self, uint32_t index, const void* key, void* arg3) {
+    using LookupFn = void* (*)(void*, const void*);
+    auto lookupVector4 = reinterpret_cast<LookupFn>(ext_00668D80);
+    auto lookupFile = reinterpret_cast<LookupFn>(ext_00667F10);
+
+    uint8_t* entry = static_cast<uint8_t*>(self) + (static_cast<size_t>(index) << 4) + 8;
+    void* map = lookupVector4(entry, key);
+    if (map == nullptr) {
+        return nullptr;
+    }
+
+    if (lift_field<int32_t>(arg3, 0x14) != 0) {
+        return lookupFile(map, arg3);
+    }
+
+    if (lift_field<uint32_t>(map, 0x0C) == 0) {
+        return nullptr;
+    }
+
+    uint8_t* head = lift_field<uint8_t*>(map, 0x08);
+    uint8_t* first = lift_field<uint8_t*>(head, 0x00);
+    if (first == head) {
+        std::abort();
+    }
+    return first + 0x28;
+}
+} // namespace lift_006678A0
