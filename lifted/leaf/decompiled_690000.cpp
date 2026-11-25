@@ -1200,3 +1200,30 @@ void fn_0069A260(void* self) {
 } // namespace lift_005015E0
 } // namespace lift_0051EC00
 } // namespace lift_0069A260
+
+// [0x006999F0] sub_006999F0 (95 bytes)
+namespace lift_006999F0 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void ext_0066AD10(void* out_str, const void* src);
+// Known callee 0x006A6C87: sub_006A6C87 (registers a teardown routine, atexit-style)
+extern void ext_006A6C87(void (*fn)());
+// Teardown routine at 0x00922000
+extern void ext_00922000();
+// String literal source (address 0x00AA3DB0)
+extern char mem_00AA3DB0[];
+// Init guard byte/dword (address 0x00B5C9C4)
+extern int mem_00B5C9C4;
+// Static string object (address 0x00B5C9A8)
+extern char mem_00B5C9A8[];
+
+// @name GetOnceInitString_006999F0
+// @summary Constructs a static string object from a literal on first call, registers its destructor, and returns it.
+void* fn_006999F0() {
+    if ((mem_00B5C9C4 & 1) == 0) {
+        mem_00B5C9C4 |= 1;
+        ext_0066AD10(&mem_00B5C9A8, mem_00AA3DB0);
+        ext_006A6C87(ext_00922000);
+    }
+    return &mem_00B5C9A8;
+}
+} // namespace lift_006999F0

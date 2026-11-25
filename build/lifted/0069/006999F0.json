@@ -1,0 +1,13 @@
+{
+  "va": "0x006999F0",
+  "size": 95,
+  "orig_symbol": "sub_006999F0",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "GetOnceInitString_006999F0",
+  "signature": "void* fn_006999F0()",
+  "summary": "Constructs a static string object from a literal on first call, registers its destructor, and returns it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:33:53Z"
+}

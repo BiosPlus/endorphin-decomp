@@ -46291,6 +46291,12 @@
     "summary": "One-time init guard: if bit 0 of the flag byte at mem_00B5C9A4 is clear, sets it, zeroes mem_00B5C99C, copies mem_00B599BC into mem_00B5C9A0, calls ext_006A6C87(0x921FE0); always returns \u0026mem_00B5C99C.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x006999F0": {
+    "name": "GetOnceInitString_006999F0",
+    "signature": "void* fn_006999F0()",
+    "summary": "Constructs a static string object from a literal on first call, registers its destructor, and returns it.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00699E30": {
     "name": "sub_00699E30",
     "signature": "void* fn_00699E30(void* first, void* last, void* dest_last)",
