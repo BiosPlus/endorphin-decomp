@@ -70383,6 +70383,12 @@
     "summary": "No-op: \"add eax, 0\" (eax unchanged; only flags are touched)",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x00860E90": {
+    "name": "bytesToHex",
+    "signature": "void __cdecl sub_00860E90(char* dst, const uint8_t* src, int32_t len)",
+    "summary": "Converts a byte buffer of given length into a null-terminated hex string.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x00862970": {
     "name": "thunk_KERNEL32_GetCurrentProcessId",
     "signature": "extern \"C\" void fn_00862970(void)",
