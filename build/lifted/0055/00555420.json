@@ -1,0 +1,22 @@
+{
+  "va": "0x00555420",
+  "size": 74,
+  "orig_symbol": "sub_00555420",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "LowerBound32ByFirstDword_00555420",
+  "class": "Element",
+  "signature": "void* fn_00555420(void* first, void* last, const void* key)",
+  "summary": "std::lower_bound over a [first,last) array of 32-byte elements, comparing each element's first uint32 against *key; returns the first element not less than *key.",
+  "fields": [
+    {
+      "class": "Element",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "firstDword"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:33:40Z"
+}

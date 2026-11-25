@@ -998,3 +998,28 @@ void* fn_005565C0(const void* first, const void* last, void* dest) {
 }
 } // namespace lift_00672810
 } // namespace lift_005565C0
+
+// [0x00555420] sub_00555420 (74 bytes)
+namespace lift_00555420 {
+// @name LowerBound32ByFirstDword_00555420
+// @class Element
+// @summary std::lower_bound over a [first,last) array of 32-byte elements, comparing each element's first uint32 against *key; returns the first element not less than *key.
+// @field Element +0x00 uint32_t firstDword
+void* fn_00555420(void* first, void* last, const void* key) {
+    uint8_t* cur = static_cast<uint8_t*>(first);
+    ptrdiff_t count = (static_cast<uint8_t*>(last) - cur) >> 5;
+    const uint32_t value = lift_field<uint32_t>(key, 0);
+
+    while (count > 0) {
+        const ptrdiff_t half = count / 2;
+        uint8_t* mid = cur + (half << 5);
+        if (lift_field<uint32_t>(mid, 0) < value) {
+            cur = mid + 32;
+            count = count - half - 1;
+        } else {
+            count = half;
+        }
+    }
+    return cur;
+}
+} // namespace lift_00555420
