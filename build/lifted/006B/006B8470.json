@@ -1,0 +1,28 @@
+{
+  "va": "0x006B8470",
+  "size": 42,
+  "orig_symbol": "NMCAutoCompleteEdit::vfunc_79",
+  "src_path": "src/classes/NMCAutoCompleteEdit.cpp",
+  "lifted_path": "lifted/classes/NMCAutoCompleteEdit.cpp",
+  "name": "NMCAutoCompleteEdit::forwardToSubobjectVfunc3",
+  "class": "NMCAutoCompleteEdit",
+  "signature": "void fn_006B8470(void* self, DWORD arg1, DWORD arg2, DWORD arg3)",
+  "summary": "Forwards three stack arguments plus field +0x54 to virtual slot 3 of the subobject at +0x58, if present.",
+  "fields": [
+    {
+      "class": "NMCAutoCompleteEdit",
+      "offset": "+0x54",
+      "type": "DWORD",
+      "name": "field_0x54"
+    },
+    {
+      "class": "NMCAutoCompleteEdit",
+      "offset": "+0x58",
+      "type": "void*",
+      "name": "subobject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:28:54Z"
+}
