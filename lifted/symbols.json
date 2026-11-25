@@ -55885,6 +55885,12 @@
     "summary": "12-byte byte-index table indexed by (eax) and used by a jump table dispatch at 0x007B6xxx (mov cl, [eax+0x7B7084]; jmp [ecx*4+0x7B7074]); this is data, not code.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B7970": {
+    "name": "ProcessByteBufferUntilStop",
+    "signature": "void __cdecl ProcessByteBufferUntilStop(uint32_t count, const uint8_t* data)",
+    "summary": "Passes each byte of a buffer to ext_007B7720, stopping early when mem_00B61218 is set and mem_00B61219 is clear.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B8A48": {
     "name": "dataTable_007B8A48",
     "class": "none",

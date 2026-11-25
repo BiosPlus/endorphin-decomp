@@ -547,3 +547,22 @@ void fn_007BF2B0(void* self) {
     lift_field<int32_t>(cursor, 0) = -1;
 }
 } // namespace lift_007BF2B0
+
+// [0x007B7970]
+namespace lift_007B7970 {
+// @name ProcessByteBufferUntilStop
+// @summary Passes each byte of a buffer to ext_007B7720, stopping early when mem_00B61218 is set and mem_00B61219 is clear.
+
+extern void ext_007B7720(uint8_t value);
+extern uint8_t mem_00B61218;
+extern uint8_t mem_00B61219;
+
+void __cdecl ProcessByteBufferUntilStop(uint32_t count, const uint8_t* data) {
+    for (uint32_t i = 0; i < count; ++i) {
+        ext_007B7720(data[i]);
+        if (mem_00B61218 != 0 && mem_00B61219 == 0) {
+            break;
+        }
+    }
+}
+} // namespace lift_007B7970

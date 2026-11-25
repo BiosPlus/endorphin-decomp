@@ -1,0 +1,13 @@
+{
+  "va": "0x007B7970",
+  "size": 64,
+  "orig_symbol": "sub_007B7970",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "ProcessByteBufferUntilStop",
+  "signature": "void __cdecl ProcessByteBufferUntilStop(uint32_t count, const uint8_t* data)",
+  "summary": "Passes each byte of a buffer to ext_007B7720, stopping early when mem_00B61218 is set and mem_00B61219 is clear.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:09:23Z"
+}
