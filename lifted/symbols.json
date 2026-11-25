@@ -32686,6 +32686,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
     "lifted_path": "lifted/leaf/tiny_5E0000.cpp"
   },
+  "0x005E0B20": {
+    "name": "TreeIterator::increment",
+    "class": "TreeIterator",
+    "signature": "void fn_005E0B20(void* self)",
+    "summary": "Advances a binary-tree iterator to its in-order successor (red-black tree style, nil sentinel at node+0x51).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005E0BB0": {
     "name": "Unknown::isLengthWithinOfUnit",
     "class": "Unknown",

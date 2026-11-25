@@ -1,0 +1,28 @@
+{
+  "va": "0x005E0B20",
+  "size": 108,
+  "orig_symbol": "sub_005E0B20",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "TreeIterator::increment",
+  "class": "TreeIterator",
+  "signature": "void fn_005E0B20(void* self)",
+  "summary": "Advances a binary-tree iterator to its in-order successor (red-black tree style, nil sentinel at node+0x51).",
+  "fields": [
+    {
+      "class": "TreeIterator",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "TreeIterator",
+      "offset": "+0x4",
+      "type": "uint8_t*",
+      "name": "node"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:58:07Z"
+}
