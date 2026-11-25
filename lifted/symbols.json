@@ -5188,6 +5188,13 @@
     "summary": "Releases the current element via vtable slot 2, selects element `index` from the array at +0x04..+0x08, stores it as current at +0x10, and invokes its vtable slot 1.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x00458900": {
+    "name": "SpinButtonStates::ClickedDownState::vfunc_5",
+    "class": "SpinButtonStates::ClickedDownState",
+    "signature": "void fn_00458900(void* self)",
+    "summary": "Calls slot 1 then slot 2 on the object at +0x04, passing each the result of ext_006A5EC0(+0x08), then calls setCurrentByIndex(+0x0C, 0).",
+    "lifted_path": "lifted/SpinButtonStates/ClickedDownState.cpp"
+  },
   "0x004589E0": {
     "name": "sub_004589E0",
     "signature": "extern \"C\" void* __cdecl fn_004589E0(void)",
@@ -58735,6 +58742,12 @@
     "signature": "float fn_007FC2B0(const float* a, const float* b)",
     "summary": "Returns the 3-component dot product of two float vectors (y and x terms summed first, then z).",
     "lifted_path": "lifted/leaf/tiny_7F0000.cpp"
+  },
+  "0x00802D40": {
+    "name": "sub_00802D40",
+    "signature": "void __thiscall sub_00802D40(uintptr_t ecx)",
+    "summary": "Copies aligned 32-bit float elements from field_0x30 to field_0x40 up to field_0x04 rounded up to a multiple of 4.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
   "0x00803980": {
     "name": "fn_00803980 (returns **a - *b)",
