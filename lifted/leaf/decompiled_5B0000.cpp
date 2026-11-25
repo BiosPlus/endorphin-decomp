@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_5B0000.cpp
 #include "lift_compat.h"
+#include <cstdint>
 
 // [0x005B6970]
 namespace lift_005B6970 {
@@ -350,3 +351,44 @@ float fn_005B1B90(void* self, int32_t index) {
 }
 } // namespace lift_005B1B90
 } // namespace lift_005B1B90
+
+// [0x005B51E0]
+namespace lift_005B51E0 {
+// @name Unknown::ResetFields_005B51E0
+// @class Unknown
+// @summary Stores the class vtable value at +0x00 and zeroes twelve dword fields of the object (SEH frame setup/teardown elided).
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0c uint32_t field_0x0c
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1c uint32_t field_0x1c
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x2c uint32_t field_0x2c
+// @field Unknown +0x30 uint32_t field_0x30
+// @field Unknown +0x38 uint32_t field_0x38
+// @field Unknown +0x3c uint32_t field_0x3c
+// @field Unknown +0x40 uint32_t field_0x40
+
+static inline void store_u32(std::uint8_t* base, std::uint32_t off, std::uint32_t value) {
+    *reinterpret_cast<std::uint32_t*>(base + off) = value;
+}
+
+// __thiscall-style: `self` is the object pointer (ECX on entry).
+void Unknown_ResetFields_005B51E0(std::uint8_t* self) {
+    store_u32(self, 0x00, 0x0096085Cu);
+    store_u32(self, 0x08, 0u);
+    store_u32(self, 0x0c, 0u);
+    store_u32(self, 0x10, 0u);
+    store_u32(self, 0x18, 0u);
+    store_u32(self, 0x1c, 0u);
+    store_u32(self, 0x20, 0u);
+    store_u32(self, 0x28, 0u);
+    store_u32(self, 0x2c, 0u);
+    store_u32(self, 0x30, 0u);
+    store_u32(self, 0x38, 0u);
+    store_u32(self, 0x3c, 0u);
+    store_u32(self, 0x40, 0u);
+}
+} // namespace lift_005B51E0

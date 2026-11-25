@@ -25496,6 +25496,13 @@
     "summary": "Emits the vertex rings of a sphere-like primitive (lower latitude rings, equator, upper latitude rings) via SphylType::emitVertex.",
     "lifted_path": "lifted/Geometry/SphylType.cpp"
   },
+  "0x005B51E0": {
+    "name": "Unknown::ResetFields_005B51E0",
+    "class": "Unknown",
+    "signature": "static inline void store_u32(std::uint8_t* base, std::uint32_t off, std::uint32_t value)",
+    "summary": "Stores the class vtable value at +0x00 and zeroes twelve dword fields of the object (SEH frame setup/teardown elided).",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B5320": {
     "name": "Geometry::AnimationType::getStaticList",
     "class": "Geometry::AnimationType",
