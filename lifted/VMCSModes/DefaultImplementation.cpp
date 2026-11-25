@@ -220,3 +220,32 @@ bool fn_004FA230(void* self) {
     return count != 0;
 }
 } // namespace lift_004FA230
+
+// [0x004FA2B0] VMCSModes::DefaultImplementation::vfunc_138 (58 bytes)
+namespace lift_004FA2B0 {
+extern void* ext_005B11F0(void* self);
+
+// @name VMCSModes::DefaultImplementation::vfunc_138
+// @class VMCSModes::DefaultImplementation
+// @summary Returns true when the vector reached through this->field_0x08 chain is non-empty (begin != null and end != begin).
+// @field VMCSModes::DefaultImplementation +0x08 void* field_0x08
+BOOLEAN fn_004FA2B0(void* self) {
+    void* delegate = lift_field<void*>(self, 0x08);
+    void* mid      = lift_field<void*>(delegate, 0x14);
+    void* owner    = lift_field<void*>(mid, 0x34);
+
+    void* obj  = ext_005B11F0(owner);
+    void** vtbl = lift_field<void**>(obj, 0x0);
+    using GetVec = void* (*)(void*);
+    GetVec getVec = reinterpret_cast<GetVec>(lift_field<void*>(vtbl, 0x2c));
+    void* vec = getVec(obj);
+
+    uintptr_t begin = lift_field<uintptr_t>(vec, 0x04);
+    if (begin == 0) {
+        return 0;
+    }
+    uintptr_t end = lift_field<uintptr_t>(vec, 0x08);
+    int32_t diff = static_cast<int32_t>(end - begin);
+    return (diff >> 2) != 0;
+}
+} // namespace lift_004FA2B0

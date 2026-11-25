@@ -14912,6 +14912,13 @@
     "summary": "Returns true when the container returned by vtable slot 9 of the object obtained via OglRenderer::vfunc_118 is non-empty.",
     "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
   },
+  "0x004FA2B0": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_138",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "BOOLEAN fn_004FA2B0(void* self)",
+    "summary": "Returns true when the vector reached through this-\u003efield_0x08 chain is non-empty (begin != null and end != begin).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
   "0x004FD800": {
     "name": "StringBuffer::clear",
     "class": "StringBuffer",
