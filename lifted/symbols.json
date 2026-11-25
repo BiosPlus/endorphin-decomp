@@ -58483,6 +58483,13 @@
     "summary": "Looks up a handler in the object's context table by its type byte and calls it with (\u0026{obj, arg2}, arg3, arg4).",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CCAB0": {
+    "name": "Unknown::ResetDefaults",
+    "class": "Unknown",
+    "signature": "void __cdecl sub_007CCAB0(void* self)",
+    "summary": "Zeroes a 0x44-byte state block and sets float defaults (0.001 at +0x14, FLT_MAX at +0x20 and +0x2C).",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CCB60": {
     "name": "Unknown::storeNonNegativeAndSetMagnitudeFlag",
     "class": "Unknown",

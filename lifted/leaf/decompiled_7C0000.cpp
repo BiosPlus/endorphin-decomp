@@ -1092,3 +1092,50 @@ void fn_007CCB60(uint8_t* self, float value) {
     }
 }
 } // namespace lift_007CCB60
+
+// [0x007CCAB0]
+namespace lift_007CCAB0 {
+// @name Unknown::ResetDefaults
+// @class Unknown
+// @summary Zeroes a 0x44-byte state block and sets float defaults (0.001 at +0x14, FLT_MAX at +0x20 and +0x2C).
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 float field_0x10
+// @field Unknown +0x14 float field_0x14
+// @field Unknown +0x18 float field_0x18
+// @field Unknown +0x1C float field_0x1C
+// @field Unknown +0x20 float field_0x20
+// @field Unknown +0x24 float field_0x24
+// @field Unknown +0x28 float field_0x28
+// @field Unknown +0x2C float field_0x2C
+// @field Unknown +0x30 float field_0x30
+// @field Unknown +0x34 float field_0x34
+// @field Unknown +0x38 float field_0x38
+// @field Unknown +0x3C float field_0x3C
+// @field Unknown +0x40 float field_0x40
+
+extern const float mem_00968ED8;    // .rdata float 0.001
+extern const uint32_t mem_0099D148; // .rdata u32 0x7F7FFFFF
+
+void __cdecl sub_007CCAB0(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0u;
+    lift_field<uint32_t>(self, 0x04) = 0u;
+    lift_field<uint32_t>(self, 0x08) = 0u;
+    lift_field<uint32_t>(self, 0x0C) = 0u;
+    lift_field<float>(self, 0x10) = 0.0f;
+    lift_field<float>(self, 0x14) = mem_00968ED8;
+    lift_field<float>(self, 0x18) = 0.0f;
+    lift_field<float>(self, 0x1C) = 0.0f;
+    lift_field<float>(self, 0x40) = 0.0f;
+    lift_field<float>(self, 0x20) = std::bit_cast<float>(mem_0099D148);
+    lift_field<float>(self, 0x2C) = std::bit_cast<float>(mem_0099D148);
+    lift_field<float>(self, 0x24) = 0.0f;
+    lift_field<float>(self, 0x28) = 0.0f;
+    lift_field<float>(self, 0x30) = 0.0f;
+    lift_field<float>(self, 0x34) = 0.0f;
+    lift_field<float>(self, 0x38) = 0.0f;
+    lift_field<float>(self, 0x3C) = 0.0f;
+}
+} // namespace lift_007CCAB0
