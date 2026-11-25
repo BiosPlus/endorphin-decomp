@@ -1,0 +1,27 @@
+{
+  "va": "0x00462A60",
+  "size": 6,
+  "orig_symbol": "sub_00462A60",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "GetInnerByte1C",
+  "signature": "uint8_t fn_00462A60(void* self)",
+  "summary": "Returns the byte at +0x1C of the object pointed to by this+0x00.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint8_t",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:12:15Z"
+}

@@ -877,3 +877,15 @@ uint32_t fn_00468660(void* self) {
 }
 } // namespace lift_004023C0
 } // namespace lift_00468660
+
+// [0x00462A60] sub_00462A60 (6 bytes)
+namespace lift_00462A60 {
+// @name GetInnerByte1C
+// @summary Returns the byte at +0x1C of the object pointed to by this+0x00.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x1C uint8_t field_0x1C
+uint8_t fn_00462A60(void* self) {
+    void* inner = lift_field<void*>(self, 0x00);
+    return lift_field<uint8_t>(inner, 0x1C);
+}
+} // namespace lift_00462A60
