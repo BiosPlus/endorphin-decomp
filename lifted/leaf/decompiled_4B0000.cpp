@@ -6,8 +6,10 @@
 #include <cstring>
 #include <cstdlib>
 #include <cmath>
+#include <istream>
+#include <bit>
 
-// [0x004B6C90] sub_004B6C90 (34 bytes)
+#include <bit>
 namespace lift_004B6C90 {
 extern const char mem_009433E0[];
 
@@ -714,3 +716,51 @@ void* fn_004BA740(void* dst, uint32_t value) {
 }
 } // namespace lift_0049D390
 } // namespace lift_004BA740
+
+// [0x004B51F0] sub_004B51F0 (90 bytes)
+namespace lift_004B51F0 {
+// @name sub_004B51F0
+// @summary Auto-lifted identical-shape clone of 0x0050BE20 (Vector_eraseTailChecked).
+namespace lift_0050BE20 {
+// Known callee 0x00536230: deleteRangeChecked (Deletes each non-null element of a 4-byte-slot range [first, last), validating the owner and its bound at every step.)
+// Called with four stack words in the order the original pushes them: (self, begin, self, end).
+extern void ext_004B4930(void* self, uint32_t arg1, uint32_t first, uint32_t arg3, uint32_t bound);
+// Known callee 0x00596660: Vector_erase_range (Erases a range [first, last) of 4-byte elements from a vector and returns the updated iterator.)
+extern void* ext_00596660(void* self, void* out_iter, uint32_t first_container, uint32_t first_ptr, uint32_t last_container, uint32_t last_ptr);
+// Invalid-parameter handler pointer (MSVCR80!_invalid_parameter_noinfo).
+extern void mem_00925134();
+
+// @name Vector_eraseTailChecked
+// @class Vector
+// @summary Validates the vector's begin/end/bound pointers, deletes the owned elements through ext_00536230, then erases the tail range via ext_00596660.
+// @field Vector +0x04 uint32_t field_0x04
+// @field Vector +0x08 uint32_t field_0x08
+void fn_004B51F0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    const uint32_t selfValue = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+
+    // First pass: check the begin/end ordering, then delete the range.
+    uint32_t bound = lift_field<uint32_t>(base, 0x08);
+    if (lift_field<uint32_t>(base, 0x04) > bound) {
+        mem_00925134();
+    }
+    uint32_t first = lift_field<uint32_t>(base, 0x04);
+    if (first > lift_field<uint32_t>(base, 0x08)) {
+        mem_00925134();
+    }
+    ext_004B4930(self, selfValue, first, selfValue, bound);
+
+    // Second pass: re-validate, then erase the tail and capture the returned iterator.
+    bound = lift_field<uint32_t>(base, 0x08);
+    if (lift_field<uint32_t>(base, 0x04) > bound) {
+        mem_00925134();
+    }
+    first = lift_field<uint32_t>(base, 0x04);
+    if (first > lift_field<uint32_t>(base, 0x08)) {
+        mem_00925134();
+    }
+    uint32_t outIter[2] = {0, 0};
+    ext_00596660(self, outIter, selfValue, first, selfValue, bound);
+}
+} // namespace lift_0050BE20
+} // namespace lift_004B51F0

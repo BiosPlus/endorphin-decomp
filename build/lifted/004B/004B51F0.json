@@ -1,0 +1,28 @@
+{
+  "va": "0x004B51F0",
+  "size": 90,
+  "orig_symbol": "sub_004B51F0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "sub_004B51F0",
+  "class": "Vector",
+  "signature": "void fn_004B51F0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0050BE20 (Vector_eraseTailChecked).",
+  "fields": [
+    {
+      "class": "Vector",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T03:20:30Z"
+}

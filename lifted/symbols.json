@@ -12789,6 +12789,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004B5030 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/templates/auto_tiny.cpp"
   },
+  "0x004B51F0": {
+    "name": "sub_004B51F0",
+    "class": "Vector",
+    "signature": "void fn_004B51F0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0050BE20 (Vector_eraseTailChecked).",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B54F0": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, bool, {public: bool __thiscall NMData::GraphEngineData::attachToFrameBuffer(void) const, 0}, bool, {public: void __thiscall NMData::GraphEngineData::setAttachToFrameBuffer(bool), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, bool, {public: bool __thiscall NMData::GraphEngineData::attachToFrameBuffer(void) const, 0}, bool, {public: void __thiscall NMData::GraphEngineData::setAttachToFrameBuffer(bool), 0}\u003e",
@@ -43681,6 +43688,13 @@
     "signature": "extern \"C\" void fn_00675100(void)",
     "summary": "Pure jump thunk forwarding to sub_004BBC20.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x006753D0": {
+    "name": "sub_006753D0",
+    "class": "Vector",
+    "signature": "void fn_006753D0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0050BE20 (Vector_eraseTailChecked).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x00675650": {
     "name": "sub_00675650",
