@@ -1,0 +1,27 @@
+{
+  "va": "0x0085A370",
+  "size": 112,
+  "orig_symbol": "sub_0085A370",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "AllocEntry16",
+  "signature": "uint32_t __cdecl fn_0085A370(uint32_t obj)",
+  "summary": "Appends a new 16-byte entry to a LocalAlloc-backed array, initializing it and returning its index or -1 on failure.",
+  "fields": [
+    {
+      "class": "Obj",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "count"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "entries"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:34:39Z"
+}

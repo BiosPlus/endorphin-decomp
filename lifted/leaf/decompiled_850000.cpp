@@ -1404,3 +1404,39 @@ void ClampedDecrementCounter(uint32_t n, uint32_t* counter) {
     *counter = v - 1u;
 }
 } // namespace lift_0085A110
+
+// [0x0085A370]
+namespace lift_0085A370 {
+// @name AllocEntry16
+// @summary Appends a new 16-byte entry to a LocalAlloc-backed array, initializing it and returning its index or -1 on failure.
+// @field Obj +0x08 uint32_t count
+// @field Obj +0x14 uint32_t entries
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t val);
+extern uint32_t __cdecl ext_008596F0(uint32_t handle, uint32_t size);
+
+uint32_t __cdecl fn_0085A370(uint32_t obj) {
+    uint32_t count = mem_read32(obj + 0x8);
+    uint32_t entries = mem_read32(obj + 0x14);
+    uint32_t new_size = (count + 1) << 4;
+
+    uint32_t new_entries = ext_008596F0(entries, new_size);
+    if (new_entries == 0) {
+        return 0xffffffffu;
+    }
+
+    uint32_t index = mem_read32(obj + 0x8);
+    mem_write32(obj + 0x14, new_entries);
+
+    uint32_t offset = index << 4;
+    mem_write32(new_entries + offset + 0x0, 0xffffffffu);
+    mem_write32(mem_read32(obj + 0x14) + offset + 0x4, 0);
+    mem_write32(mem_read32(obj + 0x14) + offset + 0x8, 0);
+    mem_write32(mem_read32(obj + 0x14) + offset + 0xc, 0);
+
+    mem_write32(obj + 0x8, mem_read32(obj + 0x8) + 1);
+    return index;
+}
+} // namespace lift_0085A370
