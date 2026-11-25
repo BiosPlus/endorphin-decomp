@@ -1,0 +1,13 @@
+{
+  "va": "0x00718330",
+  "size": 74,
+  "orig_symbol": "sub_00718330",
+  "src_path": "src/clones/auto_clones_710000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_710000.cpp",
+  "name": "CopyHugeValueToGlobals_00718330",
+  "signature": "void fn_00718330(void* self)",
+  "summary": "Copies the 8-byte value at the pointer stored in mem_00925284 (MSVCR80 _HUGE) into four 8-byte globals.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:34:47Z"
+}

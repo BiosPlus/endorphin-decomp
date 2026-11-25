@@ -1043,3 +1043,35 @@ void CopyBlock398ToOut_00715260(Unknown* self, Out32* out) {
     out->hi1c = 0x3FF00000u;
 }
 } // namespace lift_00715260
+
+// [0x00718330] sub_00718330 (74 bytes)
+namespace lift_00718330 {
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5FCE0;
+extern uint32_t mem_00B5FCE4;
+extern uint32_t mem_00B5FCE8;
+extern uint32_t mem_00B5FCEC;
+extern uint32_t mem_00B5FCF0;
+extern uint32_t mem_00B5FCF4;
+extern uint32_t mem_00B5FCF8;
+extern uint32_t mem_00B5FCFC;
+
+// @name CopyHugeValueToGlobals_00718330
+// @summary Copies the 8-byte value at the pointer stored in mem_00925284 (MSVCR80 _HUGE) into four 8-byte globals.
+// @field none
+void fn_00718330(void* self) {
+    (void)self;
+    // Source pointer: mem_00925284 holds the address of an 8-byte (two u32) value.
+    const uint32_t* src = reinterpret_cast<const uint32_t*>(
+        static_cast<uintptr_t>(mem_00925284));
+
+    mem_00B5FCE0 = src[0];
+    mem_00B5FCE4 = src[1];
+    mem_00B5FCE8 = src[0];
+    mem_00B5FCEC = src[1];
+    mem_00B5FCF0 = src[0];
+    mem_00B5FCF4 = src[1];
+    mem_00B5FCF8 = src[0];
+    mem_00B5FCFC = src[1];
+}
+} // namespace lift_00718330
