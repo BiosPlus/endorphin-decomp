@@ -1775,3 +1775,17 @@ void fn_006F0160(void* self, uint32_t arg1, uint32_t arg2) {
 } // namespace lift_006F00E0
 } // namespace lift_006F23E0
 } // namespace lift_006F0160
+
+// [0x006F6B40]
+namespace lift_006F6B40 {
+extern void ext_006A5C5C(void);
+extern const char* ext_00782CB0(DWORD selector);
+
+// @name GetRigidNameThunk
+// @summary Forwards the selector argument to GetRigidName and returns its label string.
+extern const char* __stdcall sub_006F6B40(DWORD selector)
+{
+    (void)&ext_006A5C5C; // listed callee; not invoked on this path
+    return ext_00782CB0(selector);
+}
+} // namespace lift_006F6B40

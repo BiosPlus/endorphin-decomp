@@ -1,0 +1,13 @@
+{
+  "va": "0x006F6B40",
+  "size": 16,
+  "orig_symbol": "sub_006F6B40",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "GetRigidNameThunk",
+  "signature": "extern \"C\" const char* __stdcall sub_006F6B40(DWORD selector)",
+  "summary": "Forwards the selector argument to GetRigidName and returns its label string.",
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@low",
+  "lifted_at": "2026-11-25T07:28:56Z"
+}

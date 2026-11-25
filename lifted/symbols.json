@@ -57426,6 +57426,12 @@
     "summary": "Stores the int argument at self+0x2A78, then forwards it as a double (index 0) to SetDoubleElement16 on the object at self+0x6958 after a helper lookup.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006F6B40": {
+    "name": "GetRigidNameThunk",
+    "signature": "extern \"C\" const char* __stdcall sub_006F6B40(DWORD selector)",
+    "summary": "Forwards the selector argument to GetRigidName and returns its label string.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F7080": {
     "name": "CompositeOwner::initSubobjects",
     "class": "CompositeOwner",
