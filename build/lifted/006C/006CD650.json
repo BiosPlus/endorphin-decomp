@@ -1,0 +1,13 @@
+{
+  "va": "0x006CD650",
+  "size": 115,
+  "orig_symbol": "sub_006CD650",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "evalCubicBezierMinusTarget",
+  "signature": "float __cdecl sub_006CD650(float t, float target, float c2, float c3)",
+  "summary": "Evaluates a 1D cubic Bezier polynomial at t and subtracts target value",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:42:43Z"
+}

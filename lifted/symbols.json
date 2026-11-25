@@ -60780,6 +60780,12 @@
     "summary": "Getter returning int32_t field at offset +0x40.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006CD650": {
+    "name": "evalCubicBezierMinusTarget",
+    "signature": "float __cdecl sub_006CD650(float t, float target, float c2, float c3)",
+    "summary": "Evaluates a 1D cubic Bezier polynomial at t and subtracts target value",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006CE080": {
     "name": "Unknown::SetValues0x48",
     "class": "Unknown",

@@ -2157,3 +2157,19 @@ extern void __thiscall fn_006C9EA0(void* self, float scale) {
     ext_006C9DF0(self, 1, val1 * scale);
 }
 } // namespace lift_006C9EA0
+
+// [0x006CD650]
+namespace lift_006CD650 {
+// @name evalCubicBezierMinusTarget
+// @summary Evaluates a 1D cubic Bezier polynomial at t and subtracts target value
+float __cdecl sub_006CD650(float t, float target, float c2, float c3) {
+    float u = static_cast<float>(1.0 - static_cast<double>(c3));
+    double one_minus_t = 1.0 - static_cast<double>(t);
+    float tmp0 = static_cast<float>(static_cast<double>(u) * one_minus_t + static_cast<double>(t) * static_cast<double>(c2));
+
+    double s = one_minus_t;
+    double left = ((static_cast<double>(u) * static_cast<double>(t) + s) * s + static_cast<double>(tmp0) * static_cast<double>(t)) * s;
+    double right = (s * static_cast<double>(c2) * static_cast<double>(t) + static_cast<double>(tmp0) * one_minus_t) * static_cast<double>(t);
+    return static_cast<float>((left + right) - static_cast<double>(target));
+}
+} // namespace lift_006CD650
