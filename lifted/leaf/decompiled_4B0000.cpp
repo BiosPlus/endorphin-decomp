@@ -879,3 +879,31 @@ void fn_004B6C90(std::string* out, void* unused) {
 } // namespace lift_006227B0
 } // namespace lift_00622380
 } // namespace lift_004B6C90
+
+// [0x004B6CC0] sub_004B6CC0 (33 bytes)
+namespace lift_004B6CC0 {
+// Import slot for MSVCP80 std::basic_string<char> default ctor (thiscall, this in ecx).
+// Original: call dword ptr [0x924fe8] -> thunk 0x006290D8.
+extern void* mem_00924FE8;
+
+// @name ExprParser::ctor_zeroed_floats (descriptive; class not confirmed)
+// @class ExprParser
+// @summary Default-constructs an embedded std::string at +0x00 and zeroes six floats at +0x1C..+0x30; returns this.
+// @field ExprParser +0x00 std::string <name_string> (embedded basic_string, 0x1C bytes)
+// @field ExprParser +0x1C float field_0x1C
+// @field ExprParser +0x20 float field_0x20
+// @field ExprParser +0x24 float field_0x24
+// @field ExprParser +0x28 float field_0x28
+// @field ExprParser +0x2C float field_0x2C
+// @field ExprParser +0x30 float field_0x30
+void* fn_004B6CC0(void* self) {
+    reinterpret_cast<void (*)(void*)>(mem_00924FE8)(self);
+    lift_field<float>(self, 0x1C) = 0.0f;
+    lift_field<float>(self, 0x20) = 0.0f;
+    lift_field<float>(self, 0x24) = 0.0f;
+    lift_field<float>(self, 0x28) = 0.0f;
+    lift_field<float>(self, 0x2C) = 0.0f;
+    lift_field<float>(self, 0x30) = 0.0f;
+    return self;
+}
+} // namespace lift_004B6CC0

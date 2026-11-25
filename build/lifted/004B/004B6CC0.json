@@ -1,0 +1,58 @@
+{
+  "va": "0x004B6CC0",
+  "size": 33,
+  "orig_symbol": "sub_004B6CC0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "ExprParser::ctor_zeroed_floats (descriptive; class not confirmed)",
+  "class": "ExprParser",
+  "signature": "void* fn_004B6CC0(void* self)",
+  "summary": "Default-constructs an embedded std::string at +0x00 and zeroes six floats at +0x1C..+0x30; returns this.",
+  "fields": [
+    {
+      "class": "ExprParser",
+      "offset": "+0x0",
+      "type": "std::string \u003cname_string\u003e (embedded basic_string, 0x1C",
+      "name": "bytes)"
+    },
+    {
+      "class": "ExprParser",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "ExprParser",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    },
+    {
+      "class": "ExprParser",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    },
+    {
+      "class": "ExprParser",
+      "offset": "+0x28",
+      "type": "float",
+      "name": "field_0x28"
+    },
+    {
+      "class": "ExprParser",
+      "offset": "+0x2C",
+      "type": "float",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "ExprParser",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:10:26Z"
+}
