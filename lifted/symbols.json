@@ -52576,6 +52576,12 @@
     "summary": "Forwards non-navigation WM_KEYDOWN messages to a buddy window's HWND after peeking them.",
     "lifted_path": "lifted/classes/NMCAutoCompleteList.cpp"
   },
+  "0x006B8B10": {
+    "name": "forwardToMfc80Ord1903",
+    "signature": "extern \"C\" void __stdcall sub_006B8B10(uint32_t, uint32_t, uint32_t)",
+    "summary": "Tail-forwards to the MFC80 ord_1903 thunk, then returns popping 12 bytes of stdcall args.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B8BC0": {
     "name": "NMCAutoCompleteEdit::vfunc_1",
     "class": "NMCAutoCompleteEdit",

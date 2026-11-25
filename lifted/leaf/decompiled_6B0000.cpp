@@ -22,6 +22,7 @@ Unknown* fn_006B9D10(Unknown* ecx) {
 }
 } // namespace lift_006B9D10
 #include <cstring>
+#include <cstdint>
 
 // [0x006B9960] sub_006B9960 (16 bytes)
 namespace lift_006B9960 {
@@ -1252,3 +1253,23 @@ void fn_006B2BC0(void* self) {
     ext_006AD3C0(self);
 }
 } // namespace lift_006B2BC0
+
+// [0x006B8B10]
+namespace lift_006B8B10 {
+extern void ext_006A5EA8(void);
+extern void* ext_006A5C62(size_t size);
+extern void ext_006B9990(void* self, uint32_t* out);
+
+// @name forwardToMfc80Ord1903
+// @summary Tail-forwards to the MFC80 ord_1903 thunk, then returns popping 12 bytes of stdcall args.
+extern void __stdcall sub_006B8B10(uint32_t, uint32_t, uint32_t)
+{
+    // Referenced by the original asm's function range but not reached from this entry.
+    static void* const unused_refs[] = {
+        reinterpret_cast<void*>(&ext_006A5C62),
+        reinterpret_cast<void*>(&ext_006B9990),
+    };
+    (void)unused_refs;
+    ext_006A5EA8();
+}
+} // namespace lift_006B8B10
