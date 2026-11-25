@@ -2932,3 +2932,47 @@ void fn_00434810(void* self, void* obj) {
     reinterpret_cast<void (*)(void*, uint32_t)>(vt2[1])(obj, static_cast<uint32_t>(r));
 }
 } // namespace lift_00434810
+
+// [0x00434880] sub_00434880 (97 bytes)
+namespace lift_00434880 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000(void);
+// Known callee 0x006AD940: sub_006AD940 (4B, thiscall helper; resolves the object passed in ecx)
+extern uint32_t __thiscall ext_006AD940(void* self);
+// Known callee 0x00430380: isGlobalObjectField60Is1 (Returns 1 if the int32 at +0x60 of the object returned by ext_004658C0 equals 1, else 0.)
+extern uint8_t __cdecl ext_00430380(void);
+// Known callee 0x00492520: fn_00492520 (select field by selector: 0 -> +0x0C, 1 -> +0x10, else 0)
+extern int32_t __thiscall ext_00492520(void* self, int32_t selector);
+// Known callee 0x004925D0: sub_004925D0 (Checks whether field_0x08 equals field_0x0C (mode 0) or field_0x10 (mode 1), if field_0x00 == 1)
+extern uint8_t __thiscall ext_004925D0(void* self, uint32_t mode);
+
+// @name Unknown::dispatchFlagsVtable_00434880
+// @class Unknown
+// @summary Resolves a global handle's +0x26C object, computes two flags from it, and invokes vtable slots 0 and 1 of the stack argument with those flags.
+// @field Unknown +0x00 void** vtable
+// @field Unknown +0x26C uint32_t field_0x26C
+void __thiscall fn_00434880(void* self, void* obj) {
+    (void)self;
+
+    const int32_t handle = ext_00594000();
+    const uint32_t inner = lift_field<uint32_t>(
+        reinterpret_cast<void*>(static_cast<uintptr_t>(handle)), 0x26C);
+    const uint32_t resolved = ext_006AD940(
+        reinterpret_cast<void*>(static_cast<uintptr_t>(inner)));
+    void* resolvedPtr = reinterpret_cast<void*>(static_cast<uintptr_t>(resolved));
+
+    uint32_t flagA = 0;
+    if (ext_00430380() != 0) {
+        flagA = (ext_00492520(resolvedPtr, 1) != 0) ? 1u : 0u;
+    }
+
+    uintptr_t* vt = *reinterpret_cast<uintptr_t**>(obj);
+    using Slot0Fn = void(__thiscall*)(void* self, uint32_t arg);
+    reinterpret_cast<Slot0Fn>(vt[0])(obj, flagA);
+
+    vt = *reinterpret_cast<uintptr_t**>(obj);
+    const uint32_t flagB = ext_004925D0(resolvedPtr, 1);
+    using Slot1Fn = void(__thiscall*)(void* self, uint32_t arg);
+    reinterpret_cast<Slot1Fn>(vt[1])(obj, flagB);
+}
+} // namespace lift_00434880

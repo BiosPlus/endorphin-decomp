@@ -1,0 +1,28 @@
+{
+  "va": "0x00434880",
+  "size": 97,
+  "orig_symbol": "sub_00434880",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::dispatchFlagsVtable_00434880",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00434880(void* self, void* obj)",
+  "summary": "Resolves a global handle's +0x26C object, computes two flags from it, and invokes vtable slots 0 and 1 of the stack argument with those flags.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x26C",
+      "type": "uint32_t",
+      "name": "field_0x26C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:38:16Z"
+}
