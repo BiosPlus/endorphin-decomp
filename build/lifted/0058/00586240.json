@@ -1,0 +1,40 @@
+{
+  "va": "0x00586240",
+  "size": 89,
+  "orig_symbol": "sub_00586240",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "Node::traverseVirtualA4",
+  "class": "Node",
+  "signature": "void __thiscall sub_00586240(void* self)",
+  "summary": "Calls virtual method at vtable+0xa4 on this and recursively on all child pointers in vector at +0x7c.",
+  "fields": [
+    {
+      "class": "Node",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x7C",
+      "type": "void*",
+      "name": "field_0x7c"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x80",
+      "type": "Node**",
+      "name": "children_begin"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x84",
+      "type": "Node**",
+      "name": "children_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:22:16Z"
+}

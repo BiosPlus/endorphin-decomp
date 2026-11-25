@@ -19948,6 +19948,13 @@
     "summary": "Calls ext_00539860 with the three stack args plus a zeroed dword flag, then returns base + 12 * index (12-byte element stride).",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x00539AA0": {
+    "name": "Float3Vector::erase",
+    "class": "Float3Vector",
+    "signature": "CheckedFloat3Iter* __thiscall fn_00539AA0( void* self, CheckedFloat3Iter* out_iter, void* first_container, float* first_ptr, void* last_container, float* last_ptr)",
+    "summary": "Erases a range [first, last) of 12-byte float3 elements from the vector and returns the updated checked iterator.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x00539B00": {
     "name": "sub_00539B00",
     "signature": "DWORD* __thiscall fn_00539B00(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -23182,6 +23189,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051AF30 (ComputeStride20Address).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057E9E0": {
+    "name": "Unknown::eraseStringVectorRange",
+    "class": "Unknown",
+    "signature": "VectorIterator* __thiscall fn_0057E9E0(void* self, VectorIterator* out_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr)",
+    "summary": "Erases [first, last) from a 0x14-byte-record vector by shifting [last, end) over first, destroying the trailing elements, and returning the updated iterator.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057EB20": {
     "name": "sub_0057EB20",
     "signature": "DWORD* __thiscall fn_0057EB20(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -23458,6 +23472,13 @@
     "signature": "void* fn_00585F00(void* out, void* unused_arg)",
     "summary": "Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType\u003cRuntimeEngine, int, getNumTicksToRun, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00586240": {
+    "name": "Node::traverseVirtualA4",
+    "class": "Node",
+    "signature": "void __thiscall sub_00586240(void* self)",
+    "summary": "Calls virtual method at vtable+0xa4 on this and recursively on all child pointers in vector at +0x7c.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
   "0x005862A0": {
     "name": "visitChildren_005862A0",

@@ -625,3 +625,34 @@ static void visitChildren_005862A0(void* self) {
     }
 }
 } // namespace lift_005862A0
+
+// [0x00586240]
+namespace lift_00586240 {
+// @name Node::traverseVirtualA4
+// @class Node
+// @summary Calls virtual method at vtable+0xa4 on this and recursively on all child pointers in vector at +0x7c.
+// @field Node +0x00 void** vtable
+// @field Node +0x7c void* field_0x7c
+// @field Node +0x80 Node** children_begin
+// @field Node +0x84 Node** children_end
+
+void __thiscall sub_00586240(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    uint32_t* vtable = *reinterpret_cast<uint32_t**>(obj);
+    using VMethod = void(__thiscall*)(void*);
+    VMethod fn = reinterpret_cast<VMethod>(vtable[0xa4 / 4]);
+    fn(self);
+
+    uint8_t* vec = obj + 0x7c;
+    uint32_t* it = *reinterpret_cast<uint32_t**>(vec + 0x4);
+    while (true) {
+        uint32_t* end = *reinterpret_cast<uint32_t**>(vec + 0x8);
+        if (it == end) {
+            break;
+        }
+        void* child = reinterpret_cast<void*>(*it);
+        sub_00586240(child);
+        ++it;
+    }
+}
+} // namespace lift_00586240
