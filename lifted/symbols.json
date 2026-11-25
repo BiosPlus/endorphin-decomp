@@ -8716,6 +8716,13 @@
     "summary": "Returns 1 if vector at +0x08/+0x0C is null/empty or flag at +0x20 is non-zero, else 0.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x004809E0": {
+    "name": "ToolEngine::vfunc_7",
+    "class": "ToolEngine",
+    "signature": "int fn_004809E0(void* self)",
+    "summary": "Returns 1 if the object's uint32 range at +0x18..+0x1C is absent or empty, or the byte flag at +0x30 is set; otherwise returns 0.",
+    "lifted_path": "lifted/classes/ToolEngine.cpp"
+  },
   "0x00480C30": {
     "name": "UnknownHolder::releaseAndDestroy",
     "class": "UnknownHolder",

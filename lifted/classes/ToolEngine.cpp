@@ -233,3 +233,28 @@ uint8_t __thiscall fn_00480E40(uint32_t self) {
     }
 }
 } // namespace lift_00480E40
+
+// [0x004809E0] ToolEngine::vfunc_7 (35 bytes)
+namespace lift_004809E0 {
+// @name ToolEngine::vfunc_7
+// @class ToolEngine
+// @summary Returns 1 if the object's uint32 range at +0x18..+0x1C is absent or empty, or the byte flag at +0x30 is set; otherwise returns 0.
+// @field ToolEngine +0x18 uint32_t field_0x18
+// @field ToolEngine +0x1C uint32_t field_0x1C
+// @field ToolEngine +0x30 uint8_t field_0x30
+int fn_004809E0(void* self) {
+    const uint32_t begin = lift_field<uint32_t>(self, 0x18);
+    if (begin == 0) {
+        return 1;
+    }
+    const uint32_t end = lift_field<uint32_t>(self, 0x1C);
+    const int32_t count = (static_cast<int32_t>(end - begin)) >> 2;
+    if (count == 0) {
+        return 1;
+    }
+    if (lift_field<uint8_t>(self, 0x30) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004809E0
