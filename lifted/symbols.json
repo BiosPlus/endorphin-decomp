@@ -23254,6 +23254,13 @@
     "summary": "For each DWORD in [begin, end), calls cb(*entry + base); then writes (cb, base) to out[0], out[1].",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x00596C50": {
+    "name": "Unknown::ForEachCallAndRaiseF4_00596C50",
+    "class": "Unknown",
+    "signature": "void fn_00596C50(void* self)",
+    "summary": "Calls ext_005A3610 on every element of the pointer array [+0x23C, +0x240) in order, then raises self+0xF4 to at least 2.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00597DA0": {
     "name": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1\u003e",

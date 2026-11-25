@@ -459,3 +459,30 @@ uint8_t* __thiscall Unknown_GetElementAddress_0059FF10(void* self, uint32_t inde
     return begin + 4 * static_cast<uintptr_t>(index);
 }
 } // namespace lift_0059FF10
+
+// [0x00596C50] sub_00596C50 (76 bytes)
+namespace lift_00596C50 {
+// Known callee 0x005A3610: sub_005A3610 (Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).)
+// The original passes the element in ecx (thiscall-style); here it is the first argument.
+extern void ext_005A3610(void* self);
+// Known callee 0x00594020: RaiseFieldF4ToValue (Stores value into self+0xF4 if it is greater than the current value (running max); thiscall, one stack arg, callee pops 4.)
+extern void ext_00594020(void* self, int32_t value);
+
+// @name Unknown::ForEachCallAndRaiseF4_00596C50
+// @class Unknown
+// @summary Calls ext_005A3610 on every element of the pointer array [+0x23C, +0x240) in order, then raises self+0xF4 to at least 2.
+// @field Unknown +0x23C void* arrayBegin
+// @field Unknown +0x240 void* arrayEnd
+void fn_00596C50(void* self) {
+    // The original also calls _invalid_parameter_noinfo when begin > end; that
+    // diagnostic is omitted here, since it is a CRT check with no portable equivalent.
+    void** begin = lift_field<void**>(self, 0x23C);
+    void** end   = lift_field<void**>(self, 0x240);
+
+    for (void** it = begin; it != end; ++it) {
+        ext_005A3610(*it);
+    }
+
+    ext_00594020(self, 2);
+}
+} // namespace lift_00596C50
