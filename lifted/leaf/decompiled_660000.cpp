@@ -942,3 +942,26 @@ extern void* __fastcall fn_00666BA0(void* self, int edx_unused, const void* src)
 }
 } // namespace lift_006998D0
 } // namespace lift_00666BA0
+
+// [0x0066BD00] sub_0066BD00 (34 bytes)
+namespace lift_0066BD00 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self; stores its stack argument into self's first DWORD and returns it)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// @name ExprParser::SubComponentType::SubComponentType_0066BD00
+// @class SubComponentType
+// @summary Thiscall constructor-style init: calls ext_0067A670 on self, sets vtable to 0x00988094, stores two stack args at +0x04 and +0x08, returns self. Callee pops 8 bytes (ret 8).
+// @field SubComponentType +0x00 void* _vptr
+// @field SubComponentType +0x04 DWORD field_0x04
+// @field SubComponentType +0x08 DWORD field_0x08
+void* fn_0066BD00(void* self, DWORD arg1, DWORD arg2) {
+    // ecx (self) is still live when the callee is invoked; the stack argument it
+    // receives is the saved ECX value, i.e. self itself.
+    ext_0067A670(self, static_cast<DWORD>(reinterpret_cast<uintptr_t>(self)));
+
+    lift_field<DWORD>(self, 0x04) = arg1;
+    lift_field<DWORD>(self, 0x00) = 0x00988094;  // primary vtable address
+    lift_field<DWORD>(self, 0x08) = arg2;
+    return self;
+}
+} // namespace lift_0066BD00

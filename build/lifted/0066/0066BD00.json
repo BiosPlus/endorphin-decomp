@@ -1,0 +1,34 @@
+{
+  "va": "0x0066BD00",
+  "size": 34,
+  "orig_symbol": "sub_0066BD00",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "ExprParser::SubComponentType::SubComponentType_0066BD00",
+  "class": "SubComponentType",
+  "signature": "void* fn_0066BD00(void* self, DWORD arg1, DWORD arg2)",
+  "summary": "Thiscall constructor-style init: calls ext_0067A670 on self, sets vtable to 0x00988094, stores two stack args at +0x04 and +0x08, returns self. Callee pops 8 bytes (ret 8).",
+  "fields": [
+    {
+      "class": "SubComponentType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "_vptr"
+    },
+    {
+      "class": "SubComponentType",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "SubComponentType",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:27:57Z"
+}
