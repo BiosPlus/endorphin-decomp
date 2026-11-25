@@ -1,0 +1,27 @@
+{
+  "va": "0x00468770",
+  "size": 17,
+  "orig_symbol": "sub_00468770",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "ForwardIfFlagSet",
+  "signature": "uint8_t fn_00468770(void* self)",
+  "summary": "If the byte at self+0x10 is nonzero, tail-forwards to ext_0046FE70 on the object at self+0x14; otherwise returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:16:18Z"
+}
