@@ -670,3 +670,53 @@ uint32_t fn_007D4820(void* self) {
     return accepted;
 }
 } // namespace lift_007D4820
+
+// [0x007D59C0] sub_007D59C0 (60 bytes)
+namespace lift_007D59C0 {
+extern const float mem_0099D148; // .rdata 0x7F7FFFFF (+FLT_MAX)
+extern const float mem_0093C1A8; // .rdata 0xFF7FFFFF (-FLT_MAX)
+
+// @name InitExtentBounds
+// @summary Resets a 0x38-byte extent struct: zeroes the header and flag words, sets min (+0x08..+0x10) to +FLT_MAX and max (+0x14..+0x1C) to -FLT_MAX, and zeroes +0x20..+0x34.
+// @field <unknown> +0x00 uint32_t field_0x00
+// @field <unknown> +0x04 uint32_t field_0x04
+// @field <unknown> +0x08 float field_0x08
+// @field <unknown> +0x0C float field_0x0C
+// @field <unknown> +0x10 float field_0x10
+// @field <unknown> +0x14 float field_0x14
+// @field <unknown> +0x18 float field_0x18
+// @field <unknown> +0x1C float field_0x1C
+// @field <unknown> +0x20 uint32_t field_0x20
+// @field <unknown> +0x24 uint32_t field_0x24
+// @field <unknown> +0x28 uint32_t field_0x28
+// @field <unknown> +0x2C uint32_t field_0x2C
+// @field <unknown> +0x30 uint32_t field_0x30
+// @field <unknown> +0x34 uint32_t field_0x34
+void fn_007D59C0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    const auto put_u32 = [base](size_t off, uint32_t v) { std::memcpy(base + off, &v, sizeof v); };
+    const auto put_f32 = [base](size_t off, float v) { std::memcpy(base + off, &v, sizeof v); };
+
+    const float pos_max = mem_0099D148;
+    const float neg_max = mem_0093C1A8;
+
+    put_u32(0x20, 0);
+    put_u32(0x04, 0);
+    put_u32(0x00, 0);
+    put_u32(0x24, 0);
+
+    put_f32(0x08, pos_max);
+    put_f32(0x0C, pos_max);
+    put_f32(0x10, pos_max);
+
+    put_f32(0x14, neg_max);
+    put_f32(0x18, neg_max);
+    put_f32(0x1C, neg_max);
+
+    put_u32(0x2C, 0);
+    put_u32(0x28, 0);
+    put_u32(0x30, 0);
+    put_u32(0x34, 0);
+}
+} // namespace lift_007D59C0

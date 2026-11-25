@@ -56371,6 +56371,12 @@
     "summary": "Stores the second argument at +0x14, then zeroes the fields at +0x00, +0x04 and +0x08.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D59C0": {
+    "name": "InitExtentBounds",
+    "signature": "extern \"C\" const float mem_0099D148; // .rdata 0x7F7FFFFF (+FLT_MAX) extern \"C\" const float mem_0093C1A8; // .rdata 0xFF7FFFFF (-FLT_MAX) void fn_007D59C0(void* self)",
+    "summary": "Resets a 0x38-byte extent struct: zeroes the header and flag words, sets min (+0x08..+0x10) to +FLT_MAX and max (+0x14..+0x1C) to -FLT_MAX, and zeroes +0x20..+0x34.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007D5AE0": {
     "name": "derefDword",
     "signature": "uint32_t sub_007D5AE0(uint32_t ptr)",
