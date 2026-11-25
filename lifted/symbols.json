@@ -70622,6 +70622,12 @@
     "summary": "Appends the decimal text of an unsigned byte (no leading zeros, \"0\" for zero) to dst via strcat; returns dst.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x00862904": {
+    "name": "switchCaseIndexTable_00862904",
+    "signature": "uint8_t fn_00862904(uint32_t index)",
+    "summary": "108-byte lookup table, not code; entry for index 0x00..0x5F selects the case slot in the jump table at 0x008628B4. Bytes 0x60..0x6B are alignment padding.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x00862970": {
     "name": "thunk_KERNEL32_GetCurrentProcessId",
     "signature": "extern \"C\" void fn_00862970(void)",
