@@ -1,0 +1,28 @@
+{
+  "va": "0x0085A3E0",
+  "size": 80,
+  "orig_symbol": "sub_0085A3E0",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "AppendSentinelEntry",
+  "class": "Unknown",
+  "signature": "uint32_t fn_0085A3E0(void* self)",
+  "summary": "Grows the 8-byte-entry block by one slot via LocalBlockResize, zero-fills the new entry and writes -1 into its second dword; returns the old count, or 0xFFFFFFFF if the resize fails.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:57:26Z"
+}

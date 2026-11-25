@@ -946,3 +946,36 @@ void fn_0085A5D0(void* self) {
     store_i32(0x58, -1);
 }
 } // namespace lift_0085A5D0
+
+// [0x0085A3E0] sub_0085A3E0 (80 bytes)
+namespace lift_0085A3E0 {
+// Known callee 0x008596F0: LocalBlockResize (cdecl: (handle, size) -> handle)
+extern uint32_t ext_008596F0(uint32_t handle, uint32_t size);
+
+// @name AppendSentinelEntry
+// @class Unknown
+// @summary Grows the 8-byte-entry block by one slot via LocalBlockResize, zero-fills the new entry and writes -1 into its second dword; returns the old count, or 0xFFFFFFFF if the resize fails.
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+uint32_t fn_0085A3E0(void* self) {
+    constexpr uint32_t kFailure = 0xFFFFFFFFu;
+
+    const uint32_t count = lift_field<uint32_t>(self, 0x04);
+    const uint32_t handle = lift_field<uint32_t>(self, 0x08);
+    const uint32_t entryOffset = count * 8u;
+
+    const uint32_t grown = ext_008596F0(handle, entryOffset + 8u);
+    if (grown == 0) {
+        return kFailure;
+    }
+
+    lift_field<uint32_t>(self, 0x08) = grown;
+
+    uint8_t* block = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(grown));
+    lift_field<uint32_t>(block, static_cast<ptrdiff_t>(entryOffset)) = 0u;
+    lift_field<uint32_t>(block, static_cast<ptrdiff_t>(entryOffset + 4u)) = kFailure;
+
+    lift_field<uint32_t>(self, 0x04) = count + 1u;
+    return count;
+}
+} // namespace lift_0085A3E0

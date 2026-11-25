@@ -62403,6 +62403,13 @@
     "summary": "Walks a singly linked node chain (next pointer at +0x1C) from head and returns the first node whose DWORD key at +0x00 equals the given key, or NULL if none match or head is NULL.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085A3E0": {
+    "name": "AppendSentinelEntry",
+    "class": "Unknown",
+    "signature": "uint32_t fn_0085A3E0(void* self)",
+    "summary": "Grows the 8-byte-entry block by one slot via LocalBlockResize, zero-fills the new entry and writes -1 into its second dword; returns the old count, or 0xFFFFFFFF if the resize fails.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085A5D0": {
     "name": "Block::ResetDefaults",
     "class": "Block",
