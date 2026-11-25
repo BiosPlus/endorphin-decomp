@@ -614,3 +614,16 @@ uint32_t __cdecl fn_008596F0(uint32_t handle, uint32_t size) {
     return ext_LocalAlloc(0, size);
 }
 } // namespace lift_008596F0
+
+// [0x00859740] sub_00859740 (64 bytes)
+namespace lift_00859740 {
+// @name MemsetReturnDst
+// @summary Fills count bytes at dst with value (memset semantics) and returns dst.
+void* fn_00859740(void* dst, uint8_t value, uint32_t count) {
+    uint8_t* p = static_cast<uint8_t*>(dst);
+    for (uint32_t i = 0; i < count; ++i) {
+        p[i] = value;
+    }
+    return dst;
+}
+} // namespace lift_00859740
