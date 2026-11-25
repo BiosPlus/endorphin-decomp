@@ -824,3 +824,19 @@ void fn_005EC9D0(uint32_t* dst, uint32_t value) {
     dst[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
 }
 } // namespace lift_005EC9D0
+
+// [0x005EC9B0] sub_005EC9B0 (30 bytes)
+namespace lift_005EC9B0 {
+// Known callee 0x005EB180: getOrInitStaticObject_005EB180 (Lazily initializes the static object at 0xB45F48 once (guarded by a flag bit at 0xB45F4C) and returns its address.)
+extern void* ext_005EB180();
+
+// @name fillValueAndStaticObject_005EC9B0
+// @summary Stores `value` into dst[0] and the address of the lazily-initialized static object into dst[1].
+// @field StaticObjectPair +0x00 uint32_t field_0x00
+// @field StaticObjectPair +0x04 uint32_t field_0x04
+void fn_005EC9B0(uint32_t* dst, uint32_t value) {
+    void* obj = ext_005EB180();
+    dst[0] = value;
+    dst[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_005EC9B0
