@@ -45405,6 +45405,13 @@
     "summary": "Writes a 3x3 row-major rotation matrix about the Y axis (cos/0/-sin, 0/1/0, sin/0/cos) into the object at this, from a float angle.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067DBF0": {
+    "name": "Unknown::SetRotationMatrix2D",
+    "class": "Unknown",
+    "signature": "void fn_0067DBF0(float* self, float angle)",
+    "summary": "Writes a 3x3 row-major 2D rotation matrix (cos/sin of the negated angle) into the object at this.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067EC60": {
     "name": "initZeroDouble",
     "signature": "void* __thiscall sub_0067EC60(void* self)",
@@ -63806,6 +63813,12 @@
     "summary": "Setter storing uint8_t argument into field at offset +0x14.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x0072C0B0": {
+    "name": "sub_0072C0B0_ctor",
+    "signature": "void* __thiscall fn_0072C0B0(void* self, uint32_t arg0)",
+    "summary": "Initializes field_0x04 with arg0, allocates a 0x14-byte object via ext_006A5C62, initializes it with ext_00782D00, stores it at field_0x00, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x0072C820": {
     "name": "CopyStridedBytes",
     "signature": "void fn_0072C820(std::uint8_t* src, std::uint8_t* dst, std::uint32_t rowWidth, std::uint32_t rowCount)",
@@ -63970,6 +63983,12 @@
     "signature": "extern \"C\" void fn_0074ADF0(void)",
     "summary": "Pure jump thunk forwarding to sub_006D2160.",
     "lifted_path": "lifted/leaf/tiny_740000.cpp"
+  },
+  "0x0074AEF0": {
+    "name": "sub_0074AEF0",
+    "signature": "extern \"C\" void __thiscall fn_0074AEF0(void* self)",
+    "summary": "Destroys three member subobjects at offsets 0x44, 0x2c, and 0x14 in reverse order.",
+    "lifted_path": "lifted/leaf/decompiled_740000.cpp"
   },
   "0x0074B080": {
     "name": "sub_0074F820",

@@ -1598,3 +1598,35 @@ int fn_00676710(const void* begin, const void* end, void* range, const void* oth
     return 1;
 }
 } // namespace lift_00676710
+
+// [0x0067DBF0]
+namespace lift_0067DBF0 {
+// @name Unknown::SetRotationMatrix2D
+// @class Unknown
+// @summary Writes a 3x3 row-major 2D rotation matrix (cos/sin of the negated angle) into the object at this.
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x0c float field_0x0c
+// @field Unknown +0x10 float field_0x10
+// @field Unknown +0x14 float field_0x14
+// @field Unknown +0x18 float field_0x18
+// @field Unknown +0x1c float field_0x1c
+// @field Unknown +0x20 float field_0x20
+
+void fn_0067DBF0(float* self, float angle) {
+    const float neg = -angle;
+    const float s = std::sin(neg);
+    const float c = std::cos(neg);
+
+    self[0x00 / 4] = c;
+    self[0x04 / 4] = -s;
+    self[0x08 / 4] = 0.0f;
+    self[0x0c / 4] = s;
+    self[0x10 / 4] = c;
+    self[0x14 / 4] = 0.0f;
+    self[0x18 / 4] = 0.0f;
+    self[0x1c / 4] = 0.0f;
+    self[0x20 / 4] = 1.0f;
+}
+} // namespace lift_0067DBF0
