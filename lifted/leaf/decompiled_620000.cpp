@@ -1729,3 +1729,21 @@ uintptr_t fn_0062C4D0(uintptr_t self, uint32_t arg0, uint32_t arg1, uint32_t arg
     return self;
 }
 } // namespace lift_0062C4D0
+
+// [0x0062C510]
+namespace lift_0062C510 {
+// @name Sensors::AxisSensorDerived::AxisSensorDerived
+// @class Sensors::AxisSensorDerived
+// @summary Constructor: calls Sensors::AxisSensor::AxisSensor(arg0, arg1, arg2, arg3) and sets vtable to 0x009790FC; returns this.
+// @field Sensors::AxisSensorDerived +0x00 uint32_t vtable
+
+
+uintptr_t ext_0062C3F0(uintptr_t self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+void mem_write32(uintptr_t addr, uint32_t val);
+
+uintptr_t fn_0062C510(uintptr_t self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    ext_0062C3F0(self, arg0, arg1, arg2, arg3);
+    mem_write32(self + 0x00, 0x009790FCu);
+    return self;
+}
+} // namespace lift_0062C510

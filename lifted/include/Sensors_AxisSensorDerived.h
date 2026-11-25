@@ -8,6 +8,6 @@
 // Recovered field layout for Sensors::AxisSensorDerived:
 namespace lifted_layout {
 struct Sensors_AxisSensorDerived_Fields {
-    // +0x0   uint32_t                 vtable  (evidence: 0x0062C4D0)
+    // +0x0   uint32_t                 vtable  (evidence: 0x0062C4D0, 0x0062C510)
 };
 } // namespace lifted_layout

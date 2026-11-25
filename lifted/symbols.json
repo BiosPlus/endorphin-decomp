@@ -34663,6 +34663,13 @@
     "summary": "Constructor: calls Sensors::AxisSensor::AxisSensor, sets vtable to 0x00979084, returns this.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x0062C510": {
+    "name": "Sensors::AxisSensorDerived::AxisSensorDerived",
+    "class": "Sensors::AxisSensorDerived",
+    "signature": "uintptr_t fn_0062C510(uintptr_t self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Constructor: calls Sensors::AxisSensor::AxisSensor(arg0, arg1, arg2, arg3) and sets vtable to 0x009790FC; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x0062C5E0": {
     "name": "Sensors::AxisSensor::vfunc_0",
     "class": "Sensors::AxisSensor",
