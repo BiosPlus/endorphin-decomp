@@ -34112,6 +34112,12 @@
     "summary": "Copies a range of 24-byte (6-dword) records from [src_begin, src_end) to dst.",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x00649770": {
+    "name": "copyBackward24",
+    "signature": "uint32_t sub_00649770(uint32_t first, uint32_t last, uint32_t result)",
+    "summary": "Copies a range of 24-byte elements backward from [first, last) to [..., result).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00649B40": {
     "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisX(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisX(float), 0}\u003e",
@@ -51057,6 +51063,12 @@
     "class": "Unknown",
     "signature": "bool fn_00707980(void* self)",
     "summary": "Forwards its single argument to ext_006FA920 and returns that result.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
+  "0x00708C10": {
+    "name": "findAndSelectItem",
+    "signature": "uint32_t __thiscall sub_00708C10(void* self, uint32_t target)",
+    "summary": "Searches an array of 32-bit items at +0xD0 (count at +0xC0) for a matching value and invokes vtable +0xE8 with its index.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x00708D70": {

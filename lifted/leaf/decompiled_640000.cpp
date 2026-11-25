@@ -736,3 +736,25 @@ void CopyRange24(const uint32_t* src_begin, const uint32_t* src_end, uint32_t* d
     } while (src != end);
 }
 } // namespace lift_00649730
+
+// [0x00649770]
+namespace lift_00649770 {
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+// @name copyBackward24
+// @summary Copies a range of 24-byte elements backward from [first, last) to [..., result).
+uint32_t sub_00649770(uint32_t first, uint32_t last, uint32_t result) {
+    while (last != first) {
+        last -= 0x18;
+        result -= 0x18;
+        mem_write32(result + 0x00, mem_read32(last + 0x00));
+        mem_write32(result + 0x04, mem_read32(last + 0x04));
+        mem_write32(result + 0x08, mem_read32(last + 0x08));
+        mem_write32(result + 0x0C, mem_read32(last + 0x0C));
+        mem_write32(result + 0x10, mem_read32(last + 0x10));
+        mem_write32(result + 0x14, mem_read32(last + 0x14));
+    }
+    return result;
+}
+} // namespace lift_00649770
