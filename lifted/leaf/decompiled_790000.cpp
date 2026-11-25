@@ -932,3 +932,48 @@ uint32_t fn_0079A230(uintptr_t record, int32_t maxLen, uintptr_t buf) {
     return static_cast<uint32_t>(p - start);
 }
 } // namespace lift_0079A230
+
+// [0x0079ADD0] sub_0079ADD0 (107 bytes)
+namespace lift_0079ADD0 {
+// Known callee 0x0079ADC0: GetFileSizeLow (returns low 32 bits of file size, or 0xFFFFFFFF on failure).
+extern DWORD ext_0079ADC0(DWORD hFile);
+
+// Win32 imports used via IAT slots 0x0092418C (CreateFileMappingA), 0x00924188 (MapViewOfFile),
+// 0x009241E0 (CloseHandle). Declared with their kernel32 prototypes for portable compilation.
+extern HANDLE CreateFileMappingA(HANDLE hFile, void* lpAttributes, DWORD flProtect,
+                                     DWORD dwMaximumSizeHigh, DWORD dwMaximumSizeLow,
+                                     const char* lpName);
+extern LPVOID MapViewOfFile(HANDLE hFileMappingObject, DWORD dwDesiredAccess,
+                                DWORD dwFileOffsetHigh, DWORD dwFileOffsetLow,
+                                SIZE_T dwNumberOfBytesToMap);
+extern BOOL CloseHandle(HANDLE hObject);
+
+// @name mapFileReadOnly
+// @summary Maps a file handle read-only; on success stores the view pointer in *outView and the file size in *outSize.
+BOOL fn_0079ADD0(DWORD hFile, LPVOID* outView, DWORD* outSize) {
+    constexpr DWORD kInvalidSize = 0xFFFFFFFFu;
+    constexpr DWORD kPageReadonly = 0x02;
+    constexpr DWORD kFileMapRead = 0x04;
+
+    const DWORD size = ext_0079ADC0(hFile);
+    if (size == kInvalidSize) {
+        return FALSE;
+    }
+
+    HANDLE hMap = CreateFileMappingA(reinterpret_cast<HANDLE>(static_cast<uintptr_t>(hFile)),
+                                     nullptr, kPageReadonly, 0, size, nullptr);
+    if (hMap == nullptr) {
+        return FALSE;
+    }
+
+    LPVOID view = MapViewOfFile(hMap, kFileMapRead, 0, 0, 0);
+    *outView = view;
+    CloseHandle(hMap);
+
+    if (view == nullptr) {
+        return FALSE;
+    }
+    *outSize = size;
+    return TRUE;
+}
+} // namespace lift_0079ADD0
