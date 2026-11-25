@@ -638,3 +638,32 @@ uint32_t __thiscall fn_006426F0(void* self, float a1, float a2, float a3) {
     return ext_00648A20(child, a1, a2, a3);
 }
 } // namespace lift_006426F0
+
+// [0x00641760] sub_00641760 (62 bytes)
+namespace lift_00641760 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* p);
+extern int mem_00924FF4;
+
+// @name TreeNode::EraseSubtree
+// @class TreeNode
+// @summary Recursively erases a binary-tree subtree: recurses into the right child, walks the left-child chain destroying each node's key string and calling ext_006A5C5C on it until a sentinel (isNil at +0x2d) is reached.
+// @field TreeNode +0x00 TreeNode* left
+// @field TreeNode +0x08 TreeNode* right
+// @field TreeNode +0x10 std::string key
+// @field TreeNode +0x2d uint8_t isNil
+void fn_00641760(void* self, uint8_t* node) {
+    if (node[0x2d] != 0) {
+        return;
+    }
+    do {
+        uint8_t* right = *reinterpret_cast<uint8_t**>(node + 0x08);
+        fn_00641760(self, right);
+        uint8_t* left = *reinterpret_cast<uint8_t**>(node + 0x00);
+        // The original destroys the std::string at node+0x10 via mem_00924FF4
+        // (MSVC basic_string dtor). That MSVC-internal call is not reproduced here.
+        ext_006A5C5C(node);
+        node = left;
+    } while (node[0x2d] == 0);
+}
+} // namespace lift_00641760
