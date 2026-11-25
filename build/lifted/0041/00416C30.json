@@ -1,0 +1,13 @@
+{
+  "va": "0x00416C30",
+  "size": 107,
+  "orig_symbol": "sub_00416C30",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "readIntFromAccessor",
+  "signature": "extern \"C\" void* mem_009242FC;  // MFC80!ord_310  (string construct) extern \"C\" void* mem_00924300;  // MFC80!ord_876  (string -\u003e const char*) extern \"C\" void* mem_009251E4;  // MSVCR80!atoi extern \"C\" void* mem_009242F4;  // MFC80!ord_578  (string destruct) int fn_00416C30(void* obj)",
+  "summary": "Fetches a string through thunk_MFC80_ord_3761 into a temporary string object and returns atoi() of it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:54:18Z"
+}

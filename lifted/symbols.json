@@ -1658,6 +1658,12 @@
     "summary": "Virtual accessor that ignores its receiver and returns the address of the global at mem_0092CB80.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00416C30": {
+    "name": "readIntFromAccessor",
+    "signature": "extern \"C\" void* mem_009242FC;  // MFC80!ord_310  (string construct) extern \"C\" void* mem_00924300;  // MFC80!ord_876  (string -\u003e const char*) extern \"C\" void* mem_009251E4;  // MSVCR80!atoi extern \"C\" void* mem_009242F4;  // MFC80!ord_578  (string destruct) int fn_00416C30(void* obj)",
+    "summary": "Fetches a string through thunk_MFC80_ord_3761 into a temporary string object and returns atoi() of it.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00416D70": {
     "name": "EventViewPrefs::vfunc_1",
     "class": "EventViewPrefs",
@@ -70063,6 +70069,12 @@
     "name": "FindNodeByKeyInChain",
     "signature": "void* fn_00859E70(void* head, DWORD key)",
     "summary": "Walks a singly linked node chain (next pointer at +0x1C) from head and returns the first node whose DWORD key at +0x00 equals the given key, or NULL if none match or head is NULL.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
+  "0x00859F60": {
+    "name": "allocBufferObject",
+    "signature": "uint32_t __cdecl fn_00859F60(uint32_t data, uint32_t size)",
+    "summary": "Allocates a 16-byte buffer/sync object and optionally allocates a zero-initialized buffer of size bytes.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
   "0x0085A3E0": {
