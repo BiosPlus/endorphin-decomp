@@ -1,0 +1,13 @@
+{
+  "va": "0x0052FF10",
+  "size": 90,
+  "orig_symbol": "sub_0052FF10",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "getStaticInstance_0052FF10",
+  "signature": "void* fn_0052FF10(void* self)",
+  "summary": "Lazily constructs a process-wide static object (guarded by a one-bit init flag) and returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:19:12Z"
+}

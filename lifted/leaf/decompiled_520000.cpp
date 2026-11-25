@@ -683,3 +683,25 @@ void* fn_00522840(const void* begin, const void* end, void* dst) {
     return static_cast<uint8_t*>(dst) + count * 40;
 }
 } // namespace lift_00522840
+
+// [0x0052FF10] sub_0052FF10 (90 bytes)
+namespace lift_0052FF10 {
+// Known callee 0x0053F550: sub_0053F550 (Sets the vtable pointer at offset 0 of the object in ecx and returns this.)
+extern uint32_t ext_0053F550(uint32_t self);
+extern void ext_006A6C87(void* fn);
+extern int mem_00AEE270;
+extern uint32_t mem_00AEE268;
+
+// @name getStaticInstance_0052FF10
+// @summary Lazily constructs a process-wide static object (guarded by a one-bit init flag) and returns its address.
+void* fn_0052FF10(void* self) {
+    (void)self;
+    // One-time initialization guard: bit 0 of the flag word.
+    if ((mem_00AEE270 & 1) == 0) {
+        mem_00AEE270 |= 1;
+        ext_0053F550(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AEE268)));
+        ext_006A6C87(reinterpret_cast<void*>(static_cast<uintptr_t>(0x0091A3D0u)));
+    }
+    return &mem_00AEE268;
+}
+} // namespace lift_0052FF10

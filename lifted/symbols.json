@@ -18918,6 +18918,12 @@
     "summary": "Scalar deleting destructor: destroys the +0x3C subobject, runs the base destructor, and frees this if flags bit 0 is set.",
     "lifted_path": "lifted/Primitives/Arrow.cpp"
   },
+  "0x0052FF10": {
+    "name": "getStaticInstance_0052FF10",
+    "signature": "void* fn_0052FF10(void* self)",
+    "summary": "Lazily constructs a process-wide static object (guarded by a one-bit init flag) and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052FF70": {
     "name": "Primitives::Marker::vfunc_0",
     "class": "Primitives::Marker",
