@@ -1,0 +1,40 @@
+{
+  "va": "0x004060F0",
+  "size": 75,
+  "orig_symbol": "sub_004060F0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "CopyRecordRange_004060F0",
+  "class": "ExtRecord58",
+  "signature": "void fn_004060F0(void* dst, void* dstEnd, const void* src)",
+  "summary": "Copy-assigns one 0x58-byte record from src into every record in [dst, dstEnd) (no-op when dst == dstEnd).",
+  "fields": [
+    {
+      "class": "ExtRecord58",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExtRecord58",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExtRecord58",
+      "offset": "+0x20",
+      "type": "std::string",
+      "name": "field_0x20"
+    },
+    {
+      "class": "ExtRecord58",
+      "offset": "+0x3C",
+      "type": "std::string",
+      "name": "field_0x3C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:35:58Z"
+}

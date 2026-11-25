@@ -924,3 +924,31 @@ uint32_t fn_00406350(uint32_t begin, uint32_t end, uint32_t value) {
 }
 } // namespace lift_0054F290
 } // namespace lift_00406350
+
+// [0x004060F0] sub_004060F0 (75 bytes)
+namespace lift_004060F0 {
+extern int mem_00924FDC;
+
+// @name CopyRecordRange_004060F0
+// @class ExtRecord58
+// @summary Copy-assigns one 0x58-byte record from src into every record in [dst, dstEnd) (no-op when dst == dstEnd).
+// @field ExtRecord58 +0x00 uint32_t field_0x00
+// @field ExtRecord58 +0x04 std::string field_0x04
+// @field ExtRecord58 +0x20 std::string field_0x20
+// @field ExtRecord58 +0x3C std::string field_0x3C
+void fn_004060F0(void* dst, void* dstEnd, const void* src) {
+    if (dst == dstEnd) {
+        return;
+    }
+    // The source pointer is not advanced: each destination record receives
+    // the same source record (matches the original loop, which never increments edi).
+    for (uint8_t* p = static_cast<uint8_t*>(dst);
+         p != static_cast<uint8_t*>(dstEnd);
+         p += 0x58) {
+        lift_field<uint32_t>(p, 0x00) = lift_field<const uint32_t>(src, 0x00);
+        lift_field<std::string>(p, 0x04) = lift_field<const std::string>(src, 0x04);
+        lift_field<std::string>(p, 0x20) = lift_field<const std::string>(src, 0x20);
+        lift_field<std::string>(p, 0x3C) = lift_field<const std::string>(src, 0x3C);
+    }
+}
+} // namespace lift_004060F0
