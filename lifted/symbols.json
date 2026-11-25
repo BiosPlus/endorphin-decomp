@@ -58601,6 +58601,13 @@
     "summary": "If the virtual gate at vtable +0x2c returns true, forward to ext_00789650; a -1 result is returned unchanged, otherwise return the DWORD at +0x1C. Returns 0 when the gate is false.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x0078BF70": {
+    "name": "Unknown::formatAndDispatch_0078BF70",
+    "class": "Unknown",
+    "signature": "void fn_0078BF70(void* self, const char* fmt, ...)",
+    "summary": "printf-style formats into a 16 KiB stack buffer via vsprintf, then calls virtual slot +0x1c on this with (buffer, strlen+1).",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078C220": {
     "name": "Unknown::GetScaledDeltaFromField4",
     "class": "Unknown",

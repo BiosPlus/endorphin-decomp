@@ -3,6 +3,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstdarg>
+#include <cstring>
 
 // [0x00780250]
 namespace lift_00780250 {
@@ -1344,3 +1345,31 @@ void fn_00783670(void* self, const char* fmt, ...) {
     std::fputs(buf, stream);
 }
 } // namespace lift_00783670
+
+// [0x0078BF70] sub_0078BF70 (84 bytes)
+namespace lift_0078BF70 {
+namespace lift_0078BF70 {
+// IAT slot for MSVCR80!vsprintf
+extern int (__cdecl* mem_009252B8)(char* dst, const char* fmt, va_list args);
+
+// @name Unknown::formatAndDispatch_0078BF70
+// @class Unknown
+// @summary printf-style formats into a 16 KiB stack buffer via vsprintf, then calls virtual slot +0x1c on this with (buffer, strlen+1).
+// @field Unknown +0x00 void* vptr
+void fn_0078BF70(void* self, const char* fmt, ...) {
+    char buf[0x4000];
+
+    va_list args;
+    va_start(args, fmt);
+    mem_009252B8(buf, fmt, args);
+    va_end(args);
+
+    DWORD len = static_cast<DWORD>(std::strlen(buf) + 1);
+
+    void* vtbl = lift_field<void*>(self, 0x0);
+    void* slot = lift_field<void*>(vtbl, 0x1c);
+    using DispatchFn = void(__thiscall*)(void* self_, char* text, DWORD length);
+    reinterpret_cast<DispatchFn>(slot)(self, buf, len);
+}
+} // namespace lift_0078BF70
+} // namespace lift_0078BF70
