@@ -39,3 +39,36 @@ int32_t fn_007648F0(void* self, uint32_t a, uint32_t b) {
     return -1;
 }
 } // namespace lift_007648F0
+
+// [0x00766240] sub_00766240 (64 bytes)
+namespace lift_00766240 {
+// Known callee 0x006D2A30: sub_006D2A30 (Returns `this` pointer unchanged.)
+extern void* __fastcall ext_006D2A30(void* self);
+
+// @name Unknown::AccumulateSixteenDoubles
+// @class Unknown
+// @summary Adds a 16-element double array (128 bytes) from src into dst in place: dst[i] += src[i].
+// @field Unknown +0x00 double field_0x00
+// @field Unknown +0x08 double field_0x08
+// @field Unknown +0x10 double field_0x10
+// @field Unknown +0x18 double field_0x18
+// @field Unknown +0x20 double field_0x20
+// @field Unknown +0x28 double field_0x28
+// @field Unknown +0x30 double field_0x30
+// @field Unknown +0x38 double field_0x38
+// @field Unknown +0x40 double field_0x40
+// @field Unknown +0x48 double field_0x48
+// @field Unknown +0x50 double field_0x50
+// @field Unknown +0x58 double field_0x58
+// @field Unknown +0x60 double field_0x60
+// @field Unknown +0x68 double field_0x68
+// @field Unknown +0x70 double field_0x70
+// @field Unknown +0x78 double field_0x78
+void fn_00766240(void* dst, const void* src) {
+    void* d = ext_006D2A30(dst);
+    const void* s = ext_006D2A30(const_cast<void*>(src));
+    for (ptrdiff_t off = 0; off < 0x80; off += 8) {
+        lift_field<double>(d, off) += lift_field<double>(s, off);
+    }
+}
+} // namespace lift_00766240
