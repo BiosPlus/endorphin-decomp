@@ -3355,3 +3355,33 @@ void __thiscall fn_00430900(void* self, void* arg1) {
     fn(arg1, static_cast<uint32_t>(state));
 }
 } // namespace lift_00430900
+
+// [0x00431400] sub_00431400 (43 bytes)
+namespace lift_00431400 {
+// Known callee 0x00430380: isGlobalObjectField60Is1 (Returns 1 if the int32 at +0x60 of the object returned by ext_004658C0 equals 1, else 0.)
+extern uint8_t ext_00430380(void);
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430330 (sub_00430330).)
+extern void* ext_00465B40(void);
+
+// @name dispatchVirtualSlotByGlobalFlag
+// @summary If ext_00430380() is nonzero, tail-dispatches vtable slot +0xD0 of the object from ext_00465B40(); otherwise tail-dispatches slot +0xCC. Result is returned unchanged.
+void* fn_00431400(void) {
+    using VirtFn = void* (*)(void*);
+
+    if (ext_00430380() != 0) {
+        // call ext_00465B40; edx = obj->vptr; ecx = obj; jmp [edx+0xD0]
+        void* obj = ext_00465B40();
+        void* vtable = *reinterpret_cast<void**>(obj);
+        VirtFn target = reinterpret_cast<VirtFn>(
+            *reinterpret_cast<void**>(static_cast<uint8_t*>(vtable) + 0xD0));
+        return target(obj);
+    }
+
+    // call ext_00465B40; edx = obj->vptr; ecx = obj; jmp [edx+0xCC]
+    void* obj = ext_00465B40();
+    void* vtable = *reinterpret_cast<void**>(obj);
+    VirtFn target = reinterpret_cast<VirtFn>(
+        *reinterpret_cast<void**>(static_cast<uint8_t*>(vtable) + 0xCC));
+    return target(obj);
+}
+} // namespace lift_00431400

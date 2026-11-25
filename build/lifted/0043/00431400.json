@@ -1,0 +1,13 @@
+{
+  "va": "0x00431400",
+  "size": 43,
+  "orig_symbol": "sub_00431400",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "dispatchVirtualSlotByGlobalFlag",
+  "signature": "void* fn_00431400(void)",
+  "summary": "If ext_00430380() is nonzero, tail-dispatches vtable slot +0xD0 of the object from ext_00465B40(); otherwise tail-dispatches slot +0xCC. Result is returned unchanged.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:30:09Z"
+}

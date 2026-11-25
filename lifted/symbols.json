@@ -3131,6 +3131,12 @@
     "summary": "Toggles or updates a child object state via virtual call at +0x15c and forwards to MFC80_ord_6081",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00431400": {
+    "name": "dispatchVirtualSlotByGlobalFlag",
+    "signature": "void* fn_00431400(void)",
+    "summary": "If ext_00430380() is nonzero, tail-dispatches vtable slot +0xD0 of the object from ext_00465B40(); otherwise tail-dispatches slot +0xCC. Result is returned unchanged.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x004329A0": {
     "name": "init_and_update_field_0x11c",
     "signature": "extern \"C\" void __thiscall fn_004329A0(uintptr_t self)",
@@ -70732,6 +70738,13 @@
     "name": "treeRotateLeft",
     "signature": "void sub_007D48C0(void* node)",
     "summary": "Performs a binary tree left rotation on the given node.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
+  "0x007D48F0": {
+    "name": "TreeNode::rotateRight",
+    "class": "TreeNode",
+    "signature": "void sub_007D48F0(void* node)",
+    "summary": "Performs a right rotation on a binary tree node with left/right/parent pointers.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
   "0x007D4920": {
