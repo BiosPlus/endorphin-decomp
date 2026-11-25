@@ -404,3 +404,23 @@ void* initStaticObjectOnce_004C6010() {
     return (void*)&mem_00AE3710;
 }
 } // namespace lift_004C6010
+
+// [0x004C1D80]
+namespace lift_004C1D80 {
+// @name initStaticObjectOnce_004C1D80
+// @summary One-time initializer for the static object at 0x00AE3064; sets a guard bit, runs ext_0067A670 on the object, then stamps its vtable-like first DWORD with 0x00944AA4. Returns the object's address.
+
+extern DWORD mem_00AE3068;  // one-time-init guard flags (bit 0 = already initialized/in progress)
+extern DWORD mem_00AE3064;  // static object storage (first DWORD is overwritten with 0x00944AA4)
+
+DWORD ext_0067A670(void* self, DWORD value);  // thiscall: stores value into first DWORD of self
+
+void* initStaticObjectOnce_004C1D80(void) {
+    if ((mem_00AE3068 & 1u) == 0) {
+        mem_00AE3068 |= 1u;
+        ext_0067A670(&mem_00AE3064, 0u);
+        mem_00AE3064 = 0x00944AA4u;
+    }
+    return &mem_00AE3064;
+}
+} // namespace lift_004C1D80

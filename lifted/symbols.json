@@ -13538,6 +13538,12 @@
     "summary": "One-time initializer guarded by a bit in mem_00AE3058; sets mem_00AE3054 to vtable 0x944744 and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
+  "0x004C1D80": {
+    "name": "initStaticObjectOnce_004C1D80",
+    "signature": "extern DWORD mem_00AE3068;  // one-time-init guard flags (bit 0 = already initialized/in progress) extern DWORD mem_00AE3064;  // static object storage (first DWORD is overwritten with 0x00944AA4) DWORD ext_0067A670(void* self, DWORD value);  // thiscall: stores value into first DWORD of self void* initStaticObjectOnce_004C1D80(void)",
+    "summary": "One-time initializer for the static object at 0x00AE3064; sets a guard bit, runs ext_0067A670 on the object, then stamps its vtable-like first DWORD with 0x00944AA4. Returns the object's address.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C2070": {
     "name": "NMData::SeverEventData::vfunc_14",
     "class": "NMData::SeverEventData",
