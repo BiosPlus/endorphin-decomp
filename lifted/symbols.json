@@ -68165,6 +68165,13 @@
     "summary": "If a2 == 0x13D, copies the WORD at a1-\u003e+0x1CC into *a3 and returns 1; otherwise forwards (a1, a2, a3) to the function pointer at (a1-\u003e+0x1CC)+0x1C and returns its result.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BFD80": {
+    "name": "Unknown::debugDumpAndForward_007BFD80",
+    "class": "Unknown",
+    "signature": "void __cdecl fn_007BFD80(void* self, FILE* stream, DWORD arg3)",
+    "summary": "If flag bit 31 is set, writes a debug dump of the sub-object's counter to a stream; then forwards to the sub-object's callback at +0x24.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007C15A0": {
     "name": "ReleaseOwnedCallbackHandle",
     "class": "Unknown",

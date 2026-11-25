@@ -527,6 +527,7 @@ struct Unknown_Fields {
     // +0x1C  uint8_t                  field_0x1c[16]  (evidence: 0x004291F0, 0x00475840, 0x004A82D0, 0x004ADA20, 0x0052A140, 0x0052F7D0, 0x00557200, 0x005588C0, 0x005726C0, 0x005947B0, 0x00595C90, 0x005963F0, 0x00666BA0, 0x006998D0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  std::string              field_1C  (evidence: 0x005566D0, 0x00620F80) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  bool                     flag  (evidence: 0x004C4390, 0x004CF910) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  DWORD                    flags  (evidence: 0x007BFD80) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  HMODULE                  hModule  (evidence: 0x00401920) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  void*                    hwnd  (evidence: 0x00458DF0, 0x00458FE0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint8_t* field_0x1C (end of element-pointer array, re-read every iteration)  (evidence: 0x00527690, 0x0052F7D0) // CONFLICT: multiple definitions at +0x1C
@@ -1253,6 +1254,7 @@ struct Unknown_Fields {
     // +0x1CC uint32_t                 field_0x1cc  (evidence: 0x007B89BC, 0x007BE010) // CONFLICT: multiple definitions at +0x1CC
     // +0x1CC void*                    field_0x1cc  (evidence: 0x007B89BC, 0x007BEDA0, 0x007BFC90, 0x007BFD40) // CONFLICT: multiple definitions at +0x1CC
     // +0x1CC ptr field_0x1cc (sub-object: +0x08 int chunkSize, +0x0c chunk callback, +0x18 begin hook)  (evidence: 0x007BFA10) // CONFLICT: multiple definitions at +0x1CC
+    // +0x1CC BYTE*                    subObject  (evidence: 0x007BFD80) // CONFLICT: multiple definitions at +0x1CC
     // +0x1CC void*                    subobject  (evidence: 0x007BEDE0) // CONFLICT: multiple definitions at +0x1CC
     // +0x1D0 int32_t                  field_0x1D0  (evidence: 0x007B89BC, 0x007BF4A0) // CONFLICT: multiple definitions at +0x1D0
     // +0x1D0 void*                    field_1D0  (evidence: 0x005B0E60, 0x005B6BC0) // CONFLICT: multiple definitions at +0x1D0

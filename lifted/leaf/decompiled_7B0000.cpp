@@ -1486,3 +1486,42 @@ namespace lift_007B5074 {
 void sub_007B5074(void) {
 }
 } // namespace lift_007B5074
+
+// [0x007BFD80] sub_007BFD80 (110 bytes)
+namespace lift_007BFD80 {
+// @name Unknown::debugDumpAndForward_007BFD80
+// @class Unknown
+// @summary If flag bit 31 is set, writes a debug dump of the sub-object's counter to a stream; then forwards to the sub-object's callback at +0x24.
+// @field Unknown +0x1C DWORD flags
+// @field Unknown +0x1CC BYTE* subObject
+// Sub-object (pointer at self+0x1CC) accessed offsets:
+//   +0x00 DWORD counter   (read as DWORD; value 1 and 2 select label strings)
+//   +0x24 void (*callback)(void* self, FILE* stream, DWORD arg3)
+
+using DebugCallback = void(__cdecl*)(void* self, FILE* stream, DWORD arg3);
+
+void __cdecl fn_007BFD80(void* self, FILE* stream, DWORD arg3) {
+    BYTE* obj = reinterpret_cast<BYTE*>(self);
+    DWORD flags = *reinterpret_cast<DWORD*>(obj + 0x1C);
+    BYTE* sub = *reinterpret_cast<BYTE**>(obj + 0x1CC);
+
+    if (flags & 0x80000000u) {
+        std::fprintf(stream, reinterpret_cast<const char*>(0x00AB261Cu));
+
+        DWORD counter = *reinterpret_cast<DWORD*>(sub);
+        if (counter == 1) {
+            std::fprintf(stream, reinterpret_cast<const char*>(0x00AB25F8u));
+        } else if (counter == 2) {
+            std::fprintf(stream, reinterpret_cast<const char*>(0x00AB2600u));
+        }
+
+        counter = *reinterpret_cast<DWORD*>(sub);
+        std::fprintf(stream, reinterpret_cast<const char*>(0x00AB25ECu), counter, counter);
+    }
+
+    DebugCallback callback = *reinterpret_cast<DebugCallback*>(sub + 0x24);
+    if (callback) {
+        callback(self, stream, arg3);
+    }
+}
+} // namespace lift_007BFD80
