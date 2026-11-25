@@ -1080,3 +1080,24 @@ void fn_00460540(void* self, const POINT* pt) {
     reinterpret_cast<MoveWindowFn>(&ext_006A5E5A)(self, x, y, width, height, TRUE);
 }
 } // namespace lift_00460540
+
+// [0x0046FAD0]
+namespace lift_0046FAD0 {
+// Import slot for MSVCP80 basic_string<char> destructor (IAT entry at 0x00924FF4).
+extern uint32_t mem_00924FF4;
+// MSVCP80 std::basic_string<char>::~basic_string(), called with this pointer in ECX.
+extern void __thiscall ext_std_string_dtor(void* self);
+
+struct Unknown;
+
+// @name Unknown::DestroyStringPair_0046FAD0
+// @class Unknown
+// @summary Destroys two std::string members, the one at +0x1C first and then the one at +0x00.
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1C std::string field_0x1c
+void __thiscall DestroyStringPair_0046FAD0(Unknown* self) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    ext_std_string_dtor(base + 0x1C);
+    ext_std_string_dtor(base + 0x00);
+}
+} // namespace lift_0046FAD0

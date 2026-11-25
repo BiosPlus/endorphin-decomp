@@ -7191,6 +7191,13 @@
     "summary": "Loads the 32-bit value at [ecx+0x00] and passes it to thunk_MFC80_ord_764.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046FAD0": {
+    "name": "Unknown::DestroyStringPair_0046FAD0",
+    "class": "Unknown",
+    "signature": "void __thiscall DestroyStringPair_0046FAD0(Unknown* self)",
+    "summary": "Destroys two std::string members, the one at +0x1C first and then the one at +0x00.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046FB80": {
     "name": "sub_0046FB80",
     "class": "Unknown",
