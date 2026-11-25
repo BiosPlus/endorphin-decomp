@@ -372,6 +372,7 @@ void fn_004757F0(void* self) {
     // ecx+0x1c is passed as `this` to the StringArray release routine.
     ext_00672D10(static_cast<unsigned char*>(self) + 0x1C);
     // The original calls the MSVC CRT string dtor through mem_00924FF4 on `this`.
-    reinterpret_cast<std::string*>(self)->~basic_string();
+    using StdString = std::string;
+    reinterpret_cast<StdString*>(self)->~StdString();
 }
 } // namespace lift_004757F0
