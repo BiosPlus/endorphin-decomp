@@ -977,3 +977,17 @@ BOOL fn_0079ADD0(DWORD hFile, LPVOID* outView, DWORD* outSize) {
     return TRUE;
 }
 } // namespace lift_0079ADD0
+
+// [0x0079B070]
+namespace lift_0079B070 {
+// @name logStderrFormatted
+// @summary Prints an optional prefix, a fixed tag, a vfprintf-formatted message, and a trailing string to stderr.
+void __cdecl sub_0079B070(const char* prefix, const char* fmt, va_list args) {
+    if (prefix != nullptr) {
+        std::fprintf(stderr, reinterpret_cast<const char*>(0x00AAFC50u), prefix);
+    }
+    std::fprintf(stderr, reinterpret_cast<const char*>(0x00AAFC44u));
+    std::vfprintf(stderr, fmt, args);
+    std::fprintf(stderr, reinterpret_cast<const char*>(0x00AAFC40u));
+}
+} // namespace lift_0079B070
