@@ -59159,6 +59159,12 @@
     "summary": "Non-executing 20-byte data block (byte-value table 0x00-0x04); no observable logic.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B6F5C": {
+    "name": "sub_007B6F5C_table",
+    "signature": "const uint8_t* fn_007B6F5C(void* self)",
+    "summary": "80-byte constant data table (10 rows of 8 bytes: 00 01 01 01 01 01 01 01); not executable code",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B7044": {
     "name": "sub_007B7044",
     "signature": "uint32_t sub_007B7044(uint32_t eax, uint32_t ebx, uint32_t ecx, uint32_t edx)",

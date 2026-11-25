@@ -1,0 +1,13 @@
+{
+  "va": "0x007B6F5C",
+  "size": 80,
+  "orig_symbol": "sub_007B6F5C",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "sub_007B6F5C_table",
+  "signature": "const uint8_t* fn_007B6F5C(void* self)",
+  "summary": "80-byte constant data table (10 rows of 8 bytes: 00 01 01 01 01 01 01 01); not executable code",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:53:45Z"
+}
