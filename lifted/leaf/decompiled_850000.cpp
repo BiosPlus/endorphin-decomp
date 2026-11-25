@@ -1001,3 +1001,31 @@ uint32_t fn_0085D340(const uint8_t* data, size_t length) {
     return ~crc;
 }
 } // namespace lift_0085D340
+
+// [0x0085E420] sub_0085E420 (80 bytes)
+namespace lift_0085E420 {
+// @name MemMoveOverlapSafe
+// @summary Copies n bytes from src to dst, handling overlapping ranges (memmove semantics) by copying backward when dst lies inside [src, src+n).
+void fn_0085E420(void* dst, const void* src, size_t n) {
+    uint8_t* d = static_cast<uint8_t*>(dst);
+    const uint8_t* s = static_cast<const uint8_t*>(src);
+
+    if (reinterpret_cast<uintptr_t>(d) > reinterpret_cast<uintptr_t>(s) &&
+        reinterpret_cast<uintptr_t>(d) < reinterpret_cast<uintptr_t>(s) + n) {
+        // Overlap with dst above src: copy from the high end downward.
+        d += n;
+        s += n;
+        while (n != 0) {
+            *--d = *--s;
+            --n;
+        }
+        return;
+    }
+
+    // Non-overlapping, or dst at/below src: forward copy.
+    while (n != 0) {
+        *d++ = *s++;
+        --n;
+    }
+}
+} // namespace lift_0085E420

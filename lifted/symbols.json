@@ -62579,6 +62579,12 @@
     "summary": "Empty function (returns immediately).",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x0085E420": {
+    "name": "MemMoveOverlapSafe",
+    "signature": "void fn_0085E420(void* dst, const void* src, size_t n)",
+    "summary": "Copies n bytes from src to dst, handling overlapping ranges (memmove semantics) by copying backward when dst lies inside [src, src+n).",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085E690": {
     "name": "ToUpperAscii",
     "signature": "uint8_t ToUpperAscii(uint8_t ch)",

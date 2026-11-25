@@ -1,0 +1,13 @@
+{
+  "va": "0x0085E420",
+  "size": 80,
+  "orig_symbol": "sub_0085E420",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "MemMoveOverlapSafe",
+  "signature": "void fn_0085E420(void* dst, const void* src, size_t n)",
+  "summary": "Copies n bytes from src to dst, handling overlapping ranges (memmove semantics) by copying backward when dst lies inside [src, src+n).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:58:03Z"
+}
