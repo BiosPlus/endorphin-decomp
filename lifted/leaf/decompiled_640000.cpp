@@ -847,3 +847,18 @@ void fn_006488A0(void* self) {
     ext_007C8750(second);
 }
 } // namespace lift_006488A0
+
+// [0x00647CE0] sub_00647CE0 (70 bytes)
+namespace lift_00647CE0 {
+extern void ext_007C6880(int32_t ctx, float ax, float ay, float az, float bx, float by, float bz);
+
+// @name Unknown::ForwardVectorPair
+// @class Unknown
+// @summary Loads two stack-passed vec3 pointers and forwards their components plus a context dword from this+0xA4 to ext_007C6880.
+// @field Unknown +0xa4 void* field_0xa4
+void fn_00647CE0(void* self, const float* a, const float* b) {
+    void* ctxPtr = lift_field<void*>(self, 0xa4);
+    int32_t ctx = *reinterpret_cast<const int32_t*>(ctxPtr);
+    ext_007C6880(ctx, a[0], a[1], a[2], b[0], b[1], b[2]);
+}
+} // namespace lift_00647CE0

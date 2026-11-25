@@ -1,0 +1,22 @@
+{
+  "va": "0x00647CE0",
+  "size": 70,
+  "orig_symbol": "sub_00647CE0",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "Unknown::ForwardVectorPair",
+  "class": "Unknown",
+  "signature": "void fn_00647CE0(void* self, const float* a, const float* b)",
+  "summary": "Loads two stack-passed vec3 pointers and forwards their components plus a context dword from this+0xA4 to ext_007C6880.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xA4",
+      "type": "void*",
+      "name": "field_0xa4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:24:47Z"
+}

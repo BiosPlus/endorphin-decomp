@@ -34330,6 +34330,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xA4 and tail-calls sub_0065A8E0.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00647CE0": {
+    "name": "Unknown::ForwardVectorPair",
+    "class": "Unknown",
+    "signature": "void fn_00647CE0(void* self, const float* a, const float* b)",
+    "summary": "Loads two stack-passed vec3 pointers and forwards their components plus a context dword from this+0xA4 to ext_007C6880.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00647E80": {
     "name": "sub_00647E80",
     "signature": "uint32_t __thiscall sub_00647E80(void* self, uint32_t arg0)",
