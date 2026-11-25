@@ -11,6 +11,9 @@ struct Inner_Fields {
     // +0x50  double                   field_0x50  (evidence: 0x006E86F0)
     // +0x58  double                   field_0x58  (evidence: 0x006E86F0)
     // +0x270 uint8_t                  field_0x270  (evidence: 0x00700940)
+    // +0x2F8 double                   field_0x2F8  (evidence: 0x0071C1B0)
+    // +0xB90 double                   field_0xB90  (evidence: 0x0071C1B0)
+    // +0xC18 double                   field_0xC18  (evidence: 0x0071C1B0)
     // +0x1168 uint8_t                  field_0x1168  (evidence: 0x0071B910)
 };
 } // namespace lifted_layout

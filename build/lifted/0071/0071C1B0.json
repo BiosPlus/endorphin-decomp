@@ -1,0 +1,39 @@
+{
+  "va": "0x0071C1B0",
+  "size": 96,
+  "orig_symbol": "sub_0071C1B0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "ComputeClampedAngleDegrees",
+  "signature": "double __thiscall fn_0071C1B0(void* self)",
+  "summary": "Computes an angle in degrees from inner object extents and clamps it to [1.0, 179.0].",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Inner",
+      "offset": "+0x2F8",
+      "type": "double",
+      "name": "field_0x2F8"
+    },
+    {
+      "class": "Inner",
+      "offset": "+0xB90",
+      "type": "double",
+      "name": "field_0xB90"
+    },
+    {
+      "class": "Inner",
+      "offset": "+0xC18",
+      "type": "double",
+      "name": "field_0xC18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:46:48Z"
+}

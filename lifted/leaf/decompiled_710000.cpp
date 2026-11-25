@@ -1895,3 +1895,32 @@ extern void __fastcall fn_0071DDF0(void* self) {
 }
 } // namespace lift_00715450
 } // namespace lift_0071DDF0
+
+// [0x0071C1B0]
+namespace lift_0071C1B0 {
+double __thiscall ext_0071C210(void* self, double a1, double a2, double a3);
+extern double mem_0092A270;
+extern double mem_00996638;
+
+// @name ComputeClampedAngleDegrees
+// @summary Computes an angle in degrees from inner object extents and clamps it to [1.0, 179.0].
+// @field Self +0x0C void* field_0x0C
+// @field Inner +0x2F8 double field_0x2F8
+// @field Inner +0xB90 double field_0xB90
+// @field Inner +0xC18 double field_0xC18
+double __thiscall fn_0071C1B0(void* self) {
+    uint8_t* inner = *reinterpret_cast<uint8_t**>(static_cast<uint8_t*>(self) + 0x0C);
+    double a1 = *reinterpret_cast<double*>(inner + 0xB90);
+    double a2 = *reinterpret_cast<double*>(inner + 0xC18);
+    double a3 = *reinterpret_cast<double*>(inner + 0x2F8);
+
+    double angle = ext_0071C210(self, a1, a2, a3);
+    if (angle < mem_0092A270) {
+        return mem_0092A270;
+    }
+    if (angle > mem_00996638) {
+        return mem_00996638;
+    }
+    return angle;
+}
+} // namespace lift_0071C1B0
