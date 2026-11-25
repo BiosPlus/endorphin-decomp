@@ -9,6 +9,6 @@
 namespace lifted_layout {
 struct Vector_Fields {
     // +0x4   uint32_t                 begin  (evidence: 0x00527AF0)
-    // +0x8   uint32_t                 end  (evidence: 0x00527AF0)
+    // +0x8   uint32_t                 end  (evidence: 0x00527AF0, 0x00596660)
 };
 } // namespace lifted_layout

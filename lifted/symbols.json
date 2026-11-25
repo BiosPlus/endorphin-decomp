@@ -25987,6 +25987,13 @@
     "summary": "Validates a global list iterator at [0xB40644]+8 and returns its node value minus one (or 0 if zero)",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x00596660": {
+    "name": "Vector_erase_range",
+    "class": "Vector",
+    "signature": "VectorIter* __thiscall sub_00596660( void* this_ptr, VectorIter* out_iter, uint32_t first_container, uint32_t first_ptr, uint32_t last_container, uint32_t last_ptr)",
+    "summary": "Erases a range [first, last) of 4-byte elements from a vector and returns the updated iterator.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00596A30": {
     "name": "CallForEachOffsetPlusBase",
     "signature": "void fn_00596A30(uint32_t* out, uint32_t /*stack slot +0x08, unused*/, const uint32_t* begin, uint32_t /*stack slot +0x10, unused*/, const uint32_t* end, OffsetCallback cb, uint32_t base)",
@@ -30011,6 +30018,12 @@
     "name": "findNamedEntryIndex",
     "signature": "uint32_t __stdcall findNamedEntryIndex(const void* arg)",
     "summary": "Compares arg with the 2 string entries at 0x00B45900 (stride 0x1C) using std::string operator==; returns the matching index, or 3 if none match.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005CFDB0": {
+    "name": "findStringIndex",
+    "signature": "int32_t __stdcall sub_005CFDB0(uint32_t arg1)",
+    "summary": "Checks if a string matches a literal or an element in a 4-element std::string array and returns its index (or 1 / 0).",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
   "0x005CFE10": {

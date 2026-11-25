@@ -25,6 +25,7 @@ void fn_00594790(void* self) {
 } // namespace lift_00594790
 #include <cstdint>
 #include <cstddef>
+#include <cstring>
 
 // [0x0059E060] sub_0059E060 (31 bytes)
 namespace lift_0059E060 {
@@ -1130,3 +1131,55 @@ void* fn_0059EAE0() {
 }
 } // namespace lift_004CAE30
 } // namespace lift_0059EAE0
+
+// [0x00596660]
+namespace lift_00596660 {
+// @name Vector_erase_range
+// @class Vector
+// @summary Erases a range [first, last) of 4-byte elements from a vector and returns the updated iterator.
+// @field Vector +0x08 uint32_t end
+
+
+extern uint32_t mem_00925134;
+extern uint32_t mem_009251EC;
+
+using InvalidParamFn = void (__cdecl*)();
+using MemmoveSFn = int (__cdecl*)(void*, size_t, const void*, size_t);
+
+struct VectorIter {
+    uint32_t container;
+    uint32_t ptr;
+};
+
+VectorIter* __thiscall sub_00596660(
+    void* this_ptr,
+    VectorIter* out_iter,
+    uint32_t first_container,
+    uint32_t first_ptr,
+    uint32_t last_container,
+    uint32_t last_ptr)
+{
+    if (first_container == 0 || first_container != last_container) {
+        reinterpret_cast<InvalidParamFn>(mem_00925134)();
+    }
+
+    if (first_ptr != last_ptr) {
+        uint32_t end_ptr = *reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t>(this_ptr) + 0x8);
+        int32_t count = static_cast<int32_t>(end_ptr - last_ptr) >> 2;
+        uint32_t byte_count = static_cast<uint32_t>(count) * 4;
+        uint32_t new_end = first_ptr + byte_count;
+        if (count > 0) {
+            reinterpret_cast<MemmoveSFn>(mem_009251EC)(
+                reinterpret_cast<void*>(static_cast<uintptr_t>(first_ptr)),
+                byte_count,
+                reinterpret_cast<const void*>(static_cast<uintptr_t>(last_ptr)),
+                byte_count);
+        }
+        *reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t>(this_ptr) + 0x8) = new_end;
+    }
+
+    out_iter->container = first_container;
+    out_iter->ptr = first_ptr;
+    return out_iter;
+}
+} // namespace lift_00596660
