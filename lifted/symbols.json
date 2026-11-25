@@ -18369,6 +18369,13 @@
     "summary": "Draws a GL_LINES segment from the origin to (0, 0, field_0x14).",
     "lifted_path": "lifted/UtilityGraphics/Line.cpp"
   },
+  "0x00538E90": {
+    "name": "UtilityGraphics::StippledLine::vfunc_22",
+    "class": "UtilityGraphics::StippledLine",
+    "signature": "void fn_00538E90(void* self, int arg)",
+    "summary": "Draws the base line segment with a dotted line stipple (GL_LINE_STIPPLE, factor 2, pattern 0xAAAA), restoring GL line state afterwards.",
+    "lifted_path": "lifted/UtilityGraphics/StippledLine.cpp"
+  },
   "0x00538FA0": {
     "name": "SetFloatPairAndDwordPair",
     "signature": "void fn_00538FA0(void* self, float f0, float f1, DWORD d0, DWORD d1)",

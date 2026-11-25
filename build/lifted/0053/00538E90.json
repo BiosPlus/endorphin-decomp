@@ -1,0 +1,14 @@
+{
+  "va": "0x00538E90",
+  "size": 68,
+  "orig_symbol": "UtilityGraphics::StippledLine::vfunc_22",
+  "src_path": "src/UtilityGraphics/StippledLine.cpp",
+  "lifted_path": "lifted/UtilityGraphics/StippledLine.cpp",
+  "name": "UtilityGraphics::StippledLine::vfunc_22",
+  "class": "UtilityGraphics::StippledLine",
+  "signature": "void fn_00538E90(void* self, int arg)",
+  "summary": "Draws the base line segment with a dotted line stipple (GL_LINE_STIPPLE, factor 2, pattern 0xAAAA), restoring GL line state afterwards.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:20:21Z"
+}
