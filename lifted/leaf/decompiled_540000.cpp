@@ -758,3 +758,20 @@ extern void __fastcall fn_00545A70(void* self) {
     ext_00543320(self);
 }
 } // namespace lift_00545A70
+
+// [0x00540130] sub_00540130 (79 bytes)
+namespace lift_00540130 {
+// Known callee 0x00532B40: Unknown::dtor_00532B40 (Sets vtable to 0x009543E4 and unlinks peer at +0x08 if it points back to this at +0x04.)
+extern void __thiscall ext_00532B40(void* self);
+// Known callee 0x00543320: sub_00543320 (Stores address of mem_009560E4 into field at offset +0x0.)
+extern void __fastcall ext_00543320(void* self);
+
+// @name Unknown::dtor_00540130
+// @class Unknown
+// @summary Destroys the embedded object at +0x98 and then runs the owner's post-destruction hook sub_00543320.
+// @field Unknown +0x98 Unknown field_0x98
+void fn_00540130(void* self) {
+    ext_00532B40(static_cast<unsigned char*>(self) + 0x98);
+    ext_00543320(self);
+}
+} // namespace lift_00540130

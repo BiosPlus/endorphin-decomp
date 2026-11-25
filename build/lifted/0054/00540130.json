@@ -1,0 +1,22 @@
+{
+  "va": "0x00540130",
+  "size": 79,
+  "orig_symbol": "sub_00540130",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Unknown::dtor_00540130",
+  "class": "Unknown",
+  "signature": "void fn_00540130(void* self)",
+  "summary": "Destroys the embedded object at +0x98 and then runs the owner's post-destruction hook sub_00543320.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x98",
+      "type": "Unknown",
+      "name": "field_0x98"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:46:37Z"
+}

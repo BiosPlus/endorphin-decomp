@@ -19899,6 +19899,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x60.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00540130": {
+    "name": "Unknown::dtor_00540130",
+    "class": "Unknown",
+    "signature": "void fn_00540130(void* self)",
+    "summary": "Destroys the embedded object at +0x98 and then runs the owner's post-destruction hook sub_00543320.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00540180": {
     "name": "CameraTool::vfunc_1",
     "class": "CameraTool",
