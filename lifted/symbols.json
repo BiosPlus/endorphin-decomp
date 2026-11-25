@@ -29774,6 +29774,13 @@
     "summary": "Dispatches on arg2 (0x9C, 0x199, or other) to a helper and returns arg1.",
     "lifted_path": "lifted/NMData/CollisionModelData.cpp"
   },
+  "0x005C3EA0": {
+    "name": "Unknown::setStringFromTableEntry",
+    "class": "Unknown",
+    "signature": "void fn_005C3EA0(void* self, DWORD index)",
+    "summary": "Stores the thiscall argument at this+0x198, then assigns the std::string at this+0x17c from the 28-byte table entry at index (arg) of the global record vector (mem_00B44C08..0C).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005C4020": {
     "name": "NMData::CollisionModelData::vfunc_33",
     "class": "NMData::CollisionModelData",

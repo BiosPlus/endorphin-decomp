@@ -41,6 +41,7 @@ extern void __thiscall fn_005CF3E0(void* self) {
 } // namespace lift_004CD090
 } // namespace lift_0048DE30
 } // namespace lift_005CF3E0
+#include <cstddef>
 
 // [0x005CF930] sub_005CF930 (14 bytes)
 namespace lift_005CF930 {
@@ -1459,3 +1460,50 @@ void* fn_005C7D20(void) {
     return static_cast<void*>(mem_00B444F0);
 }
 } // namespace lift_005C7D20
+
+// [0x005C3EA0] sub_005C3EA0 (99 bytes)
+namespace lift_005C3EA0 {
+// Vector-of-records globals (begin / end pointers); element stride is 28 bytes.
+extern int mem_00B44C08;
+extern int mem_00B44C0C;
+// IAT slot for MSVCR80!_invalid_parameter_noinfo (no arguments).
+extern void (__cdecl* mem_00925134)(void);
+
+// @name Unknown::setStringFromTableEntry
+// @class Unknown
+// @summary Stores the thiscall argument at this+0x198, then assigns the std::string at this+0x17c from the 28-byte table entry at index (arg) of the global record vector (mem_00B44C08..0C).
+// @field Unknown +0x17c std::string field_0x17c
+// @field Unknown +0x198 DWORD field_0x198
+void fn_005C3EA0(void* self, DWORD index) {
+    auto* base = static_cast<unsigned char*>(self);
+    *reinterpret_cast<DWORD*>(base + 0x198) = index;
+
+    auto begin_of = [] {
+        return reinterpret_cast<unsigned char*>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00B44C08)));
+    };
+
+    unsigned char* begin = begin_of();
+    if (begin != nullptr) {
+        ptrdiff_t diff = static_cast<ptrdiff_t>(static_cast<uint32_t>(mem_00B44C0C))
+                       - reinterpret_cast<ptrdiff_t>(begin);
+        uint32_t count = static_cast<uint32_t>(diff / 28);
+        if (index < count) {
+            goto assign;
+        }
+    }
+
+    // Out-of-range or uninitialised table: report invalid parameter, then
+    // continue with whatever begin pointer is current (mirrors the original).
+    mem_00925134();
+    begin = begin_of();
+
+assign:
+    {
+        unsigned char* entry = begin + static_cast<size_t>(index) * 28;
+        // The entry's first member is a std::string (MSVC layout).
+        auto* dst = reinterpret_cast<std::string*>(base + 0x17c);
+        auto* src = reinterpret_cast<const std::string*>(entry);
+        *dst = *src;
+    }
+}
+} // namespace lift_005C3EA0
