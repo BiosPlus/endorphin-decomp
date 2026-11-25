@@ -58935,6 +58935,12 @@
     "summary": "Copies 20 DWORDs from src to dst, walking indices 19 down to 0.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086F0A0": {
+    "name": "pack_u16_pairs_to_u32",
+    "signature": "void sub_0086F0A0(const uint32_t* src, uint32_t* dst)",
+    "summary": "Packs five pairs of 32-bit values (starting at index 10) into five 32-bit values by shifting the first element left by 16 and ORing with the second.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086F0E0": {
     "name": "NegateLimbs20",
     "signature": "void fn_0086F0E0(DWORD* limbs)",

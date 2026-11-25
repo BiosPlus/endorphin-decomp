@@ -501,3 +501,16 @@ void __cdecl sub_00869F50(uint32_t* bitset, uint32_t bitIndex, uint32_t wordCoun
     }
 }
 } // namespace lift_00869F50
+
+// [0x0086F0A0]
+namespace lift_0086F0A0 {
+// @name pack_u16_pairs_to_u32
+// @summary Packs five pairs of 32-bit values (starting at index 10) into five 32-bit values by shifting the first element left by 16 and ORing with the second.
+
+void sub_0086F0A0(const uint32_t* src, uint32_t* dst) {
+    for (int16_t i = 0; i < 5; ++i) {
+        int32_t idx = static_cast<int16_t>(2 * i + 10);
+        dst[i] = src[idx + 1] | (src[idx] << 16);
+    }
+}
+} // namespace lift_0086F0A0
