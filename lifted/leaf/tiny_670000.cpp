@@ -583,3 +583,18 @@ int32_t fn_00675DB0(void* self) {
 }
 } // namespace lift_00553F70
 } // namespace lift_00675DB0
+
+// [0x00679A30] sub_00679A30 (10 bytes)
+namespace lift_00679A30 {
+// IAT slot at 0x0092427C holding KERNEL32!QueryPerformanceCounter (stdcall, one arg).
+extern void (__stdcall* mem_0092427C)(DWORD);
+
+// @name QueryPerformanceCounterFromSelf
+// @class Unknown
+// @summary Reads the DWORD at [self] and passes it to QueryPerformanceCounter.
+// @field Unknown +0x00 DWORD field_0x00
+void fn_00679A30(void* self) {
+    DWORD value = lift_field<DWORD>(self, 0);
+    mem_0092427C(value);
+}
+} // namespace lift_00679A30

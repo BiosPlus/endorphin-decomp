@@ -44657,6 +44657,13 @@
     "summary": "Allocates a 24-byte timer state block and initializes its performance frequency and counter.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x00679A30": {
+    "name": "QueryPerformanceCounterFromSelf",
+    "class": "Unknown",
+    "signature": "void fn_00679A30(void* self)",
+    "summary": "Reads the DWORD at [self] and passes it to QueryPerformanceCounter.",
+    "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
   "0x00679A50": {
     "name": "sub_00679A50",
     "signature": "extern \"C\" void __fastcall fn_00679A50(void* self)",
