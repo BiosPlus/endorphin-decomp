@@ -22511,6 +22511,13 @@
     "summary": "Dispatches vfunc_17 to subobject at +0x164, falling back to +0x9C if it returns 0, and returns 1.",
     "lifted_path": "lifted/classes/SnapTranslateTool.cpp"
   },
+  "0x00544D80": {
+    "name": "SnapTranslateTool::vfunc_26",
+    "class": "SnapTranslateTool",
+    "signature": "void fn_00544D80(void* self)",
+    "summary": "Calls virtual slot 0x80 on this, then tail-dispatches virtual slot 0x68 on the subobject at +0x9C with this = \u0026field_0x9C.",
+    "lifted_path": "lifted/classes/SnapTranslateTool.cpp"
+  },
   "0x00544E00": {
     "name": "ReshapeTool::vfunc_8_off_98",
     "class": "ReshapeTool",

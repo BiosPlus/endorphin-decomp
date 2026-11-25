@@ -1,0 +1,28 @@
+{
+  "va": "0x00544D80",
+  "size": 31,
+  "orig_symbol": "SnapTranslateTool::vfunc_26",
+  "src_path": "src/classes/SnapTranslateTool.cpp",
+  "lifted_path": "lifted/classes/SnapTranslateTool.cpp",
+  "name": "SnapTranslateTool::vfunc_26",
+  "class": "SnapTranslateTool",
+  "signature": "void fn_00544D80(void* self)",
+  "summary": "Calls virtual slot 0x80 on this, then tail-dispatches virtual slot 0x68 on the subobject at +0x9C with this = \u0026field_0x9C.",
+  "fields": [
+    {
+      "class": "SnapTranslateTool",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    },
+    {
+      "class": "SnapTranslateTool",
+      "offset": "+0x9C",
+      "type": "void*",
+      "name": "field_0x9C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:41:02Z"
+}

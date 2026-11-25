@@ -91,3 +91,35 @@ void __thiscall fn_00544C70(void* self, uint32_t a, uint32_t b) {
 
 } // namespace lift_00544C70
 } // namespace lift_00544C70
+
+// [0x00544D80] SnapTranslateTool::vfunc_26 (31 bytes)
+namespace lift_00544D80 {
+// @name SnapTranslateTool::vfunc_26
+// @class SnapTranslateTool
+// @summary Calls virtual slot 0x80 on this, then tail-dispatches virtual slot 0x68 on the subobject at +0x9C with this = &field_0x9C.
+// @field SnapTranslateTool +0x00 void** vptr
+// @field SnapTranslateTool +0x9C void* field_0x9C
+void fn_00544D80(void* self) {
+    // push esi / mov esi, ecx      ; esi = this (ecx is the thiscall receiver)
+    // mov eax, [esi]               ; eax = this->vptr
+    void** vptr = lift_field<void**>(self, 0x00);
+
+    // mov edx, [eax + 0x80] / call edx   ; this->vptr[0x80 / 4]() with ecx = this
+    using VFn = void(__fastcall*)(void* self);
+    VFn slot80 = reinterpret_cast<VFn>(
+        *reinterpret_cast<void**>(reinterpret_cast<char*>(vptr) + 0x80));
+    slot80(self);
+
+    // mov eax, [esi + 0x9c]        ; eax = this->field_0x9C (subobject)
+    void* sub = lift_field<void*>(self, 0x9C);
+
+    // mov edx, [eax + 0x68]        ; edx = sub->vptr[0x68]
+    // lea ecx, [esi + 0x9c]        ; ecx = &this->field_0x9C
+    // pop esi / jmp edx            ; tail-jump with ecx as receiver
+    void** subVptr = *reinterpret_cast<void***>(sub);
+    VFn target = reinterpret_cast<VFn>(
+        *reinterpret_cast<void**>(reinterpret_cast<char*>(subVptr) + 0x68));
+    void* subThis = reinterpret_cast<char*>(self) + 0x9C;
+    target(subThis);
+}
+} // namespace lift_00544D80
