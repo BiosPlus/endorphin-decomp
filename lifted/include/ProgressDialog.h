@@ -10,7 +10,8 @@
 // Recovered field layout for ProgressDialog:
 namespace lifted_layout {
 struct ProgressDialog_Fields {
-    // +0x58  void*                    field_0x58  (evidence: 0x00447FA0)
+    // +0x24  uint32_t                 field_0x24  (evidence: 0x004481A0)
+    // +0x58  void*                    field_0x58  (evidence: 0x00447FA0, 0x004481A0)
     // +0x78  uint32_t                 field_0x78  (evidence: 0x00448000)
     // +0xCC  uint32_t                 field_0xCC  (evidence: 0x00448000)
 };
