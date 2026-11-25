@@ -67018,6 +67018,12 @@
     "summary": "If value is nonzero, forward it to a handler slot chosen by field +0x10, then decrement the counter at +0x04 if positive.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007D48A0": {
+    "name": "descriptiveName: fn_007D48A0 (dword at +0x04 getter)",
+    "signature": "uint32_t fn_007D48A0(void* self)",
+    "summary": "Returns the dword stored at offset +0x04 of the object passed as the first argument.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007D4920": {
     "name": "SearchPairTree",
     "signature": "static inline uint32_t read_guest_u32(uint32_t addr)",

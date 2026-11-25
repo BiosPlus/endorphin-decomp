@@ -510,3 +510,13 @@ uint32_t loadDwordFromPtrArg(void* p) {
     return *reinterpret_cast<const uint32_t*>(p);
 }
 } // namespace lift_007D5AE0
+
+// [0x007D48A0] sub_007D48A0 (8 bytes)
+namespace lift_007D48A0 {
+// @name descriptiveName: fn_007D48A0 (dword at +0x04 getter)
+// @summary Returns the dword stored at offset +0x04 of the object passed as the first argument.
+// @field Unknown +0x04 uint32_t field_0x04
+uint32_t fn_007D48A0(void* self) {
+    return lift_field<uint32_t>(self, 0x04);
+}
+} // namespace lift_007D48A0
