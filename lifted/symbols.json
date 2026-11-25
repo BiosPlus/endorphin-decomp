@@ -25204,6 +25204,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005AAD10 (ObjectWithChild::SetValueFromStringKey).",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
+  "0x00566F70": {
+    "name": "Unknown::readKeyUntilColonMatch",
+    "class": "Unknown",
+    "signature": "bool fn_00566F70(void* self, void* stream)",
+    "summary": "Reads chars from a stream into a buffer until ':'; then reads a token and returns true if it equals a literal, otherwise appends the token to the buffer and continues.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x00566FE0": {
     "name": "setField00AndReturnThis",
     "signature": "uint32_t __thiscall sub_00566FE0(void* this_ptr, uint32_t value)",

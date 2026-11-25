@@ -87,6 +87,7 @@ struct Unknown_Fields {
     // +0x0   void* innerPtr (pointer to inner struct, dereferenced from self)  (evidence: 0x006B2F70, 0x006BA780, 0x006BB790) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (on subobject returned by ext_0071E680, i.e. self+0x40)  (evidence: 0x00711A20, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x0
     // +0x0   float                    src_x  (evidence: 0x007C8490, 0x007CA310) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void* field_0x00 (pointer to owner whose +0x3C is the accumulation std::string)  (evidence: 0x00566F70) // CONFLICT: multiple definitions at +0x0
     // +0x0   std::string              str  (evidence: 0x004C4390, 0x004CF910) // CONFLICT: multiple definitions at +0x0
     // +0x0   std::string              str0  (evidence: 0x00553F00, 0x00574D30) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t* field_0x00 (pointer to range-holder struct)  (evidence: 0x0067A670, 0x0067F8F0) // CONFLICT: multiple definitions at +0x0
@@ -122,6 +123,7 @@ struct Unknown_Fields {
     // +0x2   uint8_t                  field_0x02  (evidence: 0x007148E0, 0x007155B0)
     // +0x3   BYTE                     field_0x03  (evidence: 0x007148C0, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x3
     // +0x3   uint8_t                  field_0x03  (evidence: 0x007148A0, 0x007148E0, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x3
+    // +0x4   std::string field_0x04 (token string read after ':')  (evidence: 0x00566F70) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04      (begin)  (evidence: 0x0051DE50) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t openFlag         (inner+0x04)  (evidence: 0x007833F0, 0x00788E50) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (arg2: sub-object pointer read at +0x4)  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x4

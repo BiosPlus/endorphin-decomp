@@ -478,3 +478,43 @@ BOOL fn_00563280(void* self, DWORD arg1, DWORD arg2) {
     return (first && second) ? TRUE : FALSE;
 }
 } // namespace lift_00563280
+
+// [0x00566F70] sub_00566F70 (109 bytes)
+namespace lift_00566F70 {
+// Imported MSVCP80 entry points (called through IAT slots in the original binary).
+extern int ext_istream_get(void* stream);                                  // basic_istream::get()
+extern void ext_istream_putback(void* stream, char c);                     // basic_istream::putback(char)
+extern void* ext_istream_extract_string(void* stream, void* str);          // operator>>(istream&, string&)
+extern bool ext_string_equals_cstr(const void* str, const char* s);        // operator==(string, const char*)
+extern void ext_string_append_char(void* str, char c);                     // string::operator+=(char)
+extern void ext_string_append_string(void* dst, const void* src);          // string::operator+=(const string&)
+
+// String literal at .rdata 0x00958BFC (compared against the token read after ':').
+extern const char mem_00958BFC[];
+
+// @name Unknown::readKeyUntilColonMatch
+// @class Unknown
+// @summary Reads chars from a stream into a buffer until ':'; then reads a token and returns true if it equals a literal, otherwise appends the token to the buffer and continues.
+// @field Unknown +0x00 void* field_0x00 (pointer to owner whose +0x3C is the accumulation std::string)
+// @field Unknown +0x04 std::string field_0x04 (token string read after ':')
+bool fn_00566F70(void* self, void* stream) {
+    uint8_t* obj = reinterpret_cast<uint8_t*>(self);
+    for (;;) {
+        int c = ext_istream_get(stream);
+        uint8_t ch = static_cast<uint8_t>(c);
+        if (ch != 0x3A) {
+            void* accum = *reinterpret_cast<uint8_t**>(obj) + 0x3C;
+            ext_string_append_char(accum, static_cast<char>(ch));
+            continue;
+        }
+        ext_istream_putback(stream, static_cast<char>(ch));
+        void* token = obj + 0x04;
+        ext_istream_extract_string(stream, token);
+        if (ext_string_equals_cstr(token, mem_00958BFC)) {
+            return true;
+        }
+        void* accum = *reinterpret_cast<uint8_t**>(obj) + 0x3C;
+        ext_string_append_string(accum, token);
+    }
+}
+} // namespace lift_00566F70
