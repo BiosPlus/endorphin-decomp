@@ -201,3 +201,35 @@ void fn_0070A330(void* self) {
     mem_00B5EC14 = src[1];
 }
 } // namespace lift_0070A330
+
+// [0x0070F810] sub_0070F810 (74 bytes)
+namespace lift_0070F810 {
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5EF10;
+extern uint32_t mem_00B5EF14;
+extern uint32_t mem_00B5EF18;
+extern uint32_t mem_00B5EF1C;
+extern uint32_t mem_00B5EF20;
+extern uint32_t mem_00B5EF24;
+extern uint32_t mem_00B5EF28;
+extern uint32_t mem_00B5EF2C;
+
+// @name InitHugeValueGlobals_0070F810
+// @summary Copies the 8-byte _HUGE double (via the pointer stored at mem_00925284) into four consecutive 8-byte globals at mem_00B5EF10..mem_00B5EF2C.
+void fn_0070F810(void* self) {
+    (void)self;
+
+    // mem_00925284 holds the address of MSVCR80 _HUGE (a double).
+    const auto* src = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+
+    // Each 8-byte destination is written as two 32-bit halves (low, high).
+    mem_00B5EF10 = src[0];
+    mem_00B5EF14 = src[1];
+    mem_00B5EF18 = src[0];
+    mem_00B5EF1C = src[1];
+    mem_00B5EF20 = src[0];
+    mem_00B5EF24 = src[1];
+    mem_00B5EF28 = src[0];
+    mem_00B5EF2C = src[1];
+}
+} // namespace lift_0070F810

@@ -1,0 +1,13 @@
+{
+  "va": "0x0070F810",
+  "size": 74,
+  "orig_symbol": "sub_0070F810",
+  "src_path": "src/clones/auto_clones_700000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_700000.cpp",
+  "name": "InitHugeValueGlobals_0070F810",
+  "signature": "void fn_0070F810(void* self)",
+  "summary": "Copies the 8-byte _HUGE double (via the pointer stored at mem_00925284) into four consecutive 8-byte globals at mem_00B5EF10..mem_00B5EF2C.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:34:53Z"
+}

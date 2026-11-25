@@ -53323,6 +53323,12 @@
     "summary": "Initializes three 64-bit globals from MSVCR80!_HUGE",
     "lifted_path": "lifted/clones/auto_clones_700000.cpp"
   },
+  "0x0070F810": {
+    "name": "InitHugeValueGlobals_0070F810",
+    "signature": "void fn_0070F810(void* self)",
+    "summary": "Copies the 8-byte _HUGE double (via the pointer stored at mem_00925284) into four consecutive 8-byte globals at mem_00B5EF10..mem_00B5EF2C.",
+    "lifted_path": "lifted/clones/auto_clones_700000.cpp"
+  },
   "0x0070FB20": {
     "name": "isKnownGlobalId",
     "signature": "bool __stdcall sub_0070FB20(uint32_t value)",
