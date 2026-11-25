@@ -784,3 +784,25 @@ uintptr_t Unknown_initZeroFloatsAndVtable(uintptr_t this_ptr, uint32_t arg0) {
     return this_ptr;
 }
 } // namespace lift_0062A0C0
+
+// [0x00627240] sub_00627240 (36 bytes)
+namespace lift_00627240 {
+// Known callee 0x005FF240: sub_005FF240 (Initializes object fields to zero, stores argument at +0x28, and sets vtable to 0x0096F154)
+extern uint32_t ext_005FF240(void* self, uint32_t arg0);
+
+// @name Unknown::initVtableAndZeroFloats
+// @class Unknown
+// @summary Runs base initializer with arg0, then sets vtable to 0x00977884 and zeroes three floats at +0x30/+0x34/+0x38; returns self.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x30 float field_0x30
+// @field Unknown +0x34 float field_0x34
+// @field Unknown +0x38 float field_0x38
+void* fn_00627240(void* self, uint32_t arg0) {
+    ext_005FF240(self, arg0);
+    lift_field<uint32_t>(self, 0x00) = 0x00977884u;
+    lift_field<float>(self, 0x38) = 0.0f;
+    lift_field<float>(self, 0x34) = 0.0f;
+    lift_field<float>(self, 0x30) = 0.0f;
+    return self;
+}
+} // namespace lift_00627240

@@ -20987,6 +20987,13 @@
     "summary": "Writes the byte at *src into every byte in [dst, dstEnd); does nothing if dst == dstEnd. The source pointer is not advanced.",
     "lifted_path": "lifted/leaf/tiny_570000.cpp"
   },
+  "0x005774B0": {
+    "name": "Vector20::back",
+    "class": "Vector20",
+    "signature": "uint32_t __thiscall sub_005774B0(void* self)",
+    "summary": "Returns a pointer to the last 20-byte element in the vector, with MSVC8 iterator debug/checked-iterator validation.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00577AA0": {
     "name": "sub_00577AA0",
     "signature": "__stdcall std::uint8_t* fn_00577AA0(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2)",
@@ -21229,6 +21236,12 @@
     "signature": "uint32_t fn_00585170(void* self, void* arg0)",
     "summary": "Resolves a property/transform value via TransformInterface and vfunc_54, then forwards to ext_00493E40.",
     "lifted_path": "lifted/classes/AnimatableTransform.cpp"
+  },
+  "0x005851E0": {
+    "name": "sub_005851E0_ctor",
+    "signature": "void* __thiscall sub_005851E0(void* self, uint32_t arg0)",
+    "summary": "Constructor that calls base sub_00584F80 and initializes vtable pointers.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
   "0x00585250": {
     "name": "NMData::RPROJointData::vfunc_0",
@@ -29925,6 +29938,13 @@
     "summary": "Gets an int32 handle from ext_00594000, calls ext_006781B0 on the object at (handle + 0x2E0) with the float argument, and stores the float result into this+0x08; thiscall, callee pops 4 bytes.",
     "lifted_path": "lifted/leaf/decompiled_610000.cpp"
   },
+  "0x00610C60": {
+    "name": "UnknownClass::setElementFromVec4",
+    "class": "UnknownClass",
+    "signature": "void __thiscall sub_00610C60(uintptr_t self, uintptr_t src, uint32_t index)",
+    "summary": "Copies 4 floats from a source struct into indexed fields and an element pointer, then sets a dirty flag.",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
   "0x00610CB0": {
     "name": "sub_00610CB0",
     "signature": "extern \"C\" void __thiscall fn_00610CB0(uint32_t ecx)",
@@ -31488,6 +31508,13 @@
     "name": "descriptiveFunctionName (owner class not identified)",
     "signature": "void fn_006271D0(void* self)",
     "summary": "Forwards a pointer to this+0x30 to ext_00647E00, using this-\u003efield_0x28-\u003efield_0x158-\u003efield_0xac as the receiver.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x00627240": {
+    "name": "Unknown::initVtableAndZeroFloats",
+    "class": "Unknown",
+    "signature": "void* fn_00627240(void* self, uint32_t arg0)",
+    "summary": "Runs base initializer with arg0, then sets vtable to 0x00977884 and zeroes three floats at +0x30/+0x34/+0x38; returns self.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x00627270": {
