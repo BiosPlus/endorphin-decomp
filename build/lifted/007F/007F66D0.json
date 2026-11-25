@@ -1,0 +1,13 @@
+{
+  "va": "0x007F66D0",
+  "size": 116,
+  "orig_symbol": "sub_007F66D0",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "vec3DistanceSqLessThanScaledEps",
+  "signature": "uint8_t __cdecl sub_007F66D0(const float* a, const float* b, float threshold)",
+  "summary": "Checks if squared distance between two 3D vectors is less than threshold^2 * 1e-4.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:44:19Z"
+}
