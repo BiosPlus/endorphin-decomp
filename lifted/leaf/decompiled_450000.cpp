@@ -814,3 +814,42 @@ void fn_00456C20(void* self, void* arg) {
     }
 }
 } // namespace lift_00456C20
+
+// [0x00456C70] (75 bytes)
+namespace lift_00456C70 {
+// @name ProcessNodeList_00456C70
+// @summary Walks a singly linked list hanging off the owner at +0x88. For each node, it calls the global getter fn_00455C20, passes that result to thunk_MFC80_ord_3952 on the node's object; if that returns nonzero, it invokes the object's virtual slot at +0x180 with `arg2`. Iteration continues until the next-node pointer is null.
+// @field Owner +0x88 void* field_0x88
+// @field Node +0x00 uint8_t* next
+// @field Node +0x08 void* obj
+//
+// Note: the asm contains an `je` to ext_006A60EE (thunk_MFC80_ord_1185) at the
+// top of the loop. The loop condition guarantees the node is nonzero there, so
+// that tail-jump path is unreachable and is omitted.
+
+extern void* ext_00455C20(void);
+extern uint32_t ext_006A63BE(void* self, void* arg);
+
+void fn_00456C70(void* self, void* arg2) {
+    uint8_t* node = lift_field<uint8_t*>(self, 0x88);
+    if (node == nullptr) {
+        return;
+    }
+
+    while (node != nullptr) {
+        uint8_t* next = lift_field<uint8_t*>(node, 0x00);
+        void* obj = lift_field<void*>(node, 0x08);
+
+        void* global_ptr = ext_00455C20();
+
+        if (ext_006A63BE(obj, global_ptr) != 0) {
+            void* vtbl = lift_field<void*>(obj, 0x00);
+            using VirtFn = void (*)(void*, void*);
+            VirtFn slot = lift_field<VirtFn>(vtbl, 0x180);
+            slot(obj, arg2);
+        }
+
+        node = next;
+    }
+}
+} // namespace lift_00456C70
