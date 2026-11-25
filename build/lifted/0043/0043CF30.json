@@ -1,0 +1,34 @@
+{
+  "va": "0x0043CF30",
+  "size": 103,
+  "orig_symbol": "sub_0043CF30",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::UpdateVerticalScrollBarFromClientHeight",
+  "class": "Unknown",
+  "signature": "void fn_0043CF30(void* self)",
+  "summary": "Reads the client rect of the window at +0x20; if the child check at +0x18c passes, shows the vertical scroll bar when +0xf8 exceeds the client height, else shows it unconditionally; then calls the MFC80 thunk with +0xf8.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF8",
+      "type": "int",
+      "name": "field_0xF8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18C",
+      "type": "void*",
+      "name": "field_0x18C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:47:07Z"
+}

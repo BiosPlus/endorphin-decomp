@@ -3782,6 +3782,13 @@
     "summary": "Returns true when the window under the mouse cursor equals this object's window handle (ecx).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043CF30": {
+    "name": "Unknown::UpdateVerticalScrollBarFromClientHeight",
+    "class": "Unknown",
+    "signature": "void fn_0043CF30(void* self)",
+    "summary": "Reads the client rect of the window at +0x20; if the child check at +0x18c passes, shows the vertical scroll bar when +0xf8 exceeds the client height, else shows it unconditionally; then calls the MFC80 thunk with +0xf8.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043D170": {
     "name": "sub_0043D170",
     "signature": "void __thiscall fn_0043D170(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",

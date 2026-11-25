@@ -3008,3 +3008,50 @@ void fn_004305F0(void* self, void* other) {
     vcall_int(other, 1, (is2 || is9) ? 1 : 0);
 }
 } // namespace lift_004305F0
+
+// [0x0043CF30] sub_0043CF30 (103 bytes)
+namespace lift_0043CF30 {
+// Win32 API stand-ins for the IAT slots used below (USER32).
+struct Rect32 {
+    int32_t left;
+    int32_t top;
+    int32_t right;
+    int32_t bottom;
+};
+
+// IAT slot 0x0092566C -> USER32!GetClientRect(HWND, RECT*)
+extern int ext_GetClientRect(void* hwnd, Rect32* rc);
+// IAT slot 0x00925710 -> USER32!ShowScrollBar(HWND, int bar, BOOL show)
+extern int ext_ShowScrollBar(void* hwnd, int bar, int show);
+// Known callee 0x00455F40: Unknown::returnTrueIfNeitherCheckMatches_00455F40 (returns 1 only if both sub-checks return 0 for self)
+extern int ext_00455F40(void* self);
+// IAT jump thunk 0x006A65F8 -> MFC80!ord_5987; called with ecx = self and four stack args.
+extern void ext_006A65F8(void* self, int a0, int a1, int a2, int a3);
+
+// @name Unknown::UpdateVerticalScrollBarFromClientHeight
+// @class Unknown
+// @summary Reads the client rect of the window at +0x20; if the child check at +0x18c passes, shows the vertical scroll bar when +0xf8 exceeds the client height, else shows it unconditionally; then calls the MFC80 thunk with +0xf8.
+// @field Unknown +0x20 void* field_0x20
+// @field Unknown +0xf8 int field_0xF8
+// @field Unknown +0x18c void* field_0x18C
+void fn_0043CF30(void* self) {
+    uint8_t* p = static_cast<uint8_t*>(self);
+    Rect32 rc{};
+
+    void* hwnd = *reinterpret_cast<void**>(p + 0x20);
+    ext_GetClientRect(hwnd, &rc);
+
+    void* child = *reinterpret_cast<void**>(p + 0x18C);
+    int32_t height = rc.bottom - rc.top;
+    int32_t value = *reinterpret_cast<int32_t*>(p + 0xF8);
+
+    if (ext_00455F40(child) != 0) {
+        // Show the scroll bar only if the stored value exceeds the client height.
+        ext_ShowScrollBar(hwnd, 1, value > height ? 1 : 0);
+    } else {
+        ext_ShowScrollBar(hwnd, 1, 0);
+    }
+
+    ext_006A65F8(self, 1, value, 0, 1);
+}
+} // namespace lift_0043CF30
