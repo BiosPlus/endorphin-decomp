@@ -737,3 +737,44 @@ void fn_00790F40(void* self) {
     wr(0x2c, result);
 }
 } // namespace lift_00790F40
+
+// [0x00790EE0]
+namespace lift_00790EE0 {
+// @name Unknown::computeCachedEnd_00790EE0
+// @class Unknown
+// @summary Lazily computes and caches a scaled end position from base, end, and stride fields (mode 1 uses a different formula).
+// @field Unknown +0x08 std::uint32_t mode
+// @field Unknown +0x10 std::uint32_t base
+// @field Unknown +0x18 std::uint32_t elemScale
+// @field Unknown +0x20 std::uint32_t stride
+// @field Unknown +0x28 std::uint32_t cachedEnd
+// @field Unknown +0x48 std::uint32_t end
+
+std::uint32_t fn_00790EE0(void* self) {
+    auto* p = static_cast<std::uint8_t*>(self);
+    auto rd = [p](std::size_t off) -> std::uint32_t& {
+        return *reinterpret_cast<std::uint32_t*>(p + off);
+    };
+
+    if (rd(0x28) != 0) {
+        return rd(0x28);
+    }
+
+    const std::uint32_t mode = rd(0x08);
+    const std::uint32_t stride = rd(0x20);
+    const std::uint32_t scale = rd(0x18) * stride;
+    std::uint32_t result;
+
+    if (mode == 1) {
+        const std::uint32_t base = rd(0x10);
+        const std::uint32_t q = (rd(0x48) - base) / stride;
+        result = (q + base - 1) * scale + scale;
+    } else {
+        const std::uint32_t q = (rd(0x48) - rd(0x10)) / stride;
+        result = q * scale + scale + 1;
+    }
+
+    rd(0x28) = result;
+    return result;
+}
+} // namespace lift_00790EE0

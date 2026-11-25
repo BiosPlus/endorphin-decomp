@@ -58902,6 +58902,13 @@
     "summary": "Thiscall setter: sets +0x5C to 1, stores the stack argument at +0x24, and clears +0x2C; callee pops 4 bytes.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x00790EE0": {
+    "name": "Unknown::computeCachedEnd_00790EE0",
+    "class": "Unknown",
+    "signature": "std::uint32_t fn_00790EE0(void* self)",
+    "summary": "Lazily computes and caches a scaled end position from base, end, and stride fields (mode 1 uses a different formula).",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x00790F40": {
     "name": "Unknown::computeSlotIndex_00790F40",
     "class": "Unknown",
