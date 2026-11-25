@@ -1,0 +1,28 @@
+{
+  "va": "0x0054C090",
+  "size": 96,
+  "orig_symbol": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_17",
+  "src_path": "src/templates/ManagedDisplayList.cpp",
+  "lifted_path": "lifted/templates/ManagedDisplayList.cpp",
+  "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_17",
+  "class": "ManagedDisplayList\u003cRenderableList\u003e",
+  "signature": "uint32_t __thiscall fn_0054C090(void* self)",
+  "summary": "Sums vfunc_17() across all elements in the RenderableList vector",
+  "fields": [
+    {
+      "class": "ManagedDisplayList\u003cRenderableList\u003e",
+      "offset": "+0x18",
+      "type": "void**",
+      "name": "field_0x18"
+    },
+    {
+      "class": "ManagedDisplayList\u003cRenderableList\u003e",
+      "offset": "+0x1C",
+      "type": "void**",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:36:29Z"
+}

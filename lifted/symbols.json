@@ -21264,6 +21264,13 @@
     "summary": "Destroys member subobjects at +0x18 and +0x4, then calls base/cleanup ext_0065C660.",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x005365A0": {
+    "name": "OglRenderer::vfunc_1",
+    "class": "OglRenderer",
+    "signature": "void __thiscall sub_005365A0(void* self)",
+    "summary": "Acquires the renderer's critical section lock, invokes sub_005364D0, and releases the lock.",
+    "lifted_path": "lifted/classes/OglRenderer.cpp"
+  },
   "0x00536CC0": {
     "name": "OglRenderer::vfunc_90",
     "class": "OglRenderer",
@@ -22918,6 +22925,12 @@
     "summary": "Returns the address of the global data slot mem_0092CE00 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00545BE0": {
+    "name": "sub_00545BE0",
+    "signature": "void __thiscall sub_00545BE0(void* self, float* out, int32_t index, float value)",
+    "summary": "Initializes a 4-float vector to 1.0f, queries a subobject vtable method, and sets RGB/component values.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00545C40": {
     "name": "Unknown::fillFloat4FromQuery",
     "class": "Unknown",
@@ -23201,6 +23214,20 @@
     "signature": "extern \"C\" void* __fastcall fn_0054B760(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0054A0E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/ToolGraphics/auto_tiny.cpp"
+  },
+  "0x0054C030": {
+    "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_16",
+    "class": "ManagedDisplayList\u003cRenderableList\u003e",
+    "signature": "uint32_t __thiscall fn_0054C030(void* self)",
+    "summary": "Sums the result of vfunc_16 across all elements in the display list vector.",
+    "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
+  },
+  "0x0054C090": {
+    "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_17",
+    "class": "ManagedDisplayList\u003cRenderableList\u003e",
+    "signature": "uint32_t __thiscall fn_0054C090(void* self)",
+    "summary": "Sums vfunc_17() across all elements in the RenderableList vector",
+    "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
   },
   "0x0054C260": {
     "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_2",
