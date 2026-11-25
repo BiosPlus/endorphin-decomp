@@ -1,0 +1,13 @@
+{
+  "va": "0x00528CA0",
+  "size": 19,
+  "orig_symbol": "sub_00528CA0",
+  "src_path": "src/leaf/tiny_520000.cpp",
+  "lifted_path": "lifted/leaf/tiny_520000.cpp",
+  "name": "sub_00528CA0",
+  "signature": "extern \"C\" void __stdcall sub_00528CA0(void* ptr)",
+  "summary": "Frees the pointer passed as the single stdcall argument if it is non-null (wrapper around MSVCR80 free).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:17:44Z"
+}

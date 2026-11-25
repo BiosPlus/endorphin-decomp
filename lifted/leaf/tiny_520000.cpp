@@ -195,3 +195,20 @@ void* fn_0052A1A0(void* a) {
 }
 } // namespace lift_005AC820
 } // namespace lift_0052A1A0
+
+// [0x00528CA0]
+namespace lift_00528CA0 {
+// @name sub_00528CA0
+// @summary Frees the pointer passed as the single stdcall argument if it is non-null (wrapper around MSVCR80 free).
+// @field none
+
+// Import slot for MSVCR80!free (indirect call target).
+extern void* mem_009251D8;
+
+extern void __stdcall sub_00528CA0(void* ptr) {
+    if (ptr != nullptr) {
+        auto free_fn = reinterpret_cast<void(__cdecl*)(void*)>(mem_009251D8);
+        free_fn(ptr);
+    }
+}
+} // namespace lift_00528CA0
