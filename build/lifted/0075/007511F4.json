@@ -8,5 +8,5 @@
   "summary": "Static 49-byte lookup table (values 0x00-0x07 and filler 0x08) followed by 11 bytes of 0x90 padding; not executable code.",
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T00:55:35Z"
+  "lifted_at": "2026-11-25T00:55:39Z"
 }
