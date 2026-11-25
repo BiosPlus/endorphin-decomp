@@ -38847,6 +38847,12 @@
     "summary": "Returns true if the 32-bit field at offset +0x24 is non-zero.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x006659F0": {
+    "name": "destroyListElements",
+    "signature": "void __stdcall sub_006659F0(uint32_t first_cont, uint32_t first_node, uint32_t last_cont, uint32_t last_node)",
+    "summary": "Iterates a checked std::list\u003cT*\u003e range [first, last) and invokes the deleting destructor on each non-null element.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00665A50": {
     "name": "MacroCommand::vfunc_1",
     "class": "MacroCommand",
@@ -40288,6 +40294,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00553F70 (ScaledRangeDivide160).",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x00672430": {
+    "name": "allocateElements80",
+    "signature": "extern \"C\" void* fn_00672430(uint32_t count)",
+    "summary": "Allocates an array of count 80-byte elements, throwing std::bad_alloc on size overflow.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00672490": {
     "name": "sub_0067AEE8",
     "class": "Unknown (no class recovered; receiver is passed in ecx)",
@@ -40528,6 +40540,12 @@
     "signature": "extern \"C\" void* __fastcall fn_006788C0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00678880 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x006788E0": {
+    "name": "getStaticObject_00B59E70",
+    "signature": "void* __cdecl sub_006788E0()",
+    "summary": "Lazily initializes global object at 0x00B59E70 once, registers atexit cleanup, and returns it",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x00678960": {
     "name": "ExprParser::ReadWriteMethodType\u003cSystemInfo, bool, \u0026public: bool __thiscall SystemInfo::getSaveBinaryAttributes(void) const, bool, \u0026public: void __thiscall SystemInfo::setSaveBinaryAttributes(bool)\u003e::vfunc_41",
@@ -58978,6 +58996,12 @@
     "signature": "extern \"C\" void* __fastcall fn_00771BF0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00771C10 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_770000.cpp"
+  },
+  "0x00771F60": {
+    "name": "allocAndConstructObject",
+    "signature": "void* fn_00771F60()",
+    "summary": "Allocates a 0x34-byte object; if allocation succeeds, runs its constructor and returns it, otherwise returns NULL.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
   },
   "0x00771FC0": {
     "name": "StrCopyAfterMarker",

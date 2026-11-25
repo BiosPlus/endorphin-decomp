@@ -1,0 +1,13 @@
+{
+  "va": "0x00771F60",
+  "size": 87,
+  "orig_symbol": "sub_00771F60",
+  "src_path": "src/leaf/decompiled_770000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_770000.cpp",
+  "name": "allocAndConstructObject",
+  "signature": "void* fn_00771F60()",
+  "summary": "Allocates a 0x34-byte object; if allocation succeeds, runs its constructor and returns it, otherwise returns NULL.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:24:25Z"
+}
