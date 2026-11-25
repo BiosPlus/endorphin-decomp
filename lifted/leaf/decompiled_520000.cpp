@@ -933,3 +933,27 @@ void* fn_00527570(void* out) {
     return new (out) std::string(*src);
 }
 } // namespace lift_00527570
+
+// [0x00524540]
+namespace lift_00524540 {
+extern void __thiscall ext_00661980(void* self);
+
+typedef void* (__thiscall *StdStringCopyCtor)(void* self, const void* other);
+extern StdStringCopyCtor mem_00924FE0;
+
+// @name fn_00524540
+// @summary Constructs an object with base vtable 0x0093BFB4, sets vtable 0x0094F484, initializes fields +0x04 and +0x08, and copy-constructs std::string at +0x0C.
+// @field Obj +0x00 uint32_t vftable
+// @field Obj +0x04 uint32_t field_0x04
+// @field Obj +0x08 uint32_t field_0x08
+// @field Obj +0x0C std::string field_0x0C
+void* __thiscall fn_00524540(void* self, uint32_t arg0, uint32_t arg1, const void* arg2) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    ext_00661980(self);
+    *reinterpret_cast<uint32_t*>(obj + 0x00) = 0x0094F484u;
+    *reinterpret_cast<uint32_t*>(obj + 0x04) = arg0;
+    *reinterpret_cast<uint32_t*>(obj + 0x08) = arg1;
+    mem_00924FE0(obj + 0x0C, arg2);
+    return self;
+}
+} // namespace lift_00524540

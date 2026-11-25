@@ -1,0 +1,39 @@
+{
+  "va": "0x00524540",
+  "size": 96,
+  "orig_symbol": "sub_00524540",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "fn_00524540",
+  "signature": "void* __thiscall fn_00524540(void* self, uint32_t arg0, uint32_t arg1, const void* arg2)",
+  "summary": "Constructs an object with base vtable 0x0093BFB4, sets vtable 0x0094F484, initializes fields +0x04 and +0x08, and copy-constructs std::string at +0x0C.",
+  "fields": [
+    {
+      "class": "Obj",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:35:56Z"
+}
