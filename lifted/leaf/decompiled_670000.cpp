@@ -1555,3 +1555,27 @@ BOOL fn_0067AEF0(void* self, INT index) {
 }
 } // namespace lift_0067AEB0
 } // namespace lift_0067AEF0
+
+// [0x0067EC70] sub_0067EC70 (34 bytes)
+namespace lift_0067EC70 {
+// MSVCR80!_snprintf import slot (IAT entry at 0x009251E0).
+extern int mem_009251E0;
+
+// @name formatFieldPairToBuffer
+// @summary Formats two 32-bit fields of self into a caller buffer via _snprintf; returns its result.
+// @field <Unknown> +0x00 uint32_t field_0x00
+// @field <Unknown> +0x04 uint32_t field_0x04
+int fn_0067EC70(void* self, char* buf, size_t size) {
+    using SnprintfFn = int (*)(char*, size_t, const char*, ...);
+    // Call through the IAT slot: the slot holds the function pointer.
+    SnprintfFn snprintf_fn = *reinterpret_cast<SnprintfFn*>(&mem_009251E0);
+
+    uint32_t a = lift_field<uint32_t>(self, 0x00);
+    uint32_t b = lift_field<uint32_t>(self, 0x04);
+
+    // Original pushes b before a, so b is the first vararg.
+    // Format string literal lives in .rdata at 0x0098C7C0.
+    const char* fmt = reinterpret_cast<const char*>(static_cast<uintptr_t>(0x0098C7C0u));
+    return snprintf_fn(buf, size, fmt, b, a);
+}
+} // namespace lift_0067EC70

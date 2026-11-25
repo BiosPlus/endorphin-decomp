@@ -8,13 +8,14 @@
 // Recovered field layout for <Unknown>:
 namespace lifted_layout {
 struct _Unknown__Fields {
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x0067EC70) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vptr  (evidence: 0x00610AB0, 0x00610AD0) // CONFLICT: multiple definitions at +0x0
     // +0x0   <DWORD>                  vtable  (evidence: 0x004F4D20) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtable  (evidence: 0x006DE6E0) // CONFLICT: multiple definitions at +0x0
     // +0x4   uint32_t                 begin  (evidence: 0x004AEFF0) // CONFLICT: multiple definitions at +0x4
     // +0x4   <DWORD>                  field_0x04  (evidence: 0x004F4D20) // CONFLICT: multiple definitions at +0x4
     // +0x4   DWORD                    field_0x04  (evidence: 0x004EF2B0) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00810300) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x0067EC70, 0x00810300) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x00810300) // CONFLICT: multiple definitions at +0x4
     // +0x8   uint32_t                 end  (evidence: 0x004AEFF0) // CONFLICT: multiple definitions at +0x8
     // +0x8   <DWORD>                  field_0x08  (evidence: 0x004F4D20) // CONFLICT: multiple definitions at +0x8

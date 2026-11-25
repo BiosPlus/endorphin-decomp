@@ -47513,6 +47513,12 @@
     "summary": "Initializes a double at offset +0x00 to 0.0 and returns the pointer",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x0067EC70": {
+    "name": "formatFieldPairToBuffer",
+    "signature": "int fn_0067EC70(void* self, char* buf, size_t size)",
+    "summary": "Formats two 32-bit fields of self into a caller buffer via _snprintf; returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067ECA0": {
     "name": "parseHexPairFromString",
     "signature": "void __thiscall sub_0067ECA0(void* self, const void* str)",
