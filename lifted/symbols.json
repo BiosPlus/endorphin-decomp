@@ -15204,6 +15204,13 @@
     "summary": "Calls virtual slot 21 (vtable +0x54) with the argument; returns this if the call result is nonzero, else null.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004EBA00": {
+    "name": "GuiBaseElement::vfunc_14",
+    "class": "GuiBaseElement",
+    "signature": "void fn_004EBA00(void* self, const float* pt)",
+    "summary": "Builds a rect {x-c, y-c, x+c, y+c} around the point (x, y) and dispatches it to vtable slot 13 on self.",
+    "lifted_path": "lifted/classes/GuiBaseElement.cpp"
+  },
   "0x004EBE10": {
     "name": "NMData::TopLevelState::vfunc_1",
     "class": "NMData::TopLevelState",

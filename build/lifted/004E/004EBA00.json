@@ -1,0 +1,22 @@
+{
+  "va": "0x004EBA00",
+  "size": 82,
+  "orig_symbol": "GuiBaseElement::vfunc_14",
+  "src_path": "src/classes/GuiBaseElement.cpp",
+  "lifted_path": "lifted/classes/GuiBaseElement.cpp",
+  "name": "GuiBaseElement::vfunc_14",
+  "class": "GuiBaseElement",
+  "signature": "void fn_004EBA00(void* self, const float* pt)",
+  "summary": "Builds a rect {x-c, y-c, x+c, y+c} around the point (x, y) and dispatches it to vtable slot 13 on self.",
+  "fields": [
+    {
+      "class": "GuiBaseElement",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:02:37Z"
+}
