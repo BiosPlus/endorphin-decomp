@@ -1,0 +1,33 @@
+{
+  "va": "0x006895A0",
+  "size": 64,
+  "orig_symbol": "sub_006895A0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "releaseStringPairBuffer",
+  "signature": "void fn_006895A0(void* self)",
+  "summary": "Destroys the string-pair range at self+0x24..+0x28, frees its buffer if non-null, and zeroes the three range words.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:39:26Z"
+}

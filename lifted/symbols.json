@@ -45746,6 +45746,12 @@
     "summary": "Loads the object at this+0x28, calls its vtable slot at +0x30 to obtain an index, and returns GetTableEntry28Address(index).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x006895A0": {
+    "name": "releaseStringPairBuffer",
+    "signature": "void fn_006895A0(void* self)",
+    "summary": "Destroys the string-pair range at self+0x24..+0x28, frees its buffer if non-null, and zeroes the three range words.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00689F70": {
     "name": "MetaXMLElement::vfunc_0",
     "class": "MetaXMLElement",

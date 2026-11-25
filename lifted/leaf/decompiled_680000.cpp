@@ -1961,3 +1961,28 @@ void* fn_00683090(void) {
     return mem_00B5AD24;
 }
 } // namespace lift_00683090
+
+// [0x006895A0] sub_006895A0 (64 bytes)
+namespace lift_006895A0 {
+// Known callee 0x0041DD40: destroyStringPairRange (Destroys a range [begin, end) of 0x38-byte elements, each containing two std::string fields at +0x00 and +0x1C.)
+extern void ext_0041DD40(uint32_t begin, uint32_t end);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(uint32_t ptr);
+
+// @name releaseStringPairBuffer
+// @summary Destroys the string-pair range at self+0x24..+0x28, frees its buffer if non-null, and zeroes the three range words.
+// @field <unknown> +0x24 uint32_t field_0x24
+// @field <unknown> +0x28 uint32_t field_0x28
+// @field <unknown> +0x2C uint32_t field_0x2c
+void fn_006895A0(void* self) {
+    const uint32_t begin = lift_field<uint32_t>(self, 0x24);
+    if (begin != 0) {
+        const uint32_t end = lift_field<uint32_t>(self, 0x28);
+        ext_0041DD40(begin, end);
+        ext_006A5C5C(begin);
+    }
+    lift_field<uint32_t>(self, 0x24) = 0;
+    lift_field<uint32_t>(self, 0x28) = 0;
+    lift_field<uint32_t>(self, 0x2C) = 0;
+}
+} // namespace lift_006895A0
