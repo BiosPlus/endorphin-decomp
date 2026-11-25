@@ -1,0 +1,13 @@
+{
+  "va": "0x007AE3C0",
+  "size": 96,
+  "orig_symbol": "sub_007AE3C0",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "collectAndForwardIds",
+  "signature": "extern \"C\" void __fastcall fn_007AE3C0(void* self, void* /*edx*/, void* container, int32_t /*unused*/)",
+  "summary": "Collects int32_t values from elements of a container via vtable calls and forwards the array to self's vtable+0x14 method.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:51:06Z"
+}
