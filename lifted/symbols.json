@@ -33429,6 +33429,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00480280 (IsEmptyDwordRange_00480280).",
     "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
+  "0x0063EA80": {
+    "name": "Unknown::destroyStringAndStampVtable",
+    "class": "Unknown",
+    "signature": "void __fastcall fn_0063EA80(void* self)",
+    "summary": "Destroys the std::string at offset +0x04, then stores the vtable pointer at +0x00 via ext_0063E970.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063EB30": {
     "name": "AdvXMLParser::Exception::vfunc_0",
     "class": "AdvXMLParser::Exception",

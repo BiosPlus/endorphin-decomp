@@ -1,0 +1,28 @@
+{
+  "va": "0x0063EA80",
+  "size": 69,
+  "orig_symbol": "sub_0063EA80",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "Unknown::destroyStringAndStampVtable",
+  "class": "Unknown",
+  "signature": "void __fastcall fn_0063EA80(void* self)",
+  "summary": "Destroys the std::string at offset +0x04, then stores the vtable pointer at +0x00 via ext_0063E970.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:22:25Z"
+}

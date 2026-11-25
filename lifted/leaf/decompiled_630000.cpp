@@ -296,3 +296,28 @@ uint32_t sub_0063DB50(uint32_t this_ptr) {
     return this_ptr;
 }
 } // namespace lift_0063DB50
+
+// [0x0063EA80] sub_0063EA80 (69 bytes)
+namespace lift_0063EA80 {
+// Known callee 0x0063E970: sub_0063E970 (Stores address of mem_0097CC34 into field at offset +0x0.)
+extern void __fastcall ext_0063E970(void* self);
+// Imported string destructor slot at 0x00924FF4 (MSVCP80 basic_string::~basic_string).
+extern uint32_t mem_00924FF4;
+
+// @name Unknown::destroyStringAndStampVtable
+// @class Unknown
+// @summary Destroys the std::string at offset +0x04, then stores the vtable pointer at +0x00 via ext_0063E970.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 std::string field_0x04
+void __fastcall fn_0063EA80(void* self) {
+    using StringDtorFn = void(__fastcall*)(void* this_ptr);
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    // Destroy the embedded std::string at self+0x04 (original: ecx = self+4; call [mem_00924FF4]).
+    StringDtorFn string_dtor = reinterpret_cast<StringDtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+    string_dtor(base + 0x04);
+
+    // Stamp the vtable/field at +0x00 (original: ecx = self; call sub_0063E970).
+    ext_0063E970(self);
+}
+} // namespace lift_0063EA80
