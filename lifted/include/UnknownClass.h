@@ -40,7 +40,7 @@ struct UnknownClass_Fields {
     // +0x14  void*                    listHead  (evidence: 0x007B2E20, 0x007BD640) // CONFLICT: multiple definitions at +0x14
     // +0x1C  int32_t                  field_0x1C  (evidence: 0x0078CBE0)
     // +0x20  int32_t                  field_0x20  (evidence: 0x0078C410) // CONFLICT: multiple definitions at +0x20
-    // +0x20  uint32_t                 field_0x20  (evidence: 0x004B0F50, 0x004B10D0, 0x004B6FF0, 0x0053B4B0) // CONFLICT: multiple definitions at +0x20
+    // +0x20  uint32_t                 field_0x20  (evidence: 0x00448950, 0x004B0F50, 0x004B10D0, 0x004B6FF0, 0x0053B4B0) // CONFLICT: multiple definitions at +0x20
     // +0x24  uint32_t                 field_0x24  (evidence: 0x00798840)
     // +0x28  int32_t                  field_0x28  (evidence: 0x0078C410) // CONFLICT: multiple definitions at +0x28
     // +0x28  float                    field_0x28[4]  (evidence: 0x00534020) // CONFLICT: multiple definitions at +0x28
@@ -60,7 +60,8 @@ struct UnknownClass_Fields {
     // +0x64  uint32_t                 field_0x64  (evidence: 0x0044B390) // CONFLICT: multiple definitions at +0x64
     // +0x64  void*                    field_0x64  (evidence: 0x0044B700) // CONFLICT: multiple definitions at +0x64
     // +0x72  uint16_t                 field_0x72  (evidence: 0x00798840)
-    // +0x7C  HWND                     field_0x7C  (evidence: 0x006B2F70, 0x006B87B0)
+    // +0x7C  HWND                     field_0x7C  (evidence: 0x006B2F70, 0x006B87B0) // CONFLICT: multiple definitions at +0x7C
+    // +0x7C  uint32_t                 field_0x7C  (evidence: 0x00448950) // CONFLICT: multiple definitions at +0x7C
     // +0x88  void*                    subobject  (evidence: 0x00454C00)
     // +0x92  uint8_t                  field_0x92  (evidence: 0x005435F0)
     // +0x95  uint8_t                  field_0x95  (evidence: 0x005435F0)

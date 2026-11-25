@@ -1,0 +1,28 @@
+{
+  "va": "0x00448950",
+  "size": 67,
+  "orig_symbol": "sub_00448950",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "UnknownClass::notifyParentIfChildChanged",
+  "class": "UnknownClass",
+  "signature": "void __thiscall fn_00448950(void* self, void* arg)",
+  "summary": "Compares arg-\u003e+0x20 with self-\u003e+0x5c-\u003e+0x20; on match, resolves GetParent(self-\u003e+0x20) and forwards it, then dispatches ext_006A60D0 on the resulting object.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x7C",
+      "type": "uint32_t",
+      "name": "field_0x7C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:14:38Z"
+}

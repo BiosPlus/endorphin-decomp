@@ -3784,6 +3784,13 @@
     "summary": "Handles WM_KEYDOWN (0x100) by updating arg1+0x0 from this+0x7c before forwarding to MFC80!ord_5214.",
     "lifted_path": "lifted/Properties/PropInPlaceSpinbuttonEdit.cpp"
   },
+  "0x00448950": {
+    "name": "UnknownClass::notifyParentIfChildChanged",
+    "class": "UnknownClass",
+    "signature": "void __thiscall fn_00448950(void* self, void* arg)",
+    "summary": "Compares arg-\u003e+0x20 with self-\u003e+0x5c-\u003e+0x20; on match, resolves GetParent(self-\u003e+0x20) and forwards it, then dispatches ext_006A60D0 on the resulting object.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x004489A0": {
     "name": "PostKeyMessageToWindow",
     "signature": "extern const uint32_t mem_00925618; // IAT slot address of USER32!PostMessageA (unused in portable form) int PostKeyMessageToWindow(void* self, uint32_t msg, uint16_t a2, uint16_t a3)",

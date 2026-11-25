@@ -1670,3 +1670,57 @@ void __thiscall fn_0044BF00(void* self, int32_t a1, int32_t a2, int32_t a3) {
     method(handlerObj, a2, a3);
 }
 } // namespace lift_0044BF00
+
+// [0x00448950] sub_00448950 (67 bytes)
+namespace lift_00448950 {
+// Known callee 0x006A663A: thunk_MFC80_ord_4888 (IAT jump thunk forwarding to MFC80!ord_4888.)
+extern void ext_006A663A(void* self, void* arg);
+// Known callee 0x006A5E00: thunk_MFC80_ord_2372 (IAT jump thunk forwarding to MFC80!ord_2372.)
+extern uint32_t ext_006A5E00(uint32_t arg);
+// Known callee 0x006A60D0: thunk_MFC80_ord_5833 (IAT jump thunk forwarding to MFC80!ord_5833.)
+extern void ext_006A60D0(void* self);
+// IAT slot for USER32!GetParent
+extern uint32_t mem_00925650;
+
+// @name UnknownClass::notifyParentIfChildChanged
+// @class UnknownClass
+// @summary Compares arg->+0x20 with self->+0x5c->+0x20; on match, resolves GetParent(self->+0x20) and forwards it, then dispatches ext_006A60D0 on the resulting object.
+// @field UnknownClass +0x20 uint32_t field_0x20
+// @field UnknownClass +0x7C uint32_t field_0x7C
+void __thiscall fn_00448950(void* self, void* arg) {
+    auto to_u32 = [](void* p) -> uint32_t {
+        return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+    };
+    auto from_u32 = [](uint32_t v) -> void* {
+        return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+    };
+
+    // push esi(arg); call thunk_4888 (thiscall-style; ecx still == self, callee pops arg)
+    ext_006A663A(self, arg);
+
+    // esi = arg ? arg->+0x20 : 0
+    uint32_t esi = to_u32(arg);
+    if (esi != 0) {
+        esi = lift_field<uint32_t>(arg, 0x20);
+    }
+
+    // ecx = self + 0x5c; eax = ecx ? [ecx + 0x20] : 0
+    uint32_t ecx = to_u32(self) + 0x5c;
+    uint32_t eax = 0;
+    if (ecx != 0) {
+        eax = lift_field<uint32_t>(from_u32(ecx), 0x20);
+    }
+
+    if (esi == eax) {
+        // push [self + 0x20]; call GetParent; push eax; call thunk_2372 -> ecx = result
+        uint32_t hwnd = lift_field<uint32_t>(self, 0x20);
+        using GetParentFn = uint32_t(__stdcall*)(uint32_t);
+        GetParentFn get_parent = reinterpret_cast<GetParentFn>(static_cast<uintptr_t>(mem_00925650));
+        uint32_t parent = get_parent(hwnd);
+        ecx = ext_006A5E00(parent);
+    }
+
+    // call thunk_5833 with ecx as this
+    ext_006A60D0(from_u32(ecx));
+}
+} // namespace lift_00448950
