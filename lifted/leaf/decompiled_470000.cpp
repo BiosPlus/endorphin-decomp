@@ -563,3 +563,28 @@ extern void __cdecl sub_00476CA0(uint32_t* arr, int32_t holeIndex, int32_t topIn
     arr[holeIndex] = val;
 }
 } // namespace lift_00476CA0
+
+// [0x00477F30] sub_00477F30 (99 bytes)
+namespace lift_00477F30 {
+// @name Unknown::getMaxChildField160
+// @class Unknown
+// @summary Returns the maximum of the int at +0x160 over all element pointers in the vector at +0x34..+0x38 (floored at 0).
+// @field Unknown +0x34 void** childBegin
+// @field Unknown +0x38 void** childEnd
+// @field Unknown +0x160 int maxValue (on each child object pointed to by the vector; the child's own class is unknown)
+int fn_00477F30(void* self) {
+    auto* base = static_cast<char*>(self);
+    void** cur = *reinterpret_cast<void***>(base + 0x34);
+    void** end = *reinterpret_cast<void***>(base + 0x38);
+
+    int best = 0;
+    for (; cur != end; ++cur) {
+        auto* child = static_cast<char*>(*cur);
+        int value = *reinterpret_cast<int*>(child + 0x160);
+        if (value > best) {
+            best = value;
+        }
+    }
+    return best;
+}
+} // namespace lift_00477F30

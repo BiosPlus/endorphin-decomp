@@ -572,6 +572,7 @@ struct Unknown_Fields {
     // +0x30  float                    m30  (evidence: 0x00480010, 0x004890D0) // CONFLICT: multiple definitions at +0x30
     // +0x30  void*                    subObject  (evidence: 0x004DE330) // CONFLICT: multiple definitions at +0x30
     // +0x32  std::uint16_t            field_0x32  (evidence: 0x007BEDE0)
+    // +0x34  void**                   childBegin  (evidence: 0x00477F30) // CONFLICT: multiple definitions at +0x34
     // +0x34  BYTE                     field_0x34  (evidence: 0x005F5350, 0x006FA990, 0x006FC200) // CONFLICT: multiple definitions at +0x34
     // +0x34  DWORD                    field_0x34  (evidence: 0x00518030, 0x0051C5A0, 0x0057D7F0) // CONFLICT: multiple definitions at +0x34
     // +0x34  float                    field_0x34  (evidence: 0x004F9950, 0x00554510, 0x00622B40, 0x006271A0, 0x00627240, 0x00629370, 0x006293A0, 0x006296A0, 0x006296D0, 0x00629850, 0x00629D30, 0x0062A0C0, 0x007CCAB0, 0x007CCC80) // CONFLICT: multiple definitions at +0x34
@@ -583,6 +584,7 @@ struct Unknown_Fields {
     // +0x34  float                    m31  (evidence: 0x00480010, 0x004890D0) // CONFLICT: multiple definitions at +0x34
     // +0x34  uint32_t                 value  (evidence: 0x00622B40, 0x00624E50) // CONFLICT: multiple definitions at +0x34
     // +0x38  uint32_t                 array_base  (evidence: 0x007299C0) // CONFLICT: multiple definitions at +0x38
+    // +0x38  void**                   childEnd  (evidence: 0x00477F30) // CONFLICT: multiple definitions at +0x38
     // +0x38  DWORD                    field_0x38  (evidence: 0x00518030, 0x0051C5A0) // CONFLICT: multiple definitions at +0x38
     // +0x38  double                   field_0x38  (evidence: 0x00621090, 0x00622B40, 0x00766240) // CONFLICT: multiple definitions at +0x38
     // +0x38  float                    field_0x38  (evidence: 0x004F9950, 0x00554510, 0x00622B40, 0x006271A0, 0x00627240, 0x00629370, 0x006293A0, 0x006296A0, 0x006296D0, 0x00629850, 0x00629D30, 0x00629F10, 0x0062A0C0, 0x0063D970, 0x0063DDF0, 0x0063DE10, 0x007CCAB0) // CONFLICT: multiple definitions at +0x38
@@ -1019,6 +1021,7 @@ struct Unknown_Fields {
     // +0x160 uint32_t*                field_0x160  (evidence: 0x0072BC70) // CONFLICT: multiple definitions at +0x160
     // +0x160 void*                    field_0x160  (evidence: 0x0046F930) // CONFLICT: multiple definitions at +0x160
     // +0x160 void*                    subobject  (evidence: 0x005947B0, 0x0059D660) // CONFLICT: multiple definitions at +0x160
+    // +0x160 int maxValue (on each child object pointed to by the vector; the child's own class is unknown)  (evidence: 0x00477F30) // CONFLICT: multiple definitions at +0x160
     // +0x164 DWORD                    field_0x164  (evidence: 0x005C39B0, 0x006D9030) // CONFLICT: multiple definitions at +0x164
     // +0x164 uint32_t                 field_0x164  (evidence: 0x007B89BC, 0x007BD640, 0x007BEA10) // CONFLICT: multiple definitions at +0x164
     // +0x164 void*                    field_0x164  (evidence: 0x005C3030, 0x005C3970) // CONFLICT: multiple definitions at +0x164
