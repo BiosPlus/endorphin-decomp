@@ -129,3 +129,33 @@ void* fn_0074F7F0(const void* const* table_ref, const int32_t* count_ref, const 
                         });
 }
 } // namespace lift_0074F7F0
+
+// [0x0074D800] sub_0074D800 (80 bytes)
+namespace lift_0074D800 {
+// Known callee 0x006D2250: Buffer::release (Frees the buffer at +0x10 if non-null and resets fields at +0x00, +0x04, and +0x10 to zero.)
+extern void ext_006D2250(void* self);
+// Function pointer slot at 0x00925264 (resolves to the CRT free-style routine called per entry).
+extern int mem_00925264;
+
+// @name Unknown::ReleaseEntriesAndBuffer
+// @class Unknown
+// @summary Calls the per-entry release routine on every pointer in the buffer at +0x15c, then releases that buffer.
+// @field Unknown +0x15c int32_t count
+// @field Unknown +0x16c void** entries
+bool fn_0074D800(void* self) {
+    auto& count = lift_field<int32_t>(self, 0x15c);
+    void* buffer = static_cast<uint8_t*>(self) + 0x15c;
+
+    if (count > 0) {
+        auto release_entry =
+            reinterpret_cast<void (*)(void*)>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925264)));
+        void** entries = lift_field<void**>(self, 0x16c);
+        for (int32_t i = 0; i < count; ++i) {
+            release_entry(entries[i]);
+        }
+    }
+
+    ext_006D2250(buffer);
+    return true;
+}
+} // namespace lift_0074D800

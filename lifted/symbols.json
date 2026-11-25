@@ -57026,6 +57026,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0074B860 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_740000.cpp"
   },
+  "0x0074D800": {
+    "name": "Unknown::ReleaseEntriesAndBuffer",
+    "class": "Unknown",
+    "signature": "bool fn_0074D800(void* self)",
+    "summary": "Calls the per-entry release routine on every pointer in the buffer at +0x15c, then releases that buffer.",
+    "lifted_path": "lifted/leaf/decompiled_740000.cpp"
+  },
   "0x0074F650": {
     "name": "descriptiveName: wrapIndexOrSentinel",
     "signature": "int __stdcall fn_0074F650(int32_t a, int32_t n)",

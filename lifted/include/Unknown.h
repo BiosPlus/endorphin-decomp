@@ -867,6 +867,7 @@ struct Unknown_Fields {
     // +0x158 void*                    field_158  (evidence: 0x005B0E60, 0x005B6BC0) // CONFLICT: multiple definitions at +0x158
     // +0x158 uint32_t field_0x158 (child pointer; non-null selects the forward path)  (evidence: 0x005B6980, 0x005B7040) // CONFLICT: multiple definitions at +0x158
     // +0x158 void*                    subObject  (evidence: 0x005B68F0) // CONFLICT: multiple definitions at +0x158
+    // +0x15C int32_t                  count  (evidence: 0x0074D800) // CONFLICT: multiple definitions at +0x15C
     // +0x15C int32_t                  field_0x15C  (evidence: 0x007648F0) // CONFLICT: multiple definitions at +0x15C
     // +0x15C void*                    field_0x15c  (evidence: 0x005C3C00) // CONFLICT: multiple definitions at +0x15C
     // +0x15C uint8_t[] embedded_subobject (address only; not dereferenced at this level)  (evidence: 0x00444750) // CONFLICT: multiple definitions at +0x15C
@@ -883,6 +884,7 @@ struct Unknown_Fields {
     // +0x164 uint32_t                 subobject164  (evidence: 0x005C3930) // CONFLICT: multiple definitions at +0x164
     // +0x168 uint32_t                 field_0x168  (evidence: 0x00486AD0) // CONFLICT: multiple definitions at +0x168
     // +0x168 void*                    field_0x168  (evidence: 0x00433990, 0x00486C90) // CONFLICT: multiple definitions at +0x168
+    // +0x16C void**                   entries  (evidence: 0x0074D800) // CONFLICT: multiple definitions at +0x16C
     // +0x16C void**                   field_0x16C  (evidence: 0x007648F0) // CONFLICT: multiple definitions at +0x16C
     // +0x16C uint32_t                 field_0x16c  (evidence: 0x006A8800) // CONFLICT: multiple definitions at +0x16C
     // +0x174 uint32_t                 field_0x174  (evidence: 0x0046FF50)

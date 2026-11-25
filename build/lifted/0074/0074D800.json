@@ -1,0 +1,28 @@
+{
+  "va": "0x0074D800",
+  "size": 80,
+  "orig_symbol": "sub_0074D800",
+  "src_path": "src/leaf/decompiled_740000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_740000.cpp",
+  "name": "Unknown::ReleaseEntriesAndBuffer",
+  "class": "Unknown",
+  "signature": "bool fn_0074D800(void* self)",
+  "summary": "Calls the per-entry release routine on every pointer in the buffer at +0x15c, then releases that buffer.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x15C",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x16C",
+      "type": "void**",
+      "name": "entries"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:53:04Z"
+}
