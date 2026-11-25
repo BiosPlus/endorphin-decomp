@@ -337,3 +337,46 @@ void fn_00519E10(float* begin, float* end, const float* src) {
     } while (p != end);
 }
 } // namespace lift_00519E10
+
+// [0x00519170] sub_00519170 (71 bytes)
+namespace lift_00519170 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* p);
+// Known callee 0x0050F990: sub_0050F990 (Stores address of mem_00950A74 into field at offset +0x0.)
+extern void __fastcall ext_0050F990(void* self);
+
+// Vtable for the class, placed at 0x00950A9C.
+extern const unsigned char mem_00950A9C[];
+
+// @name SelectionMethodSteadyStateGrid::ResetAndRelease
+// @class SelectionMethodSteadyStateGrid
+// @summary Installs the class vtable, releases the non-null handles at +0x64 and +0x34 via ext_006A5C5C, zeroes those fields, then tail-calls ext_0050F990.
+// @field SelectionMethodSteadyStateGrid +0x00 const void* vptr
+// @field SelectionMethodSteadyStateGrid +0x34 uint32_t field_0x34
+// @field SelectionMethodSteadyStateGrid +0x38 uint32_t field_0x38
+// @field SelectionMethodSteadyStateGrid +0x3c uint32_t field_0x3c
+// @field SelectionMethodSteadyStateGrid +0x64 uint32_t field_0x64
+// @field SelectionMethodSteadyStateGrid +0x68 uint32_t field_0x68
+// @field SelectionMethodSteadyStateGrid +0x6c uint32_t field_0x6c
+void fn_00519170(void* self) {
+    lift_field<const void*>(self, 0x00) = reinterpret_cast<const void*>(mem_00950A9C);
+
+    void* p64 = lift_field<void*>(self, 0x64);
+    if (p64 != nullptr) {
+        ext_006A5C5C(p64);
+    }
+    lift_field<uint32_t>(self, 0x64) = 0;
+    lift_field<uint32_t>(self, 0x68) = 0;
+    lift_field<uint32_t>(self, 0x6c) = 0;
+
+    void* p34 = lift_field<void*>(self, 0x34);
+    if (p34 != nullptr) {
+        ext_006A5C5C(p34);
+    }
+    lift_field<uint32_t>(self, 0x34) = 0;
+    lift_field<uint32_t>(self, 0x38) = 0;
+    lift_field<uint32_t>(self, 0x3c) = 0;
+
+    ext_0050F990(self);
+}
+} // namespace lift_00519170

@@ -1,0 +1,58 @@
+{
+  "va": "0x00519170",
+  "size": 71,
+  "orig_symbol": "sub_00519170",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "SelectionMethodSteadyStateGrid::ResetAndRelease",
+  "class": "SelectionMethodSteadyStateGrid",
+  "signature": "void fn_00519170(void* self)",
+  "summary": "Installs the class vtable, releases the non-null handles at +0x64 and +0x34 via ext_006A5C5C, zeroes those fields, then tail-calls ext_0050F990.",
+  "fields": [
+    {
+      "class": "SelectionMethodSteadyStateGrid",
+      "offset": "+0x0",
+      "type": "const void*",
+      "name": "vptr"
+    },
+    {
+      "class": "SelectionMethodSteadyStateGrid",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "SelectionMethodSteadyStateGrid",
+      "offset": "+0x38",
+      "type": "uint32_t",
+      "name": "field_0x38"
+    },
+    {
+      "class": "SelectionMethodSteadyStateGrid",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "SelectionMethodSteadyStateGrid",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    },
+    {
+      "class": "SelectionMethodSteadyStateGrid",
+      "offset": "+0x68",
+      "type": "uint32_t",
+      "name": "field_0x68"
+    },
+    {
+      "class": "SelectionMethodSteadyStateGrid",
+      "offset": "+0x6C",
+      "type": "uint32_t",
+      "name": "field_0x6c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:26:44Z"
+}

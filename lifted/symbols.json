@@ -16769,6 +16769,13 @@
     "summary": "Wraps a signed int into [0, b) style range using the modulus at +0x04: negative values get b added, values \u003e= b get b subtracted.",
     "lifted_path": "lifted/leaf/tiny_510000.cpp"
   },
+  "0x00519170": {
+    "name": "SelectionMethodSteadyStateGrid::ResetAndRelease",
+    "class": "SelectionMethodSteadyStateGrid",
+    "signature": "void fn_00519170(void* self)",
+    "summary": "Installs the class vtable, releases the non-null handles at +0x64 and +0x34 via ext_006A5C5C, zeroes those fields, then tail-calls ext_0050F990.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00519C00": {
     "name": "StringFindInTable3_00519C00",
     "signature": "extern \"C\" int __cdecl fn_00519C00(const void* str)",
