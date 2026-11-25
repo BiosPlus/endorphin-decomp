@@ -1450,3 +1450,30 @@ uint32_t fn_007CCFE0(void* self, uint32_t x, uint32_t y) {
     return lift_field<uint32_t>(records, idx * 0x58u + 0x54u);
 }
 } // namespace lift_007CCFE0
+
+// [0x007CD900] sub_007CD900 (94 bytes)
+namespace lift_007CD900 {
+// @name BuildSignedPermutedMatrix3x4_007CD900
+// @summary Reads four floats from src (ecx) and writes a 3x4 row-major float matrix to dst (eax) with a fixed sign/permutation pattern (negations of src[1], src[2], src[3] and copies of src[0], src[1], src[2], src[3]).
+void fn_007CD900(const void* src, void* dst) {
+    const float s0 = lift_field<float>(src, 0x0);
+    const float s1 = lift_field<float>(src, 0x4);
+    const float s2 = lift_field<float>(src, 0x8);
+    const float s3 = lift_field<float>(src, 0xC);
+
+    lift_field<float>(dst, 0x00) = -s1;
+    lift_field<float>(dst, 0x04) = s0;
+    lift_field<float>(dst, 0x08) = -s3;
+    lift_field<float>(dst, 0x0C) = s2;
+
+    lift_field<float>(dst, 0x10) = -s2;
+    lift_field<float>(dst, 0x14) = s3;
+    lift_field<float>(dst, 0x18) = s0;
+    lift_field<float>(dst, 0x1C) = -s1;
+
+    lift_field<float>(dst, 0x20) = -s3;
+    lift_field<float>(dst, 0x24) = -s2;
+    lift_field<float>(dst, 0x28) = s1;
+    lift_field<float>(dst, 0x2C) = s0;
+}
+} // namespace lift_007CD900

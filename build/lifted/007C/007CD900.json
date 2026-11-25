@@ -1,0 +1,13 @@
+{
+  "va": "0x007CD900",
+  "size": 94,
+  "orig_symbol": "sub_007CD900",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "BuildSignedPermutedMatrix3x4_007CD900",
+  "signature": "void fn_007CD900(const void* src, void* dst)",
+  "summary": "Reads four floats from src (ecx) and writes a 3x4 row-major float matrix to dst (eax) with a fixed sign/permutation pattern (negations of src[1], src[2], src[3] and copies of src[0], src[1], src[2], src[3]).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:23:16Z"
+}
