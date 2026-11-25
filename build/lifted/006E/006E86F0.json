@@ -1,0 +1,33 @@
+{
+  "va": "0x006E86F0",
+  "size": 80,
+  "orig_symbol": "sub_006E86F0",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "clampValueToRange",
+  "signature": "void __thiscall sub_006E86F0(void* self, double value)",
+  "summary": "Clamps a double argument to [0.0, obj-\u003efield_0x58] and stores it in obj-\u003efield_0x50 via dereferenced this pointer",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Inner",
+      "offset": "+0x50",
+      "type": "double",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Inner",
+      "offset": "+0x58",
+      "type": "double",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:55:32Z"
+}
