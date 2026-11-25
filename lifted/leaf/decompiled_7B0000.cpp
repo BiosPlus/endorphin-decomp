@@ -1301,3 +1301,20 @@ uint32_t fn_007BBB40(void* self, uint32_t cursor, uint32_t remaining, uint32_t a
 }
 } // namespace lift_007BBB90
 } // namespace lift_007BBB40
+
+// [0x007B6094] sub_007B6094 (19 bytes)
+namespace lift_007B6094 {
+// @name DataTable_007B6094
+// @summary 19-byte constant table (00 04 01, 13x 04, 02 03 03); bytes decode as nonsense x86, so this is data, not code
+// NOTE: this range is not a function; no calling code was verified and no ext_/mem_ references exist in the original.
+void fn_007B6094(void* self) {
+    (void)self;
+    static const uint8_t kTable_007B6094[19] = {
+        0x00, 0x04, 0x01,
+        0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04,
+        0x02, 0x03, 0x03,
+    };
+    (void)kTable_007B6094;
+    return;
+}
+} // namespace lift_007B6094

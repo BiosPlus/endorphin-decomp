@@ -66092,6 +66092,12 @@
     "summary": "16-byte constant lookup table of values 0..3 (data, not executable code)",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B6094": {
+    "name": "DataTable_007B6094",
+    "signature": "void fn_007B6094(void* self)",
+    "summary": "19-byte constant table (00 04 01, 13x 04, 02 03 03); bytes decode as nonsense x86, so this is data, not code",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B6F5C": {
     "name": "sub_007B6F5C_table",
     "signature": "const uint8_t* fn_007B6F5C(void* self)",

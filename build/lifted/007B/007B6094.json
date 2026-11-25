@@ -1,0 +1,13 @@
+{
+  "va": "0x007B6094",
+  "size": 19,
+  "orig_symbol": "sub_007B6094",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "DataTable_007B6094",
+  "signature": "void fn_007B6094(void* self)",
+  "summary": "19-byte constant table (00 04 01, 13x 04, 02 03 03); bytes decode as nonsense x86, so this is data, not code",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-25T11:19:05Z"
+}
