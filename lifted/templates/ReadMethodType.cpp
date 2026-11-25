@@ -42766,3 +42766,28 @@ void vfunc_5(void* self) {
     ext_006A6DD2(exc, mem_009DEC1C);
 }
 } // namespace lift_004EA0D0
+
+// [0x00508F70] ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_5 (45 bytes)
+namespace lift_00508F70 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(int code);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* type_info);
+
+// @name ExprParser::ReadMethodType<NMData::Task>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>
+// @summary Throws an exception when the held task pointer is invoked through the vfunc; reports the field at +0x14 of the held object if non-null.
+// @field Unknown +0x14 int field_0x14
+void fn_00508F70(void* self) {
+    void* const held = *static_cast<void**>(self);
+    if (held != nullptr) {
+        const int code = *reinterpret_cast<int*>(static_cast<char*>(held) + 0x14);
+        ext_0046C4E0(code);
+    }
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, nullptr);
+}
+} // namespace lift_00508F70

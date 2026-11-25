@@ -1,0 +1,22 @@
+{
+  "va": "0x00508F70",
+  "size": 45,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::Task, int, \u0026public: int __thiscall NMData::Task::getID(void) const, 1\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::Task\u003e::vfunc_5",
+  "class": "ExprParser::ReadMethodType\u003cNMData::Task, int, \u0026public: int __thiscall NMData::Task::getID(void) const, 1\u003e",
+  "signature": "void fn_00508F70(void* self)",
+  "summary": "Throws an exception when the held task pointer is invoked through the vfunc; reports the field at +0x14 of the held object if non-null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "int",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:08:01Z"
+}
