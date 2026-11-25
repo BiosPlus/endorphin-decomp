@@ -1554,3 +1554,32 @@ void fn_006BBA40(void) {
 }
 } // namespace lift_006BBA40
 } // namespace lift_00703CF0
+
+// [0x00707FB0] sub_00707FB0 (77 bytes)
+namespace lift_00707FB0 {
+// Known callee 0x006D2250: Buffer::release (Frees the buffer at +0x10 if non-null and resets fields at +0x00, +0x04, and +0x10 to zero.)
+extern void ext_006D2250(void* self);
+
+// @name Unknown::DestroyElementsAndRelease_00707FB0
+// @class Unknown
+// @summary Calls virtual slot +0xD8 and frees each pointer in the element buffer (last to first), then releases the buffer at +0xA4.
+// @field Unknown +0x00 void** vtable
+// @field Unknown +0xA4 int32_t elementCount
+// @field Unknown +0xB4 void** elements
+void fn_00707FB0(void* self) {
+    // Buffer at +0xA4: +0x00 = element count, +0x10 (i.e. +0xB4) = element pointer array.
+    auto& count = lift_field<int32_t>(self, 0xA4);
+    for (int32_t i = count - 1; i >= 0; --i) {
+        void* const* vtbl = lift_field<void* const*>(self, 0x00);
+        auto vfn = reinterpret_cast<void (*)(void*, void*)>(
+            lift_field<void*>(vtbl, 0xD8));
+        void** elems = lift_field<void**>(self, 0xB4);
+        vfn(self, elems[i]);
+
+        elems = lift_field<void**>(self, 0xB4);
+        std::free(elems[i]);
+    }
+
+    ext_006D2250(reinterpret_cast<uint8_t*>(self) + 0xA4);
+}
+} // namespace lift_00707FB0

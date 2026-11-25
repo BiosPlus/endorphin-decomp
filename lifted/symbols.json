@@ -53431,6 +53431,13 @@
     "summary": "Scans the 16-byte pair table at +0x9C (count at +0x8C) and returns true if any entry equals (a, b) or (b, a); otherwise false.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00707FB0": {
+    "name": "Unknown::DestroyElementsAndRelease_00707FB0",
+    "class": "Unknown",
+    "signature": "void fn_00707FB0(void* self)",
+    "summary": "Calls virtual slot +0xD8 and frees each pointer in the element buffer (last to first), then releases the buffer at +0xA4.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00708C10": {
     "name": "findAndSelectItem",
     "signature": "uint32_t __thiscall sub_00708C10(void* self, uint32_t target)",

@@ -1,0 +1,34 @@
+{
+  "va": "0x00707FB0",
+  "size": 77,
+  "orig_symbol": "sub_00707FB0",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::DestroyElementsAndRelease_00707FB0",
+  "class": "Unknown",
+  "signature": "void fn_00707FB0(void* self)",
+  "summary": "Calls virtual slot +0xD8 and frees each pointer in the element buffer (last to first), then releases the buffer at +0xA4.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA4",
+      "type": "int32_t",
+      "name": "elementCount"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB4",
+      "type": "void**",
+      "name": "elements"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:44:49Z"
+}

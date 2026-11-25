@@ -99,7 +99,7 @@ struct Unknown_Fields {
     // +0x0   uint32_t*                vtable  (evidence: 0x0070FBD0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x00442B80, 0x00442BB0, 0x00442BD0, 0x004436B0, 0x00443700, 0x004562C0, 0x00458DF0, 0x00458FE0, 0x00493FF0, 0x00518030, 0x0051C5A0, 0x00538530, 0x0053F6A0, 0x00547AD0, 0x005ACB00, 0x005ACC50, 0x005ACEE0, 0x00611910, 0x00611980, 0x006203B0, 0x00624E50, 0x00624EA0, 0x006293A0, 0x006296A0, 0x0063FFE0, 0x006A7AC0, 0x006A7F30, 0x006A7F90, 0x006A7FB0, 0x006B2590, 0x006B2F70, 0x006C0420, 0x00705760, 0x007057F0, 0x00705D70, 0x007094A0, 0x0070AD00, 0x0070E390, 0x0070E3B0, 0x0070EC70, 0x0072DC60, 0x00774EC0, 0x007856A0, 0x00788E50, 0x0078BEC0, 0x00790D60, 0x0079ADA0, 0x0079D730, 0x0079DCE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* const*             vtable  (evidence: 0x0064F8F0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void**                   vtable  (evidence: 0x0042FAE0, 0x0042FDD0, 0x004345B0, 0x00456340, 0x0062A590, 0x00648A20, 0x00649010, 0x0067ADB0, 0x006DE660, 0x006DE720, 0x006FA920, 0x00704A20, 0x0070AD00, 0x00790D60, 0x0079ADA0, 0x0079DCE0, 0x0079E610) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void**                   vtable  (evidence: 0x0042FAE0, 0x0042FDD0, 0x004345B0, 0x00456340, 0x0062A590, 0x00648A20, 0x00649010, 0x0067ADB0, 0x006DE660, 0x006DE720, 0x006FA920, 0x00704A20, 0x00707FB0, 0x0070AD00, 0x00790D60, 0x0079ADA0, 0x0079DCE0, 0x0079E610) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtablePtr  (evidence: 0x00503CA0, 0x00508BC0, 0x0050C4D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable_ptr  (evidence: 0x006AD290) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtbl  (evidence: 0x006FC1E0, 0x007D4B10, 0x007D8470) // CONFLICT: multiple definitions at +0x0
@@ -672,6 +672,7 @@ struct Unknown_Fields {
     // +0xA0  double field_0xA0 (accessed through the pointer at +0x08)  (evidence: 0x006E7120, 0x006EFEA0) // CONFLICT: multiple definitions at +0xA0
     // +0xA0  std::string              field_0xA0  (evidence: 0x00465960) // CONFLICT: multiple definitions at +0xA0
     // +0xA0  void*                    field_0xA0  (evidence: 0x005481C0) // CONFLICT: multiple definitions at +0xA0
+    // +0xA4  int32_t                  elementCount  (evidence: 0x00707FB0) // CONFLICT: multiple definitions at +0xA4
     // +0xA4  uint32_t                 field_0xA4  (evidence: 0x006A9340) // CONFLICT: multiple definitions at +0xA4
     // +0xA4  void*                    field_0xA4  (evidence: 0x00647BF0, 0x00647C10, 0x00647C30, 0x00647C50, 0x00648A20) // CONFLICT: multiple definitions at +0xA4
     // +0xA4  uint32_t                 field_0xa4  (evidence: 0x00648370, 0x00648A20) // CONFLICT: multiple definitions at +0xA4
@@ -701,6 +702,7 @@ struct Unknown_Fields {
     // +0xB0  uint32_t field_0xb0 (dword inside the object referenced by slot3)  (evidence: 0x007DAD70) // CONFLICT: multiple definitions at +0xB0
     // +0xB2  uint8_t                  field_0xb2  (evidence: 0x006872E0)
     // +0xB3  uint8_t                  field_0xb3  (evidence: 0x006872E0)
+    // +0xB4  void**                   elements  (evidence: 0x00707FB0) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  float                    field_0xB4  (evidence: 0x00630510, 0x0063D970, 0x0063DDF0) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  int32_t                  field_0xB4  (evidence: 0x00464780, 0x004647A0, 0x0046F7D0) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  void*                    field_0xB4  (evidence: 0x0053F6A0, 0x0053F9D0) // CONFLICT: multiple definitions at +0xB4
