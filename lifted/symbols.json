@@ -17966,6 +17966,12 @@
     "summary": "Returns 0 if the string matches the first global string, 1 if it matches the second, or 0 otherwise.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00519D50": {
+    "name": "AllocateElements8",
+    "signature": "void* fn_00519D50(uint32_t count)",
+    "summary": "Allocates storage for `count` 8-byte elements; throws std::length_error if count*8 would overflow.",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x00519E10": {
     "name": "FillRange5f",
     "signature": "void fn_00519E10(float* begin, float* end, const float* src)",

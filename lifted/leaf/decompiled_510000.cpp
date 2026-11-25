@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <cstddef>
 #include <bit>
+#include <stdexcept>
 
 // [0x0051F640] sub_0051F640 (41 bytes)
 namespace lift_0051F640 {
@@ -114,3 +115,15 @@ int32_t fn_0051E070(int32_t a, int32_t b, int32_t c) {
     return static_cast<int32_t>(static_cast<uint32_t>(c) + static_cast<uint32_t>(turns * 360));
 }
 } // namespace lift_0051E070
+
+// [0x00519D50] sub_00519D50 (91 bytes)
+namespace lift_00519D50 {
+// @name AllocateElements8
+// @summary Allocates storage for `count` 8-byte elements; throws std::length_error if count*8 would overflow.
+void* fn_00519D50(uint32_t count) {
+    if (count != 0 && (0xFFFFFFFFu / count) < 8u) {
+        throw std::length_error("vector<T> too long");
+    }
+    return ::operator new(static_cast<size_t>(count) * 8u);
+}
+} // namespace lift_00519D50
