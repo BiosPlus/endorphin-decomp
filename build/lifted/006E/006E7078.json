@@ -1,0 +1,13 @@
+{
+  "va": "0x006E7078",
+  "size": 79,
+  "orig_symbol": "sub_006E7078",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "getStringByIndex_006E7078",
+  "signature": "uint32_t sub_006E7078(uint32_t index)",
+  "summary": "Maps an index in [0, 5] to a constant address/pointer, returning 0 otherwise.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:47:50Z"
+}

@@ -955,3 +955,22 @@ void fn_006EFC50(void* self, void* result) {
 }
 } // namespace lift_006C06A0
 } // namespace lift_006EFC50
+
+// [0x006E7078]
+namespace lift_006E7078 {
+// @name getStringByIndex_006E7078
+// @summary Maps an index in [0, 5] to a constant address/pointer, returning 0 otherwise.
+
+
+uint32_t sub_006E7078(uint32_t index) {
+    switch (index) {
+        case 0: return 0x00AA94B4u;
+        case 1: return 0x00AA94ACu;
+        case 2: return 0x00AA94A4u;
+        case 3: return 0x00AA8CECu;
+        case 4: return 0x00AA949Cu;
+        case 5: return 0x00AA9494u;
+        default: return 0u;
+    }
+}
+} // namespace lift_006E7078
