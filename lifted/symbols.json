@@ -21204,6 +21204,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls Individual::vfunc_0.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00517AD0": {
+    "name": "sub_00517AD0",
+    "signature": "void* fn_00517AD0(void* self)",
+    "summary": "Constructor that initializes vtables, subobject at +0x0C, and zero-initializes fields at +0x14..+0x1C.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00517B40": {
     "name": "Individual::vfunc_0",
     "class": "Individual",
@@ -30309,6 +30315,13 @@
     "signature": "static void store_u32(void* base, std::size_t off, std::uint32_t value)",
     "summary": "Allocates a 0x194-byte TargetRigNode, runs the base constructor on the outer object, installs vtable pointers, and returns the new node (or null on allocation failure).",
     "lifted_path": "lifted/NMData/TargetRigNode.cpp"
+  },
+  "0x005AC360": {
+    "name": "Matrix44::Matrix44_fromVec4s",
+    "class": "Matrix44",
+    "signature": "void* __thiscall sub_005AC360(void* self, const float* row0, const float* row1, const float* row2, const float* row3)",
+    "summary": "Initializes a 4x4 float matrix from four 4-float vector pointers and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
   "0x005AC550": {
     "name": "sub_005AC550",

@@ -838,3 +838,23 @@ void* fn_005AE100(void* self, void* out_iter, const void* key) {
 }
 } // namespace lift_00667EA0
 } // namespace lift_005AE100
+
+// [0x005AC360]
+namespace lift_005AC360 {
+// @name Matrix44::Matrix44_fromVec4s
+// @class Matrix44
+// @summary Initializes a 4x4 float matrix from four 4-float vector pointers and returns this.
+// @field Matrix44 +0x00 float[16] m
+
+
+void* __thiscall sub_005AC360(void* self, const float* row0, const float* row1, const float* row2, const float* row3) {
+    float* dst = reinterpret_cast<float*>(self);
+    const float* rows[4] = { row0, row1, row2, row3 };
+    for (int r = 0; r < 4; ++r) {
+        for (int c = 0; c < 4; ++c) {
+            dst[r * 4 + c] = rows[r][c];
+        }
+    }
+    return self;
+}
+} // namespace lift_005AC360
