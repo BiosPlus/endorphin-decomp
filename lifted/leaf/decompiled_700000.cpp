@@ -1920,3 +1920,19 @@ DWORD fn_00704B30(DWORD index) {
     }
 }
 } // namespace lift_00704B30
+
+// [0x00706DD0]
+namespace lift_00706DD0 {
+extern void* ext_006A5C62(size_t size);
+extern void* ext_006B9D10(void* self);
+
+// @name AllocAndInitUnknown_00706DD0
+// @summary Allocates 0x4C bytes via MFC operator new and initializes the Unknown object if allocation succeeds.
+extern void* fn_00706DD0(void) {
+    void* obj = ext_006A5C62(0x4C);
+    if (obj != nullptr) {
+        return ext_006B9D10(obj);
+    }
+    return nullptr;
+}
+} // namespace lift_00706DD0

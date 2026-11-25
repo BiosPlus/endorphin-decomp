@@ -1,0 +1,13 @@
+{
+  "va": "0x00706DD0",
+  "size": 87,
+  "orig_symbol": "sub_00706DD0",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "AllocAndInitUnknown_00706DD0",
+  "signature": "extern \"C\" void* fn_00706DD0(void)",
+  "summary": "Allocates 0x4C bytes via MFC operator new and initializes the Unknown object if allocation succeeds.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:15:03Z"
+}
