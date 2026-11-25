@@ -522,3 +522,22 @@ void* fn_004FFB20() {
     return &mem_00AEB29C;
 }
 } // namespace lift_004FFB20
+
+// [0x004FFB80] sub_004FFB80 (87 bytes)
+namespace lift_004FFB80 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AEB2A8;
+extern DWORD mem_00AEB2A4;
+
+// @name initStaticSingletonOnce_004FFB80
+// @summary Lazily initializes the static object at mem_00AEB2A4 once (guarded by bit 0 of mem_00AEB2A8) and returns its address.
+void* fn_004FFB80() {
+    if ((mem_00AEB2A8 & 1u) == 0) {
+        mem_00AEB2A8 |= 1u;
+        ext_0067A670(reinterpret_cast<void*>(&mem_00AEB2A4), 0u);
+        mem_00AEB2A4 = 0x0094E7ACu;
+    }
+    return reinterpret_cast<void*>(&mem_00AEB2A4);
+}
+} // namespace lift_004FFB80

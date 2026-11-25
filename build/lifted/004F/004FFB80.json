@@ -1,0 +1,13 @@
+{
+  "va": "0x004FFB80",
+  "size": 87,
+  "orig_symbol": "sub_004FFB80",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "initStaticSingletonOnce_004FFB80",
+  "signature": "void* fn_004FFB80()",
+  "summary": "Lazily initializes the static object at mem_00AEB2A4 once (guarded by bit 0 of mem_00AEB2A8) and returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:08:58Z"
+}
