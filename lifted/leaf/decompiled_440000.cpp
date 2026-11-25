@@ -1853,3 +1853,28 @@ LRESULT fn_0044DA90(void* self) {
     return SendMessageA(hwnd, 0x199, 0, second);
 }
 } // namespace lift_0044DA90
+
+// [0x0044DA40] sub_0044DA40 (76 bytes)
+namespace lift_0044DA40 {
+// Import slot holding the SendMessageA function pointer.
+extern uint32_t mem_00925694;
+
+using SendMessageAFn = LRESULT (*)(HWND, UINT, WPARAM, LPARAM);
+
+// @name Unknown::SendWindowMessageSequence_0044DA40
+// @class Unknown
+// @summary Sends msg 0x188 to window at +0x5B8; returns 0 if the first send yields -1, else sends 0x188 again and 0x199 (wParam = second result) and returns the 0x199 result.
+// @field Unknown +0x5B8 HWND field_0x5B8
+LRESULT fn_0044DA40(void* self) {
+    auto send = reinterpret_cast<SendMessageAFn>(static_cast<uintptr_t>(mem_00925694));
+    HWND hwnd = lift_field<HWND>(self, 0x5B8);
+
+    LRESULT first = send(hwnd, 0x188, 0, 0);
+    if (first == -1) {
+        return 0;
+    }
+
+    LRESULT second = send(hwnd, 0x188, 0, 0);
+    return send(hwnd, 0x199, static_cast<WPARAM>(second), 0);
+}
+} // namespace lift_0044DA40

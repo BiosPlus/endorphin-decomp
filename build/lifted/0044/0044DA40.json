@@ -1,0 +1,22 @@
+{
+  "va": "0x0044DA40",
+  "size": 76,
+  "orig_symbol": "sub_0044DA40",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::SendWindowMessageSequence_0044DA40",
+  "class": "Unknown",
+  "signature": "LRESULT fn_0044DA40(void* self)",
+  "summary": "Sends msg 0x188 to window at +0x5B8; returns 0 if the first send yields -1, else sends 0x188 again and 0x199 (wParam = second result) and returns the 0x199 result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x5B8",
+      "type": "HWND",
+      "name": "field_0x5B8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:37:35Z"
+}

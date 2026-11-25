@@ -4765,6 +4765,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004554C0 (MultiTrackView::Frame::vfunc_106).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0044DA40": {
+    "name": "Unknown::SendWindowMessageSequence_0044DA40",
+    "class": "Unknown",
+    "signature": "LRESULT fn_0044DA40(void* self)",
+    "summary": "Sends msg 0x188 to window at +0x5B8; returns 0 if the first send yields -1, else sends 0x188 again and 0x199 (wParam = second result) and returns the 0x199 result.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044DA90": {
     "name": "NotifyWindowPair_0044DA90",
     "class": "Unknown",
