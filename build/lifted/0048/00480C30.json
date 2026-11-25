@@ -1,0 +1,34 @@
+{
+  "va": "0x00480C30",
+  "size": 54,
+  "orig_symbol": "sub_00480C30",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "UnknownHolder::releaseAndDestroy",
+  "class": "UnknownHolder",
+  "signature": "void fn_00480C30(void* self)",
+  "summary": "Releases a held Unknown object (stopping it when the last reference drops), then frees the holder.",
+  "fields": [
+    {
+      "class": "UnknownHolder",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "UnknownHolder",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "stopOnRelease"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x153",
+      "type": "uint8_t",
+      "name": "stopRequested"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:16:28Z"
+}

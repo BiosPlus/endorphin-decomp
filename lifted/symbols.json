@@ -7570,6 +7570,13 @@
     "summary": "Checks whether the ToolEngine has an empty vector at +0x18/+0x1C or a non-zero flag at +0x30.",
     "lifted_path": "lifted/classes/ToolEngine.cpp"
   },
+  "0x00480C30": {
+    "name": "UnknownHolder::releaseAndDestroy",
+    "class": "UnknownHolder",
+    "signature": "void fn_00480C30(void* self)",
+    "summary": "Releases a held Unknown object (stopping it when the last reference drops), then frees the holder.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00480C70": {
     "name": "fillRange64",
     "signature": "void __cdecl sub_00480C70(uint32_t first, uint32_t last, uint32_t value_ptr)",

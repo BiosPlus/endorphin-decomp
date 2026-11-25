@@ -848,3 +848,38 @@ void fn_0048CB80(uint8_t* first, uint8_t* last) {
     }
 }
 } // namespace lift_0048CB80
+
+// [0x00480C30] sub_00480C30 (54 bytes)
+namespace lift_00480C30 {
+// Known callee 0x0046F930: Unknown::RequestStop (Marks stop-requested flags and signals the event at this+0x160 using index this+0x148 if active.)
+extern void ext_0046F930(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* obj);
+extern int mem_00AD89B4;
+
+// @name UnknownHolder::releaseAndDestroy
+// @class UnknownHolder
+// @summary Releases a held Unknown object (stopping it when the last reference drops), then frees the holder.
+// @field UnknownHolder +0x00 void* target
+// @field UnknownHolder +0x04 uint8_t stopOnRelease
+// @field Unknown +0x153 uint8_t stopRequested
+void fn_00480C30(void* self) {
+    void* holder = lift_field<void*>(self, 0);
+    if (holder == nullptr) {
+        return;
+    }
+
+    if (lift_field<void*>(holder, 0) != nullptr) {
+        mem_00AD89B4 -= 1;
+        if (mem_00AD89B4 == 0) {
+            void* target = lift_field<void*>(holder, 0);
+            lift_field<uint8_t>(target, 0x153) = 0;
+            if (lift_field<uint8_t>(holder, 4) != 0) {
+                ext_0046F930(target);
+            }
+        }
+    }
+
+    ext_006A5C5C(holder);
+}
+} // namespace lift_00480C30
