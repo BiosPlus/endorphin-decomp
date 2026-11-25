@@ -1786,3 +1786,22 @@ void* fn_0046C3C0(void* self) {
     return self;
 }
 } // namespace lift_0046C3C0
+
+// [0x0046C4E0] sub_0046C4E0 (26 bytes)
+namespace lift_0046C4E0 {
+// Known callee 0x0046C320: ExceptionWithMessage::constructDefaultMessage (Constructs an ExceptionWithMessage-derived exception with a default message string and installs its vtable.)
+extern void* ext_0046C320(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk forwarding to MSVCR80!_CxxThrowException.)
+[[noreturn]] void ext_006A6DD2(void* pObject, const void* pThrowInfo);
+// RDATA 0x009DEBA4: .rdata throw info (u32 0x00000000), passed by address as the ThrowInfo argument.
+extern uint32_t mem_009DEBA4;
+
+// @name ExceptionWithMessage::throwDefaultMessage_0046C4E0
+// @class ExceptionWithMessage
+// @summary Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.
+void fn_0046C4E0(void) {
+    alignas(8) uint8_t exception[0x28] = {};
+    ext_0046C320(exception);
+    ext_006A6DD2(exception, reinterpret_cast<const void*>(&mem_009DEBA4));
+}
+} // namespace lift_0046C4E0

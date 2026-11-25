@@ -7805,6 +7805,13 @@
     "summary": "Parses a std::string as a float (atof), then adds or subtracts 0.5 by sign (round half away from zero) and tail-calls sub_006A6DE0 with the result.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046C4E0": {
+    "name": "ExceptionWithMessage::throwDefaultMessage_0046C4E0",
+    "class": "ExceptionWithMessage",
+    "signature": "void fn_0046C4E0(void)",
+    "summary": "Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046C500": {
     "name": "sub_0046C500",
     "signature": "void* fn_0046C500(void* out_str, uint8_t flag)",
