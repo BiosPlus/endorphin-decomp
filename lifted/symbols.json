@@ -57521,6 +57521,12 @@
     "summary": "Sets bit 1 (0x2) in the 32-bit word at +0x14 of the object passed as the first argument.",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x0085C430": {
+    "name": "LookupStringRefById",
+    "signature": "uint32_t __stdcall fn_0085C430(uint32_t index)",
+    "summary": "Maps a small index (0..4) to a fixed string-table reference; returns 0 for out-of-range indices.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085D504": {
     "name": "sub_0085D504",
     "signature": "void fn_0085D504(void)",

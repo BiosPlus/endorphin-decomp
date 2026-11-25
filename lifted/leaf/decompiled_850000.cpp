@@ -566,3 +566,20 @@ void fn_0085D820(uint8_t* buf, int32_t count) {
     }
 }
 } // namespace lift_0085D820
+
+// [0x0085C430] sub_0085C430 (61 bytes)
+namespace lift_0085C430 {
+// @name LookupStringRefById
+// @summary Maps a small index (0..4) to a fixed string-table reference; returns 0 for out-of-range indices.
+// NOTE: case order follows disassembly order (index 0 -> 0x99F0C0 ... index 4 -> 0x99F0F0); the jump table at 0x0085C470 was not verified.
+uint32_t __stdcall fn_0085C430(uint32_t index) {
+    switch (index) {
+        case 0:  return 0x0099F0C0u;
+        case 1:  return 0x0099F0B0u;
+        case 2:  return 0x0099F0D0u;
+        case 3:  return 0x0099F0E0u;
+        case 4:  return 0x0099F0F0u;
+        default: return 0u;
+    }
+}
+} // namespace lift_0085C430
