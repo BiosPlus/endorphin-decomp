@@ -1,0 +1,28 @@
+{
+  "va": "0x004A6A90",
+  "size": 90,
+  "orig_symbol": "sub_004A6A90",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "Vector::destroyAndEraseRange",
+  "class": "Vector",
+  "signature": "static inline void invalidParameterIf(bool bad)",
+  "summary": "Validates the [+0x04, +0x08) range, destroys the owned pointers in it, then erases the range from the vector.",
+  "fields": [
+    {
+      "class": "Vector",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:41:44Z"
+}

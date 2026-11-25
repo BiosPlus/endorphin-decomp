@@ -818,3 +818,45 @@ extern void fn_004A5F70(OwnedPointerRange* owner, void** first, OwnedPointerRang
     }
 }
 } // namespace lift_004A5F70
+
+// [0x004A6A90] sub_004A6A90 (90 bytes)
+namespace lift_004A6A90 {
+// @name Vector::destroyAndEraseRange
+// @class Vector
+// @summary Validates the [+0x04, +0x08) range, destroys the owned pointers in it, then erases the range from the vector.
+// @field Vector +0x04 uint32_t field_0x04
+// @field Vector +0x08 uint32_t field_0x08
+
+struct VectorFields {
+    uint32_t field_0x00;
+    uint32_t field_0x04;
+    uint32_t field_0x08;
+};
+
+// Known callee 0x004A5F70: OwnedPointerRange::destroyPointerRange (thiscall, 4 stack args: first/last iterator pairs)
+extern void ext_004A5F70(void* self, uint32_t first_container, uint32_t first_ptr,
+                             uint32_t last_container, uint32_t last_ptr);
+// Known callee 0x00596660: Vector_erase_range (thiscall, out iterator + first/last pairs)
+extern void* ext_00596660(void* self, uint32_t* out_iter, uint32_t first_container,
+                              uint32_t first_ptr, uint32_t last_container, uint32_t last_ptr);
+// Slot at 0x00925134 holds the CRT invalid-parameter handler (_invalid_parameter_noinfo) and is called as a function.
+extern void (*mem_00925134)(void);
+
+static inline void invalidParameterIf(bool bad) {
+    if (bad) {
+        mem_00925134();
+    }
+}
+
+void fn_004A6A90(void* self) {
+    auto* v = static_cast<VectorFields*>(self);
+    const uint32_t container = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+
+    invalidParameterIf(v->field_0x04 > v->field_0x08);
+    ext_004A5F70(self, container, v->field_0x04, container, v->field_0x08);
+
+    invalidParameterIf(v->field_0x04 > v->field_0x08);
+    uint32_t out_iter[2] = {0, 0};
+    ext_00596660(self, out_iter, container, v->field_0x04, container, v->field_0x08);
+}
+} // namespace lift_004A6A90

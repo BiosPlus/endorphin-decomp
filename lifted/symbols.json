@@ -12003,6 +12003,13 @@
     "summary": "std::lower_bound-style binary search over a 32-bit element array, comparing projected element against key; returns first index not less than key.",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
+  "0x004A6A90": {
+    "name": "Vector::destroyAndEraseRange",
+    "class": "Vector",
+    "signature": "static inline void invalidParameterIf(bool bad)",
+    "summary": "Validates the [+0x04, +0x08) range, destroys the owned pointers in it, then erases the range from the vector.",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004A6C60": {
     "name": "sub_004A6C60",
     "signature": "extern \"C\" void fn_004A6C60(void)",
