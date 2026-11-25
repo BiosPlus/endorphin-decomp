@@ -54,3 +54,20 @@ float fn_007FC2B0(const float* a, const float* b) {
     return static_cast<float>(sum);
 }
 } // namespace lift_007FC2B0
+
+// [0x007F6830]
+namespace lift_007F6830 {
+// @name insertDoublyLinkedNodeAfter
+// @summary Inserts a doubly-linked list node after the given node using next (+0x08) and prev (+0x0C) links.
+// @field ListNode +0x08 void* next
+// @field ListNode +0x0C void* prev
+void* sub_007F6830(void* node, void* newNode) {
+    void* next = lift_field<void*>(node, 0x08);
+    lift_field<void*>(newNode, 0x08) = next;
+    lift_field<void*>(newNode, 0x0C) = node;
+    void* curNext = lift_field<void*>(node, 0x08);
+    lift_field<void*>(curNext, 0x0C) = newNode;
+    lift_field<void*>(node, 0x08) = newNode;
+    return node;
+}
+} // namespace lift_007F6830

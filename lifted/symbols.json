@@ -68760,6 +68760,12 @@
     "summary": "Pops the head node off a free list, stores a value in the node, and increments the list count.",
     "lifted_path": "lifted/leaf/tiny_7F0000.cpp"
   },
+  "0x007F6830": {
+    "name": "insertDoublyLinkedNodeAfter",
+    "signature": "void* sub_007F6830(void* node, void* newNode)",
+    "summary": "Inserts a doubly-linked list node after the given node using next (+0x08) and prev (+0x0C) links.",
+    "lifted_path": "lifted/leaf/tiny_7F0000.cpp"
+  },
   "0x007F7190": {
     "name": "selectScaledFloatCandidate",
     "signature": "extern \"C\" __cdecl INT fn_007F7190(FLOAT* out, FLOAT a, FLOAT b, FLOAT c, FLOAT d)",

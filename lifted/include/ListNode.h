@@ -21,7 +21,9 @@ struct ListNode_Fields {
     // +0x8   void*                    field_08  (evidence: 0x005E0060) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_0x08  (evidence: 0x007C8690, 0x007CAF70) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 next  (evidence: 0x007C8490, 0x007CAF70) // CONFLICT: multiple definitions at +0x8
-    // +0xC   uint32_t                 list  (evidence: 0x007C8490, 0x007CAF70)
+    // +0x8   void*                    next  (evidence: 0x007F6830) // CONFLICT: multiple definitions at +0x8
+    // +0xC   uint32_t                 list  (evidence: 0x007C8490, 0x007CAF70) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void*                    prev  (evidence: 0x007F6830) // CONFLICT: multiple definitions at +0xC
     // +0x10  void*                    embeddedObjectVtable  (evidence: 0x0049DBA0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 next  (evidence: 0x007B2DF0, 0x007BD640) // CONFLICT: multiple definitions at +0x10
     // +0x14  void*                    field_0x14  (evidence: 0x007B8D80) // CONFLICT: multiple definitions at +0x14
