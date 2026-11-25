@@ -1,0 +1,13 @@
+{
+  "va": "0x00755270",
+  "size": 74,
+  "orig_symbol": "sub_00755270",
+  "src_path": "src/clones/auto_clones_750000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_750000.cpp",
+  "name": "CopyHugeValueToGlobals_00755270",
+  "signature": "void fn_00755270(void* self)",
+  "summary": "Copies the 8-byte _HUGE value into four consecutive 8-byte globals.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:35:14Z"
+}

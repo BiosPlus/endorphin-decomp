@@ -56046,6 +56046,12 @@
     "summary": "Initializes three 64-bit global doubles from MSVCR80!_HUGE",
     "lifted_path": "lifted/clones/auto_clones_750000.cpp"
   },
+  "0x00755270": {
+    "name": "CopyHugeValueToGlobals_00755270",
+    "signature": "void fn_00755270(void* self)",
+    "summary": "Copies the 8-byte _HUGE value into four consecutive 8-byte globals.",
+    "lifted_path": "lifted/clones/auto_clones_750000.cpp"
+  },
   "0x00755590": {
     "name": "sub_00755590",
     "signature": "extern \"C\" void* __fastcall fn_00755590(void* self, int edx_unused, unsigned int flags)",
