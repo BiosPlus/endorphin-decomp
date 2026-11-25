@@ -1,0 +1,46 @@
+{
+  "va": "0x007BD5E0",
+  "size": 81,
+  "orig_symbol": "sub_007BD5E0",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "ProcessSubobjectFlag6C",
+  "class": "UnknownObject",
+  "signature": "static inline uint32_t\u0026 guest_u32(uint32_t addr)",
+  "summary": "If the sub-object at self+0x1CC passes the check at +0x30, dispatch to the optional hook and return 0; otherwise set bit 0 of its +0x6C flags and return 1.",
+  "fields": [
+    {
+      "class": "UnknownObject",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "UnknownObject",
+      "offset": "+0x1CC",
+      "type": "uint32_t",
+      "name": "field_0x1CC"
+    },
+    {
+      "class": "SubObject",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "SubObject",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "SubObject",
+      "offset": "+0x6C",
+      "type": "uint32_t",
+      "name": "field_0x6C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:01:00Z"
+}

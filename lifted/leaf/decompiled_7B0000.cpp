@@ -1125,3 +1125,42 @@ void fn_007BFC90(void* self, uint8_t* dst, int32_t total, int32_t extra) {
     finish(self, dst, total, extra);
 }
 } // namespace lift_007BFC90
+
+// [0x007BD5E0] sub_007BD5E0 (81 bytes)
+namespace lift_007BD5E0 {
+// Guest-address helpers: the original code operates on 32-bit guest addresses.
+static inline uint32_t& guest_u32(uint32_t addr) {
+    return *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(addr));
+}
+
+static inline uint32_t& field_u32(void* base, uintptr_t off) {
+    return *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(base) + off);
+}
+
+extern int32_t ext_007BFF20(uint32_t a1, uint32_t a2, uint32_t a3);
+// Known callee 0x0079B140: DispatchThreeArgsToOptionalHook (If the global hook pointer mem_00AAFC2C is non-null, call it with (a1, a2, &a3); otherwise do nothing.)
+// Caller pushes four stack words: (0x999B80, 0xAB2244, edx, ecx); the hook receives &a3 and reads the trailing word.
+extern void ext_0079B140(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4);
+
+// @name ProcessSubobjectFlag6C
+// @class UnknownObject
+// @summary If the sub-object at self+0x1CC passes the check at +0x30, dispatch to the optional hook and return 0; otherwise set bit 0 of its +0x6C flags and return 1.
+// @field UnknownObject +0x00 uint32_t field_0x00
+// @field UnknownObject +0x1CC uint32_t field_0x1CC
+// @field SubObject +0x30 uint32_t field_0x30
+// @field SubObject +0x48 uint32_t field_0x48
+// @field SubObject +0x6C uint32_t field_0x6C
+uint32_t fn_007BD5E0(void* self) {
+    uint32_t sub = field_u32(self, 0x1CC);
+
+    if (ext_007BFF20(sub + 0x30, 0xAB224C, 0x38) != 0) {
+        uint32_t ecx = guest_u32(sub + 0x48);
+        uint32_t edx = field_u32(self, 0x00);
+        ext_0079B140(0x999B80, 0xAB2244, edx, ecx);
+        return 0;
+    }
+
+    guest_u32(sub + 0x6C) |= 1u;
+    return 1;
+}
+} // namespace lift_007BD5E0

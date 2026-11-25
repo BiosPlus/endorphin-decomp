@@ -9,6 +9,7 @@
 namespace lifted_layout {
 struct UnknownObject_Fields {
     // +0x0   DWORD                    field_0x00  (evidence: 0x00489350) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x007BD5E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x005FCB30) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* vptr (argument object; vtable slot 0 invoked with the flag)  (evidence: 0x00430B10) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* vptr (global object returned by ext_00465B40; vtable slot +0x1A4 read)  (evidence: 0x00430B10) // CONFLICT: multiple definitions at +0x0
@@ -27,7 +28,8 @@ struct UnknownObject_Fields {
     // +0x60  uint32_t                 field_0x60  (evidence: 0x004663A0)
     // +0x68  BYTE                     field_0x68  (evidence: 0x00489350)
     // +0x69  BYTE                     field_0x69  (evidence: 0x00489350)
-    // +0x1CC void*                    field_0x1cc  (evidence: 0x007B89BC, 0x007BD9E0)
+    // +0x1CC uint32_t                 field_0x1CC  (evidence: 0x007BD5E0) // CONFLICT: multiple definitions at +0x1CC
+    // +0x1CC void*                    field_0x1cc  (evidence: 0x007B89BC, 0x007BD9E0) // CONFLICT: multiple definitions at +0x1CC
     // +0x1F2 uint8_t                  field_0x1f2  (evidence: 0x005CFE50)
     // +0x2C4 void*                    field_0x2c4  (evidence: 0x005CFE50)
 };
