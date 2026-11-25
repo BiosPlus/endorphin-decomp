@@ -68,3 +68,23 @@ DWORD* fn_004C5560(DWORD* dst, DWORD selector, DWORD /*arg3*/) {
 }
 } // namespace lift_004B6530
 } // namespace lift_004C5560
+
+// [0x004FDF50]
+namespace lift_004FDF50 {
+// @name Properties::TerminalParentType<NMData::ValuePtrData>::vfunc_0
+// @class Properties::TerminalParentType<NMData::ValuePtrData>
+// @summary Delegates to vfunc_15 of *arg2 with (arg1, arg3) and returns arg1.
+
+
+extern void* ext_00695E20(void* self, uint32_t ecx_in);
+
+void* __stdcall fn_004FDF50(void* arg1, void** arg2, void* arg3) {
+    (void)&ext_00695E20;
+    void* obj = *arg2;
+    void** vtable = *reinterpret_cast<void***>(obj);
+    using vfunc_t = void(__thiscall*)(void*, void*, void*);
+    auto fn = reinterpret_cast<vfunc_t>(vtable[15]);
+    fn(obj, arg1, arg3);
+    return arg1;
+}
+} // namespace lift_004FDF50
