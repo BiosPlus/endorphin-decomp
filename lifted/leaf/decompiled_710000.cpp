@@ -1746,3 +1746,37 @@ int __cdecl sub_00712250(const char* str) {
     return 0;
 }
 } // namespace lift_00712250
+
+// [0x00711AA0]
+namespace lift_00711AA0 {
+// @name sub_00711AA0
+// @summary Updates two double fields on the +0x40 subobject if changed and notifies via vtable +0x3C.
+// @field Subobject +0x18 double field_0x18
+// @field Subobject +0x20 double field_0x20
+
+
+extern void* __fastcall ext_0071E680(void* self);
+
+extern uint8_t __thiscall fn_00711AA0(void* self, double val1, double val2) {
+    uint8_t* subobj = static_cast<uint8_t*>(ext_0071E680(self));
+    double cur1 = 0.0;
+    double cur2 = 0.0;
+    std::memcpy(&cur1, subobj + 0x18, sizeof(double));
+    std::memcpy(&cur2, subobj + 0x20, sizeof(double));
+
+    if (cur1 != val1 || cur2 != val2) {
+        std::memcpy(subobj + 0x18, &val1, sizeof(double));
+        std::memcpy(subobj + 0x20, &val2, sizeof(double));
+
+        using NotifyFn = void(__thiscall*)(void*, uint32_t, uint32_t, void*, uint32_t, uint32_t, uint32_t);
+        uintptr_t vtable = 0;
+        std::memcpy(&vtable, self, sizeof(uintptr_t));
+        uintptr_t fn_addr = 0;
+        std::memcpy(&fn_addr, reinterpret_cast<const void*>(vtable + 0x3C), sizeof(uintptr_t));
+        NotifyFn notify = reinterpret_cast<NotifyFn>(fn_addr);
+        notify(self, 0, 0x1F, self, 0, 0, 0);
+    }
+
+    return 1;
+}
+} // namespace lift_00711AA0

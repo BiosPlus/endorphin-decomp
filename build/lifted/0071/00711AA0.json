@@ -1,0 +1,27 @@
+{
+  "va": "0x00711AA0",
+  "size": 96,
+  "orig_symbol": "sub_00711AA0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "sub_00711AA0",
+  "signature": "extern \"C\" uint8_t __thiscall fn_00711AA0(void* self, double val1, double val2)",
+  "summary": "Updates two double fields on the +0x40 subobject if changed and notifies via vtable +0x3C.",
+  "fields": [
+    {
+      "class": "Subobject",
+      "offset": "+0x18",
+      "type": "double",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Subobject",
+      "offset": "+0x20",
+      "type": "double",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:44:50Z"
+}

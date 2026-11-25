@@ -61082,6 +61082,12 @@
     "summary": "Tests bit 0x08 of the flags word at this+0x78 by tail-forwarding to TestMaskedFieldAt0x78 and returns its result.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x00711AA0": {
+    "name": "sub_00711AA0",
+    "signature": "extern \"C\" uint8_t __thiscall fn_00711AA0(void* self, double val1, double val2)",
+    "summary": "Updates two double fields on the +0x40 subobject if changed and notifies via vtable +0x3C.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00711B00": {
     "name": "Unknown::SetSubobjectDoubleIfChanged",
     "class": "Unknown",
