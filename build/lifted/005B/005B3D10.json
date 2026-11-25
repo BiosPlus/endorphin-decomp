@@ -1,0 +1,13 @@
+{
+  "va": "0x005B3D10",
+  "size": 87,
+  "orig_symbol": "sub_005B3D10",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "getStaticSingleton_005B3D10",
+  "signature": "void* fn_005B3D10()",
+  "summary": "Lazily initializes a static singleton at mem_00B43554 (guarded by mem_00B43558) and returns its pointer.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:36:46Z"
+}
