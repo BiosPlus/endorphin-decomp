@@ -1798,3 +1798,56 @@ void* fn_0041CE40(void* self, const char* text) {
     return self;
 }
 } // namespace lift_0041CE40
+
+// [0x00415430] sub_00415430 (100 bytes)
+namespace lift_00415430 {
+// Known callee 0x006A5E00: thunk_MFC80_ord_2372 (IAT jump thunk forwarding to MFC80!ord_2372.)
+// Used as CWnd::FromHandle(HWND) -> CWnd*.
+extern void* ext_006A5E00(HWND hwnd);
+// Known callee 0x006A5EC0: thunk_MFC80_ord_2654 (IAT jump thunk forwarding to MFC80!ord_2654.)
+// Used as CWnd::GetDlgCtrlID() (thiscall, ecx = this) -> UINT.
+extern UINT ext_006A5EC0(void* self);
+// IAT slots for USER32 imports (GetParent, IsWindow, SendMessageA).
+extern void* mem_00925650;
+extern void* mem_0092561C;
+extern void* mem_00925694;
+
+// @name Unknown::notifyParentWithCtrlId
+// @class Unknown
+// @summary Sends WM_NOTIFY (code NM_RETURN) to the parent window of this control if that parent is still a valid window.
+// @field Unknown +0x20 HWND field_0x20
+// @field Unknown +0x38 HWND field_0x38
+void fn_00415430(void* self) {
+    // Prefer the explicit override at +0x38; otherwise use the parent of the control's window.
+    HWND hwnd = lift_field<HWND>(self, 0x38);
+    if (hwnd == nullptr) {
+        HWND own = lift_field<HWND>(self, 0x20);
+        hwnd = reinterpret_cast<HWND(__stdcall*)(HWND)>(mem_00925650)(own);  // GetParent
+    }
+
+    void* pWnd = ext_006A5E00(hwnd);
+    if (pWnd == nullptr) {
+        return;
+    }
+
+    HWND parentHwnd = lift_field<HWND>(pWnd, 0x20);
+    if (reinterpret_cast<BOOL(__stdcall*)(HWND)>(mem_0092561C)(parentHwnd) == FALSE) {  // IsWindow
+        return;
+    }
+
+    UINT ctrlId = ext_006A5EC0(self);
+
+    struct NotifyHdr {
+        HWND hwndFrom;
+        UINT_PTR idFrom;
+        UINT code;
+    } nm{};
+    nm.hwndFrom = lift_field<HWND>(self, 0x20);
+    nm.idFrom = ctrlId;
+    nm.code = static_cast<UINT>(-4);  // NM_RETURN
+
+    // SendMessageA(parentHwnd, WM_NOTIFY (0x4E), ctrlId, &nm)
+    reinterpret_cast<LRESULT(__stdcall*)(HWND, UINT, WPARAM, LPARAM)>(mem_00925694)(
+        parentHwnd, 0x4E, static_cast<WPARAM>(ctrlId), reinterpret_cast<LPARAM>(&nm));
+}
+} // namespace lift_00415430

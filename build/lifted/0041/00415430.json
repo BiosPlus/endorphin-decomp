@@ -1,0 +1,28 @@
+{
+  "va": "0x00415430",
+  "size": 100,
+  "orig_symbol": "sub_00415430",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::notifyParentWithCtrlId",
+  "class": "Unknown",
+  "signature": "void fn_00415430(void* self)",
+  "summary": "Sends WM_NOTIFY (code NM_RETURN) to the parent window of this control if that parent is still a valid window.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "HWND",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:42:22Z"
+}
