@@ -963,3 +963,21 @@ uint32_t __cdecl sub_0057BB90(uint32_t first, uint32_t last, uint32_t d_last) {
     return edi;
 }
 } // namespace lift_0057BB90
+
+// [0x00575C80] sub_00575C80 (82 bytes)
+namespace lift_00575C80 {
+// @name CheckStreamHeaderNotVHash
+// @summary Skips two 2-byte reads from a std::istream and returns true unless the first two bytes read were 'V' '#'.
+// @field ... (no struct field offsets accessed)
+bool CheckStreamHeaderNotVHash(std::istream& in) {
+    (void)in.tellg();
+
+    char first[2] = {0, 0};
+    in.read(first, 2);
+
+    char second[2] = {0, 0};
+    in.read(second, 2);
+
+    return !(first[0] == 'V' && first[1] == '#');
+}
+} // namespace lift_00575C80

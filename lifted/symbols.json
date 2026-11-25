@@ -22240,6 +22240,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00574CF0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00575C80": {
+    "name": "CheckStreamHeaderNotVHash",
+    "signature": "bool CheckStreamHeaderNotVHash(std::istream\u0026 in)",
+    "summary": "Skips two 2-byte reads from a std::istream and returns true unless the first two bytes read were 'V' '#'.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00575DF0": {
     "name": "descriptiveName: VectorLike20::ElementAt",
     "class": "descriptiveName: VectorLike20",
