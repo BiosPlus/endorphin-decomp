@@ -32120,6 +32120,30 @@
     "summary": "One-time lazy init of the static object at mem_00B45F50 (vtable 0x969C64); guarded by bit 0 of mem_00B45F54; returns the object's address.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005EB360": {
+    "name": "getSingleton_005EB360",
+    "signature": "void* fn_005EB360()",
+    "summary": "Lazily initializes and returns the static singleton object at 0x00B45F70.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
+  "0x005EB3C0": {
+    "name": "getOrInitSingleton_005EB3C0",
+    "signature": "void* fn_005EB3C0()",
+    "summary": "Lazily initializes and returns the singleton object at 0x00B45F78",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
+  "0x005EB420": {
+    "name": "getStaticSingleton_005EB420",
+    "signature": "void* fn_005EB420()",
+    "summary": "Lazily initializes a static object at 0x00B45F80 guarded by 0x00B45F84 and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
+  "0x005EB480": {
+    "name": "getStaticSingleton_005EB480",
+    "signature": "void* sub_005EB480()",
+    "summary": "Lazy-initializes global object mem_00B45F88 guarded by mem_00B45F8C and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005EB890": {
     "name": "NMData::FixedPathJointData::vfunc_10_off_C",
     "class": "NMData::FixedPathJointData",

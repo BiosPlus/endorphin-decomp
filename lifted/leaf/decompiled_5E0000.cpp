@@ -840,3 +840,82 @@ void fn_005EC9B0(uint32_t* dst, uint32_t value) {
     dst[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
 }
 } // namespace lift_005EC9B0
+
+// [0x005EB420]
+namespace lift_005EB420 {
+// @name getStaticSingleton_005EB420
+// @summary Lazily initializes a static object at 0x00B45F80 guarded by 0x00B45F84 and returns its address.
+
+
+extern void __thiscall ext_0067A670(void* self);
+extern uint32_t mem_00B45F80;
+extern uint32_t mem_00B45F84;
+
+void* fn_005EB420() {
+    if ((mem_00B45F84 & 1u) == 0u) {
+        mem_00B45F84 |= 1u;
+        ext_0067A670(&mem_00B45F80);
+        mem_00B45F80 = 0x0096A684u;
+    }
+    return &mem_00B45F80;
+}
+} // namespace lift_005EB420
+
+// [0x005EB480]
+namespace lift_005EB480 {
+// @name getStaticSingleton_005EB480
+// @summary Lazy-initializes global object mem_00B45F88 guarded by mem_00B45F8C and returns its address.
+
+
+extern uint32_t mem_00B45F8C;
+extern uint32_t mem_00B45F88;
+
+extern void __thiscall ext_0067A670(void* self);
+
+void* sub_005EB480() {
+    if ((static_cast<uint8_t>(mem_00B45F8C) & 1u) == 0) {
+        mem_00B45F8C |= 1u;
+        ext_0067A670(&mem_00B45F88);
+        mem_00B45F88 = 0x0096A834u;
+    }
+    return &mem_00B45F88;
+}
+} // namespace lift_005EB480
+
+// [0x005EB3C0]
+namespace lift_005EB3C0 {
+extern uint32_t mem_00B45F7C;
+extern uint32_t mem_00B45F78;
+
+extern void __thiscall ext_0067A670(void* self);
+
+// @name getOrInitSingleton_005EB3C0
+// @summary Lazily initializes and returns the singleton object at 0x00B45F78
+void* fn_005EB3C0() {
+    if ((mem_00B45F7C & 1u) == 0) {
+        mem_00B45F7C |= 1u;
+        ext_0067A670(&mem_00B45F78);
+        mem_00B45F78 = 0x0096A4D4u;
+    }
+    return &mem_00B45F78;
+}
+} // namespace lift_005EB3C0
+
+// [0x005EB360]
+namespace lift_005EB360 {
+extern uint32_t mem_00B45F74;
+extern uint32_t mem_00B45F70;
+
+extern void __thiscall ext_0067A670(void* self);
+
+// @name getSingleton_005EB360
+// @summary Lazily initializes and returns the static singleton object at 0x00B45F70.
+void* fn_005EB360() {
+    if ((mem_00B45F74 & 1u) == 0) {
+        mem_00B45F74 |= 1u;
+        ext_0067A670(&mem_00B45F70);
+        mem_00B45F70 = 0x0096A324u;
+    }
+    return &mem_00B45F70;
+}
+} // namespace lift_005EB360

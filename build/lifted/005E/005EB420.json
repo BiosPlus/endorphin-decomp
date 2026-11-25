@@ -1,0 +1,13 @@
+{
+  "va": "0x005EB420",
+  "size": 87,
+  "orig_symbol": "sub_005EB420",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "getStaticSingleton_005EB420",
+  "signature": "void* fn_005EB420()",
+  "summary": "Lazily initializes a static object at 0x00B45F80 guarded by 0x00B45F84 and returns its address.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:13:57Z"
+}
