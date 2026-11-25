@@ -1,0 +1,39 @@
+{
+  "va": "0x00621040",
+  "size": 76,
+  "orig_symbol": "sub_00621040",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "CopyRecordRange_00621040",
+  "signature": "uint8_t* CopyRecordRange_00621040(const uint8_t* first, const uint8_t* last, uint8_t* dst)",
+  "summary": "Copies records in [first, last) (0x48 bytes each: std::string at +0x00 and +0x1c, doubles at +0x38 and +0x40) to dst; returns dst end, or dst unchanged when the range is empty.",
+  "fields": [
+    {
+      "class": "Record",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x38",
+      "type": "double",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x40",
+      "type": "double",
+      "name": "field_0x40"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:39:37Z"
+}

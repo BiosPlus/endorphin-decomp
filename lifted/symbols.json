@@ -32279,6 +32279,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00404D50 (ElementCountFromRange).",
     "lifted_path": "lifted/leaf/tiny_620000.cpp"
   },
+  "0x00621040": {
+    "name": "CopyRecordRange_00621040",
+    "signature": "uint8_t* CopyRecordRange_00621040(const uint8_t* first, const uint8_t* last, uint8_t* dst)",
+    "summary": "Copies records in [first, last) (0x48 bytes each: std::string at +0x00 and +0x1c, doubles at +0x38 and +0x40) to dst; returns dst end, or dst unchanged when the range is empty.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00621090": {
     "name": "Unknown::CopyRecordsBackward_00621090",
     "class": "Unknown",

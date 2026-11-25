@@ -1226,3 +1226,36 @@ void* fn_00621090(void* first, void* last, void* dst_last) {
     return dst;
 }
 } // namespace lift_00621090
+
+// [0x00621040]
+namespace lift_00621040 {
+// @name CopyRecordRange_00621040
+// @summary Copies records in [first, last) (0x48 bytes each: std::string at +0x00 and +0x1c, doubles at +0x38 and +0x40) to dst; returns dst end, or dst unchanged when the range is empty.
+// @field Record +0x00 std::string field_0x00
+// @field Record +0x1c std::string field_0x1c
+// @field Record +0x38 double field_0x38
+// @field Record +0x40 double field_0x40
+
+// IAT slot for MSVCP80 basic_string<char>::operator=(const basic_string&); thiscall, one stack arg.
+using StrAssignFn = void* (__thiscall*)(void* self, const void* rhs);
+extern StrAssignFn mem_00924FDC;
+
+uint8_t* CopyRecordRange_00621040(const uint8_t* first, const uint8_t* last, uint8_t* dst) {
+    if (first == last) {
+        return dst;
+    }
+
+    const uint8_t* src = first;
+    uint8_t* out = dst;
+    do {
+        mem_00924FDC(out, src);
+        mem_00924FDC(out + 0x1c, src + 0x1c);
+        lift_field<double>(out, 0x38) = lift_field<double>(src, 0x38);
+        lift_field<double>(out, 0x40) = lift_field<double>(src, 0x40);
+        src += 0x48;
+        out += 0x48;
+    } while (src != last);
+
+    return out;
+}
+} // namespace lift_00621040
