@@ -944,3 +944,48 @@ extern void* fn_00672430(uint32_t count) {
     return ext_006A5C62(count * 0x50u);
 }
 } // namespace lift_00672430
+
+// [0x00670C50]
+namespace lift_00670C50 {
+// @name lowerBoundByPairU32
+// @summary Binary search (std::lower_bound) over pointer array comparing (field_0x04, field_0x08) as unsigned 32-bit pairs
+// @field Entry +0x04 uint32_t field_0x04
+// @field Entry +0x08 uint32_t field_0x08
+
+
+extern uint32_t mem_r32(uint32_t);
+
+extern uint32_t __cdecl sub_00670C50(uint32_t begin, uint32_t end, uint32_t key_ptr_addr) {
+    int32_t count = static_cast<int32_t>(end - begin) >> 2;
+    if (count <= 0) {
+        return begin;
+    }
+
+    uint32_t key = mem_r32(key_ptr_addr);
+    uint32_t key_hi = mem_r32(key + 0x4);
+    uint32_t key_lo = mem_r32(key + 0x8);
+
+    while (count > 0) {
+        int32_t half = count / 2;
+        uint32_t mid_elem = mem_r32(begin + static_cast<uint32_t>(half) * 4);
+        uint32_t mid_hi = mem_r32(mid_elem + 0x4);
+
+        bool less = false;
+        if (mid_hi < key_hi) {
+            less = true;
+        } else if (mid_hi == key_hi) {
+            uint32_t mid_lo = mem_r32(mid_elem + 0x8);
+            less = (mid_lo < key_lo);
+        }
+
+        if (less) {
+            begin += static_cast<uint32_t>(half + 1) * 4;
+            count -= half + 1;
+        } else {
+            count = half;
+        }
+    }
+
+    return begin;
+}
+} // namespace lift_00670C50
