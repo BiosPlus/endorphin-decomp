@@ -1,0 +1,14 @@
+{
+  "va": "0x00698AD0",
+  "size": 115,
+  "orig_symbol": "sub_00698AD0",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "ByteVector::readString",
+  "class": "ByteVector",
+  "signature": "uint32_t __thiscall fn_00698AD0(void* self, uint32_t sret, uint32_t* offset_ptr)",
+  "summary": "Reads a null-terminated string at *offset_ptr into sret and advances *offset_ptr past it.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:41:50Z"
+}

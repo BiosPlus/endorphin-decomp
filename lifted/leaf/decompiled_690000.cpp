@@ -1402,3 +1402,22 @@ void __thiscall fn_00698B50(void* self, uint32_t* offsetPtr, float* outVec) {
     outVec[2] = ext_00698AB0(self, offsetPtr);
 }
 } // namespace lift_00698B50
+
+// [0x00698AD0]
+namespace lift_00698AD0 {
+// @name ByteVector::readString
+// @class ByteVector
+// @summary Reads a null-terminated string at *offset_ptr into sret and advances *offset_ptr past it.
+
+uint32_t __thiscall ext_006989E0(void* self, uint32_t index);
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924EAC;
+
+uint32_t __thiscall fn_00698AD0(void* self, uint32_t sret, uint32_t* offset_ptr) {
+    uint32_t str_ptr = ext_006989E0(self, *offset_ptr);
+    ((void(__thiscall*)(uint32_t, uint32_t))mem_00924FE4)(sret, str_ptr);
+    uint32_t len = ((uint32_t(__thiscall*)(uint32_t))mem_00924EAC)(sret);
+    *offset_ptr += len + 1;
+    return sret;
+}
+} // namespace lift_00698AD0

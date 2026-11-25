@@ -52354,6 +52354,13 @@
     "summary": "Reads a 32-bit float from the byte vector at *offsetPtr and advances *offsetPtr by 4 bytes.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x00698AD0": {
+    "name": "ByteVector::readString",
+    "class": "ByteVector",
+    "signature": "uint32_t __thiscall fn_00698AD0(void* self, uint32_t sret, uint32_t* offset_ptr)",
+    "summary": "Reads a null-terminated string at *offset_ptr into sret and advances *offset_ptr past it.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00698B50": {
     "name": "ByteVector::readVector3",
     "class": "ByteVector",
