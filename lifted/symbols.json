@@ -32096,6 +32096,12 @@
     "summary": "One-time initializer for a static object at mem_00B45F30; returns its address.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005EB0C0": {
+    "name": "getOrInitStaticObject_005EB0C0",
+    "signature": "extern DWORD mem_00B45F3C; // init-guard flags (bit 0 = initialization started) extern DWORD mem_00B45F38; // static object storage (first DWORD = vtable pointer) void* fn_005EB0C0()",
+    "summary": "One-time initializer for the static object at mem_00B45F38; returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005EB890": {
     "name": "NMData::FixedPathJointData::vfunc_10_off_C",
     "class": "NMData::FixedPathJointData",
