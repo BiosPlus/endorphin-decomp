@@ -663,3 +663,25 @@ uint32_t __thiscall fn_0054EFF0(void* self, uint32_t index) {
     return begin + index * kElementStride;
 }
 } // namespace lift_0054EFF0
+
+// [0x0054F0D0] sub_0054F0D0 (73 bytes)
+namespace lift_0054F0D0 {
+// ext_0054F030 (sub_0054F030): per-element copy; ECX = destination element,
+// one stack argument = source element (callee cleans the stack).
+extern void ext_0054F030(void* dest_elem, const void* src_elem);
+
+// @name CopyRangeOf104ByteElements_0054F0D0
+// @summary Invokes the per-element copy routine over [begin, end) in 0x68-byte steps, writing to dest; returns dest + count*0x68.
+void* fn_0054F0D0(const uint8_t* begin, const uint8_t* end, uint8_t* dest) {
+    constexpr ptrdiff_t kElemSize = 0x68;
+
+    const ptrdiff_t count = (end - begin) / kElemSize;
+    uint8_t* const result = dest + count * kElemSize;
+
+    for (const uint8_t* src = begin; src != end; src += kElemSize) {
+        ext_0054F030(dest + (src - begin), src);
+    }
+
+    return result;
+}
+} // namespace lift_0054F0D0

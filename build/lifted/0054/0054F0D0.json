@@ -1,0 +1,13 @@
+{
+  "va": "0x0054F0D0",
+  "size": 73,
+  "orig_symbol": "sub_0054F0D0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "CopyRangeOf104ByteElements_0054F0D0",
+  "signature": "void* fn_0054F0D0(const uint8_t* begin, const uint8_t* end, uint8_t* dest)",
+  "summary": "Invokes the per-element copy routine over [begin, end) in 0x68-byte steps, writing to dest; returns dest + count*0x68.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:32:22Z"
+}
