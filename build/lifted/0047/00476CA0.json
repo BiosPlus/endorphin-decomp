@@ -1,0 +1,13 @@
+{
+  "va": "0x00476CA0",
+  "size": 96,
+  "orig_symbol": "sub_00476CA0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "pushHeap",
+  "signature": "extern \"C\" void __cdecl sub_00476CA0(uint32_t* arr, int32_t holeIndex, int32_t topIndex, uint32_t val, uint32_t pred)",
+  "summary": "Sifts an element up in a binary heap using a predicate functor.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:35:27Z"
+}

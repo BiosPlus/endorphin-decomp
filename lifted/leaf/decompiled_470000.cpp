@@ -540,3 +540,26 @@ void* fn_00477030() {
     return &mem_00AD90BC;
 }
 } // namespace lift_00477030
+
+// [0x00476CA0]
+namespace lift_00476CA0 {
+// @name pushHeap
+// @summary Sifts an element up in a binary heap using a predicate functor.
+
+extern bool __thiscall ext_00476860(void* self, uint32_t a, uint32_t b);
+
+extern void __cdecl sub_00476CA0(uint32_t* arr, int32_t holeIndex, int32_t topIndex, uint32_t val, uint32_t pred) {
+    int32_t parent = (holeIndex - 1) / 2;
+    if (topIndex < holeIndex) {
+        do {
+            if (!ext_00476860(&pred, arr[parent], val)) {
+                break;
+            }
+            arr[holeIndex] = arr[parent];
+            holeIndex = parent;
+            parent = (parent - 1) / 2;
+        } while (topIndex < holeIndex);
+    }
+    arr[holeIndex] = val;
+}
+} // namespace lift_00476CA0
