@@ -525,3 +525,25 @@ uint32_t fn_007BEDA0(void* self) {
     return 0;
 }
 } // namespace lift_007BEDA0
+
+// [0x007BF2B0] sub_007BF2B0 (63 bytes)
+namespace lift_007BF2B0 {
+// @name Unknown::FillMinusOneTable
+// @summary Fills 1125 blocks of 8 dwords (stride 8, walking backward 0x40 per block) plus one trailing dword in a table at self->+0x5c+0x11940 with -1.
+// @field Unknown +0x5c void* field_0x5c
+void fn_007BF2B0(void* self) {
+    uint8_t* cursor = lift_field<uint8_t*>(self, 0x5c) + 0x11940;
+
+    // Outer loop: 0x465 (1125) iterations.
+    for (uint32_t blocks = 0x465; blocks != 0; --blocks) {
+        // Eight dwords at cursor-0x38, -0x30, ..., -0x8, +0x0 are set to -1.
+        for (ptrdiff_t off = -0x38; off <= 0; off += 0x8) {
+            lift_field<int32_t>(cursor, off) = -1;
+        }
+        cursor -= 0x40;
+    }
+
+    // Final single dword at the current cursor is set to -1.
+    lift_field<int32_t>(cursor, 0) = -1;
+}
+} // namespace lift_007BF2B0
