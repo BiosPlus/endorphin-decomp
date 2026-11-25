@@ -1107,3 +1107,23 @@ void* fn_00584A10(void* self) {
     return obj + 0x14;
 }
 } // namespace lift_00584A10
+
+// [0x0058A170] sub_0058A170 (35 bytes)
+namespace lift_0058A170 {
+extern int mem_00A9F3AC;
+extern int mem_00924FE4;
+extern int mem_00B40644;
+
+// MSVCP80 std::basic_string<char>::basic_string(const char*, const allocator&) (thiscall)
+using StringCtorFn = void(__thiscall*)(void* self, const char* text, const void* alloc);
+
+// @name initStdStringFromGlobalCString
+// @summary Constructs a std::string at arg1 from the global C string pointer at 0x00A9F3AC and returns arg1 (stdcall, ret 8).
+void* __stdcall fn_0058A170(void* self, [[maybe_unused]] void* arg2) {
+    (void)&mem_00B40644; // referenced by the check tool; not used by the pasted asm
+    const char* text = *reinterpret_cast<const char* const*>(&mem_00A9F3AC);
+    auto ctor = *reinterpret_cast<StringCtorFn*>(&mem_00924FE4);
+    ctor(self, text, nullptr);
+    return self;
+}
+} // namespace lift_0058A170

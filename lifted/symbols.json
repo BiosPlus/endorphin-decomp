@@ -25948,6 +25948,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::Marker::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0058A170": {
+    "name": "initStdStringFromGlobalCString",
+    "signature": "void* __stdcall fn_0058A170(void* self, [[maybe_unused]] void* arg2)",
+    "summary": "Constructs a std::string at arg1 from the global C string pointer at 0x00A9F3AC and returns arg1 (stdcall, ret 8).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x0058A550": {
     "name": "AnimatableTransform::vfunc_1_off_8",
     "class": "AnimatableTransform",

@@ -1,0 +1,13 @@
+{
+  "va": "0x0058A170",
+  "size": 35,
+  "orig_symbol": "sub_0058A170",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "initStdStringFromGlobalCString",
+  "signature": "void* __stdcall fn_0058A170(void* self, [[maybe_unused]] void* arg2)",
+  "summary": "Constructs a std::string at arg1 from the global C string pointer at 0x00A9F3AC and returns arg1 (stdcall, ret 8).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-25T14:17:24Z"
+}
