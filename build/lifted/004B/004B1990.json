@@ -1,0 +1,28 @@
+{
+  "va": "0x004B1990",
+  "size": 110,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cInterpreter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Interpreter::getType(void) const, 0\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cInterpreter\u003e::vfunc_2 (Interpreter::getType, parsed as number)",
+  "class": "ExprParser::ReadMethodType\u003cInterpreter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Interpreter::getType(void) const, 0\u003e",
+  "signature": "float fn_004B1990(void* self)",
+  "summary": "Converts the Interpreter's type string with atof, adds +0.5 (or -0.5 for negative or NaN values), and passes the result to sub_006A6DE0 for the FPU-stack result; throws if the interpreter pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "Interpreter",
+      "offset": "+0x4",
+      "type": "std::string field_0x04 (MSVC layout: inline buffer or pointer at +0, size +0x10, capacity",
+      "name": "+0x14)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:21:19Z"
+}

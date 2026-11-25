@@ -11,7 +11,8 @@
 namespace lifted_layout {
 struct Interpreter_Fields {
     // +0x0   uint32_t                 vtable  (evidence: 0x00503BC0, 0x00506030)
-    // +0x4   std::string              field_0x04  (evidence: 0x0046CE90, 0x0046E570, 0x00488E30, 0x004A2930, 0x004B21D0, 0x004B8920, 0x00503BC0, 0x00506030, 0x0059F920, 0x005D6550, 0x005FCC10, 0x00639730, 0x0066F700, 0x00695740)
+    // +0x4   std::string field_0x04 (MSVC layout: inline buffer or pointer at +0, size +0x10, capacity +0x14)  (evidence: 0x004B1990) // CONFLICT: multiple definitions at +0x4
+    // +0x4   std::string              field_0x04  (evidence: 0x0046CE90, 0x0046E570, 0x00488E30, 0x004A2930, 0x004B21D0, 0x004B8920, 0x00503BC0, 0x00506030, 0x0059F920, 0x005D6550, 0x005FCC10, 0x00639730, 0x0066F700, 0x00695740) // CONFLICT: multiple definitions at +0x4
     // +0x24  uint32_t                 field_0x24  (evidence: 0x00503BC0, 0x00506030)
     // +0x28  uint32_t                 field_0x28  (evidence: 0x00503BC0, 0x00506030)
     // +0x2C  uint32_t                 field_0x2c  (evidence: 0x00503BC0, 0x00506030)

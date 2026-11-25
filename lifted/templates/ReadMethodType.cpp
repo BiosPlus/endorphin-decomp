@@ -59334,3 +59334,61 @@ extern uint32_t fn_0068F0D0(void* arg) {
     return 0;
 }
 } // namespace lift_0068F0D0
+
+// [0x004B1990] ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>::vfunc_2 (110 bytes)
+namespace lift_004B1990 {
+// Callee 0x006A6DE0 (sub_006A6DE0): consumes the adjusted value on the FPU stack and leaves its result on the FPU stack.
+extern void ext_006A6DE0();
+// Callee 0x0046C3C0: DerivedException::DerivedException, constructs a 0x28-byte exception object in the caller's buffer.
+extern void ext_0046C3C0(void* exceptionObj);
+// Callee 0x006A6DD2: IAT jump thunk forwarding to MSVCR80!_CxxThrowException(obj, throwInfo).
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// IAT slots of the original asm, now replaced by portable equivalents below:
+//   mem_00924FF0 -> std::string::c_str (MSVCP80), inlined via the MSVC std::string layout
+//   mem_009251F0 -> atof (MSVCR80), replaced by std::atof
+//   mem_00993828 -> double constant 0.5, replaced by kHalf
+//   mem_009DEC1C -> ThrowInfo for the exception thrown on a null target, kThrowInfoVA
+extern int mem_00924FF0;
+extern int mem_009251F0;
+extern int mem_00993828;
+extern int mem_009DEC1C;
+
+// RTTI/ThrowInfo address for the exception type raised on a null target (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1C;
+static constexpr double kHalf = 0.5;
+
+// @name ExprParser::ReadMethodType<Interpreter>::vfunc_2 (Interpreter::getType, parsed as number)
+// @class ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>
+// @summary Converts the Interpreter's type string with atof, adds +0.5 (or -0.5 for negative or NaN values), and passes the result to sub_006A6DE0 for the FPU-stack result; throws if the interpreter pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field Interpreter +0x04 std::string field_0x04 (MSVC layout: inline buffer or pointer at +0, size +0x10, capacity +0x14)
+float fn_004B1990(void* self) {
+    void* interp = lift_field<void*>(self, 0x00);
+    if (interp == nullptr) {
+        // Null target: build the exception object and throw it.
+        alignas(8) uint8_t exceptionObj[0x28];
+        ext_0046C3C0(exceptionObj);
+        ext_006A6DD2(exceptionObj, reinterpret_cast<const void*>(kThrowInfoVA));
+        return 0.0f;
+    }
+
+    // std::string::c_str() on the member at +0x04 (MSVCP80 IAT slot mem_00924FF0).
+    void* strObj = static_cast<uint8_t*>(interp) + 0x04;
+    auto c_str = reinterpret_cast<const char*(__cdecl*)(const void*)>(mem_00924FF0);
+    const char* text = c_str(strObj);
+
+    // atof (MSVCR80 IAT slot mem_009251F0).
+    auto atof_fn = reinterpret_cast<double(__cdecl*)(const char*)>(mem_009251F0);
+    float x = static_cast<float>(atof_fn(text));
+
+    // x87 fcom + C0 test: C0 is set for x < 0 and for unordered (NaN) operands.
+    double adjusted = (!(x >= 0.0f))
+        ? static_cast<double>(x) - kHalf
+        : static_cast<double>(x) + kHalf;
+
+    // sub_006A6DE0 consumes the adjusted value on the FPU stack and leaves it there.
+    ext_006A6DE0();
+    return static_cast<float>(adjusted);
+}
+} // namespace lift_004B1990
