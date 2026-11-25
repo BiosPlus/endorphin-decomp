@@ -20035,6 +20035,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005DA9C0 (ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, getEndFrame\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00522380": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e",
+    "signature": "extern float fn_00522380(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B1B30 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, getColor, 0\u003e::vfunc_1).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005223C0": {
     "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e",
@@ -31976,6 +31983,13 @@
     "summary": "Reads VideoPlaneData::endFrame (+0x24) from the handle's object into the out value; throws if the handle is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005DAA10": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0\u003e",
+    "signature": "extern float fn_005DAA10(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B1B30 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, getColor, 0\u003e::vfunc_1).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005DAA40": {
     "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0\u003e",
@@ -39753,6 +39767,13 @@
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e",
     "signature": "bool fn_00635060(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00508EE0 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00635120": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0\u003e",
+    "signature": "extern float fn_00635120(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B1B30 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData, int, getColor, 0\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00635160": {
