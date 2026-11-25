@@ -3373,7 +3373,7 @@ void* fn_00431400(void) {
         void* obj = ext_00465B40();
         void* vtable = *reinterpret_cast<void**>(obj);
         VirtFn target = reinterpret_cast<VirtFn>(
-            *reinterpret_cast<void**>(static_cast<uint8_t*>(vtable) + 0xD0));
+            *reinterpret_cast<void**>(static_cast<char*>(vtable) + 0xD0));
         return target(obj);
     }
 
@@ -3381,7 +3381,7 @@ void* fn_00431400(void) {
     void* obj = ext_00465B40();
     void* vtable = *reinterpret_cast<void**>(obj);
     VirtFn target = reinterpret_cast<VirtFn>(
-        *reinterpret_cast<void**>(static_cast<uint8_t*>(vtable) + 0xCC));
+        *reinterpret_cast<void**>(static_cast<char*>(vtable) + 0xCC));
     return target(obj);
 }
 } // namespace lift_00431400
