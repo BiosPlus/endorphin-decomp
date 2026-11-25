@@ -9208,6 +9208,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0048F590 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Commands/auto_tiny.cpp"
   },
+  "0x0048F920": {
+    "name": "SetTriggeredEventFrameRangeCommand::scalarDeletingDtor",
+    "class": "Commands::SetTriggeredEventFrameRangeCommand",
+    "signature": "void* fn_0048F920(void* self, uint8_t flags)",
+    "summary": "Releases the owned pointers at +0x30 and +0x40, zeroes the range fields, resets the base via sub_00665810, and frees the object when flags bit 0 is set.",
+    "lifted_path": "lifted/Commands/SetTriggeredEventFrameRangeCommand.cpp"
+  },
   "0x0048FAA0": {
     "name": "Commands::BufferChannelsCommand::vfunc_0",
     "class": "Commands::BufferChannelsCommand",

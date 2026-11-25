@@ -1,0 +1,52 @@
+{
+  "va": "0x0048F920",
+  "size": 86,
+  "orig_symbol": "Commands::SetTriggeredEventFrameRangeCommand::vfunc_0",
+  "src_path": "src/Commands/SetTriggeredEventFrameRangeCommand.cpp",
+  "lifted_path": "lifted/Commands/SetTriggeredEventFrameRangeCommand.cpp",
+  "name": "SetTriggeredEventFrameRangeCommand::scalarDeletingDtor",
+  "class": "Commands::SetTriggeredEventFrameRangeCommand",
+  "signature": "void* fn_0048F920(void* self, uint8_t flags)",
+  "summary": "Releases the owned pointers at +0x30 and +0x40, zeroes the range fields, resets the base via sub_00665810, and frees the object when flags bit 0 is set.",
+  "fields": [
+    {
+      "class": "Commands::SetTriggeredEventFrameRangeCommand",
+      "offset": "+0x30",
+      "type": "void*",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Commands::SetTriggeredEventFrameRangeCommand",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Commands::SetTriggeredEventFrameRangeCommand",
+      "offset": "+0x38",
+      "type": "uint32_t",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Commands::SetTriggeredEventFrameRangeCommand",
+      "offset": "+0x40",
+      "type": "void*",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Commands::SetTriggeredEventFrameRangeCommand",
+      "offset": "+0x44",
+      "type": "uint32_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Commands::SetTriggeredEventFrameRangeCommand",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:10:34Z"
+}
