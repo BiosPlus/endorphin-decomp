@@ -763,3 +763,24 @@ uintptr_t fn_00629D00(void* self, uint32_t arg0) {
     return this_ptr;
 }
 } // namespace lift_00629D00
+
+// [0x0062A0C0]
+namespace lift_0062A0C0 {
+// @name Unknown::initZeroFloatsAndVtable
+// @class Unknown
+// @summary Calls the base initializer with the stack argument, zeroes the floats at +0x34 and +0x38, and sets the vtable to 0x0097880C. Returns this (esi) in eax; the disassembly uses ret 0x10.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x34 float field_0x34
+// @field Unknown +0x38 float field_0x38
+
+uint32_t ext_005FF240(uintptr_t this_ptr, uint32_t arg0);
+
+uintptr_t Unknown_initZeroFloatsAndVtable(uintptr_t this_ptr, uint32_t arg0) {
+    ext_005FF240(this_ptr, arg0);
+    void* self = reinterpret_cast<void*>(this_ptr);
+    lift_field<float>(self, 0x38) = 0.0f;
+    lift_field<uint32_t>(self, 0x00) = 0x0097880Cu;
+    lift_field<float>(self, 0x34) = 0.0f;
+    return this_ptr;
+}
+} // namespace lift_0062A0C0
