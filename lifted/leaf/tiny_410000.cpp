@@ -453,7 +453,6 @@ extern int mem_00924494;
 
 // @name ThisReturnForwardToMfcOrd297
 // @summary Forwards its single stack argument to MFC80 import ordinal 297 with `this` in ECX, then returns `this`.
-// @field self +0x00 void* self (not dereferenced; returned unchanged)
 using Ord297Fn = uint32_t(__thiscall*)(void* self, uint32_t arg);
 
 void* fn_00419940(void* self, uint32_t arg) {
