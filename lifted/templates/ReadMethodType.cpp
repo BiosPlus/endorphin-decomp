@@ -61276,3 +61276,64 @@ int32_t fn_005B3720(void* holder) {
     return ext_006A6DE0(rounded);
 }
 } // namespace lift_005B3720
+
+// [0x0068F050] ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0>::vfunc_2 (121 bytes)
+namespace lift_0068F050 {
+// Known callee 0x0068EE60: sub_0068EE60 (Auto-lifted identical-shape clone of 0x004CE810 (Unknown::GetRecordByIndex).)
+// Returns a pointer to a std::string-bearing record for the given index.
+extern void* ext_0068EE60(uint32_t index);
+
+// Known callee 0x006A6DE0: sub_006A6DE0 (171B, not yet lifted).
+// Original consumes the scaled value from the x87 stack top; here it is passed as a double argument.
+// Its eax result is returned unchanged as this function's result.
+extern void* ext_006A6DE0(double scaled);
+
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0(void* exceptionObj);
+
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo);
+
+// IAT slots (function pointers) for the original's imported calls.
+// 0x00924FF0: MSVCP80 std::basic_string<char>::c_str (thiscall, receiver in ecx).
+extern const char* (__thiscall* mem_00924FF0)(const void* str);
+// 0x009251F0: MSVCR80 atof (cdecl).
+extern double (*mem_009251F0)(const char* s);
+
+// .rdata constants referenced by the original.
+extern const double mem_00993828; // 0.5 rounding bias
+extern const int    mem_009DEC1C; // throw-info for the null-target exception
+
+// @name ExprParser::ReadMethodType<UnitsWithProperties>::vfunc_2 (UnitsWithProperties::getAngleUnitName as float)
+// @class ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0>
+// @summary Reads the string-valued angle unit name of the target, parses it with atof, rounds to nearest integer (half away from zero), and returns the result of ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0> +0x04 void* field_0x04
+// @field Unknown +0x0c uint32_t field_0x0c
+void* fn_0068F050(void* self) {
+    // self points to a ValuePtrType whose first dword is the target object pointer.
+    void* target = lift_field<void*>(self, 0);
+    if (target == nullptr) {
+        // Original constructs an exception object on the stack and throws it.
+        alignas(8) unsigned char excBuf[0x28];
+        ext_0046C3C0(excBuf);
+        ext_006A6DD2(excBuf, &mem_009DEC1C);
+        return nullptr;
+    }
+
+    // target+0x04 -> owner; owner+0x0c -> record index.
+    void* owner = lift_field<void*>(target, 0x04);
+    uint32_t index = lift_field<uint32_t>(owner, 0x0c);
+
+    // Record returned by the callee is the std::string receiver for c_str().
+    const void* str = ext_0068EE60(index);
+    float value = static_cast<float>(mem_009251F0(mem_00924FF0(str)));
+
+    // Original uses fcom/fsub/fadd: negative (or unordered) values subtract 0.5, otherwise add 0.5.
+    double biased = (!(value >= 0.0f))
+        ? static_cast<double>(value) - mem_00993828
+        : static_cast<double>(value) + mem_00993828;
+
+    return ext_006A6DE0(biased);
+}
+} // namespace lift_0068F050
