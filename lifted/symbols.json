@@ -69032,6 +69032,12 @@
     "summary": "Three-way style compare of two objects: unsigned key at +0x00 first, then signed value at +0x08 on tie; returns -1 or 1 (never 0).",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AF500": {
+    "name": "getPixelFormatType",
+    "signature": "uint32_t sub_007AF500(uint32_t arg0)",
+    "summary": "Maps bit depth at +0x40 and channel count at +0x42 to a format enum value.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AF580": {
     "name": "findCachedEntryByKeys",
     "signature": "uint32_t __cdecl sub_007AF580(uint32_t self, uint32_t key1, uint32_t key2)",
