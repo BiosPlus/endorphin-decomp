@@ -1,0 +1,13 @@
+{
+  "va": "0x007B8BB0",
+  "size": 96,
+  "orig_symbol": "sub_007B8BB0",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "freeLinkedList_007B8BB0",
+  "signature": "void sub_007B8BB0()",
+  "summary": "Frees all nodes and their owned buffers in the linked list rooted at mem_00B61DB8.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:52:28Z"
+}
