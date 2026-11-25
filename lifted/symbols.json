@@ -27458,6 +27458,12 @@
     "summary": "For each DWORD in [begin, end), calls cb(*entry + base); then writes (cb, base) to out[0], out[1].",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x00596A70": {
+    "name": "forEachTreeRange",
+    "signature": "void fn_00596A70(void* ret, void* first_head, void* first_node, void* last_head, void* last_node, void (*fn)(void*))",
+    "summary": "Walks a red-black tree range [first, last) in order, calling fn(node-\u003efield_0x28) for each node, then stores fn to the hidden return slot; reports invalid parameters when the iterators are null, mismatched, or the current node is the head's parent.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00596C50": {
     "name": "Unknown::ForEachCallAndRaiseF4_00596C50",
     "class": "Unknown",

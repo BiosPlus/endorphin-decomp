@@ -1435,3 +1435,48 @@ void fn_005943D0(void* self) {
     lift_field<uint32_t>(self, 0x04) = succ;
 }
 } // namespace lift_005943D0
+
+// [0x00596A70] sub_00596A70 (102 bytes)
+namespace lift_00596A70 {
+// Known callee 0x00673C20: advanceTreeIterator (Advances a red-black tree iterator to its in-order successor: goes to the leftmost node of the right subtree if one exists, otherwise climbs parents while the current node is a right child; reports an invalid parameter when the iterator is null or already at the end.)
+extern void ext_00673C20(void* self);
+// CRT invalid-parameter handler (import slot mem_00925134).
+extern void ext_invalid_parameter_noinfo(void);
+
+// Iterator pair as laid out on the stack by the caller of advanceTreeIterator.
+struct TreeIterator {
+    void* field_0x00; // head/sentinel node (container)
+    void* node;       // current node
+};
+
+// @name forEachTreeRange
+// @summary Walks a red-black tree range [first, last) in order, calling fn(node->field_0x28) for each node, then stores fn to the hidden return slot; reports invalid parameters when the iterators are null, mismatched, or the current node is the head's parent.
+// @field TreeIterator +0x00 void* field_0x00
+// @field TreeIterator +0x04 void* node
+// @field TreeNode +0x04 void* field_0x04
+// @field TreeNode +0x28 void* field_0x28
+void fn_00596A70(void* ret, void* first_head, void* first_node,
+                 void* last_head, void* last_node, void (*fn)(void*)) {
+    TreeIterator it{first_head, first_node};
+    for (;;) {
+        if (it.field_0x00 == nullptr || it.field_0x00 != last_head) {
+            ext_invalid_parameter_noinfo();
+            return;
+        }
+        if (it.node == last_node) {
+            *static_cast<void (**)(void*)>(ret) = fn;
+            return;
+        }
+        if (it.field_0x00 == nullptr) {
+            ext_invalid_parameter_noinfo();
+            return;
+        }
+        if (it.node == lift_field<void*>(it.field_0x00, 0x04)) {
+            ext_invalid_parameter_noinfo();
+            return;
+        }
+        fn(lift_field<void*>(it.node, 0x28));
+        ext_00673C20(&it);
+    }
+}
+} // namespace lift_00596A70

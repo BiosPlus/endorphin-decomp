@@ -1,0 +1,39 @@
+{
+  "va": "0x00596A70",
+  "size": 102,
+  "orig_symbol": "sub_00596A70",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "forEachTreeRange",
+  "signature": "void fn_00596A70(void* ret, void* first_head, void* first_node, void* last_head, void* last_node, void (*fn)(void*))",
+  "summary": "Walks a red-black tree range [first, last) in order, calling fn(node-\u003efield_0x28) for each node, then stores fn to the hidden return slot; reports invalid parameters when the iterators are null, mismatched, or the current node is the head's parent.",
+  "fields": [
+    {
+      "class": "TreeIterator",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "TreeIterator",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "node"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:59:51Z"
+}

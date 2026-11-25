@@ -16,7 +16,7 @@ struct TreeNode_Fields {
     // +0x0   void* field_0x00 (child link, traversed to leftmost)  (evidence: 0x0052A1C0) // CONFLICT: multiple definitions at +0x0
     // +0x4   TreeNode*                field_0x04  (evidence: 0x005AC8C0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x005943D0, 0x007D4AA0) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    field_0x04  (evidence: 0x00414E00) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_0x04  (evidence: 0x00414E00, 0x00596A70) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 parent  (evidence: 0x0041A190, 0x005FF000, 0x00624DC0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    parent  (evidence: 0x0045E510, 0x00492BC0, 0x00673C20) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    parent_or_root  (evidence: 0x00472730, 0x004757F0) // CONFLICT: multiple definitions at +0x4
@@ -39,7 +39,7 @@ struct TreeNode_Fields {
     // +0x19  uint8_t                  isnil  (evidence: 0x00624DC0) // CONFLICT: multiple definitions at +0x19
     // +0x21  uint8_t                  is_nil  (evidence: 0x00493330, 0x00495AB0) // CONFLICT: multiple definitions at +0x21
     // +0x21  uint8_t                  isnil  (evidence: 0x00492BC0) // CONFLICT: multiple definitions at +0x21
-    // +0x28  void*                    field_0x28  (evidence: 0x00414E00)
+    // +0x28  void*                    field_0x28  (evidence: 0x00414E00, 0x00596A70)
     // +0x29  uint8_t                  field_0x29  (evidence: 0x005AC8C0)
     // +0x2D  uint8_t                  isNil  (evidence: 0x00641760) // CONFLICT: multiple definitions at +0x2D
     // +0x2D  uint8_t                  is_nil  (evidence: 0x00673C20) // CONFLICT: multiple definitions at +0x2D
