@@ -1,0 +1,21 @@
+{
+  "va": "0x0079E4B0",
+  "size": 112,
+  "orig_symbol": "sub_0079E4B0",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "forwardArgsToElement0",
+  "signature": "extern \"C\" void __thiscall fn_0079E4B0( void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4, uint32_t arg5, uint32_t arg6, uint32_t arg7)",
+  "summary": "Forwards 8 32-bit stack arguments via ext_006D2390 to ext_006C3520 at index 0 on the object returned by ext_00714AE0(*(this + 0x00)).",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:33:15Z"
+}
