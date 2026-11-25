@@ -1,0 +1,13 @@
+{
+  "va": "0x00519E10",
+  "size": 61,
+  "orig_symbol": "sub_00519E10",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "FillRange5f",
+  "signature": "void fn_00519E10(float* begin, float* end, const float* src)",
+  "summary": "Copies a 5-float source block into every 20-byte element in [begin, end).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:57:36Z"
+}

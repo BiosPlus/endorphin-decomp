@@ -317,3 +317,23 @@ uint32_t __stdcall fn_00516EB0(void* self) {
     return lift_field<uint32_t>(reinterpret_cast<void*>(buffer), static_cast<ptrdiff_t>(index) * 4);
 }
 } // namespace lift_00516EB0
+
+// [0x00519E10] sub_00519E10 (61 bytes)
+namespace lift_00519E10 {
+// @name FillRange5f
+// @summary Copies a 5-float source block into every 20-byte element in [begin, end).
+void fn_00519E10(float* begin, float* end, const float* src) {
+    if (begin == end) {
+        return;
+    }
+    float* p = begin;
+    do {
+        p[0] = src[0];
+        p[1] = src[1];
+        p[2] = src[2];
+        p[3] = src[3];
+        p[4] = src[4];
+        p += 5;  // 20-byte stride
+    } while (p != end);
+}
+} // namespace lift_00519E10

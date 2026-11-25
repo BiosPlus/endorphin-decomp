@@ -16279,6 +16279,12 @@
     "summary": "Returns 0 if the string matches the first global string, 1 if it matches the second, or 0 otherwise.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00519E10": {
+    "name": "FillRange5f",
+    "signature": "void fn_00519E10(float* begin, float* end, const float* src)",
+    "summary": "Copies a 5-float source block into every 20-byte element in [begin, end).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00519EA0": {
     "name": "NMData::Channel::vfunc_0",
     "class": "NMData::Channel",
