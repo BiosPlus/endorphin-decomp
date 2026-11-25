@@ -822,3 +822,39 @@ void fn_004C70F0(void* self) {
     ext_00401BB0(self);
 }
 } // namespace lift_004C70F0
+
+// [0x004C7200]
+namespace lift_004C7200 {
+// @name ExceptionWithStrings::ExceptionWithStrings (copy ctor)
+// @class ExceptionWithStrings
+// @summary Copy-constructs a derived exception: copies the std::logic_error base, sets the vtable, then copy-constructs two std::string members at +0x28 and +0x44.
+// @field ExceptionWithStrings +0x00 void* vtable (field_0x00)
+// @field ExceptionWithStrings +0x28 std::string field_0x28
+// @field ExceptionWithStrings +0x44 std::string field_0x44
+
+// Base copy constructor (std::logic_error copy ctor).
+extern void* ext_00401C60(void* self, const void* other);
+
+// MSVCP80 std::string copy constructor, imported via mem_00924FE0.
+extern void* ext_std_string_copy_ctor(void* self, const void* other);
+
+// Vtable address written into the object after the base copy.
+constexpr uintptr_t kVtable_00945A5C = 0x00945A5Cu;
+
+// [0x004C7200]
+void* __thiscall ExceptionWithStrings_copy_ctor(void* self, const void* other) {
+    ext_00401C60(self, other);
+
+    lift_field<uintptr_t>(self, 0x00) = kVtable_00945A5C;
+
+    ext_std_string_copy_ctor(
+        static_cast<uint8_t*>(self) + 0x28,
+        static_cast<const uint8_t*>(other) + 0x28);
+
+    ext_std_string_copy_ctor(
+        static_cast<uint8_t*>(self) + 0x44,
+        static_cast<const uint8_t*>(other) + 0x44);
+
+    return self;
+}
+} // namespace lift_004C7200

@@ -1,0 +1,34 @@
+{
+  "va": "0x004C7200",
+  "size": 106,
+  "orig_symbol": "sub_004C7200",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "ExceptionWithStrings::ExceptionWithStrings (copy ctor)",
+  "class": "ExceptionWithStrings",
+  "signature": "void* __thiscall ExceptionWithStrings_copy_ctor(void* self, const void* other)",
+  "summary": "Copy-constructs a derived exception: copies the std::logic_error base, sets the vtable, then copy-constructs two std::string members at +0x28 and +0x44.",
+  "fields": [
+    {
+      "class": "ExceptionWithStrings",
+      "offset": "+0x0",
+      "type": "void* vtable",
+      "name": "(field_0x00)"
+    },
+    {
+      "class": "ExceptionWithStrings",
+      "offset": "+0x28",
+      "type": "std::string",
+      "name": "field_0x28"
+    },
+    {
+      "class": "ExceptionWithStrings",
+      "offset": "+0x44",
+      "type": "std::string",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T05:03:32Z"
+}
