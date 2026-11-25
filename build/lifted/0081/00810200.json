@@ -1,0 +1,28 @@
+{
+  "va": "0x00810200",
+  "size": 64,
+  "orig_symbol": "sub_00810200",
+  "src_path": "src/leaf/decompiled_810000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_810000.cpp",
+  "name": "Unknown::QueryLinkedFlagBit3",
+  "class": "Unknown",
+  "signature": "static inline uint32_t ReadU32At(uintptr_t base, uintptr_t off)",
+  "summary": "Returns bit 3 of the flags dword reached via self-\u003elink (self+0x4 -\u003e link, link+0x4 -\u003e flags).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t field_0x04 (self -\u003e link",
+      "name": "pointer)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t field_0x04 (link -\u003e flags",
+      "name": "dword)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:10:35Z"
+}

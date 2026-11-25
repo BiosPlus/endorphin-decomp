@@ -210,3 +210,24 @@ uint32_t fn_00810180(void* self) {
     return (q >> 6) & 1u;
 }
 } // namespace lift_00810180
+
+// [0x00810200] sub_00810200 (64 bytes)
+namespace lift_00810200 {
+// @name Unknown::QueryLinkedFlagBit3
+// @class Unknown
+// @summary Returns bit 3 of the flags dword reached via self->link (self+0x4 -> link, link+0x4 -> flags).
+// @field Unknown +0x04 uint32_t field_0x04 (self -> link pointer)
+// @field Unknown +0x04 uint32_t field_0x04 (link -> flags dword)
+static inline uint32_t ReadU32At(uintptr_t base, uintptr_t off) {
+    uint32_t v;
+    std::memcpy(&v, reinterpret_cast<const void*>(base + off), sizeof v);
+    return v;
+}
+
+uint32_t fn_00810200(void* self) {
+    const uintptr_t selfAddr = reinterpret_cast<uintptr_t>(self);
+    const uintptr_t link = ReadU32At(selfAddr, 0x04);
+    const uint32_t flags = ReadU32At(link, 0x04);
+    return (flags >> 3) & 1u;
+}
+} // namespace lift_00810200

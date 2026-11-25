@@ -113,6 +113,7 @@ struct Unknown_Fields {
     // +0x4   void*                    child  (evidence: 0x005DA150, 0x005DA170, 0x006305A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t                  count  (evidence: 0x0077F4E0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (pointer to subobject, dereferenced)  (evidence: 0x00661A40) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t field_0x04 (link -> flags dword)  (evidence: 0x00810200) // CONFLICT: multiple definitions at +0x4
     // +0x4   float field_0x04 (read via both pointer args: ecx and eax)  (evidence: 0x007FC2B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 entry_count  (evidence: 0x007F0B60) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066BB70) // CONFLICT: multiple definitions at +0x4
@@ -152,6 +153,7 @@ struct Unknown_Fields {
     // +0x4   void* field_0x04 (pointer to inner object)  (evidence: 0x00783540, 0x00788E50, 0x00810460) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    peer  (evidence: 0x00528B90) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (begin pointer)  (evidence: 0x005731D0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t field_0x04 (self -> link pointer)  (evidence: 0x00810200) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 ptrToSrcPlus14  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    ptrToSubobject  (evidence: 0x00715710) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t                  rectLeft  (evidence: 0x00540DD0) // CONFLICT: multiple definitions at +0x4

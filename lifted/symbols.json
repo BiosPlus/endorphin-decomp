@@ -58244,6 +58244,13 @@
     "summary": "Returns bit 6 (0x40) of the dword at +0x04 of the object referenced by self+0x04.",
     "lifted_path": "lifted/leaf/decompiled_810000.cpp"
   },
+  "0x00810200": {
+    "name": "Unknown::QueryLinkedFlagBit3",
+    "class": "Unknown",
+    "signature": "static inline uint32_t ReadU32At(uintptr_t base, uintptr_t off)",
+    "summary": "Returns bit 3 of the flags dword reached via self-\u003elink (self+0x4 -\u003e link, link+0x4 -\u003e flags).",
+    "lifted_path": "lifted/leaf/decompiled_810000.cpp"
+  },
   "0x00810240": {
     "name": "getBit1OfNestedField04",
     "signature": "uint32_t fn_00810240(void* self)",
