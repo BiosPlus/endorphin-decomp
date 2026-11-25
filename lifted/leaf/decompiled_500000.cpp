@@ -2146,3 +2146,39 @@ extern void __fastcall fn_00504B80(void* self) {
     ext_0065C660(self);
 }
 } // namespace lift_00504B80
+
+// [0x0050E4E0] sub_0050E4E0 (102 bytes)
+namespace lift_0050E4E0 {
+// Imported MSVCP80 std::string copy-assignment (thiscall, one stack arg).
+// Original slot: mem_00924FDC.
+extern void ext_std_string_assign(void* dst, const void* src);
+
+// @name Unknown::CopyFrom
+// @class Unknown
+// @summary Copy-assigns all fields of a source record into this record and returns this.
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C float field_0x0C
+// @field Unknown +0x10 float field_0x10
+// @field Unknown +0x14 float field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C float field_0x1C
+// @field Unknown +0x20 std::string field_0x20
+// @field Unknown +0x3C std::string field_0x3C
+// @field Unknown +0x58 std::string field_0x58
+// @field Unknown +0x74 uint32_t field_0x74
+void* fn_0050E4E0(void* self, const void* src) {
+    lift_field<uint32_t>(self, 0x04) = lift_field<const uint32_t>(src, 0x04);
+    lift_field<uint32_t>(self, 0x08) = lift_field<const uint32_t>(src, 0x08);
+    lift_field<float>(self, 0x0C) = lift_field<const float>(src, 0x0C);
+    lift_field<float>(self, 0x10) = lift_field<const float>(src, 0x10);
+    lift_field<float>(self, 0x14) = lift_field<const float>(src, 0x14);
+    lift_field<uint32_t>(self, 0x18) = lift_field<const uint32_t>(src, 0x18);
+    lift_field<float>(self, 0x1C) = lift_field<const float>(src, 0x1C);
+    ext_std_string_assign(static_cast<uint8_t*>(self) + 0x20, static_cast<const uint8_t*>(src) + 0x20);
+    ext_std_string_assign(static_cast<uint8_t*>(self) + 0x3C, static_cast<const uint8_t*>(src) + 0x3C);
+    ext_std_string_assign(static_cast<uint8_t*>(self) + 0x58, static_cast<const uint8_t*>(src) + 0x58);
+    lift_field<uint32_t>(self, 0x74) = lift_field<const uint32_t>(src, 0x74);
+    return self;
+}
+} // namespace lift_0050E4E0

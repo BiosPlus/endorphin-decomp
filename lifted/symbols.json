@@ -18888,6 +18888,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004BE680 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0050E4E0": {
+    "name": "Unknown::CopyFrom",
+    "class": "Unknown",
+    "signature": "void* fn_0050E4E0(void* self, const void* src)",
+    "summary": "Copy-assigns all fields of a source record into this record and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050E7B0": {
     "name": "sub_0050E7B0",
     "signature": "void* fn_0050E7B0()",
