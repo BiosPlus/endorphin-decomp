@@ -1,0 +1,13 @@
+{
+  "va": "0x006F78A0",
+  "size": 83,
+  "orig_symbol": "sub_006F78A0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "lookupTableValue_006F78A0",
+  "signature": "bool fn_006F78A0(uint32_t target, uint32_t* out)",
+  "summary": "Looks up target in the 12-row table; on hit stores ext_006F7730(row, col) to *out and returns true; otherwise if target == 0x43 stores 0x00AAB3E0 to *out and returns true, else false.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:05:32Z"
+}

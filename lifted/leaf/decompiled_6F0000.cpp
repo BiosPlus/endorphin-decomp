@@ -1947,3 +1947,25 @@ extern void __thiscall sub_006FBCE0(uint32_t self) {
     } while (idx >= 0);
 }
 } // namespace lift_006FBCE0
+
+// [0x006F78A0] sub_006F78A0 (83 bytes)
+namespace lift_006F78A0 {
+extern bool ext_006F7850(uint32_t target, int32_t* outRow, int32_t* outCol);
+extern uint32_t ext_006F7730(int32_t row, int32_t col);
+
+// @name lookupTableValue_006F78A0
+// @summary Looks up target in the 12-row table; on hit stores ext_006F7730(row, col) to *out and returns true; otherwise if target == 0x43 stores 0x00AAB3E0 to *out and returns true, else false.
+bool fn_006F78A0(uint32_t target, uint32_t* out) {
+    int32_t row = 0;
+    int32_t col = 0;
+    if (ext_006F7850(target, &row, &col)) {
+        *out = ext_006F7730(row, col);
+        return true;
+    }
+    if (target == 0x43u) {
+        *out = 0x00AAB3E0u;
+        return true;
+    }
+    return false;
+}
+} // namespace lift_006F78A0
