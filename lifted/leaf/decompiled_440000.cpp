@@ -1996,3 +1996,59 @@ void fn_0044BFB0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
     ReleaseCapture();
 }
 } // namespace lift_0044BFB0
+
+// [0x0044C070] sub_0044C070 (42 bytes)
+namespace lift_0044C070 {
+// @name sub_0044C070
+// @summary Auto-lifted identical-shape clone of 0x0044BFB0 (Unknown::forwardFlagsAndReleaseCapture_0044BFB0).
+namespace lift_0044BFB0 {
+// Known callee 0x00530C00: Unknown::forwardFlagsAndDispatch_00530C00 (Forwards a flags argument to a child object and to updateFlags_00530740, then invokes virtual slot 0x158 on the object at +0x10 with a zero argument.)
+extern void ext_00531400(void* self, uint32_t flags, uint32_t arg2, uint32_t arg3);
+// Win32 import USER32!ReleaseCapture (reached in the binary via the IAT slot at 0x009256E0).
+extern void __stdcall ReleaseCapture(void);
+
+// @name Unknown::forwardFlagsAndReleaseCapture_0044BFB0
+// @class Unknown
+// @summary Clears the byte flag at +0x78; if the dword at +0x64 is nonzero, forwards the three stack arguments to ext_00530C00 on the child at +0x68; then calls ReleaseCapture.
+// @field Unknown +0x64 uint32_t field_0x64
+// @field Unknown +0x68 void* field_0x68
+// @field Unknown +0x78 uint8_t field_0x78
+void fn_0044C070(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    const uint32_t gate = lift_field<uint32_t>(self, 0x64);
+    lift_field<uint8_t>(self, 0x76) = 0;
+    if (gate != 0) {
+        void* child = lift_field<void*>(self, 0x68);
+        ext_00531400(child, arg1, arg2, arg3);
+    }
+    ReleaseCapture();
+}
+} // namespace lift_0044BFB0
+} // namespace lift_0044C070
+
+// [0x0044C130] sub_0044C130 (42 bytes)
+namespace lift_0044C130 {
+// @name sub_0044C130
+// @summary Auto-lifted identical-shape clone of 0x0044BFB0 (Unknown::forwardFlagsAndReleaseCapture_0044BFB0).
+namespace lift_0044BFB0 {
+// Known callee 0x00530C00: Unknown::forwardFlagsAndDispatch_00530C00 (Forwards a flags argument to a child object and to updateFlags_00530740, then invokes virtual slot 0x158 on the object at +0x10 with a zero argument.)
+extern void ext_00530C40(void* self, uint32_t flags, uint32_t arg2, uint32_t arg3);
+// Win32 import USER32!ReleaseCapture (reached in the binary via the IAT slot at 0x009256E0).
+extern void __stdcall ReleaseCapture(void);
+
+// @name Unknown::forwardFlagsAndReleaseCapture_0044BFB0
+// @class Unknown
+// @summary Clears the byte flag at +0x78; if the dword at +0x64 is nonzero, forwards the three stack arguments to ext_00530C00 on the child at +0x68; then calls ReleaseCapture.
+// @field Unknown +0x64 uint32_t field_0x64
+// @field Unknown +0x68 void* field_0x68
+// @field Unknown +0x78 uint8_t field_0x78
+void fn_0044C130(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    const uint32_t gate = lift_field<uint32_t>(self, 0x64);
+    lift_field<uint8_t>(self, 0x77) = 0;
+    if (gate != 0) {
+        void* child = lift_field<void*>(self, 0x68);
+        ext_00530C40(child, arg1, arg2, arg3);
+    }
+    ReleaseCapture();
+}
+} // namespace lift_0044BFB0
+} // namespace lift_0044C130

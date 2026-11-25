@@ -31,6 +31,7 @@ void* __thiscall fn_00508310(const void* self) {
 } // namespace lift_0051C6D0
 } // namespace lift_00508310
 #include <cstdint>
+#include <cstring>
 
 // [0x00504930] sub_00504930 (10 bytes)
 namespace lift_00504930 {
@@ -872,3 +873,26 @@ void fn_005088D0(void* self) {
     lift_field<float>(self, 0x24) = 1.0f;
 }
 } // namespace lift_005088D0
+
+// [0x00506740] sub_00506740 (85 bytes)
+namespace lift_00506740 {
+// @name sub_00506740
+// @summary Auto-lifted identical-shape clone of 0x0048CBD0 (ComputeStrideOffset_0048CBD0).
+namespace lift_0048CBD0 {
+extern void ext_00506270(int32_t a1, int32_t a2, int32_t a3, int32_t a4, uint8_t a5, uint8_t a6);
+
+// @name ComputeStrideOffset_0048CBD0
+// @summary Calls ext_0048C9A0 with the stack args, then returns arg3 + ((arg2 - arg1) / 104) * 104 (signed, truncating).
+int32_t fn_00506740(int32_t arg1, int32_t arg2, int32_t arg3) {
+    // Locals cleared to zero before the call (only the low byte is written).
+    const uint8_t flag5 = 0;
+    const uint8_t flag6 = 0;
+    ext_00506270(arg1, arg2, arg3, arg3, flag5, flag6);
+
+    const int32_t diff = static_cast<int32_t>(static_cast<uint32_t>(arg2) - static_cast<uint32_t>(arg1));
+    const int32_t quotient = diff / 104;
+    const uint32_t scaled = static_cast<uint32_t>(quotient) * 104u;
+    return static_cast<int32_t>(static_cast<uint32_t>(arg3) + scaled);
+}
+} // namespace lift_0048CBD0
+} // namespace lift_00506740

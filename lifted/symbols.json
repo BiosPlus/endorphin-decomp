@@ -4717,11 +4717,25 @@
     "summary": "Clears the byte flag at +0x78; if the dword at +0x64 is nonzero, forwards the three stack arguments to ext_00530C00 on the child at +0x68; then calls ReleaseCapture.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044C070": {
+    "name": "sub_0044C070",
+    "class": "Unknown",
+    "signature": "void fn_0044C070(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044BFB0 (Unknown::forwardFlagsAndReleaseCapture_0044BFB0).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044C0D0": {
     "name": "Unknown::ReleaseChildThenForward",
     "class": "Unknown",
     "signature": "void fn_0044C0D0(void* self)",
     "summary": "If the child object at +0x64 is non-null, invoke its vtable slot 2 (offset 0x08) with it as `this`; then forward to the MFC80 thunk ext_006A5EA8.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044C130": {
+    "name": "sub_0044C130",
+    "class": "Unknown",
+    "signature": "void fn_0044C130(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044BFB0 (Unknown::forwardFlagsAndReleaseCapture_0044BFB0).",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
   "0x0044C230": {
@@ -16574,6 +16588,12 @@
     "signature": "extern \"C\" void* __fastcall fn_00506180(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00506090 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00506740": {
+    "name": "sub_00506740",
+    "signature": "int32_t fn_00506740(int32_t arg1, int32_t arg2, int32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x0048CBD0 (ComputeStrideOffset_0048CBD0).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
   "0x00506810": {
     "name": "sub_00506810",

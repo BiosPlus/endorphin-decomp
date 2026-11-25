@@ -1,0 +1,13 @@
+{
+  "va": "0x00506740",
+  "size": 85,
+  "orig_symbol": "sub_00506740",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "sub_00506740",
+  "signature": "int32_t fn_00506740(int32_t arg1, int32_t arg2, int32_t arg3)",
+  "summary": "Auto-lifted identical-shape clone of 0x0048CBD0 (ComputeStrideOffset_0048CBD0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T02:09:31Z"
+}
