@@ -179,3 +179,27 @@ void sub_007F4A60(float* dst, const float* src) {
     }
 }
 } // namespace lift_007F4A60
+
+// [0x007FC490]
+namespace lift_007FC490 {
+// @name Unknown::TransformVec3ByMatrix
+// @summary Computes out[i] = m[i]*v0 + m[i+4]*v1 + m[i+8]*v2 for i in 0..2 (3-vector times 4-stride matrix).
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x10 float field_0x10
+// @field Unknown +0x14 float field_0x14
+// @field Unknown +0x18 float field_0x18
+// @field Unknown +0x20 float field_0x20
+// @field Unknown +0x24 float field_0x24
+// @field Unknown +0x28 float field_0x28
+void Unknown_TransformVec3ByMatrix(const float* m, const float* v, float* out) {
+    const float v0 = v[0];
+    const float v1 = v[1];
+    const float v2 = v[2];
+
+    out[0] = m[0] * v0 + m[4] * v1 + m[8] * v2;
+    out[1] = m[1] * v0 + m[5] * v1 + m[9] * v2;
+    out[2] = m[2] * v0 + m[6] * v1 + m[10] * v2;
+}
+} // namespace lift_007FC490

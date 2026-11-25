@@ -59218,6 +59218,13 @@
     "summary": "Returns the 3-component dot product of two float vectors (y and x terms summed first, then z).",
     "lifted_path": "lifted/leaf/tiny_7F0000.cpp"
   },
+  "0x007FC490": {
+    "name": "Unknown::TransformVec3ByMatrix",
+    "class": "Unknown",
+    "signature": "void Unknown_TransformVec3ByMatrix(const float* m, const float* v, float* out)",
+    "summary": "Computes out[i] = m[i]*v0 + m[i+4]*v1 + m[i+8]*v2 for i in 0..2 (3-vector times 4-stride matrix).",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
   "0x00802D40": {
     "name": "sub_00802D40",
     "signature": "void __thiscall sub_00802D40(uintptr_t ecx)",
