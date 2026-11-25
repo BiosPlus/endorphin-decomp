@@ -23731,6 +23731,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00536CE0 (OglRenderer::vfunc_91).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00544C70": {
+    "name": "SnapTranslateTool::vfunc_18_off_98",
+    "class": "SnapTranslateTool",
+    "signature": "inline Fn vslot(void* obj, std::size_t index)",
+    "summary": "Forwards (a, b) to the object at this-0x10 (vslot 18), or, when the flag at +0x1c9 is set, first queries it (vslot 50) with a zeroed float[4] out-vector; on success it sets flag +0x1c8 and notifies it (vslot 19) with that vector.",
+    "lifted_path": "lifted/classes/SnapTranslateTool.cpp"
+  },
   "0x00544CE0": {
     "name": "SnapTranslateTool::vfunc_16",
     "class": "SnapTranslateTool",

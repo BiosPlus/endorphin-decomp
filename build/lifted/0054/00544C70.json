@@ -1,0 +1,28 @@
+{
+  "va": "0x00544C70",
+  "size": 111,
+  "orig_symbol": "SnapTranslateTool::vfunc_18_off_98",
+  "src_path": "src/classes/SnapTranslateTool.cpp",
+  "lifted_path": "lifted/classes/SnapTranslateTool.cpp",
+  "name": "SnapTranslateTool::vfunc_18_off_98",
+  "class": "SnapTranslateTool",
+  "signature": "inline Fn vslot(void* obj, std::size_t index)",
+  "summary": "Forwards (a, b) to the object at this-0x10 (vslot 18), or, when the flag at +0x1c9 is set, first queries it (vslot 50) with a zeroed float[4] out-vector; on success it sets flag +0x1c8 and notifies it (vslot 19) with that vector.",
+  "fields": [
+    {
+      "class": "SnapTranslateTool",
+      "offset": "+0x1C8",
+      "type": "uint8_t",
+      "name": "field_0x1c8"
+    },
+    {
+      "class": "SnapTranslateTool",
+      "offset": "+0x1C9",
+      "type": "uint8_t",
+      "name": "field_0x1c9"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:05:14Z"
+}

@@ -72,3 +72,44 @@ uint32_t __thiscall fn_00544D30(void* self, uint32_t arg1, uint32_t arg2) {
     return 1;
 }
 } // namespace lift_00544D30
+
+// [0x00544C70]
+namespace lift_00544C70 {
+// @name SnapTranslateTool::vfunc_18_off_98
+// @class SnapTranslateTool
+// @summary Forwards (a, b) to the object at this-0x10 (vslot 18), or, when the flag at +0x1c9 is set, first queries it (vslot 50) with a zeroed float[4] out-vector; on success it sets flag +0x1c8 and notifies it (vslot 19) with that vector.
+// @field SnapTranslateTool +0x1c8 uint8_t field_0x1c8
+// @field SnapTranslateTool +0x1c9 uint8_t field_0x1c9
+// Note: the function reads the object pointer at this-0x10 (not a declared field) and dispatches through its vtable.
+
+namespace lift_00544C70 {
+
+using VSlotVoidAB = void (*)(void* self, uint32_t a, uint32_t b);
+using VSlotBoolAOut = bool (*)(void* self, uint32_t a, float* out);
+using VSlotVoidOut = void (*)(void* self, float* out);
+
+// Fetch function pointer for vtable slot `index` of `obj`.
+template <typename Fn>
+inline Fn vslot(void* obj, std::size_t index) {
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    return reinterpret_cast<Fn>(vtbl[index]);
+}
+
+void __thiscall fn_00544C70(void* self, uint32_t a, uint32_t b) {
+    float out[4] = {0.0f, 0.0f, 0.0f, 0.0f};
+
+    void* target = lift_field<void*>(self, -0x10);
+
+    if (lift_field<uint8_t>(self, 0x1c9) == 0) {
+        vslot<VSlotVoidAB>(target, 18)(target, a, b);
+        return;
+    }
+
+    if (vslot<VSlotBoolAOut>(target, 50)(target, a, out)) {
+        lift_field<uint8_t>(self, 0x1c8) = 1;
+        vslot<VSlotVoidOut>(target, 19)(target, out);
+    }
+}
+
+} // namespace lift_00544C70
+} // namespace lift_00544C70
