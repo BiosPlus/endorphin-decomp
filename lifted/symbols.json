@@ -14931,6 +14931,13 @@
     "summary": "Forwards the call to virtual slot 7 (+0x1c) of the object at this-\u003e+0x8-\u003e+0x14-\u003e+0x34 and returns its result.",
     "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
   },
+  "0x004F9E60": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_70",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "extern \"C\" bool __thiscall fn_004F9E60(void* self)",
+    "summary": "Returns true when this mode's virtual check (slot 39) passes and the object obtained via slot 45 of the chain at +0x8 -\u003e +0x14 -\u003e +0x30 has field +0x38 equal to 6.",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
   "0x004FA170": {
     "name": "VMCSModes::DefaultImplementation::vfunc_106",
     "class": "VMCSModes::DefaultImplementation",

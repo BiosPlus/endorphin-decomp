@@ -249,3 +249,43 @@ BOOLEAN fn_004FA2B0(void* self) {
     return (diff >> 2) != 0;
 }
 } // namespace lift_004FA2B0
+
+// [0x004F9E60]
+namespace lift_004F9E60 {
+// @name VMCSModes::DefaultImplementation::vfunc_70
+// @class VMCSModes::DefaultImplementation
+// @summary Returns true when this mode's virtual check (slot 39) passes and the object obtained via slot 45 of the chain at +0x8 -> +0x14 -> +0x30 has field +0x38 equal to 6.
+// @field VMCSModes::DefaultImplementation +0x08 void* field_0x08
+
+// Callee at 0x004F9E60's chain: virtual slot 45 (offset 0xB4) on the object at ((this->field_0x08)->+0x14)->+0x30.
+// Virtual slot 39 (offset 0x9C) on this.
+
+extern bool __thiscall fn_004F9E60(void* self) {
+    // Load delegate chain: this->field_0x08 -> +0x14 -> +0x30.
+    void* d8 = lift_field<void*>(self, 0x08);
+    void* d14 = lift_field<void*>(d8, 0x14);
+    void* obj = lift_field<void*>(d14, 0x30);
+
+    // Virtual call slot 45 (offset 0xB4) on obj, thiscall with this = obj.
+    void* vtbl = lift_field<void*>(obj, 0);
+    void* slot45 = lift_field<void*>(vtbl, 0xB4);
+    using Slot45Fn = void* (__thiscall*)(void* self);
+    void* result = reinterpret_cast<Slot45Fn>(slot45)(obj);
+
+    // Virtual call slot 39 (offset 0x9C) on self, thiscall with this = self.
+    void* selfVtbl = lift_field<void*>(self, 0);
+    void* slot39 = lift_field<void*>(selfVtbl, 0x9C);
+    using Slot39Fn = uint32_t (__thiscall*)(void* self);
+    uint32_t check = reinterpret_cast<Slot39Fn>(slot39)(self);
+
+    if (check == 0) {
+        return false;
+    }
+    if (result == nullptr) {
+        return false;
+    }
+    // Field +0x38 of the object returned by slot 45 must equal 6.
+    uint32_t state = lift_field<uint32_t>(result, 0x38);
+    return state == 6;
+}
+} // namespace lift_004F9E60

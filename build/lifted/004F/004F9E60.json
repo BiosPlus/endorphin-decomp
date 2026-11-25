@@ -1,0 +1,22 @@
+{
+  "va": "0x004F9E60",
+  "size": 61,
+  "orig_symbol": "VMCSModes::DefaultImplementation::vfunc_70",
+  "src_path": "src/VMCSModes/DefaultImplementation.cpp",
+  "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp",
+  "name": "VMCSModes::DefaultImplementation::vfunc_70",
+  "class": "VMCSModes::DefaultImplementation",
+  "signature": "extern \"C\" bool __thiscall fn_004F9E60(void* self)",
+  "summary": "Returns true when this mode's virtual check (slot 39) passes and the object obtained via slot 45 of the chain at +0x8 -\u003e +0x14 -\u003e +0x30 has field +0x38 equal to 6.",
+  "fields": [
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:56:51Z"
+}
