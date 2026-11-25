@@ -13552,6 +13552,12 @@
     "summary": "Loads the inner range pointer from self, validates its cur/end fields (cur must not exceed end, else invalid-parameter handler), then continues at 0x004C21A0 (outside the decoded span).",
     "lifted_path": "lifted/templates/SequenceType.cpp"
   },
+  "0x004C2230": {
+    "name": "storePairWithStaticObject",
+    "signature": "void storePairWithStaticObject(uint32_t* dst, uint32_t value)",
+    "summary": "Stores the value into dst[0], then stores the address returned by the one-time static object initializer into dst[1].",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C2300": {
     "name": "ValuePtrArrayObject::vfunc_0",
     "class": "ValuePtrArrayObject",

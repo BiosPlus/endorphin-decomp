@@ -350,3 +350,16 @@ void* fn_004C1CC0() {
     return &mem_00AE3054;
 }
 } // namespace lift_004C1CC0
+
+// [0x004C2230]
+namespace lift_004C2230 {
+// @name storePairWithStaticObject
+// @summary Stores the value into dst[0], then stores the address returned by the one-time static object initializer into dst[1].
+extern void* ext_004C1CC0(void);
+
+void storePairWithStaticObject(uint32_t* dst, uint32_t value) {
+    uint32_t staticPtr = (uint32_t)(uintptr_t)ext_004C1CC0();
+    dst[0] = value;
+    dst[1] = staticPtr;
+}
+} // namespace lift_004C2230

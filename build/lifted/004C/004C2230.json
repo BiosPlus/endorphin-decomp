@@ -1,0 +1,13 @@
+{
+  "va": "0x004C2230",
+  "size": 30,
+  "orig_symbol": "sub_004C2230",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "storePairWithStaticObject",
+  "signature": "void storePairWithStaticObject(uint32_t* dst, uint32_t value)",
+  "summary": "Stores the value into dst[0], then stores the address returned by the one-time static object initializer into dst[1].",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:32:24Z"
+}
