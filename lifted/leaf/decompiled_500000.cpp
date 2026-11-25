@@ -783,3 +783,28 @@ void fn_0050FDA0(void** a, void** b, void** c) {
     cmpSwap(a, b);
 }
 } // namespace lift_0050FDA0
+
+// [0x005086E0] sub_005086E0 (83 bytes)
+namespace lift_005086E0 {
+// Known callee 0x0065F440: sub_0065F440 (Stores address of mem_0093BF24 into field at offset +0x0.)
+extern void ext_0065F440(void* self);
+extern int mem_00924FF4;
+
+// @name Unknown::~Unknown_005086E0
+// @class Unknown
+// @summary Derived-class destructor body: sets vptr to 0x0094F8D4, destroys the std::string member at +0x04, then chains to the base destructor sub_0065F440.
+// @field Unknown +0x00 uint32_t vptr
+// @field Unknown +0x04 std::string field_0x04
+void fn_005086E0(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+
+    // Install the derived vtable pointer.
+    *reinterpret_cast<std::uint32_t*>(base + 0x00) = 0x0094F8D4u;
+
+    // Destroy the std::string member located at +0x04.
+    reinterpret_cast<std::string*>(base + 0x04)->~basic_string();
+
+    // Chain to the base-class teardown.
+    ext_0065F440(self);
+}
+} // namespace lift_005086E0

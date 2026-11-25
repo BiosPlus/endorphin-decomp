@@ -16525,6 +16525,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051C6D0 (NMData::RealChannel::vfunc_4).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x005086E0": {
+    "name": "Unknown::~Unknown_005086E0",
+    "class": "Unknown",
+    "signature": "void fn_005086E0(void* self)",
+    "summary": "Derived-class destructor body: sets vptr to 0x0094F8D4, destroys the std::string member at +0x04, then chains to the base destructor sub_0065F440.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00508740": {
     "name": "UnknownClass_0094F92C::UnknownClass_0094F92C",
     "class": "UnknownClass_0094F92C",
