@@ -9,6 +9,7 @@
 // Recovered field layout for HandleGraphic:
 namespace lifted_layout {
 struct HandleGraphic_Fields {
+    // +0x0   uint32_t                 vtable  (evidence: 0x005528E0)
     // +0x4   float                    field_0x04  (evidence: 0x005528D0)
     // +0x8   float                    field_0x08  (evidence: 0x005528D0)
     // +0xC   float                    field_0x0c  (evidence: 0x005528D0)

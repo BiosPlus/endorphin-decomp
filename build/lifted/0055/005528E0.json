@@ -1,0 +1,22 @@
+{
+  "va": "0x005528E0",
+  "size": 14,
+  "orig_symbol": "sub_005528E0",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "HandleGraphic::setVtableAndReset",
+  "class": "HandleGraphic",
+  "signature": "void* __fastcall fn_005528E0(void* self)",
+  "summary": "Writes the vtable pointer 0x00957534 into the object's first dword, calls HandleGraphic::vfunc_1 on it, and returns self.",
+  "fields": [
+    {
+      "class": "HandleGraphic",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:23:28Z"
+}

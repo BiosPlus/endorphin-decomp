@@ -4,19 +4,6 @@
 #include <string>
 
 #include <string>
-namespace lift_005528E0 {
-// Known callee 0x005528D0: HandleGraphic::vfunc_1 (Sets the floats at +0x04 and +0x08 to 1.0f, then tail-calls SubObject::resetScaleAndIndex on the same object.)
-extern void __fastcall fn_005528D0(void* self);
-
-// @name SetVtableAndInitGraphic
-// @summary Stores constant vtable-like word at +0x00 of self, calls fn_005528D0(self), returns self.
-// @field self +0x00 uint32_t field_0x00 (constant 0x00957534 stored here)
-void* fn_005528E0(void* self) {
-    lift_field<uint32_t>(self, 0x00) = 0x00957534u;
-    fn_005528D0(self);
-    return self;
-}
-} // namespace lift_005528E0
 #include <bit>
 #include <cstring>
 #include <cstdint>
@@ -1260,3 +1247,19 @@ void* __thiscall fn_0055C490(void* self, const void* key) {
 }
 } // namespace lift_00472730
 } // namespace lift_0055C490
+
+// [0x005528E0] sub_005528E0 (14 bytes)
+namespace lift_005528E0 {
+// Known callee 0x005528D0: HandleGraphic::vfunc_1 (Sets the floats at +0x04 and +0x08 to 1.0f, then tail-calls SubObject::resetScaleAndIndex on the same object.)
+extern void __fastcall ext_005528D0(void* self);
+
+// @name HandleGraphic::setVtableAndReset
+// @class HandleGraphic
+// @summary Writes the vtable pointer 0x00957534 into the object's first dword, calls HandleGraphic::vfunc_1 on it, and returns self.
+// @field HandleGraphic +0x00 uint32_t vtable
+void* __fastcall fn_005528E0(void* self) {
+    *reinterpret_cast<uint32_t*>(self) = 0x00957534u;
+    ext_005528D0(self);
+    return self;
+}
+} // namespace lift_005528E0

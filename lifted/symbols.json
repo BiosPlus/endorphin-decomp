@@ -23026,6 +23026,13 @@
     "summary": "Sets the floats at +0x04 and +0x08 to 1.0f, then tail-calls SubObject::resetScaleAndIndex on the same object.",
     "lifted_path": "lifted/classes/HandleGraphic.cpp"
   },
+  "0x005528E0": {
+    "name": "HandleGraphic::setVtableAndReset",
+    "class": "HandleGraphic",
+    "signature": "void* __fastcall fn_005528E0(void* self)",
+    "summary": "Writes the vtable pointer 0x00957534 into the object's first dword, calls HandleGraphic::vfunc_1 on it, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x005528F0": {
     "name": "FillParityBlendTable_005528F0",
     "signature": "uint32_t fn_005528F0(uint32_t ecx)",
