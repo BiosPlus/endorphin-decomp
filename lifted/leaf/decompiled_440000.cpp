@@ -1945,3 +1945,33 @@ uint32_t __thiscall sub_00448280(uint32_t self, uint32_t arg0) {
     return self;
 }
 } // namespace lift_00448280
+
+// [0x0044C0D0]
+namespace lift_0044C0D0 {
+// @name sub_0044C0D0
+// @summary Releases/invokes vtable+0x8 on field_0x64 if non-null, then tail-calls MFC80 ord_1903
+// @field unknown +0x64 void* field_0x64
+
+
+extern void ext_006A5EA8(void);
+extern void ext_006A663A(void);
+extern void ext_006A60D0(void);
+extern void ext_006A5E00(void);
+extern uint32_t mem_00925650;
+
+extern void __thiscall fn_0044C0D0(void* self) {
+    (void)&ext_006A663A;
+    (void)&ext_006A60D0;
+    (void)&ext_006A5E00;
+    (void)mem_00925650;
+
+    void* obj = lift_field<void*>(self, 0x64);
+    if (obj != nullptr) {
+        void** vtable = *reinterpret_cast<void***>(obj);
+        using Vfunc = void(__thiscall*)(void*);
+        auto fn = reinterpret_cast<Vfunc>(vtable[2]);
+        fn(obj);
+    }
+    ext_006A5EA8();
+}
+} // namespace lift_0044C0D0

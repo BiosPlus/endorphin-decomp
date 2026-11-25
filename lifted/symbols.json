@@ -4850,6 +4850,12 @@
     "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_1361.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0044C0D0": {
+    "name": "sub_0044C0D0",
+    "signature": "extern \"C\" void __thiscall fn_0044C0D0(void* self)",
+    "summary": "Releases/invokes vtable+0x8 on field_0x64 if non-null, then tail-calls MFC80 ord_1903",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044C230": {
     "name": "Unknown::ForwardPairToEmbeddedVirtual0",
     "class": "Unknown",
