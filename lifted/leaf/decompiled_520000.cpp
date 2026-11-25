@@ -1493,3 +1493,28 @@ void* fn_0052F340(void* self) {
     return self;
 }
 } // namespace lift_0052F340
+
+// [0x0052F3C0] sub_0052F3C0 (81 bytes)
+namespace lift_0052F3C0 {
+// Known callee 0x0053B240: Unknown::initAnimationDerived_0053B240 (Base-initializes self, installs three 32-bit vtable pointers (+0x00, +0x14, +0x18), zeroes +0x1C/+0x20/+0x34/+0x38, then calls Animation::vfunc_29 to reset state; returns self.)
+extern void* __fastcall ext_0053B240(void* self);
+// Known callee 0x00539660: QuadricRenderer::ctor (Initializes base object, sets vtable and float parameters, and creates/configures a GLU quadric.)
+extern void* __fastcall ext_00539660(void* self);
+
+// @name Unknown::ctor_0052F3C0
+// @class Unknown
+// @summary Constructs derived object: base init, sets two vtable pointers, then constructs embedded QuadricRenderer at +0x3C; returns self.
+// @field Unknown +0x00 void* vtable_primary
+// @field Unknown +0x14 void* vtable_secondary
+// @field Unknown +0x3C QuadricRenderer quadric
+void fn_0052F3C0(void* self) {
+    // The original MSVC EH frame (fs:[0] push/pop, scope index) is compiler
+    // scaffolding for the try region and has no portable equivalent; omitted.
+    ext_0053B240(self);
+
+    *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x00) = 0x953dfc;
+    *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x14) = 0x953df4;
+
+    ext_00539660(static_cast<uint8_t*>(self) + 0x3C);
+}
+} // namespace lift_0052F3C0

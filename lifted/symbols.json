@@ -10172,6 +10172,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005F0D40 (NMData::MagnetJointData::vfunc_59).",
     "lifted_path": "lifted/Commands/CreateTriggeredEventCommand.cpp"
   },
+  "0x0048E200": {
+    "name": "sub_0048E200",
+    "signature": "void* __thiscall fn_0048E200(void* self, uint32_t arg0, uint32_t arg1)",
+    "summary": "Initializes base object with vtable 0x0093E5B8, stores two arguments at +0x10/+0x14, and fetches a 32-bit value via ext_0046FD70 into +0x18.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048E270": {
     "name": "Unknown::InitWithArgsAndCaptureHigh",
     "class": "Unknown",
@@ -21186,6 +21192,13 @@
     "signature": "void fn_0052F3A0(void* self, DWORD arg1, DWORD arg2, DWORD arg3)",
     "summary": "Resets Null state: stores stack arg 3 at +0x08, clears +0x20 (DWORD) and +0x04 (BYTE).",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
+  },
+  "0x0052F3C0": {
+    "name": "Unknown::ctor_0052F3C0",
+    "class": "Unknown",
+    "signature": "void fn_0052F3C0(void* self)",
+    "summary": "Constructs derived object: base init, sets two vtable pointers, then constructs embedded QuadricRenderer at +0x3C; returns self.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
   "0x0052F420": {
     "name": "Primitives::Arrow::vfunc_13",
