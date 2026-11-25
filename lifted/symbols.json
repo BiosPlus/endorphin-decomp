@@ -27494,6 +27494,12 @@
     "summary": "Initializes and returns a pointer to the static singleton at 0x00B4355C.",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
+  "0x005B3DD0": {
+    "name": "getStaticObject_005B3DD0",
+    "signature": "void* fn_005B3DD0(void)",
+    "summary": "Lazily initializes and returns the static singleton object at 0x00B43564",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B4150": {
     "name": "Geometry::SphereType::vfunc_18",
     "class": "Geometry::SphereType",
