@@ -8,6 +8,7 @@
 // Recovered field layout for field_0x00:
 namespace lifted_layout {
 struct field_0x00_Fields {
+    // +0x0   DWORD                    field_0x00  (evidence: 0x004FFAC0) // CONFLICT: multiple definitions at +0x0
     // +0x0   int64_t                  field_0x00  (evidence: 0x006DAE00) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x006618A0) // CONFLICT: multiple definitions at +0x0
 };

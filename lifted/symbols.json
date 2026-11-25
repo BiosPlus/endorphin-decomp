@@ -17443,6 +17443,12 @@
     "summary": "Lazily initializes the static singleton at 0x00AEB28C (guarded by bit 0 of 0x00AEB290) and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
+  "0x004FFAC0": {
+    "name": "getStaticSingleton_004FFAC0",
+    "signature": "void* fn_004FFAC0()",
+    "summary": "One-time guarded initializer for the static object at 0x00AEB294; returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004FFB20": {
     "name": "getOrInitStaticSingleton_004FFB20",
     "signature": "void* fn_004FFB20()",
