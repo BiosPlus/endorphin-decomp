@@ -14842,6 +14842,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType\u003cImageExporter, int, ImageExporter::getEndFrame, 0\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004D2590": {
+    "name": "initStaticObjectOnce_004D2590",
+    "signature": "void* fn_004D2590()",
+    "summary": "One-time initializer for the static object at mem_00AE55B4; returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
+  },
   "0x004D2C70": {
     "name": "sub_004D2C70",
     "class": "Unknown",

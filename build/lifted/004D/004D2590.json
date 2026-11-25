@@ -1,0 +1,13 @@
+{
+  "va": "0x004D2590",
+  "size": 87,
+  "orig_symbol": "sub_004D2590",
+  "src_path": "src/leaf/decompiled_4D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4D0000.cpp",
+  "name": "initStaticObjectOnce_004D2590",
+  "signature": "void* fn_004D2590()",
+  "summary": "One-time initializer for the static object at mem_00AE55B4; returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:32:59Z"
+}

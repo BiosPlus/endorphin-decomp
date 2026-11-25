@@ -205,3 +205,25 @@ int FindNameTableIndex(const void* name) {
     return 4;
 }
 } // namespace lift_004D0B20
+
+// [0x004D2590] sub_004D2590 (87 bytes)
+namespace lift_004D2590 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AE55B8;
+extern DWORD mem_00AE55B4;
+
+// @name initStaticObjectOnce_004D2590
+// @summary One-time initializer for the static object at mem_00AE55B4; returns its address.
+// (No @class: free function.) (No @field: the function does not access any member offset of a class; it only touches globals mem_00AE55B8 and mem_00AE55B4.)
+void* fn_004D2590() {
+    // Original wraps this in an SEH frame (fs:[0] push/restore, try-level set to 0 around the call).
+    // The frame only guards the init call; it is dropped here as non-portable.
+    if ((mem_00AE55B8 & 1u) == 0) {
+        mem_00AE55B8 |= 1u;
+        ext_0067A670(&mem_00AE55B4, 0);
+        mem_00AE55B4 = 0x947B0Cu;
+    }
+    return &mem_00AE55B4;
+}
+} // namespace lift_004D2590
