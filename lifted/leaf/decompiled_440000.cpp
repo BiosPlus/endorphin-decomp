@@ -2458,3 +2458,35 @@ void* fn_00449C90(void* self, uint32_t arg) {
     return self;
 }
 } // namespace lift_00449C90
+
+// [0x0044B4E0]
+namespace lift_0044B4E0 {
+// @name sub_0044B4E0
+// @summary Initializes a local MFC object with this, optionally notifies global 0x00ACDB40, and invokes vtable+0x154 on field_0x64 if non-null.
+// @field Unknown +0x64 void* field_0x64
+
+extern void* mem_00ACDB40;
+
+extern void __thiscall ext_004339B0(void* self, void* arg);
+extern void __thiscall ext_006A5ECC(void* self, void* arg);
+extern void __thiscall ext_006A5EBA(void* self);
+
+extern void __thiscall fn_0044B4E0(uint8_t* self) {
+    if (mem_00ACDB40 != nullptr) {
+        ext_004339B0(mem_00ACDB40, self);
+    }
+
+    uint8_t local_obj[0x54];
+    ext_006A5ECC(local_obj, self);
+
+    void* obj = *reinterpret_cast<void**>(self + 0x64);
+    if (obj != nullptr) {
+        using VFunc = void(__thiscall*)(void*);
+        uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(obj);
+        VFunc fn = reinterpret_cast<VFunc>(vtable[0x154 / sizeof(uintptr_t)]);
+        fn(obj);
+    }
+
+    ext_006A5EBA(local_obj);
+}
+} // namespace lift_0044B4E0

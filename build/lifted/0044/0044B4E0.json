@@ -1,0 +1,21 @@
+{
+  "va": "0x0044B4E0",
+  "size": 113,
+  "orig_symbol": "sub_0044B4E0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "sub_0044B4E0",
+  "signature": "extern \"C\" void __thiscall fn_0044B4E0(uint8_t* self)",
+  "summary": "Initializes a local MFC object with this, optionally notifies global 0x00ACDB40, and invokes vtable+0x154 on field_0x64 if non-null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "void*",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:35:45Z"
+}
