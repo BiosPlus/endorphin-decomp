@@ -1,0 +1,22 @@
+{
+  "va": "0x00708FF0",
+  "size": 65,
+  "orig_symbol": "sub_00708FF0",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::InvokeOnMatchingSubObjects",
+  "class": "Unknown",
+  "signature": "void fn_00708FF0(void* self, void* other)",
+  "summary": "For each matching sub-object of `other`, calls this's virtual slot 0xF4 with that sub-object.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* vtable (read to dispatch the virtual call at slot",
+      "name": "0xF4)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:46:57Z"
+}

@@ -2068,3 +2068,32 @@ extern void* fn_00708D10(void* self, int32_t target_index) {
     return nullptr;
 }
 } // namespace lift_00708D10
+
+// [0x00708FF0] sub_00708FF0 (65 bytes)
+namespace lift_00708FF0 {
+// Known callee 0x00708D70: Unknown::CountSubObjectsMatching0x40 (Counts entries in a pointer array at +0xD0 (length +0xC0) for which CompareSubObjectWith0x40 returns nonzero.)
+extern uint32_t ext_00708D70(void* self);
+// Known callee 0x00708D10: Unknown::FindNthMatchingItem (Returns the Nth item in the array at +0xd0 for which CompareSubObjectWith0x40 returns non-zero, or nullptr if not found.)
+extern void* ext_00708D10(void* self, int32_t target_index);
+
+// @name Unknown::InvokeOnMatchingSubObjects
+// @class Unknown
+// @summary For each matching sub-object of `other`, calls this's virtual slot 0xF4 with that sub-object.
+// @field Unknown +0x00 void* vtable (read to dispatch the virtual call at slot 0xF4)
+void fn_00708FF0(void* self, void* other) {
+    if (other == nullptr) {
+        return;
+    }
+
+    const int32_t count = static_cast<int32_t>(ext_00708D70(other));
+    for (int32_t i = 0; i < count; ++i) {
+        void* item = ext_00708D10(other, i);
+        if (item != nullptr) {
+            void** vtbl = lift_field<void**>(self, 0);
+            // Slot 0xF4 in the original 32-bit vtable layout (4-byte entries) => index 61.
+            auto fn = reinterpret_cast<void (*)(void*, void*)>(vtbl[0xF4 / 4]);
+            fn(self, item);
+        }
+    }
+}
+} // namespace lift_00708FF0

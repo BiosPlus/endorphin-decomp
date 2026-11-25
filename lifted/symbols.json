@@ -60520,6 +60520,13 @@
     "summary": "Counts entries in a pointer array at +0xD0 (length +0xC0) for which CompareSubObjectWith0x40 returns nonzero.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00708FF0": {
+    "name": "Unknown::InvokeOnMatchingSubObjects",
+    "class": "Unknown",
+    "signature": "void fn_00708FF0(void* self, void* other)",
+    "summary": "For each matching sub-object of `other`, calls this's virtual slot 0xF4 with that sub-object.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x007094A0": {
     "name": "Unknown::FindTailAcceptedByGlobal",
     "class": "Unknown",
