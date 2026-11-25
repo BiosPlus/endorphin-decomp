@@ -45622,6 +45622,12 @@
     "summary": "Returns a pointer to the last 8-byte element of the vector with MSVC8 checked-iterator bounds validation.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067F960": {
+    "name": "GetLastElementOrZero",
+    "signature": "extern \"C\" uint32_t mem_00B5A124;  // end (also [mem_00B5A11C + 8]) static void invalid_parameter_noinfo()",
+    "summary": "Returns the last 4-byte element of the global array, or 0 if empty; checked bounds.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067F9D0": {
     "name": "Unknown::notifyAndPopBack",
     "class": "Unknown",

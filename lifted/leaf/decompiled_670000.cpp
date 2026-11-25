@@ -1630,3 +1630,45 @@ void fn_0067DBF0(float* self, float angle) {
     self[0x20 / 4] = 1.0f;
 }
 } // namespace lift_0067DBF0
+
+// [0x0067F960] sub_0067F960 (104 bytes)
+namespace lift_0067F960 {
+// Global container bounds: begin/last pointers of a 4-byte-element array.
+extern uint32_t mem_00B5A120;  // begin
+extern uint32_t mem_00B5A124;  // end (also [mem_00B5A11C + 8])
+
+// Stands in for MSVCR80!_invalid_parameter_noinfo (terminates on violation).
+static void invalid_parameter_noinfo() {
+    std::abort();
+}
+
+// @name GetLastElementOrZero
+// @summary Returns the last 4-byte element of the global array, or 0 if empty; checked bounds.
+uint32_t fn_0067F960(void) {
+    const uint32_t begin = mem_00B5A120;
+    if (begin == 0) {
+        return 0;
+    }
+
+    const uint32_t end = mem_00B5A124;
+    const int32_t count = static_cast<int32_t>(end - begin) >> 2;
+    if (count == 0) {
+        return 0;
+    }
+
+    if (begin > end) {
+        invalid_parameter_noinfo();
+    }
+
+    const uint32_t last = end - 4;
+    if (last > end || last < begin) {
+        invalid_parameter_noinfo();
+    }
+
+    if (last >= end) {
+        invalid_parameter_noinfo();
+    }
+
+    return *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(last));
+}
+} // namespace lift_0067F960
