@@ -1,0 +1,28 @@
+{
+  "va": "0x006B0E30",
+  "size": 69,
+  "orig_symbol": "sub_006B0E30",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::clearSelectionAndScrollCaret",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __thiscall fn_006B0E30(void* self, uint32_t arg)",
+  "summary": "If the flag at +0x60 is clear, clear the edit selection and scroll the caret into view; otherwise clear the flag.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "hwnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "BYTE",
+      "name": "flag"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:22:31Z"
+}

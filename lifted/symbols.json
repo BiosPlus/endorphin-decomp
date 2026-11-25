@@ -44620,6 +44620,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006B0C60 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B0E30": {
+    "name": "Unknown::clearSelectionAndScrollCaret",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __thiscall fn_006B0E30(void* self, uint32_t arg)",
+    "summary": "If the flag at +0x60 is clear, clear the edit selection and scroll the caret into view; otherwise clear the flag.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B0F40": {
     "name": "GWCPropInPlaceEdit::vfunc_1",
     "class": "GWCPropInPlaceEdit",

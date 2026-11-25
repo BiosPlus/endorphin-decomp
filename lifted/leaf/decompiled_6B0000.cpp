@@ -941,3 +941,36 @@ extern int32_t __cdecl sub_006B12F0(double x) {
     return (x > 0.0) ? n + 1 : n - 1;
 }
 } // namespace lift_006B12F0
+
+// [0x006B0E30] sub_006B0E30 (69 bytes)
+namespace lift_006B0E30 {
+// Known callee 0x006A663A: thunk_MFC80_ord_4888 (IAT jump thunk forwarding to MFC80!ord_4888.)
+extern void ext_006A663A();
+// IAT slot holding USER32!SendMessageA
+extern int mem_00925694;
+
+// @name Unknown::clearSelectionAndScrollCaret
+// @class Unknown
+// @summary If the flag at +0x60 is clear, clear the edit selection and scroll the caret into view; otherwise clear the flag.
+// @field Unknown +0x20 HWND hwnd
+// @field Unknown +0x60 BYTE flag
+extern void __thiscall fn_006B0E30(void* self, uint32_t arg) {
+    // The original pushes `arg` before this call; the stub signature
+    // (void(void)) cannot carry it, so the argument is not forwarded here.
+    ext_006A663A();
+
+    if (lift_field<BYTE>(self, 0x60) != 0) {
+        lift_field<BYTE>(self, 0x60) = 0;
+        return;
+    }
+
+    using SendMessageAFn = LRESULT(__stdcall*)(HWND, UINT, WPARAM, LPARAM);
+    auto sendMessageA = reinterpret_cast<SendMessageAFn>(static_cast<uintptr_t>(mem_00925694));
+    HWND hwnd = lift_field<HWND>(self, 0x20);
+
+    // EM_SETSEL (0x00B1), wParam = -1 clears the selection.
+    sendMessageA(hwnd, 0x00B1, static_cast<WPARAM>(-1), 0);
+    // EM_SCROLLCARET (0x00B7).
+    sendMessageA(hwnd, 0x00B7, 0, 0);
+}
+} // namespace lift_006B0E30
