@@ -1288,3 +1288,60 @@ extern int32_t __fastcall fn_006BC3F0(void* self, void* edx, int32_t type) {
     return ext_006E9610(inner, edx, type);
 }
 } // namespace lift_006BC3F0
+
+// [0x006BC3A0] sub_006BC3A0 (16 bytes)
+namespace lift_006BC3A0 {
+// @name sub_006BC3A0
+// @summary Auto-lifted identical-shape clone of 0x006BC3F0 (ForwardCountItemsByType).
+namespace lift_006BC3F0 {
+// @name ForwardCountItemsByType
+// @class Unknown
+// @summary Forwards a type filter to countItemsByType on the object pointed to by self+0x4.
+// @field Unknown +0x04 void* field_0x04
+
+extern int32_t __fastcall ext_006E9430(void* self, void* edx, int32_t type);
+
+extern int32_t __fastcall fn_006BC3A0(void* self, void* edx, int32_t type) {
+    void* inner = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x04);
+    return ext_006E9430(inner, edx, type);
+}
+} // namespace lift_006BC3F0
+} // namespace lift_006BC3A0
+
+// [0x006BC400] sub_006BC400 (16 bytes)
+namespace lift_006BC400 {
+// @name sub_006BC400
+// @summary Auto-lifted identical-shape clone of 0x006BC3F0 (ForwardCountItemsByType).
+namespace lift_006BC3F0 {
+// @name ForwardCountItemsByType
+// @class Unknown
+// @summary Forwards a type filter to countItemsByType on the object pointed to by self+0x4.
+// @field Unknown +0x04 void* field_0x04
+
+extern int32_t __fastcall ext_006E9680(void* self, void* edx, int32_t type);
+
+extern int32_t __fastcall fn_006BC400(void* self, void* edx, int32_t type) {
+    void* inner = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x04);
+    return ext_006E9680(inner, edx, type);
+}
+} // namespace lift_006BC3F0
+} // namespace lift_006BC400
+
+// [0x006BC430] sub_006BC430 (16 bytes)
+namespace lift_006BC430 {
+// @name sub_006BC430
+// @summary Auto-lifted identical-shape clone of 0x006BC3F0 (ForwardCountItemsByType).
+namespace lift_006BC3F0 {
+// @name ForwardCountItemsByType
+// @class Unknown
+// @summary Forwards a type filter to countItemsByType on the object pointed to by self+0x4.
+// @field Unknown +0x04 void* field_0x04
+
+extern int32_t __fastcall ext_006E97C0(void* self, void* edx, int32_t type);
+
+extern int32_t __fastcall fn_006BC430(void* self, void* edx, int32_t type) {
+    void* inner = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x04);
+    return ext_006E97C0(inner, edx, type);
+}
+} // namespace lift_006BC3F0
+} // namespace lift_006BC430
