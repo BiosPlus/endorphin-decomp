@@ -4,10 +4,181 @@
   "orig_symbol": "sub_004CF910",
   "src_path": "src/leaf/decompiled_4C0000.cpp",
   "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
-  "name": "initStaticObjectOnce_004CF910",
-  "signature": "DWORD initStaticObjectOnce_004CF910(void)",
-  "summary": "One-time initializer for the global object at mem_00AE4B84; sets guard bit 0 of mem_00AE4B88, runs ext_0067A670 on the object, then stores vtable 0x9473D4 into it.",
+  "name": "sub_004CCDE0",
+  "class": "NMData::RealChannel",
+  "signature": "void __thiscall fn_004CCDE0(uint8_t* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
+  "fields": [
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "end"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x15C",
+      "type": "int32_t",
+      "name": "field_0x15c"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x160",
+      "type": "int32_t",
+      "name": "field_0x160"
+    },
+    {
+      "class": "Vec3",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "x"
+    },
+    {
+      "class": "Vec3",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "y"
+    },
+    {
+      "class": "Vec3",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "z"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint8",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x15",
+      "type": "uint8",
+      "name": "field_0x15"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x16",
+      "type": "uint8",
+      "name": "field_0x16"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "float",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "float",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x0",
+      "type": "uint8_t",
+      "name": "field_0x00[0x1C]"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x1C",
+      "type": "int32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "str"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "bool",
+      "name": "flag"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x17C",
+      "type": "uint8_t",
+      "name": "field_0x17C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18C",
+      "type": "float",
+      "name": "field_0x18C"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T02:32:25Z"
+  "lifted_at": "2026-11-25T02:32:34Z"
 }
