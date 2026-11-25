@@ -1,0 +1,28 @@
+{
+  "va": "0x00420680",
+  "size": 108,
+  "orig_symbol": "sub_00420680",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "TreeIterator::increment",
+  "class": "TreeIterator",
+  "signature": "void __thiscall sub_00420680(uint32_t self)",
+  "summary": "Advances a red-black tree iterator to the next in-order node.",
+  "fields": [
+    {
+      "class": "TreeIterator",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "container"
+    },
+    {
+      "class": "TreeIterator",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "node"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T05:05:06Z"
+}
