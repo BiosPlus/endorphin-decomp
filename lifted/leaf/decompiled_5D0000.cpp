@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_5D0000.cpp
 #include "lift_compat.h"
+#include <cstdint>
 
 // [0x005D06D0] sub_005D06D0 (14 bytes)
 namespace lift_005D06D0 {
@@ -181,3 +182,31 @@ void fn_005D1460(void* self, float arg) {
     ext_005D1430(self, scaled);
 }
 } // namespace lift_005D1460
+
+// [0x005D05B0]
+namespace lift_005D05B0 {
+extern std::uint8_t mem_00B3F200;
+
+// @name Unknown::wrapVirtualFloatCall_005D05B0
+// @class Unknown
+// @summary Sets global flag mem_00B3F200, calls virtual slot 1 on the object at this+0x270 (returns float), clears the flag, and returns the float.
+// @field Unknown +0x26C void* field_0x26C
+
+// The original MSVC SEH frame (fs:[0] push/restore, state slot) is bookkeeping
+// for the flag set/clear around the call and is elided here; the observable
+// behavior is preserved.
+float sub_005D05B0(std::uint8_t* self) {
+    mem_00B3F200 = 1;
+
+    // lea eax,[ecx+0x26c]; mov ecx,[eax+4]  -> subobject pointer at this+0x270
+    std::uint8_t* sub = *reinterpret_cast<std::uint8_t**>(self + 0x26C + 4);
+
+    // mov edx,[ecx]; mov eax,[edx+4]; call eax  -> vtable slot 1, thiscall with this=sub
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    using VirtualFloatFn = float (*)(void* self_);
+    float result = reinterpret_cast<VirtualFloatFn>(vtbl[1])(sub);
+
+    mem_00B3F200 = 0;
+    return result;
+}
+} // namespace lift_005D05B0
