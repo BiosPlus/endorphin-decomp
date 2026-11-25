@@ -1797,3 +1797,72 @@ int32_t __thiscall sub_00783940(void* self, int32_t first, int32_t second) {
     return 1;
 }
 } // namespace lift_00783940
+
+// [0x00783A80]
+namespace lift_00783A80 {
+extern void* fn_006A5C62(uint32_t size);
+extern void* fn_00782D00(void* self, uint32_t arg);
+
+extern void* mem_00B608DC;
+extern uint8_t mem_00AAF3B1;
+
+// @name getOrInitSingleton_00783A80
+// @summary Lazily allocates and initializes a 0x14-byte singleton at mem_00B608DC if mem_00AAF3B1 is non-zero.
+
+void* fn_00783A80(void) {
+    void* obj = mem_00B608DC;
+    if (obj == nullptr && mem_00AAF3B1 != 0) {
+        void* raw = fn_006A5C62(0x14);
+        if (raw != nullptr) {
+            obj = fn_00782D00(raw, 0x14);
+        } else {
+            obj = nullptr;
+        }
+        mem_00B608DC = obj;
+        mem_00AAF3B1 = 0;
+    }
+    return obj;
+}
+} // namespace lift_00783A80
+
+// [0x00785E00]
+namespace lift_00785E00 {
+// @name initDefaultParameters
+// @summary Initializes six 64-bit fields and two byte flags on the object, then tail-calls ext_007857F0.
+// @field Object +0x78 uint64_t field_0x78
+// @field Object +0x80 uint64_t field_0x80
+// @field Object +0x88 uint64_t field_0x88
+// @field Object +0x90 uint64_t field_0x90
+// @field Object +0x98 uint64_t field_0x98
+// @field Object +0xa0 uint64_t field_0xa0
+// @field Object +0xa8 uint8_t field_0xa8
+// @field Object +0xa9 uint8_t field_0xa9
+
+
+extern void __thiscall ext_007857F0(void* self);
+
+extern void __thiscall sub_00785E00(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    constexpr uint32_t kLowA = 0x8d4fdf3bu;
+    constexpr uint32_t kHighA = 0x3f826e97u;
+    constexpr uint32_t kLowB = 0xd2f1a9fcu;
+    constexpr uint32_t kHighB = 0x3f70624du;
+
+    *reinterpret_cast<uint32_t*>(base + 0x78) = kLowA;
+    *reinterpret_cast<uint32_t*>(base + 0x7c) = kHighA;
+    *reinterpret_cast<uint32_t*>(base + 0x80) = kLowA;
+    *reinterpret_cast<uint32_t*>(base + 0x84) = kHighA;
+    *reinterpret_cast<uint32_t*>(base + 0x88) = kLowA;
+    *reinterpret_cast<uint32_t*>(base + 0x8c) = kHighA;
+    *reinterpret_cast<uint32_t*>(base + 0x90) = kLowA;
+    *reinterpret_cast<uint32_t*>(base + 0x94) = kHighA;
+    *reinterpret_cast<uint32_t*>(base + 0x98) = kLowB;
+    *reinterpret_cast<uint32_t*>(base + 0x9c) = kHighB;
+    *reinterpret_cast<uint32_t*>(base + 0xa0) = kLowA;
+    *reinterpret_cast<uint32_t*>(base + 0xa4) = kHighA;
+    *(base + 0xa8) = 0;
+    *(base + 0xa9) = 0;
+
+    ext_007857F0(self);
+}
+} // namespace lift_00785E00

@@ -1,0 +1,13 @@
+{
+  "va": "0x00783A80",
+  "size": 112,
+  "orig_symbol": "sub_00783A80",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "getOrInitSingleton_00783A80",
+  "signature": "void* fn_00783A80(void)",
+  "summary": "Lazily allocates and initializes a 0x14-byte singleton at mem_00B608DC if mem_00AAF3B1 is non-zero.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:29:53Z"
+}
