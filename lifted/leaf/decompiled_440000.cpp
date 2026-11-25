@@ -2156,3 +2156,43 @@ void fn_0044CEC0(void* self) {
     fn(sub, flag);
 }
 } // namespace lift_0044CEC0
+
+// [0x0044C460] sub_0044C460 (99 bytes)
+namespace lift_0044C460 {
+extern void ext__invalid_parameter_noinfo(void);
+
+// Addresses are 32-bit values on the target; dereference them through this helper.
+static inline uint32_t* as_ptr(uint32_t addr) {
+    return reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(addr));
+}
+
+// @name Vector::eraseRange
+// @class Vector
+// @summary Validates an owner/range pair, moves [last,end) down to first, shrinks end, and writes {first_or_owner, first} to out.
+// @field Vector +0x08 uint32_t field_0x08
+void fn_0044C460(void* self, uint32_t* out, uint32_t owner, uint32_t first,
+                 uint32_t owner_expected, uint32_t last) {
+    if (owner == 0 || owner != owner_expected) {
+        ext__invalid_parameter_noinfo();
+    }
+
+    uint32_t result_first = owner;
+
+    if (first != last) {
+        uint32_t end = lift_field<uint32_t>(self, 0x08);
+        uint32_t new_end = first + (end - last);
+
+        if (last != end) {
+            for (uint32_t src = last, dst = first; src != end; src += 4, dst += 4) {
+                *as_ptr(dst) = *as_ptr(src);
+            }
+            result_first = first;
+        }
+
+        lift_field<uint32_t>(self, 0x08) = new_end;
+    }
+
+    out[0] = result_first;
+    out[1] = first;
+}
+} // namespace lift_0044C460

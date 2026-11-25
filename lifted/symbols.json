@@ -5135,6 +5135,13 @@
     "summary": "Calls sub_0044C330 with six stack arguments, then returns the address a1 + 4*a2 (dword element a2 of array a1).",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044C460": {
+    "name": "Vector::eraseRange",
+    "class": "Vector",
+    "signature": "static inline uint32_t* as_ptr(uint32_t addr)",
+    "summary": "Validates an owner/range pair, moves [last,end) down to first, shrinks end, and writes {first_or_owner, first} to out.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044C4D0": {
     "name": "DWORD_RangeCopy_thiscall",
     "signature": "DWORD* __thiscall fn_0044C4D0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
