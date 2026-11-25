@@ -1282,6 +1282,8 @@ struct Unknown_Fields {
     // +0x3DC uint32_t                 field_0x3dc  (evidence: 0x006C0730)
     // +0x3E0 uint32_t                 field_0x3e0  (evidence: 0x004800A0)
     // +0x408 int32_t                  field_0x408  (evidence: 0x007155B0, 0x0071C250)
+    // +0x418 uint32_t*                vec_first  (evidence: 0x00463D00)
+    // +0x41C uint32_t*                vec_last  (evidence: 0x00463D00)
     // +0x420 void*                    field_0x420  (evidence: 0x00553760)
     // +0x424 void* field_0x424 (optional object pointer; vtable slot +0x0C is called with 0xB39F84 when non-null)  (evidence: 0x00564600)
     // +0x428 void*                    field_0x428  (evidence: 0x0040B860, 0x0040B880)

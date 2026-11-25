@@ -1,0 +1,27 @@
+{
+  "va": "0x00463D00",
+  "size": 100,
+  "orig_symbol": "sub_00463D00",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "sub_00463D00",
+  "signature": "void sub_00463D00(uint8_t* self, uint32_t arg)",
+  "summary": "Iterates over a vector of pointers at +0x414 and invokes thunk_MFC80_ord_2164 on each element with the given argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x418",
+      "type": "uint32_t*",
+      "name": "vec_first"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x41C",
+      "type": "uint32_t*",
+      "name": "vec_last"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:56:01Z"
+}

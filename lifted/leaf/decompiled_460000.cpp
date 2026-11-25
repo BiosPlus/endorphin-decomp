@@ -1660,3 +1660,46 @@ void fn_00462AA0(void* self) {
     (void)saved_link;         // original restores fs:[0] from the saved link here; no portable equivalent
 }
 } // namespace lift_00462AA0
+
+// [0x00463D00]
+namespace lift_00463D00 {
+// @name sub_00463D00
+// @summary Iterates over a vector of pointers at +0x414 and invokes thunk_MFC80_ord_2164 on each element with the given argument.
+// @field Unknown +0x418 uint32_t* vec_first
+// @field Unknown +0x41c uint32_t* vec_last
+
+
+extern void ext_006A5FDA(void);
+extern uint32_t mem_00925134;
+
+void sub_00463D00(uint8_t* self, uint32_t arg) {
+    auto invalid_param = reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134));
+    uint8_t* vec = self + 0x414;
+    uint32_t* it = *reinterpret_cast<uint32_t**>(self + 0x418);
+    if (it > *reinterpret_cast<uint32_t**>(self + 0x41c)) {
+        invalid_param();
+    }
+
+    while (true) {
+        uint32_t* end = *reinterpret_cast<uint32_t**>(vec + 0x8);
+        if (*reinterpret_cast<uint32_t**>(vec + 0x4) > end) {
+            invalid_param();
+        }
+        if (vec == nullptr) {
+            invalid_param();
+        }
+        if (it == end) {
+            break;
+        }
+        if (vec == nullptr || it >= *reinterpret_cast<uint32_t**>(vec + 0x8)) {
+            invalid_param();
+        }
+        uint32_t elem = *it;
+        reinterpret_cast<void (*)(uint32_t, uint32_t)>(ext_006A5FDA)(elem, arg);
+        if (it >= *reinterpret_cast<uint32_t**>(vec + 0x8)) {
+            invalid_param();
+        }
+        ++it;
+    }
+}
+} // namespace lift_00463D00
