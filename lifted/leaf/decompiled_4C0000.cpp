@@ -424,3 +424,23 @@ void* initStaticObjectOnce_004C1D80(void) {
     return &mem_00AE3064;
 }
 } // namespace lift_004C1D80
+
+// [0x004C6070]
+namespace lift_004C6070 {
+// @name initStaticObjectOnce_004C6070
+// @summary One-time initializer for the global object at 0x00AE3718: runs ext_0067A670 on it once, sets its first DWORD to 0x009455CC, and returns its address.
+
+extern DWORD mem_00AE371C; // init-guard flag word (bit 0 = initialized)
+extern DWORD mem_00AE3718; // static object storage
+
+DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+void* fn_004C6070(void) {
+    if ((mem_00AE371C & 1u) == 0) {
+        mem_00AE371C |= 1u;
+        ext_0067A670(&mem_00AE3718, 0);
+        mem_00AE3718 = 0x009455CCu;
+    }
+    return &mem_00AE3718;
+}
+} // namespace lift_004C6070

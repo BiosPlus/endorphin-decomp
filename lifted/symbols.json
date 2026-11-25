@@ -13758,6 +13758,12 @@
     "summary": "One-time initializer for the static object at 0x00AE3710, guarded by the flag byte at 0x00AE3714 (bit 0). On first call it runs the constructor helper and stores the vtable pointer 0x0094541C; returns the object address.",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
+  "0x004C6070": {
+    "name": "initStaticObjectOnce_004C6070",
+    "signature": "void* fn_004C6070(void)",
+    "summary": "One-time initializer for the global object at 0x00AE3718: runs ext_0067A670 on it once, sets its first DWORD to 0x009455CC, and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C60D0": {
     "name": "NMData::ForceEventData::vfunc_14",
     "class": "NMData::ForceEventData",
