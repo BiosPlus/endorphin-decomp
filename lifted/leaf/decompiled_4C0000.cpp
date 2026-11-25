@@ -617,3 +617,17 @@ void fn_004C6360(uint32_t* dst, uint32_t value) {
     dst[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
 }
 } // namespace lift_004C6360
+
+// [0x004C2270] sub_004C2270 (30 bytes)
+namespace lift_004C2270 {
+// Known callee 0x004C1D80: initStaticObjectOnce_004C1D80 (One-time initializer for the static object at 0x00AE3064; returns the object's address.)
+extern void* ext_004C1D80();
+
+// @name storeValueAndStaticObjectAddr
+// @summary Ensures the static object is initialized, then writes value into dst[0] and the static object's address into dst[1].
+void fn_004C2270(DWORD* dst, DWORD value) {
+    void* obj = ext_004C1D80();
+    dst[0] = value;
+    dst[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_004C2270

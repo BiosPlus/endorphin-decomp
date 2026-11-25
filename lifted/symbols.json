@@ -13576,6 +13576,12 @@
     "summary": "Stores the value into dst[0], then stores the address returned by the one-time static object initializer into dst[1].",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
+  "0x004C2270": {
+    "name": "storeValueAndStaticObjectAddr",
+    "signature": "void fn_004C2270(DWORD* dst, DWORD value)",
+    "summary": "Ensures the static object is initialized, then writes value into dst[0] and the static object's address into dst[1].",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C2300": {
     "name": "ValuePtrArrayObject::vfunc_0",
     "class": "ValuePtrArrayObject",
