@@ -24415,6 +24415,13 @@
     "summary": "Returns 1 when the float at +0x46C is \u003e= 2.0 (ordered) and the string at +0xAC equals the literal at 0x009590C0; otherwise 0.",
     "lifted_path": "lifted/classes/Acclaim2CharacterIO.cpp"
   },
+  "0x0056D920": {
+    "name": "NMCIO::vfunc_13",
+    "class": "NMCIO",
+    "signature": "extern \"C\" void __fastcall fn_0056D920(void* self, int edx_unused, void* str)",
+    "summary": "Copy-assigns the object at this+0x420 from the record at (*(this+0x420)+4)+0xCC, then calls virtual slot 9 of the object at this+0x418 with str.c_str() and flag 1.",
+    "lifted_path": "lifted/classes/NMCIO.cpp"
+  },
   "0x0056DA30": {
     "name": "BVHIO::vfunc_3",
     "class": "BVHIO",

@@ -1,0 +1,28 @@
+{
+  "va": "0x0056D920",
+  "size": 61,
+  "orig_symbol": "NMCIO::vfunc_13",
+  "src_path": "src/classes/NMCIO.cpp",
+  "lifted_path": "lifted/classes/NMCIO.cpp",
+  "name": "NMCIO::vfunc_13",
+  "class": "NMCIO",
+  "signature": "extern \"C\" void __fastcall fn_0056D920(void* self, int edx_unused, void* str)",
+  "summary": "Copy-assigns the object at this+0x420 from the record at (*(this+0x420)+4)+0xCC, then calls virtual slot 9 of the object at this+0x418 with str.c_str() and flag 1.",
+  "fields": [
+    {
+      "class": "NMCIO",
+      "offset": "+0x418",
+      "type": "void*",
+      "name": "field_0x418"
+    },
+    {
+      "class": "NMCIO",
+      "offset": "+0x420",
+      "type": "void*",
+      "name": "field_0x420"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:01:49Z"
+}
