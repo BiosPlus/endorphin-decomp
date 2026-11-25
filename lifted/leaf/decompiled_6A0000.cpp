@@ -548,3 +548,53 @@ void* fn_006AD290(void* self) {
     return self;
 }
 } // namespace lift_006AD290
+
+// [0x006A92F0] sub_006A92F0 (75 bytes)
+namespace lift_006A92F0 {
+// Known callee 0x006A5EA8: thunk_MFC80_ord_1903 (IAT jump thunk forwarding to MFC80!ord_1903.)
+// Callee signatures inferred from the disassembly: `this` is passed in ecx.
+extern void ext_006A5EA8(void* self);
+extern uint8_t ext_006AD0D0(void* self);
+extern void ext_006A8980(void* self);
+
+// IAT slots for USER32!IsChild and USER32!InvalidateRect.
+extern uint32_t mem_009256BC;
+extern uint32_t mem_00925688;
+
+// @name Unknown::RefreshChild_006A92F0
+// @summary Runs the base hook, then invalidates this window's client area unless the field at +0x54 is null, the callee check at 0x006AD0D0 is true, or the other window is a child of this one.
+// @field Unknown +0x20 HWND hwnd
+// @field Unknown +0x54 void* field_0x54
+void fn_006A92F0(void* self, void* other) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    ext_006A5EA8(self);
+
+    if (lift_field<void*>(base, 0x54) == nullptr) {
+        return;
+    }
+    if (ext_006AD0D0(lift_field<void*>(base, 0x54)) != 0) {
+        return;
+    }
+
+    // `other` is read at +0x20 only when non-null; a null `other` yields a null HWND.
+    HWND other_hwnd = nullptr;
+    if (other != nullptr) {
+        other_hwnd = lift_field<HWND>(other, 0x20);
+    }
+
+    using IsChildFn = BOOL(__stdcall*)(HWND, HWND);
+    using InvalidateRectFn = BOOL(__stdcall*)(HWND, const RECT*, BOOL);
+    auto is_child = reinterpret_cast<IsChildFn>(static_cast<uintptr_t>(mem_009256BC));
+    auto invalidate_rect = reinterpret_cast<InvalidateRectFn>(static_cast<uintptr_t>(mem_00925688));
+
+    HWND self_hwnd = lift_field<HWND>(base, 0x20);
+    if (is_child(self_hwnd, other_hwnd) != 0) {
+        return;
+    }
+
+    ext_006A8980(self);
+
+    invalidate_rect(lift_field<HWND>(base, 0x20), nullptr, TRUE);
+}
+} // namespace lift_006A92F0

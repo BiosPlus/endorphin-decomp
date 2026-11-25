@@ -413,7 +413,7 @@ struct Unknown_Fields {
     // +0x20  uint32_t                 flags  (evidence: 0x006423B0) // CONFLICT: multiple definitions at +0x20
     // +0x20  HDC                      hdc  (evidence: 0x004275C0, 0x0042EA50) // CONFLICT: multiple definitions at +0x20
     // +0x20  DWORD                    hwnd  (evidence: 0x0044BF00) // CONFLICT: multiple definitions at +0x20
-    // +0x20  HWND                     hwnd  (evidence: 0x00404770, 0x0040BE90, 0x00414880, 0x0041FF10, 0x006B0E30, 0x006B2F70, 0x006B53D0, 0x006B8B70) // CONFLICT: multiple definitions at +0x20
+    // +0x20  HWND                     hwnd  (evidence: 0x00404770, 0x0040BE90, 0x00414880, 0x0041FF10, 0x006A92F0, 0x006B0E30, 0x006B2F70, 0x006B53D0, 0x006B8B70) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint8_t                  initialized  (evidence: 0x006F9E90) // CONFLICT: multiple definitions at +0x20
     // +0x20  HWND                     ownerHwnd  (evidence: 0x004586A0, 0x00458DF0) // CONFLICT: multiple definitions at +0x20
     // +0x20  void* field_0x20 (dispatch table base, via sub-object)  (evidence: 0x007D5B30) // CONFLICT: multiple definitions at +0x20
@@ -533,7 +533,7 @@ struct Unknown_Fields {
     // +0x54  float                    field_0x54  (evidence: 0x007D8470, 0x007D85B0) // CONFLICT: multiple definitions at +0x54
     // +0x54  int32_t                  field_0x54  (evidence: 0x00414880, 0x00415F97) // CONFLICT: multiple definitions at +0x54
     // +0x54  uint32_t                 field_0x54  (evidence: 0x0040BE90, 0x0040FE70, 0x0053B1F0, 0x006296D0) // CONFLICT: multiple definitions at +0x54
-    // +0x54  void*                    field_0x54  (evidence: 0x004584C0, 0x00458650, 0x00458670, 0x00458840, 0x006AAC90) // CONFLICT: multiple definitions at +0x54
+    // +0x54  void*                    field_0x54  (evidence: 0x004584C0, 0x00458650, 0x00458670, 0x00458840, 0x006A92F0, 0x006AAC90) // CONFLICT: multiple definitions at +0x54
     // +0x54  void**                   field_0x54  (evidence: 0x00469530) // CONFLICT: multiple definitions at +0x54
     // +0x54  uint32_t                 limitHi  (evidence: 0x006E8750) // CONFLICT: multiple definitions at +0x54
     // +0x58  void* field_58 (embedded object's vptr; slot 0 is called)  (evidence: 0x0044C230) // CONFLICT: multiple definitions at +0x58

@@ -1,0 +1,28 @@
+{
+  "va": "0x006A92F0",
+  "size": 75,
+  "orig_symbol": "sub_006A92F0",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "Unknown::RefreshChild_006A92F0",
+  "class": "Unknown",
+  "signature": "void fn_006A92F0(void* self, void* other)",
+  "summary": "Runs the base hook, then invalidates this window's client area unless the field at +0x54 is null, the callee check at 0x006AD0D0 is true, or the other window is a child of this one.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "hwnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "void*",
+      "name": "field_0x54"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:37:39Z"
+}

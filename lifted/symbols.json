@@ -45187,6 +45187,13 @@
     "summary": "Calls ext_006A7C10 once; if nonzero, repeatedly calls ext_006A7C20 with each returned value (passing this) until it returns zero, and returns the number of successful iterations.",
     "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
   },
+  "0x006A92F0": {
+    "name": "Unknown::RefreshChild_006A92F0",
+    "class": "Unknown",
+    "signature": "void fn_006A92F0(void* self, void* other)",
+    "summary": "Runs the base hook, then invalidates this window's client area unless the field at +0x54 is null, the callee check at 0x006AD0D0 is true, or the other window is a child of this one.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006A9340": {
     "name": "Unknown::ForwardField0xA4AndArg",
     "class": "Unknown",
