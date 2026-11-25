@@ -61057,6 +61057,13 @@
     "summary": "Getter returning int32_t field at offset +0xB8.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006DD240": {
+    "name": "Unknown::RemoveAndDeleteItem",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_006DD240(void* self, void** pItem)",
+    "summary": "Finds an item pointer in the DynamicArray at +0xD0, unregisters it if it has a parent at +0x8, removes it from the array, frees it, and nulls the caller's pointer.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DD930": {
     "name": "CopyDoubleFromPointerGlobal",
     "signature": "void sub_006DD930()",
@@ -61376,6 +61383,12 @@
     "class": "Unknown",
     "signature": "extern \"C\" void __stdcall fn_006E6AD0(void* self, double* out)",
     "summary": "If the object pointer at self+0 is non-null, calls its vtable slot 31 (+0x7C) and stores the returned double to *out (stack arg).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
+  "0x006E6D70": {
+    "name": "setOrClearSubobjectFlags",
+    "signature": "extern \"C\" void __thiscall fn_006E6D70(void* self, uint32_t mask, uint8_t flag)",
+    "summary": "Sets or clears flag bits in two subobjects, remapping bits for the second subobject.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
   "0x006E6DE0": {

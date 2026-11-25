@@ -1066,6 +1066,7 @@ struct Unknown_Fields {
     // +0xD0  int32_t                  field_0xd0  (evidence: 0x0053F990) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  uint32_t                 field_0xd0  (evidence: 0x00709AB0) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  void**                   field_0xd0  (evidence: 0x00708D10) // CONFLICT: multiple definitions at +0xD0
+    // +0xD0  DynamicArray<void*>      items  (evidence: 0x006DD240) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  uint32_t field_0xD0 (accessed on the object returned by ord_3085(self), not on self)  (evidence: 0x00456DE0) // CONFLICT: multiple definitions at +0xD0
     // +0xD4  void**                   field_0xD4  (evidence: 0x006BCEE0) // CONFLICT: multiple definitions at +0xD4
     // +0xD4  int32_t                  field_0xd4  (evidence: 0x0053F990) // CONFLICT: multiple definitions at +0xD4

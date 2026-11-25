@@ -1974,3 +1974,51 @@ extern void __thiscall fn_006DE3F0(void* self, void* obj) {
     }
 }
 } // namespace lift_006DE3F0
+
+// [0x006DD240]
+namespace lift_006DD240 {
+// @name Unknown::RemoveAndDeleteItem
+// @class Unknown
+// @summary Finds an item pointer in the DynamicArray at +0xD0, unregisters it if it has a parent at +0x8, removes it from the array, frees it, and nulls the caller's pointer.
+// @field Unknown +0xD0 DynamicArray<void*> items
+
+
+extern void ext_006D0490(void* self, int32_t arg1, int32_t arg2);
+extern void ext_006D2200(void* self, int32_t index);
+extern void ext_006A5C5C(void* ptr);
+
+void __thiscall fn_006DD240(void* self, void** pItem) {
+    void* item = *pItem;
+    if (!item) {
+        return;
+    }
+
+    uint8_t* array = static_cast<uint8_t*>(self) + 0xD0;
+    int32_t count = *reinterpret_cast<int32_t*>(array);
+    if (count <= 0) {
+        return;
+    }
+
+    void** data = *reinterpret_cast<void***>(array + 0x10);
+    int32_t index = 0;
+    while (data[index] != item) {
+        index++;
+        if (index >= count) {
+            return;
+        }
+    }
+
+    if (index < 0) {
+        return;
+    }
+
+    void* parent = *reinterpret_cast<void**>(static_cast<uint8_t*>(item) + 0x8);
+    if (parent) {
+        ext_006D0490(parent, 0x006DD7A0, static_cast<int32_t>(reinterpret_cast<uintptr_t>(item)));
+    }
+
+    ext_006D2200(array, index);
+    ext_006A5C5C(*pItem);
+    *pItem = nullptr;
+}
+} // namespace lift_006DD240
