@@ -10000,6 +10000,13 @@
     "summary": "Returns 1 if the DesiredPoseEventData's entry blend period is at least 1e-6 (and not NaN), else 0; throws if the target pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00488E30": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::DesiredPoseEventData\u003e::vfunc_5 (NMData::DesiredPoseEventData::getEntryBlendPeriod)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0\u003e",
+    "signature": "float fn_00488E30(void* self)",
+    "summary": "Unsupported value accessor stub: always throws an exception (no return path). If the first word of self is non-null it calls the helper chain first; both paths end in a throw.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00489080": {
     "name": "CopyFloat5Range",
     "signature": "void* fn_00489080(const void* first, const void* last, void* out)",

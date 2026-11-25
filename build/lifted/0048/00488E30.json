@@ -1,0 +1,22 @@
+{
+  "va": "0x00488E30",
+  "size": 58,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::DesiredPoseEventData\u003e::vfunc_5 (NMData::DesiredPoseEventData::getEntryBlendPeriod)",
+  "class": "ExprParser::ReadMethodType\u003cNMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0\u003e",
+  "signature": "float fn_00488E30(void* self)",
+  "summary": "Unsupported value accessor stub: always throws an exception (no return path). If the first word of self is non-null it calls the helper chain first; both paths end in a throw.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:58:28Z"
+}

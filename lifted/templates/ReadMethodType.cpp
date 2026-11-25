@@ -52212,3 +52212,28 @@ float fn_00470C20(void* const* holder) {
     throw std::runtime_error("ExprParser::ReadMethodType<RuntimeEngine>: getSimulationFrameRate failed");
 }
 } // namespace lift_00470C20
+
+// [0x00488E30] ExprParser::ReadMethodType<NMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_00488E30 {
+extern void ext_00486970();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::DesiredPoseEventData>::vfunc_5 (NMData::DesiredPoseEventData::getEntryBlendPeriod)
+// @class ExprParser::ReadMethodType<NMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0>
+// @summary Unsupported value accessor stub: always throws an exception (no return path). If the first word of self is non-null it calls the helper chain first; both paths end in a throw.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_00488E30(void* self) {
+    const void* first = *reinterpret_cast<void* const*>(self);
+    if (first != nullptr) {
+        ext_00486970();
+        ext_0046C4E0();   // throws in the original binary
+    }
+    ext_0046C3C0();       // constructs the exception object in the original binary
+    throw std::runtime_error("ExprParser::ReadMethodType<NMData::DesiredPoseEventData>::vfunc_5: unsupported");
+}
+} // namespace lift_00488E30
