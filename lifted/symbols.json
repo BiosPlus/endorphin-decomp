@@ -68960,6 +68960,13 @@
     "summary": "Reads four floats from src (ecx) and writes a 3x4 row-major float matrix to dst (eax) with a fixed sign/permutation pattern (negations of src[1], src[2], src[3] and copies of src[0], src[1], src[2], src[3]).",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CD960": {
+    "name": "Quat::toMatrix4x3",
+    "class": "Quat",
+    "signature": "void sub_007CD960(uint32_t ecx, uint32_t eax)",
+    "summary": "Builds a 4x3 matrix representation from a quaternion's four float components.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CDB70": {
     "name": "alignFieldAndIncrementCounters",
     "signature": "void sub_007CDB70(uint32_t arg0)",
