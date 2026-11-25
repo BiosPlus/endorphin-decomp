@@ -1,0 +1,21 @@
+{
+  "va": "0x0053AFA0",
+  "size": 70,
+  "orig_symbol": "sub_0053AFA0",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "ReplaceOwnedObjectAndDispatch",
+  "signature": "uint32_t __thiscall fn_0053AFA0(uint8_t* self)",
+  "summary": "Allocates an 8-byte object (vtable 0x009553B8), swaps it into +0x38 (destroying the previous one), then returns its vtable slot 8 call result.",
+  "fields": [
+    {
+      "class": "ReplaceOwnedObjectAndDispatch",
+      "offset": "+0x38",
+      "type": "uint32_t",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:25:01Z"
+}

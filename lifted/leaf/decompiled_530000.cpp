@@ -673,3 +673,49 @@ void fn_0053B040(void* self) {
     reinterpret_cast<VFn9>(vt[9])(esi);
 }
 } // namespace lift_0053B040
+
+// [0x0053AFA0] sub_0053AFA0 (70 bytes)
+namespace lift_0053AFA0 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void* ext_006A5C62(uint32_t size);
+// .rdata u32 0x0053A730 at 0x009553B8 (vtable slot 0 of the object allocated here).
+extern uint32_t mem_009553B8;
+
+// @name ReplaceOwnedObjectAndDispatch
+// @summary Allocates an 8-byte object (vtable 0x009553B8), swaps it into +0x38 (destroying the previous one), then returns its vtable slot 8 call result.
+// @field ReplaceOwnedObjectAndDispatch +0x38 uint32_t field_0x38
+uint32_t __thiscall fn_0053AFA0(uint8_t* self) {
+    constexpr uint32_t kVtable = 0x009553B8u;
+
+    // push 8; call ext_006A5C62 -> operator new(8) equivalent
+    uintptr_t esi = 0;
+    uintptr_t fresh = reinterpret_cast<uintptr_t>(ext_006A5C62(8));
+    if (fresh != 0) {
+        *reinterpret_cast<uint32_t*>(fresh) = kVtable;
+        *reinterpret_cast<uint32_t*>(fresh + 4) = 0;
+        esi = fresh;
+    }
+
+    // Destroy previous occupant of +0x38 if it is a different non-null object:
+    // vtable slot 0 (scalar deleting destructor) with arg 1.
+    uint32_t old = *reinterpret_cast<uint32_t*>(self + 0x38);
+    if (esi != old && old != 0) {
+        uintptr_t old_vt = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(old));
+        uintptr_t dtor = *reinterpret_cast<uint32_t*>(old_vt);
+        using DtorFn = void(__thiscall*)(uintptr_t, int);
+        reinterpret_cast<DtorFn>(dtor)(static_cast<uintptr_t>(old), 1);
+    }
+
+    *reinterpret_cast<uint32_t*>(self + 0x38) = static_cast<uint32_t>(esi);
+
+    // Tail-jump to vtable slot 8 (offset 0x20) of the new object.
+    // The original is a jmp, so the callee's result is returned directly.
+    if (esi == 0) {
+        return 0;  // original would dereference null here; guarded for portability
+    }
+    uintptr_t vt = *reinterpret_cast<uint32_t*>(esi);
+    uintptr_t slot8 = *reinterpret_cast<uint32_t*>(vt + 0x20);
+    using Slot8Fn = uint32_t(__thiscall*)(uintptr_t);
+    return reinterpret_cast<Slot8Fn>(slot8)(esi);
+}
+} // namespace lift_0053AFA0
