@@ -20641,6 +20641,12 @@
     "summary": "Sets the GL viewport and scissor rectangle from the object's stored bounds.",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x00533F50": {
+    "name": "setActiveViewport",
+    "signature": "void __thiscall sub_00533F50(void* self, int32_t index)",
+    "summary": "Sets OpenGL viewport and scissor rect from the indexed entry and records active index",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x00533FB0": {
     "name": "sub_00533FB0",
     "signature": "void* __thiscall sub_00533FB0(void* self, void* out)",

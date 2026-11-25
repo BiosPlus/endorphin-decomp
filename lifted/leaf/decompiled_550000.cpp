@@ -1318,3 +1318,17 @@ extern void* __fastcall fn_005588C0(void* self, int edx_unused, const void* src)
 }
 } // namespace lift_006998D0
 } // namespace lift_005588C0
+
+// [0x00553F90]
+namespace lift_00553F90 {
+extern void* ext_006A5C62(uint32_t size);
+
+// @name allocate_160_bytes
+// @summary Allocates count * 160 bytes via MFC80 operator new, throwing std::bad_alloc on size_t overflow.
+extern void* fn_00553F90(uint32_t count) {
+    if (count > 0 && (0xFFFFFFFFu / count) < 0xA0u) {
+        throw std::bad_alloc();
+    }
+    return ext_006A5C62(count * 0xA0u);
+}
+} // namespace lift_00553F90
