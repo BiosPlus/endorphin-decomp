@@ -1,0 +1,14 @@
+{
+  "va": "0x0055DE20",
+  "size": 35,
+  "orig_symbol": "NMData::NullRelationshipData::vfunc_59",
+  "src_path": "src/NMData/NullRelationshipData.cpp",
+  "lifted_path": "lifted/NMData/NullRelationshipData.cpp",
+  "name": "NMData::NullRelationshipData::vfunc_59",
+  "class": "NMData::NullRelationshipData",
+  "signature": "void* __stdcall fn_0055DE20(void* out)",
+  "summary": "Constructs the std::string out-parameter from the constant C string stored at mem_00A9F118 and returns it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:50:54Z"
+}

@@ -24041,6 +24041,13 @@
     "summary": "Stores two stack-passed DWORDs into the object at ECX and returns that object pointer (callee pops 8 bytes).",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x0055DE20": {
+    "name": "NMData::NullRelationshipData::vfunc_59",
+    "class": "NMData::NullRelationshipData",
+    "signature": "void* __stdcall fn_0055DE20(void* out)",
+    "summary": "Constructs the std::string out-parameter from the constant C string stored at mem_00A9F118 and returns it.",
+    "lifted_path": "lifted/NMData/NullRelationshipData.cpp"
+  },
   "0x0055DE50": {
     "name": "FBXIO::vfunc_3",
     "class": "FBXIO",
