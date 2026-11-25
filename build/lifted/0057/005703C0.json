@@ -1,0 +1,21 @@
+{
+  "va": "0x005703C0",
+  "size": 80,
+  "orig_symbol": "sub_005703C0",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "readTokenFromLine",
+  "signature": "bool __thiscall fn_005703C0(void* self, void* stream)",
+  "summary": "Skips horizontal whitespace on an input stream and reads a string token into this+0x46c, returning false on newline.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x46C",
+      "type": "std::string",
+      "name": "field_0x46c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:49:36Z"
+}

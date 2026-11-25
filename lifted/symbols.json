@@ -34807,6 +34807,12 @@
     "summary": "Sets vtable pointer at +0x0 to 0x0097CC34 and returns this.",
     "lifted_path": "lifted/leaf/tiny_630000.cpp"
   },
+  "0x0063FFF0": {
+    "name": "sub_0063FFF0_copy_ctor",
+    "signature": "uint32_t __thiscall sub_0063FFF0(uint32_t this_ptr, uint32_t other_ptr)",
+    "summary": "Copy constructor setting vftable 0x0097CC3C and copying std::string at +0x04",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x00640100": {
     "name": "AdvXMLParser::EntityRef::vfunc_4",
     "class": "AdvXMLParser::EntityRef",

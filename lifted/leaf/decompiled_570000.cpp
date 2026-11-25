@@ -894,3 +894,36 @@ void* __cdecl CopyRecordRange_0057BC20(const void* first, const void* last, void
     return out;
 }
 } // namespace lift_0057BC20
+
+// [0x005703C0]
+namespace lift_005703C0 {
+// @name readTokenFromLine
+// @summary Skips horizontal whitespace on an input stream and reads a string token into this+0x46c, returning false on newline.
+// @field Unknown +0x46c std::string field_0x46c
+
+
+extern int32_t (__thiscall* mem_009250E4)(void* stream);
+extern void* (__thiscall* mem_009250E8)(void* stream, char ch);
+extern void* (__cdecl* mem_009250EC)(void* stream, void* str);
+
+bool __thiscall fn_005703C0(void* self, void* stream) {
+    uint8_t ch;
+    for (;;) {
+        ch = static_cast<uint8_t>(mem_009250E4(stream));
+        if (ch == ' ' || ch == '\t') {
+            if (ch != 0xFF) {
+                continue;
+            }
+            return false;
+        }
+        if (ch == '\n') {
+            return false;
+        }
+        break;
+    }
+
+    mem_009250E8(stream, static_cast<char>(ch));
+    mem_009250EC(stream, static_cast<uint8_t*>(self) + 0x46c);
+    return true;
+}
+} // namespace lift_005703C0
