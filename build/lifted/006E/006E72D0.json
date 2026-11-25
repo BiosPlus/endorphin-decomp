@@ -1,0 +1,33 @@
+{
+  "va": "0x006E72D0",
+  "size": 112,
+  "orig_symbol": "sub_006E72D0",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "sub_006E72D0",
+  "signature": "extern \"C\" void* __fastcall fn_006E72D0(void* self, void* /*edx*/, void* arg1)",
+  "summary": "Constructor initializing embedded buffer at +0x04, setting vtable 0x993ce0, and populating items from arg1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04[0x14]"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T05:09:17Z"
+}
