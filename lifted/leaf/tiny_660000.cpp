@@ -536,3 +536,22 @@ std::uint32_t fn_006658B0(const void* self) {
     return value != 0u ? 1u : 0u;
 }
 } // namespace lift_006658B0
+
+// [0x00662E50]
+namespace lift_00662E50 {
+// @name isPathRelative
+// @summary Checks whether a std::string path is relative using PathIsRelativeA.
+
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00925554;
+
+uint32_t __cdecl fn_00662E50(void* str) {
+    using c_str_fn = const char* (__thiscall*)(void*);
+    using path_is_relative_fn = int32_t (__stdcall*)(const char*);
+
+    const char* cstr = reinterpret_cast<c_str_fn>(mem_00924FF0)(str);
+    int32_t rel = reinterpret_cast<path_is_relative_fn>(mem_00925554)(cstr);
+    return (rel == 1) ? 1u : 0u;
+}
+} // namespace lift_00662E50

@@ -43294,6 +43294,12 @@
     "summary": "Writes the Windows temp directory path into the caller's std::string, or an empty string if GetTempPathA fails. Returns the string pointer.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00662E50": {
+    "name": "isPathRelative",
+    "signature": "uint32_t __cdecl fn_00662E50(void* str)",
+    "summary": "Checks whether a std::string path is relative using PathIsRelativeA.",
+    "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
   "0x00662E70": {
     "name": "CanonicalPathString",
     "signature": "extern \"C\" const char* __thiscall ext_00924FF0(const void* self);             // basic_string::c_str extern \"C\" void        __thiscall ext_00924FE4(void* self, const char* s);    // basic_string(const char*) extern \"C\" BOOL        __stdcall  ext_00925550(char* out, const char* path);  // SHLWAPI!PathCanonicalizeA void* fn_00662E70(void* out, const void* in)",

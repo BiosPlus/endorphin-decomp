@@ -1,0 +1,13 @@
+{
+  "va": "0x00662E50",
+  "size": 28,
+  "orig_symbol": "sub_00662E50",
+  "src_path": "src/leaf/tiny_660000.cpp",
+  "lifted_path": "lifted/leaf/tiny_660000.cpp",
+  "name": "isPathRelative",
+  "signature": "uint32_t __cdecl fn_00662E50(void* str)",
+  "summary": "Checks whether a std::string path is relative using PathIsRelativeA.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T11:31:36Z"
+}
