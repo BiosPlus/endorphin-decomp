@@ -9858,3 +9858,32 @@ void fn_006362D0(void** target, void* src) {
 }
 } // namespace lift_005F5DC0
 } // namespace lift_006362D0
+
+// [0x00695620] ExprParser::ReadWriteMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, float, &public: void __thiscall DoubleWithProperties::setValue(float)>::vfunc_41 (62 bytes)
+namespace lift_00695620 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void __fastcall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, float, &public: void __thiscall DoubleWithProperties::setValue(float)>
+// @summary Stdcall (ret 8): if the double* held at a1+0 is non-null, calls vtable slot 1 of the object at a2+4 with a2 as argument and stores the float result as a double there; otherwise constructs a DerivedException on the stack and throws it.
+// @field ExprParser::ValuePtrType +0x00 double* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+extern void __stdcall fn_00695620(void* a1, void* a2) {
+    double* dst = lift_field<double*>(a1, 0x00);
+    if (dst != nullptr) {
+        void* obj = lift_field<void*>(a2, 0x04);
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        using GetFn = float (*)(void*, void*);
+        float value = reinterpret_cast<GetFn>(vtbl[1])(obj, a2);
+        *dst = static_cast<double>(value);
+        return;
+    }
+    alignas(8) uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<void*>(&mem_009DEC1C));
+}
+} // namespace lift_00695620

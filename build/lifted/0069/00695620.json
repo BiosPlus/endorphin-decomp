@@ -1,0 +1,28 @@
+{
+  "va": "0x00695620",
+  "size": 62,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, float, \u0026public: void __thiscall DoubleWithProperties::setValue(float)\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, float, \u0026public: void __thiscall DoubleWithProperties::setValue(float)\u003e",
+  "signature": "extern \"C\" void __stdcall fn_00695620(void* a1, void* a2)",
+  "summary": "Stdcall (ret 8): if the double* held at a1+0 is non-null, calls vtable slot 1 of the object at a2+4 with a2 as argument and stores the float result as a double there; otherwise constructs a DerivedException on the stack and throws it.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "double*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ReadWriteMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:01:41Z"
+}
