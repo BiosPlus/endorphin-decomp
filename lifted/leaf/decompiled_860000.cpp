@@ -407,3 +407,22 @@ void fn_0086F0E0(DWORD* limbs) {
     }
 }
 } // namespace lift_0086F0E0
+
+// [0x0086F160] sub_0086F160 (58 bytes)
+namespace lift_0086F160 {
+// Known callee 0x0086F020: CopyDwordBlock20Reverse (Copies 20 DWORDs from src to dst, walking indices 19 down to 0.)
+extern void ext_0086F020(const DWORD* src, DWORD* dst);
+// Known callee 0x0086F0E0: NegateLimbs20 (Two's-complement negates a 20-limb number of 16-bit limbs (stored in 32-bit slots) in place; limb 19 is least significant.)
+extern void ext_0086F0E0(DWORD* limbs);
+// Known callee 0x0086F120: addLimbArrays20 (Adds two 20-entry arrays of 16-bit limbs (stored as dwords) with carry propagation from index 19 down to 0; writes the low 16 bits of each result limb to out.)
+extern void ext_0086F120(const uint32_t* a, const uint32_t* b, uint32_t* out);
+
+// @name SubtractLimbArrays20
+// @summary out = a - b for 20-limb 16-bit-limb numbers: copies b into a temporary, two's-complement negates it, then adds it to a.
+void fn_0086F160(const DWORD* a, const DWORD* b, DWORD* out) {
+    DWORD negated[20];
+    ext_0086F020(b, negated);
+    ext_0086F0E0(negated);
+    ext_0086F120(a, negated, out);
+}
+} // namespace lift_0086F160

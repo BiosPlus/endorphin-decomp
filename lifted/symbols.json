@@ -58003,6 +58003,12 @@
     "summary": "No-op: `add eax, 0` (opcode 05 with imm32 0), which leaves eax unchanged; only flags are touched.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086F160": {
+    "name": "SubtractLimbArrays20",
+    "signature": "void fn_0086F160(const DWORD* a, const DWORD* b, DWORD* out)",
+    "summary": "out = a - b for 20-limb 16-bit-limb numbers: copies b into a temporary, two's-complement negates it, then adds it to a.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x008702F0": {
     "name": "NMData::State::vfunc_1_off_18",
     "class": "NMData::State",
