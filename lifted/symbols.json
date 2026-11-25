@@ -26870,6 +26870,13 @@
     "summary": "Validates a global list iterator at [0xB40644]+8 and returns its node value minus one (or 0 if zero)",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x005963F0": {
+    "name": "Unknown::SumElementField5A0",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t __fastcall fn_005963F0(void* self, int edx_unused)",
+    "summary": "Walks the pointer vector at this+0x238 (begin +0x23C, end +0x240) and returns the wrapping 32-bit sum of each element's dword at +0x5A0.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00596660": {
     "name": "Vector_erase_range",
     "class": "Vector",

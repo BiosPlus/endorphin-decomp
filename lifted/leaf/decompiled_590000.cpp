@@ -1298,3 +1298,27 @@ uint32_t fn_00597630(void* self, uint32_t key) {
     return 0;
 }
 } // namespace lift_00597630
+
+// [0x005963F0]
+namespace lift_005963F0 {
+// @name Unknown::SumElementField5A0
+// @class Unknown
+// @summary Walks the pointer vector at this+0x238 (begin +0x23C, end +0x240) and returns the wrapping 32-bit sum of each element's dword at +0x5A0.
+// @field Unknown +0x23C void** field_0x23C
+// @field Unknown +0x240 void** field_0x240
+// @field UnknownElement +0x5A0 uint32_t field_0x5A0
+extern uint32_t __fastcall fn_005963F0(void* self, int edx_unused) {
+    (void)edx_unused;
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    const uintptr_t begin_slot = *reinterpret_cast<uintptr_t*>(base + 0x23C);
+    const uintptr_t end_slot = *reinterpret_cast<uintptr_t*>(base + 0x240);
+
+    uint32_t sum = 0;
+    for (uintptr_t cur = begin_slot; cur != end_slot; cur += sizeof(uintptr_t)) {
+        uint8_t* elem = *reinterpret_cast<uint8_t**>(cur);
+        sum += *reinterpret_cast<uint32_t*>(elem + 0x5A0);
+    }
+    return sum;
+}
+} // namespace lift_005963F0

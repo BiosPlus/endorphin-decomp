@@ -11,5 +11,6 @@ struct UnknownElement_Fields {
     // +0x34  uint32_t                 field_0x34  (evidence: 0x004890D0, 0x0048CB80)
     // +0x38  uint32_t                 field_0x38  (evidence: 0x004890D0, 0x0048CB80)
     // +0x3C  uint32_t                 field_0x3C  (evidence: 0x004890D0, 0x0048CB80)
+    // +0x5A0 uint32_t                 field_0x5A0  (evidence: 0x005963F0)
 };
 } // namespace lifted_layout

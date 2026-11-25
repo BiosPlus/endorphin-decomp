@@ -1152,8 +1152,10 @@ struct Unknown_Fields {
     // +0x234 void*                    child  (evidence: 0x005E12F0, 0x005E2C70) // CONFLICT: multiple definitions at +0x234
     // +0x234 void*                    field_0x234  (evidence: 0x005E1330, 0x005E1360, 0x005E2C70) // CONFLICT: multiple definitions at +0x234
     // +0x234 void* field_0x234 (subobject pointer; class unrecovered)  (evidence: 0x005E1310, 0x005E2C70) // CONFLICT: multiple definitions at +0x234
-    // +0x23C void*                    arrayBegin  (evidence: 0x005947B0, 0x00596C50)
-    // +0x240 void*                    arrayEnd  (evidence: 0x005947B0, 0x00596C50)
+    // +0x23C void*                    arrayBegin  (evidence: 0x005947B0, 0x00596C50) // CONFLICT: multiple definitions at +0x23C
+    // +0x23C void**                   field_0x23C  (evidence: 0x005963F0) // CONFLICT: multiple definitions at +0x23C
+    // +0x240 void*                    arrayEnd  (evidence: 0x005947B0, 0x00596C50) // CONFLICT: multiple definitions at +0x240
+    // +0x240 void**                   field_0x240  (evidence: 0x005963F0) // CONFLICT: multiple definitions at +0x240
     // +0x250 int32_t                  field_0x250  (evidence: 0x007266A0, 0x0072B180)
     // +0x258 void*                    child  (evidence: 0x004A5810)
     // +0x268 DWORD                    field_0x268  (evidence: 0x00702700, 0x0070AD00, 0x0070BF00) // CONFLICT: multiple definitions at +0x268
