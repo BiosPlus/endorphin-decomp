@@ -1080,3 +1080,24 @@ void* fn_00609730(void* self) {
     return target(adjusted);                                             // jmp edx
 }
 } // namespace lift_00609730
+
+// [0x0060A4F0] sub_0060A4F0 (33 bytes)
+namespace lift_0060A4F0 {
+// Known callee 0x00609A10: GetOnceInitString_00609A10 (One-time guarded initializer for the global at 0x00B4789C; on first call builds it via ext_0066AD10 from the string at 0x00A948B0 and registers its teardown at 0x0091E800 via ext_006A6C87; later calls only return its address.)
+extern void* ext_00609A10(void);
+
+// Import slot (.rdata 0x00924FE0) holding the MSVCP80 basic_string copy-constructor address.
+extern uint32_t mem_00924FE0;
+
+// @name CopyOnceInitString_0060A4F0
+// @summary Copy-constructs the std::string at dst from the once-initialized global string and returns dst.
+
+// MSVC std::basic_string<char> copy constructor: thiscall, one stack arg (const string&).
+using StringCopyCtorFn = void(__thiscall*)(void* self, const void* src);
+
+void* fn_0060A4F0(void* dst) {
+    const void* src = ext_00609A10();
+    reinterpret_cast<StringCopyCtorFn>(static_cast<uintptr_t>(mem_00924FE0))(dst, src);
+    return dst;
+}
+} // namespace lift_0060A4F0
