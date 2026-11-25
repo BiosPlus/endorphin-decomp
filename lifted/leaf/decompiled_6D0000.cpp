@@ -1232,3 +1232,33 @@ void fn_006BBA40(void) {
 }
 } // namespace lift_006BBA40
 } // namespace lift_006DDA10
+
+// [0x006DE770] sub_006DE770 (74 bytes)
+namespace lift_006DE770 {
+// @name ListContainsOrAcceptsItem_006DE770
+// @class Unknown
+// @summary Scans the pointer array at this+0x30 (count at this+0x20). Returns 1 if an entry equals arg1; otherwise, when the low byte of arg2 is nonzero, returns 1 if entry->vtbl[7](arg2, arg1) is nonzero. Returns 0 if no entry matches.
+// @field Unknown +0x20 int32_t field_0x20 (entry count)
+// @field Unknown +0x30 void** field_0x30 (entry pointer array)
+// NOTE: the callee at vtbl[7] is a thiscall (this=entry); it is invoked here through a plain
+// function pointer with the entry as the first argument, which matches the original call shape.
+uint8_t fn_006DE770(void* self, void* arg1, uint32_t arg2) {
+    using VirtualCall7 = uint8_t (*)(void* obj, uint32_t flag, void* item);
+
+    for (int32_t i = 0; i < lift_field<int32_t>(self, 0x20); ++i) {
+        void** entries = lift_field<void**>(self, 0x30);
+        void* entry = entries[i];
+        if (entry == arg1) {
+            return 1;
+        }
+        if ((arg2 & 0xFFu) != 0) {
+            void** vtbl = *reinterpret_cast<void***>(entry);
+            auto call7 = reinterpret_cast<VirtualCall7>(vtbl[7]);
+            if (call7(entry, arg2, arg1) != 0) {
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+} // namespace lift_006DE770

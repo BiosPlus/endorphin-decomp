@@ -1,0 +1,28 @@
+{
+  "va": "0x006DE770",
+  "size": 74,
+  "orig_symbol": "sub_006DE770",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "ListContainsOrAcceptsItem_006DE770",
+  "class": "Unknown",
+  "signature": "uint8_t fn_006DE770(void* self, void* arg1, uint32_t arg2)",
+  "summary": "Scans the pointer array at this+0x30 (count at this+0x20). Returns 1 if an entry equals arg1; otherwise, when the low byte of arg2 is nonzero, returns 1 if entry-\u003evtbl[7](arg2, arg1) is nonzero. Returns 0 if no entry matches.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "int32_t field_0x20 (entry",
+      "name": "count)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "void** field_0x30 (entry pointer",
+      "name": "array)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:35:02Z"
+}

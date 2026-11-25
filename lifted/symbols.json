@@ -48578,6 +48578,13 @@
     "summary": "Searches items via vtable+0x18 up to count at +0x20 for one whose ext_006DE3E0 value matches target.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006DE770": {
+    "name": "ListContainsOrAcceptsItem_006DE770",
+    "class": "Unknown",
+    "signature": "uint8_t fn_006DE770(void* self, void* arg1, uint32_t arg2)",
+    "summary": "Scans the pointer array at this+0x30 (count at this+0x20). Returns 1 if an entry equals arg1; otherwise, when the low byte of arg2 is nonzero, returns 1 if entry-\u003evtbl[7](arg2, arg1) is nonzero. Returns 0 if no entry matches.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DECA0": {
     "name": "findNodeByKey",
     "signature": "void* fn_006DECA0(void* self, int32_t key)",
