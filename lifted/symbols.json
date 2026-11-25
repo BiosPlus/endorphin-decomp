@@ -66289,6 +66289,13 @@
     "summary": "Stores the second stack argument into the object's field at +0x7C (self = first stack argument).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C6FF0": {
+    "name": "loadDwordAtOffset7CFromArg",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "DWORD fn_007C6FF0(void* self)",
+    "summary": "Returns the DWORD stored at offset +0x7C of the object pointed to by the first stack argument.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C7000": {
     "name": "sub_007C7000_derefDwordAt44Thunk",
     "signature": "DWORD fn_007C7000(DWORD self)",

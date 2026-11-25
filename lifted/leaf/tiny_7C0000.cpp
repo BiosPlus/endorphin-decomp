@@ -1172,3 +1172,14 @@ uint32_t sub_007C9270(std::uintptr_t self) {
     return *reinterpret_cast<const std::uint32_t*>(base + 0x40);
 }
 } // namespace lift_007C9270
+
+// [0x007C6FF0] sub_007C6FF0 (8 bytes)
+namespace lift_007C6FF0 {
+// @name loadDwordAtOffset7CFromArg
+// @class <ClassName> (optional)
+// @summary Returns the DWORD stored at offset +0x7C of the object pointed to by the first stack argument.
+// @field <ClassName> +0x7C DWORD field_0x7C
+DWORD fn_007C6FF0(void* self) {
+    return lift_field<DWORD>(self, 0x7C);
+}
+} // namespace lift_007C6FF0
