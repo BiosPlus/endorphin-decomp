@@ -13112,6 +13112,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004B5610 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004B64C0": {
+    "name": "ConstructBySelector_004B64C0",
+    "signature": "DWORD* fn_004B64C0(DWORD* dst, DWORD selector)",
+    "summary": "Dispatches on selector (arg2 - 0x386): 0/1/2 call the matching StoreValueAndSingleton-style initializer; any other value calls sub_00671F30 on dst. Returns dst.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B6530": {
     "name": "Properties::TerminalParentType\u003cNMData::GraphEntryData\u003e::vfunc_0",
     "class": "Properties::TerminalParentType\u003cNMData::GraphEntryData\u003e",
@@ -62488,6 +62494,12 @@
     "signature": "double fn_0071B770(uint32_t self)",
     "summary": "Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071B780": {
+    "name": "scaleByClampedRatio",
+    "signature": "double __stdcall sub_0071B780(uint32_t num, uint32_t den, double value)",
+    "summary": "Divides a double by the ratio of two unsigned 32-bit integers clamped to at least 1.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x0071B860": {
     "name": "sub_0071B860",

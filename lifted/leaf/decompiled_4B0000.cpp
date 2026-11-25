@@ -1025,3 +1025,40 @@ void fn_004BA060(uint32_t owner, uint32_t it, uint32_t expected_owner, uint32_t 
     }
 }
 } // namespace lift_004BA060
+
+// [0x004B64C0] sub_004B64C0 (102 bytes)
+namespace lift_004B64C0 {
+// Known callee 0x004B4BA0: sub_004B4BA0 (Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).)
+extern DWORD* ext_004B4BA0(DWORD* dst, DWORD value);
+// Known callee 0x004B4BC0: sub_004B4BC0 (Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).)
+extern DWORD* ext_004B4BC0(DWORD* dst, DWORD value);
+// Known callee 0x004B4BE0: sub_004B4BE0 (Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).)
+extern DWORD* ext_004B4BE0(DWORD* dst, DWORD value);
+// Known callee 0x00671F30: sub_00671F30 (Zeroes the first dword of the output buffer and stores the global mem_00B599BC into the second dword.)
+extern void ext_00671F30(uint32_t* out);
+
+// @name ConstructBySelector_004B64C0
+// @summary Dispatches on selector (arg2 - 0x386): 0/1/2 call the matching StoreValueAndSingleton-style initializer; any other value calls sub_00671F30 on dst. Returns dst.
+DWORD* fn_004B64C0(DWORD* dst, DWORD selector) {
+    // The original pushes the entry ECX register as the callee's second argument
+    // on the three initializer paths; that value is not a meaningful parameter,
+    // so it is modeled as 0 here.
+    const DWORD entry_ecx = 0;
+
+    switch (selector - 0x386u) {
+    case 0:
+        ext_004B4BA0(dst, entry_ecx);
+        break;
+    case 1:
+        ext_004B4BC0(dst, entry_ecx);
+        break;
+    case 2:
+        ext_004B4BE0(dst, entry_ecx);
+        break;
+    default:
+        ext_00671F30(dst);
+        break;
+    }
+    return dst;
+}
+} // namespace lift_004B64C0

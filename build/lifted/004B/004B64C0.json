@@ -1,0 +1,13 @@
+{
+  "va": "0x004B64C0",
+  "size": 102,
+  "orig_symbol": "sub_004B64C0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "ConstructBySelector_004B64C0",
+  "signature": "DWORD* fn_004B64C0(DWORD* dst, DWORD selector)",
+  "summary": "Dispatches on selector (arg2 - 0x386): 0/1/2 call the matching StoreValueAndSingleton-style initializer; any other value calls sub_00671F30 on dst. Returns dst.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:45:17Z"
+}
