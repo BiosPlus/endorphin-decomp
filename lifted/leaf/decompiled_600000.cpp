@@ -113,3 +113,22 @@ void fn_0060AF10(uint32_t* first, uint32_t* last, uint32_t pred) {
 }
 } // namespace lift_00481C90
 } // namespace lift_0060AF10
+
+// [0x0060C4C0] sub_0060C4C0 (77 bytes)
+namespace lift_0060C4C0 {
+// Known callee 0x0060BCC0: sub_0060BCC0 (Destructor tail-call: restores vtable mem_0097215C and tail-calls base destructor sub_0060BA10.)
+extern void ext_0060BCC0(void* self);
+
+// @name Unknown::Destructor_0060C4C0
+// @class Unknown
+// @summary Destroys the std::string member at +0x60, then runs the base destructor chain via ext_0060BCC0.
+// @field Unknown +0x60 std::string field_0x60
+void fn_0060C4C0(void* self) {
+    // Destroy the embedded std::string at this+0x60 (MSVC basic_string dtor in the original).
+    auto* str = &lift_field<std::string>(self, 0x60);
+    str->~basic_string();
+
+    // Tail-call the base destructor chain.
+    ext_0060BCC0(self);
+}
+} // namespace lift_0060C4C0
