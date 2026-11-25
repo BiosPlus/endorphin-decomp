@@ -47540,10 +47540,22 @@
     "summary": "Tail-calls vtable slot +0x10 on the subobject at offset 0xf0.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C2C60": {
+    "name": "sub_006C2C60",
+    "signature": "extern \"C\" void __thiscall fn_006C2C60( void* this_ptr, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7)",
+    "summary": "Forwards member at +0x118 and stack argument block to sub_007873F0.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C2CB0": {
     "name": "ForwardOffsetFieldToCalleeReturnArg",
     "signature": "void* fn_006C2CB0(void* self, void* arg1)",
     "summary": "Passes (self + 0x118) to ext_006D2390 with arg1 as its this pointer, then returns arg1.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
+  "0x006C2DE0": {
+    "name": "sub_006C2DE0",
+    "signature": "extern \"C\" void __thiscall fn_006C2DE0( void* self, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7)",
+    "summary": "Forwards field_0x138 and a 32-byte stack argument to sub_007873F0, then invokes sub_006D80A0",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
   "0x006C2E30": {
@@ -48557,6 +48569,12 @@
     "summary": "For count \u003e 0, resolve a pointer via ext_006CA060(self, count-1), call ext_006CA060(self, count) for its side effect, then return whether bit 0x02000000 of ext_006C9D20(ptr) is set; returns false when count \u003c= 0.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006CC6F0": {
+    "name": "sub_006CC6F0",
+    "signature": "bool __fastcall fn_006CC6F0(void* self, int32_t /*edx*/, int32_t index)",
+    "summary": "Checks whether the item at index (when index \u003c count - 1) has matching flag bits (0x08, 0x0D00, and 0x01000000).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006CC810": {
     "name": "Unknown::GetCountedFlagScaledValue",
     "class": "Unknown",
@@ -48569,6 +48587,12 @@
     "class": "Unknown",
     "signature": "bool fn_006CC950(void* self, int32_t count)",
     "summary": "For count \u003e 0, resolves the element at (count - 1) and the element at count via ext_006CA060, then returns true if bit 29 (0x20000000) of ext_006C9D60(first) is set; false for count \u003c= 0.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
+  "0x006CC990": {
+    "name": "checkItemFlagsAtIndex",
+    "signature": "bool __thiscall fn_006CC990(void* self, int32_t index)",
+    "summary": "Checks if index \u003c count - 1 and the item at index has specific flag bits set.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
   "0x006CCAB0": {

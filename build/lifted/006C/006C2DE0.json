@@ -1,0 +1,21 @@
+{
+  "va": "0x006C2DE0",
+  "size": 79,
+  "orig_symbol": "sub_006C2DE0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "sub_006C2DE0",
+  "signature": "extern \"C\" void __thiscall fn_006C2DE0( void* self, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7)",
+  "summary": "Forwards field_0x138 and a 32-byte stack argument to sub_007873F0, then invokes sub_006D80A0",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x138",
+      "type": "uint8_t[]",
+      "name": "field_0x138"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:47:23Z"
+}

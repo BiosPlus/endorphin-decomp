@@ -1577,3 +1577,108 @@ extern uint32_t __stdcall fn_006C1B40(uint32_t index) {
     }
 }
 } // namespace lift_006C1B40
+
+// [0x006C2DE0]
+namespace lift_006C2DE0 {
+// @name sub_006C2DE0
+// @summary Forwards field_0x138 and a 32-byte stack argument to sub_007873F0, then invokes sub_006D80A0
+// @field Unknown +0x138 uint8_t[] field_0x138
+
+
+extern void __thiscall ext_007873F0(void* self, void* arg);
+extern void __cdecl ext_006D80A0(void);
+
+extern void __thiscall fn_006C2DE0(
+    void* self,
+    uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3,
+    uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7) {
+    uint32_t local_arg[8] = { a0, a1, a2, a3, a4, a5, a6, a7 };
+    ext_007873F0(static_cast<uint8_t*>(self) + 0x138, local_arg);
+    ext_006D80A0();
+}
+} // namespace lift_006C2DE0
+
+// [0x006C2C60]
+namespace lift_006C2C60 {
+extern void __thiscall ext_007873F0(void* this_ptr, void* arg0);
+extern void __cdecl ext_006D80A0(void);
+
+// @name sub_006C2C60
+// @summary Forwards member at +0x118 and stack argument block to sub_007873F0.
+// @field Unknown +0x118 uint8_t field_0x118
+extern void __thiscall fn_006C2C60(
+    void* this_ptr,
+    uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3,
+    uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7)
+{
+    uint32_t args[8] = { a0, a1, a2, a3, a4, a5, a6, a7 };
+    ext_007873F0(static_cast<uint8_t*>(this_ptr) + 0x118, args);
+    ext_006D80A0();
+}
+} // namespace lift_006C2C60
+
+// [0x006CC6F0]
+namespace lift_006CC6F0 {
+extern int32_t __fastcall ext_006CA6A0(void* self);
+extern void* __fastcall ext_006CA060(void* self, int32_t edx_unused, int32_t index);
+extern uint32_t __fastcall ext_006C9C30(void* self);
+extern uint32_t __fastcall ext_006C9CD0(void* self);
+extern uint32_t __fastcall ext_006C9D20(void* self);
+
+// @name sub_006CC6F0
+// @summary Checks whether the item at index (when index < count - 1) has matching flag bits (0x08, 0x0D00, and 0x01000000).
+
+bool __fastcall fn_006CC6F0(void* self, int32_t /*edx*/, int32_t index) {
+    int32_t count = ext_006CA6A0(self);
+    if (index >= count - 1) {
+        return false;
+    }
+
+    void* item = ext_006CA060(self, 0, index);
+    if (ext_006C9C30(item) != 8) {
+        return false;
+    }
+
+    if ((ext_006C9CD0(item) & 0x0D00u) == 0) {
+        return false;
+    }
+
+    if ((ext_006C9D20(item) & 0x01000000u) == 0) {
+        return false;
+    }
+
+    return true;
+}
+} // namespace lift_006CC6F0
+
+// [0x006CC990]
+namespace lift_006CC990 {
+// @name checkItemFlagsAtIndex
+// @summary Checks if index < count - 1 and the item at index has specific flag bits set.
+
+int32_t __thiscall ext_006CA6A0(void* self);
+void* __thiscall ext_006CA060(void* self, int32_t index);
+uint32_t __thiscall ext_006C9C30(void* item);
+uint32_t __thiscall ext_006C9CD0(void* item);
+uint32_t __thiscall ext_006C9D60(void* item);
+
+bool __thiscall fn_006CC990(void* self, int32_t index) {
+    int32_t count = ext_006CA6A0(self);
+    if (index >= count - 1) {
+        return false;
+    }
+
+    void* item = ext_006CA060(self, index);
+    if (ext_006C9C30(item) != 8) {
+        return false;
+    }
+    if ((ext_006C9CD0(item) & 0x0D00u) == 0) {
+        return false;
+    }
+    if ((ext_006C9D60(item) & 0x10000000u) == 0) {
+        return false;
+    }
+
+    return true;
+}
+} // namespace lift_006CC990
