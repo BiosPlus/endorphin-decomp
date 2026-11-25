@@ -320,3 +320,36 @@ void __thiscall fn_00612410(uintptr_t self, float value) {
     }
 }
 } // namespace lift_00612410
+
+// [0x00612460]
+namespace lift_00612460 {
+// @name UnknownClass::setElement3AndNotify
+// @class UnknownClass
+// @summary Sets float element 3 in subobject at +0x8, marks flag at +0xC, notifies subobject at +0xBC, and dispatches virtual slot 0x154 on global object +0x258 if non-null.
+// @field UnknownClass +0x08 uint8_t field_0x08
+// @field UnknownClass +0x0C uint8_t field_0x0C
+// @field UnknownClass +0xBC void* field_0xBC
+
+
+void* __thiscall ext_00493EE0(void* ecx);
+int32_t __cdecl ext_00594000(void);
+uint32_t* __thiscall ext_005B11D0(uintptr_t self, uint32_t index);
+void __thiscall ext_005E1330(void* self);
+
+void __thiscall fn_00612460(void* self, float value) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    uint32_t* elemPtr = ext_005B11D0(reinterpret_cast<uintptr_t>(base + 0x8), 3);
+    *reinterpret_cast<float*>(elemPtr) = value;
+    *reinterpret_cast<uint8_t*>(base + 0xC) = 1;
+
+    void** subObjPtr = *reinterpret_cast<void***>(base + 0xBC);
+    if (*subObjPtr != nullptr) {
+        ext_005E1330(*subObjPtr);
+    }
+
+    int32_t globalObj = ext_00594000();
+    if (globalObj != 0) {
+        ext_00493EE0(reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(static_cast<uint32_t>(globalObj))) + 0x258);
+    }
+}
+} // namespace lift_00612460

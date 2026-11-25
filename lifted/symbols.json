@@ -29950,6 +29950,13 @@
     "summary": "Stores a float into element 2 of subobject +0x8, sets flag +0xC, and notifies subobject +0xBC and global +0x258.",
     "lifted_path": "lifted/leaf/decompiled_610000.cpp"
   },
+  "0x00612460": {
+    "name": "UnknownClass::setElement3AndNotify",
+    "class": "UnknownClass",
+    "signature": "void __thiscall fn_00612460(void* self, float value)",
+    "summary": "Sets float element 3 in subobject at +0x8, marks flag at +0xC, notifies subobject at +0xBC, and dispatches virtual slot 0x154 on global object +0x258 if non-null.",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
   "0x00612730": {
     "name": "NMData::Constraint::vfunc_72",
     "class": "NMData::Constraint",
@@ -31765,6 +31772,12 @@
     "class": "ResourceHolder",
     "signature": "extern void __fastcall fn_0062CCF0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x005FF040 (ResourceHolder::ReleaseAndReset).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x0062CD30": {
+    "name": "sub_0062CD30_ctor",
+    "signature": "uint32_t __thiscall sub_0062CD30(uint32_t this_ptr)",
+    "summary": "Initializes object vtable to 0x009791a4 and zeroes two 3-dword blocks at +0x08 and +0x2c.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x0062CF40": {

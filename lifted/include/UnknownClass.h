@@ -22,14 +22,14 @@ struct UnknownClass_Fields {
     // +0x4   void*                    field_0x04  (evidence: 0x00414880, 0x0041CEB0, 0x0058AB60, 0x00602F00, 0x00602F20, 0x00630560, 0x006305C0, 0x006305E0, 0x00783630) // CONFLICT: multiple definitions at +0x4
     // +0x6   uint8_t                  field_0x06  (evidence: 0x007A9BD0)
     // +0x8   uint32_t                 field_0x08  (evidence: 0x006722B0, 0x00672490, 0x008599F0) // CONFLICT: multiple definitions at +0x8
-    // +0x8   uint8_t                  field_0x08  (evidence: 0x00493D80, 0x00494050) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint8_t                  field_0x08  (evidence: 0x00493D80, 0x00494050, 0x00612460) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t[]                field_0x08  (evidence: 0x006123C0, 0x00612410) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_0x08  (evidence: 0x00789590) // CONFLICT: multiple definitions at +0x8
     // +0x8   float                    field_0x08[4]  (evidence: 0x00534020) // CONFLICT: multiple definitions at +0x8
     // +0xC   uint32_t                 child  (evidence: 0x006722B0, 0x00672490) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  count  (evidence: 0x007DD130) // CONFLICT: multiple definitions at +0xC
     // +0xC   float                    field_0x0C  (evidence: 0x00552860) // CONFLICT: multiple definitions at +0xC
-    // +0xC   uint8_t                  field_0x0C  (evidence: 0x00612410, 0x0079EA60) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint8_t                  field_0x0C  (evidence: 0x00612410, 0x00612460, 0x0079EA60) // CONFLICT: multiple definitions at +0xC
     // +0xC   DWORD                    field_0x0c  (evidence: 0x00789590) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint8_t                  field_0x0c  (evidence: 0x006123C0) // CONFLICT: multiple definitions at +0xC
     // +0x10  uint8_t*                 entries  (evidence: 0x007DD130) // CONFLICT: multiple definitions at +0x10
@@ -64,7 +64,7 @@ struct UnknownClass_Fields {
     // +0x88  void*                    subobject  (evidence: 0x00454C00)
     // +0x92  uint8_t                  field_0x92  (evidence: 0x005435F0)
     // +0x95  uint8_t                  field_0x95  (evidence: 0x005435F0)
-    // +0xBC  void*                    field_0xBC  (evidence: 0x004970A0, 0x0049AD40) // CONFLICT: multiple definitions at +0xBC
+    // +0xBC  void*                    field_0xBC  (evidence: 0x004970A0, 0x0049AD40, 0x00612460) // CONFLICT: multiple definitions at +0xBC
     // +0xBC  void**                   field_0xBC  (evidence: 0x00612410) // CONFLICT: multiple definitions at +0xBC
     // +0xBC  void**                   field_0xbc  (evidence: 0x006123C0) // CONFLICT: multiple definitions at +0xBC
     // +0xD8  void*                    ownedObject  (evidence: 0x00466360)
