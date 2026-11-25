@@ -1,0 +1,13 @@
+{
+  "va": "0x004C50C0",
+  "size": 96,
+  "orig_symbol": "sub_004C50C0",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "computeIdentityMatrixFirstRowNorm",
+  "signature": "float fn_004C50C0(void)",
+  "summary": "Initializes a 3x3 identity matrix, passes it to sub_0067DAD0, and returns the Euclidean norm of the first row.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:35:52Z"
+}

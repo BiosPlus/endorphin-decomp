@@ -38,6 +38,7 @@ void __thiscall fn_004CCDE0(uint8_t* self) {
 }
 } // namespace lift_0051BF10
 } // namespace lift_004CCDE0
+#include <cmath>
 
 // [0x004CFFE0] sub_004CFFE0 (34 bytes)
 namespace lift_004CFFE0 {
@@ -773,3 +774,25 @@ extern int fn_004CE590(const void* key) {
     return kNotFound;
 }
 } // namespace lift_004CE590
+
+// [0x004C50C0]
+namespace lift_004C50C0 {
+// @name computeIdentityMatrixFirstRowNorm
+// @summary Initializes a 3x3 identity matrix, passes it to sub_0067DAD0, and returns the Euclidean norm of the first row.
+
+
+extern void __stdcall ext_0067DAD0(float* mat);
+
+float fn_004C50C0(void) {
+    float mat[9] = {
+        1.0f, 0.0f, 0.0f,
+        0.0f, 1.0f, 0.0f,
+        0.0f, 0.0f, 1.0f
+    };
+    ext_0067DAD0(mat);
+    float x = mat[0];
+    float y = mat[1];
+    float z = mat[2];
+    return std::sqrt(x * x + y * y + z * z);
+}
+} // namespace lift_004C50C0
