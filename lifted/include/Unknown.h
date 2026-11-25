@@ -17,6 +17,7 @@ struct Unknown_Fields {
     // +0x0   uint32_t field_0x00 (vtable pointer, dereferenced to read slot +0x80)  (evidence: 0x006E7F90, 0x006E8050, 0x006E8060, 0x006E8070, 0x006E8080) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (vtable pointer, set to 0x009793d4)  (evidence: 0x0063D950, 0x0063D970, 0x0063DDF0, 0x0063E050) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (vtable pointer, set to 0x953B0C)  (evidence: 0x0052F7D0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t field_0x00 (vtable pointer, written to 0x953f0c)  (evidence: 0x0052F690) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (vtable pointer 0x955BDC)  (evidence: 0x0053C910) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* vtable (read to dispatch the virtual call at slot 0xF4)  (evidence: 0x00708FF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void** vtable vtable pointer (slot 0 called with arg 1)  (evidence: 0x006DE130) // CONFLICT: multiple definitions at +0x0
@@ -410,6 +411,7 @@ struct Unknown_Fields {
     // +0x11  uint8_t                  flag  (evidence: 0x006408F0, 0x00648A20) // CONFLICT: multiple definitions at +0x11
     // +0x14  uint32_t field_0x14      (slot[2])  (evidence: 0x00553A30) // CONFLICT: multiple definitions at +0x14
     // +0x14  void* field_0x14 (secondary vtable pointer, set to 0x953B04)  (evidence: 0x0052F7D0) // CONFLICT: multiple definitions at +0x14
+    // +0x14  uint32_t field_0x14 (vtable pointer, written to 0x953f04)  (evidence: 0x0052F690) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t field_0x14 (vtable pointer 0x955BD4)  (evidence: 0x0053C910) // CONFLICT: multiple definitions at +0x14
     // +0x14  void**                   children_begin  (evidence: 0x00517230) // CONFLICT: multiple definitions at +0x14
     // +0x14  int32_t                  count  (evidence: 0x006FC200, 0x007D4720) // CONFLICT: multiple definitions at +0x14
@@ -656,6 +658,7 @@ struct Unknown_Fields {
     // +0x38  std::string              str2  (evidence: 0x00553F00, 0x00574D30) // CONFLICT: multiple definitions at +0x38
     // +0x39  uint8_t                  field_0x39  (evidence: 0x00553E80, 0x00622B40) // CONFLICT: multiple definitions at +0x39
     // +0x39  uint8_t                  flag  (evidence: 0x005A2BD0) // CONFLICT: multiple definitions at +0x39
+    // +0x3C  uint32_t field_0x3C (embedded subobject; vtable pointer written to 0x953a14)  (evidence: 0x0052F690) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  void*                    cachedProc  (evidence: 0x006A7FF0) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  DynamicArray             elements  (evidence: 0x006BA780, 0x006BC6F0) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  uint32_t                 embeddedBufferPtr  (evidence: 0x006D7880) // CONFLICT: multiple definitions at +0x3C

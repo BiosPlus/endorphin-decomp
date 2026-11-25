@@ -1,0 +1,34 @@
+{
+  "va": "0x0052F690",
+  "size": 91,
+  "orig_symbol": "sub_0052F690",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "Unknown::initDerivedWithEmbedded_0052F690",
+  "class": "Unknown",
+  "signature": "static inline void store_u32(void* base, std::size_t off, std::uint32_t value)",
+  "summary": "Base-initializes self, installs vtable pointers at +0x00 and +0x14 and at the embedded subobject (+0x3C), initializes that subobject via 0x00538530, and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t field_0x00 (vtable pointer, written to",
+      "name": "0x953f0c)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t field_0x14 (vtable pointer, written to",
+      "name": "0x953f04)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "uint32_t field_0x3C (embedded subobject; vtable pointer written to",
+      "name": "0x953a14)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:01:31Z"
+}

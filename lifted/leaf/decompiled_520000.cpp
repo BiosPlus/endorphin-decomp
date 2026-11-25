@@ -1550,3 +1550,37 @@ extern void* fn_0052F280(void) {
     return obj;
 }
 } // namespace lift_0052F280
+
+// [0x0052F690] sub_0052F690 (91 bytes)
+namespace lift_0052F690 {
+// Known callee 0x00538530: Unknown::InitWithVTableAndDefaults (Base-initializes this object, then sets vtable to 0x95501c, a float at +0x14 to 1.0, and flag bytes at +0x18 and +0x19 to 1; returns this.)
+extern void* ext_00538530(void* self);
+// Known callee 0x0053B240: Unknown::initAnimationDerived_0053B240 (Base-initializes self, installs three 32-bit vtable pointers (+0x00, +0x14, +0x18), zeroes +0x1C/+0x20/+0x34/+0x38, then calls Animation::vfunc_29 to reset state; returns self.)
+extern void* ext_0053B240(void* self);
+
+// @name Unknown::initDerivedWithEmbedded_0052F690
+// @class Unknown
+// @summary Base-initializes self, installs vtable pointers at +0x00 and +0x14 and at the embedded subobject (+0x3C), initializes that subobject via 0x00538530, and returns self.
+// @field Unknown +0x00 uint32_t field_0x00 (vtable pointer, written to 0x953f0c)
+// @field Unknown +0x14 uint32_t field_0x14 (vtable pointer, written to 0x953f04)
+// @field Unknown +0x3C uint32_t field_0x3C (embedded subobject; vtable pointer written to 0x953a14)
+
+static inline void store_u32(void* base, std::size_t off, std::uint32_t value) {
+    std::memcpy(static_cast<std::uint8_t*>(base) + off, &value, sizeof(value));
+}
+
+void* fn_0052F690(void* self) {
+    ext_0053B240(self);
+
+    void* sub = static_cast<std::uint8_t*>(self) + 0x3C;
+
+    store_u32(self, 0x00, 0x953f0c);
+    store_u32(self, 0x14, 0x953f04);
+
+    ext_00538530(sub);
+
+    store_u32(sub, 0x00, 0x953a14);
+
+    return self;
+}
+} // namespace lift_0052F690

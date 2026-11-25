@@ -21245,6 +21245,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0053A810 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0052F690": {
+    "name": "Unknown::initDerivedWithEmbedded_0052F690",
+    "class": "Unknown",
+    "signature": "static inline void store_u32(void* base, std::size_t off, std::uint32_t value)",
+    "summary": "Base-initializes self, installs vtable pointers at +0x00 and +0x14 and at the embedded subobject (+0x3C), initializes that subobject via 0x00538530, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052F6F0": {
     "name": "Primitives::Marker::vfunc_13",
     "class": "Primitives::Marker",
