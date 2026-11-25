@@ -6485,6 +6485,12 @@
     "summary": "Sets field 0xB4 to 8, then calls ext_00467380 with the global int32 from ext_004658C0 as the object.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x004647A0": {
+    "name": "sub_004647A0",
+    "signature": "void fn_004647A0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00464780 (setMode8AndDispatch).",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x004647C0": {
     "name": "sub_004647C0",
     "signature": "extern \"C\" void fn_004647C0(void)",

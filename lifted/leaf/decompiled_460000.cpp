@@ -1339,3 +1339,24 @@ void fn_00464780(void* self) {
     ext_00467380(reinterpret_cast<void*>(static_cast<intptr_t>(v)));
 }
 } // namespace lift_00464780
+
+// [0x004647A0] sub_004647A0 (22 bytes)
+namespace lift_004647A0 {
+// @name sub_004647A0
+// @summary Auto-lifted identical-shape clone of 0x00464780 (setMode8AndDispatch).
+namespace lift_00464780 {
+extern int32_t __cdecl ext_004658C0(void);
+extern void ext_00467390(void* self);
+extern void ext_00467390(void* self);
+
+// @name setMode8AndDispatch
+// @summary Sets field 0xB4 to 8, then calls ext_00467380 with the global int32 from ext_004658C0 as the object.
+// @field Unknown +0xB4 int32_t mode
+void fn_004647A0(void* self) {
+    *reinterpret_cast<int32_t*>(static_cast<char*>(self) + 0xB4) = 8;
+    int32_t v = ext_004658C0();
+    (void)&ext_00467390;
+    ext_00467390(reinterpret_cast<void*>(static_cast<intptr_t>(v)));
+}
+} // namespace lift_00464780
+} // namespace lift_004647A0
