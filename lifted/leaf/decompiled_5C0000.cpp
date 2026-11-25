@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 #include <string>
 #include <new>
+#include <cstdint>
 
 // [0x005CF3E0] sub_005CF3E0 (58 bytes)
 namespace lift_005CF3E0 {
@@ -480,3 +481,26 @@ uint32_t __stdcall findNamedEntryIndex(const void* arg) {
     return 3;
 }
 } // namespace lift_005CFD60
+
+// [0x005C35E0]
+namespace lift_005C35E0 {
+// @name allocate_32byte_array
+// @summary Allocates an array of 32-byte elements with overflow check, throwing bad_alloc on overflow.
+
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+extern void* fn_005C35E0(uint32_t count) {
+    if (count > 0) {
+        if ((0xFFFFFFFFu / count) < 0x20u) {
+            std::bad_alloc ex;
+            ext_006A6DD2(&ex, 0x009CDF94u);
+        }
+    } else {
+        count = 0;
+    }
+    return ext_006A5C62(count << 5);
+}
+} // namespace lift_005C35E0
