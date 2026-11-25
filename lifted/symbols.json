@@ -55985,6 +55985,13 @@
     "summary": "If self is non-null, invokes vtable slot 0 (scalar deleting destructor) with flag 1; the single stack argument is ignored.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006DE3B0": {
+    "name": "SubobjectDispatch_006DE3B0",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t __fastcall fn_006DE3B0(void* self)",
+    "summary": "Loads the subobject pointer at +0x14 of self; if its +0x9c field is non-null, forwards to ext_00712000 with that field, otherwise forwards to ext_006E7460 with the subobject.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DE3D0": {
     "name": "Unknown::GetIndirectInt32Plus4C",
     "class": "Unknown",

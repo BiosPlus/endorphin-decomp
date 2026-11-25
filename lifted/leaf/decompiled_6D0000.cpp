@@ -1551,3 +1551,30 @@ void __fastcall sub_006D1FB4(uint8_t* ecx, uint32_t /*edx*/) {
     eax = (eax & ~0xFFu) | ((eax + 4) & 0xFFu);
 }
 } // namespace lift_006D1FB4
+
+// [0x006DE3B0]
+namespace lift_006DE3B0 {
+extern uint32_t __fastcall ext_00712000(void* self);
+extern int32_t __fastcall ext_006E7460(void* self);
+
+// @name SubobjectDispatch_006DE3B0
+// @class Unknown
+// @summary Loads the subobject pointer at +0x14 of self; if its +0x9c field is non-null, forwards to ext_00712000 with that field, otherwise forwards to ext_006E7460 with the subobject.
+// @field Unknown +0x14 uint8_t* field_0x14
+// @field Unknown +0x9c uint32_t field_0x9c
+extern uint32_t __fastcall fn_006DE3B0(void* self) {
+    // mov eax, [ecx + 0x14]
+    uint32_t eax = *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x14);
+
+    // mov ecx, [eax + 0x9c]
+    uint32_t ecx = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(eax) + 0x9c);
+
+    // test ecx, ecx / je -> tail-call ext_006E7460(eax)
+    if (ecx == 0) {
+        return static_cast<uint32_t>(ext_006E7460(reinterpret_cast<void*>(static_cast<uintptr_t>(eax))));
+    }
+
+    // jmp ext_00712000 with ecx as the self argument
+    return ext_00712000(reinterpret_cast<void*>(static_cast<uintptr_t>(ecx)));
+}
+} // namespace lift_006DE3B0
