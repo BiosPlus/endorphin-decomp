@@ -64286,6 +64286,12 @@
     "summary": "Forwards a key lookup to the SortedArray embedded at this+0xB8 and returns its result (no out-index).",
     "lifted_path": "lifted/leaf/decompiled_730000.cpp"
   },
+  "0x00736FE0": {
+    "name": "ByteLookupTable_00736FE0",
+    "signature": "extern \"C\" const unsigned char* sub_00736FE0()",
+    "summary": "32-byte constant lookup table (misdisassembled as code); returns pointer to it",
+    "lifted_path": "lifted/leaf/decompiled_730000.cpp"
+  },
   "0x00743440": {
     "name": "findFirstMatchingItem",
     "signature": "int fn_00743440(void* arg1, void* list)",

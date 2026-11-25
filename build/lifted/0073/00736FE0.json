@@ -1,0 +1,13 @@
+{
+  "va": "0x00736FE0",
+  "size": 32,
+  "orig_symbol": "sub_00736FE0",
+  "src_path": "src/leaf/decompiled_730000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_730000.cpp",
+  "name": "ByteLookupTable_00736FE0",
+  "signature": "extern \"C\" const unsigned char* sub_00736FE0()",
+  "summary": "32-byte constant lookup table (misdisassembled as code); returns pointer to it",
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@low",
+  "lifted_at": "2026-11-25T12:45:34Z"
+}

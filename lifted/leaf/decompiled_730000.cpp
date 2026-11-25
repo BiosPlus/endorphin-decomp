@@ -15,3 +15,19 @@ uint32_t fn_00736C90(void* self, uint32_t key) {
     return ext_00782E70(static_cast<uint8_t*>(self) + 0xB8, key, nullptr);
 }
 } // namespace lift_00736C90
+
+// [0x00736FE0]
+namespace lift_00736FE0 {
+// @name ByteLookupTable_00736FE0
+// @summary 32-byte constant lookup table (misdisassembled as code); returns pointer to it
+static const unsigned char g_table_00736FE0[32] = {
+    0x00, 0x05, 0x05, 0x05, 0x05, 0x05, 0x05, 0x05,
+    0x05, 0x05, 0x05, 0x05, 0x05, 0x05, 0x01, 0x02,
+    0x05, 0x03, 0x05, 0x04, 0x90, 0x90, 0x90, 0x90,
+    0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90,
+};
+
+extern const unsigned char* sub_00736FE0() {
+    return g_table_00736FE0;
+}
+} // namespace lift_00736FE0
