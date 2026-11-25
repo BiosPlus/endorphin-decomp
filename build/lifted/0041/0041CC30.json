@@ -1,0 +1,14 @@
+{
+  "va": "0x0041CC30",
+  "size": 60,
+  "orig_symbol": "Properties::AutoCompleteSupplier::vfunc_2",
+  "src_path": "src/Properties/AutoCompleteSupplier.cpp",
+  "lifted_path": "lifted/Properties/AutoCompleteSupplier.cpp",
+  "name": "Properties::AutoCompleteSupplier::vfunc_2",
+  "class": "Properties::AutoCompleteSupplier",
+  "signature": "uint32_t __thiscall fn_0041CC30(uint32_t self, uint32_t out_str)",
+  "summary": "Delegates to the last global supplier's vfunc_1 if present, otherwise constructs an empty std::string.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:09:29Z"
+}
