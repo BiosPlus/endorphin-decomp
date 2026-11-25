@@ -1464,3 +1464,32 @@ void* fn_0052F610() {
     return obj;
 }
 } // namespace lift_0052F610
+
+// [0x0052F340] sub_0052F340 (81 bytes)
+namespace lift_0052F340 {
+// Known callee 0x0053B240: Unknown::initAnimationDerived_0053B240 (Base-initializes self, installs three 32-bit vtable pointers (+0x00, +0x14, +0x18), zeroes +0x1C/+0x20/+0x34/+0x38, then calls Animation::vfunc_29 to reset state; returns self.)
+extern void* ext_0053B240(void* self);
+// Known callee 0x00537E90: sub_00537E90 (38B, called with this = self + 0x44)
+extern void ext_00537E90(void* self);
+
+// @name Unknown::initDerived_0052F340
+// @class Unknown
+// @summary Base-initializes self via initAnimationDerived, installs two 32-bit vtable pointers (+0x00, +0x14), initializes the embedded subobject at +0x44, and returns self.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x14 uint32_t vtable_secondary
+// @field Unknown +0x44 uint8_t field_0x44
+void* fn_0052F340(void* self) {
+    // Base initialization first; it installs its own vtable pointers.
+    ext_0053B240(self);
+
+    // Install this class's vtable pointers (32-bit slots, matching the original layout).
+    auto* base = static_cast<char*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x00) = 0x00953CECu;
+    *reinterpret_cast<uint32_t*>(base + 0x14) = 0x00953CE4u;
+
+    // Initialize the embedded subobject at +0x44.
+    ext_00537E90(base + 0x44);
+
+    return self;
+}
+} // namespace lift_0052F340

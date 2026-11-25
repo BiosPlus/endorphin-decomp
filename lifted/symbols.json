@@ -21173,6 +21173,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0061EA10 (HingeSecondaryConstraint::AllocAndConstruct).",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x0052F340": {
+    "name": "Unknown::initDerived_0052F340",
+    "class": "Unknown",
+    "signature": "void* fn_0052F340(void* self)",
+    "summary": "Base-initializes self via initAnimationDerived, installs two 32-bit vtable pointers (+0x00, +0x14), initializes the embedded subobject at +0x44, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052F3A0": {
     "name": "Primitives::Null::vfunc_25",
     "class": "Primitives::Null",

@@ -1,0 +1,34 @@
+{
+  "va": "0x0052F340",
+  "size": 81,
+  "orig_symbol": "sub_0052F340",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "Unknown::initDerived_0052F340",
+  "class": "Unknown",
+  "signature": "void* fn_0052F340(void* self)",
+  "summary": "Base-initializes self via initAnimationDerived, installs two 32-bit vtable pointers (+0x00, +0x14), initializes the embedded subobject at +0x44, and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "vtable_secondary"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "uint8_t",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:01:14Z"
+}
