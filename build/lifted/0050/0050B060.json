@@ -10,5 +10,5 @@
   "summary": "Copies the 0x24-byte records in [first, last) to dest and returns dest advanced past them.",
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T02:11:33Z"
+  "lifted_at": "2026-11-25T02:11:41Z"
 }

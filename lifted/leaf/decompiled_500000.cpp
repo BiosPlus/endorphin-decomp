@@ -901,7 +901,6 @@ int32_t fn_00506740(int32_t arg1, int32_t arg2, int32_t arg3) {
 namespace lift_0050B060 {
 // @name Unknown::copyRecordRangeAndAdvance_0050B060
 // @summary Copies the 0x24-byte records in [first, last) to dest and returns dest advanced past them.
-// @field none
 
 void* ext_00509C10(const void* first, const void* last, void* dest);
 
