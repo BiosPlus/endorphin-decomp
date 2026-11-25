@@ -1,0 +1,14 @@
+{
+  "va": "0x0070BBD0",
+  "size": 80,
+  "orig_symbol": "sub_0070BBD0",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::FillTripleFromChains",
+  "class": "Unknown",
+  "signature": "static inline void* lift_0070BBD0_ptr(int32_t v)",
+  "summary": "Resolves a value index via GetValueIfCountPositive, then reads three float getters through chained sub-object lookups and stores them as doubles into the caller-supplied buffer at offsets 0x00, 0x08 and 0x10; returns that buffer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:50:25Z"
+}

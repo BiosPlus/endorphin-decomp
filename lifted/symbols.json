@@ -53851,6 +53851,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0070EC30 (Unknown::ForwardSubObjectAt0x168).",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x0070BBD0": {
+    "name": "Unknown::FillTripleFromChains",
+    "class": "Unknown",
+    "signature": "static inline void* lift_0070BBD0_ptr(int32_t v)",
+    "summary": "Resolves a value index via GetValueIfCountPositive, then reads three float getters through chained sub-object lookups and stores them as doubles into the caller-supplied buffer at offsets 0x00, 0x08 and 0x10; returns that buffer.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070BE80": {
     "name": "Unknown::GetFloatAtChainedValue",
     "class": "Unknown",
