@@ -1076,3 +1076,25 @@ void* fn_0060D730(void* self) {
     return self;                                      // mov eax, esi
 }
 } // namespace lift_0060D730
+
+// [0x0060C570] sub_0060C570 (33 bytes)
+namespace lift_0060C570 {
+// Known callee 0x0060B910: unknown::ctorWithTwoStrings (constructor; stamps its own vtable, default-constructs two std::string members, returns this).
+extern void* ext_0060B910(void* self);
+// Known callee 0x0060BCD0: descriptiveName (initializes a 0x11-byte record; thiscall, this in ecx).
+extern void ext_0060BCD0(void* ecx);
+
+// @name Unknown::constructWithRecord
+// @class Unknown
+// @summary Runs the base constructor ext_0060B910 on self, stamps vtable 0x0097215C, clears the dword at +0x44, initializes the embedded record at +0x48 via ext_0060BCD0, and returns self.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x44 uint32_t field_0x44
+// @field Unknown +0x48 uint8_t record
+__thiscall void* fn_0060C570(void* self) {
+    ext_0060B910(self);
+    lift_field<uint32_t>(self, 0x00) = 0x0097215Cu;
+    lift_field<uint32_t>(self, 0x44) = 0u;
+    ext_0060BCD0(static_cast<uint8_t*>(self) + 0x48);
+    return self;
+}
+} // namespace lift_0060C570

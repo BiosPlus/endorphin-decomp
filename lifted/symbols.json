@@ -35337,6 +35337,13 @@
     "summary": "Copies the m_name and m_jointName string properties from a source EffectorBaseData into this object via the string-property helper.",
     "lifted_path": "lifted/NMData/EffectorBaseData.cpp"
   },
+  "0x0060C570": {
+    "name": "Unknown::constructWithRecord",
+    "class": "Unknown",
+    "signature": "__thiscall void* fn_0060C570(void* self)",
+    "summary": "Runs the base constructor ext_0060B910 on self, stamps vtable 0x0097215C, clears the dword at +0x44, initializes the embedded record at +0x48 via ext_0060BCD0, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060CC60": {
     "name": "GetOnceInitString_0060CC60",
     "signature": "void* GetOnceInitString_0060CC60()",
