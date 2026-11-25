@@ -52965,6 +52965,13 @@
     "summary": "Counts entries of the pointer array at +0x20 (length at +0x10) for which GetDwordByIndex(entry, index) is nonzero.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006FDFC0": {
+    "name": "Unknown::FindNthMatchingIndex",
+    "class": "Unknown",
+    "signature": "T load_at(const void* base, std::size_t off)",
+    "summary": "Returns the index of the ordinal-th (0-based) entry in the pointer array at +0x20 (length at +0x10) whose GetDwordByIndex(entry, index) is nonzero, or -1 if there is no such entry.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FEFB0": {
     "name": "IsEligibleNameWithoutColonOrPrefix",
     "signature": "bool fn_006FEFB0(const char* name)",

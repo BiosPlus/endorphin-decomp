@@ -319,7 +319,7 @@ struct Unknown_Fields {
     // +0x10  FLOAT                    field_0x10  (evidence: 0x005F5350) // CONFLICT: multiple definitions at +0x10
     // +0x10  double                   field_0x10  (evidence: 0x0050F970, 0x006722B0, 0x0067B2F0, 0x0067B310, 0x0067B390, 0x006E0090, 0x00766240, 0x0077FB40) // CONFLICT: multiple definitions at +0x10
     // +0x10  float                    field_0x10  (evidence: 0x00489DC0, 0x00519E50, 0x00567040, 0x005B0E60, 0x005B1B60, 0x005B1B90, 0x00610C10, 0x007C8490, 0x007C9D80, 0x007C9ED0, 0x007CAFD0, 0x007CB010, 0x007CCAB0, 0x007CCB60, 0x007FC490) // CONFLICT: multiple definitions at +0x10
-    // +0x10  int32_t                  field_0x10  (evidence: 0x00492520, 0x00540E10, 0x006722B0, 0x00672490, 0x0067B070, 0x006FDF30) // CONFLICT: multiple definitions at +0x10
+    // +0x10  int32_t                  field_0x10  (evidence: 0x00492520, 0x00540E10, 0x006722B0, 0x00672490, 0x0067B070, 0x006FDF30, 0x006FDFC0) // CONFLICT: multiple definitions at +0x10
     // +0x10  std::string              field_0x10  (evidence: 0x006872E0, 0x006873D0, 0x00688B20, 0x00688B50, 0x00689570, 0x0068BDF0) // CONFLICT: multiple definitions at +0x10
     // +0x10  u32                      field_0x10  (evidence: 0x00645EB0, 0x00649730) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32                   field_0x10  (evidence: 0x004C4390, 0x004CCC30) // CONFLICT: multiple definitions at +0x10
@@ -425,7 +425,7 @@ struct Unknown_Fields {
     // +0x20  BYTE field_0x20 (base of byte array indexed by first argument)  (evidence: 0x0071E660) // CONFLICT: multiple definitions at +0x20
     // +0x20  int32_t                  count  (evidence: 0x006DE720) // CONFLICT: multiple definitions at +0x20
     // +0x20  int32_t field_0x20 (entry count)  (evidence: 0x006DE770) // CONFLICT: multiple definitions at +0x20
-    // +0x20  DWORD                    field_0x20  (evidence: 0x0041FEA0, 0x0045BC30, 0x00465EF0, 0x00538FA0, 0x00624540, 0x00642010, 0x006423D0, 0x006B0DE0, 0x0078C230, 0x0078C3A0) // CONFLICT: multiple definitions at +0x20
+    // +0x20  DWORD                    field_0x20  (evidence: 0x0041FEA0, 0x0045BC30, 0x00465EF0, 0x00538FA0, 0x00624540, 0x00642010, 0x006423D0, 0x006B0DE0, 0x006FDFC0, 0x0078C230, 0x0078C3A0) // CONFLICT: multiple definitions at +0x20
     // +0x20  DWORD*                   field_0x20  (evidence: 0x006FDF30) // CONFLICT: multiple definitions at +0x20
     // +0x20  HMODULE                  field_0x20  (evidence: 0x00441020, 0x004474D0, 0x0044B6A0) // CONFLICT: multiple definitions at +0x20
     // +0x20  HWND                     field_0x20  (evidence: 0x00407850, 0x0040A910, 0x0040BE90, 0x00410310, 0x00415540, 0x00416B20, 0x0043CD80, 0x004561C0, 0x004586C0, 0x00458DF0, 0x006AAC90) // CONFLICT: multiple definitions at +0x20

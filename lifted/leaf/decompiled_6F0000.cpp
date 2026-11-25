@@ -1506,3 +1506,46 @@ void fn_006FC8E0(void* self) {
     ext_006D2160(static_cast<uint8_t*>(self) + 0x08);
 }
 } // namespace lift_006FC8E0
+
+// [0x006FDFC0] sub_006FDFC0 (80 bytes)
+namespace lift_006FDFC0 {
+namespace lift_006FDFC0 {
+// Known callee 0x006FC950: GetDwordByIndex (Returns the DWORD at this+0x04..+0x18 (step 4) selected by a 1-based index; returns 0 for index outside 1..6.)
+extern DWORD ext_006FC950(void* self, DWORD index);
+
+namespace {
+
+template <typename T>
+T load_at(const void* base, std::size_t off) {
+    T value{};
+    std::memcpy(&value, static_cast<const unsigned char*>(base) + off, sizeof(T));
+    return value;
+}
+
+} // namespace
+
+// @name Unknown::FindNthMatchingIndex
+// @class Unknown
+// @summary Returns the index of the ordinal-th (0-based) entry in the pointer array at +0x20 (length at +0x10) whose GetDwordByIndex(entry, index) is nonzero, or -1 if there is no such entry.
+// @field Unknown +0x10 int32_t field_0x10
+// @field Unknown +0x20 DWORD field_0x20
+int32_t fn_006FDFC0(void* self, DWORD ordinal, DWORD index) {
+    const auto count = load_at<int32_t>(self, 0x10);
+    DWORD matches = 0;
+
+    for (int32_t i = 0; i < count; ++i) {
+        const auto array = static_cast<uintptr_t>(load_at<DWORD>(self, 0x20));
+        const auto entry = load_at<DWORD>(reinterpret_cast<const void*>(array),
+                                          static_cast<std::size_t>(i) * sizeof(DWORD));
+        if (ext_006FC950(reinterpret_cast<void*>(static_cast<uintptr_t>(entry)), index) != 0) {
+            if (matches == ordinal) {
+                return i;
+            }
+            ++matches;
+        }
+    }
+
+    return -1;
+}
+} // namespace lift_006FDFC0
+} // namespace lift_006FDFC0
