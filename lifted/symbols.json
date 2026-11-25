@@ -46471,6 +46471,13 @@
     "summary": "Returns the int32 at +4 of the 12-byte record at the given index in the array at +0x1D4, or -1 if index \u003e= count at +0x1C4.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D8240": {
+    "name": "descriptiveName (unknown class; two-level indexed table lookup)",
+    "class": "(unknown)",
+    "signature": "int32_t fn_006D8240(void* self, int32_t index, int32_t sub)",
+    "summary": "Looks up an entry in a 12-byte-stride table at this+0x1D4 (indexed by arg1, bounded by this+0x1C4); each entry holds a base index and a limit, and the result is this+0x1EC[base + arg2] if arg2 is below the limit, else -1. Thiscall, two stack args, returns int32 in eax.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D8520": {
     "name": "GetFieldValueViaChain",
     "signature": "int32_t fn_006D8520(void* self)",

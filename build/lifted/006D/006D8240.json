@@ -1,0 +1,34 @@
+{
+  "va": "0x006D8240",
+  "size": 64,
+  "orig_symbol": "sub_006D8240",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "descriptiveName (unknown class; two-level indexed table lookup)",
+  "class": "(unknown)",
+  "signature": "int32_t fn_006D8240(void* self, int32_t index, int32_t sub)",
+  "summary": "Looks up an entry in a 12-byte-stride table at this+0x1D4 (indexed by arg1, bounded by this+0x1C4); each entry holds a base index and a limit, and the result is this+0x1EC[base + arg2] if arg2 is below the limit, else -1. Thiscall, two stack args, returns int32 in eax.",
+  "fields": [
+    {
+      "class": "(unknown)",
+      "offset": "+0x1C4",
+      "type": "int32_t",
+      "name": "field_0x1C4"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x1D4",
+      "type": "int32_t*",
+      "name": "field_0x1D4"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x1EC",
+      "type": "int32_t*",
+      "name": "field_0x1EC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:05:58Z"
+}

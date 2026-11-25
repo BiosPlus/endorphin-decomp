@@ -918,3 +918,28 @@ extern int32_t __fastcall fn_006D7AA0(void* self) {
     return lift_field<int32_t>(base, 0x18);
 }
 } // namespace lift_006D7AA0
+
+// [0x006D8240]
+namespace lift_006D8240 {
+// @name descriptiveName (unknown class; two-level indexed table lookup)
+// @class (unknown)
+// @summary Looks up an entry in a 12-byte-stride table at this+0x1D4 (indexed by arg1, bounded by this+0x1C4); each entry holds a base index and a limit, and the result is this+0x1EC[base + arg2] if arg2 is below the limit, else -1. Thiscall, two stack args, returns int32 in eax.
+// @field (unknown) +0x1C4 int32_t field_0x1C4
+// @field (unknown) +0x1D4 int32_t* field_0x1D4
+// @field (unknown) +0x1EC int32_t* field_0x1EC
+int32_t fn_006D8240(void* self, int32_t index, int32_t sub) {
+    int32_t result = -1;                                  // or eax, -1
+    int32_t count = lift_field<int32_t>(self, 0x1C4);
+    if (index < count) {                                  // jge -> return -1
+        int32_t* table = lift_field<int32_t*>(self, 0x1D4);
+        int32_t* entry = table + index * 3;               // lea edx, [edx+2*edx]; stride 12 bytes
+        int32_t limit = entry[1];                         // mov edi, [esi+4*edx+4]
+        if (sub < limit) {                                // jge -> return -1
+            int32_t base = entry[0];                      // mov eax, [esi]
+            int32_t* map = lift_field<int32_t*>(self, 0x1EC);
+            result = map[base + sub];                     // mov eax, [eax+4*edx]
+        }
+    }
+    return result;
+}
+} // namespace lift_006D8240
