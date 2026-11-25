@@ -7535,6 +7535,12 @@
     "summary": "Lazily initializes the function-local static at mem_00AD835C (guard bit 0 in mem_00AD8360) and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046F4C0": {
+    "name": "ensureStaticObjectInitialized_0046F4C0",
+    "signature": "void* fn_0046F4C0()",
+    "summary": "One-time guarded initializer for the static object at mem_00AD8364; runs the constructor helper once, then installs vtable 0x0093AEEC and returns the object's address.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046F580": {
     "name": "ConstructOnce_0046F580",
     "signature": "DWORD fn_0046F580()",

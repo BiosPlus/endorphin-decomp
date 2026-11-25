@@ -1432,3 +1432,25 @@ void* fn_0046F400() {
     return &mem_00AD8354;
 }
 } // namespace lift_0046F400
+
+// [0x0046F4C0] sub_0046F4C0 (87 bytes)
+namespace lift_0046F4C0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AD8368;
+extern DWORD mem_00AD8364;
+
+// @name ensureStaticObjectInitialized_0046F4C0
+// @summary One-time guarded initializer for the static object at mem_00AD8364; runs the constructor helper once, then installs vtable 0x0093AEEC and returns the object's address.
+// The original SEH frame (fs:[0] push/pop) is exception-state bookkeeping with no portable equivalent; it is omitted.
+void* fn_0046F4C0() {
+    // Guard bit 0 of the init-flag dword at mem_00AD8368.
+    if ((mem_00AD8368 & 1u) == 0) {
+        mem_00AD8368 |= 1u;
+        // Constructor helper runs with ECX = &mem_00AD8364 (thiscall).
+        ext_0067A670(&mem_00AD8364, 0u);
+        mem_00AD8364 = 0x0093AEECu; // installed vtable pointer
+    }
+    return reinterpret_cast<void*>(&mem_00AD8364);
+}
+} // namespace lift_0046F4C0
