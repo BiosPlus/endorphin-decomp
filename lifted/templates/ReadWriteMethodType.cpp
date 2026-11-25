@@ -10000,3 +10000,35 @@ __stdcall void fn_004D1CB0(void* self) {
 
 } // namespace lift_004D1CB0
 } // namespace lift_004D1CB0
+
+// [0x004D55F0] ExprParser::ReadWriteMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::RigEventData::setSourceName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_004D55F0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AE5D08;  // one-time-init guard word (bit 0)
+extern DWORD mem_00AE5D04;  // function-local static object; first dword = vptr
+
+// @name ExprParser::ReadWriteMethodType<RigEventData sourceName>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::RigEventData::setSourceName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Lazily constructs the function-local static object at mem_00AE5D04 (once, guarded by bit 0 of mem_00AE5D08), then stores its address into the ValuePtr argument's +0x04 slot.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+DWORD fn_004D55F0(void* out) {
+    // Guard: if bit 0 of the init word is already set, skip construction.
+    if (mem_00AE5D08 & 1u) {
+        // Fast path: publish the static object's address; eax still holds 1.
+        lift_field<void*>(out, 0x04) = reinterpret_cast<void*>(&mem_00AE5D04);
+        return 1u;
+    }
+
+    // Slow path: mark initialized, then construct the static object.
+    mem_00AE5D08 |= 1u;
+    ext_0067A670(reinterpret_cast<void*>(&mem_00AE5D04), 0u);
+
+    // Store vtable pointer 0x0094860C into the object's first dword.
+    mem_00AE5D04 = 0x0094860Cu;
+
+    // Publish the object's address into out->+0x04; return the out pointer (eax).
+    lift_field<void*>(out, 0x04) = reinterpret_cast<void*>(&mem_00AE5D04);
+    return static_cast<DWORD>(reinterpret_cast<uintptr_t>(out));
+}
+} // namespace lift_004D55F0
