@@ -760,3 +760,26 @@ void* fn_00508740(void* self) {
     return self;
 }
 } // namespace lift_00508740
+
+// [0x0050FDA0] sub_0050FDA0 (82 bytes)
+namespace lift_0050FDA0 {
+// @name Sort3PtrsByKey20
+// @summary Compare-exchange sorts three object-pointer slots ascending by the double key at +0x20.
+// @field unknown +0x20 double field_0x20
+void fn_0050FDA0(void** a, void** b, void** c) {
+    auto key = [](void* obj) -> double {
+        return *reinterpret_cast<double*>(static_cast<unsigned char*>(obj) + 0x20);
+    };
+    // Swap the pointers in slots x/y when key(*x) > key(*y); NaN compares false (no swap).
+    auto cmpSwap = [&](void** x, void** y) {
+        if (key(*x) > key(*y)) {
+            void* t = *x;
+            *x = *y;
+            *y = t;
+        }
+    };
+    cmpSwap(a, b);
+    cmpSwap(b, c);
+    cmpSwap(a, b);
+}
+} // namespace lift_0050FDA0
