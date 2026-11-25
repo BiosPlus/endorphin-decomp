@@ -201,3 +201,29 @@ void* fn_004DE1B0(void* self, void* arg) {
     return arg;
 }
 } // namespace lift_004DE1B0
+
+// [0x004BFBE0]
+namespace lift_004BFBE0 {
+// @name NMData::AnimationEventData::vfunc_63
+// @class NMData::AnimationEventData
+// @summary If the int32 at this+0x168 is nonzero, call ext_00594000 and pass its result as `self` to ext_00599F10; otherwise return 0.
+// @field NMData::AnimationEventData +0x168 int32_t field_0x168
+
+// Global referenced by the original asm's rdata constants.
+extern const uint32_t mem_00924FDC;
+// Callees: ext_00594000 returns a global int32 (see mem_00B40D08); ext_00599F10 takes `this` in ECX.
+extern int32_t ext_00594000(void);
+extern int32_t ext_00599F10(void* self);
+
+// Original: mov eax,[ecx+0x168]; test eax,eax; jne +1; ret;
+//           push eax; call ext_00594000; mov ecx,eax; call ext_00599F10; ret
+int32_t __thiscall sub_004BFBE0(void* self) {
+    (void)mem_00924FDC;
+    int32_t value = *reinterpret_cast<int32_t*>(reinterpret_cast<uint8_t*>(self) + 0x168);
+    if (value == 0) {
+        return 0;
+    }
+    int32_t handle = ext_00594000();
+    return ext_00599F10(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(handle))));
+}
+} // namespace lift_004BFBE0

@@ -1,0 +1,22 @@
+{
+  "va": "0x004BFBE0",
+  "size": 25,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_63",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_63",
+  "class": "NMData::AnimationEventData",
+  "signature": "int32_t __thiscall sub_004BFBE0(void* self)",
+  "summary": "If the int32 at this+0x168 is nonzero, call ext_00594000 and pass its result as `self` to ext_00599F10; otherwise return 0.",
+  "fields": [
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x168",
+      "type": "int32_t",
+      "name": "field_0x168"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:26:00Z"
+}
