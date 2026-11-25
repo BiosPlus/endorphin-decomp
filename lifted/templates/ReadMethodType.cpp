@@ -58935,3 +58935,40 @@ float fn_0066F9A0(void* self) {
     return static_cast<float>(std::sqrt(sum));
 }
 } // namespace lift_0066F9A0
+
+// [0x0068EFF0] ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0>::vfunc_1 (80 bytes)
+namespace lift_0068EFF0 {
+// Known callee 0x0068EE60: sub_0068EE60 (Auto-lifted identical-shape clone of 0x004CE810 (Unknown::GetRecordByIndex).)
+extern void* ext_0068EE60(uint32_t index);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+// IAT slots: std::string::c_str (MSVCP80) and atof (MSVCR80), called through the slot.
+extern const char* (__thiscall* mem_00924FF0)(void* self);
+extern double (__cdecl* mem_009251F0)(const char* s);
+
+// @name ExprParser::ReadMethodType<UnitsWithProperties, ...getAngleUnitName...>::vfunc_1
+// @class ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0>
+// @summary Reads the object's angle unit name record by index, converts its string to float via atof, and returns it; throws if the source pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field UnitsWithProperties +0x04 void* field_0x04
+// @field Unknown +0x0c uint32_t field_0x0c
+float __stdcall fn_0068EFF0(void* argp) {
+    void* const* holder = static_cast<void* const*>(argp);
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Null source: construct the exception object and raise it via the CRT thrower.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return 0.0f;
+    }
+    void* edx = lift_field<void*>(obj, 0x04);
+    uint32_t index = lift_field<uint32_t>(edx, 0x0c);
+    void* str = ext_0068EE60(index);
+    const char* text = mem_00924FF0(str);
+    double value = mem_009251F0(text);
+    return static_cast<float>(value);
+}
+} // namespace lift_0068EFF0
