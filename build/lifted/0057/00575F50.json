@@ -1,0 +1,13 @@
+{
+  "va": "0x00575F50",
+  "size": 88,
+  "orig_symbol": "sub_00575F50",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "sub_00575F50",
+  "signature": "uint32_t sub_00575F50(uint32_t src_begin, uint32_t src_end, uint32_t a3, uint32_t dst)",
+  "summary": "Copies a range of 160-byte elements via ext_00575310 and returns the advanced destination pointer.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:16:48Z"
+}

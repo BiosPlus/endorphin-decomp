@@ -1092,3 +1092,17 @@ void* fn_0057E320(const void* first, const void* last, void* dest) {
 }
 } // namespace lift_00687E50
 } // namespace lift_0057E320
+
+// [0x00575F50]
+namespace lift_00575F50 {
+// @name sub_00575F50
+// @summary Copies a range of 160-byte elements via ext_00575310 and returns the advanced destination pointer.
+
+extern void ext_00575310(uint32_t src_begin, uint32_t src_end, uint32_t dst, uint32_t a4, uint32_t a5, uint32_t a6);
+
+uint32_t sub_00575F50(uint32_t src_begin, uint32_t src_end, uint32_t a3, uint32_t dst) {
+    ext_00575310(src_begin, src_end, dst, a3, 0, 0);
+    int32_t count = static_cast<int32_t>(src_end - src_begin) / 160;
+    return dst + static_cast<uint32_t>(count * 160);
+}
+} // namespace lift_00575F50
