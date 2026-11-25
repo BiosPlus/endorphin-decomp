@@ -3022,6 +3022,13 @@
     "summary": "Reads a flag from the global object via vtable slot 63 (+0xFC) and forwards it to target slot 0; if self+0x100 is set, forwards (nested result == 1) to target slot 1.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x004305F0": {
+    "name": "Unknown::NotifyTargetByNestedState",
+    "class": "Unknown",
+    "signature": "static inline void vcall_int(void* obj, int slot, int arg)",
+    "summary": "Calls other-\u003evtbl[0](1); if this+0x100 is non-null, calls other-\u003evtbl[1] with 1 when the nested state (from ext_0044B5B0) is 2 or 9, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430660": {
     "name": "OnUpdateCommandUI_00430660",
     "signature": "void __thiscall sub_00430660(unsigned char* self, void* pCmdUI)",
@@ -63471,6 +63478,12 @@
     "class": "Object",
     "signature": "int32_t fn_007266C0(void* self, uint32_t key)",
     "summary": "Looks up key in the sorted array held at this+0x250; if found, returns the getter value of the match, otherwise 0.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
+  "0x00726770": {
+    "name": "selectAndClearSubobjectField",
+    "signature": "extern \"C\" bool __thiscall fn_00726770(void* self, uint32_t key)",
+    "summary": "Looks up a key in the subobject at +0x250, sets its index, and clears offset +0x1C of its indexed entry.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
   "0x00728570": {

@@ -2976,3 +2976,35 @@ void __thiscall fn_00434880(void* self, void* obj) {
     reinterpret_cast<Slot1Fn>(vt[1])(obj, flagB);
 }
 } // namespace lift_00434880
+
+// [0x004305F0] sub_004305F0 (103 bytes)
+namespace lift_004305F0 {
+// Known callee 0x0044B5B0: GetNestedFieldOrZero (sub_0044B5B0) (If this+0x64 is nonzero, returns dword at (this+0x68)->+0x38; otherwise returns 0.)
+extern int ext_0044B5B0(void* self);
+
+// Virtual dispatch helper: calls obj->vtbl[slot](obj, arg).
+typedef void (*VMethodIntArg)(void* self, int arg);
+
+static inline void vcall_int(void* obj, int slot, int arg) {
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    reinterpret_cast<VMethodIntArg>(vtbl[slot])(obj, arg);
+}
+
+// @name Unknown::NotifyTargetByNestedState
+// @class Unknown
+// @summary Calls other->vtbl[0](1); if this+0x100 is non-null, calls other->vtbl[1] with 1 when the nested state (from ext_0044B5B0) is 2 or 9, else 0.
+// @field Unknown +0x100 void* field_0x100
+void fn_004305F0(void* self, void* other) {
+    vcall_int(other, 0, 1);
+
+    void* obj = lift_field<void*>(self, 0x100);
+    if (obj == nullptr) {
+        return;
+    }
+
+    bool is2 = ext_0044B5B0(obj) == 2;
+    bool is9 = ext_0044B5B0(obj) == 9;
+
+    vcall_int(other, 1, (is2 || is9) ? 1 : 0);
+}
+} // namespace lift_004305F0
