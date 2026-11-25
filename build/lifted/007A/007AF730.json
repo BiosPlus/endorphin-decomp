@@ -1,0 +1,13 @@
+{
+  "va": "0x007AF730",
+  "size": 19,
+  "orig_symbol": "sub_007AF730",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "ForwardDispatchRecordByKey16Const",
+  "signature": "int32_t fn_007AF730(void* self)",
+  "summary": "Forwards its first argument and the constant key 0x00AB10C4 to DispatchRecordByKey16 and returns that result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:56:48Z"
+}

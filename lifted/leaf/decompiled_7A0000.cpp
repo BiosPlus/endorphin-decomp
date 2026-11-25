@@ -759,3 +759,16 @@ int32_t fn_007AF750(void* self, uint32_t arg2, uint32_t arg3) {
     return -1;
 }
 } // namespace lift_007AF750
+
+// [0x007AF730] sub_007AF730 (19 bytes)
+namespace lift_007AF730 {
+// Known callee 0x007AF750: Unknown::DispatchRecordByKey16 (Looks up the record keyed by this+0x44; forwards this+0x00 and either the record's first dword or the key, plus arg3, to the optional hook. Always returns -1.)
+// The call site pushes only two arguments (self, key constant); the third is not set here.
+extern int32_t ext_007AF750(void* self, uint32_t key);
+
+// @name ForwardDispatchRecordByKey16Const
+// @summary Forwards its first argument and the constant key 0x00AB10C4 to DispatchRecordByKey16 and returns that result.
+int32_t fn_007AF730(void* self) {
+    return ext_007AF750(self, 0x00AB10C4u);
+}
+} // namespace lift_007AF730
