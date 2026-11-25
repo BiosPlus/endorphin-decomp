@@ -1344,3 +1344,22 @@ DWORD fn_006FDF30(void* self, DWORD index) {
     return matches;
 }
 } // namespace lift_006FDF30
+
+// [0x006FEFB0] sub_006FEFB0 (64 bytes)
+namespace lift_006FEFB0 {
+// String literal at .rdata 0x00AAB928; compared against the first two characters of the input.
+extern const char mem_00AAB928[];
+
+// @name IsEligibleNameWithoutColonOrPrefix
+// @summary Returns true when the string is non-null, contains no ':' character, and does not start with the 2-character prefix at mem_00AAB928.
+// @field none (function takes no object pointer; no member fields accessed)
+bool fn_006FEFB0(const char* name) {
+    if (name == nullptr) {
+        return false;
+    }
+    if (std::strrchr(name, ':') != nullptr) {
+        return false;
+    }
+    return std::strncmp(name, mem_00AAB928, 2) != 0;
+}
+} // namespace lift_006FEFB0
