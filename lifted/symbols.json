@@ -70862,6 +70862,12 @@
     "summary": "Looks up subtable [group][sub] (32-bit pointer chain) and returns the index of the first 16-byte record whose leading DWORD equals key, or -1 if absent.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x0078D550": {
+    "name": "sub_0078D550",
+    "signature": "double __thiscall sub_0078D550(void* self, int32_t idx1, int32_t idx2, bool take_abs)",
+    "summary": "Sums the double at offset +0x8 of each 16-byte entry in a nested array, optionally taking absolute values.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078D720": {
     "name": "initSelfRefAt14",
     "signature": "uint32_t fn_0078D720(void* self, int32_t arg1)",

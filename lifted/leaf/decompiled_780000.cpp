@@ -22,6 +22,7 @@ void __thiscall fn_00780250(void* self) {
     ext_006A5C5C(val);
 }
 } // namespace lift_00780250
+#include <cmath>
 
 // [0x00782B10]
 namespace lift_00782B10 {
@@ -1951,3 +1952,31 @@ void sub_0078D1F0(int32_t* outIndices, int32_t vertexCount) {
     } while (lo <= hi);
 }
 } // namespace lift_0078D1F0
+
+// [0x0078D550]
+namespace lift_0078D550 {
+// @name sub_0078D550
+// @summary Sums the double at offset +0x8 of each 16-byte entry in a nested array, optionally taking absolute values.
+// @field Class +0x10 void* field_0x10
+double __thiscall sub_0078D550(void* self, int32_t idx1, int32_t idx2, bool take_abs) {
+    double sum = 0.0;
+    const auto* base = static_cast<const uint8_t*>(self);
+    const auto* outer = *reinterpret_cast<const uint8_t* const*>(base + idx1 * 24 + 0x10);
+    const auto* inner = *reinterpret_cast<const uint8_t* const*>(outer + idx2 * 4);
+    int32_t count = *reinterpret_cast<const int32_t*>(inner);
+    if (count <= 0) {
+        return sum;
+    }
+
+    const auto* elem = *reinterpret_cast<const uint8_t* const*>(inner + 0x10);
+    for (int32_t i = 0; i < count; ++i) {
+        double val = *reinterpret_cast<const double*>(elem + 0x8);
+        if (take_abs) {
+            val = std::abs(val);
+        }
+        sum += val;
+        elem += 0x10;
+    }
+    return sum;
+}
+} // namespace lift_0078D550

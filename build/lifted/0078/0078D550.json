@@ -1,0 +1,21 @@
+{
+  "va": "0x0078D550",
+  "size": 112,
+  "orig_symbol": "sub_0078D550",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "sub_0078D550",
+  "signature": "double __thiscall sub_0078D550(void* self, int32_t idx1, int32_t idx2, bool take_abs)",
+  "summary": "Sums the double at offset +0x8 of each 16-byte entry in a nested array, optionally taking absolute values.",
+  "fields": [
+    {
+      "class": "Class",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:30:28Z"
+}

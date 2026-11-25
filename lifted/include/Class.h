@@ -21,7 +21,7 @@ struct Class_Fields {
     // +0xC   uint32_t                 field_0xc  (evidence: 0x0071C5A0) // CONFLICT: multiple definitions at +0xC
     // +0x10  uint32_t                 field_0x10  (evidence: 0x004584B0, 0x00458DF0, 0x0045BBE0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint8_t                  field_0x10  (evidence: 0x00688B50, 0x00689570, 0x0068BDC0, 0x0068BDF0) // CONFLICT: multiple definitions at +0x10
-    // +0x10  void*                    field_0x10  (evidence: 0x00480130, 0x004890D0) // CONFLICT: multiple definitions at +0x10
+    // +0x10  void*                    field_0x10  (evidence: 0x00480130, 0x004890D0, 0x0078D550) // CONFLICT: multiple definitions at +0x10
     // +0x14  void*                    field_0x14  (evidence: 0x00401960, 0x00401970)
     // +0x20  uint32_t                 field_0x20  (evidence: 0x0043CE40)
     // +0x28  uint32_t*                field_0x28  (evidence: 0x006406D0) // CONFLICT: multiple definitions at +0x28
