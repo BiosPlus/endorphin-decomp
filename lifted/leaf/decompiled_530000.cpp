@@ -510,3 +510,29 @@ void fn_0053F990(void* self) {
     }
 }
 } // namespace lift_0053F990
+
+// [0x00533FE0] sub_00533FE0 (58 bytes)
+namespace lift_00533FE0 {
+// @name descriptiveName: selectVec4ByThreshold
+// @summary Copies a 16-byte (4 x float) vector to *out from this+0x08, or from this+0x18 when 0.0 <= this+0x24 fails (negative or NaN).
+// @field <ClassName> +0x08 float field_0x08
+// @field <ClassName> +0x0C float field_0x0C
+// @field <ClassName> +0x10 float field_0x10
+// @field <ClassName> +0x14 float field_0x14
+// @field <ClassName> +0x18 float field_0x18
+// @field <ClassName> +0x1C float field_0x1C
+// @field <ClassName> +0x20 float field_0x20
+// @field <ClassName> +0x24 float field_0x24
+void fn_00533FE0(void* self, void* out) {
+    const auto* base = static_cast<const uint8_t*>(self);
+
+    float threshold;
+    std::memcpy(&threshold, base + 0x24, sizeof(float));
+
+    // Branch taken (use +0x08) when !(0.0f <= threshold): negative or unordered (NaN).
+    const float zero = 0.0f;
+    const std::size_t srcOffset = !(zero <= threshold) ? 0x08 : 0x18;
+
+    std::memcpy(out, base + srcOffset, 4 * sizeof(float));
+}
+} // namespace lift_00533FE0

@@ -17521,6 +17521,12 @@
     "summary": "Copy four floats from +0x08..+0x14 into output buffer and return it",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x00533FE0": {
+    "name": "descriptiveName: selectVec4ByThreshold",
+    "signature": "void fn_00533FE0(void* self, void* out)",
+    "summary": "Copies a 16-byte (4 x float) vector to *out from this+0x08, or from this+0x18 when 0.0 \u003c= this+0x24 fails (negative or NaN).",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x00534570": {
     "name": "NullRenderer::vfunc_77",
     "class": "NullRenderer",

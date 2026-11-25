@@ -1,0 +1,63 @@
+{
+  "va": "0x00533FE0",
+  "size": 58,
+  "orig_symbol": "sub_00533FE0",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "descriptiveName: selectVec4ByThreshold",
+  "signature": "void fn_00533FE0(void* self, void* out)",
+  "summary": "Copies a 16-byte (4 x float) vector to *out from this+0x08, or from this+0x18 when 0.0 \u003c= this+0x24 fails (negative or NaN).",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "field_0x18"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:53:19Z"
+}
