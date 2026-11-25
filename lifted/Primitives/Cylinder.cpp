@@ -74,3 +74,35 @@ void fn_0053BA60(void* self, uint32_t stack_arg) {
     mem_00925404(); // glPopMatrix
 }
 } // namespace lift_0053BA60
+
+// [0x0053DAA0]
+namespace lift_0053DAA0 {
+// @name Primitives::Cylinder::vfunc_25
+// @class Primitives::Cylinder
+// @summary Forwards to Plane::vfunc_25, sets dirty bit 0x40 in +0x1c, copies two dwords from arg2+0x88/+0x8c into +0x3c/+0x40, sets +0x44 = 1, and caches the first char of arg2+0x9c string into +0x45.
+// @field Primitives::Cylinder +0x1C uint32_t field_0x1c
+// @field Primitives::Cylinder +0x3C uint32_t field_0x3c
+// @field Primitives::Cylinder +0x40 uint32_t field_0x40
+// @field Primitives::Cylinder +0x44 uint8_t field_0x44
+// @field Primitives::Cylinder +0x45 uint8_t field_0x45
+
+// Plane::vfunc_25 (thiscall, 3 stack args).
+void __thiscall ext_0053A610(void* self, uint32_t a1, uint32_t a2, uint32_t a3);
+
+// std::basic_string<char>::operator[](size_type) const (MSVCP80 import slot).
+extern const char& (__thiscall* mem_00924FFC)(void* self, uint32_t index);
+
+void __thiscall fn_0053DAA0(void* self, uint32_t a1, void* a2, uint32_t a3) {
+    ext_0053A610(self, a1, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(a2)), a3);
+
+    lift_field<uint32_t>(self, 0x1C) |= 0x40;
+
+    lift_field<uint32_t>(self, 0x3C) = lift_field<uint32_t>(a2, 0x88);
+    lift_field<uint32_t>(self, 0x40) = lift_field<uint32_t>(a2, 0x8C);
+    lift_field<uint8_t>(self, 0x44) = 1;
+
+    void* str = static_cast<uint8_t*>(a2) + 0x9C;
+    const char& ch = mem_00924FFC(str, 0);
+    lift_field<uint8_t>(self, 0x45) = static_cast<uint8_t>(ch);
+}
+} // namespace lift_0053DAA0

@@ -1,0 +1,46 @@
+{
+  "va": "0x0053DAA0",
+  "size": 85,
+  "orig_symbol": "Primitives::Cylinder::vfunc_25",
+  "src_path": "src/Primitives/Cylinder.cpp",
+  "lifted_path": "lifted/Primitives/Cylinder.cpp",
+  "name": "Primitives::Cylinder::vfunc_25",
+  "class": "Primitives::Cylinder",
+  "signature": "void __thiscall fn_0053DAA0(void* self, uint32_t a1, void* a2, uint32_t a3)",
+  "summary": "Forwards to Plane::vfunc_25, sets dirty bit 0x40 in +0x1c, copies two dwords from arg2+0x88/+0x8c into +0x3c/+0x40, sets +0x44 = 1, and caches the first char of arg2+0x9c string into +0x45.",
+  "fields": [
+    {
+      "class": "Primitives::Cylinder",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Primitives::Cylinder",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "Primitives::Cylinder",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Primitives::Cylinder",
+      "offset": "+0x44",
+      "type": "uint8_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Primitives::Cylinder",
+      "offset": "+0x45",
+      "type": "uint8_t",
+      "name": "field_0x45"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:11:44Z"
+}

@@ -22397,6 +22397,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0053C9A0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0053DAA0": {
+    "name": "Primitives::Cylinder::vfunc_25",
+    "class": "Primitives::Cylinder",
+    "signature": "void __thiscall fn_0053DAA0(void* self, uint32_t a1, void* a2, uint32_t a3)",
+    "summary": "Forwards to Plane::vfunc_25, sets dirty bit 0x40 in +0x1c, copies two dwords from arg2+0x88/+0x8c into +0x3c/+0x40, sets +0x44 = 1, and caches the first char of arg2+0x9c string into +0x45.",
+    "lifted_path": "lifted/Primitives/Cylinder.cpp"
+  },
   "0x0053DB00": {
     "name": "Primitives::Frustum::vfunc_25",
     "class": "Primitives::Frustum",
