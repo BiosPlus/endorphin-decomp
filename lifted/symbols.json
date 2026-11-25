@@ -55188,6 +55188,12 @@
     "summary": "Returns 1 if the dword at this+0x68 equals 2, otherwise 0 (cmp/sete/ret).",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E4CD0": {
+    "name": "WrapAngleNear",
+    "signature": "double fn_006E4CD0(double a, double b)",
+    "summary": "Returns a + 360*n, where n is the whole number of turns that brings the difference (b - a) into [-180, 180] degrees (rounding to nearest, with a tie at exactly 0.5 turns left unchanged).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E5710": {
     "name": "Unknown::MaskByFlag40",
     "class": "Unknown",

@@ -22,6 +22,7 @@ void* fn_006E7390(void* self, uint32_t arg1) {
 } // namespace lift_006D2390
 } // namespace lift_006E7390
 #include <cstdlib>
+#include <cmath>
 
 // [0x006E67C0]
 namespace lift_006E67C0 {
@@ -1214,3 +1215,27 @@ uint32_t __thiscall sub_006E99C0(uint32_t self, uint32_t arg1) {
     return self;
 }
 } // namespace lift_006E99C0
+
+// [0x006E4CD0] sub_006E4CD0 (95 bytes)
+namespace lift_006E4CD0 {
+// @name WrapAngleNear
+// @summary Returns a + 360*n, where n is the whole number of turns that brings the difference (b - a) into [-180, 180] degrees (rounding to nearest, with a tie at exactly 0.5 turns left unchanged).
+double fn_006E4CD0(double a, double b) {
+    // t = (b - a) / 360 (the constant is 1/360 as a double).
+    const double t = (b - a) * 0.002777777777777778;
+
+    // Split t into integer and fractional parts; n receives the integer part.
+    double n = 0.0;
+    const double frac = std::modf(t, &n);
+
+    // Round the fractional part to nearest, with ties at +/-0.5 left alone.
+    if (frac > 0.5) {
+        n += 1.0;
+    }
+    if (frac < -0.5) {
+        n -= 1.0;
+    }
+
+    return a + n * 360.0;
+}
+} // namespace lift_006E4CD0
