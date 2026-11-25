@@ -1,0 +1,13 @@
+{
+  "va": "0x004FDCA0",
+  "size": 95,
+  "orig_symbol": "sub_004FDCA0",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "InitOnceGlobalString_004FDCA0",
+  "signature": "void* fn_004FDCA0()",
+  "summary": "One-time initializer for global string mem_00AEB22C; registers a cleanup callback on first call and returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:27:50Z"
+}

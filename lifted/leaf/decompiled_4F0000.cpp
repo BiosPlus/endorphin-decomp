@@ -667,3 +667,25 @@ void* fn_004FFCA0() {
     return &mem_00AEB2BC;
 }
 } // namespace lift_004FFCA0
+
+// [0x004FDCA0]
+namespace lift_004FDCA0 {
+// @name InitOnceGlobalString_004FDCA0
+// @summary One-time initializer for global string mem_00AEB22C; registers a cleanup callback on first call and returns its address.
+
+extern void* ext_0066AD10(void* out_str, uint8_t flag);
+extern int ext_006A6C87(void* fn);
+extern uint32_t mem_00AEB248;
+extern uint8_t mem_00AEB22C[];
+
+void* fn_004FDCA0() {
+    // Guard bit 0 of mem_00AEB248: run initialization only once.
+    if ((mem_00AEB248 & 1u) == 0u) {
+        mem_00AEB248 |= 1u;
+        // Original pushes 0x00A40484 as the second argument; passed through as its low byte (uint8_t flag).
+        ext_0066AD10(static_cast<void*>(mem_00AEB22C), static_cast<uint8_t>(0x00A40484u));
+        ext_006A6C87(reinterpret_cast<void*>(static_cast<uintptr_t>(0x00919C80u)));
+    }
+    return static_cast<void*>(mem_00AEB22C);
+}
+} // namespace lift_004FDCA0

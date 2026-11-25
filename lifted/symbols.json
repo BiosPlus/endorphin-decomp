@@ -17512,6 +17512,12 @@
     "summary": "Loads the object pointer at this+0x48 and invokes its vtable slot 1 (thiscall, ecx=object) with the float argument.",
     "lifted_path": "lifted/leaf/tiny_4F0000.cpp"
   },
+  "0x004FDCA0": {
+    "name": "InitOnceGlobalString_004FDCA0",
+    "signature": "void* fn_004FDCA0()",
+    "summary": "One-time initializer for global string mem_00AEB22C; registers a cleanup callback on first call and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004FDD60": {
     "name": "sub_004FDD60",
     "signature": "extern \"C\" void __fastcall fn_004FDD60(void* self)",
