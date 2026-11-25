@@ -23864,6 +23864,13 @@
     "summary": "Walks the pointer range at this+0x18..this+0x1C and calls virtual slot 2 (no args) on each element.",
     "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
   },
+  "0x0054C330": {
+    "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_11",
+    "class": "ManagedDisplayList\u003cRenderableList\u003e",
+    "signature": "void fn_0054C330(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Iterates the managed element pointer vector (begin/end at +0x18/+0x1C) and invokes each element's virtual slot 11 with the two stack arguments, in order.",
+    "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
+  },
   "0x0054C420": {
     "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_14",
     "class": "ManagedDisplayList\u003cRenderableList\u003e",

@@ -1,0 +1,28 @@
+{
+  "va": "0x0054C330",
+  "size": 109,
+  "orig_symbol": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_11",
+  "src_path": "src/templates/ManagedDisplayList.cpp",
+  "lifted_path": "lifted/templates/ManagedDisplayList.cpp",
+  "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_11",
+  "class": "ManagedDisplayList\u003cRenderableList\u003e",
+  "signature": "void fn_0054C330(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Iterates the managed element pointer vector (begin/end at +0x18/+0x1C) and invokes each element's virtual slot 11 with the two stack arguments, in order.",
+  "fields": [
+    {
+      "class": "ManagedDisplayList\u003cRenderableList\u003e",
+      "offset": "+0x18",
+      "type": "void**",
+      "name": "field_0x18"
+    },
+    {
+      "class": "ManagedDisplayList\u003cRenderableList\u003e",
+      "offset": "+0x1C",
+      "type": "void**",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:59:13Z"
+}

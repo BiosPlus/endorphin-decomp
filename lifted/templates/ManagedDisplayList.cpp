@@ -270,3 +270,28 @@ void fn_0054C420(void* self, void* a, void* b) {
     }
 }
 } // namespace lift_0054C420
+
+// [0x0054C330] ManagedDisplayList<RenderableList>::vfunc_11 (109 bytes)
+namespace lift_0054C330 {
+// @name ManagedDisplayList<RenderableList>::vfunc_11
+// @class ManagedDisplayList<RenderableList>
+// @summary Iterates the managed element pointer vector (begin/end at +0x18/+0x1C) and invokes each element's virtual slot 11 with the two stack arguments, in order.
+// @field ManagedDisplayList<RenderableList> +0x18 void** field_0x18
+// @field ManagedDisplayList<RenderableList> +0x1C void** field_0x1C
+//
+// Note: the MSVCR80 _invalid_parameter_noinfo checks in the original are
+// iterator-debug bounds assertions; they are omitted here because they are
+// unreachable for a well-formed vector.
+void fn_0054C330(void* self, uint32_t arg1, uint32_t arg2) {
+    // The end pointer is re-read every iteration, as the original does, since
+    // a virtual call may modify the vector.
+    for (void** it = lift_field<void**>(self, 0x18);
+         it != lift_field<void**>(self, 0x1C);
+         ++it) {
+        void* element = *it;
+        void** vtbl = *reinterpret_cast<void***>(element);
+        using VSlot11 = void(__thiscall*)(void* self, uint32_t a, uint32_t b);
+        reinterpret_cast<VSlot11>(vtbl[11])(element, arg1, arg2);
+    }
+}
+} // namespace lift_0054C330
