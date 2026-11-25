@@ -56518,6 +56518,13 @@
     "summary": "If ext_006DEEC0(self) is nonzero, dst[0] = a[0] + b[0]; then dst[i] = a[i] + b[i] for i \u003c count, where count = self-\u003evtbl[5](self).",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x0071FD10": {
+    "name": "Unknown::AddGatedDoubleAndMulArray",
+    "class": "Unknown",
+    "signature": "void fn_0071FD10(void* self, double* out, const double* a, const double* b)",
+    "summary": "If self-\u003egetFlag() is nonzero, out[0] = a[0] + b[0]; then for k in [0, count) out[k] = a[k] * b[k], where count = self-\u003evtbl[+0x14](self).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00722000": {
     "name": "sub_00722000",
     "signature": "void fn_00722000(void* self)",

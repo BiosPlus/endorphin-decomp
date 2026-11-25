@@ -1,0 +1,14 @@
+{
+  "va": "0x0071FD10",
+  "size": 80,
+  "orig_symbol": "sub_0071FD10",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::AddGatedDoubleAndMulArray",
+  "class": "Unknown",
+  "signature": "void fn_0071FD10(void* self, double* out, const double* a, const double* b)",
+  "summary": "If self-\u003egetFlag() is nonzero, out[0] = a[0] + b[0]; then for k in [0, count) out[k] = a[k] * b[k], where count = self-\u003evtbl[+0x14](self).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:52:24Z"
+}

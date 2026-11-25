@@ -1571,3 +1571,25 @@ bool fn_00711B00(void* self, double value) {
     return true;
 }
 } // namespace lift_00711B00
+
+// [0x0071FD10] sub_0071FD10 (80 bytes)
+namespace lift_0071FD10 {
+// Known callee 0x006DEEC0: sub_006DEEC0 (Getter returning int32_t field at offset +0x38.)
+extern int32_t __fastcall ext_006DEEC0(void* self);
+
+// @name Unknown::AddGatedDoubleAndMulArray
+// @summary If self->getFlag() is nonzero, out[0] = a[0] + b[0]; then for k in [0, count) out[k] = a[k] * b[k], where count = self->vtbl[+0x14](self).
+void fn_0071FD10(void* self, double* out, const double* a, const double* b) {
+    if (ext_006DEEC0(self) != 0) {
+        *out = a[0] + b[0];
+    }
+
+    void* vtbl = lift_field<void*>(self, 0);
+    void* slot = lift_field<void*>(vtbl, 0x14);
+    int32_t count = reinterpret_cast<int32_t (*)(void*)>(slot)(self);
+
+    for (int32_t k = 0; k < count; ++k) {
+        out[k] = a[k] * b[k];
+    }
+}
+} // namespace lift_0071FD10
