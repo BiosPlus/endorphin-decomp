@@ -429,3 +429,48 @@ float parseFloatFromString(std::string s) {
     return static_cast<float>(std::atof(s.c_str()));
 }
 } // namespace lift_004B79B0
+
+// [0x004B4D30]
+namespace lift_004B4D30 {
+extern uint32_t mem_00925134;
+
+// @name sub_004B4D30
+// @summary Iterates over a vector of pointers at +0x8 and sets each element's byte at +0x1 to (byte at +0x2 == 0)
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0c uint32_t field_0x0c
+// @field Unknown +0x10 uint32_t field_0x10
+void __thiscall sub_004B4D30(void* self) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    auto invalid_param = reinterpret_cast<void (*)()>(mem_00925134);
+    uint32_t* vec = reinterpret_cast<uint32_t*>(base + 0x8);
+    uint32_t* it = reinterpret_cast<uint32_t*>(vec[1]);
+
+    if (reinterpret_cast<uintptr_t>(it) > vec[2]) {
+        invalid_param();
+    }
+
+    while (true) {
+        uint32_t last = vec[2];
+        if (vec[1] > last) {
+            invalid_param();
+        }
+        if (reinterpret_cast<uintptr_t>(it) == last) {
+            break;
+        }
+        if (reinterpret_cast<uintptr_t>(it) >= vec[2]) {
+            invalid_param();
+        }
+        uint8_t* elem = reinterpret_cast<uint8_t*>(*it);
+        uint8_t flag = elem[2];
+        if (reinterpret_cast<uintptr_t>(it) >= vec[2]) {
+            invalid_param();
+        }
+        uint8_t* elem2 = reinterpret_cast<uint8_t*>(*it);
+        elem2[1] = (flag == 0) ? 1 : 0;
+        if (reinterpret_cast<uintptr_t>(it) >= vec[2]) {
+            invalid_param();
+        }
+        ++it;
+    }
+}
+} // namespace lift_004B4D30

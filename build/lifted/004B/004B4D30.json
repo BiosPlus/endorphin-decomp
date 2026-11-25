@@ -1,0 +1,33 @@
+{
+  "va": "0x004B4D30",
+  "size": 89,
+  "orig_symbol": "sub_004B4D30",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "sub_004B4D30",
+  "signature": "void __thiscall sub_004B4D30(void* self)",
+  "summary": "Iterates over a vector of pointers at +0x8 and sets each element's byte at +0x1 to (byte at +0x2 == 0)",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:21:42Z"
+}
