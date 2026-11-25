@@ -23850,6 +23850,13 @@
     "summary": "Walks the pointer range at this+0x18..this+0x1C and calls virtual slot 2 (no args) on each element.",
     "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
   },
+  "0x0054C420": {
+    "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_14",
+    "class": "ManagedDisplayList\u003cRenderableList\u003e",
+    "signature": "void fn_0054C420(void* self, void* a, void* b)",
+    "summary": "Calls virtual slot 14 (+0x38) on every element of the display list's pointer array, forwarding the two stack arguments.",
+    "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
+  },
   "0x0054C490": {
     "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_24",
     "class": "ManagedDisplayList\u003cRenderableList\u003e",

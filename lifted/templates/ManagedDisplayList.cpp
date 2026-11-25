@@ -244,3 +244,29 @@ void fn_0054C1F0(void* self, void* arg) {
     }
 }
 } // namespace lift_0054C1F0
+
+// [0x0054C420]
+namespace lift_0054C420 {
+// @name ManagedDisplayList<RenderableList>::vfunc_14
+// @class ManagedDisplayList<RenderableList>
+// @summary Calls virtual slot 14 (+0x38) on every element of the display list's pointer array, forwarding the two stack arguments.
+// @field ManagedDisplayList<RenderableList> +0x18 void** field_0x18
+// @field ManagedDisplayList<RenderableList> +0x1C void** field_0x1C
+
+namespace {
+using ElementVFn = void (*)(void* self, void* a, void* b);
+}
+
+void fn_0054C420(void* self, void* a, void* b) {
+    auto* base = reinterpret_cast<uint8_t*>(self);
+    void** cur = *reinterpret_cast<void***>(base + 0x18);
+    void** const end = *reinterpret_cast<void***>(base + 0x1C);
+
+    for (; cur != end; ++cur) {
+        void* elem = *cur;
+        void** vtable = *reinterpret_cast<void***>(elem);
+        auto fn = reinterpret_cast<ElementVFn>(vtable[0x38 / sizeof(void*)]);
+        fn(elem, a, b);
+    }
+}
+} // namespace lift_0054C420
