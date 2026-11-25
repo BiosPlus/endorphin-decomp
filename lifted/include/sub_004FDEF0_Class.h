@@ -8,7 +8,7 @@
 // Recovered field layout for sub_004FDEF0_Class:
 namespace lifted_layout {
 struct sub_004FDEF0_Class_Fields {
-    // +0x18  void*                    field_0x18  (evidence: 0x004FDEF0)
-    // +0x34  void*                    field_0x34  (evidence: 0x004FDEF0)
+    // +0x18  void*                    field_0x18  (evidence: 0x004F91F0, 0x004FDEF0)
+    // +0x34  void*                    field_0x34  (evidence: 0x004F91F0, 0x004FDEF0)
 };
 } // namespace lifted_layout

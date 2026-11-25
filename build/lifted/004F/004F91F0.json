@@ -4,10 +4,49 @@
   "orig_symbol": "sub_004F91F0",
   "src_path": "src/leaf/decompiled_4F0000.cpp",
   "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
-  "name": "initStaticObjectOnce",
-  "signature": "DWORD initStaticObjectOnce()",
-  "summary": "One-time initializer for the static object at 0x00AE9F24 guarded by the bit in 0x00AE9F28; returns the object's address.",
+  "name": "ReleaseNestedCriticalSection",
+  "class": "NMData::SkeletalCalibrationVariables (inferred from callee ext_004F4EA0; not confirmed)",
+  "signature": "void fn_004F28C0(void* self)",
+  "summary": "If the pointer stored at self is non-null, leave the critical section stored in that object's first field, then pass the object to MFC80 ord_764.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "vtable"
+    },
+    {
+      "class": "NMData::SkeletalCalibrationVariables",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    },
+    {
+      "class": "sub_004FDEF0_Class",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    },
+    {
+      "class": "sub_004FDEF0_Class",
+      "offset": "+0x34",
+      "type": "void*",
+      "name": "field_0x34"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T02:34:28Z"
+  "lifted_at": "2026-11-25T02:34:33Z"
 }
