@@ -1,0 +1,27 @@
+{
+  "va": "0x006BB150",
+  "size": 80,
+  "orig_symbol": "sub_006BB150",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "findItemByKey",
+  "signature": "uint32_t __thiscall sub_006BB150(uint32_t self, uint32_t arg0)",
+  "summary": "Searches an array of object pointers at +0xac (count at +0x9c) using ext_006E6E40 and returns the first matching pointer or 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x9C",
+      "type": "int32_t",
+      "name": "field_0x9c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "uint32_t*",
+      "name": "field_0xac"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:51:57Z"
+}

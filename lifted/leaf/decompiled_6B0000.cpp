@@ -1158,3 +1158,31 @@ extern void __fastcall fn_006BB6E0(void* self) {
     ext_006D2160(base + 0x0C);
 }
 } // namespace lift_006BB6E0
+
+// [0x006BB150]
+namespace lift_006BB150 {
+// @name findItemByKey
+// @summary Searches an array of object pointers at +0xac (count at +0x9c) using ext_006E6E40 and returns the first matching pointer or 0.
+// @field Unknown +0x9c int32_t field_0x9c
+// @field Unknown +0xac uint32_t* field_0xac
+
+extern uint8_t __thiscall ext_006E6E40(uint32_t self, uint32_t arg0);
+
+uint32_t __thiscall sub_006BB150(uint32_t self, uint32_t arg0) {
+    if (arg0 == 0) {
+        return 0;
+    }
+
+    int32_t count = *reinterpret_cast<const int32_t*>(static_cast<uintptr_t>(self) + 0x9c);
+    for (int32_t i = 0; i < count; ++i) {
+        uint32_t items = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(self) + 0xac);
+        uint32_t item = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(items) + static_cast<uintptr_t>(i) * 4u);
+        if (ext_006E6E40(item, arg0) != 0) {
+            uint32_t items_again = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(self) + 0xac);
+            return *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(items_again) + static_cast<uintptr_t>(i) * 4u);
+        }
+    }
+
+    return 0;
+}
+} // namespace lift_006BB150
