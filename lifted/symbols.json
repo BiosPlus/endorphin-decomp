@@ -53100,6 +53100,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x120 and tail-calls thunk_MFC80_ord_1280.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006B6270": {
+    "name": "sub_006B6270",
+    "class": "Object",
+    "signature": "void __fastcall fn_006B6270(void* self, void* edx, int arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00454BE0 (SetValueAndForward).",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B6940": {
     "name": "GWCPropInPlaceSpinEdit::vfunc_1",
     "class": "GWCPropInPlaceSpinEdit",

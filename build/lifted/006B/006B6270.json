@@ -1,0 +1,22 @@
+{
+  "va": "0x006B6270",
+  "size": 25,
+  "orig_symbol": "sub_006B6270",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "sub_006B6270",
+  "class": "Object",
+  "signature": "void __fastcall fn_006B6270(void* self, void* edx, int arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x00454BE0 (SetValueAndForward).",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x120",
+      "type": "int",
+      "name": "value"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T11:29:11Z"
+}

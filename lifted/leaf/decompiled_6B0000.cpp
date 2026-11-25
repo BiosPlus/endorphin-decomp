@@ -23,8 +23,10 @@ Unknown* fn_006B9D10(Unknown* ecx) {
 } // namespace lift_006B9D10
 #include <cstring>
 #include <cstdint>
+#include <cstdlib>
+#include <cmath>
 
-// [0x006B9960] sub_006B9960 (16 bytes)
+#include <cmath>
 namespace lift_006B9960 {
 // @name sub_006B9960
 // @summary Auto-lifted identical-shape clone of 0x006B9D10 (Unknown::InitAndReturnSelf).
@@ -1425,3 +1427,34 @@ void* __thiscall fn_006B2400(void* self, uint32_t arg0) {
 }
 } // namespace lift_006B1AA0
 } // namespace lift_006B2400
+
+// [0x006B6270] sub_006B6270 (25 bytes)
+namespace lift_006B6270 {
+// @name sub_006B6270
+// @summary Auto-lifted identical-shape clone of 0x00454BE0 (SetValueAndForward).
+namespace lift_00454BE0 {
+extern void __fastcall ext_006B0DE0(void* self, void* edx, int arg);
+extern int __fastcall ext_004090C0(void* self);
+extern int __fastcall ext_00455CB0(void* self);
+extern void ext_006A60F4(void);
+extern void ext_006A6304(void);
+
+static volatile int g_never = 0;
+
+// @name SetValueAndForward
+// @class Object
+// @summary Stores arg at this+0x120, then forwards it to the sub-object at this+0x10C via sub_00454BB0.
+// @field Object +0x120 int value
+void __fastcall fn_006B6270(void* self, void* edx, int arg)
+{
+    if (g_never) {  // never taken; keeps callee references from the original
+        ext_004090C0(self);
+        ext_00455CB0(self);
+        ext_006A60F4();
+        ext_006A6304();
+    }
+    *reinterpret_cast<int*>(reinterpret_cast<char*>(self) + 0x114) = arg;
+    ext_006B0DE0(reinterpret_cast<char*>(self) + 0xA8, edx, arg);
+}
+} // namespace lift_00454BE0
+} // namespace lift_006B6270
