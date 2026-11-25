@@ -55002,6 +55002,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006B2BC0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B32D0": {
+    "name": "GWCPropertyCheckboxLook::vfunc_2",
+    "class": "GWCPropertyCheckboxLook",
+    "signature": "extern \"C\" uint32_t* __stdcall fn_006B32D0(uint32_t* out, uint32_t, uint32_t, const uint32_t* src)",
+    "summary": "Copies a 16-byte struct (e.g. RECT) from arg4 to sret out and sets out[2] = out[0].",
+    "lifted_path": "lifted/classes/GWCPropertyCheckboxLook.cpp"
+  },
   "0x006B3300": {
     "name": "sub_006B3300",
     "signature": "extern \"C\" void fn_006B3300(void)",
@@ -71370,6 +71377,12 @@
     "name": "sub_0080EBB0",
     "signature": "void* fn_0080EBB0(void* dst, const void* src, size_t n)",
     "summary": "Auto-lifted identical-shape clone of 0x0080B590 (Thunk::copyMemoryDwordThenBytesForward).",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
+  "0x0080EBD0": {
+    "name": "isDelimiterOrSpecialChar",
+    "signature": "int32_t __cdecl sub_0080EBD0(int8_t ch)",
+    "summary": "Checks whether a character is in the set mapped to 0 in the lookup table at 0x0080EC00",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
   "0x0080EC60": {

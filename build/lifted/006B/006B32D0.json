@@ -1,0 +1,14 @@
+{
+  "va": "0x006B32D0",
+  "size": 38,
+  "orig_symbol": "GWCPropertyCheckboxLook::vfunc_2",
+  "src_path": "src/classes/GWCPropertyCheckboxLook.cpp",
+  "lifted_path": "lifted/classes/GWCPropertyCheckboxLook.cpp",
+  "name": "GWCPropertyCheckboxLook::vfunc_2",
+  "class": "GWCPropertyCheckboxLook",
+  "signature": "extern \"C\" uint32_t* __stdcall fn_006B32D0(uint32_t* out, uint32_t, uint32_t, const uint32_t* src)",
+  "summary": "Copies a 16-byte struct (e.g. RECT) from arg4 to sret out and sets out[2] = out[0].",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T14:24:43Z"
+}
