@@ -737,3 +737,44 @@ extern void* __thiscall fn_006821D0(void* self, uint32_t index) {
                                    static_cast<uintptr_t>(index) * 28u);
 }
 } // namespace lift_006821D0
+
+// [0x00688B50] sub_00688B50 (72 bytes)
+namespace lift_00688B50 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* block);
+// IAT slot 0x00924FF4 holds MSVCP80 std::basic_string<char>::~basic_string.
+extern int mem_00924FF4;
+
+// Element stride in the array; each element embeds a std::string at +0x10.
+static constexpr std::size_t kElemStride = 0x2C;
+static constexpr std::size_t kStringOffset = 0x10;
+
+// @name Unknown::ResetStringEntryArray
+// @class Unknown
+// @summary Destroys each 0x2C-byte entry's std::string, frees the entry array, and zeroes the three array pointers.
+// @field Unknown +0x04 uint8_t* entriesBegin
+// @field Unknown +0x08 uint8_t* entriesEnd
+// @field Unknown +0x0C uint8_t* entriesCapacity
+void fn_00688B50(void* self) {
+    auto* obj = static_cast<unsigned char*>(self);
+    auto** begin = reinterpret_cast<unsigned char**>(obj + 0x4);
+    auto** end = reinterpret_cast<unsigned char**>(obj + 0x8);
+    auto** cap = reinterpret_cast<unsigned char**>(obj + 0xC);
+
+    unsigned char* cur = *begin;
+    if (cur != nullptr) {
+        unsigned char* last = *end;
+        if (cur != last) {
+            for (; cur != last; cur += kElemStride) {
+                auto* str = reinterpret_cast<std::string*>(cur + kStringOffset);
+                str->~basic_string();
+            }
+        }
+        ext_006A5C5C(*begin);
+    }
+
+    *begin = nullptr;
+    *end = nullptr;
+    *cap = nullptr;
+}
+} // namespace lift_00688B50

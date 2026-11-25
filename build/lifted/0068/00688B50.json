@@ -1,0 +1,34 @@
+{
+  "va": "0x00688B50",
+  "size": 72,
+  "orig_symbol": "sub_00688B50",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "Unknown::ResetStringEntryArray",
+  "class": "Unknown",
+  "signature": "void fn_00688B50(void* self)",
+  "summary": "Destroys each 0x2C-byte entry's std::string, frees the entry array, and zeroes the three array pointers.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t*",
+      "name": "entriesBegin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "entriesEnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint8_t*",
+      "name": "entriesCapacity"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:29:06Z"
+}

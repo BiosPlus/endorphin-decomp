@@ -38930,6 +38930,13 @@
     "summary": "Destroys the std::string at +0x10 of each 44-byte element in [begin, end) (__stdcall, ret 8).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00688B50": {
+    "name": "Unknown::ResetStringEntryArray",
+    "class": "Unknown",
+    "signature": "void fn_00688B50(void* self)",
+    "summary": "Destroys each 0x2C-byte entry's std::string, frees the entry array, and zeroes the three array pointers.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00688BA0": {
     "name": "sub_00688BA0",
     "signature": "__stdcall std::uint8_t* fn_00688BA0(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2)",
