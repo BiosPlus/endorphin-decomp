@@ -32422,6 +32422,13 @@
     "summary": "Recursively erases a red-black tree subtree in post-order (right child recursively, then left spine iteratively).",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005EE360": {
+    "name": "NMData::FixedPathJointData::vfunc_15",
+    "class": "NMData::FixedPathJointData",
+    "signature": "uint32_t __thiscall fn_005EE360(void* self, uint32_t out, uint32_t code)",
+    "summary": "Dispatches property/attribute codes 0x2C4 and 0x2C5 to static-object helpers, delegating all other codes to AnimatableTransform::vfunc_15.",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005EF8A0": {
     "name": "NMData::HingeData::vfunc_59",
     "class": "NMData::HingeData",

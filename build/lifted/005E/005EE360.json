@@ -1,0 +1,14 @@
+{
+  "va": "0x005EE360",
+  "size": 80,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_15",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_15",
+  "class": "NMData::FixedPathJointData",
+  "signature": "uint32_t __thiscall fn_005EE360(void* self, uint32_t out, uint32_t code)",
+  "summary": "Dispatches property/attribute codes 0x2C4 and 0x2C5 to static-object helpers, delegating all other codes to AnimatableTransform::vfunc_15.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:16:52Z"
+}

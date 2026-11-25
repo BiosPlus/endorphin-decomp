@@ -280,3 +280,26 @@ set0:
     state = 0;
 }
 } // namespace lift_005E4850
+
+// [0x005EE360]
+namespace lift_005EE360 {
+extern void ext_005EC8D0(DWORD* dst, DWORD value);
+extern void ext_005EC8F0(DWORD* out, DWORD value);
+extern uint32_t __stdcall ext_005DF1F0(uint32_t self, uint32_t arg2);
+
+// @name NMData::FixedPathJointData::vfunc_15
+// @class NMData::FixedPathJointData
+// @summary Dispatches property/attribute codes 0x2C4 and 0x2C5 to static-object helpers, delegating all other codes to AnimatableTransform::vfunc_15.
+uint32_t __thiscall fn_005EE360(void* self, uint32_t out, uint32_t code) {
+    if (code == 0x2C4u) {
+        ext_005EC8D0(reinterpret_cast<DWORD*>(out), static_cast<DWORD>(reinterpret_cast<uintptr_t>(self)));
+        return out;
+    }
+    if (code == 0x2C5u) {
+        ext_005EC8F0(reinterpret_cast<DWORD*>(out), static_cast<DWORD>(reinterpret_cast<uintptr_t>(self)));
+        return out;
+    }
+    ext_005DF1F0(out, code);
+    return out;
+}
+} // namespace lift_005EE360
