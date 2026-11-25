@@ -1,0 +1,13 @@
+{
+  "va": "0x006B4C50",
+  "size": 88,
+  "orig_symbol": "sub_006B4C50",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "sub_006B4C50_dtor",
+  "signature": "extern \"C\" void __thiscall fn_006B4C50(void* self)",
+  "summary": "Destructor that resets vftables at +0x00 and +0x58 and destroys member and base subobjects",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:19:05Z"
+}
