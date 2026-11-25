@@ -534,3 +534,36 @@ uint32_t __thiscall fn_0067F910(uintptr_t self) {
     return result;
 }
 } // namespace lift_0067F910
+
+// [0x00676780] sub_00676780 (70 bytes)
+namespace lift_00676780 {
+extern int mem_00924FE8;
+
+// @name ObjectInit_00676780
+// @class <ClassName> (unknown; object layout not recovered)
+// @summary Zeroes the scalar fields of a 0x34-byte object and default-constructs an embedded std::string at +0x04; returns this.
+// @field <ClassName> +0x00 u32 field_0x00
+// @field <ClassName> +0x04 std::string field_0x04
+// @field <ClassName> +0x24 u32 field_0x24
+// @field <ClassName> +0x28 u32 field_0x28
+// @field <ClassName> +0x2c u32 field_0x2c
+// @field <ClassName> +0x30 u32 field_0x30
+void* fn_00676780(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    const uint32_t zero = 0;
+
+    // Original: sets [this+0] = 0, then calls the MSVC std::string default
+    // constructor on [this+4] via mem_00924FE8. The string constructor is
+    // platform-specific and is not reproduced here; the 0x18-byte region is
+    // zeroed as a neutral placeholder.
+    std::memset(obj + 0x00, 0, sizeof(uint32_t));
+    std::memset(obj + 0x04, 0, 0x20);
+
+    std::memcpy(obj + 0x24, &zero, sizeof(zero));
+    std::memcpy(obj + 0x28, &zero, sizeof(zero));
+    std::memcpy(obj + 0x2c, &zero, sizeof(zero));
+    std::memcpy(obj + 0x30, &zero, sizeof(zero));
+
+    return self;
+}
+} // namespace lift_00676780

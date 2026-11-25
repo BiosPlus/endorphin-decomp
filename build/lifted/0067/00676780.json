@@ -1,0 +1,52 @@
+{
+  "va": "0x00676780",
+  "size": 70,
+  "orig_symbol": "sub_00676780",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "ObjectInit_00676780",
+  "class": "\u003cClassName\u003e (unknown; object layout not recovered)",
+  "signature": "void* fn_00676780(void* self)",
+  "summary": "Zeroes the scalar fields of a 0x34-byte object and default-constructs an embedded std::string at +0x04; returns this.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x0",
+      "type": "u32",
+      "name": "field_0x00"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x24",
+      "type": "u32",
+      "name": "field_0x24"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x28",
+      "type": "u32",
+      "name": "field_0x28"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x2C",
+      "type": "u32",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x30",
+      "type": "u32",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:24:38Z"
+}

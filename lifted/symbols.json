@@ -37814,6 +37814,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00553F70 (ScaledRangeDivide160).",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x00676780": {
+    "name": "ObjectInit_00676780",
+    "class": "\u003cClassName\u003e (unknown; object layout not recovered)",
+    "signature": "void* fn_00676780(void* self)",
+    "summary": "Zeroes the scalar fields of a 0x34-byte object and default-constructs an embedded std::string at +0x04; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00676850": {
     "name": "sub_00676850",
     "signature": "extern \"C\" void __fastcall fn_00676850(void* self)",
