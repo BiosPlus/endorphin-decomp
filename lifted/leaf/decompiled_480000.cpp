@@ -1129,3 +1129,28 @@ bool fn_00480010(const float* self) {
     return true;
 }
 } // namespace lift_00480010
+
+// [0x0048E310] sub_0048E310 (83 bytes)
+namespace lift_0048E310 {
+// Known callee 0x00665810: sub_00665810 (Stores address of mem_00987A04 into field at offset +0x0.)
+extern void ext_00665810(void* self);
+
+// @name Unknown::resetChildAndRefresh_0048E310
+// @class Unknown
+// @summary Releases the object held at +0x14 (via its vtable slot 0 with flag 1) and then calls ext_00665810 on self.
+// @field Unknown +0x14 void* field_0x14
+struct Unknown {
+    unsigned char _pad_0000[0x14];
+    void* field_0x14;
+};
+
+void fn_0048E310(void* self) {
+    auto* obj = static_cast<Unknown*>(self);
+    void* child = obj->field_0x14;
+    if (child != nullptr) {
+        void** vtbl = *static_cast<void***>(child);
+        reinterpret_cast<void (*)(void*, int)>(vtbl[0])(child, 1);
+    }
+    ext_00665810(self);
+}
+} // namespace lift_0048E310

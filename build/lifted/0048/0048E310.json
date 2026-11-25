@@ -1,0 +1,22 @@
+{
+  "va": "0x0048E310",
+  "size": 83,
+  "orig_symbol": "sub_0048E310",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "Unknown::resetChildAndRefresh_0048E310",
+  "class": "Unknown",
+  "signature": "void fn_0048E310(void* self)",
+  "summary": "Releases the object held at +0x14 (via its vtable slot 0 with flag 1) and then calls ext_00665810 on self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:04:11Z"
+}

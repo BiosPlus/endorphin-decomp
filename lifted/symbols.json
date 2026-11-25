@@ -9028,6 +9028,13 @@
     "summary": "Initializes base via ext_006657F0(self, 0), sets vtable to 0x0093E5E8, and stores arg2 at +0x10, 0 at +0x14, and arg1 at +0x18; returns self.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x0048E310": {
+    "name": "Unknown::resetChildAndRefresh_0048E310",
+    "class": "Unknown",
+    "signature": "void fn_0048E310(void* self)",
+    "summary": "Releases the object held at +0x14 (via its vtable slot 0 with flag 1) and then calls ext_00665810 on self.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048E3D0": {
     "name": "CopyRecords12Bytes_0048E3D0",
     "signature": "void* fn_0048E3D0(const void* first, const void* last, void* dest)",
