@@ -70567,6 +70567,12 @@
     "summary": "Forwards to ReplaceGlobalBlock with a size of twice the count argument (count * 2 bytes).",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x007990F0": {
+    "name": "dispatchIfKeyEnabled",
+    "signature": "inline void* toPtr(uint32_t addr)",
+    "summary": "Looks up a cached entry for key; if found and (for keys \u003c= 0xFFFF) its 16-bit id is set in the bitmap at +0x18, forwards to the handler at +0x220, otherwise returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079A0EC": {
     "name": "sub_0079A0EC",
     "signature": "void sub_0079A0EC()",

@@ -1,0 +1,33 @@
+{
+  "va": "0x007990F0",
+  "size": 96,
+  "orig_symbol": "sub_007990F0",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "dispatchIfKeyEnabled",
+  "signature": "inline void* toPtr(uint32_t addr)",
+  "summary": "Looks up a cached entry for key; if found and (for keys \u003c= 0xFFFF) its 16-bit id is set in the bitmap at +0x18, forwards to the handler at +0x220, otherwise returns 0.",
+  "fields": [
+    {
+      "class": "CachedEntry",
+      "offset": "+0xC",
+      "type": "uint16_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x220",
+      "type": "uint32_t",
+      "name": "field_0x220"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T05:02:08Z"
+}

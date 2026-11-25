@@ -1150,3 +1150,44 @@ uint32_t fn_0079EA90(uint32_t arg) {
     return ext_0079EBB0(entry);
 }
 } // namespace lift_0079EA90
+
+// [0x007990F0] sub_007990F0 (96 bytes)
+namespace lift_007990F0 {
+// Known callee 0x007AF580: findCachedEntryByKeys (Searches a pointer array at +0x214 (count at +0x218) for an entry matching key1 at +0x0 and optional key2 at +0x8, caching the result in mem_00B61C14.)
+extern uint32_t ext_007AF580(uint32_t self, uint32_t key1, uint32_t key2);
+
+namespace {
+inline void* toPtr(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+inline uint32_t toAddr(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+} // namespace
+
+// @name dispatchIfKeyEnabled
+// @summary Looks up a cached entry for key; if found and (for keys <= 0xFFFF) its 16-bit id is set in the bitmap at +0x18, forwards to the handler at +0x220, otherwise returns 0.
+// @field CachedEntry +0x0C uint16_t field_0x0C
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x220 uint32_t field_0x220
+uint32_t fn_007990F0(void* self, uint32_t key, uint32_t extra) {
+    const uint32_t entry = ext_007AF580(toAddr(self), key, 0);
+    if (entry == 0) {
+        return 0;
+    }
+
+    if (key <= 0xFFFF) {
+        const uint32_t id = lift_field<uint16_t>(toPtr(entry), 0x0C);
+        const uint32_t bit = 1u << (id & 0x1F);
+        const uint32_t word = lift_field<uint32_t>(self, 0x18 + 4 * (id >> 5));
+        if ((word & bit) == 0) {
+            return 0;
+        }
+    }
+
+    using Handler = uint32_t(*)(uint32_t, uint32_t, uint32_t);
+    const uint32_t target = lift_field<uint32_t>(self, 0x220);
+    Handler handler = reinterpret_cast<Handler>(static_cast<uintptr_t>(target));
+    return handler(toAddr(self), key, extra);
+}
+} // namespace lift_007990F0
