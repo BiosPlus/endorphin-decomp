@@ -1203,3 +1203,35 @@ void __thiscall fn_00607F20(void* self, uint32_t count, uint32_t value_ptr) {
     lift_field<uint32_t>(self, 0x08) = end;
 }
 } // namespace lift_00607F20
+
+// [0x0060B990]
+namespace lift_0060B990 {
+// @name CopyCtor_0060B990
+// @summary Copy constructor setting vtable 0x009720F4, copying two std::string fields, and zeroing fields at +0x3c and +0x40.
+// @field Class +0x00 uint32_t vtable
+// @field Class +0x04 std::string field_0x04
+// @field Class +0x20 std::string field_0x20
+// @field Class +0x3c uint32_t field_0x3c
+// @field Class +0x40 uint32_t field_0x40
+
+
+extern uint32_t mem_00924FE0;
+
+typedef uint32_t (__thiscall *StdStringCopyCtorFn)(void* self, const void* other);
+
+void* __thiscall sub_0060B990(void* self, const void* other) {
+    uint8_t* dst = static_cast<uint8_t*>(self);
+    const uint8_t* src = static_cast<const uint8_t*>(other);
+
+    *reinterpret_cast<uint32_t*>(dst + 0x00) = 0x009720F4u;
+
+    auto copy_string = reinterpret_cast<StdStringCopyCtorFn>(mem_00924FE0);
+    copy_string(dst + 0x04, src + 0x04);
+    copy_string(dst + 0x20, src + 0x20);
+
+    *reinterpret_cast<uint32_t*>(dst + 0x3c) = 0;
+    *reinterpret_cast<uint32_t*>(dst + 0x40) = 0;
+
+    return self;
+}
+} // namespace lift_0060B990
