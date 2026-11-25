@@ -1,0 +1,34 @@
+{
+  "va": "0x00418830",
+  "size": 62,
+  "orig_symbol": "sub_00418830",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "CheckButtonStateAndNotifyChildren",
+  "class": "UnknownClass",
+  "signature": "void fn_00418830(void* self)",
+  "summary": "Queries a button's check state via BM_GETCHECK (0xF0) and forwards the boolean result to two child sub-objects.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x808",
+      "type": "void*",
+      "name": "field_0x808"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x85C",
+      "type": "void*",
+      "name": "field_0x85c"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x8D0",
+      "type": "HWND",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:59:15Z"
+}

@@ -82,5 +82,8 @@ struct UnknownClass_Fields {
     // +0x3B8 uint32_t                 field_0x3B8  (evidence: 0x004805A0)
     // +0x478 std::string              field_0x478  (evidence: 0x005650F0)
     // +0x494 void*                    field_0x494  (evidence: 0x005650F0)
+    // +0x808 void*                    field_0x808  (evidence: 0x00418830)
+    // +0x85C void*                    field_0x85c  (evidence: 0x00418830)
+    // +0x8D0 HWND                     hwnd  (evidence: 0x00418830)
 };
 } // namespace lifted_layout

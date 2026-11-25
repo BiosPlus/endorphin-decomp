@@ -1022,3 +1022,29 @@ void fn_00415540(void* self) {
     }
 }
 } // namespace lift_00415540
+
+// [0x00418830] sub_00418830 (62 bytes)
+namespace lift_00418830 {
+// Known callee 0x006A5FDA: thunk_MFC80_ord_2164 (IAT jump thunk forwarding to MFC80!ord_2164.)
+// Thiscall-style: receiver in ecx, one stack argument.
+extern void ext_006A5FDA(void* self, int arg);
+// IAT slot for USER32!SendMessageA; holds the import address at runtime.
+extern uintptr_t mem_00925694;
+
+// @name CheckButtonStateAndNotifyChildren
+// @class UnknownClass
+// @summary Queries a button's check state via BM_GETCHECK (0xF0) and forwards the boolean result to two child sub-objects.
+// @field UnknownClass +0x808 void* field_0x808
+// @field UnknownClass +0x85C void* field_0x85c
+// @field UnknownClass +0x8D0 HWND hwnd
+void fn_00418830(void* self) {
+    HWND hwnd = lift_field<HWND>(self, 0x8D0);
+    auto send_message = reinterpret_cast<LRESULT(__stdcall*)(HWND, UINT, WPARAM, LPARAM)>(mem_00925694);
+
+    // BM_GETCHECK returns BST_CHECKED (1) when checked.
+    int checked = (send_message(hwnd, 0xF0, 0, 0) == 1) ? 1 : 0;
+
+    ext_006A5FDA(lift_field<void*>(self, 0x808), checked);
+    ext_006A5FDA(lift_field<void*>(self, 0x85C), checked);
+}
+} // namespace lift_00418830
