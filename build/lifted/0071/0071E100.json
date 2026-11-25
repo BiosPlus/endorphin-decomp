@@ -1,0 +1,13 @@
+{
+  "va": "0x0071E100",
+  "size": 74,
+  "orig_symbol": "sub_0071E100",
+  "src_path": "src/clones/auto_clones_710000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_710000.cpp",
+  "name": "CopyHugeToGlobals_0071E100",
+  "signature": "void fn_0071E100(void)",
+  "summary": "Copies the 8-byte _HUGE value (pointed to by mem_00925284) into four consecutive 8-byte globals at 0x00B5FE78..0x00B5FE94.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:35:10Z"
+}

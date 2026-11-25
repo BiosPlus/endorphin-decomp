@@ -1213,3 +1213,36 @@ void fn_00712C30(void) {
     }
 }
 } // namespace lift_00712C30
+
+// [0x0071E100] sub_0071E100 (74 bytes)
+namespace lift_0071E100 {
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5FE78;
+extern uint32_t mem_00B5FE7C;
+extern uint32_t mem_00B5FE80;
+extern uint32_t mem_00B5FE84;
+extern uint32_t mem_00B5FE88;
+extern uint32_t mem_00B5FE8C;
+extern uint32_t mem_00B5FE90;
+extern uint32_t mem_00B5FE94;
+
+// @name CopyHugeToGlobals_0071E100
+// @summary Copies the 8-byte _HUGE value (pointed to by mem_00925284) into four consecutive 8-byte globals at 0x00B5FE78..0x00B5FE94.
+void fn_0071E100(void) {
+    // mem_00925284 holds a pointer to the 8-byte _HUGE constant.
+    const uint32_t* src = reinterpret_cast<const uint32_t*>(
+        static_cast<uintptr_t>(mem_00925284));
+
+    mem_00B5FE78 = src[0];
+    mem_00B5FE7C = src[1];
+
+    mem_00B5FE80 = src[0];
+    mem_00B5FE84 = src[1];
+
+    mem_00B5FE88 = src[0];
+    mem_00B5FE8C = src[1];
+
+    mem_00B5FE90 = src[0];
+    mem_00B5FE94 = src[1];
+}
+} // namespace lift_0071E100

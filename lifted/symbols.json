@@ -55426,6 +55426,12 @@
     "summary": "Loads the double pointed to by _HUGE and stores its negation into three globals.",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x0071E100": {
+    "name": "CopyHugeToGlobals_0071E100",
+    "signature": "void fn_0071E100(void)",
+    "summary": "Copies the 8-byte _HUGE value (pointed to by mem_00925284) into four consecutive 8-byte globals at 0x00B5FE78..0x00B5FE94.",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x0071E4F0": {
     "name": "sub_0071E4F0",
     "signature": "extern \"C\" void* __fastcall fn_0071E4F0(void* self, int edx_unused, unsigned int flags)",
