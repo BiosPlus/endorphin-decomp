@@ -979,3 +979,25 @@ uint32_t fn_0085A3E0(void* self) {
     return count;
 }
 } // namespace lift_0085A3E0
+
+// [0x0085D340] sub_0085D340 (80 bytes)
+namespace lift_0085D340 {
+// CRC-32 lookup table (256 entries, reflected polynomial), stored in .data.
+extern uint32_t mem_00AB91A0[256];
+
+// @name CRC32Update
+// @summary Computes a reflected CRC-32 (init 0xFFFFFFFF, final XOR) over a byte buffer using the table at mem_00AB91A0.
+uint32_t fn_0085D340(const uint8_t* data, size_t length) {
+    uint32_t crc = 0xFFFFFFFFu;
+    if (length == 0) {
+        return ~crc;
+    }
+    size_t i = 0;
+    do {
+        uint32_t index = (static_cast<uint32_t>(data[i]) ^ crc) & 0xFFu;
+        ++i;
+        crc = mem_00AB91A0[index] ^ (crc >> 8);
+    } while (i < length);
+    return ~crc;
+}
+} // namespace lift_0085D340

@@ -62471,6 +62471,12 @@
     "summary": "Maps a small index (0..4) to a fixed string-table reference; returns 0 for out-of-range indices.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085D340": {
+    "name": "CRC32Update",
+    "signature": "uint32_t fn_0085D340(const uint8_t* data, size_t length)",
+    "summary": "Computes a reflected CRC-32 (init 0xFFFFFFFF, final XOR) over a byte buffer using the table at mem_00AB91A0.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085D504": {
     "name": "sub_0085D504",
     "signature": "void fn_0085D504(void)",

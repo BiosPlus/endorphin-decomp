@@ -1,0 +1,13 @@
+{
+  "va": "0x0085D340",
+  "size": 80,
+  "orig_symbol": "sub_0085D340",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "CRC32Update",
+  "signature": "uint32_t fn_0085D340(const uint8_t* data, size_t length)",
+  "summary": "Computes a reflected CRC-32 (init 0xFFFFFFFF, final XOR) over a byte buffer using the table at mem_00AB91A0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:58:02Z"
+}
