@@ -1,0 +1,14 @@
+{
+  "va": "0x007AEDA0",
+  "size": 56,
+  "orig_symbol": "sub_007AEDA0",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "MemoryReader::readUInt16",
+  "class": "MemoryReader",
+  "signature": "uint16_t __thiscall sub_007AEDA0(void* self, uint16_t* dst, uint8_t swapEndian)",
+  "summary": "Reads a 16-bit unsigned integer from the memory reader into dst and returns it, or 0 on failure.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:23:07Z"
+}

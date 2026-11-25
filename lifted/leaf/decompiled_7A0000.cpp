@@ -969,3 +969,21 @@ uint32_t __thiscall sub_007AED60(void* self, uint32_t* dst, uint8_t swapEndian) 
     return *dst;
 }
 } // namespace lift_007AED60
+
+// [0x007AEDA0]
+namespace lift_007AEDA0 {
+// @name MemoryReader::readUInt16
+// @class MemoryReader
+// @summary Reads a 16-bit unsigned integer from the memory reader into dst and returns it, or 0 on failure.
+
+
+extern uint32_t __thiscall ext_007AEC70(void* self, void* dst, uint32_t size, uint8_t failIfShort);
+
+uint16_t __thiscall sub_007AEDA0(void* self, uint16_t* dst, uint8_t swapEndian) {
+    (void)swapEndian;
+    if (ext_007AEC70(self, dst, 2, 1) == 0) {
+        return 0;
+    }
+    return *dst;
+}
+} // namespace lift_007AEDA0
