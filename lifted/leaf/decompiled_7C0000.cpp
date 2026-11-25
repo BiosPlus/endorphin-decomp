@@ -934,3 +934,26 @@ void __cdecl sub_007C9E80(void* self, float val1, float val2) {
     *reinterpret_cast<float*>(base + 0x58) = (val2 < 0.0f) ? -val2 : val2;
 }
 } // namespace lift_007C9E80
+
+// [0x007C8490]
+namespace lift_007C8490 {
+// Known callee 0x007C7330: sub_007C7330 (857 bytes). Caller cleans up (cdecl).
+extern void ext_007C7330(void* obj, uint32_t a1, uint32_t a2, float a3, float a4);
+
+// @name dispatchAndStoreOwner
+// @class <Class> (if member)
+// @summary Calls vtable slot 0 of self with 0x5F4; if it returns non-null, stores self at obj+0x5F0 and forwards to sub_007C7330.
+// @field Unknown +0x5F0 uint32_t field_0x5F0
+void fn_007C8490(uint32_t a1, uint32_t a2, float a3, float a4, void* self) {
+    // vtable slot 0 of self, invoked with a single argument 0x5F4 (no this pushed).
+    void* vtable = lift_field<void*>(self, 0);
+    auto slot0 = reinterpret_cast<void* (*)(uint32_t)>(lift_field<void*>(vtable, 0));
+    void* obj = slot0(0x5F4);
+    if (obj == nullptr) {
+        return;
+    }
+    // Store self as a 32-bit pointer at obj+0x5F0.
+    lift_field<uint32_t>(obj, 0x5F0) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    ext_007C7330(obj, a1, a2, a3, a4);
+}
+} // namespace lift_007C8490

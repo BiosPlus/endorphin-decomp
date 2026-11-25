@@ -57596,6 +57596,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x007D5BB0 (setField20_007D5BB0).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C8490": {
+    "name": "dispatchAndStoreOwner",
+    "class": "\u003cClass\u003e (if member)",
+    "signature": "void fn_007C8490(uint32_t a1, uint32_t a2, float a3, float a4, void* self)",
+    "summary": "Calls vtable slot 0 of self with 0x5F4; if it returns non-null, stores self at obj+0x5F0 and forwards to sub_007C7330.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C8810": {
     "name": "getField0x8cFloat",
     "signature": "float sub_007C8810(const void* obj)",

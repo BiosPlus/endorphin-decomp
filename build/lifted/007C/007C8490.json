@@ -1,0 +1,22 @@
+{
+  "va": "0x007C8490",
+  "size": 68,
+  "orig_symbol": "sub_007C8490",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "dispatchAndStoreOwner",
+  "class": "\u003cClass\u003e (if member)",
+  "signature": "void fn_007C8490(uint32_t a1, uint32_t a2, float a3, float a4, void* self)",
+  "summary": "Calls vtable slot 0 of self with 0x5F4; if it returns non-null, stores self at obj+0x5F0 and forwards to sub_007C7330.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x5F0",
+      "type": "uint32_t",
+      "name": "field_0x5F0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:20:52Z"
+}

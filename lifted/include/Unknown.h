@@ -860,6 +860,7 @@ struct Unknown_Fields {
     // +0x568 int32_t                  field_0x568  (evidence: 0x00405160)
     // +0x5A0 DWORD                    field_0x5A0  (evidence: 0x007046E0)
     // +0x5A4 DWORD                    field_0x5A4  (evidence: 0x007046E0)
+    // +0x5F0 uint32_t                 field_0x5F0  (evidence: 0x007C8490)
     // +0x654 uint8_t                  field_0x654  (evidence: 0x00788D00)
     // +0x684 int32_t                  field_0x684  (evidence: 0x00405160)
     // +0x734 uint32_t field_0x734 (base of 18-entry dword array; element i at +0x734 + 4*i, valid i = 1..17)  (evidence: 0x007AA7F0, 0x007AAA00, 0x007AC670)
