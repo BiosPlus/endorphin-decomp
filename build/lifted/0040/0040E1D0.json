@@ -1,0 +1,13 @@
+{
+  "va": "0x0040E1D0",
+  "size": 88,
+  "orig_symbol": "sub_0040E1D0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "std_swap_backward_string",
+  "signature": "uint32_t __cdecl sub_0040E1D0(uint32_t first, uint32_t last, uint32_t destEnd)",
+  "summary": "Swaps a range of 28-byte std::string objects backward from [first, last) into [destEnd - (last - first), destEnd).",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:15:32Z"
+}
