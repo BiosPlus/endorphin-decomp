@@ -1520,3 +1520,57 @@ void __fastcall sub_00493F80(uint8_t* self) {
     }
 }
 } // namespace lift_00493F80
+
+// [0x0049E2F0]
+namespace lift_0049E2F0 {
+// @name findByName
+// @summary Searches a vector of objects for one whose vtable+0x24 name matches the given std::string
+// @field Unknown +0x04 uint32_t* begin
+// @field Unknown +0x08 uint32_t* end
+
+
+extern uintptr_t mem_00925134; // MSVCR80!_invalid_parameter_noinfo
+extern uintptr_t mem_00924FC4; // MSVCP80!std::operator==(const std::string&, const std::string&)
+
+uint32_t __thiscall sub_0049E2F0(void* self, uint32_t target_str) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    auto invalid_param = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+    auto str_eq = reinterpret_cast<uint8_t(__cdecl*)(uint32_t, uint32_t)>(mem_00924FC4);
+
+    uint32_t esi = *reinterpret_cast<uint32_t*>(obj + 0x04);
+    if (esi > *reinterpret_cast<uint32_t*>(obj + 0x08)) {
+        invalid_param();
+    }
+
+    while (true) {
+        uint32_t end = *reinterpret_cast<uint32_t*>(obj + 0x08);
+        if (*reinterpret_cast<uint32_t*>(obj + 0x04) > end) {
+            invalid_param();
+        }
+        if (esi == end) {
+            return 0;
+        }
+        if (esi >= *reinterpret_cast<uint32_t*>(obj + 0x08)) {
+            invalid_param();
+        }
+
+        uint32_t item = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(esi));
+        uint32_t vtable = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(item));
+        auto get_name = reinterpret_cast<uint32_t(__thiscall*)(uint32_t)>(
+            *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(vtable + 0x24)));
+        uint32_t item_name = get_name(item);
+
+        if (str_eq(item_name, target_str) != 0) {
+            if (esi >= *reinterpret_cast<uint32_t*>(obj + 0x08)) {
+                invalid_param();
+            }
+            return *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(esi));
+        }
+
+        if (esi >= *reinterpret_cast<uint32_t*>(obj + 0x08)) {
+            invalid_param();
+        }
+        esi += 4;
+    }
+}
+} // namespace lift_0049E2F0

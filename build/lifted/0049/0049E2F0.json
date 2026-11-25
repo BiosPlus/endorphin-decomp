@@ -1,0 +1,27 @@
+{
+  "va": "0x0049E2F0",
+  "size": 116,
+  "orig_symbol": "sub_0049E2F0",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "findByName",
+  "signature": "extern uintptr_t mem_00924FC4; // MSVCP80!std::operator==(const std::string\u0026, const std::string\u0026) uint32_t __thiscall sub_0049E2F0(void* self, uint32_t target_str)",
+  "summary": "Searches a vector of objects for one whose vtable+0x24 name matches the given std::string",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t*",
+      "name": "begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:43:04Z"
+}
