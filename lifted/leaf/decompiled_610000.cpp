@@ -2668,3 +2668,21 @@ DWORD* fn_0061F070(DWORD* dst, DWORD value) {
 } // namespace lift_0046F6A0
 } // namespace lift_0058D8D0
 } // namespace lift_0061F070
+
+// [0x00610D10]
+namespace lift_00610D10 {
+// @name Unknown::DestructSubobjectsAndBase
+// @class Unknown
+// @summary Destroys two embedded subobjects (+0x54 and +0x08), then runs the base-class destructor.
+// @field Unknown +0x08 uint8_t field_0x08
+// @field Unknown +0x54 uint8_t field_0x54
+
+extern void __fastcall ext_005B1870(void* self);  // Unknown::DestructWithStringAndOwnedObject
+extern void __fastcall ext_0065F440(void* self);  // base-class destructor
+
+extern void __fastcall fn_00610D10(void* self) {
+    ext_005B1870(static_cast<uint8_t*>(self) + 0x54);
+    ext_005B1870(static_cast<uint8_t*>(self) + 0x08);
+    ext_0065F440(self);
+}
+} // namespace lift_00610D10

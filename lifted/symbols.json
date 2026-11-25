@@ -35831,6 +35831,13 @@
     "summary": "Gets float at index 0 from this+0x20 and passes it to ext_00678130 on (ext_00594000() + 0x2e0)",
     "lifted_path": "lifted/leaf/decompiled_610000.cpp"
   },
+  "0x00610D10": {
+    "name": "Unknown::DestructSubobjectsAndBase",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall ext_005B1870(void* self);  // Unknown::DestructWithStringAndOwnedObject extern \"C\" void __fastcall ext_0065F440(void* self);  // base-class destructor extern \"C\" void __fastcall fn_00610D10(void* self)",
+    "summary": "Destroys two embedded subobjects (+0x54 and +0x08), then runs the base-class destructor.",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
   "0x006110A0": {
     "name": "mapIndexToOffset",
     "signature": "uint32_t __stdcall sub_006110A0(uint32_t index)",

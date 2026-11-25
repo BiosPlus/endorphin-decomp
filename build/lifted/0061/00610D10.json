@@ -1,0 +1,28 @@
+{
+  "va": "0x00610D10",
+  "size": 89,
+  "orig_symbol": "sub_00610D10",
+  "src_path": "src/leaf/decompiled_610000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_610000.cpp",
+  "name": "Unknown::DestructSubobjectsAndBase",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __fastcall ext_005B1870(void* self);  // Unknown::DestructWithStringAndOwnedObject extern \"C\" void __fastcall ext_0065F440(void* self);  // base-class destructor extern \"C\" void __fastcall fn_00610D10(void* self)",
+  "summary": "Destroys two embedded subobjects (+0x54 and +0x08), then runs the base-class destructor.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "uint8_t",
+      "name": "field_0x54"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:48:12Z"
+}
