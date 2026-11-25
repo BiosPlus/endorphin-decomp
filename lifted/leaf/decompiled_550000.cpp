@@ -368,3 +368,26 @@ uint32_t __stdcall fn_0055F670(uint32_t dst, uint32_t count, uint32_t src) {
 }
 } // namespace lift_00481DE0
 } // namespace lift_0055F670
+
+// [0x0055F390]
+namespace lift_0055F390 {
+// @name descriptiveName: fillVec4Array
+// @summary Copies a 4-float vector from src into `count` consecutive 16-byte slots starting at dst; no writes if dst is null.
+void fillVec4Array(float* dst, uint32_t count, const float* src) {
+    if (count == 0) {
+        return;
+    }
+    uint8_t* out = reinterpret_cast<uint8_t*>(dst);
+    do {
+        if (out != nullptr) {
+            float* slot = reinterpret_cast<float*>(out);
+            slot[0] = src[0];
+            slot[1] = src[1];
+            slot[2] = src[2];
+            slot[3] = src[3];
+        }
+        --count;
+        out += 16;
+    } while (count != 0);
+}
+} // namespace lift_0055F390

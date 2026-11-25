@@ -1,0 +1,13 @@
+{
+  "va": "0x0055F390",
+  "size": 60,
+  "orig_symbol": "sub_0055F390",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "descriptiveName: fillVec4Array",
+  "signature": "void fillVec4Array(float* dst, uint32_t count, const float* src)",
+  "summary": "Copies a 4-float vector from src into `count` consecutive 16-byte slots starting at dst; no writes if dst is null.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:53:51Z"
+}
