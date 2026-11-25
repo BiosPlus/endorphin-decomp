@@ -1,0 +1,33 @@
+{
+  "va": "0x0080FBC0",
+  "size": 80,
+  "orig_symbol": "sub_0080FBC0",
+  "src_path": "src/leaf/decompiled_800000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_800000.cpp",
+  "name": "AllocStringRecord",
+  "signature": "uint32_t fn_0080FBC0(const char* str)",
+  "summary": "Allocates a 12-byte record holding a copy of str (+0x0), its length (+0x4), and length+1 (+0x8); returns the record or 0 on allocation failure.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "buffer"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "length"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "length_plus_one"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:00:50Z"
+}

@@ -9,6 +9,7 @@
 namespace lifted_layout {
 struct Object_Fields {
     // +0x0   void* vptr (vtable pointer, dereferenced to find slot 0x148)  (evidence: 0x00401960, 0x0040FD90) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 buffer  (evidence: 0x0080FBC0) // CONFLICT: multiple definitions at +0x0
     // +0x0   double                   field_0x00  (evidence: 0x006722B0, 0x00672490, 0x00679A40, 0x0067ADD0, 0x0067EC60) // CONFLICT: multiple definitions at +0x0
     // +0x0   std::string              field_0x00  (evidence: 0x0057BB40) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 field_0x00  (evidence: 0x00492540, 0x00493E50, 0x00493E60, 0x00494050, 0x00566FE0, 0x00644F20, 0x0065A8B0, 0x0065F280, 0x006A4CD0, 0x00859330) // CONFLICT: multiple definitions at +0x0
@@ -25,10 +26,12 @@ struct Object_Fields {
     // +0x4   std::string              field_0x04  (evidence: 0x005541A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00414880, 0x00419990, 0x00602EC0, 0x007D4800, 0x007D48A0, 0x007D8470, 0x007DEC80, 0x008101C0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x00810410) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 length  (evidence: 0x0080FBC0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (flags dword at target+0x4)  (evidence: 0x00810410) // CONFLICT: multiple definitions at +0x4
     // +0x8   float                    field_0x08  (evidence: 0x00533FB0) // CONFLICT: multiple definitions at +0x8
     // +0x8   int32_t                  field_0x08  (evidence: 0x00533F10) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00602EC0, 0x0062CD30, 0x00790D40, 0x00790D60, 0x0079ADA0, 0x0079DCE0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 length_plus_one  (evidence: 0x0080FBC0) // CONFLICT: multiple definitions at +0x8
     // +0xC   const std::uint16_t*     field_0x0C  (evidence: 0x007BC120) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  field_0x0C  (evidence: 0x00533F10) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0x0C  (evidence: 0x0071C500, 0x007C2E50, 0x007C6C10, 0x007C6C20, 0x007CC9F0) // CONFLICT: multiple definitions at +0xC
