@@ -38,8 +38,10 @@ void fn_0067B050(void* self) {
     slot2(self);
 }
 } // namespace lift_0067B050
+#include <cmath>
+#include <cstdlib>
 
-// [0x00672E50] sub_00672E50 (27 bytes)
+#include <cstdlib>
 namespace lift_00672E50 {
 // @name sub_00672E50
 // @summary Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).
@@ -1028,3 +1030,24 @@ void* __thiscall sub_0067AB90(void* self, const void* other) {
     return self;
 }
 } // namespace lift_0067AB90
+
+// [0x00674F20] sub_00674F20 (30 bytes)
+namespace lift_00674F20 {
+// @name sub_00674F20
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_00674EC0();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_00674F20(DWORD* dst, DWORD value) {
+    DWORD obj = ext_00674EC0();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_00674F20

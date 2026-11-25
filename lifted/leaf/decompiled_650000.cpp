@@ -24,8 +24,10 @@ void* fn_005136C0(void* self, void* pair, DWORD b) {
 } // namespace lift_005136C0
 #include <cstring>
 #include <cstdint>
+#include <cmath>
+#include <cstdlib>
 
-// [0x005142F0] sub_005142F0 (35 bytes)
+#include <cstdlib>
 namespace lift_005142F0 {
 // Known callee 0x005136C0: sub_005136C0 (Auto-lifted identical-shape clone of 0x00500310 (DwordPairInitFromCall_00500310).)
 extern void* ext_005136C0(void* self, void* pair, DWORD b);
@@ -866,3 +868,45 @@ uint8_t* fn_0051DF60(uint8_t* begin, uint8_t* end, uint32_t key) {
     return end;
 }
 } // namespace lift_0051DF60
+
+// [0x0051AE20] sub_0051AE20 (30 bytes)
+namespace lift_0051AE20 {
+// @name sub_0051AE20
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0051A9A0();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0051AE20(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0051A9A0();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0051AE20
+
+// [0x0051AE40] sub_0051AE40 (30 bytes)
+namespace lift_0051AE40 {
+// @name sub_0051AE40
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0051AA00();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0051AE40(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0051AA00();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0051AE40

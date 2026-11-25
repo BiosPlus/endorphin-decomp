@@ -25,8 +25,10 @@ void fn_004AEC60(void* self) {
 } // namespace lift_004AEC60
 #include <cstdint>
 #include <cstddef>
+#include <cmath>
+#include <cstdlib>
 
-// [0x004A2510] sub_004A2510 (17 bytes)
+#include <cstdlib>
 namespace lift_004A2510 {
 // @name Unknown::setFlag4AndForwardToSlot1
 // @class Unknown
@@ -634,3 +636,45 @@ extern void* __fastcall fn_004ADA20(void* self, int edx_unused, const void* src)
 }
 } // namespace lift_006998D0
 } // namespace lift_004ADA20
+
+// [0x004ABAA0] sub_004ABAA0 (30 bytes)
+namespace lift_004ABAA0 {
+// @name sub_004ABAA0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_004AB880();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_004ABAA0(DWORD* dst, DWORD value) {
+    DWORD obj = ext_004AB880();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_004ABAA0
+
+// [0x004ABAC0] sub_004ABAC0 (30 bytes)
+namespace lift_004ABAC0 {
+// @name sub_004ABAC0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_004AB8E0();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_004ABAC0(DWORD* dst, DWORD value) {
+    DWORD obj = ext_004AB8E0();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_004ABAC0

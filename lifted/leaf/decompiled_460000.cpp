@@ -1566,3 +1566,24 @@ void* fn_0046F520() {
     return &mem_00AD836C;
 }
 } // namespace lift_0046F520
+
+// [0x0046F680] sub_0046F680 (30 bytes)
+namespace lift_0046F680 {
+// @name sub_0046F680
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_0046F520();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_0046F680(DWORD* dst, DWORD value) {
+    DWORD obj = ext_0046F520();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_0046F680

@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <cstring>
 #include <cstdlib>
+#include <cmath>
 
 // [0x004B6C90] sub_004B6C90 (34 bytes)
 namespace lift_004B6C90 {
@@ -474,3 +475,66 @@ void __thiscall sub_004B4D30(void* self) {
     }
 }
 } // namespace lift_004B4D30
+
+// [0x004B4BA0] sub_004B4BA0 (30 bytes)
+namespace lift_004B4BA0 {
+// @name sub_004B4BA0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_004B4770();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_004B4BA0(DWORD* dst, DWORD value) {
+    DWORD obj = ext_004B4770();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_004B4BA0
+
+// [0x004B4BC0] sub_004B4BC0 (30 bytes)
+namespace lift_004B4BC0 {
+// @name sub_004B4BC0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_004B47D0();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_004B4BC0(DWORD* dst, DWORD value) {
+    DWORD obj = ext_004B47D0();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_004B4BC0
+
+// [0x004B4BE0] sub_004B4BE0 (30 bytes)
+namespace lift_004B4BE0 {
+// @name sub_004B4BE0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_004B4830();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_004B4BE0(DWORD* dst, DWORD value) {
+    DWORD obj = ext_004B4830();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_004B4BE0

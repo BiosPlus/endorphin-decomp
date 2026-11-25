@@ -48,8 +48,10 @@ void fn_006271D0(void* self) {
     ext_00647E00(receiver, arg);
 }
 } // namespace lift_006271D0
+#include <cmath>
+#include <cstdlib>
 
-// [0x00627280] sub_00627280 (25 bytes)
+#include <cstdlib>
 namespace lift_00627280 {
 extern void __thiscall ext_00647E20(void* self, uint32_t arg);
 
@@ -1828,3 +1830,24 @@ void* fn_00629850(void* self, uint32_t arg0) {
     return self;
 }
 } // namespace lift_00629850
+
+// [0x006259A0] sub_006259A0 (30 bytes)
+namespace lift_006259A0 {
+// @name sub_006259A0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_006255F0();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_006259A0(DWORD* dst, DWORD value) {
+    DWORD obj = ext_006255F0();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_006259A0

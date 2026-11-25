@@ -7627,6 +7627,12 @@
     "summary": "Stores a dword value and the address of the guarded static object into a two-slot output buffer.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046F680": {
+    "name": "sub_0046F680",
+    "signature": "DWORD ext_0046F520();  // ConstructOnce_0046F580 DWORD* fn_0046F680(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046F6A0": {
     "name": "StoreValueAndSingleton",
     "signature": "DWORD ext_0046F580();  // ConstructOnce_0046F580 DWORD* fn_0046F6A0(DWORD* dst, DWORD value)",
@@ -11880,6 +11886,18 @@
     "summary": "Searches [first, last) for value via ext_00430EF0 and writes {owner, found} to the out pair.",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
+  "0x004ABAA0": {
+    "name": "sub_004ABAA0",
+    "signature": "DWORD ext_004AB880();  // ConstructOnce_0046F580 DWORD* fn_004ABAA0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
+  "0x004ABAC0": {
+    "name": "sub_004ABAC0",
+    "signature": "DWORD ext_004AB8E0();  // ConstructOnce_0046F580 DWORD* fn_004ABAC0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004ABE70": {
     "name": "BehaviourData::vfunc_8_off_C",
     "class": "NMData::BehaviourData",
@@ -12528,6 +12546,24 @@
     "signature": "void* fn_004B48E0(void* self, void* unused_arg0, void* arg1)",
     "summary": "Lazily caches a value from ext_004B4710 in a global on first call, then forwards it with the self+8 subobject to ext_0055DA20 on the second stack argument; returns that second argument.",
     "lifted_path": "lifted/NMData/GraphEngineData.cpp"
+  },
+  "0x004B4BA0": {
+    "name": "sub_004B4BA0",
+    "signature": "DWORD ext_004B4770();  // ConstructOnce_0046F580 DWORD* fn_004B4BA0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
+  "0x004B4BC0": {
+    "name": "sub_004B4BC0",
+    "signature": "DWORD ext_004B47D0();  // ConstructOnce_0046F580 DWORD* fn_004B4BC0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
+  "0x004B4BE0": {
+    "name": "sub_004B4BE0",
+    "signature": "DWORD ext_004B4830();  // ConstructOnce_0046F580 DWORD* fn_004B4BE0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
   "0x004B4C00": {
     "name": "initAndReturnFirstArg",
@@ -15606,6 +15642,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType\u003cImageExporter, float, getFrameRate\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004E13C0": {
+    "name": "sub_004E13C0",
+    "signature": "DWORD ext_004DE720();  // ConstructOnce_0046F580 DWORD* fn_004E13C0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004E1440": {
     "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0\u003e",
@@ -15640,6 +15682,12 @@
     "signature": "void* fn_004E1610(void* out, void* unused_arg)",
     "summary": "Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType\u003cRuntimeEngine, int, getNumTicksToRun, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004E1B30": {
+    "name": "sub_004E1B30",
+    "signature": "DWORD ext_004E13E0();  // ConstructOnce_0046F580 DWORD* fn_004E1B30(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
   "0x004E1FC0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1\u003e::vfunc_0",
@@ -17187,6 +17235,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00504B80 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Chromosome/auto_tiny.cpp"
   },
+  "0x00505A10": {
+    "name": "sub_00505A10",
+    "signature": "DWORD ext_00505850();  // ConstructOnce_0046F580 DWORD* fn_00505A10(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00505A30": {
     "name": "ExprParser::ReadWriteMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, int, \u0026public: void __thiscall Interpreter::printThroughProperties(int)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, int, \u0026public: void __thiscall Interpreter::printThroughProperties(int)\u003e",
@@ -17497,6 +17551,12 @@
     "class": "UnknownClass",
     "signature": "void* __thiscall sub_00509EB0(void* self, const void* other)",
     "summary": "Copy constructor setting vtable, copying std::string at +0x4 and float at +0x20",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x0050A120": {
+    "name": "sub_0050A120",
+    "signature": "DWORD ext_00509540();  // ConstructOnce_0046F580 DWORD* fn_0050A120(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
   "0x0050A1A0": {
@@ -18379,6 +18439,18 @@
     "signature": "float fn_0051ADC0(void* self)",
     "summary": "Returns the first float (time) of the last 20-byte keyframe in [begin, end), or 0.0f if the range is empty.",
     "lifted_path": "lifted/NMData/QuatChannel.cpp"
+  },
+  "0x0051AE20": {
+    "name": "sub_0051AE20",
+    "signature": "DWORD ext_0051A9A0();  // ConstructOnce_0046F580 DWORD* fn_0051AE20(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
+  "0x0051AE40": {
+    "name": "sub_0051AE40",
+    "signature": "DWORD ext_0051AA00();  // ConstructOnce_0046F580 DWORD* fn_0051AE40(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
   "0x0051AE60": {
     "name": "sub_0051AE60",
@@ -24267,6 +24339,48 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0058D850": {
+    "name": "sub_0058D850",
+    "signature": "DWORD ext_0058D560();  // ConstructOnce_0046F580 DWORD* fn_0058D850(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
+  "0x0058D870": {
+    "name": "sub_0058D870",
+    "signature": "DWORD ext_0058D5C0();  // ConstructOnce_0046F580 DWORD* fn_0058D870(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
+  "0x0058D890": {
+    "name": "sub_0058D890",
+    "signature": "DWORD ext_0058D620();  // ConstructOnce_0046F580 DWORD* fn_0058D890(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
+  "0x0058D8B0": {
+    "name": "sub_0058D8B0",
+    "signature": "DWORD ext_0058D680();  // ConstructOnce_0046F580 DWORD* fn_0058D8B0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
+  "0x0058D8D0": {
+    "name": "sub_0058D8D0",
+    "signature": "DWORD ext_0058D6E0();  // ConstructOnce_0046F580 DWORD* fn_0058D8D0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
+  "0x0058D8F0": {
+    "name": "sub_0058D8F0",
+    "signature": "DWORD ext_0058D740();  // ConstructOnce_0046F580 DWORD* fn_0058D8F0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
+  "0x0058D910": {
+    "name": "sub_0058D910",
+    "signature": "DWORD ext_0058D7A0();  // ConstructOnce_0046F580 DWORD* fn_0058D910(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x0058D930": {
     "name": "ExprParser::ReadMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0\u003e",
@@ -28500,6 +28614,30 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
     "lifted_path": "lifted/NMData/FluidObjectData.cpp"
   },
+  "0x005CC750": {
+    "name": "sub_005CC750",
+    "signature": "DWORD ext_005CBF80();  // ConstructOnce_0046F580 DWORD* fn_005CC750(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005CC770": {
+    "name": "sub_005CC770",
+    "signature": "DWORD ext_005CBFE0();  // ConstructOnce_0046F580 DWORD* fn_005CC770(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005CC790": {
+    "name": "sub_005CC790",
+    "signature": "DWORD ext_005CC040();  // ConstructOnce_0046F580 DWORD* fn_005CC790(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005CC7B0": {
+    "name": "sub_005CC7B0",
+    "signature": "DWORD ext_005CC0A0();  // ConstructOnce_0046F580 DWORD* fn_005CC7B0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005CCB60": {
     "name": "NMData::CollisionModelDataBase::vfunc_17_off_C",
     "class": "NMData::CollisionModelDataBase",
@@ -28700,6 +28838,12 @@
     "signature": "extern \"C\" void* __fastcall fn_005CF480(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_005CF2B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x005CF4A0": {
+    "name": "sub_005CF4A0",
+    "signature": "DWORD ext_005CF420();  // ConstructOnce_0046F580 DWORD* fn_005CF4A0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
   "0x005CF8D0": {
     "name": "NMData::InertialBodyData::vfunc_15",
@@ -34603,6 +34747,12 @@
     "name": "allocRecord28",
     "signature": "void* fn_00625950(uint32_t a0, uint32_t a1, uint32_t a2, const uint32_t* src, uint8_t flag)",
     "summary": "Allocates a 0x1C-byte record and fills it from three DWORD args, a 3-DWORD source block and a flag byte; returns NULL if allocation fails.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x006259A0": {
+    "name": "sub_006259A0",
+    "signature": "DWORD ext_006255F0();  // ConstructOnce_0046F580 DWORD* fn_006259A0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x006259C0": {
@@ -40917,6 +41067,12 @@
     "summary": "Checks if ExpressionEntry::getExpression() matches either of two string literals, throwing if the entry pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00674F20": {
+    "name": "sub_00674F20",
+    "signature": "DWORD ext_00674EC0();  // ConstructOnce_0046F580 DWORD* fn_00674F20(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00675100": {
     "name": "sub_00675100",
     "signature": "extern \"C\" void fn_00675100(void)",
@@ -41664,6 +41820,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x4 and tail-calls sub_00682FD0.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
   },
+  "0x006836F0": {
+    "name": "sub_006836F0",
+    "signature": "DWORD ext_00683190();  // ConstructOnce_0046F580 DWORD* fn_006836F0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00683710": {
     "name": "ExprParser::ReadMethodType\u003cNMData::ValuePtrData\u003e::vfunc_0 (NMData::ValuePtrData::getPropertyDescription)",
     "class": "ExprParser::ReadMethodType\u003cNMData::ValuePtrData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1\u003e",
@@ -41831,6 +41993,30 @@
     "signature": "void* fn_00685450(void* out, void* unused_arg)",
     "summary": "Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType\u003cRuntimeEngine, int, getNumTicksToRun, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00685BA0": {
+    "name": "sub_00685BA0",
+    "signature": "DWORD ext_006850E0();  // ConstructOnce_0046F580 DWORD* fn_00685BA0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x00685BC0": {
+    "name": "sub_00685BC0",
+    "signature": "DWORD ext_00685140();  // ConstructOnce_0046F580 DWORD* fn_00685BC0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x00685BE0": {
+    "name": "sub_00685BE0",
+    "signature": "DWORD ext_006851A0();  // ConstructOnce_0046F580 DWORD* fn_00685BE0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x00685C00": {
+    "name": "sub_00685C00",
+    "signature": "DWORD ext_00685200();  // ConstructOnce_0046F580 DWORD* fn_00685C00(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x00686740": {
     "name": "sub_00686740",

@@ -3,8 +3,10 @@
 #include <string>
 #include <new>
 #include <cstdint>
+#include <cmath>
+#include <cstdlib>
 
-// [0x005CF3E0] sub_005CF3E0 (58 bytes)
+#include <cstdlib>
 namespace lift_005CF3E0 {
 // @name sub_005CF3E0
 // @summary Auto-lifted identical-shape clone of 0x0048DE30 (NMData::DesiredPoseEventData::vfunc_87).
@@ -504,3 +506,108 @@ extern void* fn_005C35E0(uint32_t count) {
     return ext_006A5C62(count << 5);
 }
 } // namespace lift_005C35E0
+
+// [0x005CC750] sub_005CC750 (30 bytes)
+namespace lift_005CC750 {
+// @name sub_005CC750
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_005CBF80();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_005CC750(DWORD* dst, DWORD value) {
+    DWORD obj = ext_005CBF80();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_005CC750
+
+// [0x005CC770] sub_005CC770 (30 bytes)
+namespace lift_005CC770 {
+// @name sub_005CC770
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_005CBFE0();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_005CC770(DWORD* dst, DWORD value) {
+    DWORD obj = ext_005CBFE0();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_005CC770
+
+// [0x005CC790] sub_005CC790 (30 bytes)
+namespace lift_005CC790 {
+// @name sub_005CC790
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_005CC040();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_005CC790(DWORD* dst, DWORD value) {
+    DWORD obj = ext_005CC040();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_005CC790
+
+// [0x005CC7B0] sub_005CC7B0 (30 bytes)
+namespace lift_005CC7B0 {
+// @name sub_005CC7B0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_005CC0A0();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_005CC7B0(DWORD* dst, DWORD value) {
+    DWORD obj = ext_005CC0A0();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_005CC7B0
+
+// [0x005CF4A0] sub_005CF4A0 (30 bytes)
+namespace lift_005CF4A0 {
+// @name sub_005CF4A0
+// @summary Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).
+namespace lift_0046F6A0 {
+DWORD ext_005CF420();  // ConstructOnce_0046F580
+
+// @name StoreValueAndSingleton
+// @summary Stores a value into dst[0], stores the one-time-constructed global object pointer into dst[1], and returns dst.
+// @field <none> +0x00 DWORD field_0x00 (written from the value argument)
+// @field <none> +0x04 DWORD field_0x04 (written from ext_0046F580() result)
+
+DWORD* fn_005CF4A0(DWORD* dst, DWORD value) {
+    DWORD obj = ext_005CF420();
+    dst[0] = value;
+    dst[1] = obj;
+    return dst;
+}
+} // namespace lift_0046F6A0
+} // namespace lift_005CF4A0
