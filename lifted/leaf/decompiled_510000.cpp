@@ -201,3 +201,29 @@ void fn_0051FEB0(void* self) {
 }
 } // namespace lift_005015E0
 } // namespace lift_0051FEB0
+
+// [0x0051DEA0]
+namespace lift_0051DEA0 {
+extern void* ext_006A5C62(uint32_t size);
+extern void ext_006A6DD2(void* pExceptionObject, const void* pThrowInfo);
+
+extern void* mem_00925130;
+extern uint32_t mem_00928EC0;
+extern uint8_t mem_009CDF94;
+
+// @name allocateElements192
+// @summary Allocates count elements of 192 bytes (0xC0) with overflow check, throwing std::bad_alloc on overflow
+
+extern void* fn_0051DEA0(uint32_t count) {
+    if (count > 0 && (0xFFFFFFFFu / count) < 0xC0u) {
+        const char* msg = nullptr;
+        uintptr_t exc[3] = {0, 0, 0};
+        using ExceptionCtor = void(__thiscall*)(void*, const char* const*);
+        reinterpret_cast<ExceptionCtor>(mem_00925130)(exc, &msg);
+        exc[0] = reinterpret_cast<uintptr_t>(&mem_00928EC0);
+        ext_006A6DD2(exc, &mem_009CDF94);
+    }
+
+    return ext_006A5C62(count * 0xC0u);
+}
+} // namespace lift_0051DEA0

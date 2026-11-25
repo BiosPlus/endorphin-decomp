@@ -19325,6 +19325,12 @@
     "summary": "Returns (end - begin) / 12 for the 12-byte element range at +0x4/+0x8, or 0 if begin is null.",
     "lifted_path": "lifted/leaf/tiny_510000.cpp"
   },
+  "0x0051DEA0": {
+    "name": "allocateElements192",
+    "signature": "extern \"C\" void* fn_0051DEA0(uint32_t count)",
+    "summary": "Allocates count elements of 192 bytes (0xC0) with overflow check, throwing std::bad_alloc on overflow",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x0051DF00": {
     "name": "sub_0051DF00",
     "signature": "extern void* fn_0051DF00(uint32_t count)",
