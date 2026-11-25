@@ -1014,3 +1014,23 @@ uint32_t fn_00864F30(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4,
     return 0;
 }
 } // namespace lift_00864F30
+
+// [0x00867360]
+namespace lift_00867360 {
+extern const uint32_t mem_00AC4A94; // 0x00AC4A94 (.data u32 0x0086F870)
+
+// @name ParseDecimalPrefix_00867360
+// @summary Parses leading ASCII decimal digits of a string into a uint32; stops at the first non-digit.
+uint32_t ParseDecimalPrefix_00867360(const char* s) {
+    (void)&mem_00AC4A94; // original asm lists this global; the code never reads it
+    uint32_t result = 0;
+    const uint8_t* p = reinterpret_cast<const uint8_t*>(s);
+    uint8_t c = p[0];
+    while (c >= '0' && c <= '9') {
+        result = result * 10u + static_cast<uint32_t>(c - '0');
+        ++p;
+        c = *p;
+    }
+    return result;
+}
+} // namespace lift_00867360

@@ -44861,6 +44861,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006588F0 (RelationshipHinge::vfunc_9).",
     "lifted_path": "lifted/classes/RelationshipHinge.cpp"
   },
+  "0x00658B30": {
+    "name": "RelationshipHinge::vfunc_53",
+    "class": "RelationshipHinge",
+    "signature": "void __thiscall fn_00658B30(void* self)",
+    "summary": "Initializes a sub-object parameter at offset 0x160 from field_0x64 with 0.0f and 80.0f.",
+    "lifted_path": "lifted/classes/RelationshipHinge.cpp"
+  },
   "0x00658B60": {
     "name": "RelationshipHinge::vfunc_1",
     "class": "RelationshipHinge",
@@ -64319,6 +64326,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00713F30": {
+    "name": "getTableEntry_00713F30",
+    "signature": "uint32_t __stdcall sub_00713F30(uint32_t index)",
+    "summary": "Maps an index (0, 1, or other) to one of three static data addresses.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00714020": {
     "name": "sub_00714020",
     "signature": "void fn_00714020(void)",
@@ -72384,6 +72397,12 @@
     "name": "GetEnvironmentVariableAllocA",
     "signature": "char* fn_008671C0(const char* name)",
     "summary": "Queries the length of an environment variable, allocates a buffer via LocalAlloc, and retrieves its value.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
+  "0x00867360": {
+    "name": "ParseDecimalPrefix_00867360",
+    "signature": "extern const uint32_t mem_00AC4A94; // 0x00AC4A94 (.data u32 0x0086F870) uint32_t ParseDecimalPrefix_00867360(const char* s)",
+    "summary": "Parses leading ASCII decimal digits of a string into a uint32; stops at the first non-digit.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
   "0x00867850": {
