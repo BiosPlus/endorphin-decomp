@@ -1,0 +1,28 @@
+{
+  "va": "0x005774B0",
+  "size": 66,
+  "orig_symbol": "sub_005774B0",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "Vector20::back",
+  "class": "Vector20",
+  "signature": "uint32_t __thiscall sub_005774B0(void* self)",
+  "summary": "Returns a pointer to the last 20-byte element in the vector, with MSVC8 iterator debug/checked-iterator validation.",
+  "fields": [
+    {
+      "class": "Vector20",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "Vector20",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:16:20Z"
+}

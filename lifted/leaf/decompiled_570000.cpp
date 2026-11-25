@@ -495,3 +495,29 @@ StringPairRecord* Unknown_CopyBackwardStringPairs(StringPairRecord* first,
     return dst;
 }
 } // namespace lift_0057BBE0
+
+// [0x005774B0]
+namespace lift_005774B0 {
+extern void (*mem_00925134)();
+
+// @name Vector20::back
+// @class Vector20
+// @summary Returns a pointer to the last 20-byte element in the vector, with MSVC8 iterator debug/checked-iterator validation.
+// @field Vector20 +0x04 uint32_t begin
+// @field Vector20 +0x08 uint32_t end
+uint32_t __thiscall sub_005774B0(void* self) {
+    uint32_t begin = *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x04);
+    uint32_t end = *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x08);
+    if (begin > end) {
+        mem_00925134();
+    }
+    uint32_t last = end - 0x14;
+    if (last > end || last < begin) {
+        mem_00925134();
+    }
+    if (last >= end) {
+        mem_00925134();
+    }
+    return last;
+}
+} // namespace lift_005774B0
