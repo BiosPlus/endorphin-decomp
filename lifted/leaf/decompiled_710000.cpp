@@ -1928,3 +1928,18 @@ extern double __fastcall fn_00711BB0(void* self) {
     return lift_field<double>(ext_0071E680(self), 0x20);
 }
 } // namespace lift_00711BB0
+
+// [0x00711BA0] sub_00711BA0 (16 bytes)
+namespace lift_00711BA0 {
+// Known callee 0x0071E680: sub_0071E680 (Returns pointer to subobject/field at offset +0x40.)
+extern void* __fastcall ext_0071E680(void* self);
+
+// @name GetSubobjectDoubleField24
+// @class Subobject
+// @summary Returns the double at +0x18 of the subobject obtained from ext_0071E680(self).
+// @field Subobject +0x18 double field_0x18
+extern double __fastcall fn_00711BA0(void* self) {
+    void* sub = ext_0071E680(self);
+    return lift_field<double>(sub, 0x18);
+}
+} // namespace lift_00711BA0
