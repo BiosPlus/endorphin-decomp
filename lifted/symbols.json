@@ -56466,6 +56466,13 @@
     "summary": "Scans the global entry table in index order, calling getEntryValue for each index until the returned key equals the requested key; returns that entry's value, or 0 if no entry matches.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x0071FCC0": {
+    "name": "Unknown::AddDoubleArraysGated",
+    "class": "Unknown",
+    "signature": "void fn_0071FCC0(void* self, double* dst, const double* a, const double* b)",
+    "summary": "If ext_006DEEC0(self) is nonzero, dst[0] = a[0] + b[0]; then dst[i] = a[i] + b[i] for i \u003c count, where count = self-\u003evtbl[5](self).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00722000": {
     "name": "sub_00722000",
     "signature": "void fn_00722000(void* self)",

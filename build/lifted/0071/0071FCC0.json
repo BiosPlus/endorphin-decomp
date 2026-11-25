@@ -1,0 +1,22 @@
+{
+  "va": "0x0071FCC0",
+  "size": 80,
+  "orig_symbol": "sub_0071FCC0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::AddDoubleArraysGated",
+  "class": "Unknown",
+  "signature": "void fn_0071FCC0(void* self, double* dst, const double* a, const double* b)",
+  "summary": "If ext_006DEEC0(self) is nonzero, dst[0] = a[0] + b[0]; then dst[i] = a[i] + b[i] for i \u003c count, where count = self-\u003evtbl[5](self).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:51:55Z"
+}

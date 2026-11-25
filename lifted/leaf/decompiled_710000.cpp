@@ -1432,3 +1432,28 @@ void fn_007155B0(void* self, double a, double b, double c) {
     reinterpret_cast<StubFn>(&ext_006D80A0)(&a);
 }
 } // namespace lift_007155B0
+
+// [0x0071FCC0] sub_0071FCC0 (80 bytes)
+namespace lift_0071FCC0 {
+// Known callee 0x006DEEC0: sub_006DEEC0 (Getter returning int32_t field at offset +0x38.)
+extern int32_t ext_006DEEC0(void* self);
+
+// @name Unknown::AddDoubleArraysGated
+// @class Unknown
+// @summary If ext_006DEEC0(self) is nonzero, dst[0] = a[0] + b[0]; then dst[i] = a[i] + b[i] for i < count, where count = self->vtbl[5](self).
+// @field Unknown +0x00 void* vtable
+void fn_0071FCC0(void* self, double* dst, const double* a, const double* b) {
+    if (ext_006DEEC0(self) != 0) {
+        *dst = *a + *b;
+    }
+
+    // Virtual call through vtable slot 5 (byte offset 0x14 on the 32-bit target).
+    void** vtbl = lift_field<void**>(self, 0);
+    using CountFn = int32_t (*)(void*);
+    const int32_t count = reinterpret_cast<CountFn>(vtbl[5])(self);
+
+    for (int32_t i = 0; i < count; ++i) {
+        dst[i] = a[i] + b[i];
+    }
+}
+} // namespace lift_0071FCC0
