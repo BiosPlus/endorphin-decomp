@@ -2444,3 +2444,20 @@ extern void* fn_00622C40(void* first, void* last, void* destEnd) {
 }
 } // namespace lift_0051A6D0
 } // namespace lift_00622C40
+
+// [0x0062BA00] sub_0062BA00 (94 bytes)
+namespace lift_0062BA00 {
+// Known callee 0x0062B8B0: CopyStringPairRange (Copy-assigns each 0x38-byte record in [first, last) to consecutive records starting at dest (both std::string members per record); returns one past the last destination record.)
+extern char* ext_0062B8B0(char* first, char* last, char* dest);
+
+// @name CopyStringPairRangeReturnEnd_0062BA00
+// @summary Copies a 0x38-byte record range via sub_0062B8B0, then returns dest advanced by the record count times 0x38.
+extern char* __cdecl fn_0062BA00(char* first, char* last, char* dest) {
+    ext_0062B8B0(first, last, dest);
+
+    // Record count = (last - first) / 0x38, signed truncating division.
+    const ptrdiff_t bytes = last - first;
+    const ptrdiff_t count = bytes / 56;
+    return dest + count * 56;
+}
+} // namespace lift_0062BA00
