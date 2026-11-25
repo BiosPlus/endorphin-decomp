@@ -1,0 +1,28 @@
+{
+  "va": "0x004FDEF0",
+  "size": 91,
+  "orig_symbol": "sub_004FDEF0",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "sub_004FDEF0_dtor",
+  "class": "sub_004FDEF0_Class",
+  "signature": "extern \"C\" void __fastcall fn_004FDEF0(void* self)",
+  "summary": "Destroys two std::string members at +0x34 and +0x18, then calls base destructor sub_00665810.",
+  "fields": [
+    {
+      "class": "sub_004FDEF0_Class",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    },
+    {
+      "class": "sub_004FDEF0_Class",
+      "offset": "+0x34",
+      "type": "void*",
+      "name": "field_0x34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:30:03Z"
+}

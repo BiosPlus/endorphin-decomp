@@ -77,3 +77,24 @@ void fn_004FDE90(void* self) {
     ext_00665810(self);
 }
 } // namespace lift_004FDE90
+
+// [0x004FDEF0]
+namespace lift_004FDEF0 {
+// @name sub_004FDEF0_dtor
+// @class sub_004FDEF0_Class
+// @summary Destroys two std::string members at +0x34 and +0x18, then calls base destructor sub_00665810.
+// @field sub_004FDEF0_Class +0x18 void* field_0x18
+// @field sub_004FDEF0_Class +0x34 void* field_0x34
+
+
+extern void __fastcall ext_00665810(void* self);
+extern uintptr_t mem_00924FF4;
+
+extern void __fastcall fn_004FDEF0(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    auto dtor_string = reinterpret_cast<void(__fastcall*)(void*)>(mem_00924FF4);
+    dtor_string(base + 0x34);
+    dtor_string(base + 0x18);
+    ext_00665810(self);
+}
+} // namespace lift_004FDEF0
