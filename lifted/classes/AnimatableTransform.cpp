@@ -147,3 +147,32 @@ uint32_t fn_00593D00(void* self, void* it) {
 }
 } // namespace lift_00593D00
 } // namespace lift_00593D00
+
+// [0x005936B0] AnimatableTransform::vfunc_43 (82 bytes)
+namespace lift_005936B0 {
+// @name AnimatableTransform::CopyTranslationFromInterface
+// @class AnimatableTransform
+// @summary Copies the translation row (+0x30..+0x38) from the interface's source matrix into its destination matrix and sets +0x3C to 1.0.
+// @field AnimatableTransform +0x04 void* transformInterface_vtable
+void fn_005936B0(void* self) {
+    // TransformInterface subobject lives at self+0x04; its vtable pointer is the first dword of it.
+    void* ti = static_cast<uint8_t*>(self) + 0x04;
+    void** vtbl = *static_cast<void***>(ti);
+
+    using GetMatrixFn = void* (*)(void* thisPtr);
+    // Vtable slot 9 (byte offset 0x24) yields the destination matrix.
+    void* dst = reinterpret_cast<GetMatrixFn>(vtbl[9])(ti);
+    // Vtable slot 11 (byte offset 0x2C) yields the source matrix.
+    void* src = reinterpret_cast<GetMatrixFn>(vtbl[11])(ti);
+
+    // Read all three source components before writing, in case dst and src alias.
+    const float tx = lift_field<float>(src, 0x30);
+    const float ty = lift_field<float>(src, 0x34);
+    const float tz = lift_field<float>(src, 0x38);
+
+    lift_field<float>(dst, 0x30) = tx;
+    lift_field<float>(dst, 0x34) = ty;
+    lift_field<float>(dst, 0x38) = tz;
+    lift_field<float>(dst, 0x3C) = 1.0f;
+}
+} // namespace lift_005936B0

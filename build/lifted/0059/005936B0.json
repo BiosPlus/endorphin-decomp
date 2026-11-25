@@ -1,0 +1,22 @@
+{
+  "va": "0x005936B0",
+  "size": 82,
+  "orig_symbol": "AnimatableTransform::vfunc_43",
+  "src_path": "src/classes/AnimatableTransform.cpp",
+  "lifted_path": "lifted/classes/AnimatableTransform.cpp",
+  "name": "AnimatableTransform::CopyTranslationFromInterface",
+  "class": "AnimatableTransform",
+  "signature": "void fn_005936B0(void* self)",
+  "summary": "Copies the translation row (+0x30..+0x38) from the interface's source matrix into its destination matrix and sets +0x3C to 1.0.",
+  "fields": [
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "transformInterface_vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-25T02:03:25Z"
+}

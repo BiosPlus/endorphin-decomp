@@ -23427,6 +23427,13 @@
     "summary": "Calls virtual slot 7 on self; if it returns true, forwards field +0xE4 to ext_00661A60 using global mem_00B40640, otherwise returns field +0xE0.",
     "lifted_path": "lifted/classes/AnimatableTransform.cpp"
   },
+  "0x005936B0": {
+    "name": "AnimatableTransform::CopyTranslationFromInterface",
+    "class": "AnimatableTransform",
+    "signature": "void fn_005936B0(void* self)",
+    "summary": "Copies the translation row (+0x30..+0x38) from the interface's source matrix into its destination matrix and sets +0x3C to 1.0.",
+    "lifted_path": "lifted/classes/AnimatableTransform.cpp"
+  },
   "0x00593870": {
     "name": "AnimatableTransform::vfunc_17_off_C",
     "class": "AnimatableTransform",
