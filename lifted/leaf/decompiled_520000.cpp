@@ -463,3 +463,39 @@ uint32_t __thiscall sub_00527AF0(void* self) {
     return last;
 }
 } // namespace lift_00527AF0
+
+// [0x0052A230] sub_0052A230 (70 bytes)
+namespace lift_0052A230 {
+// @name sub_0052A230
+// @summary Auto-lifted identical-shape clone of 0x004205B0 (TreeMap::lowerBound).
+namespace lift_004205B0 {
+// MSVCP80 std::operator<(const std::string&, const std::string&), imported via IAT slot mem_00924EF4.
+extern bool ext_std_string_less(const void* lhs, const void* rhs);
+
+// @name TreeMap::lowerBound
+// @class TreeMap
+// @summary Lower-bound search in an MSVC-style std::map tree: returns first node whose key is not less than the argument, or the header node if none.
+// @field TreeMap +0x04 void* head
+// Node layout used (MSVC _Tree node): +0x00 left, +0x04 parent, +0x08 right, +0x0C key (std::string), +0x59 isNil flag.
+void* fn_0052A230(void* self, const void* key) {
+    void* head = lift_field<void*>(self, 0x04);
+    void* node = lift_field<void*>(head, 0x04);   // root
+    void* result = head;
+
+    if (lift_field<uint8_t>(node, 0x61) != 0) {
+        return head;
+    }
+
+    while (lift_field<uint8_t>(node, 0x61) == 0) {
+        const void* nodeKey = reinterpret_cast<const uint8_t*>(node) + 0x0C;
+        if (ext_std_string_less(nodeKey, key)) {
+            node = lift_field<void*>(node, 0x08);     // go right
+        } else {
+            result = node;                            // candidate
+            node = lift_field<void*>(node, 0x00);     // go left
+        }
+    }
+    return result;
+}
+} // namespace lift_004205B0
+} // namespace lift_0052A230

@@ -17433,6 +17433,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005AC820 (Unknown::walkLinkUntilFlagSet_005AC820).",
     "lifted_path": "lifted/leaf/tiny_520000.cpp"
   },
+  "0x0052A230": {
+    "name": "sub_0052A230",
+    "class": "TreeMap",
+    "signature": "void* fn_0052A230(void* self, const void* key)",
+    "summary": "Auto-lifted identical-shape clone of 0x004205B0 (TreeMap::lowerBound).",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052ED00": {
     "name": "MaterialList::vfunc_6",
     "class": "MaterialList",
@@ -20719,6 +20726,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00584490 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0055C490": {
+    "name": "sub_0055C490",
+    "class": "TreeMap",
+    "signature": "void* fn_0055C490(void* self, const void* key)",
+    "summary": "Auto-lifted identical-shape clone of 0x004205B0 (TreeMap::lowerBound).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x0055D2B0": {
     "name": "sub_0055D2B0",
     "signature": "extern \"C\" void fn_0055D2B0(void)",
@@ -22674,6 +22688,13 @@
     "summary": "Follows self-\u003e+0x26C -\u003e P; returns 0 if P-\u003e+0x20 is zero. Otherwise walks P-\u003e+0x1C -\u003e Q -\u003e R (Q-\u003e+0x00), and returns R-\u003e+0x28 -\u003e S's dword at +0x38C.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x0059B290": {
+    "name": "sub_0059B290",
+    "class": "TreeMap",
+    "signature": "void* fn_0059B290(void* self, const void* key)",
+    "summary": "Auto-lifted identical-shape clone of 0x004205B0 (TreeMap::lowerBound).",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x0059C7E0": {
     "name": "World::vfunc_33",
     "class": "World",
@@ -23461,6 +23482,13 @@
     "class": "Unknown",
     "signature": "void* __thiscall fn_005ACEE0(void* self, uint32_t arg0, uint32_t arg1)",
     "summary": "Calls ext_006657F0(self, 0), stores the second stack argument at +0x10 and the first at +0x14, sets the vtable to mem_0095F5C4, zeroes +0x18 (int) and the floats at +0x1C..+0x28, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
+  "0x005AD010": {
+    "name": "sub_005AD010",
+    "class": "TreeMap",
+    "signature": "void* fn_005AD010(void* self, const void* key)",
+    "summary": "Auto-lifted identical-shape clone of 0x004205B0 (TreeMap::lowerBound).",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
   "0x005AD0C0": {
