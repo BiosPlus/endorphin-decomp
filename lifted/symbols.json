@@ -16372,6 +16372,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004DFC60": {
+    "name": "ReadWriteMethodType_AnimationEventData_MotionEndFrame_vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::AnimationEventData::setMotionEndFrameNumber(int), 0}\u003e",
+    "signature": "void __stdcall fn_004DFC60(void* out)",
+    "summary": "One-time guarded init of a static ReadWriteMethodType object (vtable 0x0094A7CC), then points the out-param's +4 at that static object.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004DFD60": {
     "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0\u003e",

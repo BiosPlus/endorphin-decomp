@@ -10403,3 +10403,28 @@ void fn_004DEC00(void* out) {
         static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
 }
 } // namespace lift_004DEC00
+
+// [0x004DFC60] ExprParser::ReadWriteMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::AnimationEventData::setMotionEndFrameNumber(int), 0}>::vfunc_40 (122 bytes)
+namespace lift_004DFC60 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AE6450;   // guard flag word; bit 0 = initialized
+extern DWORD mem_00AE644C;   // function-local static object; first DWORD = vtable
+
+// @name ReadWriteMethodType_AnimationEventData_MotionEndFrame_vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::AnimationEventData::setMotionEndFrameNumber(int), 0}>
+// @summary One-time guarded init of a static ReadWriteMethodType object (vtable 0x0094A7CC), then points the out-param's +4 at that static object.
+// @field ExprParser::ValuePtrType +0x04 DWORD field_0x04
+void __stdcall fn_004DFC60(void* out) {
+    // Guarded one-time initialization of the static object at mem_00AE644C.
+    if ((mem_00AE6450 & 1u) == 0) {
+        mem_00AE6450 |= 1u;
+        // Thiscall on the static object with value 0 (ext_0067A670 stores it into first DWORD).
+        ext_0067A670(&mem_00AE644C, 0u);
+        // Install the vtable pointer into the static object's first DWORD.
+        mem_00AE644C = 0x0094A7CCu;
+    }
+    // Point out->+4 at the static object (address stored as a literal, as in the original).
+    *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(out) + 4) = 0x00AE644Cu;
+}
+} // namespace lift_004DFC60
