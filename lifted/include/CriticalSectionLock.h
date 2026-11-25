@@ -8,6 +8,7 @@
 // Recovered field layout for CriticalSectionLock:
 namespace lifted_layout {
 struct CriticalSectionLock_Fields {
-    // +0x0   void*                    criticalSection  (evidence: 0x0065C650, 0x0065F280, 0x0078C230)
+    // +0x0   void*                    criticalSection  (evidence: 0x0065C650, 0x0065F280, 0x0078C230) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x0065C640) // CONFLICT: multiple definitions at +0x0
 };
 } // namespace lifted_layout

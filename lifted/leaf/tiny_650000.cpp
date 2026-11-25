@@ -166,3 +166,20 @@ void fn_0065A8B0(void* self) {
 }
 } // namespace lift_00661980
 } // namespace lift_0065A8B0
+
+// [0x0065C640] sub_0065C640 (10 bytes)
+namespace lift_0065C640 {
+// IAT slot for KERNEL32!EnterCriticalSection (holds the imported function pointer).
+extern int mem_009242E0;
+
+// @name CriticalSectionLock::enter
+// @class CriticalSectionLock
+// @summary Enters the CRITICAL_SECTION whose pointer is stored at offset 0 of self.
+// @field CriticalSectionLock +0x00 uint32_t field_0x00
+void fn_0065C640(void* self) {
+    const uint32_t cs = lift_field<uint32_t>(self, 0);
+    using EnterCriticalSectionFn = void(__stdcall*)(void*);
+    auto enter = reinterpret_cast<EnterCriticalSectionFn>(static_cast<uintptr_t>(mem_009242E0));
+    enter(reinterpret_cast<void*>(static_cast<uintptr_t>(cs)));
+}
+} // namespace lift_0065C640

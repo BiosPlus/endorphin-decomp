@@ -1,0 +1,22 @@
+{
+  "va": "0x0065C640",
+  "size": 10,
+  "orig_symbol": "sub_0065C640",
+  "src_path": "src/leaf/tiny_650000.cpp",
+  "lifted_path": "lifted/leaf/tiny_650000.cpp",
+  "name": "CriticalSectionLock::enter",
+  "class": "CriticalSectionLock",
+  "signature": "void fn_0065C640(void* self)",
+  "summary": "Enters the CRITICAL_SECTION whose pointer is stored at offset 0 of self.",
+  "fields": [
+    {
+      "class": "CriticalSectionLock",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:17:36Z"
+}

@@ -42381,6 +42381,13 @@
     "summary": "Copies 64 bytes (16 dwords) from self+0x0C into the caller-supplied destination buffer (thiscall, 1 stack arg, ret 4).",
     "lifted_path": "lifted/leaf/tiny_650000.cpp"
   },
+  "0x0065C640": {
+    "name": "CriticalSectionLock::enter",
+    "class": "CriticalSectionLock",
+    "signature": "void fn_0065C640(void* self)",
+    "summary": "Enters the CRITICAL_SECTION whose pointer is stored at offset 0 of self.",
+    "lifted_path": "lifted/leaf/tiny_650000.cpp"
+  },
   "0x0065C650": {
     "name": "CriticalSectionLock::leave",
     "class": "CriticalSectionLock",
