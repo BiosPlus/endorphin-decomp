@@ -630,3 +630,31 @@ uint32_t fn_0051AE60(uint32_t begin, uint32_t end, uint32_t value) {
 }
 } // namespace lift_0054F290
 } // namespace lift_0051AE60
+
+// [0x00518080] sub_00518080 (76 bytes)
+namespace lift_00518080 {
+// Known callee 0x0050F970: InitZeroedStateWithVTable (Sets the vtable pointer to 0x00950A74 and zeroes the double, dword, and byte state fields.)
+extern void ext_0050F970(void* self);
+extern double mem_0092C508;
+
+// @name Unknown::InitStateWithDefaults_00518080
+// @class Unknown
+// @summary Initializes the object via the base initializer, sets its vtable to 0x009520C4, stores 0.1 at +0x30 and zeroes the three dwords at +0x3C..+0x44; returns self.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x30 double field_0x30
+// @field Unknown +0x3C uint32_t field_0x3C
+// @field Unknown +0x40 uint32_t field_0x40
+// @field Unknown +0x44 uint32_t field_0x44
+void* fn_00518080(void* self) {
+    ext_0050F970(self);
+
+    const double value = mem_0092C508;
+    lift_field<uint32_t>(self, 0x00) = 0x009520C4u;
+    lift_field<uint32_t>(self, 0x3C) = 0u;
+    lift_field<uint32_t>(self, 0x40) = 0u;
+    lift_field<uint32_t>(self, 0x44) = 0u;
+    lift_field<double>(self, 0x30) = value;
+
+    return self;
+}
+} // namespace lift_00518080

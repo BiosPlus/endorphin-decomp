@@ -1,0 +1,46 @@
+{
+  "va": "0x00518080",
+  "size": 76,
+  "orig_symbol": "sub_00518080",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "Unknown::InitStateWithDefaults_00518080",
+  "class": "Unknown",
+  "signature": "void* fn_00518080(void* self)",
+  "summary": "Initializes the object via the base initializer, sets its vtable to 0x009520C4, stores 0.1 at +0x30 and zeroes the three dwords at +0x3C..+0x44; returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "double",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "uint32_t",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:38:54Z"
+}

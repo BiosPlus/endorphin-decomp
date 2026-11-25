@@ -17078,6 +17078,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00500310 (DwordPairInitFromCall_00500310).",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00518080": {
+    "name": "Unknown::InitStateWithDefaults_00518080",
+    "class": "Unknown",
+    "signature": "void* fn_00518080(void* self)",
+    "summary": "Initializes the object via the base initializer, sets its vtable to 0x009520C4, stores 0.1 at +0x30 and zeroes the three dwords at +0x3C..+0x44; returns self.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00518130": {
     "name": "SelectionMethodEgalitarianElitist::vfunc_0",
     "class": "SelectionMethodEgalitarianElitist",
