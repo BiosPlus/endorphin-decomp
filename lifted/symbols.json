@@ -45070,6 +45070,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B13A0 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData,bool,\u0026NMData::GraphEntryData::isActive,0\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00678D70": {
+    "name": "BaseEventDispatcher::vfunc_1",
+    "class": "BaseEventDispatcher",
+    "signature": "void BaseEventDispatcher_vfunc_1(void* self_ptr, void* arg)",
+    "summary": "Walks the dispatcher's pointer array at +0x8..+0xC and calls vtable slot 0 of each element with the given argument.",
+    "lifted_path": "lifted/classes/BaseEventDispatcher.cpp"
+  },
   "0x00678DE0": {
     "name": "sub_00678DE0",
     "signature": "void __thiscall fn_00503CD0(void* self)",

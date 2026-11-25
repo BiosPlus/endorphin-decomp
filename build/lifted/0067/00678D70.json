@@ -1,0 +1,28 @@
+{
+  "va": "0x00678D70",
+  "size": 103,
+  "orig_symbol": "BaseEventDispatcher::vfunc_1",
+  "src_path": "src/classes/BaseEventDispatcher.cpp",
+  "lifted_path": "lifted/classes/BaseEventDispatcher.cpp",
+  "name": "BaseEventDispatcher::vfunc_1",
+  "class": "BaseEventDispatcher",
+  "signature": "void BaseEventDispatcher_vfunc_1(void* self_ptr, void* arg)",
+  "summary": "Walks the dispatcher's pointer array at +0x8..+0xC and calls vtable slot 0 of each element with the given argument.",
+  "fields": [
+    {
+      "class": "BaseEventDispatcher",
+      "offset": "+0x8",
+      "type": "void**",
+      "name": "field_0x08"
+    },
+    {
+      "class": "BaseEventDispatcher",
+      "offset": "+0xC",
+      "type": "void**",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:48:25Z"
+}
