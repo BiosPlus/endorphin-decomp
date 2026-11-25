@@ -66223,6 +66223,13 @@
     "summary": "Returns base + 0x58 * tri(lo,hi) for index pair (a,b) in a table of count *self; 0 if a or b exceeds count.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CCF20": {
+    "name": "PairTable::lookupSymmetric",
+    "class": "PairTable",
+    "signature": "uint32_t fn_007CCF20(void* self, int32_t a, int32_t b)",
+    "summary": "Looks up a 32-bit value for an unordered index pair (a, b) in a symmetric triangular table of 0x58-byte records; returns 0 if either index exceeds the count.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CD040": {
     "name": "Unknown::postIncrementField04",
     "class": "Unknown",

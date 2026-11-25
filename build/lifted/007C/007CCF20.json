@@ -1,0 +1,28 @@
+{
+  "va": "0x007CCF20",
+  "size": 93,
+  "orig_symbol": "sub_007CCF20",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "PairTable::lookupSymmetric",
+  "class": "PairTable",
+  "signature": "uint32_t fn_007CCF20(void* self, int32_t a, int32_t b)",
+  "summary": "Looks up a 32-bit value for an unordered index pair (a, b) in a symmetric triangular table of 0x58-byte records; returns 0 if either index exceeds the count.",
+  "fields": [
+    {
+      "class": "PairTable",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "PairTable",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "records"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:19:25Z"
+}

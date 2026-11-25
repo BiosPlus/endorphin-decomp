@@ -1351,3 +1351,35 @@ void __thiscall sub_007CA7C0(void* self, const float* in, float* out) {
     out[2] = f(0x08) * in[0] + f(0x18) * in[1] + f(0x28) * in[2] + f(0x38);
 }
 } // namespace lift_007CA7C0
+
+// [0x007CCF20] sub_007CCF20 (93 bytes)
+namespace lift_007CCF20 {
+// @name PairTable::lookupSymmetric
+// @class PairTable
+// @summary Looks up a 32-bit value for an unordered index pair (a, b) in a symmetric triangular table of 0x58-byte records; returns 0 if either index exceeds the count.
+// @field PairTable +0x00 int32_t count
+// @field PairTable +0x08 uint8_t* records
+uint32_t fn_007CCF20(void* self, int32_t a, int32_t b) {
+    const int32_t n = lift_field<int32_t>(self, 0x00);
+
+    // Both indices must satisfy 0 <= idx <= count (unsigned compare, as in the original).
+    if (static_cast<uint32_t>(a) > static_cast<uint32_t>(n) ||
+        static_cast<uint32_t>(b) > static_cast<uint32_t>(n)) {
+        return 0;
+    }
+
+    // Order the pair: lo = min(a, b), hi = max(a, b) (signed).
+    const int32_t lo = (a < b) ? a : b;
+    const int32_t hi = (a < b) ? b : a;
+
+    // Triangular index: n*hi + lo - hi*(hi+1)/2, computed with wrap-around like the original.
+    const uint32_t tri = static_cast<uint32_t>(hi) * static_cast<uint32_t>(hi + 1) / 2u;
+    const int32_t idx = static_cast<int32_t>(
+        static_cast<uint32_t>(n) * static_cast<uint32_t>(hi) +
+        static_cast<uint32_t>(lo) - tri);
+
+    uint8_t* records = lift_field<uint8_t*>(self, 0x08);
+    return lift_field<uint32_t>(records,
+                                static_cast<ptrdiff_t>(idx) * 0x58 + 0x4c);
+}
+} // namespace lift_007CCF20
