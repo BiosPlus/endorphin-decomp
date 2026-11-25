@@ -60234,6 +60234,12 @@
     "summary": "Stores address of mem_0099F140 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_870000.cpp"
   },
+  "0x00870E40": {
+    "name": "sub_00870E40",
+    "signature": "void fn_00870E40(void* self, uint32_t arg1)",
+    "summary": "Builds a 0x14-byte exception object from this-fields +0x10/+0x08/+0x04/+0x14 and a stack argument, then throws it.",
+    "lifted_path": "lifted/leaf/decompiled_870000.cpp"
+  },
   "0x00870E86": {
     "name": "sub_00870E86",
     "signature": "void fn_00870E86(void* self)",

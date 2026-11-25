@@ -130,3 +130,36 @@ bool __thiscall sub_00870F40(void* self, const char* str) {
     return true;
 }
 } // namespace lift_00870F40
+
+// [0x00870E40] sub_00870E40 (70 bytes)
+namespace lift_00870E40 {
+// Known callee 0x0063E960: sub_0063E960_ctor (initializes vtable at +0x00 to 0x0097CC34 and returns this).
+extern void* ext_0063E960(void* this_ptr);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException; never returns).
+extern void ext_006A6DD2(void* exception_object, uint32_t throw_info);
+
+// @name sub_00870E40
+// @summary Builds a 0x14-byte exception object from this-fields +0x10/+0x08/+0x04/+0x14 and a stack argument, then throws it.
+// @field self +0x04 uint32_t field_0x04
+// @field self +0x08 uint32_t field_0x08
+// @field self +0x10 uint32_t field_0x10
+// @field self +0x14 uint32_t field_0x14
+void fn_00870E40(void* self, uint32_t arg1) {
+    // Read this-fields before the constructor call, matching the original order.
+    const uint32_t field_0x10 = lift_field<uint32_t>(self, 0x10);
+    const uint32_t size_delta = lift_field<uint32_t>(self, 0x08) - lift_field<uint32_t>(self, 0x04);
+    const uint32_t field_0x14 = lift_field<uint32_t>(self, 0x14);
+
+    // Exception object storage (MSVC layout: vtable, arg1, field_0x10, field_0x14, size_delta).
+    alignas(4) uint8_t exc[0x14] = {};
+    ext_0063E960(exc);
+
+    lift_field<uint32_t>(exc, 0x00) = 0x0099F138;   // exception type vtable/RTTI tag
+    lift_field<uint32_t>(exc, 0x04) = arg1;
+    lift_field<uint32_t>(exc, 0x08) = field_0x10;
+    lift_field<uint32_t>(exc, 0x0C) = field_0x14;
+    lift_field<uint32_t>(exc, 0x10) = size_delta;
+
+    ext_006A6DD2(exc, 0x00A2572C);
+}
+} // namespace lift_00870E40
