@@ -627,3 +627,46 @@ void fn_007D9680(void* cursor, uint32_t n, uint32_t arg3, uint32_t arg4) {
     lift_field<uint32_t>(cursor, 0x00) = lift_field<uint32_t>(cursor, 0x00) + n;
 }
 } // namespace lift_007D9680
+
+// [0x007D4820]
+namespace lift_007D4820 {
+// @name CursorAdvanceIfAccepted
+// @class Cursor
+// @summary If the cursor index is below its limit, ask a callback to accept the current value; on acceptance advance the index and return the callback result, otherwise return 0.
+// @field Cursor +0x04 int32_t index
+// @field Cursor +0x08 uint32_t value
+// @field Cursor +0x0C int32_t limit
+// @field Cursor +0x10 uint32_t extra
+// @field Cursor +0x1C uint32_t callbacks
+uint32_t fn_007D4820(void* self) {
+    // Callback table layout (per the object at +0x1C): slot +0x00 is a
+    // one-argument acceptor, slot +0x08 is a two-argument acceptor.
+    // Both use cdecl and receive the value first.
+    if (lift_field<int32_t>(self, 0x04) >= lift_field<int32_t>(self, 0x0C)) {
+        return 0;
+    }
+
+    const uint32_t value = lift_field<uint32_t>(self, 0x08);
+    const uint32_t extra = lift_field<uint32_t>(self, 0x10);
+    const uint32_t table = lift_field<uint32_t>(self, 0x1C);
+
+    uint32_t accepted;
+    if (extra == 0) {
+        using Acceptor1 = uint32_t(__cdecl*)(uint32_t);
+        auto fn = reinterpret_cast<Acceptor1>(
+            static_cast<uintptr_t>(lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(table)), 0x00)));
+        accepted = fn(value);
+    } else {
+        using Acceptor2 = uint32_t(__cdecl*)(uint32_t, uint32_t);
+        auto fn = reinterpret_cast<Acceptor2>(
+            static_cast<uintptr_t>(lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(table)), 0x08)));
+        accepted = fn(value, extra);
+    }
+
+    if (accepted == 0) {
+        return 0;
+    }
+    lift_field<int32_t>(self, 0x04) += 1;
+    return accepted;
+}
+} // namespace lift_007D4820

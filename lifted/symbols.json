@@ -56306,6 +56306,13 @@
     "summary": "If the object's +0x04 field is non-zero, forwards it with the +0x1c field and a constant to ext_007D5950.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007D4820": {
+    "name": "CursorAdvanceIfAccepted",
+    "class": "Cursor",
+    "signature": "uint32_t fn_007D4820(void* self)",
+    "summary": "If the cursor index is below its limit, ask a callback to accept the current value; on acceptance advance the index and return the callback result, otherwise return 0.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007D4860": {
     "name": "Dispatcher::SubmitValueAndDecrementCount",
     "class": "Dispatcher",

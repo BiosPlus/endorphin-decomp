@@ -1,0 +1,46 @@
+{
+  "va": "0x007D4820",
+  "size": 60,
+  "orig_symbol": "sub_007D4820",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "CursorAdvanceIfAccepted",
+  "class": "Cursor",
+  "signature": "uint32_t fn_007D4820(void* self)",
+  "summary": "If the cursor index is below its limit, ask a callback to accept the current value; on acceptance advance the index and return the callback result, otherwise return 0.",
+  "fields": [
+    {
+      "class": "Cursor",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "index"
+    },
+    {
+      "class": "Cursor",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "value"
+    },
+    {
+      "class": "Cursor",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "limit"
+    },
+    {
+      "class": "Cursor",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "extra"
+    },
+    {
+      "class": "Cursor",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "callbacks"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:55:46Z"
+}
