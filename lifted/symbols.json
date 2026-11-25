@@ -58906,6 +58906,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00766730 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_760000.cpp"
   },
+  "0x00771B90": {
+    "name": "sub_00771B90",
+    "signature": "void* __thiscall sub_00771B90(void* self)",
+    "summary": "Constructor that initializes base via sub_007ABC20, initializes a 20-byte member at +0x1C, sets inline pointer at +0x30, and sets vtable mem_00996C88.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
   "0x00771BF0": {
     "name": "sub_00771BF0",
     "signature": "extern \"C\" void* __fastcall fn_00771BF0(void* self, int edx_unused, unsigned int flags)",
