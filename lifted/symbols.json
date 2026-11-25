@@ -46798,6 +46798,13 @@
     "summary": "Getter returning int32_t field at offset +0x38.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006E0050": {
+    "name": "Unknown::FillDoubleAndSixDwords",
+    "class": "Unknown",
+    "signature": "void* fn_006E0050(void* out, double value, uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e, uint32_t f)",
+    "summary": "Writes a double at +0x00 and six dwords at +0x08..+0x1C into the output block, then returns the block pointer.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E0090": {
     "name": "negateVec3dCopyPair",
     "signature": "void fn_006E0090(void* dst, const void* src)",

@@ -744,3 +744,28 @@ bool __stdcall sub_006EF860(uint32_t value) {
            value == mem_00B5E400;
 }
 } // namespace lift_006EF860
+
+// [0x006E0050] sub_006E0050 (64 bytes)
+namespace lift_006E0050 {
+// @name Unknown::FillDoubleAndSixDwords
+// @class Unknown
+// @summary Writes a double at +0x00 and six dwords at +0x08..+0x1C into the output block, then returns the block pointer.
+// @field Unknown +0x00 double value
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1C
+void* fn_006E0050(void* out, double value, uint32_t a, uint32_t b, uint32_t c,
+                  uint32_t d, uint32_t e, uint32_t f) {
+    lift_field<double>(out, 0x00) = value;
+    lift_field<uint32_t>(out, 0x08) = a;
+    lift_field<uint32_t>(out, 0x0C) = b;
+    lift_field<uint32_t>(out, 0x10) = c;
+    lift_field<uint32_t>(out, 0x14) = d;
+    lift_field<uint32_t>(out, 0x18) = e;
+    lift_field<uint32_t>(out, 0x1C) = f;
+    return out;
+}
+} // namespace lift_006E0050
