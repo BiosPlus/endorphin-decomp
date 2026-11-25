@@ -1,0 +1,13 @@
+{
+  "va": "0x00487C50",
+  "size": 95,
+  "orig_symbol": "sub_00487C50",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "InitOnceGlobalString_00487C50",
+  "signature": "void* InitOnceGlobalString_00487C50()",
+  "summary": "One-time initializer for global string at mem_00AD9DAC; returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:25:44Z"
+}

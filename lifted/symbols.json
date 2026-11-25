@@ -9109,6 +9109,12 @@
     "summary": "Lower-bound search in an MSVC-style std::map\u003cstd::string, ...\u003e tree: returns the first node whose key is not less than the argument, or the header node if none; header node is returned for an empty tree.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00487C50": {
+    "name": "InitOnceGlobalString_00487C50",
+    "signature": "void* InitOnceGlobalString_00487C50()",
+    "summary": "One-time initializer for global string at mem_00AD9DAC; returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00487CB0": {
     "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, thunk vcall{352}\u003e::vfunc_40",
     "class": "ExprParser::Method0Type",

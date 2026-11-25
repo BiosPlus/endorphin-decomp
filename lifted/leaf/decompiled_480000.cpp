@@ -1791,3 +1791,25 @@ void* fn_0048DFF0(void* self, uint32_t arg) {
     return self;
 }
 } // namespace lift_0048DFF0
+
+// [0x00487C50]
+namespace lift_00487C50 {
+// @name InitOnceGlobalString_00487C50
+// @summary One-time initializer for global string at mem_00AD9DAC; returns its address.
+// SEH frame setup/teardown (fs:[0] push/restore, trylevel store) is not modeled; it has no portable equivalent.
+
+extern uint8_t mem_00AD9DC8[];  // init guard byte; bit 0 = initialized
+extern uint8_t mem_00AD9DAC[];  // global string object
+
+extern void* ext_0066AD10(void* out_str, const void* arg);
+extern void ext_006A6C87(const void* fn);
+
+void* InitOnceGlobalString_00487C50() {
+    if ((mem_00AD9DC8[0] & 1u) == 0) {
+        mem_00AD9DC8[0] |= 1u;
+        ext_0066AD10(mem_00AD9DAC, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00A33760)));
+        ext_006A6C87(reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00917190)));
+    }
+    return mem_00AD9DAC;
+}
+} // namespace lift_00487C50
