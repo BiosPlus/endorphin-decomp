@@ -921,6 +921,7 @@ struct Unknown_Fields {
     // +0xB4  float                    field_0xB4  (evidence: 0x0063D970, 0x0063DDF0) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  void*                    field_0xB4  (evidence: 0x0053F9D0) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  float                    field_0xb4  (evidence: 0x00611100) // CONFLICT: multiple definitions at +0xB4
+    // +0xB4  int32_t                  mode  (evidence: 0x00464780) // CONFLICT: multiple definitions at +0xB4
     // +0xB8  Buffer                   field_0xB8  (evidence: 0x0071E5F0) // CONFLICT: multiple definitions at +0xB8
     // +0xB8  DWORD                    field_0xB8  (evidence: 0x00540F60) // CONFLICT: multiple definitions at +0xB8
     // +0xB8  SortedArray              field_0xB8  (evidence: 0x00736C90) // CONFLICT: multiple definitions at +0xB8

@@ -1322,3 +1322,20 @@ uint8_t fn_00468750(void* self) {
 }
 } // namespace lift_00468770
 } // namespace lift_00468750
+
+// [0x00464780]
+namespace lift_00464780 {
+extern int32_t __cdecl ext_004658C0(void);
+extern void ext_00467380(void* self);
+extern void ext_00467390(void* self);
+
+// @name setMode8AndDispatch
+// @summary Sets field 0xB4 to 8, then calls ext_00467380 with the global int32 from ext_004658C0 as the object.
+// @field Unknown +0xB4 int32_t mode
+void fn_00464780(void* self) {
+    *reinterpret_cast<int32_t*>(static_cast<char*>(self) + 0xB4) = 8;
+    int32_t v = ext_004658C0();
+    (void)&ext_00467390;
+    ext_00467380(reinterpret_cast<void*>(static_cast<intptr_t>(v)));
+}
+} // namespace lift_00464780
