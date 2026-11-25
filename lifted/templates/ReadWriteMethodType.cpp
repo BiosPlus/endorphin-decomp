@@ -9948,3 +9948,26 @@ void fn_004CAEE0([[maybe_unused]] void* self, void* out) {
     *reinterpret_cast<std::uint32_t*>(static_cast<std::uint8_t*>(out) + 4) = 0xAE44B0u;
 }
 } // namespace lift_004CAEE0
+
+// [0x004D1840] ExprParser::ReadWriteMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::TransitionEventData::setRequiredPhysicsLevelName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_004D1840 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670(void* self, uint32_t value);
+extern int mem_00AE55A8;
+extern int mem_00AE55A4;
+
+// @name ExprParser::ReadWriteMethodType<NMData::TransitionEventData>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::TransitionEventData::setRequiredPhysicsLevelName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Lazily constructs the function-local static object at 0x00AE55A4 (one-time guard in 0x00AE55A8 bit 0), then stores its address into the +0x04 slot of the argument.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_004D1840(void* out) {
+    // One-time initialisation guard for the static object.
+    if ((mem_00AE55A8 & 1) == 0) {
+        mem_00AE55A8 |= 1;
+        ext_0067A670(&mem_00AE55A4, 0);
+        mem_00AE55A4 = 0x947D94; // vtable pointer of the static object
+    }
+    lift_field<uint32_t>(out, 4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE55A4));
+}
+} // namespace lift_004D1840
