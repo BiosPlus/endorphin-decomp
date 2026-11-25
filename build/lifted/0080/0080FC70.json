@@ -1,0 +1,40 @@
+{
+  "va": "0x0080FC70",
+  "size": 45,
+  "orig_symbol": "sub_0080FC70",
+  "src_path": "src/leaf/decompiled_800000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_800000.cpp",
+  "name": "ByteWriter::AppendByteCounted",
+  "class": "ByteWriter",
+  "signature": "void fn_0080FC70(void* self, uint8_t value)",
+  "summary": "Appends a byte to the embedded growable block when the counter at +0x1c is zero (bumping the +0x14 count), and always bumps the +0x10 count.",
+  "fields": [
+    {
+      "class": "ByteWriter",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "block"
+    },
+    {
+      "class": "ByteWriter",
+      "offset": "+0x10",
+      "type": "DWORD",
+      "name": "field_0x10"
+    },
+    {
+      "class": "ByteWriter",
+      "offset": "+0x14",
+      "type": "DWORD",
+      "name": "field_0x14"
+    },
+    {
+      "class": "ByteWriter",
+      "offset": "+0x1C",
+      "type": "DWORD",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:59:14Z"
+}

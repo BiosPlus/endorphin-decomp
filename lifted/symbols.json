@@ -62109,6 +62109,13 @@
     "summary": "Allocates a 12-byte object and zeroes its three 32-bit fields if allocation succeeds.",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x0080FC70": {
+    "name": "ByteWriter::AppendByteCounted",
+    "class": "ByteWriter",
+    "signature": "void fn_0080FC70(void* self, uint8_t value)",
+    "summary": "Appends a byte to the embedded growable block when the counter at +0x1c is zero (bumping the +0x14 count), and always bumps the +0x10 count.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x00810180": {
     "name": "sub_00810180",
     "signature": "uint32_t fn_00810180(void* self)",

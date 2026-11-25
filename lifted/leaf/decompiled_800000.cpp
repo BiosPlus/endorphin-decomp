@@ -879,3 +879,24 @@ uint32_t fn_0080FC10(const uint8_t* src, uint32_t n) {
     return buffer;
 }
 } // namespace lift_0080FC10
+
+// [0x0080FC70] sub_0080FC70 (45 bytes)
+namespace lift_0080FC70 {
+// Known callee 0x0080FB20: GrowableBlock::AppendByte (Appends one byte to the block, growing it first when the length has reached the capacity reported by ext_0080FBB0; returns 1 on success, 0 if growth fails.)
+extern BOOL ext_0080FB20(void* self, uint8_t value);
+
+// @name ByteWriter::AppendByteCounted
+// @class ByteWriter
+// @summary Appends a byte to the embedded growable block when the counter at +0x1c is zero (bumping the +0x14 count), and always bumps the +0x10 count.
+// @field ByteWriter +0x08 void* block
+// @field ByteWriter +0x10 DWORD field_0x10
+// @field ByteWriter +0x14 DWORD field_0x14
+// @field ByteWriter +0x1c DWORD field_0x1c
+void fn_0080FC70(void* self, uint8_t value) {
+    if (lift_field<DWORD>(self, 0x1c) == 0) {
+        ext_0080FB20(lift_field<void*>(self, 0x08), value);
+        lift_field<DWORD>(self, 0x14) += 1;
+    }
+    lift_field<DWORD>(self, 0x10) += 1;
+}
+} // namespace lift_0080FC70
