@@ -9631,6 +9631,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005F0D40 (NMData::MagnetJointData::vfunc_59).",
     "lifted_path": "lifted/Commands/BufferChannelsCommand.cpp"
   },
+  "0x0048DFF0": {
+    "name": "Unknown::InitWithVectorElement",
+    "class": "Unknown",
+    "signature": "void* fn_0048DFF0(void* self, uint32_t arg)",
+    "summary": "Sets the vtable, stores the argument at +0x10, and stores vector element 5 (from the global int32 source) at +0x08; returns self.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048E070": {
     "name": "Commands::SetPlaybackStartFrameCommand::vfunc_1",
     "class": "Commands::SetPlaybackStartFrameCommand",

@@ -1757,3 +1757,37 @@ void fn_00481D80(void* self) {
     ext_00596660(self, out_iter, self, begin, self, end);
 }
 } // namespace lift_00481D80
+
+// [0x0048DFF0] sub_0048DFF0 (94 bytes)
+namespace lift_0048DFF0 {
+// Known callee 0x006657F0: InitVtblAndArg (Stores the vtable pointer (0x00987A04), a stack argument at +0x04, and zeroes +0x08/+0x0C; returns self.)
+extern void* ext_006657F0(void* self, uint32_t arg);
+// Known callee 0x00468180: sub_00468180 (Returns global int32 value from mem_00AD7CD8.)
+extern int32_t ext_00468180(void);
+// Known callee 0x00469570: getVectorElementAt (Returns the 32-bit element at the given index from a vector.)
+extern uint32_t ext_00469570(uint8_t* self, uint32_t index);
+
+// Vtable pointer value stored into self+0x00 (immediate 0x0093E560 in the original code).
+static constexpr uint32_t kVtable_0093E560 = 0x0093E560u;
+
+// @name Unknown::InitWithVectorElement
+// @class Unknown
+// @summary Sets the vtable, stores the argument at +0x10, and stores vector element 5 (from the global int32 source) at +0x08; returns self.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x08 uint32_t element
+// @field Unknown +0x10 uint32_t arg
+void* fn_0048DFF0(void* self, uint32_t arg) {
+    ext_006657F0(self, 1u);
+
+    lift_field<uint32_t>(self, 0x00) = kVtable_0093E560;
+    lift_field<uint32_t>(self, 0x10) = arg;
+
+    const int32_t source = ext_00468180();
+    const uint32_t element = ext_00469570(
+        reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(static_cast<uint32_t>(source))),
+        5u);
+    lift_field<uint32_t>(self, 0x08) = element;
+
+    return self;
+}
+} // namespace lift_0048DFF0
