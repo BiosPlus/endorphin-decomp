@@ -53034,10 +53034,10 @@
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
   "0x006BA780": {
-    "name": "String::compareWithGetterResultIsEqual",
-    "class": "String",
-    "signature": "int32_t sub_006BA780(const char* const* self, void* arg)",
-    "summary": "Calls the getter ext_006E7460 on the stack argument, compares this string with the result via String::compare, and returns 1 when the comparison is equal, else 0.",
+    "name": "Unknown::InitAndReturnSelf",
+    "class": "Unknown",
+    "signature": "Unknown* fn_006B9D10(Unknown* ecx)",
+    "summary": "Calls sub_006B9910 on the object (zero-inits fields, sets vtable) and returns the same object pointer.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
   "0x006BA7A0": {

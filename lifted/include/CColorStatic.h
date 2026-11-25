@@ -10,8 +10,8 @@
 // Recovered field layout for CColorStatic:
 namespace lifted_layout {
 struct CColorStatic_Fields {
-    // +0x54  uint32_t                 m_crBkColor  (evidence: 0x006B8390)
-    // +0x58  uint32_t                 m_crTextColor  (evidence: 0x006B8390)
-    // +0x5C  uint8_t[8]               m_brBackground  (evidence: 0x006B8390)
+    // +0x54  uint32_t                 m_crBkColor  (evidence: 0x006B8390, 0x006BA780)
+    // +0x58  uint32_t                 m_crTextColor  (evidence: 0x006B8390, 0x006BA780)
+    // +0x5C  uint8_t[8]               m_brBackground  (evidence: 0x006B8390, 0x006BA780)
 };
 } // namespace lifted_layout

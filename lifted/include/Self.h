@@ -12,7 +12,7 @@ struct Self_Fields {
     // +0x0   int32_t                  field_0x00  (evidence: 0x00492550) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 field_0x00  (evidence: 0x0046C120) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x006E86F0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 vtable  (evidence: 0x005947B0, 0x0059DDA0, 0x006B0CD0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vtable  (evidence: 0x005947B0, 0x0059DDA0, 0x006B0CD0, 0x006BA780) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t*                vtable  (evidence: 0x00414260, 0x006F7970, 0x006FC200) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x006118E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtable  (evidence: 0x004142A0, 0x00611870, 0x006E7340) // CONFLICT: multiple definitions at +0x0
@@ -45,9 +45,9 @@ struct Self_Fields {
     // +0x48  uint32_t                 field_0x48  (evidence: 0x00687230, 0x006872C0)
     // +0x4C  uint8_t                  field_0x4c  (evidence: 0x006DE460)
     // +0x54  uint8_t                  field_0x54  (evidence: 0x00622B40, 0x00627510)
-    // +0x64  uint32_t                 member_0x64_vtable  (evidence: 0x006B0CD0)
-    // +0x88  void*                    childObject  (evidence: 0x006B2F70, 0x006B8190)
-    // +0xA8  DWORD                    field_0xA8  (evidence: 0x006B2F70, 0x006B8190)
+    // +0x64  uint32_t                 member_0x64_vtable  (evidence: 0x006B0CD0, 0x006BA780)
+    // +0x88  void*                    childObject  (evidence: 0x006B2F70, 0x006B8190, 0x006BA780)
+    // +0xA8  DWORD                    field_0xA8  (evidence: 0x006B2F70, 0x006B8190, 0x006BA780)
     // +0xBC  int32_t                  field_0xBC  (evidence: 0x0053F960)
     // +0xC0  int32_t                  field_0xC0  (evidence: 0x0053F960)
     // +0xC4  int32_t                  field_0xC4  (evidence: 0x0053F960)

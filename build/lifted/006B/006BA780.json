@@ -4,11 +4,403 @@
   "orig_symbol": "sub_006BA780",
   "src_path": "src/leaf/decompiled_6B0000.cpp",
   "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
-  "name": "String::compareWithGetterResultIsEqual",
-  "class": "String",
-  "signature": "int32_t sub_006BA780(const char* const* self, void* arg)",
-  "summary": "Calls the getter ext_006E7460 on the stack argument, compares this string with the result via String::compare, and returns 1 when the comparison is equal, else 0.",
+  "name": "Unknown::InitAndReturnSelf",
+  "class": "Unknown",
+  "signature": "Unknown* fn_006B9D10(Unknown* ecx)",
+  "summary": "Calls sub_006B9910 on the object (zero-inits fields, sets vtable) and returns the same object pointer.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x120",
+      "type": "DWORD",
+      "name": "field_0x120"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "vfptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "DWORD",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "DWORD",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* innerPtr (pointer to inner struct, dereferenced from",
+      "name": "self)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t field_0x04 (type code read from inner struct; compared against",
+      "name": "2)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "linked"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "void*",
+      "name": "subobject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xDC",
+      "type": "uint8_t",
+      "name": "field_0xdc"
+    },
+    {
+      "class": "CObjectBase",
+      "offset": "+0x74",
+      "type": "void*",
+      "name": "field_0x74"
+    },
+    {
+      "class": "CObjectBase",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    },
+    {
+      "class": "CObjectBase",
+      "offset": "+0x1A4",
+      "type": "void*",
+      "name": "field_0x1A4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5C"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "childObject"
+    },
+    {
+      "class": "Self",
+      "offset": "+0xA8",
+      "type": "DWORD",
+      "name": "field_0xA8"
+    },
+    {
+      "class": "StringBuffer",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "data"
+    },
+    {
+      "class": "StringBuffer",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "size"
+    },
+    {
+      "class": "String",
+      "offset": "+0x0",
+      "type": "const char*",
+      "name": "m_data"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Pair",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Pair",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "hwnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "void*",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "uint8_t",
+      "name": "dirtyFlag"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "uint8_t",
+      "name": "flag"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "int32_t",
+      "name": "storedArg"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x90",
+      "type": "HWND",
+      "name": "hwnd"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x7C",
+      "type": "HWND",
+      "name": "field_0x7C"
+    },
+    {
+      "class": "Window",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "hwnd"
+    },
+    {
+      "class": "Window",
+      "offset": "+0x70",
+      "type": "uint8_t",
+      "name": "mouseTrackArmed"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "BYTE",
+      "name": "flag"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x90",
+      "type": "void*",
+      "name": "field_0x90"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x94",
+      "type": "int32_t",
+      "name": "field_0x94"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "DWORD",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "String",
+      "offset": "+0x0",
+      "type": "const char*",
+      "name": "data"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xC",
+      "type": "\u003cunknown\u003e",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x28",
+      "type": "\u003cunknown\u003e",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x9C",
+      "type": "int32_t",
+      "name": "field_0x9c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "uint32_t*",
+      "name": "field_0xac"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "DynamicArray",
+      "name": "elements"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "void**",
+      "name": "field_0x4c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x70",
+      "type": "uint8_t",
+      "name": "field_0x70"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "void*",
+      "name": "child"
+    },
+    {
+      "class": "Unknown.child",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "CColorStatic",
+      "offset": "+0x54",
+      "type": "uint32_t",
+      "name": "m_crBkColor"
+    },
+    {
+      "class": "CColorStatic",
+      "offset": "+0x58",
+      "type": "uint32_t",
+      "name": "m_crTextColor"
+    },
+    {
+      "class": "CColorStatic",
+      "offset": "+0x5C",
+      "type": "uint8_t[8]",
+      "name": "m_brBackground"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "member_vftable"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "member_0x64_vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "base_subobject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x9C",
+      "type": "uint8_t",
+      "name": "subobject_0x9C"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T03:39:17Z"
+  "lifted_at": "2026-11-25T03:39:24Z"
 }
