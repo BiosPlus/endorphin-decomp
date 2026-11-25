@@ -1980,3 +1980,45 @@ double __thiscall sub_0078D550(void* self, int32_t idx1, int32_t idx2, bool take
     return sum;
 }
 } // namespace lift_0078D550
+
+// [0x0078C280]
+namespace lift_0078C280 {
+// @name sub_0078C280
+// @summary Initializes subobjects at +0x04 and +0x38, sets pointer at +0x18, and zeroes remaining fields, returning this.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint8_t[20] field_0x04
+// @field Unknown +0x14 uint8_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1c uint32_t field_0x1c
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 uint32_t field_0x24
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x2c uint32_t field_0x2c
+// @field Unknown +0x30 uint32_t field_0x30
+// @field Unknown +0x34 uint8_t field_0x34
+// @field Unknown +0x38 uint8_t field_0x38
+
+
+extern void mem_write32(uint32_t addr, uint32_t val);
+extern void mem_write8(uint32_t addr, uint8_t val);
+extern uint32_t __thiscall ext_006D2130(uint32_t self, int32_t arg1, uint32_t arg2);
+extern uint32_t __thiscall ext_006B9D10(uint32_t self);
+
+uint32_t __thiscall sub_0078C280(uint32_t self) {
+    uint32_t subobj = self + 0x4;
+    ext_006D2130(subobj, 0x10, 0x4);
+    mem_write32(subobj + 0x14, subobj + 0x10);
+    ext_006B9D10(self + 0x38);
+
+    mem_write32(self + 0x00, 0);
+    mem_write32(self + 0x1c, 0);
+    mem_write32(self + 0x20, 0);
+    mem_write8(self + 0x34, 0);
+    mem_write32(self + 0x24, 0);
+    mem_write32(self + 0x28, 0);
+    mem_write32(self + 0x2c, 0);
+    mem_write32(self + 0x30, 0);
+
+    return self;
+}
+} // namespace lift_0078C280

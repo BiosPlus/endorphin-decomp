@@ -70758,6 +70758,12 @@
     "summary": "Computes the scaled delta of arg against field +0x04 and then bumps the counter at +0x1C.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x0078C280": {
+    "name": "sub_0078C280",
+    "signature": "uint32_t __thiscall sub_0078C280(uint32_t self)",
+    "summary": "Initializes subobjects at +0x04 and +0x38, sets pointer at +0x18, and zeroes remaining fields, returning this.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078C3A0": {
     "name": "Unknown::sub_0078C3A0",
     "class": "Unknown",
