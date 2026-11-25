@@ -1,0 +1,22 @@
+{
+  "va": "0x00454BE0",
+  "size": 25,
+  "orig_symbol": "sub_00454BE0",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "SetValueAndForward",
+  "class": "Object",
+  "signature": "void __fastcall fn_00454BE0(void* self, void* edx, int arg)",
+  "summary": "Stores arg at this+0x120, then forwards it to the sub-object at this+0x10C via sub_00454BB0.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x120",
+      "type": "int",
+      "name": "value"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@medium",
+  "lifted_at": "2026-11-25T11:28:51Z"
+}

@@ -5302,6 +5302,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00454BA0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00454BE0": {
+    "name": "SetValueAndForward",
+    "class": "Object",
+    "signature": "void __fastcall fn_00454BE0(void* self, void* edx, int arg)",
+    "summary": "Stores arg at this+0x120, then forwards it to the sub-object at this+0x10C via sub_00454BB0.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00454C00": {
     "name": "UnknownClass::conditionalForwardThenSelf",
     "class": "UnknownClass",

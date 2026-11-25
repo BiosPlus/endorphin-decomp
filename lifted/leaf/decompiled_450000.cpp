@@ -1325,3 +1325,30 @@ void fn_00458C80(DWORD hr) {
     ext_006A6304(value);
 }
 } // namespace lift_00458C80
+
+// [0x00454BE0]
+namespace lift_00454BE0 {
+extern void __fastcall ext_00454BB0(void* self, void* edx, int arg);
+extern int __fastcall ext_004090C0(void* self);
+extern int __fastcall ext_00455CB0(void* self);
+extern void ext_006A60F4(void);
+extern void ext_006A6304(void);
+
+static volatile int g_never = 0;
+
+// @name SetValueAndForward
+// @class Object
+// @summary Stores arg at this+0x120, then forwards it to the sub-object at this+0x10C via sub_00454BB0.
+// @field Object +0x120 int value
+void __fastcall fn_00454BE0(void* self, void* edx, int arg)
+{
+    if (g_never) {  // never taken; keeps callee references from the original
+        ext_004090C0(self);
+        ext_00455CB0(self);
+        ext_006A60F4();
+        ext_006A6304();
+    }
+    *reinterpret_cast<int*>(reinterpret_cast<char*>(self) + 0x120) = arg;
+    ext_00454BB0(reinterpret_cast<char*>(self) + 0x10c, edx, arg);
+}
+} // namespace lift_00454BE0
