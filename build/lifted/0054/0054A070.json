@@ -1,0 +1,40 @@
+{
+  "va": "0x0054A070",
+  "size": 111,
+  "orig_symbol": "sub_0054A070",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Unknown::drawScaledSphere_0054A070",
+  "class": "Unknown",
+  "signature": "void fn_0054A070(void* self, float radius)",
+  "summary": "Draws a GLU sphere inside a push/pop matrix scaled by the reciprocals of three stored floats.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:05:15Z"
+}

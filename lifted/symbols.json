@@ -24244,6 +24244,13 @@
     "summary": "Copies three floats from the pointer argument into this+0x18, this+0x1C and this+0x20 (callee-cleans 4 bytes).",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x0054A070": {
+    "name": "Unknown::drawScaledSphere_0054A070",
+    "class": "Unknown",
+    "signature": "void fn_0054A070(void* self, float radius)",
+    "summary": "Draws a GLU sphere inside a push/pop matrix scaled by the reciprocals of three stored floats.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x0054A0E0": {
     "name": "Unknown::dtor_0054A0E0",
     "class": "Unknown",

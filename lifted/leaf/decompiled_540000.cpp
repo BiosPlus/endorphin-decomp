@@ -1270,3 +1270,29 @@ void fn_0054C800(const char* fmt, ...) {
     ext_glPopAttrib();
 }
 } // namespace lift_0054C800
+
+// [0x0054A070] sub_0054A070 (111 bytes)
+namespace lift_0054A070 {
+extern void ext_0063E036(void* quadric, double radius, int32_t slices, int32_t stacks);
+extern void (*mem_00925414)(void);
+extern void (*mem_009254B0)(float, float, float);
+extern void (*mem_00925404)(void);
+
+// @name Unknown::drawScaledSphere_0054A070
+// @class Unknown
+// @summary Draws a GLU sphere inside a push/pop matrix scaled by the reciprocals of three stored floats.
+// @field Unknown +0x18 float field_0x18
+// @field Unknown +0x1C float field_0x1C
+// @field Unknown +0x20 float field_0x20
+// @field Unknown +0x28 void* field_0x28
+void fn_0054A070(void* self, float radius) {
+    const float sx = 1.0f / lift_field<float>(self, 0x18);
+    const float sy = 1.0f / lift_field<float>(self, 0x1C);
+    const float sz = 1.0f / lift_field<float>(self, 0x20);
+
+    mem_00925414();                 // glPushMatrix
+    mem_009254B0(sx, sy, sz);       // glScalef
+    ext_0063E036(lift_field<void*>(self, 0x28), static_cast<double>(radius), 8, 8); // gluSphere
+    mem_00925404();                 // glPopMatrix
+}
+} // namespace lift_0054A070
