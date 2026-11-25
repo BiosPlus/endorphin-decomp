@@ -1,0 +1,13 @@
+{
+  "va": "0x00487F30",
+  "size": 87,
+  "orig_symbol": "sub_00487F30",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "initStaticOnce_00487F30",
+  "signature": "DWORD* initStaticOnce_00487F30()",
+  "summary": "One-time initializer: on first call, runs ext_0067A670 on mem_00AD9DF4 and sets it to 0x93cf14; returns \u0026mem_00AD9DF4.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:27:39Z"
+}

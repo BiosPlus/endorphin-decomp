@@ -187,6 +187,13 @@
     "summary": "Passes the C string of a std::string argument to the object's vtable slot +0x20.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00401D80": {
+    "name": "std::logic_error_subclass::copy_ctor",
+    "class": "std::logic_error_subclass",
+    "signature": "void* __thiscall sub_00401D80(void* self, const void* other)",
+    "summary": "Copy constructor for a std::logic_error-derived exception class.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00401DA0": {
     "name": "sub_00401DA0",
     "signature": "extern \"C\" void __fastcall fn_00401DA0(void* self)",
@@ -8866,6 +8873,12 @@
     "signature": "void* fn_00487EB0(void* self)",
     "summary": "Runtime type check: dynamic-casts self to the type at mem_00A2E93C (source type mem_00A2E2F8) and returns the result or NULL.",
     "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
+  "0x00487F30": {
+    "name": "initStaticOnce_00487F30",
+    "signature": "DWORD* initStaticOnce_00487F30()",
+    "summary": "One-time initializer: on first call, runs ext_0067A670 on mem_00AD9DF4 and sets it to 0x93cf14; returns \u0026mem_00AD9DF4.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
   "0x00488260": {
     "name": "sub_00488260",
@@ -41000,6 +41013,12 @@
     "signature": "extern \"C\" void fn_0067AB80(void)",
     "summary": "Pure jump thunk forwarding to sub_00401BB0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x0067AB90": {
+    "name": "logic_error_derived_copy_ctor",
+    "signature": "void* __thiscall sub_0067AB90(void* self, const void* other)",
+    "summary": "Copy constructor for a std::logic_error-derived exception class (sets vtable 0x0098c56c)",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x0067ABB0": {
     "name": "ExprParser::Function2Type\u003cRandomizer\u003e::vfunc_16",

@@ -1549,3 +1549,23 @@ void fn_0048D350(void* self) {
 }
 } // namespace lift_005015E0
 } // namespace lift_0048D350
+
+// [0x00487F30]
+namespace lift_00487F30 {
+// @name initStaticOnce_00487F30
+// @summary One-time initializer: on first call, runs ext_0067A670 on mem_00AD9DF4 and sets it to 0x93cf14; returns &mem_00AD9DF4.
+
+extern DWORD mem_00AD9DF8;
+extern DWORD mem_00AD9DF4;
+
+DWORD ext_0067A670(void* self, DWORD value);
+
+DWORD* initStaticOnce_00487F30() {
+    if ((mem_00AD9DF8 & 0xFFu) == 0) {
+        mem_00AD9DF8 |= 1u;
+        ext_0067A670(&mem_00AD9DF4, 0);
+        mem_00AD9DF4 = 0x93CF14u;
+    }
+    return &mem_00AD9DF4;
+}
+} // namespace lift_00487F30
