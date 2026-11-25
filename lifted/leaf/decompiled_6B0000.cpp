@@ -974,3 +974,34 @@ extern void __thiscall fn_006B0E30(void* self, uint32_t arg) {
     sendMessageA(hwnd, 0x00B7, 0, 0);
 }
 } // namespace lift_006B0E30
+
+// [0x006B8B70] sub_006B8B70 (73 bytes)
+namespace lift_006B8B70 {
+// Imported USER32 functions, called indirectly through IAT slots.
+extern BOOL(__stdcall* mem_0092561C)(HWND hWnd);                                        // IsWindow
+extern BOOL(__stdcall* mem_009256CC)(HWND hWnd);                                        // IsWindowVisible
+extern LRESULT(__stdcall* mem_00925694)(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam); // SendMessageA
+
+// @name Unknown::IsWindowVisibleAndRespondsTo_006B8B70
+// @class Unknown
+// @summary Returns 1 if the window handle at this+0x20 is valid and visible and answers message 0x18B with a nonzero result; otherwise 0.
+// @field Unknown +0x20 HWND hwnd
+int fn_006B8B70(void* self) {
+    // [0x006B8B70] ESI = this; hwnd = this ? this->hwnd : NULL
+    HWND hwnd = self ? lift_field<HWND>(self, 0x20) : nullptr;
+
+    // if (!IsWindow(hwnd)) return 0;
+    if (!mem_0092561C(hwnd)) {
+        return 0;
+    }
+    // if (!IsWindowVisible(hwnd)) return 0;
+    if (!mem_009256CC(hwnd)) {
+        return 0;
+    }
+    // if (!SendMessageA(hwnd, 0x18B, 0, 0)) return 0;
+    if (!mem_00925694(hwnd, 0x18B, 0, 0)) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_006B8B70

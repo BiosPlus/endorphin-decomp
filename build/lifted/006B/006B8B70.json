@@ -1,0 +1,22 @@
+{
+  "va": "0x006B8B70",
+  "size": 73,
+  "orig_symbol": "sub_006B8B70",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::IsWindowVisibleAndRespondsTo_006B8B70",
+  "class": "Unknown",
+  "signature": "extern \"C\" BOOL(__stdcall* mem_0092561C)(HWND hWnd);                                        // IsWindow extern \"C\" BOOL(__stdcall* mem_009256CC)(HWND hWnd);                                        // IsWindowVisible extern \"C\" LRESULT(__stdcall* mem_00925694)(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam); // SendMessageA int fn_006B8B70(void* self)",
+  "summary": "Returns 1 if the window handle at this+0x20 is valid and visible and answers message 0x18B with a nonzero result; otherwise 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:32:22Z"
+}

@@ -45880,6 +45880,13 @@
     "summary": "Stores the object pointer from *arg1 into field_0x5C, clears it if the object's window handle (+0x20) fails IsWindow, then tail-calls the base handler ext_006A5EA8.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006B8B70": {
+    "name": "Unknown::IsWindowVisibleAndRespondsTo_006B8B70",
+    "class": "Unknown",
+    "signature": "extern \"C\" BOOL(__stdcall* mem_0092561C)(HWND hWnd);                                        // IsWindow extern \"C\" BOOL(__stdcall* mem_009256CC)(HWND hWnd);                                        // IsWindowVisible extern \"C\" LRESULT(__stdcall* mem_00925694)(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam); // SendMessageA int fn_006B8B70(void* self)",
+    "summary": "Returns 1 if the window handle at this+0x20 is valid and visible and answers message 0x18B with a nonzero result; otherwise 0.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B8BC0": {
     "name": "NMCAutoCompleteEdit::vfunc_1",
     "class": "NMCAutoCompleteEdit",
