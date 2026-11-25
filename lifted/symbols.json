@@ -5167,6 +5167,13 @@
     "summary": "Returns address of global mem_00936D1C.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00455C30": {
+    "name": "ButtonPanel::vfunc_93",
+    "class": "ButtonPanel",
+    "signature": "void fn_00455C30(void* self, int a1, int a2, int a3, int a4, int a5, int a6, int a7)",
+    "summary": "Stores three int pairs (a3/a4 into fields at +0x9C..+0xB0) and forwards a1,a2,a6,a7 to vtable slot 92 (+0x170).",
+    "lifted_path": "lifted/classes/ButtonPanel.cpp"
+  },
   "0x00455C80": {
     "name": "CheckResultAndClearField_E8",
     "signature": "int32_t fn_00455C80(void* self, int32_t arg)",

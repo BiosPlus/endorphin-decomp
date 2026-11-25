@@ -1,0 +1,52 @@
+{
+  "va": "0x00455C30",
+  "size": 77,
+  "orig_symbol": "ButtonPanel::vfunc_93",
+  "src_path": "src/classes/ButtonPanel.cpp",
+  "lifted_path": "lifted/classes/ButtonPanel.cpp",
+  "name": "ButtonPanel::vfunc_93",
+  "class": "ButtonPanel",
+  "signature": "void fn_00455C30(void* self, int a1, int a2, int a3, int a4, int a5, int a6, int a7)",
+  "summary": "Stores three int pairs (a3/a4 into fields at +0x9C..+0xB0) and forwards a1,a2,a6,a7 to vtable slot 92 (+0x170).",
+  "fields": [
+    {
+      "class": "ButtonPanel",
+      "offset": "+0x9C",
+      "type": "int",
+      "name": "field_0x9C"
+    },
+    {
+      "class": "ButtonPanel",
+      "offset": "+0xA0",
+      "type": "int",
+      "name": "field_0xA0"
+    },
+    {
+      "class": "ButtonPanel",
+      "offset": "+0xA4",
+      "type": "int",
+      "name": "field_0xA4"
+    },
+    {
+      "class": "ButtonPanel",
+      "offset": "+0xA8",
+      "type": "int",
+      "name": "field_0xA8"
+    },
+    {
+      "class": "ButtonPanel",
+      "offset": "+0xAC",
+      "type": "int",
+      "name": "field_0xAC"
+    },
+    {
+      "class": "ButtonPanel",
+      "offset": "+0xB0",
+      "type": "int",
+      "name": "field_0xB0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:40:54Z"
+}
