@@ -615,3 +615,23 @@ void* fn_004ED750(void* self) {
     return self;
 }
 } // namespace lift_004ED750
+
+// [0x004E1B50] sub_004E1B50 (76 bytes)
+namespace lift_004E1B50 {
+// Known callee 0x004DE3D0: PairRange::copyBackward (Backward copy of 8-byte slots [first,last) into dest ending at dest; releases each destination's held object, copies the source object pointer, and stores the value returned by the source object's virtual getter (0 when no object). Returns the new start of the destination range.)
+extern void* ext_004DE3D0(void* first, void* last, void* dest);
+
+// @name PairRange::copyBackwardAndRewind
+// @class PairRange
+// @summary Backward-copies the 8-byte-slot range [first,last) into dest, then returns dest rewound by the range size in bytes (rounded down to a whole slot).
+void* fn_004E1B50(void* first, void* last, void* dest) {
+    ext_004DE3D0(first, last, dest);
+
+    // Slot count of [first,last), then back to byte size (both 8-byte units).
+    const intptr_t slots = (static_cast<intptr_t>(reinterpret_cast<uintptr_t>(last) -
+                                                  reinterpret_cast<uintptr_t>(first))) >> 3;
+    const intptr_t bytes = slots * 8;
+
+    return reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(dest) - static_cast<uintptr_t>(bytes));
+}
+} // namespace lift_004E1B50

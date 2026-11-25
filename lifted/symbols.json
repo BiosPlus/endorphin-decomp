@@ -17724,6 +17724,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
+  "0x004E1B50": {
+    "name": "PairRange::copyBackwardAndRewind",
+    "class": "PairRange",
+    "signature": "void* fn_004E1B50(void* first, void* last, void* dest)",
+    "summary": "Backward-copies the 8-byte-slot range [first,last) into dest, then returns dest rewound by the range size in bytes (rounded down to a whole slot).",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004E1FC0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1\u003e",
