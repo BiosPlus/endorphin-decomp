@@ -1386,3 +1386,19 @@ void fn_00624540(void* self) {
     }
 }
 } // namespace lift_00624540
+
+// [0x00624630] sub_00624630 (16 bytes)
+namespace lift_00624630 {
+// Known callee 0x00624540: Unknown::InvokeVirtual18ForEach_00624540 (Iterates the 32-bit pointer range at self+0x1C..self+0x20 and calls virtual slot 18 (+0x48) on each element object.)
+extern void ext_00624540(void* self);
+// Known callee 0x00624590: Unknown::CallVirtualOnRange_00624590 (Iterates a pointer array at self+0x0C..self+0x10 and invokes vtable slot 12 (+0x30) on each element.)
+extern void ext_00624590(void* self);
+
+// @name Unknown::DispatchRangesForSelf_00624630
+// @class Unknown
+// @summary Runs the virtual-slot-18 range pass (00624540) then the slot-12 range pass (00624590) on the same object.
+void fn_00624630(void* self) {
+    ext_00624540(self);
+    ext_00624590(self);
+}
+} // namespace lift_00624630

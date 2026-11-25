@@ -32537,6 +32537,13 @@
     "summary": "Walks the pointer range at this+0x1C..this+0x20 and calls vtable slot 0x74 on each element.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x00624630": {
+    "name": "Unknown::DispatchRangesForSelf_00624630",
+    "class": "Unknown",
+    "signature": "void fn_00624630(void* self)",
+    "summary": "Runs the virtual-slot-18 range pass (00624540) then the slot-12 range pass (00624590) on the same object.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x006248D0": {
     "name": "SymbolMap\u003cSymbolSourcePointerMap\u003cEffectorBase\u003e\u003e::vfunc_1",
     "class": "SymbolMap\u003cSymbolSourcePointerMap\u003cEffectorBase\u003e\u003e",

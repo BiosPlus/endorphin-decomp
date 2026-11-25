@@ -1,0 +1,14 @@
+{
+  "va": "0x00624630",
+  "size": 16,
+  "orig_symbol": "sub_00624630",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "Unknown::DispatchRangesForSelf_00624630",
+  "class": "Unknown",
+  "signature": "void fn_00624630(void* self)",
+  "summary": "Runs the virtual-slot-18 range pass (00624540) then the slot-12 range pass (00624590) on the same object.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:41:48Z"
+}
