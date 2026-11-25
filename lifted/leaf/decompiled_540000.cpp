@@ -815,3 +815,45 @@ void fn_005457B0(void* self) {
     fn_00543320(self);
 }
 } // namespace lift_005457B0
+
+// [0x00549980]
+namespace lift_00549980 {
+// @name GraphicQuadricObject::GraphicQuadricObject
+// @class GraphicQuadricObject
+// @summary Initializes a graphic object with vtable 0x956d14, unit scale/color floats, flag 4, and two GLU quadric objects.
+// @field GraphicQuadricObject +0x00 uint32_t vtable
+// @field GraphicQuadricObject +0x14 uint32_t field_0x14
+// @field GraphicQuadricObject +0x18 float field_0x18
+// @field GraphicQuadricObject +0x1c float field_0x1c
+// @field GraphicQuadricObject +0x20 float field_0x20
+// @field GraphicQuadricObject +0x24 void* field_0x24
+// @field GraphicQuadricObject +0x28 void* field_0x28
+
+
+extern void* ext_005528E0(void* self);
+extern void* ext_0063E000(void);
+extern void ext_0063E00C(void* quadric, uint32_t normals);
+extern void ext_0063E012(void* quadric, uint32_t drawStyle);
+
+void* fn_00549980(void* self) {
+    ext_005528E0(self);
+
+    uint8_t* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x00) = 0x00956D14u;
+    *reinterpret_cast<float*>(base + 0x18) = 1.0f;
+    *reinterpret_cast<float*>(base + 0x1C) = 1.0f;
+    *reinterpret_cast<float*>(base + 0x20) = 1.0f;
+    *reinterpret_cast<uint32_t*>(base + 0x14) = 4u;
+
+    void* quadric1 = ext_0063E000();
+    *reinterpret_cast<void**>(base + 0x24) = quadric1;
+    ext_0063E012(quadric1, 0x000186ADu);
+
+    void* quadric2 = ext_0063E000();
+    *reinterpret_cast<void**>(base + 0x28) = quadric2;
+    ext_0063E012(quadric2, 0x000186ACu);
+    ext_0063E00C(quadric2, 0x000186A0u);
+
+    return self;
+}
+} // namespace lift_00549980
