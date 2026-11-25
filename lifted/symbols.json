@@ -18194,6 +18194,13 @@
     "summary": "Renders the animation primitive with OpenGL name/attribute/display-list management.",
     "lifted_path": "lifted/Primitives/Animation.cpp"
   },
+  "0x0053B4B0": {
+    "name": "UnknownClass::ScaleInlineArrayByTable",
+    "class": "UnknownClass",
+    "signature": "void fn_0053B4B0(void* self)",
+    "summary": "For k in 0..23: out[k] = elem(self-\u003e+0x20, k % 3) * table[k], stored at self-\u003e+0x3C + 4k.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x0053B4F0": {
     "name": "Primitives::Cuboid::vfunc_28",
     "class": "Primitives::Cuboid",

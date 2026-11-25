@@ -587,3 +587,27 @@ void fn_00533F10(void* self) {
     mem_009253FC(f04, f08, width, height);  // glScissor
 }
 } // namespace lift_00533F10
+
+// [0x0053B4B0] sub_0053B4B0 (61 bytes)
+namespace lift_0053B4B0 {
+// Known callee 0x005B11D0: UnknownClass::getElementPtr (Returns a pointer to the 32-bit element at the given index in an inline array at offset 0x10.)
+extern uint32_t* ext_005B11D0(uintptr_t self, uint32_t index);
+
+// .rdata table of 24 floats at 0x00955568..0x009555C7 (mem_009555C8 is the end sentinel).
+extern const float mem_00955568[24];
+
+// @name UnknownClass::ScaleInlineArrayByTable
+// @class UnknownClass
+// @summary For k in 0..23: out[k] = elem(self->+0x20, k % 3) * table[k], stored at self->+0x3C + 4k.
+// @field UnknownClass +0x20 uint32_t field_0x20
+// @field UnknownClass +0x3C float field_0x3C
+void fn_0053B4B0(void* self) {
+    // 8 outer passes x 3 inner passes = 24 elements.
+    for (uint32_t k = 0; k < 24; ++k) {
+        const uint32_t index = k % 3;
+        const uintptr_t source = static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x20));
+        const float elem = *reinterpret_cast<const float*>(ext_005B11D0(source, index));
+        lift_field<float>(self, 0x3C + static_cast<ptrdiff_t>(k) * 4) = elem * mem_00955568[k];
+    }
+}
+} // namespace lift_0053B4B0
