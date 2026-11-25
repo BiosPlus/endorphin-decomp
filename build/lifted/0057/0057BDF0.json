@@ -1,0 +1,13 @@
+{
+  "va": "0x0057BDF0",
+  "size": 101,
+  "orig_symbol": "sub_0057BDF0",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "sub_0057BDF0",
+  "signature": "DWORD* __cdecl fn_0057BDF0(const DWORD* first, const DWORD* last, DWORD* out)",
+  "summary": "Range-copies [first, last) to out via ext_0057BBE0, then returns out minus the byte span rounded down to a multiple of 56.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:45:59Z"
+}
