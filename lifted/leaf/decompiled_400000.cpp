@@ -1825,3 +1825,37 @@ void fn_00406380(void* first, void* last) {
     }
 }
 } // namespace lift_00406380
+
+// [0x00404D70]
+namespace lift_00404D70 {
+// @name Unknown::copyConstruct_00404D70
+// @class Unknown
+// @summary Copy-constructs an object: a leading u32 plus three std::string members, from a source object.
+// @field Unknown +0x00 u32 field_0x00
+// @field Unknown +0x04 std::string field_0x04
+// @field Unknown +0x20 std::string field_0x20
+// @field Unknown +0x3C std::string field_0x3C
+
+// std::basic_string<char> copy constructor (MSVCP80), reached through the IAT slot mem_00924FE0.
+extern void ext_string_copy_ctor(void* self, const void* src);
+
+// Sub-object offsets within the object (std::string is 0x1C bytes in this layout).
+constexpr ptrdiff_t kOffStr04 = 0x04;
+constexpr ptrdiff_t kOffStr20 = 0x20;
+constexpr ptrdiff_t kOffStr3C = 0x3C;
+
+void* fn_00404D70(void* self, const void* src) {
+    // Copy the leading 32-bit value.
+    lift_field<uint32_t>(self, 0x00) = lift_field<uint32_t>(src, 0x00);
+
+    // Copy-construct each std::string member from the matching source member.
+    ext_string_copy_ctor(static_cast<uint8_t*>(self) + kOffStr04,
+                         static_cast<const uint8_t*>(src) + kOffStr04);
+    ext_string_copy_ctor(static_cast<uint8_t*>(self) + kOffStr20,
+                         static_cast<const uint8_t*>(src) + kOffStr20);
+    ext_string_copy_ctor(static_cast<uint8_t*>(self) + kOffStr3C,
+                         static_cast<const uint8_t*>(src) + kOffStr3C);
+
+    return self;  // eax = this
+}
+} // namespace lift_00404D70

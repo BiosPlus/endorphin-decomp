@@ -564,6 +564,13 @@
     "summary": "Returns 0 if field +0x04 is null; otherwise (field +0x08 - field +0x04) / 88 (signed, truncating).",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x00404D70": {
+    "name": "Unknown::copyConstruct_00404D70",
+    "class": "Unknown",
+    "signature": "void* fn_00404D70(void* self, const void* src)",
+    "summary": "Copy-constructs an object: a leading u32 plus three std::string members, from a source object.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00404E40": {
     "name": "copyRecordRange_00404E40",
     "signature": "extern \"C\" uintptr_t mem_00924FDC;  // MSVCP80 std::basic_string\u003cchar\u003e::operator= (IAT slot) namespace",
