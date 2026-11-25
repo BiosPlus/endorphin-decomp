@@ -1456,3 +1456,51 @@ void fn_005E0B20(void* self) {
     store_ptr(it, 0x04, p);
 }
 } // namespace lift_005E0B20
+
+// [0x005ED2C0]
+namespace lift_005ED2C0 {
+// @name Tree::find
+// @class Tree
+// @summary Finds a node by uint32_t key in a red-black tree and writes the iterator to out.
+// @field Tree +0x04 uint32_t head
+// @field TreeNode +0x00 uint32_t left
+// @field TreeNode +0x04 uint32_t parent
+// @field TreeNode +0x08 uint32_t right
+// @field TreeNode +0x0C uint32_t key
+// @field TreeNode +0x51 uint8_t is_nil
+
+
+uint8_t mem_read8(uint32_t addr);
+uint32_t mem_read32(uint32_t addr);
+void mem_write32(uint32_t addr, uint32_t val);
+
+extern uint32_t __thiscall sub_005ED2C0(uint32_t self, uint32_t out_iter, uint32_t key_ptr) {
+    uint32_t head = mem_read32(self + 0x4);
+    uint32_t best = head;
+    uint32_t node = mem_read32(head + 0x4);
+    uint32_t key = 0;
+
+    while (mem_read8(node + 0x51) == 0) {
+        key = mem_read32(key_ptr);
+        if (mem_read32(node + 0xC) < key) {
+            node = mem_read32(node + 0x8);
+        } else {
+            best = node;
+            node = mem_read32(node);
+        }
+    }
+
+    uint32_t end_node = mem_read32(self + 0x4);
+    uint32_t result_node = end_node;
+    if (best != end_node) {
+        key = mem_read32(key_ptr);
+        if (key >= mem_read32(best + 0xC)) {
+            result_node = best;
+        }
+    }
+
+    mem_write32(out_iter, self);
+    mem_write32(out_iter + 0x4, result_node);
+    return out_iter;
+}
+} // namespace lift_005ED2C0
