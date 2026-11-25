@@ -23905,6 +23905,13 @@
     "summary": "Return values[index] scaled by 0.5 (the `this` pointer is unused).",
     "lifted_path": "lifted/Geometry/auto_tiny.cpp"
   },
+  "0x005B1930": {
+    "name": "ConstructWithStringMember",
+    "class": "\u003cUnknown\u003e (object type not recovered)",
+    "signature": "void* fn_005B1930(void* self)",
+    "summary": "Sets the object's vtable, default-constructs a std::string member at +0x04, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B1980": {
     "name": "Geometry::FileType::vfunc_7",
     "class": "Geometry::FileType",

@@ -296,3 +296,22 @@ float fn_005B68F0(void* self) {
     return static_cast<float>(prod * mem_00928E78);
 }
 } // namespace lift_005B68F0
+
+// [0x005B1930] sub_005B1930 (70 bytes)
+namespace lift_005B1930 {
+// IAT slot for MSVCP80 std::basic_string<char> default constructor (thiscall).
+extern int mem_00924FE8;
+// Portable stand-in for the MSVCP80 default constructor call through mem_00924FE8.
+extern void ext_basic_string_default_ctor(void* self);
+
+// @name ConstructWithStringMember
+// @class <Unknown> (object type not recovered)
+// @summary Sets the object's vtable, default-constructs a std::string member at +0x04, and returns this.
+// @field <Unknown> +0x00 void* vftable
+// @field <Unknown> +0x04 uint8_t[] field_0x04
+void* fn_005B1930(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x0095FCF4u;
+    ext_basic_string_default_ctor(&lift_field<uint8_t>(self, 0x04));
+    return self;
+}
+} // namespace lift_005B1930

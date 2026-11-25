@@ -1,0 +1,28 @@
+{
+  "va": "0x005B1930",
+  "size": 70,
+  "orig_symbol": "sub_005B1930",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "ConstructWithStringMember",
+  "class": "\u003cUnknown\u003e (object type not recovered)",
+  "signature": "void* fn_005B1930(void* self)",
+  "summary": "Sets the object's vtable, default-constructs a std::string member at +0x04, and returns this.",
+  "fields": [
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vftable"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x4",
+      "type": "uint8_t[]",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:24:39Z"
+}
