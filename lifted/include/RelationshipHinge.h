@@ -10,6 +10,6 @@
 // Recovered field layout for RelationshipHinge:
 namespace lifted_layout {
 struct RelationshipHinge_Fields {
-    // +0x64  uint32_t                 field_0x64  (evidence: 0x006588F0, 0x00658910)
+    // +0x64  uint32_t                 field_0x64  (evidence: 0x006588F0, 0x00658910, 0x00658B30)
 };
 } // namespace lifted_layout

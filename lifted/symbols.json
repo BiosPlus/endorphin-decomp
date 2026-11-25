@@ -35582,6 +35582,13 @@
     "summary": "Copies three floats from the element at index 0 of the buffer referenced by this+0x64 into the caller-supplied output.",
     "lifted_path": "lifted/classes/RelationshipHinge.cpp"
   },
+  "0x00658B30": {
+    "name": "RelationshipHinge::vfunc_53",
+    "class": "RelationshipHinge",
+    "signature": "void fn_00658B30(void* self)",
+    "summary": "Forwards this-\u003efield_0x64 through ext_007C9C50 and passes the result to ext_007C9E80 with (0.0f, 80.0f).",
+    "lifted_path": "lifted/classes/RelationshipHinge.cpp"
+  },
   "0x006595B0": {
     "name": "RelationshipRPROJoint::vfunc_49",
     "class": "RelationshipRPROJoint",
@@ -57597,10 +57604,10 @@
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
   "0x007C8490": {
-    "name": "dispatchAndStoreOwner",
-    "class": "<unknown>",
-    "signature": "void fn_007C8490(uint32_t a1, uint32_t a2, float a3, float a4, void* self)",
-    "summary": "Calls vtable slot 0 of self with 0x5F4; if it returns non-null, stores self at obj+0x5F0 and forwards to sub_007C7330.",
+    "name": "Unknown::setField44IfBit0Clear",
+    "class": "Unknown",
+    "signature": "void fn_007C97A0(void* self, uint32_t value)",
+    "summary": "Sets the 32-bit field at +0x44 if bit 0 of +0x9C is clear.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
   "0x007C8810": {

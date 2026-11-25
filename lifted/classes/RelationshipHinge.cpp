@@ -56,3 +56,20 @@ void fn_00645F40(float* value, float b, float c) {
     }
 }
 } // namespace lift_00645F40
+
+// [0x00658B30]
+namespace lift_00658B30 {
+extern float mem_00984790;
+extern uint32_t ext_007C9C50(uint32_t arg0);
+extern void ext_007C9E80(void* self, float val1, float val2);
+
+// @name RelationshipHinge::vfunc_53
+// @class RelationshipHinge
+// @summary Forwards this->field_0x64 through ext_007C9C50 and passes the result to ext_007C9E80 with (0.0f, 80.0f).
+// @field RelationshipHinge +0x64 uint32_t field_0x64
+void fn_00658B30(void* self) {
+    const uint32_t value = lift_field<uint32_t>(self, 0x64);
+    const uint32_t adjusted = ext_007C9C50(value);
+    ext_007C9E80(reinterpret_cast<void*>(static_cast<uintptr_t>(adjusted)), 0.0f, mem_00984790);
+}
+} // namespace lift_00658B30
