@@ -1,0 +1,28 @@
+{
+  "va": "0x0045B530",
+  "size": 65,
+  "orig_symbol": "sub_0045B530",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "Unknown::updateFromWindowText_0045B530",
+  "class": "Unknown",
+  "signature": "void fn_0045B530(void* self)",
+  "summary": "Parses the float from the text buffer at this+0x1dc; if it is \u003e 0, forwards it to the object at this+0x88 via vtable slot 0x8c.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1DC",
+      "type": "char",
+      "name": "field_0x1dc[]"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:06:40Z"
+}

@@ -1602,3 +1602,33 @@ void fn_0045B5D0(void* self) {
     method(obj, v);
 }
 } // namespace lift_0045B5D0
+
+// [0x0045B530] sub_0045B530 (65 bytes)
+namespace lift_0045B530 {
+// Known callee 0x0045AEE0: getWindowTextAsFloat (Reads the window text of a CWnd into a string and parses it as a float using atof.)
+extern float ext_0045AEE0(void* wnd);
+
+// @name Unknown::updateFromWindowText_0045B530
+// @class Unknown
+// @summary Parses the float from the text buffer at this+0x1dc; if it is > 0, forwards it to the object at this+0x88 via vtable slot 0x8c.
+// @field Unknown +0x88 void* field_0x88
+// @field Unknown +0x1dc char field_0x1dc[]
+typedef void (*ObjFloatMethod)(void* self, float value);
+
+void fn_0045B530(void* self) {
+    unsigned char* base = static_cast<unsigned char*>(self);
+
+    float value = ext_0045AEE0(base + 0x1dc);
+
+    // Original: returns when value <= 0 or unordered (NaN). "!(value > 0)" covers both.
+    if (!(value > 0.0f)) {
+        return;
+    }
+
+    void* target = *reinterpret_cast<void**>(base + 0x88);
+    unsigned char* vtbl = *reinterpret_cast<unsigned char**>(target);
+    // Vtable slot at byte offset 0x8c (32-bit layout), addressed by byte offset for portability.
+    ObjFloatMethod method = *reinterpret_cast<ObjFloatMethod*>(vtbl + 0x8c);
+    method(target, value);
+}
+} // namespace lift_0045B530
