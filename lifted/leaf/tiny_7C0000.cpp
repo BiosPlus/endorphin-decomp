@@ -1405,3 +1405,20 @@ void* fn_007CA2F0(void* self, const void* src) {
     return self;
 }
 } // namespace lift_007CA2F0
+
+// [0x007C89F0]
+namespace lift_007C89F0 {
+// @name GetElement24Ptr
+// @class ArrayOwner
+// @summary Returns a pointer to element (self->field_0x00 * b + a) in the 24-byte-stride array at self->field_0x28.
+// @field ArrayOwner +0x00 int32_t field_0x00
+// @field ArrayOwner +0x28 uint8_t* field_0x28
+
+void* GetElement24Ptr(void* self, int32_t a, int32_t b) {
+    auto* base = static_cast<uint8_t*>(self);
+    int32_t stride = *reinterpret_cast<int32_t*>(base + 0x00);
+    uint8_t* arr = *reinterpret_cast<uint8_t**>(base + 0x28);
+    uint32_t index = static_cast<uint32_t>(stride) * static_cast<uint32_t>(b) + static_cast<uint32_t>(a);
+    return arr + static_cast<uint32_t>(index * 24u);
+}
+} // namespace lift_007C89F0

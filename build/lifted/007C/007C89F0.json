@@ -1,0 +1,28 @@
+{
+  "va": "0x007C89F0",
+  "size": 25,
+  "orig_symbol": "sub_007C89F0",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "GetElement24Ptr",
+  "class": "ArrayOwner",
+  "signature": "void* GetElement24Ptr(void* self, int32_t a, int32_t b)",
+  "summary": "Returns a pointer to element (self-\u003efield_0x00 * b + a) in the 24-byte-stride array at self-\u003efield_0x28.",
+  "fields": [
+    {
+      "class": "ArrayOwner",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ArrayOwner",
+      "offset": "+0x28",
+      "type": "uint8_t*",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:28:05Z"
+}

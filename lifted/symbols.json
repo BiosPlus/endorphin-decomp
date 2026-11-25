@@ -67430,6 +67430,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x007CC9F0 (readDwordAt0x0C).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C89F0": {
+    "name": "GetElement24Ptr",
+    "class": "ArrayOwner",
+    "signature": "void* GetElement24Ptr(void* self, int32_t a, int32_t b)",
+    "summary": "Returns a pointer to element (self-\u003efield_0x00 * b + a) in the 24-byte-stride array at self-\u003efield_0x28.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C8A10": {
     "name": "Unknown::LookupTableEntry24Dword",
     "class": "Unknown",
