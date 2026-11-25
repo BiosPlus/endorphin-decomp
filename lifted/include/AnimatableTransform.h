@@ -17,7 +17,7 @@ struct AnimatableTransform_Fields {
     // +0x4   void*                    field_0x04  (evidence: 0x004020E0, 0x00528C50, 0x00535610, 0x00545B80, 0x005FF1C0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    subobject  (evidence: 0x00528C30, 0x00535610) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    transformInterface_vtable  (evidence: 0x00585170, 0x0058A670, 0x005936B0) // CONFLICT: multiple definitions at +0x4
-    // +0xC   void*                    field_0x0C  (evidence: 0x00402050) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void*                    field_0x0C  (evidence: 0x00402050, 0x00486AF0, 0x005379F0, 0x00544980, 0x00544A90) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t*                renderObjectOwner_vtable  (evidence: 0x00535610, 0x00545B80, 0x005FF1C0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 subobj_vtable_0xC  (evidence: 0x00402070, 0x00535610, 0x00545B80, 0x005FF1C0) // CONFLICT: multiple definitions at +0xC
     // +0x10  void* subobject_0x10 (sub-object pointer read from field_0x04 + 0x10; class unknown)  (evidence: 0x00528C50)

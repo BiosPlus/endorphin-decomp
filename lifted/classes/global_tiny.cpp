@@ -6649,3 +6649,69 @@ uint32_t fn_00402050(void* self) {
     return target(subobject);
 }
 } // namespace lift_00402050
+
+// [0x005379F0] CompoundRenderable::vfunc_9 (11 bytes)
+namespace lift_005379F0 {
+// @name CompoundRenderable::vfunc_9
+// @class CompoundRenderable
+// @summary Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).
+// @field CompoundRenderable +0x18 void* field_0x18
+namespace lift_00402050 {
+// @name AnimatableTransform::vfunc_37
+// @class AnimatableTransform
+// @summary Dispatches virtual slot 0x10 of the embedded base subobject at +0x0C, passing that subobject as this (tail call in the original).
+// @field AnimatableTransform +0x0C void* field_0x0C
+uint32_t fn_005379F0(void* self) {
+    // Embedded base subobject lives at self+0x0C; its first dword is its vtable pointer.
+    void* subobject = reinterpret_cast<uint8_t*>(self) + 0x18;
+    void** vtbl = static_cast<void**>(lift_field<void*>(self, 0x18));
+    using Slot = uint32_t (*)(void*);
+    Slot target = reinterpret_cast<Slot>(lift_field<void*>(vtbl, 0x20));
+    return target(subobject);
+}
+} // namespace lift_00402050
+} // namespace lift_005379F0
+
+// [0x00544980] ReshapeTool::vfunc_28 (17 bytes)
+namespace lift_00544980 {
+// @name ReshapeTool::vfunc_28
+// @class ReshapeTool
+// @summary Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).
+// @field ReshapeTool +0x9C void* field_0x9C
+namespace lift_00402050 {
+// @name AnimatableTransform::vfunc_37
+// @class AnimatableTransform
+// @summary Dispatches virtual slot 0x10 of the embedded base subobject at +0x0C, passing that subobject as this (tail call in the original).
+// @field AnimatableTransform +0x0C void* field_0x0C
+uint32_t fn_00544980(void* self) {
+    // Embedded base subobject lives at self+0x0C; its first dword is its vtable pointer.
+    void* subobject = reinterpret_cast<uint8_t*>(self) + 0x9C;
+    void** vtbl = static_cast<void**>(lift_field<void*>(self, 0x9C));
+    using Slot = uint32_t (*)(void*);
+    Slot target = reinterpret_cast<Slot>(lift_field<void*>(vtbl, 0x70));
+    return target(subobject);
+}
+} // namespace lift_00402050
+} // namespace lift_00544980
+
+// [0x00544A90] ReshapeTool::vfunc_31 (17 bytes)
+namespace lift_00544A90 {
+// @name ReshapeTool::vfunc_31
+// @class ReshapeTool
+// @summary Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).
+// @field ReshapeTool +0x9C void* field_0x9C
+namespace lift_00402050 {
+// @name AnimatableTransform::vfunc_37
+// @class AnimatableTransform
+// @summary Dispatches virtual slot 0x10 of the embedded base subobject at +0x0C, passing that subobject as this (tail call in the original).
+// @field AnimatableTransform +0x0C void* field_0x0C
+uint32_t fn_00544A90(void* self) {
+    // Embedded base subobject lives at self+0x0C; its first dword is its vtable pointer.
+    void* subobject = reinterpret_cast<uint8_t*>(self) + 0x9C;
+    void** vtbl = static_cast<void**>(lift_field<void*>(self, 0x9C));
+    using Slot = uint32_t (*)(void*);
+    Slot target = reinterpret_cast<Slot>(lift_field<void*>(vtbl, 0x7C));
+    return target(subobject);
+}
+} // namespace lift_00402050
+} // namespace lift_00544A90

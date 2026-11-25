@@ -1,0 +1,28 @@
+{
+  "va": "0x00544980",
+  "size": 17,
+  "orig_symbol": "ReshapeTool::vfunc_28",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "ReshapeTool::vfunc_28",
+  "class": "ReshapeTool",
+  "signature": "uint32_t fn_00544980(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).",
+  "fields": [
+    {
+      "class": "ReshapeTool",
+      "offset": "+0x9C",
+      "type": "void*",
+      "name": "field_0x9C"
+    },
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:18:59Z"
+}

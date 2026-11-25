@@ -8426,6 +8426,13 @@
     "summary": "Stores the dword argument at +0x168; if the byte flag argument is nonzero, invokes vtable slot 0x128 on self.",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x00486AF0": {
+    "name": "sub_00486AF0",
+    "class": "AnimatableTransform",
+    "signature": "uint32_t fn_00486AF0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).",
+    "lifted_path": "lifted/leaf/tiny_480000.cpp"
+  },
   "0x00486C10": {
     "name": "sub_00486C10",
     "signature": "extern \"C\" void __fastcall fn_00486C10(void* self, int edx_unused, float value)",
@@ -20795,6 +20802,13 @@
     "summary": "Sets the flag at +0x376 to the given byte; if it changed, runs the two virtual hooks (slots 0x1C4, 0x1D4) and then calls startTimerOrInitRecord with the value at +0x370.",
     "lifted_path": "lifted/classes/OglRenderer.cpp"
   },
+  "0x005379F0": {
+    "name": "CompoundRenderable::vfunc_9",
+    "class": "CompoundRenderable",
+    "signature": "uint32_t fn_005379F0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00537A00": {
     "name": "CompoundRenderable::vfunc_3",
     "class": "CompoundRenderable",
@@ -21867,6 +21881,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00544130 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00544980": {
+    "name": "ReshapeTool::vfunc_28",
+    "class": "ReshapeTool",
+    "signature": "uint32_t fn_00544980(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x005449A0": {
     "name": "ReshapeTool::vfunc_29",
     "class": "ReshapeTool",
@@ -21914,6 +21935,13 @@
     "class": "ReshapeTool",
     "signature": "void fn_00544A70(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00536CE0 (OglRenderer::vfunc_91).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00544A90": {
+    "name": "ReshapeTool::vfunc_31",
+    "class": "ReshapeTool",
+    "signature": "uint32_t fn_00544A90(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x00544AE0": {
@@ -65396,6 +65424,12 @@
     "signature": "DWORD fn_007B1F40(DWORD ecx_in, DWORD arg0, DWORD arg1)",
     "summary": "Returns the ECX input unchanged when the first stack argument is 0 or 2; otherwise returns 0. Stdcall-style (ret 8).",
     "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
+  },
+  "0x007B1F60": {
+    "name": "sub_007B1F60",
+    "signature": "void fn_007B1F60(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x00704BE0 (sub_00704BE0).",
+    "lifted_path": "lifted/clones/auto_clones_7B0000.cpp"
   },
   "0x007B1F70": {
     "name": "sub_007B1F70",

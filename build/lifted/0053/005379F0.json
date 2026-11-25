@@ -1,0 +1,28 @@
+{
+  "va": "0x005379F0",
+  "size": 11,
+  "orig_symbol": "CompoundRenderable::vfunc_9",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CompoundRenderable::vfunc_9",
+  "class": "CompoundRenderable",
+  "signature": "uint32_t fn_005379F0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).",
+  "fields": [
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    },
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:18:59Z"
+}
