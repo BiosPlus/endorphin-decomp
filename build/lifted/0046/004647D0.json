@@ -1,0 +1,13 @@
+{
+  "va": "0x004647D0",
+  "size": 117,
+  "orig_symbol": "sub_004647D0",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "openWithShellExecute",
+  "signature": "void __stdcall fn_004647D0(const void* file_str)",
+  "summary": "Opens a file or URL using ShellExecuteA with SW_SHOW.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:45:17Z"
+}

@@ -1873,3 +1873,32 @@ extern void __fastcall fn_004615B0(void* self) {
     ext_006A624A();
 }
 } // namespace lift_004615B0
+
+// [0x004647D0]
+namespace lift_004647D0 {
+// @name openWithShellExecute
+// @summary Opens a file or URL using ShellExecuteA with SW_SHOW.
+
+
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_00925538;
+
+using fn_str_ctor_t = void(__thiscall*)(void* self, const char* s);
+using fn_str_cstr_t = const char*(__thiscall*)(const void* self);
+using fn_str_dtor_t = void(__thiscall*)(void* self);
+using fn_shell_execute_a_t = void*(__stdcall*)(void* hwnd, const char* lpOperation, const char* lpFile, const char* lpParameters, const char* lpDirectory, int32_t nShowCmd);
+
+void __stdcall fn_004647D0(const void* file_str) {
+    uint8_t op_str[28];
+    reinterpret_cast<fn_str_ctor_t>(static_cast<uintptr_t>(mem_00924FE4))(op_str, reinterpret_cast<const char*>(0x0093963C));
+
+    const char* lpFile = reinterpret_cast<fn_str_cstr_t>(static_cast<uintptr_t>(mem_00924FF0))(file_str);
+    const char* lpOperation = reinterpret_cast<fn_str_cstr_t>(static_cast<uintptr_t>(mem_00924FF0))(op_str);
+
+    reinterpret_cast<fn_shell_execute_a_t>(static_cast<uintptr_t>(mem_00925538))(nullptr, lpOperation, lpFile, nullptr, nullptr, 5);
+
+    reinterpret_cast<fn_str_dtor_t>(static_cast<uintptr_t>(mem_00924FF4))(op_str);
+}
+} // namespace lift_004647D0
