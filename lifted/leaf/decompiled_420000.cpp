@@ -805,3 +805,33 @@ void* __thiscall fn_00429150(uint8_t* self, uint32_t arg) {
     return self;
 }
 } // namespace lift_00429150
+
+// [0x00422C00] sub_00422C00 (82 bytes)
+namespace lift_00422C00 {
+// Known callee 0x006A643C: thunk_MFC80_ord_3401 (IAT jump thunk forwarding to MFC80!ord_3401.)
+// Returns flags in eax; the 0x1000 bit is tested by this function.
+extern DWORD ext_006A643C();
+extern int mem_00925688;
+
+// @name ToggleStateAndInvalidate
+// @class <ClassName> (unknown; accessed fields are at this+0x20 and this+0x8d)
+// @summary Sets a 0/1 state byte at +0x8d from arg1 when a queried flag bit 0x1000 is set, and invalidates the window at +0x20 if the state changed.
+// @field <ClassName> +0x20 HWND field_0x20
+// @field <ClassName> +0x8d uint8_t field_0x8d
+DWORD fn_00422C00(void* self, DWORD arg1, DWORD arg2) {
+    (void)arg2;
+    uint8_t& state = lift_field<uint8_t>(self, 0x8d);
+    const uint8_t oldState = state;
+    const DWORD flags = ext_006A643C();
+    if ((flags & 0x1000) != 0) {
+        state = (arg1 == 1) ? 1 : 0;
+        if (state != oldState) {
+            HWND hwnd = lift_field<HWND>(self, 0x20);
+            auto invalidateRect = reinterpret_cast<BOOL (*)(HWND, const RECT*, BOOL)>(
+                static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925688)));
+            invalidateRect(hwnd, nullptr, FALSE);
+        }
+    }
+    return 0;
+}
+} // namespace lift_00422C00

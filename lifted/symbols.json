@@ -2141,6 +2141,13 @@
     "summary": "On WM_MOUSELEAVE (0x2A3) clear the flag at +0x8E and invalidate the window; otherwise forward to the base handler.",
     "lifted_path": "lifted/classes/CImageButton.cpp"
   },
+  "0x00422C00": {
+    "name": "ToggleStateAndInvalidate",
+    "class": "\u003cClassName\u003e (unknown; accessed fields are at this+0x20 and this+0x8d)",
+    "signature": "DWORD fn_00422C00(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Sets a 0/1 state byte at +0x8d from arg1 when a queried flag bit 0x1000 is set, and invalidates the window at +0x20 if the state changed.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x00422C60": {
     "name": "sub_00422C60",
     "signature": "extern \"C\" int* fn_00422C60()",

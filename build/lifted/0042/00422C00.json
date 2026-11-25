@@ -1,0 +1,28 @@
+{
+  "va": "0x00422C00",
+  "size": 82,
+  "orig_symbol": "sub_00422C00",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "ToggleStateAndInvalidate",
+  "class": "\u003cClassName\u003e (unknown; accessed fields are at this+0x20 and this+0x8d)",
+  "signature": "DWORD fn_00422C00(void* self, DWORD arg1, DWORD arg2)",
+  "summary": "Sets a 0/1 state byte at +0x8d from arg1 when a queried flag bit 0x1000 is set, and invalidates the window at +0x20 if the state changed.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x8D",
+      "type": "uint8_t",
+      "name": "field_0x8d"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:01:27Z"
+}
