@@ -1,0 +1,22 @@
+{
+  "va": "0x00711DA0",
+  "size": 15,
+  "orig_symbol": "sub_00711DA0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "SetSubobjectField28",
+  "class": "\u003cUnknown\u003e (member; self is only passed through to ext_0071E680)",
+  "signature": "extern \"C\" void __thiscall fn_00711DA0(void* self, uint32_t value)",
+  "summary": "Calls ext_0071E680(self) to get a subobject pointer, then stores the stack argument into that subobject's dword at +0x28 (thiscall, ret 4).",
+  "fields": [
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:26:37Z"
+}

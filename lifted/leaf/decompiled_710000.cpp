@@ -1889,3 +1889,28 @@ void* fn_00714950(void* self, void* arg) {
 } // namespace lift_0071B020
 } // namespace lift_00702F60
 } // namespace lift_00714950
+
+// [0x00711DA0] sub_00711DA0 (15 bytes)
+namespace lift_00711DA0 {
+// Known callee 0x0071E680: sub_0071E680 (Returns pointer to subobject/field at offset +0x40.)
+extern void* __fastcall ext_0071E680(void* self);
+// Known callee 0x00711CF0: SetOrClearFlags78 (listed by the original asm metadata; not called in this function's body)
+extern void ext_00711CF0();
+// .rdata constants referenced by the original metadata (not read in this function's body)
+extern int mem_009251D8;
+extern int mem_00925208;
+
+// @name SetSubobjectField28
+// @class <Unknown> (member; self is only passed through to ext_0071E680)
+// @summary Calls ext_0071E680(self) to get a subobject pointer, then stores the stack argument into that subobject's dword at +0x28 (thiscall, ret 4).
+// @field <Unknown> +0x28 uint32_t field_0x28
+extern void __thiscall fn_00711DA0(void* self, uint32_t value) {
+    // Reference-only: the original asm metadata lists these; taking the address has no effect.
+    (void)&ext_00711CF0;
+    (void)&mem_009251D8;
+    (void)&mem_00925208;
+
+    void* sub = ext_0071E680(self);
+    lift_field<uint32_t>(sub, 0x28) = value;
+}
+} // namespace lift_00711DA0
