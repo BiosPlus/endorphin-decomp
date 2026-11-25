@@ -1,0 +1,13 @@
+{
+  "va": "0x00503A70",
+  "size": 95,
+  "orig_symbol": "sub_00503A70",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "InitOnceGlobalString_00503A70",
+  "signature": "void* fn_00503A70()",
+  "summary": "One-time initializer for the global string at mem_00AEBAFC; returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:28:54Z"
+}

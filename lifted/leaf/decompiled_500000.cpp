@@ -1977,3 +1977,24 @@ void* fn_00509F40(void* dst) {
 }
 } // namespace lift_004B4AA0
 } // namespace lift_00509F40
+
+// [0x00503A70] sub_00503A70 (95 bytes)
+namespace lift_00503A70 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0066AD10(void* out_str, uintptr_t arg);
+extern void ext_006A6C87(uintptr_t arg);
+extern int mem_00AEBB18;
+extern int mem_00AEBAFC;
+
+// @name InitOnceGlobalString_00503A70
+// @summary One-time initializer for the global string at mem_00AEBAFC; returns its address.
+void* fn_00503A70() {
+    // Bit 0 of mem_00AEBB18 is the "initialized" guard.
+    if ((mem_00AEBB18 & 1) == 0) {
+        mem_00AEBB18 |= 1;
+        ext_0066AD10(&mem_00AEBAFC, 0x00A4089C);
+        ext_006A6C87(0x00919CE0);
+    }
+    return &mem_00AEBAFC;
+}
+} // namespace lift_00503A70

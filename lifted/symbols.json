@@ -17868,6 +17868,12 @@
     "summary": "Stores a float argument widened to double at +0x28 and sets the flag byte at +0x20 to 1.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00503A70": {
+    "name": "InitOnceGlobalString_00503A70",
+    "signature": "void* fn_00503A70()",
+    "summary": "One-time initializer for the global string at mem_00AEBAFC; returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00503AD0": {
     "name": "sub_00503AD0_fillDoubleRange",
     "signature": "void fn_00503AD0(double* first, double* last, const double* value)",
