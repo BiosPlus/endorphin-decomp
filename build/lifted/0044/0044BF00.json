@@ -1,0 +1,28 @@
+{
+  "va": "0x0044BF00",
+  "size": 63,
+  "orig_symbol": "sub_0044BF00",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::ForwardToHandlerIfWindowValid",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_0044BF00(void* self, int32_t a1, int32_t a2, int32_t a3)",
+  "summary": "Calls the MFC80 thunk, then if the window at +0x20 is valid and both stack args are positive, invokes vtable slot 0x15C of the handler at +0x64 with those args.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "hwnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "DWORD",
+      "name": "handler"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:02:20Z"
+}

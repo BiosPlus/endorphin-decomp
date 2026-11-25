@@ -1627,3 +1627,46 @@ void fn_0044B2C0(void* self) {
     tail(obj);
 }
 } // namespace lift_0044B2C0
+
+// [0x0044BF00] sub_0044BF00 (63 bytes)
+namespace lift_0044BF00 {
+// Known callee 0x006A5EA8: thunk_MFC80_ord_1903 (IAT jump thunk forwarding to MFC80!ord_1903.)
+extern void ext_006A5EA8(void);
+// .rdata IAT slot holding the address of USER32!IsWindow.
+extern uint32_t mem_0092561C;
+
+using IsWindowFn = BOOL(__stdcall*)(HWND);
+using HandlerMethodFn = void(__thiscall*)(void* self, int32_t a2, int32_t a3);
+
+// @name Unknown::ForwardToHandlerIfWindowValid
+// @class Unknown
+// @summary Calls the MFC80 thunk, then if the window at +0x20 is valid and both stack args are positive, invokes vtable slot 0x15C of the handler at +0x64 with those args.
+// @field Unknown +0x20 DWORD hwnd
+// @field Unknown +0x64 DWORD handler
+void __thiscall fn_0044BF00(void* self, int32_t a1, int32_t a2, int32_t a3) {
+    (void)a1;  // first stack argument is not read by the original code
+
+    ext_006A5EA8();
+
+    const DWORD hwnd = lift_field<DWORD>(self, 0x20);
+    const auto isWindow = reinterpret_cast<IsWindowFn>(static_cast<uintptr_t>(mem_0092561C));
+    if (isWindow(reinterpret_cast<HWND>(static_cast<uintptr_t>(hwnd))) == 0) {
+        return;
+    }
+
+    if (a2 <= 0 || a3 <= 0) {
+        return;
+    }
+
+    const DWORD handler = lift_field<DWORD>(self, 0x64);
+    if (handler == 0) {
+        return;
+    }
+
+    void* const handlerObj = reinterpret_cast<void*>(static_cast<uintptr_t>(handler));
+    const DWORD vtbl = lift_field<DWORD>(handlerObj, 0);
+    const DWORD slot = lift_field<DWORD>(reinterpret_cast<void*>(static_cast<uintptr_t>(vtbl)), 0x15C);
+    const auto method = reinterpret_cast<HandlerMethodFn>(static_cast<uintptr_t>(slot));
+    method(handlerObj, a2, a3);
+}
+} // namespace lift_0044BF00
