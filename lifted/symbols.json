@@ -66427,6 +66427,12 @@
     "summary": "Adds 0x44 to the passed pointer and tail-calls getField0x20, returning the uint32 at offset 0x64 of the original pointer.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C70E0": {
+    "name": "getWordAt24",
+    "signature": "WORD __cdecl sub_007C70E0(const void* obj)",
+    "summary": "Returns the 16-bit value stored at offset +0x24 of the object passed as the single stack argument.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C70F0": {
     "name": "Unknown::setWordField24",
     "class": "Unknown",

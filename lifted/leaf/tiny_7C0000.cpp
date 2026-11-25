@@ -1352,3 +1352,17 @@ void __cdecl sub_007C6C10(void* self) {
     lift_field<uint32_t>(self, 0x0C) |= 0x4u;
 }
 } // namespace lift_007C6C10
+
+// [0x007C70E0]
+namespace lift_007C70E0 {
+// @name getWordAt24
+// @summary Returns the 16-bit value stored at offset +0x24 of the object passed as the single stack argument.
+// @field Object +0x24 uint16_t field_0x24
+
+// Original asm: mov eax,[esp+4]; mov ax,[eax+0x24]; ret
+// Only the low 16 bits (AX) are defined by the original; the upper half of EAX is
+// the object pointer and is not modeled here.
+WORD __cdecl sub_007C70E0(const void* obj) {
+    return lift_field<const WORD>(obj, 0x24);
+}
+} // namespace lift_007C70E0
