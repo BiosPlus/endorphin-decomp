@@ -16915,6 +16915,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B12A0 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData\u003e::vfunc_2 (NMData::GraphEntryData::getColor)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005224E0": {
+    "name": "copyStringRecordRange",
+    "signature": "void* fn_005224E0(const void* begin, const void* end, void* dst)",
+    "summary": "Copies a range of 0x28-byte records into dst, assigning each record's +0x0C string.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00522530": {
     "name": "sub_00522530_copyRangeBackward",
     "signature": "uint8_t* fn_00522530(uint8_t* first, uint8_t* last, uint8_t* dst_end)",

@@ -9,9 +9,12 @@
 namespace lifted_layout {
 struct Entry_Fields {
     // +0x0   uint32_t                 field_0x00  (evidence: 0x007F0B60)
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x007F0B60)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x007F0B60)
-    // +0xC   uint32_t                 field_0x0c  (evidence: 0x007F0B60)
+    // +0x4   DWORD                    field_0x04  (evidence: 0x005224E0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x007F0B60) // CONFLICT: multiple definitions at +0x4
+    // +0x8   DWORD                    field_0x08  (evidence: 0x005224E0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x007F0B60) // CONFLICT: multiple definitions at +0x8
+    // +0xC   std::string              field_0x0C  (evidence: 0x005224E0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint32_t                 field_0x0c  (evidence: 0x007F0B60) // CONFLICT: multiple definitions at +0xC
     // +0x10  uint32_t                 field_0x10  (evidence: 0x007F0B60)
     // +0x1C  uint32_t                 value  (evidence: 0x0041CDE0)
     // +0x20  uint32_t                 field_0x20  (evidence: 0x007C8850)

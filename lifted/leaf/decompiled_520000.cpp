@@ -396,3 +396,39 @@ uint8_t* fn_00522530(uint8_t* first, uint8_t* last, uint8_t* dst_end) {
     return dst;
 }
 } // namespace lift_00522530
+
+// [0x005224E0] sub_005224E0 (67 bytes)
+namespace lift_005224E0 {
+// Original MSVC thiscall slot: basic_string<char>::operator=(const basic_string&)
+// Stored as a plain function pointer; the first argument is `this`.
+extern void* (*mem_00924FDC)(void* self, const void* src);
+
+// @name copyStringRecordRange
+// @summary Copies a range of 0x28-byte records into dst, assigning each record's +0x0C string.
+// @field Entry +0x04 DWORD field_0x04
+// @field Entry +0x08 DWORD field_0x08
+// @field Entry +0x0C std::string field_0x0C
+//
+// Signature (stdcall-style args on stack): (const void* begin, const void* end, void* dst).
+// Returns dst + (end - begin) on success, or dst itself when begin == end.
+void* fn_005224E0(const void* begin, const void* end, void* dst) {
+    if (begin == end) {
+        return dst;
+    }
+
+    const uint8_t* src = static_cast<const uint8_t*>(begin);
+    uint8_t* out = static_cast<uint8_t*>(dst);
+    const uint8_t* srcEnd = static_cast<const uint8_t*>(end);
+
+    do {
+        lift_field<DWORD>(out, 0x04) = lift_field<DWORD>(src, 0x04);
+        lift_field<DWORD>(out, 0x08) = lift_field<DWORD>(src, 0x08);
+        mem_00924FDC(out + 0x0C, src + 0x0C);
+
+        src += 0x28;
+        out += 0x28;
+    } while (src != srcEnd);
+
+    return out;
+}
+} // namespace lift_005224E0

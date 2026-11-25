@@ -1,0 +1,33 @@
+{
+  "va": "0x005224E0",
+  "size": 67,
+  "orig_symbol": "sub_005224E0",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "copyStringRecordRange",
+  "signature": "void* fn_005224E0(const void* begin, const void* end, void* dst)",
+  "summary": "Copies a range of 0x28-byte records into dst, assigning each record's +0x0C string.",
+  "fields": [
+    {
+      "class": "Entry",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Entry",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Entry",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:14:19Z"
+}
