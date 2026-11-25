@@ -33345,6 +33345,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::HingeData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005EFF60": {
+    "name": "NMData::FixedPathJointData::vfunc_59",
+    "class": "NMData::FixedPathJointData",
+    "signature": "std::string* NMData_FixedPathJointData_vfunc_59(std::string* out)",
+    "summary": "Constructs the std::string result (sret) from the rdata literal at 0x0096B92C and returns the sret pointer; `this` is unused.",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005EFFA0": {
     "name": "NMData::FixedPathJointData::vfunc_1_off_C",
     "class": "NMData::FixedPathJointData",

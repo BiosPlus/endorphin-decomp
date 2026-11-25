@@ -234,3 +234,22 @@ void* fn_005E09B0(void* self) {
 }
 } // namespace lift_00609730
 } // namespace lift_005E09B0
+
+// [0x005EFF60]
+namespace lift_005EFF60 {
+// @name NMData::FixedPathJointData::vfunc_59
+// @class NMData::FixedPathJointData
+// @summary Constructs the std::string result (sret) from the rdata literal at 0x0096B92C and returns the sret pointer; `this` is unused.
+
+// Rdata string literal referenced by the function.
+extern const char mem_0096B92C[];
+
+std::string* NMData_FixedPathJointData_vfunc_59(std::string* out) {
+    // MSVCP80 import slot (0x00924FE4) holding std::basic_string<char> ctor thunk; the
+    // portable build constructs the string directly from the literal.
+    const auto* ctor_slot = reinterpret_cast<const uint32_t*>(0x00924FE4u);
+    (void)ctor_slot;
+    new (out) std::string(mem_0096B92C);
+    return out;
+}
+} // namespace lift_005EFF60

@@ -1,0 +1,14 @@
+{
+  "va": "0x005EFF60",
+  "size": 34,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_59",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_59",
+  "class": "NMData::FixedPathJointData",
+  "signature": "std::string* NMData_FixedPathJointData_vfunc_59(std::string* out)",
+  "summary": "Constructs the std::string result (sret) from the rdata literal at 0x0096B92C and returns the sret pointer; `this` is unused.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:47:54Z"
+}
