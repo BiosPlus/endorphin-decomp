@@ -1382,3 +1382,25 @@ uint32_t sub_0085C1C0(uint32_t arg0) {
     return esi;
 }
 } // namespace lift_0085C1C0
+
+// [0x0085A110]
+namespace lift_0085A110 {
+// @name ClampedDecrementCounter
+// @summary Decrements a 32-bit counter stored at *counter when it is strictly greater than n; sets it to -1 when it equals n; leaves it unchanged when it is below n or already -1.
+// @field none (no class context; the counter is a plain uint32_t* argument)
+
+void ClampedDecrementCounter(uint32_t n, uint32_t* counter) {
+    uint32_t v = *counter;
+    if (v == 0xFFFFFFFFu) {
+        return;
+    }
+    if (v < n) {
+        return;
+    }
+    if (v == n) {
+        *counter = 0xFFFFFFFFu;
+        return;
+    }
+    *counter = v - 1u;
+}
+} // namespace lift_0085A110

@@ -73127,6 +73127,12 @@
     "summary": "Allocates a 16-byte buffer/sync object and optionally allocates a zero-initialized buffer of size bytes.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085A110": {
+    "name": "ClampedDecrementCounter",
+    "signature": "void ClampedDecrementCounter(uint32_t n, uint32_t* counter)",
+    "summary": "Decrements a 32-bit counter stored at *counter when it is strictly greater than n; sets it to -1 when it equals n; leaves it unchanged when it is below n or already -1.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085A3E0": {
     "name": "AppendSentinelEntry",
     "class": "Unknown",
