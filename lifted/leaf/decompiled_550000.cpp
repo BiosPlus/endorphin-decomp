@@ -1226,3 +1226,17 @@ void fn_00558F20(void* first, void* last) {
     }
 }
 } // namespace lift_00558F20
+
+// [0x00553EA0]
+namespace lift_00553EA0 {
+extern void* ext_006A5C62(uint32_t size);
+
+// @name allocate_0x54_elements
+// @summary Allocates an array of 0x54-byte elements with overflow checking, throwing std::bad_alloc on overflow.
+void* fn_00553EA0(uint32_t count) {
+    if (count > 0 && (0xFFFFFFFFu / count) < 0x54u) {
+        throw std::bad_alloc();
+    }
+    return ext_006A5C62(count * 0x54u);
+}
+} // namespace lift_00553EA0
