@@ -16968,6 +16968,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x0050B060": {
+    "name": "Unknown::copyRecordRangeAndAdvance_0050B060",
+    "class": "Unknown",
+    "signature": "void* fn_0050B060(const void* first, const void* last, void* dest)",
+    "summary": "Copies the 0x24-byte records in [first, last) to dest and returns dest advanced past them.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050B960": {
     "name": "Unknown::DestroyElementsAndReset_0050B960",
     "class": "Unknown",
