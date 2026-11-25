@@ -743,3 +743,30 @@ int32_t Unknown_SetControlFont(void* self, uint32_t arg1, uint32_t arg2) {
     return 0;
 }
 } // namespace lift_00404770
+
+// [0x004077E0] sub_004077E0 (69 bytes)
+namespace lift_004077E0 {
+// MFC80 ordinal 2902: thiscall (ecx = textObj), one stack arg (out pointer), returns a count. Semantics not identified.
+extern uint32_t ext_MFC80_ord_2902(void* self, void* out);
+// MFC80 ordinal 876: thiscall (ecx = textObj), no stack args, returns the string pointer.
+extern LPCTSTR ext_MFC80_ord_876(void* self);
+// GDI32!GetTextExtentPoint32A: stdcall(hdc, lpString, cbString, lpSize).
+extern BOOL ext_GDI32_GetTextExtentPoint32A(HDC hdc, LPCTSTR str, int32_t count, SIZE* size);
+
+// @name Unknown::getTextExtent
+// @class Unknown
+// @summary Measures a text object with GDI and writes the resulting cx/cy pair to an output SIZE.
+// @field Unknown +0x08 HDC field_0x08
+void fn_004077E0(void* self, SIZE* outSize, void* textObj) {
+    SIZE measured{};
+
+    const uint32_t count = ext_MFC80_ord_2902(textObj, &measured);
+    LPCTSTR text = ext_MFC80_ord_876(textObj);
+
+    HDC hdc = lift_field<HDC>(self, 0x08);
+    ext_GDI32_GetTextExtentPoint32A(hdc, text, static_cast<int32_t>(count), &measured);
+
+    outSize->cx = measured.cx;
+    outSize->cy = measured.cy;
+}
+} // namespace lift_004077E0

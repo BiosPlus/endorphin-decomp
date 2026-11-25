@@ -1,0 +1,22 @@
+{
+  "va": "0x004077E0",
+  "size": 69,
+  "orig_symbol": "sub_004077E0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "Unknown::getTextExtent",
+  "class": "Unknown",
+  "signature": "void fn_004077E0(void* self, SIZE* outSize, void* textObj)",
+  "summary": "Measures a text object with GDI and writes the resulting cx/cy pair to an output SIZE.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "HDC",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:22:19Z"
+}

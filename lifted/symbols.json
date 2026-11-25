@@ -537,6 +537,13 @@
     "summary": "Returns the address of the global data slot mem_0092A1CC (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004077E0": {
+    "name": "Unknown::getTextExtent",
+    "class": "Unknown",
+    "signature": "void fn_004077E0(void* self, SIZE* outSize, void* textObj)",
+    "summary": "Measures a text object with GDI and writes the resulting cx/cy pair to an output SIZE.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00407830": {
     "name": "sub_00407830",
     "class": "unknown",
