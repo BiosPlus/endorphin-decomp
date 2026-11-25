@@ -602,3 +602,22 @@ uint32_t fn_004B4770() {
     return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE0D50));
 }
 } // namespace lift_004B4770
+
+// [0x004B47D0] sub_004B47D0 (87 bytes)
+namespace lift_004B47D0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00AE0D5C;
+extern int mem_00AE0D58;
+
+// @name initStaticObjectOnce_004B47D0
+// @summary One-time initializer for the static object at 0x00AE0D58 guarded by bit 0 of 0x00AE0D5C; returns the object's address.
+void* fn_004B47D0() {
+    if ((mem_00AE0D5C & 1) == 0) {
+        mem_00AE0D5C |= 1;
+        ext_0067A670(&mem_00AE0D58, 0);
+        mem_00AE0D58 = 0x0094236C;
+    }
+    return &mem_00AE0D58;
+}
+} // namespace lift_004B47D0
