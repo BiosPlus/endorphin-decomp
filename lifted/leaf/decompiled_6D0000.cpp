@@ -1095,3 +1095,33 @@ uint32_t fn_006D97C0(uint32_t key) {
     return kDefault;
 }
 } // namespace lift_006D97C0
+
+// [0x006DE720]
+namespace lift_006DE720 {
+extern uint32_t __fastcall ext_006DE3E0(void* self);
+
+// @name Unknown::FindItemByUInt32At98
+// @class Unknown
+// @summary Searches items via vtable+0x18 up to count at +0x20 for one whose ext_006DE3E0 value matches target.
+// @field Unknown +0x00 void** vtable
+// @field Unknown +0x20 int32_t count
+extern void* __fastcall fn_006DE720(void* self, uint32_t /*edx*/, uint32_t target) {
+    auto* base = reinterpret_cast<uint8_t*>(self);
+    int32_t count = *reinterpret_cast<int32_t*>(base + 0x20);
+    if (count <= 0) {
+        return nullptr;
+    }
+
+    using GetItemFn = void* (__fastcall*)(void*, uint32_t, int32_t);
+    for (int32_t i = 0; i < *reinterpret_cast<int32_t*>(base + 0x20); ++i) {
+        auto** vtable = *reinterpret_cast<void***>(base);
+        auto get_item = reinterpret_cast<GetItemFn>(vtable[0x18 / sizeof(void*)]);
+        void* item = get_item(self, 0, i);
+        if (ext_006DE3E0(item) == target) {
+            return item;
+        }
+    }
+
+    return nullptr;
+}
+} // namespace lift_006DE720

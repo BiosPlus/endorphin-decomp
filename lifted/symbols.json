@@ -47387,6 +47387,13 @@
     "summary": "Scans indices 0..count-1 via vtable slot 6 and returns the first index whose element equals target, or -1.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006DE720": {
+    "name": "Unknown::FindItemByUInt32At98",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __fastcall fn_006DE720(void* self, uint32_t /*edx*/, uint32_t target)",
+    "summary": "Searches items via vtable+0x18 up to count at +0x20 for one whose ext_006DE3E0 value matches target.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DECA0": {
     "name": "findNodeByKey",
     "signature": "void* fn_006DECA0(void* self, int32_t key)",

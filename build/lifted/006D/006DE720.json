@@ -1,0 +1,28 @@
+{
+  "va": "0x006DE720",
+  "size": 66,
+  "orig_symbol": "sub_006DE720",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::FindItemByUInt32At98",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* __fastcall fn_006DE720(void* self, uint32_t /*edx*/, uint32_t target)",
+  "summary": "Searches items via vtable+0x18 up to count at +0x20 for one whose ext_006DE3E0 value matches target.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "int32_t",
+      "name": "count"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:19:30Z"
+}
