@@ -388,3 +388,42 @@ void fn_0058A9A0(void* self, float value) {
     *reinterpret_cast<float*>(obj + 0x30) = value;
 }
 } // namespace lift_0058A9A0
+
+// [0x0058A9E0] sub_0058A9E0 (62 bytes)
+namespace lift_0058A9E0 {
+extern uint32_t mem_00A85D54;  // .data u32 = 1; gate flag (only low byte is tested)
+extern uint32_t mem_00B40640;  // global value passed as the single argument to sub+0x0c
+
+// @name Owner::ForwardFloatToSubobject
+// @class Owner
+// @summary Calls a gated getter on subobject, writes value into the returned object, then calls sub+0x0c with a global and writes value again.
+// @field Owner +0x04 void* subobject
+// @field SubObject +0x0c void* field_0x0c
+// @field SubObject +0x24 void* field_0x24
+// @field SubObject +0x2c void* field_0x2c
+// @field ReturnedObject +0x34 float field_0x34
+
+typedef void* (__thiscall* Fn0)(void* self);
+typedef void* (__thiscall* Fn1)(void* self, uint32_t arg);
+
+void __thiscall Owner_ForwardFloatToSubobject(void* self, float value) {
+    // cmp byte ptr [mem_00A85D54], 0
+    const bool flag = (mem_00A85D54 & 0xFFu) != 0;
+
+    // Callee "this" is the address of the subobject pointer slot (self+0x04).
+    void* slot = static_cast<void*>(&lift_field<void*>(self, 0x04));
+    void* sub = lift_field<void*>(self, 0x04);
+
+    // Gated call: flag set -> sub+0x2c, flag clear -> sub+0x24; no stack args.
+    const ptrdiff_t gateOff = flag ? 0x2c : 0x24;
+    Fn0 gated = reinterpret_cast<Fn0>(lift_field<void*>(sub, gateOff));
+    void* ret = gated(slot);
+    lift_field<float>(ret, 0x34) = value;
+
+    // Reload subobject pointer (original code re-reads [esi] after the call).
+    void* sub2 = lift_field<void*>(self, 0x04);
+    Fn1 fn = reinterpret_cast<Fn1>(lift_field<void*>(sub2, 0x0c));
+    void* ret2 = fn(slot, mem_00B40640);
+    lift_field<float>(ret2, 0x34) = value;
+}
+} // namespace lift_0058A9E0

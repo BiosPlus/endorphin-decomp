@@ -21008,6 +21008,13 @@
     "summary": "Calls one of two callbacks on the sub-object at +0x04, stores a float at its +0x30, calls its +0x0c callback with a global, then stores the float again.",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x0058A9E0": {
+    "name": "Owner::ForwardFloatToSubobject",
+    "class": "Owner",
+    "signature": "void __thiscall Owner_ForwardFloatToSubobject(void* self, float value)",
+    "summary": "Calls a gated getter on subobject, writes value into the returned object, then calls sub+0x0c with a global and writes value again.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x0058AB30": {
     "name": "QueryFloatViaMemberCallback",
     "signature": "float fn_0058AB30(void* self)",

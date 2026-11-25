@@ -1,0 +1,46 @@
+{
+  "va": "0x0058A9E0",
+  "size": 62,
+  "orig_symbol": "sub_0058A9E0",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "Owner::ForwardFloatToSubobject",
+  "class": "Owner",
+  "signature": "void __thiscall Owner_ForwardFloatToSubobject(void* self, float value)",
+  "summary": "Calls a gated getter on subobject, writes value into the returned object, then calls sub+0x0c with a global and writes value again.",
+  "fields": [
+    {
+      "class": "Owner",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "subobject"
+    },
+    {
+      "class": "SubObject",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "SubObject",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "field_0x24"
+    },
+    {
+      "class": "SubObject",
+      "offset": "+0x2C",
+      "type": "void*",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "ReturnedObject",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:00:02Z"
+}
