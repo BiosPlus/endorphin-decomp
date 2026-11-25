@@ -971,3 +971,27 @@ extern void fn_00413810(void* self) {
     std::wcout.rdbuf(wideBuf);
 }
 } // namespace lift_00413810
+
+// [0x004155A0] sub_004155A0 (60 bytes)
+namespace lift_004155A0 {
+// IAT slot holding KERNEL32!WideCharToMultiByte (loaded at runtime).
+extern uintptr_t mem_009241F8;
+
+using WideCharToMultiByteFn = int(__stdcall*)(UINT CodePage, DWORD dwFlags, LPCWSTR lpWideCharStr,
+                                              int cchWideChar, LPSTR lpMultiByteStr, int cbMultiByte,
+                                              LPCSTR lpDefaultChar, BOOL* lpUsedDefaultChar);
+
+// @name descriptiveName: wideStringToAnsiBuffer
+// @summary Converts a NUL-terminated wide string to the ANSI code page (CP_ACP) into dst, including the terminator; returns dst.
+char* fn_004155A0(LPCWSTR src, LPSTR dst) {
+    // Length in wide chars including the terminating NUL.
+    int count = 0;
+    while (src[count] != L'\0') {
+        ++count;
+    }
+    count += 1;
+
+    reinterpret_cast<WideCharToMultiByteFn>(mem_009241F8)(0, 0, src, count, dst, count, nullptr, nullptr);
+    return dst;
+}
+} // namespace lift_004155A0
