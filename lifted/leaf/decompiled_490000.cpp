@@ -731,3 +731,31 @@ void fn_00494940(void* self) {
     ext_0065C660(self);
 }
 } // namespace lift_00494940
+
+// [0x00494860]
+namespace lift_00494860 {
+extern int32_t ext_00494830(void* self);
+extern uint32_t ext_0041CCC0(void* self, int32_t index);
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FE4;
+
+// @name Unknown::getStringAt
+// @class Unknown
+// @summary Returns a copy of the string element at index if in bounds, or an empty string otherwise.
+// @field Unknown +0x08 uint8_t field_0x08
+void* __thiscall fn_00494860(void* self, void* out_str, int32_t index) {
+    if (index >= 0) {
+        int32_t max_index = ext_00494830(self) - 1;
+        if (index <= max_index) {
+            uint32_t elem_addr = ext_0041CCC0(reinterpret_cast<uint8_t*>(self) + 0x8, index);
+            using StringCopyCtor = void* (__thiscall*)(void*, uint32_t);
+            reinterpret_cast<StringCopyCtor>(static_cast<uintptr_t>(mem_00924FE0))(out_str, elem_addr);
+            return out_str;
+        }
+    }
+
+    using StringCstrCtor = void* (__thiscall*)(void*, uint32_t);
+    reinterpret_cast<StringCstrCtor>(static_cast<uintptr_t>(mem_00924FE4))(out_str, 0x00928B5Du);
+    return out_str;
+}
+} // namespace lift_00494860

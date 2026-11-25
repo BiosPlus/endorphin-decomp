@@ -9708,6 +9708,13 @@
     "summary": "Dynamic-cast self (RTTI src 0xA2E2F8 -\u003e dst 0xA346B0, no vfptr offset) and return the resulting pointer.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x00494860": {
+    "name": "Unknown::getStringAt",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_00494860(void* self, void* out_str, int32_t index)",
+    "summary": "Returns a copy of the string element at index if in bounds, or an empty string otherwise.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00494940": {
     "name": "Unknown::ReleaseOptionalSubobjectAndReset",
     "class": "Unknown",
