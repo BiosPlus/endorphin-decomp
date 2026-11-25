@@ -1,0 +1,22 @@
+{
+  "va": "0x0044B6B0",
+  "size": 70,
+  "orig_symbol": "sub_0044B6B0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::notifyChildAndForward",
+  "class": "Unknown",
+  "signature": "inline Fn lift_vslot(void* obj, ptrdiff_t off)",
+  "summary": "If the child at +0x64 exists, query it via vslot 0xC4; then call vslot 0x28 (arg 0 if query true, else arg 1 followed by vslot 0x2C with arg 1), and finally tail-call vslot 0x154 on the child.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "void*",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:23:07Z"
+}

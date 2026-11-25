@@ -1768,3 +1768,40 @@ void fn_00444750(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2) {
     }
 }
 } // namespace lift_00444750
+
+// [0x0044B6B0] sub_0044B6B0 (70 bytes)
+namespace lift_0044B6B0 {
+// Virtual-slot helper: reads the vtable pointer of `obj` and returns the
+// function stored at byte offset `off` within it (offsets are as in the 32-bit binary).
+template <typename Fn>
+inline Fn lift_vslot(void* obj, ptrdiff_t off) {
+    void* vt = *reinterpret_cast<void**>(obj);
+    return reinterpret_cast<Fn>(*reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vt) + off));
+}
+
+// @name Unknown::notifyChildAndForward
+// @class Unknown
+// @summary If the child at +0x64 exists, query it via vslot 0xC4; then call vslot 0x28 (arg 0 if query true, else arg 1 followed by vslot 0x2C with arg 1), and finally tail-call vslot 0x154 on the child.
+// @field Unknown +0x64 void* field_0x64
+void fn_0044B6B0(void* self) {
+    using QueryFn  = uint8_t (*)(void*);
+    using IntFn    = void (*)(void*, int);
+    using VoidFn   = void (*)(void*);
+
+    void* obj = lift_field<void*>(self, 0x64);
+    if (!obj) {
+        return;
+    }
+
+    uint8_t flag = lift_vslot<QueryFn>(obj, 0xC4)(obj);
+
+    if (flag != 0) {
+        lift_vslot<IntFn>(obj, 0x28)(obj, 0);
+    } else {
+        lift_vslot<IntFn>(obj, 0x28)(obj, 1);
+        lift_vslot<IntFn>(obj, 0x2C)(obj, 1);
+    }
+
+    lift_vslot<VoidFn>(obj, 0x154)(obj);
+}
+} // namespace lift_0044B6B0
