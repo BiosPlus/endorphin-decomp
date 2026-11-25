@@ -1,0 +1,34 @@
+{
+  "va": "0x00543470",
+  "size": 71,
+  "orig_symbol": "CameraTool::vfunc_32",
+  "src_path": "src/classes/CameraTool.cpp",
+  "lifted_path": "lifted/classes/CameraTool.cpp",
+  "name": "CameraTool::vfunc_32",
+  "class": "CameraTool",
+  "signature": "void fn_00543470(void* self)",
+  "summary": "Fetches a 64-byte block via two virtual calls, copies it into this+0x04, then duplicates it into this+0x44.",
+  "fields": [
+    {
+      "class": "CameraTool",
+      "offset": "+0x4",
+      "type": "uint8_t[64]",
+      "name": "field_0x04"
+    },
+    {
+      "class": "CameraTool",
+      "offset": "+0x44",
+      "type": "uint8_t[64]",
+      "name": "field_0x44"
+    },
+    {
+      "class": "CameraTool",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:27:42Z"
+}
