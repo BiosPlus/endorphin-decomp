@@ -56268,6 +56268,18 @@
     "summary": "Recursively searches child nodes for one whose indirect uint32 at +0x14/+0x98 matches the given ID.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006DEB50": {
+    "name": "sub_006DEB50",
+    "signature": "void __thiscall fn_006DEB50(uint32_t self, uint32_t new_obj)",
+    "summary": "Sets ref-counted object pointer at +0x3c, releasing the previous one if its refcount drops to \u003c= 0, and notifies via sub_006E5750(8).",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
+  "0x006DEC60": {
+    "name": "sub_006DEC60",
+    "signature": "extern \"C\" void __thiscall fn_006DEC60(void* self, uint32_t value, uint8_t release_old)",
+    "summary": "Sets field_0x40, optionally releasing the previous value, and notifies field_0x44 with flag 0x10.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DECA0": {
     "name": "findNodeByKey",
     "signature": "void* fn_006DECA0(void* self, int32_t key)",
@@ -70617,6 +70629,12 @@
     "name": "ReturnSelfOrChainedPtrIfCheckPasses",
     "signature": "extern \"C\" void* __cdecl fn_0086CCC0(void* self)",
     "summary": "Calls ext_0086CCE0(self); if it returns 1, returns the pointer stored at self+0x04, otherwise returns self.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
+  "0x0086CDB0": {
+    "name": "ensureWritableBufferCopy",
+    "signature": "uint32_t fn_0086CDB0(uint32_t bufPtr)",
+    "summary": "Reallocates and copies a copy-on-write buffer if flag 0x2 is set, returning 0 on success or 0xC on allocation failure.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
   "0x0086CF90": {

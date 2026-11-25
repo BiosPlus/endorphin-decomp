@@ -1772,3 +1772,62 @@ void* fn_006D7880(void* self, uint32_t arg1) {
     return self;
 }
 } // namespace lift_006D7880
+
+// [0x006DEB50]
+namespace lift_006DEB50 {
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t val);
+extern void ext_006DE130(uint32_t self, int32_t unused_stack_arg);
+extern void ext_006E5750(uint32_t self, uint32_t flags);
+
+// @name sub_006DEB50
+// @summary Sets ref-counted object pointer at +0x3c, releasing the previous one if its refcount drops to <= 0, and notifies via sub_006E5750(8).
+// @field Unknown +0x3c uint32_t field_0x3c
+void __thiscall fn_006DEB50(uint32_t self, uint32_t new_obj) {
+    uint32_t old_obj = mem_read32(self + 0x3c);
+    if (old_obj == new_obj) {
+        return;
+    }
+
+    if (old_obj != 0) {
+        int32_t refcount = static_cast<int32_t>(mem_read32(old_obj + 0x1c)) - 1;
+        mem_write32(old_obj + 0x1c, static_cast<uint32_t>(refcount));
+        if (refcount <= 0) {
+            ext_006DE130(mem_read32(self + 0x3c), 0);
+        }
+    }
+
+    mem_write32(self + 0x3c, new_obj);
+    if (new_obj != 0) {
+        uint32_t refcount = mem_read32(new_obj + 0x1c) + 1;
+        mem_write32(new_obj + 0x1c, refcount);
+    }
+
+    ext_006E5750(self, 8);
+}
+} // namespace lift_006DEB50
+
+// [0x006DEC60]
+namespace lift_006DEC60 {
+// @name sub_006DEC60
+// @summary Sets field_0x40, optionally releasing the previous value, and notifies field_0x44 with flag 0x10.
+// @field Unknown +0x40 uint32_t field_0x40
+
+
+extern void __thiscall ext_006DE130(void* self, int32_t unused_stack_arg);
+extern int32_t __fastcall ext_006DECD0(void* self);
+extern void __thiscall ext_006E5750(uint32_t self, uint32_t flags);
+
+extern void __thiscall fn_006DEC60(void* self, uint32_t value, uint8_t release_old) {
+    uint32_t old_value = *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x40);
+    if (old_value == value) {
+        return;
+    }
+    if (old_value != 0 && release_old != 0) {
+        ext_006DE130(reinterpret_cast<void*>(static_cast<uintptr_t>(old_value)), 0);
+    }
+    *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x40) = value;
+    int32_t target = ext_006DECD0(self);
+    ext_006E5750(static_cast<uint32_t>(target), 0x10);
+}
+} // namespace lift_006DEC60

@@ -641,7 +641,7 @@ struct Unknown_Fields {
     // +0x3C  void*                    field_0x3C  (evidence: 0x006ACEE0) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  float                    field_0x3c  (evidence: 0x00629850, 0x0063D970, 0x0063DDF0, 0x0063DE10, 0x0063E050) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  std::uint32_t            field_0x3c  (evidence: 0x007BEDE0) // CONFLICT: multiple definitions at +0x3C
-    // +0x3C  uint32_t                 field_0x3c  (evidence: 0x004AFE50, 0x005B51E0, 0x006AD290) // CONFLICT: multiple definitions at +0x3C
+    // +0x3C  uint32_t                 field_0x3c  (evidence: 0x004AFE50, 0x005B51E0, 0x006AD290, 0x006DEB50) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  float                    m33  (evidence: 0x00480010, 0x004890D0) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  std::string              text2  (evidence: 0x004030F0, 0x00404E40, 0x00406030) // CONFLICT: multiple definitions at +0x3C
     // +0x40  DWORD                    field_0x40  (evidence: 0x00518030, 0x0051C5A0, 0x00540F60, 0x007C8490, 0x007C9930) // CONFLICT: multiple definitions at +0x40
@@ -650,7 +650,7 @@ struct Unknown_Fields {
     // +0x40  float*                   field_0x40  (evidence: 0x00802D40) // CONFLICT: multiple definitions at +0x40
     // +0x40  float[4]                 field_0x40  (evidence: 0x007C9D80) // CONFLICT: multiple definitions at +0x40
     // +0x40  uint16_t                 field_0x40  (evidence: 0x007AF200) // CONFLICT: multiple definitions at +0x40
-    // +0x40  uint32_t                 field_0x40  (evidence: 0x004AFE50, 0x00518080, 0x005B51E0, 0x0063E050, 0x0063F960, 0x00673C90) // CONFLICT: multiple definitions at +0x40
+    // +0x40  uint32_t                 field_0x40  (evidence: 0x004AFE50, 0x00518080, 0x005B51E0, 0x0063E050, 0x0063F960, 0x00673C90, 0x006DEC60) // CONFLICT: multiple definitions at +0x40
     // +0x40  uint8_t                  field_0x40  (evidence: 0x006AD290) // CONFLICT: multiple definitions at +0x40
     // +0x40  void*                    field_0x40  (evidence: 0x007D8890) // CONFLICT: multiple definitions at +0x40
     // +0x40  double                   field_40  (evidence: 0x00620F80) // CONFLICT: multiple definitions at +0x40
