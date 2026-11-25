@@ -67944,6 +67944,13 @@
     "summary": "Zeroes the two dwords at the second stack argument and returns that pointer (cdecl, no class).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C8C90": {
+    "name": "SlotTable::nextValidSlot",
+    "class": "SlotTable",
+    "signature": "int32_t sub_007C8C90(void* self, int32_t* cursor, int32_t* out)",
+    "summary": "Scans from *cursor for the next entry whose key equals its index; outputs that entry's value, advances cursor past it, returns 1; returns 0 and writes 0 when exhausted.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C8D70": {
     "name": "thunk_MSVCR80_malloc",
     "signature": "extern \"C\" void fn_007C8D70(void)",

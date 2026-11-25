@@ -1,0 +1,40 @@
+{
+  "va": "0x007C8C90",
+  "size": 106,
+  "orig_symbol": "sub_007C8C90",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "SlotTable::nextValidSlot",
+  "class": "SlotTable",
+  "signature": "int32_t sub_007C8C90(void* self, int32_t* cursor, int32_t* out)",
+  "summary": "Scans from *cursor for the next entry whose key equals its index; outputs that entry's value, advances cursor past it, returns 1; returns 0 and writes 0 when exhausted.",
+  "fields": [
+    {
+      "class": "SlotTable",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "SlotTable",
+      "offset": "+0x10",
+      "type": "uint8_t*",
+      "name": "entries"
+    },
+    {
+      "class": "SlotEntry",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "key"
+    },
+    {
+      "class": "SlotEntry",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "value"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:54:05Z"
+}

@@ -1599,3 +1599,41 @@ void __cdecl sub_007C16F0(uint32_t* statePtr, const uint8_t* data, uint32_t leng
     *statePtr = state;
 }
 } // namespace lift_007C16F0
+
+// [0x007C8C90]
+namespace lift_007C8C90 {
+// @name SlotTable::nextValidSlot
+// @class SlotTable
+// @summary Scans from *cursor for the next entry whose key equals its index; outputs that entry's value, advances cursor past it, returns 1; returns 0 and writes 0 when exhausted.
+// @field SlotTable +0x0C int32_t count
+// @field SlotTable +0x10 uint8_t* entries
+// @field SlotEntry +0x08 int32_t key
+// @field SlotEntry +0x0C int32_t value
+
+int32_t sub_007C8C90(void* self, int32_t* cursor, int32_t* out) {
+    const int32_t count = lift_field<int32_t>(self, 0x0C);
+    uint8_t* entries = lift_field<uint8_t*>(self, 0x10);
+
+    if (*cursor < count) {
+        int32_t i = *cursor;
+        do {
+            if (i >= 0 && i < count) {
+                if (lift_field<int32_t>(entries, static_cast<ptrdiff_t>(i) * 0x9C + 0x08) == i) {
+                    break;
+                }
+            }
+            ++i;
+            *cursor = i;
+        } while (i < count);
+    }
+
+    if (*cursor != count) {
+        *out = lift_field<int32_t>(entries, static_cast<ptrdiff_t>(*cursor) * 0x9C + 0x0C);
+        *cursor += 1;
+        return 1;
+    }
+
+    *out = 0;
+    return 0;
+}
+} // namespace lift_007C8C90
