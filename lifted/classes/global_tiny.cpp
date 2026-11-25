@@ -6574,3 +6574,45 @@ void* fn_006B0480(void* self) {
     return lift_field<void*>(vtbl, 0x28);
 }
 } // namespace lift_006B0480
+
+// [0x00402060] AnimatableTransform::vfunc_38 (10 bytes)
+namespace lift_00402060 {
+// @name AnimatableTransform::vfunc_38
+// @class AnimatableTransform
+// @summary Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).
+// @field AnimatableTransform +0x0 void* vtable
+namespace lift_006B0480 {
+// @name GWCCategoryWithButtonsItem::vfunc_11
+// @class GWCCategoryWithButtonsItem
+// @summary Tail-dispatch thunk: loads this->vtable[+0x28] and returns that slot's code address (asm jmp target).
+// @field GWCCategoryWithButtonsItem +0x00 void* vtable
+void* fn_00402060(void* self) {
+    // mov eax, [ecx]        ; eax = this->vtable
+    void* vtbl = lift_field<void*>(self, 0x00);
+    // mov eax, [eax+0x28]   ; eax = vtable[10]
+    // jmp eax               ; tail-jump to slot target (caller receives the target address)
+    return lift_field<void*>(vtbl, 0x90);
+}
+} // namespace lift_006B0480
+} // namespace lift_00402060
+
+// [0x00646220] NullRelationship::vfunc_52 (10 bytes)
+namespace lift_00646220 {
+// @name NullRelationship::vfunc_52
+// @class NullRelationship
+// @summary Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).
+// @field NullRelationship +0x0 void* vtable
+namespace lift_006B0480 {
+// @name GWCCategoryWithButtonsItem::vfunc_11
+// @class GWCCategoryWithButtonsItem
+// @summary Tail-dispatch thunk: loads this->vtable[+0x28] and returns that slot's code address (asm jmp target).
+// @field GWCCategoryWithButtonsItem +0x00 void* vtable
+void* fn_00646220(void* self) {
+    // mov eax, [ecx]        ; eax = this->vtable
+    void* vtbl = lift_field<void*>(self, 0x00);
+    // mov eax, [eax+0x28]   ; eax = vtable[10]
+    // jmp eax               ; tail-jump to slot target (caller receives the target address)
+    return lift_field<void*>(vtbl, 0xC0);
+}
+} // namespace lift_006B0480
+} // namespace lift_00646220

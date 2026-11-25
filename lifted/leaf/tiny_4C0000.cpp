@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 extern "C" uintptr_t mem_00924FDC;
 #include <cstdint>
+#include <cstring>
 
 // [0x004C0EA0] sub_004C0EA0 (8 bytes)
 // @name sub_004C0EA0
@@ -183,3 +184,41 @@ void __thiscall fn_004CA570(void* self, DWORD value) {
     }
 }
 } // namespace lift_004CA570
+
+// [0x004C4DC0] sub_004C4DC0 (10 bytes)
+namespace lift_004C4DC0 {
+// @name sub_004C4DC0
+// @summary Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).
+namespace lift_006B0480 {
+// @name GWCCategoryWithButtonsItem::vfunc_11
+// @class GWCCategoryWithButtonsItem
+// @summary Tail-dispatch thunk: loads this->vtable[+0x28] and returns that slot's code address (asm jmp target).
+// @field GWCCategoryWithButtonsItem +0x00 void* vtable
+void* fn_004C4DC0(void* self) {
+    // mov eax, [ecx]        ; eax = this->vtable
+    void* vtbl = lift_field<void*>(self, 0x00);
+    // mov eax, [eax+0x28]   ; eax = vtable[10]
+    // jmp eax               ; tail-jump to slot target (caller receives the target address)
+    return lift_field<void*>(vtbl, 0x114);
+}
+} // namespace lift_006B0480
+} // namespace lift_004C4DC0
+
+// [0x004CA300] sub_004CA300 (10 bytes)
+namespace lift_004CA300 {
+// @name sub_004CA300
+// @summary Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).
+namespace lift_006B0480 {
+// @name GWCCategoryWithButtonsItem::vfunc_11
+// @class GWCCategoryWithButtonsItem
+// @summary Tail-dispatch thunk: loads this->vtable[+0x28] and returns that slot's code address (asm jmp target).
+// @field GWCCategoryWithButtonsItem +0x00 void* vtable
+void* fn_004CA300(void* self) {
+    // mov eax, [ecx]        ; eax = this->vtable
+    void* vtbl = lift_field<void*>(self, 0x00);
+    // mov eax, [eax+0x28]   ; eax = vtable[10]
+    // jmp eax               ; tail-jump to slot target (caller receives the target address)
+    return lift_field<void*>(vtbl, 0x140);
+}
+} // namespace lift_006B0480
+} // namespace lift_004CA300

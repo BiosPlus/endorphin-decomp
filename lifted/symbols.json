@@ -235,6 +235,13 @@
     "summary": "Pure jump thunk forwarding to sub_00586140.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00402060": {
+    "name": "AnimatableTransform::vfunc_38",
+    "class": "AnimatableTransform",
+    "signature": "void* fn_00402060(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00402070": {
     "name": "AnimatableTransform::vfunc_39",
     "class": "AnimatableTransform",
@@ -13150,6 +13157,13 @@
     "summary": "Writes this vector (ecx) multiplied by a scalar into the output vector (first stack arg); callee pops 8 bytes.",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
+  "0x004C4DC0": {
+    "name": "sub_004C4DC0",
+    "class": "GWCCategoryWithButtonsItem",
+    "signature": "void* fn_004C4DC0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).",
+    "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
+  },
   "0x004C4DD0": {
     "name": "NMData::ForceEventData::vfunc_59",
     "class": "NMData::ForceEventData",
@@ -13498,6 +13512,13 @@
     "signature": "extern \"C\" void __thiscall fn_004CA1C0(void* self)",
     "summary": "Updates field_0x19c, frees the previous object if changed, and initializes the new one.",
     "lifted_path": "lifted/NMData/SeverEventData.cpp"
+  },
+  "0x004CA300": {
+    "name": "sub_004CA300",
+    "class": "GWCCategoryWithButtonsItem",
+    "signature": "void* fn_004CA300(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).",
+    "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
   },
   "0x004CA310": {
     "name": "NMData::MetaBodyConstraintData::vfunc_14",
@@ -40346,6 +40367,13 @@
     "signature": "extern \"C\" void* __fastcall fn_00646190(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00659E10 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
+  "0x00646220": {
+    "name": "NullRelationship::vfunc_52",
+    "class": "NullRelationship",
+    "signature": "void* fn_00646220(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x00646230": {
     "name": "NullRelationship::vfunc_0_off_8",
