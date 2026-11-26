@@ -50784,6 +50784,13 @@
     "summary": "Find index of first character not in the given C-string starting at startIndex, or -1 if none.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x00698900": {
+    "name": "String::findTokenEnd",
+    "class": "String",
+    "signature": "int32_t __thiscall fn_00698900(void* self, int32_t* pos, const char* delimiters)",
+    "summary": "Finds the end index of the next token starting at *pos using delimiters and advances *pos to the next token start.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x006989B0": {
     "name": "copyBytesRangeToOptionalDst_006989B0",
     "signature": "void copyBytesRangeToOptionalDst_006989B0(const uint8_t* begin, const uint8_t* end, uint8_t* dst)",

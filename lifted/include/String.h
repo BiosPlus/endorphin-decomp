@@ -10,6 +10,6 @@ namespace lifted_layout {
 struct String_Fields {
     // +0x0   const char*              data  (evidence: 0x006988A0, 0x006BA320, 0x006BA660, 0x006BA780) // CONFLICT: multiple definitions at +0x0
     // +0x0   const char*              m_data  (evidence: 0x006BA780) // CONFLICT: multiple definitions at +0x0
-    // +0x4   int32_t                  length  (evidence: 0x006988A0)
+    // +0x4   int32_t                  length  (evidence: 0x006988A0, 0x00698900)
 };
 } // namespace lifted_layout

@@ -1424,3 +1424,28 @@ extern void* __cdecl fn_006996C0(void* obj) {
     return ext_006A6E9E(res, 0, reinterpret_cast<void*>(0x00A2E2F8), reinterpret_cast<void*>(0x00AA3D80), 0);
 }
 } // namespace lift_006996C0
+
+// [0x00698900]
+namespace lift_00698900 {
+// @name String::findTokenEnd
+// @class String
+// @summary Finds the end index of the next token starting at *pos using delimiters and advances *pos to the next token start.
+// @field String +0x04 int32_t length
+
+
+int32_t __thiscall fn_00698840(void* self, const char* set, int32_t start);
+int32_t __thiscall fn_006988A0(void* self, const char* chars, int32_t startIndex);
+
+int32_t __thiscall fn_00698900(void* self, int32_t* pos, const char* delimiters) {
+    int32_t endIdx;
+    int32_t delimIdx = fn_00698840(self, delimiters, *pos);
+    if (delimIdx == -1) {
+        *pos = -1;
+        endIdx = lift_field<int32_t>(self, 0x04) - 1;
+    } else {
+        endIdx = delimIdx - 1;
+        *pos = fn_006988A0(self, delimiters, delimIdx);
+    }
+    return (endIdx >= 0) ? endIdx : 0;
+}
+} // namespace lift_00698900
