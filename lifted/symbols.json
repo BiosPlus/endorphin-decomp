@@ -48825,6 +48825,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00494940 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006821D0": {
+    "name": "Vector28::at_unchecked_or_invalid",
+    "class": "Vector28",
+    "signature": "uint32_t __thiscall sub_006821D0(void* self, uint32_t index)",
+    "summary": "Bounds-checked element access (28-byte elements) calling _invalid_parameter_noinfo on out-of-range",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00682280": {
     "name": "ShuffleStringRange_00682280",
     "signature": "void fn_00682280(void* begin, void* end, void* gen)",

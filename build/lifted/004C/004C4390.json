@@ -1,0 +1,21 @@
+{
+  "va": "0x004C4390",
+  "size": 70,
+  "orig_symbol": "sub_004C4390",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "sub_004C4390",
+  "signature": "void* sub_004C4390(void* self)",
+  "summary": "Constructor that initializes a std::string base, zeroes byte at +0x1c, and clears the string.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x1C",
+      "type": "uint8_t",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:18:06Z"
+}

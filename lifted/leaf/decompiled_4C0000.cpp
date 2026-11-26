@@ -811,3 +811,22 @@ void fn_004CFFE0(std::string* out, void* unused) {
 } // namespace lift_006227B0
 } // namespace lift_00622380
 } // namespace lift_004CFFE0
+
+// [0x004C4390]
+namespace lift_004C4390 {
+// @name sub_004C4390
+// @summary Constructor that initializes a std::string base, zeroes byte at +0x1c, and clears the string.
+// @field Self +0x1c uint8_t field_0x1c
+
+
+extern void* mem_00924FE8;
+extern void* mem_00924EA8;
+
+void* sub_004C4390(void* self) {
+    using ThiscallVoidFn = void (*)(void*);
+    ((ThiscallVoidFn)mem_00924FE8)(self);
+    lift_field<uint8_t>(self, 0x1c) = 0;
+    ((ThiscallVoidFn)mem_00924EA8)(self);
+    return self;
+}
+} // namespace lift_004C4390
