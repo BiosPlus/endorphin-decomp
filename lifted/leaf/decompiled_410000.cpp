@@ -2190,3 +2190,31 @@ void* __thiscall sub_0041CCC0(void* self, uint32_t index) {
     return first + index * 28;
 }
 } // namespace lift_0041CCC0
+
+// [0x0041CD10]
+namespace lift_0041CD10 {
+// @name Vector56::at
+// @class Vector56
+// @summary Bounds-checked element access for a 56-byte-stride vector
+// @field Vector56 +0x04 uint32_t begin
+// @field Vector56 +0x08 uint32_t end
+
+
+extern void (*mem_00925134)();
+
+void* __thiscall sub_0041CD10(void* self, uint32_t index) {
+    uint32_t begin = lift_field<uint32_t>(self, 0x04);
+    if (begin == 0) {
+        mem_00925134();
+    } else {
+        uint32_t end = lift_field<uint32_t>(self, 0x08);
+        int32_t byte_len = static_cast<int32_t>(end - begin);
+        uint32_t count = static_cast<uint32_t>(byte_len / 56);
+        if (index >= count) {
+            mem_00925134();
+        }
+    }
+    uint8_t* base = lift_field<uint8_t*>(self, 0x04);
+    return base + index * 56u;
+}
+} // namespace lift_0041CD10
