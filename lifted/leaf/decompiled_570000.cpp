@@ -1655,3 +1655,39 @@ bool __stdcall fn_00575C80(void* stream) {
     return !isVHash;
 }
 } // namespace lift_00575C80
+
+// [0x005726C0] sub_005726C0 (82 bytes)
+namespace lift_005726C0 {
+// @name sub_005726C0
+// @summary Auto-lifted identical-shape clone of 0x006998D0 (Unknown::copyStringAndRecord).
+namespace lift_006998D0 {
+// Known callee 0x00699870: Unknown::copyRecordWithOptionalResolve (Copies a 16-byte record from src into self; when src+0xC is non-null, calls vtable slot 0x70 on it to fetch the +0x8 value, otherwise +0x8 is zeroed. Returns self.)
+extern void ext_00572590();
+// .rdata IAT slot for MSVCP80 basic_string copy-ctor (0x00924FE0). The portable
+// lift performs that copy with std::string directly; this declaration only records
+// the original dependency and is intentionally never dereferenced.
+extern int mem_00924FE0;
+
+// @name Unknown::copyStringAndRecord
+// @class Unknown
+// @summary Copy-constructs the leading std::string from src, then copies the 16-byte record at +0x1C via ext_00699870; returns self.
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1C void* field_0x1C
+void* fn_005726C0(void* self, const void* src) {
+    // Original called the MSVCP80 copy-ctor through mem_00924FE0; reference it without dereferencing.
+    (void)&mem_00924FE0;
+
+    // Copy-construct the std::string at offset 0 from the source string at offset 0.
+    new (self) std::string(*static_cast<const std::string*>(src));
+
+    // Copy the 16-byte record at +0x1C from src into self.
+    using RecordCopyFn = void* (*)(void* self, int edx_unused, const void* src);
+    auto copyRecord = reinterpret_cast<RecordCopyFn>(ext_00572590);
+    copyRecord(static_cast<uint8_t*>(self) + 0x1C,
+               0,
+               static_cast<const uint8_t*>(src) + 0x1C);
+
+    return self;
+}
+} // namespace lift_006998D0
+} // namespace lift_005726C0

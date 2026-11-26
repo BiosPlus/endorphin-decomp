@@ -26251,6 +26251,13 @@
     "summary": "Releases the pointer at +0x20 via MFC80 ord_764 when non-null, zeroes the +0x20..+0x28 dword fields, then destroys the object at offset 0 through the basic_string destructor slot.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x005726C0": {
+    "name": "sub_005726C0",
+    "class": "Unknown",
+    "signature": "void* fn_005726C0(void* self, const void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x006998D0 (Unknown::copyStringAndRecord).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x005731A0": {
     "name": "OBJIO::vfunc_3",
     "class": "OBJIO",

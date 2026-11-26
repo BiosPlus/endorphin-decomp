@@ -1,0 +1,28 @@
+{
+  "va": "0x005726C0",
+  "size": 82,
+  "orig_symbol": "sub_005726C0",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "sub_005726C0",
+  "class": "Unknown",
+  "signature": "void* fn_005726C0(void* self, const void* src)",
+  "summary": "Auto-lifted identical-shape clone of 0x006998D0 (Unknown::copyStringAndRecord).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-26T11:48:26Z"
+}
