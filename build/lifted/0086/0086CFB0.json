@@ -1,0 +1,45 @@
+{
+  "va": "0x0086CFB0",
+  "size": 64,
+  "orig_symbol": "sub_0086CFB0",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "AllocFlaggedRecord",
+  "signature": "uint32_t AllocFlaggedRecord(uint32_t arg)",
+  "summary": "Allocates a 16-byte record, tags it (0xFE, 1), zeroes two dwords, and sets +0xC to 1 if the argument is 0 else 0; returns the pointer or 0 on allocation failure.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint8_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1",
+      "type": "uint8_t",
+      "name": "field_0x01"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:06:37Z"
+}

@@ -1094,3 +1094,30 @@ void sub_0086B1C0(uint32_t* p)
     }
 }
 } // namespace lift_0086B1C0
+
+// [0x0086CFB0]
+namespace lift_0086CFB0 {
+extern uint32_t ext_008596E0(uint32_t size);
+
+// @name AllocFlaggedRecord
+// @summary Allocates a 16-byte record, tags it (0xFE, 1), zeroes two dwords, and sets +0xC to 1 if the argument is 0 else 0; returns the pointer or 0 on allocation failure.
+// @field Unknown +0x00 uint8_t field_0x00
+// @field Unknown +0x01 uint8_t field_0x01
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0c
+uint32_t AllocFlaggedRecord(uint32_t arg) {
+    uint32_t eax = ext_008596E0(0x10);
+    if (eax == 0) {
+        return 0;
+    }
+
+    uint8_t* base = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(eax));
+    *reinterpret_cast<uint8_t*>(base + 0x00) = 0xFE;
+    *reinterpret_cast<uint8_t*>(base + 0x01) = 1;
+    *reinterpret_cast<uint32_t*>(base + 0x04) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x08) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x0C) = (arg == 0) ? 1u : 0u;
+    return eax;
+}
+} // namespace lift_0086CFB0

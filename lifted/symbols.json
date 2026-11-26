@@ -73798,6 +73798,12 @@
     "summary": "Allocates a zero-initialised block of count*size bytes via LocalAlloc(LMEM_ZEROINIT, count*size).",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086CFB0": {
+    "name": "AllocFlaggedRecord",
+    "signature": "uint32_t AllocFlaggedRecord(uint32_t arg)",
+    "summary": "Allocates a 16-byte record, tags it (0xFE, 1), zeroes two dwords, and sets +0xC to 1 if the argument is 0 else 0; returns the pointer or 0 on allocation failure.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086D0A0": {
     "name": "memStreamRead",
     "signature": "uint32_t fn_0086D0A0(void* dst, uint32_t elemSize, uint32_t count, void* stream)",
