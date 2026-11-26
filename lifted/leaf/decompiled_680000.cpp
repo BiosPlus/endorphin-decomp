@@ -2069,3 +2069,73 @@ void fn_00688B50(void* self) {
     lift_field<uint32_t>(base, 0x0C) = 0;
 }
 } // namespace lift_00688B50
+
+// [0x006873D0]
+namespace lift_006873D0 {
+// @name copyBackwardElem0x2C
+// @summary Copies a range of 0x2C-byte elements backward, copying 4 dwords and assigning std::string at +0x10.
+// @field Elem0x2C +0x00 uint32_t field_0x00
+// @field Elem0x2C +0x04 uint32_t field_0x04
+// @field Elem0x2C +0x08 uint32_t field_0x08
+// @field Elem0x2C +0x0C uint32_t field_0x0C
+// @field Elem0x2C +0x10 std::string field_0x10
+
+
+using std_string_assign_fn = void* (__thiscall*)(void* self, const void* rhs);
+extern uint32_t mem_00924FDC; // MSVCP80 std::string::operator=
+
+void* __cdecl sub_006873D0(void* first, void* last, void* dest) {
+    auto* src = static_cast<uint8_t*>(last);
+    auto* dst = static_cast<uint8_t*>(dest);
+    const auto* stop = static_cast<const uint8_t*>(first);
+    auto assign_str = reinterpret_cast<std_string_assign_fn>(static_cast<uintptr_t>(mem_00924FDC));
+
+    while (src != stop) {
+        src -= 0x2C;
+        dst -= 0x2C;
+        lift_field<uint32_t>(dst, 0x00) = lift_field<uint32_t>(src, 0x00);
+        lift_field<uint32_t>(dst, 0x04) = lift_field<uint32_t>(src, 0x04);
+        lift_field<uint32_t>(dst, 0x08) = lift_field<uint32_t>(src, 0x08);
+        lift_field<uint32_t>(dst, 0x0C) = lift_field<uint32_t>(src, 0x0C);
+        assign_str(dst + 0x10, src + 0x10);
+    }
+    return dst;
+}
+} // namespace lift_006873D0
+
+// [0x00687330] sub_00687330 (77 bytes)
+namespace lift_00687330 {
+// std::string::operator=(const std::string&) via IAT slot 0x924FDC (MSVCP80, thiscall)
+extern void* (__thiscall* mem_00924FDC)(void* self, const void* rhs);
+
+namespace lift_00687330 {
+
+// @name CopyRangeStringRecords
+// @summary Copy-assigns 0x2C-byte records (three u32 fields plus one std::string at +0x10) forward from [first,last) into dst; returns the end of the written destination range.
+// @field StringRecord +0x00 uint32_t field_0x00
+// @field StringRecord +0x04 uint32_t field_0x04
+// @field StringRecord +0x08 uint32_t field_0x08
+// @field StringRecord +0x0C uint32_t field_0x0C
+// @field StringRecord +0x10 std::string field_0x10
+void* fn_00687330(const void* first, const void* last, void* dst) {
+    if (first == last) {
+        return dst;
+    }
+
+    auto* src = static_cast<uint8_t*>(const_cast<void*>(first));
+    auto* end = static_cast<uint8_t*>(const_cast<void*>(last));
+    auto* out = static_cast<uint8_t*>(dst);
+    do {
+        *reinterpret_cast<uint32_t*>(out + 0x00) = *reinterpret_cast<uint32_t*>(src + 0x00);
+        *reinterpret_cast<uint32_t*>(out + 0x04) = *reinterpret_cast<uint32_t*>(src + 0x04);
+        *reinterpret_cast<uint32_t*>(out + 0x08) = *reinterpret_cast<uint32_t*>(src + 0x08);
+        *reinterpret_cast<uint32_t*>(out + 0x0C) = *reinterpret_cast<uint32_t*>(src + 0x0C);
+        mem_00924FDC(out + 0x10, src + 0x10);
+        src += 0x2C;
+        out += 0x2C;
+    } while (src != end);
+
+    return out;
+}
+} // namespace lift_00687330
+} // namespace lift_00687330
