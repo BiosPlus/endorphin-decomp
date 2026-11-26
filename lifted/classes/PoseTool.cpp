@@ -281,3 +281,27 @@ void fn_005454D0(void* self, uint32_t arg) {
     vcall0(self, 0x80 / 4);
 }
 } // namespace lift_005454D0
+
+// [0x005451B0] PoseTool::vfunc_26 (48 bytes)
+namespace lift_005451B0 {
+// @name PoseTool::vfunc_26
+// @class PoseTool
+// @summary Calls vtable slots +0xA4 and +0xA8 on the object at this+0x88, then tail-dispatches vtable slot +0x80 on this.
+// @field PoseTool +0x00 void* vtable
+// @field PoseTool +0x88 void* field_0x88
+void fn_005451B0(void* self) {
+    // Thiscall-style virtual invocation: first argument is the object (ecx on x86).
+    using ThisFn = uint32_t (__thiscall*)(void*);
+    auto vcall = [](void* obj, ptrdiff_t slot) -> uint32_t {
+        void* vt = lift_field<void*>(obj, 0);
+        ThisFn fn = reinterpret_cast<ThisFn>(lift_field<void*>(vt, slot));
+        return fn(obj);
+    };
+
+    vcall(lift_field<void*>(self, 0x88), 0xA4);
+    vcall(lift_field<void*>(self, 0x88), 0xA8);
+    // Original ends in a tail jmp to slot +0x80; the callee's return value is discarded
+    // because the wip signature is void.
+    vcall(self, 0x80);
+}
+} // namespace lift_005451B0
