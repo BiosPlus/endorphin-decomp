@@ -63760,6 +63760,13 @@
     "summary": "If flag 0x2 set and child accepts arg, invokes own vfunc 0x40 dispatch; returns success",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006FACA0": {
+    "name": "ChainWalk_InvokeTail",
+    "class": "Unknown",
+    "signature": "uint32_t __stdcall fn_006FACA0(void* node, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7)",
+    "summary": "Walks a singly linked node chain recursively to the tail, then invokes virtual slot 15 on each node's object on unwind, returning the head node's result (0 for a null node).",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FAD90": {
     "name": "NodeChain::recurseThenInvokeSlot14",
     "class": "NodeChain",

@@ -2170,3 +2170,38 @@ uint32_t fn_006FAD90(void* node, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t
     return slot14(obj, a2, a3, a4, a5, a6, a7);
 }
 } // namespace lift_006FAD90
+
+// [0x006FACA0] sub_006FACA0 (96 bytes)
+namespace lift_006FACA0 {
+// Self-recursive stdcall (callee pops 7 args, ret 0x1c).
+extern uint32_t __stdcall ext_006FACA0(void* node, uint32_t a2, uint32_t a3, uint32_t a4,
+                                          uint32_t a5, uint32_t a6, uint32_t a7);
+
+// Virtual slot [vtbl + 0x3C] (index 15): thiscall, callee pops 6 stack args.
+using ChainMethodFn = uint32_t(__thiscall*)(void* self, uint32_t a2, uint32_t a3, uint32_t a4,
+                                           uint32_t a5, uint32_t a6, uint32_t a7);
+
+// @name ChainWalk_InvokeTail
+// @class Unknown
+// @summary Walks a singly linked node chain recursively to the tail, then invokes virtual slot 15 on each node's object on unwind, returning the head node's result (0 for a null node).
+// @field Unknown +0x00 void* obj (node's object pointer; vtable dispatched as this)
+// @field Unknown +0x04 void* next (next node in chain)
+uint32_t __stdcall fn_006FACA0(void* node, uint32_t a2, uint32_t a3, uint32_t a4,
+                               uint32_t a5, uint32_t a6, uint32_t a7) {
+    if (node == nullptr) {
+        return 0;
+    }
+
+    auto* p = static_cast<uint8_t*>(node);
+
+    // Recurse into the next node first, forwarding the same trailing args.
+    void* next = *reinterpret_cast<void**>(p + 0x04);
+    (void)ext_006FACA0(next, a2, a3, a4, a5, a6, a7);
+
+    // Then invoke this node's object via vtable slot 15 (+0x3C).
+    void* obj = *reinterpret_cast<void**>(p + 0x00);
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    auto method = reinterpret_cast<ChainMethodFn>(vtbl[0x3C / sizeof(void*)]);
+    return method(obj, a2, a3, a4, a5, a6, a7);
+}
+} // namespace lift_006FACA0

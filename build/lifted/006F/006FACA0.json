@@ -1,0 +1,28 @@
+{
+  "va": "0x006FACA0",
+  "size": 96,
+  "orig_symbol": "sub_006FACA0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "ChainWalk_InvokeTail",
+  "class": "Unknown",
+  "signature": "uint32_t __stdcall fn_006FACA0(void* node, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7)",
+  "summary": "Walks a singly linked node chain recursively to the tail, then invokes virtual slot 15 on each node's object on unwind, returning the head node's result (0 for a null node).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* obj (node's object pointer; vtable dispatched as",
+      "name": "this)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void* next (next node in",
+      "name": "chain)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T12:11:16Z"
+}
