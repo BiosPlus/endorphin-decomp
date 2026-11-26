@@ -2063,3 +2063,24 @@ void sub_00480DD0(std::uint8_t* src, void* unused_arg1, std::uint8_t* dst, std::
     } while (src != end);
 }
 } // namespace lift_00480DD0
+
+// [0x00480E00]
+namespace lift_00480E00 {
+// @name copyVec4Range
+// @summary Copies a range of 16-byte (4-float) elements from [srcBegin, srcEnd) to dst if dst is non-null, returning the end pointer.
+uint32_t __cdecl sub_00480E00(uint32_t srcBegin, uint32_t srcEnd, uint32_t dst) {
+    while (srcBegin != srcEnd) {
+        if (dst != 0) {
+            auto* s = reinterpret_cast<const float*>(static_cast<uintptr_t>(srcBegin));
+            auto* d = reinterpret_cast<float*>(static_cast<uintptr_t>(dst));
+            d[0] = s[0];
+            d[1] = s[1];
+            d[2] = s[2];
+            d[3] = s[3];
+        }
+        srcBegin += 0x10;
+        dst += 0x10;
+    }
+    return dst;
+}
+} // namespace lift_00480E00

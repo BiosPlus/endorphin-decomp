@@ -7356,6 +7356,13 @@
     "summary": "Advances an iterator with TreeIterator::increment until it equals `last`, incrementing `*counter` once per step; asserts the iterator is non-null and equal to `guard` before each step.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046A510": {
+    "name": "_Tree::_Erase",
+    "class": "_Tree",
+    "signature": "void __thiscall fn_0046A510(void* self, void* node)",
+    "summary": "Recursively erases a red-black tree subtree by recursing on right children, freeing nodes, and iterating down left children.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046AC30": {
     "name": "sub_0046AC30",
     "signature": "extern \"C\" void fn_0046AC30(void)",
@@ -8968,6 +8975,12 @@
     "name": "copyBlocks64_00480DD0",
     "signature": "void sub_00480DD0(std::uint8_t* src, void* unused_arg1, std::uint8_t* dst, std::uint8_t* end)",
     "summary": "Copies 64-byte blocks from src up to end into dst (skipped when dst is null), advancing both by 0x40 per step.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
+  "0x00480E00": {
+    "name": "copyVec4Range",
+    "signature": "uint32_t __cdecl sub_00480E00(uint32_t srcBegin, uint32_t srcEnd, uint32_t dst)",
+    "summary": "Copies a range of 16-byte (4-float) elements from [srcBegin, srcEnd) to dst if dst is non-null, returning the end pointer.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
   "0x00480E40": {
@@ -71371,6 +71384,12 @@
     "name": "sub_007D6260_freeBuffer",
     "signature": "void __cdecl sub_007D6260(void* self)",
     "summary": "Frees an allocated buffer via a callback at +0x1c/+0x10 and clears pointer and size fields.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
+  "0x007D6290": {
+    "name": "setOwnedState",
+    "signature": "void sub_007D6290(uint8_t* obj, uint32_t new_val)",
+    "summary": "Updates state at +0x10 and invokes cleanup callback if transitioning from 1 while unowned",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
   "0x007D7190": {

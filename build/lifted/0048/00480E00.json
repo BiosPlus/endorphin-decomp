@@ -1,0 +1,13 @@
+{
+  "va": "0x00480E00",
+  "size": 53,
+  "orig_symbol": "sub_00480E00",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "copyVec4Range",
+  "signature": "uint32_t __cdecl sub_00480E00(uint32_t srcBegin, uint32_t srcEnd, uint32_t dst)",
+  "summary": "Copies a range of 16-byte (4-float) elements from [srcBegin, srcEnd) to dst if dst is non-null, returning the end pointer.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T10:43:13Z"
+}
