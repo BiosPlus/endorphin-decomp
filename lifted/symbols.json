@@ -65560,6 +65560,12 @@
     "summary": "Stdcall (ret 4) helper: zeroes two consecutive 32-bit fields at +0x00 and +0x04 of the object whose pointer is passed on the stack, then returns 1 in al.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00713390": {
+    "name": "parseFourDoubleTuple",
+    "signature": "bool __stdcall fn_00713390(const char* s, double* out)",
+    "summary": "Parses a \"{d,d,d,d}\" brace-delimited list of four doubles via strtod into out[0..3]; returns true only if the whole list is well-formed.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x007134C0": {
     "name": "LookupStaticAddress_007134C0",
     "signature": "DWORD __stdcall LookupStaticAddress_007134C0(DWORD index)",

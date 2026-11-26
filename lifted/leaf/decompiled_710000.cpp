@@ -2055,3 +2055,44 @@ uint32_t __stdcall sub_00713F30(uint32_t index) {
     }
 }
 } // namespace lift_00713F30
+
+// [0x00713390] sub_00713390 (87 bytes)
+namespace lift_00713390 {
+// IAT slot holding the MSVCR80.dll!strtod function pointer.
+extern uintptr_t mem_00925224;
+
+// @name parseFourDoubleTuple
+// @summary Parses a "{d,d,d,d}" brace-delimited list of four doubles via strtod into out[0..3]; returns true only if the whole list is well-formed.
+// @field none (no struct fields accessed; operates on caller-provided string and double buffer)
+bool __stdcall fn_00713390(const char* s, double* out) {
+    using StrtodFn = double(__cdecl*)(const char*, char**);
+
+    if (*s != '{') {
+        return false;
+    }
+    ++s;
+
+    int count = 0;
+    for (;;) {
+        char* endp = nullptr;
+        auto strtod_fn = reinterpret_cast<StrtodFn>(static_cast<uintptr_t>(mem_00925224));
+        *out = strtod_fn(s, &endp);
+
+        if (s == endp) {
+            return false;
+        }
+        if (*endp != ',' && count < 3) {
+            return false;
+        }
+
+        ++count;
+        ++out;
+        s = endp;
+        if (count >= 4) {
+            break;
+        }
+    }
+
+    return *s == '}';
+}
+} // namespace lift_00713390
