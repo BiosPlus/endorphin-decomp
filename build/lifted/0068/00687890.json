@@ -1,0 +1,46 @@
+{
+  "va": "0x00687890",
+  "size": 67,
+  "orig_symbol": "sub_00687890",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "std::fill\u003cElem*, Elem\u003e",
+  "class": "std",
+  "signature": "void sub_00687890(void* first, void* last, const void* val)",
+  "summary": "Fills a range [first, last) of 0x2c-byte elements (4 uint32_t fields + std::string at +0x10) by copying from val.",
+  "fields": [
+    {
+      "class": "Elem",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Elem",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Elem",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Elem",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Elem",
+      "offset": "+0x10",
+      "type": "std::string",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:16:30Z"
+}

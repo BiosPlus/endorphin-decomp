@@ -1936,3 +1936,69 @@ void fn_006816F0(void* self, uint32_t flag) {
 }
 } // namespace lift_005597C0
 } // namespace lift_006816F0
+
+// [0x00687890]
+namespace lift_00687890 {
+// @name std::fill<Elem*, Elem>
+// @summary Fills a range [first, last) of 0x2c-byte elements (4 uint32_t fields + std::string at +0x10) by copying from val.
+// @field Elem +0x00 uint32_t field_0x00
+// @field Elem +0x04 uint32_t field_0x04
+// @field Elem +0x08 uint32_t field_0x08
+// @field Elem +0x0c uint32_t field_0x0c
+// @field Elem +0x10 std::string field_0x10
+
+
+extern void* (__thiscall *mem_00924FDC)(void* self, const void* rhs);
+
+void sub_00687890(void* first, void* last, const void* val) {
+    uint8_t* dst = static_cast<uint8_t*>(first);
+    uint8_t* end = static_cast<uint8_t*>(last);
+    const uint8_t* src = static_cast<const uint8_t*>(val);
+    const void* src_str = src + 0x10;
+
+    while (dst != end) {
+        lift_field<uint32_t>(dst, 0x00) = lift_field<uint32_t>(src, 0x00);
+        lift_field<uint32_t>(dst, 0x04) = lift_field<uint32_t>(src, 0x04);
+        lift_field<uint32_t>(dst, 0x08) = lift_field<uint32_t>(src, 0x08);
+        lift_field<uint32_t>(dst, 0x0c) = lift_field<uint32_t>(src, 0x0c);
+        mem_00924FDC(dst + 0x10, src_str);
+        dst += 0x2c;
+    }
+}
+} // namespace lift_00687890
+
+// [0x00681250]
+namespace lift_00681250 {
+// @name swapRangesBackward16
+// @summary Swaps 12-byte payloads (offsets +4..+12) of 16-byte elements backward from [first, last) into [..., dstLast)
+
+uintptr_t sub_00681250(uintptr_t first, uintptr_t last, uintptr_t dstLast) {
+    uintptr_t ecx = last;
+    uintptr_t eax = dstLast;
+    if (first == ecx) {
+        return eax;
+    }
+
+    do {
+        uint32_t edi = *reinterpret_cast<uint32_t*>(ecx - 0x0c);
+        uint32_t edx = *reinterpret_cast<uint32_t*>(eax - 0x0c);
+        ecx -= 0x10;
+        eax -= 0x10;
+
+        *reinterpret_cast<uint32_t*>(eax + 0x04) = edi;
+        *reinterpret_cast<uint32_t*>(ecx + 0x04) = edx;
+
+        edi = *reinterpret_cast<uint32_t*>(ecx + 0x08);
+        edx = *reinterpret_cast<uint32_t*>(eax + 0x08);
+        *reinterpret_cast<uint32_t*>(eax + 0x08) = edi;
+        *reinterpret_cast<uint32_t*>(ecx + 0x08) = edx;
+
+        edi = *reinterpret_cast<uint32_t*>(ecx + 0x0c);
+        edx = *reinterpret_cast<uint32_t*>(eax + 0x0c);
+        *reinterpret_cast<uint32_t*>(eax + 0x0c) = edi;
+        *reinterpret_cast<uint32_t*>(ecx + 0x0c) = edx;
+    } while (ecx != first);
+
+    return eax;
+}
+} // namespace lift_00681250
