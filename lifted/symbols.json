@@ -43208,6 +43208,13 @@
     "summary": "Stores address of mem_0097CC34 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_630000.cpp"
   },
+  "0x0063E980": {
+    "name": "UnknownClass_initFromString",
+    "class": "UnknownClass",
+    "signature": "void* fn_0063E980(void* self, const void* src)",
+    "summary": "Thiscall constructor: runs base init ext_0063E960(this), sets vftable to 0x0097CC3C, copy-constructs the std::string at +0x04 from the single argument, returns this.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063E9E0": {
     "name": "Unknown::DestroyStringThenCallback_0063E9E0",
     "class": "Unknown",

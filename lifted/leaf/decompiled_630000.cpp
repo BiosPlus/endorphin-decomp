@@ -1019,3 +1019,30 @@ extern void __fastcall fn_0063EA80(void* self) {
     ext_0063E970(self);
 }
 } // namespace lift_0063EA80
+
+// [0x0063E980] sub_0063E980 (82 bytes)
+namespace lift_0063E980 {
+// Known callee 0x0063E960: sub_0063E960_ctor (Initializes object vtable pointer at +0x00 to 0x0097CC34 and returns this.)
+extern uint32_t ext_0063E960(uint32_t this_ptr);
+// IAT slot holding the MSVCP80 std::basic_string<char> copy-constructor (thiscall, 1 stack arg).
+extern void* mem_00924FE0;
+
+// @name UnknownClass_initFromString
+// @class UnknownClass
+// @summary Thiscall constructor: runs base init ext_0063E960(this), sets vftable to 0x0097CC3C, copy-constructs the std::string at +0x04 from the single argument, returns this.
+// @field UnknownClass +0x00 void* vftable
+// @field UnknownClass +0x04 std::string field_0x04
+void* fn_0063E980(void* self, const void* src) {
+    ext_0063E960(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)));
+
+    lift_field<uint32_t>(self, 0x00) = 0x0097CC3C;
+
+    // The original wraps this call in an SEH frame (fs:[0] push/pop); that bookkeeping is
+    // not expressible portably and is omitted. The copy itself is preserved.
+    void* str = reinterpret_cast<uint8_t*>(self) + 0x04;
+    auto copy_ctor = reinterpret_cast<void (*)(void*, const void*)>(mem_00924FE0);
+    copy_ctor(str, src);
+
+    return self;
+}
+} // namespace lift_0063E980
