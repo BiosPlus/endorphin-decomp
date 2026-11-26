@@ -2360,3 +2360,40 @@ void __thiscall fn_00410230(void* self) {
     ext_006A5EFC(self);
 }
 } // namespace lift_00410230
+
+// [0x0041E070] sub_0041E070 (96 bytes)
+namespace lift_0041E070 {
+extern void ext_0041DCF0(void* self);
+
+// @name AdvXMLParser-style constructor (sub_0041E070)
+// @class <unknown>
+// @summary Constructor-like init: sets vptr to 0x92df58, zeroes members, sets a byte flag, calls ext_0041DCF0(this), returns this.
+// @field <unknown> +0x00 DWORD _vptr
+// @field <unknown> +0x04 DWORD field_0x04
+// @field <unknown> +0x08 DWORD field_0x08
+// @field <unknown> +0x0c DWORD field_0x0c
+// @field <unknown> +0x14 DWORD field_0x14
+// @field <unknown> +0x18 DWORD field_0x18
+// @field <unknown> +0x20 DWORD field_0x20
+// @field <unknown> +0x24 DWORD field_0x24
+// @field <unknown> +0x28 DWORD field_0x28
+// @field <unknown> +0x2c BYTE field_0x2c
+void* fn_0041E070(void* self) {
+    // SEH frame setup/teardown (fs:[0] push/restore) and stack-local writes
+    // at [esp+0x4]/[esp+0x10] are compiler-generated EH bookkeeping and are
+    // not part of the object state, so they are not lifted.
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x00) = 0x92df58;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0c) = 0;
+    lift_field<uint32_t>(self, 0x14) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x20) = 0;
+    lift_field<uint32_t>(self, 0x24) = 0;
+    lift_field<uint32_t>(self, 0x28) = 0;
+    lift_field<uint8_t>(self, 0x2c) = 0;
+
+    ext_0041DCF0(self);
+    return self;
+}
+} // namespace lift_0041E070
