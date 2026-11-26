@@ -2143,3 +2143,36 @@ void fn_006CA090(void* block, uint32_t size) {
     mem_009251D8(block);
 }
 } // namespace lift_006CA090
+
+// [0x006C30A0]
+namespace lift_006C30A0 {
+// @name getTypedChildIf456
+// @summary Returns field_0x158 if non-null and its vtable[0] returns 4, 5, or 6; otherwise returns nullptr.
+// @field Class +0x158 void* field_0x158
+
+void* __thiscall sub_006C30A0(void* self) {
+    void* obj = lift_field<void*>(self, 0x158);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+
+    using VFn0 = int(__thiscall*)(void*);
+    auto get_type = [&](void* target) -> int {
+        void** vtable = *reinterpret_cast<void***>(target);
+        return reinterpret_cast<VFn0>(vtable[0])(target);
+    };
+
+    if (get_type(obj) == 4) {
+        return lift_field<void*>(self, 0x158);
+    }
+    obj = lift_field<void*>(self, 0x158);
+    if (get_type(obj) == 5) {
+        return lift_field<void*>(self, 0x158);
+    }
+    obj = lift_field<void*>(self, 0x158);
+    if (get_type(obj) == 6) {
+        return lift_field<void*>(self, 0x158);
+    }
+    return nullptr;
+}
+} // namespace lift_006C30A0

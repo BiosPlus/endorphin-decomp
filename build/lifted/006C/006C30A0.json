@@ -1,0 +1,21 @@
+{
+  "va": "0x006C30A0",
+  "size": 80,
+  "orig_symbol": "sub_006C30A0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "getTypedChildIf456",
+  "signature": "void* __thiscall sub_006C30A0(void* self)",
+  "summary": "Returns field_0x158 if non-null and its vtable[0] returns 4, 5, or 6; otherwise returns nullptr.",
+  "fields": [
+    {
+      "class": "Class",
+      "offset": "+0x158",
+      "type": "void*",
+      "name": "field_0x158"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:32:12Z"
+}

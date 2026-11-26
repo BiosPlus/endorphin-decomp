@@ -57781,6 +57781,12 @@
     "summary": "Returns field_0x158 if non-null and its vtable[0]() returns 2, else 0.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C30A0": {
+    "name": "getTypedChildIf456",
+    "signature": "void* __thiscall sub_006C30A0(void* self)",
+    "summary": "Returns field_0x158 if non-null and its vtable[0] returns 4, 5, or 6; otherwise returns nullptr.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C30F0": {
     "name": "Unknown::GetSubobject158IfVirtualReturns4",
     "class": "Unknown",

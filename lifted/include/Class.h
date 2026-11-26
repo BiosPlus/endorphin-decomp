@@ -33,6 +33,7 @@ struct Class_Fields {
     // +0x90  void                     field_0x90  (evidence: 0x006E8470)
     // +0xA4  uint32_t*                field_0xa4  (evidence: 0x00647E80, 0x00648A20)
     // +0xF8  int32_t                  field_0xf8  (evidence: 0x0043CE40)
+    // +0x158 void*                    field_0x158  (evidence: 0x006C30A0)
     // +0x240 void*                    field_0x240  (evidence: 0x00480130)
 };
 } // namespace lifted_layout
