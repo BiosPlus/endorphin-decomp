@@ -1428,3 +1428,32 @@ void __thiscall sub_006E8750(void* self, double val) {
     lift_field<double>(obj, 0x58) = (val < min_val) ? min_val : val;
 }
 } // namespace lift_006E8750
+
+// [0x006E5750] sub_006E5750 (96 bytes)
+namespace lift_006E5750 {
+extern void ext_006E5730(void* self);
+
+// @name applyFlagsAndDispatchItems
+// @summary OR a flag word into this->+0x98 object, bump counters, then if its enable byte is set call item handlers in reverse order and finish via ext_006E5730.
+// @field self +0x5c int32_t counter
+// @field self +0x98 void* object
+void fn_006E5750(void* self, uint32_t flags) {
+    void* obj = lift_field<void*>(self, 0x98);
+    if (obj != nullptr) {
+        lift_field<uint32_t>(obj, 0x00) |= flags;
+        lift_field<int32_t>(obj, 0x08)++;
+        lift_field<int32_t>(self, 0x5c)++;
+
+        obj = lift_field<void*>(self, 0x98);
+        if (lift_field<uint8_t>(obj, 0x40) != 0) {
+            for (int32_t i = lift_field<int32_t>(obj, 0x10) - 1; i >= 0; --i) {
+                obj = lift_field<void*>(self, 0x98);
+                void* item = lift_field<void**>(obj, 0x38)[i];
+                auto* table = lift_field<void (**)(void*, void*, void*)>(obj, 0x20);
+                table[i](self, obj, item);
+            }
+            ext_006E5730(self);
+        }
+    }
+}
+} // namespace lift_006E5750

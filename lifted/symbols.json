@@ -60171,6 +60171,12 @@
     "summary": "Returns `value` if GetFlag40(self) is nonzero, otherwise 0 (branchless select via neg/sbb/and).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E5750": {
+    "name": "applyFlagsAndDispatchItems",
+    "signature": "void fn_006E5750(void* self, uint32_t flags)",
+    "summary": "OR a flag word into this-\u003e+0x98 object, bump counters, then if its enable byte is set call item handlers in reverse order and finish via ext_006E5730.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E62A0": {
     "name": "Unknown::SetChainField0x60",
     "class": "Unknown",
