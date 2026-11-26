@@ -1199,3 +1199,28 @@ void fn_007DFCE0(void* self, void* a2, uint32_t a3) {
     }
 }
 } // namespace lift_007DFCE0
+
+// [0x007D6660]
+namespace lift_007D6660 {
+// @name incrementBucket
+// @summary Rounds index up to multiple of 4, divides by 4, clamps to [0, count-1], increments bucket, and returns pointer to it.
+// @field unknown +0x10 int32_t* field_0x10
+// @field unknown +0x14 int32_t field_0x14
+int32_t* sub_007D6660(int32_t eax, void* esi) {
+    int32_t rem = eax % 4;
+    if (rem != 0) {
+        eax = eax - rem + 4;
+    }
+    int32_t idx = eax / 4;
+    int32_t max_idx = lift_field<int32_t>(esi, 0x14) - 1;
+    if (idx >= max_idx) {
+        idx = max_idx;
+    }
+    if (idx < 0) {
+        idx = 0;
+    }
+    int32_t* arr = lift_field<int32_t*>(esi, 0x10);
+    arr[idx] += 1;
+    return &arr[idx];
+}
+} // namespace lift_007D6660
