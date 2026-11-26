@@ -1760,3 +1760,35 @@ int32_t fn_004646B0() {
     return 0;
 }
 } // namespace lift_004646B0
+
+// [0x00462980]
+namespace lift_00462980 {
+extern uint32_t mem_009255E0;
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009255F4;
+extern uint32_t mem_009256E4;
+extern void __thiscall ext_004474E0(void* self, uint32_t arg);
+extern uint32_t __thiscall ext_00447500(void* self, uint32_t arg);
+
+// @name ConfirmAndDispatchString
+// @class DispatchOwner
+// @summary If mode is nonzero (and not 2), asks user via MessageBoxA; on yes/mode 2, forwards string c_str to two dispatchers.
+// @field DispatchOwner +0x00 void* target
+void __thiscall sub_00462980(void* self, int mode, void* str)
+{
+    typedef int (__stdcall *MessageBoxA_t)(void*, const char*, const char*, unsigned);
+    typedef const char* (__thiscall *CStr_t)(void*);
+
+    (void)&mem_009255F4; (void)&mem_009256E4;
+    if (mode == 0) return;
+    if (mode != 2) {
+        MessageBoxA_t mb = reinterpret_cast<MessageBoxA_t>(*reinterpret_cast<uint32_t*>(&mem_009255E0));
+        int r = mb(nullptr, reinterpret_cast<const char*>(0x938da0), reinterpret_cast<const char*>(0x938d28), 4);
+        if (r != 6) return;
+    }
+    CStr_t c_str = reinterpret_cast<CStr_t>(*reinterpret_cast<uint32_t*>(&mem_00924FF0));
+    void* target = *reinterpret_cast<void**>(self);
+    ext_004474E0(target, (uint32_t)(uintptr_t)c_str(str));
+    ext_00447500(target, (uint32_t)(uintptr_t)c_str(str));
+}
+} // namespace lift_00462980

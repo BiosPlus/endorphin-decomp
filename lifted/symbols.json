@@ -6930,6 +6930,13 @@
     "summary": "Pure jump thunk forwarding to sub_00462820.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00462980": {
+    "name": "ConfirmAndDispatchString",
+    "class": "DispatchOwner",
+    "signature": "void __thiscall sub_00462980(void* self, int mode, void* str)",
+    "summary": "If mode is nonzero (and not 2), asks user via MessageBoxA; on yes/mode 2, forwards string c_str to two dispatchers.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x004629E0": {
     "name": "sub_004629E0",
     "signature": "void __thiscall sub_004629E0(void* self, void* arg1, uint32_t arg2)",

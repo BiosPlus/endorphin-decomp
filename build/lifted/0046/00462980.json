@@ -1,0 +1,22 @@
+{
+  "va": "0x00462980",
+  "size": 83,
+  "orig_symbol": "sub_00462980",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "ConfirmAndDispatchString",
+  "class": "DispatchOwner",
+  "signature": "void __thiscall sub_00462980(void* self, int mode, void* str)",
+  "summary": "If mode is nonzero (and not 2), asks user via MessageBoxA; on yes/mode 2, forwards string c_str to two dispatchers.",
+  "fields": [
+    {
+      "class": "DispatchOwner",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@low",
+  "lifted_at": "2026-11-26T11:58:50Z"
+}
