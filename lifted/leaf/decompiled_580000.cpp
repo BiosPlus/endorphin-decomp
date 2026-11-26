@@ -1220,3 +1220,52 @@ void __thiscall fn_00586240(void* self) {
     }
 }
 } // namespace lift_00586240
+
+// [0x005862A0]
+namespace lift_005862A0 {
+// @name Node::traverseRecursive
+// @class Node
+// @summary Calls virtual method at +0xA8 on this node, then recursively traverses child nodes in vector at +0x7C.
+// @field Node +0x00 void** vtable
+// @field Node +0x7C void* children_vec
+// @field Node +0x80 Node** children_begin
+// @field Node +0x84 Node** children_end
+
+
+extern void (__cdecl* mem_00925134)();
+
+void __thiscall sub_005862A0(void* self) {
+    auto* vtable = *reinterpret_cast<void***>(self);
+    auto vfunc = reinterpret_cast<void(__thiscall*)(void*)>(
+        reinterpret_cast<uintptr_t>(vtable[0xa8 / sizeof(void*)]));
+    vfunc(self);
+
+    auto* base = static_cast<uint8_t*>(self);
+    auto* vec = base + 0x7c;
+    uintptr_t it = *reinterpret_cast<uintptr_t*>(base + 0x80);
+    auto invalid_param = mem_00925134;
+
+    if (it > *reinterpret_cast<uintptr_t*>(vec + 0x8)) {
+        invalid_param();
+    }
+
+    for (;;) {
+        uintptr_t end = *reinterpret_cast<uintptr_t*>(vec + 0x8);
+        if (*reinterpret_cast<uintptr_t*>(vec + 0x4) > end) {
+            invalid_param();
+        }
+        if (it == end) {
+            break;
+        }
+        if (it >= *reinterpret_cast<uintptr_t*>(vec + 0x8)) {
+            invalid_param();
+        }
+        void* child = *reinterpret_cast<void**>(it);
+        sub_005862A0(child);
+        if (it >= *reinterpret_cast<uintptr_t*>(vec + 0x8)) {
+            invalid_param();
+        }
+        it += 4;
+    }
+}
+} // namespace lift_005862A0
