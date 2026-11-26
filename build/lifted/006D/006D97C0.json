@@ -1,0 +1,33 @@
+{
+  "va": "0x006D97C0",
+  "size": 64,
+  "orig_symbol": "sub_006D97C0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "LookupRecordValueByKey",
+  "signature": "extern \"C\" uint32_t __cdecl fn_006D97C0(uint32_t key)",
+  "summary": "Scans 12 consecutive 32-byte records at 0x00B5D91C; returns the dword at record+0x00 for the first record whose dword at +0x04 equals the key and whose byte at +0x11 is nonzero, otherwise 6.",
+  "fields": [
+    {
+      "class": "RecordTable_B5D91C",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "value"
+    },
+    {
+      "class": "RecordTable_B5D91C",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "key"
+    },
+    {
+      "class": "RecordTable_B5D91C",
+      "offset": "+0x11",
+      "type": "uint8_t",
+      "name": "enabled"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:04:31Z"
+}

@@ -1750,3 +1750,30 @@ extern int32_t __fastcall fn_006D7AA0(void* self) {
     return *reinterpret_cast<int32_t*>(target + 0x18);
 }
 } // namespace lift_006D7AA0
+
+// [0x006D97C0]
+namespace lift_006D97C0 {
+// @name LookupRecordValueByKey
+// @summary Scans 12 consecutive 32-byte records at 0x00B5D91C; returns the dword at record+0x00 for the first record whose dword at +0x04 equals the key and whose byte at +0x11 is nonzero, otherwise 6.
+// @field RecordTable_B5D91C +0x00 uint32_t value
+// @field RecordTable_B5D91C +0x04 uint32_t key
+// @field RecordTable_B5D91C +0x11 uint8_t enabled
+
+static constexpr uintptr_t kRecordTableVA = 0x00B5D91Cu;
+static constexpr uint32_t kRecordCount = 12;
+static constexpr uint32_t kRecordSize = 0x20;
+static constexpr uint32_t kDefaultResult = 6;
+
+extern uint32_t __cdecl fn_006D97C0(uint32_t key) {
+    const uint8_t* table = reinterpret_cast<const uint8_t*>(kRecordTableVA);
+    for (uint32_t i = 0; i < kRecordCount; ++i) {
+        const uint8_t* rec = table + i * kRecordSize;
+        const uint32_t recKey = lift_field<uint32_t>(rec, 0x04);
+        const uint8_t enabled = lift_field<uint8_t>(rec, 0x11);
+        if (recKey == key && enabled != 0) {
+            return lift_field<uint32_t>(rec, 0x00);
+        }
+    }
+    return kDefaultResult;
+}
+} // namespace lift_006D97C0

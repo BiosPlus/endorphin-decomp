@@ -58947,6 +58947,12 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x12C.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D97C0": {
+    "name": "LookupRecordValueByKey",
+    "signature": "extern \"C\" uint32_t __cdecl fn_006D97C0(uint32_t key)",
+    "summary": "Scans 12 consecutive 32-byte records at 0x00B5D91C; returns the dword at record+0x00 for the first record whose dword at +0x04 equals the key and whose byte at +0x11 is nonzero, otherwise 6.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D98D0": {
     "name": "sub_006D98D0",
     "signature": "extern \"C\" int32_t __cdecl fn_006D98D0(void)",
