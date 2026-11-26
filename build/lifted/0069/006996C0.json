@@ -1,0 +1,27 @@
+{
+  "va": "0x006996C0",
+  "size": 88,
+  "orig_symbol": "sub_006996C0",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "sub_006996C0",
+  "signature": "extern \"C\" void* __cdecl fn_006996C0(void* obj)",
+  "summary": "Checks field_0x48, dynamic-casts field_0x4c, calls vtable+0x60 on field_0x4c with \u0026field_0x48, and dynamic-casts the result.",
+  "fields": [
+    {
+      "class": "Obj",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x4C",
+      "type": "void*",
+      "name": "field_0x4c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T12:06:01Z"
+}

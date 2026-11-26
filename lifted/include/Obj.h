@@ -63,10 +63,11 @@ struct Obj_Fields {
     // +0x44  float                    field_0x44  (evidence: 0x0063D8F0) // CONFLICT: multiple definitions at +0x44
     // +0x44  uint32_t                 field_0x44  (evidence: 0x0046C560, 0x006AD290) // CONFLICT: multiple definitions at +0x44
     // +0x48  float                    field_0x48  (evidence: 0x0063D8F0) // CONFLICT: multiple definitions at +0x48
-    // +0x48  uint32_t                 field_0x48  (evidence: 0x0046C560) // CONFLICT: multiple definitions at +0x48
+    // +0x48  uint32_t                 field_0x48  (evidence: 0x0046C560, 0x006996C0) // CONFLICT: multiple definitions at +0x48
     // +0x4C  float                    field_0x4C  (evidence: 0x0063D8F0) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  uint32_t                 field_0x4C  (evidence: 0x006AD290) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  uint32_t                 field_0x4c  (evidence: 0x0046C560) // CONFLICT: multiple definitions at +0x4C
+    // +0x4C  void*                    field_0x4c  (evidence: 0x006996C0) // CONFLICT: multiple definitions at +0x4C
     // +0x50  float                    field_0x50  (evidence: 0x0063D8F0) // CONFLICT: multiple definitions at +0x50
     // +0x50  uint32_t                 field_0x50  (evidence: 0x007C8490, 0x007CAF70) // CONFLICT: multiple definitions at +0x50
     // +0x54  float                    field_0x54  (evidence: 0x0063D8F0)

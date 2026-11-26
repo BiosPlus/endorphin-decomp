@@ -1392,3 +1392,35 @@ void* fn_00699810(uint32_t count) {
     return ext_006A5C62(size);
 }
 } // namespace lift_00699810
+
+// [0x006996C0]
+namespace lift_006996C0 {
+// @name sub_006996C0
+// @summary Checks field_0x48, dynamic-casts field_0x4c, calls vtable+0x60 on field_0x4c with &field_0x48, and dynamic-casts the result.
+// @field Obj +0x48 uint32_t field_0x48
+// @field Obj +0x4C void* field_0x4c
+
+
+extern void* __cdecl ext_006A6E9E(void* inptr, int32_t vf_delta, void* src_type, void* target_type, int32_t is_reference);
+
+extern void* __cdecl fn_006996C0(void* obj) {
+    if (!obj) {
+        return nullptr;
+    }
+    uint8_t* esi = reinterpret_cast<uint8_t*>(obj) + 0x48;
+    if (*reinterpret_cast<uint32_t*>(esi) == 0) {
+        return nullptr;
+    }
+    void* inner = *reinterpret_cast<void**>(esi + 4);
+    void* cast1 = ext_006A6E9E(inner, 0, reinterpret_cast<void*>(0x00A31114), reinterpret_cast<void*>(0x00AA1808), 0);
+    if (!cast1) {
+        return nullptr;
+    }
+    void* ecx = *reinterpret_cast<void**>(esi + 4);
+    void** vtable = *reinterpret_cast<void***>(ecx);
+    using vfn_t = void* (__thiscall*)(void* self, void* arg);
+    vfn_t fn = reinterpret_cast<vfn_t>(vtable[0x60 / sizeof(void*)]);
+    void* res = fn(ecx, esi);
+    return ext_006A6E9E(res, 0, reinterpret_cast<void*>(0x00A2E2F8), reinterpret_cast<void*>(0x00AA3D80), 0);
+}
+} // namespace lift_006996C0

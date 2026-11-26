@@ -50905,6 +50905,12 @@
     "summary": "Returns the begin pointer of a 32-byte-element array if non-empty, else a static sentinel; calls invalid_parameter when begin \u003e= end.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x006996C0": {
+    "name": "sub_006996C0",
+    "signature": "extern \"C\" void* __cdecl fn_006996C0(void* obj)",
+    "summary": "Checks field_0x48, dynamic-casts field_0x4c, calls vtable+0x60 on field_0x4c with \u0026field_0x48, and dynamic-casts the result.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x006997E0": {
     "name": "getTypedObjectViaVfunc60",
     "signature": "void* __thiscall fn_006997E0(void* self, uint32_t arg1)",
