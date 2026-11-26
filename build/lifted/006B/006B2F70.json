@@ -1,0 +1,14 @@
+{
+  "va": "0x006B2F70",
+  "size": 61,
+  "orig_symbol": "sub_006B2F70",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Platform::IsWindowsNT",
+  "class": "Platform",
+  "signature": "int fn_006B2F70(void)",
+  "summary": "Calls GetVersionExA and returns 1 if dwPlatformId is VER_PLATFORM_WIN32_NT (2), else 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:58:13Z"
+}

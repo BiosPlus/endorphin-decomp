@@ -1589,3 +1589,24 @@ uint32_t __thiscall sub_006B2230(
     return self;
 }
 } // namespace lift_006B2230
+
+// [0x006B2F70] sub_006B2F70 (61 bytes)
+namespace lift_006B2F70 {
+// Non-boilerplate import: GetVersionExA is called through its IAT slot.
+extern int mem_0092414C;
+
+// @name Platform::IsWindowsNT
+// @summary Calls GetVersionExA and returns 1 if dwPlatformId is VER_PLATFORM_WIN32_NT (2), else 0.
+int fn_006B2F70(void) {
+    // OSVERSIONINFOA (0x94 bytes): dwOSVersionInfoSize @+0x00, dwPlatformId @+0x10.
+    alignas(8) unsigned char osvi[0x94];
+    std::memset(osvi + 4, 0, 0x90);
+    lift_field<DWORD>(osvi, 0x00) = 0x94;
+
+    using GetVersionExA_t = BOOL(__stdcall*)(void*);
+    auto get_version = reinterpret_cast<GetVersionExA_t>(static_cast<uintptr_t>(mem_0092414C));
+    get_version(osvi);
+
+    return lift_field<DWORD>(osvi, 0x10) == 2 ? 1 : 0;
+}
+} // namespace lift_006B2F70

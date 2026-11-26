@@ -55729,6 +55729,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006B2BC0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B2F70": {
+    "name": "Platform::IsWindowsNT",
+    "class": "Platform",
+    "signature": "int fn_006B2F70(void)",
+    "summary": "Calls GetVersionExA and returns 1 if dwPlatformId is VER_PLATFORM_WIN32_NT (2), else 0.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B32D0": {
     "name": "GWCPropertyCheckboxLook::vfunc_2",
     "class": "GWCPropertyCheckboxLook",
