@@ -2614,6 +2614,12 @@
     "summary": "Lower-bound lookup of a string key; returns (map, node) when the key exists, otherwise (map, header) for the end sentinel.",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x00428A60": {
+    "name": "Vector_Tidy_0x24",
+    "signature": "void __thiscall fn_00428A60(void* self)",
+    "summary": "Destroys elements (each 0x24 bytes with a std::string at +0x8), frees buffer, and resets vector pointers.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x00428BA0": {
     "name": "sub_00428BA0",
     "signature": "DWORD* __thiscall fn_00428BA0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
