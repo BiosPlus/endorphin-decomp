@@ -2084,3 +2084,31 @@ uint32_t __cdecl sub_00480E00(uint32_t srcBegin, uint32_t srcEnd, uint32_t dst) 
     return dst;
 }
 } // namespace lift_00480E00
+
+// [0x004817A0]
+namespace lift_004817A0 {
+// @name fillVec4Array
+// @summary Fills an array of 16-byte (4-float) elements with a single 4-float value.
+
+
+void sub_004817A0(void* dst, uint32_t count, const void* src) {
+    if (count == 0) {
+        return;
+    }
+
+    auto* d = static_cast<uint8_t*>(dst);
+    const auto* s = static_cast<const float*>(src);
+
+    do {
+        if (d != nullptr) {
+            auto* df = reinterpret_cast<float*>(d);
+            df[0] = s[0];
+            df[1] = s[1];
+            df[2] = s[2];
+            df[3] = s[3];
+        }
+        --count;
+        d += 0x10;
+    } while (count > 0);
+}
+} // namespace lift_004817A0
