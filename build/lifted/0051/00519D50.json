@@ -1,0 +1,13 @@
+{
+  "va": "0x00519D50",
+  "size": 91,
+  "orig_symbol": "sub_00519D50",
+  "src_path": "src/leaf/decompiled_510000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_510000.cpp",
+  "name": "allocate_8byte_elements",
+  "signature": "extern \"C\" void* fn_00519D50(uint32_t count)",
+  "summary": "Allocates an array of 8-byte elements with overflow check, throwing std::bad_alloc on overflow.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T12:11:13Z"
+}

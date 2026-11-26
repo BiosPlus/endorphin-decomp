@@ -348,3 +348,30 @@ void* fn_0051DF00(uint32_t count) {
 }
 } // namespace lift_00699810
 } // namespace lift_0051DF00
+
+// [0x00519D50]
+namespace lift_00519D50 {
+// @name allocate_8byte_elements
+// @summary Allocates an array of 8-byte elements with overflow check, throwing std::bad_alloc on overflow.
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+extern void (__thiscall *mem_00925130)(void* self, const char* const* msg);
+
+extern void* fn_00519D50(uint32_t count) {
+    if (count > 0) {
+        if (0xFFFFFFFFu / count < 8u) {
+            uint8_t exc[12];
+            const char* msg = nullptr;
+            mem_00925130(exc, &msg);
+            *reinterpret_cast<uint32_t*>(exc) = 0x00928EC0u;
+            ext_006A6DD2(exc, reinterpret_cast<void*>(0x009CDF94u));
+            return nullptr;
+        }
+    } else {
+        count = 0;
+    }
+    return ext_006A5C62(count * 8u);
+}
+} // namespace lift_00519D50
