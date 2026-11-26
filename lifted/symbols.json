@@ -73562,6 +73562,12 @@
     "summary": "Calls KERNEL32!InitializeCriticalSection on the global CRITICAL_SECTION at mem_00B73C40, then sets the global flag mem_00B73C84 to 1.",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x0080B060": {
+    "name": "mapIdToCode_0080B060",
+    "signature": "uint32_t fn_0080B060(uint32_t arg)",
+    "summary": "Maps a 16-bit id (0..0x45) to a small result code via a byte index table and a jump table; ids above 0x45 return 0x1F.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080B530": {
     "name": "sub_0080B530_forwardAllocZeroFlags",
     "signature": "extern \"C\" uint32_t fn_0080B530(uint32_t size)",

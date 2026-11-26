@@ -1023,3 +1023,35 @@ void fn_0080AC00() {
     }
 }
 } // namespace lift_0080AC00
+
+// [0x0080B060] sub_0080B060 (86 bytes)
+namespace lift_0080B060 {
+// @name mapIdToCode_0080B060
+// @summary Maps a 16-bit id (0..0x45) to a small result code via a byte index table and a jump table; ids above 0x45 return 0x1F.
+// The index byte table at 0x80B0E0 and the target table at 0x80B0B8 are read from the image at runtime.
+uint32_t fn_0080B060(uint32_t arg) {
+    uint32_t eax = arg & 0xFFFFu;
+    if (eax > 0x45u) {
+        return 0x1Fu;
+    }
+    const uint8_t* idxTable = reinterpret_cast<const uint8_t*>(0x0080B0E0u);
+    const uint32_t* jumpTable = reinterpret_cast<const uint32_t*>(0x0080B0B8u);
+
+    uint32_t ecx = idxTable[eax];
+    uint32_t target = jumpTable[ecx];
+
+    switch (target) {
+        case 0x0080B07Du: return 0x00u;
+        case 0x0080B080u: return 0x07u;
+        case 0x0080B086u: return 0x0Cu;
+        case 0x0080B08Cu: return 0x18u;
+        case 0x0080B092u: return 0x01u;
+        case 0x0080B098u: return 0x17u;
+        case 0x0080B09Eu: return 0x0Eu;
+        case 0x0080B0A4u: return 0x0Bu;
+        case 0x0080B0AAu: return 0x1Bu;
+        case 0x0080B0B0u: return 0x1Fu;
+        default:          return 0x1Fu;
+    }
+}
+} // namespace lift_0080B060

@@ -1,0 +1,13 @@
+{
+  "va": "0x0080B060",
+  "size": 86,
+  "orig_symbol": "sub_0080B060",
+  "src_path": "src/leaf/decompiled_800000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_800000.cpp",
+  "name": "mapIdToCode_0080B060",
+  "signature": "uint32_t fn_0080B060(uint32_t arg)",
+  "summary": "Maps a 16-bit id (0..0x45) to a small result code via a byte index table and a jump table; ids above 0x45 return 0x1F.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:58:58Z"
+}
