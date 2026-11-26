@@ -830,3 +830,26 @@ void* sub_004C4390(void* self) {
     return self;
 }
 } // namespace lift_004C4390
+
+// [0x004CE7B0]
+namespace lift_004CE7B0 {
+extern uint32_t mem_00924FC4; // import: std::operator==(const string&, const string&)
+extern uint8_t mem_00AE51C8[]; // std::string[7], stride 0x1C
+extern uint8_t mem_00AE5290[]; // std::string[7], stride 0x1C
+
+typedef bool(__cdecl *StringEqFn)(const void *, const void *);
+
+// @name findStringNameIndex
+// @summary Returns index (0..6) of the entry in either of two global std::string tables equal to the given string, or 0 if none.
+int __stdcall sub_004CE7B0(const void *str) {
+    StringEqFn eq = (StringEqFn)(uintptr_t)mem_00924FC4;
+    int index = 0;
+    for (int off = 0; off <= 0xA8; off += 0x1C, ++index) {
+        if (eq(mem_00AE51C8 + off, str))
+            return index;
+        if (eq(mem_00AE5290 + off, str))
+            return index;
+    }
+    return 0;
+}
+} // namespace lift_004CE7B0

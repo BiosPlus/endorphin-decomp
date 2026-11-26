@@ -1,0 +1,13 @@
+{
+  "va": "0x004CE7B0",
+  "size": 84,
+  "orig_symbol": "sub_004CE7B0",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "findStringNameIndex",
+  "signature": "int __stdcall sub_004CE7B0(const void *str)",
+  "summary": "Returns index (0..6) of the entry in either of two global std::string tables equal to the given string, or 0 if none.",
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-26T11:55:44Z"
+}

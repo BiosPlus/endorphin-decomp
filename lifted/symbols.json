@@ -15626,6 +15626,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).",
     "lifted_path": "lifted/NMData/IncarnationEventData.cpp"
   },
+  "0x004CE7B0": {
+    "name": "findStringNameIndex",
+    "signature": "int __stdcall sub_004CE7B0(const void *str)",
+    "summary": "Returns index (0..6) of the entry in either of two global std::string tables equal to the given string, or 0 if none.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CE810": {
     "name": "Unknown::GetRecordByIndex",
     "class": "Unknown",
