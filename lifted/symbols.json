@@ -36550,6 +36550,12 @@
     "summary": "Calls the base sensor update, then copies the 3-float vector at +0x60 to +0x70.",
     "lifted_path": "lifted/Sensors/SensorTreeCentreOfMassVelocity.cpp"
   },
+  "0x005FF290": {
+    "name": "sub_005FF290",
+    "signature": "void* fn_005FF290(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FF790 (sub_005FF790).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005FF300": {
     "name": "allocAndInitObject_005FF300",
     "signature": "void* fn_005FF300(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
@@ -63907,6 +63913,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006DD960 (fn_006DD960 (MSVCR _HUGE negated into global)).",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x0070F780": {
+    "name": "sub_0070F780",
+    "signature": "void __cdecl fn_0070F780(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x0072D210 (copyHugeConstantToGlobals_0072D210).",
+    "lifted_path": "lifted/clones/auto_clones_700000.cpp"
+  },
   "0x0070F810": {
     "name": "InitHugeValueGlobals_0070F810",
     "signature": "void fn_0070F810(void* self)",
@@ -66407,6 +66419,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071E070": {
+    "name": "sub_0071E070",
+    "signature": "void __cdecl fn_0071E070(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x0072D210 (copyHugeConstantToGlobals_0072D210).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x0071E0C0": {
     "name": "NegateHugeIntoGlobals",
     "signature": "void fn_0071E0C0()",
@@ -67150,6 +67168,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x8 and tail-calls sub_00755000.",
     "lifted_path": "lifted/leaf/tiny_750000.cpp"
   },
+  "0x007551E0": {
+    "name": "sub_007551E0",
+    "signature": "void __cdecl fn_007551E0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x0072D210 (copyHugeConstantToGlobals_0072D210).",
+    "lifted_path": "lifted/clones/auto_clones_750000.cpp"
+  },
   "0x00755270": {
     "name": "CopyHugeValueToGlobals_00755270",
     "signature": "void fn_00755270(void* self)",
@@ -67372,6 +67396,12 @@
     "signature": "DWORD __thiscall Unknown_CopyEntry32(void* self, DWORD* dst, DWORD index)",
     "summary": "Copies the 32-byte entry at index from the array at this+0x10 into dst (8 dwords); returns ecx as 0.",
     "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
+  "0x0077F6D0": {
+    "name": "sub_0077F6D0",
+    "signature": "void __cdecl fn_0077F6D0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x0072D210 (copyHugeConstantToGlobals_0072D210).",
+    "lifted_path": "lifted/clones/auto_clones_770000.cpp"
   },
   "0x0077F720": {
     "name": "initNegatedHugeGlobals_0077F720",
@@ -67932,6 +67962,12 @@
     "signature": "extern \"C\" void __fastcall fn_00787000(void* self, int edx_unused, uint8_t value)",
     "summary": "Setter storing uint8_t argument into field at offset +0x80.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
+  "0x007874D0": {
+    "name": "sub_007874D0",
+    "signature": "void __cdecl fn_007874D0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x0072D210 (copyHugeConstantToGlobals_0072D210).",
+    "lifted_path": "lifted/clones/auto_clones_780000.cpp"
   },
   "0x00787520": {
     "name": "sub_00787520",
@@ -68532,6 +68568,12 @@
     "signature": "extern \"C\" void __fastcall fn_0079BA90(void* self)",
     "summary": "Destructor tail-call: restores vtable mem_00997530 and tail-calls base destructor sub_00705450.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
+  "0x0079BB80": {
+    "name": "sub_0079BB80",
+    "signature": "void __cdecl fn_0079BB80(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x0072D210 (copyHugeConstantToGlobals_0072D210).",
+    "lifted_path": "lifted/clones/auto_clones_790000.cpp"
   },
   "0x0079BBD0": {
     "name": "SetNegHugeGlobals",

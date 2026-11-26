@@ -1,0 +1,13 @@
+{
+  "va": "0x0071E070",
+  "size": 57,
+  "orig_symbol": "sub_0071E070",
+  "src_path": "src/clones/auto_clones_710000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_710000.cpp",
+  "name": "sub_0071E070",
+  "signature": "void __cdecl fn_0071E070(void)",
+  "summary": "Auto-lifted identical-shape clone of 0x0072D210 (copyHugeConstantToGlobals_0072D210).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-26T10:52:20Z"
+}

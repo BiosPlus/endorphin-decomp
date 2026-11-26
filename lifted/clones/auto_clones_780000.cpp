@@ -270,3 +270,66 @@ void fn_0078D2C0() {
 } // namespace lift_00437DE0
 } // namespace lift_0044C9A0
 } // namespace lift_0078D2C0
+
+// [0x007874D0] sub_007874D0 (57 bytes)
+namespace lift_007874D0 {
+// @name sub_007874D0
+// @summary Auto-lifted identical-shape clone of 0x0072D210 (copyHugeConstantToGlobals_0072D210).
+namespace lift_0072D210 {
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B60B40;
+extern uint32_t mem_00B60B44;
+extern uint32_t mem_00B60B48;
+extern uint32_t mem_00B60B4C;
+extern uint32_t mem_00B60B50;
+extern uint32_t mem_00B60B54;
+extern uint32_t mem_00B60148;
+extern uint32_t mem_00B6014C;
+extern uint32_t mem_00B60150;
+extern uint32_t mem_00B60154;
+extern uint32_t mem_00B60158;
+extern uint32_t mem_00B6015C;
+extern uint32_t mem_00B60160;
+extern uint32_t mem_00B60164;
+extern uint32_t mem_00B602E0;
+extern uint32_t mem_00B602E4;
+extern uint32_t mem_00B602E8;
+extern uint32_t mem_00B602EC;
+extern uint32_t mem_00B602F0;
+extern uint32_t mem_00B602F4;
+extern uint32_t mem_00B602F8;
+extern uint32_t mem_00B602FC;
+
+// @name copyHugeConstantToGlobals_0072D210
+// @summary Reads the 8-byte value at the pointer stored in mem_00925284 (_HUGE) and copies it into three 8-byte globals at 0x00B602B0, 0x00B602B8 and 0x00B602C0.
+void __cdecl fn_007874D0(void)
+{
+    const uint32_t* src = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+
+    mem_00B60B40 = src[0];
+    mem_00B60B44 = src[1];
+    mem_00B60B48 = src[0];
+    mem_00B60B4C = src[1];
+    mem_00B60B50 = src[0];
+    mem_00B60B54 = src[1];
+
+    // Other globals referenced by the original asm; no data flow in this path.
+    (void)&mem_00B60148;
+    (void)&mem_00B6014C;
+    (void)&mem_00B60150;
+    (void)&mem_00B60154;
+    (void)&mem_00B60158;
+    (void)&mem_00B6015C;
+    (void)&mem_00B60160;
+    (void)&mem_00B60164;
+    (void)&mem_00B602E0;
+    (void)&mem_00B602E4;
+    (void)&mem_00B602E8;
+    (void)&mem_00B602EC;
+    (void)&mem_00B602F0;
+    (void)&mem_00B602F4;
+    (void)&mem_00B602F8;
+    (void)&mem_00B602FC;
+}
+} // namespace lift_0072D210
+} // namespace lift_007874D0

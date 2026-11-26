@@ -1,0 +1,13 @@
+{
+  "va": "0x0079BB80",
+  "size": 57,
+  "orig_symbol": "sub_0079BB80",
+  "src_path": "src/clones/auto_clones_790000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_790000.cpp",
+  "name": "sub_0079BB80",
+  "signature": "void __cdecl fn_0079BB80(void)",
+  "summary": "Auto-lifted identical-shape clone of 0x0072D210 (copyHugeConstantToGlobals_0072D210).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-26T10:52:20Z"
+}

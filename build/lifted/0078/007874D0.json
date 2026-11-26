@@ -1,0 +1,13 @@
+{
+  "va": "0x007874D0",
+  "size": 57,
+  "orig_symbol": "sub_007874D0",
+  "src_path": "src/clones/auto_clones_780000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_780000.cpp",
+  "name": "sub_007874D0",
+  "signature": "void __cdecl fn_007874D0(void)",
+  "summary": "Auto-lifted identical-shape clone of 0x0072D210 (copyHugeConstantToGlobals_0072D210).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-26T10:52:20Z"
+}

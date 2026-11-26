@@ -1247,3 +1247,32 @@ extern void __fastcall fn_005FF040(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_005FF040
+
+// [0x005FF290] sub_005FF290 (112 bytes)
+namespace lift_005FF290 {
+// @name sub_005FF290
+// @summary Auto-lifted identical-shape clone of 0x005FF790 (sub_005FF790).
+namespace lift_005FF790 {
+// @name sub_005FF790
+// @summary Auto-lifted identical-shape clone of 0x005FF290 (Unknown::create_005FF290).
+namespace lift_005FF290 {
+// @name Unknown::create_005FF290
+// @summary Allocates a 0x40-byte object, initializes it via ext_00627240 with four 32-bit arguments, and sets its vtable to 0x0096EB5C.
+// @field Unknown +0x00 uint32_t vtable
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_00627240(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+void* fn_005FF290(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* obj = ext_006A5C62(0x40);
+    if (!obj) {
+        return nullptr;
+    }
+    ext_00627240(obj, arg0, arg1, arg2, arg3);
+    *reinterpret_cast<uint32_t*>(obj) = 0x96EB5C;
+    return obj;
+}
+} // namespace lift_005FF290
+} // namespace lift_005FF790
+} // namespace lift_005FF290
