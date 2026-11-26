@@ -1726,3 +1726,28 @@ uint32_t fn_006B16F0(void* self, uint32_t /*arg0*/, uint32_t /*arg1*/) {
     return 0; // xor eax, eax ; add esp, 0x2c ; ret 8
 }
 } // namespace lift_006B16F0
+
+// [0x006BA370] sub_006BA370 (96 bytes)
+namespace lift_006BA370 {
+// Known callee 0x006B99C0: sub_006B99C0 (Getter returning int32_t field at offset +0x4.)
+extern int32_t __fastcall ext_006B99C0(void* self);
+extern int mem_00925240;
+
+// @name findSubstringFromOffset
+// @summary strstr on buffer at self+0x00 from clamped offset; returns hit offset from buffer start, -1 if not found, 0 if needle is null.
+// @field CStringBuffer +0x00 char* buffer
+int32_t fn_006BA370(void* self, const char* needle, uint32_t offset) {
+    (void)&mem_00925240;  // strstr import slot; CRT strstr is used directly below
+    if (needle == nullptr) {
+        return 0;
+    }
+    const uint32_t limit = static_cast<uint32_t>(ext_006B99C0(self));
+    const uint32_t start = (offset <= limit) ? offset : limit;
+    char* base = lift_field<char*>(self, 0);
+    char* hit = std::strstr(base + start, needle);
+    if (hit == nullptr) {
+        return -1;
+    }
+    return static_cast<int32_t>(hit - base);
+}
+} // namespace lift_006BA370

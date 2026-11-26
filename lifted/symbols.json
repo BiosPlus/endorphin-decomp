@@ -57520,6 +57520,12 @@
     "summary": "Finds the index of the first character in the string (starting at startPos) that matches any character in control, or -1 if not found.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006BA370": {
+    "name": "findSubstringFromOffset",
+    "signature": "int32_t fn_006BA370(void* self, const char* needle, uint32_t offset)",
+    "summary": "strstr on buffer at self+0x00 from clamped offset; returns hit offset from buffer start, -1 if not found, 0 if needle is null.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BA660": {
     "name": "String::compare",
     "class": "String",

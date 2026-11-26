@@ -1,0 +1,21 @@
+{
+  "va": "0x006BA370",
+  "size": 96,
+  "orig_symbol": "sub_006BA370",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "findSubstringFromOffset",
+  "signature": "int32_t fn_006BA370(void* self, const char* needle, uint32_t offset)",
+  "summary": "strstr on buffer at self+0x00 from clamped offset; returns hit offset from buffer start, -1 if not found, 0 if needle is null.",
+  "fields": [
+    {
+      "class": "CStringBuffer",
+      "offset": "+0x0",
+      "type": "char*",
+      "name": "buffer"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T12:08:51Z"
+}
