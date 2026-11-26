@@ -6673,6 +6673,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xB4 and tail-calls sub_0045DD20.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00460540": {
+    "name": "CWnd::moveBottomLeftTo",
+    "class": "CWnd",
+    "signature": "void __thiscall fn_00460540(void* self, const LiftPoint* pt)",
+    "summary": "Moves the window so its bottom-left corner is at the given point while preserving its size.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x004605E0": {
     "name": "sub_004605E0",
     "signature": "extern \"C\" void* __cdecl fn_004605E0(void)",
@@ -55838,6 +55845,12 @@
     "signature": "uint32_t __thiscall sub_006AD180(void* self)",
     "summary": "Reads a pointer at offset 0x4 and returns the dereferenced 32-bit value.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
+  "0x006AD290": {
+    "name": "sub_006AD290_ctor",
+    "signature": "extern \"C\" void* __thiscall fn_006AD290(void* self)",
+    "summary": "Constructor initializing vtable, two CString members, and zeroing object fields",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
   },
   "0x006AD3C0": {
     "name": "DestructSub6AD3C0",
