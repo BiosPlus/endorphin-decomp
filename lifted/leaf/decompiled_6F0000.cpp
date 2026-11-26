@@ -2052,3 +2052,43 @@ void __thiscall EntryTable_releaseMatchingEntries(void* self) {
     }
 }
 } // namespace lift_006FBCE0
+
+// [0x006F99B0]
+namespace lift_006F99B0 {
+// @name sub_006F99B0
+// @summary Updates a uint32_t property at +0x80 or via callback at +0x54/+0x8 with pre/post notifications
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x54 uint32_t field_0x54
+// @field Unknown +0x80 uint32_t field_0x80
+
+
+extern void* __fastcall ext_0071E680(void* self);
+
+extern void __thiscall fn_006F99B0(void* self, uint32_t* val_ptr, void* arg1, void* arg2, void* arg3) {
+    (void)arg1;
+    (void)arg2;
+    (void)arg3;
+
+    using NotifyFn = void (__thiscall*)(void* self, uint32_t, uint32_t, void*, uint32_t*, void*, uint32_t);
+    using SetterFn = void (__thiscall*)(void* target, uint32_t val);
+
+    void** vtable = *reinterpret_cast<void***>(self);
+    auto notify = reinterpret_cast<NotifyFn>(vtable[0x38 / sizeof(void*)]);
+    uint32_t* prop = &lift_field<uint32_t>(self, 0x80);
+
+    notify(self, 0, 0x14, self, val_ptr, prop, 0);
+
+    if (lift_field<uint32_t>(self, 0x54) != 0) {
+        void* target = lift_field<void*>(self, 0x08);
+        void* dispatch = ext_0071E680(self);
+        auto setter = *reinterpret_cast<SetterFn*>(reinterpret_cast<uint8_t*>(dispatch) + 0x14);
+        setter(target, *val_ptr);
+    } else {
+        *prop = *val_ptr;
+    }
+
+    vtable = *reinterpret_cast<void***>(self);
+    notify = reinterpret_cast<NotifyFn>(vtable[0x38 / sizeof(void*)]);
+    notify(self, 0, 0x15, self, val_ptr, nullptr, 0);
+}
+} // namespace lift_006F99B0

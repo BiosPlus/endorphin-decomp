@@ -1,0 +1,33 @@
+{
+  "va": "0x006F99B0",
+  "size": 83,
+  "orig_symbol": "sub_006F99B0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "sub_006F99B0",
+  "signature": "extern \"C\" void __thiscall fn_006F99B0(void* self, uint32_t* val_ptr, void* arg1, void* arg2, void* arg3)",
+  "summary": "Updates a uint32_t property at +0x80 or via callback at +0x54/+0x8 with pre/post notifications",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "uint32_t",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "uint32_t",
+      "name": "field_0x80"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:49:18Z"
+}
