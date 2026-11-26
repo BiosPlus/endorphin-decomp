@@ -1,0 +1,22 @@
+{
+  "va": "0x0045BED0",
+  "size": 87,
+  "orig_symbol": "sub_0045BED0",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "resolveStringOrQueryWindow",
+  "class": "Unknown",
+  "signature": "uint32_t __thiscall fn_0045BED0(void* self, uint32_t arg1)",
+  "summary": "If ext_0045BCF0(0) succeeds, constructs a std::string at arg1 from a global C-string and returns arg1; otherwise sends WM_USER+0x10A (wParam 9) to the window at +0x20 and passes arg1 and the result to ext_0045B6C0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:56:17Z"
+}

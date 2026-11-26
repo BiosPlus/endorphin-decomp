@@ -1614,3 +1614,39 @@ void fn_00456C20(void* self, uint32_t arg) {
     }
 }
 } // namespace lift_00456C20
+
+// [0x0045BED0] sub_0045BED0 (87 bytes)
+namespace lift_0045BED0 {
+extern uint8_t __thiscall ext_0045BCF0(void* self, uint32_t flag);
+// Known callee 0x0045B6C0: initFromMFC80Ord2867 (Calls MFC80_ord_2867 with arg2, invokes vtable+0xc on the returned object with arg1, and returns arg1.)
+extern uint32_t __stdcall ext_0045B6C0(uint32_t arg1, uint32_t arg2);
+
+// @name resolveStringOrQueryWindow
+// @class Unknown
+// @summary If ext_0045BCF0(0) succeeds, constructs a std::string at arg1 from a global C-string and returns arg1; otherwise sends WM_USER+0x10A (wParam 9) to the window at +0x20 and passes arg1 and the result to ext_0045B6C0.
+// @field Unknown +0x20 HWND field_0x20
+uint32_t __thiscall fn_0045BED0(void* self, uint32_t arg1) {
+    uint8_t* const obj = static_cast<uint8_t*>(self);
+
+    if (ext_0045BCF0(self, 0) != 0) {
+        // Global at 0x00A9F414 holds a pointer to a C-string literal.
+        const char* text = *reinterpret_cast<const char* const*>(static_cast<uintptr_t>(0x00A9F414));
+        // Import slot 0x00924FE4: std::basic_string<char> ctor (const char*).
+        using StringCtorFn = void(__thiscall*)(void* self, const char* text);
+        auto stringCtor = reinterpret_cast<StringCtorFn>(
+            *reinterpret_cast<uintptr_t*>(static_cast<uintptr_t>(0x00924FE4)));
+        stringCtor(reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), text);
+        return arg1;
+    }
+
+    const uint32_t hwnd = *reinterpret_cast<uint32_t*>(obj + 0x20);
+    // Import slot 0x00925694: USER32!SendMessageA.
+    using SendMessageAFn = uint32_t(__stdcall*)(uint32_t hWnd, uint32_t msg, uint32_t wParam, uint32_t lParam);
+    auto sendMessageA = reinterpret_cast<SendMessageAFn>(
+        *reinterpret_cast<uintptr_t*>(static_cast<uintptr_t>(0x00925694)));
+    const uint32_t result = sendMessageA(hwnd, 0x110A, 9, 0);
+
+    ext_0045B6C0(arg1, result);
+    return arg1;
+}
+} // namespace lift_0045BED0
