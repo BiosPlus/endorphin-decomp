@@ -1732,3 +1732,31 @@ void* fn_0046FB20(void* self, const void* a, const void* b) {
     return self;
 }
 } // namespace lift_0046FB20
+
+// [0x004646B0]
+namespace lift_004646B0 {
+extern uint32_t mem_009255F4;
+extern uint32_t mem_009256E4;
+extern BOOLEAN __fastcall ext_0067ADE0(void* self);
+extern void __thiscall ext_0067AE70(void* self, int32_t index);
+
+// @name isAltMouseButtonPressed
+// @summary Returns 1 if Alt (async) and any mouse button (left, middle, or right) are pressed, else 0.
+int32_t fn_004646B0() {
+    (void)ext_0067ADE0;
+    (void)ext_0067AE70;
+    using GetKeyStateFn = int16_t(__stdcall*)(int32_t);
+    auto getKeyState = reinterpret_cast<GetKeyStateFn>(mem_009255F4);
+    auto getAsyncKeyState = reinterpret_cast<GetKeyStateFn>(mem_009256E4);
+
+    bool lbutton = getKeyState(0x1) < 0;
+    bool mbutton = getKeyState(0x4) < 0;
+    bool rbutton = getKeyState(0x2) < 0;
+    bool alt = getAsyncKeyState(0x12) < 0;
+
+    if (alt && (lbutton || mbutton || rbutton)) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004646B0

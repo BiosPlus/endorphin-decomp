@@ -1,0 +1,13 @@
+{
+  "va": "0x004646B0",
+  "size": 84,
+  "orig_symbol": "sub_004646B0",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "isAltMouseButtonPressed",
+  "signature": "int32_t fn_004646B0()",
+  "summary": "Returns 1 if Alt (async) and any mouse button (left, middle, or right) are pressed, else 0.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:49:50Z"
+}
