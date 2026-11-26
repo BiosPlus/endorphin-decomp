@@ -6131,6 +6131,12 @@
     "summary": "Loads the object at self+0x54 and forwards (arg1, pair) to ext_004586E0, where pair is the two stack dwords that follow arg1.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x00458860": {
+    "name": "sub_00458860",
+    "signature": "void __thiscall sub_00458860(void* self, uint32_t index)",
+    "summary": "Releases current item at +0x10, bounds-checks index against vector at +0x4/+0x8, selects new item, and invokes vtable[1]",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00458900": {
     "name": "SpinButtonStates::ClickedDownState::vfunc_5",
     "class": "SpinButtonStates::ClickedDownState",
@@ -44724,6 +44730,13 @@
     "summary": "Writes a float to *out: the value from ext_007C5910 of the object handle at +0x64 when its flags (ext_007C5900 result) have bits 0x700 set, otherwise the constant mem_009802E0 (0x7F7FFFFF, FLT_MAX).",
     "lifted_path": "lifted/classes/SkeletalJoint.cpp"
   },
+  "0x0064E560": {
+    "name": "SkeletalJoint::vfunc_36",
+    "class": "SkeletalJoint",
+    "signature": "void __thiscall fn_0064E560(void* self, const float* inVec, float* outVec)",
+    "summary": "Scales a 3D vector by fields at +0x7C..+0x84 and adds fields at +0x70..+0x78.",
+    "lifted_path": "lifted/classes/SkeletalJoint.cpp"
+  },
   "0x0064EA80": {
     "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const \u0026), 0}\u003e",
@@ -48648,6 +48661,12 @@
     "summary": "Notifies the last 8-byte element of the range at +0x04..+0x08 via ext_0048A120, then shrinks the range end by one element.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x00681250": {
+    "name": "swapRangesBackward16",
+    "signature": "uintptr_t sub_00681250(uintptr_t first, uintptr_t last, uintptr_t dstLast)",
+    "summary": "Swaps 12-byte payloads (offsets +4..+12) of 16-byte elements backward from [first, last) into [..., dstLast)",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x006812A0": {
     "name": "destroyRange_006812A0",
     "signature": "extern \"C\" void fn_006812A0(uint8_t* begin, uint8_t* end)",
@@ -49244,6 +49263,13 @@
     "class": "Unknown",
     "signature": "void* uniqueStringPairRange_00687820(void* first, void* last)",
     "summary": "std::unique over a range of 0x38-byte records, comparing the first std::string (+0x00) and copying both strings on compaction; returns new end.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x00687890": {
+    "name": "std::fill\u003cElem*, Elem\u003e",
+    "class": "std",
+    "signature": "void sub_00687890(void* first, void* last, const void* val)",
+    "summary": "Fills a range [first, last) of 0x2c-byte elements (4 uint32_t fields + std::string at +0x10) by copying from val.",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x006878E0": {

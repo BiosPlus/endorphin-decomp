@@ -1,0 +1,52 @@
+{
+  "va": "0x0064E560",
+  "size": 67,
+  "orig_symbol": "SkeletalJoint::vfunc_36",
+  "src_path": "src/classes/SkeletalJoint.cpp",
+  "lifted_path": "lifted/classes/SkeletalJoint.cpp",
+  "name": "SkeletalJoint::vfunc_36",
+  "class": "SkeletalJoint",
+  "signature": "void __thiscall fn_0064E560(void* self, const float* inVec, float* outVec)",
+  "summary": "Scales a 3D vector by fields at +0x7C..+0x84 and adds fields at +0x70..+0x78.",
+  "fields": [
+    {
+      "class": "SkeletalJoint",
+      "offset": "+0x70",
+      "type": "float",
+      "name": "field_0x70"
+    },
+    {
+      "class": "SkeletalJoint",
+      "offset": "+0x74",
+      "type": "float",
+      "name": "field_0x74"
+    },
+    {
+      "class": "SkeletalJoint",
+      "offset": "+0x78",
+      "type": "float",
+      "name": "field_0x78"
+    },
+    {
+      "class": "SkeletalJoint",
+      "offset": "+0x7C",
+      "type": "float",
+      "name": "field_0x7c"
+    },
+    {
+      "class": "SkeletalJoint",
+      "offset": "+0x80",
+      "type": "float",
+      "name": "field_0x80"
+    },
+    {
+      "class": "SkeletalJoint",
+      "offset": "+0x84",
+      "type": "float",
+      "name": "field_0x84"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:16:28Z"
+}

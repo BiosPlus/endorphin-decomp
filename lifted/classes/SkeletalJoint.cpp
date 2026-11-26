@@ -59,3 +59,34 @@ void __thiscall fn_0064E380(void* self, float* out) {
     }
 }
 } // namespace lift_0064E380
+
+// [0x0064E560]
+namespace lift_0064E560 {
+// @name SkeletalJoint::vfunc_36
+// @class SkeletalJoint
+// @summary Scales a 3D vector by fields at +0x7C..+0x84 and adds fields at +0x70..+0x78.
+// @field SkeletalJoint +0x70 float field_0x70
+// @field SkeletalJoint +0x74 float field_0x74
+// @field SkeletalJoint +0x78 float field_0x78
+// @field SkeletalJoint +0x7c float field_0x7c
+// @field SkeletalJoint +0x80 float field_0x80
+// @field SkeletalJoint +0x84 float field_0x84
+
+
+    void ext_007C5920();
+    float ext_007C5950(void* self);
+    void ext_007C5980();
+
+void __thiscall fn_0064E560(void* self, const float* inVec, float* outVec) {
+    (void)ext_007C5920;
+    (void)ext_007C5950;
+    (void)ext_007C5980;
+    outVec[0] = lift_field<float>(self, 0x7c) * inVec[0];
+    outVec[1] = lift_field<float>(self, 0x80) * inVec[1];
+    outVec[2] = lift_field<float>(self, 0x84) * inVec[2];
+
+    outVec[0] = outVec[0] + lift_field<float>(self, 0x70);
+    outVec[1] = lift_field<float>(self, 0x74) + outVec[1];
+    outVec[2] = lift_field<float>(self, 0x78) + outVec[2];
+}
+} // namespace lift_0064E560
