@@ -24,6 +24,7 @@ struct Unknown_Fields {
     // +0x0   uint32_t entries_base (pointer to 20-byte entry array, stored as 32-bit address)  (evidence: 0x007F0B60) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (target object pointer;* arg1)  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (pointer to inner object; inner->+0x04 holds the element array base)  (evidence: 0x0077FF90) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 bucketBase  (evidence: 0x007F0B00) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    buffer  (evidence: 0x00788E50) // CONFLICT: multiple definitions at +0x0
     // +0x0   int                      count  (evidence: 0x007839B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 count_00  (evidence: 0x0078D6B0) // CONFLICT: multiple definitions at +0x0
@@ -279,6 +280,7 @@ struct Unknown_Fields {
     // +0x8   float                    m02  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    m_end  (evidence: 0x00503BC0, 0x00505DC0, 0x0050C4D0, 0x00518030, 0x0051E560) // CONFLICT: multiple definitions at +0x8
     // +0x8   std::uint32_t            mode  (evidence: 0x00790EE0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 nodePoolBase  (evidence: 0x007F0B00) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    ownedObjectA  (evidence: 0x007892B0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    parent  (evidence: 0x005942D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    peer  (evidence: 0x00532B40) // CONFLICT: multiple definitions at +0x8
@@ -392,6 +394,7 @@ struct Unknown_Fields {
     // +0x10  void*                    forwardTarget  (evidence: 0x004586E0) // CONFLICT: multiple definitions at +0x10
     // +0x10  DWORD subtable_records (pointer to 16-byte records; first DWORD of each record is the key)  (evidence: 0x0078D510) // CONFLICT: multiple definitions at +0x10
     // +0x10  float                    m10  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x10
+    // +0x10  uint32_t                 nodePoolCount  (evidence: 0x007F0B00) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint8_t                  oneShot  (evidence: 0x00640CB0, 0x00648A20) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint8_t                  ownsObjectA  (evidence: 0x007892B0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t table_ptr (pointer to array of entry pointers)  (evidence: 0x006FC6E0) // CONFLICT: multiple definitions at +0x10
@@ -1234,6 +1237,7 @@ struct Unknown_Fields {
     // +0x210 DWORD                    field_0x210  (evidence: 0x004A57F0, 0x0070AC00, 0x0070AD00) // CONFLICT: multiple definitions at +0x210
     // +0x210 uint32_t                 field_0x210  (evidence: 0x007CD510, 0x007CD530) // CONFLICT: multiple definitions at +0x210
     // +0x214 DWORD                    field_0x214  (evidence: 0x0070AC00, 0x0070AD00)
+    // +0x218 uint32_t                 ownerIndex  (evidence: 0x007F0B00)
     // +0x220 uint32_t                 field_0x220  (evidence: 0x007990F0)
     // +0x230 uint8_t                  field_0x230  (evidence: 0x00644F00) // CONFLICT: multiple definitions at +0x230
     // +0x230 void* field_0x230 (embedded CWnd passed to getWindowTextAsFloat)  (evidence: 0x0045B580, 0x0045B620) // CONFLICT: multiple definitions at +0x230

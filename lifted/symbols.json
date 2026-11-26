@@ -71515,6 +71515,13 @@
     "summary": "Clears global flag mem_00AB2BD8 to 0",
     "lifted_path": "lifted/leaf/tiny_7E0000.cpp"
   },
+  "0x007F0B00": {
+    "name": "Unknown::linkNodeIntoBucket_007F0B00",
+    "class": "Unknown",
+    "signature": "static inline uint8_t* lift_ptr(uint32_t addr)",
+    "summary": "Stores edx as owner index, allocates the next node from the pool at [ecx+8], and pushes it onto bucket edx of the table at [ecx] (20-byte buckets: head at +4, count at +8).",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
   "0x007F0B60": {
     "name": "Unknown::appendZeroedEntry",
     "class": "Unknown",

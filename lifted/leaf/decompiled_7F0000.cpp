@@ -458,3 +458,36 @@ uint8_t __cdecl sub_007F66D0(const float* a, const float* b, float threshold) {
     return (epsSq > distSq) ? 1 : 0;
 }
 } // namespace lift_007F66D0
+
+// [0x007F0B00]
+namespace lift_007F0B00 {
+// @name Unknown::linkNodeIntoBucket_007F0B00
+// @class Unknown
+// @summary Stores edx as owner index, allocates the next node from the pool at [ecx+8], and pushes it onto bucket edx of the table at [ecx] (20-byte buckets: head at +4, count at +8).
+// @field Unknown +0x00 uint32_t bucketBase
+// @field Unknown +0x08 uint32_t nodePoolBase
+// @field Unknown +0x10 uint32_t nodePoolCount
+// @field Unknown +0x218 uint32_t ownerIndex
+
+static inline uint8_t* lift_ptr(uint32_t addr) {
+    return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(addr));
+}
+
+// Register-convention parameters: ecx = table, edx = bucket index, edi = owner/payload.
+void fn_007F0B00(void* ecx, uint32_t edx, void* edi) {
+    uint32_t esi = lift_field<uint32_t>(ecx, 0x00);
+    lift_field<uint32_t>(edi, 0x218) = edx;
+    uint32_t eax = edx * 5u;                       // lea eax, [edx + 4*edx]
+    uint32_t pool = lift_field<uint32_t>(ecx, 0x08);
+    uint8_t* bucket = lift_ptr(esi + 4u * eax);    // lea eax, [esi + 4*eax]
+    esi = lift_field<uint32_t>(ecx, 0x10);
+    uint8_t* node = lift_ptr(pool + 8u * esi);     // lea edx, [edx + 8*esi]
+    esi += 1u;
+    lift_field<uint32_t>(ecx, 0x10) = esi;         // pool count++
+    lift_field<uint32_t>(node, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(edi));
+    uint32_t oldHead = lift_field<uint32_t>(bucket, 0x04);
+    lift_field<uint32_t>(node, 0x00) = oldHead;    // node->next = old head
+    lift_field<uint32_t>(bucket, 0x08) += 1u;      // bucket count++
+    lift_field<uint32_t>(bucket, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(node));
+}
+} // namespace lift_007F0B00

@@ -1,0 +1,40 @@
+{
+  "va": "0x007F0B00",
+  "size": 47,
+  "orig_symbol": "sub_007F0B00",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "Unknown::linkNodeIntoBucket_007F0B00",
+  "class": "Unknown",
+  "signature": "static inline uint8_t* lift_ptr(uint32_t addr)",
+  "summary": "Stores edx as owner index, allocates the next node from the pool at [ecx+8], and pushes it onto bucket edx of the table at [ecx] (20-byte buckets: head at +4, count at +8).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "bucketBase"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "nodePoolBase"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "nodePoolCount"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x218",
+      "type": "uint32_t",
+      "name": "ownerIndex"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:31:50Z"
+}
