@@ -1,0 +1,34 @@
+{
+  "va": "0x004B1130",
+  "size": 46,
+  "orig_symbol": "sub_004B1130",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "Unknown::forwardVec3WithScalar_004B1130",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __fastcall sub_004B1130(void* self, void* edx, float w)",
+  "summary": "Packs the vec3 at +0x1c with a scalar argument into a 4-float array and forwards it to sub_004B0ED0",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "x"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "y"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "z"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@low",
+  "lifted_at": "2026-11-26T10:31:29Z"
+}

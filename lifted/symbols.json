@@ -12737,6 +12737,13 @@
     "summary": "Copies float fields +0x1C, +0x20, +0x28 of self plus one stack float into a local 4-float array and passes it to sub_004B0ED0.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004B1130": {
+    "name": "Unknown::forwardVec3WithScalar_004B1130",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall sub_004B1130(void* self, void* edx, float w)",
+    "summary": "Packs the vec3 at +0x1c with a scalar argument into a 4-float array and forwards it to sub_004B0ED0",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B1160": {
     "name": "ExprParser::ReadMethodType\u003cInterpreter,Interpreter::getType\u003e::vfunc_4",
     "class": "ExprParser::ValuePtrType",

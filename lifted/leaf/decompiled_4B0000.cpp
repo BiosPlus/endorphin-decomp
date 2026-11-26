@@ -967,3 +967,29 @@ void* fn_004B0F50(void* self) {
     return self;
 }
 } // namespace lift_004B0F50
+
+// [0x004B1130]
+namespace lift_004B1130 {
+extern void __fastcall ext_004B0ED0(void* self, void* edx, float* v);
+extern int mem_00924FD4;
+extern int mem_00924FDC;
+extern int mem_0093C18C;
+extern int mem_009433A0;
+extern int mem_00AE173C;
+
+// @name Unknown::forwardVec3WithScalar_004B1130
+// @class Unknown
+// @summary Packs the vec3 at +0x1c with a scalar argument into a 4-float array and forwards it to sub_004B0ED0
+// @field Unknown +0x1c float x
+// @field Unknown +0x20 float y
+// @field Unknown +0x24 float z
+extern void __fastcall sub_004B1130(void* self, void* edx, float w) {
+    (void)&mem_00924FD4; (void)&mem_00924FDC; (void)&mem_0093C18C; (void)&mem_009433A0; (void)&mem_00AE173C;
+    float v[4];
+    v[0] = lift_field<float>(self, 0x1c);
+    v[1] = lift_field<float>(self, 0x20);
+    v[2] = lift_field<float>(self, 0x24);
+    v[3] = w;
+    ext_004B0ED0(self, edx, v);
+}
+} // namespace lift_004B1130
