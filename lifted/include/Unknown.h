@@ -1259,9 +1259,11 @@ struct Unknown_Fields {
     // +0x1F4 uint8_t                  field_0x1F4  (evidence: 0x005B6C50) // CONFLICT: multiple definitions at +0x1F4
     // +0x1F8 uint32_t                 field_0x1F8  (evidence: 0x006C0580)
     // +0x1FC uint32_t                 field_0x1FC  (evidence: 0x006C0580)
-    // +0x200 DWORD                    field_0x200  (evidence: 0x0070AC00, 0x0070AD00)
+    // +0x200 DWORD                    field_0x200  (evidence: 0x0070AC00, 0x0070AD00) // CONFLICT: multiple definitions at +0x200
+    // +0x200 uint32_t                 field_0x200  (evidence: 0x004A5810) // CONFLICT: multiple definitions at +0x200
     // +0x204 DWORD                    field_0x204  (evidence: 0x004A57F0, 0x0070AC00, 0x0070AD00) // CONFLICT: multiple definitions at +0x204
     // +0x204 float                    field_0x204  (evidence: 0x005D0610, 0x005D0670) // CONFLICT: multiple definitions at +0x204
+    // +0x204 void*                    field_0x204  (evidence: 0x004A5810) // CONFLICT: multiple definitions at +0x204
     // +0x204 DWORD                    vecBegin  (evidence: 0x005ECDC0) // CONFLICT: multiple definitions at +0x204
     // +0x208 DWORD                    field_0x208  (evidence: 0x0070AC00, 0x0070AD00) // CONFLICT: multiple definitions at +0x208
     // +0x208 float                    field_0x208  (evidence: 0x007C76B0) // CONFLICT: multiple definitions at +0x208
@@ -1285,6 +1287,7 @@ struct Unknown_Fields {
     // +0x240 void*                    arrayEnd  (evidence: 0x005947B0)
     // +0x250 int32_t                  field_0x250  (evidence: 0x007266A0, 0x0072B180) // CONFLICT: multiple definitions at +0x250
     // +0x250 void*                    field_0x250  (evidence: 0x00726770) // CONFLICT: multiple definitions at +0x250
+    // +0x258 void*                    field_0x258  (evidence: 0x004A5810)
     // +0x264 const double*            samples  (evidence: 0x00796660)
     // +0x268 DWORD                    field_0x268  (evidence: 0x00702700, 0x0070AD00) // CONFLICT: multiple definitions at +0x268
     // +0x268 float                    field_0x268  (evidence: 0x007C76B0) // CONFLICT: multiple definitions at +0x268

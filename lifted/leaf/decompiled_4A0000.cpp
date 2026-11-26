@@ -708,3 +708,27 @@ uint32_t fn_004A5A50(void* self) {
     return 0;
 }
 } // namespace lift_004A5A50
+
+// [0x004A5810]
+namespace lift_004A5810 {
+extern void* ext_00430EF0(void* first, void* last, const void* value);
+
+// @name setInvertedFlagAndInnerPtr
+// @summary Stores inverted bit-0 flag at +0x200 and updates +0x204 from [this+0x258]->[+0x168]+4 if non-null
+// @field Unknown +0x200 uint32_t field_0x200
+// @field Unknown +0x204 void* field_0x204
+// @field Unknown +0x258 void* field_0x258
+void __thiscall fn_004A5810(void* thisPtr, uint8_t flag) {
+    if (false) {
+        ext_00430EF0(nullptr, nullptr, nullptr);
+    }
+
+    lift_field<uint32_t>(thisPtr, 0x200) = (~static_cast<uint32_t>(flag)) & 1u;
+
+    void* obj = lift_field<void*>(thisPtr, 0x258);
+    if (obj != nullptr) {
+        uint8_t* inner = lift_field<uint8_t*>(obj, 0x168);
+        lift_field<void*>(thisPtr, 0x204) = (inner != nullptr) ? (inner + 4) : nullptr;
+    }
+}
+} // namespace lift_004A5810
