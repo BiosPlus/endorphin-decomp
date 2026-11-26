@@ -1817,3 +1817,28 @@ uint32_t** __cdecl sub_00670C50(uint32_t** first, uint32_t** last, uint32_t** va
     return first;
 }
 } // namespace lift_00670C50
+
+// [0x00672430]
+namespace lift_00672430 {
+extern void* ext_006A5C62(uint32_t size);
+extern void ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+extern uintptr_t mem_00925130;
+
+// @name allocateElements80
+// @summary Allocates count elements of 80 bytes via MFC80 operator new, throwing std::bad_alloc on overflow
+void* __cdecl fn_00672430(uint32_t count) {
+    if (count > 0) {
+        if (0xFFFFFFFFu / count < 0x50u) {
+            const char* msg = nullptr;
+            uint32_t exc[3] = {};
+            using ExcCtor = void(__thiscall*)(void*, const char* const*);
+            reinterpret_cast<ExcCtor>(mem_00925130)(exc, &msg);
+            exc[0] = 0x00928EC0u;
+            ext_006A6DD2(exc, 0x009CDF94u);
+        }
+    } else {
+        count = 0;
+    }
+    return ext_006A5C62(count * 0x50u);
+}
+} // namespace lift_00672430
