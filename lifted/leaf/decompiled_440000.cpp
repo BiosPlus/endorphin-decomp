@@ -2188,3 +2188,35 @@ extern void __stdcall fn_00441A90(void* out, void* src) {
     lift_field<uint32_t>(out, 0x0C) = f0c + f04 + 1;
 }
 } // namespace lift_00441A90
+
+// [0x0044CCF0] sub_0044CCF0 (50 bytes)
+namespace lift_0044CCF0 {
+extern int mem_00B41B80;
+extern int mem_00924FC4;
+
+// @name Unknown::IsNameMatchingGlobalIfNotVirtual
+// @class Unknown
+// @summary Returns 1 if virtual slot +0x28 returns false and the std::string at this+0x458 equals the global mem_00B41B80; otherwise 0.
+// @field Unknown +0x000 void** vtable
+// @field Unknown +0x458 std::string field_0x458
+
+namespace {
+// __thiscall virtual slot returning bool (al).
+using VirtualBoolFn = unsigned char (__thiscall*)(void* self);
+// MSVCP80 operator==(const std::string&, const std::string&) (__cdecl).
+using StringEqualFn = unsigned char (__cdecl*)(const void* lhs, const void* rhs);
+}
+
+int fn_0044CCF0(void* self) {
+    void** vtable = lift_field<void**>(self, 0x000);
+    auto virtualCheck = reinterpret_cast<VirtualBoolFn>(vtable[0x28 / sizeof(void*)]);
+    if (virtualCheck(self) != 0) {
+        return 0;
+    }
+
+    auto stringEqual = *reinterpret_cast<StringEqualFn*>(&mem_00924FC4);
+    const void* field = &lift_field<char>(self, 0x458);
+    const void* global = &mem_00B41B80;
+    return stringEqual(field, global) != 0 ? 1 : 0;
+}
+} // namespace lift_0044CCF0

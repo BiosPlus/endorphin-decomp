@@ -5215,6 +5215,13 @@
     "summary": "Zeroes three consecutive floats at this+0x00, +0x04, +0x08 and returns this (eax).",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x0044CCF0": {
+    "name": "Unknown::IsNameMatchingGlobalIfNotVirtual",
+    "class": "Unknown",
+    "signature": "int fn_0044CCF0(void* self)",
+    "summary": "Returns 1 if virtual slot +0x28 returns false and the std::string at this+0x458 equals the global mem_00B41B80; otherwise 0.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044CD30": {
     "name": "RigEditorFrame::vfunc_108",
     "class": "RigEditorFrame",
