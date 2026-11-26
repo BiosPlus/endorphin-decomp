@@ -1376,3 +1376,26 @@ void __thiscall fn_005E29C0(void* self, float value) {
     ext_00612460(result, value);
 }
 } // namespace lift_005E29C0
+
+// [0x005ED330]
+namespace lift_005ED330 {
+// @name TreeEraseSubtree
+// @summary Recursively erases a red-black tree subtree starting from the given node.
+// @field Node +0x00 Node* left
+// @field Node +0x08 Node* right
+// @field Node +0x51 uint8_t isNil
+
+
+extern void ext_006A5C5C(void* ptr);
+
+void __thiscall fn_005ED330(void* self, void* node) {
+    uint8_t* curr = static_cast<uint8_t*>(node);
+    while (*reinterpret_cast<uint8_t*>(curr + 0x51) == 0) {
+        void* right = *reinterpret_cast<void**>(curr + 0x8);
+        fn_005ED330(self, right);
+        uint8_t* left = *reinterpret_cast<uint8_t**>(curr + 0x0);
+        ext_006A5C5C(curr);
+        curr = left;
+    }
+}
+} // namespace lift_005ED330

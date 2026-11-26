@@ -1,0 +1,33 @@
+{
+  "va": "0x005ED330",
+  "size": 53,
+  "orig_symbol": "sub_005ED330",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "TreeEraseSubtree",
+  "signature": "void __thiscall fn_005ED330(void* self, void* node)",
+  "summary": "Recursively erases a red-black tree subtree starting from the given node.",
+  "fields": [
+    {
+      "class": "Node",
+      "offset": "+0x0",
+      "type": "Node*",
+      "name": "left"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x8",
+      "type": "Node*",
+      "name": "right"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x51",
+      "type": "uint8_t",
+      "name": "isNil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T10:44:00Z"
+}

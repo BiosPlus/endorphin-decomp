@@ -35116,6 +35116,12 @@
     "summary": "Walks the pointer vector at this+0x204..+0x208 and sets byte +4 of each pointed-to object to 1.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005ED330": {
+    "name": "TreeEraseSubtree",
+    "signature": "void __thiscall fn_005ED330(void* self, void* node)",
+    "summary": "Recursively erases a red-black tree subtree starting from the given node.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005EE360": {
     "name": "NMData::FixedPathJointData::vfunc_15",
     "class": "NMData::FixedPathJointData",
