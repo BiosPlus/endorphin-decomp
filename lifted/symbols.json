@@ -8847,6 +8847,12 @@
     "summary": "Releases a held Unknown object (stopping it when the last reference drops), then frees the holder.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00480C70": {
+    "name": "copyBlock64Repeat",
+    "signature": "extern \"C\" void __cdecl copyBlock64Repeat(uint32_t dst, uint32_t end, uint32_t src)",
+    "summary": "Copies the 64-byte block at src into each consecutive 64-byte slot in [dst, end); no-op if dst == end.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00480E40": {
     "name": "ToolEngine::vfunc_9",
     "class": "ToolEngine",

@@ -1944,3 +1944,26 @@ uint32_t* fn_00489320(uint32_t* self, uint32_t* out) {
     return out;
 }
 } // namespace lift_00489320
+
+// [0x00480C70]
+namespace lift_00480C70 {
+// @name copyBlock64Repeat
+// @summary Copies the 64-byte block at src into each consecutive 64-byte slot in [dst, end); no-op if dst == end.
+
+extern void __cdecl copyBlock64Repeat(uint32_t dst, uint32_t end, uint32_t src)
+{
+    if (dst == end) {
+        return;
+    }
+
+    const uint32_t *srcBlock = reinterpret_cast<const uint32_t *>(src);
+    uint32_t cur = dst;
+    do {
+        uint32_t *out = reinterpret_cast<uint32_t *>(cur);
+        for (int i = 0; i < 16; ++i) {
+            out[i] = srcBlock[i];
+        }
+        cur += 0x40;
+    } while (cur != end);
+}
+} // namespace lift_00480C70

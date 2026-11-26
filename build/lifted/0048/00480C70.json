@@ -1,0 +1,13 @@
+{
+  "va": "0x00480C70",
+  "size": 41,
+  "orig_symbol": "sub_00480C70",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "copyBlock64Repeat",
+  "signature": "extern \"C\" void __cdecl copyBlock64Repeat(uint32_t dst, uint32_t end, uint32_t src)",
+  "summary": "Copies the 64-byte block at src into each consecutive 64-byte slot in [dst, end); no-op if dst == end.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:24:06Z"
+}
