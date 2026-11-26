@@ -1126,3 +1126,25 @@ uint8_t fn_00798C98(uint32_t i) {
     return i < sizeof(g_table_00798C98) ? g_table_00798C98[i] : 0x0C;
 }
 } // namespace lift_00798C98
+
+// [0x0079E620]
+namespace lift_0079E620 {
+// @name Unknown::Ctor_0079E620
+// @class Unknown
+// @summary Constructor that initializes base vtables, constructs embedded list head at +0x8, and sets derived vtables.
+// @field Unknown +0x00 uint32_t vptr
+// @field Unknown +0x04 uint32_t vptr_secondary
+// @field Unknown +0x08 void* list_head
+
+
+extern void* ext_00783860(void* self);
+
+void* fn_0079E620(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x00995080u;
+    lift_field<uint32_t>(self, 0x04) = 0x00995080u;
+    ext_00783860(static_cast<uint8_t*>(self) + 0x08);
+    lift_field<uint32_t>(self, 0x00) = 0x0099773cu;
+    lift_field<uint32_t>(self, 0x04) = 0x0099772cu;
+    return self;
+}
+} // namespace lift_0079E620
