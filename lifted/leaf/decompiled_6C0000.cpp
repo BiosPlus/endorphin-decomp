@@ -2020,3 +2020,25 @@ void* fn_006C3120(void* self) {
     return lift_field<void*>(self, 0x158);
 }
 } // namespace lift_006C3120
+
+// [0x006C3150]
+namespace lift_006C3150 {
+// @name CheckChildReturnsSix_006C3150
+// @class Unknown
+// @summary Returns this->field_0x158 if it is non-null and its vtable slot 0 returns 6; otherwise returns 0.
+// @field Unknown +0x158 uint32_t field_0x158
+uint32_t __thiscall fn_006C3150(void* self) {
+    uint32_t child = lift_field<uint32_t>(self, 0x158);
+    if (child != 0) {
+        uint32_t vtable = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(child));
+        uint32_t fn_addr = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(vtable));
+        using vfunc_t = uint32_t(__thiscall*)(void*);
+        uint32_t result = reinterpret_cast<vfunc_t>(static_cast<uintptr_t>(fn_addr))(
+            reinterpret_cast<void*>(static_cast<uintptr_t>(child)));
+        if (result == 6) {
+            return lift_field<uint32_t>(self, 0x158);
+        }
+    }
+    return 0;
+}
+} // namespace lift_006C3150
