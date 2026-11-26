@@ -1,0 +1,22 @@
+{
+  "va": "0x00783670",
+  "size": 83,
+  "orig_symbol": "sub_00783670",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "Logger::logPrintf",
+  "class": "Logger",
+  "signature": "void __cdecl sub_00783670(void* logger, const char* fmt, ...)",
+  "summary": "Formats a variadic message and writes it to the logger's file stream if enabled.",
+  "fields": [
+    {
+      "class": "Logger",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "streamInfo"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:49:48Z"
+}

@@ -1780,3 +1780,37 @@ uint16_t __thiscall sub_007834C0(void* self, uint16_t* out, uint8_t swap_bytes) 
     return *out;
 }
 } // namespace lift_007834C0
+
+// [0x00783670]
+namespace lift_00783670 {
+// @name Logger::logPrintf
+// @class Logger
+// @summary Formats a variadic message and writes it to the logger's file stream if enabled.
+// @field Logger +0x04 void* streamInfo
+
+
+extern uintptr_t mem_009252B8;
+extern uintptr_t mem_009252C8;
+extern void __cdecl ext_006A7270();
+
+void __cdecl sub_00783670(void* logger, const char* fmt, ...) {
+    ext_006A7270();
+    void* streamInfo = lift_field<void*>(logger, 0x4);
+    uint8_t enabled = lift_field<uint8_t>(streamInfo, 0x4);
+    if (!enabled) {
+        return;
+    }
+
+    char buf[0x4000];
+    va_list args;
+    va_start(args, fmt);
+    using VsprintfFn = int(__cdecl*)(char*, const char*, va_list);
+    reinterpret_cast<VsprintfFn>(mem_009252B8)(buf, fmt, args);
+    va_end(args);
+
+    void* streamInfo2 = lift_field<void*>(logger, 0x4);
+    void* file = lift_field<void*>(streamInfo2, 0x0);
+    using FputsFn = int(__cdecl*)(const char*, void*);
+    reinterpret_cast<FputsFn>(mem_009252C8)(buf, file);
+}
+} // namespace lift_00783670
