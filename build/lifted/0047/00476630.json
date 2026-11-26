@@ -1,0 +1,13 @@
+{
+  "va": "0x00476630",
+  "size": 47,
+  "orig_symbol": "sub_00476630",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "constructStdStringFromCStr",
+  "signature": "extern \"C\" void* __cdecl fn_00476630(void* out, const char* s)",
+  "summary": "Constructs a std::string at out from s via the MSVCP80 basic_string(const char*) import (default ctor when s is null) and returns out.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:31:37Z"
+}

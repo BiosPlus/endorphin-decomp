@@ -794,3 +794,24 @@ void fn_004757F0(void* self) {
 }
 } // namespace lift_004AD970
 } // namespace lift_004757F0
+
+// [0x00476630] sub_00476630 (47 bytes)
+namespace lift_00476630 {
+extern int mem_00924FE4;
+extern int mem_00924FE8;
+
+// @name constructStdStringFromCStr
+// @summary Constructs a std::string at out from s via the MSVCP80 basic_string(const char*) import (default ctor when s is null) and returns out.
+extern void* __cdecl fn_00476630(void* out, const char* s) {
+    if (s != nullptr) {
+        using CtorFromCStr = void(__thiscall*)(void* self, const char* s);
+        auto ctor = reinterpret_cast<CtorFromCStr>(static_cast<uintptr_t>(mem_00924FE4));
+        ctor(out, s);
+    } else {
+        using CtorDefault = void(__thiscall*)(void* self);
+        auto ctor = reinterpret_cast<CtorDefault>(static_cast<uintptr_t>(mem_00924FE8));
+        ctor(out);
+    }
+    return out;
+}
+} // namespace lift_00476630

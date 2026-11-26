@@ -8465,6 +8465,12 @@
     "summary": "Constructor initializing two std::string fields by copy, two by default, and a uint8_t flag to 0",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00476630": {
+    "name": "constructStdStringFromCStr",
+    "signature": "extern \"C\" void* __cdecl fn_00476630(void* out, const char* s)",
+    "summary": "Constructs a std::string at out from s via the MSVCP80 basic_string(const char*) import (default ctor when s is null) and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x004769D0": {
     "name": "NMData::SceneData::vfunc_7",
     "class": "NMData::SceneData",
