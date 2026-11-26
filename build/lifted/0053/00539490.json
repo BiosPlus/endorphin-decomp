@@ -1,0 +1,13 @@
+{
+  "va": "0x00539490",
+  "size": 91,
+  "orig_symbol": "sub_00539490",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "allocateArray12",
+  "signature": "extern \"C\" void* fn_00539490(uint32_t count)",
+  "summary": "Allocates count * 12 bytes via operator new, throwing std::bad_alloc on integer overflow.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T12:12:03Z"
+}

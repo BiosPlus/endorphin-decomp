@@ -1655,3 +1655,27 @@ void sub_005331B0() {
     }
 }
 } // namespace lift_005331B0
+
+// [0x00539490]
+namespace lift_00539490 {
+// @name allocateArray12
+// @summary Allocates count * 12 bytes via operator new, throwing std::bad_alloc on integer overflow.
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+extern void* mem_00925130;
+
+extern void* fn_00539490(uint32_t count) {
+    if (count > 0 && (0xFFFFFFFFu / count) < 12u) {
+        const char* msg = nullptr;
+        void* exc[3] = { nullptr, nullptr, nullptr };
+        using ExcCtor = void (__thiscall*)(void*, const char* const*);
+        reinterpret_cast<ExcCtor>(mem_00925130)(exc, &msg);
+        exc[0] = reinterpret_cast<void*>(0x00928EC0u);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009CDF94u));
+        return nullptr;
+    }
+    return ext_006A5C62(count * 12u);
+}
+} // namespace lift_00539490
