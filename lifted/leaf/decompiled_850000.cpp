@@ -1071,3 +1071,37 @@ char* fn_00859A50(char* dst, const char* src, uint32_t count) {
     return result;
 }
 } // namespace lift_00859A50
+
+// [0x0085BF70]
+namespace lift_0085BF70 {
+void* ext_00859DA0(void);
+uint32_t ext_0085BC20(uint32_t self_ptr);
+uint32_t ext_00859DD0(void* self);
+
+// @name CloneStreamHandle
+// @summary Allocates a stream handle, optionally dereferences the source's inner buffer, increments its refcount, and initializes the clone's fields.
+// @field Stream +0x00 void* field_0x00
+// @field Stream +0x08 uint32_t field_0x08
+// @field Stream +0x10 uint32_t field_0x10
+// @field Stream +0x14 uint32_t field_0x14
+// @field Stream +0x18 uint32_t field_0x18
+void* fn_0085BF70(void* src) {
+    void* obj = ext_00859DA0();
+    if (!obj) {
+        return nullptr;
+    }
+
+    uint8_t* target = static_cast<uint8_t*>(src);
+    if (lift_field<uint8_t>(target, 0x14) & 0x4) {
+        target = lift_field<uint8_t*>(target, 0x00);
+    }
+
+    lift_field<uint32_t>(target, 0x18) += 1;
+    lift_field<void*>(obj, 0x00) = target;
+    lift_field<uint32_t>(obj, 0x08) = ext_0085BC20(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(target)));
+    lift_field<uint32_t>(obj, 0x14) |= 0x6;
+    lift_field<uint32_t>(obj, 0x10) = 0;
+    (void)ext_00859DD0;
+    return obj;
+}
+} // namespace lift_0085BF70

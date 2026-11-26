@@ -1,0 +1,45 @@
+{
+  "va": "0x0085BF70",
+  "size": 64,
+  "orig_symbol": "sub_0085BF70",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "CloneStreamHandle",
+  "signature": "void* fn_0085BF70(void* src)",
+  "summary": "Allocates a stream handle, optionally dereferences the source's inner buffer, increments its refcount, and initializes the clone's fields.",
+  "fields": [
+    {
+      "class": "Stream",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Stream",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Stream",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Stream",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Stream",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:10:12Z"
+}

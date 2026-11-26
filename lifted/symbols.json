@@ -73393,6 +73393,12 @@
     "summary": "Linear scan of a {key,value} entry array; returns the value of the first entry whose key matches, or 0.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085BF70": {
+    "name": "CloneStreamHandle",
+    "signature": "void* fn_0085BF70(void* src)",
+    "summary": "Allocates a stream handle, optionally dereferences the source's inner buffer, increments its refcount, and initializes the clone's fields.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085BFE0": {
     "name": "GlobalFreeForwarder_0085BFE0",
     "signature": "uint32_t __cdecl fn_0085BFE0(uint32_t hMem)",
