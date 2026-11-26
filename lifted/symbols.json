@@ -25897,6 +25897,12 @@
     "summary": "Counts the children of model for which self's CheckModelAgainstSelf accepts the child; returns 0 for a null model.",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
+  "0x005634D0": {
+    "name": "FormatCSIBCStringToStdString",
+    "signature": "extern \"C\" uint32_t mem_00925754; // CSIBCString::operator!=(const char*) extern \"C\" uint32_t mem_00925750; // CSIBCString::operator=(const CSIBCString\u0026) extern \"C\" uint32_t mem_0092574C; // CSIBCString::GetText() extern \"C\" uint32_t mem_00924FE4; // std::basic_string\u003cchar\u003e::basic_string(const char*) void* __stdcall fn_005634D0(void* out, void* obj)",
+    "summary": "Copies the text of the CSIBCString at obj+0x04 into the std::string at out (first assigning a default value if the string differs from \"\"), and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x00563600": {
     "name": "XSIIO::vfunc_3",
     "class": "XSIIO",

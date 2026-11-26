@@ -404,3 +404,39 @@ void fn_00569970(void* self) {
     *f0c = 0;
 }
 } // namespace lift_00569970
+
+// [0x005634D0]
+namespace lift_005634D0 {
+// Import thunk slots (IAT entries) used by the original asm.
+extern uint32_t mem_00925754; // CSIBCString::operator!=(const char*)
+extern uint32_t mem_00925750; // CSIBCString::operator=(const CSIBCString&)
+extern uint32_t mem_0092574C; // CSIBCString::GetText()
+extern uint32_t mem_00924FE4; // std::basic_string<char>::basic_string(const char*)
+
+// @name FormatCSIBCStringToStdString
+// @summary Copies the text of the CSIBCString at obj+0x04 into the std::string at out (first assigning a default value if the string differs from ""), and returns out.
+// @field Unknown +0x04 CSIBCString field_0x04
+
+void* __stdcall fn_005634D0(void* out, void* obj) {
+    void* csi = static_cast<uint8_t*>(obj) + 0x04;
+
+    using neq_fn_t    = bool (__thiscall*)(void* self, const char* rhs);
+    using assign_fn_t = void* (__thiscall*)(void* self, const void* rhs);
+    using text_fn_t   = const char* (__thiscall*)(void* self);
+    using ctor_fn_t   = void (__thiscall*)(void* self, const char* s);
+
+    auto neq = reinterpret_cast<neq_fn_t>(static_cast<uintptr_t>(mem_00925754));
+    if (neq(csi, reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00928B5DU)))) {
+        auto assign = reinterpret_cast<assign_fn_t>(static_cast<uintptr_t>(mem_00925750));
+        assign(csi, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00B39FD8U)));
+    }
+
+    auto get_text = reinterpret_cast<text_fn_t>(static_cast<uintptr_t>(mem_0092574C));
+    const char* text = get_text(csi);
+
+    auto construct = reinterpret_cast<ctor_fn_t>(static_cast<uintptr_t>(mem_00924FE4));
+    construct(out, text);
+
+    return out;
+}
+} // namespace lift_005634D0

@@ -1,0 +1,21 @@
+{
+  "va": "0x005634D0",
+  "size": 75,
+  "orig_symbol": "sub_005634D0",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "FormatCSIBCStringToStdString",
+  "signature": "extern \"C\" uint32_t mem_00925754; // CSIBCString::operator!=(const char*) extern \"C\" uint32_t mem_00925750; // CSIBCString::operator=(const CSIBCString\u0026) extern \"C\" uint32_t mem_0092574C; // CSIBCString::GetText() extern \"C\" uint32_t mem_00924FE4; // std::basic_string\u003cchar\u003e::basic_string(const char*) void* __stdcall fn_005634D0(void* out, void* obj)",
+  "summary": "Copies the text of the CSIBCString at obj+0x04 into the std::string at out (first assigning a default value if the string differs from \"\"), and returns out.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "CSIBCString",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:22:41Z"
+}
