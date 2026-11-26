@@ -1963,3 +1963,30 @@ void* fn_00419BF0(void* arg) {
     return arg;
 }
 } // namespace lift_00419BF0
+
+// [0x004103F0] sub_004103F0 (47 bytes)
+namespace lift_004103F0 {
+// Known callee 0x00410390: sub_00410390 (Checks virtual predicate at +0x28 and compares string at +0x458 against three known values)
+extern uint8_t ext_00410390(void* self);
+
+// @name isVirtualPredicateOrCheck_004103F0
+// @summary Evaluates virtual predicate at vtable+0x28; if false, falls back to ext_00410390 twice-gated check; returns 1 or 0.
+// @field Unknown +0x00 void* vtable
+uint32_t fn_004103F0(void* self) {
+    // Load vtable pointer from object (+0x00) and fetch slot at +0x28.
+    uint8_t* vtbl = *reinterpret_cast<uint8_t**>(self);
+    void* slot = *reinterpret_cast<void**>(vtbl + 0x28);
+    using VirtPred = uint8_t (*)(void*);
+    uint8_t a = reinterpret_cast<VirtPred>(slot)(self);
+
+    if (a != 0) {
+        return ext_00410390(self) != 0 ? 1u : 0u;
+    }
+
+    uint8_t b = ext_00410390(self);
+    if (b == 0) {
+        return 1u;
+    }
+    return ext_00410390(self) != 0 ? 1u : 0u;
+}
+} // namespace lift_004103F0

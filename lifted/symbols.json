@@ -1216,6 +1216,12 @@
     "summary": "Checks virtual predicate at +0x28 and compares string at +0x458 against three known values",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x004103F0": {
+    "name": "isVirtualPredicateOrCheck_004103F0",
+    "signature": "uint32_t fn_004103F0(void* self)",
+    "summary": "Evaluates virtual predicate at vtable+0x28; if false, falls back to ext_00410390 twice-gated check; returns 1 or 0.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00410420": {
     "name": "checkVirtualPredicateAndStrEq",
     "signature": "uint8_t __fastcall fn_00410420(void* self)",

@@ -1,0 +1,21 @@
+{
+  "va": "0x004103F0",
+  "size": 47,
+  "orig_symbol": "sub_004103F0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "isVirtualPredicateOrCheck_004103F0",
+  "signature": "uint32_t fn_004103F0(void* self)",
+  "summary": "Evaluates virtual predicate at vtable+0x28; if false, falls back to ext_00410390 twice-gated check; returns 1 or 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:29:43Z"
+}
