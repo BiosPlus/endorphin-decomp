@@ -1711,3 +1711,30 @@ void* __fastcall sub_00574D30(void* self)
     return self;
 }
 } // namespace lift_00574D30
+
+// [0x005731F0]
+namespace lift_005731F0 {
+// @name allocateElements48
+// @summary Allocates count * 48 bytes via operator new, throwing std::bad_alloc on size_t overflow.
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+extern void* mem_00925130;
+
+extern void* fn_005731F0(uint32_t count) {
+    if (count > 0) {
+        if ((0xFFFFFFFFu / count) < 0x30u) {
+            uint8_t exc[12];
+            const char* msg = nullptr;
+            using ExcCtor = void(__thiscall*)(void*, const char* const*);
+            reinterpret_cast<ExcCtor>(mem_00925130)(exc, &msg);
+            *reinterpret_cast<uint32_t*>(exc) = 0x00928EC0u;
+            ext_006A6DD2(exc, reinterpret_cast<void*>(0x009CDF94u));
+        }
+    } else {
+        count = 0;
+    }
+    return ext_006A5C62(count * 0x30u);
+}
+} // namespace lift_005731F0
