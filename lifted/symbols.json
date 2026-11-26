@@ -9604,6 +9604,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005E0B20 (TreeIterator::increment).",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00486EA0": {
+    "name": "allocObjectArrayChecked_00486EA0",
+    "signature": "void* fn_00486EA0(uint32_t count)",
+    "summary": "Allocate count * 0x68 bytes with overflow check; throws std::exception on overflow.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00486F00": {
     "name": "ExprParser::ROMethod0Type::vfunc_0 (NM::Vector3::normalize2)",
     "class": "ExprParser::ROMethod0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",

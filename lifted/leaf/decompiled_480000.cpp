@@ -2275,3 +2275,38 @@ void fn_004890D0(void* a, void* b, void* c) {
     }
 }
 } // namespace lift_004890D0
+
+// [0x00486EA0] sub_00486EA0 (87 bytes)
+namespace lift_00486EA0 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void ext_006A5C62();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+// IAT slot holding MSVCR80!??0exception@std@@QAE@ABQBD@Z (std::exception ctor, thiscall)
+extern void* mem_00925130;
+// Rdata: _ThrowInfo for std::exception (passed to _CxxThrowException)
+extern char mem_009CDF94;
+// Rdata: std::exception vftable (stored into the exception object)
+extern char mem_00928EC0;
+
+// @name allocObjectArrayChecked_00486EA0
+// @summary Allocate count * 0x68 bytes with overflow check; throws std::exception on overflow.
+void* fn_00486EA0(uint32_t count) {
+    uint32_t size;
+    if (count == 0) {
+        size = 0;
+    } else if (0xFFFFFFFFu / count >= 0x68u) {
+        size = count * 0x68u;
+    } else {
+        // Overflow: construct std::exception(nullptr) and throw it.
+        alignas(8) uint32_t exc[3] = {};
+        const char* msg = nullptr;
+        reinterpret_cast<void (*)(void*, const char* const*)>(mem_00925130)(exc, &msg);
+        exc[0] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00928EC0));
+        reinterpret_cast<void (*)(void*, void*)>(ext_006A6DD2)(
+            exc, &mem_009CDF94);
+        return nullptr; // not reached
+    }
+    return reinterpret_cast<void* (*)(uint32_t)>(ext_006A5C62)(size);
+}
+} // namespace lift_00486EA0
