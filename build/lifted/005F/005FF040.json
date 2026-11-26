@@ -1,0 +1,39 @@
+{
+  "va": "0x005FF040",
+  "size": 54,
+  "orig_symbol": "sub_005FF040",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "sub_005FF040",
+  "signature": "extern \"C\" void __fastcall fn_005FF040(void* self)",
+  "summary": "Destructor/cleanup that resets vtable, frees field_0x8 via MFC80_ord_764 if non-null, zeroes fields 0x8..0x10, and tail-calls ext_0065F440.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T10:48:02Z"
+}

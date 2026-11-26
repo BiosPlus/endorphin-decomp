@@ -1218,3 +1218,32 @@ void __thiscall fn_005FD330(void* self, void* node) {
     }
 }
 } // namespace lift_005FD330
+
+// [0x005FF040]
+namespace lift_005FF040 {
+extern void __cdecl ext_006A5C5C(void* ptr);
+extern void __fastcall ext_0065F440(void* self);
+extern uint8_t mem_00B46790[];
+
+// @name sub_005FF040
+// @summary Destructor/cleanup that resets vtable, frees field_0x8 via MFC80_ord_764 if non-null, zeroes fields 0x8..0x10, and tail-calls ext_0065F440.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+extern void __fastcall fn_005FF040(void* self) {
+    (void)mem_00B46790;
+    lift_field<uint32_t>(self, 0x0) = 0x0096EAECu;
+
+    void* ptr = lift_field<void*>(self, 0x8);
+    if (ptr != nullptr) {
+        ext_006A5C5C(ptr);
+    }
+
+    lift_field<uint32_t>(self, 0x8) = 0;
+    lift_field<uint32_t>(self, 0xC) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+
+    ext_0065F440(self);
+}
+} // namespace lift_005FF040
