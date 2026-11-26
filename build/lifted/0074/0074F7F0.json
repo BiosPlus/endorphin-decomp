@@ -1,0 +1,33 @@
+{
+  "va": "0x0074F7F0",
+  "size": 48,
+  "orig_symbol": "sub_0074F7F0",
+  "src_path": "src/leaf/decompiled_740000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_740000.cpp",
+  "name": "SearchSortedRecords",
+  "signature": "extern \"C\" void* fn_0074F7F0(void* const* base_holder, const int32_t* count_ptr, const void* key)",
+  "summary": "bsearch over a counted array of 16-byte records using the 3-key compare at 0x0074F7A0; returns match or NULL.",
+  "fields": [
+    {
+      "class": "Arg",
+      "offset": "+0x0",
+      "type": "void* base_ptr_holder (arg1: pointer to array base",
+      "name": "pointer)"
+    },
+    {
+      "class": "Arg",
+      "offset": "+0x4",
+      "type": "int32_t* count_ptr (arg2: pointer to element",
+      "name": "count)"
+    },
+    {
+      "class": "Arg",
+      "offset": "+0x8",
+      "type": "const void* key (arg3: key record",
+      "name": "pointer)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:38:31Z"
+}

@@ -66864,6 +66864,12 @@
     "summary": "Three-key ordering compare of two 12-byte records: keys at +0x00, +0x08, +0x04 (in that priority); returns 0 if all equal, else 1 or -1.",
     "lifted_path": "lifted/leaf/decompiled_740000.cpp"
   },
+  "0x0074F7F0": {
+    "name": "SearchSortedRecords",
+    "signature": "extern \"C\" void* fn_0074F7F0(void* const* base_holder, const int32_t* count_ptr, const void* key)",
+    "summary": "bsearch over a counted array of 16-byte records using the 3-key compare at 0x0074F7A0; returns match or NULL.",
+    "lifted_path": "lifted/leaf/decompiled_740000.cpp"
+  },
   "0x0074F820": {
     "name": "sub_0074F820",
     "class": "Unknown",

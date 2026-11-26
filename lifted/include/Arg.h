@@ -8,6 +8,9 @@
 // Recovered field layout for Arg:
 namespace lifted_layout {
 struct Arg_Fields {
+    // +0x0   void* base_ptr_holder (arg1: pointer to array base pointer)  (evidence: 0x0074F7F0)
+    // +0x4   int32_t* count_ptr (arg2: pointer to element count)  (evidence: 0x0074F7F0)
+    // +0x8   const void* key (arg3: key record pointer)  (evidence: 0x0074F7F0)
     // +0x2C  uint32_t                 field_0x2c  (evidence: 0x0040F270)
     // +0x34  uint32_t                 index  (evidence: 0x00516EB0, 0x00518030)
 };

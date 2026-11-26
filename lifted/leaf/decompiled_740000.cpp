@@ -1,8 +1,10 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_740000.cpp
 #include "lift_compat.h"
 #include <cstring>
+#include <cstdlib>
+#include <cstdint>
 
-// [0x0074F820] sub_0074F820 (48 bytes)
+#include <cstdint>
 namespace lift_0074F820 {
 // @name sub_0074F820
 // @summary Auto-lifted identical-shape clone of 0x006D2AA0 (ForwardIndexedElementToCallee).
@@ -205,3 +207,29 @@ bool __stdcall fn_00747570(void* arg0, void* arg1) {
     return true;
 }
 } // namespace lift_00747570
+
+// [0x0074F7F0]
+namespace lift_0074F7F0 {
+// Original calls bsearch through the IAT slot mem_0092529C (MSVCR80!bsearch);
+// portable lift uses std::bsearch, which is the same function.
+extern int mem_0092529C;
+
+// @name SearchSortedRecords
+// @summary bsearch over a counted array of 16-byte records using the 3-key compare at 0x0074F7A0; returns match or NULL.
+// @field Arg +0x00 void* base_ptr_holder (arg1: pointer to array base pointer)
+// @field Arg +0x04 int32_t* count_ptr (arg2: pointer to element count)
+// @field Arg +0x08 const void* key (arg3: key record pointer)
+
+extern int ext_0074F7A0(const void* a, const void* b);
+
+extern void* fn_0074F7F0(void* const* base_holder, const int32_t* count_ptr, const void* key)
+{
+    const int32_t count = *count_ptr;
+    if (count <= 0) {
+        return nullptr;
+    }
+    void* base = *base_holder;
+    (void)&mem_0092529C;
+    return std::bsearch(key, base, static_cast<std::size_t>(count), 0x10, ext_0074F7A0);
+}
+} // namespace lift_0074F7F0
