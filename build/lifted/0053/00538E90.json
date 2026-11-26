@@ -1,0 +1,14 @@
+{
+  "va": "0x00538E90",
+  "size": 68,
+  "orig_symbol": "UtilityGraphics::StippledLine::vfunc_22",
+  "src_path": "src/UtilityGraphics/StippledLine.cpp",
+  "lifted_path": "lifted/UtilityGraphics/StippledLine.cpp",
+  "name": "UtilityGraphics::StippledLine::vfunc_22",
+  "class": "UtilityGraphics::StippledLine",
+  "signature": "extern void (__stdcall *mem_0092546C)(uint32_t mask);       // glPushAttrib extern void (__stdcall *mem_00925494)(int32_t factor, uint16_t pattern); // glLineStipple extern void (__stdcall *mem_00925418)(uint32_t cap);        // glEnable extern void (__stdcall *mem_00925438)(uint32_t cap);        // glDisable extern void (__stdcall *mem_0092552C)(void);                // glPopAttrib extern void __thiscall ext_00538E40(void* this_ptr, uint32_t arg); // UtilityGraphics::Line::vfunc_22 void __thiscall fn_00538E90(void* this_ptr, uint32_t arg)",
+  "summary": "Enables line stippling, delegates to UtilityGraphics::Line::vfunc_22, and restores OpenGL attributes.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:20:55Z"
+}
