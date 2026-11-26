@@ -1610,3 +1610,37 @@ int fn_006B2F70(void) {
     return lift_field<DWORD>(osvi, 0x10) == 2 ? 1 : 0;
 }
 } // namespace lift_006B2F70
+
+// [0x006B8B70]
+namespace lift_006B8B70 {
+extern void* mem_0092561C;
+extern void* mem_009256CC;
+extern void* mem_00925694;
+
+// @name IsOwnerWindowVisibleAndAlive
+// @class HwndOwner
+// @summary Returns 1 if this->hwnd (+0x20) is a valid, visible window whose WM 0x18B query (SendMessageA) returns nonzero; otherwise 0. A null this yields 0.
+// @field HwndOwner +0x20 HWND hwnd
+int __thiscall IsOwnerWindowVisibleAndAlive(void* self) {
+    if (self == nullptr) {
+        return 0;
+    }
+    HWND hwnd = lift_field<HWND>(self, 0x20);
+
+    using IsWindowFn = BOOL(__stdcall*)(HWND);
+    using SendMessageAFn = LRESULT(__stdcall*)(HWND, UINT, WPARAM, LPARAM);
+
+    // USER32!IsWindow, USER32!IsWindowVisible, USER32!SendMessageA (IAT slots)
+    if (reinterpret_cast<IsWindowFn>(mem_0092561C)(hwnd) == 0) {
+        return 0;
+    }
+    if (reinterpret_cast<IsWindowFn>(mem_009256CC)(hwnd) == 0) {
+        return 0;
+    }
+    LRESULT res = reinterpret_cast<SendMessageAFn>(mem_00925694)(hwnd, 0x18B, 0, 0);
+    if (res == 0) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_006B8B70

@@ -1,0 +1,22 @@
+{
+  "va": "0x006B8B70",
+  "size": 73,
+  "orig_symbol": "sub_006B8B70",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "IsOwnerWindowVisibleAndAlive",
+  "class": "HwndOwner",
+  "signature": "int __thiscall IsOwnerWindowVisibleAndAlive(void* self)",
+  "summary": "Returns 1 if this-\u003ehwnd (+0x20) is a valid, visible window whose WM 0x18B query (SendMessageA) returns nonzero; otherwise 0. A null this yields 0.",
+  "fields": [
+    {
+      "class": "HwndOwner",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:21:08Z"
+}
