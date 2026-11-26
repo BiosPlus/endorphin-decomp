@@ -13920,6 +13920,12 @@
     "summary": "One-time guarded initializer for the static object at 0x00AE165C; on first call sets bit 0 of 0x00AE1660, runs the object's init helper, stores 0x009433F4 into its first DWORD, and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004B79B0": {
+    "name": "parseFloatFromString",
+    "signature": "float __cdecl sub_004B79B0(void* str)",
+    "summary": "Converts a std::string to a float using c_str and atof, then destroys the string.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B7A10": {
     "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_0",
     "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
@@ -73611,6 +73617,12 @@
     "class": "Unknown",
     "signature": "void Unknown_TransformVec3ByMatrix(const float* m, const float* v, float* out)",
     "summary": "Computes out[i] = m[i]*v0 + m[i+4]*v1 + m[i+8]*v2 for i in 0..2 (3-vector times 4-stride matrix).",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
+  "0x007FC4E0": {
+    "name": "copy16Floats",
+    "signature": "void fn_007FC4E0(const float* src, float* dst)",
+    "summary": "Copies 16 consecutive 32-bit floats (64 bytes) from src to dst.",
     "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
   "0x00802D40": {

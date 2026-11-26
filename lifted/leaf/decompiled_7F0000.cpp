@@ -525,3 +525,14 @@ void fn_007F0B30(void* self, uint32_t index, uint32_t owner) {
     lift_field<uint32_t>(bucket, 0x0C) = nodeAddr;
 }
 } // namespace lift_007F0B30
+
+// [0x007FC4E0]
+namespace lift_007FC4E0 {
+// @name copy16Floats
+// @summary Copies 16 consecutive 32-bit floats (64 bytes) from src to dst.
+void fn_007FC4E0(const float* src, float* dst) {
+    for (int i = 0; i < 16; ++i) {
+        dst[i] = src[i];
+    }
+}
+} // namespace lift_007FC4E0
