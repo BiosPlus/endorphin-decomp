@@ -26296,6 +26296,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00520B90 (initArrayRangeReverse_00520B90).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x005752C0": {
+    "name": "CopyBackwardStringRecords",
+    "signature": "void* fn_005752C0(void* first, void* last, void* dst_last)",
+    "summary": "Copy-assigns 0x54-byte records (three std::string members) backward from [first,last) into the range ending at dst_last; returns the new dst position.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00575350": {
     "name": "Quat::setAxisAngle",
     "class": "Quat",

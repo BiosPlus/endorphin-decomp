@@ -1565,3 +1565,38 @@ void fn_00570410(void* self, void* out, void* in) {
     }
 }
 } // namespace lift_00570410
+
+// [0x005752C0] sub_005752C0 (77 bytes)
+namespace lift_005752C0 {
+extern int mem_00924FDC;
+
+// std::string::operator=(const std::string&) via IAT slot mem_00924FDC (MSVCP80, thiscall)
+extern void __thiscall ext_std_string_assign_str(void* self, const void* rhs);
+
+// @name CopyBackwardStringRecords
+// @summary Copy-assigns 0x54-byte records (three std::string members) backward from [first,last) into the range ending at dst_last; returns the new dst position.
+// @field StringRecord +0x00 std::string field_0x00
+// @field StringRecord +0x1C std::string field_0x1C
+// @field StringRecord +0x38 std::string field_0x38
+void* fn_005752C0(void* first, void* last, void* dst_last) {
+    // The original reached MSVCP80 operator= via `call [0x924FDC]`; the ext_ call below stands in for it.
+    (void)&mem_00924FDC;
+
+    if (first == last) {
+        return dst_last;
+    }
+
+    auto* begin = static_cast<uint8_t*>(first);
+    auto* src = static_cast<uint8_t*>(last);
+    auto* dst = static_cast<uint8_t*>(dst_last);
+    do {
+        src -= 0x54;
+        dst -= 0x54;
+        ext_std_string_assign_str(dst + 0x00, src + 0x00);
+        ext_std_string_assign_str(dst + 0x1C, src + 0x1C);
+        ext_std_string_assign_str(dst + 0x38, src + 0x38);
+    } while (src != begin);
+
+    return dst;
+}
+} // namespace lift_005752C0

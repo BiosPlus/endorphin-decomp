@@ -8,7 +8,9 @@
 // Recovered field layout for StringRecord:
 namespace lifted_layout {
 struct StringRecord_Fields {
-    // +0x0   std::string              field_0x00  (evidence: 0x0041CDE0)
-    // +0x1C  uint32_t                 field_0x1c  (evidence: 0x0041CDE0)
+    // +0x0   std::string              field_0x00  (evidence: 0x0041CDE0, 0x005752C0)
+    // +0x1C  std::string              field_0x1C  (evidence: 0x005752C0) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  uint32_t                 field_0x1c  (evidence: 0x0041CDE0) // CONFLICT: multiple definitions at +0x1C
+    // +0x38  std::string              field_0x38  (evidence: 0x005752C0)
 };
 } // namespace lifted_layout
