@@ -25336,6 +25336,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x005597C0": {
+    "name": "clearStringVectorRecord",
+    "signature": "void fn_005597C0(void* self, uint32_t flag)",
+    "summary": "Thiscall: if field_0x04 is non-null, destroys the range [field_0x04, field_0x08) via ext_00558F20, releases field_0x04 via ext_006A5C5C, then zeroes fields 0x04, 0x08 and 0x0C.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00559A30": {
     "name": "Unknown::ReleaseHandleAndClearThenThrow",
     "class": "Unknown",
