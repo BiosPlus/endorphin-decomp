@@ -1440,3 +1440,29 @@ uint8_t fn_0049AD40(void* self, const void* other) {
     return static_cast<uint8_t>(a != b ? 1 : 0);
 }
 } // namespace lift_0049AD40
+
+// [0x004925D0]
+namespace lift_004925D0 {
+// @name checkFieldMatchByMode
+// @summary Checks if field_0x0 is 1 and field_0x8 matches field_0xc (mode 0) or field_0x10 (mode 1)
+// @field +0x00 uint32_t field_0x0
+// @field +0x08 uint32_t field_0x8
+// @field +0x0C uint32_t field_0xc
+// @field +0x10 uint32_t field_0x10
+
+
+bool __thiscall sub_004925D0(void* self, uint32_t mode) {
+    if (lift_field<uint32_t>(self, 0x00) != 1) {
+        return false;
+    }
+
+    uint32_t val = lift_field<uint32_t>(self, 0x08);
+    if (mode == 0) {
+        return val == lift_field<uint32_t>(self, 0x0C);
+    }
+    if (mode == 1) {
+        return val == lift_field<uint32_t>(self, 0x10);
+    }
+    return false;
+}
+} // namespace lift_004925D0

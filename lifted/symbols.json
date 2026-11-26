@@ -10230,6 +10230,12 @@
     "summary": "Returns 1 if self-\u003e+0x00 is non-zero and self-\u003e+0x08 equals the single stack argument, otherwise 0 (callee pops 4 bytes).",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x004925D0": {
+    "name": "checkFieldMatchByMode",
+    "signature": "bool __thiscall sub_004925D0(void* self, uint32_t mode)",
+    "summary": "Checks if field_0x0 is 1 and field_0x8 matches field_0xc (mode 0) or field_0x10 (mode 1)",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x004928A0": {
     "name": "fn_004928A0 (null-checked byte flag test: returns 1 if self != nullptr \u0026\u0026 self-\u003efield_0x179 == 0)",
     "signature": "int fn_004928A0(void* self)",
@@ -23487,6 +23493,12 @@
     "class": "RenderState",
     "signature": "extern \"C\" void __stdcall fn_00540549(void)",
     "summary": "Sets polygon mode to GL_LINE for front and back faces, selects GL_BACK cull face, then tail-calls glDisable(GL_CULL_FACE).",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
+  "0x00540572": {
+    "name": "glSetupBackfaceCulling",
+    "signature": "void __stdcall sub_00540572(uint32_t /*arg0*/)",
+    "summary": "Configures OpenGL polygon mode, front-face winding, back-face culling, and enables GL_CULL_FACE.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
   "0x005405B0": {
@@ -49234,6 +49246,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0068DDD0": {
+    "name": "sub_0068DDD0",
+    "signature": "void* __thiscall sub_0068DDD0(void* self, const void* src)",
+    "summary": "Copy constructor that initializes vtable pointers and copies fields from +0x8 and +0x10..+0x9E8",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x0068DE10": {
     "name": "ExprParser::ReadMethodType\u003cRandomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cRandomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0\u003e",
@@ -71003,6 +71021,12 @@
     "signature": "DWORD fn_007CC600(const void* self)",
     "summary": "Returns the DWORD stored at offset 0x28 of the object passed as the single argument.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007CC930": {
+    "name": "unlinkListNode",
+    "signature": "void __cdecl sub_007CC930(void* node)",
+    "summary": "Unlinks a node from a circular doubly-linked list and decrements the list count.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
   "0x007CC9C0": {
     "name": "getShiftedField0",

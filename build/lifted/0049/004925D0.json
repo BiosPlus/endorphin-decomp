@@ -1,0 +1,13 @@
+{
+  "va": "0x004925D0",
+  "size": 52,
+  "orig_symbol": "sub_004925D0",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "checkFieldMatchByMode",
+  "signature": "bool __thiscall sub_004925D0(void* self, uint32_t mode)",
+  "summary": "Checks if field_0x0 is 1 and field_0x8 matches field_0xc (mode 0) or field_0x10 (mode 1)",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T10:42:30Z"
+}
