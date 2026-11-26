@@ -1,0 +1,21 @@
+{
+  "va": "0x00480310",
+  "size": 87,
+  "orig_symbol": "sub_00480310",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "allocArrayChecked",
+  "signature": "void* fn_00480310(size_t n)",
+  "summary": "Allocates n*16 bytes via MFC80 ord_762 after an overflow check on n; throws std::exception otherwise",
+  "fields": [
+    {
+      "class": "exception",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "object"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:56:42Z"
+}

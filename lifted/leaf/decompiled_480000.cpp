@@ -79,6 +79,7 @@ uint32_t __thiscall sub_004809B0(uint32_t self) {
     return 0;
 }
 } // namespace lift_004809B0
+#include <exception>
 
 // [0x00480530] sub_00480530 (37 bytes)
 namespace lift_00480530 {
@@ -2208,3 +2209,36 @@ extern void* fn_004802B0(uint32_t count) {
     return ext_006A5C62(bytes);
 }
 } // namespace lift_004802B0
+
+// [0x00480310] sub_00480310 (87 bytes)
+namespace lift_00480310 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void ext_006A5C62();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+// IAT slot 0x00925130 holding MSVCR80!std::exception::exception(const char* const&) (called indirectly).
+extern int mem_00925130;
+
+// @name allocArrayChecked
+// @summary Allocates n*16 bytes via MFC80 ord_762 after an overflow check on n; throws std::exception otherwise
+// @field exception +0x00 void* object
+void* fn_00480310(size_t n)
+{
+    // Overflow guard: if n != 0 and 0xFFFFFFFF / n < 16, the multiply would overflow.
+    if (n != 0) {
+        uint32_t quotient = static_cast<uint32_t>(0xFFFFFFFFu) / static_cast<uint32_t>(n);
+        if (quotient < 0x10u) {
+            // Overflow path: original builds std::exception through the IAT slot at 0x00925130
+            // (MSVCR80 std::exception ctor) and raises it via _CxxThrowException (ext_006A6DD2).
+            // Portable equivalent: throw a std::exception directly.
+            (void)&mem_00925130;
+            (void)&ext_006A6DD2;
+            throw std::exception();
+        }
+    }
+    // Normal path: byte count = n * 16 (0 when n == 0).
+    size_t bytes = n << 4;
+    using AllocFn = void* (*)(size_t bytes);
+    return reinterpret_cast<AllocFn>(ext_006A5C62)(bytes);
+}
+} // namespace lift_00480310

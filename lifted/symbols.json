@@ -9122,6 +9122,12 @@
     "summary": "Checked count-to-bytes allocator: returns alloc(count * 64), throws std::exception on overflow.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00480310": {
+    "name": "allocArrayChecked",
+    "signature": "void* fn_00480310(size_t n)",
+    "summary": "Allocates n*16 bytes via MFC80 ord_762 after an overflow check on n; throws std::exception otherwise",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x004803F0": {
     "name": "Matrix4x4::SetIdentity",
     "class": "Matrix4x4",
