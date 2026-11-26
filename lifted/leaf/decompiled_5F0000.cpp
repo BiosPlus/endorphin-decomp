@@ -1194,3 +1194,27 @@ void fn_005FEFD0(uint8_t* first, uint8_t* last, const uint8_t* src) {
     }
 }
 } // namespace lift_005FEFD0
+
+// [0x005FD330]
+namespace lift_005FD330 {
+// @name Tree::_Erase
+// @class Tree
+// @summary Recursively erases a red-black tree subtree and frees nodes via MFC80!ord_764.
+// @field TreeNode +0x00 void* left
+// @field TreeNode +0x08 void* right
+// @field TreeNode +0x19 uint8_t is_nil
+
+
+extern void ext_006A5C5C(void* ptr);
+
+void __thiscall fn_005FD330(void* self, void* node) {
+    uint8_t* cur = static_cast<uint8_t*>(node);
+    while (lift_field<uint8_t>(cur, 0x19) == 0) {
+        void* right = lift_field<void*>(cur, 0x08);
+        fn_005FD330(self, right);
+        uint8_t* left = lift_field<uint8_t*>(cur, 0x00);
+        ext_006A5C5C(cur);
+        cur = left;
+    }
+}
+} // namespace lift_005FD330

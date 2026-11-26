@@ -1,0 +1,34 @@
+{
+  "va": "0x005FD330",
+  "size": 53,
+  "orig_symbol": "sub_005FD330",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "Tree::_Erase",
+  "class": "Tree",
+  "signature": "void __thiscall fn_005FD330(void* self, void* node)",
+  "summary": "Recursively erases a red-black tree subtree and frees nodes via MFC80!ord_764.",
+  "fields": [
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "left"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "right"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x19",
+      "type": "uint8_t",
+      "name": "is_nil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T10:45:31Z"
+}
