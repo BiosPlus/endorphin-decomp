@@ -3577,6 +3577,12 @@
     "summary": "Sift-up insertion of value into a heap of 32-bit element handles, using ext_004410C0 as the ordering key; stores value at the final hole.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043B6E0": {
+    "name": "copy_dword_range",
+    "signature": "extern \"C\" void* __cdecl sub_0043B6E0(const void* first, const void* last, void* dest)",
+    "summary": "Copies a range of 32-bit elements using memmove_s and returns the end pointer of the destination range.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043BAF0": {
     "name": "sub_0043BAF0",
     "signature": "void fn_0043BAF0(uint32_t* first, uint32_t* last, uint32_t pred)",
@@ -22099,6 +22105,12 @@
     "signature": "void __thiscall fn_005330D0(void* self)",
     "summary": "Clears field_0x30 to 0 while holding the critical section lock returned by vfunc_118.",
     "lifted_path": "lifted/classes/OglRenderer.cpp"
+  },
+  "0x005331B0": {
+    "name": "pumpWindowsMessage",
+    "signature": "void sub_005331B0()",
+    "summary": "Peeks a single Windows message and translates/dispatches it if present.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
   "0x005331F0": {
     "name": "OglRenderer::vfunc_88",
@@ -67851,6 +67863,12 @@
     "name": "ScanForClassAfterIndex",
     "signature": "int fn_0078A1A0(const char* str, int start)",
     "summary": "Scans a NUL-terminated string from start+1 and returns the index of the first char mapped to the stop class, or -1 on NUL or a fail-class char.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
+  "0x0078AAC0": {
+    "name": "sub_0078AAC0",
+    "signature": "void sub_0078AAC0(void)",
+    "summary": "Data/padding bytes at 0x0078AAC0 disassembled as a sequence of add instructions",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
   "0x0078BB10": {

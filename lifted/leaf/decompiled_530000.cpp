@@ -1632,3 +1632,26 @@ void fn_00538D10(void* self, void* /*edx, unused*/, float arg1, float arg2, floa
     lift_field<DWORD>(self, 0x24) = std::bit_cast<DWORD>(arg4);
 }
 } // namespace lift_00538D10
+
+// [0x005331B0]
+namespace lift_005331B0 {
+// @name pumpWindowsMessage
+// @summary Peeks a single Windows message and translates/dispatches it if present.
+
+
+extern uintptr_t mem_009255A0;
+extern uintptr_t mem_009255A4;
+extern uintptr_t mem_009255A8;
+
+void sub_005331B0() {
+    uint8_t msg[28];
+    using PeekMessageAFn = int32_t(__stdcall*)(void* lpMsg, void* hWnd, uint32_t wMsgFilterMin, uint32_t wMsgFilterMax, uint32_t wRemoveMsg);
+    using TranslateMessageFn = int32_t(__stdcall*)(const void* lpMsg);
+    using DispatchMessageAFn = int32_t(__stdcall*)(const void* lpMsg);
+
+    if (reinterpret_cast<PeekMessageAFn>(mem_009255A0)(msg, nullptr, 0, 0, 1) != 0) {
+        reinterpret_cast<TranslateMessageFn>(mem_009255A4)(msg);
+        reinterpret_cast<DispatchMessageAFn>(mem_009255A8)(msg);
+    }
+}
+} // namespace lift_005331B0
