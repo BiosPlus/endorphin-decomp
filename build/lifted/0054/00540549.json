@@ -1,0 +1,14 @@
+{
+  "va": "0x00540549",
+  "size": 41,
+  "orig_symbol": "sub_00540549",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "RenderState::setLineModeCullFaceOff",
+  "class": "RenderState",
+  "signature": "extern \"C\" void __stdcall fn_00540549(void)",
+  "summary": "Sets polygon mode to GL_LINE for front and back faces, selects GL_BACK cull face, then tail-calls glDisable(GL_CULL_FACE).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:24:11Z"
+}

@@ -23319,6 +23319,13 @@
     "summary": "If the object's enabled byte is set and the argument is 0x1C02, set polygon mode to GL_FILL on both faces, cull back faces, and enable GL_CULL_FACE.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x00540549": {
+    "name": "RenderState::setLineModeCullFaceOff",
+    "class": "RenderState",
+    "signature": "extern \"C\" void __stdcall fn_00540549(void)",
+    "summary": "Sets polygon mode to GL_LINE for front and back faces, selects GL_BACK cull face, then tail-calls glDisable(GL_CULL_FACE).",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x005405B0": {
     "name": "sub_005405B0",
     "signature": "extern \"C\" void __fastcall fn_005405B0(void* self)",

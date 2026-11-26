@@ -1162,3 +1162,23 @@ void fn_00547B70(void* self) {
     }
 }
 } // namespace lift_00547B70
+
+// [0x00540549] sub_00540549 (41 bytes)
+namespace lift_00540549 {
+// OpenGL import slots (IAT entries) used by the original asm.
+extern DWORD mem_0092551C; // OPENGL32!glPolygonMode
+extern DWORD mem_00925428; // OPENGL32!glCullFace
+extern DWORD mem_00925438; // OPENGL32!glDisable
+
+typedef void(__stdcall* PFN_glPolygonMode)(DWORD face, DWORD mode);
+typedef void(__stdcall* PFN_glCullFace)(DWORD mode);
+typedef void(__stdcall* PFN_glDisable)(DWORD cap);
+
+// @name RenderState::setLineModeCullFaceOff
+// @summary Sets polygon mode to GL_LINE for front and back faces, selects GL_BACK cull face, then tail-calls glDisable(GL_CULL_FACE).
+extern void __stdcall fn_00540549(void) {
+    reinterpret_cast<PFN_glPolygonMode>(mem_0092551C)(0x0408u /* GL_FRONT_AND_BACK */, 0x1B01u /* GL_LINE */);
+    reinterpret_cast<PFN_glCullFace>(mem_00925428)(0x0405u /* GL_BACK */);
+    reinterpret_cast<PFN_glDisable>(mem_00925438)(0x0B44u /* GL_CULL_FACE */);
+}
+} // namespace lift_00540549
