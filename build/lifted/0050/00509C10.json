@@ -1,0 +1,28 @@
+{
+  "va": "0x00509C10",
+  "size": 61,
+  "orig_symbol": "sub_00509C10",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "CopyForwardRange",
+  "class": "Unknown",
+  "signature": "void* fn_00509C10(void* begin, void* end, void* dest)",
+  "summary": "Copies a range of 0x24-byte elements (std::string at +0x04, float at +0x20) forward into dest; returns dest end.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "char[0x1C]",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:57:41Z"
+}

@@ -2368,3 +2368,37 @@ extern DWORD fn_00509C50(DWORD first, DWORD last, DWORD dest_last) {
     return dst;
 }
 } // namespace lift_00509C50
+
+// [0x00509C10] sub_00509C10 (61 bytes)
+namespace lift_00509C10 {
+// IAT slot (0x00924FDC) holding the MSVCP80 basic_string::operator= target (0x006291BE).
+extern int mem_00924FDC;
+
+using StringAssignFn = void (*)(void* self, const void* rhs);
+
+// @name CopyForwardRange
+// @summary Copies a range of 0x24-byte elements (std::string at +0x04, float at +0x20) forward into dest; returns dest end.
+// @class Unknown
+// @field Unknown +0x04 char[0x1C] field_0x04
+// @field Unknown +0x20 float field_0x20
+void* fn_00509C10(void* begin, void* end, void* dest) {
+    uint8_t* src = static_cast<uint8_t*>(begin);
+    uint8_t* last = static_cast<uint8_t*>(end);
+    uint8_t* out = static_cast<uint8_t*>(dest);
+
+    if (src == last) {
+        return dest;
+    }
+
+    do {
+        // Indirect call through the IAT slot: string(out+0x04) = string(src+0x04)
+        auto assign = reinterpret_cast<StringAssignFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FDC)));
+        assign(out + 0x04, src + 0x04);
+        lift_field<float>(out, 0x20) = lift_field<float>(src, 0x20);
+        src += 0x24;
+        out += 0x24;
+    } while (src != last);
+
+    return out;
+}
+} // namespace lift_00509C10
