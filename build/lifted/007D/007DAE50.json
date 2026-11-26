@@ -1,0 +1,22 @@
+{
+  "va": "0x007DAE50",
+  "size": 43,
+  "orig_symbol": "sub_007DAE50",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "Unknown::invokeFactoryThenDispatch_007DAE50",
+  "class": "Unknown",
+  "signature": "void* fn_007DAE50(void* self)",
+  "summary": "Calls a function pointer stored at obj+0x08 (obj = self+0xB0) with (0x20, 0x10); if it returns non-null, forwards that result and self to ext_007DAD50, otherwise returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xB0",
+      "type": "void*",
+      "name": "field_0xB0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:24:12Z"
+}

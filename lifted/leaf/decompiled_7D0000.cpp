@@ -1055,3 +1055,27 @@ uint32_t sub_007DAD70(void* arg0) {
     return ext_007D5950(0, v2, 0x0099e1e0);
 }
 } // namespace lift_007DAD70
+
+// [0x007DAE50] sub_007DAE50 (43 bytes)
+namespace lift_007DAE50 {
+extern uint32_t ext_007DAD50(uint32_t result, uint32_t self);
+
+// @name Unknown::invokeFactoryThenDispatch_007DAE50
+// @class Unknown
+// @summary Calls a function pointer stored at obj+0x08 (obj = self+0xB0) with (0x20, 0x10); if it returns non-null, forwards that result and self to ext_007DAD50, otherwise returns 0.
+// @field Unknown +0xB0 void* field_0xB0
+void* fn_007DAE50(void* self) {
+    // Object pointer stored at self+0xB0 (32-bit target: pointers are 4 bytes).
+    const uint32_t obj = lift_field<uint32_t>(self, 0xB0);
+
+    // Function pointer stored at obj+0x08, called cdecl with args (0x20, 0x10).
+    using Factory = uint32_t(__cdecl*)(uint32_t, uint32_t);
+    const auto fn = reinterpret_cast<Factory>(static_cast<uintptr_t>(lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), 0x08)));
+    const uint32_t eax = fn(0x20, 0x10);
+
+    if (eax != 0) {
+        return reinterpret_cast<void*>(static_cast<uintptr_t>(ext_007DAD50(eax, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)))));
+    }
+    return nullptr;
+}
+} // namespace lift_007DAE50

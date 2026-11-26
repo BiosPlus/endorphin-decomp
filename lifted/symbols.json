@@ -71117,6 +71117,13 @@
     "summary": "Reads the inner object pointer at +0x0C, loads its dword at +0xB0, forwards it with constant 0x0099E218 to ext_007D5950, and returns 0 (AX cleared).",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007DAE50": {
+    "name": "Unknown::invokeFactoryThenDispatch_007DAE50",
+    "class": "Unknown",
+    "signature": "void* fn_007DAE50(void* self)",
+    "summary": "Calls a function pointer stored at obj+0x08 (obj = self+0xB0) with (0x20, 0x10); if it returns non-null, forwards that result and self to ext_007DAD50, otherwise returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007DB130": {
     "name": "Unknown::DispatchSixFields_007DB130",
     "class": "Unknown",
