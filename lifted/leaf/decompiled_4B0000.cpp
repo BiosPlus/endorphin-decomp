@@ -993,3 +993,40 @@ extern void __fastcall sub_004B1130(void* self, void* edx, float w) {
     ext_004B0ED0(self, edx, v);
 }
 } // namespace lift_004B1130
+
+// [0x004B6FF0] sub_004B6FF0 (61 bytes)
+namespace lift_004B6FF0 {
+extern int mem_009433A0;
+extern int mem_00924FD4;
+extern int mem_00AE173C;
+extern int mem_00924FDC;
+extern int mem_0093C18C;
+extern int mem_00925134;
+
+// std::string::operator=(const char*) via IAT slot mem_00924FD4 (MSVCP80, thiscall)
+extern void __thiscall ext_std_string_assign_cstr(void* self, const char* rhs);
+// std::string::operator=(const std::string&) via IAT slot mem_00924FDC (MSVCP80, thiscall)
+extern void __thiscall ext_std_string_assign_str(void* self, const void* rhs);
+
+// @name Unknown::InitStrings
+// @class Unknown
+// @summary Assigns four std::string members at +0x04, +0x20, +0x3C, +0x58 (two from literals/globals).
+// @field Unknown +0x04 std::string field_0x04
+// @field Unknown +0x20 std::string field_0x20
+// @field Unknown +0x3C std::string field_0x3C
+// @field Unknown +0x58 std::string field_0x58
+void fn_004B6FF0(void* self) {
+    // IAT slots the original reached via `call [0x924FD4]` / `call [0x924FDC]`;
+    // the ext_ calls below stand in for those indirect calls.
+    // 0x925134 ("P{b") is in the rdata set but never referenced by the original asm.
+    (void)&mem_00924FD4;
+    (void)&mem_00924FDC;
+    (void)&mem_00925134;
+
+    auto* base = static_cast<char*>(self);
+    ext_std_string_assign_cstr(base + 0x04, reinterpret_cast<const char*>(&mem_009433A0));
+    ext_std_string_assign_str(base + 0x20, reinterpret_cast<const void*>(&mem_00AE173C));
+    ext_std_string_assign_str(base + 0x3C, reinterpret_cast<const void*>(&mem_00AE173C));
+    ext_std_string_assign_cstr(base + 0x58, reinterpret_cast<const char*>(&mem_0093C18C));
+}
+} // namespace lift_004B6FF0

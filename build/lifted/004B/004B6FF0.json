@@ -1,0 +1,40 @@
+{
+  "va": "0x004B6FF0",
+  "size": 61,
+  "orig_symbol": "sub_004B6FF0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "Unknown::InitStrings",
+  "class": "Unknown",
+  "signature": "void fn_004B6FF0(void* self)",
+  "summary": "Assigns four std::string members at +0x04, +0x20, +0x3C, +0x58 (two from literals/globals).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "std::string",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "std::string",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "std::string",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:57:36Z"
+}
