@@ -1326,3 +1326,41 @@ int __thiscall fn_00698840(void* self, const char* set, int start) {
     return -1;
 }
 } // namespace lift_00698840
+
+// [0x00696B70] sub_00696B70 (86 bytes)
+namespace lift_00696B70 {
+extern int mem_009250E4;
+extern int mem_009250E8;
+extern int mem_009250EC;
+
+// @name readTokenSkipBlanks
+// @summary Skips spaces/tabs on a std::istream; returns false on EOF or newline, otherwise puts the char back, extracts a std::string with operator>>, and returns true.
+
+using IstreamGetFn = int(__thiscall*)(void* self);
+using IstreamPutbackFn = void*(__thiscall*)(void* self, char c);
+using StringExtractFn = void*(__cdecl*)(void* is, void* str);
+
+bool fn_00696B70(void* is, void* str) {
+    auto get = reinterpret_cast<IstreamGetFn>(static_cast<uintptr_t>(mem_009250E4));
+    auto putback = reinterpret_cast<IstreamPutbackFn>(static_cast<uintptr_t>(mem_009250E8));
+    auto extract = reinterpret_cast<StringExtractFn>(static_cast<uintptr_t>(mem_009250EC));
+
+    uint8_t bl;
+    for (;;) {
+        bl = static_cast<uint8_t>(get(is));
+        if (bl == 0x20 || bl == 0x09) {
+            continue;
+        }
+        break;
+    }
+    if (bl == 0xFF) {
+        return false;
+    }
+    putback(is, static_cast<char>(bl));
+    if (bl == 0x0A) {
+        return false;
+    }
+    extract(is, str);
+    return true;
+}
+} // namespace lift_00696B70

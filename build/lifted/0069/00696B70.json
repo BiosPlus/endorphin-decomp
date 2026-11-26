@@ -1,0 +1,13 @@
+{
+  "va": "0x00696B70",
+  "size": 86,
+  "orig_symbol": "sub_00696B70",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "readTokenSkipBlanks",
+  "signature": "bool fn_00696B70(void* is, void* str)",
+  "summary": "Skips spaces/tabs on a std::istream; returns false on EOF or newline, otherwise puts the char back, extracts a std::string with operator\u003e\u003e, and returns true.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:58:56Z"
+}

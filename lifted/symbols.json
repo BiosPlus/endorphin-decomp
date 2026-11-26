@@ -50647,6 +50647,12 @@
     "summary": "Reads chars from an istream, skipping '#' comment lines, until delim or 0xFF is reached and put back; returns false on stream failure.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x00696B70": {
+    "name": "readTokenSkipBlanks",
+    "signature": "bool fn_00696B70(void* is, void* str)",
+    "summary": "Skips spaces/tabs on a std::istream; returns false on EOF or newline, otherwise puts the char back, extracts a std::string with operator\u003e\u003e, and returns true.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00696BD0": {
     "name": "readLineFromStream",
     "signature": "uint8_t __cdecl sub_00696BD0(void* stream, void* str)",
