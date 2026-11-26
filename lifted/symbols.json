@@ -63253,6 +63253,12 @@
     "summary": "Checks flag at +0x34, delegates to +0x38-\u003evtable[0x74](arg0), then calls this-\u003evtable[0x40](0, 0, this, -1, arg0, arg1, 0)",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006FAA40": {
+    "name": "tryDispatchIfFlagged",
+    "signature": "extern \"C\" bool __fastcall sub_006FAA40(void* self, void* /*edx*/, int arg0, int arg1)",
+    "summary": "If flag 0x2 set and child accepts arg, invokes own vfunc 0x40 dispatch; returns success",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FAEA0": {
     "name": "ForwardToChildThenDispatchVirtual40",
     "signature": "uint32_t fn_006FAEA0(void* p, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7, uint32_t a8)",

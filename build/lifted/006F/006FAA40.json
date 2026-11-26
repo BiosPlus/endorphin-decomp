@@ -1,0 +1,27 @@
+{
+  "va": "0x006FAA40",
+  "size": 80,
+  "orig_symbol": "sub_006FAA40",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "tryDispatchIfFlagged",
+  "signature": "extern \"C\" bool __fastcall sub_006FAA40(void* self, void* /*edx*/, int arg0, int arg1)",
+  "summary": "If flag 0x2 set and child accepts arg, invokes own vfunc 0x40 dispatch; returns success",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x34",
+      "type": "uint8_t",
+      "name": "flags"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-26T11:39:16Z"
+}

@@ -61,7 +61,9 @@ struct Object_Fields {
     // +0x2C  uint32_t                 field_0x2c  (evidence: 0x00622B40, 0x0062CD30, 0x00790DA0, 0x0079ADA0, 0x0079DCE0)
     // +0x30  uint32_t                 field_0x30  (evidence: 0x00622B40, 0x0062CD30) // CONFLICT: multiple definitions at +0x30
     // +0x30  uint32_t*                field_0x30  (evidence: 0x006DE660) // CONFLICT: multiple definitions at +0x30
-    // +0x34  uint32_t                 field_0x34  (evidence: 0x00622B40, 0x0062CD30)
+    // +0x34  uint32_t                 field_0x34  (evidence: 0x00622B40, 0x0062CD30) // CONFLICT: multiple definitions at +0x34
+    // +0x34  uint8_t                  flags  (evidence: 0x006FAA40) // CONFLICT: multiple definitions at +0x34
+    // +0x38  void*                    field_0x38  (evidence: 0x006FAA40)
     // +0x40  int32_t                  field_0x40  (evidence: 0x006F0120, 0x006F01A0, 0x006F0220, 0x006F08E0, 0x006F1120, 0x006FC200, 0x006FC5E0) // CONFLICT: multiple definitions at +0x40
     // +0x40  uint32_t                 field_0x40  (evidence: 0x007C2E50) // CONFLICT: multiple definitions at +0x40
     // +0x44  uint32_t                 field_0x44  (evidence: 0x007C2E50)

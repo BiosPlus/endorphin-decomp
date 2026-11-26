@@ -1947,3 +1947,23 @@ void* __fastcall sub_006F7560(void* self) {
     return nullptr;
 }
 } // namespace lift_006F7560
+
+// [0x006FAA40]
+namespace lift_006FAA40 {
+// @name tryDispatchIfFlagged
+// @summary If flag 0x2 set and child accepts arg, invokes own vfunc 0x40 dispatch; returns success
+// @field Object +0x34 uint8_t flags
+// @field Object +0x38 void* field_0x38
+extern bool __fastcall sub_006FAA40(void* self, void* /*edx*/, int arg0, int arg1) {
+    uint8_t* s = (uint8_t*)self;
+    if (!(s[0x34] & 0x2)) return false;
+    void* child = *(void**)(s + 0x38);
+    void** cvt = *(void***)child;
+    typedef bool(__thiscall* FnCheck)(void*, int);
+    if (!((FnCheck)cvt[0x74 / 4])(child, arg0)) return false;
+    void** vt = *(void***)self;
+    typedef bool(__thiscall* FnDispatch)(void*, int, int, void*, int, int, int, int);
+    if (!((FnDispatch)vt[0x40 / 4])(self, 0, 1, self, -1, arg0, arg1, 0)) return false;
+    return true;
+}
+} // namespace lift_006FAA40
