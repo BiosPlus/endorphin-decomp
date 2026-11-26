@@ -1926,3 +1926,36 @@ bool fn_006D2940(const void* self, const void* other) {
     return true;
 }
 } // namespace lift_006D2940
+
+// [0x006DEB50] sub_006DEB50 (80 bytes)
+namespace lift_006DEB50 {
+// Known callee 0x006DE130: Unknown::ReleaseIfNonNull (If self is non-null, invokes vtable slot 0 (scalar deleting destructor) with flag 1; the single stack argument is ignored.)
+extern void ext_006DE130(void* self, int32_t unused_stack_arg);
+// Known callee 0x006E5750: applyFlagsAndDispatchItems (OR a flag word into this->+0x98 object, bump counters, then if its enable byte is set call item handlers in reverse order and finish via ext_006E5730.)
+extern void ext_006E5750(void* self, uint32_t flags);
+
+// @name Unknown::setRefCountedField3C
+// @class Unknown
+// @summary Replaces the refcounted object at +0x3c with newObj: decrements the old object's refcount (releasing it at zero), stores newObj, increments its refcount, then calls ext_006E5750 with flags 8. No-op if the pointers are equal.
+// @field Unknown +0x3c void* field_0x3c
+void fn_006DEB50(void* self, void* newObj) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    void* oldObj = *reinterpret_cast<void**>(obj + 0x3c);
+    if (oldObj == newObj) {
+        return;
+    }
+    if (oldObj != nullptr) {
+        int32_t* oldRefCount = reinterpret_cast<int32_t*>(static_cast<uint8_t*>(oldObj) + 0x1c);
+        *oldRefCount -= 1;
+        if (*oldRefCount <= 0) {
+            ext_006DE130(oldObj, 0);
+        }
+    }
+    *reinterpret_cast<void**>(obj + 0x3c) = newObj;
+    if (newObj != nullptr) {
+        int32_t* newRefCount = reinterpret_cast<int32_t*>(static_cast<uint8_t*>(newObj) + 0x1c);
+        *newRefCount += 1;
+    }
+    ext_006E5750(self, 8);
+}
+} // namespace lift_006DEB50

@@ -1,0 +1,22 @@
+{
+  "va": "0x006DEB50",
+  "size": 80,
+  "orig_symbol": "sub_006DEB50",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::setRefCountedField3C",
+  "class": "Unknown",
+  "signature": "void fn_006DEB50(void* self, void* newObj)",
+  "summary": "Replaces the refcounted object at +0x3c with newObj: decrements the old object's refcount (releasing it at zero), stores newObj, increments its refcount, then calls ext_006E5750 with flags 8. No-op if the pointers are equal.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "void*",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T12:10:54Z"
+}

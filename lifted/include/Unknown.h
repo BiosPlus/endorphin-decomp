@@ -703,7 +703,7 @@ struct Unknown_Fields {
     // +0x3C  float                    field_0x3c  (evidence: 0x0053C4C0, 0x0063D970, 0x0063DDF0) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  std::uint32_t            field_0x3c  (evidence: 0x007BEDE0) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  uint32_t                 field_0x3c  (evidence: 0x005B51E0) // CONFLICT: multiple definitions at +0x3C
-    // +0x3C  void*                    field_0x3c  (evidence: 0x0052F9C0) // CONFLICT: multiple definitions at +0x3C
+    // +0x3C  void*                    field_0x3c  (evidence: 0x0052F9C0, 0x006DEB50) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  float                    m33  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  QuadricRenderer          quadric  (evidence: 0x0052F3C0) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  std::string              text2  (evidence: 0x004030F0, 0x00404E40) // CONFLICT: multiple definitions at +0x3C
