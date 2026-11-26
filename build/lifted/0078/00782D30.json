@@ -1,0 +1,40 @@
+{
+  "va": "0x00782D30",
+  "size": 96,
+  "orig_symbol": "sub_00782D30",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "OwnedPtrArray::clearAndFree",
+  "class": "OwnedPtrArray",
+  "signature": "void fn_00782D30(void* self)",
+  "summary": "Frees every pointer in the owned 8-byte-stride array (low dword of each slot), frees the array, then resets count, field_0x08 and field_0x10.",
+  "fields": [
+    {
+      "class": "OwnedPtrArray",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "items"
+    },
+    {
+      "class": "OwnedPtrArray",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "OwnedPtrArray",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "OwnedPtrArray",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T12:10:58Z"
+}

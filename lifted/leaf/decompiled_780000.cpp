@@ -1838,3 +1838,38 @@ void __cdecl writeFormatted(void* obj, const char* fmt, ...)
     ((write_t)vtbl[0x1c / 4])(obj, buf, len);
 }
 } // namespace lift_0078BF70
+
+// [0x00782D30] sub_00782D30 (96 bytes)
+namespace lift_00782D30 {
+// IAT slot holding MSVCR80 free()
+extern void* mem_009251D8;
+
+// @name OwnedPtrArray::clearAndFree
+// @class OwnedPtrArray
+// @summary Frees every pointer in the owned 8-byte-stride array (low dword of each slot), frees the array, then resets count, field_0x08 and field_0x10.
+// @field OwnedPtrArray +0x00 void* items
+// @field OwnedPtrArray +0x04 int32_t count
+// @field OwnedPtrArray +0x08 int32_t field_0x08
+// @field OwnedPtrArray +0x10 uint8_t field_0x10
+void fn_00782D30(void* self) {
+    auto free_fn = reinterpret_cast<void(__cdecl*)(void*)>(mem_009251D8);
+
+    if (lift_field<void*>(self, 0x00) != nullptr) {
+        const int32_t count = lift_field<int32_t>(self, 0x04);
+        for (int32_t i = 0; i < count; ++i) {
+            char* items = static_cast<char*>(lift_field<void*>(self, 0x00));
+            void* entry = lift_field<void*>(items, static_cast<ptrdiff_t>(i) * 8);
+            free_fn(entry);
+            // Re-read the array base after each free, as the original does.
+            items = static_cast<char*>(lift_field<void*>(self, 0x00));
+            lift_field<uint32_t>(items, static_cast<ptrdiff_t>(i) * 8) = 0;
+        }
+        free_fn(lift_field<void*>(self, 0x00));
+        lift_field<void*>(self, 0x00) = nullptr;
+    }
+
+    lift_field<int32_t>(self, 0x04) = 0;
+    lift_field<int32_t>(self, 0x08) = 0;
+    lift_field<uint8_t>(self, 0x10) = 0;
+}
+} // namespace lift_00782D30

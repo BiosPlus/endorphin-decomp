@@ -69054,6 +69054,13 @@
     "summary": "Pure jump thunk forwarding to sub_00782D30.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00782D30": {
+    "name": "OwnedPtrArray::clearAndFree",
+    "class": "OwnedPtrArray",
+    "signature": "void fn_00782D30(void* self)",
+    "summary": "Frees every pointer in the owned 8-byte-stride array (low dword of each slot), frees the array, then resets count, field_0x08 and field_0x10.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00782E70": {
     "name": "sub_00782E70",
     "class": "SortedArray",
