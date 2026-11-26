@@ -46621,6 +46621,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0043D780 (AllocAndInitRecord).",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x006678A0": {
+    "name": "lookupIndexedEntry",
+    "signature": "void* __thiscall fn_006678A0(void* self, uint32_t index, const void* key, void* owner)",
+    "summary": "Looks up key in the map at self + index*16 + 8; if owner-\u003efield_0x14 is set, looks up owner in that result, otherwise returns the first entry (+0x28) of the result's list, or nullptr.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00667EA0": {
     "name": "StdMapString::find",
     "class": "StdMapString",

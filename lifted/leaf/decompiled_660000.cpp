@@ -2501,3 +2501,46 @@ bool fn_006630C0(void* self) {
     return true;
 }
 } // namespace lift_006630C0
+
+// [0x006678A0] sub_006678A0 (81 bytes)
+namespace lift_006678A0 {
+// Known callee 0x00667F10: SearchableMap<FileProject::File, GetNameFromAttribute<FileProject::File>>::vfunc_0 (Auto-lifted identical-shape clone of 0x0042E7B0 (SearchableMap<KeyMapping, GetNameFromAttribute<KeyMapping>>::vfunc_0).)
+extern void ext_00667F10();
+// Known callee 0x00668D80: SearchableMap<NM::Vector4, GetNameFromAttribute<NM::Vector4>>::vfunc_0 (Auto-lifted identical-shape clone of 0x0042E7B0 (SearchableMap<KeyMapping, GetNameFromAttribute<KeyMapping>>::vfunc_0).)
+extern void ext_00668D80();
+extern int mem_00925134;
+
+// @name lookupIndexedEntry
+// @summary Looks up key in the map at self + index*16 + 8; if owner->field_0x14 is set, looks up owner in that result, otherwise returns the first entry (+0x28) of the result's list, or nullptr.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x14 uint32_t field_0x14
+void* __thiscall fn_006678A0(void* self, uint32_t index, const void* key, void* owner) {
+    using LookupFn = void* (__thiscall*)(void* self, const void* key);
+
+    void* map = static_cast<uint8_t*>(self) + (static_cast<uintptr_t>(index) << 4) + 8;
+    void* found = reinterpret_cast<LookupFn>(&ext_00668D80)(map, key);
+    if (found == nullptr) {
+        return nullptr;
+    }
+
+    if (lift_field<uint32_t>(owner, 0x14) != 0) {
+        return reinterpret_cast<LookupFn>(&ext_00667F10)(found, owner);
+    }
+
+    if (lift_field<uint32_t>(found, 0x0C) == 0) {
+        return nullptr;
+    }
+
+    // Sentinel-headed list: first real node is the sentinel's next pointer.
+    void* sentinel = lift_field<void*>(found, 0x08);
+    void* first = lift_field<void*>(sentinel, 0x00);
+    if (first == sentinel) {
+        // Original calls the CRT invalid-parameter handler through the IAT slot here
+        // (it terminates in practice); the returned address is the same either way.
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+    return static_cast<uint8_t*>(first) + 0x28;
+}
+} // namespace lift_006678A0

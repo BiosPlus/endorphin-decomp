@@ -1,0 +1,39 @@
+{
+  "va": "0x006678A0",
+  "size": 81,
+  "orig_symbol": "sub_006678A0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "lookupIndexedEntry",
+  "signature": "void* __thiscall fn_006678A0(void* self, uint32_t index, const void* key, void* owner)",
+  "summary": "Looks up key in the map at self + index*16 + 8; if owner-\u003efield_0x14 is set, looks up owner in that result, otherwise returns the first entry (+0x28) of the result's list, or nullptr.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:39:33Z"
+}
