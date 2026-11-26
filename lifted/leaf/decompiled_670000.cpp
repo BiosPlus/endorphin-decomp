@@ -1774,3 +1774,46 @@ extern void __fastcall fn_00678280(void* self) {
     ext_0065C660(self);
 }
 } // namespace lift_00678280
+
+// [0x00670C50]
+namespace lift_00670C50 {
+// @name lowerBoundByPair
+// @summary Binary search (std::lower_bound) on pointer range comparing (field_0x4, field_0x8) lexicographically as uint32_t
+
+
+uint32_t** __cdecl sub_00670C50(uint32_t** first, uint32_t** last, uint32_t** val_ptr) {
+    int32_t count = static_cast<int32_t>(reinterpret_cast<uintptr_t>(last) - reinterpret_cast<uintptr_t>(first)) >> 2;
+    if (count <= 0) {
+        return first;
+    }
+
+    uint32_t* val = *val_ptr;
+    uint32_t val_k1 = lift_field<uint32_t>(val, 0x4);
+    uint32_t val_k2 = lift_field<uint32_t>(val, 0x8);
+
+    while (count > 0) {
+        int32_t half = count / 2;
+        uint32_t* mid = first[half];
+        uint32_t mid_k1 = lift_field<uint32_t>(mid, 0x4);
+
+        bool less = false;
+        if (mid_k1 < val_k1) {
+            less = true;
+        } else if (mid_k1 == val_k1) {
+            uint32_t mid_k2 = lift_field<uint32_t>(mid, 0x8);
+            if (mid_k2 < val_k2) {
+                less = true;
+            }
+        }
+
+        if (less) {
+            first = first + half + 1;
+            count = count - half - 1;
+        } else {
+            count = half;
+        }
+    }
+
+    return first;
+}
+} // namespace lift_00670C50

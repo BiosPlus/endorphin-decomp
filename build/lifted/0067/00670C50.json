@@ -1,0 +1,13 @@
+{
+  "va": "0x00670C50",
+  "size": 90,
+  "orig_symbol": "sub_00670C50",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "lowerBoundByPair",
+  "signature": "uint32_t** __cdecl sub_00670C50(uint32_t** first, uint32_t** last, uint32_t** val_ptr)",
+  "summary": "Binary search (std::lower_bound) on pointer range comparing (field_0x4, field_0x8) lexicographically as uint32_t",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T12:10:50Z"
+}
