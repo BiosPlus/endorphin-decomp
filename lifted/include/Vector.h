@@ -11,10 +11,13 @@ struct Vector_Fields {
     // +0x4   uint32_t                 begin  (evidence: 0x0041C7C0, 0x00527AF0, 0x0052F7D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uintptr_t                begin  (evidence: 0x004026E0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x004065D0, 0x00441C10, 0x0044C500, 0x00481C50, 0x0048D350, 0x00490920, 0x00490B80, 0x004A6A90, 0x004B51F0, 0x005015E0, 0x00506CD0, 0x0050BE20, 0x0050C610, 0x0051EC00, 0x0051FEB0, 0x00578080, 0x0057CF80, 0x0057E9A0, 0x006753D0, 0x00688E90, 0x00688EE0, 0x00688F20, 0x0069A260) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 first  (evidence: 0x00428A60) // CONFLICT: multiple definitions at +0x4
     // +0x8   uint32_t                 end  (evidence: 0x0041C7C0, 0x00527AF0, 0x0052F7D0, 0x005947B0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t*                 end  (evidence: 0x0052F7D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uintptr_t                end  (evidence: 0x004026E0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 field_0x08  (evidence: 0x004065D0, 0x00441C10, 0x0044C500, 0x00481C50, 0x0048D350, 0x00490920, 0x00490B80, 0x004A6A90, 0x004B51F0, 0x005015E0, 0x00506CD0, 0x0050BE20, 0x0050C610, 0x0051EC00, 0x0051FEB0, 0x00578080, 0x0057CF80, 0x0057E9A0, 0x006753D0, 0x00688E90, 0x00688EE0, 0x00688F20, 0x0069A260) // CONFLICT: multiple definitions at +0x8
-    // +0xC   uintptr_t                capacity_end  (evidence: 0x004026E0)
+    // +0x8   uint32_t                 last  (evidence: 0x00428A60) // CONFLICT: multiple definitions at +0x8
+    // +0xC   uintptr_t                capacity_end  (evidence: 0x004026E0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint32_t                 end  (evidence: 0x00428A60) // CONFLICT: multiple definitions at +0xC
 };
 } // namespace lifted_layout

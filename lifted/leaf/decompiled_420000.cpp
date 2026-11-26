@@ -1176,3 +1176,54 @@ void* fn_00427B80(void* self) {
     return self;
 }
 } // namespace lift_00427B80
+
+// [0x00428A60]
+namespace lift_00428A60 {
+// @name Vector_Tidy_0x24
+// @summary Destroys elements (each 0x24 bytes with a std::string at +0x8), frees buffer, and resets vector pointers.
+// @field Vector +0x04 uint32_t first
+// @field Vector +0x08 uint32_t last
+// @field Vector +0x0C uint32_t end
+
+
+extern void ext_006A5C5C(uint32_t ptr);
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_00ACD9DC, mem_00ACD9E0, mem_00ACD9E4, mem_00ACD9E8, mem_00ACD9EC;
+extern uint32_t mem_00ACD9F0, mem_00ACD9F4, mem_00ACD9F8, mem_00ACD9FC, mem_00ACDA00;
+extern uint32_t mem_00ACDA04, mem_00ACDA08, mem_00ACDA0C, mem_00ACDA10, mem_00ACDA14;
+extern uint32_t mem_00ACDA18, mem_00ACDA1C, mem_00ACDA20, mem_00ACDA24, mem_00ACDA28;
+extern uint32_t mem_00ACDA2C, mem_00ACDA30, mem_00ACDA34, mem_00ACDA38, mem_00ACDA3C;
+extern uint32_t mem_00ACDA40, mem_00ACDA44, mem_00ACDA48, mem_00ACDA4C, mem_00ACDA50;
+extern uint32_t mem_00ACDA54, mem_00ACDA58, mem_00ACDA5C, mem_00ACDA60, mem_00ACDA64;
+extern uint32_t mem_00ACDA68, mem_00ACDA6C, mem_00ACDA70, mem_00ACDA74, mem_00ACDA78;
+extern uint32_t mem_00ACDA7C, mem_00ACDA80, mem_00ACDA84, mem_00ACDA88, mem_00ACDA8C;
+extern uint32_t mem_00ACDA90, mem_00ACDA94, mem_00ACDA98, mem_00ACDA9C, mem_00ACDAA0;
+extern uint32_t mem_00ACDAA4, mem_00ACDAA8, mem_00ACDAAC;
+
+void __thiscall fn_00428A60(void* self) {
+    uint32_t first = lift_field<uint32_t>(self, 0x04);
+    if (first != 0) {
+        uint32_t last = lift_field<uint32_t>(self, 0x08);
+        using dtor_fn_t = void(__thiscall*)(void*);
+        auto dtor = reinterpret_cast<dtor_fn_t>(mem_00924FF4);
+        for (uint32_t cur = first; cur != last; cur += 0x24) {
+            dtor(reinterpret_cast<void*>(cur + 0x08));
+        }
+        ext_006A5C5C(lift_field<uint32_t>(self, 0x04));
+    }
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    (void)mem_00ACD9DC; (void)mem_00ACD9E0; (void)mem_00ACD9E4; (void)mem_00ACD9E8; (void)mem_00ACD9EC;
+    (void)mem_00ACD9F0; (void)mem_00ACD9F4; (void)mem_00ACD9F8; (void)mem_00ACD9FC; (void)mem_00ACDA00;
+    (void)mem_00ACDA04; (void)mem_00ACDA08; (void)mem_00ACDA0C; (void)mem_00ACDA10; (void)mem_00ACDA14;
+    (void)mem_00ACDA18; (void)mem_00ACDA1C; (void)mem_00ACDA20; (void)mem_00ACDA24; (void)mem_00ACDA28;
+    (void)mem_00ACDA2C; (void)mem_00ACDA30; (void)mem_00ACDA34; (void)mem_00ACDA38; (void)mem_00ACDA3C;
+    (void)mem_00ACDA40; (void)mem_00ACDA44; (void)mem_00ACDA48; (void)mem_00ACDA4C; (void)mem_00ACDA50;
+    (void)mem_00ACDA54; (void)mem_00ACDA58; (void)mem_00ACDA5C; (void)mem_00ACDA60; (void)mem_00ACDA64;
+    (void)mem_00ACDA68; (void)mem_00ACDA6C; (void)mem_00ACDA70; (void)mem_00ACDA74; (void)mem_00ACDA78;
+    (void)mem_00ACDA7C; (void)mem_00ACDA80; (void)mem_00ACDA84; (void)mem_00ACDA88; (void)mem_00ACDA8C;
+    (void)mem_00ACDA90; (void)mem_00ACDA94; (void)mem_00ACDA98; (void)mem_00ACDA9C; (void)mem_00ACDAA0;
+    (void)mem_00ACDAA4; (void)mem_00ACDAA8; (void)mem_00ACDAAC;
+}
+} // namespace lift_00428A60

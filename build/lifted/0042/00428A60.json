@@ -1,0 +1,33 @@
+{
+  "va": "0x00428A60",
+  "size": 72,
+  "orig_symbol": "sub_00428A60",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "Vector_Tidy_0x24",
+  "signature": "void __thiscall fn_00428A60(void* self)",
+  "summary": "Destroys elements (each 0x24 bytes with a std::string at +0x8), frees buffer, and resets vector pointers.",
+  "fields": [
+    {
+      "class": "Vector",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "first"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "last"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:22:57Z"
+}
