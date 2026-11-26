@@ -1570,3 +1570,21 @@ int32_t fn_007847B0(void* self) {
     return 0;
 }
 } // namespace lift_007847B0
+
+// [0x00783860] sub_00783860 (32 bytes)
+namespace lift_00783860 {
+// Known callee 0x006D2130: Unknown::InitClampedMin1 (Zeroes fields +0x00, +0x04, +0x10; stores arg2 at +0x0C and max(arg1, 1) (signed) at +0x08.)
+extern void ext_006D2130(void* self, int32_t arg1, int32_t arg2);
+
+// @name Unknown::InitEmptyListHead
+// @class Unknown
+// @summary Initializes self via InitClampedMin1(4, 0x10), points self+0x14 at embedded self+0x10 and zeroes self+0x18; returns self.
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+void* fn_00783860(void* self) {
+    ext_006D2130(self, 4, 0x10);
+    lift_field<void*>(self, 0x14) = static_cast<uint8_t*>(self) + 0x10;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    return self;
+}
+} // namespace lift_00783860

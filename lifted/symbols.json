@@ -67481,6 +67481,13 @@
     "summary": "Zeroes the +0x04 word of the owner and of every node in its +0x00 singly linked chain.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00783860": {
+    "name": "Unknown::InitEmptyListHead",
+    "class": "Unknown",
+    "signature": "void* fn_00783860(void* self)",
+    "summary": "Initializes self via InitClampedMin1(4, 0x10), points self+0x14 at embedded self+0x10 and zeroes self+0x18; returns self.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00783880": {
     "name": "DestroyEntriesAndBase",
     "signature": "extern \"C\" void fn_00783880(void* self)",
