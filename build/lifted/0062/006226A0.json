@@ -1,0 +1,13 @@
+{
+  "va": "0x006226A0",
+  "size": 91,
+  "orig_symbol": "sub_006226A0",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "allocateElements20",
+  "signature": "extern \"C\" void* fn_006226A0(uint32_t count)",
+  "summary": "Allocates count * 20 bytes via MFC operator new, throwing std::bad_alloc on 32-bit overflow",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T12:12:29Z"
+}

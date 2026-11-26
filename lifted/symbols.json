@@ -40764,6 +40764,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006227B0 (NMData::HingeCalibrationVariables::vfunc_28).",
     "lifted_path": "lifted/NMData/SkeletalCalibrationVariables.cpp"
   },
+  "0x006226A0": {
+    "name": "allocateElements20",
+    "signature": "extern \"C\" void* fn_006226A0(uint32_t count)",
+    "summary": "Allocates count * 20 bytes via MFC operator new, throwing std::bad_alloc on 32-bit overflow",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00622750": {
     "name": "InitTaggedZeroFloatTriple",
     "signature": "void* InitTaggedZeroFloatTriple(void* self)",
@@ -41421,6 +41427,13 @@
     "signature": "extern \"C\" void fn_00629830(void)",
     "summary": "Pure jump thunk forwarding to sub_00629720.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x00629850": {
+    "name": "Sub_00629850::Sub_00629850",
+    "class": "Sub_00629850",
+    "signature": "void* __thiscall fn_00629850(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+    "summary": "Constructor: initializes MetaBodySensor base, installs vtables at +0x00/+0x30, and initializes float fields at +0x34..+0x70.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x00629A70": {
     "name": "Sensors::SensorTreeCentreOfMassX::vfunc_17",

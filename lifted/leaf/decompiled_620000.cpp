@@ -2547,3 +2547,92 @@ void* __thiscall fn_0062C3F0(void* self, uint32_t arg0, uint32_t arg1, uint32_t 
     return self;
 }
 } // namespace lift_0062C3F0
+
+// [0x006226A0]
+namespace lift_006226A0 {
+// @name allocateElements20
+// @summary Allocates count * 20 bytes via MFC operator new, throwing std::bad_alloc on 32-bit overflow
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+extern void (*mem_00925130)(void* self, const char* const* msg);
+
+extern void* fn_006226A0(uint32_t count) {
+    if (count > 0 && (0xFFFFFFFFu / count) < 20u) {
+        struct BadAllocStub {
+            uint32_t vtable;
+            uint32_t pad[2];
+        } exc{};
+        const char* msg = nullptr;
+        mem_00925130(&exc, &msg);
+        exc.vtable = 0x00928EC0u;
+        ext_006A6DD2(&exc, 0x009CDF94u);
+    }
+    return ext_006A5C62(count * 20u);
+}
+} // namespace lift_006226A0
+
+// [0x00629850]
+namespace lift_00629850 {
+// @name Sub_00629850::Sub_00629850
+// @class Sub_00629850
+// @summary Constructor: initializes MetaBodySensor base, installs vtables at +0x00/+0x30, and initializes float fields at +0x34..+0x70.
+// @field Sub_00629850 +0x00 uint32_t vtable
+// @field Sub_00629850 +0x30 uint32_t field_0x30
+// @field Sub_00629850 +0x34 float field_0x34
+// @field Sub_00629850 +0x38 float field_0x38
+// @field Sub_00629850 +0x3c float field_0x3c
+// @field Sub_00629850 +0x40 float field_0x40
+// @field Sub_00629850 +0x44 float field_0x44
+// @field Sub_00629850 +0x48 float field_0x48
+// @field Sub_00629850 +0x4c float field_0x4c
+// @field Sub_00629850 +0x50 float field_0x50
+// @field Sub_00629850 +0x54 float field_0x54
+// @field Sub_00629850 +0x58 float field_0x58
+// @field Sub_00629850 +0x5c float field_0x5c
+// @field Sub_00629850 +0x60 float field_0x60
+// @field Sub_00629850 +0x64 float field_0x64
+// @field Sub_00629850 +0x68 float field_0x68
+// @field Sub_00629850 +0x6c float field_0x6c
+// @field Sub_00629850 +0x70 float field_0x70
+
+
+extern void __thiscall ext_005FF240(void* self, uint32_t arg);
+extern uint32_t mem_00928EAC;
+extern uint32_t mem_009783FC;
+extern uint32_t mem_009783E4;
+
+void* __thiscall fn_00629850(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) {
+    (void)arg2;
+    (void)arg3;
+    (void)arg4;
+
+    ext_005FF240(self, arg1);
+
+    lift_field<uint32_t>(self, 0x30) = (uint32_t)(uintptr_t)&mem_00928EAC;
+    lift_field<uint32_t>(self, 0x00) = (uint32_t)(uintptr_t)&mem_009783FC;
+    lift_field<uint32_t>(self, 0x30) = (uint32_t)(uintptr_t)&mem_009783E4;
+
+    lift_field<float>(self, 0x34) = 1.0f;
+
+    lift_field<float>(self, 0x38) = 0.0f;
+    lift_field<float>(self, 0x3C) = 0.0f;
+    lift_field<float>(self, 0x40) = 0.0f;
+    lift_field<float>(self, 0x44) = 0.0f;
+    lift_field<float>(self, 0x4C) = 0.0f;
+    lift_field<float>(self, 0x50) = 0.0f;
+    lift_field<float>(self, 0x54) = 0.0f;
+    lift_field<float>(self, 0x58) = 0.0f;
+    lift_field<float>(self, 0x60) = 0.0f;
+    lift_field<float>(self, 0x64) = 0.0f;
+    lift_field<float>(self, 0x68) = 0.0f;
+    lift_field<float>(self, 0x6C) = 0.0f;
+
+    lift_field<float>(self, 0x48) = 1.0f;
+    lift_field<float>(self, 0x5C) = 1.0f;
+    lift_field<float>(self, 0x70) = 1.0f;
+
+    return self;
+}
+} // namespace lift_00629850
