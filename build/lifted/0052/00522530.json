@@ -1,0 +1,33 @@
+{
+  "va": "0x00522530",
+  "size": 67,
+  "orig_symbol": "sub_00522530",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "copyBackwardItem0x28",
+  "signature": "uint8_t* sub_00522530(uint8_t* first, uint8_t* last, uint8_t* d_last)",
+  "summary": "Copies a range of 0x28-byte elements backward, copying fields at +0x04/+0x08 and assigning std::string at +0x0c",
+  "fields": [
+    {
+      "class": "Item0x28",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Item0x28",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Item0x28",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:16:05Z"
+}

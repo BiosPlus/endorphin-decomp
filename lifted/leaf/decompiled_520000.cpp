@@ -1421,3 +1421,36 @@ void* sub_00527570(void* dst) {
     return dst;
 }
 } // namespace lift_00527570
+
+// [0x00522530]
+namespace lift_00522530 {
+// @name copyBackwardItem0x28
+// @summary Copies a range of 0x28-byte elements backward, copying fields at +0x04/+0x08 and assigning std::string at +0x0c
+// @field Item0x28 +0x04 uint32_t field_0x04
+// @field Item0x28 +0x08 uint32_t field_0x08
+// @field Item0x28 +0x0c void* field_0x0c
+
+
+using StringAssignFn = void*(__thiscall*)(void* dst, const void* src);
+extern void* mem_00924FDC;
+
+uint8_t* sub_00522530(uint8_t* first, uint8_t* last, uint8_t* d_last) {
+    if (first == last) {
+        return d_last;
+    }
+
+    auto assign_str = reinterpret_cast<StringAssignFn>(mem_00924FDC);
+    uint8_t* src = last;
+    uint8_t* dst = d_last;
+
+    do {
+        src -= 0x28;
+        dst -= 0x28;
+        lift_field<uint32_t>(dst, 0x04) = lift_field<uint32_t>(src, 0x04);
+        lift_field<uint32_t>(dst, 0x08) = lift_field<uint32_t>(src, 0x08);
+        assign_str(dst + 0x0c, src + 0x0c);
+    } while (src != first);
+
+    return dst;
+}
+} // namespace lift_00522530
