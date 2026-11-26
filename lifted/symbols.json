@@ -19086,6 +19086,13 @@
     "summary": "Returns (end - begin) / 36 when begin (+0x04) is non-null, otherwise 0.",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x005049B0": {
+    "name": "Unknown::GetElementPtr",
+    "class": "Unknown",
+    "signature": "void* fn_005049B0(void* self, uint32_t idx)",
+    "summary": "Bounds-checked index into a 104-byte element array at this-\u003e+0x4..+0x8; returns begin + idx*104 (calls _invalid_parameter_noinfo when idx \u003e= count, then still returns the computed pointer).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00504A70": {
     "name": "thunk_MSVCP80_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ",
     "signature": "extern \"C\" void fn_00504A70(void)",

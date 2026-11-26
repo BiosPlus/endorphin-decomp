@@ -2274,3 +2274,35 @@ void* fn_00503C20(void* begin, void* end, void* dest) {
     return reinterpret_cast<void*>(static_cast<uintptr_t>(result));
 }
 } // namespace lift_00503C20
+
+// [0x005049B0] sub_005049B0 (60 bytes)
+namespace lift_005049B0 {
+extern int mem_00925134;
+
+// @name Unknown::GetElementPtr
+// @class Unknown
+// @summary Bounds-checked index into a 104-byte element array at this->+0x4..+0x8; returns begin + idx*104 (calls _invalid_parameter_noinfo when idx >= count, then still returns the computed pointer).
+// @field Unknown +0x04 u32 field_0x04
+// @field Unknown +0x08 u32 field_0x08
+void* fn_005049B0(void* self, uint32_t idx) {
+    // mov eax, [esi+4]; test eax, eax; je invalid
+    const uint32_t begin = lift_field<uint32_t>(self, 0x4);
+    bool valid = false;
+    if (begin != 0) {
+        // (end - begin) / 104 as signed division (magic-number sequence in asm)
+        const int32_t diff = static_cast<int32_t>(lift_field<uint32_t>(self, 0x8) - begin);
+        const int32_t count = diff / 104;
+        // cmp idx, count; jb ok  (unsigned compare)
+        valid = idx < static_cast<uint32_t>(count);
+    }
+    if (!valid) {
+        // call dword ptr [0x925134] ; _invalid_parameter_noinfo
+        using InvalidParamFn = void(__cdecl*)();
+        auto invalid = reinterpret_cast<InvalidParamFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925134)));
+        invalid();
+    }
+    // mov eax, edi; imul eax, eax, 0x68; add eax, [esi+4]
+    const uint32_t result = begin + idx * 104u;
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(result));
+}
+} // namespace lift_005049B0

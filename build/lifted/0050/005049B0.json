@@ -1,0 +1,28 @@
+{
+  "va": "0x005049B0",
+  "size": 60,
+  "orig_symbol": "sub_005049B0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "Unknown::GetElementPtr",
+  "class": "Unknown",
+  "signature": "void* fn_005049B0(void* self, uint32_t idx)",
+  "summary": "Bounds-checked index into a 104-byte element array at this-\u003e+0x4..+0x8; returns begin + idx*104 (calls _invalid_parameter_noinfo when idx \u003e= count, then still returns the computed pointer).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "u32",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "u32",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:54:49Z"
+}
