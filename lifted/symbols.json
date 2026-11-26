@@ -67948,6 +67948,12 @@
     "summary": "Stores four constant 32-bit values into the mem_00B60FB0..FBC global block.",
     "lifted_path": "lifted/clones/auto_clones_790000.cpp"
   },
+  "0x0079BA10": {
+    "name": "IsSentinelValue_0079BA10",
+    "signature": "bool fn_0079BA10(int value)",
+    "summary": "Returns true if the argument matches either of two cached sentinel globals, or the third global (returned via sete).",
+    "lifted_path": "lifted/clones/auto_clones_790000.cpp"
+  },
   "0x0079BA40": {
     "name": "sub_0079BA40",
     "signature": "extern \"C\" int32_t __cdecl fn_0079BA40(void)",

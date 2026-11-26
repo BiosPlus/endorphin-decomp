@@ -137,3 +137,40 @@ void fn_0079F1D0(void* self) {
 }
 } // namespace lift_0079B8F0
 } // namespace lift_0079F1D0
+
+// [0x0079BA10] sub_0079BA10 (44 bytes)
+namespace lift_0079BA10 {
+extern int mem_00B60F58;
+extern int mem_00B5EB78;
+extern int mem_00B5E400;
+extern int mem_00925284;
+extern int mem_00B60FD0;
+extern int mem_00B60FD4;
+extern int mem_00B60FD8;
+extern int mem_00B60FDC;
+extern int mem_00B60FE0;
+extern int mem_00B60FE4;
+
+// @name IsSentinelValue_0079BA10
+// @summary Returns true if the argument matches either of two cached sentinel globals, or the third global (returned via sete).
+// @field none
+bool fn_0079BA10(int value) {
+    // Address-only references: keep these globals linked for differential
+    // testing without reading or writing them (no behavioral effect).
+    (void)&mem_00925284;
+    (void)&mem_00B60FD0;
+    (void)&mem_00B60FD4;
+    (void)&mem_00B60FD8;
+    (void)&mem_00B60FDC;
+    (void)&mem_00B60FE0;
+    (void)&mem_00B60FE4;
+
+    if (value == mem_00B60F58) {
+        return true;
+    }
+    if (value == mem_00B5EB78) {
+        return true;
+    }
+    return value == mem_00B5E400;
+}
+} // namespace lift_0079BA10
