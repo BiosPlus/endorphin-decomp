@@ -1,0 +1,28 @@
+{
+  "va": "0x00596C50",
+  "size": 76,
+  "orig_symbol": "sub_00596C50",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "VectorNotifyElementsAndRaiseMax",
+  "class": "Unknown (layout not recovered)",
+  "signature": "void fn_00596C50(void* self)",
+  "summary": "Calls ext_005A3610 on each 4-byte element of the pointer range [+0x23C, +0x240), then RaiseFieldF4ToValue(self, 2).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x23C",
+      "type": "uint32_t field_0x23C (range begin, 32-bit",
+      "name": "address)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x240",
+      "type": "uint32_t field_0x240 (range end, 32-bit",
+      "name": "address)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:25:27Z"
+}

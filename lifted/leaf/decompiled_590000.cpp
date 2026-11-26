@@ -1433,3 +1433,37 @@ DWORD sub_00599E70(void* self) {
     return lift_field<DWORD>(q, 0x38C);
 }
 } // namespace lift_00599E70
+
+// [0x00596C50] sub_00596C50 (76 bytes)
+namespace lift_00596C50 {
+// Known callee 0x005A3610: sub_005A3610 (Auto-lifted identical-shape clone of 0x0044C940 (sub_0044C940).)
+// thiscall: element pointer passed in ecx.
+extern void __fastcall ext_005A3610(void* self);
+// Known callee 0x00594020: RaiseFieldF4ToValue (running max into self+0xF4; thiscall, one stack arg).
+extern void __thiscall ext_00594020(void* self, int32_t value);
+// CRT _invalid_parameter_noinfo function pointer slot.
+extern void (*mem_00925134)(void);
+
+// @name VectorNotifyElementsAndRaiseMax
+// @class Unknown (layout not recovered)
+// @summary Calls ext_005A3610 on each 4-byte element of the pointer range [+0x23C, +0x240), then RaiseFieldF4ToValue(self, 2).
+// @field Unknown +0x23C uint32_t field_0x23C (range begin, 32-bit address)
+// @field Unknown +0x240 uint32_t field_0x240 (range end, 32-bit address)
+void fn_00596C50(void* self) {
+    auto invalid_param = mem_00925134;
+    const uint32_t end = lift_field<uint32_t>(self, 0x240);
+    const uint32_t begin = lift_field<uint32_t>(self, 0x23C);
+
+    // Range sanity checks (begin must not exceed end).
+    if (begin > end) {
+        invalid_param();
+    }
+
+    for (uint32_t cur = begin; cur != end; cur += 4) {
+        uint32_t elem = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(cur));
+        ext_005A3610(reinterpret_cast<void*>(static_cast<uintptr_t>(elem)));
+    }
+
+    ext_00594020(self, 2);
+}
+} // namespace lift_00596C50
