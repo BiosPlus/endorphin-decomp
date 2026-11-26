@@ -60,6 +60,7 @@ struct Unknown_Fields {
     // +0x0   uint32_t                 heldObject  (evidence: 0x00468630) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    heldPtr  (evidence: 0x00401DE0, 0x004030F0, 0x0040A910, 0x0040BE90, 0x004693D0, 0x004693F0, 0x00480750, 0x004A5BE0, 0x004AECE0, 0x004D2C70, 0x004DA800, 0x00594790, 0x005947B0, 0x005C4780, 0x005CEA30, 0x00648200, 0x00648510, 0x00648A20) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (object kind word; low byte used as index)  (evidence: 0x007D5B30) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void* field_0x00 (accessed only via arg/ECX; layout not inferred)  (evidence: 0x0068BB30) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    inner  (evidence: 0x0079DDC0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    inner_first  (evidence: 0x00783650) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (pointer to inner object whose vtable slot 8 is invoked)  (evidence: 0x006616F0, 0x00661950) // CONFLICT: multiple definitions at +0x0

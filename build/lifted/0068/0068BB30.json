@@ -1,0 +1,22 @@
+{
+  "va": "0x0068BB30",
+  "size": 45,
+  "orig_symbol": "sub_0068BB30",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "Unknown::constructAndThrow_0068BB30",
+  "class": "Unknown",
+  "signature": "void fn_0068BB30(void* self)",
+  "summary": "Builds a 0x34-byte temporary via 0x0065C770 (seeded from the 0x00687510 result) and throws it through _CxxThrowException.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (accessed only via arg/ECX; layout not",
+      "name": "inferred)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:28:55Z"
+}

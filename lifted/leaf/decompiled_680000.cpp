@@ -1800,3 +1800,32 @@ void fn_00688F20(void* self) {
 }
 } // namespace lift_0044C500
 } // namespace lift_00688F20
+
+// [0x0068BB30] sub_0068BB30 (45 bytes)
+namespace lift_0068BB30 {
+// Known callee 0x0065C770: sub_0065C770 (114 bytes). Thiscall: ECX = this (local object), stack args follow.
+extern void* ext_0065C770(void* self, void* arg0, int kind, void* arg2);
+// Known callee 0x00687510: sub_00687510 (auto-lifted clone of 0x0040A910). Thiscall: ECX = self, arg1 on stack.
+extern void* ext_00687510(void* self, void* arg1);
+// Known callee 0x006A6DD2: thunk to MSVCR80!_CxxThrowException (does not return).
+extern void ext_006A6DD2(void* object, void* throwInfo);
+// .rdata u32 at 0x00A14D3C, passed by address as the ThrowInfo argument.
+extern int mem_00A14D3C;
+
+// @name Unknown::constructAndThrow_0068BB30
+// @class Unknown
+// @summary Builds a 0x34-byte temporary via 0x0065C770 (seeded from the 0x00687510 result) and throws it through _CxxThrowException.
+// @field Unknown +0x00 void* field_0x00 (accessed only via arg/ECX; layout not inferred)
+void fn_0068BB30(void* self) {
+    // Stack-frame locals: [ebp-0x64] is the 0x34-byte temporary, [ebp-0x30] is the scratch
+    // buffer passed to 0x00687510. The value of [ebp-0x14] (ECX seed for 0x00687510) is set
+    // by code outside this 45-byte window; it is taken as nullptr here.
+    alignas(8) uint8_t temp[0x34] = {};
+    alignas(8) uint8_t scratch[0x30 - 0x14] = {};
+    void* local14 = nullptr;
+
+    void* r = ext_00687510(local14, scratch);
+    ext_0065C770(temp, self, 7, r);
+    ext_006A6DD2(temp, reinterpret_cast<void*>(&mem_00A14D3C));
+}
+} // namespace lift_0068BB30
