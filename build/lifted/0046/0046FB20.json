@@ -1,0 +1,28 @@
+{
+  "va": "0x0046FB20",
+  "size": 82,
+  "orig_symbol": "sub_0046FB20",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "Unknown::ctor_0046FB20",
+  "class": "Unknown",
+  "signature": "void* fn_0046FB20(void* self, const void* a, const void* b)",
+  "summary": "Two-string constructor: copy-constructs the std::string argument a into self+0x00 and the std::string argument b into self+0x1C, then returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (std::string, copy-constructed from",
+      "name": "a)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "void* field_0x1c (std::string, copy-constructed from",
+      "name": "b)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:39:08Z"
+}

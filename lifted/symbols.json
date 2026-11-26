@@ -8288,6 +8288,13 @@
     "summary": "Destroys two std::string members at +0x1c and +0x00",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046FB20": {
+    "name": "Unknown::ctor_0046FB20",
+    "class": "Unknown",
+    "signature": "void* fn_0046FB20(void* self, const void* a, const void* b)",
+    "summary": "Two-string constructor: copy-constructs the std::string argument a into self+0x00 and the std::string argument b into self+0x1C, then returns self.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046FB80": {
     "name": "sub_0046FB80",
     "class": "Unknown",

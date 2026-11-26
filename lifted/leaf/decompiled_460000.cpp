@@ -1712,3 +1712,23 @@ void __thiscall sub_0046FAD0(void* self) {
     mem_00924FF4(base);
 }
 } // namespace lift_0046FAD0
+
+// [0x0046FB20] sub_0046FB20 (82 bytes)
+namespace lift_0046FB20 {
+// Import slot holding the address of MSVCP80 std::basic_string<char> copy constructor.
+extern uint32_t mem_00924FE0;
+
+// @name Unknown::ctor_0046FB20
+// @class Unknown
+// @summary Two-string constructor: copy-constructs the std::string argument a into self+0x00 and the std::string argument b into self+0x1C, then returns self.
+// @field Unknown +0x00 void* field_0x00 (std::string, copy-constructed from a)
+// @field Unknown +0x1C void* field_0x1c (std::string, copy-constructed from b)
+void* fn_0046FB20(void* self, const void* a, const void* b) {
+    using CopyCtorFn = void (*)(void* thisObj, const void* src);
+    auto copyCtor = reinterpret_cast<CopyCtorFn>(static_cast<uintptr_t>(mem_00924FE0));
+
+    copyCtor(self, a);
+    copyCtor(static_cast<char*>(self) + 0x1C, b);
+    return self;
+}
+} // namespace lift_0046FB20
