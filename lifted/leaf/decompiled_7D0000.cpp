@@ -1108,3 +1108,29 @@ std::uint32_t Unknown_walkLinkChainWhileFlagged_007DA820(std::uint32_t key, std:
     }
 }
 } // namespace lift_007DA820
+
+// [0x007DB9E0]
+namespace lift_007DB9E0 {
+// @name makeSkewSymmetricMatrix
+// @summary Builds a 3x3 skew-symmetric (cross-product) matrix in [eax] from a 3D vector in [ecx].
+// @field Vec3 +0x00 float x
+// @field Vec3 +0x04 float y
+// @field Vec3 +0x08 float z
+
+
+void sub_007DB9E0(void* eax, const void* ecx) {
+    float x = lift_field<float>(ecx, 0x00);
+    float y = lift_field<float>(ecx, 0x04);
+    float z = lift_field<float>(ecx, 0x08);
+
+    lift_field<float>(eax, 0x00) = 0.0f;
+    lift_field<float>(eax, 0x04) = z;
+    lift_field<float>(eax, 0x08) = -y;
+    lift_field<float>(eax, 0x0C) = -z;
+    lift_field<float>(eax, 0x10) = 0.0f;
+    lift_field<float>(eax, 0x14) = x;
+    lift_field<float>(eax, 0x18) = y;
+    lift_field<float>(eax, 0x1C) = -x;
+    lift_field<float>(eax, 0x20) = 0.0f;
+}
+} // namespace lift_007DB9E0
