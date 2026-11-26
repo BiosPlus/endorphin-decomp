@@ -191,6 +191,7 @@ struct Unknown_Fields {
     // +0x4   void*                    header  (evidence: 0x004774B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (read indirectly via ext_006AD180, not directly here)  (evidence: 0x0041CB80) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t                  hi  (evidence: 0x006DBE30) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    holder  (evidence: 0x00624F10) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (vector begin, via holder)  (evidence: 0x0067A670, 0x0067AEB0, 0x0067AEF0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (sub-component object returned by vfunc_0; its class is not identified)  (evidence: 0x0066BDB0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    inner  (evidence: 0x00783650, 0x00788E50) // CONFLICT: multiple definitions at +0x4

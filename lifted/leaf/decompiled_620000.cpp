@@ -2325,3 +2325,50 @@ uint32_t sub_00626770(uint32_t arg0) {
     return 0;
 }
 } // namespace lift_00626770
+
+// [0x00624F10]
+namespace lift_00624F10 {
+// @name Unknown::lowerBoundNode_00624F10
+// @class Unknown
+// @summary Binary-tree lower-bound search keyed on a (uint32, uint32) pair; returns the last node not less than the key, or the holder node if none.
+// @field Unknown +0x04 void* holder
+// @field TreeNode +0x00 void* left
+// @field TreeNode +0x08 void* right
+// @field TreeNode +0x0C uint32_t key_hi
+// @field TreeNode +0x10 uint32_t key_lo
+// @field TreeNode +0x19 uint8_t is_nil
+void* __fastcall fn_00624F10(void* self, void* /*edx*/, const uint32_t* key)
+{
+    void* holder = lift_field<void*>(self, 0x4);
+    void* node = lift_field<void*>(holder, 0x4);
+    void* result = holder;
+
+    if (lift_field<uint8_t>(node, 0x19) != 0) {
+        return result;
+    }
+
+    const uint32_t k1 = key[0];
+    const uint32_t k2 = key[1];
+
+    do {
+        const uint32_t n1 = lift_field<uint32_t>(node, 0x0C);
+        bool goLeft;
+        if (k1 < n1) {
+            goLeft = true;
+        } else if (k1 > n1) {
+            goLeft = false;
+        } else {
+            goLeft = lift_field<uint32_t>(node, 0x10) >= k2;
+        }
+
+        if (goLeft) {
+            result = node;
+            node = lift_field<void*>(node, 0x00);
+        } else {
+            node = lift_field<void*>(node, 0x08);
+        }
+    } while (lift_field<uint8_t>(node, 0x19) == 0);
+
+    return result;
+}
+} // namespace lift_00624F10

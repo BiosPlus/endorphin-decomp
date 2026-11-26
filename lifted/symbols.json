@@ -40017,6 +40017,13 @@
     "summary": "Returns 1 if the second 64-bit (hi:lo dword pair) operand is strictly greater than the first, else 0 (__stdcall, 2 args, ret 8).",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x00624F10": {
+    "name": "Unknown::lowerBoundNode_00624F10",
+    "class": "Unknown",
+    "signature": "void* __fastcall fn_00624F10(void* self, void* /*edx*/, const uint32_t* key)",
+    "summary": "Binary-tree lower-bound search keyed on a (uint32, uint32) pair; returns the last node not less than the key, or the holder node if none.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00624FA0": {
     "name": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026Sensors::SensorIsCollidingWith::getBool, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026Sensors::SensorIsCollidingWith::getBool, 1\u003e",

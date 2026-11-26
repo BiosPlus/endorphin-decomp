@@ -1,0 +1,52 @@
+{
+  "va": "0x00624F10",
+  "size": 57,
+  "orig_symbol": "sub_00624F10",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "Unknown::lowerBoundNode_00624F10",
+  "class": "Unknown",
+  "signature": "void* __fastcall fn_00624F10(void* self, void* /*edx*/, const uint32_t* key)",
+  "summary": "Binary-tree lower-bound search keyed on a (uint32, uint32) pair; returns the last node not less than the key, or the holder node if none.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "holder"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "left"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "right"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "key_hi"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "key_lo"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x19",
+      "type": "uint8_t",
+      "name": "is_nil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:48:05Z"
+}
