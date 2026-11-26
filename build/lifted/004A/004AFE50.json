@@ -1,0 +1,69 @@
+{
+  "va": "0x004AFE50",
+  "size": 90,
+  "orig_symbol": "sub_004AFE50",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "sub_004AFE50",
+  "signature": "extern \"C\" void __fastcall fn_004AFE50(void* self)",
+  "summary": "Frees three allocated buffers and zeroes their metadata before tail-calling sub_00665810.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x58",
+      "type": "void*",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T12:08:29Z"
+}

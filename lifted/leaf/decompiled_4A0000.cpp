@@ -830,3 +830,40 @@ void* fn_004A5A00(void* self) {
     return result;
 }
 } // namespace lift_004A5A00
+
+// [0x004AFE50]
+namespace lift_004AFE50 {
+// @name sub_004AFE50
+// @summary Frees three allocated buffers and zeroes their metadata before tail-calling sub_00665810.
+// @field Self +0x18 void* field_0x18
+// @field Self +0x1c uint32_t field_0x1c
+// @field Self +0x20 uint32_t field_0x20
+// @field Self +0x38 void* field_0x38
+// @field Self +0x3c uint32_t field_0x3c
+// @field Self +0x40 uint32_t field_0x40
+// @field Self +0x58 void* field_0x58
+// @field Self +0x5c uint32_t field_0x5c
+// @field Self +0x60 uint32_t field_0x60
+
+
+extern void ext_006A5C5C(void* ptr);
+extern void __fastcall ext_00665810(void* self);
+extern void ext_0059DE60(void);
+
+extern void __fastcall fn_004AFE50(void* self) {
+    static constexpr uintptr_t offsets[] = {0x58, 0x38, 0x18};
+    for (uintptr_t off : offsets) {
+        void* ptr = lift_field<void*>(self, off);
+        if (ptr != nullptr) {
+            ext_006A5C5C(ptr);
+        }
+        lift_field<uint32_t>(self, off) = 0;
+        lift_field<uint32_t>(self, off + 4) = 0;
+        lift_field<uint32_t>(self, off + 8) = 0;
+    }
+    ext_00665810(self);
+    if (false) {
+        ext_0059DE60();
+    }
+}
+} // namespace lift_004AFE50
