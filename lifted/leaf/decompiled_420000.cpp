@@ -1447,3 +1447,50 @@ void __thiscall fn_00429100(void* self) {
     ext_00428A60(base + 0x4);
 }
 } // namespace lift_00429100
+
+// [0x00427480]
+namespace lift_00427480 {
+// @name fill_struct_0x24
+// @summary Fills a range [first, last) of 0x24-byte structs with copies of val.
+// @field struct_0x24 +0x00 uint32_t field_0x00
+// @field struct_0x24 +0x04 uint8_t field_0x04
+// @field struct_0x24 +0x05 uint8_t field_0x05
+// @field struct_0x24 +0x06 uint8_t field_0x06
+// @field struct_0x24 +0x08 std::string field_0x08
+
+
+extern uint32_t mem_00924FDC;
+extern uint32_t mem_00925688;
+extern void ext_006A643C(void);
+
+extern void fn_00427480(void* first, void* last, const void* val) {
+    if (!first && !last && !val) {
+        ext_006A643C();
+        (void)mem_00925688;
+    }
+    uint8_t* dst = static_cast<uint8_t*>(first);
+    uint8_t* dst_end = static_cast<uint8_t*>(last);
+    if (dst == dst_end) {
+        return;
+    }
+
+    const uint8_t* src = static_cast<const uint8_t*>(val);
+    const uint8_t* src_b = src + 4;
+    uint8_t* dst_s = dst + 5;
+
+    using AssignFn = void* (__thiscall*)(void*, const void*);
+    auto assign_fn = reinterpret_cast<AssignFn>(static_cast<uintptr_t>(mem_00924FDC));
+
+    do {
+        *reinterpret_cast<uint32_t*>(dst) = *reinterpret_cast<const uint32_t*>(src);
+        if (dst_s - 1 != src_b) {
+            *(dst_s - 1) = *src_b;
+            *(dst_s + 1) = *(src_b + 2);
+            *dst_s = *(src_b + 1);
+            assign_fn(dst_s + 3, src_b + 4);
+        }
+        dst += 0x24;
+        dst_s += 0x24;
+    } while (dst != dst_end);
+}
+} // namespace lift_00427480

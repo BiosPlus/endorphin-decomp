@@ -1798,6 +1798,12 @@
     "summary": "Asserts self-\u003e[0] is nonzero and equal to other-\u003e[0] (else invalid-parameter handler), then returns self-\u003e[4] - other-\u003e[4].",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041A100": {
+    "name": "allocateArrayOrThrow",
+    "signature": "extern \"C\" void* fn_0041A100(uint32_t count)",
+    "summary": "Allocates memory via MFC80!ord_762 or throws std::bad_alloc on overflow.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041A160": {
     "name": "copyBackwardBytes",
     "signature": "void* __cdecl sub_0041A160(const void* first, const void* last, void* destEnd)",
@@ -2575,6 +2581,12 @@
     "signature": "void* fn_00427370(void* a)",
     "summary": "Auto-lifted identical-shape clone of 0x00476B80 (sub_00476B80).",
     "lifted_path": "lifted/leaf/tiny_420000.cpp"
+  },
+  "0x00427480": {
+    "name": "fill_struct_0x24",
+    "signature": "extern \"C\" void fn_00427480(void* first, void* last, const void* val)",
+    "summary": "Fills a range [first, last) of 0x24-byte structs with copies of val.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
   "0x004274E0": {
     "name": "copyBackward36",
@@ -5922,6 +5934,13 @@
     "signature": "extern \"C\" void* __cdecl fn_00455C20(void)",
     "summary": "Returns address of global mem_00936D1C.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00455C30": {
+    "name": "ButtonPanel::Create",
+    "class": "ButtonPanel",
+    "signature": "extern \"C\" uint32_t __thiscall fn_00455C30( void* self, uint32_t arg0, uint32_t arg1, int32_t cx, int32_t cy, uint32_t arg4, uint32_t arg5, uint32_t arg6)",
+    "summary": "Initializes horizontal, vertical, and floating bar sizes from default size and delegates to virtual Create.",
+    "lifted_path": "lifted/classes/ButtonPanel.cpp"
   },
   "0x00455C80": {
     "name": "CheckResultAndClearField_E8",

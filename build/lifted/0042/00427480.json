@@ -1,0 +1,45 @@
+{
+  "va": "0x00427480",
+  "size": 82,
+  "orig_symbol": "sub_00427480",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "fill_struct_0x24",
+  "signature": "extern \"C\" void fn_00427480(void* first, void* last, const void* val)",
+  "summary": "Fills a range [first, last) of 0x24-byte structs with copies of val.",
+  "fields": [
+    {
+      "class": "struct_0x24",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "struct_0x24",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "struct_0x24",
+      "offset": "+0x5",
+      "type": "uint8_t",
+      "name": "field_0x05"
+    },
+    {
+      "class": "struct_0x24",
+      "offset": "+0x6",
+      "type": "uint8_t",
+      "name": "field_0x06"
+    },
+    {
+      "class": "struct_0x24",
+      "offset": "+0x8",
+      "type": "std::string",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:49:37Z"
+}
