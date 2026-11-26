@@ -101,3 +101,44 @@ void __thiscall fn_00516E60(void* self) {
     }
 }
 } // namespace lift_00516E60
+
+// [0x00516E10]
+namespace lift_00516E10 {
+extern void (*mem_00925134)();
+
+// @name EvolvedIndividual::vfunc_0_off_8
+// @class EvolvedIndividual
+// @summary Sets owner pointer on added item and updates indices of all owned items
+// @field EvolvedIndividual +0x0C uint32_t* field_0x0C
+// @field EvolvedIndividual +0x10 uint32_t* field_0x10
+void __thiscall fn_00516E10(void* this_ptr, void* item, uint32_t /*unused*/) {
+    uint8_t* self = reinterpret_cast<uint8_t*>(this_ptr);
+    uint8_t* item_bytes = reinterpret_cast<uint8_t*>(item);
+
+    // Set owner pointer (EvolvedIndividual* = this_ptr - 0x8) at item + 0x30
+    *reinterpret_cast<uint32_t*>(item_bytes + 0x30) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self - 0x8));
+
+    uint32_t i = 0;
+    for (;;) {
+        uint32_t* begin = *reinterpret_cast<uint32_t**>(self + 0x0C);
+        if (!begin) {
+            break;
+        }
+        uint32_t* end = *reinterpret_cast<uint32_t**>(self + 0x10);
+        int32_t count = static_cast<int32_t>(end - begin);
+        if (i >= static_cast<uint32_t>(count)) {
+            break;
+        }
+
+        if (!begin || i >= static_cast<uint32_t>(count)) {
+            mem_00925134();
+        }
+
+        uint32_t* begin2 = *reinterpret_cast<uint32_t**>(self + 0x0C);
+        uint8_t* elem = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(begin2[i]));
+        *reinterpret_cast<uint32_t*>(elem + 0x34) = i;
+        ++i;
+    }
+}
+} // namespace lift_00516E10

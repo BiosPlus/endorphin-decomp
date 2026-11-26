@@ -1,0 +1,28 @@
+{
+  "va": "0x00516E10",
+  "size": 80,
+  "orig_symbol": "EvolvedIndividual::vfunc_0_off_8",
+  "src_path": "src/classes/EvolvedIndividual.cpp",
+  "lifted_path": "lifted/classes/EvolvedIndividual.cpp",
+  "name": "EvolvedIndividual::vfunc_0_off_8",
+  "class": "EvolvedIndividual",
+  "signature": "void __thiscall fn_00516E10(void* this_ptr, void* item, uint32_t /*unused*/)",
+  "summary": "Sets owner pointer on added item and updates indices of all owned items",
+  "fields": [
+    {
+      "class": "EvolvedIndividual",
+      "offset": "+0xC",
+      "type": "uint32_t*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "EvolvedIndividual",
+      "offset": "+0x10",
+      "type": "uint32_t*",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:31:37Z"
+}
