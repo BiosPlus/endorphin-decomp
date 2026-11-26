@@ -9839,6 +9839,12 @@
     "summary": "Copies a range of 20-byte (5 x float) records from [first, last) to out; returns the output end pointer.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x004890D0": {
+    "name": "sort3StdStrings",
+    "signature": "void fn_004890D0(void* a, void* b, void* c)",
+    "summary": "Three-element compare-and-swap network over std::string pointers using the IAT comparator at mem_00924EF4 and std::string::swap at mem_00924FBC.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00489230": {
     "name": "std_copy_backward_string",
     "signature": "uint32_t __cdecl sub_00489230(uint32_t first, uint32_t last, uint32_t dest_end)",

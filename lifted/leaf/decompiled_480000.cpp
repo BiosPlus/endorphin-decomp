@@ -2241,3 +2241,37 @@ void* fn_00480310(size_t n)
     return reinterpret_cast<AllocFn>(ext_006A5C62)(bytes);
 }
 } // namespace lift_00480310
+
+// [0x004890D0] sub_004890D0 (87 bytes)
+namespace lift_004890D0 {
+extern int mem_00924EF4;
+extern int mem_00924FBC;
+
+// @name sort3StdStrings
+// @summary Three-element compare-and-swap network over std::string pointers using the IAT comparator at mem_00924EF4 and std::string::swap at mem_00924FBC.
+
+namespace {
+// MSVCP80 comparator: __cdecl bool(const std::string&, const std::string&)
+using StrCmpFn = bool(__cdecl*)(const void*, const void*);
+// MSVCP80 std::string::swap: __thiscall void(std::string& other), this in ecx
+using StrSwapFn = void(__thiscall*)(void* self, void* other);
+}
+
+void fn_004890D0(void* a, void* b, void* c) {
+    StrCmpFn cmp = *reinterpret_cast<StrCmpFn*>(&mem_00924EF4);
+    StrSwapFn swap = *reinterpret_cast<StrSwapFn*>(&mem_00924FBC);
+
+    // (b, a): if b < a, swap so that a holds the smaller value.
+    if (cmp(b, a)) {
+        swap(b, a);
+    }
+    // (c, b): if c < b, swap b and c.
+    if (cmp(c, b)) {
+        swap(c, b);
+    }
+    // (b, a): final pass to restore order between a and b.
+    if (cmp(b, a)) {
+        swap(b, a);
+    }
+}
+} // namespace lift_004890D0
