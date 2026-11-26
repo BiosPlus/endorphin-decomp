@@ -1,0 +1,22 @@
+{
+  "va": "0x0063EAD0",
+  "size": 89,
+  "orig_symbol": "AdvXMLParser::InvalidRefException::vfunc_0",
+  "src_path": "src/AdvXMLParser/InvalidRefException.cpp",
+  "lifted_path": "lifted/AdvXMLParser/InvalidRefException.cpp",
+  "name": "AdvXMLParser::InvalidRefException::vfunc_0",
+  "class": "AdvXMLParser::InvalidRefException",
+  "signature": "extern \"C\" void* __thiscall fn_0063EAD0(void* self, uint32_t flags)",
+  "summary": "Scalar deleting destructor for AdvXMLParser::InvalidRefException.",
+  "fields": [
+    {
+      "class": "AdvXMLParser::InvalidRefException",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "member"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T12:07:45Z"
+}

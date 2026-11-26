@@ -27173,6 +27173,13 @@
     "summary": "Calls virtual method at vtable+0xa4 on this node and recursively on each child in vector at +0x7c.",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x005862A0": {
+    "name": "Node::traverseRecursive",
+    "class": "Node",
+    "signature": "void __thiscall sub_005862A0(void* self)",
+    "summary": "Calls virtual method at +0xA8 on this node, then recursively traverses child nodes in vector at +0x7C.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x00586660": {
     "name": "Unknown::CallVirtual8COnSelfAndElements",
     "class": "Unknown",
@@ -43435,6 +43442,13 @@
     "summary": "Destroys the std::string at offset +0x04 and resets the vtable via sub_0063E970.",
     "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
+  "0x0063EAD0": {
+    "name": "AdvXMLParser::InvalidRefException::vfunc_0",
+    "class": "AdvXMLParser::InvalidRefException",
+    "signature": "extern \"C\" void* __thiscall fn_0063EAD0(void* self, uint32_t flags)",
+    "summary": "Scalar deleting destructor for AdvXMLParser::InvalidRefException.",
+    "lifted_path": "lifted/AdvXMLParser/InvalidRefException.cpp"
+  },
   "0x0063EB30": {
     "name": "AdvXMLParser::Exception::vfunc_0",
     "class": "AdvXMLParser::Exception",
@@ -56040,6 +56054,12 @@
     "class": "Unknown",
     "signature": "void fn_006AAC90(void* self, DWORD arg)",
     "summary": "Notifies the thunk, then invalidates the window if the value changed and a sub-object is set.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
+  "0x006AC2E0": {
+    "name": "CWnd_UnlockAndRedraw",
+    "signature": "void __thiscall sub_006AC2E0(void* self)",
+    "summary": "Unlocks window updates, recalculates layout for client rect, and redraws the window",
     "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
   },
   "0x006AC340": {

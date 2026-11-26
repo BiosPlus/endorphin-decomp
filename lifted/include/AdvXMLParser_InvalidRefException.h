@@ -10,6 +10,6 @@
 // Recovered field layout for AdvXMLParser::InvalidRefException:
 namespace lifted_layout {
 struct AdvXMLParser_InvalidRefException_Fields {
-    // +0x4   std::string member (destroyed via MSVCP80 basic_string dtor, pointer at mem_00924FF4)  (evidence: 0x0063EAD0)
+    // +0x4   std::string              member  (evidence: 0x0063EAD0)
 };
 } // namespace lifted_layout
