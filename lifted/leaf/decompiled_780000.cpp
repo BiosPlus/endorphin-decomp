@@ -1519,3 +1519,25 @@ extern void __fastcall fn_00784720(void* self) {
     lift_field<uint8_t>(self, 0x10) = 0;
 }
 } // namespace lift_00784720
+
+// [0x00783540]
+namespace lift_00783540 {
+// Import slot for MSVCR80!fwrite (the original calls through it); portable code calls fwrite directly.
+extern int mem_00925268;
+
+// @name Unknown::FwriteFromSubobjectIfEnabled
+// @class Unknown
+// @summary If the sub-object at +0x04 has its enable byte (+0x04) set, fwrites arg2 items of 1 byte from arg1 to its FILE* (+0x00) and returns the count written; otherwise returns 0.
+// @field Unknown +0x04 void* field_0x04
+// @field UnknownStream +0x00 FILE* field_0x00
+// @field UnknownStream +0x04 uint8_t field_0x04
+uint32_t __thiscall fn_00783540(void* self, const void* buf, uint32_t count) {
+    void* sub = lift_field<void*>(self, 0x04);
+    if (lift_field<uint8_t>(sub, 0x04) == 0) {
+        return 0;
+    }
+    FILE* stream = lift_field<FILE*>(sub, 0x00);
+    (void)&mem_00925268; // original calls fwrite through this import slot
+    return static_cast<uint32_t>(fwrite(buf, 1, count, stream));
+}
+} // namespace lift_00783540

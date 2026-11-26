@@ -67405,6 +67405,13 @@
     "summary": "Reads a single byte from the underlying FILE stream if open, returning the byte read or 0.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00783540": {
+    "name": "Unknown::FwriteFromSubobjectIfEnabled",
+    "class": "Unknown",
+    "signature": "uint32_t __thiscall fn_00783540(void* self, const void* buf, uint32_t count)",
+    "summary": "If the sub-object at +0x04 has its enable byte (+0x04) set, fwrites arg2 items of 1 byte from arg1 to its FILE* (+0x00) and returns the count written; otherwise returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x007835F0": {
     "name": "sub_007835F0",
     "class": "Unknown",

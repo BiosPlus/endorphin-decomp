@@ -1,0 +1,34 @@
+{
+  "va": "0x00783540",
+  "size": 48,
+  "orig_symbol": "sub_00783540",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "Unknown::FwriteFromSubobjectIfEnabled",
+  "class": "Unknown",
+  "signature": "uint32_t __thiscall fn_00783540(void* self, const void* buf, uint32_t count)",
+  "summary": "If the sub-object at +0x04 has its enable byte (+0x04) set, fwrites arg2 items of 1 byte from arg1 to its FILE* (+0x00) and returns the count written; otherwise returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownStream",
+      "offset": "+0x0",
+      "type": "FILE*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "UnknownStream",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:39:05Z"
+}
