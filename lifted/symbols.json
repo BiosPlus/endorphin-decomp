@@ -9011,6 +9011,13 @@
     "summary": "Copies the 64-byte block at src into each consecutive 64-byte slot in [dst, end); no-op if dst == end.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00480CA0": {
+    "name": "std::fill\u003cfloat4\u003e",
+    "class": "std",
+    "signature": "void fn_00480CA0(uint32_t first, uint32_t last, const float* src)",
+    "summary": "Fills a range [first, last) of 16-byte 4-float structs with the 4-float value at src.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00480DD0": {
     "name": "copyBlocks64_00480DD0",
     "signature": "void sub_00480DD0(std::uint8_t* src, void* unused_arg1, std::uint8_t* dst, std::uint8_t* end)",

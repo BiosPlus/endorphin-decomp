@@ -1,0 +1,14 @@
+{
+  "va": "0x00480CA0",
+  "size": 55,
+  "orig_symbol": "sub_00480CA0",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "std::fill\u003cfloat4\u003e",
+  "class": "std",
+  "signature": "void fn_00480CA0(uint32_t first, uint32_t last, const float* src)",
+  "summary": "Fills a range [first, last) of 16-byte 4-float structs with the 4-float value at src.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@medium",
+  "lifted_at": "2026-11-26T10:52:04Z"
+}

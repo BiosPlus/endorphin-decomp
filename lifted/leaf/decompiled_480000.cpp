@@ -2112,3 +2112,23 @@ void sub_004817A0(void* dst, uint32_t count, const void* src) {
     } while (count > 0);
 }
 } // namespace lift_004817A0
+
+// [0x00480CA0] sub_00480CA0 (55 bytes)
+namespace lift_00480CA0 {
+// @name std::fill<float4>
+// @summary Fills a range [first, last) of 16-byte 4-float structs with the 4-float value at src.
+void fn_00480CA0(uint32_t first, uint32_t last, const float* src) {
+    uint32_t cur = first;
+    if (cur == last) {
+        return;
+    }
+    do {
+        auto* dst = reinterpret_cast<float*>(cur);
+        dst[0] = src[0];
+        dst[1] = src[1];
+        dst[2] = src[2];
+        dst[3] = src[3];
+        cur += 16;
+    } while (cur != last);
+}
+} // namespace lift_00480CA0
