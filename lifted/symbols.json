@@ -41739,6 +41739,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x0062C3F0": {
+    "name": "MetaBodySensor_sub_0062C3F0",
+    "class": "MetaBodySensor",
+    "signature": "void* __thiscall fn_0062C3F0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Constructor for a MetaBodySensor-derived class (vtable 0x0097900C) that initializes float fields at +0x30..+0x38, stores arg2 at +0x3C, and zeroes fields at +0x44..+0x4C.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x0062C5E0": {
     "name": "Sensors::AxisSensor::vfunc_0",
     "class": "Sensors::AxisSensor",
@@ -67615,6 +67622,13 @@
     "signature": "uint8_t __thiscall fn_0071C740(uint8_t* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0071C970 (Unknown::getByteViaPtr0x0C_0x1960).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C750": {
+    "name": "Unknown::copyEightDwordsToSubobject",
+    "class": "Unknown",
+    "signature": "void fn_0071C750(void* self, const void* src)",
+    "summary": "Copies eight consecutive dwords from the argument block into the subobject at self+0x0C, stored at +0x738..+0x754 (stdcall-style, ret 4).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x0071C870": {
     "name": "Unknown::setChildFlag18D8",

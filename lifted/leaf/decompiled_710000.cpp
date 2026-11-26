@@ -2133,3 +2133,30 @@ bool __stdcall fn_007135C0(const char* s, double* out) {
     return *cur == '}';
 }
 } // namespace lift_007135C0
+
+// [0x0071C750] sub_0071C750 (96 bytes)
+namespace lift_0071C750 {
+// @name Unknown::copyEightDwordsToSubobject
+// @class Unknown
+// @summary Copies eight consecutive dwords from the argument block into the subobject at self+0x0C, stored at +0x738..+0x754 (stdcall-style, ret 4).
+// @field Unknown +0x0C void* field_0x0c
+// @field Unknown +0x738 uint32_t field_0x738
+// @field Unknown +0x73C uint32_t field_0x73c
+// @field Unknown +0x740 uint32_t field_0x740
+// @field Unknown +0x744 uint32_t field_0x744
+// @field Unknown +0x748 uint32_t field_0x748
+// @field Unknown +0x74C uint32_t field_0x74c
+// @field Unknown +0x750 uint32_t field_0x750
+// @field Unknown +0x754 uint32_t field_0x754
+void fn_0071C750(void* self, const void* src) {
+    void* dst = lift_field<void*>(self, 0x0c);
+    lift_field<uint32_t>(dst, 0x738) = lift_field<const uint32_t>(src, 0x00);
+    lift_field<uint32_t>(dst, 0x73c) = lift_field<const uint32_t>(src, 0x04);
+    lift_field<uint32_t>(dst, 0x740) = lift_field<const uint32_t>(src, 0x08);
+    lift_field<uint32_t>(dst, 0x744) = lift_field<const uint32_t>(src, 0x0c);
+    lift_field<uint32_t>(dst, 0x748) = lift_field<const uint32_t>(src, 0x10);
+    lift_field<uint32_t>(dst, 0x74c) = lift_field<const uint32_t>(src, 0x14);
+    lift_field<uint32_t>(dst, 0x750) = lift_field<const uint32_t>(src, 0x18);
+    lift_field<uint32_t>(dst, 0x754) = lift_field<const uint32_t>(src, 0x1c);
+}
+} // namespace lift_0071C750

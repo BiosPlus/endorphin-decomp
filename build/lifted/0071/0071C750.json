@@ -1,0 +1,70 @@
+{
+  "va": "0x0071C750",
+  "size": 96,
+  "orig_symbol": "sub_0071C750",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::copyEightDwordsToSubobject",
+  "class": "Unknown",
+  "signature": "void fn_0071C750(void* self, const void* src)",
+  "summary": "Copies eight consecutive dwords from the argument block into the subobject at self+0x0C, stored at +0x738..+0x754 (stdcall-style, ret 4).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x738",
+      "type": "uint32_t",
+      "name": "field_0x738"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x73C",
+      "type": "uint32_t",
+      "name": "field_0x73c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x740",
+      "type": "uint32_t",
+      "name": "field_0x740"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x744",
+      "type": "uint32_t",
+      "name": "field_0x744"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x748",
+      "type": "uint32_t",
+      "name": "field_0x748"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74C",
+      "type": "uint32_t",
+      "name": "field_0x74c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x750",
+      "type": "uint32_t",
+      "name": "field_0x750"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x754",
+      "type": "uint32_t",
+      "name": "field_0x754"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T12:10:54Z"
+}
