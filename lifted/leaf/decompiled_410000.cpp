@@ -2132,3 +2132,33 @@ void fn_00413810(void* self) {
     rdbuf_wide(ios_of_stream_slot(mem_00924FA8), field_0x1b0);
 }
 } // namespace lift_00413810
+
+// [0x00415540] sub_00415540 (61 bytes)
+namespace lift_00415540 {
+// Known callee 0x006A5EA8: thunk_MFC80_ord_1903 (IAT jump thunk forwarding to MFC80!ord_1903.)
+extern void ext_006A5EA8();
+// IAT slot holding USER32!SendMessageA
+extern uint32_t mem_00925694;
+// Sibling member at 0x00415430 (thiscall, self in ECX)
+extern void fn_00415430(void* self);
+
+using SendMessageAFn = LRESULT(__stdcall*)(HWND, UINT, WPARAM, LPARAM);
+
+// @name Unknown::ResetWindowState
+// @class Unknown
+// @summary Calls an MFC80 helper, then sends WM 0xB8 to the window handle at +0x20 and, if that succeeds, WM 0xB9 followed by a call to fn_00415430.
+// @field Unknown +0x20 HWND field_0x20
+void fn_00415540(void* self) {
+    ext_006A5EA8();
+
+    auto sendMessageA = reinterpret_cast<SendMessageAFn>(static_cast<uintptr_t>(mem_00925694));
+
+    HWND hwnd = lift_field<HWND>(self, 0x20);
+    LRESULT result = sendMessageA(hwnd, 0xB8, 0, 0);
+    if (result != 0) {
+        HWND hwndAgain = lift_field<HWND>(self, 0x20);
+        sendMessageA(hwndAgain, 0xB9, 0, 0);
+        fn_00415430(self);
+    }
+}
+} // namespace lift_00415540

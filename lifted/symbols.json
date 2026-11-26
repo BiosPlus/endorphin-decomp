@@ -1472,6 +1472,13 @@
     "summary": "Sends WM_NOTIFY (code NM_RETURN) to the parent window of this control if that parent is still a valid window.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00415540": {
+    "name": "Unknown::ResetWindowState",
+    "class": "Unknown",
+    "signature": "void fn_00415540(void* self)",
+    "summary": "Calls an MFC80 helper, then sends WM 0xB8 to the window handle at +0x20 and, if that succeeds, WM 0xB9 followed by a call to fn_00415430.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00415580": {
     "name": "sub_00415580",
     "signature": "extern \"C\" const char* __cdecl fn_00415580()",

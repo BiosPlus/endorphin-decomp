@@ -1,0 +1,22 @@
+{
+  "va": "0x00415540",
+  "size": 61,
+  "orig_symbol": "sub_00415540",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::ResetWindowState",
+  "class": "Unknown",
+  "signature": "void fn_00415540(void* self)",
+  "summary": "Calls an MFC80 helper, then sends WM 0xB8 to the window handle at +0x20 and, if that succeeds, WM 0xB9 followed by a call to fn_00415430.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:55:25Z"
+}
