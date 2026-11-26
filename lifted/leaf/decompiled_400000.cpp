@@ -1733,3 +1733,54 @@ extern void __cdecl fn_004060F0(void* first, void* last, void* proto)
     } while (dst != end);
 }
 } // namespace lift_004060F0
+
+// [0x0040B2B0]
+namespace lift_0040B2B0 {
+extern char mem_00928B5D[];
+    extern uint8_t mem_00AC8884[];
+    extern void* mem_00924FE4;
+    extern void* mem_00924FE0;
+
+using fn_str_ctor_cstr_t = void* (__thiscall*)(void* self, const char* s);
+using fn_str_ctor_copy_t = void* (__thiscall*)(void* self, const void* other);
+
+// @name getStringByType
+// @summary Constructs a std::string in sret from global mem_00AC8884 if type is 1 or 2, otherwise from mem_00928B5D.
+void* __stdcall sub_0040B2B0(void* dst, uint32_t type) {
+    if (type == 1 || type == 2) {
+        reinterpret_cast<fn_str_ctor_copy_t>(mem_00924FE0)(dst, mem_00AC8884);
+        return dst;
+    }
+    reinterpret_cast<fn_str_ctor_cstr_t>(mem_00924FE4)(dst, mem_00928B5D);
+    return dst;
+}
+} // namespace lift_0040B2B0
+
+// [0x004026E0]
+namespace lift_004026E0 {
+// @name std_vector_string_Tidy
+// @summary Destroys all std::string elements in a vector, frees the buffer, and resets pointers to null.
+// @field Vector +0x04 uintptr_t begin
+// @field Vector +0x08 uintptr_t end
+// @field Vector +0x0C uintptr_t capacity_end
+
+
+void ext_006A5C5C(uint32_t ptr);
+extern void (__thiscall *mem_00924FF4)(uint32_t);
+
+void __thiscall fn_004026E0(void* this_ptr) {
+    uint32_t esi = lift_field<uint32_t>(this_ptr, 0x4);
+    if (esi != 0) {
+        uint32_t edi = lift_field<uint32_t>(this_ptr, 0x8);
+        while (esi != edi) {
+            mem_00924FF4(esi);
+            esi += 0x1c;
+        }
+        uint32_t eax = lift_field<uint32_t>(this_ptr, 0x4);
+        ext_006A5C5C(eax);
+    }
+    lift_field<uint32_t>(this_ptr, 0x4) = 0;
+    lift_field<uint32_t>(this_ptr, 0x8) = 0;
+    lift_field<uint32_t>(this_ptr, 0xC) = 0;
+}
+} // namespace lift_004026E0
