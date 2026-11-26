@@ -1784,3 +1784,32 @@ void __thiscall fn_004026E0(void* this_ptr) {
     lift_field<uint32_t>(this_ptr, 0xC) = 0;
 }
 } // namespace lift_004026E0
+
+// [0x00406030] sub_00406030 (87 bytes)
+namespace lift_00406030 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762, operator new style allocator.)
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+[[noreturn]] void ext_006A6DD2(void* pObject, const void* pThrowInfo);
+// IAT slot 0x00925130: MSVCR80!??0exception@std@@QAE@ABQBD@Z (std::exception(const char* const&) constructor).
+extern void* mem_00925130;
+
+// @name allocateObjectArray_00406030
+// @summary Allocates count * 0x58 bytes via ext_006A5C62; throws an std::exception-style object if the byte count overflows 32 bits.
+void* fn_00406030(uint32_t count) {
+    if (count == 0) {
+        return ext_006A5C62(0);
+    }
+
+    // Overflow check: count * 0x58 must fit in 32 bits, i.e. 0xFFFFFFFF / count >= 0x58.
+    if (0xFFFFFFFFu / count < 0x58u) {
+        alignas(8) uint8_t exception[0x10] = {};
+        const char* message = nullptr;
+        reinterpret_cast<void (*)(void*, const char* const&)>(mem_00925130)(exception, message);
+        // ThrowInfo is the immediate 0x009CDF94 in the original push.
+        ext_006A6DD2(exception, reinterpret_cast<const void*>(uintptr_t{0x009CDF94}));
+    }
+
+    return ext_006A5C62(static_cast<size_t>(count) * 0x58u);
+}
+} // namespace lift_00406030

@@ -569,6 +569,12 @@
     "summary": "Bounds-checked lookup returning the first dword of an 88-byte element in a vector at +0x564 using index at +0x684.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00406030": {
+    "name": "allocateObjectArray_00406030",
+    "signature": "void* fn_00406030(uint32_t count)",
+    "summary": "Allocates count * 0x58 bytes via ext_006A5C62; throws an std::exception-style object if the byte count overflows 32 bits.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00406090": {
     "name": "std::copy\u003cstd::string*, std::string*\u003e",
     "class": "std::copy\u003cstd::string*, std",

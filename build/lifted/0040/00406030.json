@@ -1,0 +1,13 @@
+{
+  "va": "0x00406030",
+  "size": 87,
+  "orig_symbol": "sub_00406030",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "allocateObjectArray_00406030",
+  "signature": "void* fn_00406030(uint32_t count)",
+  "summary": "Allocates count * 0x58 bytes via ext_006A5C62; throws an std::exception-style object if the byte count overflows 32 bits.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:56:24Z"
+}
