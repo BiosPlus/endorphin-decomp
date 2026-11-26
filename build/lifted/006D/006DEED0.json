@@ -1,0 +1,22 @@
+{
+  "va": "0x006DEED0",
+  "size": 80,
+  "orig_symbol": "sub_006DEED0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::swapField38AndNotify",
+  "class": "Unknown",
+  "signature": "uint32_t fn_006DEED0(void* self, uint32_t newValue, uint8_t releaseOld)",
+  "summary": "Replaces the value at this+0x38 with newValue; if it differs, optionally releases the old non-null value, then notifies via ext_006E5750 (flags 4) and returns the previous value (0 if it was released).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "uint32_t",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T12:11:05Z"
+}

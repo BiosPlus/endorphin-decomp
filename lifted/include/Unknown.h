@@ -690,7 +690,7 @@ struct Unknown_Fields {
     // +0x38  int32_t                  field_0x38  (evidence: 0x006AD960) // CONFLICT: multiple definitions at +0x38
     // +0x38  std::string              field_0x38  (evidence: 0x00663060) // CONFLICT: multiple definitions at +0x38
     // +0x38  std::uint32_t            field_0x38  (evidence: 0x007BEDE0) // CONFLICT: multiple definitions at +0x38
-    // +0x38  uint32_t                 field_0x38  (evidence: 0x0048C960, 0x0053B240, 0x00540F80, 0x005B51E0, 0x00622B40, 0x00624EA0, 0x0062A590, 0x0063F350, 0x007299C0) // CONFLICT: multiple definitions at +0x38
+    // +0x38  uint32_t                 field_0x38  (evidence: 0x0048C960, 0x0053B240, 0x00540F80, 0x005B51E0, 0x00622B40, 0x00624EA0, 0x0062A590, 0x0063F350, 0x006DEED0, 0x007299C0) // CONFLICT: multiple definitions at +0x38
     // +0x38  uint8_t                  field_0x38  (evidence: 0x00530610, 0x00622B40, 0x006ACEE0) // CONFLICT: multiple definitions at +0x38
     // +0x38  void*                    field_0x38  (evidence: 0x004345B0, 0x004345E0, 0x0053B040, 0x0053B0E0, 0x006FA990, 0x006FC200) // CONFLICT: multiple definitions at +0x38
     // +0x38  uint8_t                  field_0x38[0x11]  (evidence: 0x00602F70) // CONFLICT: multiple definitions at +0x38

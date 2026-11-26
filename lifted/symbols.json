@@ -60197,6 +60197,13 @@
     "summary": "Getter returning int32_t field at offset +0x38.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006DEED0": {
+    "name": "Unknown::swapField38AndNotify",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006DEED0(void* self, uint32_t newValue, uint8_t releaseOld)",
+    "summary": "Replaces the value at this+0x38 with newValue; if it differs, optionally releases the old non-null value, then notifies via ext_006E5750 (flags 4) and returns the previous value (0 if it was released).",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DFFF0": {
     "name": "vec4d_length",
     "signature": "double __cdecl sub_006DFFF0(uint32_t arg0)",

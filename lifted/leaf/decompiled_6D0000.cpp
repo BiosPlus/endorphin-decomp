@@ -1959,3 +1959,34 @@ void fn_006DEB50(void* self, void* newObj) {
     ext_006E5750(self, 8);
 }
 } // namespace lift_006DEB50
+
+// [0x006DEED0] sub_006DEED0 (80 bytes)
+namespace lift_006DEED0 {
+// Known callee 0x006DE130: Unknown::ReleaseIfNonNull (If self is non-null, invokes vtable slot 0 (scalar deleting destructor) with flag 1; the single stack argument is ignored.)
+extern void ext_006DE130(void* self, int32_t unused_stack_arg);
+// Known callee 0x006E5750: applyFlagsAndDispatchItems (OR a flag word into this->+0x98 object, bump counters, then if its enable byte is set call item handlers in reverse order and finish via ext_006E5730.)
+extern void ext_006E5750(void* self, uint32_t flags);
+
+// @name Unknown::swapField38AndNotify
+// @class Unknown
+// @summary Replaces the value at this+0x38 with newValue; if it differs, optionally releases the old non-null value, then notifies via ext_006E5750 (flags 4) and returns the previous value (0 if it was released).
+// @field Unknown +0x38 uint32_t field_0x38
+uint32_t fn_006DEED0(void* self, uint32_t newValue, uint8_t releaseOld) {
+    auto* slot = reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x38);
+
+    uint32_t cur = *slot;
+    if (cur == newValue) {
+        return 0;
+    }
+
+    if (releaseOld != 0 && cur != 0) {
+        ext_006DE130(reinterpret_cast<void*>(static_cast<uintptr_t>(cur)), 0);
+        *slot = 0;
+    }
+
+    uint32_t previous = *slot;
+    *slot = newValue;
+    ext_006E5750(self, 4);
+    return previous;
+}
+} // namespace lift_006DEED0
