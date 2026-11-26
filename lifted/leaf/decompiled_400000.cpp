@@ -1813,3 +1813,35 @@ void* fn_00406030(uint32_t count) {
     return ext_006A5C62(static_cast<size_t>(count) * 0x58u);
 }
 } // namespace lift_00406030
+
+// [0x00404EA0] sub_00404EA0 (86 bytes)
+namespace lift_00404EA0 {
+// std::basic_string<char>::operator=(const basic_string&) via MSVCP80 IAT slot mem_00924FDC
+extern void* ext_std_string_assign(void* self, const void* rhs);
+extern int mem_00924FDC;
+
+// @name copyBackwardElements_00404EA0
+// @summary Copies [begin,end) backward into the range ending at dst (0x58-byte elements); returns new begin of dst range
+// @field Element +0x00 uint32_t field_0x00
+// @field Element +0x04 std::string field_0x04
+// @field Element +0x20 std::string field_0x20
+// @field Element +0x3C std::string field_0x3C
+void* fn_00404EA0(void* begin, void* end, void* dst) {
+    (void)&mem_00924FDC;
+    if (begin == end) {
+        return dst;
+    }
+    uint8_t* src = static_cast<uint8_t*>(end);
+    uint8_t* out = static_cast<uint8_t*>(dst);
+    const uint8_t* first = static_cast<const uint8_t*>(begin);
+    do {
+        src -= 0x58;
+        out -= 0x58;
+        lift_field<uint32_t>(out, 0) = lift_field<uint32_t>(src, 0);
+        ext_std_string_assign(out + 0x04, src + 0x04);
+        ext_std_string_assign(out + 0x20, src + 0x20);
+        ext_std_string_assign(out + 0x3C, src + 0x3C);
+    } while (src != first);
+    return out;
+}
+} // namespace lift_00404EA0

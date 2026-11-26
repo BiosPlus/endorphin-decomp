@@ -550,6 +550,12 @@
     "summary": "Copies each 0x58-byte record in [first,last) to dest (DWORD at +0, three std::strings at +4/+0x20/+0x3C); returns dest past the last copied record.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00404EA0": {
+    "name": "copyBackwardElements_00404EA0",
+    "signature": "void* fn_00404EA0(void* begin, void* end, void* dst)",
+    "summary": "Copies [begin,end) backward into the range ending at dst (0x58-byte elements); returns new begin of dst range",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00404F00": {
     "name": "formatIntToString",
     "signature": "void* __cdecl sub_00404F00(void* out_str, int32_t value)",
