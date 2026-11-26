@@ -1,0 +1,34 @@
+{
+  "va": "0x006FB550",
+  "size": 80,
+  "orig_symbol": "sub_006FB550",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "EntryArray::findLastByKey",
+  "class": "EntryArray",
+  "signature": "int32_t __thiscall EntryArray::findLastByKey(void* key)",
+  "summary": "Searches 12-byte entries backward from start+count-1 to start for a matching (value,ptr) key; returns relative index or -1",
+  "fields": [
+    {
+      "class": "EntryArray",
+      "offset": "+0x0",
+      "type": "uint8_t*",
+      "name": "entries"
+    },
+    {
+      "class": "EntryArray",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "start"
+    },
+    {
+      "class": "EntryArray",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "count"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-26T11:41:18Z"
+}

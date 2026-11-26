@@ -1994,3 +1994,34 @@ void sub_006F8730() {
     mem_00B5E258 = -*huge;
 }
 } // namespace lift_006F8700
+
+// [0x006FB550]
+namespace lift_006FB550 {
+// @name EntryArray::findLastByKey
+// @class EntryArray
+// @summary Searches 12-byte entries backward from start+count-1 to start for a matching (value,ptr) key; returns relative index or -1
+// @field EntryArray +0x00 uint8_t* entries
+// @field EntryArray +0x04 int32_t start
+// @field EntryArray +0x08 int32_t count
+struct EntryArray {
+    int32_t __thiscall findLastByKey(void* key);
+};
+
+int32_t __thiscall EntryArray::findLastByKey(void* key) {
+    uint8_t* self = reinterpret_cast<uint8_t*>(this);
+    uint8_t* entries = *reinterpret_cast<uint8_t**>(self + 0x0);
+    int32_t start = *reinterpret_cast<int32_t*>(self + 0x4);
+    int32_t count = *reinterpret_cast<int32_t*>(self + 0x8);
+    for (int32_t i = count + start - 1; i >= start; --i) {
+        uint32_t k0 = 0, k1 = 0;
+        if (key) {
+            uint32_t p = *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(key) + 0x4);
+            k1 = p;
+            k0 = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(p));
+        }
+        uint32_t* e = reinterpret_cast<uint32_t*>(entries + i * 12);
+        if (e[0] == k0 && e[1] == k1) return i - start;
+    }
+    return -1;
+}
+} // namespace lift_006FB550
