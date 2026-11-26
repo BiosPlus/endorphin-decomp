@@ -1650,3 +1650,40 @@ void sub_007CDBC0(void* arg0) {
     arr0[idx0] = 0;
 }
 } // namespace lift_007CDBC0
+
+// [0x007C6810] sub_007C6810 (64 bytes)
+namespace lift_007C6810 {
+extern std::uint32_t ext_007D4A70(std::uint32_t head);
+// Known callee 0x007D4AA0: Unknown::FindLinkPredecessor (Searches a link structure rooted at the head node (+0x04 chain, then +0x08 chain with back-link checks) for the given key; returns the predecessor node, the matching child, or 0.)
+extern std::uint32_t ext_007D4AA0(std::uint32_t head, std::uint32_t node);
+
+// @name Unknown::ForEachLinkMatch
+// @class Unknown
+// @summary Gets the first node of the link chain at this+0x1D4, then for each node found by ext_007D4AA0 calls callback(node+0x14, context) until no further match; always returns 0.
+// @field Unknown +0x1D4 std::uint8_t field_0x1d4
+// @field LinkNode +0x14 std::uint32_t field_0x14
+
+using LinkCallback = void (*)(std::uint32_t, std::uint32_t);
+
+std::uint32_t fn_007C6810(std::uint32_t self, std::uint32_t callback, std::uint32_t context) {
+    const std::uint32_t head = self + 0x1D4;
+
+    std::uint32_t node = ext_007D4A70(head);
+    if (node == 0) {
+        return 0;
+    }
+
+    const auto fn = reinterpret_cast<LinkCallback>(static_cast<std::uintptr_t>(callback));
+    for (;;) {
+        const std::uint32_t value = lift_field<std::uint32_t>(
+            reinterpret_cast<void*>(static_cast<std::uintptr_t>(node)), 0x14);
+        const std::uint32_t next = ext_007D4AA0(head, node);
+        fn(value, context);
+        node = next;
+        if (node == 0) {
+            break;
+        }
+    }
+    return 0;
+}
+} // namespace lift_007C6810

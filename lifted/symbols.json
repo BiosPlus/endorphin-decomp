@@ -70935,6 +70935,13 @@
     "summary": "Returns bit 0 of the dword at offset +0x1C4 of the object (cdecl, one stack argument).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C6810": {
+    "name": "Unknown::ForEachLinkMatch",
+    "class": "Unknown",
+    "signature": "std::uint32_t fn_007C6810(std::uint32_t self, std::uint32_t callback, std::uint32_t context)",
+    "summary": "Gets the first node of the link chain at this+0x1D4, then for each node found by ext_007D4AA0 calls callback(node+0x14, context) until no further match; always returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C6C10": {
     "name": "SetFlag0x4",
     "signature": "void __cdecl sub_007C6C10(void* self)",
