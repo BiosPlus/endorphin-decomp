@@ -1465,8 +1465,8 @@ extern void* __fastcall ext_0071E680(void* self);
 
 // @name testFlagBitByMode
 // @summary Tests a mode-selected bit (1->bit0, 2->bit6, 4->bit7) of a subobject's flag word, or a mask at +0xB0 of the linked object when the primary flag is zero.
-// @field +0x00 uint32_t field_0x00
-// @field +0x08 void* field_0x08
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x08 void* field_0x08
 bool fn_006E6DE0(void* self, uint32_t which) {
     uint32_t flags = lift_field<uint32_t>(self, 0x00);
     if (flags != 0) {
