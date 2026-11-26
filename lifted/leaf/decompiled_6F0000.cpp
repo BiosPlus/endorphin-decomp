@@ -1967,3 +1967,30 @@ extern bool __fastcall sub_006FAA40(void* self, void* /*edx*/, int arg0, int arg
     return true;
 }
 } // namespace lift_006FAA40
+
+// [0x006F8700]
+namespace lift_006F8700 {
+extern uint32_t mem_00925284; // pointer to MSVCR80 _HUGE (double)
+extern uint32_t mem_00B5E260;
+extern uint32_t mem_00B5E264;
+
+// @name initGlobalHugePositive
+// @summary Static initializer: copies the CRT _HUGE double into the global at 0x00B5E260
+void sub_006F8700() {
+    const uint32_t* huge = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    uint32_t lo = huge[0];
+    uint32_t hi = huge[1];
+    mem_00B5E260 = lo;
+    mem_00B5E264 = hi;
+}
+
+extern double mem_00B5E258;
+
+// [0x006F8730]
+// @name initGlobalHugeNegative
+// @summary Static initializer: stores -_HUGE into the global double at 0x00B5E258
+void sub_006F8730() {
+    const double* huge = reinterpret_cast<const double*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B5E258 = -*huge;
+}
+} // namespace lift_006F8700
