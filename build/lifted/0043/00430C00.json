@@ -1,0 +1,13 @@
+{
+  "va": "0x00430C00",
+  "size": 66,
+  "orig_symbol": "sub_00430C00",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "DispatchCheckResultToContinuation",
+  "signature": "void fn_00430C00(void* self, void* cont)",
+  "summary": "Computes (obj-\u003evfunc_0x11c() == 0 \u0026\u0026 CheckFieldAt60IsZero(self)) as 0/1, then tail-calls cont-\u003evtable[0](cont, result).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:09:31Z"
+}

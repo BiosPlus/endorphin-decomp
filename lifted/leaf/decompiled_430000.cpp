@@ -3610,3 +3610,37 @@ extern uint8_t __cdecl fn_00434F90(void) {
     return 1;
 }
 } // namespace lift_00434F90
+
+// [0x00430C00] sub_00430C00 (66 bytes)
+namespace lift_00430C00 {
+// Known callee 0x00430370: CheckFieldAt60IsZero (Calls sub_004658C0 to get an object pointer, returns 1 if its int32 at +0x60 is zero, else 0.)
+// The asm passes `self` in ecx, so it is declared with a this-pointer parameter.
+extern uint8_t __cdecl ext_00430370(void* self);
+// Known callee 0x00465B30: get_global_field_0x58 (Calls ext_004658C0 and returns the int32_t field at offset +0x58.)
+extern int32_t __cdecl ext_00465B30(void);
+// Known callee 0x00468660: sub_00468660 (Auto-lifted identical-shape clone of 0x004023C0 (AVIIO::vfunc_23).)
+extern uint32_t __cdecl ext_00468660(void* self);
+
+// @name DispatchCheckResultToContinuation
+// @summary Computes (obj->vfunc_0x11c() == 0 && CheckFieldAt60IsZero(self)) as 0/1, then tail-calls cont->vtable[0](cont, result).
+void fn_00430C00(void* self, void* cont) {
+    // ecx = ext_00465B30(); eax = ext_00468660(ecx); obj = eax
+    uint32_t obj_bits = ext_00468660(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(ext_00465B30()))));
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(obj_bits));
+
+    // vtable = *obj; eax = vtable[0x11c]; obj->vfunc() with ecx = obj
+    void** vtable = *reinterpret_cast<void***>(obj);
+    auto vfunc = reinterpret_cast<uint8_t (*)(void*)>(vtable[0x11c / sizeof(void*)]);
+
+    uint32_t result = 0;
+    if (vfunc(obj) == 0) {
+        result = (ext_00430370(self) != 0) ? 1u : 0u;
+    }
+
+    // Tail-dispatch: result goes into the stack argument slot, then jump to
+    // vtable[0] of the continuation object (which is also passed as this).
+    void** cont_vtable = *reinterpret_cast<void***>(cont);
+    auto next = reinterpret_cast<void (*)(void*, uint32_t)>(cont_vtable[0]);
+    next(cont, result);
+}
+} // namespace lift_00430C00

@@ -3097,6 +3097,12 @@
     "summary": "Fetches a nested object via the global field, queries a boolean virtual method on it, and forwards the result to slot 0 of self's vtable.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430C00": {
+    "name": "DispatchCheckResultToContinuation",
+    "signature": "void fn_00430C00(void* self, void* cont)",
+    "summary": "Computes (obj-\u003evfunc_0x11c() == 0 \u0026\u0026 CheckFieldAt60IsZero(self)) as 0/1, then tail-calls cont-\u003evtable[0](cont, result).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430C50": {
     "name": "ForwardNegatedNestedVirtualResult",
     "signature": "uint32_t read_u32(uint32_t base, uint32_t offset)",
