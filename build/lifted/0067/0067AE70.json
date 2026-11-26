@@ -1,0 +1,34 @@
+{
+  "va": "0x0067AE70",
+  "size": 58,
+  "orig_symbol": "sub_0067AE70",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "Unknown_WaitForHandleAtIndex",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_0067AE70(void* self, int32_t index)",
+  "summary": "If index \u003e= 0, waits infinitely on the HANDLE at element `index` of the handle array held at this+0x0C (out-of-range index calls the CRT invalid-parameter handler).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown_0x0C_Container",
+      "offset": "+0x4",
+      "type": "void**",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown_0x0C_Container",
+      "offset": "+0x8",
+      "type": "void**",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:53:09Z"
+}

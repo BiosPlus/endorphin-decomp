@@ -48069,6 +48069,13 @@
     "summary": "Checks under a critical section lock whether a pointer's field at +0x10 is non-zero.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067AE70": {
+    "name": "Unknown_WaitForHandleAtIndex",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0067AE70(void* self, int32_t index)",
+    "summary": "If index \u003e= 0, waits infinitely on the HANDLE at element `index` of the handle array held at this+0x0C (out-of-range index calls the CRT invalid-parameter handler).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067AEB0": {
     "name": "Unknown::SetEventAtIndex",
     "class": "Unknown",

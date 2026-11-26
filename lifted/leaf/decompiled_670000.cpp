@@ -1614,3 +1614,39 @@ void fn_0067ED10(void* self, const void* str) {
     lift_field<uint32_t>(self, 0x00) = static_cast<uint32_t>(value);
 }
 } // namespace lift_0067ED10
+
+// [0x0067AE70] sub_0067AE70 (58 bytes)
+namespace lift_0067AE70 {
+// IAT slots the original asm calls through (call dword ptr [0x925134] / [0x924274]).
+// mem_00925134 -> MSVCR80!_invalid_parameter_noinfo, mem_00924274 -> KERNEL32!WaitForSingleObject.
+extern void* mem_00925134;
+extern void* mem_00924274;
+
+// @name Unknown_WaitForHandleAtIndex
+// @class Unknown
+// @summary If index >= 0, waits infinitely on the HANDLE at element `index` of the handle array held at this+0x0C (out-of-range index calls the CRT invalid-parameter handler).
+// @field Unknown +0x0C void* field_0x0C
+// @field Unknown_0x0C_Container +0x04 void** field_0x04
+// @field Unknown_0x0C_Container +0x08 void** field_0x08
+void __thiscall fn_0067AE70(void* self, int32_t index) {
+    if (index < 0) {
+        return;
+    }
+
+    void* container = lift_field<void*>(self, 0x0C);
+    void** begin = lift_field<void**>(container, 0x04);
+    void** end = lift_field<void**>(container, 0x08);
+
+    // Element count = byte span >> 2 (signed sar); unsigned compare against index as in the original jb.
+    const int32_t byteSpan = static_cast<int32_t>(reinterpret_cast<uintptr_t>(end) - reinterpret_cast<uintptr_t>(begin));
+    const int32_t count = byteSpan >> 2;
+    if (begin == nullptr || static_cast<uint32_t>(index) >= static_cast<uint32_t>(count)) {
+        using InvalidParamFn = void(__cdecl*)();
+        reinterpret_cast<InvalidParamFn>(mem_00925134)();
+    }
+
+    void* handle = begin[index];
+    using WaitFn = uint32_t(__stdcall*)(void*, uint32_t);
+    (void)reinterpret_cast<WaitFn>(mem_00924274)(handle, 0xFFFFFFFFu);
+}
+} // namespace lift_0067AE70
