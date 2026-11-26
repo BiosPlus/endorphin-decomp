@@ -691,3 +691,61 @@ uint8_t fn_006AF840(void* self) {
     }
 }
 } // namespace lift_006AF840
+
+// [0x006AD290]
+namespace lift_006AD290 {
+// @name sub_006AD290_ctor
+// @summary Constructor initializing vtable, two CString members, and zeroing object fields
+// @field Obj +0x00 uint32_t vtable
+// @field Obj +0x08 uint32_t field_0x08
+// @field Obj +0x0C uint32_t field_0x0C
+// @field Obj +0x18 uint32_t field_0x18
+// @field Obj +0x1C uint32_t field_0x1C
+// @field Obj +0x20 uint32_t field_0x20
+// @field Obj +0x24 uint32_t field_0x24
+// @field Obj +0x28 uint32_t field_0x28
+// @field Obj +0x2C uint32_t field_0x2C
+// @field Obj +0x30 uint32_t field_0x30
+// @field Obj +0x34 uint32_t field_0x34
+// @field Obj +0x38 uint8_t field_0x38
+// @field Obj +0x3C uint32_t field_0x3C
+// @field Obj +0x40 uint8_t field_0x40
+// @field Obj +0x41 uint8_t field_0x41
+// @field Obj +0x44 uint32_t field_0x44
+// @field Obj +0x4C uint32_t field_0x4C
+
+
+extern void (__thiscall *mem_009242FC)(void* self);
+extern void ext_006A5EA8(void);
+extern void ext_006AD0D0(void);
+extern void ext_006A8980(void);
+extern uint32_t mem_00925688;
+extern uint32_t mem_009256BC;
+
+extern void* __thiscall fn_006AD290(void* self) {
+    (void)ext_006A5EA8;
+    (void)ext_006AD0D0;
+    (void)ext_006A8980;
+    (void)mem_00925688;
+    (void)mem_009256BC;
+    uint8_t* p = static_cast<uint8_t*>(self);
+    lift_field<uint32_t>(p, 0x00) = 0x0099103C;
+    mem_009242FC(p + 0x08);
+    mem_009242FC(p + 0x0C);
+    lift_field<uint32_t>(p, 0x18) = 0;
+    lift_field<uint32_t>(p, 0x1C) = 0;
+    lift_field<uint32_t>(p, 0x20) = 0;
+    lift_field<uint32_t>(p, 0x24) = 0;
+    lift_field<uint32_t>(p, 0x28) = 0;
+    lift_field<uint32_t>(p, 0x2C) = 0;
+    lift_field<uint32_t>(p, 0x30) = 0;
+    lift_field<uint32_t>(p, 0x34) = 0;
+    lift_field<uint8_t>(p, 0x38) = 0;
+    lift_field<uint32_t>(p, 0x3C) = 0;
+    lift_field<uint8_t>(p, 0x40) = 0;
+    lift_field<uint8_t>(p, 0x41) = 0;
+    lift_field<uint32_t>(p, 0x44) = 0;
+    lift_field<uint32_t>(p, 0x4C) = 0;
+    return self;
+}
+} // namespace lift_006AD290
