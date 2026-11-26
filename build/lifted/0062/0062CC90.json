@@ -1,0 +1,13 @@
+{
+  "va": "0x0062CC90",
+  "size": 95,
+  "orig_symbol": "sub_0062CC90",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "getGlobalBoolStringOnce",
+  "signature": "void* fn_0062CC90(void)",
+  "summary": "Function-local static init: on first call sets guard bit 0 of mem_00B52300, builds mem_00B522E4 via ext_0066AD10, registers 0x920180 via ext_006A6C87, and returns \u0026mem_00B522E4 on every call.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T12:08:43Z"
+}

@@ -41746,6 +41746,12 @@
     "summary": "Fetches a 64-byte (16 x DWORD) block via ext_00480920 and copies it into the caller-supplied destination buffer.",
     "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp"
   },
+  "0x0062CC90": {
+    "name": "getGlobalBoolStringOnce",
+    "signature": "void* fn_0062CC90(void)",
+    "summary": "Function-local static init: on first call sets guard bit 0 of mem_00B52300, builds mem_00B522E4 via ext_0066AD10, registers 0x920180 via ext_006A6C87, and returns \u0026mem_00B522E4 on every call.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x0062CCF0": {
     "name": "sub_0062CCF0",
     "class": "ResourceHolder",

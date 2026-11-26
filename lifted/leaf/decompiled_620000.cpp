@@ -2491,3 +2491,26 @@ void* __thiscall fn_00629AA0(void* self, uint32_t arg0, uint32_t /*arg1*/, uint3
     return self;
 }
 } // namespace lift_00629AA0
+
+// [0x0062CC90] sub_0062CC90 (95 bytes)
+namespace lift_0062CC90 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+// Caller passes (&mem_00B522E4, 0x00A98938) cdecl and cleans the stack itself.
+extern void* ext_0066AD10(void* out_str, uint32_t arg);
+// Callee 0x006A6C87 (18B), called once with 0x00920180, result unused, cdecl.
+extern void ext_006A6C87(uint32_t arg);
+extern uint32_t mem_00B52300;
+extern int mem_00B522E4;
+
+// @name getGlobalBoolStringOnce
+// @summary Function-local static init: on first call sets guard bit 0 of mem_00B52300, builds mem_00B522E4 via ext_0066AD10, registers 0x920180 via ext_006A6C87, and returns &mem_00B522E4 on every call.
+void* fn_0062CC90(void) {
+    // Guard: bit 0 of mem_00B52300 marks initialization as done.
+    if ((mem_00B52300 & 1u) == 0) {
+        mem_00B52300 |= 1u;
+        ext_0066AD10(&mem_00B522E4, 0x00A98938u);
+        ext_006A6C87(0x00920180u);
+    }
+    return &mem_00B522E4;
+}
+} // namespace lift_0062CC90
