@@ -1,0 +1,22 @@
+{
+  "va": "0x004FA170",
+  "size": 54,
+  "orig_symbol": "VMCSModes::DefaultImplementation::vfunc_106",
+  "src_path": "src/VMCSModes/DefaultImplementation.cpp",
+  "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp",
+  "name": "VMCSModes::DefaultImplementation::vfunc_106",
+  "class": "VMCSModes::DefaultImplementation",
+  "signature": "bool __thiscall fn_004FA170(void* self)",
+  "summary": "Checks whether the vector at +0x3CC of the nested object is non-empty.",
+  "fields": [
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T10:45:54Z"
+}

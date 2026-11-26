@@ -25691,6 +25691,13 @@
     "summary": "Returns (end - begin) / 12 for a 12-byte element array, or 0 when begin is null.",
     "lifted_path": "lifted/leaf/tiny_570000.cpp"
   },
+  "0x00573250": {
+    "name": "StringConstIterator::getCheckedPtr",
+    "class": "StringConstIterator",
+    "signature": "uint32_t __thiscall sub_00573250(void* self)",
+    "summary": "Validates a checked std::string iterator against its container and returns its pointer.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x005733D0": {
     "name": "copyRangeBackward48",
     "signature": "extern \"C\" uint32_t sub_005733D0(uint32_t arg1, uint32_t arg2, uint32_t arg3)",

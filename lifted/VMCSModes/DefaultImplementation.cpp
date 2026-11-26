@@ -255,3 +255,27 @@ extern bool __thiscall fn_004F9E60(void* self) {
     return state == 6;
 }
 } // namespace lift_004F9E60
+
+// [0x004FA170]
+namespace lift_004FA170 {
+// @name VMCSModes::DefaultImplementation::vfunc_106
+// @class VMCSModes::DefaultImplementation
+// @summary Checks whether the vector at +0x3CC of the nested object is non-empty.
+// @field VMCSModes::DefaultImplementation +0x8 void* field_0x8
+
+
+bool __thiscall fn_004FA170(void* self) {
+    void* obj1 = lift_field<void*>(self, 0x8);
+    void* obj2 = lift_field<void*>(obj1, 0x14);
+    uint8_t* obj3 = lift_field<uint8_t*>(obj2, 0x34);
+
+    uint32_t first = lift_field<uint32_t>(obj3, 0x3D0);
+    if (first == 0) {
+        return false;
+    }
+
+    uint32_t last = lift_field<uint32_t>(obj3 + 0x3CC, 0x8);
+    int32_t count = static_cast<int32_t>(last - first) >> 2;
+    return count != 0;
+}
+} // namespace lift_004FA170
