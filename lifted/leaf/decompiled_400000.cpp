@@ -1704,3 +1704,32 @@ uint32_t __thiscall fn_004053C0(void* self) {
     return *reinterpret_cast<uint32_t*>(vec_begin + index * 0x58);
 }
 } // namespace lift_004053C0
+
+// [0x004060F0] sub_004060F0 (75 bytes)
+namespace lift_004060F0 {
+// MSVCP80 std::string::operator=(const std::string&) import slot (thiscall).
+extern void* (__thiscall *mem_00924FDC)(void* self, const void* rhs);
+
+// @name fillRecordRangeFromPrototype
+// @summary Copy-assigns the 0x58-byte prototype record at proto to every record in [first, last): u32 at +0x00 and std::string at +0x04, +0x20, +0x3c.
+// @field Record +0x00 uint32_t field_0x00
+// @field Record +0x04 std::string field_0x04
+// @field Record +0x20 std::string field_0x20
+// @field Record +0x3c std::string field_0x3c
+extern void __cdecl fn_004060F0(void* first, void* last, void* proto)
+{
+    char* dst = (char*)first;
+    char* end = (char*)last;
+    char* src = (char*)proto;
+    if (dst == end) {
+        return;
+    }
+    do {
+        lift_field<uint32_t>(dst, 0x00) = lift_field<uint32_t>(src, 0x00);
+        mem_00924FDC(dst + 0x04, src + 0x04);
+        mem_00924FDC(dst + 0x20, src + 0x20);
+        mem_00924FDC(dst + 0x3c, src + 0x3c);
+        dst += 0x58;
+    } while (dst != end);
+}
+} // namespace lift_004060F0

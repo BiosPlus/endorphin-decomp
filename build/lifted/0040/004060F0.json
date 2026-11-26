@@ -1,0 +1,39 @@
+{
+  "va": "0x004060F0",
+  "size": 75,
+  "orig_symbol": "sub_004060F0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "fillRecordRangeFromPrototype",
+  "signature": "extern void __cdecl fn_004060F0(void* first, void* last, void* proto)",
+  "summary": "Copy-assigns the 0x58-byte prototype record at proto to every record in [first, last): u32 at +0x00 and std::string at +0x04, +0x20, +0x3c.",
+  "fields": [
+    {
+      "class": "Record",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x20",
+      "type": "std::string",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x3C",
+      "type": "std::string",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:21:13Z"
+}
