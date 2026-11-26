@@ -1,0 +1,51 @@
+{
+  "va": "0x00676780",
+  "size": 70,
+  "orig_symbol": "sub_00676780",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "sub_00676780",
+  "signature": "void* __thiscall sub_00676780(void* self)",
+  "summary": "Constructor that zeroes fields and default-constructs a std::string member at +0x04",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "char[0x20]",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:20:57Z"
+}
