@@ -1433,3 +1433,20 @@ void fn_007BFC60(void* self, uint32_t a2, uint32_t a3, uint32_t a4) {
     slot10(self, a2, a3, a4);
 }
 } // namespace lift_007BFC60
+
+// [0x007BF9C0]
+namespace lift_007BF9C0 {
+// @name sub_007BF9C0
+// @summary Validates via vtable+0x10 and if non-zero invokes vtable+0x0c, returning 1 or 0
+// @field UnknownClass +0x1cc void** field_0x1cc
+int32_t sub_007BF9C0(void* arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) {
+    auto* vtable = lift_field<void**>(arg1, 0x1cc);
+    auto fn_check = reinterpret_cast<int32_t (*)(void*, uint32_t, uint32_t, uint32_t)>(vtable[0x10 / 4]);
+    if (fn_check(arg1, arg2, arg3, arg4) == 0) {
+        return 0;
+    }
+    auto fn_apply = reinterpret_cast<void (*)(void*, uint32_t, uint32_t)>(vtable[0x0c / 4]);
+    fn_apply(arg1, arg2, arg3);
+    return 1;
+}
+} // namespace lift_007BF9C0

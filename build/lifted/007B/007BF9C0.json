@@ -1,0 +1,21 @@
+{
+  "va": "0x007BF9C0",
+  "size": 66,
+  "orig_symbol": "sub_007BF9C0",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "sub_007BF9C0",
+  "signature": "int32_t sub_007BF9C0(void* arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+  "summary": "Validates via vtable+0x10 and if non-zero invokes vtable+0x0c, returning 1 or 0",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1CC",
+      "type": "void**",
+      "name": "field_0x1cc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:18:47Z"
+}
