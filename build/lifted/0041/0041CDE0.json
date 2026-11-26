@@ -1,0 +1,27 @@
+{
+  "va": "0x0041CDE0",
+  "size": 57,
+  "orig_symbol": "sub_0041CDE0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "copyStringRecordRange",
+  "signature": "extern \"C\" void* __cdecl fn_0041CDE0(void* first, void* last, void* dest)",
+  "summary": "Copy-assigns each 0x20-byte record in [first, last) to dest (std::string at +0x00, u32 at +0x1c) and returns the dest end pointer (dest itself when the range is empty).",
+  "fields": [
+    {
+      "class": "StringRecord",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "StringRecord",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:48:09Z"
+}

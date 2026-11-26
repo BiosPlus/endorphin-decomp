@@ -2079,6 +2079,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0066AC80 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0041CDE0": {
+    "name": "copyStringRecordRange",
+    "signature": "extern \"C\" void* __cdecl fn_0041CDE0(void* first, void* last, void* dest)",
+    "summary": "Copy-assigns each 0x20-byte record in [first, last) to dest (std::string at +0x00, u32 at +0x1c) and returns the dest end pointer (dest itself when the range is empty).",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041CEB0": {
     "name": "UnknownClass::forwardToSubobjectSlot4",
     "class": "UnknownClass",

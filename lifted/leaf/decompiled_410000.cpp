@@ -2030,3 +2030,30 @@ uint32_t fn_00412E20(void* self) {
     return lift_field<uint32_t>(cursor, 0);
 }
 } // namespace lift_00412E20
+
+// [0x0041CDE0] sub_0041CDE0 (57 bytes)
+namespace lift_0041CDE0 {
+// MSVCP80 std::string::operator=(const std::string&) import slot (thiscall).
+extern void* (__thiscall *mem_00924FDC)(void* self, const void* rhs);
+
+// @name copyStringRecordRange
+// @summary Copy-assigns each 0x20-byte record in [first, last) to dest (std::string at +0x00, u32 at +0x1c) and returns the dest end pointer (dest itself when the range is empty).
+// @field StringRecord +0x00 std::string field_0x00
+// @field StringRecord +0x1c uint32_t field_0x1c
+extern void* __cdecl fn_0041CDE0(void* first, void* last, void* dest)
+{
+    char* src = (char*)first;
+    char* end = (char*)last;
+    char* dst = (char*)dest;
+    if (src == end) {
+        return dest;
+    }
+    do {
+        mem_00924FDC(dst, src);
+        lift_field<uint32_t>(dst, 0x1c) = lift_field<uint32_t>(src, 0x1c);
+        src += 0x20;
+        dst += 0x20;
+    } while (src != end);
+    return dst;
+}
+} // namespace lift_0041CDE0
