@@ -1,0 +1,39 @@
+{
+  "va": "0x0068DDD0",
+  "size": 52,
+  "orig_symbol": "sub_0068DDD0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "sub_0068DDD0",
+  "signature": "void* __thiscall sub_0068DDD0(void* self, const void* src)",
+  "summary": "Copy constructor that initializes vtable pointers and copies fields from +0x8 and +0x10..+0x9E8",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "vtable_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t[0x9d8]",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T10:42:32Z"
+}

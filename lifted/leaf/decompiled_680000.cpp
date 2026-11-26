@@ -1829,3 +1829,26 @@ void fn_0068BB30(void* self) {
     ext_006A6DD2(temp, reinterpret_cast<void*>(&mem_00A14D3C));
 }
 } // namespace lift_0068BB30
+
+// [0x0068DDD0]
+namespace lift_0068DDD0 {
+// @name sub_0068DDD0
+// @summary Copy constructor that initializes vtable pointers and copies fields from +0x8 and +0x10..+0x9E8
+// @field Unknown +0x00 uint32_t vtable_0x00
+// @field Unknown +0x04 uint32_t vtable_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 uint8_t[0x9d8] field_0x10
+
+void* __thiscall sub_0068DDD0(void* self, const void* src) {
+    auto* dst = static_cast<uint8_t*>(self);
+    const auto* s = static_cast<const uint8_t*>(src);
+
+    lift_field<uint32_t>(dst, 0x04) = 0x00928efc;
+    lift_field<uint32_t>(dst, 0x00) = 0x0098dd14;
+    lift_field<uint32_t>(dst, 0x04) = 0x0098dce4;
+    lift_field<uint32_t>(dst, 0x08) = lift_field<uint32_t>(s, 0x08);
+    std::memcpy(dst + 0x10, s + 0x10, 0x276 * sizeof(uint32_t));
+
+    return self;
+}
+} // namespace lift_0068DDD0
