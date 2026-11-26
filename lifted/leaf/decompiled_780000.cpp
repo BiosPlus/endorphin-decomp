@@ -1654,3 +1654,30 @@ void sub_0078AAC0(void) {
     (void)edx;
 }
 } // namespace lift_0078AAC0
+
+// [0x007847E0] sub_007847E0 (57 bytes)
+namespace lift_007847E0 {
+// MSVCR80 bsearch import slot (IAT entry at 0x0092529C).
+extern void* mem_0092529C;
+// Three-way comparator at 0x00784790 (compareUint32Ptr, used by 0x007847B0 too).
+extern int32_t sub_00784790(const void* a, const void* b);
+
+// @name Records::FindByKey
+// @class Records
+// @summary Binary-searches the 8-byte record array (base +0x00, count +0x04) for the uint32 key using compareUint32Ptr; returns the matching record pointer or NULL if count <= 0 or no match.
+// @field Records +0x00 void* recordsBase
+// @field Records +0x04 int32_t recordCount
+void* __thiscall fn_007847E0(void* self, uint32_t key) {
+    void* base = lift_field<void*>(self, 0x00);
+    const int32_t count = lift_field<int32_t>(self, 0x04);
+
+    if (count <= 0) {
+        return nullptr;
+    }
+
+    using BsearchFn = void* (__cdecl*)(const void* key, const void* base, size_t nmemb,
+                                       size_t size, int32_t (*compar)(const void*, const void*));
+    const auto bsearch_ = reinterpret_cast<BsearchFn>(mem_0092529C);
+    return bsearch_(&key, base, static_cast<size_t>(count), 8, &sub_00784790);
+}
+} // namespace lift_007847E0

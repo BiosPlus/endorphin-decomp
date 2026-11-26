@@ -1,0 +1,28 @@
+{
+  "va": "0x007847E0",
+  "size": 57,
+  "orig_symbol": "sub_007847E0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "Records::FindByKey",
+  "class": "Records",
+  "signature": "void* __thiscall fn_007847E0(void* self, uint32_t key)",
+  "summary": "Binary-searches the 8-byte record array (base +0x00, count +0x04) for the uint32 key using compareUint32Ptr; returns the matching record pointer or NULL if count \u003c= 0 or no match.",
+  "fields": [
+    {
+      "class": "Records",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "recordsBase"
+    },
+    {
+      "class": "Records",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "recordCount"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:53:02Z"
+}

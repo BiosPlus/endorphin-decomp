@@ -8,8 +8,9 @@
 // Recovered field layout for Records:
 namespace lifted_layout {
 struct Records_Fields {
-    // +0x0   void*                    recordsBase  (evidence: 0x007847B0)
-    // +0x4   uint32_t                 recordCount  (evidence: 0x007847B0)
+    // +0x0   void*                    recordsBase  (evidence: 0x007847B0, 0x007847E0)
+    // +0x4   int32_t                  recordCount  (evidence: 0x007847E0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 recordCount  (evidence: 0x007847B0) // CONFLICT: multiple definitions at +0x4
     // +0x10  uint8_t                  dirty  (evidence: 0x007847B0)
 };
 } // namespace lifted_layout
