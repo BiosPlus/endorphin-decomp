@@ -1474,3 +1474,40 @@ uint32_t fn_00456280(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
     return reinterpret_cast<SlotFn>(static_cast<uintptr_t>(slot))(self, arg1, arg2, arg3);
 }
 } // namespace lift_00456280
+
+// [0x00458860]
+namespace lift_00458860 {
+// @name sub_00458860
+// @summary Releases current item at +0x10, bounds-checks index against vector at +0x4/+0x8, selects new item, and invokes vtable[1]
+// @field Class +0x04 void** field_0x04
+// @field Class +0x08 uintptr_t field_0x08
+// @field Class +0x10 void* field_0x10
+
+
+extern uintptr_t mem_00925134;
+
+void __thiscall sub_00458860(void* self, uint32_t index) {
+    auto* cur = lift_field<void*>(self, 0x10);
+    if (cur != nullptr) {
+        auto* vtable = *reinterpret_cast<uintptr_t**>(cur);
+        reinterpret_cast<void(__thiscall*)(void*)>(vtable[2])(cur);
+    }
+
+    auto* begin = lift_field<void**>(self, 0x04);
+    if (begin == nullptr) {
+        reinterpret_cast<void(__cdecl*)()>(mem_00925134)();
+    } else {
+        auto end = lift_field<uintptr_t>(self, 0x08);
+        int32_t count = static_cast<int32_t>(end - reinterpret_cast<uintptr_t>(begin)) >> 2;
+        if (index >= static_cast<uint32_t>(count)) {
+            reinterpret_cast<void(__cdecl*)()>(mem_00925134)();
+        }
+    }
+
+    begin = lift_field<void**>(self, 0x04);
+    void* next = begin[index];
+    lift_field<void*>(self, 0x10) = next;
+    auto* next_vtable = *reinterpret_cast<uintptr_t**>(next);
+    reinterpret_cast<void(__thiscall*)(void*)>(next_vtable[1])(next);
+}
+} // namespace lift_00458860

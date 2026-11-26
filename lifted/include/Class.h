@@ -12,12 +12,14 @@ struct Class_Fields {
     // +0x0   void*                    field_0x00  (evidence: 0x006618F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable  (evidence: 0x0060B990, 0x00626E80) // CONFLICT: multiple definitions at +0x0
     // +0x4   std::string              field_0x04  (evidence: 0x0060B990) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void**                   field_0x04  (evidence: 0x00458860) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x4  (evidence: 0x00661710) // CONFLICT: multiple definitions at +0x4
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00441020, 0x0044B6A0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uintptr_t                field_0x08  (evidence: 0x00458860) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_0x08  (evidence: 0x0050E350) // CONFLICT: multiple definitions at +0x8
     // +0x10  uint32_t                 field_0x10  (evidence: 0x00458DF0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint8_t                  field_0x10  (evidence: 0x00689570, 0x0068BDC0, 0x0068BDF0) // CONFLICT: multiple definitions at +0x10
-    // +0x10  void*                    field_0x10  (evidence: 0x00480130, 0x0078D550) // CONFLICT: multiple definitions at +0x10
+    // +0x10  void*                    field_0x10  (evidence: 0x00458860, 0x00480130, 0x0078D550) // CONFLICT: multiple definitions at +0x10
     // +0x14  void*                    field_0x14  (evidence: 0x00401960)
     // +0x20  std::string              field_0x20  (evidence: 0x0060B990) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint32_t                 field_0x20  (evidence: 0x0043CE40) // CONFLICT: multiple definitions at +0x20

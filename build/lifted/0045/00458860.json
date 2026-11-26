@@ -1,0 +1,33 @@
+{
+  "va": "0x00458860",
+  "size": 68,
+  "orig_symbol": "sub_00458860",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "sub_00458860",
+  "signature": "void __thiscall sub_00458860(void* self, uint32_t index)",
+  "summary": "Releases current item at +0x10, bounds-checks index against vector at +0x4/+0x8, selects new item, and invokes vtable[1]",
+  "fields": [
+    {
+      "class": "Class",
+      "offset": "+0x4",
+      "type": "void**",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Class",
+      "offset": "+0x8",
+      "type": "uintptr_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Class",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:16:33Z"
+}
