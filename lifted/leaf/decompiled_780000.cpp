@@ -1723,3 +1723,32 @@ void fn_00783570(void* self, uint32_t mode, int32_t offset) {
     (void)&mem_00925208;
 }
 } // namespace lift_00783570
+
+// [0x00783470]
+namespace lift_00783470 {
+extern uint32_t (__cdecl *mem_009252AC)(void* ptr, uint32_t size, uint32_t count, void* stream);
+
+// @name BinaryReader::readU32
+// @class BinaryReader
+// @summary Reads a 32-bit unsigned integer from the stream, optionally byte-swapping it
+// @field BinaryReader +0x04 void* stream
+uint32_t __thiscall sub_00783470(void* this_ptr, uint32_t* out_val, uint8_t swap_bytes) {
+    void* stream = lift_field<void*>(this_ptr, 0x4);
+    if (lift_field<uint8_t>(stream, 0x4) == 0) {
+        return 0;
+    }
+
+    void* fp = lift_field<void*>(stream, 0x0);
+    mem_009252AC(out_val, 4, 1, fp);
+
+    if (swap_bytes != 0) {
+        uint32_t v = *out_val;
+        *out_val = ((v & 0x000000FFu) << 24) |
+                   ((v & 0x0000FF00u) << 8)  |
+                   ((v & 0x00FF0000u) >> 8)  |
+                   ((v & 0xFF000000u) >> 24);
+    }
+
+    return *out_val;
+}
+} // namespace lift_00783470

@@ -1,0 +1,22 @@
+{
+  "va": "0x00783470",
+  "size": 66,
+  "orig_symbol": "sub_00783470",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "BinaryReader::readU32",
+  "class": "BinaryReader",
+  "signature": "uint32_t __thiscall sub_00783470(void* this_ptr, uint32_t* out_val, uint8_t swap_bytes)",
+  "summary": "Reads a 32-bit unsigned integer from the stream, optionally byte-swapping it",
+  "fields": [
+    {
+      "class": "BinaryReader",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "stream"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:18:48Z"
+}
