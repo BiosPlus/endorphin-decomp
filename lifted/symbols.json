@@ -54803,6 +54803,13 @@
     "summary": "Writes a 16-byte result record to the caller-supplied return buffer: field0 = a2 + ext_00626440(obj) + ext_006A7C40(obj) + 2, field1..3 = a3, a4, a5 (a4 and a5 copied in the order stored); returns the buffer pointer.",
     "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
   },
+  "0x006ACF60": {
+    "name": "GWCCategoryItem::vfunc_8",
+    "class": "GWCCategoryItem",
+    "signature": "void __stdcall fn_006ACF60(char* self, uint32_t value)",
+    "summary": "Stores a flag byte into the linked object and forwards the value to the owner's virtual slot 0x13C.",
+    "lifted_path": "lifted/classes/GWCCategoryItem.cpp"
+  },
   "0x006ACF90": {
     "name": "sub_006ACF90",
     "class": "(unknown)",

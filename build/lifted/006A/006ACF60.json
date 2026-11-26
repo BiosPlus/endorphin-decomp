@@ -1,0 +1,34 @@
+{
+  "va": "0x006ACF60",
+  "size": 48,
+  "orig_symbol": "GWCCategoryItem::vfunc_8",
+  "src_path": "src/classes/GWCCategoryItem.cpp",
+  "lifted_path": "lifted/classes/GWCCategoryItem.cpp",
+  "name": "GWCCategoryItem::vfunc_8",
+  "class": "GWCCategoryItem",
+  "signature": "void __stdcall fn_006ACF60(char* self, uint32_t value)",
+  "summary": "Stores a flag byte into the linked object and forwards the value to the owner's virtual slot 0x13C.",
+  "fields": [
+    {
+      "class": "GWCCategoryItem",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "GWCCategoryItem",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "GWCCategoryItem",
+      "offset": "+0x3C",
+      "type": "uint8_t*",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@low",
+  "lifted_at": "2026-11-26T10:37:09Z"
+}
