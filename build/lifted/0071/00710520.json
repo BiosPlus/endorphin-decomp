@@ -1,0 +1,13 @@
+{
+  "va": "0x00710520",
+  "size": 96,
+  "orig_symbol": "sub_00710520",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "sub_00710520",
+  "signature": "static inline const uint8_t* huge_ptr()",
+  "summary": "Block of 4 small routines: returns mem_00B5EEB8; copies the two dwords of the _HUGE double into mem_00B5F070/74; stores -(_HUGE double) into mem_00B5F068.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T12:10:55Z"
+}

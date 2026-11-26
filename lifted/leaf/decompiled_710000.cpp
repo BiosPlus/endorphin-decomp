@@ -2160,3 +2160,43 @@ void fn_0071C750(void* self, const void* src) {
     lift_field<uint32_t>(dst, 0x754) = lift_field<const uint32_t>(src, 0x1c);
 }
 } // namespace lift_0071C750
+
+// [0x00710520]
+namespace lift_00710520 {
+// @name sub_00710520
+// @summary Block of 4 small routines: returns mem_00B5EEB8; copies the two dwords of the _HUGE double into mem_00B5F070/74; stores -(_HUGE double) into mem_00B5F068.
+// @field none
+
+extern uint32_t mem_00B5EEB8;
+extern uint32_t mem_00B5F070;
+extern uint32_t mem_00B5F074;
+extern double   mem_00B5F068;
+extern uint32_t mem_00925284;   // .rdata pointer to MSVCR80!_HUGE
+
+// Address held in mem_00925284 points at the _HUGE double.
+static inline const uint8_t* huge_ptr() {
+    return reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(mem_00925284));
+}
+
+// 0x00710520: mov eax, [mem_00B5EEB8]; ret
+uint32_t fn_00710520() {
+    return mem_00B5EEB8;
+}
+
+// 0x00710540: copy the two dwords of _HUGE into mem_00B5F070 / mem_00B5F074
+void fn_00710540() {
+    const uint8_t* p = huge_ptr();
+    uint32_t lo, hi;
+    std::memcpy(&lo, p, 4);
+    std::memcpy(&hi, p + 4, 4);
+    mem_00B5F070 = lo;
+    mem_00B5F074 = hi;
+}
+
+// 0x00710570: mem_00B5F068 = -(*(double*)_HUGE)
+void fn_00710570() {
+    double v;
+    std::memcpy(&v, huge_ptr(), sizeof v);
+    mem_00B5F068 = -v;
+}
+} // namespace lift_00710520
