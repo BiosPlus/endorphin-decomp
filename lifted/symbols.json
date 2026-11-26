@@ -29083,6 +29083,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0059B2E0 (TreeMap::find).",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005AE170": {
+    "name": "UnknownNode::ProcessChainRecursive",
+    "class": "UnknownNode",
+    "signature": "void __thiscall fn_005AE170(void* self, void* arg)",
+    "summary": "Walks a linked chain of nodes via the +0x00 link, recursing into the +0x08 child and destroying each node's +0x0C string until a node with flag +0x29 set is reached.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005AE480": {
     "name": "ReleaseChainNodes",
     "class": "ChainNode",

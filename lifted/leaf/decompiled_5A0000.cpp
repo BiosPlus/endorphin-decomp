@@ -885,3 +885,39 @@ uint32_t sub_005AD1C0(uint32_t first, uint32_t last, const uint32_t* val) {
     return cur;
 }
 } // namespace lift_005AD1C0
+
+// [0x005AE170] sub_005AE170 (62 bytes)
+namespace lift_005AE170 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* self);
+// IAT slot 0x00924FF4: std::basic_string<char> destructor (MSVCP80), called thiscall with no args.
+extern uintptr_t mem_00924FF4;
+
+// @name UnknownNode::ProcessChainRecursive
+// @class UnknownNode
+// @summary Walks a linked chain of nodes via the +0x00 link, recursing into the +0x08 child and destroying each node's +0x0C string until a node with flag +0x29 set is reached.
+// @field UnknownNode +0x00 void* field_0x00
+// @field UnknownNode +0x08 void* field_0x08
+// @field UnknownNode +0x0C std::string field_0x0C
+// @field UnknownNode +0x29 uint8_t field_0x29
+void __thiscall fn_005AE170(void* self, void* arg) {
+    void* edi = arg;
+    void* esi;
+
+    while (lift_field<uint8_t>(edi, 0x29) == 0) {
+        // push [edi+8]; mov ecx, self; call fn_005AE170
+        fn_005AE170(self, lift_field<void*>(edi, 0x08));
+
+        esi = lift_field<void*>(edi, 0x00);
+
+        // lea ecx, [edi+0xc]; call ~basic_string
+        reinterpret_cast<void(__thiscall*)(void*)>(mem_00924FF4)(
+            static_cast<void*>(&lift_field<uint8_t>(edi, 0x0C)));
+
+        // push edi; call thunk_MFC80_ord_764; add esp,4
+        ext_006A5C5C(edi);
+
+        edi = esi;
+    }
+}
+} // namespace lift_005AE170
