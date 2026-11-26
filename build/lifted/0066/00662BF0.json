@@ -1,0 +1,13 @@
+{
+  "va": "0x00662BF0",
+  "size": 61,
+  "orig_symbol": "sub_00662BF0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "GetCurrentDirectoryString",
+  "signature": "extern \"C\" void* __cdecl sub_00662BF0(void* out)",
+  "summary": "Constructs an std::string from the process current directory into the caller-provided slot and returns it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:58:17Z"
+}

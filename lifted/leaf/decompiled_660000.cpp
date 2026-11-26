@@ -2388,3 +2388,26 @@ bool __cdecl fn_00664B20(const void* a, const void* b) {
     return strstr_fn(haystack, needle) != nullptr;
 }
 } // namespace lift_00664B20
+
+// [0x00662BF0]
+namespace lift_00662BF0 {
+// @name GetCurrentDirectoryString
+// @summary Constructs an std::string from the process current directory into the caller-provided slot and returns it.
+
+// IAT slot: KERNEL32!GetCurrentDirectoryA
+extern uint32_t mem_00924254;
+// IAT slot: MSVCP80 std::basic_string<char>::basic_string(const char*) ctor
+extern uint32_t mem_00924FE4;
+
+extern void* __cdecl sub_00662BF0(void* out) {
+    using GetCurrentDirectoryA_fn = DWORD(__stdcall*)(DWORD nBufferLength, LPSTR lpBuffer);
+    using StringCtorCStr_fn = void(__thiscall*)(void* self, LPCSTR str);
+
+    char buf[0x104];
+
+    reinterpret_cast<GetCurrentDirectoryA_fn>(static_cast<uintptr_t>(mem_00924254))(0x104, buf);
+    reinterpret_cast<StringCtorCStr_fn>(static_cast<uintptr_t>(mem_00924FE4))(out, buf);
+
+    return out;
+}
+} // namespace lift_00662BF0

@@ -45811,6 +45811,12 @@
     "summary": "Writes the Windows temp directory path into the caller's std::string, or an empty string if GetTempPathA fails. Returns the string pointer.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00662BF0": {
+    "name": "GetCurrentDirectoryString",
+    "signature": "extern \"C\" void* __cdecl sub_00662BF0(void* out)",
+    "summary": "Constructs an std::string from the process current directory into the caller-provided slot and returns it.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00662E50": {
     "name": "isPathRelative",
     "signature": "uint32_t __cdecl fn_00662E50(void* str)",
