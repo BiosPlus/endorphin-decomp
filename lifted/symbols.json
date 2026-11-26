@@ -67012,6 +67012,12 @@
     "summary": "Allocates a 0x34-byte object; if allocation succeeds, runs its constructor and returns it, otherwise returns NULL.",
     "lifted_path": "lifted/leaf/decompiled_770000.cpp"
   },
+  "0x00772010": {
+    "name": "StrncpyInPlaceTerminate",
+    "signature": "bool __stdcall fn_00772010(char** dstPtr, uint32_t count)",
+    "summary": "Self-copies a bounded string through the strncpy import, then NUL-terminates it at index count; returns true.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
   "0x00772040": {
     "name": "sub_00772040",
     "signature": "extern \"C\" void fn_00772040(void)",

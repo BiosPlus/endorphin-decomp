@@ -1,0 +1,13 @@
+{
+  "va": "0x00772010",
+  "size": 48,
+  "orig_symbol": "sub_00772010",
+  "src_path": "src/leaf/decompiled_770000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_770000.cpp",
+  "name": "StrncpyInPlaceTerminate",
+  "signature": "bool __stdcall fn_00772010(char** dstPtr, uint32_t count)",
+  "summary": "Self-copies a bounded string through the strncpy import, then NUL-terminates it at index count; returns true.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:38:25Z"
+}

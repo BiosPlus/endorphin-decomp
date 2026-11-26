@@ -417,3 +417,23 @@ uintptr_t __fastcall sub_0077FFD0(uintptr_t this_ptr) {
     return this_ptr;
 }
 } // namespace lift_0077FFD0
+
+// [0x00772010] sub_00772010 (48 bytes)
+namespace lift_00772010 {
+// MSVCR80 strncpy import slot (IAT entry at 0x009252D0).
+extern void* mem_009252D0;
+
+// @name StrncpyInPlaceTerminate
+// @summary Self-copies a bounded string through the strncpy import, then NUL-terminates it at index count; returns true.
+bool __stdcall fn_00772010(char** dstPtr, uint32_t count) {
+    using StrncpyFn = char* (__cdecl*)(char*, const char*, size_t);
+    const auto strncpy_ = reinterpret_cast<StrncpyFn>(mem_009252D0);
+
+    char* p = *dstPtr;
+    strncpy_(p, p, static_cast<size_t>(count));
+
+    p = *dstPtr;
+    p[count] = '\0';
+    return true;
+}
+} // namespace lift_00772010
