@@ -25,8 +25,10 @@ DWORD* __thiscall fn_0051F640(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_0051F640
+#include <cmath>
+#include <cstdlib>
 
-// [0x0051F610] sub_0051F610 (43 bytes)
+#include <cstdlib>
 namespace lift_0051F610 {
 // @name sub_0051F610
 // @summary Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).
@@ -314,3 +316,35 @@ void fn_0051FEB0(void* self) {
 }
 } // namespace lift_0044C500
 } // namespace lift_0051FEB0
+
+// [0x0051DF00] sub_0051DF00 (92 bytes)
+namespace lift_0051DF00 {
+// @name sub_0051DF00
+// @summary Auto-lifted identical-shape clone of 0x00699810 (allocArray44_00699810).
+namespace lift_00699810 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+[[noreturn]] void ext_006A6DD2(void* pObject, const void* pThrowInfo);
+// IAT slot 0x00925130: MSVCR80!std::exception::exception(const char* const&) (thiscall, called indirectly).
+extern void (*mem_00925130)(void* self, const void* msgRef);
+
+// @name allocArray44_00699810
+// @summary Allocates an array of `count` 44-byte (0x2C) elements via the MFC80 allocator; throws if count*0x2C would overflow.
+void* fn_0051DF00(uint32_t count) {
+    uint32_t size = 0;
+    if (count != 0) {
+        if (0xFFFFFFFFu / count < 0x168u) {
+            alignas(4) uint8_t exception[12] = {};
+            const char* msg = nullptr;
+            (*mem_00925130)(exception, &msg);
+            const uint32_t vtable = 0x00928EC0u;
+            std::memcpy(exception, &vtable, sizeof(vtable));
+            ext_006A6DD2(exception, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009CDF94u)));
+        }
+    }
+    size = count * 0x168u;
+    return ext_006A5C62(size);
+}
+} // namespace lift_00699810
+} // namespace lift_0051DF00

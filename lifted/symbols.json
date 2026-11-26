@@ -21354,6 +21354,12 @@
     "summary": "Allocates count elements of 192 bytes (0xC0) with overflow check, throwing std::bad_alloc on overflow",
     "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
+  "0x0051DF00": {
+    "name": "sub_0051DF00",
+    "signature": "void* fn_0051DF00(uint32_t count)",
+    "summary": "Auto-lifted identical-shape clone of 0x00699810 (allocArray44_00699810).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x0051DF60": {
     "name": "FindFirstEntryMatchingKey",
     "signature": "uint8_t* fn_0051DF60(uint8_t* begin, uint8_t* end, uint32_t key)",
@@ -49429,6 +49435,12 @@
     "class": "Unknown",
     "signature": "int32_t fn_00682E20(void* self)",
     "summary": "Returns 0 if field_0x04 is 0; otherwise returns (field_0x08 - field_0x04) scaled by a signed reciprocal multiply and divided by 128 with round-toward-zero correction.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x00682E50": {
+    "name": "sub_00682E50",
+    "signature": "void* fn_00682E50(uint32_t count)",
+    "summary": "Auto-lifted identical-shape clone of 0x00699810 (allocArray44_00699810).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x00682ED0": {

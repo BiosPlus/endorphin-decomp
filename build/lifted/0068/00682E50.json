@@ -1,0 +1,13 @@
+{
+  "va": "0x00682E50",
+  "size": 92,
+  "orig_symbol": "sub_00682E50",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "sub_00682E50",
+  "signature": "void* fn_00682E50(uint32_t count)",
+  "summary": "Auto-lifted identical-shape clone of 0x00699810 (allocArray44_00699810).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-26T12:05:15Z"
+}
