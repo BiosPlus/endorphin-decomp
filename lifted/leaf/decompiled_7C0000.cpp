@@ -1687,3 +1687,27 @@ std::uint32_t fn_007C6810(std::uint32_t self, std::uint32_t callback, std::uint3
     return 0;
 }
 } // namespace lift_007C6810
+
+// [0x007CDB70] sub_007CDB70 (65 bytes)
+namespace lift_007CDB70 {
+// @name Unknown::AdvanceAlignedCounters
+// @class Unknown
+// @summary Rounds the int at +0xAC to the next 4-byte step (signed remainder rule) and increments four counters by 1.
+// @field Unknown +0x74 int32_t field_0x74
+// @field Unknown +0x80 int32_t field_0x80
+// @field Unknown +0x8C int32_t field_0x8C
+// @field Unknown +0xA8 int32_t field_0xA8
+// @field Unknown +0xAC int32_t field_0xAC
+void fn_007CDB70(void* self) {
+    int32_t& v = lift_field<int32_t>(self, 0xAC);
+    int32_t r = v % 4;                       // signed remainder: 0, +/-1, +/-2, +/-3
+    if (r != 0) {
+        v = static_cast<int32_t>(static_cast<uint32_t>(v) - static_cast<uint32_t>(r) + 4u);
+    }
+
+    lift_field<int32_t>(self, 0x80) += 1;
+    lift_field<int32_t>(self, 0x8C) += 1;
+    lift_field<int32_t>(self, 0x74) += 1;
+    lift_field<int32_t>(self, 0xA8) += 1;
+}
+} // namespace lift_007CDB70

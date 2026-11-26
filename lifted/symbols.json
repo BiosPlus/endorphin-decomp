@@ -71801,6 +71801,13 @@
     "summary": "Reads four floats from src (ecx) and writes a 3x4 row-major float matrix to dst (eax) with a fixed sign/permutation pattern (negations of src[1], src[2], src[3] and copies of src[0], src[1], src[2], src[3]).",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CDB70": {
+    "name": "Unknown::AdvanceAlignedCounters",
+    "class": "Unknown",
+    "signature": "void fn_007CDB70(void* self)",
+    "summary": "Rounds the int at +0xAC to the next 4-byte step (signed remainder rule) and increments four counters by 1.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CDBC0": {
     "name": "clearIndexedArrayEntries",
     "signature": "void sub_007CDBC0(void* arg0)",
