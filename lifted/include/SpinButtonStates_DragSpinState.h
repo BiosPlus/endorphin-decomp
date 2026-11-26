@@ -10,10 +10,14 @@
 // Recovered field layout for SpinButtonStates::DragSpinState:
 namespace lifted_layout {
 struct SpinButtonStates_DragSpinState_Fields {
-    // +0x4   void*                    field_0x04  (evidence: 0x004585B0)
-    // +0x8   void*                    field_0x08  (evidence: 0x004585B0, 0x00458810)
-    // +0xC   void*                    field_0x0C  (evidence: 0x004585B0)
-    // +0x10  uint32_t                 field_0x10  (evidence: 0x004585B0, 0x00458810)
+    // +0x4   void*                    field_0x04  (evidence: 0x004585B0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t field_0x04 (32-bit pointer to object; its vtable slot 2 is invoked)  (evidence: 0x00458990) // CONFLICT: multiple definitions at +0x4
+    // +0x8   uint32_t field_0x08 (argument passed to ext_006A5EC0)  (evidence: 0x00458990) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    field_0x08  (evidence: 0x004585B0, 0x00458810) // CONFLICT: multiple definitions at +0x8
+    // +0xC   uint32_t field_0x0C (32-bit this for ext_00458860)  (evidence: 0x00458990) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void*                    field_0x0C  (evidence: 0x004585B0) // CONFLICT: multiple definitions at +0xC
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x004585B0, 0x00458810) // CONFLICT: multiple definitions at +0x10
+    // +0x10  uint32_t field_0x10 (packed cursor point: low word x, high word y)  (evidence: 0x00458990) // CONFLICT: multiple definitions at +0x10
     // +0x14  uint8_t                  field_0x14  (evidence: 0x004585B0)
 };
 } // namespace lifted_layout

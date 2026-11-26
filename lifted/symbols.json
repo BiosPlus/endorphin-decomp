@@ -6247,6 +6247,13 @@
     "summary": "Calls vtable slots 0 and 2 on the object at self+0x04 (each fed a result of ext_006A5EC0(self+0x08)), then sets index 0 on the object at self+0x0C.",
     "lifted_path": "lifted/SpinButtonStates/ClickedUpState.cpp"
   },
+  "0x00458990": {
+    "name": "SpinButtonStates::DragSpinState::vfunc_5",
+    "class": "SpinButtonStates::DragSpinState",
+    "signature": "extern \"C\" int (*mem_009256DC)(int x, int y);  // USER32!SetCursorPos extern \"C\" int (*mem_009256A0)(int show);      // USER32!ShowCursor extern \"C\" int (*mem_009256E0)(void);          // USER32!ReleaseCapture void fn_00458990(void* self, uint32_t /*stackArg0*/, uint32_t /*stackArg1*/)",
+    "summary": "Warps the cursor to the packed (x,y) point at +0x10, shows the cursor, releases capture, then notifies the object at +0x4 via vtable[2] and runs sub_00458860(+0xC, 0).",
+    "lifted_path": "lifted/SpinButtonStates/DragSpinState.cpp"
+  },
   "0x004589E0": {
     "name": "sub_004589E0",
     "signature": "extern \"C\" void* __cdecl fn_004589E0(void)",

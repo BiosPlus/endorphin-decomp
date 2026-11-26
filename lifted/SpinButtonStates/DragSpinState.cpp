@@ -73,3 +73,53 @@ extern void __thiscall fn_004585B0(void* self, void* arg1, uint32_t arg2) {
     base[0x14] = 1;
 }
 } // namespace lift_004585B0
+
+// [0x00458990] SpinButtonStates::DragSpinState::vfunc_5 (77 bytes)
+namespace lift_00458990 {
+// Known callee 0x006A5EC0: thunk_MFC80_ord_2654 (IAT jump thunk forwarding to MFC80!ord_2654.)
+// Takes its argument in ecx and returns a value in eax.
+extern uint32_t ext_006A5EC0(void* ecx);
+// Known callee 0x00458860: sub_00458860 (Releases current item at +0x10, bounds-checks index against vector at +0x4/+0x8, selects new item, and invokes vtable[1])
+// thiscall: self in ecx, one stack argument.
+extern void ext_00458860(void* self, uint32_t index);
+
+// IAT slots for USER32 imports (called through pointers, as the original did via [mem_]).
+extern int (*mem_009256DC)(int x, int y);  // USER32!SetCursorPos
+extern int (*mem_009256A0)(int show);      // USER32!ShowCursor
+extern int (*mem_009256E0)(void);          // USER32!ReleaseCapture
+
+// @name SpinButtonStates::DragSpinState::vfunc_5
+// @class SpinButtonStates::DragSpinState
+// @summary Warps the cursor to the packed (x,y) point at +0x10, shows the cursor, releases capture, then notifies the object at +0x4 via vtable[2] and runs sub_00458860(+0xC, 0).
+// @field SpinButtonStates::DragSpinState +0x04 uint32_t field_0x04 (32-bit pointer to object; its vtable slot 2 is invoked)
+// @field SpinButtonStates::DragSpinState +0x08 uint32_t field_0x08 (argument passed to ext_006A5EC0)
+// @field SpinButtonStates::DragSpinState +0x0C uint32_t field_0x0C (32-bit this for ext_00458860)
+// @field SpinButtonStates::DragSpinState +0x10 uint32_t field_0x10 (packed cursor point: low word x, high word y)
+void fn_00458990(void* self, uint32_t /*stackArg0*/, uint32_t /*stackArg1*/) {
+    // Cursor position: low 16 bits = x, high 16 bits = y, both sign-extended.
+    const uint32_t packed = lift_field<uint32_t>(self, 0x10);
+    const int x = static_cast<int16_t>(static_cast<uint16_t>(packed & 0xFFFFu));
+    const int y = static_cast<int16_t>(static_cast<uint16_t>(packed >> 16));
+
+    mem_009256DC(x, y);
+    mem_009256A0(1);
+    mem_009256E0();
+
+    // Object pointer at +0x4; read its vtable pointer.
+    const uint32_t obj = lift_field<uint32_t>(self, 0x04);
+    const uint32_t vtable = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(obj));
+
+    const uint32_t arg = ext_006A5EC0(
+        reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x08))));
+
+    // vtable[2] of the object at +0x4, thiscall(obj, arg).
+    using VirtualFn = void (*)(void* self, uint32_t arg);
+    const uint32_t slot2 = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(vtable + 0x8));
+    auto fn = reinterpret_cast<VirtualFn>(static_cast<uintptr_t>(slot2));
+    fn(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), arg);
+
+    ext_00458860(
+        reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x0C))),
+        0);
+}
+} // namespace lift_00458990
