@@ -1624,3 +1624,34 @@ uint8_t* __cdecl sub_0057BC20(const uint8_t* first, const uint8_t* last, uint8_t
     return dst;
 }
 } // namespace lift_0057BC20
+
+// [0x00575C80]
+namespace lift_00575C80 {
+// Import-thunk slots (IAT entries) for MSVCP80 basic_istream<char> members.
+extern int mem_0092508C; // std::basic_istream<char>::tellg
+extern int mem_00925090; // std::basic_istream<char>::read(char*, streamsize)
+
+// @name checkVHashHeader
+// @summary Reads a 2-byte header from an istream (tellg, then read 2 bytes, then skip 2 bytes); returns true unless the header is "V#".
+// @field (none) the stream's own layout is not accessed directly; all access goes through the MSVCP80 IAT slots above.
+bool __stdcall fn_00575C80(void* stream) {
+    using TellgFn = void(__thiscall*)(void* self, void* retBuf);
+    using ReadFn  = void*(__thiscall*)(void* self, char* buf, int count);
+
+    TellgFn tellg = *reinterpret_cast<TellgFn*>(&mem_0092508C);
+    ReadFn  read  = *reinterpret_cast<ReadFn*>(&mem_00925090);
+
+    // fpos<mbstate_t> return value is discarded.
+    alignas(8) unsigned char posRet[16];
+    tellg(stream, posRet);
+
+    char header[2] = {};
+    read(stream, header, 2);
+
+    char skipped[2] = {};
+    read(stream, skipped, 2);
+
+    bool isVHash = (header[0] == 'V') && (header[1] == '#');
+    return !isVHash;
+}
+} // namespace lift_00575C80

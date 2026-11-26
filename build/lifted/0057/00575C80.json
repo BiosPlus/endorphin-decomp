@@ -1,0 +1,13 @@
+{
+  "va": "0x00575C80",
+  "size": 82,
+  "orig_symbol": "sub_00575C80",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "checkVHashHeader",
+  "signature": "extern \"C\" int mem_00925090; // std::basic_istream\u003cchar\u003e::read(char*, streamsize) bool __stdcall fn_00575C80(void* stream)",
+  "summary": "Reads a 2-byte header from an istream (tellg, then read 2 bytes, then skip 2 bytes); returns true unless the header is \"V#\".",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:40:06Z"
+}
