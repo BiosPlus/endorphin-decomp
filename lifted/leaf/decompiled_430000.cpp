@@ -3385,3 +3385,42 @@ void* fn_00431400(void) {
     return target(obj);
 }
 } // namespace lift_00431400
+
+// [0x0043C980] sub_0043C980 (45 bytes)
+namespace lift_0043C980 {
+// Known callee 0x004407B0: GetPointerChainDword10 (Returns the DWORD at +0x10 of the pointer stored at self+0x44, or 0 if that pointer is null.)
+// Thiscall: ECX = self, returns the object pointer in EAX.
+extern void ext_004407B0();
+// Known callee 0x00430F9E: sub_00430F9E (2-byte "pop esi / ret" tail; not reached from this function's disassembly).
+extern void ext_00430F9E();
+extern int mem_00924EA0;
+extern int mem_00924E9C;
+
+// @name Unknown::dispatchVirtual11_0043C980
+// @summary If self is non-null, resolves an object via ext_004407B0(self) and invokes its vtable slot 11 (+0x2C) with (self, a2, a3, a4); returns that call's result, or 0 when self is null.
+// Calling convention: __stdcall (callee pops 16 bytes, matching the original "ret 0x10").
+int32_t __stdcall fn_0043C980(void* self, uint32_t a2, uint32_t a3, uint32_t a4) {
+    // The original asm never reads these; their addresses are kept only as
+    // data/callee dependencies (no access), as in the other lifts.
+    (void)&ext_00430F9E;
+    (void)&mem_00924EA0;
+    (void)&mem_00924E9C;
+
+    using ResolveFn = void*(__thiscall*)(void* self);
+    using VirtFn = int32_t(__thiscall*)(void* obj, void* a1, uint32_t b2, uint32_t b3, uint32_t b4);
+
+    if (self == nullptr) {
+        // The original path returns with whatever EAX held on entry; that value
+        // is not meaningful, so 0 is used here.
+        return 0;
+    }
+
+    auto resolve = reinterpret_cast<ResolveFn>(reinterpret_cast<void*>(ext_004407B0));
+    void* obj = resolve(self);
+
+    // obj->vtable[+0x2C]
+    uint8_t* vtbl = *reinterpret_cast<uint8_t**>(obj);
+    auto method = *reinterpret_cast<VirtFn*>(vtbl + 0x2C);
+    return method(obj, self, a2, a3, a4);
+}
+} // namespace lift_0043C980

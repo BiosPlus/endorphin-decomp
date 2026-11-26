@@ -1,0 +1,14 @@
+{
+  "va": "0x0043C980",
+  "size": 45,
+  "orig_symbol": "sub_0043C980",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::dispatchVirtual11_0043C980",
+  "class": "Unknown",
+  "signature": "int32_t __stdcall fn_0043C980(void* self, uint32_t a2, uint32_t a3, uint32_t a4)",
+  "summary": "If self is non-null, resolves an object via ext_004407B0(self) and invokes its vtable slot 11 (+0x2C) with (self, a2, a3, a4); returns that call's result, or 0 when self is null.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:27:34Z"
+}

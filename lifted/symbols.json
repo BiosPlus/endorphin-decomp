@@ -3584,6 +3584,13 @@
     "summary": "Reads a 2-word record through arg1 and forwards it with message id 0x102 (WM_CHAR) to MFC80 ord_6144 with arg0 as this.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043C980": {
+    "name": "Unknown::dispatchVirtual11_0043C980",
+    "class": "Unknown",
+    "signature": "int32_t __stdcall fn_0043C980(void* self, uint32_t a2, uint32_t a3, uint32_t a4)",
+    "summary": "If self is non-null, resolves an object via ext_004407B0(self) and invokes its vtable slot 11 (+0x2C) with (self, a2, a3, a4); returns that call's result, or 0 when self is null.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043C9B0": {
     "name": "Unknown::forwardVirtual150WithSubobject80",
     "class": "Unknown",
