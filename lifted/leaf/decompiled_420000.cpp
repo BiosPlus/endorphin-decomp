@@ -1547,3 +1547,39 @@ void __cdecl sub_004275E0(void* dst, void* obj) {
     reinterpret_cast<DtorFn>(mem_00924FF4)(temp);
 }
 } // namespace lift_004275E0
+
+// [0x004277B0]
+namespace lift_004277B0 {
+// @name std_allocate_36byte_array
+// @summary Allocates an array of 36-byte elements with overflow check, throwing std::bad_alloc on overflow.
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void ext_006A6DD2(void* exceptionObject, void* throwInfo);
+extern void* mem_00925130;
+
+namespace {
+
+struct StdException {
+    uintptr_t vftable;
+    const char* what;
+    uint32_t doFree;
+};
+
+using ExceptionCtorFn = void(__thiscall*)(StdException* self, const char* const* msg);
+
+} // namespace
+
+void* fn_004277B0(uint32_t count) {
+    if (count > 0 && (0xFFFFFFFFu / count) < 0x24u) {
+        const char* msg = nullptr;
+        StdException exc{};
+        auto ctor = reinterpret_cast<ExceptionCtorFn>(mem_00925130);
+        ctor(&exc, &msg);
+        exc.vftable = 0x00928EC0u;
+        ext_006A6DD2(&exc, reinterpret_cast<void*>(0x009CDF94u));
+    }
+
+    return ext_006A5C62(count * 0x24u);
+}
+} // namespace lift_004277B0
