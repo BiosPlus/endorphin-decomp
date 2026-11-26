@@ -2200,3 +2200,25 @@ void fn_00710570() {
     mem_00B5F068 = -v;
 }
 } // namespace lift_00710520
+
+// [0x00714AE0] sub_00714AE0 (96 bytes)
+namespace lift_00714AE0 {
+// Globals referenced by the adjacent thunk targets (0x714B00 / 0x714B30) that
+// share this 96-byte region; not accessed by fn_00714AE0's own body.
+extern int mem_00925284;
+extern int mem_00B5FA90;
+extern int mem_00B5FA94;
+extern int mem_00B5FA88;
+
+// @name Unknown::getField0xD8
+// @class Unknown
+// @summary Returns the 32-bit value stored at this+0xD8 (thiscall, this in ecx).
+// @field Unknown +0xD8 uint32_t field_0xD8
+uint32_t fn_00714AE0(void* self) {
+    (void)&mem_00925284;
+    (void)&mem_00B5FA90;
+    (void)&mem_00B5FA94;
+    (void)&mem_00B5FA88;
+    return lift_field<uint32_t>(self, 0xD8);
+}
+} // namespace lift_00714AE0

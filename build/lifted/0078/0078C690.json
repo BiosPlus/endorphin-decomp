@@ -1,0 +1,46 @@
+{
+  "va": "0x0078C690",
+  "size": 96,
+  "orig_symbol": "sub_0078C690",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "Unknown::readIndexedValueOrAtoi",
+  "class": "Unknown",
+  "signature": "int32_t __thiscall fn_0078C690(void* self, int32_t index, uint8_t flag)",
+  "summary": "If +0x20 is zero, returns atoi(strings[index]) (0 if out of range); otherwise reads a",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "limit_a"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "str_array"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "int32_t",
+      "name": "value_offset"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "int32_t",
+      "name": "limit_b"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "record_array"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T12:11:02Z"
+}

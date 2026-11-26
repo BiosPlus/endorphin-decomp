@@ -1873,3 +1873,52 @@ void fn_00782D30(void* self) {
     lift_field<uint8_t>(self, 0x10) = 0;
 }
 } // namespace lift_00782D30
+
+// [0x0078C690] sub_0078C690 (96 bytes)
+namespace lift_0078C690 {
+// IAT slot holding MSVCR80!atoi.
+extern uint32_t mem_009251E4;
+
+// @name Unknown::readIndexedValueOrAtoi
+// @class Unknown
+// @summary If +0x20 is zero, returns atoi(strings[index]) (0 if out of range); otherwise reads a
+//          uint32 at records[index] + value_offset, byte-swapping it when flag != 0 (0 if out of range).
+// @field Unknown +0x04 int32_t limit_a
+// @field Unknown +0x14 uint32_t str_array
+// @field Unknown +0x20 int32_t value_offset
+// @field Unknown +0x28 int32_t limit_b
+// @field Unknown +0x2c uint32_t record_array
+int32_t __thiscall fn_0078C690(void* self, int32_t index, uint8_t flag) {
+    const int32_t value_offset = lift_field<int32_t>(self, 0x20);
+
+    if (value_offset == 0) {
+        if (index >= lift_field<int32_t>(self, 0x04)) {
+            return 0;
+        }
+        auto* strs = reinterpret_cast<uint32_t*>(
+            static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x14)));
+        const char* text = reinterpret_cast<const char*>(
+            static_cast<uintptr_t>(strs[index]));
+
+        using AtoiFn = int32_t(__cdecl*)(const char*);
+        AtoiFn atoi_fn = reinterpret_cast<AtoiFn>(static_cast<uintptr_t>(mem_009251E4));
+        return atoi_fn(text);
+    }
+
+    if (index >= lift_field<int32_t>(self, 0x28)) {
+        return 0;
+    }
+    auto* records = reinterpret_cast<uint32_t*>(
+        static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x2c)));
+    uint8_t* record = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(records[index]));
+    uint32_t value = *reinterpret_cast<uint32_t*>(record + value_offset);
+
+    if (flag != 0) {
+        value = ((value >> 24) & 0x000000FFu) |
+                ((value >> 8) & 0x0000FF00u) |
+                ((value << 8) & 0x00FF0000u) |
+                ((value << 24) & 0xFF000000u);
+    }
+    return static_cast<int32_t>(value);
+}
+} // namespace lift_0078C690

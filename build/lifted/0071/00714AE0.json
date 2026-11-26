@@ -1,0 +1,22 @@
+{
+  "va": "0x00714AE0",
+  "size": 96,
+  "orig_symbol": "sub_00714AE0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::getField0xD8",
+  "class": "Unknown",
+  "signature": "uint32_t fn_00714AE0(void* self)",
+  "summary": "Returns the 32-bit value stored at this+0xD8 (thiscall, this in ecx).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xD8",
+      "type": "uint32_t",
+      "name": "field_0xD8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T12:11:00Z"
+}
