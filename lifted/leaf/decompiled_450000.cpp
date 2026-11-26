@@ -1558,3 +1558,59 @@ void __cdecl fn_00456C70(void* self, uint32_t arg) {
     }
 }
 } // namespace lift_00456C70
+
+// [0x00456C20] sub_00456C20 (75 bytes)
+namespace lift_00456C20 {
+// Known callee 0x00455C20: CSizingControlBar::vfunc_0 (Returns address of global mem_00936D1C.)
+extern void* ext_00455C20();
+// Known callee 0x006A63BE: thunk_MFC80_ord_3952 (IAT jump thunk forwarding to MFC80!ord_3952.)
+// Called thiscall: ecx = object, one stack argument, result in eax.
+extern void ext_006A63BE();
+// Known callee 0x006A60EE: thunk_MFC80_ord_1185 (IAT jump thunk forwarding to MFC80!ord_1185.)
+// Reached only through a tail jump in the original; kept as a plain call here.
+extern void ext_006A60EE();
+
+// @name NotifyLinkedObjects
+// @summary Walks the singly linked list headed at +0x88; for each node, gets a value via ext_00455C20 and, if the node's object accepts it through ext_006A63BE, calls its vtable slot at +0x17C with the second argument.
+// @field Unknown +0x88 uint32_t field_0x88
+void fn_00456C20(void* self, uint32_t arg) {
+    auto ptr = [](uint32_t a) { return reinterpret_cast<void*>(static_cast<uintptr_t>(a)); };
+
+    // esi = list head (node pointer).
+    uint32_t esi = lift_field<uint32_t>(self, 0x88);
+    if (esi == 0) {
+        return;
+    }
+
+    for (;;) {
+        if (esi == 0) {
+            ext_006A60EE();
+            return;
+        }
+
+        // Node layout: +0x0 next node, +0x8 object pointer.
+        uint32_t node = esi;
+        esi = lift_field<uint32_t>(ptr(node), 0x0);
+        uint32_t obj = lift_field<uint32_t>(ptr(node), 0x8);
+
+        void* value = ext_00455C20();
+
+        using AcceptFn = uint32_t(__thiscall*)(void*, void*);
+        auto accept = reinterpret_cast<AcceptFn>(reinterpret_cast<void*>(&ext_006A63BE));
+        uint32_t ok = accept(ptr(obj), value);
+
+        if (ok != 0) {
+            // Virtual call: vtable slot at +0x17C (index 0x5F), thiscall with one argument.
+            uint32_t vtbl = lift_field<uint32_t>(ptr(obj), 0x0);
+            uint32_t slot = lift_field<uint32_t>(ptr(vtbl), 0x17C);
+            using VirtFn = void(__thiscall*)(void*, uint32_t);
+            auto fn = reinterpret_cast<VirtFn>(static_cast<uintptr_t>(slot));
+            fn(ptr(obj), arg);
+        }
+
+        if (esi == 0) {
+            return;
+        }
+    }
+}
+} // namespace lift_00456C20
