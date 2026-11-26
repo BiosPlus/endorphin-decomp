@@ -1728,3 +1728,30 @@ void* __thiscall sub_00676780(void* self) {
     return self;
 }
 } // namespace lift_00676780
+
+// [0x00672D10]
+namespace lift_00672D10 {
+// @name StdVectorStringTidy
+// @summary Destroys all std::string elements in a vector, frees its buffer, and zeroes its pointers.
+// @field StdVectorString +0x04 uint32_t first
+// @field StdVectorString +0x08 uint32_t last
+// @field StdVectorString +0x0c uint32_t end
+
+
+extern void ext_006A5C5C(void* ptr);
+extern void (*mem_00924FF4)(void* self);
+
+void fn_00672D10(void* self) {
+    uint32_t first = lift_field<uint32_t>(self, 0x04);
+    if (first != 0) {
+        uint32_t last = lift_field<uint32_t>(self, 0x08);
+        for (uint32_t cur = first; cur != last; cur += 0x20) {
+            mem_00924FF4(reinterpret_cast<void*>(static_cast<uintptr_t>(cur)));
+        }
+        ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x04))));
+    }
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+}
+} // namespace lift_00672D10
