@@ -10950,6 +10950,13 @@
     "summary": "Returns 0 when +0xB0 is null; otherwise calls vtable slot 4 of the object at +0xB0+0x10 with argument 0 and returns its result.",
     "lifted_path": "lifted/NMData/Transition.cpp"
   },
+  "0x00497030": {
+    "name": "Unknown::setKeyAndLookup",
+    "class": "Unknown",
+    "signature": "void fn_00497030(void* self, const void* key)",
+    "summary": "Copies the key string into +0x30, looks up its value in the list at +0xB8 (via child +0xFC when set) into +0xBC, then forwards to the global object if present.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00497090": {
     "name": "NMData::Transition::vfunc_37",
     "class": "NMData::Transition",

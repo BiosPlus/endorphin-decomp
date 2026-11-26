@@ -1487,3 +1487,45 @@ void __thiscall fn_00493330(void* self, void* node) {
     }
 }
 } // namespace lift_00493330
+
+// [0x00497030] sub_00497030 (82 bytes)
+namespace lift_00497030 {
+// Known callee 0x0049ED70: findNodeValueByKey (Searches the list at this+0xdc for a node matching key and returns a pointer to its value (node+8) or null.)
+extern void* ext_0049ED70(void* self, const void* key);
+// Known callee 0x004A2510: Unknown::setFlag4AndForwardToSlot1 (Sets byte +0x04 of the object at self+0x14, then tail-calls vtable slot 1 of the object at self+0x1C (passing it as this) and returns that result.)
+extern uint32_t ext_004A2510(void* self);
+// IAT slot 0x00924FDC: MSVCP80 basic_string::operator=(const basic_string&).
+// Replaced below by a portable std::string assignment; slot kept for asm reference tracking.
+extern void* mem_00924FDC;
+// Address of that IAT slot, recorded as a constant (no runtime effect).
+constexpr uintptr_t kOperatorAssignIatSlot = 0x00924FDCu;
+// Global pointer (value stored at 0x00ADCB28): forwarder object, null when unset.
+extern void* mem_00ADCB28;
+
+// @name Unknown::setKeyAndLookup
+// @class Unknown
+// @summary Copies the key string into +0x30, looks up its value in the list at +0xB8 (via child +0xFC when set) into +0xBC, then forwards to the global object if present.
+// @field Unknown +0x30 std::string key
+// @field Unknown +0xB8 void* list
+// @field Unknown +0xBC void* lookupResult
+// @field Unknown +0xFC void* child
+void fn_00497030(void* self, const void* key) {
+    // key -> this+0x30 (std::string assignment)
+    lift_field<std::string>(self, 0x30) = *static_cast<const std::string*>(key);
+
+    void* list = lift_field<void*>(self, 0xB8);
+    lift_field<void*>(self, 0xBC) = nullptr;
+    if (list != nullptr) {
+        void* searchTarget = lift_field<void*>(list, 0xFC);
+        if (searchTarget == nullptr) {
+            searchTarget = list;
+        }
+        lift_field<void*>(self, 0xBC) = ext_0049ED70(searchTarget, key);
+    }
+
+    void* forwarder = mem_00ADCB28;
+    if (forwarder != nullptr) {
+        ext_004A2510(forwarder);
+    }
+}
+} // namespace lift_00497030

@@ -1,0 +1,40 @@
+{
+  "va": "0x00497030",
+  "size": 82,
+  "orig_symbol": "sub_00497030",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "Unknown::setKeyAndLookup",
+  "class": "Unknown",
+  "signature": "void fn_00497030(void* self, const void* key)",
+  "summary": "Copies the key string into +0x30, looks up its value in the list at +0xB8 (via child +0xFC when set) into +0xBC, then forwards to the global object if present.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "std::string",
+      "name": "key"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB8",
+      "type": "void*",
+      "name": "list"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xBC",
+      "type": "void*",
+      "name": "lookupResult"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xFC",
+      "type": "void*",
+      "name": "child"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:39:34Z"
+}
