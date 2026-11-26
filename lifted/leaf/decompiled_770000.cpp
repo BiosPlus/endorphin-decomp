@@ -437,3 +437,21 @@ bool __stdcall fn_00772010(char** dstPtr, uint32_t count) {
     return true;
 }
 } // namespace lift_00772010
+
+// [0x0077F620]
+namespace lift_0077F620 {
+// @name Unknown::CopyEntry32
+// @class Unknown
+// @summary Copies the 32-byte entry at index from the array at this+0x10 into dst (8 dwords); returns ecx as 0.
+// @field Unknown +0x10 uint8_t* entries
+
+DWORD __thiscall Unknown_CopyEntry32(void* self, DWORD* dst, DWORD index) {
+    const DWORD* src = reinterpret_cast<const DWORD*>(
+        lift_field<uint8_t*>(self, 0x10) + (static_cast<size_t>(index) << 5));
+    for (int i = 0; i < 8; ++i) {
+        dst[i] = src[i];
+    }
+    // Original epilogue overwrites the saved ecx slot with 0, so ecx is 0 on return.
+    return 0;
+}
+} // namespace lift_0077F620

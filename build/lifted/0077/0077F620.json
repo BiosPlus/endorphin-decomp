@@ -1,0 +1,22 @@
+{
+  "va": "0x0077F620",
+  "size": 48,
+  "orig_symbol": "sub_0077F620",
+  "src_path": "src/leaf/decompiled_770000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_770000.cpp",
+  "name": "Unknown::CopyEntry32",
+  "class": "Unknown",
+  "signature": "DWORD __thiscall Unknown_CopyEntry32(void* self, DWORD* dst, DWORD index)",
+  "summary": "Copies the 32-byte entry at index from the array at this+0x10 into dst (8 dwords); returns ecx as 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t*",
+      "name": "entries"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:38:45Z"
+}

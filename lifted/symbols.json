@@ -67129,6 +67129,13 @@
     "summary": "Maps an enum index (0-4) to a static string or descriptor address, defaulting to 0x00AABB78.",
     "lifted_path": "lifted/leaf/decompiled_770000.cpp"
   },
+  "0x0077F620": {
+    "name": "Unknown::CopyEntry32",
+    "class": "Unknown",
+    "signature": "DWORD __thiscall Unknown_CopyEntry32(void* self, DWORD* dst, DWORD index)",
+    "summary": "Copies the 32-byte entry at index from the array at this+0x10 into dst (8 dwords); returns ecx as 0.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
   "0x0077F720": {
     "name": "initNegatedHugeGlobals_0077F720",
     "signature": "void fn_0077F720(void)",

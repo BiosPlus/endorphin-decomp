@@ -374,6 +374,7 @@ struct Unknown_Fields {
     // +0x10  void*                    child  (evidence: 0x00441020, 0x0044B780, 0x0044B7A0, 0x0044B7C0, 0x006722B0, 0x00672490, 0x00675D60) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 count  (evidence: 0x00796660) // CONFLICT: multiple definitions at +0x10
     // +0x10  void**                   data_10  (evidence: 0x0078D6B0) // CONFLICT: multiple definitions at +0x10
+    // +0x10  uint8_t*                 entries  (evidence: 0x0077F620) // CONFLICT: multiple definitions at +0x10
     // +0x10  void**                   entries  (evidence: 0x007839B0) // CONFLICT: multiple definitions at +0x10
     // +0x10  void* field_0x10 (address only; this+0x10 passed as the this-pointer to ext_005111E0)  (evidence: 0x00689570, 0x0068BC00, 0x0068BDF0) // CONFLICT: multiple definitions at +0x10
     // +0x10  <embedded object>        field_0x10  (evidence: 0x007008F0, 0x0070AD00, 0x0070E390, 0x0070E3B0, 0x0070EC70, 0x007155B0, 0x0071C330, 0x0071F070) // CONFLICT: multiple definitions at +0x10
