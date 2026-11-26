@@ -1623,3 +1623,30 @@ void __cdecl sub_007CC930(void* node) {
     lift_field<int32_t>(list, 0x1c) -= 1;
 }
 } // namespace lift_007CC930
+
+// [0x007CDBC0]
+namespace lift_007CDBC0 {
+// @name clearIndexedArrayEntries
+// @summary Zeroes out the indexed 32-bit entries in three dynamic arrays on the target object.
+// @field Target +0x70 uint32_t* field_0x70
+// @field Target +0x74 uint32_t field_0x74
+// @field Target +0x7C uint32_t* field_0x7C
+// @field Target +0x80 uint32_t field_0x80
+// @field Target +0x88 uint32_t* field_0x88
+// @field Target +0x8C uint32_t field_0x8C
+
+
+void sub_007CDBC0(void* arg0) {
+    uint32_t* arr1 = lift_field<uint32_t*>(arg0, 0x7C);
+    uint32_t idx1 = lift_field<uint32_t>(arg0, 0x80);
+    arr1[idx1] = 0;
+
+    uint32_t* arr2 = lift_field<uint32_t*>(arg0, 0x88);
+    uint32_t idx2 = lift_field<uint32_t>(arg0, 0x8C);
+    arr2[idx2] = 0;
+
+    uint32_t* arr0 = lift_field<uint32_t*>(arg0, 0x70);
+    uint32_t idx0 = lift_field<uint32_t>(arg0, 0x74);
+    arr0[idx0] = 0;
+}
+} // namespace lift_007CDBC0

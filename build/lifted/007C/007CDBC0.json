@@ -1,0 +1,51 @@
+{
+  "va": "0x007CDBC0",
+  "size": 53,
+  "orig_symbol": "sub_007CDBC0",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "clearIndexedArrayEntries",
+  "signature": "void sub_007CDBC0(void* arg0)",
+  "summary": "Zeroes out the indexed 32-bit entries in three dynamic arrays on the target object.",
+  "fields": [
+    {
+      "class": "Target",
+      "offset": "+0x70",
+      "type": "uint32_t*",
+      "name": "field_0x70"
+    },
+    {
+      "class": "Target",
+      "offset": "+0x74",
+      "type": "uint32_t",
+      "name": "field_0x74"
+    },
+    {
+      "class": "Target",
+      "offset": "+0x7C",
+      "type": "uint32_t*",
+      "name": "field_0x7C"
+    },
+    {
+      "class": "Target",
+      "offset": "+0x80",
+      "type": "uint32_t",
+      "name": "field_0x80"
+    },
+    {
+      "class": "Target",
+      "offset": "+0x88",
+      "type": "uint32_t*",
+      "name": "field_0x88"
+    },
+    {
+      "class": "Target",
+      "offset": "+0x8C",
+      "type": "uint32_t",
+      "name": "field_0x8C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T10:46:02Z"
+}
