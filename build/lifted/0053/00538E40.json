@@ -1,0 +1,22 @@
+{
+  "va": "0x00538E40",
+  "size": 68,
+  "orig_symbol": "UtilityGraphics::Line::vfunc_22",
+  "src_path": "src/UtilityGraphics/Line.cpp",
+  "lifted_path": "lifted/UtilityGraphics/Line.cpp",
+  "name": "UtilityGraphics::Line::vfunc_22",
+  "class": "UtilityGraphics::Line",
+  "signature": "void __thiscall fn_00538E40(void* this_ptr, uint32_t /*unused*/)",
+  "summary": "Renders a line along the Z axis from the origin to field_0x14 using OpenGL.",
+  "fields": [
+    {
+      "class": "UtilityGraphics::Line",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:16:49Z"
+}

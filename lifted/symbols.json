@@ -23000,6 +23000,13 @@
     "summary": "Forwards three float arguments to ext_00538CF0 (SetFloatsFields18_1C_20), then stores the fourth float argument's raw bits at this+0x24. Callee-cleans 16 bytes.",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x00538E40": {
+    "name": "UtilityGraphics::Line::vfunc_22",
+    "class": "UtilityGraphics::Line",
+    "signature": "void __thiscall fn_00538E40(void* this_ptr, uint32_t /*unused*/)",
+    "summary": "Renders a line along the Z axis from the origin to field_0x14 using OpenGL.",
+    "lifted_path": "lifted/UtilityGraphics/Line.cpp"
+  },
   "0x00538F20": {
     "name": "UtilityGraphics::Arrow::vfunc_22",
     "class": "UtilityGraphics::Arrow",
@@ -72415,6 +72422,12 @@
     "signature": "uint32_t* sub_007DFB50(uint32_t* ptr)",
     "summary": "Zero-initializes a 32-bit value at the given pointer and returns the pointer",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
+  "0x007DFCE0": {
+    "name": "sub_007DFCE0",
+    "signature": "void fn_007DFCE0(void* self, void* a2, uint32_t a3)",
+    "summary": "Initializes struct fields, queries ext_007C8880 on *a2, and invokes optional callback at (*a2)+0x98",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
   "0x007DFD80": {
     "name": "initAllocatedArray",
