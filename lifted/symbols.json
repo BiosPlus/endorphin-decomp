@@ -1508,6 +1508,13 @@
     "summary": "Tail thunk: restores two saved registers and returns GetSysColor(COLOR_BTNFACE) (index 0xF).",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x00416010": {
+    "name": "CEnTabCtrl::vfunc_85",
+    "class": "CEnTabCtrl",
+    "signature": "extern \"C\" DWORD fn_00416010(void* self, int arg)",
+    "summary": "Returns GetSysColor(COLOR_BTNFACE) when flag bit 1 is set and field_0x58 is -1; otherwise tail-calls GetSysColor_BtnFace. Two out-of-window branches (0x0041604C, 0x00416095) are unresolved.",
+    "lifted_path": "lifted/classes/CEnTabCtrl.cpp"
+  },
   "0x0041603E": {
     "name": "GetSysColor_BtnFace",
     "signature": "extern \"C\" DWORD __stdcall fn_0041603E(int /*unused*/)",
