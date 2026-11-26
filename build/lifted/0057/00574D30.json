@@ -1,0 +1,34 @@
+{
+  "va": "0x00574D30",
+  "size": 84,
+  "orig_symbol": "sub_00574D30",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "ThreeStrings::ThreeStrings",
+  "class": "ThreeStrings",
+  "signature": "void* __fastcall sub_00574D30(void* self)",
+  "summary": "Constructor: default-constructs three std::string members at +0x00, +0x1C, +0x38",
+  "fields": [
+    {
+      "class": "ThreeStrings",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ThreeStrings",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "ThreeStrings",
+      "offset": "+0x38",
+      "type": "std::string",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-26T11:55:47Z"
+}

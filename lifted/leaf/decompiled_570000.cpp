@@ -1691,3 +1691,23 @@ void* fn_005726C0(void* self, const void* src) {
 }
 } // namespace lift_006998D0
 } // namespace lift_005726C0
+
+// [0x00574D30]
+namespace lift_00574D30 {
+extern void (__fastcall *mem_00924FE8)(void* self);
+
+// @name ThreeStrings::ThreeStrings
+// @class ThreeStrings
+// @summary Constructor: default-constructs three std::string members at +0x00, +0x1C, +0x38
+// @field ThreeStrings +0x00 std::string field_0x00
+// @field ThreeStrings +0x1C std::string field_0x1C
+// @field ThreeStrings +0x38 std::string field_0x38
+void* __fastcall sub_00574D30(void* self)
+{
+    uint8_t* p = static_cast<uint8_t*>(self);
+    mem_00924FE8(p);
+    mem_00924FE8(p + 0x1C);
+    mem_00924FE8(p + 0x38);
+    return self;
+}
+} // namespace lift_00574D30

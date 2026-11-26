@@ -26374,6 +26374,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005731A0 (OBJIO::vfunc_3).",
     "lifted_path": "lifted/classes/VIO.cpp"
   },
+  "0x00574D30": {
+    "name": "ThreeStrings::ThreeStrings",
+    "class": "ThreeStrings",
+    "signature": "void* __fastcall sub_00574D30(void* self)",
+    "summary": "Constructor: default-constructs three std::string members at +0x00, +0x1C, +0x38",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00574E20": {
     "name": "WriteTagAndVersionMarker",
     "signature": "void fn_00574E20(void* os)",
