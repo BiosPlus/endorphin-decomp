@@ -1594,3 +1594,32 @@ extern void* sub_007CA750(void* obj, float val) {
     return ext_007CA340(mem, obj, val);
 }
 } // namespace lift_007CA750
+
+// [0x007CC930]
+namespace lift_007CC930 {
+// @name unlinkListNode
+// @summary Unlinks a node from a circular doubly-linked list and decrements the list count.
+// @field Node +0x04 void* prev
+// @field Node +0x08 void* next
+// @field Node +0x0c void* list
+// @field List +0x0c void* head
+// @field List +0x1c int32_t count
+
+
+void __cdecl sub_007CC930(void* node) {
+    void* list = lift_field<void*>(node, 0x0c);
+    if (node == lift_field<void*>(list, 0x0c)) {
+        void* new_head = (node == lift_field<void*>(node, 0x04))
+            ? nullptr
+            : lift_field<void*>(node, 0x08);
+        lift_field<void*>(list, 0x0c) = new_head;
+    }
+
+    void* next = lift_field<void*>(node, 0x08);
+    void* prev = lift_field<void*>(node, 0x04);
+    lift_field<void*>(next, 0x04) = prev;
+    lift_field<void*>(prev, 0x08) = next;
+
+    lift_field<int32_t>(list, 0x1c) -= 1;
+}
+} // namespace lift_007CC930

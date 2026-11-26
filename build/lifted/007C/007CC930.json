@@ -1,0 +1,45 @@
+{
+  "va": "0x007CC930",
+  "size": 52,
+  "orig_symbol": "sub_007CC930",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "unlinkListNode",
+  "signature": "void __cdecl sub_007CC930(void* node)",
+  "summary": "Unlinks a node from a circular doubly-linked list and decrements the list count.",
+  "fields": [
+    {
+      "class": "Node",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "prev"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "next"
+    },
+    {
+      "class": "Node",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "list"
+    },
+    {
+      "class": "List",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "List",
+      "offset": "+0x1C",
+      "type": "int32_t",
+      "name": "count"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T10:42:34Z"
+}
