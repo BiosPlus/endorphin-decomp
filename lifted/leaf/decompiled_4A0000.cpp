@@ -793,3 +793,40 @@ void fn_004A0620(void* self) {
 }
 } // namespace lift_00569970
 } // namespace lift_004A0620
+
+// [0x004A5A00] sub_004A5A00 (66 bytes)
+namespace lift_004A5A00 {
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast.)
+extern void ext_006A6E9E();
+
+// @name dynamicCastWalkChain
+// @summary Walks a chain of objects via vtable slot 4 (+0x10), returning the first non-null __RTDynamicCast(obj, src 0xA2E2F8 -> target 0xA2FB78) result, or null.
+void* fn_004A5A00(void* self) {
+    using RTDynamicCastFn = void* (*)(void* inptr, int vfDelta, const void* srcType,
+                                      const void* targetType, int isReference);
+    using VirtualFn = void* (*)(void* thisPtr, int arg);
+
+    auto rtDynamicCast = reinterpret_cast<RTDynamicCastFn>(&ext_006A6E9E);
+
+    void* obj = self;
+    if (obj == nullptr) {
+        return nullptr;
+    }
+
+    void* result = nullptr;
+    do {
+        result = rtDynamicCast(obj, 0, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00A2E2F8)),
+                               reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00A2FB78)), 0);
+        if (result != nullptr) {
+            break;
+        }
+
+        void* vtable = *reinterpret_cast<void**>(obj);
+        auto slot4 = reinterpret_cast<VirtualFn>(
+            *reinterpret_cast<void**>(static_cast<char*>(vtable) + 0x10));
+        obj = slot4(obj, 0);
+    } while (obj != nullptr);
+
+    return result;
+}
+} // namespace lift_004A5A00
