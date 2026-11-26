@@ -3855,6 +3855,13 @@
     "summary": "Returns the 32-bit value pointed to by one of two pointer fields, chosen by the byte flag at +0x88 (flag==0 uses +0x70, otherwise +0x74).",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x004408B0": {
+    "name": "Unknown::clampStoreIfEnabled_004408B0",
+    "class": "Unknown",
+    "signature": "void fn_004408B0(void* self, double arg)",
+    "summary": "If the flag at +0x8D is set, stores max(f+0x50, arg) into +0x58 (clearing the flag at +0x89 when arg \u003c f+0x50); otherwise does nothing. Takes one double argument, callee-cleans 8 bytes.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x004408E0": {
     "name": "setDoublePairAt50_58",
     "signature": "void __thiscall fn_004408E0(void* self, double a0, double a1)",

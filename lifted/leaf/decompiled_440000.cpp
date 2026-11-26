@@ -2142,3 +2142,27 @@ void __stdcall fn_00441A60(void* dst, const void* src) {
     d[3] = f12 + f4 + 1u;
 }
 } // namespace lift_00441A60
+
+// [0x004408B0] sub_004408B0 (45 bytes)
+namespace lift_004408B0 {
+// @name Unknown::clampStoreIfEnabled_004408B0
+// @class Unknown
+// @summary If the flag at +0x8D is set, stores max(f+0x50, arg) into +0x58 (clearing the flag at +0x89 when arg < f+0x50); otherwise does nothing. Takes one double argument, callee-cleans 8 bytes.
+// @field Unknown +0x50 double field_0x50
+// @field Unknown +0x58 double field_0x58
+// @field Unknown +0x89 uint8_t field_0x89
+// @field Unknown +0x8D uint8_t field_0x8D
+void fn_004408B0(void* self, double arg) {
+    if (lift_field<uint8_t>(self, 0x8D) == 0) {
+        return;
+    }
+
+    const double threshold = lift_field<double>(self, 0x50);
+    if (arg < threshold) {
+        lift_field<uint8_t>(self, 0x89) = 0;
+        lift_field<double>(self, 0x58) = threshold;
+    } else {
+        lift_field<double>(self, 0x58) = arg;
+    }
+}
+} // namespace lift_004408B0
