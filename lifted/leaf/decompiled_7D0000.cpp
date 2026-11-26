@@ -1085,8 +1085,8 @@ namespace lift_007DA820 {
 // @name Unknown::walkLinkChainWhileFlagged_007DA820
 // @class Unknown
 // @summary Walks a link chain from a start node, following each node's child via FindLinkPredecessor while the node's flag byte at +0x1c4 (bit 0x02) is set; returns the first node whose flag is clear, or 0 if the chain is exhausted.
-// @field Unknown +0x14 std::uint32_t field_0x14
-// @field Unknown +0x1c4 std::uint8_t field_0x1c4
+// @field LinkNode +0x14 std::uint32_t field_0x14
+// @field LinkObject +0x1c4 std::uint8_t field_0x1c4
 
 extern std::uint32_t ext_007D4AA0(std::uint32_t key, std::uint32_t node);
 
