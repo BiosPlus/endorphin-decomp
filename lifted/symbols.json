@@ -20717,6 +20717,13 @@
     "summary": "Walks the pointer range stored at self+0x14..+0x18 and calls virtual slot 0x68 (thiscall, no args) on each element, with debug-style range checks that invoke _invalid_parameter_noinfo on failure.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00517360": {
+    "name": "ForEachInvokeVtable6C",
+    "class": "UnknownClass",
+    "signature": "void fn_00517360(void* self)",
+    "summary": "Walks the object-pointer range at this+0x14..this+0x18 and calls virtual slot +0x6C on each element, invoking the invalid-parameter handler on bounds violations.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00517510": {
     "name": "CallSlot3OnEachEntryThenDispatch",
     "signature": "void fn_00517510(void* self, void* arg)",

@@ -1,0 +1,28 @@
+{
+  "va": "0x00517360",
+  "size": 76,
+  "orig_symbol": "sub_00517360",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "ForEachInvokeVtable6C",
+  "class": "UnknownClass",
+  "signature": "void fn_00517360(void* self)",
+  "summary": "Walks the object-pointer range at this+0x14..this+0x18 and calls virtual slot +0x6C on each element, invoking the invalid-parameter handler on bounds violations.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x14",
+      "type": "void**",
+      "name": "field_0x14"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x18",
+      "type": "void**",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:23:42Z"
+}

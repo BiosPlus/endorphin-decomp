@@ -1587,3 +1587,51 @@ void __thiscall fn_00517310(void* self) {
     }
 }
 } // namespace lift_00517310
+
+// [0x00517360] sub_00517360 (76 bytes)
+namespace lift_00517360 {
+extern int mem_00925134;
+
+// @name ForEachInvokeVtable6C
+// @class UnknownClass
+// @summary Walks the object-pointer range at this+0x14..this+0x18 and calls virtual slot +0x6C on each element, invoking the invalid-parameter handler on bounds violations.
+// @field UnknownClass +0x14 void** field_0x14
+// @field UnknownClass +0x18 void** field_0x18
+void fn_00517360(void* self) {
+    // Handler pointer stored in the IAT slot at mem_00925134.
+    using InvalidParamFn = void (*)();
+    const auto invalid_parameter = *reinterpret_cast<InvalidParamFn*>(&mem_00925134);
+
+    // Entry check: begin must not exceed end.
+    void** cur = lift_field<void**>(self, 0x14);
+    if (cur > lift_field<void**>(self, 0x18)) {
+        invalid_parameter();
+    }
+
+    for (;;) {
+        void** end = lift_field<void**>(self, 0x18);
+        if (lift_field<void**>(self, 0x14) > end) {
+            invalid_parameter();
+        }
+        if (cur == end) {
+            break;
+        }
+        if (!(cur < lift_field<void**>(self, 0x18))) {
+            invalid_parameter();
+        }
+
+        // Element is an object pointer; its first word is the vtable.
+        void* obj = *cur;
+        void* vtable = lift_field<void*>(obj, 0);
+        // Slot at vtable+0x6C (virtual index 27). The original is a __thiscall
+        // with `obj` in ecx and no further arguments.
+        auto vfn = reinterpret_cast<void (*)(void*)>(lift_field<void*>(vtable, 0x6C));
+        vfn(obj);
+
+        if (!(cur < lift_field<void**>(self, 0x18))) {
+            invalid_parameter();
+        }
+        cur += 1;
+    }
+}
+} // namespace lift_00517360
