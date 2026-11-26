@@ -1009,3 +1009,27 @@ uint32_t KeyValueTable_lookup(const KeyValueTable* table, uint32_t key) {
     return 0;
 }
 } // namespace lift_0085BF40
+
+// [0x008596F0] sub_008596F0 (64 bytes)
+namespace lift_008596F0 {
+// KERNEL32 IAT slots (called indirectly via `call dword ptr [mem]` in the original).
+extern HANDLE(__stdcall* mem_009242CC)(HANDLE hMem, UINT uBytes, UINT uFlags); // LocalReAlloc
+extern HANDLE(__stdcall* mem_00924210)(HANDLE hMem);                           // LocalFree
+extern HANDLE(__stdcall* mem_00924214)(UINT uFlags, UINT uBytes);              // LocalAlloc
+
+// @name LocalResize
+// @summary Resize a LocalAlloc'd block (LocalReAlloc, LMEM_MOVEABLE); free it if size is 0; allocate if ptr is NULL.
+void* fn_008596F0(void* hMem, UINT uBytes) {
+    if (hMem != nullptr) {
+        if (uBytes != 0) {
+            return mem_009242CC(hMem, uBytes, 2 /* LMEM_MOVEABLE */);
+        }
+        mem_00924210(hMem);
+        return nullptr;
+    }
+    if (uBytes == 0) {
+        return nullptr;
+    }
+    return mem_00924214(0 /* LMEM_FIXED */, uBytes);
+}
+} // namespace lift_008596F0

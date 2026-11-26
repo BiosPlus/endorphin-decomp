@@ -73190,6 +73190,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0079AF40 (AllocGlobalMemory).",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x008596F0": {
+    "name": "LocalResize",
+    "signature": "extern \"C\" HANDLE(__stdcall* mem_009242CC)(HANDLE hMem, UINT uBytes, UINT uFlags); // LocalReAlloc extern \"C\" HANDLE(__stdcall* mem_00924210)(HANDLE hMem);                           // LocalFree extern \"C\" HANDLE(__stdcall* mem_00924214)(UINT uFlags, UINT uBytes);              // LocalAlloc void* fn_008596F0(void* hMem, UINT uBytes)",
+    "summary": "Resize a LocalAlloc'd block (LocalReAlloc, LMEM_MOVEABLE); free it if size is 0; allocate if ptr is NULL.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x00859730": {
     "name": "LocalFreeWrapper",
     "signature": "uint32_t fn_00859730(void* hMem)",
