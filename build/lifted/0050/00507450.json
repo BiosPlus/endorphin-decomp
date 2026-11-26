@@ -1,0 +1,14 @@
+{
+  "va": "0x00507450",
+  "size": 57,
+  "orig_symbol": "InitialVariableValues::vfunc_15",
+  "src_path": "src/classes/InitialVariableValues.cpp",
+  "lifted_path": "lifted/classes/InitialVariableValues.cpp",
+  "name": "InitialVariableValues::GetPropertyValue",
+  "class": "InitialVariableValues",
+  "signature": "uint32_t* __thiscall fn_00507450(void* self, uint32_t* out, uint32_t id)",
+  "summary": "For property id 0x361 stores a reference to this object into the output value; otherwise writes the default/empty value.",
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@medium",
+  "lifted_at": "2026-11-26T11:05:11Z"
+}

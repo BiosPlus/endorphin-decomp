@@ -19388,6 +19388,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00526BE0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00507450": {
+    "name": "InitialVariableValues::GetPropertyValue",
+    "class": "InitialVariableValues",
+    "signature": "uint32_t* __thiscall fn_00507450(void* self, uint32_t* out, uint32_t id)",
+    "summary": "For property id 0x361 stores a reference to this object into the output value; otherwise writes the default/empty value.",
+    "lifted_path": "lifted/classes/InitialVariableValues.cpp"
+  },
   "0x00507730": {
     "name": "ThreeLayerNet::vfunc_0",
     "class": "ThreeLayerNet",

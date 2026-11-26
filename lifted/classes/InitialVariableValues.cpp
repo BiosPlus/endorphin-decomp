@@ -29,3 +29,21 @@ uint32_t* fn_00507450(void* self, uint32_t* out, uint32_t key) {
 }
 } // namespace lift_0050AA70
 } // namespace lift_00507450
+
+// [0x00507450]
+namespace lift_00507450 {
+extern DWORD* ext_00505A10(DWORD* dst, DWORD value);
+extern void ext_00671F30(uint32_t* out);
+
+// @name InitialVariableValues::GetPropertyValue
+// @class InitialVariableValues
+// @summary For property id 0x361 stores a reference to this object into the output value; otherwise writes the default/empty value.
+uint32_t* __thiscall fn_00507450(void* self, uint32_t* out, uint32_t id) {
+    if (id == 0x361) {
+        ext_00505A10(reinterpret_cast<DWORD*>(out), static_cast<DWORD>(reinterpret_cast<uintptr_t>(self)));
+        return out;
+    }
+    ext_00671F30(out);
+    return out;
+}
+} // namespace lift_00507450
