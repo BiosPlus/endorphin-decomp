@@ -491,3 +491,37 @@ void fn_007F0B00(void* ecx, uint32_t edx, void* edi) {
     lift_field<uint32_t>(bucket, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(node));
 }
 } // namespace lift_007F0B00
+
+// [0x007F0B30] sub_007F0B30 (47 bytes)
+namespace lift_007F0B30 {
+// @name Unknown::pushNodeIntoBucket_007F0B30
+// @class Unknown
+// @summary Pushes a new 8-byte list node (value = owner) onto the head of bucket[index] (20-byte entries) using a bump-allocated node pool, bumping the bucket count and storing index into owner+0x154.
+// @field Unknown +0x00 uint32_t bucket_base (pointer to 20-byte bucket array)
+// @field Unknown +0x0C uint32_t node_pool_base (pointer to 8-byte node storage)
+// @field Unknown +0x14 uint32_t node_pool_count (number of nodes allocated so far)
+// @field Bucket +0x0C uint32_t head (pointer to first node in this bucket's list)
+// @field Bucket +0x10 uint32_t size (number of nodes in this bucket's list)
+// @field ListNode +0x00 uint32_t next (previous head of bucket list)
+// @field ListNode +0x04 uint32_t value (owner pointer stored in the node)
+// @field Owner +0x154 uint32_t last_bucket_index (written with index)
+void fn_007F0B30(void* self, uint32_t index, uint32_t owner) {
+    // 32-bit target: all in-game pointers are stored as 32-bit addresses.
+    auto* ownerObj = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(owner));
+    lift_field<uint32_t>(ownerObj, 0x154) = index;
+
+    uint8_t* bucketBase = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x00)));
+    uint8_t* bucket = bucketBase + static_cast<size_t>(index) * 20u;
+
+    uint32_t poolCount = lift_field<uint32_t>(self, 0x14);
+    uint32_t nodeAddr = lift_field<uint32_t>(self, 0x0C) + poolCount * 8u;
+    lift_field<uint32_t>(self, 0x14) = poolCount + 1u;
+
+    uint8_t* node = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(nodeAddr));
+    lift_field<uint32_t>(node, 0x04) = owner;
+    lift_field<uint32_t>(node, 0x00) = lift_field<uint32_t>(bucket, 0x0C);
+
+    lift_field<uint32_t>(bucket, 0x10) += 1u;
+    lift_field<uint32_t>(bucket, 0x0C) = nodeAddr;
+}
+} // namespace lift_007F0B30

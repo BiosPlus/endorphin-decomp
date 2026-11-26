@@ -1,0 +1,64 @@
+{
+  "va": "0x007F0B30",
+  "size": 47,
+  "orig_symbol": "sub_007F0B30",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "Unknown::pushNodeIntoBucket_007F0B30",
+  "class": "Unknown",
+  "signature": "void fn_007F0B30(void* self, uint32_t index, uint32_t owner)",
+  "summary": "Pushes a new 8-byte list node (value = owner) onto the head of bucket[index] (20-byte entries) using a bump-allocated node pool, bumping the bucket count and storing index into owner+0x154.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t bucket_base (pointer to 20-byte bucket",
+      "name": "array)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t node_pool_base (pointer to 8-byte node",
+      "name": "storage)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t node_pool_count (number of nodes allocated so",
+      "name": "far)"
+    },
+    {
+      "class": "Bucket",
+      "offset": "+0xC",
+      "type": "uint32_t head (pointer to first node in this bucket's",
+      "name": "list)"
+    },
+    {
+      "class": "Bucket",
+      "offset": "+0x10",
+      "type": "uint32_t size (number of nodes in this bucket's",
+      "name": "list)"
+    },
+    {
+      "class": "ListNode",
+      "offset": "+0x0",
+      "type": "uint32_t next (previous head of bucket",
+      "name": "list)"
+    },
+    {
+      "class": "ListNode",
+      "offset": "+0x4",
+      "type": "uint32_t value (owner pointer stored in the",
+      "name": "node)"
+    },
+    {
+      "class": "Owner",
+      "offset": "+0x154",
+      "type": "uint32_t last_bucket_index (written with",
+      "name": "index)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:32:07Z"
+}

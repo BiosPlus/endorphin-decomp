@@ -19,6 +19,7 @@ struct Owner_Fields {
     // +0x2C  uint32_t                 field_0x2c  (evidence: 0x007DD040)
     // +0x30  void*                    field_0x30  (evidence: 0x00648DB0)
     // +0xB0  void*                    field_0xb0  (evidence: 0x007CAF70)
+    // +0x154 uint32_t last_bucket_index (written with index)  (evidence: 0x007F0B30)
     // +0x164 uint32_t                 subobject  (evidence: 0x005C39F0)
 };
 } // namespace lifted_layout

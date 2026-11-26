@@ -12,11 +12,13 @@ struct ListNode_Fields {
     // +0x0   uint8_t*                 field_0x00  (evidence: 0x007AF8F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   WORD                     index  (evidence: 0x007B8E30, 0x007BD640) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 key  (evidence: 0x007B2DF0, 0x007BD640) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t next (previous head of bucket list)  (evidence: 0x007F0B30) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 next  (evidence: 0x0049DB60) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    next  (evidence: 0x0049BEE0, 0x0049DBA0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    prev  (evidence: 0x005E0060) // CONFLICT: multiple definitions at +0x0
     // +0x4   uint8_t*                 field_0x04  (evidence: 0x007AF8F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    next  (evidence: 0x005E0060) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t value (owner pointer stored in the node)  (evidence: 0x007F0B30) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 prev  (evidence: 0x007C8490, 0x007CAF70) // CONFLICT: multiple definitions at +0x4
     // +0x8   void* payload (object; vptr at offset 0, predicate in vtable slot 10 at +0x28)  (evidence: 0x0049BEE0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_08  (evidence: 0x005E0060) // CONFLICT: multiple definitions at +0x8

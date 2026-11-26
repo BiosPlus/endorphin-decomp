@@ -23,6 +23,7 @@ struct Unknown_Fields {
     // +0x0   void*                    __vfptr  (evidence: 0x006F0120, 0x006F01A0, 0x006F0220, 0x006F08E0, 0x006F1120, 0x006F7930, 0x006FC200) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t entries_base (pointer to 20-byte entry array, stored as 32-bit address)  (evidence: 0x007F0B60) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (target object pointer;* arg1)  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t bucket_base (pointer to 20-byte bucket array)  (evidence: 0x007F0B30) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (pointer to inner object; inner->+0x04 holds the element array base)  (evidence: 0x0077FF90) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 bucketBase  (evidence: 0x007F0B00) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    buffer  (evidence: 0x00788E50) // CONFLICT: multiple definitions at +0x0
@@ -353,6 +354,7 @@ struct Unknown_Fields {
     // +0xC   uint8_t                  result  (evidence: 0x0053A5E0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 size  (evidence: 0x005E0060) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 srcField4  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint32_t node_pool_base (pointer to 8-byte node storage)  (evidence: 0x007F0B30) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    subObject  (evidence: 0x007155B0, 0x0071C3E0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 subobjectValue  (evidence: 0x00712010) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  tag  (evidence: 0x007155B0, 0x00715710) // CONFLICT: multiple definitions at +0xC
@@ -416,6 +418,7 @@ struct Unknown_Fields {
     // +0x14  uint32_t field_0x14 (vtable pointer 0x955BD4)  (evidence: 0x0053C910) // CONFLICT: multiple definitions at +0x14
     // +0x14  int32_t                  count  (evidence: 0x006FC200, 0x007D4720) // CONFLICT: multiple definitions at +0x14
     // +0x14  BYTE                     enabled  (evidence: 0x00540510) // CONFLICT: multiple definitions at +0x14
+    // +0x14  uint32_t node_pool_count (number of nodes allocated so far)  (evidence: 0x007F0B30) // CONFLICT: multiple definitions at +0x14
     // +0x14  DWORD                    field_0x14  (evidence: 0x0041C630, 0x00468730, 0x00468AC0, 0x005539F0, 0x005555D0, 0x005B34C0, 0x006ACFE0, 0x006FBD30, 0x006FC200, 0x006FC950, 0x007D48A0, 0x007D8470, 0x007DB130, 0x007DB740) // CONFLICT: multiple definitions at +0x14
     // +0x14  FLOAT                    field_0x14  (evidence: 0x005F5350) // CONFLICT: multiple definitions at +0x14
     // +0x14  float                    field_0x14  (evidence: 0x00538530, 0x00538550, 0x00543E00, 0x0055CD10, 0x00567040, 0x005B1B60, 0x005B1B90, 0x005B1FA0, 0x00610C10, 0x0067B8D0, 0x0067DBF0, 0x006C9DC0, 0x006C9E60, 0x007C2E50, 0x007C8490, 0x007C9D80, 0x007C9E10, 0x007C9ED0, 0x007CAF70, 0x007CAFC0, 0x007CAFD0, 0x007CB010, 0x007CCAB0, 0x007E4870, 0x007E80E0, 0x007FC490) // CONFLICT: multiple definitions at +0x14
