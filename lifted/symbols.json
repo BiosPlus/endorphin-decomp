@@ -18879,6 +18879,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051C6D0 (NMData::RealChannel::vfunc_4).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00503C20": {
+    "name": "CopyRangeToDest",
+    "signature": "void* fn_00503C20(void* begin, void* end, void* dest)",
+    "summary": "Copies [begin, end) rounded down to whole 8-byte elements to dest via memmove_s; returns dest + copied bytes.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00503C60": {
     "name": "sub_00503C60",
     "signature": "uint32_t __stdcall fn_00503C60(uint32_t dst, uint32_t count, uint32_t src)",

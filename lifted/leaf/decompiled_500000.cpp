@@ -2245,3 +2245,32 @@ uint32_t* fn_0050E360(void* self, uint32_t index) {
     return reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(base + index * 4u));
 }
 } // namespace lift_0050E360
+
+// [0x00503C20] sub_00503C20 (49 bytes)
+namespace lift_00503C20 {
+// IAT slot holding the resolved address of MSVCR80!memmove_s (cdecl).
+extern void* mem_009251EC;
+
+using memmove_s_fn = int (*)(void* dest, size_t destSize, const void* src, size_t count);
+
+// @name CopyRangeToDest
+// @summary Copies [begin, end) rounded down to whole 8-byte elements to dest via memmove_s; returns dest + copied bytes.
+void* fn_00503C20(void* begin, void* end, void* dest) {
+    // 32-bit address arithmetic, matching the original x86 code.
+    uint32_t b = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(begin));
+    uint32_t e = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(end));
+    uint32_t d = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(dest));
+
+    // (end - begin) >> 3 (arithmetic shift), then * 8 bytes.
+    int32_t count = static_cast<int32_t>(e - b) >> 3;
+    uint32_t bytes = static_cast<uint32_t>(count) * 8u;
+    uint32_t result = d + bytes;
+
+    if (count != 0) {
+        auto memmove_s_call = reinterpret_cast<memmove_s_fn>(mem_009251EC);
+        memmove_s_call(dest, bytes, begin, bytes);
+    }
+
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(result));
+}
+} // namespace lift_00503C20
