@@ -36463,6 +36463,12 @@
     "summary": "Erases the whole tree below the head sentinel, then resets the head to empty (self-linked) with count 0.",
     "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
+  "0x005FF040": {
+    "name": "sub_005FF040",
+    "signature": "extern \"C\" void __fastcall fn_005FF040(void* self)",
+    "summary": "Destructor/cleanup that resets vtable, frees field_0x8 via MFC80_ord_764 if non-null, zeroes fields 0x8..0x10, and tail-calls ext_0065F440.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005FF0E0": {
     "name": "CompoundSensor::vfunc_14",
     "class": "CompoundSensor",
