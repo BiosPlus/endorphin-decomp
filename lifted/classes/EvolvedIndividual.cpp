@@ -67,3 +67,37 @@ std::string fn_00507E80(const void* /*self*/) {
 } // namespace lift_0047DB90
 } // namespace lift_005A98F0
 } // namespace lift_00507E80
+
+// [0x00516E60] EvolvedIndividual::vfunc_1_off_8 (73 bytes)
+namespace lift_00516E60 {
+// Import slot holding _invalid_parameter_noinfo (MSVCR80); only reached on an
+// out-of-range path that the loop guard already excludes.
+extern void (*mem_00925134)(void);
+
+// @name EvolvedIndividual::vfunc_1_off_8
+// @class EvolvedIndividual
+// @summary Walks the element-pointer array at +0x0C..+0x10 and stores each element's index into its +0x34 slot.
+// @field EvolvedIndividual +0x0C uint32_t field_0x0C
+// @field EvolvedIndividual +0x10 uint32_t field_0x10
+void __thiscall fn_00516E60(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    uint32_t i = 0;
+    for (;;) {
+        const uint32_t begin = *reinterpret_cast<const uint32_t*>(base + 0x0C);
+        if (begin == 0)
+            break;
+        const uint32_t end = *reinterpret_cast<const uint32_t*>(base + 0x10);
+        const uint32_t count = static_cast<uint32_t>(static_cast<int32_t>(end - begin) >> 2);
+        if (i >= count)
+            break;
+        // Original re-checks the bound here; with the guard above, the call is unreachable.
+        if (i >= count)
+            mem_00925134();
+        const uint32_t elem = reinterpret_cast<const uint32_t*>(
+            static_cast<uintptr_t>(begin))[i];
+        auto* element = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(elem));
+        *reinterpret_cast<uint32_t*>(element + 0x34) = i;
+        ++i;
+    }
+}
+} // namespace lift_00516E60
