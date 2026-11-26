@@ -661,6 +661,13 @@
     "summary": "Returns the address of the global data slot mem_0092A1CC (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004077E0": {
+    "name": "CDC::GetTextExtent",
+    "class": "CDC",
+    "signature": "extern \"C\" uint32_t mem_0092431C; // MFC80!ord_2902 (CStringT::GetLength) extern \"C\" uint32_t mem_00924300; // MFC80!ord_876 (CSimpleStringT::GetString) extern \"C\" uint32_t mem_00924080; // GDI32!GetTextExtentPoint32A int32_t* __thiscall sub_004077E0(void* self, int32_t* out_size, void* str)",
+    "summary": "Computes the width and height of a CString using the device context's attribute DC.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00407830": {
     "name": "sub_00407830",
     "class": "unknown",
@@ -2112,6 +2119,13 @@
     "class": "Vector28",
     "signature": "void* __thiscall sub_0041CCC0(void* self, uint32_t index)",
     "summary": "Checked element access for a 28-byte element vector",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
+  "0x0041CD10": {
+    "name": "Vector56::at",
+    "class": "Vector56",
+    "signature": "void* __thiscall sub_0041CD10(void* self, uint32_t index)",
+    "summary": "Bounds-checked element access for a 56-byte-stride vector",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
   "0x0041CD60": {
@@ -7571,6 +7585,12 @@
     "class": "StdString",
     "signature": "void* fn_0046C460(void* out, unsigned char flag)",
     "summary": "Constructs the std::string at out from one of two string literals, selected by flag (nonzero -\u003e 0x0092F10C, zero -\u003e 0x0093A808), and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
+  "0x0046C490": {
+    "name": "parseRoundedIntFromString",
+    "signature": "extern \"C\" int32_t fn_0046C490(const void* str)",
+    "summary": "Parses a std::string to a float via atof, rounds away from zero by 0.5, and converts to int.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
   "0x0046C4E0": {

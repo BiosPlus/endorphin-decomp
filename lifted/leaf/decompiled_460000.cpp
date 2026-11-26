@@ -1629,3 +1629,29 @@ void __thiscall sub_004629E0(void* self, void* arg1, uint32_t arg2) {
     ext_004474F0(target, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(cstr)));
 }
 } // namespace lift_004629E0
+
+// [0x0046C490]
+namespace lift_0046C490 {
+extern int32_t ext_006A6DE0(double val);
+extern void ext_006A5E5A(void);
+
+using fn_c_str_t = const char* (__thiscall*)(const void*);
+using fn_atof_t = double (__cdecl*)(const char*);
+
+extern fn_c_str_t mem_00924FF0;
+extern fn_atof_t mem_009251F0;
+extern uint32_t mem_00925690;
+extern double mem_00993828;
+
+// @name parseRoundedIntFromString
+// @summary Parses a std::string to a float via atof, rounds away from zero by 0.5, and converts to int.
+extern int32_t fn_0046C490(const void* str) {
+    (void)ext_006A5E5A;
+    (void)mem_00925690;
+    const char* cstr = mem_00924FF0(str);
+    float val = static_cast<float>(mem_009251F0(cstr));
+    double rounded = (val < 0.0f) ? (static_cast<double>(val) - mem_00993828)
+                                  : (static_cast<double>(val) + mem_00993828);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C490
