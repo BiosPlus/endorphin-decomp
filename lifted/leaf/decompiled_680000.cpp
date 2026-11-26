@@ -1852,3 +1852,27 @@ void* __thiscall sub_0068DDD0(void* self, const void* src) {
     return self;
 }
 } // namespace lift_0068DDD0
+
+// [0x006812A0]
+namespace lift_006812A0 {
+// @name destroyRange_006812A0
+// @summary Destroy a range of 16-byte elements by freeing their +0x4 pointer via MFC80_ord_764 and zeroing +0x4..+0xc.
+// @field Element +0x04 void* field_0x04
+// @field Element +0x08 uint32_t field_0x08
+// @field Element +0x0c uint32_t field_0x0c
+
+
+extern void ext_006A5C5C(void* ptr);
+
+extern void fn_006812A0(uint8_t* begin, uint8_t* end) {
+    for (uint8_t* it = begin; it != end; it += 0x10) {
+        void* ptr = lift_field<void*>(it, 0x4);
+        if (ptr != nullptr) {
+            ext_006A5C5C(ptr);
+        }
+        lift_field<uint32_t>(it, 0x4) = 0;
+        lift_field<uint32_t>(it, 0x8) = 0;
+        lift_field<uint32_t>(it, 0xc) = 0;
+    }
+}
+} // namespace lift_006812A0

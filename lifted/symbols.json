@@ -36226,6 +36226,13 @@
     "summary": "Lazily initializes the static string object at mem_00B47058 exactly once and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
+  "0x005FD330": {
+    "name": "Tree::_Erase",
+    "class": "Tree",
+    "signature": "void __thiscall fn_005FD330(void* self, void* node)",
+    "summary": "Recursively erases a red-black tree subtree and frees nodes via MFC80!ord_764.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005FD370": {
     "name": "ExprParser::ReadMethodType\u003cSensor, float, \u0026[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cSensor, float, \u0026[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1\u003e",
@@ -48204,6 +48211,12 @@
     "signature": "void fn_0067F9D0(void* self)",
     "summary": "Notifies the last 8-byte element of the range at +0x04..+0x08 via ext_0048A120, then shrinks the range end by one element.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
+  "0x006812A0": {
+    "name": "destroyRange_006812A0",
+    "signature": "extern \"C\" void fn_006812A0(uint8_t* begin, uint8_t* end)",
+    "summary": "Destroy a range of 16-byte elements by freeing their +0x4 pointer via MFC80_ord_764 and zeroing +0x4..+0xc.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x00681380": {
     "name": "sub_00681380",
@@ -68581,6 +68594,13 @@
     "signature": "void fn_0079E610(void* self, int32_t /*stackArg, popped by callee*/)",
     "summary": "If the object pointer is non-null, invokes its vtable slot 2 with argument 1; the single stack argument is popped by the callee (ret 4).",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
+  "0x0079E620": {
+    "name": "Unknown::Ctor_0079E620",
+    "class": "Unknown",
+    "signature": "void* fn_0079E620(void* self)",
+    "summary": "Constructor that initializes base vtables, constructs embedded list head at +0x8, and sets derived vtables.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
   "0x0079E650": {
     "name": "sub_0079E650",
