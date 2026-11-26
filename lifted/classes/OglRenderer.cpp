@@ -277,3 +277,29 @@ void __fastcall fn_00532F60(void* self) {
     mem_00925660(lift_field<HWND>(self, 0x1C), 1);
 }
 } // namespace lift_00532F60
+
+// [0x005333C0]
+namespace lift_005333C0 {
+// @name OglRenderer::vfunc_17
+// @class OglRenderer
+// @summary Sets a 32-bit field based on flag at +0x379, updates +0x450, marks +0x430 dirty, and invokes vtable+0x154.
+// @field OglRenderer +0x0 void* vtable
+// @field OglRenderer +0x379 uint8_t field_0x379
+// @field OglRenderer +0x388 uint32_t field_0x388
+// @field OglRenderer +0x398 uint32_t field_0x398
+// @field OglRenderer +0x430 uint8_t field_0x430
+// @field OglRenderer +0x450 uint32_t field_0x450
+void __thiscall fn_005333C0(void* self, uint32_t val) {
+    if (lift_field<uint8_t>(self, 0x379) != 0) {
+        lift_field<uint32_t>(self, 0x398) = val;
+    } else {
+        lift_field<uint32_t>(self, 0x388) = val;
+    }
+    lift_field<uint32_t>(self, 0x450) = val;
+    lift_field<uint8_t>(self, 0x430) = 1;
+
+    void** vtable = lift_field<void**>(self, 0x0);
+    auto vfn = reinterpret_cast<void(__thiscall*)(void*)>(vtable[0x154 / sizeof(void*)]);
+    vfn(self);
+}
+} // namespace lift_005333C0

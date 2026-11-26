@@ -10289,6 +10289,12 @@
     "summary": "Calls ext_006A5C62(0x24) to get a 0x24-byte record, zeroes the dwords at +0x00, +0x04 and +0x08 (each guarded by a non-zero address test), sets byte +0x20 to 1 and byte +0x21 to 0, then returns the record pointer.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x00493330": {
+    "name": "Tree_erase",
+    "signature": "void __thiscall fn_00493330(void* self, void* node)",
+    "summary": "Recursively frees a red-black tree's nodes starting from the given node.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x004939B0": {
     "name": "Unknown::initSubobjects_004939B0",
     "class": "Unknown",
@@ -22163,6 +22169,13 @@
     "class": "OglRenderer",
     "signature": "void __thiscall fn_00533380(void* self, float value)",
     "summary": "Sets a float property on OglRenderer (selecting +0x390 or +0x380 based on +0x379) and +0x458, marks +0x430 dirty, and invokes vtable +0x154",
+    "lifted_path": "lifted/classes/OglRenderer.cpp"
+  },
+  "0x005333C0": {
+    "name": "OglRenderer::vfunc_17",
+    "class": "OglRenderer",
+    "signature": "void __thiscall fn_005333C0(void* self, uint32_t val)",
+    "summary": "Sets a 32-bit field based on flag at +0x379, updates +0x450, marks +0x430 dirty, and invokes vtable+0x154.",
     "lifted_path": "lifted/classes/OglRenderer.cpp"
   },
   "0x00533400": {
