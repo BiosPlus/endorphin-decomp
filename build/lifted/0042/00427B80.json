@@ -1,0 +1,28 @@
+{
+  "va": "0x00427B80",
+  "size": 47,
+  "orig_symbol": "sub_00427B80",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "Iterator::advanceAndMatch",
+  "class": "Iterator",
+  "signature": "void* fn_00427B80(void* self)",
+  "summary": "Checks the iterator's container and bounds, steps elem_ptr forward by one 4-byte slot, then advances to the next matching element",
+  "fields": [
+    {
+      "class": "Iterator",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Iterator",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:29:56Z"
+}

@@ -1143,3 +1143,36 @@ void fn_004291A0(void* self) {
 }
 } // namespace lift_004AD970
 } // namespace lift_004291A0
+
+// [0x00427B80] sub_00427B80 (47 bytes)
+namespace lift_00427B80 {
+// Known callee 0x00427A60: advanceIteratorUntilMatch (Advances a checked vector iterator until end or an element's vfunc(+0xC)(1) returns true)
+extern void ext_00427A60(void* self);
+// Import thunk pointer for MSVCR80!_invalid_parameter_noinfo
+extern void (*mem_00925134)();
+
+// @name Iterator::advanceAndMatch
+// @class Iterator
+// @summary Checks the iterator's container and bounds, steps elem_ptr forward by one 4-byte slot, then advances to the next matching element
+// @field Iterator +0x04 uint32_t field_0x04
+// @field Iterator +0x08 uint32_t field_0x08
+void* fn_00427B80(void* self) {
+    auto* it = reinterpret_cast<uint32_t*>(self);
+    auto invalid_param = mem_00925134;
+
+    if (it[1] == 0) {
+        invalid_param();
+    }
+
+    uint32_t container = it[1];
+    uint32_t elem = it[2];
+    uint32_t limit = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(container) + 0x8);
+    if (elem >= limit) {
+        invalid_param();
+    }
+
+    it[2] = elem + 4;
+    ext_00427A60(self);
+    return self;
+}
+} // namespace lift_00427B80

@@ -2494,6 +2494,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x00427B80": {
+    "name": "Iterator::advanceAndMatch",
+    "class": "Iterator",
+    "signature": "void* fn_00427B80(void* self)",
+    "summary": "Checks the iterator's container and bounds, steps elem_ptr forward by one 4-byte slot, then advances to the next matching element",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x004280C0": {
     "name": "TreeMap::findInsertPoint",
     "class": "TreeMap",
