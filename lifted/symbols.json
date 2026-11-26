@@ -57925,6 +57925,13 @@
     "summary": "15-byte constant table (values 0x00,0x04,0x01,0x02); bytes decode as nonsense x86, so this is data, not code",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D2130": {
+    "name": "Unknown::InitClampedMin1",
+    "class": "Unknown",
+    "signature": "void fn_006D2130(void* self, int32_t arg1, int32_t arg2)",
+    "summary": "Zeroes fields +0x00, +0x04, +0x10; stores arg2 at +0x0C and max(arg1, 1) (signed) at +0x08.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D2160": {
     "name": "sub_006D2160",
     "signature": "extern \"C\" void fn_006D2160(void)",

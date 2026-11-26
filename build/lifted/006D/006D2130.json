@@ -1,0 +1,46 @@
+{
+  "va": "0x006D2130",
+  "size": 48,
+  "orig_symbol": "sub_006D2130",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::InitClampedMin1",
+  "class": "Unknown",
+  "signature": "void fn_006D2130(void* self, int32_t arg1, int32_t arg2)",
+  "summary": "Zeroes fields +0x00, +0x04, +0x10; stores arg2 at +0x0C and max(arg1, 1) (signed) at +0x08.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:38:14Z"
+}

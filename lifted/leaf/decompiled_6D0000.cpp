@@ -1644,3 +1644,23 @@ void __fastcall fn_006DAE00(void* self, void* /*edx*/, double scale) {
     *(long long*)self = r;
 }
 } // namespace lift_006DAE00
+
+// [0x006D2130] sub_006D2130 (48 bytes)
+namespace lift_006D2130 {
+// @name Unknown::InitClampedMin1
+// @class Unknown
+// @summary Zeroes fields +0x00, +0x04, +0x10; stores arg2 at +0x0C and max(arg1, 1) (signed) at +0x08.
+// @field Unknown +0x00 int32_t field_0x00
+// @field Unknown +0x04 int32_t field_0x04
+// @field Unknown +0x08 int32_t field_0x08
+// @field Unknown +0x0C int32_t field_0x0C
+// @field Unknown +0x10 int32_t field_0x10
+void fn_006D2130(void* self, int32_t arg1, int32_t arg2) {
+    auto* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<int32_t*>(base + 0x10) = 0;
+    *reinterpret_cast<int32_t*>(base + 0x00) = 0;
+    *reinterpret_cast<int32_t*>(base + 0x04) = 0;
+    *reinterpret_cast<int32_t*>(base + 0x0C) = arg2;
+    *reinterpret_cast<int32_t*>(base + 0x08) = (arg1 > 1) ? arg1 : 1;
+}
+} // namespace lift_006D2130
