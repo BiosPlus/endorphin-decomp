@@ -2069,3 +2069,23 @@ DWORD fn_006C30F0(void* self) {
     return lift_field<DWORD>(self, 0x158);
 }
 } // namespace lift_006C30F0
+
+// [0x006C3180] sub_006C3180 (48 bytes)
+namespace lift_006C3180 {
+// @name Unknown::GetChildIfVirtualReturnsSeven
+// @class Unknown
+// @summary Returns the pointer at +0x158 if its vtable slot 0 returns 7, otherwise nullptr.
+// @field Unknown +0x158 void* field_0x158
+void* fn_006C3180(void* self) {
+    void* child = lift_field<void*>(self, 0x158);
+    if (child == nullptr) {
+        return nullptr;
+    }
+    void** vtbl = *reinterpret_cast<void***>(child);
+    auto slot0 = reinterpret_cast<int (*)(void*)>(vtbl[0]);
+    if (slot0(child) == 7) {
+        return lift_field<void*>(self, 0x158);
+    }
+    return nullptr;
+}
+} // namespace lift_006C3180
