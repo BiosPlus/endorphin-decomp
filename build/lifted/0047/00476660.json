@@ -1,0 +1,13 @@
+{
+  "va": "0x00476660",
+  "size": 62,
+  "orig_symbol": "sub_00476660",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "FormatIntToString",
+  "signature": "extern \"C\" void* fn_00476660(void* self, int32_t value)",
+  "summary": "Formats an int into a 50-byte stack buffer via _snprintf, then constructs the std::string at self from that buffer and returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:58:49Z"
+}

@@ -815,3 +815,28 @@ extern void* __cdecl fn_00476630(void* out, const char* s) {
     return out;
 }
 } // namespace lift_00476630
+
+// [0x00476660] sub_00476660 (62 bytes)
+namespace lift_00476660 {
+// Import slot for MSVCR80!_snprintf (indirect call through IAT).
+extern void* mem_009251E0;
+// Import slot for MSVCP80 std::basic_string<char>::basic_string(const char*) (IAT).
+extern void* mem_00924FE4;
+// Format string literal in .rdata at 0x0093BF08.
+extern const char mem_0093BF08[];
+
+// @name FormatIntToString
+// @summary Formats an int into a 50-byte stack buffer via _snprintf, then constructs the std::string at self from that buffer and returns self.
+extern void* fn_00476660(void* self, int32_t value) {
+    using SnprintfFn = int (*)(char*, size_t, const char*, ...);
+    using StringCtorFn = void (*)(void*, const char*);
+
+    char buf[0x32] = {};
+    auto snprintf_fn = reinterpret_cast<SnprintfFn>(mem_009251E0);
+    snprintf_fn(buf, sizeof(buf), mem_0093BF08, value, self, 0);
+
+    auto string_ctor = reinterpret_cast<StringCtorFn>(mem_00924FE4);
+    string_ctor(self, buf);
+    return self;
+}
+} // namespace lift_00476660

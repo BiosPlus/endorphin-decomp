@@ -8590,6 +8590,12 @@
     "summary": "Constructs a std::string at out from s via the MSVCP80 basic_string(const char*) import (default ctor when s is null) and returns out.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00476660": {
+    "name": "FormatIntToString",
+    "signature": "extern \"C\" void* fn_00476660(void* self, int32_t value)",
+    "summary": "Formats an int into a 50-byte stack buffer via _snprintf, then constructs the std::string at self from that buffer and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x004769D0": {
     "name": "NMData::SceneData::vfunc_7",
     "class": "NMData::SceneData",
@@ -12218,6 +12224,12 @@
     "signature": "extern \"C\" void __fastcall fn_004A57F0(void* self, int edx_unused, DWORD value)",
     "summary": "Stores the single stack argument into two DWORD fields of self (+0x204 and +0x210); callee pops 4 bytes.",
     "lifted_path": "lifted/leaf/tiny_4A0000.cpp"
+  },
+  "0x004A5810": {
+    "name": "setInvertedFlagAndInnerPtr",
+    "signature": "void __thiscall fn_004A5810(void* thisPtr, uint8_t flag)",
+    "summary": "Stores inverted bit-0 flag at +0x200 and updates +0x204 from [this+0x258]-\u003e[+0x168]+4 if non-null",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
   "0x004A5850": {
     "name": "sub_004A5850",
