@@ -2241,3 +2241,22 @@ void __thiscall sub_004489A0(void* self, uint32_t nChar, uint32_t nRepCnt, uint3
     postMessage(hWnd, 0x100, static_cast<uintptr_t>(nChar), lParam);
 }
 } // namespace lift_004489A0
+
+// [0x0044C360] sub_0044C360 (53 bytes)
+namespace lift_0044C360 {
+// @name copyBackwardDwords
+// @summary Copies 32-bit elements backward from [first, last) to a destination ending at d_last.
+uintptr_t fn_0044C360(uintptr_t first, uintptr_t last, uintptr_t d_last) {
+    int32_t byte_count = (static_cast<int32_t>(last - first) >> 2) * 4;
+    uintptr_t result = d_last - static_cast<uintptr_t>(byte_count);
+    if (first != last) {
+        uintptr_t offset = d_last - last;
+        do {
+            uint32_t val = *reinterpret_cast<const uint32_t*>(last - 4);
+            last -= 4;
+            *reinterpret_cast<uint32_t*>(offset + last) = val;
+        } while (last != first);
+    }
+    return result;
+}
+} // namespace lift_0044C360

@@ -5128,6 +5128,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006B28A0 (GWCPropertyEditFeel::vfunc_6).",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044C360": {
+    "name": "copyBackwardDwords",
+    "signature": "uintptr_t fn_0044C360(uintptr_t first, uintptr_t last, uintptr_t d_last)",
+    "summary": "Copies 32-bit elements backward from [first, last) to a destination ending at d_last.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044C420": {
     "name": "ArrayDwordElementAddr",
     "signature": "uint32_t __stdcall ArrayDwordElementAddr(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t ecx_in)",

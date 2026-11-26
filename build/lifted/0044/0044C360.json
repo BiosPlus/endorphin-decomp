@@ -1,0 +1,13 @@
+{
+  "va": "0x0044C360",
+  "size": 53,
+  "orig_symbol": "sub_0044C360",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "copyBackwardDwords",
+  "signature": "uintptr_t fn_0044C360(uintptr_t first, uintptr_t last, uintptr_t d_last)",
+  "summary": "Copies 32-bit elements backward from [first, last) to a destination ending at d_last.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@medium",
+  "lifted_at": "2026-11-26T10:44:47Z"
+}
