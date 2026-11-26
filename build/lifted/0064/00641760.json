@@ -1,0 +1,40 @@
+{
+  "va": "0x00641760",
+  "size": 62,
+  "orig_symbol": "sub_00641760",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "ChainNode::DestroyChain",
+  "class": "ChainNode",
+  "signature": "void __thiscall fn_00641760(void* self, void* node)",
+  "summary": "Recursively processes a singly linked chain of nodes: recurses on each node's child, destroys its std::string, and calls ext_006A5C5C on it until a node with the stop flag set is reached.",
+  "fields": [
+    {
+      "class": "ChainNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "next"
+    },
+    {
+      "class": "ChainNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "child"
+    },
+    {
+      "class": "ChainNode",
+      "offset": "+0x10",
+      "type": "std::string",
+      "name": "str"
+    },
+    {
+      "class": "ChainNode",
+      "offset": "+0x2D",
+      "type": "uint8_t",
+      "name": "field_0x2D"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:00:40Z"
+}

@@ -8,9 +8,13 @@
 // Recovered field layout for ChainNode:
 namespace lifted_layout {
 struct ChainNode_Fields {
-    // +0x0   ChainNode*               next  (evidence: 0x005AE480)
-    // +0x8   ChainNode*               child  (evidence: 0x005AE480)
+    // +0x0   ChainNode*               next  (evidence: 0x005AE480) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    next  (evidence: 0x00641760) // CONFLICT: multiple definitions at +0x0
+    // +0x8   ChainNode*               child  (evidence: 0x005AE480) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    child  (evidence: 0x00641760) // CONFLICT: multiple definitions at +0x8
     // +0xC   std::string              name  (evidence: 0x005AE480)
-    // +0x2D  u8                       done  (evidence: 0x005AE480)
+    // +0x10  std::string              str  (evidence: 0x00641760)
+    // +0x2D  u8                       done  (evidence: 0x005AE480) // CONFLICT: multiple definitions at +0x2D
+    // +0x2D  uint8_t                  field_0x2D  (evidence: 0x00641760) // CONFLICT: multiple definitions at +0x2D
 };
 } // namespace lifted_layout

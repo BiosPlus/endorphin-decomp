@@ -2086,3 +2086,40 @@ void fn_006408F0(void* self) {
     }
 }
 } // namespace lift_006408F0
+
+// [0x00641760] sub_00641760 (62 bytes)
+namespace lift_00641760 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* obj);
+extern int mem_00924FF4;
+
+// @name ChainNode::DestroyChain
+// @class ChainNode
+// @summary Recursively processes a singly linked chain of nodes: recurses on each node's child, destroys its std::string, and calls ext_006A5C5C on it until a node with the stop flag set is reached.
+// @field ChainNode +0x00 void* next
+// @field ChainNode +0x08 void* child
+// @field ChainNode +0x10 std::string str
+// @field ChainNode +0x2D uint8_t field_0x2D
+void __thiscall fn_00641760(void* self, void* node) {
+    using StringDtorFn = void(__thiscall*)(void*);
+    // Slot mem_00924FF4 holds the address of std::basic_string<char>::~basic_string.
+    auto string_dtor = reinterpret_cast<StringDtorFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+
+    uint8_t* cur = static_cast<uint8_t*>(node);
+    if (lift_field<uint8_t>(cur, 0x2D) != 0) {
+        return;
+    }
+
+    for (;;) {
+        fn_00641760(self, lift_field<void*>(cur, 0x08));
+        uint8_t* next = static_cast<uint8_t*>(lift_field<void*>(cur, 0x00));
+        string_dtor(cur + 0x10);
+        ext_006A5C5C(cur);
+        if (lift_field<uint8_t>(next, 0x2D) != 0) {
+            return;
+        }
+        cur = next;
+    }
+}
+} // namespace lift_00641760

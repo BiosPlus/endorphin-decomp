@@ -42911,6 +42911,13 @@
     "summary": "Serializes the XML declaration header using version/encoding strings, appends a newline, and delegates to NodeContainer::vfunc_5.",
     "lifted_path": "lifted/AdvXMLParser/Document.cpp"
   },
+  "0x00641760": {
+    "name": "ChainNode::DestroyChain",
+    "class": "ChainNode",
+    "signature": "void __thiscall fn_00641760(void* self, void* node)",
+    "summary": "Recursively processes a singly linked chain of nodes: recurses on each node's child, destroys its std::string, and calls ext_006A5C5C on it until a node with the stop flag set is reached.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00641E90": {
     "name": "trimWhitespace",
     "signature": "void __cdecl sub_00641E90(void* str)",
