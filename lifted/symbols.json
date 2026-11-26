@@ -8276,6 +8276,12 @@
     "summary": "Loads the 32-bit value at [ecx+0x00] and passes it to thunk_MFC80_ord_764.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046FAD0": {
+    "name": "sub_0046FAD0",
+    "signature": "void __thiscall sub_0046FAD0(void* self)",
+    "summary": "Destroys two std::string members at +0x1c and +0x00",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046FB80": {
     "name": "sub_0046FB80",
     "class": "Unknown",
@@ -70024,6 +70030,12 @@
     "signature": "void fn_007ADFC0(void)",
     "summary": "Auto-lifted identical-shape clone of 0x006EA820 (sub_006EA820_initGlobalTriple).",
     "lifted_path": "lifted/clones/auto_clones_7A0000.cpp"
+  },
+  "0x007AE020": {
+    "name": "sub_007AE020",
+    "signature": "void __fastcall sub_007AE020(void* self)",
+    "summary": "Releases up to 7 owned objects flagged in a parallel byte array and frees both arrays.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
   "0x007AE070": {
     "name": "sub_007AE070",

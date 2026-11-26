@@ -1696,3 +1696,19 @@ void __thiscall fn_00460540(void* self, const LiftPoint* pt) {
     ext_006A5E5A(self, x, y, nWidth, nHeight, 1);
 }
 } // namespace lift_00460540
+
+// [0x0046FAD0]
+namespace lift_0046FAD0 {
+extern void (*mem_00924FF4)(void*);
+
+// @name sub_0046FAD0
+// @summary Destroys two std::string members at +0x1c and +0x00
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1c std::string field_0x1c
+
+void __thiscall sub_0046FAD0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    mem_00924FF4(base + 0x1c);
+    mem_00924FF4(base);
+}
+} // namespace lift_0046FAD0

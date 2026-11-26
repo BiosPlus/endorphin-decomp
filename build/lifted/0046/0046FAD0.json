@@ -1,0 +1,27 @@
+{
+  "va": "0x0046FAD0",
+  "size": 78,
+  "orig_symbol": "sub_0046FAD0",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "sub_0046FAD0",
+  "signature": "void __thiscall sub_0046FAD0(void* self)",
+  "summary": "Destroys two std::string members at +0x1c and +0x00",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:30:34Z"
+}
