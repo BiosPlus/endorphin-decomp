@@ -1002,3 +1002,20 @@ extern void __thiscall fn_00630510(void* self, const float* vec) {
     lift_field<uint8_t>(self, 0xF6) = 1;
 }
 } // namespace lift_00630510
+
+// [0x0063EA80]
+namespace lift_0063EA80 {
+// @name DestroyStringAt4AndResetVtable
+// @summary Destroys the std::string at offset +0x04 and resets the vtable via sub_0063E970.
+// @field Unknown +0x04 std::string field_0x04
+
+extern void (__thiscall* mem_00924FF4)(void* str);
+void __fastcall ext_0063E970(void* self);
+void __fastcall ext_0063E0F0(void* self);
+
+extern void __fastcall fn_0063EA80(void* self) {
+    (void)ext_0063E0F0; // SEH unwind handler at 0x008AED18
+    mem_00924FF4(static_cast<uint8_t*>(self) + 0x04);
+    ext_0063E970(self);
+}
+} // namespace lift_0063EA80

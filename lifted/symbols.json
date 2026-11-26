@@ -557,6 +557,12 @@
     "summary": "If the slot at +0x564 is set, computes (end - begin) / 88 from +0x568 and +0x564 and compares the stored index at +0x684 against that count minus one; if not at the last index it increments the index and returns true, otherwise returns false.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x004053C0": {
+    "name": "getVectorElementAtIndex",
+    "signature": "uint32_t __thiscall fn_004053C0(void* self)",
+    "summary": "Bounds-checked lookup returning the first dword of an 88-byte element in a vector at +0x564 using index at +0x684.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00406090": {
     "name": "std::copy\u003cstd::string*, std::string*\u003e",
     "class": "std::copy\u003cstd::string*, std",
@@ -14543,6 +14549,12 @@
     "signature": "extern \"C\" void __fastcall fn_004C28B0(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::TriggeredEventData::vfunc_21.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x004C4390": {
+    "name": "sub_004C4390",
+    "signature": "void* sub_004C4390(void* self)",
+    "summary": "Constructor that initializes a std::string base, zeroes byte at +0x1c, and clears the string.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
   "0x004C4650": {
     "name": "setTreeNodesField",
@@ -42925,6 +42937,12 @@
     "name": "sub_0063EA50",
     "signature": "BOOLEAN fn_0063EA50(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00480280 (IsEmptyDwordRange_00480280).",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
+  "0x0063EA80": {
+    "name": "DestroyStringAt4AndResetVtable",
+    "signature": "extern \"C\" void __fastcall fn_0063EA80(void* self)",
+    "summary": "Destroys the std::string at offset +0x04 and resets the vtable via sub_0063E970.",
     "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
   "0x0063EB30": {
