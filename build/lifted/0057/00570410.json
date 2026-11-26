@@ -1,0 +1,22 @@
+{
+  "va": "0x00570410",
+  "size": 74,
+  "orig_symbol": "sub_00570410",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "ReadScaledAnglePair",
+  "class": "AngleScaler",
+  "signature": "void fn_00570410(void* self, void* out, void* in)",
+  "summary": "Reads two floats from a stream, scales each through this+0x5C AngleScaler, and stores each as a flag byte plus scaled float in an out array (elements 0x18 apart, filled high-index first).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "AngleScaler",
+      "name": "field_0x5c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:21:26Z"
+}

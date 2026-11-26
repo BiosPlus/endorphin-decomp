@@ -793,6 +793,7 @@ struct Unknown_Fields {
     // +0x5C  std::uint32_t            field_0x5C  (evidence: 0x005DA110, 0x005DA150) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  uint32_t                 field_0x5C  (evidence: 0x00410290, 0x006BA780, 0x00790DC0, 0x00790E20) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  void*                    field_0x5C  (evidence: 0x00648800) // CONFLICT: multiple definitions at +0x5C
+    // +0x5C  AngleScaler              field_0x5c  (evidence: 0x00570410) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  DWORD                    field_0x5c  (evidence: 0x006BA780) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  uint32_t                 field_0x5c  (evidence: 0x004030F0, 0x00404720, 0x004ED750, 0x00647F00, 0x00647F30, 0x006481C0, 0x006481E0, 0x00648480, 0x00648A20, 0x007BEDA0) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  void*                    field_0x5c  (evidence: 0x00441C10, 0x00448420, 0x006B8B20, 0x007BF2B0) // CONFLICT: multiple definitions at +0x5C

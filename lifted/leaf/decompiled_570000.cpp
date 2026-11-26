@@ -1538,3 +1538,30 @@ void* fn_0057D7F0(void* self) {
     return self;
 }
 } // namespace lift_0057D7F0
+
+// [0x00570410] sub_00570410 (74 bytes)
+namespace lift_00570410 {
+// Known callee 0x00553170: AngleScaler::ScaleByUnitMode (Scales a float angle by a unit-mode selector: 0 = degrees to radians, 2 = turns to radians (2*pi), otherwise identity.)
+extern float ext_00553170(void* self, float value);
+// IAT slot for MSVCP80 basic_istream<char>::operator>>(float&) (__thiscall).
+extern void* mem_009250F0;
+
+// @name ReadScaledAnglePair
+// @class AngleScaler
+// @summary Reads two floats from a stream, scales each through this+0x5C AngleScaler, and stores each as a flag byte plus scaled float in an out array (elements 0x18 apart, filled high-index first).
+// @field Unknown +0x5C AngleScaler field_0x5c
+void fn_00570410(void* self, void* out, void* in) {
+    using ReadFloatFn = void* (__thiscall*)(void* stream, float& value);
+    ReadFloatFn read_float = reinterpret_cast<ReadFloatFn>(mem_009250F0);
+    void* scaler = static_cast<uint8_t*>(self) + 0x5C;
+
+    // Two iterations: i = 1 then i = 0.
+    for (int i = 1; i >= 0; --i) {
+        float raw = 0.0f;
+        read_float(in, raw);
+        lift_field<uint8_t>(out, 0x04 + 0x18 * i) = 1;
+        float scaled = ext_00553170(scaler, raw);
+        lift_field<float>(out, 0x08 + 0x18 * i) = scaled;
+    }
+}
+} // namespace lift_00570410

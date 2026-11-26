@@ -394,6 +394,12 @@
     "summary": "Copy constructor for a std::logic_error subclass, calling base copy constructor and setting vtable.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x004026E0": {
+    "name": "std_vector_string_Tidy",
+    "signature": "void __thiscall fn_004026E0(void* this_ptr)",
+    "summary": "Destroys all std::string elements in a vector, frees the buffer, and resets pointers to null.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x004028B0": {
     "name": "sub_004028B0",
     "signature": "void fn_004028B0(void* self)",
@@ -26056,6 +26062,13 @@
     "name": "readTokenFromLine",
     "signature": "bool __thiscall fn_005703C0(void* self, void* stream)",
     "summary": "Skips horizontal whitespace on an input stream and reads a string token into this+0x46c, returning false on newline.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x00570410": {
+    "name": "ReadScaledAnglePair",
+    "class": "AngleScaler",
+    "signature": "void fn_00570410(void* self, void* out, void* in)",
+    "summary": "Reads two floats from a stream, scales each through this+0x5C AngleScaler, and stores each as a flag byte plus scaled float in an out array (elements 0x18 apart, filled high-index first).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
   "0x00571DF0": {
