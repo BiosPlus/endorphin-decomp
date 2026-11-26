@@ -1288,3 +1288,63 @@ extern void __fastcall fn_005457B0(void* self)
     ext_00543320(self);
 }
 } // namespace lift_005457B0
+
+// [0x005432A0]
+namespace lift_005432A0 {
+extern uintptr_t mem_00925134;
+extern void __thiscall ext_005434E0(void* self, uint32_t arg0);
+
+// @name sub_005432A0
+// @summary Iterates over a vector of pointers at +0x4 and calls sub_005434E0 on each element with arg0
+// @field Unknown +0x08 uint32_t* field_0x08
+// @field Unknown +0x0C uint32_t* field_0x0C
+void __thiscall sub_005432A0(void* self, uint32_t arg0) {
+    auto invalid_param = reinterpret_cast<void (*)()>(mem_00925134);
+    auto* vec = reinterpret_cast<uint8_t*>(self) + 0x4;
+    uint32_t* it = *reinterpret_cast<uint32_t**>(reinterpret_cast<uint8_t*>(self) + 0x8);
+    if (it > *reinterpret_cast<uint32_t**>(reinterpret_cast<uint8_t*>(self) + 0xc)) {
+        invalid_param();
+    }
+
+    for (;;) {
+        uint32_t* end = *reinterpret_cast<uint32_t**>(vec + 0x8);
+        if (*reinterpret_cast<uint32_t**>(vec + 0x4) > end) {
+            invalid_param();
+        }
+        if (vec == nullptr) {
+            invalid_param();
+        }
+        if (it == end) {
+            break;
+        }
+        if (it >= *reinterpret_cast<uint32_t**>(vec + 0x8)) {
+            invalid_param();
+        }
+        ext_005434E0(reinterpret_cast<void*>(*it), arg0);
+        if (it >= *reinterpret_cast<uint32_t**>(vec + 0x8)) {
+            invalid_param();
+        }
+        ++it;
+    }
+}
+} // namespace lift_005432A0
+
+// [0x005404B0]
+namespace lift_005404B0 {
+// @name copyFloat14
+// @summary Copy 14 floats (56 bytes) from src to this and return this.
+
+extern void __thiscall ext_005D9EF0(void* self);
+
+void* __thiscall fn_005404B0(void* self, const void* src) {
+    if (false) {
+        ext_005D9EF0(self);
+    }
+    auto* dst = static_cast<float*>(self);
+    const auto* s = static_cast<const float*>(src);
+    for (int i = 0; i < 14; ++i) {
+        dst[i] = s[i];
+    }
+    return self;
+}
+} // namespace lift_005404B0
