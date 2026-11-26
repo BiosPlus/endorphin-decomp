@@ -1458,3 +1458,31 @@ void __fastcall fn_006B6270(void* self, void* edx, int arg)
 }
 } // namespace lift_00454BE0
 } // namespace lift_006B6270
+
+// [0x006B8B20] sub_006B8B20 (44 bytes)
+namespace lift_006B8B20 {
+// Known callee 0x006A5EA8: thunk_MFC80_ord_1903 (IAT jump thunk forwarding to MFC80!ord_1903.)
+// Entered with `this` in ECX and no stack arguments.
+extern void __thiscall ext_006A5EA8(void* self);
+
+// IAT slot for USER32!IsWindow at 0x0092561C (stdcall, one HWND argument).
+using lift_IsWindow_t = BOOL(__stdcall*)(HWND);
+extern lift_IsWindow_t mem_0092561C;
+
+// @name Unknown::storeWindowPtrIfValid_006B8B20
+// @class Unknown
+// @summary Stores *src into this+0x5C; if that pointer is non-null and IsWindow(ptr->+0x20) is false, clears this+0x5C to 0. Then calls ext_006A5EA8 with this in ECX.
+// @field Unknown +0x5C void* field_0x5c
+// @field Unknown +0x20 HWND field_0x20
+void __thiscall fn_006B8B20(void* self, void** src) {
+    void* const p = *src;
+    lift_field<void*>(self, 0x5C) = p;
+    if (p != nullptr) {
+        HWND const hwnd = lift_field<HWND>(p, 0x20);
+        if (mem_0092561C(hwnd) == 0) {
+            lift_field<void*>(self, 0x5C) = nullptr;
+        }
+    }
+    ext_006A5EA8(self);
+}
+} // namespace lift_006B8B20

@@ -1,0 +1,28 @@
+{
+  "va": "0x006B8B20",
+  "size": 44,
+  "orig_symbol": "sub_006B8B20",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::storeWindowPtrIfValid_006B8B20",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_006B8B20(void* self, void** src)",
+  "summary": "Stores *src into this+0x5C; if that pointer is non-null and IsWindow(ptr-\u003e+0x20) is false, clears this+0x5C to 0. Then calls ext_006A5EA8 with this in ECX.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "void*",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:27:22Z"
+}

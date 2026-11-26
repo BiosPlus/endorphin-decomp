@@ -55788,6 +55788,13 @@
     "summary": "Tail-forwards to the MFC80 ord_1903 thunk, then returns popping 12 bytes of stdcall args.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006B8B20": {
+    "name": "Unknown::storeWindowPtrIfValid_006B8B20",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_006B8B20(void* self, void** src)",
+    "summary": "Stores *src into this+0x5C; if that pointer is non-null and IsWindow(ptr-\u003e+0x20) is false, clears this+0x5C to 0. Then calls ext_006A5EA8 with this in ECX.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B8BC0": {
     "name": "NMCAutoCompleteEdit::vfunc_1",
     "class": "NMCAutoCompleteEdit",
