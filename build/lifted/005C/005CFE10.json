@@ -1,0 +1,27 @@
+{
+  "va": "0x005CFE10",
+  "size": 51,
+  "orig_symbol": "sub_005CFE10",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "set_field_0x1f2",
+  "signature": "void __thiscall fn_005CFE10(void* self, uint32_t arg1)",
+  "summary": "Sets byte field at +0x1f2 and forwards the value to vtable+0x4 of subobject at +0x2c4 if non-null",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x1F2",
+      "type": "uint8_t",
+      "name": "field_0x1f2"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x2C4",
+      "type": "void*",
+      "name": "field_0x2c4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T10:42:08Z"
+}

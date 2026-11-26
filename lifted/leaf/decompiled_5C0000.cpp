@@ -1448,3 +1448,22 @@ void* fn_005C38F0(void* self) {
 }
 } // namespace lift_005C3970
 } // namespace lift_005C38F0
+
+// [0x005CFE10]
+namespace lift_005CFE10 {
+// @name set_field_0x1f2
+// @summary Sets byte field at +0x1f2 and forwards the value to vtable+0x4 of subobject at +0x2c4 if non-null
+// @field unknown +0x1f2 uint8_t field_0x1f2
+// @field unknown +0x2c4 void* field_0x2c4
+
+
+void __thiscall fn_005CFE10(void* self, uint32_t arg1) {
+    void* obj = lift_field<void*>(self, 0x2c4);
+    if (obj != nullptr) {
+        uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(obj);
+        using Fn = void(__thiscall*)(void*, uint32_t);
+        reinterpret_cast<Fn>(vtable[1])(obj, arg1);
+    }
+    lift_field<uint8_t>(self, 0x1f2) = static_cast<uint8_t>(arg1);
+}
+} // namespace lift_005CFE10

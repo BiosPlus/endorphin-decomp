@@ -79,10 +79,12 @@ struct unknown_Fields {
     // +0x1CC float                    field_0x1cc  (evidence: 0x007C2E50, 0x007C6110)
     // +0x1D0 float                    field_0x1D0  (evidence: 0x0046FC10)
     // +0x1E0 std::string              field_0x1e0  (evidence: 0x00441C10, 0x004499D0)
+    // +0x1F2 uint8_t                  field_0x1f2  (evidence: 0x005CFE10)
     // +0x26C void*                    field_0x26C  (evidence: 0x0046FC10)
     // +0x270 double                   field_0x270  (evidence: 0x007155B0)
     // +0x278 double                   field_0x278  (evidence: 0x007155B0)
     // +0x280 double                   field_0x280  (evidence: 0x007155B0)
+    // +0x2C4 void*                    field_0x2c4  (evidence: 0x005CFE10)
     // +0x458 std::string              field_0x458  (evidence: 0x00410390)
 };
 } // namespace lifted_layout
