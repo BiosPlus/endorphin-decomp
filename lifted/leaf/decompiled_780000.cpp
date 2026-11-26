@@ -1624,3 +1624,33 @@ bool FileFinder_FindNext(uint8_t* self) {
     return found;
 }
 } // namespace lift_00788DF0
+
+// [0x0078AAC0]
+namespace lift_0078AAC0 {
+// @name sub_0078AAC0
+// @summary Data/padding bytes at 0x0078AAC0 disassembled as a sequence of add instructions
+void sub_0078AAC0(void) {
+    uint32_t eax = 0;
+    uint32_t edx = 0;
+    uint32_t ebx_storage = 0;
+    uint8_t* ebx = reinterpret_cast<uint8_t*>(&ebx_storage);
+
+    *ebx += static_cast<uint8_t>(eax);
+    eax += *reinterpret_cast<uint32_t*>(ebx);
+    eax += *reinterpret_cast<uint32_t*>(ebx);
+    eax += *reinterpret_cast<uint32_t*>(ebx);
+    eax += *reinterpret_cast<uint32_t*>(ebx);
+    eax += *reinterpret_cast<uint32_t*>(ebx);
+    *ebx += static_cast<uint8_t>(eax);
+    eax += *reinterpret_cast<uint32_t*>(ebx);
+    eax += *reinterpret_cast<uint32_t*>(ebx);
+    eax += *reinterpret_cast<uint32_t*>(ebx);
+    eax += *reinterpret_cast<uint32_t*>(ebx);
+    eax += *reinterpret_cast<uint32_t*>(ebx);
+    eax += *reinterpret_cast<uint32_t*>(ebx);
+    *reinterpret_cast<uint32_t*>(ebx) += eax;
+    eax += *reinterpret_cast<uint32_t*>(ebx);
+    eax += *reinterpret_cast<uint32_t*>(ebx);
+    (void)edx;
+}
+} // namespace lift_0078AAC0

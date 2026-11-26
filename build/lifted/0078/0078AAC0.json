@@ -1,0 +1,13 @@
+{
+  "va": "0x0078AAC0",
+  "size": 48,
+  "orig_symbol": "sub_0078AAC0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "sub_0078AAC0",
+  "signature": "void sub_0078AAC0(void)",
+  "summary": "Data/padding bytes at 0x0078AAC0 disassembled as a sequence of add instructions",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T10:41:20Z"
+}
