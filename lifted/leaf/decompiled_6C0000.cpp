@@ -2089,3 +2089,26 @@ void* fn_006C3180(void* self) {
     return nullptr;
 }
 } // namespace lift_006C3180
+
+// [0x006C31B0] sub_006C31B0 (48 bytes)
+namespace lift_006C31B0 {
+// @name Unknown::GetSubobject158IfVirtualReturns8
+// @class Unknown
+// @summary Calls vtable slot 0 on the object at +0x158; if it returns 8, returns that object pointer, else 0.
+// @field Unknown +0x158 void* field_0x158
+uint32_t fn_006C31B0(void* self) {
+    using VSlot0Fn = uint32_t (*)(void*);
+
+    void* obj = lift_field<void*>(self, 0x158);
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        VSlot0Fn slot0 = reinterpret_cast<VSlot0Fn>(vtbl[0]);
+        uint32_t result = slot0(obj);
+        if (result == 8) {
+            obj = lift_field<void*>(self, 0x158);
+            return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
+        }
+    }
+    return 0;
+}
+} // namespace lift_006C31B0

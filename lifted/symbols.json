@@ -56761,6 +56761,13 @@
     "summary": "Returns the pointer at +0x158 if its vtable slot 0 returns 7, otherwise nullptr.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C31B0": {
+    "name": "Unknown::GetSubobject158IfVirtualReturns8",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006C31B0(void* self)",
+    "summary": "Calls vtable slot 0 on the object at +0x158; if it returns 8, returns that object pointer, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C31E0": {
     "name": "sub_006C31E0",
     "signature": "uint32_t sub_006C31E0(uint32_t ecx)",

@@ -1,0 +1,22 @@
+{
+  "va": "0x006C31B0",
+  "size": 48,
+  "orig_symbol": "sub_006C31B0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::GetSubobject158IfVirtualReturns8",
+  "class": "Unknown",
+  "signature": "uint32_t fn_006C31B0(void* self)",
+  "summary": "Calls vtable slot 0 on the object at +0x158; if it returns 8, returns that object pointer, else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "void*",
+      "name": "field_0x158"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:37:24Z"
+}
