@@ -2025,3 +2025,30 @@ int32_t __thiscall EntryArray::findLastByKey(void* key) {
     return -1;
 }
 } // namespace lift_006FB550
+
+// [0x006FBCE0]
+namespace lift_006FBCE0 {
+extern void __thiscall ext_006FBC50(void* this_ptr, void* item);
+
+// @name EntryTable::releaseMatchingEntries
+// @class EntryTable
+// @summary Walks entries from last to first; for each entry whose target's key matches, calls sub_006FBC50 on target's payload.
+// @field EntryTable +0x10 uint8_t* entries
+// @field EntryTable +0x14 int32_t baseIndex
+// @field EntryTable +0x18 int32_t count
+void __thiscall EntryTable_releaseMatchingEntries(void* self) {
+    uint8_t* s = (uint8_t*)self;
+    int32_t i = *(int32_t*)(s + 0x18) - 1;
+    while (i >= 0) {
+        uint8_t* e = *(uint8_t**)(s + 0x10) + (*(int32_t*)(s + 0x14) + i) * 12;
+        uint8_t* t = *(uint8_t**)(e + 4);
+        if (t && *(uint32_t*)t == *(uint32_t*)e) {
+            void* p = *(void**)(t + 4);
+            if (p) ext_006FBC50(self, p);
+        }
+        int32_t cnt = *(int32_t*)(s + 0x18);
+        if (i > cnt) i = cnt - 1;
+        else i--;
+    }
+}
+} // namespace lift_006FBCE0

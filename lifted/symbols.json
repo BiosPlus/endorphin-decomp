@@ -63317,6 +63317,13 @@
     "summary": "Searches 12-byte entries backward from start+count-1 to start for a matching (value,ptr) key; returns relative index or -1",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006FBCE0": {
+    "name": "EntryTable::releaseMatchingEntries",
+    "class": "EntryTable",
+    "signature": "void __thiscall EntryTable_releaseMatchingEntries(void* self)",
+    "summary": "Walks entries from last to first; for each entry whose target's key matches, calls sub_006FBC50 on target's payload.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FBD30": {
     "name": "Unknown::GetPayloadForSlotKey",
     "class": "Unknown",

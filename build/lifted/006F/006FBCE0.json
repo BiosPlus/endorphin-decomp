@@ -1,0 +1,34 @@
+{
+  "va": "0x006FBCE0",
+  "size": 80,
+  "orig_symbol": "sub_006FBCE0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "EntryTable::releaseMatchingEntries",
+  "class": "EntryTable",
+  "signature": "void __thiscall EntryTable_releaseMatchingEntries(void* self)",
+  "summary": "Walks entries from last to first; for each entry whose target's key matches, calls sub_006FBC50 on target's payload.",
+  "fields": [
+    {
+      "class": "EntryTable",
+      "offset": "+0x10",
+      "type": "uint8_t*",
+      "name": "entries"
+    },
+    {
+      "class": "EntryTable",
+      "offset": "+0x14",
+      "type": "int32_t",
+      "name": "baseIndex"
+    },
+    {
+      "class": "EntryTable",
+      "offset": "+0x18",
+      "type": "int32_t",
+      "name": "count"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-26T11:41:23Z"
+}
