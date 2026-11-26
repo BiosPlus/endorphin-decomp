@@ -1,0 +1,22 @@
+{
+  "va": "0x00553FF0",
+  "size": 77,
+  "orig_symbol": "sub_00553FF0",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "Unknown::destroyStringAt54AndMembers",
+  "class": "Unknown",
+  "signature": "void sub_00553FF0(void* self)",
+  "summary": "Destroys std::string at this+0x54, then calls ext_00663060 to destroy the remaining string members.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "std::string",
+      "name": "field_0x54"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:28:43Z"
+}

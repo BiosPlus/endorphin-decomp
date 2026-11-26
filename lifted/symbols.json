@@ -25393,6 +25393,13 @@
     "summary": "Returns 0 if field +0x04 is zero; otherwise returns (field +0x08 - field +0x04) / 160 using a 0x66666667 magic-multiply with sign fix-up.",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x00553FF0": {
+    "name": "Unknown::destroyStringAt54AndMembers",
+    "class": "Unknown",
+    "signature": "void sub_00553FF0(void* self)",
+    "summary": "Destroys std::string at this+0x54, then calls ext_00663060 to destroy the remaining string members.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00554260": {
     "name": "Matrix3x3::transposeInPlace",
     "class": "Matrix3x3",

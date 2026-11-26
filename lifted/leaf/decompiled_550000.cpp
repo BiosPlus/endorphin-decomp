@@ -1566,3 +1566,23 @@ void fn_0055B880(void* self, uint32_t flag) {
 }
 } // namespace lift_005597C0
 } // namespace lift_0055B880
+
+// [0x00553FF0]
+namespace lift_00553FF0 {
+// @name Unknown::destroyStringAt54AndMembers
+// @class Unknown
+// @summary Destroys std::string at this+0x54, then calls ext_00663060 to destroy the remaining string members.
+// @field Unknown +0x54 std::string field_0x54
+
+// Original MSVC pointer to std::basic_string<char> destructor (IAT slot).
+extern void* mem_00924FF4;
+// Lifted callee: destroys std::string members at +0x38, +0x1c, +0x00.
+void ext_00663060(void* self);
+
+void sub_00553FF0(void* self) {
+    using StrDtor = void(__thiscall*)(void*);
+    auto strDtor = reinterpret_cast<StrDtor>(mem_00924FF4);
+    strDtor(reinterpret_cast<uint8_t*>(self) + 0x54);
+    ext_00663060(self);
+}
+} // namespace lift_00553FF0
