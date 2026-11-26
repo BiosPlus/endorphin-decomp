@@ -1876,3 +1876,27 @@ extern void fn_006812A0(uint8_t* begin, uint8_t* end) {
     }
 }
 } // namespace lift_006812A0
+
+// [0x006878E0]
+namespace lift_006878E0 {
+// @name fill_0x24_array
+// @summary Fills a range [begin, end) of 0x24-byte structs by copying fields and std::string at +0x08 from value
+// @field Element +0x00 uint32_t field_0x00
+// @field Element +0x04 uint8_t field_0x04
+// @field Element +0x08 std::string field_0x08
+
+
+extern void* (__thiscall *mem_00924FDC)(void* self, const void* rhs);
+
+void __cdecl sub_006878E0(uint8_t* begin, uint8_t* end, const uint8_t* value) {
+    if (begin == end) {
+        return;
+    }
+    const void* src_str = value + 0x08;
+    for (uint8_t* cur = begin; cur != end; cur += 0x24) {
+        *reinterpret_cast<uint32_t*>(cur) = *reinterpret_cast<const uint32_t*>(value);
+        cur[0x04] = value[0x04];
+        mem_00924FDC(cur + 0x08, src_str);
+    }
+}
+} // namespace lift_006878E0

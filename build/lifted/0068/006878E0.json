@@ -1,0 +1,33 @@
+{
+  "va": "0x006878E0",
+  "size": 55,
+  "orig_symbol": "sub_006878E0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "fill_0x24_array",
+  "signature": "void __cdecl sub_006878E0(uint8_t* begin, uint8_t* end, const uint8_t* value)",
+  "summary": "Fills a range [begin, end) of 0x24-byte structs by copying fields and std::string at +0x08 from value",
+  "fields": [
+    {
+      "class": "Element",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x8",
+      "type": "std::string",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T10:48:27Z"
+}
