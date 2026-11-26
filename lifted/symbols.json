@@ -71761,6 +71761,12 @@
     "summary": "Calls KERNEL32!InitializeCriticalSection on the global CRITICAL_SECTION at mem_00B73C58, then sets the global flag mem_00B73C80 to 1.",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x0080AC00": {
+    "name": "ReleaseGlobalCriticalSectionChain_0080AC00",
+    "signature": "void fn_0080AC00()",
+    "summary": "Calls ReleaseGlobalCriticalSection, then if the global CS init flag is still set, deletes the global CRITICAL_SECTION through the KERNEL32!DeleteCriticalSection IAT slot and clears the flag.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080AC30": {
     "name": "ReleaseGlobalCriticalSection",
     "signature": "extern \"C\" DWORD mem_00B73C84;   // global init flag (nonzero = CS initialized) extern \"C\" DWORD mem_00B73C40;   // global CRITICAL_SECTION object extern \"C\" DWORD mem_009242E4;   // IAT slot holding KERNEL32!DeleteCriticalSection void fn_0080AC30()",

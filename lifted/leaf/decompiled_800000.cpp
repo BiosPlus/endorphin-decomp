@@ -1000,3 +1000,26 @@ int32_t __cdecl sub_0080EBD0(int8_t ch) {
     return mem_0080EC00[idx] == 0 ? 1 : 0;
 }
 } // namespace lift_0080EBD0
+
+// [0x0080AC00] sub_0080AC00 (47 bytes)
+namespace lift_0080AC00 {
+// Known callee 0x0080AC30: ReleaseGlobalCriticalSection (If the global init flag is set, deletes the global CRITICAL_SECTION and clears the flag.)
+extern void ext_0080AC30();
+extern int mem_00B73C80;
+extern int mem_00B73C58;
+extern int mem_009242E4;
+
+// @name ReleaseGlobalCriticalSectionChain_0080AC00
+// @summary Calls ReleaseGlobalCriticalSection, then if the global CS init flag is still set, deletes the global CRITICAL_SECTION through the KERNEL32!DeleteCriticalSection IAT slot and clears the flag.
+void fn_0080AC00() {
+    ext_0080AC30();
+
+    if (mem_00B73C80 != 0) {
+        // call dword ptr [0x9242e4] -> KERNEL32!DeleteCriticalSection(&mem_00B73C58)
+        auto deleteCriticalSection =
+            reinterpret_cast<void(__stdcall*)(void*)>(static_cast<uintptr_t>(mem_009242E4));
+        deleteCriticalSection(reinterpret_cast<void*>(&mem_00B73C58));
+        mem_00B73C80 = 0;
+    }
+}
+} // namespace lift_0080AC00
