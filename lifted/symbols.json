@@ -18478,6 +18478,13 @@
     "summary": "Returns true when this mode's virtual check (slot 39) passes and the object obtained via slot 45 of the chain at +0x8 -\u003e +0x14 -\u003e +0x30 has field +0x38 equal to 6.",
     "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
   },
+  "0x004FA170": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_106",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "bool __thiscall fn_004FA170(void* self)",
+    "summary": "Checks whether the vector at +0x3CC of the nested object is non-empty.",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
   "0x004FA1B0": {
     "name": "VMCSModes::DefaultImplementation::vfunc_136",
     "class": "VMCSModes::DefaultImplementation",
@@ -73219,6 +73226,12 @@
     "signature": "void fn_0086B200(void* self)",
     "summary": "Zeroes five consecutive DWORD slots starting at the target buffer.",
     "lifted_path": "lifted/leaf/tiny_860000.cpp"
+  },
+  "0x0086BF40": {
+    "name": "checkEmptyArrayAndFlag",
+    "signature": "extern \"C\" uint16_t sub_0086BF40(const uint8_t* obj)",
+    "summary": "Checks that all 19 dword entries at +0x00 are zero and field_0x4c equals 1",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
   "0x0086C014": {
     "name": "sub_0086C014",

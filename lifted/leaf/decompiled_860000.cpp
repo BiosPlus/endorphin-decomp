@@ -1034,3 +1034,27 @@ uint32_t ParseDecimalPrefix_00867360(const char* s) {
     return result;
 }
 } // namespace lift_00867360
+
+// [0x0086BF40]
+namespace lift_0086BF40 {
+// @name checkEmptyArrayAndFlag
+// @summary Checks that all 19 dword entries at +0x00 are zero and field_0x4c equals 1
+// @field Unknown +0x00 uint32_t[19] entries
+// @field Unknown +0x4c uint32_t flag
+
+
+extern uint16_t sub_0086BF40(const uint8_t* obj) {
+    uint32_t flag = lift_field<uint32_t>(obj, 0x4c);
+    if (flag > 1) {
+        return 0;
+    }
+
+    for (int16_t i = 0; i < 0x13; ++i) {
+        if (lift_field<uint32_t>(obj, static_cast<size_t>(i) * 4) != 0) {
+            return 0;
+        }
+    }
+
+    return flag == 1 ? 1 : 0;
+}
+} // namespace lift_0086BF40

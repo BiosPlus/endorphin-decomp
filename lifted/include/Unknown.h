@@ -30,6 +30,7 @@ struct Unknown_Fields {
     // +0x0   int                      count  (evidence: 0x007839B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 count_00  (evidence: 0x0078D6B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   float field_0x00 (read via both pointer args: ecx and eax)  (evidence: 0x007FC2B0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t[19]             entries  (evidence: 0x0086BF40) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* vptr (vtable pointer of both objects returned by ext_00465B40)  (evidence: 0x0042FC90) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD                    field_00  (evidence: 0x0057BB20, 0x006BA780, 0x006BDAF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint16_t                 field_00  (evidence: 0x007BD640) // CONFLICT: multiple definitions at +0x0
@@ -738,6 +739,7 @@ struct Unknown_Fields {
     // +0x4C  void*                    field_0x4c  (evidence: 0x00441020, 0x0044B5C0, 0x0046C2F0) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  void**                   field_0x4c  (evidence: 0x006BA780, 0x006BC6F0) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  uint8_t                  field_0x4c[0x11]  (evidence: 0x00602F70) // CONFLICT: multiple definitions at +0x4C
+    // +0x4C  uint32_t                 flag  (evidence: 0x0086BF40) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  void*                    ownedPtrA  (evidence: 0x00648790) // CONFLICT: multiple definitions at +0x4C
     // +0x4E  WORD                     field_0x4e  (evidence: 0x00798710) // CONFLICT: multiple definitions at +0x4E
     // +0x4E  uint16_t                 field_0x4e  (evidence: 0x007AF200) // CONFLICT: multiple definitions at +0x4E
