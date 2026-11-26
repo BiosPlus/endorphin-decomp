@@ -56070,6 +56070,13 @@
     "summary": "Takes the next index from the counter at +0x16C, passes the index to the object in arg2, then stores arg2 into the slot returned by the sub-object at +0xB0 for arg1.",
     "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
   },
+  "0x006A8840": {
+    "name": "Unknown::invokeSubobjectB0Thunk",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006A8840(void* self, uint32_t arg0)",
+    "summary": "Passes one stack argument through MFC80 ord_876 into the this+0xB0 subobject's ord_4066 thunk, then releases the temp via ord_578 and returns the out value.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006A88A0": {
     "name": "sub_006A88A0",
     "class": "(none)",

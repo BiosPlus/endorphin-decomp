@@ -814,3 +814,43 @@ void __thiscall sub_006AC2E0(void* self) {
     }
 }
 } // namespace lift_006AC2E0
+
+// [0x006A8840] sub_006A8840 (96 bytes)
+namespace lift_006A8840 {
+// Known callee 0x0087274E: thunk_MFC80_ord_4066 (IAT jump thunk forwarding to MFC80!ord_4066.)
+extern void ext_0087274E(void* self, uint32_t value, void* out);
+extern int mem_00924300;
+extern int mem_009242F4;
+
+// IAT-bound MFC80 entry points, called through their resolved pointers.
+// Original: call dword ptr [0x924300] (ord_876, ecx = object, returns eax)
+//           call dword ptr [0x9242f4] (ord_578, ecx = object, no stack args)
+using MfcOrd876Fn = uint32_t (__thiscall*)(void* self);
+using MfcOrd578Fn = void (__thiscall*)(void* self);
+// Original: push ecx(out slot); push eax(value); call thunk with ecx = this+0xB0
+
+// @name Unknown::invokeSubobjectB0Thunk
+// @class Unknown
+// @summary Passes one stack argument through MFC80 ord_876 into the this+0xB0 subobject's ord_4066 thunk, then releases the temp via ord_578 and returns the out value.
+// @field Unknown +0xB0 uint8_t[?] subobject (address-only; passed as this to ord_4066 thunk)
+uint32_t fn_006A8840(void* self, uint32_t arg0) {
+    // Temporary object lives in the (by-value) stack argument slot.
+    void* temp = &arg0;
+    uint32_t out_slot = 0;
+
+    // Initial value comes from MFC80 ord_876 (returned in eax).
+    auto ord876 = reinterpret_cast<MfcOrd876Fn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924300)));
+    uint32_t value = ord876(temp);
+
+    // Subobject at this+0xB0 receives (value, &out_slot).
+    ext_0087274E(static_cast<uint8_t*>(self) + 0xB0, value, &out_slot);
+
+    // Release temp via MFC80 ord_578.
+    auto ord578 = reinterpret_cast<MfcOrd578Fn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_009242F4)));
+    ord578(temp);
+
+    return out_slot;
+}
+} // namespace lift_006A8840

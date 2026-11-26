@@ -990,6 +990,7 @@ struct Unknown_Fields {
     // +0xB0  uint32_t                 field_0xb0  (evidence: 0x007DAD70) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  void*                    field_0xb0  (evidence: 0x007CA750, 0x007DB4C0) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  uint8_t field_0xb0 (embedded sub-object; its address is passed, not read)  (evidence: 0x006A8800) // CONFLICT: multiple definitions at +0xB0
+    // +0xB0  uint8_t[?] subobject (address-only; passed as this to ord_4066 thunk)  (evidence: 0x006A8840) // CONFLICT: multiple definitions at +0xB0
     // +0xB2  uint8_t                  field_0xb2  (evidence: 0x006872E0)
     // +0xB3  uint8_t                  field_0xb3  (evidence: 0x006872E0)
     // +0xB4  float                    field_0xB4  (evidence: 0x0063D970, 0x0063DDF0) // CONFLICT: multiple definitions at +0xB4
