@@ -55557,6 +55557,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x6C and forwards through mem_00924FD4.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006AF840": {
+    "name": "Unknown::AnyElementMatches",
+    "class": "Unknown",
+    "signature": "uint8_t fn_006AF840(void* self)",
+    "summary": "Scans the pointer array at +0x54 (count at +0x58); returns 1 on the first element for which ext_006AD090 returns nonzero, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006AF890": {
     "name": "GWCCategoryItem::vfunc_6",
     "class": "GWCCategoryItem",

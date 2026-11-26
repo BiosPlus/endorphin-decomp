@@ -1,0 +1,28 @@
+{
+  "va": "0x006AF840",
+  "size": 66,
+  "orig_symbol": "sub_006AF840",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "Unknown::AnyElementMatches",
+  "class": "Unknown",
+  "signature": "uint8_t fn_006AF840(void* self)",
+  "summary": "Scans the pointer array at +0x54 (count at +0x58); returns 1 on the first element for which ext_006AD090 returns nonzero, else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "void** elements (array of element pointers; each is passed as `this` to",
+      "name": "ext_006AD090)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "int32_t",
+      "name": "count"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:10:07Z"
+}

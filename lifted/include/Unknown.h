@@ -763,6 +763,7 @@ struct Unknown_Fields {
     // +0x51  uint8_t                  field_0x51  (evidence: 0x005E4D90)
     // +0x54  void**                   children_begin  (evidence: 0x00469530) // CONFLICT: multiple definitions at +0x54
     // +0x54  uint32_t field_0x54 (record field, per table element)  (evidence: 0x007CAF70, 0x007CCFE0) // CONFLICT: multiple definitions at +0x54
+    // +0x54  void** elements (array of element pointers; each is passed as `this` to ext_006AD090)  (evidence: 0x006AF840) // CONFLICT: multiple definitions at +0x54
     // +0x54  DWORD                    field_0x54  (evidence: 0x006B95F0, 0x006BA780) // CONFLICT: multiple definitions at +0x54
     // +0x54  field_0x54               field_0x54  (evidence: 0x00648790) // CONFLICT: multiple definitions at +0x54
     // +0x54  float                    field_0x54  (evidence: 0x0051CCC0, 0x006267B0, 0x007C9D80, 0x007CAF70, 0x007D48A0, 0x007D8470, 0x007D85B0) // CONFLICT: multiple definitions at +0x54
@@ -773,6 +774,7 @@ struct Unknown_Fields {
     // +0x58  DWORD                    buffer  (evidence: 0x007AEE00) // CONFLICT: multiple definitions at +0x58
     // +0x58  void* field_58 (embedded object's vptr; slot 0 is called)  (evidence: 0x00441C10, 0x0044C230) // CONFLICT: multiple definitions at +0x58
     // +0x58  void**                   children_end  (evidence: 0x00469530) // CONFLICT: multiple definitions at +0x58
+    // +0x58  int32_t                  count  (evidence: 0x006AF840) // CONFLICT: multiple definitions at +0x58
     // +0x58  Buffer                   field_0x58  (evidence: 0x0071E5F0) // CONFLICT: multiple definitions at +0x58
     // +0x58  DWORD                    field_0x58  (evidence: 0x006B95F0, 0x006BA780) // CONFLICT: multiple definitions at +0x58
     // +0x58  double                   field_0x58  (evidence: 0x004408B0, 0x00441020, 0x00441040, 0x00441C10, 0x0048FB10, 0x006E8780, 0x00766240) // CONFLICT: multiple definitions at +0x58

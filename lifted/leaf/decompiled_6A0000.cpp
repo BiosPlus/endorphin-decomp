@@ -650,3 +650,44 @@ uint32_t sub_006A7A90() {
     return 4;
 }
 } // namespace lift_006A7A90
+
+// [0x006AF840] sub_006AF840 (66 bytes)
+namespace lift_006AF840 {
+// Known callee 0x006AD090: sub_006AD090 (Auto-lifted identical-shape clone of 0x0046F910 (Unknown::ReadF8ObjectByte12C).)
+extern uint8_t ext_006AD090(void* self);
+// Known callee 0x006A60EE: thunk_MFC80_ord_1185 (IAT jump thunk forwarding to MFC80!ord_1185.)
+extern void ext_006A60EE(void);
+
+// @name Unknown::AnyElementMatches
+// @class Unknown
+// @summary Scans the pointer array at +0x54 (count at +0x58); returns 1 on the first element for which ext_006AD090 returns nonzero, else 0.
+// @field Unknown +0x54 void** elements (array of element pointers; each is passed as `this` to ext_006AD090)
+// @field Unknown +0x58 int32_t count
+uint8_t fn_006AF840(void* self) {
+    if (lift_field<int32_t>(self, 0x58) <= 0) {
+        return 0;
+    }
+
+    int32_t i = 0;
+    for (;;) {
+        // Range guard from the original loop head. Unreachable from the normal
+        // loop path (i starts at 0 and only advances while i < count), but kept
+        // to preserve the original control flow.
+        if (i < 0 || i >= lift_field<int32_t>(self, 0x58)) {
+            ext_006A60EE();
+            // The thunk was a tail jump; its return value is not modeled here.
+            return 0;
+        }
+
+        void* elem = lift_field<void**>(self, 0x54)[i];
+        if (ext_006AD090(elem) != 0) {
+            return 1;
+        }
+
+        ++i;
+        if (i >= lift_field<int32_t>(self, 0x58)) {
+            return 0;
+        }
+    }
+}
+} // namespace lift_006AF840
