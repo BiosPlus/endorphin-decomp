@@ -8,10 +8,14 @@
 // Recovered field layout for Stream:
 namespace lifted_layout {
 struct Stream_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x0085BF70)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x0085BF70)
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x00859E00) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    field_0x00  (evidence: 0x0085BF70) // CONFLICT: multiple definitions at +0x0
+    // +0x4   uint32_t                 size  (evidence: 0x00859E00)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x0085BF70) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 position  (evidence: 0x00859E00) // CONFLICT: multiple definitions at +0x8
     // +0x10  uint32_t                 field_0x10  (evidence: 0x0085BF70)
-    // +0x14  uint32_t                 field_0x14  (evidence: 0x0085BF70)
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x0085BF70) // CONFLICT: multiple definitions at +0x14
+    // +0x14  uint8_t                  flags  (evidence: 0x00859E00) // CONFLICT: multiple definitions at +0x14
     // +0x18  uint32_t                 field_0x18  (evidence: 0x0085BF70)
 };
 } // namespace lifted_layout

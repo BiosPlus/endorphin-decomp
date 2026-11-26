@@ -1105,3 +1105,39 @@ void* fn_0085BF70(void* src) {
     return obj;
 }
 } // namespace lift_0085BF70
+
+// [0x00859E00]
+namespace lift_00859E00 {
+// @name streamSeek
+// @summary Seeks within a stream or buffer object using mode 0 (relative to current), 1 (relative to end), or 2 (absolute), returning 0 on success or 0x1d if out of bounds.
+// @field Stream +0x00 uint32_t field_0x00
+// @field Stream +0x04 uint32_t size
+// @field Stream +0x08 uint32_t position
+// @field Stream +0x14 uint8_t flags
+
+
+uint32_t __cdecl sub_00859E00(void* ctx, uint32_t offset, uint32_t mode) {
+    uint8_t* base = static_cast<uint8_t*>(ctx);
+    uint8_t* size_obj = base;
+    if (lift_field<uint8_t>(base, 0x14) & 0x4) {
+        size_obj = reinterpret_cast<uint8_t*>(lift_field<uintptr_t>(base, 0x0));
+    }
+
+    uint32_t new_pos = 0xFFFFFFFFu;
+    if (mode == 0) {
+        new_pos = lift_field<uint32_t>(base, 0x8) + offset;
+    } else if (mode == 1) {
+        new_pos = lift_field<uint32_t>(size_obj, 0x4) - offset;
+    } else if (mode == 2) {
+        new_pos = offset;
+    }
+
+    uint32_t limit = lift_field<uint32_t>(size_obj, 0x4);
+    if (new_pos > limit) {
+        return 0x1Du;
+    }
+
+    lift_field<uint32_t>(base, 0x8) = new_pos;
+    return 0;
+}
+} // namespace lift_00859E00

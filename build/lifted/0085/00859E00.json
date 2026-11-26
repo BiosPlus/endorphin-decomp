@@ -1,0 +1,39 @@
+{
+  "va": "0x00859E00",
+  "size": 79,
+  "orig_symbol": "sub_00859E00",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "streamSeek",
+  "signature": "uint32_t __cdecl sub_00859E00(void* ctx, uint32_t offset, uint32_t mode)",
+  "summary": "Seeks within a stream or buffer object using mode 0 (relative to current), 1 (relative to end), or 2 (absolute), returning 0 on success or 0x1d if out of bounds.",
+  "fields": [
+    {
+      "class": "Stream",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Stream",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "size"
+    },
+    {
+      "class": "Stream",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "position"
+    },
+    {
+      "class": "Stream",
+      "offset": "+0x14",
+      "type": "uint8_t",
+      "name": "flags"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:31:45Z"
+}

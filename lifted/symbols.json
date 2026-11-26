@@ -73827,6 +73827,12 @@
     "summary": "Returns the byte at the cursor and advances it, or 0xFF00 when the cursor is at or past the buffer length. If flag bit 2 is set, the buffer header is reached through the pointer at +0x00.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x00859E00": {
+    "name": "streamSeek",
+    "signature": "uint32_t __cdecl sub_00859E00(void* ctx, uint32_t offset, uint32_t mode)",
+    "summary": "Seeks within a stream or buffer object using mode 0 (relative to current), 1 (relative to end), or 2 (absolute), returning 0 on success or 0x1d if out of bounds.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x00859E50": {
     "name": "ResolveDwordThroughFlaggedIndirection",
     "signature": "uint32_t ResolveDwordThroughFlaggedIndirection(void* self)",
