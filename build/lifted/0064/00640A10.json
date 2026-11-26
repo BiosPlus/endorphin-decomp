@@ -1,0 +1,22 @@
+{
+  "va": "0x00640A10",
+  "size": 60,
+  "orig_symbol": "AdvXMLParser::EntityRef::vfunc_5",
+  "src_path": "src/AdvXMLParser/EntityRef.cpp",
+  "lifted_path": "lifted/AdvXMLParser/EntityRef.cpp",
+  "name": "AdvXMLParser::EntityRef::vfunc_5",
+  "class": "AdvXMLParser::EntityRef",
+  "signature": "void __thiscall fn_00640A10(void* self, void* arg)",
+  "summary": "Appends '\u0026' + this-\u003efield_0x04 + ';' to the string at arg+0x08 and clears the byte flag at arg+0x11 before each append (builds an XML entity reference \"\u0026\u003ctext\u003e;\").",
+  "fields": [
+    {
+      "class": "AdvXMLParser::EntityRef",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:54:50Z"
+}

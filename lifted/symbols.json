@@ -42783,6 +42783,13 @@
     "summary": "If flag bit 0 is clear and the one-shot byte at +0x11 is clear, appends '\\n' to the std::string referenced at +0x08 and sets +0x11.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00640A10": {
+    "name": "AdvXMLParser::EntityRef::vfunc_5",
+    "class": "AdvXMLParser::EntityRef",
+    "signature": "void __thiscall fn_00640A10(void* self, void* arg)",
+    "summary": "Appends '\u0026' + this-\u003efield_0x04 + ';' to the string at arg+0x08 and clears the byte flag at arg+0x11 before each append (builds an XML entity reference \"\u0026\u003ctext\u003e;\").",
+    "lifted_path": "lifted/AdvXMLParser/EntityRef.cpp"
+  },
   "0x00640CB0": {
     "name": "Unknown::IncrementAndFlushOnce",
     "class": "Unknown",
