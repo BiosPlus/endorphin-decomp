@@ -9562,6 +9562,12 @@
     "summary": "Walks a linked node chain from node: recurses into each node's child at +0x08, destroys the node's string at +0x0C and calls ext_006A5C5C on it, following next pointers at +0x00 until a node with flag +0x69 set is reached.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x0048A120": {
+    "name": "ForEachEntryDispatchVirtual_0048A120",
+    "signature": "void fn_0048A120(uint8_t* begin, uint8_t* end)",
+    "summary": "Walks 8-byte entries from begin up to (not including) end; for each entry whose +4 pointer is non-null, calls that object's virtual slot 0x78 (index 30) with the entry address as its single argument.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048A9C0": {
     "name": "sub_0048A9C0",
     "signature": "DWORD* __thiscall fn_0048A9C0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",

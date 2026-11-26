@@ -15,6 +15,7 @@ struct Entry_Fields {
     // +0x4   DWORD                    field_0x04  (evidence: 0x005224E0, 0x0052F7D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              field_0x04  (evidence: 0x00427270) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x0067A670, 0x007F0B60) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_0x04  (evidence: 0x0048A120) // CONFLICT: multiple definitions at +0x4
     // +0x8   DWORD                    field_0x08  (evidence: 0x005224E0, 0x0052F7D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 field_0x08  (evidence: 0x0067A670, 0x007AF580, 0x007F0B60) // CONFLICT: multiple definitions at +0x8
     // +0xC   std::string              field_0x0C  (evidence: 0x005224E0, 0x0052F7D0) // CONFLICT: multiple definitions at +0xC

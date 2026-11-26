@@ -2024,3 +2024,23 @@ void replicateBlock64ToSlots_00481770(uint32_t dst, uint32_t count, uint32_t src
     }
 }
 } // namespace lift_00481770
+
+// [0x0048A120] sub_0048A120 (48 bytes)
+namespace lift_0048A120 {
+// @name ForEachEntryDispatchVirtual_0048A120
+// @summary Walks 8-byte entries from begin up to (not including) end; for each entry whose +4 pointer is non-null, calls that object's virtual slot 0x78 (index 30) with the entry address as its single argument.
+// @field Entry +0x04 void* field_0x04
+void fn_0048A120(uint8_t* begin, uint8_t* end) {
+    typedef void (__thiscall* VirtualFn)(void* self, void* entry);
+    for (uint8_t* entry = begin; entry != end; entry += 8) {
+        void* obj = *reinterpret_cast<void**>(entry + 0x4);
+        if (obj == nullptr) {
+            continue;
+        }
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        // 32-bit vtable: slot at +0x78 is index 30 (4-byte pointers).
+        VirtualFn fn = reinterpret_cast<VirtualFn>(vtbl[30]);
+        fn(obj, entry);
+    }
+}
+} // namespace lift_0048A120
