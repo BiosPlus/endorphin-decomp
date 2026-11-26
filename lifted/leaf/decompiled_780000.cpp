@@ -1496,3 +1496,26 @@ extern char* __thiscall sub_00783440(void* self, char* str, int num) {
     return mem_009252C0(str, num, file);
 }
 } // namespace lift_00783440
+
+// [0x00784720] sub_00784720 (48 bytes)
+namespace lift_00784720 {
+extern void __cdecl ext_009251D8(void* ptr);
+
+// @name StructReset_00784720
+// @class Unknown
+// @summary Frees the pointer at +0x00 (via MSVCR80 free) if non-null, clears it, then zeroes the dwords at +0x04 and +0x08 and the byte at +0x10.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 uint8_t field_0x10
+extern void __fastcall fn_00784720(void* self) {
+    void*& owned = lift_field<void*>(self, 0x00);
+    if (owned != nullptr) {
+        ext_009251D8(owned);
+        owned = nullptr;
+    }
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint8_t>(self, 0x10) = 0;
+}
+} // namespace lift_00784720

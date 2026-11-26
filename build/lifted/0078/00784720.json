@@ -1,0 +1,40 @@
+{
+  "va": "0x00784720",
+  "size": 48,
+  "orig_symbol": "sub_00784720",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "StructReset_00784720",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __fastcall fn_00784720(void* self)",
+  "summary": "Frees the pointer at +0x00 (via MSVCR80 free) if non-null, clears it, then zeroes the dwords at +0x04 and +0x08 and the byte at +0x10.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:38:54Z"
+}
