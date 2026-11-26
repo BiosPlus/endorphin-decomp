@@ -3339,6 +3339,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004332B0 (Unknown::forwardToSubobjectsVfunc14).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00433320": {
+    "name": "sub_00433320_dtor",
+    "signature": "void fn_00433320(void* self)",
+    "summary": "Destroys the std::string member at +0x04, then calls ext_0065C660 on self to store the field at +0x00.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00433990": {
     "name": "Unknown::CallbackAtField168IfNot2",
     "class": "Unknown",

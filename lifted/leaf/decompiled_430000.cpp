@@ -3644,3 +3644,22 @@ void fn_00430C00(void* self, void* cont) {
     next(cont, result);
 }
 } // namespace lift_00430C00
+
+// [0x00433320] sub_00433320 (77 bytes)
+namespace lift_00433320 {
+// Known callee 0x0065C660: sub_0065C660 (Stores address of mem_00928E8C into field at offset +0x0.)
+extern void ext_0065C660(void* self);
+// MSVCP80 basic_string<char> destructor, reached through an import slot.
+extern void* mem_00924FF4;
+
+// @name sub_00433320_dtor
+// @summary Destroys the std::string member at +0x04, then calls ext_0065C660 on self to store the field at +0x00.
+// @field field_0x00 +0x00 void* field_0x00
+// @field field_0x04 +0x04 std::string field_0x04
+void fn_00433320(void* self) {
+    using StringDtor = void (*)(void*);
+    auto string_dtor = reinterpret_cast<StringDtor>(mem_00924FF4);
+    string_dtor(static_cast<char*>(self) + 0x04);
+    ext_0065C660(self);
+}
+} // namespace lift_00433320
