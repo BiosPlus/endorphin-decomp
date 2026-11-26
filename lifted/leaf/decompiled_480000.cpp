@@ -2132,3 +2132,33 @@ void fn_00480CA0(uint32_t first, uint32_t last, const float* src) {
     } while (cur != last);
 }
 } // namespace lift_00480CA0
+
+// [0x0048D310] sub_0048D310 (63 bytes)
+namespace lift_0048D310 {
+// Known callee 0x0048CB80: UnknownElement::destroyRange (Walks [first, last) in 0x68-byte elements; for each, releases the pointer at +0x34 via ext_006A5C5C when non-null, zeroes +0x34..+0x3C, then destroys the std::string at +0x04 via ext_00519CE0.)
+// Caller pushes four dwords (first, last, self, self) and the callee does not clean up; the caller pops them.
+extern void __cdecl ext_0048CB80(uint32_t a1, uint32_t a2, uint32_t self, uint32_t a4);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void __cdecl ext_006A5C5C(uint32_t arg);
+
+// @name ElementRange::ReleaseAndReset
+// @class ElementRange
+// @summary Destroys the element range [+0x04, +0x08) via ext_0048CB80 (when the start is non-null), releases the handle at the range start via ext_006A5C5C, then zeroes the three range/header dwords at +0x04..+0x0C.
+// @field ElementRange +0x04 uint32_t field_0x04
+// @field ElementRange +0x08 uint32_t field_0x08
+// @field ElementRange +0x0C uint32_t field_0x0C
+void fn_0048D310(void* self) {
+    const uint32_t self_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+
+    if (lift_field<uint32_t>(self, 0x04) != 0) {
+        const uint32_t first = lift_field<uint32_t>(self, 0x04);
+        const uint32_t last = lift_field<uint32_t>(self, 0x08);
+        ext_0048CB80(first, last, self_addr, self_addr);
+        ext_006A5C5C(lift_field<uint32_t>(self, 0x04));
+    }
+
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+}
+} // namespace lift_0048D310

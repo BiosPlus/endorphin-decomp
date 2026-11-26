@@ -9928,6 +9928,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x0048D310": {
+    "name": "ElementRange::ReleaseAndReset",
+    "class": "ElementRange",
+    "signature": "void fn_0048D310(void* self)",
+    "summary": "Destroys the element range [+0x04, +0x08) via ext_0048CB80 (when the start is non-null), releases the handle at the range start via ext_006A5C5C, then zeroes the three range/header dwords at +0x04..+0x0C.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048D350": {
     "name": "sub_0048D350",
     "class": "Vector",
