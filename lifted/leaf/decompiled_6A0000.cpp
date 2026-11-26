@@ -749,3 +749,27 @@ extern void* __thiscall fn_006AD290(void* self) {
     return self;
 }
 } // namespace lift_006AD290
+
+// [0x006A9290]
+namespace lift_006A9290 {
+// @name sub_006A9290
+// @summary Checks MFC80_ord_1903 result and dispatches virtual method +0x13c on subobject at +0x108
+// @field Unknown +0x108 void* field_0x108
+
+extern int32_t __thiscall ext_006A5EA8(void* self);
+
+int32_t __thiscall fn_006A9290(void* self, void* /*unused*/) {
+    int32_t res = ext_006A5EA8(self);
+    if (res == -1) {
+        return res;
+    }
+
+    uint32_t local_buf[4] = {0, 0, 0, 0};
+    void* subobj = static_cast<uint8_t*>(self) + 0x108;
+    void* vtbl = *reinterpret_cast<void**>(subobj);
+    using Vfn = void(__thiscall*)(void*, uint32_t, uint32_t*, void*, uint32_t);
+    auto fn = *reinterpret_cast<Vfn*>(static_cast<uint8_t*>(vtbl) + 0x13c);
+    fn(subobj, 0x40000005u, local_buf, self, 0x3e8u);
+    return 0;
+}
+} // namespace lift_006A9290

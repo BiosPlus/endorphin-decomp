@@ -1111,6 +1111,7 @@ struct Unknown_Fields {
     // +0x108 void* field_0x108 (argument passed to ext_0043C8F0)  (evidence: 0x004332B0, 0x004332D0, 0x00648940, 0x00648A20) // CONFLICT: multiple definitions at +0x108
     // +0x108 double                   field_0x108  (evidence: 0x0043CA30) // CONFLICT: multiple definitions at +0x108
     // +0x108 uint32_t                 field_0x108  (evidence: 0x007155B0, 0x0071C700, 0x0077FFD0) // CONFLICT: multiple definitions at +0x108
+    // +0x108 void*                    field_0x108  (evidence: 0x006A9290) // CONFLICT: multiple definitions at +0x108
     // +0x10C uint32_t                 field_0x10C  (evidence: 0x007155B0, 0x0071C700) // CONFLICT: multiple definitions at +0x10C
     // +0x10C void*                    field_0x10C  (evidence: 0x004342E0) // CONFLICT: multiple definitions at +0x10C
     // +0x10C uint32_t                 field_0x10c  (evidence: 0x0077FFD0) // CONFLICT: multiple definitions at +0x10C
