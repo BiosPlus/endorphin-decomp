@@ -2126,3 +2126,20 @@ void fn_006C3390(void* self, DWORD index, DWORD value) {
     *reinterpret_cast<DWORD*>(static_cast<uintptr_t>(addr)) = value;
 }
 } // namespace lift_006C3390
+
+// [0x006CA090] sub_006CA090 (48 bytes)
+namespace lift_006CA090 {
+// Global running byte counter (decremented when a tracked block is freed).
+extern uint32_t mem_00B5D768;
+// Import slot for MSVCR80!free (IAT entry at 0x009251D8).
+extern void (*mem_009251D8)(void*);
+
+// @name FreeTrackedBlock_006CA090
+// @summary Frees a heap block, subtracting its size from the global counter when the pointer is non-null.
+void fn_006CA090(void* block, uint32_t size) {
+    if (block != nullptr) {
+        mem_00B5D768 -= size;
+    }
+    mem_009251D8(block);
+}
+} // namespace lift_006CA090
