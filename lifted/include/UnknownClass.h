@@ -16,6 +16,7 @@ struct UnknownClass_Fields {
     // +0x0   DWORD field_0x00 (array of 24-byte elements; element +0x10 holds table pointer)  (evidence: 0x0078D4E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vptr  (evidence: 0x00413990, 0x00413C40) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable  (evidence: 0x005E2790, 0x005E27E0, 0x005E2880, 0x005E28D0, 0x005E2920, 0x005E2970, 0x00622B40, 0x00629D00, 0x00629E20) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uintptr_t                vtable  (evidence: 0x006991A0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x00503BC0, 0x00509EB0, 0x00622B40, 0x006294D0, 0x0063D970, 0x0063DDF0, 0x006A7AE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable_0x00  (evidence: 0x00419840) // CONFLICT: multiple definitions at +0x0
     // +0x1   uint8_t                  field_0x01  (evidence: 0x004B10D0)
@@ -31,7 +32,7 @@ struct UnknownClass_Fields {
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00526C70, 0x0052F7D0, 0x006722B0, 0x00672490, 0x008599F0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t                  field_0x08  (evidence: 0x00493D80, 0x00494050, 0x00612460) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t[]                field_0x08  (evidence: 0x006123C0, 0x00612410) // CONFLICT: multiple definitions at +0x8
-    // +0x8   void*                    field_0x08  (evidence: 0x00789590) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    field_0x08  (evidence: 0x006991A0, 0x00789590) // CONFLICT: multiple definitions at +0x8
     // +0x8   float                    field_0x08[4]  (evidence: 0x00534020) // CONFLICT: multiple definitions at +0x8
     // +0xC   uint32_t                 child  (evidence: 0x006722B0, 0x00672490) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  count  (evidence: 0x007DD130) // CONFLICT: multiple definitions at +0xC

@@ -50605,6 +50605,12 @@
     "summary": "Initializes three 32-bit fields of the object in ecx: stores the constant 0x0098FAC4 at +0x00, clears +0x04 and +0x08.",
     "lifted_path": "lifted/leaf/tiny_690000.cpp"
   },
+  "0x006991A0": {
+    "name": "UnknownClass_dtor_006991A0",
+    "signature": "void __thiscall sub_006991A0(void* self)",
+    "summary": "Destructor that deletes member at +0x08 via vtable[0](1) and resets vtable to base",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x006991F0": {
     "name": "setOwnedObject_006991F0",
     "signature": "void __thiscall sub_006991F0(uint32_t self, uint32_t newPtr)",
@@ -50838,6 +50844,13 @@
     "signature": "uint32_t catchHandler_006A04B0(uintptr_t frame_ebp)",
     "summary": "Exception catch handler that logs an error string at [ebp-0x14]+0xC to std::cout and returns continuation 0x006A049F.",
     "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
+  "0x006A04E0": {
+    "name": "Commands::ChangePropertyCommand::vfunc_2",
+    "class": "Commands::ChangePropertyCommand",
+    "signature": "void __thiscall fn_006A04E0(void* self)",
+    "summary": "Applies or reverts a property change by invoking vfunc +0xA4 on field_0x14 with pointers to field_0x10 and field_0x18.",
+    "lifted_path": "lifted/Commands/ChangePropertyCommand.cpp"
   },
   "0x006A0530": {
     "name": "catch_006A0530",

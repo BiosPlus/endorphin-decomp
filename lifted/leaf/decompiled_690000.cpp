@@ -1247,3 +1247,25 @@ uint8_t* fn_00699360(void* self) {
     return reinterpret_cast<uint8_t*>(begin);
 }
 } // namespace lift_00699360
+
+// [0x006991A0]
+namespace lift_006991A0 {
+// @name UnknownClass_dtor_006991A0
+// @summary Destructor that deletes member at +0x08 via vtable[0](1) and resets vtable to base
+// @field UnknownClass +0x00 uintptr_t vtable
+// @field UnknownClass +0x08 void* field_0x08
+
+
+void __thiscall sub_006991A0(void* self) {
+    lift_field<uintptr_t>(self, 0x00) = 0x0098FAC4u;
+
+    void* child = lift_field<void*>(self, 0x08);
+    if (child != nullptr) {
+        auto** vtable = *reinterpret_cast<void***>(child);
+        using ScalarDeletingDtor = void(__thiscall*)(void*, int);
+        reinterpret_cast<ScalarDeletingDtor>(vtable[0])(child, 1);
+    }
+
+    lift_field<uintptr_t>(self, 0x00) = 0x0098FABCu;
+}
+} // namespace lift_006991A0
