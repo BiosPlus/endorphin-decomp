@@ -2514,3 +2514,36 @@ void* fn_0062CC90(void) {
     return &mem_00B522E4;
 }
 } // namespace lift_0062CC90
+
+// [0x0062C3F0]
+namespace lift_0062C3F0 {
+// @name MetaBodySensor_sub_0062C3F0
+// @class MetaBodySensor
+// @summary Constructor for a MetaBodySensor-derived class (vtable 0x0097900C) that initializes float fields at +0x30..+0x38, stores arg2 at +0x3C, and zeroes fields at +0x44..+0x4C.
+// @field MetaBodySensor +0x00 uint32_t vtable
+// @field MetaBodySensor +0x30 float field_0x30
+// @field MetaBodySensor +0x34 float field_0x34
+// @field MetaBodySensor +0x38 float field_0x38
+// @field MetaBodySensor +0x3C uint32_t field_0x3C
+// @field MetaBodySensor +0x44 uint32_t field_0x44
+// @field MetaBodySensor +0x48 uint32_t field_0x48
+// @field MetaBodySensor +0x4C uint32_t field_0x4C
+
+
+extern void __thiscall ext_005FF240(void* self, uint32_t arg0);
+
+void* __thiscall fn_0062C3F0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    (void)arg1;
+    (void)arg3;
+    ext_005FF240(self, arg0);
+    lift_field<uint32_t>(self, 0x00) = 0x0097900Cu;
+    lift_field<float>(self, 0x38) = 0.0f;
+    lift_field<float>(self, 0x34) = 0.0f;
+    lift_field<float>(self, 0x30) = 0.0f;
+    lift_field<uint32_t>(self, 0x3C) = arg2;
+    lift_field<uint32_t>(self, 0x44) = 0;
+    lift_field<uint32_t>(self, 0x48) = 0;
+    lift_field<uint32_t>(self, 0x4C) = 0;
+    return self;
+}
+} // namespace lift_0062C3F0

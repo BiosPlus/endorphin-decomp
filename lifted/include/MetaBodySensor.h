@@ -10,11 +10,18 @@
 // Recovered field layout for MetaBodySensor:
 namespace lifted_layout {
 struct MetaBodySensor_Fields {
-    // +0x0   uint32_t                 vtable  (evidence: 0x005FF240)
+    // +0x0   uint32_t                 vtable  (evidence: 0x005FF240, 0x0062C3F0)
     // +0x8   uint32_t                 field_0x08  (evidence: 0x005FF240)
     // +0xC   uint32_t                 field_0x0C  (evidence: 0x005FF240)
     // +0x10  uint32_t                 field_0x10  (evidence: 0x005FF240)
     // +0x28  int32_t                  field_0x28  (evidence: 0x00535610, 0x00545B80, 0x005FF1C0) // CONFLICT: multiple definitions at +0x28
     // +0x28  uint32_t                 field_0x28  (evidence: 0x005FF240) // CONFLICT: multiple definitions at +0x28
+    // +0x30  float                    field_0x30  (evidence: 0x0062C3F0)
+    // +0x34  float                    field_0x34  (evidence: 0x0062C3F0)
+    // +0x38  float                    field_0x38  (evidence: 0x0062C3F0)
+    // +0x3C  uint32_t                 field_0x3C  (evidence: 0x0062C3F0)
+    // +0x44  uint32_t                 field_0x44  (evidence: 0x0062C3F0)
+    // +0x48  uint32_t                 field_0x48  (evidence: 0x0062C3F0)
+    // +0x4C  uint32_t                 field_0x4C  (evidence: 0x0062C3F0)
 };
 } // namespace lifted_layout
