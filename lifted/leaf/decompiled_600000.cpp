@@ -1259,3 +1259,19 @@ void fn_0060A340(uint32_t* a, uint32_t* b, uint32_t* c) {
     }
 }
 } // namespace lift_0060A340
+
+// [0x006096D0]
+namespace lift_006096D0 {
+extern void __fastcall ext_0065F440(void* self);
+extern void (__thiscall *mem_00924FF4)(void* self);
+
+// @name sub_006096D0
+// @summary Destroys two std::string members at +0x20 and +0x4, then calls ext_0065F440 on self.
+// @field unknown +0x04 std::string field_0x04
+// @field unknown +0x20 std::string field_0x20
+extern void __fastcall fn_006096D0(void* self) {
+    mem_00924FF4(reinterpret_cast<uint8_t*>(self) + 0x20);
+    mem_00924FF4(reinterpret_cast<uint8_t*>(self) + 0x04);
+    ext_0065F440(self);
+}
+} // namespace lift_006096D0

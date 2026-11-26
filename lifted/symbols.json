@@ -38282,6 +38282,12 @@
     "summary": "Lexicographically compares two std::string fields at +0x04 and +0x20.",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x006096D0": {
+    "name": "sub_006096D0",
+    "signature": "extern \"C\" void __fastcall fn_006096D0(void* self)",
+    "summary": "Destroys two std::string members at +0x20 and +0x4, then calls ext_0065F440 on self.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x00609730": {
     "name": "ThunkForwardToEmbeddedVfunc24",
     "signature": "void* fn_00609730(void* self)",
