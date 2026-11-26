@@ -65936,6 +65936,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071DC80": {
+    "name": "sub_0071DC80",
+    "signature": "bool fn_0071DC80(int value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0079BA10 (IsSentinelValue_0079BA10).",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x0071DCB0": {
     "name": "sub_0071DCB0",
     "signature": "extern \"C\" int32_t __cdecl fn_0071DCB0(void)",

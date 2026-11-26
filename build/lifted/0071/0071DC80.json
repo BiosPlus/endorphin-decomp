@@ -1,0 +1,13 @@
+{
+  "va": "0x0071DC80",
+  "size": 44,
+  "orig_symbol": "sub_0071DC80",
+  "src_path": "src/clones/auto_clones_710000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_710000.cpp",
+  "name": "sub_0071DC80",
+  "signature": "bool fn_0071DC80(int value)",
+  "summary": "Auto-lifted identical-shape clone of 0x0079BA10 (IsSentinelValue_0079BA10).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-26T10:28:21Z"
+}
