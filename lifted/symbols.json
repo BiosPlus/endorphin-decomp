@@ -41052,6 +41052,12 @@
     "summary": "Calls virtual slot 0x78 on the object at +0x0C (passing \u0026this-\u003e+0x08) if set, then on the object at +0x04 (passing this) if set.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x0062B8B0": {
+    "name": "CopyStringPairRange",
+    "signature": "uint8_t* fn_0062B8B0(const uint8_t* first, const uint8_t* last, uint8_t* dest)",
+    "summary": "Copy-assigns a range of 0x38-byte string-pair elements [first,last) into dest, returns dest past the last copied element.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x0062BA00": {
     "name": "CopyStringPairRangeReturnEnd_0062BA00",
     "signature": "extern \"C\" char* __cdecl fn_0062BA00(char* first, char* last, char* dest)",

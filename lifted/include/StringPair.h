@@ -8,7 +8,8 @@
 // Recovered field layout for StringPair:
 namespace lifted_layout {
 struct StringPair_Fields {
-    // +0x0   std::string              field_0x00  (evidence: 0x0057BBE0)
-    // +0x1C  std::string              field_0x1C  (evidence: 0x0057BBE0)
+    // +0x0   std::string              field_0x00  (evidence: 0x0057BBE0, 0x0062B8B0)
+    // +0x1C  std::string              field_0x1C  (evidence: 0x0057BBE0) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  std::string              field_0x1c  (evidence: 0x0062B8B0) // CONFLICT: multiple definitions at +0x1C
 };
 } // namespace lifted_layout

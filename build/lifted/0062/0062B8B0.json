@@ -1,0 +1,27 @@
+{
+  "va": "0x0062B8B0",
+  "size": 64,
+  "orig_symbol": "sub_0062B8B0",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "CopyStringPairRange",
+  "signature": "uint8_t* fn_0062B8B0(const uint8_t* first, const uint8_t* last, uint8_t* dest)",
+  "summary": "Copy-assigns a range of 0x38-byte string-pair elements [first,last) into dest, returns dest past the last copied element.",
+  "fields": [
+    {
+      "class": "StringPair",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "StringPair",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:04:01Z"
+}

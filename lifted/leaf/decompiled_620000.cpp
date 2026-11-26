@@ -2372,3 +2372,26 @@ void* __fastcall fn_00624F10(void* self, void* /*edx*/, const uint32_t* key)
     return result;
 }
 } // namespace lift_00624F10
+
+// [0x0062B8B0] sub_0062B8B0 (64 bytes)
+namespace lift_0062B8B0 {
+// MSVCP80 std::basic_string<char>::operator=(const basic_string&), reached via IAT slot 0x924FDC.
+extern void* (__thiscall* mem_00924FDC)(void* self, const void* src);
+
+// @name CopyStringPairRange
+// @summary Copy-assigns a range of 0x38-byte string-pair elements [first,last) into dest, returns dest past the last copied element.
+// @field StringPair +0x00 std::string field_0x00
+// @field StringPair +0x1C std::string field_0x1c
+uint8_t* fn_0062B8B0(const uint8_t* first, const uint8_t* last, uint8_t* dest) {
+    if (first == last) {
+        return dest;
+    }
+    do {
+        mem_00924FDC(dest, first);
+        mem_00924FDC(dest + 0x1C, first + 0x1C);
+        first += 0x38;
+        dest += 0x38;
+    } while (first != last);
+    return dest;
+}
+} // namespace lift_0062B8B0
