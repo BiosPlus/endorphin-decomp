@@ -1066,3 +1066,19 @@ extern void __fastcall sub_004B4CD0(void* self)
     }
 }
 } // namespace lift_004B4CD0
+
+// [0x004B79B0]
+namespace lift_004B79B0 {
+extern const char* (__thiscall *mem_00924FF0)(void* this_ptr);
+extern double (__cdecl *mem_009251F0)(const char* str);
+extern void (__thiscall *mem_00924FF4)(void* this_ptr);
+
+// @name parseFloatFromString
+// @summary Converts a std::string to a float using c_str and atof, then destroys the string.
+float __cdecl sub_004B79B0(void* str) {
+    const char* cstr = mem_00924FF0(str);
+    float result = static_cast<float>(mem_009251F0(cstr));
+    mem_00924FF4(str);
+    return result;
+}
+} // namespace lift_004B79B0
