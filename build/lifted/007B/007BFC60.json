@@ -1,0 +1,21 @@
+{
+  "va": "0x007BFC60",
+  "size": 47,
+  "orig_symbol": "sub_007BFC60",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "forwardToSubobjectSlots_007BFC60",
+  "signature": "void fn_007BFC60(void* self, uint32_t a2, uint32_t a3, uint32_t a4)",
+  "summary": "Calls slot +0x0C of the table at self-\u003efield_0x1cc with (self, a2, a3), then slot +0x10 with (self, a2, a3, a4).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1CC",
+      "type": "void*",
+      "name": "field_0x1cc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:31:38Z"
+}

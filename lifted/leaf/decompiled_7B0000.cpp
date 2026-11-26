@@ -1413,3 +1413,23 @@ void __cdecl sub_007BD310(void* self) {
     lift_field<uint16_t>(self, 0x4e) = (val == 0x804c) ? 1 : 3;
 }
 } // namespace lift_007BD310
+
+// [0x007BFC60] sub_007BFC60 (47 bytes)
+namespace lift_007BFC60 {
+// @name forwardToSubobjectSlots_007BFC60
+// @summary Calls slot +0x0C of the table at self->field_0x1cc with (self, a2, a3), then slot +0x10 with (self, a2, a3, a4).
+// @field Unknown +0x1cc void* field_0x1cc
+void fn_007BFC60(void* self, uint32_t a2, uint32_t a3, uint32_t a4) {
+    // Table pointer at self+0x1cc; the two slots live at table+0x0c and table+0x10.
+    void* table = lift_field<void*>(self, 0x1cc);
+
+    using Slot3 = void (__cdecl*)(void*, uint32_t, uint32_t);
+    using Slot4 = void (__cdecl*)(void*, uint32_t, uint32_t, uint32_t);
+
+    auto slot0c = reinterpret_cast<Slot3>(lift_field<void*>(table, 0x0c));
+    slot0c(self, a2, a3);
+
+    auto slot10 = reinterpret_cast<Slot4>(lift_field<void*>(table, 0x10));
+    slot10(self, a2, a3, a4);
+}
+} // namespace lift_007BFC60

@@ -69412,6 +69412,12 @@
     "summary": "Calls the sub-object's begin hook; if it succeeds, feeds `count` bytes to its chunk callback in steps of the chunk size.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BFC60": {
+    "name": "forwardToSubobjectSlots_007BFC60",
+    "signature": "void fn_007BFC60(void* self, uint32_t a2, uint32_t a3, uint32_t a4)",
+    "summary": "Calls slot +0x0C of the table at self-\u003efield_0x1cc with (self, a2, a3), then slot +0x10 with (self, a2, a3, a4).",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BFC90": {
     "name": "WriteChunkedThenFinish",
     "signature": "void fn_007BFC90(void* self, uint8_t* dst, int32_t total, int32_t extra)",
