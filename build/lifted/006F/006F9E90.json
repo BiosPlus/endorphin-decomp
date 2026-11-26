@@ -1,0 +1,28 @@
+{
+  "va": "0x006F9E90",
+  "size": 64,
+  "orig_symbol": "sub_006F9E90",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Lazy-initialize critical section",
+  "class": "CriticalSectionHolder",
+  "signature": "void fn_006F9E90(void* self)",
+  "summary": "If not yet initialized (+0x20 == 0), allocates 0x18 bytes, stores the pointer at +0x1c, runs InitializeCriticalSection on it, and marks the object initialized.",
+  "fields": [
+    {
+      "class": "CriticalSectionHolder",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "critSection"
+    },
+    {
+      "class": "CriticalSectionHolder",
+      "offset": "+0x20",
+      "type": "uint8_t",
+      "name": "initialized"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:06:09Z"
+}

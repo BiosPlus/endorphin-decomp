@@ -1855,3 +1855,36 @@ void __thiscall fn_006FA1E0(void* self) {
     lift_field<uint32_t>(self, 0x08) = 0x00000000u;
 }
 } // namespace lift_006FA1E0
+
+// [0x006F9E90] sub_006F9E90 (64 bytes)
+namespace lift_006F9E90 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Called cdecl with one argument (0x18); returns a pointer-sized result in eax.
+extern void* ext_006A5C62(uint32_t size);
+// IAT slot at 0x009241C0 holding the address of KERNEL32!InitializeCriticalSection.
+extern uint32_t mem_009241C0;
+
+// @name Lazy-initialize critical section
+// @class CriticalSectionHolder
+// @summary If not yet initialized (+0x20 == 0), allocates 0x18 bytes, stores the pointer at +0x1c, runs InitializeCriticalSection on it, and marks the object initialized.
+// @field CriticalSectionHolder +0x1c void* critSection
+// @field CriticalSectionHolder +0x20 uint8_t initialized
+void fn_006F9E90(void* self) {
+    auto& initialized = lift_field<uint8_t>(self, 0x20);
+    if (initialized != 0) {
+        return;
+    }
+
+    void* cs = ext_006A5C62(0x18);
+    if (cs != nullptr) {
+        using InitCriticalSectionFn = void(__stdcall*)(void*);
+        auto init = reinterpret_cast<InitCriticalSectionFn>(static_cast<uintptr_t>(mem_009241C0));
+        init(cs);
+        lift_field<void*>(self, 0x1c) = cs;
+        initialized = 1;
+    } else {
+        initialized = 1;
+        lift_field<void*>(self, 0x1c) = nullptr;
+    }
+}
+} // namespace lift_006F9E90
