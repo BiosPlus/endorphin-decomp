@@ -72906,6 +72906,12 @@
     "summary": "Returns bit 6 (0x40) of the dword at +0x04 of the object referenced by self+0x04.",
     "lifted_path": "lifted/leaf/decompiled_810000.cpp"
   },
+  "0x008101C0": {
+    "name": "GetChainedFlagBit4",
+    "signature": "int fn_008101C0(void* self)",
+    "summary": "Returns bit 0x10 of the dword at +0x04 of the object referenced by self+0x04 (cdecl, one arg).",
+    "lifted_path": "lifted/leaf/decompiled_810000.cpp"
+  },
   "0x00810200": {
     "name": "Unknown::QueryLinkedFlagBit3",
     "class": "Unknown",

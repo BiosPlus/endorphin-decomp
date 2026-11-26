@@ -361,3 +361,16 @@ void __cdecl sub_00810320(void* self, int enable) {
     }
 }
 } // namespace lift_00810320
+
+// [0x008101C0] sub_008101C0 (64 bytes)
+namespace lift_008101C0 {
+// @name GetChainedFlagBit4
+// @summary Returns bit 0x10 of the dword at +0x04 of the object referenced by self+0x04 (cdecl, one arg).
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x04 uint32_t field_0x04
+int fn_008101C0(void* self) {
+    void* inner = lift_field<void*>(self, 0x04);
+    uint32_t flags = lift_field<uint32_t>(inner, 0x04);
+    return static_cast<int>((flags >> 4) & 1u);
+}
+} // namespace lift_008101C0
