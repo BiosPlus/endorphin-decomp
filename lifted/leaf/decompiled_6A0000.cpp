@@ -773,3 +773,44 @@ int32_t __thiscall fn_006A9290(void* self, void* /*unused*/) {
     return 0;
 }
 } // namespace lift_006A9290
+
+// [0x006AC2E0]
+namespace lift_006AC2E0 {
+extern void __thiscall ext_006AB410(void* self, int32_t width, int32_t height);
+extern uintptr_t mem_00925584; // USER32!LockWindowUpdate
+extern uintptr_t mem_0092566C; // USER32!GetClientRect
+extern uintptr_t mem_00925668; // USER32!RedrawWindow
+
+struct LiftRect {
+    int32_t left;
+    int32_t top;
+    int32_t right;
+    int32_t bottom;
+};
+
+using LockWindowUpdateFn = int32_t(__stdcall*)(void* hWndLock);
+using GetClientRectFn = int32_t(__stdcall*)(void* hWnd, LiftRect* lpRect);
+using RedrawWindowFn = int32_t(__stdcall*)(void* hWnd, const LiftRect* lprcUpdate, void* hrgnUpdate, uint32_t flags);
+
+// @name CWnd_UnlockAndRedraw
+// @summary Unlocks window updates, recalculates layout for client rect, and redraws the window
+// @field CWnd +0x20 void* m_hWnd
+// @field CWnd +0x198 uint8_t field_0x198
+void __thiscall sub_006AC2E0(void* self) {
+    lift_field<uint8_t>(self, 0x198) = 0;
+    reinterpret_cast<LockWindowUpdateFn>(mem_00925584)(nullptr);
+
+    LiftRect rc{};
+    void* hwnd = lift_field<void*>(self, 0x20);
+    reinterpret_cast<GetClientRectFn>(mem_0092566C)(hwnd, &rc);
+
+    int32_t width = rc.right - rc.left;
+    int32_t height = rc.bottom - rc.top;
+    ext_006AB410(self, width, height);
+
+    hwnd = lift_field<void*>(self, 0x20);
+    if (hwnd != nullptr) {
+        reinterpret_cast<RedrawWindowFn>(mem_00925668)(hwnd, nullptr, nullptr, 0x105);
+    }
+}
+} // namespace lift_006AC2E0
