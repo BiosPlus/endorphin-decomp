@@ -763,3 +763,41 @@ void fn_0072BF70(void* self) {
     ext_006B9D70(static_cast<void*>(&lift_field<uint8_t>(self, 0x18)));
 }
 } // namespace lift_0072BF70
+
+// [0x00729A00] sub_00729A00 (96 bytes)
+namespace lift_00729A00 {
+// Known callee 0x006FDF30: Unknown::CountMatchingByIndex (Counts entries of the pointer array at +0x20 (length at +0x10) for which GetDwordByIndex(entry, index) is nonzero.)
+extern int32_t ext_006FDF30(void* self, uint32_t index);
+// Known callee 0x006FDF90: Unknown::FindNthMatchingEntry (Returns the entry at the ordinal-th match in the pointer array at +0x20, or 0 if no match exists.)
+extern uint32_t ext_006FDF90(void* self, uint32_t ordinal, uint32_t index);
+// Known callee 0x006B99C0: sub_006B99C0 (Getter returning int32_t field at offset +0x4.)
+extern int32_t ext_006B99C0(void* self);
+// Known callee 0x006D23F0: Unknown::GetAddressAt8 (Returns this + 8 * index; thiscall, one stack argument.)
+extern uint32_t ext_006D23F0(uint32_t self, uint32_t index);
+
+// @name Unknown::initMatchingEntryDoubles
+// @class Unknown
+// @summary If the self array has matching entries, takes the first match's object and writes double 1.0 into the 8-byte element at index 3 of each 0x20-byte stride of its array.
+// @field Unknown +0x08 int32_t count
+// @field Unknown +0x18 uint32_t arrayBase
+void fn_00729A00(uint32_t self) {
+    void* selfp = (void*)(uintptr_t)self;
+
+    if (ext_006FDF30(selfp, 1) <= 0) {
+        return;
+    }
+
+    uint32_t entry = ext_006FDF90(selfp, 0, 1);
+    uint32_t obj = (uint32_t)ext_006B99C0((void*)(uintptr_t)entry);
+    void* objp = (void*)(uintptr_t)obj;
+
+    int32_t n = lift_field<int32_t>(objp, 0x08);
+    for (int32_t i = 0; i < n; ++i) {
+        uint32_t base = lift_field<uint32_t>(objp, 0x18) + static_cast<uint32_t>(i) * 0x20u;
+        uint32_t elem = ext_006D23F0(base, 3);
+        void* elemp = (void*)(uintptr_t)elem;
+        lift_field<uint32_t>(elemp, 0) = 0u;
+        lift_field<uint32_t>(elemp, 4) = 0x3ff00000u;
+    }
+}
+} // namespace lift_00729A00
