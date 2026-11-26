@@ -2166,3 +2166,25 @@ void fn_004408B0(void* self, double arg) {
     }
 }
 } // namespace lift_004408B0
+
+// [0x00441A90] sub_00441A90 (45 bytes)
+namespace lift_00441A90 {
+// @name copyRangeDescriptor_00441A90
+// @summary Copies 4 dwords from source descriptor to out: out[0]=src+0x18, out[1]=src[+4]-2, out[2]=src+0x1C, out[3]=src[+0xC]+src[+4]+1.
+// @field Source +0x04 uint32_t field_0x04
+// @field Source +0x0C uint32_t field_0x0C
+// @field Source +0x18 uint32_t field_0x18
+// @field Source +0x1C uint32_t field_0x1C
+// @field Out +0x00 uint32_t field_0x00
+// @field Out +0x04 uint32_t field_0x04
+// @field Out +0x08 uint32_t field_0x08
+// @field Out +0x0C uint32_t field_0x0C
+extern void __stdcall fn_00441A90(void* out, void* src) {
+    uint32_t f04 = lift_field<uint32_t>(src, 0x04);
+    uint32_t f0c = lift_field<uint32_t>(src, 0x0C);
+    lift_field<uint32_t>(out, 0x00) = lift_field<uint32_t>(src, 0x18);
+    lift_field<uint32_t>(out, 0x04) = f04 - 2;
+    lift_field<uint32_t>(out, 0x08) = lift_field<uint32_t>(src, 0x1C);
+    lift_field<uint32_t>(out, 0x0C) = f0c + f04 + 1;
+}
+} // namespace lift_00441A90

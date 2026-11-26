@@ -4011,6 +4011,12 @@
     "summary": "Copies a 4-dword record from src to dst, storing (src+4)-2 at +4 and (src+0xC)+(src+4)+1 at +0xC.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x00441A90": {
+    "name": "copyRangeDescriptor_00441A90",
+    "signature": "extern \"C\" void __stdcall fn_00441A90(void* out, void* src)",
+    "summary": "Copies 4 dwords from source descriptor to out: out[0]=src+0x18, out[1]=src[+4]-2, out[2]=src+0x1C, out[3]=src[+0xC]+src[+4]+1.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00441C10": {
     "name": "sub_004409D0",
     "class": "\u003cunknown\u003e",
