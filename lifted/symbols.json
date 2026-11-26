@@ -43724,6 +43724,12 @@
     "summary": "Sets a double field at offset +0x08 of a 24-byte element in a vector at +0x10/+0x14 after bounds checking",
     "lifted_path": "lifted/classes/MagnetJoint.cpp"
   },
+  "0x00645EB0": {
+    "name": "InitStringPairAndResetTail",
+    "signature": "extern \"C\" void __fastcall fn_00645EB0(void* self)",
+    "summary": "Writes vtable and two .rdata string pointers into self, calls ext_006A5C5C on a non-null tail pointer, zeroes the tail, then tail-calls ext_0065F440 on self+8.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00645F40": {
     "name": "RelationshipHinge::vfunc_11",
     "class": "RelationshipHinge",

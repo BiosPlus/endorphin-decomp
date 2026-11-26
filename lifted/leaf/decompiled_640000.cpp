@@ -2153,3 +2153,46 @@ uint32_t __cdecl sub_00649770(uint32_t first, uint32_t last, uint32_t d_last) {
     return dst;
 }
 } // namespace lift_00649770
+
+// [0x00645EB0]
+namespace lift_00645EB0 {
+// @name InitStringPairAndResetTail
+// @summary Writes vtable and two .rdata string pointers into self, calls ext_006A5C5C on a non-null tail pointer, zeroes the tail, then tail-calls ext_0065F440 on self+8.
+// @field <unknown> +0x00 uint32_t vtable_ptr
+// @field <unknown> +0x04 uint32_t str_ptr_a
+// @field <unknown> +0x08 uint32_t str_ptr_b
+// @field <unknown> +0x10 uint32_t tail_ptr
+// @field <unknown> +0x14 uint32_t tail_aux_a
+// @field <unknown> +0x18 uint32_t tail_aux_b
+
+// Constant addresses from the original asm (.rdata). Stored as immediates, so
+// the literal VA values are kept to match endorphin.exe byte-for-byte.
+constexpr uint32_t mem_0097D99C = 0x0097D99C; // .rdata u32 0x006A6DC0
+constexpr uint32_t mem_0097D988 = 0x0097D988; // " Ud"
+constexpr uint32_t mem_0097D954 = 0x0097D954; // "0bd"
+
+// IAT thunk -> MFC80!ord_764. cdecl, one stack argument.
+extern void ext_006A5C5C(uint32_t arg);
+// Tail-called with ecx = self+8 (__fastcall).
+extern void __fastcall ext_0065F440(void* self);
+
+extern void __fastcall fn_00645EB0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    auto* edi = base + 0x08;
+
+    *reinterpret_cast<uint32_t*>(base + 0x00) = mem_0097D99C;
+    *reinterpret_cast<uint32_t*>(base + 0x04) = mem_0097D988;
+    *reinterpret_cast<uint32_t*>(edi + 0x00) = mem_0097D954;
+
+    uint32_t eax = *reinterpret_cast<uint32_t*>(base + 0x10);
+    if (eax != 0) {
+        ext_006A5C5C(eax);
+    }
+
+    *reinterpret_cast<uint32_t*>(base + 0x10) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x14) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x18) = 0;
+
+    ext_0065F440(edi);
+}
+} // namespace lift_00645EB0

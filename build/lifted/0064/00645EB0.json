@@ -1,0 +1,51 @@
+{
+  "va": "0x00645EB0",
+  "size": 72,
+  "orig_symbol": "sub_00645EB0",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "InitStringPairAndResetTail",
+  "signature": "extern \"C\" void __fastcall fn_00645EB0(void* self)",
+  "summary": "Writes vtable and two .rdata string pointers into self, calls ext_006A5C5C on a non-null tail pointer, zeroes the tail, then tail-calls ext_0065F440 on self+8.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable_ptr"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "str_ptr_a"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "str_ptr_b"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "tail_ptr"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "tail_aux_a"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "tail_aux_b"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:18:53Z"
+}
