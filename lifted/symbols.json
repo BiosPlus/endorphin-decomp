@@ -6758,6 +6758,12 @@
     "summary": "Pure jump thunk forwarding to sub_00462820.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x004629E0": {
+    "name": "sub_004629E0",
+    "signature": "void __thiscall sub_004629E0(void* self, void* arg1, uint32_t arg2)",
+    "summary": "Prompts with a Yes/No MessageBoxA unless mode is 0 (skip) or 2 (force), then passes arg1-\u003ec_str() to this-\u003efield_0x00 via ext_004474F0",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00462A60": {
     "name": "GetInnerByte1C",
     "signature": "uint8_t fn_00462A60(void* self)",
