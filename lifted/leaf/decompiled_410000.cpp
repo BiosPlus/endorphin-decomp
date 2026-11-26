@@ -2286,3 +2286,57 @@ extern void* fn_0041A100(uint32_t count) {
     return nullptr;
 }
 } // namespace lift_0041A100
+
+// [0x0041A200] sub_0041A200 (87 bytes)
+namespace lift_0041A200 {
+// Known callee 0x00419F50: sub_00419F50 (Auto-lifted identical-shape clone of 0x005E0B20 (TreeIterator::increment).)
+extern void fn_00419F50(void* self);
+extern int mem_00925134;
+
+// @name TreeIterator_EraseRange
+// @summary Walks a tree iterator from first toward last_cont, advancing it and deleting each visited node's payload (vtable slot 1, scalar-deleting dtor).
+// @field TreeNode +0x04 uint32_t field_0x04
+// @field TreeNode +0x10 void* field_0x10
+static inline void* lift_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+void fn_0041A200(uint32_t first_node, uint32_t first_cont, uint32_t head, uint32_t last_cont) {
+    // Iterator laid out as two dwords {_Ptr, _Mycont}; increment() works on it in place.
+    uint32_t it[2] = { first_node, first_cont };
+
+    for (;;) {
+        // Debug iterator validity check (original calls _invalid_parameter_noinfo on failure;
+        // the handler is not modelled here, so the path is a no-op). Reference the IAT slot.
+        (void)&mem_00925134;
+        if (it[0] == 0 || it[0] != head) {
+            // invalid-parameter path elided
+        }
+
+        uint32_t cur = it[1];
+        if (cur == last_cont) {
+            return;
+        }
+
+        fn_00419F50(it);
+
+        if (it[0] == 0) {
+            // invalid-parameter path elided
+        } else {
+            void* next = lift_ptr(it[0]);
+            if (cur == lift_field<uint32_t>(next, 0x04)) {
+                // invalid-parameter path elided
+            }
+        }
+
+        void* node = lift_ptr(cur);
+        void* payload = lift_field<void*>(node, 0x10);
+        if (payload != nullptr) {
+            using DelFn = void (*)(void* self, int flags);
+            void* vtbl = lift_field<void*>(payload, 0);
+            DelFn fn = *reinterpret_cast<DelFn*>(reinterpret_cast<uint8_t*>(vtbl) + 4);
+            fn(payload, 1);
+        }
+    }
+}
+} // namespace lift_0041A200

@@ -1829,6 +1829,12 @@
     "summary": "Tree lower_bound on a 32-bit unsigned key: returns {this, node} for the first node whose key is not less than the argument, or {this, header} when none matches.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041A200": {
+    "name": "TreeIterator_EraseRange",
+    "signature": "static inline void* lift_ptr(uint32_t v)",
+    "summary": "Walks a tree iterator from first toward last_cont, advancing it and deleting each visited node's payload (vtable slot 1, scalar-deleting dtor).",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041A4F0": {
     "name": "sub_0041A4F0",
     "class": "NMData::RealChannel",

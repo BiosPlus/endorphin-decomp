@@ -1,0 +1,27 @@
+{
+  "va": "0x0041A200",
+  "size": 87,
+  "orig_symbol": "sub_0041A200",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "TreeIterator_EraseRange",
+  "signature": "static inline void* lift_ptr(uint32_t v)",
+  "summary": "Walks a tree iterator from first toward last_cont, advancing it and deleting each visited node's payload (vtable slot 1, scalar-deleting dtor).",
+  "fields": [
+    {
+      "class": "TreeNode",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T12:00:17Z"
+}
