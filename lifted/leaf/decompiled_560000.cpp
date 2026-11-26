@@ -376,3 +376,31 @@ int fn_0056B900(void* self) {
     return (1u < static_cast<uint32_t>(count)) ? 1 : 0;
 }
 } // namespace lift_0056B900
+
+// [0x00569970] sub_00569970 (63 bytes)
+namespace lift_00569970 {
+extern void ext_005693E0(uint32_t a, uint32_t b, void* c, void* d);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(uint32_t p);
+
+// @name ReleaseAndClearHandles
+// @class <ClassName> (unknown; no class name recovered from this function)
+// @summary If field +0x04 is non-zero, call ext_005693E0 with the two fields and self, then release +0x04 via ext_006A5C5C; finally zero fields +0x04, +0x08, +0x0C.
+// @field <ClassName> +0x04 uint32_t field_0x04
+// @field <ClassName> +0x08 uint32_t field_0x08
+// @field <ClassName> +0x0C uint32_t field_0x0C
+void fn_00569970(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    auto* f04 = reinterpret_cast<uint32_t*>(base + 0x04);
+    auto* f08 = reinterpret_cast<uint32_t*>(base + 0x08);
+    auto* f0c = reinterpret_cast<uint32_t*>(base + 0x0C);
+
+    if (*f04 != 0) {
+        ext_005693E0(*f04, *f08, self, self);
+        ext_006A5C5C(*f04);
+    }
+    *f04 = 0;
+    *f08 = 0;
+    *f0c = 0;
+}
+} // namespace lift_00569970
