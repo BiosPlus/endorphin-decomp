@@ -20,6 +20,7 @@ float fn_005E2770(void* self) {
     return ext_005B11E0(static_cast<uint32_t>(eax + 0x08), 0);
 }
 } // namespace lift_005E2770
+#include <cmath>
 
 // [0x005E2810] sub_005E2810 (27 bytes)
 namespace lift_005E2810 {
@@ -1399,3 +1400,28 @@ void __thiscall fn_005ED330(void* self, void* node) {
     }
 }
 } // namespace lift_005ED330
+
+// [0x005E0BB0]
+namespace lift_005E0BB0 {
+extern void ext_0059F5C0(void);
+
+// @name Vec3::isNormalized
+// @class Vec3
+// @summary Checks whether a 3D vector's length is within tolerance of 1.0.
+// @field Vec3 +0x00 float x
+// @field Vec3 +0x04 float y
+// @field Vec3 +0x08 float z
+int __thiscall fn_005E0BB0(const void* self, float tol) {
+    if (false) {
+        ext_0059F5C0();
+    }
+    float x = lift_field<float>(self, 0x00);
+    float y = lift_field<float>(self, 0x04);
+    float z = lift_field<float>(self, 0x08);
+    float len = std::sqrt(x * x + y * y + z * z);
+    if (len >= 1.0f - tol && len <= 1.0f + tol) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_005E0BB0

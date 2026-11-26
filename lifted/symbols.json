@@ -34820,6 +34820,13 @@
     "summary": "Advances a binary-tree iterator to its in-order successor (red-black tree style, nil sentinel at node+0x51).",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005E0BB0": {
+    "name": "Vec3::isNormalized",
+    "class": "Vec3",
+    "signature": "int __thiscall fn_005E0BB0(const void* self, float tol)",
+    "summary": "Checks whether a 3D vector's length is within tolerance of 1.0.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005E0E70": {
     "name": "NMData::FixedPathJointData::vfunc_0_off_154",
     "class": "NMData::FixedPathJointData",
