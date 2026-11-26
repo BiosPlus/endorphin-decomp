@@ -26389,6 +26389,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C500 (Vector::clear).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057D7F0": {
+    "name": "PlainFloatsAndString::PlainFloatsAndString",
+    "class": "PlainFloatsAndString",
+    "signature": "void* fn_0057D7F0(void* self)",
+    "summary": "Default constructor: zeroes three floats at +0x00/+0x04/+0x08, default-constructs a std::string at +0x0c, and zeroes three dwords at +0x2c/+0x30/+0x34. Returns this.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057DDF0": {
     "name": "sub_0057DDF0",
     "signature": "extern char* __cdecl fn_0057DDF0(char* first, char* last, char* dest)",

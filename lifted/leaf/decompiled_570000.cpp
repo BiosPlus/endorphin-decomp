@@ -1495,3 +1495,46 @@ void* __thiscall sub_0057BB40(void* self) {
     return self;
 }
 } // namespace lift_0057BB40
+
+// [0x0057D7F0] sub_0057D7F0 (73 bytes)
+namespace lift_0057D7F0 {
+// Known callee (IAT slot 0x924FE8): MSVCP80 std::basic_string<char>::basic_string(void) default ctor.
+// Original asm: call dword ptr [0x924fe8] with ecx = this+0x0c.
+extern void ext_MSVCP80_basic_string_ctor_char(void* thisptr);
+extern uint32_t mem_00924FE8; // IAT slot holding the ctor pointer
+
+// @name PlainFloatsAndString::PlainFloatsAndString
+// @class PlainFloatsAndString
+// @summary Default constructor: zeroes three floats at +0x00/+0x04/+0x08, default-constructs a std::string at +0x0c, and zeroes three dwords at +0x2c/+0x30/+0x34. Returns this.
+// @field PlainFloatsAndString +0x00 float field_0x00
+// @field PlainFloatsAndString +0x04 float field_0x04
+// @field PlainFloatsAndString +0x08 float field_0x08
+// @field PlainFloatsAndString +0x0c std::string field_0x0c
+// @field PlainFloatsAndString +0x2c uint32_t field_0x2c
+// @field PlainFloatsAndString +0x30 uint32_t field_0x30
+// @field PlainFloatsAndString +0x34 uint32_t field_0x34
+//
+// Note: the original SEH frame setup/teardown (push -1 / handler / fs:[0] chain)
+// is compiler boilerplate and is intentionally not reproduced.
+// The ecx value loaded from [esp+8] in the original is dead and is ignored.
+void* fn_0057D7F0(void* self) {
+    lift_field<float>(self, 0x00) = 0.0f;
+    lift_field<float>(self, 0x04) = 0.0f;
+    lift_field<float>(self, 0x08) = 0.0f;
+
+    // Indirect call through the IAT slot, matching `call dword ptr [0x924fe8]`.
+    using basic_string_ctor_t = void (*)(void*);
+    auto ctor = reinterpret_cast<basic_string_ctor_t>(static_cast<uintptr_t>(mem_00924FE8));
+    if (ctor) {
+        ctor(&lift_field<uint8_t>(self, 0x0c));
+    } else {
+        ext_MSVCP80_basic_string_ctor_char(&lift_field<uint8_t>(self, 0x0c));
+    }
+
+    lift_field<uint32_t>(self, 0x2c) = 0;
+    lift_field<uint32_t>(self, 0x30) = 0;
+    lift_field<uint32_t>(self, 0x34) = 0;
+
+    return self;
+}
+} // namespace lift_0057D7F0

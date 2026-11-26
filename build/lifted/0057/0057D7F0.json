@@ -1,0 +1,58 @@
+{
+  "va": "0x0057D7F0",
+  "size": 73,
+  "orig_symbol": "sub_0057D7F0",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "PlainFloatsAndString::PlainFloatsAndString",
+  "class": "PlainFloatsAndString",
+  "signature": "void* fn_0057D7F0(void* self)",
+  "summary": "Default constructor: zeroes three floats at +0x00/+0x04/+0x08, default-constructs a std::string at +0x0c, and zeroes three dwords at +0x2c/+0x30/+0x34. Returns this.",
+  "fields": [
+    {
+      "class": "PlainFloatsAndString",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "PlainFloatsAndString",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "PlainFloatsAndString",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "PlainFloatsAndString",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "PlainFloatsAndString",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "PlainFloatsAndString",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "PlainFloatsAndString",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:21:07Z"
+}
