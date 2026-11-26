@@ -1,0 +1,21 @@
+{
+  "va": "0x0059FDE0",
+  "size": 88,
+  "orig_symbol": "sub_0059FDE0",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "copyTreeStringRange",
+  "signature": "void* __cdecl fn_0059FDE0(void* first_cont, void* first_node, void* last_cont, void* last_node, void* dest)",
+  "summary": "Copies std::string elements from a checked tree iterator range [first, last) into a destination std::string array.",
+  "fields": [
+    {
+      "class": "TreeContainer",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "myhead"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T12:05:54Z"
+}

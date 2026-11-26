@@ -1467,3 +1467,45 @@ void fn_00596C50(void* self) {
     ext_00594020(self, 2);
 }
 } // namespace lift_00596C50
+
+// [0x0059FDE0]
+namespace lift_0059FDE0 {
+extern void* mem_00924FDC;
+extern void* mem_00925134;
+extern void ext_00673C20(void* self);
+
+// @name copyTreeStringRange
+// @summary Copies std::string elements from a checked tree iterator range [first, last) into a destination std::string array.
+// @field TreeContainer +0x04 void* myhead
+void* __cdecl fn_0059FDE0(void* first_cont, void* first_node, void* last_cont, void* last_node, void* dest) {
+    struct TreeIter {
+        void* cont;
+        void* node;
+    };
+    TreeIter first = {first_cont, first_node};
+    auto invalid_param = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+    auto assign_str = reinterpret_cast<void*(__thiscall*)(void*, const void*)>(mem_00924FDC);
+
+    char* out = static_cast<char*>(dest);
+    for (;;) {
+        void* cont = first.cont;
+        if (cont != nullptr && cont != last_cont) {
+            invalid_param();
+        }
+        void* node = first.node;
+        if (node == last_node) {
+            break;
+        }
+        if (cont == nullptr) {
+            invalid_param();
+        }
+        if (node == lift_field<void*>(cont, 0x4)) {
+            invalid_param();
+        }
+        assign_str(out, static_cast<const char*>(node) + 0xC);
+        out += 0x1C;
+        ext_00673C20(&first);
+    }
+    return out;
+}
+} // namespace lift_0059FDE0
