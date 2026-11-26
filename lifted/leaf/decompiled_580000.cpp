@@ -1127,3 +1127,48 @@ void* __stdcall fn_0058A170(void* self, [[maybe_unused]] void* arg2) {
     return self;
 }
 } // namespace lift_0058A170
+
+// [0x00584B10]
+namespace lift_00584B10 {
+// @name FindFirstAcceptingNode
+// @class Unknown
+// @summary Returns self if virtual slot 0x70 accepts it; otherwise walks the +0x94 chain and returns the first node accepted by slot 0x70, or null.
+// @field Unknown +0x00 void* vptr
+// @field Unknown +0x94 void* field_0x94
+
+namespace {
+
+using AcceptFn = bool (*)(void* self);
+
+// Virtual slot at vtable offset 0x70 (index 28).
+inline bool accepts(void* obj) {
+    void** vtable = *reinterpret_cast<void***>(obj);
+    AcceptFn fn = reinterpret_cast<AcceptFn>(vtable[0x70 / sizeof(void*)]);
+    return fn(obj);
+}
+
+inline void* next_of(void* obj) {
+    return *reinterpret_cast<void**>(static_cast<unsigned char*>(obj) + 0x94);
+}
+
+} // namespace
+
+void* FindFirstAcceptingNode(void* self) {
+    if (accepts(self)) {
+        return self;
+    }
+
+    void* cur = next_of(self);
+    void* found = nullptr;
+    while (cur != nullptr) {
+        if (found != nullptr) {
+            break;
+        }
+        if (accepts(cur)) {
+            found = cur;
+        }
+        cur = next_of(cur);
+    }
+    return found;
+}
+} // namespace lift_00584B10

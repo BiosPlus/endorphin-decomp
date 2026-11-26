@@ -26519,6 +26519,13 @@
     "summary": "Pure jump thunk forwarding to sub_005B5AF0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00584B10": {
+    "name": "FindFirstAcceptingNode",
+    "class": "Unknown",
+    "signature": "inline bool accepts(void* obj)",
+    "summary": "Returns self if virtual slot 0x70 accepts it; otherwise walks the +0x94 chain and returns the first node accepted by slot 0x70, or null.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x00584BD0": {
     "name": "Unknown::getStrPtrOrFallback",
     "class": "Unknown",
