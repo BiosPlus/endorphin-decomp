@@ -1,0 +1,27 @@
+{
+  "va": "0x00678280",
+  "size": 83,
+  "orig_symbol": "sub_00678280",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "sub_00678280_dtor",
+  "signature": "extern \"C\" void __fastcall fn_00678280(void* self)",
+  "summary": "Destructor that sets vtable, destroys std::string member at +0x4, and calls base destructor ext_0065C660.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:49:01Z"
+}

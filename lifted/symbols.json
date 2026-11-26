@@ -18901,6 +18901,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0xC and forwards through mem_00924FDC.",
     "lifted_path": "lifted/leaf/tiny_4F0000.cpp"
   },
+  "0x004FDE90": {
+    "name": "sub_004FDE90",
+    "signature": "extern \"C\" void __fastcall fn_004FDE90(void* self)",
+    "summary": "Deletes the child object at +0x18 if non-null, then calls ext_00665810.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004FDEF0": {
     "name": "sub_004FDEF0_dtor",
     "class": "sub_004FDEF0_Class",
@@ -48540,6 +48546,12 @@
     "class": "\u003cunknown\u003e",
     "signature": "float fn_00678170(void* self, float value)",
     "summary": "Converts a float by a mode selected at self+0x0C: mode 1 multiplies by pi/180 (degrees to radians), mode 2 divides by 360 (degrees to turns), any other mode returns the input unchanged.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
+  "0x00678280": {
+    "name": "sub_00678280_dtor",
+    "signature": "extern \"C\" void __fastcall fn_00678280(void* self)",
+    "summary": "Destructor that sets vtable, destroys std::string member at +0x4, and calls base destructor ext_0065C660.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x00678380": {

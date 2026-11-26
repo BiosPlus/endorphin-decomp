@@ -1755,3 +1755,22 @@ void fn_00672D10(void* self) {
     lift_field<uint32_t>(self, 0x0C) = 0;
 }
 } // namespace lift_00672D10
+
+// [0x00678280]
+namespace lift_00678280 {
+// @name sub_00678280_dtor
+// @summary Destructor that sets vtable, destroys std::string member at +0x4, and calls base destructor ext_0065C660.
+// @field Self +0x0 uint32_t vtable
+// @field Self +0x4 std::string field_0x4
+
+
+extern uint32_t mem_0098C1F4;
+extern void (__thiscall *mem_00924FF4)(void*);
+void __fastcall ext_0065C660(void* self);
+
+extern void __fastcall fn_00678280(void* self) {
+    lift_field<void*>(self, 0x0) = &mem_0098C1F4;
+    mem_00924FF4(static_cast<char*>(self) + 0x4);
+    ext_0065C660(self);
+}
+} // namespace lift_00678280
