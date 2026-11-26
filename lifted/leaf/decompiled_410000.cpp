@@ -2365,7 +2365,7 @@ void __thiscall fn_00410230(void* self) {
 namespace lift_0041E070 {
 extern void ext_0041DCF0(void* self);
 
-// @name AdvXMLParser-style constructor (sub_0041E070)
+// @name initObjectAndCallCtorHelper
 // @class <unknown>
 // @summary Constructor-like init: sets vptr to 0x92df58, zeroes members, sets a byte flag, calls ext_0041DCF0(this), returns this.
 // @field <unknown> +0x00 DWORD _vptr
