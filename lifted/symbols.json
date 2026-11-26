@@ -19377,6 +19377,13 @@
     "summary": "If the object's first dword is non-zero, throw the default-message exception; otherwise build a DerivedException and throw it.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005052F0": {
+    "name": "Unknown::destroyStringField0CAndReinit",
+    "class": "Unknown",
+    "signature": "void fn_005052F0(void* self)",
+    "summary": "Destroys the std::string embedded at self+0x0C (via import slot 0x924FF4), then calls sub_0065F440(self).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00505340": {
     "name": "NMData::VariableValue::vfunc_0",
     "class": "NMData::VariableValue",

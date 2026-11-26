@@ -2402,3 +2402,25 @@ void* fn_00509C10(void* begin, void* end, void* dest) {
     return out;
 }
 } // namespace lift_00509C10
+
+// [0x005052F0] sub_005052F0 (77 bytes)
+namespace lift_005052F0 {
+// Known callee 0x0065F440: sub_0065F440 (Stores address of mem_0093BF24 into field at offset +0x0.)
+extern void __fastcall ext_0065F440(void* self);
+extern int mem_00924FF4;
+
+// @name Unknown::destroyStringField0CAndReinit
+// @class Unknown
+// @summary Destroys the std::string embedded at self+0x0C (via import slot 0x924FF4), then calls sub_0065F440(self).
+// @field Unknown +0x0C std::string field_0x0C
+void fn_005052F0(void* self) {
+    // lea ecx, [esi+0xc]; call [0x924ff4]  -> std::basic_string<char>::~basic_string
+    void* strField = static_cast<uint8_t*>(self) + 0x0C;
+    auto strDtor = reinterpret_cast<void(__thiscall*)(void*)>(
+        static_cast<uintptr_t>(lift_field<uint32_t>(&mem_00924FF4, 0)));
+    strDtor(strField);
+
+    // mov ecx, esi; call 0x65f440  -> sub_0065F440(self)
+    ext_0065F440(self);
+}
+} // namespace lift_005052F0

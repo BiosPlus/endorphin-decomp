@@ -1,0 +1,22 @@
+{
+  "va": "0x005052F0",
+  "size": 77,
+  "orig_symbol": "sub_005052F0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "Unknown::destroyStringField0CAndReinit",
+  "class": "Unknown",
+  "signature": "void fn_005052F0(void* self)",
+  "summary": "Destroys the std::string embedded at self+0x0C (via import slot 0x924FF4), then calls sub_0065F440(self).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:28:15Z"
+}
