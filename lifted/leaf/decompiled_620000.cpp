@@ -2303,3 +2303,25 @@ void fn_00627450(void* self) {
     std::memcpy(static_cast<uint8_t*>(self) + 0x60, reinterpret_cast<const void*>(static_cast<uintptr_t>(src)), 0x10 * sizeof(uint32_t));
 }
 } // namespace lift_00627450
+
+// [0x00626770]
+namespace lift_00626770 {
+// @name findStringIndex
+// @summary Searches a 9-element string table at 0x00A97F70 for a match, returning its index or 0 if not found.
+
+
+extern uint32_t mem_00924FC0;
+extern uint32_t mem_00A97F70[];
+
+typedef uint8_t (__cdecl *StringEqFn)(uint32_t strPtr, uint32_t cstrPtr);
+
+uint32_t sub_00626770(uint32_t arg0) {
+    StringEqFn eqFn = reinterpret_cast<StringEqFn>(mem_00924FC0);
+    for (int32_t esi = 0; esi < 9; ++esi) {
+        if (eqFn(arg0, mem_00A97F70[esi]) != 0) {
+            return static_cast<uint32_t>(esi);
+        }
+    }
+    return 0;
+}
+} // namespace lift_00626770
