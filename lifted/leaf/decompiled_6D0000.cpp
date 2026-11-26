@@ -1807,3 +1807,29 @@ extern int32_t fn_006D86F0() {
     return *static_cast<int32_t*>(q);
 }
 } // namespace lift_006D86F0
+
+// [0x006D2200]
+namespace lift_006D2200 {
+typedef void* (__cdecl *memmove_fn)(void*, const void*, size_t);
+extern memmove_fn mem_0092528C;
+
+// @name DynArray::removeAt
+// @class DynArray
+// @summary Removes element at index by shifting subsequent elements down and decrementing count.
+// @field DynArray +0x00 int32_t count
+// @field DynArray +0x0C int32_t elementSize
+// @field DynArray +0x10 uint8_t* data
+void __fastcall DynArray_removeAt(void* self, void* /*edx*/, int32_t index)
+{
+    uint8_t* p = (uint8_t*)self;
+    int32_t count = *(int32_t*)(p + 0x00);
+    int32_t next = index + 1;
+    if (next < count) {
+        int32_t stride = *(int32_t*)(p + 0x0C);
+        uint8_t* data = *(uint8_t**)(p + 0x10);
+        mem_0092528C(data + stride * index, data + stride * next,
+                     (size_t)((count - index - 1) * stride));
+    }
+    *(int32_t*)(p + 0x00) = *(int32_t*)(p + 0x00) - 1;
+}
+} // namespace lift_006D2200
