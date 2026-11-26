@@ -1,0 +1,13 @@
+{
+  "va": "0x00681250",
+  "size": 67,
+  "orig_symbol": "sub_00681250",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "swapRangesBackward16",
+  "signature": "uintptr_t sub_00681250(uintptr_t first, uintptr_t last, uintptr_t dstLast)",
+  "summary": "Swaps 12-byte payloads (offsets +4..+12) of 16-byte elements backward from [first, last) into [..., dstLast)",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:16:32Z"
+}
