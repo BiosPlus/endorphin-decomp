@@ -2172,3 +2172,26 @@ void* fn_00682E50(uint32_t count) {
 }
 } // namespace lift_00699810
 } // namespace lift_00682E50
+
+// [0x00683090] sub_00683090 (95 bytes)
+namespace lift_00683090 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0066AD10(void* out_str, uint8_t flag);
+// Callee 0x006A6C87: signature unknown; one 32-bit stack argument (pushed constant 0x921e10).
+extern void ext_006A6C87(uint32_t arg);
+extern int mem_00B5AD40;
+extern unsigned char mem_00B5AD24[];
+
+// @name initOnceStaticString
+// @summary One-time initializer for the global buffer at mem_00B5AD24; returns its address.
+void* fn_00683090() {
+    // Guard bit 0 of mem_00B5AD40: run the initialization only on the first call.
+    if ((mem_00B5AD40 & 1) == 0) {
+        mem_00B5AD40 |= 1;
+        // Original pushes: out_str = &mem_00B5AD24, flag = low byte of 0xA353F8 (0xF8).
+        ext_0066AD10(static_cast<void*>(mem_00B5AD24), static_cast<uint8_t>(0xF8));
+        ext_006A6C87(0x921E10u);
+    }
+    return static_cast<void*>(mem_00B5AD24);
+}
+} // namespace lift_00683090

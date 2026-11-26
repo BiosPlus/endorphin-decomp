@@ -1,0 +1,13 @@
+{
+  "va": "0x00683090",
+  "size": 95,
+  "orig_symbol": "sub_00683090",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "initOnceStaticString",
+  "signature": "void* fn_00683090()",
+  "summary": "One-time initializer for the global buffer at mem_00B5AD24; returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T12:08:42Z"
+}
