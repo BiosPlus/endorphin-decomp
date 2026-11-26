@@ -1399,3 +1399,51 @@ void fn_00422C80(void* self, void* arg) {
     (void)mem_00ACDAA4; (void)mem_00ACDAA8; (void)mem_00ACDAAC;
 }
 } // namespace lift_00422C80
+
+// [0x00429100]
+namespace lift_00429100 {
+// @name sub_00429100_dtor
+// @summary Destroys a std::string at +0x14 and a vector of 0x24-byte elements at +0x4.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x14 void* field_0x14
+
+
+    extern void (__thiscall *mem_00924FF4)(void* self);
+    void __thiscall ext_00428A60(void* self);
+
+    extern uint32_t mem_00ACD9DC, mem_00ACD9E0, mem_00ACD9E4, mem_00ACD9E8;
+    extern uint32_t mem_00ACD9EC, mem_00ACD9F0, mem_00ACD9F4, mem_00ACD9F8;
+    extern uint32_t mem_00ACD9FC, mem_00ACDA00, mem_00ACDA04, mem_00ACDA08;
+    extern uint32_t mem_00ACDA0C, mem_00ACDA10, mem_00ACDA14, mem_00ACDA18;
+    extern uint32_t mem_00ACDA1C, mem_00ACDA20, mem_00ACDA24, mem_00ACDA28;
+    extern uint32_t mem_00ACDA2C, mem_00ACDA30, mem_00ACDA34, mem_00ACDA38;
+    extern uint32_t mem_00ACDA3C, mem_00ACDA40, mem_00ACDA44, mem_00ACDA48;
+    extern uint32_t mem_00ACDA4C, mem_00ACDA50, mem_00ACDA54, mem_00ACDA58;
+    extern uint32_t mem_00ACDA5C, mem_00ACDA60, mem_00ACDA64, mem_00ACDA68;
+    extern uint32_t mem_00ACDA6C, mem_00ACDA70, mem_00ACDA74, mem_00ACDA78;
+    extern uint32_t mem_00ACDA7C, mem_00ACDA80, mem_00ACDA84, mem_00ACDA88;
+    extern uint32_t mem_00ACDA8C, mem_00ACDA90, mem_00ACDA94, mem_00ACDA98;
+    extern uint32_t mem_00ACDA9C, mem_00ACDAA0, mem_00ACDAA4, mem_00ACDAA8;
+    extern uint32_t mem_00ACDAAC;
+
+void __thiscall fn_00429100(void* self) {
+    (void)mem_00ACD9DC; (void)mem_00ACD9E0; (void)mem_00ACD9E4; (void)mem_00ACD9E8;
+    (void)mem_00ACD9EC; (void)mem_00ACD9F0; (void)mem_00ACD9F4; (void)mem_00ACD9F8;
+    (void)mem_00ACD9FC; (void)mem_00ACDA00; (void)mem_00ACDA04; (void)mem_00ACDA08;
+    (void)mem_00ACDA0C; (void)mem_00ACDA10; (void)mem_00ACDA14; (void)mem_00ACDA18;
+    (void)mem_00ACDA1C; (void)mem_00ACDA20; (void)mem_00ACDA24; (void)mem_00ACDA28;
+    (void)mem_00ACDA2C; (void)mem_00ACDA30; (void)mem_00ACDA34; (void)mem_00ACDA38;
+    (void)mem_00ACDA3C; (void)mem_00ACDA40; (void)mem_00ACDA44; (void)mem_00ACDA48;
+    (void)mem_00ACDA4C; (void)mem_00ACDA50; (void)mem_00ACDA54; (void)mem_00ACDA58;
+    (void)mem_00ACDA5C; (void)mem_00ACDA60; (void)mem_00ACDA64; (void)mem_00ACDA68;
+    (void)mem_00ACDA6C; (void)mem_00ACDA70; (void)mem_00ACDA74; (void)mem_00ACDA78;
+    (void)mem_00ACDA7C; (void)mem_00ACDA80; (void)mem_00ACDA84; (void)mem_00ACDA88;
+    (void)mem_00ACDA8C; (void)mem_00ACDA90; (void)mem_00ACDA94; (void)mem_00ACDA98;
+    (void)mem_00ACDA9C; (void)mem_00ACDAA0; (void)mem_00ACDAA4; (void)mem_00ACDAA8;
+    (void)mem_00ACDAAC;
+
+    char* base = static_cast<char*>(self);
+    mem_00924FF4(base + 0x14);
+    ext_00428A60(base + 0x4);
+}
+} // namespace lift_00429100
