@@ -73830,6 +73830,13 @@
     "summary": "If flag bit 0 at +0xC is set, allocates a zeroed block of +0x8 bytes, copies the old block into it, stores the new pointer at +0x4 and toggles the flag bit; returns 0, or -2 if allocation fails.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086D210": {
+    "name": "ComputeRecordSize",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t fn_0086D210(void* self)",
+    "summary": "Returns ext_0085C170(low 28 bits of the first dword) plus a tail term; when the tail dword at +0x0C is -1 the result is that base plus 3, otherwise it is base + ext_0085C130(tail) + tail.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086D600": {
     "name": "CopyQwordField1050To1048",
     "class": "(unknown owner)",

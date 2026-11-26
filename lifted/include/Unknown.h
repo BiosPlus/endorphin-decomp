@@ -60,6 +60,7 @@ struct Unknown_Fields {
     // +0x0   uint8_t                  flags  (evidence: 0x00640940, 0x00640CB0, 0x00648A20) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (vtable VA 0x0097CB4C written by this function)  (evidence: 0x0063E0F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (FILE* stream passed to fwrite)  (evidence: 0x00788E50) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 header_word  (evidence: 0x0086D210) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 heldObject  (evidence: 0x00468630) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    heldPtr  (evidence: 0x00401DE0, 0x004030F0, 0x0040A910, 0x0040BE90, 0x004693D0, 0x004693F0, 0x00480750, 0x004A5BE0, 0x004AECE0, 0x004D2C70, 0x004DA800, 0x00594790, 0x005947B0, 0x005C4780, 0x005CEA30, 0x00648200, 0x00648510, 0x00648A20) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (object kind word; low byte used as index)  (evidence: 0x007D5B30) // CONFLICT: multiple definitions at +0x0
@@ -369,6 +370,7 @@ struct Unknown_Fields {
     // +0xC   void*                    subObject  (evidence: 0x007155B0, 0x0071C3E0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 subobjectValue  (evidence: 0x00712010) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  tag  (evidence: 0x007155B0, 0x00715710) // CONFLICT: multiple definitions at +0xC
+    // +0xC   int32_t                  tail_value  (evidence: 0x0086D210) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 tree  (evidence: 0x0045E690) // CONFLICT: multiple definitions at +0xC
     // +0xC   pointer                  vecHolder  (evidence: 0x0067A670, 0x0067AEB0, 0x0067AEF0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0C (sub-object that receives the value via vfunc_8)  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250) // CONFLICT: multiple definitions at +0xC

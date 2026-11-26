@@ -1121,3 +1121,31 @@ uint32_t AllocFlaggedRecord(uint32_t arg) {
     return eax;
 }
 } // namespace lift_0086CFB0
+
+// [0x0086D210] sub_0086D210 (64 bytes)
+namespace lift_0086D210 {
+// Known callee 0x0085C170: sub_0085C170 (takes one 32-bit key, returns a 32-bit value)
+extern uint32_t ext_0085C170(uint32_t key);
+// Known callee 0x0085C130: sub_0085C130 (takes one 32-bit value, returns a 32-bit value)
+extern uint32_t ext_0085C130(uint32_t value);
+
+// @name ComputeRecordSize
+// @class Unknown
+// @summary Returns ext_0085C170(low 28 bits of the first dword) plus a tail term; when the tail dword at +0x0C is -1 the result is that base plus 3, otherwise it is base + ext_0085C130(tail) + tail.
+// @field Unknown +0x00 uint32_t header_word
+// @field Unknown +0x0C int32_t tail_value
+extern uint32_t fn_0086D210(void* self) {
+    const uint8_t* obj = static_cast<const uint8_t*>(self);
+    const uint32_t header_word = *reinterpret_cast<const uint32_t*>(obj + 0x00);
+    const int32_t tail_value = *reinterpret_cast<const int32_t*>(obj + 0x0C);
+
+    uint32_t base = ext_0085C170(header_word & 0x0FFFFFFFu);
+
+    if (tail_value == -1) {
+        return base + 3u;
+    }
+
+    uint32_t extra = ext_0085C130(static_cast<uint32_t>(tail_value));
+    return base + extra + static_cast<uint32_t>(tail_value);
+}
+} // namespace lift_0086D210

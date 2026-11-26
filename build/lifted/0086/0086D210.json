@@ -1,0 +1,28 @@
+{
+  "va": "0x0086D210",
+  "size": 64,
+  "orig_symbol": "sub_0086D210",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "ComputeRecordSize",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint32_t fn_0086D210(void* self)",
+  "summary": "Returns ext_0085C170(low 28 bits of the first dword) plus a tail term; when the tail dword at +0x0C is -1 the result is that base plus 3, otherwise it is base + ext_0085C130(tail) + tail.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "header_word"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "tail_value"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:09:12Z"
+}
