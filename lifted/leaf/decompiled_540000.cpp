@@ -1240,3 +1240,33 @@ uint32_t __stdcall sub_0054F2C0(uint32_t arg1, uint32_t arg2, uint32_t arg3) {
     return arg1 + arg2 * 0x68;
 }
 } // namespace lift_0054F2C0
+
+// [0x0054EFF0] sub_0054EFF0 (60 bytes)
+namespace lift_0054EFF0 {
+extern int mem_00925134;
+
+// @name Container::elementAt
+// @class Container
+// @summary Bounds-checked element address: returns begin + index * 0x68; calls _invalid_parameter_noinfo if begin is null or index >= (end - begin) / 0x68.
+// @field Container +0x1c uint8_t* field_0x1c
+// @field Container +0x20 uint8_t* field_0x20
+uint8_t* fn_0054EFF0(void* self, uint32_t index) {
+    uint8_t* begin = lift_field<uint8_t*>(self, 0x1c);
+    bool invalid = (begin == nullptr);
+    if (!invalid) {
+        uint8_t* end = lift_field<uint8_t*>(self, 0x20);
+        // 32-bit signed difference, then signed division by element size 0x68.
+        int32_t span = static_cast<int32_t>(
+            static_cast<uint32_t>(reinterpret_cast<uintptr_t>(end)) -
+            static_cast<uint32_t>(reinterpret_cast<uintptr_t>(begin)));
+        int32_t count = span / 0x68;
+        // Unsigned compare, matching the original `jb`.
+        invalid = (index >= static_cast<uint32_t>(count));
+    }
+    if (invalid) {
+        // Indirect call through the import slot at mem_00925134.
+        (*reinterpret_cast<void (**)()>(&mem_00925134))();
+    }
+    return begin + static_cast<size_t>(index) * 0x68;
+}
+} // namespace lift_0054EFF0

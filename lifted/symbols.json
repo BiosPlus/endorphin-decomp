@@ -24723,6 +24723,13 @@
     "summary": "Scalar deleting destructor: tears down the sub-object at +0x0C, stamps the vtable, and frees self when flags bit 0 is set. Returns self.",
     "lifted_path": "lifted/classes/OptimizedMatrixStackManager.cpp"
   },
+  "0x0054EFF0": {
+    "name": "Container::elementAt",
+    "class": "Container",
+    "signature": "uint8_t* fn_0054EFF0(void* self, uint32_t index)",
+    "summary": "Bounds-checked element address: returns begin + index * 0x68; calls _invalid_parameter_noinfo if begin is null or index \u003e= (end - begin) / 0x68.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x0054F0D0": {
     "name": "CopyRangeOf104ByteElements_0054F0D0",
     "signature": "void* fn_0054F0D0(const uint8_t* begin, const uint8_t* end, uint8_t* dest)",

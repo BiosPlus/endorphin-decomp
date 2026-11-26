@@ -1,0 +1,28 @@
+{
+  "va": "0x0054EFF0",
+  "size": 60,
+  "orig_symbol": "sub_0054EFF0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Container::elementAt",
+  "class": "Container",
+  "signature": "uint8_t* fn_0054EFF0(void* self, uint32_t index)",
+  "summary": "Bounds-checked element address: returns begin + index * 0x68; calls _invalid_parameter_noinfo if begin is null or index \u003e= (end - begin) / 0x68.",
+  "fields": [
+    {
+      "class": "Container",
+      "offset": "+0x1C",
+      "type": "uint8_t*",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Container",
+      "offset": "+0x20",
+      "type": "uint8_t*",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:54:53Z"
+}
