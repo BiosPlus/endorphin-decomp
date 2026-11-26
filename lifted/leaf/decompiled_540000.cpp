@@ -1270,3 +1270,21 @@ uint8_t* fn_0054EFF0(void* self, uint32_t index) {
     return begin + static_cast<size_t>(index) * 0x68;
 }
 } // namespace lift_0054EFF0
+
+// [0x005457B0]
+namespace lift_005457B0 {
+extern void __fastcall ext_00537E70(void* self);
+extern void __fastcall ext_00543320(void* self);
+extern char mem_00956944;
+
+// @name sub_005457B0_dtor
+// @summary Destructor: sets vtable 0x956944, destroys member at +0x9C, then calls base dtor.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x9C char field_0x9C
+extern void __fastcall fn_005457B0(void* self)
+{
+    *reinterpret_cast<void**>(self) = &mem_00956944;
+    ext_00537E70(static_cast<char*>(self) + 0x9C);
+    ext_00543320(self);
+}
+} // namespace lift_005457B0
