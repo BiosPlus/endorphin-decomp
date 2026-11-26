@@ -1306,3 +1306,29 @@ void fn_00557920(void* self) {
     extra = 0;
 }
 } // namespace lift_00557920
+
+// [0x005577A0]
+namespace lift_005577A0 {
+// @name StringPairRange::ClearAndReset
+// @class StringPairRange
+// @summary Destroys the element range held at +0x04/+0x08 (via ext_0041DD40 and ext_006A5C5C) and zeroes the three header dwords.
+// @field StringPairRange +0x04 uint32_t field_0x04
+// @field StringPairRange +0x08 uint32_t field_0x08
+// @field StringPairRange +0x0C uint32_t field_0x0C
+
+extern void ext_0041DD40(uint32_t begin, uint32_t end, uint32_t self, uint32_t self_copy);
+extern void ext_006A5C5C(uint32_t arg);
+
+void __thiscall fn_005577A0(void* self) {
+    uint32_t begin = lift_field<uint32_t>(self, 0x04);
+    if (begin != 0) {
+        uint32_t end = lift_field<uint32_t>(self, 0x08);
+        uint32_t self_u32 = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+        ext_0041DD40(begin, end, self_u32, self_u32);
+        ext_006A5C5C(lift_field<uint32_t>(self, 0x04));
+    }
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+}
+} // namespace lift_005577A0

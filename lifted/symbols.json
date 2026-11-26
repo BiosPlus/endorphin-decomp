@@ -25269,6 +25269,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x005577A0": {
+    "name": "StringPairRange::ClearAndReset",
+    "class": "StringPairRange",
+    "signature": "void __thiscall fn_005577A0(void* self)",
+    "summary": "Destroys the element range held at +0x04/+0x08 (via ext_0041DD40 and ext_006A5C5C) and zeroes the three header dwords.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00557920": {
     "name": "DestroyRangeAndReset",
     "signature": "void fn_00557920(void* self)",
