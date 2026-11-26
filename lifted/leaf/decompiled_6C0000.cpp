@@ -2176,3 +2176,32 @@ void* __thiscall sub_006C30A0(void* self) {
     return nullptr;
 }
 } // namespace lift_006C30A0
+
+// [0x006C8E00]
+namespace lift_006C8E00 {
+extern uint32_t mem_00925284; // IAT: MSVCR80!_HUGE (pointer to double)
+extern uint32_t mem_00B5D5E8;
+extern uint32_t mem_00B5D5EC;
+
+// @name initHugeValGlobal
+// @summary Static initializer: copies the CRT _HUGE double into a global (0xB5D5E8)
+void __cdecl sub_006C8E00()
+{
+    const uint32_t* src = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    uint32_t lo = src[0];
+    uint32_t hi = src[1];
+    mem_00B5D5E8 = lo;
+    mem_00B5D5EC = hi;
+}
+
+extern double mem_00B5D5E0;
+
+// [0x006C8E30]
+// @name initNegHugeValGlobal
+// @summary Static initializer: stores -_HUGE (negative infinity) into a global (0xB5D5E0)
+void __cdecl sub_006C8E30()
+{
+    const double* src = reinterpret_cast<const double*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B5D5E0 = -*src;
+}
+} // namespace lift_006C8E00

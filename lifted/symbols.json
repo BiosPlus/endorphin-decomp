@@ -58561,6 +58561,12 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x138.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C8E00": {
+    "name": "initHugeValGlobal",
+    "signature": "void __cdecl sub_006C8E00()",
+    "summary": "Static initializer: copies the CRT _HUGE double into a global (0xB5D5E8)",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C8E60": {
     "name": "initHugeBounds",
     "signature": "void __cdecl sub_006C8E60()",

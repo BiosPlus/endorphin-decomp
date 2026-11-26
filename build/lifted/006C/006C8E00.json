@@ -1,0 +1,13 @@
+{
+  "va": "0x006C8E00",
+  "size": 80,
+  "orig_symbol": "sub_006C8E00",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "initHugeValGlobal",
+  "signature": "void __cdecl sub_006C8E00()",
+  "summary": "Static initializer: copies the CRT _HUGE double into a global (0xB5D5E8)",
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-26T11:39:00Z"
+}
