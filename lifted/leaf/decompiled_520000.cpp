@@ -1454,3 +1454,43 @@ uint8_t* sub_00522530(uint8_t* first, uint8_t* last, uint8_t* d_last) {
     return dst;
 }
 } // namespace lift_00522530
+
+// [0x0052A230]
+namespace lift_0052A230 {
+// @name Tree_lowerBound
+// @summary Finds the lower-bound node in a red-black tree keyed by std::string.
+// @field Tree +0x04 void* head
+// @field TreeNode +0x00 void* left
+// @field TreeNode +0x04 void* parent
+// @field TreeNode +0x08 void* right
+// @field TreeNode +0x0c char[1] key
+// @field TreeNode +0x61 uint8_t isNil
+
+
+extern uint32_t mem_00924EF4;
+
+using StringLessFn = uint8_t (__cdecl*)(const void*, const void*);
+
+void* __thiscall sub_0052A230(void* self, const void* key) {
+    void* head = lift_field<void*>(self, 0x4);
+    void* node = lift_field<void*>(head, 0x4);
+    void* where = head;
+
+    if (lift_field<uint8_t>(node, 0x61) != 0) {
+        return where;
+    }
+
+    auto stringLess = reinterpret_cast<StringLessFn>(mem_00924EF4);
+    do {
+        const void* nodeKey = reinterpret_cast<const uint8_t*>(node) + 0xc;
+        if (stringLess(nodeKey, key) != 0) {
+            node = lift_field<void*>(node, 0x8);
+        } else {
+            where = node;
+            node = lift_field<void*>(node, 0x0);
+        }
+    } while (lift_field<uint8_t>(node, 0x61) == 0);
+
+    return where;
+}
+} // namespace lift_0052A230
