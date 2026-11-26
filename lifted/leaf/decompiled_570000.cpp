@@ -1384,3 +1384,31 @@ void fn_0057E9A0(void* self) {
 }
 } // namespace lift_0044C500
 } // namespace lift_0057E9A0
+
+// [0x00573250]
+namespace lift_00573250 {
+extern void (*mem_00925134)();
+extern char* (__thiscall *mem_00924E44)(void*);
+
+// @name StringConstIterator::getCheckedPtr
+// @class StringConstIterator
+// @summary Validates a checked std::string iterator against its container and returns its pointer.
+// @field StringConstIterator +0x00 uint32_t container
+// @field StringConstIterator +0x04 uint32_t ptr
+uint32_t __thiscall sub_00573250(void* self) {
+    uint32_t container = lift_field<uint32_t>(self, 0x00);
+    if (container != 0xFFFFFFFEu) {
+        if (container == 0) {
+            mem_00925134();
+        }
+        void* cont_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(container));
+        char* base = mem_00924E44(cont_ptr);
+        uint32_t size = lift_field<uint32_t>(cont_ptr, 0x14);
+        uintptr_t end = reinterpret_cast<uintptr_t>(base) + size;
+        if (static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x04)) >= end) {
+            mem_00925134();
+        }
+    }
+    return lift_field<uint32_t>(self, 0x04);
+}
+} // namespace lift_00573250
