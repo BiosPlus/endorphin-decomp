@@ -1,0 +1,33 @@
+{
+  "va": "0x007B8BB0",
+  "size": 96,
+  "orig_symbol": "sub_007B8BB0",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "freeGlobalNodeList",
+  "signature": "void fn_007B8BB0()",
+  "summary": "Walks the global linked list at mem_00B61DB8, frees each node's +0x08 and +0x0C blocks (if non-null) and the node itself, following the +0x14 link, then clears the head.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "next"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T12:11:01Z"
+}

@@ -48553,6 +48553,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00553F70 (ScaledRangeDivide160).",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x00672430": {
+    "name": "allocateElements80",
+    "signature": "void* __cdecl fn_00672430(uint32_t count)",
+    "summary": "Allocates count elements of 80 bytes via MFC80 operator new, throwing std::bad_alloc on overflow",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00672490": {
     "name": "sub_0067AEE8",
     "class": "Unknown (no class recovered; receiver is passed in ecx)",
@@ -71210,6 +71216,12 @@
     "signature": "extern DWORD mem_00B61DB8;   // list head pointer (global) void ext_007B8BB0();         // freeLinkedList_007B8BB0: frees all nodes and their buffers void sub_007B8BA0()",
     "summary": "Frees the linked list rooted at mem_00B61DB8 if it is non-empty; otherwise does nothing.",
     "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
+  },
+  "0x007B8BB0": {
+    "name": "freeGlobalNodeList",
+    "signature": "void fn_007B8BB0()",
+    "summary": "Walks the global linked list at mem_00B61DB8, frees each node's +0x08 and +0x0C blocks (if non-null) and the node itself, following the +0x14 link, then clears the head.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
   "0x007B8D80": {
     "name": "ListAppendAlloc",

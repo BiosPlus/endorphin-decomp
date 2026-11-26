@@ -1518,3 +1518,42 @@ int fn_007BC4F0(void* self) {
     return -1;
 }
 } // namespace lift_007BC4F0
+
+// [0x007B8BB0] sub_007B8BB0 (96 bytes)
+namespace lift_007B8BB0 {
+// Global list head (dword at 0x00B61DB8).
+extern void* mem_00B61DB8;
+// Import slot at 0x009251D8 holding MSVCR80!free; the lift calls std::free directly.
+extern void* mem_009251D8;
+
+// @name freeGlobalNodeList
+// @summary Walks the global linked list at mem_00B61DB8, frees each node's +0x08 and +0x0C blocks (if non-null) and the node itself, following the +0x14 link, then clears the head.
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x0C void* field_0x0C
+// @field Unknown +0x14 void* next
+void fn_007B8BB0() {
+    (void)&mem_009251D8;  // metadata-only: original loads the free import slot
+    void* node = mem_00B61DB8;
+    if (node == nullptr) {
+        mem_00B61DB8 = nullptr;
+        return;
+    }
+
+    void* next = nullptr;
+    do {
+        void* a = lift_field<void*>(node, 0x08);
+        if (a != nullptr) {
+            std::free(a);
+        }
+        void* b = lift_field<void*>(node, 0x0C);
+        if (b != nullptr) {
+            std::free(b);
+        }
+        next = lift_field<void*>(node, 0x14);
+        std::free(node);
+        node = next;
+    } while (next != nullptr);
+
+    mem_00B61DB8 = nullptr;
+}
+} // namespace lift_007B8BB0
