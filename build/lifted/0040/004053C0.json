@@ -1,0 +1,33 @@
+{
+  "va": "0x004053C0",
+  "size": 70,
+  "orig_symbol": "sub_004053C0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "getVectorElementAtIndex",
+  "signature": "uint32_t __thiscall fn_004053C0(void* self)",
+  "summary": "Bounds-checked lookup returning the first dword of an 88-byte element in a vector at +0x564 using index at +0x684.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x564",
+      "type": "uint8_t*",
+      "name": "vec_begin"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x568",
+      "type": "uint8_t*",
+      "name": "vec_end"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x684",
+      "type": "uint32_t",
+      "name": "index"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:18:05Z"
+}

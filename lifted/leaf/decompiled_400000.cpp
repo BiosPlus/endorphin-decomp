@@ -1672,3 +1672,35 @@ int32_t* __thiscall sub_004077E0(void* self, int32_t* out_size, void* str) {
     return out_size;
 }
 } // namespace lift_004077E0
+
+// [0x004053C0]
+namespace lift_004053C0 {
+// @name getVectorElementAtIndex
+// @summary Bounds-checked lookup returning the first dword of an 88-byte element in a vector at +0x564 using index at +0x684.
+// @field Self +0x564 uint8_t* vec_begin
+// @field Self +0x568 uint8_t* vec_end
+// @field Self +0x684 uint32_t index
+
+
+extern void (*mem_00925134)();
+
+uint32_t __thiscall fn_004053C0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    uint8_t* vec_begin = lift_field<uint8_t*>(base, 0x564);
+    uint32_t index = lift_field<uint32_t>(base, 0x684);
+
+    if (vec_begin == nullptr) {
+        mem_00925134();
+        vec_begin = lift_field<uint8_t*>(base, 0x564);
+    } else {
+        uint8_t* vec_end = lift_field<uint8_t*>(base, 0x568);
+        uint32_t count = static_cast<uint32_t>(static_cast<int32_t>(vec_end - vec_begin) / 0x58);
+        if (index >= count) {
+            mem_00925134();
+            vec_begin = lift_field<uint8_t*>(base, 0x564);
+        }
+    }
+
+    return *reinterpret_cast<uint32_t*>(vec_begin + index * 0x58);
+}
+} // namespace lift_004053C0
