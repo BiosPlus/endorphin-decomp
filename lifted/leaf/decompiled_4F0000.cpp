@@ -779,3 +779,23 @@ uint32_t __thiscall sub_004FDAA0(void* self, uint32_t arg1, uint32_t arg2) {
     return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
 }
 } // namespace lift_004FDAA0
+
+// [0x004FDE90]
+namespace lift_004FDE90 {
+extern void __fastcall ext_00665810(void* self);
+extern const uint32_t mem_00924FF4;
+
+// @name sub_004FDE90
+// @summary Deletes the child object at +0x18 if non-null, then calls ext_00665810.
+// @field Self +0x18 void* field_0x18
+extern void __fastcall fn_004FDE90(void* self) {
+    (void)mem_00924FF4;
+    void* obj = *reinterpret_cast<void**>(reinterpret_cast<uintptr_t>(self) + 0x18);
+    if (obj != nullptr) {
+        void** vtable = *reinterpret_cast<void***>(obj);
+        using DeletingDtor = void (__thiscall*)(void*, int);
+        reinterpret_cast<DeletingDtor>(vtable[0])(obj, 1);
+    }
+    ext_00665810(self);
+}
+} // namespace lift_004FDE90

@@ -1,0 +1,21 @@
+{
+  "va": "0x004FDE90",
+  "size": 83,
+  "orig_symbol": "sub_004FDE90",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "sub_004FDE90",
+  "signature": "extern \"C\" void __fastcall fn_004FDE90(void* self)",
+  "summary": "Deletes the child object at +0x18 if non-null, then calls ext_00665810.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:49:09Z"
+}
