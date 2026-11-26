@@ -740,3 +740,26 @@ void fn_007299C0(void* self) {
     }
 }
 } // namespace lift_007299C0
+
+// [0x0072BF70] sub_0072BF70 (96 bytes)
+namespace lift_0072BF70 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* arg);
+// Known callee 0x006B9D70: sub_006B9D70 (Pure jump thunk forwarding to sub_006B9970.)
+extern void ext_006B9D70(void* thisptr);
+
+// @name Unknown::resetAndReleaseSubobject
+// @class Unknown
+// @summary If +0x10 is non-null, passes it to ext_006A5C5C; clears the byte at +0x64; then calls ext_006B9D70 on the embedded subobject at +0x18 (thiscall). SEH frame from the original is dropped.
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x18 subobject field_0x18
+// @field Unknown +0x64 uint8_t field_0x64
+void fn_0072BF70(void* self) {
+    void* ptr = lift_field<void*>(self, 0x10);
+    if (ptr != nullptr) {
+        ext_006A5C5C(ptr);
+    }
+    lift_field<uint8_t>(self, 0x64) = 0;
+    ext_006B9D70(static_cast<void*>(&lift_field<uint8_t>(self, 0x18)));
+}
+} // namespace lift_0072BF70
