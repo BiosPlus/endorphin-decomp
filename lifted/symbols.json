@@ -17801,6 +17801,13 @@
     "summary": "Copies two DWORD fields (+0x04, +0x08) of self into the out-pointer argument at [out+0], [out+4].",
     "lifted_path": "lifted/leaf/tiny_4E0000.cpp"
   },
+  "0x004EF460": {
+    "name": "Properties::TargetSelectionProxy::vfunc_0",
+    "class": "Properties::TargetSelectionProxy",
+    "signature": "uint32_t __thiscall fn_004EF460(uint32_t self, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "Forwards the call to the first element of the child vector via its vtable slot 0 (tail jump); returns the vector begin pointer when the vector is empty.",
+    "lifted_path": "lifted/Properties/TargetSelectionProxy.cpp"
+  },
   "0x004EF4A0": {
     "name": "Properties::TargetSelectionProxy::vfunc_1",
     "class": "Properties::TargetSelectionProxy",

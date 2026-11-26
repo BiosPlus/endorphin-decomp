@@ -10,7 +10,7 @@
 // Recovered field layout for Properties::TargetSelectionProxy:
 namespace lifted_layout {
 struct Properties_TargetSelectionProxy_Fields {
-    // +0x10  uint32_t                 field_0x10  (evidence: 0x004EF4A0)
-    // +0x14  uint32_t                 field_0x14  (evidence: 0x004EF4A0)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x004EF460, 0x004EF4A0)
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x004EF460, 0x004EF4A0)
 };
 } // namespace lifted_layout

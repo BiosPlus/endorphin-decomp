@@ -1,0 +1,28 @@
+{
+  "va": "0x004EF460",
+  "size": 61,
+  "orig_symbol": "Properties::TargetSelectionProxy::vfunc_0",
+  "src_path": "src/Properties/TargetSelectionProxy.cpp",
+  "lifted_path": "lifted/Properties/TargetSelectionProxy.cpp",
+  "name": "Properties::TargetSelectionProxy::vfunc_0",
+  "class": "Properties::TargetSelectionProxy",
+  "signature": "uint32_t __thiscall fn_004EF460(uint32_t self, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3)",
+  "summary": "Forwards the call to the first element of the child vector via its vtable slot 0 (tail jump); returns the vector begin pointer when the vector is empty.",
+  "fields": [
+    {
+      "class": "Properties::TargetSelectionProxy",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Properties::TargetSelectionProxy",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:57:39Z"
+}
