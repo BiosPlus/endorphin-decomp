@@ -1172,3 +1172,51 @@ void* FindFirstAcceptingNode(void* self) {
     return found;
 }
 } // namespace lift_00584B10
+
+// [0x00586240]
+namespace lift_00586240 {
+// @name Node::traverseAndInvoke
+// @class Node
+// @summary Calls virtual method at vtable+0xa4 on this node and recursively on each child in vector at +0x7c.
+// @field Node +0x00 void** vtable
+// @field Node +0x7c void* children_vec
+// @field Node +0x80 void** children_begin
+// @field Node +0x84 void** children_end
+
+
+    extern void (__cdecl* mem_00925134)();
+    void __thiscall ext_00586240(void* self);
+
+void __thiscall fn_00586240(void* self) {
+    uint8_t* node = static_cast<uint8_t*>(self);
+    void** vtable = *reinterpret_cast<void***>(node);
+    using VirtFn = void(__thiscall*)(void*);
+    reinterpret_cast<VirtFn>(vtable[0xa4 / sizeof(void*)])(self);
+
+    uint8_t* vec = node + 0x7c;
+    uint32_t* it = *reinterpret_cast<uint32_t**>(node + 0x80);
+    auto invalid_param = mem_00925134;
+
+    if (it > *reinterpret_cast<uint32_t**>(vec + 0x08)) {
+        invalid_param();
+    }
+
+    for (;;) {
+        uint32_t* end = *reinterpret_cast<uint32_t**>(vec + 0x08);
+        if (*reinterpret_cast<uint32_t**>(vec + 0x04) > end) {
+            invalid_param();
+        }
+        if (it == end) {
+            break;
+        }
+        if (it >= *reinterpret_cast<uint32_t**>(vec + 0x08)) {
+            invalid_param();
+        }
+        ext_00586240(reinterpret_cast<void*>(*it));
+        if (it >= *reinterpret_cast<uint32_t**>(vec + 0x08)) {
+            invalid_param();
+        }
+        ++it;
+    }
+}
+} // namespace lift_00586240

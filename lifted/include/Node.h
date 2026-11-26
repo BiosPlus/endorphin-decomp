@@ -15,6 +15,7 @@ struct Node_Fields {
     // +0x0   Node*                    left  (evidence: 0x005ED330) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 left  (evidence: 0x007D48C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   Node*                    next  (evidence: 0x007837A0, 0x00788E50) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void**                   vtable  (evidence: 0x00586240) // CONFLICT: multiple definitions at +0x0
     // +0x4   void*                    linkA  (evidence: 0x0062B6F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    prev  (evidence: 0x007CC930) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 right  (evidence: 0x007D48C0) // CONFLICT: multiple definitions at +0x4
@@ -35,6 +36,9 @@ struct Node_Fields {
     // +0x20  void*                    field_0x20  (evidence: 0x00859AF0)
     // +0x51  uint8_t                  isNil  (evidence: 0x005ED330)
     // +0x59  uint8_t                  field_0x59  (evidence: 0x004275C0)
+    // +0x7C  void*                    children_vec  (evidence: 0x00586240)
+    // +0x80  void**                   children_begin  (evidence: 0x00586240)
+    // +0x84  void**                   children_end  (evidence: 0x00586240)
     // +0xAD  uint8_t                  flag  (evidence: 0x004A58E0)
     // +0x164 uint32_t                 field_0x164  (evidence: 0x007DA8E0)
 };
