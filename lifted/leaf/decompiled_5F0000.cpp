@@ -1174,3 +1174,23 @@ void* fn_005FFC40(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
 }
 } // namespace lift_005FF290
 } // namespace lift_005FFC40
+
+// [0x005FEFD0] sub_005FEFD0 (45 bytes)
+namespace lift_005FEFD0 {
+extern int mem_00924FDC;
+
+// @name Unknown::fillRangeFromRecord_005FEFD0
+// @class Unknown
+// @summary For each 0x20-byte element in [first, last), string-assigns from src via MSVCP80 operator= and copies src +0x1C into the element.
+// @field Unknown +0x1C uint32_t field_0x1C
+void fn_005FEFD0(uint8_t* first, uint8_t* last, const uint8_t* src) {
+    // MSVCP80 std::string::operator=(const string&), resolved via the IAT slot mem_00924FDC.
+    using StringAssign = void* (__thiscall*)(void* self, const void* rhs);
+    const auto assign = reinterpret_cast<StringAssign>(static_cast<uintptr_t>(mem_00924FDC));
+
+    for (uint8_t* p = first; p != last; p += 0x20) {
+        assign(p, src);
+        lift_field<uint32_t>(p, 0x1C) = lift_field<const uint32_t>(src, 0x1C);
+    }
+}
+} // namespace lift_005FEFD0

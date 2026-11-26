@@ -36224,6 +36224,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005FEFD0": {
+    "name": "Unknown::fillRangeFromRecord_005FEFD0",
+    "class": "Unknown",
+    "signature": "void fn_005FEFD0(uint8_t* first, uint8_t* last, const uint8_t* src)",
+    "summary": "For each 0x20-byte element in [first, last), string-assigns from src via MSVCP80 operator= and copies src +0x1C into the element.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005FF000": {
     "name": "RbTree_clear",
     "class": "RbTree",

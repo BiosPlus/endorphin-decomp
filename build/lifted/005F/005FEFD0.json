@@ -1,0 +1,22 @@
+{
+  "va": "0x005FEFD0",
+  "size": 45,
+  "orig_symbol": "sub_005FEFD0",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "Unknown::fillRangeFromRecord_005FEFD0",
+  "class": "Unknown",
+  "signature": "void fn_005FEFD0(uint8_t* first, uint8_t* last, const uint8_t* src)",
+  "summary": "For each 0x20-byte element in [first, last), string-assigns from src via MSVCP80 operator= and copies src +0x1C into the element.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:27:59Z"
+}
