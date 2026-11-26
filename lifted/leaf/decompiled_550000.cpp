@@ -1586,3 +1586,21 @@ void sub_00553FF0(void* self) {
     ext_00663060(self);
 }
 } // namespace lift_00553FF0
+
+// [0x005541A0]
+namespace lift_005541A0 {
+// @name sub_005541A0_dtor
+// @summary Destructor that destroys std::string members at +0x20 and +0x04
+// @field Self +0x04 std::string field_0x04
+// @field Self +0x20 std::string field_0x20
+
+
+extern uintptr_t mem_00924FF4;
+
+void __thiscall sub_005541A0(void* self) {
+    using string_dtor_t = void(__thiscall*)(void*);
+    auto string_dtor = reinterpret_cast<string_dtor_t>(mem_00924FF4);
+    string_dtor(static_cast<uint8_t*>(self) + 0x20);
+    string_dtor(static_cast<uint8_t*>(self) + 0x04);
+}
+} // namespace lift_005541A0

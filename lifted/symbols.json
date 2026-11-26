@@ -20729,6 +20729,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0048B150 (ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, fire\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteOnlyMethod0Type.cpp"
   },
+  "0x00516E10": {
+    "name": "EvolvedIndividual::vfunc_0_off_8",
+    "class": "EvolvedIndividual",
+    "signature": "void __thiscall fn_00516E10(void* this_ptr, void* item, uint32_t /*unused*/)",
+    "summary": "Sets owner pointer on added item and updates indices of all owned items",
+    "lifted_path": "lifted/classes/EvolvedIndividual.cpp"
+  },
   "0x00516E60": {
     "name": "EvolvedIndividual::vfunc_1_off_8",
     "class": "EvolvedIndividual",
@@ -25410,6 +25417,12 @@
     "class": "Unknown",
     "signature": "void sub_00553FF0(void* self)",
     "summary": "Destroys std::string at this+0x54, then calls ext_00663060 to destroy the remaining string members.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
+  "0x005541A0": {
+    "name": "sub_005541A0_dtor",
+    "signature": "void __thiscall sub_005541A0(void* self)",
+    "summary": "Destructor that destroys std::string members at +0x20 and +0x04",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
   "0x00554260": {
@@ -72517,6 +72530,12 @@
     "name": "setOwnedState",
     "signature": "void sub_007D6290(uint8_t* obj, uint32_t new_val)",
     "summary": "Updates state at +0x10 and invokes cleanup callback if transitioning from 1 while unowned",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
+  "0x007D6660": {
+    "name": "incrementBucket",
+    "signature": "int32_t* sub_007D6660(int32_t eax, void* esi)",
+    "summary": "Rounds index up to multiple of 4, divides by 4, clamps to [0, count-1], increments bucket, and returns pointer to it.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
   "0x007D7190": {
