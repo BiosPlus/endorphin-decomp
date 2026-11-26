@@ -1833,3 +1833,23 @@ void __fastcall DynArray_removeAt(void* self, void* /*edx*/, int32_t index)
     *(int32_t*)(p + 0x00) = *(int32_t*)(p + 0x00) - 1;
 }
 } // namespace lift_006D2200
+
+// [0x006D8E70]
+namespace lift_006D8E70 {
+extern void __fastcall ext_0077FA20(void* self);
+extern unsigned char mem_00993BB8[];
+
+// @name sub_006D8E70_dtor
+// @summary Destructor: sets vtable, invokes virtual slot 1 (arg 0) on owned object at +0xC, then calls base destructor.
+// @field Unknown +0x0 void* vtable
+// @field Unknown +0xC void* field_0xC
+extern void __fastcall fn_006D8E70(void* self)
+{
+    *(void**)self = (void*)mem_00993BB8;
+    void* obj = *(void**)((char*)self + 0xC);
+    typedef void(__thiscall * Fn)(void*, int);
+    Fn fn = (Fn)((*(void***)obj)[1]);
+    fn(obj, 0);
+    ext_0077FA20(self);
+}
+} // namespace lift_006D8E70
