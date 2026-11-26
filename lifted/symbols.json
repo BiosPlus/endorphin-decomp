@@ -67571,6 +67571,13 @@
     "summary": "Three-way unsigned 32-bit integer comparator for pointer arguments (returns -1, 0, or 1).",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x007847B0": {
+    "name": "SortRecordsIfDirty",
+    "class": "Records",
+    "signature": "int32_t fn_007847B0(void* self)",
+    "summary": "If the dirty flag at +0x10 is set, qsorts the 8-byte record array (base +0x00, count +0x04) with compareUint32Ptr and clears the flag; always returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00784820": {
     "name": "sub_00784820",
     "signature": "void sub_00784820()",

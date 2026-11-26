@@ -1,0 +1,34 @@
+{
+  "va": "0x007847B0",
+  "size": 48,
+  "orig_symbol": "sub_007847B0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "SortRecordsIfDirty",
+  "class": "Records",
+  "signature": "int32_t fn_007847B0(void* self)",
+  "summary": "If the dirty flag at +0x10 is set, qsorts the 8-byte record array (base +0x00, count +0x04) with compareUint32Ptr and clears the flag; always returns 0.",
+  "fields": [
+    {
+      "class": "Records",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "recordsBase"
+    },
+    {
+      "class": "Records",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "recordCount"
+    },
+    {
+      "class": "Records",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "dirty"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:39:06Z"
+}

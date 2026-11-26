@@ -1541,3 +1541,32 @@ uint32_t __thiscall fn_00783540(void* self, const void* buf, uint32_t count) {
     return static_cast<uint32_t>(fwrite(buf, 1, count, stream));
 }
 } // namespace lift_00783540
+
+// [0x007847B0] sub_007847B0 (48 bytes)
+namespace lift_007847B0 {
+// MSVCR80 qsort import slot (IAT entry at 0x00925298).
+extern void* mem_00925298;
+// Three-way comparator at 0x00784790 (lifted separately as compareUint32Ptr).
+extern int32_t sub_00784790(const void* a, const void* b);
+
+// @name SortRecordsIfDirty
+// @class Records
+// @summary If the dirty flag at +0x10 is set, qsorts the 8-byte record array (base +0x00, count +0x04) with compareUint32Ptr and clears the flag; always returns 0.
+// @field Records +0x00 void* recordsBase
+// @field Records +0x04 uint32_t recordCount
+// @field Records +0x10 uint8_t dirty
+int32_t fn_007847B0(void* self) {
+    auto* rec = static_cast<uint8_t*>(self);
+    auto* dirty = rec + 0x10;
+
+    if (*dirty != 0) {
+        using QsortFn = void (__cdecl*)(void*, size_t, size_t, int32_t (*)(const void*, const void*));
+        const auto qsort_ = reinterpret_cast<QsortFn>(mem_00925298);
+        void* base = *reinterpret_cast<void**>(rec + 0x00);
+        const size_t count = *reinterpret_cast<uint32_t*>(rec + 0x04);
+        qsort_(base, count, 8, &sub_00784790);
+        *dirty = 0;
+    }
+    return 0;
+}
+} // namespace lift_007847B0
