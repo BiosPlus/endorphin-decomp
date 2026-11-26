@@ -61600,6 +61600,12 @@
     "summary": "Getter returning int32_t field at offset +0x198.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006F7560": {
+    "name": "getLinkedObjectIfTypeMatches",
+    "signature": "void* __fastcall sub_006F7560(void* self)",
+    "summary": "Returns object at +0x19C if mode +0x198 is 0 and type is 6, or mode is 1, type is 8 and it isn't this; else null",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F76E0": {
     "name": "sub_006F76E0",
     "signature": "extern \"C\" int32_t __fastcall fn_006F76E0(void* self)",

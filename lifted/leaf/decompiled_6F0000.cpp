@@ -1917,3 +1917,33 @@ bool fn_006FEFB0(const char* s) {
     return true;
 }
 } // namespace lift_006FEFB0
+
+// [0x006F7560]
+namespace lift_006F7560 {
+struct TypedObj {
+    virtual void vfunc_0();
+    virtual void vfunc_1();
+    virtual int getType();
+};
+
+// @name getLinkedObjectIfTypeMatches
+// @summary Returns object at +0x19C if mode +0x198 is 0 and type is 6, or mode is 1, type is 8 and it isn't this; else null
+// @field UnknownClass +0x198 int field_0x198
+// @field UnknownClass +0x19C TypedObj* field_0x19C
+void* __fastcall sub_006F7560(void* self) {
+    char* s = (char*)self;
+    TypedObj* obj = *(TypedObj**)(s + 0x19c);
+    if (!obj) return nullptr;
+    if (*(int*)(s + 0x198) == 0) {
+        if (obj->getType() == 6) return *(TypedObj**)(s + 0x19c);
+    }
+    if (*(int*)(s + 0x198) == 1) {
+        TypedObj* o = *(TypedObj**)(s + 0x19c);
+        if (o->getType() == 8) {
+            void* r = *(void**)(s + 0x19c);
+            if (r != self) return r;
+        }
+    }
+    return nullptr;
+}
+} // namespace lift_006F7560

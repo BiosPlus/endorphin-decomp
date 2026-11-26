@@ -1,0 +1,27 @@
+{
+  "va": "0x006F7560",
+  "size": 80,
+  "orig_symbol": "sub_006F7560",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "getLinkedObjectIfTypeMatches",
+  "signature": "void* __fastcall sub_006F7560(void* self)",
+  "summary": "Returns object at +0x19C if mode +0x198 is 0 and type is 6, or mode is 1, type is 8 and it isn't this; else null",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x198",
+      "type": "int",
+      "name": "field_0x198"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x19C",
+      "type": "TypedObj*",
+      "name": "field_0x19C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-26T11:38:52Z"
+}
