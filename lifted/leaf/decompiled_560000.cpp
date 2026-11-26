@@ -440,3 +440,46 @@ void* __stdcall fn_005634D0(void* out, void* obj) {
     return out;
 }
 } // namespace lift_005634D0
+
+// [0x00564600] sub_00564600 (81 bytes)
+namespace lift_00564600 {
+// Known callee 0x007C569A: thunk_XSIFtk-3.6.2.1_?Open@CSLScene@@QAEHPAD@Z (IAT jump thunk forwarding to XSIFtk-3.6.2.1!?Open@CSLScene@@QAEHPAD@Z.)
+extern void ext_007C569A();
+// IAT slot for MSVCP80 std::basic_string<char>::c_str
+extern int mem_00924FF0;
+
+// @name UnknownClass_openSceneFromString
+// @class UnknownClass
+// @summary Calls vslot 0x84 on +0x27C, optionally vslot 0x0C on +0x424 with a constant string, then returns true when CSLScene::Open(c_str(str)) on +0x494 returns zero.
+// @field UnknownClass +0x27C void* field_0x27C
+// @field UnknownClass +0x424 void* field_0x424
+// @field UnknownClass +0x494 void* field_0x494
+BOOL fn_00564600(void* self, void* str) {
+    using VFn0 = void (*)(void*);
+    using VFn1 = void (*)(void*, const void*);
+    using CStrFn = const char* (*)(void*);
+    using OpenFn = int (*)(void*, const char*);
+
+    // Read the function pointer at byte offset `byteOff` in obj's vtable.
+    auto vslot = [](void* obj, uintptr_t byteOff) -> void* {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        return *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtbl) + byteOff);
+    };
+
+    void* a = lift_field<void*>(self, 0x27C);
+    reinterpret_cast<VFn0>(vslot(a, 0x84))(a);
+
+    void* b = lift_field<void*>(self, 0x424);
+    if (b != nullptr) {
+        reinterpret_cast<VFn1>(vslot(b, 0x0C))(b, reinterpret_cast<const void*>(uintptr_t{0x00B39F84}));
+    }
+
+    // Value of the IAT slot is the address of c_str.
+    CStrFn c_str = reinterpret_cast<CStrFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF0)));
+    const char* s = c_str(str);
+
+    void* scene = lift_field<void*>(self, 0x494);
+    int r = reinterpret_cast<OpenFn>(reinterpret_cast<void*>(&ext_007C569A))(scene, s);
+    return r == 0;
+}
+} // namespace lift_00564600

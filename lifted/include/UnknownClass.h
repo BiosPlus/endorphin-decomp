@@ -150,10 +150,12 @@ struct UnknownClass_Fields {
     // +0x1CC void**                   field_0x1cc  (evidence: 0x007BF9C0) // CONFLICT: multiple definitions at +0x1CC
     // +0x1D8 uint32_t                 field_0x1d8  (evidence: 0x007BD640)
     // +0x1E4 uint32_t                 field_0x1e4  (evidence: 0x007BD640)
+    // +0x27C void*                    field_0x27C  (evidence: 0x00564600)
     // +0x3B4 void*                    field_0x3B4  (evidence: 0x004805A0)
     // +0x3B8 uint32_t                 field_0x3B8  (evidence: 0x004805A0)
+    // +0x424 void*                    field_0x424  (evidence: 0x00564600)
     // +0x478 std::string              field_0x478  (evidence: 0x005650F0)
-    // +0x494 void*                    field_0x494  (evidence: 0x00565010, 0x005650F0)
+    // +0x494 void*                    field_0x494  (evidence: 0x00564600, 0x00565010, 0x005650F0)
     // +0x808 void*                    field_0x808  (evidence: 0x00418830)
     // +0x85C void*                    field_0x85c  (evidence: 0x00418830)
     // +0x8D0 HWND                     hwnd  (evidence: 0x00418830)
