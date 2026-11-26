@@ -70724,6 +70724,12 @@
     "summary": "Static 4x16 byte table (data, not code): each row is one 0 followed by fifteen 1s.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B89BC": {
+    "name": "data_table_007B89BC",
+    "signature": "const uint8_t* sub_007B89BC()",
+    "summary": "Misidentified 80-byte (5x16) lookup data table, not executable code",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B8A48": {
     "name": "dataTable_007B8A48",
     "class": "none",

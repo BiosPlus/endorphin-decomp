@@ -1,0 +1,13 @@
+{
+  "va": "0x007B89BC",
+  "size": 80,
+  "orig_symbol": "sub_007B89BC",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "data_table_007B89BC",
+  "signature": "const uint8_t* sub_007B89BC()",
+  "summary": "Misidentified 80-byte (5x16) lookup data table, not executable code",
+  "status": "lifted",
+  "lifted_by": "gemini-4-neon@low",
+  "lifted_at": "2026-11-26T11:42:15Z"
+}
