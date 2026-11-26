@@ -1519,3 +1519,27 @@ void* fn_00519C80(void* self, const char* name) {
     return self;
 }
 } // namespace lift_00519C80
+
+// [0x00519CB0] sub_00519CB0 (44 bytes)
+namespace lift_00519CB0 {
+// IAT slot 0x00924FE0 holding the MSVCP80 std::basic_string<char> copy-constructor (0x0062916E).
+// Called indirectly as (self+0x04, src): copy-constructs the embedded string from the argument.
+extern void (*mem_00924FE0)(void* self, const void* src);
+
+// @name Unknown::ctor_00519CB0
+// @class Unknown
+// @summary Constructor: sets vtable 0x95219C, copy-constructs the embedded std::string at +0x04 from the argument, initializes +0x20 to 1 and +0x24/+0x28 to 0, and returns this.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x04 char[28] field_0x04
+// @field Unknown +0x20 int32_t field_0x20
+// @field Unknown +0x24 int32_t field_0x24
+// @field Unknown +0x28 int32_t field_0x28
+void* fn_00519CB0(void* self, const void* src) {
+    lift_field<uint32_t>(self, 0x00) = 0x0095219Cu;
+    mem_00924FE0(static_cast<char*>(self) + 0x04, src);
+    lift_field<uint32_t>(self, 0x24) = 0u;
+    lift_field<uint32_t>(self, 0x28) = 0u;
+    lift_field<int32_t>(self, 0x20) = 1;
+    return self;
+}
+} // namespace lift_00519CB0

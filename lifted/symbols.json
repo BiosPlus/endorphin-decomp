@@ -20308,6 +20308,13 @@
     "summary": "Constructor: stores vtable 0x0095219C, constructs an embedded std::string at +0x04 from the given C string, zeroes +0x24/+0x28, sets +0x20 to 1, and returns this.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00519CB0": {
+    "name": "Unknown::ctor_00519CB0",
+    "class": "Unknown",
+    "signature": "void* fn_00519CB0(void* self, const void* src)",
+    "summary": "Constructor: sets vtable 0x95219C, copy-constructs the embedded std::string at +0x04 from the argument, initializes +0x20 to 1 and +0x24/+0x28 to 0, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00519CE0": {
     "name": "SetVptrAndTailDtor_00519CE0",
     "signature": "void sub_00519CE0(void* ecx)",
