@@ -37684,6 +37684,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0060B2B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0060B8D0": {
+    "name": "sub_0060B8D0",
+    "signature": "extern void* fn_0060B8D0(void* self, int32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x00476660 (FormatIntToString).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060B910": {
     "name": "unknown::ctorWithTwoStrings",
     "class": "unknown",

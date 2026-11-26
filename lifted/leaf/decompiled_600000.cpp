@@ -1179,3 +1179,32 @@ void fn_0060AF10(uint32_t* first, uint32_t* last, uint32_t pred) {
 } // namespace lift_00481C90
 } // namespace lift_005190B0
 } // namespace lift_0060AF10
+
+// [0x0060B8D0] sub_0060B8D0 (62 bytes)
+namespace lift_0060B8D0 {
+// @name sub_0060B8D0
+// @summary Auto-lifted identical-shape clone of 0x00476660 (FormatIntToString).
+namespace lift_00476660 {
+// Import slot for MSVCR80!_snprintf (indirect call through IAT).
+extern void* mem_009251E0;
+// Import slot for MSVCP80 std::basic_string<char>::basic_string(const char*) (IAT).
+extern void* mem_00924FE4;
+// Format string literal in .rdata at 0x0093BF08.
+extern const char mem_009720E8[];
+
+// @name FormatIntToString
+// @summary Formats an int into a 50-byte stack buffer via _snprintf, then constructs the std::string at self from that buffer and returns self.
+extern void* fn_0060B8D0(void* self, int32_t value) {
+    using SnprintfFn = int (*)(char*, size_t, const char*, ...);
+    using StringCtorFn = void (*)(void*, const char*);
+
+    char buf[0x32] = {};
+    auto snprintf_fn = reinterpret_cast<SnprintfFn>(mem_009251E0);
+    snprintf_fn(buf, sizeof(buf), mem_009720E8, value, self, 0);
+
+    auto string_ctor = reinterpret_cast<StringCtorFn>(mem_00924FE4);
+    string_ctor(self, buf);
+    return self;
+}
+} // namespace lift_00476660
+} // namespace lift_0060B8D0
