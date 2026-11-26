@@ -8992,6 +8992,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00481770": {
+    "name": "replicateBlock64ToSlots_00481770",
+    "signature": "void replicateBlock64ToSlots_00481770(uint32_t dst, uint32_t count, uint32_t src)",
+    "summary": "For count 64-byte slots starting at dst, copies the 64-byte block at src into each non-null slot.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00481B50": {
     "name": "std_equal_u32",
     "signature": "bool __cdecl sub_00481B50(uint32_t* first1, uint32_t* last1, uint32_t* cont2, uint32_t* first2)",

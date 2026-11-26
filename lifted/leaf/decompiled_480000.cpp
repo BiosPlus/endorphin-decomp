@@ -2005,3 +2005,22 @@ void __thiscall fn_00486BB0(void* self, const void* str) {
     flag(self);
 }
 } // namespace lift_00486BB0
+
+// [0x00481770]
+namespace lift_00481770 {
+// @name replicateBlock64ToSlots_00481770
+// @summary For count 64-byte slots starting at dst, copies the 64-byte block at src into each non-null slot.
+
+void replicateBlock64ToSlots_00481770(uint32_t dst, uint32_t count, uint32_t src) {
+    for (; count != 0; --count) {
+        if (dst != 0) {
+            const uint8_t* s = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(src));
+            uint8_t* d = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(dst));
+            for (int i = 0; i < 64; ++i) {
+                d[i] = s[i];
+            }
+        }
+        dst += 0x40;
+    }
+}
+} // namespace lift_00481770

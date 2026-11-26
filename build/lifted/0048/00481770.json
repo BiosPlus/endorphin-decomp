@@ -1,0 +1,13 @@
+{
+  "va": "0x00481770",
+  "size": 48,
+  "orig_symbol": "sub_00481770",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "replicateBlock64ToSlots_00481770",
+  "signature": "void replicateBlock64ToSlots_00481770(uint32_t dst, uint32_t count, uint32_t src)",
+  "summary": "For count 64-byte slots starting at dst, copies the 64-byte block at src into each non-null slot.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:34:12Z"
+}
