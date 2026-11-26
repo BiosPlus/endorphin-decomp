@@ -2340,3 +2340,23 @@ void fn_0041A200(uint32_t first_node, uint32_t first_cont, uint32_t head, uint32
     }
 }
 } // namespace lift_0041A200
+
+// [0x00410230]
+namespace lift_00410230 {
+// @name sub_00410230
+// @summary Destructor that resets vtable pointers at +0x0 and +0x54 and calls MFC80 base/member destructors
+// @field Self +0x00 uint32_t vftable
+// @field Self +0x54 uint32_t member_vftable
+
+extern void __thiscall ext_006A5FF2(void* self);
+extern void __thiscall ext_006A5EFC(void* self);
+
+void __thiscall fn_00410230(void* self) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base) = 0x0092BBCCu;
+    void* member = base + 0x54;
+    *reinterpret_cast<uint32_t*>(member) = 0x0092A23Cu;
+    ext_006A5FF2(member);
+    ext_006A5EFC(self);
+}
+} // namespace lift_00410230

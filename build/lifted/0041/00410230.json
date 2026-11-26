@@ -1,0 +1,27 @@
+{
+  "va": "0x00410230",
+  "size": 88,
+  "orig_symbol": "sub_00410230",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "sub_00410230",
+  "signature": "void __thiscall fn_00410230(void* self)",
+  "summary": "Destructor that resets vtable pointers at +0x0 and +0x54 and calls MFC80 base/member destructors",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x54",
+      "type": "uint32_t",
+      "name": "member_vftable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T12:05:37Z"
+}

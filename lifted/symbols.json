@@ -1225,6 +1225,12 @@
     "summary": "Pure jump thunk forwarding to sub_0040FED0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00410230": {
+    "name": "sub_00410230",
+    "signature": "void __thiscall fn_00410230(void* self)",
+    "summary": "Destructor that resets vtable pointers at +0x0 and +0x54 and calls MFC80 base/member destructors",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00410290": {
     "name": "Unknown::forwardFieldsToArg1AndReturnSubfield",
     "class": "Unknown",
