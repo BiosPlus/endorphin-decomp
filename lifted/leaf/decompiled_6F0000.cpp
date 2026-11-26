@@ -1888,3 +1888,32 @@ void fn_006F9E90(void* self) {
     }
 }
 } // namespace lift_006F9E90
+
+// [0x006FEFB0]
+namespace lift_006FEFB0 {
+// IAT slots for MSVCR80!strrchr and MSVCR80!strncmp (called indirectly in the original).
+extern void* mem_00925278;
+extern void* mem_009252A0;
+// Data literal at 0x00AAB928: 2-byte prefix compared against the input string.
+extern const char mem_00AAB928[];
+
+using StrrchrFn = char* (*)(const char*, int);
+using StrncmpFn = int (*)(const char*, const char*, size_t);
+
+// @name IsUnqualifiedNameNotPrefixed
+// @summary Returns true if the string is non-null, contains no ':' character, and does not begin with the 2-char prefix at mem_00AAB928.
+bool fn_006FEFB0(const char* s) {
+    if (s == nullptr) {
+        return false;
+    }
+    auto strrchr_fn = reinterpret_cast<StrrchrFn>(mem_00925278);
+    if (strrchr_fn(s, ':') != nullptr) {
+        return false;
+    }
+    auto strncmp_fn = reinterpret_cast<StrncmpFn>(mem_009252A0);
+    if (strncmp_fn(s, mem_00AAB928, 2) == 0) {
+        return false;
+    }
+    return true;
+}
+} // namespace lift_006FEFB0

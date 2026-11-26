@@ -62975,6 +62975,12 @@
     "summary": "Splits a path string in-place at '/' and '\\\\' separators into an array of component pointers",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006FEFB0": {
+    "name": "IsUnqualifiedNameNotPrefixed",
+    "signature": "bool fn_006FEFB0(const char* s)",
+    "summary": "Returns true if the string is non-null, contains no ':' character, and does not begin with the 2-char prefix at mem_00AAB928.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FF730": {
     "name": "FindU16InZeroTerminatedList",
     "signature": "bool FindU16InZeroTerminatedList(uint16_t key, const uint16_t* list)",
