@@ -1079,3 +1079,32 @@ void* fn_007DAE50(void* self) {
     return nullptr;
 }
 } // namespace lift_007DAE50
+
+// [0x007DA820]
+namespace lift_007DA820 {
+// @name Unknown::walkLinkChainWhileFlagged_007DA820
+// @class Unknown
+// @summary Walks a link chain from a start node, following each node's child via FindLinkPredecessor while the node's flag byte at +0x1c4 (bit 0x02) is set; returns the first node whose flag is clear, or 0 if the chain is exhausted.
+// @field Unknown +0x14 std::uint32_t field_0x14
+// @field Unknown +0x1c4 std::uint8_t field_0x1c4
+
+extern std::uint32_t ext_007D4AA0(std::uint32_t key, std::uint32_t node);
+
+std::uint32_t Unknown_walkLinkChainWhileFlagged_007DA820(std::uint32_t key, std::uint32_t node) {
+    std::uint32_t eax = node;
+    if (eax == 0) {
+        return 0;
+    }
+    for (;;) {
+        std::uint32_t ecx = lift_field<std::uint32_t>(reinterpret_cast<void*>(static_cast<std::uintptr_t>(eax)), 0x14);
+        std::uint8_t flags = lift_field<std::uint8_t>(reinterpret_cast<void*>(static_cast<std::uintptr_t>(ecx)), 0x1c4);
+        if ((flags & 0x02) == 0) {
+            return eax;
+        }
+        eax = ext_007D4AA0(key, eax);
+        if (eax == 0) {
+            return 0;
+        }
+    }
+}
+} // namespace lift_007DA820

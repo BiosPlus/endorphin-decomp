@@ -71213,6 +71213,13 @@
     "summary": "Advances a 32-bit position by n, reporting via ext_007D5950 when the new position exceeds the stored limit.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007DA820": {
+    "name": "Unknown::walkLinkChainWhileFlagged_007DA820",
+    "class": "Unknown",
+    "signature": "std::uint32_t Unknown_walkLinkChainWhileFlagged_007DA820(std::uint32_t key, std::uint32_t node)",
+    "summary": "Walks a link chain from a start node, following each node's child via FindLinkPredecessor while the node's flag byte at +0x1c4 (bit 0x02) is set; returns the first node whose flag is clear, or 0 if the chain is exhausted.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007DA8D0": {
     "name": "ZeroThreeDwords",
     "class": "Unknown",

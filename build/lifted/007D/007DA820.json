@@ -1,0 +1,28 @@
+{
+  "va": "0x007DA820",
+  "size": 46,
+  "orig_symbol": "sub_007DA820",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "Unknown::walkLinkChainWhileFlagged_007DA820",
+  "class": "Unknown",
+  "signature": "std::uint32_t Unknown_walkLinkChainWhileFlagged_007DA820(std::uint32_t key, std::uint32_t node)",
+  "summary": "Walks a link chain from a start node, following each node's child via FindLinkPredecessor while the node's flag byte at +0x1c4 (bit 0x02) is set; returns the first node whose flag is clear, or 0 if the chain is exhausted.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "std::uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C4",
+      "type": "std::uint8_t",
+      "name": "field_0x1c4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:29:27Z"
+}
