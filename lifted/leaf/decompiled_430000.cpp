@@ -3483,3 +3483,29 @@ extern void* __cdecl sub_0043B6E0(const void* first, const void* last, void* des
     return end_dest;
 }
 } // namespace lift_0043B6E0
+
+// [0x0043D370]
+namespace lift_0043D370 {
+extern void (__thiscall* mem_009244D4)(void* self, const void* src);
+
+// @name uninitializedCopyCString
+// @summary Uninitialized-copies a range of 4-byte MFC CString objects using MFC80!ord_781
+void* __cdecl sub_0043D370(const void* first, const void* last, void* dest) {
+    const char* src = static_cast<const char*>(first);
+    const char* end = static_cast<const char*>(last);
+    char* dst = static_cast<char*>(dest);
+
+    std::ptrdiff_t count = (end - src) >> 2;
+    char* result = dst + (count * 4);
+
+    if (src != end) {
+        std::ptrdiff_t offset = dst - src;
+        do {
+            mem_009244D4(const_cast<char*>(src + offset), src);
+            src += 4;
+        } while (src != end);
+    }
+
+    return result;
+}
+} // namespace lift_0043D370
