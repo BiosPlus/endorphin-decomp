@@ -1,0 +1,28 @@
+{
+  "va": "0x006821D0",
+  "size": 69,
+  "orig_symbol": "sub_006821D0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "Vector28::at_unchecked_or_invalid",
+  "class": "Vector28",
+  "signature": "uint32_t __thiscall sub_006821D0(void* self, uint32_t index)",
+  "summary": "Bounds-checked element access (28-byte elements) calling _invalid_parameter_noinfo on out-of-range",
+  "fields": [
+    {
+      "class": "Vector28",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Vector28",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:18:10Z"
+}

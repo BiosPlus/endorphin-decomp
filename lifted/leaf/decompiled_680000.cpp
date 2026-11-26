@@ -2002,3 +2002,29 @@ uintptr_t sub_00681250(uintptr_t first, uintptr_t last, uintptr_t dstLast) {
     return eax;
 }
 } // namespace lift_00681250
+
+// [0x006821D0]
+namespace lift_006821D0 {
+// @name Vector28::at_unchecked_or_invalid
+// @class Vector28
+// @summary Bounds-checked element access (28-byte elements) calling _invalid_parameter_noinfo on out-of-range
+// @field Vector28 +0x14 uint32_t field_0x14
+// @field Vector28 +0x18 uint32_t field_0x18
+
+extern void (*mem_00925134)();
+
+uint32_t __thiscall sub_006821D0(void* self, uint32_t index) {
+    uint32_t begin = lift_field<uint32_t>(self, 0x14);
+    if (begin == 0) {
+        mem_00925134();
+    } else {
+        uint32_t end = lift_field<uint32_t>(self, 0x18);
+        int32_t count = static_cast<int32_t>(end - begin) / 28;
+        if (index >= static_cast<uint32_t>(count)) {
+            mem_00925134();
+        }
+    }
+    uint32_t base = lift_field<uint32_t>(self, 0x14);
+    return base + index * 28;
+}
+} // namespace lift_006821D0
