@@ -1030,3 +1030,39 @@ void fn_004B6FF0(void* self) {
     ext_std_string_assign_cstr(base + 0x58, reinterpret_cast<const char*>(&mem_0093C18C));
 }
 } // namespace lift_004B6FF0
+
+// [0x004B4CD0]
+namespace lift_004B4CD0 {
+extern void* mem_00925134; // MSVCR80!_invalid_parameter_noinfo (IAT)
+
+extern void* mem_00924EF4; // listed in rdata metadata; not referenced by the disasm
+
+typedef void (__cdecl *invparam_fn)();
+
+// @name copyByte2ToByte1ForAll
+// @summary For each pointer in the vector at +0x8, copies byte +0x2 of the pointee to byte +0x1 (checked iterators)
+// @field <Unknown> +0x0C uint8_t** vec_first
+// @field <Unknown> +0x10 uint8_t** vec_last
+extern void __fastcall sub_004B4CD0(void* self)
+{
+    (void)&mem_00924EF4; // metadata-only ref, no behavioral effect
+    invparam_fn invalid = (invparam_fn)mem_00925134;
+    uint8_t* base = (uint8_t*)self;
+    uint8_t** it = lift_field<uint8_t**>(self, 0xC);
+    if ((uintptr_t)it > (uintptr_t)lift_field<uint8_t**>(self, 0x10))
+        invalid();
+    for (;;) {
+        uint8_t** last = *(uint8_t***)(base + 0x10);
+        if ((uintptr_t)*(uint8_t***)(base + 0xC) > (uintptr_t)last)
+            invalid();
+        if (it == last)
+            break;
+        if (it >= *(uint8_t***)(base + 0x10)) invalid();
+        uint8_t v = (*it)[2];
+        if (it >= *(uint8_t***)(base + 0x10)) invalid();
+        (*it)[1] = v;
+        if (it >= *(uint8_t***)(base + 0x10)) invalid();
+        ++it;
+    }
+}
+} // namespace lift_004B4CD0

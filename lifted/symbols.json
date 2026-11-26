@@ -13692,6 +13692,12 @@
     "summary": "Calls ext_004B4740(arg1, arg2) for its side effects and returns arg1 unchanged (stdcall, 2 args).",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004B4CD0": {
+    "name": "copyByte2ToByte1ForAll",
+    "signature": "extern \"C\" void __fastcall sub_004B4CD0(void* self)",
+    "summary": "For each pointer in the vector at +0x8, copies byte +0x2 of the pointee to byte +0x1 (checked iterators)",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B4D30": {
     "name": "sub_004B4D30",
     "signature": "void __thiscall sub_004B4D30(void* self)",

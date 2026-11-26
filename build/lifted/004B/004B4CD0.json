@@ -1,0 +1,27 @@
+{
+  "va": "0x004B4CD0",
+  "size": 84,
+  "orig_symbol": "sub_004B4CD0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "copyByte2ToByte1ForAll",
+  "signature": "extern \"C\" void __fastcall sub_004B4CD0(void* self)",
+  "summary": "For each pointer in the vector at +0x8, copies byte +0x2 of the pointee to byte +0x1 (checked iterators)",
+  "fields": [
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0xC",
+      "type": "uint8_t**",
+      "name": "vec_first"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x10",
+      "type": "uint8_t**",
+      "name": "vec_last"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-26T11:56:08Z"
+}
