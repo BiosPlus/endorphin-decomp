@@ -1600,3 +1600,27 @@ void* fn_005752C0(void* first, void* last, void* dst_last) {
     return dst;
 }
 } // namespace lift_005752C0
+
+// [0x0057BC20]
+namespace lift_0057BC20 {
+extern uintptr_t mem_00924FDC;
+
+// @name copy_0x3c_range
+// @summary Copies a range of 0x3c-byte structs containing two bytes and two std::strings.
+uint8_t* __cdecl sub_0057BC20(const uint8_t* first, const uint8_t* last, uint8_t* dest) {
+    using string_assign_t = void* (__thiscall*)(void* self, const void* rhs);
+    auto string_assign = reinterpret_cast<string_assign_t>(mem_00924FDC);
+
+    const uint8_t* src = first;
+    uint8_t* dst = dest;
+    while (src != last) {
+        dst[0] = src[0];
+        dst[1] = src[1];
+        string_assign(dst + 0x04, src + 0x04);
+        string_assign(dst + 0x20, src + 0x20);
+        src += 0x3C;
+        dst += 0x3C;
+    }
+    return dst;
+}
+} // namespace lift_0057BC20

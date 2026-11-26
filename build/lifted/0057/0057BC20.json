@@ -1,0 +1,13 @@
+{
+  "va": "0x0057BC20",
+  "size": 78,
+  "orig_symbol": "sub_0057BC20",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "copy_0x3c_range",
+  "signature": "uint8_t* __cdecl sub_0057BC20(const uint8_t* first, const uint8_t* last, uint8_t* dest)",
+  "summary": "Copies a range of 0x3c-byte structs containing two bytes and two std::strings.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:30:39Z"
+}
