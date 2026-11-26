@@ -1511,3 +1511,50 @@ void __thiscall sub_00458860(void* self, uint32_t index) {
     reinterpret_cast<void(__thiscall*)(void*)>(next_vtable[1])(next);
 }
 } // namespace lift_00458860
+
+// [0x00456C70] sub_00456C70 (75 bytes)
+namespace lift_00456C70 {
+// Known callee 0x00455C20: CSizingControlBar::vfunc_0 (Returns address of global mem_00936D1C.)
+extern void* __cdecl ext_00455C20(void);
+// Known callee 0x006A63BE: thunk_MFC80_ord_3952 (IAT jump thunk forwarding to MFC80!ord_3952.)
+extern int __thiscall ext_006A63BE(void* self, void* arg);
+// Known callee 0x006A60EE: thunk_MFC80_ord_1185 (IAT jump thunk forwarding to MFC80!ord_1185.)
+extern void __cdecl ext_006A60EE(void);
+
+// @name NotifyListItems
+// @summary Walks the singly linked list at self+0x88; for each entry whose object passes ext_006A63BE, calls the object's vtable slot 0x180 with arg.
+// @field Unknown +0x88 void* field_0x88
+// @field ListNode +0x00 void* next
+// @field ListNode +0x08 void* object
+void __cdecl fn_00456C70(void* self, uint32_t arg) {
+    using VSlotFn = void(__thiscall*)(void* self, uint32_t arg);
+
+    void* head = lift_field<void*>(self, 0x88);     // mov eax,[esp+4]; mov esi,[eax+0x88]
+    if (head == nullptr) {                          // test esi,esi; je ret
+        return;
+    }
+
+    void* node = head;
+    for (;;) {
+        if (node == nullptr) {                      // je 0x456cb6 (unreachable: loop is only entered with non-null node)
+            ext_006A60EE();                         // jmp thunk_MFC80_ord_1185
+            return;
+        }
+        void* next = lift_field<void*>(node, 0x00); // mov esi,[esi]
+        void* obj  = lift_field<void*>(node, 0x08); // mov edi,[eax+8]
+
+        void* addr = ext_00455C20();                // call CSizingControlBar::vfunc_0 -> eax
+        int ok = ext_006A63BE(obj, addr);           // mov ecx,edi; push eax; call thunk_MFC80_ord_3952
+        if (ok != 0) {                              // test eax,eax; je skip
+            void* vptr = lift_field<void*>(obj, 0x00);       // mov edx,[edi]
+            uintptr_t slot = lift_field<uintptr_t>(vptr, 0x180); // mov eax,[edx+0x180]
+            reinterpret_cast<VSlotFn>(slot)(obj, arg);       // push ebx; mov ecx,edi; call eax
+        }
+
+        node = next;                                // test esi,esi; jne loop
+        if (node == nullptr) {
+            break;
+        }
+    }
+}
+} // namespace lift_00456C70

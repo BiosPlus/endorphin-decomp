@@ -5986,6 +5986,12 @@
     "summary": "If flag 0x20 is set on self, looks up the first child HWND of self-\u003e+0x20 via GetWindow(GW_CHILD) and forwards to the MFC80 wrapper pair, passing the two stack arguments.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x00456C70": {
+    "name": "NotifyListItems",
+    "signature": "void __cdecl fn_00456C70(void* self, uint32_t arg)",
+    "summary": "Walks the singly linked list at self+0x88; for each entry whose object passes ext_006A63BE, calls the object's vtable slot 0x180 with arg.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00456CC0": {
     "name": "CSizingControlBar::vfunc_1",
     "class": "CSizingControlBar",

@@ -1,0 +1,33 @@
+{
+  "va": "0x00456C70",
+  "size": 75,
+  "orig_symbol": "sub_00456C70",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "NotifyListItems",
+  "signature": "void __cdecl fn_00456C70(void* self, uint32_t arg)",
+  "summary": "Walks the singly linked list at self+0x88; for each entry whose object passes ext_006A63BE, calls the object's vtable slot 0x180 with arg.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    },
+    {
+      "class": "ListNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "next"
+    },
+    {
+      "class": "ListNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "object"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:22:52Z"
+}
