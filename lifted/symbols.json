@@ -43502,6 +43502,13 @@
     "summary": "If flag bit 0 is clear and the one-shot byte at +0x11 is clear, appends '\\n' to the std::string referenced at +0x08 and sets +0x11.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x006409B0": {
+    "name": "AdvXMLParser::CharRef::vfunc_5",
+    "class": "AdvXMLParser::CharRef",
+    "signature": "void __thiscall fn_006409B0(void* self, void* ctx)",
+    "summary": "Builds a character reference string: appends a literal, the decimal form of the CharRef's stored char, then ';' into the caller's string at ctx+0x08; clears the flag at ctx+0x11.",
+    "lifted_path": "lifted/AdvXMLParser/CharRef.cpp"
+  },
   "0x00640A10": {
     "name": "AdvXMLParser::EntityRef::vfunc_5",
     "class": "AdvXMLParser::EntityRef",

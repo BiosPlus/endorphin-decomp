@@ -1,0 +1,22 @@
+{
+  "va": "0x006409B0",
+  "size": 86,
+  "orig_symbol": "AdvXMLParser::CharRef::vfunc_5",
+  "src_path": "src/AdvXMLParser/CharRef.cpp",
+  "lifted_path": "lifted/AdvXMLParser/CharRef.cpp",
+  "name": "AdvXMLParser::CharRef::vfunc_5",
+  "class": "AdvXMLParser::CharRef",
+  "signature": "void __thiscall fn_006409B0(void* self, void* ctx)",
+  "summary": "Builds a character reference string: appends a literal, the decimal form of the CharRef's stored char, then ';' into the caller's string at ctx+0x08; clears the flag at ctx+0x11.",
+  "fields": [
+    {
+      "class": "AdvXMLParser::CharRef",
+      "offset": "+0x24",
+      "type": "uint8_t",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:58:56Z"
+}

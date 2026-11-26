@@ -10,6 +10,6 @@
 // Recovered field layout for AdvXMLParser::CharRef:
 namespace lifted_layout {
 struct AdvXMLParser_CharRef_Fields {
-    // +0x24  uint8_t                  field_0x24  (evidence: 0x0063E390)
+    // +0x24  uint8_t                  field_0x24  (evidence: 0x0063E390, 0x006409B0)
 };
 } // namespace lifted_layout

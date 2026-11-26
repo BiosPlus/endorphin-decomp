@@ -39,3 +39,35 @@ void* __thiscall fn_0063E390(void* self, void* out) {
     return out;
 }
 } // namespace lift_0063E390
+
+// [0x006409B0] AdvXMLParser::CharRef::vfunc_5 (86 bytes)
+namespace lift_006409B0 {
+// MSVCP80 import slot [0x924ED0]: std::basic_string<char>::operator+=(const char*) (thiscall).
+extern void* (__thiscall* mem_00924ED0)(void* self, const char* s);
+// MSVCP80 import slot [0x924EC0]: std::basic_string<char>::operator+=(char) (thiscall).
+extern void* (__thiscall* mem_00924EC0)(void* self, char ch);
+// .rdata string literal at 0x97CD10 (appended first).
+extern const char mem_0097CD10[];
+// Helper: converts a character code to text in buf (radix 10); returns a pointer to the result.
+extern const char* ext_00640960(int ch, char* buf, int radix);
+
+// @name AdvXMLParser::CharRef::vfunc_5
+// @class AdvXMLParser::CharRef
+// @summary Builds a character reference string: appends a literal, the decimal form of the CharRef's stored char, then ';' into the caller's string at ctx+0x08; clears the flag at ctx+0x11.
+// @field AdvXMLParser::CharRef +0x24 uint8_t field_0x24
+void __thiscall fn_006409B0(void* self, void* ctx) {
+    char buf[12];
+
+    // Target string object is pointed to by ctx+0x08.
+    lift_field<uint8_t>(ctx, 0x11) = 0;
+    mem_00924ED0(lift_field<void*>(ctx, 0x08), mem_0097CD10);
+
+    int ch = static_cast<int>(static_cast<int8_t>(lift_field<uint8_t>(self, 0x24)));
+    const char* text = ext_00640960(ch, buf, 10);
+
+    lift_field<uint8_t>(ctx, 0x11) = 0;
+    mem_00924ED0(lift_field<void*>(ctx, 0x08), text);
+
+    mem_00924EC0(lift_field<void*>(ctx, 0x08), ';');
+}
+} // namespace lift_006409B0
