@@ -1162,3 +1162,40 @@ void sub_007D6290(uint8_t* obj, uint32_t new_val) {
     lift_field<uint32_t>(obj, 0x10) = new_val;
 }
 } // namespace lift_007D6290
+
+// [0x007DFCE0]
+namespace lift_007DFCE0 {
+// @name sub_007DFCE0
+// @summary Initializes struct fields, queries ext_007C8880 on *a2, and invokes optional callback at (*a2)+0x98
+// @field struct +0x00 void* field_0x00
+// @field struct +0x04 uint32_t field_0x04
+// @field struct +0x0c uint32_t field_0x0c
+// @field struct +0x10 uint32_t field_0x10
+// @field struct +0x14 uint32_t field_0x14
+// @field struct +0x18 uint32_t field_0x18
+// @field struct +0x1c uint32_t field_0x1c
+
+
+extern uint32_t ext_007C8880(void* self);
+
+void fn_007DFCE0(void* self, void* a2, uint32_t a3) {
+    lift_field<void*>(self, 0x00) = a2;
+    lift_field<uint32_t>(self, 0x04) = a3;
+
+    void* inner = *reinterpret_cast<void**>(a2);
+    lift_field<uint32_t>(self, 0x0c) = ext_007C8880(inner);
+
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x1c) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x14) = 0;
+
+    void* cur_a2 = lift_field<void*>(self, 0x00);
+    void* cur_inner = *reinterpret_cast<void**>(cur_a2);
+    using Callback = void (*)(void*);
+    Callback cb = lift_field<Callback>(cur_inner, 0x98);
+    if (cb != nullptr) {
+        cb(self);
+    }
+}
+} // namespace lift_007DFCE0
