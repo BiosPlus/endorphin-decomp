@@ -56781,6 +56781,13 @@
     "summary": "Sets a 32-bit field at offset 0x1f04 in an indexed 0x1f0-byte entry of the subobject at this+0xf0",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C3390": {
+    "name": "Unknown::SetEntryFieldAt1E78",
+    "class": "Unknown",
+    "signature": "void fn_006C3390(void* self, DWORD index, DWORD value)",
+    "summary": "Stores a 32-bit value at this-\u003efield_0xF0 + index*496 + 0x1E78 (stride 496 = 31\u003c\u003c4).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C33C0": {
     "name": "Unknown::loadRecordDwordByIndex",
     "class": "Unknown",

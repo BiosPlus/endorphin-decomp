@@ -1,0 +1,22 @@
+{
+  "va": "0x006C3390",
+  "size": 48,
+  "orig_symbol": "sub_006C3390",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::SetEntryFieldAt1E78",
+  "class": "Unknown",
+  "signature": "void fn_006C3390(void* self, DWORD index, DWORD value)",
+  "summary": "Stores a 32-bit value at this-\u003efield_0xF0 + index*496 + 0x1E78 (stride 496 = 31\u003c\u003c4).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "DWORD",
+      "name": "field_0xF0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:37:29Z"
+}

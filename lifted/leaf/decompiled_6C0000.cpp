@@ -2112,3 +2112,17 @@ uint32_t fn_006C31B0(void* self) {
     return 0;
 }
 } // namespace lift_006C31B0
+
+// [0x006C3390]
+namespace lift_006C3390 {
+// @name Unknown::SetEntryFieldAt1E78
+// @class Unknown
+// @summary Stores a 32-bit value at this->field_0xF0 + index*496 + 0x1E78 (stride 496 = 31<<4).
+// @field Unknown +0xF0 DWORD field_0xF0
+void fn_006C3390(void* self, DWORD index, DWORD value) {
+    DWORD base = lift_field<DWORD>(self, 0xF0);
+    DWORD stride_off = (index * 31u) << 4;  // == index * 496, mod 2^32 as in the original
+    DWORD addr = base + stride_off + 0x1E78u;
+    *reinterpret_cast<DWORD*>(static_cast<uintptr_t>(addr)) = value;
+}
+} // namespace lift_006C3390
