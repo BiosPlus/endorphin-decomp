@@ -1518,3 +1518,48 @@ void fn_0052A020(void* self) {
     dtor(self);
 }
 } // namespace lift_0052A020
+
+// [0x00524BC0]
+namespace lift_00524BC0 {
+// @name Unknown::SetElementDoubleFromFloat
+// @class Unknown
+// @summary Looks up a table entry from this->+0x4, takes its element 0 vector, and stores the float argument as a double at index this->+0x8 (bounds-checked; calls _invalid_parameter_noinfo on null begin or out-of-range index, then still stores).
+// @field Unknown +0x04 void* owner
+// @field Unknown +0x08 uint32_t index
+
+extern void* __thiscall ext_00504970(void* self);
+extern void* __thiscall ext_005049B0(void* self, uint32_t idx);
+
+// Import slot for MSVCR80!_invalid_parameter_noinfo (IAT entry at 0x00925134).
+inline constexpr uintptr_t mem_00925134 = 0x00925134;
+
+using InvalidParamFn = void (__cdecl*)();
+
+void __thiscall fn_00524BC0(void* self, float value) {
+    auto* s = static_cast<uint8_t*>(self);
+
+    void* owner = *reinterpret_cast<void**>(s + 0x4);
+    if (owner == nullptr) {
+        return;
+    }
+
+    void* entry = ext_00504970(owner);
+    if (entry == nullptr) {
+        return;
+    }
+
+    uint32_t index = *reinterpret_cast<uint32_t*>(s + 0x8);
+
+    auto* elem = static_cast<uint8_t*>(ext_005049B0(entry, 0));
+    uint32_t begin = *reinterpret_cast<uint32_t*>(elem + 0x8);
+    uint32_t end = *reinterpret_cast<uint32_t*>(elem + 0xC);
+
+    uint32_t count = static_cast<uint32_t>(static_cast<int32_t>(end - begin) >> 3);
+    if (begin == 0 || index >= count) {
+        (*reinterpret_cast<InvalidParamFn*>(mem_00925134))();
+    }
+
+    double* dst = reinterpret_cast<double*>(static_cast<uintptr_t>(begin) + 8u * index);
+    *dst = static_cast<double>(value);
+}
+} // namespace lift_00524BC0

@@ -1,0 +1,28 @@
+{
+  "va": "0x00524BC0",
+  "size": 77,
+  "orig_symbol": "sub_00524BC0",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "Unknown::SetElementDoubleFromFloat",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00524BC0(void* self, float value)",
+  "summary": "Looks up a table entry from this-\u003e+0x4, takes its element 0 vector, and stores the float argument as a double at index this-\u003e+0x8 (bounds-checked; calls _invalid_parameter_noinfo on null begin or out-of-range index, then still stores).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "owner"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "index"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:28:22Z"
+}

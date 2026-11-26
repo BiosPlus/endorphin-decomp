@@ -212,6 +212,7 @@ struct Unknown_Fields {
     // +0x4   uint8_t field_0x04 (enable flag on inner object)  (evidence: 0x00788E50) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (pointer to holder object)  (evidence: 0x00788E50) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (pointer to inner object)  (evidence: 0x00788E50, 0x00810460) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    owner  (evidence: 0x00524BC0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    peer  (evidence: 0x00528B90) // CONFLICT: multiple definitions at +0x4
     // +0x4   float* field_0x04 (begin pointer)  (evidence: 0x00607F20) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (begin pointer)  (evidence: 0x005731D0) // CONFLICT: multiple definitions at +0x4
@@ -291,6 +292,7 @@ struct Unknown_Fields {
     // +0x8   void*                    getterContext  (evidence: 0x007051F0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    head  (evidence: 0x005E0060) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t field_0x08 (vector end, via holder)  (evidence: 0x0067A670, 0x0067AEB0, 0x0067AEF0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 index  (evidence: 0x00524BC0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    list_head  (evidence: 0x0079E620) // CONFLICT: multiple definitions at +0x8
     // +0x8   float                    m02  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    m_end  (evidence: 0x00503BC0, 0x00505DC0, 0x0050C4D0, 0x00518030, 0x0051E560) // CONFLICT: multiple definitions at +0x8
