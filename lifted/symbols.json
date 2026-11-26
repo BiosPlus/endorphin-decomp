@@ -2644,6 +2644,12 @@
     "summary": "Copy-constructs a std::string at dst from src via the MSVCP80 copy constructor; returns dst.",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x004277B0": {
+    "name": "std_allocate_36byte_array",
+    "signature": "void* fn_004277B0(uint32_t count)",
+    "summary": "Allocates an array of 36-byte elements with overflow check, throwing std::bad_alloc on overflow.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x00427860": {
     "name": "copyBackward36Wrapper",
     "signature": "uint32_t sub_00427860(uint32_t first, uint32_t last, uint32_t d_last)",
