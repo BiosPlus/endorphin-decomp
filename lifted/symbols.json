@@ -50705,6 +50705,13 @@
     "summary": "Copies a 16-byte record from src into self; when src+0xC is non-null, calls vtable slot 0x70 on it to fetch the +0x8 value, otherwise +0x8 is zeroed. Returns self.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x006998D0": {
+    "name": "Unknown::copyStringAndRecord",
+    "class": "Unknown",
+    "signature": "void* fn_006998D0(void* self, const void* src)",
+    "summary": "Copy-constructs the leading std::string from src, then copies the 16-byte record at +0x1C via ext_00699870; returns self.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00699930": {
     "name": "sub_00699930",
     "signature": "extern \"C\" int __thiscall fn_00699930(void* self)",

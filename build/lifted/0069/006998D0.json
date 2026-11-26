@@ -1,0 +1,28 @@
+{
+  "va": "0x006998D0",
+  "size": 82,
+  "orig_symbol": "sub_006998D0",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "Unknown::copyStringAndRecord",
+  "class": "Unknown",
+  "signature": "void* fn_006998D0(void* self, const void* src)",
+  "summary": "Copy-constructs the leading std::string from src, then copies the 16-byte record at +0x1C via ext_00699870; returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:41:50Z"
+}
