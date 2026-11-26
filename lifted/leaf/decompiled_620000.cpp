@@ -2395,3 +2395,37 @@ uint8_t* fn_0062B8B0(const uint8_t* first, const uint8_t* last, uint8_t* dest) {
     return dest;
 }
 } // namespace lift_0062B8B0
+
+// [0x00621090] sub_00621090 (76 bytes)
+namespace lift_00621090 {
+// Import slot holding the address of MSVCP80 std::basic_string<char>::operator=(const basic_string&).
+extern uint32_t mem_00924FDC;
+
+// @name copyBackwardElements_00621090
+// @summary Copy-backward of 0x48-byte records from [begin, end) into the range ending at dstEnd: each record's two std::string members are assigned via operator=, and its two doubles are copied. Returns dstEnd if the range is empty, otherwise the new destination begin.
+// @field Element +0x00 std::string field_0x00
+// @field Element +0x1C std::string field_0x1c
+// @field Element +0x38 double field_0x38
+// @field Element +0x40 double field_0x40
+uint8_t* fn_00621090(uint8_t* begin, uint8_t* end, uint8_t* dstEnd) {
+    if (begin == end) {
+        return dstEnd;
+    }
+
+    using AssignFn = void* (*)(void* thisObj, const void* src);
+    auto assign = reinterpret_cast<AssignFn>(static_cast<uintptr_t>(mem_00924FDC));
+
+    uint8_t* src = end;
+    uint8_t* dst = dstEnd;
+    do {
+        src -= 0x48;
+        dst -= 0x48;
+        assign(dst, src);
+        assign(dst + 0x1C, src + 0x1C);
+        lift_field<double>(dst, 0x38) = lift_field<double>(src, 0x38);
+        lift_field<double>(dst, 0x40) = lift_field<double>(src, 0x40);
+    } while (src != begin);
+
+    return dst;
+}
+} // namespace lift_00621090

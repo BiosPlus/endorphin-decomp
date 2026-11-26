@@ -40208,6 +40208,12 @@
     "summary": "Copies records in [first, last) (0x48 bytes each: std::string at +0x00 and +0x1c, doubles at +0x38 and +0x40) to dst; returns dst end, or dst unchanged when the range is empty.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x00621090": {
+    "name": "copyBackwardElements_00621090",
+    "signature": "uint8_t* fn_00621090(uint8_t* begin, uint8_t* end, uint8_t* dstEnd)",
+    "summary": "Copy-backward of 0x48-byte records from [begin, end) into the range ending at dstEnd: each record's two std::string members are assigned via operator=, and its two doubles are copied. Returns dstEnd if the range is empty, otherwise the new destination begin.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x006210E0": {
     "name": "fillStruct0x48Range",
     "signature": "void __cdecl sub_006210E0(uint32_t begin, uint32_t end, uint32_t src)",
