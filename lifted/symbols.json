@@ -38207,6 +38207,13 @@
     "summary": "Runs the base EffectorData::vfunc_19, then resets the string at +0x60 to a literal and sets +0x5C=20, +0x7C=0.0f, +0x80=10.0f.",
     "lifted_path": "lifted/NMData/EffectorWithModesData.cpp"
   },
+  "0x0060C4C0": {
+    "name": "Unknown::destroyStringAt60AndBase",
+    "class": "Unknown",
+    "signature": "void __fastcall fn_0060C4C0(void* self)",
+    "summary": "Destroys the std::string member at this+0x60, then runs the base-class destructor (ext_0060BCC0).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060C510": {
     "name": "NMData::EffectorBaseData::vfunc_0",
     "class": "NMData::EffectorBaseData",

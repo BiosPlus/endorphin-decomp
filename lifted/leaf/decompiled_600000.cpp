@@ -1208,3 +1208,26 @@ extern void* fn_0060B8D0(void* self, int32_t value) {
 }
 } // namespace lift_00476660
 } // namespace lift_0060B8D0
+
+// [0x0060C4C0] sub_0060C4C0 (77 bytes)
+namespace lift_0060C4C0 {
+// Known callee 0x0060BCC0: sub_0060BCC0 (Destructor tail-call: restores vtable mem_0097215C and tail-calls base destructor sub_0060BA10.)
+extern void __fastcall ext_0060BCC0(void* self);
+// IAT slot 0x00924FF4 holding the MSVCP80 std::basic_string<char> destructor address.
+extern uint32_t mem_00924FF4;
+
+// @name Unknown::destroyStringAt60AndBase
+// @class Unknown
+// @summary Destroys the std::string member at this+0x60, then runs the base-class destructor (ext_0060BCC0).
+// @field Unknown +0x60 std::string field_0x60
+void __fastcall fn_0060C4C0(void* self) {
+    using StringDtor = void(__fastcall*)(void*);
+
+    // Member std::string dtor, called with this = self + 0x60.
+    auto string_dtor = reinterpret_cast<StringDtor>(static_cast<uintptr_t>(mem_00924FF4));
+    string_dtor(static_cast<uint8_t*>(self) + 0x60);
+
+    // Base-class destructor on the whole object.
+    ext_0060BCC0(self);
+}
+} // namespace lift_0060C4C0
