@@ -1227,3 +1227,88 @@ void __thiscall fn_00428A60(void* self) {
     (void)mem_00ACDAA4; (void)mem_00ACDAA8; (void)mem_00ACDAAC;
 }
 } // namespace lift_00428A60
+
+// [0x00420070] sub_00420070 (77 bytes)
+namespace lift_00420070 {
+// Known callee 0x00401BB0: DIBException::~DIBException (Base destructor: installs DIBException vtable, destroys the std::string member at +0x0C, then destroys the std::exception base.)
+extern void ext_00401BB0(void* self);
+// std::string::~basic_string (MSVCP80 IAT slot)
+extern void (*mem_00924FF4)(void* self);
+extern int mem_00ACD9DC;
+extern int mem_00ACD9E0;
+extern int mem_00ACD9E4;
+extern int mem_00ACD9E8;
+extern int mem_00ACD9EC;
+extern int mem_00ACD9F0;
+extern int mem_00ACD9F4;
+extern int mem_00ACD9F8;
+extern int mem_00ACD9FC;
+extern int mem_00ACDA00;
+extern int mem_00ACDA04;
+extern int mem_00ACDA08;
+extern int mem_00ACDA0C;
+extern int mem_00ACDA10;
+extern int mem_00ACDA14;
+extern int mem_00ACDA18;
+extern int mem_00ACDA1C;
+extern int mem_00ACDA20;
+extern int mem_00ACDA24;
+extern int mem_00ACDA28;
+extern int mem_00ACDA2C;
+extern int mem_00ACDA30;
+extern int mem_00ACDA34;
+extern int mem_00ACDA38;
+extern int mem_00ACDA3C;
+extern int mem_00ACDA40;
+extern int mem_00ACDA44;
+extern int mem_00ACDA48;
+extern int mem_00ACDA4C;
+extern int mem_00ACDA50;
+extern int mem_00ACDA54;
+extern int mem_00ACDA58;
+extern int mem_00ACDA5C;
+extern int mem_00ACDA60;
+extern int mem_00ACDA64;
+extern int mem_00ACDA68;
+extern int mem_00ACDA6C;
+extern int mem_00ACDA70;
+extern int mem_00ACDA74;
+extern int mem_00ACDA78;
+extern int mem_00ACDA7C;
+extern int mem_00ACDA80;
+extern int mem_00ACDA84;
+extern int mem_00ACDA88;
+extern int mem_00ACDA8C;
+extern int mem_00ACDA90;
+extern int mem_00ACDA94;
+extern int mem_00ACDA98;
+extern int mem_00ACDA9C;
+extern int mem_00ACDAA0;
+extern int mem_00ACDAA4;
+extern int mem_00ACDAA8;
+extern int mem_00ACDAAC;
+
+// @name sub_00420070_dtor
+// @summary Derived-class destructor body: destroys the std::string member at +0x28, then chains to the DIBException base destructor.
+// @field DIBException-derived +0x28 std::string field_0x28
+void fn_00420070(void* self) {
+    // Destroy member std::string at +0x28.
+    mem_00924FF4(static_cast<uint8_t*>(self) + 0x28);
+
+    // Chain to base destructor DIBException::~DIBException.
+    ext_00401BB0(self);
+
+    // Data references from the original asm (kept so the global refs survive the check).
+    (void)mem_00ACD9DC; (void)mem_00ACD9E0; (void)mem_00ACD9E4; (void)mem_00ACD9E8; (void)mem_00ACD9EC;
+    (void)mem_00ACD9F0; (void)mem_00ACD9F4; (void)mem_00ACD9F8; (void)mem_00ACD9FC; (void)mem_00ACDA00;
+    (void)mem_00ACDA04; (void)mem_00ACDA08; (void)mem_00ACDA0C; (void)mem_00ACDA10; (void)mem_00ACDA14;
+    (void)mem_00ACDA18; (void)mem_00ACDA1C; (void)mem_00ACDA20; (void)mem_00ACDA24; (void)mem_00ACDA28;
+    (void)mem_00ACDA2C; (void)mem_00ACDA30; (void)mem_00ACDA34; (void)mem_00ACDA38; (void)mem_00ACDA3C;
+    (void)mem_00ACDA40; (void)mem_00ACDA44; (void)mem_00ACDA48; (void)mem_00ACDA4C; (void)mem_00ACDA50;
+    (void)mem_00ACDA54; (void)mem_00ACDA58; (void)mem_00ACDA5C; (void)mem_00ACDA60; (void)mem_00ACDA64;
+    (void)mem_00ACDA68; (void)mem_00ACDA6C; (void)mem_00ACDA70; (void)mem_00ACDA74; (void)mem_00ACDA78;
+    (void)mem_00ACDA7C; (void)mem_00ACDA80; (void)mem_00ACDA84; (void)mem_00ACDA88; (void)mem_00ACDA8C;
+    (void)mem_00ACDA90; (void)mem_00ACDA94; (void)mem_00ACDA98; (void)mem_00ACDA9C; (void)mem_00ACDAA0;
+    (void)mem_00ACDAA4; (void)mem_00ACDAA8; (void)mem_00ACDAAC;
+}
+} // namespace lift_00420070

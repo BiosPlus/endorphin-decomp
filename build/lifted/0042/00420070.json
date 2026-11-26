@@ -1,0 +1,21 @@
+{
+  "va": "0x00420070",
+  "size": 77,
+  "orig_symbol": "sub_00420070",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "sub_00420070_dtor",
+  "signature": "void fn_00420070(void* self)",
+  "summary": "Derived-class destructor body: destroys the std::string member at +0x28, then chains to the DIBException base destructor.",
+  "fields": [
+    {
+      "class": "DIBException-derived",
+      "offset": "+0x28",
+      "type": "std::string",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-26T11:27:20Z"
+}
