@@ -1688,3 +1688,41 @@ void SomeClass_sub_006B0DE0(void* self, void* arg0) {
     reinterpret_cast<VFn>(vtbl[0x38 / sizeof(void*)])(edi, ecx2);
 }
 } // namespace lift_006B0DE0
+
+// [0x006B16F0] sub_006B16F0 (82 bytes)
+namespace lift_006B16F0 {
+// IAT slot for USER32!SendMessageA (rdata value 0x0062861A).
+extern uint32_t mem_00925694;
+
+// @name UnknownClass_notifyWindowOfTarget
+// @class UnknownClass
+// @summary Clears the byte flag at +0x70, builds a 0x2c-byte message block (size word, plus +0x20 of the object at +0x74 or 0), and sends window message 0x411 to the HWND at +0x20; returns 0.
+// @field UnknownClass +0x20 HWND hwnd
+// @field UnknownClass +0x70 uint8_t field_0x70
+// @field UnknownClass +0x74 uint32_t field_0x74
+uint32_t fn_006B16F0(void* self, uint32_t /*arg0*/, uint32_t /*arg1*/) {
+    using SendMessageAFn = uint32_t(__stdcall*)(uint32_t hWnd, uint32_t msg, uintptr_t wp, uintptr_t lp);
+
+    // 0x2c-byte block passed as lParam; only the words the asm writes are set.
+    uint32_t block[11];
+    block[0] = 0x2c; // mov [esp], 0x2c
+
+    const uint32_t p = lift_field<uint32_t>(self, 0x74); // mov eax, [ecx+0x74]
+    lift_field<uint8_t>(self, 0x70) = 0;                 // mov byte [ecx+0x70], dl (dl == 0)
+
+    if (p == 0) {
+        block[2] = 0; // mov [esp+8], 0
+    }
+    // p != 0: block[2] is left unwritten (matches the asm).
+    const uint32_t src = (p == 0)
+        ? 0u
+        : lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(p)), 0x20);
+    block[3] = src; // mov [esp+0xc], ([p+0x20] or 0)
+
+    const uint32_t hwnd = lift_field<uint32_t>(self, 0x20); // mov ecx, [ecx+0x20]
+    auto send_message = reinterpret_cast<SendMessageAFn>(static_cast<uintptr_t>(mem_00925694));
+    (void)send_message(hwnd, 0x411, 0, reinterpret_cast<uintptr_t>(block));
+
+    return 0; // xor eax, eax ; add esp, 0x2c ; ret 8
+}
+} // namespace lift_006B16F0

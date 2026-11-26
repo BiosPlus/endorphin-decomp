@@ -56209,6 +56209,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006B16C0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B16F0": {
+    "name": "UnknownClass_notifyWindowOfTarget",
+    "class": "UnknownClass",
+    "signature": "uint32_t fn_006B16F0(void* self, uint32_t /*arg0*/, uint32_t /*arg1*/)",
+    "summary": "Clears the byte flag at +0x70, builds a 0x2c-byte message block (size word, plus +0x20 of the object at +0x74 or 0), and sends window message 0x411 to the HWND at +0x20; returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B1750": {
     "name": "Window::StartMouseLeaveTracking",
     "class": "Window",

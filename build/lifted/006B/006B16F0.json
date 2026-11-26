@@ -1,0 +1,34 @@
+{
+  "va": "0x006B16F0",
+  "size": 82,
+  "orig_symbol": "sub_006B16F0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "UnknownClass_notifyWindowOfTarget",
+  "class": "UnknownClass",
+  "signature": "uint32_t fn_006B16F0(void* self, uint32_t /*arg0*/, uint32_t /*arg1*/)",
+  "summary": "Clears the byte flag at +0x70, builds a 0x2c-byte message block (size word, plus +0x20 of the object at +0x74 or 0), and sends window message 0x411 to the HWND at +0x20; returns 0.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "hwnd"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x70",
+      "type": "uint8_t",
+      "name": "field_0x70"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x74",
+      "type": "uint32_t",
+      "name": "field_0x74"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:41:47Z"
+}
