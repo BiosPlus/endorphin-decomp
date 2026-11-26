@@ -2411,3 +2411,34 @@ extern void* __cdecl sub_00662BF0(void* out) {
     return out;
 }
 } // namespace lift_00662BF0
+
+// [0x00662B20]
+namespace lift_00662B20 {
+// @name ensureTrailingBackslash
+// @summary Appends a trailing backslash to a std::string if not already present and copy-constructs the result into sret
+
+extern uint32_t mem_00924EAC;
+extern uint32_t mem_0092500C;
+extern uint32_t mem_00924EC0;
+extern uint32_t mem_00924FE0;
+
+typedef uint32_t (__thiscall* StringSizeFn)(void* self);
+typedef char* (__thiscall* StringIndexFn)(void* self, uint32_t index);
+typedef void* (__thiscall* StringAppendCharFn)(void* self, char c);
+typedef void* (__thiscall* StringCopyCtorFn)(void* self, const void* other);
+
+void* __cdecl sub_00662B20(void* dst, void* src) {
+    auto string_size = reinterpret_cast<StringSizeFn>(mem_00924EAC);
+    auto string_index = reinterpret_cast<StringIndexFn>(mem_0092500C);
+    auto string_append_char = reinterpret_cast<StringAppendCharFn>(mem_00924EC0);
+    auto string_copy_ctor = reinterpret_cast<StringCopyCtorFn>(mem_00924FE0);
+
+    uint32_t len = string_size(src);
+    char* last = string_index(src, len - 1);
+    if (*last != '\\') {
+        string_append_char(src, '\\');
+    }
+    string_copy_ctor(dst, src);
+    return dst;
+}
+} // namespace lift_00662B20

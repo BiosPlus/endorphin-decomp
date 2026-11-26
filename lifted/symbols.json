@@ -21312,6 +21312,12 @@
     "summary": "Copies a range of 0x28-byte records into dst, assigning each record's +0x0C string.",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00522530": {
+    "name": "copyBackwardItem0x28",
+    "signature": "uint8_t* sub_00522530(uint8_t* first, uint8_t* last, uint8_t* d_last)",
+    "summary": "Copies a range of 0x28-byte elements backward, copying fields at +0x04/+0x08 and assigning std::string at +0x0c",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x005225B0": {
     "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e::vfunc_4",
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e",
@@ -46007,6 +46013,12 @@
     "class": "Temp",
     "signature": "extern \"C\" int mem_00924FE4;  // MSVCP80 std::basic_string\u003cchar\u003e::basic_string(const char*) extern \"C\" int mem_00924FE8;  // MSVCP80 std::basic_string\u003cchar\u003e::basic_string() void* fn_00662A50(void* out)",
     "summary": "Writes the Windows temp directory path into the caller's std::string, or an empty string if GetTempPathA fails. Returns the string pointer.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x00662B20": {
+    "name": "ensureTrailingBackslash",
+    "signature": "void* __cdecl sub_00662B20(void* dst, void* src)",
+    "summary": "Appends a trailing backslash to a std::string if not already present and copy-constructs the result into sret",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
   "0x00662BF0": {
