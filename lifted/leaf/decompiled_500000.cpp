@@ -2306,3 +2306,25 @@ void* fn_005049B0(void* self, uint32_t idx) {
     return reinterpret_cast<void*>(static_cast<uintptr_t>(result));
 }
 } // namespace lift_005049B0
+
+// [0x0050A6E0] sub_0050A6E0 (60 bytes)
+namespace lift_0050A6E0 {
+extern uint32_t mem_00924FDC;
+
+typedef void* (__thiscall *StringAssignFn)(void* self, const void* rhs);
+
+// @name fillElementRange
+// @summary Fills the 0x24-byte element range [first,last) with copies of *value: each element's std::string at +0x04 is assigned from value's string via the MSVCP80 operator= (indirect slot mem_00924FDC), and its float at +0x20 is copied from value.
+// @field Unknown +0x04 std::string field_0x04
+// @field Unknown +0x20 float field_0x20
+void fn_0050A6E0(uint8_t* first, uint8_t* last, const uint8_t* value) {
+    if (first == last) {
+        return;
+    }
+    auto assign = reinterpret_cast<StringAssignFn>(static_cast<uintptr_t>(mem_00924FDC));
+    for (uint8_t* p = first; p != last; p += 0x24) {
+        assign(p + 0x04, value + 0x04);
+        *reinterpret_cast<float*>(p + 0x20) = *reinterpret_cast<const float*>(value + 0x20);
+    }
+}
+} // namespace lift_0050A6E0
