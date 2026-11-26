@@ -1472,3 +1472,49 @@ const uint8_t* sub_007B89BC() {
     return kTable;
 }
 } // namespace lift_007B89BC
+
+// [0x007BC4F0] sub_007BC4F0 (96 bytes)
+namespace lift_007BC4F0 {
+// @name ClassifyKey (descriptive; packs three WORD fields into a 0x..-style key and maps it to a result code)
+// @class <ClassName> (free function, not a member)
+// @summary Packs WORD fields +0x28, +0x36, +0x2a into key=(a<<6)|(b<<3)|c, then maps key to 3/1/0/-1.
+// @field <ClassName> +0x28 WORD field_0x28
+// @field <ClassName> +0x2a WORD field_0x2a
+// @field <ClassName> +0x36 WORD field_0x36
+int fn_007BC4F0(void* self) {
+    const auto* base = static_cast<const unsigned char*>(self);
+
+    auto load16 = [&](std::size_t off) -> std::uint32_t {
+        std::uint16_t v;
+        std::memcpy(&v, base + off, sizeof(v));
+        return v;
+    };
+
+    const std::uint32_t a = load16(0x28);
+    const std::uint32_t b = load16(0x36);
+    const std::uint32_t c = load16(0x2A);
+
+    const std::int32_t key =
+        static_cast<std::int32_t>(((a << 3) | b) << 3 | c);
+
+    if (key > 0x40A) {
+        if (key == 0x40C) {
+            return 1;
+        }
+        if (key == 0x80B) {
+            return 0;
+        }
+        return -1;
+    }
+
+    if (key >= 0x409) {
+        return 1;
+    }
+
+    if (key == 0x209 || key == 0x20C) {
+        return 3;
+    }
+
+    return -1;
+}
+} // namespace lift_007BC4F0

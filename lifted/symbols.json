@@ -48330,6 +48330,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x00670C50": {
+    "name": "lowerBoundByPair",
+    "signature": "uint32_t** __cdecl sub_00670C50(uint32_t** first, uint32_t** last, uint32_t** val_ptr)",
+    "summary": "Binary search (std::lower_bound) on pointer range comparing (field_0x4, field_0x8) lexicographically as uint32_t",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00670CB0": {
     "name": "ExprParser::ExpressionContainerType::vfunc_1",
     "class": "ExprParser::ExpressionContainerType",
@@ -71251,6 +71257,13 @@
     "name": "SampleLog16ToSqrtBytes",
     "signature": "extern \"C\" const double mem_0092A278; // 0.0 (returned for zero magnitude) extern \"C\" const double mem_0092A270; // 1.0 extern \"C\" const double mem_00999A68; // 256.0 struct SampleLog16Source",
     "summary": "Decodes `count` sign-magnitude log16 codes from arg0-\u003esamples and stores each as a byte: sqrt(v)*256 for 0\u003cv\u003c1, 0 for v\u003c=0, 255 for v\u003e=1.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
+  "0x007BC4F0": {
+    "name": "ClassifyKey (descriptive; packs three WORD fields into a 0x..-style key and maps it to a result code)",
+    "class": "\u003cClassName\u003e (free function, not a member)",
+    "signature": "int fn_007BC4F0(void* self)",
+    "summary": "Packs WORD fields +0x28, +0x36, +0x2a into key=(a\u003c\u003c6)|(b\u003c\u003c3)|c, then maps key to 3/1/0/-1.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
   "0x007BD310": {

@@ -49,11 +49,14 @@ struct _ClassName__Fields {
     // +0x20  uint32_t                 field_0x20  (evidence: 0x004B0F50) // CONFLICT: multiple definitions at +0x20
     // +0x24  float                    field_0x24  (evidence: 0x00533FE0, 0x0054E3D0) // CONFLICT: multiple definitions at +0x24
     // +0x24  u32                      field_0x24  (evidence: 0x0067A670) // CONFLICT: multiple definitions at +0x24
-    // +0x28  u32                      field_0x28  (evidence: 0x0067A670)
+    // +0x28  WORD                     field_0x28  (evidence: 0x007BC4F0) // CONFLICT: multiple definitions at +0x28
+    // +0x28  u32                      field_0x28  (evidence: 0x0067A670) // CONFLICT: multiple definitions at +0x28
+    // +0x2A  WORD                     field_0x2a  (evidence: 0x007BC4F0)
     // +0x2C  u32                      field_0x2c  (evidence: 0x0067A670)
     // +0x30  double                   field_0x30  (evidence: 0x00518030) // CONFLICT: multiple definitions at +0x30
     // +0x30  u32                      field_0x30  (evidence: 0x0067A670) // CONFLICT: multiple definitions at +0x30
     // +0x34  float                    field_0x34  (evidence: 0x0054E3D0)
+    // +0x36  WORD                     field_0x36  (evidence: 0x007BC4F0)
     // +0x3C  DWORD                    field_0x3C  (evidence: 0x00518030) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  float                    field_0x3C  (evidence: 0x0063D970, 0x0063DAB0, 0x0063DDF0) // CONFLICT: multiple definitions at +0x3C
     // +0x40  DWORD                    field_0x40  (evidence: 0x00518030) // CONFLICT: multiple definitions at +0x40
