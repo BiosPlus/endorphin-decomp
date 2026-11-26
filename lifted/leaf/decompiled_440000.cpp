@@ -2220,3 +2220,24 @@ int fn_0044CCF0(void* self) {
     return stringEqual(field, global) != 0 ? 1 : 0;
 }
 } // namespace lift_0044CCF0
+
+// [0x004489A0]
+namespace lift_004489A0 {
+// @name OnKeyDown_PostMessage
+// @summary Posts WM_KEYDOWN to the window handle at +0x7c unless key is Enter (0xd) or Tab (0x9)
+// @field Window +0x7c uintptr_t hwnd
+
+extern uintptr_t mem_00925618; // USER32!PostMessageA
+
+typedef int32_t (__stdcall *PostMessageA_fn)(uintptr_t hWnd, uint32_t Msg, uintptr_t wParam, uintptr_t lParam);
+
+void __thiscall sub_004489A0(void* self, uint32_t nChar, uint32_t nRepCnt, uint32_t nFlags) {
+    if (nChar == 0xd || nChar == 0x9) {
+        return;
+    }
+    uintptr_t lParam = (static_cast<uintptr_t>(nFlags & 0xffff) << 16) | static_cast<uintptr_t>(nRepCnt & 0xffff);
+    uintptr_t hWnd = lift_field<uintptr_t>(self, 0x7c);
+    auto postMessage = reinterpret_cast<PostMessageA_fn>(mem_00925618);
+    postMessage(hWnd, 0x100, static_cast<uintptr_t>(nChar), lParam);
+}
+} // namespace lift_004489A0

@@ -4531,6 +4531,12 @@
     "summary": "Compares arg-\u003e+0x20 with self-\u003e+0x5c-\u003e+0x20; on match, resolves GetParent(self-\u003e+0x20) and forwards it, then dispatches ext_006A60D0 on the resulting object.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x004489A0": {
+    "name": "OnKeyDown_PostMessage",
+    "signature": "void __thiscall sub_004489A0(void* self, uint32_t nChar, uint32_t nRepCnt, uint32_t nFlags)",
+    "summary": "Posts WM_KEYDOWN to the window handle at +0x7c unless key is Enter (0xd) or Tab (0x9)",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x004489E0": {
     "name": "ForwardWM046FToChildWindow_004489E0",
     "class": "Unresolved_004489E0",
@@ -32366,6 +32372,12 @@
     "name": "findNamedEntryIndex",
     "signature": "uint32_t __stdcall findNamedEntryIndex(const void* arg)",
     "summary": "Compares arg with the 2 string entries at 0x00B45900 (stride 0x1C) using std::string operator==; returns the matching index, or 3 if none match.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005CFE10": {
+    "name": "set_field_0x1f2",
+    "signature": "void __thiscall fn_005CFE10(void* self, uint32_t arg1)",
+    "summary": "Sets byte field at +0x1f2 and forwards the value to vtable+0x4 of subobject at +0x2c4 if non-null",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
   "0x005CFE50": {
@@ -70839,6 +70851,12 @@
     "summary": "Writes dst[i] = src[i] * s for i in 0..2 (3-float vector scale; dst and src are float[3] pointers, s is a float scalar).",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CA750": {
+    "name": "sub_007CA750",
+    "signature": "extern \"C\" void* sub_007CA750(void* obj, float val)",
+    "summary": "Allocates a 20-byte 16-byte-aligned object via field_0xb0 and initializes it with ext_007CA340",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CA790": {
     "name": "dotVec3",
     "signature": "float fn_007CA790(const float* self, const float* other)",
@@ -71565,6 +71583,12 @@
     "signature": "void* GetIndexedEntryChecked(void* self, int32_t index)",
     "summary": "Returns pointer to entry `index` (64-byte stride) of the object's entry array, or nullptr if index \u003e= count.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
+  "0x007DB9E0": {
+    "name": "makeSkewSymmetricMatrix",
+    "signature": "void sub_007DB9E0(void* eax, const void* ecx)",
+    "summary": "Builds a 3x3 skew-symmetric (cross-product) matrix in [eax] from a 3D vector in [ecx].",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
   "0x007DC8C0": {
     "name": "SearchKeyedTable16",

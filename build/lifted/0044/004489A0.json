@@ -1,0 +1,21 @@
+{
+  "va": "0x004489A0",
+  "size": 51,
+  "orig_symbol": "sub_004489A0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "OnKeyDown_PostMessage",
+  "signature": "void __thiscall sub_004489A0(void* self, uint32_t nChar, uint32_t nRepCnt, uint32_t nFlags)",
+  "summary": "Posts WM_KEYDOWN to the window handle at +0x7c unless key is Enter (0xd) or Tab (0x9)",
+  "fields": [
+    {
+      "class": "Window",
+      "offset": "+0x7C",
+      "type": "uintptr_t",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T10:42:04Z"
+}
