@@ -2162,3 +2162,21 @@ void fn_0048D310(void* self) {
     lift_field<uint32_t>(self, 0x0C) = 0;
 }
 } // namespace lift_0048D310
+
+// [0x00486880]
+namespace lift_00486880 {
+// @name formatDoubleToString
+// @summary Formats a double into a stack buffer with _snprintf and constructs a std::string.
+
+extern char mem_0093C670[];
+extern int (__cdecl *mem_009251E0)(char* buffer, size_t count, const char* format, ...);
+extern void* (__thiscall *mem_00924FE4)(void* this_ptr, const char* str);
+
+void* __cdecl sub_00486880(void* out_str, double val) {
+    char buf[0x32];
+    buf[0] = '\0';
+    mem_009251E0(buf, 0x32, mem_0093C670, val);
+    mem_00924FE4(out_str, buf);
+    return out_str;
+}
+} // namespace lift_00486880

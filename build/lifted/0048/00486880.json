@@ -1,0 +1,13 @@
+{
+  "va": "0x00486880",
+  "size": 67,
+  "orig_symbol": "sub_00486880",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "formatDoubleToString",
+  "signature": "void* __cdecl sub_00486880(void* out_str, double val)",
+  "summary": "Formats a double into a stack buffer with _snprintf and constructs a std::string.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:18:48Z"
+}
