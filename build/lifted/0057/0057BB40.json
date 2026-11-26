@@ -1,0 +1,28 @@
+{
+  "va": "0x0057BB40",
+  "size": 70,
+  "orig_symbol": "sub_0057BB40",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "PairOfStrings::PairOfStrings",
+  "class": "PairOfStrings",
+  "signature": "void* __thiscall sub_0057BB40(void* self)",
+  "summary": "Default-constructs two std::string members at +0x00 and +0x1c",
+  "fields": [
+    {
+      "class": "PairOfStrings",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "PairOfStrings",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:19:09Z"
+}

@@ -1474,3 +1474,24 @@ void* sub_0057BBE0(void* first, void* last, void* d_last)
     return dst;
 }
 } // namespace lift_0057BBE0
+
+// [0x0057BB40]
+namespace lift_0057BB40 {
+// @name PairOfStrings::PairOfStrings
+// @class PairOfStrings
+// @summary Default-constructs two std::string members at +0x00 and +0x1c
+// @field PairOfStrings +0x00 std::string field_0x00
+// @field PairOfStrings +0x1c std::string field_0x1c
+
+
+extern uintptr_t mem_00924FE8;
+
+using BasicStringCtor = void(__thiscall*)(void*);
+
+void* __thiscall sub_0057BB40(void* self) {
+    auto ctor = reinterpret_cast<BasicStringCtor>(mem_00924FE8);
+    ctor(self);
+    ctor(static_cast<uint8_t*>(self) + 0x1c);
+    return self;
+}
+} // namespace lift_0057BB40
