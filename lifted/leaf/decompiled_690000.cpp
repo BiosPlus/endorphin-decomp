@@ -1449,3 +1449,23 @@ int32_t __thiscall fn_00698900(void* self, int32_t* pos, const char* delimiters)
     return (endIdx >= 0) ? endIdx : 0;
 }
 } // namespace lift_00698900
+
+// [0x006999F0] sub_006999F0 (95 bytes)
+namespace lift_006999F0 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0066AD10(void* out_str, std::uint32_t flag);
+extern void ext_006A6C87(std::uint32_t arg);
+extern int mem_00B5C9C4;
+extern int mem_00B5C9A8;
+
+// @name getOnceInitializedString
+// @summary One-time guarded initializer for the global string at 0xB5C9A8; returns its address.
+void* fn_006999F0(void) {
+    if ((mem_00B5C9C4 & 1) == 0) {
+        mem_00B5C9C4 |= 1;
+        ext_0066AD10((void*)&mem_00B5C9A8, 0x00AA3DB0u);
+        ext_006A6C87(0x00922000u);
+    }
+    return (void*)&mem_00B5C9A8;
+}
+} // namespace lift_006999F0
