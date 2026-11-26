@@ -10857,6 +10857,12 @@
     "summary": "XORs a 32-bit value at [ecx] with the first stack argument.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x00494070": {
+    "name": "findAncestorWithFlags",
+    "signature": "extern \"C\" void* fn_00494070(uint32_t mask, void* obj)",
+    "summary": "Walks up an object hierarchy via vtable+0x10 and __RTDynamicCast until an object whose vtable+0x50 flags match the given mask is found.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x004940D0": {
     "name": "ForwardToDeletingDtorReturnSelf",
     "signature": "void* fn_004940D0(void* self)",
@@ -27159,6 +27165,13 @@
     "signature": "void* __stdcall fn_00585F00(void* dst, void* const* holder)",
     "summary": "Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType\u003cNMData::State\u003e::vfunc_4 (NMData::State::getFileName)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00586240": {
+    "name": "Node::traverseAndInvoke",
+    "class": "Node",
+    "signature": "void __thiscall fn_00586240(void* self)",
+    "summary": "Calls virtual method at vtable+0xa4 on this node and recursively on each child in vector at +0x7c.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
   "0x00586660": {
     "name": "Unknown::CallVirtual8COnSelfAndElements",
@@ -55979,6 +55992,12 @@
     "class": "Unknown",
     "signature": "uint32_t fn_006A8A00(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
     "summary": "Iterates the child-pointer array at this+0xA0 (count at this+0xA4); calls child vfunc slot 1 with (a1, a2, a3) and returns the first nonzero result, else 0. Out-of-range index calls the MFC80 failure thunk.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
+  "0x006A9290": {
+    "name": "sub_006A9290",
+    "signature": "int32_t __thiscall fn_006A9290(void* self, void* /*unused*/)",
+    "summary": "Checks MFC80_ord_1903 result and dispatches virtual method +0x13c on subobject at +0x108",
     "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
   },
   "0x006A92F0": {

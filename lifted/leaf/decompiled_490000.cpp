@@ -1529,3 +1529,33 @@ void fn_00497030(void* self, const void* key) {
     }
 }
 } // namespace lift_00497030
+
+// [0x00494070]
+namespace lift_00494070 {
+// @name findAncestorWithFlags
+// @summary Walks up an object hierarchy via vtable+0x10 and __RTDynamicCast until an object whose vtable+0x50 flags match the given mask is found.
+
+extern void* ext_006A6E9E(void* inptr, int32_t vfDelta, void* srcType, void* dstType, int32_t isReference);
+
+extern void* fn_00494070(uint32_t mask, void* obj) {
+    while (obj != nullptr) {
+        uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(obj);
+        using GetFlagsFn = uint32_t(__thiscall*)(void*);
+        auto get_flags = reinterpret_cast<GetFlagsFn>(vtable[0x50 / sizeof(uintptr_t)]);
+        if ((get_flags(obj) & mask) == mask) {
+            return obj;
+        }
+
+        using GetParentFn = void*(__thiscall*)(void*, int32_t);
+        auto get_parent = reinterpret_cast<GetParentFn>(vtable[0x10 / sizeof(uintptr_t)]);
+        void* parent = get_parent(obj, 0);
+        obj = ext_006A6E9E(
+            parent,
+            0,
+            reinterpret_cast<void*>(0x00A2E2F8),
+            reinterpret_cast<void*>(0x00A2E2D8),
+            0);
+    }
+    return nullptr;
+}
+} // namespace lift_00494070
