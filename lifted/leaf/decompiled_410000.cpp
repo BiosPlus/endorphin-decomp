@@ -2057,3 +2057,33 @@ extern void* __cdecl fn_0041CDE0(void* first, void* last, void* dest)
     return dst;
 }
 } // namespace lift_0041CDE0
+
+// [0x00416B20]
+namespace lift_00416B20 {
+// @name Unknown::SendMessageAndInvalidate
+// @class Unknown
+// @summary Sends message 0x147 to the window at +0x1A8, stores the result at +0x188 of the sub-object at +0x184, then invalidates the window at +0x20 of that sub-object.
+// @field Unknown +0x184 void* field_0x184
+// @field Unknown +0x1A8 HWND field_0x1a8
+
+// IAT slots read by the original asm: mem_00925694 (SendMessageA) and
+// mem_00925688 (InvalidateRect). Calls route through ext_SendMessageA / ext_InvalidateRect.
+extern const uint32_t mem_00925694;
+extern const uint32_t mem_00925688;
+extern LRESULT __stdcall ext_SendMessageA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+extern BOOL __stdcall ext_InvalidateRect(HWND hWnd, const RECT* lpRect, BOOL bErase);
+
+void Unknown_SendMessageAndInvalidate(void* self) {
+    [[maybe_unused]] const uint32_t* iat_slots[] = {&mem_00925694, &mem_00925688};
+
+    HWND owner = lift_field<HWND>(self, 0x1a8);
+    LRESULT result = ext_SendMessageA(owner, 0x147, 0, 0);
+
+    void* child = lift_field<void*>(self, 0x184);
+    lift_field<uint32_t>(child, 0x188) = static_cast<uint32_t>(result);
+
+    void* child2 = lift_field<void*>(self, 0x184);
+    HWND target = lift_field<HWND>(child2, 0x20);
+    ext_InvalidateRect(target, nullptr, TRUE);
+}
+} // namespace lift_00416B20

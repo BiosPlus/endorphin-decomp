@@ -1183,6 +1183,7 @@ struct Unknown_Fields {
     // +0x180 void*                    field_0x180  (evidence: 0x004CB400) // CONFLICT: multiple definitions at +0x180
     // +0x184 DWORD                    field_0x184  (evidence: 0x004CA570) // CONFLICT: multiple definitions at +0x184
     // +0x184 int32_t                  field_0x184  (evidence: 0x005B64D0, 0x005B7040) // CONFLICT: multiple definitions at +0x184
+    // +0x184 void*                    field_0x184  (evidence: 0x00416B20) // CONFLICT: multiple definitions at +0x184
     // +0x188 DWORD                    field_0x188  (evidence: 0x004CB3E0) // CONFLICT: multiple definitions at +0x188
     // +0x188 void*                    field_0x188  (evidence: 0x0070AD00, 0x0070E3B0, 0x0070EC70) // CONFLICT: multiple definitions at +0x188
     // +0x18C float                    field_0x18C  (evidence: 0x004CEAC0, 0x004CF910) // CONFLICT: multiple definitions at +0x18C
@@ -1201,7 +1202,8 @@ struct Unknown_Fields {
     // +0x1A0 uint8_t field_0x1A0 (subobject; only its address is taken)  (evidence: 0x005B6A80, 0x005B6AF0) // CONFLICT: multiple definitions at +0x1A0
     // +0x1A4 void* field_0x1a4 (callback: uint32_t(void* self, uint32_t cursor, uint32_t rowBytes, uint32_t arg))  (evidence: 0x007BBC30) // CONFLICT: multiple definitions at +0x1A4
     // +0x1A4 int32_t                  field_0x1a4  (evidence: 0x0043CA30) // CONFLICT: multiple definitions at +0x1A4
-    // +0x1A8 HWND                     field_0x1A8  (evidence: 0x0045B4F0)
+    // +0x1A8 HWND                     field_0x1A8  (evidence: 0x0045B4F0) // CONFLICT: multiple definitions at +0x1A8
+    // +0x1A8 HWND                     field_0x1a8  (evidence: 0x00416B20) // CONFLICT: multiple definitions at +0x1A8
     // +0x1A9 uint8_t field_0x1A9 (uint8_t[13] array, indexed 0..12)  (evidence: 0x0072B180, 0x0072CEF0) // CONFLICT: multiple definitions at +0x1A9
     // +0x1A9 uint8_t[13]              byte1A9Array  (evidence: 0x0072B180, 0x0072CF10) // CONFLICT: multiple definitions at +0x1A9
     // +0x1B0 float                    field_0x1B0  (evidence: 0x007C5950, 0x007C8490, 0x007CAF70)

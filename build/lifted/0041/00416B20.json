@@ -1,0 +1,28 @@
+{
+  "va": "0x00416B20",
+  "size": 59,
+  "orig_symbol": "sub_00416B20",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::SendMessageAndInvalidate",
+  "class": "Unknown",
+  "signature": "void Unknown_SendMessageAndInvalidate(void* self)",
+  "summary": "Sends message 0x147 to the window at +0x1A8, stores the result at +0x188 of the sub-object at +0x184, then invalidates the window at +0x20 of that sub-object.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x184",
+      "type": "void*",
+      "name": "field_0x184"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1A8",
+      "type": "HWND",
+      "name": "field_0x1a8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:53:32Z"
+}
