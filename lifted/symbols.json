@@ -55979,6 +55979,13 @@
     "summary": "Destructor that resets vtable, destroys member at +0x64 via MFC80_ord_1934, and calls base destructor MFC80_ord_620.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006B0DE0": {
+    "name": "SomeClass::sub_006B0DE0",
+    "class": "SomeClass",
+    "signature": "void SomeClass_sub_006B0DE0(void* self, void* arg0)",
+    "summary": "Caches selection-derived values into this, then fetches the window DC and invokes a virtual draw on the DC object.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B0E30": {
     "name": "Unknown::clearSelectionAndScrollCaret",
     "class": "Unknown",

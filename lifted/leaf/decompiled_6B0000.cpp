@@ -1644,3 +1644,47 @@ int __thiscall IsOwnerWindowVisibleAndAlive(void* self) {
     return 1;
 }
 } // namespace lift_006B8B70
+
+// [0x006B0DE0]
+namespace lift_006B0DE0 {
+// @name SomeClass::sub_006B0DE0
+// @class SomeClass
+// @summary Caches selection-derived values into this, then fetches the window DC and invokes a virtual draw on the DC object.
+// @field SomeClass +0x20 void* hwnd
+// @field SomeClass +0x54 void* selection
+// @field SomeClass +0x58 void* selectionResult
+// @field SomeClass +0x5c uint32_t selectionResultField19C
+
+extern void* ext_006A6004(void* hdc);
+extern void* ext_006A7D50(void* ecx);
+extern void* ext_006AD1C0(void* ecx);
+extern uint32_t mem_00925658;
+
+struct SelectionBuffer;
+
+void sub_006B0DE0_impl(void* self, void* arg0);
+
+void SomeClass_sub_006B0DE0(void* self, void* arg0) {
+    uint8_t* esi = static_cast<uint8_t*>(self);
+
+    *reinterpret_cast<void**>(esi + 0x54) = arg0;
+    void* eax = ext_006AD1C0(arg0);
+    *reinterpret_cast<void**>(esi + 0x58) = eax;
+    void* eaxField = *reinterpret_cast<void**>(static_cast<uint8_t*>(eax) + 0x19c);
+    *reinterpret_cast<void**>(esi + 0x5c) = eaxField;
+
+    void* hwnd = *reinterpret_cast<void**>(esi + 0x20);
+    using GetDCFn = void*(__stdcall*)(void*);
+    void* hdc = reinterpret_cast<GetDCFn>(static_cast<uintptr_t>(mem_00925658))(hwnd);
+
+    void* edi = ext_006A6004(hdc);
+
+    void* sel = *reinterpret_cast<void**>(esi + 0x54);
+    void* sel2 = ext_006AD1C0(sel);
+    void* ecx2 = ext_006A7D50(sel2);
+
+    void** vtbl = *reinterpret_cast<void***>(edi);
+    using VFn = void(__thiscall*)(void*, void*);
+    reinterpret_cast<VFn>(vtbl[0x38 / sizeof(void*)])(edi, ecx2);
+}
+} // namespace lift_006B0DE0

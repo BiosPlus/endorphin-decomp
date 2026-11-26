@@ -1,0 +1,40 @@
+{
+  "va": "0x006B0DE0",
+  "size": 76,
+  "orig_symbol": "sub_006B0DE0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "SomeClass::sub_006B0DE0",
+  "class": "SomeClass",
+  "signature": "void SomeClass_sub_006B0DE0(void* self, void* arg0)",
+  "summary": "Caches selection-derived values into this, then fetches the window DC and invokes a virtual draw on the DC object.",
+  "fields": [
+    {
+      "class": "SomeClass",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "hwnd"
+    },
+    {
+      "class": "SomeClass",
+      "offset": "+0x54",
+      "type": "void*",
+      "name": "selection"
+    },
+    {
+      "class": "SomeClass",
+      "offset": "+0x58",
+      "type": "void*",
+      "name": "selectionResult"
+    },
+    {
+      "class": "SomeClass",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "selectionResultField19C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:25:39Z"
+}
