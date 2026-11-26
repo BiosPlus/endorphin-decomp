@@ -25,6 +25,7 @@ void* fn_00530070() {
 #include <stdexcept>
 #include <cstddef>
 #include <cstdlib>
+#include <bit>
 
 // [0x005300D0] sub_005300D0 (86 bytes)
 namespace lift_005300D0 {
@@ -1616,3 +1617,18 @@ void* __cdecl sub_005356C0(const void* first, const void* last, void* dst) {
     return result;
 }
 } // namespace lift_005356C0
+
+// [0x00538D10] sub_00538D10 (41 bytes)
+namespace lift_00538D10 {
+// Known callee 0x00538CF0: Unknown::SetFloatsFields18_1C_20 (Stores three stack float arguments into this+0x20, this+0x18 and this+0x1C (callee-cleans 12 bytes).)
+void __fastcall ext_00538CF0(void* self, void* /*edx, unused*/, float arg1, float arg2, float arg3);
+
+// @name Unknown::SetFloatsFields18_1C_20_And24
+// @class Unknown
+// @summary Forwards three float arguments to ext_00538CF0 (SetFloatsFields18_1C_20), then stores the fourth float argument's raw bits at this+0x24. Callee-cleans 16 bytes.
+// @field Unknown +0x24 DWORD field_0x24
+void fn_00538D10(void* self, void* /*edx, unused*/, float arg1, float arg2, float arg3, float arg4) {
+    ext_00538CF0(self, nullptr, arg1, arg2, arg3);
+    lift_field<DWORD>(self, 0x24) = std::bit_cast<DWORD>(arg4);
+}
+} // namespace lift_00538D10

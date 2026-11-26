@@ -1,0 +1,22 @@
+{
+  "va": "0x00538D10",
+  "size": 41,
+  "orig_symbol": "sub_00538D10",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::SetFloatsFields18_1C_20_And24",
+  "class": "Unknown",
+  "signature": "void fn_00538D10(void* self, void* /*edx, unused*/, float arg1, float arg2, float arg3, float arg4)",
+  "summary": "Forwards three float arguments to ext_00538CF0 (SetFloatsFields18_1C_20), then stores the fourth float argument's raw bits at this+0x24. Callee-cleans 16 bytes.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "DWORD",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:24:17Z"
+}
