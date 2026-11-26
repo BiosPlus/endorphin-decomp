@@ -1277,3 +1277,32 @@ uint8_t __stdcall sub_00553960(void* obj) {
     return ext_00584C10(obj) == 0 ? 1 : 0;
 }
 } // namespace lift_00553960
+
+// [0x00557920] sub_00557920 (63 bytes)
+namespace lift_00557920 {
+// Known callee 0x005567D0: destroyStringRange (Destroys the two std::string members of each 0x3C-byte record in [first, last).)
+extern void ext_005567D0(void* first, void* last);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(uint32_t arg);
+
+// @name DestroyRangeAndReset
+// @summary If the begin pointer at +0x04 is non-null, destroys the [+0x04, +0x08) record range, releases the handle at +0x04, then zeroes +0x04, +0x08 and +0x0C.
+// @field StringRecordRange +0x04 uint32_t rangeBegin
+// @field StringRecordRange +0x08 uint32_t rangeEnd
+// @field StringRecordRange +0x0C uint32_t field_0x0C
+void fn_00557920(void* self) {
+    uint32_t& begin = lift_field<uint32_t>(self, 0x04);
+    uint32_t& end   = lift_field<uint32_t>(self, 0x08);
+    uint32_t& extra = lift_field<uint32_t>(self, 0x0C);
+
+    if (begin != 0) {
+        ext_005567D0(reinterpret_cast<void*>(static_cast<uintptr_t>(begin)),
+                     reinterpret_cast<void*>(static_cast<uintptr_t>(end)));
+        ext_006A5C5C(begin);
+    }
+
+    begin = 0;
+    end   = 0;
+    extra = 0;
+}
+} // namespace lift_00557920

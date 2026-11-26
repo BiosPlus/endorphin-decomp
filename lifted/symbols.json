@@ -25269,6 +25269,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00557920": {
+    "name": "DestroyRangeAndReset",
+    "signature": "void fn_00557920(void* self)",
+    "summary": "If the begin pointer at +0x04 is non-null, destroys the [+0x04, +0x08) record range, releases the handle at +0x04, then zeroes +0x04, +0x08 and +0x0C.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00557A10": {
     "name": "Unknown::ReleaseAndThrowNull",
     "class": "Unknown (optional)",
