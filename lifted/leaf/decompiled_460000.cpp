@@ -1655,3 +1655,44 @@ extern int32_t fn_0046C490(const void* str) {
     return ext_006A6DE0(rounded);
 }
 } // namespace lift_0046C490
+
+// [0x00460540]
+namespace lift_00460540 {
+// @name CWnd::moveBottomLeftTo
+// @class CWnd
+// @summary Moves the window so its bottom-left corner is at the given point while preserving its size.
+// @field CWnd +0x20 void* m_hWnd
+
+
+extern int (__stdcall *mem_00925690)(void* hWnd, void* lpRect);
+void __thiscall ext_006A5E5A(void* self, int32_t x, int32_t y, int32_t nWidth, int32_t nHeight, int32_t bRepaint);
+void ext_0065C640(void* self);
+void __thiscall ext_0065C650(void* self);
+
+struct LiftRect {
+    int32_t left;
+    int32_t top;
+    int32_t right;
+    int32_t bottom;
+};
+
+struct LiftPoint {
+    int32_t x;
+    int32_t y;
+};
+
+void __thiscall fn_00460540(void* self, const LiftPoint* pt) {
+    (void)&ext_0065C640;
+    (void)&ext_0065C650;
+    LiftRect rect{};
+    void* hWnd = lift_field<void*>(self, 0x20);
+    mem_00925690(hWnd, &rect);
+
+    int32_t nWidth = rect.right - rect.left;
+    int32_t nHeight = rect.bottom - rect.top;
+    int32_t x = pt->x;
+    int32_t y = pt->y - nHeight;
+
+    ext_006A5E5A(self, x, y, nWidth, nHeight, 1);
+}
+} // namespace lift_00460540
