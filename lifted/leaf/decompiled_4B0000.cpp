@@ -1082,3 +1082,33 @@ float __cdecl sub_004B79B0(void* str) {
     return result;
 }
 } // namespace lift_004B79B0
+
+// [0x004B7340]
+namespace lift_004B7340 {
+// @name sub_004B7340
+// @summary Copies a std::string from a global vector at the given index into this+0x58
+// @field unknown +0x58 std::string field_0x58
+
+
+extern uint32_t mem_00AE1D18;
+extern uint32_t mem_00AE1D1C;
+extern void (__cdecl *mem_00925134)();
+extern void* (__thiscall *mem_00924FDC)(void* self, const void* rhs);
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_009251F0;
+
+void* __thiscall sub_004B7340(void* self, uint32_t index) {
+    (void)*reinterpret_cast<volatile uint32_t*>(&mem_00924FF0);
+    (void)*reinterpret_cast<volatile uint32_t*>(&mem_00924FF4);
+    (void)*reinterpret_cast<volatile uint32_t*>(&mem_009251F0);
+    uint32_t first = mem_00AE1D18;
+    if (first == 0 || index >= static_cast<uint32_t>(static_cast<int32_t>(mem_00AE1D1C - first) / 28)) {
+        mem_00925134();
+        first = mem_00AE1D18;
+    }
+    const void* src = reinterpret_cast<const void*>(first + index * 28);
+    void* dst = reinterpret_cast<uint8_t*>(self) + 0x58;
+    return mem_00924FDC(dst, src);
+}
+} // namespace lift_004B7340
