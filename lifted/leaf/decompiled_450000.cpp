@@ -1396,3 +1396,30 @@ void __thiscall fn_00456340(void* self, void* arg1) {
     ext_006A5EA8();
 }
 } // namespace lift_00456340
+
+// [0x00455B50]
+namespace lift_00455B50 {
+extern void __thiscall ext_00455860(uint8_t* self);
+extern void ext_00455410(uintptr_t self);
+extern int32_t __cdecl ext_00465B30(void);
+extern void __stdcall ext_004691D0(uint32_t flag, const void* rhs);
+
+extern void* __cdecl ext_00455C20(void);
+extern void ext_006A63BE(void);
+extern void ext_006A60EE(void);
+
+// @name Unknown::refreshAndSetOwnerFlagString
+// @class Unknown
+// @summary Sends window messages, updates the flag at +0x158, then forwards it and the string at +0x13c to the owner via SetOwnerFlagAndString.
+// @field Unknown +0x13c uint8_t string_0x13c
+// @field Unknown +0x158 uint8_t flag
+extern void __thiscall fn_00455B50(uint8_t* self)
+{
+    (void)&ext_00455C20; (void)&ext_006A63BE; (void)&ext_006A60EE;
+    ext_00455860(self);
+    ext_00455410(reinterpret_cast<uintptr_t>(self));
+    uint32_t flag = lift_field<uint8_t>(self, 0x158);
+    ext_00465B30();
+    ext_004691D0(flag, self + 0x13c);
+}
+} // namespace lift_00455B50
