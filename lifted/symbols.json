@@ -48058,6 +48058,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x00672D10": {
+    "name": "StdVectorStringTidy",
+    "signature": "void fn_00672D10(void* self)",
+    "summary": "Destroys all std::string elements in a vector, frees its buffer, and zeroes its pointers.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00672E50": {
     "name": "sub_00672E50",
     "class": "(none)",
@@ -68287,6 +68293,13 @@
     "class": "BinaryReader",
     "signature": "uint32_t __thiscall sub_00783470(void* this_ptr, uint32_t* out_val, uint8_t swap_bytes)",
     "summary": "Reads a 32-bit unsigned integer from the stream, optionally byte-swapping it",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
+  "0x007834C0": {
+    "name": "FileReader::readU16",
+    "class": "FileReader",
+    "signature": "uint16_t __thiscall sub_007834C0(void* self, uint16_t* out, uint8_t swap_bytes)",
+    "summary": "Reads a 16-bit unsigned integer from the underlying stream with optional byte swapping.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
   "0x00783510": {
