@@ -1,0 +1,28 @@
+{
+  "va": "0x0085BF40",
+  "size": 47,
+  "orig_symbol": "sub_0085BF40",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "KeyValueTable::lookup",
+  "class": "KeyValueTable",
+  "signature": "uint32_t KeyValueTable_lookup(const KeyValueTable* table, uint32_t key)",
+  "summary": "Linear scan of a {key,value} entry array; returns the value of the first entry whose key matches, or 0.",
+  "fields": [
+    {
+      "class": "KeyValueTable",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "count"
+    },
+    {
+      "class": "KeyValueTable",
+      "offset": "+0x4",
+      "type": "KeyValueEntry*",
+      "name": "entries"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:34:16Z"
+}

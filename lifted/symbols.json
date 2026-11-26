@@ -72428,6 +72428,13 @@
     "summary": "Reads up to `count` bytes in big-endian order into `*out_val` and returns the number of bytes consumed.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085BF40": {
+    "name": "KeyValueTable::lookup",
+    "class": "KeyValueTable",
+    "signature": "uint32_t KeyValueTable_lookup(const KeyValueTable* table, uint32_t key)",
+    "summary": "Linear scan of a {key,value} entry array; returns the value of the first entry whose key matches, or 0.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085BFE0": {
     "name": "GlobalFreeForwarder_0085BFE0",
     "signature": "uint32_t __cdecl fn_0085BFE0(uint32_t hMem)",

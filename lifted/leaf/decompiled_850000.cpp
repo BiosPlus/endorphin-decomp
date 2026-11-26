@@ -977,3 +977,35 @@ char* strcat_00859A20(char* dst, const char* src) {
     return dst;
 }
 } // namespace lift_00859A20
+
+// [0x0085BF40]
+namespace lift_0085BF40 {
+// @name KeyValueTable::lookup
+// @summary Linear scan of a {key,value} entry array; returns the value of the first entry whose key matches, or 0.
+// @field KeyValueTable +0x00 uint32_t count
+// @field KeyValueTable +0x04 KeyValueEntry* entries
+
+struct KeyValueEntry {
+    uint32_t key;
+    uint32_t value;
+};
+
+struct KeyValueTable {
+    uint32_t count;
+    KeyValueEntry* entries;
+};
+
+uint32_t KeyValueTable_lookup(const KeyValueTable* table, uint32_t key) {
+    const uint32_t count = table->count;
+    if (count == 0) {
+        return 0;
+    }
+    const KeyValueEntry* entries = table->entries;
+    for (uint32_t i = 0; i < count; ++i) {
+        if (entries[i].key == key) {
+            return entries[i].value;
+        }
+    }
+    return 0;
+}
+} // namespace lift_0085BF40
