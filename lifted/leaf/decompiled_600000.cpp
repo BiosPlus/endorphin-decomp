@@ -1231,3 +1231,31 @@ void __fastcall fn_0060C4C0(void* self) {
     ext_0060BCC0(self);
 }
 } // namespace lift_0060C4C0
+
+// [0x0060A340] sub_0060A340 (85 bytes)
+namespace lift_0060A340 {
+// Known callee 0x00609670: StringPairKey::operator< (Lexicographically compares two std::string fields at +0x04 and +0x20.)
+extern uint32_t ext_00609670(uint32_t this_ptr, uint32_t other_ptr);
+// Known callee 0x00661980: setVtable_0093BFB4 (Stores the vtable address 0x0093BFB4 into the first dword of the object pointed to by ECX (this).)
+extern void ext_00661980(void* self);
+extern int mem_00924FE8;
+
+// @name sortThreeStringPairKeys
+// @summary Sorts three slots holding StringPairKey object pointers ascending in place (3-element sorting network: a/b, b/c, a/b) using StringPairKey::operator<.
+void fn_0060A340(uint32_t* a, uint32_t* b, uint32_t* c) {
+    // Metadata-only references: the original asm never calls ext_00661980 or reads mem_00924FE8.
+    (void)&ext_00661980;
+    (void)&mem_00924FE8;
+
+    // Each slot is a dword holding an object pointer; swap the pointers when out of order.
+    if (ext_00609670(*b, *a)) {
+        uint32_t t = *a; *a = *b; *b = t;
+    }
+    if (ext_00609670(*c, *b)) {
+        uint32_t t = *b; *b = *c; *c = t;
+    }
+    if (ext_00609670(*b, *a)) {
+        uint32_t t = *a; *a = *b; *b = t;
+    }
+}
+} // namespace lift_0060A340

@@ -38252,6 +38252,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x0060A340": {
+    "name": "sortThreeStringPairKeys",
+    "signature": "void fn_0060A340(uint32_t* a, uint32_t* b, uint32_t* c)",
+    "summary": "Sorts three slots holding StringPairKey object pointers ascending in place (3-element sorting network: a/b, b/c, a/b) using StringPairKey::operator\u003c.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060A4F0": {
     "name": "CopyOnceInitString_0060A4F0",
     "signature": "void* fn_0060A4F0(void* dst)",

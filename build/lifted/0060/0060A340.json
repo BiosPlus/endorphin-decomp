@@ -1,0 +1,13 @@
+{
+  "va": "0x0060A340",
+  "size": 85,
+  "orig_symbol": "sub_0060A340",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "sortThreeStringPairKeys",
+  "signature": "void fn_0060A340(uint32_t* a, uint32_t* b, uint32_t* c)",
+  "summary": "Sorts three slots holding StringPairKey object pointers ascending in place (3-element sorting network: a/b, b/c, a/b) using StringPairKey::operator\u003c.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:58:55Z"
+}
