@@ -1990,3 +1990,43 @@ uint32_t fn_004103F0(void* self) {
     return ext_00410390(self) != 0 ? 1u : 0u;
 }
 } // namespace lift_004103F0
+
+// [0x00412E20] sub_00412E20 (57 bytes)
+namespace lift_00412E20 {
+// MSVCR80!_invalid_parameter_noinfo import slot (rdata 0x00925134).
+extern void (*mem_00925134)(void);
+
+// @name frontOrZero
+// @class Unknown
+// @summary Returns the first uint32 of a [begin, end) buffer at self+0x08/+0x0C, or 0 if the range is empty; calls the invalid-parameter handler when begin is out of range.
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+uint32_t fn_00412E20(void* self) {
+    // mov eax, [esi + 0x8]; test eax, eax; je -> return 0
+    const uint32_t begin = lift_field<uint32_t>(self, 0x08);
+    if (begin == 0) {
+        return 0;
+    }
+
+    // mov ecx, [esi + 0xc]; sub ecx, eax; sar ecx, 2; jne -> continue
+    const uint32_t end = lift_field<uint32_t>(self, 0x0C);
+    const int32_t count = static_cast<int32_t>(end - begin) >> 2;
+    if (count == 0) {
+        return 0;
+    }
+
+    // mov edi, eax; cmp edi, [esi + 0xc]; jbe skip; call ebx
+    if (begin > end) {
+        mem_00925134();
+    }
+
+    // cmp edi, [esi + 0xc]; jb read; call ebx
+    if (begin >= end) {
+        mem_00925134();
+    }
+
+    // mov eax, [edi]
+    const void* cursor = reinterpret_cast<const void*>(static_cast<uintptr_t>(begin));
+    return lift_field<uint32_t>(cursor, 0);
+}
+} // namespace lift_00412E20

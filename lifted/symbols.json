@@ -1293,6 +1293,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BED0 (NMData::RealChannel::vfunc_9).",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x00412E20": {
+    "name": "frontOrZero",
+    "class": "Unknown",
+    "signature": "uint32_t fn_00412E20(void* self)",
+    "summary": "Returns the first uint32 of a [begin, end) buffer at self+0x08/+0x0C, or 0 if the range is empty; calls the invalid-parameter handler when begin is out of range.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00412E60": {
     "name": "getVectorElementAt",
     "signature": "uint32_t __thiscall sub_00412E60(void* self, int32_t index)",
