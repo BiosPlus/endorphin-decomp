@@ -2096,3 +2096,40 @@ bool __stdcall fn_00713390(const char* s, double* out) {
     return *s == '}';
 }
 } // namespace lift_00713390
+
+// [0x007135C0] sub_007135C0 (87 bytes)
+namespace lift_007135C0 {
+extern int mem_00925224;
+
+// @name parseBraceDoubleList16
+// @summary Parses "{d,d,...}" holding exactly 16 comma-separated doubles (via strtod through the IAT slot mem_00925224) into out[0..15]; true only if the 16th value is followed by '}'.
+bool __stdcall fn_007135C0(const char* s, double* out) {
+    if (*s != '{') {
+        return false;
+    }
+
+    using StrtodFn = double(__cdecl*)(const char*, char**);
+    auto strtod_fn = reinterpret_cast<StrtodFn>(static_cast<uintptr_t>(mem_00925224));
+
+    const char* cur = s;
+    int count = 0;
+    double* dst = out;
+    do {
+        char* end = nullptr;
+        ++cur;
+        double v = strtod_fn(cur, &end);
+        *dst = v;
+        if (cur == end) {
+            return false;
+        }
+        if (*end != ',' && count < 15) {
+            return false;
+        }
+        ++count;
+        ++dst;
+        cur = end;
+    } while (count < 16);
+
+    return *cur == '}';
+}
+} // namespace lift_007135C0

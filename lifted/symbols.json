@@ -65578,6 +65578,12 @@
     "summary": "Returns address of global mem_00AAC03C.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x007135C0": {
+    "name": "parseBraceDoubleList16",
+    "signature": "bool __stdcall fn_007135C0(const char* s, double* out)",
+    "summary": "Parses \"{d,d,...}\" holding exactly 16 comma-separated doubles (via strtod through the IAT slot mem_00925224) into out[0..15]; true only if the 16th value is followed by '}'.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00713730": {
     "name": "sub_00713730",
     "signature": "void fn_00713730(void)",

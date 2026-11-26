@@ -1,0 +1,13 @@
+{
+  "va": "0x007135C0",
+  "size": 87,
+  "orig_symbol": "sub_007135C0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "parseBraceDoubleList16",
+  "signature": "bool __stdcall fn_007135C0(const char* s, double* out)",
+  "summary": "Parses \"{d,d,...}\" holding exactly 16 comma-separated doubles (via strtod through the IAT slot mem_00925224) into out[0..15]; true only if the 16th value is followed by '}'.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:59:40Z"
+}
