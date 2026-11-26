@@ -8,7 +8,8 @@
 // Recovered field layout for Window:
 namespace lifted_layout {
 struct Window_Fields {
-    // +0x20  uint32_t                 hwnd  (evidence: 0x00404700, 0x0043CD60, 0x006B1750, 0x006BA780)
+    // +0x20  uint32_t                 field_0x20  (evidence: 0x006B9640) // CONFLICT: multiple definitions at +0x20
+    // +0x20  uint32_t                 hwnd  (evidence: 0x00404700, 0x0043CD60, 0x006B1750, 0x006BA780) // CONFLICT: multiple definitions at +0x20
     // +0x58  uint32_t                 field_0x58  (evidence: 0x00404700)
     // +0x70  uint8_t                  mouseTrackArmed  (evidence: 0x006B1750, 0x006BA780)
     // +0x138 uint32_t                 timerId  (evidence: 0x0043CD60)

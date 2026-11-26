@@ -1,0 +1,22 @@
+{
+  "va": "0x006B9640",
+  "size": 46,
+  "orig_symbol": "sub_006B9640",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Window::sendMessage410AndInvalidate",
+  "class": "Window",
+  "signature": "void __thiscall fn_006B9640(void* self, uint32_t wParam, uint32_t lParam)",
+  "summary": "Sends window message 0x19A to the HWND at this+0x20 with the two stack arguments as wParam/lParam, then invalidates that window's whole client area (InvalidateRect with erase=TRUE).",
+  "fields": [
+    {
+      "class": "Window",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:29:24Z"
+}

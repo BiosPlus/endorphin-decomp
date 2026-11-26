@@ -55908,6 +55908,13 @@
     "summary": "Pure jump thunk forwarding to NMCAutoCompleteEdit::vfunc_80.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x006B9640": {
+    "name": "Window::sendMessage410AndInvalidate",
+    "class": "Window",
+    "signature": "void __thiscall fn_006B9640(void* self, uint32_t wParam, uint32_t lParam)",
+    "summary": "Sends window message 0x19A to the HWND at this+0x20 with the two stack arguments as wParam/lParam, then invalidates that window's whole client area (InvalidateRect with erase=TRUE).",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B98D0": {
     "name": "sub_006B98D0",
     "signature": "void fn_006B98D0(void)",

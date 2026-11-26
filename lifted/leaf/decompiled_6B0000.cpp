@@ -1486,3 +1486,28 @@ void __thiscall fn_006B8B20(void* self, void** src) {
     ext_006A5EA8(self);
 }
 } // namespace lift_006B8B20
+
+// [0x006B9640] sub_006B9640 (46 bytes)
+namespace lift_006B9640 {
+// IAT slot for USER32!SendMessageA (rdata value 0x0062861A).
+extern uint32_t mem_00925694;
+// IAT slot for USER32!InvalidateRect (rdata value 0x0062864A).
+extern uint32_t mem_00925688;
+
+// @name Window::sendMessage410AndInvalidate
+// @class Window
+// @summary Sends window message 0x19A to the HWND at this+0x20 with the two stack arguments as wParam/lParam, then invalidates that window's whole client area (InvalidateRect with erase=TRUE).
+// @field Window +0x20 uint32_t field_0x20
+void __thiscall fn_006B9640(void* self, uint32_t wParam, uint32_t lParam) {
+    using SendMessageAFn = uint32_t(__stdcall*)(uint32_t hWnd, uint32_t msg, uint32_t wp, uint32_t lp);
+    using InvalidateRectFn = int(__stdcall*)(uint32_t hWnd, const void* rect, int erase);
+
+    const uint32_t hwnd = lift_field<uint32_t>(self, 0x20);
+
+    auto send_message = reinterpret_cast<SendMessageAFn>(static_cast<uintptr_t>(mem_00925694));
+    (void)send_message(hwnd, 0x19A, wParam, lParam);
+
+    auto invalidate_rect = reinterpret_cast<InvalidateRectFn>(static_cast<uintptr_t>(mem_00925688));
+    (void)invalidate_rect(hwnd, nullptr, 1);
+}
+} // namespace lift_006B9640
