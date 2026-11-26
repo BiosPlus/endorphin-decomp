@@ -1,0 +1,136 @@
+{
+  "va": "0x00629AA0",
+  "size": 88,
+  "orig_symbol": "sub_00629AA0",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "MetaBodySensorSub::MetaBodySensorSub",
+  "class": "MetaBodySensorSub",
+  "signature": "void* __thiscall fn_00629AA0(void* self, uint32_t arg0, uint32_t /*arg1*/, uint32_t /*arg2*/, uint32_t /*arg3*/)",
+  "summary": "Constructs a MetaBodySensor-derived object, installs vtable 0x00978494, and initializes a 4x4 identity matrix and zero vector.",
+  "fields": [
+    {
+      "class": "MetaBodySensorSub",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable"
+    },
+    {
+      "class": "MetaBodySensorSub",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "field_0x30"
+    },
+    {
+      "class": "MetaBodySensorSub",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    },
+    {
+      "class": "MetaBodySensorSub",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    },
+    {
+      "class": "MetaBodySensorSub",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "MetaBodySensorSub",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "field_0x40"
+    },
+    {
+      "class": "MetaBodySensorSub",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "field_0x44"
+    },
+    {
+      "class": "MetaBodySensorSub",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "field_0x48"
+    },
+    {
+      "class": "MetaBodySensorSub",
+      "offset": "+0x4C",
+      "type": "float",
+      "name": "field_0x4c"
+    },
+    {
+      "class": "MetaBodySensorSub",
+      "offset": "+0x50",
+      "type": "float",
+      "name": "field_0x50"
+    },
+    {
+      "class": "MetaBodySensorSub",
+      "offset": "+0x54",
+      "type": "float",
+      "name": "field_0x54"
+    },
+    {
+      "class": "MetaBodySensorSub",
+      "offset": "+0x58",
+      "type": "float",
+      "name": "field_0x58"
+    },
+    {
+      "class": "MetaBodySensorSub",
+      "offset": "+0x5C",
+      "type": "float",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "MetaBodySensorSub",
+      "offset": "+0x60",
+      "type": "float",
+      "name": "field_0x60"
+    },
+    {
+      "class": "MetaBodySensorSub",
+      "offset": "+0x64",
+      "type": "float",
+      "name": "field_0x64"
+    },
+    {
+      "class": "MetaBodySensorSub",
+      "offset": "+0x68",
+      "type": "float",
+      "name": "field_0x68"
+    },
+    {
+      "class": "MetaBodySensorSub",
+      "offset": "+0x6C",
+      "type": "float",
+      "name": "field_0x6c"
+    },
+    {
+      "class": "MetaBodySensorSub",
+      "offset": "+0x70",
+      "type": "float",
+      "name": "field_0x70"
+    },
+    {
+      "class": "MetaBodySensorSub",
+      "offset": "+0x74",
+      "type": "float",
+      "name": "field_0x74"
+    },
+    {
+      "class": "MetaBodySensorSub",
+      "offset": "+0x78",
+      "type": "float",
+      "name": "field_0x78"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T12:05:55Z"
+}

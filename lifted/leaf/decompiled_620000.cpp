@@ -2429,3 +2429,65 @@ uint8_t* fn_00621090(uint8_t* begin, uint8_t* end, uint8_t* dstEnd) {
     return dst;
 }
 } // namespace lift_00621090
+
+// [0x00629AA0]
+namespace lift_00629AA0 {
+// @name MetaBodySensorSub::MetaBodySensorSub
+// @class MetaBodySensorSub
+// @summary Constructs a MetaBodySensor-derived object, installs vtable 0x00978494, and initializes a 4x4 identity matrix and zero vector.
+// @field MetaBodySensorSub +0x00 uint32_t vftable
+// @field MetaBodySensorSub +0x30 float field_0x30
+// @field MetaBodySensorSub +0x34 float field_0x34
+// @field MetaBodySensorSub +0x38 float field_0x38
+// @field MetaBodySensorSub +0x3c float field_0x3c
+// @field MetaBodySensorSub +0x40 float field_0x40
+// @field MetaBodySensorSub +0x44 float field_0x44
+// @field MetaBodySensorSub +0x48 float field_0x48
+// @field MetaBodySensorSub +0x4c float field_0x4c
+// @field MetaBodySensorSub +0x50 float field_0x50
+// @field MetaBodySensorSub +0x54 float field_0x54
+// @field MetaBodySensorSub +0x58 float field_0x58
+// @field MetaBodySensorSub +0x5c float field_0x5c
+// @field MetaBodySensorSub +0x60 float field_0x60
+// @field MetaBodySensorSub +0x64 float field_0x64
+// @field MetaBodySensorSub +0x68 float field_0x68
+// @field MetaBodySensorSub +0x6c float field_0x6c
+// @field MetaBodySensorSub +0x70 float field_0x70
+// @field MetaBodySensorSub +0x74 float field_0x74
+// @field MetaBodySensorSub +0x78 float field_0x78
+
+
+extern void __thiscall ext_005FF240(void* self, uint32_t arg);
+
+void* __thiscall fn_00629AA0(void* self, uint32_t arg0, uint32_t /*arg1*/, uint32_t /*arg2*/, uint32_t /*arg3*/) {
+    ext_005FF240(self, arg0);
+
+    lift_field<uint32_t>(self, 0x00) = 0x00978494u;
+
+    lift_field<float>(self, 0x30) = 1.0f;
+    lift_field<float>(self, 0x34) = 0.0f;
+    lift_field<float>(self, 0x38) = 0.0f;
+    lift_field<float>(self, 0x3c) = 0.0f;
+
+    lift_field<float>(self, 0x40) = 0.0f;
+    lift_field<float>(self, 0x44) = 1.0f;
+    lift_field<float>(self, 0x48) = 0.0f;
+    lift_field<float>(self, 0x4c) = 0.0f;
+
+    lift_field<float>(self, 0x50) = 0.0f;
+    lift_field<float>(self, 0x54) = 0.0f;
+    lift_field<float>(self, 0x58) = 1.0f;
+    lift_field<float>(self, 0x5c) = 0.0f;
+
+    lift_field<float>(self, 0x60) = 0.0f;
+    lift_field<float>(self, 0x64) = 0.0f;
+    lift_field<float>(self, 0x68) = 0.0f;
+    lift_field<float>(self, 0x6c) = 1.0f;
+
+    lift_field<float>(self, 0x70) = 0.0f;
+    lift_field<float>(self, 0x74) = 0.0f;
+    lift_field<float>(self, 0x78) = 0.0f;
+
+    return self;
+}
+} // namespace lift_00629AA0
