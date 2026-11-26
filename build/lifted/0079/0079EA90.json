@@ -1,0 +1,13 @@
+{
+  "va": "0x0079EA90",
+  "size": 48,
+  "orig_symbol": "sub_0079EA90",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "dispatchEntryByByteIndex",
+  "signature": "extern \"C\" void __cdecl fn_0079EA90(uint32_t a1)",
+  "summary": "Dispatches the 32-bit entry at index (a1 \u0026 0xFF) from mem_00B6114C to ext_0079EBB0 if (a1 \u0026 0xFF) \u003c= mem_00B61150.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T10:45:37Z"
+}

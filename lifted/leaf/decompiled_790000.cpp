@@ -1148,3 +1148,29 @@ void* fn_0079E620(void* self) {
     return self;
 }
 } // namespace lift_0079E620
+
+// [0x0079EA90]
+namespace lift_0079EA90 {
+// @name dispatchEntryByByteIndex
+// @summary Dispatches the 32-bit entry at index (a1 & 0xFF) from mem_00B6114C to ext_0079EBB0 if (a1 & 0xFF) <= mem_00B61150.
+
+
+extern uint8_t mem_00B61150;
+extern uint32_t* mem_00B6114C;
+extern uint32_t mem_009977EC;
+extern uint32_t mem_00997749;
+extern void __cdecl ext_0079EBB0(uint32_t entry);
+extern uint32_t __cdecl ext_0079EAC0(uint32_t a1);
+
+extern void __cdecl fn_0079EA90(uint32_t a1) {
+    (void)mem_009977EC;
+    (void)mem_00997749;
+    (void)ext_0079EAC0;
+
+    uint8_t idx = static_cast<uint8_t>(a1);
+    if (idx > mem_00B61150) {
+        return;
+    }
+    ext_0079EBB0(mem_00B6114C[idx]);
+}
+} // namespace lift_0079EA90
