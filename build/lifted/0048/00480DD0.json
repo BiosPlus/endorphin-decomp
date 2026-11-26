@@ -1,0 +1,13 @@
+{
+  "va": "0x00480DD0",
+  "size": 48,
+  "orig_symbol": "sub_00480DD0",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "copyBlocks64_00480DD0",
+  "signature": "void sub_00480DD0(std::uint8_t* src, void* unused_arg1, std::uint8_t* dst, std::uint8_t* end)",
+  "summary": "Copies 64-byte blocks from src up to end into dst (skipped when dst is null), advancing both by 0x40 per step.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:34:21Z"
+}

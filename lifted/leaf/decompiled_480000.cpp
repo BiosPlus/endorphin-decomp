@@ -2044,3 +2044,22 @@ void fn_0048A120(uint8_t* begin, uint8_t* end) {
     }
 }
 } // namespace lift_0048A120
+
+// [0x00480DD0]
+namespace lift_00480DD0 {
+// @name copyBlocks64_00480DD0
+// @summary Copies 64-byte blocks from src up to end into dst (skipped when dst is null), advancing both by 0x40 per step.
+void sub_00480DD0(std::uint8_t* src, void* unused_arg1, std::uint8_t* dst, std::uint8_t* end) {
+    (void)unused_arg1;
+    if (src == end) {
+        return;
+    }
+    do {
+        if (dst != nullptr) {
+            std::memcpy(dst, src, 0x40);
+        }
+        src += 0x40;
+        dst += 0x40;
+    } while (src != end);
+}
+} // namespace lift_00480DD0

@@ -8945,6 +8945,12 @@
     "summary": "Copies the 64-byte block at src into each consecutive 64-byte slot in [dst, end); no-op if dst == end.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00480DD0": {
+    "name": "copyBlocks64_00480DD0",
+    "signature": "void sub_00480DD0(std::uint8_t* src, void* unused_arg1, std::uint8_t* dst, std::uint8_t* end)",
+    "summary": "Copies 64-byte blocks from src up to end into dst (skipped when dst is null), advancing both by 0x40 per step.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00480E40": {
     "name": "ToolEngine::vfunc_9",
     "class": "ToolEngine",
