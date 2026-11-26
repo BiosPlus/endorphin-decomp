@@ -1,0 +1,13 @@
+{
+  "va": "0x0054F2C0",
+  "size": 55,
+  "orig_symbol": "sub_0054F2C0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "initArrayElement",
+  "signature": "uint32_t __stdcall sub_0054F2C0(uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Initializes an element in an array of 0x68-byte structs via ext_0054F1E0 and returns its pointer.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T10:48:34Z"
+}

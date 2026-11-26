@@ -24696,6 +24696,12 @@
     "summary": "Forwards its three stack arguments unchanged to RelocateRangeBackward (0x0054F120) and returns that result; the original stack shuffling only reorders copies of the arguments.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x0054F2C0": {
+    "name": "initArrayElement",
+    "signature": "uint32_t __stdcall sub_0054F2C0(uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Initializes an element in an array of 0x68-byte structs via ext_0054F1E0 and returns its pointer.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x0054F370": {
     "name": "sub_0054F370",
     "signature": "DWORD* __thiscall fn_0054F370(void* self, const DWORD* first, const DWORD* last, DWORD* out)",

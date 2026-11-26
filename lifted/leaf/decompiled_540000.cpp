@@ -1226,3 +1226,17 @@ bool __stdcall fn_00540D20(const std::string* str) {
     return false;
 }
 } // namespace lift_00540D20
+
+// [0x0054F2C0]
+namespace lift_0054F2C0 {
+extern void ext_0054F1E0(uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t);
+extern void ext_0054F170();
+
+// @name initArrayElement
+// @summary Initializes an element in an array of 0x68-byte structs via ext_0054F1E0 and returns its pointer.
+uint32_t __stdcall sub_0054F2C0(uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    (void)&ext_0054F170;
+    ext_0054F1E0(arg1, arg2, arg3, 0, arg3, 0);
+    return arg1 + arg2 * 0x68;
+}
+} // namespace lift_0054F2C0
