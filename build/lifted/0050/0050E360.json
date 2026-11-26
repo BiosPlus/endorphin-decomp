@@ -1,0 +1,28 @@
+{
+  "va": "0x0050E360",
+  "size": 44,
+  "orig_symbol": "sub_0050E360",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "Unknown::elementPtrChecked_0050E360",
+  "class": "Unknown",
+  "signature": "uint32_t* fn_0050E360(void* self, uint32_t index)",
+  "summary": "Returns the address of element `index` (4-byte slots) in the array at this+0x04..this+0x08, calling _invalid_parameter_noinfo when the array is empty or index is out of range.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:24:56Z"
+}

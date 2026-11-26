@@ -2219,3 +2219,29 @@ BOOLEAN __thiscall sub_0050F9D0(void* self, DOUBLE a, DOUBLE b) {
     return b < a ? TRUE : FALSE;
 }
 } // namespace lift_0050F9D0
+
+// [0x0050E360] sub_0050E360 (44 bytes)
+namespace lift_0050E360 {
+// IAT slot for MSVCR80!_invalid_parameter_noinfo
+extern void (*mem_00925134)(void);
+
+// @name Unknown::elementPtrChecked_0050E360
+// @class Unknown
+// @summary Returns the address of element `index` (4-byte slots) in the array at this+0x04..this+0x08, calling _invalid_parameter_noinfo when the array is empty or index is out of range.
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+uint32_t* fn_0050E360(void* self, uint32_t index) {
+    const uint32_t begin = lift_field<uint32_t>(self, 0x04);
+    if (begin == 0) {
+        mem_00925134();
+    } else {
+        // Element count = (end - begin) >> 2, as a signed value (matches sar).
+        const int32_t count = static_cast<int32_t>(lift_field<uint32_t>(self, 0x08) - begin) >> 2;
+        if (index >= static_cast<uint32_t>(count)) {
+            mem_00925134();
+        }
+    }
+    const uint32_t base = lift_field<uint32_t>(self, 0x04);
+    return reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(base + index * 4u));
+}
+} // namespace lift_0050E360

@@ -19531,6 +19531,13 @@
     "summary": "Stores address of mem_00950A74 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x0050E360": {
+    "name": "Unknown::elementPtrChecked_0050E360",
+    "class": "Unknown",
+    "signature": "uint32_t* fn_0050E360(void* self, uint32_t index)",
+    "summary": "Returns the address of element `index` (4-byte slots) in the array at this+0x04..this+0x08, calling _invalid_parameter_noinfo when the array is empty or index is out of range.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050E4C0": {
     "name": "NMData::PopulationData::vfunc_0",
     "class": "NMData::PopulationData",
