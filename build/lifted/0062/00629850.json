@@ -1,0 +1,124 @@
+{
+  "va": "0x00629850",
+  "size": 91,
+  "orig_symbol": "sub_00629850",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "Sub_00629850::Sub_00629850",
+  "class": "Sub_00629850",
+  "signature": "void* __thiscall fn_00629850(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+  "summary": "Constructor: initializes MetaBodySensor base, installs vtables at +0x00/+0x30, and initializes float fields at +0x34..+0x70.",
+  "fields": [
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "field_0x48"
+    },
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x4C",
+      "type": "float",
+      "name": "field_0x4c"
+    },
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x50",
+      "type": "float",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x54",
+      "type": "float",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x58",
+      "type": "float",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x5C",
+      "type": "float",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x60",
+      "type": "float",
+      "name": "field_0x60"
+    },
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x64",
+      "type": "float",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x68",
+      "type": "float",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x6C",
+      "type": "float",
+      "name": "field_0x6c"
+    },
+    {
+      "class": "Sub_00629850",
+      "offset": "+0x70",
+      "type": "float",
+      "name": "field_0x70"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T12:12:30Z"
+}
