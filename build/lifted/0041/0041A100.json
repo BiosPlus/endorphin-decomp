@@ -1,0 +1,13 @@
+{
+  "va": "0x0041A100",
+  "size": 84,
+  "orig_symbol": "sub_0041A100",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "allocateArrayOrThrow",
+  "signature": "extern \"C\" void* fn_0041A100(uint32_t count)",
+  "summary": "Allocates memory via MFC80!ord_762 or throws std::bad_alloc on overflow.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:49:39Z"
+}

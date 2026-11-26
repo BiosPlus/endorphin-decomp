@@ -2254,3 +2254,35 @@ HMODULE fn_0041FD20(void* self) {
     return module;
 }
 } // namespace lift_0041FD20
+
+// [0x0041A100]
+namespace lift_0041A100 {
+// @name allocateArrayOrThrow
+// @summary Allocates memory via MFC80!ord_762 or throws std::bad_alloc on overflow.
+
+
+extern void ext_006A5C62(uint32_t size);
+extern void ext_006A6DD2(void* pExceptionObject, const void* pThrowInfo);
+extern void* mem_00925130;
+
+extern void* fn_0041A100(uint32_t count) {
+    if (count == 0) {
+        ext_006A5C62(0);
+        return nullptr;
+    }
+
+    uint32_t max_count = 0xFFFFFFFFu / count;
+    if (max_count >= 1u) {
+        ext_006A5C62(count);
+        return nullptr;
+    }
+
+    const char* msg = nullptr;
+    uint32_t exc[3] = {0, 0, 0};
+    using CtorFn = void(__thiscall*)(void*, const char* const*);
+    reinterpret_cast<CtorFn>(mem_00925130)(exc, &msg);
+    exc[0] = 0x00928EC0u;
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009CDF94u));
+    return nullptr;
+}
+} // namespace lift_0041A100
