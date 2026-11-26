@@ -1977,3 +1977,22 @@ extern void __thiscall fn_006C3490(
 }
 } // namespace lift_006C3520
 } // namespace lift_006C3490
+
+// [0x006C3040] sub_006C3040 (48 bytes)
+namespace lift_006C3040 {
+// @name GetReadyChildOrNull_006C3040
+// @summary Returns the object at self+0x158 if it is non-null and its vtable slot 0 returns 1; otherwise returns null.
+// @field Unknown +0x158 void* field_0x158
+void* fn_006C3040(void* self) {
+    void* obj = lift_field<void*>(self, 0x158);
+    if (obj != nullptr) {
+        void** vtable = lift_field<void**>(obj, 0);
+        using VFn0 = int (*)(void*);
+        int result = reinterpret_cast<VFn0>(vtable[0])(obj);
+        if (result == 1) {
+            return lift_field<void*>(self, 0x158);
+        }
+    }
+    return nullptr;
+}
+} // namespace lift_006C3040

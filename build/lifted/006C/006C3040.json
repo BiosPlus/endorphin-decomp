@@ -1,0 +1,21 @@
+{
+  "va": "0x006C3040",
+  "size": 48,
+  "orig_symbol": "sub_006C3040",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "GetReadyChildOrNull_006C3040",
+  "signature": "void* fn_006C3040(void* self)",
+  "summary": "Returns the object at self+0x158 if it is non-null and its vtable slot 0 returns 1; otherwise returns null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "void*",
+      "name": "field_0x158"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:36:58Z"
+}

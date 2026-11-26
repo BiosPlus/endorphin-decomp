@@ -56707,6 +56707,12 @@
     "summary": "Getter returning int32_t field at offset +0x158.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C3040": {
+    "name": "GetReadyChildOrNull_006C3040",
+    "signature": "void* fn_006C3040(void* self)",
+    "summary": "Returns the object at self+0x158 if it is non-null and its vtable slot 0 returns 1; otherwise returns null.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C3070": {
     "name": "sub_006C3070",
     "class": "UnknownClass",
