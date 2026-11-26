@@ -1141,3 +1141,30 @@ uint32_t __cdecl sub_00859E00(void* ctx, uint32_t offset, uint32_t mode) {
     return 0;
 }
 } // namespace lift_00859E00
+
+// [0x00853680]
+namespace lift_00853680 {
+extern void __cdecl ext_008692F0(uint8_t* dst, uint32_t value, uint32_t count);
+
+// @name sha1Init
+// @summary Zeroes a 0x5C-byte SHA-1 context and sets the standard initial hash state and bit counts.
+// @field Sha1Context +0x00 uint32_t h0
+// @field Sha1Context +0x04 uint32_t h1
+// @field Sha1Context +0x08 uint32_t h2
+// @field Sha1Context +0x0C uint32_t h3
+// @field Sha1Context +0x10 uint32_t h4
+// @field Sha1Context +0x14 uint32_t countLo
+// @field Sha1Context +0x18 uint32_t countHi
+extern void __cdecl sub_00853680(uint8_t* ctx)
+{
+    ext_008692F0(ctx, 0, 0x5C);
+    uint32_t* s = reinterpret_cast<uint32_t*>(ctx);
+    s[0] = 0x67452301u;
+    s[1] = 0xEFCDAB89u;
+    s[2] = 0x98BADCFEu;
+    s[3] = 0x10325476u;
+    s[4] = 0xC3D2E1F0u;
+    s[6] = 0;
+    s[5] = 0;
+}
+} // namespace lift_00853680

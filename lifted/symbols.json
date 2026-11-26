@@ -73784,6 +73784,12 @@
     "summary": "Discards 4 bytes of stack, then transfers control to the function pointer stored at [esi].",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x00853680": {
+    "name": "sha1Init",
+    "signature": "extern \"C\" void __cdecl sub_00853680(uint8_t* ctx)",
+    "summary": "Zeroes a 0x5C-byte SHA-1 context and sets the standard initial hash state and bit counts.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x00856F00": {
     "name": "initStruct24",
     "signature": "extern \"C\" uint32_t __cdecl fn_00856F00(uint32_t* obj)",
