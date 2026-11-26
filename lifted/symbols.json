@@ -3984,6 +3984,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00440A10 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x00441A60": {
+    "name": "copyAndAdjustRange_00441A60",
+    "signature": "void __stdcall fn_00441A60(void* dst, const void* src)",
+    "summary": "Copies a 4-dword record from src to dst, storing (src+4)-2 at +4 and (src+0xC)+(src+4)+1 at +0xC.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00441C10": {
     "name": "sub_004409D0",
     "class": "\u003cunknown\u003e",

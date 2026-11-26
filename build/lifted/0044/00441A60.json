@@ -1,0 +1,39 @@
+{
+  "va": "0x00441A60",
+  "size": 44,
+  "orig_symbol": "sub_00441A60",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "copyAndAdjustRange_00441A60",
+  "signature": "void __stdcall fn_00441A60(void* dst, const void* src)",
+  "summary": "Copies a 4-dword record from src to dst, storing (src+4)-2 at +4 and (src+0xC)+(src+4)+1 at +0xC.",
+  "fields": [
+    {
+      "class": "uint32_t",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "uint32_t",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "uint32_t",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "uint32_t",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:24:07Z"
+}

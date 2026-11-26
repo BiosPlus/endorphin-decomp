@@ -2120,3 +2120,25 @@ void __thiscall fn_0044B390(void* self, void* arg) {
     notify(arg, static_cast<uint32_t>(flag));
 }
 } // namespace lift_0044B390
+
+// [0x00441A60] sub_00441A60 (44 bytes)
+namespace lift_00441A60 {
+// @name copyAndAdjustRange_00441A60
+// @summary Copies a 4-dword record from src to dst, storing (src+4)-2 at +4 and (src+0xC)+(src+4)+1 at +0xC.
+// @field uint32_t +0x00 uint32_t field_0x00
+// @field uint32_t +0x04 uint32_t field_0x04
+// @field uint32_t +0x08 uint32_t field_0x08
+// @field uint32_t +0x0C uint32_t field_0x0C
+void __stdcall fn_00441A60(void* dst, const void* src) {
+    auto* d = static_cast<uint32_t*>(dst);
+    const auto* s = static_cast<const uint32_t*>(src);
+
+    const uint32_t f4 = s[1];
+    const uint32_t f12 = s[3];
+
+    d[0] = s[0];
+    d[1] = f4 - 2u;
+    d[2] = s[2];
+    d[3] = f12 + f4 + 1u;
+}
+} // namespace lift_00441A60
