@@ -1,0 +1,28 @@
+{
+  "va": "0x004481A0",
+  "size": 67,
+  "orig_symbol": "ProgressDialog::vfunc_4_off_74",
+  "src_path": "src/classes/ProgressDialog.cpp",
+  "lifted_path": "lifted/classes/ProgressDialog.cpp",
+  "name": "ProgressDialog::vfunc_4_off_74",
+  "class": "ProgressDialog",
+  "signature": "void __thiscall fn_004481A0(void* pThis, uint32_t delta, void* text)",
+  "summary": "Updates progress text and advances the progress bar position by a delta.",
+  "fields": [
+    {
+      "class": "ProgressDialog",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "ProgressDialog",
+      "offset": "+0x58",
+      "type": "void*",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:19:12Z"
+}
