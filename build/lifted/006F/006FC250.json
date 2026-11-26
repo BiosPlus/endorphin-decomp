@@ -1,0 +1,34 @@
+{
+  "va": "0x006FC250",
+  "size": 96,
+  "orig_symbol": "sub_006FC250",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::findEntryByKeyRef",
+  "class": "Unknown",
+  "signature": "extern \"C\" BOOL __thiscall fn_006FC250(void* self, void* arg)",
+  "summary": "Scans the 12-byte entries in [start, start+count) (highest index first) for one whose first two dwords equal (*(arg+4), arg+4); a null arg matches entries with both dwords zero. Returns TRUE if found.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "entryTable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "DWORD",
+      "name": "startIndex"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "DWORD",
+      "name": "entryCount"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T12:11:04Z"
+}

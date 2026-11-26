@@ -63795,6 +63795,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006FD420 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006FC250": {
+    "name": "Unknown::findEntryByKeyRef",
+    "class": "Unknown",
+    "signature": "extern \"C\" BOOL __thiscall fn_006FC250(void* self, void* arg)",
+    "summary": "Scans the 12-byte entries in [start, start+count) (highest index first) for one whose first two dwords equal (*(arg+4), arg+4); a null arg matches entries with both dwords zero. Returns TRUE if found.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FC570": {
     "name": "isKnownGlobalHandle",
     "signature": "uint8_t __stdcall sub_006FC570(uint32_t value)",

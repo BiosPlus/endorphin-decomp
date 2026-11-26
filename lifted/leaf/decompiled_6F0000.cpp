@@ -2111,3 +2111,37 @@ int fn_006F90F0(const char* s) {
     return -1;
 }
 } // namespace lift_006F90F0
+
+// [0x006FC250] sub_006FC250 (96 bytes)
+namespace lift_006FC250 {
+// @name Unknown::findEntryByKeyRef
+// @class Unknown
+// @summary Scans the 12-byte entries in [start, start+count) (highest index first) for one whose first two dwords equal (*(arg+4), arg+4); a null arg matches entries with both dwords zero. Returns TRUE if found.
+// @field Unknown +0x10 void* entryTable
+// @field Unknown +0x14 DWORD startIndex
+// @field Unknown +0x18 DWORD entryCount
+extern BOOL __thiscall fn_006FC250(void* self, void* arg) {
+    const DWORD start = lift_field<DWORD>(self, 0x14);
+    const DWORD count = lift_field<DWORD>(self, 0x18);
+    const int32_t first = static_cast<int32_t>(count + start - 1u);
+    const int32_t last = static_cast<int32_t>(start);
+    void* table = lift_field<void*>(self, 0x10);
+
+    DWORD key0 = 0;
+    DWORD key1 = 0;
+    if (arg != nullptr) {
+        void* ref = lift_field<void*>(arg, 0x4);
+        key0 = lift_field<DWORD>(ref, 0x0);
+        key1 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(ref));
+    }
+
+    for (int32_t i = first; i >= last; --i) {
+        const ptrdiff_t off = static_cast<ptrdiff_t>(i) * 12;
+        if (lift_field<DWORD>(table, off) == key0 &&
+            lift_field<DWORD>(table, off + 4) == key1) {
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+} // namespace lift_006FC250
