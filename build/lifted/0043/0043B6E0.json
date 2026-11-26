@@ -1,0 +1,13 @@
+{
+  "va": "0x0043B6E0",
+  "size": 51,
+  "orig_symbol": "sub_0043B6E0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "copy_dword_range",
+  "signature": "extern \"C\" void* __cdecl sub_0043B6E0(const void* first, const void* last, void* dest)",
+  "summary": "Copies a range of 32-bit elements using memmove_s and returns the end pointer of the destination range.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T10:41:20Z"
+}

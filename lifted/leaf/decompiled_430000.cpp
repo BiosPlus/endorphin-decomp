@@ -3464,3 +3464,22 @@ void fn_00430F70(void* self) {
     unlock(sb);
 }
 } // namespace lift_00430F70
+
+// [0x0043B6E0]
+namespace lift_0043B6E0 {
+// @name copy_dword_range
+// @summary Copies a range of 32-bit elements using memmove_s and returns the end pointer of the destination range.
+
+
+extern int (__cdecl* mem_009251EC)(void* dest, size_t destsz, const void* src, size_t count);
+
+extern void* __cdecl sub_0043B6E0(const void* first, const void* last, void* dest) {
+    intptr_t count = (reinterpret_cast<intptr_t>(last) - reinterpret_cast<intptr_t>(first)) >> 2;
+    size_t bytes = static_cast<size_t>(count * 4);
+    void* end_dest = reinterpret_cast<uint8_t*>(dest) + bytes;
+    if (count > 0) {
+        mem_009251EC(dest, bytes, first, bytes);
+    }
+    return end_dest;
+}
+} // namespace lift_0043B6E0
