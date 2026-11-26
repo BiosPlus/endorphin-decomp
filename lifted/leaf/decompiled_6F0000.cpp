@@ -2145,3 +2145,28 @@ extern BOOL __thiscall fn_006FC250(void* self, void* arg) {
     return FALSE;
 }
 } // namespace lift_006FC250
+
+// [0x006FAD90] sub_006FAD90 (96 bytes)
+namespace lift_006FAD90 {
+// @name NodeChain::recurseThenInvokeSlot14
+// @class NodeChain
+// @summary Recurses down the next-pointer chain (+0x04) first, then calls vtable slot 14 (+0x38) on the node's object (+0x00) with the six trailing arguments; returns 0 for a null node.
+// @field NodeChain +0x00 void* obj
+// @field NodeChain +0x04 void* next
+
+using VSlot14 = uint32_t(__thiscall*)(void* self, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t);
+
+uint32_t fn_006FAD90(void* node, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7) {
+    if (node == nullptr) {
+        return 0;
+    }
+
+    void* next = lift_field<void*>(node, 0x04);
+    fn_006FAD90(next, a2, a3, a4, a5, a6, a7);
+
+    void* obj = lift_field<void*>(node, 0x00);
+    void* vtbl = lift_field<void*>(obj, 0x00);
+    auto slot14 = reinterpret_cast<VSlot14>(lift_field<void*>(vtbl, 0x38));
+    return slot14(obj, a2, a3, a4, a5, a6, a7);
+}
+} // namespace lift_006FAD90

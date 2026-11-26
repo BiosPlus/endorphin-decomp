@@ -1,0 +1,28 @@
+{
+  "va": "0x006FAD90",
+  "size": 96,
+  "orig_symbol": "sub_006FAD90",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "NodeChain::recurseThenInvokeSlot14",
+  "class": "NodeChain",
+  "signature": "uint32_t fn_006FAD90(void* node, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7)",
+  "summary": "Recurses down the next-pointer chain (+0x04) first, then calls vtable slot 14 (+0x38) on the node's object (+0x00) with the six trailing arguments; returns 0 for a null node.",
+  "fields": [
+    {
+      "class": "NodeChain",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "obj"
+    },
+    {
+      "class": "NodeChain",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "next"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T12:11:17Z"
+}
