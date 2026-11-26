@@ -1,0 +1,22 @@
+{
+  "va": "0x00422C80",
+  "size": 77,
+  "orig_symbol": "sub_00422C80",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "Unknown::assignStringArgToField50",
+  "class": "Unknown",
+  "signature": "void fn_00422C80(void* self, void* arg)",
+  "summary": "Copy-assigns the by-value std::string argument into the std::string at +0x50, then destroys the argument (callee pops 0x1c bytes).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "std::string",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-26T11:27:28Z"
+}

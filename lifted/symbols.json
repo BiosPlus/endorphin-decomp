@@ -2485,6 +2485,13 @@
     "summary": "Pure jump thunk forwarding to sub_00422C60.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00422C80": {
+    "name": "Unknown::assignStringArgToField50",
+    "class": "Unknown",
+    "signature": "void fn_00422C80(void* self, void* arg)",
+    "summary": "Copy-assigns the by-value std::string argument into the std::string at +0x50, then destroys the argument (callee pops 0x1c bytes).",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x00422CD0": {
     "name": "ImportDialog::vfunc_0",
     "class": "ImportDialog",
