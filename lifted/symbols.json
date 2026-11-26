@@ -57938,6 +57938,13 @@
     "summary": "Pure jump thunk forwarding to sub_006D2250.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D2250": {
+    "name": "Unknown::ResetAndFreeBuffer156",
+    "class": "Unknown",
+    "signature": "void fn_006D2250(void* self)",
+    "summary": "Frees the pointer stored at +0x10 (via the imported CRT free) if non-null, then zeroes +0x10, +0x00 and +0x04.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D2390": {
     "name": "ForwardArgToCalleeReturnThis",
     "signature": "void* fn_006D2390(void* self, uint32_t arg1)",

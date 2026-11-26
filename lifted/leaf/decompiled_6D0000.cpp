@@ -1664,3 +1664,29 @@ void fn_006D2130(void* self, int32_t arg1, int32_t arg2) {
     *reinterpret_cast<int32_t*>(base + 0x08) = (arg1 > 1) ? arg1 : 1;
 }
 } // namespace lift_006D2130
+
+// [0x006D2250] sub_006D2250 (48 bytes)
+namespace lift_006D2250 {
+extern int mem_009251D8;
+
+// @name Unknown::ResetAndFreeBuffer156
+// @class Unknown
+// @summary Frees the pointer stored at +0x10 (via the imported CRT free) if non-null, then zeroes +0x10, +0x00 and +0x04.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x10 void* field_0x10
+void fn_006D2250(void* self) {
+    auto* base = static_cast<std::uint8_t*>(self);
+
+    void* buf = *reinterpret_cast<void**>(base + 0x10);
+    if (buf != nullptr) {
+        // mem_009251D8 is the IAT slot for MSVCR80!free; call through it as cdecl.
+        auto free_fn = reinterpret_cast<void (*)(void*)>(static_cast<std::uintptr_t>(mem_009251D8));
+        free_fn(buf);
+        *reinterpret_cast<void**>(base + 0x10) = nullptr;
+    }
+
+    *reinterpret_cast<std::uint32_t*>(base + 0x00) = 0;
+    *reinterpret_cast<std::uint32_t*>(base + 0x04) = 0;
+}
+} // namespace lift_006D2250
