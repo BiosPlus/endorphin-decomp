@@ -31758,6 +31758,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005C35E0": {
+    "name": "allocArray32Checked",
+    "signature": "void* fn_005C35E0(uint32_t count)",
+    "summary": "Allocate count*32 bytes through the CRT allocator; throws if count*32 overflows a DWORD.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005C3640": {
     "name": "VirtualSlot27Thunk",
     "class": "VTable",

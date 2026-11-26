@@ -1467,3 +1467,45 @@ void __thiscall fn_005CFE10(void* self, uint32_t arg1) {
     lift_field<uint8_t>(self, 0x1f2) = static_cast<uint8_t>(arg1);
 }
 } // namespace lift_005CFE10
+
+// [0x005C35E0] sub_005C35E0 (87 bytes)
+namespace lift_005C35E0 {
+// Known callee 0x006A5C62: ext_006A5C62 (IAT thunk to MFC80!ord_762, allocator; cdecl, returns void* in eax)
+// Known callee 0x006A6DD2: ext_006A6DD2 (IAT thunk to MSVCR80!_CxxThrowException(void* obj, ThrowInfo* info))
+extern void* ext_006A5C62(uint32_t size);
+extern void ext_006A6DD2(void* obj, const void* throwInfo);
+
+// IAT slot 0x00925130 holds MSVCR80!std::exception::exception(const char* const&) (thiscall).
+// vtable 0x00928EC0 and ThrowInfo 0x009CDF94 are the MSVC exception type descriptors used by the throw.
+extern void* mem_00925130;
+extern int mem_00928EC0;
+extern int mem_009CDF94;
+
+namespace {
+// Layout of the throwaway std::exception object built on the stack (MSVC std::exception: vptr, _Ptr, _Do_free).
+struct lift_exc_obj {
+    const void* vptr;
+    const void* what;
+    int doFree;
+};
+
+using lift_exc_ctor_t = void (__thiscall*)(void* self, const void* whatRef);
+} // namespace
+
+// Allocates count * 32 bytes via ext_006A5C62 (count == 0 allocates 0 bytes).
+// If count * 32 would overflow 32 bits, throws an exception instead.
+// @name allocArray32Checked
+// @summary Allocate count*32 bytes through the CRT allocator; throws if count*32 overflows a DWORD.
+void* fn_005C35E0(uint32_t count) {
+    if (count != 0 && UINT32_MAX / count < 32) {
+        // count * 32 overflows: construct the exception object and throw it.
+        lift_exc_obj exc{};
+        exc.doFree = 0;
+        reinterpret_cast<lift_exc_ctor_t>(mem_00925130)(&exc, &count);
+        exc.vptr = &mem_00928EC0;
+        ext_006A6DD2(&exc, &mem_009CDF94);
+        return nullptr; // not reached: _CxxThrowException does not return
+    }
+    return ext_006A5C62(count << 5);
+}
+} // namespace lift_005C35E0

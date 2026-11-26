@@ -1,0 +1,13 @@
+{
+  "va": "0x005C35E0",
+  "size": 87,
+  "orig_symbol": "sub_005C35E0",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "allocArray32Checked",
+  "signature": "void* fn_005C35E0(uint32_t count)",
+  "summary": "Allocate count*32 bytes through the CRT allocator; throws if count*32 overflows a DWORD.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:59:14Z"
+}
