@@ -2162,3 +2162,31 @@ void fn_00415540(void* self) {
     }
 }
 } // namespace lift_00415540
+
+// [0x0041CCC0]
+namespace lift_0041CCC0 {
+// @name Vector28::at
+// @class Vector28
+// @summary Checked element access for a 28-byte element vector
+// @field Vector28 +0x04 uint8_t* first
+// @field Vector28 +0x08 uint8_t* last
+
+
+extern void (*mem_00925134)(void);
+
+void* __thiscall sub_0041CCC0(void* self, uint32_t index) {
+    uint8_t* first = lift_field<uint8_t*>(self, 0x04);
+    if (!first) {
+        mem_00925134();
+        first = lift_field<uint8_t*>(self, 0x04);
+    } else {
+        uint8_t* last = lift_field<uint8_t*>(self, 0x08);
+        uint32_t count = static_cast<uint32_t>(static_cast<int32_t>(last - first) / 28);
+        if (index >= count) {
+            mem_00925134();
+            first = lift_field<uint8_t*>(self, 0x04);
+        }
+    }
+    return first + index * 28;
+}
+} // namespace lift_0041CCC0

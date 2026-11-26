@@ -2107,6 +2107,13 @@
     "summary": "Sets the object vtable, calls MFC80 ord_578 on the subobject at +0x12c, then tail-calls the base destructor.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041CCC0": {
+    "name": "Vector28::at",
+    "class": "Vector28",
+    "signature": "void* __thiscall sub_0041CCC0(void* self, uint32_t index)",
+    "summary": "Checked element access for a 28-byte element vector",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041CD60": {
     "name": "sub_0041CD60",
     "signature": "extern \"C\" int __thiscall fn_0041CD60(void* self)",

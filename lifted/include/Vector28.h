@@ -8,7 +8,9 @@
 // Recovered field layout for Vector28:
 namespace lifted_layout {
 struct Vector28_Fields {
-    // +0x4   uint32_t                 first  (evidence: 0x00660210)
-    // +0x8   uint32_t                 last  (evidence: 0x00660210)
+    // +0x4   uint32_t                 first  (evidence: 0x00660210) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint8_t*                 first  (evidence: 0x0041CCC0) // CONFLICT: multiple definitions at +0x4
+    // +0x8   uint32_t                 last  (evidence: 0x00660210) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint8_t*                 last  (evidence: 0x0041CCC0) // CONFLICT: multiple definitions at +0x8
 };
 } // namespace lifted_layout
