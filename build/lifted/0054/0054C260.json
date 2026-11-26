@@ -1,0 +1,28 @@
+{
+  "va": "0x0054C260",
+  "size": 76,
+  "orig_symbol": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_2",
+  "src_path": "src/templates/ManagedDisplayList.cpp",
+  "lifted_path": "lifted/templates/ManagedDisplayList.cpp",
+  "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_2",
+  "class": "ManagedDisplayList\u003cRenderableList\u003e",
+  "signature": "void ManagedDisplayList_RenderableList_vfunc_2(void* self)",
+  "summary": "Calls virtual slot 2 on each element in the [field_0x18, field_0x1C) pointer range.",
+  "fields": [
+    {
+      "class": "ManagedDisplayList\u003cRenderableList\u003e",
+      "offset": "+0x18",
+      "type": "void**",
+      "name": "field_0x18"
+    },
+    {
+      "class": "ManagedDisplayList\u003cRenderableList\u003e",
+      "offset": "+0x1C",
+      "type": "void**",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:25:17Z"
+}

@@ -178,3 +178,34 @@ uint32_t __thiscall fn_0054C030(void* self) {
 }
 } // namespace lift_0054C090
 } // namespace lift_0054C030
+
+// [0x0054C260]
+namespace lift_0054C260 {
+// @name ManagedDisplayList<RenderableList>::vfunc_2
+// @class ManagedDisplayList<RenderableList>
+// @summary Calls virtual slot 2 on each element in the [field_0x18, field_0x1C) pointer range.
+// @field ManagedDisplayList<RenderableList> +0x18 void** field_0x18
+// @field ManagedDisplayList<RenderableList> +0x1C void** field_0x1C
+
+
+// _invalid_parameter_noinfo pointer (MSVCR80), used by the iterator range checks.
+extern void (*mem_00925134)();
+
+void ManagedDisplayList_RenderableList_vfunc_2(void* self) {
+    unsigned char* base = static_cast<unsigned char*>(self);
+    void** begin = *reinterpret_cast<void***>(base + 0x18);
+    void** end   = *reinterpret_cast<void***>(base + 0x1C);
+
+    if (begin > end) mem_00925134();
+
+    while (begin != end) {
+        if (!(begin < end)) mem_00925134();
+        void* obj = *begin;
+        void** vtable = *reinterpret_cast<void***>(obj);
+        auto fn = reinterpret_cast<void (*)(void*)>(vtable[2]);
+        fn(obj);
+        if (!(begin < end)) mem_00925134();
+        ++begin;
+    }
+}
+} // namespace lift_0054C260

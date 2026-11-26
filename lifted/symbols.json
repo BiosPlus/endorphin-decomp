@@ -24809,6 +24809,13 @@
     "summary": "Sums vfunc_17() across all elements in the RenderableList vector",
     "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
   },
+  "0x0054C260": {
+    "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_2",
+    "class": "ManagedDisplayList\u003cRenderableList\u003e",
+    "signature": "void ManagedDisplayList_RenderableList_vfunc_2(void* self)",
+    "summary": "Calls virtual slot 2 on each element in the [field_0x18, field_0x1C) pointer range.",
+    "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
+  },
   "0x0054C570": {
     "name": "Unknown::ctor_0054C570",
     "class": "Unknown",
