@@ -1,0 +1,14 @@
+{
+  "va": "0x0046C460",
+  "size": 44,
+  "orig_symbol": "sub_0046C460",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "StdString::constructFromLiteral_0046C460",
+  "class": "StdString",
+  "signature": "void* fn_0046C460(void* out, unsigned char flag)",
+  "summary": "Constructs the std::string at out from one of two string literals, selected by flag (nonzero -\u003e 0x0092F10C, zero -\u003e 0x0093A808), and returns out.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:25:06Z"
+}

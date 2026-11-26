@@ -1468,3 +1468,26 @@ uint8_t fn_00462D10(void* self, int32_t mode) {
     return 0;
 }
 } // namespace lift_00462D10
+
+// [0x0046C460] sub_0046C460 (44 bytes)
+namespace lift_0046C460 {
+extern int mem_00924FE4;
+extern const char mem_0092F10C[];
+extern const char mem_0093A808[];
+extern int mem_00AD6C6C;
+extern int mem_00AD6C7C;
+
+// @name StdString::constructFromLiteral_0046C460
+// @summary Constructs the std::string at out from one of two string literals, selected by flag (nonzero -> 0x0092F10C, zero -> 0x0093A808), and returns out.
+void* fn_0046C460(void* out, unsigned char flag) {
+    // The original asm never reads these two globals; their addresses are
+    // referenced only so the lift keeps them as data dependencies (no access).
+    (void)&mem_00AD6C6C;
+    (void)&mem_00AD6C7C;
+    using StringCtor = void(__thiscall*)(void* self, const char* s);
+    const char* lit = flag ? mem_0092F10C : mem_0093A808;
+    auto ctor = reinterpret_cast<StringCtor>(static_cast<uintptr_t>(mem_00924FE4));
+    ctor(out, lit);
+    return out;
+}
+} // namespace lift_0046C460
