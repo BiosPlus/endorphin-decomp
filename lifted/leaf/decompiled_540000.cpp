@@ -1182,3 +1182,22 @@ extern void __stdcall fn_00540549(void) {
     reinterpret_cast<PFN_glDisable>(mem_00925438)(0x0B44u /* GL_CULL_FACE */);
 }
 } // namespace lift_00540549
+
+// [0x00540572]
+namespace lift_00540572 {
+// @name glSetupBackfaceCulling
+// @summary Configures OpenGL polygon mode, front-face winding, back-face culling, and enables GL_CULL_FACE.
+
+
+extern void (__stdcall *mem_0092551C)(uint32_t face, uint32_t mode);
+extern void (__stdcall *mem_009254E4)(uint32_t mode);
+extern void (__stdcall *mem_00925428)(uint32_t mode);
+extern void (__stdcall *mem_00925418)(uint32_t cap);
+
+void __stdcall sub_00540572(uint32_t /*arg0*/) {
+    mem_0092551C(0x0408u, 0x1B02u); // glPolygonMode(GL_FRONT_AND_BACK, GL_FILL)
+    mem_009254E4(0x0901u);          // glFrontFace(GL_CCW)
+    mem_00925428(0x0405u);          // glCullFace(GL_BACK)
+    mem_00925418(0x0B44u);          // glEnable(GL_CULL_FACE)
+}
+} // namespace lift_00540572
