@@ -66956,6 +66956,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0072CFB0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x0072D210": {
+    "name": "copyHugeConstantToGlobals_0072D210",
+    "signature": "void __cdecl fn_0072D210(void)",
+    "summary": "Reads the 8-byte value at the pointer stored in mem_00925284 (_HUGE) and copies it into three 8-byte globals at 0x00B602B0, 0x00B602B8 and 0x00B602C0.",
+    "lifted_path": "lifted/clones/auto_clones_720000.cpp"
+  },
   "0x0072D2A0": {
     "name": "CopyHugeValueToGlobals_0072D2A0",
     "signature": "void fn_0072D2A0(void)",

@@ -1,0 +1,13 @@
+{
+  "va": "0x0072D210",
+  "size": 57,
+  "orig_symbol": "sub_0072D210",
+  "src_path": "src/clones/auto_clones_720000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_720000.cpp",
+  "name": "copyHugeConstantToGlobals_0072D210",
+  "signature": "void __cdecl fn_0072D210(void)",
+  "summary": "Reads the 8-byte value at the pointer stored in mem_00925284 (_HUGE) and copies it into three 8-byte globals at 0x00B602B0, 0x00B602B8 and 0x00B602C0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:48:29Z"
+}
