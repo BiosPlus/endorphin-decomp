@@ -1725,3 +1725,28 @@ void fn_006D6CB0(void* ecx) {
     ext_006B9960(reinterpret_cast<Unknown*>(self + 0xB0));
 }
 } // namespace lift_006D6CB0
+
+// [0x006D7AA0]
+namespace lift_006D7AA0 {
+// @name Control::GetNestedFieldAt18
+// @class Control
+// @summary Chains two ext_006FDF70 lookups through ext_006B99C0 with validity checks; returns the int32 at +0x18 of the final result, or 0 if any step fails.
+
+extern void* __fastcall ext_006FDF70(void* self, int edx_unused, unsigned int flags);
+extern int32_t __fastcall ext_006B99C0(void* self);
+
+extern int32_t __fastcall fn_006D7AA0(void* self) {
+    if (!ext_006FDF70(self, 0, 0)) {
+        return 0;
+    }
+
+    void* first = ext_006FDF70(self, 0, 0);
+    if (!ext_006B99C0(first)) {
+        return 0;
+    }
+
+    void* second = ext_006FDF70(self, 0, 0);
+    uintptr_t target = static_cast<uintptr_t>(static_cast<uint32_t>(ext_006B99C0(second)));
+    return *reinterpret_cast<int32_t*>(target + 0x18);
+}
+} // namespace lift_006D7AA0

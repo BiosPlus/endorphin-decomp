@@ -58736,6 +58736,13 @@
     "summary": "Getter returning int32_t field at offset +0x28.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D7AA0": {
+    "name": "Control::GetNestedFieldAt18",
+    "class": "Control",
+    "signature": "extern \"C\" int32_t __fastcall fn_006D7AA0(void* self)",
+    "summary": "Chains two ext_006FDF70 lookups through ext_006B99C0 with validity checks; returns the int32 at +0x18 of the final result, or 0 if any step fails.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D7B30": {
     "name": "sub_006D7B30",
     "signature": "extern \"C\" void* __fastcall fn_006D7B30(void* self, int edx_unused, unsigned int flags)",

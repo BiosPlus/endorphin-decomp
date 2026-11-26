@@ -1,0 +1,14 @@
+{
+  "va": "0x006D7AA0",
+  "size": 64,
+  "orig_symbol": "sub_006D7AA0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Control::GetNestedFieldAt18",
+  "class": "Control",
+  "signature": "extern \"C\" int32_t __fastcall fn_006D7AA0(void* self)",
+  "summary": "Chains two ext_006FDF70 lookups through ext_006B99C0 with validity checks; returns the int32 at +0x18 of the final result, or 0 if any step fails.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:04:24Z"
+}
