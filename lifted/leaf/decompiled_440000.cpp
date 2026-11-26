@@ -2260,3 +2260,29 @@ uintptr_t fn_0044C360(uintptr_t first, uintptr_t last, uintptr_t d_last) {
     return result;
 }
 } // namespace lift_0044C360
+
+// [0x0044ACE0] sub_0044ACE0 (66 bytes)
+namespace lift_0044ACE0 {
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast.)
+// __RTDynamicCast(void* inptr, int VfDelta, void* SrcType, void* TargetType, int isReference) -> void*
+extern void* ext_006A6E9E(void* inptr, int vfDelta, const void* srcType, const void* targetType, int isReference);
+
+// Known callee 0x0044ABD0: sub_0044ABD0 (thiscall, 3 stack args, returns via ret 0xc)
+void sub_0044ABD0(void* self, void* arg1, void* arg2, void* arg3);
+
+// @name fn_0044ACE0
+// @summary __thiscall(ecx=this, arg1, arg3): RTDynamicCast arg3 against type pair; if result == this+0x148, call sub_0044ABD0(this, arg1, this+0xf4, this+0x148). Stdcall ret 0xc.
+// @field Unknown +0xF4 void* field_0xF4
+// @field Unknown +0x148 void* field_0x148
+void fn_0044ACE0(void* self, void* arg1, void* arg3) {
+    auto* base = static_cast<uint8_t*>(self);
+    void* const edi = base + 0x148;
+    void* const eax = ext_006A6E9E(arg3, 0,
+                                   reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00A2FFB8)),
+                                   reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00A2FF24)),
+                                   0);
+    if (edi == eax) {
+        sub_0044ABD0(self, arg1, base + 0xF4, edi);
+    }
+}
+} // namespace lift_0044ACE0

@@ -4816,6 +4816,12 @@
     "summary": "MSVC scalar deleting destructor: calls thunk_MFC80_ord_605 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0044ACE0": {
+    "name": "fn_0044ACE0",
+    "signature": "void fn_0044ACE0(void* self, void* arg1, void* arg3)",
+    "summary": "__thiscall(ecx=this, arg1, arg3): RTDynamicCast arg3 against type pair; if result == this+0x148, call sub_0044ABD0(this, arg1, this+0xf4, this+0x148). Stdcall ret 0xc.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044AF30": {
     "name": "GetStringLiteral_0044AF30",
     "signature": "extern \"C\" const char* __cdecl fn_0044AF30()",

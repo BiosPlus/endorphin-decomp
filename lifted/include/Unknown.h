@@ -1060,6 +1060,7 @@ struct Unknown_Fields {
     // +0xF4  float                    field_0xF4  (evidence: 0x007C8490, 0x007C9AA0, 0x007CAF70) // CONFLICT: multiple definitions at +0xF4
     // +0xF4  int                      field_0xF4  (evidence: 0x004090C0, 0x00455CB0) // CONFLICT: multiple definitions at +0xF4
     // +0xF4  uint32_t                 field_0xF4  (evidence: 0x007155B0, 0x0071C700) // CONFLICT: multiple definitions at +0xF4
+    // +0xF4  void*                    field_0xF4  (evidence: 0x0044ACE0) // CONFLICT: multiple definitions at +0xF4
     // +0xF4  uint8_t                  field_0xf4  (evidence: 0x00430260, 0x00430430, 0x00441C10) // CONFLICT: multiple definitions at +0xF4
     // +0xF4  void*                    field_0xf4  (evidence: 0x004561C0, 0x007101E0) // CONFLICT: multiple definitions at +0xF4
     // +0xF4  int field_0xF4 (read indirectly via callees; not accessed directly here)  (evidence: 0x00455F40, 0x004584C0) // CONFLICT: multiple definitions at +0xF4
@@ -1134,6 +1135,7 @@ struct Unknown_Fields {
     // +0x148 float                    field_0x148  (evidence: 0x00630420) // CONFLICT: multiple definitions at +0x148
     // +0x148 int32_t                  field_0x148  (evidence: 0x0046F830, 0x0046F930) // CONFLICT: multiple definitions at +0x148
     // +0x148 uint8_t                  field_0x148  (evidence: 0x00441C10) // CONFLICT: multiple definitions at +0x148
+    // +0x148 void*                    field_0x148  (evidence: 0x0044ACE0) // CONFLICT: multiple definitions at +0x148
     // +0x148 void*                    subObject  (evidence: 0x0070AD00, 0x0070E3B0, 0x0070EC50) // CONFLICT: multiple definitions at +0x148
     // +0x14C int32_t field_0x14C (indexed array base; element stride 4, indices 1..17)  (evidence: 0x007AA7F0, 0x007AA950) // CONFLICT: multiple definitions at +0x14C
     // +0x14C uint32_t                 field_0x14C  (evidence: 0x006D6CB0) // CONFLICT: multiple definitions at +0x14C
