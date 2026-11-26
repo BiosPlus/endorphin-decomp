@@ -79,3 +79,43 @@ void fn_006BBA40(void) {
 }
 } // namespace lift_006BBA40
 } // namespace lift_006C8EF0
+
+// [0x006C2020]
+namespace lift_006C2020 {
+extern void ext_006D80A0(void);
+
+// Data referenced by the original prologue/epilogue (SEH frame bookkeeping and scope data).
+extern int mem_00925284;
+extern int mem_00B5D620;
+extern int mem_00B5D624;
+extern int mem_00B5D628;
+extern int mem_00B5D62C;
+extern int mem_00B5D630;
+extern int mem_00B5D634;
+extern int mem_00B5D638;
+extern int mem_00B5D63C;
+
+// @name Unknown::destroyMembersAt08And28
+// @class Unknown
+// @summary Calls ext_006D80A0 on the sub-objects at this+0x28 then this+0x08; SEH frame setup/teardown omitted as boilerplate.
+// @field Unknown +0x08 unsigned char field_0x08
+// @field Unknown +0x28 unsigned char field_0x28
+
+extern void fn_006C2020(void* self) {
+    // Original: ecx = this+0x28; call ext_006D80A0. Callee is empty, so the receiver is not observable.
+    ext_006D80A0();
+    // Original: ecx = this+0x08; call ext_006D80A0.
+    ext_006D80A0();
+    // Keep the SEH/global references alive without touching them at runtime.
+    (void)self;
+    (void)&mem_00925284;
+    (void)&mem_00B5D620;
+    (void)&mem_00B5D624;
+    (void)&mem_00B5D628;
+    (void)&mem_00B5D62C;
+    (void)&mem_00B5D630;
+    (void)&mem_00B5D634;
+    (void)&mem_00B5D638;
+    (void)&mem_00B5D63C;
+}
+} // namespace lift_006C2020

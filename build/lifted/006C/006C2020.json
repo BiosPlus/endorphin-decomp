@@ -1,0 +1,28 @@
+{
+  "va": "0x006C2020",
+  "size": 77,
+  "orig_symbol": "sub_006C2020",
+  "src_path": "src/clones/auto_clones_6C0000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_6C0000.cpp",
+  "name": "Unknown::destroyMembersAt08And28",
+  "class": "Unknown",
+  "signature": "extern \"C\" void fn_006C2020(void* self)",
+  "summary": "Calls ext_006D80A0 on the sub-objects at this+0x28 then this+0x08; SEH frame setup/teardown omitted as boilerplate.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "unsigned char",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "unsigned char",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:30:13Z"
+}
