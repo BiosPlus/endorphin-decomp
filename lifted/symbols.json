@@ -69260,6 +69260,12 @@
     "summary": "If the virtual gate at vtable +0x2c returns true, forward to ext_00789650; a -1 result is returned unchanged, otherwise return the DWORD at +0x1C. Returns 0 when the gate is false.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x0078BF70": {
+    "name": "writeFormatted",
+    "signature": "void __cdecl writeFormatted(void* obj, const char* fmt, ...)",
+    "summary": "vsprintf into a 16KB stack buffer, then call obj-\u003evtbl[0x1c](buf, strlen(buf)+1)",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078C220": {
     "name": "Unknown::GetScaledDeltaFromField4",
     "class": "Unknown",

@@ -1814,3 +1814,27 @@ void __cdecl sub_00783670(void* logger, const char* fmt, ...) {
     reinterpret_cast<FputsFn>(mem_009252C8)(buf, file);
 }
 } // namespace lift_00783670
+
+// [0x0078BF70]
+namespace lift_0078BF70 {
+extern void* mem_009252B8; // MSVCR80.dll!vsprintf IAT slot
+extern void __cdecl ext_006A7270();
+
+// @name writeFormatted
+// @summary vsprintf into a 16KB stack buffer, then call obj->vtbl[0x1c](buf, strlen(buf)+1)
+// @field Stream +0x00 void** vtable
+void __cdecl writeFormatted(void* obj, const char* fmt, ...)
+{
+    char buf[0x4000];
+    ext_006A7270(); // _chkstk stack probe for 16KB frame
+    va_list ap;
+    va_start(ap, fmt);
+    typedef int (__cdecl *vsprintf_t)(char*, const char*, va_list);
+    ((vsprintf_t)mem_009252B8)(buf, fmt, ap);
+    va_end(ap);
+    unsigned int len = (unsigned int)strlen(buf) + 1;
+    typedef void (__thiscall *write_t)(void*, const char*, unsigned int);
+    void** vtbl = *(void***)obj;
+    ((write_t)vtbl[0x1c / 4])(obj, buf, len);
+}
+} // namespace lift_0078BF70
