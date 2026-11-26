@@ -1511,3 +1511,25 @@ void __thiscall fn_006B9640(void* self, uint32_t wParam, uint32_t lParam) {
     (void)invalidate_rect(hwnd, nullptr, 1);
 }
 } // namespace lift_006B9640
+
+// [0x006B9CE0]
+namespace lift_006B9CE0 {
+// @name StrContainsChar_006B9CE0
+// @summary Returns TRUE if byte c occurs in the NUL-terminated string s (c == 0 never matches; NULL s returns FALSE).
+// (stdcall, 2 stack args, returns BOOLEAN in al; ret 8)
+extern BOOLEAN __stdcall StrContainsChar_006B9CE0(CHAR c, const CHAR* s) {
+    if (s == nullptr) {
+        return FALSE;
+    }
+    const uint8_t target = static_cast<uint8_t>(c);
+    for (const uint8_t* p = reinterpret_cast<const uint8_t*>(s); ; ++p) {
+        const uint8_t ch = *p;
+        if (ch == 0) {
+            return FALSE;
+        }
+        if (ch == target) {
+            return TRUE;
+        }
+    }
+}
+} // namespace lift_006B9CE0

@@ -56039,6 +56039,12 @@
     "summary": "Getter returning int32_t field at offset +0x4.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006B9CE0": {
+    "name": "StrContainsChar_006B9CE0",
+    "signature": "extern \"C\" BOOLEAN __stdcall StrContainsChar_006B9CE0(CHAR c, const CHAR* s)",
+    "summary": "Returns TRUE if byte c occurs in the NUL-terminated string s (c == 0 never matches; NULL s returns FALSE).",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B9D10": {
     "name": "Unknown::InitAndReturnSelf",
     "class": "Unknown",

@@ -1,0 +1,13 @@
+{
+  "va": "0x006B9CE0",
+  "size": 48,
+  "orig_symbol": "sub_006B9CE0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "StrContainsChar_006B9CE0",
+  "signature": "extern \"C\" BOOLEAN __stdcall StrContainsChar_006B9CE0(CHAR c, const CHAR* s)",
+  "summary": "Returns TRUE if byte c occurs in the NUL-terminated string s (c == 0 never matches; NULL s returns FALSE).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:34:42Z"
+}
