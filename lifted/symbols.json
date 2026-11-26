@@ -19596,6 +19596,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00509C50": {
+    "name": "CopyBackwardRange36",
+    "class": "Element",
+    "signature": "extern DWORD fn_00509C50(DWORD first, DWORD last, DWORD dest_last)",
+    "summary": "Copy-assigns a range of 36-byte records [first, last) backward into the range ending at dest_last, copying each record's std::string (+0x04, via indirect MSVCP80 operator=) and float (+0x20); returns the new start of the destination range (dest_last - count*36).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00509DE0": {
     "name": "Unknown::initEntryArray_00509DE0",
     "class": "Unknown",

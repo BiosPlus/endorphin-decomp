@@ -2328,3 +2328,43 @@ void fn_0050A6E0(uint8_t* first, uint8_t* last, const uint8_t* value) {
     }
 }
 } // namespace lift_0050A6E0
+
+// [0x00509C50] sub_00509C50 (61 bytes)
+namespace lift_00509C50 {
+extern int mem_00924FDC;
+
+// @name CopyBackwardRange36
+// @summary Copy-assigns a range of 36-byte records [first, last) backward into the range ending at dest_last, copying each record's std::string (+0x04, via indirect MSVCP80 operator=) and float (+0x20); returns the new start of the destination range (dest_last - count*36).
+// @class Element
+// @field Element +0x04 std::string field_0x04
+// @field Element +0x20 float field_0x20
+extern DWORD fn_00509C50(DWORD first, DWORD last, DWORD dest_last) {
+    constexpr DWORD kElemSize = 0x24;
+
+    // Empty source range: the original returns the destination end unchanged.
+    if (first == last) {
+        return dest_last;
+    }
+
+    // Indirect thiscall to MSVCP80 std::string::operator=: ecx = this (destination), one stack arg = source.
+    using AssignFn = void(__thiscall*)(void*, const void*);
+    auto assign = *reinterpret_cast<AssignFn*>(&mem_00924FDC);
+
+    DWORD src = last;
+    DWORD dst = dest_last;
+    do {
+        src -= kElemSize;
+        dst -= kElemSize;
+
+        // Element +0x04: std::string copy-assign.
+        assign(reinterpret_cast<void*>(static_cast<uintptr_t>(dst + 0x04)),
+               reinterpret_cast<const void*>(static_cast<uintptr_t>(src + 0x04)));
+
+        // Element +0x20: float copy.
+        lift_field<float>(reinterpret_cast<void*>(static_cast<uintptr_t>(dst)), 0x20) =
+            lift_field<float>(reinterpret_cast<const void*>(static_cast<uintptr_t>(src)), 0x20);
+    } while (src != first);
+
+    return dst;
+}
+} // namespace lift_00509C50
