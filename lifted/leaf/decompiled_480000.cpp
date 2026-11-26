@@ -1967,3 +1967,41 @@ extern void __cdecl copyBlock64Repeat(uint32_t dst, uint32_t end, uint32_t src)
     } while (cur != end);
 }
 } // namespace lift_00480C70
+
+// [0x00486BB0] sub_00486BB0 (45 bytes)
+namespace lift_00486BB0 {
+// Known callee 0x004C0340: SetGlobalObjectFlag4IfPresent (If the global object pointer mem_00AE29D0 is non-null, set the byte at its +0x04 offset to 1.)
+// Thiscall: ECX = self, no stack args.
+extern void ext_004C0340();
+
+// Import-address-table slots (MSVCP80) read by the original asm:
+//   mem_00924FEC -> std::basic_string<char>::empty() const      (thiscall, returns bool)
+//   mem_00924FDC -> std::basic_string<char>::operator=(const string&) (thiscall, returns string&)
+// Each slot holds the function pointer; it is read through a pointer cast.
+extern int mem_00924FEC;
+extern int mem_00924FDC;
+
+// @name Unknown::setStringIfNonEmpty_00486BB0
+// @class Unknown
+// @summary If the given std::string is non-empty, copy it into self+0x180 and then call SetGlobalObjectFlag4IfPresent(self); otherwise do nothing.
+// @field Unknown +0x180 std::string field_0x180
+// Calling convention: __thiscall (self in ECX, one stack argument; callee pops 4 bytes, matching "ret 0x4").
+void __thiscall fn_00486BB0(void* self, const void* str) {
+    using EmptyFn  = bool(__thiscall*)(const void* s);
+    using AssignFn = void*(__thiscall*)(void* dst, const void* src);
+    using FlagFn   = void(__thiscall*)(void* self);
+
+    auto empty  = reinterpret_cast<EmptyFn>(*reinterpret_cast<void* const*>(&mem_00924FEC));
+    auto assign = reinterpret_cast<AssignFn>(*reinterpret_cast<void* const*>(&mem_00924FDC));
+    auto flag   = reinterpret_cast<FlagFn>(ext_004C0340);
+
+    if (empty(str)) {
+        return;
+    }
+
+    // self->field_0x180 = *str
+    assign(static_cast<uint8_t*>(self) + 0x180, str);
+
+    flag(self);
+}
+} // namespace lift_00486BB0
