@@ -1752,3 +1752,31 @@ uint32_t __thiscall sub_00783470(void* this_ptr, uint32_t* out_val, uint8_t swap
     return *out_val;
 }
 } // namespace lift_00783470
+
+// [0x007834C0]
+namespace lift_007834C0 {
+// @name FileReader::readU16
+// @class FileReader
+// @summary Reads a 16-bit unsigned integer from the underlying stream with optional byte swapping.
+// @field FileReader +0x04 void* field_0x04
+
+
+extern size_t (__cdecl *mem_009252AC)(void* ptr, size_t size, size_t count, void* stream);
+
+uint16_t __thiscall sub_007834C0(void* self, uint16_t* out, uint8_t swap_bytes) {
+    uint8_t* stream_obj = *reinterpret_cast<uint8_t**>(reinterpret_cast<uint8_t*>(self) + 0x4);
+    if (stream_obj[0x4] == 0) {
+        return 0;
+    }
+
+    void* fp = *reinterpret_cast<void**>(stream_obj);
+    mem_009252AC(out, 2, 1, fp);
+
+    if (swap_bytes != 0) {
+        uint16_t val = *out;
+        *out = static_cast<uint16_t>((val >> 8) | (val << 8));
+    }
+
+    return *out;
+}
+} // namespace lift_007834C0

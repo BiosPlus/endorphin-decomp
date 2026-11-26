@@ -834,6 +834,12 @@
     "summary": "Builds a std::string equal to \" \" + arg, writes it to the sret buffer, and returns that buffer pointer.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x0040B2B0": {
+    "name": "getStringByType",
+    "signature": "void* __stdcall sub_0040B2B0(void* dst, uint32_t type)",
+    "summary": "Constructs a std::string in sret from global mem_00AC8884 if type is 1 or 2, otherwise from mem_00928B5D.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040B640": {
     "name": "sub_0040B640",
     "signature": "extern void __thiscall fn_0040B640(void* self)",
