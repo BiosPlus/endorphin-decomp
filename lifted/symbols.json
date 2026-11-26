@@ -68840,6 +68840,13 @@
     "summary": "If the pointer-to-pointer argument is non-null, free the pointee via the MSVCR80 free IAT slot (0x009251D8) and null it out.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AD590": {
+    "name": "Unknown::SetVtableMaybeDestroy_009989F0",
+    "class": "Unknown",
+    "signature": "void* fn_007AD590(void* self, uint8_t flag)",
+    "summary": "Stores vtable 0x009989F0 into *this; if the low bit of the stack flag is set, calls ext_006A5C5C(this). Returns this (thiscall, ret 4).",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AD5C0": {
     "name": "sub_007AD5C0",
     "signature": "extern \"C\" void* __fastcall fn_007AD5C0(void* self, int edx_unused, unsigned int flags)",

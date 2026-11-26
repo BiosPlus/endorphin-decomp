@@ -1151,3 +1151,22 @@ extern void __cdecl ReleaseAndNullPtr_007AC670(void** slot) {
     }
 }
 } // namespace lift_007AC670
+
+// [0x007AD590] sub_007AD590 (48 bytes)
+namespace lift_007AD590 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// Original asm pushes `this` as its single stack argument and cleans up with add esp, 4.
+extern void ext_006A5C5C(void* self);
+
+// @name Unknown::SetVtableMaybeDestroy_009989F0
+// @class Unknown
+// @summary Stores vtable 0x009989F0 into *this; if the low bit of the stack flag is set, calls ext_006A5C5C(this). Returns this (thiscall, ret 4).
+// @field Unknown +0x00 uint32_t vtable
+void* fn_007AD590(void* self, uint8_t flag) {
+    lift_field<uint32_t>(self, 0) = 0x009989F0u;
+    if (flag & 1) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+} // namespace lift_007AD590
