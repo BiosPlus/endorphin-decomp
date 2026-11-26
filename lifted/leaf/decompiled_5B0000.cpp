@@ -965,3 +965,21 @@ void* __thiscall sub_005B0E60(void* self, void* out_str) {
     return out_str;
 }
 } // namespace lift_005B0E60
+
+// [0x005B1930]
+namespace lift_005B1930 {
+// @name sub_005B1930
+// @summary Constructor that sets vtable 0x0095FCF4 and default-constructs std::string at +0x04
+// @field Self +0x00 uint32_t vtable
+// @field Self +0x04 std::string field_0x04
+
+
+extern uintptr_t mem_00924FE8;
+
+void* __thiscall sub_005B1930(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x0095FCF4u;
+    using StringCtor = void(__thiscall*)(void*);
+    reinterpret_cast<StringCtor>(mem_00924FE8)(static_cast<uint8_t*>(self) + 0x04);
+    return self;
+}
+} // namespace lift_005B1930

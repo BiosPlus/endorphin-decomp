@@ -1,0 +1,27 @@
+{
+  "va": "0x005B1930",
+  "size": 70,
+  "orig_symbol": "sub_005B1930",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "sub_005B1930",
+  "signature": "void* __thiscall sub_005B1930(void* self)",
+  "summary": "Constructor that sets vtable 0x0095FCF4 and default-constructs std::string at +0x04",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:19:10Z"
+}
