@@ -1934,3 +1934,32 @@ DWORD fn_0041C630(void* self, DWORD a1, DWORD a2, DWORD a3) {
     return fn(child, a1, a2, a3);
 }
 } // namespace lift_0041C630
+
+// [0x00419BF0] sub_00419BF0 (46 bytes)
+namespace lift_00419BF0 {
+// Known callee 0x006A6304: thunk_MFC80_ord_1191 (IAT jump thunk forwarding to MFC80!ord_1191.)
+extern void ext_006A6304(HRESULT hr);
+// IAT slot 0x0092553C: holds the address of SHELL32!SHGetFolderLocation.
+extern void* mem_0092553C;
+
+using SHGetFolderLocation_fn = HRESULT(__stdcall*)(HWND hwndOwner, int nFolder, HANDLE hToken, DWORD dwReserved, void** ppidl);
+
+// @name shellFolderLocationOrNull
+// @summary If the argument is non-null, resolve it as a CSIDL via SHGetFolderLocation, reporting failures through ext_006A6304; returns the (possibly replaced) pidl value.
+void* fn_00419BF0(void* arg) {
+    if (arg == nullptr) {
+        return nullptr;
+    }
+
+    const auto SHGetFolderLocation = reinterpret_cast<SHGetFolderLocation_fn>(mem_0092553C);
+    const HRESULT hr = SHGetFolderLocation(nullptr,
+                                           static_cast<int>(reinterpret_cast<intptr_t>(arg)),
+                                           nullptr,
+                                           0,
+                                           &arg);
+    if (hr < 0) {
+        ext_006A6304(hr);
+    }
+    return arg;
+}
+} // namespace lift_00419BF0

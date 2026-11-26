@@ -1,0 +1,13 @@
+{
+  "va": "0x00419BF0",
+  "size": 46,
+  "orig_symbol": "sub_00419BF0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "shellFolderLocationOrNull",
+  "signature": "void* fn_00419BF0(void* arg)",
+  "summary": "If the argument is non-null, resolve it as a CSIDL via SHGetFolderLocation, reporting failures through ext_006A6304; returns the (possibly replaced) pidl value.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:28:52Z"
+}

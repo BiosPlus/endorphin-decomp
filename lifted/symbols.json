@@ -1680,6 +1680,12 @@
     "summary": "Frees the buffer at +0x60 via an IMalloc (fetching SHGetMalloc if none given), then clears it.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00419BF0": {
+    "name": "shellFolderLocationOrNull",
+    "signature": "void* fn_00419BF0(void* arg)",
+    "summary": "If the argument is non-null, resolve it as a CSIDL via SHGetFolderLocation, reporting failures through ext_006A6304; returns the (possibly replaced) pidl value.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00419E20": {
     "name": "FolderDialog::vfunc_79",
     "class": "FolderDialog",
