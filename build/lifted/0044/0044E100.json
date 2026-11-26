@@ -1,0 +1,21 @@
+{
+  "va": "0x0044E100",
+  "size": 87,
+  "orig_symbol": "sub_0044E100",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "pingWindowMessages",
+  "signature": "int32_t fn_0044E100(void* self)",
+  "summary": "Sends WM 0x18B, 0x190 and 0x187 to the window at self+0x768 via SendMessageA; returns 1 only if the first two succeed and the third returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x768",
+      "type": "HWND",
+      "name": "field_0x768"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:55:54Z"
+}

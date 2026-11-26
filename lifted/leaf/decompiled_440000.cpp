@@ -2286,3 +2286,30 @@ void fn_0044ACE0(void* self, void* arg1, void* arg3) {
     }
 }
 } // namespace lift_0044ACE0
+
+// [0x0044E100] sub_0044E100 (87 bytes)
+namespace lift_0044E100 {
+extern uint32_t mem_00925694;
+
+// @name pingWindowMessages
+// @summary Sends WM 0x18B, 0x190 and 0x187 to the window at self+0x768 via SendMessageA; returns 1 only if the first two succeed and the third returns 0.
+// @field Unknown +0x768 HWND field_0x768
+int32_t fn_0044E100(void* self) {
+    using SendMessageFn = LRESULT(__stdcall*)(HWND, UINT, WPARAM, LPARAM);
+    auto sendMessageA = reinterpret_cast<SendMessageFn>(mem_00925694);
+
+    HWND hwnd = lift_field<HWND>(self, 0x768);
+
+    if (sendMessageA(hwnd, 0x18B, 0, 0) == 0) {
+        return 0;
+    }
+
+    hwnd = lift_field<HWND>(self, 0x768);
+    if (sendMessageA(hwnd, 0x190, 0, 0) == 0) {
+        return 0;
+    }
+
+    hwnd = lift_field<HWND>(self, 0x768);
+    return sendMessageA(hwnd, 0x187, 0, 0) == 0 ? 1 : 0;
+}
+} // namespace lift_0044E100
