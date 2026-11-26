@@ -1,0 +1,34 @@
+{
+  "va": "0x0041C630",
+  "size": 45,
+  "orig_symbol": "sub_0041C630",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::storeArgsForwardVirtual_0041C630",
+  "class": "Unknown",
+  "signature": "DWORD fn_0041C630(void* self, DWORD a1, DWORD a2, DWORD a3)",
+  "summary": "Stores two args into self+0x14/+0x18, then forwards all three args to vtable slot 0x30 of the object at self+0x08 (returns 0 if that object is null).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "DWORD",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "DWORD",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:27:17Z"
+}

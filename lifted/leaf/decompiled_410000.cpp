@@ -1901,3 +1901,36 @@ uint32_t* fn_00410D10(void* self, uint32_t* out) {
     return out;
 }
 } // namespace lift_00410D10
+
+// [0x0041C630] sub_0041C630 (45 bytes)
+namespace lift_0041C630 {
+// @name Unknown::storeArgsForwardVirtual_0041C630
+// @class Unknown
+// @summary Stores two args into self+0x14/+0x18, then forwards all three args to vtable slot 0x30 of the object at self+0x08 (returns 0 if that object is null).
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x14 DWORD field_0x14
+// @field Unknown +0x18 DWORD field_0x18
+//
+// Note: the only external reference is the indirect vtable call (slot 0x30 / index 12).
+// There are no ext_/mem_ symbols referenced by the original asm.
+// The null path in the original only sets AL=0, leaving EAX's upper bits undefined;
+// this lift returns a full DWORD 0 instead.
+
+namespace {
+using ForwardFn = DWORD(__thiscall*)(void* self, DWORD a1, DWORD a2, DWORD a3);
+}
+
+DWORD fn_0041C630(void* self, DWORD a1, DWORD a2, DWORD a3) {
+    lift_field<DWORD>(self, 0x14) = a2;
+    lift_field<DWORD>(self, 0x18) = a3;
+
+    void* child = lift_field<void*>(self, 0x08);
+    if (child == nullptr) {
+        return 0;
+    }
+
+    void** vtbl = *reinterpret_cast<void***>(child);
+    auto fn = reinterpret_cast<ForwardFn>(vtbl[12]); // [vtbl + 0x30]
+    return fn(child, a1, a2, a3);
+}
+} // namespace lift_0041C630

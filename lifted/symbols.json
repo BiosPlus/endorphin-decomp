@@ -1892,6 +1892,13 @@
     "summary": "Forwards a 3-argument virtual call at vtable offset 0x1C on field_0x8 if non-null, returning false otherwise.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041C630": {
+    "name": "Unknown::storeArgsForwardVirtual_0041C630",
+    "class": "Unknown",
+    "signature": "DWORD fn_0041C630(void* self, DWORD a1, DWORD a2, DWORD a3)",
+    "summary": "Stores two args into self+0x14/+0x18, then forwards all three args to vtable slot 0x30 of the object at self+0x08 (returns 0 if that object is null).",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041C660": {
     "name": "forwardScaledVirtualCall_0041C660",
     "class": "Unknown",
