@@ -2028,3 +2028,44 @@ uint32_t __thiscall sub_006821D0(void* self, uint32_t index) {
     return base + index * 28;
 }
 } // namespace lift_006821D0
+
+// [0x00688B50] sub_00688B50 (72 bytes)
+namespace lift_00688B50 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* arg);
+extern int mem_00924FF4;
+
+// @name VectorOfStringRecords::ReleaseAndReset
+// @class VectorOfStringRecords
+// @summary Destroys the 0x2C-byte records in [begin, end) (std::string at +0x10 of each), calls ext_006A5C5C on begin if non-null, then zeroes begin/end/+0x0C.
+// @field VectorOfStringRecords +0x04 uint32_t begin
+// @field VectorOfStringRecords +0x08 uint32_t end
+// @field VectorOfStringRecords +0x0C uint32_t field_0x0C
+void fn_00688B50(void* self) {
+    using StringDtorFn = void(__thiscall*)(void*);
+
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uint32_t begin = lift_field<uint32_t>(base, 0x04);
+
+    if (begin != 0) {
+        uint32_t end = lift_field<uint32_t>(base, 0x08);
+        uint8_t* it = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(begin));
+        uint8_t* last = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(end));
+
+        if (it != last) {
+            auto string_dtor = reinterpret_cast<StringDtorFn>(
+                static_cast<uintptr_t>(mem_00924FF4));
+            do {
+                string_dtor(it + 0x10);
+                it += 0x2C;
+            } while (it != last);
+        }
+
+        ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(begin)));
+    }
+
+    lift_field<uint32_t>(base, 0x04) = 0;
+    lift_field<uint32_t>(base, 0x08) = 0;
+    lift_field<uint32_t>(base, 0x0C) = 0;
+}
+} // namespace lift_00688B50
