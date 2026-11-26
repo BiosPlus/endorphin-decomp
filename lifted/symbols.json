@@ -25525,6 +25525,12 @@
     "summary": "Follows the pointer at +0x08 from the argument, repeatedly, until it reaches an object whose byte at +0x39 is nonzero; returns nothing.",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x00553EA0": {
+    "name": "allocStride84ArrayChecked",
+    "signature": "void* fn_00553EA0(uint32_t count)",
+    "summary": "Allocates count * 0x54 bytes via MFC80 ord_762 with overflow check; throws std::exception on overflow.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00553F70": {
     "name": "ScaledRangeDivide160",
     "class": "\u003cClassName\u003e (unknown; accessed fields are raw offsets)",

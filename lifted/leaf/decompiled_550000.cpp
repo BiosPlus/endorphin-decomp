@@ -1604,3 +1604,38 @@ void __thiscall sub_005541A0(void* self) {
     string_dtor(static_cast<uint8_t*>(self) + 0x04);
 }
 } // namespace lift_005541A0
+
+// [0x00553EA0] sub_00553EA0 (87 bytes)
+namespace lift_00553EA0 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void ext_006A5C62();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+// IAT slot 0x925130: MSVCR80 std::exception::exception(const char* const&) (thiscall)
+extern int mem_00925130;
+// std::exception vtable (MSVC layout) written into the thrown object
+extern int mem_00928EC0;
+// _ThrowInfo for the thrown std::exception
+extern int mem_009CDF94;
+
+// @name allocStride84ArrayChecked
+// @summary Allocates count * 0x54 bytes via MFC80 ord_762 with overflow check; throws std::exception on overflow.
+void* fn_00553EA0(uint32_t count) {
+    uint32_t size = 0;
+    if (count != 0) {
+        // Overflow guard: 0xFFFFFFFF / count < 0x54 means count * 0x54 would wrap.
+        if (0xFFFFFFFFu / count < 0x54u) {
+            const char* msg = nullptr;
+            alignas(8) unsigned char exc[16] = {};
+            using CtorFn = void (*)(void* self, const char* const* msgRef);
+            auto ctor = reinterpret_cast<CtorFn>(*reinterpret_cast<void* const*>(&mem_00925130));
+            ctor(static_cast<void*>(exc), &msg);
+            *reinterpret_cast<uintptr_t*>(exc) = reinterpret_cast<uintptr_t>(&mem_00928EC0);
+            reinterpret_cast<void (*)(void*, void*)>(ext_006A6DD2)(
+                static_cast<void*>(exc), static_cast<void*>(&mem_009CDF94));
+        }
+        size = count * 0x54u;
+    }
+    return reinterpret_cast<void* (*)(uint32_t)>(ext_006A5C62)(size);
+}
+} // namespace lift_00553EA0
