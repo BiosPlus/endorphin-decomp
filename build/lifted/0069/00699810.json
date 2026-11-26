@@ -1,0 +1,13 @@
+{
+  "va": "0x00699810",
+  "size": 87,
+  "orig_symbol": "sub_00699810",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "allocArray44_00699810",
+  "signature": "void* fn_00699810(uint32_t count)",
+  "summary": "Allocates an array of `count` 44-byte (0x2C) elements via the MFC80 allocator; throws if count*0x2C would overflow.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:59:16Z"
+}

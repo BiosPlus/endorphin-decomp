@@ -50874,6 +50874,12 @@
     "summary": "Calls virtual method at vtable+0x60 with arg1 and dynamic_casts the result via __RTDynamicCast",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x00699810": {
+    "name": "allocArray44_00699810",
+    "signature": "void* fn_00699810(uint32_t count)",
+    "summary": "Allocates an array of `count` 44-byte (0x2C) elements via the MFC80 allocator; throws if count*0x2C would overflow.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00699870": {
     "name": "Unknown::copyRecordWithOptionalResolve",
     "class": "Unknown",
