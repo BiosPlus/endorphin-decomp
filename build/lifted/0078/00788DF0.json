@@ -1,0 +1,28 @@
+{
+  "va": "0x00788DF0",
+  "size": 48,
+  "orig_symbol": "sub_00788DF0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "FileFinder::FindNext",
+  "class": "FileFinder",
+  "signature": "bool FileFinder_FindNext(uint8_t* self)",
+  "summary": "Brackets FindNextFileW(handle, \u0026find_data) with SetErrorMode(1)/SetErrorMode(0) and returns true if an entry was found.",
+  "fields": [
+    {
+      "class": "FileFinder",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "hFind"
+    },
+    {
+      "class": "FileFinder",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "find_data"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:40:15Z"
+}

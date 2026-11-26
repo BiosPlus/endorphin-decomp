@@ -67734,6 +67734,13 @@
     "summary": "Tail-calls closeFind when the find handle at +0x00 is nonzero; otherwise returns.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00788DF0": {
+    "name": "FileFinder::FindNext",
+    "class": "FileFinder",
+    "signature": "bool FileFinder_FindNext(uint8_t* self)",
+    "summary": "Brackets FindNextFileW(handle, \u0026find_data) with SetErrorMode(1)/SetErrorMode(0) and returns true if an entry was found.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00788E20": {
     "name": "FileFindCursor::closeFind",
     "class": "FileFindCursor",

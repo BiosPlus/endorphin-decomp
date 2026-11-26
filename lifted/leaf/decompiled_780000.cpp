@@ -1588,3 +1588,39 @@ void* fn_00783860(void* self) {
     return self;
 }
 } // namespace lift_00783860
+
+// [0x00788DF0]
+namespace lift_00788DF0 {
+// @name FileFinder::FindNext
+// @class FileFinder
+// @summary Brackets FindNextFileW(handle, &find_data) with SetErrorMode(1)/SetErrorMode(0) and returns true if an entry was found.
+// @field FileFinder +0x00 void* hFind
+// @field FileFinder +0x04 uint8_t find_data
+
+extern uint32_t mem_0092416C; // IAT slot: KERNEL32!SetErrorMode
+extern uint32_t mem_00924170; // IAT slot: KERNEL32!FindNextFileW
+extern uint32_t mem_009241CC; // .rdata constant (0x00628198); not read by the original body
+
+using SetErrorModeFn = uint32_t(__stdcall*)(uint32_t);
+using FindNextFileWFn = int(__stdcall*)(void*, void*);
+
+// Thiscall: self arrives in ECX, no stack arguments, returns bool in AL.
+bool FileFinder_FindNext(uint8_t* self) {
+    auto set_error_mode = reinterpret_cast<SetErrorModeFn>(static_cast<uintptr_t>(mem_0092416C));
+    auto find_next_file = reinterpret_cast<FindNextFileWFn>(static_cast<uintptr_t>(mem_00924170));
+
+    (void)mem_009241CC; // referenced by the original image; no effect on behaviour
+
+    bool found = false;
+    set_error_mode(1);
+
+    void* hFind = *reinterpret_cast<void**>(self + 0x0);
+    void* findData = self + 0x4;
+    if (find_next_file(hFind, findData) != 0) {
+        found = true;
+    }
+
+    set_error_mode(0);
+    return found;
+}
+} // namespace lift_00788DF0
