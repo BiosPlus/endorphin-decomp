@@ -1,0 +1,22 @@
+{
+  "va": "0x004077E0",
+  "size": 69,
+  "orig_symbol": "sub_004077E0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "CDC::GetTextExtent",
+  "class": "CDC",
+  "signature": "extern \"C\" uint32_t mem_0092431C; // MFC80!ord_2902 (CStringT::GetLength) extern \"C\" uint32_t mem_00924300; // MFC80!ord_876 (CSimpleStringT::GetString) extern \"C\" uint32_t mem_00924080; // GDI32!GetTextExtentPoint32A int32_t* __thiscall sub_004077E0(void* self, int32_t* out_size, void* str)",
+  "summary": "Computes the width and height of a CString using the device context's attribute DC.",
+  "fields": [
+    {
+      "class": "CDC",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "m_hAttribDC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:17:44Z"
+}

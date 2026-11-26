@@ -1642,3 +1642,33 @@ void sub_00404770(uint32_t ecx, uint32_t arg1, uint32_t arg2) {
     }
 }
 } // namespace lift_00404770
+
+// [0x004077E0]
+namespace lift_004077E0 {
+// @name CDC::GetTextExtent
+// @class CDC
+// @summary Computes the width and height of a CString using the device context's attribute DC.
+// @field CDC +0x08 void* m_hAttribDC
+
+
+extern uint32_t mem_0092431C; // MFC80!ord_2902 (CStringT::GetLength)
+extern uint32_t mem_00924300; // MFC80!ord_876 (CSimpleStringT::GetString)
+extern uint32_t mem_00924080; // GDI32!GetTextExtentPoint32A
+
+int32_t* __thiscall sub_004077E0(void* self, int32_t* out_size, void* str) {
+    using fn_get_length_t = int32_t (__thiscall*)(void*);
+    using fn_get_string_t = const char* (__thiscall*)(void*);
+    using fn_get_text_extent_t = int32_t (__stdcall*)(void*, const char*, int32_t, int32_t*);
+
+    int32_t sz[2] = {0, 0};
+    int32_t len = reinterpret_cast<fn_get_length_t>(mem_0092431C)(str);
+    const char* text = reinterpret_cast<fn_get_string_t>(mem_00924300)(str);
+    void* hdc = lift_field<void*>(self, 0x8);
+
+    reinterpret_cast<fn_get_text_extent_t>(mem_00924080)(hdc, text, len, sz);
+
+    out_size[0] = sz[0];
+    out_size[1] = sz[1];
+    return out_size;
+}
+} // namespace lift_004077E0
