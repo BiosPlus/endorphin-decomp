@@ -1,0 +1,22 @@
+{
+  "va": "0x004D3DE0",
+  "size": 57,
+  "orig_symbol": "sub_004D3DE0",
+  "src_path": "src/leaf/decompiled_4D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4D0000.cpp",
+  "name": "Unknown::forwardToSubobjects_004D3DE0",
+  "class": "Unknown",
+  "signature": "void fn_004D3DE0(void* self, uint8_t flag)",
+  "summary": "If flag is nonzero, fetch a global object, read its 32-bit subobject pointer at +0xF8, and invoke ext_00642680 on it once per element of self's count at +0x1EC.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1EC",
+      "type": "int32_t",
+      "name": "field_0x1ec"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:47:57Z"
+}

@@ -15855,6 +15855,13 @@
     "summary": "Builds a 3-dword record via setDwordTriple, applies two mask toggles to arg1, copies it to arg2, and stores 6 into arg3 and arg4.",
     "lifted_path": "lifted/NMData/RigEventData.cpp"
   },
+  "0x004D3DE0": {
+    "name": "Unknown::forwardToSubobjects_004D3DE0",
+    "class": "Unknown",
+    "signature": "void fn_004D3DE0(void* self, uint8_t flag)",
+    "summary": "If flag is nonzero, fetch a global object, read its 32-bit subobject pointer at +0xF8, and invoke ext_00642680 on it once per element of self's count at +0x1EC.",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
+  },
   "0x004D3E20": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e::vfunc_16",
     "class": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e",
@@ -40084,6 +40091,12 @@
     "signature": "void* fn_006264A0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x004D3070 (NMData::TransitionEventData::vfunc_17_off_C).",
     "lifted_path": "lifted/classes/TransformRefNode.cpp"
+  },
+  "0x00626770": {
+    "name": "findStringIndex",
+    "signature": "uint32_t sub_00626770(uint32_t arg0)",
+    "summary": "Searches a 9-element string table at 0x00A97F70 for a match, returning its index or 0 if not found.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x006267B0": {
     "name": "Unknown::ctorFloatFields_006267B0",

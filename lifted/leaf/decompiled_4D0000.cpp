@@ -440,3 +440,32 @@ DWORD fn_004DDE10(void* self, const void* str) {
     return slot8(self, s);
 }
 } // namespace lift_004DDE10
+
+// [0x004D3DE0] sub_004D3DE0 (57 bytes)
+namespace lift_004D3DE0 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+// The asm treats the returned EAX as a pointer (dereferences [eax+0xF8]), so it is typed as void*.
+extern void* ext_00594000(void);
+// Known callee 0x00642680: sub_00642680 (Member forwarding thunk: loads subobject pointer at +0xC and tail-calls sub_00648960.)
+extern void ext_00642680(void* self);
+
+// @name Unknown::forwardToSubobjects_004D3DE0
+// @class Unknown
+// @summary If flag is nonzero, fetch a global object, read its 32-bit subobject pointer at +0xF8, and invoke ext_00642680 on it once per element of self's count at +0x1EC.
+// @field Unknown +0x1EC int32_t field_0x1ec
+void fn_004D3DE0(void* self, uint8_t flag) {
+    if (flag == 0) {
+        return;
+    }
+
+    void* obj = ext_00594000();
+    // The subobject pointer is a 32-bit value in the original binary.
+    uint32_t sub = lift_field<uint32_t>(obj, 0xF8);
+    void* target = reinterpret_cast<void*>(static_cast<uintptr_t>(sub));
+
+    // The count is re-read every iteration, matching the original loop.
+    for (int32_t i = 0; i < lift_field<int32_t>(self, 0x1EC); ++i) {
+        ext_00642680(target);
+    }
+}
+} // namespace lift_004D3DE0
