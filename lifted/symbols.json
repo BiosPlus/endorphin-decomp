@@ -67238,6 +67238,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0074F910 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_740000.cpp"
   },
+  "0x007511F4": {
+    "name": "DataTable_007511F4",
+    "signature": "std::optional\u003cuint8_t\u003e fn_007511F4(uint32_t key)",
+    "summary": "Static 49-byte jump-index lookup table (values 0x00-0x07, filler 0x08) read by the switch at 0x00750FB7; followed by 11 bytes of 0x90 padding. Lookup helper mirrors the switch's index math.",
+    "lifted_path": "lifted/leaf/decompiled_750000.cpp"
+  },
   "0x00751368": {
     "name": "DataTable_007511F4",
     "signature": "void fn_00751368(void* self)",

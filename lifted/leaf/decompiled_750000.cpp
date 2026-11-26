@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 #include <cstddef>
 #include <cstdint>
+#include <optional>
 
 // [0x00751368] sub_00751368 (72 bytes)
 namespace lift_00751368 {
@@ -48,3 +49,30 @@ extern void __fastcall fn_00754FA0(void* self) {
     ext_007641C0(obj + 0x08);
 }
 } // namespace lift_00754FA0
+
+// [0x007511F4] sub_007511F4 (60 bytes)
+namespace lift_007511F4 {
+// @name DataTable_007511F4
+// @summary Static 49-byte jump-index lookup table (values 0x00-0x07, filler 0x08) read by the switch at 0x00750FB7; followed by 11 bytes of 0x90 padding. Lookup helper mirrors the switch's index math.
+
+// Table entries i0..i48 at VA 0x007511F4..0x00751224. Bytes 0x00751225..0x0075122F are 0x90 padding (not data).
+static constexpr uint8_t kDataTable_007511F4[49] = {
+    0x00, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, // i0..i7
+    0x01, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, // i8..i15
+    0x08, 0x08, 0x02, 0x08, 0x08, 0x08, 0x08, 0x08, // i16..i23
+    0x08, 0x08, 0x08, 0x08, 0x03, 0x08, 0x08, 0x08, // i24..i31
+    0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x04, // i32..i39
+    0x05, 0x06, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, // i40..i47
+    0x07,                                           // i48
+};
+
+// Switch key -> table byte. Mirrors: idx = key - 2; if (idx > 0x30) out of range; else table[idx].
+// Returns std::nullopt when the original code would take the out-of-range branch.
+std::optional<uint8_t> fn_007511F4(uint32_t key) {
+    const uint32_t idx = key - 2u;  // unsigned wrap matches lea eax,[ecx-2] + unsigned cmp
+    if (idx > 0x30u) {
+        return std::nullopt;
+    }
+    return kDataTable_007511F4[idx];
+}
+} // namespace lift_007511F4

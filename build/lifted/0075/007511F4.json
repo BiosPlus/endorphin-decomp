@@ -1,0 +1,13 @@
+{
+  "va": "0x007511F4",
+  "size": 60,
+  "orig_symbol": "sub_007511F4",
+  "src_path": "src/leaf/decompiled_750000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_750000.cpp",
+  "name": "DataTable_007511F4",
+  "signature": "std::optional\u003cuint8_t\u003e fn_007511F4(uint32_t key)",
+  "summary": "Static 49-byte jump-index lookup table (values 0x00-0x07, filler 0x08) read by the switch at 0x00750FB7; followed by 11 bytes of 0x90 padding. Lookup helper mirrors the switch's index math.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-26T10:56:27Z"
+}
