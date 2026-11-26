@@ -1777,3 +1777,33 @@ extern uint32_t __cdecl fn_006D97C0(uint32_t key) {
     return kDefaultResult;
 }
 } // namespace lift_006D97C0
+
+// [0x006D86F0]
+namespace lift_006D86F0 {
+// @name GetNestedIntIfInRange
+// @summary Calls ext_006FDF70(0); if the result and ext_006FC930 results are non-null, returns the int32 behind the second ext_006FC930 pointer when that value is in [1,2], else 0.
+// (free function, so no @class; no direct self-field accesses, so no @field lines)
+
+extern void* __stdcall ext_006FDF70(uint32_t flags);
+extern void* __fastcall ext_006FC930(void* self);
+
+extern int32_t fn_006D86F0() {
+    void* obj = ext_006FDF70(0);
+    if (!obj) {
+        return 0;
+    }
+
+    if (!ext_006FC930(obj)) {
+        return 0;
+    }
+
+    void* p = ext_006FC930(obj);
+    int32_t v = *static_cast<int32_t*>(p);
+    if (v <= 0 || v > 2) {
+        return 0;
+    }
+
+    void* q = ext_006FC930(obj);
+    return *static_cast<int32_t*>(q);
+}
+} // namespace lift_006D86F0
