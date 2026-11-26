@@ -55477,6 +55477,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006B20C0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B2230": {
+    "name": "sub_006B2230",
+    "signature": "uint32_t __thiscall sub_006B2230( uint32_t self, uint32_t arg0, uint8_t arg1, uint8_t arg2, uint8_t arg3, uint8_t arg4)",
+    "summary": "Constructor calling base constructor sub_006B0C40, setting vtable to 0x009917d8, and storing four byte fields at +0x10..+0x13.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B2270": {
     "name": "sub_006B2270",
     "signature": "extern \"C\" void __fastcall fn_006B2270(void* self)",

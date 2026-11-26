@@ -1552,3 +1552,40 @@ int __thiscall fn_006BA2F0(void* self, int8_t c) {
     return static_cast<int>(hit - str);
 }
 } // namespace lift_006BA2F0
+
+// [0x006B2230]
+namespace lift_006B2230 {
+// @name sub_006B2230
+// @summary Constructor calling base constructor sub_006B0C40, setting vtable to 0x009917d8, and storing four byte fields at +0x10..+0x13.
+// @field unknown +0x00 uint32_t vtable
+// @field unknown +0x10 uint8_t field_0x10
+// @field unknown +0x11 uint8_t field_0x11
+// @field unknown +0x12 uint8_t field_0x12
+// @field unknown +0x13 uint8_t field_0x13
+
+
+extern uint32_t __thiscall ext_006B0C40(uint32_t self, uint32_t arg0);
+extern void ext_006A64AE(void);
+extern void ext_006A5CEC(void);
+
+uint32_t __thiscall sub_006B2230(
+    uint32_t self,
+    uint32_t arg0,
+    uint8_t arg1,
+    uint8_t arg2,
+    uint8_t arg3,
+    uint8_t arg4) {
+    ext_006B0C40(self, arg0);
+    void* self_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(self));
+    lift_field<uint32_t>(self_ptr, 0x00) = 0x009917d8u;
+    lift_field<uint8_t>(self_ptr, 0x10) = arg1;
+    lift_field<uint8_t>(self_ptr, 0x11) = arg3;
+    lift_field<uint8_t>(self_ptr, 0x12) = arg2;
+    lift_field<uint8_t>(self_ptr, 0x13) = arg4;
+    if (false) {
+        ext_006A5CEC();
+        ext_006A64AE();
+    }
+    return self;
+}
+} // namespace lift_006B2230

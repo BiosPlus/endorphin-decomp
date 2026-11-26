@@ -1,0 +1,45 @@
+{
+  "va": "0x006B2230",
+  "size": 53,
+  "orig_symbol": "sub_006B2230",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "sub_006B2230",
+  "signature": "uint32_t __thiscall sub_006B2230( uint32_t self, uint32_t arg0, uint8_t arg1, uint8_t arg2, uint8_t arg3, uint8_t arg4)",
+  "summary": "Constructor calling base constructor sub_006B0C40, setting vtable to 0x009917d8, and storing four byte fields at +0x10..+0x13.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x11",
+      "type": "uint8_t",
+      "name": "field_0x11"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x12",
+      "type": "uint8_t",
+      "name": "field_0x12"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x13",
+      "type": "uint8_t",
+      "name": "field_0x13"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T10:48:22Z"
+}
