@@ -2042,3 +2042,30 @@ uint32_t __thiscall fn_006C3150(void* self) {
     return 0;
 }
 } // namespace lift_006C3150
+
+// [0x006C30F0] sub_006C30F0 (48 bytes)
+namespace lift_006C30F0 {
+// @name Unknown::GetSubobject158IfVirtualReturns4
+// @class Unknown
+// @summary If the DWORD at +0x158 is non-null and its vtable slot 0 returns 4, returns that pointer; otherwise returns 0.
+// @field Unknown +0x158 DWORD field_0x158
+DWORD fn_006C30F0(void* self) {
+    using VFn = DWORD(__thiscall*)(void*);
+
+    DWORD obj = lift_field<DWORD>(self, 0x158);
+    if (obj == 0) {
+        return 0;
+    }
+
+    // Virtual call: vtable = *obj; slot0 = *vtable; result = slot0(obj)
+    DWORD vtbl = *reinterpret_cast<const DWORD*>(static_cast<uintptr_t>(obj));
+    DWORD slot0 = *reinterpret_cast<const DWORD*>(static_cast<uintptr_t>(vtbl));
+    DWORD result = reinterpret_cast<VFn>(static_cast<uintptr_t>(slot0))(
+        reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+
+    if (result != 4) {
+        return 0;
+    }
+    return lift_field<DWORD>(self, 0x158);
+}
+} // namespace lift_006C30F0

@@ -56720,6 +56720,13 @@
     "summary": "Returns field_0x158 if non-null and its vtable[0]() returns 2, else 0.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C30F0": {
+    "name": "Unknown::GetSubobject158IfVirtualReturns4",
+    "class": "Unknown",
+    "signature": "DWORD fn_006C30F0(void* self)",
+    "summary": "If the DWORD at +0x158 is non-null and its vtable slot 0 returns 4, returns that pointer; otherwise returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C3120": {
     "name": "Unknown::getFieldObjIfStatus5",
     "class": "Unknown",
