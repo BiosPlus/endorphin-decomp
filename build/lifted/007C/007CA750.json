@@ -1,0 +1,21 @@
+{
+  "va": "0x007CA750",
+  "size": 51,
+  "orig_symbol": "sub_007CA750",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "sub_007CA750",
+  "signature": "extern \"C\" void* sub_007CA750(void* obj, float val)",
+  "summary": "Allocates a 20-byte 16-byte-aligned object via field_0xb0 and initializes it with ext_007CA340",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xB0",
+      "type": "void*",
+      "name": "field_0xb0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T10:42:04Z"
+}

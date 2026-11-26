@@ -1574,3 +1574,23 @@ uint32_t fn_007CC5D0(void* self) {
     return 0;
 }
 } // namespace lift_007CC5D0
+
+// [0x007CA750]
+namespace lift_007CA750 {
+// @name sub_007CA750
+// @summary Allocates a 20-byte 16-byte-aligned object via field_0xb0 and initializes it with ext_007CA340
+// @field Unknown +0xb0 void* field_0xb0
+
+extern void* ext_007CA340(void* mem, void* obj, float val);
+
+extern void* sub_007CA750(void* obj, float val) {
+    using AllocFn = void* (*)(uint32_t size, uint32_t align);
+    void* allocator = lift_field<void*>(obj, 0xb0);
+    AllocFn alloc_fn = lift_field<AllocFn>(allocator, 0x8);
+    void* mem = alloc_fn(0x14, 0x10);
+    if (!mem) {
+        return nullptr;
+    }
+    return ext_007CA340(mem, obj, val);
+}
+} // namespace lift_007CA750

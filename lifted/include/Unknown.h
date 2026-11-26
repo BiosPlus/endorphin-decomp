@@ -947,7 +947,7 @@ struct Unknown_Fields {
     // +0xB0  void*                    field_0xB0  (evidence: 0x007C8490, 0x007CAF70, 0x007CB890, 0x007CC1C0, 0x007DAE50) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  float                    field_0xb0  (evidence: 0x00611100) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  uint32_t                 field_0xb0  (evidence: 0x007DAD70) // CONFLICT: multiple definitions at +0xB0
-    // +0xB0  void*                    field_0xb0  (evidence: 0x007DB4C0) // CONFLICT: multiple definitions at +0xB0
+    // +0xB0  void*                    field_0xb0  (evidence: 0x007CA750, 0x007DB4C0) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  uint8_t field_0xb0 (embedded sub-object; its address is passed, not read)  (evidence: 0x006A8800) // CONFLICT: multiple definitions at +0xB0
     // +0xB2  uint8_t                  field_0xb2  (evidence: 0x006872E0)
     // +0xB3  uint8_t                  field_0xb3  (evidence: 0x006872E0)
