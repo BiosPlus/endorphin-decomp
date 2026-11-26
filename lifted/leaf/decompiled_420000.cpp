@@ -1494,3 +1494,56 @@ extern void fn_00427480(void* first, void* last, const void* val) {
     } while (dst != dst_end);
 }
 } // namespace lift_00427480
+
+// [0x004275E0]
+namespace lift_004275E0 {
+extern uintptr_t mem_00924FDC;
+extern uintptr_t mem_00924FF4;
+extern uintptr_t mem_00ACD9DC, mem_00ACD9E0, mem_00ACD9E4, mem_00ACD9E8;
+extern uintptr_t mem_00ACD9EC, mem_00ACD9F0, mem_00ACD9F4, mem_00ACD9F8;
+extern uintptr_t mem_00ACD9FC, mem_00ACDA00, mem_00ACDA04, mem_00ACDA08;
+extern uintptr_t mem_00ACDA0C, mem_00ACDA10, mem_00ACDA14, mem_00ACDA18;
+extern uintptr_t mem_00ACDA1C, mem_00ACDA20, mem_00ACDA24, mem_00ACDA28;
+extern uintptr_t mem_00ACDA2C, mem_00ACDA30, mem_00ACDA34, mem_00ACDA38;
+extern uintptr_t mem_00ACDA3C, mem_00ACDA40, mem_00ACDA44, mem_00ACDA48;
+extern uintptr_t mem_00ACDA4C, mem_00ACDA50, mem_00ACDA54, mem_00ACDA58;
+extern uintptr_t mem_00ACDA5C, mem_00ACDA60, mem_00ACDA64, mem_00ACDA68;
+extern uintptr_t mem_00ACDA6C, mem_00ACDA70, mem_00ACDA74, mem_00ACDA78;
+extern uintptr_t mem_00ACDA7C, mem_00ACDA80, mem_00ACDA84, mem_00ACDA88;
+extern uintptr_t mem_00ACDA8C, mem_00ACDA90, mem_00ACDA94, mem_00ACDA98;
+extern uintptr_t mem_00ACDA9C, mem_00ACDAA0, mem_00ACDAA4, mem_00ACDAA8;
+extern uintptr_t mem_00ACDAAC;
+
+// @name assignVirtualString
+// @summary Calls vtable[2] on obj to obtain a temporary std::string, assigns it to dst, and destroys the temporary.
+// @field Obj +0x00 void** vtable
+void __cdecl sub_004275E0(void* dst, void* obj) {
+    (void)mem_00ACD9DC; (void)mem_00ACD9E0; (void)mem_00ACD9E4; (void)mem_00ACD9E8;
+    (void)mem_00ACD9EC; (void)mem_00ACD9F0; (void)mem_00ACD9F4; (void)mem_00ACD9F8;
+    (void)mem_00ACD9FC; (void)mem_00ACDA00; (void)mem_00ACDA04; (void)mem_00ACDA08;
+    (void)mem_00ACDA0C; (void)mem_00ACDA10; (void)mem_00ACDA14; (void)mem_00ACDA18;
+    (void)mem_00ACDA1C; (void)mem_00ACDA20; (void)mem_00ACDA24; (void)mem_00ACDA28;
+    (void)mem_00ACDA2C; (void)mem_00ACDA30; (void)mem_00ACDA34; (void)mem_00ACDA38;
+    (void)mem_00ACDA3C; (void)mem_00ACDA40; (void)mem_00ACDA44; (void)mem_00ACDA48;
+    (void)mem_00ACDA4C; (void)mem_00ACDA50; (void)mem_00ACDA54; (void)mem_00ACDA58;
+    (void)mem_00ACDA5C; (void)mem_00ACDA60; (void)mem_00ACDA64; (void)mem_00ACDA68;
+    (void)mem_00ACDA6C; (void)mem_00ACDA70; (void)mem_00ACDA74; (void)mem_00ACDA78;
+    (void)mem_00ACDA7C; (void)mem_00ACDA80; (void)mem_00ACDA84; (void)mem_00ACDA88;
+    (void)mem_00ACDA8C; (void)mem_00ACDA90; (void)mem_00ACDA94; (void)mem_00ACDA98;
+    (void)mem_00ACDA9C; (void)mem_00ACDAA0; (void)mem_00ACDAA4; (void)mem_00ACDAA8;
+    (void)mem_00ACDAAC;
+
+    alignas(4) uint8_t temp[0x1c];
+
+    using VFunc = void* (__thiscall*)(void* self, void* out_buf);
+    void** vtable = *reinterpret_cast<void***>(obj);
+    VFunc fn = reinterpret_cast<VFunc>(vtable[2]);
+    void* res = fn(obj, temp);
+
+    using AssignFn = void* (__thiscall*)(void* self, const void* rhs);
+    reinterpret_cast<AssignFn>(mem_00924FDC)(dst, res);
+
+    using DtorFn = void (__thiscall*)(void* self);
+    reinterpret_cast<DtorFn>(mem_00924FF4)(temp);
+}
+} // namespace lift_004275E0
