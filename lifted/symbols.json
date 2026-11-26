@@ -9103,6 +9103,12 @@
     "summary": "Returns true if the range pointer at +0x04 is null, or the byte span [+0x04, +0x08) has fewer than one 4-byte element (signed (end - begin) \u003e\u003e 2 == 0).",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x004802B0": {
+    "name": "sub_004802B0",
+    "signature": "extern \"C\" void* ext_006A5C62(uint32_t size);                 // thunk_MFC80_ord_762 extern \"C\" void ext_006A6DD2(void* object, const void* info); // thunk_MSVCR80__CxxThrowException extern \"C\" void* mem_00925130;                                // IAT slot: MSVCR80 std::exception::exception(const char* const\u0026) extern \"C\" void* fn_004802B0(uint32_t count)",
+    "summary": "Checked count-to-bytes allocator: returns alloc(count * 64), throws std::exception on overflow.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x004803F0": {
     "name": "Matrix4x4::SetIdentity",
     "class": "Matrix4x4",

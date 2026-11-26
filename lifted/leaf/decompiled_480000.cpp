@@ -2180,3 +2180,31 @@ void* __cdecl sub_00486880(void* out_str, double val) {
     return out_str;
 }
 } // namespace lift_00486880
+
+// [0x004802B0]
+namespace lift_004802B0 {
+// @name sub_004802B0
+// @summary Checked count-to-bytes allocator: returns alloc(count * 64), throws std::exception on overflow.
+// @field none
+
+extern void* ext_006A5C62(uint32_t size);                 // thunk_MFC80_ord_762
+extern void ext_006A6DD2(void* object, const void* info); // thunk_MSVCR80__CxxThrowException
+extern void* mem_00925130;                                // IAT slot: MSVCR80 std::exception::exception(const char* const&)
+
+extern void* fn_004802B0(uint32_t count) {
+    if (count != 0) {
+        uint32_t limit = 0xFFFFFFFFu / count;
+        if (limit < 0x40) {
+            // Multiplication by 64 would overflow: raise std::exception("l{b").
+            const char* msg = reinterpret_cast<const char*>(static_cast<uintptr_t>(0x009cdf94));
+            alignas(8) uint8_t exc[0x10] = {};
+            auto ctor = reinterpret_cast<void (__thiscall*)(void*, const char* const*)>(mem_00925130);
+            ctor(exc, &msg);
+            ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00928EC0)));
+            return nullptr;
+        }
+    }
+    uint32_t bytes = count << 6;
+    return ext_006A5C62(bytes);
+}
+} // namespace lift_004802B0

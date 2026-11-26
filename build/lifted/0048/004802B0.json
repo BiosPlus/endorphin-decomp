@@ -1,0 +1,13 @@
+{
+  "va": "0x004802B0",
+  "size": 87,
+  "orig_symbol": "sub_004802B0",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "sub_004802B0",
+  "signature": "extern \"C\" void* ext_006A5C62(uint32_t size);                 // thunk_MFC80_ord_762 extern \"C\" void ext_006A6DD2(void* object, const void* info); // thunk_MSVCR80__CxxThrowException extern \"C\" void* mem_00925130;                                // IAT slot: MSVCR80 std::exception::exception(const char* const\u0026) extern \"C\" void* fn_004802B0(uint32_t count)",
+  "summary": "Checked count-to-bytes allocator: returns alloc(count * 64), throws std::exception on overflow.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:56:06Z"
+}
