@@ -3102,6 +3102,12 @@
     "summary": "Linear search over an array of 28-byte std::string objects; returns the first element equal to value, or last if none match.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430F70": {
+    "name": "unlockIosStreamBuf",
+    "signature": "void fn_00430F70(void* self)",
+    "summary": "Locates the basic_ios base via the virtual-base offset table; if rdbuf() is non-null, calls _Unlock on that streambuf, otherwise returns.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430F9E": {
     "name": "sub_00430F9E",
     "signature": "void fn_00430F9E()",

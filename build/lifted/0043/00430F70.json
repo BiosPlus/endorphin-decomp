@@ -1,0 +1,21 @@
+{
+  "va": "0x00430F70",
+  "size": 46,
+  "orig_symbol": "sub_00430F70",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "unlockIosStreamBuf",
+  "signature": "void fn_00430F70(void* self)",
+  "summary": "Locates the basic_ios base via the virtual-base offset table; if rdbuf() is non-null, calls _Unlock on that streambuf, otherwise returns.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:29:07Z"
+}

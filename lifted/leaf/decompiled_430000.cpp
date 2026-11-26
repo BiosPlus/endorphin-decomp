@@ -3424,3 +3424,43 @@ int32_t __stdcall fn_0043C980(void* self, uint32_t a2, uint32_t a3, uint32_t a4)
     return method(obj, self, a2, a3, a4);
 }
 } // namespace lift_0043C980
+
+// [0x00430F70] sub_00430F70 (46 bytes)
+namespace lift_00430F70 {
+// Known callee 0x00430F9E: sub_00430F9E (Discards the caller's pushed stack slot and clobbers the saved esi register, then returns; a 2-byte "pop esi / ret" tail.)
+extern void ext_00430F9E();
+// MSVCP80 import slots (IAT entries at 0x924EA0 = basic_ios::rdbuf, 0x924E9C = basic_streambuf::_Unlock).
+extern int mem_00924EA0;
+extern int mem_00924E9C;
+
+using RdbufFn = void* (__thiscall*)(void*);
+using UnlockFn = void (__thiscall*)(void*);
+
+// @name unlockIosStreamBuf
+// @summary Locates the basic_ios base via the virtual-base offset table; if rdbuf() is non-null, calls _Unlock on that streambuf, otherwise returns.
+// @field Unknown +0x00 void* field_0x00
+void fn_00430F70(void* self) {
+    // Helper: resolve the basic_ios subobject from the virtual-base table.
+    // p = *(this); ios = p + *(int32_t*)(*(uint32_t*)p + 4)
+    auto resolve_ios = [self]() -> void* {
+        uintptr_t p = static_cast<uintptr_t>(lift_field<uint32_t>(self, 0));
+        uint32_t vbtbl = lift_field<uint32_t>(reinterpret_cast<void*>(p), 0);
+        int32_t off = static_cast<int32_t>(lift_field<uint32_t>(reinterpret_cast<void*>(vbtbl), 4));
+        return reinterpret_cast<void*>(p + static_cast<intptr_t>(off));
+    };
+
+    RdbufFn rdbuf = *reinterpret_cast<RdbufFn*>(&mem_00924EA0);
+    UnlockFn unlock = *reinterpret_cast<UnlockFn*>(&mem_00924E9C);
+
+    void* ios = resolve_ios();
+    void* sb = rdbuf(ios);
+    if (sb == nullptr) {
+        ext_00430F9E();
+        return;
+    }
+
+    ios = resolve_ios();
+    sb = rdbuf(ios);
+    unlock(sb);
+}
+} // namespace lift_00430F70
