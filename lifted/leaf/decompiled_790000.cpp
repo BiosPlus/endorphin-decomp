@@ -1106,3 +1106,23 @@ void fn_0079A0EC(void* self) {
     (void)kTable;
 }
 } // namespace lift_0079A0EC
+
+// [0x00798C98] sub_00798C98 (47 bytes)
+namespace lift_00798C98 {
+// @name dataTable_00798C98
+// @summary 47-byte constant byte table (mostly 0x0C filler); not executable code, lifted as data.
+// Bytes: 00 0C 0C 0C 01 0C 0C 0C 0C 02 0C 0C 03 0C 0C 0C 0C 04 0C 05 06 0C 07 08 0C 0C 09
+//        0C 0C 0C 0C 0C 0C 0C 0C 0C 0A 0C 0C
+
+static const uint8_t g_table_00798C98[47] = {
+    0x00, 0x0C, 0x0C, 0x0C, 0x01, 0x0C, 0x0C, 0x0C, 0x0C, 0x02, 0x0C, 0x0C,
+    0x03, 0x0C, 0x0C, 0x0C, 0x0C, 0x04, 0x0C, 0x05, 0x06, 0x0C, 0x07, 0x08,
+    0x0C, 0x0C, 0x09, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C,
+    0x0A, 0x0C, 0x0C,
+};
+
+// Returns the table byte at index i (0..46), or 0x0C (filler) when out of range.
+uint8_t fn_00798C98(uint32_t i) {
+    return i < sizeof(g_table_00798C98) ? g_table_00798C98[i] : 0x0C;
+}
+} // namespace lift_00798C98

@@ -67921,6 +67921,12 @@
     "summary": "Returns the byte size of a row: (u16 +0x40 * u32 +0x24, times u16 +0x4e when word +0x72 == 1), rounded up to whole bytes.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x00798C98": {
+    "name": "dataTable_00798C98",
+    "signature": "uint8_t fn_00798C98(uint32_t i)",
+    "summary": "47-byte constant byte table (mostly 0x0C filler); not executable code, lifted as data.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x00798EA0": {
     "name": "Unknown::InitMaskTable",
     "class": "Unknown",
