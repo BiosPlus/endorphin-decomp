@@ -56079,6 +56079,12 @@
     "summary": "Returns a pointer to the character at the given index if in bounds, otherwise clears and returns a fallback empty byte buffer.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006BA2F0": {
+    "name": "StrLastIndexOfChar_006BA2F0",
+    "signature": "int __thiscall fn_006BA2F0(void* self, int8_t c)",
+    "summary": "Returns the byte offset of the last occurrence of char c in the string at this+0 (strrchr), or -1 if absent.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BA320": {
     "name": "String::findFirstOf",
     "class": "String",

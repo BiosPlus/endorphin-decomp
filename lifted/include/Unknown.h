@@ -90,6 +90,7 @@ struct Unknown_Fields {
     // +0x0   void* innerPtr (pointer to inner struct, dereferenced from self)  (evidence: 0x006BA780, 0x006BB790) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (on subobject returned by ext_0071E680, i.e. self+0x40)  (evidence: 0x00711A20, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x0
     // +0x0   float                    src_x  (evidence: 0x007C8490, 0x007CA310, 0x007CAF70) // CONFLICT: multiple definitions at +0x0
+    // +0x0   char*                    str  (evidence: 0x006BA2F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   std::string              str  (evidence: 0x004CF910) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t* field_0x00 (pointer to range-holder struct)  (evidence: 0x0067A670, 0x0067F8F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    subobject  (evidence: 0x006616C0, 0x0079E410) // CONFLICT: multiple definitions at +0x0

@@ -1533,3 +1533,22 @@ extern BOOLEAN __stdcall StrContainsChar_006B9CE0(CHAR c, const CHAR* s) {
     }
 }
 } // namespace lift_006B9CE0
+
+// [0x006BA2F0] sub_006BA2F0 (48 bytes)
+namespace lift_006BA2F0 {
+// IAT slot at 0x00925278 holds MSVCR80!strrchr; the portable lift calls std::strrchr directly.
+extern int mem_00925278;
+
+// @name StrLastIndexOfChar_006BA2F0
+// @summary Returns the byte offset of the last occurrence of char c in the string at this+0 (strrchr), or -1 if absent.
+// @field Unknown +0x00 char* str
+int __thiscall fn_006BA2F0(void* self, int8_t c) {
+    (void)&mem_00925278;  // original asm: call dword ptr [0x925278] (strrchr IAT slot)
+    char* const str = *reinterpret_cast<char**>(self);
+    const char* const hit = std::strrchr(str, static_cast<int>(c));
+    if (hit == nullptr) {
+        return -1;
+    }
+    return static_cast<int>(hit - str);
+}
+} // namespace lift_006BA2F0
