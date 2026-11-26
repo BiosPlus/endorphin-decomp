@@ -9331,6 +9331,12 @@
     "summary": "Computes the 4D dot product of two 4-component float vectors.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00486880": {
+    "name": "formatDoubleToString",
+    "signature": "void* __cdecl sub_00486880(void* out_str, double val)",
+    "summary": "Formats a double into a stack buffer with _snprintf and constructs a std::string.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00486980": {
     "name": "sub_00486980",
     "class": "Unknown",
@@ -44373,6 +44379,12 @@
     "summary": "Copies a range of 24-byte (6-dword) records from [src_begin, src_end) to dst.",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x00649770": {
+    "name": "copy_backward_24",
+    "signature": "uint32_t __cdecl sub_00649770(uint32_t first, uint32_t last, uint32_t d_last)",
+    "summary": "Copies 24-byte elements backward from [first, last) to [d_last - (last - first), d_last)",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x006497C0": {
     "name": "Mat3::mulVec3",
     "class": "Mat3",
@@ -68172,6 +68184,13 @@
     "summary": "Reads a line from the underlying FILE* stream via fgets if the stream is open.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00783470": {
+    "name": "BinaryReader::readU32",
+    "class": "BinaryReader",
+    "signature": "uint32_t __thiscall sub_00783470(void* this_ptr, uint32_t* out_val, uint8_t swap_bytes)",
+    "summary": "Reads a 32-bit unsigned integer from the stream, optionally byte-swapping it",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00783510": {
     "name": "StreamReader::readByte",
     "class": "StreamReader",
@@ -70409,6 +70428,12 @@
     "name": "audioDeltaDecode16",
     "signature": "void __cdecl sub_007BF930(void* a1, int16_t* buf, int32_t byteCount)",
     "summary": "Decodes 16-bit audio samples in-place by adding each sample to the sample `step` positions ahead",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
+  "0x007BF9C0": {
+    "name": "sub_007BF9C0",
+    "signature": "int32_t sub_007BF9C0(void* arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+    "summary": "Validates via vtable+0x10 and if non-zero invokes vtable+0x0c, returning 1 or 0",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
   "0x007BFA10": {

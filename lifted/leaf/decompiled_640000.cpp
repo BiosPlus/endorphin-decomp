@@ -2123,3 +2123,33 @@ void __thiscall fn_00641760(void* self, void* node) {
     }
 }
 } // namespace lift_00641760
+
+// [0x00649770]
+namespace lift_00649770 {
+// @name copy_backward_24
+// @summary Copies 24-byte elements backward from [first, last) to [d_last - (last - first), d_last)
+
+
+uint32_t __cdecl sub_00649770(uint32_t first, uint32_t last, uint32_t d_last) {
+    if (first == last) {
+        return d_last;
+    }
+
+    uint32_t src = last;
+    uint32_t dst = d_last;
+    do {
+        src -= 0x18;
+        dst -= 0x18;
+        const uint32_t* s = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(src));
+        uint32_t* d = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(dst));
+        d[0] = s[0];
+        d[1] = s[1];
+        d[2] = s[2];
+        d[3] = s[3];
+        d[4] = s[4];
+        d[5] = s[5];
+    } while (src != first);
+
+    return dst;
+}
+} // namespace lift_00649770

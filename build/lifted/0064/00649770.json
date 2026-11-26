@@ -1,0 +1,13 @@
+{
+  "va": "0x00649770",
+  "size": 65,
+  "orig_symbol": "sub_00649770",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "copy_backward_24",
+  "signature": "uint32_t __cdecl sub_00649770(uint32_t first, uint32_t last, uint32_t d_last)",
+  "summary": "Copies 24-byte elements backward from [first, last) to [d_last - (last - first), d_last)",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:18:46Z"
+}
