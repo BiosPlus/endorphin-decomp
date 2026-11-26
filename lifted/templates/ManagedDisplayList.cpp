@@ -209,3 +209,28 @@ void ManagedDisplayList_RenderableList_vfunc_2(void* self) {
     }
 }
 } // namespace lift_0054C260
+
+// [0x0054C490] ManagedDisplayList<RenderableList>::vfunc_24 (76 bytes)
+namespace lift_0054C490 {
+extern void (__cdecl* mem_00925134)();
+
+// @name ManagedDisplayList<RenderableList>::vfunc_24
+// @class ManagedDisplayList<RenderableList>
+// @summary Calls vfunc_24() on every element of the RenderableList vector at +0x18..+0x1C.
+// @field ManagedDisplayList<RenderableList> +0x18 void** field_0x18
+// @field ManagedDisplayList<RenderableList> +0x1C void** field_0x1C
+void fn_0054C490(void* self) {
+    void** begin = lift_field<void**>(self, 0x18);
+    void** end = lift_field<void**>(self, 0x1C);
+
+    for (void** it = begin; it != end; ++it) {
+        if (it > end) {
+            mem_00925134();  // debug iterator-range check (_invalid_parameter_noinfo)
+        }
+        void* elem = *it;
+        void** vtable = *reinterpret_cast<void***>(elem);
+        auto vfunc_24 = reinterpret_cast<void(__thiscall*)(void*)>(vtable[0x60 / 4]);
+        vfunc_24(elem);
+    }
+}
+} // namespace lift_0054C490

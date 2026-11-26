@@ -24823,6 +24823,13 @@
     "summary": "Calls virtual slot 2 on each element in the [field_0x18, field_0x1C) pointer range.",
     "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
   },
+  "0x0054C490": {
+    "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_24",
+    "class": "ManagedDisplayList\u003cRenderableList\u003e",
+    "signature": "void fn_0054C490(void* self)",
+    "summary": "Calls vfunc_24() on every element of the RenderableList vector at +0x18..+0x1C.",
+    "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
+  },
   "0x0054C570": {
     "name": "Unknown::ctor_0054C570",
     "class": "Unknown",
