@@ -1301,3 +1301,28 @@ void* fn_006998D0(void* self, const void* src) {
     return self;
 }
 } // namespace lift_006998D0
+
+// [0x00698840] sub_00698840 (87 bytes)
+namespace lift_00698840 {
+// @name Unknown::findFirstOfChars
+// @class Unknown
+// @summary Scans this buffer from start to its count and returns the index of the first byte present in the NUL-terminated set, or -1.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 int32_t field_0x04
+int __thiscall fn_00698840(void* self, const char* set, int start) {
+    const int setLen = static_cast<int>(std::strlen(set));
+    const uint32_t bufAddr = lift_field<uint32_t>(self, 0x00);
+    const int count = lift_field<int32_t>(self, 0x04);
+    const char* buf = reinterpret_cast<const char*>(static_cast<uintptr_t>(bufAddr));
+
+    for (int i = start; i < count; ++i) {
+        const char c = buf[i];
+        for (int j = 0; j < setLen; ++j) {
+            if (c == set[j]) {
+                return i;
+            }
+        }
+    }
+    return -1;
+}
+} // namespace lift_00698840

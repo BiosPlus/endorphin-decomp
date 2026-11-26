@@ -1,0 +1,28 @@
+{
+  "va": "0x00698840",
+  "size": 87,
+  "orig_symbol": "sub_00698840",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "Unknown::findFirstOfChars",
+  "class": "Unknown",
+  "signature": "int __thiscall fn_00698840(void* self, const char* set, int start)",
+  "summary": "Scans this buffer from start to its count and returns the index of the first byte present in the NUL-terminated set, or -1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:58:44Z"
+}
