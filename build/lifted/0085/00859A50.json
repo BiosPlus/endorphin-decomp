@@ -1,0 +1,13 @@
+{
+  "va": "0x00859A50",
+  "size": 64,
+  "orig_symbol": "sub_00859A50",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "strncat_bounded_append",
+  "signature": "char* fn_00859A50(char* dst, const char* src, uint32_t count)",
+  "summary": "Appends at most count characters from src to the end of dst (NUL-terminated, no-op when count is 0) and returns dst.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:06:44Z"
+}

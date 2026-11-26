@@ -73245,6 +73245,12 @@
     "summary": "Appends NUL-terminated src to the end of NUL-terminated dst (cdecl strcat); returns dst.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x00859A50": {
+    "name": "strncat_bounded_append",
+    "signature": "char* fn_00859A50(char* dst, const char* src, uint32_t count)",
+    "summary": "Appends at most count characters from src to the end of dst (NUL-terminated, no-op when count is 0) and returns dst.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x00859A90": {
     "name": "releaseRefCountedBuffer",
     "signature": "void fn_00859A90(void* node)",

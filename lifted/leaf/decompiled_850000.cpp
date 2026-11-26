@@ -1033,3 +1033,41 @@ void* fn_008596F0(void* hMem, UINT uBytes) {
     return mem_00924214(0 /* LMEM_FIXED */, uBytes);
 }
 } // namespace lift_008596F0
+
+// [0x00859A50] sub_00859A50 (64 bytes)
+namespace lift_00859A50 {
+// @name strncat_bounded_append
+// @summary Appends at most count characters from src to the end of dst (NUL-terminated, no-op when count is 0) and returns dst.
+char* fn_00859A50(char* dst, const char* src, uint32_t count) {
+    char* const result = dst;
+    if (count == 0) {
+        return result;
+    }
+
+    // Scan dst to its terminating NUL.
+    char* p = dst;
+    while (*p != '\0') {
+        ++p;
+    }
+
+    // Copy the first character unconditionally (mirrors the asm's first store).
+    char c = *src++;
+    *p = c;
+    if (c != '\0') {
+        ++p;
+        --count;
+        while (count != 0) {
+            c = *src++;
+            *p = c;
+            if (c == '\0') {
+                break;
+            }
+            ++p;
+            --count;
+        }
+    }
+
+    *p = '\0';
+    return result;
+}
+} // namespace lift_00859A50
