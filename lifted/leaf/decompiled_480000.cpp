@@ -2310,3 +2310,32 @@ void* fn_00486EA0(uint32_t count) {
     return reinterpret_cast<void* (*)(uint32_t)>(ext_006A5C62)(size);
 }
 } // namespace lift_00486EA0
+
+// [0x0048FB80] sub_0048FB80 (87 bytes)
+namespace lift_0048FB80 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+[[noreturn]] void ext_006A6DD2(void* pObject, const void* pThrowInfo);
+// IAT slot 0x00925130: MSVCR80!std::exception::exception(const char* const&) (thiscall, called indirectly).
+extern void (*mem_00925130)(void* self, const void* msgRef);
+
+// @name allocArray124_0048FB80
+// @summary Allocates count*0x7C bytes via MFC80 ord_762; throws std::exception on multiplication overflow.
+void* fn_0048FB80(uint32_t count) {
+    uint32_t size = 0;
+    if (count != 0) {
+        // Overflow guard: count * 0x7C must fit in 32 bits.
+        if (0xFFFFFFFFu / count < 0x7Cu) {
+            alignas(4) uint8_t exception[12] = {};
+            const char* msg = nullptr;
+            (*mem_00925130)(exception, &msg);
+            const uint32_t vtable = 0x00928EC0u;
+            std::memcpy(exception, &vtable, sizeof(vtable));
+            ext_006A6DD2(exception, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009CDF94u)));
+        }
+        size = count * 0x7Cu;
+    }
+    return ext_006A5C62(size);
+}
+} // namespace lift_0048FB80
