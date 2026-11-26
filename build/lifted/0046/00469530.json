@@ -1,0 +1,28 @@
+{
+  "va": "0x00469530",
+  "size": 56,
+  "orig_symbol": "sub_00469530",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "Unknown::dispatchToChildAtIndex",
+  "class": "Unknown",
+  "signature": "void __thiscall Unknown_dispatchToChildAtIndex(void* self, unsigned int index, int arg)",
+  "summary": "Bounds-checks an index into the pointer vector at +0x54 and calls virtual slot 1 of that element with the given argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "void**",
+      "name": "children_begin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "void**",
+      "name": "children_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@medium",
+  "lifted_at": "2026-11-26T10:48:29Z"
+}

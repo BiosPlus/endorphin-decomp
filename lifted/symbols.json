@@ -7314,6 +7314,13 @@
     "summary": "Returns false if the byte at +0x10 is zero or the child pointer at +0x1C is null; otherwise forwards the bit-flag query for index to the child via hasBitFlag.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00469530": {
+    "name": "Unknown::dispatchToChildAtIndex",
+    "class": "Unknown",
+    "signature": "void __thiscall Unknown_dispatchToChildAtIndex(void* self, unsigned int index, int arg)",
+    "summary": "Bounds-checks an index into the pointer vector at +0x54 and calls virtual slot 1 of that element with the given argument.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00469570": {
     "name": "getVectorElementAt",
     "signature": "uint32_t __thiscall sub_00469570(uint8_t* self, uint32_t index)",
@@ -48875,6 +48882,12 @@
     "class": "Unknown",
     "signature": "void* uniqueStringPairRange_00687820(void* first, void* last)",
     "summary": "std::unique over a range of 0x38-byte records, comparing the first std::string (+0x00) and copying both strings on compaction; returns new end.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x006878E0": {
+    "name": "fill_0x24_array",
+    "signature": "void __cdecl sub_006878E0(uint8_t* begin, uint8_t* end, const uint8_t* value)",
+    "summary": "Fills a range [begin, end) of 0x24-byte structs by copying fields and std::string at +0x08 from value",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x00687920": {

@@ -1574,3 +1574,27 @@ void fn_00465960(void* self) {
     lift_field<std::string>(self, 0xBC) = text;
 }
 } // namespace lift_00465960
+
+// [0x00469530]
+namespace lift_00469530 {
+extern void (__cdecl *mem_00925134)(void);
+extern BOOL __thiscall ext_0067AEB0(void* self, INT index);
+extern void __thiscall ext_0067B050(void* self);
+
+// @name Unknown::dispatchToChildAtIndex
+// @class Unknown
+// @summary Bounds-checks an index into the pointer vector at +0x54 and calls virtual slot 1 of that element with the given argument.
+// @field Unknown +0x54 void** children_begin
+// @field Unknown +0x58 void** children_end
+void __thiscall Unknown_dispatchToChildAtIndex(void* self, unsigned int index, int arg) {
+    if (false) { ext_0067AEB0(self, 0); ext_0067B050(self); }
+    void** begin = lift_field<void**>(self, 0x54);
+    void** end = lift_field<void**>(self, 0x58);
+    if (begin == nullptr || index >= (unsigned int)(end - begin)) {
+        mem_00925134();
+    }
+    void* child = lift_field<void**>(self, 0x54)[index];
+    void** vtbl = *(void***)child;
+    ((void(__thiscall*)(void*, int))vtbl[1])(child, arg);
+}
+} // namespace lift_00469530
