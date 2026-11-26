@@ -1,0 +1,33 @@
+{
+  "va": "0x006816F0",
+  "size": 63,
+  "orig_symbol": "sub_006816F0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "sub_006816F0",
+  "signature": "void fn_006816F0(void* self, uint32_t flag)",
+  "summary": "Auto-lifted identical-shape clone of 0x005597C0 (clearStringVectorRecord).",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-26T11:03:19Z"
+}

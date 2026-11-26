@@ -1362,3 +1362,207 @@ void fn_005597C0(void* self, uint32_t flag) {
     lift_field<uint32_t>(self, 0x0C) = 0;
 }
 } // namespace lift_005597C0
+
+// [0x005577E0] sub_005577E0 (63 bytes)
+namespace lift_005577E0 {
+// @name sub_005577E0
+// @summary Auto-lifted identical-shape clone of 0x005597C0 (clearStringVectorRecord).
+namespace lift_005597C0 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// cdecl, one stack argument (the buffer pointer), caller cleans up.
+extern void ext_006A5C5C(void* buffer);
+// Known callee 0x00558F20: Unknown::clearStringVectorRange (Destroys the 0x1C-byte elements of each 0x14-byte record's buffer in [first, last), frees a non-null buffer, and zeroes its three pointer fields.)
+// The call site pushes four cdecl arguments (first, last, self, flag) and the caller cleans them up.
+extern void ext_00556740(void* first, void* last, void* self, uint32_t flag);
+
+// @name clearStringVectorRecord
+// @summary Thiscall: if field_0x04 is non-null, destroys the range [field_0x04, field_0x08) via ext_00558F20, releases field_0x04 via ext_006A5C5C, then zeroes fields 0x04, 0x08 and 0x0C.
+// @field <unknown> +0x04 uint32_t field_0x04
+// @field <unknown> +0x08 uint32_t field_0x08
+// @field <unknown> +0x0C uint32_t field_0x0C
+void fn_005577E0(void* self, uint32_t flag) {
+    if (lift_field<uint32_t>(self, 0x04) != 0) {
+        ext_00556740(
+            reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x04))),
+            reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x08))),
+            self,
+            flag);
+        ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x04))));
+    }
+
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+}
+} // namespace lift_005597C0
+} // namespace lift_005577E0
+
+// [0x005587E0] sub_005587E0 (63 bytes)
+namespace lift_005587E0 {
+// @name sub_005587E0
+// @summary Auto-lifted identical-shape clone of 0x005597C0 (clearStringVectorRecord).
+namespace lift_005597C0 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// cdecl, one stack argument (the buffer pointer), caller cleans up.
+extern void ext_006A5C5C(void* buffer);
+// Known callee 0x00558F20: Unknown::clearStringVectorRange (Destroys the 0x1C-byte elements of each 0x14-byte record's buffer in [first, last), frees a non-null buffer, and zeroes its three pointer fields.)
+// The call site pushes four cdecl arguments (first, last, self, flag) and the caller cleans them up.
+extern void ext_005566D0(void* first, void* last, void* self, uint32_t flag);
+
+// @name clearStringVectorRecord
+// @summary Thiscall: if field_0x04 is non-null, destroys the range [field_0x04, field_0x08) via ext_00558F20, releases field_0x04 via ext_006A5C5C, then zeroes fields 0x04, 0x08 and 0x0C.
+// @field <unknown> +0x04 uint32_t field_0x04
+// @field <unknown> +0x08 uint32_t field_0x08
+// @field <unknown> +0x0C uint32_t field_0x0C
+void fn_005587E0(void* self, uint32_t flag) {
+    if (lift_field<uint32_t>(self, 0x04) != 0) {
+        ext_005566D0(
+            reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x04))),
+            reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x08))),
+            self,
+            flag);
+        ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x04))));
+    }
+
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+}
+} // namespace lift_005597C0
+} // namespace lift_005587E0
+
+// [0x00559800] sub_00559800 (63 bytes)
+namespace lift_00559800 {
+// @name sub_00559800
+// @summary Auto-lifted identical-shape clone of 0x005597C0 (clearStringVectorRecord).
+namespace lift_005597C0 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// cdecl, one stack argument (the buffer pointer), caller cleans up.
+extern void ext_006A5C5C(void* buffer);
+// Known callee 0x00558F20: Unknown::clearStringVectorRange (Destroys the 0x1C-byte elements of each 0x14-byte record's buffer in [first, last), frees a non-null buffer, and zeroes its three pointer fields.)
+// The call site pushes four cdecl arguments (first, last, self, flag) and the caller cleans them up.
+extern void ext_00558F80(void* first, void* last, void* self, uint32_t flag);
+
+// @name clearStringVectorRecord
+// @summary Thiscall: if field_0x04 is non-null, destroys the range [field_0x04, field_0x08) via ext_00558F20, releases field_0x04 via ext_006A5C5C, then zeroes fields 0x04, 0x08 and 0x0C.
+// @field <unknown> +0x04 uint32_t field_0x04
+// @field <unknown> +0x08 uint32_t field_0x08
+// @field <unknown> +0x0C uint32_t field_0x0C
+void fn_00559800(void* self, uint32_t flag) {
+    if (lift_field<uint32_t>(self, 0x04) != 0) {
+        ext_00558F80(
+            reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x04))),
+            reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x08))),
+            self,
+            flag);
+        ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x04))));
+    }
+
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+}
+} // namespace lift_005597C0
+} // namespace lift_00559800
+
+// [0x00559B20] sub_00559B20 (63 bytes)
+namespace lift_00559B20 {
+// @name sub_00559B20
+// @summary Auto-lifted identical-shape clone of 0x005597C0 (clearStringVectorRecord).
+namespace lift_005597C0 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// cdecl, one stack argument (the buffer pointer), caller cleans up.
+extern void ext_006A5C5C(void* buffer);
+// Known callee 0x00558F20: Unknown::clearStringVectorRange (Destroys the 0x1C-byte elements of each 0x14-byte record's buffer in [first, last), frees a non-null buffer, and zeroes its three pointer fields.)
+// The call site pushes four cdecl arguments (first, last, self, flag) and the caller cleans them up.
+extern void ext_00558FE0(void* first, void* last, void* self, uint32_t flag);
+
+// @name clearStringVectorRecord
+// @summary Thiscall: if field_0x04 is non-null, destroys the range [field_0x04, field_0x08) via ext_00558F20, releases field_0x04 via ext_006A5C5C, then zeroes fields 0x04, 0x08 and 0x0C.
+// @field <unknown> +0x04 uint32_t field_0x04
+// @field <unknown> +0x08 uint32_t field_0x08
+// @field <unknown> +0x0C uint32_t field_0x0C
+void fn_00559B20(void* self, uint32_t flag) {
+    if (lift_field<uint32_t>(self, 0x04) != 0) {
+        ext_00558FE0(
+            reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x04))),
+            reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x08))),
+            self,
+            flag);
+        ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x04))));
+    }
+
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+}
+} // namespace lift_005597C0
+} // namespace lift_00559B20
+
+// [0x00559F50] sub_00559F50 (63 bytes)
+namespace lift_00559F50 {
+// @name sub_00559F50
+// @summary Auto-lifted identical-shape clone of 0x005597C0 (clearStringVectorRecord).
+namespace lift_005597C0 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// cdecl, one stack argument (the buffer pointer), caller cleans up.
+extern void ext_006A5C5C(void* buffer);
+// Known callee 0x00558F20: Unknown::clearStringVectorRange (Destroys the 0x1C-byte elements of each 0x14-byte record's buffer in [first, last), frees a non-null buffer, and zeroes its three pointer fields.)
+// The call site pushes four cdecl arguments (first, last, self, flag) and the caller cleans them up.
+extern void ext_00559840(void* first, void* last, void* self, uint32_t flag);
+
+// @name clearStringVectorRecord
+// @summary Thiscall: if field_0x04 is non-null, destroys the range [field_0x04, field_0x08) via ext_00558F20, releases field_0x04 via ext_006A5C5C, then zeroes fields 0x04, 0x08 and 0x0C.
+// @field <unknown> +0x04 uint32_t field_0x04
+// @field <unknown> +0x08 uint32_t field_0x08
+// @field <unknown> +0x0C uint32_t field_0x0C
+void fn_00559F50(void* self, uint32_t flag) {
+    if (lift_field<uint32_t>(self, 0x04) != 0) {
+        ext_00559840(
+            reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x04))),
+            reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x08))),
+            self,
+            flag);
+        ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x04))));
+    }
+
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+}
+} // namespace lift_005597C0
+} // namespace lift_00559F50
+
+// [0x0055B880] sub_0055B880 (63 bytes)
+namespace lift_0055B880 {
+// @name sub_0055B880
+// @summary Auto-lifted identical-shape clone of 0x005597C0 (clearStringVectorRecord).
+namespace lift_005597C0 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// cdecl, one stack argument (the buffer pointer), caller cleans up.
+extern void ext_006A5C5C(void* buffer);
+// Known callee 0x00558F20: Unknown::clearStringVectorRange (Destroys the 0x1C-byte elements of each 0x14-byte record's buffer in [first, last), frees a non-null buffer, and zeroes its three pointer fields.)
+// The call site pushes four cdecl arguments (first, last, self, flag) and the caller cleans them up.
+extern void ext_0055B780(void* first, void* last, void* self, uint32_t flag);
+
+// @name clearStringVectorRecord
+// @summary Thiscall: if field_0x04 is non-null, destroys the range [field_0x04, field_0x08) via ext_00558F20, releases field_0x04 via ext_006A5C5C, then zeroes fields 0x04, 0x08 and 0x0C.
+// @field <unknown> +0x04 uint32_t field_0x04
+// @field <unknown> +0x08 uint32_t field_0x08
+// @field <unknown> +0x0C uint32_t field_0x0C
+void fn_0055B880(void* self, uint32_t flag) {
+    if (lift_field<uint32_t>(self, 0x04) != 0) {
+        ext_0055B780(
+            reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x04))),
+            reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x08))),
+            self,
+            flag);
+        ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x04))));
+    }
+
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+}
+} // namespace lift_005597C0
+} // namespace lift_0055B880

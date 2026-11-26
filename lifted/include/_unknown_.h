@@ -23,7 +23,7 @@ struct _unknown__Fields {
     // +0x4   void* field_0x04 (child object; slot 1 invoked with arg 1)  (evidence: 0x006B0C60) // CONFLICT: multiple definitions at +0x4
     // +0x4   DWORD                    field_0x04  (evidence: 0x0049E440, 0x00782D00, 0x00784620, 0x00788E50) // CONFLICT: multiple definitions at +0x4
     // +0x4   float                    field_0x04  (evidence: 0x00669E40) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00414E60, 0x004584C0, 0x00481D80, 0x005597C0, 0x00699B80, 0x0069B680, 0x00710F10, 0x007155B0, 0x007D48A0, 0x007D59C0, 0x007D5BA0, 0x007D8470) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00406590, 0x00414E60, 0x004584C0, 0x00481D80, 0x005577E0, 0x005587E0, 0x005597C0, 0x00559800, 0x00559B20, 0x00559F50, 0x0055B880, 0x00672E70, 0x006816F0, 0x00699B80, 0x0069B680, 0x00710F10, 0x007155B0, 0x007D48A0, 0x007D59C0, 0x007D5BA0, 0x007D8470) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t*                field_0x04  (evidence: 0x006AD170) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x00494DE0, 0x00710F50, 0x007155B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t                  field_0x04[0x1C]  (evidence: 0x0063D970, 0x0063DDF0, 0x0063E0C0) // CONFLICT: multiple definitions at +0x4
@@ -31,7 +31,7 @@ struct _unknown__Fields {
     // +0x8   DWORD                    arg3Value  (evidence: 0x007D47D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   DWORD                    field_0x08  (evidence: 0x00543300, 0x00782D00, 0x00784620, 0x00788E50) // CONFLICT: multiple definitions at +0x8
     // +0x8   float                    field_0x08  (evidence: 0x00669E40, 0x007D59C0) // CONFLICT: multiple definitions at +0x8
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x004584C0, 0x00481BB0, 0x00481D80, 0x005597C0, 0x00699B80, 0x0069B680, 0x00710F10, 0x007155B0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00406590, 0x004584C0, 0x00481BB0, 0x00481D80, 0x005577E0, 0x005587E0, 0x005597C0, 0x00559800, 0x00559B20, 0x00559F50, 0x0055B880, 0x00672E70, 0x006816F0, 0x00699B80, 0x0069B680, 0x00710F10, 0x007155B0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void                     field_0x08  (evidence: 0x006FC200, 0x006FC8E0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_0x08  (evidence: 0x005E0AB0, 0x005E2C70, 0x00710F50, 0x007155B0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t field_0x08 (tested against zero)  (evidence: 0x0050F9D0) // CONFLICT: multiple definitions at +0x8
@@ -41,7 +41,7 @@ struct _unknown__Fields {
     // +0xC   float                    field_0x0C  (evidence: 0x00669E40, 0x007D59C0) // CONFLICT: multiple definitions at +0xC
     // +0xC   int                      field_0x0C  (evidence: 0x00494DE0) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  field_0x0C  (evidence: 0x00494DE0, 0x00678170, 0x0067A670) // CONFLICT: multiple definitions at +0xC
-    // +0xC   uint32_t                 field_0x0C  (evidence: 0x004584C0, 0x00481BB0, 0x005597C0, 0x00699B80, 0x00710F10, 0x007155B0, 0x007C6C10) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint32_t                 field_0x0C  (evidence: 0x00406590, 0x004584C0, 0x00481BB0, 0x005577E0, 0x005587E0, 0x005597C0, 0x00559800, 0x00559B20, 0x00559F50, 0x0055B880, 0x00672E70, 0x006816F0, 0x00699B80, 0x00710F10, 0x007155B0, 0x007C6C10) // CONFLICT: multiple definitions at +0xC
     // +0xC   float                    field_0x0c  (evidence: 0x005528A0) // CONFLICT: multiple definitions at +0xC
     // +0x10  DWORD                    arg4Value  (evidence: 0x007D47D0) // CONFLICT: multiple definitions at +0x10
     // +0x10  BYTE                     field_0x10  (evidence: 0x00782D00, 0x00784620, 0x00788E50) // CONFLICT: multiple definitions at +0x10

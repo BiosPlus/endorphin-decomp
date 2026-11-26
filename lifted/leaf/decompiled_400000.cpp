@@ -92,8 +92,10 @@ void fn_00401DE0(void* self) {
 }
 } // namespace lift_00594790
 } // namespace lift_00401DE0
+#include <cstdio>
+#include <memory>
 
-// [0x004064B0] sub_004064B0 (27 bytes)
+#include <memory>
 namespace lift_004064B0 {
 // @name sub_004064B0
 // @summary Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).
@@ -1567,3 +1569,37 @@ void fn_0040FE70(void *self) {
     invalidateRect(hwnd, nullptr, TRUE);
 }
 } // namespace lift_0040FE70
+
+// [0x00406590] sub_00406590 (63 bytes)
+namespace lift_00406590 {
+// @name sub_00406590
+// @summary Auto-lifted identical-shape clone of 0x005597C0 (clearStringVectorRecord).
+namespace lift_005597C0 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// cdecl, one stack argument (the buffer pointer), caller cleans up.
+extern void ext_006A5C5C(void* buffer);
+// Known callee 0x00558F20: Unknown::clearStringVectorRange (Destroys the 0x1C-byte elements of each 0x14-byte record's buffer in [first, last), frees a non-null buffer, and zeroes its three pointer fields.)
+// The call site pushes four cdecl arguments (first, last, self, flag) and the caller cleans them up.
+extern void ext_00406380(void* first, void* last, void* self, uint32_t flag);
+
+// @name clearStringVectorRecord
+// @summary Thiscall: if field_0x04 is non-null, destroys the range [field_0x04, field_0x08) via ext_00558F20, releases field_0x04 via ext_006A5C5C, then zeroes fields 0x04, 0x08 and 0x0C.
+// @field <unknown> +0x04 uint32_t field_0x04
+// @field <unknown> +0x08 uint32_t field_0x08
+// @field <unknown> +0x0C uint32_t field_0x0C
+void fn_00406590(void* self, uint32_t flag) {
+    if (lift_field<uint32_t>(self, 0x04) != 0) {
+        ext_00406380(
+            reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x04))),
+            reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x08))),
+            self,
+            flag);
+        ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x04))));
+    }
+
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+}
+} // namespace lift_005597C0
+} // namespace lift_00406590

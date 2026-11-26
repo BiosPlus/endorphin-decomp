@@ -594,6 +594,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00406590": {
+    "name": "sub_00406590",
+    "signature": "void fn_00406590(void* self, uint32_t flag)",
+    "summary": "Auto-lifted identical-shape clone of 0x005597C0 (clearStringVectorRecord).",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x004065D0": {
     "name": "sub_004065D0",
     "class": "Vector",
@@ -25283,6 +25289,12 @@
     "summary": "Destroys the element range held at +0x04/+0x08 (via ext_0041DD40 and ext_006A5C5C) and zeroes the three header dwords.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x005577E0": {
+    "name": "sub_005577E0",
+    "signature": "void fn_005577E0(void* self, uint32_t flag)",
+    "summary": "Auto-lifted identical-shape clone of 0x005597C0 (clearStringVectorRecord).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00557920": {
     "name": "DestroyRangeAndReset",
     "signature": "void fn_00557920(void* self)",
@@ -25294,6 +25306,12 @@
     "class": "Unknown (optional)",
     "signature": "void fn_00557A10(void* self)",
     "summary": "Releases the handle held by self via ext_00557920, then raises a C++ exception with null object and null ThrowInfo.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
+  "0x005587E0": {
+    "name": "sub_005587E0",
+    "signature": "void fn_005587E0(void* self, uint32_t flag)",
+    "summary": "Auto-lifted identical-shape clone of 0x005597C0 (clearStringVectorRecord).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
   "0x00558A10": {
@@ -25349,6 +25367,12 @@
     "summary": "Thiscall: if field_0x04 is non-null, destroys the range [field_0x04, field_0x08) via ext_00558F20, releases field_0x04 via ext_006A5C5C, then zeroes fields 0x04, 0x08 and 0x0C.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00559800": {
+    "name": "sub_00559800",
+    "signature": "void fn_00559800(void* self, uint32_t flag)",
+    "summary": "Auto-lifted identical-shape clone of 0x005597C0 (clearStringVectorRecord).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00559A30": {
     "name": "Unknown::ReleaseHandleAndClearThenThrow",
     "class": "Unknown",
@@ -25361,6 +25385,12 @@
     "class": "Unknown",
     "signature": "void fn_00559B00(void* self)",
     "summary": "Releases the handle held in the caller's local (passed in ecx), then raises a null-object exception via CxxThrowException.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
+  "0x00559B20": {
+    "name": "sub_00559B20",
+    "signature": "void fn_00559B20(void* self, uint32_t flag)",
+    "summary": "Auto-lifted identical-shape clone of 0x005597C0 (clearStringVectorRecord).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
   "0x00559C30": {
@@ -25376,6 +25406,12 @@
     "signature": "extern \"C\" void* __fastcall fn_00559E40(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0056B710 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00559F50": {
+    "name": "sub_00559F50",
+    "signature": "void fn_00559F50(void* self, uint32_t flag)",
+    "summary": "Auto-lifted identical-shape clone of 0x005597C0 (clearStringVectorRecord).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
   "0x00559FA0": {
     "name": "NMCIO::vfunc_0",
@@ -25450,6 +25486,12 @@
     "class": "(none)",
     "signature": "void fn_0055B860(void* self, int edx_unused, int a1, int a2)",
     "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
+  "0x0055B880": {
+    "name": "sub_0055B880",
+    "signature": "void fn_0055B880(void* self, uint32_t flag)",
+    "summary": "Auto-lifted identical-shape clone of 0x005597C0 (clearStringVectorRecord).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
   "0x0055B970": {
@@ -47777,6 +47819,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x00672E70": {
+    "name": "sub_00672E70",
+    "signature": "void fn_00672E70(void* self, uint32_t flag)",
+    "summary": "Auto-lifted identical-shape clone of 0x005597C0 (clearStringVectorRecord).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00672EB0": {
     "name": "sub_00672EB0",
     "signature": "extern \"C\" void fn_00672EB0(void)",
@@ -48533,6 +48581,12 @@
     "class": "Unknown",
     "signature": "VectorIterator* __thiscall fn_00681410(void* self, VectorIterator* out_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr)",
     "summary": "Auto-lifted identical-shape clone of 0x0057E9E0 (Unknown::eraseStringVectorRange).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x006816F0": {
+    "name": "sub_006816F0",
+    "signature": "void fn_006816F0(void* self, uint32_t flag)",
+    "summary": "Auto-lifted identical-shape clone of 0x005597C0 (clearStringVectorRecord).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x00681B00": {
