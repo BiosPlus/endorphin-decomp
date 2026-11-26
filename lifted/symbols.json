@@ -46219,6 +46219,12 @@
     "summary": "Destroys three std::string members at offsets +0x38, +0x1c, and +0x00",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x006630C0": {
+    "name": "std_string_endsWithKey16",
+    "signature": "bool fn_006630C0(void* self)",
+    "summary": "Returns true if the std::string is at least 0x14 chars long and its last 16 chars equal the 16-byte key at mem_00A9FB8C.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x006633A0": {
     "name": "sub_006633A0",
     "signature": "extern \"C\" void fn_006633A0(void)",

@@ -1,0 +1,13 @@
+{
+  "va": "0x006630C0",
+  "size": 75,
+  "orig_symbol": "sub_006630C0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "std_string_endsWithKey16",
+  "signature": "bool fn_006630C0(void* self)",
+  "summary": "Returns true if the std::string is at least 0x14 chars long and its last 16 chars equal the 16-byte key at mem_00A9FB8C.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:22:31Z"
+}

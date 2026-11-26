@@ -2469,3 +2469,35 @@ void* fn_006648C0(int32_t arg_04, double value, int32_t ivalue,
     return out;
 }
 } // namespace lift_006648C0
+
+// [0x006630C0] sub_006630C0 (75 bytes)
+namespace lift_006630C0 {
+extern int mem_00924EAC;
+extern int mem_00924FFC;
+extern int mem_00A9FB8C;
+
+// IAT slots hold MSVC std::string member function pointers (thiscall).
+using ext_string_size_fn = uint32_t(__thiscall*)(void* self);
+using ext_string_at_fn = const char*(__thiscall*)(void* self, uint32_t index);
+
+// @name std_string_endsWithKey16
+// @summary Returns true if the std::string is at least 0x14 chars long and its last 16 chars equal the 16-byte key at mem_00A9FB8C.
+bool fn_006630C0(void* self) {
+    const auto size_fn = *reinterpret_cast<ext_string_size_fn*>(&mem_00924EAC);
+    const auto at_fn = *reinterpret_cast<ext_string_at_fn*>(&mem_00924FFC);
+
+    const uint32_t size = size_fn(self);
+    if (size < 0x14) {
+        return false;
+    }
+
+    const uint8_t* key = reinterpret_cast<const uint8_t*>(&mem_00A9FB8C);
+    for (uint32_t i = 0; i < 0x10; ++i) {
+        const char* ch = at_fn(self, size - 0x10 + i);
+        if (static_cast<uint8_t>(*ch) != key[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+} // namespace lift_006630C0
