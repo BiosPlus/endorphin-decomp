@@ -1,0 +1,52 @@
+{
+  "va": "0x006D6CB0",
+  "size": 58,
+  "orig_symbol": "sub_006D6CB0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::ResetFlagsAndInitSubobject",
+  "class": "Unknown",
+  "signature": "void fn_006D6CB0(void* ecx)",
+  "summary": "Releases the object at field_0xFC, writes 0x01 to the flag block at 0x14C..0x156, clears byte 0x14F, then runs the initializer on the subobject at +0xB0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xB0",
+      "type": "void",
+      "name": "field_0xB0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14C",
+      "type": "uint32_t",
+      "name": "field_0x14C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14F",
+      "type": "uint8_t",
+      "name": "field_0x14F"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x150",
+      "type": "uint32_t",
+      "name": "field_0x150"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x154",
+      "type": "uint16_t",
+      "name": "field_0x154"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x156",
+      "type": "uint8_t",
+      "name": "field_0x156"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:52:53Z"
+}

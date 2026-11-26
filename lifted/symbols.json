@@ -3797,6 +3797,12 @@
     "summary": "Returns the address of the read-only string constant at 0x0093209C (.rdata \"`KE\").",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
   },
+  "0x0043D370": {
+    "name": "uninitializedCopyCString",
+    "signature": "void* __cdecl sub_0043D370(const void* first, const void* last, void* dest)",
+    "summary": "Uninitialized-copies a range of 4-byte MFC CString objects using MFC80!ord_781",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043D3B0": {
     "name": "fillCStringRange",
     "signature": "void sub_0043D3B0(uint32_t* begin, uint32_t* end, uint32_t value)",
@@ -58365,6 +58371,13 @@
     "signature": "extern \"C\" void* __fastcall fn_006D6C00(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006D6C20 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
+  },
+  "0x006D6CB0": {
+    "name": "Unknown::ResetFlagsAndInitSubobject",
+    "class": "Unknown",
+    "signature": "void fn_006D6CB0(void* ecx)",
+    "summary": "Releases the object at field_0xFC, writes 0x01 to the flag block at 0x14C..0x156, clears byte 0x14F, then runs the initializer on the subobject at +0xB0.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
   "0x006D7380": {
     "name": "Unknown::ReleaseSubobjectFC",

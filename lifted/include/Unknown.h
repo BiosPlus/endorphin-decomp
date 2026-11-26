@@ -956,6 +956,7 @@ struct Unknown_Fields {
     // +0xAC  uint32_t field_0xac (read from the sub-object at self+0x158, not from self)  (evidence: 0x005B6FE0, 0x005B7040) // CONFLICT: multiple definitions at +0xAC
     // +0xB0  uint32_t                 field_0xB0  (evidence: 0x007C58E0, 0x007C8690, 0x007CAF70, 0x007CC5D0, 0x007D48A0, 0x007D8470, 0x007D8710, 0x007DADA0, 0x007DEC80) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  uint8                    field_0xB0  (evidence: 0x00687230) // CONFLICT: multiple definitions at +0xB0
+    // +0xB0  void                     field_0xB0  (evidence: 0x006D6CB0) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  void*                    field_0xB0  (evidence: 0x007C8490, 0x007CAF70, 0x007CB890, 0x007CC1C0, 0x007DAE50) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  float                    field_0xb0  (evidence: 0x00611100) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  uint32_t                 field_0xb0  (evidence: 0x007DAD70) // CONFLICT: multiple definitions at +0xB0
@@ -1127,16 +1128,20 @@ struct Unknown_Fields {
     // +0x148 uint8_t                  field_0x148  (evidence: 0x00441C10) // CONFLICT: multiple definitions at +0x148
     // +0x148 void*                    subObject  (evidence: 0x0070AD00, 0x0070E3B0, 0x0070EC50) // CONFLICT: multiple definitions at +0x148
     // +0x14C int32_t field_0x14C (indexed array base; element stride 4, indices 1..17)  (evidence: 0x007AA7F0, 0x007AA950) // CONFLICT: multiple definitions at +0x14C
+    // +0x14C uint32_t                 field_0x14C  (evidence: 0x006D6CB0) // CONFLICT: multiple definitions at +0x14C
     // +0x14C float                    field_0x14c  (evidence: 0x00630420) // CONFLICT: multiple definitions at +0x14C
     // +0x14C BYTE field_0x14C[] (indexed by arg index; byte store target)  (evidence: 0x006D74E0) // CONFLICT: multiple definitions at +0x14C
+    // +0x14F uint8_t                  field_0x14F  (evidence: 0x006D6CB0)
     // +0x150 int32_t                  field_0x150  (evidence: 0x0072BC70) // CONFLICT: multiple definitions at +0x150
-    // +0x150 uint32_t                 field_0x150  (evidence: 0x00687230, 0x006877B0) // CONFLICT: multiple definitions at +0x150
+    // +0x150 uint32_t                 field_0x150  (evidence: 0x00687230, 0x006877B0, 0x006D6CB0) // CONFLICT: multiple definitions at +0x150
     // +0x150 uint8_t                  field_0x150  (evidence: 0x0046F930) // CONFLICT: multiple definitions at +0x150
     // +0x151 uint8_t                  field_0x151  (evidence: 0x0046F930)
     // +0x152 uint8_t                  field_0x152  (evidence: 0x0046F930, 0x0046FE90)
     // +0x153 uint8_t                  field_0x153  (evidence: 0x0046F930) // CONFLICT: multiple definitions at +0x153
     // +0x153 uint8_t                  stopRequested  (evidence: 0x00480C30) // CONFLICT: multiple definitions at +0x153
-    // +0x154 DWORD                    child  (evidence: 0x00433290, 0x005B6780, 0x005B7040, 0x005B7240, 0x005B7280, 0x005B72C0, 0x005C30F0, 0x005CE8F0)
+    // +0x154 DWORD                    child  (evidence: 0x00433290, 0x005B6780, 0x005B7040, 0x005B7240, 0x005B7280, 0x005B72C0, 0x005C30F0, 0x005CE8F0) // CONFLICT: multiple definitions at +0x154
+    // +0x154 uint16_t                 field_0x154  (evidence: 0x006D6CB0) // CONFLICT: multiple definitions at +0x154
+    // +0x156 uint8_t                  field_0x156  (evidence: 0x006D6CB0)
     // +0x158 void* field_0x158 (sub-object base; +0x30 pointer, +0x24 argument address)  (evidence: 0x005B7040) // CONFLICT: multiple definitions at +0x158
     // +0x158 DWORD                    field_0x158  (evidence: 0x004275C0, 0x0042FC20, 0x0042FEC0, 0x0048ABF0, 0x004CCAF0, 0x004CCB00, 0x0050AD20, 0x0050F180, 0x005B7040, 0x005B72E0, 0x005C3170, 0x005CE910, 0x005CE920, 0x006C30F0, 0x00726690) // CONFLICT: multiple definitions at +0x158
     // +0x158 uint32_t                 field_0x158  (evidence: 0x00434A00, 0x005B6B90, 0x005B6FC0, 0x005B6FE0, 0x005B7040, 0x006C3150, 0x006C31E0) // CONFLICT: multiple definitions at +0x158

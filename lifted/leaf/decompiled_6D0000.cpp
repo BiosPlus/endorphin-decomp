@@ -1690,3 +1690,38 @@ void fn_006D2250(void* self) {
     *reinterpret_cast<std::uint32_t*>(base + 0x04) = 0;
 }
 } // namespace lift_006D2250
+
+// [0x006D6CB0]
+namespace lift_006D6CB0 {
+struct Unknown;
+
+Unknown* ext_006B9960(Unknown* ecx);
+void ext_006D7380(void* self);
+
+// @name Unknown::ResetFlagsAndInitSubobject
+// @class Unknown
+// @summary Releases the object at field_0xFC, writes 0x01 to the flag block at 0x14C..0x156, clears byte 0x14F, then runs the initializer on the subobject at +0xB0.
+// @field Unknown +0xB0 void field_0xB0
+// @field Unknown +0x14C uint32_t field_0x14C
+// @field Unknown +0x14F uint8_t field_0x14F
+// @field Unknown +0x150 uint32_t field_0x150
+// @field Unknown +0x154 uint16_t field_0x154
+// @field Unknown +0x156 uint8_t field_0x156
+void fn_006D6CB0(void* ecx) {
+    ext_006D7380(ecx);
+
+    auto* self = static_cast<std::uint8_t*>(ecx);
+    const std::uint32_t v32 = 0x01010101u;
+    const std::uint16_t v16 = 0x0101u;
+    const std::uint8_t v8 = 0x01u;
+    const std::uint8_t zero = 0x00u;
+
+    std::memcpy(self + 0x14C, &v32, sizeof(v32));
+    std::memcpy(self + 0x150, &v32, sizeof(v32));
+    std::memcpy(self + 0x154, &v16, sizeof(v16));
+    std::memcpy(self + 0x156, &v8, sizeof(v8));
+    std::memcpy(self + 0x14F, &zero, sizeof(zero));
+
+    ext_006B9960(reinterpret_cast<Unknown*>(self + 0xB0));
+}
+} // namespace lift_006D6CB0
