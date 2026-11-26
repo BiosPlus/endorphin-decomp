@@ -1199,3 +1199,32 @@ extern uint32_t __cdecl sub_0079AD50(uint32_t hFile, int32_t lDistanceToMove, in
     return mem_00924184(hFile, lDistanceToMove, &distanceToMoveHigh, moveMethod);
 }
 } // namespace lift_0079AD50
+
+// [0x0079B0E0] sub_0079B0E0 (82 bytes)
+namespace lift_0079B0E0 {
+// IAT / data slots loaded by the original asm (kept by name for differential testing).
+extern uintptr_t mem_0092525C;  // IAT slot: fprintf
+extern uintptr_t mem_009251A8;  // IAT slot: &_iob
+extern uintptr_t mem_009251A4;  // IAT slot: vfprintf
+
+// Format-string literals in .rdata, referenced by address.
+extern const char mem_00AAFC50[];
+extern const char mem_00AAFC40[];
+
+// @name debugLogVPrintf
+// @summary If prefix is non-null, print it to stderr with format mem_00AAFC50, then vfprintf(stderr, fmt, args), then print mem_00AAFC40 to stderr.
+void fn_0079B0E0(const char* prefix, const char* fmt, va_list args) {
+    // stderr == &_iob[2] == _iob + 0x40
+    FILE* const stderr_stream = reinterpret_cast<FILE*>(mem_009251A8 + 0x40);
+    using fprintf_fn = int (*)(FILE*, const char*, ...);
+    using vfprintf_fn = int (*)(FILE*, const char*, va_list);
+    const auto fprintf_p = reinterpret_cast<fprintf_fn>(mem_0092525C);
+    const auto vfprintf_p = reinterpret_cast<vfprintf_fn>(mem_009251A4);
+
+    if (prefix != nullptr) {
+        fprintf_p(stderr_stream, mem_00AAFC50, prefix);
+    }
+    vfprintf_p(stderr_stream, fmt, args);
+    fprintf_p(stderr_stream, mem_00AAFC40);
+}
+} // namespace lift_0079B0E0

@@ -69543,6 +69543,12 @@
     "summary": "Compares up to count bytes of two buffers and returns the signed difference of the first mismatching byte.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x0079B0E0": {
+    "name": "debugLogVPrintf",
+    "signature": "void fn_0079B0E0(const char* prefix, const char* fmt, va_list args)",
+    "summary": "If prefix is non-null, print it to stderr with format mem_00AAFC50, then vfprintf(stderr, fmt, args), then print mem_00AAFC40 to stderr.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079B140": {
     "name": "DispatchThreeArgsToOptionalHook",
     "signature": "void fn_0079B140(uint32_t a1, uint32_t a2, uint32_t a3)",

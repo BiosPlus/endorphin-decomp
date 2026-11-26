@@ -1,0 +1,13 @@
+{
+  "va": "0x0079B0E0",
+  "size": 82,
+  "orig_symbol": "sub_0079B0E0",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "debugLogVPrintf",
+  "signature": "void fn_0079B0E0(const char* prefix, const char* fmt, va_list args)",
+  "summary": "If prefix is non-null, print it to stderr with format mem_00AAFC50, then vfprintf(stderr, fmt, args), then print mem_00AAFC40 to stderr.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:41:54Z"
+}
