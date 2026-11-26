@@ -1412,3 +1412,31 @@ uint32_t __thiscall sub_00573250(void* self) {
     return lift_field<uint32_t>(self, 0x04);
 }
 } // namespace lift_00573250
+
+// [0x00575DF0]
+namespace lift_00575DF0 {
+// IAT slot for MSVCR80!_invalid_parameter_noinfo (call dword ptr [0x925134]).
+extern void (*mem_00925134)(void);
+
+// @name ElemArray20::GetAt
+// @class ElemArray20
+// @summary Bounds-checked element address: begin + index*20, where the valid count is (end-begin)/20; calls _invalid_parameter_noinfo when begin is null or index is out of range.
+// @field ElemArray20 +0x04 uint32_t begin
+// @field ElemArray20 +0x08 uint32_t end
+void* __thiscall ElemArray20_GetAt(void* self, int32_t index) {
+    uint32_t begin = lift_field<uint32_t>(self, 0x4);
+    bool ok = false;
+    if (begin != 0) {
+        uint32_t end = lift_field<uint32_t>(self, 0x8);
+        int32_t size = static_cast<int32_t>(end - begin);
+        int32_t count = size / 20;
+        ok = static_cast<uint32_t>(index) < static_cast<uint32_t>(count);
+    }
+    if (!ok) {
+        mem_00925134();
+    }
+    begin = lift_field<uint32_t>(self, 0x4);
+    uint32_t addr = begin + static_cast<uint32_t>(index) * 20u;
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+} // namespace lift_00575DF0

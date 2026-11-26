@@ -25922,6 +25922,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00574CF0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00575DF0": {
+    "name": "ElemArray20::GetAt",
+    "class": "ElemArray20",
+    "signature": "void* __thiscall ElemArray20_GetAt(void* self, int32_t index)",
+    "summary": "Bounds-checked element address: begin + index*20, where the valid count is (end-begin)/20; calls _invalid_parameter_noinfo when begin is null or index is out of range.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00575E90": {
     "name": "fn_00575E90 (rangeLengthAdjustedOffset)",
     "signature": "uint32_t fn_00575E90(uint32_t first, uint32_t last, uint32_t dst, uint32_t /*unused4*/, uint32_t /*unused5*/, uint32_t /*unused6*/, uint32_t /*unused7*/, uint32_t /*unused8*/)",
