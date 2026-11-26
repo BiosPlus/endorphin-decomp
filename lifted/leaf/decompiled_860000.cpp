@@ -1149,3 +1149,22 @@ extern uint32_t fn_0086D210(void* self) {
     return base + extra + static_cast<uint32_t>(tail_value);
 }
 } // namespace lift_0086D210
+
+// [0x0086F050]
+namespace lift_0086F050 {
+extern void fn_0086F000(DWORD* dst);
+
+// @name UnpackDwords5ToLimbs16
+// @summary Zeroes a 20-DWORD destination array and unpacks 5 source DWORDs into 16-bit limbs at indices 10..19 (high 16 bits first, low 16 bits second).
+void __cdecl fn_0086F050(const DWORD* src, DWORD* dst) {
+    fn_0086F000(dst);
+    for (int16_t i = 4; i >= 0; --i) {
+        int32_t idx = i;
+        DWORD val = src[idx];
+        int16_t outIdx = static_cast<int16_t>(2 * i + 11);
+        dst[outIdx] = val & 0xFFFFu;
+        --outIdx;
+        dst[outIdx] = val >> 16;
+    }
+}
+} // namespace lift_0086F050
