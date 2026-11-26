@@ -1,0 +1,28 @@
+{
+  "va": "0x00413810",
+  "size": 60,
+  "orig_symbol": "sub_00413810",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "DebugDumpStreamBuffers",
+  "class": "Unknown",
+  "signature": "uint8_t* ios_of_stream_slot(int slot_value)",
+  "summary": "Calls the MFC80 thunk, then passes this-\u003efield_0x1ac to the narrow-stream rdbuf and this-\u003efield_0x1b0 to the wide-stream rdbuf.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1AC",
+      "type": "uint32_t",
+      "name": "field_0x1ac"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1B0",
+      "type": "uint32_t",
+      "name": "field_0x1b0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:53:53Z"
+}

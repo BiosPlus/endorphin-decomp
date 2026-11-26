@@ -1325,6 +1325,13 @@
     "summary": "Calls an MFC80 import (ord 578) on the embedded object at +0x12C, then tail-calls the base destructor.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00413810": {
+    "name": "DebugDumpStreamBuffers",
+    "class": "Unknown",
+    "signature": "uint8_t* ios_of_stream_slot(int slot_value)",
+    "summary": "Calls the MFC80 thunk, then passes this-\u003efield_0x1ac to the narrow-stream rdbuf and this-\u003efield_0x1b0 to the wide-stream rdbuf.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00413990": {
     "name": "sub_00413990",
     "class": "UnknownClass",

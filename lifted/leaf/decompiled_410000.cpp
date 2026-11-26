@@ -2087,3 +2087,48 @@ void Unknown_SendMessageAndInvalidate(void* self) {
     ext_InvalidateRect(target, nullptr, TRUE);
 }
 } // namespace lift_00416B20
+
+// [0x00413810] sub_00413810 (60 bytes)
+namespace lift_00413810 {
+// Known callee 0x006A6178: thunk_MFC80_ord_4339 (IAT jump thunk forwarding to MFC80!ord_4339.)
+extern void ext_006A6178();
+extern int mem_00924FA0;
+extern int mem_00924FA4;
+extern int mem_00924FA8;
+extern int mem_00924FAC;
+
+// @name DebugDumpStreamBuffers
+// @class Unknown
+// @summary Calls the MFC80 thunk, then passes this->field_0x1ac to the narrow-stream rdbuf and this->field_0x1b0 to the wide-stream rdbuf.
+// @field Unknown +0x1AC uint32_t field_0x1ac
+// @field Unknown +0x1B0 uint32_t field_0x1b0
+
+namespace {
+
+// Thiscall-style member taking one stack argument, which the callee pops (matches the asm's
+// push/call pairs with no caller cleanup).
+using RdbufFn = void* (__thiscall*)(void* self, uint32_t arg);
+
+// Resolves a std::ostream/wostream import slot to its basic_ios subobject:
+// obj = *slot; ios = obj + vbtable[1] (the vbase offset stored at vtable+4).
+uint8_t* ios_of_stream_slot(int slot_value) {
+    auto* obj = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(static_cast<uint32_t>(slot_value)));
+    auto* vtbl = *reinterpret_cast<uint8_t**>(obj);
+    int32_t vbase_offset = lift_field<int32_t>(vtbl, 4);
+    return obj + vbase_offset;
+}
+
+}  // namespace
+
+void fn_00413810(void* self) {
+    ext_006A6178();
+
+    uint32_t field_0x1ac = lift_field<uint32_t>(self, 0x1ac);
+    RdbufFn rdbuf_narrow = reinterpret_cast<RdbufFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FA4)));
+    rdbuf_narrow(ios_of_stream_slot(mem_00924FA0), field_0x1ac);
+
+    uint32_t field_0x1b0 = lift_field<uint32_t>(self, 0x1b0);
+    RdbufFn rdbuf_wide = reinterpret_cast<RdbufFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FAC)));
+    rdbuf_wide(ios_of_stream_slot(mem_00924FA8), field_0x1b0);
+}
+} // namespace lift_00413810
