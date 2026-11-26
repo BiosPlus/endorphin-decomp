@@ -961,3 +961,19 @@ void sub_0085A110(uint32_t removed_index, uint32_t* stored_index) {
     *stored_index = val - 1;
 }
 } // namespace lift_0085A110
+
+// [0x00859A20]
+namespace lift_00859A20 {
+// @name strcat_00859A20
+// @summary Appends NUL-terminated src to the end of NUL-terminated dst (cdecl strcat); returns dst.
+
+char* strcat_00859A20(char* dst, const char* src) {
+    char* end = dst;
+    while (*end != '\0') {
+        ++end;
+    }
+    while ((*end++ = *src++) != '\0') {
+    }
+    return dst;
+}
+} // namespace lift_00859A20

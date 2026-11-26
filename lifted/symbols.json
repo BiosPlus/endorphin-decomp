@@ -72333,6 +72333,12 @@
     "summary": "If ext_0086CCE0(s) returns 1, returns the DWORD at s+8; otherwise returns strlen(s).",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x00859A20": {
+    "name": "strcat_00859A20",
+    "signature": "char* strcat_00859A20(char* dst, const char* src)",
+    "summary": "Appends NUL-terminated src to the end of NUL-terminated dst (cdecl strcat); returns dst.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x00859A90": {
     "name": "releaseRefCountedBuffer",
     "signature": "void fn_00859A90(void* node)",

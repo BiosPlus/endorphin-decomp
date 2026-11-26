@@ -1,0 +1,13 @@
+{
+  "va": "0x00859A20",
+  "size": 47,
+  "orig_symbol": "sub_00859A20",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "strcat_00859A20",
+  "signature": "char* strcat_00859A20(char* dst, const char* src)",
+  "summary": "Appends NUL-terminated src to the end of NUL-terminated dst (cdecl strcat); returns dst.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:34:14Z"
+}
