@@ -1,0 +1,28 @@
+{
+  "va": "0x0052A020",
+  "size": 77,
+  "orig_symbol": "sub_0052A020",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "Unknown::destroyStringAndResetSubobject_0052A020",
+  "class": "Unknown",
+  "signature": "void fn_0052A020(void* self)",
+  "summary": "Calls ext_00532770 on the subobject at +0x1c, then runs the std::string destructor (IAT slot 0x924FF4) on self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:28:16Z"
+}

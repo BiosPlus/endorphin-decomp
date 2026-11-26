@@ -1494,3 +1494,27 @@ void* __thiscall sub_0052A230(void* self, const void* key) {
     return where;
 }
 } // namespace lift_0052A230
+
+// [0x0052A020] sub_0052A020 (77 bytes)
+namespace lift_0052A020 {
+// Known callee 0x00532770: Unknown::resetVtableDestroyStringNotifyDialog_00532770 (Resets the vtable to 0x009543B4, destroys the std::string at +0x18, then calls AddCharacterDialog::vfunc_3 on the subobject at +0x08.)
+extern void ext_00532770(void* self);
+extern int mem_00924FF4;
+
+// @name Unknown::destroyStringAndResetSubobject_0052A020
+// @class Unknown
+// @summary Calls ext_00532770 on the subobject at +0x1c, then runs the std::string destructor (IAT slot 0x924FF4) on self.
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1c void* field_0x1c
+void fn_0052A020(void* self) {
+    // Subobject at self+0x1c is passed as `this` to ext_00532770.
+    ext_00532770(static_cast<uint8_t*>(self) + 0x1c);
+
+    // Destructor for the std::string at self+0x00, resolved from the import slot.
+    // MSVC thiscall into MSVCP80; `self` goes in ecx.
+    using DtorFn = void (*)(void*);
+    auto dtor = reinterpret_cast<DtorFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    dtor(self);
+}
+} // namespace lift_0052A020

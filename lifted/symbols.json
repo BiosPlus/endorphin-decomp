@@ -21865,6 +21865,13 @@
     "summary": "Derived exception constructor: runs the ExceptionWithMessage base ctor with msg, installs the derived vtable at +0x00, and stores the second argument at +0x28.",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x0052A020": {
+    "name": "Unknown::destroyStringAndResetSubobject_0052A020",
+    "class": "Unknown",
+    "signature": "void fn_0052A020(void* self)",
+    "summary": "Calls ext_00532770 on the subobject at +0x1c, then runs the std::string destructor (IAT slot 0x924FF4) on self.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052A070": {
     "name": "sub_0052A070",
     "signature": "void* fn_0052A070(void* arg)",
