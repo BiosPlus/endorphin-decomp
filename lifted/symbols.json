@@ -58323,6 +58323,13 @@
     "summary": "Loads int64 at *self, divides by constant 0x0000000AC0E8D7B0, returns quotient as double (x87 ST0).",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006DAE00": {
+    "name": "Unknown::storeScaledInt64_006DAE00",
+    "class": "Unknown",
+    "signature": "void __fastcall fn_006DAE00(void* self, void* /*edx*/, double scale)",
+    "summary": "Multiplies constant 0xAC0E8D7B0 by the given double, truncates to int64 and stores it at this+0.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DBE30": {
     "name": "Unknown::storeInt64Result",
     "class": "Unknown",

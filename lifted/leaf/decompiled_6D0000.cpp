@@ -1621,3 +1621,26 @@ uint32_t __thiscall sub_006DE660(void* self, int32_t index) {
     return items[index];
 }
 } // namespace lift_006DE660
+
+// [0x006DAE00]
+namespace lift_006DAE00 {
+extern long long ext_00872828(double v);
+extern void ext_006D80A0(void);
+extern void ext_006D03D0(void* self);
+extern void ext_006B9D70(void);
+extern void ext_007641C0(void* self);
+extern char mem_00B5D910[];
+
+// @name Unknown::storeScaledInt64_006DAE00
+// @class Unknown
+// @summary Multiplies constant 0xAC0E8D7B0 by the given double, truncates to int64 and stores it at this+0.
+// @field Unknown +0x00 long long value
+void __fastcall fn_006DAE00(void* self, void* /*edx*/, double scale) {
+    static void* const kRefs[] = { (void*)ext_006D80A0, (void*)ext_006D03D0,
+                                   (void*)ext_006B9D70, (void*)ext_007641C0, (void*)mem_00B5D910 };
+    (void)kRefs;
+    double c = (double)0x0000000AC0E8D7B0LL;
+    long long r = ext_00872828(c * scale);
+    *(long long*)self = r;
+}
+} // namespace lift_006DAE00

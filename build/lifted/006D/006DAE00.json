@@ -1,0 +1,22 @@
+{
+  "va": "0x006DAE00",
+  "size": 47,
+  "orig_symbol": "sub_006DAE00",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::storeScaledInt64_006DAE00",
+  "class": "Unknown",
+  "signature": "void __fastcall fn_006DAE00(void* self, void* /*edx*/, double scale)",
+  "summary": "Multiplies constant 0xAC0E8D7B0 by the given double, truncates to int64 and stores it at this+0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "long long",
+      "name": "value"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@low",
+  "lifted_at": "2026-11-26T10:34:16Z"
+}
