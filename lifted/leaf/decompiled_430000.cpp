@@ -3571,3 +3571,42 @@ extern DWORD fn_0043D7C0(DWORD first, DWORD last, DWORD dest_last) {
     return result;
 }
 } // namespace lift_0043D7C0
+
+// [0x00434F90] sub_00434F90 (63 bytes)
+namespace lift_00434F90 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t __cdecl ext_00594000(void);
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430330 (sub_00430330).)
+extern void* __cdecl ext_00465B40(void);
+// Known callee 0x006A5E60: thunk_MFC80_ord_1123 (IAT jump thunk forwarding to MFC80!ord_1123.)
+extern void __cdecl ext_006A5E60(const char* text, uint32_t type, uint32_t helpId);
+extern const char mem_0092FA04[];
+
+// @name CheckMaxCharactersReached
+// @summary If the object at global+0x26C has field +0x20 == 100 and the object from ext_00465B40 reports true via vtable+0x11C, show "Maximum number of characters reached" and return 1; otherwise return 0.
+// @field UnknownObj +0x26C void* field_0x26c
+// @field UnknownObj +0x20 int32_t field_0x20
+extern uint8_t __cdecl fn_00434F90(void) {
+    // Helper: integer address -> pointer (target is 32-bit x86).
+    auto addr = [](uintptr_t a) { return reinterpret_cast<void*>(a); };
+
+    uint8_t result = 0;  // bl
+
+    const uintptr_t base = static_cast<uint32_t>(ext_00594000());
+    const uintptr_t inner = lift_field<uint32_t>(addr(base), 0x26C);
+    if (lift_field<int32_t>(addr(inner), 0x20) != 0x64) {
+        return result;
+    }
+
+    void* obj = ext_00465B40();
+    const uintptr_t vtbl = lift_field<uint32_t>(obj, 0);
+    const uintptr_t slot = lift_field<uint32_t>(addr(vtbl), 0x11C);
+    auto method = reinterpret_cast<uint8_t(__thiscall*)(void*)>(slot);
+    if (method(obj) == 0) {
+        return result;
+    }
+
+    ext_006A5E60(mem_0092FA04, 0, 0);
+    return 1;
+}
+} // namespace lift_00434F90

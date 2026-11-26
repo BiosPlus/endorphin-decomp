@@ -1,0 +1,27 @@
+{
+  "va": "0x00434F90",
+  "size": 63,
+  "orig_symbol": "sub_00434F90",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "CheckMaxCharactersReached",
+  "signature": "extern \"C\" uint8_t __cdecl fn_00434F90(void)",
+  "summary": "If the object at global+0x26C has field +0x20 == 100 and the object from ext_00465B40 reports true via vtable+0x11C, show \"Maximum number of characters reached\" and return 1; otherwise return 0.",
+  "fields": [
+    {
+      "class": "UnknownObj",
+      "offset": "+0x26C",
+      "type": "void*",
+      "name": "field_0x26c"
+    },
+    {
+      "class": "UnknownObj",
+      "offset": "+0x20",
+      "type": "int32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:00:34Z"
+}

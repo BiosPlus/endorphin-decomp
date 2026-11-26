@@ -10,5 +10,7 @@ namespace lifted_layout {
 struct UnknownObj_Fields {
     // +0x0   DWORD                    field_0x00  (evidence: 0x007CCA00)
     // +0xC   DWORD                    field_0x0c  (evidence: 0x007CCA00)
+    // +0x20  int32_t                  field_0x20  (evidence: 0x00434F90)
+    // +0x26C void*                    field_0x26c  (evidence: 0x00434F90)
 };
 } // namespace lifted_layout
