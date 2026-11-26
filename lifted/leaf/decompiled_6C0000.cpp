@@ -1996,3 +1996,27 @@ void* fn_006C3040(void* self) {
     return nullptr;
 }
 } // namespace lift_006C3040
+
+// [0x006C3120] sub_006C3120 (48 bytes)
+namespace lift_006C3120 {
+// @name Unknown::getFieldObjIfStatus5
+// @class Unknown
+// @summary Returns this->field_0x158 if its vtable slot 0 returns 5, otherwise nullptr.
+// @field Unknown +0x158 void* field_0x158
+void* fn_006C3120(void* self) {
+    void* obj = lift_field<void*>(self, 0x158);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+
+    using VirtualNoArgFn = int(__thiscall*)(void*);
+    void** vtable = *reinterpret_cast<void***>(obj);
+    auto slot0 = reinterpret_cast<VirtualNoArgFn>(vtable[0]);
+    if (slot0(obj) != 5) {
+        return nullptr;
+    }
+
+    // The original re-reads the field after the call; keep that behavior.
+    return lift_field<void*>(self, 0x158);
+}
+} // namespace lift_006C3120

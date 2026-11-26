@@ -56720,6 +56720,13 @@
     "summary": "Returns field_0x158 if non-null and its vtable[0]() returns 2, else 0.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C3120": {
+    "name": "Unknown::getFieldObjIfStatus5",
+    "class": "Unknown",
+    "signature": "void* fn_006C3120(void* self)",
+    "summary": "Returns this-\u003efield_0x158 if its vtable slot 0 returns 5, otherwise nullptr.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C31E0": {
     "name": "sub_006C31E0",
     "signature": "uint32_t sub_006C31E0(uint32_t ecx)",
