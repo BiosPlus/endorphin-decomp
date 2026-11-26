@@ -1,0 +1,28 @@
+{
+  "va": "0x0054EB50",
+  "size": 83,
+  "orig_symbol": "NMMatrixStackManager::vfunc_5",
+  "src_path": "src/classes/NMMatrixStackManager.cpp",
+  "lifted_path": "lifted/classes/NMMatrixStackManager.cpp",
+  "name": "NMMatrixStackManager::vfunc_5",
+  "class": "NMMatrixStackManager",
+  "signature": "void __thiscall fn_0054EB50(void* self, const float* matrix)",
+  "summary": "Copies a 4x4 matrix into the top slot of the matrix stack and loads it into OpenGL.",
+  "fields": [
+    {
+      "class": "NMMatrixStackManager",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "NMMatrixStackManager",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:48:52Z"
+}

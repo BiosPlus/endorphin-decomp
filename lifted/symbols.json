@@ -25082,6 +25082,13 @@
     "summary": "Validates the unsigned window [field_0x08, field_0x0C] of this, then calls glGetFloatv(GL_MODELVIEW_MATRIX, end - 0x40) to write the 16-float matrix into the 64-byte block ending at field_0x0C.",
     "lifted_path": "lifted/classes/NMMatrixStackManager.cpp"
   },
+  "0x0054EB50": {
+    "name": "NMMatrixStackManager::vfunc_5",
+    "class": "NMMatrixStackManager",
+    "signature": "void __thiscall fn_0054EB50(void* self, const float* matrix)",
+    "summary": "Copies a 4x4 matrix into the top slot of the matrix stack and loads it into OpenGL.",
+    "lifted_path": "lifted/classes/NMMatrixStackManager.cpp"
+  },
   "0x0054ECF0": {
     "name": "NMMatrixStackManager::popMatrix",
     "class": "NMMatrixStackManager",

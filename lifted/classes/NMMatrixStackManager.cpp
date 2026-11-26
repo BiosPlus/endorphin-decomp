@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/classes/NMMatrixStackManager.cpp
 #include "lift_compat.h"
+#include <cstring>
 
 // [0x0054EA30] NMMatrixStackManager::vfunc_1 (77 bytes)
 namespace lift_0054EA30 {
@@ -79,3 +80,37 @@ void __thiscall fn_0054ECF0(void* self) {
     glLoadMatrixf(reinterpret_cast<const float*>(static_cast<uintptr_t>(top)));
 }
 } // namespace lift_0054ECF0
+
+// [0x0054EB50]
+namespace lift_0054EB50 {
+// @name NMMatrixStackManager::vfunc_5
+// @class NMMatrixStackManager
+// @summary Copies a 4x4 matrix into the top slot of the matrix stack and loads it into OpenGL.
+// @field NMMatrixStackManager +0x08 uint32_t field_0x08
+// @field NMMatrixStackManager +0x0C uint32_t field_0x0C
+
+
+extern void (*mem_00925134)(void);
+extern void (__stdcall *mem_009254B4)(const float*);
+
+void __thiscall fn_0054EB50(void* self, const float* matrix) {
+    uint32_t begin = lift_field<uint32_t>(self, 0x08);
+    uint32_t end = lift_field<uint32_t>(self, 0x0C);
+
+    if (begin > end) {
+        mem_00925134();
+    }
+
+    uint32_t dst = end - 0x40u;
+    if (dst > lift_field<uint32_t>(self, 0x0C) || dst < lift_field<uint32_t>(self, 0x08)) {
+        mem_00925134();
+    }
+
+    if (dst >= lift_field<uint32_t>(self, 0x0C)) {
+        mem_00925134();
+    }
+
+    std::memcpy(reinterpret_cast<void*>(static_cast<uintptr_t>(dst)), matrix, 0x40);
+    mem_009254B4(matrix);
+}
+} // namespace lift_0054EB50
