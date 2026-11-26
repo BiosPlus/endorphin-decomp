@@ -2957,6 +2957,12 @@
     "summary": "Calls virtual slot 0 of obj with 1; if this+0x100 (gate) is set, calls virtual slot 1 of obj with 1 when the gate's nested value is 6 and the forwarded check returns 0, otherwise with 0.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430780": {
+    "name": "updateCmdUI_00430780",
+    "signature": "extern \"C\" void __thiscall sub_00430780(void* self, void* cmdUI)",
+    "summary": "Enables a command UI item and sets its state based on whether field_0x100's nested value equals 4.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x004307C0": {
     "name": "Unknown::NotifyFlagsFromManager_004307C0",
     "class": "Unknown",

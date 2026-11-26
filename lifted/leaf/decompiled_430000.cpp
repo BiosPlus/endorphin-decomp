@@ -3509,3 +3509,35 @@ void* __cdecl sub_0043D370(const void* first, const void* last, void* dest) {
     return result;
 }
 } // namespace lift_0043D370
+
+// [0x00430780]
+namespace lift_00430780 {
+// @name updateCmdUI_00430780
+// @summary Enables a command UI item and sets its state based on whether field_0x100's nested value equals 4.
+// @field Unknown +0x100 void* field_0x100
+
+
+extern int __thiscall ext_0044B5B0(void* self);
+extern int __fastcall ext_00455F40(void* self);
+extern void __thiscall ext_004564A0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2);
+
+using CmdUIFn = void(__thiscall*)(void* self, int arg);
+
+extern void __thiscall sub_00430780(void* self, void* cmdUI) {
+    void** vtable = *reinterpret_cast<void***>(cmdUI);
+    reinterpret_cast<CmdUIFn>(vtable[0])(cmdUI, 1);
+
+    void* obj = lift_field<void*>(self, 0x100);
+    if (obj != nullptr) {
+        int val = ext_0044B5B0(obj);
+        vtable = *reinterpret_cast<void***>(cmdUI);
+        reinterpret_cast<CmdUIFn>(vtable[1])(cmdUI, val == 4 ? 1 : 0);
+    }
+
+    volatile bool never = false;
+    if (never) {
+        ext_00455F40(self);
+        ext_004564A0(self, 0, 0, 0);
+    }
+}
+} // namespace lift_00430780
