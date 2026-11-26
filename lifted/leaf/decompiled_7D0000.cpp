@@ -1134,3 +1134,31 @@ void sub_007DB9E0(void* eax, const void* ecx) {
     lift_field<float>(eax, 0x20) = 0.0f;
 }
 } // namespace lift_007DB9E0
+
+// [0x007D6290]
+namespace lift_007D6290 {
+// @name setOwnedState
+// @summary Updates state at +0x10 and invokes cleanup callback if transitioning from 1 while unowned
+// @field Obj +0x00 uint32_t field_0x00
+// @field Obj +0x10 uint32_t field_0x10
+// @field Obj +0x14 uint32_t field_0x14
+// @field Obj +0x1c uint8_t* field_0x1c
+
+void sub_007D6290(uint8_t* obj, uint32_t new_val) {
+    uint32_t old_val = lift_field<uint32_t>(obj, 0x10);
+    if (old_val == new_val) {
+        return;
+    }
+
+    if (lift_field<uint32_t>(obj, 0x14) == 0 && old_val == 1) {
+        uint32_t arg = lift_field<uint32_t>(obj, 0x00);
+        if (arg != 0) {
+            uint8_t* vtable_or_ctx = lift_field<uint8_t*>(obj, 0x1c);
+            auto fn = lift_field<void (*)(uint32_t)>(vtable_or_ctx, 0x10);
+            fn(arg);
+        }
+    }
+
+    lift_field<uint32_t>(obj, 0x10) = new_val;
+}
+} // namespace lift_007D6290
