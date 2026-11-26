@@ -69684,6 +69684,13 @@
     "summary": "If +0x20 is zero, returns atoi(strings[index]) (0 if out of range); otherwise reads a",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x0078C8C0": {
+    "name": "Unknown::getIndexedFieldPointer",
+    "class": "Unknown",
+    "signature": "static inline uint8_t* lift_guest_ptr(uint32_t guestAddr)",
+    "summary": "Clears *outValue, then reads a 32-bit value at element[index] + fieldOffset (byte-swapped if requested); returns a pointer just past that value, or null when the value is zero or the index is out of range.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078CA10": {
     "name": "SwitchIndexByteTable_0078CA10",
     "signature": "const unsigned char* sub_0078CA10()",

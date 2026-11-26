@@ -564,6 +564,7 @@ struct Unknown_Fields {
     // +0x20  int32_t field_0x20 (entry count)  (evidence: 0x006DE770) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint32_t                 embedded_array_data_ptr  (evidence: 0x006E99C0) // CONFLICT: multiple definitions at +0x20
     // +0x20  std::uint32_t*           entries  (evidence: 0x006FDF90) // CONFLICT: multiple definitions at +0x20
+    // +0x20  int32_t                  fieldOffset  (evidence: 0x0078C8C0) // CONFLICT: multiple definitions at +0x20
     // +0x20  DWORD                    field_0x20  (evidence: 0x0045BC30, 0x00465EF0, 0x00538FA0, 0x00599E70, 0x00622B40, 0x00624540, 0x00642010, 0x006423D0, 0x006BA780, 0x006FC200, 0x006FDFC0, 0x0078C230, 0x0078C3A0) // CONFLICT: multiple definitions at +0x20
     // +0x20  DWORD*                   field_0x20  (evidence: 0x006FC200, 0x006FDF30) // CONFLICT: multiple definitions at +0x20
     // +0x20  HMODULE                  field_0x20  (evidence: 0x00441020, 0x0044B6A0) // CONFLICT: multiple definitions at +0x20
@@ -615,6 +616,7 @@ struct Unknown_Fields {
     // +0x24  float                    z  (evidence: 0x004B1130) // CONFLICT: multiple definitions at +0x24
     // +0x28  std::uint32_t            cachedEnd  (evidence: 0x00790EE0) // CONFLICT: multiple definitions at +0x28
     // +0x28  void**                   data_28  (evidence: 0x0078D6B0) // CONFLICT: multiple definitions at +0x28
+    // +0x28  int32_t                  elementCount  (evidence: 0x0078C8C0) // CONFLICT: multiple definitions at +0x28
     // +0x28  uint32_t cursor (0 = needs recompute; written on exit)  (evidence: 0x00796660) // CONFLICT: multiple definitions at +0x28
     // +0x28  Buffer                   field_0x28  (evidence: 0x0071E5F0) // CONFLICT: multiple definitions at +0x28
     // +0x28  DWORD                    field_0x28  (evidence: 0x005B34C0, 0x0078C230, 0x0078C3A0, 0x00798710) // CONFLICT: multiple definitions at +0x28
@@ -635,6 +637,7 @@ struct Unknown_Fields {
     // +0x28  std::string field_0x28 (compared against "" via MSVCP80 operator!=)  (evidence: 0x00440770, 0x00441C10) // CONFLICT: multiple definitions at +0x28
     // +0x29  uint8_t field_0x29 (flag byte)  (evidence: 0x00427370, 0x0043CB50, 0x0046FB80, 0x00476B80, 0x00486D40, 0x004928C0, 0x0052A1A0, 0x005AC820, 0x005E0AE0, 0x005E2C70, 0x00624CF0, 0x0065B120)
     // +0x2C  void* field_0x2C (read through the pointer at +0x1C)  (evidence: 0x007C15A0, 0x007CAF70) // CONFLICT: multiple definitions at +0x2C
+    // +0x2C  uint32_t                 elementTable  (evidence: 0x0078C8C0) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  int32_t*                 elements  (evidence: 0x006FA460) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  void**                   elements_begin  (evidence: 0x00665B80) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  float                    field_0x2C  (evidence: 0x004B10D0, 0x004CCC30, 0x004CF910, 0x00538FA0, 0x0055CD10, 0x005ACB00, 0x005ACD30, 0x005DC650, 0x00622B40, 0x00629E80, 0x00629EE0, 0x007CAF70, 0x007CCAB0) // CONFLICT: multiple definitions at +0x2C

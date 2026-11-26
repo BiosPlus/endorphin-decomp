@@ -1922,3 +1922,51 @@ int32_t __thiscall fn_0078C690(void* self, int32_t index, uint8_t flag) {
     return static_cast<int32_t>(value);
 }
 } // namespace lift_0078C690
+
+// [0x0078C8C0] sub_0078C8C0 (96 bytes)
+namespace lift_0078C8C0 {
+// @name Unknown::getIndexedFieldPointer
+// @class Unknown
+// @summary Clears *outValue, then reads a 32-bit value at element[index] + fieldOffset (byte-swapped if requested); returns a pointer just past that value, or null when the value is zero or the index is out of range.
+// @field Unknown +0x20 int32_t fieldOffset
+// @field Unknown +0x28 int32_t elementCount
+// @field Unknown +0x2c uint32_t elementTable
+
+// Guest 32-bit address -> host pointer. The table and elements hold 32-bit guest addresses.
+static inline uint8_t* lift_guest_ptr(uint32_t guestAddr) {
+    return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(guestAddr));
+}
+
+void* fn_0078C8C0(void* self, int32_t index, uint8_t swapBytes, int32_t* outValue) {
+    *outValue = 0;
+
+    const int32_t fieldOffset = lift_field<int32_t>(self, 0x20);
+    if (fieldOffset == 0) {
+        return nullptr;
+    }
+
+    const int32_t elementCount = lift_field<int32_t>(self, 0x28);
+    if (index >= elementCount) {
+        return nullptr;
+    }
+
+    const uint32_t tableAddr = lift_field<uint32_t>(self, 0x2c);
+    const uint32_t* table = reinterpret_cast<const uint32_t*>(lift_guest_ptr(tableAddr));
+    const uint32_t elementAddr = table[index];
+    uint8_t* element = lift_guest_ptr(elementAddr);
+
+    uint32_t value;
+    std::memcpy(&value, element + fieldOffset, sizeof(value));
+    if (swapBytes != 0) {
+        value = ((value & 0x000000FFu) << 24) | ((value & 0x0000FF00u) << 8) |
+                ((value & 0x00FF0000u) >> 8) | ((value & 0xFF000000u) >> 24);
+    }
+
+    if (value == 0) {
+        return nullptr;
+    }
+
+    *outValue = static_cast<int32_t>(value);
+    return element + fieldOffset + 4;
+}
+} // namespace lift_0078C8C0
