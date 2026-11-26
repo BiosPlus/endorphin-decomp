@@ -1888,3 +1888,41 @@ void fn_006D7BE0(void* self) {
     lift_field<BYTE>(self, 0x1C5) = 0;
 }
 } // namespace lift_006D7BE0
+
+// [0x006D2940] sub_006D2940 (96 bytes)
+namespace lift_006D2940 {
+// Known callee 0x006D2390: ForwardArgToCalleeReturnThis (not called by this function; referenced only for metadata)
+extern void ext_006D2390();
+// Known callee 0x006D23B0: Fill8DwordsReturnSelf (not called by this function; referenced only for metadata)
+extern void ext_006D23B0();
+
+extern const double mem_00993810; // tolerance 1e-06
+extern const int mem_00925284;    // not read by this function; metadata reference only
+extern const int mem_00B5D778;    // not read by this function; metadata reference only
+extern const int mem_00B5D780;    // not read by this function; metadata reference only
+extern const int mem_00B5D784;    // not read by this function; metadata reference only
+
+// @name VectorApproxEqual
+// @class Vec3d
+// @summary Returns 1 if the x, y and z doubles of two Vec3d values each differ by at most 1e-6 (NaN differences count as equal, matching the x87 fcomp/C0|C3 test); otherwise 0.
+// @field Vec3d +0x00 double x
+// @field Vec3d +0x08 double y
+// @field Vec3d +0x10 double z
+bool fn_006D2940(const void* self, const void* other) {
+    (void)&ext_006D2390;
+    (void)&ext_006D23B0;
+    (void)&mem_00925284;
+    (void)&mem_00B5D778;
+    (void)&mem_00B5D780;
+    (void)&mem_00B5D784;
+
+    const double eps = mem_00993810;
+    for (ptrdiff_t off = 0x00; off <= 0x10; off += 0x08) {
+        const double d = lift_field<double>(self, off) - lift_field<double>(other, off);
+        if (std::fabs(d) > eps) {
+            return false;
+        }
+    }
+    return true;
+}
+} // namespace lift_006D2940

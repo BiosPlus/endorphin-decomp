@@ -59445,6 +59445,13 @@
     "summary": "Returns the dot product of this and another 3-component double vector.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D2940": {
+    "name": "VectorApproxEqual",
+    "class": "Vec3d",
+    "signature": "bool fn_006D2940(const void* self, const void* other)",
+    "summary": "Returns 1 if the x, y and z doubles of two Vec3d values each differ by at most 1e-6 (NaN differences count as equal, matching the x87 fcomp/C0|C3 test); otherwise 0.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D2A30": {
     "name": "sub_006D2A30",
     "signature": "extern \"C\" void* __fastcall fn_006D2A30(void* self)",
