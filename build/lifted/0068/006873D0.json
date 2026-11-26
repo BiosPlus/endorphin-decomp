@@ -1,0 +1,45 @@
+{
+  "va": "0x006873D0",
+  "size": 78,
+  "orig_symbol": "sub_006873D0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "copyBackwardElem0x2C",
+  "signature": "void* __cdecl sub_006873D0(void* first, void* last, void* dest)",
+  "summary": "Copies a range of 0x2C-byte elements backward, copying 4 dwords and assigning std::string at +0x10.",
+  "fields": [
+    {
+      "class": "Elem0x2C",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Elem0x2C",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Elem0x2C",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Elem0x2C",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Elem0x2C",
+      "offset": "+0x10",
+      "type": "std::string",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:30:55Z"
+}
