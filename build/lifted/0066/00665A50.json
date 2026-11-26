@@ -1,0 +1,22 @@
+{
+  "va": "0x00665A50",
+  "size": 64,
+  "orig_symbol": "MacroCommand::vfunc_1",
+  "src_path": "src/classes/MacroCommand.cpp",
+  "lifted_path": "lifted/classes/MacroCommand.cpp",
+  "name": "MacroCommand::vfunc_1",
+  "class": "MacroCommand",
+  "signature": "void fn_00665A50(void* self)",
+  "summary": "Walks the command list anchored at this+0x30 and invokes virtual slot 1 on each element's command object.",
+  "fields": [
+    {
+      "class": "MacroCommand",
+      "offset": "+0x30",
+      "type": "void*",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:04:40Z"
+}

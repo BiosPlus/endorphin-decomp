@@ -46112,6 +46112,13 @@
     "summary": "Iterates a checked std::list\u003cT*\u003e range [first, last) and invokes the deleting destructor on each non-null element.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00665A50": {
+    "name": "MacroCommand::vfunc_1",
+    "class": "MacroCommand",
+    "signature": "void fn_00665A50(void* self)",
+    "summary": "Walks the command list anchored at this+0x30 and invokes virtual slot 1 on each element's command object.",
+    "lifted_path": "lifted/classes/MacroCommand.cpp"
+  },
   "0x00665B80": {
     "name": "Unknown::ReleaseElements_00665B80",
     "class": "Unknown",
