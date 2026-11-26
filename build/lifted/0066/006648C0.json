@@ -1,0 +1,13 @@
+{
+  "va": "0x006648C0",
+  "size": 72,
+  "orig_symbol": "sub_006648C0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "MakeFormattedStdString",
+  "signature": "void* fn_006648C0(int32_t arg_04, double value, int32_t ivalue, int32_t arg_14, int32_t arg_18, int32_t arg_1C, void* out)",
+  "summary": "Formats an int and a double with _snprintf into a 50-byte stack buffer, constructs the std::string at `out` from it, and returns `out`.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:19:34Z"
+}

@@ -2442,3 +2442,30 @@ void* __cdecl sub_00662B20(void* dst, void* src) {
     return dst;
 }
 } // namespace lift_00662B20
+
+// [0x006648C0] sub_006648C0 (72 bytes)
+namespace lift_006648C0 {
+// MSVCR80!_snprintf, called through IAT slot 0x009251E0.
+extern int __cdecl ext_009251E0(char* buffer, size_t count, const char* format, ...);
+// MSVCP80 std::basic_string<char>::basic_string(const char*), called through IAT slot 0x00924FE4.
+// Thiscall: `self` arrives in ecx, the C string is the single stack argument.
+extern void* __thiscall ext_00924FE4(void* self, const char* text);
+// Format string literal in .rdata at 0x009879C8 (contents not recovered here).
+extern const char mem_009879C8[];
+
+// @name MakeFormattedStdString
+// @summary Formats an int and a double with _snprintf into a 50-byte stack buffer, constructs the std::string at `out` from it, and returns `out`.
+// Stack args (cdecl): +0x04 unused, +0x08 double value, +0x10 int ivalue, +0x14/+0x18/+0x1C unused, +0x20 out (std::string*).
+void* fn_006648C0(int32_t arg_04, double value, int32_t ivalue,
+                  int32_t arg_14, int32_t arg_18, int32_t arg_1C, void* out) {
+    (void)arg_04;
+    (void)arg_14;
+    (void)arg_18;
+    (void)arg_1C;
+
+    char buffer[0x32];
+    ext_009251E0(buffer, sizeof(buffer), mem_009879C8, ivalue, value);
+    ext_00924FE4(out, buffer);
+    return out;
+}
+} // namespace lift_006648C0

@@ -46185,6 +46185,12 @@
     "summary": "Pure jump thunk forwarding to sub_006633B0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x006648C0": {
+    "name": "MakeFormattedStdString",
+    "signature": "void* fn_006648C0(int32_t arg_04, double value, int32_t ivalue, int32_t arg_14, int32_t arg_18, int32_t arg_1C, void* out)",
+    "summary": "Formats an int and a double with _snprintf into a 50-byte stack buffer, constructs the std::string at `out` from it, and returns `out`.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x006649B0": {
     "name": "sub_006649B0_isWhitespace",
     "signature": "int sub_006649B0_isWhitespace(unsigned char c)",
