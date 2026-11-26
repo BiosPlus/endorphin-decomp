@@ -1,0 +1,22 @@
+{
+  "va": "0x00660710",
+  "size": 95,
+  "orig_symbol": "sub_00660710",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "SortEntry::insertionSortTail",
+  "class": "SortEntry",
+  "signature": "void fn_00660710(void* first, void* last)",
+  "summary": "Walks backward from last-1 over 32-byte entries, copying each into a temp and calling the helper while more than one entry remains before it.",
+  "fields": [
+    {
+      "class": "SortEntry",
+      "offset": "+0x1C",
+      "type": "int32_t",
+      "name": "key"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T12:09:10Z"
+}

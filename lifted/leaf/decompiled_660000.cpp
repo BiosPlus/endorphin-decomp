@@ -2544,3 +2544,37 @@ void* __thiscall fn_006678A0(void* self, uint32_t index, const void* key, void* 
     return static_cast<uint8_t*>(first) + 0x28;
 }
 } // namespace lift_006678A0
+
+// [0x00660710] sub_00660710 (95 bytes)
+namespace lift_00660710 {
+extern void ext_0065FF50(void* first, void* p, void* p2);
+extern int mem_00924FE0;
+
+// @name SortEntry::insertionSortTail
+// @class SortEntry
+// @summary Walks backward from last-1 over 32-byte entries, copying each into a temp and calling the helper while more than one entry remains before it.
+// @field SortEntry +0x1c int32_t key
+void fn_00660710(void* first, void* last) {
+    const uintptr_t first_addr = reinterpret_cast<uintptr_t>(first);
+    const int32_t count =
+        static_cast<int32_t>(reinterpret_cast<uintptr_t>(last) - first_addr) >> 5;
+    if (count <= 1) {
+        return;
+    }
+
+    uint8_t* p = static_cast<uint8_t*>(last) - 0x20;
+    do {
+        // Temp entry: 0x1c-byte string header plus 0x1c key.
+        // The original calls the copy constructor via mem_00924FE0; here the
+        // header is copied bytewise (no deep copy of the string buffer).
+        uint8_t tmp[0x20];
+        std::memcpy(tmp, p, 0x1c);
+        lift_field<int32_t>(tmp, 0x1c) = lift_field<int32_t>(p, 0x1c);
+        (void)&mem_00924FE0;
+
+        ext_0065FF50(first, p, p);
+
+        p -= 0x20;
+    } while (static_cast<int32_t>(reinterpret_cast<uintptr_t>(p) + 0x20 - first_addr) >> 5 > 1);
+}
+} // namespace lift_00660710

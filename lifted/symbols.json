@@ -46448,6 +46448,13 @@
     "summary": "Returns the last element of the global vector at mem_00B59080..mem_00B59084, or 0 if empty; validates iterator range first.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00660710": {
+    "name": "SortEntry::insertionSortTail",
+    "class": "SortEntry",
+    "signature": "void fn_00660710(void* first, void* last)",
+    "summary": "Walks backward from last-1 over 32-byte entries, copying each into a temp and calling the helper while more than one entry remains before it.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00660870": {
     "name": "StringVector::erase",
     "class": "StringVector",
