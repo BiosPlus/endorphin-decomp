@@ -8,6 +8,9 @@
 // Recovered field layout for Control:
 namespace lifted_layout {
 struct Control_Fields {
-    // +0x20  uint32_t                 hwnd  (evidence: 0x006A8140, 0x006A8160)
+    // +0x20  uint32_t                 field_0x20  (evidence: 0x00404770) // CONFLICT: multiple definitions at +0x20
+    // +0x20  uint32_t                 hwnd  (evidence: 0x006A8140, 0x006A8160) // CONFLICT: multiple definitions at +0x20
+    // +0x60  uint32_t                 field_0x60  (evidence: 0x00404770)
+    // +0x64  uint32_t                 field_0x64  (evidence: 0x00404770)
 };
 } // namespace lifted_layout

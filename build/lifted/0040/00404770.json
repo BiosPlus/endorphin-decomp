@@ -1,0 +1,34 @@
+{
+  "va": "0x00404770",
+  "size": 64,
+  "orig_symbol": "sub_00404770",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "Control::SetFontAndNotify",
+  "class": "Control",
+  "signature": "static inline uint32_t\u0026 field_at(uint32_t base, uint32_t off)",
+  "summary": "Stores arg1/arg2 at +0x60/+0x64, then sends WM_SETFONT (0x30) to the HWND at +0x20 using the font handle (+4) of arg2 if set, else of arg1.",
+  "fields": [
+    {
+      "class": "Control",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Control",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "field_0x60"
+    },
+    {
+      "class": "Control",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:03:56Z"
+}

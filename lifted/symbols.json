@@ -486,6 +486,13 @@
     "summary": "Sets mode at +0x5c if \u003c= 2, toggles style 0x2000 via MFC80!ord_4115 and invalidates window if +0x20 is non-null.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00404770": {
+    "name": "Control::SetFontAndNotify",
+    "class": "Control",
+    "signature": "static inline uint32_t\u0026 field_at(uint32_t base, uint32_t off)",
+    "summary": "Stores arg1/arg2 at +0x60/+0x64, then sends WM_SETFONT (0x30) to the HWND at +0x20 using the font handle (+4) of arg2 if set, else of arg1.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00404BE0": {
     "name": "InitWithMode",
     "signature": "void* fn_00404BE0(void* self, uint32_t mode)",

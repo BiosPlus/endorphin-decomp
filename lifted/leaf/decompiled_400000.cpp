@@ -1603,3 +1603,42 @@ void fn_00406590(void* self, uint32_t flag) {
 }
 } // namespace lift_005597C0
 } // namespace lift_00406590
+
+// [0x00404770]
+namespace lift_00404770 {
+// @name Control::SetFontAndNotify
+// @class Control
+// @summary Stores arg1/arg2 at +0x60/+0x64, then sends WM_SETFONT (0x30) to the HWND at +0x20 using the font handle (+4) of arg2 if set, else of arg1.
+// @field Control +0x20 uint32_t field_0x20
+// @field Control +0x60 uint32_t field_0x60
+// @field Control +0x64 uint32_t field_0x64
+
+// Indirect USER32!SendMessageA import; original asm does `call dword ptr [0x925694]`.
+extern uint32_t mem_00925694;
+extern uint32_t ext_SendMessageA(uint32_t hwnd, uint32_t msg, uint32_t wparam, uint32_t lparam);
+
+static inline uint32_t& field_at(uint32_t base, uint32_t off) {
+    return *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(base + off));
+}
+
+// Address of the IAT slot (the original's `call dword ptr [0x925694]` operand).
+static inline uint32_t sendmessage_slot() {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00925694));
+}
+
+// thiscall-style: this in ecx; stdcall args, callee pops 8 (ret 8).
+void sub_00404770(uint32_t ecx, uint32_t arg1, uint32_t arg2) {
+    field_at(ecx, 0x60) = arg1;
+    field_at(ecx, 0x64) = arg2;
+
+    if (arg2 != 0) {
+        uint32_t font = field_at(arg2, 4);
+        ext_SendMessageA(field_at(ecx, 0x20), 0x30, font, 1);
+        return;
+    }
+    if (arg1 != 0) {
+        uint32_t font = field_at(arg1, 4);
+        ext_SendMessageA(field_at(ecx, 0x20), 0x30, font, 1);
+    }
+}
+} // namespace lift_00404770
