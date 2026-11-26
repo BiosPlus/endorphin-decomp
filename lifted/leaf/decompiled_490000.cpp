@@ -1466,3 +1466,24 @@ bool __thiscall sub_004925D0(void* self, uint32_t mode) {
     return false;
 }
 } // namespace lift_004925D0
+
+// [0x00493330]
+namespace lift_00493330 {
+extern void ext_006A5C5C(void*);
+
+// @name Tree_erase
+// @summary Recursively frees a red-black tree's nodes starting from the given node.
+// @field TreeNode +0x00 void* left
+// @field TreeNode +0x08 void* right
+// @field TreeNode +0x21 uint8_t is_nil
+void __thiscall fn_00493330(void* self, void* node) {
+    uint8_t* cur = reinterpret_cast<uint8_t*>(node);
+    while (*reinterpret_cast<uint8_t*>(cur + 0x21) == 0) {
+        void* right = *reinterpret_cast<void**>(cur + 0x08);
+        fn_00493330(self, right);
+        uint8_t* left = *reinterpret_cast<uint8_t**>(cur + 0x00);
+        ext_006A5C5C(cur);
+        cur = left;
+    }
+}
+} // namespace lift_00493330

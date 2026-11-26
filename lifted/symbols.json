@@ -9043,6 +9043,12 @@
     "summary": "For count 64-byte slots starting at dst, copies the 64-byte block at src into each non-null slot.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x004817A0": {
+    "name": "fillVec4Array",
+    "signature": "void sub_004817A0(void* dst, uint32_t count, const void* src)",
+    "summary": "Fills an array of 16-byte (4-float) elements with a single 4-float value.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00481B50": {
     "name": "std_equal_u32",
     "signature": "bool __cdecl sub_00481B50(uint32_t* first1, uint32_t* last1, uint32_t* cont2, uint32_t* first2)",

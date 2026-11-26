@@ -1,0 +1,33 @@
+{
+  "va": "0x00493330",
+  "size": 53,
+  "orig_symbol": "sub_00493330",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "Tree_erase",
+  "signature": "void __thiscall fn_00493330(void* self, void* node)",
+  "summary": "Recursively frees a red-black tree's nodes starting from the given node.",
+  "fields": [
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "left"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "right"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x21",
+      "type": "uint8_t",
+      "name": "is_nil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T10:43:43Z"
+}
