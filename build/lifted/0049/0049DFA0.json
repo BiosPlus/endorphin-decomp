@@ -1,0 +1,28 @@
+{
+  "va": "0x0049DFA0",
+  "size": 96,
+  "orig_symbol": "sub_0049DFA0",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "propagateArgRecursive",
+  "class": "unknown",
+  "signature": "void __thiscall fn_0049DFA0(void* self, uint32_t arg)",
+  "summary": "Stores arg at this+0x130, then walks the circular list headed at this+0xDC and recursively calls itself on each node's embedded child (node+0x8) whose flag byte at node+0x6C is zero.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x130",
+      "type": "uint32_t",
+      "name": "field_0x130"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0xE0",
+      "type": "void* field_0xE0 (list head-\u003enext, used as iterator end",
+      "name": "sentinel)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T12:08:50Z"
+}

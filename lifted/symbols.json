@@ -11978,6 +11978,13 @@
     "summary": "Returns arg1 after forwarding it to 0x0046F7D0 unless byte +0x54 is zero and arg2 == 0x1B3, in which case it initializes the sub-object at +0x10C and returns arg2.",
     "lifted_path": "lifted/NMData/State.cpp"
   },
+  "0x0049DFA0": {
+    "name": "propagateArgRecursive",
+    "class": "unknown",
+    "signature": "void __thiscall fn_0049DFA0(void* self, uint32_t arg)",
+    "summary": "Stores arg at this+0x130, then walks the circular list headed at this+0xDC and recursively calls itself on each node's embedded child (node+0x8) whose flag byte at node+0x6C is zero.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049E000": {
     "name": "NMData::State::vfunc_21_off_8",
     "class": "NMData::State",

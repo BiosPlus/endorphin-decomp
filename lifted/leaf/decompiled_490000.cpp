@@ -1559,3 +1559,37 @@ extern void* fn_00494070(uint32_t mask, void* obj) {
     return nullptr;
 }
 } // namespace lift_00494070
+
+// [0x0049DFA0]
+namespace lift_0049DFA0 {
+extern void (__cdecl *mem_00925134)();
+
+// @name propagateArgRecursive
+// @class unknown
+// @summary Stores arg at this+0x130, then walks the circular list headed at this+0xDC and recursively calls itself on each node's embedded child (node+0x8) whose flag byte at node+0x6C is zero.
+// @field unknown +0x130 uint32_t field_0x130
+// @field unknown +0xE0 void* field_0xE0 (list head->next, used as iterator end sentinel)
+void __thiscall fn_0049DFA0(void* self, uint32_t arg) {
+    lift_field<uint32_t>(self, 0x130) = arg;
+
+    uint8_t* head = reinterpret_cast<uint8_t*>(self) + 0xDC;
+    uint8_t* end = lift_field<uint8_t*>(head, 4);
+    uint8_t* node = lift_field<uint8_t*>(end, 0);
+
+    while (node != end) {
+        if (node == lift_field<uint8_t*>(head, 4)) {
+            mem_00925134();
+        }
+        if (lift_field<uint8_t>(node, 0x6C) == 0) {
+            if (node == lift_field<uint8_t*>(head, 4)) {
+                mem_00925134();
+            }
+            fn_0049DFA0(node + 8, arg);
+        }
+        if (node == lift_field<uint8_t*>(head, 4)) {
+            mem_00925134();
+        }
+        node = lift_field<uint8_t*>(node, 0);
+    }
+}
+} // namespace lift_0049DFA0
