@@ -70270,6 +70270,12 @@
     "summary": "Forwards to the getter at 0x006E7460 with the global object at 0x00B61758 as `this`.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007AE140": {
+    "name": "getComputerNameOrFallback",
+    "signature": "extern \"C\" uint8_t sub_007AE140(char* buf, uint32_t size)",
+    "summary": "Retrieves the local computer name into a buffer, falling back to a default string on failure.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AE1D0": {
     "name": "sub_007AE1D0",
     "signature": "extern \"C\" void* __fastcall fn_007AE1D0(void* self, int edx_unused, unsigned int flags)",

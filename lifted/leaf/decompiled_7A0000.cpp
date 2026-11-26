@@ -1203,3 +1203,22 @@ void __fastcall sub_007AE020(void* self) {
     mem_009251D8(lift_field<void*>(self, 0x04));
 }
 } // namespace lift_007AE020
+
+// [0x007AE140]
+namespace lift_007AE140 {
+// @name getComputerNameOrFallback
+// @summary Retrieves the local computer name into a buffer, falling back to a default string on failure.
+
+extern uint32_t mem_00924198;
+extern const char mem_00AAC03C[];
+
+extern uint8_t sub_007AE140(char* buf, uint32_t size) {
+    using GetComputerNameA_t = int32_t (__stdcall*)(char*, uint32_t*);
+    auto fn = reinterpret_cast<GetComputerNameA_t>(static_cast<uintptr_t>(mem_00924198));
+    if (fn(buf, &size) != 0) {
+        return 1;
+    }
+    std::strcpy(buf, mem_00AAC03C);
+    return 0;
+}
+} // namespace lift_007AE140

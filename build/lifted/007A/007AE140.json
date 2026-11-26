@@ -1,0 +1,13 @@
+{
+  "va": "0x007AE140",
+  "size": 80,
+  "orig_symbol": "sub_007AE140",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "getComputerNameOrFallback",
+  "signature": "extern \"C\" uint8_t sub_007AE140(char* buf, uint32_t size)",
+  "summary": "Retrieves the local computer name into a buffer, falling back to a default string on failure.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-neon@low",
+  "lifted_at": "2026-11-26T11:42:07Z"
+}
