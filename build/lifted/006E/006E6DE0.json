@@ -1,0 +1,13 @@
+{
+  "va": "0x006E6DE0",
+  "size": 96,
+  "orig_symbol": "sub_006E6DE0",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "testFlagBitByMode",
+  "signature": "bool fn_006E6DE0(void* self, uint32_t which)",
+  "summary": "Tests a mode-selected bit (1-\u003ebit0, 2-\u003ebit6, 4-\u003ebit7) of a subobject's flag word, or a mask at +0xB0 of the linked object when the primary flag is zero.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T12:08:50Z"
+}

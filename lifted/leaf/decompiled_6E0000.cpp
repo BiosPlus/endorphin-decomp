@@ -1457,3 +1457,36 @@ void fn_006E5750(void* self, uint32_t flags) {
     }
 }
 } // namespace lift_006E5750
+
+// [0x006E6DE0] sub_006E6DE0 (96 bytes)
+namespace lift_006E6DE0 {
+// Known callee 0x0071E680: ext_0071E680 (Returns pointer to subobject/field at offset +0x40.)
+extern void* __fastcall ext_0071E680(void* self);
+
+// @name testFlagBitByMode
+// @summary Tests a mode-selected bit (1->bit0, 2->bit6, 4->bit7) of a subobject's flag word, or a mask at +0xB0 of the linked object when the primary flag is zero.
+// @field +0x00 uint32_t field_0x00
+// @field +0x08 void* field_0x08
+bool fn_006E6DE0(void* self, uint32_t which) {
+    uint32_t flags = lift_field<uint32_t>(self, 0x00);
+    if (flags != 0) {
+        uint32_t sel;
+        switch (which) {
+            case 1:  sel = 0; break;   // shr 1
+            case 2:  sel = 6; break;   // shr 6
+            case 4:  sel = 7; break;   // shr 7
+            default: return false;     // other modes: al stays 0
+        }
+        void* sub = ext_0071E680(self);
+        uint32_t v = *static_cast<uint32_t*>(sub);
+        return ((v >> sel) & 1u) != 0;
+    }
+
+    void* linked = lift_field<void*>(self, 0x08);
+    if (linked == nullptr) {
+        return false;
+    }
+    uint32_t mask = lift_field<uint32_t>(linked, 0xB0);
+    return (which & mask) != 0;
+}
+} // namespace lift_006E6DE0

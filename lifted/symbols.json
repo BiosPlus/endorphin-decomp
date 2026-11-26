@@ -60304,6 +60304,12 @@
     "summary": "Sets or clears flag bits in two subobjects, remapping bits for the second subobject.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E6DE0": {
+    "name": "testFlagBitByMode",
+    "signature": "bool fn_006E6DE0(void* self, uint32_t which)",
+    "summary": "Tests a mode-selected bit (1-\u003ebit0, 2-\u003ebit6, 4-\u003ebit7) of a subobject's flag word, or a mask at +0xB0 of the linked object when the primary flag is zero.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E7000": {
     "name": "mapSubobjectTypeOrFallback",
     "signature": "extern \"C\" uint32_t __fastcall fn_006E7000(void* self)",
