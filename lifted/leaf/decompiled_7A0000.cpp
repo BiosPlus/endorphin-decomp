@@ -1170,3 +1170,36 @@ void* fn_007AD590(void* self, uint8_t flag) {
     return self;
 }
 } // namespace lift_007AD590
+
+// [0x007AE020]
+namespace lift_007AE020 {
+// @name sub_007AE020
+// @summary Releases up to 7 owned objects flagged in a parallel byte array and frees both arrays.
+// @field Unknown +0x00 void** field_0x00
+// @field Unknown +0x04 uint8_t* field_0x04
+
+
+extern void(__cdecl* mem_009251D8)(void*);
+
+void __fastcall sub_007AE020(void* self) {
+    auto** items = lift_field<void**>(self, 0x00);
+    if (!items) {
+        return;
+    }
+
+    for (int32_t i = 0; i < 7; ++i) {
+        auto* flags = lift_field<uint8_t*>(self, 0x04);
+        void* obj = items[i];
+        if (flags[i] != 0 && obj != nullptr) {
+            items[i] = nullptr;
+            auto** vtable = *reinterpret_cast<void***>(obj);
+            auto fn = reinterpret_cast<void(__thiscall*)(void*, int32_t)>(vtable[1]);
+            fn(obj, 0);
+        }
+        items = lift_field<void**>(self, 0x00);
+    }
+
+    mem_009251D8(lift_field<void*>(self, 0x00));
+    mem_009251D8(lift_field<void*>(self, 0x04));
+}
+} // namespace lift_007AE020
