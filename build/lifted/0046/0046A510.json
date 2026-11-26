@@ -1,0 +1,34 @@
+{
+  "va": "0x0046A510",
+  "size": 53,
+  "orig_symbol": "sub_0046A510",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "_Tree::_Erase",
+  "class": "_Tree",
+  "signature": "void __thiscall fn_0046A510(void* self, void* node)",
+  "summary": "Recursively erases a red-black tree subtree by recursing on right children, freeing nodes, and iterating down left children.",
+  "fields": [
+    {
+      "class": "_TreeNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "_Left"
+    },
+    {
+      "class": "_TreeNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "_Right"
+    },
+    {
+      "class": "_TreeNode",
+      "offset": "+0x11",
+      "type": "uint8_t",
+      "name": "_Isnil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T10:43:14Z"
+}

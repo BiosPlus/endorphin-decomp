@@ -1525,3 +1525,25 @@ bool __thiscall Unknown_004663A0::check()
     return true;
 }
 } // namespace lift_004663A0
+
+// [0x0046A510]
+namespace lift_0046A510 {
+extern void ext_006A5C5C(void* ptr);
+
+// @name _Tree::_Erase
+// @class _Tree
+// @summary Recursively erases a red-black tree subtree by recursing on right children, freeing nodes, and iterating down left children.
+// @field _TreeNode +0x00 void* _Left
+// @field _TreeNode +0x08 void* _Right
+// @field _TreeNode +0x11 uint8_t _Isnil
+void __thiscall fn_0046A510(void* self, void* node) {
+    uint8_t* cur = static_cast<uint8_t*>(node);
+    while (cur[0x11] == 0) {
+        void* right = lift_field<void*>(cur, 0x08);
+        fn_0046A510(self, right);
+        uint8_t* next = lift_field<uint8_t*>(cur, 0x00);
+        ext_006A5C5C(cur);
+        cur = next;
+    }
+}
+} // namespace lift_0046A510
