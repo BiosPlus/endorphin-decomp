@@ -2136,3 +2136,38 @@ void fn_00705760(void* self) {
     lift_field<uint32_t>(self, 0xDC) = 0;
 }
 } // namespace lift_00705760
+
+// [0x00707FB0] sub_00707FB0 (77 bytes)
+namespace lift_00707FB0 {
+// Known callee 0x006D2250: Unknown::ResetAndFreeBuffer156 (Frees the pointer stored at +0x10 (via the imported CRT free) if non-null, then zeroes +0x10, +0x00 and +0x04.)
+extern void ext_006D2250(void* self);
+// Import slot for MSVCR80.dll!free (IAT entry at 0x009251D8; holds the free() function address).
+extern void* mem_009251D8;
+
+// @name Unknown::releaseEntriesAndReset (descriptive; owner class not identified)
+// @class Unknown
+// @summary Walks the pointer array at +0xB4 from the last index down to 0, calling virtual slot 0xD8 on self with each entry and then freeing it via CRT free; finally calls ext_006D2250 with &self->+0xA4 as this.
+// @field Unknown +0x00 void* vtable (vtable pointer read for the virtual call at slot 0xD8)
+// @field Unknown +0xA4 int32_t entryCount (loop bound; loop runs entryCount times)
+// @field Unknown +0xB4 void** entries (array of entry pointers)
+void fn_00707FB0(void* self) {
+    using VirtFn = void (__thiscall*)(void* self, void* entry);
+    using FreeFn = void (__cdecl*)(void* ptr);
+
+    const int32_t count = lift_field<int32_t>(self, 0xA4);
+    void* const countField = static_cast<uint8_t*>(self) + 0xA4;
+
+    for (int32_t i = count - 1; i >= 0; --i) {
+        // Virtual call: vtable slot 0xD8 (index 0xD8 / 4 on 32-bit targets).
+        void** const vtable = *reinterpret_cast<void***>(self);
+        void* const entry = lift_field<void**>(self, 0xB4)[i];
+        reinterpret_cast<VirtFn>(vtable[0xD8 / 4])(self, entry);
+
+        // Re-read the entry after the call, then free it through the import slot.
+        void* const freeEntry = lift_field<void**>(self, 0xB4)[i];
+        reinterpret_cast<FreeFn>(mem_009251D8)(freeEntry);
+    }
+
+    ext_006D2250(countField);
+}
+} // namespace lift_00707FB0

@@ -16,6 +16,7 @@ struct Unknown_Fields {
     // +0x0   void* field_0x00 (vtable pointer, set to 0x953B0C)  (evidence: 0x0052F7D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (vtable pointer, written to 0x953f0c)  (evidence: 0x0052F690) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (vtable pointer 0x955BDC)  (evidence: 0x0053C910) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void* vtable (vtable pointer read for the virtual call at slot 0xD8)  (evidence: 0x00707FB0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* vtable (read to dispatch the virtual call at slot 0xF4)  (evidence: 0x00708FF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void** vtable vtable pointer (slot 0 called with arg 1)  (evidence: 0x006DE130) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (pointer written from vtable call result; later passed to CriticalSectionLock::enter)  (evidence: 0x004030F0, 0x0040A8E0, 0x0040BE90) // CONFLICT: multiple definitions at +0x0
@@ -955,6 +956,7 @@ struct Unknown_Fields {
     // +0xA4  HWND                     hwnd  (evidence: 0x004030F0, 0x0040BE90, 0x0040C330) // CONFLICT: multiple definitions at +0xA4
     // +0xA4  uint32_t                 hwnd  (evidence: 0x004030F0, 0x0040BE90, 0x0040C300) // CONFLICT: multiple definitions at +0xA4
     // +0xA4  ptr field_0xA4 (pointer to sub-object; owner class not identified)  (evidence: 0x00547CE0) // CONFLICT: multiple definitions at +0xA4
+    // +0xA4  int32_t entryCount (loop bound; loop runs entryCount times)  (evidence: 0x00707FB0) // CONFLICT: multiple definitions at +0xA4
     // +0xA8  double                   field_0xA8  (evidence: 0x006E7190) // CONFLICT: multiple definitions at +0xA8
     // +0xA8  int32                    field_0xA8  (evidence: 0x00687230) // CONFLICT: multiple definitions at +0xA8
     // +0xA8  int32_t                  field_0xA8  (evidence: 0x007CDB70) // CONFLICT: multiple definitions at +0xA8
@@ -989,6 +991,7 @@ struct Unknown_Fields {
     // +0xB4  void*                    field_0xB4  (evidence: 0x0053F9D0) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  float                    field_0xb4  (evidence: 0x00611100) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  int32_t                  mode  (evidence: 0x00464780, 0x004647A0) // CONFLICT: multiple definitions at +0xB4
+    // +0xB4  void** entries (array of entry pointers)  (evidence: 0x00707FB0) // CONFLICT: multiple definitions at +0xB4
     // +0xB8  Buffer                   field_0xB8  (evidence: 0x0071E5F0) // CONFLICT: multiple definitions at +0xB8
     // +0xB8  DWORD                    field_0xB8  (evidence: 0x00540F60) // CONFLICT: multiple definitions at +0xB8
     // +0xB8  SortedArray              field_0xB8  (evidence: 0x00736C90) // CONFLICT: multiple definitions at +0xB8

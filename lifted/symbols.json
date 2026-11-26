@@ -64206,6 +64206,13 @@
     "summary": "Scans the 16-byte pair table at +0x9C (count at +0x8C) and returns true if any entry equals (a, b) or (b, a); otherwise false.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00707FB0": {
+    "name": "Unknown::releaseEntriesAndReset (descriptive; owner class not identified)",
+    "class": "Unknown",
+    "signature": "void fn_00707FB0(void* self)",
+    "summary": "Walks the pointer array at +0xB4 from the last index down to 0, calling virtual slot 0xD8 on self with each entry and then freeing it via CRT free; finally calls ext_006D2250 with \u0026self-\u003e+0xA4 as this.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00708C10": {
     "name": "findAndSelectItem",
     "signature": "uint32_t __thiscall sub_00708C10(void* self, uint32_t target)",
