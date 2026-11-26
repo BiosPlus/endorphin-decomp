@@ -1,0 +1,28 @@
+{
+  "va": "0x00699360",
+  "size": 60,
+  "orig_symbol": "sub_00699360",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "ContainerBase::GetCheckedBegin",
+  "class": "ContainerBase",
+  "signature": "uint8_t* fn_00699360(void* self)",
+  "summary": "Returns the begin pointer of a 32-byte-element array if non-empty, else a static sentinel; calls invalid_parameter when begin \u003e= end.",
+  "fields": [
+    {
+      "class": "ContainerBase",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "begin"
+    },
+    {
+      "class": "ContainerBase",
+      "offset": "+0xC",
+      "type": "uint8_t*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:54:58Z"
+}

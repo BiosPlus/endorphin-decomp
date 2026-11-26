@@ -49955,6 +49955,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006991A0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x00699360": {
+    "name": "ContainerBase::GetCheckedBegin",
+    "class": "ContainerBase",
+    "signature": "uint8_t* fn_00699360(void* self)",
+    "summary": "Returns the begin pointer of a 32-byte-element array if non-empty, else a static sentinel; calls invalid_parameter when begin \u003e= end.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x006997E0": {
     "name": "getTypedObjectViaVfunc60",
     "signature": "void* __thiscall fn_006997E0(void* self, uint32_t arg1)",

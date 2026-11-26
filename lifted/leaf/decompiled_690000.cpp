@@ -1212,3 +1212,38 @@ bool fn_006968D0(void* stream) {
     }
 }
 } // namespace lift_006968D0
+
+// [0x00699360] sub_00699360 (60 bytes)
+namespace lift_00699360 {
+// IAT slot holding MSVCR80!_invalid_parameter_noinfo (loaded into ebx in the original).
+extern void* mem_00925134;
+// Static sentinel address returned when the container is empty or unset.
+extern uint8_t mem_00b59400;
+
+// @name ContainerBase::GetCheckedBegin
+// @class ContainerBase
+// @summary Returns the begin pointer of a 32-byte-element array if non-empty, else a static sentinel; calls invalid_parameter when begin >= end.
+// @field ContainerBase +0x08 uint8_t* begin
+// @field ContainerBase +0x0C uint8_t* end
+uint8_t* fn_00699360(void* self) {
+    uintptr_t begin = lift_field<uintptr_t>(self, 0x08);
+    uintptr_t end   = lift_field<uintptr_t>(self, 0x0C);
+
+    // Empty or unset: return sentinel.
+    if (begin == 0 || (static_cast<int32_t>(end - begin) >> 5) == 0) {
+        return &mem_00b59400;
+    }
+
+    // begin >= end is invalid; the original calls the CRT handler once for
+    // equality and twice when begin is above end.
+    if (begin >= end) {
+        auto invalid_parameter_noinfo = reinterpret_cast<void (*)()>(mem_00925134);
+        invalid_parameter_noinfo();
+        if (begin > end) {
+            invalid_parameter_noinfo();
+        }
+    }
+
+    return reinterpret_cast<uint8_t*>(begin);
+}
+} // namespace lift_00699360
