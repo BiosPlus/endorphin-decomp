@@ -1,0 +1,34 @@
+{
+  "va": "0x00465960",
+  "size": 56,
+  "orig_symbol": "sub_00465960",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "Unknown::assignConstStringFields_00465960",
+  "class": "Unknown",
+  "signature": "void fn_00465960(void* self)",
+  "summary": "Assigns the same constant C string (mem_00928B5D) to three std::string members of self (+0x84, +0xA0, +0xBC).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "std::string",
+      "name": "field_0x84"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA0",
+      "type": "std::string",
+      "name": "field_0xA0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xBC",
+      "type": "std::string",
+      "name": "field_0xBC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:45:41Z"
+}

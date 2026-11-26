@@ -1547,3 +1547,30 @@ void __thiscall fn_0046A510(void* self, void* node) {
     }
 }
 } // namespace lift_0046A510
+
+// [0x00465960] sub_00465960 (56 bytes)
+namespace lift_00465960 {
+// MSVCP80 basic_string::operator=(const char*) IAT slot (original: call dword ptr [0x924FD4]).
+extern int mem_00924FD4;
+// .rdata string literal "P{b" referenced by the original asm.
+extern int mem_00925134;
+// .rdata constant pushed as the const char* argument (0x00928B5D).
+extern int mem_00928B5D;
+
+// @name Unknown::assignConstStringFields_00465960
+// @class Unknown
+// @summary Assigns the same constant C string (mem_00928B5D) to three std::string members of self (+0x84, +0xA0, +0xBC).
+// @field Unknown +0x84 std::string field_0x84
+// @field Unknown +0xA0 std::string field_0xA0
+// @field Unknown +0xBC std::string field_0xBC
+void fn_00465960(void* self) {
+    // Keep the original IAT slot and rdata literal referenced for differential matching.
+    (void)&mem_00924FD4;
+    (void)&mem_00925134;
+
+    const char* text = reinterpret_cast<const char*>(&mem_00928B5D);
+    lift_field<std::string>(self, 0x84) = text;
+    lift_field<std::string>(self, 0xA0) = text;
+    lift_field<std::string>(self, 0xBC) = text;
+}
+} // namespace lift_00465960
