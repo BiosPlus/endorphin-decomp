@@ -1,0 +1,13 @@
+{
+  "va": "0x0079AD50",
+  "size": 70,
+  "orig_symbol": "sub_0079AD50",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "fileSeek32",
+  "signature": "extern \"C\" uint32_t __cdecl sub_0079AD50(uint32_t hFile, int32_t lDistanceToMove, int32_t origin)",
+  "summary": "Seeks a Win32 file handle using SetFilePointer with a zeroed high-order distance",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:20:56Z"
+}

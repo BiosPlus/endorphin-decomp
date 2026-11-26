@@ -1174,3 +1174,28 @@ extern void __cdecl fn_0079EA90(uint32_t a1) {
     ext_0079EBB0(mem_00B6114C[idx]);
 }
 } // namespace lift_0079EA90
+
+// [0x0079AD50]
+namespace lift_0079AD50 {
+// @name fileSeek32
+// @summary Seeks a Win32 file handle using SetFilePointer with a zeroed high-order distance
+
+
+extern uint32_t (__stdcall *mem_00924184)(uint32_t hFile, int32_t lDistanceToMove, int32_t* lpDistanceToMoveHigh, uint32_t dwMoveMethod);
+
+extern uint32_t __cdecl sub_0079AD50(uint32_t hFile, int32_t lDistanceToMove, int32_t origin) {
+    if (lDistanceToMove == -1) {
+        return 0xFFFFFFFFu;
+    }
+
+    uint32_t moveMethod = 0;
+    if (origin == 1) {
+        moveMethod = 1;
+    } else if (origin == 2) {
+        moveMethod = 2;
+    }
+
+    int32_t distanceToMoveHigh = 0;
+    return mem_00924184(hFile, lDistanceToMove, &distanceToMoveHigh, moveMethod);
+}
+} // namespace lift_0079AD50
