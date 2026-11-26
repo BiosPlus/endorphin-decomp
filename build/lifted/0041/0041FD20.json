@@ -1,0 +1,34 @@
+{
+  "va": "0x0041FD20",
+  "size": 72,
+  "orig_symbol": "sub_0041FD20",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "ModuleLoader::ResolveModuleHandle",
+  "class": "ModuleLoader",
+  "signature": "extern \"C\" void* mem_009245A8; // MFC80!ord_3397 (CString -\u003e LPCSTR, thiscall) extern \"C\" void* mem_00924208; // KERNEL32!GetModuleHandleA extern \"C\" void* mem_009241D4; // KERNEL32!LoadLibraryA HMODULE fn_0041FD20(void* self)",
+  "summary": "Returns the cached module handle at +0x04, resolving it via GetModuleHandleA then LoadLibraryA from the name CString at +0x0C; sets the loaded flag at +0x08 when LoadLibraryA is used.",
+  "fields": [
+    {
+      "class": "ModuleLoader",
+      "offset": "+0x4",
+      "type": "HMODULE",
+      "name": "module"
+    },
+    {
+      "class": "ModuleLoader",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "loaded"
+    },
+    {
+      "class": "ModuleLoader",
+      "offset": "+0xC",
+      "type": "CString",
+      "name": "module_name"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:19:00Z"
+}

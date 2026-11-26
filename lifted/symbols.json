@@ -2293,6 +2293,13 @@
     "summary": "Calls the MFC80 ord_6236 import with a zero argument; stdcall, pops 8 bytes of arguments on return.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041FD20": {
+    "name": "ModuleLoader::ResolveModuleHandle",
+    "class": "ModuleLoader",
+    "signature": "extern \"C\" void* mem_009245A8; // MFC80!ord_3397 (CString -\u003e LPCSTR, thiscall) extern \"C\" void* mem_00924208; // KERNEL32!GetModuleHandleA extern \"C\" void* mem_009241D4; // KERNEL32!LoadLibraryA HMODULE fn_0041FD20(void* self)",
+    "summary": "Returns the cached module handle at +0x04, resolving it via GetModuleHandleA then LoadLibraryA from the name CString at +0x0C; sets the loaded flag at +0x08 when LoadLibraryA is used.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041FD70": {
     "name": "sub_0041FD70",
     "class": "Unknown",

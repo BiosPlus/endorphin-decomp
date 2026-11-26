@@ -2218,3 +2218,39 @@ void* __thiscall sub_0041CD10(void* self, uint32_t index) {
     return base + index * 56u;
 }
 } // namespace lift_0041CD10
+
+// [0x0041FD20] sub_0041FD20 (72 bytes)
+namespace lift_0041FD20 {
+// IAT slots read by the original `call dword ptr [...]` instructions.
+extern void* mem_009245A8; // MFC80!ord_3397 (CString -> LPCSTR, thiscall)
+extern void* mem_00924208; // KERNEL32!GetModuleHandleA
+extern void* mem_009241D4; // KERNEL32!LoadLibraryA
+
+// @name ModuleLoader::ResolveModuleHandle
+// @class ModuleLoader
+// @summary Returns the cached module handle at +0x04, resolving it via GetModuleHandleA then LoadLibraryA from the name CString at +0x0C; sets the loaded flag at +0x08 when LoadLibraryA is used.
+// @field ModuleLoader +0x04 HMODULE module
+// @field ModuleLoader +0x08 uint8_t loaded
+// @field ModuleLoader +0x0C CString module_name
+HMODULE fn_0041FD20(void* self) {
+    HMODULE& module = lift_field<HMODULE>(self, 0x04);
+    if (module != nullptr) {
+        return module;
+    }
+
+    auto get_name = reinterpret_cast<LPCSTR(__thiscall*)(void*)>(mem_009245A8);
+    auto get_module_handle_a = reinterpret_cast<HMODULE(__stdcall*)(LPCSTR)>(mem_00924208);
+    auto load_library_a = reinterpret_cast<HMODULE(__stdcall*)(LPCSTR)>(mem_009241D4);
+
+    void* name_obj = static_cast<void*>(static_cast<uint8_t*>(self) + 0x0C);
+
+    module = get_module_handle_a(get_name(name_obj));
+    if (module != nullptr) {
+        return module;
+    }
+
+    module = load_library_a(get_name(name_obj));
+    lift_field<uint8_t>(self, 0x08) = (module != nullptr) ? 1 : 0;
+    return module;
+}
+} // namespace lift_0041FD20
