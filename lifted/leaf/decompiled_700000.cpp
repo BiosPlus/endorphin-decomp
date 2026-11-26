@@ -2171,3 +2171,24 @@ void fn_00707FB0(void* self) {
     ext_006D2250(countField);
 }
 } // namespace lift_00707FB0
+
+// [0x0070BF00]
+namespace lift_0070BF00 {
+extern int32_t __fastcall ext_006DC460(void* self);
+extern void* __fastcall ext_006C98F0(void* self);
+extern float __fastcall ext_006C9F70(void* self);
+extern const double mem_00995B48;
+extern const double mem_0092A278;
+extern const double mem_0092A270;
+
+// @name getNormalizedValueClamped
+// @summary Fetches a float via callee chain, scales by 1/128 and clamps to [0,1].
+extern double fn_0070BF00(void* self) {
+    void* a = (void*)(intptr_t)ext_006DC460(self);
+    void* b = ext_006C98F0(a);
+    double v = (double)ext_006C9F70(b) * mem_00995B48;
+    if (v < mem_0092A278) return mem_0092A278;
+    if (v > mem_0092A270) return mem_0092A270;
+    return v;
+}
+} // namespace lift_0070BF00
