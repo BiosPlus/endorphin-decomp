@@ -1,0 +1,22 @@
+{
+  "va": "0x004663A0",
+  "size": 47,
+  "orig_symbol": "sub_004663A0",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "Unknown::checkReadyOrReport_004663A0",
+  "class": "Unknown",
+  "signature": "bool __thiscall Unknown_004663A0::check()",
+  "summary": "Returns true if field +0x60 is set or the global object's vfunc +0x84 returns false; otherwise calls MFC thunk and returns false.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "int",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@low",
+  "lifted_at": "2026-11-26T10:34:16Z"
+}

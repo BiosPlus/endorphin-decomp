@@ -6980,6 +6980,13 @@
     "summary": "Clears a counter in a sub-object reached via global context +0x26C, then invokes virtual slot 1 (deleting-style, arg 1) on the owned object at +0xD8 and nulls it.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x004663A0": {
+    "name": "Unknown::checkReadyOrReport_004663A0",
+    "class": "Unknown",
+    "signature": "bool __thiscall Unknown_004663A0::check()",
+    "summary": "Returns true if field +0x60 is set or the global object's vfunc +0x84 returns false; otherwise calls MFC thunk and returns false.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x004663D0": {
     "name": "sub_004663D0",
     "class": "GWCPropertyEditFeel",

@@ -1491,3 +1491,37 @@ void* fn_0046C460(void* out, unsigned char flag) {
     return out;
 }
 } // namespace lift_0046C460
+
+// [0x004663A0]
+namespace lift_004663A0 {
+extern void __cdecl ext_00465B40(void);
+extern void ext_006A5E60(void);
+extern const char mem_00925134[];
+
+// @name Unknown::checkReadyOrReport_004663A0
+// @class Unknown
+// @summary Returns true if field +0x60 is set or the global object's vfunc +0x84 returns false; otherwise calls MFC thunk and returns false.
+// @field Unknown +0x60 int field_0x60
+struct Unknown_004663A0 {
+    bool __thiscall check();
+};
+
+typedef void *(__cdecl *GetObjFn)(void);
+typedef bool (__thiscall *VFunc84)(void *self);
+typedef void (__stdcall *ThunkFn)(int, int, const void *);
+
+bool __thiscall Unknown_004663A0::check()
+{
+    (void)mem_00925134;
+    if (lift_field<int>(this, 0x60) == 0) {
+        void *obj = ((GetObjFn)&ext_00465B40)();
+        void **vtbl = *(void ***)obj;
+        VFunc84 fn = (VFunc84)vtbl[0x84 / 4];
+        if (fn(obj)) {
+            ((ThunkFn)&ext_006A5E60)(0, 0, (const void *)0x939c7c);
+            return false;
+        }
+    }
+    return true;
+}
+} // namespace lift_004663A0
