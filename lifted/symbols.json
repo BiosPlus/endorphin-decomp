@@ -5811,6 +5811,13 @@
     "summary": "If the subobject at +0x90 is set (+0x8C nonzero), forward the call with the same three stack args through its vtable slot 2; otherwise tail-call the MFC80 ord_1903 thunk.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x00456280": {
+    "name": "Unknown::forwardArgsIfEnabled_00456280",
+    "class": "Unknown",
+    "signature": "extern \"C\" void ext_006A5E00(void); // thunk_MFC80_ord_2372 (IAT jump thunk to MFC80!ord_2372) extern \"C\" void ext_006A5E5A(void); // thunk_MFC80_ord_4125 (IAT jump thunk to MFC80!ord_4125) extern \"C\" int mem_009256B0;        // .rdata u32 0x00628AF2 uint32_t fn_00456280(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "If field +0xdc is zero, ext_00455F40(self) is zero, and arg1 is in [0x0A, 0x11], forwards (arg1, arg2, arg3) to vtable slot 0x184 with this=self; otherwise returns early.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x004562C0": {
     "name": "Unknown::forwardIfField0xdcThenVcall188ThenForward",
     "class": "Unknown",
@@ -71275,6 +71282,12 @@
     "name": "BuildSignedPermutedMatrix3x4_007CD900",
     "signature": "void fn_007CD900(const void* src, void* dst)",
     "summary": "Reads four floats from src (ecx) and writes a 3x4 row-major float matrix to dst (eax) with a fixed sign/permutation pattern (negations of src[1], src[2], src[3] and copies of src[0], src[1], src[2], src[3]).",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
+  "0x007CDBC0": {
+    "name": "clearIndexedArrayEntries",
+    "signature": "void sub_007CDBC0(void* arg0)",
+    "summary": "Zeroes out the indexed 32-bit entries in three dynamic arrays on the target object.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
   "0x007CFEC0": {

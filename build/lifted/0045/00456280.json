@@ -1,0 +1,28 @@
+{
+  "va": "0x00456280",
+  "size": 56,
+  "orig_symbol": "sub_00456280",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "Unknown::forwardArgsIfEnabled_00456280",
+  "class": "Unknown",
+  "signature": "extern \"C\" void ext_006A5E00(void); // thunk_MFC80_ord_2372 (IAT jump thunk to MFC80!ord_2372) extern \"C\" void ext_006A5E5A(void); // thunk_MFC80_ord_4125 (IAT jump thunk to MFC80!ord_4125) extern \"C\" int mem_009256B0;        // .rdata u32 0x00628AF2 uint32_t fn_00456280(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "If field +0xdc is zero, ext_00455F40(self) is zero, and arg1 is in [0x0A, 0x11], forwards (arg1, arg2, arg3) to vtable slot 0x184 with this=self; otherwise returns early.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "u32",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xDC",
+      "type": "u32",
+      "name": "field_0xdc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:46:03Z"
+}

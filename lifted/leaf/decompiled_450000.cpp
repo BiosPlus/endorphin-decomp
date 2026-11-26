@@ -1423,3 +1423,54 @@ extern void __thiscall fn_00455B50(uint8_t* self)
     ext_004691D0(flag, self + 0x13c);
 }
 } // namespace lift_00455B50
+
+// [0x00456280] sub_00456280 (56 bytes)
+namespace lift_00456280 {
+// Known callee 0x00455F40: Unknown::returnTrueIfNeitherCheckMatches_00455F40
+// (Returns 1 only if both ext_00455CB0 and ext_004090C0 return 0 for self; otherwise returns 0.)
+extern int __fastcall ext_00455F40(void* self);
+
+// Referenced by the original asm's symbol table but never executed on this path.
+// Kept so the lift retains the references; they do not affect behavior.
+extern void ext_006A5E00(void); // thunk_MFC80_ord_2372 (IAT jump thunk to MFC80!ord_2372)
+extern void ext_006A5E5A(void); // thunk_MFC80_ord_4125 (IAT jump thunk to MFC80!ord_4125)
+extern int mem_009256B0;        // .rdata u32 0x00628AF2
+
+// @name Unknown::forwardArgsIfEnabled_00456280
+// @class Unknown
+// @summary If field +0xdc is zero, ext_00455F40(self) is zero, and arg1 is in [0x0A, 0x11], forwards (arg1, arg2, arg3) to vtable slot 0x184 with this=self; otherwise returns early.
+// @field Unknown +0x00 u32 field_0x00
+// @field Unknown +0xdc u32 field_0xdc
+uint32_t fn_00456280(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    // Keep the symbol references alive without executing them.
+    (void)&ext_006A5E00;
+    (void)&ext_006A5E5A;
+    (void)&mem_009256B0;
+
+    // cmp dword ptr [ecx+0xdc], 0 ; jne out
+    // NOTE: the asm returns the caller's entry eax on this path (caller-dependent).
+    // 0 is a placeholder; the differential test should be checked against this path.
+    if (lift_field<uint32_t>(self, 0xdc) != 0) {
+        return 0u;
+    }
+
+    // call sub_00455F40 ; test eax, eax ; jne out   (returns the nonzero result)
+    const int checkResult = ext_00455F40(self);
+    if (checkResult != 0) {
+        return static_cast<uint32_t>(checkResult);
+    }
+
+    // mov eax, [esp+4] ; lea edx, [eax-0xa] ; cmp edx, 7 ; ja out  (returns arg1)
+    const uint32_t eax = arg1;
+    if (static_cast<uint32_t>(eax - 0xAu) > 7u) {
+        return eax;
+    }
+
+    // mov edx, [ecx] ; call [edx+0x184]  with ecx=self, stack args (arg1, arg2, arg3)
+    const uint32_t vtbl = lift_field<uint32_t>(self, 0x00);
+    const uint32_t slot = lift_field<uint32_t>(
+        reinterpret_cast<void*>(static_cast<uintptr_t>(vtbl)), 0x184);
+    using SlotFn = uint32_t(__thiscall*)(void*, uint32_t, uint32_t, uint32_t);
+    return reinterpret_cast<SlotFn>(static_cast<uintptr_t>(slot))(self, arg1, arg2, arg3);
+}
+} // namespace lift_00456280
