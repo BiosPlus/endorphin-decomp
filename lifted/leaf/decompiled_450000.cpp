@@ -1650,3 +1650,24 @@ uint32_t __thiscall fn_0045BED0(void* self, uint32_t arg1) {
     return arg1;
 }
 } // namespace lift_0045BED0
+
+// [0x00455EB0]
+namespace lift_00455EB0 {
+// @name sub_00455EB0_dtor
+// @summary Destructor that resets vtables at +0x0 and +0xfc and invokes base/member destructors
+// @field Unknown +0x00 uint32_t vftable
+// @field Unknown +0xfc uint32_t field_0xfc
+
+
+extern void __thiscall ext_006A5FF2(void* self);
+extern void __thiscall ext_006A679C(void* self);
+
+extern void __thiscall fn_00455EB0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    lift_field<uint32_t>(base, 0x00) = 0x00936D5Cu;
+    void* member = base + 0xFC;
+    lift_field<uint32_t>(member, 0x00) = 0x0092A23Cu;
+    ext_006A5FF2(member);
+    ext_006A679C(base);
+}
+} // namespace lift_00455EB0
