@@ -1,0 +1,22 @@
+{
+  "va": "0x00783570",
+  "size": 63,
+  "orig_symbol": "sub_00783570",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "sub_00783570",
+  "class": "_unknown_",
+  "signature": "void fn_00783570(void* self, uint32_t mode, int32_t offset)",
+  "summary": "Seeks the stream owned by self-\u003e+0x04 with fseek. Mode 1/2 map to SEEK_CUR/SEEK_END, other modes map to SEEK_SET. No-op when the owner's byte flag at +0x04 is zero.",
+  "fields": [
+    {
+      "class": "_unknown_",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-26T11:05:10Z"
+}

@@ -1681,3 +1681,45 @@ void* __thiscall fn_007847E0(void* self, uint32_t key) {
     return bsearch_(&key, base, static_cast<size_t>(count), 8, &sub_00784790);
 }
 } // namespace lift_007847E0
+
+// [0x00783570] sub_00783570 (63 bytes)
+namespace lift_00783570 {
+// Import slot for MSVCR80!fseek (IAT entry at 0x009252C4).
+extern uint32_t mem_009252C4;
+// Referenced by the original asm's data/callee table but not executed on this path.
+extern void ext_00782D00();
+extern uint32_t mem_00925184;
+extern uint32_t mem_00925208;
+
+// @name sub_00783570
+// @class _unknown_
+// @summary Seeks the stream owned by self->+0x04 with fseek. Mode 1/2 map to SEEK_CUR/SEEK_END, other modes map to SEEK_SET. No-op when the owner's byte flag at +0x04 is zero.
+// @field _unknown_ +0x04 DWORD field_0x04
+void fn_00783570(void* self, uint32_t mode, int32_t offset) {
+    // self->+0x04 holds a pointer to an inner object.
+    // inner->+0x00 is the FILE* stream, inner->+0x04 is a byte flag gating the seek.
+    void* inner = reinterpret_cast<void*>(
+        static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x04)));
+    if (lift_field<uint8_t>(inner, 0x04) == 0) {
+        return;
+    }
+
+    int whence;
+    switch (mode) {
+        case 1:  whence = SEEK_CUR; break;
+        case 2:  whence = SEEK_END; break;
+        default: whence = SEEK_SET; break;  // 0 and any unrecognized mode
+    }
+
+    using fseek_fn = int(__cdecl*)(void*, long, int);
+    void* stream = reinterpret_cast<void*>(
+        static_cast<uintptr_t>(lift_field<uint32_t>(inner, 0x00)));
+    auto fseek_ptr = reinterpret_cast<fseek_fn>(static_cast<uintptr_t>(mem_009252C4));
+    fseek_ptr(stream, static_cast<long>(offset), whence);
+
+    // Address-only references to the remaining original-asm symbols; no code path uses them.
+    (void)&ext_00782D00;
+    (void)&mem_00925184;
+    (void)&mem_00925208;
+}
+} // namespace lift_00783570

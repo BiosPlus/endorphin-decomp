@@ -68010,6 +68010,13 @@
     "summary": "If the sub-object at +0x04 has its enable byte (+0x04) set, fwrites arg2 items of 1 byte from arg1 to its FILE* (+0x00) and returns the count written; otherwise returns 0.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00783570": {
+    "name": "sub_00783570",
+    "class": "_unknown_",
+    "signature": "void fn_00783570(void* self, uint32_t mode, int32_t offset)",
+    "summary": "Seeks the stream owned by self-\u003e+0x04 with fseek. Mode 1/2 map to SEEK_CUR/SEEK_END, other modes map to SEEK_SET. No-op when the owner's byte flag at +0x04 is zero.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x007835F0": {
     "name": "sub_007835F0",
     "class": "Unknown",
