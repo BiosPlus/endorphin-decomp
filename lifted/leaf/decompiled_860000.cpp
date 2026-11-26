@@ -1058,3 +1058,39 @@ extern uint16_t sub_0086BF40(const uint8_t* obj) {
     return flag == 1 ? 1 : 0;
 }
 } // namespace lift_0086BF40
+
+// [0x0086B1C0]
+namespace lift_0086B1C0 {
+extern void* ext_0085D560(uint32_t size);
+extern uint32_t mem_00924248;
+extern uint32_t mem_00924210;
+extern uint32_t mem_00BC70E0;
+extern uint32_t mem_00BC70BC;
+extern uint32_t mem_00BC70F4;
+extern uint32_t mem_00BC6410;
+extern uint32_t mem_00BC6578;
+
+// @name RotateRight157Bit
+// @summary Rotates a 5-dword big-endian-ordered value right by one bit; the bit shifted out of the last dword is reinserted at bit 29 of the first dword.
+// @field uint32_t +0x00 uint32_t word0
+// @field uint32_t +0x04 uint32_t word1
+// @field uint32_t +0x08 uint32_t word2
+// @field uint32_t +0x0C uint32_t word3
+// @field uint32_t +0x10 uint32_t word4
+void sub_0086B1C0(uint32_t* p)
+{
+    // References kept from the original symbol map; not used by this routine's logic.
+    (void)&ext_0085D560; (void)&mem_00924248; (void)&mem_00924210; (void)&mem_00BC70E0;
+    (void)&mem_00BC70BC; (void)&mem_00BC70F4; (void)&mem_00BC6410; (void)&mem_00BC6578;
+    uint32_t carry = p[0] & 1u;
+    p[0] >>= 1;
+    for (int i = 1; i < 5; ++i) {
+        uint32_t next = p[i] & 1u;
+        p[i] = (p[i] >> 1) | (carry << 31);
+        carry = next;
+    }
+    if (carry) {
+        p[0] |= 0x20000000u;
+    }
+}
+} // namespace lift_0086B1C0

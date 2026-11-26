@@ -73453,6 +73453,12 @@
     "summary": "Shifts a 5-DWORD value at self left by one bit (word 4 is LSB end, word 0 is MSB end), feeding bit 29 of word 0 into word 4, then clears bits 30-31 of word 0.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086B1C0": {
+    "name": "RotateRight157Bit",
+    "signature": "void sub_0086B1C0(uint32_t* p)",
+    "summary": "Rotates a 5-dword big-endian-ordered value right by one bit; the bit shifted out of the last dword is reinserted at bit 29 of the first dword.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086B200": {
     "name": "ZeroDwordArray5",
     "signature": "void fn_0086B200(void* self)",

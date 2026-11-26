@@ -1,0 +1,45 @@
+{
+  "va": "0x0086B1C0",
+  "size": 58,
+  "orig_symbol": "sub_0086B1C0",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "RotateRight157Bit",
+  "signature": "void sub_0086B1C0(uint32_t* p)",
+  "summary": "Rotates a 5-dword big-endian-ordered value right by one bit; the bit shifted out of the last dword is reinserted at bit 29 of the first dword.",
+  "fields": [
+    {
+      "class": "uint32_t",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "word0"
+    },
+    {
+      "class": "uint32_t",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "word1"
+    },
+    {
+      "class": "uint32_t",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "word2"
+    },
+    {
+      "class": "uint32_t",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "word3"
+    },
+    {
+      "class": "uint32_t",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "word4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@medium",
+  "lifted_at": "2026-11-26T10:55:14Z"
+}
