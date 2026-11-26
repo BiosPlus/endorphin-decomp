@@ -23587,6 +23587,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x00540D20": {
+    "name": "matchesKnownName",
+    "signature": "bool __stdcall fn_00540D20(const std::string* str)",
+    "summary": "Returns true if the given string equals any of the 7 C-string pointers in a global table.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00540D60": {
     "name": "Vec3::normalize",
     "class": "Vec3",

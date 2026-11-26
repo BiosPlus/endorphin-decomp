@@ -1,0 +1,13 @@
+{
+  "va": "0x00540D20",
+  "size": 56,
+  "orig_symbol": "sub_00540D20",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "matchesKnownName",
+  "signature": "bool __stdcall fn_00540D20(const std::string* str)",
+  "summary": "Returns true if the given string equals any of the 7 C-string pointers in a global table.",
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@low",
+  "lifted_at": "2026-11-26T10:48:02Z"
+}

@@ -1201,3 +1201,28 @@ void __stdcall sub_00540572(uint32_t /*arg0*/) {
     mem_00925418(0x0B44u);          // glEnable(GL_CULL_FACE)
 }
 } // namespace lift_00540572
+
+// [0x00540D20]
+namespace lift_00540D20 {
+extern uint32_t mem_00924FC0;
+extern uint32_t mem_00A44BB8[7];
+extern uint32_t mem_0092551C;
+extern uint32_t mem_00925428;
+extern const char mem_00925418[];
+
+// @name matchesKnownName
+// @summary Returns true if the given string equals any of the 7 C-string pointers in a global table.
+bool __stdcall fn_00540D20(const std::string* str) {
+    (void)&mem_0092551C;
+    (void)&mem_00925428;
+    (void)&mem_00925418;
+    using EqFn = bool(__cdecl*)(const std::string*, const char*);
+    EqFn eq = reinterpret_cast<EqFn>(static_cast<uintptr_t>(mem_00924FC0));
+    for (int i = 0; i < 7; ++i) {
+        if (eq(str, reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A44BB8[i])))) {
+            return true;
+        }
+    }
+    return false;
+}
+} // namespace lift_00540D20
