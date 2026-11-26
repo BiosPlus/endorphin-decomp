@@ -59631,6 +59631,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006D7B50 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D7BE0": {
+    "name": "ResetTrailingState",
+    "class": "\u003cUnknown\u003e",
+    "signature": "void fn_006D7BE0(void* self)",
+    "summary": "Initializes a block of state fields at +0x1A8..+0x1C5 of the object to defaults (4 or 0).",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D7CA0": {
     "name": "sub_006D7CA0",
     "class": "\u003cClassName\u003e (optional)",

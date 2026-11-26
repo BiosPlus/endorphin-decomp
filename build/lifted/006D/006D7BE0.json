@@ -1,0 +1,94 @@
+{
+  "va": "0x006D7BE0",
+  "size": 96,
+  "orig_symbol": "sub_006D7BE0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "ResetTrailingState",
+  "class": "\u003cUnknown\u003e",
+  "signature": "void fn_006D7BE0(void* self)",
+  "summary": "Initializes a block of state fields at +0x1A8..+0x1C5 of the object to defaults (4 or 0).",
+  "fields": [
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x1A8",
+      "type": "DWORD",
+      "name": "field_0x1A8"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x1AC",
+      "type": "DWORD",
+      "name": "field_0x1AC"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x1B0",
+      "type": "DWORD",
+      "name": "field_0x1B0"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x1B4",
+      "type": "DWORD",
+      "name": "field_0x1B4"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x1B8",
+      "type": "DWORD",
+      "name": "field_0x1B8"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x1BC",
+      "type": "DWORD",
+      "name": "field_0x1BC"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x1C0",
+      "type": "BYTE",
+      "name": "field_0x1C0"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x1C1",
+      "type": "BYTE",
+      "name": "field_0x1C1"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x1C2",
+      "type": "BYTE",
+      "name": "field_0x1C2"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x1C3",
+      "type": "BYTE",
+      "name": "field_0x1C3"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x1C4",
+      "type": "BYTE",
+      "name": "field_0x1C4"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x1C5",
+      "type": "BYTE",
+      "name": "field_0x1C5"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x1C8",
+      "type": "DWORD",
+      "name": "field_0x1C8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T12:08:29Z"
+}

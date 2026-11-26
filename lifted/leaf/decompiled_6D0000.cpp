@@ -1853,3 +1853,38 @@ extern void __fastcall fn_006D8E70(void* self)
     ext_0077FA20(self);
 }
 } // namespace lift_006D8E70
+
+// [0x006D7BE0] sub_006D7BE0 (96 bytes)
+namespace lift_006D7BE0 {
+// @name ResetTrailingState
+// @class <Unknown>
+// @summary Initializes a block of state fields at +0x1A8..+0x1C5 of the object to defaults (4 or 0).
+// @field <Unknown> +0x1A8 DWORD field_0x1A8
+// @field <Unknown> +0x1AC DWORD field_0x1AC
+// @field <Unknown> +0x1B0 DWORD field_0x1B0
+// @field <Unknown> +0x1B4 DWORD field_0x1B4
+// @field <Unknown> +0x1B8 DWORD field_0x1B8
+// @field <Unknown> +0x1BC DWORD field_0x1BC
+// @field <Unknown> +0x1C0 BYTE field_0x1C0
+// @field <Unknown> +0x1C1 BYTE field_0x1C1
+// @field <Unknown> +0x1C2 BYTE field_0x1C2
+// @field <Unknown> +0x1C3 BYTE field_0x1C3
+// @field <Unknown> +0x1C4 BYTE field_0x1C4
+// @field <Unknown> +0x1C5 BYTE field_0x1C5
+// @field <Unknown> +0x1C8 DWORD field_0x1C8
+void fn_006D7BE0(void* self) {
+    lift_field<DWORD>(self, 0x1A8) = 4;
+    lift_field<DWORD>(self, 0x1AC) = 4;
+    lift_field<DWORD>(self, 0x1B0) = 0;
+    lift_field<DWORD>(self, 0x1B4) = 0;
+    lift_field<DWORD>(self, 0x1B8) = 0;
+    lift_field<DWORD>(self, 0x1BC) = 0;
+    lift_field<BYTE>(self, 0x1C0) = 0;
+    lift_field<BYTE>(self, 0x1C1) = 0;
+    lift_field<DWORD>(self, 0x1C8) = 4;
+    lift_field<BYTE>(self, 0x1C2) = 0;
+    lift_field<BYTE>(self, 0x1C3) = 0;
+    lift_field<BYTE>(self, 0x1C4) = 0;
+    lift_field<BYTE>(self, 0x1C5) = 0;
+}
+} // namespace lift_006D7BE0
