@@ -59077,6 +59077,13 @@
     "summary": "Returns the double at +0x50 of the object pointed to by the first dword of this (thiscall, result in st0).",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E8750": {
+    "name": "Unknown::setClampedMinDouble",
+    "class": "Unknown",
+    "signature": "void __thiscall sub_006E8750(void* self, double val)",
+    "summary": "Dereferences self to an inner object and stores val at +0x58, clamped to at least the double at +0x50.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E8780": {
     "name": "Unknown::GetIndirectDoublePlus58",
     "class": "Unknown",

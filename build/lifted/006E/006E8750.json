@@ -1,0 +1,34 @@
+{
+  "va": "0x006E8750",
+  "size": 48,
+  "orig_symbol": "sub_006E8750",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::setClampedMinDouble",
+  "class": "Unknown",
+  "signature": "void __thiscall sub_006E8750(void* self, double val)",
+  "summary": "Dereferences self to an inner object and stores val at +0x58, clamped to at least the double at +0x50.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "inner"
+    },
+    {
+      "class": "Inner",
+      "offset": "+0x50",
+      "type": "double",
+      "name": "min_val"
+    },
+    {
+      "class": "Inner",
+      "offset": "+0x58",
+      "type": "double",
+      "name": "clamped_val"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T10:41:12Z"
+}

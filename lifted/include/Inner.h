@@ -8,8 +8,10 @@
 // Recovered field layout for Inner:
 namespace lifted_layout {
 struct Inner_Fields {
-    // +0x50  double                   field_0x50  (evidence: 0x006E86F0)
-    // +0x58  double                   field_0x58  (evidence: 0x006E86F0)
+    // +0x50  double                   field_0x50  (evidence: 0x006E86F0) // CONFLICT: multiple definitions at +0x50
+    // +0x50  double                   min_val  (evidence: 0x006E8750) // CONFLICT: multiple definitions at +0x50
+    // +0x58  double                   clamped_val  (evidence: 0x006E8750) // CONFLICT: multiple definitions at +0x58
+    // +0x58  double                   field_0x58  (evidence: 0x006E86F0) // CONFLICT: multiple definitions at +0x58
     // +0x270 uint8_t                  field_0x270  (evidence: 0x00700940)
     // +0x2F8 double                   field_0x2F8  (evidence: 0x0071C1B0)
     // +0xB90 double                   field_0xB90  (evidence: 0x0071C1B0)

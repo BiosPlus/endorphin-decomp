@@ -1390,3 +1390,41 @@ void* fn_006E7430(void* self, uint32_t arg1) {
 }
 } // namespace lift_0071B010
 } // namespace lift_006E7430
+
+// [0x006E8750]
+namespace lift_006E8750 {
+extern void __thiscall ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+extern void __fastcall ext_006C8B30(void* self);
+extern void __fastcall ext_006C8A70(void* self);
+
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5E0C8;
+extern uint32_t mem_00B5E0CC;
+extern uint32_t mem_00B5E0C0;
+extern uint32_t mem_00B5DD98;
+extern uint32_t mem_00B5DD9C;
+extern uint32_t mem_00B5DD90;
+
+// @name Unknown::setClampedMinDouble
+// @class Unknown
+// @summary Dereferences self to an inner object and stores val at +0x58, clamped to at least the double at +0x50.
+// @field Unknown +0x00 void* inner
+// @field Inner +0x50 double min_val
+// @field Inner +0x58 double clamped_val
+void __thiscall sub_006E8750(void* self, double val) {
+    (void)&ext_00711D40;
+    (void)&ext_006C8B30;
+    (void)&ext_006C8A70;
+    (void)&mem_00925284;
+    (void)&mem_00B5E0C8;
+    (void)&mem_00B5E0CC;
+    (void)&mem_00B5E0C0;
+    (void)&mem_00B5DD98;
+    (void)&mem_00B5DD9C;
+    (void)&mem_00B5DD90;
+
+    void* obj = *reinterpret_cast<void**>(self);
+    double min_val = lift_field<double>(obj, 0x50);
+    lift_field<double>(obj, 0x58) = (val < min_val) ? min_val : val;
+}
+} // namespace lift_006E8750
