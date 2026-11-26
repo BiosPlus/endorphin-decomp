@@ -26186,6 +26186,12 @@
     "summary": "Copies a range of 0x3C-byte structs backward, assigning two embedded std::strings.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057BBE0": {
+    "name": "CopyBackwardStringPairRange",
+    "signature": "void* sub_0057BBE0(void* first, void* last, void* d_last)",
+    "summary": "Copy-backward over 0x38-byte StringPair records: for each record from last down to first, assigns both std::string members into the destination ending at d_last. Returns d_last when first == last, otherwise the new destination begin (d_last - count * 0x38).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057BC70": {
     "name": "GetOnceInitString_0057BC70",
     "signature": "void* fn_0057BC70()",

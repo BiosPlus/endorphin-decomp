@@ -1440,3 +1440,37 @@ void* __thiscall ElemArray20_GetAt(void* self, int32_t index) {
     return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
 }
 } // namespace lift_00575DF0
+
+// [0x0057BBE0]
+namespace lift_0057BBE0 {
+extern uint32_t mem_00924FDC;
+
+// @name CopyBackwardStringPairRange
+// @summary Copy-backward over 0x38-byte StringPair records: for each record from last down to first, assigns both std::string members into the destination ending at d_last. Returns d_last when first == last, otherwise the new destination begin (d_last - count * 0x38).
+// @field StringPair +0x00 std::string field_0x00
+// @field StringPair +0x1C std::string field_0x1C
+void* sub_0057BBE0(void* first, void* last, void* d_last)
+{
+    // MSVCP80 basic_string<char>::operator=(const basic_string&), thiscall, returns *this.
+    typedef void* (__thiscall *StrAssign_t)(void* self, const void* src);
+    StrAssign_t assign = *(StrAssign_t*)&mem_00924FDC;
+
+    constexpr uintptr_t kRecordSize = 0x38;
+    constexpr uintptr_t kSecondStr  = 0x1C;
+
+    uint8_t* src = (uint8_t*)last;
+    uint8_t* dst = (uint8_t*)d_last;
+
+    if (first == last)
+        return d_last;
+
+    do {
+        src -= kRecordSize;
+        dst -= kRecordSize;
+        assign(dst, src);
+        assign(dst + kSecondStr, src + kSecondStr);
+    } while (src != (uint8_t*)first);
+
+    return dst;
+}
+} // namespace lift_0057BBE0
