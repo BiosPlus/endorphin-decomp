@@ -72316,6 +72316,12 @@
     "summary": "Unlinks a node from a circular doubly-linked list and decrements the list count.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CC970": {
+    "name": "destroyGeometryObject",
+    "signature": "extern \"C\" void sub_007CC970(void* obj)",
+    "summary": "Destroys a geometry object by warning if its reference count is non-zero, invoking its type destructor, and freeing its memory.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CC9C0": {
     "name": "getShiftedField0",
     "signature": "uint32_t sub_007CC9C0(const uint32_t* ptr)",
@@ -74571,6 +74577,12 @@
     "name": "CopyDwordBlock20Reverse",
     "signature": "void fn_0086F020(const DWORD* src, DWORD* dst)",
     "summary": "Copies 20 DWORDs from src to dst, walking indices 19 down to 0.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
+  "0x0086F050": {
+    "name": "UnpackDwords5ToLimbs16",
+    "signature": "void __cdecl fn_0086F050(const DWORD* src, DWORD* dst)",
+    "summary": "Zeroes a 20-DWORD destination array and unpacks 5 source DWORDs into 16-bit limbs at indices 10..19 (high 16 bits first, low 16 bits second).",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
   "0x0086F0A0": {

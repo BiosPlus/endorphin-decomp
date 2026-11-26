@@ -1,0 +1,45 @@
+{
+  "va": "0x007CC970",
+  "size": 80,
+  "orig_symbol": "sub_007CC970",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "destroyGeometryObject",
+  "signature": "extern \"C\" void sub_007CC970(void* obj)",
+  "summary": "Destroys a geometry object by warning if its reference count is non-zero, invoking its type destructor, and freeing its memory.",
+  "fields": [
+    {
+      "class": "GeometryObject",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "typeAndRefCount"
+    },
+    {
+      "class": "GeometryObject",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "context"
+    },
+    {
+      "class": "GeometryContext",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "typeTable"
+    },
+    {
+      "class": "GeometryContext",
+      "offset": "+0xB0",
+      "type": "void*",
+      "name": "allocator"
+    },
+    {
+      "class": "GeometryAllocator",
+      "offset": "+0x10",
+      "type": "void(*)(void*)",
+      "name": "freeFn"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-neon@low",
+  "lifted_at": "2026-11-26T11:42:27Z"
+}

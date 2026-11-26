@@ -1711,3 +1711,43 @@ void fn_007CDB70(void* self) {
     lift_field<int32_t>(self, 0xA8) += 1;
 }
 } // namespace lift_007CDB70
+
+// [0x007CC970]
+namespace lift_007CC970 {
+// @name destroyGeometryObject
+// @summary Destroys a geometry object by warning if its reference count is non-zero, invoking its type destructor, and freeing its memory.
+// @field GeometryObject +0x00 uint32_t typeAndRefCount
+// @field GeometryObject +0x0C void* context
+// @field GeometryContext +0x20 void* typeTable
+// @field GeometryContext +0xB0 void* allocator
+// @field GeometryAllocator +0x10 void(*)(void*) freeFn
+
+
+void ext_007D58E0(int32_t level, void* allocator, const void* msg);
+uint32_t ext_007CC9C0(const uint32_t* ptr);
+extern const uint8_t mem_0099DD3C[];
+extern const char mem_009548E8[];
+extern const char mem_0099D228[];
+
+extern void sub_007CC970(void* obj) {
+    (void)mem_009548E8;
+    (void)mem_0099D228;
+
+    if (ext_007CC9C0(reinterpret_cast<const uint32_t*>(obj)) != 0u) {
+        void* context = lift_field<void*>(obj, 0x0C);
+        void* allocator = lift_field<void*>(context, 0xB0);
+        ext_007D58E0(0, allocator, mem_0099DD3C);
+    }
+
+    uint32_t typeId = lift_field<uint32_t>(obj, 0x00) & 0xFFu;
+    void* context = lift_field<void*>(obj, 0x0C);
+    uint8_t* typeTable = lift_field<uint8_t*>(context, 0x20);
+    auto destroyFn = *reinterpret_cast<void (**)(void*)>(typeTable + static_cast<uintptr_t>(typeId) * 40u);
+    destroyFn(obj);
+
+    context = lift_field<void*>(obj, 0x0C);
+    void* allocator = lift_field<void*>(context, 0xB0);
+    auto freeFn = lift_field<void (*)(void*)>(allocator, 0x10);
+    freeFn(obj);
+}
+} // namespace lift_007CC970
