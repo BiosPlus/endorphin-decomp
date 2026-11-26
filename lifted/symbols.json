@@ -23072,6 +23072,13 @@
     "summary": "Renders a line along the Z axis from the origin to field_0x14 using OpenGL.",
     "lifted_path": "lifted/UtilityGraphics/Line.cpp"
   },
+  "0x00538E90": {
+    "name": "UtilityGraphics::StippledLine::vfunc_22",
+    "class": "UtilityGraphics::StippledLine",
+    "signature": "extern void (__stdcall *mem_0092546C)(uint32_t mask);       // glPushAttrib extern void (__stdcall *mem_00925494)(int32_t factor, uint16_t pattern); // glLineStipple extern void (__stdcall *mem_00925418)(uint32_t cap);        // glEnable extern void (__stdcall *mem_00925438)(uint32_t cap);        // glDisable extern void (__stdcall *mem_0092552C)(void);                // glPopAttrib extern void __thiscall ext_00538E40(void* this_ptr, uint32_t arg); // UtilityGraphics::Line::vfunc_22 void __thiscall fn_00538E90(void* this_ptr, uint32_t arg)",
+    "summary": "Enables line stippling, delegates to UtilityGraphics::Line::vfunc_22, and restores OpenGL attributes.",
+    "lifted_path": "lifted/UtilityGraphics/StippledLine.cpp"
+  },
   "0x00538F20": {
     "name": "UtilityGraphics::Arrow::vfunc_22",
     "class": "UtilityGraphics::Arrow",
@@ -48234,6 +48241,12 @@
     "summary": "Validates that the other-range end (other + 8*count, count = (end-begin)/8) lies within [range+0x04, range+0x08] (invalid-parameter handler otherwise), then returns 1 iff IsSameDwordPair matches for every 8-byte element of [begin, end) against the same-offset element of other.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x00676780": {
+    "name": "sub_00676780",
+    "signature": "void* __thiscall sub_00676780(void* self)",
+    "summary": "Constructor that zeroes fields and default-constructs a std::string member at +0x04",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00676850": {
     "name": "sub_00676850",
     "signature": "extern \"C\" void __fastcall fn_00676850(void* self)",
@@ -48253,6 +48266,12 @@
     "signature": "extern \"C\" void* __fastcall fn_00678380(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00678280 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00678520": {
+    "name": "sub_00678520",
+    "signature": "extern \"C\" uint32_t __thiscall sub_00678520(void* self)",
+    "summary": "Constructor that sets vtable to 0x0098C1F4 and default-constructs std::string at +0x4",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x00678880": {
     "name": "sub_00678880",
@@ -69062,6 +69081,12 @@
     "name": "writeFileBytes",
     "signature": "uint32_t __cdecl sub_0079AD20(uint32_t hFile, uint32_t lpBuffer, uint32_t nNumberOfBytesToWrite)",
     "summary": "Calls WriteFile and returns bytes written on success or 0 on failure.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
+  "0x0079AD50": {
+    "name": "fileSeek32",
+    "signature": "extern \"C\" uint32_t __cdecl sub_0079AD50(uint32_t hFile, int32_t lDistanceToMove, int32_t origin)",
+    "summary": "Seeks a Win32 file handle using SetFilePointer with a zeroed high-order distance",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
   "0x0079ADA0": {

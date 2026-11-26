@@ -1685,3 +1685,46 @@ void fn_00672E70(void* self, uint32_t flag) {
 }
 } // namespace lift_005597C0
 } // namespace lift_00672E70
+
+// [0x00678520]
+namespace lift_00678520 {
+// @name sub_00678520
+// @summary Constructor that sets vtable to 0x0098C1F4 and default-constructs std::string at +0x4
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x04 uint8_t[0x1C] field_0x04
+
+extern uint32_t mem_00924FE8;
+
+extern uint32_t __thiscall sub_00678520(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    lift_field<uint32_t>(obj, 0x00) = 0x0098C1F4u;
+    using ctor_t = void(__thiscall*)(void*);
+    reinterpret_cast<ctor_t>(mem_00924FE8)(obj + 0x04);
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_00678520
+
+// [0x00676780]
+namespace lift_00676780 {
+// @name sub_00676780
+// @summary Constructor that zeroes fields and default-constructs a std::string member at +0x04
+// @field Self +0x00 uint32_t field_0x00
+// @field Self +0x04 char[0x20] field_0x04
+// @field Self +0x24 uint32_t field_0x24
+// @field Self +0x28 uint32_t field_0x28
+// @field Self +0x2C uint32_t field_0x2C
+// @field Self +0x30 uint32_t field_0x30
+
+
+extern void (*mem_00924FE8)(void* this_ptr);
+
+void* __thiscall sub_00676780(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0;
+    mem_00924FE8(static_cast<uint8_t*>(self) + 0x04);
+    lift_field<uint32_t>(self, 0x24) = 0;
+    lift_field<uint32_t>(self, 0x28) = 0;
+    lift_field<uint32_t>(self, 0x2C) = 0;
+    lift_field<uint32_t>(self, 0x30) = 0;
+    return self;
+}
+} // namespace lift_00676780
