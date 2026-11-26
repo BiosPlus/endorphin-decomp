@@ -2221,7 +2221,6 @@ extern int mem_00925130;
 
 // @name allocArrayChecked
 // @summary Allocates n*16 bytes via MFC80 ord_762 after an overflow check on n; throws std::exception otherwise
-// @field exception +0x00 void* object
 void* fn_00480310(size_t n)
 {
     // Overflow guard: if n != 0 and 0xFFFFFFFF / n < 16, the multiply would overflow.
