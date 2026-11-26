@@ -1,0 +1,28 @@
+{
+  "va": "0x005272C0",
+  "size": 76,
+  "orig_symbol": "InitialVariableValues::vfunc_25",
+  "src_path": "src/classes/InitialVariableValues.cpp",
+  "lifted_path": "lifted/classes/InitialVariableValues.cpp",
+  "name": "InitialVariableValues::vfunc_25",
+  "class": "InitialVariableValues",
+  "signature": "void* fn_005272C0(void* self, void* out, void* a2, uint32_t index)",
+  "summary": "Copy-constructs the std::string returned by element[index]'s vtable slot 9 into the caller's return buffer.",
+  "fields": [
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x40",
+      "type": "void**",
+      "name": "field_0x40"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0x44",
+      "type": "void**",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T11:25:21Z"
+}

@@ -21682,6 +21682,13 @@
     "summary": "Thunk for the PointainerWithUndo::Owner base at +0x38: recovers the InitialVariableValues this (ecx-0x38) and tail-dispatches vtable slot 23 (+0x5c) with argument 0, popping 8 bytes of args.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005272C0": {
+    "name": "InitialVariableValues::vfunc_25",
+    "class": "InitialVariableValues",
+    "signature": "void* fn_005272C0(void* self, void* out, void* a2, uint32_t index)",
+    "summary": "Copy-constructs the std::string returned by element[index]'s vtable slot 9 into the caller's return buffer.",
+    "lifted_path": "lifted/classes/InitialVariableValues.cpp"
+  },
   "0x005273B0": {
     "name": "GetOnceInitString_005273B0",
     "signature": "extern \"C\" int mem_00AED308;  // one-time initialization flag (bit 0) extern \"C\" int mem_00AED2EC;  // global string object storage void* fn_005273B0()",

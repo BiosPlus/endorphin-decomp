@@ -47,3 +47,36 @@ uint32_t* __thiscall fn_00507450(void* self, uint32_t* out, uint32_t id) {
     return out;
 }
 } // namespace lift_00507450
+
+// [0x005272C0] InitialVariableValues::vfunc_25 (76 bytes)
+namespace lift_005272C0 {
+// MSVCR80!_invalid_parameter_noinfo (IAT slot 0x925134)
+extern void mem_00925134(void);
+// MSVCP80 std::basic_string<char>::basic_string(const basic_string&) (IAT slot 0x924FE0), thiscall
+extern void* mem_00924FE0(void* self, const void* src);
+
+// @name InitialVariableValues::vfunc_25
+// @class InitialVariableValues
+// @summary Copy-constructs the std::string returned by element[index]'s vtable slot 9 into the caller's return buffer.
+// @field InitialVariableValues +0x40 void** field_0x40
+// @field InitialVariableValues +0x44 void** field_0x44
+void* fn_005272C0(void* self, void* out, void* a2, uint32_t index) {
+    (void)a2; // third stack argument is passed through unused by this function
+    void** begin = lift_field<void**>(self, 0x40);
+    void** end = lift_field<void**>(self, 0x44);
+    uintptr_t count = (reinterpret_cast<uintptr_t>(end) - reinterpret_cast<uintptr_t>(begin)) >> 2;
+
+    if (begin == nullptr || static_cast<uintptr_t>(index) >= count) {
+        mem_00925134(); // _invalid_parameter_noinfo; does not return in practice
+    }
+
+    void* obj = begin[index];
+    void** vtable = *reinterpret_cast<void***>(obj);
+    // vtable slot at +0x24 => index 9
+    auto slot9 = reinterpret_cast<void* (*)(void*)>(vtable[9]);
+    const void* src = slot9(obj);
+
+    mem_00924FE0(out, src);
+    return out;
+}
+} // namespace lift_005272C0
