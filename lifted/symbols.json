@@ -7054,6 +7054,12 @@
     "summary": "Calls GetKeyState(4) through the IAT slot and returns true when the 16-bit result is negative (key down).",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x004646B0": {
+    "name": "isAltMouseButtonPressed",
+    "signature": "int32_t fn_004646B0()",
+    "summary": "Returns 1 if Alt (async) and any mouse button (left, middle, or right) are pressed, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00464760": {
     "name": "sub_00464760",
     "signature": "extern void* fn_00464760()",
@@ -68771,6 +68777,13 @@
     "signature": "uint8_t fn_00783650(void* self)",
     "summary": "Reads a flag bit (bit 4 of a dword) from a nested object if a byte flag at the inner object is set; returns 0 otherwise.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
+  "0x00783670": {
+    "name": "Logger::logPrintf",
+    "class": "Logger",
+    "signature": "void __cdecl sub_00783670(void* logger, const char* fmt, ...)",
+    "summary": "Formats a variadic message and writes it to the logger's file stream if enabled.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
   "0x007836D0": {
     "name": "FileStream::setSize",

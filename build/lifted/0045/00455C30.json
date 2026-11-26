@@ -1,0 +1,52 @@
+{
+  "va": "0x00455C30",
+  "size": 77,
+  "orig_symbol": "ButtonPanel::vfunc_93",
+  "src_path": "src/classes/ButtonPanel.cpp",
+  "lifted_path": "lifted/classes/ButtonPanel.cpp",
+  "name": "ButtonPanel::Create",
+  "class": "ButtonPanel",
+  "signature": "extern \"C\" uint32_t __thiscall fn_00455C30( void* self, uint32_t arg0, uint32_t arg1, int32_t cx, int32_t cy, uint32_t arg4, uint32_t arg5, uint32_t arg6)",
+  "summary": "Initializes horizontal, vertical, and floating bar sizes from default size and delegates to virtual Create.",
+  "fields": [
+    {
+      "class": "ButtonPanel",
+      "offset": "+0x9C",
+      "type": "int32_t",
+      "name": "m_szHorz_cx"
+    },
+    {
+      "class": "ButtonPanel",
+      "offset": "+0xA0",
+      "type": "int32_t",
+      "name": "m_szHorz_cy"
+    },
+    {
+      "class": "ButtonPanel",
+      "offset": "+0xA4",
+      "type": "int32_t",
+      "name": "m_szVert_cx"
+    },
+    {
+      "class": "ButtonPanel",
+      "offset": "+0xA8",
+      "type": "int32_t",
+      "name": "m_szVert_cy"
+    },
+    {
+      "class": "ButtonPanel",
+      "offset": "+0xAC",
+      "type": "int32_t",
+      "name": "m_szFloat_cx"
+    },
+    {
+      "class": "ButtonPanel",
+      "offset": "+0xB0",
+      "type": "int32_t",
+      "name": "m_szFloat_cy"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-neon@low",
+  "lifted_at": "2026-11-26T11:49:40Z"
+}

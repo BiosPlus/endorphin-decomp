@@ -10,11 +10,11 @@
 // Recovered field layout for ButtonPanel:
 namespace lifted_layout {
 struct ButtonPanel_Fields {
-    // +0x9C  int                      field_0x9C  (evidence: 0x00455C30)
-    // +0xA0  int                      field_0xA0  (evidence: 0x00455C30)
-    // +0xA4  int                      field_0xA4  (evidence: 0x00455C30)
-    // +0xA8  int                      field_0xA8  (evidence: 0x00455C30)
-    // +0xAC  int                      field_0xAC  (evidence: 0x00455C30)
-    // +0xB0  int                      field_0xB0  (evidence: 0x00455C30)
+    // +0x9C  int32_t                  m_szHorz_cx  (evidence: 0x00455C30)
+    // +0xA0  int32_t                  m_szHorz_cy  (evidence: 0x00455C30)
+    // +0xA4  int32_t                  m_szVert_cx  (evidence: 0x00455C30)
+    // +0xA8  int32_t                  m_szVert_cy  (evidence: 0x00455C30)
+    // +0xAC  int32_t                  m_szFloat_cx  (evidence: 0x00455C30)
+    // +0xB0  int32_t                  m_szFloat_cy  (evidence: 0x00455C30)
 };
 } // namespace lifted_layout
