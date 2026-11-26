@@ -732,3 +732,32 @@ void __thiscall fn_004A5810(void* thisPtr, uint8_t flag) {
     }
 }
 } // namespace lift_004A5810
+
+// [0x004A6020] sub_004A6020 (62 bytes)
+namespace lift_004A6020 {
+// IAT slot holding MSVCR80!memmove_s (original: call dword ptr [0x9251ec]).
+extern int mem_009251EC;
+using MemmoveSFn = int (*)(void* dst, size_t dst_size, const void* src, size_t count);
+
+// @name EraseDwordAtPos
+// @class Unknown
+// @summary Removes the DWORD at pos by shifting the tail down, shrinks end by 4, and writes (value, pos) to the out pair.
+// @field Unknown +0x08 DWORD field_0x08
+void* fn_004A6020(void* self, void* out, DWORD value, void* pos) {
+    // Thiscall: self in ECX; stack args are out (hidden return buffer), value, pos. Returns out in EAX.
+    const DWORD end = lift_field<DWORD>(self, 0x08);
+    const DWORD src = static_cast<DWORD>(reinterpret_cast<uintptr_t>(pos) + 4);
+    const int32_t diff = static_cast<int32_t>(end - src);
+    const int32_t count = diff >> 2;
+    if (count > 0) {
+        const size_t bytes = static_cast<size_t>(count) * 4;
+        auto memmove_s_fn = reinterpret_cast<MemmoveSFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_009251EC)));
+        memmove_s_fn(pos, bytes, reinterpret_cast<const void*>(static_cast<uintptr_t>(src)), bytes);
+    }
+    lift_field<DWORD>(self, 0x08) = end - 4;
+    DWORD* pair = static_cast<DWORD*>(out);
+    pair[0] = value;
+    pair[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(pos));
+    return out;
+}
+} // namespace lift_004A6020

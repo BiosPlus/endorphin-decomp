@@ -12296,6 +12296,13 @@
     "summary": "Walks slots in [first, last) of an owning range, and for each non-null pointer calls ext_00644F30 then frees it via ext_006A5C5C.",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
+  "0x004A6020": {
+    "name": "EraseDwordAtPos",
+    "class": "Unknown",
+    "signature": "void* fn_004A6020(void* self, void* out, DWORD value, void* pos)",
+    "summary": "Removes the DWORD at pos by shifting the tail down, shrinks end by 4, and writes (value, pos) to the out pair.",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004A6060": {
     "name": "lowerBoundProjected",
     "signature": "uint32_t* fn_004A6060(uint32_t* first, uint32_t* last, uint32_t key)",
