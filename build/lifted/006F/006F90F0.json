@@ -1,0 +1,13 @@
+{
+  "va": "0x006F90F0",
+  "size": 96,
+  "orig_symbol": "sub_006F90F0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "findStringIndex",
+  "signature": "int fn_006F90F0(const char* s)",
+  "summary": "Linear search of a 44-entry const char* table at mem_00AAB3EC; returns the index of the first entry equal to the argument string, or -1.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T12:08:40Z"
+}

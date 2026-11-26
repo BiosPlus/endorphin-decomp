@@ -2092,3 +2092,22 @@ extern void __thiscall fn_006F99B0(void* self, uint32_t* val_ptr, void* arg1, vo
     notify(self, 0, 0x15, self, val_ptr, nullptr, 0);
 }
 } // namespace lift_006F99B0
+
+// [0x006F90F0] sub_006F90F0 (96 bytes)
+namespace lift_006F90F0 {
+extern uint32_t mem_00AAB3EC;
+
+// @name findStringIndex
+// @summary Linear search of a 44-entry const char* table at mem_00AAB3EC; returns the index of the first entry equal to the argument string, or -1.
+int fn_006F90F0(const char* s) {
+    constexpr int kEntryCount = 0xAAB49C - 0xAAB3EC;
+    constexpr int kTableLen = kEntryCount / 4;
+    const char* const* table = reinterpret_cast<const char* const*>(&mem_00AAB3EC);
+    for (int i = 0; i < kTableLen; ++i) {
+        if (std::strcmp(s, table[i]) == 0) {
+            return i;
+        }
+    }
+    return -1;
+}
+} // namespace lift_006F90F0

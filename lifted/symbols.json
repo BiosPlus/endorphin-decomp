@@ -13900,6 +13900,12 @@
     "summary": "Loads the float referenced by the source's first pointer, forwards it to ext_0046C390 with self, and returns self.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x004B7340": {
+    "name": "sub_004B7340",
+    "signature": "void* __thiscall sub_004B7340(void* self, uint32_t index)",
+    "summary": "Copies a std::string from a global vector at the given index into this+0x58",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B7410": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::MaterialPair, \u0026public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, \u0026public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), \u0026public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const\u003e::vfunc_41",
     "class": "ExprParser::DynamicEnumType\u003cNMData::MaterialPair, \u0026public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, \u0026public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), \u0026public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const\u003e",
@@ -26444,6 +26450,12 @@
     "signature": "int32_t fn_005731D0(void* self)",
     "summary": "Returns (end - begin) / 12 for a 12-byte element array, or 0 when begin is null.",
     "lifted_path": "lifted/leaf/tiny_570000.cpp"
+  },
+  "0x005731F0": {
+    "name": "allocateElements48",
+    "signature": "extern \"C\" void* fn_005731F0(uint32_t count)",
+    "summary": "Allocates count * 48 bytes via operator new, throwing std::bad_alloc on size_t overflow.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
   "0x00573250": {
     "name": "StringConstIterator::getCheckedPtr",
@@ -63410,6 +63422,12 @@
     "class": "Unknown",
     "signature": "uint32_t sub_006F90D0(int32_t idx)",
     "summary": "Returns the u32 at index idx of the 0x2C-entry table at 0x00AAB3EC, or 0 if idx is out of range [0, 0x2C).",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
+  "0x006F90F0": {
+    "name": "findStringIndex",
+    "signature": "int fn_006F90F0(const char* s)",
+    "summary": "Linear search of a 44-entry const char* table at mem_00AAB3EC; returns the index of the first entry equal to the argument string, or -1.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
   "0x006F9380": {
