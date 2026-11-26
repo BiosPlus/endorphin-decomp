@@ -49717,6 +49717,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051AED0 (NMData::RealChannel::vfunc_8).",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x006968D0": {
+    "name": "skipLine",
+    "signature": "extern \"C\" uint32_t mem_009250BC;  // MSVCP80 basic_istream::get(char\u0026) extern \"C\" uint32_t mem_009250C0;  // MSVCP80 ios_base::operator!() bool fn_006968D0(void* stream)",
+    "summary": "Reads chars from an istream until '\\n' or EOF; returns false if the stream fails mid-read, true otherwise.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00696910": {
     "name": "skipUntilCharOrEofSkippingComments",
     "signature": "bool fn_00696910(void* stream, char delim)",

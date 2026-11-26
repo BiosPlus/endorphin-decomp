@@ -1,0 +1,13 @@
+{
+  "va": "0x006968D0",
+  "size": 58,
+  "orig_symbol": "sub_006968D0",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "skipLine",
+  "signature": "extern \"C\" uint32_t mem_009250BC;  // MSVCP80 basic_istream::get(char\u0026) extern \"C\" uint32_t mem_009250C0;  // MSVCP80 ios_base::operator!() bool fn_006968D0(void* stream)",
+  "summary": "Reads chars from an istream until '\\n' or EOF; returns false if the stream fails mid-read, true otherwise.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:53:05Z"
+}

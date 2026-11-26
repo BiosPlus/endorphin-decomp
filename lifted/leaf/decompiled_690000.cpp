@@ -1185,3 +1185,30 @@ void copyBytesRangeToOptionalDst_006989B0(const uint8_t* begin, const uint8_t* e
     }
 }
 } // namespace lift_006989B0
+
+// [0x006968D0] sub_006968D0 (58 bytes)
+namespace lift_006968D0 {
+// IAT slots (.rdata): basic_istream<char>::get(char&) and ios_base::operator!()
+extern uint32_t mem_009250BC;  // MSVCP80 basic_istream::get(char&)
+extern uint32_t mem_009250C0;  // MSVCP80 ios_base::operator!()
+
+// @name skipLine
+// @summary Reads chars from an istream until '\n' or EOF; returns false if the stream fails mid-read, true otherwise.
+bool fn_006968D0(void* stream) {
+    using GetFn = void* (__thiscall*)(void* self, char* c);
+    using NotFn = bool (__thiscall*)(void* ios);
+    char c = 0;
+    for (;;) {
+        void* istr = reinterpret_cast<GetFn>(mem_009250BC)(stream, &c);
+        void* vtbl = lift_field<void*>(istr, 0);
+        int32_t vbase_off = lift_field<int32_t>(vtbl, 4);
+        void* ios = static_cast<char*>(istr) + vbase_off;
+        if (reinterpret_cast<NotFn>(mem_009250C0)(ios))
+            return false;
+        if (c == '\n')
+            return true;
+        if (c == static_cast<char>(0xFF))
+            return true;
+    }
+}
+} // namespace lift_006968D0
