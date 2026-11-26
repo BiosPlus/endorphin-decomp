@@ -1,0 +1,40 @@
+{
+  "va": "0x006408F0",
+  "size": 49,
+  "orig_symbol": "sub_006408F0",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "Unknown::AppendSrcToDstCountMinus1",
+  "class": "Unknown",
+  "signature": "void fn_006408F0(void* self)",
+  "summary": "Clears the flag at +0x11, then appends the C string at +0x04 to the std::string at *(+0x08) (count-1) times, where count is at +0x0C.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "const char*",
+      "name": "src"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "std::string*",
+      "name": "dst"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x11",
+      "type": "uint8_t",
+      "name": "flag"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:40:56Z"
+}

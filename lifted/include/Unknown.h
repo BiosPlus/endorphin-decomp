@@ -217,6 +217,7 @@ struct Unknown_Fields {
     // +0x4   DWORD field_0x04 (accessed through the pointer loaded from self+0x04)  (evidence: 0x00810240) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (on subobject returned by ext_0071E680, i.e. self+0x40)  (evidence: 0x00711D40, 0x007155B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t flags (on inner object; bit 0x400 set/cleared)  (evidence: 0x00810460) // CONFLICT: multiple definitions at +0x4
+    // +0x4   const char*              src  (evidence: 0x006408F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (arg2: inner object pointer whose vtable slot 6 yields src)  (evidence: 0x0066B860) // CONFLICT: multiple definitions at +0x4
     // +0x4   float                    src_y  (evidence: 0x007C8490, 0x007CA310, 0x007CAF70) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              str0  (evidence: 0x006098F0) // CONFLICT: multiple definitions at +0x4
@@ -243,6 +244,7 @@ struct Unknown_Fields {
     // +0x8   int32_t                  chunkSize  (evidence: 0x007BFC90) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 count  (evidence: 0x007D48A0, 0x007D8470, 0x007D9610) // CONFLICT: multiple definitions at +0x8
     // +0x8   int32_t                  cursor  (evidence: 0x0077F4E0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   std::string*             dst  (evidence: 0x006408F0) // CONFLICT: multiple definitions at +0x8
     // +0x8   float field_0x08 (read via both pointer args: ecx and eax)  (evidence: 0x007FC2B0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 element  (evidence: 0x0048DFF0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 elements[]  (evidence: 0x007D48A0, 0x007D8470, 0x007D9610) // CONFLICT: multiple definitions at +0x8
@@ -304,7 +306,7 @@ struct Unknown_Fields {
     // +0xC   uint32_t field_0x0C      (slot[0])  (evidence: 0x00553A30) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* handler (handler pointer at table[kind*40 + 0x0C])  (evidence: 0x007D5B30) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    capacity  (evidence: 0x00503BC0, 0x0050B960, 0x0050C4D0) // CONFLICT: multiple definitions at +0xC
-    // +0xC   int32_t                  count  (evidence: 0x00648A20) // CONFLICT: multiple definitions at +0xC
+    // +0xC   int32_t                  count  (evidence: 0x006408F0, 0x00648A20) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 counter  (evidence: 0x00640CB0, 0x00648A20) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t field_0x0C (count, decremented)  (evidence: 0x00640CD0, 0x00648A20) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 embedded_array_base  (evidence: 0x006E99C0) // CONFLICT: multiple definitions at +0xC
@@ -414,7 +416,7 @@ struct Unknown_Fields {
     // +0x10  void**                   vptr_embedded_subobject  (evidence: 0x00481300) // CONFLICT: multiple definitions at +0x10
     // +0x11  uint8_t                  appendedNewline  (evidence: 0x00640940) // CONFLICT: multiple definitions at +0x11
     // +0x11  uint8_t                  field_0x11  (evidence: 0x006408C0, 0x00648A20) // CONFLICT: multiple definitions at +0x11
-    // +0x11  uint8_t                  flag  (evidence: 0x00648A20) // CONFLICT: multiple definitions at +0x11
+    // +0x11  uint8_t                  flag  (evidence: 0x006408F0, 0x00648A20) // CONFLICT: multiple definitions at +0x11
     // +0x14  uint32_t field_0x14      (slot[2])  (evidence: 0x00553A30) // CONFLICT: multiple definitions at +0x14
     // +0x14  void* field_0x14 (secondary vtable pointer, set to 0x953B04)  (evidence: 0x0052F7D0) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t field_0x14 (vtable pointer, written to 0x953f04)  (evidence: 0x0052F690) // CONFLICT: multiple definitions at +0x14

@@ -42531,6 +42531,13 @@
     "summary": "Initializes a 18-byte record at self: stores arg2 at +0x00, arg1 at +0x04 (defaulting to \u0026mem_0092F67C when zero), arg0 at +0x08, zeroes +0x0C and the two flag bytes at +0x10/+0x11. Callee-cleans 12 bytes.",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x006408F0": {
+    "name": "Unknown::AppendSrcToDstCountMinus1",
+    "class": "Unknown",
+    "signature": "void fn_006408F0(void* self)",
+    "summary": "Clears the flag at +0x11, then appends the C string at +0x04 to the std::string at *(+0x08) (count-1) times, where count is at +0x0C.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00640930": {
     "name": "fn_00640930 (decrement dword at +0x0C, set byte at +0x10 = 1)",
     "signature": "void fn_00640930(void* self)",

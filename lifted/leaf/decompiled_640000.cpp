@@ -2062,3 +2062,27 @@ float* __thiscall sub_006497C0(void* self, float* out, const float* in) {
     return out;
 }
 } // namespace lift_006497C0
+
+// [0x006408F0] sub_006408F0 (49 bytes)
+namespace lift_006408F0 {
+// IAT slot the original asm called through (MSVC std::string::operator+=(const char*)).
+// The portable body below performs that call directly on the std::string; the
+// reference below only keeps the original global in the lifted output.
+extern int mem_00924ED0;
+
+// @name Unknown::AppendSrcToDstCountMinus1
+// @class Unknown
+// @summary Clears the flag at +0x11, then appends the C string at +0x04 to the std::string at *(+0x08) (count-1) times, where count is at +0x0C.
+// @field Unknown +0x04 const char* src
+// @field Unknown +0x08 std::string* dst
+// @field Unknown +0x0C int32_t count
+// @field Unknown +0x11 uint8_t flag
+void fn_006408F0(void* self) {
+    static_cast<void>(&mem_00924ED0);  // IAT slot for std::string::operator+=
+    lift_field<uint8_t>(self, 0x11) = 0;
+    // Original re-reads count each iteration and loops while i < count - 1.
+    for (int32_t i = 0; i < lift_field<int32_t>(self, 0x0C) - 1; ++i) {
+        *lift_field<std::string*>(self, 0x08) += lift_field<const char*>(self, 0x04);
+    }
+}
+} // namespace lift_006408F0
