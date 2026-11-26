@@ -1855,6 +1855,13 @@
     "summary": "Calls TabbedTextOutA on the DC and returns its packed SIZE result (cx low word, cy high word) via the caller's buffer.",
     "lifted_path": "lifted/classes/CMemDC.cpp"
   },
+  "0x0041B7F0": {
+    "name": "CMemDC::vfunc_30",
+    "class": "CMemDC",
+    "signature": "BOOL CMemDC_vfunc_30(CMemDC* self, void* arg1, void* arg2, LPARAM arg3, int arg4, int arg5, int arg6, int arg7, int arg8)",
+    "summary": "Calls GrayStringA on this-\u003ehdc, using the brush handle at arg1+0x4 (or NULL if arg1 is NULL) and forwarding the remaining stack args.",
+    "lifted_path": "lifted/classes/CMemDC.cpp"
+  },
   "0x0041B930": {
     "name": "CMemDC::vfunc_1",
     "class": "CMemDC",

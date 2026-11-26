@@ -1,0 +1,22 @@
+{
+  "va": "0x0041B7F0",
+  "size": 60,
+  "orig_symbol": "CMemDC::vfunc_30",
+  "src_path": "src/classes/CMemDC.cpp",
+  "lifted_path": "lifted/classes/CMemDC.cpp",
+  "name": "CMemDC::vfunc_30",
+  "class": "CMemDC",
+  "signature": "BOOL CMemDC_vfunc_30(CMemDC* self, void* arg1, void* arg2, LPARAM arg3, int arg4, int arg5, int arg6, int arg7, int arg8)",
+  "summary": "Calls GrayStringA on this-\u003ehdc, using the brush handle at arg1+0x4 (or NULL if arg1 is NULL) and forwarding the remaining stack args.",
+  "fields": [
+    {
+      "class": "CMemDC",
+      "offset": "+0x4",
+      "type": "HDC",
+      "name": "hdc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-26T10:54:04Z"
+}
