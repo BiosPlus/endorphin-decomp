@@ -3541,3 +3541,33 @@ extern void __thiscall sub_00430780(void* self, void* cmdUI) {
     }
 }
 } // namespace lift_00430780
+
+// [0x0043D7C0] sub_0043D7C0 (61 bytes)
+namespace lift_0043D7C0 {
+extern int mem_009244D4;
+
+// @name CopyBackwardRange
+// @summary Copy-constructs a 4-byte-element range [first, last) backward into the range ending at dest_last, calling the indirect MFC80 ord_781 copy routine per element (this = destination slot, arg = source element); returns the new start of the destination range (dest_last - byte_count).
+// (No struct field offsets are accessed; the function only strides over 4-byte elements.)
+extern DWORD fn_0043D7C0(DWORD first, DWORD last, DWORD dest_last) {
+    // Byte count of the source range, computed as in the original: sar 2, then *4.
+    const DWORD byte_count = static_cast<DWORD>((static_cast<int32_t>(last - first) >> 2) * 4);
+    const DWORD result = dest_last - byte_count;
+
+    // Constant displacement from a source element address to its destination slot.
+    const DWORD shift = dest_last - last;
+
+    // Indirect thiscall to MFC80 ord_781: ecx = this (destination), one stack arg = source element.
+    using CopyFn = void(__thiscall*)(void*, void*);
+    auto copy = *reinterpret_cast<CopyFn*>(&mem_009244D4);
+
+    for (DWORD p = last; p != first;) {
+        p -= 4;
+        const DWORD dst = p + shift;
+        copy(reinterpret_cast<void*>(static_cast<uintptr_t>(dst)),
+             reinterpret_cast<void*>(static_cast<uintptr_t>(p)));
+    }
+
+    return result;
+}
+} // namespace lift_0043D7C0

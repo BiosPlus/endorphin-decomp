@@ -3863,6 +3863,12 @@
     "summary": "Allocates a 0x18-byte record, zeroes its three dword slots at +0x00/+0x04/+0x08, sets the flag bytes at +0x14=1 and +0x15=0, and returns the record.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043D7C0": {
+    "name": "CopyBackwardRange",
+    "signature": "extern \"C\" DWORD fn_0043D7C0(DWORD first, DWORD last, DWORD dest_last)",
+    "summary": "Copy-constructs a 4-byte-element range [first, last) backward into the range ending at dest_last, calling the indirect MFC80 ord_781 copy routine per element (this = destination slot, arg = source element); returns the new start of the destination range (dest_last - byte_count).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043DCC0": {
     "name": "sub_0043DCC0",
     "signature": "extern \"C\" void fn_0043DCC0(void)",
