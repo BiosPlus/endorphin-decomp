@@ -1543,3 +1543,47 @@ void* fn_00519CB0(void* self, const void* src) {
     return self;
 }
 } // namespace lift_00519CB0
+
+// [0x00517310] sub_00517310 (76 bytes)
+namespace lift_00517310 {
+extern uint32_t mem_00925134; // MSVCR80!_invalid_parameter_noinfo function pointer
+
+// @name ForEachVirtualSlot0x68
+// @class Unknown
+// @summary Walks the pointer range stored at self+0x14..+0x18 and calls virtual slot 0x68 (thiscall, no args) on each element, with debug-style range checks that invoke _invalid_parameter_noinfo on failure.
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+void __thiscall fn_00517310(void* self) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    auto invalid_parameter = [] {
+        reinterpret_cast<void(__cdecl*)()>(mem_00925134)();
+    };
+    auto field_begin = [&]() -> uint32_t { return *reinterpret_cast<uint32_t*>(base + 0x14); };
+    auto field_end = [&]() -> uint32_t { return *reinterpret_cast<uint32_t*>(base + 0x18); };
+
+    uint32_t cur = field_begin();
+    if (cur > field_end()) {
+        invalid_parameter();
+    }
+    for (;;) {
+        uint32_t end = field_end();
+        if (field_begin() > end) {
+            invalid_parameter();
+        }
+        if (cur == end) {
+            break;
+        }
+        if (!(cur < field_end())) {
+            invalid_parameter();
+        }
+        uint32_t obj = *reinterpret_cast<uint32_t*>(cur);
+        uint32_t vtbl = *reinterpret_cast<uint32_t*>(obj);
+        uint32_t slot = *reinterpret_cast<uint32_t*>(vtbl + 0x68);
+        reinterpret_cast<void(__thiscall*)(void*)>(slot)(reinterpret_cast<void*>(obj));
+        if (!(cur < field_end())) {
+            invalid_parameter();
+        }
+        cur += 4;
+    }
+}
+} // namespace lift_00517310
