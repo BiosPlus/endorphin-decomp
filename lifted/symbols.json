@@ -36791,6 +36791,13 @@
     "summary": "Calls the base sensor update, then copies the 3-float vector at +0x60 to +0x70.",
     "lifted_path": "lifted/Sensors/SensorTreeCentreOfMassVelocity.cpp"
   },
+  "0x005FF240": {
+    "name": "MetaBodySensor::MetaBodySensor",
+    "class": "MetaBodySensor",
+    "signature": "void __thiscall fn_005FF240(void* self, uint32_t arg)",
+    "summary": "Constructor: installs the MetaBodySensor primary vtable (0x0096F154), zeroes the three fields at +0x08/+0x0C/+0x10, and stores the single stack argument at +0x28. The original SEH frame setup/teardown is omitted.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005FF290": {
     "name": "sub_005FF290",
     "signature": "void* fn_005FF290(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3)",

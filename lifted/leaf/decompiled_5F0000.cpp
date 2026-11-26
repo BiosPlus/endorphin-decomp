@@ -1276,3 +1276,22 @@ void* fn_005FF290(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
 } // namespace lift_005FF290
 } // namespace lift_005FF790
 } // namespace lift_005FF290
+
+// [0x005FF240] sub_005FF240 (65 bytes)
+namespace lift_005FF240 {
+// @name MetaBodySensor::MetaBodySensor
+// @class MetaBodySensor
+// @summary Constructor: installs the MetaBodySensor primary vtable (0x0096F154), zeroes the three fields at +0x08/+0x0C/+0x10, and stores the single stack argument at +0x28. The original SEH frame setup/teardown is omitted.
+// @field MetaBodySensor +0x00 uint32_t vtable
+// @field MetaBodySensor +0x08 uint32_t field_0x08
+// @field MetaBodySensor +0x0C uint32_t field_0x0C
+// @field MetaBodySensor +0x10 uint32_t field_0x10
+// @field MetaBodySensor +0x28 uint32_t field_0x28
+void __thiscall fn_005FF240(void* self, uint32_t arg) {
+    lift_field<uint32_t>(self, 0x00) = 0x0096F154u;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x28) = arg;
+}
+} // namespace lift_005FF240
