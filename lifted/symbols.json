@@ -21781,6 +21781,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005AC820 (Unknown::walkLinkUntilFlagSet_005AC820).",
     "lifted_path": "lifted/leaf/tiny_520000.cpp"
   },
+  "0x0052A230": {
+    "name": "Tree_lowerBound",
+    "signature": "void* __thiscall sub_0052A230(void* self, const void* key)",
+    "summary": "Finds the lower-bound node in a red-black tree keyed by std::string.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052EBA0": {
     "name": "TreeMap::find",
     "class": "TreeMap",
@@ -26288,6 +26294,13 @@
     "signature": "void* fn_0057BB20(void* self, DWORD value)",
     "summary": "Stores the DWORD argument at offset 0, then default-constructs an std::string at offset 4; returns self.",
     "lifted_path": "lifted/leaf/tiny_570000.cpp"
+  },
+  "0x0057BB40": {
+    "name": "PairOfStrings::PairOfStrings",
+    "class": "PairOfStrings",
+    "signature": "void* __thiscall sub_0057BB40(void* self)",
+    "summary": "Default-constructs two std::string members at +0x00 and +0x1c",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
   "0x0057BB90": {
     "name": "copyBackwardStruct3C",
