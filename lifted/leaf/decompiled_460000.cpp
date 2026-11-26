@@ -1598,3 +1598,34 @@ void __thiscall Unknown_dispatchToChildAtIndex(void* self, unsigned int index, i
     ((void(__thiscall*)(void*, int))vtbl[1])(child, arg);
 }
 } // namespace lift_00469530
+
+// [0x004629E0]
+namespace lift_004629E0 {
+// @name sub_004629E0
+// @summary Prompts with a Yes/No MessageBoxA unless mode is 0 (skip) or 2 (force), then passes arg1->c_str() to this->field_0x00 via ext_004474F0
+// @field Unknown +0x00 void* field_0x00
+
+
+    int __stdcall mem_009255E0(void* hWnd, const char* lpText, const char* lpCaption, uint32_t uType);
+    const char* __thiscall mem_00924FF0(void* std_string_this);
+    uint32_t __thiscall ext_004474F0(void* self, uint32_t arg);
+    void __thiscall ext_00447510(void* self, uint32_t arg1);
+
+void __thiscall sub_004629E0(void* self, void* arg1, uint32_t arg2) {
+    if (false) {
+        ext_00447510(nullptr, 0);
+    }
+    if (arg2 == 0) {
+        return;
+    }
+    if (arg2 != 2) {
+        int res = mem_009255E0(nullptr, reinterpret_cast<const char*>(0x00938DD4), reinterpret_cast<const char*>(0x00938D28), 4);
+        if (res != 6) {
+            return;
+        }
+    }
+    const char* cstr = mem_00924FF0(arg1);
+    void* target = *reinterpret_cast<void**>(self);
+    ext_004474F0(target, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(cstr)));
+}
+} // namespace lift_004629E0

@@ -1,0 +1,21 @@
+{
+  "va": "0x004629E0",
+  "size": 63,
+  "orig_symbol": "sub_004629E0",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "sub_004629E0",
+  "signature": "void __thiscall sub_004629E0(void* self, void* arg1, uint32_t arg2)",
+  "summary": "Prompts with a Yes/No MessageBoxA unless mode is 0 (skip) or 2 (force), then passes arg1-\u003ec_str() to this-\u003efield_0x00 via ext_004474F0",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T11:06:16Z"
+}
