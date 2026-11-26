@@ -67054,6 +67054,13 @@
     "summary": "Stores the single stack argument into the DWORD at *this and returns this (thiscall, ret 4).",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x007299C0": {
+    "name": "FillStride32SlotsWithOne",
+    "class": "Unknown",
+    "signature": "void fn_007299C0(void* self)",
+    "summary": "For count = self-\u003efield_0x28 entries, takes base = self-\u003efield_0x38 and walks it in 0x20-byte steps; for each entry writes the double 1.0 into the 8 bytes at entry+0x18 (via ext_006D23F0(entry, 3)).",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x0072B120": {
     "name": "sub_0072B120",
     "signature": "extern \"C\" void __fastcall fn_0072B120(void* self, int edx_unused, int32_t value)",

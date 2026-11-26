@@ -713,3 +713,30 @@ void* fn_0072CB00(void* self, void* arg) {
 } // namespace lift_0071B020
 } // namespace lift_00702F60
 } // namespace lift_0072CB00
+
+// [0x007299C0] sub_007299C0 (64 bytes)
+namespace lift_007299C0 {
+// Known callee 0x006D23F0: Unknown::GetAddressAt8 (Returns this + 8 * index (32-bit address of an 8-byte element in an array based at this); thiscall, one stack argument, callee pops 4.)
+extern uint32_t ext_006D23F0(uint32_t self, uint32_t index);
+
+// @name FillStride32SlotsWithOne
+// @class Unknown
+// @summary For count = self->field_0x28 entries, takes base = self->field_0x38 and walks it in 0x20-byte steps; for each entry writes the double 1.0 into the 8 bytes at entry+0x18 (via ext_006D23F0(entry, 3)).
+// @field Unknown +0x28 int32_t field_0x28
+// @field Unknown +0x38 uint32_t field_0x38
+void fn_007299C0(void* self) {
+    const int32_t count = lift_field<int32_t>(self, 0x28);
+    if (count <= 0) {
+        return;
+    }
+
+    const uint32_t base = lift_field<uint32_t>(self, 0x38);
+    uint32_t offset = 0;
+    for (int32_t i = 0; i < count; ++i, offset += 0x20) {
+        const uint32_t addr = ext_006D23F0(base + offset, 3);
+        void* slot = reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+        lift_field<uint32_t>(slot, 0) = 0x00000000u;  // low dword of 1.0
+        lift_field<uint32_t>(slot, 4) = 0x3ff00000u;  // high dword of 1.0
+    }
+}
+} // namespace lift_007299C0
