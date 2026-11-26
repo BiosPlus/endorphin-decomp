@@ -1,0 +1,13 @@
+{
+  "va": "0x00771FC0",
+  "size": 80,
+  "orig_symbol": "sub_00771FC0",
+  "src_path": "src/leaf/decompiled_770000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_770000.cpp",
+  "name": "stripPrefixThroughMarker",
+  "signature": "extern \"C\" char* (__cdecl* mem_00925240)(const char*, const char*); // MSVCR80!strstr bool __stdcall sub_00771FC0(char** str)",
+  "summary": "If *str contains the marker string, shift the text after marker+2 to the start of *str; always returns true.",
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-26T11:41:27Z"
+}

@@ -455,3 +455,24 @@ DWORD __thiscall Unknown_CopyEntry32(void* self, DWORD* dst, DWORD index) {
     return 0;
 }
 } // namespace lift_0077F620
+
+// [0x00771FC0]
+namespace lift_00771FC0 {
+extern char mem_00AA870C[];
+extern char* (__cdecl* mem_00925240)(const char*, const char*); // MSVCR80!strstr
+
+// @name stripPrefixThroughMarker
+// @summary If *str contains the marker string, shift the text after marker+2 to the start of *str; always returns true.
+bool __stdcall sub_00771FC0(char** str)
+{
+    char* found = mem_00925240(*str, mem_00AA870C);
+    if (found) {
+        const char* src = found + 2;
+        size_t n = std::strlen(src) + 1;
+        char* dst = *str;
+        for (size_t i = 0; i < n; ++i)
+            dst[i] = src[i];
+    }
+    return true;
+}
+} // namespace lift_00771FC0

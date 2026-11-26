@@ -68240,6 +68240,12 @@
     "summary": "Allocates a 0x34-byte object; if allocation succeeds, runs its constructor and returns it, otherwise returns NULL.",
     "lifted_path": "lifted/leaf/decompiled_770000.cpp"
   },
+  "0x00771FC0": {
+    "name": "stripPrefixThroughMarker",
+    "signature": "extern \"C\" char* (__cdecl* mem_00925240)(const char*, const char*); // MSVCR80!strstr bool __stdcall sub_00771FC0(char** str)",
+    "summary": "If *str contains the marker string, shift the text after marker+2 to the start of *str; always returns true.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
   "0x00772010": {
     "name": "StrncpyInPlaceTerminate",
     "signature": "bool __stdcall fn_00772010(char** dstPtr, uint32_t count)",
