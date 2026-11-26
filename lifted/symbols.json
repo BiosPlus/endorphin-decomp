@@ -21748,6 +21748,12 @@
     "summary": "Bounds-checked subscript access on a std::vector\u003cdouble\u003e-like container",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00524610": {
+    "name": "sub_00524610_ctor",
+    "signature": "void* __thiscall fn_00524610(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Constructor setting vtable 0x0094F484, initializing two 32-bit fields and a std::string at +0x0C",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00524750": {
     "name": "sub_00524750",
     "signature": "void* fn_00524750()",
@@ -23428,6 +23434,12 @@
     "summary": "Stores two float arguments at +0x28/+0x2C and two dword arguments at +0x20/+0x24 of this (thiscall, ECX = this, callee pops 0x10 bytes).",
     "lifted_path": "lifted/leaf/tiny_530000.cpp"
   },
+  "0x00539490": {
+    "name": "allocateArray12",
+    "signature": "extern \"C\" void* fn_00539490(uint32_t count)",
+    "summary": "Allocates count * 12 bytes via operator new, throwing std::bad_alloc on integer overflow.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x005394F0": {
     "name": "UtilityGraphics::Locator::vfunc_0",
     "class": "UtilityGraphics::Locator",
@@ -24172,6 +24184,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00540130 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005404B0": {
+    "name": "copyFloat14",
+    "signature": "void* __thiscall fn_005404B0(void* self, const void* src)",
+    "summary": "Copy 14 floats (56 bytes) from src to this and return this.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00540510": {
     "name": "ApplyFillCullStateIfEnabled",
     "signature": "void __thiscall fn_00540510(void* self, DWORD arg)",
@@ -24265,6 +24283,12 @@
     "signature": "void* fn_00543210(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x005455F0 (PoseTool::vfunc_28).",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
+  },
+  "0x005432A0": {
+    "name": "sub_005432A0",
+    "signature": "void __thiscall sub_005432A0(void* self, uint32_t arg0)",
+    "summary": "Iterates over a vector of pointers at +0x4 and calls sub_005434E0 on each element with arg0",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
   "0x00543300": {
     "name": "ResetHeaderFields",

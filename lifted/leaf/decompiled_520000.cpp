@@ -1563,3 +1563,26 @@ void __thiscall fn_00524BC0(void* self, float value) {
     *dst = static_cast<double>(value);
 }
 } // namespace lift_00524BC0
+
+// [0x00524610]
+namespace lift_00524610 {
+// @name sub_00524610_ctor
+// @summary Constructor setting vtable 0x0094F484, initializing two 32-bit fields and a std::string at +0x0C
+// @field Obj +0x00 uint32_t vtable
+// @field Obj +0x04 uint32_t field_0x04
+// @field Obj +0x08 uint32_t field_0x08
+// @field Obj +0x0C std::string field_0x0C
+
+
+extern void ext_00661980(void* self);
+extern uintptr_t mem_00924FE8;
+
+void* __thiscall fn_00524610(void* self, uint32_t arg1, uint32_t arg2) {
+    ext_00661980(self);
+    *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x00) = 0x0094F484u;
+    *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x04) = arg1;
+    *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x08) = arg2;
+    reinterpret_cast<void(__thiscall*)(void*)>(mem_00924FE8)(static_cast<uint8_t*>(self) + 0x0C);
+    return self;
+}
+} // namespace lift_00524610

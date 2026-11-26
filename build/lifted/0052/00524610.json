@@ -1,0 +1,39 @@
+{
+  "va": "0x00524610",
+  "size": 91,
+  "orig_symbol": "sub_00524610",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "sub_00524610_ctor",
+  "signature": "void* __thiscall fn_00524610(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Constructor setting vtable 0x0094F484, initializing two 32-bit fields and a std::string at +0x0C",
+  "fields": [
+    {
+      "class": "Obj",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-26T12:12:00Z"
+}
