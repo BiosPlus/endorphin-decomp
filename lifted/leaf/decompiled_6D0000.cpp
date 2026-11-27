@@ -2284,3 +2284,34 @@ void __thiscall fn_006D7C40(void* self, uint32_t a1, uint32_t a2, uint32_t a3, u
     reinterpret_cast<ResetFn>(reinterpret_cast<void*>(&ext_006D7970))(self, a1 * a3);
 }
 } // namespace lift_006D7C40
+
+// [0x006DBDF0] sub_006DBDF0 (32 bytes)
+namespace lift_006DBDF0 {
+// Callees listed in the metadata but never called by the 32-byte body.
+// Only their addresses are referenced below (no runtime effect).
+extern void ext_006D7970();
+extern void ext_006FDF70();
+extern void ext_006B99C0();
+
+// @name Unknown::AddInt64ToOutParam
+// @class Unknown
+// @summary Adds the 64-bit value at this (ecx) into the 64-bit value pointed to by the second stack argument, in place.
+// @field Unknown +0x00 uint32_t lo
+// @field Unknown +0x04 uint32_t hi
+extern void fn_006DBDF0(void* self, uint32_t /*unused*/, void* dst) {
+    const uint32_t* a = static_cast<const uint32_t*>(self);
+    uint32_t* d = static_cast<uint32_t*>(dst);
+
+    // Address-only references to metadata callees; the asm does not call them.
+    (void)&ext_006D7970;
+    (void)&ext_006FDF70;
+    (void)&ext_006B99C0;
+
+    const uint64_t lhs = static_cast<uint64_t>(d[0]) | (static_cast<uint64_t>(d[1]) << 32);
+    const uint64_t rhs = static_cast<uint64_t>(a[0]) | (static_cast<uint64_t>(a[1]) << 32);
+    const uint64_t sum = lhs + rhs;
+
+    d[0] = static_cast<uint32_t>(sum);
+    d[1] = static_cast<uint32_t>(sum >> 32);
+}
+} // namespace lift_006DBDF0

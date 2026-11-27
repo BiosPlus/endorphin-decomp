@@ -66066,6 +66066,13 @@
     "summary": "Multiplies constant 0xAC0E8D7B0 by the given double, truncates to int64 and stores it at this+0.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006DBDF0": {
+    "name": "Unknown::AddInt64ToOutParam",
+    "class": "Unknown",
+    "signature": "extern \"C\" void fn_006DBDF0(void* self, uint32_t /*unused*/, void* dst)",
+    "summary": "Adds the 64-bit value at this (ecx) into the 64-bit value pointed to by the second stack argument, in place.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DBE30": {
     "name": "Unknown::storeInt64Result",
     "class": "Unknown",

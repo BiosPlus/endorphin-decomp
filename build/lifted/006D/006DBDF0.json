@@ -1,0 +1,28 @@
+{
+  "va": "0x006DBDF0",
+  "size": 32,
+  "orig_symbol": "sub_006DBDF0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::AddInt64ToOutParam",
+  "class": "Unknown",
+  "signature": "extern \"C\" void fn_006DBDF0(void* self, uint32_t /*unused*/, void* dst)",
+  "summary": "Adds the 64-bit value at this (ecx) into the 64-bit value pointed to by the second stack argument, in place.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "lo"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "hi"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:14:34Z"
+}
