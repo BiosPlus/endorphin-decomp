@@ -1,0 +1,28 @@
+{
+  "va": "0x005E1970",
+  "size": 223,
+  "orig_symbol": "NMData::HingeData::vfunc_61",
+  "src_path": "src/NMData/HingeData.cpp",
+  "lifted_path": "lifted/NMData/HingeData.cpp",
+  "name": "NMData::HingeData::vfunc_61",
+  "class": "NMData::HingeData",
+  "signature": "extern \"C\" float __thiscall fn_005E1970(void* self, int32_t index)",
+  "summary": "For index \u003c 1 builds a 4x4 matrix copy and a 3-float vector via virtual calls, runs two helper calls, and returns vector[index]; returns 0.0 for index \u003e= 1.",
+  "fields": [
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "transform_interface_vptr"
+    },
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0x17C",
+      "type": "void*",
+      "name": "field_0x17c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-27T12:00:28Z"
+}

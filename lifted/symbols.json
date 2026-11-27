@@ -52813,6 +52813,13 @@
     "summary": "One-time guarded initialisation (flag bit 0 of mem_00B45C2C), then calls ext_005E0380 on self and caches self+0x178 into mem_00B45C24.",
     "lifted_path": "lifted/NMData/NullRelationshipData.cpp"
   },
+  "0x005E1970": {
+    "name": "NMData::HingeData::vfunc_61",
+    "class": "NMData::HingeData",
+    "signature": "extern \"C\" float __thiscall fn_005E1970(void* self, int32_t index)",
+    "summary": "For index \u003c 1 builds a 4x4 matrix copy and a 3-float vector via virtual calls, runs two helper calls, and returns vector[index]; returns 0.0 for index \u003e= 1.",
+    "lifted_path": "lifted/NMData/HingeData.cpp"
+  },
   "0x005E1C50": {
     "name": "NMData::HingeData::vfunc_54",
     "class": "NMData::HingeData",

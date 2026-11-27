@@ -133,3 +133,85 @@ void* __thiscall fn_005E1C50(void* self) {
     return &mem_00B45C80;
 }
 } // namespace lift_005E1C50
+
+// [0x005E1970] NMData::HingeData::vfunc_61 (223 bytes)
+namespace lift_005E1970 {
+extern uint32_t __thiscall ext_004875A0(void* self);
+extern void __thiscall ext_0067DAD0(void* self, void* arg);
+extern void __thiscall ext_0067E990(void* self, uint32_t arg);
+extern void __thiscall ext_00694B60(void* self, int32_t zero, void* out);
+extern int mem_00B40640;
+extern int mem_0093A444;
+// Metadata-only references: listed as callees/data for this function but not called or
+// dereferenced by the 223-byte body (checked against the disassembly). Address-only, no code.
+extern void ext_00528BB0();
+extern void ext_00528BD0();
+extern void ext_00528C70();
+extern void ext_00584C00();
+extern void ext_005ECF40();
+
+// @name NMData::HingeData::vfunc_61
+// @class NMData::HingeData
+// @summary For index < 1 builds a 4x4 matrix copy and a 3-float vector via virtual calls, runs two helper calls, and returns vector[index]; returns 0.0 for index >= 1.
+// @field NMData::HingeData +0x04 void* transform_interface_vptr
+// @field NMData::HingeData +0x17C void* field_0x17c
+extern float __thiscall fn_005E1970(void* self, int32_t index) {
+    (void)&ext_00528BB0;
+    (void)&ext_00528BD0;
+    (void)&ext_00528C70;
+    (void)&ext_00584C00;
+    (void)&ext_005ECF40;
+    (void)&mem_0093A444;
+
+    if (index >= 1) {
+        return 0.0f;
+    }
+
+    using SlotFn2 = void* (__thiscall*)(void* self, int32_t g);
+    using SlotFn12 = void* (__thiscall*)(void* self);
+    using SlotFn3 = void* (__thiscall*)(void* self, int32_t g, float* out, void* x);
+
+    uint8_t* self_bytes = static_cast<uint8_t*>(self);
+    void* ti = self_bytes + 0x04;                       // TransformInterface subobject (ebx)
+    void** ti_vt = *reinterpret_cast<void***>(ti);
+
+    float a[3] = {0.0f, 0.0f, 0.0f};                    // vector  (frame S+0x00..S+0x08)
+    float b[6] = {};                                    // object  (frame S+0x0C..S+0x20)
+    float m[16];                                        // matrix  (frame S+0x40..S+0x7C)
+
+    // ti->vtbl[2](ti, mem_00B40640) returns a pointer to a 4x4 float matrix.
+    void* src = reinterpret_cast<SlotFn2>(ti_vt[2])(ti, mem_00B40640);
+    std::memcpy(m, src, sizeof m);
+
+    // child = self->field_0x17c + 4 (read before the next virtual call).
+    void* child_base = *reinterpret_cast<void**>(self_bytes + 0x17C);
+    uint8_t* child = static_cast<uint8_t*>(child_base) + 0x04;
+
+    // x = ti->vtbl[12](ti)
+    void* x = reinterpret_cast<SlotFn12>(ti_vt[12])(ti);
+
+    // z = child->vtbl[3](child, mem_00B40640, a, x)
+    void** child_vt = *reinterpret_cast<void***>(child);
+    void* z = reinterpret_cast<SlotFn3>(child_vt[3])(child, mem_00B40640, a, x);
+
+    uint32_t y = ext_004875A0(z);
+    ext_0067E990(m, y);
+
+    a[2] = 0.0f;
+    b[1] = 0.0f;
+    b[2] = 0.0f;
+    b[0] = 0.0f;
+    b[4] = 0.0f;
+    b[3] = 0.0f;
+    a[0] = 1.0f;
+    b[1] = 1.0f;
+    b[5] = 1.0f;
+
+    ext_0067DAD0(m, b);
+    ext_00694B60(b, 0, a);
+
+    // Original reads a 32-bit float at frame + 4*index. Only index 0..2 is in range of the
+    // modelled vector; negative indices would read the spill area below the frame (not modelled).
+    return a[index];
+}
+} // namespace lift_005E1970
