@@ -25717,6 +25717,12 @@
     "summary": "Erases [self.begin,self.end) from self via eraseInt32Range, then for each 4-byte element of arg0 in [begin,end) dynamic-casts it to the target type and passes non-null results to sub_0041A920(self, \u0026result); aborts on invalid ranges.",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
+  "0x004E8DD0": {
+    "name": "filterAndCopyDynamicCast",
+    "signature": "void fn_004E8DD0(void* src, void* dst)",
+    "summary": "Clears dst vector, reserves capacity from src, and pushes elements that dynamic_cast to target type",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004E9900": {
     "name": "SelectionBuffer::vfunc_25",
     "class": "SelectionBuffer",
@@ -26771,6 +26777,13 @@
     "class": "VMCSModes::EditMode",
     "signature": "static inline void* vslot(void* obj, ptrdiff_t off)",
     "summary": "Conditionally runs a vtable-driven edit sequence on the container at +0x08, selecting index 1 on the result and calling Unknown::selectIndex3Adjusted when a helper object is found.",
+    "lifted_path": "lifted/VMCSModes/EditMode.cpp"
+  },
+  "0x004F38D0": {
+    "name": "VMCSModes::EditMode::vfunc_116",
+    "class": "VMCSModes::EditMode",
+    "signature": "void fn_004F38D0(void* self, uint32_t arg0)",
+    "summary": "Renders or updates edit mode geometry with optional highlight color under a scoped lock/stop-request guard.",
     "lifted_path": "lifted/VMCSModes/EditMode.cpp"
   },
   "0x004F4D20": {

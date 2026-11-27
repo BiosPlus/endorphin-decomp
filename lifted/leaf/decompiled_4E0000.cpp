@@ -1653,3 +1653,71 @@ void fn_004E8D00(void* arg0, void* self) {
     }
 }
 } // namespace lift_004E8D00
+
+// [0x004E8DD0]
+namespace lift_004E8DD0 {
+// @name filterAndCopyDynamicCast
+// @summary Clears dst vector, reserves capacity from src, and pushes elements that dynamic_cast to target type
+// @field Vector +0x04 void* begin
+// @field Vector +0x08 void* end
+
+
+void ext_00596660(void* self, void** out, void* a2, int32_t* first, void* a4, int32_t* last);
+void ext_0050ED40(void* self, uint32_t capacity);
+void* ext_006A6E9E(void* ptr, uint32_t vfDelta, void* srcType, void* dstType, uint32_t isReference);
+void ext_0041A920(void* self, void** item);
+extern uint32_t mem_00A2FC50;
+extern uint32_t mem_00A2E2D8;
+extern void (*mem_00925134)(void);
+
+void fn_004E8DD0(void* src, void* dst) {
+    int32_t* dstEnd = lift_field<int32_t*>(dst, 0x08);
+    if (lift_field<int32_t*>(dst, 0x04) > dstEnd) {
+        mem_00925134();
+    }
+    int32_t* dstBegin = lift_field<int32_t*>(dst, 0x04);
+    if (dstBegin > lift_field<int32_t*>(dst, 0x08)) {
+        mem_00925134();
+    }
+
+    void* eraseOut[2];
+    ext_00596660(dst, eraseOut, dst, dstBegin, dst, dstEnd);
+
+    uint32_t srcBeginAddr = lift_field<uint32_t>(src, 0x04);
+    uint32_t count = 0;
+    if (srcBeginAddr != 0) {
+        uint32_t srcEndAddr = lift_field<uint32_t>(src, 0x08);
+        count = static_cast<uint32_t>(static_cast<int32_t>(srcEndAddr - srcBeginAddr) >> 2);
+    }
+    ext_0050ED40(dst, count);
+
+    uint32_t* it = lift_field<uint32_t*>(src, 0x04);
+    if (it > lift_field<uint32_t*>(src, 0x08)) {
+        mem_00925134();
+    }
+
+    while (true) {
+        uint32_t* end = lift_field<uint32_t*>(src, 0x08);
+        if (lift_field<uint32_t*>(src, 0x04) > end) {
+            mem_00925134();
+        }
+        if (it == end) {
+            break;
+        }
+        if (it >= lift_field<uint32_t*>(src, 0x08)) {
+            mem_00925134();
+        }
+
+        void* obj = reinterpret_cast<void*>(*it);
+        void* casted = ext_006A6E9E(obj, 0, &mem_00A2E2D8, &mem_00A2FC50, 0);
+        if (casted != nullptr) {
+            ext_0041A920(dst, &casted);
+        }
+
+        if (it >= lift_field<uint32_t*>(src, 0x08)) {
+            mem_00925134();
+        }
+        ++it;
+    }
+}
+} // namespace lift_004E8DD0

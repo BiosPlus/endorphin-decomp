@@ -1,0 +1,27 @@
+{
+  "va": "0x004E8DD0",
+  "size": 194,
+  "orig_symbol": "sub_004E8DD0",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "filterAndCopyDynamicCast",
+  "signature": "void fn_004E8DD0(void* src, void* dst)",
+  "summary": "Clears dst vector, reserves capacity from src, and pushes elements that dynamic_cast to target type",
+  "fields": [
+    {
+      "class": "Vector",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "begin"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:17:06Z"
+}
