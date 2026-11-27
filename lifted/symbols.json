@@ -6399,6 +6399,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00675D60 (Unknown::forwardToChildVfunc14).",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x0044B7E0": {
+    "name": "ConstructTempStringAndCallSub005306A0",
+    "class": "Unknown",
+    "signature": "void fn_0044B7E0(void* self)",
+    "summary": "Builds a local std::string from the C-string at mem_00A2FFD4, passes it with this+0x68 to ext_005306A0, then destroys the string.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044B9A0": {
     "name": "sub_0044B9A0",
     "signature": "int __thiscall fn_0044B9A0(void* self, void* arg0)",

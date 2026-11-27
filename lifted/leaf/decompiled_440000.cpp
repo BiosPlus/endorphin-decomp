@@ -3468,3 +3468,33 @@ void fn_0044D840(void* self) {
     }
 }
 } // namespace lift_0044D840
+
+// [0x0044B7E0] sub_0044B7E0 (98 bytes)
+namespace lift_0044B7E0 {
+extern void ext_005306A0(void* self, void* arg);
+extern uint32_t mem_00A2FFD4;
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FF4;
+
+// @name ConstructTempStringAndCallSub005306A0
+// @class Unknown
+// @summary Builds a local std::string from the C-string at mem_00A2FFD4, passes it with this+0x68 to ext_005306A0, then destroys the string.
+// @field Unknown +0x68 void* field_0x68
+void fn_0044B7E0(void* self) {
+    // MSVC 2005 std::basic_string<char> is 0x1C bytes; the object lives in the frame.
+    alignas(8) uint8_t tmp[0x1C];
+
+    using StringCtorFn = void*(__thiscall*)(void*, const char*);
+    using StringDtorFn = void(__thiscall*)(void*);
+
+    auto ctor = reinterpret_cast<StringCtorFn>(static_cast<uintptr_t>(mem_00924FE4));
+    auto dtor = reinterpret_cast<StringDtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+
+    ctor(tmp, reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A2FFD4)));
+
+    void* obj = lift_field<void*>(self, 0x68);
+    ext_005306A0(obj, tmp);
+
+    dtor(tmp);
+}
+} // namespace lift_0044B7E0
