@@ -78731,6 +78731,13 @@
     "summary": "Evaluates three operand tokens (arg3, arg2, arg1 in that order) through their sub-object vtable slot 1, packs them as floats {arg1, arg2, arg3}, and passes the array to arg1's sub-object vtable slot 11.",
     "lifted_path": "lifted/ExprParser/Operators/VectorConstructor.cpp"
   },
+  "0x006A0D80": {
+    "name": "ExprParser::Operators::ResolveSymbol::vfunc_3",
+    "class": "ExprParser::Operators::ResolveSymbol",
+    "signature": "void fn_006A0D80(void* self)",
+    "summary": "Resolves a symbol into a temporary string via the lookup object's vtable slot 5, assigns the result into the stack-argument object, then releases the temporary result holder and the string.",
+    "lifted_path": "lifted/ExprParser/Operators/ResolveSymbol.cpp"
+  },
   "0x006A0E20": {
     "name": "ExprParser::Operators::AssignAdd::vfunc_3",
     "class": "ExprParser::Operators::AssignAdd",

@@ -1,0 +1,14 @@
+{
+  "va": "0x006A0D80",
+  "size": 158,
+  "orig_symbol": "ExprParser::Operators::ResolveSymbol::vfunc_3",
+  "src_path": "src/ExprParser/Operators/ResolveSymbol.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/ResolveSymbol.cpp",
+  "name": "ExprParser::Operators::ResolveSymbol::vfunc_3",
+  "class": "ExprParser::Operators::ResolveSymbol",
+  "signature": "void fn_006A0D80(void* self)",
+  "summary": "Resolves a symbol into a temporary string via the lookup object's vtable slot 5, assigns the result into the stack-argument object, then releases the temporary result holder and the string.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:30:19Z"
+}
