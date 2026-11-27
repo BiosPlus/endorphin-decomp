@@ -2477,3 +2477,50 @@ DWORD fn_00682150(DWORD count) {
     return ext_005111E0(&mem_00B5A2B8, &count);
 }
 } // namespace lift_00682150
+
+// [0x00688570] sub_00688570 (127 bytes)
+namespace lift_00688570 {
+extern int mem_00924FC4;
+extern int mem_00925134;
+extern bool __cdecl ext_basic_string_equal(const void* lhs, const void* rhs);
+
+// Bounds-failure path: the original calls MSVCR80!_invalid_parameter_noinfo
+// (IAT slot mem_00925134) and continues. Only the slot reference is kept.
+static void invalid_parameter_noinfo() {
+    (void)&mem_00925134;
+}
+
+// @name Unknown::FindRecordByName
+// @class Unknown
+// @summary Scans the 0x2c-byte record array bounded by field_0x134/field_0x138 and returns the first record's pointer whose std::string at +0x10 equals the argument; returns 0 if none match
+// @field Unknown +0x134 uint8_t* field_0x134
+// @field Unknown +0x138 uint8_t* field_0x138
+uint32_t __thiscall fn_00688570(void* self, const void* name) {
+    (void)&mem_00924FC4;
+
+    uintptr_t cur = reinterpret_cast<uintptr_t>(lift_field<uint8_t*>(self, 0x134));
+    uintptr_t end = reinterpret_cast<uintptr_t>(lift_field<uint8_t*>(self, 0x138));
+
+    if (cur > end) {
+        invalid_parameter_noinfo();
+    }
+
+    for (;;) {
+        if (cur == end) {
+            return 0;
+        }
+        if (cur >= end) {
+            invalid_parameter_noinfo();
+        }
+
+        void* record = lift_field<void*>(reinterpret_cast<void*>(cur), 0x00);
+        const void* key = reinterpret_cast<const uint8_t*>(record) + 0x10;
+
+        if (ext_basic_string_equal(key, name)) {
+            return lift_field<uint32_t>(reinterpret_cast<void*>(cur), 0x00);
+        }
+
+        cur += 0x2c;
+    }
+}
+} // namespace lift_00688570

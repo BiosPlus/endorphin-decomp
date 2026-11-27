@@ -55696,6 +55696,13 @@
     "summary": "Copies the 0x24-byte records in [first, last) to dest and returns dest advanced by the copied record count times 0x24.",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00688570": {
+    "name": "Unknown::FindRecordByName",
+    "class": "Unknown",
+    "signature": "static void invalid_parameter_noinfo()",
+    "summary": "Scans the 0x2c-byte record array bounded by field_0x134/field_0x138 and returns the first record's pointer whose std::string at +0x10 equals the argument; returns 0 if none match",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00688670": {
     "name": "Unknown::FindFirstKind13Element",
     "class": "Unknown",
