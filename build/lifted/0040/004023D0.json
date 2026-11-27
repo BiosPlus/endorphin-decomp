@@ -1,0 +1,13 @@
+{
+  "va": "0x004023D0",
+  "size": 143,
+  "orig_symbol": "sub_004023D0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "CopyConstructStringRange",
+  "signature": "void* fn_004023D0(void* first, void* last, void* dest)",
+  "summary": "Copy-constructs std::string elements from [first,last) into dest (0x1C stride); null dest slots are skipped but still advanced. On exception, destroys already-built elements and rethrows.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:32:22Z"
+}

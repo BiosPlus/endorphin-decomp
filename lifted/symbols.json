@@ -385,6 +385,12 @@
     "summary": "Returns the dword at offset 0xD8 of the object referenced by this-\u003e+0x470.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004023D0": {
+    "name": "CopyConstructStringRange",
+    "signature": "void* fn_004023D0(void* first, void* last, void* dest)",
+    "summary": "Copy-constructs std::string elements from [first,last) into dest (0x1C stride); null dest slots are skipped but still advanced. On exception, destroys already-built elements and rethrows.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00402460": {
     "name": "AVIIO::vfunc_0",
     "class": "AVIIO",

@@ -2451,3 +2451,52 @@ void fn_0040E6F0(void* base, uint32_t count, const void* src) {
     }
 }
 } // namespace lift_0040E6F0
+
+// [0x004023D0] sub_004023D0 (143 bytes)
+namespace lift_004023D0 {
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, void* throw_info);
+extern int mem_00924FE0;
+extern int mem_00924FF4;
+
+namespace {
+// MSVC std::basic_string<char> (sizeof == 0x1C) member functions, reached through IAT slots.
+using StringCopyCtorFn = void(__thiscall*)(void* self, const void* other);
+using StringDtorFn = void(__thiscall*)(void* self);
+
+constexpr std::size_t kStringStride = 0x1C;
+}  // namespace
+
+// @name CopyConstructStringRange
+// @summary Copy-constructs std::string elements from [first,last) into dest (0x1C stride); null dest slots are skipped but still advanced. On exception, destroys already-built elements and rethrows.
+void* fn_004023D0(void* first, void* last, void* dest) {
+    auto copy_ctor = reinterpret_cast<StringCopyCtorFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FE0)));
+    auto dtor = reinterpret_cast<StringDtorFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+
+    char* src = static_cast<char*>(first);
+    char* const src_end = static_cast<char*>(last);
+    char* const start = static_cast<char*>(dest);
+    char* out = start;
+
+    try {
+        while (src != src_end) {
+            if (out != nullptr) {
+                copy_ctor(out, src);
+            }
+            out += kStringStride;
+            src += kStringStride;
+        }
+    } catch (...) {
+        for (char* p = start; p != out; p += kStringStride) {
+            dtor(p);
+        }
+        // Original: push 0; push 0; call _CxxThrowException  (rethrow of the active exception)
+        ext_006A6DD2(nullptr, nullptr);
+        throw;
+    }
+
+    return out;
+}
+} // namespace lift_004023D0
