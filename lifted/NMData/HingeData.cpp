@@ -483,3 +483,98 @@ void __thiscall fn_005EECA0(void* self) {
     (void)mem_00A9EE64;
 }
 } // namespace lift_005EECA0
+
+// [0x005EDAC0]
+namespace lift_005EDAC0 {
+// @name NMData::HingeData::vfunc_64
+// @class NMData::HingeData
+// @summary Allocates and initializes a record object from this HingeData and registers it with the object at +0x18C.
+// @field NMData::HingeData +0x14 MsvcString field_0x14
+// @field NMData::HingeData +0x18c void* field_0x18c
+
+
+struct MsvcString {
+    uint8_t data[0x1C];
+};
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* __thiscall ext_0060C570(void* self);
+extern int32_t __thiscall ext_005DF5C0(void* self, MsvcString name);
+extern void __thiscall ext_005A7320(void* self, const MsvcString* name, uint32_t flag);
+extern void __thiscall ext_005A2F70(void* self, const MsvcString* name, uint32_t a, uint32_t b);
+extern void __thiscall ext_005A3500(void* self, void* item);
+
+extern uint32_t mem_00924FDC;
+extern uint32_t mem_00A9EE64;
+extern uint32_t mem_00924ECC;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_00A8F2B4;
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00A8F2B8;
+
+using StrAssignFn = MsvcString* (__thiscall*)(MsvcString* self, const MsvcString* other);
+using StrCtorCstrFn = MsvcString* (__thiscall*)(MsvcString* self, const char* s);
+using StrCtorCopyFn = MsvcString* (__thiscall*)(MsvcString* self, const MsvcString* other);
+using StrDtorFn = void (__thiscall*)(MsvcString* self);
+using StrConcatCstrFn = MsvcString* (__cdecl*)(MsvcString* out, const MsvcString* lhs, const char* rhs);
+
+static void register_hinge_channel(void* target, const char* channel_name, void* record, uint32_t vtable_offset) {
+    auto str_ctor_cstr = reinterpret_cast<StrCtorCstrFn>(mem_00924FE4);
+    auto str_ctor_copy = reinterpret_cast<StrCtorCopyFn>(mem_00924FE0);
+    auto str_dtor = reinterpret_cast<StrDtorFn>(mem_00924FF4);
+
+    MsvcString tmp;
+    str_ctor_cstr(&tmp, channel_name);
+    MsvcString arg;
+    str_ctor_copy(&arg, &tmp);
+    int32_t found = ext_005DF5C0(reinterpret_cast<uint8_t*>(target) + 0x568, arg);
+    str_dtor(&tmp);
+
+    if (found == 0) {
+        MsvcString add_name;
+        str_ctor_cstr(&add_name, channel_name);
+        ext_005A7320(target, &add_name, 0);
+        str_dtor(&add_name);
+    }
+
+    MsvcString key;
+    str_ctor_cstr(&key, channel_name);
+    uint8_t** vtable = *reinterpret_cast<uint8_t***>(record);
+    using VFuncU32 = uint32_t (__thiscall*)(void* self);
+    uint32_t b = reinterpret_cast<VFuncU32>(vtable[vtable_offset / 4])(record);
+    uint32_t a = reinterpret_cast<VFuncU32>(vtable[0x24 / 4])(record);
+    ext_005A2F70(target, &key, a, b);
+    str_dtor(&key);
+}
+
+void __thiscall fn_005EDAC0(void* self) {
+    void* raw = ext_006A5C62(0x5C);
+    void* record = (raw != nullptr) ? ext_0060C570(raw) : nullptr;
+
+    lift_field<float>(record, 0x50) = 0.0f;
+    lift_field<float>(record, 0x4C) = 0.0f;
+    lift_field<float>(record, 0x48) = 0.0f;
+    lift_field<uint8_t>(record, 0x58) = 1;
+    lift_field<uint32_t>(record, 0x44) = 0;
+
+    auto str_assign = reinterpret_cast<StrAssignFn>(mem_00924FDC);
+    auto str_concat = reinterpret_cast<StrConcatCstrFn>(mem_00924ECC);
+    auto str_dtor = reinterpret_cast<StrDtorFn>(mem_00924FF4);
+
+    const MsvcString* src_name = reinterpret_cast<const MsvcString*>(reinterpret_cast<uint8_t*>(self) + 0x14);
+    str_assign(reinterpret_cast<MsvcString*>(reinterpret_cast<uint8_t*>(record) + 0x20), src_name);
+
+    MsvcString concat_tmp;
+    const char* suffix = reinterpret_cast<const char*>(mem_00A9EE64);
+    MsvcString* concat_res = str_concat(&concat_tmp, src_name, suffix);
+    str_assign(reinterpret_cast<MsvcString*>(reinterpret_cast<uint8_t*>(record) + 0x04), concat_res);
+    str_dtor(&concat_tmp);
+
+    void* target = lift_field<void*>(self, 0x18C);
+    register_hinge_channel(target, reinterpret_cast<const char*>(mem_00A8F2B4), record, 0x44);
+    register_hinge_channel(target, reinterpret_cast<const char*>(mem_00A8F2B8), record, 0x48);
+
+    ext_005A3500(target, record);
+}
+} // namespace lift_005EDAC0

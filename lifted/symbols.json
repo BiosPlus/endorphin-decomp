@@ -50143,6 +50143,13 @@
     "summary": "Returns 1 if the object at this+0x44 has a nonzero dword at offset +0x4, else 0.",
     "lifted_path": "lifted/leaf/tiny_5D0000.cpp"
   },
+  "0x005D0D30": {
+    "name": "NMData::CameraData::vfunc_22",
+    "class": "NMData::CameraData",
+    "signature": "void* __thiscall fn_005D0D30(void* self, void* arg0)",
+    "summary": "Serializes camera data properties and sub-objects into a target data node.",
+    "lifted_path": "lifted/NMData/CameraData.cpp"
+  },
   "0x005D1020": {
     "name": "Unknown::UpdateFloatAndDispatch",
     "class": "Unknown",
@@ -55545,6 +55552,13 @@
     "class": "NMData::HingeData",
     "signature": "uint8_t fn_005ED550(void* self, uint32_t unusedArg0, uint32_t flags)",
     "summary": "Gate on ext_005ECF40; when it succeeds, recomputes a flag from ext_00528BD0 and (if flags \u0026 0x200) ext_00584C00 on self+0x174, and when that flag changes it re-dispatches via ext_00528BB0 and ext_00528C70. Returns the gate result.",
+    "lifted_path": "lifted/NMData/HingeData.cpp"
+  },
+  "0x005EDAC0": {
+    "name": "NMData::HingeData::vfunc_64",
+    "class": "NMData::HingeData",
+    "signature": "static void register_hinge_channel(void* target, const char* channel_name, void* record, uint32_t vtable_offset)",
+    "summary": "Allocates and initializes a record object from this HingeData and registers it with the object at +0x18C.",
     "lifted_path": "lifted/NMData/HingeData.cpp"
   },
   "0x005EDD30": {

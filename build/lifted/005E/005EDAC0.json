@@ -1,0 +1,28 @@
+{
+  "va": "0x005EDAC0",
+  "size": 620,
+  "orig_symbol": "NMData::HingeData::vfunc_64",
+  "src_path": "src/NMData/HingeData.cpp",
+  "lifted_path": "lifted/NMData/HingeData.cpp",
+  "name": "NMData::HingeData::vfunc_64",
+  "class": "NMData::HingeData",
+  "signature": "static void register_hinge_channel(void* target, const char* channel_name, void* record, uint32_t vtable_offset)",
+  "summary": "Allocates and initializes a record object from this HingeData and registers it with the object at +0x18C.",
+  "fields": [
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0x14",
+      "type": "MsvcString",
+      "name": "field_0x14"
+    },
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0x18C",
+      "type": "void*",
+      "name": "field_0x18c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:23:37Z"
+}
