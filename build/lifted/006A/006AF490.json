@@ -1,0 +1,46 @@
+{
+  "va": "0x006AF490",
+  "size": 156,
+  "orig_symbol": "sub_006AF490",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "GWCCategoryItem::~GWCCategoryItem",
+  "class": "GWCCategoryItem",
+  "signature": "void fn_006AF490(void* self)",
+  "summary": "Deletes each non-null entry of the pointer array at +0x54 (count at +0x58) via its vtable slot 1, destroys the std::string at +0x6C and the object at +0x50, then chains to the base destructor sub_006AD3C0.",
+  "fields": [
+    {
+      "class": "GWCCategoryItem",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vftable"
+    },
+    {
+      "class": "GWCCategoryItem",
+      "offset": "+0x50",
+      "type": "void*",
+      "name": "field_0x50"
+    },
+    {
+      "class": "GWCCategoryItem",
+      "offset": "+0x54",
+      "type": "void**",
+      "name": "field_0x54"
+    },
+    {
+      "class": "GWCCategoryItem",
+      "offset": "+0x58",
+      "type": "int32_t",
+      "name": "field_0x58"
+    },
+    {
+      "class": "GWCCategoryItem",
+      "offset": "+0x6C",
+      "type": "std::string",
+      "name": "field_0x6c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:29:14Z"
+}

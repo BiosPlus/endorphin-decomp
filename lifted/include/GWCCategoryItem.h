@@ -10,10 +10,13 @@
 // Recovered field layout for GWCCategoryItem:
 namespace lifted_layout {
 struct GWCCategoryItem_Fields {
+    // +0x0   void*                    vftable  (evidence: 0x006AF490)
     // +0x4   void*                    field_0x04  (evidence: 0x006ACF60, 0x006AF890)
     // +0x14  void*                    field_0x14  (evidence: 0x006ACF60)
     // +0x3C  uint8_t*                 field_0x3c  (evidence: 0x006ACF60)
-    // +0x54  void**                   field_0x54  (evidence: 0x006AF890)
-    // +0x58  int32_t                  field_0x58  (evidence: 0x006AF890)
+    // +0x50  void*                    field_0x50  (evidence: 0x006AF490)
+    // +0x54  void**                   field_0x54  (evidence: 0x006AF490, 0x006AF890)
+    // +0x58  int32_t                  field_0x58  (evidence: 0x006AF490, 0x006AF890)
+    // +0x6C  std::string              field_0x6c  (evidence: 0x006AF490)
 };
 } // namespace lifted_layout

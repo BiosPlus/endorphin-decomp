@@ -68299,6 +68299,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x6C and forwards through mem_00924FD4.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006AF490": {
+    "name": "GWCCategoryItem::~GWCCategoryItem",
+    "class": "GWCCategoryItem",
+    "signature": "void fn_006AF490(void* self)",
+    "summary": "Deletes each non-null entry of the pointer array at +0x54 (count at +0x58) via its vtable slot 1, destroys the std::string at +0x6C and the object at +0x50, then chains to the base destructor sub_006AD3C0.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006AF840": {
     "name": "Unknown::AnyElementMatches",
     "class": "Unknown",

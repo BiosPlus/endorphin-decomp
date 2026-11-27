@@ -1476,3 +1476,63 @@ void* __thiscall fn_006A8760(void* self, void* item) {
     return item;
 }
 } // namespace lift_006A8760
+
+// [0x006AF490] sub_006AF490 (156 bytes)
+namespace lift_006AF490 {
+// Known callee 0x006A6784: thunk_MFC80_ord_722 (IAT jump thunk forwarding to MFC80!ord_722.)
+extern void ext_006A6784();
+// Known callee 0x006AD3C0: DestructSub6AD3C0 (Destructor that resets vtable, releases sub-object at +0x44, decrements refcount at +0x4, and destroys members at +0xC and +0x8.)
+extern void ext_006AD3C0();
+// Known callee 0x006A60EE: thunk_MFC80_ord_1185 (IAT jump thunk forwarding to MFC80!ord_1185.)
+extern void ext_006A60EE();
+// IAT slot holding MSVCP80!basic_string<char>::~basic_string (value 0x00628FF0 in .rdata).
+extern int mem_00924FF4;
+
+// @name GWCCategoryItem::~GWCCategoryItem
+// @class GWCCategoryItem
+// @summary Deletes each non-null entry of the pointer array at +0x54 (count at +0x58) via its vtable slot 1, destroys the std::string at +0x6C and the object at +0x50, then chains to the base destructor sub_006AD3C0.
+// @field GWCCategoryItem +0x00 void* vftable
+// @field GWCCategoryItem +0x50 void* field_0x50
+// @field GWCCategoryItem +0x54 void** field_0x54
+// @field GWCCategoryItem +0x58 int32_t field_0x58
+// @field GWCCategoryItem +0x6C std::string field_0x6c
+void fn_006AF490(void* self) {
+    // thiscall: ECX = this, no stack arguments, callee cleans up.
+    typedef void (__thiscall *ThisCallFn)(void* self);
+    // thiscall with one stack argument (scalar deleting destructor flag).
+    typedef void (__thiscall *ThisCallFlagFn)(void* self, int flags);
+
+    // Install this class's vtable (RTTI VTable 0x00991124).
+    lift_field<uint32_t>(self, 0x00) = 0x00991124u;
+
+    int32_t i = 0;
+    if (lift_field<int32_t>(self, 0x58) > 0) {
+        for (;;) {
+            if (i < 0 || i >= lift_field<int32_t>(self, 0x58)) {
+                ext_006A60EE();
+                return;
+            }
+            void* entry = lift_field<void**>(self, 0x54)[i];
+            if (entry != nullptr) {
+                void** vtbl = *reinterpret_cast<void***>(entry);
+                reinterpret_cast<ThisCallFlagFn>(vtbl[1])(entry, 1);
+            }
+            ++i;
+            if (i >= lift_field<int32_t>(self, 0x58)) {
+                break;
+            }
+        }
+    }
+
+    // Destroy std::string at +0x6C (MSVCP80 dtor reached through its IAT slot).
+    void* name = static_cast<uint8_t*>(self) + 0x6C;
+    reinterpret_cast<ThisCallFn>(static_cast<uintptr_t>(mem_00924FF4))(name);
+
+    // Destroy member at +0x50 via MFC80 thunk (ECX = this + 0x50).
+    void* member50 = static_cast<uint8_t*>(self) + 0x50;
+    reinterpret_cast<ThisCallFn>(ext_006A6784)(member50);
+
+    // Chain to base destructor with ECX = self.
+    reinterpret_cast<ThisCallFn>(ext_006AD3C0)(self);
+}
+} // namespace lift_006AF490
