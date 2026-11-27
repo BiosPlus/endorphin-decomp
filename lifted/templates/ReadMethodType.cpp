@@ -69506,3 +69506,63 @@ void fn_00674BF0(void* self) {
     notify(obj4, self);
 }
 } // namespace lift_00674BF0
+
+// [0x0062E870] ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>::vfunc_47 (152 bytes)
+namespace lift_0062E870 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void ext_0041CF50();
+extern void ext_00672110();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+namespace lift_0062E870 {
+using ThisCall0 = void* (__thiscall*)(void* self);
+using ThisCall1 = void* (__thiscall*)(void* self, void* arg);
+using CdeclThrow = void (__cdecl*)(void* object, void* throwInfo);
+} // namespace lift_0062E870
+
+// @name ReadMethodType::vfunc_47
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary If field_0x00 is non-null, rebind a temp to it, run assignFromOther on self, release the temp, then tail-dispatch vtable slot 47 of field_0x04 with self as argument; if field_0x00 is null, throw a DerivedException.
+// @field ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1> +0x04 void* field_0x04
+void* fn_0062E870(void* self) {
+    using namespace lift_0062E870;
+
+    void* field0 = lift_field<void*>(self, 0x00);
+    if (field0 == nullptr) {
+        // Throw path: construct DerivedException in a local and throw it.
+        // The throw passes (storage + 4) as the object and &mem_009DEC1C as the ThrowInfo.
+        alignas(8) unsigned char excStorage[16] = {};
+        reinterpret_cast<ThisCall0>(&ext_0046C3C0)(excStorage);
+        reinterpret_cast<CdeclThrow>(&ext_006A6DD2)(
+            excStorage + 4, reinterpret_cast<void*>(&mem_009DEC1C));
+        return nullptr;
+    }
+
+    // Locals: tempObj at [esp+8] (filled by ctor-like ext_00672110), other at [esp+4].
+    void* tempObj = nullptr;
+    void* other = nullptr;
+
+    // ext_00672110(this=&tempObj, arg=field_0x00 + 0x78)
+    reinterpret_cast<ThisCall1>(&ext_00672110)(
+        &tempObj, reinterpret_cast<uint8_t*>(field0) + 0x78);
+
+    // ext_0041CF50(this=self, other=&other)
+    reinterpret_cast<ThisCall1>(&ext_0041CF50)(self, &other);
+
+    // Release tempObj via its vtable slot 0x78 if non-null.
+    if (tempObj != nullptr) {
+        void* tempVtbl = lift_field<void*>(tempObj, 0x00);
+        reinterpret_cast<ThisCall1>(lift_field<void*>(tempVtbl, 0x78))(tempObj, &other);
+    }
+
+    // Tail: return field_0x04->vtable[0xbc](field_0x04, self).
+    void* child = lift_field<void*>(self, 0x04);
+    void* childVtbl = lift_field<void*>(child, 0x00);
+    return reinterpret_cast<ThisCall1>(lift_field<void*>(childVtbl, 0xBC))(child, self);
+}
+} // namespace lift_0062E870
