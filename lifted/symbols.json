@@ -4588,6 +4588,13 @@
     "summary": "Forwards this-\u003efield_0x04 to ext_0041C880 with flag 0 and returns true.",
     "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/PanState.cpp"
   },
+  "0x00443300": {
+    "name": "MultiTrackView::MultiTrackViewStates::PanState::vfunc_12",
+    "class": "MultiTrackView::MultiTrackViewStates::PanState",
+    "signature": "BOOL __thiscall fn_00443300(void* self, uint32_t a1, int32_t a2, int32_t a3)",
+    "summary": "Computes the time delta between the stored pixel x and the new pixel x via pixelToTime, feeds it to updateRangeAndDispatch on +0x08, stores the new x/y at +0x04 +0x0C/+0x10, and invalidates the window at +0x08 +0x20.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/PanState.cpp"
+  },
   "0x00443370": {
     "name": "MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_0",
     "class": "MultiTrackView::MultiTrackViewStates::DragSelectState",

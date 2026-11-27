@@ -1,0 +1,28 @@
+{
+  "va": "0x00443300",
+  "size": 99,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::PanState::vfunc_12",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/PanState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/PanState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::PanState::vfunc_12",
+  "class": "MultiTrackView::MultiTrackViewStates::PanState",
+  "signature": "BOOL __thiscall fn_00443300(void* self, uint32_t a1, int32_t a2, int32_t a3)",
+  "summary": "Computes the time delta between the stored pixel x and the new pixel x via pixelToTime, feeds it to updateRangeAndDispatch on +0x08, stores the new x/y at +0x04 +0x0C/+0x10, and invalidates the window at +0x08 +0x20.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::PanState",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::PanState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:18:45Z"
+}
