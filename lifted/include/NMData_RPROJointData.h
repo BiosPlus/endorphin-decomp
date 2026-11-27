@@ -16,5 +16,6 @@ struct NMData_RPROJointData_Fields {
     // +0x148 uint8_t                  field_0x148  (evidence: 0x005F0A20)
     // +0x178 uint8_t                  field_0x178  (evidence: 0x005E23F0, 0x005F0A20)
     // +0x194 int32_t                  field_0x194  (evidence: 0x005EC2A0)
+    // +0x2F8 uint8_t                  field_0x2f8  (evidence: 0x005EC250)
 };
 } // namespace lifted_layout

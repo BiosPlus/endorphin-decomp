@@ -1,0 +1,22 @@
+{
+  "va": "0x005EC250",
+  "size": 80,
+  "orig_symbol": "NMData::RPROJointData::vfunc_22",
+  "src_path": "src/NMData/RPROJointData.cpp",
+  "lifted_path": "lifted/NMData/RPROJointData.cpp",
+  "name": "NMData::RPROJointData::vfunc_22",
+  "class": "NMData::RPROJointData",
+  "signature": "void* fn_005EC250(void* self, void* arg)",
+  "summary": "Resolves a handle from arg via 0x006404E0, forwards it to RelationshipData::vfunc_22, and when the flag at +0x2F8 is set, updates the child name via 0x00640110 and 0x00640A80.",
+  "fields": [
+    {
+      "class": "NMData::RPROJointData",
+      "offset": "+0x2F8",
+      "type": "uint8_t",
+      "name": "field_0x2f8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:02:26Z"
+}

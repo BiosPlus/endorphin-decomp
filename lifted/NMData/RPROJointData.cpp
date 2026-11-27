@@ -118,3 +118,33 @@ void* fn_005F0A20(void* self) {
     return inst;
 }
 } // namespace lift_005F0A20
+
+// [0x005EC250] NMData::RPROJointData::vfunc_22 (80 bytes)
+namespace lift_005EC250 {
+// @name NMData::RPROJointData::vfunc_22
+// @class NMData::RPROJointData
+// @summary Resolves a handle from arg via 0x006404E0, forwards it to RelationshipData::vfunc_22, and when the flag at +0x2F8 is set, updates the child name via 0x00640110 and 0x00640A80.
+// @field NMData::RPROJointData +0x2F8 uint8_t field_0x2f8
+
+extern uint32_t ext_006404E0(void* self, uint32_t value);
+extern void ext_005EB5A0(void* self, void* arg);
+extern uint32_t ext_00640110(void* self, uint32_t value);
+extern void ext_00640A80(uint32_t value, uint8_t flag);
+extern uint32_t mem_00A9F1E4;
+extern uint32_t mem_00A9F718;
+
+void* fn_005EC250(void* self, void* arg) {
+    const uint32_t v0 = mem_00A9F1E4;
+    void* const handle = reinterpret_cast<void*>(ext_006404E0(arg, v0));
+
+    ext_005EB5A0(self, handle);
+
+    if (lift_field<uint8_t>(self, 0x2F8) != 0) {
+        const uint32_t r = ext_00640110(handle, mem_00A9F718);
+        const uint8_t flag = lift_field<uint8_t>(self, 0x2F8);
+        ext_00640A80(r, flag);
+    }
+
+    return arg;
+}
+} // namespace lift_005EC250
