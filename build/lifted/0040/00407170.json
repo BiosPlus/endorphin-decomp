@@ -1,0 +1,27 @@
+{
+  "va": "0x00407170",
+  "size": 173,
+  "orig_symbol": "sub_00407170",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "vecIterAtPosition_00407170",
+  "signature": "void __thiscall fn_00407170(void* self, void* out, void* arg2, void* arg3, uint32_t arg4)",
+  "summary": "Builds an {container, element*} iterator for a position in an 88-byte-element vector, after calling ext_00406AD0 to insert/prepare the slot.",
+  "fields": [
+    {
+      "class": "Vector88",
+      "offset": "+0x4",
+      "type": "uint8_t*",
+      "name": "begin"
+    },
+    {
+      "class": "Vector88",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:13:58Z"
+}

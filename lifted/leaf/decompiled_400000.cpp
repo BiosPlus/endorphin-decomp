@@ -2706,3 +2706,37 @@ void fn_004073C0(void* self, const void* value) {
     reinterpret_cast<GrowFn>(ext_00407170)(self, &slot, self, end, value);
 }
 } // namespace lift_004073C0
+
+// [0x00407170] sub_00407170 (173 bytes)
+namespace lift_00407170 {
+extern void __thiscall ext_00406AD0(void* self, void* arg2, void* arg3, uint32_t one, uint32_t arg4);
+extern int mem_00925134;
+
+// @name vecIterAtPosition_00407170
+// @summary Builds an {container, element*} iterator for a position in an 88-byte-element vector, after calling ext_00406AD0 to insert/prepare the slot.
+// @field Vector88 +0x04 uint8_t* begin
+// @field Vector88 +0x08 uint8_t* end
+void __thiscall fn_00407170(void* self, void* out, void* arg2, void* arg3, uint32_t arg4) {
+    // Original MSVC _invalid_parameter_noinfo asserts (via mem_00925134) omitted; metadata-only ref below.
+    (void)&mem_00925134;
+
+    // Element stride is 0x58 (88) bytes; the original magic-multiply sequence is signed /88.
+    uint8_t* begin = lift_field<uint8_t*>(self, 0x4);
+    uint8_t* end = lift_field<uint8_t*>(self, 0x8);
+    intptr_t index = 0;
+
+    // Non-empty range: compute index of arg3 relative to begin.
+    intptr_t count = ((intptr_t)end - (intptr_t)begin) / 88;
+    if (begin != nullptr && count != 0) {
+        index = ((intptr_t)arg3 - (intptr_t)begin) / 88;
+    }
+
+    ext_00406AD0(self, arg2, arg3, 1, arg4);
+
+    begin = lift_field<uint8_t*>(self, 0x4);
+    uint8_t* elem = begin + index * 88;
+
+    lift_field<void*>(out, 0) = self;
+    lift_field<uint8_t*>(out, 0x4) = elem;
+}
+} // namespace lift_00407170
