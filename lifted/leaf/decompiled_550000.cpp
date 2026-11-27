@@ -2032,3 +2032,30 @@ uintptr_t fn_005503A0(void* self, const char* src) {
     return count;
 }
 } // namespace lift_005503A0
+
+// [0x005530F0] sub_005530F0 (126 bytes)
+namespace lift_005530F0 {
+extern const double mem_009334D8;
+extern const double mem_00928E78;
+extern const double mem_009575B8;
+extern const double mem_009575C8;
+extern const double mem_009575D8;
+
+// @name ScaleByUnitMode
+// @class Unknown
+// @summary Scales a float by a unit-conversion factor selected by the object's mode field at +0x2C (1..5); other modes return the input unchanged.
+// @field Unknown +0x2C uint32_t mode
+float fn_005530F0(void* self, float value) {
+    const uint32_t mode = lift_field<uint32_t>(self, 0x2C);
+    double factor;
+    switch (mode) {
+    case 1: factor = mem_009334D8; break;
+    case 2: factor = mem_00928E78; break;
+    case 3: factor = mem_009575B8; break;
+    case 4: factor = mem_009575C8; break;
+    case 5: factor = mem_009575D8; break;
+    default: return value;
+    }
+    return static_cast<float>(static_cast<double>(value) * factor);
+}
+} // namespace lift_005530F0
