@@ -866,3 +866,34 @@ void __thiscall fn_005DC300(uint8_t* self, float value) {
     ext_0065C650(lockPtr);
 }
 } // namespace lift_005DC300
+
+// [0x005DC1E0]
+namespace lift_005DC1E0 {
+// @name Unknown::setField20AndUpdateChild
+// @class Unknown
+// @summary Sets field_0x20 and child field_0x5C under a critical section lock, then dispatches virtual slot 0x154.
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x44 void* field_0x44
+
+
+void* ext_00493EE0(void* ecx);
+int32_t ext_00594000(void);
+void ext_005DA110(void* self, uint32_t arg);
+void ext_0065C640(void* self);
+void ext_0065C650(void* self);
+
+void __thiscall sub_005DC1E0(void* self, uint32_t arg) {
+    auto* base = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(static_cast<uint32_t>(ext_00594000())));
+    void* edi = base + 0x258;
+    void* ecx = *reinterpret_cast<void**>(edi);
+    using Vfn1D8 = void* (__thiscall*)(void*);
+    void** vtable = *reinterpret_cast<void***>(ecx);
+    void* lock = reinterpret_cast<Vfn1D8>(vtable[0x1d8 / sizeof(void*)])(ecx);
+
+    ext_0065C640(lock);
+    lift_field<uint32_t>(self, 0x20) = arg;
+    ext_005DA110(lift_field<void*>(self, 0x44), arg);
+    ext_00493EE0(edi);
+    ext_0065C650(lock);
+}
+} // namespace lift_005DC1E0
