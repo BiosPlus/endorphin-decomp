@@ -1,0 +1,28 @@
+{
+  "va": "0x0051AAB0",
+  "size": 200,
+  "orig_symbol": "NMData::RealChannel::vfunc_2",
+  "src_path": "src/NMData/RealChannel.cpp",
+  "lifted_path": "lifted/NMData/RealChannel.cpp",
+  "name": "NMData::RealChannel::vfunc_2",
+  "class": "NMData::RealChannel",
+  "signature": "void* __thiscall fn_0051AAB0(void* self, void* out)",
+  "summary": "Creates a serialized child node, delegates base channel serialization, and writes each (time, value) keyframe pair.",
+  "fields": [
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x30",
+      "type": "float*",
+      "name": "begin"
+    },
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x34",
+      "type": "float*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@medium",
+  "lifted_at": "2026-11-27T12:19:32Z"
+}

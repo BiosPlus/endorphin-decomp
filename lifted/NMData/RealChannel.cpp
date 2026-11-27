@@ -427,3 +427,88 @@ void fn_0051CB50(void* self, float arg1, float arg2) {
     lift_field<float>(elem, 4) = arg2;
 }
 } // namespace lift_0051CB50
+
+// [0x0051AAB0] NMData::RealChannel::vfunc_2 (200 bytes)
+namespace lift_0051AAB0 {
+extern void* __thiscall ext_00519FA0(void* self, void* out);
+extern void* __thiscall ext_006404E0(void* self, uint32_t tag);
+extern void __cdecl ext_0067EF60(void* node, float value, uint32_t arg3, uint32_t arg4);
+extern void ext_004275E0();
+extern void ext_00427A60();
+extern void ext_0046C0A0();
+extern void ext_00519EC0();
+extern void ext_0063EFE0();
+extern void ext_00665570();
+extern void ext_0067EE80();
+extern void ext_006A5C5C();
+
+extern uint32_t mem_00A9ED90;
+extern uint32_t mem_00A9F010;
+extern uint32_t mem_00A9FAE8;
+extern uint32_t mem_00A9F530;
+extern uint32_t mem_00A9FAEC;
+extern uint32_t mem_00A9F534;
+extern void (*mem_00925134)(void);
+extern int mem_00924FE4;
+extern int mem_00924FE8;
+extern int mem_00924FF0;
+extern int mem_00924FF4;
+extern int mem_009251F0;
+extern int mem_0094539C;
+extern int mem_009525BC;
+extern int mem_009525C0;
+
+// @name NMData::RealChannel::vfunc_2
+// @class NMData::RealChannel
+// @summary Creates a serialized child node, delegates base channel serialization, and writes each (time, value) keyframe pair.
+// @field NMData::RealChannel +0x30 float* begin
+// @field NMData::RealChannel +0x34 float* end
+void* __thiscall fn_0051AAB0(void* self, void* out) {
+    // Metadata-only references reported by liftwork for adjacent/shared range
+    (void)ext_004275E0;
+    (void)ext_00427A60;
+    (void)ext_0046C0A0;
+    (void)ext_00519EC0;
+    (void)ext_0063EFE0;
+    (void)ext_00665570;
+    (void)ext_0067EE80;
+    (void)ext_006A5C5C;
+    (void)&mem_00924FE4;
+    (void)&mem_00924FE8;
+    (void)&mem_00924FF0;
+    (void)&mem_00924FF4;
+    (void)&mem_009251F0;
+    (void)&mem_0094539C;
+    (void)&mem_009525BC;
+    (void)&mem_009525C0;
+
+    void* node = ext_006404E0(out, mem_00A9ED90);
+    ext_00519FA0(self, node);
+
+    const float* cur = lift_field<const float*>(self, 0x30);
+    const float* end = lift_field<const float*>(self, 0x34);
+    if (cur > end) {
+        mem_00925134();
+    }
+
+    while (cur != lift_field<const float*>(self, 0x34)) {
+        void* keyframeNode = ext_006404E0(node, mem_00A9F010);
+        if (cur >= lift_field<const float*>(self, 0x34)) {
+            mem_00925134();
+        }
+        ext_0067EF60(keyframeNode, cur[0], mem_00A9F530, mem_00A9FAE8);
+
+        if (cur >= lift_field<const float*>(self, 0x34)) {
+            mem_00925134();
+        }
+        ext_0067EF60(keyframeNode, cur[1], mem_00A9F534, mem_00A9FAEC);
+
+        if (cur >= lift_field<const float*>(self, 0x34)) {
+            mem_00925134();
+        }
+        cur += 2;
+    }
+
+    return node;
+}
+} // namespace lift_0051AAB0

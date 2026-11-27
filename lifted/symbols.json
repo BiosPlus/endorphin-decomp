@@ -31672,6 +31672,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x0051AAB0": {
+    "name": "NMData::RealChannel::vfunc_2",
+    "class": "NMData::RealChannel",
+    "signature": "void* __thiscall fn_0051AAB0(void* self, void* out)",
+    "summary": "Creates a serialized child node, delegates base channel serialization, and writes each (time, value) keyframe pair.",
+    "lifted_path": "lifted/NMData/RealChannel.cpp"
+  },
   "0x0051AB80": {
     "name": "NMData::RealChannel::vfunc_7",
     "class": "NMData::RealChannel",
