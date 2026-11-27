@@ -7735,6 +7735,13 @@
     "summary": "Returns the float at +0x138 of the sub-object pointed to by self+0xF8.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x0046C120": {
+    "name": "Obj::~Obj (destructor; class inferred from the 0x0046C560 constructor, which installs the same vtables)",
+    "class": "Obj",
+    "signature": "extern \"C\" void __fastcall fn_0046C120(void* self)",
+    "summary": "Installs the Obj vtable at +0x00 and the subobject vtable at +0x04, destroys the std::string at +0x28, then forwards the subobject at +0x04 to ext_0065F440.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046C2A0": {
     "name": "Unknown::CallSlot1B0OfChildField20",
     "class": "Unknown",

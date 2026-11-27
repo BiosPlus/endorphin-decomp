@@ -1792,3 +1792,36 @@ void __thiscall sub_00462980(void* self, int mode, void* str)
     ext_00447500(target, (uint32_t)(uintptr_t)c_str(str));
 }
 } // namespace lift_00462980
+
+// [0x0046C120] sub_0046C120 (92 bytes)
+namespace lift_0046C120 {
+// Known callee 0x0065F440: sub_0065F440 (Stores address of mem_0093BF24 into field at offset +0x0.)
+extern void __fastcall ext_0065F440(void* self);
+// MSVCP80!std::basic_string<char>::~basic_string (thiscall; string object in ECX).
+extern void(__thiscall* mem_00924FF4)(void* self);
+// Referenced in the original asm's callee/RDATA tables but never called or read by this body; kept as metadata-only references.
+extern void ext_0043C670();
+extern void ext_006A5E66();
+extern const uint32_t mem_00925688;
+extern const uint32_t mem_0092568C;
+
+// @name Obj::~Obj (destructor; class inferred from the 0x0046C560 constructor, which installs the same vtables)
+// @class Obj
+// @summary Installs the Obj vtable at +0x00 and the subobject vtable at +0x04, destroys the std::string at +0x28, then forwards the subobject at +0x04 to ext_0065F440.
+// @field Obj +0x00 void* vfptr
+// @field Obj +0x04 void* field_0x04
+// @field Obj +0x28 std::string field_0x28
+extern void __fastcall fn_0046C120(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    lift_field<uint32_t>(obj, 0x00) = 0x0093A7A4u;
+    lift_field<uint32_t>(obj, 0x04) = 0x0093A74Cu;
+    mem_00924FF4(obj + 0x28);
+    ext_0065F440(obj + 0x04);
+
+    // Metadata-only references (not real accesses): the original asm lists these in its callee/RDATA tables.
+    (void)&ext_0043C670;
+    (void)&ext_006A5E66;
+    (void)&mem_00925688;
+    (void)&mem_0092568C;
+}
+} // namespace lift_0046C120

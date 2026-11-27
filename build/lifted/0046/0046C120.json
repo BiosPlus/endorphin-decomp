@@ -1,0 +1,34 @@
+{
+  "va": "0x0046C120",
+  "size": 92,
+  "orig_symbol": "sub_0046C120",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "Obj::~Obj (destructor; class inferred from the 0x0046C560 constructor, which installs the same vtables)",
+  "class": "Obj",
+  "signature": "extern \"C\" void __fastcall fn_0046C120(void* self)",
+  "summary": "Installs the Obj vtable at +0x00 and the subobject vtable at +0x04, destroys the std::string at +0x28, then forwards the subobject at +0x04 to ext_0065F440.",
+  "fields": [
+    {
+      "class": "Obj",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vfptr"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x28",
+      "type": "std::string",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T01:45:35Z"
+}
