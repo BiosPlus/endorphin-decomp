@@ -18,6 +18,7 @@ extern "C" void* __fastcall fn_00712F40(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+#include <bit>
 
 // [0x00713750] sub_00713750 (12 bytes)
 namespace lift_00713750 {
@@ -2892,3 +2893,42 @@ extern double __fastcall fn_00711398(void* self) {
     }
 }
 } // namespace lift_00711398
+
+// [0x0071CC10] sub_0071CC10 (80 bytes)
+namespace lift_0071CC10 {
+// Known callee 0x00708000: Unknown::FindChildByName_00708000 (Scans the count-sized pointer array at +0xD0 and returns the first element whose fn_00712000 string equals the name argument, or 0 if none matches.)
+extern void* ext_00708000(void* self, const char* name);
+// Known callee 0x006DC460: Unknown::GetValueIfCountPositive (Returns *(this->field_0xC8) when this->field_0xB8 > 0, otherwise 0.)
+extern void* ext_006DC460(void* self);
+extern void* ext_006C9520(void* self, float value);
+extern void* ext_006CD330(void* self);
+// String literal at 0x00AA8D10 used as the child lookup name.
+extern char mem_00AA8D10[];
+
+// @name Unknown::ForwardChildCallWithDouble_0071CC10
+// @class Unknown
+// @summary Finds child "mem_00AA8D10" under this->field_0x0C, calls its virtual slot 0x80 with the two 32-bit halves of a double argument, then if this->field_0x04 is set, passes it through ext_006DC460/ext_006C9520/ext_006CD330 and returns the last result.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x0C void* field_0x0C
+void* fn_0071CC10(void* self, uint32_t a1, uint32_t a2) {
+    using VirtualMethod = void* (*)(void* self, uint32_t a, uint32_t b);
+
+    void* child = ext_00708000(lift_field<void*>(self, 0x0C), mem_00AA8D10);
+    void* vtbl = lift_field<void*>(child, 0x00);
+    auto vfn = reinterpret_cast<VirtualMethod>(lift_field<void*>(vtbl, 0x80));
+    void* ret = vfn(child, a1, a2);
+
+    void* obj = lift_field<void*>(self, 0x04);
+    if (obj != nullptr) {
+        // Reassemble the double from its two 32-bit halves (low word = a1).
+        uint64_t bits = (static_cast<uint64_t>(a2) << 32) | static_cast<uint64_t>(a1);
+        double d = std::bit_cast<double>(bits);
+        float f = static_cast<float>(d);
+
+        void* v = ext_006DC460(obj);
+        void* w = ext_006C9520(v, f);
+        ret = ext_006CD330(w);
+    }
+    return ret;
+}
+} // namespace lift_0071CC10

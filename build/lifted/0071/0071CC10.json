@@ -1,0 +1,28 @@
+{
+  "va": "0x0071CC10",
+  "size": 80,
+  "orig_symbol": "sub_0071CC10",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::ForwardChildCallWithDouble_0071CC10",
+  "class": "Unknown",
+  "signature": "void* fn_0071CC10(void* self, uint32_t a1, uint32_t a2)",
+  "summary": "Finds child \"mem_00AA8D10\" under this-\u003efield_0x0C, calls its virtual slot 0x80 with the two 32-bit halves of a double argument, then if this-\u003efield_0x04 is set, passes it through ext_006DC460/ext_006C9520/ext_006CD330 and returns the last result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:16:49Z"
+}

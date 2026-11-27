@@ -95262,6 +95262,13 @@
     "summary": "Follows the object at +0x4 through two helpers and returns a float; if +0x4 is null, looks up a child at +0xC by name and tail-dispatches a virtual getter (vtable slot +0x7C).",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x0071CC10": {
+    "name": "Unknown::ForwardChildCallWithDouble_0071CC10",
+    "class": "Unknown",
+    "signature": "void* fn_0071CC10(void* self, uint32_t a1, uint32_t a2)",
+    "summary": "Finds child \"mem_00AA8D10\" under this-\u003efield_0x0C, calls its virtual slot 0x80 with the two 32-bit halves of a double argument, then if this-\u003efield_0x04 is set, passes it through ext_006DC460/ext_006C9520/ext_006CD330 and returns the last result.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071D530": {
     "name": "Unknown::initAssignCString_0071D530",
     "class": "Unknown",
