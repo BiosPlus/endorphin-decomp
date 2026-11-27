@@ -1,0 +1,28 @@
+{
+  "va": "0x0046DE70",
+  "size": 154,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0\u003e::vfunc_47",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter, int, ImageExporter::getImageWidth\u003e::vfunc_47",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter, int, ImageExporter::getImageWidth\u003e",
+  "signature": "void __thiscall fn_0046DE70(void* self, void* arg1)",
+  "summary": "Reads ImageExporter::getImageWidth from arg1[0], wraps it via ext_006720C0, assigns to arg1, and dispatches vfunc_47 on arg1[1].",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T09:03:18Z"
+}
