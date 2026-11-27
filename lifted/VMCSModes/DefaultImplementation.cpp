@@ -408,3 +408,25 @@ uint32_t fn_004FADD0(void* self) {
     return slot(q);
 }
 } // namespace lift_004FADD0
+
+// [0x004FADB0] VMCSModes::DefaultImplementation::vfunc_14 (27 bytes)
+namespace lift_004FADB0 {
+extern void ext_004667A0(void* self, int32_t arg);
+
+typedef uintptr_t (*lift_vfn_t)(void* self);
+
+// @name VMCSModes::DefaultImplementation::vfunc_14
+// @class VMCSModes::DefaultImplementation
+// @summary Calls ext_004667A0 on this->field_0x04 with arg 2, then forwards to vtable slot 14 (offset 0x38) of the object at field_0x04->field_0x0C, passing that object as `this`, and returns its result.
+// @field VMCSModes::DefaultImplementation +0x04 void* field_0x04
+uintptr_t fn_004FADB0(void* self) {
+    ext_004667A0(lift_field<void*>(self, 0x04), 2);
+
+    // Re-read field_0x04 after the call, as the original does.
+    void* owner  = lift_field<void*>(self, 0x04);
+    void* target = lift_field<void*>(owner, 0x0C);
+    void* vtable = lift_field<void*>(target, 0);
+    lift_vfn_t fn = reinterpret_cast<lift_vfn_t>(lift_field<void*>(vtable, 0x38));
+    return fn(target);
+}
+} // namespace lift_004FADB0

@@ -1,0 +1,22 @@
+{
+  "va": "0x004FADB0",
+  "size": 27,
+  "orig_symbol": "VMCSModes::DefaultImplementation::vfunc_14",
+  "src_path": "src/VMCSModes/DefaultImplementation.cpp",
+  "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp",
+  "name": "VMCSModes::DefaultImplementation::vfunc_14",
+  "class": "VMCSModes::DefaultImplementation",
+  "signature": "uintptr_t fn_004FADB0(void* self)",
+  "summary": "Calls ext_004667A0 on this-\u003efield_0x04 with arg 2, then forwards to vtable slot 14 (offset 0x38) of the object at field_0x04-\u003efield_0x0C, passing that object as `this`, and returns its result.",
+  "fields": [
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:55:47Z"
+}

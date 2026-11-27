@@ -25854,6 +25854,13 @@
     "summary": "Looks up a range via this-\u003e+0x8-\u003e+0x14-\u003e+0x34 renderer chain; returns fn_00477FA0(field 0x26C of global object, first element of range) if the range is non-empty, else false.",
     "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
   },
+  "0x004FADB0": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_14",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uintptr_t fn_004FADB0(void* self)",
+    "summary": "Calls ext_004667A0 on this-\u003efield_0x04 with arg 2, then forwards to vtable slot 14 (offset 0x38) of the object at field_0x04-\u003efield_0x0C, passing that object as `this`, and returns its result.",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
   "0x004FADD0": {
     "name": "VMCSModes::DefaultImplementation::vfunc_17",
     "class": "VMCSModes::DefaultImplementation",
