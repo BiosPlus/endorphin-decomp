@@ -62616,3 +62616,40 @@ void* fn_004F6EB0(void* outString, const void* holder) {
     return outString;
 }
 } // namespace lift_004F6EB0
+
+// [0x0048FFD0] ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_4 (84 bytes)
+namespace lift_0048FFD0 {
+// Known callee 0x0048FB10: sub_0048FB10 (Loads a double from offset +0x58 of this and returns it as a float)
+extern void ext_0048FB10();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<GraphEngine>::vfunc_4
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* __stdcall fn_0048FFD0(void* out, void* holder) {
+    using GetXFn = float(__thiscall*)(void*);
+    using CtorFn = void*(__thiscall*)(void*);
+    using FormatFn = void*(__cdecl*)(void*, float);
+    using ThrowFn = void(__cdecl*)(void*, void*);
+
+    void* self = lift_field<void*>(holder, 0x00);
+    if (self == nullptr) {
+        // Exception object lives in the frame (0x2c bytes of locals/args above it).
+        alignas(8) unsigned char exc[0x2c] = {};
+        reinterpret_cast<CtorFn>(reinterpret_cast<void*>(&ext_0046C3C0))(exc);
+        reinterpret_cast<ThrowFn>(reinterpret_cast<void*>(&ext_006A6DD2))(
+            exc, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;
+    }
+
+    float value = reinterpret_cast<GetXFn>(reinterpret_cast<void*>(&ext_0048FB10))(self);
+    reinterpret_cast<FormatFn>(reinterpret_cast<void*>(&ext_0046C390))(out, value);
+    return out;
+}
+} // namespace lift_0048FFD0

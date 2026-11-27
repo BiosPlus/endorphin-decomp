@@ -11053,6 +11053,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0048FFD0": {
+    "name": "ExprParser::ReadMethodType\u003cGraphEngine\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cGraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1\u003e",
+    "signature": "void* __stdcall fn_0048FFD0(void* out, void* holder)",
+    "summary": "Formats GraphEngine::getX() of the holder's target into the sret string, or throws if the target is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00490030": {
     "name": "ExprParser::ReadMethodType\u003cGraphEngine, float, GraphEngine::getX, 1\u003e::vfunc_5",
     "class": "ExprParser::ReadMethodType\u003cGraphEngine, float, GraphEngine::getX, 1\u003e",
