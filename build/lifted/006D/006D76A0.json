@@ -1,0 +1,13 @@
+{
+  "va": "0x006D76A0",
+  "size": 278,
+  "orig_symbol": "sub_006D76A0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "CopyHugeToRdataSlots_006D76A0",
+  "signature": "static inline void store_dword(int\u0026 dst, uint32_t value)",
+  "summary": "Loads the 8-byte value pointed to by the global pointer at 0x925284 (_HUGE) and stores it into 16 consecutive 8-byte slots starting at 0xB5D7F8.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:53:04Z"
+}

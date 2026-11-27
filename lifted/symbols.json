@@ -21273,6 +21273,12 @@
     "summary": "Copies the input string, passes it to ext_004C2790 and vfunc at +0x5C, then destroys the copy",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x004C2960": {
+    "name": "createOrClone_004C2960",
+    "signature": "void* fn_004C2960(void* src)",
+    "summary": "Factory function: default-constructs a 0x50-byte object if arg is null, or dynamic_casts arg and copy-constructs it (throwing on cast failure), then sets final vtables.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C3410": {
     "name": "NMData::DesiredPoseEventData::vfunc_15",
     "class": "NMData::DesiredPoseEventData",
@@ -92618,6 +92624,12 @@
     "name": "negHugeIntoGlobals",
     "signature": "void fn_006D7660(void* self)",
     "summary": "Stores -(*_HUGE) into four consecutive double globals.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
+  "0x006D76A0": {
+    "name": "CopyHugeToRdataSlots_006D76A0",
+    "signature": "static inline void store_dword(int\u0026 dst, uint32_t value)",
+    "summary": "Loads the 8-byte value pointed to by the global pointer at 0x925284 (_HUGE) and stores it into 16 consecutive 8-byte slots starting at 0xB5D7F8.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
   "0x006D7880": {

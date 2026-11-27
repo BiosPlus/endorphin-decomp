@@ -4690,3 +4690,74 @@ extern void* __fastcall fn_006D5210(void* self, void* /*edx*/, int32_t nameArg, 
     return nullptr;
 }
 } // namespace lift_006D5210
+
+// [0x006D76A0] sub_006D76A0 (278 bytes)
+namespace lift_006D76A0 {
+extern int mem_00B5D7F8;
+extern int mem_00B5D7FC;
+extern int mem_00B5D800;
+extern int mem_00B5D804;
+extern int mem_00B5D808;
+extern int mem_00B5D80C;
+extern int mem_00B5D810;
+extern int mem_00B5D814;
+extern int mem_00B5D818;
+extern int mem_00B5D81C;
+extern int mem_00B5D820;
+extern int mem_00B5D824;
+extern int mem_00B5D828;
+extern int mem_00B5D82C;
+extern int mem_00B5D830;
+extern int mem_00B5D834;
+extern int mem_00B5D838;
+extern int mem_00B5D83C;
+extern int mem_00B5D840;
+extern int mem_00B5D844;
+extern int mem_00B5D848;
+extern int mem_00B5D84C;
+extern int mem_00B5D850;
+extern int mem_00B5D854;
+extern int mem_00B5D858;
+extern int mem_00B5D85C;
+extern int mem_00B5D860;
+extern int mem_00B5D864;
+extern int mem_00B5D868;
+extern int mem_00B5D86C;
+extern int mem_00B5D870;
+extern int mem_00B5D874;
+extern int mem_00925284;
+
+// @name CopyHugeToRdataSlots_006D76A0
+// @summary Loads the 8-byte value pointed to by the global pointer at 0x925284 (_HUGE) and stores it into 16 consecutive 8-byte slots starting at 0xB5D7F8.
+
+static inline void store_dword(int& dst, uint32_t value) {
+    std::memcpy(&dst, &value, sizeof value);
+}
+
+void fn_006D76A0(void* self) {
+    (void)self;
+    // mem_00925284 holds the 32-bit address of the 8-byte source value.
+    const auto src_addr = static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925284));
+    const auto* src = reinterpret_cast<const uint32_t*>(src_addr);
+    const uint32_t lo = src[0];
+    const uint32_t hi = src[1];
+
+    // Same value is stored to all 16 slots (the asm re-reads the same source each time).
+    store_dword(mem_00B5D7F8, lo); store_dword(mem_00B5D7FC, hi);
+    store_dword(mem_00B5D800, lo); store_dword(mem_00B5D804, hi);
+    store_dword(mem_00B5D808, lo); store_dword(mem_00B5D80C, hi);
+    store_dword(mem_00B5D810, lo); store_dword(mem_00B5D814, hi);
+    store_dword(mem_00B5D818, lo); store_dword(mem_00B5D81C, hi);
+    store_dword(mem_00B5D820, lo); store_dword(mem_00B5D824, hi);
+    store_dword(mem_00B5D828, lo); store_dword(mem_00B5D82C, hi);
+    store_dword(mem_00B5D830, lo); store_dword(mem_00B5D834, hi);
+    store_dword(mem_00B5D838, lo); store_dword(mem_00B5D83C, hi);
+    store_dword(mem_00B5D840, lo); store_dword(mem_00B5D844, hi);
+    store_dword(mem_00B5D848, lo); store_dword(mem_00B5D84C, hi);
+    store_dword(mem_00B5D850, lo); store_dword(mem_00B5D854, hi);
+    store_dword(mem_00B5D858, lo); store_dword(mem_00B5D85C, hi);
+    store_dword(mem_00B5D860, lo); store_dword(mem_00B5D864, hi);
+    store_dword(mem_00B5D868, lo); store_dword(mem_00B5D86C, hi);
+    store_dword(mem_00B5D870, lo); store_dword(mem_00B5D874, hi);
+}
+} // namespace lift_006D76A0
