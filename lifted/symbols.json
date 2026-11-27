@@ -23534,6 +23534,13 @@
     "summary": "Throws an exception when the held task pointer is invoked through the vfunc; reports the field at +0x14 of the held object if non-null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00508FA0": {
+    "name": "ReadMethodType\u003cNMData::Task,int,getID\u003e::vfunc_42",
+    "class": "ExprParser::ReadMethodType\u003cNMData::Task, int, \u0026public: int __thiscall NMData::Task::getID(void) const, 1\u003e",
+    "signature": "uint8_t fn_00508FA0(void* self, void** p, uint32_t q)",
+    "summary": "Throws if the source pointer is null; otherwise resolves an id from the source at +0x14 into a temporary holder, invokes the holder object's vfunc +0xA8 with the argument, and releases the holder object via vfunc +0x78.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005092C0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::Task, int, \u0026public: int __thiscall NMData::Task::getID(void) const, 1\u003e::vfunc_47",
     "class": "ExprParser::ReadMethodType\u003cNMData::Task, int, \u0026public: int __thiscall NMData::Task::getID(void) const, 1\u003e",
