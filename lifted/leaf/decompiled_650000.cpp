@@ -1635,3 +1635,34 @@ void fn_00517360(void* self) {
     }
 }
 } // namespace lift_00517360
+
+// [0x00517230]
+namespace lift_00517230 {
+extern int mem_00925134;  // IAT slot for MSVCR80!_invalid_parameter_noinfo (metadata only)
+
+// @name Container::forEachCallVirtual5C
+// @class Container
+// @summary Walks the pointer array at this+0x14..this+0x18 and calls virtual slot 0x5C (index 23) on each element with the single argument.
+// @field Container +0x14 uint32_t field_0x14
+// @field Container +0x18 uint32_t field_0x18
+
+// Calling convention: __thiscall (ecx = this), one stack argument, callee-cleans (ret 4).
+// The MSVCR80 _invalid_parameter_noinfo range/iterator guards from the original asm are
+// omitted (they only fire on corrupt containers and are not observable behavior).
+void fn_00517230(void* self, void* arg) {
+    using VirtualFn = void (*)(void* thisPtr, void* arg);
+    (void)&mem_00925134;
+
+    uint32_t cur = lift_field<uint32_t>(self, 0x14);
+    const uint32_t end = lift_field<uint32_t>(self, 0x18);
+
+    while (cur != end) {
+        const uint32_t obj = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(cur));
+        const uint32_t vtbl = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(obj));
+        const uint32_t slot = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(vtbl + 0x5C));
+        auto fn = reinterpret_cast<VirtualFn>(static_cast<uintptr_t>(slot));
+        fn(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), arg);
+        cur += 4;
+    }
+}
+} // namespace lift_00517230

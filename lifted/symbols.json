@@ -21076,6 +21076,13 @@
     "summary": "Looks up a property/symbol by name, returning a descriptor pair if matched or an empty descriptor otherwise.",
     "lifted_path": "lifted/classes/EvolvedIndividual.cpp"
   },
+  "0x00517230": {
+    "name": "Container::forEachCallVirtual5C",
+    "class": "Container",
+    "signature": "extern \"C\" int mem_00925134;  // IAT slot for MSVCR80!_invalid_parameter_noinfo (metadata only) void fn_00517230(void* self, void* arg)",
+    "summary": "Walks the pointer array at this+0x14..this+0x18 and calls virtual slot 0x5C (index 23) on each element with the single argument.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00517310": {
     "name": "ForEachVirtualSlot0x68",
     "class": "Unknown",

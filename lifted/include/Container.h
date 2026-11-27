@@ -12,8 +12,10 @@ struct Container_Fields {
     // +0x8   uint32_t                 field_0x08  (evidence: 0x004E3140, 0x00536230) // CONFLICT: multiple definitions at +0x8
     // +0x8   uintptr_t                field_0x08  (evidence: 0x004B6680) // CONFLICT: multiple definitions at +0x8
     // +0xC   uint32_t*                end  (evidence: 0x00412E60)
-    // +0x14  void*                    field_0x14  (evidence: 0x0054C640)
-    // +0x18  void**                   begin  (evidence: 0x0054C640)
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x00517230) // CONFLICT: multiple definitions at +0x14
+    // +0x14  void*                    field_0x14  (evidence: 0x0054C640) // CONFLICT: multiple definitions at +0x14
+    // +0x18  void**                   begin  (evidence: 0x0054C640) // CONFLICT: multiple definitions at +0x18
+    // +0x18  uint32_t                 field_0x18  (evidence: 0x00517230) // CONFLICT: multiple definitions at +0x18
     // +0x1C  void**                   end  (evidence: 0x0054C640) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint8_t*                 field_0x1c  (evidence: 0x0054EFF0) // CONFLICT: multiple definitions at +0x1C
     // +0x20  uint8_t*                 field_0x20  (evidence: 0x0054EFF0)
