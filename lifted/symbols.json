@@ -62723,6 +62723,13 @@
     "summary": "Constructs a std::string at the hidden out-pointer from the literal at 0x009770F4 and returns that pointer; the second stack argument is ignored (stdcall, ret 8).",
     "lifted_path": "lifted/NMData/HingeCalibrationVariables.cpp"
   },
+  "0x006227E0": {
+    "name": "NMData::HingeCalibrationVariables::vfunc_25",
+    "class": "NMData::HingeCalibrationVariables",
+    "signature": "static inline uint32_t hinge_map_status(uint32_t v)",
+    "summary": "Reads three float fields (+0x0C, +0x04, +0x08) via ext_0046C0A0 after mapping each status code from ext_0063F530.",
+    "lifted_path": "lifted/NMData/HingeCalibrationVariables.cpp"
+  },
   "0x006228E0": {
     "name": "NMData::HingeCalibrationVariables::vfunc_27",
     "class": "NMData::HingeCalibrationVariables",

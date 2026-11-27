@@ -86,3 +86,56 @@ void fn_006227B0(std::string* out, void* unused) {
     new (out) std::string(mem_009770F4);
 }
 } // namespace lift_006227B0
+
+// [0x006227E0] NMData::HingeCalibrationVariables::vfunc_25 (247 bytes)
+namespace lift_006227E0 {
+// Known callee 0x0063F530: sub_0063F530 (197B). Thiscall-style: ecx = obj, three stack args (value, 0, 1).
+extern uint32_t ext_0063F530(void* self, uint32_t a, uint32_t b, uint32_t c);
+// Known callee 0x0046C0A0: fn_0046C0A0 (parseFloatFromString). Stack args: (uint32 unused, float* out_val).
+extern void ext_0046C0A0(uint32_t unused, float* out_val);
+
+extern uint32_t mem_00A9ED5C;
+extern uint32_t mem_00A9EF5C;
+extern uint32_t mem_00A9EF60;
+
+// @name NMData::HingeCalibrationVariables::vfunc_25
+// @class NMData::HingeCalibrationVariables
+// @summary Reads three float fields (+0x0C, +0x04, +0x08) via ext_0046C0A0 after mapping each status code from ext_0063F530.
+// @field NMData::HingeCalibrationVariables +0x04 float field_0x04
+// @field NMData::HingeCalibrationVariables +0x08 float field_0x08
+// @field NMData::HingeCalibrationVariables +0x0C float field_0x0C
+
+static constexpr uint32_t kHingeStatusDefault = 0x00B53B30u;
+
+// Maps the value returned by ext_0063F530: any of the five recognised codes
+// collapses to kHingeStatusDefault, everything else is passed through unchanged.
+static inline uint32_t hinge_map_status(uint32_t v) {
+    switch (v) {
+        case 0x00B53A34u:
+        case 0x00B53B30u:
+        case 0x00B53AB0u:
+        case 0x00B53A70u:
+        case 0x00B53AF0u:
+            return kHingeStatusDefault;
+        default:
+            return v;
+    }
+}
+
+// Shared tail for each of the three blocks: query one value via ext_0063F530,
+// map it, then hand the field address and the mapped slot to ext_0046C0A0.
+static inline void hinge_store_block(void* obj, uint32_t mem_value, void* field) {
+    uint32_t slot = hinge_map_status(ext_0063F530(obj, mem_value, 0u, 1u));
+    ext_0046C0A0(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(field)),
+                 reinterpret_cast<float*>(&slot));
+}
+
+// obj: value of the first stack argument (used as the `this` for ext_0063F530).
+// self: ecx on entry (HingeCalibrationVariables*).
+void fn_006227E0(void* self, void* obj) {
+    char* base = static_cast<char*>(self);
+    hinge_store_block(obj, mem_00A9ED5C, base + 0x0C);
+    hinge_store_block(obj, mem_00A9EF5C, base + 0x04);
+    hinge_store_block(obj, mem_00A9EF60, base + 0x08);
+}
+} // namespace lift_006227E0
