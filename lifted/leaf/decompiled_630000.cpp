@@ -1211,3 +1211,33 @@ void* fn_0063E310(void* self, DWORD arg1) {
     return ext_0063E290(mem, arg1, flag);
 }
 } // namespace lift_0063E310
+
+// [0x0063F4E0]
+namespace lift_0063F4E0 {
+// @name Unknown::RemoveAndDelete
+// @class Unknown
+// @summary Finds an element in the vector starting at +0x24 and, if found, erases and deletes it.
+// @field Unknown +0x24 uint32_t field_0x24
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x2C uint32_t field_0x2C
+
+
+extern uint32_t mem_00925134;
+extern uint8_t __thiscall ext_0063EC10(uint32_t self, uint32_t value, uint32_t iter_ptr);
+extern void __thiscall ext_0063F480(uint32_t self, uint32_t container, uint32_t iter);
+
+void __thiscall sub_0063F4E0(uint32_t self, uint32_t value) {
+    void* self_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(self));
+    uint32_t begin = lift_field<uint32_t>(self_ptr, 0x28);
+    uint32_t end = lift_field<uint32_t>(self_ptr, 0x2C);
+    uint32_t container = self + 0x24;
+    if (begin > end) {
+        reinterpret_cast<void(__cdecl*)()>(static_cast<uintptr_t>(mem_00925134))();
+    }
+
+    uint32_t iter[2] = { container, begin };
+    if (ext_0063EC10(self, value, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(iter)))) {
+        ext_0063F480(self, iter[0], iter[1]);
+    }
+}
+} // namespace lift_0063F4E0

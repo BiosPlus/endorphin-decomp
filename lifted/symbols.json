@@ -45252,6 +45252,13 @@
     "summary": "Validates an iterator, deletes the pointed-to object, and shifts remaining elements left.",
     "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
+  "0x0063F4E0": {
+    "name": "Unknown::RemoveAndDelete",
+    "class": "Unknown",
+    "signature": "void __thiscall sub_0063F4E0(uint32_t self, uint32_t value)",
+    "summary": "Finds an element in the vector starting at +0x24 and, if found, erases and deletes it.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063F600": {
     "name": "sub_0063F600",
     "signature": "__thiscall void* fn_0063F600(void* self, DWORD arg1, DWORD arg2)",
