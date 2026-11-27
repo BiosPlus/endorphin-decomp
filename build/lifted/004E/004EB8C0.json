@@ -1,0 +1,28 @@
+{
+  "va": "0x004EB8C0",
+  "size": 140,
+  "orig_symbol": "sub_004EB8C0",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "Unknown::LookupNamedValue_004EB8C0",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_004EB8C0(void* self, void* out, void* arg)",
+  "summary": "Builds a temp string from literal 0xA3ECD4; if arg is non-null, runs 474F00 on this+0x18 and assigns its result via the operator= slot; then calls 476360 on this+0x8 with the temp, stores the result at *out, destroys the temp and returns out.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "field_0x8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint8_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:49:28Z"
+}

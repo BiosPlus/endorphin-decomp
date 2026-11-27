@@ -1844,3 +1844,42 @@ void* __thiscall fn_004E5850(void* self, void* out, const char* p) {
     return out;
 }
 } // namespace lift_004E5850
+
+// [0x004EB8C0] sub_004EB8C0 (140 bytes)
+namespace lift_004EB8C0 {
+// Callees (thiscall: self in ECX, remaining args on the stack).
+extern void ext_00662610(void* self, void* out, const char* text);
+extern void* ext_00474F00(void* self, void* tmp, void* arg);
+extern uint32_t ext_00476360(void* self, void* tmp);
+
+// IAT slots, read as code pointers at call time.
+// mem_00924FD4: MSVCP80 std::string::operator=(const char*) slot
+// mem_00924FF4: MSVCP80 std::string::~basic_string() slot
+extern uint32_t mem_00924FD4;
+extern uint32_t mem_00924FF4;
+
+typedef void (__thiscall* ThisCallFn)(void* self);
+
+// @name Unknown::LookupNamedValue_004EB8C0
+// @class Unknown
+// @summary Builds a temp string from literal 0xA3ECD4; if arg is non-null, runs 474F00 on this+0x18 and assigns its result via the operator= slot; then calls 476360 on this+0x8 with the temp, stores the result at *out, destroys the temp and returns out.
+// @field Unknown +0x08 uint8_t field_0x8
+// @field Unknown +0x18 uint8_t field_0x18
+void* __thiscall fn_004EB8C0(void* self, void* out, void* arg) {
+    uint8_t* s = reinterpret_cast<uint8_t*>(self);
+    uint8_t tmp[0x18]; // std::string-sized temporary (MSVC layout)
+
+    ext_00662610(self, tmp, reinterpret_cast<const char*>(static_cast<uintptr_t>(0xA3ECD4u)));
+
+    if (arg != nullptr) {
+        void* r = ext_00474F00(s + 0x18, tmp, arg);
+        reinterpret_cast<ThisCallFn>(static_cast<uintptr_t>(mem_00924FD4))(r);
+    }
+
+    uint32_t v = ext_00476360(s + 0x08, tmp);
+    *reinterpret_cast<uint32_t*>(out) = v;
+
+    reinterpret_cast<ThisCallFn>(static_cast<uintptr_t>(mem_00924FF4))(tmp);
+    return out;
+}
+} // namespace lift_004EB8C0
