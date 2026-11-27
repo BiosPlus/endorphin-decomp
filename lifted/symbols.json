@@ -66205,6 +66205,13 @@
     "summary": "Assigns a C string: a null pointer resets via sub_006B9920, otherwise forwards strlen(s) and s to allocAndCopy; always returns this.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006B9F00": {
+    "name": "Unknown::assignInt_006B9F00",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_006B9F00(void* self, int value)",
+    "summary": "Formats an integer as a decimal string into a local buffer and assigns it via assignCString; returns the callee's result (this).",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BA2C0": {
     "name": "StringBuffer::getCharPtrAt",
     "class": "StringBuffer",

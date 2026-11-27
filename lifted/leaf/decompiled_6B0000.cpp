@@ -2755,3 +2755,22 @@ extern void* fn_006B9D80(void* ecx, const char* s) {
     return ecx;
 }
 } // namespace lift_006B9D80
+
+// [0x006B9F00] sub_006B9F00 (64 bytes)
+namespace lift_006B9F00 {
+// Known callee 0x006B9EC0: Unknown::assignCString_006B9EC0 (Assigns a C string: a null pointer resets via sub_006B9920, otherwise forwards strlen(s) and s to allocAndCopy; always returns this.)
+extern void* __thiscall ext_006B9EC0(void* self, const char* s);
+extern int mem_00925218;
+extern const char mem_00aa86a4[];
+
+// @name Unknown::assignInt_006B9F00
+// @class Unknown
+// @summary Formats an integer as a decimal string into a local buffer and assigns it via assignCString; returns the callee's result (this).
+void* __thiscall fn_006B9F00(void* self, int value) {
+    using SprintfFn = int(__cdecl*)(char* buf, const char* fmt, ...);
+    char buf[20];
+    auto sprintf_fn = reinterpret_cast<SprintfFn>(static_cast<intptr_t>(mem_00925218));
+    sprintf_fn(buf, mem_00aa86a4, value);
+    return ext_006B9EC0(self, buf);
+}
+} // namespace lift_006B9F00
