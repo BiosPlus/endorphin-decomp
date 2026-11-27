@@ -1,0 +1,34 @@
+{
+  "va": "0x0071B870",
+  "size": 128,
+  "orig_symbol": "sub_0071B870",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::ClampAndUpdateMin",
+  "class": "Unknown",
+  "signature": "void fn_0071B870(void* self, double x)",
+  "summary": "Clamps the stack double x to [0.001, 600000], stores it at this-\u003efield_0xc-\u003e+0xb08, then sets inner +0xa80 to min(+0xb08, +0xa80) (keeps the old +0xa80 if it is already smaller; otherwise stores the clamped value).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB08",
+      "type": "double field_0xb08 (on the object at",
+      "name": "this+0xc)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA80",
+      "type": "double field_0xa80 (on the object at",
+      "name": "this+0xc)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:12:36Z"
+}

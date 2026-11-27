@@ -73479,6 +73479,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071B870": {
+    "name": "Unknown::ClampAndUpdateMin",
+    "class": "Unknown",
+    "signature": "void fn_0071B870(void* self, double x)",
+    "summary": "Clamps the stack double x to [0.001, 600000], stores it at this-\u003efield_0xc-\u003e+0xb08, then sets inner +0xa80 to min(+0xb08, +0xa80) (keeps the old +0xa80 if it is already smaller; otherwise stores the clamped value).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071B8F0": {
     "name": "sub_0071B8F0",
     "class": "Unknown",

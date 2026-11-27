@@ -2341,3 +2341,40 @@ void fn_0071B7E0(void* self, double x) {
     }
 }
 } // namespace lift_0071B7E0
+
+// [0x0071B870] sub_0071B870 (128 bytes)
+namespace lift_0071B870 {
+extern int mem_00993868;
+extern int mem_00996630;
+
+// @name Unknown::ClampAndUpdateMin
+// @class Unknown
+// @summary Clamps the stack double x to [0.001, 600000], stores it at this->field_0xc->+0xb08, then sets inner +0xa80 to min(+0xb08, +0xa80) (keeps the old +0xa80 if it is already smaller; otherwise stores the clamped value).
+// @field Unknown +0x0c void* field_0x0c
+// @field Unknown +0xb08 double field_0xb08 (on the object at this+0xc)
+// @field Unknown +0xa80 double field_0xa80 (on the object at this+0xc)
+void fn_0071B870(void* self, double x) {
+    // Constants from .rdata (0.001 and 600000.0), read through the mem_ symbols.
+    const double kMin = *reinterpret_cast<const double*>(&mem_00993868);
+    const double kMax = *reinterpret_cast<const double*>(&mem_00996630);
+
+    // Clamp. Written with negated comparisons so NaN behaves as in the x87 code (NaN -> kMin).
+    double v;
+    if (!(x >= kMin)) {
+        v = kMin;
+    } else if (!(x > kMax)) {
+        v = x;
+    } else {
+        v = kMax;
+    }
+
+    void* inner = lift_field<void*>(self, 0x0c);
+    lift_field<double>(inner, 0x0b08) = v;
+
+    const double a = lift_field<double>(inner, 0x0b08);
+    const double b = lift_field<double>(inner, 0x0a80);
+    if (!(b < a)) {
+        lift_field<double>(inner, 0x0a80) = a;
+    }
+}
+} // namespace lift_0071B870
