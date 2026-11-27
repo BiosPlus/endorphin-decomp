@@ -32841,6 +32841,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005B8C80": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyData\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, float, {public: void __thiscall NMData::MetaBodyData::setAngularVelocityDamping(float), 0}\u003e",
+    "signature": "void fn_005B8C80(void* self)",
+    "summary": "Lazily initializes the static accessor object (guarded by bit 0 of mem_00B43D40) and binds holder+0x04 to it.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x005B8EA0": {
     "name": "forEachNodeCallWithOffset",
     "signature": "void* fn_005B8EA0( ResultPair005B8EA0* out_result, void* first_container, void* first_node, void* last_container, void* last_node, void* fn_ptr, uint32_t offset)",

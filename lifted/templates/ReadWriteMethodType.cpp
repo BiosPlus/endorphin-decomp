@@ -12027,3 +12027,28 @@ void fn_005B8A10(void* holder) {
     lift_field<DWORD>(holder, 0x04) = 0x00B43D24u;
 }
 } // namespace lift_005B8A10
+
+// [0x005B8C80] ExprParser::ReadWriteMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, float, {public: void __thiscall NMData::MetaBodyData::setAngularVelocityDamping(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_005B8C80 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00B43D40;
+extern int mem_00B43D3C;
+
+// @name ExprParser::ReadWriteMethodType<NMData::MetaBodyData>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, float, {public: void __thiscall NMData::MetaBodyData::setAngularVelocityDamping(float), 0}>
+// @summary Lazily initializes the static accessor object (guarded by bit 0 of mem_00B43D40) and binds holder+0x04 to it.
+// @field ExprParser::ReadWriteMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, float, {public: void __thiscall NMData::MetaBodyData::setAngularVelocityDamping(float), 0}> +0x04 void* accessor
+void fn_005B8C80(void* self) {
+    // One-time static init guard: bit 0 of the guard word.
+    if ((static_cast<uint32_t>(mem_00B43D40) & 1u) == 0) {
+        mem_00B43D40 = static_cast<int>(static_cast<uint32_t>(mem_00B43D40) | 1u);
+        // Initialize the static object at mem_00B43D3C (ECX = &mem_00B43D3C, arg = 0).
+        ext_0067A670(&mem_00B43D3C, 0);
+        // First dword of the static object is its vtable pointer.
+        mem_00B43D3C = 0x962d9c;
+    }
+    // Bind holder+0x04 to the static accessor object.
+    *reinterpret_cast<int**>(static_cast<char*>(self) + 0x04) = &mem_00B43D3C;
+}
+} // namespace lift_005B8C80
