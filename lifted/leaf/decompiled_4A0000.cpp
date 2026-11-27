@@ -1760,3 +1760,85 @@ void* fn_004A5DC0(void* self) {
     return &mem_00ADEBE4;
 }
 } // namespace lift_004A5DC0
+
+// [0x004A7560] sub_004A7560 (194 bytes)
+namespace lift_004A7560 {
+// Unlifted callees (prototypes inferred from call-site register/stack usage).
+extern void ext_0041A920(void* self, void** slot);
+extern void ext_0050ED40(void* self, int32_t count);
+// IAT thunk to MSVCR80!__RTDynamicCast(in, vfDelta, srcType, dstType, isReference).
+extern void* ext_006A6E9E(void* in, int32_t vfDelta, void* srcType, void* dstType, int32_t isReference);
+
+// Known callee 0x00596660: eraseInt32Range
+extern void ext_00596660(void* self, void** out, void* a2, int32_t* first, void* a4, int32_t* last);
+// CRT _invalid_parameter_noinfo import slot (boilerplate trap; replaced by abort() below).
+extern int mem_00925134;
+
+// @name clearAndReleaseTypedEntries
+// @summary Erases the [begin,end) range of self, then dynamic-casts each remaining entry and calls ext_0041A920 on non-null casts.
+// @field <unnamed> +0x04 void* begin
+// @field <unnamed> +0x08 void* end
+void fn_004A7560(void* /*a1: unused stack argument*/, void* self) {
+    // Original CRT invalid-parameter traps are replaced with abort().
+    // Keep the import-slot reference as metadata only; it is not a real access.
+    (void)&mem_00925134;
+    // Range invariant: begin must not be past end.
+    void* begin = lift_field<void*>(self, 0x04);
+    void* end = lift_field<void*>(self, 0x08);
+    if (reinterpret_cast<uintptr_t>(begin) > reinterpret_cast<uintptr_t>(end)) {
+        std::abort();
+    }
+    if (reinterpret_cast<uintptr_t>(begin) > reinterpret_cast<uintptr_t>(end)) {
+        std::abort();
+    }
+
+    // Erase [begin, end) from self; the result pair is written to out.
+    void* out[2] = {nullptr, nullptr};
+    ext_00596660(self, out, self,
+                reinterpret_cast<int32_t*>(begin), self,
+                reinterpret_cast<int32_t*>(end));
+
+    // out[0] is the resulting container: +0x04 begin, +0x08 end (4-byte entries).
+    void* vec = out[0];
+    void* vecBegin = lift_field<void*>(vec, 0x04);
+    int32_t count = 0;
+    if (vecBegin != nullptr) {
+        int32_t bytes = static_cast<int32_t>(reinterpret_cast<uintptr_t>(lift_field<void*>(vec, 0x08)) -
+                                             reinterpret_cast<uintptr_t>(vecBegin));
+        count = bytes >> 2;
+    }
+    ext_0050ED40(self, count);
+
+    // Walk the container's entries and release those that dynamic-cast to the target type.
+    void** it = static_cast<void**>(lift_field<void*>(vec, 0x04));
+    if (reinterpret_cast<uintptr_t>(it) > reinterpret_cast<uintptr_t>(lift_field<void*>(vec, 0x08))) {
+        std::abort();
+    }
+    for (;;) {
+        void** endp = static_cast<void**>(lift_field<void*>(vec, 0x08));
+        if (reinterpret_cast<uintptr_t>(lift_field<void*>(vec, 0x04)) > reinterpret_cast<uintptr_t>(endp)) {
+            std::abort();
+        }
+        if (it == endp) {
+            break;
+        }
+        if (reinterpret_cast<uintptr_t>(it) >= reinterpret_cast<uintptr_t>(endp)) {
+            std::abort();
+        }
+
+        void* entry = *it;
+        void* casted = ext_006A6E9E(entry, 0,
+                                    reinterpret_cast<void*>(static_cast<uintptr_t>(0xA2FBBCu)),
+                                    reinterpret_cast<void*>(static_cast<uintptr_t>(0xA30680u)),
+                                    0);
+        if (casted != nullptr) {
+            ext_0041A920(self, &casted);
+        }
+
+        if (reinterpret_cast<uintptr_t>(it) >= reinterpret_cast<uintptr_t>(lift_field<void*>(vec, 0x08))) {
+            std::abort();
+        }
+        it = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(it) + 4);  // 4-byte entries
+    }
+}
+} // namespace lift_004A7560

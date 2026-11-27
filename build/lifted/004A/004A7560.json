@@ -1,0 +1,27 @@
+{
+  "va": "0x004A7560",
+  "size": 194,
+  "orig_symbol": "sub_004A7560",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "clearAndReleaseTypedEntries",
+  "signature": "void fn_004A7560(void* /*a1: unused stack argument*/, void* self)",
+  "summary": "Erases the [begin,end) range of self, then dynamic-casts each remaining entry and calls ext_0041A920 on non-null casts.",
+  "fields": [
+    {
+      "class": "\u003cunnamed\u003e",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "begin"
+    },
+    {
+      "class": "\u003cunnamed\u003e",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:16:41Z"
+}
