@@ -46176,6 +46176,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00472730 (Tree::lowerBound).",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005AD060": {
+    "name": "GuardedStaticInstance_005AD060",
+    "signature": "void* fn_005AD060(void)",
+    "summary": "Lazily constructs a function-local static object once (guard bit 0 in mem_00B428C0), registers its teardown, and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005AD0C0": {
     "name": "Commands::MirrorCollisionModelCommand::vfunc_0",
     "class": "Commands::MirrorCollisionModelCommand",

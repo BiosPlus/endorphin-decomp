@@ -3712,3 +3712,23 @@ extern void fn_005A4740(DWORD* first, DWORD* last, int ideal)
         ext_0059FE80(first, last);
 }
 } // namespace lift_005A4740
+
+// [0x005AD060] sub_005AD060 (95 bytes)
+namespace lift_005AD060 {
+extern void ext_00662610(void* obj, const void* arg2);
+extern void ext_006A6C87(void* fn);
+extern uint8_t mem_00B428C0;
+extern uint8_t mem_00B428A4;
+
+// @name GuardedStaticInstance_005AD060
+// @summary Lazily constructs a function-local static object once (guard bit 0 in mem_00B428C0), registers its teardown, and returns its address.
+void* fn_005AD060(void) {
+    if ((mem_00B428C0 & 1u) == 0) {
+        mem_00B428C0 |= 1u;
+        ext_00662610(&mem_00B428A4,
+                     reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00A85D18u)));
+        ext_006A6C87(reinterpret_cast<void*>(static_cast<uintptr_t>(0x0091DB00u)));
+    }
+    return &mem_00B428A4;
+}
+} // namespace lift_005AD060
