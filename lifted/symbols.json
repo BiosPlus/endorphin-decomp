@@ -22985,6 +22985,13 @@
     "summary": "Pure jump thunk forwarding to sub_0051E560.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0051E740": {
+    "name": "sub_0051E740",
+    "class": "Unknown",
+    "signature": "void fn_0051E740(void* self, uint8_t** out, uint8_t* arg2, uint8_t* arg3, uint8_t* arg4, uint8_t* arg5)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F210 (Unknown::CopyRangeAndDestroyTail_0054F210).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x0051E7D0": {
     "name": "sub_0051E7D0",
     "signature": "DWORD* __thiscall fn_0051E7D0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
