@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/NMData/CharacterData.cpp
 #include "lift_compat.h"
+#include <cstdint>
+#include <string>
 
-// [0x005A98B0]
+#include <string>
 namespace lift_005A98B0 {
 // @name NMData::CharacterData::vfunc_11
 // @class NMData::CharacterData
@@ -232,3 +234,52 @@ void fn_005A4D60(void* self, void* arg) {
     }
 }
 } // namespace lift_005A4D60
+
+// [0x0059DEE0] NMData::CharacterData::vfunc_23_off_4 (208 bytes)
+namespace lift_0059DEE0 {
+extern void ext_00599E40(void* str);
+extern void ext_0059A8D0(void* str, void* owner);
+extern void ext_0059D7F0(void* thisAdj, void* out, void* arg);
+extern void ext_00664F50(void* str);
+extern int mem_00924FB0;
+extern int mem_00924FDC;
+extern int mem_00924FC0;
+extern int mem_00924FF4;
+extern const char mem_00928B5D[];
+
+// @name NMData::CharacterData::setStringIfChanged
+// @class NMData::CharacterData
+// @summary Refreshes a temporary string from the argument via ext_0059D7F0 on this-4; if it differs from the +0x14 string, updates +0x14 (notifying ext_00599E40/ext_0059A8D0 when +0x5F4 is set), then copies it into +0x30 when +0x30 equals the literal at mem_00928B5D, and finally calls ext_00664F50 on +0x30.
+// @field NMData::CharacterData +0x14 std::string field_0x14
+// @field NMData::CharacterData +0x30 std::string field_0x30
+// @field NMData::CharacterData +0x5F4 void* field_0x5f4
+void fn_0059DEE0(void* self, void* arg) {
+    // Import slots for std::string operators in the original; kept as metadata references only.
+    (void)&mem_00924FB0;
+    (void)&mem_00924FDC;
+    (void)&mem_00924FC0;
+    (void)&mem_00924FF4;
+
+    std::string tmp;
+    ext_0059D7F0(static_cast<uint8_t*>(self) - 4, &tmp, arg);
+
+    std::string& s14 = lift_field<std::string>(self, 0x14);
+    if (tmp != s14) {
+        if (lift_field<void*>(self, 0x5F4) != nullptr) {
+            ext_00599E40(&s14);
+        }
+        s14 = tmp;
+        if (lift_field<void*>(self, 0x5F4) != nullptr) {
+            // owner = (this-4 != 0) ? this : nullptr
+            void* owner = (reinterpret_cast<uintptr_t>(self) - 4) != 0 ? self : nullptr;
+            ext_0059A8D0(&s14, owner);
+        }
+    }
+
+    std::string& s30 = lift_field<std::string>(self, 0x30);
+    if (s30 == mem_00928B5D) {
+        s30 = s14;
+    }
+    ext_00664F50(&s30);
+}
+} // namespace lift_0059DEE0

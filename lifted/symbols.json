@@ -42703,6 +42703,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x5FC and tail-calls sub_006750B0.",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
+  "0x0059DEE0": {
+    "name": "NMData::CharacterData::setStringIfChanged",
+    "class": "NMData::CharacterData",
+    "signature": "void fn_0059DEE0(void* self, void* arg)",
+    "summary": "Refreshes a temporary string from the argument via ext_0059D7F0 on this-4; if it differs from the +0x14 string, updates +0x14 (notifying ext_00599E40/ext_0059A8D0 when +0x5F4 is set), then copies it into +0x30 when +0x30 equals the literal at mem_00928B5D, and finally calls ext_00664F50 on +0x30.",
+    "lifted_path": "lifted/NMData/CharacterData.cpp"
+  },
   "0x0059DFB0": {
     "name": "NMData::CharacterData::vfunc_24_off_4",
     "class": "NMData::CharacterData",
