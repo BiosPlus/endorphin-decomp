@@ -10267,6 +10267,13 @@
     "summary": "Lazily initializes a function-local static string object, builds a temporary std::string from the stack argument, dispatches to ext_00475960 with this-\u003efield_0x00, then destroys the temporary.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00476430": {
+    "name": "Unknown::lookupStringKeyedValue",
+    "class": "Unknown",
+    "signature": "uint32_t* fn_00476430(void* self, uint32_t* out, uint32_t key)",
+    "summary": "Builds a std::string from literal 0x00A3273C, and when key is nonzero passes it through this+0x18 and the import at mem_00924FD4; then stores the 32-bit result of this+0x08 applied to the string into *out, destroys the string, and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00476530": {
     "name": "sub_00476530",
     "class": "UnknownClass",
