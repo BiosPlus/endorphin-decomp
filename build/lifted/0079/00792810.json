@@ -1,0 +1,14 @@
+{
+  "va": "0x00792810",
+  "size": 109,
+  "orig_symbol": "sub_00792810",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "Unknown::allocAndInitDerived",
+  "class": "Unknown",
+  "signature": "void* fn_00792810(uint32_t arg1, uint32_t arg2)",
+  "summary": "Allocates a 0x280-byte object, runs the derived initializer on it, then applies two stack arguments to it via ext_00790D80 and ext_00790DA0; returns the object (or NULL if allocation failed).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:36:16Z"
+}

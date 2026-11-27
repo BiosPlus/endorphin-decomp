@@ -1514,3 +1514,29 @@ void* fn_00792880(void* self) {
     return self;
 }
 } // namespace lift_00792880
+
+// [0x00792810]
+namespace lift_00792810 {
+// @name Unknown::allocAndInitDerived
+// @summary Allocates a 0x280-byte object, runs the derived initializer on it, then applies two stack arguments to it via ext_00790D80 and ext_00790DA0; returns the object (or NULL if allocation failed).
+
+// MFC80 operator new thunk (cdecl, size in bytes).
+extern void* ext_006A5C62(size_t size);
+// Derived-object initializer: thiscall, returns self.
+extern void* ext_00792880(void* self);
+// thiscall, one stack argument (callee pops).
+extern void ext_00790D80(void* self, uint32_t value);
+// thiscall, one stack argument (callee pops).
+extern void ext_00790DA0(void* self, uint32_t value);
+
+void* fn_00792810(uint32_t arg1, uint32_t arg2) {
+    void* self = nullptr;
+    void* mem = ext_006A5C62(0x280);
+    if (mem != nullptr) {
+        self = ext_00792880(mem);
+    }
+    ext_00790D80(self, arg1);
+    ext_00790DA0(self, arg2);
+    return self;
+}
+} // namespace lift_00792810

@@ -3667,6 +3667,12 @@
     "summary": "Invokes vtable+0x1d0(0) on the object returned by sub_00465B40 and displays any caught exception message via AfxMessageBox.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x004321C0": {
+    "name": "appRunModalOrInit",
+    "signature": "void __cdecl fn_004321C0(void)",
+    "summary": "Calls virtual method at +0x1CC on the object returned by fn_00465B40 and displays any caught exception message via AfxMessageBox.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00432400": {
     "name": "fn_00432400 (call-object virtual method 0x1EC with arg 0)",
     "signature": "void fn_00432400(void* self)",
@@ -77692,6 +77698,13 @@
     "name": "initFields",
     "signature": "void __thiscall sub_007911E0(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
     "summary": "Initializes six 32-bit fields on the object from three arguments and constants",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
+  "0x00792810": {
+    "name": "Unknown::allocAndInitDerived",
+    "class": "Unknown",
+    "signature": "void* fn_00792810(uint32_t arg1, uint32_t arg2)",
+    "summary": "Allocates a 0x280-byte object, runs the derived initializer on it, then applies two stack arguments to it via ext_00790D80 and ext_00790DA0; returns the object (or NULL if allocation failed).",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
   "0x00792880": {
