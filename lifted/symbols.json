@@ -7895,6 +7895,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x28 and forwards through mem_00924FDC.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x0046C0A0": {
+    "name": "parseFloatFromString",
+    "signature": "extern \"C\" void fn_0046C0A0(uint32_t /*unused*/, float* out_val)",
+    "summary": "Calls ext_004275C0 to get a std::string, converts it with atof, and stores the float result.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046C110": {
     "name": "Unknown::GetFieldF138ViaF8",
     "class": "Unknown",
@@ -24714,7 +24720,7 @@
     "name": "CameraTool::vfunc_33",
     "class": "CameraTool",
     "signature": "void __thiscall CameraTool_vfunc_33(CameraTool* self)",
-    "summary": "Refreshes cached camera float triplet from sub-object's vfunc result and resets two blend constants to 1.0f.",
+    "summary": "Copies a float triple from the sub-object's vfunc result into CameraTool and resets two blend constants to 1.0f.",
     "lifted_path": "lifted/classes/CameraTool.cpp"
   },
   "0x00543470": {
@@ -72118,6 +72124,12 @@
     "name": "lookupTable_007B501C",
     "signature": "uint8_t fn_007B501C(uint32_t index)",
     "summary": "48-byte constant lookup table; returns the entry at a given index.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
+  "0x007B5074": {
+    "name": "sub_007B5074",
+    "signature": "void sub_007B5074()",
+    "summary": "Data/lookup table at 0x007B5074 (100 bytes, not executable code)",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
   "0x007B50EC": {
