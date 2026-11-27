@@ -2437,3 +2437,39 @@ double fn_00702BE0(void* self) {
     return result;
 }
 } // namespace lift_00702BE0
+
+// [0x00708000] sub_00708000 (128 bytes)
+namespace lift_00708000 {
+// Known callee 0x00712000: getSubobjectField_00712000 (Calls fn_0071E680(self) and returns the uint32_t at offset +0x4 of the returned subobject.)
+extern uint32_t __fastcall ext_00712000(void* self);
+
+// @name Unknown::FindChildByName_00708000
+// @class Unknown
+// @summary Scans the count-sized pointer array at +0xD0 and returns the first element whose fn_00712000 string equals the name argument, or 0 if none matches.
+// @field Unknown +0xC0 int32_t field_0xC0
+// @field Unknown +0xD0 uint32_t* field_0xD0
+extern uint32_t __fastcall fn_00708000(void* self, const char* name) {
+    const int32_t count = lift_field<int32_t>(self, 0xC0);
+    for (int32_t i = 0; i < count; ++i) {
+        const uint32_t item = lift_field<uint32_t*>(self, 0xD0)[i];
+        const uintptr_t key = static_cast<uintptr_t>(
+            ext_00712000(reinterpret_cast<void*>(static_cast<uintptr_t>(item))));
+        const uint8_t* a = reinterpret_cast<const uint8_t*>(key);
+        const uint8_t* b = reinterpret_cast<const uint8_t*>(name);
+        bool equal = true;
+        for (;; ++a, ++b) {
+            if (*a != *b) {
+                equal = false;
+                break;
+            }
+            if (*a == 0) {
+                break;
+            }
+        }
+        if (equal) {
+            return item;
+        }
+    }
+    return 0;
+}
+} // namespace lift_00708000

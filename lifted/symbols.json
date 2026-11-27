@@ -71010,6 +71010,13 @@
     "summary": "Walks the pointer array at +0xB4 from the last index down to 0, calling virtual slot 0xD8 on self with each entry and then freeing it via CRT free; finally calls ext_006D2250 with \u0026self-\u003e+0xA4 as this.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00708000": {
+    "name": "Unknown::FindChildByName_00708000",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t __fastcall fn_00708000(void* self, const char* name)",
+    "summary": "Scans the count-sized pointer array at +0xD0 and returns the first element whose fn_00712000 string equals the name argument, or 0 if none matches.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00708C10": {
     "name": "findAndSelectItem",
     "signature": "uint32_t __thiscall sub_00708C10(void* self, uint32_t target)",
