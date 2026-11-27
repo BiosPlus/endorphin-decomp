@@ -25,5 +25,7 @@ struct ExprParser_ReadWriteMethodType_Fields {
     // +0x4   DWORD                    staticObjectPtr  (evidence: 0x004E9E30) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    target  (evidence: 0x0068EEE0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    wrappedObj  (evidence: 0x0059EB60) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint8_t                  written  (evidence: 0x005B3060) // CONFLICT: multiple definitions at +0x4
+    // +0xC   void*                    accessor  (evidence: 0x005B3060)
 };
 } // namespace lifted_layout

@@ -34249,6 +34249,13 @@
     "summary": "Returns 1 if the float at the referenced object's +0x18 is \u003e= 1e-6 (NaN yields 0); throws if the object pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005B3060": {
+    "name": "ExprParser::ReadWriteMethodType\u003cGeometry\u003e::vfunc_41 (Geometry::setFileName from string value)",
+    "class": "ExprParser::ReadWriteMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: void __thiscall Geometry::setFileName(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026)\u003e",
+    "signature": "void __stdcall fn_005B3060(void** self, void* value)",
+    "summary": "Copies the string value through ext_0046E780 into a temporary std::string and passes it to the Geometry accessor's vtable slot 7 (setFileName); sets the written-flag at +0x04; throws if the holder's target is null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x005B30F0": {
     "name": "ReadWriteMethodType\u003cGeometry\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
     "class": "ExprParser::ReadWriteMethodType\u003cGeometry\u003e",

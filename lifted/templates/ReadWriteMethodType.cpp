@@ -19976,3 +19976,50 @@ void __stdcall fn_0068EEE0(void* holder, void* a2) {
     dtor(tmp);
 }
 } // namespace lift_0068EEE0
+
+// [0x005B3060] ExprParser::ReadWriteMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall Geometry::setFileName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>::vfunc_41 (141 bytes)
+namespace lift_005B3060 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (Calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg.)
+extern void* ext_0046E780(void* self, void* a1, void* a2, uint32_t a3);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+// IAT slot 0x00924FF4: MSVCP80 basic_string<char> destructor (function pointer value).
+extern uint32_t mem_00924FF4;
+
+// @name ExprParser::ReadWriteMethodType<Geometry>::vfunc_41 (Geometry::setFileName from string value)
+// @class ExprParser::ReadWriteMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall Geometry::setFileName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>
+// @summary Copies the string value through ext_0046E780 into a temporary std::string and passes it to the Geometry accessor's vtable slot 7 (setFileName); sets the written-flag at +0x04; throws if the holder's target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadWriteMethodType +0x04 uint8_t written
+// @field ExprParser::ReadWriteMethodType +0x0c void* accessor
+void __stdcall fn_005B3060(void** self, void* value) {
+    // Holder deref: *self is the target object; a null target throws.
+    uint8_t* target = static_cast<uint8_t*>(*self);
+    if (target == nullptr) {
+        alignas(16) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+        return;
+    }
+
+    // Copy/convert the value into a temporary std::string (MSVC x86 layout, 0x1C bytes).
+    alignas(8) uint8_t tmp[0x1C];
+    void* str = ext_0046E780(tmp, value, self, 0);
+
+    // Accessor object at target+0x0C; call its vtable slot 7 (setFileName) with the string.
+    void* accessor = *reinterpret_cast<void**>(target + 0x0C);
+    void** vtbl = *reinterpret_cast<void***>(accessor);
+    using SetFileNameFn = void (__thiscall*)(void* self, void* str);
+    SetFileNameFn setFileName = reinterpret_cast<SetFileNameFn>(vtbl[7]);
+    setFileName(accessor, str);
+
+    target[0x04] = 1;
+
+    // Destroy the temporary string via the IAT-resolved destructor.
+    using DtorFn = void (__thiscall*)(void* self);
+    DtorFn dtor = reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+    dtor(tmp);
+}
+} // namespace lift_005B3060
