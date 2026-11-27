@@ -10,31 +10,32 @@
 // Recovered field layout for NMData::CameraData:
 namespace lifted_layout {
 struct NMData_CameraData_Fields {
-    // +0x4   void*                    field_0x04  (evidence: 0x005DD190)
+    // +0x4   void*                    field_0x04  (evidence: 0x005DD190, 0x005DD3D0)
     // +0xC   void*                    field_0x0c  (evidence: 0x005DD190)
-    // +0x14  std::string              field_0x14  (evidence: 0x005DDA40)
+    // +0x14  std::string              field_0x14  (evidence: 0x005DD3D0, 0x005DDA40)
     // +0xE8  uintptr_t                field_0xe8  (evidence: 0x005DD190)
     // +0x154 uint32_t                 field_0x154  (evidence: 0x005DDA40) // CONFLICT: multiple definitions at +0x154
     // +0x154 void*                    field_0x154  (evidence: 0x005DD190) // CONFLICT: multiple definitions at +0x154
     // +0x158 uint32_t                 field_0x158  (evidence: 0x005DDA40)
-    // +0x15C uint8_t                  field_0x15c  (evidence: 0x005DD190)
-    // +0x1A8 uint8_t                  field_0x1a8  (evidence: 0x005CFC20, 0x005D0D30)
-    // +0x1F0 uint8_t                  field_0x1f0  (evidence: 0x005CFC20, 0x005D0D30)
-    // +0x1F1 uint8_t                  field_0x1f1  (evidence: 0x005D0D30)
-    // +0x1F2 uint8_t                  field_0x1f2  (evidence: 0x005DD190)
-    // +0x1F4 float                    field_0x1f4  (evidence: 0x005D0D30)
-    // +0x1F8 float                    field_0x1f8  (evidence: 0x005D0D30)
-    // +0x1FC float                    field_0x1fc  (evidence: 0x005D0D30)
-    // +0x200 float                    field_0x200  (evidence: 0x005D0D30)
-    // +0x204 float                    field_0x204  (evidence: 0x005D0D30) // CONFLICT: multiple definitions at +0x204
+    // +0x15C uint8_t                  field_0x15c  (evidence: 0x005DD190, 0x005DD3D0)
+    // +0x1A8 uint8_t                  field_0x1a8  (evidence: 0x005CFC20, 0x005D0D30, 0x005DD3D0)
+    // +0x1F0 uint8_t                  field_0x1f0  (evidence: 0x005CFC20, 0x005D0D30, 0x005DD3D0)
+    // +0x1F1 uint8_t                  field_0x1f1  (evidence: 0x005D0D30, 0x005DD3D0)
+    // +0x1F2 uint8_t                  field_0x1f2  (evidence: 0x005DD190, 0x005DD3D0)
+    // +0x1F4 float                    field_0x1f4  (evidence: 0x005D0D30, 0x005DD3D0)
+    // +0x1F8 float                    field_0x1f8  (evidence: 0x005D0D30, 0x005DD3D0)
+    // +0x1FC float                    field_0x1fc  (evidence: 0x005D0D30, 0x005DD3D0)
+    // +0x200 float                    field_0x200  (evidence: 0x005D0D30, 0x005DD3D0)
+    // +0x204 float                    field_0x204  (evidence: 0x005D0D30, 0x005DD3D0) // CONFLICT: multiple definitions at +0x204
     // +0x204 uint8_t                  field_0x204  (evidence: 0x005D13B0) // CONFLICT: multiple definitions at +0x204
-    // +0x208 uint32_t                 field_0x208  (evidence: 0x005D0D30) // CONFLICT: multiple definitions at +0x208
+    // +0x208 uint32_t                 field_0x208  (evidence: 0x005D0D30, 0x005DD3D0) // CONFLICT: multiple definitions at +0x208
     // +0x208 uint8_t                  field_0x208  (evidence: 0x005D13B0) // CONFLICT: multiple definitions at +0x208
-    // +0x210 uint8_t                  field_0x210  (evidence: 0x005D0D30, 0x005DD190)
+    // +0x210 uint8_t                  field_0x210  (evidence: 0x005D0D30, 0x005DD190, 0x005DD3D0)
+    // +0x214 uint8_t                  field_0x214  (evidence: 0x005DD3D0)
     // +0x258 float                    field_0x258  (evidence: 0x005D13B0)
-    // +0x25C uint32_t                 field_0x25c  (evidence: 0x005D0D30) // CONFLICT: multiple definitions at +0x25C
+    // +0x25C uint32_t                 field_0x25c  (evidence: 0x005D0D30, 0x005DD3D0) // CONFLICT: multiple definitions at +0x25C
     // +0x25C void*                    field_0x25c  (evidence: 0x005D13B0, 0x005DCB00) // CONFLICT: multiple definitions at +0x25C
-    // +0x260 uint32_t                 field_0x260  (evidence: 0x005D0D30)
+    // +0x260 uint32_t                 field_0x260  (evidence: 0x005D0D30, 0x005DD3D0)
     // +0x264 uint8_t                  field_0x264  (evidence: 0x005CFE70, 0x005D06E0, 0x005DCB00)
     // +0x2C4 void*                    field_0x2c4  (evidence: 0x005DD190)
 };

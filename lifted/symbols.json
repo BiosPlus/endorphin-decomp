@@ -53185,6 +53185,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005DD3D0": {
+    "name": "NMData::CameraData::vfunc_21",
+    "class": "NMData::CameraData",
+    "signature": "static inline bool is_sentinel_005DD3D0(uint32_t v)",
+    "summary": "Deserializes CameraData properties from the given property/XML node into fields and subobjects.",
+    "lifted_path": "lifted/NMData/CameraData.cpp"
+  },
   "0x005DDA40": {
     "name": "NMData::CameraData::vfunc_23",
     "class": "NMData::CameraData",

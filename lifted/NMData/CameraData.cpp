@@ -417,3 +417,170 @@ void* __thiscall fn_005D0D30(void* self, void* arg0) {
     return esi;
 }
 } // namespace lift_005D0D30
+
+// [0x005DD3D0]
+namespace lift_005DD3D0 {
+// @name NMData::CameraData::vfunc_21
+// @class NMData::CameraData
+// @summary Deserializes CameraData properties from the given property/XML node into fields and subobjects.
+// @field NMData::CameraData +0x04 void* field_0x04
+// @field NMData::CameraData +0x14 std::string field_0x14
+// @field NMData::CameraData +0x15C uint8_t field_0x15c
+// @field NMData::CameraData +0x1A8 uint8_t field_0x1a8
+// @field NMData::CameraData +0x1F0 uint8_t field_0x1f0
+// @field NMData::CameraData +0x1F1 uint8_t field_0x1f1
+// @field NMData::CameraData +0x1F2 uint8_t field_0x1f2
+// @field NMData::CameraData +0x1F4 float field_0x1f4
+// @field NMData::CameraData +0x1F8 float field_0x1f8
+// @field NMData::CameraData +0x1FC float field_0x1fc
+// @field NMData::CameraData +0x200 float field_0x200
+// @field NMData::CameraData +0x204 float field_0x204
+// @field NMData::CameraData +0x208 uint32_t field_0x208
+// @field NMData::CameraData +0x210 uint8_t field_0x210
+// @field NMData::CameraData +0x214 uint8_t field_0x214
+// @field NMData::CameraData +0x25C uint32_t field_0x25c
+// @field NMData::CameraData +0x260 uint32_t field_0x260
+
+
+void __cdecl ext_004275E0(void* dst, void* obj);
+void __cdecl ext_00427640(void* out_bool, void* obj);
+void __cdecl ext_0046C0A0(void* out_val, void* obj);
+void __thiscall ext_00589E30(void* self, void* arg1);
+void __thiscall ext_0058EB60(void* self, void* arg1);
+uint32_t* __thiscall ext_005B11D0(void* self, uint32_t index);
+void __thiscall ext_005B5E50(void* self, void* arg1);
+int __stdcall ext_005CFCE0(const void* key);
+uint32_t __stdcall ext_005CFD20(const void* key);
+int __stdcall ext_005CFDB0(void* str);
+void __thiscall ext_005CFE10(void* self, uint32_t arg1);
+void __thiscall ext_005D0860(void* self, void* arg1);
+void __thiscall ext_005D0B00(void* self);
+void __thiscall ext_005DD020(void* self, void* arg1);
+uint32_t __thiscall ext_0063EFE0(void* self, const char* name);
+uint32_t __thiscall ext_0063F530(void* self, const char* name, uint32_t arg2, uint32_t arg3);
+
+extern const char* mem_00A9EF58;
+extern const char* mem_00A9FA6C;
+extern const char* mem_00A9F808;
+extern const char* mem_00A9F45C;
+extern const char* mem_00A9F460;
+extern const char* mem_00A9F668;
+extern const char* mem_00A9F550;
+extern const char* mem_00A9FACC;
+extern const char* mem_00A9F3CC;
+extern const char* mem_00A9F9A8;
+extern const char* mem_00A9F698;
+extern const char* mem_00A9F47C;
+extern const char* mem_00A9F648;
+extern const char* mem_00A9F870;
+extern const char* mem_00A9F66C;
+extern const char* mem_00A9F634;
+extern const char* mem_00A9F97C;
+extern void* mem_00924FE8;
+extern void* mem_00924FF4;
+
+static inline bool is_sentinel_005DD3D0(uint32_t v) {
+    return v == 0x00B53A34u || v == 0x00B53B30u || v == 0x00B53AB0u || v == 0x00B53A70u || v == 0x00B53AF0u;
+}
+
+void __thiscall fn_005DD3D0(uint8_t* self, uint8_t* arg1) {
+    (void)mem_00924FE8;
+    (void)mem_00924FF4;
+    ext_005D0B00(self);
+    ext_00589E30(self, arg1);
+    ext_005DD020(self, self + 0x14);
+    ext_0058EB60(self, arg1);
+
+    uint32_t node = ext_0063F530(arg1, mem_00A9EF58, 0, 1);
+    if (!is_sentinel_005DD3D0(node)) {
+        ext_005B5E50(self + 0x15C, arg1);
+    }
+
+    std::string str1;
+    std::string str2;
+    uint32_t tmp = ext_0063EFE0(arg1, mem_00A9FA6C);
+    ext_004275E0(&str1, (void*)(uintptr_t)tmp);
+    tmp = ext_0063EFE0(arg1, mem_00A9F808);
+    ext_004275E0(&str2, (void*)(uintptr_t)tmp);
+
+    lift_field<uint32_t>(self, 0x260) = (uint32_t)ext_005CFCE0(&str1);
+    lift_field<uint32_t>(self, 0x25C) = ext_005CFD20(&str2);
+
+    tmp = ext_0063EFE0(arg1, mem_00A9F45C);
+    ext_0046C0A0(ext_005B11D0(self + 0x210, 1), &tmp);
+
+    tmp = ext_0063EFE0(arg1, mem_00A9F460);
+    ext_0046C0A0(ext_005B11D0(self + 0x210, 2), &tmp);
+
+    tmp = ext_0063EFE0(arg1, mem_00A9F668);
+    ext_0046C0A0(ext_005B11D0(self + 0x210, 0), &tmp);
+
+    tmp = ext_0063EFE0(arg1, mem_00A9F550);
+    ext_0046C0A0(self + 0x1F4, &tmp);
+
+    tmp = ext_0063EFE0(arg1, mem_00A9FACC);
+    ext_00427640(self + 0x1F0, &tmp);
+
+    uint32_t r = ext_0063F530(arg1, mem_00A9F3CC, 0, 1);
+    if (!is_sentinel_005DD3D0(r)) {
+        uint32_t r2 = ext_0063F530(arg1, mem_00A9F3CC, 0, 1);
+        if (is_sentinel_005DD3D0(r2)) {
+            r2 = 0x00B53B30u;
+        }
+        ext_005D0860(self + 0x1A8, (void*)(uintptr_t)r2);
+    }
+
+    uint32_t s_item = ext_0063EFE0(arg1, (const char*)0x00965D30);
+    if (!is_sentinel_005DD3D0(s_item)) {
+        tmp = ext_0063EFE0(arg1, (const char*)0x00965D30);
+        ext_00427640(self + 0x1F1, &tmp);
+    } else {
+        typedef uint8_t (__thiscall *vfunc_t)(void*);
+        void** vtbl = *(void***)(self + 0x4);
+        lift_field<uint8_t>(self, 0x1F1) = ((vfunc_t)vtbl[8])(self + 0x4);
+    }
+
+    uint32_t v_a = ext_0063EFE0(arg1, mem_00A9F9A8);
+    uint32_t v_b = ext_0063EFE0(arg1, mem_00A9F698);
+    uint32_t v_c = ext_0063EFE0(arg1, mem_00A9F47C);
+    uint32_t v_d = ext_0063EFE0(arg1, mem_00A9F648);
+    uint32_t v_e = ext_0063EFE0(arg1, mem_00A9F870);
+
+    if (!is_sentinel_005DD3D0(v_a)) {
+        ext_0046C0A0(ext_005B11D0(self + 0x210, 5), &v_a);
+    }
+    if (!is_sentinel_005DD3D0(v_b)) {
+        ext_0046C0A0(ext_005B11D0(self + 0x210, 3), &v_b);
+    }
+    if (!is_sentinel_005DD3D0(v_c)) {
+        ext_0046C0A0(ext_005B11D0(self + 0x210, 4), &v_c);
+    }
+    if (!is_sentinel_005DD3D0(v_e)) {
+        ext_0046C0A0(self + 0x204, &v_e);
+    }
+    if (!is_sentinel_005DD3D0(v_d)) {
+        std::string str3;
+        ext_004275E0(&str3, (void*)(uintptr_t)v_d);
+        lift_field<uint32_t>(self, 0x208) = (uint32_t)ext_005CFDB0(&str3);
+    }
+
+    uint32_t v_f = ext_0063EFE0(arg1, mem_00A9F66C);
+    uint32_t v_g = ext_0063EFE0(arg1, mem_00A9F634);
+    uint32_t v_h = ext_0063EFE0(arg1, mem_00A9F97C);
+
+    if (!is_sentinel_005DD3D0(v_f)) {
+        ext_0046C0A0(self + 0x1FC, &v_f);
+    }
+    if (!is_sentinel_005DD3D0(v_g)) {
+        ext_0046C0A0(self + 0x1F8, &v_g);
+    }
+    if (!is_sentinel_005DD3D0(v_h)) {
+        ext_0046C0A0(self + 0x200, &v_h);
+    }
+
+    tmp = ext_0063EFE0(arg1, (const char*)0x00965D20);
+    ext_00427640(self + 0x1F2, &tmp);
+    ext_005CFE10(self, (uint32_t)lift_field<uint8_t>(self, 0x1F2));
+    lift_field<uint8_t>(self, 0x214) = 1;
+}
+} // namespace lift_005DD3D0

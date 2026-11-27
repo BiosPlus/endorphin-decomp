@@ -1,0 +1,118 @@
+{
+  "va": "0x005DD3D0",
+  "size": 1636,
+  "orig_symbol": "NMData::CameraData::vfunc_21",
+  "src_path": "src/NMData/CameraData.cpp",
+  "lifted_path": "lifted/NMData/CameraData.cpp",
+  "name": "NMData::CameraData::vfunc_21",
+  "class": "NMData::CameraData",
+  "signature": "static inline bool is_sentinel_005DD3D0(uint32_t v)",
+  "summary": "Deserializes CameraData properties from the given property/XML node into fields and subobjects.",
+  "fields": [
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x14",
+      "type": "std::string",
+      "name": "field_0x14"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x15C",
+      "type": "uint8_t",
+      "name": "field_0x15c"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x1A8",
+      "type": "uint8_t",
+      "name": "field_0x1a8"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x1F0",
+      "type": "uint8_t",
+      "name": "field_0x1f0"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x1F1",
+      "type": "uint8_t",
+      "name": "field_0x1f1"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x1F2",
+      "type": "uint8_t",
+      "name": "field_0x1f2"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x1F4",
+      "type": "float",
+      "name": "field_0x1f4"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x1F8",
+      "type": "float",
+      "name": "field_0x1f8"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x1FC",
+      "type": "float",
+      "name": "field_0x1fc"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x200",
+      "type": "float",
+      "name": "field_0x200"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x204",
+      "type": "float",
+      "name": "field_0x204"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x208",
+      "type": "uint32_t",
+      "name": "field_0x208"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x210",
+      "type": "uint8_t",
+      "name": "field_0x210"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x214",
+      "type": "uint8_t",
+      "name": "field_0x214"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x25C",
+      "type": "uint32_t",
+      "name": "field_0x25c"
+    },
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x260",
+      "type": "uint32_t",
+      "name": "field_0x260"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:49:09Z"
+}
