@@ -70279,6 +70279,13 @@
     "summary": "Scans the pointer array at +0x2c (count at +0x1c) for a record whose first dword equals key; if found, bumps its +4 counter and returns 1. Otherwise allocates an 8-byte record, initialises it with key, appends it (or NULL on allocation failure) to the array and returns 1.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E8F70": {
+    "name": "Unknown::releaseByKey_006E8F70",
+    "class": "Unknown",
+    "signature": "bool fn_006E8F70(void* self, uint32_t value)",
+    "summary": "Finds the entry whose leading DWORD key equals value in the DynArray at +0x1c; if found, decrements its refcount at entry+0x4 and, when it reaches zero, removes it from the array and frees it via ext_006A5C5C. Returns true only when the entry was removed; otherwise calls ext_006E7440 (this+0x94) with index 5 (not found) or 4 (refcount still nonzero) and returns false.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E9000": {
     "name": "Unknown::getTableEntryFirstWord_006E9000",
     "class": "Unknown",

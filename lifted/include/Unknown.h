@@ -748,6 +748,7 @@ struct Unknown_Fields {
     // +0x1C  uint8_t[0x1C] m_str1 (std::string copy of arg b)  (evidence: 0x006738D0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  void* field_0x1c (std::string, copy-constructed from b)  (evidence: 0x0046FB20) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  int32_t                  count  (evidence: 0x006E8E20) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  int32_t count (DynArray element count)  (evidence: 0x006E8F70) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  void*                    criticalSection  (evidence: 0x006FC200) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 default_value  (evidence: 0x0045E700) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  int32_t                  elementCount  (evidence: 0x006FA460) // CONFLICT: multiple definitions at +0x1C
@@ -906,6 +907,7 @@ struct Unknown_Fields {
     // +0x28  uint32_t field_0x28 (arg2 table word)  (evidence: 0x00865C00) // CONFLICT: multiple definitions at +0x28
     // +0x29  uint8_t field_0x29 (flag byte)  (evidence: 0x00427370, 0x0043CB50, 0x0046FB80, 0x00476B80, 0x00486D40, 0x004928C0, 0x0052A1A0, 0x005AC820, 0x005E0AE0, 0x005E2C70, 0x00624CF0, 0x0065B120)
     // +0x2C  void* field_0x2C (read through the pointer at +0x1C)  (evidence: 0x007C15A0, 0x007CAF70) // CONFLICT: multiple definitions at +0x2C
+    // +0x2C  void** table (DynArray element pointer array)  (evidence: 0x006E8F70) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  void**                   arrayItems  (evidence: 0x006E8EF0) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  uint32_t                 elementTable  (evidence: 0x0078C8C0) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  int32_t*                 elements  (evidence: 0x006FA460) // CONFLICT: multiple definitions at +0x2C
@@ -1410,6 +1412,7 @@ struct Unknown_Fields {
     // +0x90  void*                    subobject_vptr  (evidence: 0x006B06A0) // CONFLICT: multiple definitions at +0x90
     // +0x91  uint8_t                  field_0x91  (evidence: 0x005435A0)
     // +0x94  int32_t field_0x94 (read when flag == 0)  (evidence: 0x007C9490, 0x007CAF70) // CONFLICT: multiple definitions at +0x94
+    // +0x94  uint8_t field_0x94 (sub-object address passed to ext_006E7440)  (evidence: 0x006E8F70) // CONFLICT: multiple definitions at +0x94
     // +0x94  float                    f94  (evidence: 0x006465F0) // CONFLICT: multiple definitions at +0x94
     // +0x94  DWORD                    field_0x94  (evidence: 0x007C8490, 0x007C93A0, 0x007CAF70) // CONFLICT: multiple definitions at +0x94
     // +0x94  int32_t                  field_0x94  (evidence: 0x006B0720, 0x006BA780, 0x006D4C90, 0x006D4D10) // CONFLICT: multiple definitions at +0x94

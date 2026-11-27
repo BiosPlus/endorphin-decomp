@@ -2309,3 +2309,50 @@ uint8_t fn_006E8EF0(void* self, uint32_t key) {
     return 1;
 }
 } // namespace lift_006E8EF0
+
+// [0x006E8F70] sub_006E8F70 (144 bytes)
+namespace lift_006E8F70 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* arg);
+// Known callee 0x006D2200: DynArray::removeAt (Removes element at index by shifting subsequent elements down and decrementing count.)
+extern void ext_006D2200(void* self, int32_t index);
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8); returns that call's result.)
+extern void* ext_006E7440(void* self, uint32_t index);
+
+// @name Unknown::releaseByKey_006E8F70
+// @class Unknown
+// @summary Finds the entry whose leading DWORD key equals value in the DynArray at +0x1c; if found, decrements its refcount at entry+0x4 and, when it reaches zero, removes it from the array and frees it via ext_006A5C5C. Returns true only when the entry was removed; otherwise calls ext_006E7440 (this+0x94) with index 5 (not found) or 4 (refcount still nonzero) and returns false.
+// @field Unknown +0x1c int32_t count (DynArray element count)
+// @field Unknown +0x2c void** table (DynArray element pointer array)
+// @field Unknown +0x94 uint8_t field_0x94 (sub-object address passed to ext_006E7440)
+bool fn_006E8F70(void* self, uint32_t value) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    const int32_t count = *reinterpret_cast<int32_t*>(base + 0x1c);
+    void** table = *reinterpret_cast<void***>(base + 0x2c);
+
+    int32_t index = 0;
+    for (; index < count; ++index) {
+        const uint32_t* entry = static_cast<const uint32_t*>(table[index]);
+        if (entry[0] == value) {
+            break;
+        }
+    }
+
+    if (index >= count) {
+        ext_006E7440(base + 0x94, 5);
+        return false;
+    }
+
+    uint32_t* entry = static_cast<uint32_t*>(table[index]);
+    entry[1] = entry[1] - 1;
+    if (entry[1] != 0) {
+        ext_006E7440(base + 0x94, 4);
+        return false;
+    }
+
+    void* target = table[index];
+    ext_006D2200(base + 0x1c, index);
+    ext_006A5C5C(target);
+    return true;
+}
+} // namespace lift_006E8F70
