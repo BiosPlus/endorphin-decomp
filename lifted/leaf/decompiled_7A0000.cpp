@@ -1253,3 +1253,36 @@ void fn_007AEF10(void* self, const char* fmt, ...) {
     reinterpret_cast<VirtualFn>(vtbl[12])(self, buf, len);
 }
 } // namespace lift_007AEF10
+
+// [0x007AF500] sub_007AF500 (105 bytes)
+namespace lift_007AF500 {
+// @name Unknown::computeSizeClass (descriptive; owner class not yet identified)
+// @summary Derives a byte count from the u16 at +0x40 (rounded up to bytes) and a 1..4 selector at +0x42, returning a small code (1..12).
+// @field Unknown +0x40 uint16_t field_0x40
+// @field Unknown +0x42 uint16_t field_0x42
+int32_t fn_007AF500(void* self) {
+    const uint32_t sel = static_cast<uint32_t>(lift_field<uint16_t>(self, 0x42)) - 1u;
+    const int32_t  a   = static_cast<int32_t>((static_cast<uint32_t>(lift_field<uint16_t>(self, 0x40)) + 7u) >> 3);
+
+    if (sel > 3u) {
+        return 7;
+    }
+
+    switch (sel) {
+    case 0:
+        if (a <= 1) {
+            return 1;
+        }
+        return (a > 2) ? 4 : 3;
+    case 1:
+        if (a <= 1) {
+            return 6;
+        }
+        return (a > 2) ? 9 : 8;
+    case 2:
+        return (a != 4) ? 12 : 11;
+    default: // sel == 3
+        return 7;
+    }
+}
+} // namespace lift_007AF500
