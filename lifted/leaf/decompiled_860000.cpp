@@ -1168,3 +1168,48 @@ void __cdecl fn_0086F050(const DWORD* src, DWORD* dst) {
     }
 }
 } // namespace lift_0086F050
+
+// [0x0086CDB0]
+namespace lift_0086CDB0 {
+// @name ensureOwnedBuffer
+// @summary Ensures a buffer descriptor owns a dynamically allocated copy of its data, returning 0 on success or 0xC on allocation failure.
+// @field Buffer +0x00 void* data
+// @field Buffer +0x04 uint32_t size
+// @field Buffer +0x0C uint32_t capacity
+// @field Buffer +0x10 uint32_t extraSize
+// @field Buffer +0x14 uint32_t flags
+
+
+extern uint32_t ext_008596E0(uint32_t size);
+extern void* ext_00859780(void* dst, const void* src, size_t n);
+
+uint32_t fn_0086CDB0(void* buf) {
+    uint8_t* desc = static_cast<uint8_t*>(buf);
+    if (lift_field<uint8_t>(desc, 0x14) & 0x4) {
+        desc = *reinterpret_cast<uint8_t**>(desc);
+    }
+
+    if (!(lift_field<uint8_t>(desc, 0x14) & 0x2)) {
+        return 0;
+    }
+
+    uint32_t size = lift_field<uint32_t>(desc, 0x4);
+    uint32_t extra = lift_field<uint32_t>(desc, 0x10);
+    void* new_buf = reinterpret_cast<void*>(static_cast<uintptr_t>(ext_008596E0(size + extra)));
+    if (!new_buf) {
+        return 0xC;
+    }
+
+    size = lift_field<uint32_t>(desc, 0x4);
+    extra = lift_field<uint32_t>(desc, 0x10);
+    void* old_buf = *reinterpret_cast<void**>(desc);
+    lift_field<uint32_t>(desc, 0xC) = extra + size;
+    ext_00859780(new_buf, old_buf, size);
+
+    uint32_t flags = lift_field<uint32_t>(desc, 0x14);
+    flags &= ~0x2u;
+    *reinterpret_cast<void**>(desc) = new_buf;
+    lift_field<uint32_t>(desc, 0x14) = flags;
+    return 0;
+}
+} // namespace lift_0086CDB0
