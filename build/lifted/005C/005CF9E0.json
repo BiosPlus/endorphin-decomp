@@ -1,0 +1,21 @@
+{
+  "va": "0x005CF9E0",
+  "size": 124,
+  "orig_symbol": "sub_005CF9E0",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "setFloatAndDispatchUnderCriticalSection",
+  "signature": "void __thiscall fn_005CF9E0(void* self, float value)",
+  "summary": "Under a CriticalSectionLock taken from the global's object at +0x258, stores a float arg at self+0x3c and calls dispatchVirtualSlot154 on that field.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:51:00Z"
+}

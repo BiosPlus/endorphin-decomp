@@ -805,7 +805,7 @@ struct Unknown_Fields {
     // +0x3C  std::string              field_0x3C  (evidence: 0x004B6FF0) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  uint32_t                 field_0x3C  (evidence: 0x0048C960, 0x00518080, 0x0052FFD0, 0x00622B40, 0x006296A0, 0x00665DC0) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  void*                    field_0x3C  (evidence: 0x006ACEE0) // CONFLICT: multiple definitions at +0x3C
-    // +0x3C  float                    field_0x3c  (evidence: 0x0053C4C0, 0x00543C00, 0x0063D970, 0x0063DDF0) // CONFLICT: multiple definitions at +0x3C
+    // +0x3C  float                    field_0x3c  (evidence: 0x0053C4C0, 0x00543C00, 0x005CF9E0, 0x0063D970, 0x0063DDF0) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  std::uint32_t            field_0x3c  (evidence: 0x007BEDE0) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  uint32_t                 field_0x3c  (evidence: 0x005B51E0) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  void*                    field_0x3c  (evidence: 0x0052F9C0, 0x006DEB50) // CONFLICT: multiple definitions at +0x3C

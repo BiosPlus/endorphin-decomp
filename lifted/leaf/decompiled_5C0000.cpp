@@ -1863,3 +1863,46 @@ void fn_005CFA60(void* self, float value) {
     (void)ext_00493EE0(slotAddr);
 }
 } // namespace lift_005CFA60
+
+// [0x005CF9E0] sub_005CF9E0 (124 bytes)
+namespace lift_005CF9E0 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000();
+// Known callee 0x0065C640: CriticalSectionLock::enter (Enters the CRITICAL_SECTION whose pointer is stored at offset 0 of self.)
+extern void ext_0065C640(void* self);
+// Known callee 0x00493EE0: dispatchVirtualSlot154OfPointedObject (Loads the object pointer stored at *ecx; if non-null, calls its vtable slot at +0x154 with the object as this and returns that result (tail call).)
+extern void* ext_00493EE0(void* ecx);
+// Known callee 0x0065C650: CriticalSectionLock::leave (Releases the critical section pointed to by the first field)
+extern void ext_0065C650(void* self);
+
+namespace {
+
+using VirtualGetFn = void* (__thiscall*)(void* self);
+
+} // namespace
+
+// @name setFloatAndDispatchUnderCriticalSection
+// @summary Under a CriticalSectionLock taken from the global's object at +0x258, stores a float arg at self+0x3c and calls dispatchVirtualSlot154 on that field.
+// @field Unknown +0x3c float field_0x3c
+void __thiscall fn_005CF9E0(void* self, float value) {
+    // ext_00594000 returns a 32-bit global pointer; widen it to an address.
+    uint8_t* const owner = reinterpret_cast<uint8_t*>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(ext_00594000())));
+
+    void** const field = reinterpret_cast<void**>(owner + 0x258);
+    void* const obj = *field;
+
+    // Lock object = obj->vtable[+0x1d8](obj)
+    void** const vtbl = *reinterpret_cast<void***>(obj);
+    VirtualGetFn get_cs = reinterpret_cast<VirtualGetFn>(
+        *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtbl) + 0x1d8));
+    void* const cs = get_cs(obj);
+
+    ext_0065C640(cs);
+
+    *reinterpret_cast<float*>(reinterpret_cast<uint8_t*>(self) + 0x3c) = value;
+
+    ext_00493EE0(field);
+    ext_0065C650(cs);
+}
+} // namespace lift_005CF9E0
