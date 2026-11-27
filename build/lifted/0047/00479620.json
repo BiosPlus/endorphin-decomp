@@ -1,0 +1,13 @@
+{
+  "va": "0x00479620",
+  "size": 168,
+  "orig_symbol": "sub_00479620",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "ResolveOrThrowMissing",
+  "signature": "void* fn_00479620(void* self, const void* arg0)",
+  "summary": "Copies the std::string argument into a local, calls sub_005DF5C0(self); returns its non-null result, otherwise builds an error string from a global and throws it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:14:12Z"
+}

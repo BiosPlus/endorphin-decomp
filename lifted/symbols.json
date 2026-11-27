@@ -11071,6 +11071,12 @@
     "summary": "Heap-sort tail loop over a uint32 range: repeatedly moves the max to the end and re-sifts the shrinking heap via ext_00477280.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00479620": {
+    "name": "ResolveOrThrowMissing",
+    "signature": "void* fn_00479620(void* self, const void* arg0)",
+    "summary": "Copies the std::string argument into a local, calls sub_005DF5C0(self); returns its non-null result, otherwise builds an error string from a global and throws it.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00479A90": {
     "name": "fill_n_float",
     "signature": "float* __stdcall sub_00479A90(float* dst, uint32_t count, const float* value)",

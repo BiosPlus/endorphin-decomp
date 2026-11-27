@@ -1830,3 +1830,51 @@ void fn_00475C40(void* self, DWORD arg) {
     reinterpret_cast<StrDtor>(static_cast<uintptr_t>(mem_00924FF4))(str);
 }
 } // namespace lift_00475C40
+
+// [0x00479620] sub_00479620 (168 bytes)
+namespace lift_00479620 {
+// Callee 0x005DF5C0: thiscall(self) -> void* (non-null means "found").
+extern void* __thiscall ext_005DF5C0(void* self);
+// Callee 0x0041FF30: thiscall(self = exception object, msg, other); callee pops its 2 stack args.
+extern void __thiscall ext_0041FF30(void* self, void* msg, void* other);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* throw_info);
+
+// IAT slots (MSVCP80 std::string): copy-ctor, ctor(const char*), dtor.
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_00924FE4;
+// .data global holding a const char* used to build the message string.
+extern uint32_t mem_00AD9100;
+
+namespace {
+using CopyCtorFn = void(__thiscall*)(void* self, const void* src);
+using CharCtorFn = void(__thiscall*)(void* self, const char* src);
+using DtorFn = void(__thiscall*)(void* self);
+} // namespace
+
+// @name ResolveOrThrowMissing
+// @summary Copies the std::string argument into a local, calls sub_005DF5C0(self); returns its non-null result, otherwise builds an error string from a global and throws it.
+void* fn_00479620(void* self, const void* arg0) {
+    // Local frame, addressed with the same offsets as the original esp-relative slots:
+    //   +0x00 string copy of arg0, +0x08 message string, +0x24 exception object,
+    //   +0x70 unwind state, +0x78 string slot.
+    unsigned char frame[0x9C] = {};
+
+    reinterpret_cast<CopyCtorFn>(static_cast<uintptr_t>(mem_00924FE0))(frame, arg0);
+
+    void* result = ext_005DF5C0(self);
+    if (result != nullptr) {
+        lift_field<int32_t>(frame, 0x70) = -1;
+        reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(frame + 0x78);
+        return result;
+    }
+
+    const char* message = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00AD9100));
+    reinterpret_cast<CharCtorFn>(static_cast<uintptr_t>(mem_00924FE4))(frame + 0x08, message);
+    lift_field<uint8_t>(frame, 0x70) = 1;
+    ext_0041FF30(frame + 0x24, frame + 0x08, frame + 0x78);
+    // Throw with the RTTI/ThrowInfo immediate 0x009D3748.
+    ext_006A6DD2(frame + 0x24, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009D3748u)));
+}
+} // namespace lift_00479620
