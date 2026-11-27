@@ -28204,6 +28204,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xA4 and tail-calls sub_005DC420.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00547D10": {
+    "name": "Unknown::forwardOrAccumulateClamped_00547D10",
+    "class": "Unknown",
+    "signature": "extern \"C\" const double mem_0092C508;  // 0.1 (double) extern \"C\" const float mem_0093F8EC;   // 0.1f (u32 0x3DCCCCCD) extern \"C\" const char mem_00925134[];  // .rdata string \"P",
+    "summary": "If the pointer at +0xA0 is set, forwards scale to ext_005D0350 on it; otherwise adds scale times the vtable-slot-5 result (on this+0x70) into the float at +0x70 (clamped to a minimum of 0.1), then calls vtable slot 0x44.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00547E50": {
     "name": "Unknown::initOrCopyBlock",
     "class": "Unknown",

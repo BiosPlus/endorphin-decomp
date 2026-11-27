@@ -2060,3 +2060,60 @@ void fn_00547AF0(void* self, const float* a, int flag) {
     reinterpret_cast<SlotNoArg>(vtbl[0x44 / sizeof(void*)])(self);
 }
 } // namespace lift_00547AF0
+
+// [0x00547D10] sub_00547D10 (89 bytes)
+namespace lift_00547D10 {
+// Known callee 0x005D0350: Unknown::accumulateClampAndDispatch_005D0350 (Returns early if flag +0x1F1 is set; otherwise refreshes the 4-float vector at +0x274, adds scale times the vtable-slot-5 result of the embedded object to +0x1F4 (clamped to a minimum of 0.1), then dispatches the local vector copy through ext_005CFEC0.)
+// Known callee 0x00547E50: Unknown::initOrCopyBlock (If the pointer at +0xa0 is set, forward to InitTimerFloor on it; otherwise copy the 56-byte block at +0x30 into +0x68 and tail-call the object's vtable slot 0x44.)
+extern void __thiscall ext_00547E50(void* self);
+// Known callee 0x00673C20: sub_00673C20 (Auto-lifted identical-shape clone of 0x00667030 (advanceCursorSkipFlagged).)
+extern void __thiscall ext_00673C20(void* self);
+extern void __thiscall ext_005D0350(void* self, float scale);
+extern const double mem_0092C508;  // 0.1 (double)
+extern const float mem_0093F8EC;   // 0.1f (u32 0x3DCCCCCD)
+extern const char mem_00925134[];  // .rdata string "P{b" (metadata only, not accessed here)
+
+// @name Unknown::forwardOrAccumulateClamped_00547D10
+// @class Unknown
+// @summary If the pointer at +0xA0 is set, forwards scale to ext_005D0350 on it; otherwise adds scale times the vtable-slot-5 result (on this+0x70) into the float at +0x70 (clamped to a minimum of 0.1), then calls vtable slot 0x44.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x70 float field_0x70
+// @field Unknown +0xA0 void* field_0xa0
+
+void __thiscall fn_00547D10(void* self, float scale) {
+    // Metadata-only references: these callees/globals are listed for this address but the
+    // bytes at 0x00547D10 never call or read them. Taking the address changes nothing at runtime.
+    (void)&ext_00547E50;
+    (void)&ext_00673C20;
+    (void)&mem_00925134;
+
+    void* child = lift_field<void*>(self, 0xA0);
+    if (child != nullptr) {
+        // Tail-style forward: callee takes (child in ecx, scale on stack), ret 4.
+        ext_005D0350(child, scale);
+        return;
+    }
+
+    // Vtable slot 5 at [vtable+0x14], called thiscall(self, &self+0x70) -> float in st0.
+    void* vtbl = lift_field<void*>(self, 0x00);
+    void* slot5 = lift_field<void*>(vtbl, 0x14);
+    float* acc = &lift_field<float>(self, 0x70);
+    using Slot5Fn = float(__thiscall*)(void* self, float* arg);
+    const float r = reinterpret_cast<Slot5Fn>(slot5)(self, acc);
+
+    // fmul scale; fadd [acc]; fstp [acc]. Original computes in x87 extended precision;
+    // double is used here as the closest portable stand-in for the intermediate.
+    *acc = static_cast<float>(static_cast<double>(r) * static_cast<double>(scale)
+                              + static_cast<double>(*acc));
+
+    // fcomp qword [0.1]; clamp only when strictly less (NaN leaves value unchanged).
+    if (*acc < mem_0092C508) {
+        *acc = mem_0093F8EC;
+    }
+
+    // Re-read vtable (original does `mov eax,[esi]` again) and call slot 0x44 thiscall.
+    void* vtbl2 = lift_field<void*>(self, 0x00);
+    void* slot44 = lift_field<void*>(vtbl2, 0x44);
+    reinterpret_cast<void(__thiscall*)(void* self)>(slot44)(self);
+}
+} // namespace lift_00547D10
