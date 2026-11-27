@@ -2098,3 +2098,48 @@ float fn_005531B0(void* self, float value) {
     return x;
 }
 } // namespace lift_005531B0
+
+// [0x005504A0] sub_005504A0 (126 bytes)
+namespace lift_005504A0 {
+// Imported CRT function pointer slots (MSVCR80 IAT entries) and format-string rdata.
+extern void* mem_009252C4;        // fseek
+extern void* mem_009252C0;        // fgets
+extern void* mem_0092521C;        // sscanf
+extern const char mem_009570B0[]; // sscanf format string (rdata)
+
+using FseekFn  = int (*)(FILE*, long, int);
+using FgetsFn  = char* (*)(char*, int, FILE*);
+using SscanfFn = int (*)(const char*, const char*, ...);
+
+// @name ParseObjVertexLines
+// @class ObjParseContext
+// @summary Rewinds the file, skips the first line, then for each line beginning with "v " scans three values into the buffer whose pointer is stored in the context's vertex table; returns 0.
+// @field ObjParseContext +0x10 void* vertexTablePtr
+int fn_005504A0(void* file, void* ctx, char* line) {
+    auto fseek_fn  = reinterpret_cast<FseekFn>(mem_009252C4);
+    auto fgets_fn  = reinterpret_cast<FgetsFn>(mem_009252C0);
+    auto sscanf_fn = reinterpret_cast<SscanfFn>(mem_0092521C);
+    FILE* fp = static_cast<FILE*>(file);
+
+    fseek_fn(fp, 0L, 0);
+    if (fgets_fn(line, 0x800, fp) == nullptr) {
+        return 0;
+    }
+
+    uint8_t* table = static_cast<uint8_t*>(lift_field<void*>(ctx, 0x10));
+    size_t off = 0; // byte offset into the table, advanced by 4 per matched line
+
+    for (;;) {
+        if (line[0] == 'v' && line[1] == ' ') {
+            void* dst = *reinterpret_cast<void**>(table + off);
+            uint8_t* d = static_cast<uint8_t*>(dst);
+            sscanf_fn(line, mem_009570B0, dst, d + 4, d + 8);
+            off += 4;
+        }
+        if (fgets_fn(line, 0x800, fp) == nullptr) {
+            break;
+        }
+    }
+    return 0;
+}
+} // namespace lift_005504A0

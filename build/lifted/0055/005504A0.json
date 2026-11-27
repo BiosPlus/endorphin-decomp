@@ -1,0 +1,22 @@
+{
+  "va": "0x005504A0",
+  "size": 126,
+  "orig_symbol": "sub_005504A0",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "ParseObjVertexLines",
+  "class": "ObjParseContext",
+  "signature": "int fn_005504A0(void* file, void* ctx, char* line)",
+  "summary": "Rewinds the file, skips the first line, then for each line beginning with \"v \" scans three values into the buffer whose pointer is stored in the context's vertex table; returns 0.",
+  "fields": [
+    {
+      "class": "ObjParseContext",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "vertexTablePtr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:04:03Z"
+}

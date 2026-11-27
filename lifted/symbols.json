@@ -27134,6 +27134,13 @@
     "summary": "Rewinds a file, then scans each line of the 0x800-byte buffer and bumps counters for lines starting with 'f', 'v ', 'vn', or 'vt'.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x005504A0": {
+    "name": "ParseObjVertexLines",
+    "class": "ObjParseContext",
+    "signature": "int fn_005504A0(void* file, void* ctx, char* line)",
+    "summary": "Rewinds the file, skips the first line, then for each line beginning with \"v \" scans three values into the buffer whose pointer is stored in the context's vertex table; returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00550F80": {
     "name": "ModelImporter::vfunc_0",
     "class": "ModelImporter",
