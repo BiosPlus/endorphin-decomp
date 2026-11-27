@@ -20406,6 +20406,12 @@
     "summary": "Iterates over a vector of child objects and invokes vfunc_1 on each with the given argument.",
     "lifted_path": "lifted/Properties/TargetSelectionProxy.cpp"
   },
+  "0x004EF5E0": {
+    "name": "checkVectorElementsFieldMatch",
+    "signature": "bool __thiscall sub_004EF5E0(void* self, void* vec)",
+    "summary": "Checks if vector size matches this+0x30 and all elements share the same +0x40-\u003e+0x48 value.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004EF790": {
     "name": "MismatchStringRanges",
     "signature": "MismatchResult* fn_004EF790(MismatchResult* out, const uint8_t* first1, const uint8_t* last1, const uint8_t* first2)",

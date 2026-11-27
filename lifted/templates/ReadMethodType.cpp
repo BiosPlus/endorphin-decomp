@@ -68217,3 +68217,28 @@ int32_t __thiscall fn_004D6A00(void* this_ptr, void* arg1) {
     return result;
 }
 } // namespace lift_004D6A00
+
+// [0x00512A70]
+namespace lift_00512A70 {
+extern void* ext_00511960(void* self, const void* src);
+extern int32_t ext_006A6DE0();
+
+// @name ExprParser::ReadMethodType_getTypicalMutationRate::vfunc_2
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::string, getTypicalMutationRate, 1>
+// @summary Parses a string value from arg0 as a float, rounds to nearest int, and returns it.
+int32_t __thiscall fn_00512A70(void* self, void* arg0) {
+    (void)self;
+    uint8_t str_buf[28];
+    void* src = *reinterpret_cast<void**>(arg0);
+    ext_00511960(str_buf, src);
+    // c_str() and atof()
+    const char* cstr = reinterpret_cast<const char* (__thiscall*)(void*)>(0x00924FF0)(str_buf);
+    double d = reinterpret_cast<double(__cdecl*)(const char*)>(0x009251F0)(cstr);
+    float val = static_cast<float>(d);
+    double rounded = (val < 0.0f) ? (static_cast<double>(val) - 0.5) : (static_cast<double>(val) + 0.5);
+    (void)rounded;
+    int32_t res = ext_006A6DE0();
+    reinterpret_cast<void(__thiscall*)(void*)>(0x00924FF4)(str_buf);
+    return res;
+}
+} // namespace lift_00512A70
