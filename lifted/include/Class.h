@@ -23,6 +23,7 @@ struct Class_Fields {
     // +0x10  uint8_t                  field_0x10  (evidence: 0x00689570, 0x0068BDC0, 0x0068BDF0) // CONFLICT: multiple definitions at +0x10
     // +0x10  void*                    field_0x10  (evidence: 0x00458860, 0x00480130, 0x0078D550) // CONFLICT: multiple definitions at +0x10
     // +0x14  void*                    field_0x14  (evidence: 0x00401960)
+    // +0x1C  void**                   items  (evidence: 0x006E9C30)
     // +0x20  std::string              field_0x20  (evidence: 0x0060B990) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint32_t                 field_0x20  (evidence: 0x0043CE40) // CONFLICT: multiple definitions at +0x20
     // +0x28  void                     field_0x28  (evidence: 0x006E8470)

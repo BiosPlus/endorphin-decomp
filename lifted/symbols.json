@@ -61468,6 +61468,13 @@
     "summary": "Looks up an item by key 0x00AA8D80 on the object from ext_006C9360(a1), invokes vtable+0x10 if found, and calls ext_00732CB0(a1).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E9C30": {
+    "name": "Class::getItemValue",
+    "class": "Class",
+    "signature": "extern \"C\" int32_t fn_006E9C30(void* self, int32_t index)",
+    "summary": "Returns ext_006E7460 applied to the element at index in the pointer array stored at +0x1c.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E9CB0": {
     "name": "initHugeVectorGlobals",
     "signature": "void sub_006E9CB0()",

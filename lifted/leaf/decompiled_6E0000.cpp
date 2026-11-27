@@ -1551,3 +1551,33 @@ extern double __cdecl fn_006E4CD0(double a, double b) {
     return intpart * mem_00993CC0 + a;
 }
 } // namespace lift_006E4CD0
+
+// [0x006E9C30]
+namespace lift_006E9C30 {
+// Known callee 0x006E7460: sub_006E7460 (Getter returning int32_t field at offset +0x0.)
+extern int32_t ext_006E7460(void* self);
+
+// Globals/rdata from the original asm. The 0x006E9C60 and 0x006E9C90 blocks that
+// touch these are reached only via jmp from the padding after this function, not
+// from its entry, so they are referenced here as metadata only.
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5DF28;
+extern uint32_t mem_00B5DF30;
+extern uint32_t mem_00B5DF34;
+
+// @name Class::getItemValue
+// @class Class
+// @summary Returns ext_006E7460 applied to the element at index in the pointer array stored at +0x1c.
+// @field Class +0x1c void** items
+
+extern int32_t fn_006E9C30(void* self, int32_t index) {
+    (void)&mem_00925284;
+    (void)&mem_00B5DF28;
+    (void)&mem_00B5DF30;
+    (void)&mem_00B5DF34;
+
+    void** items = *reinterpret_cast<void***>(reinterpret_cast<char*>(self) + 0x1c);
+    void* element = items[index];
+    return ext_006E7460(element);
+}
+} // namespace lift_006E9C30

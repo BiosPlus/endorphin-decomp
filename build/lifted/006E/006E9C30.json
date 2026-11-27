@@ -1,0 +1,22 @@
+{
+  "va": "0x006E9C30",
+  "size": 112,
+  "orig_symbol": "sub_006E9C30",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Class::getItemValue",
+  "class": "Class",
+  "signature": "extern \"C\" int32_t fn_006E9C30(void* self, int32_t index)",
+  "summary": "Returns ext_006E7460 applied to the element at index in the pointer array stored at +0x1c.",
+  "fields": [
+    {
+      "class": "Class",
+      "offset": "+0x1C",
+      "type": "void**",
+      "name": "items"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:02:18Z"
+}
