@@ -13,7 +13,7 @@ struct ExprParser_ExpressionContainerType_Fields {
     // +0x0   void* vtable (not accessed directly by this function)  (evidence: 0x00670D40) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x0067A690, 0x006992D0) // CONFLICT: multiple definitions at +0x0
     // +0x4   int32_t                  field_0x04  (evidence: 0x00699070) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    field_0x04  (evidence: 0x0067A7D0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_0x04  (evidence: 0x0066C0B0, 0x0067A7D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (type of ext_006999B0 result unknown; +0x04 sub-object pointer used as this)  (evidence: 0x00670CF0, 0x00670D60) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout

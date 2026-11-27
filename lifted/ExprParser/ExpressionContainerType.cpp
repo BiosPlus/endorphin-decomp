@@ -214,3 +214,36 @@ void* __thiscall fn_00670D10(void* self, void* arg1, void* arg2) {
     return arg1;
 }
 } // namespace lift_00670D10
+
+// [0x0066C0B0]
+namespace lift_0066C0B0 {
+// @name ExprParser::ExpressionContainerType::vfunc_0
+// @class ExprParser::ExpressionContainerType
+// @summary Copies a value-pointer pair from arg1, resolving field_0x00 via field_0x04's vtable slot 0x70 when non-null.
+// @field ExprParser::ExpressionContainerType +0x04 void* field_0x04
+
+
+extern void ext_0041CF50();
+extern void ext_004ECB40();
+
+void* __thiscall fn_0066C0B0(void* self, void* sret, void* arg1) {
+    (void)self;
+    if (false) {
+        ext_0041CF50();
+        ext_004ECB40();
+    }
+    void* obj = lift_field<void*>(arg1, 0x04);
+    uint32_t val = 0;
+    if (obj != nullptr) {
+        using Vfn70 = uint32_t* (__thiscall*)(void*, void**, void*);
+        void** vtable = *reinterpret_cast<void***>(obj);
+        auto fn = reinterpret_cast<Vfn70>(vtable[0x70 / 4]);
+        void* tmp = arg1;
+        uint32_t* res = fn(obj, &tmp, arg1);
+        val = *res;
+    }
+    lift_field<uint32_t>(sret, 0x00) = val;
+    lift_field<void*>(sret, 0x04) = obj;
+    return sret;
+}
+} // namespace lift_0066C0B0

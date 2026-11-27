@@ -1,0 +1,22 @@
+{
+  "va": "0x0066C0B0",
+  "size": 79,
+  "orig_symbol": "ExprParser::ExpressionContainerType::vfunc_0",
+  "src_path": "src/ExprParser/ExpressionContainerType.cpp",
+  "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp",
+  "name": "ExprParser::ExpressionContainerType::vfunc_0",
+  "class": "ExprParser::ExpressionContainerType",
+  "signature": "void* __thiscall fn_0066C0B0(void* self, void* sret, void* arg1)",
+  "summary": "Copies a value-pointer pair from arg1, resolving field_0x00 via field_0x04's vtable slot 0x70 when non-null.",
+  "fields": [
+    {
+      "class": "ExprParser::ExpressionContainerType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:37:43Z"
+}

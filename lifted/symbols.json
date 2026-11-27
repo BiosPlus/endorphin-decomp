@@ -59270,6 +59270,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::CompoundSensorData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0060F640": {
+    "name": "NMData::CompoundSensorData::vfunc_62",
+    "class": "NMData::CompoundSensorData",
+    "signature": "extern \"C\" void __thiscall fn_0060F640(uint8_t* self)",
+    "summary": "Resets base sensor data, clears the vector at +0x180, and clears the string at +0x190.",
+    "lifted_path": "lifted/NMData/CompoundSensorData.cpp"
+  },
   "0x0060F970": {
     "name": "NMData::CompoundSensorData::vfunc_0",
     "class": "NMData::CompoundSensorData",
