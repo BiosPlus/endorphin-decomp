@@ -2483,3 +2483,50 @@ void* fn_0057E4D0(const void* src, const void* srcEnd, void* dst) {
     return d;
 }
 } // namespace lift_0057E4D0
+
+// [0x00573E00] sub_00573E00 (161 bytes)
+namespace lift_00573E00 {
+// Known callee 0x00573900: sub_00573900 (cdecl, 6 stack args; fast-path in-place element construction at end).
+extern void ext_00573900(uint32_t end, uint32_t one, uint32_t arg1, void* self, uint32_t arg1b, uint32_t flag);
+// Known callee 0x00573D40: sub_00573D40 (thiscall, 4 stack args, callee cleans; slow-path grow/insert).
+extern void ext_00573D40(void* self, uint8_t* flagOut, void* selfVal, uint32_t end, uint32_t arg1);
+// Import slot 0x00925134 (IAT entry, called as `call dword ptr [0x925134]`): _invalid_parameter_noinfo.
+extern void (*mem_00925134)();
+
+// @name VecLike_emplaceBack_00573E00
+// @summary Appends one 48-byte element to a 12-byte-stride pointer-triple container (begin/end/capEnd at +0x04/+0x08/+0x0C): if begin is non-null and size < capacity it constructs in place via ext_00573900 and advances end by 0x30; otherwise it calls ext_00573D40 (grow/insert path), after reporting an invalid parameter via the IAT slot when begin > end. Returns with ret 4 (one stack argument).
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+void fn_00573E00(void* self, uint32_t arg1) {
+    uint32_t begin = lift_field<uint32_t>(self, 0x04);
+
+    if (begin != 0) {
+        uint32_t end = lift_field<uint32_t>(self, 0x08);
+        // asm: signed (x * 0x2AAAAAAB) >> 35 with sign fix == signed x / 12
+        int32_t size = static_cast<int32_t>(end - begin) / 12;
+        uint32_t capEnd = lift_field<uint32_t>(self, 0x0C);
+        int32_t cap = static_cast<int32_t>(capEnd - begin) / 12;
+
+        if (static_cast<uint32_t>(size) < static_cast<uint32_t>(cap)) {
+            // Fast path: in-place construction at end.
+            // asm writes only the low byte of the local at [esp+8], then reads it back as a dword.
+            // The upper three bytes are indeterminate on the stack; modeled here as zero.
+            uint8_t local = 0;
+            uint32_t flag = local;
+            ext_00573900(end, 1u, arg1, self, arg1, flag);
+            lift_field<uint32_t>(self, 0x08) = end + 0x30u;
+            return;
+        }
+    }
+
+    // Slow path (begin == 0 or size >= capacity).
+    uint32_t end = lift_field<uint32_t>(self, 0x08);
+    if (begin > end) {
+        // call dword ptr [0x925134] -> _invalid_parameter_noinfo
+        mem_00925134();
+    }
+    uint8_t local;  // uninitialized in asm; passed by address to the callee
+    ext_00573D40(self, &local, self, end, arg1);
+}
+} // namespace lift_00573E00

@@ -37591,6 +37591,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x00573E00": {
+    "name": "VecLike_emplaceBack_00573E00",
+    "signature": "void fn_00573E00(void* self, uint32_t arg1)",
+    "summary": "Appends one 48-byte element to a 12-byte-stride pointer-triple container (begin/end/capEnd at +0x04/+0x08/+0x0C): if begin is non-null and size \u003c capacity it constructs in place via ext_00573900 and advances end by 0x30; otherwise it calls ext_00573D40 (grow/insert path), after reporting an invalid parameter via the IAT slot when begin \u003e end. Returns with ret 4 (one stack argument).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x005746E0": {
     "name": "OBJIO::vfunc_12",
     "class": "OBJIO",
