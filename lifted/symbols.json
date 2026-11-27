@@ -5405,6 +5405,13 @@
     "summary": "Returns 0 if the gate field is clear; otherwise tail-dispatches virtual slot 4 on the object at self-\u003e+0x68-\u003e+0x4C.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x0044B5E0": {
+    "name": "Unknown::withCriticalSectionLockedCall",
+    "class": "Unknown",
+    "signature": "inline void** vtable_of(void* obj)",
+    "summary": "If field +0x64 is non-null, call its vtable slots 0x1d8 (returns lock ptr), then enter the lock, call vtable slots 0x160 and 0x154, and leave the lock.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044B660": {
     "name": "sub_0044B660",
     "signature": "uint8_t fn_0044B660(void* self)",
@@ -25713,6 +25720,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00544BE0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00547820": {
+    "name": "Vec3::cross",
+    "class": "Vec3",
+    "signature": "float* __thiscall sub_00547820(const float* self, float* out, const float* rhs)",
+    "summary": "Computes the 3D cross product of this vector and rhs, storing the result in out (with w = 0.0f) and returning out.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x005478B0": {
     "name": "sub_005478B0",
     "signature": "float fn_005478B0(uint32_t ecx)",
@@ -26781,6 +26795,12 @@
     "signature": "extern \"C\" void __fastcall fn_00558A20(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by +0x16C and tail-calls sub_00406FC0.",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
+  },
+  "0x00558B90": {
+    "name": "destroyStringAndRecordVector",
+    "signature": "void __thiscall fn_00558B90(void* self)",
+    "summary": "Destroys a vector of 0x3C-byte string-pair records and the owning std::string.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
   "0x00558F20": {
     "name": "Unknown::clearStringVectorRange",
@@ -30342,6 +30362,12 @@
     "signature": "extern \"C\" void __fastcall fn_005A7110(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls NMData::DesiredPoseData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x005A71E0": {
+    "name": "sub_005A71E0",
+    "signature": "extern \"C\" void* __thiscall sub_005A71E0(void* self)",
+    "summary": "Constructor initializing vtable, std::string at +0x04, and empty RB-tree at +0x20",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
   "0x005A7260": {
     "name": "NMData::CalibrationData::vfunc_2",

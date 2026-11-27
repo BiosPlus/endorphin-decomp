@@ -2486,3 +2486,44 @@ VectorIter* __thiscall fn_0044C460(
     return out_iter;
 }
 } // namespace lift_0044C460
+
+// [0x0044B5E0]
+namespace lift_0044B5E0 {
+// @name Unknown::withCriticalSectionLockedCall
+// @class Unknown
+// @summary If field +0x64 is non-null, call its vtable slots 0x1d8 (returns lock ptr), then enter the lock, call vtable slots 0x160 and 0x154, and leave the lock.
+// @field Unknown +0x64 void* field_0x64
+
+void ext_0065C640(void* self);
+void ext_0065C650(void* self);
+
+namespace {
+using VCall0 = void (*)(void* self);
+using VCallRet = void* (*)(void* self);
+
+inline void** vtable_of(void* obj) {
+    return *reinterpret_cast<void***>(obj);
+}
+}  // namespace
+
+extern void sub_0044B5E0(void* self) {
+    auto* obj = *reinterpret_cast<void**>(static_cast<unsigned char*>(self) + 0x64);
+    if (obj == nullptr) {
+        return;
+    }
+
+    // vtable slot 0x1d8 / sizeof(void*) on 32-bit = index 118
+    void* lock = reinterpret_cast<VCallRet>(vtable_of(obj)[0x1d8 / 4])(obj);
+
+    ext_0065C640(lock);
+
+    // Re-read field +0x64 for the subsequent virtual calls.
+    obj = *reinterpret_cast<void**>(static_cast<unsigned char*>(self) + 0x64);
+    reinterpret_cast<VCall0>(vtable_of(obj)[0x160 / 4])(obj);
+
+    obj = *reinterpret_cast<void**>(static_cast<unsigned char*>(self) + 0x64);
+    reinterpret_cast<VCall0>(vtable_of(obj)[0x154 / 4])(obj);
+
+    ext_0065C650(lock);
+}
+} // namespace lift_0044B5E0

@@ -1,0 +1,22 @@
+{
+  "va": "0x0044B5E0",
+  "size": 122,
+  "orig_symbol": "sub_0044B5E0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::withCriticalSectionLockedCall",
+  "class": "Unknown",
+  "signature": "inline void** vtable_of(void* obj)",
+  "summary": "If field +0x64 is non-null, call its vtable slots 0x1d8 (returns lock ptr), then enter the lock, call vtable slots 0x160 and 0x154, and leave the lock.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "void*",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:20:17Z"
+}
