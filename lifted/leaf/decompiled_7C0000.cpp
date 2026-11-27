@@ -2021,3 +2021,60 @@ void fn_007C4660(uint16_t* table, int32_t n, const uint16_t* src) {
     }
 }
 } // namespace lift_007C4660
+
+// [0x007C7010] sub_007C7010 (129 bytes)
+namespace lift_007C7010 {
+// Known callee 0x007D48A0: ReturnZeroWord (Returns zero in the low 16 bits of the result register (xor ax, ax; ret).)
+// The original pushes (self + 0x44) as an argument before the call; the callee ignores it, the caller cleans it up.
+uint16_t ext_007D48A0(void* unused);
+// Known callee 0x007D5BA0: setField04_007D5BA0 (Stores the second stack argument as a 32-bit value at offset 0x04 of the object pointed to by the first argument.)
+void ext_007D5BA0(void* self, uint32_t value);
+
+// @name SetValueAndUpdateFlag
+// @summary Stores two values at +0x34/+0x38 and, depending on a flag bit at +0x40 and the arguments, forwards a value to a sub-object at +0x44 and updates the flag bit.
+// @field +0x00 void* vtable
+// @field +0x34 uint32_t field_0x34
+// @field +0x38 uint32_t field_0x38
+// @field +0x40 uint32_t field_0x40
+// @field +0x44 void* field_0x44
+
+namespace {
+using VMethodRet  = uint32_t (*)(void* self, uint32_t arg);
+using VMethodVoid = void (*)(void* self, uint32_t arg);
+} // namespace
+
+void fn_007C7010(void* self, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5) {
+    uint32_t& flags = lift_field<uint32_t>(self, 0x40);
+
+    if (flags & 1u) {
+        // Virtual call through the object stored in vtable slot 0xB0 (slot +0x10), arg = old +0x34.
+        void* obj1 = lift_field<void*>(lift_field<void*>(self, 0x00), 0xb0);
+        uint32_t saved34 = lift_field<uint32_t>(self, 0x34);
+        uint32_t eax1 = reinterpret_cast<VMethodRet>(lift_field<uintptr_t>(obj1, 0x10))(obj1, saved34);
+
+        // Second virtual call on the same slot-0xB0 object; the arg is ReturnZeroWord's result,
+        // which only clears the low 16 bits of the value left in eax by the previous call.
+        void* obj2 = lift_field<void*>(lift_field<void*>(self, 0x00), 0xb0);
+        void* sub44 = static_cast<uint8_t*>(self) + 0x44;
+        uint32_t r = (eax1 & 0xFFFF0000u) | static_cast<uint32_t>(ext_007D48A0(sub44));
+        reinterpret_cast<VMethodVoid>(lift_field<uintptr_t>(obj2, 0x10))(obj2, r);
+
+        flags &= ~1u;
+    }
+
+    lift_field<uint32_t>(self, 0x34) = a2;
+    lift_field<uint32_t>(self, 0x38) = a3;
+
+    void* sub44 = static_cast<uint8_t*>(self) + 0x44;
+    if (a2 != 0) {
+        ext_007D5BA0(sub44, a4);
+        if (a5 != 0) {
+            flags |= 1u;
+        } else {
+            flags &= ~1u;
+        }
+    } else {
+        ext_007D5BA0(sub44, a3);
+    }
+}
+} // namespace lift_007C7010

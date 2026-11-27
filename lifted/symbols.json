@@ -79042,6 +79042,12 @@
     "summary": "Adjusts the first argument by +0x44 and tail-forwards to derefDword (ext_007D5AE0), returning the dword read from that address.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C7010": {
+    "name": "SetValueAndUpdateFlag",
+    "signature": "void fn_007C7010(void* self, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)",
+    "summary": "Stores two values at +0x34/+0x38 and, depending on a flag bit at +0x40 and the arguments, forwards a value to a sub-object at +0x44 and updates the flag bit.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C70C0": {
     "name": "sub_007C70C0_setField20Thunk",
     "signature": "void fn_007C70C0(void* self, DWORD value)",

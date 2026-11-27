@@ -1,0 +1,13 @@
+{
+  "va": "0x007C7010",
+  "size": 129,
+  "orig_symbol": "sub_007C7010",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "SetValueAndUpdateFlag",
+  "signature": "void fn_007C7010(void* self, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)",
+  "summary": "Stores two values at +0x34/+0x38 and, depending on a flag bit at +0x40 and the arguments, forwards a value to a sub-object at +0x44 and updates the flag bit.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:18:58Z"
+}
