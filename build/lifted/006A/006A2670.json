@@ -1,0 +1,28 @@
+{
+  "va": "0x006A2670",
+  "size": 718,
+  "orig_symbol": "ExprParser::Operators::FunctionNPtr::vfunc_2",
+  "src_path": "src/ExprParser/Operators/FunctionNPtr.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/FunctionNPtr.cpp",
+  "name": "ExprParser::Operators::FunctionNPtr::vfunc_2",
+  "class": "ExprParser::Operators::FunctionNPtr",
+  "signature": "static R vcall(void* obj, uint32_t slot_off, A... args)",
+  "summary": "Scans arg2 (8-byte entries {value, object}) for the last entry whose object reports type 0x17, builds a 0-2 argument call from the entries above it, assigns the result into the entry below it, then pops arg2 and one 4-byte slot of arg1.",
+  "fields": [
+    {
+      "class": "ArgVector",
+      "offset": "+0x4",
+      "type": "uint8_t*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ArgVector",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:43:43Z"
+}
