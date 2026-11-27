@@ -1,0 +1,22 @@
+{
+  "va": "0x004FB550",
+  "size": 38,
+  "orig_symbol": "VMCSModes::DefaultImplementation::vfunc_126",
+  "src_path": "src/VMCSModes/DefaultImplementation.cpp",
+  "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp",
+  "name": "VMCSModes::DefaultImplementation::vfunc_126",
+  "class": "VMCSModes::DefaultImplementation",
+  "signature": "void __thiscall fn_004FB550(void* self, uint32_t arg1)",
+  "summary": "Auto-lifted identical-shape clone of 0x004FB520 (VMCSModes::DefaultImplementation::vfunc_125).",
+  "fields": [
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:24:24Z"
+}

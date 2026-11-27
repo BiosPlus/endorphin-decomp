@@ -3073,3 +3073,72 @@ void __thiscall fn_0040DA90(uintptr_t self) {
     ext_0040C490(self, (uintptr_t)&mem_00AC853C);
 }
 } // namespace lift_0040DA90
+
+// [0x0040E780] sub_0040E780 (24 bytes)
+namespace lift_0040E780 {
+// @name sub_0040E780
+// @summary Auto-lifted identical-shape clone of 0x0040DA90 (ListBox::addDefaultItems).
+namespace lift_0040DA90 {
+// @name ListBox::addDefaultItems
+// @class ListBox
+// @summary Adds two default string items to the ListBox control.
+
+
+extern void __thiscall ext_0040C510(uintptr_t self, uintptr_t arg);
+extern void __thiscall ext_0040E420(uintptr_t self, uintptr_t rhs_ptr);
+
+extern uint8_t mem_00AC87F8;
+extern uint8_t mem_00000000;
+
+void __thiscall fn_0040E780(uintptr_t self) {
+    ext_0040C510(self, (uintptr_t)&mem_00AC87F8);
+    ext_0040E420(self, (uintptr_t)&mem_00000000);
+}
+} // namespace lift_0040DA90
+} // namespace lift_0040E780
+
+// [0x0040E7A0] sub_0040E7A0 (24 bytes)
+namespace lift_0040E7A0 {
+// @name sub_0040E7A0
+// @summary Auto-lifted identical-shape clone of 0x0040DA90 (ListBox::addDefaultItems).
+namespace lift_0040DA90 {
+// @name ListBox::addDefaultItems
+// @class ListBox
+// @summary Adds two default string items to the ListBox control.
+
+
+extern void __thiscall ext_0040C510(uintptr_t self, uintptr_t arg);
+extern void __thiscall ext_0040E420(uintptr_t self, uintptr_t rhs_ptr);
+
+extern uint8_t mem_00AC8814;
+extern uint8_t mem_00000001;
+
+void __thiscall fn_0040E7A0(uintptr_t self) {
+    ext_0040C510(self, (uintptr_t)&mem_00AC8814);
+    ext_0040E420(self, (uintptr_t)&mem_00000001);
+}
+} // namespace lift_0040DA90
+} // namespace lift_0040E7A0
+
+// [0x0040E7C0] sub_0040E7C0 (24 bytes)
+namespace lift_0040E7C0 {
+// @name sub_0040E7C0
+// @summary Auto-lifted identical-shape clone of 0x0040DA90 (ListBox::addDefaultItems).
+namespace lift_0040DA90 {
+// @name ListBox::addDefaultItems
+// @class ListBox
+// @summary Adds two default string items to the ListBox control.
+
+
+extern void __thiscall ext_0040C510(uintptr_t self, uintptr_t arg);
+extern void __thiscall ext_0040E420(uintptr_t self, uintptr_t rhs_ptr);
+
+extern uint8_t mem_00AC8830;
+extern uint8_t mem_00000002;
+
+void __thiscall fn_0040E7C0(uintptr_t self) {
+    ext_0040C510(self, (uintptr_t)&mem_00AC8830);
+    ext_0040E420(self, (uintptr_t)&mem_00000002);
+}
+} // namespace lift_0040DA90
+} // namespace lift_0040E7C0

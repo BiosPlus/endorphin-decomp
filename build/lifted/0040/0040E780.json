@@ -1,0 +1,14 @@
+{
+  "va": "0x0040E780",
+  "size": 24,
+  "orig_symbol": "sub_0040E780",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "sub_0040E780",
+  "class": "ListBox",
+  "signature": "void __thiscall fn_0040E780(uintptr_t self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0040DA90 (ListBox::addDefaultItems).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:24:24Z"
+}
