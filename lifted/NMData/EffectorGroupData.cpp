@@ -213,3 +213,100 @@ void* fn_0060DA60() {
     return obj;
 }
 } // namespace lift_0060DA60
+
+// [0x0060D5F0]
+namespace lift_0060D5F0 {
+// @name NMData::EffectorGroupData::vfunc_13
+// @class NMData::EffectorGroupData
+// @summary Populates field_0x04 and vector at +0x44 from matching elements in source container
+// @field NMData::EffectorGroupData +0x04 std::string field_0x04
+// @field NMData::EffectorGroupData +0x44 uint8_t[12] field_0x44
+
+
+extern uint32_t __thiscall ext_0063EFE0(void* self, uint32_t name);
+extern void __cdecl ext_004275E0(void* dst, uint32_t obj);
+extern void __thiscall ext_00427A60(void* self);
+extern void __thiscall ext_0040ECB0(void* self, const void* value);
+
+extern uint32_t mem_00A9F838;
+extern uint32_t mem_00A9EE64;
+extern void (__cdecl *mem_00925134)();
+extern uint8_t (__cdecl *mem_00924FC0)(const void* str, uint32_t cstr);
+extern void (__thiscall *mem_00924FF4)(void* str);
+
+struct CheckedVecIter {
+    uint32_t container0;
+    uint32_t container1;
+    uint32_t ptr;
+};
+
+void __thiscall fn_0060D5F0(void* self, void* src) {
+    uint8_t* self_b = static_cast<uint8_t*>(self);
+    uint8_t* src_b = static_cast<uint8_t*>(src);
+
+    uint32_t item = ext_0063EFE0(src_b, mem_00A9F838);
+    ext_004275E0(self_b + 0x04, item);
+
+    uint8_t* vec = src_b + 0x24;
+    uint32_t begin_ptr = lift_field<uint32_t>(vec, 0x04);
+    uint32_t end_ptr = lift_field<uint32_t>(vec, 0x08);
+    if (begin_ptr > end_ptr) {
+        mem_00925134();
+    }
+
+    CheckedVecIter it;
+    it.container0 = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(vec));
+    it.container1 = it.container0;
+    it.ptr = begin_ptr;
+    ext_00427A60(&it);
+
+    uint32_t end_val = lift_field<uint32_t>(vec, 0x08);
+    if (lift_field<uint32_t>(vec, 0x04) > end_val) {
+        mem_00925134();
+    }
+
+    CheckedVecIter end_it;
+    end_it.container0 = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(vec));
+    end_it.container1 = end_it.container0;
+    end_it.ptr = end_val;
+    ext_00427A60(&end_it);
+
+    while (true) {
+        uint32_t cont = it.container1;
+        if (cont == 0 || cont != end_it.container1) {
+            mem_00925134();
+        }
+        uint32_t cur = it.ptr;
+        if (cur >= end_it.ptr) {
+            break;
+        }
+        if (cont == 0) {
+            mem_00925134();
+        }
+        uint8_t* cont_b = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(cont));
+        if (cur >= lift_field<uint32_t>(cont_b, 0x08)) {
+            mem_00925134();
+        }
+
+        uint8_t* elem = *reinterpret_cast<uint8_t**>(static_cast<uintptr_t>(cur));
+        if (mem_00924FC0(elem + 0x04, mem_00A9EE64) != 0) {
+            if (cur >= lift_field<uint32_t>(cont_b, 0x08)) {
+                mem_00925134();
+            }
+            uint8_t* obj = *reinterpret_cast<uint8_t**>(static_cast<uintptr_t>(cur));
+            void** vtable = *reinterpret_cast<void***>(obj);
+            using VFunc2 = void* (__thiscall *)(void*, void*);
+            uint8_t tmp_str[28];
+            void* str_ret = reinterpret_cast<VFunc2>(vtable[2])(obj, tmp_str);
+            ext_0040ECB0(self_b + 0x44, str_ret);
+            mem_00924FF4(tmp_str);
+        }
+
+        if (cur >= lift_field<uint32_t>(cont_b, 0x08)) {
+            mem_00925134();
+        }
+        it.ptr = cur + 4;
+        ext_00427A60(&it);
+    }
+}
+} // namespace lift_0060D5F0

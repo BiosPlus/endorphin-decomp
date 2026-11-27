@@ -1,0 +1,28 @@
+{
+  "va": "0x0060D5F0",
+  "size": 320,
+  "orig_symbol": "NMData::EffectorGroupData::vfunc_13",
+  "src_path": "src/NMData/EffectorGroupData.cpp",
+  "lifted_path": "lifted/NMData/EffectorGroupData.cpp",
+  "name": "NMData::EffectorGroupData::vfunc_13",
+  "class": "NMData::EffectorGroupData",
+  "signature": "void __thiscall fn_0060D5F0(void* self, void* src)",
+  "summary": "Populates field_0x04 and vector at +0x44 from matching elements in source container",
+  "fields": [
+    {
+      "class": "NMData::EffectorGroupData",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::EffectorGroupData",
+      "offset": "+0x44",
+      "type": "uint8_t[12]",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:04:03Z"
+}
