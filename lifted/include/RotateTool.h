@@ -10,14 +10,20 @@
 // Recovered field layout for RotateTool:
 namespace lifted_layout {
 struct RotateTool_Fields {
-    // +0x0   void*                    vtable  (evidence: 0x00535610, 0x00545B80, 0x005471D0, 0x00547200, 0x005FF1C0)
+    // +0x0   void*                    vtable  (evidence: 0x00535610, 0x00545B80, 0x00546FA0, 0x005471D0, 0x00547200, 0x005FF1C0)
     // +0x88  void*                    field_0x88  (evidence: 0x00535610, 0x005467E0, 0x005471E0, 0x00547200)
+    // +0x98  RotateHandleGraphic      field_0x98  (evidence: 0x00546FA0) // CONFLICT: multiple definitions at +0x98
     // +0x98  unknown                  field_0x98  (evidence: 0x00546780) // CONFLICT: multiple definitions at +0x98
     // +0x98  QuadricRenderer          quadricRenderer  (evidence: 0x005450C0) // CONFLICT: multiple definitions at +0x98
     // +0xA4  float                    field_0xA4  (evidence: 0x005467E0)
     // +0xA8  int32_t                  field_0xA8  (evidence: 0x00535610, 0x00545B80, 0x00546860, 0x00547040, 0x005FF1C0, 0x006B4090, 0x006B9950)
-    // +0xB8  unknown                  field_0xB8  (evidence: 0x005450C0, 0x00546780)
+    // +0xB8  TranslateHandleGraphic   field_0xB8  (evidence: 0x00546FA0) // CONFLICT: multiple definitions at +0xB8
+    // +0xB8  unknown                  field_0xB8  (evidence: 0x005450C0, 0x00546780) // CONFLICT: multiple definitions at +0xB8
     // +0xC8  int32_t                  field_0xC8  (evidence: 0x00547040)
+    // +0xD4  float                    field_0xD4  (evidence: 0x00546FA0)
+    // +0xD8  float                    field_0xD8  (evidence: 0x00546FA0)
+    // +0xDC  float                    field_0xDC  (evidence: 0x00546FA0)
+    // +0xE0  float                    field_0xE0  (evidence: 0x00546FA0)
     // +0xE4  uint8_t                  field_0xE4  (evidence: 0x00546760, 0x00546780, 0x005467E0)
     // +0xE5  uint8_t                  field_0xE5  (evidence: 0x00546780, 0x005467E0)
     // +0xE6  uint8_t                  field_0xE6  (evidence: 0x005467E0)

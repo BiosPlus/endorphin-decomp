@@ -1,0 +1,58 @@
+{
+  "va": "0x00546FA0",
+  "size": 145,
+  "orig_symbol": "sub_00546FA0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "RotateTool::RotateTool",
+  "class": "RotateTool",
+  "signature": "extern \"C\" void* __fastcall fn_00546FA0(void* self, int edx_unused, uint32_t a1, uint32_t a2)",
+  "summary": "Constructor: runs base ctor with two args, installs RotateTool vtable, initialises the two handle graphics at +0x98/+0xB8, zeroes the float fields at +0xD4..+0xE0, and calls InitStateAndGlobals.",
+  "fields": [
+    {
+      "class": "RotateTool",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "RotateTool",
+      "offset": "+0x98",
+      "type": "RotateHandleGraphic",
+      "name": "field_0x98"
+    },
+    {
+      "class": "RotateTool",
+      "offset": "+0xB8",
+      "type": "TranslateHandleGraphic",
+      "name": "field_0xB8"
+    },
+    {
+      "class": "RotateTool",
+      "offset": "+0xD4",
+      "type": "float",
+      "name": "field_0xD4"
+    },
+    {
+      "class": "RotateTool",
+      "offset": "+0xD8",
+      "type": "float",
+      "name": "field_0xD8"
+    },
+    {
+      "class": "RotateTool",
+      "offset": "+0xDC",
+      "type": "float",
+      "name": "field_0xDC"
+    },
+    {
+      "class": "RotateTool",
+      "offset": "+0xE0",
+      "type": "float",
+      "name": "field_0xE0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:16:15Z"
+}

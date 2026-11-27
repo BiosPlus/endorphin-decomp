@@ -2436,3 +2436,41 @@ void* fn_005459D0(void* self, uint32_t arg1, uint32_t arg2) {
     return self;
 }
 } // namespace lift_005459D0
+
+// [0x00546FA0] sub_00546FA0 (145 bytes)
+namespace lift_00546FA0 {
+// Base-class constructor (thiscall, two stack args; callee cleans via ret 8).
+extern void* __fastcall ext_005436B0(void* self, int edx_unused, uint32_t a1, uint32_t a2);
+// Known callee 0x0054A330: ToolGraphics::RotateHandleGraphic::initQuadrics
+extern void __fastcall ext_0054A330(void* self, int edx_unused);
+// Known callee 0x0054A860: ToolGraphics::TranslateHandleGraphic::ctor
+extern void* __fastcall ext_0054A860(void* self, int edx_unused);
+// Known callee 0x00546F00: InitialVariableValues::InitStateAndGlobals
+extern void __fastcall ext_00546F00(void* self, int edx_unused);
+// RotateTool vtable (RTTI VTable 0x00956ABC)
+extern uint8_t mem_00956ABC[];
+
+// @name RotateTool::RotateTool
+// @class RotateTool
+// @summary Constructor: runs base ctor with two args, installs RotateTool vtable, initialises the two handle graphics at +0x98/+0xB8, zeroes the float fields at +0xD4..+0xE0, and calls InitStateAndGlobals.
+// @field RotateTool +0x00 void* vtable
+// @field RotateTool +0x98 RotateHandleGraphic field_0x98
+// @field RotateTool +0xB8 TranslateHandleGraphic field_0xB8
+// @field RotateTool +0xD4 float field_0xD4
+// @field RotateTool +0xD8 float field_0xD8
+// @field RotateTool +0xDC float field_0xDC
+// @field RotateTool +0xE0 float field_0xE0
+extern void* __fastcall fn_00546FA0(void* self, int edx_unused, uint32_t a1, uint32_t a2) {
+    (void)edx_unused;
+    ext_005436B0(self, 0, a1, a2);
+    lift_field<void*>(self, 0x00) = static_cast<void*>(mem_00956ABC);
+    ext_0054A330(static_cast<uint8_t*>(self) + 0x98, 0);
+    ext_0054A860(static_cast<uint8_t*>(self) + 0xB8, 0);
+    lift_field<float>(self, 0xE0) = 0.0f;
+    lift_field<float>(self, 0xDC) = 0.0f;
+    lift_field<float>(self, 0xD8) = 0.0f;
+    lift_field<float>(self, 0xD4) = 0.0f;
+    ext_00546F00(self, 0);
+    return self;
+}
+} // namespace lift_00546FA0

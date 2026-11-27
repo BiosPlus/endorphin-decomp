@@ -29516,6 +29516,13 @@
     "summary": "Resets the default state via ResetDefaults, sets float/byte fields, and on first call initializes shared globals (flag bit 0) and calls sub_006A6C87.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x00546FA0": {
+    "name": "RotateTool::RotateTool",
+    "class": "RotateTool",
+    "signature": "extern \"C\" void* __fastcall fn_00546FA0(void* self, int edx_unused, uint32_t a1, uint32_t a2)",
+    "summary": "Constructor: runs base ctor with two args, installs RotateTool vtable, initialises the two handle graphics at +0x98/+0xB8, zeroes the float fields at +0xD4..+0xE0, and calls InitStateAndGlobals.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00547040": {
     "name": "RotateTool::vfunc_14",
     "class": "RotateTool",
