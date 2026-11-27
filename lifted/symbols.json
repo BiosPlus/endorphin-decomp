@@ -66163,6 +66163,13 @@
     "summary": "Pure jump thunk forwarding to sub_006B9970.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006B9D80": {
+    "name": "Unknown::initAssignCString_006B9D80",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* fn_006B9D80(void* ecx, const char* s)",
+    "summary": "Zero-initializes the object, assigns the C string argument to it, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B9DE0": {
     "name": "Unknown::initFillBuffer_006B9DE0",
     "class": "Unknown",

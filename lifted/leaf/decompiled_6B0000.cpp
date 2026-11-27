@@ -2739,3 +2739,19 @@ extern void* __thiscall fn_006B9D20(void* self, void* obj) {
     return self;
 }
 } // namespace lift_006B9D20
+
+// [0x006B9D80]
+namespace lift_006B9D80 {
+// Callees (lifted)
+extern void ext_006B9910(void* self);
+extern void* ext_006B9EC0(void* self, const char* s);
+
+// @name Unknown::initAssignCString_006B9D80
+// @class Unknown
+// @summary Zero-initializes the object, assigns the C string argument to it, and returns this.
+extern void* fn_006B9D80(void* ecx, const char* s) {
+    ext_006B9910(ecx);
+    ext_006B9EC0(ecx, s);
+    return ecx;
+}
+} // namespace lift_006B9D80

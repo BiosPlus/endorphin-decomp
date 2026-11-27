@@ -1,0 +1,14 @@
+{
+  "va": "0x006B9D80",
+  "size": 32,
+  "orig_symbol": "sub_006B9D80",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::initAssignCString_006B9D80",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* fn_006B9D80(void* ecx, const char* s)",
+  "summary": "Zero-initializes the object, assigns the C string argument to it, and returns this.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:48:11Z"
+}
