@@ -1,0 +1,34 @@
+{
+  "va": "0x004BAAF0",
+  "size": 132,
+  "orig_symbol": "NMData::MaterialPair::vfunc_15",
+  "src_path": "src/NMData/MaterialPair.cpp",
+  "lifted_path": "lifted/NMData/MaterialPair.cpp",
+  "name": "NMData::MaterialPair::vfunc_15",
+  "class": "NMData::MaterialPair",
+  "signature": "void* __thiscall fn_004BAAF0(void* self, void* out, uint32_t key)",
+  "summary": "Dispatches property/member lookup by key to return a pointer-pair for fields at +0x04, +0x20, or +0x3C, or a default empty pair.",
+  "fields": [
+    {
+      "class": "NMData::MaterialPair",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::MaterialPair",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "NMData::MaterialPair",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:29:22Z"
+}
