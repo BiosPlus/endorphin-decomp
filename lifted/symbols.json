@@ -26281,6 +26281,12 @@
     "summary": "Clears dst vector, reserves capacity from src, and pushes elements that dynamic_cast to target type",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
+  "0x004E8EA0": {
+    "name": "assignFromDynamicCastVector",
+    "signature": "extern \"C\" void fn_004E8EA0(void* src, void* self)",
+    "summary": "Clears self's pointer vector, reserves src's size, then appends each src element that dynamic_casts to the target type.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004E9900": {
     "name": "SelectionBuffer::vfunc_25",
     "class": "SelectionBuffer",

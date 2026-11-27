@@ -1,0 +1,27 @@
+{
+  "va": "0x004E8EA0",
+  "size": 194,
+  "orig_symbol": "sub_004E8EA0",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "assignFromDynamicCastVector",
+  "signature": "extern \"C\" void fn_004E8EA0(void* src, void* self)",
+  "summary": "Clears self's pointer vector, reserves src's size, then appends each src element that dynamic_casts to the target type.",
+  "fields": [
+    {
+      "class": "Vec",
+      "offset": "+0x4",
+      "type": "void**",
+      "name": "first"
+    },
+    {
+      "class": "Vec",
+      "offset": "+0x8",
+      "type": "void**",
+      "name": "last"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-27T13:44:45Z"
+}

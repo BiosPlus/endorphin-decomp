@@ -1760,3 +1760,46 @@ extern void* __stdcall fn_004EF9B0(uint32_t arg1, uint32_t arg2, uint32_t arg3) 
     return node;
 }
 } // namespace lift_004EF9B0
+
+// [0x004E8EA0]
+namespace lift_004E8EA0 {
+extern void ext_00596660(void* self, void** out, void* a2, int32_t* first, void* a4, int32_t* last);
+extern void ext_0050ED40(void* self, int32_t count);
+extern void* ext_006A6E9E(void* obj, int32_t vfdelta, void* srcType, void* dstType, int32_t isRef);
+extern void ext_0041A920(void* self, void** item);
+extern uint8_t mem_00A2FC0C[];
+extern uint8_t mem_00A2E2D8[];
+extern void (*mem_00925134)(void);
+
+// @name assignFromDynamicCastVector
+// @summary Clears self's pointer vector, reserves src's size, then appends each src element that dynamic_casts to the target type.
+// @field Vec +0x04 void** first
+// @field Vec +0x08 void** last
+extern void fn_004E8EA0(void* src, void* self) {
+    uint8_t* s = (uint8_t*)self;
+    uint8_t* v = (uint8_t*)src;
+    int32_t* last = lift_field<int32_t*>(s, 0x8);
+    if (lift_field<int32_t*>(s, 0x4) > last) mem_00925134();
+    int32_t* first = lift_field<int32_t*>(s, 0x4);
+    if (first > lift_field<int32_t*>(s, 0x8)) mem_00925134();
+    void* out[2];
+    ext_00596660(self, out, self, first, self, last);
+
+    void** b = lift_field<void**>(v, 0x4);
+    int32_t count = b ? (int32_t)(lift_field<void**>(v, 0x8) - b) : 0;
+    ext_0050ED40(self, count);
+
+    void** it = lift_field<void**>(v, 0x4);
+    if (it > lift_field<void**>(v, 0x8)) mem_00925134();
+    for (;;) {
+        void** end = lift_field<void**>(v, 0x8);
+        if (lift_field<void**>(v, 0x4) > end) mem_00925134();
+        if (it == end) break;
+        if (it >= lift_field<void**>(v, 0x8)) mem_00925134();
+        void* cast = ext_006A6E9E(*it, 0, mem_00A2E2D8, mem_00A2FC0C, 0);
+        if (cast) ext_0041A920(self, &cast);
+        if (it >= lift_field<void**>(v, 0x8)) mem_00925134();
+        ++it;
+    }
+}
+} // namespace lift_004E8EA0
