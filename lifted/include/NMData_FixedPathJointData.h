@@ -22,6 +22,8 @@ struct NMData_FixedPathJointData_Fields {
     // +0x74  void** field_0x74 (begin of child pointer array)  (evidence: 0x005E1060, 0x005EB890)
     // +0x78  void** field_0x78 (end of child pointer array)  (evidence: 0x005E1060, 0x005EB890)
     // +0x7C  uint8_t field_0x7c (at this+0x70, dword range)  (evidence: 0x005EE110)
+    // +0x80  void** field_0x80 (begin of child pointer array, +0x74 from +0xC)  (evidence: 0x005EEE30)
+    // +0x84  void** field_0x84 (end of child pointer array, +0x78 from +0xC)  (evidence: 0x005EEE30)
     // +0xE0  void* field_0xe0 (object pointer; its vtable slot at +0xAC is called)  (evidence: 0x005E1060) // CONFLICT: multiple definitions at +0xE0
     // +0xE0  void*                    field_0xe0  (evidence: 0x005E0E70) // CONFLICT: multiple definitions at +0xE0
     // +0xE4  void* field_0xe4 (object pointer; its sub-object at +4 receives the tail call)  (evidence: 0x005E4900)
@@ -42,7 +44,8 @@ struct NMData_FixedPathJointData_Fields {
     // +0x178 void*                    field_0x178  (evidence: 0x005E1060) // CONFLICT: multiple definitions at +0x178
     // +0x179 uint8_t                  field_0x179  (evidence: 0x005EDFD0)
     // +0x17A uint8_t                  field_0x17a  (evidence: 0x005EDFD0)
-    // +0x17C uint32_t field_0x17c (non-zero selects the tail call for codes 0x40/0x137)  (evidence: 0x005E1060, 0x005E29F0)
+    // +0x17C void* field_0x17c (+0x170 from +0xC)  (evidence: 0x005EEE30) // CONFLICT: multiple definitions at +0x17C
+    // +0x17C uint32_t field_0x17c (non-zero selects the tail call for codes 0x40/0x137)  (evidence: 0x005E1060, 0x005E29F0) // CONFLICT: multiple definitions at +0x17C
     // +0x180 uint32_t field_0x180 (non-zero selects the tail call for codes 0x40/0x137/0x158)  (evidence: 0x005E1060, 0x005E29F0)
     // +0x184 void* field_0x184 (non-null object; its vtable slot 35 is called)  (evidence: 0x005E0430) // CONFLICT: multiple definitions at +0x184
     // +0x184 void*                    field_0x184  (evidence: 0x005E02D0) // CONFLICT: multiple definitions at +0x184
@@ -84,7 +87,8 @@ struct NMData_FixedPathJointData_Fields {
     // +0x220 float                    field_0x220  (evidence: 0x005EDFD0)
     // +0x224 float                    field_0x224  (evidence: 0x005EDFD0)
     // +0x228 uint32_t                 field_0x228  (evidence: 0x005EDFD0)
-    // +0x22C uint32_t                 field_0x22c  (evidence: 0x005EB920, 0x005EDFD0)
+    // +0x22C void* field_0x22c (+0x220 from +0xC)  (evidence: 0x005EEE30) // CONFLICT: multiple definitions at +0x22C
+    // +0x22C uint32_t                 field_0x22c  (evidence: 0x005EB920, 0x005EDFD0) // CONFLICT: multiple definitions at +0x22C
     // +0x230 uint8_t                  field_0x230  (evidence: 0x005EDFD0)
     // +0x234 void*                    field_0x234  (evidence: 0x005E24F0, 0x005E4710)
     // +0x23C uint8_t field_0x23c (float-array container; address passed to getElementPtr)  (evidence: 0x005EE760)

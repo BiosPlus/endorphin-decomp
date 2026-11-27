@@ -1349,3 +1349,81 @@ uint8_t __thiscall fn_005EE110(void* self, uint32_t arg0, void* arg1) {
     return 1;
 }
 } // namespace lift_005EE110
+
+// [0x005EEE30]
+namespace lift_005EEE30 {
+// @name NMData::FixedPathJointData::vfunc_13_off_C
+// @class NMData::FixedPathJointData
+// @summary Detaches and cleans up FixedPathJointData, its children, and associated scene state.
+// @field NMData::FixedPathJointData +0x80 void** field_0x80 (begin of child pointer array, +0x74 from +0xC)
+// @field NMData::FixedPathJointData +0x84 void** field_0x84 (end of child pointer array, +0x78 from +0xC)
+// @field NMData::FixedPathJointData +0x17C void* field_0x17c (+0x170 from +0xC)
+// @field NMData::FixedPathJointData +0x22C void* field_0x22c (+0x220 from +0xC)
+
+
+extern void* mem_00925134;
+
+extern void __thiscall ext_005EE9A0(void* self, void* node);
+extern void __cdecl ext_005BE710(void* a1, void* a2);
+extern void __thiscall ext_005A35D0(void* self, void* node);
+extern void __thiscall ext_00587470(void* self, void* child);
+extern void __thiscall ext_00587920(void* self, void* a1, int a2);
+
+bool __thiscall fn_005EEE30(void* self, void* arg0) {
+    uint8_t* esi = static_cast<uint8_t*>(self);
+    uint8_t* ebp = esi - 0xC;
+    uint8_t* edi = lift_field<uint8_t*>(arg0, 0x20C);
+
+    ext_005EE9A0(edi, ebp);
+
+    uint8_t* edx = lift_field<uint8_t*>(edi, 0x18C);
+    ext_005BE710(edx + 0x5A4, esi + 0x8);
+
+    void* ecx = lift_field<void*>(edi, 0x18C);
+    ext_005A35D0(ecx, ebp);
+
+    using invalid_param_fn = void(__cdecl*)();
+
+    while (true) {
+        void** begin = lift_field<void**>(esi, 0x74);
+        if (!begin) {
+            break;
+        }
+        void** end = lift_field<void**>(esi, 0x78);
+        if (((reinterpret_cast<uintptr_t>(end) - reinterpret_cast<uintptr_t>(begin)) >> 2) == 0) {
+            break;
+        }
+
+        void** it = begin;
+        if (it > lift_field<void**>(esi, 0x78)) {
+            reinterpret_cast<invalid_param_fn>(mem_00925134)();
+        }
+        if (it >= lift_field<void**>(esi, 0x78)) {
+            reinterpret_cast<invalid_param_fn>(mem_00925134)();
+        }
+
+        uint8_t* child = static_cast<uint8_t*>(*it);
+        void** vtbl = lift_field<void**>(child, 0xC);
+        using vfunc_44_t = void* (__thiscall*)(void*);
+        void* ebx = reinterpret_cast<vfunc_44_t>(vtbl[0x44 / 4])(child + 0xC);
+
+        if (it >= lift_field<void**>(esi, 0x78)) {
+            reinterpret_cast<invalid_param_fn>(mem_00925134)();
+        }
+
+        ext_00587470(ebp, *it);
+
+        if (ebx) {
+            void** ebx_vtbl = lift_field<void**>(ebx, 0xC);
+            void* val = lift_field<void*>(esi, 0x220);
+            using vfunc_34_t = void(__thiscall*)(void*, void*);
+            reinterpret_cast<vfunc_34_t>(ebx_vtbl[0x34 / 4])(static_cast<uint8_t*>(ebx) + 0xC, val);
+        }
+    }
+
+    void* val170 = lift_field<void*>(esi, 0x170);
+    ext_00587920(ebp, val170, 0);
+
+    return true;
+}
+} // namespace lift_005EEE30

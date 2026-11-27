@@ -55715,6 +55715,13 @@
     "summary": "Erases the element range [field_0x16c, field_0x170) from the child vector at +0x168, then calls ext_005EEB90 for each index in [0, vfunc_60()).",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
+  "0x005EEE30": {
+    "name": "NMData::FixedPathJointData::vfunc_13_off_C",
+    "class": "NMData::FixedPathJointData",
+    "signature": "bool __thiscall fn_005EEE30(void* self, void* arg0)",
+    "summary": "Detaches and cleans up FixedPathJointData, its children, and associated scene state.",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005EF8A0": {
     "name": "NMData::HingeData::vfunc_59",
     "class": "NMData::HingeData",

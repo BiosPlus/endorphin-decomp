@@ -1,0 +1,40 @@
+{
+  "va": "0x005EEE30",
+  "size": 190,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_13_off_C",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_13_off_C",
+  "class": "NMData::FixedPathJointData",
+  "signature": "bool __thiscall fn_005EEE30(void* self, void* arg0)",
+  "summary": "Detaches and cleans up FixedPathJointData, its children, and associated scene state.",
+  "fields": [
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x80",
+      "type": "void** field_0x80 (begin of child pointer array, +0x74 from",
+      "name": "+0xC)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x84",
+      "type": "void** field_0x84 (end of child pointer array, +0x78 from",
+      "name": "+0xC)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x17C",
+      "type": "void* field_0x17c (+0x170 from",
+      "name": "+0xC)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x22C",
+      "type": "void* field_0x22c (+0x220 from",
+      "name": "+0xC)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:26:47Z"
+}
