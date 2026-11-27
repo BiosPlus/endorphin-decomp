@@ -1,0 +1,14 @@
+{
+  "va": "0x004A3F00",
+  "size": 154,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0\u003e::vfunc_47",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ReadMethodType_vfunc47_CodeWindowFontSize",
+  "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0\u003e",
+  "signature": "static inline void* vtable_slot(void* obj, ptrdiff_t byteOffset)",
+  "summary": "Reads an int32 from the global at mem_00A35B7C through a temporary, assigns it into the object's held value, releases the temporary, and forwards to the held object's vfunc 47; throws if field_0x00 is null.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:03:36Z"
+}

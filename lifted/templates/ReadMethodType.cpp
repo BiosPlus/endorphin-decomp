@@ -70184,3 +70184,57 @@ uint32_t fn_0049C570(void* out) {
     return reinterpret_cast<VSlot47Fn>(vtbl[0xBC / sizeof(void*)])(target, out);
 }
 } // namespace lift_0049C570
+
+// [0x004A3F00] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>::vfunc_47 (154 bytes)
+namespace lift_004A3F00 {
+// Known callee 0x004A2490: sub_004A2490 (Returns global int32 value from mem_00A35B7C.)
+extern int32_t ext_004A2490(void);
+// Callee 0x006720C0 (18B, unlisted): thiscall(self = temp object, int32 value).
+extern void ext_006720C0(void* self, int32_t value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, void* throwInfo);
+extern int mem_009DEC1C;
+
+// Reads the vtable pointer at obj+0 and returns the raw slot at the given byte offset.
+static inline void* vtable_slot(void* obj, ptrdiff_t byteOffset) {
+    void* vt = lift_field<void*>(obj, 0);
+    return lift_field<void*>(vt, byteOffset);
+}
+
+// @name ReadMethodType_vfunc47_CodeWindowFontSize
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>
+// @summary Reads an int32 from the global at mem_00A35B7C through a temporary, assigns it into the object's held value, releases the temporary, and forwards to the held object's vfunc 47; throws if field_0x00 is null.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0> +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0> +0x04 void* field_0x04
+int32_t fn_004A3F00(void* obj) {
+    if (lift_field<void*>(obj, 0x00) == nullptr) {
+        // Null field_0x00: construct a DerivedException and throw it.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(&mem_009DEC1C));
+        std::abort();  // _CxxThrowException does not return
+    }
+
+    // Temporary object on the stack, built from the global int32 value.
+    alignas(8) unsigned char tmp[16] = {};
+    int32_t value = ext_004A2490();
+    ext_006720C0(tmp, value);
+    ext_0041CF50(obj, tmp);
+
+    // Release the temporary's held object (vtable slot 0x78) if present.
+    void* held = lift_field<void*>(tmp, 0x04);
+    if (held != nullptr) {
+        auto release = reinterpret_cast<void (*)(void*, void*)>(vtable_slot(held, 0x78));
+        release(held, tmp);
+    }
+
+    // Forward to field_0x04's vfunc 47 (slot 0xBC), passing obj; return its result.
+    void* target = lift_field<void*>(obj, 0x04);
+    auto vfunc47 = reinterpret_cast<int32_t (*)(void*, void*)>(vtable_slot(target, 0xBC));
+    return vfunc47(target, obj);
+}
+} // namespace lift_004A3F00
