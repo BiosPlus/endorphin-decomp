@@ -1,0 +1,22 @@
+{
+  "va": "0x005C31D0",
+  "size": 145,
+  "orig_symbol": "NMData::CollisionModelData::vfunc_13_off_C",
+  "src_path": "src/NMData/CollisionModelData.cpp",
+  "lifted_path": "lifted/NMData/CollisionModelData.cpp",
+  "name": "NMData::CollisionModelData::vfunc_13_off_C",
+  "class": "NMData::CollisionModelData",
+  "signature": "bool __thiscall fn_005C31D0(void* self, void* arg)",
+  "summary": "Fetches a string from the primary object's virtual slot 0xF8, copies it into this+8, then forwards the primary object to ext_005BF400 on the non-null argument.",
+  "fields": [
+    {
+      "class": "NMData::CollisionModelData",
+      "offset": "+0x14",
+      "type": "std::string",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:41:21Z"
+}

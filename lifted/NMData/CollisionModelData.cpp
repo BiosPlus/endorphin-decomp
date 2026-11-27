@@ -397,3 +397,59 @@ extern uint32_t fn_005CCCF0(void* self, uint32_t unused, uint32_t value) {
     return value;
 }
 } // namespace lift_005CCCF0
+
+// [0x005C31D0] NMData::CollisionModelData::vfunc_13_off_C (145 bytes)
+namespace lift_005C31D0 {
+extern void ext_005BF400();
+extern int mem_00924FDC;
+extern int mem_00924FF4;
+
+// @name NMData::CollisionModelData::vfunc_13_off_C
+// @class NMData::CollisionModelData
+// @summary Fetches a string from the primary object's virtual slot 0xF8, copies it into this+8, then forwards the primary object to ext_005BF400 on the non-null argument.
+// @field NMData::CollisionModelData +0x14 std::string field_0x14
+
+namespace {
+
+// Virtual slot at vtable+0xF8 on the primary (this-0xC) object: returns const std::string* into `out`.
+using GetStringFn = const void* (__thiscall*)(void* self, void* out);
+// MSVCP80 std::string::operator=(const std::string&) and ~std::string(), reached through IAT slots.
+using StringAssignFn = void* (__thiscall*)(void* self, const void* rhs);
+using StringDtorFn = void (__thiscall*)(void* self);
+// Sub-routine ext_005BF400: thiscall(arg, primary).
+using ForwardFn = void (__thiscall*)(void* self, void* primary);
+
+}  // namespace
+
+bool __thiscall fn_005C31D0(void* self, void* arg) {
+    if (arg == nullptr) {
+        return false;
+    }
+
+    // self is the RenderObjectOwner/Updateable sub-object at +0xC of the primary object.
+    uint8_t* primary = reinterpret_cast<uint8_t*>(self) - 0xC;
+    uint8_t* vtbl_bytes = *reinterpret_cast<uint8_t**>(primary);
+    GetStringFn get_string = *reinterpret_cast<GetStringFn*>(vtbl_bytes + 0xF8);
+
+    // Local std::string temp (MSVC 2005 layout, 0x1C bytes).
+    alignas(8) unsigned char tmp[0x1C] = {};
+
+    const void* src = get_string(primary, tmp);
+
+    // String assign into self+8 (= primary+0x14) via the IAT-bound operator=.
+    StringAssignFn string_assign =
+        reinterpret_cast<StringAssignFn>(*reinterpret_cast<void* const*>(&mem_00924FDC));
+    string_assign(reinterpret_cast<uint8_t*>(self) + 8, src);
+
+    // Destroy the temp string via the IAT-bound destructor.
+    StringDtorFn string_dtor =
+        reinterpret_cast<StringDtorFn>(*reinterpret_cast<void* const*>(&mem_00924FF4));
+    string_dtor(tmp);
+
+    // Forward to ext_005BF400 with ecx=arg, stack=primary.
+    ForwardFn forward = reinterpret_cast<ForwardFn>(ext_005BF400);
+    forward(arg, primary);
+
+    return true;
+}
+} // namespace lift_005C31D0

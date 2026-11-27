@@ -13,6 +13,7 @@ struct NMData_CollisionModelData_Fields {
     // +0x4   void*                    field_0x04  (evidence: 0x005C37A0, 0x005C37E0)
     // +0xC   void*                    field_0x0c  (evidence: 0x005C3AB0, 0x005C3B40)
     // +0x10  void*                    field_0x10  (evidence: 0x005C3AB0, 0x005C3B40)
+    // +0x14  std::string              field_0x14  (evidence: 0x005C31D0)
     // +0x94  void*                    field_0x94  (evidence: 0x005C2F70)
     // +0x150 void*                    field_0x150  (evidence: 0x005C37A0, 0x005C37E0, 0x005C3840, 0x005C3890)
     // +0x15C void*                    field_0x15c  (evidence: 0x005C3AB0, 0x005C3B40, 0x005C3E20)

@@ -46036,6 +46036,13 @@
     "summary": "Constructs a std::string in the caller-supplied buffer from a literal and returns the buffer pointer.",
     "lifted_path": "lifted/NMData/CollisionModelData.cpp"
   },
+  "0x005C31D0": {
+    "name": "NMData::CollisionModelData::vfunc_13_off_C",
+    "class": "NMData::CollisionModelData",
+    "signature": "bool __thiscall fn_005C31D0(void* self, void* arg)",
+    "summary": "Fetches a string from the primary object's virtual slot 0xF8, copies it into this+8, then forwards the primary object to ext_005BF400 on the non-null argument.",
+    "lifted_path": "lifted/NMData/CollisionModelData.cpp"
+  },
   "0x005C3270": {
     "name": "NMData::FluidObjectData::vfunc_62",
     "class": "NMData::FluidObjectData",
