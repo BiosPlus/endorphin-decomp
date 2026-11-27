@@ -1,0 +1,13 @@
+{
+  "va": "0x00589130",
+  "size": 90,
+  "orig_symbol": "sub_00589130",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "GuardedStaticInstanceInit_00589130",
+  "signature": "void* fn_00589130()",
+  "summary": "One-time guarded initializer for the static instance at 0x00B3EBA4; returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:32:31Z"
+}

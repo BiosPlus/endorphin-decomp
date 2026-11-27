@@ -2132,3 +2132,24 @@ void fn_0058F4F0(void* self) {
     (void)self;
 }
 } // namespace lift_0058F4F0
+
+// [0x00589130] sub_00589130 (90 bytes)
+namespace lift_00589130 {
+extern void ext_00587C00(void* self);
+extern void ext_006A6C87(const void* arg);
+extern int mem_00B3EBC8;
+
+// @name GuardedStaticInstanceInit_00589130
+// @summary One-time guarded initializer for the static instance at 0x00B3EBA4; returns its address.
+void* fn_00589130() {
+    constexpr uintptr_t kInstance = 0x00B3EBA4u;
+    constexpr uintptr_t kInitArg  = 0x0091D150u;
+
+    if ((mem_00B3EBC8 & 1) == 0) {
+        mem_00B3EBC8 |= 1;
+        ext_00587C00(reinterpret_cast<void*>(kInstance));
+        ext_006A6C87(reinterpret_cast<const void*>(kInitArg));
+    }
+    return reinterpret_cast<void*>(kInstance);
+}
+} // namespace lift_00589130
