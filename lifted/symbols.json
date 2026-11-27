@@ -47422,6 +47422,13 @@
     "summary": "Runs base ctor 0x0062CD30, sets vtable to 0x009795a4, zeroes nine float fields, returns this.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x0062E2D0": {
+    "name": "Unknown::normalizeDirectionAndStoreComponents",
+    "class": "Unknown",
+    "signature": "float fn_0062E2D0(void* self, const float* v)",
+    "summary": "Calls a virtual slot 0x6C on self, then computes (dot(v, (d58,d60,d68)) + d70) / |(d58,d60,d68)| into the double at +0x40 and stores the three components as floats at +0x48/+0x4C/+0x50; returns the +0x40 value as float.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x0062E3C0": {
     "name": "ExprParser::FunctionType\u003cSensors::CompoundSensorPlanes,checkDistance\u003e::vfunc_16",
     "class": "ExprParser::FunctionType\u003cSensors::CompoundSensorPlanes,checkDistance\u003e",

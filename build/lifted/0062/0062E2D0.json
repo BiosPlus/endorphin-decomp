@@ -1,0 +1,70 @@
+{
+  "va": "0x0062E2D0",
+  "size": 134,
+  "orig_symbol": "sub_0062E2D0",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "Unknown::normalizeDirectionAndStoreComponents",
+  "class": "Unknown",
+  "signature": "float fn_0062E2D0(void* self, const float* v)",
+  "summary": "Calls a virtual slot 0x6C on self, then computes (dot(v, (d58,d60,d68)) + d70) / |(d58,d60,d68)| into the double at +0x40 and stores the three components as floats at +0x48/+0x4C/+0x50; returns the +0x40 value as float.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "double",
+      "name": "result"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "comp0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "float",
+      "name": "comp1"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "float",
+      "name": "comp2"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "double",
+      "name": "vecX"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "double",
+      "name": "vecY"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "double",
+      "name": "vecZ"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x70",
+      "type": "double",
+      "name": "offset"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:23:43Z"
+}

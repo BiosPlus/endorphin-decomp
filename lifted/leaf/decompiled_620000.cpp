@@ -3271,3 +3271,44 @@ void __thiscall sub_00624D30(void* self) {
     lift_field<uint8_t*>(it, 0x04) = parent;
 }
 } // namespace lift_00624D30
+
+// [0x0062E2D0] sub_0062E2D0 (134 bytes)
+namespace lift_0062E2D0 {
+// Known callee 0x006A7250: thunk_MSVCR80__CIsqrt (IAT jump thunk forwarding to MSVCR80!_CIsqrt.)
+extern void ext_006A7250();
+
+// @name Unknown::normalizeDirectionAndStoreComponents
+// @class Unknown
+// @summary Calls a virtual slot 0x6C on self, then computes (dot(v, (d58,d60,d68)) + d70) / |(d58,d60,d68)| into the double at +0x40 and stores the three components as floats at +0x48/+0x4C/+0x50; returns the +0x40 value as float.
+// @field Unknown +0x00 void** vtable
+// @field Unknown +0x40 double result
+// @field Unknown +0x48 float comp0
+// @field Unknown +0x4C float comp1
+// @field Unknown +0x50 float comp2
+// @field Unknown +0x58 double vecX
+// @field Unknown +0x60 double vecY
+// @field Unknown +0x68 double vecZ
+// @field Unknown +0x70 double offset
+float fn_0062E2D0(void* self, const float* v) {
+    // Virtual call through vtable slot at +0x6C (no arguments, return value discarded).
+    void** vtable = lift_field<void**>(self, 0);
+    auto slot = reinterpret_cast<void(__thiscall*)(void*)>(vtable[0x6C / sizeof(void*)]);
+    slot(self);
+
+    const double a = lift_field<double>(self, 0x60);
+    const double b = lift_field<double>(self, 0x58);
+    const double c = lift_field<double>(self, 0x68);
+    const double d = lift_field<double>(self, 0x70);
+
+    const double dot = (static_cast<double>(v[0]) * b + static_cast<double>(v[1]) * a)
+                     + (static_cast<double>(v[2]) * c + d);
+    const double norm = std::sqrt(a * a + b * b + c * c);
+    lift_field<double>(self, 0x40) = dot / norm;
+
+    lift_field<float>(self, 0x48) = static_cast<float>(b);
+    lift_field<float>(self, 0x4C) = static_cast<float>(a);
+    lift_field<float>(self, 0x50) = static_cast<float>(c);
+
+    return static_cast<float>(lift_field<double>(self, 0x40));
+}
+} // namespace lift_0062E2D0
