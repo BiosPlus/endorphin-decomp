@@ -1930,3 +1930,29 @@ void fn_005F56A0(void* self, uint32_t arg) {
     ext_0067E5B0(result, arg);
 }
 } // namespace lift_005F56A0
+
+// [0x005F56C0] sub_005F56C0 (32 bytes)
+namespace lift_005F56C0 {
+// Known callee 0x0067E600: buildPaddedMatrixFromParam (Starts from a packed 3x3 identity, applies ext_006951E0 with the stack parameter, then copies the result into the padded matrix at self.)
+extern int mem_00B40640;
+extern void ext_0067E600(void* self, const void* p);
+
+// @name buildPaddedMatrixFromParamThunk
+// @class Unknown
+// @summary Calls the indirect method at [[self+4]+0xC] with (mem_00B40640, p), then forwards its result as self to fn_0067E600(result, p).
+// @field Unknown +0x04 void* field_0x04
+void fn_005F56C0(void* self, const void* p) {
+    // Original convention: __thiscall-style with ecx = self, one stack arg p, ret 4.
+    using IndirectFn = void* (__thiscall*)(void* thisPtr, DWORD arg0, const void* arg1);
+
+    void* thisPtr = static_cast<uint8_t*>(self) + 0x4;           // ecx after "add ecx, 4"
+    void* inner = lift_field<void*>(self, 0x4);                   // mov edx, [ecx+4]
+    auto fn = reinterpret_cast<IndirectFn>(lift_field<void*>(inner, 0xC)); // mov edx, [edx+0xc]
+
+    // push p; push [mem_00B40640]; call edx
+    void* result = fn(thisPtr, static_cast<DWORD>(mem_00B40640), p);
+
+    // mov ecx, eax; call fn_0067E600 (stack still holds p)
+    ext_0067E600(result, p);
+}
+} // namespace lift_005F56C0

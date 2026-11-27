@@ -38958,6 +38958,13 @@
     "summary": "Calls virtual slot +0x0C of the object at self+0x04 with (self+0x04, mem_00B40640, arg), then passes the returned pointer as `self` to fn_0067E5B0 together with arg.",
     "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
+  "0x005F56C0": {
+    "name": "buildPaddedMatrixFromParamThunk",
+    "class": "Unknown",
+    "signature": "void fn_005F56C0(void* self, const void* p)",
+    "summary": "Calls the indirect method at [[self+4]+0xC] with (mem_00B40640, p), then forwards its result as self to fn_0067E600(result, p).",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005F56E0": {
     "name": "Unknown::forwardPaddedViaSubobject",
     "class": "Unknown",
