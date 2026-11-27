@@ -45626,6 +45626,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051A6D0 (CopyRangeBackward5f_0051A6D0).",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x00622CA0": {
+    "name": "ObjectFactory::create_0x3C  (new-and-construct helper)",
+    "class": "ObjectFactory",
+    "signature": "void* fn_00622CA0(uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4)",
+    "summary": "Allocates a 0x3C-byte object, runs ext_00622B40 on it with five stack args if allocation succeeded, and returns it; deletes it and rethrows if the constructor throws.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00622D30": {
     "name": "fillStridedFromSource",
     "signature": "void fn_00622D30(void* dst, uint32_t count, const void* src)",

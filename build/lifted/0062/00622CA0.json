@@ -1,0 +1,14 @@
+{
+  "va": "0x00622CA0",
+  "size": 135,
+  "orig_symbol": "sub_00622CA0",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "ObjectFactory::create_0x3C  (new-and-construct helper)",
+  "class": "ObjectFactory",
+  "signature": "void* fn_00622CA0(uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4)",
+  "summary": "Allocates a 0x3C-byte object, runs ext_00622B40 on it with five stack args if allocation succeeded, and returns it; deletes it and rethrows if the constructor throws.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:26:59Z"
+}

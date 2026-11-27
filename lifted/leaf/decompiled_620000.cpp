@@ -3058,3 +3058,29 @@ extern void __fastcall fn_0062C450(void* self) {
     ext_005FF040(self);
 }
 } // namespace lift_0062C450
+
+// [0x00622CA0] sub_00622CA0 (135 bytes)
+namespace lift_00622CA0 {
+// Known callee 0x00622B40: ComputeFloatIntoField30 (constructor-style init: takes this in ecx plus 5 stack args, callee-cleanup)
+extern void ext_00622B40(void* self, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (operator new, cdecl, size in arg)
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (operator delete)
+extern void ext_006A5C5C(void* p);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (rethrow; lifted as C++ `throw;`)
+
+// @name ObjectFactory::create_0x3C  (new-and-construct helper)
+// @summary Allocates a 0x3C-byte object, runs ext_00622B40 on it with five stack args if allocation succeeded, and returns it; deletes it and rethrows if the constructor throws.
+void* fn_00622CA0(uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4) {
+    void* obj = ext_006A5C62(0x3c);
+    if (obj != nullptr) {
+        try {
+            ext_00622B40(obj, a0, a1, a2, a3, a4);
+        } catch (...) {
+            ext_006A5C5C(obj);
+            throw;
+        }
+    }
+    return obj;
+}
+} // namespace lift_00622CA0
