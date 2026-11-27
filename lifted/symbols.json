@@ -19192,6 +19192,13 @@
     "summary": "Copies the string at arg1+0x00 into a temporary wrapper, assigns it to arg1 via ext_0041CF50, cleans up, and invokes vtable slot 0xbc on arg1+0x04.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004BE470": {
+    "name": "BuildLabelAndStore",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t mem_00924FD4; // basic_string::operator= (thiscall) extern \"C\" uint32_t mem_00924FF4; // basic_string::~basic_string (thiscall) uint32_t* fn_004BE470(void* self, uint32_t* out, const void* flag)",
+    "summary": "Builds a temporary string from a literal, optionally forwards flag through sub_00474F00 into self+0x18, derives a DWORD from self+0x08 via sub_00476360, stores it to *out, destroys the temp and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BE680": {
     "name": "sub_004BE680",
     "signature": "void __fastcall fn_004BE680(void* self)",

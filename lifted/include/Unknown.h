@@ -452,6 +452,7 @@ struct Unknown_Fields {
     // +0x8   void*                    str_obj  (evidence: 0x00648A20) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    stringPtr  (evidence: 0x00640940) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    subObject  (evidence: 0x00586930, 0x00711BC0, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x8
+    // +0x8   field_0x08 (sub-object passed as this to sub_00476360)  (evidence: 0x004BE470) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    subobject  (evidence: 0x004AECC0, 0x0067B1F0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t                  subobject_0x08  (evidence: 0x00670FD0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 uncastPtr  (evidence: 0x004B76A0) // CONFLICT: multiple definitions at +0x8
@@ -741,6 +742,7 @@ struct Unknown_Fields {
     // +0x18  uint32_t                 length  (evidence: 0x00871450) // CONFLICT: multiple definitions at +0x18
     // +0x18  float                    m12  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x18
     // +0x18  std::string              name  (evidence: 0x005327F0) // CONFLICT: multiple definitions at +0x18
+    // +0x18  field_0x18 (sub-object passed as this to sub_00474F00 when flag is non-null)  (evidence: 0x004BE470) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t nameLen (arg    object)  (evidence: 0x008716C0) // CONFLICT: multiple definitions at +0x18
     // +0x18  StringPairList           pairs  (evidence: 0x004F0250) // CONFLICT: multiple definitions at +0x18
     // +0x18  void*                    quadric  (evidence: 0x0054A0E0) // CONFLICT: multiple definitions at +0x18

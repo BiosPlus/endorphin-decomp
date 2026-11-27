@@ -1,0 +1,28 @@
+{
+  "va": "0x004BE470",
+  "size": 140,
+  "orig_symbol": "sub_004BE470",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "BuildLabelAndStore",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint32_t mem_00924FD4; // basic_string::operator= (thiscall) extern \"C\" uint32_t mem_00924FF4; // basic_string::~basic_string (thiscall) uint32_t* fn_004BE470(void* self, uint32_t* out, const void* flag)",
+  "summary": "Builds a temporary string from a literal, optionally forwards flag through sub_00474F00 into self+0x18, derives a DWORD from self+0x08 via sub_00476360, stores it to *out, destroys the temp and returns out.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "field_0x08 (sub-object passed as this to",
+      "name": "sub_00476360)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "field_0x18 (sub-object passed as this to sub_00474F00 when flag is",
+      "name": "non-null)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:27:18Z"
+}

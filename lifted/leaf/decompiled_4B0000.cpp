@@ -2626,3 +2626,42 @@ int32_t fn_004B5540(void* self, int32_t a1, int32_t a2, int32_t a3) {
     return ext_004B5360(self, a1, static_cast<int32_t>(reinterpret_cast<uintptr_t>(initialized)), a2, a3);
 }
 } // namespace lift_004B5540
+
+// [0x004BE470] sub_004BE470 (140 bytes)
+namespace lift_004BE470 {
+// Known callee 0x00662610: sub_00662610 (51B) — cdecl; builds a string into dst from the literal src.
+extern void* ext_00662610(void* dst, const char* src);
+// Known callee 0x00474F00: sub_00474F00 (207B) — thiscall (this = self+0x18); takes a temp string and a flag pointer.
+extern void* ext_00474F00(void* self_sub, void* tmp, const void* flag);
+// Known callee 0x00476360: sub_00476360 (208B) — thiscall (this = self+0x08); takes a temp string, returns a DWORD.
+extern uint32_t ext_00476360(void* self_sub, void* tmp);
+
+// Import IAT slots (values are code addresses of MSVCP80 std::string member routines).
+extern uint32_t mem_00924FD4; // basic_string::operator= (thiscall)
+extern uint32_t mem_00924FF4; // basic_string::~basic_string (thiscall)
+
+// @name BuildLabelAndStore
+// @class Unknown
+// @summary Builds a temporary string from a literal, optionally forwards flag through sub_00474F00 into self+0x18, derives a DWORD from self+0x08 via sub_00476360, stores it to *out, destroys the temp and returns out.
+// @field Unknown +0x08 field_0x08 (sub-object passed as this to sub_00476360)
+// @field Unknown +0x18 field_0x18 (sub-object passed as this to sub_00474F00 when flag is non-null)
+uint32_t* fn_004BE470(void* self, uint32_t* out, const void* flag) {
+    alignas(8) unsigned char tmp[0x1C];
+
+    ext_00662610(tmp, reinterpret_cast<const char*>(static_cast<uintptr_t>(0xA39568)));
+
+    if (flag != nullptr) {
+        void* r = ext_00474F00(&lift_field<unsigned char>(self, 0x18), tmp, flag);
+        // Indirect thiscall into the import slot, with r as this.
+        reinterpret_cast<void (*)(void*)>(static_cast<uintptr_t>(mem_00924FD4))(r);
+    }
+
+    uint32_t value = ext_00476360(&lift_field<unsigned char>(self, 0x08), tmp);
+    *out = value;
+
+    // Indirect thiscall into the import slot to destroy the temp string.
+    reinterpret_cast<void (*)(void*)>(static_cast<uintptr_t>(mem_00924FF4))(tmp);
+
+    return out;
+}
+} // namespace lift_004BE470
