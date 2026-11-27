@@ -1308,3 +1308,52 @@ extern int __cdecl fn_0079ADD0(void* hFile, void** outView, DWORD* outSize) {
     return 1;
 }
 } // namespace lift_0079ADD0
+
+// [0x00798570] sub_00798570 (128 bytes)
+namespace lift_00798570 {
+// @name Unknown::SetIndexedValueAndDispatch
+// @class Unknown
+// @summary Latches flag 0x20 via a probe callback, stores a value and derived indices, then dispatches on the quotient.
+// @field Unknown +0x0c uint32_t field_0x0c
+// @field Unknown +0x50 int32_t field_0x50
+// @field Unknown +0xc8 uint32_t field_0xc8
+// @field Unknown +0xd4 uint32_t field_0xd4
+// @field Unknown +0x164 uint32_t field_0x164
+// @field Unknown +0x16c uint32_t field_0x16c
+// @field Unknown +0x18c uint32_t field_0x18c
+// @field Unknown +0x190 uint32_t field_0x190
+// @field Unknown +0x1d8 uint32_t field_0x1d8
+// @field Unknown +0x1e0 uint32_t field_0x1e0
+// @field Unknown +0x1e4 uint32_t field_0x1e4
+void fn_00798570(void* self, uint32_t value) {
+    using ProbeFn = int (*)(void*);
+    using DispatchFn = void (*)(void*, uint32_t);
+
+    if ((lift_field<uint32_t>(self, 0x0C) & 0x20) == 0) {
+        auto probe = reinterpret_cast<ProbeFn>(
+            static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x18C)));
+        if (probe(self) == 0) {
+            return;
+        }
+        lift_field<uint32_t>(self, 0x0C) |= 0x20;
+    }
+
+    lift_field<uint32_t>(self, 0x16C) = value;
+
+    const uint32_t divisor = lift_field<uint32_t>(self, 0xC8);
+    const uint32_t remainder = value % divisor;
+    lift_field<uint32_t>(self, 0x164) =
+        remainder * static_cast<uint32_t>(lift_field<int32_t>(self, 0x50));
+
+    lift_field<uint32_t>(self, 0x1E0) = lift_field<uint32_t>(self, 0x1D8);
+
+    auto* table = reinterpret_cast<uint32_t*>(
+        static_cast<uintptr_t>(lift_field<uint32_t>(self, 0xD4)));
+    lift_field<uint32_t>(self, 0x1E4) = table[value];
+
+    const uint32_t quotient = value / divisor;
+    auto dispatch = reinterpret_cast<DispatchFn>(
+        static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x190)));
+    dispatch(self, quotient);
+}
+} // namespace lift_00798570

@@ -76354,6 +76354,13 @@
     "summary": "Counts how many adjacent double-pair deltas (p[i+1] - p[i]) over a span exceed a constant threshold; returns 0 when the index range is empty.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x00798570": {
+    "name": "Unknown::SetIndexedValueAndDispatch",
+    "class": "Unknown",
+    "signature": "void fn_00798570(void* self, uint32_t value)",
+    "summary": "Latches flag 0x20 via a probe callback, stores a value and derived indices, then dispatches on the quotient.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x007985F0": {
     "name": "DispatchByBit10Mismatch",
     "class": "Unknown",

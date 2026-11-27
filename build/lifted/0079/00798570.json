@@ -1,0 +1,82 @@
+{
+  "va": "0x00798570",
+  "size": 128,
+  "orig_symbol": "sub_00798570",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "Unknown::SetIndexedValueAndDispatch",
+  "class": "Unknown",
+  "signature": "void fn_00798570(void* self, uint32_t value)",
+  "summary": "Latches flag 0x20 via a probe callback, stores a value and derived indices, then dispatches on the quotient.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "int32_t",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC8",
+      "type": "uint32_t",
+      "name": "field_0xc8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD4",
+      "type": "uint32_t",
+      "name": "field_0xd4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x164",
+      "type": "uint32_t",
+      "name": "field_0x164"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x16C",
+      "type": "uint32_t",
+      "name": "field_0x16c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18C",
+      "type": "uint32_t",
+      "name": "field_0x18c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x190",
+      "type": "uint32_t",
+      "name": "field_0x190"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1D8",
+      "type": "uint32_t",
+      "name": "field_0x1d8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1E0",
+      "type": "uint32_t",
+      "name": "field_0x1e0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1E4",
+      "type": "uint32_t",
+      "name": "field_0x1e4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:15:10Z"
+}
