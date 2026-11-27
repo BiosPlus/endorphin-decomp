@@ -748,3 +748,67 @@ void fn_004EFF00(void* self) {
     lift_field<void*>(self, 0x0C) = nullptr;
 }
 } // namespace lift_004EFF00
+
+// [0x004E3A30]
+namespace lift_004E3A30 {
+// @name Unknown::initStateDefaults
+// @class Unknown
+// @summary Zeroes the integer state words, sets the float slots at +0x38/+0x4C/+0x60/+0x74 to 1.0 and the remaining float slots to 0.0.
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x24 uint32_t field_0x24
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x2C uint32_t field_0x2C
+// @field Unknown +0x30 uint32_t field_0x30
+// @field Unknown +0x34 uint32_t field_0x34
+// @field Unknown +0x38 float field_0x38
+// @field Unknown +0x3C float field_0x3C
+// @field Unknown +0x40 float field_0x40
+// @field Unknown +0x44 float field_0x44
+// @field Unknown +0x48 float field_0x48
+// @field Unknown +0x4C float field_0x4C
+// @field Unknown +0x50 float field_0x50
+// @field Unknown +0x54 float field_0x54
+// @field Unknown +0x58 float field_0x58
+// @field Unknown +0x5C float field_0x5C
+// @field Unknown +0x60 float field_0x60
+// @field Unknown +0x64 float field_0x64
+// @field Unknown +0x68 float field_0x68
+// @field Unknown +0x6C float field_0x6C
+// @field Unknown +0x70 float field_0x70
+// @field Unknown +0x74 float field_0x74
+void fn_004E3A30(void* self) {
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    lift_field<uint32_t>(self, 0x14) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1C) = 0;
+    lift_field<uint32_t>(self, 0x24) = 0;
+    lift_field<uint32_t>(self, 0x28) = 0;
+    lift_field<uint32_t>(self, 0x2C) = 0;
+    lift_field<uint32_t>(self, 0x30) = 0;
+    lift_field<uint32_t>(self, 0x34) = 0;
+
+    lift_field<float>(self, 0x38) = 1.0f;
+    lift_field<float>(self, 0x3C) = 0.0f;
+    lift_field<float>(self, 0x40) = 0.0f;
+    lift_field<float>(self, 0x44) = 0.0f;
+    lift_field<float>(self, 0x48) = 0.0f;
+    lift_field<float>(self, 0x4C) = 1.0f;
+    lift_field<float>(self, 0x50) = 0.0f;
+    lift_field<float>(self, 0x54) = 0.0f;
+    lift_field<float>(self, 0x58) = 0.0f;
+    lift_field<float>(self, 0x5C) = 0.0f;
+    lift_field<float>(self, 0x60) = 1.0f;
+    lift_field<float>(self, 0x64) = 0.0f;
+    lift_field<float>(self, 0x68) = 0.0f;
+    lift_field<float>(self, 0x6C) = 0.0f;
+    lift_field<float>(self, 0x70) = 0.0f;
+    lift_field<float>(self, 0x74) = 1.0f;
+}
+} // namespace lift_004E3A30

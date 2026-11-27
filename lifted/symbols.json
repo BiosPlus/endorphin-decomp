@@ -18447,6 +18447,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
+  "0x004E3A30": {
+    "name": "Unknown::initStateDefaults",
+    "class": "Unknown",
+    "signature": "void fn_004E3A30(void* self)",
+    "summary": "Zeroes the integer state words, sets the float slots at +0x38/+0x4C/+0x60/+0x74 to 1.0 and the remaining float slots to 0.0.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004E6900": {
     "name": "NMData::AnimationEventData::vfunc_0_off_158",
     "class": "NMData::AnimationEventData",
