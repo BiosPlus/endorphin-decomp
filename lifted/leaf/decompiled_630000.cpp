@@ -1650,3 +1650,50 @@ void* fn_0063F620(void* self, const char* needle) {
     return reinterpret_cast<void*>(static_cast<uintptr_t>(0x00B53A34u));
 }
 } // namespace lift_0063F620
+
+// [0x0063EFE0]
+namespace lift_0063EFE0 {
+extern uint32_t mem_00925134;
+extern uint32_t mem_00924FC0;
+
+// @name sub_0063EFE0
+// @summary Searches a vector of item pointers at +0x3c for an item whose std::string at +0x04 matches the given C-string, returning it or a sentinel at 0x00B53A34.
+// @field unknown +0x40 uint32_t* vec_first
+// @field unknown +0x44 uint32_t* vec_last
+uint32_t __thiscall sub_0063EFE0(uint8_t* self, const char* name) {
+    uint32_t* first = lift_field<uint32_t*>(self, 0x40);
+    uint32_t* last = lift_field<uint32_t*>(self, 0x44);
+    auto invalid_param = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+    auto str_eq = reinterpret_cast<uint8_t(__cdecl*)(uint32_t, const char*)>(mem_00924FC0);
+
+    if (first > last) {
+        invalid_param();
+    }
+
+    uint32_t* it = first;
+    for (;;) {
+        uint32_t* cur_first = lift_field<uint32_t*>(self, 0x40);
+        uint32_t* cur_last = lift_field<uint32_t*>(self, 0x44);
+        if (cur_first > cur_last) {
+            invalid_param();
+        }
+        if (it >= cur_last) {
+            return 0x00B53A34u;
+        }
+        if (it >= lift_field<uint32_t*>(self, 0x44)) {
+            invalid_param();
+        }
+        uint32_t item = *it;
+        if (str_eq(item + 4u, name) != 0) {
+            if (it >= lift_field<uint32_t*>(self, 0x44)) {
+                invalid_param();
+            }
+            return *it;
+        }
+        if (it >= lift_field<uint32_t*>(self, 0x44)) {
+            invalid_param();
+        }
+        ++it;
+    }
+}
+} // namespace lift_0063EFE0

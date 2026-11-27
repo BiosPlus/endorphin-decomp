@@ -1,0 +1,27 @@
+{
+  "va": "0x0063EFE0",
+  "size": 133,
+  "orig_symbol": "sub_0063EFE0",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "sub_0063EFE0",
+  "signature": "uint32_t __thiscall sub_0063EFE0(uint8_t* self, const char* name)",
+  "summary": "Searches a vector of item pointers at +0x3c for an item whose std::string at +0x04 matches the given C-string, returning it or a sentinel at 0x00B53A34.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x40",
+      "type": "uint32_t*",
+      "name": "vec_first"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x44",
+      "type": "uint32_t*",
+      "name": "vec_last"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:36:01Z"
+}
