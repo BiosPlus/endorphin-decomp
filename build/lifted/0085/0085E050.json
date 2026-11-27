@@ -1,0 +1,13 @@
+{
+  "va": "0x0085E050",
+  "size": 144,
+  "orig_symbol": "sub_0085E050",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "initGlobalState",
+  "signature": "void sub_0085E050()",
+  "summary": "Initializes global state flags, counters, and magic values in .data.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:52:57Z"
+}

@@ -1747,3 +1747,75 @@ extern int32_t __cdecl fn_00859830(void* a, void* b) {
     return 0;
 }
 } // namespace lift_00859830
+
+// [0x0085E050]
+namespace lift_0085E050 {
+// @name initGlobalState
+// @summary Initializes global state flags, counters, and magic values in .data.
+
+extern uint32_t mem_00AB98F8;
+extern uint32_t mem_00AB98FC;
+extern uint32_t mem_00AB9908;
+extern uint32_t mem_00AB990C;
+extern uint32_t mem_00AB9910;
+extern uint32_t mem_00AB9914;
+extern uint16_t mem_00AB9918;
+extern uint8_t  mem_00AB9920;
+extern uint32_t mem_00AB9B20;
+extern uint32_t mem_00AB9B24;
+extern uint8_t  mem_00AB9B28;
+extern uint8_t  mem_00AB9D28;
+extern uint16_t mem_00AB9F28;
+extern uint32_t mem_00AB9F2C;
+extern uint32_t mem_00AB9F30;
+extern uint32_t mem_00AB9F34;
+extern uint32_t mem_00AB9F38;
+extern uint32_t mem_00ABA454;
+
+void sub_0085E050() {
+    mem_00AB98F8 = 1;
+    mem_00AB98FC = 1;
+    mem_00AB9910 = 1;
+    mem_00AB9D28 = 0;
+    mem_00AB9914 = 1;
+    mem_00AB9920 = 0;
+    mem_00AB9B24 = 1;
+    mem_00AB9B28 = 0;
+    mem_00AB990C = 3;
+    mem_00AB9B20 = 3;
+    mem_00AB9F2C = 1;
+    mem_00AB9F34 = 1;
+    mem_00AB9908 = 0;
+    mem_00AB9F38 = 0;
+    mem_00AB9F30 = 3;
+    mem_00AB9918 = 0x7483;
+    mem_00AB9F28 = 0x01DB;
+    mem_00ABA454 = 0;
+}
+} // namespace lift_0085E050
+
+// [0x0085BD10]
+namespace lift_0085BD10 {
+extern uint32_t ext_00859DD0(void* self);
+extern uint64_t ext_0085BBC0(uint64_t val, uint32_t shift);
+extern uint32_t ext_0085BC20(void* self);
+
+// @name ReadBigEndianUInt64
+// @summary Reads up to count big-endian bytes into a 64-bit integer and returns the number of bytes consumed.
+uint32_t sub_0085BD10(void* stream, uint32_t count, uint64_t* out_val) {
+    uint32_t start_pos = ext_0085BC20(stream);
+    *out_val = 0;
+
+    for (uint32_t i = 0; i < count; ++i) {
+        uint32_t b = ext_00859DD0(stream);
+        if (b == 0xFF00u) {
+            break;
+        }
+        uint64_t shifted = ext_0085BBC0(*out_val, 8);
+        *out_val = shifted | static_cast<uint64_t>(static_cast<int64_t>(static_cast<int32_t>(b)));
+    }
+
+    uint32_t end_pos = ext_0085BC20(stream);
+    return end_pos - start_pos;
+}
+} // namespace lift_0085BD10
