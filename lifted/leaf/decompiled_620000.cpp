@@ -2667,3 +2667,26 @@ void* fn_0062C4D0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint3
     return self;
 }
 } // namespace lift_0062C4D0
+
+// [0x00620FE0]
+namespace lift_00620FE0 {
+extern void* ext_006A5C62(uint32_t size);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+extern void* mem_00925130;
+
+// @name allocArray72
+// @summary Allocates an array of 72-byte elements with overflow check, throwing std::bad_alloc on overflow.
+extern void* fn_00620FE0(uint32_t count) {
+    if (count > 0) {
+        if ((0xFFFFFFFFu / count) < 0x48u) {
+            const char* msg = nullptr;
+            uint32_t exc[3] = {};
+            using ExcCtor = void(__thiscall*)(void*, const char**);
+            reinterpret_cast<ExcCtor>(mem_00925130)(exc, &msg);
+            exc[0] = 0x00928EC0u;
+            ext_006A6DD2(exc, reinterpret_cast<void*>(0x009CDF94u));
+        }
+    }
+    return ext_006A5C62(count * 0x48u);
+}
+} // namespace lift_00620FE0

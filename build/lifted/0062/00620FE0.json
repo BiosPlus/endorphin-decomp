@@ -1,0 +1,13 @@
+{
+  "va": "0x00620FE0",
+  "size": 93,
+  "orig_symbol": "sub_00620FE0",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "allocArray72",
+  "signature": "extern \"C\" void* fn_00620FE0(uint32_t count)",
+  "summary": "Allocates an array of 72-byte elements with overflow check, throwing std::bad_alloc on overflow.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:52:04Z"
+}
