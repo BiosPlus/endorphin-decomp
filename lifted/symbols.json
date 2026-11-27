@@ -39879,6 +39879,13 @@
     "summary": "Calls ext_00696D90 on self, then zeroes six 32-bit fields at +0x1C, +0x20, +0x24, +0x2C, +0x30, +0x34 (skips +0x28); returns self.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057FD60": {
+    "name": "Vector20::push_back",
+    "class": "Vector20",
+    "signature": "void __thiscall sub_0057FD60(void* self, uint32_t val)",
+    "summary": "Appends a 20-byte element to the vector, growing capacity if needed.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00581750": {
     "name": "sub_00581750",
     "signature": "uint32_t fn_00581750(uint32_t begin, uint32_t end, uint32_t value)",
@@ -40433,6 +40440,13 @@
     "signature": "extern \"C\" void* __fastcall fn_00587900(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_005877B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00587C00": {
+    "name": "Unknown::Init_00587C00",
+    "class": "Unknown",
+    "signature": "void* fn_00587C00(void* self)",
+    "summary": "Initializes vtable and zeroed fields on self, then constructs and appends a type-name string to global vector mem_00B5962C.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
   "0x00587D40": {
     "name": "NMData::GraphicData::vfunc_0_off_C",

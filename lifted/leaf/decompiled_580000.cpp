@@ -2203,3 +2203,43 @@ int32_t fn_00584C30(int32_t a1) {
     return a1;
 }
 } // namespace lift_00584C30
+
+// [0x00587C00]
+namespace lift_00587C00 {
+// @name Unknown::Init_00587C00
+// @class Unknown
+// @summary Initializes vtable and zeroed fields on self, then constructs and appends a type-name string to global vector mem_00B5962C.
+// @field Unknown +0x00 uint32_t vftable
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x20 uint32_t field_0x20
+
+
+extern void ext_0040ECB0(void* self, const void* value);
+extern int32_t ext_00584C30(void* a1);
+
+extern uintptr_t mem_00924FF4;
+extern uint8_t mem_00B5962C;
+
+void* fn_00587C00(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x0095AB6Cu;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1C) = 0;
+    lift_field<uint32_t>(self, 0x20) = 0;
+
+    uint8_t temp_str[28]{};
+    int32_t str_ptr = ext_00584C30(temp_str);
+    ext_0040ECB0(&mem_00B5962C, reinterpret_cast<const void*>(static_cast<uintptr_t>(str_ptr)));
+
+    auto dtor = reinterpret_cast<void (*)(void*)>(mem_00924FF4);
+    dtor(temp_str);
+
+    return self;
+}
+} // namespace lift_00587C00
