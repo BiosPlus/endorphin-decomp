@@ -2242,3 +2242,21 @@ void __fastcall fn_006DE570(void* self, void* /*edx*/, int32_t index) {
     (void)&ext_006DE130;
 }
 } // namespace lift_006DE570
+
+// [0x006D7970] sub_006D7970 (32 bytes)
+namespace lift_006D7970 {
+// Known callee 0x006D2250: Unknown::ResetAndFreeBuffer156 (Frees the pointer stored at +0x10 (via the imported CRT free) if non-null, then zeroes +0x10, +0x00 and +0x04.)
+extern void ext_006D2250(void* self);
+// Known callee 0x006D2300: Unknown::SetCount_006D2300 (Sets the element count to n; if n exceeds the current count, grows the container by the difference first.)
+extern void ext_006D2300(void* self, uint32_t n);
+
+// @name Unknown::ResetSubobjectAndSetCount
+// @class Unknown
+// @summary Resets the sub-object at this+0x28 (ResetAndFreeBuffer156) and then sets its element count to the stack argument.
+// @field Unknown +0x28 uint8_t field_0x28
+void fn_006D7970(void* self, uint32_t n) {
+    void* sub = static_cast<uint8_t*>(self) + 0x28;
+    ext_006D2250(sub);
+    ext_006D2300(sub, n);
+}
+} // namespace lift_006D7970
