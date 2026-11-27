@@ -185,3 +185,63 @@ void fn_0060C9C0(void* self, void* arg1) {
     ext_0046C0A0(base + 0x7C, &v);
 }
 } // namespace lift_0060C9C0
+
+// [0x0060CF00] NMData::EffectorWithModesData::vfunc_22 (184 bytes)
+namespace lift_0060CF00 {
+// __thiscall helpers: self = ecx, remaining args pushed (callee pops).
+extern void ext_0060C820(void* self, void* a1, void* a2, void* a3);
+extern void ext_0060C070(void* self, void* p0, void* p1, const char* name);
+// Known callee 0x00486CB0: ThrowIfFirstGreater (If arg1 > arg2 (std::string comparison), builds a temporary std::string from arg3 and throws an exception object constructed from (arg1, arg2, temp). Otherwise returns without effect.)
+extern void ext_00486CB0(void* self, const void* arg1, const void* arg2, const char* arg3);
+extern void ext_00487A30(void* self, float p0, float p1, const char* name);
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (cdecl, 5 args).
+extern void* ext_006A6E9E(void* inptr, ptrdiff_t vfDelta, void* srcType, void* targetType, int isReference);
+extern int mem_00A94EF0;
+extern int mem_00A93790;
+extern int mem_00972380;
+extern int mem_009723BC;
+extern int mem_009723A0;
+extern int mem_00972390;
+
+// @name NMData::EffectorWithModesData::vfunc_22
+// @class NMData::EffectorWithModesData
+// @summary Dynamic-casts a1 to EffectorWithModesData, then compares this and the other object's fields (+0x5C, +0x60, +0x7C, +0x80) via helper calls.
+// @field NMData::EffectorWithModesData +0x5C int field_0x5C
+// @field NMData::EffectorWithModesData +0x60 std::string field_0x60
+// @field NMData::EffectorWithModesData +0x7C float field_0x7C
+// @field NMData::EffectorWithModesData +0x80 float field_0x80
+void fn_0060CF00(void* self, void* arg1, void* arg2, void* arg3) {
+    // Scratch object passed as `this` to the thiscall helpers (ecx = esp+0x20 in the original).
+    alignas(8) uint8_t tmp[0x40] = {};
+
+    ext_0060C820(self, arg1, arg2, arg3);
+
+    void* other = ext_006A6E9E(arg1, 0, &mem_00A93790, &mem_00A94EF0, 1);
+
+    int selfField5C = lift_field<int>(self, 0x5C);
+    int otherField5C = lift_field<int>(other, 0x5C);
+    ext_0060C070(tmp,
+                 &selfField5C,
+                 &otherField5C,
+                 reinterpret_cast<const char*>(&mem_00972380));
+
+    ext_00486CB0(tmp,
+                 static_cast<uint8_t*>(self) + 0x60,
+                 static_cast<uint8_t*>(other) + 0x60,
+                 reinterpret_cast<const char*>(&mem_009723BC));
+
+    float selfField7C = lift_field<float>(self, 0x7C);
+    float otherField7C = lift_field<float>(other, 0x7C);
+    ext_00487A30(tmp,
+                 selfField7C,
+                 otherField7C,
+                 reinterpret_cast<const char*>(&mem_009723A0));
+
+    float selfField80 = lift_field<float>(self, 0x80);
+    float otherField80 = lift_field<float>(other, 0x80);
+    ext_00487A30(tmp,
+                 selfField80,
+                 otherField80,
+                 reinterpret_cast<const char*>(&mem_00972390));
+}
+} // namespace lift_0060CF00

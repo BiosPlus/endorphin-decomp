@@ -1,0 +1,40 @@
+{
+  "va": "0x0060CF00",
+  "size": 184,
+  "orig_symbol": "NMData::EffectorWithModesData::vfunc_22",
+  "src_path": "src/NMData/EffectorWithModesData.cpp",
+  "lifted_path": "lifted/NMData/EffectorWithModesData.cpp",
+  "name": "NMData::EffectorWithModesData::vfunc_22",
+  "class": "NMData::EffectorWithModesData",
+  "signature": "void fn_0060CF00(void* self, void* arg1, void* arg2, void* arg3)",
+  "summary": "Dynamic-casts a1 to EffectorWithModesData, then compares this and the other object's fields (+0x5C, +0x60, +0x7C, +0x80) via helper calls.",
+  "fields": [
+    {
+      "class": "NMData::EffectorWithModesData",
+      "offset": "+0x5C",
+      "type": "int",
+      "name": "field_0x5C"
+    },
+    {
+      "class": "NMData::EffectorWithModesData",
+      "offset": "+0x60",
+      "type": "std::string",
+      "name": "field_0x60"
+    },
+    {
+      "class": "NMData::EffectorWithModesData",
+      "offset": "+0x7C",
+      "type": "float",
+      "name": "field_0x7C"
+    },
+    {
+      "class": "NMData::EffectorWithModesData",
+      "offset": "+0x80",
+      "type": "float",
+      "name": "field_0x80"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:10:27Z"
+}

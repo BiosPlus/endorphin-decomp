@@ -59868,6 +59868,13 @@
     "summary": "Dynamic-casts a1 to EffectorWithMemoryData, then forwards this/other memory span and integral gradient to two helpers.",
     "lifted_path": "lifted/NMData/EffectorWithMemoryData.cpp"
   },
+  "0x0060CF00": {
+    "name": "NMData::EffectorWithModesData::vfunc_22",
+    "class": "NMData::EffectorWithModesData",
+    "signature": "void fn_0060CF00(void* self, void* arg1, void* arg2, void* arg3)",
+    "summary": "Dynamic-casts a1 to EffectorWithModesData, then compares this and the other object's fields (+0x5C, +0x60, +0x7C, +0x80) via helper calls.",
+    "lifted_path": "lifted/NMData/EffectorWithModesData.cpp"
+  },
   "0x0060D280": {
     "name": "NMData::EffectorGroupData::vfunc_14",
     "class": "NMData::EffectorGroupData",
