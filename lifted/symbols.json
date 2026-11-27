@@ -8941,6 +8941,13 @@
     "summary": "Formats an int into a 50-byte stack buffer via _snprintf, then constructs the std::string at self from that buffer and returns self.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00476770": {
+    "name": "StringExceptionWithMember::~StringExceptionWithMember",
+    "class": "StringExceptionWithMember",
+    "signature": "void fn_00476770(void* self)",
+    "summary": "Destroys four std::string members (+0x54, +0x38, +0x1c, +0x00) in reverse order via the MSVCP80 basic_string dtor IAT slot.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x004769D0": {
     "name": "NMData::SceneData::vfunc_7",
     "class": "NMData::SceneData",

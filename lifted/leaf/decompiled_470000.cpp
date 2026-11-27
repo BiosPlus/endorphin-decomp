@@ -881,3 +881,27 @@ void* fn_00476FD0(void) {
     return &mem_00AD909C;
 }
 } // namespace lift_00476FD0
+
+// [0x00476770] sub_00476770 (106 bytes)
+namespace lift_00476770 {
+extern uint32_t mem_00924FF4;
+
+// @name StringExceptionWithMember::~StringExceptionWithMember
+// @class StringExceptionWithMember
+// @summary Destroys four std::string members (+0x54, +0x38, +0x1c, +0x00) in reverse order via the MSVCP80 basic_string dtor IAT slot.
+// @field StringExceptionWithMember +0x00 std::string member0
+// @field StringExceptionWithMember +0x1c std::string member1
+// @field StringExceptionWithMember +0x38 std::string member2
+// @field StringExceptionWithMember +0x54 std::string member3
+void fn_00476770(void* self) {
+    // The original SEH frame setup/teardown (fs:[0] push/restore) is EH bookkeeping
+    // only and has no portable equivalent; the observable effect is the four dtor calls.
+    using StrDtor = void (*)(void*);
+    const StrDtor dtor = reinterpret_cast<StrDtor>(static_cast<uintptr_t>(mem_00924FF4));
+
+    dtor(&lift_field<uint8_t>(self, 0x54));
+    dtor(&lift_field<uint8_t>(self, 0x38));
+    dtor(&lift_field<uint8_t>(self, 0x1c));
+    dtor(self);
+}
+} // namespace lift_00476770
