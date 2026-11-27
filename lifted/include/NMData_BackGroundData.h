@@ -20,6 +20,7 @@ struct NMData_BackGroundData_Fields {
     // +0x544 void*                    field_0x544  (evidence: 0x005A5400, 0x00687100)
     // +0x594 uint32_t                 field_0x594  (evidence: 0x005A6010)
     // +0x598 void*                    field_0x598  (evidence: 0x005A6010)
+    // +0x5A4 void*                    field_0x5a4  (evidence: 0x005A1AA0)
     // +0x5F4 void*                    field_0x5f4  (evidence: 0x0059E080)
     // +0x5F8 void*                    field_0x5f8  (evidence: 0x0059F420)
     // +0x61C void*                    field_0x61c  (evidence: 0x0059F490)

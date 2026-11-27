@@ -15,6 +15,7 @@ std::string* fn_005A98F0(void* self, std::string* out) {
     new (out) std::string(mem_00A9ED98);
     return out;
 }
+#include <cstdint>
 
 // [0x0059DD70] NMData::BackGroundData::vfunc_4_off_10 (40 bytes)
 // @name NMData::BackGroundData::vfunc_4_off_10
@@ -432,3 +433,62 @@ uint8_t __thiscall fn_0059F420(void* self, void* arg0, void* arg1) {
     return 1;
 }
 } // namespace lift_0059F420
+
+// [0x005A1AA0]
+namespace lift_005A1AA0 {
+// @name NMData::BackGroundData::vfunc_44_off_4
+// @class NMData::BackGroundData
+// @summary Iterates over the container at +0x5A0 (+0x5A4 from BackGroundData) and calls sub_005E09D0 on each element's +0x28 field if IsResolvedChildStateOneWithNonZeroField8 returns true.
+// @field NMData::BackGroundData +0x5A4 void* field_0x5a4
+
+
+extern int __thiscall ext_0059E060(void* self);
+extern void __thiscall ext_005E09D0(void* self);
+extern void __thiscall ext_00673C20(void* self);
+extern void __thiscall ext_0058A200(void* self);
+extern int32_t __cdecl ext_00594000(void);
+extern int __thiscall ext_005946C0(void* self);
+extern void (__cdecl* mem_00925134)(void);
+extern uint32_t mem_00924FF4;
+
+struct IterPair {
+    void* container;
+    void* node;
+};
+
+void __thiscall fn_005A1AA0(void* self) {
+    (void)ext_0058A200;
+    (void)ext_00594000;
+    (void)ext_005946C0;
+    (void)mem_00924FF4;
+    if (static_cast<uint8_t>(ext_0059E060(static_cast<char*>(self) - 4)) == 0) {
+        return;
+    }
+
+    char* edi = static_cast<char*>(self) + 0x5A0;
+    void* head = *reinterpret_cast<void**>(static_cast<char*>(self) + 0x5A4);
+    IterPair iter;
+    iter.container = edi;
+    iter.node = *reinterpret_cast<void**>(head);
+
+    while (true) {
+        void* end_node = *reinterpret_cast<void**>(edi + 4);
+        if (iter.container == nullptr || iter.container != edi) {
+            mem_00925134();
+        }
+        if (iter.node == end_node) {
+            break;
+        }
+        if (iter.container == nullptr) {
+            mem_00925134();
+        }
+        if (iter.node == *reinterpret_cast<void**>(static_cast<char*>(iter.container) + 4)) {
+            mem_00925134();
+        }
+
+        void* elem = *reinterpret_cast<void**>(static_cast<char*>(iter.node) + 0x28);
+        ext_005E09D0(elem);
+        ext_00673C20(&iter);
+    }
+}
+} // namespace lift_005A1AA0

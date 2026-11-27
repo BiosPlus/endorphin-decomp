@@ -1,0 +1,22 @@
+{
+  "va": "0x005A1AA0",
+  "size": 125,
+  "orig_symbol": "NMData::BackGroundData::vfunc_44_off_4",
+  "src_path": "src/NMData/BackGroundData.cpp",
+  "lifted_path": "lifted/NMData/BackGroundData.cpp",
+  "name": "NMData::BackGroundData::vfunc_44_off_4",
+  "class": "NMData::BackGroundData",
+  "signature": "void __thiscall fn_005A1AA0(void* self)",
+  "summary": "Iterates over the container at +0x5A0 (+0x5A4 from BackGroundData) and calls sub_005E09D0 on each element's +0x28 field if IsResolvedChildStateOneWithNonZeroField8 returns true.",
+  "fields": [
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x5A4",
+      "type": "void*",
+      "name": "field_0x5a4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:45:04Z"
+}
