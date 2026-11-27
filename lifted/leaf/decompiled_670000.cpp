@@ -2822,3 +2822,27 @@ float* __thiscall sub_0067BEC0(void* self, float* out, const float* mat) {
     return out;
 }
 } // namespace lift_0067BEC0
+
+// [0x0067C8C0] sub_0067C8C0 (46 bytes)
+namespace lift_0067C8C0 {
+// Known callee 0x0067BEC0: Vec3::mulMat3 (Multiplies a 3D row vector by a 3x3 matrix and writes the result to out.)
+extern float* ext_0067BEC0(void* self, float* out, const float* mat);
+
+// @name Vec3::assignMulMat3
+// @class Vec3
+// @summary Multiplies this vector by a 3x3 matrix via Vec3::mulMat3 and copies the 3-float result back into self.
+// @field Vec3 +0x00 float field_0x00
+// @field Vec3 +0x04 float field_0x04
+// @field Vec3 +0x08 float field_0x08
+void fn_0067C8C0(void* self, const float* mat) {
+    float scratch[3];
+    float* src = ext_0067BEC0(self, scratch, mat);
+    float* dst = static_cast<float*>(self);
+    float x = src[0];
+    float y = src[1];
+    float z = src[2];
+    dst[0] = x;
+    dst[1] = y;
+    dst[2] = z;
+}
+} // namespace lift_0067C8C0

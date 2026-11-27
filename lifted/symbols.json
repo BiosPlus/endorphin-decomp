@@ -9857,6 +9857,12 @@
     "summary": "Copy-constructs four std::string members (+0x00, +0x1C, +0x38, +0x54) from the source object, then copies the flag byte at +0x70; returns self.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00476940": {
+    "name": "std_string_isEqualOrDotPrefix",
+    "signature": "uint8_t __thiscall sub_00476940(const void* self, const void* other)",
+    "summary": "Checks if arg1 equals this string or starts with this string followed by '.'",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x004769D0": {
     "name": "NMData::SceneData::vfunc_7",
     "class": "NMData::SceneData",
@@ -14622,6 +14628,12 @@
     "class": "\u003cClassName\u003e (optional)",
     "signature": "void* fn_004B0F50(void* self)",
     "summary": "Sets four byte flags (1,1,1,0), default-constructs the string at +0x04 via the import slot, zeroes the dword at +0x20; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
+  "0x004B0F80": {
+    "name": "deserializeProps",
+    "signature": "void __thiscall fn_004B0F80(void* self, void* src)",
+    "summary": "Deserializes string, integer, and two boolean properties from a property container into object fields.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
   "0x004B10A0": {
@@ -57045,6 +57057,13 @@
     "class": "Vec2",
     "signature": "extern \"C\" void __thiscall fn_0067C4D0(void* this_ptr, float angle)",
     "summary": "Rotates a 2D vector in-place by the given angle in radians.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
+  "0x0067C8C0": {
+    "name": "Vec3::assignMulMat3",
+    "class": "Vec3",
+    "signature": "void fn_0067C8C0(void* self, const float* mat)",
+    "summary": "Multiplies this vector by a 3x3 matrix via Vec3::mulMat3 and copies the 3-float result back into self.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x0067D9E0": {
