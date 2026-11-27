@@ -398,3 +398,37 @@ void fn_0059E080(void* self, float p) {
     reinterpret_cast<void* (*)(void*)>(&ext_00493EE0)(tail);
 }
 } // namespace lift_0059E080
+
+// [0x0059F420]
+namespace lift_0059F420 {
+extern uint8_t __thiscall ext_0059E060(void* self);
+extern void* __thiscall ext_006AD940(void* self);
+extern uint8_t __thiscall ext_004925B0(void* self, uint32_t arg0);
+extern void __thiscall ext_00481BD0(void* self, uint32_t value);
+extern void __thiscall ext_0059A660(void* self, void* arg0);
+
+// @name NMData::BackGroundData::vfunc_12_off_10
+// @class NMData::BackGroundData
+// @summary Removes this object's TransformNode from arg1's dword range and notifies field_0x5f8 if not active
+// @field NMData::BackGroundData +0x5F8 void* field_0x5f8
+uint8_t __thiscall fn_0059F420(void* self, void* arg0, void* arg1) {
+    (void)arg0;
+    uint8_t* subobj = static_cast<uint8_t*>(self);
+    void* obj = subobj - 0x10;
+    void* field_5f8 = lift_field<void*>(subobj, 0x5E8);
+
+    if (ext_0059E060(obj) != 0) {
+        return 0;
+    }
+
+    void* resolved = ext_006AD940(lift_field<void*>(field_5f8, 0x26C));
+    if (ext_004925B0(resolved, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj))) != 0) {
+        return 0;
+    }
+
+    void* transform_node = (obj != nullptr) ? static_cast<void*>(subobj - 0xC) : nullptr;
+    ext_00481BD0(arg1, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(transform_node)));
+    ext_0059A660(field_5f8, subobj + 0x8);
+    return 1;
+}
+} // namespace lift_0059F420

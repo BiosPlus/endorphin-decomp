@@ -1,0 +1,22 @@
+{
+  "va": "0x0059F420",
+  "size": 99,
+  "orig_symbol": "NMData::BackGroundData::vfunc_12_off_10",
+  "src_path": "src/NMData/BackGroundData.cpp",
+  "lifted_path": "lifted/NMData/BackGroundData.cpp",
+  "name": "NMData::BackGroundData::vfunc_12_off_10",
+  "class": "NMData::BackGroundData",
+  "signature": "uint8_t __thiscall fn_0059F420(void* self, void* arg0, void* arg1)",
+  "summary": "Removes this object's TransformNode from arg1's dword range and notifies field_0x5f8 if not active",
+  "fields": [
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x5F8",
+      "type": "void*",
+      "name": "field_0x5f8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:40:05Z"
+}

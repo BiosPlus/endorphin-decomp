@@ -21,6 +21,7 @@ struct NMData_BackGroundData_Fields {
     // +0x594 uint32_t                 field_0x594  (evidence: 0x005A6010)
     // +0x598 void*                    field_0x598  (evidence: 0x005A6010)
     // +0x5F4 void*                    field_0x5f4  (evidence: 0x0059E080)
+    // +0x5F8 void*                    field_0x5f8  (evidence: 0x0059F420)
     // +0x61C void*                    field_0x61c  (evidence: 0x0059F490)
 };
 } // namespace lifted_layout
