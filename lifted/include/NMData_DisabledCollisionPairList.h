@@ -10,7 +10,8 @@
 // Recovered field layout for NMData::DisabledCollisionPairList:
 namespace lifted_layout {
 struct NMData_DisabledCollisionPairList_Fields {
-    // +0x10  uint32_t                 field_0x10  (evidence: 0x0060A640)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x0060A640, 0x0060B320)
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x0060B320)
     // +0x18  uint8_t                  field_0x18  (evidence: 0x0060B550)
     // +0x20  uint32_t                 field_0x20  (evidence: 0x0060A640)
 };

@@ -76,3 +76,57 @@ void fn_0060B550(void* self, void* src) {
     }
 }
 } // namespace lift_0060B550
+
+// [0x0060B320]
+namespace lift_0060B320 {
+// @name NMData::DisabledCollisionPairList::vfunc_0_off_4
+// @class NMData::DisabledCollisionPairList
+// @summary Iterates over the internal pointer vector to invoke sub_0060B0F0 and sub_0060A240.
+// @field NMData::DisabledCollisionPairList +0x10 uint32_t field_0x10
+// @field NMData::DisabledCollisionPairList +0x14 uint32_t field_0x14
+
+
+extern void (*mem_00925134)(void);
+extern void ext_0060B0F0(uint32_t begin, uint32_t end, int32_t count, uint32_t val);
+extern void ext_0060A240(uint32_t begin, uint32_t end, uint32_t val);
+extern void ext_004E8570(void);
+extern void ext_00596660(void* self, void** out, void* a2, int32_t* first, void* a4, int32_t* last);
+extern void ext_0060B460(void);
+extern void ext_006A5C5C(void);
+
+void __thiscall fn_0060B320(void* self, uint32_t /*arg1*/, uint32_t /*arg2*/) {
+    if (!self) {
+        ext_004E8570();
+        ext_00596660(nullptr, nullptr, nullptr, nullptr, nullptr, nullptr);
+        ext_0060B460();
+        ext_006A5C5C();
+        return;
+    }
+    uint8_t* vec = static_cast<uint8_t*>(self) + 0xC;
+    uint32_t local_c = 0;
+
+    uint32_t edi = *reinterpret_cast<uint32_t*>(vec + 0x8);
+    if (*reinterpret_cast<uint32_t*>(vec + 0x4) > edi) {
+        mem_00925134();
+    }
+    uint32_t ebp = *reinterpret_cast<uint32_t*>(vec + 0x4);
+    if (ebp > *reinterpret_cast<uint32_t*>(vec + 0x8)) {
+        mem_00925134();
+    }
+
+    int32_t count = static_cast<int32_t>(edi - ebp) >> 2;
+    ext_0060B0F0(ebp, edi, count, local_c);
+
+    edi = *reinterpret_cast<uint32_t*>(vec + 0x8);
+    local_c &= ~0xFFu;
+    if (*reinterpret_cast<uint32_t*>(vec + 0x4) > edi) {
+        mem_00925134();
+    }
+    ebp = *reinterpret_cast<uint32_t*>(vec + 0x4);
+    if (ebp > *reinterpret_cast<uint32_t*>(vec + 0x8)) {
+        mem_00925134();
+    }
+
+    ext_0060A240(ebp, edi, local_c);
+}
+} // namespace lift_0060B320

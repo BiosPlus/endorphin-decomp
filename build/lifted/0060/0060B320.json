@@ -1,0 +1,28 @@
+{
+  "va": "0x0060B320",
+  "size": 128,
+  "orig_symbol": "NMData::DisabledCollisionPairList::vfunc_0_off_4",
+  "src_path": "src/NMData/DisabledCollisionPairList.cpp",
+  "lifted_path": "lifted/NMData/DisabledCollisionPairList.cpp",
+  "name": "NMData::DisabledCollisionPairList::vfunc_0_off_4",
+  "class": "NMData::DisabledCollisionPairList",
+  "signature": "void __thiscall fn_0060B320(void* self, uint32_t /*arg1*/, uint32_t /*arg2*/)",
+  "summary": "Iterates over the internal pointer vector to invoke sub_0060B0F0 and sub_0060A240.",
+  "fields": [
+    {
+      "class": "NMData::DisabledCollisionPairList",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "NMData::DisabledCollisionPairList",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:16:50Z"
+}
