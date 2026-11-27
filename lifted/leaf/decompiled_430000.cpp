@@ -4031,3 +4031,32 @@ void fn_0043DDF0(void* self, double a) {
     ext_00466BA0(sub, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(pair)), 0u);
 }
 } // namespace lift_0043DDF0
+
+// [0x0043B450] sub_0043B450 (123 bytes)
+namespace lift_0043B450 {
+// Known callee 0x0066A310: identityVec4Init (Writes the 4-float vector (0, 0, 0, 1) into the object at self (identity quaternion-style init).)
+extern void ext_0066A310(void* self);
+
+// @name Unknown::initFourVec4Members
+// @class Unknown
+// @summary Calls identityVec4Init on six vec4 sub-objects at self+0x24..+0x74 (stride 0x10).
+// @field Unknown +0x24 float[4] field_0x24
+// @field Unknown +0x34 float[4] field_0x34
+// @field Unknown +0x44 float[4] field_0x44
+// @field Unknown +0x54 float[4] field_0x54
+// @field Unknown +0x64 float[4] field_0x64
+// @field Unknown +0x74 float[4] field_0x74
+void fn_0043B450(void* self) {
+    // The original SEH frame setup/teardown and the [esp+0x10] index stores are
+    // exception-handling bookkeeping only; they are not observable and are dropped.
+    // Each call receives the sub-object address in ecx (thiscall), so it is passed
+    // as the first argument to the callee.
+    auto base = static_cast<unsigned char*>(self);
+    ext_0066A310(base + 0x24);
+    ext_0066A310(base + 0x34);
+    ext_0066A310(base + 0x44);
+    ext_0066A310(base + 0x54);
+    ext_0066A310(base + 0x64);
+    ext_0066A310(base + 0x74);
+}
+} // namespace lift_0043B450

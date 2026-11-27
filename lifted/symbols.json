@@ -3954,6 +3954,13 @@
     "summary": "Copies four 32-bit floats (16 bytes) from the source block into self and returns self.",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
   },
+  "0x0043B450": {
+    "name": "Unknown::initFourVec4Members",
+    "class": "Unknown",
+    "signature": "void fn_0043B450(void* self)",
+    "summary": "Calls identityVec4Init on six vec4 sub-objects at self+0x24..+0x74 (stride 0x10).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043B560": {
     "name": "PushHeapSiftUpByDiff",
     "signature": "void fn_0043B560(uint32_t* arr, int32_t hole, int32_t top, uint32_t value)",
