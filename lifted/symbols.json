@@ -81546,6 +81546,12 @@
     "summary": "Empty function (returns immediately).",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x0085E3A0": {
+    "name": "NormalizeStringInPlace",
+    "signature": "void fn_0085E3A0(void* self)",
+    "summary": "Strips leading control/space chars (\u003c= 0x20) by shifting the string left, turns each ';' into NUL, then strips trailing control/space chars.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085E420": {
     "name": "MemMoveOverlapSafe",
     "signature": "void fn_0085E420(void* dst, const void* src, size_t n)",

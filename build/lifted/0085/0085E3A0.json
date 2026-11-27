@@ -1,0 +1,13 @@
+{
+  "va": "0x0085E3A0",
+  "size": 128,
+  "orig_symbol": "sub_0085E3A0",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "NormalizeStringInPlace",
+  "signature": "void fn_0085E3A0(void* self)",
+  "summary": "Strips leading control/space chars (\u003c= 0x20) by shifting the string left, turns each ';' into NUL, then strips trailing control/space chars.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:16:19Z"
+}

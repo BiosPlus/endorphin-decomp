@@ -1510,3 +1510,41 @@ extern uint32_t fn_0085BEC0(uint32_t key, void* self) {
     return 0;
 }
 } // namespace lift_0085BEC0
+
+// [0x0085E3A0] sub_0085E3A0 (128 bytes)
+namespace lift_0085E3A0 {
+// Known callee 0x0085E1F0: strlen (Returns the length of a NUL-terminated byte string (equivalent to C strlen).)
+extern uint32_t ext_0085E1F0(const char* str);
+// Known callee 0x0085E420: MemMoveOverlapSafe (Copies n bytes from src to dst, handling overlapping ranges (memmove semantics) by copying backward when dst lies inside [src, src+n).)
+extern void ext_0085E420(void* dst, const void* src, size_t n);
+
+// @name NormalizeStringInPlace
+// @summary Strips leading control/space chars (<= 0x20) by shifting the string left, turns each ';' into NUL, then strips trailing control/space chars.
+void fn_0085E3A0(void* self) {
+    char* s = static_cast<char*>(self);
+
+    // Strip leading chars <= 0x20 (signed compare, as in the original jg).
+    if (ext_0085E1F0(s) != 0 && static_cast<signed char>(s[0]) <= 0x20) {
+        for (;;) {
+            ext_0085E420(s, s + 1, ext_0085E1F0(s));
+            if (ext_0085E1F0(s) == 0) break;
+            if (static_cast<signed char>(s[0]) > 0x20) break;
+        }
+    }
+
+    // Replace every ';' with NUL within the original length.
+    const int32_t n = static_cast<int32_t>(ext_0085E1F0(s));
+    for (int32_t i = 0; i < n; ++i) {
+        if (s[i] == ';') {
+            s[i] = '\0';
+        }
+    }
+
+    // Strip trailing chars <= 0x20.
+    int32_t i = static_cast<int32_t>(ext_0085E1F0(s)) - 1;
+    while (i >= 0 && static_cast<signed char>(s[i]) <= 0x20) {
+        s[i] = '\0';
+        --i;
+    }
+}
+} // namespace lift_0085E3A0
