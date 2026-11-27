@@ -293,6 +293,7 @@ struct Unknown_Fields {
     // +0x8   uint8_t field_0x08[] (Vector sub-object, passed as this to Vector_destroyAndReset)  (evidence: 0x004B5610) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 arg  (evidence: 0x004F0A90) // CONFLICT: multiple definitions at +0x8
     // +0x8   void**                   begin  (evidence: 0x00543220) // CONFLICT: multiple definitions at +0x8
+    // +0x8   char* field_0x08 (owned string pointer, replaced on each call)  (evidence: 0x007110C0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    child  (evidence: 0x0041C710, 0x00441020, 0x0044B660, 0x0044B680, 0x0044B760, 0x0053A5E0, 0x005A2BD0, 0x00682DE0, 0x00687230) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    child_b  (evidence: 0x00586440) // CONFLICT: multiple definitions at +0x8
     // +0x8   int32_t                  chunkSize  (evidence: 0x007BFC90) // CONFLICT: multiple definitions at +0x8

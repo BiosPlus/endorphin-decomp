@@ -71686,6 +71686,13 @@
     "summary": "Returns 1 if the given byte is not a double-quote character (0x22), 0 otherwise.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x007110C0": {
+    "name": "AssignStrdupReplace_007110C0",
+    "class": "Unknown",
+    "signature": "void fn_007110C0(void* self, const char* src)",
+    "summary": "Frees the string held at +0x8 and replaces it with a malloc'd copy of src (NUL-terminated); sets +0x8 to null when src is null or empty.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00711200": {
     "name": "sub_00711200",
     "signature": "extern \"C\" void* __fastcall fn_00711200(void* self, int edx_unused, unsigned int flags)",

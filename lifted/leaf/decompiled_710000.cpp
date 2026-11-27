@@ -2286,3 +2286,30 @@ uint8_t fn_0071130C(void* self, uint32_t arg1) {
     }
 }
 } // namespace lift_0071130C
+
+// [0x007110C0] sub_007110C0 (128 bytes)
+namespace lift_007110C0 {
+// IAT slots used by the original code: MSVCR80!free and MSVCR80!malloc.
+extern void (*mem_009251D8)(void* p);
+extern void* (*mem_00925208)(size_t n);
+
+// @name AssignStrdupReplace_007110C0
+// @class Unknown
+// @summary Frees the string held at +0x8 and replaces it with a malloc'd copy of src (NUL-terminated); sets +0x8 to null when src is null or empty.
+// @field Unknown +0x08 char* field_0x08 (owned string pointer, replaced on each call)
+void fn_007110C0(void* self, const char* src) {
+    char*& slot = lift_field<char*>(self, 0x8);
+
+    mem_009251D8(slot);
+
+    if (src == nullptr || *src == '\0') {
+        slot = nullptr;
+        return;
+    }
+
+    size_t size = std::strlen(src) + 1;
+    char* copy = static_cast<char*>(mem_00925208(size));
+    slot = copy;
+    std::memcpy(copy, src, size);
+}
+} // namespace lift_007110C0

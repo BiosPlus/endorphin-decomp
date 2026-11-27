@@ -1,0 +1,22 @@
+{
+  "va": "0x007110C0",
+  "size": 128,
+  "orig_symbol": "sub_007110C0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "AssignStrdupReplace_007110C0",
+  "class": "Unknown",
+  "signature": "void fn_007110C0(void* self, const char* src)",
+  "summary": "Frees the string held at +0x8 and replaces it with a malloc'd copy of src (NUL-terminated); sets +0x8 to null when src is null or empty.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "char* field_0x08 (owned string pointer, replaced on each",
+      "name": "call)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:12:29Z"
+}
