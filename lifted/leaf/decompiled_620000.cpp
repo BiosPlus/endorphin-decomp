@@ -3291,8 +3291,8 @@ extern void ext_006A7250();
 // @field Unknown +0x70 double offset
 float fn_0062E2D0(void* self, const float* v) {
     // Virtual call through vtable slot at +0x6C (no arguments, return value discarded).
-    void** vtable = lift_field<void**>(self, 0);
-    auto slot = reinterpret_cast<void(__thiscall*)(void*)>(vtable[0x6C / sizeof(void*)]);
+    void* vtable = lift_field<void*>(self, 0);
+    auto slot = reinterpret_cast<void(__thiscall*)(void*)>(lift_field<void*>(vtable, 0x6C));
     slot(self);
 
     const double a = lift_field<double>(self, 0x60);
