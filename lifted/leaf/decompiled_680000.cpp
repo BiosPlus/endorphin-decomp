@@ -2195,3 +2195,25 @@ void* fn_00683090() {
     return static_cast<void*>(mem_00B5AD24);
 }
 } // namespace lift_00683090
+
+// [0x006807A0]
+namespace lift_006807A0 {
+// @name sub_006807A0
+// @summary Copy constructor for a std::logic_error-derived exception with a std::string at +0x28 and a 32-bit field at +0x44.
+// @field Exception +0x00 uint32_t vftable
+// @field Exception +0x28 std::string field_0x28
+// @field Exception +0x44 uint32_t field_0x44
+
+
+extern void* __thiscall ext_00401C60(void* self, const void* other);
+extern uintptr_t mem_00924FE0;
+
+void* __thiscall sub_006807A0(void* self, const void* other) {
+    ext_00401C60(self, other);
+    lift_field<uint32_t>(self, 0x00) = 0x0098CC20;
+    auto string_copy_ctor = reinterpret_cast<void* (__thiscall*)(void*, const void*)>(mem_00924FE0);
+    string_copy_ctor(static_cast<uint8_t*>(self) + 0x28, static_cast<const uint8_t*>(other) + 0x28);
+    lift_field<uint32_t>(self, 0x44) = lift_field<const uint32_t>(other, 0x44);
+    return self;
+}
+} // namespace lift_006807A0

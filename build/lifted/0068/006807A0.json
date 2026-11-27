@@ -1,0 +1,33 @@
+{
+  "va": "0x006807A0",
+  "size": 94,
+  "orig_symbol": "sub_006807A0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "sub_006807A0",
+  "signature": "void* __thiscall sub_006807A0(void* self, const void* other)",
+  "summary": "Copy constructor for a std::logic_error-derived exception with a std::string at +0x28 and a 32-bit field at +0x44.",
+  "fields": [
+    {
+      "class": "Exception",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable"
+    },
+    {
+      "class": "Exception",
+      "offset": "+0x28",
+      "type": "std::string",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Exception",
+      "offset": "+0x44",
+      "type": "uint32_t",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:53:19Z"
+}
