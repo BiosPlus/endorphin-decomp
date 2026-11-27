@@ -280,3 +280,37 @@ void fn_00551DE0(void* self) {
     *reinterpret_cast<uint8_t*>(base + 0x2C) = 1;
 }
 } // namespace lift_00551DE0
+
+// [0x00551DA0] NMCamera::Orthogonal::vfunc_2 (59 bytes)
+namespace lift_00551DA0 {
+// Known callee 0x00427550: ResetChildAndAssignName (Clears the owned objects of the object referenced by this+0x00, then assigns the given C string as the child name via assignOrCreateChild.)
+// Known callee 0x00548A20: Camera::vfunc_2
+// Callee 0x00640110: sub_00640110 (296B), thiscall(self, u32) -> u32
+extern uint32_t ext_00640110(void* self, uint32_t arg);
+extern void ext_00427550(void* self, const char* name);
+extern void ext_00548A20(void* self, void* arg);
+extern int mem_00A9FA6C;
+extern int mem_00924FF0;
+
+// @name NMCamera::Orthogonal::vfunc_2
+// @class NMCamera::Orthogonal
+// @summary Resolves a child object via sub_00640110 using the global at 0x00A9FA6C, sets its name from the global std::string at 0x00AF7470, then forwards to Camera::vfunc_2.
+void fn_00551DA0(void* self, void* arg) {
+    // eax = [0x00A9FA6C]
+    const uint32_t global_value = static_cast<uint32_t>(mem_00A9FA6C);
+
+    // sub_00640110 is thiscall: ecx = arg, stack = global_value; result is stored in the arg slot.
+    uint32_t child = ext_00640110(arg, global_value);
+
+    // c_str of the global std::string at 0x00AF7470, via the function pointer stored at 0x00924FF0.
+    using c_str_fn = const char* (*)(void*);
+    const auto c_str = reinterpret_cast<c_str_fn>(static_cast<uintptr_t>(mem_00924FF0));
+    const char* name = c_str(reinterpret_cast<void*>(static_cast<uintptr_t>(0x00AF7470u)));
+
+    // ResetChildAndAssignName(&child, name): ecx = &child (the local slot).
+    ext_00427550(&child, name);
+
+    // Camera::vfunc_2(this, arg): ecx = self (esi), stack = arg.
+    ext_00548A20(self, arg);
+}
+} // namespace lift_00551DA0

@@ -1,0 +1,14 @@
+{
+  "va": "0x00551DA0",
+  "size": 59,
+  "orig_symbol": "NMCamera::Orthogonal::vfunc_2",
+  "src_path": "src/NMCamera/Orthogonal.cpp",
+  "lifted_path": "lifted/NMCamera/Orthogonal.cpp",
+  "name": "NMCamera::Orthogonal::vfunc_2",
+  "class": "NMCamera::Orthogonal",
+  "signature": "void fn_00551DA0(void* self, void* arg)",
+  "summary": "Resolves a child object via sub_00640110 using the global at 0x00A9FA6C, sets its name from the global std::string at 0x00AF7470, then forwards to Camera::vfunc_2.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:40:27Z"
+}

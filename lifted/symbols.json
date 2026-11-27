@@ -36714,6 +36714,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00551A20 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMCamera/auto_tiny.cpp"
   },
+  "0x00551DA0": {
+    "name": "NMCamera::Orthogonal::vfunc_2",
+    "class": "NMCamera::Orthogonal",
+    "signature": "void fn_00551DA0(void* self, void* arg)",
+    "summary": "Resolves a child object via sub_00640110 using the global at 0x00A9FA6C, sets its name from the global std::string at 0x00AF7470, then forwards to Camera::vfunc_2.",
+    "lifted_path": "lifted/NMCamera/Orthogonal.cpp"
+  },
   "0x00551DE0": {
     "name": "NMCamera::Orthogonal::vfunc_17",
     "class": "NMCamera::Orthogonal",
