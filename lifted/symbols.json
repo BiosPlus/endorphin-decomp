@@ -32588,6 +32588,13 @@
     "summary": "Runtime type check: dynamic-casts self to the type at mem_00A402C4 (source type mem_00A2E2F8) and returns the result or NULL.",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x0059EB60": {
+    "name": "ExprParser::ReadWriteMethodType::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::CharacterData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::CharacterData::`vcall'{96, {flat}}, 4}\u003e",
+    "signature": "void fn_0059EB60(void* holder, void* arg2)",
+    "summary": "Forwards two stack args through a helper into a virtual slot-24 call on the held object at +0x04; throws if the holder pointer is null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x0059EBF0": {
     "name": "ExprParser::ReadWriteMethodType\u003cCharacterData\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::CharacterData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::CharacterData::`vcall'{96, {flat}}, 4}\u003e",

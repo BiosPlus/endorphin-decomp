@@ -10,6 +10,7 @@ namespace lifted_layout {
 struct ExprParser_ReadWriteMethodType_Fields {
     // +0x0   uint32_t                 field_0x00  (evidence: 0x0049C1E0, 0x0049F760, 0x004B6430, 0x004C0EB0, 0x004CEDE0, 0x004D1680, 0x004D1790, 0x004DCDB0, 0x00506F50, 0x00511E70, 0x005852D0, 0x005AAD40, 0x005ABCE0, 0x005CCD90, 0x005D18F0, 0x005D1980, 0x005DCC80, 0x005DD340, 0x005E3CB0, 0x005EE600, 0x005EE690, 0x005F5C30, 0x005F6F00, 0x006747F0, 0x006831F0, 0x00683400, 0x00683510, 0x00685C20, 0x006860F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x0046E7B0, 0x004E9DE0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    holderObj  (evidence: 0x0059EB60) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    target  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x00633240) // CONFLICT: multiple definitions at +0x0
     // +0x4   void*                    accessor  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x005D2560, 0x00633240, 0x006332E0) // CONFLICT: multiple definitions at +0x4
     // +0x4   DWORD                    field_0x04  (evidence: 0x004EA2B0, 0x004ECCF0, 0x005B8870) // CONFLICT: multiple definitions at +0x4
@@ -22,5 +23,6 @@ struct ExprParser_ReadWriteMethodType_Fields {
     // +0x4   DWORD                    pMethodType  (evidence: 0x00511FE0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    staticAccessor  (evidence: 0x005D1CE0) // CONFLICT: multiple definitions at +0x4
     // +0x4   DWORD                    staticObjectPtr  (evidence: 0x004E9E30) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    wrappedObj  (evidence: 0x0059EB60) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout

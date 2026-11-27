@@ -19843,3 +19843,49 @@ extern void fn_006860F0(void* arg1, void* arg2) {
 }
 } // namespace lift_004C0EB0
 } // namespace lift_006860F0
+
+// [0x0059EB60] ExprParser::ReadWriteMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::CharacterData::`vcall'{96, {flat}}, 4}>::vfunc_41 (135 bytes)
+namespace lift_0059EB60 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (Calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg.)
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x0064F8F0: VirtualSlot24Thunk (Loads the object's vtable pointer and dispatches through vtable slot 24 (offset +0x60), tail-jumping with the caller's arguments.)
+extern void ext_0064F8F0(void* self, uint32_t arg);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, uint32_t throwInfo);
+// IAT slot holding the MSVCP80 std::basic_string<char> destructor address.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::CharacterData::`vcall'{96, {flat}}, 4}>
+// @summary Forwards two stack args through a helper into a virtual slot-24 call on the held object at +0x04; throws if the holder pointer is null.
+// @field ExprParser::ReadWriteMethodType +0x00 void* holderObj
+// @field ExprParser::ReadWriteMethodType +0x04 void* wrappedObj
+void fn_0059EB60(void* holder, void* arg2) {
+    // esi = *holder; the held object is the first dword of the holder.
+    void* esi = *reinterpret_cast<void**>(holder);
+    if (esi == nullptr) {
+        // Null holder: construct the exception into a local slot and throw it.
+        uint8_t exc[0x20] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+        return;
+    }
+
+    // Local std::string temporary (esp+4 in the original frame).
+    uint8_t tmp[0x20] = {};
+    uint32_t arg1Val = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(holder));
+    uint32_t arg2Val = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg2));
+    uint32_t r = ext_0046E780(tmp, arg2Val, arg1Val);
+
+    // Dispatch slot 24 on the object at esi+0x04 with the helper result.
+    void* wrapped = reinterpret_cast<uint8_t*>(esi) + 0x04;
+    ext_0064F8F0(wrapped, r);
+
+    // Destroy the temporary via the IAT-bound MSVCP80 string destructor.
+    using DtorFn = void(*)(void*);
+    DtorFn dtor = reinterpret_cast<DtorFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    dtor(tmp);
+}
+} // namespace lift_0059EB60
