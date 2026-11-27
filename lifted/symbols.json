@@ -19160,6 +19160,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0043D780 (AllocAndInitRecord).",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
+  "0x004EC160": {
+    "name": "StringMapTree::eraseSubtree",
+    "class": "StringMapTree",
+    "signature": "void __thiscall fn_004EC160(void* self, void* nodePtr)",
+    "summary": "Recursively erases a red-black tree subtree of std::string key-value nodes",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004EC380": {
     "name": "TreeMap::find",
     "class": "TreeMap",
@@ -19419,6 +19426,13 @@
     "name": "StringRangesEqualChecked",
     "signature": "extern void (*mem_00925134)();  // MSVCR80!_invalid_parameter_noinfo (IAT slot) bool fn_004EFB20(const uint8_t* first1, const uint8_t* last1, void* range, const uint8_t* first2)",
     "summary": "std::equal over two 28-byte std::string ranges; first2 + count*28 must lie within the bounds at `range` (else CRT invalid-parameter), returns true when all elements match.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
+  "0x004EFDF0": {
+    "name": "StringPairList::clear",
+    "class": "StringPairList",
+    "signature": "void __thiscall fn_004EFDF0(void* self)",
+    "summary": "Clears all nodes in a doubly-linked list of string pairs and resets size to zero.",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
   "0x004EFE80": {
@@ -27016,6 +27030,13 @@
     "signature": "int __thiscall fn_0054C0F0(void* this_ptr, int arg)",
     "summary": "Checks if any child element in the list returns non-zero from vfunc_18(arg)",
     "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
+  },
+  "0x0054C160": {
+    "name": "RenderableList::vfunc_22",
+    "class": "RenderableList",
+    "signature": "void __thiscall fn_0054C160(void* self, uint32_t arg1)",
+    "summary": "Iterates over child renderables when enabled, bracketed by global renderer vfunc_2/vfunc_3 calls, invoking vfunc_22 on each.",
+    "lifted_path": "lifted/classes/RenderableList.cpp"
   },
   "0x0054C1F0": {
     "name": "ManagedDisplayList\u003cRenderableList\u003e::callVfunc1OnEach",

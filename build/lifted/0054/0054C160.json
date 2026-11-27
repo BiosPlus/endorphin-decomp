@@ -1,0 +1,34 @@
+{
+  "va": "0x0054C160",
+  "size": 130,
+  "orig_symbol": "RenderableList::vfunc_22",
+  "src_path": "src/classes/RenderableList.cpp",
+  "lifted_path": "lifted/classes/RenderableList.cpp",
+  "name": "RenderableList::vfunc_22",
+  "class": "RenderableList",
+  "signature": "void __thiscall fn_0054C160(void* self, uint32_t arg1)",
+  "summary": "Iterates over child renderables when enabled, bracketed by global renderer vfunc_2/vfunc_3 calls, invoking vfunc_22 on each.",
+  "fields": [
+    {
+      "class": "RenderableList",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "RenderableList",
+      "offset": "+0x18",
+      "type": "uint32_t*",
+      "name": "field_0x18"
+    },
+    {
+      "class": "RenderableList",
+      "offset": "+0x1C",
+      "type": "uint32_t*",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:20:52Z"
+}
