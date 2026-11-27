@@ -77312,6 +77312,12 @@
     "summary": "Calls vslot+0x24 on the child at this+0x10 (result t), then vslot+0x14 with (a1, 0x10) returning its result r, then vslot+0x28 with t; returns r.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
+  "0x00725B50": {
+    "name": "parseVector7Fields",
+    "signature": "extern \"C\" void __fastcall fn_00725B50(void* self, void* /*edx*/, StrArg76 str_arg)",
+    "summary": "Parses seven 32-bit fields at +0x1CC..+0x1E4 from a string argument via sscanf.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x00725DE0": {
     "name": "xorChainBlock16",
     "signature": "void sub_00725DE0(uint8_t* buf, const uint8_t* key)",
