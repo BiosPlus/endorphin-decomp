@@ -473,3 +473,43 @@ void fn_005C16C0(void* self) {
     ext_005C1310(obj, mem_00B40640, clamped);
 }
 } // namespace lift_005C16C0
+
+// [0x005C01A0] NMData::MetaBodyData::vfunc_4_off_C (85 bytes)
+namespace lift_005C01A0 {
+// Callee sub_005B1AB0 (165B): thiscall, one stack argument; signature not yet recovered.
+extern void ext_005B1AB0(void* self, uint32_t arg);
+// Known callee 0x005BEDD0: Unknown::notifyAcceptingEntries (Walks the intrusive list whose sentinel is at +0x15C; for each entry whose object at node+0x28 accepts (vtable +0x6C), forwards arg to its subobject at +0x0C (vtable +0x10).)
+extern void ext_005BEDD0(void* self, uint32_t arg);
+// Callee sub_005BFA80 (329B): thiscall, two stack arguments; signature not yet recovered.
+extern void ext_005BFA80(void* self, void* a1, uint32_t a2);
+// Known callee 0x005B11F0: OglRenderer::vfunc_118 (4B); thiscall, returns a value in EAX.
+extern void* ext_005B11F0(void* self);
+
+// @name NMData::MetaBodyData::vfunc_4_off_C
+// @class NMData::MetaBodyData
+// @summary Stdcall (ret 4) method: if the sub-object at +0x14C is set, forwards the argument to ext_005B1AB0 on its +0x24 subobject, then virtual slot 0x34 of the object at +0x04 (fed by ext_005B11F0); finally forwards to ext_005BFA80 and ext_005BEDD0 on this-0x0C.
+// @field NMData::MetaBodyData +0x04 void* field_0x04
+// @field NMData::MetaBodyData +0x14C void* field_0x14C
+void fn_005C01A0(void* self, uint32_t arg) {
+    void* sub = lift_field<void*>(self, 0x14C);
+    if (sub == nullptr) {
+        return;
+    }
+
+    void* subEdi = static_cast<uint8_t*>(sub) + 0x24;
+    ext_005B1AB0(subEdi, arg);
+
+    void* obj = lift_field<void*>(self, 0x04);
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        void* r = ext_005B11F0(subEdi);
+        void* slotAddr = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtbl) + 0x34);
+        auto slot = reinterpret_cast<void (*)(void*, void*)>(slotAddr);
+        slot(obj, r);
+    }
+
+    void* base = static_cast<uint8_t*>(self) - 0x0C;
+    ext_005BFA80(base, subEdi, arg);
+    ext_005BEDD0(base, arg);
+}
+} // namespace lift_005C01A0

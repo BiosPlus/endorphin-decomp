@@ -1,0 +1,28 @@
+{
+  "va": "0x005C01A0",
+  "size": 85,
+  "orig_symbol": "NMData::MetaBodyData::vfunc_4_off_C",
+  "src_path": "src/NMData/MetaBodyData.cpp",
+  "lifted_path": "lifted/NMData/MetaBodyData.cpp",
+  "name": "NMData::MetaBodyData::vfunc_4_off_C",
+  "class": "NMData::MetaBodyData",
+  "signature": "void fn_005C01A0(void* self, uint32_t arg)",
+  "summary": "Stdcall (ret 4) method: if the sub-object at +0x14C is set, forwards the argument to ext_005B1AB0 on its +0x24 subobject, then virtual slot 0x34 of the object at +0x04 (fed by ext_005B11F0); finally forwards to ext_005BFA80 and ext_005BEDD0 on this-0x0C.",
+  "fields": [
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x14C",
+      "type": "void*",
+      "name": "field_0x14C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:44:43Z"
+}
