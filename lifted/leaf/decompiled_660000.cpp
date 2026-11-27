@@ -2806,3 +2806,46 @@ void fn_006668B0(void* self) {
     string_dtor(base + 0x00);
 }
 } // namespace lift_006668B0
+
+// [0x00664ED0] sub_00664ED0 (120 bytes)
+namespace lift_00664ED0 {
+// Known callee 0x00664CD0: upperCopyRangeToPair (Builds a TextRange from (a3,a4) and the span length, stores it to out, then uppercase-copies [first,last) into dest; returns out.)
+// The original call site pushes eight dwords (out + seven values); the argument list below mirrors those pushes.
+extern void ext_00664CD0(void* out, uint32_t p1, uint32_t p2, uint32_t p3, uint32_t p4, uint32_t p5, void* p6, void* p7);
+// MSVCP80 IAT slots for std::string::begin() / end(). Not invoked here: the iterator bounds are read directly
+// from the MSVC std::string layout (see body).
+extern int mem_009250D0;
+extern int mem_0092511C;
+
+// @name upperCopyStringRange
+// @class <none>
+// @summary Gathers the bounds of a std::string (MSVC layout) and forwards them to upperCopyRangeToPair; returns the string pointer.
+// @field std::string +0x00 uint8_t buf_or_ptr
+// @field std::string +0x10 uint32_t size
+// @field std::string +0x14 uint32_t res
+void* fn_00664ED0(void* self) {
+    uint8_t* s = static_cast<uint8_t*>(self);
+
+    const uint32_t size = lift_field<uint32_t>(s, 0x10);
+    const uint32_t res = lift_field<uint32_t>(s, 0x14);
+    // SSO: buffer lives inline while capacity < 16, otherwise the first dword is the heap pointer.
+    uint8_t* first = res >= 16 ? lift_field<uint8_t*>(s, 0x00) : s;
+    uint8_t* last = first + size;
+
+    // Original begin/end IAT slots are superseded by the layout reads above.
+    (void)&mem_009250D0;
+    (void)&mem_0092511C;
+
+    uint8_t flag = 0;
+    uint32_t out[4] = {};
+    ext_00664CD0(out,
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(first)),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(last)),
+                 0,
+                 0,
+                 static_cast<uint32_t>(flag),
+                 self,
+                 self);
+    return self;
+}
+} // namespace lift_00664ED0

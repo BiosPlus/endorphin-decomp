@@ -1,0 +1,34 @@
+{
+  "va": "0x00664ED0",
+  "size": 120,
+  "orig_symbol": "sub_00664ED0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "upperCopyStringRange",
+  "class": "\u003cnone\u003e",
+  "signature": "void* fn_00664ED0(void* self)",
+  "summary": "Gathers the bounds of a std::string (MSVC layout) and forwards them to upperCopyRangeToPair; returns the string pointer.",
+  "fields": [
+    {
+      "class": "std::string",
+      "offset": "+0x0",
+      "type": "uint8_t",
+      "name": "buf_or_ptr"
+    },
+    {
+      "class": "std::string",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "size"
+    },
+    {
+      "class": "std::string",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "res"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:12:55Z"
+}

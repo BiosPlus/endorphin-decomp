@@ -47772,6 +47772,13 @@
     "summary": "Packs two args into a pair, calls sub_0065F7F0 with (a3 - a2) to produce two result words, stores them into the out pointer, then calls sub_00664BA0 with masked a3 and returns the out pointer.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00664ED0": {
+    "name": "upperCopyStringRange",
+    "class": "\u003cnone\u003e",
+    "signature": "void* fn_00664ED0(void* self)",
+    "summary": "Gathers the bounds of a std::string (MSVC layout) and forwards them to upperCopyRangeToPair; returns the string pointer.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x006657F0": {
     "name": "Unknown::InitVtblAndArg",
     "class": "Unknown",
