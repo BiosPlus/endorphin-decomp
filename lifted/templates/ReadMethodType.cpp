@@ -68737,3 +68737,43 @@ bool __stdcall fn_006839F0(void* arg1, void* arg2) {
 }
 } // namespace lift_004D8860
 } // namespace lift_006839F0
+
+// [0x005051F0]
+namespace lift_005051F0 {
+// @name ExprParser::ReadMethodType<Interpreter, int, &Interpreter::bogus, 0>::vfunc_47
+// @class ExprParser::ReadMethodType
+// @summary Validates a non-null target pointer, initializes a temporary wrapper via ext_0041CF50, and invokes vfunc +0xbc on field_0x04; throws DerivedException if null.
+// @field Target +0x00 void* field_0x00
+// @field Target +0x04 void* field_0x04
+
+
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern void* __thiscall ext_006720C0(void* self, void* arg);
+extern void* __thiscall ext_0046C3C0(void* self);
+extern void __cdecl ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+void __thiscall fn_005051F0(void* self, void* target) {
+    (void)self;
+    if (lift_field<void*>(target, 0x00) == nullptr) {
+        uint8_t exc[0x28]{};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+        return;
+    }
+
+    void* local[2]{};
+    ext_006720C0(local, nullptr);
+    ext_0041CF50(target, local);
+
+    if (local[1] != nullptr) {
+        auto** vtable = *reinterpret_cast<void***>(local[1]);
+        auto release = reinterpret_cast<void(__thiscall*)(void*, void*)>(vtable[0x78 / 4]);
+        release(local[1], local);
+    }
+
+    void* field4 = lift_field<void*>(target, 0x04);
+    auto** vtable = *reinterpret_cast<void***>(field4);
+    auto vfunc_bc = reinterpret_cast<void(__thiscall*)(void*, void*)>(vtable[0xBC / 4]);
+    vfunc_bc(field4, target);
+}
+} // namespace lift_005051F0

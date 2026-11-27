@@ -20456,6 +20456,13 @@
     "summary": "Constructor: calls base ctor 0x00692B50, sets vtables at +0x00/+0x04/+0x18, default-constructs string at +0x1c, zeroes +0x38..+0x4c.",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
+  "0x004ED6B0": {
+    "name": "sub_004ED6B0_dtor",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_004ED6B0(void* this_ptr)",
+    "summary": "Destructor that resets vtables, tidies a std::vector\u003cstd::string\u003e at +0x3c, destroys a std::string at +0x1c, and calls base destructor 0x00692BA0.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004ED750": {
     "name": "Unknown::ctor_004ED750",
     "class": "Unknown",
@@ -22288,6 +22295,13 @@
     "class": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e",
     "signature": "static inline const void* throwInfo_009DEC1C()",
     "summary": "If the object's first dword is non-zero, throw the default-message exception; otherwise build a DerivedException and throw it.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005051F0": {
+    "name": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026Interpreter::bogus, 0\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType",
+    "signature": "void __thiscall fn_005051F0(void* self, void* target)",
+    "summary": "Validates a non-null target pointer, initializes a temporary wrapper via ext_0041CF50, and invokes vfunc +0xbc on field_0x04; throws DerivedException if null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00505290": {

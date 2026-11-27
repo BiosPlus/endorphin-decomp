@@ -1,0 +1,28 @@
+{
+  "va": "0x005051F0",
+  "size": 150,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e::vfunc_47",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026Interpreter::bogus, 0\u003e::vfunc_47",
+  "class": "ExprParser::ReadMethodType",
+  "signature": "void __thiscall fn_005051F0(void* self, void* target)",
+  "summary": "Validates a non-null target pointer, initializes a temporary wrapper via ext_0041CF50, and invokes vfunc +0xbc on field_0x04; throws DerivedException if null.",
+  "fields": [
+    {
+      "class": "Target",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Target",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:15:34Z"
+}
