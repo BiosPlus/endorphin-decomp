@@ -1,0 +1,64 @@
+{
+  "va": "0x0056E630",
+  "size": 689,
+  "orig_symbol": "BVHIO::vfunc_11",
+  "src_path": "src/classes/BVHIO.cpp",
+  "lifted_path": "lifted/classes/BVHIO.cpp",
+  "name": "BVHIO::vfunc_11",
+  "class": "BVHIO",
+  "signature": "void __thiscall fn_0056E630(void* this_ptr, void* filename_str)",
+  "summary": "Loads motion data frames from a BVH file stream into the BVHIO object and updates timeline FPS.",
+  "fields": [
+    {
+      "class": "BVHIO",
+      "offset": "+0x108",
+      "type": "int32_t",
+      "name": "field_0x108"
+    },
+    {
+      "class": "BVHIO",
+      "offset": "+0x10C",
+      "type": "int32_t",
+      "name": "field_0x10C"
+    },
+    {
+      "class": "BVHIO",
+      "offset": "+0x110",
+      "type": "int32_t",
+      "name": "field_0x110"
+    },
+    {
+      "class": "BVHIO",
+      "offset": "+0x114",
+      "type": "uint8_t",
+      "name": "field_0x114"
+    },
+    {
+      "class": "BVHIO",
+      "offset": "+0x420",
+      "type": "uint32_t",
+      "name": "timeline"
+    },
+    {
+      "class": "BVHIO",
+      "offset": "+0x424",
+      "type": "uint32_t",
+      "name": "progressCallback"
+    },
+    {
+      "class": "BVHIO",
+      "offset": "+0x42C",
+      "type": "uint8_t",
+      "name": "field_0x42C"
+    },
+    {
+      "class": "BVHIO",
+      "offset": "+0x46C",
+      "type": "uint32_t",
+      "name": "field_0x46C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:03:26Z"
+}

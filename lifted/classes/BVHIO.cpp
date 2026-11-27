@@ -632,3 +632,139 @@ void __thiscall fn_0056FD30(void* self, const std::string* filename) {
     }
 }
 } // namespace lift_0056FD30
+
+// [0x0056E630]
+namespace lift_0056E630 {
+// @name BVHIO::vfunc_11
+// @class BVHIO
+// @summary Loads motion data frames from a BVH file stream into the BVHIO object and updates timeline FPS.
+// @field BVHIO +0x108 int32_t field_0x108
+// @field BVHIO +0x10C int32_t field_0x10C
+// @field BVHIO +0x110 int32_t field_0x110
+// @field BVHIO +0x114 uint8_t field_0x114
+// @field BVHIO +0x420 uint32_t timeline
+// @field BVHIO +0x424 uint32_t progressCallback
+// @field BVHIO +0x42C uint8_t field_0x42C
+// @field BVHIO +0x46C uint32_t field_0x46C
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009250C4;
+extern uint32_t mem_00924FE8;
+extern uint32_t mem_009250EC;
+extern uint32_t mem_00924FC8;
+extern uint32_t mem_009250DC;
+extern uint32_t mem_009250D4;
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_009250F0;
+extern uint32_t mem_009250CC;
+extern uint32_t mem_00925134;
+extern uint32_t mem_009592D8;
+extern uint32_t mem_009592BC;
+extern uint32_t mem_009592B4;
+
+int32_t __thiscall ext_0055D0F0(void* self);
+void __thiscall ext_0056E1C0(void* self, uint32_t node, void* stream, int32_t frameIdx);
+void __thiscall ext_00661A10(void* self, float fps);
+void __thiscall ext_005576F0(void* self);
+
+void __thiscall fn_0056E630(void* this_ptr, void* filename_str) {
+    using c_str_fn = const char* (__thiscall*)(void*);
+    using ifstream_ctor_fn = void (__thiscall*)(void*, const char*, int32_t, int32_t);
+    using ifstream_dtor_fn = void (__thiscall*)(void*);
+    using string_ctor_fn = void (__thiscall*)(void*);
+    using string_ctor_cstr_fn = void (__thiscall*)(void*, const char*);
+    using string_dtor_fn = void (__thiscall*)(void*);
+    using istream_read_str_fn = void* (__cdecl*)(void*, void*);
+    using str_neq_cstr_fn = uint8_t (__cdecl*)(void*, const char*);
+    using ios_ok_fn = void* (__thiscall*)(void*);
+    using istream_read_int_fn = void* (__thiscall*)(void*, int32_t*);
+    using istream_read_float_fn = void* (__thiscall*)(void*, float*);
+
+    uint8_t ifstream_buf[0x8C]{};
+    uint8_t token_buf[0x1C]{};
+    uint8_t msg_buf[0x1C]{};
+
+    float frameTime = 0.0f;
+    int32_t frameCount = 0;
+
+    const char* filename = reinterpret_cast<c_str_fn>(mem_00924FF0)(filename_str);
+    reinterpret_cast<ifstream_ctor_fn>(mem_009250C4)(ifstream_buf, filename, 1, 0x40);
+    reinterpret_cast<string_ctor_fn>(mem_00924FE8)(token_buf);
+
+    auto read_until = [&](const char* target) {
+        for (;;) {
+            void* stream = reinterpret_cast<istream_read_str_fn>(mem_009250EC)(ifstream_buf, token_buf);
+            uint32_t* vtable = *reinterpret_cast<uint32_t**>(stream);
+            uint32_t vb_offset = vtable[1];
+            void* ios_ptr = reinterpret_cast<uint8_t*>(stream) + vb_offset;
+            if (!reinterpret_cast<ios_ok_fn>(mem_009250DC)(ios_ptr)) {
+                break;
+            }
+            if (!reinterpret_cast<str_neq_cstr_fn>(mem_00924FC8)(token_buf, target)) {
+                break;
+            }
+        }
+    };
+
+    read_until(reinterpret_cast<const char*>(&mem_009592D8));
+    reinterpret_cast<istream_read_int_fn>(mem_009250D4)(ifstream_buf, &frameCount);
+
+    uint32_t cb_addr = lift_field<uint32_t>(this_ptr, 0x424);
+    if (cb_addr != 0) {
+        void* cb = reinterpret_cast<void*>(cb_addr);
+        uint32_t* cb_vt = *reinterpret_cast<uint32_t**>(cb);
+        using cb_range_fn = void (__thiscall*)(void*, int32_t, int32_t);
+        using cb_msg_fn = void (__thiscall*)(void*, void*);
+
+        int32_t total = 0;
+        if (lift_field<uint8_t>(this_ptr, 0x114) != 0) {
+            int32_t f10c = lift_field<int32_t>(this_ptr, 0x10C);
+            int32_t f110 = lift_field<int32_t>(this_ptr, 0x110);
+            int32_t f108 = lift_field<int32_t>(this_ptr, 0x108);
+            total = (f110 + 3) * frameCount + (frameCount - 1) * f10c + f108;
+        } else {
+            total = frameCount * 3;
+        }
+        reinterpret_cast<cb_range_fn>(cb_vt[2])(cb, 0, total);
+
+        reinterpret_cast<string_ctor_cstr_fn>(mem_00924FE4)(msg_buf, reinterpret_cast<const char*>(&mem_009592BC));
+        reinterpret_cast<cb_msg_fn>(cb_vt[3])(cb, msg_buf);
+        reinterpret_cast<string_dtor_fn>(mem_00924FF4)(msg_buf);
+    }
+
+    read_until(reinterpret_cast<const char*>(&mem_009592B4));
+    reinterpret_cast<istream_read_float_fn>(mem_009250F0)(ifstream_buf, &frameTime);
+
+    if (frameCount - 1 >= 0) {
+        int32_t frameIdx = 0;
+        do {
+            frameIdx = ext_0055D0F0(reinterpret_cast<uint8_t*>(this_ptr) + 0x42C);
+            uint32_t* it = reinterpret_cast<uint32_t*>(lift_field<uint32_t>(this_ptr, 0x470));
+            uint32_t* end = reinterpret_cast<uint32_t*>(lift_field<uint32_t>(this_ptr, 0x474));
+            if (it > end) {
+                reinterpret_cast<void (__cdecl*)()>(mem_00925134)();
+            }
+            while (it != end) {
+                ext_0056E1C0(this_ptr, *it, ifstream_buf, frameIdx);
+                ++it;
+            }
+            uint32_t cb_loop_addr = lift_field<uint32_t>(this_ptr, 0x424);
+            if (cb_loop_addr != 0) {
+                void* cb = reinterpret_cast<void*>(cb_loop_addr);
+                uint32_t* cb_vt = *reinterpret_cast<uint32_t**>(cb);
+                using cb_step_fn = void (__thiscall*)(void*, int32_t);
+                reinterpret_cast<cb_step_fn>(cb_vt[1])(cb, frameIdx);
+            }
+        } while (frameIdx <= frameCount - 1);
+    }
+
+    float fps = 1.0f / frameTime;
+    void* timeline = reinterpret_cast<void*>(lift_field<uint32_t>(this_ptr, 0x420));
+    ext_00661A10(timeline, fps);
+    ext_005576F0(this_ptr);
+
+    reinterpret_cast<string_dtor_fn>(mem_00924FF4)(token_buf);
+    reinterpret_cast<ifstream_dtor_fn>(mem_009250CC)(ifstream_buf);
+}
+} // namespace lift_0056E630
