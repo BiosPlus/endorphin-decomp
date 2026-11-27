@@ -2593,3 +2593,63 @@ int32_t fn_006D36C0(void* self) {
     return result;
 }
 } // namespace lift_006D36C0
+
+// [0x006D6C20]
+namespace lift_006D6C20 {
+// @name UnknownClass_0099395c::dtor
+// @class UnknownClass_0099395c
+// @summary Destructor that resets vtable to 0x0099395c, resets flags/subobject, frees field_0xFC, destroys +0x100, and calls base destructor.
+// @field UnknownClass_0099395c +0x00 uint32_t vptr
+// @field UnknownClass_0099395c +0xFC void* field_0xFC
+// @field UnknownClass_0099395c +0x100 uint8_t field_0x100
+
+
+extern void __cdecl ext_006A5C5C(void* ptr);
+extern void __thiscall ext_006B9D70(void* self);
+extern void __thiscall ext_006D5A60(void* self);
+extern void __thiscall ext_006D6CB0(void* self);
+
+extern void __thiscall fn_006D6C20(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x0099395c;
+    ext_006D6CB0(self);
+
+    void* edi = lift_field<void*>(self, 0xFC);
+    if (edi != nullptr) {
+        void* inner = lift_field<void*>(edi, 0x04);
+        if (inner != nullptr) {
+            using deleting_dtor_fn = void(__thiscall*)(void*, int32_t);
+            auto vtable = lift_field<deleting_dtor_fn*>(inner, 0x00);
+            vtable[0](inner, 1);
+        }
+        lift_field<uint32_t>(edi, 0x04) = 0;
+        ext_006A5C5C(edi);
+    }
+
+    ext_006B9D70(static_cast<uint8_t*>(self) + 0x100);
+    ext_006D5A60(self);
+}
+} // namespace lift_006D6C20
+
+// [0x006D3750] sub_006D3750 (48 bytes)
+namespace lift_006D3750 {
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern void __thiscall ext_006D2170(void* self, int32_t index, const void* elem);
+
+// @name Unknown::queryAndInsertAtEnd_006D3750
+// @class Unknown
+// @summary Calls virtual slot 10 on self; if it returns nonzero, inserts that value into the embedded DynamicArray at +0x34.
+// @field Unknown +0x34 int32_t field_0x34
+int32_t fn_006D3750(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    using VirtualGetFn = int32_t(__thiscall*)(void*);
+    void** vtable = *reinterpret_cast<void***>(self);
+    VirtualGetFn getter = reinterpret_cast<VirtualGetFn>(vtable[10]);
+    int32_t value = getter(self);
+    if (value != 0) {
+        int32_t index = *reinterpret_cast<int32_t*>(base + 0x34);
+        int32_t elem = value;
+        ext_006D2170(base + 0x34, index, &elem);
+    }
+    return value;
+}
+} // namespace lift_006D3750

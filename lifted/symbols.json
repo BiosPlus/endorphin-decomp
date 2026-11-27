@@ -68233,6 +68233,13 @@
     "summary": "Calls vtable slot at +0x1c on self; if it returns nonzero, appends that value to the DynamicArray at self+0x34 and returns it.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D3750": {
+    "name": "Unknown::queryAndInsertAtEnd_006D3750",
+    "class": "Unknown",
+    "signature": "int32_t fn_006D3750(void* self)",
+    "summary": "Calls virtual slot 10 on self; if it returns nonzero, inserts that value into the embedded DynamicArray at +0x34.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D3780": {
     "name": "Unknown::appendVirtualResultToArray_006D3780",
     "class": "Unknown",
@@ -68339,6 +68346,13 @@
     "signature": "extern \"C\" void* __fastcall fn_006D6C00(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006D6C20 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
+  },
+  "0x006D6C20": {
+    "name": "UnknownClass_0099395c::dtor",
+    "class": "UnknownClass_0099395c",
+    "signature": "extern \"C\" void __thiscall fn_006D6C20(void* self)",
+    "summary": "Destructor that resets vtable to 0x0099395c, resets flags/subobject, frees field_0xFC, destroys +0x100, and calls base destructor.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
   "0x006D6CB0": {
     "name": "Unknown::ResetFlagsAndInitSubobject",
