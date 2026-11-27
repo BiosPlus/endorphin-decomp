@@ -1,0 +1,13 @@
+{
+  "va": "0x00586030",
+  "size": 126,
+  "orig_symbol": "sub_00586030",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "assignChildDepthsAndIndices",
+  "signature": "void fn_00586030(void* self, uint32_t depth)",
+  "summary": "Stores depth on this node, then recursively visits each child pointer in the child vector at +0x80..+0x84, setting each child's depth+1 and its sibling index at +0x9c.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:03:53Z"
+}
