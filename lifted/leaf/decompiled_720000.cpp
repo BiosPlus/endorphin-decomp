@@ -1297,3 +1297,31 @@ extern void* __thiscall fn_0072CF30(void* self, DWORD arg1) {
     return self;
 }
 } // namespace lift_0072CF30
+
+// [0x0072B0A0] sub_0072B0A0 (128 bytes)
+namespace lift_0072B0A0 {
+// Known callee 0x006B9E60: Unknown::conditionalAllocAndCopy_006B9E60 (If the argument's type tag check passes, copies its getter values into this object's allocator; otherwise calls sub_006B9920 on this. Returns this.)
+extern void* ext_006B9E60(void* self, void* arg);
+
+// @name Unknown::copyEmbeddedObjects_0072B0A0
+// @class Unknown
+// @summary For each embedded sub-object at +0x00, +0x4C, +0x98, +0xE4, +0x130, +0x17C, calls conditionalAllocAndCopy(this_sub, other_sub); then copies the DWORD at +0x1C8 from other to this. Returns this.
+// @field Unknown +0x00 void* field_0x00 (embedded object; address only, passed as this)
+// @field Unknown +0x4C void* field_0x4c (embedded object; address only, passed as this)
+// @field Unknown +0x98 void* field_0x98 (embedded object; address only, passed as this)
+// @field Unknown +0xE4 void* field_0xe4 (embedded object; address only, passed as this)
+// @field Unknown +0x130 void* field_0x130 (embedded object; address only, passed as this)
+// @field Unknown +0x17C void* field_0x17c (embedded object; address only, passed as this)
+// @field Unknown +0x1C8 DWORD field_0x1c8
+void* fn_0072B0A0(void* self, void* other) {
+    ext_006B9E60(self, other);
+    ext_006B9E60(static_cast<uint8_t*>(self) + 0x4C, static_cast<uint8_t*>(other) + 0x4C);
+    ext_006B9E60(static_cast<uint8_t*>(self) + 0x98, static_cast<uint8_t*>(other) + 0x98);
+    ext_006B9E60(static_cast<uint8_t*>(self) + 0xE4, static_cast<uint8_t*>(other) + 0xE4);
+    ext_006B9E60(static_cast<uint8_t*>(self) + 0x130, static_cast<uint8_t*>(other) + 0x130);
+    ext_006B9E60(static_cast<uint8_t*>(self) + 0x17C, static_cast<uint8_t*>(other) + 0x17C);
+
+    lift_field<DWORD>(self, 0x1C8) = lift_field<DWORD>(other, 0x1C8);
+    return self;
+}
+} // namespace lift_0072B0A0

@@ -78381,6 +78381,13 @@
     "summary": "Destroys six 0x4c-byte sub-objects in reverse order via ext_006B9D70.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
+  "0x0072B0A0": {
+    "name": "Unknown::copyEmbeddedObjects_0072B0A0",
+    "class": "Unknown",
+    "signature": "void* fn_0072B0A0(void* self, void* other)",
+    "summary": "For each embedded sub-object at +0x00, +0x4C, +0x98, +0xE4, +0x130, +0x17C, calls conditionalAllocAndCopy(this_sub, other_sub); then copies the DWORD at +0x1C8 from other to this. Returns this.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x0072B120": {
     "name": "sub_0072B120",
     "signature": "extern \"C\" void __fastcall fn_0072B120(void* self, int edx_unused, int32_t value)",

@@ -1,0 +1,58 @@
+{
+  "va": "0x0072B0A0",
+  "size": 128,
+  "orig_symbol": "sub_0072B0A0",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "Unknown::copyEmbeddedObjects_0072B0A0",
+  "class": "Unknown",
+  "signature": "void* fn_0072B0A0(void* self, void* other)",
+  "summary": "For each embedded sub-object at +0x00, +0x4C, +0x98, +0xE4, +0x130, +0x17C, calls conditionalAllocAndCopy(this_sub, other_sub); then copies the DWORD at +0x1C8 from other to this. Returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (embedded object; address only, passed as",
+      "name": "this)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "void* field_0x4c (embedded object; address only, passed as",
+      "name": "this)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x98",
+      "type": "void* field_0x98 (embedded object; address only, passed as",
+      "name": "this)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xE4",
+      "type": "void* field_0xe4 (embedded object; address only, passed as",
+      "name": "this)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x130",
+      "type": "void* field_0x130 (embedded object; address only, passed as",
+      "name": "this)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x17C",
+      "type": "void* field_0x17c (embedded object; address only, passed as",
+      "name": "this)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C8",
+      "type": "DWORD",
+      "name": "field_0x1c8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T05:00:30Z"
+}
