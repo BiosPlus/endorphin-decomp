@@ -1640,6 +1640,13 @@
     "summary": "Returns the element pointer in the vector at +0x4 with the largest signed int32_t at +0x28, or nullptr if empty.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00413020": {
+    "name": "MultiTrackView::CompositeEventTrack::vfunc_4",
+    "class": "MultiTrackView::CompositeEventTrack",
+    "signature": "extern \"C\" void __thiscall fn_00413020(void* self, int32_t t, void* range)",
+    "summary": "Sets self's RECT at +0x3c from the 4-int range argument, then walks the child vector at +0x8/+0xc (writing per-child ranges when the +0x37 flag is clear, or using ext_00412F80's result when set), and finally calls vfunc slot 5 on self plus the child vfunc slots 1 and 2 with an accumulating RECT.",
+    "lifted_path": "lifted/MultiTrackView/CompositeEventTrack.cpp"
+  },
   "0x00413230": {
     "name": "SumOrMaxElementField28",
     "class": "LiftSelf",

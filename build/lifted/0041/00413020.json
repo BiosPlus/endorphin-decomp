@@ -1,0 +1,88 @@
+{
+  "va": "0x00413020",
+  "size": 524,
+  "orig_symbol": "MultiTrackView::CompositeEventTrack::vfunc_4",
+  "src_path": "src/MultiTrackView/CompositeEventTrack.cpp",
+  "lifted_path": "lifted/MultiTrackView/CompositeEventTrack.cpp",
+  "name": "MultiTrackView::CompositeEventTrack::vfunc_4",
+  "class": "MultiTrackView::CompositeEventTrack",
+  "signature": "extern \"C\" void __thiscall fn_00413020(void* self, int32_t t, void* range)",
+  "summary": "Sets self's RECT at +0x3c from the 4-int range argument, then walks the child vector at +0x8/+0xc (writing per-child ranges when the +0x37 flag is clear, or using ext_00412F80's result when set), and finally calls vfunc slot 5 on self plus the child vfunc slots 1 and 2 with an accumulating RECT.",
+  "fields": [
+    {
+      "class": "MultiTrackView::CompositeEventTrack",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    },
+    {
+      "class": "MultiTrackView::CompositeEventTrack",
+      "offset": "+0x8",
+      "type": "void**",
+      "name": "field_0x08"
+    },
+    {
+      "class": "MultiTrackView::CompositeEventTrack",
+      "offset": "+0xC",
+      "type": "void**",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "MultiTrackView::CompositeEventTrack",
+      "offset": "+0x37",
+      "type": "uint8_t",
+      "name": "field_0x37"
+    },
+    {
+      "class": "MultiTrackView::CompositeEventTrack",
+      "offset": "+0x3C",
+      "type": "RECT",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "MultiTrackView::CompositeEventTrack",
+      "offset": "+0x4C",
+      "type": "int32_t",
+      "name": "field_0x4c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "int32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "int32_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "int32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "int32_t",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "int32_t",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:41:37Z"
+}
