@@ -15,8 +15,13 @@ struct NMData_Marker_Fields {
     // +0x0   void*                    vptr  (evidence: 0x008704D0)
     // +0x4   void*                    field_0x04  (evidence: 0x00870650, 0x00870930)
     // +0xC   void*                    field_0x0C  (evidence: 0x00870930)
+    // +0x70  void*                    field_0x70  (evidence: 0x00870C90)
+    // +0x74  uint32_t*                field_0x74  (evidence: 0x00870C90)
+    // +0x78  uint32_t*                field_0x78  (evidence: 0x00870C90)
+    // +0x88  void*                    field_0x88  (evidence: 0x00870C90)
     // +0x148 std::string              field_0x148  (evidence: 0x00870B70)
     // +0x154 std::string              field_0x154  (evidence: 0x00870460, 0x00870650, 0x00870C20)
+    // +0x168 void*                    field_0x168  (evidence: 0x00870C90)
     // +0x170 uint32_t                 field_0x170  (evidence: 0x00870460, 0x00870650)
     // +0x174 void*                    field_0x174  (evidence: 0x008704D0, 0x00870C20)
 };

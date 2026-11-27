@@ -76900,6 +76900,13 @@
     "summary": "Runtime type check: dynamic-casts self to the type at mem_00A398B0 (source type mem_00A2E2F8) and returns the result or NULL.",
     "lifted_path": "lifted/templates/Function2Type.cpp"
   },
+  "0x0067ABD0": {
+    "name": "ExprParser::BoolType::vfunc_23",
+    "class": "ExprParser::BoolType",
+    "signature": "void* __thiscall fn_0067ABD0(void* self, void* arg0, void* arg1, void* arg2, void* arg3, void* arg4)",
+    "summary": "Evaluates/converts a BoolType expression value, optionally parsing/updating from a string and clearing default zero-like string representations.",
+    "lifted_path": "lifted/ExprParser/BoolType.cpp"
+  },
   "0x0067ADA0": {
     "name": "thunk_KERNEL32_GetCurrentThreadId",
     "signature": "extern \"C\" void fn_0067ADA0(void)",
@@ -107914,6 +107921,13 @@
     "class": "NMData::Marker",
     "signature": "uint8_t __thiscall fn_00870C20(void* self, void* arg0)",
     "summary": "Copies name string from arg0, stores owner/manager pointer, and registers marker with it.",
+    "lifted_path": "lifted/NMData/Marker.cpp"
+  },
+  "0x00870C90": {
+    "name": "NMData::Marker::vfunc_12_off_C",
+    "class": "NMData::Marker",
+    "signature": "uint8_t __thiscall fn_00870C90(void* self, void* arg1, void* arg2)",
+    "summary": "Clears matching dword in arg2, collects elements from +0x70 vector, calls arg1-\u003evfunc_0x44, notifies +0x88 and +0x168/+0x5e0",
     "lifted_path": "lifted/NMData/Marker.cpp"
   },
   "0x00870E00": {

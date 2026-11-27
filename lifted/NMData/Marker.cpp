@@ -409,3 +409,101 @@ void* __thiscall fn_00870460(void* self, void* arg1) {
     return node;
 }
 } // namespace lift_00870460
+
+// [0x00870C90]
+namespace lift_00870C90 {
+extern void ext_0041A920(void* self, void* arg);
+extern void ext_00481BD0(void* self, uint32_t value);
+extern void ext_00587470(void* self, void* arg);
+extern void ext_0059A140(void* self, void* out_iter, void* pos, void* val_ptr);
+extern void ext_005BFFE0(void* self, void* str_val);
+extern void ext_006A5C5C(void* ptr);
+
+extern void* mem_00925134;
+extern void* mem_00924FE0;
+
+// @name NMData::Marker::vfunc_12_off_C
+// @class NMData::Marker
+// @summary Clears matching dword in arg2, collects elements from +0x70 vector, calls arg1->vfunc_0x44, notifies +0x88 and +0x168/+0x5e0
+// @field NMData::Marker +0x70 void* field_0x70
+// @field NMData::Marker +0x74 uint32_t* field_0x74
+// @field NMData::Marker +0x78 uint32_t* field_0x78
+// @field NMData::Marker +0x88 void* field_0x88
+// @field NMData::Marker +0x168 void* field_0x168
+uint8_t __thiscall fn_00870C90(void* self, void* arg1, void* arg2) {
+    char* marker_base = static_cast<char*>(self) - 0xC;
+    ext_00481BD0(arg2, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(marker_base)));
+
+    struct VecProxy {
+        void* proxy;
+        uint32_t* begin;
+        uint32_t* end;
+        uint32_t* cap_end;
+    };
+    VecProxy vec = { nullptr, nullptr, nullptr, nullptr };
+    void* temp_arg = marker_base;
+    ext_0041A920(&vec, &temp_arg);
+
+    uint32_t* cur = *reinterpret_cast<uint32_t**>(static_cast<char*>(self) + 0x74);
+    char* src_vec = static_cast<char*>(self) + 0x70;
+    auto invalid_param = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+
+    if (cur > *reinterpret_cast<uint32_t**>(src_vec + 0x8)) {
+        invalid_param();
+    }
+
+    while (true) {
+        uint32_t* src_end = *reinterpret_cast<uint32_t**>(src_vec + 0x8);
+        if (*reinterpret_cast<uint32_t**>(src_vec + 0x4) > src_end) {
+            invalid_param();
+        }
+        if (cur == src_end) {
+            break;
+        }
+        if (cur >= *reinterpret_cast<uint32_t**>(src_vec + 0x8)) {
+            invalid_param();
+        }
+
+        if (vec.begin != nullptr && (vec.end - vec.begin) < (vec.cap_end - vec.begin)) {
+            *vec.end = *cur;
+            vec.end += 1;
+        } else {
+            if (vec.begin > vec.end) {
+                invalid_param();
+            }
+            void* dummy_iter = nullptr;
+            ext_0059A140(&vec, &dummy_iter, vec.end, cur);
+        }
+
+        if (cur >= *reinterpret_cast<uint32_t**>(src_vec + 0x8)) {
+            invalid_param();
+        }
+        cur += 1;
+    }
+
+    void** vtbl_arg1 = *reinterpret_cast<void***>(arg1);
+    auto vfunc_44 = reinterpret_cast<void(__thiscall*)(void*, void*)>(vtbl_arg1[0x44 / 4]);
+    vfunc_44(arg1, &vec);
+
+    void* obj_88 = *reinterpret_cast<void**>(static_cast<char*>(self) + 0x88);
+    ext_00587470(obj_88, marker_base);
+
+    char* obj_168 = *reinterpret_cast<char**>(static_cast<char*>(self) + 0x168);
+    void** vtbl_marker = *reinterpret_cast<void***>(marker_base);
+    auto vfunc_24 = reinterpret_cast<void*(__thiscall*)(void*)>(vtbl_marker[0x24 / 4]);
+    void* str_ref = vfunc_24(marker_base);
+
+    struct StdString28 {
+        uint8_t raw[0x1C];
+    } str_copy{};
+    auto str_ctor = reinterpret_cast<void(__thiscall*)(void*, void*)>(mem_00924FE0);
+    str_ctor(&str_copy, str_ref);
+    ext_005BFFE0(obj_168 + 0x5E0, &str_copy);
+
+    if (vec.begin != nullptr) {
+        ext_006A5C5C(vec.begin);
+    }
+
+    return 1;
+}
+} // namespace lift_00870C90

@@ -1,0 +1,46 @@
+{
+  "va": "0x00870C90",
+  "size": 353,
+  "orig_symbol": "NMData::Marker::vfunc_12_off_C",
+  "src_path": "src/NMData/Marker.cpp",
+  "lifted_path": "lifted/NMData/Marker.cpp",
+  "name": "NMData::Marker::vfunc_12_off_C",
+  "class": "NMData::Marker",
+  "signature": "uint8_t __thiscall fn_00870C90(void* self, void* arg1, void* arg2)",
+  "summary": "Clears matching dword in arg2, collects elements from +0x70 vector, calls arg1-\u003evfunc_0x44, notifies +0x88 and +0x168/+0x5e0",
+  "fields": [
+    {
+      "class": "NMData::Marker",
+      "offset": "+0x70",
+      "type": "void*",
+      "name": "field_0x70"
+    },
+    {
+      "class": "NMData::Marker",
+      "offset": "+0x74",
+      "type": "uint32_t*",
+      "name": "field_0x74"
+    },
+    {
+      "class": "NMData::Marker",
+      "offset": "+0x78",
+      "type": "uint32_t*",
+      "name": "field_0x78"
+    },
+    {
+      "class": "NMData::Marker",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    },
+    {
+      "class": "NMData::Marker",
+      "offset": "+0x168",
+      "type": "void*",
+      "name": "field_0x168"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:22:09Z"
+}
