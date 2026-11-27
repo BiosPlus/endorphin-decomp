@@ -2932,3 +2932,20 @@ void* fn_0070B0C0(void* self) {
     return self;
 }
 } // namespace lift_0070B0C0
+
+// [0x00704FF0] sub_00704FF0 (33 bytes)
+namespace lift_00704FF0 {
+// Known callee 0x006B9D80: Unknown::initAssignCString_006B9D80 (Zero-initializes the object, assigns the C string argument to it, and returns this.)
+extern void* ext_006B9D80(void* self, const char* s);
+
+// String literal pushed as the second argument (VA 0x00AABD1C).
+extern const char mem_00aabd1c[];
+
+// @name Unknown::initAssignCStringWrapper_00704FF0
+// @class Unknown
+// @summary Initializes self via initAssignCString_006B9D80 with the fixed string at 0x00AABD1C and returns self.
+void* fn_00704FF0(void* self) {
+    ext_006B9D80(self, mem_00aabd1c);
+    return self;
+}
+} // namespace lift_00704FF0
