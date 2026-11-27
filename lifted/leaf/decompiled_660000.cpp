@@ -2849,3 +2849,44 @@ void* fn_00664ED0(void* self) {
     return self;
 }
 } // namespace lift_00664ED0
+
+// [0x00665010] sub_00665010 (120 bytes)
+namespace lift_00665010 {
+// Known callee 0x00664D40: ComputeDeltaAndDispatch (8 stack args, cdecl; caller pops).
+extern void* ext_00664D40(void* a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6, void* a7, void* a8);
+// MSVCP80 std::string begin()/end() thunk pointers (IAT slots).
+extern int mem_009250D0;
+extern int mem_0092511C;
+
+// @name StringBeginEndDispatch
+// @summary Takes begin() and end() iterators of the std::string at self, packs them into a pair, calls 0x00664D40 with the string twice, and returns self.
+void* fn_00665010(void* self) {
+    using IterFn = void* (__thiscall*)(void* self, void* out_iter);
+    // Load the MSVC std::string member functions through their IAT slots.
+    IterFn begin_fn = *reinterpret_cast<IterFn*>(&mem_009250D0);
+    IterFn end_fn   = *reinterpret_cast<IterFn*>(&mem_0092511C);
+
+    uint32_t iter_a[2];
+    uint32_t iter_b[2];
+    uint32_t iter_c[2];
+    uint32_t pair[2];
+    // Stack flag byte initialised to 0 in the original; passed as the a6 dword.
+    uint32_t flag = 0;
+
+    void* ra = begin_fn(self, iter_a);
+    uint32_t a_first  = lift_field<uint32_t>(ra, 0);
+    uint32_t a_second = lift_field<uint32_t>(ra, 4);
+
+    void* rb = end_fn(self, iter_b);
+    uint32_t b_first  = lift_field<uint32_t>(rb, 0);
+    uint32_t b_second = lift_field<uint32_t>(rb, 4);
+    pair[1] = b_first;
+
+    void* rc = begin_fn(self, iter_c);
+    pair[0] = lift_field<uint32_t>(rc, 0);
+    uint32_t c_second = lift_field<uint32_t>(rc, 4);
+
+    ext_00664D40(pair, c_second, b_second, a_first, a_second, flag, self, self);
+    return self;
+}
+} // namespace lift_00665010

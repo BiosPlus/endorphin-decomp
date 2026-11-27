@@ -1,0 +1,13 @@
+{
+  "va": "0x00665010",
+  "size": 120,
+  "orig_symbol": "sub_00665010",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "StringBeginEndDispatch",
+  "signature": "void* fn_00665010(void* self)",
+  "summary": "Takes begin() and end() iterators of the std::string at self, packs them into a pair, calls 0x00664D40 with the string twice, and returns self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:13:18Z"
+}
