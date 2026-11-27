@@ -1,0 +1,28 @@
+{
+  "va": "0x00544240",
+  "size": 87,
+  "orig_symbol": "sub_00544240",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "InitialVariableValues::ResetAndClampField_C4",
+  "class": "InitialVariableValues",
+  "signature": "void fn_00544240(void* self)",
+  "summary": "Resets self and the sub-object at +0xA8 via ResetDefaults, then stores 0.5f to +0xC4 and clamps it into [0.1f, 1.0f] (NaN is left unchanged).",
+  "fields": [
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0xA8",
+      "type": "void*",
+      "name": "field_0xA8"
+    },
+    {
+      "class": "InitialVariableValues",
+      "offset": "+0xC4",
+      "type": "float",
+      "name": "field_0xC4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:03:00Z"
+}

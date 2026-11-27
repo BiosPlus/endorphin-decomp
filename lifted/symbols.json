@@ -28409,6 +28409,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00544130 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00544240": {
+    "name": "InitialVariableValues::ResetAndClampField_C4",
+    "class": "InitialVariableValues",
+    "signature": "void fn_00544240(void* self)",
+    "summary": "Resets self and the sub-object at +0xA8 via ResetDefaults, then stores 0.5f to +0xC4 and clamps it into [0.1f, 1.0f] (NaN is left unchanged).",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00544920": {
     "name": "Unknown::ctor_00544920",
     "class": "Unknown",

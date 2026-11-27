@@ -2370,3 +2370,40 @@ void fn_00546F00(void* self) {
     lift_field<float>(self, 0xE0) = mem_00AF4E70;
 }
 } // namespace lift_00546F00
+
+// [0x00544240] sub_00544240 (87 bytes)
+namespace lift_00544240 {
+// Known callee 0x00543350: InitialVariableValues::ResetDefaults (Resets a block of float and byte state fields to their default values (1.0f or 0.0f) and clears the int at +0x88.)
+extern void ext_00543350(void* self);
+extern uint32_t mem_009324A4;  // .rdata float 0.5
+extern uint64_t mem_0092C508;  // .rdata double 0.10000000149011612
+extern uint32_t mem_0093F8EC;  // .rdata float 0.1
+
+// @name InitialVariableValues::ResetAndClampField_C4
+// @class InitialVariableValues
+// @summary Resets self and the sub-object at +0xA8 via ResetDefaults, then stores 0.5f to +0xC4 and clamps it into [0.1f, 1.0f] (NaN is left unchanged).
+// @field InitialVariableValues +0xA8 void* field_0xA8
+// @field InitialVariableValues +0xC4 float field_0xC4
+void fn_00544240(void* self) {
+    ext_00543350(self);
+
+    void* sub = lift_field<void*>(self, 0xA8);
+    if (sub != nullptr) {
+        ext_00543350(sub);
+    }
+
+    lift_field<float>(self, 0xC4) = std::bit_cast<float>(mem_009324A4);
+
+    const float value = lift_field<float>(self, 0xC4);
+    const double lowerBound = std::bit_cast<double>(mem_0092C508);
+    if (static_cast<double>(value) < lowerBound) {
+        lift_field<float>(self, 0xC4) = std::bit_cast<float>(mem_0093F8EC);
+        return;
+    }
+
+    // Upper clamp: only when 1.0f < value (ordered). NaN compares false and is kept.
+    if (1.0f < value) {
+        lift_field<float>(self, 0xC4) = 1.0f;
+    }
+}
+} // namespace lift_00544240
