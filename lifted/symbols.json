@@ -5713,6 +5713,13 @@
     "summary": "Runs the base init helper ext_00442960 with (self, arg, unused_arg), installs this class's vtable at self+0x00, zeroes the fields at +0x10, +0x14, +0x18 and the flag byte at +0x30, and returns self.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x00443C30": {
+    "name": "MultiTrackView::MultiTrackViewStates::MoveState::vfunc_12",
+    "class": "MultiTrackView::MultiTrackViewStates::MoveState",
+    "signature": "uint8_t __thiscall fn_00443C30(void* self, int32_t /*unused*/, int32_t x, int32_t y)",
+    "summary": "Handles mouse move during MoveState, updating selected items' time and track positions and invalidating the view.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/MoveState.cpp"
+  },
   "0x00443EE0": {
     "name": "MultiTrackView::MultiTrackViewStates::MoveState::vfunc_1",
     "class": "MultiTrackView::MultiTrackViewStates::MoveState",

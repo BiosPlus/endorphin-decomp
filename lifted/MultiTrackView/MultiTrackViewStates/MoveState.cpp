@@ -220,3 +220,124 @@ void fn_00443EE0(void* self) {
     }
 }
 } // namespace lift_00443EE0
+
+// [0x00443C30]
+namespace lift_00443C30 {
+// @name MultiTrackView::MultiTrackViewStates::MoveState::vfunc_12
+// @class MultiTrackView::MultiTrackViewStates::MoveState
+// @summary Handles mouse move during MoveState, updating selected items' time and track positions and invalidating the view.
+// @field MultiTrackView::MultiTrackViewStates::MoveState +0x04 void* stateManager
+// @field MultiTrackView::MultiTrackViewStates::MoveState +0x08 void* view
+// @field MultiTrackView::MultiTrackViewStates::MoveState +0x10 void** selectionBegin
+// @field MultiTrackView::MultiTrackViewStates::MoveState +0x14 void** selectionEnd
+// @field MultiTrackView::MultiTrackViewStates::MoveState +0x30 uint8_t cancelFlag
+
+
+    uint32_t __thiscall ext_00412E60(void* self, int32_t index);
+    int32_t __thiscall ext_0043B400(void* self);
+    void __thiscall ext_0043BCA0(void* self, void* item);
+    void __thiscall ext_0043C070(void* self, void* item);
+    double __thiscall ext_0043CDD0(void* self, int32_t x);
+    void __thiscall ext_0043F520(void* self, void* selection, int32_t flag);
+    uint32_t __thiscall ext_004407B0(void* self);
+    void __thiscall ext_00440920(void* self, double delta);
+    int32_t __thiscall ext_00441020(void* self);
+    int32_t __thiscall ext_00441040(void* self);
+    double __thiscall ext_00443A10(void* self, int32_t x, int32_t y);
+    int32_t __thiscall ext_00443AE0(void* self, int32_t x, int32_t y);
+    extern void (__cdecl *mem_00925134)();
+    extern BOOL (__stdcall *mem_00925688)(HWND, const RECT*, BOOL);
+
+uint8_t __thiscall fn_00443C30(void* self, int32_t /*unused*/, int32_t x, int32_t y) {
+    if (lift_field<uint8_t>(self, 0x30) != 0) {
+        lift_field<uint8_t>(self, 0x30) = 0;
+        return 1;
+    }
+
+    double delta = 0.0;
+    void* view = lift_field<void*>(self, 0x08);
+    void* stateManager = lift_field<void*>(self, 0x04);
+    double rangeEnd = lift_field<double>(view, 0xf0);
+    double rangeStart = lift_field<double>(view, 0xe8);
+    (void)ext_0043CDD0(view, lift_field<int32_t>(stateManager, 0x0c));
+
+    bool changedTime = false;
+    double timeDelta = ext_00443A10(self, x, y);
+
+    void** selBegin = lift_field<void**>(self, 0x10);
+    void** selEnd = lift_field<void**>(self, 0x14);
+    if (selBegin > selEnd) {
+        mem_00925134();
+    }
+    for (void** it = selBegin; it != selEnd; ++it) {
+        void* item = *it;
+        int32_t prevStart = ext_00441020(item);
+        int32_t prevEnd = ext_00441040(item);
+        ext_00440920(item, timeDelta);
+        int32_t newStart = ext_00441020(item);
+        if (newStart != prevStart) {
+            changedTime = true;
+            double itemStart = lift_field<double>(item, 0x50);
+            if (rangeStart + 1.0 > itemStart && static_cast<double>(prevStart) > rangeStart) {
+                double diff = itemStart - (rangeStart + 1.0);
+                if (diff <= delta) {
+                    delta = diff;
+                }
+            } else {
+                double itemEnd = lift_field<double>(item, 0x58);
+                if (rangeEnd - 1.0 < itemEnd && static_cast<double>(prevEnd) < rangeEnd) {
+                    double diff = itemEnd - (rangeEnd - 1.0);
+                    if (diff >= delta) {
+                        delta = diff;
+                    }
+                }
+            }
+        }
+    }
+
+    bool changedTrack = false;
+    int32_t trackDelta = ext_00443AE0(self, x, y);
+    if (trackDelta != 0) {
+        selBegin = lift_field<void**>(self, 0x10);
+        selEnd = lift_field<void**>(self, 0x14);
+        for (void** it = selBegin; it != selEnd; ++it) {
+            void* item = *it;
+            if (lift_field<uint8_t>(item, 0x8f) != 0) {
+                uint32_t vec = ext_004407B0(item);
+                void* curTrack = lift_field<void*>(item, 0x44);
+                if (vec != 0 && curTrack != nullptr) {
+                    int32_t idx = ext_0043B400(curTrack) + trackDelta;
+                    void* newTrack = reinterpret_cast<void*>(static_cast<uintptr_t>(ext_00412E60(reinterpret_cast<void*>(static_cast<uintptr_t>(vec)), idx)));
+                    if (newTrack != nullptr && newTrack != curTrack) {
+                        changedTrack = true;
+                        ext_0043BCA0(curTrack, item);
+                        ext_0043C070(newTrack, item);
+                    }
+                }
+            }
+        }
+        if (changedTrack) {
+            lift_field<int32_t>(stateManager, 0x0c) = x;
+            lift_field<int32_t>(stateManager, 0x10) = y;
+        } else {
+            int32_t oldY = lift_field<int32_t>(stateManager, 0x10);
+            lift_field<int32_t>(stateManager, 0x0c) = x;
+            lift_field<int32_t>(stateManager, 0x10) = oldY;
+        }
+    } else {
+        int32_t oldY = lift_field<int32_t>(stateManager, 0x10);
+        lift_field<int32_t>(stateManager, 0x0c) = x;
+        lift_field<int32_t>(stateManager, 0x10) = oldY;
+    }
+
+    if (changedTime || changedTrack) {
+        void* viewPtr = lift_field<void*>(self, 0x08);
+        ext_0043F520(viewPtr, reinterpret_cast<char*>(self) + 0x0c, 1);
+        void* view2 = lift_field<void*>(self, 0x08);
+        HWND hwnd = lift_field<HWND>(view2, 0x20);
+        mem_00925688(hwnd, nullptr, TRUE);
+    }
+
+    return 1;
+}
+} // namespace lift_00443C30

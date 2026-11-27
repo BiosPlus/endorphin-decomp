@@ -1,0 +1,46 @@
+{
+  "va": "0x00443C30",
+  "size": 685,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::MoveState::vfunc_12",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/MoveState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/MoveState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::MoveState::vfunc_12",
+  "class": "MultiTrackView::MultiTrackViewStates::MoveState",
+  "signature": "uint8_t __thiscall fn_00443C30(void* self, int32_t /*unused*/, int32_t x, int32_t y)",
+  "summary": "Handles mouse move during MoveState, updating selected items' time and track positions and invalidating the view.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::MoveState",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "stateManager"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::MoveState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "view"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::MoveState",
+      "offset": "+0x10",
+      "type": "void**",
+      "name": "selectionBegin"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::MoveState",
+      "offset": "+0x14",
+      "type": "void**",
+      "name": "selectionEnd"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::MoveState",
+      "offset": "+0x30",
+      "type": "uint8_t",
+      "name": "cancelFlag"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:42:09Z"
+}
