@@ -1621,3 +1621,43 @@ void* fn_00523220(void* self) {
     return self;
 }
 } // namespace lift_00523220
+
+// [0x00527D60]
+namespace lift_00527D60 {
+extern void (__cdecl *mem_00925134)();
+extern int (__cdecl *mem_009251EC)(void* dest, size_t destsz, const void* src, size_t count);
+
+// @name VectorPtrErase
+// @summary Erases an element from a vector of pointers, deleting the pointed-to object if non-null.
+// @field Vector +0x08 uintptr_t end_ptr
+void* __thiscall sub_00527D60(void* self, void* ret_iter, void* container, uintptr_t* pos) {
+    if (!container) {
+        mem_00925134();
+    }
+    if ((uintptr_t)pos >= lift_field<uintptr_t>(container, 0x08)) {
+        mem_00925134();
+    }
+
+    uintptr_t obj = *pos;
+    if (obj) {
+        uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(obj);
+        auto dtor = reinterpret_cast<void(__thiscall*)(void*, int)>(vtable[0]);
+        dtor(reinterpret_cast<void*>(obj), 1);
+    }
+
+    uintptr_t end_ptr = lift_field<uintptr_t>(self, 0x08);
+    uintptr_t* next_pos = pos + 1;
+    int32_t count = static_cast<int32_t>(end_ptr - reinterpret_cast<uintptr_t>(next_pos)) >> 2;
+    if (count > 0) {
+        size_t bytes = static_cast<size_t>(count) * 4;
+        mem_009251EC(pos, bytes, next_pos, bytes);
+    }
+
+    lift_field<uintptr_t>(self, 0x08) = end_ptr - 4;
+
+    uintptr_t* out = reinterpret_cast<uintptr_t*>(ret_iter);
+    out[0] = reinterpret_cast<uintptr_t>(container);
+    out[1] = reinterpret_cast<uintptr_t>(pos);
+    return ret_iter;
+}
+} // namespace lift_00527D60
