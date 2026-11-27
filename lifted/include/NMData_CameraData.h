@@ -23,7 +23,7 @@ struct NMData_CameraData_Fields {
     // +0x210 uint8_t                  field_0x210  (evidence: 0x005DD190)
     // +0x258 float                    field_0x258  (evidence: 0x005D13B0)
     // +0x25C void*                    field_0x25c  (evidence: 0x005D13B0, 0x005DCB00)
-    // +0x264 uint8_t                  field_0x264  (evidence: 0x005D06E0, 0x005DCB00)
+    // +0x264 uint8_t                  field_0x264  (evidence: 0x005CFE70, 0x005D06E0, 0x005DCB00)
     // +0x2C4 void*                    field_0x2c4  (evidence: 0x005DD190)
 };
 } // namespace lifted_layout

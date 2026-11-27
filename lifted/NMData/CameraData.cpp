@@ -227,3 +227,25 @@ void* fn_005DD190(void* self, void* arg) {
     return ebx;
 }
 } // namespace lift_005DD190
+
+// [0x005CFE70]
+namespace lift_005CFE70 {
+uint32_t __stdcall ext_005CFD60(const void* arg);
+void* __cdecl ext_006721F0(void* self, uintptr_t value);
+void* __thiscall ext_0058A370(void* self, void* out, const void* name);
+
+// @name NMData::CameraData::vfunc_2
+// @class NMData::CameraData
+// @summary Resolves a named camera property pointer at +0x264 + idx*8, or delegates to AnimatableTransform::vfunc_2.
+// @field NMData::CameraData +0x264 uint8_t field_0x264
+void* __thiscall fn_005CFE70(void* self, void* out, const void* name) {
+    uint32_t idx = ext_005CFD60(name);
+    if (idx != 3) {
+        void* prop = static_cast<uint8_t*>(self) + 0x264 + idx * 8;
+        ext_006721F0(out, reinterpret_cast<uintptr_t>(prop));
+        return out;
+    }
+    ext_0058A370(self, out, name);
+    return out;
+}
+} // namespace lift_005CFE70

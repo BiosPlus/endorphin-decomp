@@ -31149,6 +31149,13 @@
     "summary": "Copies a range of 20-byte (5-float) elements backward into a destination ending at destEnd and returns the destination begin.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x0051A730": {
+    "name": "NMData::Channel::vfunc_17",
+    "class": "NMData::Channel",
+    "signature": "void __thiscall fn_0051A730(void* self, const void* other, void* arg2, void* arg3)",
+    "summary": "Compares m_channelName and m_interpolationType against another Channel and throws if mismatched.",
+    "lifted_path": "lifted/NMData/Channel.cpp"
+  },
   "0x0051A9A0": {
     "name": "sub_0051A9A0",
     "signature": "void* fn_0051A9A0()",
@@ -49157,6 +49164,13 @@
     "signature": "uint32_t fn_005CFE50(void* self)",
     "summary": "If the child pointer at +0x2C4 is non-null, tail-dispatch to its vtable slot at +0x3C; otherwise return the byte at +0x1F2.",
     "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
+  },
+  "0x005CFE70": {
+    "name": "NMData::CameraData::vfunc_2",
+    "class": "NMData::CameraData",
+    "signature": "void* __thiscall fn_005CFE70(void* self, void* out, const void* name)",
+    "summary": "Resolves a named camera property pointer at +0x264 + idx*8, or delegates to AnimatableTransform::vfunc_2.",
+    "lifted_path": "lifted/NMData/CameraData.cpp"
   },
   "0x005CFEC0": {
     "name": "Unknown::transformAndDispatch_005CFEC0",

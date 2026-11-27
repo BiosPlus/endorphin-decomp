@@ -1,0 +1,22 @@
+{
+  "va": "0x005CFE70",
+  "size": 78,
+  "orig_symbol": "NMData::CameraData::vfunc_2",
+  "src_path": "src/NMData/CameraData.cpp",
+  "lifted_path": "lifted/NMData/CameraData.cpp",
+  "name": "NMData::CameraData::vfunc_2",
+  "class": "NMData::CameraData",
+  "signature": "void* __thiscall fn_005CFE70(void* self, void* out, const void* name)",
+  "summary": "Resolves a named camera property pointer at +0x264 + idx*8, or delegates to AnimatableTransform::vfunc_2.",
+  "fields": [
+    {
+      "class": "NMData::CameraData",
+      "offset": "+0x264",
+      "type": "uint8_t",
+      "name": "field_0x264"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:37:02Z"
+}
