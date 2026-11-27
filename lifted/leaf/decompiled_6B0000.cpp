@@ -2125,3 +2125,42 @@ extern void __thiscall fn_006B5090(void* self) {
     ext_006A6310(self);
 }
 } // namespace lift_006B5090
+
+// [0x006B6290] sub_006B6290 (138 bytes)
+namespace lift_006B6290 {
+// Known callee 0x006A5C6E: thunk_MFC80_ord_572 (IAT jump thunk forwarding to MFC80!ord_572.)
+extern void __thiscall ext_006A5C6E(void* self);
+// Known callee 0x006B0CA0: sub_006B0CA0 (42B)
+extern void __thiscall ext_006B0CA0(void* self);
+
+// @name ConstructWithEmbeddedSubobjects_006B6290
+// @class Unknown
+// @summary Constructor-style init: sets vftables at +0x00/+0x54/+0x118/+0x120, calls two sub-object inits (+0x54, +0xA8), zeroes +0x114/+0x11C/+0x124; returns this. MSVC SEH frame dropped.
+// @field Unknown +0x00 uint32_t vftable
+// @field Unknown +0x54 uint32_t field_0x54
+// @field Unknown +0xA8 uint8_t field_0xA8
+// @field Unknown +0x114 uint32_t field_0x114
+// @field Unknown +0x118 uint32_t vftable_0x118
+// @field Unknown +0x11C uint32_t field_0x11C
+// @field Unknown +0x120 uint32_t vftable_0x120
+// @field Unknown +0x124 uint32_t field_0x124
+void* fn_006B6290(void* self) {
+    ext_006A5C6E(self);
+    lift_field<uint32_t>(self, 0x00) = 0x992404;
+
+    void* sub54 = static_cast<uint8_t*>(self) + 0x54;
+    ext_006A5C6E(sub54);
+    lift_field<uint32_t>(self, 0x54) = 0x937484;
+
+    void* subA8 = static_cast<uint8_t*>(self) + 0xA8;
+    ext_006B0CA0(subA8);
+
+    lift_field<uint32_t>(self, 0x114) = 0;
+    lift_field<uint32_t>(self, 0x11C) = 0;
+    lift_field<uint32_t>(self, 0x118) = 0x92A254;
+    lift_field<uint32_t>(self, 0x124) = 0;
+    lift_field<uint32_t>(self, 0x120) = 0x92A5D4;
+
+    return self;
+}
+} // namespace lift_006B6290
