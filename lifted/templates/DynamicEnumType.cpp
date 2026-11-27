@@ -3351,3 +3351,53 @@ bool __stdcall fn_00516610(void* arg1, int arg2) {
     return result;
 }
 } // namespace lift_00516610
+
+// [0x00515EE0]
+namespace lift_00515EE0 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (thiscall; self in ecx, other on stack)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception in place, returns self)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006720C0: sub_006720C0 (18B, unlifted; fills the temp object at ecx from one stack argument)
+extern void* ext_006720C0(void* temp, uint32_t value);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk to _CxxThrowException; never returns)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+// RTTI ThrowInfo for DerivedException, referenced as an immediate at 0x009DEC1C
+extern char mem_009DEC1C[];
+
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>::vfunc_43
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>
+// @summary Setter-style virtual: if the source record at self+0x00 is missing, throws DerivedException; otherwise rebuilds a temp from the record, assigns it into self, releases the temp, then forwards value to the object at self+0x04 via its vtable slot 0x AC.
+// @field ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const> +0x00 void* srcRecord
+// @field ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const> +0x04 void* target
+void fn_00515EE0(void* self, int value) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src == nullptr) {
+        // Build a DerivedException in local storage and throw it.
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return;
+    }
+
+    // Temp object built from src+0x0C; wrapper's +0x04 slot holds the temp pointer.
+    void* temp = nullptr;
+    void* wrapper[2] = {nullptr, nullptr};
+    ext_006720C0(&temp, lift_field<uint32_t>(src, 0x0C));
+    wrapper[1] = temp;
+    ext_0041CF50(self, wrapper);
+
+    // Release the temp through its vtable slot 0x78 (thiscall: this=temp, arg=&wrapper).
+    if (temp != nullptr) {
+        void* tempVtbl = *static_cast<void**>(temp);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(tempVtbl, 0x78));
+        release(temp, wrapper);
+    }
+
+    // Forward to target (self+0x04) via vtable slot 0xAC: this=target, args (self, value).
+    void* target = lift_field<void*>(self, 0x04);
+    void* targetVtbl = *static_cast<void**>(target);
+    auto forward = reinterpret_cast<void (*)(void*, void*, int)>(lift_field<void*>(targetVtbl, 0xAC));
+    forward(target, self, value);
+}
+} // namespace lift_00515EE0
