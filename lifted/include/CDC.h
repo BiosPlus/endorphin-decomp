@@ -9,6 +9,8 @@
 // Recovered field layout for CDC:
 namespace lifted_layout {
 struct CDC_Fields {
-    // +0x8   void*                    m_hAttribDC  (evidence: 0x004077E0)
+    // +0x4   HDC                      m_hDC  (evidence: 0x004160F0)
+    // +0x8   HDC                      m_hAttribDC  (evidence: 0x004160F0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    m_hAttribDC  (evidence: 0x004077E0) // CONFLICT: multiple definitions at +0x8
 };
 } // namespace lifted_layout

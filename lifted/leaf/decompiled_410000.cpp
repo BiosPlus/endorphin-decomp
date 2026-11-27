@@ -3639,3 +3639,63 @@ void fn_00413230(void* self) {
     lift_field<int32_t>(self, 0x4c) = sum;
 }
 } // namespace lift_00413230
+
+// [0x004160F0]
+namespace lift_004160F0 {
+// @name measureTextSize
+// @summary Measures text extent using DrawTextA and GetTextExtentPoint32A
+// @field CDC +0x04 HDC m_hDC
+// @field CDC +0x08 HDC m_hAttribDC
+
+extern uint32_t mem_0092431C;
+extern uint32_t mem_00924558;
+extern uint32_t mem_00925608;
+extern uint32_t mem_00924554;
+extern uint32_t mem_00924300;
+extern uint32_t mem_00924080;
+
+struct Rect32 {
+    int32_t left;
+    int32_t top;
+    int32_t right;
+    int32_t bottom;
+};
+
+struct Size32 {
+    int32_t cx;
+    int32_t cy;
+};
+
+using FnThis0 = uint32_t(__thiscall*)(void* self);
+using FnThis1 = uint32_t(__thiscall*)(void* self, uint32_t a1);
+using FnDrawTextA = int32_t(__stdcall*)(uint32_t hdc, uint32_t lpchText, int32_t cchText, Rect32* lprc, uint32_t format);
+using FnGetTextExtentPoint32A = int32_t(__stdcall*)(uint32_t hdc, uint32_t lpString, int32_t c, Size32* lpsz);
+
+Size32* __cdecl sub_004160F0(Size32* out_size, void* str, void* dc, int32_t right) {
+    Rect32 rect;
+    rect.left = 0;
+    rect.top = 0;
+    rect.right = right;
+    rect.bottom = 0x14;
+
+    uint32_t hdc = 0;
+    if (dc != nullptr) {
+        hdc = lift_field<uint32_t>(dc, 0x04);
+    }
+
+    uint32_t buf_len_ptr = reinterpret_cast<FnThis0>(mem_0092431C)(str);
+    uint32_t text_ptr = reinterpret_cast<FnThis1>(mem_00924558)(str, buf_len_ptr + 4);
+    reinterpret_cast<FnDrawTextA>(mem_00925608)(hdc, text_ptr, -1, &rect, 0x18420);
+    reinterpret_cast<FnThis1>(mem_00924554)(str, static_cast<uint32_t>(-1));
+
+    uint32_t len = reinterpret_cast<FnThis0>(mem_0092431C)(str);
+    uint32_t cstr = reinterpret_cast<FnThis0>(mem_00924300)(str);
+    Size32 sz{};
+    uint32_t attrib_hdc = lift_field<uint32_t>(dc, 0x08);
+    reinterpret_cast<FnGetTextExtentPoint32A>(mem_00924080)(attrib_hdc, cstr, static_cast<int32_t>(len), &sz);
+
+    out_size->cx = sz.cx;
+    out_size->cy = sz.cy;
+    return out_size;
+}
+} // namespace lift_004160F0
