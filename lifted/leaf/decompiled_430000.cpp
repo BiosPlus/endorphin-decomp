@@ -42,6 +42,7 @@ void fn_00437DE0() {
     ext_00437DC0(reinterpret_cast<void*>(static_cast<uintptr_t>(1)));
 }
 } // namespace lift_00437DE0
+#include <exception>
 
 // [0x0043CB80]
 namespace lift_0043CB80 {
@@ -4375,3 +4376,31 @@ void* __cdecl sub_00430E20(void* out, void* str1, const void* psz2) {
     return out;
 }
 } // namespace lift_00430E20
+
+// [0x00433440]
+namespace lift_00433440 {
+// @name appRunModalOrMessage
+// @summary Calls virtual method at vtable+0x204 on the object returned by sub_00465B40 and displays any caught exception message.
+
+extern void* __cdecl ext_00465B40(void);
+extern int __stdcall ext_006A5E60(const char* lpszText, uint32_t nType, uint32_t nIDHelp);
+
+extern void* mem_00924FE0;
+extern void* mem_00924FF0;
+extern void* mem_00924FF4;
+
+void __cdecl fn_00433440(void) {
+    try {
+        void* obj = ext_00465B40();
+        auto** vtable = *reinterpret_cast<void***>(obj);
+        using vfn_t = void(__thiscall*)(void*);
+        auto fn = reinterpret_cast<vfn_t>(vtable[0x204 / sizeof(void*)]);
+        fn(obj);
+    } catch (const std::exception& e) {
+        (void)mem_00924FE0;
+        (void)mem_00924FF0;
+        (void)mem_00924FF4;
+        ext_006A5E60(e.what(), 0, 0);
+    }
+}
+} // namespace lift_00433440

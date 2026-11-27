@@ -1,0 +1,13 @@
+{
+  "va": "0x00433440",
+  "size": 132,
+  "orig_symbol": "sub_00433440",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "appRunModalOrMessage",
+  "signature": "void __cdecl fn_00433440(void)",
+  "summary": "Calls virtual method at vtable+0x204 on the object returned by sub_00465B40 and displays any caught exception message.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:26:35Z"
+}
