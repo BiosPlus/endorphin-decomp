@@ -20412,6 +20412,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005A98F0 (NMData::BackGroundData::vfunc_6).",
     "lifted_path": "lifted/classes/EvolvedIndividual.cpp"
   },
+  "0x00507EB0": {
+    "name": "RangeOwner::stampVtables",
+    "class": "RangeOwner",
+    "signature": "void fn_00507EB0(void* self)",
+    "summary": "Stamps three vtable-slot words into the object, then tail-calls destroyOwnedRange.",
+    "lifted_path": "lifted/leaf/tiny_500000.cpp"
+  },
   "0x00507F50": {
     "name": "SetDoubleValueAndEnableFlag",
     "class": "Unknown",

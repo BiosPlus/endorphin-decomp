@@ -1,0 +1,34 @@
+{
+  "va": "0x00507EB0",
+  "size": 25,
+  "orig_symbol": "sub_00507EB0",
+  "src_path": "src/leaf/tiny_500000.cpp",
+  "lifted_path": "lifted/leaf/tiny_500000.cpp",
+  "name": "RangeOwner::stampVtables",
+  "class": "RangeOwner",
+  "signature": "void fn_00507EB0(void* self)",
+  "summary": "Stamps three vtable-slot words into the object, then tail-calls destroyOwnedRange.",
+  "fields": [
+    {
+      "class": "RangeOwner",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vptr"
+    },
+    {
+      "class": "RangeOwner",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "vptr_alt"
+    },
+    {
+      "class": "RangeOwner",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "vptr_alt2"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:20:19Z"
+}

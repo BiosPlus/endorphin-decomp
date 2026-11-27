@@ -314,3 +314,33 @@ double fn_0050EA10(void* self) {
     return lift_field<double>(obj, 0x20);
 }
 } // namespace lift_0050EA10
+
+// [0x00507EB0] sub_00507EB0 (25 bytes)
+namespace lift_00507EB0 {
+// Known callee 0x005179E0: RangeOwner::destroyOwnedRange (Re-stamps this object's vtable slots, releases the owned pointer range at +0x10, then finalizes the object via ext_0065C660.)
+extern void ext_005179E0(void* self);
+extern int mem_0094F860;
+extern int mem_0094F854;
+extern int mem_0094F7FC;
+
+// @name RangeOwner::stampVtables
+// @class RangeOwner
+// @summary Stamps three vtable-slot words into the object, then tail-calls destroyOwnedRange.
+// @field RangeOwner +0x00 uint32_t vptr
+// @field RangeOwner +0x08 uint32_t vptr_alt
+// @field RangeOwner +0x0C uint32_t vptr_alt2
+void fn_00507EB0(void* self) {
+    // The original asm stores the .rdata table addresses as immediate values.
+    // Reference the symbols so their addresses are the ones being stored.
+    (void)&mem_0094F860;
+    (void)&mem_0094F854;
+    (void)&mem_0094F7FC;
+
+    lift_field<uint32_t>(self, 0x00) = 0x0094F860u;
+    lift_field<uint32_t>(self, 0x08) = 0x0094F854u;
+    lift_field<uint32_t>(self, 0x0C) = 0x0094F7FCu;
+
+    // jmp 0x5179E0 -> tail call with the same `self`.
+    ext_005179E0(self);
+}
+} // namespace lift_00507EB0

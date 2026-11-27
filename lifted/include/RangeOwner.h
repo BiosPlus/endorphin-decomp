@@ -8,9 +8,12 @@
 // Recovered field layout for RangeOwner:
 namespace lifted_layout {
 struct RangeOwner_Fields {
-    // +0x0   uint32_t                 vtblPrimary  (evidence: 0x005179E0)
-    // +0x8   uint32_t                 vtblSecondary  (evidence: 0x005179E0)
-    // +0xC   uint32_t                 vtblEmbedded  (evidence: 0x005179E0)
+    // +0x0   uint32_t                 vptr  (evidence: 0x00507EB0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vtblPrimary  (evidence: 0x005179E0) // CONFLICT: multiple definitions at +0x0
+    // +0x8   uint32_t                 vptr_alt  (evidence: 0x00507EB0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 vtblSecondary  (evidence: 0x005179E0) // CONFLICT: multiple definitions at +0x8
+    // +0xC   uint32_t                 vptr_alt2  (evidence: 0x00507EB0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint32_t                 vtblEmbedded  (evidence: 0x005179E0) // CONFLICT: multiple definitions at +0xC
     // +0x10  OwnedPointerRange        ownedRange  (evidence: 0x005179E0)
 };
 } // namespace lifted_layout
