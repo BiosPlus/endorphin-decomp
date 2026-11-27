@@ -11470,3 +11470,35 @@ void __stdcall fn_0058C3A0(void* holder) {
     *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(holder) + 0x04) = 0x00B3F91Cu;
 }
 } // namespace lift_0058C3A0
+
+// [0x0058F9E0] ExprParser::ReadWriteMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: void __thiscall TransformNode::setUserRefFrame(class std::basic_string<char, std::char_traits<char>, std::allocator<char>>), 0}>::vfunc_40 (122 bytes)
+namespace lift_0058F9E0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+extern int mem_00B3F970;
+extern int mem_00B3F96C;
+
+// Thiscall view of ext_0067A670: ECX = self, one stack argument.
+using StaticInitFn = void(__thiscall*)(void* self, uint32_t value);
+
+// @name ExprParser::ReadWriteMethodType<TransformNode>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::ReadWriteMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: void __thiscall TransformNode::setUserRefFrame(class std::basic_string<char, std::char_traits<char>, std::allocator<char>>), 0}>
+// @summary Lazily constructs the static accessor object at mem_00B3F96C (guarded by bit 0 of mem_00B3F970, vtable 0x0095C1E4), then stores its address into holder+0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void __stdcall fn_0058F9E0(void* holder) {
+    // One-time construction guarded by bit 0 of mem_00B3F970.
+    if ((mem_00B3F970 & 1) == 0) {
+        mem_00B3F970 |= 1;
+
+        // Construct the accessor object: thiscall ext_0067A670 with ECX = &object, stack arg 0.
+        StaticInitFn init = reinterpret_cast<StaticInitFn>(&ext_0067A670);
+        init(&mem_00B3F96C, 0u);
+
+        // Install the vtable pointer into the object's first dword.
+        mem_00B3F96C = 0x0095C1E4;
+    }
+
+    // holder+0x04 <- address of the static accessor object (0x00B3F96C).
+    lift_field<uint32_t>(holder, 4) = 0x00B3F96Cu;
+}
+} // namespace lift_0058F9E0
