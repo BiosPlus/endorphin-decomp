@@ -1,0 +1,34 @@
+{
+  "va": "0x006D5090",
+  "size": 128,
+  "orig_symbol": "sub_006D5090",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::removeValueIfPresent_006D5090",
+  "class": "Unknown",
+  "signature": "bool fn_006D5090(void* self, uint32_t value)",
+  "summary": "Searches the 32-bit DynArray at +0x154 for value; if found, removes it, frees value via MFC80 and returns true; otherwise calls fn_006E7440 on +0x1C4 with index 0 and returns false.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x154",
+      "type": "int32_t",
+      "name": "dynArrayCount"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x164",
+      "type": "uint32_t",
+      "name": "dynArrayData"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C4",
+      "type": "uint8_t",
+      "name": "field_0x1C4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:59:37Z"
+}

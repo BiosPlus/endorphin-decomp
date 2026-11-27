@@ -68813,6 +68813,13 @@
     "summary": "Linearly searches the DWORD table at +0x11c (count at +0x10c) for value; if found, removes it and, when value is nonzero, destroys and frees it; otherwise assigns string index 0 via +0x1c4 and returns false.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D5090": {
+    "name": "Unknown::removeValueIfPresent_006D5090",
+    "class": "Unknown",
+    "signature": "bool fn_006D5090(void* self, uint32_t value)",
+    "summary": "Searches the 32-bit DynArray at +0x154 for value; if found, removes it, frees value via MFC80 and returns true; otherwise calls fn_006E7440 on +0x1C4 with index 0 and returns false.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D5190": {
     "name": "Unknown::removeItemAndRelease_006D5190",
     "class": "Unknown",

@@ -4274,3 +4274,54 @@ void* fn_006D3C30(void* self) {
     return result;
 }
 } // namespace lift_006D3C30
+
+// [0x006D5090] sub_006D5090 (128 bytes)
+namespace lift_006D5090 {
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8); returns that call's result.)
+extern void* ext_006E7440(void* self, DWORD index);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* arg);
+// Known callee 0x006D2200: DynArray::removeAt (Removes element at index by shifting subsequent elements down and decrementing count.)
+extern void ext_006D2200(void* self, void* edx, int32_t index);
+// Known callee 0x006D80A0: sub_006D80A0 (Empty function (returns immediately).)
+extern void ext_006D80A0(void);
+
+// @name Unknown::removeValueIfPresent_006D5090
+// @class Unknown
+// @summary Searches the 32-bit DynArray at +0x154 for value; if found, removes it, frees value via MFC80 and returns true; otherwise calls fn_006E7440 on +0x1C4 with index 0 and returns false.
+// @field Unknown +0x154 int32_t dynArrayCount
+// @field Unknown +0x164 uint32_t dynArrayData
+// @field Unknown +0x1C4 uint8_t field_0x1C4
+bool fn_006D5090(void* self, uint32_t value) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    int32_t count = lift_field<int32_t>(self, 0x154);
+    uint32_t* data = reinterpret_cast<uint32_t*>(
+        static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x164)));
+
+    int32_t index = -1;
+    if (count > 0) {
+        for (int32_t i = 0; i < count; ++i) {
+            if (data[i] == value) {
+                index = i;
+                break;
+            }
+        }
+    }
+
+    if (index == -1) {
+        // Not found: notify the string table object at +0x1C4 with index 0.
+        ext_006E7440(base + 0x1C4, 0);
+        return false;
+    }
+
+    // Found: remove the element from the DynArray at +0x154.
+    ext_006D2200(base + 0x154, nullptr, index);
+
+    if (value != 0) {
+        ext_006D80A0();
+        ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(value)));
+    }
+    return true;
+}
+} // namespace lift_006D5090
