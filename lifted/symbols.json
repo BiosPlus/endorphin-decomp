@@ -3666,6 +3666,12 @@
     "summary": "Calls virtual slot +0x1E4 (arg 0) on the object returned by ext_00465B40; on exception, logs the std::string at obj+0x0C via thunk_MFC80_ord_1123 and returns 0x004324CB.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x004326D0": {
+    "name": "sub_004326D0",
+    "signature": "void fn_004326D0(void)",
+    "summary": "Calls virtual slot 0x1d4 on the object from sub_00465B40 with flag 1; on exception, logs the message via thunk_MFC80_ord_1123.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00432760": {
     "name": "sub_00432760",
     "signature": "[[maybe_unused]] static void cleanup_004327AC(void* frame_base)",

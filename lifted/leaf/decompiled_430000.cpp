@@ -4521,3 +4521,45 @@ void sub_00432760(void) {
     slot(obj, 1);
 }
 } // namespace lift_00432760
+
+// [0x004326D0] sub_004326D0 (134 bytes)
+namespace lift_004326D0 {
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430330 (sub_00430330).)
+// Returns the object pointer in eax.
+extern void* ext_00465B40();
+// Known callee 0x006A5E60: thunk_MFC80_ord_1123 (IAT jump thunk forwarding to MFC80!ord_1123.)
+// Called cdecl with the c_str() pointer plus two trailing zero stack arguments.
+extern void ext_006A5E60(const char* msg, int arg1, int arg2);
+// MSVCP80 IAT slots: copy-ctor, c_str, dtor of std::string.
+extern void* mem_00924FE0;
+extern void* mem_00924FF0;
+extern void* mem_00924FF4;
+
+// MSVC x86 thiscall signatures for the std::string members (this in ecx).
+using StrCopyCtorFn = void(__thiscall*)(void* self, const std::string* other);
+using StrCStrFn     = const char*(__thiscall*)(void* self);
+using StrDtorFn     = void(__thiscall*)(void* self);
+// Virtual slot at +0x1d4 of the object's vtable (index 0x75).
+using VirtualFn     = void(__thiscall*)(void* self, int flag);
+
+// @name sub_004326D0
+// @summary Calls virtual slot 0x1d4 on the object from sub_00465B40 with flag 1; on exception, logs the message via thunk_MFC80_ord_1123.
+void fn_004326D0(void) {
+    try {
+        void* obj = ext_00465B40();
+        void** vtable = *reinterpret_cast<void***>(obj);
+        auto vfn = reinterpret_cast<VirtualFn>(vtable[0x1d4 / sizeof(void*)]);
+        vfn(obj, 1);
+    } catch (const std::exception& exc) {
+        // Handler funclet at 0x0043271C: builds a std::string from the exception
+        // text, takes c_str(), forwards it to ext_006A5E60, then destroys the string.
+        std::string src(exc.what());
+        alignas(8) unsigned char tmp[0x1c];  // MSVC std::string is 28 bytes (ebp-0x30..ebp-0x14)
+
+        reinterpret_cast<StrCopyCtorFn>(mem_00924FE0)(tmp, &src);
+        const char* text = reinterpret_cast<StrCStrFn>(mem_00924FF0)(tmp);
+        ext_006A5E60(text, 0, 0);
+        reinterpret_cast<StrDtorFn>(mem_00924FF4)(tmp);
+    }
+}
+} // namespace lift_004326D0
