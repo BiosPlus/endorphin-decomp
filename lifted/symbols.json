@@ -71341,6 +71341,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006BBA40 (fn_006BBA40 (copyHugeDoubleToGlobals)).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006EA740": {
+    "name": "Unknown::InitDefaults",
+    "class": "Unknown",
+    "signature": "void fn_006EA740(void* ecx)",
+    "summary": "Zeroes the first dword, initializes the sub-object at +0x04, then fills three 32-byte blocks (+0x50, +0x70, +0x90) with double 1.0 patterns and clears +0xB0.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006EA7C0": {
     "name": "Unknown::copyEntryFields_006EA7C0",
     "class": "Unknown",

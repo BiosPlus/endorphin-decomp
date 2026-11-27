@@ -1,0 +1,46 @@
+{
+  "va": "0x006EA740",
+  "size": 128,
+  "orig_symbol": "sub_006EA740",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::InitDefaults",
+  "class": "Unknown",
+  "signature": "void fn_006EA740(void* ecx)",
+  "summary": "Zeroes the first dword, initializes the sub-object at +0x04, then fills three 32-byte blocks (+0x50, +0x70, +0x90) with double 1.0 patterns and clears +0xB0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "uint32_t",
+      "name": "blockA[8]"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x70",
+      "type": "uint32_t",
+      "name": "blockB[8]"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x90",
+      "type": "uint32_t",
+      "name": "blockC[8]"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB0",
+      "type": "uint32_t",
+      "name": "field_0xB0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:46:51Z"
+}

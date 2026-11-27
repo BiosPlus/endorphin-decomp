@@ -2503,3 +2503,42 @@ uint8_t __fastcall fn_006E9580(void* self, void* /*edx*/, uint32_t key) {
 }
 } // namespace lift_006E9150
 } // namespace lift_006E9580
+
+// [0x006EA740] sub_006EA740 (128 bytes)
+namespace lift_006EA740 {
+// Known callee 0x006B9960: sub_006B9960 (Auto-lifted identical-shape clone of 0x006B9D10 (Unknown::InitAndReturnSelf).)
+extern void* ext_006B9960(void* ecx);
+// Known callee 0x00787430: Unknown::copy32Bytes (Copies 8 32-bit values (32 bytes) from stack arguments into this+0x00..+0x1C.)
+extern void ext_00787430(void* self, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3,
+                             uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7);
+
+// @name Unknown::InitDefaults
+// @class Unknown
+// @summary Zeroes the first dword, initializes the sub-object at +0x04, then fills three 32-byte blocks (+0x50, +0x70, +0x90) with double 1.0 patterns and clears +0xB0.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x50 uint32_t blockA[8]
+// @field Unknown +0x70 uint32_t blockB[8]
+// @field Unknown +0x90 uint32_t blockC[8]
+// @field Unknown +0xB0 uint32_t field_0xB0
+void fn_006EA740(void* ecx) {
+    lift_field<uint32_t>(ecx, 0x00) = 0;
+    ext_006B9960(static_cast<uint8_t*>(ecx) + 0x04);
+
+    // Block A: args a0..a6 = 0, a7 = 0x3FF00000 (high dword of 1.0 at +0x68)
+    ext_00787430(static_cast<uint8_t*>(ecx) + 0x50,
+                 0x00000000u, 0x00000000u, 0x00000000u, 0x00000000u,
+                 0x00000000u, 0x00000000u, 0x00000000u, 0x3FF00000u);
+
+    // Block B: same pattern as block A (double 1.0 at +0x88)
+    ext_00787430(static_cast<uint8_t*>(ecx) + 0x70,
+                 0x00000000u, 0x00000000u, 0x00000000u, 0x00000000u,
+                 0x00000000u, 0x00000000u, 0x00000000u, 0x3FF00000u);
+
+    // Block C: alternating 0 / 0x3FF00000 (four doubles of 1.0 at +0x90, +0x98, +0xA0, +0xA8)
+    ext_00787430(static_cast<uint8_t*>(ecx) + 0x90,
+                 0x00000000u, 0x3FF00000u, 0x00000000u, 0x3FF00000u,
+                 0x00000000u, 0x3FF00000u, 0x00000000u, 0x3FF00000u);
+
+    lift_field<uint32_t>(ecx, 0xB0) = 0;
+}
+} // namespace lift_006EA740
