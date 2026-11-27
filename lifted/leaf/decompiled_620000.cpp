@@ -2800,3 +2800,30 @@ uint32_t sub_00622700(uint32_t src_begin_addr, uint32_t src_end_addr, uint32_t d
     return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(dst));
 }
 } // namespace lift_00622700
+
+// [0x00621B70] sub_00621B70 (117 bytes)
+namespace lift_00621B70 {
+// Known callee 0x004026E0: std_vector_string_Tidy (Destroys all std::string elements in a vector, frees the buffer, and resets pointers to null.)
+extern void ext_004026E0(void* this_ptr);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* p);
+// Known callee 0x00621680: destroyStringPairRange (Destroys a range of 0x48-byte elements, each containing two std::string members at +0x00 and +0x1C.)
+extern void ext_00621680(uint8_t* begin, uint8_t* end);
+
+// @name Unknown::clearStringPairVector
+// @class Unknown
+// @summary Destroys the 0x48-byte element range at +0x14..+0x18, releases its buffer via ext_006A5C5C, zeroes the range pointers and tidies the owning vector.
+// @field Unknown +0x14 uint8_t* rangeBegin
+// @field Unknown +0x18 uint8_t* rangeEnd
+// @field Unknown +0x1C uint8_t* rangeCapacity
+void fn_00621B70(void* self) {
+    if (lift_field<uint8_t*>(self, 0x14) != nullptr) {
+        ext_00621680(lift_field<uint8_t*>(self, 0x14), lift_field<uint8_t*>(self, 0x18));
+        ext_006A5C5C(lift_field<void*>(self, 0x14));
+    }
+    lift_field<uint8_t*>(self, 0x14) = nullptr;
+    lift_field<uint8_t*>(self, 0x18) = nullptr;
+    lift_field<uint8_t*>(self, 0x1C) = nullptr;
+    ext_004026E0(self);
+}
+} // namespace lift_00621B70
