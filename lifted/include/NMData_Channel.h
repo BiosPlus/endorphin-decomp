@@ -9,7 +9,7 @@
 // Recovered field layout for NMData::Channel:
 namespace lifted_layout {
 struct NMData_Channel_Fields {
-    // +0x4   uint8_t                  m_channelName  (evidence: 0x0051A730)
-    // +0x20  uint32_t                 m_interpolationType  (evidence: 0x0051A730)
+    // +0x4   uint8_t                  m_channelName  (evidence: 0x00519FA0, 0x0051A730)
+    // +0x20  uint32_t                 m_interpolationType  (evidence: 0x00519FA0, 0x0051A730)
 };
 } // namespace lifted_layout

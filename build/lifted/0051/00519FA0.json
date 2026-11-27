@@ -1,0 +1,28 @@
+{
+  "va": "0x00519FA0",
+  "size": 89,
+  "orig_symbol": "NMData::Channel::vfunc_2",
+  "src_path": "src/NMData/Channel.cpp",
+  "lifted_path": "lifted/NMData/Channel.cpp",
+  "name": "NMData::Channel::vfunc_2",
+  "class": "NMData::Channel",
+  "signature": "void* __thiscall fn_00519FA0(void* self, void* out)",
+  "summary": "Serializes channel name and interpolation type into an output node.",
+  "fields": [
+    {
+      "class": "NMData::Channel",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "m_channelName"
+    },
+    {
+      "class": "NMData::Channel",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "m_interpolationType"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:37:36Z"
+}

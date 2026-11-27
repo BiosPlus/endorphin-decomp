@@ -73507,6 +73507,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005B7E80 (ExprParser::Method2Type::vfunc_49).",
     "lifted_path": "lifted/templates/Method2Type.cpp"
   },
+  "0x0066C0B0": {
+    "name": "ExprParser::ExpressionContainerType::vfunc_0",
+    "class": "ExprParser::ExpressionContainerType",
+    "signature": "void* __thiscall fn_0066C0B0(void* self, void* sret, void* arg1)",
+    "summary": "Copies a value-pointer pair from arg1, resolving field_0x00 via field_0x04's vtable slot 0x70 when non-null.",
+    "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp"
+  },
   "0x0066C100": {
     "name": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_TSA(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e::vfunc_49",
     "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_TSA(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e",

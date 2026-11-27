@@ -82,3 +82,35 @@ void __thiscall fn_0051A730(void* self, const void* other, void* arg2, void* arg
     ext_004769F0(&arg2, &self_interp, &other_interp, mem_0095254C);
 }
 } // namespace lift_0051A730
+
+// [0x00519FA0]
+namespace lift_00519FA0 {
+extern uint32_t mem_00A9F838;
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00A9FA6C;
+extern uint32_t mem_00A430F4[];
+
+extern void* __thiscall ext_00640110(void* self, uint32_t arg);
+extern void __thiscall ext_00427550(void* self, const char* name);
+
+// @name NMData::Channel::vfunc_2
+// @class NMData::Channel
+// @summary Serializes channel name and interpolation type into an output node.
+// @field NMData::Channel +0x04 uint8_t m_channelName
+// @field NMData::Channel +0x20 uint32_t m_interpolationType
+void* __thiscall fn_00519FA0(void* self, void* out) {
+    using CStrFn = const char* (__thiscall*)(void*);
+    auto c_str = reinterpret_cast<CStrFn>(mem_00924FF0);
+
+    void* child = ext_00640110(out, mem_00A9F838);
+    const char* name = c_str(static_cast<uint8_t*>(self) + 0x4);
+    ext_00427550(&child, name);
+
+    child = ext_00640110(out, mem_00A9FA6C);
+    uint32_t interpType = lift_field<uint32_t>(self, 0x20);
+    const char* interpName = reinterpret_cast<const char*>(mem_00A430F4[interpType]);
+    ext_00427550(&child, interpName);
+
+    return out;
+}
+} // namespace lift_00519FA0
