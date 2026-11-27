@@ -1413,3 +1413,66 @@ extern void* __thiscall fn_006ADBF0(void* self, uint32_t arg1, uint32_t arg2) {
     return self;
 }
 } // namespace lift_006ADBF0
+
+// [0x006A8760]
+namespace lift_006A8760 {
+// @name Container::appendItem
+// @class Container
+// @summary Appends an item to the container's linked list and array, notifies neighbors, and invalidates the window.
+// @field Container +0x20 void* hwnd
+// @field Container +0x60 void* head
+// @field Container +0x64 void* tail
+// @field Container +0x68 void* current
+// @field Container +0x74 uint8_t[0x14] itemsArray
+// @field Container +0x78 void** itemsData
+// @field Container +0x7c int32_t itemsCount
+
+void __thiscall ext_004B0EB0(void* self, void* arg);
+void __thiscall ext_006A6796(void* self, int32_t index, void* element);
+void __cdecl ext_006A60EE(void);
+void __thiscall ext_006ACFE0(void* self, void* arg);
+void __thiscall ext_006AD0E0(void* self, void* arg);
+void __thiscall ext_006AD0F0(void* self, void* arg);
+void __thiscall ext_006AD1B0(void* self, void* arg);
+
+extern int (__stdcall *mem_00925688)(void* hWnd, const void* lpRect, int bErase);
+
+void* __thiscall fn_006A8760(void* self, void* item) {
+    ext_006ACFE0(item, self);
+
+    if (lift_field<void*>(self, 0x60) == nullptr) {
+        lift_field<void*>(self, 0x60) = item;
+        lift_field<void*>(self, 0x68) = item;
+    } else {
+        void* tail = lift_field<void*>(self, 0x64);
+        ext_006AD0F0(item, tail);
+        ext_006AD0E0(lift_field<void*>(self, 0x64), item);
+    }
+
+    int32_t count = lift_field<int32_t>(self, 0x7c);
+    if (count != 0) {
+        int32_t idx = count - 1;
+        if (idx < 0 || idx >= lift_field<int32_t>(self, 0x7c)) {
+            ext_006A60EE();
+        }
+        void** data = lift_field<void**>(self, 0x78);
+        void* prev = data[idx];
+        ext_004B0EB0(prev, item);
+        ext_006AD1B0(item, prev);
+    }
+
+    ext_006A6796(static_cast<uint8_t*>(self) + 0x74, lift_field<int32_t>(self, 0x7c), item);
+    lift_field<void*>(self, 0x64) = item;
+
+    void** vtable = *reinterpret_cast<void***>(item);
+    using Vfn5 = void (__thiscall *)(void*, int32_t, int32_t);
+    reinterpret_cast<Vfn5>(vtable[5])(item, 1, 0);
+
+    void* hwnd = lift_field<void*>(self, 0x20);
+    if (hwnd != nullptr) {
+        mem_00925688(hwnd, nullptr, 1);
+    }
+
+    return item;
+}
+} // namespace lift_006A8760

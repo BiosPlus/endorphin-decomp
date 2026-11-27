@@ -1,0 +1,58 @@
+{
+  "va": "0x006A8760",
+  "size": 150,
+  "orig_symbol": "sub_006A8760",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "Container::appendItem",
+  "class": "Container",
+  "signature": "void* __thiscall fn_006A8760(void* self, void* item)",
+  "summary": "Appends an item to the container's linked list and array, notifies neighbors, and invalidates the window.",
+  "fields": [
+    {
+      "class": "Container",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "hwnd"
+    },
+    {
+      "class": "Container",
+      "offset": "+0x60",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "Container",
+      "offset": "+0x64",
+      "type": "void*",
+      "name": "tail"
+    },
+    {
+      "class": "Container",
+      "offset": "+0x68",
+      "type": "void*",
+      "name": "current"
+    },
+    {
+      "class": "Container",
+      "offset": "+0x74",
+      "type": "uint8_t[0x14]",
+      "name": "itemsArray"
+    },
+    {
+      "class": "Container",
+      "offset": "+0x78",
+      "type": "void**",
+      "name": "itemsData"
+    },
+    {
+      "class": "Container",
+      "offset": "+0x7C",
+      "type": "int32_t",
+      "name": "itemsCount"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:12:52Z"
+}

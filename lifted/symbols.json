@@ -64964,6 +64964,13 @@
     "summary": "Checks if a window class is already registered and registers it via AfxRegisterClass if not.",
     "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
   },
+  "0x006A8760": {
+    "name": "Container::appendItem",
+    "class": "Container",
+    "signature": "void* __thiscall fn_006A8760(void* self, void* item)",
+    "summary": "Appends an item to the container's linked list and array, notifies neighbors, and invalidates the window.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006A8800": {
     "name": "AllocIndexAndStoreObject",
     "class": "Unknown",
