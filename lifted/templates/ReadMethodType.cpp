@@ -83151,3 +83151,57 @@ int32_t fn_004B1B60(void* holder, void* arg2) {
     return vfn(inner, holder, arg2);
 }
 } // namespace lift_004B1B60
+
+// [0x004C0A00] ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>::vfunc_44 (157 bytes)
+namespace lift_004C0A00 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x004C0280: Unknown::copyStringFromDocumentOrThrow (If the second argument is null, throws a DerivedException; otherwise copies the string produced by Document::vfunc_1 into the first argument and returns it.)
+extern void* ext_004C0280(void* dst, void* src);
+// Callee 0x006720E0 (43 bytes, thiscall): object initializer taking one pointer argument.
+extern void ext_006720E0(void* self, void* src);
+// Import slot holding the MSVC basic_string destructor address (thiscall, no args).
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_44
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Fetches a source string via ext_004C0280 into a temporary std::string, wraps it in a holder assigned to self's field_0x04 through ext_0041CF50, releases the old holder, then forwards to the object at field_0x04 via vtable slot 44 with (self, out).
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_004C0A00(void* self, void* out) {
+    // Local MSVC std::string temporary (0x1C bytes on the 2005 CRT).
+    alignas(8) uint8_t tmp[0x1C] = {};
+
+    // Holder that receives the wrapped string (first dword = object pointer).
+    void* holder = nullptr;
+
+    // self->field_0x00 is passed as the source document pointer.
+    void* src = lift_field<void*>(self, 0x00);
+    ext_004C0280(tmp, src);
+
+    // Wrap the temporary into the holder.
+    ext_006720E0(&holder, tmp);
+
+    // Assign into self's field_0x04 from the holder.
+    ext_0041CF50(self, &holder);
+
+    // Release the holder's object (vtable slot 0x78 => index 30) if present.
+    void* held = holder;
+    if (held != nullptr) {
+        void** vt = *reinterpret_cast<void***>(held);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(vt[0x78 / 4]);
+        release(held, &holder);
+    }
+
+    // Destroy the temporary std::string via the imported destructor address.
+    auto dtor = reinterpret_cast<void (*)(void*)>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    dtor(tmp);
+
+    // Forward to the object at field_0x04 via vtable slot 44 (0xB0 / 4), passing (self, out).
+    void* obj = lift_field<void*>(self, 0x04);
+    void** vt = *reinterpret_cast<void***>(obj);
+    auto virt = reinterpret_cast<void (*)(void*, void*, void*)>(vt[0xB0 / 4]);
+    virt(obj, self, out);
+}
+} // namespace lift_004C0A00
