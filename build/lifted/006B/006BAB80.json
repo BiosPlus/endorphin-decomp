@@ -1,0 +1,46 @@
+{
+  "va": "0x006BAB80",
+  "size": 117,
+  "orig_symbol": "sub_006BAB80",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::initWithCString_006BAB80",
+  "class": "Unknown",
+  "signature": "void* fn_006BAB80(void* self, int32_t unused, const char* s)",
+  "summary": "Constructs this: sets vtable 0x9931EC, initializes base sub-object at +0x04 from the C string, initializes range sub-object at +0x9C (min 1 / capacity 16, arg 4), links its data pointer at +0xB0 to +0xAC, zeroes +0xB4, switches vtable to 0x9931C4, returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (vtable",
+      "name": "pointer)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (base sub-object passed to",
+      "name": "initAndAssignCString)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x9C",
+      "type": "void* field_0x9C (range sub-object passed to",
+      "name": "InitClampedMin1)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB0",
+      "type": "void* field_0xB0 (data pointer, set to",
+      "name": "this+0xAC)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB4",
+      "type": "uint32_t field_0xB4",
+      "name": "(zeroed)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:57:07Z"
+}

@@ -66395,6 +66395,13 @@
     "summary": "Returns 1 if String::compare(self, other) is zero (equal), otherwise 0.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006BAB80": {
+    "name": "Unknown::initWithCString_006BAB80",
+    "class": "Unknown",
+    "signature": "void* fn_006BAB80(void* self, int32_t unused, const char* s)",
+    "summary": "Constructs this: sets vtable 0x9931EC, initializes base sub-object at +0x04 from the C string, initializes range sub-object at +0x9C (min 1 / capacity 16, arg 4), links its data pointer at +0xB0 to +0xAC, zeroes +0xB4, switches vtable to 0x9931C4, returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BAC00": {
     "name": "sub_006BAC00",
     "signature": "extern \"C\" void* __fastcall fn_006BAC00(void* self, int edx_unused, unsigned int flags)",

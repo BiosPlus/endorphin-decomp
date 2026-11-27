@@ -2940,3 +2940,46 @@ uint8_t fn_006BB7E0(void* self, DWORD index) {
     return 0;
 }
 } // namespace lift_006BB7E0
+
+// [0x006BAB80] sub_006BAB80 (117 bytes)
+namespace lift_006BAB80 {
+// Known callee 0x006E62C0: Unknown::initAndAssignCString_006E62C0 (Initializes this and the sub-object at +0x4C, assigns the given C string via ext_006E6320, and returns this.)
+extern void ext_006E62C0();
+// Known callee 0x006D2130: Unknown::InitClampedMin1 (Zeroes fields +0x00, +0x04, +0x10; stores arg2 at +0x0C and max(arg1, 1) (signed) at +0x08.)
+extern void ext_006D2130();
+
+// @name Unknown::initWithCString_006BAB80
+// @class Unknown
+// @summary Constructs this: sets vtable 0x9931EC, initializes base sub-object at +0x04 from the C string, initializes range sub-object at +0x9C (min 1 / capacity 16, arg 4), links its data pointer at +0xB0 to +0xAC, zeroes +0xB4, switches vtable to 0x9931C4, returns this.
+// @field Unknown +0x00 void* field_0x00 (vtable pointer)
+// @field Unknown +0x04 void* field_0x04 (base sub-object passed to initAndAssignCString)
+// @field Unknown +0x9C void* field_0x9C (range sub-object passed to InitClampedMin1)
+// @field Unknown +0xB0 void* field_0xB0 (data pointer, set to this+0xAC)
+// @field Unknown +0xB4 uint32_t field_0xB4 (zeroed)
+void* fn_006BAB80(void* self, int32_t unused, const char* s) {
+    (void)unused;
+
+    using InitStrFn = void* (*)(void*, const char*);
+    using InitRangeFn = void (*)(void*, int32_t, int32_t);
+
+    // Initial vtable pointer (0x9931EC).
+    lift_field<void*>(self, 0x00) = reinterpret_cast<void*>(static_cast<uintptr_t>(0x9931ECu));
+
+    // Base sub-object at this+4 gets the C string.
+    reinterpret_cast<InitStrFn>(&ext_006E62C0)(&lift_field<uint8_t>(self, 0x04), s);
+
+    // Range sub-object at this+0x9C: (arg1 = 0x10, arg2 = 4).
+    void* range = &lift_field<uint8_t>(self, 0x9C);
+    reinterpret_cast<InitRangeFn>(&ext_006D2130)(range, 0x10, 4);
+
+    // Data pointer to this+0xAC (range + 0x10), stored at range + 0x14 == this+0xB0.
+    lift_field<void*>(self, 0xB0) = &lift_field<uint8_t>(self, 0xAC);
+
+    lift_field<uint32_t>(self, 0xB4) = 0;
+
+    // Final vtable pointer (0x9931C4).
+    lift_field<void*>(self, 0x00) = reinterpret_cast<void*>(static_cast<uintptr_t>(0x9931C4u));
+
+    return self;
+}
+} // namespace lift_006BAB80
