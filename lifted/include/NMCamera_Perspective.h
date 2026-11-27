@@ -10,10 +10,12 @@
 // Recovered field layout for NMCamera::Perspective:
 namespace lifted_layout {
 struct NMCamera_Perspective_Fields {
-    // +0xA0  uint32_t                 field_0xA0  (evidence: 0x00552250, 0x005526A0)
+    // +0x80  float                    field_0x80[4]  (evidence: 0x00552490)
+    // +0xA0  uint32_t                 field_0xA0  (evidence: 0x00552250, 0x00552490, 0x005526A0)
     // +0xB0  double                   field_0xB0  (evidence: 0x005522B0, 0x00552340)
     // +0xB8  double                   field_0xB8  (evidence: 0x005522B0, 0x00552340)
     // +0xC0  double                   field_0xC0  (evidence: 0x00552270, 0x005522B0)
+    // +0xE8  float                    field_0xE8[4]  (evidence: 0x00552490)
     // +0xF8  double                   field_0xF8  (evidence: 0x005521D0, 0x00552250)
 };
 } // namespace lifted_layout

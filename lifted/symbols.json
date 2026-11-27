@@ -36455,6 +36455,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005478F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00552490": {
+    "name": "NMCamera::Perspective::vfunc_6",
+    "class": "NMCamera::Perspective",
+    "signature": "void fn_00552490(void* self, const float* arg)",
+    "summary": "Computes the dot product of (arg - ref) with a normalized camera-space vector (from +0xA0 object or +0x80/+0xE8 fallback), then passes it to virtual slot 5.",
+    "lifted_path": "lifted/NMCamera/Perspective.cpp"
+  },
   "0x005526A0": {
     "name": "NMCamera::Perspective::vfunc_5",
     "class": "NMCamera::Perspective",

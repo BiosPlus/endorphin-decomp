@@ -139,3 +139,82 @@ float fn_005526A0(void* self, const float* arg) {
     return std::fabs(static_cast<float>(doubled * mem_00AF7AC0));
 }
 } // namespace lift_005526A0
+
+// [0x00552490] NMCamera::Perspective::vfunc_6 (259 bytes)
+namespace lift_00552490 {
+// Known callee 0x0047FFA0: Vector4Subtract_0047FFA0. out[i] = a[i] - b[i] for i in 0..3.
+// Caller reads the result through the returned pointer (eax), so it is modelled as returning out.
+extern float* ext_0047FFA0(const float* a, float* out, const float* b);
+// Known callee 0x0053B470: sub_0053B470 (56B, thiscall). Takes this=P+0x20, out ptr, scalar -1.0f.
+// Caller reads the result through the returned pointer (eax), so it is modelled as returning out.
+extern float* ext_0053B470(void* self, float* out, float scale);
+// Known callee 0x00540D60: Vec3::normalize. Normalizes the first 3 floats in place, returns this.
+extern void* ext_00540D60(float* self);
+// .rdata float -1.0f (u32 0xBF800000).
+extern const float mem_0093F7B8;
+// Global dword passed as the argument to the vtable slot-5 call on the object at field_0xA0+4.
+extern int mem_00B40640;
+
+// @name NMCamera::Perspective::vfunc_6
+// @class NMCamera::Perspective
+// @summary Computes the dot product of (arg - ref) with a normalized camera-space vector (from +0xA0 object or +0x80/+0xE8 fallback), then passes it to virtual slot 5.
+// @field NMCamera::Perspective +0x80 float field_0x80[4]
+// @field NMCamera::Perspective +0xA0 uint32_t field_0xA0
+// @field NMCamera::Perspective +0xE8 float field_0xE8[4]
+void fn_00552490(void* self, const float* arg) {
+    // Helper: virtual slot 5 on the object at (a0 + 4) with one dword argument; returns eax as a pointer.
+    auto vcallSlot5 = [](uint32_t a0) -> float* {
+        void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(a0) + 4u);
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        using Slot5Fn = float* (*)(void* self, uint32_t arg);
+        Slot5Fn fn = reinterpret_cast<Slot5Fn>(vtbl[5]);
+        return fn(obj, static_cast<uint32_t>(mem_00B40640));
+    };
+
+    // Stage 1: V = (a0 != 0) ? copy(sub_53B470(P+0x20, -1)) : copy(Vector4Subtract(self+0x80, self+0xE8))
+    float tmpA[4] = {};
+    float tmpB[4] = {};
+    float v[4] = {};
+    const uint32_t a0 = lift_field<uint32_t>(self, 0xA0);
+    const float* src;
+    if (a0 != 0) {
+        float* p = vcallSlot5(a0);
+        src = ext_0053B470(static_cast<uint8_t*>(static_cast<void*>(p)) + 0x20, tmpA, mem_0093F7B8);
+    } else {
+        src = ext_0047FFA0(reinterpret_cast<const float*>(static_cast<const uint8_t*>(self) + 0x80),
+                           tmpB,
+                           reinterpret_cast<const float*>(static_cast<const uint8_t*>(self) + 0xE8));
+    }
+    for (int i = 0; i < 4; ++i) v[i] = src[i];
+
+    // Normalize v in place (first 3 components).
+    ext_00540D60(v);
+
+    // Stage 2: b = (a0 != 0) ? (vcall(a0) + 0x30) : (self + 0xE8); re-read a0 as the original does.
+    const uint32_t a0b = lift_field<uint32_t>(self, 0xA0);
+    const float* b;
+    if (a0b == 0) {
+        b = reinterpret_cast<const float*>(static_cast<const uint8_t*>(self) + 0xE8);
+    } else {
+        float* p = vcallSlot5(a0b);
+        b = reinterpret_cast<const float*>(static_cast<uint8_t*>(static_cast<void*>(p)) + 0x30);
+    }
+
+    // Stage 3: diff = arg - b (Vector4Subtract(arg, diff, b)).
+    float diff[4] = {};
+    ext_0047FFA0(arg, diff, b);
+
+    // Stage 4: s = dot4(diff, v). Accumulated in double, matching the x87 sum at default precision.
+    const double s = static_cast<double>(diff[0]) * static_cast<double>(v[0])
+                   + static_cast<double>(diff[1]) * static_cast<double>(v[1])
+                   + static_cast<double>(diff[2]) * static_cast<double>(v[2])
+                   + static_cast<double>(diff[3]) * static_cast<double>(v[3]);
+    const float sf = static_cast<float>(s);
+
+    // Stage 5: virtual slot 5 on self, called with &sf.
+    void** selfVtbl = *reinterpret_cast<void***>(self);
+    using SelfSlot5Fn = float (*)(void* self, const float* p);
+    SelfSlot5Fn slot5 = reinterpret_cast<SelfSlot5Fn>(selfVtbl[5]);
+    (void)slot5(self, &sf);
+}
+} // namespace lift_00552490
