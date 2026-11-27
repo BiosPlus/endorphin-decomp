@@ -1,0 +1,34 @@
+{
+  "va": "0x005A1600",
+  "size": 59,
+  "orig_symbol": "sub_005A1600",
+  "src_path": "src/leaf/decompiled_5A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5A0000.cpp",
+  "name": "Unknown::forEachNodeInRange_005A1600",
+  "class": "Unknown",
+  "signature": "void fn_005A1600(void* self)",
+  "summary": "If the flag at +0x5EC is set, runs forEachNodeCallWithOffset over the node range at +0x598 with callback 0x5B67A0 and zero offset.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x598",
+      "type": "uint8_t",
+      "name": "field_0x598"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x59C",
+      "type": "void*",
+      "name": "field_0x59C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5EC",
+      "type": "int32_t",
+      "name": "field_0x5ec"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:22:30Z"
+}

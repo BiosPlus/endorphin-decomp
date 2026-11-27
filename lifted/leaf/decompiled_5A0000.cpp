@@ -953,3 +953,47 @@ extern void* __thiscall sub_005A71E0(void* self) {
     return self;
 }
 } // namespace lift_005A71E0
+
+// [0x005A1600] sub_005A1600 (59 bytes)
+namespace lift_005A1600 {
+// Known callee 0x005B8EA0: forEachNodeCallWithOffset (Iterates a checked node cursor range, invoking a member-style callback with (node->field_0x28 + offset))
+struct ResultPair005B8EA0 {
+    void* fn;
+    uint32_t offset;
+};
+
+extern void* ext_005B8EA0(
+    ResultPair005B8EA0* out_result,
+    void* first_container,
+    void* first_node,
+    void* last_container,
+    void* last_node,
+    void* fn_ptr,
+    uint32_t offset);
+
+// @name Unknown::forEachNodeInRange_005A1600
+// @class Unknown
+// @summary If the flag at +0x5EC is set, runs forEachNodeCallWithOffset over the node range at +0x598 with callback 0x5B67A0 and zero offset.
+// @field Unknown +0x598 uint8_t field_0x598
+// @field Unknown +0x59C void* field_0x59C
+// @field Unknown +0x5EC int32_t field_0x5ec
+void fn_005A1600(void* self) {
+    if (lift_field<int32_t>(self, 0x5EC) == 0) {
+        return;
+    }
+
+    uint8_t* container = reinterpret_cast<uint8_t*>(self) + 0x598;
+    void* last_node = lift_field<void*>(self, 0x59C);
+    void* first_node = *reinterpret_cast<void**>(last_node);
+
+    ResultPair005B8EA0 result{};
+    ext_005B8EA0(
+        &result,
+        container,
+        first_node,
+        container,
+        last_node,
+        reinterpret_cast<void*>(static_cast<uintptr_t>(0x005B67A0u)),
+        0u);
+}
+} // namespace lift_005A1600

@@ -30475,6 +30475,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0059B2E0 (TreeMap::find).",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005A1600": {
+    "name": "Unknown::forEachNodeInRange_005A1600",
+    "class": "Unknown",
+    "signature": "void fn_005A1600(void* self)",
+    "summary": "If the flag at +0x5EC is set, runs forEachNodeCallWithOffset over the node range at +0x598 with callback 0x5B67A0 and zero offset.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005A2BD0": {
     "name": "DestroyNodeChain",
     "signature": "void __thiscall ext_005A2BD0(void* self, void* node)",
