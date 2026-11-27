@@ -16444,6 +16444,13 @@
     "summary": "Reads a float via the source's inner getter and stores it as a double into the target slot; throws if the target slot is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004CB2D0": {
+    "name": "ReadWriteMethodType::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setLockTypeString(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "void fn_004CB2D0(void** arg1, void* arg2)",
+    "summary": "Reads a string through slot 4 of arg2's +0x04 object and forwards it to Unknown::SetIndexFromName on *arg1; throws DerivedException when *arg1 is null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004CB360": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData\u003e::vfunc_40",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setLockTypeString(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",

@@ -18303,3 +18303,39 @@ void fn_00497C10(void* holder, void* value) {
     }
 }
 } // namespace lift_00497C10
+
+// [0x004CB2D0] ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::MetaBodyConstraintData::setLockTypeString(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_004CB2D0 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (Calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg.)
+extern void* ext_0046E780(void* self, void* out, void* a2, void* a1);
+// Known callee 0x004CA590: Unknown::SetIndexFromName (Compares name against the 5-entry string table; passes the matching index (or 2 if none) to SetIndexClamped0To4.)
+extern void ext_004CA590(void* self, const char* name);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+[[noreturn]] void ext_006A6DD2(void* pObject, const void* pThrowInfo);
+// IAT slot 0x00924FF4 holds the MSVCP80 std::string destructor (thiscall, called with the string object as self).
+extern void (*mem_00924FF4)(void* self);
+// .rdata throw info passed to _CxxThrowException for the DerivedException case.
+extern uint32_t mem_009DEC1C;
+
+// @name ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::MetaBodyConstraintData::setLockTypeString(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Reads a string through slot 4 of arg2's +0x04 object and forwards it to Unknown::SetIndexFromName on *arg1; throws DerivedException when *arg1 is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser +0x04 void* field_0x04
+void fn_004CB2D0(void** arg1, void* arg2) {
+    void* target = *arg1;
+    if (target == nullptr) {
+        alignas(8) uint8_t exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(&mem_009DEC1C));
+    }
+
+    alignas(8) uint8_t tmp[0x1C] = {};
+    void* self4 = lift_field<void*>(arg2, 0x04);
+    void* name = ext_0046E780(self4, tmp, arg2, arg1);
+    ext_004CA590(target, static_cast<const char*>(name));
+    mem_00924FF4(tmp);
+}
+} // namespace lift_004CB2D0
