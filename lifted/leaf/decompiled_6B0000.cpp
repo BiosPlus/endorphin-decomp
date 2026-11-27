@@ -1838,3 +1838,49 @@ uint32_t ProcessSelectionPair(void *thisPtr, void *arg)
     return 0;
 }
 } // namespace lift_006B0EC0
+
+// [0x006B06A0] sub_006B06A0 (127 bytes)
+namespace lift_006B06A0 {
+// Known callee 0x006A5FF2: thunk_MFC80_ord_1934 (IAT jump thunk forwarding to MFC80!ord_1934.)
+extern void ext_006A5FF2(void);
+// Known callee 0x006B3350: sub_006B3350 (Destructor tail-call: restores vtable and tail-calls base destructor sub_006AF490.)
+extern void __fastcall ext_006B3350(void* self);
+// IAT slot for MFC80!ord_578 (called indirectly, thiscall with one argument in ecx).
+extern uint32_t mem_009242F4;
+
+// @name Unknown::~Unknown_006B06A0
+// @class Unknown
+// @summary Destructor: sets vtables, releases three MFC80 member objects (ord_578), then tail-calls the base destructor sub_006B3350.
+// @field Unknown +0x00 void* vptr
+// @field Unknown +0x8c uint8_t field_0x8c[4]
+// @field Unknown +0x90 void* subobject_vptr
+// @field Unknown +0xa0 uint8_t field_0xa0[4]
+// @field Unknown +0xa4 uint8_t field_0xa4[4]
+void fn_006B06A0(void* self) {
+    // SEH frame setup/teardown and state-number stores from the original asm are
+    // compiler boilerplate and are intentionally omitted.
+
+    // Restore primary vtable.
+    lift_field<uint32_t>(self, 0x00) = 0x009911ECu;
+
+    // Release member at +0xa4 via MFC80!ord_578 (thiscall, this = self+0xa4).
+    using ImportFn = void(__fastcall*)(void*);
+    auto import_578 = reinterpret_cast<ImportFn>(static_cast<uintptr_t>(mem_009242F4));
+    import_578(&lift_field<uint8_t>(self, 0xa4));
+
+    // Release member at +0xa0 via MFC80!ord_578.
+    import_578(&lift_field<uint8_t>(self, 0xa0));
+
+    // Sub-object at +0x90 gets its own vtable.
+    lift_field<uint32_t>(self, 0x90) = 0x0092A23Cu;
+
+    // Call thunk to MFC80!ord_1934 (no arguments).
+    ext_006A5FF2();
+
+    // Release member at +0x8c via MFC80!ord_578.
+    import_578(&lift_field<uint8_t>(self, 0x8c));
+
+    // Tail-call base destructor.
+    ext_006B3350(self);
+}
+} // namespace lift_006B06A0

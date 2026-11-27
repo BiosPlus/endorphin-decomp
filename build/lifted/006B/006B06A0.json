@@ -1,0 +1,46 @@
+{
+  "va": "0x006B06A0",
+  "size": 127,
+  "orig_symbol": "sub_006B06A0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::~Unknown_006B06A0",
+  "class": "Unknown",
+  "signature": "void fn_006B06A0(void* self)",
+  "summary": "Destructor: sets vtables, releases three MFC80 member objects (ord_578), then tail-calls the base destructor sub_006B3350.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8C",
+      "type": "uint8_t",
+      "name": "field_0x8c[4]"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x90",
+      "type": "void*",
+      "name": "subobject_vptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA0",
+      "type": "uint8_t",
+      "name": "field_0xa0[4]"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA4",
+      "type": "uint8_t",
+      "name": "field_0xa4[4]"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:09:00Z"
+}
