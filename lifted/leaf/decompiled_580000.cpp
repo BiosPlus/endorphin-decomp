@@ -2013,3 +2013,66 @@ void __thiscall fn_00586300(void* self, uint32_t arg0, uint32_t arg1, uint32_t a
     }
 }
 } // namespace lift_00586300
+
+// [0x005863A0]
+namespace lift_005863A0 {
+// @name sub_005863A0
+// @summary Counts elements in vector at +0x7c passing vtable+0xc4 check, RTDynamicCast, and ext_00584C10
+// @field Unknown +0x7c void* field_0x7c
+// @field Unknown +0x80 uint32_t* vec_begin
+// @field Unknown +0x84 uint32_t* vec_end
+
+
+extern uint8_t __thiscall ext_00584C10(void* self);
+extern void* __cdecl ext_006A6E9E(void* inptr, int32_t vfDelta, void* srcType, void* targetType, int32_t isReference);
+extern void (*mem_00925134)(void);
+
+uint32_t __thiscall fn_005863A0(void* self) {
+    void (*invalid_param)(void) = mem_00925134;
+    uint32_t* vec_begin = lift_field<uint32_t*>(self, 0x80);
+    uint32_t* vec_end = lift_field<uint32_t*>(self, 0x84);
+    uintptr_t vec_base = reinterpret_cast<uintptr_t>(self) + 0x7c;
+    uint32_t count = 0;
+
+    if (vec_begin > vec_end) {
+        invalid_param();
+    }
+
+    uint32_t* it = vec_begin;
+    for (;;) {
+        uint32_t* cur_end = *reinterpret_cast<uint32_t**>(vec_base + 0x8);
+        uint32_t* cur_begin = *reinterpret_cast<uint32_t**>(vec_base + 0x4);
+        if (cur_begin > cur_end) {
+            invalid_param();
+        }
+        if (it == cur_end) {
+            break;
+        }
+        if (it >= *reinterpret_cast<uint32_t**>(vec_base + 0x8)) {
+            invalid_param();
+        }
+
+        void* elem = reinterpret_cast<void*>(*it);
+        uintptr_t vtable = *reinterpret_cast<uintptr_t*>(elem);
+        auto vfn = *reinterpret_cast<uint8_t(__thiscall**)(void*)>(vtable + 0xc4);
+        if (vfn(elem) != 0) {
+            void* casted = ext_006A6E9E(
+                elem,
+                0,
+                reinterpret_cast<void*>(0x00A2E2BC),
+                reinterpret_cast<void*>(0x00A2FBBC),
+                0);
+            if (casted != nullptr && ext_00584C10(casted) != 0) {
+                count += 1;
+            }
+        }
+
+        if (it >= *reinterpret_cast<uint32_t**>(vec_base + 0x8)) {
+            invalid_param();
+        }
+        it += 1;
+    }
+
+    return count;
+}
+} // namespace lift_005863A0
