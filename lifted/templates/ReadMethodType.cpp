@@ -67453,3 +67453,44 @@ void* __stdcall fn_0068D910(void* out, void* holder) {
 }
 } // namespace lift_0048FFD0
 } // namespace lift_0068D910
+
+// [0x0059FCD0] ExprParser::ReadMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0>::vfunc_4 (87 bytes)
+namespace lift_0059FCD0 {
+// Known callee 0x0059DEB0: sub_0059DEB0 (Virtual dispatch thunk: forwards to vtable slot at +0x80.)
+extern void ext_0059DEB0();
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void ext_0046C390();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+// RTTI/ThrowInfo descriptor passed to _CxxThrowException on the error path.
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::CharacterData, float, ...>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0>
+// @summary Reads a float from the value pointed to by the argument (via its +0x00 pointer, at +0x04 of that target) and formats it into the caller's std::string sret slot; throws if the pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// Returns: the sret output slot (`out`), matching the original `mov eax, esi`.
+// Calling convention: 2 stack args (sret out, value holder), callee-cleaned (`ret 8`).
+void* fn_0059FCD0(void* out, void* obj) {
+    void* target = lift_field<void*>(obj, 0x00);
+    if (target != nullptr) {
+        // Virtual getter: __fastcall thunk with this = target + 4, returns float in ST(0).
+        auto getter = reinterpret_cast<float(__fastcall*)(void*)>(ext_0059DEB0);
+        float value = getter(static_cast<uint8_t*>(target) + 0x04);
+        // Format into caller's sret slot: cdecl (out, float).
+        auto formatter = reinterpret_cast<void*(*)(void*, float)>(ext_0046C390);
+        formatter(out, value);
+        return out;
+    }
+
+    // Error path: construct the exception object in a local slot and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    auto ctor = reinterpret_cast<void*(*)(void*)>(ext_0046C3C0);
+    ctor(exc);
+    auto cxxThrow = reinterpret_cast<void(*)(void*, const void*)>(ext_006A6DD2);
+    cxxThrow(exc, &mem_009DEC1C);
+    return out; // not reached: _CxxThrowException does not return
+}
+} // namespace lift_0059FCD0

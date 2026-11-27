@@ -1,0 +1,22 @@
+{
+  "va": "0x0059FCD0",
+  "size": 87,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, ...\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e",
+  "signature": "void* fn_0059FCD0(void* out, void* obj)",
+  "summary": "Reads a float from the value pointed to by the argument (via its +0x00 pointer, at +0x04 of that target) and formats it into the caller's std::string sret slot; throws if the pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:03:58Z"
+}
