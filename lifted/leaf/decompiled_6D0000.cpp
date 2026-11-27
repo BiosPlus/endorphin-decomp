@@ -4488,3 +4488,39 @@ extern uint8_t __thiscall fn_006DC560(void* self, int32_t index) {
     return 1;
 }
 } // namespace lift_006DC560
+
+// [0x006D91D0]
+namespace lift_006D91D0 {
+extern void* __thiscall ext_006B9D10(void* self);
+extern void* __thiscall ext_006B9EC0(void* self, const char* s);
+extern void* __thiscall ext_006B9D20(void* self, void* obj);
+extern void __thiscall ext_006B9D70(void* self);
+
+// @name Unknown::getTypeName_006D91D0
+// @class Unknown
+// @summary Copies a type-name string into out based on field_0x10 (0..2) and returns out.
+// @field Unknown +0x10 uint32_t field_0x10
+extern void* __thiscall fn_006D91D0(void* self, void* out) {
+    uint8_t tmp[0x4c];
+    ext_006B9D10(tmp);
+
+    uint32_t kind = lift_field<uint32_t>(self, 0x10);
+    switch (kind) {
+        case 0:
+            ext_006B9EC0(tmp, reinterpret_cast<const char*>(0x00AA91AC));
+            break;
+        case 1:
+            ext_006B9EC0(tmp, reinterpret_cast<const char*>(0x00AA91A4));
+            break;
+        case 2:
+            ext_006B9EC0(tmp, reinterpret_cast<const char*>(0x00AA9198));
+            break;
+        default:
+            break;
+    }
+
+    ext_006B9D20(out, tmp);
+    ext_006B9D70(tmp);
+    return out;
+}
+} // namespace lift_006D91D0
