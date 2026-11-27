@@ -1,0 +1,46 @@
+{
+  "va": "0x0043C160",
+  "size": 1203,
+  "orig_symbol": "MultiTrackView::MarkerTrack::vfunc_1",
+  "src_path": "src/MultiTrackView/MarkerTrack.cpp",
+  "lifted_path": "lifted/MultiTrackView/MarkerTrack.cpp",
+  "name": "MultiTrackView::MarkerTrack::vfunc_1",
+  "class": "MultiTrackView::MarkerTrack",
+  "signature": "void fn_0043C160(void* self, void* dc, int32_t* rect)",
+  "summary": "Draws the marker track background, borders, selection highlight, and label text.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MarkerTrack",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "MultiTrackView::MarkerTrack",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "MultiTrackView::MarkerTrack",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "view"
+    },
+    {
+      "class": "MultiTrackView::MarkerTrack",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "height"
+    },
+    {
+      "class": "MultiTrackView::MarkerTrack",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:15:00Z"
+}

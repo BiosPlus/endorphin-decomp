@@ -9,10 +9,13 @@
 // Recovered field layout for MultiTrackView::MarkerTrack:
 namespace lifted_layout {
 struct MultiTrackView_MarkerTrack_Fields {
+    // +0x8   void*                    field_0x08  (evidence: 0x0043C160)
+    // +0x10  void*                    field_0x10  (evidence: 0x0043C160)
     // +0x14  void*                    field_0x14  (evidence: 0x0043BD40)
     // +0x18  void**                   markers_begin  (evidence: 0x0043BD40)
     // +0x1C  void**                   markers_end  (evidence: 0x0043BD40)
-    // +0x24  void*                    view  (evidence: 0x0043BD40)
-    // +0x28  uint32_t                 height  (evidence: 0x0043BD40)
+    // +0x24  void*                    view  (evidence: 0x0043BD40, 0x0043C160)
+    // +0x28  uint32_t                 height  (evidence: 0x0043BD40, 0x0043C160)
+    // +0x2C  uint32_t                 field_0x2C  (evidence: 0x0043C160)
 };
 } // namespace lifted_layout
