@@ -38968,6 +38968,13 @@
     "summary": "Parses a BVH file hierarchy (ROOT/JOINT nodes) from a file stream and initializes the skeleton/timeline.",
     "lifted_path": "lifted/classes/BVHIO.cpp"
   },
+  "0x0056E630": {
+    "name": "BVHIO::vfunc_11",
+    "class": "BVHIO",
+    "signature": "void __thiscall fn_0056E630(void* this_ptr, void* filename_str)",
+    "summary": "Loads motion data frames from a BVH file stream into the BVHIO object and updates timeline FPS.",
+    "lifted_path": "lifted/classes/BVHIO.cpp"
+  },
   "0x0056EAC0": {
     "name": "BVHIO::vfunc_13",
     "class": "BVHIO",

@@ -1,0 +1,58 @@
+{
+  "va": "0x0048AA10",
+  "size": 406,
+  "orig_symbol": "NMData::DesiredPoseEventData::vfunc_84",
+  "src_path": "src/NMData/DesiredPoseEventData.cpp",
+  "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp",
+  "name": "NMData::DesiredPoseEventData::vfunc_84",
+  "class": "NMData::DesiredPoseEventData",
+  "signature": "void __thiscall fn_0048AA10(void* self, int32_t frame)",
+  "summary": "Updates desired pose event data for a frame and resets/notifies children at the end of the range.",
+  "fields": [
+    {
+      "class": "NMData::DesiredPoseEventData",
+      "offset": "+0x15C",
+      "type": "int32_t",
+      "name": "field_0x15c"
+    },
+    {
+      "class": "NMData::DesiredPoseEventData",
+      "offset": "+0x160",
+      "type": "int32_t",
+      "name": "field_0x160"
+    },
+    {
+      "class": "NMData::DesiredPoseEventData",
+      "offset": "+0x168",
+      "type": "void*",
+      "name": "field_0x168"
+    },
+    {
+      "class": "NMData::DesiredPoseEventData",
+      "offset": "+0x17C",
+      "type": "uint8_t",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "NMData::DesiredPoseEventData",
+      "offset": "+0x220",
+      "type": "float",
+      "name": "field_0x220"
+    },
+    {
+      "class": "NMData::DesiredPoseEventData",
+      "offset": "+0x230",
+      "type": "uint8_t",
+      "name": "field_0x230"
+    },
+    {
+      "class": "NMData::DesiredPoseEventData",
+      "offset": "+0x234",
+      "type": "void*",
+      "name": "field_0x234"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:03:22Z"
+}

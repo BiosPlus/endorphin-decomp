@@ -36,6 +36,7 @@ void* fn_00486C40(void* self, void* arg1, uint32_t arg2) {
     }
     return arg1;
 }
+#include <cstdint>
 
 // [0x0048DE30] NMData::DesiredPoseEventData::vfunc_87 (58 bytes)
 namespace lift_0048DE30 {
@@ -381,3 +382,90 @@ void* __thiscall fn_004869D0(void* self, void* xmlNode) {
     return xmlNode;
 }
 } // namespace lift_004869D0
+
+// [0x0048AA10]
+namespace lift_0048AA10 {
+// @name NMData::DesiredPoseEventData::vfunc_84
+// @class NMData::DesiredPoseEventData
+// @summary Updates desired pose event data for a frame and resets/notifies children at the end of the range.
+// @field NMData::DesiredPoseEventData +0x15c int32_t field_0x15c
+// @field NMData::DesiredPoseEventData +0x160 int32_t field_0x160
+// @field NMData::DesiredPoseEventData +0x168 void* field_0x168
+// @field NMData::DesiredPoseEventData +0x17c uint8_t field_0x17c
+// @field NMData::DesiredPoseEventData +0x220 float field_0x220
+// @field NMData::DesiredPoseEventData +0x230 uint8_t field_0x230
+// @field NMData::DesiredPoseEventData +0x234 void* field_0x234
+
+extern uint32_t mem_00B40640;
+extern const char* mem_00A8F2B8;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+extern void* mem_00925134;
+
+uint32_t* __thiscall ext_00489320(uint32_t* self, uint32_t* out);
+void __cdecl ext_0048A1D0(void* self, uint32_t arg);
+void __thiscall ext_0048A360(void* self, float arg);
+void __thiscall ext_0048A810(void* self);
+
+void __thiscall fn_0048AA10(void* self, int32_t frame) {
+    void* field_234 = lift_field<void*>(self, 0x234);
+    if (!field_234) {
+        return;
+    }
+    if (lift_field<uint8_t>(self, 0x17c) == 0) {
+        return;
+    }
+
+    int32_t start_frame = lift_field<int32_t>(self, 0x15c);
+    int32_t end_frame = lift_field<int32_t>(self, 0x160);
+
+    if (lift_field<float>(self, 0x220) != 0.0f) {
+        if (frame == start_frame) {
+            ext_0048A1D0(self, mem_00B40640);
+            void* target = lift_field<void*>(self, 0x234);
+            lift_field<float>(target, 0x70) = 0.0f;
+        }
+    }
+
+    if (frame >= start_frame && frame < end_frame) {
+        void* target = lift_field<void*>(self, 0x234);
+        ext_0048A360(target, 0.0f);
+    }
+
+    if (frame != end_frame - 1) {
+        return;
+    }
+
+    if (lift_field<uint8_t>(self, 0x230) != 0) {
+        void* target = lift_field<void*>(self, 0x234);
+        ext_0048A810(target);
+        return;
+    }
+
+    void* field_168 = lift_field<void*>(self, 0x168);
+    void* sub = lift_field<void*>(field_168, 0x5ec);
+    uint32_t* vec = reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(sub) + 0x18);
+
+    uint32_t cursor[2] = {0, 0};
+    ext_00489320(vec, cursor);
+
+    uint32_t* it = reinterpret_cast<uint32_t*>(cursor[1]);
+    uint32_t* end = reinterpret_cast<uint32_t*>(vec[2]);
+
+    while (it != end) {
+        (void)mem_00924FE4;
+        (void)mem_00924FF4;
+        (void)mem_00925134;
+        std::string s(mem_00A8F2B8);
+        void* obj = reinterpret_cast<void*>(*it);
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        reinterpret_cast<void(__thiscall*)(void*, std::string*)>(vtbl[0x3c / 4])(obj, &s);
+
+        obj = reinterpret_cast<void*>(*it);
+        vtbl = *reinterpret_cast<void***>(obj);
+        reinterpret_cast<void(__thiscall*)(void*)>(vtbl[0x80 / 4])(obj);
+
+        ++it;
+    }
+}
+} // namespace lift_0048AA10
