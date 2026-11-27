@@ -39549,6 +39549,13 @@
     "summary": "Thiscall initializer: runs the base-setup callee on this, overwrites the vtable slots and several dwords with constants, zeroes six dword fields, and returns this.",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x0060B2B0": {
+    "name": "Unknown::initOwnedMembers",
+    "class": "Unknown",
+    "signature": "void fn_0060B2B0(void* self)",
+    "summary": "Stamps three vtable pointers into the object, resets the OwnedPointerRange at +0x10 and the string vector at +0x20, then runs the sub-object reset at offset 0.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060B440": {
     "name": "NMData::DisabledCollisionPairList::vfunc_0",
     "class": "NMData::DisabledCollisionPairList",

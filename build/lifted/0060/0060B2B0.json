@@ -1,0 +1,46 @@
+{
+  "va": "0x0060B2B0",
+  "size": 109,
+  "orig_symbol": "sub_0060B2B0",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "Unknown::initOwnedMembers",
+  "class": "Unknown",
+  "signature": "void fn_0060B2B0(void* self)",
+  "summary": "Stamps three vtable pointers into the object, resets the OwnedPointerRange at +0x10 and the string vector at +0x20, then runs the sub-object reset at offset 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint8_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:18:44Z"
+}

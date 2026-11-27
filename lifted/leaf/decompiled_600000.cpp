@@ -1391,3 +1391,45 @@ void __thiscall fn_00603230(void* self) {
     reinterpret_cast<SetFn>(vtbl[5])(obj, f2c, arg);
 }
 } // namespace lift_00603230
+
+// [0x0060B2B0]
+namespace lift_0060B2B0 {
+// @name Unknown::initOwnedMembers
+// @class Unknown
+// @summary Stamps three vtable pointers into the object, resets the OwnedPointerRange at +0x10 and the string vector at +0x20, then runs the sub-object reset at offset 0.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 uint8_t field_0x10
+// @field Unknown +0x20 uint8_t field_0x20
+
+extern void ext_004026E0(void* this_ptr);
+extern void ext_006246B0(void* self);
+extern void __fastcall ext_0065F440(void* self);
+extern void ext_0060BDF0(void* self);
+extern void* ext_0060C570(void* self);
+
+extern const uint32_t mem_00924FD4;
+extern const uint32_t mem_00924FE8;
+extern const uint32_t mem_009518E0;
+
+void fn_0060B2B0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    *reinterpret_cast<uint32_t*>(base + 0x00) = 0x0097202Cu;
+    *reinterpret_cast<uint32_t*>(base + 0x04) = 0x00972020u;
+    *reinterpret_cast<uint32_t*>(base + 0x08) = 0x00972010u;
+
+    ext_004026E0(base + 0x20);
+    ext_006246B0(base + 0x10);
+    ext_0065F440(self);
+
+    // Metadata-only references (address taken, never called or read).
+    // The original bytes do not call ext_0060BDF0/ext_0060C570 or read these rdata globals.
+    (void)&ext_0060BDF0;
+    (void)&ext_0060C570;
+    (void)&mem_00924FD4;
+    (void)&mem_00924FE8;
+    (void)&mem_009518E0;
+}
+} // namespace lift_0060B2B0
