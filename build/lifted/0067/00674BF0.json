@@ -1,0 +1,28 @@
+{
+  "va": "0x00674BF0",
+  "size": 152,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cExpressionEntry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ExpressionEntry::getExpression(void) const, 0\u003e::vfunc_47",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType::vfunc_47",
+  "class": "ExprParser::ReadMethodType",
+  "signature": "void fn_00674BF0(void* self)",
+  "summary": "Re-binds the wrapper's held entry from the (non-null) field_0x00 pointer: copies the entry's +0x1c sub-object, assigns it into self, releases the old temp, then invokes vtable slot 0xBC on field_0x04; throws if field_0x00 is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadMethodType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ReadMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:50:01Z"
+}

@@ -57604,6 +57604,13 @@
     "summary": "Reads the ExpressionEntry* stored in the output slot, copy-constructs its expression string into that slot, and returns it; throws if the entry pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00674BF0": {
+    "name": "ExprParser::ReadMethodType::vfunc_47",
+    "class": "ExprParser::ReadMethodType",
+    "signature": "void fn_00674BF0(void* self)",
+    "summary": "Re-binds the wrapper's held entry from the (non-null) field_0x00 pointer: copies the entry's +0x1c sub-object, assigns it into self, releases the old temp, then invokes vtable slot 0xBC on field_0x04; throws if field_0x00 is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00674C90": {
     "name": "ExprParser::ReadMethodType_ExpressionEntry_getExpression::vfunc_1",
     "class": "ExprParser::ReadMethodType_ExpressionEntry_getExpression",
