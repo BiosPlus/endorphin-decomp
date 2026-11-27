@@ -4706,6 +4706,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00433320 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
   },
+  "0x00435380": {
+    "name": "resetChildAndSyncDefaultFlags",
+    "signature": "extern \"C\" void __thiscall fn_00435380(void* self)",
+    "summary": "Releases child at +0x100 if active, then ensures global bit flags 0, 1, 5 are set and 2, 4, 12 are cleared, forwarding updates to self.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00435B30": {
     "name": "sub_00435B30",
     "class": "Unknown",

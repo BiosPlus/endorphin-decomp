@@ -1810,7 +1810,7 @@ struct Unknown_Fields {
     // +0x100 int32_t                  field_0x100  (evidence: 0x006AA890) // CONFLICT: multiple definitions at +0x100
     // +0x100 uint32_t                 field_0x100  (evidence: 0x00430550, 0x007155B0, 0x0071C700) // CONFLICT: multiple definitions at +0x100
     // +0x100 uint8_t                  field_0x100  (evidence: 0x007642D0) // CONFLICT: multiple definitions at +0x100
-    // +0x100 void*                    field_0x100  (evidence: 0x00430260, 0x004305A0, 0x004305F0, 0x00430660, 0x004306C0, 0x00430720, 0x00430780, 0x004307C0, 0x00430CE0) // CONFLICT: multiple definitions at +0x100
+    // +0x100 void*                    field_0x100  (evidence: 0x00430260, 0x004305A0, 0x004305F0, 0x00430660, 0x004306C0, 0x00430720, 0x00430780, 0x004307C0, 0x00430CE0, 0x00435380) // CONFLICT: multiple definitions at +0x100
     // +0x100 char[]                   m_name  (evidence: 0x00764930) // CONFLICT: multiple definitions at +0x100
     // +0x104 void**                   childArray  (evidence: 0x006C1BB0, 0x006C59C0) // CONFLICT: multiple definitions at +0x104
     // +0x104 void*                    elements  (evidence: 0x006D4F90) // CONFLICT: multiple definitions at +0x104
