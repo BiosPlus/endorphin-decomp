@@ -1,0 +1,34 @@
+{
+  "va": "0x005C46F0",
+  "size": 139,
+  "orig_symbol": "NMData::FluidObjectData::vfunc_22",
+  "src_path": "src/NMData/FluidObjectData.cpp",
+  "lifted_path": "lifted/NMData/FluidObjectData.cpp",
+  "name": "NMData::FluidObjectData::vfunc_22",
+  "class": "NMData::FluidObjectData",
+  "signature": "void* __thiscall fn_005C46F0(void* self, void* arg1)",
+  "summary": "Serializes FluidObjectData properties and optional child object into an archive/XML node.",
+  "fields": [
+    {
+      "class": "NMData::FluidObjectData",
+      "offset": "+0x15C",
+      "type": "void*",
+      "name": "field_0x15c"
+    },
+    {
+      "class": "NMData::FluidObjectData",
+      "offset": "+0x160",
+      "type": "uint8_t",
+      "name": "field_0x160"
+    },
+    {
+      "class": "NMData::FluidObjectData",
+      "offset": "+0x17C",
+      "type": "std::string",
+      "name": "field_0x17c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:40:53Z"
+}

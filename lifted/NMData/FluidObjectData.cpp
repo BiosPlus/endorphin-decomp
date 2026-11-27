@@ -368,3 +368,60 @@ void __thiscall fn_005C4520(void* self, void* arg) {
     ext_005B5E50(lift_field<void*>(self, 0x15C), final_arg);
 }
 } // namespace lift_005C4520
+
+// [0x005C46F0]
+namespace lift_005C46F0 {
+extern uint32_t mem_00A9EF18;
+extern uint32_t mem_00A9F7B8;
+extern uint32_t mem_00A9F724;
+extern uint32_t mem_00924FEC;
+extern uint32_t mem_00924FF0;
+
+extern void* __thiscall ext_006404E0(void* self, uint32_t arg);
+extern void __thiscall ext_0058F650(void* self, void* node);
+extern void* __thiscall ext_00640110(void* self, uint32_t arg);
+extern void __thiscall ext_00427550(void* self, const char* name);
+extern void __cdecl ext_00640A80(void* node, uint32_t flag);
+extern void __thiscall ext_005B44B0(void* self, void* node);
+extern void ext_005BF510(void);
+extern void ext_005BF570(void);
+extern void ext_005CC5C0(void);
+extern void ext_006A5C62(void);
+
+// @name NMData::FluidObjectData::vfunc_22
+// @class NMData::FluidObjectData
+// @summary Serializes FluidObjectData properties and optional child object into an archive/XML node.
+// @field NMData::FluidObjectData +0x15C void* field_0x15c
+// @field NMData::FluidObjectData +0x160 uint8_t field_0x160
+// @field NMData::FluidObjectData +0x17C std::string field_0x17c
+void* __thiscall fn_005C46F0(void* self, void* arg1) {
+    void* node = ext_006404E0(arg1, mem_00A9EF18);
+    ext_0058F650(self, node);
+
+    void* str_ptr = reinterpret_cast<uint8_t*>(self) + 0x17C;
+    using EmptyFn = uint8_t(__thiscall*)(void*);
+    using CStrFn = const char*(__thiscall*)(void*);
+    auto is_empty = reinterpret_cast<EmptyFn>(mem_00924FEC);
+    if (!is_empty(str_ptr)) {
+        void* child = ext_00640110(node, mem_00A9F7B8);
+        auto c_str = reinterpret_cast<CStrFn>(mem_00924FF0);
+        ext_00427550(&child, c_str(str_ptr));
+    }
+
+    void* flag_node = ext_00640110(node, mem_00A9F724);
+    uint8_t flag = lift_field<uint8_t>(self, 0x160);
+    ext_00640A80(flag_node, flag);
+
+    void* obj = lift_field<void*>(self, 0x15C);
+    if (obj != nullptr) {
+        ext_005B44B0(obj, node);
+    }
+
+    (void)&ext_005BF510;
+    (void)&ext_005BF570;
+    (void)&ext_005CC5C0;
+    (void)&ext_006A5C62;
+
+    return node;
+}
+} // namespace lift_005C46F0
