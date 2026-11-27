@@ -1,0 +1,51 @@
+{
+  "va": "0x004A8D00",
+  "size": 156,
+  "orig_symbol": "sub_004A8D00",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "AllocInitRecord0xB0",
+  "signature": "void* __stdcall fn_004A8D00(DWORD a0, DWORD a1, DWORD a2, const void* a3, BYTE flag)",
+  "summary": "Allocates a 0xB0-byte record, stores three dwords and runs sub_004A82D0 on the +0x0C subobject, then stores a flag byte; returns the record or null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "DWORD",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "BYTE",
+      "name": "field_0xAC"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xAD",
+      "type": "BYTE",
+      "name": "field_0xAD"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:26:34Z"
+}

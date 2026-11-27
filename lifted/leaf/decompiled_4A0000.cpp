@@ -1402,3 +1402,43 @@ void fn_004A5D20(void* self) {
     lift_field<void*>(self, 0x04) = d;
 }
 } // namespace lift_004A5D20
+
+// [0x004A8D00] sub_004A8D00 (156 bytes)
+namespace lift_004A8D00 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Allocator: takes a cdecl size argument and returns the block (or null).
+extern void* ext_006A5C62(size_t cb);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// Deallocator used on the failure path.
+extern void ext_006A5C5C(void* p);
+// Known callee 0x004A82D0: sub_004A82D0 (Auto-lifted identical-shape clone of 0x0052A140 (Unknown::ctor_CopyPairAt1C).)
+void* __thiscall ext_004A82D0(void* self, const void* src);
+
+// @name AllocInitRecord0xB0
+// @summary Allocates a 0xB0-byte record, stores three dwords and runs sub_004A82D0 on the +0x0C subobject, then stores a flag byte; returns the record or null.
+// @field Unknown +0x00 DWORD field_0x00
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x08 DWORD field_0x08
+// @field Unknown +0x0C DWORD field_0x0C
+// @field Unknown +0xAC BYTE field_0xAC
+// @field Unknown +0xAD BYTE field_0xAD
+void* __stdcall fn_004A8D00(DWORD a0, DWORD a1, DWORD a2, const void* a3, BYTE flag) {
+    auto* obj = static_cast<uint8_t*>(ext_006A5C62(0xB0));
+    if (!obj) {
+        return nullptr;
+    }
+    try {
+        lift_field<DWORD>(obj, 0x00) = a0;
+        lift_field<DWORD>(obj, 0x04) = a1;
+        lift_field<DWORD>(obj, 0x08) = a2;
+        ext_004A82D0(obj + 0x0C, a3);
+        lift_field<BYTE>(obj, 0xAC) = flag;
+        lift_field<BYTE>(obj, 0xAD) = 0;
+    } catch (...) {
+        // Original SEH cleanup funclet: free the partially built record, then propagate.
+        ext_006A5C5C(obj);
+        throw;
+    }
+    return obj;
+}
+} // namespace lift_004A8D00
