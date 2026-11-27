@@ -183478,3 +183478,53 @@ void* fn_005D6E40(void* self, void* out) {
 }
 } // namespace lift_004B15C0
 } // namespace lift_005D6E40
+
+// [0x0049D580]
+namespace lift_0049D580 {
+// Known callee 0x0046A470: VirtualSlot1Thunk (loads the object's vtable and tail-calls slot 1 (+0x4) with the same this; returns its result)
+extern void* ext_0046A470(void* self);
+// Known callee 0x006720E0: sub_006720E0 (43B), thiscall with ecx = address of a local slot (constructs into it)
+extern void ext_006720E0(void* slot);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy of field_0x04 from other)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs an ExceptionWithMessage-derived exception)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::State, std::string const &, NMData::State::vcall{4}, 0>::vfunc_43
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0>
+// @summary Reads the target pointer at self+0x00 (throws if null), obtains a value via the sub-object at +8, runs the assign/release helpers, then dispatches vtable slot 0xAC on the object at self+0x04 with (self, arg).
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_0049D580(void* self, void* arg) {
+    void* inner = lift_field<void*>(self, 0x00);
+    if (inner == nullptr) {
+        // Original builds an exception object and throws via _CxxThrowException.
+        unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2();
+        return;
+    }
+
+    void* value = ext_0046A470(static_cast<char*>(inner) + 8);
+
+    void* slot = nullptr;
+    ext_006720E0(&slot);
+
+    ext_0041CF50(self, &value);
+
+    if (slot != nullptr) {
+        void* vtbl = *static_cast<void**>(slot);
+        using Slot78 = void (*)(void*, void*);
+        auto fn78 = *reinterpret_cast<Slot78*>(static_cast<char*>(vtbl) + 0x78);
+        fn78(slot, &value);
+    }
+
+    void* obj = lift_field<void*>(self, 0x04);
+    void* vtbl = *static_cast<void**>(obj);
+    using SlotAC = void (*)(void*, void*, void*);
+    auto fnAC = *reinterpret_cast<SlotAC*>(static_cast<char*>(vtbl) + 0xAC);
+    fnAC(obj, self, arg);
+}
+} // namespace lift_0049D580

@@ -1,0 +1,28 @@
+{
+  "va": "0x0049D580",
+  "size": 162,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0\u003e::vfunc_43",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::State, std::string const \u0026, NMData::State::vcall{4}, 0\u003e::vfunc_43",
+  "class": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0\u003e",
+  "signature": "void fn_0049D580(void* self, void* arg)",
+  "summary": "Reads the target pointer at self+0x00 (throws if null), obtains a value via the sub-object at +8, runs the assign/release helpers, then dispatches vtable slot 0xAC on the object at self+0x04 with (self, arg).",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:13:18Z"
+}
