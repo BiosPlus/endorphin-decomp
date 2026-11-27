@@ -3984,3 +3984,54 @@ bool fn_006D4C90(void* self, void* obj) {
     return true;
 }
 } // namespace lift_006D4C90
+
+// [0x006D4D10] sub_006D4D10 (123 bytes)
+namespace lift_006D4D10 {
+// @name sub_006D4D10
+// @summary Auto-lifted identical-shape clone of 0x006D4C90 (Unknown::removeEntryAndReleaseAlt_006D4C90).
+namespace lift_006D4C90 {
+// Known callee 0x006D2200: DynArray::removeAt (ecx = array self, one stack arg = index)
+extern void ext_006D2200(void* self, void* edx, int32_t index);
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (thiscall-style; ecx = self, one stack arg)
+extern void* ext_006E7440(void* self, DWORD index);
+
+// @name Unknown::removeEntryAndReleaseAlt_006D4C90
+// @class Unknown
+// @summary Searches the DWORD DynArray at +0x94 for obj; if found, removes it, calls obj's vtable slot 1, then calls its vtable slot 5 with flag 1, returning true. If not found, calls ext_006E7440 on this+0x1C4 with index 0 and returns false.
+// @field Unknown +0x94 int32_t field_0x94
+// @field Unknown +0xA4 DWORD* field_0xA4
+// @field Unknown +0x1C4 void* field_0x1C4
+bool fn_006D4D10(void* self, void* obj) {
+    const int32_t count = lift_field<int32_t>(self, 0xAC);
+    const DWORD key = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
+
+    bool found = false;
+    int32_t index = 0;
+    if (count > 0) {
+        DWORD* data = lift_field<DWORD*>(self, 0xA4);
+        for (; index < count; ++index) {
+            if (data[index] == key) {
+                found = true;
+                break;
+            }
+        }
+    }
+
+    if (!found) {
+        ext_006E7440(static_cast<unsigned char*>(self) + 0x1C4, 0);
+        return false;
+    }
+
+    ext_006D2200(static_cast<unsigned char*>(self) + 0xAC, nullptr, index);
+
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    reinterpret_cast<void (*)(void*)>(vtbl[1])(obj);
+
+    if (obj != nullptr) {
+        vtbl = *reinterpret_cast<void***>(obj);
+        reinterpret_cast<void (*)(void*, int)>(vtbl[5])(obj, 1);
+    }
+    return true;
+}
+} // namespace lift_006D4C90
+} // namespace lift_006D4D10
