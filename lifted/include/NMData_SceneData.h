@@ -10,24 +10,36 @@
 // Recovered field layout for NMData::SceneData:
 namespace lifted_layout {
 struct NMData_SceneData_Fields {
-    // +0x8   uint8_t                  field_0x08  (evidence: 0x00478D50)
+    // +0x8   void*                    animationData  (evidence: 0x0047DD50) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint8_t                  field_0x08  (evidence: 0x00478D50) // CONFLICT: multiple definitions at +0x8
     // +0x10  uint32_t                 field_0x10  (evidence: 0x00478D50)
-    // +0x18  uint8_t                  field_0x18  (evidence: 0x00478D50)
+    // +0x18  uint32_t[3]              field_0x18  (evidence: 0x0047DD50) // CONFLICT: multiple definitions at +0x18
+    // +0x18  uint8_t                  field_0x18  (evidence: 0x00478D50) // CONFLICT: multiple definitions at +0x18
     // +0x1C  void*                    field_0x1C  (evidence: 0x00478D50)
     // +0x20  uint32_t                 field_0x20  (evidence: 0x00478D50)
-    // +0x24  void*                    field_0x24  (evidence: 0x00478D50)
-    // +0x28  void*                    field_0x28  (evidence: 0x00478D50)
+    // +0x24  void*                    field_0x24  (evidence: 0x00478D50, 0x0047DD50)
+    // +0x28  void*                    field_0x28  (evidence: 0x00478D50, 0x0047DD50)
+    // +0x30  uint32_t[4]              field_0x30  (evidence: 0x0047DD50)
     // +0x34  uint32_t                 field_0x34  (evidence: 0x00478D50)
     // +0x38  uint32_t                 field_0x38  (evidence: 0x00478D50)
-    // +0x1B0 uint8_t                  field_0x1B0  (evidence: 0x00478D50)
-    // +0x238 uint8_t                  field_0x238  (evidence: 0x00478D50)
-    // +0x514 void*                    field_0x514  (evidence: 0x00478D50)
-    // +0x518 uint8_t                  field_0x518  (evidence: 0x00478D50)
+    // +0x40  void*                    field_0x40  (evidence: 0x0047DD50)
+    // +0x44  uint32_t[3]              field_0x44  (evidence: 0x0047DD50)
+    // +0x50  uint32_t                 field_0x50  (evidence: 0x0047DD50)
+    // +0x5C  void*                    field_0x5C  (evidence: 0x0047DD50)
+    // +0x1B0 uint8_t                  field_0x1B0  (evidence: 0x00478D50, 0x0047DD50)
+    // +0x238 uint8_t                  field_0x238  (evidence: 0x00478D50, 0x0047DD50)
+    // +0x514 void*                    field_0x514  (evidence: 0x00478D50, 0x0047DD50)
+    // +0x518 uint8_t                  field_0x518  (evidence: 0x00478D50, 0x0047DD50)
     // +0x520 uint32_t                 field_0x520  (evidence: 0x00478D50)
-    // +0x524 uint8_t                  field_0x524  (evidence: 0x00478D50)
-    // +0x528 void*                    field_0x528  (evidence: 0x00478D50)
-    // +0x531 uint8_t                  field_0x531  (evidence: 0x00478D50)
-    // +0x534 int32_t                  field_0x534  (evidence: 0x00478D50)
-    // +0x558 void*                    field_0x558  (evidence: 0x00478D50)
+    // +0x524 uint32_t[3]              field_0x524  (evidence: 0x0047DD50) // CONFLICT: multiple definitions at +0x524
+    // +0x524 uint8_t                  field_0x524  (evidence: 0x00478D50) // CONFLICT: multiple definitions at +0x524
+    // +0x528 void*                    field_0x528  (evidence: 0x00478D50, 0x0047DD50)
+    // +0x530 uint8_t                  field_0x530  (evidence: 0x0047DD50)
+    // +0x531 uint8_t                  field_0x531  (evidence: 0x00478D50, 0x0047DD50)
+    // +0x534 int32_t                  field_0x534  (evidence: 0x00478D50, 0x0047DD50)
+    // +0x538 int32_t                  version  (evidence: 0x0047DD50)
+    // +0x53C std::string              field_0x53C  (evidence: 0x0047DD50)
+    // +0x558 void*                    field_0x558  (evidence: 0x00478D50) // CONFLICT: multiple definitions at +0x558
+    // +0x558 void*                    progressCallback  (evidence: 0x0047DD50) // CONFLICT: multiple definitions at +0x558
 };
 } // namespace lifted_layout

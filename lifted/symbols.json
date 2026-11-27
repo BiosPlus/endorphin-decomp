@@ -11677,6 +11677,13 @@
     "summary": "Returns a std::string constructed from the C-string pointer stored in mem_00A9F23C; does not read self.",
     "lifted_path": "lifted/NMData/SceneData.cpp"
   },
+  "0x0047DD50": {
+    "name": "NMData::SceneData::vfunc_1",
+    "class": "NMData::SceneData",
+    "signature": "inline T* lift_ptr(void* base, size_t offset)",
+    "summary": "Loads scene data (environment, characters, timeline events, options, channels, world) from an XML node.",
+    "lifted_path": "lifted/NMData/SceneData.cpp"
+  },
   "0x0047FF80": {
     "name": "NMData::SceneData::vfunc_0",
     "class": "NMData::SceneData",

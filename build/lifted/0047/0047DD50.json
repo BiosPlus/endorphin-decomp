@@ -1,0 +1,142 @@
+{
+  "va": "0x0047DD50",
+  "size": 7955,
+  "orig_symbol": "NMData::SceneData::vfunc_1",
+  "src_path": "src/NMData/SceneData.cpp",
+  "lifted_path": "lifted/NMData/SceneData.cpp",
+  "name": "NMData::SceneData::vfunc_1",
+  "class": "NMData::SceneData",
+  "signature": "inline T* lift_ptr(void* base, size_t offset)",
+  "summary": "Loads scene data (environment, characters, timeline events, options, channels, world) from an XML node.",
+  "fields": [
+    {
+      "class": "NMData::SceneData",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "animationData"
+    },
+    {
+      "class": "NMData::SceneData",
+      "offset": "+0x18",
+      "type": "uint32_t[3]",
+      "name": "field_0x18"
+    },
+    {
+      "class": "NMData::SceneData",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "field_0x24"
+    },
+    {
+      "class": "NMData::SceneData",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    },
+    {
+      "class": "NMData::SceneData",
+      "offset": "+0x30",
+      "type": "uint32_t[4]",
+      "name": "field_0x30"
+    },
+    {
+      "class": "NMData::SceneData",
+      "offset": "+0x40",
+      "type": "void*",
+      "name": "field_0x40"
+    },
+    {
+      "class": "NMData::SceneData",
+      "offset": "+0x44",
+      "type": "uint32_t[3]",
+      "name": "field_0x44"
+    },
+    {
+      "class": "NMData::SceneData",
+      "offset": "+0x50",
+      "type": "uint32_t",
+      "name": "field_0x50"
+    },
+    {
+      "class": "NMData::SceneData",
+      "offset": "+0x5C",
+      "type": "void*",
+      "name": "field_0x5C"
+    },
+    {
+      "class": "NMData::SceneData",
+      "offset": "+0x1B0",
+      "type": "uint8_t",
+      "name": "field_0x1B0"
+    },
+    {
+      "class": "NMData::SceneData",
+      "offset": "+0x238",
+      "type": "uint8_t",
+      "name": "field_0x238"
+    },
+    {
+      "class": "NMData::SceneData",
+      "offset": "+0x514",
+      "type": "void*",
+      "name": "field_0x514"
+    },
+    {
+      "class": "NMData::SceneData",
+      "offset": "+0x518",
+      "type": "uint8_t",
+      "name": "field_0x518"
+    },
+    {
+      "class": "NMData::SceneData",
+      "offset": "+0x524",
+      "type": "uint32_t[3]",
+      "name": "field_0x524"
+    },
+    {
+      "class": "NMData::SceneData",
+      "offset": "+0x528",
+      "type": "void*",
+      "name": "field_0x528"
+    },
+    {
+      "class": "NMData::SceneData",
+      "offset": "+0x530",
+      "type": "uint8_t",
+      "name": "field_0x530"
+    },
+    {
+      "class": "NMData::SceneData",
+      "offset": "+0x531",
+      "type": "uint8_t",
+      "name": "field_0x531"
+    },
+    {
+      "class": "NMData::SceneData",
+      "offset": "+0x534",
+      "type": "int32_t",
+      "name": "field_0x534"
+    },
+    {
+      "class": "NMData::SceneData",
+      "offset": "+0x538",
+      "type": "int32_t",
+      "name": "version"
+    },
+    {
+      "class": "NMData::SceneData",
+      "offset": "+0x53C",
+      "type": "std::string",
+      "name": "field_0x53C"
+    },
+    {
+      "class": "NMData::SceneData",
+      "offset": "+0x558",
+      "type": "void*",
+      "name": "progressCallback"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:02:00Z"
+}
