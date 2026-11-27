@@ -1,0 +1,22 @@
+{
+  "va": "0x006A1FB0",
+  "size": 330,
+  "orig_symbol": "ExprParser::Operators::AssignToSetMethod::vfunc_2",
+  "src_path": "src/ExprParser/Operators/AssignToSetMethod.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/AssignToSetMethod.cpp",
+  "name": "ExprParser::Operators::AssignToSetMethod::vfunc_2",
+  "class": "ExprParser::Operators::AssignToSetMethod",
+  "signature": "void __thiscall fn_006A1FB0(void* self, uint8_t* arg0, uint8_t* arg1)",
+  "summary": "Evaluates AssignToSetMethod operator on expression evaluation stacks.",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::AssignToSetMethod",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:04:21Z"
+}
