@@ -70238,3 +70238,60 @@ int32_t fn_004A3F00(void* obj) {
     return vfunc47(target, obj);
 }
 } // namespace lift_004A3F00
+
+// [0x004A3B00] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_47 (154 bytes)
+namespace lift_004A3B00 {
+// Known callee 0x006658C0: sub_006658C0 (4 bytes; called with ecx = src->field_0x00, returns eax).
+extern void* __thiscall ext_006658C0(void* self);
+// Known callee 0x006720C0: sub_006720C0 (18 bytes; thiscall, ecx = temp slot, one stack arg).
+extern void* __thiscall ext_006720C0(void* self, void* value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* __thiscall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ReadMethodType::vfunc_47
+// @class ExprParser::ReadMethodType
+// @summary Reads the source's inner pointer, copies it into the source via assignFromOther, then forwards vfunc_47 on the inner object; throws DerivedException if the inner pointer is null.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+void* fn_004A3B00(void* src) {
+    void* field00 = lift_field<void*>(src, 0x00);
+
+    if (field00 == nullptr) {
+        // Exception path: construct a DerivedException and throw it.
+        // Object size is not recovered; the local is only used as the thrown object.
+        alignas(8) unsigned char exc[0x10] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return nullptr; // not reached
+    }
+
+    // Temporary slot (esp+4 in the original frame): { field_0x00, field_0x04 }.
+    alignas(8) unsigned char temp[8] = {};
+
+    void* value = ext_006658C0(field00);
+    ext_006720C0(temp, value);
+
+    ext_0041CF50(src, temp);
+
+    // If the temp's field_0x04 is non-null, call its vtable slot 0x78 (offset 30) with temp as arg.
+    void* tempField04 = lift_field<void*>(temp, 0x04);
+    if (tempField04 != nullptr) {
+        void* vtbl = lift_field<void*>(tempField04, 0x00);
+        using Slot30Fn = void* (__thiscall*)(void*, void*);
+        auto fn = reinterpret_cast<Slot30Fn>(lift_field<void*>(vtbl, 0x78));
+        fn(tempField04, temp);
+    }
+
+    // Tail: forward to src->field_0x04->vtable slot at +0xbc with src as the argument.
+    void* inner = lift_field<void*>(src, 0x04);
+    void* innerVtbl = lift_field<void*>(inner, 0x00);
+    using Slot47Fn = void* (__thiscall*)(void*, void*);
+    auto fn47 = reinterpret_cast<Slot47Fn>(lift_field<void*>(innerVtbl, 0xbc));
+    return fn47(inner, src);
+}
+} // namespace lift_004A3B00
