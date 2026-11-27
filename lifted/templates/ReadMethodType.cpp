@@ -69912,3 +69912,53 @@ void fn_00639CB0(void* self) {
 }
 } // namespace lift_00674BF0
 } // namespace lift_00639CB0
+
+// [0x0046D530]
+namespace lift_0046D530 {
+// @name ExprParser::ReadMethodType<ImageExporter, const std::string&, &ImageExporter::getDestination, 0>::vfunc_47
+// @class ExprParser::ReadMethodType
+// @summary Reads ImageExporter::getDestination(), wraps it in a temporary value, assigns it to arg1, releases the temporary, and invokes vtable slot 0xBC on arg1->field_0x04; throws DerivedException if arg1->field_0x00 is null.
+// @field ExprParser::ReadMethodArg +0x00 void* target_obj
+// @field ExprParser::ReadMethodArg +0x04 void* field_0x04
+
+
+extern uint32_t mem_009DEC1C;
+
+void* __thiscall ext_0042F6E0(void* self);
+void* __thiscall ext_006720E0(void* self, void* arg);
+void* __thiscall ext_0041CF50(void* self, void* other);
+void* __thiscall ext_0046C3C0(void* self);
+void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+struct TempValue {
+    void* field_0x00;
+    void* field_0x04;
+};
+
+void __thiscall fn_0046D530(void* self, void* arg1) {
+    (void)self;
+    void* target = lift_field<void*>(arg1, 0x00);
+    if (!target) {
+        uint8_t exc[0x2C];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return;
+    }
+
+    void* val = ext_0042F6E0(target);
+    TempValue tmp{};
+    ext_006720E0(&tmp, val);
+    ext_0041CF50(arg1, &tmp);
+
+    if (tmp.field_0x04) {
+        using VFunc78 = void(__thiscall*)(void*, void*);
+        void** vtbl = *reinterpret_cast<void***>(tmp.field_0x04);
+        reinterpret_cast<VFunc78>(vtbl[0x78 / 4])(tmp.field_0x04, &tmp);
+    }
+
+    void* obj2 = lift_field<void*>(arg1, 0x04);
+    using VFuncBC = void(__thiscall*)(void*, void*);
+    void** vtbl2 = *reinterpret_cast<void***>(obj2);
+    reinterpret_cast<VFuncBC>(vtbl2[0xBC / 4])(obj2, arg1);
+}
+} // namespace lift_0046D530
