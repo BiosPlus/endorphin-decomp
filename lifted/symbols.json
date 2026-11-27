@@ -47495,6 +47495,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0060E7B0 (NMData::AxisDefineSensorData::vfunc_2).",
     "lifted_path": "lifted/NMData/EffectorBaseData.cpp"
   },
+  "0x0060C2C0": {
+    "name": "NMData::EffectorWithMemoryData::vfunc_20",
+    "class": "NMData::EffectorWithMemoryData",
+    "signature": "std::string fn_0060C2C0(void* self)",
+    "summary": "Builds a descriptive std::string: literal prefix + this member string at +0x04 + literal suffix, returned by value.",
+    "lifted_path": "lifted/NMData/EffectorWithMemoryData.cpp"
+  },
   "0x0060C360": {
     "name": "CopyCtor_0060C360",
     "class": "Class_0060C360",

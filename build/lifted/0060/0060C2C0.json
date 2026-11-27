@@ -1,0 +1,22 @@
+{
+  "va": "0x0060C2C0",
+  "size": 157,
+  "orig_symbol": "NMData::EffectorWithMemoryData::vfunc_20",
+  "src_path": "src/NMData/EffectorWithMemoryData.cpp",
+  "lifted_path": "lifted/NMData/EffectorWithMemoryData.cpp",
+  "name": "NMData::EffectorWithMemoryData::vfunc_20",
+  "class": "NMData::EffectorWithMemoryData",
+  "signature": "std::string fn_0060C2C0(void* self)",
+  "summary": "Builds a descriptive std::string: literal prefix + this member string at +0x04 + literal suffix, returned by value.",
+  "fields": [
+    {
+      "class": "NMData::EffectorWithMemoryData",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:36:35Z"
+}
