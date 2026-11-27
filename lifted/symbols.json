@@ -19621,6 +19621,13 @@
     "summary": "Prepends \"Events.\" to the event name string at +0x14",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x004BFBA0": {
+    "name": "NMData::TriggeredEventData::vfunc_1_off_154",
+    "class": "NMData::TriggeredEventData",
+    "signature": "void fn_004BFBA0(void* self, void* arg)",
+    "summary": "Forwards this+0x18 to a virtual slot 13 call on the argument object, then calls virtual slot 91 on the enclosing TriggeredEventData object (this-0x154).",
+    "lifted_path": "lifted/NMData/TriggeredEventData.cpp"
+  },
   "0x004BFBD0": {
     "name": "sub_004BFBD0",
     "signature": "extern \"C\" void fn_004BFBD0(void)",

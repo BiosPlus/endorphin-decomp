@@ -1,0 +1,28 @@
+{
+  "va": "0x004BFBA0",
+  "size": 42,
+  "orig_symbol": "NMData::TriggeredEventData::vfunc_1_off_154",
+  "src_path": "src/NMData/TriggeredEventData.cpp",
+  "lifted_path": "lifted/NMData/TriggeredEventData.cpp",
+  "name": "NMData::TriggeredEventData::vfunc_1_off_154",
+  "class": "NMData::TriggeredEventData",
+  "signature": "void fn_004BFBA0(void* self, void* arg)",
+  "summary": "Forwards this+0x18 to a virtual slot 13 call on the argument object, then calls virtual slot 91 on the enclosing TriggeredEventData object (this-0x154).",
+  "fields": [
+    {
+      "class": "NMData::TriggeredEventData",
+      "offset": "+0x0",
+      "type": "void* vtable (read via enclosing object at",
+      "name": "this-0x154)"
+    },
+    {
+      "class": "NMData::TriggeredEventData",
+      "offset": "+0x16C",
+      "type": "void* field_0x16C (address of this+0x18 passed to callback; not dereferenced",
+      "name": "here)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:40:32Z"
+}
