@@ -2690,6 +2690,12 @@
     "summary": "Calls vtable[2] on obj to obtain a temporary std::string, assigns it to dst, and destroys the temporary.",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x00427640": {
+    "name": "checkStringEqualsConst",
+    "signature": "extern \"C\" void __cdecl fn_00427640(void* /*arg0*/, void* obj, uint8_t* out)",
+    "summary": "Gets a std::string via ext_004275C0, compares it with mem_0092F10C, and stores the boolean result in *out.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x004276B0": {
     "name": "StdStringCopyConstruct",
     "signature": "void* fn_004276B0(void* dst, const void* src)",
@@ -26933,6 +26939,12 @@
     "summary": "Reads a 2-byte header from an istream (tellg, then read 2 bytes, then skip 2 bytes); returns true unless the header is \"V#\".",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x00575CE0": {
+    "name": "readStreamHeaderAndName",
+    "signature": "bool __stdcall sub_00575CE0(void* stream, void* out_str, int32_t* out_val)",
+    "summary": "Reads a 4-byte integer and 28-byte string from an istream, returning true if the integer is less than 1.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00575DF0": {
     "name": "ElemArray20::GetAt",
     "class": "ElemArray20",
@@ -27429,6 +27441,13 @@
     "signature": "inline bool accepts(void* obj)",
     "summary": "Returns self if virtual slot 0x70 accepts it; otherwise walks the +0x94 chain and returns the first node accepted by slot 0x70, or null.",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
+  "0x00584B60": {
+    "name": "AnimatableTransform::appendPath",
+    "class": "AnimatableTransform",
+    "signature": "void __thiscall AnimatableTransform_vfunc_29(void* self, void* outStr)",
+    "summary": "Appends the node's hierarchical path to the output string, using field_0x30 if non-empty or field_0x14 otherwise.",
+    "lifted_path": "lifted/classes/AnimatableTransform.cpp"
   },
   "0x00584BD0": {
     "name": "Unknown::getStrPtrOrFallback",
@@ -29121,6 +29140,13 @@
     "class": "Unknown",
     "signature": "DWORD sub_00599E70(void* self)",
     "summary": "Returns DWORD at (*(*(*(self+0x26C))+0x1C)-\u003enext-\u003e+0x28)+0x38C, or 0 if self+0x26C-\u003e+0x20 is null.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
+  "0x00599EA0": {
+    "name": "Unknown::getGrandparentVectorOrField0x38C",
+    "class": "Unknown",
+    "signature": "DWORD __fastcall sub_00599EA0(void* self)",
+    "summary": "Returns field_0x22C of the first element in grandparent's vector at +0x330, or falls back to ext_00599E70.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
   "0x0059B070": {

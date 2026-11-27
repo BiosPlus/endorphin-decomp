@@ -233,3 +233,43 @@ void* fn_00593870(void* self) {
     return ext_005935A0(mem, owner);
 }
 } // namespace lift_00593870
+
+// [0x00584B60]
+namespace lift_00584B60 {
+// @name AnimatableTransform::appendPath
+// @class AnimatableTransform
+// @summary Appends the node's hierarchical path to the output string, using field_0x30 if non-empty or field_0x14 otherwise.
+// @field AnimatableTransform +0x14 std::string field_0x14
+// @field AnimatableTransform +0x30 std::string field_0x30
+// @field AnimatableTransform +0x94 void* field_0x94
+
+
+extern void* mem_00924ED0;
+extern void* mem_00924FC8;
+extern void* mem_00924FD8;
+extern char mem_00928B5D[];
+extern char mem_0092AB70[];
+
+void __thiscall AnimatableTransform_vfunc_29(void* self, void* outStr) {
+    void* parent = lift_field<void*>(self, 0x94);
+    if (parent != nullptr) {
+        uint32_t* vtable = *reinterpret_cast<uint32_t**>(parent);
+        auto vfunc = reinterpret_cast<void(__thiscall*)(void*, void*)>(vtable[0x74 / 4]);
+        vfunc(parent, outStr);
+
+        auto appendCStr = reinterpret_cast<void*(__thiscall*)(void*, const char*)>(mem_00924ED0);
+        appendCStr(outStr, mem_0092AB70);
+    }
+
+    void* str30 = static_cast<uint8_t*>(self) + 0x30;
+    auto notEqualCStr = reinterpret_cast<bool(__cdecl*)(void*, const char*)>(mem_00924FC8);
+    auto appendStr = reinterpret_cast<void*(__thiscall*)(void*, void*)>(mem_00924FD8);
+
+    if (notEqualCStr(str30, mem_00928B5D)) {
+        appendStr(outStr, str30);
+    } else {
+        void* str14 = static_cast<uint8_t*>(self) + 0x14;
+        appendStr(outStr, str14);
+    }
+}
+} // namespace lift_00584B60
