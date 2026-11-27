@@ -82737,3 +82737,311 @@ uint8_t __stdcall fn_00674D80(void** holder, void* arg2) {
     return result;
 }
 } // namespace lift_00674D80
+
+// [0x00505150] ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>::vfunc_46 (155 bytes)
+namespace lift_00505150 {
+// @name ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>::vfunc_46
+// @class ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00504F10 (ExprParser::ReadMethodType<Interpreter>::vfunc_45).
+namespace lift_00504F10 {
+extern void ext_006720C0(void* self, int flag);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// The caller pushes (exception object, ThrowInfo) cdecl; declared with those two arguments here.
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+extern int mem_009DEC1C;
+
+// Call a virtual slot (byte offset into the vtable) of obj, returning it as a function pointer type.
+template <typename Fn>
+static inline Fn vslot(void* obj, std::size_t byteOffset) {
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    return reinterpret_cast<Fn>(vtbl[byteOffset / sizeof(void*)]);
+}
+
+// @name ExprParser::ReadMethodType<Interpreter>::vfunc_45
+// @class ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>
+// @summary If self->field_0x00 is set, copy self through a temp into self and release the temp; then forward to self->field_0x04->vfunc_45(self, arg2). Otherwise throw a DerivedException.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+int fn_00505150(void* self, void* arg2) {
+    if (lift_field<void*>(self, 0x00) != nullptr) {
+        // Temp holder: +0x00 and +0x04 (second word is released after the copy).
+        void* tmp[2] = {nullptr, nullptr};
+        ext_006720C0(tmp, 0);
+        ext_0041CF50(self, tmp);
+
+        void* release = tmp[1];
+        if (release != nullptr) {
+            vslot<void (*)(void*, void*)>(release, 0x78)(release, tmp);
+        }
+
+        void* target = lift_field<void*>(self, 0x04);
+        return vslot<int (*)(void*, void*, void*)>(target, 0xB8)(target, self, arg2);
+    }
+
+    // Storage for the exception object constructed in place (size not known from asm; generous).
+    alignas(8) unsigned char exc[0x40] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(&mem_009DEC1C));
+    return 0;
+}
+} // namespace lift_00504F10
+} // namespace lift_00505150
+
+// [0x0062EA40] ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1>::vfunc_42 (156 bytes)
+namespace lift_0062EA40 {
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1>::vfunc_42
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x00674D80 (ReadMethodType<ExpressionEntry>::vfunc_42).
+namespace lift_00674D80 {
+// Known callee 0x006720E0: sub_006720E0 (43 bytes; thiscall on the out-slot, one stack arg; constructs the wrapped object pointer used for the vfunc_42 dispatch)
+extern void __thiscall ext_00672110(void* self, void* src);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message and installs its vtable; returns the object)
+extern void* __thiscall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk forwarding to MSVCR80!_CxxThrowException)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ReadMethodType<ExpressionEntry>::vfunc_42
+// @class ExprParser::ReadMethodType<ExpressionEntry, const std::string&, &ExpressionEntry::getExpression, 0>
+// @summary Reads the wrapped object pointer from *holder (throws if null), dispatches vtable slot 42 on the resolved sub-object at +0x1c, then releases it via vtable slot 30.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x1C void* field_0x1c
+uint8_t __stdcall fn_0062EA40(void** holder, void* arg2) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Null wrapper: build the exception object and throw it. Storage for the in-place
+        // constructed exception is the stack slot the original passes as `this`.
+        void* exc_slot = nullptr;
+        ext_0046C3C0(&exc_slot);
+        ext_006A6DD2(&exc_slot, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+
+    // sub_006720E0(out_slot, obj + 0x1c): resolves the sub-object into the out slot.
+    void* res = nullptr;
+    ext_00672110(&res, static_cast<uint8_t*>(obj) + 0x84);
+
+    // Virtual call vtable[0xA8 / 4 = 42](res, &tmp, arg2); result is returned in AL.
+    uint32_t tmp = 0;
+    using VFunc42 = uint8_t (*)(void* self, void* out, void* arg);
+    void** vt = *static_cast<void***>(res);
+    uint8_t result = reinterpret_cast<VFunc42>(vt[42])(res, &tmp, arg2);
+
+    // If the resolved object is non-null, release it via vtable[0x78 / 4 = 30](res, &scratch).
+    if (res != nullptr) {
+        using VFunc30 = void (*)(void* self, void* out);
+        void* scratch = nullptr;
+        void** vt2 = *static_cast<void***>(res);
+        reinterpret_cast<VFunc30>(vt2[30])(res, &scratch);
+    }
+
+    return result;
+}
+} // namespace lift_00674D80
+} // namespace lift_0062EA40
+
+// [0x00635DA0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0>::vfunc_42 (156 bytes)
+namespace lift_00635DA0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0>::vfunc_42
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00674D80 (ReadMethodType<ExpressionEntry>::vfunc_42).
+namespace lift_00674D80 {
+// Known callee 0x006720E0: sub_006720E0 (43 bytes; thiscall on the out-slot, one stack arg; constructs the wrapped object pointer used for the vfunc_42 dispatch)
+extern void __thiscall ext_00672110(void* self, void* src);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message and installs its vtable; returns the object)
+extern void* __thiscall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk forwarding to MSVCR80!_CxxThrowException)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ReadMethodType<ExpressionEntry>::vfunc_42
+// @class ExprParser::ReadMethodType<ExpressionEntry, const std::string&, &ExpressionEntry::getExpression, 0>
+// @summary Reads the wrapped object pointer from *holder (throws if null), dispatches vtable slot 42 on the resolved sub-object at +0x1c, then releases it via vtable slot 30.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x1C void* field_0x1c
+uint8_t __stdcall fn_00635DA0(void** holder, void* arg2) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Null wrapper: build the exception object and throw it. Storage for the in-place
+        // constructed exception is the stack slot the original passes as `this`.
+        void* exc_slot = nullptr;
+        ext_0046C3C0(&exc_slot);
+        ext_006A6DD2(&exc_slot, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+
+    // sub_006720E0(out_slot, obj + 0x1c): resolves the sub-object into the out slot.
+    void* res = nullptr;
+    ext_00672110(&res, static_cast<uint8_t*>(obj) + 0xA8);
+
+    // Virtual call vtable[0xA8 / 4 = 42](res, &tmp, arg2); result is returned in AL.
+    uint32_t tmp = 0;
+    using VFunc42 = uint8_t (*)(void* self, void* out, void* arg);
+    void** vt = *static_cast<void***>(res);
+    uint8_t result = reinterpret_cast<VFunc42>(vt[42])(res, &tmp, arg2);
+
+    // If the resolved object is non-null, release it via vtable[0x78 / 4 = 30](res, &scratch).
+    if (res != nullptr) {
+        using VFunc30 = void (*)(void* self, void* out);
+        void* scratch = nullptr;
+        void** vt2 = *static_cast<void***>(res);
+        reinterpret_cast<VFunc30>(vt2[30])(res, &scratch);
+    }
+
+    return result;
+}
+} // namespace lift_00674D80
+} // namespace lift_00635DA0
+
+// [0x00639810] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0>::vfunc_42 (156 bytes)
+namespace lift_00639810 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0>::vfunc_42
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00674D80 (ReadMethodType<ExpressionEntry>::vfunc_42).
+namespace lift_00674D80 {
+// Known callee 0x006720E0: sub_006720E0 (43 bytes; thiscall on the out-slot, one stack arg; constructs the wrapped object pointer used for the vfunc_42 dispatch)
+extern void __thiscall ext_00672110(void* self, void* src);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message and installs its vtable; returns the object)
+extern void* __thiscall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk forwarding to MSVCR80!_CxxThrowException)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ReadMethodType<ExpressionEntry>::vfunc_42
+// @class ExprParser::ReadMethodType<ExpressionEntry, const std::string&, &ExpressionEntry::getExpression, 0>
+// @summary Reads the wrapped object pointer from *holder (throws if null), dispatches vtable slot 42 on the resolved sub-object at +0x1c, then releases it via vtable slot 30.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x1C void* field_0x1c
+uint8_t __stdcall fn_00639810(void** holder, void* arg2) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Null wrapper: build the exception object and throw it. Storage for the in-place
+        // constructed exception is the stack slot the original passes as `this`.
+        void* exc_slot = nullptr;
+        ext_0046C3C0(&exc_slot);
+        ext_006A6DD2(&exc_slot, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+
+    // sub_006720E0(out_slot, obj + 0x1c): resolves the sub-object into the out slot.
+    void* res = nullptr;
+    ext_00672110(&res, static_cast<uint8_t*>(obj) + 0x9C);
+
+    // Virtual call vtable[0xA8 / 4 = 42](res, &tmp, arg2); result is returned in AL.
+    uint32_t tmp = 0;
+    using VFunc42 = uint8_t (*)(void* self, void* out, void* arg);
+    void** vt = *static_cast<void***>(res);
+    uint8_t result = reinterpret_cast<VFunc42>(vt[42])(res, &tmp, arg2);
+
+    // If the resolved object is non-null, release it via vtable[0x78 / 4 = 30](res, &scratch).
+    if (res != nullptr) {
+        using VFunc30 = void (*)(void* self, void* out);
+        void* scratch = nullptr;
+        void** vt2 = *static_cast<void***>(res);
+        reinterpret_cast<VFunc30>(vt2[30])(res, &scratch);
+    }
+
+    return result;
+}
+} // namespace lift_00674D80
+} // namespace lift_00639810
+
+// [0x00639F00] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>::vfunc_42 (156 bytes)
+namespace lift_00639F00 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>::vfunc_42
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00674D80 (ReadMethodType<ExpressionEntry>::vfunc_42).
+namespace lift_00674D80 {
+// Known callee 0x006720E0: sub_006720E0 (43 bytes; thiscall on the out-slot, one stack arg; constructs the wrapped object pointer used for the vfunc_42 dispatch)
+extern void __thiscall ext_00672110(void* self, void* src);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message and installs its vtable; returns the object)
+extern void* __thiscall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk forwarding to MSVCR80!_CxxThrowException)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ReadMethodType<ExpressionEntry>::vfunc_42
+// @class ExprParser::ReadMethodType<ExpressionEntry, const std::string&, &ExpressionEntry::getExpression, 0>
+// @summary Reads the wrapped object pointer from *holder (throws if null), dispatches vtable slot 42 on the resolved sub-object at +0x1c, then releases it via vtable slot 30.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x1C void* field_0x1c
+uint8_t __stdcall fn_00639F00(void** holder, void* arg2) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Null wrapper: build the exception object and throw it. Storage for the in-place
+        // constructed exception is the stack slot the original passes as `this`.
+        void* exc_slot = nullptr;
+        ext_0046C3C0(&exc_slot);
+        ext_006A6DD2(&exc_slot, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+
+    // sub_006720E0(out_slot, obj + 0x1c): resolves the sub-object into the out slot.
+    void* res = nullptr;
+    ext_00672110(&res, static_cast<uint8_t*>(obj) + 0x90);
+
+    // Virtual call vtable[0xA8 / 4 = 42](res, &tmp, arg2); result is returned in AL.
+    uint32_t tmp = 0;
+    using VFunc42 = uint8_t (*)(void* self, void* out, void* arg);
+    void** vt = *static_cast<void***>(res);
+    uint8_t result = reinterpret_cast<VFunc42>(vt[42])(res, &tmp, arg2);
+
+    // If the resolved object is non-null, release it via vtable[0x78 / 4 = 30](res, &scratch).
+    if (res != nullptr) {
+        using VFunc30 = void (*)(void* self, void* out);
+        void* scratch = nullptr;
+        void** vt2 = *static_cast<void***>(res);
+        reinterpret_cast<VFunc30>(vt2[30])(res, &scratch);
+    }
+
+    return result;
+}
+} // namespace lift_00674D80
+} // namespace lift_00639F00
+
+// [0x0063A270] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0>::vfunc_42 (156 bytes)
+namespace lift_0063A270 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0>::vfunc_42
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00674D80 (ReadMethodType<ExpressionEntry>::vfunc_42).
+namespace lift_00674D80 {
+// Known callee 0x006720E0: sub_006720E0 (43 bytes; thiscall on the out-slot, one stack arg; constructs the wrapped object pointer used for the vfunc_42 dispatch)
+extern void __thiscall ext_00672110(void* self, void* src);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message and installs its vtable; returns the object)
+extern void* __thiscall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk forwarding to MSVCR80!_CxxThrowException)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ReadMethodType<ExpressionEntry>::vfunc_42
+// @class ExprParser::ReadMethodType<ExpressionEntry, const std::string&, &ExpressionEntry::getExpression, 0>
+// @summary Reads the wrapped object pointer from *holder (throws if null), dispatches vtable slot 42 on the resolved sub-object at +0x1c, then releases it via vtable slot 30.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x1C void* field_0x1c
+uint8_t __stdcall fn_0063A270(void** holder, void* arg2) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Null wrapper: build the exception object and throw it. Storage for the in-place
+        // constructed exception is the stack slot the original passes as `this`.
+        void* exc_slot = nullptr;
+        ext_0046C3C0(&exc_slot);
+        ext_006A6DD2(&exc_slot, reinterpret_cast<const void*>(0x009DEC1C));
+    }
+
+    // sub_006720E0(out_slot, obj + 0x1c): resolves the sub-object into the out slot.
+    void* res = nullptr;
+    ext_00672110(&res, static_cast<uint8_t*>(obj) + 0xB4);
+
+    // Virtual call vtable[0xA8 / 4 = 42](res, &tmp, arg2); result is returned in AL.
+    uint32_t tmp = 0;
+    using VFunc42 = uint8_t (*)(void* self, void* out, void* arg);
+    void** vt = *static_cast<void***>(res);
+    uint8_t result = reinterpret_cast<VFunc42>(vt[42])(res, &tmp, arg2);
+
+    // If the resolved object is non-null, release it via vtable[0x78 / 4 = 30](res, &scratch).
+    if (res != nullptr) {
+        using VFunc30 = void (*)(void* self, void* out);
+        void* scratch = nullptr;
+        void** vt2 = *static_cast<void***>(res);
+        reinterpret_cast<VFunc30>(vt2[30])(res, &scratch);
+    }
+
+    return result;
+}
+} // namespace lift_00674D80
+} // namespace lift_0063A270
