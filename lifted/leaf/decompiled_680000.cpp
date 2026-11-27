@@ -2264,3 +2264,36 @@ void* fn_00685890(void* self, void* other) {
     return self;
 }
 } // namespace lift_00685890
+
+// [0x00688E20] sub_00688E20 (109 bytes)
+namespace lift_00688E20 {
+// Known callee 0x0041DD40: destroyStringPairRange (Destroys a range [begin, end) of 0x38-byte elements, each containing two std::string fields at +0x00 and +0x1C.)
+// Called cdecl with four stack arguments (begin, end, self, out); the caller cleans up.
+extern void ext_0041DD40(uint32_t begin, uint32_t end, void* self, void* out);
+// Known callee 0x0062BA00: CopyStringPairRangeReturnEnd_0062BA00 (Copies a 0x38-byte record range via sub_0062B8B0, then returns dest advanced by the record count times 0x38.)
+// Called cdecl with three meaningful arguments (source first, source last, dest); returns one past the last destination record.
+extern uint32_t ext_0062BA00(uint32_t first, uint32_t last, uint32_t dest);
+
+// CRT import slot (MSVCR80!_invalid_parameter_noinfo) called on argument mismatch.
+extern int mem_00925134;
+
+// @name EraseStringPairRange
+// @summary Erases the 0x38-byte string-pair records in [first, last) from self's range: moves the tail down via ext_0062BA00, destroys the vacated tail via ext_0041DD40, updates the end at self+0x08, and writes (a2, first) to out.
+// @field <unknown> +0x08 uint32_t field_0x08
+void fn_00688E20(void* self, void* out, uint32_t a2, uint32_t first, uint32_t a4, uint32_t last) {
+    if (a2 == 0 || a2 != a4) {
+        // Original calls the CRT _invalid_parameter_noinfo handler via mem_00925134 and then falls through (boilerplate; no effect modeled).
+        (void)&mem_00925134;
+    }
+
+    if (first != last) {
+        const uint32_t oldEnd = lift_field<uint32_t>(self, 0x08);
+        const uint32_t newEnd = ext_0062BA00(last, oldEnd, first);
+        ext_0041DD40(newEnd, oldEnd, self, out);
+        lift_field<uint32_t>(self, 0x08) = newEnd;
+    }
+
+    lift_field<uint32_t>(out, 0x00) = a2;
+    lift_field<uint32_t>(out, 0x04) = first;
+}
+} // namespace lift_00688E20

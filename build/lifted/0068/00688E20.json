@@ -1,0 +1,21 @@
+{
+  "va": "0x00688E20",
+  "size": 109,
+  "orig_symbol": "sub_00688E20",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "EraseStringPairRange",
+  "signature": "void fn_00688E20(void* self, void* out, uint32_t a2, uint32_t first, uint32_t a4, uint32_t last)",
+  "summary": "Erases the 0x38-byte string-pair records in [first, last) from self's range: moves the tail down via ext_0062BA00, destroys the vacated tail via ext_0041DD40, updates the end at self+0x08, and writes (a2, first) to out.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:01:20Z"
+}
