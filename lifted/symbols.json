@@ -59083,6 +59083,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004C9860 (initStaticObjectOnce_004C9860).",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x0060E540": {
+    "name": "NMData::SensorData::vfunc_62",
+    "class": "NMData::SensorData",
+    "signature": "extern \"C\" void __thiscall fn_0060E540(uint8_t* self)",
+    "summary": "Clears two string fields and resets sensor data fields to default values.",
+    "lifted_path": "lifted/NMData/SensorData.cpp"
+  },
   "0x0060E7B0": {
     "name": "NMData::AxisDefineSensorData::vfunc_2",
     "class": "NMData::AxisDefineSensorData",
