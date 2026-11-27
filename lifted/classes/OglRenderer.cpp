@@ -421,3 +421,31 @@ void fn_005332A0(void* self, uint8_t flag) {
     target(self);
 }
 } // namespace lift_005332A0
+
+// [0x00534D20]
+namespace lift_00534D20 {
+// @name OglRenderer::vfunc_96
+// @class OglRenderer
+// @summary Creates or retrieves an object via ext_005343A0, initializes it via ext_0053AFA0, and links its +0x38 field into the object returned by ext_00532E90 at +0x1C.
+
+
+extern uint8_t* __thiscall ext_005343A0(uint8_t* self, uint32_t arg1, uint32_t arg3, uint32_t arg4);
+extern uint32_t __thiscall ext_0053AFA0(uint8_t* self, uint32_t arg2);
+extern uint8_t* __thiscall ext_00532E90(uint8_t* self, uint32_t arg4);
+
+uint8_t* __thiscall fn_00534D20(uint8_t* self, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) {
+    uint8_t* obj = ext_005343A0(self, arg1, arg3, arg4);
+    if (!obj) {
+        return nullptr;
+    }
+
+    ext_0053AFA0(obj, arg2);
+
+    uint8_t* target = ext_00532E90(self, arg4);
+    if (target) {
+        lift_field<uint32_t>(target, 0x1C) = lift_field<uint32_t>(obj, 0x38);
+    }
+
+    return obj;
+}
+} // namespace lift_00534D20
