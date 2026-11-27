@@ -2509,3 +2509,17 @@ void* fn_006CA0E0() {
 } // namespace lift_00771F60
 } // namespace lift_007721F0
 } // namespace lift_006CA0E0
+
+// [0x006C9F80]
+namespace lift_006C9F80 {
+// @name sub_006C9F80
+// @summary Sets field_0x30 and calls sub_006D03E0 with (0x10, -1)
+// @field unknown +0x30 uint32_t field_0x30
+
+extern uint32_t ext_006D03E0(void* self, uint32_t a1, int32_t a2);
+
+uint32_t __thiscall sub_006C9F80(void* self, uint32_t arg0) {
+    lift_field<uint32_t>(self, 0x30) = arg0;
+    return ext_006D03E0(self, 0x10, -1);
+}
+} // namespace lift_006C9F80

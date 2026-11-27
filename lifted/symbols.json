@@ -90031,6 +90031,12 @@
     "summary": "Getter returning float field at offset +0x14.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C9F80": {
+    "name": "sub_006C9F80",
+    "signature": "uint32_t __thiscall sub_006C9F80(void* self, uint32_t arg0)",
+    "summary": "Sets field_0x30 and calls sub_006D03E0 with (0x10, -1)",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C9FA0": {
     "name": "sub_006C9FA0",
     "signature": "extern \"C\" int32_t __fastcall fn_006C9FA0(void* self)",
@@ -98494,6 +98500,13 @@
     "signature": "extern void fn_007140A0(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x007140B0": {
+    "name": "sub_007140B0_ctor",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_007140B0(void* self, uint32_t arg1)",
+    "summary": "Constructor calling base class constructor, setting vtable and field_0x10",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x007140E0": {
     "name": "sub_007140E0",
