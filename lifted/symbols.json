@@ -24634,6 +24634,13 @@
     "summary": "Validates a pointer range, erases/normalizes it via 0x596660, then for each element runs RTDynamicCast to the target type and passes non-null results to 0x41A920.",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
   },
+  "0x004E8C30": {
+    "name": "EraseRangeAndDynamicCastApply_004E8C30",
+    "class": "PointerRange",
+    "signature": "static void invalid_parameter_noinfo()",
+    "summary": "Erases [begin,end) of a pointer range via 0x00596660, reserves via 0x0050ED40, then applies 0x0041A920 to every entry that dynamic-casts to the target type.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004E9900": {
     "name": "SelectionBuffer::vfunc_25",
     "class": "SelectionBuffer",

@@ -1460,3 +1460,77 @@ void fn_004E8B60(void* arg0, void* self) {
     }
 }
 } // namespace lift_004E8B60
+
+// [0x004E8C30] sub_004E8C30 (194 bytes)
+namespace lift_004E8C30 {
+// Known callee 0x00596660: eraseInt32Range (Validates (self-pointer) args, erases [first,last) from a 4-byte-element buffer by shifting the tail down, sets end, and writes a 2-pointer result to out.)
+extern void ext_00596660(void* self, void** out, void* a2, int32_t* first, void* a4, int32_t* last);
+// Known callee 0x0050ED40: sub_0050ED40 (172B), thiscall(self) with one stack arg (count).
+extern void ext_0050ED40(void* self, int32_t count);
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast.)
+extern void ext_006A6E9E(void);
+// Known callee 0x0041A920: sub_0041A920 (106B), thiscall(self) with one stack arg (pointer to object).
+extern void ext_0041A920(void* self, void** obj);
+// IAT slot holding MSVCR80!_invalid_parameter_noinfo.
+extern int mem_00925134;
+// RTTI type_info addresses pushed as immediates in the original.
+extern int mem_00A2FBBC;
+extern int mem_00A2E2D8;
+
+using RTDynamicCastFn = void* (*)(void* obj, int32_t vfDelta, const void* src, const void* dst, int32_t isReference);
+
+static void invalid_parameter_noinfo() {
+    void (*handler)() = *reinterpret_cast<void (* const*)()>(&mem_00925134);
+    handler();
+}
+
+// @name EraseRangeAndDynamicCastApply_004E8C30
+// @class PointerRange
+// @summary Erases [begin,end) of a pointer range via 0x00596660, reserves via 0x0050ED40, then applies 0x0041A920 to every entry that dynamic-casts to the target type.
+// @field PointerRange +0x04 int32_t* field_0x04
+// @field PointerRange +0x08 int32_t* field_0x08
+void fn_004E8C30(void* self) {
+    if (lift_field<int32_t*>(self, 0x4) > lift_field<int32_t*>(self, 0x8)) {
+        invalid_parameter_noinfo();
+    }
+
+    void* res[2] = {nullptr, nullptr};
+    ext_00596660(self, res, self,
+                lift_field<int32_t*>(self, 0x4), self,
+                lift_field<int32_t*>(self, 0x8));
+
+    void* rng = res[0];
+    int32_t* rbeg = lift_field<int32_t*>(rng, 0x4);
+    int32_t count = 0;
+    if (rbeg != nullptr) {
+        count = static_cast<int32_t>(lift_field<int32_t*>(rng, 0x8) - rbeg);
+    }
+    ext_0050ED40(self, count);
+
+    int32_t* it = lift_field<int32_t*>(rng, 0x4);
+    for (;;) {
+        int32_t* end = lift_field<int32_t*>(rng, 0x8);
+        if (lift_field<int32_t*>(rng, 0x4) > end) {
+            invalid_parameter_noinfo();
+        }
+        if (it == end) {
+            break;
+        }
+        if (!(it < lift_field<int32_t*>(rng, 0x8))) {
+            invalid_parameter_noinfo();
+        }
+
+        void* obj = lift_field<void*>(it, 0);
+        void* cast = reinterpret_cast<RTDynamicCastFn>(&ext_006A6E9E)(
+            obj, 0, &mem_00A2E2D8, &mem_00A2FBBC, 0);
+        if (cast != nullptr) {
+            ext_0041A920(self, &cast);
+        }
+
+        if (!(it < lift_field<int32_t*>(rng, 0x8))) {
+            invalid_parameter_noinfo();
+        }
+        it += 1;
+    }
+}
+} // namespace lift_004E8C30
