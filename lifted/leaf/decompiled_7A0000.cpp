@@ -1222,3 +1222,34 @@ extern uint8_t sub_007AE140(char* buf, uint32_t size) {
     return 0;
 }
 } // namespace lift_007AE140
+
+// [0x007AEF10] sub_007AEF10 (92 bytes)
+namespace lift_007AEF10 {
+// IAT slot for MSVCR80.dll!vsprintf (holds the function pointer, not an int).
+extern void* mem_009252B8;
+// Stack probe the original calls with eax=0x4000 before its 16KB frame.
+extern void ext_006A7270();
+
+// @name logFormattedMessage
+// @summary If self+0x58 is non-null, vsprintf the format into a 16KB stack buffer and pass the result to the object's virtual slot 12 (buf, len).
+void fn_007AEF10(void* self, const char* fmt, ...) {
+    if (lift_field<void*>(self, 0x58) == nullptr) {
+        return;
+    }
+
+    ext_006A7270();  // stack probe for the 0x4000-byte frame (original: mov eax,0x4000; call)
+    char buf[0x4000];
+
+    va_list args;
+    va_start(args, fmt);
+    using VsprintfFn = int(__cdecl*)(char*, const char*, va_list);
+    reinterpret_cast<VsprintfFn>(mem_009252B8)(buf, fmt, args);
+    va_end(args);
+
+    size_t len = std::strlen(buf);
+
+    using VirtualFn = void(__thiscall*)(void* self, const char* text, size_t length);
+    void** vtbl = lift_field<void**>(self, 0x00);
+    reinterpret_cast<VirtualFn>(vtbl[12])(self, buf, len);
+}
+} // namespace lift_007AEF10

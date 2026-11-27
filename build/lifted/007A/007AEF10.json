@@ -1,0 +1,13 @@
+{
+  "va": "0x007AEF10",
+  "size": 92,
+  "orig_symbol": "sub_007AEF10",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "logFormattedMessage",
+  "signature": "void fn_007AEF10(void* self, const char* fmt, ...)",
+  "summary": "If self+0x58 is non-null, vsprintf the format into a 16KB stack buffer and pass the result to the object's virtual slot 12 (buf, len).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T01:45:40Z"
+}

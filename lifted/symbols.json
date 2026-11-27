@@ -71069,6 +71069,12 @@
     "summary": "Returns 1 if field +0x58 is zero; otherwise returns 1 when field +0x60 \u003e= field +0x5c (unsigned), else 0.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007AEF10": {
+    "name": "logFormattedMessage",
+    "signature": "void fn_007AEF10(void* self, const char* fmt, ...)",
+    "summary": "If self+0x58 is non-null, vsprintf the format into a 16KB stack buffer and pass the result to the object's virtual slot 12 (buf, len).",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AEF70": {
     "name": "ForwardArgPtrToThunk_007AEF70",
     "signature": "extern \"C\" uint8_t __stdcall fn_007AEF70(void* args_ptr)",
