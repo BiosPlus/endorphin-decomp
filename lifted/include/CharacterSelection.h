@@ -10,6 +10,13 @@
 // Recovered field layout for CharacterSelection:
 namespace lifted_layout {
 struct CharacterSelection_Fields {
+    // +0x0   void**                   vtable  (evidence: 0x004ED400)
+    // +0xC   DWORD                    field_0x0c  (evidence: 0x004ED400)
+    // +0x10  DWORD                    field_0x10  (evidence: 0x004ED400)
+    // +0x18  void*                    field_0x18  (evidence: 0x004ED400)
     // +0x20  uint32_t                 field_0x20  (evidence: 0x004EC9B0)
+    // +0x3C  DWORD                    field_0x3c  (evidence: 0x004ED400)
+    // +0x40  DWORD                    field_0x40  (evidence: 0x004ED400)
+    // +0x44  DWORD                    field_0x44  (evidence: 0x004ED400)
 };
 } // namespace lifted_layout

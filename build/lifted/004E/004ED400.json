@@ -1,0 +1,58 @@
+{
+  "va": "0x004ED400",
+  "size": 140,
+  "orig_symbol": "CharacterSelection::vfunc_14",
+  "src_path": "src/classes/CharacterSelection.cpp",
+  "lifted_path": "lifted/classes/CharacterSelection.cpp",
+  "name": "CharacterSelection::vfunc_14",
+  "class": "CharacterSelection",
+  "signature": "DWORD fn_004ED400(void* self, DWORD arg1, DWORD arg2)",
+  "summary": "Compares an element-count probe via vtable slot 21 with arg2; on match, computes two element counts and initializes the sub-object at +0x3c, else initializes arg1 and returns it.",
+  "fields": [
+    {
+      "class": "CharacterSelection",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "CharacterSelection",
+      "offset": "+0xC",
+      "type": "DWORD",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "CharacterSelection",
+      "offset": "+0x10",
+      "type": "DWORD",
+      "name": "field_0x10"
+    },
+    {
+      "class": "CharacterSelection",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    },
+    {
+      "class": "CharacterSelection",
+      "offset": "+0x3C",
+      "type": "DWORD",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "CharacterSelection",
+      "offset": "+0x40",
+      "type": "DWORD",
+      "name": "field_0x40"
+    },
+    {
+      "class": "CharacterSelection",
+      "offset": "+0x44",
+      "type": "DWORD",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:26:51Z"
+}
