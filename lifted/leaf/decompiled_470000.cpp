@@ -2027,3 +2027,197 @@ void fn_00475DA0(void* self, const char* text) {
     reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(str);
 }
 } // namespace lift_00475DA0
+
+// [0x00476150]
+namespace lift_00476150 {
+// @name RBTree::insertWithHint
+// @class RBTree
+// @summary Inserts a key-value pair into a red-black tree using a position hint iterator, returning an iterator to the inserted or existing element.
+// @field RBTree +0x04 void* head
+// @field RBTree +0x08 uint32_t size
+
+
+    void* __thiscall ext_00475E50(void* self, void* out_iter, uint32_t left_flag, void* node, void* val);
+    void __thiscall ext_00666C00(void* iter);
+    uint8_t __thiscall ext_00414510(void* self, void* lhs, void* rhs);
+    void __thiscall ext_00667030(void* iter);
+    uint8_t __thiscall ext_00666980(void* iter, void* other_iter);
+    void* __thiscall ext_00476050(void* self, void* out_pair, void* val);
+    extern void (__cdecl *mem_00925134)(void);
+    extern uint8_t (__cdecl *mem_00924EF4)(void* lhs, void* rhs);
+
+struct TreeIter {
+    void* tree;
+    void* node;
+};
+
+void* __thiscall sub_00476150(void* self, void* out_iter, void* hint_tree, void* hint_node, void* val) {
+    uint32_t size = lift_field<uint32_t>(self, 0x08);
+    if (size == 0) {
+        void* head = lift_field<void*>(self, 0x04);
+        ext_00475E50(self, out_iter, 1, head, val);
+        return out_iter;
+    }
+
+    void* head = lift_field<void*>(self, 0x04);
+    void* leftmost = lift_field<void*>(head, 0x00);
+
+    if (hint_tree == nullptr || hint_tree != self) {
+        mem_00925134();
+    }
+
+    if (hint_node == leftmost) {
+        void* node_key = static_cast<uint8_t*>(hint_node) + 0x0C;
+        if (mem_00924EF4(val, node_key) != 0) {
+            ext_00475E50(self, out_iter, 1, hint_node, val);
+            return out_iter;
+        }
+    } else {
+        if (hint_tree == nullptr || hint_tree != self) {
+            mem_00925134();
+        }
+        head = lift_field<void*>(self, 0x04);
+        if (hint_node == head) {
+            void* rightmost = lift_field<void*>(head, 0x08);
+            void* rightmost_key = static_cast<uint8_t*>(rightmost) + 0x0C;
+            if (mem_00924EF4(rightmost_key, val) != 0) {
+                ext_00475E50(self, out_iter, 0, rightmost, val);
+                return out_iter;
+            }
+        } else {
+            void* node_key = static_cast<uint8_t*>(hint_node) + 0x0C;
+            if (mem_00924EF4(val, node_key) != 0) {
+                TreeIter prev_iter{hint_tree, hint_node};
+                ext_00666C00(&prev_iter);
+                void* prev_key = static_cast<uint8_t*>(prev_iter.node) + 0x0C;
+                if (ext_00414510(self, prev_key, val) != 0) {
+                    void* prev_right = lift_field<void*>(prev_iter.node, 0x08);
+                    if (lift_field<uint8_t>(prev_right, 0x39) != 0) {
+                        ext_00475E50(self, out_iter, 0, prev_iter.node, val);
+                    } else {
+                        ext_00475E50(self, out_iter, 1, hint_node, val);
+                    }
+                    return out_iter;
+                }
+            }
+            if (mem_00924EF4(node_key, val) != 0) {
+                TreeIter next_iter{hint_tree, hint_node};
+                TreeIter end_iter{self, lift_field<void*>(self, 0x04)};
+                ext_00667030(&next_iter);
+                if (ext_00666980(&next_iter, &end_iter) != 0 ||
+                    ext_00414510(self, val, static_cast<uint8_t*>(next_iter.node) + 0x0C) != 0) {
+                    void* cur_right = lift_field<void*>(hint_node, 0x08);
+                    if (lift_field<uint8_t>(cur_right, 0x39) != 0) {
+                        ext_00475E50(self, out_iter, 0, hint_node, val);
+                    } else {
+                        ext_00475E50(self, out_iter, 1, next_iter.node, val);
+                    }
+                    return out_iter;
+                }
+            }
+        }
+    }
+
+    TreeIter insert_res{};
+    TreeIter* res_pair = static_cast<TreeIter*>(ext_00476050(self, &insert_res, val));
+    lift_field<void*>(out_iter, 0x00) = res_pair->tree;
+    lift_field<void*>(out_iter, 0x04) = res_pair->node;
+    return out_iter;
+}
+} // namespace lift_00476150
+
+// [0x0047B1E0]
+namespace lift_0047B1E0 {
+void __thiscall ext_0041A920(void* self, void* item);
+    void __thiscall ext_00427A60(void* self);
+    void* __thiscall ext_004D2C90(void* self, void* str);
+    void __thiscall ext_0050BE20(void* self);
+    void* ext_006A5C62(size_t size);
+
+    extern uintptr_t mem_00925134;
+    extern uintptr_t mem_00924FC0;
+    extern uintptr_t mem_00924FE4;
+    extern uintptr_t mem_00924FF4;
+    extern char mem_00928B5D[];
+
+struct CheckedVectorIterator {
+    void* container;
+    void* container_check;
+    uint32_t* ptr;
+};
+
+// @name collectMatchingItems
+// @summary Iterates a checked vector of items, allocates a wrapper for each whose name matches targetName, and appends it to outVec
+// @field Container +0x24 uint8_t[12] checked_vector
+void fn_0047B1E0(void* arg0, void* arg1, const char* arg2, uint8_t arg3) {
+    if (arg3 != 0) {
+        ext_0050BE20(arg1);
+    }
+
+    uint8_t* vec = static_cast<uint8_t*>(arg0) + 0x24;
+    uint32_t* begin_ptr = *reinterpret_cast<uint32_t**>(vec + 0x04);
+    uint32_t* end_ptr = *reinterpret_cast<uint32_t**>(vec + 0x08);
+
+    auto invalid_param = reinterpret_cast<void(*)()>(mem_00925134);
+    if (begin_ptr > end_ptr) {
+        invalid_param();
+    }
+
+    CheckedVectorIterator it{vec, vec, begin_ptr};
+    ext_00427A60(&it);
+
+    for (;;) {
+        uint32_t* cur_end = *reinterpret_cast<uint32_t**>(vec + 0x08);
+        if (*reinterpret_cast<uint32_t**>(vec + 0x04) > cur_end) {
+            invalid_param();
+        }
+
+        CheckedVectorIterator end_it{vec, vec, cur_end};
+        ext_00427A60(&end_it);
+
+        if (it.container_check == nullptr || it.container_check != end_it.container_check) {
+            invalid_param();
+        }
+
+        if (it.ptr >= end_it.ptr) {
+            break;
+        }
+
+        if (it.container_check == nullptr) {
+            invalid_param();
+        }
+        uint8_t* container_bytes = static_cast<uint8_t*>(it.container_check);
+        if (it.ptr >= *reinterpret_cast<uint32_t**>(container_bytes + 0x08)) {
+            invalid_param();
+        }
+
+        void* elem = reinterpret_cast<void*>(*it.ptr);
+        auto str_eq = reinterpret_cast<bool(*)(void*, const char*)>(mem_00924FC0);
+        if (str_eq(static_cast<uint8_t*>(elem) + 0x04, arg2)) {
+            void* raw = ext_006A5C62(0x32C);
+            void* obj = nullptr;
+            if (raw != nullptr) {
+                uint8_t str_buf[28];
+                auto str_ctor = reinterpret_cast<void(__thiscall*)(void*, const char*)>(mem_00924FE4);
+                auto str_dtor = reinterpret_cast<void(__thiscall*)(void*)>(mem_00924FF4);
+                str_ctor(str_buf, mem_00928B5D);
+                obj = ext_004D2C90(raw, str_buf);
+                str_dtor(str_buf);
+            }
+
+            void** vtbl = *reinterpret_cast<void***>(obj);
+            auto vfunc = reinterpret_cast<void(__thiscall*)(void*, void*)>(vtbl[0x54 / 4]);
+            vfunc(obj, elem);
+
+            void* temp_obj = obj;
+            ext_0041A920(arg1, &temp_obj);
+        }
+
+        if (it.ptr >= *reinterpret_cast<uint32_t**>(container_bytes + 0x08)) {
+            invalid_param();
+        }
+        it.ptr += 1;
+        ext_00427A60(&it);
+    }
+}
+} // namespace lift_0047B1E0

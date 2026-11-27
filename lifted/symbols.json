@@ -11368,6 +11368,13 @@
     "summary": "Lazily constructs the static object at mem_00AD9054, builds a temporary string from the argument, calls sub_00475960 on this-\u003e[0] with it, and destroys the string.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00476150": {
+    "name": "RBTree::insertWithHint",
+    "class": "RBTree",
+    "signature": "void* __thiscall sub_00476150(void* self, void* out_iter, void* hint_tree, void* hint_node, void* val)",
+    "summary": "Inserts a key-value pair into a red-black tree using a position hint iterator, returning an iterator to the inserted or existing element.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00476430": {
     "name": "Unknown::lookupStringKeyedValue",
     "class": "Unknown",
@@ -11677,6 +11684,12 @@
     "signature": "void __thiscall fn_0047AF80(uint8_t* self, uint32_t arg1)",
     "summary": "Dispatches an event to each element in the container and forwards to BaseEventDispatcher::vfunc_1.",
     "lifted_path": "lifted/templates/ContainerEventDispatcher.cpp"
+  },
+  "0x0047B1E0": {
+    "name": "collectMatchingItems",
+    "signature": "void fn_0047B1E0(void* arg0, void* arg1, const char* arg2, uint8_t arg3)",
+    "summary": "Iterates a checked vector of items, allocates a wrapper for each whose name matches targetName, and appends it to outVec",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
   "0x0047D4D0": {
     "name": "sub_0047D4D0",
@@ -56605,6 +56618,13 @@
     "signature": "uint32_t sub_005F3E70(void* iter_container, void* first, void* expected_container, void* last, void* key_ptr, void* pred)",
     "summary": "Performs lower_bound via ext_004AB940 with MSVC80 iterator validation and checks if key is found",
     "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005F40C0": {
+    "name": "EffectorGroup::vfunc_22",
+    "class": "EffectorGroup",
+    "signature": "void __thiscall fn_005F40C0(void* self, float arg)",
+    "summary": "Forwards vfunc_22(float) to each child effector in the group, optionally filtered by global set mem_00B46790",
+    "lifted_path": "lifted/classes/EffectorGroup.cpp"
   },
   "0x005F4930": {
     "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setForceCaps(float)\u003e::vfunc_41",

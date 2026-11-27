@@ -1,0 +1,28 @@
+{
+  "va": "0x00476150",
+  "size": 518,
+  "orig_symbol": "sub_00476150",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "RBTree::insertWithHint",
+  "class": "RBTree",
+  "signature": "void* __thiscall sub_00476150(void* self, void* out_iter, void* hint_tree, void* hint_node, void* val)",
+  "summary": "Inserts a key-value pair into a red-black tree using a position hint iterator, returning an iterator to the inserted or existing element.",
+  "fields": [
+    {
+      "class": "RBTree",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "RBTree",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "size"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:16:35Z"
+}
