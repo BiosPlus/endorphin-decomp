@@ -37565,6 +37565,13 @@
     "summary": "Destroys a vector of 0x3C-byte string-pair records and the owning std::string.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00558D70": {
+    "name": "NMFileIO::vfunc_1",
+    "class": "NMFileIO",
+    "signature": "static inline void invalid_param()",
+    "summary": "Scans the pointer vector at arg+0x24 and, for each entry whose name string equals the global key, inserts it into self+0x5C (first match) or self+0x16C (later matches).",
+    "lifted_path": "lifted/classes/NMFileIO.cpp"
+  },
   "0x00558F20": {
     "name": "Unknown::clearStringVectorRange",
     "class": "Unknown",
