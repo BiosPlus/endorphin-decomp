@@ -1490,3 +1490,31 @@ bool fn_006E6DE0(void* self, uint32_t which) {
     return (which & mask) != 0;
 }
 } // namespace lift_006E6DE0
+
+// [0x006E7730]
+namespace lift_006E7730 {
+extern void __fastcall ext_007641C0(void* self);
+extern void __fastcall ext_006B9D70(void* self);
+extern void ext_006D2370();
+extern void ext_006D23F0();
+extern void ext_00711DB0();
+extern char mem_00925294;
+extern char mem_0092A270;
+extern char mem_009324A8;
+extern char mem_00993828;
+extern char mem_00993CC0;
+extern char mem_00993CC8;
+
+// @name Unknown::destroySubobjects
+// @class Unknown
+// @summary Destructor-style teardown: destroys the subobject at +0x90, then the base subobject at +0x8.
+extern void __fastcall fn_006E7730(void* self) {
+    // metadata-only references (not real accesses)
+    (void)&mem_00925294; (void)&mem_0092A270; (void)&mem_009324A8;
+    (void)&mem_00993828; (void)&mem_00993CC0; (void)&mem_00993CC8;
+    (void)&ext_006D2370; (void)&ext_006D23F0; (void)&ext_00711DB0;
+    char* p = reinterpret_cast<char*>(self);
+    ext_007641C0(p + 0x90);
+    ext_006B9D70(p + 0x8);
+}
+} // namespace lift_006E7730

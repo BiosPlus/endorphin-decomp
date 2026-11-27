@@ -60507,6 +60507,13 @@
     "summary": "Getter returning int32_t field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E7730": {
+    "name": "Unknown::destroySubobjects",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_006E7730(void* self)",
+    "summary": "Destructor-style teardown: destroys the subobject at +0x90, then the base subobject at +0x8.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E7F90": {
     "name": "sub_006E6340",
     "class": "Unknown",
