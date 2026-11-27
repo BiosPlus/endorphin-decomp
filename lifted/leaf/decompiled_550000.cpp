@@ -1729,3 +1729,27 @@ void fn_005566D0(void* begin, void* end) {
     } while (first != last);
 }
 } // namespace lift_005566D0
+
+// [0x005541F0]
+namespace lift_005541F0 {
+extern uint32_t mem_00924FE0;
+
+// @name sub_005541F0_copy_ctor
+// @summary Copy constructor for a struct with two uint8_t flags and two std::string fields
+// @field Obj +0x00 uint8_t field_0x00
+// @field Obj +0x01 uint8_t field_0x01
+// @field Obj +0x04 std::string field_0x04
+// @field Obj +0x20 std::string field_0x20
+void* __thiscall sub_005541F0(void* self, const void* src) {
+    using StringCopyCtor = void(__thiscall*)(void*, const void*);
+    auto string_copy_ctor = reinterpret_cast<StringCopyCtor>(static_cast<uintptr_t>(mem_00924FE0));
+
+    lift_field<uint8_t>(self, 0x00) = lift_field<const uint8_t>(src, 0x00);
+    lift_field<uint8_t>(self, 0x01) = lift_field<const uint8_t>(src, 0x01);
+
+    string_copy_ctor(static_cast<uint8_t*>(self) + 0x04, static_cast<const uint8_t*>(src) + 0x04);
+    string_copy_ctor(static_cast<uint8_t*>(self) + 0x20, static_cast<const uint8_t*>(src) + 0x20);
+
+    return self;
+}
+} // namespace lift_005541F0

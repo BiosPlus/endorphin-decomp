@@ -1,0 +1,39 @@
+{
+  "va": "0x005541F0",
+  "size": 99,
+  "orig_symbol": "sub_005541F0",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "sub_005541F0_copy_ctor",
+  "signature": "void* __thiscall sub_005541F0(void* self, const void* src)",
+  "summary": "Copy constructor for a struct with two uint8_t flags and two std::string fields",
+  "fields": [
+    {
+      "class": "Obj",
+      "offset": "+0x0",
+      "type": "uint8_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x1",
+      "type": "uint8_t",
+      "name": "field_0x01"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x20",
+      "type": "std::string",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:02:06Z"
+}
