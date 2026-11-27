@@ -1,0 +1,14 @@
+{
+  "va": "0x0051BF50",
+  "size": 843,
+  "orig_symbol": "NMData::RealChannel::vfunc_1",
+  "src_path": "src/NMData/RealChannel.cpp",
+  "lifted_path": "lifted/NMData/RealChannel.cpp",
+  "name": "NMData::RealChannel::vfunc_1",
+  "class": "NMData::RealChannel",
+  "signature": "static bool is_sentinel_item(const void* p)",
+  "summary": "Loads real-valued keyframe data from \"values\"/\"timeStep\" attributes and child elements into the channel.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:24:31Z"
+}

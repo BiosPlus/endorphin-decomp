@@ -72,8 +72,10 @@ void fn_0051ABD0(void* self, float scale) {
     }
 }
 #include <string>
+#include <cstdlib>
+#include <vector>
 
-// [0x0051AED0] NMData::RealChannel::vfunc_8 (31 bytes)
+#include <vector>
 // @name NMData::RealChannel::vfunc_8
 // @class NMData::RealChannel
 // @summary Forwards self and the entry ecx value to ext_0051AE20, then returns self.
@@ -512,3 +514,110 @@ void* __thiscall fn_0051AAB0(void* self, void* out) {
     return node;
 }
 } // namespace lift_0051AAB0
+
+// [0x0051BF50]
+namespace lift_0051BF50 {
+// @name NMData::RealChannel::vfunc_1
+// @class NMData::RealChannel
+// @summary Loads real-valued keyframe data from "values"/"timeStep" attributes and child elements into the channel.
+
+extern void __thiscall ext_00519EC0(void* self, void* owner, float timeStep);
+extern void* __thiscall ext_0063EFE0(void* self, const char* name);
+extern void __cdecl ext_0046C0A0(float* out_val, void** item_ptr);
+extern void __cdecl ext_004275E0(void* dst, void* obj);
+extern void __cdecl ext_00665570(void* src_str, void* delim_str, void* out_vec);
+extern void __thiscall ext_00427A60(void* iter);
+extern float __cdecl ext_0067EE80(void* item, uint32_t arg1, uint32_t arg2);
+extern void ext_00492A50(void);
+extern void ext_0051A780(void);
+extern void ext_0051C820(void);
+extern void ext_006A5C5C(void);
+
+extern const char* mem_009525C0; // "values"
+extern const char* mem_0094539C; // "timeStep"
+extern const char* mem_009525BC; // " \t"
+extern uint32_t mem_00A9FAE8;
+extern uint32_t mem_00A9F530;
+extern uint32_t mem_00A9FAEC;
+extern uint32_t mem_00A9F534;
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FE8;
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_00925134;
+extern uint32_t mem_009251F0;
+extern float mem_00A430F0;
+
+static bool is_sentinel_item(const void* p) {
+    uintptr_t v = reinterpret_cast<uintptr_t>(p);
+    return v == 0x00B53A34 || v == 0x00B53B30 || v == 0x00B53AB0 ||
+           v == 0x00B53A70 || v == 0x00B53AF0;
+}
+
+void __thiscall fn_0051BF50(void* self, void* owner, float timeStep) {
+    (void)ext_00492A50;
+    (void)ext_0051A780;
+    (void)ext_0051C820;
+    (void)ext_006A5C5C;
+    (void)mem_00924FE4;
+    (void)mem_00924FE8;
+    (void)mem_00924FF0;
+    (void)mem_00924FF4;
+    (void)mem_00925134;
+    (void)mem_009251F0;
+    (void)mem_00A430F0;
+
+    ext_00519EC0(self, owner, timeStep);
+
+    void** vtable = *reinterpret_cast<void***>(self);
+    auto add_keyframe = reinterpret_cast<void(__thiscall*)(void*, float, float)>(vtable[5]);
+
+    void* values_item = ext_0063EFE0(owner, mem_009525C0);
+    if (!is_sentinel_item(values_item)) {
+        void* timestep_item = ext_0063EFE0(owner, mem_0094539C);
+        if (!is_sentinel_item(timestep_item)) {
+            void* tmp_item = timestep_item;
+            ext_0046C0A0(&timeStep, &tmp_item);
+        }
+
+        std::string str_val;
+        ext_004275E0(&str_val, values_item);
+
+        std::vector<std::string> tokens;
+        std::string delim(mem_009525BC);
+        ext_00665570(&str_val, &delim, &tokens);
+
+        float t = 0.0f;
+        for (const std::string& tok : tokens) {
+            float val = static_cast<float>(std::atof(tok.c_str()));
+            add_keyframe(self, t, val);
+            t += timeStep;
+        }
+    }
+
+    struct CheckedVecIter {
+        void* container;
+        void* container_check;
+        void** ptr;
+    };
+
+    void* vec_ptr = reinterpret_cast<uint8_t*>(owner) + 0x24;
+    void** vec_begin = *reinterpret_cast<void***>(reinterpret_cast<uint8_t*>(vec_ptr) + 0x4);
+    void** vec_end = *reinterpret_cast<void***>(reinterpret_cast<uint8_t*>(vec_ptr) + 0x8);
+
+    CheckedVecIter it{vec_ptr, vec_ptr, vec_begin};
+    ext_00427A60(&it);
+
+    CheckedVecIter end_it{vec_ptr, vec_ptr, vec_end};
+    ext_00427A60(&end_it);
+
+    while (it.ptr < end_it.ptr) {
+        void* item = *it.ptr;
+        float t = ext_0067EE80(item, mem_00A9F530, mem_00A9FAE8);
+        float v = ext_0067EE80(item, mem_00A9F534, mem_00A9FAEC);
+        add_keyframe(self, t, v);
+        ++it.ptr;
+        ext_00427A60(&it);
+    }
+}
+} // namespace lift_0051BF50

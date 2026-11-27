@@ -31974,6 +31974,13 @@
     "summary": "Clears the RealChannel data vector by erasing from begin to end.",
     "lifted_path": "lifted/NMData/RealChannel.cpp"
   },
+  "0x0051BF50": {
+    "name": "NMData::RealChannel::vfunc_1",
+    "class": "NMData::RealChannel",
+    "signature": "static bool is_sentinel_item(const void* p)",
+    "summary": "Loads real-valued keyframe data from \"values\"/\"timeStep\" attributes and child elements into the channel.",
+    "lifted_path": "lifted/NMData/RealChannel.cpp"
+  },
   "0x0051C2A0": {
     "name": "NMData::RealChannel::vfunc_10",
     "class": "NMData::RealChannel",
