@@ -4136,3 +4136,32 @@ extern BOOL __thiscall fn_006D4F90(void* self, DWORD value) {
     return TRUE;
 }
 } // namespace lift_006D4F90
+
+// [0x006D5640]
+namespace lift_006D5640 {
+// Callees (declared with the same conventions as the originals).
+extern const char* __fastcall ext_006BADB0(void* self);
+extern void* __thiscall ext_006E7440(void* self, DWORD index);
+
+// @name Unknown::findEntryByName_006D5640
+// @class Unknown
+// @summary Linear search over the entry array at +0xd4 (count at +0xc4) comparing each entry's name string (via ext_006BADB0) with the argument; returns the matching entry, otherwise calls ext_006E7440(this+0x1c4, 0) and returns NULL.
+// @field Unknown +0xc4 int32_t entryCount
+// @field Unknown +0xd4 void** entries
+// @field Unknown +0x1c4 void* field_0x1c4
+extern void* __thiscall fn_006D5640(void* self, const char* name) {
+    int32_t i = 0;
+    while (i < lift_field<int32_t>(self, 0xc4)) {
+        void** entries = lift_field<void**>(self, 0xd4);
+        void* entry = entries[i];
+        const char* entryName = ext_006BADB0(entry);
+        if (std::strcmp(entryName, name) == 0) {
+            return entry;
+        }
+        ++i;
+    }
+
+    (void)ext_006E7440(reinterpret_cast<uint8_t*>(self) + 0x1c4, 0);
+    return nullptr;
+}
+} // namespace lift_006D5640

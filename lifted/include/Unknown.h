@@ -1525,6 +1525,7 @@ struct Unknown_Fields {
     // +0xC1  BYTE                     field_0xC1  (evidence: 0x004A68E0, 0x005978F0, 0x00667810) // CONFLICT: multiple definitions at +0xC1
     // +0xC1  uint8_t                  field_0xC1  (evidence: 0x00666C90) // CONFLICT: multiple definitions at +0xC1
     // +0xC4  int32_t                  count  (evidence: 0x006D4D90) // CONFLICT: multiple definitions at +0xC4
+    // +0xC4  int32_t                  entryCount  (evidence: 0x006D5640) // CONFLICT: multiple definitions at +0xC4
     // +0xC4  int32_t                  field_0xC4  (evidence: 0x006BCEE0) // CONFLICT: multiple definitions at +0xC4
     // +0xC4  EntryTable               field_0xc4  (evidence: 0x00763E40) // CONFLICT: multiple definitions at +0xC4
     // +0xC4  uint32_t                 field_0xc4  (evidence: 0x0051DDB0) // CONFLICT: multiple definitions at +0xC4
@@ -1560,6 +1561,7 @@ struct Unknown_Fields {
     // +0xD0  void**                   field_0xd0  (evidence: 0x006DCF80, 0x00708D10) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  DynamicArray<void*>      items  (evidence: 0x006DD240) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  uint32_t field_0xD0 (accessed on the object returned by ord_3085(self), not on self)  (evidence: 0x00456DE0) // CONFLICT: multiple definitions at +0xD0
+    // +0xD4  void**                   entries  (evidence: 0x006D5640) // CONFLICT: multiple definitions at +0xD4
     // +0xD4  int                      field_0xD4  (evidence: 0x004486A0) // CONFLICT: multiple definitions at +0xD4
     // +0xD4  void**                   field_0xD4  (evidence: 0x006BCEE0) // CONFLICT: multiple definitions at +0xD4
     // +0xD4  int32_t                  field_0xd4  (evidence: 0x0053F990) // CONFLICT: multiple definitions at +0xD4
@@ -1887,7 +1889,7 @@ struct Unknown_Fields {
     // +0x1C4 std::uint8_t             field_0x1c4  (evidence: 0x007DA820) // CONFLICT: multiple definitions at +0x1C4
     // +0x1C4 uint32_t                 field_0x1c4  (evidence: 0x00803F80) // CONFLICT: multiple definitions at +0x1C4
     // +0x1C4 uint8_t                  field_0x1c4  (evidence: 0x006D4C20, 0x006D4F10, 0x006D5190) // CONFLICT: multiple definitions at +0x1C4
-    // +0x1C4 void*                    field_0x1c4  (evidence: 0x006D4BA0, 0x006D4D90, 0x006D4F90, 0x006D5010) // CONFLICT: multiple definitions at +0x1C4
+    // +0x1C4 void*                    field_0x1c4  (evidence: 0x006D4BA0, 0x006D4D90, 0x006D4F90, 0x006D5010, 0x006D5640) // CONFLICT: multiple definitions at +0x1C4
     // +0x1C4 uint8_t                  field_0x1c4[0]  (evidence: 0x006D4AC0) // CONFLICT: multiple definitions at +0x1C4
     // +0x1C4 int32_t                  maskLoB  (evidence: 0x008044A0) // CONFLICT: multiple definitions at +0x1C4
     // +0x1C5 uint8_t                  field_0x1C5  (evidence: 0x006D7CE0)

@@ -68783,6 +68783,13 @@
     "summary": "Returns the element at the given signed index if within bounds [0, count), otherwise 0.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D5640": {
+    "name": "Unknown::findEntryByName_006D5640",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __thiscall fn_006D5640(void* self, const char* name)",
+    "summary": "Linear search over the entry array at +0xd4 (count at +0xc4) comparing each entry's name string (via ext_006BADB0) with the argument; returns the matching entry, otherwise calls ext_006E7440(this+0x1c4, 0) and returns NULL.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D59B0": {
     "name": "Unknown::GetIndexedPtr",
     "class": "Unknown",
