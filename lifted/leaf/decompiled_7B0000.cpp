@@ -2050,3 +2050,38 @@ extern void sub_007B78D0(uint32_t value) {
     }
 }
 } // namespace lift_007B78D0
+
+// [0x007B7A90] sub_007B7A90 (96 bytes)
+namespace lift_007B7A90 {
+extern uint8_t ext_007B7750();
+// Known callee 0x007AA510: sub_007AA510 (Caches idx in the first free 8-byte slot of table 0x00B61170 (storing ext_007AA5A0(idx) as its value); if no slot is free, stores idx/ext_007AA5A0(0x16) in the overflow globals. Idx 0 is a no-op.)
+extern void ext_007AA510(uint32_t idx);
+extern uint8_t mem_00B61218;
+extern uint8_t mem_00B61219;
+
+// @name FillFlagBytesUntilZero
+// @summary Fills buf[0..n] with ext_007B7750() results until a zero byte is produced (or n bytes are written); buf[0] is cleared first. If all n bytes are nonzero and mem_00B61218/mem_00B61219 gating allows, calls fn_007AA510(13).
+void fn_007B7A90(uint8_t* buf, uint32_t n) {
+    buf[0] = 0;
+    uint32_t i = 0;
+    if (n != 0) {
+        for (;;) {
+            uint8_t al = ext_007B7750();
+            buf[i] = al;
+            if (mem_00B61218 != 0 && mem_00B61219 == 0) {
+                return;
+            }
+            if (al == 0) {
+                break;
+            }
+            ++i;
+            if (i >= n) {
+                break;
+            }
+        }
+    }
+    if (buf[i] != 0 && i == n) {
+        ext_007AA510(0x0d);
+    }
+}
+} // namespace lift_007B7A90
