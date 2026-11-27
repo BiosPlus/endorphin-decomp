@@ -3356,3 +3356,53 @@ void* fn_0050F550() {
     return obj;
 }
 } // namespace lift_0050F550
+
+// [0x00504640] sub_00504640 (128 bytes)
+namespace lift_00504640 {
+// Known callee 0x0040ECB0: Unknown::PushBackString_0040ECB0 (push_back of one 28-byte std::string onto a vector-like {begin,end,capacity} container; fast path constructs in place, slow path defers to ext_0040EBF0.)
+extern void ext_0040ECB0(void* self, const void* value);
+// Known callee 0x00503A30: ResolveTypeInfoName_00503A30 (Gets the type_info name for the global type descriptor, builds a std::string from it, passes that string to ext_0066AC90, and returns the string pointer.)
+extern void* ext_00503A30(void* str);
+// IAT slot 0x00924FF4: MSVCP80 std::basic_string<char> destructor (thiscall).
+extern int mem_00924FF4;
+
+// @name Unknown::Ctor_00504640
+// @class Unknown
+// @summary Initializes the object's vtable and zeroes its scalar fields, builds a std::string via ext_00503A30, pushes it onto the global vector at 0x00B5962C, destroys the temporary string via IAT slot 0x00924FF4, and returns this.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0c
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1c
+// @field Unknown +0x20 uint32_t field_0x20
+void* fn_00504640(void* self) {
+    // Vtable-like constant 0x0094F0BC stored at offset 0 (32-bit store).
+    lift_field<uint32_t>(self, 0x00) = 0x0094F0BCu;
+
+    // Zero the scalar fields.
+    lift_field<uint32_t>(self, 0x08) = 0u;
+    lift_field<uint32_t>(self, 0x0C) = 0u;
+    lift_field<uint32_t>(self, 0x10) = 0u;
+    lift_field<uint32_t>(self, 0x18) = 0u;
+    lift_field<uint32_t>(self, 0x1C) = 0u;
+    lift_field<uint32_t>(self, 0x20) = 0u;
+
+    // Temporary std::string (28 bytes on MSVC x86 std::string layout).
+    alignas(4) unsigned char tmpString[28] = {};
+
+    // Build the string; returns the string pointer, which is pushed onto the vector.
+    void* value = ext_00503A30(tmpString);
+
+    // Global vector at 0x00B5962C.
+    void* vec = reinterpret_cast<void*>(uintptr_t{0x00B5962Cu});
+    ext_0040ECB0(vec, value);
+
+    // Destroy the temporary string through the IAT slot 0x00924FF4.
+    using DtorFn = void (*)(void*);
+    DtorFn dtor = *reinterpret_cast<DtorFn*>(&mem_00924FF4);
+    dtor(tmpString);
+
+    return self;
+}
+} // namespace lift_00504640
