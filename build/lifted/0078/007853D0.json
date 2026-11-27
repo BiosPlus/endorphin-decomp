@@ -1,0 +1,58 @@
+{
+  "va": "0x007853D0",
+  "size": 54,
+  "orig_symbol": "sub_007853D0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "Unknown::initWithSubobject_007853D0",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_007853D0(void* self, DWORD arg1, DWORD arg2, DWORD arg3)",
+  "summary": "Stores arg1 at +0x08, zeroes +0x10..+0x1C, initializes the sub-object at +0x20 via ext_006E73B0(arg2, arg3), sets the vtable pointer at +0x00, and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "vtablePtr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "DWORD",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "DWORD",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "DWORD",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "DWORD",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "subObject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:56:54Z"
+}

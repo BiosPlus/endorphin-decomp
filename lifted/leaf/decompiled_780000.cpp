@@ -2858,3 +2858,38 @@ extern uint8_t __thiscall fn_007833B0(void* self, const char* path, const char* 
     return lift_field<uint8_t>(lift_field<void*>(self, 0x4), 0x4);
 }
 } // namespace lift_007833B0
+
+// [0x007853D0] sub_007853D0 (54 bytes)
+namespace lift_007853D0 {
+// Known callee 0x006E73B0: Unknown::initWithArgs_006E73B0 (Initializes the sub-object at +0x08, stores two constructor arguments at +0x04 and +0x54, runs the reset helper, and returns this.)
+extern void* ext_006E73B0(void* self, DWORD arg1, DWORD arg2);
+// .rdata vtable address referenced by the original asm (immediate 0x00996EDC)
+extern char mem_00996EDC[];
+
+// @name Unknown::initWithSubobject_007853D0
+// @class Unknown
+// @summary Stores arg1 at +0x08, zeroes +0x10..+0x1C, initializes the sub-object at +0x20 via ext_006E73B0(arg2, arg3), sets the vtable pointer at +0x00, and returns this.
+// @field Unknown +0x00 DWORD vtablePtr
+// @field Unknown +0x08 DWORD field_0x08
+// @field Unknown +0x10 DWORD field_0x10
+// @field Unknown +0x14 DWORD field_0x14
+// @field Unknown +0x18 DWORD field_0x18
+// @field Unknown +0x1C DWORD field_0x1C
+// @field Unknown +0x20 void* subObject
+void* __thiscall fn_007853D0(void* self, DWORD arg1, DWORD arg2, DWORD arg3) {
+    lift_field<DWORD>(self, 0x08) = arg1;
+    lift_field<DWORD>(self, 0x10) = 0;
+    lift_field<DWORD>(self, 0x14) = 0;
+    lift_field<DWORD>(self, 0x18) = 0;
+    lift_field<DWORD>(self, 0x1C) = 0;
+
+    // Original asm: ecx = this + 0x20, pushes arg3 then arg2, calls ext_006E73B0.
+    ext_006E73B0(static_cast<char*>(self) + 0x20, arg2, arg3);
+
+    // Original asm stores the immediate 0x00996EDC (the vtable address) into [self].
+    (void)&mem_00996EDC;
+    lift_field<DWORD>(self, 0x00) = 0x00996EDC;
+
+    return self;
+}
+} // namespace lift_007853D0
