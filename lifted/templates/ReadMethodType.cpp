@@ -187387,3 +187387,61 @@ bool fn_00695780(void* holder, void* /*unused stack arg*/) {
     return result;
 }
 } // namespace lift_00695780
+
+// [0x0059FC20] ExprParser::ReadMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0>::vfunc_47 (168 bytes)
+namespace lift_0059FC20 {
+// Callees and data referenced by the original asm.
+extern void* ext_0041CF50(void* self, void* other);                  // assignFromOther
+extern void ext_0046C3C0(void* exceptionObj);                       // DerivedException ctor
+extern float ext_0059DEB0(void* self);                               // virtual dispatch thunk (slot +0x80), returns float in ST0
+extern void ext_00672080(void* self, float value);                   // temp object builder from float
+extern void ext_006A6DD2(void* exceptionObj, const void* throwInfo); // IAT thunk -> _CxxThrowException
+extern unsigned char mem_009DEC1C[];                                 // ThrowInfo for the raised exception type
+
+// Thiscall-style virtual slot: (this, one stack arg). Called through an explicit pointer.
+using VSlotFn = void (*)(void* self, void* arg);
+
+// @name ExprParser::ReadMethodType<NMData::CharacterData,float>::vfunc_47
+// @class ExprParser::ReadMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0>
+// @summary Reads a float from the holder's inner object via a virtual call, assigns it into the holder, releases the temp, then forwards to the holder's secondary object's vfunc at slot 0xBC; throws if the holder's first pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+//
+// Notes:
+//  - The SEH frame setup/teardown (fs:[0] push/restore) and the unwind-state writes are
+//    exception-machinery boilerplate and are not reproduced.
+//  - The original argument is a single stack pointer (ret 4); it is passed here as `self`.
+//  - The exception object buffer size is not known; a generous local buffer is used.
+void fn_0059FC20(void* self) {
+    void* p = lift_field<void*>(self, 0);
+    if (p == nullptr) {
+        // Build an exception object and throw it through the CRT thunk.
+        uint32_t exc[16] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return;
+    }
+
+    // Virtual read of a float from the object at p+4.
+    float v = ext_0059DEB0(static_cast<unsigned char*>(p) + 4);
+
+    // Build a temporary from the float, then assign it into self.
+    uint32_t temp[2] = {0, 0};
+    ext_00672080(temp, v);
+    ext_0041CF50(self, temp);
+
+    // Release the temp's held pointer (if any) via its vtable slot 0x78.
+    void* held = lift_field<void*>(temp, 0);
+    if (held != nullptr) {
+        void* heldVt = lift_field<void*>(held, 0);
+        VSlotFn release = lift_field<VSlotFn>(heldVt, 0x78);
+        release(held, temp);
+    }
+
+    // Forward to the secondary object at self+4: vtable slot 0xBC, passing self.
+    void* obj4 = lift_field<void*>(self, 4);
+    void* obj4Vt = lift_field<void*>(obj4, 0);
+    VSlotFn vfn = lift_field<VSlotFn>(obj4Vt, 0xBC);
+    vfn(obj4, self);
+}
+} // namespace lift_0059FC20

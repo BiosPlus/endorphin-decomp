@@ -42222,6 +42222,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0059F960 (ExprParser::ReadMethodType::vfunc_43).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0059FC20": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData,float\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e",
+    "signature": "void fn_0059FC20(void* self)",
+    "summary": "Reads a float from the holder's inner object via a virtual call, assigns it into the holder, releases the temp, then forwards to the holder's secondary object's vfunc at slot 0xBC; throws if the holder's first pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0059FCD0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, ...\u003e::vfunc_4",
     "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e",
