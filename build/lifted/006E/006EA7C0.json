@@ -1,0 +1,46 @@
+{
+  "va": "0x006EA7C0",
+  "size": 73,
+  "orig_symbol": "sub_006EA7C0",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::copyEntryFields_006EA7C0",
+  "class": "Unknown",
+  "signature": "void* fn_006EA7C0(void* self, void* arg)",
+  "summary": "Copies the dword at +0x00 and the sub-objects at +0x04/+0x50/+0x70/+0x90 from src into this; returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "uint8_t",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x70",
+      "type": "uint8_t",
+      "name": "field_0x70"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x90",
+      "type": "uint8_t",
+      "name": "field_0x90"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:53:05Z"
+}

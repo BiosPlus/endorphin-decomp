@@ -1994,3 +1994,30 @@ void __thiscall fn_006E6880(void* self, void* a, void* b) {
     }
 }
 } // namespace lift_006E6880
+
+// [0x006EA7C0]
+namespace lift_006EA7C0 {
+// @name Unknown::copyEntryFields_006EA7C0
+// @class Unknown
+// @summary Copies the dword at +0x00 and the sub-objects at +0x04/+0x50/+0x70/+0x90 from src into this; returns this.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint8_t field_0x04
+// @field Unknown +0x50 uint8_t field_0x50
+// @field Unknown +0x70 uint8_t field_0x70
+// @field Unknown +0x90 uint8_t field_0x90
+
+extern void* ext_006B9E60(void* self, void* arg);
+extern void ext_007873F0(void* self, void* arg);
+
+void* fn_006EA7C0(void* self, void* arg) {
+    auto* esi = static_cast<uint8_t*>(self);
+    auto* edi = static_cast<uint8_t*>(arg);
+
+    *reinterpret_cast<uint32_t*>(esi) = *reinterpret_cast<uint32_t*>(edi);
+    ext_006B9E60(esi + 0x04, edi + 0x04);
+    ext_007873F0(esi + 0x50, edi + 0x50);
+    ext_007873F0(esi + 0x70, edi + 0x70);
+    ext_007873F0(esi + 0x90, edi + 0x90);
+    return self;
+}
+} // namespace lift_006EA7C0
