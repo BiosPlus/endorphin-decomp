@@ -1,0 +1,28 @@
+{
+  "va": "0x006651D0",
+  "size": 119,
+  "orig_symbol": "sub_006651D0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "std::string::erase_remove_char",
+  "class": "std::string (optional)",
+  "signature": "void fn_006651D0(void* self)",
+  "summary": "Erases every byte matching the fixed predicate 0x006649B0 from the string (erase-remove idiom).",
+  "fields": [
+    {
+      "class": "StringIter",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "owner"
+    },
+    {
+      "class": "StringIter",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "pos"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:46:51Z"
+}

@@ -3817,3 +3817,53 @@ StringIter* __cdecl sub_00665090(
     return out_iter;
 }
 } // namespace lift_00665090
+
+// [0x006651D0] sub_006651D0 (119 bytes)
+namespace lift_006651D0 {
+// 8-byte std iterator as laid out by MSVC's _String_iterator: owner proxy + character pointer.
+struct StringIter {
+    uint32_t owner; // +0x00
+    uint32_t pos;   // +0x04
+};
+
+// Known callee 0x00665090: std::remove_copy_if_char_iter_checked (Scans for first matching byte, validates destination string iterator, and copies remaining bytes skipping matches)
+extern StringIter* ext_00665090(StringIter* out_iter, uint32_t dst_container, uint32_t first, uint32_t dst_container_check, uint32_t last, uintptr_t pred);
+extern int mem_0092511C;
+extern int mem_009250D0;
+extern int mem_009250A4;
+
+// MSVC member call returning an iterator through a hidden result pointer (this in ECX).
+using IterMethodFn = StringIter* (*)(void* self, StringIter* sret);
+// basic_string::erase(first, last): returns iterator via hidden pointer, this in ECX.
+using EraseMethodFn = StringIter* (*)(void* self, StringIter* sret, StringIter first, StringIter last);
+
+// @name std::string::erase_remove_char
+// @class std::string (optional)
+// @summary Erases every byte matching the fixed predicate 0x006649B0 from the string (erase-remove idiom).
+// @field StringIter +0x00 uint32_t owner
+// @field StringIter +0x04 uint32_t pos
+void fn_006651D0(void* self) {
+    // Indirect calls through the MSVCP80 import slots.
+    auto end_fn   = *reinterpret_cast<IterMethodFn*>(&mem_0092511C);
+    auto begin_fn = *reinterpret_cast<IterMethodFn*>(&mem_009250D0);
+    auto erase_fn = *reinterpret_cast<EraseMethodFn*>(&mem_009250A4);
+
+    StringIter end_for_erase{};
+    StringIter end_for_remove{};
+    StringIter begin_it{};
+    StringIter tmp_end{};
+    StringIter erase_result{};
+
+    end_fn(self, &end_for_erase);
+    end_fn(self, &end_for_remove);
+    begin_fn(self, &begin_it);
+
+    const uintptr_t pred = static_cast<uintptr_t>(0x006649B0u);
+    StringIter* new_end = ext_00665090(&tmp_end,
+                                       begin_it.owner, begin_it.pos,
+                                       end_for_remove.owner, end_for_remove.pos,
+                                       pred);
+
+    erase_fn(self, &erase_result, *new_end, end_for_erase);
+}
+} // namespace lift_006651D0
