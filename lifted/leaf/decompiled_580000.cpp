@@ -1506,3 +1506,29 @@ void fn_00586B60(void* self, uint32_t a0, uint32_t a1) {
     }
 }
 } // namespace lift_00586B60
+
+// [0x00586A50] sub_00586A50 (123 bytes)
+namespace lift_00586A50 {
+// Known callee 0x00528BB0: descriptiveName_00528BB0 (forwardVirtual0x2CIfNonNull) (If this->field_0x04 is non-null, tail-dispatch virtual slot 0x2C/4 on it with the same args; otherwise return 0 (callee pops 8 bytes).)
+extern DWORD ext_00528BB0(void* self, DWORD arg0, DWORD arg1);
+extern int mem_00925134;
+
+// @name forwardToChildAndRecurseRange
+// @class Unknown
+// @summary Forwards (arg0, arg1) to the sub-object at this+0x0C via 0x00528BB0, then recursively calls itself on each DWORD pointer in the range [this->field_0x80, this->field_0x84).
+// @field Unknown +0x80 DWORD field_0x80
+// @field Unknown +0x84 DWORD field_0x84
+extern void fn_00586A50(void* self, DWORD arg0, DWORD arg1) {
+    // Original asm: lea ecx,[this+0x0C]; call 0x528BB0 (thiscall, 2 stack args).
+    ext_00528BB0(static_cast<char*>(self) + 0x0C, arg0, arg1);
+    (void)&mem_00925134; // IAT slot for _invalid_parameter_noinfo (MSVC debug checks, dropped)
+
+    // Range iteration over [begin, end) of 4-byte element pointers.
+    DWORD cursor = lift_field<DWORD>(self, 0x80);
+    while (cursor != lift_field<DWORD>(self, 0x84)) {
+        DWORD elem = *reinterpret_cast<const DWORD*>(static_cast<uintptr_t>(cursor));
+        fn_00586A50(reinterpret_cast<void*>(static_cast<uintptr_t>(elem)), arg0, arg1);
+        cursor += 4;
+    }
+}
+} // namespace lift_00586A50

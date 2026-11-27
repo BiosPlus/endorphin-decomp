@@ -1,0 +1,28 @@
+{
+  "va": "0x00586A50",
+  "size": 123,
+  "orig_symbol": "sub_00586A50",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "forwardToChildAndRecurseRange",
+  "class": "Unknown",
+  "signature": "extern \"C\" void fn_00586A50(void* self, DWORD arg0, DWORD arg1)",
+  "summary": "Forwards (arg0, arg1) to the sub-object at this+0x0C via 0x00528BB0, then recursively calls itself on each DWORD pointer in the range [this-\u003efield_0x80, this-\u003efield_0x84).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "DWORD",
+      "name": "field_0x80"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "DWORD",
+      "name": "field_0x84"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:48:49Z"
+}

@@ -28750,6 +28750,13 @@
     "summary": "Invokes the virtual slot 0x8c on self, then on every pointer element in the range [self+0x80, self+0x84).",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x00586A50": {
+    "name": "forwardToChildAndRecurseRange",
+    "class": "Unknown",
+    "signature": "extern \"C\" void fn_00586A50(void* self, DWORD arg0, DWORD arg1)",
+    "summary": "Forwards (arg0, arg1) to the sub-object at this+0x0C via 0x00528BB0, then recursively calls itself on each DWORD pointer in the range [this-\u003efield_0x80, this-\u003efield_0x84).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x00586B60": {
     "name": "Node::ForwardAndVisitChildren",
     "class": "Node",
