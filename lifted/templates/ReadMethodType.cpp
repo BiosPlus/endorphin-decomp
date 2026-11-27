@@ -62717,3 +62717,33 @@ void* fn_004F57E0(void* out, void* self) {
     return out;
 }
 } // namespace lift_004F57E0
+
+// [0x00470430] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0>::vfunc_4 (84 bytes)
+namespace lift_00470430 {
+// Known callee 0x0046C110: Unknown::GetFieldF138ViaF8 (Returns the float at +0x138 of the sub-object pointed to by self+0xF8.)
+extern float ext_0046C110(void* self);
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern std::string* ext_0046C390(std::string* out, float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throw_info);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine,float,getPosBufferFrameRate,0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0>
+// @summary Reads the float via the self sub-object and formats it into the out string; throws if the self's first pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+std::string* fn_00470430(std::string* out, void* self) {
+    void* inner = *reinterpret_cast<void**>(self);
+    if (inner == nullptr) {
+        alignas(8) unsigned char exc[16] = {};
+        ext_0046C3C0(exc);
+        const void* throw_info = reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu));
+        ext_006A6DD2(exc, throw_info);
+        return out;
+    }
+    float value = ext_0046C110(self);
+    ext_0046C390(out, value);
+    return out;
+}
+} // namespace lift_00470430

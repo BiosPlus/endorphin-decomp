@@ -8951,6 +8951,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00470430": {
+    "name": "ExprParser::ReadMethodType\u003cRuntimeEngine,float,getPosBufferFrameRate,0\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0\u003e",
+    "signature": "std::string* fn_00470430(std::string* out, void* self)",
+    "summary": "Reads the float via the self sub-object and formats it into the out string; throws if the self's first pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004706A0": {
     "name": "ExprParser::ReadWriteMethodType\u003cRuntimeEngine, float, getTimeZoomFactor, float, setTimeZoomFactor\u003e::vfunc_40",
     "class": "ExprParser::ReadWriteMethodType",
