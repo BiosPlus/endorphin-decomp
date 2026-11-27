@@ -1697,3 +1697,44 @@ void* __stdcall sub_005C3F40(void* out_str, uint32_t index) {
     return out_str;
 }
 } // namespace lift_005C3F40
+
+// [0x005CFB60] sub_005CFB60 (124 bytes)
+namespace lift_005CFB60 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern uint32_t ext_00594000(void);
+// Known callee 0x0065C640: CriticalSectionLock::enter (Enters the CRITICAL_SECTION whose pointer is stored at offset 0 of self.)
+extern void ext_0065C640(void* self);
+// Known callee 0x00493EE0: dispatchVirtualSlot154OfPointedObject (Loads the object pointer stored at *ecx; if non-null, calls its vtable slot at +0x154 with the object as this and returns that result (tail call).)
+extern void* ext_00493EE0(void* ecx);
+// Known callee 0x0065C650: CriticalSectionLock::leave (Releases the critical section pointed to by the first field)
+extern void ext_0065C650(void* self);
+
+// @name GlobalSubobjectLockedDispatch
+// @summary Stores a byte flag in self, takes the lock returned by the global sub-object's slot 0x1d8, dispatches slot 0x154 on that sub-object, then releases the lock.
+// @field Unknown +0x30 uint8_t field_0x30
+void fn_005CFB60(void* self, uint8_t flag) {
+    // 32-bit game addresses are carried as uint32_t and converted to pointers.
+    uint32_t root = ext_00594000();
+    void* rootPtr = reinterpret_cast<void*>(static_cast<uintptr_t>(root));
+
+    // sub = root->+0x258; vtbl = sub->vtable
+    uint32_t sub = lift_field<uint32_t>(rootPtr, 0x258);
+    void* subPtr = reinterpret_cast<void*>(static_cast<uintptr_t>(sub));
+    uint32_t vtbl = lift_field<uint32_t>(subPtr, 0);
+    void* vtblPtr = reinterpret_cast<void*>(static_cast<uintptr_t>(vtbl));
+
+    // lock = sub->vtbl[+0x1d8](sub)
+    auto slot1d8 = reinterpret_cast<void* (*)(void*)>(
+        static_cast<uintptr_t>(lift_field<uint32_t>(vtblPtr, 0x1d8)));
+    void* lock = slot1d8(subPtr);
+
+    ext_0065C640(lock);
+
+    lift_field<uint8_t>(self, 0x30) = flag;
+
+    // Dispatch slot +0x154 on the object held in root->+0x258 (passed by field address).
+    ext_00493EE0(&lift_field<uint32_t>(rootPtr, 0x258));
+
+    ext_0065C650(lock);
+}
+} // namespace lift_005CFB60

@@ -747,7 +747,7 @@ struct Unknown_Fields {
     // +0x30  int32_t*                 field_0x30  (evidence: 0x006D8280) // CONFLICT: multiple definitions at +0x30
     // +0x30  std::uint16_t            field_0x30  (evidence: 0x007BEDE0) // CONFLICT: multiple definitions at +0x30
     // +0x30  uint32_t                 field_0x30  (evidence: 0x004B5820, 0x00533D50, 0x00533E00, 0x0057FD10, 0x005B51E0, 0x00622B40, 0x006293A0, 0x0063D990, 0x0063DAD0, 0x0063F350, 0x007AF200) // CONFLICT: multiple definitions at +0x30
-    // +0x30  uint8_t                  field_0x30  (evidence: 0x00441C10, 0x00443960, 0x00515B20, 0x005DC650) // CONFLICT: multiple definitions at +0x30
+    // +0x30  uint8_t                  field_0x30  (evidence: 0x00441C10, 0x00443960, 0x00515B20, 0x005CFB60, 0x005DC650) // CONFLICT: multiple definitions at +0x30
     // +0x30  uint8_t[16]              field_0x30  (evidence: 0x004939B0) // CONFLICT: multiple definitions at +0x30
     // +0x30  void*                    field_0x30  (evidence: 0x005CE940, 0x006488A0, 0x00665DC0, 0x00771B90) // CONFLICT: multiple definitions at +0x30
     // +0x30  u8 field_0x30 (flag byte inside sub-object at field_0xA4)  (evidence: 0x00547CE0) // CONFLICT: multiple definitions at +0x30

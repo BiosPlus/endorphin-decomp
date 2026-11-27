@@ -1,0 +1,21 @@
+{
+  "va": "0x005CFB60",
+  "size": 124,
+  "orig_symbol": "sub_005CFB60",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "GlobalSubobjectLockedDispatch",
+  "signature": "void fn_005CFB60(void* self, uint8_t flag)",
+  "summary": "Stores a byte flag in self, takes the lock returned by the global sub-object's slot 0x1d8, dispatches slot 0x154 on that sub-object, then releases the lock.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "uint8_t",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:50:45Z"
+}
