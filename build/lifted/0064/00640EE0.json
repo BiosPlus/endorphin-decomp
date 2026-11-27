@@ -1,0 +1,28 @@
+{
+  "va": "0x00640EE0",
+  "size": 104,
+  "orig_symbol": "AdvXMLParser::NodeContainer::vfunc_5",
+  "src_path": "src/AdvXMLParser/NodeContainer.cpp",
+  "lifted_path": "lifted/AdvXMLParser/NodeContainer.cpp",
+  "name": "AdvXMLParser::NodeContainer::vfunc_5",
+  "class": "AdvXMLParser::NodeContainer",
+  "signature": "void fn_00640EE0(void* self, void* arg)",
+  "summary": "Calls virtual slot 5 (vtable +0x14) with one argument on each object in the child-pointer range at +0x28..+0x2C.",
+  "fields": [
+    {
+      "class": "AdvXMLParser::NodeContainer",
+      "offset": "+0x28",
+      "type": "uint8_t*",
+      "name": "field_0x28"
+    },
+    {
+      "class": "AdvXMLParser::NodeContainer",
+      "offset": "+0x2C",
+      "type": "uint8_t*",
+      "name": "field_0x2C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T01:55:14Z"
+}
