@@ -1,0 +1,28 @@
+{
+  "va": "0x00672EC0",
+  "size": 89,
+  "orig_symbol": "ExprParser::DeclarationsParser::vfunc_7",
+  "src_path": "src/ExprParser/DeclarationsParser.cpp",
+  "lifted_path": "lifted/ExprParser/DeclarationsParser.cpp",
+  "name": "ExprParser::DeclarationsParser::vfunc_7",
+  "class": "ExprParser::DeclarationsParser",
+  "signature": "void __thiscall fn_00672EC0(void* self, const void* value)",
+  "summary": "Walks the element range [field_0x08, field_0x0c) in 0x20-byte steps and invokes ext_0040ECB0 on each slot, with iterator-validity checks before and after each call.",
+  "fields": [
+    {
+      "class": "ExprParser::DeclarationsParser",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "ExprParser::DeclarationsParser",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:40:33Z"
+}

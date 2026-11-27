@@ -73862,6 +73862,13 @@
     "summary": "Pure jump thunk forwarding to sub_00672D10.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00672EC0": {
+    "name": "ExprParser::DeclarationsParser::vfunc_7",
+    "class": "ExprParser::DeclarationsParser",
+    "signature": "void __thiscall fn_00672EC0(void* self, const void* value)",
+    "summary": "Walks the element range [field_0x08, field_0x0c) in 0x20-byte steps and invokes ext_0040ECB0 on each slot, with iterator-validity checks before and after each call.",
+    "lifted_path": "lifted/ExprParser/DeclarationsParser.cpp"
+  },
   "0x00673420": {
     "name": "Class_00673420::~Class_00673420",
     "class": "Class_00673420",

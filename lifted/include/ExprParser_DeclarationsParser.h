@@ -12,6 +12,8 @@ namespace lifted_layout {
 struct ExprParser_DeclarationsParser_Fields {
     // +0x0   uint32_t                 vtable  (evidence: 0x006737B0)
     // +0x4   uint8_t                  field_0x04  (evidence: 0x006737B0)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00672EC0)
+    // +0xC   uint32_t                 field_0x0c  (evidence: 0x00672EC0)
     // +0x18  void*                    field_0x18  (evidence: 0x006737B0)
     // +0x1C  uint32_t                 field_0x1c  (evidence: 0x006737B0)
     // +0x20  uint32_t                 field_0x20  (evidence: 0x006737B0)
