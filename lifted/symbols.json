@@ -67080,6 +67080,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C78D0": {
+    "name": "Unknown::insertAllFromSource_006C78D0",
+    "class": "Unknown",
+    "signature": "void fn_006C78D0(void* self, void* arg)",
+    "summary": "For each entry of the owner's sub-array (count at +0xc0 of the +0xf0 object), inserts it into the array at arg; then, if the getter at +0x158 yields a non-null object, invokes its vtable slot 6 with arg.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C7B60": {
     "name": "transformPoint3d",
     "signature": "void sub_006C7B60(double* out, const double* mat, const double* vec)",

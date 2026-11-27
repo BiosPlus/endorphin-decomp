@@ -2394,3 +2394,38 @@ void fn_006C4D70(void* self, int32_t a1, int32_t a2, int32_t a3, int32_t a4) {
     ext_006D2170(array, index, &value);
 }
 } // namespace lift_006C4D70
+
+// [0x006C78D0] sub_006C78D0 (100 bytes)
+namespace lift_006C78D0 {
+// Known callee 0x006C3030: sub_006C3030 (Getter returning int32_t field at offset +0x158.)
+extern int32_t ext_006C3030(void* self);
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern int32_t ext_006D2170(void* self, int32_t index, const void* elem);
+
+// @name Unknown::insertAllFromSource_006C78D0
+// @class Unknown
+// @summary For each entry of the owner's sub-array (count at +0xc0 of the +0xf0 object), inserts it into the array at arg; then, if the getter at +0x158 yields a non-null object, invokes its vtable slot 6 with arg.
+// @field Unknown +0xf0 void* subObject
+// @field Unknown +0xf0->+0xc0 int32_t count
+// @field Unknown +0xf0->+0xd0 int32_t* entries
+void fn_006C78D0(void* self, void* arg) {
+    void* sub0 = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0xf0);
+    int32_t count = *reinterpret_cast<int32_t*>(reinterpret_cast<uint8_t*>(sub0) + 0xc0);
+
+    for (int32_t i = 0; i < count; ++i) {
+        void* sub = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0xf0);
+        int32_t* entries = *reinterpret_cast<int32_t**>(reinterpret_cast<uint8_t*>(sub) + 0xd0);
+        int32_t value = entries[i];
+        int32_t index = *reinterpret_cast<int32_t*>(arg);
+        ext_006D2170(arg, index, &value);
+    }
+
+    if (ext_006C3030(self) != 0) {
+        void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(
+            static_cast<uint32_t>(ext_006C3030(self))));
+        void** vtable = *reinterpret_cast<void***>(obj);
+        auto fn = reinterpret_cast<void (*)(void*, void*)>(vtable[6]);
+        fn(obj, arg);
+    }
+}
+} // namespace lift_006C78D0

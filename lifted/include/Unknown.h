@@ -1541,6 +1541,7 @@ struct Unknown_Fields {
     // +0xF0  uint32_t                 field_0xf0  (evidence: 0x006C3360, 0x006C33C0, 0x00705160) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  void*                    field_0xf0  (evidence: 0x006C2070) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  void* field_0xF0 (sub-object pointer; used as this for ext_00708000 and as base for the +0x1C08 embedded object)  (evidence: 0x006C2E60) // CONFLICT: multiple definitions at +0xF0
+    // +0xF0  void*                    subObject  (evidence: 0x006C78D0) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  void*                    subobject  (evidence: 0x00704EB0) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  void*                    tablePtr  (evidence: 0x006C33F0) // CONFLICT: multiple definitions at +0xF0
     // +0xF4  DynamicArray             arr  (evidence: 0x006D3CF0) // CONFLICT: multiple definitions at +0xF4

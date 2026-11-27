@@ -1,0 +1,22 @@
+{
+  "va": "0x006C78D0",
+  "size": 100,
+  "orig_symbol": "sub_006C78D0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::insertAllFromSource_006C78D0",
+  "class": "Unknown",
+  "signature": "void fn_006C78D0(void* self, void* arg)",
+  "summary": "For each entry of the owner's sub-array (count at +0xc0 of the +0xf0 object), inserts it into the array at arg; then, if the getter at +0x158 yields a non-null object, invokes its vtable slot 6 with arg.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "void*",
+      "name": "subObject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:47:03Z"
+}
