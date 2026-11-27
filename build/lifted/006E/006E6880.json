@@ -1,0 +1,28 @@
+{
+  "va": "0x006E6880",
+  "size": 47,
+  "orig_symbol": "sub_006E6880",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::forwardAssignThenRelease_006E6880",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_006E6880(void* self, void* a, void* b)",
+  "summary": "Forwards two stack arguments to vtable slot +0x80 of the object at +0x00, then calls vtable slot +0x128 of the object at +0x04 with this; both calls are skipped when the pointer is null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:51:32Z"
+}

@@ -69504,6 +69504,13 @@
     "summary": "Thiscall: forwards the low byte of flags to vtable slot 30 (offset 0x78) of the object at +0x00, then calls vtable slot 74 (offset 0x128) of the object at +0x04 passing this; each step is skipped when its pointer is null.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E6880": {
+    "name": "Unknown::forwardAssignThenRelease_006E6880",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_006E6880(void* self, void* a, void* b)",
+    "summary": "Forwards two stack arguments to vtable slot +0x80 of the object at +0x00, then calls vtable slot +0x128 of the object at +0x04 with this; both calls are skipped when the pointer is null.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E6970": {
     "name": "ForwardToSubobjectsVfunc",
     "signature": "void fn_006E6970(void* self, void* arg)",

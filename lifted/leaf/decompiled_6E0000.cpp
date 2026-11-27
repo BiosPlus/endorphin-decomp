@@ -1957,3 +1957,40 @@ void* fn_006E8820(void* self, DWORD index) {
     return nullptr;
 }
 } // namespace lift_006E8820
+
+// [0x006E6880] sub_006E6880 (47 bytes)
+namespace lift_006E6880 {
+// Known callee 0x006B9D80: Unknown::initAssignCString_006B9D80 (Zero-initializes the object, assigns the C string argument to it, and returns this.)
+extern void ext_006B9D80();
+extern int mem_00AA96F8;
+
+// @name Unknown::forwardAssignThenRelease_006E6880
+// @class Unknown
+// @summary Forwards two stack arguments to vtable slot +0x80 of the object at +0x00, then calls vtable slot +0x128 of the object at +0x04 with this; both calls are skipped when the pointer is null.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 void* field_0x04
+void __thiscall fn_006E6880(void* self, void* a, void* b) {
+    (void)&ext_006B9D80;   // metadata-only reference; the asm reaches this via vtable, not a direct call
+    (void)&mem_00AA96F8;   // metadata-only reference; not a real data access
+
+    // mov ecx, [esi]; test ecx, ecx; je skip
+    void* obj0 = lift_field<void*>(self, 0x00);
+    if (obj0 != nullptr) {
+        // mov eax, [ecx]; push arg2; push arg1; call [eax+0x80]
+        void* vptr0 = lift_field<void*>(obj0, 0x00);
+        void* slot0 = lift_field<void*>(vptr0, 0x80);
+        using Slot80Fn = void(__thiscall*)(void* thisPtr, void* arg1, void* arg2);
+        reinterpret_cast<Slot80Fn>(slot0)(obj0, a, b);
+    }
+
+    // mov ecx, [esi+4]; test ecx, ecx; je skip
+    void* obj1 = lift_field<void*>(self, 0x04);
+    if (obj1 != nullptr) {
+        // mov eax, [ecx]; push esi; call [eax+0x128]
+        void* vptr1 = lift_field<void*>(obj1, 0x00);
+        void* slot1 = lift_field<void*>(vptr1, 0x128);
+        using Slot128Fn = void(__thiscall*)(void* thisPtr, void* self_arg);
+        reinterpret_cast<Slot128Fn>(slot1)(obj1, self);
+    }
+}
+} // namespace lift_006E6880
