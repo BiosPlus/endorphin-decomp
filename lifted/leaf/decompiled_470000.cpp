@@ -2762,3 +2762,105 @@ extern void __cdecl fn_004786B0(uint32_t* first, uint32_t* last, uint32_t comp)
     }
 }
 } // namespace lift_004786B0
+
+// [0x0047B830] sub_0047B830 (390 bytes)
+namespace lift_0047B830 {
+// Known callee 0x0050BE20: Vector_eraseTailChecked
+extern void ext_0050BE20(void* self);
+// Known callee 0x00427A60: advanceIteratorUntilMatch (thiscall, ecx = iterator)
+extern void ext_00427A60(void* self);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (operator new)
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x004CD2D0: sub_004CD2D0 (thiscall, ecx = node, one stack arg; returns node-result)
+extern void* ext_004CD2D0(void* self, void* key);
+// Known callee 0x0041A920: sub_0041A920 (thiscall, ecx = owner, one stack arg = &slot)
+extern void ext_0041A920(void* self, void** slot);
+// IAT slots (MSVCP80 / MSVCR80 imports)
+extern int mem_00924FC0;  // MSVCP80 operator==(const basic_string&, const char*)
+extern int mem_00924FE4;  // MSVCP80 basic_string::basic_string(const char*)
+extern int mem_00924FF4;  // MSVCP80 basic_string::~basic_string()
+extern int mem_00925134;  // MSVCR80 _invalid_parameter_noinfo
+// .rdata string literal used to construct the temporary key string
+extern const char mem_00928B5D[];
+
+// @name Unknown::replaceNamedElement_0047B830
+// @class Unknown
+// @summary Walks the checked element range at self+0x28..+0x2C; for the first element whose name (+4 string) equals key, optionally erases the owner's tail, allocates a 0x1A4-byte node, inserts it via ext_004CD2D0, and hands it to the element's vfunc(+0x54).
+// @field Unknown +0x28 void** elemFirst
+// @field Unknown +0x2C void** elemLast
+void fn_0047B830(void* self, void* owner, const char* key, uint8_t clearFirst) {
+    using StrEqFn = bool (*)(const void* str, const char* rhs);
+    using StrCtorFn = void (*)(void* str, const char* lit);
+    using StrDtorFn = void (*)(void* str);
+    using VFn = void (*)(void* thisObj, void* arg);
+
+    auto invalidParam = []() {
+        reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134))();
+    };
+
+    if (clearFirst) {
+        ext_0050BE20(owner);
+    }
+
+    // Checked element range: begin at self+0x28, end at self+0x2C.
+    // The iterator objects are {container, container, cur}.
+    void* view = static_cast<uint8_t*>(self) + 0x24;
+    void* first = lift_field<void*>(self, 0x28);
+    void* last = lift_field<void*>(self, 0x2C);
+    if (!(first <= last)) {
+        invalidParam();
+    }
+
+    void* it1[3] = {view, view, first};
+    ext_00427A60(it1);
+    void* it2[3] = {view, view, last};
+    ext_00427A60(it2);
+
+    void* container = it1[1];
+    for (;;) {
+        void** cur = reinterpret_cast<void**>(it1[2]);
+        void** end = reinterpret_cast<void**>(it2[2]);
+        if (cur >= end) {
+            break;
+        }
+        if (container == nullptr || container != it2[1]) {
+            invalidParam();
+        }
+        if (!(cur < reinterpret_cast<void**>(lift_field<void*>(container, 0x8)))) {
+            invalidParam();
+        }
+
+        void* element = *cur;
+        const void* elemName = static_cast<const uint8_t*>(element) + 0x4;
+        auto strEq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+        if (strEq(elemName, key)) {
+            void* node = ext_006A5C62(0x1A4);
+            void* result = nullptr;
+            if (node != nullptr) {
+                alignas(8) uint8_t tmp[0x20] = {};
+                auto strCtor = reinterpret_cast<StrCtorFn>(static_cast<uintptr_t>(mem_00924FE4));
+                auto strDtor = reinterpret_cast<StrDtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+                strCtor(tmp + 0x4, mem_00928B5D);
+                result = ext_004CD2D0(node, tmp);
+                strDtor(tmp);
+            }
+
+            void* vobj = result;
+            void** vtbl = *reinterpret_cast<void***>(vobj);
+            auto vfn = reinterpret_cast<VFn>(*reinterpret_cast<void* const*>(
+                reinterpret_cast<const uint8_t*>(vtbl) + 0x54));
+            vfn(vobj, element);
+
+            void* slot = vobj;
+            ext_0041A920(owner, &slot);
+        }
+
+        // Advance the iterator past this element and re-check the range.
+        if (!(cur < reinterpret_cast<void**>(lift_field<void*>(container, 0x8)))) {
+            invalidParam();
+        }
+        it1[2] = reinterpret_cast<uint8_t*>(cur) + 4;  // element slots are 4 bytes
+        ext_00427A60(it1);
+    }
+}
+} // namespace lift_0047B830

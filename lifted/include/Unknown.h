@@ -923,6 +923,7 @@ struct Unknown_Fields {
     // +0x24  float                    z  (evidence: 0x004B1130) // CONFLICT: multiple definitions at +0x24
     // +0x28  std::uint32_t            cachedEnd  (evidence: 0x00790EE0) // CONFLICT: multiple definitions at +0x28
     // +0x28  void**                   data_28  (evidence: 0x0078D6B0) // CONFLICT: multiple definitions at +0x28
+    // +0x28  void**                   elemFirst  (evidence: 0x0047B830) // CONFLICT: multiple definitions at +0x28
     // +0x28  int32_t                  elementCount  (evidence: 0x0078C8C0) // CONFLICT: multiple definitions at +0x28
     // +0x28  uint32_t cursor (0 = needs recompute; written on exit)  (evidence: 0x00796660) // CONFLICT: multiple definitions at +0x28
     // +0x28  void* field_0x28 (std::vector<std::string>; passed to ext_004026E0)  (evidence: 0x0055B720) // CONFLICT: multiple definitions at +0x28
@@ -952,6 +953,7 @@ struct Unknown_Fields {
     // +0x2C  void* field_0x2C (read through the pointer at +0x1C)  (evidence: 0x007C15A0, 0x007CAF70) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  void** table (DynArray element pointer array)  (evidence: 0x006E8F70) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  void**                   arrayItems  (evidence: 0x006E8EF0) // CONFLICT: multiple definitions at +0x2C
+    // +0x2C  void**                   elemLast  (evidence: 0x0047B830) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  uint32_t                 elementTable  (evidence: 0x0078C8C0) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  int32_t*                 elements  (evidence: 0x006FA460) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  void**                   elements_begin  (evidence: 0x00665B80) // CONFLICT: multiple definitions at +0x2C

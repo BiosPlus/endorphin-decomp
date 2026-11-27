@@ -1,0 +1,28 @@
+{
+  "va": "0x0047B830",
+  "size": 390,
+  "orig_symbol": "sub_0047B830",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "Unknown::replaceNamedElement_0047B830",
+  "class": "Unknown",
+  "signature": "void fn_0047B830(void* self, void* owner, const char* key, uint8_t clearFirst)",
+  "summary": "Walks the checked element range at self+0x28..+0x2C; for the first element whose name (+4 string) equals key, optionally erases the owner's tail, allocates a 0x1A4-byte node, inserts it via ext_004CD2D0, and hands it to the element's vfunc(+0x54).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "void**",
+      "name": "elemFirst"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "void**",
+      "name": "elemLast"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:50:22Z"
+}
