@@ -1,0 +1,13 @@
+{
+  "va": "0x004063F0",
+  "size": 141,
+  "orig_symbol": "sub_004063F0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "UnknownClass_constructRange",
+  "signature": "void fn_004063F0(void* begin, uint32_t count, const void* src)",
+  "summary": "Copy-constructs `count` 0x58-byte UnknownClass elements at `begin` from `src`; on exception destroys the already-built prefix and rethrows.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:27:49Z"
+}

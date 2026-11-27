@@ -2374,3 +2374,38 @@ void* fn_004062C0(const void* first, const void* last, void* dest) {
     return out;
 }
 } // namespace lift_004062C0
+
+// [0x004063F0] sub_004063F0 (141 bytes)
+namespace lift_004063F0 {
+// Known callee 0x00404CD0: sub_00404CD0 (Destroys three std::string members at offsets +0x3c, +0x20, and +0x04)
+extern void ext_00404CD0();
+// Known callee 0x00404D70: UnknownClass::UnknownClass (Copy-constructs fields from a source struct (u32 at +0x00, three std::string members at +0x04/+0x20/+0x3C); returns this.)
+extern void ext_00404D70();
+
+// @name UnknownClass_constructRange
+// @summary Copy-constructs `count` 0x58-byte UnknownClass elements at `begin` from `src`; on exception destroys the already-built prefix and rethrows.
+void fn_004063F0(void* begin, uint32_t count, const void* src) {
+    using CtorFn = void(__thiscall*)(void* self, const void* src);
+    using DtorFn = void(__thiscall*)(void* self);
+    constexpr std::size_t kElemSize = 0x58;
+
+    uint8_t* const first = static_cast<uint8_t*>(begin);
+    uint8_t* cur = first;
+    try {
+        while (count != 0) {
+            // Null elements are skipped (asm: cmp esi, 0 / je).
+            if (cur != nullptr) {
+                reinterpret_cast<CtorFn>(ext_00404D70)(cur, src);
+            }
+            --count;
+            cur += kElemSize;
+        }
+    } catch (...) {
+        // Destroy every element that was fully constructed: [first, cur).
+        for (uint8_t* p = first; p != cur; p += kElemSize) {
+            reinterpret_cast<DtorFn>(ext_00404CD0)(p);
+        }
+        throw;
+    }
+}
+} // namespace lift_004063F0

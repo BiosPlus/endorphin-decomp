@@ -677,6 +677,12 @@
     "summary": "Destroys each 0x58-byte record in [begin, end): strings at +0x3C, +0x20, +0x04 are destructed in that order.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x004063F0": {
+    "name": "UnknownClass_constructRange",
+    "signature": "void fn_004063F0(void* begin, uint32_t count, const void* src)",
+    "summary": "Copy-constructs `count` 0x58-byte UnknownClass elements at `begin` from `src`; on exception destroys the already-built prefix and rethrows.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00406480": {
     "name": "sub_00406480",
     "signature": "DWORD* __thiscall fn_00406480(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
