@@ -4000,3 +4000,34 @@ void fn_00434DB0(void* self) {
     }
 }
 } // namespace lift_00434DB0
+
+// [0x0043DDF0]
+namespace lift_0043DDF0 {
+extern const double mem_00993830; // rdata: -1.0
+extern const double mem_009320F0; // rdata: 100000.0
+void ext_00466BA0(void* self, uint32_t arg1, uint32_t arg2);
+
+// @name Unknown::updateRangeAndDispatch
+// @class Unknown
+// @summary Adds a double argument to the two doubles at +0xE8/+0xF0 (committing them only if the first is >= -1 and the second is <= 100000, NaN rejected), then dispatches the pair as two floats to the subobject at +0x13C via ext_00466BA0.
+// @field Unknown +0xE8 double field_0xE8
+// @field Unknown +0xF0 double field_0xF0
+void fn_0043DDF0(void* self, double a) {
+    const double x = a + lift_field<double>(self, 0xE8);
+    const double y = a + lift_field<double>(self, 0xF0);
+
+    // Ordered compares: NaN makes both conditions false, so the update is rejected.
+    if (x >= mem_00993830 && y <= mem_009320F0) {
+        lift_field<double>(self, 0xE8) = x;
+        lift_field<double>(self, 0xF0) = y;
+    }
+
+    // The original reuses the stack slot of the double argument to hold two floats.
+    float pair[2];
+    pair[0] = static_cast<float>(lift_field<double>(self, 0xE8));
+    pair[1] = static_cast<float>(lift_field<double>(self, 0xF0));
+
+    void* sub = static_cast<uint8_t*>(self) + 0x13C;
+    ext_00466BA0(sub, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(pair)), 0u);
+}
+} // namespace lift_0043DDF0

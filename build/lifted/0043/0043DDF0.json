@@ -1,0 +1,28 @@
+{
+  "va": "0x0043DDF0",
+  "size": 111,
+  "orig_symbol": "sub_0043DDF0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::updateRangeAndDispatch",
+  "class": "Unknown",
+  "signature": "void fn_0043DDF0(void* self, double a)",
+  "summary": "Adds a double argument to the two doubles at +0xE8/+0xF0 (committing them only if the first is \u003e= -1 and the second is \u003c= 100000, NaN rejected), then dispatches the pair as two floats to the subobject at +0x13C via ext_00466BA0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xE8",
+      "type": "double",
+      "name": "field_0xE8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "double",
+      "name": "field_0xF0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:17:45Z"
+}
