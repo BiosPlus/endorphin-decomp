@@ -1,0 +1,22 @@
+{
+  "va": "0x006B9EA0",
+  "size": 32,
+  "orig_symbol": "sub_006B9EA0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::storeByteIfAllocOk",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* __thiscall fn_006B9EA0(void* self, uint8_t value)",
+  "summary": "Calls allocBufferAndForward(1); on success writes the byte argument through this-\u003efield_0x00 and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint8_t*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:44:59Z"
+}

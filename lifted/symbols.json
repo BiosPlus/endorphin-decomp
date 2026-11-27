@@ -66149,6 +66149,13 @@
     "summary": "Pure jump thunk forwarding to sub_006B9970.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006B9EA0": {
+    "name": "Unknown::storeByteIfAllocOk",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __thiscall fn_006B9EA0(void* self, uint8_t value)",
+    "summary": "Calls allocBufferAndForward(1); on success writes the byte argument through this-\u003efield_0x00 and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BA2C0": {
     "name": "StringBuffer::getCharPtrAt",
     "class": "StringBuffer",
@@ -77378,6 +77385,19 @@
     "class": "Unknown",
     "signature": "void fn_00729A00(uint32_t self)",
     "summary": "If the self array has matching entries, takes the first match's object and writes double 1.0 into the 8-byte element at index 3 of each 0x20-byte stride of its array.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
+  "0x0072AF80": {
+    "name": "Unknown::InitSixSubObjects",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_0072AF80(void* self)",
+    "summary": "Initializes six embedded 0x4c-byte sub-objects via ext_006B9D10, clears field_0x1c8, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
+  "0x0072B010": {
+    "name": "sub_0072B010",
+    "signature": "extern \"C\" void __thiscall fn_0072B010(void* self)",
+    "summary": "Destroys six 0x4c-byte sub-objects in reverse order via ext_006B9D70.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
   "0x0072B120": {

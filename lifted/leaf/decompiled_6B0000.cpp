@@ -2479,3 +2479,22 @@ uint32_t fn_006B99D0(uint32_t len) {
     return status;
 }
 } // namespace lift_006B99D0
+
+// [0x006B9EA0] sub_006B9EA0 (32 bytes)
+namespace lift_006B9EA0 {
+// Known callee 0x006B99D0: Unknown::allocBufferAndForward (Allocates a buffer of the given length via allocBuffer (which may rewrite the length argument through its out pointer), then forwards the resulting length to the MFC80 ord_764 thunk and returns the allocBuffer status.)
+extern uint32_t ext_006B99D0(uint32_t len);
+
+// @name Unknown::storeByteIfAllocOk
+// @class Unknown
+// @summary Calls allocBufferAndForward(1); on success writes the byte argument through this->field_0x00 and returns this.
+// @field Unknown +0x00 uint8_t* field_0x00
+extern void* __thiscall fn_006B9EA0(void* self, uint8_t value) {
+    uint32_t status = ext_006B99D0(1);
+    if (status == 0) {
+        uint8_t* target = lift_field<uint8_t*>(self, 0x00);
+        *target = value;
+    }
+    return self;
+}
+} // namespace lift_006B9EA0
