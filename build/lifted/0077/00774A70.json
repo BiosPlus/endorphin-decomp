@@ -1,0 +1,58 @@
+{
+  "va": "0x00774A70",
+  "size": 146,
+  "orig_symbol": "sub_00774A70",
+  "src_path": "src/leaf/decompiled_770000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_770000.cpp",
+  "name": "Unknown::initWithArgsAndInitSubobjects_00774A70",
+  "class": "Unknown",
+  "signature": "void* fn_00774A70(void* self, DWORD arg1, DWORD arg2)",
+  "summary": "Calls the base initializer with arg1, stores arg2 at +0xB0, resets the fields at +0xAC..+0xC0 (+0xB8 = 1), initializes the sub-objects at +0xC4 and +0xD8 with arg 0x14, sets the vtable to 0x00996D20, and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "DWORD",
+      "name": "field_0xac"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB0",
+      "type": "DWORD",
+      "name": "field_0xb0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB4",
+      "type": "DWORD",
+      "name": "field_0xb4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB8",
+      "type": "DWORD",
+      "name": "field_0xb8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xBC",
+      "type": "DWORD",
+      "name": "field_0xbc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC0",
+      "type": "DWORD",
+      "name": "field_0xc0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T05:04:53Z"
+}

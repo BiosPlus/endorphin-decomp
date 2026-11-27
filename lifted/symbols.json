@@ -65203,6 +65203,20 @@
     "summary": "Pure jump thunk forwarding to sub_006B1190.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x006B11B0": {
+    "name": "GWCPropertiesFactory::vfunc_1",
+    "class": "GWCPropertiesFactory",
+    "signature": "extern \"C\" void* __thiscall fn_006B11B0(void* self, uint32_t arg1, int32_t arg2, uint32_t arg3)",
+    "summary": "Creates and initializes a properties object if the requested index/type is within bounds",
+    "lifted_path": "lifted/classes/GWCPropertiesFactory.cpp"
+  },
+  "0x006B1250": {
+    "name": "GWCRGBPropertiesFactory::vfunc_1",
+    "class": "GWCRGBPropertiesFactory",
+    "signature": "extern \"C\" void* __thiscall fn_006B1250(void* self, DWORD arg1, DWORD arg2, DWORD arg3)",
+    "summary": "Creates and initializes an RGB properties object when type matches 0x64",
+    "lifted_path": "lifted/classes/GWCRGBPropertiesFactory.cpp"
+  },
   "0x006B12F0": {
     "name": "roundDoubleToInt",
     "class": "none (free function)",
@@ -79290,6 +79304,13 @@
     "signature": "void fn_007747F0()",
     "summary": "Copies the 8-byte value pointed to by the _HUGE pointer into four consecutive 8-byte globals (0xB605E0..0xB605FC).",
     "lifted_path": "lifted/clones/auto_clones_770000.cpp"
+  },
+  "0x00774A70": {
+    "name": "Unknown::initWithArgsAndInitSubobjects_00774A70",
+    "class": "Unknown",
+    "signature": "void* fn_00774A70(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Calls the base initializer with arg1, stores arg2 at +0xB0, resets the fields at +0xAC..+0xC0 (+0xB8 = 1), initializes the sub-objects at +0xC4 and +0xD8 with arg 0x14, sets the vtable to 0x00996D20, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
   },
   "0x00774B10": {
     "name": "sub_00774B10",

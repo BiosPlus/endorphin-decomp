@@ -702,3 +702,35 @@ void* fn_00772050(void* self, DWORD arg1) {
     return self;
 }
 } // namespace lift_00772050
+
+// [0x00774A70] sub_00774A70 (146 bytes)
+namespace lift_00774A70 {
+// Known callee 0x00754F20: Unknown::initWithArgsAndInitSubobject_00754F20 (Stores arg1 at +0x04, initializes the sub-object at +0x08 with constant args (0x00AAE878, 6), initializes the sub-object at +0x60, sets the vtable to 0x00996BF0, and returns this.)
+extern void* ext_00754F20(void* self, DWORD arg1);
+// Known callee 0x00784620: sub_00784620 (thiscall: reset object state, store one DWORD argument) (Zeroes the dword fields at +0x00/+0x04/+0x08 and byte flag at +0x10, stores the stack argument at +0x0C (ret 4).)
+extern void ext_00784620(void* self, DWORD arg);
+
+// @name Unknown::initWithArgsAndInitSubobjects_00774A70
+// @class Unknown
+// @summary Calls the base initializer with arg1, stores arg2 at +0xB0, resets the fields at +0xAC..+0xC0 (+0xB8 = 1), initializes the sub-objects at +0xC4 and +0xD8 with arg 0x14, sets the vtable to 0x00996D20, and returns this.
+// @field Unknown +0x00 DWORD vtable
+// @field Unknown +0xAC DWORD field_0xac
+// @field Unknown +0xB0 DWORD field_0xb0
+// @field Unknown +0xB4 DWORD field_0xb4
+// @field Unknown +0xB8 DWORD field_0xb8
+// @field Unknown +0xBC DWORD field_0xbc
+// @field Unknown +0xC0 DWORD field_0xc0
+void* fn_00774A70(void* self, DWORD arg1, DWORD arg2) {
+    ext_00754F20(self, arg1);
+    lift_field<DWORD>(self, 0xB0) = arg2;
+    lift_field<DWORD>(self, 0xAC) = 0u;
+    lift_field<DWORD>(self, 0xB4) = 0u;
+    lift_field<DWORD>(self, 0xB8) = 1u;
+    lift_field<DWORD>(self, 0xBC) = 0u;
+    lift_field<DWORD>(self, 0xC0) = 0u;
+    ext_00784620(&lift_field<BYTE>(self, 0xC4), 0x14u);
+    ext_00784620(&lift_field<BYTE>(self, 0xD8), 0x14u);
+    lift_field<DWORD>(self, 0x00) = 0x00996D20u;
+    return self;
+}
+} // namespace lift_00774A70
