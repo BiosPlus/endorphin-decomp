@@ -1,0 +1,70 @@
+{
+  "va": "0x0045DFF0",
+  "size": 899,
+  "orig_symbol": "MultiTrackView::TriggeredEventView::vfunc_1_off_254",
+  "src_path": "src/MultiTrackView/TriggeredEventView.cpp",
+  "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp",
+  "name": "MultiTrackView::TriggeredEventView::vfunc_1_off_254",
+  "class": "MultiTrackView::TriggeredEventView",
+  "signature": "static inline bool is_sentinel(uint32_t v)",
+  "summary": "Resolves a set of named string properties on the arg object and stores bool/int results into the view's fields.",
+  "fields": [
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0xFFFFFF11",
+      "type": "uint8_t",
+      "name": "field_0xFFFFFF11"
+    },
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0xFFFFFF14",
+      "type": "int32_t",
+      "name": "field_0xFFFFFF14"
+    },
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0xFFFFFF18",
+      "type": "int32_t",
+      "name": "field_0xFFFFFF18"
+    },
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0xFFFFFF1C",
+      "type": "int32_t",
+      "name": "field_0xFFFFFF1C"
+    },
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0xFFFFFF20",
+      "type": "int32_t",
+      "name": "field_0xFFFFFF20"
+    },
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0xFFFFFF24",
+      "type": "int32_t",
+      "name": "field_0xFFFFFF24"
+    },
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0xFFFFFF28",
+      "type": "int32_t",
+      "name": "field_0xFFFFFF28"
+    },
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0xFFFFFF2C",
+      "type": "int32_t",
+      "name": "field_0xFFFFFF2C"
+    },
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0xFFFFFF34",
+      "type": "int32_t",
+      "name": "field_0xFFFFFF34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:42:08Z"
+}

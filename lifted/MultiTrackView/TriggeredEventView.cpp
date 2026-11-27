@@ -436,3 +436,101 @@ uint32_t __thiscall fn_0045FB00(void* self, void* arg1, void* arg2) {
     }
 }
 } // namespace lift_0045FB00
+
+// [0x0045DFF0] MultiTrackView::TriggeredEventView::vfunc_1_off_254 (899 bytes)
+namespace lift_0045DFF0 {
+// Known callee 0x0063F530: sub_0063F530 (thiscall: self=arg, stack=(name, 0, 1); returns item or not-found sentinel).
+extern uint32_t ext_0063F530(void* self, uint32_t name, int32_t zero, int32_t one);
+// Known callee 0x0063EFE0: sub_0063EFE0 (thiscall: self=target, stack=(name); searches item vector for matching name, returns item or sentinel).
+extern uint32_t ext_0063EFE0(uint32_t self, uint32_t name);
+// Known callee 0x00427640: checkStringEqualsConst (cdecl: (field ptr, slot ptr); stores boolean result into the slot/out).
+extern void ext_00427640(void* a, void* b);
+// Known callee 0x0053F5F0: parseIntFromStringProp (cdecl: (out ptr, slot ptr); stores atoi'd int at out).
+extern void ext_0053F5F0(void* a, void* b);
+extern uint32_t mem_00A9F604;
+extern uint32_t mem_00A9FAE0;
+
+// Sentinel "not found" item addresses returned by the lookup helpers.
+static constexpr uint32_t kSentinelA34 = 0x00B53A34u;
+static constexpr uint32_t kSentinelB30 = 0x00B53B30u; // also the substitute target
+static constexpr uint32_t kSentinelAB0 = 0x00B53AB0u;
+static constexpr uint32_t kSentinelA70 = 0x00B53A70u;
+static constexpr uint32_t kSentinelAF0 = 0x00B53AF0u;
+
+static inline bool is_sentinel(uint32_t v) {
+    return v == kSentinelA34 || v == kSentinelB30 || v == kSentinelAB0 ||
+           v == kSentinelA70 || v == kSentinelAF0;
+}
+
+// Maps any not-found sentinel to the default target, otherwise passes through.
+static inline uint32_t resolve_target(uint32_t v) {
+    return is_sentinel(v) ? kSentinelB30 : v;
+}
+
+// Looks up `name` on `target`; if found, parses it as an int into `out`.
+static void lookup_parse_int(uint32_t target, uint32_t name, void* out) {
+    const uint32_t item = ext_0063EFE0(target, name);
+    if (is_sentinel(item)) {
+        return;
+    }
+    uint32_t slot = item;
+    ext_0053F5F0(out, &slot);
+}
+
+// Looks up `name` on `target`; if found, evaluates the string-equals check into `out`.
+static void lookup_check_bool(uint32_t target, uint32_t name, void* out) {
+    const uint32_t item = ext_0063EFE0(target, name);
+    if (is_sentinel(item)) {
+        return;
+    }
+    uint32_t slot = item;
+    ext_00427640(out, &slot);
+}
+
+// @name MultiTrackView::TriggeredEventView::vfunc_1_off_254
+// @class MultiTrackView::TriggeredEventView
+// @summary Resolves a set of named string properties on the arg object and stores bool/int results into the view's fields.
+// @field MultiTrackView::TriggeredEventView +0xFFFFFF11 uint8_t field_0xFFFFFF11
+// @field MultiTrackView::TriggeredEventView +0xFFFFFF14 int32_t field_0xFFFFFF14
+// @field MultiTrackView::TriggeredEventView +0xFFFFFF18 int32_t field_0xFFFFFF18
+// @field MultiTrackView::TriggeredEventView +0xFFFFFF1C int32_t field_0xFFFFFF1C
+// @field MultiTrackView::TriggeredEventView +0xFFFFFF20 int32_t field_0xFFFFFF20
+// @field MultiTrackView::TriggeredEventView +0xFFFFFF24 int32_t field_0xFFFFFF24
+// @field MultiTrackView::TriggeredEventView +0xFFFFFF28 int32_t field_0xFFFFFF28
+// @field MultiTrackView::TriggeredEventView +0xFFFFFF2C int32_t field_0xFFFFFF2C
+// @field MultiTrackView::TriggeredEventView +0xFFFFFF34 int32_t field_0xFFFFFF34
+void fn_0045DFF0(void* self, void* arg) {
+    // Block 1: primary target from arg.
+    const uint32_t target = resolve_target(ext_0063F530(arg, 0x00937F78u, 0, 1));
+    {
+        const uint32_t item = ext_0063EFE0(target, mem_00A9F604);
+        if (!is_sentinel(item)) {
+            uint32_t slot = item;
+            ext_00427640(&lift_field<uint8_t>(self, -0xEF), &slot);
+        }
+    }
+    lookup_parse_int(target, 0x00937F70u, &lift_field<int32_t>(self, -0xEC));
+    lookup_parse_int(target, 0x00937F64u, &lift_field<int32_t>(self, -0xE8));
+    lookup_parse_int(target, 0x00937F5Cu, &lift_field<int32_t>(self, -0xE0));
+
+    // Block 2: second target from arg.
+    const uint32_t target2 = resolve_target(ext_0063F530(arg, 0x00937F50u, 0, 1));
+    lookup_check_bool(target2, mem_00A9F604, &lift_field<uint8_t>(self, -0xDC));
+    lookup_parse_int(target2, mem_00A9FAE0, &lift_field<int32_t>(self, -0xD8));
+    lookup_parse_int(target2, 0x00937F48u, &lift_field<int32_t>(self, -0xD4));
+
+    // Block 3: third target from arg.
+    const uint32_t target3 = resolve_target(ext_0063F530(arg, 0x00937F3Cu, 0, 1));
+    lookup_parse_int(target3, 0x00937F70u, &lift_field<int32_t>(self, -0xE4));
+
+    // Block 4: fourth target from arg; result stored to field -0xCC.
+    const uint32_t target4 = resolve_target(ext_0063F530(arg, 0x00937F2Cu, 0, 1));
+    const uint32_t item = ext_0063EFE0(target4, 0x00937F48u);
+    if (!is_sentinel(item)) {
+        int32_t out = 0;
+        uint32_t slot = item;
+        ext_0053F5F0(&out, &slot);
+        lift_field<int32_t>(self, -0xCC) = out;
+    }
+}
+} // namespace lift_0045DFF0

@@ -17,6 +17,15 @@ struct MultiTrackView_TriggeredEventView_Fields {
     // +0x1B8 int32_t*                 field_0x1B8  (evidence: 0x0045F0A0)
     // +0x258 void*                    field_0x258  (evidence: 0x0045FB00)
     // +0x2D0 void*                    field_0x2D0  (evidence: 0x0045E470)
+    // +0xFFFFFF11 uint8_t                  field_0xFFFFFF11  (evidence: 0x0045DFF0)
+    // +0xFFFFFF14 int32_t                  field_0xFFFFFF14  (evidence: 0x0045DFF0)
+    // +0xFFFFFF18 int32_t                  field_0xFFFFFF18  (evidence: 0x0045DFF0)
+    // +0xFFFFFF1C int32_t                  field_0xFFFFFF1C  (evidence: 0x0045DFF0)
+    // +0xFFFFFF20 int32_t                  field_0xFFFFFF20  (evidence: 0x0045DFF0)
+    // +0xFFFFFF24 int32_t                  field_0xFFFFFF24  (evidence: 0x0045DFF0)
+    // +0xFFFFFF28 int32_t                  field_0xFFFFFF28  (evidence: 0x0045DFF0)
+    // +0xFFFFFF2C int32_t                  field_0xFFFFFF2C  (evidence: 0x0045DFF0)
+    // +0xFFFFFF34 int32_t                  field_0xFFFFFF34  (evidence: 0x0045DFF0)
     // +0xFFFFFFFC void*                    field_0xFFFFFFFC  (evidence: 0x0045F0A0)
 };
 } // namespace lifted_layout

@@ -8103,6 +8103,13 @@
     "summary": "Computes a clamped max of four int values (ebx, edi, esi, vfunc result - 1), scales it by 1.05 via sub_006A6DE0 (default 300 if zero), clamps to \u003e= 300, dispatches it to clampAndDispatchFloatPair, then invalidates the owning window.",
     "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
   },
+  "0x0045DFF0": {
+    "name": "MultiTrackView::TriggeredEventView::vfunc_1_off_254",
+    "class": "MultiTrackView::TriggeredEventView",
+    "signature": "static inline bool is_sentinel(uint32_t v)",
+    "summary": "Resolves a set of named string properties on the arg object and stores bool/int results into the view's fields.",
+    "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
+  },
   "0x0045E470": {
     "name": "MultiTrackView::TriggeredEventView::ForwardToMemberWithArg",
     "class": "MultiTrackView::TriggeredEventView",
