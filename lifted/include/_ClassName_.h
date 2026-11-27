@@ -27,7 +27,7 @@ struct _ClassName__Fields {
     // +0x4   int32_t                  field_0x04  (evidence: 0x00553F70, 0x00672410, 0x00675DB0) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              field_0x04  (evidence: 0x0067A670) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00494050, 0x004A0620, 0x00569970) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint8_t                  field_0x04  (evidence: 0x0054E3D0, 0x00661920) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint8_t                  field_0x04  (evidence: 0x0054E3D0, 0x00661920, 0x007A95C0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x005D14A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 vtable_4  (evidence: 0x004ED640) // CONFLICT: multiple definitions at +0x4
     // +0x4   DWORD field_0x04 (begin pointer; read and written)  (evidence: 0x0043E640) // CONFLICT: multiple definitions at +0x4

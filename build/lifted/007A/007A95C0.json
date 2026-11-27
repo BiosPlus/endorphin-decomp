@@ -1,0 +1,22 @@
+{
+  "va": "0x007A95C0",
+  "size": 48,
+  "orig_symbol": "sub_007A95C0",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "ConditionalStoreFlagByte",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "void fn_007A95C0(void* p)",
+  "summary": "When p is null, caches idx 2 via ext_007AA510 and, if mem_00B61219 is set, stores mem_00998070 into p+4; when p is non-null, stores mem_00998070 into p+4.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:13:28Z"
+}
