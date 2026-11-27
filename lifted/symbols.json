@@ -97106,6 +97106,12 @@
     "summary": "Getter returning uint8_t field at offset +0x198.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x0070C010": {
+    "name": "fn_0070C010",
+    "signature": "extern \"C\" void __stdcall fn_0070C010( uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7)",
+    "summary": "Calls sub_0070BB80 and sub_006D80A0 with the address of the 32-byte stack argument block",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070C060": {
     "name": "Unknown::fillTripleAndCopyOut_0070C060",
     "class": "Unknown",

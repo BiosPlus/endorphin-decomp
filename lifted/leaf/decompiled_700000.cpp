@@ -3266,3 +3266,22 @@ void* __thiscall sub_0070F210(void* self, void* out) {
     return out;
 }
 } // namespace lift_0070F210
+
+// [0x0070C010]
+namespace lift_0070C010 {
+// @name fn_0070C010
+// @summary Calls sub_0070BB80 and sub_006D80A0 with the address of the 32-byte stack argument block
+
+
+extern void __stdcall ext_0070BB80(void* arg);
+extern void __cdecl ext_006D80A0(void);
+
+extern void __stdcall fn_0070C010(
+    uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3,
+    uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7)
+{
+    uint32_t args[8] = { a0, a1, a2, a3, a4, a5, a6, a7 };
+    ext_0070BB80(args);
+    ext_006D80A0();
+}
+} // namespace lift_0070C010
