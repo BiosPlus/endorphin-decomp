@@ -68226,6 +68226,13 @@
     "summary": "Calls virtual slot 6 on self to obtain a new id; if nonzero, appends it to the DynamicArray at +0x34 (index = current count) and returns the id.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D36C0": {
+    "name": "Unknown::queryAndAppendToArray_006D36C0",
+    "class": "Unknown",
+    "signature": "int32_t fn_006D36C0(void* self)",
+    "summary": "Calls vtable slot at +0x1c on self; if it returns nonzero, appends that value to the DynamicArray at self+0x34 and returns it.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D3780": {
     "name": "Unknown::appendVirtualResultToArray_006D3780",
     "class": "Unknown",

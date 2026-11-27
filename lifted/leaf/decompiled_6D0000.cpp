@@ -2565,3 +2565,31 @@ int32_t __thiscall fn_006D3690(void* self) {
     return id;
 }
 } // namespace lift_006D3690
+
+// [0x006D36C0] sub_006D36C0 (48 bytes)
+namespace lift_006D36C0 {
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern int32_t ext_006D2170(void* self, int32_t index, const void* elem);
+
+// @name Unknown::queryAndAppendToArray_006D36C0
+// @class Unknown
+// @summary Calls vtable slot at +0x1c on self; if it returns nonzero, appends that value to the DynamicArray at self+0x34 and returns it.
+// @field Unknown +0x34 int32_t field_0x34
+int32_t fn_006D36C0(void* self) {
+    // call [eax + 0x1c] with ecx = self
+    using VSlot = int32_t (*)(void*);
+    void** vtbl = *reinterpret_cast<void***>(self);
+    VSlot slot = reinterpret_cast<VSlot>(
+        *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtbl) + 0x1c));
+    int32_t result = slot(self);
+
+    if (result != 0) {
+        // DynamicArray at self+0x34: index = its first dword, elem = &result
+        void* array = reinterpret_cast<uint8_t*>(self) + 0x34;
+        int32_t index = lift_field<int32_t>(self, 0x34);
+        int32_t elem = result;
+        ext_006D2170(array, index, &elem);
+    }
+    return result;
+}
+} // namespace lift_006D36C0
