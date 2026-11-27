@@ -2656,3 +2656,38 @@ void fn_006465F0(void* self) {
     lift_field<float>(self, 0xa8) = one;
 }
 } // namespace lift_006465F0
+
+// [0x00640300] sub_00640300 (136 bytes)
+namespace lift_00640300 {
+// Known callee 0x0063E050: sub_0063E050 (Extracts a substring from a buffer range (minus trailing length) and assigns it to the destination std::string)
+extern void __thiscall ext_0063E050(void* self, void* dst_str, uint32_t tail_len);
+// Known callee 0x00640270: Unknown::assignOrCreateChild (If this+0x34 holds a child, assigns name into child+0x24; otherwise allocates a 0x40-byte Unknown, constructs it from (this, name), and passes it to sub_00640240.)
+extern void __thiscall ext_00640270(void* self, void* name);
+// Original std::string ctor/dtor IAT slots (replaced by a real std::string local; referenced for metadata only).
+extern int mem_00924FE8;
+extern int mem_00924FF4;
+
+// @name Unknown::assignChildFromRangeSubstring
+// @class Unknown
+// @summary Extracts a substring from the range object src (minus tail_len trailing bytes) into a temporary std::string, refreshes src's cached fields from its source node, and assigns the substring to this's child via assignOrCreateChild.
+void __thiscall fn_00640300(void* self, void* src, uint32_t tail_len) {
+    // src layout (16 bytes): +0x00 source node pointer, +0x04/+0x08/+0x0C cached copies of node+0x08/+0x10/+0x14.
+    (void)&mem_00924FE8;
+    (void)&mem_00924FF4;
+    std::string name;
+
+    // Build the substring from src's buffer range into 'name'.
+    ext_0063E050(src, &name, tail_len);
+
+    // Refresh src's cached fields from the source node it points to.
+    void* node = lift_field<void*>(src, 0x00);
+    lift_field<uint32_t>(src, 0x04) = lift_field<uint32_t>(node, 0x08);
+    lift_field<uint32_t>(src, 0x08) = lift_field<uint32_t>(node, 0x10);
+    lift_field<uint32_t>(src, 0x0C) = lift_field<uint32_t>(node, 0x14);
+
+    // Assign the substring to this's child (created if absent).
+    ext_00640270(self, &name);
+
+    // 'name' is destroyed automatically at end of scope (replaces the original std::string dtor call).
+}
+} // namespace lift_00640300

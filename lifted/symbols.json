@@ -50008,6 +50008,13 @@
     "summary": "If this+0x34 holds a child, assigns name into child+0x24; otherwise allocates a 0x40-byte Unknown, constructs it from (this, name), and passes it to sub_00640240.",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x00640300": {
+    "name": "Unknown::assignChildFromRangeSubstring",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00640300(void* self, void* src, uint32_t tail_len)",
+    "summary": "Extracts a substring from the range object src (minus tail_len trailing bytes) into a temporary std::string, refreshes src's cached fields from its source node, and assigns the substring to this's child via assignOrCreateChild.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x006406D0": {
     "name": "Unknown::forEachPointerVirtualSlot4ThenDispatch (descriptive; owner class not identified)",
     "class": "Unknown",

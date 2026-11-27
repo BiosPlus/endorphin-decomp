@@ -1,0 +1,14 @@
+{
+  "va": "0x00640300",
+  "size": 136,
+  "orig_symbol": "sub_00640300",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "Unknown::assignChildFromRangeSubstring",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00640300(void* self, void* src, uint32_t tail_len)",
+  "summary": "Extracts a substring from the range object src (minus tail_len trailing bytes) into a temporary std::string, refreshes src's cached fields from its source node, and assigns the substring to this's child via assignOrCreateChild.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:32:31Z"
+}
