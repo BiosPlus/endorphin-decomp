@@ -1,0 +1,34 @@
+{
+  "va": "0x00627110",
+  "size": 140,
+  "orig_symbol": "NMData::EffectorSkeletalData::vfunc_15",
+  "src_path": "src/NMData/EffectorSkeletalData.cpp",
+  "lifted_path": "lifted/NMData/EffectorSkeletalData.cpp",
+  "name": "NMData::EffectorSkeletalData::vfunc_15",
+  "class": "NMData::EffectorSkeletalData",
+  "signature": "extern \"C\" void* __thiscall fn_00627110(void* self, void* a1, uint32_t a2, uint32_t stackArg3)",
+  "summary": "Allocates and constructs a 0x180-byte object, copies a uint32 (from ext_005A0FF0(a1, \u0026this-\u003e+0x20)-\u003e+0x234) into it, stores a2 in this-\u003e+0x3C and obj-\u003e+8, calls obj-\u003evtable[12](this), stores obj in this-\u003e+0x40 and returns obj.",
+  "fields": [
+    {
+      "class": "NMData::EffectorSkeletalData",
+      "offset": "+0x20",
+      "type": "std::string",
+      "name": "field_0x20"
+    },
+    {
+      "class": "NMData::EffectorSkeletalData",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "NMData::EffectorSkeletalData",
+      "offset": "+0x40",
+      "type": "void*",
+      "name": "field_0x40"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:45:07Z"
+}

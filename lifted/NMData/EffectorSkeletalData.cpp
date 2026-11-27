@@ -241,3 +241,43 @@ void* fn_00626D20(void* self) {
     return copy;
 }
 } // namespace lift_00626D20
+
+// [0x00627110] NMData::EffectorSkeletalData::vfunc_15 (140 bytes)
+namespace lift_00627110 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT thunk to MFC80!ord_762; cdecl, one size arg, returns allocation or 0).
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x006301E0: sub_006301E0 (386B); thiscall on the freshly allocated block, returns the object pointer.
+extern void* __thiscall ext_006301E0(void* self);
+// Known callee 0x005A0FF0: sub_005A0FF0 (118B); thiscall (this = a1) with one stack arg, callee-pops, returns pointer.
+extern void* __thiscall ext_005A0FF0(void* self, void* p);
+
+// @name NMData::EffectorSkeletalData::vfunc_15
+// @class NMData::EffectorSkeletalData
+// @summary Allocates and constructs a 0x180-byte object, copies a uint32 (from ext_005A0FF0(a1, &this->+0x20)->+0x234) into it, stores a2 in this->+0x3C and obj->+8, calls obj->vtable[12](this), stores obj in this->+0x40 and returns obj.
+// @field NMData::EffectorSkeletalData +0x20 std::string field_0x20
+// @field NMData::EffectorSkeletalData +0x3C uint32_t field_0x3c
+// @field NMData::EffectorSkeletalData +0x40 void* field_0x40
+extern void* __thiscall fn_00627110(void* self, void* a1, uint32_t a2, uint32_t stackArg3) {
+    // Original prologue/epilogue installs and removes an MSVC SEH frame (fs:[0] chain); not modeled.
+    // ret 0xC pops three stack args, but only a1 and a2 are read; stackArg3 is unused.
+    (void)stackArg3;
+
+    void* obj = nullptr;
+    void* mem = ext_006A5C62(0x180);
+    if (mem != nullptr) {
+        obj = ext_006301E0(mem);
+    }
+
+    void* tmp = ext_005A0FF0(a1, static_cast<uint8_t*>(self) + 0x20);
+    lift_field<uint32_t>(obj, 0x4) = lift_field<uint32_t>(tmp, 0x234);
+    lift_field<uint32_t>(self, 0x3C) = a2;
+    lift_field<uint32_t>(obj, 0x8) = a2;
+
+    using VFn = void(__thiscall*)(void* self, void* arg);
+    void** vt = *reinterpret_cast<void***>(obj);
+    reinterpret_cast<VFn>(vt[12])(obj, self);
+
+    lift_field<void*>(self, 0x40) = obj;
+    return obj;
+}
+} // namespace lift_00627110

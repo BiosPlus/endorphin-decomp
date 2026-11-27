@@ -43471,6 +43471,13 @@
     "summary": "Allocates a 0x194-byte RigRoot, runs base initializer sub_005ABA70, installs the RigRoot vtables, and returns the new object (or null on allocation failure).",
     "lifted_path": "lifted/NMData/RigRoot.cpp"
   },
+  "0x005ABEA0": {
+    "name": "NMData::Characterization::vfunc_17_off_C",
+    "class": "NMData::Characterization",
+    "signature": "extern \"C\" void* __thiscall fn_005ABEA0(uint8_t* self_off_C)",
+    "summary": "Allocates and copy-constructs a new NMData::Characterization instance from the +0xC subobject this pointer",
+    "lifted_path": "lifted/NMData/Characterization.cpp"
+  },
   "0x005ABF30": {
     "name": "NMData::SourceRigNode::vfunc_17_off_C",
     "class": "NMData::SourceRigNode",
@@ -63564,6 +63571,13 @@
     "signature": "void* __thiscall sub_00626E80(void* self, const void* other)",
     "summary": "Copy constructor calling base copy constructor, setting vtable 0x00977734, and copying member at +0x44.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x00627110": {
+    "name": "NMData::EffectorSkeletalData::vfunc_15",
+    "class": "NMData::EffectorSkeletalData",
+    "signature": "extern \"C\" void* __thiscall fn_00627110(void* self, void* a1, uint32_t a2, uint32_t stackArg3)",
+    "summary": "Allocates and constructs a 0x180-byte object, copies a uint32 (from ext_005A0FF0(a1, \u0026this-\u003e+0x20)-\u003e+0x234) into it, stores a2 in this-\u003e+0x3C and obj-\u003e+8, calls obj-\u003evtable[12](this), stores obj in this-\u003e+0x40 and returns obj.",
+    "lifted_path": "lifted/NMData/EffectorSkeletalData.cpp"
   },
   "0x006271A0": {
     "name": "Unknown::initWithArgVtableAndZeroFloats",

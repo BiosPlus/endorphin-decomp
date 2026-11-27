@@ -11,7 +11,9 @@
 namespace lifted_layout {
 struct NMData_EffectorSkeletalData_Fields {
     // +0x4   std::string              field_0x04  (evidence: 0x0060C3D0, 0x00626850, 0x00626D20)
-    // +0x20  std::string              field_0x20  (evidence: 0x00626D20)
+    // +0x20  std::string              field_0x20  (evidence: 0x00626D20, 0x00627110)
+    // +0x3C  uint32_t                 field_0x3c  (evidence: 0x00627110)
+    // +0x40  void*                    field_0x40  (evidence: 0x00627110)
     // +0x44  char                     field_0x44  (evidence: 0x00626D00) // CONFLICT: multiple definitions at +0x44
     // +0x44  float                    field_0x44  (evidence: 0x00626D20) // CONFLICT: multiple definitions at +0x44
     // +0x48  float                    field_0x48  (evidence: 0x00626D20)
