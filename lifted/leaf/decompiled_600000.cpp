@@ -1433,3 +1433,48 @@ void fn_0060B2B0(void* self) {
     (void)&mem_009518E0;
 }
 } // namespace lift_0060B2B0
+
+// [0x0060CD40] sub_0060CD40 (128 bytes)
+namespace lift_0060CD40 {
+// Known callee 0x0060C570: Unknown::constructWithRecord (Runs the base constructor ext_0060B910 on self, stamps vtable 0x0097215C, clears the dword at +0x44, initializes the embedded record at +0x48 via ext_0060BCD0, and returns self.)
+extern void* ext_0060C570(void* self);
+// Known callee 0x0060BDF0: NMData::EffectorData::vfunc_19 (Runs the base-class vfunc_19, clears the dword at +0x44, then tail-calls the sub-object initializer at this+0x48.)
+extern void ext_0060BDF0(void* self);
+// .rdata string literal passed to std::string::operator=(const char*) at 0x0060CD88
+extern const char mem_009719C4[];
+// .rdata float constant 10.0f
+extern const float mem_009518E0;
+// MSVCP80 IAT slots used by the original asm for std::string default ctor / operator=(const char*).
+// Replaced by the native std::string calls below; referenced here only to keep the original global deps recorded.
+extern void* mem_00924FE8;
+extern void* mem_00924FD4;
+
+// @name Unknown::initStringAndFloats_0060CD40
+// @class Unknown
+// @summary Base-constructs self via ext_0060C570, stamps the vtable, default-constructs and assigns the std::string at +0x60, clears the float at +0x7C, sets +0x5C to 0x14 and +0x80 to 10.0f; returns self.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x5C uint32_t field_0x5C
+// @field Unknown +0x60 std::string str_0x60
+// @field Unknown +0x7C float field_0x7C
+// @field Unknown +0x80 float field_0x80
+void* fn_0060CD40(void* self) {
+    (void)&mem_00924FE8;
+    (void)&mem_00924FD4;
+
+    ext_0060C570(self);
+
+    lift_field<uint32_t>(self, 0x00) = 0x00972234;
+
+    std::string* str = new (&lift_field<std::string>(self, 0x60)) std::string();
+
+    ext_0060BDF0(self);
+
+    *str = std::string(mem_009719C4);
+
+    lift_field<float>(self, 0x7C) = 0.0f;
+    lift_field<uint32_t>(self, 0x5C) = 0x14;
+    lift_field<float>(self, 0x80) = mem_009518E0;
+
+    return self;
+}
+} // namespace lift_0060CD40

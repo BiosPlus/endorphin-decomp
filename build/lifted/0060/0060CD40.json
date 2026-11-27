@@ -1,0 +1,46 @@
+{
+  "va": "0x0060CD40",
+  "size": 128,
+  "orig_symbol": "sub_0060CD40",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "Unknown::initStringAndFloats_0060CD40",
+  "class": "Unknown",
+  "signature": "void* fn_0060CD40(void* self)",
+  "summary": "Base-constructs self via ext_0060C570, stamps the vtable, default-constructs and assigns the std::string at +0x60, clears the float at +0x7C, sets +0x5C to 0x14 and +0x80 to 10.0f; returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "std::string",
+      "name": "str_0x60"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x7C",
+      "type": "float",
+      "name": "field_0x7C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "float",
+      "name": "field_0x80"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:10:52Z"
+}
