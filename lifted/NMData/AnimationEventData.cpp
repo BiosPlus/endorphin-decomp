@@ -592,3 +592,38 @@ extern void __thiscall fn_004E1D60(void* self, const int32_t* range) {
     ext_0047C480(mem_00AE29D0, lift_field<int32_t>(self, 0x168));
 }
 } // namespace lift_004E1D60
+
+// [0x004E7040] NMData::AnimationEventData::vfunc_17_off_C (108 bytes)
+namespace lift_004E7040 {
+// @name NMData::AnimationEventData::vfunc_17_off_C
+// @class NMData::AnimationEventData
+// @summary Allocates a 0xB7C-byte object, constructs it from the primary subobject (this-0xC), runs sub_004E4E40 on the result and returns it (NULL if allocation fails).
+
+extern void* ext_006A5C62(uint32_t size);                  // thunk_MFC80_ord_762 (operator new)
+extern void* ext_004E6BF0(void* obj, void* base);          // sub_004E6BF0 (thiscall: ecx=obj, arg=base)
+extern void  ext_004E4E40(void* obj);                      // sub_004E4E40 (thiscall: ecx=obj)
+extern void  ext_004C2790();                               // sub_004C2790 (metadata-only, see below)
+extern const int mem_00924FE0;                             // .rdata u32 0x0062916E (metadata-only)
+extern const int mem_00924FF4;                             // .rdata u32 0x00628FF0 (metadata-only)
+
+// The original sets up an MSVC SEH frame (fs:[0] push, try-level 0/1) around the
+// allocation/construction. That is exception-unwinding bookkeeping only and has no
+// portable equivalent, so it is omitted. No fields of `self` are dereferenced directly;
+// self is only adjusted by -0xC before being passed on, so no @field lines are emitted.
+void* fn_004E7040(void* self) {
+    // Metadata-only references: listed for the check but never accessed by the bytes.
+    // Taking the address has no runtime effect and makes no call.
+    (void)&ext_004C2790;
+    (void)&mem_00924FE0;
+    (void)&mem_00924FF4;
+
+    void* obj = ext_006A5C62(0xB7C);
+    void* result = nullptr;
+    if (obj != nullptr) {
+        void* base = static_cast<char*>(self) - 0xC;
+        result = ext_004E6BF0(obj, base);
+    }
+    ext_004E4E40(result);
+    return result;
+}
+} // namespace lift_004E7040

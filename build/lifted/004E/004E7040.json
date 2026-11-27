@@ -1,0 +1,14 @@
+{
+  "va": "0x004E7040",
+  "size": 108,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_17_off_C",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_17_off_C",
+  "class": "NMData::AnimationEventData",
+  "signature": "extern \"C\" void* ext_006A5C62(uint32_t size);                  // thunk_MFC80_ord_762 (operator new) extern \"C\" void* ext_004E6BF0(void* obj, void* base);          // sub_004E6BF0 (thiscall: ecx=obj, arg=base) extern \"C\" void  ext_004E4E40(void* obj);                      // sub_004E4E40 (thiscall: ecx=obj) extern \"C\" void  ext_004C2790();                               // sub_004C2790 (metadata-only, see below) extern \"C\" const int mem_00924FE0;                             // .rdata u32 0x0062916E (metadata-only) extern \"C\" const int mem_00924FF4;                             // .rdata u32 0x00628FF0 (metadata-only) void* fn_004E7040(void* self)",
+  "summary": "Allocates a 0xB7C-byte object, constructs it from the primary subobject (this-0xC), runs sub_004E4E40 on the result and returns it (NULL if allocation fails).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:02:31Z"
+}
