@@ -2348,3 +2348,20 @@ uint8_t fn_007C8B30(void* obj) {
     return ext_007DD0A0(self, index, 0);
 }
 } // namespace lift_007C8B30
+
+// [0x007C8B50] sub_007C8B50 (22 bytes)
+namespace lift_007C8B50 {
+// Known callee 0x007DD0A0: setItemFlagAndLink (Validates an item index and sets or clears bit 0 of its flags, linking or unlinking it from the list at +0xC0.)
+extern uint8_t __thiscall ext_007DD0A0(void* self, int32_t index, uint8_t enable);
+
+// @name setItemFlagAndLink_Wrapper_007C8B50
+// @summary Calls setItemFlagAndLink on the sub-object at +0x0C with index taken from +0x20 and enable=1, returning its result as uint8.
+// @field Unknown +0x0C void* field_0x0C
+// @field Unknown +0x20 int32_t field_0x20
+uint8_t fn_007C8B50(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    void* sub = *reinterpret_cast<void**>(base + 0x0C);
+    int32_t index = *reinterpret_cast<int32_t*>(base + 0x20);
+    return ext_007DD0A0(sub, index, 1);
+}
+} // namespace lift_007C8B50

@@ -1,0 +1,27 @@
+{
+  "va": "0x007C8B50",
+  "size": 22,
+  "orig_symbol": "sub_007C8B50",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "setItemFlagAndLink_Wrapper_007C8B50",
+  "signature": "uint8_t fn_007C8B50(void* self)",
+  "summary": "Calls setItemFlagAndLink on the sub-object at +0x0C with index taken from +0x20 and enable=1, returning its result as uint8.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "int32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:53:06Z"
+}

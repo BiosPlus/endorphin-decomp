@@ -82719,6 +82719,12 @@
     "summary": "Forwards the index at +0x20 and the pointer at +0x0C of the argument to ext_007DD0A0 with enable=0, returning its result as uint8_t.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007C8B50": {
+    "name": "setItemFlagAndLink_Wrapper_007C8B50",
+    "signature": "uint8_t fn_007C8B50(void* self)",
+    "summary": "Calls setItemFlagAndLink on the sub-object at +0x0C with index taken from +0x20 and enable=1, returning its result as uint8.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C8BB0": {
     "name": "forwardBucketMapFromOwner_007C8BB0",
     "signature": "bool fn_007C8BB0(void* self, void* cur, void* out)",
