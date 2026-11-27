@@ -1,0 +1,33 @@
+{
+  "va": "0x00446430",
+  "size": 150,
+  "orig_symbol": "sub_00446430",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "propagateNodeFlagRecursive",
+  "signature": "void __thiscall fn_00446430(void* self, void* node, DWORD arg1)",
+  "summary": "Dynamically cast node, invoke virtual method 0x2C with flag 0x80000 and set flag on subobject, then recurse on children",
+  "fields": [
+    {
+      "class": "Node",
+      "offset": "+0x7C",
+      "type": "void* children_begin (via",
+      "name": "+0x80)"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x80",
+      "type": "void**",
+      "name": "vec_begin"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x84",
+      "type": "void**",
+      "name": "vec_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:10:37Z"
+}

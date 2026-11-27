@@ -3327,3 +3327,54 @@ int32_t __thiscall fn_00448600(void* self, uint32_t /*unused*/) {
     return 0;
 }
 } // namespace lift_00448600
+
+// [0x00446430]
+namespace lift_00446430 {
+// @name propagateNodeFlagRecursive
+// @summary Dynamically cast node, invoke virtual method 0x2C with flag 0x80000 and set flag on subobject, then recurse on children
+// @field Node +0x7C void* children_begin (via +0x80)
+// @field Node +0x80 void** vec_begin
+// @field Node +0x84 void** vec_end
+
+
+extern void* __cdecl ext_006A6E9E(void* ptr, DWORD vfDelta, void* srcType, void* targetType, DWORD isRef);
+extern DWORD __thiscall ext_00528BB0(void* self, DWORD arg0, DWORD arg1);
+extern void __thiscall ext_00528C70(void* self);
+extern void (__cdecl* mem_00925134)(void);
+
+void __thiscall fn_00446430(void* self, void* node, DWORD arg1) {
+    void* castResult = ext_006A6E9E(node, 0, reinterpret_cast<void*>(0x00A2E2BC), reinterpret_cast<void*>(0x00A2FBBC), 0);
+    if (castResult != nullptr) {
+        void* subObj = static_cast<uint8_t*>(castResult) + 0x0C;
+        ext_00528BB0(subObj, 0x80000, arg1);
+        ext_00528C70(subObj);
+    }
+
+    auto invalidParam = mem_00925134;
+    uint8_t* vec = static_cast<uint8_t*>(node) + 0x7C;
+    uint32_t* it = lift_field<uint32_t*>(vec, 0x04);
+    if (it > lift_field<uint32_t*>(vec, 0x08)) {
+        invalidParam();
+    }
+
+    for (;;) {
+        uint32_t* end = lift_field<uint32_t*>(vec, 0x08);
+        if (lift_field<uint32_t*>(vec, 0x04) > end) {
+            invalidParam();
+        }
+        if (it == end) {
+            break;
+        }
+        if (it >= lift_field<uint32_t*>(vec, 0x08)) {
+            invalidParam();
+        }
+
+        fn_00446430(self, reinterpret_cast<void*>(*it), arg1);
+
+        if (it >= lift_field<uint32_t*>(vec, 0x08)) {
+            invalidParam();
+        }
+        ++it;
+    }
+}
+} // namespace lift_00446430
