@@ -369,3 +369,57 @@ void* __thiscall fn_006994A0(void* self, const void* key) {
     return reinterpret_cast<void*>(static_cast<uintptr_t>(0x00B5C92Cu));
 }
 } // namespace lift_006994A0
+
+// [0x0069A910] ExprParser::ExpressionContainerType::vfunc_23 (187 bytes)
+namespace lift_0069A910 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// cdecl allocator: takes one size argument, returns a pointer in eax.
+extern void* __cdecl ext_006A5C62(uint32_t size);
+// Known callee 0x0069A7B0 (104B): thiscall, takes the freshly allocated object as this, returns an object pointer.
+extern void* __thiscall ext_0069A7B0(void* self);
+// Known callee 0x006992E0: Unknown::initOutPairAndSetOwnedFromArg2 (Zeroes out[0], stores self in out[1], calls the virtual method at vtable+0x74 with out, then calls setOwnedObject_006991F0(out[0], arg2); returns out.)
+// Callee-cleans its two stack arguments (thiscall).
+extern uint32_t __thiscall ext_006992E0(void* self, void* out, void* obj);
+// Known callee 0x00699720 (163B): thiscall with two stack arguments.
+extern void __thiscall ext_00699720(void* self, void* a, void* b);
+
+// @name ExprParser::ExpressionContainerType::vfunc_23
+// @class ExprParser::ExpressionContainerType
+// @summary Allocates a 0x84-byte object, initializes it from arg A, optionally finishes it with arg B, and returns the out pointer
+// @field ExprParser::ExpressionContainerType +0x48 void* field_0x48
+// @field ExprParser::ExpressionContainerType +0x4C void* field_0x4c
+uint32_t __thiscall fn_0069A910(void* self, uint32_t flag, void* a, void* b, void* c, void* d) {
+    (void)c;
+    (void)d;
+
+    // Allocate and construct the 0x84-byte object (null -> nullptr result, as in the asm's xor edi,edi path).
+    void* obj = nullptr;
+    void* raw = ext_006A5C62(0x84);
+    if (raw != nullptr) {
+        obj = ext_0069A7B0(raw);
+    }
+
+    // x = a->field_0x4c; call x->vfunc_24(a + 0x48)
+    void* x = lift_field<void*>(a, 0x4C);
+    void** x_vtbl = *reinterpret_cast<void***>(x);
+    using VFunc24 = void*(__thiscall*)(void*, void*);
+    void* arg_ptr = static_cast<uint8_t*>(a) + 0x48;
+    void* r = reinterpret_cast<VFunc24>(x_vtbl[0x60 / sizeof(void*)])(x, arg_ptr);
+
+    // obj->vtable[0x28 / 4](r)
+    void** obj_vtbl = *reinterpret_cast<void***>(obj);
+    using VFunc10 = void(__thiscall*)(void*, void*);
+    reinterpret_cast<VFunc10>(obj_vtbl[0x28 / sizeof(void*)])(obj, r);
+
+    // out = stack-local out pair, filled by initOutPairAndSetOwnedFromArg2(self, out, obj).
+    void* out = nullptr;
+    ext_006992E0(self, &out, obj);
+
+    // When flag is set, finish the object with arg a and arg b.
+    if (static_cast<uint8_t>(flag) != 0) {
+        ext_00699720(obj, a, b);
+    }
+
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(out));
+}
+} // namespace lift_0069A910

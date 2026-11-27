@@ -79420,6 +79420,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls ExprParser::ExpressionContainer::vfunc_0.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0069A910": {
+    "name": "ExprParser::ExpressionContainerType::vfunc_23",
+    "class": "ExprParser::ExpressionContainerType",
+    "signature": "uint32_t __thiscall fn_0069A910(void* self, uint32_t flag, void* a, void* b, void* c, void* d)",
+    "summary": "Allocates a 0x84-byte object, initializes it from arg A, optionally finishes it with arg B, and returns the out pointer",
+    "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp"
+  },
   "0x0069AA80": {
     "name": "ExprParser::ExpressionContainer::vfunc_0",
     "class": "ExprParser::ExpressionContainer",
