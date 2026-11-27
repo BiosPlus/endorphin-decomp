@@ -1053,3 +1053,67 @@ void fn_005BED50(void* self, void* arg) {
     }
 }
 } // namespace lift_005BED50
+
+// [0x005B8EA0]
+namespace lift_005B8EA0 {
+// @name forEachNodeCallWithOffset
+// @summary Iterates a checked node cursor range, invoking a member-style callback with (node->field_0x28 + offset)
+// @field Node +0x28 uint32_t field_0x28
+
+
+extern void ext_00673C20(void* self);
+extern void (*mem_00925134)();
+
+struct Cursor005B8EA0 {
+    void* container;
+    void* node;
+};
+
+struct ResultPair005B8EA0 {
+    void* fn;
+    uint32_t offset;
+};
+
+void* fn_005B8EA0(
+    ResultPair005B8EA0* out_result,
+    void* first_container,
+    void* first_node,
+    void* last_container,
+    void* last_node,
+    void* fn_ptr,
+    uint32_t offset)
+{
+    Cursor005B8EA0 cursor;
+    cursor.container = first_container;
+    cursor.node = first_node;
+
+    void* esi = first_container;
+    void* edi = first_node;
+
+    for (;;) {
+        if (esi == nullptr || esi != last_container) {
+            mem_00925134();
+        }
+        if (edi == last_node) {
+            break;
+        }
+        if (esi == nullptr) {
+            mem_00925134();
+        }
+        if (edi == lift_field<void*>(esi, 0x4)) {
+            mem_00925134();
+        }
+
+        uint32_t ecx = lift_field<uint32_t>(edi, 0x28) + offset;
+        reinterpret_cast<void(__thiscall*)(uint32_t)>(fn_ptr)(ecx);
+
+        ext_00673C20(&cursor);
+        edi = cursor.node;
+        esi = cursor.container;
+    }
+
+    out_result->fn = fn_ptr;
+    out_result->offset = offset;
+    return out_result;
+}
+} // namespace lift_005B8EA0
