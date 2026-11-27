@@ -3875,3 +3875,75 @@ void fn_0043D2E0(void) {
     ext_006A6DD2(obj, &mem_009CDF20);
 }
 } // namespace lift_0043D2E0
+
+// [0x0043CDD0]
+namespace lift_0043CDD0 {
+extern uint32_t mem_0092566C;
+extern double mem_00993828;
+
+// @name pixelToTime
+// @summary Converts a horizontal pixel coordinate in the client area to a non-negative time/value using the view's range and left margin
+// @field +0x20 void* field_0x20
+// @field +0xe8 double field_0xe8
+// @field +0xf0 double field_0xf0
+// @field +0xfc int32_t field_0xfc
+double __thiscall sub_0043CDD0(void* self, int32_t x) {
+    struct Rect {
+        int32_t left;
+        int32_t top;
+        int32_t right;
+        int32_t bottom;
+    } rc;
+    using GetClientRectFn = int32_t(__stdcall*)(void*, Rect*);
+    auto fn_get_client_rect = reinterpret_cast<GetClientRectFn>(static_cast<uintptr_t>(mem_0092566C));
+    fn_get_client_rect(lift_field<void*>(self, 0x20), &rc);
+
+    double f_fc = static_cast<double>(lift_field<int32_t>(self, 0xfc));
+    double right = static_cast<double>(rc.right);
+    double d_e8 = lift_field<double>(self, 0xe8);
+    double d_f0 = lift_field<double>(self, 0xf0);
+
+    double scale = (d_f0 - d_e8) / (right - f_fc);
+    double center_x = (right + f_fc) * mem_00993828;
+    double center_val = mem_00993828 * (d_e8 + d_f0);
+    double val = center_val + (static_cast<double>(x) - center_x) * scale;
+
+    return (val < 0.0) ? 0.0 : val;
+}
+} // namespace lift_0043CDD0
+
+// [0x00431460] sub_00431460 (121 bytes)
+namespace lift_00431460 {
+// Known callee 0x00465B30: get_global_field_0x58 (Calls ext_004658C0 and returns the int32_t field at offset +0x58.)
+extern int32_t ext_00465B30(void);
+// Known callee 0x00468660: sub_00468660 (Auto-lifted identical-shape clone of 0x004023C0 (AVIIO::vfunc_23).)
+extern uint32_t ext_00468660(void* self);
+
+// Rdata constants referenced only by the unwind/handler funclet at 0x004314AE (not on the normal path).
+extern uint32_t mem_00924E90;
+extern uint32_t mem_00924FA0;
+extern uint32_t mem_00924E94;
+extern uint32_t mem_00924E98;
+
+// @name CallVtblSlot1OfGlobalResult
+// @summary Gets the global value via fn_00465B30, resolves an object with fn_00468660, then calls its vtable slot 1 and returns the result.
+// (No @class: free function. No @field lines: the body only touches a vtable slot, not object fields.)
+uint32_t fn_00431460(void) {
+    // Keep the handler's rdata references visible to the harness without executing them.
+    (void)&mem_00924E90;
+    (void)&mem_00924FA0;
+    (void)&mem_00924E94;
+    (void)&mem_00924E98;
+
+    // Normal path only. SEH frame setup/teardown from the original prologue/epilogue is omitted.
+    const int32_t global_value = ext_00465B30();
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(global_value)));
+    obj = reinterpret_cast<void*>(static_cast<uintptr_t>(ext_00468660(obj)));
+
+    // Vtable slot 1 (byte offset +4) invoked with obj as `this`.
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    using SlotFn = uint32_t (*)(void*);
+    auto slot1 = reinterpret_cast<SlotFn>(vtbl[1]);
+    return slot1(obj);
+}
+} // namespace lift_00431460

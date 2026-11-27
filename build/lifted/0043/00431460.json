@@ -1,0 +1,13 @@
+{
+  "va": "0x00431460",
+  "size": 121,
+  "orig_symbol": "sub_00431460",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "CallVtblSlot1OfGlobalResult",
+  "signature": "uint32_t fn_00431460(void)",
+  "summary": "Gets the global value via fn_00465B30, resolves an object with fn_00468660, then calls its vtable slot 1 and returns the result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:14:52Z"
+}
