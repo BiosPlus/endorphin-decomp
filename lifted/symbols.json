@@ -35392,6 +35392,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005D1CE0": {
+    "name": "ReadWriteMethodType\u003cCameraData\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, float, {private: void __thiscall NMData::CameraData::setVPFocalLength(float), 0}\u003e",
+    "signature": "extern \"C\" DWORD mem_00B459B4; // init guard word (bit 0 = initialized/in-progress) extern \"C\" DWORD mem_00B459B0; // static accessor object; first DWORD is its vtable void fn_005D1CE0(void* self)",
+    "summary": "Lazily initializes the static accessor object at mem_00B459B0 (once, guarded by mem_00B459B4 bit 0) and stores its address into holder+0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x005D1D60": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0\u003e",

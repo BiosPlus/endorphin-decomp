@@ -1,0 +1,22 @@
+{
+  "va": "0x005D1CE0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, float, {private: void __thiscall NMData::CameraData::setVPFocalLength(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ReadWriteMethodType\u003cCameraData\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, float, {private: void __thiscall NMData::CameraData::setVPFocalLength(float), 0}\u003e",
+  "signature": "extern \"C\" DWORD mem_00B459B4; // init guard word (bit 0 = initialized/in-progress) extern \"C\" DWORD mem_00B459B0; // static accessor object; first DWORD is its vtable void fn_005D1CE0(void* self)",
+  "summary": "Lazily initializes the static accessor object at mem_00B459B0 (once, guarded by mem_00B459B4 bit 0) and stores its address into holder+0x04.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadWriteMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "staticAccessor"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:45:21Z"
+}
