@@ -1732,3 +1732,31 @@ void fn_004AEA80(void* self) {
 }
 } // namespace lift_0042E820
 } // namespace lift_004AEA80
+
+// [0x004A5DC0] sub_004A5DC0 (95 bytes)
+namespace lift_004A5DC0 {
+extern void ext_00662610(void* a, void* b);
+extern void ext_006A6C87(void* a);
+extern void ext_008882AE();
+extern int mem_00ADEC00;
+extern int mem_00ADEBE4;
+extern int mem_00A3411C;
+extern int mem_00917E20;
+
+// @name EnsureStaticInitialized_004A5DC0
+// @summary One-time guarded initializer for mem_00ADEBE4; returns its address.
+// Bit 0 of the guard byte at mem_00ADEC00 marks the initializer as entered.
+// The asm's fs:[0] SEH frame (handler ext_008882AE) is EH bookkeeping and is
+// not reproduced here; only the control flow and calls are lifted.
+void* fn_004A5DC0(void* self) {
+    (void)self;
+    (void)&ext_008882AE;  // SEH handler reference (metadata only, not a call)
+    auto* guard = reinterpret_cast<unsigned char*>(&mem_00ADEC00);
+    if ((*guard & 1u) == 0) {
+        *guard |= 1u;
+        ext_00662610(&mem_00ADEBE4, &mem_00A3411C);
+        ext_006A6C87(&mem_00917E20);
+    }
+    return &mem_00ADEBE4;
+}
+} // namespace lift_004A5DC0
