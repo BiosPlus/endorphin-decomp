@@ -82448,3 +82448,48 @@ uint8_t fn_00638C50(void* self, void** p, uint32_t q) {
 }
 } // namespace lift_00508FA0
 } // namespace lift_00638C50
+
+// [0x0062E550] ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>::vfunc_42 (154 bytes)
+namespace lift_0062E550 {
+// Callee 0x00672110 (sub_00672110): thiscall; ecx = out slot receiving a pointer, one stack arg = source (X+0x78).
+extern void ext_00672110(void* outSlot, void* src);
+// Callee 0x0046C3C0 (DerivedException::DerivedException): thiscall; ecx = exception object storage.
+extern void ext_0046C3C0(void* excObj);
+// Callee 0x006A6DD2: IAT jump thunk forwarding to MSVCR80!_CxxThrowException(obj, throwInfo).
+extern void ext_006A6DD2(void* excObj, const void* throwInfo);
+
+// RTTI/ThrowInfo address for the exception raised on a null target (VA 0x009DEC1C).
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes>::vfunc_42 (Sensors::CompoundSensorPlanes::getVertAxis)
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary Takes a holder pointer; if its target is null raises a C++ exception, otherwise obtains a sub-object via sub_00672110 and forwards to its vfunc_42, then releases it via vfunc_30 and returns the bool result.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field Sensors::CompoundSensorPlanes +0x78 void* field_0x78
+// The original's second stack argument (ret 8) is never read, so it is not part of the signature.
+// The MSVC SEH frame (fs:[0]) is only the unwind bookkeeping for the temporary and is omitted.
+bool fn_0062E550(void* p) {
+    void* x = *static_cast<void**>(p);
+    if (x == nullptr) {
+        alignas(8) unsigned char excObj[0x28] = {};
+        ext_0046C3C0(excObj);
+        ext_006A6DD2(excObj, reinterpret_cast<const void*>(kThrowInfoVA));
+        return false;
+    }
+
+    void* y = nullptr;
+    ext_00672110(&y, static_cast<unsigned char*>(x) + 0x78);
+
+    alignas(8) unsigned char tmp[16] = {};
+    using VFunc42 = bool (*)(void* self, void* out, void* arg);
+    using VFunc30 = void (*)(void* self, void* out);
+    // Original calls vfunc_42 unconditionally; only the release (vfunc_30) is guarded by the null test.
+    void** vt = *static_cast<void***>(y);
+    const bool result = reinterpret_cast<VFunc42>(vt[42])(y, tmp, p);
+    if (y != nullptr) {
+        vt = *static_cast<void***>(y);
+        reinterpret_cast<VFunc30>(vt[30])(y, tmp);
+    }
+    return result;
+}
+} // namespace lift_0062E550
