@@ -1,0 +1,45 @@
+{
+  "va": "0x00462F60",
+  "size": 130,
+  "orig_symbol": "sub_00462F60",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "sub_00462F60",
+  "signature": "extern \"C\" void __thiscall fn_00462F60(void* self)",
+  "summary": "Destructor that sets vtable 0x00938E5C, destroys four 0x54-byte subobjects, and calls base destructor.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x74",
+      "type": "uint8_t[0x54]",
+      "name": "field_0x74"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0xC8",
+      "type": "uint8_t[0x54]",
+      "name": "field_0xC8"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x11C",
+      "type": "uint8_t[0x54]",
+      "name": "field_0x11C"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x170",
+      "type": "uint8_t[0x54]",
+      "name": "field_0x170"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:20:17Z"
+}

@@ -2064,3 +2064,28 @@ void* fn_004624C0(void* self, void* a1, uint32_t a2) {
     return self;
 }
 } // namespace lift_004624C0
+
+// [0x00462F60]
+namespace lift_00462F60 {
+// @name sub_00462F60
+// @summary Destructor that sets vtable 0x00938E5C, destroys four 0x54-byte subobjects, and calls base destructor.
+// @field UnknownClass +0x00 uint32_t vtable
+// @field UnknownClass +0x74 uint8_t[0x54] field_0x74
+// @field UnknownClass +0xC8 uint8_t[0x54] field_0xC8
+// @field UnknownClass +0x11C uint8_t[0x54] field_0x11C
+// @field UnknownClass +0x170 uint8_t[0x54] field_0x170
+
+
+extern void __thiscall ext_006A5F2C(void* self);
+extern void __thiscall ext_006A5F6E(void* self);
+extern uint8_t mem_00938E5C[];
+
+extern void __thiscall fn_00462F60(void* self) {
+    lift_field<uint32_t>(self, 0x00) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00938E5C));
+    ext_006A5F2C(static_cast<uint8_t*>(self) + 0x170);
+    ext_006A5F2C(static_cast<uint8_t*>(self) + 0x11C);
+    ext_006A5F2C(static_cast<uint8_t*>(self) + 0xC8);
+    ext_006A5F2C(static_cast<uint8_t*>(self) + 0x74);
+    ext_006A5F6E(self);
+}
+} // namespace lift_00462F60
