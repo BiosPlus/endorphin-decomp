@@ -1,0 +1,22 @@
+{
+  "va": "0x005E4AC0",
+  "size": 231,
+  "orig_symbol": "NMData::RootRelationshipData::vfunc_3",
+  "src_path": "src/NMData/RootRelationshipData.cpp",
+  "lifted_path": "lifted/NMData/RootRelationshipData.cpp",
+  "name": "NMData::RootRelationshipData::vfunc_3",
+  "class": "NMData::RootRelationshipData",
+  "signature": "void* fn_005E4AC0(void* self, void* out)",
+  "summary": "Builds a diagnostic string from the child relationship object's describe call and this object's virtual describe call, returning it through the output string.",
+  "fields": [
+    {
+      "class": "NMData::RootRelationshipData",
+      "offset": "+0x18C",
+      "type": "void*",
+      "name": "field_0x18C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:34:48Z"
+}

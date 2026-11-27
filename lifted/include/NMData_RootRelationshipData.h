@@ -13,5 +13,6 @@ struct NMData_RootRelationshipData_Fields {
     // +0x14  void*                    field_0x14  (evidence: 0x005F2F50)
     // +0x16C uint32_t                 field_0x16C  (evidence: 0x005EEBC0)
     // +0x170 uint32_t                 field_0x170  (evidence: 0x005EEBC0)
+    // +0x18C void*                    field_0x18C  (evidence: 0x005E4AC0)
 };
 } // namespace lifted_layout

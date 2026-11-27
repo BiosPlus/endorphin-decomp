@@ -15,8 +15,10 @@ void* fn_005EBEA0(void* self) {
     ext_005EB5A0(self);
     return self;
 }
+#include <sstream>
+#include <string>
 
-// [0x005EEBC0] NMData::RootRelationshipData::vfunc_67 (219 bytes)
+#include <string>
 namespace lift_005EEBC0 {
 // Known callee 0x00412690: Container_EmplaceOrGrow_00412690 (Appends an 8-byte element when capacity allows; otherwise grows.)
 extern void __thiscall ext_00412690(void* self, const void* elem);
@@ -77,3 +79,53 @@ void __thiscall fn_005F2F50(void* self, void* arg1) {
     }
 }
 } // namespace lift_005F2F50
+
+// [0x005E4AC0] NMData::RootRelationshipData::vfunc_3 (231 bytes)
+namespace lift_005E4AC0 {
+// Known callee 0x00435D00: sub_00435D00 (482B)
+extern int ext_00435D00(int value);
+// Imported std::basic_ostream operator<< slot (MSVCP80) and related IAT slots
+// are replaced by std::ostringstream below; their raw addresses are kept for differential testing.
+extern int mem_00924E4C;
+extern int mem_00924E94;
+extern int mem_00924FF4;
+extern int mem_00924E54;
+extern int mem_00924E58;
+
+// @name NMData::RootRelationshipData::vfunc_3
+// @class NMData::RootRelationshipData
+// @summary Builds a diagnostic string from the child relationship object's describe call and this object's virtual describe call, returning it through the output string.
+// @field NMData::RootRelationshipData +0x18C void* field_0x18C
+void* fn_005E4AC0(void* self, void* out) {
+    // Metadata-only references to the original IAT/rdata slots (not real accesses).
+    (void)&mem_00924E4C;
+    (void)&mem_00924E54;
+    (void)&mem_00924E58;
+    (void)&mem_00924E94;
+    (void)&mem_00924FF4;
+
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Child relationship interface: obj = *(this+0x18C), slot at obj+4.
+    auto* child_slot = *reinterpret_cast<uint8_t**>(base + 0x18C) + 4;
+    void** child_vtbl = *reinterpret_cast<void***>(child_slot);
+    using DescribeFn = int (*)(void*, void*);
+    int child_result = reinterpret_cast<DescribeFn>(child_vtbl[3])(child_slot, nullptr);
+
+    // Own virtual describe (vtable slot 9).
+    void** self_vtbl = *reinterpret_cast<void***>(self);
+    using SelfFn = int (*)(void*);
+    int self_result = reinterpret_cast<SelfFn>(self_vtbl[9])(self);
+
+    // Helper formats the self result before it is streamed.
+    int formatted = ext_00435D00(self_result);
+
+    std::ostringstream ss;
+    ss << child_result << formatted;
+
+    std::string text = ss.str();
+    auto* dst = static_cast<std::string*>(out);
+    *dst = text;
+    return out;
+}
+} // namespace lift_005E4AC0

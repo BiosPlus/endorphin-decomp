@@ -5407,6 +5407,13 @@
     "summary": "Calls helper on owner, clears byte flag at +0x0D, kills owner timer, then restarts it with owner's +0x168 interval.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x00442B20": {
+    "name": "MultiTrackView::MultiTrackViewStates::WaitState::vfunc_18",
+    "class": "MultiTrackView::MultiTrackViewStates::WaitState",
+    "signature": "uint8_t __thiscall fn_00442B20(void* self, uint32_t arg1)",
+    "summary": "Converts cursor x-coordinate to time and updates the multi-track view if active",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/WaitState.cpp"
+  },
   "0x00442B60": {
     "name": "Unknown::InitWithTagAndSetVtable",
     "class": "Unknown",
@@ -52775,6 +52782,13 @@
     "signature": "extern \"C\" void __fastcall fn_005E4850(void* self, int edx_unused, int arg1, void* arg2)",
     "summary": "Steps the state byte at +0x194 (1..6) down to the requested level arg1, calling the forward/notify helpers when leaving level 5.",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
+  "0x005E4AC0": {
+    "name": "NMData::RootRelationshipData::vfunc_3",
+    "class": "NMData::RootRelationshipData",
+    "signature": "void* fn_005E4AC0(void* self, void* out)",
+    "summary": "Builds a diagnostic string from the child relationship object's describe call and this object's virtual describe call, returning it through the output string.",
+    "lifted_path": "lifted/NMData/RootRelationshipData.cpp"
   },
   "0x005E4D90": {
     "name": "CreateRecordFromArgs_005E4D90",
