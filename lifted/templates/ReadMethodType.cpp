@@ -187836,3 +187836,65 @@ uint8_t __stdcall fn_0059FD30(void* holder, void* out) {
     return result;
 }
 } // namespace lift_0059FD30
+
+// [0x0066FBB0] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>::vfunc_42 (195 bytes)
+namespace lift_0066FBB0 {
+// Known callee 0x006A7250: thunk_MSVCR80__CIsqrt (IAT jump thunk forwarding to MSVCR80!_CIsqrt.)
+extern void ext_006A7250();
+// Callee 0x00672080: sub_00672080 (18B). Fills the slot at ecx with a new object built from one float argument.
+extern void ext_00672080();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_008A5428;
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NM::Vector3, float, calcNorm>::vfunc_42
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>
+// @summary Reads the Vector3 behind arg1, computes its length sqrt(x*x+y*y+z*z), wraps it in a temporary object and returns the result of that object's vfunc_42 (throws if the Vector3 pointer is null).
+// @field NM::Vector3 +0x00 float x
+// @field NM::Vector3 +0x04 float y
+// @field NM::Vector3 +0x08 float z
+// The SEH frame setup/teardown of the original (fs:[0] push/pop) is compiler-managed in the portable form and is omitted.
+// mem_008A5428 is the SEH scope table and mem_009DEC1C the ThrowInfo for the exception path; both are referenced for traceability only.
+bool fn_0066FBB0(void* self, void* const* arg1, void* arg2) {
+    (void)self;
+    (void)arg2;
+    (void)&mem_008A5428;
+    (void)&mem_009DEC1C;
+
+    void* vec = *arg1;
+    if (vec == nullptr) {
+        // Original builds a DerivedException (sub_0046C3C0) and throws it via _CxxThrowException.
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return false;
+    }
+
+    float x = lift_field<float>(vec, 0x00);
+    float y = lift_field<float>(vec, 0x04);
+    float z = lift_field<float>(vec, 0x08);
+    // Original sums in the same order: (x*x + y*y) + z*z, then takes the square root (_CIsqrt, ext_006A7250).
+    float len = std::sqrt(x * x + y * y + z * z);
+    (void)&ext_006A7250;
+
+    // Build a temporary object from the length into a slot.
+    void* obj = nullptr;
+    reinterpret_cast<void (*)(void*, float)>(ext_00672080)(&obj, len);
+
+    // Call the temporary's vfunc_42 (vtable slot 42 = offset 0xA8 on 32-bit) with an out-slot and the length.
+    uint32_t out = 0;
+    void** vt = *static_cast<void***>(obj);
+    bool result = reinterpret_cast<bool (*)(void*, void*, float)>(vt[42])(obj, &out, len);
+
+    // Release the temporary via its vfunc_30 (offset 0x78) if present.
+    if (obj != nullptr) {
+        uint32_t tmp = 0;
+        void** vt2 = *static_cast<void***>(obj);
+        reinterpret_cast<void (*)(void*, void*)>(vt2[30])(obj, &tmp);
+    }
+
+    return result;
+}
+} // namespace lift_0066FBB0
