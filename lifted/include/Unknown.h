@@ -109,6 +109,7 @@ struct Unknown_Fields {
     // +0x0   void* field_0x00 (vtable pointer of self)  (evidence: 0x00711B00) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* innerPtr (pointer to inner struct, dereferenced from self)  (evidence: 0x006BA780, 0x006BB790) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (on subobject returned by ext_0071E680, i.e. self+0x40)  (evidence: 0x00711A20, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x0
+    // +0x0   float                    self_0  (evidence: 0x0049CE90) // CONFLICT: multiple definitions at +0x0
     // +0x0   float                    src_x  (evidence: 0x007C8490, 0x007CA310, 0x007CAF70) // CONFLICT: multiple definitions at +0x0
     // +0x0   char*                    str  (evidence: 0x006BA2F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   std::string              str  (evidence: 0x004CF910) // CONFLICT: multiple definitions at +0x0
@@ -273,6 +274,7 @@ struct Unknown_Fields {
     // +0x4   uint8_t                  requestStopEnabled  (evidence: 0x00468630) // CONFLICT: multiple definitions at +0x4
     // +0x4   DWORD field_0x04 (accessed through the pointer loaded from self+0x04)  (evidence: 0x00810240) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (on subobject returned by ext_0071E680, i.e. self+0x40)  (evidence: 0x00711D40, 0x007155B0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   float                    self_1  (evidence: 0x0049CE90) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t flags (on inner object; bit 0x400 set/cleared)  (evidence: 0x00810460) // CONFLICT: multiple definitions at +0x4
     // +0x4   const char*              src  (evidence: 0x006408F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (arg2: inner object pointer whose vtable slot 6 yields src)  (evidence: 0x0066B860) // CONFLICT: multiple definitions at +0x4
@@ -379,6 +381,7 @@ struct Unknown_Fields {
     // +0x8   uint32_t                 range1_end  (evidence: 0x00526960, 0x0052F7D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   int32_t                  rectTop  (evidence: 0x00540DD0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void* field_0x08 (subobject field; old value released, then replaced with result)  (evidence: 0x0072B1E0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   float                    self_2  (evidence: 0x0049CE90) // CONFLICT: multiple definitions at +0x8
     // +0x8   float                    src_z  (evidence: 0x007C8490, 0x007CA310, 0x007CAF70) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    str_obj  (evidence: 0x00648A20) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    stringPtr  (evidence: 0x00640940) // CONFLICT: multiple definitions at +0x8
@@ -453,6 +456,7 @@ struct Unknown_Fields {
     // +0xC   void* field_0x0c (address taken only; no type information recovered)  (evidence: 0x00440770, 0x00441C10) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  rectRight  (evidence: 0x00540DD0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint8_t                  result  (evidence: 0x0053A5E0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   float                    self_3  (evidence: 0x0049CE90) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 size  (evidence: 0x005E0060) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 srcField4  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0c (embedded std::string)  (evidence: 0x00685890) // CONFLICT: multiple definitions at +0xC

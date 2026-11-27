@@ -1,0 +1,40 @@
+{
+  "va": "0x0049CE90",
+  "size": 137,
+  "orig_symbol": "sub_0049CE90",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "Unknown::addPairsAndOrder",
+  "class": "Unknown",
+  "signature": "float* fn_0049CE90(float* self, float* out, float* other)",
+  "summary": "Adds two 4-float records (self and other) into out[0..3] pairwise, then orders out[0]\u003c=out[2] and out[1]\u003c=out[3]; returns out.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "self_0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "self_1"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "self_2"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "self_3"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:29:35Z"
+}

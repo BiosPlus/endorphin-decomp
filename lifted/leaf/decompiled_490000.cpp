@@ -2162,3 +2162,45 @@ void __fastcall sub_00492B30(uint32_t* self) {
     lift_field<uint32_t>(self, 0x04) = parent;
 }
 } // namespace lift_00492B30
+
+// [0x0049CE90]
+namespace lift_0049CE90 {
+// @name Unknown::addPairsAndOrder
+// @class Unknown
+// @summary Adds two 4-float records (self and other) into out[0..3] pairwise, then orders out[0]<=out[2] and out[1]<=out[3]; returns out.
+// @field Unknown +0x00 float self_0
+// @field Unknown +0x04 float self_1
+// @field Unknown +0x08 float self_2
+// @field Unknown +0x0c float self_3
+// Other pointer (eax, stack arg2): other[0] (+0x00), other[1] (+0x04).
+// Out pointer (ecx after load, stack arg1): out[0..3] (+0x00..+0x0c).
+
+float* fn_0049CE90(float* self, float* out, float* other) {
+    // Read all inputs before writing, so out may alias self.
+    float t0 = self[1] + other[1];
+    float t1 = self[2] + other[0];
+    float t2 = self[3] + other[1];
+    float o0 = other[0] + self[0];
+
+    out[0] = o0;
+    out[1] = t0;
+    out[2] = t1;
+    out[3] = t2;
+
+    // jne skips when out[0] <= out[2] or unordered.
+    if (out[0] > out[2]) {
+        float tmp = out[0];
+        out[0] = out[2];
+        out[2] = tmp;
+    }
+
+    // jp skips when out[3] >= out[1] or unordered.
+    if (out[3] < out[1]) {
+        float tmp = out[1];
+        out[1] = out[3];
+        out[3] = tmp;
+    }
+
+    return out;
+}
+} // namespace lift_0049CE90
