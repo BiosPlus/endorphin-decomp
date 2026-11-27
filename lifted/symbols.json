@@ -68307,6 +68307,13 @@
     "summary": "Computes the address of element `index` (32-byte stride) in the table at self+0x10, forwards it to ext_006D2390 on obj, and returns obj.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D2BD0": {
+    "name": "Unknown::insertFirstFieldWithArgs_006D2BD0",
+    "class": "Unknown",
+    "signature": "int32_t fn_006D2BD0(void* self, uint32_t* args)",
+    "summary": "Passes the 0x20-byte argument block to a forwarding helper via a scratch object, then inserts the value at this+0x00 via ext_006D2A40 and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D2C80": {
     "name": "sub_006D2C80",
     "signature": "void fn_006D2C80(void)",

@@ -3171,3 +3171,29 @@ int32_t __thiscall fn_006D3B00(void* self, int32_t arg1, int32_t arg2, int32_t a
     return value;
 }
 } // namespace lift_006D3B00
+
+// [0x006D2BD0] sub_006D2BD0 (96 bytes)
+namespace lift_006D2BD0 {
+// Known callee 0x006D2390: ForwardArgToCalleeReturnThis (Forwards its single stack argument to sub_007873F0 with the same this pointer, then returns this.)
+extern void* ext_006D2390(void* self, uint32_t arg1);
+// Known callee 0x006D2A40: Unknown::insertArgAndReturnIndex_006D2A40 (Forwards (arg1, &arg2) to DynamicArray::InsertAt on self, runs an empty helper, and returns InsertAt's result; the SEH frame setup/teardown is dropped.)
+extern int32_t ext_006D2A40(void* self, int32_t arg1, int32_t* arg2);
+// Known callee 0x006D80A0: sub_006D80A0 (Empty function (returns immediately).)
+extern void ext_006D80A0(void);
+
+// @name Unknown::insertFirstFieldWithArgs_006D2BD0
+// @class Unknown
+// @summary Passes the 0x20-byte argument block to a forwarding helper via a scratch object, then inserts the value at this+0x00 via ext_006D2A40 and returns its result.
+// @field Unknown +0x00 void* field_0x00
+int32_t fn_006D2BD0(void* self, uint32_t* args) {
+    // Scratch object (0x20 bytes) that the original code used as the ecx "this" for the forwarding helper.
+    uint32_t scratch[8] = {};
+    ext_006D2390(scratch, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(args)));
+
+    int32_t value = lift_field<int32_t>(self, 0x00);
+    int32_t result = ext_006D2A40(self, value, nullptr);
+
+    ext_006D80A0();
+    return result;
+}
+} // namespace lift_006D2BD0

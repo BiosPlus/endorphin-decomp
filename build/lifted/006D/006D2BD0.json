@@ -1,0 +1,22 @@
+{
+  "va": "0x006D2BD0",
+  "size": 96,
+  "orig_symbol": "sub_006D2BD0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::insertFirstFieldWithArgs_006D2BD0",
+  "class": "Unknown",
+  "signature": "int32_t fn_006D2BD0(void* self, uint32_t* args)",
+  "summary": "Passes the 0x20-byte argument block to a forwarding helper via a scratch object, then inserts the value at this+0x00 via ext_006D2A40 and returns its result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:46:59Z"
+}
