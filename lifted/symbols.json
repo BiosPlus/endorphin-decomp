@@ -28200,6 +28200,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00544B10 (ForceApplicationTool::vfunc_18_off_98).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00544F30": {
+    "name": "Unknown::dtor_00544F30",
+    "class": "Unknown",
+    "signature": "void __fastcall fn_00544F30(void* self)",
+    "summary": "Destructor that resets vtables, frees field_0x250 via MFC80!ord_764, clears fields, and destroys subobjects.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x005450A0": {
     "name": "SnapTranslateTool::vfunc_1",
     "class": "SnapTranslateTool",
@@ -30164,6 +30171,12 @@
     "signature": "void* fn_0055DE50(void* self, void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x00582B60 (Acclaim2MotionIO::vfunc_3).",
     "lifted_path": "lifted/classes/FBXIO.cpp"
+  },
+  "0x0055DE80": {
+    "name": "SetFrameRatePreset",
+    "signature": "extern \"C\" void __fastcall fn_0055DE80(void* self)",
+    "summary": "Maps the float frame rate at +0x174 to a preset index and stores it via the +0x470 subobject.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
   "0x0055E180": {
     "name": "ForwardVirtualSlot0WithOne",
@@ -50831,6 +50844,13 @@
     "signature": "uint32_t fn_0063E4E0(void* self, uint32_t arg)",
     "summary": "Auto-lifted identical-shape clone of 0x0063E940 (AdvXMLParser::Document::vfunc_3).",
     "lifted_path": "lifted/AdvXMLParser/Comment.cpp"
+  },
+  "0x0063E500": {
+    "name": "Unknown::createChild",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_0063E500(void* self, uint32_t arg0)",
+    "summary": "Allocates a 0x40-byte Unknown object, queries this-\u003evtable[1] for its name, and constructs it with arg0.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
   "0x0063E5A0": {
     "name": "AdvXMLParser::Comment::vfunc_4",

@@ -1757,3 +1757,43 @@ void __thiscall sub_0063F8D0(void* self) {
     }
 }
 } // namespace lift_0063F8D0
+
+// [0x0063E500]
+namespace lift_0063E500 {
+// @name Unknown::createChild
+// @class Unknown
+// @summary Allocates a 0x40-byte Unknown object, queries this->vtable[1] for its name, and constructs it with arg0.
+// @field Unknown +0x00 void** vtable
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* ext_0063E460(void* self, uint32_t arg0, const void* name);
+extern int mem_00924FF4;
+
+namespace {
+struct BasicStringStorage {
+    uint8_t data[0x1C];
+};
+} // namespace
+
+void* __thiscall fn_0063E500(void* self, uint32_t arg0) {
+    void* obj = ext_006A5C62(0x40);
+    if (!obj) {
+        return nullptr;
+    }
+
+    BasicStringStorage temp_str{};
+    auto** vtable = *reinterpret_cast<void***>(self);
+    using GetNameFn = void* (__thiscall*)(void*, void*);
+    auto get_name = reinterpret_cast<GetNameFn>(vtable[1]);
+    const void* name = get_name(self, &temp_str);
+
+    void* result = ext_0063E460(obj, arg0, name);
+
+    using DtorFn = void (__thiscall*)(void*);
+    auto dtor = reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+    dtor(&temp_str);
+
+    return result;
+}
+} // namespace lift_0063E500
