@@ -1588,3 +1588,55 @@ extern uint8_t fn_006947B0(double /*+0x04*/ unused0, double /*+0x0C*/ unused1,
     return 0;
 }
 } // namespace lift_006947B0
+
+// [0x00692180] sub_00692180 (134 bytes)
+namespace lift_00692180 {
+// Known callee 0x00691FC0: CompareStringLess (passed by address to the finder; lexicographic unsigned compare).
+extern BOOLEAN ext_00691FC0(const UCHAR* s1, const UCHAR* s2);
+// Known callee 0x006920D0: sub_006920D0 (not listed in CALLEES; stack-arg find over a pointer table: out slot, begin, end, key-ref, comparator, flag).
+extern void fn_006920D0(void* out, uintptr_t begin, uintptr_t end, const UCHAR* const* key_ref, void* cmp, DWORD flag);
+// Known callee 0x00692000: lookupTableEntry00B5AE98 (returns mem_00B5AE98[index]).
+extern DWORD ext_00692000(DWORD index);
+extern int mem_00B5AE98;
+extern int mem_00B5BCA8;
+
+// @name findNamedTableIndex
+// @summary Finds name in the 900-entry pointer table mem_00B5AE98..mem_00B5BCA8 via a comparator search, then verifies byte-equality with the matched string; returns the index, or 0x384 when not found.
+extern DWORD fn_00692180(const UCHAR* name) {
+    void* found = nullptr;
+    const uintptr_t begin = reinterpret_cast<uintptr_t>(&mem_00B5AE98);
+    const uintptr_t end = reinterpret_cast<uintptr_t>(&mem_00B5BCA8);
+
+    fn_006920D0(&found, begin, end, &name, reinterpret_cast<void*>(&ext_00691FC0), 0);
+
+    const uintptr_t found_addr = reinterpret_cast<uintptr_t>(found);
+    if (found_addr == end) {
+        return 0x384;
+    }
+
+    const DWORD index = static_cast<DWORD>((found_addr - begin) >> 2);
+    if (index > 0x383) {
+        return 0x384;
+    }
+
+    const UCHAR* a = name;
+    const UCHAR* b = reinterpret_cast<const UCHAR*>(static_cast<uintptr_t>(ext_00692000(index)));
+    for (;;) {
+        if (a[0] != b[0]) {
+            return 0x384;
+        }
+        if (a[0] == 0) {
+            return index;
+        }
+        const UCHAR c = a[1];
+        if (c != b[1]) {
+            return 0x384;
+        }
+        a += 2;
+        b += 2;
+        if (c == 0) {
+            return index;
+        }
+    }
+}
+} // namespace lift_00692180

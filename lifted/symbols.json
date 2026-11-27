@@ -58007,6 +58007,12 @@
     "summary": "Binary search (lower_bound) over a range of 32-bit elements using a predicate",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x00692180": {
+    "name": "findNamedTableIndex",
+    "signature": "extern \"C\" DWORD fn_00692180(const UCHAR* name)",
+    "summary": "Finds name in the 900-entry pointer table mem_00B5AE98..mem_00B5BCA8 via a comparator search, then verifies byte-equality with the matched string; returns the index, or 0x384 when not found.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00692210": {
     "name": "sub_00692210",
     "signature": "extern \"C\" int __thiscall fn_00692210(void* self)",
