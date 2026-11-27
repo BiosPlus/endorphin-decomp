@@ -1,0 +1,13 @@
+{
+  "va": "0x0060A550",
+  "size": 162,
+  "orig_symbol": "sub_0060A550",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "sub_0060A550",
+  "signature": "void fn_0060A550(void** first, void** second, void** last, void* ctx)",
+  "summary": "Auto-lifted identical-shape clone of 0x0043B720 (PivotNinther_0043B720).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:28:52Z"
+}

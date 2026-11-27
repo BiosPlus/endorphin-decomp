@@ -5110,6 +5110,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0043E800 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x0043F2C0": {
+    "name": "sub_0043F2C0",
+    "signature": "void fn_0043F2C0(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00451AE0 (ForwardSubobjectArg_00451AE0).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043F9E0": {
     "name": "ElementVector::EmplaceBack_0043F9E0",
     "class": "ElementVector",
@@ -6990,6 +6996,12 @@
     "signature": "extern \"C\" const int* fn_004543E0()",
     "summary": "Returns the address of the read-only constant mem_00935E44 (initialised to 0x006A5FCE).",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
+  },
+  "0x004543F0": {
+    "name": "sub_004543F0",
+    "signature": "void fn_004543F0(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00451AE0 (ForwardSubobjectArg_00451AE0).",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
   "0x00454400": {
     "name": "RigEditorFrame::vfunc_1_off_148",
@@ -11635,6 +11647,12 @@
     "class": "std",
     "signature": "void fn_00480CA0(uint32_t first, uint32_t last, const float* src)",
     "summary": "Fills a range [first, last) of 16-byte 4-float structs with the 4-float value at src.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
+  "0x00480CE0": {
+    "name": "sub_00480CE0",
+    "signature": "void fn_00480CE0(void** first, void** second, void** last, void* ctx)",
+    "summary": "Auto-lifted identical-shape clone of 0x0043B720 (PivotNinther_0043B720).",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
   "0x00480DD0": {
@@ -57679,6 +57697,12 @@
     "summary": "Copy-constructs the std::string at dst from the once-initialized global string and returns dst.",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x0060A550": {
+    "name": "sub_0060A550",
+    "signature": "void fn_0060A550(void** first, void** second, void** last, void* ctx)",
+    "summary": "Auto-lifted identical-shape clone of 0x0043B720 (PivotNinther_0043B720).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060A640": {
     "name": "NMData::DisabledCollisionPairList::vfunc_13",
     "class": "NMData::DisabledCollisionPairList",
@@ -71270,6 +71294,12 @@
     "summary": "Allocates a triple via AllocTriple, links it into self's chain at +0x04, then calls sub_006658F0(self, 1); stdcall-style stack arg, ret 4.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00665C10": {
+    "name": "sub_00665C10",
+    "signature": "void fn_00665C10(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00451AE0 (ForwardSubobjectArg_00451AE0).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00665CA0": {
     "name": "Unknown::DrainFront_00665CA0",
     "class": "Unknown",
@@ -71336,6 +71366,12 @@
     "name": "sub_00666360_dtor",
     "signature": "extern \"C\" void __thiscall fn_00666360(void* self)",
     "summary": "Destructor/cleanup for object at this, clearing mem_00B59420, freeing field_0x2c, destroying subobjects at +0x1c and +0x10, and deleting *this if non-null.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
+  "0x006667C0": {
+    "name": "sub_006667C0",
+    "signature": "void fn_006667C0(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00451AE0 (ForwardSubobjectArg_00451AE0).",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
   "0x006667D0": {
@@ -75526,6 +75562,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00476430 (Unknown::lookupStringKeyedValue).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00687060": {
+    "name": "sub_00687060",
+    "signature": "void fn_00687060(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A1A10 (LookupAndApplyDisabledString_004A1A10).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00687100": {
     "name": "SymbolContainer::vfunc_6",
     "class": "SymbolContainer",
@@ -75862,6 +75904,12 @@
     "signature": "extern \"C\" void* __fastcall fn_00689F70(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006895E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x0068A150": {
+    "name": "sub_0068A150",
+    "signature": "void fn_0068A150(void* self, const void* value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0050D2B0 (ElementVector_PushBack_0050D2B0).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x0068BB30": {
     "name": "Unknown::constructAndThrow_0068BB30",
@@ -76575,6 +76623,12 @@
     "class": "Unknown",
     "signature": "uint32_t* fn_0068ECD0(void* self, uint32_t* out, uint32_t key)",
     "summary": "Auto-lifted identical-shape clone of 0x00476430 (Unknown::lookupStringKeyedValue).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x0068ED60": {
+    "name": "sub_0068ED60",
+    "signature": "void fn_0068ED60(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A1A10 (LookupAndApplyDisabledString_004A1A10).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x0068EE60": {

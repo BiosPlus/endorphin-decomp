@@ -3292,3 +3292,95 @@ void* fn_00686630(void* self, DWORD arg) {
 } // namespace lift_00501140
 } // namespace lift_0060F3B0
 } // namespace lift_00686630
+
+// [0x00687060] sub_00687060 (33 bytes)
+namespace lift_00687060 {
+// @name sub_00687060
+// @summary Auto-lifted identical-shape clone of 0x004A1A10 (LookupAndApplyDisabledString_004A1A10).
+namespace lift_004A1A10 {
+// Known callee 0x004A1860: sub_004A1860 (Auto-lifted identical-shape clone of 0x00476430 (Unknown::lookupStringKeyedValue).)
+extern uint32_t* ext_00686FD0(void* self, uint32_t* out, uint32_t key);
+// Known callee 0x004A1270: sub_004A1270 (165B, unlifted; thiscall taking one string argument.)
+extern void ext_00686DB0(void* self, const char* text);
+// .rdata string at 0x00940638: "disabled"
+extern const char mem_00985C48[];
+
+// @name LookupAndApplyDisabledString_004A1A10
+// @summary Looks up key 0 via fn_004A1860 into a local slot, then passes that slot and the "disabled" rdata string to ext_004A1270.
+void fn_00687060(void* self) {
+    uint32_t slot = 0;
+    ext_00686FD0(self, &slot, 0);
+    ext_00686DB0(&slot, mem_00985C48);
+}
+} // namespace lift_004A1A10
+} // namespace lift_00687060
+
+// [0x0068A150] sub_0068A150 (161 bytes)
+namespace lift_0068A150 {
+// @name sub_0068A150
+// @summary Auto-lifted identical-shape clone of 0x0050D2B0 (ElementVector_PushBack_0050D2B0).
+namespace lift_0050D2B0 {
+// Copy-construct helper (cdecl, 6 stack args as pushed by the original call site).
+extern void ext_006887E0(void* first, uint32_t count, const void* src, void* self, const void* src_dup, uint32_t flag);
+// Grow-and-insert helper (thiscall in the original; self is passed explicitly here).
+extern void ext_00689C40(void* self, uint32_t* flag_slot, void* self_arg, uint8_t* end, const void* value);
+// CRT _invalid_parameter_noinfo import slot (referenced only on the bad-range path).
+extern int mem_00925134;
+
+// @name ElementVector_PushBack_0050D2B0
+// @summary Appends a copy of a 0x24-byte element to the vector at this: in-place copy-construct when spare capacity exists, otherwise delegates to the grow path.
+// @field ElementVector +0x04 uint8_t* m_begin
+// @field ElementVector +0x08 uint8_t* m_end
+// @field ElementVector +0x0C uint8_t* m_capEnd
+void fn_0068A150(void* self, const void* value) {
+    constexpr ptrdiff_t kElemSize = 0x24;
+
+    uint8_t* const begin = lift_field<uint8_t*>(self, 0x4);
+    uint8_t* end = lift_field<uint8_t*>(self, 0x8);
+    uint8_t* const capEnd = lift_field<uint8_t*>(self, 0xC);
+
+    // Fast path: begin is set and there is spare capacity (size < capacity).
+    if (begin != nullptr) {
+        const ptrdiff_t size = (end - begin) / kElemSize;
+        const ptrdiff_t capacity = (capEnd - begin) / kElemSize;
+        if (size < capacity) {
+            uint32_t flag = 0;
+            ext_006887E0(end, 1, value, self, value, flag);
+            end += kElemSize;
+            lift_field<uint8_t*>(self, 0x8) = end;
+            return;
+        }
+    }
+
+    // Slow path: the original checks begin <= end before delegating to the grow helper.
+    if (begin > end) {
+        (void)&mem_00925134; // original calls _invalid_parameter_noinfo via this import slot
+        std::abort();
+    }
+    uint32_t flag = 0;
+    ext_00689C40(self, &flag, self, end, value);
+}
+} // namespace lift_0050D2B0
+} // namespace lift_0068A150
+
+// [0x0068ED60] sub_0068ED60 (33 bytes)
+namespace lift_0068ED60 {
+// @name sub_0068ED60
+// @summary Auto-lifted identical-shape clone of 0x004A1A10 (LookupAndApplyDisabledString_004A1A10).
+namespace lift_004A1A10 {
+// Known callee 0x004A1860: sub_004A1860 (Auto-lifted identical-shape clone of 0x00476430 (Unknown::lookupStringKeyedValue).)
+extern uint32_t* ext_0068ECD0(void* self, uint32_t* out, uint32_t key);
+// Known callee 0x004A1270: sub_004A1270 (165B, unlifted; thiscall taking one string argument.)
+extern void ext_0068E490(void* self, const char* text);
+// .rdata string at 0x00940638: "disabled"
+extern const char mem_00985004[];
+
+// @name LookupAndApplyDisabledString_004A1A10
+// @summary Looks up key 0 via fn_004A1860 into a local slot, then passes that slot and the "disabled" rdata string to ext_004A1270.
+void fn_0068ED60(void* self) {
+    uint32_t slot = 0;
+    ext_0068ECD0(self, &slot, 0);
+    ext_0068E490(&slot, mem_00985004);
+}
+} // namespace lift_004A1A10
+} // namespace lift_0068ED60

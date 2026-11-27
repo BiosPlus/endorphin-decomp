@@ -1,0 +1,13 @@
+{
+  "va": "0x00687060",
+  "size": 33,
+  "orig_symbol": "sub_00687060",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "sub_00687060",
+  "signature": "void fn_00687060(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004A1A10 (LookupAndApplyDisabledString_004A1A10).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:28:52Z"
+}

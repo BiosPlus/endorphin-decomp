@@ -1,0 +1,13 @@
+{
+  "va": "0x0043F2C0",
+  "size": 19,
+  "orig_symbol": "sub_0043F2C0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "sub_0043F2C0",
+  "signature": "void fn_0043F2C0(void* self, void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x00451AE0 (ForwardSubobjectArg_00451AE0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:28:52Z"
+}

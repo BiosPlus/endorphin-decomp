@@ -3024,3 +3024,38 @@ void* fn_0060F3B0(void* self, DWORD arg) {
 }
 } // namespace lift_00501140
 } // namespace lift_0060F3B0
+
+// [0x0060A550] sub_0060A550 (162 bytes)
+namespace lift_0060A550 {
+// @name sub_0060A550
+// @summary Auto-lifted identical-shape clone of 0x0043B720 (PivotNinther_0043B720).
+namespace lift_0043B720 {
+// Known callee 0x0043B5D0: fn_0043B5D0 (three-way conditional sort of object slots)
+extern void ext_0060A340(void** a, void** b, void** c);
+
+// @name PivotNinther_0043B720
+// @summary Partitions a void* slot range by sorting sampled slots: small ranges (<=40 slots) get one 3-slot sort; larger ranges sort three triples of samples spaced n/8 apart.
+// @field none (no struct field accesses; pointer arithmetic on slot arrays only)
+void fn_0060A550(void** first, void** second, void** last, void* ctx) {
+    (void)ctx; // arg4 is forwarded to callees in the asm but ignored by them
+
+    // Element count of [first, last); asm: (last - first) >> 2 on 4-byte slots.
+    const ptrdiff_t n = last - first;
+    if (n <= 40) {
+        ext_0060A340(first, second, last);
+        return;
+    }
+
+    // asm: k = (n + 1) / 8 (signed, n + 1 > 0 on this path).
+    const ptrdiff_t k = (n + 1) / 8;
+
+    ext_0060A340(first, first + k, first + 2 * k);
+    ext_0060A340(second - k, second, second + k);
+
+    // asm: esi = end - [arg3]; both operands are `last`, so this is 0 and is
+    // passed as the first argument (a raw integer value, not a pointer offset).
+    void** zeroArg = reinterpret_cast<void**>(static_cast<uintptr_t>(last - last));
+    ext_0060A340(zeroArg, last - k, last);
+}
+} // namespace lift_0043B720
+} // namespace lift_0060A550

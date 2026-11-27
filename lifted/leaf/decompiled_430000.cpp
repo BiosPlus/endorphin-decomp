@@ -5954,3 +5954,20 @@ void fn_0043B720(void** first, void** second, void** last, void* ctx) {
     ext_0043B5D0(zeroArg, last - k, last);
 }
 } // namespace lift_0043B720
+
+// [0x0043F2C0] sub_0043F2C0 (19 bytes)
+namespace lift_0043F2C0 {
+// @name sub_0043F2C0
+// @summary Auto-lifted identical-shape clone of 0x00451AE0 (ForwardSubobjectArg_00451AE0).
+namespace lift_00451AE0 {
+extern void ext_0041A920(void* self, void* arg);
+
+// @name ForwardSubobjectArg_00451AE0
+// @summary Forwards the address of its single stack argument to ext_00451670, passing self+0x14 as the receiver.
+// Note: no member field is dereferenced here; self+0x14 is only computed as an address.
+// The original ends in `ret 4`, so the single stack argument is callee-cleaned.
+void fn_0043F2C0(void* self, void* arg) {
+    ext_0041A920(static_cast<unsigned char*>(self) + 0x90, &arg);
+}
+} // namespace lift_00451AE0
+} // namespace lift_0043F2C0
