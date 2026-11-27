@@ -1531,3 +1531,43 @@ float* __thiscall sub_00547820(const float* self, float* out, const float* rhs) 
     return out;
 }
 } // namespace lift_00547820
+
+// [0x00543C00] sub_00543C00 (83 bytes)
+namespace lift_00543C00 {
+// Known callee 0x005480F0: Unknown_GetOrComputeVec4_005480F0 (Tail-calls ext_005CFF60 on the child object at +0xA0 if non-null, otherwise returns pointer to +0x80.)
+extern void* ext_005480F0(void* self);
+
+// @name Unknown::updateVec4FromChild_00543C00
+// @class Unknown
+// @summary Fetches a float4 from the child's indexed table via ext_005480F0 and stores it into this+0x34..+0x40, with the z/y components swapped and negated depending on the child's flag byte.
+// @field Unknown +0x34 float field_0x34
+// @field Unknown +0x38 float field_0x38
+// @field Unknown +0x3c float field_0x3c
+// @field Unknown +0x40 float field_0x40
+// @field Unknown +0x84 void* child
+// @field Unknown +0x84 uint8_t child_flag_at_0x04 (child+0x04)
+// @field Unknown +0x84 uint32_t child_count_at_0xf8 (child+0xf8)
+// @field Unknown +0x84 uint32_t child_table_at_0x08 (child+0x08, indexed by count*15)
+void fn_00543C00(void* self) {
+    void* child = lift_field<void*>(self, 0x84);
+
+    // idx = count * 15 (asm: (count << 4) - count)
+    uint32_t count = lift_field<uint32_t>(child, 0xF8);
+    uint32_t idx = count * 15u;
+    uint32_t key = lift_field<uint32_t>(child, 0x08 + static_cast<ptrdiff_t>(idx) * 4);
+
+    float* v = static_cast<float*>(
+        ext_005480F0(reinterpret_cast<void*>(static_cast<uintptr_t>(key))));
+
+    lift_field<float>(self, 0x34) = v[0];
+
+    if (lift_field<uint8_t>(child, 0x04) != 0) {
+        lift_field<float>(self, 0x38) = v[1];
+        lift_field<float>(self, 0x3C) = v[2];
+        lift_field<float>(self, 0x40) = 1.0f;
+    } else {
+        lift_field<float>(self, 0x38) = -v[2];
+        lift_field<float>(self, 0x3C) = v[1];
+    }
+}
+} // namespace lift_00543C00

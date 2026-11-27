@@ -1,0 +1,64 @@
+{
+  "va": "0x00543C00",
+  "size": 83,
+  "orig_symbol": "sub_00543C00",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Unknown::updateVec4FromChild_00543C00",
+  "class": "Unknown",
+  "signature": "void fn_00543C00(void* self)",
+  "summary": "Fetches a float4 from the child's indexed table via ext_005480F0 and stores it into this+0x34..+0x40, with the z/y components swapped and negated depending on the child's flag byte.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "void*",
+      "name": "child"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "uint8_t child_flag_at_0x04",
+      "name": "(child+0x04)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "uint32_t child_count_at_0xf8",
+      "name": "(child+0xf8)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "uint32_t child_table_at_0x08 (child+0x08, indexed by",
+      "name": "count*15)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:23:59Z"
+}
