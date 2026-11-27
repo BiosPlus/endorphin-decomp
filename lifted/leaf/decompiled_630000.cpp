@@ -1187,3 +1187,27 @@ extern void* __thiscall fn_0063E290(void* self, DWORD arg1, DWORD arg2) {
     return self;
 }
 } // namespace lift_0063E290
+
+// [0x0063E310] sub_0063E310 (106 bytes)
+namespace lift_0063E310 {
+// Known callee 0x0063E290: descriptiveName_0063E290 (Constructor-like: builds a temporary std::string from a .rdata literal, calls sub_0063E240(self, arg1, &str), destroys the string, sets vptr to 0x97cba8, stores low byte of arg2 at +0x24, returns self.)
+extern void* ext_0063E290(void* self, DWORD arg1, DWORD arg2);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void* ext_006A5C62(DWORD size);
+extern int mem_00925134;
+
+// @name allocateAndConstructFromFlag
+// @class Unknown
+// @summary Allocates a 0x28-byte block; if allocation fails returns null, otherwise constructs the object in it with arg1 and the sign-extended byte at this+0x24 and returns the constructed object.
+// @field Unknown +0x24 int8_t field_0x24
+void* fn_0063E310(void* self, DWORD arg1) {
+    (void)&mem_00925134; // metadata only: the .rdata literal is used by the callee, not here
+    void* mem = ext_006A5C62(0x28);
+    if (mem == nullptr) {
+        return nullptr;
+    }
+    const auto flag = static_cast<DWORD>(static_cast<int32_t>(
+        *reinterpret_cast<const int8_t*>(static_cast<const unsigned char*>(self) + 0x24)));
+    return ext_0063E290(mem, arg1, flag);
+}
+} // namespace lift_0063E310

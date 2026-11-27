@@ -44321,6 +44321,13 @@
     "summary": "Constructor-like: builds a temporary std::string from a .rdata literal, calls sub_0063E240(self, arg1, \u0026str), destroys the string, sets vptr to 0x97cba8, stores low byte of arg2 at +0x24, returns self.",
     "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
+  "0x0063E310": {
+    "name": "allocateAndConstructFromFlag",
+    "class": "Unknown",
+    "signature": "void* fn_0063E310(void* self, DWORD arg1)",
+    "summary": "Allocates a 0x28-byte block; if allocation fails returns null, otherwise constructs the object in it with arg1 and the sign-extended byte at this+0x24 and returns the constructed object.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063E380": {
     "name": "AdvXMLParser::CharRef::vfunc_4",
     "class": "AdvXMLParser::CharRef",
