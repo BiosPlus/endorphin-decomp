@@ -2594,3 +2594,48 @@ uint32_t fn_0071CAA0(void* self) {
     return reinterpret_cast<Method>(static_cast<uintptr_t>(slot))(as_ptr(obj));
 }
 } // namespace lift_0071CAA0
+
+// [0x0071CA40] sub_0071CA40 (48 bytes)
+namespace lift_0071CA40 {
+// Pointers are 32-bit values in the original image; they are carried as uint32_t
+// and converted to void* only at the call boundary.
+static inline void* as_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+// Known callee 0x006DC460: Unknown::GetValueIfCountPositive (Returns *(this->field_0xC8) when this->field_0xB8 > 0, otherwise 0.)
+extern uint32_t __fastcall ext_006DC460(void* self);
+// Callee 0x006C9530: sub_006C9530 (15 bytes, signature not yet recovered; takes self in ecx, returns in eax)
+extern uint32_t __fastcall ext_006C9530(void* self);
+// Known callee 0x006C9F70: sub_006C9F70 (Getter returning float field at offset +0x14.)
+extern float __fastcall ext_006C9F70(void* self);
+// Known callee 0x00708000: Unknown::FindChildByName_00708000 (Scans the count-sized pointer array at +0xD0 and returns the first element whose fn_00712000 string equals the name argument, or 0 if none matches.)
+extern uint32_t __fastcall ext_00708000(void* self, const char* name);
+// String literal at 0x00AA8D1C passed as the name argument.
+extern const char mem_00AA8D1C[];
+
+// @name Unknown::ResolveChainOrVirtualChildLookup
+// @class Unknown
+// @summary If +0x04 is non-null, chains ext_006DC460 -> ext_006C9530 -> ext_006C9F70; otherwise looks up the child named by mem_00AA8D1C under +0x0C and tail-calls its vtable slot 31.
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x0C uint32_t field_0x0C
+extern uint32_t fn_0071CA40(void* self) {
+    const uint32_t field_0x04 = lift_field<uint32_t>(self, 0x04);
+    if (field_0x04 != 0) {
+        const uint32_t a = ext_006DC460(as_ptr(field_0x04));
+        const uint32_t b = ext_006C9530(as_ptr(a));
+        const float r = ext_006C9F70(as_ptr(b));
+        return std::bit_cast<uint32_t>(r);
+    }
+
+    const uint32_t child = lift_field<uint32_t>(self, 0x0C);
+    const uint32_t found = ext_00708000(as_ptr(child), mem_00AA8D1C);
+
+    // Virtual tail call: vtable slot at +0x7C (index 31) with this = found.
+    void* obj = as_ptr(found);
+    const uint32_t vtable = lift_field<uint32_t>(obj, 0x00);
+    const uint32_t target = lift_field<uint32_t>(as_ptr(vtable), 0x7C);
+    auto slot = reinterpret_cast<uint32_t(__fastcall*)(void*)>(static_cast<uintptr_t>(target));
+    return slot(obj);
+}
+} // namespace lift_0071CA40
