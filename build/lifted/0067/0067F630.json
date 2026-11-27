@@ -1,0 +1,22 @@
+{
+  "va": "0x0067F630",
+  "size": 130,
+  "orig_symbol": "ExprParser::Operators::Assign::vfunc_3",
+  "src_path": "src/ExprParser/Operators/Assign.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/Assign.cpp",
+  "name": "ExprParser::Operators::Assign::vfunc_3",
+  "class": "ExprParser::Operators::Assign",
+  "signature": "void __stdcall fn_0067F630(void* self_out, void* other)",
+  "summary": "Evaluates assignment operator on operands and assigns result into output",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::Assign",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:45:11Z"
+}
