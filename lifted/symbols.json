@@ -11799,6 +11799,12 @@
     "summary": "Validates state via ext_005DF5C0, throwing via ext_006A6DD2 if non-zero, otherwise delegates to ext_00478910.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00479890": {
+    "name": "validateAndForwardString_00479890",
+    "signature": "void* fn_00479890(void* self, MsvcString arg_str, void* out)",
+    "summary": "Copies a by-value std::string, throws via ext_006A6DD2 (message from mem_00A32774) if ext_005DF5C0(self) is nonzero, otherwise forwards a copy of it to ext_00478910 and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00479A90": {
     "name": "fill_n_float",
     "signature": "float* __stdcall sub_00479A90(float* dst, uint32_t count, const float* value)",

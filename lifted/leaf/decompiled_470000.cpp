@@ -2297,3 +2297,60 @@ void __cdecl sub_00477A80(uint32_t* first, uint32_t* mid, uint32_t* /*unused: ne
     ext_00477120(first + step, mid, last - step, cmp);
 }
 } // namespace lift_00477A80
+
+// [0x00479890] sub_00479890 (254 bytes)
+namespace lift_00479890 {
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern int32_t ext_005DF5C0(void* self);
+extern void* ext_004142E0(void* self, const void* a, const void* b);
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+extern void* ext_00478910(void* self, void* out, const void* str);
+
+// IAT slots (MSVCP80 std::basic_string<char>): copy ctor, const char* ctor, dtor.
+extern void* mem_00924FE0;
+extern void* mem_00924FE4;
+extern void* mem_00924FF4;
+// Pointer to the C string used for the exception message.
+extern const char* mem_00A32774;
+
+// @name validateAndForwardString_00479890
+// @summary Copies a by-value std::string, throws via ext_006A6DD2 (message from mem_00A32774) if ext_005DF5C0(self) is nonzero, otherwise forwards a copy of it to ext_00478910 and returns out.
+
+namespace {
+struct MsvcString {
+    uint8_t data[0x1C];
+};
+} // namespace
+
+void* fn_00479890(void* self, MsvcString arg_str, void* out) {
+    using CopyCtorFn = void (*)(void*, const void*);
+    using CStrCtorFn = void (*)(void*, const char*);
+    using DtorFn = void (*)(void*);
+
+    auto copy_ctor = reinterpret_cast<CopyCtorFn>(mem_00924FE0);
+    auto cstr_ctor = reinterpret_cast<CStrCtorFn>(mem_00924FE4);
+    auto dtor = reinterpret_cast<DtorFn>(mem_00924FF4);
+
+    MsvcString src{};
+    copy_ctor(&src, &arg_str);
+
+    if (ext_005DF5C0(self) != 0) {
+        MsvcString msg{};
+        cstr_ctor(&msg, mem_00A32774);
+        uint8_t exc_buf[0x34]{};
+        ext_004142E0(exc_buf, &msg, &src);
+        ext_006A6DD2(exc_buf, 0x009D1278u);
+    }
+
+    MsvcString tmp{};
+    copy_ctor(&tmp, &src);
+
+    uint8_t local_out[0x2C]{};
+    *reinterpret_cast<void**>(local_out + 0x28) = out;
+    ext_00478910(self, local_out, &tmp);
+
+    dtor(&tmp);
+    dtor(&src);
+    return out;
+}
+} // namespace lift_00479890

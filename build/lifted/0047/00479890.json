@@ -1,0 +1,13 @@
+{
+  "va": "0x00479890",
+  "size": 254,
+  "orig_symbol": "sub_00479890",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "validateAndForwardString_00479890",
+  "signature": "void* fn_00479890(void* self, MsvcString arg_str, void* out)",
+  "summary": "Copies a by-value std::string, throws via ext_006A6DD2 (message from mem_00A32774) if ext_005DF5C0(self) is nonzero, otherwise forwards a copy of it to ext_00478910 and returns out.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:42:20Z"
+}
