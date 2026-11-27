@@ -860,3 +860,24 @@ void* fn_00476F70() {
     return mem_00AD907C;
 }
 } // namespace lift_00476F70
+
+// [0x00476FD0]
+namespace lift_00476FD0 {
+// @name getStaticBoolString
+// @summary Lazily initializes a static string/object at 0x00AD909C, registers its destructor, and returns its address.
+
+
+    extern uint32_t mem_00AD90B8;
+    extern uint8_t mem_00AD909C;
+    void* ext_0066AD10(void* out_str, uint8_t flag);
+    void ext_006A6C87(void* dtor);
+
+void* fn_00476FD0(void) {
+    if ((mem_00AD90B8 & 1) == 0) {
+        mem_00AD90B8 |= 1;
+        ext_0066AD10(&mem_00AD909C, static_cast<uint8_t>(0x00A328A4u));
+        ext_006A6C87(reinterpret_cast<void*>(0x00916F00u));
+    }
+    return &mem_00AD909C;
+}
+} // namespace lift_00476FD0
