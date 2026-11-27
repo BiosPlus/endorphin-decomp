@@ -3319,3 +3319,185 @@ void fn_00483800(void* src, void* self) {
     }
 }
 } // namespace lift_00483800
+
+// [0x00484FB0] sub_00484FB0 (194 bytes)
+namespace lift_00484FB0 {
+// @name sub_00484FB0
+// @summary Auto-lifted identical-shape clone of 0x00483800 (copyDynamicCastElements).
+namespace lift_00483800 {
+// Known callee 0x00596660: eraseInt32Range (erases [first,last) from a 4-byte-element buffer, sets end, writes 2-pointer result to out)
+extern void __thiscall ext_00596660(void* ecx, void** out, void* a2, int32_t* first, void* a4, int32_t* last);
+// Callees 0x0050ED40 and 0x0041A920 (thiscall, callee-cleans, ecx = self)
+extern void __thiscall ext_0050ED40(void* ecx, int32_t count);
+extern void __thiscall ext_0041A920(void* ecx, void** item);
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (cdecl, forwards to __RTDynamicCast)
+extern void* ext_006A6E9E(void* inptr, int32_t vfDelta, const void* srcType, const void* targetType, int32_t isReference);
+// IAT slot holding _invalid_parameter_noinfo
+extern int mem_00925134;
+// RTTI type descriptors pushed as immediates
+extern char mem_00A2E2BC[];
+extern char mem_00A2FC0C[];
+
+// Calls the MSVCR80 invalid-parameter handler through its IAT slot.
+// The original call does not clean up or abort in the default configuration, so execution continues.
+static inline void invalid_parameter_noinfo() {
+    auto handler = *reinterpret_cast<void (**)()>(&mem_00925134);
+    if (handler) {
+        handler();
+    }
+}
+
+static inline void* as_ptr(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+static inline int32_t* as_i32(uint32_t addr) {
+    return static_cast<int32_t*>(as_ptr(addr));
+}
+
+// @name copyDynamicCastElements
+// @summary Clears self's pointer vector, reserves for src's element count, then appends each src element that dynamic-casts to the target type.
+// @field PtrVector +0x04 uint32_t field_0x04
+// @field PtrVector +0x08 uint32_t field_0x08
+void fn_00484FB0(void* src, void* self) {
+    if (lift_field<uint32_t>(self, 4) > lift_field<uint32_t>(self, 8)) {
+        invalid_parameter_noinfo();
+    }
+    if (lift_field<uint32_t>(self, 4) > lift_field<uint32_t>(self, 8)) {
+        invalid_parameter_noinfo();
+    }
+
+    // Erase self's whole range [begin, end): effectively clear().
+    void* erased[2] = {nullptr, nullptr};
+    ext_00596660(self, erased, self,
+                as_i32(lift_field<uint32_t>(self, 4)), self,
+                as_i32(lift_field<uint32_t>(self, 8)));
+
+    // Reserve for src's element count (0 when src is empty).
+    int32_t count = 0;
+    uint32_t srcBegin = lift_field<uint32_t>(src, 4);
+    if (srcBegin != 0) {
+        count = static_cast<int32_t>(lift_field<uint32_t>(src, 8) - srcBegin) >> 2;
+    }
+    ext_0050ED40(self, count);
+
+    uint32_t it = lift_field<uint32_t>(src, 4);
+    for (;;) {
+        uint32_t end = lift_field<uint32_t>(src, 8);
+        if (!(lift_field<uint32_t>(src, 4) <= end)) {
+            invalid_parameter_noinfo();
+        }
+        if (it == end) {
+            break;
+        }
+        if (!(it < lift_field<uint32_t>(src, 8))) {
+            invalid_parameter_noinfo();
+        }
+
+        uint32_t obj = lift_field<uint32_t>(as_ptr(it), 0);
+        void* found = ext_006A6E9E(as_ptr(obj), 0,
+                                   static_cast<const void*>(mem_00A2E2BC),
+                                   static_cast<const void*>(mem_00A2FC0C), 0);
+        if (found != nullptr) {
+            ext_0041A920(self, &found);
+        }
+
+        if (!(it < lift_field<uint32_t>(src, 8))) {
+            invalid_parameter_noinfo();
+        }
+        it += 4;
+    }
+}
+} // namespace lift_00483800
+} // namespace lift_00484FB0
+
+// [0x00485080] sub_00485080 (194 bytes)
+namespace lift_00485080 {
+// @name sub_00485080
+// @summary Auto-lifted identical-shape clone of 0x00483800 (copyDynamicCastElements).
+namespace lift_00483800 {
+// Known callee 0x00596660: eraseInt32Range (erases [first,last) from a 4-byte-element buffer, sets end, writes 2-pointer result to out)
+extern void __thiscall ext_00596660(void* ecx, void** out, void* a2, int32_t* first, void* a4, int32_t* last);
+// Callees 0x0050ED40 and 0x0041A920 (thiscall, callee-cleans, ecx = self)
+extern void __thiscall ext_0050ED40(void* ecx, int32_t count);
+extern void __thiscall ext_0041A920(void* ecx, void** item);
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (cdecl, forwards to __RTDynamicCast)
+extern void* ext_006A6E9E(void* inptr, int32_t vfDelta, const void* srcType, const void* targetType, int32_t isReference);
+// IAT slot holding _invalid_parameter_noinfo
+extern int mem_00925134;
+// RTTI type descriptors pushed as immediates
+extern char mem_00A2E2BC[];
+extern char mem_00A2FB78[];
+
+// Calls the MSVCR80 invalid-parameter handler through its IAT slot.
+// The original call does not clean up or abort in the default configuration, so execution continues.
+static inline void invalid_parameter_noinfo() {
+    auto handler = *reinterpret_cast<void (**)()>(&mem_00925134);
+    if (handler) {
+        handler();
+    }
+}
+
+static inline void* as_ptr(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+static inline int32_t* as_i32(uint32_t addr) {
+    return static_cast<int32_t*>(as_ptr(addr));
+}
+
+// @name copyDynamicCastElements
+// @summary Clears self's pointer vector, reserves for src's element count, then appends each src element that dynamic-casts to the target type.
+// @field PtrVector +0x04 uint32_t field_0x04
+// @field PtrVector +0x08 uint32_t field_0x08
+void fn_00485080(void* src, void* self) {
+    if (lift_field<uint32_t>(self, 4) > lift_field<uint32_t>(self, 8)) {
+        invalid_parameter_noinfo();
+    }
+    if (lift_field<uint32_t>(self, 4) > lift_field<uint32_t>(self, 8)) {
+        invalid_parameter_noinfo();
+    }
+
+    // Erase self's whole range [begin, end): effectively clear().
+    void* erased[2] = {nullptr, nullptr};
+    ext_00596660(self, erased, self,
+                as_i32(lift_field<uint32_t>(self, 4)), self,
+                as_i32(lift_field<uint32_t>(self, 8)));
+
+    // Reserve for src's element count (0 when src is empty).
+    int32_t count = 0;
+    uint32_t srcBegin = lift_field<uint32_t>(src, 4);
+    if (srcBegin != 0) {
+        count = static_cast<int32_t>(lift_field<uint32_t>(src, 8) - srcBegin) >> 2;
+    }
+    ext_0050ED40(self, count);
+
+    uint32_t it = lift_field<uint32_t>(src, 4);
+    for (;;) {
+        uint32_t end = lift_field<uint32_t>(src, 8);
+        if (!(lift_field<uint32_t>(src, 4) <= end)) {
+            invalid_parameter_noinfo();
+        }
+        if (it == end) {
+            break;
+        }
+        if (!(it < lift_field<uint32_t>(src, 8))) {
+            invalid_parameter_noinfo();
+        }
+
+        uint32_t obj = lift_field<uint32_t>(as_ptr(it), 0);
+        void* found = ext_006A6E9E(as_ptr(obj), 0,
+                                   static_cast<const void*>(mem_00A2E2BC),
+                                   static_cast<const void*>(mem_00A2FB78), 0);
+        if (found != nullptr) {
+            ext_0041A920(self, &found);
+        }
+
+        if (!(it < lift_field<uint32_t>(src, 8))) {
+            invalid_parameter_noinfo();
+        }
+        it += 4;
+    }
+}
+} // namespace lift_00483800
+} // namespace lift_00485080

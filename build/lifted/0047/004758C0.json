@@ -1,0 +1,22 @@
+{
+  "va": "0x004758C0",
+  "size": 24,
+  "orig_symbol": "sub_004758C0",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "sub_004758C0",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "void fn_004758C0(void* self, DWORD arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x004758A0 (SubObject_004758A0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "\u003copaque subobject\u003e",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:03:00Z"
+}

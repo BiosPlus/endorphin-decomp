@@ -2607,3 +2607,376 @@ void* fn_0060E820(void* dst) {
 }
 } // namespace lift_0041CDA0
 } // namespace lift_0060E820
+
+// [0x006082D0] sub_006082D0 (128 bytes)
+namespace lift_006082D0 {
+// @name sub_006082D0
+// @summary Auto-lifted identical-shape clone of 0x0041E4C0 (ClassFactory<CompoundSensor>::ctor).
+namespace lift_0041E4C0 {
+// Known callee 0x0041CDA0: ExprParser::GetTypeNameInto (Copy the type_info name of the global type object into dst via a temporary std::string, then return dst.)
+extern void* ext_006033E0(void* dst);
+// Callee 0x0040ECB0 (166 bytes, unnamed): thiscall on global 0xB5962C with one stack argument.
+extern void ext_0040ECB0(void* self, void* arg);
+extern int mem_009719C0;
+extern int mem_00B5962C;
+// IAT slot for MSVCP80 ~basic_string; the destructor is implicit below (metadata reference only).
+extern int mem_00924FF4;
+
+// @name ClassFactory<CompoundSensor>::ctor
+// @class ClassFactory<CompoundSensor>
+// @summary Installs the factory vtable, zeroes its state fields, then writes the type name of the global type object to the stream at 0xB5962C; returns this.
+// @field ClassFactory<CompoundSensor> +0x00 uint32_t vptr
+// @field ClassFactory<CompoundSensor> +0x08 uint32_t field_0x08
+// @field ClassFactory<CompoundSensor> +0x0c uint32_t field_0x0c
+// @field ClassFactory<CompoundSensor> +0x10 uint32_t field_0x10
+// @field ClassFactory<CompoundSensor> +0x18 uint32_t field_0x18
+// @field ClassFactory<CompoundSensor> +0x1c uint32_t field_0x1c
+// @field ClassFactory<CompoundSensor> +0x20 uint32_t field_0x20
+void* fn_006082D0(void* self) {
+    // Vtable pointer: the original stores the immediate VA of the vtable (mem_0092DF84).
+    lift_field<uint32_t>(self, 0x00) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_009719C0));
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0c) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1c) = 0;
+    lift_field<uint32_t>(self, 0x20) = 0;
+
+    // Temporary std::string filled by GetTypeNameInto; destroyed automatically at scope exit.
+    std::string name;
+    void* text = ext_006033E0(&name);
+    ext_0040ECB0(&mem_00B5962C, text);
+    (void)&mem_00924FF4;
+
+    return self;
+}
+} // namespace lift_0041E4C0
+} // namespace lift_006082D0
+
+// [0x00609110] sub_00609110 (90 bytes)
+namespace lift_00609110 {
+// @name sub_00609110
+// @summary Auto-lifted identical-shape clone of 0x004C9860 (initStaticObjectOnce_004C9860).
+namespace lift_004C9860 {
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B47840;
+// Static object (global) whose address is returned; also the `this` passed to ext_004C94E0.
+extern DWORD mem_00B4781C;
+
+// __thiscall: ECX = &mem_00AE3D94, no stack arguments.
+extern void __thiscall ext_006082D0(void* self);
+// __cdecl: one stack argument (0x00918AE0), caller pops.
+extern void ext_006A6C87(DWORD arg);
+
+// @name initStaticObjectOnce_004C9860
+// @summary One-time initializer for the static object at mem_00AE3D94: under a local SEH frame, runs ext_004C94E0 on the object and ext_006A6C87(0x918AE0) on first call, marks the guard bit, and returns the object's address.
+void* fn_00609110() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler (0x0088BD3E), [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A82AEu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B47840 & 1u) == 0) {
+        mem_00B47840 |= 1u;
+        frame[2] = 0;
+        ext_006082D0(&mem_00B4781C);
+        ext_006A6C87(0x91E700u);
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B4781C;
+}
+} // namespace lift_004C9860
+} // namespace lift_00609110
+
+// [0x0060A470] sub_0060A470 (117 bytes)
+namespace lift_0060A470 {
+// @name sub_0060A470
+// @summary Auto-lifted identical-shape clone of 0x0049CF60 (NewAndInitDynCastObject).
+namespace lift_0049CF60 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (cdecl allocator, called with size 0x28)
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x0049B400: Unknown::InitDynCastFields (thiscall-style: self in ecx, four stack args)
+extern void* ext_00609970(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4);
+// Known callee 0x00665870: sub_00665870 (returns global int32 value from mem_00B59420)
+extern int32_t ext_00665870(void);
+// Known callee 0x00666670: sub_00666670 (292 bytes; signature not recovered, modeled as thiscall with one stack arg)
+extern uint32_t ext_00666670(void* self, uint32_t arg);
+
+// @name NewAndInitDynCastObject
+// @summary Allocates a 0x28-byte object; if allocation succeeds, initializes it via InitDynCastFields with (self, a1, a2, a3), then passes the result and the global value from ext_00665870 to ext_00666670.
+// (No direct field accesses on self; self is only forwarded as an argument, so no @field lines.)
+uint32_t fn_0060A470(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
+    void* obj = ext_006A5C62(0x28);
+
+    uint32_t result = 0;
+    if (obj != nullptr) {
+        void* init = ext_00609970(obj,
+                                  static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)),
+                                  a1, a2, a3);
+        result = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(init));
+    }
+
+    int32_t global = ext_00665870();
+    void* ctx = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(global)));
+    return ext_00666670(ctx, result);
+}
+} // namespace lift_0049CF60
+} // namespace lift_0060A470
+
+// [0x0060AFD0] sub_0060AFD0 (126 bytes)
+namespace lift_0060AFD0 {
+// @name sub_0060AFD0
+// @summary Auto-lifted identical-shape clone of 0x0049EE60 (ConstructAndRegister_0049EE60).
+namespace lift_0049EE60 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Called cdecl with one size argument (0x28) and its result is null-checked: allocation-style.
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x0049E930: sub_0049E930 (326 bytes)
+// Thiscall: ecx = obj, then 5 stack args (outer this, a1..a4).
+extern void* ext_0060ACD0(void* obj, void* outer, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4);
+// Known callee 0x00665870: sub_00665870 (Returns global int32 value from mem_00B59420.)
+extern int32_t ext_00665870(void);
+// Known callee 0x00666670: sub_00666670 (292 bytes)
+// Thiscall: ecx = int32 from ext_00665870, one stack arg (result of ext_0049E930 or null).
+extern void ext_00666670(int32_t self, void* result);
+// SEH scope table referenced by the prolog (push 0x008A7A5B).
+extern int mem_008A7A5B;
+
+// @name ConstructAndRegister_0049EE60
+// @summary Allocates a 0x28-byte object, constructs it via sub_0049E930 when allocation succeeds, then calls sub_00665870/sub_00666670 and returns the second argument.
+// Note: the SEH frame (fs:[0] push/restore and trylevel bookkeeping) is not reproduced; portable C++ has no equivalent.
+uint32_t fn_0060AFD0(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4) {
+    (void)&mem_008A7A5B;  // SEH scope table address from prolog; frame itself omitted.
+
+    void* obj = ext_006A5C62(0x28);
+    void* result = nullptr;
+    if (obj != nullptr) {
+        result = ext_0060ACD0(obj, self, a1, a2, a3, a4);
+    }
+
+    int32_t g = ext_00665870();
+    ext_00666670(g, result);
+    return a2;
+}
+} // namespace lift_0049EE60
+} // namespace lift_0060AFD0
+
+// [0x0060DB80] sub_0060DB80 (128 bytes)
+namespace lift_0060DB80 {
+// @name sub_0060DB80
+// @summary Auto-lifted identical-shape clone of 0x0041E4C0 (ClassFactory<CompoundSensor>::ctor).
+namespace lift_0041E4C0 {
+// Known callee 0x0041CDA0: ExprParser::GetTypeNameInto (Copy the type_info name of the global type object into dst via a temporary std::string, then return dst.)
+extern void* ext_0060C130(void* dst);
+// Callee 0x0040ECB0 (166 bytes, unnamed): thiscall on global 0xB5962C with one stack argument.
+extern void ext_0040ECB0(void* self, void* arg);
+extern int mem_00972468;
+extern int mem_00B5962C;
+// IAT slot for MSVCP80 ~basic_string; the destructor is implicit below (metadata reference only).
+extern int mem_00924FF4;
+
+// @name ClassFactory<CompoundSensor>::ctor
+// @class ClassFactory<CompoundSensor>
+// @summary Installs the factory vtable, zeroes its state fields, then writes the type name of the global type object to the stream at 0xB5962C; returns this.
+// @field ClassFactory<CompoundSensor> +0x00 uint32_t vptr
+// @field ClassFactory<CompoundSensor> +0x08 uint32_t field_0x08
+// @field ClassFactory<CompoundSensor> +0x0c uint32_t field_0x0c
+// @field ClassFactory<CompoundSensor> +0x10 uint32_t field_0x10
+// @field ClassFactory<CompoundSensor> +0x18 uint32_t field_0x18
+// @field ClassFactory<CompoundSensor> +0x1c uint32_t field_0x1c
+// @field ClassFactory<CompoundSensor> +0x20 uint32_t field_0x20
+void* fn_0060DB80(void* self) {
+    // Vtable pointer: the original stores the immediate VA of the vtable (mem_0092DF84).
+    lift_field<uint32_t>(self, 0x00) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00972468));
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0c) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1c) = 0;
+    lift_field<uint32_t>(self, 0x20) = 0;
+
+    // Temporary std::string filled by GetTypeNameInto; destroyed automatically at scope exit.
+    std::string name;
+    void* text = ext_0060C130(&name);
+    ext_0040ECB0(&mem_00B5962C, text);
+    (void)&mem_00924FF4;
+
+    return self;
+}
+} // namespace lift_0041E4C0
+} // namespace lift_0060DB80
+
+// [0x0060DDA0] sub_0060DDA0 (90 bytes)
+namespace lift_0060DDA0 {
+// @name sub_0060DDA0
+// @summary Auto-lifted identical-shape clone of 0x004C9860 (initStaticObjectOnce_004C9860).
+namespace lift_004C9860 {
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B47F60;
+// Static object (global) whose address is returned; also the `this` passed to ext_004C94E0.
+extern DWORD mem_00B47F3C;
+
+// __thiscall: ECX = &mem_00AE3D94, no stack arguments.
+extern void __thiscall ext_0060DB80(void* self);
+// __cdecl: one stack argument (0x00918AE0), caller pops.
+extern void ext_006A6C87(DWORD arg);
+
+// @name initStaticObjectOnce_004C9860
+// @summary One-time initializer for the static object at mem_00AE3D94: under a local SEH frame, runs ext_004C94E0 on the object and ext_006A6C87(0x918AE0) on first call, marks the guard bit, and returns the object's address.
+void* fn_0060DDA0() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler (0x0088BD3E), [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A883Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B47F60 & 1u) == 0) {
+        mem_00B47F60 |= 1u;
+        frame[2] = 0;
+        ext_0060DB80(&mem_00B47F3C);
+        ext_006A6C87(0x91E910u);
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B47F3C;
+}
+} // namespace lift_004C9860
+} // namespace lift_0060DDA0
+
+// [0x0060FA60] sub_0060FA60 (128 bytes)
+namespace lift_0060FA60 {
+// @name sub_0060FA60
+// @summary Auto-lifted identical-shape clone of 0x0041E4C0 (ClassFactory<CompoundSensor>::ctor).
+namespace lift_0041E4C0 {
+// Known callee 0x0041CDA0: ExprParser::GetTypeNameInto (Copy the type_info name of the global type object into dst via a temporary std::string, then return dst.)
+extern void* ext_0060E7E0(void* dst);
+// Callee 0x0040ECB0 (166 bytes, unnamed): thiscall on global 0xB5962C with one stack argument.
+extern void ext_0040ECB0(void* self, void* arg);
+extern int mem_00972AA4;
+extern int mem_00B5962C;
+// IAT slot for MSVCP80 ~basic_string; the destructor is implicit below (metadata reference only).
+extern int mem_00924FF4;
+
+// @name ClassFactory<CompoundSensor>::ctor
+// @class ClassFactory<CompoundSensor>
+// @summary Installs the factory vtable, zeroes its state fields, then writes the type name of the global type object to the stream at 0xB5962C; returns this.
+// @field ClassFactory<CompoundSensor> +0x00 uint32_t vptr
+// @field ClassFactory<CompoundSensor> +0x08 uint32_t field_0x08
+// @field ClassFactory<CompoundSensor> +0x0c uint32_t field_0x0c
+// @field ClassFactory<CompoundSensor> +0x10 uint32_t field_0x10
+// @field ClassFactory<CompoundSensor> +0x18 uint32_t field_0x18
+// @field ClassFactory<CompoundSensor> +0x1c uint32_t field_0x1c
+// @field ClassFactory<CompoundSensor> +0x20 uint32_t field_0x20
+void* fn_0060FA60(void* self) {
+    // Vtable pointer: the original stores the immediate VA of the vtable (mem_0092DF84).
+    lift_field<uint32_t>(self, 0x00) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00972AA4));
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0c) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1c) = 0;
+    lift_field<uint32_t>(self, 0x20) = 0;
+
+    // Temporary std::string filled by GetTypeNameInto; destroyed automatically at scope exit.
+    std::string name;
+    void* text = ext_0060E7E0(&name);
+    ext_0040ECB0(&mem_00B5962C, text);
+    (void)&mem_00924FF4;
+
+    return self;
+}
+} // namespace lift_0041E4C0
+} // namespace lift_0060FA60
+
+// [0x0060FEB0] sub_0060FEB0 (128 bytes)
+namespace lift_0060FEB0 {
+// @name sub_0060FEB0
+// @summary Auto-lifted identical-shape clone of 0x0041E4C0 (ClassFactory<CompoundSensor>::ctor).
+namespace lift_0041E4C0 {
+// Known callee 0x0041CDA0: ExprParser::GetTypeNameInto (Copy the type_info name of the global type object into dst via a temporary std::string, then return dst.)
+extern void* ext_0060E820(void* dst);
+// Callee 0x0040ECB0 (166 bytes, unnamed): thiscall on global 0xB5962C with one stack argument.
+extern void ext_0040ECB0(void* self, void* arg);
+extern int mem_00972CA4;
+extern int mem_00B5962C;
+// IAT slot for MSVCP80 ~basic_string; the destructor is implicit below (metadata reference only).
+extern int mem_00924FF4;
+
+// @name ClassFactory<CompoundSensor>::ctor
+// @class ClassFactory<CompoundSensor>
+// @summary Installs the factory vtable, zeroes its state fields, then writes the type name of the global type object to the stream at 0xB5962C; returns this.
+// @field ClassFactory<CompoundSensor> +0x00 uint32_t vptr
+// @field ClassFactory<CompoundSensor> +0x08 uint32_t field_0x08
+// @field ClassFactory<CompoundSensor> +0x0c uint32_t field_0x0c
+// @field ClassFactory<CompoundSensor> +0x10 uint32_t field_0x10
+// @field ClassFactory<CompoundSensor> +0x18 uint32_t field_0x18
+// @field ClassFactory<CompoundSensor> +0x1c uint32_t field_0x1c
+// @field ClassFactory<CompoundSensor> +0x20 uint32_t field_0x20
+void* fn_0060FEB0(void* self) {
+    // Vtable pointer: the original stores the immediate VA of the vtable (mem_0092DF84).
+    lift_field<uint32_t>(self, 0x00) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00972CA4));
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0c) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1c) = 0;
+    lift_field<uint32_t>(self, 0x20) = 0;
+
+    // Temporary std::string filled by GetTypeNameInto; destroyed automatically at scope exit.
+    std::string name;
+    void* text = ext_0060E820(&name);
+    ext_0040ECB0(&mem_00B5962C, text);
+    (void)&mem_00924FF4;
+
+    return self;
+}
+} // namespace lift_0041E4C0
+} // namespace lift_0060FEB0
+
+// [0x0060FF30] sub_0060FF30 (90 bytes)
+namespace lift_0060FF30 {
+// @name sub_0060FF30
+// @summary Auto-lifted identical-shape clone of 0x004C9860 (initStaticObjectOnce_004C9860).
+namespace lift_004C9860 {
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B485D8;
+// Static object (global) whose address is returned; also the `this` passed to ext_004C94E0.
+extern DWORD mem_00B485B4;
+
+// __thiscall: ECX = &mem_00AE3D94, no stack arguments.
+extern void __thiscall ext_0060FA60(void* self);
+// __cdecl: one stack argument (0x00918AE0), caller pops.
+extern void ext_006A6C87(DWORD arg);
+
+// @name initStaticObjectOnce_004C9860
+// @summary One-time initializer for the static object at mem_00AE3D94: under a local SEH frame, runs ext_004C94E0 on the object and ext_006A6C87(0x918AE0) on first call, marks the guard bit, and returns the object's address.
+void* fn_0060FF30() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler (0x0088BD3E), [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A8B8Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B485D8 & 1u) == 0) {
+        mem_00B485D8 |= 1u;
+        frame[2] = 0;
+        ext_0060FA60(&mem_00B485B4);
+        ext_006A6C87(0x91EA20u);
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B485B4;
+}
+} // namespace lift_004C9860
+} // namespace lift_0060FF30

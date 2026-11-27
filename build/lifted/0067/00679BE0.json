@@ -1,0 +1,13 @@
+{
+  "va": "0x00679BE0",
+  "size": 90,
+  "orig_symbol": "sub_00679BE0",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "sub_00679BE0",
+  "signature": "void* fn_00679BE0()",
+  "summary": "Auto-lifted identical-shape clone of 0x004C9860 (initStaticObjectOnce_004C9860).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:03:00Z"
+}

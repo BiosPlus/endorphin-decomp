@@ -1,0 +1,13 @@
+{
+  "va": "0x00517890",
+  "size": 126,
+  "orig_symbol": "sub_00517890",
+  "src_path": "src/leaf/decompiled_510000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_510000.cpp",
+  "name": "sub_00517890",
+  "signature": "uint32_t fn_00517890(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4)",
+  "summary": "Auto-lifted identical-shape clone of 0x0049EE60 (ConstructAndRegister_0049EE60).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:03:00Z"
+}

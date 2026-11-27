@@ -2782,6 +2782,12 @@
     "summary": "Installs the factory vtable, zeroes its state fields, then writes the type name of the global type object to the stream at 0xB5962C; returns this.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041E540": {
+    "name": "sub_0041E540",
+    "signature": "void* fn_0041E540()",
+    "summary": "Auto-lifted identical-shape clone of 0x004C9860 (initStaticObjectOnce_004C9860).",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041FC60": {
     "name": "HotkeyDialog::vfunc_0",
     "class": "HotkeyDialog",
@@ -4523,6 +4529,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00648ED0 (sub_00648ED0).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0043A7C0": {
+    "name": "sub_0043A7C0",
+    "class": "ClassFactory\u003cCompoundSensor\u003e",
+    "signature": "void* fn_0043A7C0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0041E4C0 (ClassFactory\u003cCompoundSensor\u003e::ctor).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043AAF0": {
     "name": "GetConstant_0043AAF0",
     "signature": "extern \"C\" const unsigned int* __cdecl fn_0043AAF0()",
@@ -4535,6 +4548,12 @@
     "signature": "extern \"C\" void fn_0043AB00(void)",
     "summary": "Pure jump thunk forwarding to GetConstant_0043AAF0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x0043AB10": {
+    "name": "sub_0043AB10",
+    "signature": "void* fn_0043AB10()",
+    "summary": "Auto-lifted identical-shape clone of 0x004C9860 (initStaticObjectOnce_004C9860).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
   "0x0043B380": {
     "name": "sub_0043B380",
@@ -10665,6 +10684,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls RuntimeEngine::vfunc_0.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00474EE0": {
+    "name": "sub_00474EE0",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void fn_00474EE0(void* self, DWORD arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004758A0 (SubObject_004758A0).",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00474FD0": {
     "name": "RuntimeEngine::vfunc_0",
     "class": "RuntimeEngine",
@@ -10705,6 +10731,20 @@
     "class": "\u003cClassName\u003e (optional)",
     "signature": "void fn_004758A0(void* self, DWORD arg)",
     "summary": "Forwards the stack argument by address to the sub-object at self+0x50 via sub_005A6300.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
+  "0x004758C0": {
+    "name": "sub_004758C0",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void fn_004758C0(void* self, DWORD arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004758A0 (SubObject_004758A0).",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
+  "0x004758E0": {
+    "name": "sub_004758E0",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void fn_004758E0(void* self, DWORD arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004758A0 (SubObject_004758A0).",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
   "0x00475A40": {
@@ -11541,6 +11581,18 @@
     "summary": "Clears self's pointer vector, reserves for src's element count, then appends each src element that dynamic-casts to the target type.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00484FB0": {
+    "name": "sub_00484FB0",
+    "signature": "static inline void invalid_parameter_noinfo()",
+    "summary": "Auto-lifted identical-shape clone of 0x00483800 (copyDynamicCastElements).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
+  "0x00485080": {
+    "name": "sub_00485080",
+    "signature": "static inline void invalid_parameter_noinfo()",
+    "summary": "Auto-lifted identical-shape clone of 0x00483800 (copyDynamicCastElements).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00485D80": {
     "name": "ResetCleanupPointers",
     "class": "\u003cClassName\u003e (optional)",
@@ -11717,6 +11769,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setStrengthFromFSM\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00487120": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseImport(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseImport(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "void fn_00487120(void* out, void* arg2, void* arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType\u003cDesiredPoseEventData, std::string const \u0026\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x004871E0": {
     "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setStrengthFromFSM\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType",
@@ -11724,11 +11783,25 @@
     "summary": "Evaluates an expression into a temporary std::string and passes it to NMData::DesiredPoseEventData::setStrengthFromFSM.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00487250": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setStrengthFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setStrengthFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "void fn_00487250(void* out, void* arg2, void* arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType\u003cDesiredPoseEventData, std::string const \u0026\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00487300": {
     "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setRootFromFSM\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType",
     "signature": "void __thiscall fn_00487300(uint32_t this_ptr, uint32_t arg0, uint32_t arg1)",
     "summary": "Evaluates an expression to a string and invokes DesiredPoseEventData::setRootFromFSM on the target object.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x00487370": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setRootFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setRootFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "void fn_00487370(void* out, void* arg2, void* arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType\u003cDesiredPoseEventData, std::string const \u0026\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x00487420": {
@@ -12299,6 +12372,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setStrengthFromFSM\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0048B7E0": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::addJointWithChildren(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::addJointWithChildren(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "void fn_0048B7E0(void* out, void* arg2, void* arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType\u003cDesiredPoseEventData, std::string const \u0026\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0048BB60": {
     "name": "sub_0048BB60",
     "class": "UnknownClass",
@@ -12325,6 +12405,13 @@
     "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
     "signature": "extern void __fastcall fn_0048BD50(void* self, void* edx, void* arg1, void* arg2)",
     "summary": "Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setStrengthFromFSM\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0048BDC0": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "void fn_0048BDC0(void* out, void* arg2, void* arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType\u003cDesiredPoseEventData, std::string const \u0026\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x0048C120": {
@@ -16784,6 +16871,20 @@
     "summary": "Reads the wrapped GraphEntryData's active flag into a temporary, assigns it to this value, then forwards to the object's vfunc at slot 0x44 with (self, out).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B1670": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, \u0026public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0\u003e::vfunc_45",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, \u0026public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0\u003e",
+    "signature": "inline void* vcall1(void* obj, std::size_t slot, void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B15C0 (ExprParser::ReadMethodType\u003cGraphEntryData,bool,isActive\u003e::vfunc_44).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004B1720": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, \u0026public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0\u003e::vfunc_46",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, \u0026public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0\u003e",
+    "signature": "inline void* vcall1(void* obj, std::size_t slot, void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B15C0 (ExprParser::ReadMethodType\u003cGraphEntryData,bool,isActive\u003e::vfunc_44).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B1880": {
     "name": "initStaticObjectOnce_004B1880",
     "signature": "void* fn_004B1880(void)",
@@ -18043,6 +18144,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B1510 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData,bool,isActive\u003e::vfunc_43).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B8610": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, bool, \u0026public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0\u003e::vfunc_46",
+    "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, bool, \u0026public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0\u003e",
+    "signature": "inline void* vcall1(void* obj, std::size_t slot, void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B15C0 (ExprParser::ReadMethodType\u003cGraphEntryData,bool,isActive\u003e::vfunc_44).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B86C0": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData\u003e::vfunc_40",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitLength(void) const, float, \u0026public: void __thiscall NMData::EngineData::setUnitLength(float)\u003e",
@@ -18202,6 +18310,20 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, bool, \u0026public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0\u003e",
     "signature": "bool fn_004B90D0(void** holder)",
     "summary": "Auto-lifted identical-shape clone of 0x004EA9D0 (ExprParser::ReadMethodType\u003cPoseToolOptions\u003e::isCollisionEnabled_vfunc_2).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004B9110": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, bool, \u0026public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0\u003e::vfunc_44",
+    "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, bool, \u0026public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0\u003e",
+    "signature": "inline void* vcall1(void* obj, std::size_t slot, void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B15C0 (ExprParser::ReadMethodType\u003cGraphEntryData,bool,isActive\u003e::vfunc_44).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004B91C0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, bool, \u0026public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0\u003e::vfunc_45",
+    "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, bool, \u0026public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0\u003e",
+    "signature": "inline void* vcall1(void* obj, std::size_t slot, void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B15C0 (ExprParser::ReadMethodType\u003cGraphEntryData,bool,isActive\u003e::vfunc_44).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004B9320": {
@@ -19819,6 +19941,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setStrengthFromFSM\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x004CA4B0": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::addMetaBodyFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::addMetaBodyFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "void fn_004CA4B0(void* out, void* arg2, void* arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType\u003cDesiredPoseEventData, std::string const \u0026\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x004CA560": {
     "name": "sub_004CA560",
     "signature": "extern \"C\" void __fastcall fn_004CA560(void* self)",
@@ -19865,6 +19994,13 @@
     "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setLockTypeString(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
     "signature": "extern void __fastcall fn_004CA8D0(void* self, void* edx, void* arg1, void* arg2)",
     "summary": "Auto-lifted identical-shape clone of 0x004871E0 (ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::string const \u0026, setStrengthFromFSM\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x004CA940": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setLockTypeString(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setLockTypeString(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "void fn_004CA940(void* out, void* arg2, void* arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType\u003cDesiredPoseEventData, std::string const \u0026\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x004CA9F0": {
@@ -23925,6 +24061,13 @@
     "summary": "Vfunc 5: throws an ExceptionWithMessage; if the held object pointer is non-null, first throws a default-message exception using the byte at object+0x05.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004EA100": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0\u003e::vfunc_46",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0\u003e",
+    "signature": "inline void* vcall1(void* obj, std::size_t slot, void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B15C0 (ExprParser::ReadMethodType\u003cGraphEntryData,bool,isActive\u003e::vfunc_44).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004EA260": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, bool, \u0026public: void __thiscall NMData::PoseToolOptions::setGravityEnabled(bool)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, bool, \u0026public: void __thiscall NMData::PoseToolOptions::setGravityEnabled(bool)\u003e",
@@ -24037,6 +24180,27 @@
     "summary": "Reads the wrapped object's byte at +0x04 (if the pointer is non-null) and then throws a DerivedException.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004EA7C0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0\u003e::vfunc_44",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0\u003e",
+    "signature": "inline void* vcall1(void* obj, std::size_t slot, void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B15C0 (ExprParser::ReadMethodType\u003cGraphEntryData,bool,isActive\u003e::vfunc_44).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004EA870": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0\u003e::vfunc_45",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0\u003e",
+    "signature": "inline void* vcall1(void* obj, std::size_t slot, void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B15C0 (ExprParser::ReadMethodType\u003cGraphEntryData,bool,isActive\u003e::vfunc_44).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004EA920": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0\u003e::vfunc_46",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0\u003e",
+    "signature": "inline void* vcall1(void* obj, std::size_t slot, void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B15C0 (ExprParser::ReadMethodType\u003cGraphEntryData,bool,isActive\u003e::vfunc_44).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004EA9D0": {
     "name": "ExprParser::ReadMethodType\u003cPoseToolOptions\u003e::isCollisionEnabled_vfunc_2",
     "class": "NMData::PoseToolOptions",
@@ -24063,6 +24227,20 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0\u003e",
     "signature": "void* fn_004EAB40(void* self, void* arg2)",
     "summary": "Auto-lifted identical-shape clone of 0x004B1510 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData,bool,isActive\u003e::vfunc_43).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004EABF0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0\u003e::vfunc_44",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0\u003e",
+    "signature": "inline void* vcall1(void* obj, std::size_t slot, void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B15C0 (ExprParser::ReadMethodType\u003cGraphEntryData,bool,isActive\u003e::vfunc_44).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004EACA0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0\u003e::vfunc_45",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0\u003e",
+    "signature": "inline void* vcall1(void* obj, std::size_t slot, void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B15C0 (ExprParser::ReadMethodType\u003cGraphEntryData,bool,isActive\u003e::vfunc_44).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004EAD50": {
@@ -24093,6 +24271,27 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B1510 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData,bool,isActive\u003e::vfunc_43).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004EAF70": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0\u003e::vfunc_44",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0\u003e",
+    "signature": "inline void* vcall1(void* obj, std::size_t slot, void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B15C0 (ExprParser::ReadMethodType\u003cGraphEntryData,bool,isActive\u003e::vfunc_44).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004EB020": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0\u003e::vfunc_45",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0\u003e",
+    "signature": "inline void* vcall1(void* obj, std::size_t slot, void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B15C0 (ExprParser::ReadMethodType\u003cGraphEntryData,bool,isActive\u003e::vfunc_44).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004EB0D0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0\u003e::vfunc_46",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0\u003e",
+    "signature": "inline void* vcall1(void* obj, std::size_t slot, void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B15C0 (ExprParser::ReadMethodType\u003cGraphEntryData,bool,isActive\u003e::vfunc_44).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004EB230": {
     "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions\u003e::vfunc_3 (NMData::PoseToolOptions::isProjectRootEnabled)",
     "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0\u003e",
@@ -24105,6 +24304,27 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0\u003e",
     "signature": "void fn_004EB260(void* slot)",
     "summary": "Reads the pointer held in *slot; if non-null, reports its +0x09 byte via ext_0046C4E0, then always throws a fixed DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004EB340": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0\u003e::vfunc_44",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0\u003e",
+    "signature": "inline void* vcall1(void* obj, std::size_t slot, void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B15C0 (ExprParser::ReadMethodType\u003cGraphEntryData,bool,isActive\u003e::vfunc_44).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004EB3F0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0\u003e::vfunc_45",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0\u003e",
+    "signature": "inline void* vcall1(void* obj, std::size_t slot, void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B15C0 (ExprParser::ReadMethodType\u003cGraphEntryData,bool,isActive\u003e::vfunc_44).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004EB4A0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0\u003e::vfunc_46",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0\u003e",
+    "signature": "inline void* vcall1(void* obj, std::size_t slot, void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B15C0 (ExprParser::ReadMethodType\u003cGraphEntryData,bool,isActive\u003e::vfunc_44).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004EB9B0": {
@@ -25965,6 +26185,174 @@
     "class": "VMCSModes::DefaultImplementation",
     "signature": "uint32_t fn_004FADD0(void* self)",
     "summary": "Calls ext_004667A0(this-\u003e+0x4, 3), then tail-dispatches vtable slot 17 (+0x44) of the object at this-\u003e+0x4-\u003e+0xC with that object as 'this'.",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FADF0": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_19",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uint32_t fn_004FADF0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADD0 (VMCSModes::DefaultImplementation::vfunc_17).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FAE10": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_20",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uint32_t fn_004FAE10(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADD0 (VMCSModes::DefaultImplementation::vfunc_17).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FAE30": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_21",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uint32_t fn_004FAE30(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADD0 (VMCSModes::DefaultImplementation::vfunc_17).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FAE50": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_15",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uint32_t fn_004FAE50(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADD0 (VMCSModes::DefaultImplementation::vfunc_17).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FAEA0": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_43",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uint32_t fn_004FAEA0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADD0 (VMCSModes::DefaultImplementation::vfunc_17).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FAF50": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_25",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uint32_t fn_004FAF50(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADD0 (VMCSModes::DefaultImplementation::vfunc_17).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FAF70": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_26",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uint32_t fn_004FAF70(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADD0 (VMCSModes::DefaultImplementation::vfunc_17).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FAFB0": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_110",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uint32_t fn_004FAFB0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADD0 (VMCSModes::DefaultImplementation::vfunc_17).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FAFD0": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_111",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uint32_t fn_004FAFD0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADD0 (VMCSModes::DefaultImplementation::vfunc_17).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FAFF0": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_112",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uint32_t fn_004FAFF0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADD0 (VMCSModes::DefaultImplementation::vfunc_17).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FB010": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_113",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uint32_t fn_004FB010(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADD0 (VMCSModes::DefaultImplementation::vfunc_17).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FB3E0": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_118",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uint32_t fn_004FB3E0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADD0 (VMCSModes::DefaultImplementation::vfunc_17).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FB420": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_114",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uintptr_t fn_004FB420(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADB0 (VMCSModes::DefaultImplementation::vfunc_14).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FB440": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_115",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uintptr_t fn_004FB440(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADB0 (VMCSModes::DefaultImplementation::vfunc_14).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FB460": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_116",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uintptr_t fn_004FB460(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADB0 (VMCSModes::DefaultImplementation::vfunc_14).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FB480": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_117",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uintptr_t fn_004FB480(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADB0 (VMCSModes::DefaultImplementation::vfunc_14).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FB4A0": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_121",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uintptr_t fn_004FB4A0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADB0 (VMCSModes::DefaultImplementation::vfunc_14).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FB4C0": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_122",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uintptr_t fn_004FB4C0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADB0 (VMCSModes::DefaultImplementation::vfunc_14).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FB4E0": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_123",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uintptr_t fn_004FB4E0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADB0 (VMCSModes::DefaultImplementation::vfunc_14).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FB500": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_124",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uintptr_t fn_004FB500(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADB0 (VMCSModes::DefaultImplementation::vfunc_14).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FB5E0": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_129",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uint32_t fn_004FB5E0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADD0 (VMCSModes::DefaultImplementation::vfunc_17).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FB600": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_130",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uintptr_t fn_004FB600(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADB0 (VMCSModes::DefaultImplementation::vfunc_14).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FB620": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_131",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uint32_t fn_004FB620(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADD0 (VMCSModes::DefaultImplementation::vfunc_17).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FB640": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_120",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uint32_t fn_004FB640(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004FADD0 (VMCSModes::DefaultImplementation::vfunc_17).",
     "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
   },
   "0x004FD800": {
@@ -29120,6 +29508,12 @@
     "summary": "One-time initializer for global string object 0x00AEC0A8; sets guard bit 0 of 0x00AEC0C4, builds the string, registers a cleanup routine, and returns the string's address.",
     "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
+  "0x00516FF0": {
+    "name": "sub_00516FF0",
+    "signature": "uint32_t fn_00516FF0(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049CF60 (NewAndInitDynCastObject).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x00517070": {
     "name": "InitOnceGlobalStringCopy_00517070",
     "signature": "void* fn_00517070(void* dst)",
@@ -29180,6 +29574,12 @@
     "signature": "void fn_00517510(void* self, void* arg)",
     "summary": "Forwards its argument to CallSlot3OnEachEntry (0x005170D0) on this, then calls 0x00678D70 on this with flag 1.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
+  "0x00517890": {
+    "name": "sub_00517890",
+    "signature": "uint32_t fn_00517890(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049EE60 (ConstructAndRegister_0049EE60).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
   "0x00517910": {
     "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::AddElementCommand::vfunc_2",
@@ -29779,6 +30179,13 @@
     "summary": "Range-checks field_0x30 against field_0x34 (calling the invalid-parameter handler if it exceeds it), then stores the address of this+0x2C at this+0x5C and copies field_0x30 into field_0x60.",
     "lifted_path": "lifted/NMData/QuatChannel.cpp"
   },
+  "0x0051C980": {
+    "name": "sub_0051C980",
+    "class": "ClassFactory\u003cCompoundSensor\u003e",
+    "signature": "void* fn_0051C980(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0041E4C0 (ClassFactory\u003cCompoundSensor\u003e::ctor).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x0051CCC0": {
     "name": "Unknown::InitDefaultsFloatMax",
     "class": "Unknown",
@@ -29806,6 +30213,12 @@
     "signature": "uint32_t __thiscall fn_0051D8C0(uint32_t self, uint32_t arg1, uint32_t arg2)",
     "summary": "Calls ext_0051AE40 with this, arg1 and a zero word, then returns arg1 unchanged.",
     "lifted_path": "lifted/NMData/QuatChannel.cpp"
+  },
+  "0x0051D8E0": {
+    "name": "sub_0051D8E0",
+    "signature": "void* fn_0051D8E0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004C9860 (initStaticObjectOnce_004C9860).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
   "0x0051DDB0": {
     "name": "Unknown::linkBackPointerAtField0xBC",
@@ -41441,6 +41854,13 @@
     "summary": "Recursively releases a sibling chain: for each node, releases its child chain, destroys its string member, and invokes the cleanup thunk.",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005AED40": {
+    "name": "sub_005AED40",
+    "class": "SubObject",
+    "signature": "void fn_005AED40(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0048AFE0 (ResetSubObjectLinks_0048AFE0).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005AFAF0": {
     "name": "sub_005AFAF0",
     "class": "UnknownClass",
@@ -47473,6 +47893,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004EA3D0 (ExceptionWithMessage::throw_004EA3D0).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D28C0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, bool, \u0026public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0\u003e::vfunc_44",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, bool, \u0026public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0\u003e",
+    "signature": "inline void* vcall1(void* obj, std::size_t slot, void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B15C0 (ExprParser::ReadMethodType\u003cGraphEntryData,bool,isActive\u003e::vfunc_44).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D2970": {
     "name": "ReadWriteMethodType_VideoPlaneData_XScale_vfunc_40",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, float, \u0026public: void __thiscall NMData::VideoPlaneData::setXScale(float)\u003e",
@@ -48430,6 +48857,20 @@
     "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, bool, \u0026public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0\u003e",
     "signature": "void* fn_005D6CE0(void* self, void* arg2)",
     "summary": "Auto-lifted identical-shape clone of 0x004B1510 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData,bool,isActive\u003e::vfunc_43).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005D6D90": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, bool, \u0026public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0\u003e::vfunc_45",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, bool, \u0026public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0\u003e",
+    "signature": "inline void* vcall1(void* obj, std::size_t slot, void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B15C0 (ExprParser::ReadMethodType\u003cGraphEntryData,bool,isActive\u003e::vfunc_44).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005D6E40": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, bool, \u0026public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0\u003e::vfunc_46",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, bool, \u0026public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0\u003e",
+    "signature": "inline void* vcall1(void* obj, std::size_t slot, void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x004B15C0 (ExprParser::ReadMethodType\u003cGraphEntryData,bool,isActive\u003e::vfunc_44).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x005D6FA0": {
@@ -55259,6 +55700,20 @@
     "summary": "Converts an expression value to std::string via ext_0046E780, passes it to EffectorBase virtual slot 16, and destroys the temporary string.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00604A40": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorBase, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{64, {flat}}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cEffectorBase, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{64, {flat}}\u003e",
+    "signature": "void fn_00604A40(void* out, void* arg2, void* arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType\u003cDesiredPoseEventData, std::string const \u0026\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x00604AF0": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorBase, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{60, {flat}}\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cEffectorBase, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{60, {flat}}\u003e",
+    "signature": "void fn_00604AF0(void* out, void* arg2, void* arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType\u003cDesiredPoseEventData, std::string const \u0026\u003e::vfunc_48).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00604BA0": {
     "name": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}\u003e",
@@ -55978,6 +56433,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006080D0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006082D0": {
+    "name": "sub_006082D0",
+    "class": "ClassFactory\u003cCompoundSensor\u003e",
+    "signature": "void* fn_006082D0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0041E4C0 (ClassFactory\u003cCompoundSensor\u003e::ctor).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x00608350": {
     "name": "Unknown::ctor_00608350",
     "class": "Unknown",
@@ -56088,6 +56550,12 @@
     "class": "Unknown",
     "signature": "extern void fn_00609090(uint32_t this_ptr, uint32_t arg0)",
     "summary": "Auto-lifted identical-shape clone of 0x0048C1A0 (InvokeWithStaticInitAndStringArg).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00609110": {
+    "name": "sub_00609110",
+    "signature": "void* fn_00609110()",
+    "summary": "Auto-lifted identical-shape clone of 0x004C9860 (initStaticObjectOnce_004C9860).",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
   "0x006093C0": {
@@ -56302,6 +56770,12 @@
     "summary": "Sorts three slots holding StringPairKey object pointers ascending in place (3-element sorting network: a/b, b/c, a/b) using StringPairKey::operator\u003c.",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x0060A470": {
+    "name": "sub_0060A470",
+    "signature": "uint32_t fn_0060A470(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049CF60 (NewAndInitDynCastObject).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060A4F0": {
     "name": "CopyOnceInitString_0060A4F0",
     "signature": "void* fn_0060A4F0(void* dst)",
@@ -56326,6 +56800,12 @@
     "name": "sub_0060AF10",
     "signature": "void fn_0060AF10(uint32_t* first, uint32_t* last, uint32_t pred)",
     "summary": "Auto-lifted identical-shape clone of 0x005190B0 (sub_005190B0).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x0060AFD0": {
+    "name": "sub_0060AFD0",
+    "signature": "uint32_t fn_0060AFD0(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049EE60 (ConstructAndRegister_0049EE60).",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
   "0x0060B240": {
@@ -56616,6 +57096,19 @@
     "summary": "Scalar deleting destructor: releases the array at +0x44, runs the base-construct/teardown helper on self, then frees self when bit 0 of the flags argument is set; returns self.",
     "lifted_path": "lifted/NMData/EffectorGroupData.cpp"
   },
+  "0x0060DB80": {
+    "name": "sub_0060DB80",
+    "class": "ClassFactory\u003cCompoundSensor\u003e",
+    "signature": "void* fn_0060DB80(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0041E4C0 (ClassFactory\u003cCompoundSensor\u003e::ctor).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x0060DDA0": {
+    "name": "sub_0060DDA0",
+    "signature": "void* fn_0060DDA0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004C9860 (initStaticObjectOnce_004C9860).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060E7B0": {
     "name": "NMData::AxisDefineSensorData::vfunc_2",
     "class": "NMData::AxisDefineSensorData",
@@ -56691,6 +57184,13 @@
     "summary": "Passes a stack-slot value (ebp-0x18) to a release helper, then throws with two null arguments.",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x0060FA60": {
+    "name": "sub_0060FA60",
+    "class": "ClassFactory\u003cCompoundSensor\u003e",
+    "signature": "void* fn_0060FA60(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0041E4C0 (ClassFactory\u003cCompoundSensor\u003e::ctor).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060FB60": {
     "name": "NMData::AxisDefineSensorData::vfunc_1_off_C",
     "class": "NMData::AxisDefineSensorData",
@@ -56704,6 +57204,25 @@
     "signature": "extern \"C\" void* __fastcall fn_0060FE90(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0060FBE0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x0060FEB0": {
+    "name": "sub_0060FEB0",
+    "class": "ClassFactory\u003cCompoundSensor\u003e",
+    "signature": "void* fn_0060FEB0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0041E4C0 (ClassFactory\u003cCompoundSensor\u003e::ctor).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x0060FF30": {
+    "name": "sub_0060FF30",
+    "signature": "void* fn_0060FF30()",
+    "summary": "Auto-lifted identical-shape clone of 0x004C9860 (initStaticObjectOnce_004C9860).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x00610480": {
+    "name": "sub_00610480",
+    "signature": "void* fn_00610480()",
+    "summary": "Auto-lifted identical-shape clone of 0x004C9860 (initStaticObjectOnce_004C9860).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
   },
   "0x00610780": {
     "name": "NMData::MetaBodySensorData::vfunc_8",
@@ -72428,6 +72947,20 @@
     "summary": "Returns 1 if two {begin,end} DWORD-pair ranges have the same element count and every 8-byte pair in range a matches the same-offset pair in range b (via compareDwordPairRange); otherwise 0. Invokes the invalid-parameter handler on inconsistent bounds but continues.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x00676C70": {
+    "name": "sub_00676C70",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void fn_00676C70(void* self, DWORD arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004758A0 (SubObject_004758A0).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
+  "0x00678110": {
+    "name": "sub_00678110",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void fn_00678110(void* self, DWORD arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x004758A0 (SubObject_004758A0).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00678170": {
     "name": "ConvertAngleUnits",
     "class": "\u003cunknown\u003e",
@@ -72567,6 +73100,12 @@
     "signature": "extern \"C\" void __fastcall fn_00679A50(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0x0 and tail-calls sub_00679990.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
+  "0x00679BE0": {
+    "name": "sub_00679BE0",
+    "signature": "void* fn_00679BE0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004C9860 (initStaticObjectOnce_004C9860).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x00679EB0": {
     "name": "lowerBoundByStringField10",
@@ -75511,6 +76050,12 @@
     "class": "Unknown",
     "signature": "static inline StrAssignFn  slot_assign()",
     "summary": "Copies table string g_table[idx] into this-\u003estr, replaces the first \"%e\" with arg1's string at +0x04 and the first \"%s\" with arg3, then copies arg1's +0x50/+0x54/+0x58 dwords into this+0x30/+0x28/+0x2c.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
+  "0x00697EE0": {
+    "name": "sub_00697EE0",
+    "signature": "void* fn_00697EE0()",
+    "summary": "Auto-lifted identical-shape clone of 0x004C9860 (initStaticObjectOnce_004C9860).",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
   "0x006981A0": {

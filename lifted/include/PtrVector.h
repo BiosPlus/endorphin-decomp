@@ -8,7 +8,7 @@
 // Recovered field layout for PtrVector:
 namespace lifted_layout {
 struct PtrVector_Fields {
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00483800)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x00483800)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00483800, 0x00484FB0, 0x00485080)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00483800, 0x00484FB0, 0x00485080)
 };
 } // namespace lifted_layout

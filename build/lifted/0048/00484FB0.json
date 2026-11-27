@@ -1,0 +1,27 @@
+{
+  "va": "0x00484FB0",
+  "size": 194,
+  "orig_symbol": "sub_00484FB0",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "sub_00484FB0",
+  "signature": "static inline void invalid_parameter_noinfo()",
+  "summary": "Auto-lifted identical-shape clone of 0x00483800 (copyDynamicCastElements).",
+  "fields": [
+    {
+      "class": "PtrVector",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "PtrVector",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:03:00Z"
+}

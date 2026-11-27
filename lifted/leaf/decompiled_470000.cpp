@@ -1735,3 +1735,63 @@ void fn_00475B90(void* self, const char* name) {
     ext_00475960();
 }
 } // namespace lift_00475B90
+
+// [0x00474EE0] sub_00474EE0 (24 bytes)
+namespace lift_00474EE0 {
+// @name sub_00474EE0
+// @summary Auto-lifted identical-shape clone of 0x004758A0 (SubObject_004758A0).
+namespace lift_004758A0 {
+// Callee 0x005A6300 (sub_005A6300): thiscall, ECX = sub-object, one stack arg = pointer to value.
+extern void ext_00451670(void* self, DWORD* value);
+
+// @name SubObject_004758A0
+// @class <ClassName> (optional)
+// @summary Forwards the stack argument by address to the sub-object at self+0x50 via sub_005A6300.
+// @field Unknown +0x50 <opaque subobject> field_0x50
+void fn_00474EE0(void* self, DWORD arg) {
+    DWORD value = arg;
+    void* sub = static_cast<uint8_t*>(self) + 0x74;
+    ext_00451670(sub, &value);
+}
+} // namespace lift_004758A0
+} // namespace lift_00474EE0
+
+// [0x004758C0] sub_004758C0 (24 bytes)
+namespace lift_004758C0 {
+// @name sub_004758C0
+// @summary Auto-lifted identical-shape clone of 0x004758A0 (SubObject_004758A0).
+namespace lift_004758A0 {
+// Callee 0x005A6300 (sub_005A6300): thiscall, ECX = sub-object, one stack arg = pointer to value.
+extern void ext_005A6300(void* self, DWORD* value);
+
+// @name SubObject_004758A0
+// @class <ClassName> (optional)
+// @summary Forwards the stack argument by address to the sub-object at self+0x50 via sub_005A6300.
+// @field Unknown +0x50 <opaque subobject> field_0x50
+void fn_004758C0(void* self, DWORD arg) {
+    DWORD value = arg;
+    void* sub = static_cast<uint8_t*>(self) + 0x74;
+    ext_005A6300(sub, &value);
+}
+} // namespace lift_004758A0
+} // namespace lift_004758C0
+
+// [0x004758E0] sub_004758E0 (27 bytes)
+namespace lift_004758E0 {
+// @name sub_004758E0
+// @summary Auto-lifted identical-shape clone of 0x004758A0 (SubObject_004758A0).
+namespace lift_004758A0 {
+// Callee 0x005A6300 (sub_005A6300): thiscall, ECX = sub-object, one stack arg = pointer to value.
+extern void ext_005A6300(void* self, DWORD* value);
+
+// @name SubObject_004758A0
+// @class <ClassName> (optional)
+// @summary Forwards the stack argument by address to the sub-object at self+0x50 via sub_005A6300.
+// @field Unknown +0x50 <opaque subobject> field_0x50
+void fn_004758E0(void* self, DWORD arg) {
+    DWORD value = arg;
+    void* sub = static_cast<uint8_t*>(self) + 0x98;
+    ext_005A6300(sub, &value);
+}
+} // namespace lift_004758A0
+} // namespace lift_004758E0

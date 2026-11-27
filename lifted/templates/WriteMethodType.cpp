@@ -10105,3 +10105,473 @@ void fn_00487000(void* out, void* arg2, void* arg3) {
     lift_field<uint32_t>(out, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(objAfter));
 }
 } // namespace lift_00487000
+
+// [0x00487120] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseImport(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_48 (162 bytes)
+namespace lift_00487120 {
+// @name ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseImport(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseImport(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType<DesiredPoseEventData, std::string const &>::vfunc_48).
+namespace lift_00487000 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2, uint32_t a3);
+// Known callee 0x00486AF0: sub_00486AF0 (auto-lifted clone of 0x00402050, AnimatableTransform::vfunc_37).
+extern uint32_t ext_00486B10(void* self);
+// IAT slot 0x00924FF4: MSVCP80 std::basic_string<char>::~basic_string, applied to the local temporary.
+extern int mem_00924FF4;
+
+// @name WriteMethodType<DesiredPoseEventData, std::string const &>::vfunc_48
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Writes a 2-dword result {value, object} to the out-pointer; value comes from a virtual call (slot 0x70) on arg3's +0x04 object, or 0 if that object is null.
+// @field ExprParser::WriteMethodType +0x00 void* field_0x00
+// @field ExprParser::WriteMethodType +0x04 void* field_0x04
+void fn_00487120(void* out, void* arg2, void* arg3) {
+    // Temporary std::string (only its address is passed to the callee).
+    uint32_t tmpString[8] = {0};
+
+    void* obj = lift_field<void*>(arg3, 0x04);
+    ext_0046E780(obj,
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&tmpString[0])),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg3)),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg2)));
+
+    void* inner = lift_field<void*>(arg2, 0x00);
+    ext_00486B10(inner);
+
+    // Destructor of the temporary string via IAT slot; no-op in the lifted model.
+    (void)&mem_00924FF4;
+
+    uint32_t slot = 0;
+    uint32_t* result = &slot;
+    obj = lift_field<void*>(arg3, 0x04);
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        using VSlot = uint32_t* (*)(void* self, uint32_t* outSlot, void* arg);
+        VSlot target = reinterpret_cast<VSlot>(lift_field<void*>(vtbl, 0x70));
+        result = target(obj, &slot, arg3);
+    }
+
+    uint32_t value = *result;
+    void* objAfter = lift_field<void*>(arg3, 0x04);
+    lift_field<uint32_t>(out, 0x00) = value;
+    lift_field<uint32_t>(out, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(objAfter));
+}
+} // namespace lift_00487000
+} // namespace lift_00487120
+
+// [0x00487250] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setStrengthFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_48 (162 bytes)
+namespace lift_00487250 {
+// @name ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setStrengthFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setStrengthFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType<DesiredPoseEventData, std::string const &>::vfunc_48).
+namespace lift_00487000 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2, uint32_t a3);
+// Known callee 0x00486AF0: sub_00486AF0 (auto-lifted clone of 0x00402050, AnimatableTransform::vfunc_37).
+extern uint32_t ext_004C6F50(void* self);
+// IAT slot 0x00924FF4: MSVCP80 std::basic_string<char>::~basic_string, applied to the local temporary.
+extern int mem_00924FF4;
+
+// @name WriteMethodType<DesiredPoseEventData, std::string const &>::vfunc_48
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Writes a 2-dword result {value, object} to the out-pointer; value comes from a virtual call (slot 0x70) on arg3's +0x04 object, or 0 if that object is null.
+// @field ExprParser::WriteMethodType +0x00 void* field_0x00
+// @field ExprParser::WriteMethodType +0x04 void* field_0x04
+void fn_00487250(void* out, void* arg2, void* arg3) {
+    // Temporary std::string (only its address is passed to the callee).
+    uint32_t tmpString[8] = {0};
+
+    void* obj = lift_field<void*>(arg3, 0x04);
+    ext_0046E780(obj,
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&tmpString[0])),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg3)),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg2)));
+
+    void* inner = lift_field<void*>(arg2, 0x00);
+    ext_004C6F50(inner);
+
+    // Destructor of the temporary string via IAT slot; no-op in the lifted model.
+    (void)&mem_00924FF4;
+
+    uint32_t slot = 0;
+    uint32_t* result = &slot;
+    obj = lift_field<void*>(arg3, 0x04);
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        using VSlot = uint32_t* (*)(void* self, uint32_t* outSlot, void* arg);
+        VSlot target = reinterpret_cast<VSlot>(lift_field<void*>(vtbl, 0x70));
+        result = target(obj, &slot, arg3);
+    }
+
+    uint32_t value = *result;
+    void* objAfter = lift_field<void*>(arg3, 0x04);
+    lift_field<uint32_t>(out, 0x00) = value;
+    lift_field<uint32_t>(out, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(objAfter));
+}
+} // namespace lift_00487000
+} // namespace lift_00487250
+
+// [0x00487370] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setRootFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_48 (162 bytes)
+namespace lift_00487370 {
+extern void ext_00402040(void* self, DWORD arg);
+
+// @name ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setRootFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setRootFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType<DesiredPoseEventData, std::string const &>::vfunc_48).
+namespace lift_00487000 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2, uint32_t a3);
+// Known callee 0x00486AF0: sub_00486AF0 (auto-lifted clone of 0x00402050, AnimatableTransform::vfunc_37).
+extern uint32_t ext_00402040(void* self);
+// IAT slot 0x00924FF4: MSVCP80 std::basic_string<char>::~basic_string, applied to the local temporary.
+extern int mem_00924FF4;
+
+// @name WriteMethodType<DesiredPoseEventData, std::string const &>::vfunc_48
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Writes a 2-dword result {value, object} to the out-pointer; value comes from a virtual call (slot 0x70) on arg3's +0x04 object, or 0 if that object is null.
+// @field ExprParser::WriteMethodType +0x00 void* field_0x00
+// @field ExprParser::WriteMethodType +0x04 void* field_0x04
+void fn_00487370(void* out, void* arg2, void* arg3) {
+    // Temporary std::string (only its address is passed to the callee).
+    uint32_t tmpString[8] = {0};
+
+    void* obj = lift_field<void*>(arg3, 0x04);
+    ext_0046E780(obj,
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&tmpString[0])),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg3)),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg2)));
+
+    void* inner = lift_field<void*>(arg2, 0x00);
+    ext_00402040(inner);
+
+    // Destructor of the temporary string via IAT slot; no-op in the lifted model.
+    (void)&mem_00924FF4;
+
+    uint32_t slot = 0;
+    uint32_t* result = &slot;
+    obj = lift_field<void*>(arg3, 0x04);
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        using VSlot = uint32_t* (*)(void* self, uint32_t* outSlot, void* arg);
+        VSlot target = reinterpret_cast<VSlot>(lift_field<void*>(vtbl, 0x70));
+        result = target(obj, &slot, arg3);
+    }
+
+    uint32_t value = *result;
+    void* objAfter = lift_field<void*>(arg3, 0x04);
+    lift_field<uint32_t>(out, 0x00) = value;
+    lift_field<uint32_t>(out, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(objAfter));
+}
+} // namespace lift_00487000
+} // namespace lift_00487370
+
+// [0x0048B7E0] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::addJointWithChildren(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_48 (162 bytes)
+namespace lift_0048B7E0 {
+// @name ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::addJointWithChildren(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::addJointWithChildren(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType<DesiredPoseEventData, std::string const &>::vfunc_48).
+namespace lift_00487000 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2, uint32_t a3);
+// Known callee 0x00486AF0: sub_00486AF0 (auto-lifted clone of 0x00402050, AnimatableTransform::vfunc_37).
+extern uint32_t ext_0048B2A0(void* self);
+// IAT slot 0x00924FF4: MSVCP80 std::basic_string<char>::~basic_string, applied to the local temporary.
+extern int mem_00924FF4;
+
+// @name WriteMethodType<DesiredPoseEventData, std::string const &>::vfunc_48
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Writes a 2-dword result {value, object} to the out-pointer; value comes from a virtual call (slot 0x70) on arg3's +0x04 object, or 0 if that object is null.
+// @field ExprParser::WriteMethodType +0x00 void* field_0x00
+// @field ExprParser::WriteMethodType +0x04 void* field_0x04
+void fn_0048B7E0(void* out, void* arg2, void* arg3) {
+    // Temporary std::string (only its address is passed to the callee).
+    uint32_t tmpString[8] = {0};
+
+    void* obj = lift_field<void*>(arg3, 0x04);
+    ext_0046E780(obj,
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&tmpString[0])),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg3)),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg2)));
+
+    void* inner = lift_field<void*>(arg2, 0x00);
+    ext_0048B2A0(inner);
+
+    // Destructor of the temporary string via IAT slot; no-op in the lifted model.
+    (void)&mem_00924FF4;
+
+    uint32_t slot = 0;
+    uint32_t* result = &slot;
+    obj = lift_field<void*>(arg3, 0x04);
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        using VSlot = uint32_t* (*)(void* self, uint32_t* outSlot, void* arg);
+        VSlot target = reinterpret_cast<VSlot>(lift_field<void*>(vtbl, 0x70));
+        result = target(obj, &slot, arg3);
+    }
+
+    uint32_t value = *result;
+    void* objAfter = lift_field<void*>(arg3, 0x04);
+    lift_field<uint32_t>(out, 0x00) = value;
+    lift_field<uint32_t>(out, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(objAfter));
+}
+} // namespace lift_00487000
+} // namespace lift_0048B7E0
+
+// [0x0048BDC0] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_48 (162 bytes)
+namespace lift_0048BDC0 {
+// @name ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType<DesiredPoseEventData, std::string const &>::vfunc_48).
+namespace lift_00487000 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2, uint32_t a3);
+// Known callee 0x00486AF0: sub_00486AF0 (auto-lifted clone of 0x00402050, AnimatableTransform::vfunc_37).
+extern uint32_t ext_0048B9E0(void* self);
+// IAT slot 0x00924FF4: MSVCP80 std::basic_string<char>::~basic_string, applied to the local temporary.
+extern int mem_00924FF4;
+
+// @name WriteMethodType<DesiredPoseEventData, std::string const &>::vfunc_48
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Writes a 2-dword result {value, object} to the out-pointer; value comes from a virtual call (slot 0x70) on arg3's +0x04 object, or 0 if that object is null.
+// @field ExprParser::WriteMethodType +0x00 void* field_0x00
+// @field ExprParser::WriteMethodType +0x04 void* field_0x04
+void fn_0048BDC0(void* out, void* arg2, void* arg3) {
+    // Temporary std::string (only its address is passed to the callee).
+    uint32_t tmpString[8] = {0};
+
+    void* obj = lift_field<void*>(arg3, 0x04);
+    ext_0046E780(obj,
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&tmpString[0])),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg3)),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg2)));
+
+    void* inner = lift_field<void*>(arg2, 0x00);
+    ext_0048B9E0(inner);
+
+    // Destructor of the temporary string via IAT slot; no-op in the lifted model.
+    (void)&mem_00924FF4;
+
+    uint32_t slot = 0;
+    uint32_t* result = &slot;
+    obj = lift_field<void*>(arg3, 0x04);
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        using VSlot = uint32_t* (*)(void* self, uint32_t* outSlot, void* arg);
+        VSlot target = reinterpret_cast<VSlot>(lift_field<void*>(vtbl, 0x70));
+        result = target(obj, &slot, arg3);
+    }
+
+    uint32_t value = *result;
+    void* objAfter = lift_field<void*>(arg3, 0x04);
+    lift_field<uint32_t>(out, 0x00) = value;
+    lift_field<uint32_t>(out, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(objAfter));
+}
+} // namespace lift_00487000
+} // namespace lift_0048BDC0
+
+// [0x004CA4B0] ExprParser::WriteMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::MetaBodyConstraintData::addMetaBodyFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_48 (162 bytes)
+namespace lift_004CA4B0 {
+// @name ExprParser::WriteMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::MetaBodyConstraintData::addMetaBodyFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::MetaBodyConstraintData::addMetaBodyFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType<DesiredPoseEventData, std::string const &>::vfunc_48).
+namespace lift_00487000 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2, uint32_t a3);
+// Known callee 0x00486AF0: sub_00486AF0 (auto-lifted clone of 0x00402050, AnimatableTransform::vfunc_37).
+extern uint32_t ext_004CA300(void* self);
+// IAT slot 0x00924FF4: MSVCP80 std::basic_string<char>::~basic_string, applied to the local temporary.
+extern int mem_00924FF4;
+
+// @name WriteMethodType<DesiredPoseEventData, std::string const &>::vfunc_48
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Writes a 2-dword result {value, object} to the out-pointer; value comes from a virtual call (slot 0x70) on arg3's +0x04 object, or 0 if that object is null.
+// @field ExprParser::WriteMethodType +0x00 void* field_0x00
+// @field ExprParser::WriteMethodType +0x04 void* field_0x04
+void fn_004CA4B0(void* out, void* arg2, void* arg3) {
+    // Temporary std::string (only its address is passed to the callee).
+    uint32_t tmpString[8] = {0};
+
+    void* obj = lift_field<void*>(arg3, 0x04);
+    ext_0046E780(obj,
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&tmpString[0])),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg3)),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg2)));
+
+    void* inner = lift_field<void*>(arg2, 0x00);
+    ext_004CA300(inner);
+
+    // Destructor of the temporary string via IAT slot; no-op in the lifted model.
+    (void)&mem_00924FF4;
+
+    uint32_t slot = 0;
+    uint32_t* result = &slot;
+    obj = lift_field<void*>(arg3, 0x04);
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        using VSlot = uint32_t* (*)(void* self, uint32_t* outSlot, void* arg);
+        VSlot target = reinterpret_cast<VSlot>(lift_field<void*>(vtbl, 0x70));
+        result = target(obj, &slot, arg3);
+    }
+
+    uint32_t value = *result;
+    void* objAfter = lift_field<void*>(arg3, 0x04);
+    lift_field<uint32_t>(out, 0x00) = value;
+    lift_field<uint32_t>(out, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(objAfter));
+}
+} // namespace lift_00487000
+} // namespace lift_004CA4B0
+
+// [0x004CA940] ExprParser::WriteMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::MetaBodyConstraintData::setLockTypeString(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_48 (162 bytes)
+namespace lift_004CA940 {
+// @name ExprParser::WriteMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::MetaBodyConstraintData::setLockTypeString(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::MetaBodyConstraintData::setLockTypeString(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType<DesiredPoseEventData, std::string const &>::vfunc_48).
+namespace lift_00487000 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2, uint32_t a3);
+// Known callee 0x00486AF0: sub_00486AF0 (auto-lifted clone of 0x00402050, AnimatableTransform::vfunc_37).
+extern uint32_t ext_004CA590(void* self);
+// IAT slot 0x00924FF4: MSVCP80 std::basic_string<char>::~basic_string, applied to the local temporary.
+extern int mem_00924FF4;
+
+// @name WriteMethodType<DesiredPoseEventData, std::string const &>::vfunc_48
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Writes a 2-dword result {value, object} to the out-pointer; value comes from a virtual call (slot 0x70) on arg3's +0x04 object, or 0 if that object is null.
+// @field ExprParser::WriteMethodType +0x00 void* field_0x00
+// @field ExprParser::WriteMethodType +0x04 void* field_0x04
+void fn_004CA940(void* out, void* arg2, void* arg3) {
+    // Temporary std::string (only its address is passed to the callee).
+    uint32_t tmpString[8] = {0};
+
+    void* obj = lift_field<void*>(arg3, 0x04);
+    ext_0046E780(obj,
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&tmpString[0])),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg3)),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg2)));
+
+    void* inner = lift_field<void*>(arg2, 0x00);
+    ext_004CA590(inner);
+
+    // Destructor of the temporary string via IAT slot; no-op in the lifted model.
+    (void)&mem_00924FF4;
+
+    uint32_t slot = 0;
+    uint32_t* result = &slot;
+    obj = lift_field<void*>(arg3, 0x04);
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        using VSlot = uint32_t* (*)(void* self, uint32_t* outSlot, void* arg);
+        VSlot target = reinterpret_cast<VSlot>(lift_field<void*>(vtbl, 0x70));
+        result = target(obj, &slot, arg3);
+    }
+
+    uint32_t value = *result;
+    void* objAfter = lift_field<void*>(arg3, 0x04);
+    lift_field<uint32_t>(out, 0x00) = value;
+    lift_field<uint32_t>(out, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(objAfter));
+}
+} // namespace lift_00487000
+} // namespace lift_004CA940
+
+// [0x00604A40] ExprParser::WriteMethodType<EffectorBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall EffectorBase::`vcall'{64, {flat}}>::vfunc_48 (162 bytes)
+namespace lift_00604A40 {
+// @name ExprParser::WriteMethodType<EffectorBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall EffectorBase::`vcall'{64, {flat}}>::vfunc_48
+// @class ExprParser::WriteMethodType<EffectorBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall EffectorBase::`vcall'{64, {flat}}>
+// @summary Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType<DesiredPoseEventData, std::string const &>::vfunc_48).
+namespace lift_00487000 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2, uint32_t a3);
+// Known callee 0x00486AF0: sub_00486AF0 (auto-lifted clone of 0x00402050, AnimatableTransform::vfunc_37).
+extern uint32_t ext_00603690(void* self);
+// IAT slot 0x00924FF4: MSVCP80 std::basic_string<char>::~basic_string, applied to the local temporary.
+extern int mem_00924FF4;
+
+// @name WriteMethodType<DesiredPoseEventData, std::string const &>::vfunc_48
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Writes a 2-dword result {value, object} to the out-pointer; value comes from a virtual call (slot 0x70) on arg3's +0x04 object, or 0 if that object is null.
+// @field ExprParser::WriteMethodType +0x00 void* field_0x00
+// @field ExprParser::WriteMethodType +0x04 void* field_0x04
+void fn_00604A40(void* out, void* arg2, void* arg3) {
+    // Temporary std::string (only its address is passed to the callee).
+    uint32_t tmpString[8] = {0};
+
+    void* obj = lift_field<void*>(arg3, 0x04);
+    ext_0046E780(obj,
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&tmpString[0])),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg3)),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg2)));
+
+    void* inner = lift_field<void*>(arg2, 0x00);
+    ext_00603690(inner);
+
+    // Destructor of the temporary string via IAT slot; no-op in the lifted model.
+    (void)&mem_00924FF4;
+
+    uint32_t slot = 0;
+    uint32_t* result = &slot;
+    obj = lift_field<void*>(arg3, 0x04);
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        using VSlot = uint32_t* (*)(void* self, uint32_t* outSlot, void* arg);
+        VSlot target = reinterpret_cast<VSlot>(lift_field<void*>(vtbl, 0x70));
+        result = target(obj, &slot, arg3);
+    }
+
+    uint32_t value = *result;
+    void* objAfter = lift_field<void*>(arg3, 0x04);
+    lift_field<uint32_t>(out, 0x00) = value;
+    lift_field<uint32_t>(out, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(objAfter));
+}
+} // namespace lift_00487000
+} // namespace lift_00604A40
+
+// [0x00604AF0] ExprParser::WriteMethodType<EffectorBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall EffectorBase::`vcall'{60, {flat}}>::vfunc_48 (162 bytes)
+namespace lift_00604AF0 {
+// @name ExprParser::WriteMethodType<EffectorBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall EffectorBase::`vcall'{60, {flat}}>::vfunc_48
+// @class ExprParser::WriteMethodType<EffectorBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall EffectorBase::`vcall'{60, {flat}}>
+// @summary Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType<DesiredPoseEventData, std::string const &>::vfunc_48).
+namespace lift_00487000 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg).
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2, uint32_t a3);
+// Known callee 0x00486AF0: sub_00486AF0 (auto-lifted clone of 0x00402050, AnimatableTransform::vfunc_37).
+extern uint32_t ext_00603670(void* self);
+// IAT slot 0x00924FF4: MSVCP80 std::basic_string<char>::~basic_string, applied to the local temporary.
+extern int mem_00924FF4;
+
+// @name WriteMethodType<DesiredPoseEventData, std::string const &>::vfunc_48
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Writes a 2-dword result {value, object} to the out-pointer; value comes from a virtual call (slot 0x70) on arg3's +0x04 object, or 0 if that object is null.
+// @field ExprParser::WriteMethodType +0x00 void* field_0x00
+// @field ExprParser::WriteMethodType +0x04 void* field_0x04
+void fn_00604AF0(void* out, void* arg2, void* arg3) {
+    // Temporary std::string (only its address is passed to the callee).
+    uint32_t tmpString[8] = {0};
+
+    void* obj = lift_field<void*>(arg3, 0x04);
+    ext_0046E780(obj,
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&tmpString[0])),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg3)),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(arg2)));
+
+    void* inner = lift_field<void*>(arg2, 0x00);
+    ext_00603670(inner);
+
+    // Destructor of the temporary string via IAT slot; no-op in the lifted model.
+    (void)&mem_00924FF4;
+
+    uint32_t slot = 0;
+    uint32_t* result = &slot;
+    obj = lift_field<void*>(arg3, 0x04);
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        using VSlot = uint32_t* (*)(void* self, uint32_t* outSlot, void* arg);
+        VSlot target = reinterpret_cast<VSlot>(lift_field<void*>(vtbl, 0x70));
+        result = target(obj, &slot, arg3);
+    }
+
+    uint32_t value = *result;
+    void* objAfter = lift_field<void*>(arg3, 0x04);
+    lift_field<uint32_t>(out, 0x00) = value;
+    lift_field<uint32_t>(out, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(objAfter));
+}
+} // namespace lift_00487000
+} // namespace lift_00604AF0

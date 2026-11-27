@@ -1954,3 +1954,43 @@ uint32_t* fn_00693590(void* self, uint32_t* out, uint32_t key) {
 }
 } // namespace lift_00476430
 } // namespace lift_00693590
+
+// [0x00697EE0] sub_00697EE0 (90 bytes)
+namespace lift_00697EE0 {
+// @name sub_00697EE0
+// @summary Auto-lifted identical-shape clone of 0x004C9860 (initStaticObjectOnce_004C9860).
+namespace lift_004C9860 {
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B5C8D4;
+// Static object (global) whose address is returned; also the `this` passed to ext_004C94E0.
+extern DWORD mem_00B5C8CC;
+
+// __thiscall: ECX = &mem_00AE3D94, no stack arguments.
+extern void __thiscall ext_00697CD0(void* self);
+// __cdecl: one stack argument (0x00918AE0), caller pops.
+extern void ext_006A6C87(DWORD arg);
+
+// @name initStaticObjectOnce_004C9860
+// @summary One-time initializer for the static object at mem_00AE3D94: under a local SEH frame, runs ext_004C94E0 on the object and ext_006A6C87(0x918AE0) on first call, marks the guard bit, and returns the object's address.
+void* fn_00697EE0() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler (0x0088BD3E), [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8B631Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B5C8D4 & 1u) == 0) {
+        mem_00B5C8D4 |= 1u;
+        frame[2] = 0;
+        ext_00697CD0(&mem_00B5C8CC);
+        ext_006A6C87(0x921F00u);
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B5C8CC;
+}
+} // namespace lift_004C9860
+} // namespace lift_00697EE0

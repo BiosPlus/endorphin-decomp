@@ -10,12 +10,12 @@
 // Recovered field layout for ClassFactory<CompoundSensor>:
 namespace lifted_layout {
 struct ClassFactory_CompoundSensor__Fields {
-    // +0x0   uint32_t                 vptr  (evidence: 0x0041E4C0)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x0041E4C0)
-    // +0xC   uint32_t                 field_0x0c  (evidence: 0x0041E4C0)
-    // +0x10  uint32_t                 field_0x10  (evidence: 0x0041E4C0)
-    // +0x18  uint32_t                 field_0x18  (evidence: 0x0041E4C0)
-    // +0x1C  uint32_t                 field_0x1c  (evidence: 0x0041E4C0)
-    // +0x20  uint32_t                 field_0x20  (evidence: 0x0041E4C0)
+    // +0x0   uint32_t                 vptr  (evidence: 0x0041E4C0, 0x0043A7C0, 0x0051C980, 0x006082D0, 0x0060DB80, 0x0060FA60, 0x0060FEB0)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x0041E4C0, 0x0043A7C0, 0x0051C980, 0x006082D0, 0x0060DB80, 0x0060FA60, 0x0060FEB0)
+    // +0xC   uint32_t                 field_0x0c  (evidence: 0x0041E4C0, 0x0043A7C0, 0x0051C980, 0x006082D0, 0x0060DB80, 0x0060FA60, 0x0060FEB0)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x0041E4C0, 0x0043A7C0, 0x0051C980, 0x006082D0, 0x0060DB80, 0x0060FA60, 0x0060FEB0)
+    // +0x18  uint32_t                 field_0x18  (evidence: 0x0041E4C0, 0x0043A7C0, 0x0051C980, 0x006082D0, 0x0060DB80, 0x0060FA60, 0x0060FEB0)
+    // +0x1C  uint32_t                 field_0x1c  (evidence: 0x0041E4C0, 0x0043A7C0, 0x0051C980, 0x006082D0, 0x0060DB80, 0x0060FA60, 0x0060FEB0)
+    // +0x20  uint32_t                 field_0x20  (evidence: 0x0041E4C0, 0x0043A7C0, 0x0051C980, 0x006082D0, 0x0060DB80, 0x0060FA60, 0x0060FEB0)
 };
 } // namespace lifted_layout

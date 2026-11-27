@@ -1,0 +1,13 @@
+{
+  "va": "0x0060A470",
+  "size": 117,
+  "orig_symbol": "sub_0060A470",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "sub_0060A470",
+  "signature": "uint32_t fn_0060A470(void* self, uint32_t a1, uint32_t a2, uint32_t a3)",
+  "summary": "Auto-lifted identical-shape clone of 0x0049CF60 (NewAndInitDynCastObject).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T10:03:00Z"
+}

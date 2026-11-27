@@ -3184,3 +3184,83 @@ void fn_00679730(void* self) {
 }
 } // namespace lift_0042E820
 } // namespace lift_00679730
+
+// [0x00676C70] sub_00676C70 (24 bytes)
+namespace lift_00676C70 {
+// @name sub_00676C70
+// @summary Auto-lifted identical-shape clone of 0x004758A0 (SubObject_004758A0).
+namespace lift_004758A0 {
+// Callee 0x005A6300 (sub_005A6300): thiscall, ECX = sub-object, one stack arg = pointer to value.
+extern void ext_00451670(void* self, DWORD* value);
+
+// @name SubObject_004758A0
+// @class <ClassName> (optional)
+// @summary Forwards the stack argument by address to the sub-object at self+0x50 via sub_005A6300.
+// @field Unknown +0x50 <opaque subobject> field_0x50
+void fn_00676C70(void* self, DWORD arg) {
+    DWORD value = arg;
+    void* sub = static_cast<uint8_t*>(self) + 0x58;
+    ext_00451670(sub, &value);
+}
+} // namespace lift_004758A0
+} // namespace lift_00676C70
+
+// [0x00678110] sub_00678110 (24 bytes)
+namespace lift_00678110 {
+// @name sub_00678110
+// @summary Auto-lifted identical-shape clone of 0x004758A0 (SubObject_004758A0).
+namespace lift_004758A0 {
+// Callee 0x005A6300 (sub_005A6300): thiscall, ECX = sub-object, one stack arg = pointer to value.
+extern void ext_005A6300(void* self, DWORD* value);
+
+// @name SubObject_004758A0
+// @class <ClassName> (optional)
+// @summary Forwards the stack argument by address to the sub-object at self+0x50 via sub_005A6300.
+// @field Unknown +0x50 <opaque subobject> field_0x50
+void fn_00678110(void* self, DWORD arg) {
+    DWORD value = arg;
+    void* sub = static_cast<uint8_t*>(self) + 0x58;
+    ext_005A6300(sub, &value);
+}
+} // namespace lift_004758A0
+} // namespace lift_00678110
+
+// [0x00679BE0] sub_00679BE0 (90 bytes)
+namespace lift_00679BE0 {
+// @name sub_00679BE0
+// @summary Auto-lifted identical-shape clone of 0x004C9860 (initStaticObjectOnce_004C9860).
+namespace lift_004C9860 {
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B59F04;
+// Static object (global) whose address is returned; also the `this` passed to ext_004C94E0.
+extern DWORD mem_00B59EE4;
+
+// __thiscall: ECX = &mem_00AE3D94, no stack arguments.
+extern void __thiscall ext_00679B80(void* self);
+// __cdecl: one stack argument (0x00918AE0), caller pops.
+extern void ext_006A6C87(DWORD arg);
+
+// @name initStaticObjectOnce_004C9860
+// @summary One-time initializer for the static object at mem_00AE3D94: under a local SEH frame, runs ext_004C94E0 on the object and ext_006A6C87(0x918AE0) on first call, marks the guard bit, and returns the object's address.
+void* fn_00679BE0() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler (0x0088BD3E), [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8B494Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B59F04 & 1u) == 0) {
+        mem_00B59F04 |= 1u;
+        frame[2] = 0;
+        ext_00679B80(&mem_00B59EE4);
+        ext_006A6C87(0x921A40u);
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B59EE4;
+}
+} // namespace lift_004C9860
+} // namespace lift_00679BE0
