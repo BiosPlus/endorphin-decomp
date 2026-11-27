@@ -1,0 +1,33 @@
+{
+  "va": "0x006B0EC0",
+  "size": 120,
+  "orig_symbol": "sub_006B0EC0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "ProcessSelectionPair",
+  "signature": "extern \"C\" uint32_t ext_006AD1C0(void *ecx);            // SelectionBuffer::vfunc_21 extern \"C\" uint32_t ext_006A7D30(uint32_t ecx);         // sub_006A7D30 extern \"C\" uint32_t ext_006A7D50(uint32_t ecx);         // sub_006A7D50 extern \"C\" void ext_006A5FF2(void *ecx);                // thunk_MFC80_ord_1934 extern \"C\" void ext_006A5FFE(void *ecx, uint32_t arg);  // thunk_MFC80_ord_1280 extern \"C\" uint32_t mem_0092407C;                      // GDI32!CreateSolidBrush IAT slot uint32_t ProcessSelectionPair(void *thisPtr, void *arg)",
+  "summary": "Fetches two selection-derived values, forwards them to vtable slots +0x34/+0x38 of the argument object, then refreshes the embedded sub-object at this+0x64 and returns its +4 field.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "void*",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "void*",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "uint32_t",
+      "name": "field_0x68"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:14:49Z"
+}

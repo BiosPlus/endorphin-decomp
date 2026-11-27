@@ -57724,6 +57724,12 @@
     "summary": "If the flag at +0x60 is clear, clear the edit selection and scroll the caret into view; otherwise clear the flag.",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006B0EC0": {
+    "name": "ProcessSelectionPair",
+    "signature": "extern \"C\" uint32_t ext_006AD1C0(void *ecx);            // SelectionBuffer::vfunc_21 extern \"C\" uint32_t ext_006A7D30(uint32_t ecx);         // sub_006A7D30 extern \"C\" uint32_t ext_006A7D50(uint32_t ecx);         // sub_006A7D50 extern \"C\" void ext_006A5FF2(void *ecx);                // thunk_MFC80_ord_1934 extern \"C\" void ext_006A5FFE(void *ecx, uint32_t arg);  // thunk_MFC80_ord_1280 extern \"C\" uint32_t mem_0092407C;                      // GDI32!CreateSolidBrush IAT slot uint32_t ProcessSelectionPair(void *thisPtr, void *arg)",
+    "summary": "Fetches two selection-derived values, forwards them to vtable slots +0x34/+0x38 of the argument object, then refreshes the embedded sub-object at this+0x64 and returns its +4 field.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B0F40": {
     "name": "GWCPropInPlaceEdit::vfunc_1",
     "class": "GWCPropInPlaceEdit",

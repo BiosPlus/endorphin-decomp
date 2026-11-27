@@ -1789,3 +1789,52 @@ void* fn_006B69B0(void* self, uint8_t a, uint8_t b) {
     return self;
 }
 } // namespace lift_006B69B0
+
+// [0x006B0EC0]
+namespace lift_006B0EC0 {
+// @name ProcessSelectionPair
+// @summary Fetches two selection-derived values, forwards them to vtable slots +0x34/+0x38 of the argument object, then refreshes the embedded sub-object at this+0x64 and returns its +4 field.
+// @field Unknown +0x54 void* field_0x54
+// @field Unknown +0x64 void* field_0x64
+// @field Unknown +0x68 uint32_t field_0x68
+
+extern uint32_t ext_006AD1C0(void *ecx);            // SelectionBuffer::vfunc_21
+extern uint32_t ext_006A7D30(uint32_t ecx);         // sub_006A7D30
+extern uint32_t ext_006A7D50(uint32_t ecx);         // sub_006A7D50
+extern void ext_006A5FF2(void *ecx);                // thunk_MFC80_ord_1934
+extern void ext_006A5FFE(void *ecx, uint32_t arg);  // thunk_MFC80_ord_1280
+extern uint32_t mem_0092407C;                      // GDI32!CreateSolidBrush IAT slot
+
+uint32_t ProcessSelectionPair(void *thisPtr, void *arg)
+{
+    uint8_t *self = static_cast<uint8_t *>(thisPtr);
+    uint8_t *obj = static_cast<uint8_t *>(arg);
+
+    uint32_t sel = *reinterpret_cast<uint32_t *>(self + 0x54);
+    uint32_t a = ext_006AD1C0(reinterpret_cast<void *>(static_cast<uintptr_t>(sel)));
+    uint32_t b = ext_006A7D30(a);
+    uint32_t sel2 = *reinterpret_cast<uint32_t *>(self + 0x54);
+    uint32_t c = ext_006AD1C0(reinterpret_cast<void *>(static_cast<uintptr_t>(sel2)));
+    uint32_t d = ext_006A7D50(c);
+
+    // vtable slots at +0x34 and +0x38 of the argument object
+    uint32_t *vtbl = *reinterpret_cast<uint32_t **>(obj);
+    using Slot = void (__thiscall *)(void *, uint32_t);
+    reinterpret_cast<Slot>(vtbl[0x34 / 4])(obj, b);
+    reinterpret_cast<Slot>(vtbl[0x38 / 4])(obj, d);
+
+    uint8_t *sub = self + 0x64;
+    if (sub != nullptr && *reinterpret_cast<uint32_t *>(sub + 4) != 0) {
+        ext_006A5FF2(sub);
+    }
+
+    using BrushFn = uint32_t(__stdcall *)(uint32_t);
+    uint32_t brush = reinterpret_cast<BrushFn>(static_cast<uintptr_t>(mem_0092407C))(b);
+    ext_006A5FFE(sub, brush);
+
+    if (sub != nullptr) {
+        return *reinterpret_cast<uint32_t *>(sub + 4);
+    }
+    return 0;
+}
+} // namespace lift_006B0EC0
