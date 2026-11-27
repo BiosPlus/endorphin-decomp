@@ -2401,3 +2401,19 @@ extern uint32_t __stdcall fn_006F6E40(uint32_t arg0) {
     return ext_00782CD0(arg0);
 }
 } // namespace lift_006F6E40
+
+// [0x006FC700] sub_006FC700 (21 bytes)
+namespace lift_006FC700 {
+// Known callee 0x006F9E60: GetOrInitSingletonAndBumpCounter_006F9E60 (Ensures the singleton at mem_00B5E41C is created and initialized on first call, then increments the init counter mem_00B5E420.)
+extern void ext_006F9E60();
+extern uint32_t mem_00B5E438;
+
+// @name GetOrInitSingletonAndBumpCounter_006FC700
+// @summary Calls the singleton initializer fn_006F9E60 only when mem_00B5E438 is zero, then increments mem_00B5E438.
+void fn_006FC700(void) {
+    if (mem_00B5E438 == 0) {
+        ext_006F9E60();
+    }
+    mem_00B5E438 = mem_00B5E438 + 1u;
+}
+} // namespace lift_006FC700

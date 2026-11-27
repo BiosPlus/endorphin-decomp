@@ -1,0 +1,13 @@
+{
+  "va": "0x006FC700",
+  "size": 21,
+  "orig_symbol": "sub_006FC700",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "GetOrInitSingletonAndBumpCounter_006FC700",
+  "signature": "void fn_006FC700(void)",
+  "summary": "Calls the singleton initializer fn_006F9E60 only when mem_00B5E438 is zero, then increments mem_00B5E438.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:14:33Z"
+}

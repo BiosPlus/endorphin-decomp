@@ -70053,6 +70053,12 @@
     "summary": "Returns field +0x0C of the entry at index arg1 in the table pointed to by mem_00B5E434-\u003e+0x10, or 0 if the table, entry, or index slot is null.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006FC700": {
+    "name": "GetOrInitSingletonAndBumpCounter_006FC700",
+    "signature": "void fn_006FC700(void)",
+    "summary": "Calls the singleton initializer fn_006F9E60 only when mem_00B5E438 is zero, then increments mem_00B5E438.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FC7E0": {
     "name": "Unknown::initVtableAndClearFields",
     "class": "Unknown",
