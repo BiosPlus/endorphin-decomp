@@ -4,8 +4,10 @@
 #include <string>
 // C string literal at VA 0x0096AFE8.
 extern "C" const char mem_0096AFE8[];
+#include <cstddef>
+#include <cstdint>
 
-// [0x005F0D20] NMData::MagnetJointData::vfunc_8 (32 bytes)
+#include <cstdint>
 // Original (ret 4): calls vtable slot 59 (+0xEC) on self with (arg, 0), ignores its result, returns arg.
 // The original also pushes the saved esi as a stack word; that word is not modelled here.
 // @name NMData::MagnetJointData::vfunc_8
@@ -165,3 +167,92 @@ void* fn_005E2AB0(void* self) {
     return &mem_00B45E10;
 }
 } // namespace lift_005E2AB0
+
+// [0x005F3370] NMData::MagnetJointData::vfunc_21 (364 bytes)
+namespace lift_005F3370 {
+// Callees (signatures taken from the call sites: stack args pushed in order, callee/caller cleanup as observed).
+// NMData::NullRelationshipData::vfunc_21: thiscall(this, arg), one stack arg, callee cleans (ret 4).
+extern void __thiscall ext_005F2970(void* self, void* arg);
+// sub_0063EFE0: thiscall(this=arg, const char* name), returns uint32 (found item or sentinel), callee cleans.
+extern uint32_t __thiscall ext_0063EFE0(void* self, const char* name);
+// parseIntFromStringProp: cdecl(int* out, uint32_t* key); caller cleans 8 bytes (add esp,8 after the call).
+extern void ext_0053F5F0(int* out, uint32_t* key);
+// sub_00587920: thiscall(this, a, b), two stack args, callee cleans (ret 8).
+extern void __thiscall ext_00587920(void* self, void* a, int b);
+
+// .rdata string literals referenced by the function (contents not recovered here).
+extern const char mem_0096AFD8[];
+extern const char mem_0096B500[];
+extern const char mem_0096B4F4[];
+extern const char mem_0096B938[];
+
+// MSVCP80 import slots (IAT entries holding function pointers).
+// operator+(const std::string& lhs, const char* rhs): sret-by-hidden-pointer, returns sret pointer.
+extern void* (*mem_00924ECC)(void* sret, const void* lhs, const char* rhs);
+// std::basic_string::basic_string(const char*) (thiscall).
+extern void (*mem_00924FE4)(void* self, const char* s);
+// std::basic_string::~basic_string() (thiscall).
+extern void (*mem_00924FF4)(void* self);
+
+// Opaque storage for a temporary MSVCP80 std::string (28 bytes on x86, padded).
+struct alignas(8) StringStorage {
+    uint8_t bytes[32];
+};
+
+// Virtual slot invocation: thiscall(obj, arg) via vtable byte offset `slot_off`.
+using VSlot1Fn = void(__thiscall*)(void* self, void* arg);
+static inline void call_vslot1(void* obj, size_t slot_off, void* arg) {
+    void** vt = *reinterpret_cast<void***>(obj);
+    reinterpret_cast<VSlot1Fn>(vt[slot_off / sizeof(void*)])(obj, arg);
+}
+
+// @name NMData::MagnetJointData::vfunc_21
+// @class NMData::MagnetJointData
+// @summary Calls NullRelationshipData::vfunc_21(arg), looks up a string-keyed item in the (+0x17c) list, parses an int into +0x2FC, notifies the +0x17c/+0x180/+0x184 sub-objects with std::string keys built from +0x14 and literals, then sub_00587920 on +0x180 and +0x17c.
+// @field NMData::MagnetJointData +0x14 std::string field_0x14
+// @field NMData::MagnetJointData +0x17C void* field_0x17c
+// @field NMData::MagnetJointData +0x180 void* field_0x180
+// @field NMData::MagnetJointData +0x184 void* field_0x184
+// @field NMData::MagnetJointData +0x2FC uint32_t field_0x2FC
+extern void __thiscall fn_005F3370(void* self, void* arg) {
+    uint8_t* const self_bytes = static_cast<uint8_t*>(self);
+
+    ext_005F2970(self, arg);
+
+    uint32_t found = ext_0063EFE0(arg, mem_0096AFD8);
+    int out = 0;
+    ext_0053F5F0(&out, &found);
+    lift_field<uint32_t>(self, 0x2FC) = static_cast<uint32_t>(out);
+
+    // Object A = field_0x17c: vslot 0x54(arg).
+    call_vslot1(lift_field<void*>(self, 0x17C), 0x54, arg);
+
+    // tmp1 = field_0x14 + "lit1"; A->vslot 0x5C(tmp1); destroy tmp1.
+    StringStorage tmp1{};
+    mem_00924ECC(&tmp1, self_bytes + 0x14, mem_0096B500);
+    call_vslot1(lift_field<void*>(self, 0x17C), 0x5C, &tmp1);
+    mem_00924FF4(&tmp1);
+
+    // Object C = field_0x180: vslot 0x54(arg).
+    call_vslot1(lift_field<void*>(self, 0x180), 0x54, arg);
+
+    // tmp2 = field_0x14 + "lit2"; C->vslot 0x5C(tmp2); destroy tmp2.
+    StringStorage tmp2{};
+    mem_00924ECC(&tmp2, self_bytes + 0x14, mem_0096B4F4);
+    call_vslot1(lift_field<void*>(self, 0x180), 0x5C, &tmp2);
+    mem_00924FF4(&tmp2);
+
+    // Object D = field_0x184: vslot 0x54(arg).
+    call_vslot1(lift_field<void*>(self, 0x184), 0x54, arg);
+
+    // tmp3 = "lit3"; D->vslot 0x5C(tmp3); destroy tmp3.
+    StringStorage tmp3{};
+    mem_00924FE4(&tmp3, mem_0096B938);
+    call_vslot1(lift_field<void*>(self, 0x184), 0x5C, &tmp3);
+    mem_00924FF4(&tmp3);
+
+    // sub_00587920(this=self, C, 0) then sub_00587920(this=A, D, 0).
+    ext_00587920(self, lift_field<void*>(self, 0x180), 0);
+    ext_00587920(lift_field<void*>(self, 0x17C), lift_field<void*>(self, 0x184), 0);
+}
+} // namespace lift_005F3370
