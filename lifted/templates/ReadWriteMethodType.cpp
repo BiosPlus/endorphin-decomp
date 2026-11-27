@@ -18174,3 +18174,56 @@ void fn_004881D0(void* holder, void* value) {
     temp.~TempString();
 }
 } // namespace lift_004881D0
+
+// [0x004C7310] ExprParser::ReadWriteMethodType<NMData::SeverEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SeverEventData::getSeverEventType(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::SeverEventData::setSeverEventType(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (134 bytes)
+namespace lift_004C7310 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (Calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg.)
+extern void ext_0046E780();
+// Known callee 0x004C6F50: sub_004C6F50 (This-adjustor thunk: adjusts `this` by +0x180 and forwards through mem_00924FDC.)
+extern void ext_004C6F50();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+// IAT slot holding std::basic_string<char>::~basic_string (MSVCP80).
+extern int mem_00924FF4;
+
+namespace {
+// Callee signatures recovered from the call sites (stack/ecx args are passed explicitly here).
+using ForwardSlot4Fn = void* (*)(void* out, void* a1, void* a2);
+using ThisAdjustFn   = void (*)(void* self, void* arg);
+using StringDtorFn   = void (*)(void* self);
+} // namespace
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::SeverEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SeverEventData::getSeverEventType(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::SeverEventData::setSeverEventType(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Forwards a string argument through vtable slot 4 of the held target (adjusted by thunk 0x004C6F50); throws if the held target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+void fn_004C7310(void* arg1, void* arg2) {
+    // [eax] = arg1 -> target pointer held in the first field of the argument object.
+    void* const target = *static_cast<void**>(arg1);
+
+    if (target == nullptr) {
+        // Original constructs a DerivedException (ext_0046C3C0) and raises it via
+        // MSVCR80!_CxxThrowException (ext_006A6DD2). That MSVC throw ABI has no portable
+        // equivalent: keep the construction call, then raise a standard exception.
+        alignas(8) unsigned char exc[64];
+        const auto makeException = reinterpret_cast<void* (*)(void*)>(ext_0046C3C0);
+        (void)makeException(exc);
+        throw std::runtime_error("ExprParser::ReadWriteMethodType::vfunc_41: null target");
+    }
+
+    // Local std::string (28 bytes, MSVC x86 layout) receives the forwarded string result.
+    alignas(4) unsigned char str[28];
+    const auto forwardSlot4 = reinterpret_cast<ForwardSlot4Fn>(ext_0046E780);
+    void* const tmp = forwardSlot4(str, arg2, arg1);
+
+    // Adjusted `this` call on target, passing the temporary string.
+    const auto adjustThunk = reinterpret_cast<ThisAdjustFn>(ext_004C6F50);
+    adjustThunk(target, tmp);
+
+    // Destroy the temporary string through the IAT slot (call dword ptr [0x924ff4]).
+    const auto strDtor = *reinterpret_cast<StringDtorFn*>(&mem_00924FF4);
+    strDtor(tmp);
+}
+} // namespace lift_004C7310
