@@ -10,6 +10,6 @@
 // Recovered field layout for SelectionBuffer:
 namespace lifted_layout {
 struct SelectionBuffer_Fields {
-    // +0x0   void*                    vtable  (evidence: 0x004E7370, 0x004E87F0)
+    // +0x0   void*                    vtable  (evidence: 0x004E7370, 0x004E87F0, 0x004E8810)
 };
 } // namespace lifted_layout

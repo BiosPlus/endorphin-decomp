@@ -20,3 +20,19 @@ DWORD __thiscall fn_004E87F0(void* self, DWORD arg) {
     return ext_004E8570(arg, value);
 }
 } // namespace lift_004E87F0
+
+// [0x004E8810]
+namespace lift_004E8810 {
+extern int32_t ext_004E8570(void* a1, int32_t value);
+
+// @name SelectionBuffer::vfunc_13
+// @class SelectionBuffer
+// @summary Calls vtable slot 5 on self to get a value, then forwards (a1, value) to ext_004E8570 and returns its result.
+// @field SelectionBuffer +0x00 void* vtable
+int32_t fn_004E8810(void* self, void* a1) {
+    // Original: vtbl = [self]; slot 0x14 -> call with ecx=self; push result; push a1; call ext_004E8570 (cdecl); return eax.
+    void** vtbl = *reinterpret_cast<void***>(self);
+    int32_t value = reinterpret_cast<int32_t (*)(void*)>(vtbl[0x14 / sizeof(void*)])(self);
+    return ext_004E8570(a1, value);
+}
+} // namespace lift_004E8810

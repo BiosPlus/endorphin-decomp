@@ -1,0 +1,22 @@
+{
+  "va": "0x004E8810",
+  "size": 24,
+  "orig_symbol": "SelectionBuffer::vfunc_13",
+  "src_path": "src/classes/SelectionBuffer.cpp",
+  "lifted_path": "lifted/classes/SelectionBuffer.cpp",
+  "name": "SelectionBuffer::vfunc_13",
+  "class": "SelectionBuffer",
+  "signature": "int32_t fn_004E8810(void* self, void* a1)",
+  "summary": "Calls vtable slot 5 on self to get a value, then forwards (a1, value) to ext_004E8570 and returns its result.",
+  "fields": [
+    {
+      "class": "SelectionBuffer",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:16:28Z"
+}

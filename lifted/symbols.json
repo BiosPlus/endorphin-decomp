@@ -24261,6 +24261,13 @@
     "summary": "Calls virtual slot 3 on self to obtain a value, then forwards (arg, value) to ext_004E8570 and returns its result.",
     "lifted_path": "lifted/classes/SelectionBuffer.cpp"
   },
+  "0x004E8810": {
+    "name": "SelectionBuffer::vfunc_13",
+    "class": "SelectionBuffer",
+    "signature": "int32_t fn_004E8810(void* self, void* a1)",
+    "summary": "Calls vtable slot 5 on self to get a value, then forwards (a1, value) to ext_004E8570 and returns its result.",
+    "lifted_path": "lifted/classes/SelectionBuffer.cpp"
+  },
   "0x004E9900": {
     "name": "SelectionBuffer::vfunc_25",
     "class": "SelectionBuffer",
