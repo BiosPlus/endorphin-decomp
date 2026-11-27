@@ -1168,3 +1168,30 @@ extern void __cdecl sub_00853680(uint8_t* ctx)
     s[5] = 0;
 }
 } // namespace lift_00853680
+
+// [0x008522E0] sub_008522E0 (91 bytes)
+namespace lift_008522E0 {
+extern void ext_008179EA();
+extern void ext_008179F2();
+extern void ext_008203F7();
+extern void ext_0083CAAF();
+extern void ext_00852345(uint32_t packed);
+
+// @name fn_008522E0
+// @summary Packs four stack byte operands (low byte of each) into a big-endian 32-bit key and tail-calls ext_00852345 with it.
+void fn_008522E0(uint8_t b19, uint8_t b1a, uint8_t b1b, uint8_t b1c) {
+    // The four ext_ "jb" targets are guarded by CF, which every preceding
+    // `and` / `clc` clears, so those branches are never taken.
+    constexpr bool cf = false;
+    if (cf) ext_008179EA();
+    if (cf) ext_008179F2();
+    if (cf) ext_008203F7();
+    if (cf) ext_0083CAAF();
+
+    uint32_t packed = (uint32_t)b19 << 24;
+    packed |= (uint32_t)b1a << 16;
+    packed |= (uint32_t)b1b << 8;
+    packed |= (uint32_t)b1c;
+    ext_00852345(packed);
+}
+} // namespace lift_008522E0

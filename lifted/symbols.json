@@ -74427,6 +74427,12 @@
     "summary": "36-byte read-only lookup table (not executable code): 22 index/value bytes followed by 9 0x90 padding bytes.",
     "lifted_path": "lifted/leaf/decompiled_810000.cpp"
   },
+  "0x008522E0": {
+    "name": "fn_008522E0",
+    "signature": "void fn_008522E0(uint8_t b19, uint8_t b1a, uint8_t b1b, uint8_t b1c)",
+    "summary": "Packs four stack byte operands (low byte of each) into a big-endian 32-bit key and tail-calls ext_00852345 with it.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x008523A4": {
     "name": "adjustStackAndTailCall_0084A145",
     "signature": "void sub_008523A4()",
