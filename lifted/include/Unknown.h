@@ -67,6 +67,7 @@ struct Unknown_Fields {
     // +0x0   uint8_t                  flags  (evidence: 0x00640940, 0x00640CB0, 0x00648A20) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (vtable VA 0x0097CB4C written by this function)  (evidence: 0x0063E0F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (FILE* stream passed to fwrite)  (evidence: 0x00788E50) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void* field_0x00 (pointer to container header)  (evidence: 0x00518550) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 header_word  (evidence: 0x0086D210) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 heldObject  (evidence: 0x00468630) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    heldPtr  (evidence: 0x00401DE0, 0x004030F0, 0x0040A910, 0x0040BE90, 0x004693D0, 0x004693F0, 0x00480750, 0x004A5BE0, 0x004AECE0, 0x004D2C70, 0x004DA800, 0x00594790, 0x005947B0, 0x005C4780, 0x005CEA30, 0x00648200, 0x00648510, 0x00648A20) // CONFLICT: multiple definitions at +0x0
@@ -163,6 +164,7 @@ struct Unknown_Fields {
     // +0x4   uint32_t*                begin  (evidence: 0x0049E2F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t*                 begin  (evidence: 0x00509DE0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    begin  (evidence: 0x00503BC0, 0x0050B960, 0x0050C4D0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void** field_0x04 (container element begin)  (evidence: 0x00518550) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 cachedChild  (evidence: 0x0066BA00) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    callback  (evidence: 0x00810C30) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* next (next node in chain)  (evidence: 0x006FACA0) // CONFLICT: multiple definitions at +0x4
@@ -296,6 +298,7 @@ struct Unknown_Fields {
     // +0x8   uint32_t*                end  (evidence: 0x0049E2F0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t*                 end  (evidence: 0x00509DE0, 0x00688CC0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    end  (evidence: 0x005013F0, 0x00503BC0, 0x0050B960, 0x0050C4D0, 0x00577DE0, 0x0057A770, 0x0057E9E0, 0x00681410, 0x0069A160) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void** field_0x08 (container element end)  (evidence: 0x00518550) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t*                 entriesEnd  (evidence: 0x0068BDF0) // CONFLICT: multiple definitions at +0x8
     // +0x8   BYTE                     field_0x08  (evidence: 0x004E9BB0, 0x006F8B30, 0x006FC200, 0x00714920, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x8
     // +0x8   Buffer                   field_0x08  (evidence: 0x0071E5F0) // CONFLICT: multiple definitions at +0x8
@@ -630,6 +633,7 @@ struct Unknown_Fields {
     // +0x1E  uint8_t                  field_0x1e  (evidence: 0x00402630) // CONFLICT: multiple definitions at +0x1E
     // +0x20  BYTE field_0x20 (base of byte array indexed by first argument)  (evidence: 0x0071E660) // CONFLICT: multiple definitions at +0x20
     // +0x20  void*                    child  (evidence: 0x005940E0, 0x005947B0, 0x00672590) // CONFLICT: multiple definitions at +0x20
+    // +0x20  double field_0x20 (element value compared)  (evidence: 0x00518550) // CONFLICT: multiple definitions at +0x20
     // +0x20  int32_t                  count  (evidence: 0x006DE5F0, 0x006DE690, 0x006DE720) // CONFLICT: multiple definitions at +0x20
     // +0x20  int32_t field_0x20 (entry count)  (evidence: 0x006DE770) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint32_t                 embedded_array_data_ptr  (evidence: 0x006E99C0) // CONFLICT: multiple definitions at +0x20

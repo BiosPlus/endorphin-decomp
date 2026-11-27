@@ -22022,6 +22022,12 @@
     "summary": "Fills out[0..n) with distinct values produced by ext_005111E0 bounded by m-1 (0 when m == 0), rerolling duplicates.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00518550": {
+    "name": "compareIndexedElementsGreater",
+    "signature": "int __thiscall fn_00518550(void* self, uint32_t idxA, uint32_t idxB)",
+    "summary": "Bounds-checks two indices (arg1, arg2) against the vector-like container reached through self-\u003efield_0x00, then returns 1 if the double at +0x20 of element[arg2] is greater than that of element[arg1] (NaN or unordered yields 0).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00519060": {
     "name": "sub_00519060",
     "signature": "void fn_00519060(uint32_t* first, uint32_t* last, uint32_t pred)",

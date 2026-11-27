@@ -1940,3 +1940,48 @@ extern void __fastcall fn_005149F0(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_005149F0
+
+// [0x00518550] sub_00518550 (125 bytes)
+namespace lift_00518550 {
+// IAT slot for MSVCR80!_invalid_parameter_noinfo (no arguments, returns to caller).
+extern void (*mem_00925134)(void);
+
+// @name compareIndexedElementsGreater
+// @summary Bounds-checks two indices (arg1, arg2) against the vector-like container reached through self->field_0x00, then returns 1 if the double at +0x20 of element[arg2] is greater than that of element[arg1] (NaN or unordered yields 0).
+// @field Unknown +0x00 void* field_0x00 (pointer to container header)
+// @field Unknown +0x04 void** field_0x04 (container element begin)
+// @field Unknown +0x08 void** field_0x08 (container element end)
+// @field Unknown +0x20 double field_0x20 (element value compared)
+int __thiscall fn_00518550(void* self, uint32_t idxA, uint32_t idxB) {
+    auto* obj = static_cast<uint8_t*>(self);
+    auto* container = *reinterpret_cast<uint8_t**>(obj);
+
+    // Bounds check for idxA: element count = (end - begin) / 4.
+    {
+        uintptr_t begin = *reinterpret_cast<uintptr_t*>(container + 0x04);
+        uintptr_t end = *reinterpret_cast<uintptr_t*>(container + 0x08);
+        if (begin == 0 || idxA >= static_cast<uint32_t>((end - begin) >> 2)) {
+            mem_00925134(); // falls through, as in the original
+        }
+    }
+    uintptr_t* beginA = reinterpret_cast<uintptr_t*>(*reinterpret_cast<uintptr_t*>(container + 0x04));
+    uint8_t* elemA = reinterpret_cast<uint8_t*>(beginA[idxA]);
+    const double valA = *reinterpret_cast<const double*>(elemA + 0x20);
+
+    // Bounds check for idxB.
+    container = *reinterpret_cast<uint8_t**>(obj);
+    {
+        uintptr_t begin = *reinterpret_cast<uintptr_t*>(container + 0x04);
+        uintptr_t end = *reinterpret_cast<uintptr_t*>(container + 0x08);
+        if (begin == 0 || idxB >= static_cast<uint32_t>((end - begin) >> 2)) {
+            mem_00925134(); // falls through, as in the original
+        }
+    }
+    uintptr_t* beginB = reinterpret_cast<uintptr_t*>(*reinterpret_cast<uintptr_t*>(container + 0x04));
+    uint8_t* elemB = reinterpret_cast<uint8_t*>(beginB[idxB]);
+    const double valB = *reinterpret_cast<const double*>(elemB + 0x20);
+
+    // x87 fcomp + test ah,0x41: returns 0 when valB <= valA or unordered.
+    return (valB > valA) ? 1 : 0;
+}
+} // namespace lift_00518550
