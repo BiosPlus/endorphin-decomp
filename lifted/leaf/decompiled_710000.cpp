@@ -2498,3 +2498,38 @@ float fn_0071CA10(void* self) {
     return slot(target);
 }
 } // namespace lift_0071CA10
+
+// [0x0071CAD0] sub_0071CAD0 (48 bytes)
+namespace lift_0071CAD0 {
+// Known callee 0x006DC460: Unknown::GetValueIfCountPositive
+extern int32_t __fastcall ext_006DC460(void* self);
+// Known callee 0x006C9560: sub_006C9560 (15 bytes, not lifted yet)
+extern uint32_t __fastcall ext_006C9560(void* self);
+// Known callee 0x00708000: Unknown::FindChildByName_00708000 (stack arg: name; ecx: self)
+extern uint32_t __thiscall ext_00708000(void* self, const char* name);
+// Known callee 0x006C9F70: sub_006C9F70 (Getter returning float field at offset +0x14.)
+extern float __fastcall ext_006C9F70(void* self);
+
+// @name Unknown::ResolveChainedFloat
+// @class Unknown
+// @summary Follows the object at +0x4 through two helpers and returns a float; if +0x4 is null, looks up a child at +0xC by name and tail-dispatches a virtual getter (vtable slot +0x7C).
+// @field Unknown +0x04 void* field_0x4
+// @field Unknown +0x0C void* field_0xC
+float fn_0071CAD0(void* self) {
+    void* obj = lift_field<void*>(self, 0x04);
+    if (obj != nullptr) {
+        int32_t v = ext_006DC460(obj);
+        uint32_t w = ext_006C9560(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(v))));
+        return ext_006C9F70(reinterpret_cast<void*>(static_cast<uintptr_t>(w)));
+    }
+
+    void* child_owner = lift_field<void*>(self, 0x0C);
+    const char* name = reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00AA8D4Cu));
+    uint32_t found = ext_00708000(child_owner, name);
+    void* obj2 = reinterpret_cast<void*>(static_cast<uintptr_t>(found));
+    void** vtable = *reinterpret_cast<void***>(obj2);
+    using VirtualGetter = float(__fastcall*)(void*);
+    VirtualGetter getter = reinterpret_cast<VirtualGetter>(vtable[0x7C / sizeof(void*)]);
+    return getter(obj2);
+}
+} // namespace lift_0071CAD0

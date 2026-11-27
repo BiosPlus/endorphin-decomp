@@ -74136,6 +74136,13 @@
     "summary": "If field +0x4 is non-null, returns the float getter of the callee chain on it; otherwise looks up child \"mem_00AA8D10\" under +0xC and tail-calls its vtable slot +0x7C.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x0071CAD0": {
+    "name": "Unknown::ResolveChainedFloat",
+    "class": "Unknown",
+    "signature": "float fn_0071CAD0(void* self)",
+    "summary": "Follows the object at +0x4 through two helpers and returns a float; if +0x4 is null, looks up a child at +0xC by name and tail-dispatches a virtual getter (vtable slot +0x7C).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071DC80": {
     "name": "sub_0071DC80",
     "signature": "bool fn_0071DC80(int value)",

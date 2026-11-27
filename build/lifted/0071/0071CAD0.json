@@ -1,0 +1,28 @@
+{
+  "va": "0x0071CAD0",
+  "size": 48,
+  "orig_symbol": "sub_0071CAD0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::ResolveChainedFloat",
+  "class": "Unknown",
+  "signature": "float fn_0071CAD0(void* self)",
+  "summary": "Follows the object at +0x4 through two helpers and returns a float; if +0x4 is null, looks up a child at +0xC by name and tail-dispatches a virtual getter (vtable slot +0x7C).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0xC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:14:37Z"
+}
