@@ -1,0 +1,13 @@
+{
+  "va": "0x004CDEE0",
+  "size": 90,
+  "orig_symbol": "sub_004CDEE0",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "initStaticObjectOnce_004CDEE0",
+  "signature": "void* fn_004CDEE0(void)",
+  "summary": "One-time initializer for the static object at 0x00AE4520, guarded by bit 0 of the flag dword at 0x00AE4544; runs ext_004CD9F0 on the object and registers 0x00918C00 via ext_006A6C87, then returns the object's address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:12:34Z"
+}

@@ -1257,3 +1257,25 @@ void* fn_004C9860() {
     return &mem_00AE3D94;
 }
 } // namespace lift_004C9860
+
+// [0x004CDEE0] sub_004CDEE0 (90 bytes)
+namespace lift_004CDEE0 {
+// Known callee 0x004CD9F0 (128B): invoked with the static object at 0x00AE4520 as `this`.
+extern void __fastcall ext_004CD9F0(void* self);
+// Known callee 0x006A6C87 (18B): called once with the immediate 0x00918C00 as its single argument.
+extern void ext_006A6C87(void* arg);
+extern int mem_00AE4544;
+extern int mem_00AE4520;
+extern int mem_00918C00;
+
+// @name initStaticObjectOnce_004CDEE0
+// @summary One-time initializer for the static object at 0x00AE4520, guarded by bit 0 of the flag dword at 0x00AE4544; runs ext_004CD9F0 on the object and registers 0x00918C00 via ext_006A6C87, then returns the object's address.
+void* fn_004CDEE0(void) {
+    if ((mem_00AE4544 & 1) == 0) {
+        mem_00AE4544 |= 1;
+        ext_004CD9F0(&mem_00AE4520);
+        ext_006A6C87(&mem_00918C00);
+    }
+    return &mem_00AE4520;
+}
+} // namespace lift_004CDEE0
