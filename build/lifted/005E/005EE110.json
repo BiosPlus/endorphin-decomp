@@ -1,0 +1,40 @@
+{
+  "va": "0x005EE110",
+  "size": 305,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_12_off_C",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_12_off_C",
+  "class": "NMData::FixedPathJointData",
+  "signature": "uint8_t __thiscall fn_005EE110(void* self, uint32_t arg0, void* arg1)",
+  "summary": "Unlinks/cleans up FixedPathJointData from its parent/children and removes its name from registries.",
+  "fields": [
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x14",
+      "type": "uint8_t field_0x14 (at this+0x8, passed as",
+      "name": "string/name)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x7C",
+      "type": "uint8_t field_0x7c (at this+0x70, dword",
+      "name": "range)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x18C",
+      "type": "void* field_0x18c (at",
+      "name": "this+0x180)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x190",
+      "type": "void* field_0x190 (at",
+      "name": "this+0x184)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:21:03Z"
+}

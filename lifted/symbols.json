@@ -55526,6 +55526,13 @@
     "summary": "Erases the range [+0x16C,+0x170) from the vector at +0x168 and [+0x204,+0x208) from the vector at +0x200, clears two strings and one more string at +0x1E4, resets several flags/counters and six floats to 0.0, then tail-calls AnimatableTransform::vfunc_33 on self.",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
+  "0x005EE110": {
+    "name": "NMData::FixedPathJointData::vfunc_12_off_C",
+    "class": "NMData::FixedPathJointData",
+    "signature": "uint8_t __thiscall fn_005EE110(void* self, uint32_t arg0, void* arg1)",
+    "summary": "Unlinks/cleans up FixedPathJointData from its parent/children and removes its name from registries.",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005EE250": {
     "name": "NMData::RootRelationshipData::vfunc_12_off_C",
     "class": "NMData::RootRelationshipData",

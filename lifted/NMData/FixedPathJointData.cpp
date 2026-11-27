@@ -1260,3 +1260,92 @@ void* __thiscall fn_005E24F0(void* self, void* arg0, void* arg1) {
     return arg0;
 }
 } // namespace lift_005E24F0
+
+// [0x005EE110]
+namespace lift_005EE110 {
+// @name NMData::FixedPathJointData::vfunc_12_off_C
+// @class NMData::FixedPathJointData
+// @summary Unlinks/cleans up FixedPathJointData from its parent/children and removes its name from registries.
+// @field NMData::FixedPathJointData +0x14 uint8_t field_0x14 (at this+0x8, passed as string/name)
+// @field NMData::FixedPathJointData +0x7C uint8_t field_0x7c (at this+0x70, dword range)
+// @field NMData::FixedPathJointData +0x18C void* field_0x18c (at this+0x180)
+// @field NMData::FixedPathJointData +0x190 void* field_0x190 (at this+0x184)
+
+struct MsvcString28 {
+    uint8_t bytes[28];
+};
+
+extern void (__thiscall* const mem_00925134)();
+extern void (__thiscall* const mem_00924FE0)(void* dst, const void* src);
+
+extern void __thiscall ext_00481BD0(void* self, uint32_t value);
+extern uint8_t __thiscall ext_00480280(void* self);
+extern void __thiscall ext_005ECBA0(void* self, void* obj);
+extern void __thiscall ext_005A3FE0(void* self, void* str);
+extern uint32_t __thiscall ext_005DF5C0(void* self, MsvcString28 str);
+extern void __thiscall ext_005BFDE0(void* self, MsvcString28 str);
+
+uint8_t __thiscall fn_005EE110(void* self, uint32_t arg0, void* arg1) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    void* obj180 = lift_field<void*>(base, 0x180);
+    if (obj180 != nullptr) {
+        auto vtbl = lift_field<void**>(obj180, 0);
+        auto fn3c = reinterpret_cast<uint8_t (__thiscall*)(void*)>(vtbl[0x3C / 4]);
+        if (fn3c(obj180) == 0) {
+            return 0;
+        }
+    }
+
+    void* fixed_path_joint = base - 0xC;
+    ext_00481BD0(arg1, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(fixed_path_joint)));
+
+    uint8_t* range = base + 0x70;
+    while (ext_00480280(range) == 0) {
+        uint32_t begin = lift_field<uint32_t>(range, 0x4);
+        if (begin == 0) {
+            mem_00925134();
+        } else {
+            uint32_t end = lift_field<uint32_t>(range, 0x8);
+            if ((static_cast<int32_t>(end - begin) >> 2) == 0) {
+                mem_00925134();
+            }
+        }
+
+        uint32_t first_elem = *reinterpret_cast<uint32_t*>(lift_field<uintptr_t>(range, 0x4));
+        void* child_sub = reinterpret_cast<void*>(first_elem + 0xC);
+        auto child_vtbl = lift_field<void**>(child_sub, 0);
+        auto fn30 = reinterpret_cast<void (__thiscall*)(void*, uint32_t, void*)>(child_vtbl[0x30 / 4]);
+        fn30(child_sub, arg0, arg1);
+    }
+
+    void* obj184 = lift_field<void*>(base, 0x184);
+    if (obj184 != nullptr) {
+        ext_005ECBA0(obj184, fixed_path_joint);
+    }
+
+    void* name_str = base + 0x8;
+    ext_005A3FE0(lift_field<void*>(base, 0x180), name_str);
+
+    MsvcString28 tmp1;
+    mem_00924FE0(&tmp1, name_str);
+    uint8_t* reg1 = static_cast<uint8_t*>(lift_field<void*>(base, 0x180)) + 0x58C;
+    if (ext_005DF5C0(reg1, tmp1) != 0) {
+        MsvcString28 tmp2;
+        mem_00924FE0(&tmp2, name_str);
+        ext_005BFDE0(static_cast<uint8_t*>(lift_field<void*>(base, 0x180)) + 0x58C, tmp2);
+        return 1;
+    }
+
+    MsvcString28 tmp3;
+    mem_00924FE0(&tmp3, name_str);
+    uint8_t* reg2 = static_cast<uint8_t*>(lift_field<void*>(base, 0x180)) + 0x5A4;
+    if (ext_005DF5C0(reg2, tmp3) != 0) {
+        MsvcString28 tmp4;
+        mem_00924FE0(&tmp4, name_str);
+        ext_005BFDE0(static_cast<uint8_t*>(lift_field<void*>(base, 0x180)) + 0x5A4, tmp4);
+    }
+
+    return 1;
+}
+} // namespace lift_005EE110

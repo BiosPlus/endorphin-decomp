@@ -17,9 +17,11 @@ struct NMData_FixedPathJointData_Fields {
     // +0x4   void*                    TransformInterface_vptr  (evidence: 0x005E4710) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (TransformInterface vptr; virtual calls via this+0x04)  (evidence: 0x005EE760) // CONFLICT: multiple definitions at +0x4
     // +0xC   uint8_t field_0x0c (RenderObjectOwner/Updateable sub-object; address passed)  (evidence: 0x005EE760)
+    // +0x14  uint8_t field_0x14 (at this+0x8, passed as string/name)  (evidence: 0x005EE110)
     // +0x44  int32_t field_0x44 (dispatch mode; 0..6 handled)  (evidence: 0x005E4900)
     // +0x74  void** field_0x74 (begin of child pointer array)  (evidence: 0x005E1060, 0x005EB890)
     // +0x78  void** field_0x78 (end of child pointer array)  (evidence: 0x005E1060, 0x005EB890)
+    // +0x7C  uint8_t field_0x7c (at this+0x70, dword range)  (evidence: 0x005EE110)
     // +0xE0  void* field_0xe0 (object pointer; its vtable slot at +0xAC is called)  (evidence: 0x005E1060) // CONFLICT: multiple definitions at +0xE0
     // +0xE0  void*                    field_0xe0  (evidence: 0x005E0E70) // CONFLICT: multiple definitions at +0xE0
     // +0xE4  void* field_0xe4 (object pointer; its sub-object at +4 receives the tail call)  (evidence: 0x005E4900)
@@ -44,8 +46,10 @@ struct NMData_FixedPathJointData_Fields {
     // +0x180 uint32_t field_0x180 (non-zero selects the tail call for codes 0x40/0x137/0x158)  (evidence: 0x005E1060, 0x005E29F0)
     // +0x184 void* field_0x184 (non-null object; its vtable slot 35 is called)  (evidence: 0x005E0430) // CONFLICT: multiple definitions at +0x184
     // +0x184 void*                    field_0x184  (evidence: 0x005E02D0) // CONFLICT: multiple definitions at +0x184
-    // +0x18C void*                    field_0x18c  (evidence: 0x005E4710, 0x005E4C80)
-    // +0x190 void*                    field_0x190  (evidence: 0x005E4710)
+    // +0x18C void*                    field_0x18c  (evidence: 0x005E4710, 0x005E4C80) // CONFLICT: multiple definitions at +0x18C
+    // +0x18C void* field_0x18c (at    this+0x180)  (evidence: 0x005EE110) // CONFLICT: multiple definitions at +0x18C
+    // +0x190 void*                    field_0x190  (evidence: 0x005E4710) // CONFLICT: multiple definitions at +0x190
+    // +0x190 void* field_0x190 (at    this+0x184)  (evidence: 0x005EE110) // CONFLICT: multiple definitions at +0x190
     // +0x194 int32_t                  field_0x194  (evidence: 0x005E4850, 0x005EB920) // CONFLICT: multiple definitions at +0x194
     // +0x194 uint32_t                 field_0x194  (evidence: 0x005E4710) // CONFLICT: multiple definitions at +0x194
     // +0x198 std_string_msvc          field_0x198  (evidence: 0x005EDFD0)
