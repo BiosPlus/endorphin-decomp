@@ -63539,6 +63539,13 @@
     "summary": "Destroys the 0x48-byte element range at +0x14..+0x18, releases its buffer via ext_006A5C5C, zeroes the range pointers and tidies the owning vector.",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x00622210": {
+    "name": "NMData::HingeCalibrationVariables::vfunc_26",
+    "class": "NMData::HingeCalibrationVariables",
+    "signature": "uint32_t fn_00622210(void* self, uint32_t arg)",
+    "summary": "Feeds the three float fields (+0x04/+0x08/+0x0C) and three global values into sub_00640390/sub_00640BC0 on a helper object returned by sub_006404E0, then returns that helper object.",
+    "lifted_path": "lifted/NMData/HingeCalibrationVariables.cpp"
+  },
   "0x00622290": {
     "name": "sub_00622290",
     "signature": "void* __thiscall sub_00622290(void* self)",

@@ -139,3 +139,38 @@ void fn_006227E0(void* self, void* obj) {
     hinge_store_block(obj, mem_00A9EF60, base + 0x08);
 }
 } // namespace lift_006227E0
+
+// [0x00622210] NMData::HingeCalibrationVariables::vfunc_26 (123 bytes)
+namespace lift_00622210 {
+// Callees: thiscall-style (this passed as first arg; ext_006404E0 takes one stack arg,
+// ext_00640390 takes two stack args and cleans them up), ext_00640BC0 is cdecl.
+extern uint32_t ext_006404E0(uint32_t self, uint32_t a);
+extern uint32_t ext_00640390(uint32_t self, uint32_t a, uint32_t b);
+extern void ext_00640BC0(uint32_t a, float b);
+
+extern uint32_t mem_00A9EE6C;
+extern uint32_t mem_00A9ED5C;
+extern uint32_t mem_00A9EF5C;
+extern uint32_t mem_00A9EF60;
+
+// @name NMData::HingeCalibrationVariables::vfunc_26
+// @class NMData::HingeCalibrationVariables
+// @summary Feeds the three float fields (+0x04/+0x08/+0x0C) and three global values into sub_00640390/sub_00640BC0 on a helper object returned by sub_006404E0, then returns that helper object.
+// @field NMData::HingeCalibrationVariables +0x04 float field_0x04
+// @field NMData::HingeCalibrationVariables +0x08 float field_0x08
+// @field NMData::HingeCalibrationVariables +0x0C float field_0x0C
+uint32_t fn_00622210(void* self, uint32_t arg) {
+    uint32_t obj = ext_006404E0(arg, mem_00A9EE6C);
+
+    uint32_t r = ext_00640390(obj, mem_00A9ED5C, 0);
+    ext_00640BC0(r, lift_field<float>(self, 0x0C));
+
+    r = ext_00640390(obj, mem_00A9EF5C, 0);
+    ext_00640BC0(r, lift_field<float>(self, 0x04));
+
+    r = ext_00640390(obj, mem_00A9EF60, 0);
+    ext_00640BC0(r, lift_field<float>(self, 0x08));
+
+    return obj;
+}
+} // namespace lift_00622210
