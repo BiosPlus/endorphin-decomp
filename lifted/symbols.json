@@ -28748,6 +28748,12 @@
     "summary": "Calls vtable slot 30 (+0x78) on the target object, passing the address of the second argument; no-op if target is null.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005850C0": {
+    "name": "computeIdentityMatrixAndCopyToSelf",
+    "signature": "void fn_005850C0(void* self, uint32_t arg)",
+    "summary": "Builds an identity 3x3 float matrix, passes it to sub_0067DAD0, runs sub_00584980 on it with the stack argument, then copies it into self via copyPacked3x3ToPaddedMatrix.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x00585120": {
     "name": "Unknown::LookupVec4AndBlend_00585120",
     "class": "Unknown",

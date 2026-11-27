@@ -1532,3 +1532,24 @@ extern void fn_00586A50(void* self, DWORD arg0, DWORD arg1) {
     }
 }
 } // namespace lift_00586A50
+
+// [0x005850C0] sub_005850C0 (89 bytes)
+namespace lift_005850C0 {
+extern void __stdcall ext_0067DAD0(float* mat);
+extern void __thiscall ext_00584980(void* self, uint32_t arg);
+// Known callee 0x0067DB10: copyPacked3x3ToPaddedMatrix (Copies a packed 3x3 float matrix (36 bytes) from src into a 4-float-stride matrix at self (rows at +0x00, +0x10, +0x20), leaving the padding slots untouched.)
+extern void __thiscall ext_0067DB10(void* self, const void* src);
+
+// @name computeIdentityMatrixAndCopyToSelf
+// @summary Builds an identity 3x3 float matrix, passes it to sub_0067DAD0, runs sub_00584980 on it with the stack argument, then copies it into self via copyPacked3x3ToPaddedMatrix.
+void fn_005850C0(void* self, uint32_t arg) {
+    float m[9] = {
+        1.0f, 0.0f, 0.0f,
+        0.0f, 1.0f, 0.0f,
+        0.0f, 0.0f, 1.0f
+    };
+    ext_0067DAD0(m);
+    ext_00584980(m, arg);
+    ext_0067DB10(self, m);
+}
+} // namespace lift_005850C0
