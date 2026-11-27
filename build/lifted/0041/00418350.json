@@ -1,0 +1,160 @@
+{
+  "va": "0x00418350",
+  "size": 1235,
+  "orig_symbol": "ExportDialog::vfunc_86",
+  "src_path": "src/classes/ExportDialog.cpp",
+  "lifted_path": "lifted/classes/ExportDialog.cpp",
+  "name": "ExportDialog::OnOK",
+  "class": "ExportDialog",
+  "signature": "void __thiscall fn_00418350(void* self)",
+  "summary": "Validates export dialog inputs, saves settings, and invokes CDialog::OnOK",
+  "fields": [
+    {
+      "class": "ExportDialog",
+      "offset": "+0x74",
+      "type": "void*",
+      "name": "predObj"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x78",
+      "type": "void*",
+      "name": "settings"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x8C",
+      "type": "void*",
+      "name": "numericCtrl"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0xAC",
+      "type": "object",
+      "name": "field_0xAC"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0xE8",
+      "type": "HWND",
+      "name": "field_0xE8"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x13C",
+      "type": "HWND",
+      "name": "hwndCombo1"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x190",
+      "type": "HWND",
+      "name": "hwndCombo3"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x1C4",
+      "type": "void*",
+      "name": "field_0x1C4"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x1E4",
+      "type": "HWND",
+      "name": "hwndCtrlK"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x218",
+      "type": "void*",
+      "name": "floatCtrlA"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x28C",
+      "type": "HWND",
+      "name": "hwndCheck1"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x2E0",
+      "type": "HWND",
+      "name": "hwndCheck2"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x334",
+      "type": "HWND",
+      "name": "hwndCheck3"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x4C0",
+      "type": "void*",
+      "name": "textCtrlB"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x514",
+      "type": "void*",
+      "name": "textCtrlC"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x630",
+      "type": "HWND",
+      "name": "hwndCheck4"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x72C",
+      "type": "HWND",
+      "name": "hwndMode"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x760",
+      "type": "object",
+      "name": "field_0x760"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x780",
+      "type": "HWND",
+      "name": "field_0x780"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x7B4",
+      "type": "object",
+      "name": "field_0x7B4"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x7D4",
+      "type": "HWND",
+      "name": "field_0x7D4"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x808",
+      "type": "object",
+      "name": "field_0x808"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x85C",
+      "type": "object",
+      "name": "field_0x85C"
+    },
+    {
+      "class": "ExportDialog",
+      "offset": "+0x8D0",
+      "type": "HWND",
+      "name": "field_0x8D0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:31:32Z"
+}
