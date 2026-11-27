@@ -1777,3 +1777,90 @@ bool __thiscall fn_00698240(void* self, void* str) {
     return total > 0;
 }
 } // namespace lift_00698240
+
+// [0x00697690] sub_00697690 (154 bytes)
+namespace lift_00697690 {
+extern int mem_00925134;
+
+namespace {
+
+// Typed access to a 32-bit guest address.
+template <typename T>
+inline T& at(uint32_t addr) {
+    return *reinterpret_cast<T*>(static_cast<uintptr_t>(addr));
+}
+
+// Calls the function pointer stored in the IAT slot at 0x00925134
+// (MSVCR80!_invalid_parameter_noinfo). Execution continues afterwards, as in the original.
+inline void invalidParameter() {
+    (*reinterpret_cast<void (**)()>(&mem_00925134))();
+}
+
+// Verifies that the owner (+0x10) is non-null and that the cursor (+0x14) is below owner->limit (+0x08).
+// Returns false when the owner is null, in which case the original would fault; the caller bails out.
+bool requireCursorInRange(uint32_t s) {
+    const uint32_t owner = at<uint32_t>(s + 0x10);
+    if (owner == 0) {
+        invalidParameter();
+        return false;
+    }
+    if (!(at<uint32_t>(s + 0x14) < at<uint32_t>(owner + 0x08))) {
+        invalidParameter();
+    }
+    return true;
+}
+
+} // namespace
+
+// @name RunningSumWindow::push
+// @class RunningSumWindow
+// @summary Replaces the float at the write cursor (+0x14) with `value`, adjusting the running sum (+0x18) by the difference; advances the cursor by 4 and wraps it back to the window start (+0x04) when it reaches the window end (+0x08).
+// @field RunningSumWindow +0x04 uint32_t windowStart
+// @field RunningSumWindow +0x08 uint32_t windowEnd
+// @field RunningSumWindow +0x10 uint32_t owner
+// @field RunningSumWindow +0x14 uint32_t cursor
+// @field RunningSumWindow +0x18 float runningSum
+void fn_00697690(void* self, float value) {
+    const uint32_t s = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+
+    // Remove the outgoing sample from the running sum.
+    if (!requireCursorInRange(s)) {
+        return;
+    }
+    float& sum = at<float>(s + 0x18);
+    sum -= at<float>(at<uint32_t>(s + 0x14));
+
+    // Store the incoming sample at the cursor and add it to the running sum.
+    if (!requireCursorInRange(s)) {
+        return;
+    }
+    at<float>(at<uint32_t>(s + 0x14)) = value;
+    sum = value + sum;
+
+    // Window start must not be past the window end.
+    const uint32_t end = at<uint32_t>(s + 0x08);
+    if (at<uint32_t>(s + 0x04) > end) {
+        invalidParameter();
+    }
+
+    // Owner must be non-null and the cursor in range; then advance the cursor by one float.
+    if (!requireCursorInRange(s)) {
+        return;
+    }
+    const uint32_t owner = at<uint32_t>(s + 0x10);
+    at<uint32_t>(s + 0x14) += 4;
+    if (owner != s) {
+        invalidParameter();
+    }
+
+    // Wrap: when the cursor reaches the window end, rewind it to the window start.
+    if (at<uint32_t>(s + 0x14) == end) {
+        const uint32_t start = at<uint32_t>(s + 0x04);
+        if (start > end) {
+            invalidParameter();
+        }
+        at<uint32_t>(s + 0x10) = s;
+        at<uint32_t>(s + 0x14) = start;
+    }
+}
+} // namespace lift_00697690

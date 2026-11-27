@@ -62323,6 +62323,13 @@
     "summary": "Initializes a 20-byte struct with 0x19, three zeros, and 1.",
     "lifted_path": "lifted/leaf/tiny_690000.cpp"
   },
+  "0x00697690": {
+    "name": "RunningSumWindow::push",
+    "class": "RunningSumWindow",
+    "signature": "inline T\u0026 at(uint32_t addr)",
+    "summary": "Replaces the float at the write cursor (+0x14) with `value`, adjusting the running sum (+0x18) by the difference; advances the cursor by 4 and wraps it back to the window start (+0x04) when it reaches the window end (+0x08).",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00697840": {
     "name": "Unknown::setFormatStrings",
     "class": "Unknown",

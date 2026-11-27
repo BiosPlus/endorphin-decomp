@@ -1,0 +1,46 @@
+{
+  "va": "0x00697690",
+  "size": 154,
+  "orig_symbol": "sub_00697690",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "RunningSumWindow::push",
+  "class": "RunningSumWindow",
+  "signature": "inline T\u0026 at(uint32_t addr)",
+  "summary": "Replaces the float at the write cursor (+0x14) with `value`, adjusting the running sum (+0x18) by the difference; advances the cursor by 4 and wraps it back to the window start (+0x04) when it reaches the window end (+0x08).",
+  "fields": [
+    {
+      "class": "RunningSumWindow",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "windowStart"
+    },
+    {
+      "class": "RunningSumWindow",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "windowEnd"
+    },
+    {
+      "class": "RunningSumWindow",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "owner"
+    },
+    {
+      "class": "RunningSumWindow",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "cursor"
+    },
+    {
+      "class": "RunningSumWindow",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "runningSum"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:19:01Z"
+}
