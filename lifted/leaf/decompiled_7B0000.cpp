@@ -1638,3 +1638,34 @@ void fn_007BA200(void* self, uint16_t tag, void* out, uint32_t mask) {
     lift_field<uint32_t>(out, 0x08) = value;
 }
 } // namespace lift_007BA200
+
+// [0x007B0FC0] sub_007B0FC0 (112 bytes)
+namespace lift_007B0FC0 {
+// @name Unknown::LookupMaskedValueFloat
+// @class Unknown
+// @summary Looks up a shift/mask pair by 16-bit index and returns (masked) value bits as a float; uses shift only when a's format tag is 'MM' (0x4D4D).
+// @field Unknown +0x150 uint16_t format_tag
+// @field Unknown +0x15C uint32_t* shift_table
+// @field Unknown +0x160 uint32_t* mask_table
+// @field Unknown +0x02 uint16_t index (b)
+// @field Unknown +0x08 uint32_t value (b)
+float fn_007B0FC0(void* a, void* b) {
+    const uint16_t index = lift_field<uint16_t>(b, 0x02);
+    const uint32_t value = lift_field<uint32_t>(b, 0x08);
+    const uint32_t* mask_table = reinterpret_cast<const uint32_t*>(
+        static_cast<uintptr_t>(lift_field<uint32_t>(a, 0x160)));
+
+    uint32_t result;
+    if (lift_field<uint16_t>(a, 0x150) == 0x4D4D) {
+        const uint32_t* shift_table = reinterpret_cast<const uint32_t*>(
+            static_cast<uintptr_t>(lift_field<uint32_t>(a, 0x15C)));
+        // x86 SHR masks the count to 5 bits; mirror that explicitly.
+        result = (value >> (shift_table[index] & 31u)) & mask_table[index];
+    } else {
+        result = mask_table[index] & value;
+    }
+
+    // Original returns the raw bit pattern in st(0) via fld.
+    return std::bit_cast<float>(result);
+}
+} // namespace lift_007B0FC0

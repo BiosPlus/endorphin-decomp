@@ -1,0 +1,46 @@
+{
+  "va": "0x007B0FC0",
+  "size": 112,
+  "orig_symbol": "sub_007B0FC0",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "Unknown::LookupMaskedValueFloat",
+  "class": "Unknown",
+  "signature": "float fn_007B0FC0(void* a, void* b)",
+  "summary": "Looks up a shift/mask pair by 16-bit index and returns (masked) value bits as a float; uses shift only when a's format tag is 'MM' (0x4D4D).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x150",
+      "type": "uint16_t",
+      "name": "format_tag"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x15C",
+      "type": "uint32_t*",
+      "name": "shift_table"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x160",
+      "type": "uint32_t*",
+      "name": "mask_table"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2",
+      "type": "uint16_t index",
+      "name": "(b)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t value",
+      "name": "(b)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:03:46Z"
+}

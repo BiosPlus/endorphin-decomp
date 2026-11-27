@@ -71980,6 +71980,13 @@
     "summary": "Returns 1 if a3 equals a2-\u003efield_0x04; otherwise looks up an entry for (a1, a2-\u003efield_0x00), forwards (a1-\u003efield_0x00, 0xAB1430, entry-\u003efield_0x10) to the callback, and returns 0.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B0FC0": {
+    "name": "Unknown::LookupMaskedValueFloat",
+    "class": "Unknown",
+    "signature": "float fn_007B0FC0(void* a, void* b)",
+    "summary": "Looks up a shift/mask pair by 16-bit index and returns (masked) value bits as a float; uses shift only when a's format tag is 'MM' (0x4D4D).",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B1920": {
     "name": "ParseFileModeFlags",
     "signature": "int32_t fn_007B1920(const char* mode, uint32_t a2)",
