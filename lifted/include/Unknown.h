@@ -1126,6 +1126,7 @@ struct Unknown_Fields {
     // +0xE0  BYTE                     field_0xe0  (evidence: 0x0045B450) // CONFLICT: multiple definitions at +0xE0
     // +0xE0  uint32_t                 field_0xe0  (evidence: 0x004561C0) // CONFLICT: multiple definitions at +0xE0
     // +0xE0  void*                    field_0xe0  (evidence: 0x00431330, 0x004313A0, 0x004313D0, 0x00433260, 0x00434380, 0x00434640, 0x00434680, 0x004346C0, 0x00434900) // CONFLICT: multiple definitions at +0xE0
+    // +0xE0  DWORD                    listEnd  (evidence: 0x0049F040) // CONFLICT: multiple definitions at +0xE0
     // +0xE4  Unknown                  field_0xE4  (evidence: 0x0072B130) // CONFLICT: multiple definitions at +0xE4
     // +0xE4  void*                    field_0xe4  (evidence: 0x004030F0, 0x00403400, 0x0040A910, 0x0040BE90) // CONFLICT: multiple definitions at +0xE4
     // +0xE8  Buffer                   field_0xE8  (evidence: 0x0071E5F0) // CONFLICT: multiple definitions at +0xE8

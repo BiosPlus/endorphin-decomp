@@ -12329,6 +12329,13 @@
     "summary": "Searches the list at this+0xdc for a node matching key and returns a pointer to its value (node+8) or null.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x0049F040": {
+    "name": "Unknown::findListValueByKey",
+    "class": "Unknown",
+    "signature": "static void callInvalidParameterHandler()",
+    "summary": "Searches the intrusive list at this+0xdc for key; returns node+8 (value pointer) or null.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049F0C0": {
     "name": "FindMatchingItemInList",
     "signature": "void* __thiscall fn_0049F0C0(void* self, uint32_t arg)",

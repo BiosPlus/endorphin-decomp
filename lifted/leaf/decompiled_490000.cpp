@@ -1629,3 +1629,70 @@ uint8_t fn_0049B170() {
     return result;
 }
 } // namespace lift_0049B170
+
+// [0x0049F040] sub_0049F040 (117 bytes)
+namespace lift_0049F040 {
+// Known callee 0x0049DBA0: ListFindFirstAccepting_0049DBA0
+// Walks an intrusive list from begin until end; writes (first, node) to out, where node is the first
+// entry whose embedded object's virtual slot 10 accepts key, or end if none does.
+extern void ext_0049DBA0(void* out, DWORD first, void* begin, DWORD unused, void* end, DWORD key);
+extern int mem_00925134;
+extern int mem_00924FDC;
+extern int mem_00ADCB28;
+extern void ext_0049ED70();
+extern void ext_004A2510();
+
+// @name Unknown::findListValueByKey
+// @class Unknown
+// @summary Searches the intrusive list at this+0xdc for key; returns node+8 (value pointer) or null.
+// @field Unknown +0xe0 DWORD listEnd
+
+// Original code calls *(void**)0x925134 (MSVCR80!_invalid_parameter_noinfo) on sentinel/consistency failures.
+static void callInvalidParameterHandler() {
+    using Handler = void (*)();
+    reinterpret_cast<Handler>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925134)))();
+}
+
+static void* ptrFromDword(DWORD v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+void* fn_0049F040(void* self, DWORD key) {
+    // Metadata-only references (not dereferenced or called by the disassembly). Address-of only, no runtime effect.
+    (void)&mem_00924FDC;
+    (void)&mem_00ADCB28;
+    (void)&ext_0049ED70;
+    (void)&ext_004A2510;
+
+    auto* const list = static_cast<uint8_t*>(self) + 0xdc;        // esi
+    const DWORD head = static_cast<DWORD>(reinterpret_cast<uintptr_t>(list));
+    const DWORD end = lift_field<DWORD>(list, 4);                  // ecx / ebx = [esi+4]
+    const DWORD begin = lift_field<DWORD>(ptrFromDword(end), 0);   // [[esi+4]]
+
+    struct Found {
+        DWORD first;
+        DWORD node;
+    } out{};
+    ext_0049DBA0(&out, head, ptrFromDword(begin), head, ptrFromDword(end), key);
+
+    const DWORD first = out.first;
+    const DWORD node = out.node;
+
+    if (head != first) {
+        callInvalidParameterHandler();
+    }
+    if (head == 0) {
+        callInvalidParameterHandler();
+    }
+    if (node == end) {
+        return nullptr;
+    }
+    if (head == 0) {
+        callInvalidParameterHandler();
+    }
+    if (node == lift_field<DWORD>(list, 4)) {
+        callInvalidParameterHandler();
+    }
+    return ptrFromDword(node + 8);
+}
+} // namespace lift_0049F040
