@@ -2516,3 +2516,32 @@ extern void* __fastcall fn_006BC410(void* self, void* /*edx*/, int32_t index, in
     return getItem(subobject, nullptr, index, type);
 }
 } // namespace lift_006BC410
+
+// [0x006BC760] sub_006BC760 (80 bytes)
+namespace lift_006BC760 {
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern void ext_006D2170();
+
+// @name Unknown::insertUniqueValue_006BC760
+// @class Unknown
+// @summary Linearly scans the int32 DynamicArray at this+0x54 for the argument value; if absent, appends it via InsertAt(count, &value) and returns true; returns false if already present.
+// @field Unknown +0x54 int32_t arrayCount
+// @field Unknown +0x64 int32_t* arrayData
+bool fn_006BC760(void* self, int32_t value) {
+    using InsertAtFn = int32_t(__thiscall*)(void*, int32_t, const void*);
+
+    void* const array = static_cast<uint8_t*>(self) + 0x54;
+    const int32_t count = lift_field<int32_t>(self, 0x54);
+    const int32_t* data = lift_field<const int32_t*>(self, 0x64);
+
+    for (int32_t i = 0; i < count; ++i) {
+        if (data[i] == value) {
+            return false;
+        }
+    }
+
+    int32_t elem = value;
+    reinterpret_cast<InsertAtFn>(ext_006D2170)(array, count, &elem);
+    return true;
+}
+} // namespace lift_006BC760

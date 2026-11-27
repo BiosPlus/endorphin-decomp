@@ -1,0 +1,28 @@
+{
+  "va": "0x006BC760",
+  "size": 80,
+  "orig_symbol": "sub_006BC760",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::insertUniqueValue_006BC760",
+  "class": "Unknown",
+  "signature": "bool fn_006BC760(void* self, int32_t value)",
+  "summary": "Linearly scans the int32 DynamicArray at this+0x54 for the argument value; if absent, appends it via InsertAt(count, \u0026value) and returns true; returns false if already present.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "int32_t",
+      "name": "arrayCount"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "int32_t*",
+      "name": "arrayData"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:45:07Z"
+}

@@ -1086,6 +1086,7 @@ struct Unknown_Fields {
     // +0x50  void* field_0x50 (embedded std::string)  (evidence: 0x00685890) // CONFLICT: multiple definitions at +0x50
     // +0x50  uint32_t field_0x50 (arg2 table word)  (evidence: 0x00865C00) // CONFLICT: multiple definitions at +0x50
     // +0x51  uint8_t                  field_0x51  (evidence: 0x005E4D90)
+    // +0x54  int32_t                  arrayCount  (evidence: 0x006BC760) // CONFLICT: multiple definitions at +0x54
     // +0x54  void**                   children_begin  (evidence: 0x00469530) // CONFLICT: multiple definitions at +0x54
     // +0x54  int32_t                  count  (evidence: 0x006297B0) // CONFLICT: multiple definitions at +0x54
     // +0x54  uint32_t field_0x54 (record field, per table element)  (evidence: 0x007CAF70, 0x007CCFE0) // CONFLICT: multiple definitions at +0x54
@@ -1164,6 +1165,7 @@ struct Unknown_Fields {
     // +0x61  uint8_t                  field_0x61  (evidence: 0x0052A370, 0x006B6A30) // CONFLICT: multiple definitions at +0x61
     // +0x61  uint8_t field_0x61 (stop flag)  (evidence: 0x0052AC70) // CONFLICT: multiple definitions at +0x61
     // +0x64  uint32_t                 arg2_saved  (evidence: 0x004030F0, 0x0040BE90) // CONFLICT: multiple definitions at +0x64
+    // +0x64  int32_t*                 arrayData  (evidence: 0x006BC760) // CONFLICT: multiple definitions at +0x64
     // +0x64  uint32_t field_0x64 (arg2 table word, first round base)  (evidence: 0x00865C00) // CONFLICT: multiple definitions at +0x64
     // +0x64  void*                    child  (evidence: 0x00441C10, 0x00443700) // CONFLICT: multiple definitions at +0x64
     // +0x64  uint8_t                  dirtyFlag  (evidence: 0x006B53D0, 0x006BA780) // CONFLICT: multiple definitions at +0x64
