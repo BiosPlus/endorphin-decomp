@@ -33,6 +33,7 @@ extern "C" void __thiscall fn_004C4DD0(void* self, void* a) {
     reinterpret_cast<VFn>(vt[22])(self, r);
 }
 #include <cstdint>
+#include <cstddef>
 
 // [0x004C4E40] NMData::ForceEventData::vfunc_60 (34 bytes)
 // @name NMData::ForceEventData::NotifyEvent0x266
@@ -294,3 +295,70 @@ void* __attribute__((thiscall)) fn_004C51E0(void* self) {
     return obj;
 }
 } // namespace lift_004C51E0
+
+// [0x004C6E60] NMData::ForceEventData::vfunc_88 (230 bytes)
+namespace lift_004C6E60 {
+// Known callee 0x00528BB0: descriptiveName_00528BB0 (forwardVirtual0x2CIfNonNull) (If this->field_0x04 is non-null, tail-dispatch virtual slot 0x2C/4 on it with the same args; otherwise return 0 (callee pops 8 bytes).)
+extern uint32_t __thiscall ext_00528BB0(void* self, uint32_t arg0, uint32_t arg1);
+// Known callee 0x00528BF0: forwardVirtual0x30IfNonNull (If this->field_0x04 is non-null, tail-calls its vtable slot 12 (+0x30) with the same stack arguments; otherwise returns popping 0xC bytes.)
+extern void __thiscall ext_00528BF0(void* self, uint32_t a0, uint32_t a1, uint32_t a2);
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t __cdecl ext_00594000(void);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762; cdecl allocator, returns block pointer.)
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764; cdecl free.)
+extern void ext_006A5C5C(void* p);
+// Known callee 0x004C6E30: sub_004C6E30 (44B) (thiscall; receives the new block as ecx and the owner as its single stack argument.)
+extern void __thiscall ext_004C6E30(void* self, void* owner);
+extern int mem_00B40640;
+
+// @name NMData::ForceEventData::ResetOwnedBlock0x18
+// @class NMData::ForceEventData
+// @summary Calls two helpers on this+0xC, clears flag +0x188, allocates a 0x18-byte block (filled with TransformInterface vslot 3 result and 0.0f), frees the previous block at +0x184, stores the new block there, and calls ext_004C6E30(block, this).
+// @field NMData::ForceEventData +0x04 void** TransformInterface_vptr
+// @field NMData::ForceEventData +0x184 uint32_t field_0x184
+// @field NMData::ForceEventData +0x188 uint8_t field_0x188
+void fn_004C6E60(void* self) {
+    uint8_t* const base = static_cast<uint8_t*>(self);
+    void* const sub = base + 0x0C;
+
+    // Two helper calls on the +0x0C subobject.
+    ext_00528BB0(sub, 0x200u, 1u);
+    const int32_t g = ext_00594000() + 0x168;
+    ext_00528BF0(sub, 0x200u, 1u, static_cast<uint32_t>(g));
+
+    lift_field<uint8_t>(self, 0x188) = 0;
+
+    void* block = ext_006A5C62(0x18);
+    if (block != nullptr) {
+        // Virtual slot 3 (+0x0C) on the TransformInterface subobject at +0x04,
+        // passing the global mem_00B40640 as its single argument.
+        void** tiVptr = lift_field<void**>(self, 0x04);
+        using Slot3 = uint32_t (*)(void* self, int arg);
+        const uint32_t r = reinterpret_cast<Slot3>(tiVptr[3])(base + 0x04, mem_00B40640);
+
+        lift_field<float>(block, 0x14) = 0.0f;
+        lift_field<uint32_t>(block, 0x04) = 0;
+        lift_field<uint32_t>(block, 0x08) = 0;
+        lift_field<uint32_t>(block, 0x0C) = 0;
+        lift_field<uint32_t>(block, 0x10) = r;
+    }
+
+    // Free the previous block at +0x184 unless it is the same as the new one (or null).
+    const uint32_t oldDw = lift_field<uint32_t>(self, 0x184);
+    void* old = reinterpret_cast<void*>(static_cast<uintptr_t>(oldDw));
+    if (old != block && old != nullptr) {
+        const uint32_t innerDw = lift_field<uint32_t>(old, 0x04);
+        if (innerDw != 0) {
+            ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(innerDw)));
+        }
+        lift_field<uint32_t>(old, 0x04) = 0;
+        lift_field<uint32_t>(old, 0x08) = 0;
+        lift_field<uint32_t>(old, 0x0C) = 0;
+        ext_006A5C5C(old);
+    }
+
+    lift_field<uint32_t>(self, 0x184) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(block));
+    ext_004C6E30(block, self);
+}
+} // namespace lift_004C6E60

@@ -20459,6 +20459,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::ForceEventData::vfunc_21.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004C6E60": {
+    "name": "NMData::ForceEventData::ResetOwnedBlock0x18",
+    "class": "NMData::ForceEventData",
+    "signature": "void fn_004C6E60(void* self)",
+    "summary": "Calls two helpers on this+0xC, clears flag +0x188, allocates a 0x18-byte block (filled with TransformInterface vslot 3 result and 0.0f), frees the previous block at +0x184, stores the new block there, and calls ext_004C6E30(block, this).",
+    "lifted_path": "lifted/NMData/ForceEventData.cpp"
+  },
   "0x004C6F50": {
     "name": "sub_004C6F50",
     "signature": "extern \"C\" void __fastcall fn_004C6F50(void* self)",
