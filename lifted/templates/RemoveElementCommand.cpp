@@ -145,3 +145,60 @@ void fn_004BC240(void* self) {
     }
 }
 } // namespace lift_004BC240
+
+// [0x004B55B0]
+namespace lift_004B55B0 {
+// @name PointainerWithUndo<UndoablePointainerVector<NMData::GraphEntryData>>::RemoveElementCommand::vfunc_1
+// @class PointainerWithUndo<UndoablePointainerVector<NMData::GraphEntryData>>::RemoveElementCommand
+// @summary Releases the saved element if it changed, removes the target element from the owner's pointer vector, stores the removed index, then notifies the object at +0x24 (vtable slot 1) and the object at +0x14.
+// @field PointainerWithUndo<UndoablePointainerVector<NMData::GraphEntryData>>::RemoveElementCommand +0x10 uint32_t owner
+// @field PointainerWithUndo<UndoablePointainerVector<NMData::GraphEntryData>>::RemoveElementCommand +0x14 uint32_t listener
+// @field PointainerWithUndo<UndoablePointainerVector<NMData::GraphEntryData>>::RemoveElementCommand +0x18 uint32_t saved_value
+// @field PointainerWithUndo<UndoablePointainerVector<NMData::GraphEntryData>>::RemoveElementCommand +0x1C uint32_t target_value
+// @field PointainerWithUndo<UndoablePointainerVector<NMData::GraphEntryData>>::RemoveElementCommand +0x20 int32_t removed_index
+// @field PointainerWithUndo<UndoablePointainerVector<NMData::GraphEntryData>>::RemoveElementCommand +0x24 uint32_t notifier
+
+// Imported helpers and data (differentially tested against endorphin.exe).
+int32_t ext_004B53E0(void* self, const uint32_t* target_ptr);   // VectorFindAndErase
+void ext_00517510(void* self, void* arg);                      // CallSlot3OnEachEntryThenDispatch
+void ext_006A5C5C(uint32_t arg);                               // thunk_MFC80_ord_764 (cdecl)
+extern uint32_t mem_00924FF4;                                  // IAT slot: basic_string dtor
+
+static inline void* as_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+void fn_004B55B0(void* self) {
+    uint32_t ebx = lift_field<uint32_t>(self, 0x1C);
+    uint32_t ebp = lift_field<uint32_t>(self, 0x18);
+
+    if (ebx != ebp && ebp != 0) {
+        // call [mem_00924FF4] with this = ebp + 4
+        auto dtor = reinterpret_cast<void (*)(void*)>(static_cast<uintptr_t>(mem_00924FF4));
+        dtor(as_ptr(ebp + 4));
+        ext_006A5C5C(ebp);
+    }
+
+    lift_field<uint32_t>(self, 0x18) = ebx;
+
+    uint32_t owner = lift_field<uint32_t>(self, 0x10);
+    int32_t eax = ext_004B53E0(as_ptr(owner), &lift_field<uint32_t>(self, 0x1C));
+    lift_field<int32_t>(self, 0x20) = eax;
+
+    uint32_t notifier = lift_field<uint32_t>(self, 0x24);
+    if (notifier != 0) {
+        // edx = [[notifier] + 4]; call edx with this = notifier,
+        // args = ([self+0x1C], eax)
+        uint32_t* obj = reinterpret_cast<uint32_t*>(as_ptr(notifier));
+        uint32_t* vtable = reinterpret_cast<uint32_t*>(as_ptr(obj[0]));
+        uint32_t slot1 = vtable[1];
+        auto fn = reinterpret_cast<void (*)(void*, uint32_t, int32_t)>(as_ptr(slot1));
+        fn(as_ptr(notifier), lift_field<uint32_t>(self, 0x1C), eax);
+    }
+
+    uint32_t listener = lift_field<uint32_t>(self, 0x14);
+    if (listener != 0) {
+        ext_00517510(as_ptr(listener), as_ptr(lift_field<uint32_t>(self, 0x1C)));
+    }
+}
+} // namespace lift_004B55B0
