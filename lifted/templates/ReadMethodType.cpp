@@ -187053,3 +187053,58 @@ void fn_0066FD50(void* holder, void* arg2) {
     reinterpret_cast<void (*)(void*, void*, void*)>(lift_field<void*>(subVt, 0xB0))(sub, holder, arg2);
 }
 } // namespace lift_0066FD50
+
+// [0x006958E0] ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0>::vfunc_47 (162 bytes)
+namespace lift_006958E0 {
+// Known callee 0x00672080: sub_00672080 (18B). Thiscall-style: this = &temp.f04, one float argument.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy; returns self).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception object in place).
+extern void ext_0046C3C0(void* self);
+// Known thunk 0x006A6DD2: forwards to MSVCR80!_CxxThrowException(object, throwInfo).
+extern void ext_006A6DD2(void* exception, void* throwInfo);
+extern int mem_008A5428;
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<DoubleWithProperties>::vfunc_47
+// @class ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0>
+// @summary Reads the double behind field_0x00 as a float, stores it into a temp value, assigns it to field_0x04, then forwards vfunc_47 to field_0x04 with self.
+// @field ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0> +0x00 double* field_0x00
+// @field ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0> +0x04 void* field_0x04
+void fn_006958E0(void* self) {
+    (void)&mem_008A5428;  // EH/SEH scope table for the original try region (boilerplate)
+
+    double* source = lift_field<double*>(self, 0x00);
+    if (source == nullptr) {
+        // Null source: build a DerivedException and throw it.
+        // Exception object size is not recovered; 32 bytes is a conservative placeholder.
+        alignas(8) uint8_t exception[32] = {};
+        ext_0046C3C0(exception);
+        ext_006A6DD2(exception, &mem_009DEC1C);
+        return;
+    }
+
+    float value = static_cast<float>(*source);
+
+    // Stack temporary: f00 at +0 (unused here), f04 at +4 holds the value object.
+    struct Temp {
+        void* f00;
+        void* f04;
+    } temp{};
+
+    ext_00672080(&temp.f04, value);
+    ext_0041CF50(self, &temp);
+
+    if (temp.f04 != nullptr) {
+        // Release the previous temp object via vtable slot 0x78 (index 30).
+        void** vtbl = *reinterpret_cast<void***>(temp.f04);
+        reinterpret_cast<void (*)(void*, void*)>(vtbl[30])(temp.f04, &temp);
+    }
+
+    // Forward: field_0x04->vfunc_47(self) (vtable slot 0xBC, index 47).
+    void* sub = lift_field<void*>(self, 0x04);
+    void** subVtbl = *reinterpret_cast<void***>(sub);
+    reinterpret_cast<void (*)(void*, void*)>(subVtbl[47])(sub, self);
+}
+} // namespace lift_006958E0

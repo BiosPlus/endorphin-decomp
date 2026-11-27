@@ -1,0 +1,14 @@
+{
+  "va": "0x006958E0",
+  "size": 162,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e::vfunc_47",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cDoubleWithProperties\u003e::vfunc_47",
+  "class": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e",
+  "signature": "void fn_006958E0(void* self)",
+  "summary": "Reads the double behind field_0x00 as a float, stores it into a temp value, assigns it to field_0x04, then forwards vfunc_47 to field_0x04 with self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:49:57Z"
+}

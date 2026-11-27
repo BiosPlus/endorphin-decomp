@@ -77644,6 +77644,13 @@
     "summary": "Reads the double behind field_0x00, stores it as float through a temp holder, assigns the holder into self, and forwards to vtable slot 45 of self-\u003efield_0x04.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006958E0": {
+    "name": "ExprParser::ReadMethodType\u003cDoubleWithProperties\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e",
+    "signature": "void fn_006958E0(void* self)",
+    "summary": "Reads the double behind field_0x00 as a float, stores it into a temp value, assigns it to field_0x04, then forwards vfunc_47 to field_0x04 with self.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00695990": {
     "name": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026DoubleWithProperties::getValue, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026DoubleWithProperties::getValue, 0\u003e",
