@@ -1,0 +1,33 @@
+{
+  "va": "0x004FDBD0",
+  "size": 137,
+  "orig_symbol": "sub_004FDBD0",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "copy_backward_records_36B",
+  "signature": "static inline void* as_ptr(uint32_t addr)",
+  "summary": "Backward-copies the 36-byte records in [first, last) so they end at d_last (copy-assigning each string at +0x00, the u32 at +0x1C, and the pointer at +0x20 via its vtable); returns the new begin of the destination range.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:30:26Z"
+}

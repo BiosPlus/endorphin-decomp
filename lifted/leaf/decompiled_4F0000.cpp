@@ -1031,3 +1031,73 @@ void fn_004F0250(void* self) {
                  reinterpret_cast<int32_t*>(static_cast<uintptr_t>(last)));
 }
 } // namespace lift_004F0250
+
+// [0x004FDBD0] sub_004FDBD0 (137 bytes)
+namespace lift_004FDBD0 {
+// IAT slot (0x924FDC) holding MSVCP80 basic_string<char>::operator=(const basic_string&).
+extern int mem_00924FDC;
+extern void* __thiscall ext_MSVCP80_string_assign(void* self, const void* src);
+
+static inline void* as_ptr(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+static inline uint32_t& u32_at(uint32_t base, uint32_t offset) {
+    return *static_cast<uint32_t*>(as_ptr(base + offset));
+}
+
+// @name copy_backward_records_36B
+// @summary Backward-copies the 36-byte records in [first, last) so they end at d_last (copy-assigning each string at +0x00, the u32 at +0x1C, and the pointer at +0x20 via its vtable); returns the new begin of the destination range.
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1C uint32_t field_0x1c
+// @field Unknown +0x20 uint32_t field_0x20
+void* __cdecl fn_004FDBD0(void* first, void* last, void* d_last) {
+    const uint32_t lo = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(first));
+    uint32_t src = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(last));
+    uint32_t dst = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(d_last));
+
+    if (src == lo) {
+        return d_last;
+    }
+
+    do {
+        src -= 0x24;
+        dst -= 0x24;
+
+        // Assign the record's string: dst.field_0x00 = src.field_0x00.
+        // The original calls through the IAT slot mem_00924FDC; the thunk is ext_MSVCP80_string_assign.
+        (void)&mem_00924FDC;
+        ext_MSVCP80_string_assign(as_ptr(dst), as_ptr(src));
+
+        // Self-assignment guard (dst == src means the +0x1C slots coincide).
+        if (dst != src) {
+            // Release the old pointer held at dst+0x20 via vtable slot 30 (0x78),
+            // passing the address of dst+0x1C as the out-parameter.
+            const uint32_t old_obj = u32_at(dst, 0x20);
+            if (old_obj != 0) {
+                void** vtbl = static_cast<void**>(*static_cast<void**>(as_ptr(old_obj)));
+                using Slot30 = void(__thiscall*)(void*, void*);
+                reinterpret_cast<Slot30>(vtbl[30])(as_ptr(old_obj), as_ptr(dst + 0x1C));
+            }
+
+            // Copy the pointer at src+0x20 into dst+0x20 (raw copy, no refcount).
+            const uint32_t src_obj = u32_at(src, 0x20);
+            u32_at(dst, 0x20) = src_obj;
+
+            // Clone-style read via vtable slot 28 (0x70) on src_obj, then store the result at dst+0x1C.
+            uint32_t value = 0;
+            if (src_obj != 0) {
+                void** vtbl = static_cast<void**>(*static_cast<void**>(as_ptr(src_obj)));
+                using Slot28 = void*(__thiscall*)(void*, void*, void*);
+                uint32_t tmp = 0;
+                void* result = reinterpret_cast<Slot28>(vtbl[28])(
+                    as_ptr(src_obj), &tmp, as_ptr(src + 0x1C));
+                value = *static_cast<uint32_t*>(result);
+            }
+            u32_at(dst, 0x1C) = value;
+        }
+    } while (src != lo);
+
+    return as_ptr(dst);
+}
+} // namespace lift_004FDBD0
