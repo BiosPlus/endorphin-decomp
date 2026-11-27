@@ -4304,3 +4304,50 @@ int fn_00432490(void) {
     }
 }
 } // namespace lift_00432490
+
+// [0x00430FC0]
+namespace lift_00430FC0 {
+// @name formatPathToStdString
+// @summary Formats a path/string using an MFC helper and constructs a std::string
+// @field AfxState +0x04 uint32_t field_0x04
+
+extern void* ext_006A5EDE();
+extern void ext_006A64F0(void* self, void* out_cstr, uint32_t arg1, const char* arg2);
+
+extern uint32_t mem_0093A090;
+extern void* mem_00924300;
+extern void* mem_00924FE4;
+extern void* mem_009242F4;
+extern uint32_t mem_0092431C;
+extern uint32_t mem_00924780;
+extern uint32_t mem_00924784;
+extern uint32_t mem_00924788;
+extern uint32_t mem_0092478C;
+
+extern void* __stdcall fn_00430FC0(void* out_str, void* in_cstr) {
+    (void)mem_0092431C;
+    (void)mem_00924780;
+    (void)mem_00924784;
+    (void)mem_00924788;
+    (void)mem_0092478C;
+    uint32_t local_cstr = 0;
+
+    void* afx_state = ext_006A5EDE();
+    void* helper = lift_field<void*>(afx_state, 0x4);
+
+    using cstr_get_fn = const char* (__thiscall*)(void*, uint32_t);
+    const char* s1 = reinterpret_cast<cstr_get_fn>(mem_00924300)(in_cstr, 0);
+
+    ext_006A64F0(helper, &local_cstr, mem_0093A090, s1);
+
+    const char* s2 = reinterpret_cast<cstr_get_fn>(mem_00924300)(&local_cstr, 0);
+
+    using std_string_ctor_fn = void (__thiscall*)(void*, const char*);
+    reinterpret_cast<std_string_ctor_fn>(mem_00924FE4)(out_str, s2);
+
+    using cstr_dtor_fn = void (__thiscall*)(void*);
+    reinterpret_cast<cstr_dtor_fn>(mem_009242F4)(&local_cstr);
+
+    return out_str;
+}
+} // namespace lift_00430FC0

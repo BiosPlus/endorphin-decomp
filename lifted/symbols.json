@@ -3586,6 +3586,12 @@
     "summary": "Kills the timer at +0x160 for HWND at +0x20 and tail-calls MFC80_ord_4342",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430FC0": {
+    "name": "formatPathToStdString",
+    "signature": "extern \"C\" void* __stdcall fn_00430FC0(void* out_str, void* in_cstr)",
+    "summary": "Formats a path/string using an MFC helper and constructs a std::string",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00431310": {
     "name": "sub_00431310",
     "signature": "void fn_00431310(uint32_t arg)",
@@ -52709,6 +52715,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00665E40 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00666360": {
+    "name": "sub_00666360_dtor",
+    "signature": "extern \"C\" void __thiscall fn_00666360(void* self)",
+    "summary": "Destructor/cleanup for object at this, clearing mem_00B59420, freeing field_0x2c, destroying subobjects at +0x1c and +0x10, and deleting *this if non-null.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x006667D0": {
     "name": "sub_006667D0",
     "signature": "extern \"C\" void __fastcall fn_006667D0(void* self)",
@@ -62879,6 +62891,12 @@
     "name": "DestructSub6AD3C0",
     "signature": "void fn_006AD3C0(void* self)",
     "summary": "Destructor that resets vtable, releases sub-object at +0x44, decrements refcount at +0x4, and destroys members at +0xC and +0x8.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
+  "0x006AD440": {
+    "name": "sub_006AD440",
+    "signature": "extern \"C\" void __thiscall fn_006AD440(void* self, uint32_t* out1, uint32_t* out2, uint32_t* out3)",
+    "summary": "Retrieves three color or style values from the associated window/control based on focus state.",
     "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
   },
   "0x006AD580": {

@@ -1,0 +1,21 @@
+{
+  "va": "0x00430FC0",
+  "size": 131,
+  "orig_symbol": "sub_00430FC0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "formatPathToStdString",
+  "signature": "extern \"C\" void* __stdcall fn_00430FC0(void* out_str, void* in_cstr)",
+  "summary": "Formats a path/string using an MFC helper and constructs a std::string",
+  "fields": [
+    {
+      "class": "AfxState",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:25:27Z"
+}
