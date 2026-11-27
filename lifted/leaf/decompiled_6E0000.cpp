@@ -1894,3 +1894,27 @@ DWORD fn_006E9430(void* self, DWORD index_arg) {
     return 0;
 }
 } // namespace lift_006E9430
+
+// [0x006E91E0] sub_006E91E0 (48 bytes)
+namespace lift_006E91E0 {
+// Known callee 0x006E7440: Unknown::assignStringByIndex_006E7440 (Stores the index in this, looks up the C string at that index in the table at +0x54, and assigns it via ext_006B9EC0 on (this + 8); returns that call's result.)
+extern void* ext_006E7440(void* self, DWORD index);
+
+// @name Unknown::getIndexedEntryFirstDword_006E91E0
+// @class Unknown
+// @summary If 0 <= index < this->count (+0x4C), returns the DWORD pointed to by table[index] (table at +0x5C); otherwise calls ext_006E7440(this+0x94, 3) and returns 0.
+// @field Unknown +0x4C int32_t count
+// @field Unknown +0x5C DWORD table
+DWORD fn_006E91E0(void* self, DWORD index) {
+    int32_t idx = static_cast<int32_t>(index);
+    int32_t count = lift_field<int32_t>(self, 0x4C);
+    if (idx >= 0 && idx < count) {
+        DWORD table = lift_field<DWORD>(self, 0x5C);
+        DWORD entry = lift_field<DWORD>(reinterpret_cast<void*>(static_cast<uintptr_t>(table)),
+                                        static_cast<ptrdiff_t>(idx) * 4);
+        return lift_field<DWORD>(reinterpret_cast<void*>(static_cast<uintptr_t>(entry)), 0);
+    }
+    ext_006E7440(static_cast<uint8_t*>(self) + 0x94, 3);
+    return 0;
+}
+} // namespace lift_006E91E0

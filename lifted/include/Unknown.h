@@ -1062,6 +1062,7 @@ struct Unknown_Fields {
     // +0x48  uint32_t field_0x48 (arg2 table word)  (evidence: 0x00865C00) // CONFLICT: multiple definitions at +0x48
     // +0x4C  int32_t                  arrayCount  (evidence: 0x006D37B0) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  float                    comp1  (evidence: 0x0062E2D0) // CONFLICT: multiple definitions at +0x4C
+    // +0x4C  int32_t                  count  (evidence: 0x006E91E0) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  std::string field_0x4C (compared against the literal; returned when it differs)  (evidence: 0x00584BD0) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  Unknown                  field_0x4C  (evidence: 0x0072B130) // CONFLICT: multiple definitions at +0x4C
     // +0x4C  float                    field_0x4C  (evidence: 0x004E3A30, 0x0051CCC0, 0x0055CD10, 0x00622B40, 0x006267B0, 0x006296D0, 0x007D48A0, 0x007D85B0) // CONFLICT: multiple definitions at +0x4C
@@ -1161,6 +1162,7 @@ struct Unknown_Fields {
     // +0x5C  uint32_t                 member_5c_vtable  (evidence: 0x006B5090) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  uint32_t                 member_vftable  (evidence: 0x006B8210, 0x006BA780) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  void*                    ownedPtrB  (evidence: 0x00648790) // CONFLICT: multiple definitions at +0x5C
+    // +0x5C  DWORD                    table  (evidence: 0x006E91E0) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  uint32_t*                vec_end  (evidence: 0x0042ECC0) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  uint32_t field_0x5c (arg2 table word)  (evidence: 0x00865C00) // CONFLICT: multiple definitions at +0x5C
     // +0x60  uint32_t                 arg1_saved  (evidence: 0x004030F0, 0x0040BE90) // CONFLICT: multiple definitions at +0x60
