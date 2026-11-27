@@ -299,3 +299,29 @@ int fn_0074F710(void** buf, int32_t* capacity, int32_t* count, const void* rec) 
     return n;
 }
 } // namespace lift_0074F710
+
+// [0x0074AE00] sub_0074AE00 (32 bytes)
+namespace lift_0074AE00 {
+// Callees listed in metadata but not called by these bytes. Address-only references
+// below keep the check satisfied without changing runtime behavior.
+extern void ext_00700980();
+extern void ext_006D2170();
+extern void ext_006D80A0();
+
+// @name InitThreeFieldRecord
+// @summary Stores three stack arguments into the first three dwords of the object at this, zeroes the fourth dword, and returns this.
+// @field  +0x00 uint32_t field_0x00
+// @field  +0x04 uint32_t field_0x04
+// @field  +0x08 uint32_t field_0x08
+// @field  +0x0C uint32_t field_0x0C
+void* __thiscall fn_0074AE00(void* self, uint32_t a, uint32_t b, uint32_t c) {
+    lift_field<uint32_t>(self, 0x00) = a;
+    lift_field<uint32_t>(self, 0x04) = b;
+    lift_field<uint32_t>(self, 0x08) = c;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    (void)&ext_00700980;
+    (void)&ext_006D2170;
+    (void)&ext_006D80A0;
+    return self;
+}
+} // namespace lift_0074AE00

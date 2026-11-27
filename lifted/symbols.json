@@ -77672,6 +77672,12 @@
     "summary": "Pure jump thunk forwarding to sub_006D2160.",
     "lifted_path": "lifted/leaf/tiny_740000.cpp"
   },
+  "0x0074AE00": {
+    "name": "InitThreeFieldRecord",
+    "signature": "void* __thiscall fn_0074AE00(void* self, uint32_t a, uint32_t b, uint32_t c)",
+    "summary": "Stores three stack arguments into the first three dwords of the object at this, zeroes the fourth dword, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_740000.cpp"
+  },
   "0x0074AEF0": {
     "name": "sub_0074AEF0",
     "signature": "extern \"C\" void __thiscall fn_0074AEF0(void* self)",
