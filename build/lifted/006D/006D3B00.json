@@ -1,0 +1,28 @@
+{
+  "va": "0x006D3B00",
+  "size": 80,
+  "orig_symbol": "sub_006D3B00",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::callVtbl13AndAppend_006D3B00",
+  "class": "Unknown",
+  "signature": "int32_t __thiscall fn_006D3B00(void* self, int32_t arg1, int32_t arg2, int32_t arg3)",
+  "summary": "Calls vtable slot 19 (+0x4c) on self with (arg1, arg2, arg3); if the result is nonzero, appends it to the DynamicArray at +0xdc (index = current count) and returns the result, else returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xDC",
+      "type": "DynamicArray",
+      "name": "array"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:46:58Z"
+}

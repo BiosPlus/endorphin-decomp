@@ -68408,6 +68408,13 @@
     "summary": "Calls virtual slot 12 on self; if it returns non-null, appends that value to the DynamicArray embedded at +0x4c via InsertAt at the current count.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D3B00": {
+    "name": "Unknown::callVtbl13AndAppend_006D3B00",
+    "class": "Unknown",
+    "signature": "int32_t __thiscall fn_006D3B00(void* self, int32_t arg1, int32_t arg2, int32_t arg3)",
+    "summary": "Calls vtable slot 19 (+0x4c) on self with (arg1, arg2, arg3); if the result is nonzero, appends it to the DynamicArray at +0xdc (index = current count) and returns the result, else returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D3B50": {
     "name": "Unknown::insertVirtualResultIntoArray_006D3B50",
     "class": "Unknown",

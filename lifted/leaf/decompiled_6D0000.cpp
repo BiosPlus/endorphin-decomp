@@ -3144,3 +3144,30 @@ int32_t fn_006D8A40(void* self, int32_t arg1, int32_t* arg2) {
     return result;
 }
 } // namespace lift_006D8A40
+
+// [0x006D3B00] sub_006D3B00 (80 bytes)
+namespace lift_006D3B00 {
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+int32_t __thiscall ext_006D2170(void* self, int32_t index, const void* elem);
+
+// @name Unknown::callVtbl13AndAppend_006D3B00
+// @class Unknown
+// @summary Calls vtable slot 19 (+0x4c) on self with (arg1, arg2, arg3); if the result is nonzero, appends it to the DynamicArray at +0xdc (index = current count) and returns the result, else returns 0.
+// @field Unknown +0x00 void** vtable
+// @field Unknown +0xdc DynamicArray array
+int32_t __thiscall fn_006D3B00(void* self, int32_t arg1, int32_t arg2, int32_t arg3) {
+    using VtblFn = int32_t(__thiscall*)(void* self, int32_t a1, int32_t a2, int32_t a3);
+
+    void** vtbl = lift_field<void**>(self, 0x00);
+    auto produce = reinterpret_cast<VtblFn>(lift_field<void*>(vtbl, 0x4c));
+    const int32_t value = produce(self, arg1, arg2, arg3);
+    if (value == 0) {
+        return 0;
+    }
+
+    void* array = static_cast<uint8_t*>(self) + 0xdc;
+    const int32_t count = lift_field<int32_t>(array, 0x00);
+    ext_006D2170(array, count, &value);
+    return value;
+}
+} // namespace lift_006D3B00
