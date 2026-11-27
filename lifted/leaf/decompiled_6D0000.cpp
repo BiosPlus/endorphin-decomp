@@ -3612,3 +3612,49 @@ extern uint8_t fn_006D4C20(void* self, void* key) {
     return 1;
 }
 } // namespace lift_006D4C20
+
+// [0x006D9070] sub_006D9070 (96 bytes)
+namespace lift_006D9070 {
+// Metadata-listed references that the disassembly never touches. Address-only
+// references below have no runtime effect (see liftwork metadata notes).
+extern void ext_006B9D80();
+extern void ext_006C9A60();
+extern void ext_006D03D0();
+extern int mem_00AA9158;
+
+// @name Unknown::copyTripleIfMode_006D9070
+// @class Unknown
+// @summary If mode at +0x10 is 1 or 2, copies three doubles from src into the sub-object at field_0x0c+0x270, sets the flag at +0x16, and returns 1; otherwise returns 0.
+// @field Unknown +0x0c uint32_t field_0x0c
+// @field Unknown +0x10 int32_t field_0x10
+// @field Unknown +0x16 uint8_t field_0x16
+uint8_t fn_006D9070(void* self, const double* src) {
+    // Address-only references to metadata-listed symbols; never called or read.
+    (void)&ext_006B9D80;
+    (void)&ext_006C9A60;
+    (void)&ext_006D03D0;
+    (void)&mem_00AA9158;
+
+    const int32_t mode = lift_field<int32_t>(self, 0x10);
+    if (mode != 1 && mode != 2) {
+        return 0;
+    }
+
+    // All three source doubles are read before any destination write.
+    const double a = src[0];
+    const double b = src[1];
+    const double c = src[2];
+
+    // 32-bit guest pointer stored at +0x0c; widen through uintptr_t for the host cast.
+    const uint32_t sub = lift_field<uint32_t>(self, 0x0c);
+    unsigned char* dst = reinterpret_cast<unsigned char*>(
+        static_cast<uintptr_t>(sub) + 0x270);
+
+    lift_field<double>(dst, 0x00) = a;
+    lift_field<double>(dst, 0x08) = b;
+    lift_field<double>(dst, 0x10) = c;
+
+    lift_field<uint8_t>(self, 0x16) = 1;
+    return 1;
+}
+} // namespace lift_006D9070
