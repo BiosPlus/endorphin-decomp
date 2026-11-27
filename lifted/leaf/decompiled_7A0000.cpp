@@ -1305,3 +1305,53 @@ void fn_007AEBE0(void* self) {
     ext_00783270(self);
 }
 } // namespace lift_007AEBE0
+
+// [0x007AF180] sub_007AF180 (128 bytes)
+namespace lift_007AF180 {
+// @name ComputeDimsProductScaled
+// @class Unknown
+// @summary Takes three dimension pairs (fallbacks at +0x24/+0x28/+0x2c when the primary +0x30/+0x34/+0x38 are -1), computes product of ceil-divided counts, and scales by the u16 at +0x4e when the u16 at +0x72 equals 2.
+// @field Unknown +0x24 uint32_t field_0x24
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x2c uint32_t field_0x2c
+// @field Unknown +0x30 uint32_t field_0x30
+// @field Unknown +0x34 uint32_t field_0x34
+// @field Unknown +0x38 uint32_t field_0x38
+// @field Unknown +0x4e uint16_t field_0x4e
+// @field Unknown +0x72 uint16_t field_0x72
+uint32_t fn_007AF180(void* self) {
+    uint32_t a = lift_field<uint32_t>(self, 0x30);
+    uint32_t b = lift_field<uint32_t>(self, 0x34);
+    uint32_t c = lift_field<uint32_t>(self, 0x38);
+
+    if (a == 0xFFFFFFFFu) {
+        a = lift_field<uint32_t>(self, 0x24);
+    }
+    if (b == 0xFFFFFFFFu) {
+        b = lift_field<uint32_t>(self, 0x28);
+    }
+    if (c == 0xFFFFFFFFu) {
+        c = lift_field<uint32_t>(self, 0x2c);
+    }
+
+    uint32_t result;
+    if (a == 0 || b == 0 || c == 0) {
+        result = 0;
+    } else {
+        // Ceil-divide each (extent, divisor) pair using 32-bit unsigned wrap, as the asm does.
+        uint32_t n0 = lift_field<uint32_t>(self, 0x2c);
+        uint32_t n1 = lift_field<uint32_t>(self, 0x28);
+        uint32_t n2 = lift_field<uint32_t>(self, 0x24);
+        uint32_t q0 = (n0 + c - 1u) / c;
+        uint32_t q1 = (n1 + b - 1u) / b;
+        uint32_t q2 = (n2 + a - 1u) / a;
+        result = q0 * q1 * q2;
+    }
+
+    if (lift_field<uint16_t>(self, 0x72) == 2) {
+        uint32_t scale = lift_field<uint16_t>(self, 0x4e);
+        return scale * result;
+    }
+    return result;
+}
+} // namespace lift_007AF180

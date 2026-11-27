@@ -77481,6 +77481,13 @@
     "summary": "Byte-swaps the 32-bit words of `count` dword pairs in place, after byte-swapping 2*count dwords via ext_007AF040.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AF180": {
+    "name": "ComputeDimsProductScaled",
+    "class": "Unknown",
+    "signature": "uint32_t fn_007AF180(void* self)",
+    "summary": "Takes three dimension pairs (fallbacks at +0x24/+0x28/+0x2c when the primary +0x30/+0x34/+0x38 are -1), computes product of ceil-divided counts, and scales by the u16 at +0x4e when the u16 at +0x72 equals 2.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AF200": {
     "name": "Unknown::ComputeRowByteCount",
     "class": "Unknown",
