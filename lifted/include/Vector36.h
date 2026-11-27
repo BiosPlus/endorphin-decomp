@@ -8,7 +8,9 @@
 // Recovered field layout for Vector36:
 namespace lifted_layout {
 struct Vector36_Fields {
-    // +0x4   void*                    begin  (evidence: 0x00428F30)
-    // +0x8   void*                    end  (evidence: 0x00428F30)
+    // +0x4   uintptr_t                _last  (evidence: 0x00429050) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    begin  (evidence: 0x00428F30) // CONFLICT: multiple definitions at +0x4
+    // +0x8   uintptr_t                _end  (evidence: 0x00429050) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    end  (evidence: 0x00428F30) // CONFLICT: multiple definitions at +0x8
 };
 } // namespace lifted_layout

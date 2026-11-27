@@ -3445,6 +3445,13 @@
     "summary": "Pure jump thunk forwarding to sub_00428A60.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00429050": {
+    "name": "Vector36::tryInsertSorted",
+    "class": "Vector36",
+    "signature": "[[noreturn]] static void invalid_parameter()",
+    "summary": "Finds the sorted position for a 36-byte value; inserts it there unless the element already at that position has a key \u003c= the value's key. Returns true if inserted.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x00429100": {
     "name": "sub_00429100_dtor",
     "signature": "void __thiscall fn_00429100(void* self)",

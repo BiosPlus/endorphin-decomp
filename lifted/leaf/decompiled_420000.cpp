@@ -2497,3 +2497,69 @@ extern InsertResult* __thiscall fn_0042C0D0(void* self, InsertResult* ret, const
     return ret;
 }
 } // namespace lift_0042C0D0
+
+// [0x00429050] sub_00429050 (168 bytes)
+namespace lift_00429050 {
+// Returns the position (element pointer) where a value with key *val_ptr belongs.
+extern uintptr_t ext_00427810(uintptr_t last, uintptr_t cur_end, void* val_ptr, uint32_t flag, uint32_t zero);
+// Known callee 0x00428F30: Vector36::insert (Inserts a single 36-byte element into a checked vector at the given iterator position)
+extern void* ext_00428F30(void* self, void* ret_iter, void* iter_container, void* iter_ptr, void* val_ptr);
+
+// IAT slot for MSVCR80!_invalid_parameter_noinfo; the original calls through it.
+extern int mem_00925134;
+
+// Portable stand-in for _invalid_parameter_noinfo: the slot is referenced, then abort.
+[[noreturn]] static void invalid_parameter() {
+    (void)&mem_00925134;
+    std::abort();
+}
+
+// @name Vector36::tryInsertSorted
+// @class Vector36
+// @summary Finds the sorted position for a 36-byte value; inserts it there unless the element already at that position has a key <= the value's key. Returns true if inserted.
+// @field Vector36 +0x04 uintptr_t _last
+// @field Vector36 +0x08 uintptr_t _end
+bool fn_00429050(void* self, void* val_ptr) {
+    if (self == nullptr) {
+        invalid_parameter();
+    }
+
+    const uintptr_t old_end = lift_field<uintptr_t>(self, 0x8);
+    if (lift_field<uintptr_t>(self, 0x4) > old_end) {
+        invalid_parameter();
+    }
+    const uintptr_t last = lift_field<uintptr_t>(self, 0x4);
+    if (last > lift_field<uintptr_t>(self, 0x8)) {
+        invalid_parameter();
+    }
+
+    // Original stores a zero byte into a local and passes it as a dword.
+    const uint32_t flag = 0;
+    const uintptr_t pos = ext_00427810(last, old_end, val_ptr, flag, 0);
+
+    const uintptr_t end = lift_field<uintptr_t>(self, 0x8);
+    if (lift_field<uintptr_t>(self, 0x4) > end) {
+        invalid_parameter();
+    }
+
+    if (pos == end) {
+        uintptr_t ret_iter = 0;
+        ext_00428F30(self, &ret_iter, self, reinterpret_cast<void*>(pos), val_ptr);
+        return true;
+    }
+
+    if (pos >= lift_field<uintptr_t>(self, 0x8)) {
+        invalid_parameter();
+    }
+
+    const uint32_t new_key = *static_cast<const uint32_t*>(val_ptr);
+    const uint32_t at_key = *reinterpret_cast<const uint32_t*>(pos);
+    if (new_key < at_key) {
+        uintptr_t ret_iter = 0;
+        ext_00428F30(self, &ret_iter, self, reinterpret_cast<void*>(pos), val_ptr);
+        return true;
+    }
+
+    return false;
+}
+} // namespace lift_00429050
