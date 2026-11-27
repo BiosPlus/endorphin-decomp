@@ -1,0 +1,13 @@
+{
+  "va": "0x007B7910",
+  "size": 96,
+  "orig_symbol": "sub_007B7910",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "ReadFloatFromStream",
+  "signature": "float fn_007B7910(void)",
+  "summary": "Reads one 4-byte value from the stream returned by ext_0079EBE0 and returns its bits as a float; on a short read it reports via ext_007AA510(13) and returns 0.0f unless the global flag mem_00B61219 is set.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:14:07Z"
+}

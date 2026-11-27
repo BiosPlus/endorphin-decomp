@@ -2152,3 +2152,36 @@ int32_t fn_007B7830(void) {
     return static_cast<int32_t>(buf);
 }
 } // namespace lift_007B7830
+
+// [0x007B7910] sub_007B7910 (96 bytes)
+namespace lift_007B7910 {
+// Known callee 0x0079EBE0: sub_0079EBE0 (Calls ext_0079EBD0 to get a pointer-sized address and returns the int32 stored at it.)
+extern int32_t ext_0079EBE0(void);
+// Known callee 0x007BAE20: copyDword (Copies a 32-bit value from the address in arg1 to the address in arg2 (cdecl, no stack cleanup).)
+extern void ext_007BAE20(uint32_t* src, uint32_t* dst);
+// Known callee 0x007AA510: sub_007AA510 (Caches idx in the first free 8-byte slot of table 0x00B61170 (storing ext_007AA5A0(idx) as its value); if no slot is free, stores idx/ext_007AA5A0(0x16) in the overflow globals. Idx 0 is a no-op.)
+extern void ext_007AA510(uint32_t idx);
+extern int mem_00999790;
+extern int mem_009252AC;
+extern int mem_00993838;
+extern int mem_00B61219;
+
+// @name ReadFloatFromStream
+// @summary Reads one 4-byte value from the stream returned by ext_0079EBE0 and returns its bits as a float; on a short read it reports via ext_007AA510(13) and returns 0.0f unless the global flag mem_00B61219 is set.
+float fn_007B7910(void) {
+    uint32_t buf = 0;   // asm [esp]
+    uint32_t val = 0;   // asm [esp+4]
+    FILE* stream = reinterpret_cast<FILE*>(static_cast<intptr_t>(ext_0079EBE0()));
+    // asm called through the MSVCR80!fread IAT slot (mem_009252AC); portable form calls std::fread.
+    (void)&mem_009252AC;
+    size_t n = std::fread(&buf, static_cast<size_t>(mem_00999790), 1, stream);
+    if (n != 1) {
+        ext_007AA510(13);
+        if (*reinterpret_cast<uint8_t*>(&mem_00B61219) == 0) {
+            return std::bit_cast<float>(static_cast<uint32_t>(mem_00993838));
+        }
+    }
+    ext_007BAE20(&buf, &val);
+    return std::bit_cast<float>(val);
+}
+} // namespace lift_007B7910

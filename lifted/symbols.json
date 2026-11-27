@@ -85182,6 +85182,12 @@
     "summary": "Copies its uint32 argument into a local, fetches a FILE* via ext_0079EBE0, fwrite()s the local (4 bytes) to it, and reports 0x11 via ext_007AA510 on short write.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B7910": {
+    "name": "ReadFloatFromStream",
+    "signature": "float fn_007B7910(void)",
+    "summary": "Reads one 4-byte value from the stream returned by ext_0079EBE0 and returns its bits as a float; on a short read it reports via ext_007AA510(13) and returns 0.0f unless the global flag mem_00B61219 is set.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B7970": {
     "name": "ProcessByteBufferUntilStop",
     "signature": "void __cdecl ProcessByteBufferUntilStop(uint32_t count, const uint8_t* data)",
