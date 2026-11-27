@@ -1,0 +1,22 @@
+{
+  "va": "0x0061FF80",
+  "size": 187,
+  "orig_symbol": "NMData::GraphicData::vfunc_21",
+  "src_path": "src/NMData/GraphicData.cpp",
+  "lifted_path": "lifted/NMData/GraphicData.cpp",
+  "name": "NMData::GraphicData::vfunc_21",
+  "class": "NMData::GraphicData",
+  "signature": "void __thiscall fn_0061FF80(void* self, void* arg)",
+  "summary": "Calls CollisionModelDataBase::vfunc_21 on self with arg, maps the result of sub_0063F530(arg, mem_00A9EF58, 0, 1) through a set of sentinel values to a canonical 0x00B53B30 (otherwise keeps the raw result), assigns the literal string into the subobject at +0x154, and forwards the canonical value to sub_005B5E50 on that subobject.",
+  "fields": [
+    {
+      "class": "NMData::GraphicData",
+      "offset": "+0x154",
+      "type": "uint8_t field_0x154 (address of subobject only; not read or written",
+      "name": "here)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:47:18Z"
+}

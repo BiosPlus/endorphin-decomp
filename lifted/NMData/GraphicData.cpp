@@ -152,3 +152,54 @@ void* fn_00620120(void* self, void* arg) {
     return obj;
 }
 } // namespace lift_00620120
+
+// [0x0061FF80] NMData::GraphicData::vfunc_21 (187 bytes)
+namespace lift_0061FF80 {
+// Known callee 0x0058F630: NMData::CollisionModelDataBase::vfunc_21 (thiscall, one stack argument).
+extern void ext_0058F630(void* self, void* arg);
+// Known callee 0x0063F530: sub_0063F530 (thiscall, three stack arguments, returns a DWORD).
+extern uint32_t ext_0063F530(void* self, uint32_t a, uint32_t b, uint32_t c);
+// Known callee 0x005B18E0: AssignStringAndSetFlag (copy-assigns the std::string into this+0x28 and sets the byte flag at this+0x04 to 1).
+extern void ext_005B18E0(void* self, const void* src);
+// Known callee 0x005B5E50: sub_005B5E50 (thiscall, one DWORD stack argument).
+extern void ext_005B5E50(void* self, uint32_t value);
+// Global DWORD read by value (.data at 0x00A9EF58).
+extern int mem_00A9EF58;
+// NUL-terminated string literal at 0x009349D8 (.rdata), used to build a std::string.
+extern const char mem_009349D8[];
+// MSVCP80 import slots (std::string ctor/dtor) referenced by the original asm; metadata only.
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+
+// @name NMData::GraphicData::vfunc_21
+// @class NMData::GraphicData
+// @summary Calls CollisionModelDataBase::vfunc_21 on self with arg, maps the result of sub_0063F530(arg, mem_00A9EF58, 0, 1) through a set of sentinel values to a canonical 0x00B53B30 (otherwise keeps the raw result), assigns the literal string into the subobject at +0x154, and forwards the canonical value to sub_005B5E50 on that subobject.
+// @field NMData::GraphicData +0x154 uint8_t field_0x154 (address of subobject only; not read or written here)
+void __thiscall fn_0061FF80(void* self, void* arg) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF4;
+
+    ext_0058F630(self, arg);
+
+    uint32_t result = ext_0063F530(arg,
+                                   static_cast<uint32_t>(mem_00A9EF58),
+                                   0u,
+                                   1u);
+
+    // Sentinel values collapse to 0x00B53B30; any other result passes through unchanged.
+    uint32_t value = result;
+    if (result == 0x00B53A34u || result == 0x00B53B30u || result == 0x00B53AB0u ||
+        result == 0x00B53A70u || result == 0x00B53AF0u) {
+        value = 0x00B53B30u;
+    }
+
+    void* sub = base + 0x154;
+    {
+        std::string label(mem_009349D8);
+        ext_005B18E0(sub, &label);
+    }
+
+    ext_005B5E50(sub, value);
+}
+} // namespace lift_0061FF80
