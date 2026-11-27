@@ -1,0 +1,33 @@
+{
+  "va": "0x00661BF0",
+  "size": 156,
+  "orig_symbol": "sub_00661BF0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "QueryIndexedFlagOrByte",
+  "signature": "inline uintptr_t load_ptr32(uintptr_t addr)",
+  "summary": "Validates self-\u003e+0x08 against sub-object A-\u003e+0x60 and dispatches on self-\u003e+0x0C:",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:29:01Z"
+}

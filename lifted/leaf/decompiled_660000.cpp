@@ -4507,3 +4507,83 @@ void* __thiscall fn_006667E0(void* self,
     return self;
 }
 } // namespace lift_006667E0
+
+// [0x00661BF0] sub_00661BF0 (156 bytes)
+namespace lift_00661BF0 {
+// IAT slot holding MSVCR80!_invalid_parameter_noinfo (called on failed checks).
+extern void (*mem_00925134)(void);
+
+namespace {
+inline uintptr_t load_ptr32(uintptr_t addr) {
+    return *reinterpret_cast<const uint32_t*>(addr);
+}
+inline uint8_t load_u8(uintptr_t addr) {
+    return *reinterpret_cast<const uint8_t*>(addr);
+}
+} // namespace
+
+// @name QueryIndexedFlagOrByte
+// @summary Validates self->+0x08 against sub-object A->+0x60 and dispatches on self->+0x0C:
+//          either calls vfunc slot 0 on a pointer-vector element (returns bool) or returns a
+//          byte from a byte buffer (returns uint8_t). Failed checks call _invalid_parameter_noinfo.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x0C uint32_t field_0x0c
+uint8_t fn_00661BF0(void* self, uint32_t index) {
+    const uintptr_t s = reinterpret_cast<uintptr_t>(self);
+    const uintptr_t a = load_ptr32(s + 0x04);            // this->A
+    const uint32_t expected = static_cast<uint32_t>(load_ptr32(load_ptr32(a + 0x64))); // **(A+0x64)
+
+    const uintptr_t c = a + 0x60;
+    const uintptr_t d = load_ptr32(s + 0x08);
+    if (d == 0 || d != c) {
+        mem_00925134();
+    }
+
+    if (static_cast<uint32_t>(load_ptr32(s + 0x0C)) == expected) {
+        // Branch A: pointer vector at A+0x40 (begin @ +0x44, end @ +0x48).
+        const uintptr_t vec = a + 0x40;
+        const uintptr_t begin = load_ptr32(vec + 0x04);
+        if (begin == 0) {
+            mem_00925134();
+        } else {
+            const uint32_t end = static_cast<uint32_t>(load_ptr32(vec + 0x08));
+            const uint32_t count = static_cast<uint32_t>(
+                static_cast<int32_t>(end - static_cast<uint32_t>(begin)) >> 2);
+            if (index >= count) {
+                mem_00925134();
+            }
+        }
+
+        const uintptr_t obj = load_ptr32(begin + 4ull * index);
+        const uintptr_t vtbl = load_ptr32(obj);
+        const uintptr_t slot0 = load_ptr32(vtbl);
+        const uint8_t r = reinterpret_cast<uint8_t(__thiscall*)(void*)>(slot0)(
+            reinterpret_cast<void*>(obj));
+        return r != 0 ? 1 : 0;
+    }
+
+    // Branch B: validate D, then read a byte from the buffer at F+0x3C.
+    if (load_ptr32(s + 0x08) == 0) {
+        mem_00925134();
+    }
+    const uintptr_t dd = load_ptr32(s + 0x08);
+    const uintptr_t f = load_ptr32(s + 0x0C);
+    if (static_cast<uint32_t>(f) == static_cast<uint32_t>(load_ptr32(dd + 0x04))) {
+        mem_00925134();
+    }
+
+    const uintptr_t g = f + 0x3C;                         // byte vector: begin @ +0x40, end @ +0x44
+    const uintptr_t gbegin = load_ptr32(g + 0x04);
+    if (gbegin == 0) {
+        mem_00925134();
+    } else {
+        const uint32_t gend = static_cast<uint32_t>(load_ptr32(g + 0x08));
+        const uint32_t gsize = gend - static_cast<uint32_t>(gbegin);
+        if (index >= gsize) {
+            mem_00925134();
+        }
+    }
+    return load_u8(gbegin + index);
+}
+} // namespace lift_00661BF0

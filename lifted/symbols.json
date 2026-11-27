@@ -57175,6 +57175,12 @@
     "summary": "Dereferences an iterator-like wrapper to access a 64-byte element or invoke a virtual getter at index",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00661BF0": {
+    "name": "QueryIndexedFlagOrByte",
+    "signature": "inline uintptr_t load_ptr32(uintptr_t addr)",
+    "summary": "Validates self-\u003e+0x08 against sub-object A-\u003e+0x60 and dispatches on self-\u003e+0x0C:",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00661C90": {
     "name": "sub_00661C90",
     "signature": "static inline void call_invalid_param()",
