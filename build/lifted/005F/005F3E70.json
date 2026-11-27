@@ -1,0 +1,22 @@
+{
+  "va": "0x005F3E70",
+  "size": 109,
+  "orig_symbol": "sub_005F3E70",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "std::binary_search_checked",
+  "class": "std",
+  "signature": "uint32_t sub_005F3E70(void* iter_container, void* first, void* expected_container, void* last, void* key_ptr, void* pred)",
+  "summary": "Performs lower_bound via ext_004AB940 with MSVC80 iterator validation and checks if key is found",
+  "fields": [
+    {
+      "class": "iter",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:18:43Z"
+}

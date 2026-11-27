@@ -1295,3 +1295,34 @@ void __thiscall fn_005FF240(void* self, uint32_t arg) {
     lift_field<uint32_t>(self, 0x28) = arg;
 }
 } // namespace lift_005FF240
+
+// [0x005F3E70]
+namespace lift_005F3E70 {
+// @name std::binary_search_checked
+// @summary Performs lower_bound via ext_004AB940 with MSVC80 iterator validation and checks if key is found
+// @field iter +0x08 uint32_t end_ptr
+
+
+extern void* ext_004AB940(void* first, void* last, void* val, void* pred, uint32_t zero);
+extern void (*mem_00925134)();
+
+uint32_t sub_005F3E70(void* iter_container, void* first, void* expected_container, void* last, void* key_ptr, void* pred) {
+    void* it = ext_004AB940(first, last, key_ptr, pred, 0);
+    if (iter_container == nullptr || iter_container != expected_container) {
+        mem_00925134();
+    }
+    if (it == last) {
+        return 0;
+    }
+    if (iter_container == nullptr) {
+        mem_00925134();
+    }
+    if (reinterpret_cast<uintptr_t>(it) >= lift_field<uint32_t>(iter_container, 0x08)) {
+        mem_00925134();
+    }
+    if (lift_field<uint32_t>(key_ptr, 0x00) < lift_field<uint32_t>(it, 0x00)) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_005F3E70
