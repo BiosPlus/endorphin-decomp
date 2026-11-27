@@ -3406,3 +3406,46 @@ void* fn_00504640(void* self) {
     return self;
 }
 } // namespace lift_00504640
+
+// [0x00504A30] sub_00504A30 (60 bytes)
+namespace lift_00504A30 {
+// Known callee 0x0066AC90: sub_0066AC90 (cdecl; takes one pointer plus one 28-byte std::string by value on the stack).
+extern void ext_0066AC90();
+// IAT slot 0x00925354: MSVCR80 type_info::_name_internal_method(__type_info_node*) const
+extern void (*mem_00925354)();
+// IAT slot 0x00924FE4: MSVCP80 basic_string<char>::basic_string(const char*)
+extern void (*mem_00924FE4)();
+// Global std::type_info object at 0x00A4090C
+extern int mem_00A4090C;
+// Global __type_info_node at 0x00B5CE94
+extern int mem_00B5CE94;
+
+// Raw 28-byte MSVC std::string storage, passed by value (copied to the stack arg slot).
+struct StdStringBlob {
+    unsigned char bytes[28];
+};
+
+namespace {
+
+typedef const char* (__thiscall* TypeInfoNameFn)(void* self, void* node);
+typedef void (__thiscall* StringCtorFn)(void* self, const char* s);
+typedef void (__cdecl* StringArgFn)(void* a1, StdStringBlob s);
+
+}  // namespace
+
+// @name ResolveTypeInfoNameAndForward_00504A30
+// @summary Gets the name of the global type_info node, builds a std::string from it, passes that string plus the first argument to ext_0066AC90, and returns the first argument.
+void* fn_00504A30(void* a1) {
+    StdStringBlob str{};
+
+    const char* name = reinterpret_cast<TypeInfoNameFn>(mem_00925354)(
+        reinterpret_cast<void*>(&mem_00A4090C),
+        reinterpret_cast<void*>(&mem_00B5CE94));
+
+    reinterpret_cast<StringCtorFn>(mem_00924FE4)(str.bytes, name);
+
+    reinterpret_cast<StringArgFn>(ext_0066AC90)(a1, str);
+
+    return a1;
+}
+} // namespace lift_00504A30

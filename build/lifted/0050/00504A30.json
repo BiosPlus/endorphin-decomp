@@ -1,0 +1,13 @@
+{
+  "va": "0x00504A30",
+  "size": 60,
+  "orig_symbol": "sub_00504A30",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "ResolveTypeInfoNameAndForward_00504A30",
+  "signature": "void* fn_00504A30(void* a1)",
+  "summary": "Gets the name of the global type_info node, builds a std::string from it, passes that string plus the first argument to ext_0066AC90, and returns the first argument.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:27:11Z"
+}
