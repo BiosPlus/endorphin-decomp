@@ -652,3 +652,111 @@ void* __thiscall fn_005E22C0(void* self) {
     return mem_00B45D20;
 }
 } // namespace lift_005E22C0
+
+// [0x005EC0A0]
+namespace lift_005EC0A0 {
+// @name NMData::SkeletalJointData::vfunc_22
+// @class NMData::SkeletalJointData
+// @summary Serializes SkeletalJointData fields, child components, and optional transform matrix into the target data node.
+// @field NMData::SkeletalJointData +0x178 uint8_t field_0x178
+// @field NMData::SkeletalJointData +0x179 uint8_t field_0x179
+// @field NMData::SkeletalJointData +0x17C void* field_0x17c
+// @field NMData::SkeletalJointData +0x180 void* field_0x180
+// @field NMData::SkeletalJointData +0x184 void* field_0x184
+// @field NMData::SkeletalJointData +0x190 void* field_0x190
+// @field NMData::SkeletalJointData +0x308 uint32_t field_0x308
+
+
+extern void __thiscall ext_00427550(void* self, const char* name);
+extern bool __thiscall ext_00582A70(void* self, float tol);
+extern void* __thiscall ext_005E0670(void* self, uint32_t val);
+extern void* __thiscall ext_005EB5A0(void* self, void* arg0);
+extern void* __thiscall ext_00611270(void* self, void* other);
+extern void* __thiscall ext_00640110(void* self, uint32_t key);
+extern void* __thiscall ext_006404E0(void* self, uint32_t key);
+extern void __cdecl ext_00640A80(void* node, uint8_t flag);
+extern void __cdecl ext_0067F040(void* node, void* vec4);
+extern void __cdecl ext_004275E0(void* dst, void* obj);
+extern float __thiscall ext_005B11E0(void* self, int32_t index);
+extern void* __thiscall ext_005E0770(void* self, void* arg);
+extern void* __thiscall ext_005F2970(void* self, void* arg);
+extern uint32_t __thiscall ext_0063EFE0(uint8_t* self, const char* name);
+
+extern uint32_t mem_00A9F280;
+extern uint32_t mem_00A9F65C;
+extern const char* (__thiscall* mem_00924FF0)(void* str);
+extern uint32_t mem_00B40640;
+extern float mem_0094CE80;
+extern uint32_t mem_00A9F24C;
+extern uint32_t mem_00A9F34C;
+extern uint32_t mem_00A9F3C8;
+extern uint32_t mem_00A9F3EC;
+extern uint32_t mem_00A9F3F0;
+extern uint32_t mem_00A9F3F4;
+extern uint32_t mem_00A9F724;
+extern void* mem_00924FE8;
+
+void* __thiscall fn_005EC0A0(void* self, void* arg0) {
+    void* node = ext_006404E0(arg0, mem_00A9F280);
+    ext_005EB5A0(self, node);
+
+    void* propNode = ext_00640110(node, mem_00A9F65C);
+    void* nameStr = ext_005E0670(self, lift_field<uint32_t>(self, 0x308));
+    const char* nameCStr = mem_00924FF0(nameStr);
+    ext_00427550(&propNode, nameCStr);
+
+    void* child17c = lift_field<void*>(self, 0x17C);
+    typedef void (__thiscall* VFunc22Fn)(void*, void*);
+    (*reinterpret_cast<VFunc22Fn**>(child17c))[22](child17c, node);
+
+    void* child180 = lift_field<void*>(self, 0x180);
+    if (lift_field<uint8_t>(self, 0x179) != 0) {
+        ext_00611270(child180, node);
+        void* fresh180 = lift_field<void*>(self, 0x180);
+        void* sub4 = reinterpret_cast<uint8_t*>(fresh180) + 4;
+        typedef void* (__thiscall* GetMatrixFn)(void*, uint32_t);
+        void* mat = (*reinterpret_cast<GetMatrixFn**>(sub4))[3](sub4, mem_00B40640);
+        if (!ext_00582A70(mat, mem_0094CE80)) {
+            void* outer = ext_006404E0(node, mem_00A9F24C);
+            void* matNode = ext_006404E0(outer, mem_00A9F34C);
+            uint32_t keys[4] = {
+                mem_00A9F3C8,
+                mem_00A9F3EC,
+                mem_00A9F3F0,
+                mem_00A9F3F4,
+            };
+            uint8_t* rowPtr = reinterpret_cast<uint8_t*>(mat);
+            for (int i = 0; i < 4; ++i) {
+                void* rowNode = ext_006404E0(matNode, keys[i]);
+                ext_0067F040(rowNode, rowPtr);
+                rowPtr += 0x10;
+            }
+        }
+    } else {
+        (*reinterpret_cast<VFunc22Fn**>(child180))[22](child180, node);
+    }
+
+    void* child184 = lift_field<void*>(self, 0x184);
+    (*reinterpret_cast<VFunc22Fn**>(child184))[22](child184, node);
+
+    void* child190 = lift_field<void*>(self, 0x190);
+    if (child190 != nullptr) {
+        typedef uint8_t (__thiscall* VFunc28Fn)(void*);
+        uint8_t flag = (*reinterpret_cast<VFunc28Fn**>(child190))[28](child190);
+        uint8_t selfFlag = lift_field<uint8_t>(self, 0x178);
+        if (flag != 0 || lift_field<uint8_t>(child190, 0x178) != selfFlag) {
+            void* flagNode = ext_00640110(node, mem_00A9F724);
+            ext_00640A80(flagNode, selfFlag);
+        }
+    }
+
+    (void)ext_004275E0;
+    (void)ext_005B11E0;
+    (void)ext_005E0770;
+    (void)ext_005F2970;
+    (void)ext_0063EFE0;
+    (void)mem_00924FE8;
+
+    return arg0;
+}
+} // namespace lift_005EC0A0

@@ -1,0 +1,58 @@
+{
+  "va": "0x005EC0A0",
+  "size": 420,
+  "orig_symbol": "NMData::SkeletalJointData::vfunc_22",
+  "src_path": "src/NMData/SkeletalJointData.cpp",
+  "lifted_path": "lifted/NMData/SkeletalJointData.cpp",
+  "name": "NMData::SkeletalJointData::vfunc_22",
+  "class": "NMData::SkeletalJointData",
+  "signature": "void* __thiscall fn_005EC0A0(void* self, void* arg0)",
+  "summary": "Serializes SkeletalJointData fields, child components, and optional transform matrix into the target data node.",
+  "fields": [
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x178",
+      "type": "uint8_t",
+      "name": "field_0x178"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x179",
+      "type": "uint8_t",
+      "name": "field_0x179"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x17C",
+      "type": "void*",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x180",
+      "type": "void*",
+      "name": "field_0x180"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x184",
+      "type": "void*",
+      "name": "field_0x184"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x190",
+      "type": "void*",
+      "name": "field_0x190"
+    },
+    {
+      "class": "NMData::SkeletalJointData",
+      "offset": "+0x308",
+      "type": "uint32_t",
+      "name": "field_0x308"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:08:52Z"
+}

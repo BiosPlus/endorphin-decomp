@@ -55825,6 +55825,13 @@
     "summary": "Pure jump thunk forwarding to sub_00480920.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x005EC0A0": {
+    "name": "NMData::SkeletalJointData::vfunc_22",
+    "class": "NMData::SkeletalJointData",
+    "signature": "void* __thiscall fn_005EC0A0(void* self, void* arg0)",
+    "summary": "Serializes SkeletalJointData fields, child components, and optional transform matrix into the target data node.",
+    "lifted_path": "lifted/NMData/SkeletalJointData.cpp"
+  },
   "0x005EC250": {
     "name": "NMData::RPROJointData::vfunc_22",
     "class": "NMData::RPROJointData",
