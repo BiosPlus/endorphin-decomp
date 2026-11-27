@@ -1,0 +1,94 @@
+{
+  "va": "0x007DA850",
+  "size": 114,
+  "orig_symbol": "sub_007DA850",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "allocateSplitArrayChunk",
+  "class": "ArrayChunk",
+  "signature": "void fn_007DA850(void* self, int32_t n, int32_t m)",
+  "summary": "Resizes a chunk for n-element arrays plus an m-sized header tail, then lays out six n*4-byte arrays and one n*12-byte array at offset 0x40 and writes the counts.",
+  "fields": [
+    {
+      "class": "ArrayChunk",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ArrayChunk",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ArrayChunk",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "ArrayChunk",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "ArrayChunk",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "ArrayChunk",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "ArrayChunk",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "ArrayChunk",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "ArrayChunk",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "ArrayChunk",
+      "offset": "+0x24",
+      "type": "int32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "ArrayChunk",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "ArrayChunk",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "ArrayChunk",
+      "offset": "+0x30",
+      "type": "int32_t",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:29:34Z"
+}

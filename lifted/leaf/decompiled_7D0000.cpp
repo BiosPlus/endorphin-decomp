@@ -1549,3 +1549,52 @@ void fn_007D7990(uint32_t* dst,
     ext_007D5950(0u, a10, 0x0099E03Cu);
 }
 } // namespace lift_007D7990
+
+// [0x007DA850] sub_007DA850 (114 bytes)
+namespace lift_007DA850 {
+// Known callee 0x007D62D0: MemoryChunk::resize (Resizes a memory chunk to at least new_size, reallocating via its allocator if needed.)
+extern void* ext_007D62D0(void* self, int32_t new_size);
+
+// @name allocateSplitArrayChunk
+// @class ArrayChunk
+// @summary Resizes a chunk for n-element arrays plus an m-sized header tail, then lays out six n*4-byte arrays and one n*12-byte array at offset 0x40 and writes the counts.
+// @field ArrayChunk +0x00 uint32_t field_0x00
+// @field ArrayChunk +0x04 uint32_t field_0x04
+// @field ArrayChunk +0x08 uint32_t field_0x08
+// @field ArrayChunk +0x0C uint32_t field_0x0C
+// @field ArrayChunk +0x10 int32_t field_0x10
+// @field ArrayChunk +0x14 uint32_t field_0x14
+// @field ArrayChunk +0x18 uint32_t field_0x18
+// @field ArrayChunk +0x1C uint32_t field_0x1C
+// @field ArrayChunk +0x20 uint32_t field_0x20
+// @field ArrayChunk +0x24 int32_t field_0x24
+// @field ArrayChunk +0x28 uint32_t field_0x28
+// @field ArrayChunk +0x2C uint32_t field_0x2C
+// @field ArrayChunk +0x30 int32_t field_0x30
+void fn_007DA850(void* self, int32_t n, int32_t m) {
+    // Required size: 32*n + 4*m + 0x40 (bytes).
+    const uint32_t un = static_cast<uint32_t>(n);
+    const uint32_t size = 32u * un + 4u * static_cast<uint32_t>(m) + 0x40u;
+
+    void* p = ext_007D62D0(self, static_cast<int32_t>(size));
+
+    // Array region base: p + 0x40. Addresses are stored as 32-bit values to match the layout.
+    const uintptr_t base = reinterpret_cast<uintptr_t>(p) + 0x40u;
+
+    lift_field<uint32_t>(p, 0x18) = static_cast<uint32_t>(base);
+    lift_field<uint32_t>(p, 0x1C) = static_cast<uint32_t>(base + 4u * un);
+    lift_field<uint32_t>(p, 0x14) = static_cast<uint32_t>(base + 8u * un);
+    lift_field<uint32_t>(p, 0x04) = static_cast<uint32_t>(base + 12u * un);
+    lift_field<uint32_t>(p, 0x08) = static_cast<uint32_t>(base + 16u * un);
+    lift_field<uint32_t>(p, 0x28) = static_cast<uint32_t>(base + 20u * un);
+    lift_field<uint32_t>(p, 0x00) = static_cast<uint32_t>(base + 32u * un);
+
+    lift_field<int32_t>(p, 0x30) = n;
+    lift_field<int32_t>(p, 0x24) = n;
+    lift_field<int32_t>(p, 0x10) = m;
+
+    lift_field<uint32_t>(p, 0x0C) = 0;
+    lift_field<uint32_t>(p, 0x20) = 0;
+    lift_field<uint32_t>(p, 0x2C) = 0;
+}
+} // namespace lift_007DA850

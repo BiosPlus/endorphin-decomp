@@ -80858,6 +80858,13 @@
     "summary": "Walks a link chain from a start node, following each node's child via FindLinkPredecessor while the node's flag byte at +0x1c4 (bit 0x02) is set; returns the first node whose flag is clear, or 0 if the chain is exhausted.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007DA850": {
+    "name": "allocateSplitArrayChunk",
+    "class": "ArrayChunk",
+    "signature": "void fn_007DA850(void* self, int32_t n, int32_t m)",
+    "summary": "Resizes a chunk for n-element arrays plus an m-sized header tail, then lays out six n*4-byte arrays and one n*12-byte array at offset 0x40 and writes the counts.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007DA8D0": {
     "name": "ZeroThreeDwords",
     "class": "Unknown",
