@@ -1,0 +1,14 @@
+{
+  "va": "0x0064C180",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisY(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "WriteMethodType\u003cRelationshipRPROMagnet, float\u003e::vfunc_40 (bind holder+0x04 to static accessor object)",
+  "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisY(float), 0}\u003e",
+  "signature": "void fn_0064C180(void* self, void* holder)",
+  "summary": "One-time lazy init of the static accessor object at mem_00B55844 (guard bit in mem_00B55848), then binds holder+0x04 to that accessor.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:45:21Z"
+}

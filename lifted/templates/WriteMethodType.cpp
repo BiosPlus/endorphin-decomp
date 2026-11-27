@@ -7295,3 +7295,31 @@ void fn_0063CC60(void* self) {
     *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(self) + 0x04) = 0x00B53184u;
 }
 } // namespace lift_0063CC60
+
+// [0x0064C180] ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisY(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_0064C180 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern uint32_t mem_00B55848;
+extern uint32_t mem_00B55844;
+
+// @name WriteMethodType<RelationshipRPROMagnet, float>::vfunc_40 (bind holder+0x04 to static accessor object)
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisY(float), 0}>
+// @summary One-time lazy init of the static accessor object at mem_00B55844 (guard bit in mem_00B55848), then binds holder+0x04 to that accessor.
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisY(float), 0}> +0x04 void* field_0x04
+void fn_0064C180(void* self, void* holder) {
+    (void)self;
+
+    // Guard: first call runs the static accessor initialisation.
+    if ((mem_00B55848 & 1u) == 0) {
+        mem_00B55848 |= 1u;
+        // Initialise accessor's first DWORD via the callee with argument 0.
+        (void)ext_0067A670(static_cast<void*>(&mem_00B55844), 0u);
+        // Install the accessor vtable pointer into its first DWORD.
+        mem_00B55844 = 0x0097F4CCu;
+    }
+
+    // Bind holder+0x04 to the static accessor object (both paths).
+    lift_field<uint32_t>(holder, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B55844));
+}
+} // namespace lift_0064C180
