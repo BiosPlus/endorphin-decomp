@@ -64339,6 +64339,12 @@
     "summary": "Sends Windows message 0x41A with wParam=0 and lParam=arg0 to the control's window handle.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006A84D0": {
+    "name": "registerWindowClass",
+    "signature": "extern \"C\" int32_t fn_006A84D0(void)",
+    "summary": "Checks if a window class is already registered and registers it via AfxRegisterClass if not.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006A8800": {
     "name": "AllocIndexAndStoreObject",
     "class": "Unknown",
@@ -83195,6 +83201,12 @@
     "signature": "void fn_007FC670(const float* a, const float* b, float* dst)",
     "summary": "Stores the component-wise maximum of two 4-float vectors into dst.",
     "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
+  "0x00802320": {
+    "name": "MaskedRangeCompare",
+    "signature": "uint32_t fn_00802320(uint32_t* a1, uint32_t* a2, uint32_t* a3, uint32_t* a4, int32_t a5, int32_t a6)",
+    "summary": "Ands a bitmask over arrays a1..a4 for up to a6 entries; a1[i]==0 selects ~a4[i], else a4[i] \u0026 ~(a2[i]^a3[i]); returns the surviving mask.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
   "0x00802D40": {
     "name": "sub_00802D40",

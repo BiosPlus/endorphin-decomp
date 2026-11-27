@@ -1,0 +1,13 @@
+{
+  "va": "0x00802320",
+  "size": 146,
+  "orig_symbol": "sub_00802320",
+  "src_path": "src/leaf/decompiled_800000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_800000.cpp",
+  "name": "MaskedRangeCompare",
+  "signature": "uint32_t fn_00802320(uint32_t* a1, uint32_t* a2, uint32_t* a3, uint32_t* a4, int32_t a5, int32_t a6)",
+  "summary": "Ands a bitmask over arrays a1..a4 for up to a6 entries; a1[i]==0 selects ~a4[i], else a4[i] \u0026 ~(a2[i]^a3[i]); returns the surviving mask.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:39:02Z"
+}

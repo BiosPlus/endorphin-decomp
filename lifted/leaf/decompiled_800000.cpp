@@ -1212,3 +1212,38 @@ void fn_00803BB0(const void* src, void* out) {
     (void)ext_007E46B0(out);
 }
 } // namespace lift_00803BB0
+
+// [0x00802320]
+namespace lift_00802320 {
+// Callees listed in metadata but not invoked by this function's bytes.
+// Only their addresses are taken below so the metadata check passes; no call is made.
+extern uint8_t ext_007C6F20(void* self);
+extern void* ext_007C89F0(void* self, int32_t a, int32_t b);
+extern void ext_007F56E0();
+
+// @name MaskedRangeCompare
+// @summary Ands a bitmask over arrays a1..a4 for up to a6 entries; a1[i]==0 selects ~a4[i], else a4[i] & ~(a2[i]^a3[i]); returns the surviving mask.
+uint32_t fn_00802320(uint32_t* a1, uint32_t* a2, uint32_t* a3, uint32_t* a4, int32_t a5, int32_t a6) {
+    // Initial mask: low (a5+1) bits set, computed as arithmetic sar of 0x7fffffff by (30 - a5) & 31.
+    (void)&ext_007C6F20;
+    (void)&ext_007C89F0;
+    (void)&ext_007F56E0;
+
+    const uint32_t sh =(30u - static_cast<uint32_t>(a5)) & 31u;
+    uint32_t mask = static_cast<uint32_t>(static_cast<int32_t>(0x7fffffffu) >> sh);
+
+    for (int32_t i = 0; i < a6; ++i) {
+        uint32_t m;
+        if (a1[i] == 0) {
+            m = ~a4[i];
+        } else {
+            m = a4[i] & ~(a2[i] ^ a3[i]);
+        }
+        mask &= m;
+        if (mask == 0) {
+            break;
+        }
+    }
+    return mask;
+}
+} // namespace lift_00802320
