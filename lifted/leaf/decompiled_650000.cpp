@@ -1770,3 +1770,52 @@ extern void fn_00517FC0(void* /*unused*/, double* outVal) {
     mem_00924FF4(tmp);
 }
 } // namespace lift_00517FC0
+
+// [0x00519100]
+namespace lift_00519100 {
+// @name initDerivedStateWithDefaults
+// @summary Initializes base state via ext_0050F970, sets vtable 0x00950A9C, and initializes default double and dword fields.
+// @field void +0x00 uint32_t vtable
+// @field void +0x34 uint32_t field_0x34
+// @field void +0x38 uint32_t field_0x38
+// @field void +0x3C uint32_t field_0x3C
+// @field void +0x40 uint32_t field_0x40
+// @field void +0x44 uint32_t field_0x44
+// @field void +0x48 uint32_t field_0x48
+// @field void +0x4C uint32_t field_0x4C
+// @field void +0x50 double field_0x50
+// @field void +0x58 double field_0x58
+// @field void +0x64 uint32_t field_0x64
+// @field void +0x68 uint32_t field_0x68
+// @field void +0x6C uint32_t field_0x6C
+
+
+extern void ext_0050F970(void* self);
+extern void ext_0050FE00();
+extern const double mem_009520D8;
+extern const double mem_00993828;
+
+void* fn_00519100(void* self) {
+    (void)&ext_0050FE00;
+    ext_0050F970(self);
+
+    lift_field<uint32_t>(self, 0x00) = 0x00950A9Cu;
+    lift_field<uint32_t>(self, 0x34) = 0;
+    lift_field<uint32_t>(self, 0x38) = 0;
+    lift_field<uint32_t>(self, 0x3C) = 0;
+
+    lift_field<double>(self, 0x50) = mem_009520D8;
+    lift_field<double>(self, 0x58) = mem_00993828;
+
+    lift_field<uint32_t>(self, 0x44) = 0;
+    lift_field<uint32_t>(self, 0x48) = 0;
+    lift_field<uint32_t>(self, 0x4C) = 0;
+    lift_field<uint32_t>(self, 0x40) = 1;
+
+    lift_field<uint32_t>(self, 0x64) = 0;
+    lift_field<uint32_t>(self, 0x68) = 0;
+    lift_field<uint32_t>(self, 0x6C) = 0;
+
+    return self;
+}
+} // namespace lift_00519100

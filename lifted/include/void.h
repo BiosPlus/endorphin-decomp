@@ -8,7 +8,20 @@
 // Recovered field layout for void:
 namespace lifted_layout {
 struct void_Fields {
+    // +0x0   uint32_t                 vtable  (evidence: 0x00519100)
     // +0x10  DWORD                    field_0x10  (evidence: 0x0041D350, 0x004407B0, 0x00441020, 0x0044B6A0, 0x00548260)
+    // +0x34  uint32_t                 field_0x34  (evidence: 0x00519100)
+    // +0x38  uint32_t                 field_0x38  (evidence: 0x00519100)
+    // +0x3C  uint32_t                 field_0x3C  (evidence: 0x00519100)
+    // +0x40  uint32_t                 field_0x40  (evidence: 0x00519100)
+    // +0x44  uint32_t                 field_0x44  (evidence: 0x00519100)
+    // +0x48  uint32_t                 field_0x48  (evidence: 0x00519100)
+    // +0x4C  uint32_t                 field_0x4C  (evidence: 0x00519100)
+    // +0x50  double                   field_0x50  (evidence: 0x00519100)
+    // +0x58  double                   field_0x58  (evidence: 0x00519100)
+    // +0x64  uint32_t                 field_0x64  (evidence: 0x00519100)
+    // +0x68  uint32_t                 field_0x68  (evidence: 0x00519100)
+    // +0x6C  uint32_t                 field_0x6C  (evidence: 0x00519100)
     // +0x98  int                      state  (evidence: 0x00455CD0)
 };
 } // namespace lifted_layout
