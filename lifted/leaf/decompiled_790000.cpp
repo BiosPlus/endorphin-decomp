@@ -2053,3 +2053,43 @@ void fn_0079E9D0(void* obj) {
     }
 }
 } // namespace lift_0079E9D0
+
+// [0x0079EEF0] sub_0079EEF0 (128 bytes)
+namespace lift_0079EEF0 {
+// Known callee 0x0079EF70: ClosePackedFileAndFree (Closes the stream at +0x00 (if open), removes its file when the flag at +0x18 is set, releases the object's slot via ext_0079EA60, frees the owned buffers at +0x04 and +0x10 and the object itself; if fclose failed, requests a slot cache entry (idx 12) via ext_007AA510.)
+extern void ext_0079EF70(void* obj);
+extern uint8_t mem_00B61218;
+extern uint8_t mem_00B61151;
+extern uint8_t mem_00B61219;
+extern uint8_t mem_00B61150;
+extern void* mem_00B6114C;
+extern int mem_009251D8;
+
+// @name FreePackedObjectTable
+// @summary Closes each object in the global pointer table at mem_00B6114C (count in mem_00B61150) via ext_0079EF70, aborting early when mem_00B61218 is set and mem_00B61219 is clear; otherwise frees the table and clears the count and mem_00B61151.
+// Note: unused `self` parameter is kept only to match the lift scaffold; the asm takes no arguments.
+void fn_0079EEF0(void* self) {
+    (void)self;
+    (void)&mem_009251D8;  // free() IAT slot; the portable build calls std::free directly
+
+    uint8_t count = mem_00B61150;
+    if (count != 0) {
+        uint8_t i = 0;
+        do {
+            uint32_t entry = static_cast<uint32_t*>(mem_00B6114C)[i];
+            ext_0079EF70(reinterpret_cast<void*>(static_cast<uintptr_t>(entry)));
+
+            if (mem_00B61218 != 0 && mem_00B61219 == 0) {
+                return;
+            }
+
+            i = static_cast<uint8_t>(i + 1);
+        } while (i < mem_00B61150);
+    }
+
+    std::free(mem_00B6114C);
+    mem_00B6114C = nullptr;
+    mem_00B61150 = 0;
+    mem_00B61151 = 0;
+}
+} // namespace lift_0079EEF0

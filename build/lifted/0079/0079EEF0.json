@@ -1,0 +1,13 @@
+{
+  "va": "0x0079EEF0",
+  "size": 128,
+  "orig_symbol": "sub_0079EEF0",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "FreePackedObjectTable",
+  "signature": "void fn_0079EEF0(void* self)",
+  "summary": "Closes each object in the global pointer table at mem_00B6114C (count in mem_00B61150) via ext_0079EF70, aborting early when mem_00B61218 is set and mem_00B61219 is clear; otherwise frees the table and clears the count and mem_00B61151.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:15:58Z"
+}
