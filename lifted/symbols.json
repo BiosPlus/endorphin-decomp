@@ -21489,6 +21489,13 @@
     "summary": "Copies the 0x24-byte records in [first, last) to dest and returns dest advanced past them.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x0050B6A0": {
+    "name": "UnknownClass::sortThreeByString_0050B6A0",
+    "class": "UnknownClass",
+    "signature": "void fn_0050B6A0(void* self, void* other, void* third)",
+    "summary": "Three-argument compare/swap network over records keyed by the std::string at +0x04: for each pair (other, self), (third, other), (other, self) whose strings compare equal, swaps the whole records via swapStringAndFloat.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050B960": {
     "name": "Unknown::DestroyElementsAndReset_0050B960",
     "class": "Unknown",

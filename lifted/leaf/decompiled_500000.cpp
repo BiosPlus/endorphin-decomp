@@ -2651,3 +2651,37 @@ void fn_0050A780(void* self, void* other) {
     ext_00508790(temp);
 }
 } // namespace lift_0050A780
+
+// [0x0050B6A0] sub_0050B6A0 (111 bytes)
+namespace lift_0050B6A0 {
+// Import slot holding the address of MSVCP80 operator==(const basic_string<char>&, const basic_string<char>&).
+extern uint32_t mem_00924EF4;
+// Known callee 0x0050A780: UnknownClass::swapStringAndFloat (cdecl, swaps the string at +0x04 and the float at +0x20).
+extern void ext_0050A780(void* a, void* b);
+
+// @name UnknownClass::sortThreeByString_0050B6A0
+// @class UnknownClass
+// @summary Three-argument compare/swap network over records keyed by the std::string at +0x04: for each pair (other, self), (third, other), (other, self) whose strings compare equal, swaps the whole records via swapStringAndFloat.
+// @field UnknownClass +0x04 void* field_0x04 (std::string key)
+// @field UnknownClass +0x20 float field_0x20 (swapped with the string)
+void fn_0050B6A0(void* self, void* other, void* third) {
+    using StringEqFn = bool (*)(const void* lhs, const void* rhs);
+    auto strEq = reinterpret_cast<StringEqFn>(static_cast<uintptr_t>(mem_00924EF4));
+
+    void* selfStr  = reinterpret_cast<uint8_t*>(self) + 0x04;
+    void* otherStr = reinterpret_cast<uint8_t*>(other) + 0x04;
+    void* thirdStr = reinterpret_cast<uint8_t*>(third) + 0x04;
+
+    if (strEq(otherStr, selfStr)) {
+        ext_0050A780(other, self);
+    }
+
+    if (strEq(thirdStr, otherStr)) {
+        ext_0050A780(other, third);
+    }
+
+    if (strEq(otherStr, selfStr)) {
+        ext_0050A780(other, self);
+    }
+}
+} // namespace lift_0050B6A0

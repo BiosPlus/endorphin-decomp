@@ -1,0 +1,28 @@
+{
+  "va": "0x0050B6A0",
+  "size": 111,
+  "orig_symbol": "sub_0050B6A0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "UnknownClass::sortThreeByString_0050B6A0",
+  "class": "UnknownClass",
+  "signature": "void fn_0050B6A0(void* self, void* other, void* third)",
+  "summary": "Three-argument compare/swap network over records keyed by the std::string at +0x04: for each pair (other, self), (third, other), (other, self) whose strings compare equal, swaps the whole records via swapStringAndFloat.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (std::string",
+      "name": "key)"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x20",
+      "type": "float field_0x20 (swapped with the",
+      "name": "string)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:09:04Z"
+}
