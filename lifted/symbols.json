@@ -63240,6 +63240,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046CB60 (ExprParser::ReadMethodType\u003cImageExporter, bool, isEnabled, 0\u003e::vfunc_43).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0061D040": {
+    "name": "NMData::DriveFrame::vfunc_21",
+    "class": "NMData::DriveFrame",
+    "signature": "static bool is_sentinel(uint32_t v)",
+    "summary": "Initializes DriveFrame from a serialized node by calling Constraint::vfunc_21, scaling its vector slot from a child node, and forwarding to Transform::vfunc_21.",
+    "lifted_path": "lifted/NMData/DriveFrame.cpp"
+  },
   "0x0061D150": {
     "name": "NMData::DriveFrame::vfunc_22",
     "class": "NMData::DriveFrame",

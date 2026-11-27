@@ -1,0 +1,14 @@
+{
+  "va": "0x0061D040",
+  "size": 265,
+  "orig_symbol": "NMData::DriveFrame::vfunc_21",
+  "src_path": "src/NMData/DriveFrame.cpp",
+  "lifted_path": "lifted/NMData/DriveFrame.cpp",
+  "name": "NMData::DriveFrame::vfunc_21",
+  "class": "NMData::DriveFrame",
+  "signature": "static bool is_sentinel(uint32_t v)",
+  "summary": "Initializes DriveFrame from a serialized node by calling Constraint::vfunc_21, scaling its vector slot from a child node, and forwarding to Transform::vfunc_21.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:21:27Z"
+}

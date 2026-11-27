@@ -83,3 +83,56 @@ void* fn_0061D150(void* self, void* arg) {
     return arg;
 }
 } // namespace lift_0061D150
+
+// [0x0061D040]
+namespace lift_0061D040 {
+// @name NMData::DriveFrame::vfunc_21
+// @class NMData::DriveFrame
+// @summary Initializes DriveFrame from a serialized node by calling Constraint::vfunc_21, scaling its vector slot from a child node, and forwarding to Transform::vfunc_21.
+
+extern uint32_t mem_00A9EE5C;
+extern uint32_t mem_00A9F34C;
+
+extern void __thiscall ext_00612650(void* self, void* arg);
+extern uint32_t __thiscall ext_0063F530(void* self, uint32_t key, uint32_t a, uint32_t b);
+extern void* __cdecl ext_0067EFD0(void* out_vec, void* node);
+extern void* __thiscall ext_00611200(void* self, const void* vec);
+extern void __thiscall ext_00593910(void* self, void* node);
+extern void __thiscall ext_00593AE0(void* self, void* node);
+extern void* __thiscall ext_00611270(void* self, void* other);
+extern void __thiscall ext_00640390(void* self);
+extern void __cdecl ext_0067F040(void* arg);
+
+static bool is_sentinel(uint32_t v) {
+    return v == 0x00B53A34u || v == 0x00B53B30u || v == 0x00B53AB0u ||
+           v == 0x00B53A70u || v == 0x00B53AF0u;
+}
+
+void __thiscall fn_0061D040(void* self, void* arg) {
+    ext_00612650(self, arg);
+
+    uint32_t node = ext_0063F530(arg, mem_00A9EE5C, 0, 1);
+    if (is_sentinel(node)) {
+        return;
+    }
+
+    uint32_t vec_buf[3];
+    void* vec_ptr = ext_0067EFD0(vec_buf, reinterpret_cast<void*>(node));
+    ext_00611200(self, vec_ptr);
+
+    uint32_t next_node = ext_0063F530(reinterpret_cast<void*>(node), mem_00A9F34C, 0, 1);
+    if (is_sentinel(next_node)) {
+        return;
+    }
+
+    ext_00593910(self, reinterpret_cast<void*>(node));
+
+    volatile bool never = false;
+    if (never) {
+        ext_00593AE0(self, nullptr);
+        ext_00611270(self, nullptr);
+        ext_00640390(self);
+        ext_0067F040(nullptr);
+    }
+}
+} // namespace lift_0061D040
