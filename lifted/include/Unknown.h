@@ -1705,6 +1705,7 @@ struct Unknown_Fields {
     // +0xEC  void*                    listHead  (evidence: 0x00436A50) // CONFLICT: multiple definitions at +0xEC
     // +0xEC  void*                    subobject  (evidence: 0x006DC370, 0x006DC480, 0x006DC4C0) // CONFLICT: multiple definitions at +0xEC
     // +0xF0  int32_t field_0xF0 (indexed array base; element stride 4, indices 1..17)  (evidence: 0x007AA7F0, 0x007AA8F0) // CONFLICT: multiple definitions at +0xF0
+    // +0xF0  int32_t                  classifyResult  (evidence: 0x0058F450) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  DWORD                    field_0xF0  (evidence: 0x006C3390) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  double                   field_0xF0  (evidence: 0x0043DD60, 0x0043DDF0) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  float                    field_0xF0  (evidence: 0x007C8490, 0x007C9AA0, 0x007CAF70) // CONFLICT: multiple definitions at +0xF0

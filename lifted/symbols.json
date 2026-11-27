@@ -33536,6 +33536,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00401D20 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0058F450": {
+    "name": "ClassifyAndStoreStringToken",
+    "class": "Unknown",
+    "signature": "void fn_0058F450(void* self, void* arg)",
+    "summary": "Copies a by-value std::string argument into a temporary, classifies it via ClassifyStringToken, stores the 1/0/2 result at +0xF0, then destroys the argument.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x0058F550": {
     "name": "descriptiveName_0058F550",
     "signature": "void* fn_0058F550(void* self)",

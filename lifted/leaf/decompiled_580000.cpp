@@ -2076,3 +2076,38 @@ uint32_t __thiscall fn_005863A0(void* self) {
     return count;
 }
 } // namespace lift_005863A0
+
+// [0x0058F450] sub_0058F450 (103 bytes)
+namespace lift_0058F450 {
+// Known callee 0x00593710: ClassifyStringToken (Uppercases a by-value std::string argument in place, then maps it to 1, 0 or 2 by comparing against three literals (default 2).)
+extern int ext_00593710(void* str);
+extern int mem_00924FE0;
+extern int mem_00924FF4;
+
+namespace {
+// MSVC 2005 std::string::string(const string&) (__thiscall, copy constructor).
+using StrCopyCtorFn = void (__thiscall*)(void* dst, const void* src);
+// MSVC 2005 std::string::~string() (__thiscall).
+using StrDtorFn = void (__thiscall*)(void* str);
+} // namespace
+
+// @name ClassifyAndStoreStringToken
+// @class Unknown
+// @summary Copies a by-value std::string argument into a temporary, classifies it via ClassifyStringToken, stores the 1/0/2 result at +0xF0, then destroys the argument.
+// @field Unknown +0xF0 int32_t classifyResult
+void fn_0058F450(void* self, void* arg) {
+    // Temporary std::string copy (28-byte by-value argument slot for the callee).
+    alignas(8) unsigned char tmp[0x1c] = {};
+
+    auto str_copy = reinterpret_cast<StrCopyCtorFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FE0)));
+    auto str_dtor = reinterpret_cast<StrDtorFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+
+    str_copy(tmp, arg);
+    // ClassifyStringToken takes ownership of the temporary (caller pops the slot, no dtor here).
+    int result = ext_00593710(tmp);
+    lift_field<int32_t>(self, 0xF0) = result;
+
+    // Destroy the by-value argument (callee-cleanup, ret 0x1c).
+    str_dtor(arg);
+}
+} // namespace lift_0058F450

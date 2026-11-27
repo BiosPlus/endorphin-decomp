@@ -1,0 +1,22 @@
+{
+  "va": "0x0058F450",
+  "size": 103,
+  "orig_symbol": "sub_0058F450",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "ClassifyAndStoreStringToken",
+  "class": "Unknown",
+  "signature": "void fn_0058F450(void* self, void* arg)",
+  "summary": "Copies a by-value std::string argument into a temporary, classifies it via ClassifyStringToken, stores the 1/0/2 result at +0xF0, then destroys the argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "int32_t",
+      "name": "classifyResult"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:28:51Z"
+}
