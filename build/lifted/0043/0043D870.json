@@ -1,0 +1,13 @@
+{
+  "va": "0x0043D870",
+  "size": 143,
+  "orig_symbol": "sub_0043D870",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "ConstructElementRange",
+  "signature": "void fn_0043D870(uint32_t* base, uint32_t count, uint32_t arg)",
+  "summary": "Constructs count 4-byte elements in base[] via MFC80 ord_297(arg); on exception destroys the already-constructed prefix via MFC80 ord_578 and rethrows through ext_006A6DD2.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:32:20Z"
+}

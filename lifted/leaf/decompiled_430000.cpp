@@ -5396,3 +5396,40 @@ uint32_t* fn_0043D580(uint32_t* first, uint32_t* last, uint32_t* dst) {
     return dst;
 }
 } // namespace lift_0043D580
+
+// [0x0043D870] sub_0043D870 (143 bytes)
+namespace lift_0043D870 {
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern uint32_t mem_00924494;
+extern uint32_t mem_009242F4;
+
+// MFC80 imported member functions (__thiscall): ord_297 = ctor taking one stack arg, ord_578 = dtor.
+using ElemCtorFn = void(__thiscall*)(void* self, uint32_t arg);
+using ElemDtorFn = void(__thiscall*)(void* self);
+
+// @name ConstructElementRange
+// @summary Constructs count 4-byte elements in base[] via MFC80 ord_297(arg); on exception destroys the already-constructed prefix via MFC80 ord_578 and rethrows through ext_006A6DD2.
+// No struct field offsets are accessed (only element pointers and the MFC imports), so no @field lines.
+void fn_0043D870(uint32_t* base, uint32_t count, uint32_t arg) {
+    uint32_t* cur = base;
+    uint32_t remaining = count;
+    try {
+        while (remaining != 0) {
+            if (cur != nullptr) {
+                auto ctor = reinterpret_cast<ElemCtorFn>(static_cast<uintptr_t>(mem_00924494));
+                ctor(cur, arg);
+            }
+            --remaining;
+            ++cur;
+        }
+    } catch (...) {
+        // Destroy only fully constructed elements: [base, cur) where cur is the element whose ctor threw.
+        for (uint32_t* p = base; p != cur; ++p) {
+            auto dtor = reinterpret_cast<ElemDtorFn>(static_cast<uintptr_t>(mem_009242F4));
+            dtor(p);
+        }
+        ext_006A6DD2();
+    }
+}
+} // namespace lift_0043D870

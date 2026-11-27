@@ -4597,6 +4597,12 @@
     "summary": "Scans a block-mapped sequence from index first to last for *value; writes {0, container, index} to out.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043D870": {
+    "name": "ConstructElementRange",
+    "signature": "void fn_0043D870(uint32_t* base, uint32_t count, uint32_t arg)",
+    "summary": "Constructs count 4-byte elements in base[] via MFC80 ord_297(arg); on exception destroys the already-constructed prefix via MFC80 ord_578 and rethrows through ext_006A6DD2.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043DCC0": {
     "name": "sub_0043DCC0",
     "signature": "extern \"C\" void fn_0043DCC0(void)",
