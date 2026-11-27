@@ -1,0 +1,28 @@
+{
+  "va": "0x006A12C0",
+  "size": 190,
+  "orig_symbol": "ExprParser::Operators::Power::vfunc_3",
+  "src_path": "src/ExprParser/Operators/Power.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/Power.cpp",
+  "name": "ExprParser::Operators::Power::vfunc_3",
+  "class": "ExprParser::Operators::Power",
+  "signature": "inline R vcall(void* obj, std::size_t offset, A... args)",
+  "summary": "Takes the DWORD pair returned by ext_004ECB40 into locals (clearing its second word), releases the helper out-pair's second object, calls slot 0xB8 on the pair's second object with (\u0026pair0, rhs), then stores the pair into self, releasing the previous self-\u003efield_0x04 via slot 0x78 when it was non-null.",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::Power",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::Operators::Power",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:32:14Z"
+}
