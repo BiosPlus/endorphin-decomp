@@ -1,0 +1,22 @@
+{
+  "va": "0x0046F9E0",
+  "size": 70,
+  "orig_symbol": "RuntimeEngine::vfunc_14_off_4",
+  "src_path": "src/classes/RuntimeEngine.cpp",
+  "lifted_path": "lifted/classes/RuntimeEngine.cpp",
+  "name": "RuntimeEngine::vfunc_14_off_4",
+  "class": "RuntimeEngine",
+  "signature": "extern \"C\" void* __thiscall fn_0046F9E0(void* self, void* outObj, uint32_t id)",
+  "summary": "Dispatches property/symbol lookup for id 0x21 to field_0x180 via ext_00661650, otherwise initializes arg1 via ext_0046F7D0.",
+  "fields": [
+    {
+      "class": "RuntimeEngine",
+      "offset": "+0x180",
+      "type": "object",
+      "name": "field_0x180"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:37:20Z"
+}

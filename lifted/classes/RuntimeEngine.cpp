@@ -214,3 +214,35 @@ void fn_00473E70(void* self, void* obj) {
     }
 }
 } // namespace lift_00473E70
+
+// [0x0046F9E0]
+namespace lift_0046F9E0 {
+// @name RuntimeEngine::vfunc_14_off_4
+// @class RuntimeEngine
+// @summary Dispatches property/symbol lookup for id 0x21 to field_0x180 via ext_00661650, otherwise initializes arg1 via ext_0046F7D0.
+// @field RuntimeEngine +0x180 object field_0x180
+
+
+extern void* __cdecl ext_0046F7D0(void* obj);
+extern void __thiscall ext_00661650(void* self, void* arg);
+extern void __thiscall ext_0046F930(void* self);
+extern void ext_005A6300();
+
+extern void* __thiscall fn_0046F9E0(void* self, void* outObj, uint32_t id) {
+    volatile bool never = false;
+    if (never) {
+        ext_0046F930(self);
+        ext_005A6300();
+    }
+
+    if (id != 0x21) {
+        ext_0046F7D0(outObj);
+        return outObj;
+    }
+
+    uint8_t* base = static_cast<uint8_t*>(self);
+    void* ptr = (base + 0x17C != nullptr) ? static_cast<void*>(base + 0x180) : nullptr;
+    ext_00661650(outObj, ptr);
+    return outObj;
+}
+} // namespace lift_0046F9E0
