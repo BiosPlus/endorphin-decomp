@@ -1263,6 +1263,7 @@ struct Unknown_Fields {
     // +0xC4  uint32_t                 field_0xc4  (evidence: 0x0051DDB0) // CONFLICT: multiple definitions at +0xC4
     // +0xC4  uint32_t                 list_head_sentinel  (evidence: 0x0049F0C0) // CONFLICT: multiple definitions at +0xC4
     // +0xC8  int32_t*                 field_0xC8  (evidence: 0x006DC460) // CONFLICT: multiple definitions at +0xC8
+    // +0xC8  void*                    field_0xC8  (evidence: 0x004486A0) // CONFLICT: multiple definitions at +0xC8
     // +0xC8  uint32_t                 field_0xc8  (evidence: 0x00763E40, 0x00798570) // CONFLICT: multiple definitions at +0xC8
     // +0xC8  void*                    field_0xc8  (evidence: 0x00455410) // CONFLICT: multiple definitions at +0xC8
     // +0xC8  BYTE                     flag  (evidence: 0x00441C10, 0x00447E30) // CONFLICT: multiple definitions at +0xC8
@@ -1280,12 +1281,13 @@ struct Unknown_Fields {
     // +0xD0  uint32_t                 field_0xD0  (evidence: 0x006DD2B0) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  uint32_t*                field_0xD0  (evidence: 0x00708000, 0x00708C10, 0x00708CC0) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  void                     field_0xD0  (evidence: 0x0074B330) // CONFLICT: multiple definitions at +0xD0
-    // +0xD0  void*                    field_0xD0  (evidence: 0x0070AD00, 0x0070E3B0) // CONFLICT: multiple definitions at +0xD0
+    // +0xD0  void*                    field_0xD0  (evidence: 0x004486A0, 0x0070AD00, 0x0070E3B0) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  int32_t                  field_0xd0  (evidence: 0x0053F990) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  uint32_t                 field_0xd0  (evidence: 0x0054D220, 0x00709AB0) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  void**                   field_0xd0  (evidence: 0x00708D10) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  DynamicArray<void*>      items  (evidence: 0x006DD240) // CONFLICT: multiple definitions at +0xD0
     // +0xD0  uint32_t field_0xD0 (accessed on the object returned by ord_3085(self), not on self)  (evidence: 0x00456DE0) // CONFLICT: multiple definitions at +0xD0
+    // +0xD4  int                      field_0xD4  (evidence: 0x004486A0) // CONFLICT: multiple definitions at +0xD4
     // +0xD4  void**                   field_0xD4  (evidence: 0x006BCEE0) // CONFLICT: multiple definitions at +0xD4
     // +0xD4  int32_t                  field_0xd4  (evidence: 0x0053F990) // CONFLICT: multiple definitions at +0xD4
     // +0xD4  uint32_t                 field_0xd4  (evidence: 0x0054D220, 0x00798570) // CONFLICT: multiple definitions at +0xD4

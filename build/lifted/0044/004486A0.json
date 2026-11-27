@@ -1,0 +1,34 @@
+{
+  "va": "0x004486A0",
+  "size": 129,
+  "orig_symbol": "sub_004486A0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::ComputeSelectionMetricsAndAttachBrush",
+  "class": "Unknown",
+  "signature": "int __thiscall fn_004486A0(void* self, void* arg1, DWORD arg2, DWORD arg3)",
+  "summary": "Reads two metrics from the SelectionBuffer at +0xC8, feeds them to vtable slots 0x34/0x38 of the stack argument object, then (if the sub-object at +0xD0 is valid) creates a solid brush and attaches it to that sub-object; returns the field at +0xD4 or 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC8",
+      "type": "void*",
+      "name": "field_0xC8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD0",
+      "type": "void*",
+      "name": "field_0xD0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD4",
+      "type": "int",
+      "name": "field_0xD4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:17:49Z"
+}

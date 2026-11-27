@@ -2637,3 +2637,65 @@ void __thiscall fn_004442E0(void* self) {
     lift_field<void*>(self, 0x04) = p;
 }
 } // namespace lift_004442E0
+
+// [0x004486A0] sub_004486A0 (129 bytes)
+namespace lift_004486A0 {
+// Known callee 0x006A5FF2: thunk_MFC80_ord_1934 (IAT jump thunk forwarding to MFC80!ord_1934.)
+extern void ext_006A5FF2();
+// Known callee 0x006A5FFE: thunk_MFC80_ord_1280 (IAT jump thunk forwarding to MFC80!ord_1280.)
+extern void ext_006A5FFE();
+extern void ext_006A7D30();
+extern void ext_006A7D50();
+extern void ext_006AD1C0();
+extern int mem_0092407C;
+
+// @name Unknown::ComputeSelectionMetricsAndAttachBrush
+// @class Unknown
+// @summary Reads two metrics from the SelectionBuffer at +0xC8, feeds them to vtable slots 0x34/0x38 of the stack argument object, then (if the sub-object at +0xD0 is valid) creates a solid brush and attaches it to that sub-object; returns the field at +0xD4 or 0.
+// @field Unknown +0xC8 void* field_0xC8
+// @field Unknown +0xD0 void* field_0xD0
+// @field Unknown +0xD4 int field_0xD4
+int __thiscall fn_004486A0(void* self, void* arg1, DWORD arg2, DWORD arg3) {
+    (void)arg2;
+    (void)arg3;
+
+    auto* base = reinterpret_cast<unsigned char*>(self);
+    auto selectionBuffer = *reinterpret_cast<void**>(base + 0xC8);
+
+    // SelectionBuffer::vfunc_21 (thiscall, ecx = selectionBuffer), then sub_006A7D30 on the result.
+    using VFunc21Fn = DWORD(__thiscall*)(void*);
+    DWORD first = reinterpret_cast<VFunc21Fn>(&ext_006AD1C0)(selectionBuffer);
+    DWORD metricA = reinterpret_cast<DWORD(__thiscall*)(DWORD)>(&ext_006A7D30)(first);
+
+    // Second read of the same pair of values.
+    DWORD second = reinterpret_cast<VFunc21Fn>(&ext_006AD1C0)(*reinterpret_cast<void**>(base + 0xC8));
+    DWORD metricB = reinterpret_cast<DWORD(__thiscall*)(DWORD)>(&ext_006A7D50)(second);
+
+    // arg1 vtable: slot 0x34 (push metricA), slot 0x38 (push metricB).
+    auto** vtbl = *reinterpret_cast<void***>(arg1);
+    using VSlotFn = void(__thiscall*)(void*, DWORD);
+    reinterpret_cast<VSlotFn>(vtbl[0x34 / 4])(arg1, metricA);
+    reinterpret_cast<VSlotFn>(vtbl[0x38 / 4])(arg1, metricB);
+
+    // Sub-object at +0xD0; only refresh it when the pointer is non-null and its +0x4 field is set.
+    auto* sub = base + 0xD0;
+    int flag = *reinterpret_cast<int*>(base + 0xD4);
+    if (sub != nullptr && flag != 0) {
+        reinterpret_cast<void(__thiscall*)(void*)>(&ext_006A5FF2)(sub);
+    }
+
+    // CreateSolidBrush through the IAT slot at mem_0092407C.
+    using CreateSolidBrushFn = HBRUSH(__stdcall*)(COLORREF);
+    auto createSolidBrush = reinterpret_cast<CreateSolidBrushFn>(
+        static_cast<uintptr_t>(*reinterpret_cast<uint32_t*>(&mem_0092407C)));
+    HBRUSH hbr = createSolidBrush(static_cast<COLORREF>(metricA));
+
+    // MFC80 ord_1280 attaches hbr to the sub-object (thiscall, ecx = sub, arg = hbr).
+    reinterpret_cast<void(__thiscall*)(void*, HBRUSH)>(&ext_006A5FFE)(sub, hbr);
+
+    if (sub == nullptr) {
+        return 0;
+    }
+    return *reinterpret_cast<int*>(base + 0xD4);
+}
+} // namespace lift_004486A0
