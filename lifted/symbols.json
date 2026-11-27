@@ -69876,6 +69876,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00783270 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00783270": {
+    "name": "FileStreamRefOwner::~FileStreamRefOwner",
+    "class": "FileStreamRefOwner",
+    "signature": "void fn_00783270(void* self)",
+    "summary": "Destructor body: sets vtable, closes the FileStream ref at +0x00, releases the handle at +0x04, then tears down the sub-object at +0x0C.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x007833F0": {
     "name": "FileStreamRef_CloseFile",
     "class": "FileStreamRef",

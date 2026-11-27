@@ -1970,3 +1970,27 @@ void* fn_0078C8C0(void* self, int32_t index, uint8_t swapBytes, int32_t* outValu
     return element + fieldOffset + 4;
 }
 } // namespace lift_0078C8C0
+
+// [0x00783270] sub_00783270 (112 bytes)
+namespace lift_00783270 {
+// Known callee 0x006B9D70: sub_006B9D70 (Pure jump thunk forwarding to sub_006B9970.)
+extern void ext_006B9D70(void* self);
+// Known callee 0x007833F0: FileStreamRef_CloseFile (If the FileStream behind this ref is marked open, clear its open flag and fclose its FILE*.)
+extern void ext_007833F0(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(uint32_t arg);
+
+// @name FileStreamRefOwner::~FileStreamRefOwner
+// @class FileStreamRefOwner
+// @summary Destructor body: sets vtable, closes the FileStream ref at +0x00, releases the handle at +0x04, then tears down the sub-object at +0x0C.
+// @field FileStreamRefOwner +0x00 uint32_t vtable
+// @field FileStreamRefOwner +0x04 uint32_t handle
+// @field FileStreamRefOwner +0x0C void* subobject
+void fn_00783270(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x996e80;
+    ext_007833F0(self);
+    ext_006A5C5C(lift_field<uint32_t>(self, 0x04));
+    lift_field<uint32_t>(self, 0x04) = 0;
+    ext_006B9D70(static_cast<uint8_t*>(self) + 0x0C);
+}
+} // namespace lift_00783270

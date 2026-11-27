@@ -1,0 +1,34 @@
+{
+  "va": "0x00783270",
+  "size": 112,
+  "orig_symbol": "sub_00783270",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "FileStreamRefOwner::~FileStreamRefOwner",
+  "class": "FileStreamRefOwner",
+  "signature": "void fn_00783270(void* self)",
+  "summary": "Destructor body: sets vtable, closes the FileStream ref at +0x00, releases the handle at +0x04, then tears down the sub-object at +0x0C.",
+  "fields": [
+    {
+      "class": "FileStreamRefOwner",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "FileStreamRefOwner",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "handle"
+    },
+    {
+      "class": "FileStreamRefOwner",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "subobject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:02:15Z"
+}
