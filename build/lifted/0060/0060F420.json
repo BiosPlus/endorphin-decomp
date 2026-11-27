@@ -1,0 +1,28 @@
+{
+  "va": "0x0060F420",
+  "size": 122,
+  "orig_symbol": "NMData::AxisDefineSensorData::vfunc_61",
+  "src_path": "src/NMData/AxisDefineSensorData.cpp",
+  "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp",
+  "name": "NMData::AxisDefineSensorData::vfunc_61",
+  "class": "NMData::AxisDefineSensorData",
+  "signature": "void __fastcall fn_0060F420(void* this_ptr, void* /*edx*/, void* /*arg1*/, void* arg2)",
+  "summary": "Conditionally registers a string at +0x180 into arg2+0x598 if +0x154 matches one of four axis names",
+  "fields": [
+    {
+      "class": "NMData::AxisDefineSensorData",
+      "offset": "+0x154",
+      "type": "void*",
+      "name": "field_0x154"
+    },
+    {
+      "class": "NMData::AxisDefineSensorData",
+      "offset": "+0x180",
+      "type": "void*",
+      "name": "field_0x180"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:44:23Z"
+}

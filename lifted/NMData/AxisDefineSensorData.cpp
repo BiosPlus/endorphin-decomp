@@ -17,6 +17,7 @@ void fn_0060F0B0(void* dst) {
 }
 extern "C" void ext_0062CC10(void* arg, void* tm);
 #include <string>
+#include <cstdint>
 
 // [0x0058F6B0] NMData::AxisDefineSensorData::vfunc_14 (54 bytes)
 // @name NMData::AxisDefineSensorData::vfunc_14
@@ -87,3 +88,44 @@ void* fn_0062CB60(void* self, void* arg1, void* arg2) {
     return cast;
 }
 } // namespace lift_0062CB60
+
+// [0x0060F420]
+namespace lift_0060F420 {
+// @name NMData::AxisDefineSensorData::vfunc_61
+// @class NMData::AxisDefineSensorData
+// @summary Conditionally registers a string at +0x180 into arg2+0x598 if +0x154 matches one of four axis names
+// @field NMData::AxisDefineSensorData +0x154 void* field_0x154
+// @field NMData::AxisDefineSensorData +0x180 void* field_0x180
+
+extern uintptr_t mem_00924FC8;
+extern uintptr_t mem_00924FE0;
+
+extern void __fastcall ext_005DF5C0(void* ecx_arg, void* edx_unused,
+                                    uint32_t s0, uint32_t s1, uint32_t s2, uint32_t s3,
+                                    uint32_t s4, uint32_t s5, uint32_t s6);
+
+using OpNotEqualFn = uint8_t(__cdecl*)(const void* str, const char* cstr);
+using StringCopyCtorFn = void(__thiscall*)(void* dst, const void* src);
+
+void __fastcall fn_0060F420(void* this_ptr, void* /*edx*/, void* /*arg1*/, void* arg2) {
+    auto* self = static_cast<uint8_t*>(this_ptr);
+    const void* field_154 = self + 0x154;
+    auto op_ne = reinterpret_cast<OpNotEqualFn>(mem_00924FC8);
+
+    if (op_ne(field_154, reinterpret_cast<const char*>(0x0096F57C)) &&
+        op_ne(field_154, reinterpret_cast<const char*>(0x0096F568)) &&
+        op_ne(field_154, reinterpret_cast<const char*>(0x0096F554)) &&
+        op_ne(field_154, reinterpret_cast<const char*>(0x0096F540))) {
+        return;
+    }
+
+    uint32_t str_copy[7]{};
+    auto copy_ctor = reinterpret_cast<StringCopyCtorFn>(mem_00924FE0);
+    copy_ctor(str_copy, self + 0x180);
+
+    void* target = static_cast<uint8_t*>(arg2) + 0x598;
+    ext_005DF5C0(target, nullptr,
+                 str_copy[0], str_copy[1], str_copy[2], str_copy[3],
+                 str_copy[4], str_copy[5], str_copy[6]);
+}
+} // namespace lift_0060F420
