@@ -56202,6 +56202,13 @@
     "summary": "Builds a row-major 3x3 float matrix at self from three vec3 rows (rows 0..2 from r0, r1, r2) and returns self; the initial zeroing is fully overwritten.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067B930": {
+    "name": "loadThreeNamedFloats",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0067B930(void* self, void* container)",
+    "summary": "Looks up three named items in the container and parses each item's string as a float into this+0x00, this+0x04 and this+0x08.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067BCE0": {
     "name": "Unknown::InitIdentity3x3AndDispatch_0067BCE0",
     "class": "Unknown",

@@ -1,0 +1,14 @@
+{
+  "va": "0x0067B930",
+  "size": 114,
+  "orig_symbol": "sub_0067B930",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "loadThreeNamedFloats",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_0067B930(void* self, void* container)",
+  "summary": "Looks up three named items in the container and parses each item's string as a float into this+0x00, this+0x04 and this+0x08.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:20:44Z"
+}

@@ -2597,3 +2597,33 @@ void fn_0067B1F0(void* self) {
     ext_0065C620(static_cast<char*>(self) + 0x08);
 }
 } // namespace lift_0067B1F0
+
+// [0x0067B930] sub_0067B930 (114 bytes)
+namespace lift_0067B930 {
+// Known callee 0x0046C0A0: parseFloatFromString (Calls ext_004275C0 to get a std::string, converts it with atof, and stores the float result.)
+extern void __cdecl ext_0046C0A0(uint32_t unused, float* out_val);
+// Known callee 0x0063EFE0: sub_0063EFE0 (Searches a vector of item pointers at +0x3c for an item whose std::string at +0x04 matches the given C-string, returning it or a sentinel at 0x00B53A34.)
+extern uint32_t __thiscall ext_0063EFE0(void* self, const char* name);
+extern uint32_t mem_00A9FAE8;
+extern uint32_t mem_00A9FAEC;
+extern uint32_t mem_00A9FAF4;
+
+// @name loadThreeNamedFloats
+// @class Unknown
+// @summary Looks up three named items in the container and parses each item's string as a float into this+0x00, this+0x04 and this+0x08.
+void __thiscall fn_0067B930(void* self, void* container) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Item 1 -> float at this+0x00.
+    uint32_t slot = ext_0063EFE0(container, reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9FAE8)));
+    ext_0046C0A0(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base + 0x00)), reinterpret_cast<float*>(&slot));
+
+    // Item 2 -> float at this+0x04.
+    slot = ext_0063EFE0(container, reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9FAEC)));
+    ext_0046C0A0(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base + 0x04)), reinterpret_cast<float*>(&slot));
+
+    // Item 3 -> float at this+0x08.
+    slot = ext_0063EFE0(container, reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9FAF4)));
+    ext_0046C0A0(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base + 0x08)), reinterpret_cast<float*>(&slot));
+}
+} // namespace lift_0067B930
