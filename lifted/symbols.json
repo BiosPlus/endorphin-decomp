@@ -85035,6 +85035,12 @@
     "summary": "Copies count bytes from src to dst, handling overlapping regions, and returns dst.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x00859830": {
+    "name": "compareStringsOrObjects",
+    "signature": "extern \"C\" int32_t __cdecl fn_00859830(void* a, void* b)",
+    "summary": "Compares two string/object pointers by resolving their char buffers and lengths, returning char difference or length comparison (-1, 0, 1).",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x008598E0": {
     "name": "strncpyZeroPad",
     "signature": "static uint8_t* strncpyZeroPad(uint8_t* dst, const uint8_t* src, size_t n)",

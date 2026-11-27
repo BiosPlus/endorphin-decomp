@@ -1,0 +1,13 @@
+{
+  "va": "0x00859830",
+  "size": 144,
+  "orig_symbol": "sub_00859830",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "compareStringsOrObjects",
+  "signature": "extern \"C\" int32_t __cdecl fn_00859830(void* a, void* b)",
+  "summary": "Compares two string/object pointers by resolving their char buffers and lengths, returning char difference or length comparison (-1, 0, 1).",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:51:47Z"
+}

@@ -1711,3 +1711,39 @@ void __cdecl sub_008587C0(const uint8_t* key, int32_t key_len, uint8_t* sbox)
     }
 }
 } // namespace lift_008587C0
+
+// [0x00859830]
+namespace lift_00859830 {
+extern void* __cdecl ext_0086CCC0(void* self);
+extern uint32_t __cdecl ext_008599F0(const void* s);
+
+// @name compareStringsOrObjects
+// @summary Compares two string/object pointers by resolving their char buffers and lengths, returning char difference or length comparison (-1, 0, 1).
+extern int32_t __cdecl fn_00859830(void* a, void* b) {
+    if (a == b) {
+        return 0;
+    }
+
+    const char* p0 = static_cast<const char*>(ext_0086CCC0(a));
+    const char* p1 = static_cast<const char*>(ext_0086CCC0(b));
+    uint32_t len0 = ext_008599F0(a);
+    uint32_t len1 = ext_008599F0(b);
+
+    for (uint32_t i = 0; i < len0 && i < len1; ++i) {
+        int32_t c0 = static_cast<int32_t>(static_cast<int8_t>(p0[i]));
+        int32_t c1 = static_cast<int32_t>(static_cast<int8_t>(p1[i]));
+        int32_t diff = c1 - c0;
+        if (diff != 0) {
+            return diff;
+        }
+    }
+
+    if (len0 < len1) {
+        return -1;
+    }
+    if (len0 > len1) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_00859830
