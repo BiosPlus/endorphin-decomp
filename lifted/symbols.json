@@ -13765,6 +13765,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B0130 (ChangePrimarySelectionCommand::vfunc_0).",
     "lifted_path": "lifted/Commands/SetTriggeredEventFrameRangeCommand.cpp"
   },
+  "0x0048FA40": {
+    "name": "Unknown::initSubobjects_0048FA40",
+    "class": "Unknown",
+    "signature": "void fn_0048FA40(void* self)",
+    "summary": "Releases/resets the two embedded subobjects at +0x20 and +0x14, then stores the object's marker via ext_00665810.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048FAA0": {
     "name": "Commands::BufferChannelsCommand::vfunc_0",
     "class": "Commands::BufferChannelsCommand",

@@ -4451,3 +4451,29 @@ extern void* fn_0048EE20(void* self, void* out, MsvcString arg_str) {
 }
 } // namespace lift_004796D0
 } // namespace lift_0048EE20
+
+// [0x0048FA40] sub_0048FA40 (89 bytes)
+namespace lift_0048FA40 {
+// Known callee 0x005A6650: sub_005A6650 (Auto-lifted identical-shape clone of 0x004151D0 (ReleaseOwnedNode_004151D0).)
+extern void ext_005A6650(void* self);
+// Known callee 0x00665810: sub_00665810 (Stores address of mem_00987A04 into field at offset +0x0.)
+extern void ext_00665810(void* self);
+
+// @name Unknown::initSubobjects_0048FA40
+// @class Unknown
+// @summary Releases/resets the two embedded subobjects at +0x20 and +0x14, then stores the object's marker via ext_00665810.
+// @field Unknown +0x14 uint8_t field_0x14
+// @field Unknown +0x20 uint8_t field_0x20
+void fn_0048FA40(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Original: ecx = this+0x20; ext_005A6650(ecx) with EH state 1 (MSVC unwind bookkeeping, dropped).
+    ext_005A6650(base + 0x20);
+
+    // Original: ecx = this+0x14; ext_005A6650(ecx) with EH state 0 (dropped).
+    ext_005A6650(base + 0x14);
+
+    // Original: ecx = this; ext_00665810(this) with EH state -1 (dropped).
+    ext_00665810(self);
+}
+} // namespace lift_0048FA40

@@ -1,0 +1,28 @@
+{
+  "va": "0x0048FA40",
+  "size": 89,
+  "orig_symbol": "sub_0048FA40",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "Unknown::initSubobjects_0048FA40",
+  "class": "Unknown",
+  "signature": "void fn_0048FA40(void* self)",
+  "summary": "Releases/resets the two embedded subobjects at +0x20 and +0x14, then stores the object's marker via ext_00665810.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint8_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint8_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T13:40:56Z"
+}
