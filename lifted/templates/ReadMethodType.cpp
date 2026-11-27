@@ -69612,3 +69612,303 @@ bool fn_00504DD0(void* arg1, void* arg2) {
     return result;
 }
 } // namespace lift_00504DD0
+
+// [0x0062ED60] ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1>::vfunc_47 (154 bytes)
+namespace lift_0062ED60 {
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1>::vfunc_47
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x00674BF0 (ExprParser::ReadMethodType::vfunc_47).
+// @field ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1> +0x0 void* field_0x00
+// @field ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1> +0x4 void* field_0x04
+namespace lift_00674BF0 {
+// Known callee 0x006720E0: sub_006720E0 (43B); thiscall-style, out slot in ecx, one stack arg.
+extern void ext_00672110(void* out_slot, void* src);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy of field_0x04/field_0x00).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception with fixed message).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc_object, void* throw_info);
+extern int mem_008A5428;
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType::vfunc_47
+// @class ExprParser::ReadMethodType
+// @summary Re-binds the wrapper's held entry from the (non-null) field_0x00 pointer: copies the entry's +0x1c sub-object, assigns it into self, releases the old temp, then invokes vtable slot 0xBC on field_0x04; throws if field_0x00 is null.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+void fn_0062ED60(void* self) {
+    void* entry = lift_field<void*>(self, 0x00);
+
+    if (entry == nullptr) {
+        // Null entry: construct the exception object and throw it.
+        // The exception storage size is not recovered; a generous local buffer is used.
+        alignas(8) unsigned char exc_storage[64] = {};
+        ext_0046C3C0(exc_storage);
+        ext_006A6DD2(exc_storage, &mem_009DEC1C);
+        return;
+    }
+
+    // Copy the sub-object at entry+0x1c into a temporary.
+    void* tmp = nullptr;
+    ext_00672110(&tmp, static_cast<unsigned char*>(entry) + 0x84);
+
+    // Assign into self from the temporary (guarded self-assignment copy).
+    void* other = nullptr;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary via vtable slot 0x78, if present.
+    if (tmp != nullptr) {
+        void* vt = *static_cast<void**>(tmp);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(tmp, &other);
+    }
+
+    // Notify field_0x04 via vtable slot 0xBC, passing self.
+    void* obj4 = lift_field<void*>(self, 0x04);
+    void* vt4 = *static_cast<void**>(obj4);
+    auto notify = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt4, 0xBC));
+    notify(obj4, self);
+}
+} // namespace lift_00674BF0
+} // namespace lift_0062ED60
+
+// [0x00636700] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>::vfunc_47 (154 bytes)
+namespace lift_00636700 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>::vfunc_47
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00674BF0 (ExprParser::ReadMethodType::vfunc_47).
+// @field ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0> +0x0 void* field_0x00
+// @field ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0> +0x4 void* field_0x04
+namespace lift_00674BF0 {
+// Known callee 0x006720E0: sub_006720E0 (43B); thiscall-style, out slot in ecx, one stack arg.
+extern void ext_00672110(void* out_slot, void* src);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy of field_0x04/field_0x00).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception with fixed message).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc_object, void* throw_info);
+extern int mem_008A5428;
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType::vfunc_47
+// @class ExprParser::ReadMethodType
+// @summary Re-binds the wrapper's held entry from the (non-null) field_0x00 pointer: copies the entry's +0x1c sub-object, assigns it into self, releases the old temp, then invokes vtable slot 0xBC on field_0x04; throws if field_0x00 is null.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+void fn_00636700(void* self) {
+    void* entry = lift_field<void*>(self, 0x00);
+
+    if (entry == nullptr) {
+        // Null entry: construct the exception object and throw it.
+        // The exception storage size is not recovered; a generous local buffer is used.
+        alignas(8) unsigned char exc_storage[64] = {};
+        ext_0046C3C0(exc_storage);
+        ext_006A6DD2(exc_storage, &mem_009DEC1C);
+        return;
+    }
+
+    // Copy the sub-object at entry+0x1c into a temporary.
+    void* tmp = nullptr;
+    ext_00672110(&tmp, static_cast<unsigned char*>(entry) + 0x90);
+
+    // Assign into self from the temporary (guarded self-assignment copy).
+    void* other = nullptr;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary via vtable slot 0x78, if present.
+    if (tmp != nullptr) {
+        void* vt = *static_cast<void**>(tmp);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(tmp, &other);
+    }
+
+    // Notify field_0x04 via vtable slot 0xBC, passing self.
+    void* obj4 = lift_field<void*>(self, 0x04);
+    void* vt4 = *static_cast<void**>(obj4);
+    auto notify = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt4, 0xBC));
+    notify(obj4, self);
+}
+} // namespace lift_00674BF0
+} // namespace lift_00636700
+
+// [0x00636D10] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0>::vfunc_47 (154 bytes)
+namespace lift_00636D10 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0>::vfunc_47
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00674BF0 (ExprParser::ReadMethodType::vfunc_47).
+// @field ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0> +0x0 void* field_0x00
+// @field ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0> +0x4 void* field_0x04
+namespace lift_00674BF0 {
+// Known callee 0x006720E0: sub_006720E0 (43B); thiscall-style, out slot in ecx, one stack arg.
+extern void ext_00672110(void* out_slot, void* src);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy of field_0x04/field_0x00).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception with fixed message).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc_object, void* throw_info);
+extern int mem_008A5428;
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType::vfunc_47
+// @class ExprParser::ReadMethodType
+// @summary Re-binds the wrapper's held entry from the (non-null) field_0x00 pointer: copies the entry's +0x1c sub-object, assigns it into self, releases the old temp, then invokes vtable slot 0xBC on field_0x04; throws if field_0x00 is null.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+void fn_00636D10(void* self) {
+    void* entry = lift_field<void*>(self, 0x00);
+
+    if (entry == nullptr) {
+        // Null entry: construct the exception object and throw it.
+        // The exception storage size is not recovered; a generous local buffer is used.
+        alignas(8) unsigned char exc_storage[64] = {};
+        ext_0046C3C0(exc_storage);
+        ext_006A6DD2(exc_storage, &mem_009DEC1C);
+        return;
+    }
+
+    // Copy the sub-object at entry+0x1c into a temporary.
+    void* tmp = nullptr;
+    ext_00672110(&tmp, static_cast<unsigned char*>(entry) + 0xB4);
+
+    // Assign into self from the temporary (guarded self-assignment copy).
+    void* other = nullptr;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary via vtable slot 0x78, if present.
+    if (tmp != nullptr) {
+        void* vt = *static_cast<void**>(tmp);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(tmp, &other);
+    }
+
+    // Notify field_0x04 via vtable slot 0xBC, passing self.
+    void* obj4 = lift_field<void*>(self, 0x04);
+    void* vt4 = *static_cast<void**>(obj4);
+    auto notify = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt4, 0xBC));
+    notify(obj4, self);
+}
+} // namespace lift_00674BF0
+} // namespace lift_00636D10
+
+// [0x00639950] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0>::vfunc_47 (154 bytes)
+namespace lift_00639950 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0>::vfunc_47
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00674BF0 (ExprParser::ReadMethodType::vfunc_47).
+// @field ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0> +0x0 void* field_0x00
+// @field ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0> +0x4 void* field_0x04
+namespace lift_00674BF0 {
+// Known callee 0x006720E0: sub_006720E0 (43B); thiscall-style, out slot in ecx, one stack arg.
+extern void ext_00672110(void* out_slot, void* src);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy of field_0x04/field_0x00).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception with fixed message).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc_object, void* throw_info);
+extern int mem_008A5428;
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType::vfunc_47
+// @class ExprParser::ReadMethodType
+// @summary Re-binds the wrapper's held entry from the (non-null) field_0x00 pointer: copies the entry's +0x1c sub-object, assigns it into self, releases the old temp, then invokes vtable slot 0xBC on field_0x04; throws if field_0x00 is null.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+void fn_00639950(void* self) {
+    void* entry = lift_field<void*>(self, 0x00);
+
+    if (entry == nullptr) {
+        // Null entry: construct the exception object and throw it.
+        // The exception storage size is not recovered; a generous local buffer is used.
+        alignas(8) unsigned char exc_storage[64] = {};
+        ext_0046C3C0(exc_storage);
+        ext_006A6DD2(exc_storage, &mem_009DEC1C);
+        return;
+    }
+
+    // Copy the sub-object at entry+0x1c into a temporary.
+    void* tmp = nullptr;
+    ext_00672110(&tmp, static_cast<unsigned char*>(entry) + 0x9C);
+
+    // Assign into self from the temporary (guarded self-assignment copy).
+    void* other = nullptr;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary via vtable slot 0x78, if present.
+    if (tmp != nullptr) {
+        void* vt = *static_cast<void**>(tmp);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(tmp, &other);
+    }
+
+    // Notify field_0x04 via vtable slot 0xBC, passing self.
+    void* obj4 = lift_field<void*>(self, 0x04);
+    void* vt4 = *static_cast<void**>(obj4);
+    auto notify = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt4, 0xBC));
+    notify(obj4, self);
+}
+} // namespace lift_00674BF0
+} // namespace lift_00639950
+
+// [0x00639CB0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0>::vfunc_47 (154 bytes)
+namespace lift_00639CB0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0>::vfunc_47
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00674BF0 (ExprParser::ReadMethodType::vfunc_47).
+// @field ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0> +0x0 void* field_0x00
+// @field ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0> +0x4 void* field_0x04
+namespace lift_00674BF0 {
+// Known callee 0x006720E0: sub_006720E0 (43B); thiscall-style, out slot in ecx, one stack arg.
+extern void ext_00672110(void* out_slot, void* src);
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (self-assignment guarded copy of field_0x04/field_0x00).
+extern void* ext_0041CF50(void* self, void* other);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs exception with fixed message).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to _CxxThrowException).
+extern void ext_006A6DD2(void* exc_object, void* throw_info);
+extern int mem_008A5428;
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType::vfunc_47
+// @class ExprParser::ReadMethodType
+// @summary Re-binds the wrapper's held entry from the (non-null) field_0x00 pointer: copies the entry's +0x1c sub-object, assigns it into self, releases the old temp, then invokes vtable slot 0xBC on field_0x04; throws if field_0x00 is null.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field ExprParser::ReadMethodType +0x04 void* field_0x04
+void fn_00639CB0(void* self) {
+    void* entry = lift_field<void*>(self, 0x00);
+
+    if (entry == nullptr) {
+        // Null entry: construct the exception object and throw it.
+        // The exception storage size is not recovered; a generous local buffer is used.
+        alignas(8) unsigned char exc_storage[64] = {};
+        ext_0046C3C0(exc_storage);
+        ext_006A6DD2(exc_storage, &mem_009DEC1C);
+        return;
+    }
+
+    // Copy the sub-object at entry+0x1c into a temporary.
+    void* tmp = nullptr;
+    ext_00672110(&tmp, static_cast<unsigned char*>(entry) + 0xA8);
+
+    // Assign into self from the temporary (guarded self-assignment copy).
+    void* other = nullptr;
+    ext_0041CF50(self, &other);
+
+    // Release the temporary via vtable slot 0x78, if present.
+    if (tmp != nullptr) {
+        void* vt = *static_cast<void**>(tmp);
+        auto release = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt, 0x78));
+        release(tmp, &other);
+    }
+
+    // Notify field_0x04 via vtable slot 0xBC, passing self.
+    void* obj4 = lift_field<void*>(self, 0x04);
+    void* vt4 = *static_cast<void**>(obj4);
+    auto notify = reinterpret_cast<void (*)(void*, void*)>(lift_field<void*>(vt4, 0xBC));
+    notify(obj4, self);
+}
+} // namespace lift_00674BF0
+} // namespace lift_00639CB0

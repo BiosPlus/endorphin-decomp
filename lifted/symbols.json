@@ -49333,6 +49333,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0062E520 (ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0062ED60": {
+    "name": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1\u003e",
+    "signature": "void fn_0062ED60(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00674BF0 (ExprParser::ReadMethodType::vfunc_47).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0062EE00": {
     "name": "sub_0062EE00",
     "signature": "void* fn_0062EE00()",
@@ -50236,6 +50243,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0062E520 (ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00636700": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0\u003e",
+    "signature": "void fn_00636700(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00674BF0 (ExprParser::ReadMethodType::vfunc_47).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x006367A0": {
     "name": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, NM::Vector3 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingAngleRaw(class NM::Vector3 const \u0026)\u003e::vfunc_40",
     "class": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, NM::Vector3 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingAngleRaw(class NM::Vector3 const \u0026)\u003e",
@@ -50297,6 +50311,13 @@
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0\u003e",
     "signature": "const void* fn_00636CE0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0062E4F0 (ExprParser::ReadMethodType\u003cCompoundSensorPlanes\u003e::vfunc_5 (CompoundSensorPlanes::getVertAxis)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00636D10": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0\u003e",
+    "signature": "void fn_00636D10(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00674BF0 (ExprParser::ReadMethodType::vfunc_47).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00636DB0": {
@@ -50649,6 +50670,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0062E520 (ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00639950": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0\u003e",
+    "signature": "void fn_00639950(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00674BF0 (ExprParser::ReadMethodType::vfunc_47).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x006399F0": {
     "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0\u003e",
@@ -50675,6 +50703,13 @@
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0\u003e",
     "signature": "const void* fn_00639AA0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0062E4F0 (ExprParser::ReadMethodType\u003cCompoundSensorPlanes\u003e::vfunc_5 (CompoundSensorPlanes::getVertAxis)).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00639CB0": {
+    "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0\u003e::vfunc_47",
+    "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0\u003e",
+    "signature": "void fn_00639CB0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00674BF0 (ExprParser::ReadMethodType::vfunc_47).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00639D50": {
