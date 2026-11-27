@@ -2897,3 +2897,23 @@ void* fn_0070EB00(void* self, void* obj) {
     return obj;
 }
 } // namespace lift_0070EB00
+
+// [0x00700FA0] sub_00700FA0 (33 bytes)
+namespace lift_00700FA0 {
+// Known callee 0x006B9D80: Unknown::initAssignCString_006B9D80 (Zero-initializes the object, assigns the C string argument to it, and returns this.)
+extern void* ext_006B9D80(void* ecx, const char* s);
+
+// C string literal referenced by the push of 0x00AABA0C in .rdata.
+extern const char mem_00AABA0C[];
+
+// @name Unknown::initAssignCString_00700FA0
+// @class Unknown
+// @summary Calls initAssignCString_006B9D80 on self with the literal at 0x00AABA0C and returns self.
+// @field Unknown +0x00 void* self
+void* fn_00700FA0(void* self) {
+    // Original stack slot clobbered with 0 before the call is a caller-saved ecx
+    // spill with no observable effect on the callee or the return value.
+    ext_006B9D80(self, mem_00AABA0C);
+    return self;
+}
+} // namespace lift_00700FA0

@@ -73475,6 +73475,13 @@
     "summary": "For each int32 in the owner's array at +0xD0 (count at +0xC0), inserts it into arg1 via DynamicArray::InsertAt at index *arg1.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00700FA0": {
+    "name": "Unknown::initAssignCString_00700FA0",
+    "class": "Unknown",
+    "signature": "void* fn_00700FA0(void* self)",
+    "summary": "Calls initAssignCString_006B9D80 on self with the literal at 0x00AABA0C and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x007010B0": {
     "name": "CopyHugeConstantToGlobals",
     "signature": "extern uint32_t mem_00925284; // .rdata u32 0x0062D360 (pointer to _HUGE) extern uint32_t mem_00B5E7D0; // global, low dword extern uint32_t mem_00B5E7D4; // global, high dword void CopyHugeConstantToGlobals()",
@@ -81549,6 +81556,13 @@
     "signature": "uint32_t fn_007C5440(uint32_t x, int32_t n)",
     "summary": "Returns the low n bits of x in reversed order (bit 0 -\u003e bit n-1); n \u003c= 0 is treated as one pass.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C5460": {
+    "name": "BitWriter::flushBytes",
+    "class": "BitWriter",
+    "signature": "void __cdecl sub_007C5460(void* self)",
+    "summary": "Flushes 1 or 2 buffered bytes from a 16-bit accumulator into the output buffer.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
   "0x007C54F0": {
     "name": "ByteBufferWriter::flushPendingBytes",
