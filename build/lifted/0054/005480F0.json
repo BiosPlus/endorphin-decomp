@@ -1,0 +1,27 @@
+{
+  "va": "0x005480F0",
+  "size": 23,
+  "orig_symbol": "sub_005480F0",
+  "src_path": "src/leaf/tiny_540000.cpp",
+  "lifted_path": "lifted/leaf/tiny_540000.cpp",
+  "name": "Unknown_GetOrComputeVec4_005480F0",
+  "signature": "void* __thiscall fn_005480F0(void* self)",
+  "summary": "Tail-calls ext_005CFF60 on the child object at +0xA0 if non-null, otherwise returns pointer to +0x80.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "uint8_t[1]",
+      "name": "field_0x80"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA0",
+      "type": "void*",
+      "name": "field_0xA0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:22:30Z"
+}

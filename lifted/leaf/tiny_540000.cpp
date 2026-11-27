@@ -404,3 +404,21 @@ void fn_0054C760(void* self) {
     target(next);
 }
 } // namespace lift_0054C760
+
+// [0x005480F0]
+namespace lift_005480F0 {
+extern void ext_005CFF60(void* self);
+
+// @name Unknown_GetOrComputeVec4_005480F0
+// @summary Tail-calls ext_005CFF60 on the child object at +0xA0 if non-null, otherwise returns pointer to +0x80.
+// @field Unknown +0x80 uint8_t[1] field_0x80
+// @field Unknown +0xA0 void* field_0xA0
+void* __thiscall fn_005480F0(void* self) {
+    void* child = lift_field<void*>(self, 0xA0);
+    if (child != nullptr) {
+        ext_005CFF60(child);
+        return nullptr;
+    }
+    return static_cast<char*>(self) + 0x80;
+}
+} // namespace lift_005480F0
