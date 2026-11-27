@@ -1334,3 +1334,31 @@ void sub_007D5DD0(void* self) {
     lift_field<int32_t>(self, 0x29c) = 1;
 }
 } // namespace lift_007D5DD0
+
+// [0x007D5BD0]
+namespace lift_007D5BD0 {
+// @name AABB::overlaps
+// @class AABB
+// @summary Checks whether two axis-aligned bounding boxes are both enabled and strictly overlap in 3D.
+// @field AABB +0x08 float min_x
+// @field AABB +0x0c float min_y
+// @field AABB +0x10 float min_z
+// @field AABB +0x14 float max_x
+// @field AABB +0x18 float max_y
+// @field AABB +0x1c float max_z
+// @field AABB +0x24 uint32_t flags
+int __cdecl sub_007D5BD0(const void* a, const void* b) {
+    if (((lift_field<uint32_t>(a, 0x24) & lift_field<uint32_t>(b, 0x24)) & 1u) == 0) {
+        return 0;
+    }
+
+    if (!(lift_field<float>(b, 0x14) > lift_field<float>(a, 0x08))) return 0;
+    if (!(lift_field<float>(a, 0x14) > lift_field<float>(b, 0x08))) return 0;
+    if (!(lift_field<float>(b, 0x18) > lift_field<float>(a, 0x0c))) return 0;
+    if (!(lift_field<float>(a, 0x18) > lift_field<float>(b, 0x0c))) return 0;
+    if (!(lift_field<float>(b, 0x1c) > lift_field<float>(a, 0x10))) return 0;
+    if (!(lift_field<float>(a, 0x1c) > lift_field<float>(b, 0x10))) return 0;
+
+    return 1;
+}
+} // namespace lift_007D5BD0

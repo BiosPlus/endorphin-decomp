@@ -1,0 +1,58 @@
+{
+  "va": "0x007D5BD0",
+  "size": 118,
+  "orig_symbol": "sub_007D5BD0",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "AABB::overlaps",
+  "class": "AABB",
+  "signature": "int __cdecl sub_007D5BD0(const void* a, const void* b)",
+  "summary": "Checks whether two axis-aligned bounding boxes are both enabled and strictly overlap in 3D.",
+  "fields": [
+    {
+      "class": "AABB",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "min_x"
+    },
+    {
+      "class": "AABB",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "min_y"
+    },
+    {
+      "class": "AABB",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "min_z"
+    },
+    {
+      "class": "AABB",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "max_x"
+    },
+    {
+      "class": "AABB",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "max_y"
+    },
+    {
+      "class": "AABB",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "max_z"
+    },
+    {
+      "class": "AABB",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "flags"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:22:08Z"
+}
