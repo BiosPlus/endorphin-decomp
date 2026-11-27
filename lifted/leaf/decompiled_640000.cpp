@@ -2799,3 +2799,24 @@ void* fn_00640E40(uint32_t a0, uint32_t a1, uint32_t a2, const uint8_t* a3, uint
     return rec;
 }
 } // namespace lift_00640E40
+
+// [0x00640840]
+namespace lift_00640840 {
+// @name AllocInitAndForward_00640840
+// @summary Allocates a 0x7C-byte object, constructs it when allocation succeeds, forwards it (or null) to fn_006406D0 on this, and returns the constructed pointer.
+
+// Externals referenced by the original asm.
+extern void* ext_006A5C62(size_t size);            // IAT thunk to MFC80!ord_762 (cdecl, returns allocation)
+uintptr_t ext_0063F6B0(void* self);                    // derived-class constructor, returns this
+void ext_006406D0(void* self, void* arg);              // forEachPointerVirtualSlot4ThenDispatch (thiscall)
+
+uintptr_t fn_00640840(void* self) {
+    void* raw = ext_006A5C62(0x7c);
+    uintptr_t result = 0;
+    if (raw != nullptr) {
+        result = ext_0063F6B0(raw);
+    }
+    ext_006406D0(self, reinterpret_cast<void*>(result));
+    return result;
+}
+} // namespace lift_00640840
