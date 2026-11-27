@@ -1513,6 +1513,12 @@
     "summary": "Forwards its two string-operand arguments in order to MSVCP80 std::operator+ and returns the callee's result.",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x00414530": {
+    "name": "createStyledPen",
+    "signature": "void fn_00414530(void* penObj, void* colorObj, int nWidth, uint32_t penStyle)",
+    "summary": "Creates a GDI pen with style 0, 1, or 2 and attaches it to a CPen object.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00414880": {
     "name": "RangeElementDelta_00414880",
     "class": "UnknownThisType",
