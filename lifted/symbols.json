@@ -36229,6 +36229,13 @@
     "summary": "Returns the index of the first 28-byte element in the global array whose std::string matches self+0x17C, or 0 if none.",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
+  "0x005C4020": {
+    "name": "NMData::CollisionModelData::vfunc_33",
+    "class": "NMData::CollisionModelData",
+    "signature": "void fn_005C4020(void* self)",
+    "summary": "Sets the string at +0x17C from a literal, clears the u32 at +0x198, sets three flag bytes to 1 and clears one, then chains to the base class vfunc_33.",
+    "lifted_path": "lifted/NMData/CollisionModelData.cpp"
+  },
   "0x005C40C0": {
     "name": "ForwardToPeerIfAccepted",
     "class": "\u003cClassName\u003e (unknown)",

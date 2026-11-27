@@ -21,6 +21,7 @@ void* fn_005C3180(void* self, void* ret_slot) {
 extern "C" const float* __thiscall ext_005B11F0(void* self);
 extern "C" void ext_005C3660(void* self);
 #include <cstring>
+#include <cstdint>
 
 // [0x005C2FB0]
 // @name NMData::CollisionModelData::vfunc_1_off_158
@@ -320,3 +321,42 @@ extern void __fastcall fn_005C37E0(void* self, void* edx, const float* src)
     }
 }
 } // namespace lift_005C37E0
+
+// [0x005C4020]
+namespace lift_005C4020 {
+// @name NMData::CollisionModelData::vfunc_33
+// @class NMData::CollisionModelData
+// @summary Sets the string at +0x17C from a literal, clears the u32 at +0x198, sets three flag bytes to 1 and clears one, then chains to the base class vfunc_33.
+// @field NMData::CollisionModelData +0x17C std::string field_0x17c
+// @field NMData::CollisionModelData +0x198 uint32_t field_0x198
+// @field NMData::CollisionModelData +0x19C uint8_t field_0x19c
+// @field NMData::CollisionModelData +0x19D uint8_t field_0x19d
+// @field NMData::CollisionModelData +0x19E uint8_t field_0x19e
+// @field NMData::CollisionModelData +0x19F uint8_t field_0x19f
+
+
+extern const char mem_00928B5D[];
+extern const void* mem_00924FDC;
+extern const void* mem_00924FE4;
+extern const void* mem_00924FF4;
+void ext_005C3660(void* self);
+
+void fn_005C4020(void* self) {
+    // Original MSVCP80 import slots (string ctor / operator= / dtor) are replaced by
+    // std::string semantics; the slot addresses are kept as metadata-only references.
+    (void)&mem_00924FDC;
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF4;
+
+    // Original: std::string temp("<literal>"); this->field_0x17c = temp; temp.~string();
+    lift_field<std::string>(self, 0x17C) = std::string(mem_00928B5D);
+
+    lift_field<uint32_t>(self, 0x198) = 0;
+    lift_field<uint8_t>(self, 0x19C) = 1;
+    lift_field<uint8_t>(self, 0x19D) = 1;
+    lift_field<uint8_t>(self, 0x19E) = 1;
+    lift_field<uint8_t>(self, 0x19F) = 0;
+
+    ext_005C3660(self);
+}
+} // namespace lift_005C4020
