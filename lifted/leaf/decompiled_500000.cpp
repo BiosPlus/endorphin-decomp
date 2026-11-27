@@ -3538,3 +3538,32 @@ void* fn_00506450(void* self) {
     return self;
 }
 } // namespace lift_00506450
+
+// [0x0050E3B0] sub_0050E3B0 (60 bytes)
+namespace lift_0050E3B0 {
+extern void ext_0066AC90(void* arg);
+extern int mem_00925354;
+extern int mem_00924FE4;
+extern int mem_00A41B00;
+extern int mem_00B5CE94;
+
+// @name ForwardTypeNameString_0050E3B0
+// @summary Gets the type name of the global type_info at mem_00A41B00 (node mem_00B5CE94) via its _name_internal_method IAT import, builds a temporary std::string from it (never destroyed, as in the original), then passes the caller's pointer to ext_0066AC90 and returns that pointer.
+void* fn_0050E3B0(void* out) {
+    using NameFn = const char* (__thiscall*)(void* self, void* node);
+    using StringCtorFn = void (__thiscall*)(void* self, const char* s);
+
+    // Resolve the MSVCR80 / MSVCP80 imports through their IAT slots.
+    NameFn name_internal = *reinterpret_cast<NameFn*>(&mem_00925354);
+    StringCtorFn string_ctor = *reinterpret_cast<StringCtorFn*>(&mem_00924FE4);
+
+    const char* name = name_internal(&mem_00A41B00, &mem_00B5CE94);
+
+    // Temporary std::string (MSVC x86 layout is 28 bytes); its destructor is not called in the original.
+    alignas(8) unsigned char tmp_string[28];
+    string_ctor(tmp_string, name);
+
+    ext_0066AC90(out);
+    return out;
+}
+} // namespace lift_0050E3B0

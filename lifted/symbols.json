@@ -29056,6 +29056,12 @@
     "summary": "Returns the address of element `index` (4-byte slots) in the array at this+0x04..this+0x08, calling _invalid_parameter_noinfo when the array is empty or index is out of range.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x0050E3B0": {
+    "name": "ForwardTypeNameString_0050E3B0",
+    "signature": "void* fn_0050E3B0(void* out)",
+    "summary": "Gets the type name of the global type_info at mem_00A41B00 (node mem_00B5CE94) via its _name_internal_method IAT import, builds a temporary std::string from it (never destroyed, as in the original), then passes the caller's pointer to ext_0066AC90 and returns that pointer.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050E4C0": {
     "name": "NMData::PopulationData::vfunc_0",
     "class": "NMData::PopulationData",

@@ -1,0 +1,13 @@
+{
+  "va": "0x0050E3B0",
+  "size": 60,
+  "orig_symbol": "sub_0050E3B0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "ForwardTypeNameString_0050E3B0",
+  "signature": "void* fn_0050E3B0(void* out)",
+  "summary": "Gets the type name of the global type_info at mem_00A41B00 (node mem_00B5CE94) via its _name_internal_method IAT import, builds a temporary std::string from it (never destroyed, as in the original), then passes the caller's pointer to ext_0066AC90 and returns that pointer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:29:53Z"
+}
