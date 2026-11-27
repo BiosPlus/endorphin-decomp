@@ -1,0 +1,22 @@
+{
+  "va": "0x00459D40",
+  "size": 444,
+  "orig_symbol": "MultiTrackView::TimeRuler::vfunc_8",
+  "src_path": "src/MultiTrackView/TimeRuler.cpp",
+  "lifted_path": "lifted/MultiTrackView/TimeRuler.cpp",
+  "name": "MultiTrackView::TimeRuler::vfunc_8",
+  "class": "MultiTrackView::TimeRuler",
+  "signature": "int32_t __thiscall fn_00459D40(void* self, void* arg1, uint8_t arg2)",
+  "summary": "Processes a vector of marker/time items, dispatching updates to the runtime engine and triggering a redraw if needed.",
+  "fields": [
+    {
+      "class": "MultiTrackView::TimeRuler",
+      "offset": "+0x70",
+      "type": "void*",
+      "name": "field_0x70"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:44:54Z"
+}

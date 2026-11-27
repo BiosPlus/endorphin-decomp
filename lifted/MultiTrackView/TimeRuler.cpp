@@ -324,3 +324,111 @@ void __thiscall fn_00459700(void* self, void* arg0, int32_t x, int32_t y) {
     ext_006A6166(menu);
 }
 } // namespace lift_00459700
+
+// [0x00459D40]
+namespace lift_00459D40 {
+int32_t __cdecl ext_00468180(void);
+int32_t __thiscall ext_00441020(void* self);
+int32_t __thiscall ext_00441040(void* self);
+int32_t __thiscall ext_004410C0(void* self);
+void* __thiscall ext_00468660(void* self);
+void __thiscall ext_004686A0(void* self, int32_t arg);
+void __thiscall ext_00468710(void* self, uint8_t value);
+void __thiscall ext_00468730(void* self, uint32_t arg);
+void __thiscall ext_00468790(void* self, int32_t arg);
+void __thiscall ext_00468810(void* self, int32_t arg);
+void __thiscall ext_00468890(void* self, int32_t arg);
+void __thiscall ext_00468920(void* self, int32_t arg);
+void __thiscall ext_00413480(void* self);
+void __thiscall ext_00482080(void* self, uint32_t arg1, void* arg2);
+extern void (__cdecl *mem_00925134)(void);
+
+// @name MultiTrackView::TimeRuler::vfunc_8
+// @class MultiTrackView::TimeRuler
+// @summary Processes a vector of marker/time items, dispatching updates to the runtime engine and triggering a redraw if needed.
+// @field MultiTrackView::TimeRuler +0x70 void* field_0x70
+int32_t __thiscall fn_00459D40(void* self, void* arg1, uint8_t arg2) {
+    void* esi = reinterpret_cast<void*>(static_cast<uintptr_t>(ext_00468180()));
+    uint8_t flag = 0;
+
+    uintptr_t begin = lift_field<uint32_t>(arg1, 0x4);
+    uintptr_t end = lift_field<uint32_t>(arg1, 0x8);
+    if (begin > end) {
+        mem_00925134();
+    }
+
+    uintptr_t iter = begin;
+    for (;;) {
+        uintptr_t cur_end = lift_field<uint32_t>(arg1, 0x8);
+        if (lift_field<uint32_t>(arg1, 0x4) > cur_end) {
+            mem_00925134();
+        }
+        if (iter == cur_end) {
+            break;
+        }
+        if (iter >= lift_field<uint32_t>(arg1, 0x8)) {
+            mem_00925134();
+        }
+
+        void* item = *reinterpret_cast<void**>(iter);
+        int32_t ebp = ext_00441020(item);
+        int32_t ebx_val = ext_00441040(item);
+        uint32_t switch_val = lift_field<uint32_t>(item, 0x8);
+
+        switch (switch_val) {
+            case 0:
+                ext_004686A0(esi, ebp);
+                flag = 1;
+                break;
+            case 1: {
+                void* ebp_obj = ext_00468660(esi);
+                uintptr_t vtable = *reinterpret_cast<uintptr_t*>(ebp_obj);
+                using vfunc_t = void(__thiscall*)(void*, int32_t);
+                vfunc_t vfunc = *reinterpret_cast<vfunc_t*>(vtable + 0x70);
+                int32_t val = ext_004410C0(lift_field<void*>(self, 0x70));
+                vfunc(ebp_obj, val);
+                flag = 1;
+                break;
+            }
+            case 2:
+                ext_00468890(esi, ebp);
+                ext_00468920(esi, ebx_val);
+                ext_00468730(esi, 1);
+                if (arg2 == 0) {
+                    flag = 1;
+                }
+                break;
+            case 3:
+                ext_00468790(esi, ebp);
+                ext_00468810(esi, ebx_val);
+                ext_00468710(esi, 1);
+                if (arg2 == 0) {
+                    flag = 1;
+                }
+                break;
+            default:
+                break;
+        }
+
+        if (iter >= lift_field<uint32_t>(arg1, 0x8)) {
+            mem_00925134();
+        }
+        iter += 4;
+    }
+
+    if (flag != 0) {
+        void* obj = ext_00468660(esi);
+        uintptr_t vtable = *reinterpret_cast<uintptr_t*>(obj);
+        using vfunc_t = void(__thiscall*)(void*, int32_t);
+        vfunc_t vfunc = *reinterpret_cast<vfunc_t*>(vtable + 0x98);
+        vfunc(obj, 5);
+    }
+
+    if (false) {
+        ext_00482080(esi, 5, nullptr);
+        ext_00413480(self);
+    }
+
+    return 0;
+}
+} // namespace lift_00459D40

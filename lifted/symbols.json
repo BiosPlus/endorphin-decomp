@@ -8003,6 +8003,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004593A0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/TriggeredEventMarkers/auto_tiny.cpp"
   },
+  "0x00459D40": {
+    "name": "MultiTrackView::TimeRuler::vfunc_8",
+    "class": "MultiTrackView::TimeRuler",
+    "signature": "int32_t __thiscall fn_00459D40(void* self, void* arg1, uint8_t arg2)",
+    "summary": "Processes a vector of marker/time items, dispatching updates to the runtime engine and triggering a redraw if needed.",
+    "lifted_path": "lifted/MultiTrackView/TimeRuler.cpp"
+  },
   "0x00459F00": {
     "name": "MultiTrackView::TimeRuler::vfunc_0",
     "class": "MultiTrackView::TimeRuler",
@@ -31839,6 +31846,13 @@
     "signature": "static inline void invalid_parameter()",
     "summary": "Scales the float at +4 of each 8-byte entry in the [begin, end) range by a float factor, calling the CRT invalid-parameter handler on range violations.",
     "lifted_path": "lifted/NMData/RealChannel.cpp"
+  },
+  "0x0051AC80": {
+    "name": "NMData::QuatChannel::vfunc_2",
+    "class": "NMData::QuatChannel",
+    "signature": "void* __thiscall fn_0051AC80(void* self, void* out)",
+    "summary": "Serializes the quaternion channel header and each 20-byte (time, quat) keyframe into an output node.",
+    "lifted_path": "lifted/NMData/QuatChannel.cpp"
   },
   "0x0051ADC0": {
     "name": "NMData::QuatChannel::vfunc_7",
