@@ -1,0 +1,13 @@
+{
+  "va": "0x004BF320",
+  "size": 335,
+  "orig_symbol": "sub_004BF320",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "sub_004BF320",
+  "signature": "void* fn_004BF320(void* arg0)",
+  "summary": "Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:32:01Z"
+}

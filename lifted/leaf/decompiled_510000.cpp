@@ -87,8 +87,10 @@ extern uint32_t fn_0051F540(uint32_t first, uint32_t last, uint32_t dest) {
 } // namespace lift_00406290
 } // namespace lift_0051F540
 #include <memory>
+#include <cstdio>
+#include <algorithm>
 
-// [0x0051E070] sub_0051E070 (90 bytes)
+#include <algorithm>
 namespace lift_0051E070 {
 extern int32_t ext_0051DFC0(int32_t a, int32_t b, int32_t c, int32_t d, int32_t e, int32_t f);
 
@@ -1563,3 +1565,165 @@ UnguardedPartitionResult* __cdecl fn_00518D70(
 }
 } // namespace lift_00518B00
 } // namespace lift_00518D70
+
+// [0x00510D60] sub_00510D60 (329 bytes)
+namespace lift_00510D60 {
+// @name sub_00510D60
+// @summary Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).
+namespace lift_004BE950 {
+// @name CreateObjectFromDynamicCast
+// @summary Dynamically casts arg0 and constructs a 0x30-byte object, or constructs a default one if null, or throws StringExceptionWithMember on cast failure.
+
+
+void* ext_006A6E9E(void* inptr, int32_t vf_delta, uint32_t src_type, uint32_t target_type, int32_t is_reference);
+void* ext_006A5C62(uint32_t size);
+void* ext_00510B00(void* self, void* arg1);
+void* ext_00519100(void* self);
+void* ext_0050E3B0(void* out_str);
+void* ext_00403560(void* self, const void* src);
+[[noreturn]] void ext_006A6DD2(void* exc, uint32_t throw_info);
+
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FD0;
+
+void* fn_00510D60(void* arg0) {
+    if (arg0 == nullptr) {
+        void* obj = ext_006A5C62(0x70);
+        if (obj != nullptr) {
+            return ext_00519100(obj);
+        }
+        return nullptr;
+    }
+
+    void* casted = ext_006A6E9E(arg0, 0, 0xA41B00, 0xA41E00, 0);
+    if (casted != nullptr) {
+        void* obj = ext_006A5C62(0x70);
+        if (obj != nullptr) {
+            return ext_00510B00(obj, casted);
+        }
+        return nullptr;
+    }
+
+    uint8_t tmp_str1[0x20];
+    uint8_t tmp_str2[0x20];
+    uint8_t tmp_str3[0x18];
+    uint8_t exc[0x20];
+
+    void* s1 = ext_0050E3B0(tmp_str1);
+    using StrCtorFn = void* (__thiscall*)(void*, uint32_t);
+    using StrConcatFn = void* (__cdecl*)(void*, void*, void*);
+    void* s2 = reinterpret_cast<StrCtorFn>(mem_00924FE4)(tmp_str2, 0x0092F9D4);
+    void* s3 = reinterpret_cast<StrConcatFn>(mem_00924FD0)(tmp_str3, s2, s1);
+    ext_00403560(exc, s3);
+    ext_006A6DD2(exc, 0x009D47A4);
+}
+} // namespace lift_004BE950
+} // namespace lift_00510D60
+
+// [0x0051CA00] sub_0051CA00 (329 bytes)
+namespace lift_0051CA00 {
+// @name sub_0051CA00
+// @summary Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).
+namespace lift_004BE950 {
+// @name CreateObjectFromDynamicCast
+// @summary Dynamically casts arg0 and constructs a 0x30-byte object, or constructs a default one if null, or throws StringExceptionWithMember on cast failure.
+
+
+void* ext_006A6E9E(void* inptr, int32_t vf_delta, uint32_t src_type, uint32_t target_type, int32_t is_reference);
+void* ext_006A5C62(uint32_t size);
+void* ext_0051C640(void* self, void* arg1);
+void* ext_0051C5A0(void* self);
+void* ext_00519DB0(void* out_str);
+void* ext_00403560(void* self, const void* src);
+[[noreturn]] void ext_006A6DD2(void* exc, uint32_t throw_info);
+
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FD0;
+
+void* fn_0051CA00(void* arg0) {
+    if (arg0 == nullptr) {
+        void* obj = ext_006A5C62(0x44);
+        if (obj != nullptr) {
+            return ext_0051C5A0(obj);
+        }
+        return nullptr;
+    }
+
+    void* casted = ext_006A6E9E(arg0, 0, 0xA43100, 0xA4317C, 0);
+    if (casted != nullptr) {
+        void* obj = ext_006A5C62(0x44);
+        if (obj != nullptr) {
+            return ext_0051C640(obj, casted);
+        }
+        return nullptr;
+    }
+
+    uint8_t tmp_str1[0x20];
+    uint8_t tmp_str2[0x20];
+    uint8_t tmp_str3[0x18];
+    uint8_t exc[0x20];
+
+    void* s1 = ext_00519DB0(tmp_str1);
+    using StrCtorFn = void* (__thiscall*)(void*, uint32_t);
+    using StrConcatFn = void* (__cdecl*)(void*, void*, void*);
+    void* s2 = reinterpret_cast<StrCtorFn>(mem_00924FE4)(tmp_str2, 0x0092F9D4);
+    void* s3 = reinterpret_cast<StrConcatFn>(mem_00924FD0)(tmp_str3, s2, s1);
+    ext_00403560(exc, s3);
+    ext_006A6DD2(exc, 0x009D47A4);
+}
+} // namespace lift_004BE950
+} // namespace lift_0051CA00
+
+// [0x0051CFE0] sub_0051CFE0 (329 bytes)
+namespace lift_0051CFE0 {
+// @name sub_0051CFE0
+// @summary Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).
+namespace lift_004BE950 {
+// @name CreateObjectFromDynamicCast
+// @summary Dynamically casts arg0 and constructs a 0x30-byte object, or constructs a default one if null, or throws StringExceptionWithMember on cast failure.
+
+
+void* ext_006A6E9E(void* inptr, int32_t vf_delta, uint32_t src_type, uint32_t target_type, int32_t is_reference);
+void* ext_006A5C62(uint32_t size);
+void* ext_0051CD30(void* self, void* arg1);
+void* ext_0051CCC0(void* self);
+void* ext_00519DB0(void* out_str);
+void* ext_00403560(void* self, const void* src);
+[[noreturn]] void ext_006A6DD2(void* exc, uint32_t throw_info);
+
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FD0;
+
+void* fn_0051CFE0(void* arg0) {
+    if (arg0 == nullptr) {
+        void* obj = ext_006A5C62(0x64);
+        if (obj != nullptr) {
+            return ext_0051CCC0(obj);
+        }
+        return nullptr;
+    }
+
+    void* casted = ext_006A6E9E(arg0, 0, 0xA43100, 0xA33760, 0);
+    if (casted != nullptr) {
+        void* obj = ext_006A5C62(0x64);
+        if (obj != nullptr) {
+            return ext_0051CD30(obj, casted);
+        }
+        return nullptr;
+    }
+
+    uint8_t tmp_str1[0x20];
+    uint8_t tmp_str2[0x20];
+    uint8_t tmp_str3[0x18];
+    uint8_t exc[0x20];
+
+    void* s1 = ext_00519DB0(tmp_str1);
+    using StrCtorFn = void* (__thiscall*)(void*, uint32_t);
+    using StrConcatFn = void* (__cdecl*)(void*, void*, void*);
+    void* s2 = reinterpret_cast<StrCtorFn>(mem_00924FE4)(tmp_str2, 0x0092F9D4);
+    void* s3 = reinterpret_cast<StrConcatFn>(mem_00924FD0)(tmp_str3, s2, s1);
+    ext_00403560(exc, s3);
+    ext_006A6DD2(exc, 0x009D47A4);
+}
+} // namespace lift_004BE950
+} // namespace lift_0051CFE0

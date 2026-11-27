@@ -3224,3 +3224,165 @@ void* fn_004BE950(void* arg0) {
     ext_006A6DD2(exc, 0x009D47A4);
 }
 } // namespace lift_004BE950
+
+// [0x004BE800] sub_004BE800 (335 bytes)
+namespace lift_004BE800 {
+// @name sub_004BE800
+// @summary Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).
+namespace lift_004BE950 {
+// @name CreateObjectFromDynamicCast
+// @summary Dynamically casts arg0 and constructs a 0x30-byte object, or constructs a default one if null, or throws StringExceptionWithMember on cast failure.
+
+
+void* ext_006A6E9E(void* inptr, int32_t vf_delta, uint32_t src_type, uint32_t target_type, int32_t is_reference);
+void* ext_006A5C62(uint32_t size);
+void* ext_0047D9F0(void* self, void* arg1);
+void* ext_0047FC70(void* self);
+void* ext_004BE7C0(void* out_str);
+void* ext_00403560(void* self, const void* src);
+[[noreturn]] void ext_006A6DD2(void* exc, uint32_t throw_info);
+
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FD0;
+
+void* fn_004BE800(void* arg0) {
+    if (arg0 == nullptr) {
+        void* obj = ext_006A5C62(0x55C);
+        if (obj != nullptr) {
+            return ext_0047FC70(obj);
+        }
+        return nullptr;
+    }
+
+    void* casted = ext_006A6E9E(arg0, 0, 0x00A328B0, 0xA32B50, 0);
+    if (casted != nullptr) {
+        void* obj = ext_006A5C62(0x55C);
+        if (obj != nullptr) {
+            return ext_0047D9F0(obj, casted);
+        }
+        return nullptr;
+    }
+
+    uint8_t tmp_str1[0x20];
+    uint8_t tmp_str2[0x20];
+    uint8_t tmp_str3[0x18];
+    uint8_t exc[0x20];
+
+    void* s1 = ext_004BE7C0(tmp_str1);
+    using StrCtorFn = void* (__thiscall*)(void*, uint32_t);
+    using StrConcatFn = void* (__cdecl*)(void*, void*, void*);
+    void* s2 = reinterpret_cast<StrCtorFn>(mem_00924FE4)(tmp_str2, 0x0092F9D4);
+    void* s3 = reinterpret_cast<StrConcatFn>(mem_00924FD0)(tmp_str3, s2, s1);
+    ext_00403560(exc, s3);
+    ext_006A6DD2(exc, 0x009D47A4);
+}
+} // namespace lift_004BE950
+} // namespace lift_004BE800
+
+// [0x004BEE70] sub_004BEE70 (335 bytes)
+namespace lift_004BEE70 {
+// @name sub_004BEE70
+// @summary Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).
+namespace lift_004BE950 {
+// @name CreateObjectFromDynamicCast
+// @summary Dynamically casts arg0 and constructs a 0x30-byte object, or constructs a default one if null, or throws StringExceptionWithMember on cast failure.
+
+
+void* ext_006A6E9E(void* inptr, int32_t vf_delta, uint32_t src_type, uint32_t target_type, int32_t is_reference);
+void* ext_006A5C62(uint32_t size);
+void* ext_004BEC60(void* self, void* arg1);
+void* ext_00501B40(void* self);
+void* ext_004BE7C0(void* out_str);
+void* ext_00403560(void* self, const void* src);
+[[noreturn]] void ext_006A6DD2(void* exc, uint32_t throw_info);
+
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FD0;
+
+void* fn_004BEE70(void* arg0) {
+    if (arg0 == nullptr) {
+        void* obj = ext_006A5C62(0x148);
+        if (obj != nullptr) {
+            return ext_00501B40(obj);
+        }
+        return nullptr;
+    }
+
+    void* casted = ext_006A6E9E(arg0, 0, 0x00A328B0, 0xA39650, 0);
+    if (casted != nullptr) {
+        void* obj = ext_006A5C62(0x148);
+        if (obj != nullptr) {
+            return ext_004BEC60(obj, casted);
+        }
+        return nullptr;
+    }
+
+    uint8_t tmp_str1[0x20];
+    uint8_t tmp_str2[0x20];
+    uint8_t tmp_str3[0x18];
+    uint8_t exc[0x20];
+
+    void* s1 = ext_004BE7C0(tmp_str1);
+    using StrCtorFn = void* (__thiscall*)(void*, uint32_t);
+    using StrConcatFn = void* (__cdecl*)(void*, void*, void*);
+    void* s2 = reinterpret_cast<StrCtorFn>(mem_00924FE4)(tmp_str2, 0x0092F9D4);
+    void* s3 = reinterpret_cast<StrConcatFn>(mem_00924FD0)(tmp_str3, s2, s1);
+    ext_00403560(exc, s3);
+    ext_006A6DD2(exc, 0x009D47A4);
+}
+} // namespace lift_004BE950
+} // namespace lift_004BEE70
+
+// [0x004BF320] sub_004BF320 (335 bytes)
+namespace lift_004BF320 {
+// @name sub_004BF320
+// @summary Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).
+namespace lift_004BE950 {
+// @name CreateObjectFromDynamicCast
+// @summary Dynamically casts arg0 and constructs a 0x30-byte object, or constructs a default one if null, or throws StringExceptionWithMember on cast failure.
+
+
+void* ext_006A6E9E(void* inptr, int32_t vf_delta, uint32_t src_type, uint32_t target_type, int32_t is_reference);
+void* ext_006A5C62(uint32_t size);
+void* ext_004A1590(void* self, void* arg1);
+void* ext_0049FF90(void* self);
+void* ext_004BE7C0(void* out_str);
+void* ext_00403560(void* self, const void* src);
+[[noreturn]] void ext_006A6DD2(void* exc, uint32_t throw_info);
+
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FD0;
+
+void* fn_004BF320(void* arg0) {
+    if (arg0 == nullptr) {
+        void* obj = ext_006A5C62(0x138);
+        if (obj != nullptr) {
+            return ext_0049FF90(obj);
+        }
+        return nullptr;
+    }
+
+    void* casted = ext_006A6E9E(arg0, 0, 0x00A328B0, 0xA351A8, 0);
+    if (casted != nullptr) {
+        void* obj = ext_006A5C62(0x138);
+        if (obj != nullptr) {
+            return ext_004A1590(obj, casted);
+        }
+        return nullptr;
+    }
+
+    uint8_t tmp_str1[0x20];
+    uint8_t tmp_str2[0x20];
+    uint8_t tmp_str3[0x18];
+    uint8_t exc[0x20];
+
+    void* s1 = ext_004BE7C0(tmp_str1);
+    using StrCtorFn = void* (__thiscall*)(void*, uint32_t);
+    using StrConcatFn = void* (__cdecl*)(void*, void*, void*);
+    void* s2 = reinterpret_cast<StrCtorFn>(mem_00924FE4)(tmp_str2, 0x0092F9D4);
+    void* s3 = reinterpret_cast<StrConcatFn>(mem_00924FD0)(tmp_str3, s2, s1);
+    ext_00403560(exc, s3);
+    ext_006A6DD2(exc, 0x009D47A4);
+}
+} // namespace lift_004BE950
+} // namespace lift_004BF320

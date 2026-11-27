@@ -20197,6 +20197,12 @@
     "summary": "Fetches type_info name at 0xa328b0 (MSVC runtime), builds a temp std::string, passes the incoming esi-register value to ext_0066AC90, and returns it unchanged.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004BE800": {
+    "name": "sub_004BE800",
+    "signature": "void* fn_004BE800(void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BE950": {
     "name": "CreateObjectFromDynamicCast",
     "signature": "void* fn_004BE950(void* arg0)",
@@ -20251,10 +20257,22 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x8 and tail-calls NMData::EvolveEngineData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004BEE70": {
+    "name": "sub_004BEE70",
+    "signature": "void* fn_004BEE70(void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BEFC0": {
     "name": "initOnceAndGetStaticObject",
     "signature": "void* fn_004BEFC0()",
     "summary": "One-time initialization guard: on first call sets bit 0 of mem_00AE1D68, runs ext_004BEBE0 on the static object at mem_00AE1D44 and ext_006A6C87(0x9185E0); returns the static object's address.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
+  "0x004BF320": {
+    "name": "sub_004BF320",
+    "signature": "void* fn_004BF320(void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
   "0x004BF680": {
@@ -30938,6 +30956,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00519170 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00510D60": {
+    "name": "sub_00510D60",
+    "signature": "void* fn_00510D60(void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x00511290": {
     "name": "sub_00511290",
     "signature": "extern \"C\" void __fastcall fn_00511290(void* self, int edx_unused, float value)",
@@ -32774,6 +32798,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0041E4C0 (ClassFactory\u003cCompoundSensor\u003e::ctor).",
     "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
+  "0x0051CA00": {
+    "name": "sub_0051CA00",
+    "signature": "void* fn_0051CA00(void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x0051CB50": {
     "name": "NMData::RealChannel::vfunc_5",
     "class": "NMData::RealChannel",
@@ -32794,6 +32824,12 @@
     "signature": "void* __thiscall fn_0051CDE0(const void* self)",
     "summary": "Allocates and copy-constructs a clone of this QuatChannel instance.",
     "lifted_path": "lifted/NMData/QuatChannel.cpp"
+  },
+  "0x0051CFE0": {
+    "name": "sub_0051CFE0",
+    "signature": "void* fn_0051CFE0(void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
   "0x0051D310": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::QuatChannel, NM::Vector4 const \u0026, \u0026public: class NM::Vector4 const \u0026 __thiscall NMData::QuatChannel::getValue(void) const, NM::Vector4 const \u0026, \u0026public: void __thiscall NMData::QuatChannel::setKeyFrame(class NM::Vector4 const \u0026)\u003e::vfunc_41",
@@ -60707,6 +60743,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006080D0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00608180": {
+    "name": "sub_00608180",
+    "signature": "void* fn_00608180(void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x006082D0": {
     "name": "sub_006082D0",
     "class": "ClassFactory\u003cCompoundSensor\u003e",
@@ -60719,6 +60761,12 @@
     "class": "Unknown",
     "signature": "void* fn_00608350(void* self)",
     "summary": "Constructs the object: runs the base ctor, sets vtable 0x00971934, zeroes four ints at +0x64..+0x70, builds a 20-float array at +0x78 filled with 0.0, sets the count at +0x74 to 20, zeroes +0x88, constructs an empty std::string at +0x8C and sets float +0xAC to 20.0; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x006084D0": {
+    "name": "sub_006084D0",
+    "signature": "void* fn_006084D0(void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
   "0x00608990": {
@@ -61292,6 +61340,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0041CDA0 (ExprParser::GetTypeNameInto).",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x0060C170": {
+    "name": "sub_0060C170",
+    "signature": "void* fn_0060C170(void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060C2C0": {
     "name": "NMData::EffectorWithMemoryData::vfunc_20",
     "class": "NMData::EffectorWithMemoryData",
@@ -61376,6 +61430,12 @@
     "summary": "Initializes base data from arg, then reads string/int/float attributes into this+0x5C, +0x60, +0x7C and +0x80.",
     "lifted_path": "lifted/NMData/EffectorWithModesData.cpp"
   },
+  "0x0060CB10": {
+    "name": "sub_0060CB10",
+    "signature": "void* fn_0060CB10(void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060CC60": {
     "name": "GetOnceInitString_0060CC60",
     "signature": "void* GetOnceInitString_0060CC60()",
@@ -61430,6 +61490,12 @@
     "signature": "void fn_0060CF00(void* self, void* arg1, void* arg2, void* arg3)",
     "summary": "Dynamic-casts a1 to EffectorWithModesData, then compares this and the other object's fields (+0x5C, +0x60, +0x7C, +0x80) via helper calls.",
     "lifted_path": "lifted/NMData/EffectorWithModesData.cpp"
+  },
+  "0x0060D130": {
+    "name": "sub_0060D130",
+    "signature": "void* fn_0060D130(void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
   "0x0060D280": {
     "name": "NMData::EffectorGroupData::vfunc_14",
@@ -61493,6 +61559,12 @@
     "signature": "void fn_0060D780(void* self, void* a1, void* a2, void* a3)",
     "summary": "Allocates a 0x3c-byte helper object, stores it at self+0x40, and fills its int32 vector with one entry per element of self's string vector (0x1c stride).",
     "lifted_path": "lifted/NMData/EffectorGroupData.cpp"
+  },
+  "0x0060D910": {
+    "name": "sub_0060D910",
+    "signature": "void* fn_0060D910(void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
   "0x0060DA60": {
     "name": "NMData::EffectorGroupData::vfunc_12",
@@ -61624,6 +61696,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0060ED60 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0060F260": {
+    "name": "sub_0060F260",
+    "signature": "void* fn_0060F260(void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060F3B0": {
     "name": "sub_0060F3B0",
     "class": "Unknown",
@@ -61659,6 +61737,12 @@
     "summary": "Looks up a named item, then walks its pointer vector at +0x24 pushing each element whose name matches a global string into the +0x180 list.",
     "lifted_path": "lifted/NMData/CompoundSensorData.cpp"
   },
+  "0x0060F820": {
+    "name": "sub_0060F820",
+    "signature": "void* fn_0060F820(void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x0060F970": {
     "name": "NMData::CompoundSensorData::vfunc_0",
     "class": "NMData::CompoundSensorData",
@@ -61693,6 +61777,12 @@
     "signature": "extern \"C\" void __fastcall fn_0060FB60(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::AxisDefineSensorData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x0060FD40": {
+    "name": "sub_0060FD40",
+    "signature": "void* fn_0060FD40(void* arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x004BE950 (CreateObjectFromDynamicCast).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
   "0x0060FE90": {
     "name": "NMData::AxisDefineSensorData::vfunc_0",
