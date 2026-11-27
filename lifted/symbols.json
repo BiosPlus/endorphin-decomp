@@ -2155,6 +2155,13 @@
     "summary": "Returns the address of the read-only string constant \".cj\" stored in .rdata (mem_0092D778).",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x0041B610": {
+    "name": "sub_0041B610",
+    "class": "Unknown",
+    "signature": "void* fn_0041B610()",
+    "summary": "Auto-lifted identical-shape clone of 0x004198C0 (Unknown::allocInitWithSolidBrush).",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041B670": {
     "name": "GettingStartedDialog::vfunc_1",
     "class": "GettingStartedDialog",

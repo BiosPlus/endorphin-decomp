@@ -1,0 +1,14 @@
+{
+  "va": "0x0041B610",
+  "size": 91,
+  "orig_symbol": "sub_0041B610",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "sub_0041B610",
+  "class": "Unknown",
+  "signature": "void* fn_0041B610()",
+  "summary": "Auto-lifted identical-shape clone of 0x004198C0 (Unknown::allocInitWithSolidBrush).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T04:43:07Z"
+}
