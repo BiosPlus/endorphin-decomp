@@ -1,0 +1,14 @@
+{
+  "va": "0x006D8A40",
+  "size": 84,
+  "orig_symbol": "sub_006D8A40",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::insertArgAndReturnIndex_006D8A40",
+  "class": "Unknown",
+  "signature": "int32_t fn_006D8A40(void* self, int32_t arg1, int32_t* arg2)",
+  "summary": "Forwards (arg1, \u0026arg2) to DynamicArray::InsertAt on self, runs an empty helper, and returns InsertAt's result; the SEH frame setup/teardown is dropped.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:46:57Z"
+}

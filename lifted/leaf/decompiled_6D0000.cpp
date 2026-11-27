@@ -3127,3 +3127,20 @@ int32_t fn_006D2A40(void* self, int32_t arg1, int32_t* arg2) {
     return result;
 }
 } // namespace lift_006D2A40
+
+// [0x006D8A40] sub_006D8A40 (84 bytes)
+namespace lift_006D8A40 {
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern int32_t ext_006D2170(void* self, int32_t index, const void* elem);
+// Known callee 0x006D80A0: sub_006D80A0 (Empty function (returns immediately).)
+extern void ext_006D80A0(void);
+
+// @name Unknown::insertArgAndReturnIndex_006D8A40
+// @class Unknown
+// @summary Forwards (arg1, &arg2) to DynamicArray::InsertAt on self, runs an empty helper, and returns InsertAt's result; the SEH frame setup/teardown is dropped.
+int32_t fn_006D8A40(void* self, int32_t arg1, int32_t* arg2) {
+    const int32_t result = ext_006D2170(self, arg1, static_cast<const void*>(arg2));
+    ext_006D80A0();
+    return result;
+}
+} // namespace lift_006D8A40
