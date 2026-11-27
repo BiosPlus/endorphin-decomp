@@ -1,0 +1,28 @@
+{
+  "va": "0x004DCA50",
+  "size": 197,
+  "orig_symbol": "NMData::RigEventData::vfunc_82",
+  "src_path": "src/NMData/RigEventData.cpp",
+  "lifted_path": "lifted/NMData/RigEventData.cpp",
+  "name": "NMData::RigEventData::vfunc_82",
+  "class": "NMData::RigEventData",
+  "signature": "void __thiscall fn_004DCA50(void* this_ptr, void* arg1)",
+  "summary": "Sets the target object at +0x168, updates +0x3e8 if non-null, and invokes 0x4DBBE0 and 0x4D9480 with string constants.",
+  "fields": [
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x168",
+      "type": "void*",
+      "name": "field_0x168"
+    },
+    {
+      "class": "NMData::RigEventData",
+      "offset": "+0x3E8",
+      "type": "uint8_t",
+      "name": "field_0x3e8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:27:19Z"
+}

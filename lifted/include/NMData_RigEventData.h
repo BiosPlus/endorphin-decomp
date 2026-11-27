@@ -14,6 +14,7 @@ struct NMData_RigEventData_Fields {
     // +0x4   void*                    field_0x04  (evidence: 0x004DC450)
     // +0x15C int32_t                  field_0x15C  (evidence: 0x004DB020)
     // +0x160 int32_t                  field_0x160  (evidence: 0x004DB020)
+    // +0x168 void*                    field_0x168  (evidence: 0x004DCA50)
     // +0x16C void*                    field_0x16C  (evidence: 0x004DC4F0, 0x004DCD80, 0x004DDD30)
     // +0x170 uint32_t                 field_0x170  (evidence: 0x004DC600)
     // +0x174 uint32_t                 field_0x174  (evidence: 0x004DC600)
@@ -26,5 +27,6 @@ struct NMData_RigEventData_Fields {
     // +0x334 void**                   field_0x334  (evidence: 0x004DAF20)
     // +0x338 void**                   field_0x338  (evidence: 0x004DAF20)
     // +0x398 uint8_t                  field_0x398  (evidence: 0x004D3C60)
+    // +0x3E8 uint8_t                  field_0x3e8  (evidence: 0x004DCA50)
 };
 } // namespace lifted_layout

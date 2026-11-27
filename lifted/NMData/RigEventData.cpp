@@ -447,3 +447,56 @@ extern void __thiscall fn_004DDD30(void* self) {
     ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(begin)));
 }
 } // namespace lift_004DDD30
+
+// [0x004DCA50]
+namespace lift_004DCA50 {
+extern void* mem_00A3464C;
+    extern void* mem_00A34650;
+    extern void* mem_00924FE4;
+    extern void* mem_00924FF4;
+    extern void* mem_00925134;
+
+    void __thiscall ext_004EE590(void* this_ptr, uint32_t arg1);
+    void __thiscall ext_004DBBE0(void* this_ptr, void* arg1);
+    void __thiscall ext_004D9480(void* this_ptr, void* arg1, void* arg2);
+    void __thiscall ext_004026E0(void* this_ptr);
+    void __thiscall ext_004C28C0(void* this_ptr);
+    void __thiscall ext_004DA180(void* this_ptr);
+    void __thiscall ext_004DB070(void* this_ptr);
+
+// @name NMData::RigEventData::vfunc_82
+// @class NMData::RigEventData
+// @summary Sets the target object at +0x168, updates +0x3e8 if non-null, and invokes 0x4DBBE0 and 0x4D9480 with string constants.
+// @field NMData::RigEventData +0x168 void* field_0x168
+// @field NMData::RigEventData +0x3e8 uint8_t field_0x3e8
+void __thiscall fn_004DCA50(void* this_ptr, void* arg1) {
+    lift_field<void*>(this_ptr, 0x168) = arg1;
+
+    if (arg1 != nullptr) {
+        void* sub_obj = static_cast<char*>(arg1) + 4;
+        void** vtable = *reinterpret_cast<void***>(sub_obj);
+        using vfunc_t = uint32_t(__thiscall*)(void*);
+        uint32_t val = reinterpret_cast<vfunc_t>(vtable[0x24 / sizeof(void*)])(sub_obj);
+        ext_004EE590(static_cast<char*>(this_ptr) + 0x3e8, val);
+    }
+
+    using str_ctor_t = void(__thiscall*)(void*, const char*);
+    using str_dtor_t = void(__thiscall*)(void*);
+
+    uint8_t str1[0x1C];
+    reinterpret_cast<str_ctor_t>(mem_00924FE4)(str1, static_cast<const char*>(mem_00A3464C));
+    ext_004DBBE0(this_ptr, str1);
+    reinterpret_cast<str_dtor_t>(mem_00924FF4)(str1);
+
+    uint8_t str2[0x1C];
+    reinterpret_cast<str_ctor_t>(mem_00924FE4)(str2, static_cast<const char*>(mem_00A34650));
+    ext_004D9480(this_ptr, str2, lift_field<void*>(this_ptr, 0x168));
+    reinterpret_cast<str_dtor_t>(mem_00924FF4)(str2);
+
+    (void)ext_004026E0;
+    (void)ext_004C28C0;
+    (void)ext_004DA180;
+    (void)ext_004DB070;
+    (void)mem_00925134;
+}
+} // namespace lift_004DCA50
