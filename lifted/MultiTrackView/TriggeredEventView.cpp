@@ -809,3 +809,123 @@ void __thiscall fn_0045F7F0(void* self, uint32_t flags, void* items_vec) {
     }
 }
 } // namespace lift_0045F7F0
+
+// [0x0045EDB0]
+namespace lift_0045EDB0 {
+// @name MultiTrackView::TriggeredEventView::vfunc_2_off_24C
+// @class MultiTrackView::TriggeredEventView
+// @summary Creates and registers a triggered event item view from event data and refreshes layout.
+// @field MultiTrackView::TriggeredEventView +0xC4 void* field_0xC4
+// @field MultiTrackView::TriggeredEventView +0x24C void* triggeredEventObserver
+// @field MultiTrackView::TriggeredEventView +0x258 void* field_0x258
+// @field MultiTrackView::TriggeredEventView +0x290 uint8_t field_0x290
+// @field MultiTrackView::TriggeredEventView +0x294 uint8_t field_0x294
+// @field MultiTrackView::TriggeredEventView +0x298 uint8_t field_0x298
+// @field MultiTrackView::TriggeredEventView +0x2C4 uint8_t field_0x2C4
+
+
+struct LiftFloat4 {
+    float f[4];
+};
+
+    int32_t __cdecl ext_00468180(void);
+    void __thiscall ext_004A5850(void* self);
+    void* __thiscall ext_0043DCF0(void* self, int32_t key);
+    void* __thiscall ext_00412E20(void* self);
+    int32_t __stdcall ext_0045D8D0(int32_t index);
+    void* __cdecl ext_006A5C62(uint32_t size);
+    void* __thiscall ext_0043B3E0(void* self, const void* src);
+    void* __thiscall ext_00459260(void* self, int32_t kind, void* container, void* view, void* p1, void* p2, LiftFloat4 f4);
+    void* __thiscall ext_00441330(void* self, int32_t kind, void* container, void* view, void* p1, void* p2, LiftFloat4 f4);
+    void* __thiscall ext_00441630(void* self, int32_t kind, void* container, void* view, void* p1, void* p2, LiftFloat4 f4);
+    void* __thiscall ext_004419A0(void* self, int32_t kind, void* container, void* view, void* p1, void* p2, LiftFloat4 f4);
+    void* __thiscall ext_0045D960(void* self, void* out_str, void* event_data);
+    void __thiscall ext_004408E0(void* self, double a0, double a1);
+    void __thiscall ext_00440900(void* self, double a0, double a1);
+    void __thiscall ext_0043C070(void* self, void* item);
+    void __thiscall ext_0045E940(void* self, void* event_data, void* item);
+
+    extern uintptr_t mem_00924FDC;
+    extern uintptr_t mem_00924FF4;
+
+extern void __thiscall fn_0045EDB0(void* self, void* event_data, uint8_t should_update) {
+    uint8_t* self_bytes = reinterpret_cast<uint8_t*>(self);
+    uint8_t* view = self_bytes - 0x24C;
+
+    uint8_t* g = reinterpret_cast<uint8_t*>(ext_00468180());
+    void* obj1 = lift_field<void*>(g, 0x14);
+    void* obj2 = lift_field<void*>(obj1, 0x34);
+    typedef void (__thiscall *VFn0)(void*);
+    (reinterpret_cast<VFn0*>(*reinterpret_cast<uintptr_t**>(obj2))[0x40 / 4])(obj2);
+
+    obj1 = lift_field<void*>(g, 0x14);
+    obj2 = lift_field<void*>(obj1, 0x34);
+    (reinterpret_cast<VFn0*>(*reinterpret_cast<uintptr_t**>(obj2))[0])(obj2);
+
+    obj1 = lift_field<void*>(g, 0x14);
+    obj2 = lift_field<void*>(obj1, 0x34);
+    ext_004A5850(lift_field<void*>(obj2, 0x3B4));
+
+    typedef int32_t (__thiscall *VFnGetI32)(void*);
+    int32_t key = (reinterpret_cast<VFnGetI32*>(*reinterpret_cast<uintptr_t**>(event_data))[0xFC / 4])(event_data);
+    void* tree_val = ext_0043DCF0(view, key);
+    if (tree_val) {
+        void* container = ext_00412E20(tree_val);
+        if (container) {
+            int32_t raw_type = (reinterpret_cast<VFnGetI32*>(*reinterpret_cast<uintptr_t**>(event_data))[0xF8 / 4])(event_data);
+            int32_t code = ext_0045D8D0(raw_type);
+
+            void* item = ext_006A5C62(0xA8);
+            void* created = nullptr;
+            if (item) {
+                LiftFloat4 f4;
+                ext_0043B3E0(&f4, lift_field<void*>(self_bytes - 0x188, 0));
+                switch (code) {
+                    case 0:
+                        created = ext_00459260(item, 0, container, view, self_bytes + 0x44, self_bytes + 0x78, f4);
+                        break;
+                    case 1:
+                        created = ext_00441330(item, 1, container, view, self_bytes + 0x48, self_bytes + 0x78, f4);
+                        break;
+                    case 2:
+                        created = ext_00441630(item, 2, container, view, self_bytes + 0x4C, self_bytes + 0x78, f4);
+                        break;
+                    default:
+                        created = ext_004419A0(item, code, container, view, self_bytes + 4 * code + 0x44, self_bytes + 0x78, f4);
+                        break;
+                }
+            }
+
+            uint8_t tmp_str[28];
+            void* ret_str = ext_0045D960(view, tmp_str, event_data);
+            typedef void* (__thiscall *StrAssignFn)(void*, const void*);
+            typedef void (__thiscall *StrDtorFn)(void*);
+            reinterpret_cast<StrAssignFn>(mem_00924FDC)(reinterpret_cast<uint8_t*>(created) + 0xC, ret_str);
+            reinterpret_cast<StrDtorFn>(mem_00924FF4)(tmp_str);
+
+            lift_field<uint8_t>(created, 0x8F) = (code == 0 || code == 8) ? 0 : 1;
+
+            double d0 = static_cast<double>(lift_field<int32_t>(event_data, 0x15C));
+            double d1 = static_cast<double>(lift_field<int32_t>(event_data, 0x160));
+            ext_004408E0(created, d0, d1);
+
+            typedef uint8_t (__thiscall *VFnGetU8)(void*);
+            lift_field<uint8_t>(created, 0xA1) =
+                (reinterpret_cast<VFnGetU8*>(*reinterpret_cast<uintptr_t**>(event_data))[0x104 / 4])(event_data);
+
+            int32_t v1 = (reinterpret_cast<VFnGetI32*>(*reinterpret_cast<uintptr_t**>(event_data))[0x10C / 4])(event_data);
+            int32_t v0 = (reinterpret_cast<VFnGetI32*>(*reinterpret_cast<uintptr_t**>(event_data))[0x108 / 4])(event_data);
+            ext_00440900(created, static_cast<double>(v0), static_cast<double>(v1));
+
+            ext_0043C070(container, created);
+            ext_0045E940(self_bytes + 0xC, event_data, created);
+        }
+    }
+
+    if (should_update != 0) {
+        (reinterpret_cast<VFn0*>(*reinterpret_cast<uintptr_t**>(view))[0x144 / 4])(view);
+    }
+    void* sub_fc = self_bytes - 0x4;
+    (reinterpret_cast<VFn0*>(*reinterpret_cast<uintptr_t**>(sub_fc))[0x4 / 4])(sub_fc);
+}
+} // namespace lift_0045EDB0

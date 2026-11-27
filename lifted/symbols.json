@@ -8337,6 +8337,13 @@
     "summary": "Looks up a key in the view's tree; if found, forwards each nested item to ext_0045EA60, calls the node's vtable slot 0 with 1, and invalidates the view window.",
     "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
   },
+  "0x0045EDB0": {
+    "name": "MultiTrackView::TriggeredEventView::vfunc_2_off_24C",
+    "class": "MultiTrackView::TriggeredEventView",
+    "signature": "extern \"C\" void __thiscall fn_0045EDB0(void* self, void* event_data, uint8_t should_update)",
+    "summary": "Creates and registers a triggered event item view from event data and refreshes layout.",
+    "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
+  },
   "0x0045F0A0": {
     "name": "MultiTrackView::TriggeredEventView::vfunc_3_off_24C",
     "class": "MultiTrackView::TriggeredEventView",

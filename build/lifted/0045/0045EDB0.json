@@ -1,0 +1,58 @@
+{
+  "va": "0x0045EDB0",
+  "size": 749,
+  "orig_symbol": "MultiTrackView::TriggeredEventView::vfunc_2_off_24C",
+  "src_path": "src/MultiTrackView/TriggeredEventView.cpp",
+  "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp",
+  "name": "MultiTrackView::TriggeredEventView::vfunc_2_off_24C",
+  "class": "MultiTrackView::TriggeredEventView",
+  "signature": "extern \"C\" void __thiscall fn_0045EDB0(void* self, void* event_data, uint8_t should_update)",
+  "summary": "Creates and registers a triggered event item view from event data and refreshes layout.",
+  "fields": [
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0xC4",
+      "type": "void*",
+      "name": "field_0xC4"
+    },
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0x24C",
+      "type": "void*",
+      "name": "triggeredEventObserver"
+    },
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0x258",
+      "type": "void*",
+      "name": "field_0x258"
+    },
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0x290",
+      "type": "uint8_t",
+      "name": "field_0x290"
+    },
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0x294",
+      "type": "uint8_t",
+      "name": "field_0x294"
+    },
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0x298",
+      "type": "uint8_t",
+      "name": "field_0x298"
+    },
+    {
+      "class": "MultiTrackView::TriggeredEventView",
+      "offset": "+0x2C4",
+      "type": "uint8_t",
+      "name": "field_0x2C4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T12:45:59Z"
+}
