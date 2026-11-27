@@ -3908,3 +3908,47 @@ void* fn_0048B6A0(void* self, uint32_t arg) {
     return self;
 }
 } // namespace lift_0048B6A0
+
+// [0x0048BF20] sub_0048BF20 (165 bytes)
+namespace lift_0048BF20 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+// Callee 0x00475960 (211 bytes, not yet lifted): thiscall, ECX = *(self), args (std::string const&, void* const*, int).
+extern void ext_00475960();
+// Static guard flag and static object (first dword = vtable 0x0093DD6C).
+extern int mem_00AD9E90;
+extern int mem_00AD9E8C;
+// MSVCP80 IAT slots: std::basic_string<char> ctor (from const char*) and dtor.
+extern int mem_00924FF4;
+extern int mem_00924FE4;
+
+// @name StringForwardToSubobject_0048BF20
+// @class (none)
+// @summary Lazily initializes a static guard object, then builds a std::string from the argument and forwards it to ext_00475960 on the subobject pointed to by self+0x00.
+// @field (self) +0x00 void* field_0x00
+void fn_0048BF20(void* self, const char* arg) {
+    // Static one-time init guarded by bit 0 of mem_00AD9E90.
+    if ((mem_00AD9E90 & 1) == 0) {
+        mem_00AD9E90 |= 1;
+        // thiscall ext_0067A670 with ECX = &mem_00AD9E8C.
+        reinterpret_cast<void (__thiscall*)(void*)>(ext_0067A670)(&mem_00AD9E8C);
+        mem_00AD9E8C = 0x0093DD6C;
+    }
+
+    // Temporary std::string (MSVC layout, 0x1C bytes) constructed from arg via IAT ctor.
+    alignas(8) unsigned char str[0x1C];
+    auto str_ctor = *reinterpret_cast<void (__thiscall**)(void*, const char*)>(&mem_00924FE4);
+    str_ctor(str, arg);
+
+    // Second argument is the address of a slot holding &mem_00AD9E8C.
+    void* obj = &mem_00AD9E8C;
+    void* slot = &obj;
+    // thiscall ext_00475960: ECX = *(DWORD*)self, args (&str, &slot, 1).
+    reinterpret_cast<void (__thiscall*)(void*, void*, void*, int)>(ext_00475960)(
+        lift_field<void*>(self, 0), str, slot, 1);
+
+    // Destroy the temporary string via IAT dtor.
+    auto str_dtor = *reinterpret_cast<void (__thiscall**)(void*)>(&mem_00924FF4);
+    str_dtor(str);
+}
+} // namespace lift_0048BF20

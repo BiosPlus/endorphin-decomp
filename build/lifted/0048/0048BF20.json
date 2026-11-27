@@ -1,0 +1,22 @@
+{
+  "va": "0x0048BF20",
+  "size": 165,
+  "orig_symbol": "sub_0048BF20",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "StringForwardToSubobject_0048BF20",
+  "class": "(none)",
+  "signature": "void fn_0048BF20(void* self, const char* arg)",
+  "summary": "Lazily initializes a static guard object, then builds a std::string from the argument and forwards it to ext_00475960 on the subobject pointed to by self+0x00.",
+  "fields": [
+    {
+      "class": "(self)",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:30:08Z"
+}

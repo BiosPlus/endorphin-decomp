@@ -12719,6 +12719,13 @@
     "summary": "Runs a one-time static guard initialization of mem_00AD9E84 (sentinel 0x0093DBBC), then builds a temporary std::string from the name argument and passes it to ext_00475960 together with this-\u003einner and flag 1; thiscall, one stack arg (callee pops 4).",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x0048BF20": {
+    "name": "StringForwardToSubobject_0048BF20",
+    "class": "(none)",
+    "signature": "void fn_0048BF20(void* self, const char* arg)",
+    "summary": "Lazily initializes a static guard object, then builds a std::string from the argument and forwards it to ext_00475960 on the subobject pointed to by self+0x00.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048C120": {
     "name": "NMData::PoseData::vfunc_6",
     "class": "NMData::PoseData",
