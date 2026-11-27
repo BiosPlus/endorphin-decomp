@@ -1,0 +1,28 @@
+{
+  "va": "0x004EFDF0",
+  "size": 130,
+  "orig_symbol": "sub_004EFDF0",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "StringPairList::clear",
+  "class": "StringPairList",
+  "signature": "void __thiscall fn_004EFDF0(void* self)",
+  "summary": "Clears all nodes in a doubly-linked list of string pairs and resets size to zero.",
+  "fields": [
+    {
+      "class": "StringPairList",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    },
+    {
+      "class": "StringPairList",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "size"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:20:53Z"
+}

@@ -896,3 +896,66 @@ void fn_004E1F50(void* self) {
     ext_00598A90(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(result))));
 }
 } // namespace lift_004E1F50
+
+// [0x004EFDF0]
+namespace lift_004EFDF0 {
+// @name StringPairList::clear
+// @class StringPairList
+// @summary Clears all nodes in a doubly-linked list of string pairs and resets size to zero.
+// @field StringPairList +0x04 void* head
+// @field StringPairList +0x08 uint32_t size
+
+extern void ext_006A5C5C(void* ptr);
+extern uintptr_t mem_00924FF4;
+
+void __thiscall fn_004EFDF0(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    uint8_t* head = lift_field<uint8_t*>(obj, 0x04);
+    uint8_t* node = lift_field<uint8_t*>(head, 0x00);
+
+    lift_field<uint8_t*>(head, 0x00) = head;
+    head = lift_field<uint8_t*>(obj, 0x04);
+    lift_field<uint8_t*>(head, 0x04) = head;
+    lift_field<uint32_t>(obj, 0x08) = 0;
+
+    using StringDtor = void(__thiscall*)(void*);
+    auto dtor = reinterpret_cast<StringDtor>(mem_00924FF4);
+
+    while (node != lift_field<uint8_t*>(obj, 0x04)) {
+        uint8_t* next = lift_field<uint8_t*>(node, 0x00);
+        uint8_t* payload = node + 0x08;
+        dtor(payload + 0x1C);
+        dtor(payload);
+        ext_006A5C5C(node);
+        node = next;
+    }
+}
+} // namespace lift_004EFDF0
+
+// [0x004EC160]
+namespace lift_004EC160 {
+// @name StringMapTree::eraseSubtree
+// @class StringMapTree
+// @summary Recursively erases a red-black tree subtree of std::string key-value nodes
+// @field TreeNode +0x00 TreeNode* left
+// @field TreeNode +0x08 TreeNode* right
+// @field TreeNode +0x0c uint8_t[28] key
+// @field TreeNode +0x28 uint8_t[28] value
+// @field TreeNode +0x45 uint8_t isNil
+
+
+void __cdecl ext_006A5C5C(void* ptr);
+extern void (__thiscall *mem_00924FF4)(void* str);
+
+void __thiscall fn_004EC160(void* self, void* nodePtr) {
+    uint8_t* node = static_cast<uint8_t*>(nodePtr);
+    while (lift_field<uint8_t>(node, 0x45) == 0) {
+        fn_004EC160(self, lift_field<void*>(node, 0x08));
+        uint8_t* left = lift_field<uint8_t*>(node, 0x00);
+        mem_00924FF4(node + 0x28);
+        mem_00924FF4(node + 0x0C);
+        ext_006A5C5C(node);
+        node = left;
+    }
+}
+} // namespace lift_004EC160
