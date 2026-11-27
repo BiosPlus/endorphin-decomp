@@ -1066,3 +1066,60 @@ void* __thiscall fn_0063E610(void* self, uint32_t arg0, const void* arg1, const 
     return self;
 }
 } // namespace lift_0063E610
+
+// [0x0063EC10] sub_0063EC10 (117 bytes)
+namespace lift_0063EC10 {
+extern int mem_00925134;   // IAT slot for _invalid_parameter_noinfo (indirect call target)
+
+// Debug-iterator validation failure path. The original calls through mem_00925134;
+// this path is not expected to return, so it is modelled as noreturn.
+[[noreturn]] static void invalid_parameter_noinfo() {
+    (void)&mem_00925134;
+    std::abort();
+}
+
+static inline uint8_t* addr_ptr(DWORD addr) {
+    return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(addr));
+}
+
+// @name Unknown::ContainsFromIter
+// @class Unknown
+// @summary Scans forward from an iterator (proxy,ptr) up to the range end at self+0x2C, returning true if value is found.
+// @field Unknown +0x28 DWORD field_0x28
+// @field Unknown +0x2C DWORD field_0x2C
+bool fn_0063EC10(void* self, DWORD value, void* iter) {
+    uint8_t* range = static_cast<uint8_t*>(self) + 0x24;
+    uint8_t* it = static_cast<uint8_t*>(iter);
+    const uintptr_t rangeAddr = reinterpret_cast<uintptr_t>(range);
+
+    for (;;) {
+        DWORD last = lift_field<DWORD>(range, 0x8);
+        if (lift_field<DWORD>(range, 0x4) > last)
+            invalid_parameter_noinfo();
+
+        DWORD proxy = lift_field<DWORD>(it, 0x0);
+        if (proxy == 0 || static_cast<uintptr_t>(proxy) != rangeAddr)
+            invalid_parameter_noinfo();
+        if (lift_field<DWORD>(it, 0x4) >= last)
+            return false;
+
+        if (lift_field<DWORD>(it, 0x0) == 0)
+            invalid_parameter_noinfo();
+        proxy = lift_field<DWORD>(it, 0x0);
+        if (!(lift_field<DWORD>(it, 0x4) < lift_field<DWORD>(addr_ptr(proxy), 0x8)))
+            invalid_parameter_noinfo();
+
+        DWORD elem = lift_field<DWORD>(it, 0x4);
+        if (lift_field<DWORD>(addr_ptr(elem), 0x0) == value)
+            return true;
+
+        if (lift_field<DWORD>(it, 0x0) == 0)
+            invalid_parameter_noinfo();
+        proxy = lift_field<DWORD>(it, 0x0);
+        if (!(lift_field<DWORD>(it, 0x4) < lift_field<DWORD>(addr_ptr(proxy), 0x8)))
+            invalid_parameter_noinfo();
+
+        lift_field<DWORD>(it, 0x4) += 4;
+    }
+}
+} // namespace lift_0063EC10

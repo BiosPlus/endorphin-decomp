@@ -651,7 +651,7 @@ struct Unknown_Fields {
     // +0x28  int32_t                  elementCount  (evidence: 0x0078C8C0) // CONFLICT: multiple definitions at +0x28
     // +0x28  uint32_t cursor (0 = needs recompute; written on exit)  (evidence: 0x00796660) // CONFLICT: multiple definitions at +0x28
     // +0x28  Buffer                   field_0x28  (evidence: 0x0071E5F0) // CONFLICT: multiple definitions at +0x28
-    // +0x28  DWORD                    field_0x28  (evidence: 0x005B34C0, 0x0078C230, 0x0078C3A0, 0x00798710) // CONFLICT: multiple definitions at +0x28
+    // +0x28  DWORD                    field_0x28  (evidence: 0x005B34C0, 0x0063EC10, 0x0078C230, 0x0078C3A0, 0x00798710) // CONFLICT: multiple definitions at +0x28
     // +0x28  StringArray              field_0x28  (evidence: 0x00557280) // CONFLICT: multiple definitions at +0x28
     // +0x28  double                   field_0x28  (evidence: 0x00503BC0, 0x00503CA0, 0x00508BC0, 0x0050C4D0, 0x00766240, 0x00774560) // CONFLICT: multiple definitions at +0x28
     // +0x28  float                    field_0x28  (evidence: 0x004B10A0, 0x004B10D0, 0x004B1100, 0x004CCC30, 0x004CF910, 0x00538FA0, 0x0055CD10, 0x005ACB00, 0x005ACC50, 0x005ACD30, 0x005ACEE0, 0x00622B40, 0x00629E80, 0x00629EE0, 0x007C9D80, 0x007CAF70, 0x007CCAB0, 0x007CCC30, 0x007E4870, 0x007E80E0, 0x007FC490) // CONFLICT: multiple definitions at +0x28
@@ -672,6 +672,7 @@ struct Unknown_Fields {
     // +0x2C  uint32_t                 elementTable  (evidence: 0x0078C8C0) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  int32_t*                 elements  (evidence: 0x006FA460) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  void**                   elements_begin  (evidence: 0x00665B80) // CONFLICT: multiple definitions at +0x2C
+    // +0x2C  DWORD                    field_0x2C  (evidence: 0x0063EC10) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  float                    field_0x2C  (evidence: 0x004B10D0, 0x004CCC30, 0x004CF910, 0x00538FA0, 0x0055CD10, 0x005ACB00, 0x005ACD30, 0x005DC650, 0x00622B40, 0x00629E80, 0x00629EE0, 0x007CAF70, 0x007CCAB0) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  int32_t                  field_0x2C  (evidence: 0x0078C280) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  uint32_t                 field_0x2C  (evidence: 0x0041DDA0, 0x0057FD10, 0x006406D0, 0x00790E20, 0x007C9D80, 0x007CAF70) // CONFLICT: multiple definitions at +0x2C

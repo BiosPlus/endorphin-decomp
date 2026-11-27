@@ -44331,6 +44331,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0063E9E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/AdvXMLParser/auto_tiny.cpp"
   },
+  "0x0063EC10": {
+    "name": "Unknown::ContainsFromIter",
+    "class": "Unknown",
+    "signature": "extern \"C\" int mem_00925134;   // IAT slot for _invalid_parameter_noinfo (indirect call target) [[noreturn]] static void invalid_parameter_noinfo()",
+    "summary": "Scans forward from an iterator (proxy,ptr) up to the range end at self+0x2C, returning true if value is found.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063F350": {
     "name": "Unknown::derivedCtor_0063F350",
     "class": "Unknown",

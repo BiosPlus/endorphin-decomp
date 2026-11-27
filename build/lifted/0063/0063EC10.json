@@ -1,0 +1,28 @@
+{
+  "va": "0x0063EC10",
+  "size": 117,
+  "orig_symbol": "sub_0063EC10",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "Unknown::ContainsFromIter",
+  "class": "Unknown",
+  "signature": "extern \"C\" int mem_00925134;   // IAT slot for _invalid_parameter_noinfo (indirect call target) [[noreturn]] static void invalid_parameter_noinfo()",
+  "summary": "Scans forward from an iterator (proxy,ptr) up to the range end at self+0x2C, returning true if value is found.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "DWORD",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "DWORD",
+      "name": "field_0x2C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:07:07Z"
+}
