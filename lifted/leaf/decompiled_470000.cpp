@@ -1399,3 +1399,42 @@ void* fn_0047A4E0(void* self, void* targetName) {
     }
 }
 } // namespace lift_0047A4E0
+
+// [0x00475A40]
+namespace lift_00475A40 {
+// @name allocNode_00475A40
+// @summary Allocates a 0x3C-byte node, initializes header links and embedded pair at +0x0C, and sets flags at +0x38/+0x39.
+// @field Node +0x00 uint32_t field_0x00
+// @field Node +0x04 uint32_t field_0x04
+// @field Node +0x08 uint32_t field_0x08
+// @field Node +0x0C void* field_0x0C
+// @field Node +0x38 uint8_t field_0x38
+// @field Node +0x39 uint8_t field_0x39
+
+
+extern void* ext_006A5C62(uint32_t size);
+extern void ext_006A5C5C(void* ptr);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+extern void* ext_00475840(void* self, const void* src);
+
+void* fn_00475A40(uint32_t a1, uint32_t a2, uint32_t a3, const void* a4, uint8_t a5) {
+    uint8_t* node = static_cast<uint8_t*>(ext_006A5C62(0x3Cu));
+    if (!node) {
+        return nullptr;
+    }
+
+    try {
+        lift_field<uint32_t>(node, 0x00) = a1;
+        lift_field<uint32_t>(node, 0x04) = a2;
+        lift_field<uint32_t>(node, 0x08) = a3;
+        ext_00475840(node + 0x0C, a4);
+        lift_field<uint8_t>(node, 0x38) = a5;
+        lift_field<uint8_t>(node, 0x39) = 0;
+    } catch (...) {
+        ext_006A5C5C(node);
+        ext_006A6DD2(nullptr, nullptr);
+    }
+
+    return node;
+}
+} // namespace lift_00475A40

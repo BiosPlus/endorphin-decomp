@@ -10029,6 +10029,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0052A140 (Unknown::ctor_CopyPairAt1C).",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00475A40": {
+    "name": "allocNode_00475A40",
+    "signature": "void* fn_00475A40(uint32_t a1, uint32_t a2, uint32_t a3, const void* a4, uint8_t a5)",
+    "summary": "Allocates a 0x3C-byte node, initializes header links and embedded pair at +0x0C, and sets flags at +0x38/+0x39.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00476530": {
     "name": "sub_00476530",
     "class": "UnknownClass",
@@ -80549,6 +80555,13 @@
     "signature": "extern \"C\" void __fastcall fn_00787000(void* self, int edx_unused, uint8_t value)",
     "summary": "Setter storing uint8_t argument into field at offset +0x80.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
+  "0x00787430": {
+    "name": "Unknown::copy32Bytes",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00787430( void* self, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7)",
+    "summary": "Copies 8 32-bit values (32 bytes) from stack arguments into this+0x00..+0x1C.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
   "0x007874D0": {
     "name": "sub_007874D0",
