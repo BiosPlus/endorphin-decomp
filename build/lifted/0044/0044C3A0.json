@@ -1,0 +1,22 @@
+{
+  "va": "0x0044C3A0",
+  "size": 117,
+  "orig_symbol": "RenderView::vfunc_0_off_5C",
+  "src_path": "src/classes/RenderView.cpp",
+  "lifted_path": "lifted/classes/RenderView.cpp",
+  "name": "RenderView::vfunc_0_off_5C",
+  "class": "RenderView",
+  "signature": "inline void* callVirtualRet(void* obj, uintptr_t byteOff)",
+  "summary": "Clears the flag at +0x19, sets it when a single-element vector of objects reports state 6, then calls ext_0044BC60 on the owning RenderView (this - 0x5C).",
+  "fields": [
+    {
+      "class": "RenderView",
+      "offset": "+0x19",
+      "type": "uint8_t",
+      "name": "field_0x19"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:32:28Z"
+}

@@ -12,6 +12,7 @@ namespace lifted_layout {
 struct RenderView_Fields {
     // +0x4   void*                    field_0x04  (evidence: 0x0044C260)
     // +0x14  uint8_t                  field_0x14  (evidence: 0x0044C260)
+    // +0x19  uint8_t                  field_0x19  (evidence: 0x0044C3A0)
     // +0x6C  uint8_t                  field_0x6c  (evidence: 0x0044BF40)
 };
 } // namespace lifted_layout
