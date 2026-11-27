@@ -693,3 +693,39 @@ bool fn_005C05C0(void* self, void* arg1, void* arg2) {
     return true;
 }
 } // namespace lift_005C05C0
+
+// [0x005BE840]
+namespace lift_005BE840 {
+// @name NMData::MetaBodyData::vfunc_22
+// @class NMData::MetaBodyData
+// @summary Creates a serialized/cloned node via ext_006404E0 and populates it with MetaBodyData fields and sub-objects
+// @field NMData::MetaBodyData +0x158 void* field_0x158
+// @field NMData::MetaBodyData +0x15C void* field_0x15C
+// @field NMData::MetaBodyData +0x168 void* field_0x168
+// @field NMData::MetaBodyData +0x174 void* field_0x174
+
+
+extern uint32_t mem_00A9F0C4;
+
+extern void* __thiscall ext_006404E0(void* self, uint32_t arg);
+extern void __thiscall ext_0058F650(void* self, void* node);
+extern void __cdecl ext_00585C10(void* field_ptr, void* node, uint32_t a, uint32_t b, uint32_t c);
+extern void __cdecl ext_005A09D0(void* field_ptr, void* node, uint32_t a, uint32_t b, uint32_t c);
+extern void __thiscall ext_005CE560(void* self, void* node);
+
+void* __thiscall fn_005BE840(void* self, void* arg1) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    void* node = ext_006404E0(arg1, mem_00A9F0C4);
+    ext_0058F650(self, node);
+    ext_00585C10(base + 0x174, node, 0, 0, 0);
+    ext_005A09D0(base + 0x15C, node, 0, 0, 0);
+    ext_005A09D0(base + 0x168, node, 0, 0, 0);
+
+    void* sub = *reinterpret_cast<void**>(base + 0x158);
+    if (sub != nullptr) {
+        ext_005CE560(sub, node);
+    }
+
+    return node;
+}
+} // namespace lift_005BE840

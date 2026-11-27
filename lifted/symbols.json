@@ -47123,6 +47123,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046C930 (ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_46).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005BE840": {
+    "name": "NMData::MetaBodyData::vfunc_22",
+    "class": "NMData::MetaBodyData",
+    "signature": "void* __thiscall fn_005BE840(void* self, void* arg1)",
+    "summary": "Creates a serialized/cloned node via ext_006404E0 and populates it with MetaBodyData fields and sub-objects",
+    "lifted_path": "lifted/NMData/MetaBodyData.cpp"
+  },
   "0x005BED50": {
     "name": "forwardToPeersInList",
     "class": "Owner",
