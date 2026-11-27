@@ -250,6 +250,7 @@ struct Unknown_Fields {
     // +0x4   FLOAT                    field_0x04  (evidence: 0x005555D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   HANDLE*                  field_0x04  (evidence: 0x0067A670) // CONFLICT: multiple definitions at +0x4
     // +0x4   MSVCP80_basic_string     field_0x04  (evidence: 0x00518030) // CONFLICT: multiple definitions at +0x4
+    // +0x4   Vector                   field_0x04  (evidence: 0x005593A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   char                     field_0x04  (evidence: 0x00780090) // CONFLICT: multiple definitions at +0x4
     // +0x4   char[0x1C]               field_0x04  (evidence: 0x00509C10) // CONFLICT: multiple definitions at +0x4
     // +0x4   char[16]                 field_0x04  (evidence: 0x00871450) // CONFLICT: multiple definitions at +0x4
@@ -660,6 +661,7 @@ struct Unknown_Fields {
     // +0x14  DWORD                    field_0x14  (evidence: 0x0041C630, 0x00468730, 0x00468AC0, 0x004F0B10, 0x005172A0, 0x005539F0, 0x005555D0, 0x005B34C0, 0x006ACFE0, 0x006FBD30, 0x006FC200, 0x006FC950, 0x007853D0, 0x007AE190, 0x007D48A0, 0x007D8470, 0x007DB130, 0x007DB740) // CONFLICT: multiple definitions at +0x14
     // +0x14  FLOAT                    field_0x14  (evidence: 0x005F5350) // CONFLICT: multiple definitions at +0x14
     // +0x14  OwnedPointerRange        field_0x14  (evidence: 0x004BEB50) // CONFLICT: multiple definitions at +0x14
+    // +0x14  Vector                   field_0x14  (evidence: 0x005593A0) // CONFLICT: multiple definitions at +0x14
     // +0x14  const char**             field_0x14  (evidence: 0x0078C830) // CONFLICT: multiple definitions at +0x14
     // +0x14  float                    field_0x14  (evidence: 0x0050E4E0, 0x00532870, 0x00538530, 0x00538550, 0x00543E00, 0x0055CD10, 0x00567040, 0x005B1B60, 0x005B1B90, 0x005B1FA0, 0x005B3500, 0x00610C10, 0x0067B8D0, 0x0067DB10, 0x0067DBF0, 0x006C9DC0, 0x006C9E60, 0x007C2E50, 0x007C8490, 0x007C9D80, 0x007C9E10, 0x007C9ED0, 0x007CAF70, 0x007CAFC0, 0x007CAFD0, 0x007CB010, 0x007CCAB0, 0x007E4870, 0x007E80E0, 0x007FC490) // CONFLICT: multiple definitions at +0x14
     // +0x14  float[2]                 field_0x14  (evidence: 0x006C9DF0) // CONFLICT: multiple definitions at +0x14

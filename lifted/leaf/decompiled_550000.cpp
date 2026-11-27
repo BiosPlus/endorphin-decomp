@@ -3223,3 +3223,64 @@ void __cdecl fn_005592A0() {
     (*reinterpret_cast<DtorFn*>(&mem_00924FF4))(frame + 0x48);
 }
 } // namespace lift_005592A0
+
+// [0x005593A0]
+namespace lift_005593A0 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0066AD10(void* out_str, uint32_t flag);
+// Known callee 0x00430F30: sub_00430F30 (Auto-lifted identical-shape clone of 0x0041CDA0 (ExprParser::GetTypeNameInto).)
+extern void* ext_00430F30(void* dst);
+// Known callee 0x006798D0: sub_006798D0 (91B)
+extern void* ext_006798D0(void* arg1, void* arg2);
+// Known callee 0x006790C0: sub_006790C0 (122B)
+extern void ext_006790C0(void* self);
+// Known callee 0x0043AB10: sub_0043AB10 (Auto-lifted identical-shape clone of 0x004C9860 (initStaticObjectOnce_004C9860).)
+extern void* ext_0043AB10();
+// Known callee 0x0043AA10: Vector::InsertSortedUniqueOrThrow_0043AA10 (Copies the std::string arg1 and inserts it into the sorted vector; if it is a duplicate and arg3 is set, throws an exception built from the key at *arg2 and the global string.)
+extern bool ext_0043AA10(void* self, const void* arg1, const void* arg2, bool arg3);
+// Known callee 0x0043A910: sub_0043A910 (245B)
+extern void ext_0043A910(void* self, const void* arg1, const void* arg2, uint8_t arg3);
+// MSVCP80 IAT slots (std::string members, __thiscall).
+extern uint32_t mem_00924FEC; // basic_string::empty
+extern uint32_t mem_00924FDC; // basic_string::operator=
+extern uint32_t mem_00924FF4; // basic_string::~basic_string
+
+// @name registerBoolStringKeys_005593A0
+// @summary Builds a bool-derived string via 0x0066AD10; if the flag byte at frame+0x64 is set, normalises it through 0x00430F30/0x006798D0/0x006790C0; then inserts the resulting string into two sorted vectors on the object returned by 0x0043AB10 (+0x04 and +0x14).
+// @field Unknown +0x04 Vector field_0x04
+// @field Unknown +0x14 Vector field_0x14
+void fn_005593A0() {
+    // Stack frame of the original (0x44 bytes after SEH setup). Offsets below are
+    // relative to the original esp; SEH unwind-state stores are omitted (no effect on results).
+    alignas(8) uint8_t frame[0x70] = {};
+
+    *reinterpret_cast<uint32_t*>(frame + 0x48) = 0;
+    ext_0066AD10(frame + 0x00, 0x00A851DCu);
+
+    using EmptyFn  = bool (*)(void* self);
+    using AssignFn = void* (*)(void* self, const void* src);
+    using DtorFn   = void (*)(void* self);
+
+    if (reinterpret_cast<EmptyFn>(static_cast<uintptr_t>(mem_00924FEC))(frame + 0x48)) {
+        reinterpret_cast<AssignFn>(static_cast<uintptr_t>(mem_00924FDC))(frame + 0x4C, frame + 0x00);
+    }
+
+    if (frame[0x64] != 0) {
+        void* s = ext_00430F30(frame + 0x1C);
+        void* r = ext_006798D0(s, frame + 0x00);
+        ext_006790C0(r);
+        reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(frame + 0x1C);
+    }
+
+    void* self = ext_0043AB10();
+
+    // Key pointer slot: stores the address of the global key string (0x00553BA0).
+    *reinterpret_cast<uint32_t*>(frame + 0x68) = 0x00553BA0u;
+    ext_0043AA10(static_cast<uint8_t*>(self) + 0x04, frame + 0x4C, frame + 0x68, true);
+
+    ext_0043A910(static_cast<uint8_t*>(self) + 0x14, frame + 0x4C, frame + 0x04, 1);
+
+    reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(frame + 0x04);
+    reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(frame + 0x4C);
+}
+} // namespace lift_005593A0

@@ -39397,6 +39397,12 @@
     "summary": "Builds a string via forwardMakeBoolString, optionally formats it, then inserts it as a key into two entries of the registry object from sub_0043AB10 and destroys the temporaries.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x005593A0": {
+    "name": "registerBoolStringKeys_005593A0",
+    "signature": "void fn_005593A0()",
+    "summary": "Builds a bool-derived string via 0x0066AD10; if the flag byte at frame+0x64 is set, normalises it through 0x00430F30/0x006798D0/0x006790C0; then inserts the resulting string into two sorted vectors on the object returned by 0x0043AB10 (+0x04 and +0x14).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00559620": {
     "name": "sub_00559620",
     "class": "(none)",
