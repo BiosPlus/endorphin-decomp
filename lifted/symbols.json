@@ -5333,6 +5333,13 @@
     "summary": "Hit-tests a point against the diamond marker's bounds and left/right handles, returning a hit code (0, 1, 2, or 3).",
     "lifted_path": "lifted/MultiTrackView/DiamondMarker.cpp"
   },
+  "0x00441220": {
+    "name": "MultiTrackView::DiamondMarker::vfunc_2",
+    "class": "MultiTrackView::DiamondMarker",
+    "signature": "extern \"C\" int mem_00925640;        // IAT slot: USER32!SetRect (stdcall, 5 args) extern \"C\" int mem_009240D8;        // IAT slot: GDI32!Polygon (stdcall, 3 args) extern \"C\" void ext_0041A790();     // sub_0041A790 (thiscall, 2 stack args) extern \"C\" void ext_0041A830();     // sub_0041A830 (thiscall, 2 stack args) extern \"C\" void ext_0066A180();     // sub_0066A180 (thiscall) extern \"C\" void ext_006A61A8();     // thunk_MFC80_ord_5640 (thiscall, 1 stack arg) extern \"C\" void ext_006A610C();     // thunk_MFC80_ord_5641 (thiscall, 1 stack arg) extern \"C\" void ext_00493D90();     // metadata-only callee (address taken, never called) extern \"C\" void ext_00669E40();     // metadata-only callee (address taken, never called) extern \"C\" void ext_0066A310();     // metadata-only callee (address taken, never called) extern \"C\" void ext_006A5FF2();     // metadata-only callee (address taken, never called) extern \"C\" void ext_006A6148();     // metadata-only callee (address taken, never called) extern \"C\" void ext_006A61AE();     // metadata-only callee (address taken, never called) void* fn_00441220(void* self, RECT* rect, void* dc, void* src)",
+    "summary": "Builds a 3-point diamond/triangle marker from a source rect record, stores its bounding RECT, and draws it with Polygon.",
+    "lifted_path": "lifted/MultiTrackView/DiamondMarker.cpp"
+  },
   "0x004413C0": {
     "name": "MultiTrackView::TriangleMarker::vfunc_0",
     "class": "MultiTrackView::TriangleMarker",

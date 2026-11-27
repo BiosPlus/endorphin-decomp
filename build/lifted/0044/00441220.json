@@ -1,0 +1,46 @@
+{
+  "va": "0x00441220",
+  "size": 258,
+  "orig_symbol": "MultiTrackView::DiamondMarker::vfunc_2",
+  "src_path": "src/MultiTrackView/DiamondMarker.cpp",
+  "lifted_path": "lifted/MultiTrackView/DiamondMarker.cpp",
+  "name": "MultiTrackView::DiamondMarker::vfunc_2",
+  "class": "MultiTrackView::DiamondMarker",
+  "signature": "extern \"C\" int mem_00925640;        // IAT slot: USER32!SetRect (stdcall, 5 args) extern \"C\" int mem_009240D8;        // IAT slot: GDI32!Polygon (stdcall, 3 args) extern \"C\" void ext_0041A790();     // sub_0041A790 (thiscall, 2 stack args) extern \"C\" void ext_0041A830();     // sub_0041A830 (thiscall, 2 stack args) extern \"C\" void ext_0066A180();     // sub_0066A180 (thiscall) extern \"C\" void ext_006A61A8();     // thunk_MFC80_ord_5640 (thiscall, 1 stack arg) extern \"C\" void ext_006A610C();     // thunk_MFC80_ord_5641 (thiscall, 1 stack arg) extern \"C\" void ext_00493D90();     // metadata-only callee (address taken, never called) extern \"C\" void ext_00669E40();     // metadata-only callee (address taken, never called) extern \"C\" void ext_0066A310();     // metadata-only callee (address taken, never called) extern \"C\" void ext_006A5FF2();     // metadata-only callee (address taken, never called) extern \"C\" void ext_006A6148();     // metadata-only callee (address taken, never called) extern \"C\" void ext_006A61AE();     // metadata-only callee (address taken, never called) void* fn_00441220(void* self, RECT* rect, void* dc, void* src)",
+  "summary": "Builds a 3-point diamond/triangle marker from a source rect record, stores its bounding RECT, and draws it with Polygon.",
+  "fields": [
+    {
+      "class": "DiamondMarker",
+      "offset": "+0x48",
+      "type": "void*",
+      "name": "field_0x48"
+    },
+    {
+      "class": "DiamondMarker",
+      "offset": "+0x70",
+      "type": "float*",
+      "name": "field_0x70"
+    },
+    {
+      "class": "DiamondMarker",
+      "offset": "+0x74",
+      "type": "float*",
+      "name": "field_0x74"
+    },
+    {
+      "class": "DiamondMarker",
+      "offset": "+0x88",
+      "type": "uint8_t",
+      "name": "field_0x88"
+    },
+    {
+      "class": "DiamondMarker",
+      "offset": "+0x89",
+      "type": "uint8_t",
+      "name": "field_0x89"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-27T11:55:14Z"
+}
