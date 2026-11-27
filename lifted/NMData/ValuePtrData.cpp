@@ -104,3 +104,48 @@ extern void* __thiscall fn_00682C70(void* self, void* arg1, uint32_t arg2) {
     return arg1;
 }
 } // namespace lift_00682C70
+
+// [0x00685F80] NMData::ValuePtrData::vfunc_15 (172 bytes)
+namespace lift_00685F80 {
+// Known callee 0x00671F30: sub_00671F30 (Zeroes the first dword of the output buffer and stores the global mem_00B599BC into the second dword.)
+extern void ext_00671F30(DWORD* out);
+// Known callee 0x006836F0: sub_006836F0 (Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).)
+extern DWORD ext_006836F0(DWORD* dst, DWORD value);
+// Known callee 0x00685BA0: sub_00685BA0 (Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).)
+extern DWORD ext_00685BA0(DWORD* dst, DWORD value);
+// Known callee 0x00685BC0: sub_00685BC0 (Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).)
+extern DWORD ext_00685BC0(DWORD* dst, DWORD value);
+// Known callee 0x00685BE0: sub_00685BE0 (Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).)
+extern DWORD ext_00685BE0(DWORD* dst, DWORD value);
+// Known callee 0x00685C00: sub_00685C00 (Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).)
+extern DWORD ext_00685C00(DWORD* dst, DWORD value);
+
+// @name NMData::ValuePtrData::vfunc_15
+// @class NMData::ValuePtrData
+// @summary Dispatches on a signed selector value to one of five constructor helpers (passing this as the second argument), otherwise zeroes the output dword; always returns dst.
+// The original never reads fields of `this` directly; it forwards it (ECX) as the second argument to the helpers.
+DWORD fn_00685F80(void* self, DWORD* dst, DWORD value) {
+    const DWORD self_value = static_cast<DWORD>(reinterpret_cast<uintptr_t>(self));
+    const int32_t sel = static_cast<int32_t>(value);
+
+    if (sel > 0x2f6) {
+        if (sel == 0x361) {
+            ext_00685BC0(dst, self_value);
+        } else if (sel == 0x386) {
+            ext_006836F0(dst, self_value);
+        } else {
+            ext_00671F30(dst);
+        }
+    } else if (sel == 0x2f6) {
+        ext_00685C00(dst, self_value);
+    } else if (sel == 0x280) {
+        ext_00685BE0(dst, self_value);
+    } else if (sel == 0x2d4) {
+        ext_00685BA0(dst, self_value);
+    } else {
+        ext_00671F30(dst);
+    }
+
+    return static_cast<DWORD>(reinterpret_cast<uintptr_t>(dst));
+}
+} // namespace lift_00685F80

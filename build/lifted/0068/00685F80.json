@@ -1,0 +1,14 @@
+{
+  "va": "0x00685F80",
+  "size": 172,
+  "orig_symbol": "NMData::ValuePtrData::vfunc_15",
+  "src_path": "src/NMData/ValuePtrData.cpp",
+  "lifted_path": "lifted/NMData/ValuePtrData.cpp",
+  "name": "NMData::ValuePtrData::vfunc_15",
+  "class": "NMData::ValuePtrData",
+  "signature": "DWORD fn_00685F80(void* self, DWORD* dst, DWORD value)",
+  "summary": "Dispatches on a signed selector value to one of five constructor helpers (passing this as the second argument), otherwise zeroes the output dword; always returns dst.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:57:07Z"
+}
