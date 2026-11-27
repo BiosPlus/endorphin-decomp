@@ -8,8 +8,9 @@
 // Recovered field layout for TreeConstIterator:
 namespace lifted_layout {
 struct TreeConstIterator_Fields {
-    // +0x0   uint32_t                 container  (evidence: 0x00492BC0, 0x005AC8C0, 0x00624DC0)
+    // +0x0   uint32_t                 container  (evidence: 0x00492BC0, 0x0059E220, 0x005AC8C0, 0x00624DC0)
     // +0x4   uint32_t                 node  (evidence: 0x005AC8C0, 0x00624DC0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint8_t*                 node  (evidence: 0x0059E220) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    node  (evidence: 0x00492BC0) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout

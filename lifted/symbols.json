@@ -31990,6 +31990,13 @@
     "summary": "Decrements an MSVC8 std::_Tree iterator to the previous in-order node.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x0059E2B0": {
+    "name": "TreeIterator::decrement",
+    "class": "TreeIterator",
+    "signature": "void __thiscall sub_0059E2B0(void* self)",
+    "summary": "Decrements a red-black tree iterator to the previous in-order node.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x0059E3A0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1\u003e",
