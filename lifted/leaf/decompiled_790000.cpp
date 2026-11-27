@@ -1740,3 +1740,24 @@ void* sub_0079EAE0(const char* name) {
     return nullptr;
 }
 } // namespace lift_0079EAE0
+
+// [0x00799010] sub_00799010 (48 bytes)
+namespace lift_00799010 {
+// Known callee 0x00799040: validateCachedEntry (Validates a cached entry for key1 and reports an error via ext_0079B140 if missing or invalid.)
+extern uint32_t ext_00799040(uint32_t self, uint32_t key1);
+
+// @name Unknown::dispatchIfValid_00799010
+// @class Unknown
+// @summary Validates (self, key1) via fn_00799040; if valid, forwards (self, key1, arg3) to the function pointer stored at self+0x21c, else returns 0.
+// @field Unknown +0x21c uint32_t field_0x21c
+uint32_t fn_00799010(uint32_t self, uint32_t key1, uint32_t arg3) {
+    if (ext_00799040(self, key1) == 0) {
+        return 0;
+    }
+    const void* self_ptr = reinterpret_cast<const void*>(static_cast<uintptr_t>(self));
+    uint32_t handler = lift_field<uint32_t>(self_ptr, 0x21c);
+    auto fn = reinterpret_cast<uint32_t (*)(uint32_t, uint32_t, uint32_t)>(
+        static_cast<uintptr_t>(handler));
+    return fn(self, key1, arg3);
+}
+} // namespace lift_00799010

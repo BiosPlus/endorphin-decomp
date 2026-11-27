@@ -44455,6 +44455,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0060BA10 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0060C530": {
+    "name": "NMData::EffectorBaseData::vfunc_21",
+    "class": "NMData::EffectorBaseData",
+    "signature": "void __thiscall fn_0060C530(void* this_ptr, void* arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Validates/compares m_name and m_jointName against another EffectorBaseData via ThrowIfFirstGreater",
+    "lifted_path": "lifted/NMData/EffectorBaseData.cpp"
+  },
   "0x0060C570": {
     "name": "Unknown::constructWithRecord",
     "class": "Unknown",
@@ -79977,6 +79984,13 @@
     "name": "ReplaceGlobalBlockFromCount",
     "signature": "void fn_00798FB0(uint32_t* slot, const void* src, uint32_t count)",
     "summary": "Forwards to ReplaceGlobalBlock with a size of twice the count argument (count * 2 bytes).",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
+  "0x00799010": {
+    "name": "Unknown::dispatchIfValid_00799010",
+    "class": "Unknown",
+    "signature": "uint32_t fn_00799010(uint32_t self, uint32_t key1, uint32_t arg3)",
+    "summary": "Validates (self, key1) via fn_00799040; if valid, forwards (self, key1, arg3) to the function pointer stored at self+0x21c, else returns 0.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
   "0x00799040": {

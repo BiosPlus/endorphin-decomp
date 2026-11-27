@@ -1892,6 +1892,7 @@ struct Unknown_Fields {
     // +0x214 DWORD                    field_0x214  (evidence: 0x0070AC00, 0x0070AD00)
     // +0x218 int32_t                  objIndexA  (evidence: 0x007F0DA0) // CONFLICT: multiple definitions at +0x218
     // +0x218 uint32_t                 ownerIndex  (evidence: 0x007F0B00) // CONFLICT: multiple definitions at +0x218
+    // +0x21C uint32_t                 field_0x21c  (evidence: 0x00799010)
     // +0x220 uint32_t                 field_0x220  (evidence: 0x007990F0)
     // +0x230 uint8_t                  field_0x230  (evidence: 0x00644F00) // CONFLICT: multiple definitions at +0x230
     // +0x230 void* field_0x230 (embedded CWnd passed to getWindowTextAsFloat)  (evidence: 0x0045B580, 0x0045B620) // CONFLICT: multiple definitions at +0x230
