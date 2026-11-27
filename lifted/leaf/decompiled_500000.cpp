@@ -2564,3 +2564,42 @@ void* __thiscall sub_0050E4E0(void* self, const void* other) {
     return self;
 }
 } // namespace lift_0050E4E0
+
+// [0x0050EDF0] sub_0050EDF0 (113 bytes)
+namespace lift_0050EDF0 {
+// Known callee 0x006246B0: OwnedPointerRange::clearAndFreeChecked (Validates the range bounds, deletes every element via deleteRangeChecked, frees the begin block, and resets the range to empty.)
+extern void ext_006246B0();
+
+// @name Unknown::clearAndReleaseOwned
+// @class Unknown
+// @summary Clears the owned pointer range at +0x1c, sets a field on the object referenced by +0x00 to 0, then deletes the owned objects at +0x08 and +0x04 via their scalar deleting destructors.
+// @field Unknown +0x00 void* ownerRef
+// @field Unknown +0x04 void* ownedA
+// @field Unknown +0x08 void* ownedB
+// @field Unknown +0x1c OwnedPointerRange range
+// @field Unknown +0x74 int32_t ownerField (on object pointed to by +0x00)
+void fn_0050EDF0(void* self) {
+    using DeleteFn = void(__thiscall*)(void*, unsigned int);
+
+    // Clear the owned range embedded at this+0x1c.
+    ext_006246B0(); // clearAndFreeChecked(this + 0x1c)
+
+    // Zero a field on the object referenced by this->ownerRef.
+    void* owner = lift_field<void*>(self, 0x00);
+    lift_field<int32_t>(owner, 0x74) = 0;
+
+    // Delete this->ownedB if non-null (scalar deleting destructor, slot 0).
+    void* ownedB = lift_field<void*>(self, 0x08);
+    if (ownedB) {
+        void** vtbl = *reinterpret_cast<void***>(ownedB);
+        reinterpret_cast<DeleteFn>(vtbl[0])(ownedB, 1);
+    }
+
+    // Delete this->ownedA if non-null.
+    void* ownedA = lift_field<void*>(self, 0x04);
+    if (ownedA) {
+        void** vtbl = *reinterpret_cast<void***>(ownedA);
+        reinterpret_cast<DeleteFn>(vtbl[0])(ownedA, 1);
+    }
+}
+} // namespace lift_0050EDF0

@@ -20942,6 +20942,13 @@
     "summary": "Returns the double at offset 0x20 of the object pointed to by this+0x08 (thiscall getter).",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x0050EDF0": {
+    "name": "Unknown::clearAndReleaseOwned",
+    "class": "Unknown",
+    "signature": "void fn_0050EDF0(void* self)",
+    "summary": "Clears the owned pointer range at +0x1c, sets a field on the object referenced by +0x00 to 0, then deletes the owned objects at +0x08 and +0x04 via their scalar deleting destructors.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050EE70": {
     "name": "destroyStringRange",
     "signature": "void __stdcall sub_0050EE70(uint32_t begin, uint32_t end)",

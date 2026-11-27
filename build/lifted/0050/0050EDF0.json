@@ -1,0 +1,46 @@
+{
+  "va": "0x0050EDF0",
+  "size": 113,
+  "orig_symbol": "sub_0050EDF0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "Unknown::clearAndReleaseOwned",
+  "class": "Unknown",
+  "signature": "void fn_0050EDF0(void* self)",
+  "summary": "Clears the owned pointer range at +0x1c, sets a field on the object referenced by +0x00 to 0, then deletes the owned objects at +0x08 and +0x04 via their scalar deleting destructors.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "ownerRef"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "ownedA"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "ownedB"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "OwnedPointerRange",
+      "name": "range"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "int32_t ownerField (on object pointed to by",
+      "name": "+0x00)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:18:34Z"
+}

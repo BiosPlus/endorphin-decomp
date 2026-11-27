@@ -86,6 +86,7 @@ struct Unknown_Fields {
     // +0x0   double[] array (base pointer in ecx; element i at byte offset 8*i, dynamic index so no fixed offset)  (evidence: 0x006D2400) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 owner  (evidence: 0x0066BA00) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (pointer to grid owner)  (evidence: 0x007F63D0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    ownerRef  (evidence: 0x0050EDF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD subtable_count (signed; read from the container pointed to by a group-table pointer)  (evidence: 0x0078D510) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (vtable pointer)  (evidence: 0x0063DB50) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (arg1 -> object pointer)  (evidence: 0x007D5B30) // CONFLICT: multiple definitions at +0x0
@@ -229,6 +230,7 @@ struct Unknown_Fields {
     // +0x4   uint8_t field_0x04 (enable flag on inner object)  (evidence: 0x00788E50) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (pointer to holder object)  (evidence: 0x00788E50) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (pointer to inner object)  (evidence: 0x00788E50, 0x00810460) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    ownedA  (evidence: 0x0050EDF0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    owner  (evidence: 0x00524BC0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    peer  (evidence: 0x00528B90) // CONFLICT: multiple definitions at +0x4
     // +0x4   void(*)(void*,int32_t*)  pfnCallback  (evidence: 0x008115A0) // CONFLICT: multiple definitions at +0x4
@@ -323,6 +325,7 @@ struct Unknown_Fields {
     // +0x8   void*                    m_end  (evidence: 0x00503BC0, 0x00505DC0, 0x0050C4D0, 0x00518030, 0x0051E560) // CONFLICT: multiple definitions at +0x8
     // +0x8   std::uint32_t            mode  (evidence: 0x00790EE0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 nodePoolBase  (evidence: 0x007F0B00) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    ownedB  (evidence: 0x0050EDF0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    ownedObjectA  (evidence: 0x007892B0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    parent  (evidence: 0x005942D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    peer  (evidence: 0x00532B40) // CONFLICT: multiple definitions at +0x8
@@ -598,6 +601,7 @@ struct Unknown_Fields {
     // +0x1C  void*                    hwnd  (evidence: 0x00458DF0, 0x00458FE0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint8_t* field_0x1C (end of element-pointer array, re-read every iteration)  (evidence: 0x0052F7D0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  float                    m13  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  OwnedPointerRange        range  (evidence: 0x0050EDF0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint8_t*                 rangeCapacity  (evidence: 0x00621B70) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 rangeEnd  (evidence: 0x00466BA0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 table  (evidence: 0x007D4720) // CONFLICT: multiple definitions at +0x1C
@@ -937,6 +941,7 @@ struct Unknown_Fields {
     // +0x70  uint8_t                  field_0x70  (evidence: 0x006BA780, 0x007057F0) // CONFLICT: multiple definitions at +0x70
     // +0x72  WORD                     field_0x72  (evidence: 0x00798710) // CONFLICT: multiple definitions at +0x72
     // +0x72  uint16_t                 field_0x72  (evidence: 0x007AF200) // CONFLICT: multiple definitions at +0x72
+    // +0x74  int32_t ownerField (on object pointed to by +0x00)  (evidence: 0x0050EDF0) // CONFLICT: multiple definitions at +0x74
     // +0x74  void*                    child  (evidence: 0x006BA780) // CONFLICT: multiple definitions at +0x74
     // +0x74  void*                    childPtr  (evidence: 0x006B1790) // CONFLICT: multiple definitions at +0x74
     // +0x74  DWORD                    field_0x74  (evidence: 0x00417630, 0x00422CE0, 0x004275C0, 0x00452100, 0x004584C0) // CONFLICT: multiple definitions at +0x74
