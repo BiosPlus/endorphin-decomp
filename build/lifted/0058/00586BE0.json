@@ -1,0 +1,21 @@
+{
+  "va": "0x00586BE0",
+  "size": 134,
+  "orig_symbol": "sub_00586BE0",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "findKeyThenCompactTail",
+  "signature": "uint32_t* fn_00586BE0(uint32_t* out, void* container, uint32_t* begin, void* expectedContainer, uint32_t* end, const uint32_t* key)",
+  "summary": "Scans [begin, end) for the first dword equal to *key; if none is found returns {container, end} via out, otherwise compacts the tail after the match via copyDwordsNotEqualToKey and returns out.",
+  "fields": [
+    {
+      "class": "Container",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:24:12Z"
+}

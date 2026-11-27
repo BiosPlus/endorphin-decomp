@@ -30437,6 +30437,12 @@
     "summary": "Forwards (a0,a1) to the sub-object at +0x0C, then recursively visits every pointer in the list at +0x80..+0x84 with the same arguments.",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x00586BE0": {
+    "name": "findKeyThenCompactTail",
+    "signature": "uint32_t* fn_00586BE0(uint32_t* out, void* container, uint32_t* begin, void* expectedContainer, uint32_t* end, const uint32_t* key)",
+    "summary": "Scans [begin, end) for the first dword equal to *key; if none is found returns {container, end} via out, otherwise compacts the tail after the match via copyDwordsNotEqualToKey and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x00587110": {
     "name": "Unknown::teardownChildTree",
     "class": "Unknown",

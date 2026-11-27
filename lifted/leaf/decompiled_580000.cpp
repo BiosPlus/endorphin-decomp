@@ -1794,3 +1794,43 @@ void* __thiscall fn_005860B0(void* self, void* arg) {
     return nullptr;
 }
 } // namespace lift_005860B0
+
+// [0x00586BE0] sub_00586BE0 (134 bytes)
+namespace lift_00586BE0 {
+// Known callee 0x00585010: copyDwordsNotEqualToKey (Copies each dword in [src, srcEnd) that differs from *key into a destination cursor, then writes {container, cursor} to out.)
+extern void ext_00585010(uint32_t* out, uint32_t* src, uint32_t* srcEnd, void* container, uint32_t* dst, const uint32_t* key);
+// Import slot: _invalid_parameter_noinfo (MSVCR80), RDATA string "P{b" at 0x00925134 region
+extern void (*mem_00925134)(void);
+
+// @name findKeyThenCompactTail
+// @summary Scans [begin, end) for the first dword equal to *key; if none is found returns {container, end} via out, otherwise compacts the tail after the match via copyDwordsNotEqualToKey and returns out.
+// @field Container +0x08 uint32_t field_0x08
+uint32_t* fn_00586BE0(uint32_t* out, void* container, uint32_t* begin, void* expectedContainer, uint32_t* end, const uint32_t* key) {
+    uint32_t* cur = begin;
+    const uint32_t keyValue = *key;
+
+    while (cur != end && *cur != keyValue) {
+        ++cur;
+    }
+
+    if (container == nullptr || container != expectedContainer) {
+        mem_00925134();
+    }
+
+    if (cur == end) {
+        out[0] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(container));
+        out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(cur));
+        return out;
+    }
+
+    if (container == nullptr) {
+        mem_00925134();
+    }
+    if (reinterpret_cast<uintptr_t>(cur) >= lift_field<uint32_t>(container, 0x08)) {
+        mem_00925134();
+    }
+
+    ext_00585010(out, cur + 1, end, container, cur, key);
+    return out;
+}
+} // namespace lift_00586BE0
