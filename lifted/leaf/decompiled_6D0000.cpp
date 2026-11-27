@@ -36,6 +36,7 @@ extern "C" void* __fastcall fn_006D7D90(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+#include <cstddef>
 
 // [0x006D2CA0] sub_006D2CA0 (12 bytes)
 namespace lift_006D2CA0 {
@@ -2343,3 +2344,140 @@ void* fn_006D2CC0(void) {
 }
 } // namespace lift_0078D740
 } // namespace lift_006D2CC0
+
+// [0x006D2170]
+namespace lift_006D2170 {
+// @name DynamicArray::InsertAt
+// @class DynamicArray
+// @summary Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.
+// @field DynamicArray +0x00 int32_t count
+// @field DynamicArray +0x04 int32_t num_blocks
+// @field DynamicArray +0x08 int32_t block_size
+// @field DynamicArray +0x0C int32_t elem_size
+// @field DynamicArray +0x10 void* data
+
+
+extern void* (__cdecl* mem_00925290)(void* ptr, size_t size);
+extern void* (__cdecl* mem_0092528C)(void* dst, const void* src, size_t size);
+extern uint32_t __thiscall ext_006DEEA0(const uint8_t* self);
+extern void __thiscall ext_006D2130(void* self, int32_t arg1, int32_t arg2);
+extern uint32_t __thiscall ext_006FD3A0(uint32_t self, uint32_t arg1);
+
+int32_t __thiscall fn_006D2170(void* self, int32_t index, const void* elem) {
+    (void)&ext_006DEEA0;
+    (void)&ext_006D2130;
+    (void)&ext_006FD3A0;
+    uint8_t* base = static_cast<uint8_t*>(self);
+    int32_t count = *reinterpret_cast<int32_t*>(base + 0x00);
+    if (index > count) {
+        index = count;
+    }
+
+    int32_t num_blocks = *reinterpret_cast<int32_t*>(base + 0x04);
+    int32_t block_size = *reinterpret_cast<int32_t*>(base + 0x08);
+    if (count >= num_blocks * block_size) {
+        int32_t elem_size = *reinterpret_cast<int32_t*>(base + 0x0C);
+        num_blocks += 1;
+        size_t new_bytes = static_cast<size_t>(elem_size * num_blocks * block_size);
+        *reinterpret_cast<int32_t*>(base + 0x04) = num_blocks;
+        void* data = *reinterpret_cast<void**>(base + 0x10);
+        *reinterpret_cast<void**>(base + 0x10) = mem_00925290(data, new_bytes);
+    }
+
+    count = *reinterpret_cast<int32_t*>(base + 0x00);
+    if (index < count) {
+        int32_t elem_size = *reinterpret_cast<int32_t*>(base + 0x0C);
+        uint8_t* data = *reinterpret_cast<uint8_t**>(base + 0x10);
+        size_t move_bytes = static_cast<size_t>((count - index) * elem_size);
+        mem_0092528C(
+            data + (index + 1) * elem_size,
+            data + index * elem_size,
+            move_bytes
+        );
+    }
+
+    int32_t elem_size = *reinterpret_cast<int32_t*>(base + 0x0C);
+    uint8_t* data = *reinterpret_cast<uint8_t**>(base + 0x10);
+    mem_0092528C(data + index * elem_size, elem, static_cast<size_t>(elem_size));
+
+    *reinterpret_cast<int32_t*>(base + 0x00) = *reinterpret_cast<int32_t*>(base + 0x00) + 1;
+    return index;
+}
+} // namespace lift_006D2170
+
+// [0x006D2500]
+namespace lift_006D2500 {
+extern void* __thiscall ext_006D2390(void* self, const void* arg1);
+extern uint32_t* __thiscall ext_006D23B0(
+    uint32_t* self,
+    uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3,
+    uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7);
+extern void __cdecl ext_006D80A0(void);
+
+// @name NegateVec4dToOut
+// @summary Negates four doubles from self into a temporary buffer, forwards it to ext_006D2390 with out, and returns out.
+// @field Vec4d +0x00 double x
+// @field Vec4d +0x08 double y
+// @field Vec4d +0x10 double z
+// @field Vec4d +0x18 double w
+void* __thiscall fn_006D2500(const void* self, void* out) {
+    double neg[4];
+    neg[0] = -lift_field<double>(self, 0x00);
+    neg[1] = -lift_field<double>(self, 0x08);
+    neg[2] = -lift_field<double>(self, 0x10);
+    neg[3] = -lift_field<double>(self, 0x18);
+
+    uint32_t args[8];
+    std::memcpy(args, neg, sizeof(args));
+
+    uint32_t local_buf[8];
+    ext_006D23B0(local_buf, args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7]);
+    ext_006D2390(out, local_buf);
+    ext_006D80A0();
+    return out;
+}
+} // namespace lift_006D2500
+
+// [0x006D2410]
+namespace lift_006D2410 {
+// @name ScaleVec4d
+// @summary Multiplies a 4-double vector by a scalar and forwards the result into an output buffer.
+// @field Vec4d +0x00 double field_0x00
+// @field Vec4d +0x08 double field_0x08
+// @field Vec4d +0x10 double field_0x10
+// @field Vec4d +0x18 double field_0x18
+
+
+extern uint32_t* __thiscall ext_006D23B0(
+    uint32_t* self,
+    uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3,
+    uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7);
+extern void* __thiscall ext_006D2390(void* self, uint32_t arg1);
+extern void __cdecl ext_006D80A0(void);
+
+static void split_double(double v, uint32_t& lo, uint32_t& hi) {
+    uint64_t bits = 0;
+    std::memcpy(&bits, &v, sizeof(bits));
+    lo = static_cast<uint32_t>(bits & 0xFFFFFFFFu);
+    hi = static_cast<uint32_t>(bits >> 32);
+}
+
+extern void* __thiscall fn_006D2410(const void* self, void* out, double scale) {
+    double d0 = lift_field<double>(self, 0x00) * scale;
+    double d1 = lift_field<double>(self, 0x08) * scale;
+    double d2 = lift_field<double>(self, 0x10) * scale;
+    double d3 = lift_field<double>(self, 0x18) * scale;
+
+    uint32_t a0, a1, a2, a3, a4, a5, a6, a7;
+    split_double(d0, a0, a1);
+    split_double(d1, a2, a3);
+    split_double(d2, a4, a5);
+    split_double(d3, a6, a7);
+
+    uint32_t tmp[8]{};
+    ext_006D23B0(tmp, a0, a1, a2, a3, a4, a5, a6, a7);
+    ext_006D2390(out, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(tmp)));
+    ext_006D80A0();
+    return out;
+}
+} // namespace lift_006D2410

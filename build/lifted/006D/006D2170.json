@@ -1,0 +1,46 @@
+{
+  "va": "0x006D2170",
+  "size": 144,
+  "orig_symbol": "sub_006D2170",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "DynamicArray::InsertAt",
+  "class": "DynamicArray",
+  "signature": "int32_t __thiscall fn_006D2170(void* self, int32_t index, const void* elem)",
+  "summary": "Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.",
+  "fields": [
+    {
+      "class": "DynamicArray",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "DynamicArray",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "num_blocks"
+    },
+    {
+      "class": "DynamicArray",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "block_size"
+    },
+    {
+      "class": "DynamicArray",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "elem_size"
+    },
+    {
+      "class": "DynamicArray",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "data"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:40:48Z"
+}
