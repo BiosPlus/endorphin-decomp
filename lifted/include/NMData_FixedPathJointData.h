@@ -21,24 +21,49 @@ struct NMData_FixedPathJointData_Fields {
     // +0x140 int32_t                  field_0x140  (evidence: 0x005E0E70) // CONFLICT: multiple definitions at +0x140
     // +0x140 int32_t field_0x140 (non-zero disables the function)  (evidence: 0x005E1060) // CONFLICT: multiple definitions at +0x140
     // +0x154 void*                    field_0x154  (evidence: 0x005E4850)
-    // +0x168 void* field_0x168 (address taken; vector container base for erase)  (evidence: 0x005EEDB0)
-    // +0x16C uint32_t field_0x16c (erase range begin)  (evidence: 0x005EEDB0)
-    // +0x170 uint32_t field_0x170 (erase range end)  (evidence: 0x005EEDB0)
+    // +0x168 void* field_0x168 (address taken; vector container base for erase)  (evidence: 0x005EEDB0) // CONFLICT: multiple definitions at +0x168
+    // +0x168 std_vector_8             field_0x168  (evidence: 0x005EDFD0) // CONFLICT: multiple definitions at +0x168
+    // +0x16C uint32_t field_0x16c (erase range begin)  (evidence: 0x005EEDB0) // CONFLICT: multiple definitions at +0x16C
+    // +0x16C uint32_t                 field_0x16c  (evidence: 0x005EDFD0) // CONFLICT: multiple definitions at +0x16C
+    // +0x170 uint32_t field_0x170 (erase range end)  (evidence: 0x005EEDB0) // CONFLICT: multiple definitions at +0x170
+    // +0x170 uint32_t                 field_0x170  (evidence: 0x005EDFD0) // CONFLICT: multiple definitions at +0x170
     // +0x178 uint8_t                  field_0x178  (evidence: 0x005E1CD0) // CONFLICT: multiple definitions at +0x178
     // +0x178 void*                    field_0x178  (evidence: 0x005E1060) // CONFLICT: multiple definitions at +0x178
+    // +0x179 uint8_t                  field_0x179  (evidence: 0x005EDFD0)
+    // +0x17A uint8_t                  field_0x17a  (evidence: 0x005EDFD0)
     // +0x17C uint32_t field_0x17c (non-zero selects the tail call for codes 0x40/0x137)  (evidence: 0x005E1060, 0x005E29F0)
     // +0x180 uint32_t field_0x180 (non-zero selects the tail call for codes 0x40/0x137/0x158)  (evidence: 0x005E1060, 0x005E29F0)
     // +0x184 void*                    field_0x184  (evidence: 0x005E02D0)
     // +0x18C void*                    field_0x18c  (evidence: 0x005E4C80)
     // +0x194 int32_t                  field_0x194  (evidence: 0x005E4850, 0x005EB920)
+    // +0x198 std_string_msvc          field_0x198  (evidence: 0x005EDFD0)
+    // +0x1B4 std_string_msvc          field_0x1b4  (evidence: 0x005EDFD0)
+    // +0x1D0 std_vector_4             field_0x1d0  (evidence: 0x005EDFD0)
+    // +0x1D4 uint32_t                 field_0x1d4  (evidence: 0x005EDFD0) // CONFLICT: multiple definitions at +0x1D4
     // +0x1D4 void**                   field_0x1d4  (evidence: 0x005EB920) // CONFLICT: multiple definitions at +0x1D4
     // +0x1D4 void** field_0x1d4 (begin of pointer vector)  (evidence: 0x005ECE20) // CONFLICT: multiple definitions at +0x1D4
+    // +0x1D8 uint32_t                 field_0x1d8  (evidence: 0x005EDFD0) // CONFLICT: multiple definitions at +0x1D8
     // +0x1D8 void**                   field_0x1d8  (evidence: 0x005EB920) // CONFLICT: multiple definitions at +0x1D8
     // +0x1D8 void** field_0x1d8 (end of pointer vector)  (evidence: 0x005ECE20) // CONFLICT: multiple definitions at +0x1D8
+    // +0x1E0 uint32_t                 field_0x1e0  (evidence: 0x005EDFD0)
+    // +0x1E4 std_string_msvc          field_0x1e4  (evidence: 0x005EDFD0)
     // +0x1F8 void**                   field_0x1f8  (evidence: 0x005ECB10)
     // +0x1FC void**                   field_0x1fc  (evidence: 0x005ECB10)
-    // +0x204 void** field_0x204 (begin of element pointer vector)  (evidence: 0x005ECE20)
-    // +0x208 void** field_0x208 (end of element pointer vector)  (evidence: 0x005ECE20)
-    // +0x22C uint32_t                 field_0x22c  (evidence: 0x005EB920)
+    // +0x200 std_vector_4             field_0x200  (evidence: 0x005EDFD0)
+    // +0x204 uint32_t                 field_0x204  (evidence: 0x005EDFD0) // CONFLICT: multiple definitions at +0x204
+    // +0x204 void** field_0x204 (begin of element pointer vector)  (evidence: 0x005ECE20) // CONFLICT: multiple definitions at +0x204
+    // +0x208 uint32_t                 field_0x208  (evidence: 0x005EDFD0) // CONFLICT: multiple definitions at +0x208
+    // +0x208 void** field_0x208 (end of element pointer vector)  (evidence: 0x005ECE20) // CONFLICT: multiple definitions at +0x208
+    // +0x210 float                    field_0x210  (evidence: 0x005EDFD0)
+    // +0x214 float                    field_0x214  (evidence: 0x005EDFD0)
+    // +0x218 float                    field_0x218  (evidence: 0x005EDFD0)
+    // +0x21C float                    field_0x21c  (evidence: 0x005EDFD0)
+    // +0x220 float                    field_0x220  (evidence: 0x005EDFD0)
+    // +0x224 float                    field_0x224  (evidence: 0x005EDFD0)
+    // +0x228 uint32_t                 field_0x228  (evidence: 0x005EDFD0)
+    // +0x22C uint32_t                 field_0x22c  (evidence: 0x005EB920, 0x005EDFD0)
+    // +0x230 uint8_t                  field_0x230  (evidence: 0x005EDFD0)
+    // +0x294 uint32_t                 field_0x294  (evidence: 0x005EDFD0)
+    // +0x298 uint32_t                 field_0x298  (evidence: 0x005EDFD0)
 };
 } // namespace lifted_layout

@@ -1,0 +1,172 @@
+{
+  "va": "0x005EDFD0",
+  "size": 317,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_33",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_33",
+  "class": "NMData::FixedPathJointData",
+  "signature": "inline uint8_t* at(void* base, ptrdiff_t off)",
+  "summary": "Erases the range [+0x16C,+0x170) from the vector at +0x168 and [+0x204,+0x208) from the vector at +0x200, clears two strings and one more string at +0x1E4, resets several flags/counters and six floats to 0.0, then tail-calls AnimatableTransform::vfunc_33 on self.",
+  "fields": [
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x168",
+      "type": "std_vector_8",
+      "name": "field_0x168"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x16C",
+      "type": "uint32_t",
+      "name": "field_0x16c"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x170",
+      "type": "uint32_t",
+      "name": "field_0x170"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x179",
+      "type": "uint8_t",
+      "name": "field_0x179"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x17A",
+      "type": "uint8_t",
+      "name": "field_0x17a"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x198",
+      "type": "std_string_msvc",
+      "name": "field_0x198"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x1B4",
+      "type": "std_string_msvc",
+      "name": "field_0x1b4"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x1D0",
+      "type": "std_vector_4",
+      "name": "field_0x1d0"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x1D4",
+      "type": "uint32_t",
+      "name": "field_0x1d4"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x1D8",
+      "type": "uint32_t",
+      "name": "field_0x1d8"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x1E0",
+      "type": "uint32_t",
+      "name": "field_0x1e0"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x1E4",
+      "type": "std_string_msvc",
+      "name": "field_0x1e4"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x200",
+      "type": "std_vector_4",
+      "name": "field_0x200"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x204",
+      "type": "uint32_t",
+      "name": "field_0x204"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x208",
+      "type": "uint32_t",
+      "name": "field_0x208"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x210",
+      "type": "float",
+      "name": "field_0x210"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x214",
+      "type": "float",
+      "name": "field_0x214"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x218",
+      "type": "float",
+      "name": "field_0x218"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x21C",
+      "type": "float",
+      "name": "field_0x21c"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x220",
+      "type": "float",
+      "name": "field_0x220"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x224",
+      "type": "float",
+      "name": "field_0x224"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x228",
+      "type": "uint32_t",
+      "name": "field_0x228"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x22C",
+      "type": "uint32_t",
+      "name": "field_0x22c"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x230",
+      "type": "uint8_t",
+      "name": "field_0x230"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x294",
+      "type": "uint32_t",
+      "name": "field_0x294"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x298",
+      "type": "uint32_t",
+      "name": "field_0x298"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:38:10Z"
+}

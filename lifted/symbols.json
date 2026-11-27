@@ -54595,6 +54595,13 @@
     "summary": "Recursively erases a red-black tree subtree starting from the given node.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005EDFD0": {
+    "name": "NMData::FixedPathJointData::vfunc_33",
+    "class": "NMData::FixedPathJointData",
+    "signature": "inline uint8_t* at(void* base, ptrdiff_t off)",
+    "summary": "Erases the range [+0x16C,+0x170) from the vector at +0x168 and [+0x204,+0x208) from the vector at +0x200, clears two strings and one more string at +0x1E4, resets several flags/counters and six floats to 0.0, then tail-calls AnimatableTransform::vfunc_33 on self.",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005EE250": {
     "name": "NMData::RootRelationshipData::vfunc_12_off_C",
     "class": "NMData::RootRelationshipData",

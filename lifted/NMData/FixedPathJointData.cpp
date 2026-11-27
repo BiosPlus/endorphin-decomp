@@ -616,3 +616,119 @@ std::string fn_005E4C80(void* self) {
     return ss.str();
 }
 } // namespace lift_005E4C80
+
+// [0x005EDFD0] NMData::FixedPathJointData::vfunc_33 (317 bytes)
+namespace lift_005EDFD0 {
+// Known callee 0x0048EF80: std_vector_8_erase_range. Erases [first, last) of 8-byte elements, returns updated iterator via ret_iter.
+extern uint32_t __thiscall ext_0048EF80(void* self, void* ret_iter, void* first_proxy, uint32_t first_ptr, void* last_proxy, uint32_t last_ptr);
+// Known callee 0x00596660: eraseInt32Range. Erases [first, last) from a 4-byte-element vector, writes a 2-pointer result to out.
+extern void __thiscall ext_00596660(void* self, void* out, void* a2, uint32_t first, void* a4, uint32_t last);
+// AnimatableTransform::vfunc_33: thiscall, tail-called with self in ecx; its return value is returned unchanged.
+extern uint32_t __thiscall ext_0058A1A0(void* self);
+
+// MSVCR80!_invalid_parameter_noinfo IAT slot.
+extern int mem_00925134;
+// MSVCP80 basic_string::clear IAT slot.
+extern int mem_00924EA8;
+
+namespace {
+
+inline uint8_t* at(void* base, ptrdiff_t off) {
+    return static_cast<uint8_t*>(base) + off;
+}
+
+// call dword ptr [0x925134] (falls through, as in the original asm).
+inline void invalid_parameter_noinfo() {
+    (*reinterpret_cast<void (**)()>(&mem_00925134))();
+}
+
+// call dword ptr [0x924ea8] : std::string::clear, thiscall with this in ecx.
+inline void string_clear(void* s) {
+    (*reinterpret_cast<void(__thiscall**)(void*)>(&mem_00924EA8))(s);
+}
+
+} // namespace
+
+// @name NMData::FixedPathJointData::vfunc_33
+// @class NMData::FixedPathJointData
+// @summary Erases the range [+0x16C,+0x170) from the vector at +0x168 and [+0x204,+0x208) from the vector at +0x200, clears two strings and one more string at +0x1E4, resets several flags/counters and six floats to 0.0, then tail-calls AnimatableTransform::vfunc_33 on self.
+// @field NMData::FixedPathJointData +0x168 std_vector_8 field_0x168
+// @field NMData::FixedPathJointData +0x16C uint32_t field_0x16c
+// @field NMData::FixedPathJointData +0x170 uint32_t field_0x170
+// @field NMData::FixedPathJointData +0x179 uint8_t field_0x179
+// @field NMData::FixedPathJointData +0x17A uint8_t field_0x17a
+// @field NMData::FixedPathJointData +0x198 std_string_msvc field_0x198
+// @field NMData::FixedPathJointData +0x1B4 std_string_msvc field_0x1b4
+// @field NMData::FixedPathJointData +0x1D0 std_vector_4 field_0x1d0
+// @field NMData::FixedPathJointData +0x1D4 uint32_t field_0x1d4
+// @field NMData::FixedPathJointData +0x1D8 uint32_t field_0x1d8
+// @field NMData::FixedPathJointData +0x1E0 uint32_t field_0x1e0
+// @field NMData::FixedPathJointData +0x1E4 std_string_msvc field_0x1e4
+// @field NMData::FixedPathJointData +0x200 std_vector_4 field_0x200
+// @field NMData::FixedPathJointData +0x204 uint32_t field_0x204
+// @field NMData::FixedPathJointData +0x208 uint32_t field_0x208
+// @field NMData::FixedPathJointData +0x210 float field_0x210
+// @field NMData::FixedPathJointData +0x214 float field_0x214
+// @field NMData::FixedPathJointData +0x218 float field_0x218
+// @field NMData::FixedPathJointData +0x21C float field_0x21c
+// @field NMData::FixedPathJointData +0x220 float field_0x220
+// @field NMData::FixedPathJointData +0x224 float field_0x224
+// @field NMData::FixedPathJointData +0x228 uint32_t field_0x228
+// @field NMData::FixedPathJointData +0x22C uint32_t field_0x22c
+// @field NMData::FixedPathJointData +0x230 uint8_t field_0x230
+// @field NMData::FixedPathJointData +0x294 uint32_t field_0x294
+// @field NMData::FixedPathJointData +0x298 uint32_t field_0x298
+uint32_t __thiscall fn_005EDFD0(void* self) {
+    // Range erase #1: vector at +0x168, range [+0x16C, +0x170).
+    uint32_t end1 = lift_field<uint32_t>(self, 0x170);
+    if (lift_field<uint32_t>(self, 0x16C) > end1) {
+        invalid_parameter_noinfo();
+    }
+    uint32_t begin1 = lift_field<uint32_t>(self, 0x16C);
+    void* vec1 = at(self, 0x168);
+    uint32_t ret1[2] = {0, 0};
+    ext_0048EF80(vec1, ret1, vec1, begin1, vec1, end1);
+
+    string_clear(at(self, 0x198));
+    string_clear(at(self, 0x1B4));
+
+    // Range erase #2: vector at +0x1D0, range [+0x1D4, +0x1D8).
+    uint32_t end2 = lift_field<uint32_t>(self, 0x1D8);
+    if (lift_field<uint32_t>(self, 0x1D4) > end2) {
+        invalid_parameter_noinfo();
+    }
+    uint32_t begin2 = lift_field<uint32_t>(self, 0x1D4);
+    void* vec2 = at(self, 0x1D0);
+    void* ret2[2] = {nullptr, nullptr};
+    ext_00596660(vec2, ret2, vec2, begin2, vec2, end2);
+
+    lift_field<uint32_t>(self, 0x228) = 0;
+    lift_field<uint32_t>(self, 0x22C) = 0;
+    lift_field<uint8_t>(self, 0x230) = 0;
+    lift_field<uint8_t>(self, 0x17A) = 0;
+    lift_field<uint32_t>(self, 0x1E0) = 0;
+    string_clear(at(self, 0x1E4));
+    lift_field<uint8_t>(self, 0x179) = 0;
+
+    // Range erase #3: vector at +0x200, range [+0x204, +0x208).
+    uint32_t end3 = lift_field<uint32_t>(self, 0x208);
+    if (lift_field<uint32_t>(self, 0x204) > end3) {
+        invalid_parameter_noinfo();
+    }
+    uint32_t begin3 = lift_field<uint32_t>(self, 0x204);
+    void* vec3 = at(self, 0x200);
+    void* ret3[2] = {nullptr, nullptr};
+    ext_00596660(vec3, ret3, vec3, begin3, vec3, end3);
+
+    lift_field<uint32_t>(self, 0x298) = 0;
+    lift_field<uint32_t>(self, 0x294) = 0;
+    lift_field<float>(self, 0x218) = 0.0f;
+    lift_field<float>(self, 0x214) = 0.0f;
+    lift_field<float>(self, 0x210) = 0.0f;
+    lift_field<float>(self, 0x224) = 0.0f;
+    lift_field<float>(self, 0x220) = 0.0f;
+    lift_field<float>(self, 0x21C) = 0.0f;
+
+    return ext_0058A1A0(self);
+}
+} // namespace lift_005EDFD0
