@@ -1055,3 +1055,41 @@ uint32_t fn_0080B060(uint32_t arg) {
     }
 }
 } // namespace lift_0080B060
+
+// [0x0080AA80] sub_0080AA80 (112 bytes)
+namespace lift_0080AA80 {
+// Known callee 0x0080ABA0: EnsureCriticalSectionInitializedAndEnter (If the ready flag at 0x00B73C80 is zero, initialize the global critical section; then enter it via KERNEL32 EnterCriticalSection (through the import slot at 0x009242E0).)
+extern void ext_0080ABA0();
+// Known callee 0x0080ABC0: LeaveGlobalCriticalSection (Ensures the global critical section is initialized, then leaves it via the imported LeaveCriticalSection.)
+extern void ext_0080ABC0();
+
+// Slot table at mem_00B6204C: 568-byte entries, indexed 0..0x7F.
+extern uint8_t mem_00B6204C[];
+
+// @name LookupSlotHandleUnderCriticalSection
+// @summary Splits a packed (index<<16 | key) argument, validates index < 0x80, and under the global critical section looks up the table entry whose key matches and whose active byte is set, storing its handle to *out. Returns 0 on success, 9 on failure.
+// @field SlotEntry +0x00 uint32_t field_0x00
+// @field SlotEntry +0x214 uint8_t field_0x214
+uint32_t fn_0080AA80(uint32_t packed, uint32_t* out) {
+    const uint32_t index = packed >> 16;
+    const uint32_t key = packed & 0xFFFFu;
+
+    if (index >= 0x80u) {
+        return 9u;
+    }
+
+    ext_0080ABA0();
+
+    uint8_t* entry = mem_00B6204C + static_cast<size_t>(index) * 568u;
+    if (lift_field<uint8_t>(entry, 0x214) != 0 &&
+        lift_field<uint32_t>(entry, 0x00) == key) {
+        uint8_t* handle = entry - 0x1C;
+        *out = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(handle));
+        ext_0080ABC0();
+        return 0u;
+    }
+
+    ext_0080ABC0();
+    return 9u;
+}
+} // namespace lift_0080AA80

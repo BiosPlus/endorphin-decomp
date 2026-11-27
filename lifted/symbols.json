@@ -74818,6 +74818,12 @@
     "summary": "Stores the argument into global mem_00B62020 and returns the previous value.",
     "lifted_path": "lifted/leaf/tiny_800000.cpp"
   },
+  "0x0080AA80": {
+    "name": "LookupSlotHandleUnderCriticalSection",
+    "signature": "uint32_t fn_0080AA80(uint32_t packed, uint32_t* out)",
+    "summary": "Splits a packed (index\u003c\u003c16 | key) argument, validates index \u003c 0x80, and under the global critical section looks up the table entry whose key matches and whose active byte is set, storing its handle to *out. Returns 0 on success, 9 on failure.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080AB80": {
     "name": "EnterGlobalCriticalSection",
     "signature": "void fn_0080AB80(void)",

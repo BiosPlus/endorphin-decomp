@@ -8,7 +8,9 @@
 // Recovered field layout for SlotEntry:
 namespace lifted_layout {
 struct SlotEntry_Fields {
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x0080AA80)
     // +0x8   int32_t                  key  (evidence: 0x007C8C90, 0x007CAF70)
     // +0xC   int32_t                  value  (evidence: 0x007C8C90, 0x007CAF70)
+    // +0x214 uint8_t                  field_0x214  (evidence: 0x0080AA80)
 };
 } // namespace lifted_layout

@@ -1,0 +1,27 @@
+{
+  "va": "0x0080AA80",
+  "size": 112,
+  "orig_symbol": "sub_0080AA80",
+  "src_path": "src/leaf/decompiled_800000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_800000.cpp",
+  "name": "LookupSlotHandleUnderCriticalSection",
+  "signature": "uint32_t fn_0080AA80(uint32_t packed, uint32_t* out)",
+  "summary": "Splits a packed (index\u003c\u003c16 | key) argument, validates index \u003c 0x80, and under the global critical section looks up the table entry whose key matches and whose active byte is set, storing its handle to *out. Returns 0 on success, 9 on failure.",
+  "fields": [
+    {
+      "class": "SlotEntry",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "SlotEntry",
+      "offset": "+0x214",
+      "type": "uint8_t",
+      "name": "field_0x214"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:03:42Z"
+}
