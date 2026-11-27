@@ -1,0 +1,28 @@
+{
+  "va": "0x0045AE60",
+  "size": 126,
+  "orig_symbol": "sub_0045AE60",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "SettingsHolder::applyIntSettingFromString",
+  "class": "(unknown)",
+  "signature": "void fn_0045AE60(void* self)",
+  "summary": "Reads a string via this+0x32C, converts it with atoi, and if positive calls virtual slot 0x9C on the object at this+0x88.",
+  "fields": [
+    {
+      "class": "(unknown)",
+      "offset": "+0x32C",
+      "type": "uint8_t",
+      "name": "field_0x32c"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T02:54:58Z"
+}
