@@ -27346,6 +27346,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005499E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/ToolGraphics/auto_tiny.cpp"
   },
+  "0x0054B6D0": {
+    "name": "ToolGraphics::ForceApplicatorHandleGraphic::ctor",
+    "class": "ToolGraphics::ForceApplicatorHandleGraphic",
+    "signature": "void* fn_0054B6D0(void* self)",
+    "summary": "Constructs the object: base HandleGraphic init, embedded label subobject init, creates a GLU quadric with fill/smooth style, and calls vfunc_1.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x0054B760": {
     "name": "ToolGraphics::ForceApplicatorHandleGraphic::vfunc_0",
     "class": "ToolGraphics::ForceApplicatorHandleGraphic",

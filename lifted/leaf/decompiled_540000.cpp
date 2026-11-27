@@ -1957,3 +1957,63 @@ void* __thiscall fn_00547220(void* self, DWORD a1, DWORD a2) {
     return self;
 }
 } // namespace lift_00547220
+
+// [0x0054B6D0] sub_0054B6D0 (138 bytes)
+namespace lift_0054B6D0 {
+// Known callee 0x00532B60: Unknown::initVtableAndFlags (Stores the vtable address at +0x00, sets flag bytes at +0x04 and +0x0C to 1, and zeroes the dwords at +0x08 and +0x10.)
+extern void ext_00532B60(void* self);
+// Known callee 0x0054A150: ToolGraphics::ForceApplicatorHandleGraphic::vfunc_1 (16B)
+extern void ext_0054A150(void* self);
+// Known callee 0x005528E0: HandleGraphic::setVtableAndReset (Writes the vtable pointer 0x00957534 into the object's first dword, calls HandleGraphic::vfunc_1 on it, and returns self.)
+extern void* ext_005528E0(void* self);
+// Known callee 0x0063E000: thunk_GLU32_gluNewQuadric (IAT jump thunk forwarding to GLU32!gluNewQuadric.)
+extern void* ext_0063E000(void);
+// Known callee 0x0063E012: thunk_GLU32_gluQuadricDrawStyle (IAT jump thunk forwarding to GLU32!gluQuadricDrawStyle.)
+extern void ext_0063E012(void* quadric, uint32_t drawStyle);
+// Known callee 0x0063E00C: thunk_GLU32_gluQuadricNormals (IAT jump thunk forwarding to GLU32!gluQuadricNormals.)
+extern void ext_0063E00C(void* quadric, uint32_t normals);
+
+// GLU enum values passed by the original code.
+inline constexpr uint32_t GLU_SMOOTH = 100000; // 0x000186A0
+inline constexpr uint32_t GLU_FILL = 100012;   // 0x000186AC
+
+// Image vtable addresses written into the object (ToolGraphics::ForceApplicatorHandleGraphic and UtilityGraphics::Label).
+inline constexpr uint32_t VTBL_FORCE_APPLICATOR_HANDLE_GRAPHIC = 0x00956D34;
+inline constexpr uint32_t VTBL_LABEL_SUBOBJECT = 0x009551E4;
+
+// @name ToolGraphics::ForceApplicatorHandleGraphic::ctor
+// @class ToolGraphics::ForceApplicatorHandleGraphic
+// @summary Constructs the object: base HandleGraphic init, embedded label subobject init, creates a GLU quadric with fill/smooth style, and calls vfunc_1.
+// @field ToolGraphics::ForceApplicatorHandleGraphic +0x00 uint32_t vtable
+// @field ToolGraphics::ForceApplicatorHandleGraphic +0x18 void* gluQuadric
+// @field ToolGraphics::ForceApplicatorHandleGraphic +0x1c uint32_t field_0x1c
+// @field ToolGraphics::ForceApplicatorHandleGraphic +0x30 uint32_t field_0x30
+// @field ToolGraphics::ForceApplicatorHandleGraphic +0x34 uint32_t field_0x34
+// @field ToolGraphics::ForceApplicatorHandleGraphic +0x38 uint32_t field_0x38
+void* fn_0054B6D0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Base HandleGraphic init (sets its own vtable, calls vfunc_1).
+    ext_005528E0(self);
+
+    // This class vtable.
+    lift_field<uint32_t>(self, 0x00) = VTBL_FORCE_APPLICATOR_HANDLE_GRAPHIC;
+
+    // Embedded label subobject at +0x1c.
+    void* label = base + 0x1c;
+    ext_00532B60(label);
+    lift_field<uint32_t>(self, 0x1c) = VTBL_LABEL_SUBOBJECT;
+    lift_field<uint32_t>(self, 0x38) = 0;
+    lift_field<uint32_t>(self, 0x30) = 0;
+    lift_field<uint32_t>(self, 0x34) = 0;
+
+    // Quadric setup.
+    void* quadric = ext_0063E000();
+    lift_field<void*>(self, 0x18) = quadric;
+    ext_0063E012(quadric, GLU_FILL);
+    ext_0063E00C(quadric, GLU_SMOOTH);
+
+    ext_0054A150(self);
+    return self;
+}
+} // namespace lift_0054B6D0

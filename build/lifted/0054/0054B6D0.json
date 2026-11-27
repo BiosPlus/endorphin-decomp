@@ -1,0 +1,52 @@
+{
+  "va": "0x0054B6D0",
+  "size": 138,
+  "orig_symbol": "sub_0054B6D0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "ToolGraphics::ForceApplicatorHandleGraphic::ctor",
+  "class": "ToolGraphics::ForceApplicatorHandleGraphic",
+  "signature": "void* fn_0054B6D0(void* self)",
+  "summary": "Constructs the object: base HandleGraphic init, embedded label subobject init, creates a GLU quadric with fill/smooth style, and calls vfunc_1.",
+  "fields": [
+    {
+      "class": "ToolGraphics::ForceApplicatorHandleGraphic",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "ToolGraphics::ForceApplicatorHandleGraphic",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "gluQuadric"
+    },
+    {
+      "class": "ToolGraphics::ForceApplicatorHandleGraphic",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "ToolGraphics::ForceApplicatorHandleGraphic",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "ToolGraphics::ForceApplicatorHandleGraphic",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "ToolGraphics::ForceApplicatorHandleGraphic",
+      "offset": "+0x38",
+      "type": "uint32_t",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:32:14Z"
+}
