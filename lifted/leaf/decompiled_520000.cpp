@@ -2128,3 +2128,64 @@ void fn_0052A310(void* self) {
     }
 }
 } // namespace lift_0052A310
+
+// [0x0052ADB0]
+namespace lift_0052ADB0 {
+// @name MapInsertOrThrow_0052ADB0
+// @summary Inserts an entry into the map at +0x04 using a key and value, throwing an exception if insertion fails, and returns a pointer to the mapped value (+0x28).
+// @field MapHolder +0x04 void* map_impl
+
+
+void* ext_004142E0(void* self, void* arg);
+void* ext_0052A310(void* self);
+void* ext_0052AB70(void* self, void* out_pair, void* key_and_val);
+void ext_00532900(void* self, const void* src);
+void ext_00532770(void* self);
+void ext_006A6DD2(void);
+
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_00925134;
+
+namespace {
+struct InsertResult {
+    void* container;
+    void* node;
+    uint8_t inserted;
+    uint8_t pad[3];
+};
+} // namespace
+
+void* __thiscall fn_0052ADB0(void* self, void* key, const void* val) {
+    uint8_t str_copy[0x1C];
+    uint8_t local_obj[0x40];
+    InsertResult result{};
+
+    using StrCopyCtorFn = void(__thiscall*)(void*, void*);
+    using StrDtorFn = void(__thiscall*)(void*);
+    using InvalidParamFn = void(*)();
+
+    reinterpret_cast<StrCopyCtorFn>(mem_00924FE0)(str_copy, key);
+    ext_00532900(local_obj, val);
+    ext_0052AB70(reinterpret_cast<uint8_t*>(self) + 0x04, &result, str_copy);
+    ext_00532770(local_obj);
+    reinterpret_cast<StrDtorFn>(mem_00924FF4)(str_copy);
+
+    if (result.inserted == 0) {
+        uint8_t exc_obj[0x30];
+        void* msg = ext_0052A310(key);
+        ext_004142E0(exc_obj, msg);
+        ext_006A6DD2();
+    }
+
+    InvalidParamFn invalid_param = reinterpret_cast<InvalidParamFn>(mem_00925134);
+    if (!result.container) {
+        invalid_param();
+    }
+    if (result.node == *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(result.container) + 0x04)) {
+        invalid_param();
+    }
+
+    return reinterpret_cast<uint8_t*>(result.node) + 0x28;
+}
+} // namespace lift_0052ADB0

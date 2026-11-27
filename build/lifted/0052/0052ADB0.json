@@ -1,0 +1,21 @@
+{
+  "va": "0x0052ADB0",
+  "size": 242,
+  "orig_symbol": "sub_0052ADB0",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "MapInsertOrThrow_0052ADB0",
+  "signature": "void* __thiscall fn_0052ADB0(void* self, void* key, const void* val)",
+  "summary": "Inserts an entry into the map at +0x04 using a key and value, throwing an exception if insertion fails, and returns a pointer to the mapped value (+0x28).",
+  "fields": [
+    {
+      "class": "MapHolder",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "map_impl"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T13:21:41Z"
+}
