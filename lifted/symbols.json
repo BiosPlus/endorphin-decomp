@@ -48185,6 +48185,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004C0EB0 (ExprParser::ReadWriteMethodType::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005CCE20": {
+    "name": "NMData::CollisionModelData::vfunc_12_off_C",
+    "class": "NMData::CollisionModelData",
+    "signature": "bool fn_005CCE20(void* self, void* arg1, uint32_t value)",
+    "summary": "Queries an optional sub-object for a flag, zeroes matching dwords in a local-relative range, rebuilds a temp vector from this+0x74..0x78, notifies an interface, and forwards a non-null error code to thunk_MFC80_ord_764. Returns true on success.",
+    "lifted_path": "lifted/NMData/CollisionModelData.cpp"
+  },
   "0x005CD120": {
     "name": "Vector::InsertSortedUnique_005CD120",
     "class": "Vector",

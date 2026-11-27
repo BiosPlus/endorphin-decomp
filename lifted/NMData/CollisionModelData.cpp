@@ -453,3 +453,87 @@ bool __thiscall fn_005C31D0(void* self, void* arg) {
     return true;
 }
 } // namespace lift_005C31D0
+
+// [0x005CCE20] NMData::CollisionModelData::vfunc_12_off_C (306 bytes)
+namespace lift_005CCE20 {
+// Callees (declared with prototypes so they can be called from C++).
+extern void ext_0041A920(void* vec, const void* elem);       // container push helper (sub_0041A920)
+extern void ext_00481BD0(void* self, uint32_t value);        // ZeroMatchingDwordRange (fn_00481BD0 in leaf)
+extern void ext_005BF460(void* self, const void* arg);       // sub_005BF460
+extern void ext_006A5C5C(uint32_t code);                     // thunk_MFC80_ord_764
+// Import slot 0x00925134: MSVCR80!_invalid_parameter_noinfo (called on failed range checks).
+extern void (*mem_00925134)(void);
+
+// @name NMData::CollisionModelData::vfunc_12_off_C
+// @class NMData::CollisionModelData
+// @summary Queries an optional sub-object for a flag, zeroes matching dwords in a local-relative range, rebuilds a temp vector from this+0x74..0x78, notifies an interface, and forwards a non-null error code to thunk_MFC80_ord_764. Returns true on success.
+// @field NMData::CollisionModelData +0x74 uint32_t field_0x74
+// @field NMData::CollisionModelData +0x78 uint32_t field_0x78
+// @field NMData::CollisionModelData +0x158 void* field_0x158
+bool fn_005CCE20(void* self, void* arg1, uint32_t value) {
+    // Optional query: if this->+0x158 -> +0x20C -> +0x18C is set, call its vtable slot 0x48
+    // (slot index 18); bail out with false if it reports failure.
+    void* obj = lift_field<void*>(self, 0x158);
+    if (obj != nullptr) {
+        void* sub = lift_field<void*>(obj, 0x20C);
+        void* q = lift_field<void*>(sub, 0x18C);
+        if (q != nullptr) {
+            void** vt = *reinterpret_cast<void***>(q);
+            auto query = reinterpret_cast<bool (*)(void*)>(vt[0x48 / 4]);
+            if (!query(q)) {
+                return false;
+            }
+        }
+    }
+
+    // ZeroMatchingDwordRange over the range rooted at (self - 0x0C), matching `value`.
+    uint8_t* self_m12 = static_cast<uint8_t*>(self) - 0x0C;
+    ext_00481BD0(self_m12, value);
+
+    if (lift_field<void*>(self, 0x158) == nullptr) {
+        return false;
+    }
+
+    // Walk the uint32 range [this+0x74, this+0x78), pushing each element into a temp vector.
+    uint32_t vec[3] = {0, 0, 0};
+    uint32_t it = lift_field<uint32_t>(self, 0x74);
+    if (it > lift_field<uint32_t>(self, 0x78)) {
+        mem_00925134();
+    }
+    for (;;) {
+        uint32_t end = lift_field<uint32_t>(self, 0x78);
+        if (lift_field<uint32_t>(self, 0x74) > end) {
+            mem_00925134();
+        }
+        if (it == end) {
+            break;
+        }
+        if (!(it < end)) {
+            mem_00925134();
+        }
+        ext_0041A920(vec, reinterpret_cast<const void*>(static_cast<uintptr_t>(it)));
+        if (!(it < lift_field<uint32_t>(self, 0x78))) {
+            mem_00925134();
+        }
+        it += 4;
+    }
+
+    // Push the address of the range-start pointer (self - 0x0C) into the temp vector.
+    value = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self_m12));
+    ext_0041A920(vec, &value);
+
+    // Notify arg1 via its vtable slot 0x44 (index 17); it writes an error/status code into ret_code.
+    uint32_t ret_code = 0;
+    void** vt2 = *reinterpret_cast<void***>(arg1);
+    auto notify = reinterpret_cast<void (*)(void*, uint32_t*)>(vt2[0x44 / 4]);
+    notify(arg1, &ret_code);
+
+    obj = lift_field<void*>(self, 0x158);
+    ext_005BF460(obj, self_m12);
+
+    if (ret_code != 0) {
+        ext_006A5C5C(ret_code);
+    }
+    return true;
+}
+} // namespace lift_005CCE20
