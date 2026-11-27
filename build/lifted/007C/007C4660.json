@@ -1,0 +1,28 @@
+{
+  "va": "0x007C4660",
+  "size": 128,
+  "orig_symbol": "sub_007C4660",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "ApplyBitReverseRemap",
+  "class": "PairTable",
+  "signature": "void fn_007C4660(uint16_t* table, int32_t n, const uint16_t* src)",
+  "summary": "Builds a 16-bit prefix chain from src, then for each table entry with nonzero index writes BitReverseLowBits(counter, index) into out and bumps the counter.",
+  "fields": [
+    {
+      "class": "PairTable",
+      "offset": "+0x0",
+      "type": "uint16_t",
+      "name": "out"
+    },
+    {
+      "class": "PairTable",
+      "offset": "+0x2",
+      "type": "uint16_t",
+      "name": "index"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:16:48Z"
+}

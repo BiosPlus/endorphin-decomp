@@ -1986,3 +1986,38 @@ void fn_007C1F90(void* self) {
     }
 }
 } // namespace lift_007C1F90
+
+// [0x007C4660] sub_007C4660 (128 bytes)
+namespace lift_007C4660 {
+// Known callee 0x007C5440: BitReverseLowBits (Returns the low n bits of x in reversed order (bit 0 -> bit n-1); n <= 0 is treated as one pass.)
+extern uint32_t ext_007C5440(uint32_t x, int32_t n);
+
+// @name ApplyBitReverseRemap
+// @class PairTable
+// @summary Builds a 16-bit prefix chain from src, then for each table entry with nonzero index writes BitReverseLowBits(counter, index) into out and bumps the counter.
+// @field PairTable +0x00 uint16_t out
+// @field PairTable +0x02 uint16_t index
+void fn_007C4660(uint16_t* table, int32_t n, const uint16_t* src) {
+    // Prefix chain: t[k] for k = 2..16 (t[1] is never written by the original).
+    uint16_t t[17] = {};
+    uint16_t v = 0;
+    for (int32_t i = 1; i <= 15; ++i) {
+        v = static_cast<uint16_t>(2u * static_cast<uint16_t>(src[i - 1] + v));
+        t[i + 1] = v;
+    }
+
+    // Entries j = 0..n inclusive (no iterations when n < 0).
+    for (int32_t j = 0; j <= n; ++j) {
+        uint16_t index = table[2 * j + 1];
+        // index == 0 is skipped. index > 15 is outside the table the original
+        // indexes (it reads uninitialised stack); skipped here to stay defined.
+        if (index == 0 || index > 15) {
+            continue;
+        }
+        uint16_t counter = t[index + 1];
+        t[index + 1] = static_cast<uint16_t>(counter + 1);
+        uint32_t r = ext_007C5440(counter, static_cast<int32_t>(index));
+        table[2 * j] = static_cast<uint16_t>(r);
+    }
+}
+} // namespace lift_007C4660

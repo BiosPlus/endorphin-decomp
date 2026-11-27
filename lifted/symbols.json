@@ -78182,6 +78182,13 @@
     "summary": "Cdecl wrapper that forwards its single pointer argument to the CRT free() via an indirect IAT call.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C4660": {
+    "name": "ApplyBitReverseRemap",
+    "class": "PairTable",
+    "signature": "void fn_007C4660(uint16_t* table, int32_t n, const uint16_t* src)",
+    "summary": "Builds a 16-bit prefix chain from src, then for each table entry with nonzero index writes BitReverseLowBits(counter, index) into out and bumps the counter.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C53C0": {
     "name": "ComputeWordSumsAndSetFlag",
     "signature": "void fn_007C53C0(void* self)",
