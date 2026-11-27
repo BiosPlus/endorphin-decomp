@@ -239,3 +239,144 @@ void __thiscall fn_0056E630(void* self, const std::string* filename) {
     ext_005576F0(self);
 }
 } // namespace lift_0056E630
+
+// [0x0056EAC0]
+namespace lift_0056EAC0 {
+// @name BVHIO::vfunc_13
+// @class BVHIO
+// @summary Export skeleton hierarchy and motion frames to a BVH file.
+// @field BVHIO +0x16C int32_t startFrame
+// @field BVHIO +0x170 int32_t endFrame
+// @field BVHIO +0x414 uint32_t skeletonData
+// @field BVHIO +0x420 uint32_t timeline
+// @field BVHIO +0x424 uint32_t progressCallback
+
+
+void __thiscall ext_00662120(void* self);
+void __thiscall ext_00661F70(void* self, int32_t arg1);
+std::ostream& __cdecl ext_00435D00(std::ostream& os, const char* str);
+void __thiscall ext_0056DE10(void* self, void* node, std::ostream* os, std::string prefix);
+uint8_t __thiscall ext_00553760(void* self);
+float __thiscall ext_00661A40(void* self);
+void __thiscall ext_0056E8F0(void* self, void* node, std::ostream* os);
+uint8_t __thiscall ext_00661E80(void* self);
+void __thiscall ext_00403560(void* self, const void* src);
+void __stdcall ext_006A6DD2(void* ex, void* throwInfo);
+
+extern uint32_t mem_00924E5C;
+extern uint32_t mem_00924E90;
+extern uint32_t mem_00924E98;
+extern uint32_t mem_00924ECC;
+extern uint32_t mem_00924FCC;
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924FE8;
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_00924FF4;
+extern uint32_t mem_00925004;
+extern uint32_t mem_00925008;
+extern uint32_t mem_00925010;
+extern uint32_t mem_009250DC;
+extern uint32_t mem_009250E0;
+extern uint32_t mem_00925134;
+
+void __thiscall fn_0056EAC0(void* self, const std::string* filename) {
+    (void)mem_00924E5C;
+    (void)mem_00924E90;
+    (void)mem_00924E98;
+    (void)mem_00924ECC;
+    (void)mem_00924FCC;
+    (void)mem_00924FE4;
+    (void)mem_00924FE8;
+    (void)mem_00924FF0;
+    (void)mem_00924FF4;
+    (void)mem_00925004;
+    (void)mem_00925008;
+    (void)mem_00925010;
+    (void)mem_009250DC;
+    (void)mem_009250E0;
+    (void)mem_00925134;
+    std::ofstream ofs(filename->c_str(), std::ios::out);
+    if (!ofs) {
+        std::string msg = std::string(reinterpret_cast<const char*>(0x009592E0)) + *filename +
+                          reinterpret_cast<const char*>(0x00958ECC);
+        uint8_t ex[36]{};
+        ext_00403560(ex, &msg);
+        *reinterpret_cast<uint32_t*>(ex) = 0x009570DC;
+        ext_006A6DD2(ex, reinterpret_cast<void*>(0x009F8908));
+        return;
+    }
+
+    void* timeline = lift_field<void*>(self, 0x420);
+    ext_00662120(timeline);
+    ext_00661F70(timeline, 1);
+
+    void* progressCallback = lift_field<void*>(self, 0x424);
+    if (progressCallback != nullptr) {
+        std::string status(reinterpret_cast<const char*>(0x00959384));
+        void** vtable = *reinterpret_cast<void***>(progressCallback);
+        auto fn = reinterpret_cast<void(__thiscall*)(void*, std::string*)>(vtable[3]);
+        fn(progressCallback, &status);
+    }
+
+    ext_00435D00(ofs, reinterpret_cast<const char*>(0x00959378)) << std::endl;
+
+    void* skeletonNode = static_cast<uint8_t*>(lift_field<void*>(self, 0x414)) + 0x160;
+    ext_00435D00(ofs, reinterpret_cast<const char*>(0x00959370));
+    ext_0056DE10(self, skeletonNode, &ofs, std::string());
+
+    if (!ext_00553760(self)) {
+        ofs.close();
+        return;
+    }
+
+    ext_00435D00(ofs, reinterpret_cast<const char*>(0x009592AC)) << std::endl;
+
+    int32_t startFrame = lift_field<int32_t>(self, 0x16C);
+    int32_t endFrame = lift_field<int32_t>(self, 0x170);
+    int32_t frameCount = endFrame - startFrame + 1;
+    ext_00435D00(ofs, reinterpret_cast<const char*>(0x00959364)) << frameCount << std::endl;
+
+    float frameTime = ext_00661A40(lift_field<void*>(self, 0x420));
+    ext_00435D00(ofs, reinterpret_cast<const char*>(0x00959354)) << frameTime << std::endl;
+
+    progressCallback = lift_field<void*>(self, 0x424);
+    if (progressCallback != nullptr) {
+        void** vtable = *reinterpret_cast<void***>(progressCallback);
+        auto setRange = reinterpret_cast<void(__thiscall*)(void*, int32_t, int32_t)>(vtable[2]);
+        setRange(progressCallback, startFrame, endFrame);
+
+        std::string status(reinterpret_cast<const char*>(0x00959338));
+        auto setStatus = reinterpret_cast<void(__thiscall*)(void*, std::string*)>(vtable[3]);
+        setStatus(progressCallback, &status);
+    }
+
+    ext_00661F70(lift_field<void*>(self, 0x420), lift_field<int32_t>(self, 0x16C) + 1);
+
+    while (true) {
+        progressCallback = lift_field<void*>(self, 0x424);
+        if (progressCallback != nullptr) {
+            void* tl = lift_field<void*>(self, 0x420);
+            void* cursor = lift_field<void*>(tl, 0x0C);
+            int32_t currentFrame = lift_field<int32_t>(cursor, 0x08);
+            void** vtable = *reinterpret_cast<void***>(progressCallback);
+            auto setProgress = reinterpret_cast<void(__thiscall*)(void*, int32_t)>(vtable[1]);
+            setProgress(progressCallback, currentFrame);
+        }
+
+        ext_0056E8F0(self, skeletonNode, &ofs);
+        ofs << std::endl;
+
+        void* tl = lift_field<void*>(self, 0x420);
+        void* cursor = lift_field<void*>(tl, 0x0C);
+        int32_t currentFrame = lift_field<int32_t>(cursor, 0x08);
+        if (currentFrame >= lift_field<int32_t>(self, 0x170) + 1) {
+            break;
+        }
+        if (!ext_00661E80(tl)) {
+            break;
+        }
+    }
+
+    ofs.close();
+}
+} // namespace lift_0056EAC0

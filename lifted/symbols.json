@@ -38688,6 +38688,13 @@
     "summary": "One-time guarded init: sets bit 0 of mem_00B3B4B0, runs ext_00662610 and ext_006A6C87 on first call, returns \u0026mem_00B3B494.",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
+  "0x0056EAC0": {
+    "name": "BVHIO::vfunc_13",
+    "class": "BVHIO",
+    "signature": "void __thiscall fn_0056EAC0(void* self, const std::string* filename)",
+    "summary": "Export skeleton hierarchy and motion frames to a BVH file.",
+    "lifted_path": "lifted/classes/BVHIO.cpp"
+  },
   "0x00570350": {
     "name": "CDLCharacterIO::vfunc_3",
     "class": "CDLCharacterIO",
