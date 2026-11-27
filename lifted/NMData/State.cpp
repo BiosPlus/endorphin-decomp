@@ -492,3 +492,19 @@ int32_t __thiscall fn_0049CD30(const void* self, const void* point) {
     return ext_004976D0(rect, point) ? 1 : 0;
 }
 } // namespace lift_0049CD30
+
+// [0x008702F0]
+namespace lift_008702F0 {
+extern void __fastcall ext_006829A0(void* self);
+extern void ext_004A14D0();
+
+// @name NMData::State::vfunc_1_off_18
+// @class NMData::State
+// @summary Releases the handle at offset +0x88 on the first stack argument via ext_006829A0.
+void __thiscall fn_008702F0(void* self, void* arg1, void* arg2) {
+    (void)self;
+    (void)arg2;
+    (void)&ext_004A14D0;
+    ext_006829A0(arg1);
+}
+} // namespace lift_008702F0

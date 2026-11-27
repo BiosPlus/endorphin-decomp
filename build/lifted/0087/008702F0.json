@@ -1,0 +1,14 @@
+{
+  "va": "0x008702F0",
+  "size": 12,
+  "orig_symbol": "NMData::State::vfunc_1_off_18",
+  "src_path": "src/NMData/State.cpp",
+  "lifted_path": "lifted/NMData/State.cpp",
+  "name": "NMData::State::vfunc_1_off_18",
+  "class": "NMData::State",
+  "signature": "void __thiscall fn_008702F0(void* self, void* arg1, void* arg2)",
+  "summary": "Releases the handle at offset +0x88 on the first stack argument via ext_006829A0.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T11:31:16Z"
+}

@@ -106111,6 +106111,13 @@
     "summary": "Copies two little-endian dwords from src into dst as big-endian bytes (8 bytes total).",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x008702F0": {
+    "name": "NMData::State::vfunc_1_off_18",
+    "class": "NMData::State",
+    "signature": "void __thiscall fn_008702F0(void* self, void* arg1, void* arg2)",
+    "summary": "Releases the handle at offset +0x88 on the first stack argument via ext_006829A0.",
+    "lifted_path": "lifted/NMData/State.cpp"
+  },
   "0x00870320": {
     "name": "initPairWithMemberLookup",
     "signature": "DWORD* fn_00870320(void* self, DWORD* outPair)",
