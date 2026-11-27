@@ -1,0 +1,22 @@
+{
+  "va": "0x006A2310",
+  "size": 264,
+  "orig_symbol": "ExprParser::Operators::Conditional::vfunc_2",
+  "src_path": "src/ExprParser/Operators/Conditional.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/Conditional.cpp",
+  "name": "ExprParser::Operators::Conditional::vfunc_2",
+  "class": "ExprParser::Operators::Conditional",
+  "signature": "void fn_006A2310(void* self, uint32_t /*stack arg1: never read by the original*/, void* vec)",
+  "summary": "Throws int 2 unless vec holds at least three 8-byte entries; calls vslot 3 on self with the last three entries (oldest first), then pops the top entry twice (dispatching each) and pops a 4-byte tail.",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::Conditional",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:01:39Z"
+}

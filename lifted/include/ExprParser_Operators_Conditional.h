@@ -10,6 +10,7 @@
 // Recovered field layout for ExprParser::Operators::Conditional:
 namespace lifted_layout {
 struct ExprParser_Operators_Conditional_Fields {
+    // +0x0   void*                    vtable  (evidence: 0x006A2310)
     // +0x4   void*                    field_0x04  (evidence: 0x006A1500)
 };
 } // namespace lifted_layout

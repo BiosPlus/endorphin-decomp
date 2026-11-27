@@ -78794,6 +78794,13 @@
     "summary": "Pops the last two entries of the arg2 vector (passing them to this's virtual slot 3), then pops the last entry of arg2 (dispatching it) and the last 4-byte entry of arg1.",
     "lifted_path": "lifted/ExprParser/Operators/Add.cpp"
   },
+  "0x006A2310": {
+    "name": "ExprParser::Operators::Conditional::vfunc_2",
+    "class": "ExprParser::Operators::Conditional",
+    "signature": "void fn_006A2310(void* self, uint32_t /*stack arg1: never read by the original*/, void* vec)",
+    "summary": "Throws int 2 unless vec holds at least three 8-byte entries; calls vslot 3 on self with the last three entries (oldest first), then pops the top entry twice (dispatching each) and pops a 4-byte tail.",
+    "lifted_path": "lifted/ExprParser/Operators/Conditional.cpp"
+  },
   "0x006A2B10": {
     "name": "TableLookup_006A2B10",
     "signature": "uint32_t fn_006A2B10(uint32_t index)",
