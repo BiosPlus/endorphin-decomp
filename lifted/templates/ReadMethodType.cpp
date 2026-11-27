@@ -82493,3 +82493,57 @@ bool fn_0062E550(void* p) {
     return result;
 }
 } // namespace lift_0062E550
+
+// [0x005D2150] ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>::vfunc_42 (154 bytes)
+namespace lift_005D2150 {
+// Helper callees
+// Constructs the temporary wrapper at `self` from the inner-object field address.
+extern void ext_006720E0(void* self, void* arg);
+// DerivedException::DerivedException (fixed-message exception ctor)
+extern void ext_0046C3C0(void* self);
+// thunk_MSVCR80__CxxThrowException (IAT thunk to _CxxThrowException)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// RTTI type descriptor for the thrown exception
+extern const char mem_009DEC1C[];
+
+// @name ReadMethodType<Interpreter>::vfunc_42
+// @class ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>
+// @summary Forwards to the inner object's vfunc at vtable slot 42 (offset 0xA8) using the field at inner+0x04; throws DerivedException when the inner pointer is null.
+// @field ExprParser::ReadMethodType +0x00 void* inner
+// @field InnerObject +0x04 void* field_0x4
+bool fn_005D2150(void* self, void* arg2) {
+    (void)arg2; // second stack arg is ret 8 ABI slot; not read by the asm
+
+    // 0x00 of self: inner object pointer (mov eax,[arg]; mov eax,[eax])
+    void* inner = lift_field<void*>(self, 0x00);
+
+    // Local frame: slot at frame+0, temp wrapper at frame+4 (asm esp+8 / esp+4)
+    uint8_t frame[0x44] = {};
+    uint8_t* slot = frame;
+    uint8_t* temp = frame + 4;
+
+    if (inner == nullptr) {
+        ext_0046C3C0(temp);
+        ext_006A6DD2(temp, mem_009DEC1C);
+        return false; // unreachable: throw above
+    }
+
+    ext_006720E0(temp, static_cast<uint8_t*>(inner) + 0x04);
+
+    // obj = temp's first dword (ecx); vfunc slot 42 (0xA8) on its vtable
+    void* obj = *reinterpret_cast<void**>(temp);
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    using VFn42 = uint8_t (*)(void* self, void* out, void* arg);
+    uint8_t result = reinterpret_cast<VFn42>(vtbl[42])(obj, slot, self);
+
+    // Release temp: if obj non-null, vfunc slot 30 (0x78) with &temp-ish arg
+    if (obj != nullptr) {
+        void** vtbl2 = *reinterpret_cast<void***>(obj);
+        using VFn30 = void (*)(void* self, void* arg);
+        reinterpret_cast<VFn30>(vtbl2[30])(obj, slot);
+    }
+
+    return result != 0;
+}
+} // namespace lift_005D2150

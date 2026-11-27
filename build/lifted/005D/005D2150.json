@@ -1,0 +1,28 @@
+{
+  "va": "0x005D2150",
+  "size": 154,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cInterpreter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Interpreter::getType(void) const, 0\u003e::vfunc_42",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ReadMethodType\u003cInterpreter\u003e::vfunc_42",
+  "class": "ExprParser::ReadMethodType\u003cInterpreter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Interpreter::getType(void) const, 0\u003e",
+  "signature": "bool fn_005D2150(void* self, void* arg2)",
+  "summary": "Forwards to the inner object's vfunc at vtable slot 42 (offset 0xA8) using the field at inner+0x04; throws DerivedException when the inner pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadMethodType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "inner"
+    },
+    {
+      "class": "InnerObject",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:19:25Z"
+}
