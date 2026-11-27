@@ -5,6 +5,7 @@ extern "C" int32_t __cdecl ext_00594000();
 // Callee 0x00597630: sub_00597630 (99B, not yet lifted). Called with ecx = int32 result from
 // ext_00594000 and returns a pointer in eax, so modelled as thiscall returning an object pointer.
 extern "C" void* __thiscall ext_00597630(void* self);
+#include <string>
 
 // [0x004104E0] MultiTrackView::CompositeEventTrack::vfunc_2 (47 bytes)
 // @name MultiTrackView::CompositeEventTrack::vfunc_2
@@ -179,3 +180,90 @@ extern void __thiscall fn_00413020(void* self, int32_t t, void* range) {
     }
 }
 } // namespace lift_00413020
+
+// [0x00410B50] MultiTrackView::CompositeEventTrack::vfunc_8 (439 bytes)
+namespace lift_00410B50 {
+// @name MultiTrackView::CompositeEventTrack::vfunc_8
+// @class MultiTrackView::CompositeEventTrack
+// @summary Builds a result object for a vector of marker objects; if the flag is clear and the vector is non-empty, allocates a 0x48-byte object labelled "Move markers", then runs each marker through a per-element setup/update pipeline.
+// @field MultiTrackView::CompositeEventTrack +0x50 void* field_0x50
+
+// Known callee 0x00468180: sub_00468180 (Returns global int32 value from mem_00AD7CD8; result unused.)
+extern int32_t ext_00468180();
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT thunk to MFC80!ord_762; used as operator new.)
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x00665DC0: Unknown::Construct (thiscall; initialises self from a string, returns self.)
+extern void* ext_00665DC0(void* self, const void* arg1, uint32_t arg2);
+// Known callee 0x00441020: GetStringLiteral_00440680 (thiscall; returns const char* "$aj".)
+extern const char* ext_00441020(void* self);
+// Known callee 0x00441040: Unknown::addConstantAndTruncateToInt (thiscall; returns int32 truncated sum.)
+extern int32_t ext_00441040(void* self);
+// Known callee 0x004407A0: sub_004407A0 (thiscall; returns int32.)
+extern int32_t ext_004407A0(void* self);
+// Known callee 0x0045E930: sub_0045E930 (this-adjustor thunk, +0x258; one stack arg.)
+extern void* ext_0045E930(void* self, void* arg);
+// Known callee 0x00594000: sub_00594000 (returns a global pointer-sized value; object base used for +0x26C.)
+extern void* ext_00594000();
+// Known callee 0x0048F870: sub_0048F870 (thiscall with five stack args.)
+extern void* ext_0048F870(void* self, void* a1, const char* a2, int32_t a3, int32_t a4, int32_t a5);
+// Known callee 0x00666570: sub_00666570 (thiscall with one stack arg.)
+extern void ext_00666570(void* self, void* arg);
+
+extern int mem_0092BE1C;
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+extern int mem_00925134;
+
+void* fn_00410B50(void* self, void* vec, uint8_t flag) {
+    // IAT / CRT data slots referenced by the original asm (string ctor/dtor, _invalid_parameter).
+    // The C++ std::string and bounds handling below replace them; kept as metadata-only refs.
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF4;
+    (void)&mem_00925134;
+
+    // Early out: flag set, or vector is empty.
+    if (flag != 0) {
+        return nullptr;
+    }
+    void** begin = lift_field<void**>(vec, 0x04);
+    if (begin == nullptr || begin == lift_field<void**>(vec, 0x08)) {
+        return nullptr;
+    }
+
+    (void)ext_00468180();
+
+    void* result = nullptr;
+    void* obj = ext_006A5C62(0x48);
+    if (obj != nullptr) {
+        std::string label(reinterpret_cast<const char*>(&mem_0092BE1C));
+        result = ext_00665DC0(obj, &label, 0);
+    }
+
+    for (void** it = begin;; ++it) {
+        void** end = lift_field<void**>(vec, 0x08);
+        if (it == end) {
+            break;
+        }
+
+        void* marker = *it;
+        const char* tag = ext_00441020(marker);
+        int32_t trunc = ext_00441040(marker);
+        int32_t slot = ext_004407A0(marker);
+
+        void* owner = lift_field<void*>(self, 0x50);
+        void* r = ext_0045E930(owner, marker);
+        if (r != nullptr) {
+            void* nobj = ext_006A5C62(0x50);
+            void* ret48 = nullptr;
+            if (nobj != nullptr) {
+                void* g = ext_00594000();
+                int32_t val = lift_field<int32_t>(g, 0x26C);
+                ret48 = ext_0048F870(nobj, r, tag, trunc, slot, val);
+            }
+            ext_00666570(result, ret48);
+        }
+    }
+
+    return result;
+}
+} // namespace lift_00410B50

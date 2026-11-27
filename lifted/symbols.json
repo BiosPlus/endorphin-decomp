@@ -1547,6 +1547,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BED0 (NMData::RealChannel::vfunc_9).",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x00410B50": {
+    "name": "MultiTrackView::CompositeEventTrack::vfunc_8",
+    "class": "MultiTrackView::CompositeEventTrack",
+    "signature": "void* fn_00410B50(void* self, void* vec, uint8_t flag)",
+    "summary": "Builds a result object for a vector of marker objects; if the flag is clear and the vector is non-empty, allocates a 0x48-byte object labelled \"Move markers\", then runs each marker through a per-element setup/update pipeline.",
+    "lifted_path": "lifted/MultiTrackView/CompositeEventTrack.cpp"
+  },
   "0x00410D10": {
     "name": "Range::get",
     "class": "Range",

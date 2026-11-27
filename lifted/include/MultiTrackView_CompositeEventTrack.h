@@ -17,5 +17,6 @@ struct MultiTrackView_CompositeEventTrack_Fields {
     // +0x37  uint8_t                  field_0x37  (evidence: 0x00413020)
     // +0x3C  RECT                     field_0x3c  (evidence: 0x00413020)
     // +0x4C  int32_t                  field_0x4c  (evidence: 0x00413020)
+    // +0x50  void*                    field_0x50  (evidence: 0x00410B50)
 };
 } // namespace lifted_layout

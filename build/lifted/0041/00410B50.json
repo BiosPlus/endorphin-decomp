@@ -1,0 +1,22 @@
+{
+  "va": "0x00410B50",
+  "size": 439,
+  "orig_symbol": "MultiTrackView::CompositeEventTrack::vfunc_8",
+  "src_path": "src/MultiTrackView/CompositeEventTrack.cpp",
+  "lifted_path": "lifted/MultiTrackView/CompositeEventTrack.cpp",
+  "name": "MultiTrackView::CompositeEventTrack::vfunc_8",
+  "class": "MultiTrackView::CompositeEventTrack",
+  "signature": "void* fn_00410B50(void* self, void* vec, uint8_t flag)",
+  "summary": "Builds a result object for a vector of marker objects; if the flag is clear and the vector is non-empty, allocates a 0x48-byte object labelled \"Move markers\", then runs each marker through a per-element setup/update pipeline.",
+  "fields": [
+    {
+      "class": "MultiTrackView::CompositeEventTrack",
+      "offset": "+0x50",
+      "type": "void*",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:57:15Z"
+}
