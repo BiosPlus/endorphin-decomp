@@ -3,6 +3,7 @@
 #include <new>
 #include <string>
 #include <cstdint>
+#include <cstring>
 
 // [0x004409D0] sub_004409D0 (10 bytes)
 namespace lift_004409D0 {
@@ -2729,3 +2730,63 @@ float* __thiscall sub_0044A2D0(void* self, float* out) {
     return out;
 }
 } // namespace lift_0044A2D0
+
+// [0x0044BC60] sub_0044BC60 (142 bytes)
+namespace lift_0044BC60 {
+extern uint32_t mem_00924FE4;  // IAT slot: std::string ctor from const char*
+extern uint32_t mem_00924FDC;  // IAT slot: std::string operator=(const std::string&)
+extern uint32_t mem_00924FF4;  // IAT slot: std::string dtor
+extern const char mem_00928B5D[];  // "" literal used to construct the temp string
+extern const char mem_00AD1FBC[];  // literal chosen when self+0x74 is set
+extern const char mem_00AD210C[];  // literal chosen when self+0x75 is set
+
+// @name invokeVirtualWithTempString
+// @summary If the object at self+0x64 is non-null, builds a temporary std::string (seeded from a literal, then overwritten by one of two literals chosen from the flag bytes at +0x74/+0x75), passes it to vtable slot 42 (0xA8) of that object, and destroys the temporary.
+// @field self +0x64 void* field_0x64
+// @field self +0x74 uint8_t field_0x74
+// @field self +0x75 uint8_t field_0x75
+
+namespace lift_0044BC60 {
+
+using StringCtorFn = void (*)(void* str, const char* s);
+using StringAssignFn = void (*)(void* str, const char* s);
+using StringDtorFn = void (*)(void* str);
+using VirtualOutFn = void (*)(void* obj, void* out);
+
+void fn_0044BC60(void* self) {
+    auto* const base = static_cast<unsigned char*>(self);
+
+    void* const obj = *reinterpret_cast<void**>(base + 0x64);
+    if (obj == nullptr) {
+        return;
+    }
+
+    // Temporary std::string (MSVC 2005 layout; 0x18 bytes).
+    alignas(8) unsigned char tmp[0x18];
+    std::memset(tmp, 0, sizeof(tmp));
+
+    auto ctor = reinterpret_cast<StringCtorFn>(static_cast<uintptr_t>(mem_00924FE4));
+    ctor(tmp, mem_00928B5D);
+
+    const char* literal = nullptr;
+    if (base[0x74] != 0) {
+        literal = mem_00AD1FBC;
+    } else if (base[0x75] != 0) {
+        literal = mem_00AD210C;
+    }
+
+    if (literal != nullptr) {
+        auto assign = reinterpret_cast<StringAssignFn>(static_cast<uintptr_t>(mem_00924FDC));
+        assign(tmp, literal);
+    }
+
+    void** const vtbl = *reinterpret_cast<void***>(obj);
+    auto vfn = reinterpret_cast<VirtualOutFn>(vtbl[0xA8 / sizeof(void*)]);
+    vfn(obj, tmp);
+
+    auto dtor = reinterpret_cast<StringDtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+    dtor(tmp);
+}
+
+} // namespace lift_0044BC60
+} // namespace lift_0044BC60

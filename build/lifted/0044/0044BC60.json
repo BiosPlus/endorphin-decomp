@@ -1,0 +1,33 @@
+{
+  "va": "0x0044BC60",
+  "size": 142,
+  "orig_symbol": "sub_0044BC60",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "invokeVirtualWithTempString",
+  "signature": "extern \"C\" uint32_t mem_00924FDC;  // IAT slot: std::string operator=(const std::string\u0026) extern \"C\" uint32_t mem_00924FF4;  // IAT slot: std::string dtor extern \"C\" const char mem_00928B5D[];  // \"\" literal used to construct the temp string extern \"C\" const char mem_00AD1FBC[];  // literal chosen when self+0x74 is set extern \"C\" const char mem_00AD210C[];  // literal chosen when self+0x75 is set namespace lift_0044BC60",
+  "summary": "If the object at self+0x64 is non-null, builds a temporary std::string (seeded from a literal, then overwritten by one of two literals chosen from the flag bytes at +0x74/+0x75), passes it to vtable slot 42 (0xA8) of that object, and destroys the temporary.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x64",
+      "type": "void*",
+      "name": "field_0x64"
+    },
+    {
+      "class": "self",
+      "offset": "+0x74",
+      "type": "uint8_t",
+      "name": "field_0x74"
+    },
+    {
+      "class": "self",
+      "offset": "+0x75",
+      "type": "uint8_t",
+      "name": "field_0x75"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:30:08Z"
+}

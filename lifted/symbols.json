@@ -5924,6 +5924,12 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x68 and tail-calls sub_00530690.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x0044BC60": {
+    "name": "invokeVirtualWithTempString",
+    "signature": "extern \"C\" uint32_t mem_00924FDC;  // IAT slot: std::string operator=(const std::string\u0026) extern \"C\" uint32_t mem_00924FF4;  // IAT slot: std::string dtor extern \"C\" const char mem_00928B5D[];  // \"\" literal used to construct the temp string extern \"C\" const char mem_00AD1FBC[];  // literal chosen when self+0x74 is set extern \"C\" const char mem_00AD210C[];  // literal chosen when self+0x75 is set namespace lift_0044BC60",
+    "summary": "If the object at self+0x64 is non-null, builds a temporary std::string (seeded from a literal, then overwritten by one of two literals chosen from the flag bytes at +0x74/+0x75), passes it to vtable slot 42 (0xA8) of that object, and destroys the temporary.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044BE40": {
     "name": "RenderView::vfunc_1",
     "class": "RenderView",
