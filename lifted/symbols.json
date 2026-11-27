@@ -55041,6 +55041,13 @@
     "summary": "Forwards to the base NMData::RelationshipData::vfunc_22 for this object and returns this.",
     "lifted_path": "lifted/NMData/RootRelationshipData.cpp"
   },
+  "0x005EBEC0": {
+    "name": "NMData::HingeData::vfunc_22",
+    "class": "NMData::HingeData",
+    "signature": "void* __thiscall fn_005EBEC0(void* self, void* arg)",
+    "summary": "Resolves a handle from arg via 0x006404E0, forwards it to RelationshipData::vfunc_22, calls vtable slot 22 on the object at +0x17C, then, if the object at +0x190 exists and its vfunc 28 returns true, or its flag at +0x178 differs from this flag, resets the child name via 0x00640110 and 0x00640A80; returns arg.",
+    "lifted_path": "lifted/NMData/HingeData.cpp"
+  },
   "0x005EBF70": {
     "name": "NMData::FixedPathJointData::vfunc_22",
     "class": "NMData::FixedPathJointData",

@@ -1,0 +1,34 @@
+{
+  "va": "0x005EBEC0",
+  "size": 170,
+  "orig_symbol": "NMData::HingeData::vfunc_22",
+  "src_path": "src/NMData/HingeData.cpp",
+  "lifted_path": "lifted/NMData/HingeData.cpp",
+  "name": "NMData::HingeData::vfunc_22",
+  "class": "NMData::HingeData",
+  "signature": "void* __thiscall fn_005EBEC0(void* self, void* arg)",
+  "summary": "Resolves a handle from arg via 0x006404E0, forwards it to RelationshipData::vfunc_22, calls vtable slot 22 on the object at +0x17C, then, if the object at +0x190 exists and its vfunc 28 returns true, or its flag at +0x178 differs from this flag, resets the child name via 0x00640110 and 0x00640A80; returns arg.",
+  "fields": [
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0x178",
+      "type": "uint8_t",
+      "name": "field_0x178"
+    },
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0x17C",
+      "type": "void*",
+      "name": "field_0x17c"
+    },
+    {
+      "class": "NMData::HingeData",
+      "offset": "+0x190",
+      "type": "void*",
+      "name": "field_0x190"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:10:21Z"
+}

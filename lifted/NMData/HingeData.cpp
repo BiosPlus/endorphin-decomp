@@ -284,3 +284,48 @@ uint8_t fn_005ED550(void* self, uint32_t unusedArg0, uint32_t flags) {
     return gate;
 }
 } // namespace lift_005ED550
+
+// [0x005EBEC0] NMData::HingeData::vfunc_22 (170 bytes)
+namespace lift_005EBEC0 {
+extern void* __thiscall ext_006404E0(void* self, void* arg);
+extern void __thiscall ext_005EB5A0(void* self, void* arg);
+extern void* __thiscall ext_00640110(void* self, void* arg);
+// Known callee 0x00640A80: ResetChildNameFromBool (Resets the child object's name to "true" or "false" depending on the boolean argument.)
+extern void ext_00640A80(void* value, uint8_t flag);
+extern void* mem_00A9EF9C;
+extern void* mem_00A9F724;
+
+// @name NMData::HingeData::vfunc_22
+// @class NMData::HingeData
+// @summary Resolves a handle from arg via 0x006404E0, forwards it to RelationshipData::vfunc_22, calls vtable slot 22 on the object at +0x17C, then, if the object at +0x190 exists and its vfunc 28 returns true, or its flag at +0x178 differs from this flag, resets the child name via 0x00640110 and 0x00640A80; returns arg.
+// @field NMData::HingeData +0x178 uint8_t field_0x178
+// @field NMData::HingeData +0x17C void* field_0x17c
+// @field NMData::HingeData +0x190 void* field_0x190
+void* __thiscall fn_005EBEC0(void* self, void* arg) {
+    void* handle = ext_006404E0(arg, mem_00A9EF9C);
+    ext_005EB5A0(self, handle);
+
+    // Vtable slot 22 (offset 0x58) of the object at +0x17C, thiscall, takes handle.
+    void* sub = lift_field<void*>(self, 0x17C);
+    void** sub_vt = *reinterpret_cast<void***>(sub);
+    reinterpret_cast<void(__thiscall*)(void*, void*)>(sub_vt[22])(sub, handle);
+
+    void* other = lift_field<void*>(self, 0x190);
+    if (other == nullptr) {
+        return arg;
+    }
+
+    // Vtable slot 28 (offset 0x70) of the object at +0x190: thiscall, no args, bool in AL.
+    void** other_vt = *reinterpret_cast<void***>(other);
+    bool other_true = reinterpret_cast<uint8_t(__thiscall*)(void*)>(other_vt[28])(other) != 0;
+
+    if (other_true) {
+        void* r = ext_00640110(handle, mem_00A9F724);
+        ext_00640A80(r, lift_field<uint8_t>(self, 0x178));
+    } else if (lift_field<uint8_t>(other, 0x178) != lift_field<uint8_t>(self, 0x178)) {
+        void* r = ext_00640110(handle, mem_00A9F724);
+        ext_00640A80(r, lift_field<uint8_t>(self, 0x178));
+    }
+    return arg;
+}
+} // namespace lift_005EBEC0
