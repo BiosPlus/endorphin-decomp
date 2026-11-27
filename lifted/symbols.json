@@ -74572,6 +74572,13 @@
     "summary": "Getter returning int32_t field at offset +0x2D0.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x0070F2E0": {
+    "name": "Unknown::insertArgsIntoTwoArrays_0070F2E0",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0070F2E0(void* self, int32_t a, int32_t b, int32_t c)",
+    "summary": "If the first argument is non-negative, inserts it into the DynamicArray at +0x2D0 and the second argument into the DynamicArray at +0x2E8 via ext_006D2170, each at the index read from that array's first dword.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070F330": {
     "name": "sub_0070F330",
     "signature": "extern \"C\" int32_t __fastcall fn_0070F330(void* self)",

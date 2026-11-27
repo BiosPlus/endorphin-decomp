@@ -2665,3 +2665,32 @@ uint32_t __thiscall fn_00707990(void* self, uint32_t a1, uint32_t a2, uint32_t a
     return ext_006FAD00(self, a1, a2, a3, a4, a5, a6);
 }
 } // namespace lift_00707990
+
+// [0x0070F2E0] sub_0070F2E0 (80 bytes)
+namespace lift_0070F2E0 {
+// Known callee 0x006D2170: DynamicArray::InsertAt (Inserts an element at the given index (clamped to count), growing the buffer via realloc if needed.)
+extern int32_t ext_006D2170(void* self, int32_t index, const void* elem);
+
+// @name Unknown::insertArgsIntoTwoArrays_0070F2E0
+// @class Unknown
+// @summary If the first argument is non-negative, inserts it into the DynamicArray at +0x2D0 and the second argument into the DynamicArray at +0x2E8 via ext_006D2170, each at the index read from that array's first dword.
+// @field Unknown +0x2d0 int32_t field_0x2d0
+// @field Unknown +0x2e8 int32_t field_0x2e8
+void __thiscall fn_0070F2E0(void* self, int32_t a, int32_t b, int32_t c) {
+    if (a < 0) {
+        return;
+    }
+    // Third stack argument is popped by the callee (ret 0xc) but never read.
+    (void)c;
+
+    // Insert a into the array at +0x2d0, index taken from its first dword.
+    int32_t a_copy = a;
+    int32_t idx1 = lift_field<int32_t>(self, 0x2d0);
+    ext_006D2170(static_cast<char*>(self) + 0x2d0, idx1, &a_copy);
+
+    // Insert b into the array at +0x2e8, index taken from its first dword.
+    int32_t b_copy = b;
+    int32_t idx2 = lift_field<int32_t>(self, 0x2e8);
+    ext_006D2170(static_cast<char*>(self) + 0x2e8, idx2, &b_copy);
+}
+} // namespace lift_0070F2E0
