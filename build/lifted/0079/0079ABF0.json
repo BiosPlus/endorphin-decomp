@@ -1,0 +1,13 @@
+{
+  "va": "0x0079ABF0",
+  "size": 144,
+  "orig_symbol": "sub_0079ABF0",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "sub_0079ABF0",
+  "signature": "int32_t __cdecl sub_0079ABF0(int32_t op, uint32_t value)",
+  "summary": "Manages a fixed-capacity (94) set of 32-bit values: insert (0), contains (1), or clear (2).",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:48:16Z"
+}

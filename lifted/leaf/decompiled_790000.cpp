@@ -1540,3 +1540,42 @@ void* fn_00792810(uint32_t arg1, uint32_t arg2) {
     return self;
 }
 } // namespace lift_00792810
+
+// [0x0079ABF0]
+namespace lift_0079ABF0 {
+extern int32_t mem_00B60F40;
+extern uint32_t mem_00B60DC0[];
+
+// @name sub_0079ABF0
+// @summary Manages a fixed-capacity (94) set of 32-bit values: insert (0), contains (1), or clear (2).
+int32_t __cdecl sub_0079ABF0(int32_t op, uint32_t value) {
+    if (op == 0) {
+        int32_t count = mem_00B60F40;
+        if (count >= 0x5E) {
+            return 0;
+        }
+        for (int32_t i = 0; i < count; ++i) {
+            if (mem_00B60DC0[i] == value) {
+                return 1;
+            }
+        }
+        mem_00B60DC0[count] = value;
+        mem_00B60F40 = count + 1;
+        return 1;
+    }
+    if (op == 1) {
+        int32_t count = mem_00B60F40;
+        for (int32_t i = 0; i < count; ++i) {
+            if (mem_00B60DC0[i] == value) {
+                return 1;
+            }
+        }
+        return 0;
+    }
+    if (op == 2) {
+        mem_00B60F40 = 0;
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_0079ABF0
