@@ -47892,6 +47892,12 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x0 and tail-calls sub_006667A0.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x006668B0": {
+    "name": "ReleaseFiveStringMembers_006668B0",
+    "signature": "void fn_006668B0(void* self)",
+    "summary": "Destroys five std::string members (at +0x74, +0x54, +0x38, +0x1C, +0x00) in reverse order via the MSVCP80 basic_string destructor import.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00666930": {
     "name": "sub_00666930",
     "class": "Unknown",

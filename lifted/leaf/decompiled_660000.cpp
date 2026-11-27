@@ -2780,3 +2780,29 @@ void* fn_00665DC0(void* self, const void* arg1, uint32_t arg2) {
     return self;
 }
 } // namespace lift_00665DC0
+
+// [0x006668B0] sub_006668B0 (120 bytes)
+namespace lift_006668B0 {
+extern int mem_00924FF4;
+
+// @name ReleaseFiveStringMembers_006668B0
+// @summary Destroys five std::string members (at +0x74, +0x54, +0x38, +0x1C, +0x00) in reverse order via the MSVCP80 basic_string destructor import.
+// @field ObjectWithStrings +0x00 std::string field_0x00
+// @field ObjectWithStrings +0x1C std::string field_0x1C
+// @field ObjectWithStrings +0x38 std::string field_0x38
+// @field ObjectWithStrings +0x54 std::string field_0x54
+// @field ObjectWithStrings +0x74 std::string field_0x74
+void fn_006668B0(void* self) {
+    using StringDtorFn = void (*)(void*);
+
+    // Indirect call through the IAT slot mem_00924FF4 (MSVCP80 basic_string::~basic_string).
+    const StringDtorFn string_dtor = *reinterpret_cast<StringDtorFn*>(&mem_00924FF4);
+    uint8_t* const base = static_cast<uint8_t*>(self);
+
+    string_dtor(base + 0x74);
+    string_dtor(base + 0x54);
+    string_dtor(base + 0x38);
+    string_dtor(base + 0x1C);
+    string_dtor(base + 0x00);
+}
+} // namespace lift_006668B0
