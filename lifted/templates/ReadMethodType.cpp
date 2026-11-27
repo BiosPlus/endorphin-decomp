@@ -187783,3 +187783,56 @@ uint8_t fn_00604EF0(void* holder, void* /*unused*/) {
     return result;
 }
 } // namespace lift_00604EF0
+
+// [0x0059FD30] ExprParser::ReadMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0>::vfunc_42 (170 bytes)
+namespace lift_0059FD30 {
+// Callee 0x0059DEB0 (sub_0059DEB0): virtual thunk, calls vtable slot +0x80 on its
+// receiver and returns the float result (st0 in the original).
+extern float ext_0059DEB0(void* self);
+// Callee 0x00672080 (sub_00672080, 18B): fills an 8-byte wrapper at self (ecx) from a float arg.
+extern void ext_00672080(void* self, float value);
+// Callee 0x0046C3C0 (DerivedException::DerivedException): constructs the exception object in place.
+extern void ext_0046C3C0(void* self);
+// Callee 0x006A6DD2 (thunk_MSVCR80__CxxThrowException): raises exc with the throw-info descriptor.
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+// Throw-info descriptor for the exception raised on a null target (VA 0x009DEC1C).
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::CharacterData, float, ...>::vfunc_42
+// @class ExprParser::ReadMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0>
+// @summary Reads a float from the target's sub-object (+0x04, vslot +0x80), wraps it in a temp, calls the target's vfunc +0xA8 with (temp, out), destroys the temp via vfunc +0x78, and returns the vfunc's byte result; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+uint8_t __stdcall fn_0059FD30(void* holder, void* out) {
+    void* target = *static_cast<void**>(holder);
+    if (target == nullptr) {
+        alignas(8) uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    float value = ext_0059DEB0(static_cast<uint8_t*>(target) + 4);
+
+    alignas(8) uint8_t temp[8];
+    ext_00672080(temp, value);
+
+    // The wrapper's second dword is the object whose vfunc +0xA8 is invoked.
+    void* callee = lift_field<void*>(temp, 4);
+    using VFunc42 = uint8_t(__thiscall*)(void* self, void* temp, void* out);
+    void* vtable = lift_field<void*>(callee, 0);
+    VFunc42 fn = reinterpret_cast<VFunc42>(lift_field<void*>(vtable, 0xA8));
+    uint8_t result = fn(callee, temp, out);
+
+    // Cleanup: the wrapper's object may have been updated by the call, so reload it.
+    void* owner = lift_field<void*>(temp, 4);
+    if (owner != nullptr) {
+        using VFunc30 = void(__thiscall*)(void* self, void* temp);
+        void* ownerVtable = lift_field<void*>(owner, 0);
+        VFunc30 dtor = reinterpret_cast<VFunc30>(lift_field<void*>(ownerVtable, 0x78));
+        dtor(owner, temp);
+    }
+
+    return result;
+}
+} // namespace lift_0059FD30

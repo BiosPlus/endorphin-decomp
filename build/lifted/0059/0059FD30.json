@@ -1,0 +1,28 @@
+{
+  "va": "0x0059FD30",
+  "size": 170,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e::vfunc_42",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, ...\u003e::vfunc_42",
+  "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e",
+  "signature": "uint8_t __stdcall fn_0059FD30(void* holder, void* out)",
+  "summary": "Reads a float from the target's sub-object (+0x04, vslot +0x80), wraps it in a temp, calls the target's vfunc +0xA8 with (temp, out), destroys the temp via vfunc +0x78, and returns the vfunc's byte result; throws if the target pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:58:27Z"
+}

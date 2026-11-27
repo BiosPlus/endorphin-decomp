@@ -42243,6 +42243,13 @@
     "summary": "Reads a float from the value pointed to by the argument (via its +0x00 pointer, at +0x04 of that target) and formats it into the caller's std::string sret slot; throws if the pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0059FD30": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, ...\u003e::vfunc_42",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e",
+    "signature": "uint8_t __stdcall fn_0059FD30(void* holder, void* out)",
+    "summary": "Reads a float from the target's sub-object (+0x04, vslot +0x80), wraps it in a temp, calls the target's vfunc +0xA8 with (temp, out), destroys the temp via vfunc +0x78, and returns the vfunc's byte result; throws if the target pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0059FDE0": {
     "name": "copyTreeStringRange",
     "signature": "void* __cdecl fn_0059FDE0(void* first_cont, void* first_node, void* last_cont, void* last_node, void* dest)",
