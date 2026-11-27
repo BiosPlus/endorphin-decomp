@@ -1465,3 +1465,50 @@ void* __thiscall fn_004BBB00(void* self, CheckedIter* out_iter, uint32_t contain
     return out_iter;
 }
 } // namespace lift_004BBB00
+
+// [0x004B5180]
+namespace lift_004B5180 {
+// @name VectorEraseElement
+// @summary Erases an element from a pointer vector, destroying the object and shifting remaining elements.
+// @field Vector +0x08 uint32_t end_ptr
+
+
+extern void ext_006A5C5C(void* ptr);
+
+extern void (*mem_00925134)(void);
+extern void (__thiscall *mem_00924FF4)(void* self);
+extern int (__cdecl *mem_009251EC)(void* dst, size_t dst_size, const void* src, size_t count);
+
+struct VectorIterator {
+    void* container;
+    uint32_t* ptr;
+};
+
+extern VectorIterator* __thiscall fn_004B5180(void* self, VectorIterator* out_iter, void* container, uint32_t* elem_ptr) {
+    if (!container) {
+        mem_00925134();
+    }
+    if (elem_ptr >= *reinterpret_cast<uint32_t**>(static_cast<uint8_t*>(container) + 0x8)) {
+        mem_00925134();
+    }
+
+    uint32_t obj = *elem_ptr;
+    if (obj != 0) {
+        mem_00924FF4(reinterpret_cast<void*>(static_cast<uintptr_t>(obj) + 0x4));
+        ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+    }
+
+    uint32_t end_addr = lift_field<uint32_t>(self, 0x8);
+    uint32_t* next_elem = elem_ptr + 1;
+    int32_t count = static_cast<int32_t>(end_addr - static_cast<uint32_t>(reinterpret_cast<uintptr_t>(next_elem))) >> 2;
+    if (count > 0) {
+        size_t bytes = static_cast<size_t>(count) * 4;
+        mem_009251EC(elem_ptr, bytes, next_elem, bytes);
+    }
+
+    lift_field<uint32_t>(self, 0x8) = end_addr - 4;
+    out_iter->ptr = elem_ptr;
+    out_iter->container = container;
+    return out_iter;
+}
+} // namespace lift_004B5180
