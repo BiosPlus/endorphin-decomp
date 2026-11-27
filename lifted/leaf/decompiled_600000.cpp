@@ -1478,3 +1478,55 @@ void* fn_0060CD40(void* self) {
     return self;
 }
 } // namespace lift_0060CD40
+
+// [0x006080D0] sub_006080D0 (140 bytes)
+namespace lift_006080D0 {
+// Known callee 0x00602EF0: sub_00602EF0 (Destructor tail-call: restores vtable mem_0096F81C and tail-calls base destructor sub_0065F440.)
+extern void ext_00602EF0(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764 — frees a heap pointer.)
+extern void ext_006A5C5C(void* ptr);
+// IAT slot for std::basic_string<char>::~basic_string (MSVCP80), read at 0x00924FF4.
+extern int mem_00924FF4;
+
+// @name Unknown::releaseOwnedBuffers
+// @class Unknown
+// @summary Destroys the std::string at +0x8c, frees and clears the owned pointers at +0x7c and +0x64, then tail-calls the base destructor sub_00602EF0.
+// @field Unknown +0x64 uint32_t field_0x64
+// @field Unknown +0x68 uint32_t field_0x68
+// @field Unknown +0x6c uint32_t field_0x6c
+// @field Unknown +0x7c uint32_t field_0x7c
+// @field Unknown +0x80 uint32_t field_0x80
+// @field Unknown +0x84 uint32_t field_0x84
+// @field Unknown +0x8c std::string field_0x8c
+void fn_006080D0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Destroy the embedded std::string at +0x8c (MSVC __thiscall dtor via IAT slot).
+    using StringDtor = void (*)(void*);
+    auto string_dtor = reinterpret_cast<StringDtor>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    string_dtor(base + 0x8c);
+
+    // Free +0x7c if set, then clear it and the two companion slots.
+    uint32_t p7c = lift_field<uint32_t>(self, 0x7c);
+    if (p7c != 0) {
+        ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(p7c)));
+    }
+    lift_field<uint32_t>(self, 0x7c) = 0;
+    lift_field<uint32_t>(self, 0x80) = 0;
+    lift_field<uint32_t>(self, 0x84) = 0;
+
+    // Free +0x64 if set, then clear it and the two following slots.
+    uint32_t p64 = lift_field<uint32_t>(self, 0x64);
+    if (p64 != 0) {
+        ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(p64)));
+    }
+    lift_field<uint32_t>(self, 0x64) = 0;
+    lift_field<uint32_t>(self, 0x68) = 0;
+    lift_field<uint32_t>(self, 0x6c) = 0;
+
+    // Tail-call base destructor path (vtable restore + base dtor).
+    ext_00602EF0(self);
+    (void)base;
+}
+} // namespace lift_006080D0

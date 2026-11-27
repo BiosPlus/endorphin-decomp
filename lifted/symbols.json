@@ -43472,6 +43472,13 @@
     "summary": "Resets the three array pointers, then for count \u003e 0 allocates count float slots (throws if count \u003e 0x3FFFFFFF) and fills them with *value_ptr.",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x006080D0": {
+    "name": "Unknown::releaseOwnedBuffers",
+    "class": "Unknown",
+    "signature": "void fn_006080D0(void* self)",
+    "summary": "Destroys the std::string at +0x8c, frees and clears the owned pointers at +0x7c and +0x64, then tail-calls the base destructor sub_00602EF0.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x00608160": {
     "name": "EffectorWithModes::vfunc_0",
     "class": "EffectorWithModes",

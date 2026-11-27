@@ -1,0 +1,58 @@
+{
+  "va": "0x006080D0",
+  "size": 140,
+  "orig_symbol": "sub_006080D0",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "Unknown::releaseOwnedBuffers",
+  "class": "Unknown",
+  "signature": "void fn_006080D0(void* self)",
+  "summary": "Destroys the std::string at +0x8c, frees and clears the owned pointers at +0x7c and +0x64, then tail-calls the base destructor sub_00602EF0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "uint32_t",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x6C",
+      "type": "uint32_t",
+      "name": "field_0x6c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x7C",
+      "type": "uint32_t",
+      "name": "field_0x7c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "uint32_t",
+      "name": "field_0x80"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "uint32_t",
+      "name": "field_0x84"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8C",
+      "type": "std::string",
+      "name": "field_0x8c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:27:49Z"
+}
