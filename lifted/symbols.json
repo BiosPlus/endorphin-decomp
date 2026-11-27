@@ -78320,6 +78320,13 @@
     "summary": "Parses seven 32-bit fields at +0x1CC..+0x1E4 from a string argument via sscanf.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
+  "0x00725D60": {
+    "name": "Unknown::formatFieldsAndAssign_00725D60",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* fn_00725D60(void* ecx, void* target)",
+    "summary": "Formats seven int fields of this into a 20-byte buffer via sprintf, assigns it to the target object, and returns the target.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x00725DE0": {
     "name": "xorChainBlock16",
     "signature": "void sub_00725DE0(uint8_t* buf, const uint8_t* key)",

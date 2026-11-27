@@ -1,0 +1,58 @@
+{
+  "va": "0x00725D60",
+  "size": 128,
+  "orig_symbol": "sub_00725D60",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "Unknown::formatFieldsAndAssign_00725D60",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* fn_00725D60(void* ecx, void* target)",
+  "summary": "Formats seven int fields of this into a 20-byte buffer via sprintf, assigns it to the target object, and returns the target.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1CC",
+      "type": "int32_t",
+      "name": "field_0x1cc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1D0",
+      "type": "int32_t",
+      "name": "field_0x1d0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1D4",
+      "type": "int32_t",
+      "name": "field_0x1d4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1D8",
+      "type": "int32_t",
+      "name": "field_0x1d8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1DC",
+      "type": "int32_t",
+      "name": "field_0x1dc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1E0",
+      "type": "int32_t",
+      "name": "field_0x1e0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1E4",
+      "type": "int32_t",
+      "name": "field_0x1e4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T05:01:08Z"
+}

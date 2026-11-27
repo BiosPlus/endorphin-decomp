@@ -5,6 +5,7 @@ extern "C" void __cdecl ext_006A5C5C(void* ptr);
 #include <cstdint>
 #include <cstring>
 #include <ctime>
+#include <cstdio>
 
 // [0x0072D620] sub_0072D620 (32 bytes)
 // @name sub_0072D620
@@ -1325,3 +1326,43 @@ void* fn_0072B0A0(void* self, void* other) {
     return self;
 }
 } // namespace lift_0072B0A0
+
+// [0x00725D60]
+namespace lift_00725D60 {
+// Callee: Unknown::initAssignCString_006B9D80 (thiscall, one stack arg).
+extern void* ext_006B9D80(void* ecx, const char* s);
+// Format string in .rdata (passed to sprintf as the second argument).
+extern const char mem_00aacfb4[];
+// IAT slot for MSVCR80!sprintf in the original binary.
+extern const uint32_t mem_00925218;
+
+// @name Unknown::formatFieldsAndAssign_00725D60
+// @class Unknown
+// @summary Formats seven int fields of this into a 20-byte buffer via sprintf, assigns it to the target object, and returns the target.
+// @field Unknown +0x1cc int32_t field_0x1cc
+// @field Unknown +0x1d0 int32_t field_0x1d0
+// @field Unknown +0x1d4 int32_t field_0x1d4
+// @field Unknown +0x1d8 int32_t field_0x1d8
+// @field Unknown +0x1dc int32_t field_0x1dc
+// @field Unknown +0x1e0 int32_t field_0x1e0
+// @field Unknown +0x1e4 int32_t field_0x1e4
+extern void* fn_00725D60(void* ecx, void* target) {
+    (void)&mem_00925218;
+
+    auto* self = static_cast<unsigned char*>(ecx);
+    auto field = [self](std::ptrdiff_t off) -> int32_t {
+        return *reinterpret_cast<int32_t*>(self + off);
+    };
+
+    // Original divides field +0x1e4 by 10 (signed magic-number division).
+    const int32_t quot10 = field(0x1e4) / 10;
+
+    char buf[20];
+    std::snprintf(buf, sizeof buf, mem_00aacfb4,
+                  field(0x1e0), field(0x1d0), field(0x1d8), field(0x1d4),
+                  quot10, field(0x1cc), field(0x1dc));
+
+    ext_006B9D80(target, buf);
+    return target;
+}
+} // namespace lift_00725D60
