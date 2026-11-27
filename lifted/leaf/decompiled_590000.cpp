@@ -1640,3 +1640,49 @@ int32_t __thiscall sub_005963F0(void* self) {
     return sum;
 }
 } // namespace lift_005963F0
+
+// [0x00596A70]
+namespace lift_00596A70 {
+extern void* mem_00925134;
+extern void ext_00673C20(void* self);
+
+// @name forEachTreeNode
+// @summary Iterates over a checked tree iterator range, invoking a callback on each node's value at +0x28.
+// @field TreeContainer +0x04 void* headNode
+// @field TreeNode +0x28 void* value
+void** fn_00596A70(void** out_fn, void* begin_container, void* begin_node, void* end_container, void* end_node, void* fn) {
+    struct TreeIter {
+        void* container;
+        void* node;
+    };
+
+    using InvalidParamFn = void(*)();
+    using CallbackFn = void(*)(void*);
+
+    InvalidParamFn invalid_param = *reinterpret_cast<InvalidParamFn*>(&mem_00925134);
+    TreeIter it{begin_container, begin_node};
+
+    for (;;) {
+        if (it.container == nullptr || it.container != end_container) {
+            invalid_param();
+        }
+        if (it.node == end_node) {
+            break;
+        }
+        if (it.container == nullptr) {
+            invalid_param();
+        }
+        if (it.node == lift_field<void*>(it.container, 0x04)) {
+            invalid_param();
+        }
+
+        CallbackFn callback = reinterpret_cast<CallbackFn>(fn);
+        callback(lift_field<void*>(it.node, 0x28));
+
+        ext_00673C20(&it);
+    }
+
+    *out_fn = fn;
+    return out_fn;
+}
+} // namespace lift_00596A70
