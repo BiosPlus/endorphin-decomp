@@ -1,0 +1,64 @@
+{
+  "va": "0x004F04A0",
+  "size": 103,
+  "orig_symbol": "sub_004F04A0",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "StringPairContainer::StringPairContainer",
+  "class": "StringPairContainer",
+  "signature": "void* fn_004F04A0(void* self)",
+  "summary": "Constructor-style init: sets vtable, zeroes counters, constructs sub-object at +0x18, stores its result at +0x1C, then clears it via fn_004F0250. Returns this.",
+  "fields": [
+    {
+      "class": "StringPairContainer",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable_ptr"
+    },
+    {
+      "class": "StringPairContainer",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "StringPairContainer",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "StringPairContainer",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "StringPairContainer",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "StringPairContainer",
+      "offset": "+0x18",
+      "type": "uint8_t field_0x18 (sub-object: StringPairList; first 4 bytes are the callee-initialized",
+      "name": "region)"
+    },
+    {
+      "class": "StringPairContainer",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "StringPairContainer",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:20:21Z"
+}

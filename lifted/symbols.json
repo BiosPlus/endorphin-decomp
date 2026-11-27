@@ -19904,6 +19904,13 @@
     "summary": "Clears the embedded StringPairList at +0x18, releases its head block at +0x1C, releases the block at +0x0C if set, and zeroes the +0x0C/+0x10/+0x14 slots.",
     "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
+  "0x004F04A0": {
+    "name": "StringPairContainer::StringPairContainer",
+    "class": "StringPairContainer",
+    "signature": "void* fn_004F04A0(void* self)",
+    "summary": "Constructor-style init: sets vtable, zeroes counters, constructs sub-object at +0x18, stores its result at +0x1C, then clears it via fn_004F0250. Returns this.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F0510": {
     "name": "Properties::TestControl::vfunc_8",
     "class": "Properties::TestControl",

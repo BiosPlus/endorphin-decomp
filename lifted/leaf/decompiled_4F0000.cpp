@@ -1223,3 +1223,37 @@ void fn_004F02A0(void* self) {
     lift_field<DWORD>(self, 0x04) = 0;
 }
 } // namespace lift_004F02A0
+
+// [0x004F04A0] sub_004F04A0 (103 bytes)
+namespace lift_004F04A0 {
+// Known callee 0x004EF8B0 (sub_004EF8B0): thiscall, this in ecx, returns eax.
+extern uint32_t ext_004EF8B0(void* self);
+// Known callee 0x004F0250: clearStringPairsAndEraseInt32Range (thiscall, this in ecx).
+extern void ext_004F0250(void* self);
+
+// @name StringPairContainer::StringPairContainer
+// @class StringPairContainer
+// @summary Constructor-style init: sets vtable, zeroes counters, constructs sub-object at +0x18, stores its result at +0x1C, then clears it via fn_004F0250. Returns this.
+// @field StringPairContainer +0x00 uint32_t vftable_ptr
+// @field StringPairContainer +0x04 uint32_t field_0x04
+// @field StringPairContainer +0x0c uint32_t field_0x0c
+// @field StringPairContainer +0x10 uint32_t field_0x10
+// @field StringPairContainer +0x14 uint32_t field_0x14
+// @field StringPairContainer +0x18 uint8_t field_0x18 (sub-object: StringPairList; first 4 bytes are the callee-initialized region)
+// @field StringPairContainer +0x1c uint32_t field_0x1c
+// @field StringPairContainer +0x20 uint32_t field_0x20
+void* fn_004F04A0(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x0094C0C8u;
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x14) = 0;
+
+    void* sub = static_cast<uint8_t*>(self) + 0x18;
+    lift_field<uint32_t>(sub, 0x04) = ext_004EF8B0(sub);
+    lift_field<uint32_t>(sub, 0x08) = 0;
+
+    ext_004F0250(self);
+    return self;
+}
+} // namespace lift_004F04A0
