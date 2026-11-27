@@ -351,3 +351,42 @@ uint8_t fn_00764930(void* self) {
     return 1;
 }
 } // namespace lift_00764930
+
+// [0x007642D0] sub_007642D0 (143 bytes)
+namespace lift_007642D0 {
+// Known callee 0x006B9D70: sub_006B9D70 (Pure jump thunk forwarding to sub_006B9970.)
+extern void ext_006B9D70();
+// Known callee 0x006D2160: sub_006D2160 (Pure jump thunk forwarding to sub_006D2250.)
+extern void ext_006D2160();
+// Known callee 0x00754FA0: sub_00754FA0_dtor (Destructor that sets vtable 0x996bf0 and destroys members at +0x60 and +0x8.)
+extern void ext_00754FA0();
+// Known callee 0x007643C0: Unknown::resetStream_007643C0 (Closes the FILE* at +0xac (if any), clears it, then assigns the string literal at 0x00B5D2C0 into the subobject at +0xb4; returns true when the fclose result was 0 (or no stream was open).)
+extern bool ext_007643C0();
+// Known callee 0x007ABCA0: sub_007ABCA0 (Destroys the object by setting its vtable, releasing buffer items at +0x4, destroying the member at +0x4, and calling the base destructor.)
+extern void ext_007ABCA0();
+
+// @name Unknown::dtor_007642D0
+// @class Unknown
+// @summary Destructor: sets the Unknown vtable (0x996C38), resets the stream state, destroys the embedded subobjects at +0x174, +0x15c, +0x100 and +0xb4 in that order, then runs the base destructor ext_00754FA0 on self.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0xb4 uint8_t field_0xb4
+// @field Unknown +0x100 uint8_t field_0x100
+// @field Unknown +0x15c uint8_t field_0x15c
+// @field Unknown +0x174 uint8_t field_0x174
+void fn_007642D0(void* self) {
+    // Install this class's vtable (32-bit address from the original image).
+    lift_field<uint32_t>(self, 0x00) = 0x00996C38u;
+
+    // Close/reset the stream state owned directly by this object.
+    (void)reinterpret_cast<bool (*)(void*)>(&ext_007643C0)(self);
+
+    // Destroy embedded subobjects, in the original order.
+    reinterpret_cast<void (*)(void*)>(&ext_007ABCA0)(static_cast<uint8_t*>(self) + 0x174);
+    reinterpret_cast<void (*)(void*)>(&ext_006D2160)(static_cast<uint8_t*>(self) + 0x15C);
+    reinterpret_cast<void (*)(void*)>(&ext_006B9D70)(static_cast<uint8_t*>(self) + 0x100);
+    reinterpret_cast<void (*)(void*)>(&ext_006B9D70)(static_cast<uint8_t*>(self) + 0xB4);
+
+    // Chain to the base-class destructor on the whole object.
+    reinterpret_cast<void (*)(void*)>(&ext_00754FA0)(self);
+}
+} // namespace lift_007642D0

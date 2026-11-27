@@ -79086,6 +79086,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_007642D0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_760000.cpp"
   },
+  "0x007642D0": {
+    "name": "Unknown::dtor_007642D0",
+    "class": "Unknown",
+    "signature": "void fn_007642D0(void* self)",
+    "summary": "Destructor: sets the Unknown vtable (0x996C38), resets the stream state, destroys the embedded subobjects at +0x174, +0x15c, +0x100 and +0xb4 in that order, then runs the base destructor ext_00754FA0 on self.",
+    "lifted_path": "lifted/leaf/decompiled_760000.cpp"
+  },
   "0x007643C0": {
     "name": "Unknown::resetStream_007643C0",
     "class": "Unknown",
