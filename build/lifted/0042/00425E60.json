@@ -1,0 +1,14 @@
+{
+  "va": "0x00425E60",
+  "size": 124,
+  "orig_symbol": "sub_00425E60",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "Unknown::initScopedObjectAndFree",
+  "class": "Unknown",
+  "signature": "void __stdcall fn_00425E60(DWORD a0, DWORD a1, DWORD a2, DWORD a3)",
+  "summary": "Constructs a 0x198-byte local Unknown object (guarded by a state byte around MFC80 ord_2020), destroys it, then frees the second stack argument if non-null.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:40:49Z"
+}

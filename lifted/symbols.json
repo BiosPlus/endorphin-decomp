@@ -2907,6 +2907,13 @@
     "summary": "Builds a stack-local Unknown object, runs its init and MFC80 ord_2020 step, then destroys it.",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x00425E60": {
+    "name": "Unknown::initScopedObjectAndFree",
+    "class": "Unknown",
+    "signature": "void __stdcall fn_00425E60(DWORD a0, DWORD a1, DWORD a2, DWORD a3)",
+    "summary": "Constructs a 0x198-byte local Unknown object (guarded by a state byte around MFC80 ord_2020), destroys it, then frees the second stack argument if non-null.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x00426960": {
     "name": "ConstructEmptyStdString",
     "signature": "void* fn_00426960(void* self)",

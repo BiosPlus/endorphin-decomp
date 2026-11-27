@@ -2119,3 +2119,38 @@ void fn_00425DC0(void) {
     ext_00419840(self);       // destroy
 }
 } // namespace lift_00425DC0
+
+// [0x00425E60] sub_00425E60 (124 bytes)
+namespace lift_00425E60 {
+// Known callee 0x004197A0: Unknown::initWithSolidBrush (thiscall, stack arg cleaned by callee)
+extern void* __thiscall ext_004197A0(void* self, DWORD a1);
+// Known callee 0x00419840: Destructor_00419840 (__fastcall, this in ECX)
+extern void __fastcall ext_00419840(void* self);
+// Known callee 0x006A5FA4: thunk_MFC80_ord_2020 (IAT jump thunk, no args, this in ECX via caller)
+extern void ext_006A5FA4(void);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk, cdecl, one arg)
+extern void ext_006A5C5C(void* p);
+
+// @name Unknown::initScopedObjectAndFree
+// @summary Constructs a 0x198-byte local Unknown object (guarded by a state byte around MFC80 ord_2020), destroys it, then frees the second stack argument if non-null.
+void __stdcall fn_00425E60(DWORD a0, DWORD a1, DWORD a2, DWORD a3) {
+    (void)a0;
+    (void)a2;
+    (void)a3;
+
+    unsigned char frame[0x19C];
+    std::memset(frame + 0x198, 0, 4);
+
+    ext_004197A0(frame, 0);
+
+    frame[0x198] = 1;
+    ext_006A5FA4();
+    frame[0x198] = 0;
+
+    ext_00419840(frame);
+
+    if (a1 != 0) {
+        ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(a1)));
+    }
+}
+} // namespace lift_00425E60
