@@ -39080,6 +39080,13 @@
     "summary": "Pure jump thunk forwarding to NMFileIO::vfunc_1.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00584510": {
+    "name": "AcclaimIO::vfunc_11",
+    "class": "AcclaimIO",
+    "signature": "inline uint32_t lift_addr(const void* p)",
+    "summary": "Copies four config words from self into self+0xD78/0xD84/0xD88/0xD9C, pushes the self+0x424 object's string through its vslot 3, then forwards the argument to subobjB (+0x964) vslots 0x38 and 0x2C and runs the finishing helper on self.",
+    "lifted_path": "lifted/classes/AcclaimIO.cpp"
+  },
   "0x00584610": {
     "name": "AcclaimIO::vfunc_14",
     "class": "AcclaimIO",

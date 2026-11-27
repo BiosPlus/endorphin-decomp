@@ -247,3 +247,88 @@ extern void __thiscall fn_005847C0(void* self, uint32_t arg) {
     ext_00406FC0(&lift_field<uint8_t>(self, 0x16C), sub_5c);
 }
 } // namespace lift_005847C0
+
+// [0x00584510] AcclaimIO::vfunc_11 (247 bytes)
+namespace lift_00584510 {
+// Known callee 0x00558A10: sub_00558A10 (This-adjustor thunk: adjusts `this` by +0x5C and tail-calls sub_00406FC0.)
+extern void ext_00558A10(uint32_t self, uint32_t arg);
+// Known callee 0x00559180: sub_00559180 (31 bytes)
+extern void ext_00559180(uint32_t self, uint32_t arg);
+// Known callee 0x005576F0: sub_005576F0 (20 bytes)
+extern void ext_005576F0(uint32_t self);
+// Metadata-only callee (see note at end of fn_00584510).
+extern void ext_005557A0();
+// MSVCP80 std::basic_string<char> ctor (from c-string) and dtor import slots.
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+
+namespace {
+inline uint32_t lift_addr(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+// Reads the vtable slot at byte offset `off` of the object at address `obj`.
+inline uint32_t lift_vslot(uint32_t obj, uint32_t off) {
+    uint32_t vtable = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(obj));
+    return *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(vtable + off));
+}
+} // namespace
+
+// @name AcclaimIO::vfunc_11
+// @class AcclaimIO
+// @summary Copies four config words from self into self+0xD78/0xD84/0xD88/0xD9C, pushes the self+0x424 object's string through its vslot 3, then forwards the argument to subobjB (+0x964) vslots 0x38 and 0x2C and runs the finishing helper on self.
+// @field AcclaimIO +0x5C uint8_t field_0x5C
+// @field AcclaimIO +0x414 uint32_t field_0x414
+// @field AcclaimIO +0x418 uint32_t field_0x418
+// @field AcclaimIO +0x420 uint32_t field_0x420
+// @field AcclaimIO +0x424 uint32_t field_0x424
+// @field AcclaimIO +0x42C uint8_t field_0x42C
+// @field AcclaimIO +0x964 uint8_t subobjB
+// @field AcclaimIO +0xD78 uint32_t field_0xD78
+// @field AcclaimIO +0xD84 uint32_t field_0xD84
+// @field AcclaimIO +0xD88 uint32_t field_0xD88
+// @field AcclaimIO +0xD9C uint32_t field_0xD9C
+void fn_00584510(void* self, uint32_t arg) {
+    using vfn_fn = void(__thiscall*)(uint32_t, uint32_t);
+    using str_ctor_fn = void(__thiscall*)(uint32_t, const char*);
+    using str_dtor_fn = void(__thiscall*)(uint32_t);
+
+    uint8_t* s = static_cast<uint8_t*>(self);
+    uint32_t self_addr = lift_addr(self);
+    uint32_t sub_b = lift_addr(s + 0x964);
+
+    ext_00558A10(sub_b, lift_addr(s + 0x5C));
+    ext_00559180(sub_b, lift_field<uint32_t>(self, 0x418));
+
+    lift_field<uint32_t>(self, 0xD78) = lift_field<uint32_t>(self, 0x414);
+    lift_field<uint32_t>(self, 0xD84) = lift_field<uint32_t>(self, 0x420);
+    lift_field<uint32_t>(self, 0xD9C) = lift_addr(s + 0x42C);
+
+    uint32_t obj = lift_field<uint32_t>(self, 0x424);
+    if (obj != 0) {
+        // Vslot 1 (+0x4) with a single 0 argument.
+        reinterpret_cast<vfn_fn>(static_cast<uintptr_t>(lift_vslot(obj, 0x4)))(obj, 0);
+
+        // Build a std::string from a .rdata literal, hand it to vslot 3 (+0xC), then destroy it.
+        uint8_t str_buf[0x1C];
+        uint32_t str_ptr = lift_addr(str_buf);
+        reinterpret_cast<str_ctor_fn>(static_cast<uintptr_t>(mem_00924FE4))(
+            str_ptr, reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00928B5D)));
+        reinterpret_cast<vfn_fn>(static_cast<uintptr_t>(lift_vslot(obj, 0xC)))(obj, str_ptr);
+        reinterpret_cast<str_dtor_fn>(static_cast<uintptr_t>(mem_00924FF4))(str_ptr);
+
+        lift_field<uint32_t>(self, 0xD88) = lift_field<uint32_t>(self, 0x424);
+    }
+
+    // subobjB vslot 0x38 then vslot 0x2C, both with `arg`.
+    reinterpret_cast<vfn_fn>(static_cast<uintptr_t>(lift_vslot(sub_b, 0x38)))(sub_b, arg);
+    reinterpret_cast<vfn_fn>(static_cast<uintptr_t>(lift_vslot(sub_b, 0x2C)))(sub_b, arg);
+
+    ext_005576F0(self_addr);
+    lift_field<uint32_t>(self, 0xD9C) = 0;
+
+    // Metadata lists ext_005557A0 as a callee, but no `call` in the original bytes reaches it
+    // (decoded rel32 targets: 0x558A10, 0x559180, 0x5576F0). Only take its address so nothing executes.
+    (void)&ext_005557A0;
+}
+} // namespace lift_00584510

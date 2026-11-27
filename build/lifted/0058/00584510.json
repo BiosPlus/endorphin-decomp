@@ -1,0 +1,82 @@
+{
+  "va": "0x00584510",
+  "size": 247,
+  "orig_symbol": "AcclaimIO::vfunc_11",
+  "src_path": "src/classes/AcclaimIO.cpp",
+  "lifted_path": "lifted/classes/AcclaimIO.cpp",
+  "name": "AcclaimIO::vfunc_11",
+  "class": "AcclaimIO",
+  "signature": "inline uint32_t lift_addr(const void* p)",
+  "summary": "Copies four config words from self into self+0xD78/0xD84/0xD88/0xD9C, pushes the self+0x424 object's string through its vslot 3, then forwards the argument to subobjB (+0x964) vslots 0x38 and 0x2C and runs the finishing helper on self.",
+  "fields": [
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x5C",
+      "type": "uint8_t",
+      "name": "field_0x5C"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x414",
+      "type": "uint32_t",
+      "name": "field_0x414"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x418",
+      "type": "uint32_t",
+      "name": "field_0x418"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x420",
+      "type": "uint32_t",
+      "name": "field_0x420"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x424",
+      "type": "uint32_t",
+      "name": "field_0x424"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x42C",
+      "type": "uint8_t",
+      "name": "field_0x42C"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0x964",
+      "type": "uint8_t",
+      "name": "subobjB"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0xD78",
+      "type": "uint32_t",
+      "name": "field_0xD78"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0xD84",
+      "type": "uint32_t",
+      "name": "field_0xD84"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0xD88",
+      "type": "uint32_t",
+      "name": "field_0xD88"
+    },
+    {
+      "class": "AcclaimIO",
+      "offset": "+0xD9C",
+      "type": "uint32_t",
+      "name": "field_0xD9C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:49:50Z"
+}
