@@ -1,0 +1,22 @@
+{
+  "va": "0x0048E420",
+  "size": 163,
+  "orig_symbol": "Commands::GoToFrameCommand::vfunc_3",
+  "src_path": "src/Commands/GoToFrameCommand.cpp",
+  "lifted_path": "lifted/Commands/GoToFrameCommand.cpp",
+  "name": "Commands::GoToFrameCommand::vfunc_3",
+  "class": "Commands::GoToFrameCommand",
+  "signature": "void* __thiscall fn_0048E420(void* self, void* out)",
+  "summary": "Builds the string \"\u003ctext\u003e\u003cframe\u003e\" via an ostringstream (ext_00435D00 writes the text, then the frame number is streamed) and returns it by value through the sret buffer.",
+  "fields": [
+    {
+      "class": "Commands::GoToFrameCommand",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:30:47Z"
+}
