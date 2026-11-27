@@ -1,0 +1,39 @@
+{
+  "va": "0x006D2500",
+  "size": 144,
+  "orig_symbol": "sub_006D2500",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "NegateVec4dToOut",
+  "signature": "void* __thiscall fn_006D2500(const void* self, void* out)",
+  "summary": "Negates four doubles from self into a temporary buffer, forwards it to ext_006D2390 with out, and returns out.",
+  "fields": [
+    {
+      "class": "Vec4d",
+      "offset": "+0x0",
+      "type": "double",
+      "name": "x"
+    },
+    {
+      "class": "Vec4d",
+      "offset": "+0x8",
+      "type": "double",
+      "name": "y"
+    },
+    {
+      "class": "Vec4d",
+      "offset": "+0x10",
+      "type": "double",
+      "name": "z"
+    },
+    {
+      "class": "Vec4d",
+      "offset": "+0x18",
+      "type": "double",
+      "name": "w"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:40:49Z"
+}
