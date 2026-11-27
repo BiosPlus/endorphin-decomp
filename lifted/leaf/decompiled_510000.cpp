@@ -1299,3 +1299,24 @@ void* fn_0051D8E0() {
 }
 } // namespace lift_004C9860
 } // namespace lift_0051D8E0
+
+// [0x00517970] sub_00517970 (111 bytes)
+namespace lift_00517970 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762; cdecl, one size argument, returns the allocated block or null).
+extern void* __cdecl ext_006A5C62(uint32_t size);
+// Known callee 0x00506030: Interpreter::Interpreter (thiscall constructor; runs the base-class initializer, sets the vtable, default-constructs the std::string at +0x04, zeroes the dwords at +0x24..+0x34; returns this).
+extern void* __thiscall ext_00506030(void* self);
+// Known callee 0x00517890: sub_00517890 (thiscall, four stack args; auto-lifted clone of 0x0049EE60).
+extern uint32_t __thiscall ext_00517890(void* self, uint32_t a1, void* a2, uint32_t a3, uint32_t a4);
+
+// @name AllocInterpreterAndForward_00517970
+// @summary Allocates a 0x38-byte block; if the allocation succeeds it constructs an Interpreter in it, then forwards (arg1, interpreter-or-null, arg2, arg3) to ext_00517890 on this and returns that result. Takes three stack arguments.
+uint32_t __thiscall fn_00517970(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    void* interp = nullptr;
+    void* block = ext_006A5C62(0x38);
+    if (block != nullptr) {
+        interp = ext_00506030(block);
+    }
+    return ext_00517890(self, arg1, interp, arg2, arg3);
+}
+} // namespace lift_00517970

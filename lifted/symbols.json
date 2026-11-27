@@ -30459,6 +30459,12 @@
     "summary": "Swaps the pending element pointer at +0x1C into +0x18 (releasing the old one via its vfunc_0), updates the container via ext_00527EC0, then fires the optional callback object at +0x24 and ext_00517510 on +0x14.",
     "lifted_path": "lifted/templates/AddElementCommand.cpp"
   },
+  "0x00517970": {
+    "name": "AllocInterpreterAndForward_00517970",
+    "signature": "uint32_t __thiscall fn_00517970(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Allocates a 0x38-byte block; if the allocation succeeds it constructs an Interpreter in it, then forwards (arg1, interpreter-or-null, arg2, arg3) to ext_00517890 on this and returns that result. Takes three stack arguments.",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x005179E0": {
     "name": "RangeOwner::destroyOwnedRange",
     "class": "RangeOwner",
