@@ -8,6 +8,6 @@
 // Recovered field layout for ExceptionContext:
 namespace lifted_layout {
 struct ExceptionContext_Fields {
-    // +0xC   std::string              field_0x0c  (evidence: 0x00433560)
+    // +0xC   std::string              field_0x0c  (evidence: 0x00432370, 0x00433560)
 };
 } // namespace lifted_layout

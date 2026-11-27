@@ -4992,3 +4992,42 @@ void fn_00433560() {
     }
 }
 } // namespace lift_00433560
+
+// [0x00432370] sub_00432370 (134 bytes)
+namespace lift_00432370 {
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430330 (sub_00430330).)
+// Returns an object pointer in eax (the object's vtable is dispatched below).
+extern void* ext_00465B40();
+// Known callee 0x006A5E60: thunk_MFC80_ord_1123 (IAT jump thunk forwarding to MFC80!ord_1123.)
+// Takes one pointer argument (const char* from std::string::c_str).
+extern void ext_006A5E60(const char* msg);
+// IAT slots from the original asm (MSVCP80 string ctor/c_str/dtor); std::string replaces them natively.
+extern int mem_00924FE0;
+extern int mem_00924FF0;
+extern int mem_00924FF4;
+
+// @name ExpressionSource::dispatchVfunc_0x1e8 (try/catch wrapper)
+// @summary Calls vtable slot 0x1e8 with argument 0 on the object from fn_00465B40; on exception, reports a string via ext_006A5E60.
+// @field UnknownObject +0x00 void* field_0x00
+// @field ExceptionContext +0x0c std::string field_0x0c
+void fn_00432370() {
+    (void)&mem_00924FE0;
+    (void)&mem_00924FF0;
+    (void)&mem_00924FF4;
+    try {
+        void* obj = ext_00465B40();
+        void* vtbl = lift_field<void*>(obj, 0x00);
+        using VFn = void(__thiscall*)(void*, int);
+        VFn vfn = reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0x1e8));
+        vfn(obj, 0);
+    } catch (...) {
+        // [ebp-0x14] in the handler is an SEH-frame slot whose value is not recovered
+        // from the disassembly; the handler is skipped when it is unset.
+        void* ctx = nullptr;
+        if (ctx != nullptr) {
+            std::string msg(lift_field<const std::string>(ctx, 0x0c));
+            ext_006A5E60(msg.c_str());
+        }
+    }
+}
+} // namespace lift_00432370
