@@ -3049,3 +3049,32 @@ extern void* fn_0078CAF0(void* self) {
     return self;
 }
 } // namespace lift_0078CAF0
+
+// [0x0078D420]
+namespace lift_0078D420 {
+// @name fn_0078D420
+// @summary Inserts symmetric edge/link entries into two indexed DynamicArrays at offsets +0x10 and +0x28.
+// @field Unknown +0x10 void** field_0x10
+// @field Unknown +0x28 void** field_0x28
+
+extern int32_t __thiscall ext_006D2170(void* self, int32_t index, const void* elem);
+
+struct EdgeEntry_0078D420 {
+    int32_t target;
+    int32_t pad;
+    int32_t arg3;
+    int32_t arg4;
+};
+
+void __thiscall fn_0078D420(void* self, int32_t idx1, int32_t idx2, int32_t arg3, int32_t arg4) {
+    void** arr1 = lift_field<void**>(self, 0x10);
+    void* dyn1 = arr1[idx1];
+    EdgeEntry_0078D420 entry1{idx2, 0, arg3, arg4};
+    ext_006D2170(dyn1, *reinterpret_cast<int32_t*>(dyn1), &entry1);
+
+    void** arr2 = lift_field<void**>(self, 0x28);
+    void* dyn2 = arr2[idx2];
+    EdgeEntry_0078D420 entry2{idx1, 0, arg3, arg4};
+    ext_006D2170(dyn2, *reinterpret_cast<int32_t*>(dyn2), &entry2);
+}
+} // namespace lift_0078D420

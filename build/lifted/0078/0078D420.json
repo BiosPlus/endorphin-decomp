@@ -1,0 +1,27 @@
+{
+  "va": "0x0078D420",
+  "size": 144,
+  "orig_symbol": "sub_0078D420",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "fn_0078D420",
+  "signature": "void __thiscall fn_0078D420(void* self, int32_t idx1, int32_t idx2, int32_t arg3, int32_t arg4)",
+  "summary": "Inserts symmetric edge/link entries into two indexed DynamicArrays at offsets +0x10 and +0x28.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void**",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "void**",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T05:14:09Z"
+}
