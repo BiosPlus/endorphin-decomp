@@ -1,0 +1,14 @@
+{
+  "va": "0x004F57E0",
+  "size": 76,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getX(void) const, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties,float,MatrixWithProperties::getX,0\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, MatrixWithProperties::getX, 0\u003e",
+  "signature": "void* fn_004F57E0(void* out, void* self)",
+  "summary": "Reads the float X value of the MatrixWithProperties referenced by self, formats it as a trimmed string into out, and returns out; throws if the referenced object pointer is null.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:01:33Z"
+}

@@ -62687,3 +62687,33 @@ void* fn_004F5430(void* unused, void* arg) {
     return arg;
 }
 } // namespace lift_004F5430
+
+// [0x004F57E0] ExprParser::ReadMethodType<MatrixWithProperties, float, getX, 0>::vfunc_4 (76 bytes)
+namespace lift_004F57E0 {
+// Known callee 0x004F4DD0: sub_004F4DD0 (4B). Called with the MatrixWithProperties object pointer; returns a float in st0.
+extern float ext_004F4DD0(void* self);
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void* ext_0046C390(void* out, float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<MatrixWithProperties,float,MatrixWithProperties::getX,0>::vfunc_4
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, MatrixWithProperties::getX, 0>
+// @summary Reads the float X value of the MatrixWithProperties referenced by self, formats it as a trimmed string into out, and returns out; throws if the referenced object pointer is null.
+// @field ExprParser::ReadMethodType<MatrixWithProperties, float, MatrixWithProperties::getX, 0> +0x00 void* field_0x00
+void* fn_004F57E0(void* out, void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target == nullptr) {
+        // Local exception object occupies the 0x28 bytes of frame above the return slot.
+        alignas(8) uint32_t exc[10];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return out;  // not reached: CxxThrowException does not return
+    }
+    float value = ext_004F4DD0(target);
+    ext_0046C390(out, value);
+    return out;
+}
+} // namespace lift_004F57E0
