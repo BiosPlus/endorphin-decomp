@@ -2452,3 +2452,36 @@ uint8_t __thiscall fn_0041C880(uint32_t self, uint32_t index) {
     return 1;
 }
 } // namespace lift_0041C880
+
+// [0x004155E0] sub_004155E0 (103 bytes)
+namespace lift_004155E0 {
+// Known callee 0x00458E10: Unknown::sendMessageToWindow (Sends the global message id mem_00AD3E2C to the window handle stored at +0x1C, passing self as lParam and 0 as wParam.)
+extern void ext_00458E10(void* self);
+// Known callee 0x00458FE0: Unknown::SetVtableAndSendIfWindow (Sets the vtable to mem_0093785C; if the window handle at +0x1c is non-null, tail-calls SendMessageToFieldWindow, otherwise returns.)
+extern int32_t ext_00458FE0(void* self);
+extern uint32_t mem_009242E4;
+extern uint32_t mem_00924EF0;
+
+// @name Unknown::shutdown
+// @class Unknown
+// @summary Resets the vtable, notifies the window, deletes the critical section at +0x2C, destroys the string at +0x48, then runs SetVtableAndSendIfWindow.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x2C uint8_t field_0x2C
+// @field Unknown +0x48 uint8_t field_0x48
+void fn_004155E0(void* self) {
+    // Set vtable to 0x0092C744 (Unknown vtable).
+    lift_field<uint32_t>(self, 0x00) = 0x0092C744u;
+
+    ext_00458E10(self);
+
+    // DeleteCriticalSection(&self->field_0x2C) via import slot mem_009242E4.
+    reinterpret_cast<void(__stdcall*)(void*)>(static_cast<uintptr_t>(mem_009242E4))(
+        static_cast<uint8_t*>(self) + 0x2C);
+
+    // std::wstring destructor on self->field_0x48 via import slot mem_00924EF0 (__thiscall).
+    reinterpret_cast<void(__thiscall*)(void*)>(static_cast<uintptr_t>(mem_00924EF0))(
+        static_cast<uint8_t*>(self) + 0x48);
+
+    ext_00458FE0(self);
+}
+} // namespace lift_004155E0

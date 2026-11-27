@@ -1,0 +1,34 @@
+{
+  "va": "0x004155E0",
+  "size": 103,
+  "orig_symbol": "sub_004155E0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::shutdown",
+  "class": "Unknown",
+  "signature": "void fn_004155E0(void* self)",
+  "summary": "Resets the vtable, notifies the window, deletes the critical section at +0x2C, destroys the string at +0x48, then runs SetVtableAndSendIfWindow.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "uint8_t",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "uint8_t",
+      "name": "field_0x48"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T01:55:23Z"
+}
