@@ -2744,3 +2744,61 @@ int fn_00676860(const void* a, const void* b) {
                : 0;
 }
 } // namespace lift_00676860
+
+// [0x0067B4A0] sub_0067B4A0 (141 bytes)
+namespace lift_0067B4A0 {
+// Known callee 0x0065C640: CriticalSectionLock::enter (fastcall, this in ecx).
+extern void __fastcall ext_0065C640(void* self);
+// Known callee 0x0065C650: CriticalSectionLock::leave (fastcall, this in ecx).
+extern void __fastcall ext_0065C650(void* self);
+// Known callee 0x0067B410: TimerHandle::stop (fastcall, this in ecx).
+extern void __fastcall ext_0067B410(void* self);
+
+// Imports (IAT slots): GetCurrentThread, SetThreadPriority.
+extern void* (__stdcall* mem_00924290)(void);
+extern BOOL (__stdcall* mem_00924288)(void* hThread, int nPriority);
+
+// @name TimerHandle::updateThreadPriorityAndValidate
+// @class TimerHandle
+// @summary Under the object's lock, boosts the current thread priority once (per priority index), then stops the timer if the attached object's vtable slot 0 check fails, and releases the lock.
+// @field TimerHandle +0x0C u8 priority_applied
+// @field TimerHandle +0x10 s32 priority_index
+// @field TimerHandle +0x14 void* attached_object
+// @field TimerHandle +0x18 CriticalSectionLock lock
+void __stdcall fn_0067B4A0(void* arg0, void* self, void* arg2, void* arg3, void* arg4) {
+    (void)arg0;
+    (void)arg2;
+    (void)arg3;
+    (void)arg4;
+
+    // Index -> priority table as built on the stack by the original code.
+    // Index 0 means "no change". Indices above 5 were out-of-range reads in asm.
+    static const int prio_table[6] = {0, 2, 1, 0, -1, -2};
+
+    auto* base = static_cast<uint8_t*>(self);
+    void* lock = base + 0x18;
+
+    ext_0065C640(lock);
+
+    if (base[0x0C] == 0) {
+        const int index = *reinterpret_cast<int32_t*>(base + 0x10);
+        if (index != 0) {
+            mem_00924288(mem_00924290(), prio_table[index]);
+        }
+        base[0x0C] = 1;
+    }
+
+    void* obj = *reinterpret_cast<void**>(base + 0x14);
+    bool ok = false;
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        using VFn = uint8_t(__thiscall*)(void*);
+        ok = reinterpret_cast<VFn>(vtbl[0])(obj) != 0;
+    }
+    if (!ok) {
+        ext_0067B410(self);
+    }
+
+    ext_0065C650(lock);
+}
+} // namespace lift_0067B4A0

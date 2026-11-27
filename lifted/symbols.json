@@ -56623,6 +56623,13 @@
     "summary": "Destroys TimerHandle by stopping the timer and destroying its critical section lock.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067B4A0": {
+    "name": "TimerHandle::updateThreadPriorityAndValidate",
+    "class": "TimerHandle",
+    "signature": "void __stdcall fn_0067B4A0(void* arg0, void* self, void* arg2, void* arg3, void* arg4)",
+    "summary": "Under the object's lock, boosts the current thread priority once (per priority index), then stops the timer if the attached object's vtable slot 0 check fails, and releases the lock.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067B530": {
     "name": "MultimediaTimer::start",
     "class": "MultimediaTimer",

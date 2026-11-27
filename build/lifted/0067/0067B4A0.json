@@ -1,0 +1,40 @@
+{
+  "va": "0x0067B4A0",
+  "size": 141,
+  "orig_symbol": "sub_0067B4A0",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "TimerHandle::updateThreadPriorityAndValidate",
+  "class": "TimerHandle",
+  "signature": "void __stdcall fn_0067B4A0(void* arg0, void* self, void* arg2, void* arg3, void* arg4)",
+  "summary": "Under the object's lock, boosts the current thread priority once (per priority index), then stops the timer if the attached object's vtable slot 0 check fails, and releases the lock.",
+  "fields": [
+    {
+      "class": "TimerHandle",
+      "offset": "+0xC",
+      "type": "u8",
+      "name": "priority_applied"
+    },
+    {
+      "class": "TimerHandle",
+      "offset": "+0x10",
+      "type": "s32",
+      "name": "priority_index"
+    },
+    {
+      "class": "TimerHandle",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "attached_object"
+    },
+    {
+      "class": "TimerHandle",
+      "offset": "+0x18",
+      "type": "CriticalSectionLock",
+      "name": "lock"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:30:15Z"
+}
