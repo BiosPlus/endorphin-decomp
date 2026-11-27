@@ -1888,3 +1888,24 @@ extern void* __cdecl fn_005FF690(uint32_t arg1, uint32_t arg2, uint32_t arg3, ui
     return obj;
 }
 } // namespace lift_005FF690
+
+// [0x005F56E0]
+namespace lift_005F56E0 {
+// @name Unknown::forwardPaddedViaSubobject
+// @class Unknown
+// @summary Calls the function pointer at subobject+0xC with (this=self+4, global, p), then passes the result as self to fn_0067E560 with p.
+// @field Unknown +0x04 void* field_0x04 (pointer to subobject; its +0xC holds a function pointer)
+
+extern void ext_0067E560(void* self, const void* p);
+extern uint32_t mem_00B40640;
+
+using SubFn = void* (*)(void* self, uintptr_t value, const void* p);
+
+void fn_005F56E0(void* self, const void* p) {
+    unsigned char* base = reinterpret_cast<unsigned char*>(self);
+    unsigned char* sub = *reinterpret_cast<unsigned char**>(base + 0x4);
+    SubFn fn = *reinterpret_cast<SubFn*>(sub + 0xC);
+    void* r = fn(base + 0x4, static_cast<uintptr_t>(mem_00B40640), p);
+    ext_0067E560(r, p);
+}
+} // namespace lift_005F56E0
