@@ -3600,3 +3600,42 @@ void fn_00419E30(void* self) {
     ext_006A6310(self);
 }
 } // namespace lift_00419E30
+
+// [0x00413230] sub_00413230 (153 bytes)
+namespace lift_00413230 {
+// Known callee 0x00412F80: findMaxByField28 (Returns the element pointer in the vector at +0x4 with the largest signed int32_t at +0x28, or nullptr if empty.)
+extern void* ext_00412F80(void* self);
+// Import slot for _invalid_parameter_noinfo (MSVC iterator checks); referenced only for metadata.
+extern int mem_00925134;
+
+// @name SumOrMaxElementField28
+// @class LiftSelf
+// @summary Resets self+0x4c; if self+0x37 is set, stores the +0x28 value of the max-field28 element, otherwise stores the sum of +0x28 over all elements in the pointer vector at +0x4.
+// @field LiftSelf +0x04 uint8_t** vecBegin
+// @field LiftSelf +0x08 uint8_t** vecEnd
+// @field LiftSelf +0x37 uint8_t field_0x37
+// @field LiftSelf +0x4c int32_t field_0x4c
+// @field LiftElement +0x28 int32_t field_0x28
+void fn_00413230(void* self) {
+    (void)&mem_00925134;
+    lift_field<int32_t>(self, 0x4c) = 0;
+
+    uint8_t** first = lift_field<uint8_t**>(self, 0x04);
+    uint8_t** last  = lift_field<uint8_t**>(self, 0x08);
+    if (first == nullptr || first == last) {
+        return;
+    }
+
+    if (lift_field<uint8_t>(self, 0x37) != 0) {
+        void* best = ext_00412F80(self);
+        lift_field<int32_t>(self, 0x4c) = lift_field<int32_t>(best, 0x28);
+        return;
+    }
+
+    int32_t sum = 0;
+    for (uint8_t** p = first; p != last; ++p) {
+        sum += lift_field<int32_t>(*p, 0x28);
+    }
+    lift_field<int32_t>(self, 0x4c) = sum;
+}
+} // namespace lift_00413230

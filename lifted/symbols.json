@@ -1564,6 +1564,13 @@
     "summary": "Returns the element pointer in the vector at +0x4 with the largest signed int32_t at +0x28, or nullptr if empty.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00413230": {
+    "name": "SumOrMaxElementField28",
+    "class": "LiftSelf",
+    "signature": "void fn_00413230(void* self)",
+    "summary": "Resets self+0x4c; if self+0x37 is set, stores the +0x28 value of the max-field28 element, otherwise stores the sum of +0x28 over all elements in the pointer vector at +0x4.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x004136E0": {
     "name": "MultiTrackView::CompositeMarkerTrack::vfunc_0",
     "class": "MultiTrackView::CompositeMarkerTrack",

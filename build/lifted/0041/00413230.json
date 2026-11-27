@@ -1,0 +1,46 @@
+{
+  "va": "0x00413230",
+  "size": 153,
+  "orig_symbol": "sub_00413230",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "SumOrMaxElementField28",
+  "class": "LiftSelf",
+  "signature": "void fn_00413230(void* self)",
+  "summary": "Resets self+0x4c; if self+0x37 is set, stores the +0x28 value of the max-field28 element, otherwise stores the sum of +0x28 over all elements in the pointer vector at +0x4.",
+  "fields": [
+    {
+      "class": "LiftSelf",
+      "offset": "+0x4",
+      "type": "uint8_t**",
+      "name": "vecBegin"
+    },
+    {
+      "class": "LiftSelf",
+      "offset": "+0x8",
+      "type": "uint8_t**",
+      "name": "vecEnd"
+    },
+    {
+      "class": "LiftSelf",
+      "offset": "+0x37",
+      "type": "uint8_t",
+      "name": "field_0x37"
+    },
+    {
+      "class": "LiftSelf",
+      "offset": "+0x4C",
+      "type": "int32_t",
+      "name": "field_0x4c"
+    },
+    {
+      "class": "LiftElement",
+      "offset": "+0x28",
+      "type": "int32_t",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T08:50:08Z"
+}

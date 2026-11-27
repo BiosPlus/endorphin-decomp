@@ -8,6 +8,10 @@
 // Recovered field layout for LiftSelf:
 namespace lifted_layout {
 struct LiftSelf_Fields {
+    // +0x4   uint8_t**                vecBegin  (evidence: 0x00413230)
+    // +0x8   uint8_t**                vecEnd  (evidence: 0x00413230)
+    // +0x37  uint8_t                  field_0x37  (evidence: 0x00413230)
+    // +0x4C  int32_t                  field_0x4c  (evidence: 0x00413230)
     // +0x18C uint32_t                 field_0x18c  (evidence: 0x007BF4E0)
     // +0x194 uint32_t                 field_0x194  (evidence: 0x007BF4E0)
     // +0x1CC uint8_t*                 subRecord  (evidence: 0x007BF4E0)
