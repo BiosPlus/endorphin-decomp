@@ -1225,3 +1225,72 @@ int32_t sub_00852AD0(void* dst, uint8_t tag, const void* src) {
     return 1;
 }
 } // namespace lift_00852AD0
+
+// [0x0085C1C0]
+namespace lift_0085C1C0 {
+// @name ComputeTreeRecordSize
+// @summary Recursively computes total serialized size of a node, its child (+0x20) if bit 29 is set (otherwise ComputeRecordSize), and its sibling (+0x1C).
+// @field Node +0x00 uint32_t header_flags
+// @field Node +0x1C void* next
+// @field Node +0x20 void* child
+
+
+uint32_t ext_0085C130(uint32_t size);
+uint32_t ext_0085C170(uint32_t value);
+uint32_t ext_0086D210(void* node);
+
+extern uint32_t fn_0085C1C0(void* node) {
+    uint32_t header = lift_field<uint32_t>(node, 0x00);
+    uint32_t total = 0;
+
+    if ((header >> 24) & 0x20u) {
+        void* child = lift_field<void*>(node, 0x20);
+        uint32_t low28 = header & 0x0FFFFFFFu;
+        uint32_t child_size = fn_0085C1C0(child);
+        total = child_size + ext_0085C130(child_size) + ext_0085C170(low28);
+    } else {
+        total = ext_0086D210(node);
+    }
+
+    void* next = lift_field<void*>(node, 0x1C);
+    if (next != nullptr) {
+        total += fn_0085C1C0(next);
+    }
+
+    return total;
+}
+} // namespace lift_0085C1C0
+
+// [0x008592A0]
+namespace lift_008592A0 {
+extern const uint32_t mem_00ab8c70[];
+
+// @name crc16NibbleTable
+// @summary Computes a 16-bit CRC over a byte buffer using a 16-entry nibble lookup table.
+uint32_t __cdecl sub_008592A0(const uint8_t* data, uint32_t len) {
+    uint32_t eax = 0;
+    if (len == 0) {
+        return eax;
+    }
+
+    for (uint32_t i = 0; i < len; ++i) {
+        uint32_t edx = data[i];
+        uint32_t ecx = eax & 0xfu;
+        uint32_t ebx = edx & 0xfu;
+
+        ecx = mem_00ab8c70[ecx];
+        eax = (eax & 0xffff0000u) | (static_cast<uint16_t>(eax) >> 4);
+        ecx ^= static_cast<uint16_t>(mem_00ab8c70[ebx]);
+        edx >>= 4;
+        ecx ^= eax;
+
+        eax = ecx & 0xfu;
+        ecx = (ecx & 0xffff0000u) | (static_cast<uint16_t>(ecx) >> 4);
+        eax = mem_00ab8c70[eax];
+        eax ^= static_cast<uint16_t>(mem_00ab8c70[edx]);
+        eax ^= ecx;
+    }
+
+    return eax;
+}
+} // namespace lift_008592A0

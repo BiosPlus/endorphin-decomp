@@ -1,0 +1,33 @@
+{
+  "va": "0x0085C1C0",
+  "size": 96,
+  "orig_symbol": "sub_0085C1C0",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "ComputeTreeRecordSize",
+  "signature": "extern \"C\" uint32_t fn_0085C1C0(void* node)",
+  "summary": "Recursively computes total serialized size of a node, its child (+0x20) if bit 29 is set (otherwise ComputeRecordSize), and its sibling (+0x1C).",
+  "fields": [
+    {
+      "class": "Node",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "header_flags"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "next"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "child"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T01:58:27Z"
+}

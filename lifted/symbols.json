@@ -75005,6 +75005,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00782B30 (selectStaticAddressByIndex).",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x008592A0": {
+    "name": "crc16NibbleTable",
+    "signature": "uint32_t __cdecl sub_008592A0(const uint8_t* data, uint32_t len)",
+    "summary": "Computes a 16-bit CRC over a byte buffer using a 16-entry nibble lookup table.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x00859300": {
     "name": "UnknownClass::clearFlagIfKeyMatches",
     "class": "UnknownClass",
@@ -75190,6 +75196,12 @@
     "name": "GlobalFreeForwarder_0085BFE0",
     "signature": "uint32_t __cdecl fn_0085BFE0(uint32_t hMem)",
     "summary": "Forwards its single stack argument (an HGLOBAL) to ext_00859730 (GlobalFree wrapper) and returns the result.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
+  "0x0085C1C0": {
+    "name": "ComputeTreeRecordSize",
+    "signature": "extern \"C\" uint32_t fn_0085C1C0(void* node)",
+    "summary": "Recursively computes total serialized size of a node, its child (+0x20) if bit 29 is set (otherwise ComputeRecordSize), and its sibling (+0x1C).",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
   "0x0085C260": {
@@ -75642,6 +75654,12 @@
     "name": "ReturnSelfOrChainedPtrIfCheckPasses",
     "signature": "extern \"C\" void* __cdecl fn_0086CCC0(void* self)",
     "summary": "Calls ext_0086CCE0(self); if it returns 1, returns the pointer stored at self+0x04, otherwise returns self.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
+  "0x0086CDB0": {
+    "name": "ensureOwnedBuffer",
+    "signature": "uint32_t fn_0086CDB0(void* buf)",
+    "summary": "Ensures a buffer descriptor owns a dynamically allocated copy of its data, returning 0 on success or 0xC on allocation failure.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
   "0x0086CF90": {
