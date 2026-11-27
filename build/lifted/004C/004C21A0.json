@@ -1,0 +1,21 @@
+{
+  "va": "0x004C21A0",
+  "size": 142,
+  "orig_symbol": "sub_004C21A0",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "IterateEntriesDispatchVirtual",
+  "signature": "void fn_004C21A0(void* self, void* arg1, uint32_t index)",
+  "summary": "Walks a 28-byte-stride entry array from index until count; for each entry builds a DWORD pair via ext_004C0350, calls virtual slot 0 on self with it, and stops when the call returns false.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:30:21Z"
+}

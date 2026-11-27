@@ -1168,3 +1168,56 @@ void __fastcall fn_004CDE30(void* self) {
     ext_0066AC80(self);
 }
 } // namespace lift_004CDE30
+
+// [0x004C21A0] sub_004C21A0 (142 bytes)
+namespace lift_004C21A0 {
+// Known callee 0x004C0350: CallDispatchThenInitPair (Calls DispatchSubcallByIndex(2, a2, saved ESI), then initDwordPair on a1 with (result, a2); returns a1.)
+extern void* ext_004C0350(void* a1, void* out, uint32_t a2);
+extern void ext_00493D90();
+extern int mem_00925134;
+
+// @name IterateEntriesDispatchVirtual
+// @summary Walks a 28-byte-stride entry array from index until count; for each entry builds a DWORD pair via ext_004C0350, calls virtual slot 0 on self with it, and stops when the call returns false.
+// @field Unknown +0x08 uint32_t field_0x08
+
+namespace {
+struct DwordPair {
+    uint32_t first;
+    uint32_t second;
+};
+}
+
+// Calling convention: self = edi (vtable object), arg1 = container pointer (ebx/[esp+0x14]),
+// index = starting byte offset (esi), stride 0x1C.
+void fn_004C21A0(void* self, void* arg1, uint32_t index) {
+    using VSlot0 = uint8_t(__thiscall*)(void*, uint32_t, uint32_t);
+
+    (void)&mem_00925134;  // CRT invalid-parameter trap slot; diagnostic path only, not modeled.
+
+    for (;;) {
+        const uint32_t count = lift_field<uint32_t>(arg1, 0x08);
+        if (index == count) {
+            return;
+        }
+        if (index >= count) {
+            // Invalid-parameter trap path in the original; not modeled.
+            return;
+        }
+
+        DwordPair buf{};
+        void* pairPtr = ext_004C0350(&buf, &buf, index);
+        const DwordPair* pair = static_cast<const DwordPair*>(pairPtr);
+
+        void** vtbl = *reinterpret_cast<void***>(self);
+        VSlot0 slot0 = reinterpret_cast<VSlot0>(vtbl[0]);
+        uint8_t keepGoing = slot0(self, pair->first, pair->second);
+
+        ext_00493D90();
+
+        if (keepGoing == 0) {
+            return;
+        }
+        index += 0x1C;
+    }
+}
+} // namespace lift_004C21A0
