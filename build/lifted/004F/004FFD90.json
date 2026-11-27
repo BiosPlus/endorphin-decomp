@@ -1,0 +1,34 @@
+{
+  "va": "0x004FFD90",
+  "size": 145,
+  "orig_symbol": "sub_004FFD90",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "CopyAssignStringHandleRange",
+  "class": "Unknown",
+  "signature": "static inline uint8_t* as_ptr(uint32_t v)",
+  "summary": "Copy-assigns a range of 0x24-byte elements src[first,last) into dst (element-wise); releases the old dst handle, copies the src handle and its value, and returns dst advanced past the copied elements (dst on empty range).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T04:37:25Z"
+}

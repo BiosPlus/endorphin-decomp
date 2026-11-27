@@ -1452,3 +1452,76 @@ void* fn_004FDD70(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4
     return self;
 }
 } // namespace lift_004FDD70
+
+// [0x004FFD90]
+namespace lift_004FFD90 {
+// Import slot for MSVCP80 std::basic_string<char>::operator= (IAT entry, bound at load time).
+// Thiscall: self in ecx, rhs pushed; returns a reference to self.
+extern void* (__thiscall* mem_00924FDC)(void* self, const void* rhs);
+
+// Elements are 0x24 bytes: std::string at +0x00, 32-bit handle at +0x20 (MSVC 32-bit
+// pointer, held as a vtable-bearing object), and a 32-bit value at +0x1c.
+// Vtable slots are byte offsets into the 32-bit vtable (0x70, 0x78).
+
+static inline uint8_t* as_ptr(uint32_t v) {
+    return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(v));
+}
+
+// Reads the function pointer stored at byte offset `off` in the object's vtable.
+static inline void* vtable_slot(void* obj, uintptr_t off) {
+    uint32_t vt = *reinterpret_cast<uint32_t*>(obj);
+    uint32_t fn = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(vt) + off);
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(fn));
+}
+
+using ThisCallVoid1 = void(__thiscall*)(void* self, void* arg);
+using ThisCallPtr2 = void*(__thiscall*)(void* self, void* out, void* arg);
+
+// @name CopyAssignStringHandleRange
+// @class Unknown
+// @summary Copy-assigns a range of 0x24-byte elements src[first,last) into dst (element-wise); releases the old dst handle, copies the src handle and its value, and returns dst advanced past the copied elements (dst on empty range).
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1c uint32_t field_0x1c
+// @field Unknown +0x20 uint32_t field_0x20
+uint8_t* fn_004FFD90(uint8_t* src_first, uint8_t* src_last, uint8_t* dst) {
+    if (src_first == src_last) {
+        return dst;
+    }
+
+    uint8_t* s = src_first;
+    uint8_t* d = dst;
+    do {
+        // dst[i] = src[i] (std::string::operator=)
+        mem_00924FDC(d, s);
+
+        if (d + 0x1c != s + 0x1c) {
+            uint32_t& dst_handle = lift_field<uint32_t>(d, 0x20);
+            uint32_t& src_handle = lift_field<uint32_t>(s, 0x20);
+
+            // Release the old dst handle via vtable slot +0x78.
+            if (dst_handle != 0) {
+                void* obj = as_ptr(dst_handle);
+                reinterpret_cast<ThisCallVoid1>(vtable_slot(obj, 0x78))(obj, d + 0x1c);
+            }
+
+            dst_handle = src_handle;
+
+            // Fetch the value from the src handle via vtable slot +0x70; the callee returns
+            // a pointer to the result, whose 32-bit contents become dst+0x1c.
+            uint32_t value = 0;
+            if (src_handle != 0) {
+                void* obj = as_ptr(src_handle);
+                uint32_t out = 0;
+                void* ret = reinterpret_cast<ThisCallPtr2>(vtable_slot(obj, 0x70))(obj, &out, s + 0x1c);
+                value = *reinterpret_cast<uint32_t*>(ret);
+            }
+            lift_field<uint32_t>(d, 0x1c) = value;
+        }
+
+        s += 0x24;
+        d += 0x24;
+    } while (s != src_last);
+
+    return d;
+}
+} // namespace lift_004FFD90
