@@ -58201,6 +58201,12 @@
     "summary": "Stores the argument at this+0x64, raising it to 2 if it is below 2 (unsigned); returns 0.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006B69B0": {
+    "name": "ConstructWithFlags_006B69B0",
+    "signature": "void* fn_006B69B0(void* self, uint8_t a, uint8_t b)",
+    "summary": "Initializes an object's vtables and fields, constructs embedded sub-object at +0x70 from two byte flags, returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B7420": {
     "name": "PostMessageIfActive",
     "class": "Unknown",

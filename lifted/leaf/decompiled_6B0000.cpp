@@ -1751,3 +1751,41 @@ int32_t fn_006BA370(void* self, const char* needle, uint32_t offset) {
     return static_cast<int32_t>(hit - base);
 }
 } // namespace lift_006BA370
+
+// [0x006B69B0] sub_006B69B0 (119 bytes)
+namespace lift_006B69B0 {
+// Known callee 0x006A5C6E: thunk_MFC80_ord_572 (IAT jump thunk forwarding to MFC80!ord_572.)
+extern void ext_006A5C6E();
+// Known callee 0x006B0CA0: sub_006B0CA0 (thiscall, two stack byte args, ret 8)
+extern void* __thiscall ext_006B0CA0(void* self, uint8_t a, uint8_t b);
+
+// @name ConstructWithFlags_006B69B0
+// @summary Initializes an object's vtables and fields, constructs embedded sub-object at +0x70 from two byte flags, returns this.
+// @field vtable +0x00 uint32_t vtable
+// @field +0x54 uint32_t field_0x54
+// @field +0x58 uint32_t field_0x58
+// @field +0x5c uint32_t field_0x5c
+// @field +0x60 uint8_t flag_0x60
+// @field +0x61 uint8_t flag_0x61
+// @field +0x64 int32_t field_0x64
+// @field +0x68 uint32_t field_0x68
+// @field +0x6c uint32_t field_0x6c
+// @field +0x70 void* sub_object_0x70
+void* fn_006B69B0(void* self, uint8_t a, uint8_t b) {
+    ext_006A5C6E();
+
+    lift_field<uint32_t>(self, 0x00) = 0x0099263C;
+    lift_field<uint32_t>(self, 0x54) = 0;
+    lift_field<uint32_t>(self, 0x5C) = 0;
+    lift_field<uint32_t>(self, 0x58) = 0x0092A5D4;
+    lift_field<uint8_t>(self, 0x60) = a;
+    lift_field<uint8_t>(self, 0x61) = b;
+    lift_field<int32_t>(self, 0x64) = -1;
+    lift_field<uint32_t>(self, 0x68) = 0;
+    lift_field<uint32_t>(self, 0x6C) = 0;
+
+    ext_006B0CA0(static_cast<uint8_t*>(self) + 0x70, a, b);
+
+    return self;
+}
+} // namespace lift_006B69B0
