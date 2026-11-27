@@ -1587,7 +1587,7 @@ struct Unknown_Fields {
     // +0x160 DWORD                    field_0x160  (evidence: 0x006D9030, 0x00702700, 0x0070AD00) // CONFLICT: multiple definitions at +0x160
     // +0x160 double                   field_0x160  (evidence: 0x006D9060) // CONFLICT: multiple definitions at +0x160
     // +0x160 uint32_t*                field_0x160  (evidence: 0x0072BC70) // CONFLICT: multiple definitions at +0x160
-    // +0x160 void*                    field_0x160  (evidence: 0x0046F930) // CONFLICT: multiple definitions at +0x160
+    // +0x160 void*                    field_0x160  (evidence: 0x0046F930, 0x005BEDD0) // CONFLICT: multiple definitions at +0x160
     // +0x160 uint32_t*                mask_table  (evidence: 0x007B0FC0) // CONFLICT: multiple definitions at +0x160
     // +0x160 uint32_t field_0x160 (pointer; its +0xC dword is the mask source)  (evidence: 0x007BA200) // CONFLICT: multiple definitions at +0x160
     // +0x160 void*                    subobject  (evidence: 0x005947B0, 0x0059D660) // CONFLICT: multiple definitions at +0x160

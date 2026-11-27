@@ -1236,3 +1236,56 @@ void* __stdcall fn_005B1220(void* out, void* obj) {
     return out;
 }
 } // namespace lift_005B1220
+
+// [0x005BEDD0] sub_005BEDD0 (140 bytes)
+namespace lift_005BEDD0 {
+// Known callee 0x00673C20: sub_00673C20 (advances a list iterator; identical shape to 0x00667030 advanceCursorSkipFlagged)
+extern void ext_00673C20(void* self);
+// CRT _invalid_parameter_noinfo IAT slot: boilerplate assert calls, no-ops in release. Metadata only.
+extern int mem_00925134;
+
+// @name Unknown::notifyAcceptingEntries
+// @class Unknown
+// @summary Walks the intrusive list whose sentinel is at +0x15C; for each entry whose object at node+0x28 accepts (vtable +0x6C), forwards arg to its subobject at +0x0C (vtable +0x10).
+// @field Unknown +0x160 void* field_0x160
+void fn_005BEDD0(void* self, uint32_t arg) {
+    (void)&mem_00925134;
+    uint8_t* self_bytes = reinterpret_cast<uint8_t*>(self);
+
+    // Sentinel node of the list (address only; the node itself is not dereferenced here).
+    uint8_t* head = self_bytes + 0x15C;
+
+    // Reference node: the first word of the node stored at +0x160 (fixed for the whole call).
+    uint8_t* last = lift_field<uint8_t*>(self, 0x160);
+    uint8_t* ref = *reinterpret_cast<uint8_t**>(last);
+
+    // Iterator, advanced through the helper each pass.
+    uint8_t* it = head;
+
+    for (;;) {
+        // The list tail is re-read every pass.
+        uint8_t* tail = lift_field<uint8_t*>(self, 0x160);
+        if (ref == tail) {
+            break;
+        }
+
+        uint8_t* obj = *reinterpret_cast<uint8_t**>(ref + 0x28);
+        if (obj != nullptr) {
+            // Virtual slot at byte offset 0x6C: returns accept/reject flag.
+            uint8_t* vt = *reinterpret_cast<uint8_t**>(obj);
+            auto accept = reinterpret_cast<uint8_t (*)(void*)>(
+                *reinterpret_cast<void**>(vt + 0x6C));
+            if (accept(obj)) {
+                // Subobject at +0x0C; virtual slot at byte offset 0x10 receives arg.
+                uint8_t* sub = obj + 0x0C;
+                uint8_t* subvt = *reinterpret_cast<uint8_t**>(sub);
+                auto notify = reinterpret_cast<void (*)(void*, uint32_t)>(
+                    *reinterpret_cast<void**>(subvt + 0x10));
+                notify(sub, arg);
+            }
+        }
+
+        ext_00673C20(&it);
+    }
+}
+} // namespace lift_005BEDD0
