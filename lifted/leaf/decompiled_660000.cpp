@@ -4008,3 +4008,95 @@ uint32_t __thiscall sub_00661C90(void* self, uint32_t index) {
     }
 }
 } // namespace lift_00661C90
+
+// [0x00661DE0]
+namespace lift_00661DE0 {
+extern void (*mem_00925134)();
+
+// @name sub_00661DE0
+// @class UnknownClass
+// @summary Returns element at index from owner's vector if iterator is at begin, else from current list node's 8-byte element vector
+// @field UnknownClass +0x04 uint32_t field_0x04
+// @field UnknownClass +0x08 uint32_t field_0x08
+// @field UnknownClass +0x0c uint32_t field_0x0c
+uint32_t __thiscall sub_00661DE0(void* this_ptr, uint32_t index) {
+    auto invalid_param = mem_00925134;
+    uint8_t* self = reinterpret_cast<uint8_t*>(this_ptr);
+
+    uint8_t* owner = lift_field<uint8_t*>(self, 0x04);
+    uint8_t* list_ptr = owner + 0x60;
+    uint32_t* head = lift_field<uint32_t*>(owner, 0x64);
+    uint32_t begin_node = *head;
+
+    uint8_t* cont = lift_field<uint8_t*>(self, 0x08);
+    if (cont == nullptr || cont != list_ptr) {
+        invalid_param();
+    }
+
+    if (lift_field<uint32_t>(self, 0x0c) == begin_node) {
+        uint8_t* vec_owner = lift_field<uint8_t*>(self, 0x04);
+        int32_t first = lift_field<int32_t>(vec_owner, 0x54);
+        uint8_t* vec = vec_owner + 0x50;
+        if (first == 0 || index >= static_cast<uint32_t>((lift_field<int32_t>(vec, 0x08) - first) >> 2)) {
+            invalid_param();
+        }
+        uint32_t* data = lift_field<uint32_t*>(vec, 0x04);
+        void* obj = reinterpret_cast<void*>(data[index]);
+        using vfn_t = uint32_t(__thiscall*)(void*);
+        vfn_t* vtable = *reinterpret_cast<vfn_t**>(obj);
+        return vtable[0](obj);
+    } else {
+        if (lift_field<uint32_t>(self, 0x08) == 0) {
+            invalid_param();
+        }
+        uint8_t* cont2 = lift_field<uint8_t*>(self, 0x08);
+        uint32_t node_val = lift_field<uint32_t>(self, 0x0c);
+        if (node_val == lift_field<uint32_t>(cont2, 0x04)) {
+            invalid_param();
+        }
+        uint8_t* node = lift_field<uint8_t*>(self, 0x0c);
+        int32_t first = lift_field<int32_t>(node, 0x60);
+        uint8_t* vec = node + 0x5c;
+        if (first == 0 || index >= static_cast<uint32_t>((lift_field<int32_t>(vec, 0x08) - first) >> 3)) {
+            invalid_param();
+        }
+        uint32_t data = lift_field<uint32_t>(vec, 0x04);
+        return data + 8 * index;
+    }
+}
+} // namespace lift_00661DE0
+
+// [0x00664A80]
+namespace lift_00664A80 {
+extern uint32_t mem_00925014;
+extern uint32_t mem_00924EC4;
+extern uint32_t mem_00925028;
+
+// @name replaceString
+// @summary Replaces occurrences of a substring in a std::string and returns the replacement count.
+int __cdecl sub_00664A80(void* str, const char* find_str, const char* replace_str, bool only_first) {
+    using find_fn = uint32_t (__thiscall*)(void* self, const char* s, uint32_t pos);
+    using replace_fn = void* (__thiscall*)(void* self, uint32_t pos, uint32_t len, const char* s);
+
+    uint32_t find_len = static_cast<uint32_t>(std::strlen(find_str));
+    uint32_t replace_len = static_cast<uint32_t>(std::strlen(replace_str));
+
+    auto fn_find = reinterpret_cast<find_fn>(mem_00925014);
+    auto fn_replace = reinterpret_cast<replace_fn>(mem_00925028);
+    uint32_t npos = *reinterpret_cast<const uint32_t*>(mem_00924EC4);
+
+    int count = 0;
+    uint32_t pos = fn_find(str, find_str, 0);
+    while (pos != npos) {
+        fn_replace(str, pos, find_len, replace_str);
+        count++;
+        if (only_first) {
+            break;
+        }
+        pos = fn_find(str, find_str, pos + replace_len);
+        npos = *reinterpret_cast<const uint32_t*>(mem_00924EC4);
+    }
+
+    return count;
+}
+} // namespace lift_00664A80
