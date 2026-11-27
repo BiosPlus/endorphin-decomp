@@ -2594,3 +2594,53 @@ void fn_00414530(void* penObj, void* colorObj, int nWidth, uint32_t penStyle) {
     ext_006A5FFE(penObj, hPen);
 }
 } // namespace lift_00414530
+
+// [0x004101B0] sub_004101B0 (122 bytes)
+namespace lift_004101B0 {
+// Known callee 0x006A5C6E: thunk_MFC80_ord_572 (IAT jump thunk forwarding to MFC80!ord_572.)
+extern void ext_006A5C6E();
+// Known callee 0x006A5FFE: thunk_MFC80_ord_1280 (IAT jump thunk forwarding to MFC80!ord_1280.)
+extern void ext_006A5FFE();
+// IAT slot 0x00925680: USER32!GetSysColor (__stdcall)
+extern int mem_00925680;
+// IAT slot 0x0092407C: GDI32!CreateSolidBrush (__stdcall)
+extern int mem_0092407C;
+
+typedef uint32_t(__stdcall* PFN_GetSysColor)(int nIndex);
+typedef void*(__stdcall* PFN_CreateSolidBrush)(uint32_t color);
+
+// @name CColorStatic::CColorStatic
+// @class CColorStatic
+// @summary Constructor body: sets CColorStatic vtable, initializes embedded CBrush at +0x54 with a solid brush of COLOR_BTNFACE, and returns this.
+// @field CColorStatic +0x00 uint32_t vtable
+// @field CColorStatic +0x54 CBrush m_brush
+// @field CColorStatic +0x58 HANDLE m_hObject
+// @field CColorStatic +0x5c uint32_t field_0x5c
+// @field CColorStatic +0x60 uint32_t field_0x60
+//
+// Notes:
+//  - The MSVC SEH frame setup/teardown (fs:[0] chain, state slot) is compiler
+//    plumbing and is intentionally not reproduced.
+//  - ext_006A5C6E is called with ECX = self in the original; ext_006A5FFE is
+//    called with ECX = self+0x54 and the HBRUSH as its stack argument. The
+//    void(void) extern signature cannot express those, so the differential
+//    leaf test remains the authority for those calls.
+void* fn_004101B0(void* self) {
+    ext_006A5C6E();                                   // base-class init on self (thiscall, ECX = self)
+
+    lift_field<uint32_t>(self, 0x00) = 0x0092BBCC;    // CColorStatic vtable
+
+    // Embedded CBrush at self+0x54
+    lift_field<uint32_t>(self, 0x54) = 0x0092A254;    // CBrush vtable
+    lift_field<uint32_t>(self, 0x58) = 0;             // CBrush::m_hObject = NULL
+
+    uint32_t color = (*reinterpret_cast<PFN_GetSysColor*>(&mem_00925680))(15); // COLOR_BTNFACE
+    lift_field<uint32_t>(self, 0x5c) = color;
+    lift_field<uint32_t>(self, 0x60) = 0;
+
+    void* hbr = (*reinterpret_cast<PFN_CreateSolidBrush*>(&mem_0092407C))(color);
+
+    ext_006A5FFE();                                   // CBrush::Attach(hbr) on self+0x54 (hbr is its stack arg)
+    return self;                                      // original returns this in EAX
+}
+} // namespace lift_004101B0
