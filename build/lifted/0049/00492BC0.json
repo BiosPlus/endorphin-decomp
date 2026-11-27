@@ -1,0 +1,28 @@
+{
+  "va": "0x00492BC0",
+  "size": 108,
+  "orig_symbol": "sub_00492BC0",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "TreeConstIterator::increment",
+  "class": "TreeConstIterator",
+  "signature": "void __thiscall sub_00492BC0(void* self)",
+  "summary": "Advances an MSVC8 red-black tree iterator to the next in-order node.",
+  "fields": [
+    {
+      "class": "TreeConstIterator",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "container"
+    },
+    {
+      "class": "TreeConstIterator",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "node"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:12:05Z"
+}
