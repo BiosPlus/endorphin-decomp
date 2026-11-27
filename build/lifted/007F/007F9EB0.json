@@ -1,0 +1,13 @@
+{
+  "va": "0x007F9EB0",
+  "size": 126,
+  "orig_symbol": "sub_007F9EB0",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "ElementwiseAddFloatArrays",
+  "signature": "void fn_007F9EB0(int32_t n, float* dst, const float* a, const float* b)",
+  "summary": "dst[0..n) = a[0..n) + b[0..n) for float arrays (cdecl; unrolled by 4, scalar tail)",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:04:10Z"
+}

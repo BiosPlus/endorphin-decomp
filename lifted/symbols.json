@@ -79753,6 +79753,12 @@
     "summary": "Add src float array into dst float array element-wise",
     "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
+  "0x007F9EB0": {
+    "name": "ElementwiseAddFloatArrays",
+    "signature": "void fn_007F9EB0(int32_t n, float* dst, const float* a, const float* b)",
+    "summary": "dst[0..n) = a[0..n) + b[0..n) for float arrays (cdecl; unrolled by 4, scalar tail)",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
   "0x007F9F30": {
     "name": "scaleFloatArray",
     "signature": "void fn_007F9F30(int32_t count, float* dst, const float* src, float scale)",

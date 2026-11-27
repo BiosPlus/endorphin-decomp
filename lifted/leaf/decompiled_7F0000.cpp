@@ -650,3 +650,30 @@ bool fn_007F14B0() {
     return true;
 }
 } // namespace lift_007F14B0
+
+// [0x007F9EB0]
+namespace lift_007F9EB0 {
+// @name ElementwiseAddFloatArrays
+// @summary dst[0..n) = a[0..n) + b[0..n) for float arrays (cdecl; unrolled by 4, scalar tail)
+
+void fn_007F9EB0(int32_t n, float* dst, const float* a, const float* b) {
+    if (n <= 0) {
+        return;
+    }
+
+    int32_t i = 0;
+    if (n >= 4) {
+        do {
+            dst[i + 0] = a[i + 0] + b[i + 0];
+            dst[i + 1] = a[i + 1] + b[i + 1];
+            dst[i + 2] = a[i + 2] + b[i + 2];
+            dst[i + 3] = a[i + 3] + b[i + 3];
+            i += 4;
+        } while (i < n - 3);
+    }
+
+    for (; i < n; ++i) {
+        dst[i] = a[i] + b[i];
+    }
+}
+} // namespace lift_007F9EB0
