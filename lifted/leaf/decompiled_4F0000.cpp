@@ -1257,3 +1257,63 @@ void* fn_004F04A0(void* self) {
     return self;
 }
 } // namespace lift_004F04A0
+
+// [0x004F1430] sub_004F1430 (98 bytes)
+namespace lift_004F1430 {
+// Known callee 0x004F0430: Unknown::clearStringPairsAndRelease (Clears the embedded StringPairList at +0x18, releases its head block at +0x1C, releases the block at +0x0C if set, and zeroes the +0x0C/+0x10/+0x14 slots.)
+extern void ext_004F0430(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764; releases a heap block.)
+extern void ext_006A5C5C(void* p);
+// Data slot at 0x00925134 holding the invalid-parameter handler pointer (MSVCR80!_invalid_parameter_noinfo).
+extern uint32_t mem_00925134;
+
+// @name clearAndFreePointerRange
+// @summary Walks the 4-byte pointer range [first,last) of a checked container: for each non-null element, clears it via sub_004F0430 and frees it via the MFC80 thunk, with container validity checks.
+// @field Unknown +0x08 uint32_t field_0x08
+void fn_004F1430(uint32_t container, uint32_t first, uint32_t expected, uint32_t last) {
+    // Guest-address dereference helper (addresses are 32-bit values from the original image).
+    auto deref = [](uint32_t addr) -> uint32_t& {
+        return *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(addr));
+    };
+    auto invalidParameter = reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134));
+
+    uint32_t cur = first;
+    for (;;) {
+        // Container must be non-null and match the expected container.
+        if (container == 0 || container != expected) {
+            invalidParameter();
+        }
+
+        if (cur == last) {
+            return;
+        }
+
+        const uint32_t elemAddr = cur;
+
+        if (container == 0) {
+            invalidParameter();
+        }
+        // cur must be below container's bound at +0x08.
+        if (cur >= deref(container + 0x08)) {
+            invalidParameter();
+        }
+        cur += 4;
+
+        if (container == 0) {
+            invalidParameter();
+        }
+        if (elemAddr >= deref(container + 0x08)) {
+            invalidParameter();
+        }
+
+        const uint32_t obj = deref(elemAddr);
+        if (obj == 0) {
+            continue;
+        }
+
+        // Clear the object (this = obj), then release its block.
+        ext_004F0430(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+        ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+    }
+}
+} // namespace lift_004F1430

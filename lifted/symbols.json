@@ -19966,6 +19966,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004F0B10 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_4F0000.cpp"
   },
+  "0x004F1430": {
+    "name": "clearAndFreePointerRange",
+    "signature": "void fn_004F1430(uint32_t container, uint32_t first, uint32_t expected, uint32_t last)",
+    "summary": "Walks the 4-byte pointer range [first,last) of a checked container: for each non-null element, clears it via sub_004F0430 and frees it via the MFC80 thunk, with container validity checks.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F27C0": {
     "name": "VMCSModes::RunEvolutionMode::vfunc_17",
     "class": "VMCSModes::RunEvolutionMode",
