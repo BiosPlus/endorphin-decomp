@@ -29260,6 +29260,13 @@
     "summary": "Loads the target object pointer from the proxy's first dword and forwards it to the shared method-invoke helper (randomizeNow path); pops 8 bytes of stack args.",
     "lifted_path": "lifted/templates/WriteOnlyMethod0Type.cpp"
   },
+  "0x0050F1A0": {
+    "name": "Unknown::Construct_0050F1A0",
+    "class": "Unknown",
+    "signature": "void* fn_0050F1A0(void* self)",
+    "summary": "Constructor: stamps the vtable, zeroes six fields, builds a type-name string via 0x0050E3B0 and pushes it onto the global string vector at 0xB5962C; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050F550": {
     "name": "InitOnceGlobal_0050F550",
     "signature": "void* fn_0050F550()",

@@ -3644,3 +3644,46 @@ void __thiscall fn_00507490(uint8_t* self, uint32_t* out, uint32_t a2, uint32_t 
     out[1] = result;
 }
 } // namespace lift_00507490
+
+// [0x0050F1A0] sub_0050F1A0 (128 bytes)
+namespace lift_0050F1A0 {
+// Known callee 0x0040ECB0: Unknown::PushBackString_0040ECB0 (push_back of one 28-byte std::string onto a vector-like {begin,end,capacity} container; fast path constructs in place, slow path defers to ext_0040EBF0.)
+void ext_0040ECB0(void* self, const void* value);
+// Known callee 0x0050E3B0: ForwardTypeNameString_0050E3B0 (Gets the type name of the global type_info at mem_00A41B00 (node mem_00B5CE94) via its _name_internal_method IAT import, builds a temporary std::string from it (never destroyed, as in the original), then passes the caller's pointer to ext_0066AC90 and returns that pointer.)
+void* ext_0050E3B0(void* out);
+// MSVCP80 basic_string dtor IAT slot (used by the original to destroy the temp string).
+extern int mem_00924FF4;
+// Global vector object passed as `this` to PushBackString.
+extern int mem_00B5962C;
+
+// @name Unknown::Construct_0050F1A0
+// @class Unknown
+// @summary Constructor: stamps the vtable, zeroes six fields, builds a type-name string via 0x0050E3B0 and pushes it onto the global string vector at 0xB5962C; returns this.
+// @field Unknown +0x00 void* vftable
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x20 uint32_t field_0x20
+void* fn_0050F1A0(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x950a38;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1C) = 0;
+    lift_field<uint32_t>(self, 0x20) = 0;
+
+    // Temporary std::string (28 bytes) filled by the type-name helper.
+    alignas(8) unsigned char tmp[28] = {};
+    void* str = ext_0050E3B0(tmp);
+    ext_0040ECB0(&mem_00B5962C, str);
+
+    // The original destroys `tmp` here via the MSVCP80 IAT slot mem_00924FF4.
+    // That import cannot be called portably, so the destructor is not modelled.
+    (void)&mem_00924FF4;
+
+    return self;
+}
+} // namespace lift_0050F1A0
