@@ -757,6 +757,13 @@
     "summary": "Returns the address of the global data slot mem_0092A1CC (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00407750": {
+    "name": "BottomPanel::vfunc_81",
+    "class": "BottomPanel",
+    "signature": "void __thiscall fn_00407750(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Forwards message/update to base handlers and updates three child controls' enabled state",
+    "lifted_path": "lifted/classes/BottomPanel.cpp"
+  },
   "0x004077E0": {
     "name": "CDC::GetTextExtent",
     "class": "CDC",
