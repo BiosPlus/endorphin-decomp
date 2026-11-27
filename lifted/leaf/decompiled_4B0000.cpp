@@ -2552,3 +2552,28 @@ uint32_t* fn_004B6560(uint8_t* self, uint32_t* out, const char* arg2) {
     return out;
 }
 } // namespace lift_004B6560
+
+// [0x004B77E0] sub_004B77E0 (117 bytes)
+namespace lift_004B77E0 {
+// Known callee 0x004B76A0: Unknown::ctor_DynamicCastPair (Initializes the object: calls ext_006657F0(self, 0), sets the vtable to 0x00943660, stores arg0 at +0x10, runs __RTDynamicCast on arg1 and stores the result at +0x14, stores arg2/arg3 at +0x1C/+0x24, and sets +0x08 to arg1 only when the cast fails. Returns self.)
+extern void* ext_004B76A0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+// Known callee 0x00665870: sub_00665870 (Returns global int32 value from mem_00B59420.)
+extern int32_t ext_00665870(void);
+// Known callee 0x00666670: sub_00666670 (292B). __thiscall with ECX = value from ext_00665870 and one stack arg; callee pops its arg.
+extern void* ext_00666670(void* self, void* arg0);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762). Used as operator new(size) returning a pointer.
+extern void* ext_006A5C62(uint32_t size);
+
+// @name CtorDynamicCastPair_Wrapper
+// @class Unknown
+// @summary Allocates a 0x28-byte object, constructs it via ext_004B76A0 with (this, arg0, arg1, arg2) when allocation succeeds, then calls the global-state helper and ext_00666670 with the result; returns ext_00666670's result. The original SEH frame setup/teardown is omitted.
+void* fn_004B77E0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2) {
+    void* obj = ext_006A5C62(0x28);
+    void* created = nullptr;
+    if (obj != nullptr) {
+        created = ext_004B76A0(obj, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)), arg0, arg1, arg2);
+    }
+    void* helper_self = reinterpret_cast<void*>(static_cast<intptr_t>(ext_00665870()));
+    return ext_00666670(helper_self, created);
+}
+} // namespace lift_004B77E0

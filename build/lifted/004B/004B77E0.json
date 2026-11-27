@@ -1,0 +1,14 @@
+{
+  "va": "0x004B77E0",
+  "size": 117,
+  "orig_symbol": "sub_004B77E0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "CtorDynamicCastPair_Wrapper",
+  "class": "Unknown",
+  "signature": "void* fn_004B77E0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2)",
+  "summary": "Allocates a 0x28-byte object, constructs it via ext_004B76A0 with (this, arg0, arg1, arg2) when allocation succeeds, then calls the global-state helper and ext_00666670 with the result; returns ext_00666670's result. The original SEH frame setup/teardown is omitted.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:24:30Z"
+}
