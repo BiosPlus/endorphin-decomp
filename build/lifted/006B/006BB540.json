@@ -1,0 +1,34 @@
+{
+  "va": "0x006BB540",
+  "size": 144,
+  "orig_symbol": "sub_006BB540",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::DestructPtrArray",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __thiscall fn_006BB540(void* self)",
+  "summary": "Sets vtable, destroys and frees non-null elements in embedded array at +0x04, then resets and destroys the array.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void**",
+      "name": "elements"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T04:40:25Z"
+}

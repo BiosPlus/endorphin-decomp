@@ -2344,3 +2344,96 @@ void __thiscall fn_006B7380(uint8_t* self, uint8_t* arg) {
     lift_field<uint32_t>(self, 0x68) = 0;
 }
 } // namespace lift_006B7380
+
+// [0x006BB540]
+namespace lift_006BB540 {
+// @name Unknown::DestructPtrArray
+// @class Unknown
+// @summary Sets vtable, destroys and frees non-null elements in embedded array at +0x04, then resets and destroys the array.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x04 int32_t count
+// @field Unknown +0x14 void** elements
+
+
+extern void __thiscall ext_006B9D70(void* self);
+extern void __cdecl ext_006A5C5C(void* ptr);
+extern void __thiscall ext_006D2250(void* self);
+extern void __thiscall ext_006D2160(void* self);
+
+extern void __thiscall fn_006BB540(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x00993CE0u;
+
+    void* array_member = static_cast<uint8_t*>(self) + 0x04;
+    int32_t count = lift_field<int32_t>(self, 0x04);
+    if (count > 0) {
+        int32_t i = 0;
+        do {
+            void** elements = lift_field<void**>(self, 0x14);
+            void* elem = elements[i];
+            if (elem != nullptr) {
+                ext_006B9D70(elem);
+                ext_006A5C5C(elem);
+            }
+            count = lift_field<int32_t>(array_member, 0x00);
+            ++i;
+        } while (i < count);
+    }
+
+    ext_006D2250(array_member);
+    ext_006D2160(array_member);
+}
+} // namespace lift_006BB540
+
+// [0x006B9A00]
+namespace lift_006B9A00 {
+// @name Unknown::allocBuffer
+// @class Unknown
+// @summary Detaches any existing buffer and allocates an inline or heap buffer of the requested length, returning 0 on success or 1 on error.
+// @field Unknown +0x00 char* data
+// @field Unknown +0x04 uint32_t size
+// @field Unknown +0x08 uint32_t capacity
+// @field Unknown +0x0C char[64] inlineBuf
+
+
+extern void __thiscall ext_006B9990(void* ecx, uint32_t* out);
+extern void __thiscall ext_006B9920(void* ecx);
+extern void* __cdecl ext_006A5C62(uint32_t size);
+
+uint32_t __thiscall fn_006B9A00(void* ecx, int32_t len, uint32_t* out) {
+    *out = 0;
+
+    if (len == 0) {
+        ext_006B9990(ecx, out);
+        char* inline_buf = reinterpret_cast<char*>(ecx) + 0xC;
+        lift_field<char*>(ecx, 0x0) = inline_buf;
+        *inline_buf = '\0';
+        return 0;
+    }
+
+    if (len < 0) {
+        ext_006B9920(ecx);
+        return 1;
+    }
+
+    ext_006B9990(ecx, out);
+
+    uint32_t alloc_size = static_cast<uint32_t>(len) + 1;
+    char* buf;
+    if (alloc_size < 0x40) {
+        buf = reinterpret_cast<char*>(ecx) + 0xC;
+    } else {
+        buf = static_cast<char*>(ext_006A5C62(alloc_size));
+    }
+
+    lift_field<char*>(ecx, 0x0) = buf;
+    if (buf == nullptr) {
+        ext_006B9920(ecx);
+        return 1;
+    }
+
+    lift_field<uint32_t>(ecx, 0x8) = static_cast<uint32_t>(len);
+    lift_field<uint32_t>(ecx, 0x4) = static_cast<uint32_t>(len);
+    buf[len] = '\0';
+    return 0;
+}
+} // namespace lift_006B9A00
