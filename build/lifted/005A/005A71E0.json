@@ -1,0 +1,45 @@
+{
+  "va": "0x005A71E0",
+  "size": 118,
+  "orig_symbol": "sub_005A71E0",
+  "src_path": "src/leaf/decompiled_5A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5A0000.cpp",
+  "name": "sub_005A71E0",
+  "signature": "extern \"C\" void* __thiscall sub_005A71E0(void* self)",
+  "summary": "Constructor initializing vtable, std::string at +0x04, and empty RB-tree at +0x20",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "tree_base"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "tree_head"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "tree_size"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T02:20:13Z"
+}

@@ -921,3 +921,35 @@ void __thiscall fn_005AE170(void* self, void* arg) {
     }
 }
 } // namespace lift_005AE170
+
+// [0x005A71E0]
+namespace lift_005A71E0 {
+// @name sub_005A71E0
+// @summary Constructor initializing vtable, std::string at +0x04, and empty RB-tree at +0x20
+// @field Self +0x00 uint32_t vtable
+// @field Self +0x04 std::string field_0x04
+// @field Self +0x20 void* tree_base
+// @field Self +0x24 void* tree_head
+// @field Self +0x28 uint32_t tree_size
+
+extern void* __thiscall ext_0059F5C0(void* self);
+extern void* (__thiscall *mem_00924FE8)(void* self);
+
+extern void* __thiscall sub_005A71E0(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    lift_field<uint32_t>(obj, 0x00) = 0x0095E870u;
+
+    mem_00924FE8(obj + 0x04);
+
+    uint8_t* tree = obj + 0x20;
+    uint8_t* head = static_cast<uint8_t*>(ext_0059F5C0(tree));
+    lift_field<void*>(tree, 0x04) = head;
+    lift_field<uint8_t>(head, 0x2D) = 1;
+    lift_field<void*>(head, 0x04) = head;
+    lift_field<void*>(head, 0x00) = head;
+    lift_field<void*>(head, 0x08) = head;
+    lift_field<uint32_t>(tree, 0x08) = 0;
+
+    return self;
+}
+} // namespace lift_005A71E0
