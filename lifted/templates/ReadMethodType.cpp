@@ -67780,3 +67780,44 @@ void fn_00512C20(void* self) {
     ext_0046C4E0();
 }
 } // namespace lift_00512C20
+
+// [0x004BCB90] ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1>::vfunc_3 (130 bytes)
+namespace lift_004BCB90 {
+// Known callee 0x004BC770: sub_004BC770 (Auto-lifted identical-shape clone of 0x0058F770 (descriptiveName_0058F770).)
+// Builds a std::string from a const char* at self, returns self.
+extern void* ext_004BC770(void* self, const void* src);
+
+// Compile-time addresses of the .rdata / IAT slots and string literals the original reads.
+extern int mem_00924FC0;   // IAT slot: std::operator==(const basic_string&, const char*)
+extern int mem_00924FF4;   // IAT slot: std::basic_string<char>::~basic_string (thiscall)
+extern char mem_0092F10C;  // string literal compared against the constructed string
+extern char mem_0093A810;  // string literal compared against the constructed string
+
+using StringEqualsCStrFn = bool (*)(const void* str, const char* lit);
+using StringDtorFn = void (*)(void* self);
+
+// @name ExprParser::ReadMethodType<NMData::MaterialPair>::vfunc_3 (NMData::MaterialPair::generateDisplayName)
+// @class ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1>
+// @summary Copies the first-dword string of its argument into a temporary std::string and returns true if it equals either of two fixed literals.
+// @field ExprParser::ValuePtrType +0x00 const void* field_0x00
+bool fn_004BCB90(const void* arg) {
+    const void* src = lift_field<const void*>(arg, 0);
+
+    // Temporary std::string (MSVC 2005 layout, 0x1C bytes) constructed from src.
+    alignas(8) unsigned char tmp[0x1C];
+    void* str = ext_004BC770(tmp, src);
+
+    auto strEquals = reinterpret_cast<StringEqualsCStrFn>(
+        lift_field<const void*>(&mem_00924FC0, 0));
+    auto strDtor = reinterpret_cast<StringDtorFn>(
+        lift_field<const void*>(&mem_00924FF4, 0));
+
+    bool result = strEquals(str, &mem_0092F10C);
+    if (!result) {
+        result = strEquals(str, &mem_0093A810);
+    }
+
+    strDtor(tmp);
+    return result;
+}
+} // namespace lift_004BCB90
