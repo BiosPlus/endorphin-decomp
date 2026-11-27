@@ -61596,3 +61596,32 @@ std::string* fn_005D74A0(std::string* out, void* self) {
     return out;
 }
 } // namespace lift_005D74A0
+
+// [0x005D79D0] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, 0>::vfunc_4 (74 bytes)
+namespace lift_005D79D0 {
+// Known callee 0x0046C390: formatFloatTrimmedStringWrapper (Forwards a float to formatFloatTrimmedString using the caller's sret slot and returns that slot.)
+extern void* ext_0046C390(void* out, float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, float, getYOffset, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, 0>
+// @summary Formats the VideoPlaneData Y offset float into the caller's string slot; throws DerivedException if the wrapped object pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* object
+// @field NMData::VideoPlaneData +0x40 float field_0x40
+__stdcall void* fn_005D79D0(void* out, void* self) {
+    void* obj = lift_field<void*>(self, 0);
+    if (obj == nullptr) {
+        alignas(8) unsigned char exc[0x28];
+        ext_0046C3C0(exc);
+        // ThrowInfo descriptor at image address 0x009DEC1C (original asm pushes it).
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(uintptr_t{0x009DEC1Cu}));
+        return out;
+    }
+    float y = lift_field<float>(obj, 0x40);
+    ext_0046C390(out, y);
+    return out;
+}
+} // namespace lift_005D79D0
