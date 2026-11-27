@@ -11211,6 +11211,12 @@
     "summary": "Moves the 8-byte-element range [first,last) into dest via ext_0048FC00, then returns dest advanced by the range's element count.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x00490860": {
+    "name": "CopyRangeToBoundedTailWrapper",
+    "signature": "extern \"C\" void* __cdecl sub_00490860(void* out, uint32_t /*unused1*/, uint32_t a2, uint32_t /*unused3*/, uint32_t a4, uint32_t a5, uint32_t a6)",
+    "summary": "Forwards arguments with repeated output pointer to CopyRangeToBoundedTail and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00490920": {
     "name": "sub_00490920",
     "class": "Vector",

@@ -1,0 +1,13 @@
+{
+  "va": "0x00490860",
+  "size": 53,
+  "orig_symbol": "sub_00490860",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "CopyRangeToBoundedTailWrapper",
+  "signature": "extern \"C\" void* __cdecl sub_00490860(void* out, uint32_t /*unused1*/, uint32_t a2, uint32_t /*unused3*/, uint32_t a4, uint32_t a5, uint32_t a6)",
+  "summary": "Forwards arguments with repeated output pointer to CopyRangeToBoundedTail and returns out.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:19:54Z"
+}

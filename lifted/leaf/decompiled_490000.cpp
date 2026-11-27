@@ -2096,3 +2096,17 @@ uint32_t fn_004906D0(uint32_t out, uint32_t src_begin, uint32_t src_end, uint32_
     return out;
 }
 } // namespace lift_004906D0
+
+// [0x00490860]
+namespace lift_00490860 {
+// @name CopyRangeToBoundedTailWrapper
+// @summary Forwards arguments with repeated output pointer to CopyRangeToBoundedTail and returns out.
+
+
+extern void* ext_004906D0(void* out, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, void* a5, void* a6, void* a7);
+
+extern void* __cdecl sub_00490860(void* out, uint32_t /*unused1*/, uint32_t a2, uint32_t /*unused3*/, uint32_t a4, uint32_t a5, uint32_t a6) {
+    ext_004906D0(out, a2, a4, a5, a6, out, out, out);
+    return out;
+}
+} // namespace lift_00490860
