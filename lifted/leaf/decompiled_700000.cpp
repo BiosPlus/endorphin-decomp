@@ -2514,3 +2514,37 @@ void __thiscall sub_00702660(void* self, uint32_t mode) {
     lift_field<uint32_t>(obj, 0x160) = val;
 }
 } // namespace lift_00702660
+
+// [0x00700EC0]
+namespace lift_00700EC0 {
+// @name removeNamedItemsFromObject
+// @summary Removes four specific named items from the object returned by ext_006C9360 and notifies ext_00732CB0.
+
+extern void* __fastcall ext_006C9360(void* self);
+extern void __stdcall ext_00732CB0(int a1);
+
+extern void __thiscall fn_00700EC0(void* self, void* a1) {
+    (void)self;
+    void* obj = ext_006C9360(a1);
+
+    const uintptr_t keys[4] = {
+        0x00AA8CECu,
+        0x00AA8CF4u,
+        0x00AA8D00u,
+        0x00AA8D0Cu,
+    };
+
+    for (uintptr_t key : keys) {
+        uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(obj);
+        auto find_fn = reinterpret_cast<int32_t(__thiscall*)(void*, uintptr_t)>(vtable[0x28 / 4]);
+        int32_t idx = find_fn(obj, key);
+        if (idx != -1) {
+            vtable = *reinterpret_cast<uintptr_t**>(obj);
+            auto remove_fn = reinterpret_cast<void(__thiscall*)(void*, int32_t)>(vtable[0x10 / 4]);
+            remove_fn(obj, idx);
+        }
+    }
+
+    ext_00732CB0(static_cast<int>(reinterpret_cast<uintptr_t>(a1)));
+}
+} // namespace lift_00700EC0

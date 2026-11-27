@@ -1,0 +1,13 @@
+{
+  "va": "0x00700EC0",
+  "size": 132,
+  "orig_symbol": "sub_00700EC0",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "removeNamedItemsFromObject",
+  "signature": "extern \"C\" void __thiscall fn_00700EC0(void* self, void* a1)",
+  "summary": "Removes four specific named items from the object returned by ext_006C9360 and notifies ext_00732CB0.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-27T03:32:05Z"
+}
