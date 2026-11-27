@@ -1,0 +1,34 @@
+{
+  "va": "0x00689FF0",
+  "size": 166,
+  "orig_symbol": "sub_00689FF0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "sub_00689FF0",
+  "class": "Vector_56B",
+  "signature": "void __thiscall fn_00689FF0(void* self, void* val)",
+  "summary": "Auto-lifted identical-shape clone of 0x0057FEC0 (Vector_56B::push_back).",
+  "fields": [
+    {
+      "class": "Vector_56B",
+      "offset": "+0x4",
+      "type": "uint8_t*",
+      "name": "begin"
+    },
+    {
+      "class": "Vector_56B",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "end"
+    },
+    {
+      "class": "Vector_56B",
+      "offset": "+0xC",
+      "type": "uint8_t*",
+      "name": "capacity_end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:21:05Z"
+}

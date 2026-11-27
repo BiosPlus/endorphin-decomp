@@ -13536,12 +13536,40 @@
     "summary": "Formats the command description string with the playback start frame.",
     "lifted_path": "lifted/Commands/SetPlaybackStartFrameCommand.cpp"
   },
+  "0x0048E580": {
+    "name": "Commands::SetPlaybackEndFrameCommand::vfunc_3",
+    "class": "Commands::SetPlaybackEndFrameCommand",
+    "signature": "void* __thiscall fn_0048E580(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0048E4D0 (Commands::SetPlaybackStartFrameCommand::vfunc_3).",
+    "lifted_path": "lifted/Commands/SetPlaybackEndFrameCommand.cpp"
+  },
+  "0x0048E630": {
+    "name": "Commands::SetSaveStartFrameCommand::vfunc_3",
+    "class": "Commands::SetSaveStartFrameCommand",
+    "signature": "void* __thiscall fn_0048E630(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0048E4D0 (Commands::SetPlaybackStartFrameCommand::vfunc_3).",
+    "lifted_path": "lifted/Commands/SetSaveStartFrameCommand.cpp"
+  },
+  "0x0048E6E0": {
+    "name": "Commands::SetSaveEndFrameCommand::vfunc_3",
+    "class": "Commands::SetSaveEndFrameCommand",
+    "signature": "void* __thiscall fn_0048E6E0(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0048E4D0 (Commands::SetPlaybackStartFrameCommand::vfunc_3).",
+    "lifted_path": "lifted/Commands/SetSaveEndFrameCommand.cpp"
+  },
   "0x0048E790": {
     "name": "Commands::DestroyTriggeredEventCommand::vfunc_0",
     "class": "Commands::DestroyTriggeredEventCommand",
     "signature": "extern \"C\" void* __fastcall fn_0048E790(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0048E310 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Commands/auto_tiny.cpp"
+  },
+  "0x0048E920": {
+    "name": "Commands::SetTriggeredEventStartFrameCommand::vfunc_3",
+    "class": "Commands::SetTriggeredEventStartFrameCommand",
+    "signature": "void* __thiscall fn_0048E920(void* self, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0048E4D0 (Commands::SetPlaybackStartFrameCommand::vfunc_3).",
+    "lifted_path": "lifted/Commands/SetTriggeredEventStartFrameCommand.cpp"
   },
   "0x0048EF20": {
     "name": "Vector12::eraseRange",
@@ -17777,12 +17805,26 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x200 and tail-calls sub_004AFF30.",
     "lifted_path": "lifted/leaf/tiny_4B0000.cpp"
   },
+  "0x004B01C0": {
+    "name": "sub_004B01C0",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void fn_004B01C0(void* self, DWORD arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00474EE0 (sub_00474EE0).",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B01E0": {
     "name": "EventDispatcherWithArgs::vfunc_1",
     "class": "EventDispatcherWithArgs\u003cFrameBufferIterator, FrameBufferPlaybackEventListener, \u0026[thunk]: __thiscall FrameBufferTickEventListener::`vcall'{0, {flat}}\u003e",
     "signature": "void fn_004B01E0(void* self, uint32_t arg)",
     "summary": "Dispatches a tick with arg as the second argument and zero as the first to the dispatcher's range via DispatchRangeWithDefault.",
     "lifted_path": "lifted/templates/EventDispatcherWithArgs.cpp"
+  },
+  "0x004B0820": {
+    "name": "sub_004B0820",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void fn_004B0820(void* self, DWORD arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00474EE0 (sub_00474EE0).",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
   "0x004B0840": {
     "name": "sub_004B0840",
@@ -18645,6 +18687,12 @@
     "signature": "uint32_t fn_004B45A0(void* self, void* arg1, void* arg2)",
     "summary": "Auto-lifted identical-shape clone of 0x0046CB60 (ExprParser::ReadMethodType\u003cImageExporter, bool, isEnabled, 0\u003e::vfunc_43).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004B4650": {
+    "name": "sub_004B4650",
+    "signature": "static void call_invalid_parameter_noinfo()",
+    "summary": "Auto-lifted identical-shape clone of 0x00674F40 (sub_00674F40).",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
   "0x004B4740": {
     "name": "sub_004B4740",
@@ -19762,6 +19810,18 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049D390 (initPairWithStaticHandle).",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004BA7A0": {
+    "name": "sub_004BA7A0",
+    "signature": "static void call_invalid_parameter_noinfo()",
+    "summary": "Auto-lifted identical-shape clone of 0x00674F40 (sub_00674F40).",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
+  "0x004BA860": {
+    "name": "sub_004BA860",
+    "signature": "static void call_invalid_parameter_noinfo()",
+    "summary": "Auto-lifted identical-shape clone of 0x00674F40 (sub_00674F40).",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BA920": {
     "name": "initDwordPairFromLookup_passthrough",
     "signature": "void* fn_004BA920(void* arg1, DWORD arg2)",
@@ -19807,6 +19867,12 @@
     "class": "Unknown",
     "signature": "int32_t fn_004BBDB0(void* self, int32_t a1, int32_t a2, int32_t a3, int32_t a4)",
     "summary": "Allocates a 0x28-byte object, constructs it via ext_004BB6C0 forwarding this and the four arguments when the allocation succeeds, then notifies ext_00666670 with the global value from fn_00665870 and the construction result; returns the second argument.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
+  "0x004BBE30": {
+    "name": "sub_004BBE30",
+    "signature": "uint32_t fn_004BBE30(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4)",
+    "summary": "Auto-lifted identical-shape clone of 0x0049EE60 (ConstructAndRegister_0049EE60).",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
   "0x004BBEB0": {
@@ -19966,11 +20032,25 @@
     "summary": "Copies the string at arg1+0x00 into a temporary wrapper, assigns it to arg1 via ext_0041CF50, cleans up, and invokes vtable slot 0xbc on arg1+0x04.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004BE010": {
+    "name": "sub_004BE010",
+    "class": "Unknown",
+    "signature": "void fn_004BE010(void* self, const char* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00502760 (SingletonDispatchWithString_00502760).",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BE470": {
     "name": "BuildLabelAndStore",
     "class": "Unknown",
     "signature": "extern \"C\" uint32_t mem_00924FD4; // basic_string::operator= (thiscall) extern \"C\" uint32_t mem_00924FF4; // basic_string::~basic_string (thiscall) uint32_t* fn_004BE470(void* self, uint32_t* out, const void* flag)",
     "summary": "Builds a temporary string from a literal, optionally forwards flag through sub_00474F00 into self+0x18, derives a DWORD from self+0x08 via sub_00476360, stores it to *out, destroys the temp and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
+  "0x004BE500": {
+    "name": "sub_004BE500",
+    "class": "UnknownClass",
+    "signature": "uint32_t* __thiscall fn_004BE500(uint8_t* self, uint32_t* out, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x004C4070 (LiteralKeyedLookup).",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
   "0x004BE680": {
@@ -31814,6 +31894,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005180D0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00518420": {
+    "name": "sub_00518420",
+    "signature": "void fn_00518420(void* dst, void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x00508210 (Vector_copyAssign).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x005184B0": {
     "name": "ComputeScaledPairOut",
     "signature": "void fn_005184B0(void* out, uint32_t a, uint32_t b)",
@@ -39088,6 +39174,18 @@
     "class": "Vector",
     "signature": "void fn_0056B0C0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x006753D0 (sub_006753D0).",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
+  "0x0056B120": {
+    "name": "sub_0056B120",
+    "signature": "void fn_0056B120(void* dst, void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x00508210 (Vector_copyAssign).",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
+  "0x0056B190": {
+    "name": "sub_0056B190",
+    "signature": "void fn_0056B190(void* dst, void* src)",
+    "summary": "Auto-lifted identical-shape clone of 0x00508210 (Vector_copyAssign).",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
   "0x0056B690": {
@@ -79535,6 +79633,13 @@
     "signature": "extern \"C\" void* __fastcall fn_00689F70(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006895E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00689FF0": {
+    "name": "sub_00689FF0",
+    "class": "Vector_56B",
+    "signature": "void __thiscall fn_00689FF0(void* self, void* val)",
+    "summary": "Auto-lifted identical-shape clone of 0x0057FEC0 (Vector_56B::push_back).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x0068A150": {
     "name": "sub_0068A150",

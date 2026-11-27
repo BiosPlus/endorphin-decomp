@@ -1,0 +1,27 @@
+{
+  "va": "0x0056B120",
+  "size": 97,
+  "orig_symbol": "sub_0056B120",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "sub_0056B120",
+  "signature": "void fn_0056B120(void* dst, void* src)",
+  "summary": "Auto-lifted identical-shape clone of 0x00508210 (Vector_copyAssign).",
+  "fields": [
+    {
+      "class": "Vector",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "begin"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:21:05Z"
+}

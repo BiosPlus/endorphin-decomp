@@ -1,0 +1,28 @@
+{
+  "va": "0x004BE500",
+  "size": 140,
+  "orig_symbol": "sub_004BE500",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "sub_004BE500",
+  "class": "UnknownClass",
+  "signature": "uint32_t* __thiscall fn_004BE500(uint8_t* self, uint32_t* out, uint32_t arg2)",
+  "summary": "Auto-lifted identical-shape clone of 0x004C4070 (LiteralKeyedLookup).",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x18",
+      "type": "uint8_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-27T13:21:05Z"
+}

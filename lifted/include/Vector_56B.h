@@ -8,8 +8,8 @@
 // Recovered field layout for Vector_56B:
 namespace lifted_layout {
 struct Vector_56B_Fields {
-    // +0x4   uint8_t*                 begin  (evidence: 0x0057FEC0)
-    // +0x8   uint8_t*                 end  (evidence: 0x0057FEC0)
-    // +0xC   uint8_t*                 capacity_end  (evidence: 0x0057FEC0)
+    // +0x4   uint8_t*                 begin  (evidence: 0x0057FEC0, 0x00689FF0)
+    // +0x8   uint8_t*                 end  (evidence: 0x0057FEC0, 0x00689FF0)
+    // +0xC   uint8_t*                 capacity_end  (evidence: 0x0057FEC0, 0x00689FF0)
 };
 } // namespace lifted_layout

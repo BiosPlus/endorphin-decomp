@@ -25,8 +25,10 @@ void* fn_004B6C90(void* self, void* dst, void* arg2) {
 #include <memory>
 #include <cstddef>
 #include <cstdio>
+#include <algorithm>
+#include <stdexcept>
 
-// [0x004B7030]
+#include <stdexcept>
 namespace lift_004B7030 {
 // RDATA constants
 extern float mem_00A3849C; // 0.1230123f
@@ -2760,3 +2762,415 @@ int32_t fn_004BBDB0(void* self, int32_t a1, int32_t a2, int32_t a3, int32_t a4) 
     return a2;
 }
 } // namespace lift_004BBDB0
+
+// [0x004B01C0] sub_004B01C0 (27 bytes)
+namespace lift_004B01C0 {
+// @name sub_004B01C0
+// @summary Auto-lifted identical-shape clone of 0x00474EE0 (sub_00474EE0).
+namespace lift_00474EE0 {
+// @name sub_00474EE0
+// @summary Auto-lifted identical-shape clone of 0x004758A0 (SubObject_004758A0).
+namespace lift_004758A0 {
+// Callee 0x005A6300 (sub_005A6300): thiscall, ECX = sub-object, one stack arg = pointer to value.
+extern void ext_00451670(void* self, DWORD* value);
+
+// @name SubObject_004758A0
+// @class <ClassName> (optional)
+// @summary Forwards the stack argument by address to the sub-object at self+0x50 via sub_005A6300.
+// @field Unknown +0x50 <opaque subobject> field_0x50
+void fn_004B01C0(void* self, DWORD arg) {
+    DWORD value = arg;
+    void* sub = static_cast<uint8_t*>(self) + 0x250;
+    ext_00451670(sub, &value);
+}
+} // namespace lift_004758A0
+} // namespace lift_00474EE0
+} // namespace lift_004B01C0
+
+// [0x004B0820] sub_004B0820 (27 bytes)
+namespace lift_004B0820 {
+// @name sub_004B0820
+// @summary Auto-lifted identical-shape clone of 0x00474EE0 (sub_00474EE0).
+namespace lift_00474EE0 {
+// @name sub_00474EE0
+// @summary Auto-lifted identical-shape clone of 0x004758A0 (SubObject_004758A0).
+namespace lift_004758A0 {
+// Callee 0x005A6300 (sub_005A6300): thiscall, ECX = sub-object, one stack arg = pointer to value.
+extern void ext_005A6300(void* self, DWORD* value);
+
+// @name SubObject_004758A0
+// @class <ClassName> (optional)
+// @summary Forwards the stack argument by address to the sub-object at self+0x50 via sub_005A6300.
+// @field Unknown +0x50 <opaque subobject> field_0x50
+void fn_004B0820(void* self, DWORD arg) {
+    DWORD value = arg;
+    void* sub = static_cast<uint8_t*>(self) + 0x250;
+    ext_005A6300(sub, &value);
+}
+} // namespace lift_004758A0
+} // namespace lift_00474EE0
+} // namespace lift_004B0820
+
+// [0x004B4650] sub_004B4650 (184 bytes)
+namespace lift_004B4650 {
+// @name sub_004B4650
+// @summary Auto-lifted identical-shape clone of 0x00674F40 (sub_00674F40).
+namespace lift_00674F40 {
+// @name sub_00674F40
+// @summary Auto-lifted identical-shape clone of 0x0050AFA0 (ForEachPtrVectorApply_0050AFA0).
+namespace lift_0050AFA0 {
+// Known callee 0x0050AA50: sub_0050AA50 (thiscall, one stack arg; invoked on each element pointer).
+// Known callee 0x006404E0: sub_006404E0 (thiscall, one stack arg; returns a pointer-sized value).
+// Data 0x00925134: IAT slot for MSVCR80!_invalid_parameter_noinfo (called on bounds failures).
+extern void ext_004B1010(void* self, void* arg);
+extern void* ext_006404E0(void* self, void* arg);
+extern int mem_00925134;
+
+// Calls through the IAT slot 0x00925134 (MSVCR80!_invalid_parameter_noinfo).
+static void call_invalid_parameter_noinfo() {
+    using Fn = void (*)();
+    Fn fn = *reinterpret_cast<Fn*>(&mem_00925134);
+    fn();
+}
+
+// @name ForEachPtrVectorApply_0050AFA0
+// @summary Walks a vector of 4-byte element pointers, applying sub_0050AA50 to each element with a transformed value (optionally via sub_006404E0), then invokes the vtable slot 0 of an optional callback object; returns a0-derived value or a sentinel when the vector is empty.
+// @field PtrVector +0x04 void** begin
+// @field PtrVector +0x08 void** end
+void* fn_004B4650(void* vec, void* a2, void* a3, void* a4, void* a5) {
+    void** begin = lift_field<void**>(vec, 0x04);
+    void** end = lift_field<void**>(vec, 0x08);
+
+    // Empty or null range: return sentinel address 0x00B53B30.
+    if (begin == nullptr || begin == end) {
+        return reinterpret_cast<void*>(uintptr_t{0x00B53B30u});
+    }
+
+    // Base value: transform a2 via sub_006404E0 when a3 is non-null, else use a2 directly.
+    void* ebp;
+    if (a3 != nullptr) {
+        ebp = ext_006404E0(a2, a3);
+    } else {
+        ebp = a2;
+    }
+
+    if (!(begin <= end)) {
+        call_invalid_parameter_noinfo();
+    }
+    void** limit = end;
+    if (!(begin <= limit)) {
+        call_invalid_parameter_noinfo();
+    }
+
+    void* b = a4;
+    void** cur = begin;
+    while (cur != limit) {
+        if (b != nullptr) {
+            if (!(cur < end)) {
+                call_invalid_parameter_noinfo();
+            }
+            void* pushed = ext_006404E0(ebp, b);
+            ext_004B1010(*cur, pushed);
+        } else {
+            if (!(cur < end)) {
+                call_invalid_parameter_noinfo();
+            }
+            ext_004B1010(*cur, ebp);
+        }
+
+        if (a5 != nullptr) {
+            void** vtbl = *reinterpret_cast<void***>(a5);
+            reinterpret_cast<void (*)(void*)>(vtbl[0])(a5);
+        }
+
+        if (!(cur < end)) {
+            call_invalid_parameter_noinfo();
+        }
+        cur += 1;
+    }
+
+    return ebp;
+}
+} // namespace lift_0050AFA0
+} // namespace lift_00674F40
+} // namespace lift_004B4650
+
+// [0x004BA7A0] sub_004BA7A0 (184 bytes)
+namespace lift_004BA7A0 {
+// @name sub_004BA7A0
+// @summary Auto-lifted identical-shape clone of 0x00674F40 (sub_00674F40).
+namespace lift_00674F40 {
+// @name sub_00674F40
+// @summary Auto-lifted identical-shape clone of 0x0050AFA0 (ForEachPtrVectorApply_0050AFA0).
+namespace lift_0050AFA0 {
+// Known callee 0x0050AA50: sub_0050AA50 (thiscall, one stack arg; invoked on each element pointer).
+// Known callee 0x006404E0: sub_006404E0 (thiscall, one stack arg; returns a pointer-sized value).
+// Data 0x00925134: IAT slot for MSVCR80!_invalid_parameter_noinfo (called on bounds failures).
+extern void ext_004B6DD0(void* self, void* arg);
+extern void* ext_006404E0(void* self, void* arg);
+extern int mem_00925134;
+
+// Calls through the IAT slot 0x00925134 (MSVCR80!_invalid_parameter_noinfo).
+static void call_invalid_parameter_noinfo() {
+    using Fn = void (*)();
+    Fn fn = *reinterpret_cast<Fn*>(&mem_00925134);
+    fn();
+}
+
+// @name ForEachPtrVectorApply_0050AFA0
+// @summary Walks a vector of 4-byte element pointers, applying sub_0050AA50 to each element with a transformed value (optionally via sub_006404E0), then invokes the vtable slot 0 of an optional callback object; returns a0-derived value or a sentinel when the vector is empty.
+// @field PtrVector +0x04 void** begin
+// @field PtrVector +0x08 void** end
+void* fn_004BA7A0(void* vec, void* a2, void* a3, void* a4, void* a5) {
+    void** begin = lift_field<void**>(vec, 0x04);
+    void** end = lift_field<void**>(vec, 0x08);
+
+    // Empty or null range: return sentinel address 0x00B53B30.
+    if (begin == nullptr || begin == end) {
+        return reinterpret_cast<void*>(uintptr_t{0x00B53B30u});
+    }
+
+    // Base value: transform a2 via sub_006404E0 when a3 is non-null, else use a2 directly.
+    void* ebp;
+    if (a3 != nullptr) {
+        ebp = ext_006404E0(a2, a3);
+    } else {
+        ebp = a2;
+    }
+
+    if (!(begin <= end)) {
+        call_invalid_parameter_noinfo();
+    }
+    void** limit = end;
+    if (!(begin <= limit)) {
+        call_invalid_parameter_noinfo();
+    }
+
+    void* b = a4;
+    void** cur = begin;
+    while (cur != limit) {
+        if (b != nullptr) {
+            if (!(cur < end)) {
+                call_invalid_parameter_noinfo();
+            }
+            void* pushed = ext_006404E0(ebp, b);
+            ext_004B6DD0(*cur, pushed);
+        } else {
+            if (!(cur < end)) {
+                call_invalid_parameter_noinfo();
+            }
+            ext_004B6DD0(*cur, ebp);
+        }
+
+        if (a5 != nullptr) {
+            void** vtbl = *reinterpret_cast<void***>(a5);
+            reinterpret_cast<void (*)(void*)>(vtbl[0])(a5);
+        }
+
+        if (!(cur < end)) {
+            call_invalid_parameter_noinfo();
+        }
+        cur += 1;
+    }
+
+    return ebp;
+}
+} // namespace lift_0050AFA0
+} // namespace lift_00674F40
+} // namespace lift_004BA7A0
+
+// [0x004BA860] sub_004BA860 (184 bytes)
+namespace lift_004BA860 {
+// @name sub_004BA860
+// @summary Auto-lifted identical-shape clone of 0x00674F40 (sub_00674F40).
+namespace lift_00674F40 {
+// @name sub_00674F40
+// @summary Auto-lifted identical-shape clone of 0x0050AFA0 (ForEachPtrVectorApply_0050AFA0).
+namespace lift_0050AFA0 {
+// Known callee 0x0050AA50: sub_0050AA50 (thiscall, one stack arg; invoked on each element pointer).
+// Known callee 0x006404E0: sub_006404E0 (thiscall, one stack arg; returns a pointer-sized value).
+// Data 0x00925134: IAT slot for MSVCR80!_invalid_parameter_noinfo (called on bounds failures).
+extern void ext_004B6F40(void* self, void* arg);
+extern void* ext_006404E0(void* self, void* arg);
+extern int mem_00925134;
+
+// Calls through the IAT slot 0x00925134 (MSVCR80!_invalid_parameter_noinfo).
+static void call_invalid_parameter_noinfo() {
+    using Fn = void (*)();
+    Fn fn = *reinterpret_cast<Fn*>(&mem_00925134);
+    fn();
+}
+
+// @name ForEachPtrVectorApply_0050AFA0
+// @summary Walks a vector of 4-byte element pointers, applying sub_0050AA50 to each element with a transformed value (optionally via sub_006404E0), then invokes the vtable slot 0 of an optional callback object; returns a0-derived value or a sentinel when the vector is empty.
+// @field PtrVector +0x04 void** begin
+// @field PtrVector +0x08 void** end
+void* fn_004BA860(void* vec, void* a2, void* a3, void* a4, void* a5) {
+    void** begin = lift_field<void**>(vec, 0x04);
+    void** end = lift_field<void**>(vec, 0x08);
+
+    // Empty or null range: return sentinel address 0x00B53B30.
+    if (begin == nullptr || begin == end) {
+        return reinterpret_cast<void*>(uintptr_t{0x00B53B30u});
+    }
+
+    // Base value: transform a2 via sub_006404E0 when a3 is non-null, else use a2 directly.
+    void* ebp;
+    if (a3 != nullptr) {
+        ebp = ext_006404E0(a2, a3);
+    } else {
+        ebp = a2;
+    }
+
+    if (!(begin <= end)) {
+        call_invalid_parameter_noinfo();
+    }
+    void** limit = end;
+    if (!(begin <= limit)) {
+        call_invalid_parameter_noinfo();
+    }
+
+    void* b = a4;
+    void** cur = begin;
+    while (cur != limit) {
+        if (b != nullptr) {
+            if (!(cur < end)) {
+                call_invalid_parameter_noinfo();
+            }
+            void* pushed = ext_006404E0(ebp, b);
+            ext_004B6F40(*cur, pushed);
+        } else {
+            if (!(cur < end)) {
+                call_invalid_parameter_noinfo();
+            }
+            ext_004B6F40(*cur, ebp);
+        }
+
+        if (a5 != nullptr) {
+            void** vtbl = *reinterpret_cast<void***>(a5);
+            reinterpret_cast<void (*)(void*)>(vtbl[0])(a5);
+        }
+
+        if (!(cur < end)) {
+            call_invalid_parameter_noinfo();
+        }
+        cur += 1;
+    }
+
+    return ebp;
+}
+} // namespace lift_0050AFA0
+} // namespace lift_00674F40
+} // namespace lift_004BA860
+
+// [0x004BBE30] sub_004BBE30 (126 bytes)
+namespace lift_004BBE30 {
+// @name sub_004BBE30
+// @summary Auto-lifted identical-shape clone of 0x0049EE60 (ConstructAndRegister_0049EE60).
+namespace lift_0049EE60 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Called cdecl with one size argument (0x28) and its result is null-checked: allocation-style.
+extern void* ext_006A5C62(uint32_t size);
+// Known callee 0x0049E930: sub_0049E930 (326 bytes)
+// Thiscall: ecx = obj, then 5 stack args (outer this, a1..a4).
+extern void* ext_004BB8E0(void* obj, void* outer, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4);
+// Known callee 0x00665870: sub_00665870 (Returns global int32 value from mem_00B59420.)
+extern int32_t ext_00665870(void);
+// Known callee 0x00666670: sub_00666670 (292 bytes)
+// Thiscall: ecx = int32 from ext_00665870, one stack arg (result of ext_0049E930 or null).
+extern void ext_00666670(int32_t self, void* result);
+// SEH scope table referenced by the prolog (push 0x008A7A5B).
+extern int mem_008A7A5B;
+
+// @name ConstructAndRegister_0049EE60
+// @summary Allocates a 0x28-byte object, constructs it via sub_0049E930 when allocation succeeds, then calls sub_00665870/sub_00666670 and returns the second argument.
+// Note: the SEH frame (fs:[0] push/restore and trylevel bookkeeping) is not reproduced; portable C++ has no equivalent.
+uint32_t fn_004BBE30(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4) {
+    (void)&mem_008A7A5B;  // SEH scope table address from prolog; frame itself omitted.
+
+    void* obj = ext_006A5C62(0x28);
+    void* result = nullptr;
+    if (obj != nullptr) {
+        result = ext_004BB8E0(obj, self, a1, a2, a3, a4);
+    }
+
+    int32_t g = ext_00665870();
+    ext_00666670(g, result);
+    return a2;
+}
+} // namespace lift_0049EE60
+} // namespace lift_004BBE30
+
+// [0x004BE010] sub_004BE010 (114 bytes)
+namespace lift_004BE010 {
+extern uintptr_t mem_00924FF4;
+
+// @name sub_004BE010
+// @summary Auto-lifted identical-shape clone of 0x00502760 (SingletonDispatchWithString_00502760).
+namespace lift_00502760 {
+// Known callee 0x004FF8E0: getSingleton_004FF8E0 (Lazily initializes and returns the singleton object at 0x00AEB26C.)
+extern void* ext_004B7920();
+// Callee 0x00475960 (sub_00475960): thiscall, ECX = receiver, 3 stack args (out, slot, flag).
+extern void ext_00475960(void* self, void* out, void** slot, int flag);
+// .rdata import slots for MSVCP80 basic_string ctor/dtor (replaced by std::string); metadata-only.
+extern int mem_00924FE4;
+extern int mem_00924FF4;
+
+// @name SingletonDispatchWithString_00502760
+// @class Unknown
+// @summary Fetches the singleton via ext_004FF8E0, builds a temporary std::string from the argument, and dispatches to ext_00475960 on this->[0] with the temporary, the singleton slot, and flag 1.
+// @field Unknown +0x00 void* field_0x00
+void fn_004BE010(void* self, const char* arg) {
+    // First field of self is the callee's receiver (original: mov ecx, [esi]).
+    void* const receiver = lift_field<void*>(self, 0);
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF4;
+
+    // Singleton returned by the lazy accessor; its address is passed as the second stack argument.
+    void* singletonSlot = ext_004B7920();
+
+    // Temporary std::string built from the argument (original: MSVCP80 basic_string(const char*) ctor,
+    // destroyed at scope exit in place of the original basic_string dtor call).
+    std::string tmp(arg);
+
+    // Original pushes &tmp, &singletonSlot and the constant 1, then calls with ECX = receiver.
+    ext_00475960(receiver, static_cast<void*>(&tmp), &singletonSlot, 1);
+}
+} // namespace lift_00502760
+} // namespace lift_004BE010
+
+// [0x004BE500] sub_004BE500 (140 bytes)
+namespace lift_004BE500 {
+// @name sub_004BE500
+// @summary Auto-lifted identical-shape clone of 0x004C4070 (LiteralKeyedLookup).
+namespace lift_004C4070 {
+void* __thiscall ext_00474F00(void* self, void* scratch, uint32_t arg2);
+uint32_t __thiscall ext_00476360(void* self, void* scratch);
+void ext_00662610(void* scratch, const char* literal);
+extern uint32_t mem_00924FD4;
+extern uint32_t mem_00924FF4;
+extern const char mem_00A3958C[];
+
+// @name LiteralKeyedLookup
+// @class UnknownClass
+// @summary Builds a scratch string from a literal, forwards it with arg2 to ext_00474F00 (+0x18) when arg2 is nonzero, stores ext_00476360(+0x08, scratch) into *out, destroys the scratch string and returns out.
+// @field UnknownClass +0x08 uint8_t field_0x08
+// @field UnknownClass +0x18 uint8_t field_0x18
+uint32_t* __thiscall fn_004BE500(uint8_t* self, uint32_t* out, uint32_t arg2) {
+    alignas(8) uint8_t scratch[0x1C] = {};
+    ext_00662610(scratch, mem_00A3958C);
+
+    if (arg2 != 0) {
+        void* result = ext_00474F00(self + 0x18, scratch, arg2);
+        using AssignFn = void (*)(void*);
+        reinterpret_cast<AssignFn>(static_cast<uintptr_t>(mem_00924FD4))(result);
+    }
+
+    *out = ext_00476360(self + 0x08, scratch);
+
+    using DtorFn = void (*)(void*);
+    reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(scratch);
+    return out;
+}
+} // namespace lift_004C4070
+} // namespace lift_004BE500

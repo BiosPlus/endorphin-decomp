@@ -86,6 +86,7 @@ extern uint32_t fn_0051F540(uint32_t first, uint32_t last, uint32_t dest) {
 }
 } // namespace lift_00406290
 } // namespace lift_0051F540
+#include <memory>
 
 // [0x0051E070] sub_0051E070 (90 bytes)
 namespace lift_0051E070 {
@@ -1320,3 +1321,55 @@ uint32_t __thiscall fn_00517970(void* self, uint32_t arg1, uint32_t arg2, uint32
     return ext_00517890(self, arg1, interp, arg2, arg3);
 }
 } // namespace lift_00517970
+
+// [0x00518420] sub_00518420 (97 bytes)
+namespace lift_00518420 {
+// @name sub_00518420
+// @summary Auto-lifted identical-shape clone of 0x00508210 (Vector_copyAssign).
+namespace lift_00508210 {
+// @name Vector_copyAssign
+// @summary Clears destination vector, reserves space for source vector size, validates source iterators, and copies elements.
+// @field Vector +0x04 void* begin
+// @field Vector +0x08 void* end
+
+
+extern void ext_0050BE20(void* self);
+extern void ext_0050ED40(void* self, int32_t count);
+extern void ext_00518390(void* out_iter, void* src1, void* src_begin, void* src2, void* src_end, void* dst);
+extern void (*mem_00925134)();
+
+void fn_00518420(void* dst, void* src) {
+    ext_0050BE20(dst);
+
+    uint8_t* src_bytes = reinterpret_cast<uint8_t*>(src);
+    uint32_t begin_addr = *reinterpret_cast<uint32_t*>(src_bytes + 0x04);
+    int32_t count = 0;
+    if (begin_addr != 0) {
+        uint32_t end_addr = *reinterpret_cast<uint32_t*>(src_bytes + 0x08);
+        count = static_cast<int32_t>(end_addr - begin_addr) >> 2;
+    }
+
+    ext_0050ED40(dst, count);
+
+    uint32_t end_val = *reinterpret_cast<uint32_t*>(src_bytes + 0x08);
+    if (*reinterpret_cast<uint32_t*>(src_bytes + 0x04) > end_val) {
+        mem_00925134();
+    }
+
+    uint32_t begin_val = *reinterpret_cast<uint32_t*>(src_bytes + 0x04);
+    if (begin_val > *reinterpret_cast<uint32_t*>(src_bytes + 0x08)) {
+        mem_00925134();
+    }
+
+    uint32_t tmp_iter[2] = {0, 0};
+    ext_00518390(
+        tmp_iter,
+        src,
+        reinterpret_cast<void*>(static_cast<uintptr_t>(begin_val)),
+        src,
+        reinterpret_cast<void*>(static_cast<uintptr_t>(end_val)),
+        dst
+    );
+}
+} // namespace lift_00508210
+} // namespace lift_00518420

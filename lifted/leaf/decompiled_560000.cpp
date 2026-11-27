@@ -1532,3 +1532,107 @@ void fn_0056B0C0(void* self) {
 } // namespace lift_0050BE20
 } // namespace lift_006753D0
 } // namespace lift_0056B0C0
+
+// [0x0056B120] sub_0056B120 (97 bytes)
+namespace lift_0056B120 {
+// @name sub_0056B120
+// @summary Auto-lifted identical-shape clone of 0x00508210 (Vector_copyAssign).
+namespace lift_00508210 {
+// @name Vector_copyAssign
+// @summary Clears destination vector, reserves space for source vector size, validates source iterators, and copies elements.
+// @field Vector +0x04 void* begin
+// @field Vector +0x08 void* end
+
+
+extern void ext_0056B0C0(void* self);
+extern void ext_0050ED40(void* self, int32_t count);
+extern void ext_0056AD60(void* out_iter, void* src1, void* src_begin, void* src2, void* src_end, void* dst);
+extern void (*mem_00925134)();
+
+void fn_0056B120(void* dst, void* src) {
+    ext_0056B0C0(dst);
+
+    uint8_t* src_bytes = reinterpret_cast<uint8_t*>(src);
+    uint32_t begin_addr = *reinterpret_cast<uint32_t*>(src_bytes + 0x04);
+    int32_t count = 0;
+    if (begin_addr != 0) {
+        uint32_t end_addr = *reinterpret_cast<uint32_t*>(src_bytes + 0x08);
+        count = static_cast<int32_t>(end_addr - begin_addr) >> 2;
+    }
+
+    ext_0050ED40(dst, count);
+
+    uint32_t end_val = *reinterpret_cast<uint32_t*>(src_bytes + 0x08);
+    if (*reinterpret_cast<uint32_t*>(src_bytes + 0x04) > end_val) {
+        mem_00925134();
+    }
+
+    uint32_t begin_val = *reinterpret_cast<uint32_t*>(src_bytes + 0x04);
+    if (begin_val > *reinterpret_cast<uint32_t*>(src_bytes + 0x08)) {
+        mem_00925134();
+    }
+
+    uint32_t tmp_iter[2] = {0, 0};
+    ext_0056AD60(
+        tmp_iter,
+        src,
+        reinterpret_cast<void*>(static_cast<uintptr_t>(begin_val)),
+        src,
+        reinterpret_cast<void*>(static_cast<uintptr_t>(end_val)),
+        dst
+    );
+}
+} // namespace lift_00508210
+} // namespace lift_0056B120
+
+// [0x0056B190] sub_0056B190 (97 bytes)
+namespace lift_0056B190 {
+// @name sub_0056B190
+// @summary Auto-lifted identical-shape clone of 0x00508210 (Vector_copyAssign).
+namespace lift_00508210 {
+// @name Vector_copyAssign
+// @summary Clears destination vector, reserves space for source vector size, validates source iterators, and copies elements.
+// @field Vector +0x04 void* begin
+// @field Vector +0x08 void* end
+
+
+extern void ext_0056AFE0(void* self);
+extern void ext_0050ED40(void* self, int32_t count);
+extern void ext_0056AE60(void* out_iter, void* src1, void* src_begin, void* src2, void* src_end, void* dst);
+extern void (*mem_00925134)();
+
+void fn_0056B190(void* dst, void* src) {
+    ext_0056AFE0(dst);
+
+    uint8_t* src_bytes = reinterpret_cast<uint8_t*>(src);
+    uint32_t begin_addr = *reinterpret_cast<uint32_t*>(src_bytes + 0x04);
+    int32_t count = 0;
+    if (begin_addr != 0) {
+        uint32_t end_addr = *reinterpret_cast<uint32_t*>(src_bytes + 0x08);
+        count = static_cast<int32_t>(end_addr - begin_addr) >> 2;
+    }
+
+    ext_0050ED40(dst, count);
+
+    uint32_t end_val = *reinterpret_cast<uint32_t*>(src_bytes + 0x08);
+    if (*reinterpret_cast<uint32_t*>(src_bytes + 0x04) > end_val) {
+        mem_00925134();
+    }
+
+    uint32_t begin_val = *reinterpret_cast<uint32_t*>(src_bytes + 0x04);
+    if (begin_val > *reinterpret_cast<uint32_t*>(src_bytes + 0x08)) {
+        mem_00925134();
+    }
+
+    uint32_t tmp_iter[2] = {0, 0};
+    ext_0056AE60(
+        tmp_iter,
+        src,
+        reinterpret_cast<void*>(static_cast<uintptr_t>(begin_val)),
+        src,
+        reinterpret_cast<void*>(static_cast<uintptr_t>(end_val)),
+        dst
+    );
+}
+} // namespace lift_00508210
+} // namespace lift_0056B190
