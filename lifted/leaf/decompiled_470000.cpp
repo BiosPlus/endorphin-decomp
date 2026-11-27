@@ -2272,3 +2272,28 @@ extern void* fn_004796D0(void* self, void* out, MsvcString arg_str) {
     return out;
 }
 } // namespace lift_004796D0
+
+// [0x00477A80]
+namespace lift_00477A80 {
+// @name pivotMedianOfNine_00477A80
+// @summary Ninther pivot selection over a uint32 range [first,last): sorts sample triples with sortThreeByComparator; small ranges (<=40) get a single sort3 of first/mid/last.
+
+extern void ext_00477120(uint32_t* a, uint32_t* b, uint32_t* c, uint32_t cmp);
+
+void __cdecl sub_00477A80(uint32_t* first, uint32_t* mid, uint32_t* /*unused: never read by asm*/, uint32_t cmp, uint32_t* last)
+{
+    int32_t n = static_cast<int32_t>(last - first);
+    if (n <= 40) {
+        ext_00477120(first, mid, last, cmp);
+        return;
+    }
+
+    // Sample step: (n + 1) / 8 elements (n > 40, so signed division is exact).
+    int32_t step = (n + 1) / 8;
+
+    ext_00477120(first, first + step, first + 2 * step, cmp);
+    ext_00477120(mid - step, mid, mid + step, cmp);
+    ext_00477120(last - 2 * step, last - step, last, cmp);
+    ext_00477120(first + step, mid, last - step, cmp);
+}
+} // namespace lift_00477A80

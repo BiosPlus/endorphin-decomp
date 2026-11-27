@@ -11662,6 +11662,12 @@
     "summary": "Searches [out, end) via ext_00476BC0 and stores value and the search result as two DWORDs at out.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00477A80": {
+    "name": "pivotMedianOfNine_00477A80",
+    "signature": "void __cdecl sub_00477A80(uint32_t* first, uint32_t* mid, uint32_t* /*unused: never read by asm*/, uint32_t cmp, uint32_t* last)",
+    "summary": "Ninther pivot selection over a uint32 range [first,last): sorts sample triples with sortThreeByComparator; small ranges (\u003c=40) get a single sort3 of first/mid/last.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00477B70": {
     "name": "HeapBuildFloats",
     "signature": "void fn_00477B70(float* first, float* last)",
