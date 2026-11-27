@@ -29534,6 +29534,13 @@
     "summary": "Forwards (arg0, arg1) to the sub-object at this+0x0C via 0x00528BB0, then recursively calls itself on each DWORD pointer in the range [this-\u003efield_0x80, this-\u003efield_0x84).",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x00586AD0": {
+    "name": "Unknown::ApplyToChildTree",
+    "class": "Unknown",
+    "signature": "extern \"C\" void fn_00586AD0(void* self, uint32_t a0, uint32_t a1, uint32_t a2)",
+    "summary": "Forwards (a0, a1, a2) to the sub-object at this+0x0C, then recursively applies the same call to every child pointer stored in the vector at this+0x80..this+0x84.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x00586B60": {
     "name": "Node::ForwardAndVisitChildren",
     "class": "Node",

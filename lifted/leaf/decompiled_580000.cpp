@@ -1659,3 +1659,28 @@ void fn_005865D0(void* self, void* arg1, void* arg2) {
     }
 }
 } // namespace lift_005865D0
+
+// [0x00586AD0] sub_00586AD0 (129 bytes)
+namespace lift_00586AD0 {
+// Known callee 0x00528BF0: forwardVirtual0x30IfNonNull (If this->field_0x04 is non-null, tail-calls its vtable slot 12 (+0x30) with the same stack arguments; otherwise returns popping 0xC bytes.)
+extern void ext_00528BF0(void* self, uint32_t a0, uint32_t a1, uint32_t a2);
+// MSVCR80!_invalid_parameter_noinfo IAT slot: only used by debug range asserts (no-ops for valid state); referenced for metadata only.
+extern int mem_00925134;
+
+// @name Unknown::ApplyToChildTree
+// @class Unknown
+// @summary Forwards (a0, a1, a2) to the sub-object at this+0x0C, then recursively applies the same call to every child pointer stored in the vector at this+0x80..this+0x84.
+// @field Unknown +0x80 uint32_t childBegin
+// @field Unknown +0x84 uint32_t childEnd
+extern void fn_00586AD0(void* self, uint32_t a0, uint32_t a1, uint32_t a2) {
+    (void)&mem_00925134;
+    ext_00528BF0(static_cast<uint8_t*>(self) + 0x0C, a0, a1, a2);
+
+    uintptr_t cur = lift_field<uint32_t>(self, 0x80);
+    while (cur != lift_field<uint32_t>(self, 0x84)) {
+        void* child = *reinterpret_cast<void**>(cur);
+        fn_00586AD0(child, a0, a1, a2);
+        cur += sizeof(uint32_t);
+    }
+}
+} // namespace lift_00586AD0

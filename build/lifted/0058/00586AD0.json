@@ -1,0 +1,28 @@
+{
+  "va": "0x00586AD0",
+  "size": 129,
+  "orig_symbol": "sub_00586AD0",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "Unknown::ApplyToChildTree",
+  "class": "Unknown",
+  "signature": "extern \"C\" void fn_00586AD0(void* self, uint32_t a0, uint32_t a1, uint32_t a2)",
+  "summary": "Forwards (a0, a1, a2) to the sub-object at this+0x0C, then recursively applies the same call to every child pointer stored in the vector at this+0x80..this+0x84.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "uint32_t",
+      "name": "childBegin"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "uint32_t",
+      "name": "childEnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T03:18:09Z"
+}
