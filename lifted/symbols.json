@@ -6788,6 +6788,13 @@
     "summary": "Returns address of global mem_00937A1C.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0045AE60": {
+    "name": "SettingsHolder::applyIntSettingFromString",
+    "class": "(unknown)",
+    "signature": "void fn_0045AE60(void* self)",
+    "summary": "Reads a string via this+0x32C, converts it with atoi, and if positive calls virtual slot 0x9C on the object at this+0x88.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x0045AEE0": {
     "name": "getFloatFromCStringCall",
     "signature": "extern \"C\" void* mem_009242FC;  // MFC80!ord_310  (CString::CString) extern \"C\" void* mem_00924300;  // MFC80!ord_876  (CString::operator LPCSTR) extern \"C\" void* mem_009251F0;  // MSVCR80!atof extern \"C\" void* mem_009242F4;  // MFC80!ord_578  (CString::~CString) float fn_0045AEE0(void* self)",
