@@ -74512,6 +74512,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00702F60 (sub_00702F60).",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x0070EAB0": {
+    "name": "Unknown::assignCStringWrapper_0070EAB0",
+    "class": "Unknown",
+    "signature": "void* fn_0070EAB0(void* self, const char* s)",
+    "summary": "Stores the incoming C string pointer at +0x5c, then assigns it (or an empty default when null) into the embedded object at +0x60.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070EAF0": {
     "name": "sub_0070EAF0",
     "signature": "extern \"C\" int32_t __fastcall fn_0070EAF0(void* self)",

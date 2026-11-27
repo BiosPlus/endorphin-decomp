@@ -2847,3 +2847,28 @@ extern void __thiscall fn_007051B0(void* self) {
     ext_006B9EC0(sub, reinterpret_cast<const char*>(mem_00B5D2C0));
 }
 } // namespace lift_007051B0
+
+// [0x0070EAB0] sub_0070EAB0 (64 bytes)
+namespace lift_0070EAB0 {
+// Known callee 0x006BADB0: sub_006BADB0 (This-adjustor thunk: adjusts `this` by +0x4 and tail-calls sub_006E6340.)
+// Returns the value left in eax by sub_006E6340, consumed here as the length argument.
+extern void* __fastcall ext_006BADB0(void* self);
+// Known callee 0x006B9EC0: Unknown::assignCString_006B9EC0 (Assigns a C string: a null pointer resets via sub_006B9920, otherwise forwards strlen(s) and s to allocAndCopy; always returns this.)
+extern void* __thiscall ext_006B9EC0(void* self, const char* s);
+// Constant string pointer pushed at 0x0070EAD0 (immediate 0x00B5D2C0 in the image).
+extern const char mem_00B5D2C0[];
+
+// @name Unknown::assignCStringWrapper_0070EAB0
+// @class Unknown
+// @summary Stores the incoming C string pointer at +0x5c, then assigns it (or an empty default when null) into the embedded object at +0x60.
+// @field Unknown +0x5c const char* field_5c
+// @field Unknown +0x60 void* field_60
+void* fn_0070EAB0(void* self, const char* s) {
+    lift_field<const char*>(self, 0x5c) = s;
+    if (s != nullptr) {
+        void* len = ext_006BADB0(const_cast<char*>(s));
+        return ext_006B9EC0(static_cast<char*>(self) + 0x60, static_cast<const char*>(len));
+    }
+    return ext_006B9EC0(static_cast<char*>(self) + 0x60, mem_00B5D2C0);
+}
+} // namespace lift_0070EAB0
