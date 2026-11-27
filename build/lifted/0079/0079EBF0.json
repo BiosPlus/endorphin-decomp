@@ -1,0 +1,57 @@
+{
+  "va": "0x0079EBF0",
+  "size": 96,
+  "orig_symbol": "sub_0079EBF0",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "ObjectAlloc_0079EBF0",
+  "signature": "void fn_0079EBF0(void** out)",
+  "summary": "Allocates a 0x1C-byte record into *out, zeroes it, and seeds two flag bytes; on malloc failure calls ext_007AA510(1) and bails unless mem_00B61219 is set.",
+  "fields": [
+    {
+      "class": "ObjectAlloc",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ObjectAlloc",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ObjectAlloc",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "ObjectAlloc",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "ObjectAlloc",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "ObjectAlloc",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "ObjectAlloc",
+      "offset": "+0x18",
+      "type": "uint8_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:13:38Z"
+}

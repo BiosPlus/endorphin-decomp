@@ -4,6 +4,7 @@
 #include <cstdint>
 #include <cstdarg>
 #include <cstring>
+#include <cstdlib>
 
 // [0x0079DD30] sub_0079DD30 (32 bytes)
 namespace lift_0079DD30 {
@@ -1800,3 +1801,43 @@ void* fn_0079DAC0(void* self) {
     return self;
 }
 } // namespace lift_0079DAC0
+
+// [0x0079EBF0]
+namespace lift_0079EBF0 {
+// @name ObjectAlloc_0079EBF0
+// @summary Allocates a 0x1C-byte record into *out, zeroes it, and seeds two flag bytes; on malloc failure calls ext_007AA510(1) and bails unless mem_00B61219 is set.
+// @field ObjectAlloc +0x00 uint32_t field_0x00
+// @field ObjectAlloc +0x04 uint32_t field_0x04
+// @field ObjectAlloc +0x08 uint32_t field_0x08
+// @field ObjectAlloc +0x0C uint8_t field_0x0C
+// @field ObjectAlloc +0x10 uint32_t field_0x10
+// @field ObjectAlloc +0x14 uint32_t field_0x14
+// @field ObjectAlloc +0x18 uint8_t field_0x18
+
+extern void ext_007AA510(uint32_t idx);
+extern const uint8_t mem_009977EC;
+extern const uint8_t mem_00997749;
+extern uint8_t mem_00B61219;
+extern const uint32_t mem_00925208;
+
+void fn_0079EBF0(void** out) {
+    (void)&mem_00925208;  // IAT slot for malloc; the call below is std::malloc
+    void* p = std::malloc(0x1c);
+    *out = p;
+    if (p == nullptr) {
+        ext_007AA510(1);
+        if (mem_00B61219 == 0) {
+            return;
+        }
+    }
+
+    uint8_t* obj = static_cast<uint8_t*>(*out);
+    *reinterpret_cast<uint32_t*>(obj + 0x00) = 0;
+    *reinterpret_cast<uint32_t*>(obj + 0x04) = 0;
+    *reinterpret_cast<uint32_t*>(obj + 0x08) = 0;
+    obj[0x0C] = mem_009977EC;
+    *reinterpret_cast<uint32_t*>(obj + 0x10) = 0;
+    *reinterpret_cast<uint32_t*>(obj + 0x14) = 0;
+    obj[0x18] = mem_00997749;
+}
+} // namespace lift_0079EBF0
