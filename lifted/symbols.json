@@ -83507,6 +83507,13 @@
     "summary": "Skips blank lines backward, matches str, then consumes '=' (throws on failure); restores cursor fields if str does not match.",
     "lifted_path": "lifted/leaf/decompiled_870000.cpp"
   },
+  "0x00871980": {
+    "name": "TextCursor::ReadQuotedIdentifierField_00871980",
+    "class": "TextCursor",
+    "signature": "bool fn_00871980(void* self, void* cursor, uint32_t dst_addr)",
+    "summary": "Matches the keyword at 0x0099F164 (with '='), requires a quote character, reads a backward identifier into dst_addr, and requires the same quote character to close it; throws on malformed input.",
+    "lifted_path": "lifted/leaf/decompiled_870000.cpp"
+  },
   "0x008719F0": {
     "name": "parseStandaloneDeclaration",
     "signature": "bool fn_008719F0(void* self, uint8_t* out)",

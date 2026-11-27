@@ -483,3 +483,39 @@ uint8_t fn_008712A0(void* self, void* dst_str) {
     return 1;
 }
 } // namespace lift_008712A0
+
+// [0x00871980] sub_00871980 (101 bytes)
+namespace lift_00871980 {
+// Known callee 0x00870E40: sub_00870E40 (Builds a 0x14-byte exception object from this-fields +0x10/+0x08/+0x04/+0x14 and a stack argument, then throws it.)
+extern void ext_00870E40(void* self, uint32_t arg1);
+// Known callee 0x00870E90: sub_00870E90 (advances the text cursor; returns the next byte in AL)
+extern uint8_t ext_00870E90(void* self);
+// Known callee 0x008712A0: TextCursor::ReadIdentifierBack_008712A0 (Reads a backward identifier token (letter first, then letters/digits/'_'/'.'/'-'); on the terminator steps the cursor back one line and extracts the token into dst. Returns 0 (after stepping back) if the first character is not a letter.)
+extern bool ext_008712A0(void* self, void* cursor, uint32_t dst_addr);
+// Known callee 0x008718C0: TextCursor::MatchStringThenEquals_008718C0 (Skips blank lines backward, matches str, then consumes '=' (throws on failure); restores cursor fields if str does not match.)
+extern bool ext_008718C0(void* self, const char* str);
+
+// @name TextCursor::ReadQuotedIdentifierField_00871980
+// @class TextCursor
+// @summary Matches the keyword at 0x0099F164 (with '='), requires a quote character, reads a backward identifier into dst_addr, and requires the same quote character to close it; throws on malformed input.
+bool fn_00871980(void* self, void* cursor, uint32_t dst_addr) {
+    const char* keyword = reinterpret_cast<const char*>(static_cast<uintptr_t>(0x0099F164u));
+    if (!ext_008718C0(cursor, keyword)) {
+        return false;
+    }
+
+    const uint8_t quote = ext_00870E90(cursor);
+    if (quote != '\'' && quote != '"') {
+        ext_00870E40(cursor, 0x13);
+    }
+
+    if (ext_008712A0(self, cursor, dst_addr)) {
+        if (ext_00870E90(cursor) == quote) {
+            return true;
+        }
+    }
+
+    ext_00870E40(cursor, 0x14);
+    return false;
+}
+} // namespace lift_00871980
