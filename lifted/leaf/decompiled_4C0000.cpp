@@ -1307,3 +1307,46 @@ void* fn_004C7270(void* arg) {
     return arg;
 }
 } // namespace lift_004C7270
+
+// [0x004C94E0] sub_004C94E0 (128 bytes)
+namespace lift_004C94E0 {
+// Callee 0x0040ECB0: thiscall(this = global 0xB5962C, arg) -> void; callee pops its 1 stack arg.
+extern void __thiscall ext_0040ECB0(void* self, void* arg);
+// Known callee 0x004C7270: TypeInfoNameTempPassthrough_004C7270 (builds a temp std::string in arg and returns arg).
+extern void* ext_004C7270(void* arg);
+// IAT slot: MSVCP80 std::string destructor (called as thiscall with the string as this).
+extern uint32_t mem_00924FF4;
+
+using StrDtorFn = void(__thiscall*)(void* self);
+
+// @name InitObjectAndRegisterTypeName
+// @class UnknownClass_004C94E0
+// @summary Stamps the object's vtable (0x00945F24), clears six fields, builds a temp std::string from the type_info name, passes it to sub_0040ECB0 on global 0xB5962C, destroys the temp and returns self.
+// @field UnknownClass_004C94E0 +0x00 uint32_t vtable
+// @field UnknownClass_004C94E0 +0x08 uint32_t field_0x08
+// @field UnknownClass_004C94E0 +0x0c uint32_t field_0x0C
+// @field UnknownClass_004C94E0 +0x10 uint32_t field_0x10
+// @field UnknownClass_004C94E0 +0x18 uint32_t field_0x18
+// @field UnknownClass_004C94E0 +0x1c uint32_t field_0x1C
+// @field UnknownClass_004C94E0 +0x20 uint32_t field_0x20
+void* fn_004C94E0(void* self) {
+    // Initialise the object: vtable pointer, then zero the accessed fields.
+    lift_field<uint32_t>(self, 0x00) = 0x00945F24u;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1C) = 0;
+    lift_field<uint32_t>(self, 0x20) = 0;
+
+    // Temporary std::string (MSVCP80 layout, 0x1C bytes) filled by sub_004C7270.
+    unsigned char tmp_str[0x1C] = {};
+    void* str = ext_004C7270(tmp_str);
+
+    // Global object at 0x00B5962C is the `this` for sub_0040ECB0.
+    ext_0040ECB0(reinterpret_cast<void*>(static_cast<uintptr_t>(0x00B5962Cu)), str);
+
+    reinterpret_cast<StrDtorFn>(static_cast<uintptr_t>(mem_00924FF4))(tmp_str);
+    return self;
+}
+} // namespace lift_004C94E0

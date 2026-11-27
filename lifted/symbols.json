@@ -20095,6 +20095,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x158 and tail-calls NMData::SeverEventData::vfunc_21.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004C94E0": {
+    "name": "InitObjectAndRegisterTypeName",
+    "class": "UnknownClass_004C94E0",
+    "signature": "void* fn_004C94E0(void* self)",
+    "summary": "Stamps the object's vtable (0x00945F24), clears six fields, builds a temp std::string from the type_info name, passes it to sub_0040ECB0 on global 0xB5962C, destroys the temp and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C9860": {
     "name": "initStaticObjectOnce_004C9860",
     "signature": "void* fn_004C9860()",
