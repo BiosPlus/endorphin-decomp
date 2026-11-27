@@ -31547,6 +31547,13 @@
     "summary": "Erases all keyframe records with leading float in [lo, hi] from the channel's key array.",
     "lifted_path": "lifted/NMData/QuatChannel.cpp"
   },
+  "0x0051C3E0": {
+    "name": "NMData::QuatChannel::vfunc_10",
+    "class": "NMData::QuatChannel",
+    "signature": "extern \"C\" void* mem_00925134;   // _invalid_parameter_noinfo function pointer (IAT slot) void fn_0051C3E0(void* self, void* arg)",
+    "summary": "Walks the key range [keyBegin, keyEnd) in 0x14-byte steps, calling ext_0047B170 for each key and checking bounds through _invalid_parameter_noinfo.",
+    "lifted_path": "lifted/NMData/QuatChannel.cpp"
+  },
   "0x0051C5A0": {
     "name": "InitBaseThenZeroTail_0051C5A0",
     "signature": "void* fn_0051C5A0(void* self)",
@@ -42830,6 +42837,13 @@
     "signature": "void fn_005A1600(void* self)",
     "summary": "If the flag at +0x5EC is set, runs forEachNodeCallWithOffset over the node range at +0x598 with callback 0x5B67A0 and zero offset.",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
+  "0x005A1AA0": {
+    "name": "NMData::BackGroundData::vfunc_44_off_4",
+    "class": "NMData::BackGroundData",
+    "signature": "void __thiscall fn_005A1AA0(void* self)",
+    "summary": "Iterates over the container at +0x5A0 (+0x5A4 from BackGroundData) and calls sub_005E09D0 on each element's +0x28 field if IsResolvedChildStateOneWithNonZeroField8 returns true.",
+    "lifted_path": "lifted/NMData/BackGroundData.cpp"
   },
   "0x005A1F90": {
     "name": "sub_005A1F90",

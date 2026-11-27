@@ -12,8 +12,10 @@ namespace lifted_layout {
 struct NMData_QuatChannel_Fields {
     // +0x4   void*                    field_0x04  (evidence: 0x0051A130)
     // +0x30  uint32_t                 field_0x30  (evidence: 0x0051ADC0, 0x0051C7A0, 0x0051C7C0) // CONFLICT: multiple definitions at +0x30
+    // +0x30  uint32_t                 keyBegin  (evidence: 0x0051C3E0) // CONFLICT: multiple definitions at +0x30
     // +0x30  uint8_t*                 keyBegin  (evidence: 0x0051C300) // CONFLICT: multiple definitions at +0x30
     // +0x34  uint32_t                 field_0x34  (evidence: 0x0051ADC0, 0x0051C7A0, 0x0051C7C0) // CONFLICT: multiple definitions at +0x34
+    // +0x34  uint32_t                 keyEnd  (evidence: 0x0051C3E0) // CONFLICT: multiple definitions at +0x34
     // +0x34  uint8_t*                 keyEnd  (evidence: 0x0051C300) // CONFLICT: multiple definitions at +0x34
     // +0x5C  uint32_t                 field_0x5C  (evidence: 0x0051C7C0)
     // +0x60  uint32_t                 field_0x60  (evidence: 0x0051C7C0)

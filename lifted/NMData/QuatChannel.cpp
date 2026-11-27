@@ -230,3 +230,53 @@ void fn_0051C300(void* self, float lo, float hi) {
     }
 }
 } // namespace lift_0051C300
+
+// [0x0051C3E0] NMData::QuatChannel::vfunc_10 (89 bytes)
+namespace lift_0051C3E0 {
+// Known callee 0x0047B170: sub_0047B170 (107B) - called with ecx = first argument and one stack arg (the current key offset).
+extern void ext_0047B170(void* arg, uint32_t key);
+// Metadata-only callees: listed in CALLEES but never called from the bytes at 0x0051C3E0. Address-taken only; no runtime effect.
+extern void ext_0051CD30();
+extern void ext_006A5C62();
+extern void* mem_00925134;   // _invalid_parameter_noinfo function pointer (IAT slot)
+
+// @name NMData::QuatChannel::vfunc_10
+// @class NMData::QuatChannel
+// @summary Walks the key range [keyBegin, keyEnd) in 0x14-byte steps, calling ext_0047B170 for each key and checking bounds through _invalid_parameter_noinfo.
+// @field NMData::QuatChannel +0x30 uint32_t keyBegin
+// @field NMData::QuatChannel +0x34 uint32_t keyEnd
+void fn_0051C3E0(void* self, void* arg) {
+    // Address-only references to metadata callees; the original bytes never call them.
+    (void)&ext_0051CD30;
+    (void)&ext_006A5C62;
+
+    auto invalid_parameter = []() {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    };
+
+    uint32_t cur = lift_field<uint32_t>(self, 0x30);
+    if (cur > lift_field<uint32_t>(self, 0x34)) {
+        invalid_parameter();
+    }
+
+    for (;;) {
+        const uint32_t end = lift_field<uint32_t>(self, 0x34);
+        if (lift_field<uint32_t>(self, 0x30) > end) {
+            invalid_parameter();
+        }
+        if (cur == end) {
+            break;
+        }
+        if (cur >= lift_field<uint32_t>(self, 0x34)) {
+            invalid_parameter();
+        }
+
+        ext_0047B170(arg, cur);
+
+        if (cur >= lift_field<uint32_t>(self, 0x34)) {
+            invalid_parameter();
+        }
+        cur += 0x14;
+    }
+}
+} // namespace lift_0051C3E0
