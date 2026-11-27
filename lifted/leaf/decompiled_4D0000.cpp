@@ -893,9 +893,9 @@ extern int mem_00924FE0;
 extern int mem_00924FF4;
 
 // @name ClassifyStringFieldStore (sub_004D3940)
-// @class <Class> (if member)
+// @class Unknown
 // @summary Copies the by-value std::string argument, classifies it via ClassifyStringToken (0x00593710), stores the int result at this+0x394, then destroys the argument; thiscall, callee pops 0x1C.
-// @field <Class> +0x394 int32_t classifyResult
+// @field Unknown +0x394 int32_t classifyResult
 void __thiscall fn_004D3940(void* self, void* arg) {
     using CopyCtorFn = void (__thiscall*)(void* thisPtr, const void* src);
     using DtorFn = void (__thiscall*)(void* thisPtr);
