@@ -19599,6 +19599,13 @@
     "summary": "Removes this AnimationEventData from the given range and notifies the global manager, returning true.",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x004BFC20": {
+    "name": "NMData::AnimationEventData::vfunc_13_off_C",
+    "class": "NMData::AnimationEventData",
+    "signature": "extern \"C\" uint8_t __thiscall fn_004BFC20(void* self, uint32_t /*unused*/)",
+    "summary": "Adjusts this pointer from +0xC subobject, passes it to ext_0047D7C0 with global mem_00AE29D0, and returns true",
+    "lifted_path": "lifted/NMData/AnimationEventData.cpp"
+  },
   "0x004C0280": {
     "name": "Unknown::copyStringFromDocumentOrThrow",
     "class": "Unknown",
@@ -54336,6 +54343,13 @@
     "class": "NMData::FixedPathJointData",
     "signature": "void fn_005ECB10(void* self, std::uint32_t arg0)",
     "summary": "Remaps arg (1-\u003e3, 2-\u003e4), forwards it to the base callee, then calls vtable slot 8 with the remapped arg on each object in the vector at +0x1F8.",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
+  "0x005ECCF0": {
+    "name": "NMData::FixedPathJointData::vfunc_4_off_C",
+    "class": "NMData::FixedPathJointData",
+    "signature": "uint32_t __thiscall fn_005ECCF0(void* self, const float* value_ptr)",
+    "summary": "Adjusts this by -0xC and forwards dereferenced float argument to sub_005EBC10",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
   "0x005ECD40": {
