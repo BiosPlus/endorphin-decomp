@@ -53382,6 +53382,13 @@
     "summary": "Scans the pointer range [+0x40, +0x44) for an element whose string at element+4 equals the argument; returns that element, or 0x00B53A34 if none matches.",
     "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
+  "0x0063F6B0": {
+    "name": "Unknown::ctor_0063F6B0",
+    "class": "Unknown",
+    "signature": "inline uintptr_t slot_target(int slot_value)",
+    "summary": "Derived-class constructor: base-constructs via derivedCtor_0063F350, installs vtable 0x0097CC84, constructs two std::string members (+0x3C, +0x58), sets flag +0x74 and int +0x78, returns this.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063F8B0": {
     "name": "AdvXMLParser::Attribute::vfunc_0",
     "class": "AdvXMLParser::Attribute",

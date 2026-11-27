@@ -1921,3 +1921,66 @@ void* fn_0063EB70(uint32_t a1, uint32_t a2, uint32_t a3, const uint8_t* src, uin
     return obj;
 }
 } // namespace lift_0063EB70
+
+// [0x0063F6B0] sub_0063F6B0 (156 bytes)
+namespace lift_0063F6B0 {
+// Known callee 0x0063F350: Unknown::derivedCtor_0063F350 (Base-constructs via ext_0063E0C0, installs the derived vtable at 0x0097CC44, zeroes the five fields at +0x28..+0x38, and returns this.)
+extern void ext_0063F350();
+extern int mem_00924FE4;
+extern int mem_00A9B148;
+extern int mem_00924FF4;
+
+namespace {
+
+// MSVC __thiscall: this in ECX, callee cleans stack (__thiscall expands to nothing off-MSVC).
+using StrCtorFn    = void(__thiscall*)(void* self, const char* s);
+using StrDtorFn    = void(__thiscall*)(void* self);
+using DerivedCtorFn = void*(__thiscall*)(void* self, uint32_t arg0, const void* name);
+
+// Import slots hold the target address as their value (call [0x924fe4] -> target 0x629122).
+inline uintptr_t slot_target(int slot_value) {
+    return static_cast<uintptr_t>(static_cast<uint32_t>(slot_value));
+}
+
+// Image-relative literal address (e.g. .rdata string at 0x97cca0).
+inline const char* image_str(uint32_t va) {
+    return reinterpret_cast<const char*>(static_cast<uintptr_t>(va));
+}
+
+} // namespace
+
+// @name Unknown::ctor_0063F6B0
+// @class Unknown
+// @summary Derived-class constructor: base-constructs via derivedCtor_0063F350, installs vtable 0x0097CC84, constructs two std::string members (+0x3C, +0x58), sets flag +0x74 and int +0x78, returns this.
+// @field Unknown +0x00 uint32_t vfptr
+// @field Unknown +0x3C std::string field_0x3C
+// @field Unknown +0x58 std::string field_0x58
+// @field Unknown +0x74 uint8_t field_0x74
+// @field Unknown +0x78 int32_t field_0x78
+void* fn_0063F6B0(void* self) {
+    // Temporary std::string (MSVC layout, 0x1C bytes) built from literal 0x0097CCA0 and passed by pointer.
+    uint8_t name_buf[0x20];
+
+    StrCtorFn str_ctor = reinterpret_cast<StrCtorFn>(slot_target(mem_00924FE4));
+    StrDtorFn str_dtor = reinterpret_cast<StrDtorFn>(slot_target(mem_00924FF4));
+
+    str_ctor(name_buf, image_str(0x0097CCA0u));
+
+    // Base construction: arg0 is the value stored at 0x00A9B148.
+    DerivedCtorFn derived_ctor = reinterpret_cast<DerivedCtorFn>(&ext_0063F350);
+    derived_ctor(self, static_cast<uint32_t>(mem_00A9B148), name_buf);
+
+    str_dtor(name_buf);
+
+    // Install this class's vtable.
+    lift_field<uint32_t>(self, 0x00) = 0x0097CC84u;
+
+    str_ctor(&lift_field<uint8_t>(self, 0x3C), image_str(0x0097CC9Cu));
+    str_ctor(&lift_field<uint8_t>(self, 0x58), image_str(0x0097CC78u));
+
+    lift_field<uint8_t>(self, 0x74) = 1;
+    lift_field<int32_t>(self, 0x78) = 0;
+
+    return self;
+}
+} // namespace lift_0063F6B0

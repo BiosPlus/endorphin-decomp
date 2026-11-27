@@ -1,0 +1,46 @@
+{
+  "va": "0x0063F6B0",
+  "size": 156,
+  "orig_symbol": "sub_0063F6B0",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "Unknown::ctor_0063F6B0",
+  "class": "Unknown",
+  "signature": "inline uintptr_t slot_target(int slot_value)",
+  "summary": "Derived-class constructor: base-constructs via derivedCtor_0063F350, installs vtable 0x0097CC84, constructs two std::string members (+0x3C, +0x58), sets flag +0x74 and int +0x78, returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vfptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "std::string",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "std::string",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "uint8_t",
+      "name": "field_0x74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "int32_t",
+      "name": "field_0x78"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T09:29:05Z"
+}
