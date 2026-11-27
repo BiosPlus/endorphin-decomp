@@ -30789,6 +30789,13 @@
     "summary": "Gets a float from a node's object (or a default global object) via vtable slot 1, then passes it with the input float to vtable slot 5 of self.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x0051A050": {
+    "name": "NMData::RealChannel::vfunc_12",
+    "class": "NMData::RealChannel",
+    "signature": "extern \"C\" void* ext_00660A50(void* self);         // returns the helper object (eax) for self extern \"C\" int ext_006721D0(void* self, int arg);  // thiscall helper: self in ecx, arg on stack extern \"C\" uintptr_t mem_00B599BC;                  // sentinel value compared against the object pointer extern \"C\" int mem_00924FE4;                        // IAT slot: std::string(const char*) ctor (replaced by std::string) extern \"C\" int mem_00924FF4;                        // IAT slot: std::string dtor (replaced by std::string) template \u003cstd::size_t Off, typename R, typename... A\u003e inline R vcall(void* obj, A... args)",
+    "summary": "Fetches a helper object, queries it for a (tag, object) pair keyed by this+4 and arg, and if the object is valid and not the sentinel, resolves it through vtable slot 0x20 and ext_006721D0; the pair object is released through vtable slot 0x78 in all non-null cases.",
+    "lifted_path": "lifted/NMData/RealChannel.cpp"
+  },
   "0x0051A210": {
     "name": "getStaticBoolString_0051A210",
     "signature": "void* fn_0051A210()",

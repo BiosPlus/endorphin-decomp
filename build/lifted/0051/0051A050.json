@@ -1,0 +1,22 @@
+{
+  "va": "0x0051A050",
+  "size": 220,
+  "orig_symbol": "NMData::RealChannel::vfunc_12",
+  "src_path": "src/NMData/RealChannel.cpp",
+  "lifted_path": "lifted/NMData/RealChannel.cpp",
+  "name": "NMData::RealChannel::vfunc_12",
+  "class": "NMData::RealChannel",
+  "signature": "extern \"C\" void* ext_00660A50(void* self);         // returns the helper object (eax) for self extern \"C\" int ext_006721D0(void* self, int arg);  // thiscall helper: self in ecx, arg on stack extern \"C\" uintptr_t mem_00B599BC;                  // sentinel value compared against the object pointer extern \"C\" int mem_00924FE4;                        // IAT slot: std::string(const char*) ctor (replaced by std::string) extern \"C\" int mem_00924FF4;                        // IAT slot: std::string dtor (replaced by std::string) template \u003cstd::size_t Off, typename R, typename... A\u003e inline R vcall(void* obj, A... args)",
+  "summary": "Fetches a helper object, queries it for a (tag, object) pair keyed by this+4 and arg, and if the object is valid and not the sentinel, resolves it through vtable slot 0x20 and ext_006721D0; the pair object is released through vtable slot 0x78 in all non-null cases.",
+  "fields": [
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T10:42:20Z"
+}

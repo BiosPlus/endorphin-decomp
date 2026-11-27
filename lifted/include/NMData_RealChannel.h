@@ -10,6 +10,7 @@
 // Recovered field layout for NMData::RealChannel:
 namespace lifted_layout {
 struct NMData_RealChannel_Fields {
+    // +0x4   void*                    field_0x04  (evidence: 0x0051A050)
     // +0x30  uint32_t                 begin  (evidence: 0x0041A4F0, 0x0041DED0, 0x0042EE50, 0x0042FAE0, 0x00437AD0, 0x00495A20, 0x004CCDE0, 0x004CF910, 0x0051ABD0, 0x0051BEF0, 0x0051BF10, 0x00692D90, 0x0069B5A0)
     // +0x34  uint32_t                 end  (evidence: 0x0041A4F0, 0x0041DED0, 0x0042EE50, 0x0042FAE0, 0x00437AD0, 0x00495A20, 0x004CCDE0, 0x004CF910, 0x0051ABD0, 0x0051BEF0, 0x0051BF10, 0x00692D90, 0x0069B5A0)
     // +0x3C  void*                    field_0x3C  (evidence: 0x0051BEF0)

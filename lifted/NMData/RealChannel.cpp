@@ -71,6 +71,7 @@ void fn_0051ABD0(void* self, float scale) {
         cur += 8;
     }
 }
+#include <string>
 
 // [0x0051AED0] NMData::RealChannel::vfunc_8 (31 bytes)
 // @name NMData::RealChannel::vfunc_8
@@ -202,3 +203,61 @@ void fn_0051ABD0(void* self, float scale) {
     }
 }
 } // namespace lift_0051ABD0
+
+// [0x0051A050] NMData::RealChannel::vfunc_12 (220 bytes)
+namespace lift_0051A050 {
+extern void* ext_00660A50(void* self);         // returns the helper object (eax) for self
+extern int ext_006721D0(void* self, int arg);  // thiscall helper: self in ecx, arg on stack
+extern uintptr_t mem_00B599BC;                  // sentinel value compared against the object pointer
+extern int mem_00924FE4;                        // IAT slot: std::string(const char*) ctor (replaced by std::string)
+extern int mem_00924FF4;                        // IAT slot: std::string dtor (replaced by std::string)
+
+// Invoke vtable slot at byte offset Off on obj (virtual dispatch through the object's vtable).
+template <std::size_t Off, typename R, typename... A>
+inline R vcall(void* obj, A... args) {
+    void** vt = *reinterpret_cast<void***>(obj);
+    using Fn = R (*)(void*, A...);
+    return reinterpret_cast<Fn>(vt[Off / sizeof(void*)])(obj, args...);
+}
+
+// Two-word result written through a hidden out-pointer by the slot-0x14 method.
+struct RealChannelPair {
+    uint32_t tag;
+    void*    obj;
+};
+
+// @name NMData::RealChannel::vfunc_12
+// @class NMData::RealChannel
+// @summary Fetches a helper object, queries it for a (tag, object) pair keyed by this+4 and arg, and if the object is valid and not the sentinel, resolves it through vtable slot 0x20 and ext_006721D0; the pair object is released through vtable slot 0x78 in all non-null cases.
+// @field NMData::RealChannel +0x04 void* field_0x04
+void fn_0051A050(void* self, int arg) {
+    // Address-only references to the CRT string import slots; the std::string below replaces them.
+    (void)&mem_00924FE4;
+    (void)&mem_00924FF4;
+
+    void* src = ext_00660A50(self);
+
+    RealChannelPair pair{};
+    vcall<0x14, void>(src, &pair, static_cast<uint8_t*>(self) + 0x04, arg, 0);
+    void* obj = pair.obj;
+
+    if (obj != nullptr && reinterpret_cast<uintptr_t>(obj) != mem_00B599BC) {
+        std::string label("");
+        void* outA = nullptr;
+        void* ret = vcall<0x20, void*>(self, &outA, &label);
+
+        ext_006721D0(&outA, static_cast<int>(reinterpret_cast<intptr_t>(ret)));
+
+        if (outA != nullptr) {
+            void* rel = nullptr;
+            vcall<0x78, void>(outA, &rel);
+        }
+        // label is destroyed at scope exit (std::string dtor replaces the CRT import)
+    }
+
+    if (obj != nullptr) {
+        void* rel = nullptr;
+        vcall<0x78, void>(obj, &rel);
+    }
+}
+} // namespace lift_0051A050
