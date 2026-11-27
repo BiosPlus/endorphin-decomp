@@ -1,0 +1,13 @@
+{
+  "va": "0x005FC050",
+  "size": 60,
+  "orig_symbol": "sub_005FC050",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "makeFromTypeName_005FC050",
+  "signature": "void* __cdecl fn_005FC050(void* out)",
+  "summary": "Gets the type_info name of a static type and forwards it as std::string to sub_0066AC90, returning the sret result",
+  "status": "lifted",
+  "lifted_by": "claude-opus-5.5@low",
+  "lifted_at": "2026-11-27T13:45:03Z"
+}

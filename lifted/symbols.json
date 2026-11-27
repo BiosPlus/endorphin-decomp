@@ -27356,6 +27356,13 @@
     "summary": "Renders or updates edit mode geometry with optional highlight color under a scoped lock/stop-request guard.",
     "lifted_path": "lifted/VMCSModes/EditMode.cpp"
   },
+  "0x004F39F0": {
+    "name": "VMCSModes::EditMode::vfunc_117",
+    "class": "VMCSModes::EditMode",
+    "signature": "void fn_004F39F0(void* self, uint32_t arg1)",
+    "summary": "Constructs a temporary Geometry (type 5, scale {0.5, 1, 1}), optionally sets its RGBA color to {0.2, 0.25, 0.25, 1}, and passes it to ext_004F3690 while holding a scoped pause/lock on the controller at field_0x08+0x14.",
+    "lifted_path": "lifted/VMCSModes/EditMode.cpp"
+  },
   "0x004F4D20": {
     "name": "initVtableAndStoreTwoArgs",
     "signature": "void fn_004F4D20(void* self, DWORD arg1, DWORD arg2)",
@@ -59288,6 +59295,12 @@
     "signature": "uint32_t __thiscall fn_005FC040(void* self)",
     "summary": "Dispatches to vtable slot 16 (+0x40) with argument 2.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x005FC050": {
+    "name": "makeFromTypeName_005FC050",
+    "signature": "void* __cdecl fn_005FC050(void* out)",
+    "summary": "Gets the type_info name of a static type and forwards it as std::string to sub_0066AC90, returning the sret result",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
   "0x005FC090": {
     "name": "allocAndInitUnknown006271A0",

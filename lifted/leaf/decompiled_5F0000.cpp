@@ -1985,3 +1985,26 @@ void fn_005F5730(void* self, const void* p) {
     ext_0067E510(newSelf, p);
 }
 } // namespace lift_005F5730
+
+// [0x005FC050]
+namespace lift_005FC050 {
+// @name makeFromTypeName_005FC050
+// @summary Gets the type_info name of a static type and forwards it as std::string to sub_0066AC90, returning the sret result
+typedef const char*(__thiscall* TypeInfoNameFn)(void* self, void* node);
+typedef void(__thiscall* StringCtorFn)(void* self, const char* s);
+
+extern uint8_t mem_00925354[4];
+extern uint8_t mem_00924FE4[4];
+extern uint8_t mem_00A92CB4[4];
+extern uint8_t mem_00B5CE94[4];
+extern void* __cdecl ext_0066AC90(void* out, std::string s);
+
+void* __cdecl fn_005FC050(void* out)
+{
+    TypeInfoNameFn nameFn = *reinterpret_cast<TypeInfoNameFn*>(mem_00925354);
+    const char* name = nameFn(mem_00A92CB4, mem_00B5CE94);
+    (void)&mem_00924FE4;
+    ext_0066AC90(out, std::string(name));
+    return out;
+}
+} // namespace lift_005FC050
