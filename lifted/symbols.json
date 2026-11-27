@@ -34990,6 +34990,13 @@
     "summary": "Renders the mesh polygons using OpenGL immediate mode with normals, texture coordinates, and vertices.",
     "lifted_path": "lifted/Primitives/Mesh.cpp"
   },
+  "0x0053E650": {
+    "name": "Primitives::SwingLimit::vfunc_28",
+    "class": "Primitives::SwingLimit",
+    "signature": "inline Fn import_slot(const void* slot)",
+    "summary": "Clamps the two swing half-angles from the renderer and draws the swing-limit cone as GL triangles.",
+    "lifted_path": "lifted/Primitives/SwingLimit.cpp"
+  },
   "0x0053F410": {
     "name": "Primitives::Animation::vfunc_28",
     "class": "Primitives::Animation",

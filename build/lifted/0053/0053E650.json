@@ -1,0 +1,34 @@
+{
+  "va": "0x0053E650",
+  "size": 3511,
+  "orig_symbol": "Primitives::SwingLimit::vfunc_28",
+  "src_path": "src/Primitives/SwingLimit.cpp",
+  "lifted_path": "lifted/Primitives/SwingLimit.cpp",
+  "name": "Primitives::SwingLimit::vfunc_28",
+  "class": "Primitives::SwingLimit",
+  "signature": "inline Fn import_slot(const void* slot)",
+  "summary": "Clamps the two swing half-angles from the renderer and draws the swing-limit cone as GL triangles.",
+  "fields": [
+    {
+      "class": "SwingLimit",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "renderer"
+    },
+    {
+      "class": "SwingLimit",
+      "offset": "+0x3C",
+      "type": "int",
+      "name": "segments"
+    },
+    {
+      "class": "SwingLimit",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "scale"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:41:41Z"
+}
