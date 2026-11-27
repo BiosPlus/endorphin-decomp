@@ -2720,3 +2720,34 @@ void __thiscall fn_00508950(void* self, void* container) {
     ext_0046C0A0(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base + 0x24)), reinterpret_cast<float*>(&slot));
 }
 } // namespace lift_00508950
+
+// [0x00500430] sub_00500430 (141 bytes)
+namespace lift_00500430 {
+// Known callee 0x005940E0: Unknown::destructorBody_005940E0 (Releases an optional child object at +0x20 through its vtable slot 0x78 (passing &field_0x1c), then destroys the std::string at offset 0.)
+extern void __thiscall ext_005940E0(void* self);
+// Known callee 0x00594250: copy_string_and_field (Copy-constructs a std::string at +0x00 and clones/copies a vtable-backed member at +0x1C/+0x20)
+extern void* __thiscall ext_00594250(void* self, const void* rhs);
+
+// @name copyElementRangeWithCleanup
+// @summary Copy-constructs 0x24-byte elements from [first,last) into dst (skipping null dst slots), returns the new end; on exception destroys the already-built elements and rethrows.
+void* fn_00500430(uint8_t* first, uint8_t* last, uint8_t* dst) {
+    constexpr std::ptrdiff_t kStride = 0x24;
+    uint8_t* const begin = dst;
+    uint8_t* cur = dst;
+    try {
+        while (first != last) {
+            if (cur != nullptr) {
+                ext_00594250(cur, first);
+            }
+            cur += kStride;
+            first += kStride;
+        }
+    } catch (...) {
+        for (uint8_t* p = begin; p != cur; p += kStride) {
+            ext_005940E0(p);
+        }
+        throw;
+    }
+    return cur;
+}
+} // namespace lift_00500430

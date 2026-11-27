@@ -21389,6 +21389,12 @@
     "summary": "Binary lower_bound over an array of object pointers; each element's virtual slot 9 yields a key compared against value via mem_00924EF4.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00500430": {
+    "name": "copyElementRangeWithCleanup",
+    "signature": "void* fn_00500430(uint8_t* first, uint8_t* last, uint8_t* dst)",
+    "summary": "Copy-constructs 0x24-byte elements from [first,last) into dst (skipping null dst slots), returns the new end; on exception destroys the already-built elements and rethrows.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x005007C0": {
     "name": "DwordPairInitWrapper_005007C0",
     "signature": "void* fn_005007C0(void* self, void* pair, DWORD b)",
