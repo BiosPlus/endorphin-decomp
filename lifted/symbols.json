@@ -53483,6 +53483,13 @@
     "summary": "Steps the state byte at +0x194 (1..6) down to the requested level arg1, calling the forward/notify helpers when leaving level 5.",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
+  "0x005E4900": {
+    "name": "NMData::FixedPathJointData::vfunc_0_off_150",
+    "class": "NMData::FixedPathJointData",
+    "signature": "void __fastcall fn_005E4900(void* self, std::uint32_t arg)",
+    "summary": "Dispatches on the mode at +0x44: modes 0/2/4 forward to the primary base (this-0x150) and then to the object at +0x148 when set; modes 5/6 forward to the primary base if +0x144 is set, otherwise tail-call slot 0 of the sub-object at (+0xE4)+4; other modes return.",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005E4AC0": {
     "name": "NMData::RootRelationshipData::vfunc_3",
     "class": "NMData::RootRelationshipData",

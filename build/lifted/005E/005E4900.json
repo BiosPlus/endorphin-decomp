@@ -1,0 +1,40 @@
+{
+  "va": "0x005E4900",
+  "size": 111,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_0_off_150",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_0_off_150",
+  "class": "NMData::FixedPathJointData",
+  "signature": "void __fastcall fn_005E4900(void* self, std::uint32_t arg)",
+  "summary": "Dispatches on the mode at +0x44: modes 0/2/4 forward to the primary base (this-0x150) and then to the object at +0x148 when set; modes 5/6 forward to the primary base if +0x144 is set, otherwise tail-call slot 0 of the sub-object at (+0xE4)+4; other modes return.",
+  "fields": [
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x44",
+      "type": "int32_t field_0x44 (dispatch mode; 0..6",
+      "name": "handled)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x144",
+      "type": "int32_t field_0x144 (non-zero selects the primary-base forward in modes",
+      "name": "5/6)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x148",
+      "type": "std::uint32_t field_0x148 (object value forwarded in modes 0/2/4 when",
+      "name": "non-zero)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0xE4",
+      "type": "void* field_0xe4 (object pointer; its sub-object at +4 receives the tail",
+      "name": "call)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T12:03:14Z"
+}

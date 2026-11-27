@@ -1104,3 +1104,66 @@ void* fn_005EE760(void* self, void* param) {
     return res;
 }
 } // namespace lift_005EE760
+
+// [0x005E4900] NMData::FixedPathJointData::vfunc_0_off_150 (111 bytes)
+namespace lift_005E4900 {
+// Lifted C++20 translation unit: lifted/wip/fn_005E4900.cpp
+
+
+// Known callee 0x0058AF80: sub_0058AF80 (110B, thiscall with one stack argument).
+extern void ext_0058AF80(void* self, std::uint32_t arg);
+// Known callee 0x0067E820: sub_0067E820 (96B, thiscall with one stack argument; this = first arg).
+extern void ext_0067E820(void* self, std::uint32_t value);
+// Known callee 0x005E1090: sub_005E1090 (570B, thiscall with one stack argument).
+extern void ext_005E1090(void* self, std::uint32_t arg);
+
+// @name NMData::FixedPathJointData::vfunc_0_off_150
+// @class NMData::FixedPathJointData
+// @summary Dispatches on the mode at +0x44: modes 0/2/4 forward to the primary base (this-0x150) and then to the object at +0x148 when set; modes 5/6 forward to the primary base if +0x144 is set, otherwise tail-call slot 0 of the sub-object at (+0xE4)+4; other modes return.
+// @field NMData::FixedPathJointData +0x44 int32_t field_0x44 (dispatch mode; 0..6 handled)
+// @field NMData::FixedPathJointData +0x144 int32_t field_0x144 (non-zero selects the primary-base forward in modes 5/6)
+// @field NMData::FixedPathJointData +0x148 std::uint32_t field_0x148 (object value forwarded in modes 0/2/4 when non-zero)
+// @field NMData::FixedPathJointData +0xE4 void* field_0xe4 (object pointer; its sub-object at +4 receives the tail call)
+
+// thiscall (ECX = this), one stack argument, callee pops 4 (ret 4).
+void __fastcall fn_005E4900(void* self, std::uint32_t arg) {
+    auto* obj = static_cast<std::uint8_t*>(self);
+    const std::int32_t mode = lift_field<std::int32_t>(obj, 0x44);
+
+    switch (mode) {
+    case 0:
+    case 2:
+    case 4: {
+        // Primary base subobject sits at this - 0x150.
+        std::uint8_t* primary = obj - 0x150;
+        ext_0058AF80(primary, arg);
+
+        const std::uint32_t next = lift_field<std::uint32_t>(obj, 0x148);
+        if (next != 0) {
+            ext_0067E820(reinterpret_cast<void*>(static_cast<std::uintptr_t>(arg)), next);
+        }
+        return;
+    }
+    case 5:
+    case 6: {
+        std::uint8_t* primary = obj - 0x150;
+        if (lift_field<std::int32_t>(obj, 0x144) != 0) {
+            ext_005E1090(primary, arg);
+            return;
+        }
+
+        // Tail call: vtable slot 0 of the sub-object at (+0xE4)+4, with ECX = that sub-object.
+        // The stack argument is passed through unchanged.
+        using SlotFn = void (*)(void* self, std::uint32_t arg);
+        void* target = lift_field<void*>(obj, 0xE4);
+        std::uint8_t* sub = static_cast<std::uint8_t*>(target) + 4;
+        void** vptr = *reinterpret_cast<void***>(sub);
+        auto fn = reinterpret_cast<SlotFn>(vptr[0]);
+        fn(sub, arg);
+        return;
+    }
+    default:
+        return;
+    }
+}
+} // namespace lift_005E4900

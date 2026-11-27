@@ -17,13 +17,17 @@ struct NMData_FixedPathJointData_Fields {
     // +0x4   void*                    TransformInterface_vptr  (evidence: 0x005E4710) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (TransformInterface vptr; virtual calls via this+0x04)  (evidence: 0x005EE760) // CONFLICT: multiple definitions at +0x4
     // +0xC   uint8_t field_0x0c (RenderObjectOwner/Updateable sub-object; address passed)  (evidence: 0x005EE760)
+    // +0x44  int32_t field_0x44 (dispatch mode; 0..6 handled)  (evidence: 0x005E4900)
     // +0x74  void** field_0x74 (begin of child pointer array)  (evidence: 0x005E1060, 0x005EB890)
     // +0x78  void** field_0x78 (end of child pointer array)  (evidence: 0x005E1060, 0x005EB890)
     // +0xE0  void* field_0xe0 (object pointer; its vtable slot at +0xAC is called)  (evidence: 0x005E1060) // CONFLICT: multiple definitions at +0xE0
     // +0xE0  void*                    field_0xe0  (evidence: 0x005E0E70) // CONFLICT: multiple definitions at +0xE0
+    // +0xE4  void* field_0xe4 (object pointer; its sub-object at +4 receives the tail call)  (evidence: 0x005E4900)
     // +0xE8  void*                    field_0xe8  (evidence: 0x005EE760)
     // +0x140 int32_t                  field_0x140  (evidence: 0x005E0E70) // CONFLICT: multiple definitions at +0x140
     // +0x140 int32_t field_0x140 (non-zero disables the function)  (evidence: 0x005E1060) // CONFLICT: multiple definitions at +0x140
+    // +0x144 int32_t field_0x144 (non-zero selects the primary-base forward in modes 5/6)  (evidence: 0x005E4900)
+    // +0x148 std::uint32_t field_0x148 (object value forwarded in modes 0/2/4 when non-zero)  (evidence: 0x005E4900)
     // +0x154 void*                    FrameBufferTickEventListener_base  (evidence: 0x005E4710) // CONFLICT: multiple definitions at +0x154
     // +0x154 void*                    field_0x154  (evidence: 0x005E4850) // CONFLICT: multiple definitions at +0x154
     // +0x168 void* field_0x168 (address taken; vector container base for erase)  (evidence: 0x005EEDB0) // CONFLICT: multiple definitions at +0x168
