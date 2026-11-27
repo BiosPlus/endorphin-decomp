@@ -64472,6 +64472,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0062C450 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Sensors/auto_tiny.cpp"
   },
+  "0x0062CB60": {
+    "name": "NMData::AxisDefineSensorData::vfunc_59",
+    "class": "NMData::AxisDefineSensorData",
+    "signature": "void* fn_0062CB60(void* self, void* arg1, void* arg2)",
+    "summary": "Calls MetaBodySensorData::vfunc_59, dynamic-casts its result, and if non-null runs sub_0062C8D0 on it; returns the cast pointer.",
+    "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp"
+  },
   "0x0062CC60": {
     "name": "NMData::AxisDefineSensorData::vfunc_14",
     "class": "NMData::AxisDefineSensorData",

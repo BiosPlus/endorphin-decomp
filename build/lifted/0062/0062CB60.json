@@ -1,0 +1,14 @@
+{
+  "va": "0x0062CB60",
+  "size": 65,
+  "orig_symbol": "NMData::AxisDefineSensorData::vfunc_59",
+  "src_path": "src/NMData/AxisDefineSensorData.cpp",
+  "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp",
+  "name": "NMData::AxisDefineSensorData::vfunc_59",
+  "class": "NMData::AxisDefineSensorData",
+  "signature": "void* fn_0062CB60(void* self, void* arg1, void* arg2)",
+  "summary": "Calls MetaBodySensorData::vfunc_59, dynamic-casts its result, and if non-null runs sub_0062C8D0 on it; returns the cast pointer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-27T11:40:56Z"
+}

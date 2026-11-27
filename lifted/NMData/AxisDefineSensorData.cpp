@@ -59,3 +59,31 @@ void* fn_0060E7B0(void* self, void* arg1, uint32_t arg2) {
     return arg1;
 }
 } // namespace lift_0060E7B0
+
+// [0x0062CB60] NMData::AxisDefineSensorData::vfunc_59 (65 bytes)
+namespace lift_0062CB60 {
+// Known callee 0x006107B0: NMData::MetaBodySensorData::vfunc_59 (thiscall; takes two stack args plus four trailing stack values).
+extern void* ext_006107B0(void* self, void* arg1, void* arg2, void* a3, void* a4, void* a5, void* a6);
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast.)
+extern void* ext_006A6E9E(void* obj);
+// Known callee 0x0062C8D0: sub_0062C8D0 (thiscall on the cast result, one stack arg: the original this).
+extern void ext_0062C8D0(void* target, void* self);
+extern int mem_00A988D8;
+extern int mem_00A92D20;
+
+// @name NMData::AxisDefineSensorData::vfunc_59
+// @class NMData::AxisDefineSensorData
+// @summary Calls MetaBodySensorData::vfunc_59, dynamic-casts its result, and if non-null runs sub_0062C8D0 on it; returns the cast pointer.
+// @field none (this function accesses no fields directly; it only forwards self and the call results)
+void* fn_0062CB60(void* self, void* arg1, void* arg2) {
+    void* r = ext_006107B0(self, arg1, arg2, nullptr,
+                           reinterpret_cast<void*>(&mem_00A92D20),
+                           reinterpret_cast<void*>(&mem_00A988D8),
+                           nullptr);
+    void* cast = ext_006A6E9E(r);
+    if (cast != nullptr) {
+        ext_0062C8D0(cast, self);
+    }
+    return cast;
+}
+} // namespace lift_0062CB60
